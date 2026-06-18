@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Causality Assessment — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Causality Assessment</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define causality assessment and its clinical role</li><li>[ ] Apply <b>Naranjo algorithm</b> to a case scenario</li><li>[ ] Apply <b>WHO-UMC</b> criteria</li><li>[ ] Apply <b>RUCAM</b> for hepatotoxicity</li><li>[ ] Differentiate certain, probable, possible, unlikely, conditional, unassessable</li><li>[ ] Recognise confounders (polypharmacy, indication bias, rechallenge)</li><li>[ ] Discuss dechallenge, rechallenge, and placebo considerations</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Why Causality Assessment?</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Distinguishes <b>true ADRs</b> from coincidental events</li><li>Guides <b>drug withdrawal vs continuation</b></li><li>Informs <b>regulatory action</b> (yellow card, black triangle)</li><li><b>Compensation</b> decisions</li><li><b>Re-prescription</b> decisions (avoid forever vs cautious reintroduction)</li></ul>
+<p><b>Confounders:</b></p>
+<ul><li>Polypharmacy (multiple potential culprits)</li><li>Indication bias (e.g., NSAID given for pain in early RA — pain may flare independently)</li><li>Disease progression</li><li>Drug-drug interactions</li><li>Patient characteristics (age, organ function, genetics)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — Causality Assessment Workflow</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Suspected ADR event] --&gt; B[Comprehensive history&lt;br/&gt;drugs, timeline, symptoms] B --&gt; C[Apply causality algorithm&lt;br/&gt;Naranjo OR WHO-UMC OR RUCAM] C --&gt; D{Algorithm score?} D --&gt;|Definite/Certain| E[Stop drug, document, NEVER re-challenge] D --&gt;|Probable| F[Stop drug, monitor; rechallenge only if essential] D --&gt;|Possible| G[Continue if benefit &gt; risk; consider alternative] D --&gt;|Unlikely| H[Re-attribute to other cause] D --&gt;|Conditional| I[More data needed] I --&gt; B E --&gt; J[Yellow card report] F --&gt; J G --&gt; J </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Naranjo Algorithm (Most Widely Used)</div>
+<table class="ctable"><tr><th>Question</th><th>Yes</th><th>No</th><th>Don't Know</th></tr><tr><td>----------</td><td>-----</td><td>-----</td><td>-----------</td></tr><tr><td>1. Are there previous conclusive reports on this reaction?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>2. Did the ADR appear after the suspect drug was given?</td><td>+2</td><td>-1</td><td>0</td></tr><tr><td>3. Did the ADR improve when the drug was stopped (dechallenge)?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>4. Did the ADR reappear when the drug was re-given (rechallenge)?</td><td>+2</td><td>-1</td><td>0</td></tr><tr><td>5. Are there alternative causes?</td><td>-1</td><td>+2</td><td>0</td></tr><tr><td>6. Did the reaction reappear with placebo?</td><td>-1</td><td>+1</td><td>0</td></tr><tr><td>7. Was the drug detected in blood/fluid at toxic level?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>8. Did the reaction worsen with increasing dose?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>9. Did the patient have similar reaction to same drug in past?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>10. Was the ADR confirmed by any objective evidence?</td><td>+1</td><td>0</td><td>0</td></tr></table>
+<p><b>Scoring:</b></p>
+<ul><li>≥ 9: <b>Definite</b> ADR</li><li>5-8: <b>Probable</b> ADR</li><li>1-4: <b>Possible</b> ADR</li><li>0: <b>Doubtful</b> (unlikely)</li></ul>
+<div class="sub-h">4.2 WHO-UMC Causality Categories</div>
+<table class="ctable"><tr><th>Category</th><th>Criteria</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Certain**</td><td>Plausible time relationship; cannot be explained by concurrent disease/drug; positive dechallenge; positive rechallenge (definitive)</td></tr><tr><td>**Probable**</td><td>Plausible time; unlikely due to concurrent disease; positive dechallenge; rechallenge not required</td></tr><tr><td>**Possible**</td><td>Plausible time; could be explained by concurrent disease/drug; dechallenge information lacking or unclear</td></tr><tr><td>**Unlikely**</td><td>Temporal relationship improbable; could be explained by concurrent disease/drug</td></tr><tr><td>**Conditional / Unclassified**</td><td>More data needed for assessment; preliminary report</td></tr><tr><td>**Unassessable / Unclassifiable**</td><td>Cannot judge (info missing, conflicting)</td></tr></table>
+<div class="sub-h">4.3 Naranjo vs WHO-UMC vs RUCAM</div>
+<table class="ctable"><tr><th>Feature</th><th>Naranjo</th><th>WHO-UMC</th><th>RUCAM</th></tr><tr><td>---------</td><td>---------</td><td>---------</td><td>-------</td></tr><tr><td>**Type**</td><td>Questionnaire (10 Q)</td><td>Categorical (6 levels)</td><td>Organ-specific (liver)</td></tr><tr><td>**Organ system**</td><td>Any</td><td>Any</td><td>Hepatotoxicity only</td></tr><tr><td>**Rechallenge required**</td><td>No (optional)</td><td>No</td><td>No</td></tr><tr><td>**Specificity**</td><td>Moderate</td><td>Moderate</td><td>High for liver</td></tr><tr><td>**Use**</td><td>Research, regulatory</td><td>Clinical</td><td>DILI causality</td></tr><tr><td>**Validated**</td><td>Yes (most studied)</td><td>Yes</td><td>Yes</td></tr></table>
+<div class="sub-h">4.4 Dechallenge &amp; Rechallenge Definitions</div>
+<table class="ctable"><tr><th>Term</th><th>Definition</th><th>Implication</th></tr><tr><td>------</td><td>------------</td><td>-------------</td></tr><tr><td>**Dechallenge positive**</td><td>ADR improves on stopping drug</td><td>Supports causality</td></tr><tr><td>**Dechallenge negative**</td><td>No change on stopping</td><td>Argues against</td></tr><tr><td>**Rechallenge positive**</td><td>ADR recurs on re-starting</td><td>Definite ADR (avoid forever)</td></tr><tr><td>**Rechallenge negative**</td><td>No recurrence</td><td>Less likely ADR</td></tr><tr><td>**Dechallenge cannot be assessed**</td><td>Drug not stopped, or irreversible damage</td><td>Uncertain</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>Most widely used algorithm</td><td>Naranjo (10 Q, max 13 points)</td></tr><tr><td>Naranjo definite</td><td>≥9</td></tr><tr><td>Naranjo probable</td><td>5-8</td></tr><tr><td>Naranjo possible</td><td>1-4</td></tr><tr><td>Naranjo doubtful</td><td>0</td></tr><tr><td>Gold standard for hepatotoxicity</td><td>RUCAM</td></tr><tr><td>Time relationship</td><td>Foundation of all algorithms</td></tr><tr><td>Positive rechallenge</td><td>Definite ADR; avoid drug for life</td></tr><tr><td>Rechallenge</td><td>NOT recommended routinely (risk of severe reaction, esp. SJS)</td></tr><tr><td>Confounder</td><td>Indication bias (drug prescribed for prodrome of disease)</td></tr><tr><td>Causality assessment is</td><td>Subjective; inter-rater variability high</td></tr><tr><td>Yellow Card</td><td>UK pharmacovigilance system (MHRA)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define causality assessment in ADRs.</b></li></ol>
+<p><i>Structured process to determine the probability that a drug caused a particular adverse event, using standardised algorithms.</i></p>
+<ol><li><b>Name 3 causality assessment tools.</b></li></ol>
+<p><i>Naranjo (questionnaire), WHO-UMC (categorical), RUCAM (hepatotoxicity-specific).</i></p>
+<ol><li><b>What is the Naranjo score for "Definite" ADR?</b></li></ol>
+<p><i>≥9.</i></p>
+<ol><li><b>What is the difference between dechallenge and rechallenge?</b></li></ol>
+<p><i>Dechallenge = stopping drug to see if ADR resolves. Rechallenge = re-starting drug to see if ADR recurs.</i></p>
+<ol><li><b>When is rechallenge contraindicated?</b></li></ol>
+<p><i>In severe Type B reactions: SJS/TEN, anaphylaxis, DRESS, hepatotoxicity with coagulopathy, aplastic anaemia.</i></p>
+<ol><li><b>Why is the Naranjo algorithm not always reliable?</b></li></ol>
+<p><i>Inter-rater variability; doesn't handle polypharmacy well; doesn't consider pharmacogenomics; missing data common; not disease-specific.</i></p>
+<ol><li><b>A patient on amiodarone develops hepatotoxicity. Which causality tool is best?</b></li></ol>
+<p><i>RUCAM (hepatotoxicity-specific).</i></p>
+<ol><li><b>A patient develops rash on drug A and drug B given simultaneously. How do you determine the culprit?</b></li></ol>
+<p><i>Stop both (or one at a time with safety assessment); review literature for each; consider temporal relationship; rechallenge only with each separately if benefit outweighs risk and ADR was mild.</i></p>
+<ol><li><b>A 70-year-old with heart failure and CKD is on ramipril, furosemide, bisoprolol, digoxin. He develops hyperkalaemia and AKI. Likely culprit?</b></li></ol>
+<p><i>Ramipril + furosemide (esp. in dehydration) → AKI; ramipril causes hyperkalaemia. Likely ramipril-related, dose-related (Type A). Stop ramipril, rehydrate, monitor.</i></p>
+<ol><li><b>What is "indication bias" in causality assessment?</b></li></ol>
+<p><i>Confounding where a drug is prescribed for early signs of the disease that later manifests fully — the "ADR" is actually disease progression, not the drug. E.g., NSAIDs given for early RA pain before RA diagnosis.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>Naranjo definite vs probable</td><td>Definite ≥9; Probable 5-8</td></tr><tr><td>WHO-UMC certain vs probable</td><td>Certain needs rechallenge; Probable does not</td></tr><tr><td>RUCAM vs Naranjo</td><td>RUCAM = liver-specific; Naranjo = general</td></tr><tr><td>Rechallenge positive vs negative</td><td>Positive = ADR recurs; Negative = no recurrence</td></tr><tr><td>Type A vs Type B ADR causality</td><td>Type A more easily assessed; Type B often requires pharmacogenomic/immunological workup</td></tr><tr><td>Causality vs Attribution</td><td>Causality = statistical/drug-event link; Attribution = clinical judgement (more holistic)</td></tr><tr><td>Algorithm limitations</td><td>Subject to inter-rater variability; not replace clinical judgement</td></tr><tr><td>Yellow card vs Black triangle</td><td>Yellow = report ADR; Black triangle = newly licensed (intensive monitoring)</td></tr></table>
+<p><b>Mnemonic — Naranjo thresholds: "</b>9+ Definite, 5-8 Probable, 1-4 Possible, 0 Doubtful<b>"</b></p>
+<p><b>Mnemonic — WHO-UMC categories: "</b>C<b>ertain </b>P<b>robable </b>P<b>ossible </b>U<b>nlikely </b>C<b>onditional </b>U<b>nassessable"</b> (CPPUCU)</p>
+<p><b>Mnemonic — Dechallenge vs Rechallenge: "</b>D<b>e = Discontinue; </b>R<b>e = Reintroduce"</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Causality Assessment)) Naranjo 10 questions Score 0-13 Definite ≥9 Probable 5-8 Possible 1-4 Doubtful 0 WHO-UMC Certain Probable Possible Unlikely Conditional Unassessable RUCAM Hepatotoxicity Specific Rechallenge Positive = definite Not routine Contraindicated severe Dechallenge Positive supports Negative argues Confounders Polypharmacy Indication bias Disease progression Application Yellow card Avoid drug Switch class </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>Naranjo 10 Q</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Naranjo thresholds</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>WHO-UMC 6 levels</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>RUCAM indication</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Dechallenge meaning</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Rechallenge rules</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>Naranjo scoring</td><td>/5</td></tr><tr><td>WHO-UMC categories</td><td>/5</td></tr><tr><td>RUCAM use</td><td>/5</td></tr><tr><td>Dechallenge/rechallenge</td><td>/5</td></tr><tr><td>Confounders</td><td>/5</td></tr><tr><td>Rechallenge contraindications</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/30**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The Naranjo algorithm has:</b></li></ol>
+<p>A. 5 questions B. 10 questions ✓ C. 15 questions D. 20 questions E. 25 questions</p>
+<ol><li><b>A Naranjo score of 7 represents:</b></li></ol>
+<p>A. Definite ADR B. Probable ADR ✓ C. Possible ADR D. Doubtful E. Conditional</p>
+<ol><li><b>A Naranjo score of ≥9 is:</b></li></ol>
+<p>A. Probable B. Possible C. Definite ✓ D. Doubtful E. Unassessable</p>
+<ol><li><b>Which tool is most specific for hepatotoxicity causality?</b></li></ol>
+<p>A. Naranjo B. WHO-UMC C. RUCAM ✓ D. Karch-Lasagna E. Kramer</p>
+<ol><li><b>"Dechallenge positive" means:</b></li></ol>
+<p>A. ADR appears on stopping drug B. ADR improves on stopping drug ✓ C. ADR recurs on re-starting D. ADR persists on re-starting E. No change</p>
+<ol><li><b>"Rechallenge positive" means:</b></li></ol>
+<p>A. ADR improves on stopping B. ADR recurs on re-starting ✓ C. ADR persists D. ADR worsens E. ADR is dose-related</p>
+<ol><li><b>Rechallenge is contraindicated in:</b></li></ol>
+<p>A. Mild nausea B. SJS/TEN and anaphylaxis ✓ C. Headache D. Drowsiness E. Dry mouth</p>
+<ol><li><b>"Possible" causality (Naranjo 1-4) means:</b></li></ol>
+<p>A. Drug is definitely the cause B. Drug is the likely cause C. Drug could be the cause but other factors possible ✓ D. Drug is not the cause E. Cannot be determined</p>
+<ol><li><b>"Indication bias" refers to:</b></li></ol>
+<p>A. Wrong drug prescribed B. Drug prescribed for early signs of disease that later manifests ✓ C. Polypharmacy D. Inadequate dose E. Contraindication</p>
+<ol><li><b>Yellow Card (UK) is for:</b></li></ol>
+<p>A. Prescribing a new drug B. Reporting an ADR to MHRA ✓ C. Reimbursement D. Continuing therapy E. Stopping therapy</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A patient on allopurinol develops rash 10 days later. After stopping, rash resolves. Naranjo scores: prev reports (+1), appeared after drug (+2), improved on stopping (+1), no alternative cause (+2), no rechallenge (0), no placebo (0), no blood level (0), no dose-response (0), no past history (0), no objective evidence (0). Score = 6. Interpretation:</b></li></ol>
+<ul><li>A) Definite ADR</li><li>B) Probable ADR ✓</li><li>C) Possible ADR</li><li>D) Doubtful</li><li>E) Unclassifiable</li></ul>
+<ol><li><b>A patient on isoniazid, rifampicin, pyrazinamide develops jaundice at week 4. Best tool:</b></li></ol>
+<ul><li>A) Naranjo</li><li>B) WHO-UMC</li><li>C) RUCAM ✓</li><li>D) Karch-Lasagna</li><li>E) Clinical judgement alone</li></ul>
+<ol><li><b>A patient with penicillin allergy 20 years ago has "amoxicillin" in chart. Should you rechallenge?</b></li></ol>
+<ul><li>A) Yes, with full dose</li><li>B) Yes, with desensitisation</li><li>C) No — avoid all β-lactams; consider non-β-lactam alternative ✓</li><li>D) Yes, intradermal test then full dose</li><li>E) Skin test first</li></ul>
+<ol><li><b>A 70-year-old on amiodarone develops pulmonary fibrosis after 24 months. The dechallenge is:</b></li></ol>
+<ul><li>A) Positive (improves on stopping)</li><li>B) Slow but usually partial improvement ✓</li><li>C) Always fatal</li><li>D) Irrelevant</li><li>E) Mandatory</li></ul>
+<ol><li><b>A patient on trimethoprim develops SJS. Action:</b></li></ol>
+<ul><li>A) Rechallenge with smaller dose</li><li>B) Continue drug; add antihistamine</li><li>C) Stop drug FOREVER; never re-challenge; report via Yellow Card ✓</li><li>D) Switch to same class</li><li>E. Desensitise</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>B</b> (10 questions, max 13 points)</li><li><b>B</b> (5-8 = probable)</li><li><b>C</b> (≥9 definite)</li><li><b>C</b> (RUCAM for liver)</li><li><b>B</b> (Dechallenge positive = improves on stopping)</li><li><b>B</b> (Rechallenge positive = recurs on restarting)</li><li><b>B</b> (SJS/TEN and anaphylaxis — never rechallenge)</li><li><b>C</b> (Possible = could be drug but other factors)</li><li><b>B</b> (Indication bias)</li><li><b>B</b> (Yellow Card = MHRA reporting)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>B</b> — Naranjo 6 = probable ADR. Don't rechallenge with allopurinol (SJS risk).</li><li><b>C</b> — RUCAM for hepatotoxicity (e.g., ATT-induced hepatitis).</li><li><b>C</b> — Avoid β-lactams (cross-reactivity); use non-β-lactam (e.g., macrolide) or non-penicillin alternative.</li><li><b>B</b> — Amiodarone pulmonary fibrosis improves slowly/partial on stopping; dechallenge partially positive.</li><li><b>C</b> — SJS = stop drug FOREVER; never rechallenge; Yellow Card report.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Causality assessment uses structured algorithms to determine drug-event relatedness.</b> Naranjo (10 Q, max 13): ≥9 definite, 5-8 probable, 1-4 possible, 0 doubtful. WHO-UMC: 6 categorical levels. RUCAM: hepatotoxicity-specific. Dechallenge (stop drug) supports causality; Rechallenge (re-start) is the gold standard but contraindicated in severe Type B reactions (SJS, anaphylaxis). Always consider polypharmacy, indication bias, and disease progression.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../ADRs|ADRs]]</li><li><b>Sibling Topic-Groups</b>: [[Definition and classification]], [[Reporting and pharmacovigilance]], [[Common ADR patterns by system]]</li><li><b>Heading Hub</b>: [[ADRs]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Drug Interactions]], [[Special Populations/Renal Impairment/Renal Drug Dosing]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Causality Assessment · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

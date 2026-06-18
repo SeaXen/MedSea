@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Measures Of Disease Burden Daly Qaly Hale Yll Yld — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.1. EPIDEMIOLOGICAL METHODS & CONCEPTS</span>
+      <div class="h1">Measures Of Disease Burden Daly Qaly Hale Yll Yld</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define and calculate DALY, YLL, YLD, QALY, HALE</li><li>[ ] Explain discounting, age-weighting (historical), and disability weights</li><li>[ ] Distinguish prevalence-based vs incidence-based DALY approaches</li><li>[ ] Interpret GBD study rankings and country-level burden profiles</li><li>[ ] Apply QALYs to cost-effectiveness thresholds (NICE £20-30K/QALY)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Full Name</th><th>Formula</th><th>Unit</th><th>Perspective</th></tr><tr><td>--------</td><td>-----------</td><td>---------</td><td>------</td><td>-------------</td></tr><tr><td>**DALY**</td><td>Disability-Adjusted Life Year</td><td>YLL + YLD</td><td>Years lost</td><td>Population health gap (ideal vs actual)</td></tr><tr><td>**YLL**</td><td>Years of Life Lost</td><td>N × L</td><td>Years</td><td>Premature mortality</td></tr><tr><td>**YLD**</td><td>Years Lived with Disability</td><td>I × DW × L</td><td>Years</td><td>Non-fatal burden</td></tr><tr><td>**QALY**</td><td>Quality-Adjusted Life Year</td><td>Σ (Utility × Time)</td><td>Years</td><td>Individual health gain (economic eval)</td></tr><tr><td>**HALE**</td><td>Health-Adjusted Life Expectancy</td><td>LE – (YLD/LE) equivalent</td><td>Years</td><td>Population equivalent healthy years</td></tr></table>
+<p><b>Key Parameters:</b></p>
+<ul><li><b>N</b> = number of deaths</li><li><b>L</b> = standard life expectancy at age of death (GBD uses theoretical minimum risk life expectancy ~86y)</li><li><b>I</b> = number of incident cases (incidence-based) or prevalent cases (prevalence-based)</li><li><b>DW</b> = disability weight (0 = full health, 1 = death); GBD 2019 has 235 weights</li><li><b>Utility</b> = health state value (0–1); EQ-5D, SF-6D, HUI commonly used</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological concept - see calculation examples below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Types of Burden Measures</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Dimension</th><th>DALY (GBD)</th><th>QALY (Economic Eval)</th></tr><tr><td>-----------</td><td>------------</td><td>----------------------</td></tr><tr><td>**Philosophy**</td><td>Gap measure (loss from ideal)</td><td>Gain measure (utility from intervention)</td></tr><tr><td>**Perspective**</td><td>Population/societal</td><td>Individual/patient</td></tr><tr><td>**Time horizon**</td><td>Lifetime (incidence) or year (prevalence)</td><td>Intervention time horizon</td></tr><tr><td>**Valuation**</td><td>Disability weights (population surveys)</td><td>Utilities (patient/community preferences)</td></tr><tr><td>**Discounting**</td><td>3% standard (GBD 2010+)</td><td>3.5% (NICE), 3% (US)</td></tr><tr><td>**Age-weighting**</td><td>Removed in GBD 2010</td><td>Not used</td></tr><tr><td>**Equity weights**</td><td>None standard</td><td>Sometimes applied</td></tr></table>
+<p><b>DALY Calculation Methods:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Approach&lt;/th&gt;&lt;th&gt;Formula&lt;/th&gt;&lt;th&gt;Use Case&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Incidence-based</b>&lt;/td&gt;&lt;td&gt;Σ (I × DW × L) + YLL&lt;/td&gt;&lt;td&gt;GBD standard; captures future burden of new cases&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Prevalence-based</b>&lt;/td&gt;&lt;td&gt;Σ (P × DW) + YLL&lt;/td&gt;&lt;td&gt;Cross-sectional snapshot; simpler for annual updates&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Calculation Examples)</span>
+  </div>
+  <div class="sec-body">
+<p><b>YLL Example:</b> ``<code> Death at age 50. Standard LE at 50 = 36 years. YLL = 1 × 36 = 36 DALYs If 1000 such deaths: 36,000 YLL </code>``</p>
+<p><b>YLD Example (Incidence-based):</b> ``<code> 1000 new cases of moderate depression (DW=0.4) with avg duration 10 years YLD = 1000 × 0.4 × 10 = 4,000 DALYs </code>``</p>
+<p><b>QALY Example:</b> ``<code> Treatment gives 5 years at utility 0.8 vs 5 years at 0.6 QALY gain = 5 × (0.8 – 0.6) = 1.0 QALY Cost £20,000 → ICER = £20,000/QALY (NICE threshold £20-30K) </code>``</p>
+<p><b>HALE Calculation (Sullivan Method):</b> ``<code> HALE = Σ (Proportion of life in health state × Utility of state) Or: HALE = Life Expectancy – (YLD per capita equivalent years) </code>``</p>
+<p><b>Mermaid: DALY Composition</b> ``<code>mermaid flowchart TD A[DALY] --&gt; B[YLL] A --&gt; C[YLD] B --&gt; D[Deaths × Life Expectancy] C --&gt; E[Incident Cases × DW × Duration] C --&gt; F[Prevalent Cases × DW] style A fill:#f96,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Metric Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**DALY vs QALY**</td><td>DALY = loss (bad); QALY = gain (good). DALYs averted = QALYs gained conceptually, but different valuation methods.</td></tr><tr><td>**YLL vs YLD**</td><td>YLL = fatal burden (mortality); YLD = non-fatal burden (morbidity). Communicable diseases → high YLL; NCDs/mental health → high YLD.</td></tr><tr><td>**Incidence vs Prevalence YLD**</td><td>Incidence: future burden of new cases; Prevalence: current burden. GBD uses incidence-based for planning.</td></tr><tr><td>**Disability Weight vs Utility**</td><td>DW: 0=health, 1=death (population valuation). Utility: 1=health, 0=death (individual valuation). DW ≈ 1 – Utility.</td></tr><tr><td>**HALE vs LE**</td><td>LE = total years; HALE = healthy-equivalent years. HALE < LE always. Gap = years in ill health.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Application)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Context</th><th>Application</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**GBD Country Profiles**</td><td>Top 10 causes of DALYs, YLL, YLD; risk factor attribution; trends 1990-present</td></tr><tr><td>**Health Priority Setting**</td><td>Rank diseases by DALYs; identify cost-effective interventions (DALYs averted per $)</td></tr><tr><td>**Cost-Effectiveness (NICE)**</td><td>ICER = ΔCost / ΔQALY; threshold £20-30K/QALY; end-of-life modifier</td></tr><tr><td>**Resource Allocation**</td><td>DALY burden guides WHO essential medicines, vaccine intro, vertical programs</td></tr><tr><td>**Monitoring SDG 3**</td><td>HALE, DALY rates track SDG 3.4 (NCD mortality), 3.3 (communicable)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**DALY = YLL + YLD**</td><td>One DALY = 1 lost healthy year. Population measure.</td></tr><tr><td>**YLL**</td><td>Deaths × standard life expectancy at age of death. No discounting in current GBD.</td></tr><tr><td>**YLD**</td><td>Cases × disability weight × duration. 235 health states in GBD 2019.</td></tr><tr><td>**Top global YLL**</td><td>Ischaemic heart disease, stroke, LRI, diarrhoea, neonatal, TB, road injury</td></tr><tr><td>**Top global YLD**</td><td>Low back pain, depressive disorders, headache, anxiety, neck pain, diabetes</td></tr><tr><td>**QALY**</td><td>Utility (0-1) × time. Utility from EQ-5D, SF-6D, HUI, TTO, SG.</td></tr><tr><td>**ICER threshold**</td><td>NICE: £20-30K/QALY. ≤£20K cost-effective; £20-30K uncertain; >£30K not cost-effective.</td></tr><tr><td>**HALE**</td><td>"Healthy life expectancy." Global ~63y (2019). UK ~70y. Gap LE-HALE = morbidity burden.</td></tr><tr><td>**Discounting**</td><td>3% per year standard. Values future health less. Controversial for equity.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Define DALY. How does it differ from QALY?**</td><td>DALY = YLL+YLD = years of healthy life lost (gap measure, population). QALY = utility × time = years of healthy life gained (gain measure, individual). DALYs averted ≈ QALYs gained but different valuation.</td></tr><tr><td>**Calculate YLL for 500 deaths at age 60 (LE=26y).**</td><td>YLL = 500 × 26 = 13,000 years.</td></tr><tr><td>**What are disability weights? Give examples.**</td><td>DW quantifies severity on 0-1 scale. GBD 2019: mild anaemia 0.004, moderate depression 0.4, severe COPD 0.408, treated HIV 0.078, terminal cancer 0.54. Derived from population surveys (paired comparison).</td></tr><tr><td>**A treatment costs £50,000 and gives 2 QALYs. Is it cost-effective by NICE?**</td><td>ICER = £25,000/QALY. In NICE £20-30K range - uncertain, needs end-of-life/other modifiers.</td></tr><tr><td>**Why does GBD use incidence-based YLD?**</td><td>Captures future burden of new cases; better for prevention planning; avoids prevalence dependence on past incidence/survival.</td></tr><tr><td>**What is HALE? How calculated?**</td><td>Health-adjusted life expectancy. Sullivan method: HALE = Σ (proportion life in state × utility). Or LE – equivalent YLD years.</td></tr><tr><td>**Name top 3 causes of YLD globally.**</td><td>Low back pain, depressive disorders, headache disorders.</td></tr><tr><td>**What is discounting in DALYs? Why controversial?**</td><td>3% per year - values present health more than future. Controversial: discriminates against future generations, undervalues prevention.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**GBD vs National**</td><td>GBD uses standard LE (86y) for all countries; national burden studies may use national LE.</td></tr><tr><td>**Risk factor attribution**</td><td>Population attributable fraction (PAF) applied to DALYs → attributable DALYs.</td></tr><tr><td>**Comorbidity adjustment**</td><td>GBD uses multiplicative independence assumption for co-occurring conditions.</td></tr></table>
+<p><b>Mnemonic: DALY COMPONENTS</b></p>
+<ul><li><b>D</b>ead = <b>YLL</b> (Years Life Lost)</li><li><b>A</b>live but <b>L</b>iving with disability = <b>YLD</b> (Years Lived with Disability)</li><li><b>Y</b>ou add them = <b>DALY</b></li></ul>
+<p><b>Mnemonic: QALY ECONOMICS</b></p>
+<ul><li><b>Q</b>uality <b>A</b>djusted <b>L</b>ife <b>Y</b>ear</li><li><b>E</b>Q-5D for utility</li><li><b>C</b>ost-effectiveness: <b>£20-30K/QALY</b></li><li><b>O</b>pportunity cost</li><li><b>N</b>ICE threshold</li><li><b>O</b>ptimization</li><li><b>M</b>arginal analysis</li><li><b>I</b>CER = ΔC/ΔQ</li><li><b>C</b>omparators needed</li><li><b>S</b>ensitivity analysis</li></ul>
+<p><b>Mnemonic: HALE vs LE</b></p>
+<ul><li><b>H</b>ALE = <b>H</b>ealthy <b>A</b>djusted <b>L</b>ife <b>E</b>xpectancy</li><li><b>L</b>E = <b>L</b>ife <b>E</b>xpectancy (total)</li><li><b>H</b>ALE &lt; <b>L</b>E always</li><li>Difference = years in ill health</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Disease Burden Metrics)) DALY YLL Deaths × Std LE No discounting (current) Fatal burden YLD Cases × DW × Duration Incidence-based (GBD) Non-fatal burden 235 disability weights Population perspective QALY Utility × Time EQ-5D, SF-6D, HUI Individual perspective NICE £20-30K threshold HALE Healthy LE Sullivan method LE - morbidity equivalent Applications GBD rankings Priority setting CEA/CUA SDG monitoring </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**DALY**</td><td>YLL + YLD = healthy years lost (gap)</td></tr><tr><td>**YLL**</td><td>Deaths × standard LE at age of death</td></tr><tr><td>**YLD**</td><td>Cases × disability weight × duration</td></tr><tr><td>**DW**</td><td>0=health, 1=death; 235 states (GBD 2019)</td></tr><tr><td>**QALY**</td><td>Utility × time; gain measure; EQ-5D utility</td></tr><tr><td>**ICER**</td><td>ΔCost/ΔQALY; NICE £20-30K/QALY</td></tr><tr><td>**HALE**</td><td>Healthy life expectancy; < LE</td></tr><tr><td>**Top YLL**</td><td>IHD, stroke, LRI, diarrhoea, neonatal</td></tr><tr><td>**Top YLD**</td><td>Low back pain, depression, headache</td></tr><tr><td>**Discounting**</td><td>3% standard; equity concerns</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>DALY/YLL/YLD Definitions</td><td></td><td></td></tr><tr><td>Calculation Examples</td><td></td><td></td></tr><tr><td>QALY/ICER/NICE</td><td></td><td></td></tr><tr><td>HALE vs LE</td><td></td><td></td></tr><tr><td>GBD Top Causes</td><td></td><td></td></tr><tr><td>Disability Weights</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Measures of Disease Frequency (Incidence, Prevalence, Rates).md]], [[Global Burden of Disease (GBD Study, Risk Factors).md]], [[Health Systems, UHC &amp; Health Economics.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Measures Of Disease Burden Daly Qaly Hale Yll Yld · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

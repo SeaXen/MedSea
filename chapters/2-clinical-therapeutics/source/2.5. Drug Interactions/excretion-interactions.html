@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Excretion Interactions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Excretion Interactions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify mechanisms of excretion interactions: renal tubular secretion, transporter inhibition, biliary excretion, urine pH</li><li>[ ] Apply to high-yield drugs: methotrexate, lithium, digoxin, warfarin</li><li>[ ] Recognise transporter-mediated interactions (OAT1/3, OCT2, MATE1/2-K, P-gp)</li><li>[ ] Understand urine pH trapping</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Mechanisms of Excretion Interactions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mechanism</th><th>Description</th><th>Examples</th></tr><tr><td>-----------</td><td>-------------</td><td>----------</td></tr><tr><td>**Renal Tubular Secretion (Proximal Tubule)**</td><td>Competitive inhibition of OAT1/3, OCT2, MATE1/2-K</td><td>**Methotrexate + NSAIDs/Probenecid/PPIs/Penicillins** (OAT1/3)</td></tr><tr><td>**Glomerular Filtration**</td><td>Altered renal blood flow / GFR</td><td>**NSAIDs + Lithium** (↓ GFR, ↓ Li⁺ clearance → toxicity)</td></tr><tr><td>**Urine pH**</td><td>Trapping of weak acids/bases</td><td>**Alkalinisation: ↑ Salicylate excretion (overdose)**; **Acidification: ↑ Amphetamine, Ephedrine, Quinidine excretion**</td></tr><tr><td>**P-gp (ABCB1) at Renal Tubule**</td><td>Inhibitor → ↓ renal clearance of substrate</td><td>**Verapamil, Dronedarone, Ticagrelor + Digoxin** (↑ digoxin levels)</td></tr><tr><td>**Biliary Excretion**</td><td>P-gp, BCRP inhibition in hepatocyte/canaliculus</td><td>**Rifampicin + Mycophenolate** (↓ MPA exposure — enterohepatic recycling disrupted)</td></tr><tr><td>**Faecal Excretion (Enterohepatic)**</td><td>Antibiotics disrupt gut flora → ↓ recycling</td><td>**Rifampicin + OCP** (↓ enterohepatic recycling of ethinylestradiol)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🚨 High-Yield Excretion Interactions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Methotrexate + NSAIDs/Probenecid/PPIs — **CRITICAL**</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Methotrexate (MTX) is renally excreted via **OAT1/3 (proximal tubule secretion) + tubular reabsorption + filtration**</th></tr><tr><td>----------</td><td>--------------------------------------------------------------</td></tr><tr><td>**Inhibitors of OAT1/3**</td><td>**NSAIDs (esp. diclofenac, ibuprofen, ketoprofen), Probenecid, Sulfonamides, Beta-lactams (Penicillins, Cephalosporins), PPIs (omeprazole, esomeprazole, pantoprazole — MATE1 inhibition)**</td></tr><tr><td>**Effect**</td><td>**↓ MTX clearance → ↑ MTX levels → pancytopenia, mucositis, renal failure**</td></tr><tr><td>**Critical at High-Dose**</td><td>**HIGH-DOSE MTX** (>1 g/m²) for ALL, osteosarcoma, lymphoma</td></tr><tr><td>**Management**</td><td>**AVOID combination**; if unavoidable, **monitor MTX levels, hydration, alkalinisation, leucovorin rescue**; NSAIDs at least **5–7 days before and after** high-dose MTX</td></tr><tr><td>**Clinical Pearl**</td><td>**EULAR recommends paracetamol (not NSAIDs) for pain in RA patients on MTX**; aspirin/ibuprofen OK in low-dose MTX if needed</td></tr></table>
+<div class="sub-h">2. Lithium + NSAIDs/ACEi/Thiazides — **CRITICAL**</div>
+<table class="ctable"><tr><th>Mechanism</th><th>**↓ GFR (NSAIDs: ↓ afferent arteriolar PG)**; **↑ proximal reabsorption of Na⁺/Li⁺ (volume depletion from thiazides, ACEi, dehydration)**</th></tr><tr><td>----------</td><td>------------------------------------------------------</td></tr><tr><td>**Common Culprits**</td><td>**NSAIDs, Thiazides, ACE inhibitors, ARBs, Tetracyclines, Metronidazole, Dehydration, Fever, Vomiting, Diarrhoea**</td></tr><tr><td>**Effect**</td><td>**↑ Serum Li⁺ (toxicity >1.5 mmol/L) — tremor, confusion, ataxia, seizures, NDI**</td></tr><tr><td>**Management**</td><td>**Monitor Li⁺ at baseline, 1 week, then weekly ×4 after any change**; **avoid NSAIDs, thiazides, dehydration**; use **paracetamol** instead of NSAIDs; ensure adequate fluid/salt intake</td></tr></table>
+<div class="sub-h">3. Digoxin + P-gp Inhibitors — **HIGH**</div>
+<table class="ctable"><tr><th>Inhibitors</th><th>**Verapamil, Diltiazem, Amiodarone, Dronedarone, Quinidine, Spironolactone, Clarithromycin, Erythromycin, Itraconazole, Ritonavir, Ciclosporin, Tacrolimus, Ticagrelor**</th></tr><tr><td>-----------</td><td>----------------------------------------------------------</td></tr><tr><td>**Effect**</td><td>**↓ Renal clearance + ↓ biliary excretion of digoxin → ↑ digoxin levels → toxicity (arrhythmias, GI, visual)**</td></tr><tr><td>**Most Clinically Significant**</td><td>**Quinidine** (↓ renal clearance + ↓ Vd → ↑↑ digoxin levels), **Verapamil**, **Amiodarone**</td></tr><tr><td>**Management**</td><td>**Reduce digoxin dose by 30–50%** when adding inhibitor; **monitor digoxin levels**; monitor ECG, K⁺, Mg²⁺</td></tr></table>
+<div class="sub-h">4. Urine pH Trapping</div>
+<table class="ctable"><tr><th>Manipulation</th><th>Drug</th><th>Clinical Use</th></tr><tr><td>-------------</td><td>------</td><td>--------------</td></tr><tr><td>**Alkalinisation (pH >7.5)**</td><td>**Salicylates** (forced alkaline diuresis for overdose)</td><td>Aspirin overdose</td></tr><tr><td>**Alkalinisation**</td><td>**Methotrexate** (↑ solubility, prevent crystal nephropathy)</td><td>High-dose MTX</td></tr><tr><td>**Acidification (pH <6)**</td><td>**Amphetamine, Ephedrine, Phencyclidine, Quinidine**</td><td>Stimulant overdose (theoretical)</td></tr><tr><td>**Alkalinisation**</td><td>**Uric acid** (↑ solubility, prevent urate nephropathy)</td><td>Tumour lysis syndrome</td></tr></table>
+<div class="sub-h">5. Warfarin — Pharmacokinetic Sites</div>
+<table class="ctable"><tr><th>Site</th><th>Interaction</th><th>Effect</th></tr><tr><td>------</td><td>-------------</td><td>--------</td></tr><tr><td>**Absorption**</td><td>Cholestyramine, Orlistat, Sucralfate</td><td>↓ Absorption (separate ≥2h)</td></tr><tr><td>**Distribution**</td><td>Sulfonamides, Valproate, Aspirin (high-dose)</td><td>Displacement from albumin</td></tr><tr><td>**Metabolism (CYP2C9)**</td><td>**Inhibitors (Sulfamethoxazole, Metronidazole, Amiodarone, Fluconazole, Miconazole, Disulfiram) → ↑ INR**</td><td>Critical</td></tr><tr><td></td><td>**Inducers (Rifampicin, Carbamazepine, Phenytoin, St John's Wort, Barbiturates) → ↓ INR**</td><td>Critical</td></tr><tr><td>**Excretion**</td><td>Minimal renal (hepatic metabolism)</td><td>Less important</td></tr></table>
+<div class="sub-h">6. Biliary Excretion / Enterohepatic Recycling</div>
+<table class="ctable"><tr><th>Drug</th><th>Interaction</th><th>Effect</th></tr><tr><td>------</td><td>-------------</td><td>--------</td></tr><tr><td>**Mycophenolate (MPA)**</td><td>**Rifampicin** (disrupts enterohepatic recycling)</td><td>↓ MPA exposure by 30–50%</td></tr><tr><td>**Oral Contraceptives (OCP)**</td><td>**Rifampicin, Penicillins, Tetracyclines, Griseofulvin, Metronidazole** (disrupt gut flora → ↓ ethinylestradiol recycling)</td><td>↓ OCP efficacy → **breakthrough pregnancy**; use **barrier method**</td></tr><tr><td>**Digoxin**</td><td>**Antibiotics (Macrolides, Tetracyclines)** (↓ gut flora that inactivate digoxin)</td><td>↑ Digoxin levels (small effect)</td></tr><tr><td>**Thyroid Hormones**</td><td>**Cholestyramine, Iron, Calcium**</td><td>↓ Absorption (separate ≥4h)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Combination</th><th>Mechanism</th><th>Effect</th><th>Action</th></tr><tr><td>-------------</td><td>-----------</td><td>--------</td><td>--------</td></tr><tr><td>**Methotrexate + NSAIDs/Probenecid/PPIs/Penicillins**</td><td>OAT1/3 inhibition (proximal tubule secretion)</td><td>**↑ MTX → pancytopenia, mucositis, AKI**</td><td>**AVOID** with high-dose MTX; paracetamol for pain in RA</td></tr><tr><td>**Lithium + NSAIDs/Thiazides/ACEi/ARBs/Dehydration**</td><td>↓ GFR + ↑ proximal reabsorption</td><td>**↑ Li⁺ → toxicity (tremor, confusion, NDI)**</td><td>**Monitor Li⁺ at 1wk, 2wk, 4wk**; avoid combos; use paracetamol</td></tr><tr><td>**Digoxin + Verapamil/Amiodarone/Quinidine/Spironolactone/Macrolides/Itraconazole**</td><td>P-gp inhibition at renal tubule</td><td>**↑ Digoxin levels → toxicity (arrhythmias, GI, visual)**</td><td>**Reduce digoxin 30–50%**, monitor levels</td></tr><tr><td>**OCP + Rifampicin/Penicillins/Tetracyclines/Griseofulvin**</td><td>Disruption of enterohepatic recycling (gut flora)</td><td>**↓ OCP efficacy → breakthrough pregnancy**</td><td>**Use barrier method**</td></tr><tr><td>**Salicylate overdose**</td><td>Forced alkaline diuresis (pH 7.5–8)</td><td>↑ Salicylate excretion</td><td>**NaHCO₃ IV**, monitor pH/K⁺</td></tr><tr><td>**High-dose MTX**</td><td>Alkalinisation (urine pH >7)</td><td>↑ Solubility, prevent crystal nephropathy</td><td>**IV NaHCO₃ + hydration + leucovorin rescue**</td></tr><tr><td>**Mycophenolate + Rifampicin**</td><td>Disrupted enterohepatic recycling</td><td>↓ MPA exposure 30–50%</td><td>Dose adjust; monitor MPA levels</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">❓ Viva Questions (6)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Why is methotrexate + NSAID combination critical?</td><td>NSAIDs inhibit **OAT1/3** (proximal tubule secretion of MTX) → ↓ MTX clearance → ↑ MTX levels → **pancytopenia, mucositis, AKI**</td></tr><tr><td>2. Methotrexate + PPI (omeprazole) — mechanism?</td><td>**MATE1 (Multidrug and Toxin Extrusion 1) inhibition** at renal tubule → ↓ MTX clearance</td></tr><tr><td>3. Lithium + thiazide — mechanism, management?</td><td>Thiazide ↓ volume + ↑ proximal Li⁺ reabsorption → ↑ Li⁺ levels; **monitor Li⁺ weekly ×4 after thiazide added**; consider ↓ Li⁺ dose 25–50%</td></tr><tr><td>4. Digoxin + verapamil — management?</td><td>Verapamil inhibits **P-gp** at renal tubule → ↓ digoxin clearance; **reduce digoxin 30–50%**, monitor digoxin levels and ECG</td></tr><tr><td>5. OCP + rifampicin — counselling?</td><td>Rifampicin induces **CYP3A4 + disrupts enterohepatic recycling** → ↓ OCP efficacy → **use barrier method** (additional contraception)</td></tr><tr><td>6. Forced alkaline diuresis — when indicated?</td><td>**Salicylate overdose** (urine pH 7.5–8 → ↑ ionisation → ↓ tubular reabsorption); **IV NaHCO₃**, monitor pH/K⁺</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Methotrexate + paracetamol**</td><td>**Safe** — paracetamol is not a major OAT1/3 inhibitor; **prefer paracetamol in RA patients on MTX**</td></tr><tr><td>**Methotrexate + aspirin/ibuprofen (low dose)**</td><td>**Generally safe** with **low-dose MTX (15–25mg/week)** in RA; **AVOID with high-dose MTX** (>1g/m²)</td></tr><tr><td>**Lithium + ACEi/ARB**</td><td>↓ GFR + ↑ Li⁺ reabsorption → monitor Li⁺ closely</td></tr><tr><td>**Digoxin + Quinidine**</td><td>Quinidine = **most potent P-gp inhibitor** → ↑ digoxin 2–3x; **↓ digoxin 50%**</td></tr><tr><td>**OCP + amoxicillin**</td><td>Less clear than rifampicin, but **advise barrier method** for the course + 7 days</td></tr><tr><td>**Urine pH — clinical pearls**</td><td>**Alkalinisation** for Salicylates, MTX, Uric acid; **Acidification** for Amphetamines (rare)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"MTX + NSAIDs/PPIs/Probenecid = TOXICITY"</b> = <b>OAT1/3 + MATE1 inhibition</b> → ↑ MTX</li><li><b>"LITHIUM + NSAIDs/THIAZIDES/ACEi = ↑↑ Li⁺"</b> = <b>↓ GFR + ↑ reabsorption</b></li><li><b>"DIGOXIN + VERAPAMIL/AMIODARONE/QUINIDINE"</b> = <b>P-gp inhibition</b> → ↓ digoxin 30–50%</li><li><b>"OCP + RIFAMPICIN = BREAKTHROUGH PREGNANCY"</b> = <b>CYP3A4 induction + gut flora disruption</b> → use barrier</li><li><b>"ALKALINISE URINE"</b> = <b>S</b>alicylates, <b>M</b>ethotrexate, <b>U</b>rate (TLS, gout)</li><li><b>"MATE = MULTIDRUG AND TOXIN EXTRUSION"</b> = PPI inhibits MATE1 → ↑ MTX</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Excretion Interactions)) Renal Tubular Secretion OAT1/3 (proximal tubule) Methotrexate + NSAIDs/Probenecid/Sulfa/Penicillins → ↑ MTX MTX + PPIs (MATE1 inhibition) → ↑ MTX Methotrexate + NSAIDs = CRITICAL (HD-MTX) OCT2 / MATE1/2-K PPIs (Omeprazole) + MTX Cimetidine + Metformin (OCT2) → ↑ Metformin Glomerular Filtration NSAIDs + Lithium (↓ afferent PG → ↓ GFR) ACEi/ARBs + Lithium (↓ GFR) P-gp at Renal Tubule Verapamil, Amiodarone, Quinidine, Dronedarone, Macrolides, Itraconazole, Ciclosporin → ↑ Digoxin Quinidine = most potent Urine pH Alkalinisation Salicylate overdose (forced alkaline diuresis) High-dose MTX (↑ solubility, prevent crystals) Urate (TLS, gout) Acidification Amphetamines, Ephedrine (rare) Enterohepatic Recycling OCP + Rifampicin/Penicillins/Tetracyclines/Griseofulvin Mycophenolate + Rifampicin (↓ MPA 30-50%) Antibiotics + Digoxin (small effect) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Mechanisms table</td><td>8</td><td></td></tr><tr><td>MTX interactions</td><td>8</td><td></td></tr><tr><td>Lithium interactions</td><td>8</td><td></td></tr><tr><td>Digoxin interactions</td><td>6</td><td></td></tr><tr><td>Urine pH trapping</td><td>6</td><td></td></tr><tr><td>Enterohepatic recycling</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>6</td><td></td></tr><tr><td>**Total**</td><td>**48**</td><td></td></tr></table>
+<p><b>Target</b>: ≥38/48 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Why is methotrexate + NSAID combination avoided in high-dose MTX?"*</div>
+<ul><li>NSAIDs inhibit <b>OAT1/3 (Organic Anion Transporter)</b> at proximal tubule → ↓ MTX secretion</li><li>PPIs inhibit <b>MATE1</b> → ↓ MTX secretion</li><li>↓ MTX clearance → ↑ MTX levels → <b>pancytopenia, mucositis, AKI</b></li><li><b>AVOID NSAIDs 5–7 days before and after high-dose MTX</b></li><li>Use <b>paracetamol</b> for pain in RA on MTX</li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on lithium 800mg started hydrochlorothiazide for hypertension. 1 week later: tremor, confusion. Why? Management?"*</div>
+<ul><li><b>Thiazide-induced lithium toxicity</b></li><li>Thiazide → volume depletion + ↑ proximal Na⁺/Li⁺ reabsorption → ↑ Li⁺ levels</li><li><b>STOP thiazide</b> (or switch to other antihypertensive)</li><li><b>Hold Li⁺</b> until levels normal</li><li><b>Monitor Li⁺ weekly ×4</b> after any antihypertensive change</li><li>Rechallenge Li⁺ at ↓ dose 25–50% if needed; consider ACEi/ARB alternative (also monitor) or amiloride</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on digoxin, started verapamil for AF. 1 week later: nausea, yellow vision, bigeminy. Action?"*</div>
+<ul><li><b>Digoxin toxicity from P-gp inhibition by verapamil</b></li><li><b>Stop digoxin</b> until symptoms resolve and level checked</li><li><b>Restart at ↓ dose 30–50%</b> when verapamil continued</li><li>Monitor digoxin level (target 0.5–0.9 ng/mL for HF), K⁺, Mg²⁺, ECG</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>MTX + NSAIDs/PPIs/Probenecid = OAT1/3 + MATE1 inhibition → ↑ MTX (avoid HD-MTX)</li><li>MTX + paracetamol = safe (no OAT inhibition)</li><li>Li⁺ + NSAIDs/Thiazides/ACEi/ARBs = ↑ Li⁺ (↓ GFR + ↑ reabsorption); monitor Li⁺</li><li>Digoxin + Verapamil/Amiodarone/Quinidine = P-gp inhibition → ↓ digoxin 30–50%</li><li>Quinidine = most potent P-gp inhibitor (↓ digoxin 50%)</li><li>OCP + Rifampicin = CYP3A4 induction + gut flora → breakthrough pregnancy (use barrier)</li><li>Salicylate overdose = forced alkaline diuresis (pH 7.5–8)</li><li>HD-MTX = urine alkalinisation (pH &gt;7) + leucovorin + hydration</li><li>Mycophenolate + Rifampicin = ↓ MPA 30–50% (enterohepatic)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>EXCRETION INTERACTION TRIAD:</b> 1. <b>MTX + NSAIDs/PPIs/Probenecid</b> = OAT1/3/MATE1 inhibition → ↑↑ MTX → <b>AVOID HD-MTX</b> 2. <b>Lithium + NSAIDs/Thiazides/ACEi</b> = ↓ GFR + ↑ reabsorption → ↑↑ Li⁺ → <b>TOXICITY</b> 3. <b>Digoxin + P-gp inhibitors (Verapamil/Amiodarone/Quinidine)</b> = ↓ renal clearance → ↑ digoxin → <b>↓ dose 30–50%</b></div>
+<div class="callout"><b>ENTER OCP + RIFAMPICIN</b> = <b>CYP3A4 + gut flora</b> → <b>breakthrough pregnancy</b> (use barrier) <b>ALKALINISE URINE</b> for Salicylates, MTX, Urate</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Methotrexate + NSAID — mechanism of interaction:</b></li></ol>
+<p>A. CYP2C9 induction B. <b>OAT1/3 inhibition in proximal tubule → ↓ MTX secretion</b> ✓ C. CYP3A4 inhibition D. Increased absorption E. Displacement from protein</p>
+<ol><li><b>Methotrexate + PPI (omeprazole) — mechanism:</b></li></ol>
+<p>A. OAT1 inhibition B. <b>MATE1 inhibition at renal tubule</b> ✓ C. CYP3A4 induction D. Increased absorption E. Displacement from protein</p>
+<ol><li><b>Lithium + Hydrochlorothiazide — interaction mechanism:</b></li></ol>
+<p>A. ↓ Proximal reabsorption B. <b>Volume depletion + ↑ proximal Na⁺/Li⁺ reabsorption</b> ✓ C. CYP3A4 induction D. Increased clearance E. Displacement from protein</p>
+<ol><li><b>Digoxin + Quinidine — management:</b></li></ol>
+<p>A. No change B. <b>Reduce digoxin dose 50%, monitor level</b> ✓ C. Increase digoxin dose D. Stop both drugs E. Switch to digitoxin</p>
+<ol><li><b>OCP + Rifampicin — counselling:</b></li></ol>
+<p>A. Safe, no action B. <b>Use barrier method throughout + 4 weeks after</b> ✓ C. Stop OCP D. Increase OCP dose E. Switch to progesterone-only</p>
+<ol><li><b>Forced alkaline diuresis — clinical indication:</b></li></ol>
+<p>A. Lithium toxicity B. <b>Salicylate overdose</b> ✓ C. Digoxin toxicity D. Theophylline toxicity E. Methanol poisoning</p>
+<ol><li><b>High-dose methotrexate — supportive measure:</b></li></ol>
+<p>A. Forced diuresis only B. <b>Hydration + urine alkalinisation (pH&gt;7) + leucovorin rescue</b> ✓ C. Activated charcoal D. Haemodialysis E. N-acetylcysteine</p>
+<ol><li><b>Mycophenolate + Rifampicin — effect:</b></li></ol>
+<p>A. No interaction B. <b>↓ MPA exposure 30–50% (enterohepatic recycling disrupted)</b> ✓ C. ↑ MPA exposure D. No dose change needed E. Switch to azathioprine always</p>
+<ol><li><b>Digoxin + Verapamil — mechanism:</b></li></ol>
+<p>A. CYP3A4 induction B. <b>P-gp inhibition at renal tubule → ↓ digoxin clearance</b> ✓ C. Increased absorption D. Displacement from protein E. Increased tubular secretion</p>
+<ol><li><b>Lithium + ACEi — interaction:</b></li></ol>
+<p>A. No interaction B. <b>↓ GFR + ↑ Li⁺ reabsorption → ↑ Li⁺ toxicity</b> ✓ C. ↑ Li⁺ clearance D. Reduced Li⁺ efficacy E. CYP3A4 induction</p>
+<ol><li><b>Urine pH alkalinisation (pH &gt;7) — useful in:</b></li></ol>
+<p>A. Amphetamine overdose B. <b>Uric acid nephropathy (TLS) + High-dose MTX + Salicylate overdose</b> ✓ C. Theophylline toxicity D. Lithium toxicity E. Phenobarbital toxicity</p>
+<ol><li><b>MTX + paracetamol (acetaminophen) in RA — appropriate?</b></li></ol>
+<p>A. <b>Safe</b> — paracetamol is not an OAT1/3 inhibitor ✓ B. Avoid — increases MTX C. Avoid — reduces MTX efficacy D. Increases hepatotoxicity E. Avoid in all cases</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>MTX + NSAID</td><td>OAT1/3 inhibition → ↓ MTX secretion → ↑ MTX (avoid HD-MTX)</td></tr><tr><td>MTX + PPI</td><td>MATE1 inhibition → ↓ MTX secretion</td></tr><tr><td>MTX + paracetamol</td><td>Safe (no OAT inhibition)</td></tr><tr><td>Li⁺ + NSAID/Thiazide/ACEi</td><td>↓ GFR + ↑ reabsorption → ↑ Li⁺ → toxicity</td></tr><tr><td>Digoxin + Verapamil/Amiodarone/Quinidine</td><td>P-gp inhibition → ↓ digoxin clearance → ↑ digoxin</td></tr><tr><td>Quinidine + Digoxin</td><td>Most potent P-gp inhibitor → ↓ digoxin 50%</td></tr><tr><td>OCP + Rifampicin</td><td>CYP3A4 + gut flora → ↓ OCP → barrier method</td></tr><tr><td>Forced alkaline diuresis</td><td>Salicylate overdose (pH 7.5–8)</td></tr><tr><td>HD-MTX supportive</td><td>Hydration + alkalinisation (pH>7) + leucovorin</td></tr><tr><td>Mycophenolate + Rifampicin</td><td>↓ MPA 30–50% (enterohepatic)</td></tr><tr><td>Cimetidine + Metformin</td><td>OCT2 inhibition → ↑ Metformin (rare lactic acidosis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — OAT1/3 inhibition</li><li><b>B</b> — MATE1 inhibition</li><li><b>B</b> — Volume depletion + ↑ reabsorption</li><li><b>B</b> — Reduce digoxin 50%</li><li><b>B</b> — Barrier method</li><li><b>B</b> — Salicylate overdose</li><li><b>B</b> — Hydration + alkalinisation + leucovorin</li><li><b>B</b> — ↓ MPA 30–50%</li><li><b>B</b> — P-gp inhibition</li><li><b>B</b> — ↑ Li⁺ toxicity</li><li><b>B</b> — Urate, MTX, Salicylate</li><li><b>A</b> — Safe (no OAT inhibition)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Interactions/Excretion interactions.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Excretion Interactions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

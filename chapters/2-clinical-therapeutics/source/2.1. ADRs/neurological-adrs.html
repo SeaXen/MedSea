@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Neurological Adrs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Neurological Adrs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify drug-induced encephalopathy (metabolic, toxic, hypertensive)</li><li>[ ] Recognise and differentiate Serotonin Syndrome vs NMS (exam favourite)</li><li>[ ] Classify drug-induced peripheral neuropathy</li><li>[ ] Manage drug-induced seizures (lowering threshold)</li><li>[ ] Recognise extrapyramidal side effects (EPS) of antipsychotics/antiemetics</li><li>[ ] Identify drugs causing headache, tremor, ataxia, cognitive impairment</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Classification of Neurological ADRs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Mechanism</th><th>Key Drugs</th><th>Urgency</th></tr><tr><td>----------</td><td>-----------</td><td>-----------</td><td>---------</td></tr><tr><td>**Serotonin Syndrome**</td><td>Excess 5-HT at 5-HT2A</td><td>SSRIs, SNRIs, MAOIs, Tramadol, Linezolid, Fentanyl, Ondansetron, Triptans, Lithium, St John's Wort, Dextromethorphan</td><td>**EMERGENCY**</td></tr><tr><td>**Neuroleptic Malignant Syndrome (NMS)**</td><td>D2 blockade → dopaminergic deficit</td><td>Antipsychotics (typical > atypical), Metoclopramide, Prochlorperazine, Tetrabenazine</td><td>**EMERGENCY**</td></tr><tr><td>**Encephalopathy (Metabolic/Toxic)**</td><td>Various (ammonia, cytokines, direct toxicity)</td><td>**Valproate (hyperammonaemia), Lactulose withdrawal, IFN-α, Chemo (ifosfamide, 5-FU), Tacrolimus/Ciclosporin (PRES), Lithium, Phenytoin**</td><td>Urgent</td></tr><tr><td>**Posterior Reversible Encephalopathy Syndrome (PRES)**</td><td>Endothelial dysfunction, autoregulation failure</td><td>**Tacrolimus, Ciclosporin, Sirolimus, VEGF inhibitors, EPO, BP spikes, Eclampsia**</td><td>**EMERGENCY**</td></tr><tr><td>**Peripheral Neuropathy**</td><td>Axonal / Demyelinating / Mitochondrial</td><td>**Isoniazid (B6 deficiency), Vincristine, Bortezomib, Thalidomide, Lenalidomide, Metronidazole, Nitrofurantoin, Linezolid, Phenytoin, Amiodarone, Statins (rare)**</td><td>Subacute/Chronic</td></tr><tr><td>**Seizures (Lowered Threshold)**</td><td>GABA antagonism / Glutamate agonism / Electrolyte disturbance</td><td>**Bupropion, Tramadol, Clozapine, Theophylline, Quinolones, Imipenem, High-dose Penicillins, Antidepressants (TCAs, SSRIs), Antipsychotics, Lithium, Cyclosporine, BZD withdrawal**</td><td>Urgent</td></tr><tr><td>**Extrapyramidal Symptoms (EPS)**</td><td>D2 blockade in nigrostriatal pathway</td><td>**Typical antipsychotics > Atypical; Metoclopramide, Prochlorperazine, Tetrabenazine; Valproate (tremor)**</td><td>Acute (dystonia) → Chronic (tardive)</td></tr><tr><td>**Cerebellar Toxicity**</td><td>Purkinje cell toxicity</td><td>**Phenytoin (nystagmus, ataxia), Carbamazepine, Lithium, 5-FU, Cytarabine, Tacrolimus, Metronidazole**</td><td>Subacute</td></tr><tr><td>**Cognitive Impairment / Delirium**</td><td>Anticholinergic / GABAergic / Dopaminergic</td><td>**Anticholinergics (ACB≥3), Benzodiazepines, Opioids, Antipsychotics, H2 blockers (cimetidine), Steroids**</td><td>Acute</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ Serotonin Syndrome vs NMS — **VIVA ESSENTIAL**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**Serotonin Syndrome**</th><th>**Neuroleptic Malignant Syndrome (NMS)**</th></tr><tr><td>---------</td><td>------------------------</td><td>------------------------------------------</td></tr><tr><td>**Mechanism**</td><td>**Excess 5-HT at 5-HT2A** (excess release + reuptake inhibition)</td><td>**D2 receptor blockade** → central dopaminergic deficit</td></tr><tr><td>**Onset**</td><td>**Rapid** (hours after dose change/addition)</td><td>**Slow** (days–weeks)</td></tr><tr><td>**Mental Status**</td><td>**Agitation, hypervigilance, confusion**</td><td>**Stupor, mutism, catatonia**</td></tr><tr><td>**Motor**</td><td>**Clonus (spontaneous/inducible/ocular), Hyperreflexia, Tremor, Myoclonus**</td><td>**Lead-pipe rigidity, Bradykinesia, "Waxy flexibility"**</td></tr><tr><td>**Autonomic**</td><td>**Hyperthermia, Tachycardia, Hypertension, Diaphoresis, Mydriasis, Diarrhoea**</td><td>**Labile BP, Tachycardia, Fever, Diaphoresis, Incontinence**</td></tr><tr><td>**Reflexes**</td><td>**Hyperreflexia, Clonus**</td><td>**Normal or reduced**</td></tr><tr><td>**CK**</td><td>Normal or mildly ↑</td><td>**Markedly ↑ (1000–100,000+)**</td></tr><tr><td>**Key Drugs**</td><td>**SSRIs, SNRIs, MAOIs, Tramadol, Linezolid, Fentanyl, Ondansetron, Triptans, Lithium, St John's Wort**</td><td>**Antipsychotics (haloperidol > risperidone), Metoclopramide, Prochlorperazine, Tetrabenazine**</td></tr><tr><td>**Hunter Criteria**</td><td>Spontaneous clonus OR Inducible clonus + agitation/sweating OR Ocular clonus + agitation/sweating OR Tremor + hyperreflexia OR Hypertonia + Temp >38°C + ocular/inducible clonus</td><td>Levenson: Fever + Rigidity + Altered consciousness + Autonomic instability + CK↑ + Leukocytosis</td></tr><tr><td>**Antidote**</td><td>**Cyproheptadine 12mg stat then 2mg 2-hourly** (5-HT2A antagonist)</td><td>**Dantrolene 1–2.5mg/kg IV** (ryanodine receptor) / **Bromocriptine 2.5–7.5mg/day** (D2 agonist)</td></tr><tr><td>**Supportive**</td><td>Cooling, IV fluids, Benzodiazepines (lorazepam), Stop all serotonergic drugs</td><td>Cooling, IV fluids, Stop offending drug, ICU monitoring</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🧠 Drug-Induced Encephalopathy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Key Drugs</th><th>Features</th></tr><tr><td>------</td><td>-----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Valproate Hyperammonaemic Encephalopathy**</td><td>**↑ Ammonia** (inhibits carbamoyl phosphate synthetase → urea cycle)</td><td>**Valproate** (esp. high dose, polytherapy, liver disease, carnitine deficiency)</td><td>Confusion, lethargy, ↓ consciousness, **normal LFTs**, **↑ ammonia**; **L-carnitine 100mg/kg IV**</td></tr><tr><td>**Lithium Encephalopathy**</td><td>Neurotoxicity (↑ intracellular Li⁺)</td><td>Lithium (toxicity >1.5 mmol/L)</td><td>Tremor, confusion, ataxia, seizures, NDI; **dialysis if >2.5 or severe**</td></tr><tr><td>**Phenytoin Encephalopathy**</td><td>Cerebellar toxicity</td><td>Phenytoin (level >20 µg/mL)</td><td>Nystagmus, ataxia, dysarthria, confusion</td></tr><tr><td>**Immunosuppressant PRES**</td><td>Endothelial dysfunction, failed autoregulation</td><td>**Tacrolimus, Ciclosporin, Sirolimus, VEGF inhibitors, EPO**</td><td>**Headache, visual disturbances, seizures, altered consciousness**; MRI: parietal-occipital vasogenic oedema; **stop drug, BP control**</td></tr><tr><td>**Ifosfamide / 5-FU Encephalopathy**</td><td>Neurotoxic metabolites (chloroacetaldehyde)</td><td>Ifosfamide, 5-FU</td><td>Confusion, hallucinations, seizures; **methylene blue for ifosfamide**</td></tr><tr><td>**Hypertensive Encephalopathy**</td><td>BP > autoregulation limit</td><td>Any drug causing severe HTN (MAOI+tyramine, clonidine withdrawal, EPO, CNI)</td><td>Headache, visual changes, seizures; **controlled BP reduction**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">⚡ Peripheral Neuropathy — Drug-Induced</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Neuropathy Type</th><th>Features</th><th>Prevention/Management</th></tr><tr><td>------</td><td>-----------------</td><td>----------</td><td>----------------------</td></tr><tr><td>**Isoniazid**</td><td>**Sensory axonal** (B6 deficiency)</td><td>Stocking-glove numbness, parasthesia</td><td>**Pyridoxine (B6) 10–50mg/day prophylactically**</td></tr><tr><td>**Vincristine / Vinblastine**</td><td>**Sensorimotor axonal** (autonomic prominent)</td><td>Foot drop, ileus, orthostatic hypotension, jaw pain</td><td>Dose reduction, hold if severe</td></tr><tr><td>**Bortezomib**</td><td>**Sensory axonal** (painful)</td><td>Distal numbness, pain, allodynia</td><td>Dose reduction (1.3→0.7mg/m²), subcutaneous</td></tr><tr><td>**Thalidomide / Lenalidomide**</td><td>**Sensory axonal** (permanent risk)</td><td>Distal numbness, pain</td><td>Dose reduction, hold; **avoid in pre-existing**</td></tr><tr><td>**Metronidazole**</td><td>**Sensory axonal** (dose/duration dependent)</td><td>Peripheral neuropathy, encephalopathy</td><td>Limit duration; hold if symptoms</td></tr><tr><td>**Nitrofurantoin**</td><td>**Sensorimotor axonal**</td><td>Chronic use; may be irreversible</td><td>Avoid chronic use; monitor</td></tr><tr><td>**Linezolid**</td><td>**Sensory axonal + optic neuropathy**</td><td>>2 weeks use</td><td>Avoid >14 days if possible</td></tr><tr><td>**Phenytoin**</td><td>**Sensorimotor axonal** (chronic)</td><td>Gingival hyperplasia, ataxia, neuropathy</td><td>Monitor levels; folate supplementation</td></tr><tr><td>**Amiodarone**</td><td>**Sensorimotor axonal** (chronic)</td><td>Distal numbness, tremor</td><td>Dose reduction</td></tr><tr><td>**Statins**</td><td>Rare, immune-mediated necrotising myopathy + neuropathy</td><td>Severe weakness, ↑ CK</td><td>Stop statin; immunosuppression</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Emergency</th><th>Key Features</th><th>Antidote/Specific Rx</th></tr><tr><td>-----------</td><td>--------------</td><td>----------------------</td></tr><tr><td>**Serotonin Syndrome**</td><td>Clonus, hyperreflexia, hypertonia, fever, tachycardia, agitation</td><td>**Cyproheptadine 12mg stat → 2mg 2-hourly**; benzodiazepines, cooling</td></tr><tr><td>**NMS**</td><td>Lead-pipe rigidity, bradykinesia, fever, CK↑↑, altered consciousness</td><td>**Dantrolene 1–2.5mg/kg IV**; Bromocriptine 2.5–7.5mg/day</td></tr><tr><td>**Valproate Encephalopathy**</td><td>Confusion, normal LFTs, **↑ ammonia**</td><td>**L-carnitine 100mg/kg IV**</td></tr><tr><td>**PRES (Tacrolimus/Ciclosporin)**</td><td>Headache, visual loss, seizures, MRI parietal-occipital oedema</td><td>**Stop drug, BP control**</td></tr><tr><td>**Lithium Toxicity**</td><td>Tremor, confusion, ataxia, seizures, NDI; level >1.5</td><td>**Dialysis if >2.5 or severe**; fluid resuscitation</td></tr><tr><td>**INH Neuropathy**</td><td>Stocking-glove sensory</td><td>**Pyridoxine (B6) 10–50mg/day prophylaxis**</td></tr><tr><td>**Vincristine Neuropathy**</td><td>Foot drop, ileus, autonomic</td><td>Dose reduce/hold</td></tr><tr><td>**BZD Withdrawal Seizures**</td><td>Tonic-clonic, 1–7 days post-stop</td><td>**IV Lorazepam/Diazepam**; restart + slow taper</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Serotonin Syndrome vs NMS — 3 key distinguishing features?</td><td>**Onset: SS rapid (hrs) vs NMS slow (days); Motor: SS clonus/hyperreflexia vs NMS lead-pipe rigidity/bradykinesia; CK: SS normal/mild vs NMS markedly ↑; Reflexes: SS hyperreflexia vs NMS normal/reduced**</td></tr><tr><td>2. Hunter Criteria for Serotonin Syndrome?</td><td>Spontaneous clonus OR Inducible clonus + agitation/sweating OR Ocular clonus + agitation/sweating OR Tremor + hyperreflexia OR Hypertonia + Temp>38°C + ocular/inducible clonus</td></tr><tr><td>3. Cyproheptadine dose for Serotonin Syndrome?</td><td>**12mg stat (PO/NG), then 2mg 2-hourly PRN** (max 32mg/24h); 5-HT2A antagonist</td></tr><tr><td>4. NMS management — specific antidotes?</td><td>**Dantrolene 1–2.5mg/kg IV** (ryanodine receptor, reduces Ca²⁺ release); **Bromocriptine 2.5–7.5mg/day PO/NG** (D2 agonist); supportive cooling, fluids, stop drug</td></tr><tr><td>5. Valproate hyperammonaemic encephalopathy — mechanism, treatment?</td><td>**Inhibits carbamoyl phosphate synthetase I → urea cycle dysfunction → ↑ ammonia**; **L-carnitine 100mg/kg IV**; stop valproate</td></tr><tr><td>6. PRES — drugs, presentation, management?</td><td>**Tacrolimus, Ciclosporin, Sirolimus, VEGF inhibitors, EPO**; Headache, visual loss, seizures, altered consciousness; MRI: parietal-occipital vasogenic oedema; **Stop drug, controlled BP reduction**</td></tr><tr><td>7. INH neuropathy prevention?</td><td>**Pyridoxine (B6) 10–50mg/day prophylactically**</td></tr><tr><td>8. Vincristine neuropathy — characteristic features?</td><td>**Foot drop, ileus (autonomic), jaw pain, orthostatic hypotension**; dose-limiting</td></tr><tr><td>9. Lithium toxicity — levels, management?</td><td>**>1.5 mmol/L = toxicity; >2.5 or severe = dialysis**; fluid resuscitation, stop lithium</td></tr><tr><td>10. Phenytoin cerebellar toxicity — features?</td><td>**Nystagmus, ataxia, dysarthria** (level >20 µg/mL)</td></tr><tr><td>11. Drug-induced seizure threshold lowering — 5 high-risk drugs?</td><td>**Bupropion, Tramadol, Clozapine, Theophylline, Quinolones (moxifloxacin), Imipenem, High-dose penicillins, Cyclosporine, BZD withdrawal**</td></tr><tr><td>12. Metoclopramide acute dystonia — treatment?</td><td>**IV Procyclidine 5mg / Benztropine 1–2mg IV**; anticholinergic; diphenhydramine IV alternative</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Serotonin Syndrome vs NMS**</td><td>SS = **hyperreflexia, clonus, rapid onset**; NMS = **rigidity, bradykinesia, CK↑↑, slow onset**</td></tr><tr><td>**Cyproheptadine vs Dantrolene**</td><td>Cyproheptadine = **5-HT2A antagonist** (Serotonin Syndrome); Dantrolene = **ryanodine receptor antagonist** (NMS, MH)</td></tr><tr><td>**Valproate encephalopathy = liver failure?**</td><td>**No** — LFTs often normal; **ammonia ↑** due to urea cycle inhibition</td></tr><tr><td>**PRES = stroke?**</td><td>No — **vasogenic oedema**, reversible; posterior circulation (parietal-occipital)</td></tr><tr><td>**INH neuropathy = reversible?**</td><td>**Yes if caught early + B6**; may be permanent if advanced</td></tr><tr><td>**Lithium NDI vs encephalopathy**</td><td>NDI = polyuria, hypernatremia; Encephalopathy = tremor, confusion, seizures</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"HUNTER FOR SEROTONIN"</b> = <b>H</b>yperreflexia, <b>U</b>nderlying clonus (<b>inducible/spontaneous/ocular</b>), <b>N</b>ystagmus (no, that's phenytoin — correct: <b>N</b>o, it's <b>T</b>remor), <b>T</b>remor, <b>E</b>rrigidity (hypertonia), <b>R</b>apid onset → <b>Cyproheptadine</b></li><li><b>"NMS = LEAD PIPE"</b> = <b>L</b>ead-pipe rigidity, <b>E</b>levated CK, <b>A</b>ltered consciousness, <b>D</b>ays-weeks onset; <b>P</b>yrexia, <b>I</b>nstability (autonomic), <b>P</b>allor, <b>E</b>levated WBC</li><li><b>"VALPROATE AMMONIA"</b> = <b>V</b>alproate → <b>U</b>rea cycle inhibition → <b>A</b>mmonia ↑ → <b>E</b>ncephalopathy → <b>L</b>-carnitine</li><li><b>"PRES DRUGS"</b> = <b>P</b>osterior <b>R</b>eversible <b>E</b>ncephalopathy <b>S</b>yndrome = <b>T</b>acrolimus, <b>C</b>iclosporin, <b>S</b>irolimus, <b>V</b>EGF inhibitors, <b>E</b>PO</li><li><b>"INH NEUROPATHY"</b> = <b>I</b>soniazid → <b>B</b>6 deficiency → <b>P</b>yridoxine prophylaxis</li><li><b>"VINCRISTINE = FOOT DROP + ILEUS"</b> = Sensorimotor + autonomic</li><li><b>"LITHIUM DIALYSIS"</b> = <b>&gt;2.5 mmol/L</b> or <b>severe toxicity</b> → dialysis</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Neurological ADRs)) Emergencies Serotonin Syndrome 5-HT2A excess Hunter Criteria Cyproheptadine 12mg stat Drugs: SSRI, SNRI, MAOI, Tramadol, Linezolid, Fentanyl, Ondansetron, Triptans NMS D2 blockade Lead-pipe rigidity, CK↑↑ Dantrolene, Bromocriptine Drugs: Antipsychotics, Metoclopramide, Prochlorperazine Encephalopathy Valproate (Hyperammonaemia → L-carnitine) Lithium (Neurotoxicity → dialysis &gt;2.5) Phenytoin (Cerebellar: nystagmus, ataxia) PRES (Tacro/Ciclo/Siro/VEGF/EPO → stop, BP control) Ifosfamide/5-FU (Metabolites) Peripheral Neuropathy INH (B6 def → Pyridoxine) Vincristine (Foot drop, ileus) Bortezomib (Painful sensory) Thalidomide/Lenalidomide Metronidazole, Nitrofurantoin, Linezolid Phenytoin, Amiodarone, Statins (rare) Seizures (Lowered Threshold) Bupropion, Tramadol, Clozapine, Theophylline Quinolones, Imipenem, High-dose penicillins Antipsychotics, Cyclosporine, BZD withdrawal EPS Acute dystonia (Metoclopramide → Procyclidine) Parkinsonism Akathisia Tardive dyskinesia Cerebellar Phenytoin, Carbamazepine, Lithium, 5-FU, Cytarabine, Tacrolimus, Metronidazole </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Classification table</td><td>8</td><td></td></tr><tr><td>SS vs NMS comparison</td><td>12</td><td></td></tr><tr><td>Encephalopathy types</td><td>10</td><td></td></tr><tr><td>Peripheral neuropathy table</td><td>10</td><td></td></tr><tr><td>Seizure threshold drugs</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td></tr><tr><td>**Total**</td><td>**58**</td><td></td></tr></table>
+<p><b>Target</b>: ≥46/58 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Differentiate Serotonin Syndrome from Neuroleptic Malignant Syndrome. Outline management of each."*</div>
+<ol><li><b>Comparison Table</b> (4): Mechanism, Onset, Mental status, Motor, Autonomic, Reflexes, CK, Key drugs, Antidotes, Supportive</li><li><b>Serotonin Syndrome Management</b> (3): Stop all serotonergic drugs, <b>Cyproheptadine 12mg → 2mg 2-hourly</b>, Benzodiazepines, Cooling, IV fluids, ICU if severe</li><li><b>NMS Management</b> (3): Stop offending drug, <b>Dantrolene 1–2.5mg/kg IV</b>, Bromocriptine 2.5–7.5mg/day, Cooling, IV fluids, ICU, avoid depolarising muscle relaxants</li></ol>
+<div class="sub-h">Short Question (5 marks): *"Hunter Criteria for Serotonin Syndrome"*</div>
+<ul><li>Spontaneous clonus <b>OR</b></li><li>Inducible clonus + agitation/sweating <b>OR</b></li><li>Ocular clonus + agitation/sweating <b>OR</b></li><li>Tremor + hyperreflexia <b>OR</b></li><li>Hypertonia + Temp &gt;38°C + ocular/inducible clonus</li></ul>
+<div class="sub-h">Viva (2 min): *"Patient on sertraline 100mg, started linezolid for MRSA. 24h later: agitated, clonus, hyperreflexia, temp 39°C, tachycardia. Diagnosis? Management?"*</div>
+<ul><li><b>Serotonin Syndrome</b> (SSRI + Linezolid = MAO inhibition)</li><li><b>Stop sertraline AND linezolid immediately</b></li><li><b>Cyproheptadine 12mg stat PO/NG, then 2mg 2-hourly PRN</b></li><li>IV lorazepam 1–2mg for agitation</li><li>Cooling, IV fluids, cardiac monitoring</li><li>ICU if severe (hyperthermia &gt;41°C, DIC, rhabdo)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on valproate 1500mg/day, confused, drowsy. LFTs normal. Ammonia 180 (normal &lt;50). Diagnosis? Treatment?"*</div>
+<ul><li><b>Valproate hyperammonaemic encephalopathy</b></li><li><b>Stop valproate</b></li><li><b>L-carnitine 100mg/kg IV</b></li><li>Switch to alternative AED (levetiracetam, lamotrigine)</li><li>Monitor ammonia, consciousness</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>SS = 5-HT2A excess → Clonus, Hyperreflexia, Fever → <b>Cyproheptadine</b></li><li>NMS = D2 blockade → Rigidity, Bradykinesia, CK↑↑ → <b>Dantrolene, Bromocriptine</b></li><li>Valproate encephalopathy = <b>Normal LFTs, ↑ Ammonia</b> → <b>L-carnitine 100mg/kg</b></li><li>PRES = Tacro/Ciclo/Siro → Headache, visual loss, seizures → <b>Stop drug, BP control</b></li><li>INH neuropathy = <b>Pyridoxine (B6) prophylaxis</b></li><li>Vincristine = Foot drop + Ileus (autonomic)</li><li>Lithium toxicity &gt;1.5 = toxic, &gt;2.5 = dialysis</li><li>Phenytoin cerebellar = Nystagmus, ataxia (level &gt;20)</li><li>BZD withdrawal seizure = restart + slow taper</li><li>Metoclopramide dystonia = IV Procyclidine/Benztropine</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>NEURO EMERGENCY TRIAD:</b> 1. <b>SEROTONIN SYNDROME</b> → <b>Clonus + Hyperreflexia + Fever</b> → <b>Cyproheptadine 12mg stat</b> 2. <b>NMS</b> → <b>Lead-pipe Rigidity + Bradykinesia + CK↑↑</b> → <b>Dantrolene 1–2.5mg/kg IV</b> 3. <b>VALPROATE ENCEPHALOPATHY</b> → <b>Confusion + Normal LFTs + ↑ Ammonia</b> → <b>L-carnitine 100mg/kg IV</b>  <b>PRES</b> = Tacro/Ciclo/Siro → Visual loss + Seizures → <b>Stop drug, BP control</b> <b>INH Neuropathy</b> = <b>Pyridoxine (B6) prophylaxis</b> <b>Lithium Toxicity</b> &gt;2.5 = <b>Dialysis</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Serotonin Syndrome — key diagnostic feature per Hunter Criteria:</b></li></ol>
+<p>A. Lead-pipe rigidity B. <b>Clonus (spontaneous/inducible/ocular)</b> ✓ C. CK &gt;10,000 D. Bradykinesia E. Hyporeflexia</p>
+<ol><li><b>NMS — characteristic motor finding:</b></li></ol>
+<p>A. Clonus B. Hyperreflexia C. <b>Lead-pipe rigidity with bradykinesia</b> ✓ D. Myoclonus E. Tremor</p>
+<ol><li><b>Cyproheptadine dose for Serotonin Syndrome:</b></li></ol>
+<p>A. 4mg stat B. 8mg stat C. <b>12mg stat, then 2mg 2-hourly</b> ✓ D. 16mg stat E. 2mg stat</p>
+<ol><li><b>Dantrolene mechanism in NMS:</b></li></ol>
+<p>A. 5-HT2A antagonism B. D2 agonism C. <b>Ryanodine receptor antagonism → inhibits Ca²⁺ release from sarcoplasmic reticulum</b> ✓ D. GABA agonism E. Dopamine depletion</p>
+<ol><li><b>Valproate hyperammonaemic encephalopathy — key lab finding:</b></li></ol>
+<p>A. ↑ ALT/AST B. <b>↑ Ammonia with normal LFTs</b> ✓ C. ↓ Sodium D. ↑ CK E. ↑ Lactate</p>
+<ol><li><b>L-carnitine dose for valproate encephalopathy:</b></li></ol>
+<p>A. 10mg/kg B. 50mg/kg C. <b>100mg/kg IV</b> ✓ D. 200mg/kg E. 500mg/kg</p>
+<ol><li><b>PRES — typical MRI finding:</b></li></ol>
+<p>A. Frontal lobe restricted diffusion B. <b>Parietal-occipital vasogenic oedema (T2/FLAIR hyperintensity)</b> ✓ C. Basal ganglia haemorrhage D. Cortical restricted diffusion E. Cerebellar atrophy</p>
+<ol><li><b>Drugs causing PRES:</b></li></ol>
+<p>A. Beta-blockers, ACEi B. <b>Tacrolimus, Ciclosporin, Sirolimus, VEGF inhibitors, EPO</b> ✓ C. SSRIs, SNRIs D. Statins, Fibrates E. PPIs, H2 blockers</p>
+<ol><li><b>Isoniazid neuropathy prevention:</b></li></ol>
+<p>A. Folic acid B. <b>Pyridoxine (B6) 10–50mg/day</b> ✓ C. Vitamin B12 D. Thiamine E. L-carnitine</p>
+<ol><li><b>Vincristine neuropathy — characteristic autonomic feature:</b></li></ol>
+<p>A. Urinary retention B. <b>Ileus</b> ✓ C. Orthostatic hypotension D. Erectile dysfunction E. Anhidrosis</p>
+<ol><li><b>Lithium toxicity — dialysis threshold:</b></li></ol>
+<p>A. &gt;1.0 mmol/L B. &gt;1.5 mmol/L C. <b>&gt;2.5 mmol/L (or severe toxicity at any level)</b> ✓ D. &gt;3.0 mmol/L E. &gt;4.0 mmol/L</p>
+<ol><li><b>Phenytoin cerebellar toxicity — features:</b></li></ol>
+<p>A. Tremor, rigidity B. <b>Nystagmus, ataxia, dysarthria</b> ✓ C. Choreoathetosis D. Myoclonus E. Dystonia</p>
+<ol><li><b>Metoclopramide acute dystonia — treatment:</b></li></ol>
+<p>A. IV Haloperidol B. <b>IV Procyclidine 5mg / Benztropine 1–2mg</b> ✓ C. IV Lorazepam D. IV Phenytoin E. IV Levodopa</p>
+<ol><li><b>Drug-induced seizure threshold lowering — highest risk antidepressant:</b></li></ol>
+<p>A. Sertraline B. <b>Bupropion</b> ✓ C. Citalopram D. Mirtazapine E. Venlafaxine</p>
+<ol><li><b>Ifosfamide encephalopathy — specific antidote:</b></li></ol>
+<p>A. L-carnitine B. <b>Methylene blue</b> ✓ C. N-acetylcysteine D. Pyridoxine E. Flumazenil</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>SS key feature</td><td>Clonus (spontaneous/inducible/ocular)</td></tr><tr><td>NMS key feature</td><td>Lead-pipe rigidity + bradykinesia</td></tr><tr><td>SS vs NMS onset</td><td>SS = rapid (hours); NMS = slow (days-weeks)</td></tr><tr><td>SS vs NMS reflexes</td><td>SS = hyperreflexia/clonus; NMS = normal/reduced</td></tr><tr><td>SS vs NMS CK</td><td>SS = normal/mild ↑; NMS = markedly ↑</td></tr><tr><td>Cyproheptadine dose</td><td>12mg stat → 2mg 2-hourly PRN (5-HT2A antagonist)</td></tr><tr><td>Dantrolene dose</td><td>1–2.5mg/kg IV (ryanodine receptor antagonist)</td></tr><tr><td>Bromocriptine dose</td><td>2.5–7.5mg/day PO/NG (D2 agonist)</td></tr><tr><td>Valproate encephalopathy</td><td>Normal LFTs + ↑ ammonia → L-carnitine 100mg/kg IV</td></tr><tr><td>PRES drugs</td><td>Tacrolimus, Ciclosporin, Sirolimus, VEGF inhibitors, EPO</td></tr><tr><td>PRES MRI</td><td>Parietal-occipital vasogenic oedema</td></tr><tr><td>INH neuropathy prophylaxis</td><td>Pyridoxine (B6) 10–50mg/day</td></tr><tr><td>Vincristine neuropathy</td><td>Foot drop + Ileus (autonomic)</td></tr><tr><td>Lithium toxicity dialysis</td><td>>2.5 mmol/L or severe</td></tr><tr><td>Phenytoin cerebellar</td><td>Nystagmus, ataxia, dysarthria (level >20)</td></tr><tr><td>Metoclopramide dystonia</td><td>IV Procyclidine 5mg / Benztropine 1–2mg</td></tr><tr><td>Bupropion seizure risk</td><td>Highest among antidepressants</td></tr><tr><td>Theophylline seizure</td><td>Level >20 mg/L</td></tr><tr><td>Ifosfamide encephalopathy</td><td>Methylene blue</td></tr><tr><td>Linezolid neuropathy</td><td>>14 days use → sensory axonal + optic</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Clonus is the hallmark Hunter criterion</li><li><b>C</b> — Lead-pipe rigidity with bradykinesia</li><li><b>C</b> — 12mg stat, then 2mg 2-hourly</li><li><b>C</b> — Ryanodine receptor antagonism</li><li><b>B</b> — ↑ Ammonia with normal LFTs</li><li><b>C</b> — 100mg/kg IV</li><li><b>B</b> — Parietal-occipital vasogenic oedema</li><li><b>B</b> — Tacrolimus, Ciclosporin, Sirolimus, VEGF inhibitors, EPO</li><li><b>B</b> — Pyridoxine (B6) 10–50mg/day</li><li><b>B</b> — Ileus (autonomic)</li><li><b>C</b> — &gt;2.5 mmol/L or severe</li><li><b>B</b> — Nystagmus, ataxia, dysarthria</li><li><b>B</b> — IV Procyclidine/Benztropine (anticholinergic)</li><li><b>B</b> — Bupropion highest seizure risk among antidepressants</li><li><b>B</b> — Methylene blue for ifosfamide</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/Neurological ADRs.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Neurological Adrs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

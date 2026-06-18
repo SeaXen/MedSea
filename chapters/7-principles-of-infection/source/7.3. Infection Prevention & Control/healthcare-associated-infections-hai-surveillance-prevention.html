@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Healthcare Associated Infections Hai Surveillance Prevention — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.3. INFECTION PREVENTION & CONTROL</span>
+      <div class="h1">Healthcare Associated Infections Hai Surveillance Prevention</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define healthcare-associated infection (HAI) and apply NHSN/ECDC surveillance criteria.</li><li>Describe the epidemiology, microbiology, pathogenesis, and risk factors of the Big 5 HAIs (CAUTI, SSI, VAP/VAE, CLABSI, CDI) plus HAP and <i>C. auris</i>.</li><li>Apply the <b>central line bundle</b>, <b>catheter (CAUTI) bundle</b>, <b>ventilator bundle (IHI VAP bundle)</b>, and <b>SSI bundle</b>.</li><li>Calculate and interpret <b>device-utilisation ratio (DUR)</b>, <b>device-associated infection rate (DAIR)</b>, and <b>standardised infection ratio (SIR)</b>.</li><li>Diagnose and treat <b>CDI</b>, including recurrent disease and the role of <b>FMT / live biotherapeutics (VOWST, REBYOTA)</b>.</li><li>Apply <b>C. difficile</b> prevention (stewardship, contact precautions, sporicidal cleaning, soap-and-water hand washing).</li><li>Design an HAI surveillance programme (active, prospective, risk-adjusted, denominator-based) using NHSN/EPS/GLASS definitions.</li><li>Discuss quality-improvement methodology (PDSA, run charts, control charts, NHSN TAP, IHI bundles).</li><li>Discuss novel prevention strategies (chlorhexidine bathing, antimicrobial catheters, UV-C, hydrogen peroxide vapour, <i>C. auris</i> containment, decolonisation).</li><li>Outline the role of the IPC team, link nurse, hospital epidemiologist, and the WHO IPC core components.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**HAI (Nosocomial infection)**</td><td>An infection occurring in a patient ≥48 h after admission to a healthcare facility that was neither present nor incubating at admission. Also: within 30 d of surgery (90 d for implants) or 7 d after discharge with no community source.</td></tr><tr><td>**Community-onset vs HAI**</td><td>Community-onset = infection present or incubating <48 h after admission. HAI = ≥48 h, OR a surgical-site infection meeting the 30/90-day rule, OR an infection at the site of recent invasive device.</td></tr><tr><td>**CAUTI**</td><td>Catheter-Associated Urinary Tract Infection: indwelling Foley in place **>2 calendar days** (with day of insertion = day 1) **AND** at least one of: fever >38 °C, suprapubic tenderness, costovertebral angle tenderness, urinary urgency/frequency/dysuria **AND** positive urine culture ≥10⁵ CFU/mL of ≤2 species (NHSN 2024).</td></tr><tr><td>**CLABSI**</td><td>Central Line-Associated Bloodstream Infection: central line in place **>2 calendar days** with the line still present on the day of the positive blood culture (or removed the previous day) **AND** a recognised pathogen in ≥1 blood culture **OR** fever/chills/hypotension **AND** common skin contaminant in ≥2 blood cultures drawn on separate occasions, with the organism not related to infection at another site.</td></tr><tr><td>**MBI-LCBI**</td><td>Mucosal Barrier Injury Laboratory-Confirmed Bloodstream Infection — a subcategory of LCBI in neutropenic or stem-cell transplant patients where the BSI is attributed to translocation rather than the line.</td></tr><tr><td>**VAP**</td><td>Ventilator-Associated Pneumonia: new or progressive radiographic infiltrate **PLUS** systemic (fever/leukopenia/leukocytosis/altered mental status) **PLUS** pulmonary (worsening gas exchange, sputum, crackles, tachypnoea) signs after ≥2 calendar days of mechanical ventilation. (NHSN PNU1 algorithm; often replaced by VAE.)</td></tr><tr><td>**VAE**</td><td>Ventilator-Associated Event: a tiered, objective surveillance paradigm (VAC → IVAC → possible/probable VAP) introduced 2013 to improve objectivity.</td></tr><tr><td>**SSI**</td><td>Surgical Site Infection: superficial incisional (skin + subcutaneous), deep incisional (fascia + muscle), or organ/space (any part of the body deeper than the fascia). Timeframe: 30 d for most surgeries; **90 d for implants** (joint, mesh, prosthesis).</td></tr><tr><td>**CDI / C. difficile infection**</td><td>≥3 unformed (Bristol 6–7) stools in 24 h **AND** positive laboratory test (NAAT/PCR toxin gene, GDH + toxin EIA, or cell culture cytotoxicity) **OR** pseudomembranous colitis on endoscopy.</td></tr><tr><td>**HAP**</td><td>Hospital-Acquired Pneumonia: pneumonia occurring ≥48 h after admission that was not incubating at admission.</td></tr><tr><td>**VAP → IVAC → PVAP**</td><td>VAE tiers: VAC = worsening oxygenation after ≥2 d MV; IVAC = VAC + abnormal temp/WCC **and** new antimicrobial started and continued ≥4 d; PVAP = IVAC + purulent secretions **and** positive respiratory culture.</td></tr><tr><td>**Bundle**</td><td>A small (3–5) set of evidence-based interventions performed collectively and reliably to improve outcome. Insertion + maintenance bundles are standard for all device HAIs.</td></tr><tr><td>**DUR (Device Utilisation Ratio)**</td><td>Device-days ÷ patient-days; measures how aggressively devices are used (lower = better when not required).</td></tr><tr><td>**DAIR (Device-Associated Infection Rate)**</td><td>HAI count ÷ device-days × 1000 — the standard HAI rate.</td></tr><tr><td>**SIR (Standardised Infection Ratio)**</td><td>Observed HAIs ÷ Expected (risk-adjusted predicted) HAIs. SIR < 1 = better than baseline; > 1 = worse. Used for benchmarking and CMS pay-for-reporting.</td></tr><tr><td>**NHSN**</td><td>National Healthcare Safety Network (CDC, USA) — primary HAI surveillance system; defines SSI, CLABSI, CAUTI, VAE, LabID events (CDI, MRSA BSI, VRE BSI).</td></tr><tr><td>**ECDC PPS**</td><td>European Centre for Disease Prevention and Control Point Prevalence Survey — repeated national point-prevalence surveys of HAI and antimicrobial use.</td></tr><tr><td>**GLASS**</td><td>WHO Global Antimicrobial Resistance and Use Surveillance System — includes HAI reporting component.</td></tr><tr><td>**Antibiogram**</td><td>Cumulative susceptibility table of isolates from a unit/hospital over a defined period (usually 1 year) to inform empirical therapy.</td></tr><tr><td>**Bundle compliance**</td><td>Per cent of insertions in which all bundle elements were performed and documented. Independent predictor of HAI reduction.</td></tr><tr><td>**IPC Core Components**</td><td>WHO 8 core components (2022): IPC programmes; guidelines; education; HAI surveillance; multimodal strategies; monitoring/audit; workload/staffing; built environment/materials.</td></tr><tr><td>**PDSA cycle**</td><td>Plan–Do–Study–Act: iterative QI method for testing change.</td></tr><tr><td>**AHRQ/HHS TAP**</td><td>Targeted Assessment for Prevention — NHSN analytic strategy to identify facilities/units with the greatest excess HAIs.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: HAI — Definition, Scope, and Burden</div>
+<p>#### 1.1 What is an HAI?</p>
+<p>An HAI (synonyms: nosocomial infection, hospital-acquired infection) is an infection whose onset occurs <b>after admission to a healthcare facility</b> and which was <b>not present or incubating at the time of admission</b>. The classical cut-off is <b>≥48 h after admission</b>, but device- and procedure-related HAIs use specific windows:</p>
+<table class="ctable"><tr><th>Event</th><th>HAI window</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>Generic HAI</td><td>≥48 h after admission (day of admission = day 0)</td></tr><tr><td>SSI</td><td>≤30 d after surgery (≤90 d if implant/prosthesis/mesh in place)</td></tr><tr><td>CDI (LabID)</td><td>Day 3 onwards (positive specimen collected on day 3 or later, where day 1 = admission day)</td></tr><tr><td>CLABSI / CAUTI</td><td>Device in place >2 calendar days **with the device still present on the date-of-event** or the day before</td></tr><tr><td>VAP/VAE</td><td>≥2 calendar days of mechanical ventilation with day of event on or after day 3</td></tr></table>
+<div class="callout">The "<b>day of admission = day 1</b>" convention (NHSN) — once a patient has spent <b>3 calendar days</b> in the facility, an infection is presumed to be HAI unless clearly community-imported (e.g. present on admission / POA).</div>
+<p>#### 1.2 Epidemiology and Burden</p>
+<ul><li><b>Global burden:</b> WHO estimates <b>7–15% of admitted patients</b> acquire an HAI; in LMIC the prevalence is 2–20× higher (2 million HAIs/year in the US; ~37 000 attributable deaths in Europe/year).</li><li><b>Most common HAIs (descending frequency in adults):</b></li></ul>
+<ol><li><b>CAUTI</b> — the most common HAI overall (~40% of all HAIs).</li><li><b>SSI</b> — most common in surgical patients; biggest cost.</li><li><b>VAP/VAE</b> — most common in ICU.</li><li><b>CLABSI</b> — highest attributable mortality.</li><li><b>CDI</b> — most common cause of infectious diarrhoea in hospitalised patients.</li></ol>
+<ul><li><b>Cost:</b> A single SSI of joint arthroplasty adds <b>$20 000–30 000</b> to the cost of care and 7–10 inpatient days; CLABSI adds ~<b>$45 000</b>; VAP adds <b>$40 000</b>; CAUTI adds <b>$1000–3000</b> per episode. The annual cost to the US health system is <b>$28–45 billion</b>.</li><li><b>Attributable mortality:</b> CLABSI 12–25%, VAP 13%, SSI 3% (variable by procedure), CDI ~6% (30-day).</li><li><b>Quality and policy:</b> HAIs are now part of mandatory public reporting (NHSN, ECDC) and CMS pay-for-performance (HAC Reduction Program; Hospital-Acquired Condition Reduction Program).</li></ul>
+<p>#### 1.3 Sources and Routes of Transmission</p>
+<table class="ctable"><tr><th>Source</th><th>Examples</th><th>Route</th></tr><tr><td>--------</td><td>----------</td><td>-------</td></tr><tr><td>**Endogenous (patient's own flora)**</td><td>E. coli, *Klebsiella*, *C. albicans*, *S. aureus* carriers</td><td>Aspiration, translocation, wound contamination</td></tr><tr><td>**Exogenous — patient-to-patient**</td><td>MRSA, VRE, *C. difficile*, MDR-GNB</td><td>Hands of staff (most important), shared equipment, environment</td></tr><tr><td>**Exogenous — environment**</td><td>*Pseudomonas* (water taps, sinks, bronchoscopes), *A. baumannii* (bedrails), *Aspergillus* (construction dust), *Legionella* (water), *C. auris* (persistent environmental coloniser)</td><td>Aerosol, contact, ingestion</td></tr><tr><td>**Healthcare worker**</td><td>HBV, HCV, HIV, *B. pertussis*, influenza, SARS-CoV-2</td><td>Inoculation injury, droplet, airborne</td></tr><tr><td>**Blood/blood products**</td><td>HBV, HCV, HIV, *Babesia*, *W. bancrofti*</td><td>Transfusion</td></tr></table>
+<p><b>Five moments of hand hygiene</b> (WHO) are the cornerstone of interrupting the dominant transmission route.</p>
+<p>#### 1.4 Risk Factors</p>
+<table class="ctable"><tr><th>Domain</th><th>Examples</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Patient**</td><td>Age (extremes), immunosuppression, diabetes, malnutrition, obesity, colonisation (MRSA, MDR-GNB), severity of illness (APACHE, ASA, McCabe)</td></tr><tr><td>**Device**</td><td>Indwelling catheter, central line, endotracheal tube, drain, NG tube, prosthetic implant, surgical wound</td></tr><tr><td>**Procedure**</td><td>Duration of surgery, emergency surgery, surgical technique, blood transfusion, parenteral nutrition, mechanical ventilation</td></tr><tr><td>**Institutional**</td><td>High device-utilisation ratio, low nurse-to-patient ratio, crowding, suboptimal cleaning, contaminated water, construction, high antibiotic pressure</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Catheter-Associated Urinary Tract Infection (CAUTI)</div>
+<p>#### 2.1 Epidemiology and Pathogenesis</p>
+<ul><li><b>CAUTI is the most common HAI</b> (≈40% of all HAIs in adults in many series) and accounts for ~17% of all HAI in ICUs (NHSN ICU report).</li><li><b>Catheter prevalence:</b> 15–25% of hospitalised patients have an indwelling Foley at any time; 5–10% will develop bacteriuria per day of catheterisation (cumulative risk 100% by day 30).</li><li><b>Microbiology:</b> Gram-negative bacilli predominate — <i>E. coli</i>, <i>Klebsiella pneumoniae</i>, <i>Proteus mirabilis</i>, <i>Pseudomonas aeruginosa</i>, <i>Enterobacter</i>, <i>Serratia</i>, <i>Morganella</i>, <i>Providencia</i>; Gram-positives — <i>Enterococcus</i>, <i>S. aureus</i> (including MRSA), coagulase-negative staphylococci; <i>Candida</i> spp. (often from colonisation rather than true infection).</li><li><b>Route:</b> periurethral (extraluminal, 66%) &gt; intraluminal (reflux of contaminated urine, 33%) &gt; rarely haematogenous.</li><li><b>Biofilm</b> forms within 24–48 h on the catheter surface and protects organisms from host defences and antibiotics.</li></ul>
+<p>#### 2.2 Risk Factors</p>
+<table class="ctable"><tr><th>Risk factor</th><th>Comment</th></tr><tr><td>-------------</td><td>---------</td></tr><tr><td>Duration of catheterisation (most important)</td><td>Risk ≈ 3–7%/day of bacteriuria; beyond 30 d essentially universal</td></tr><tr><td>Female sex</td><td>Shorter urethra</td></tr><tr><td>Diabetes</td><td>Higher glucose in urine, glycosylation of uroepithelium</td></tr><tr><td>Immunosuppression</td><td>Reduced defences</td></tr><tr><td>Antibiotic use</td><td>Selects MDR organisms and *Candida*</td></tr><tr><td>Improper aseptic technique at insertion</td><td>Introduces periurethral flora</td></tr><tr><td>Breach of closed drainage system</td><td>Intraluminal contamination</td></tr><tr><td>Severe underlying illness (high APACHE)</td><td>Reflects global vulnerability</td></tr><tr><td>Older age, paralysis, neurogenic bladder</td><td>Retention, incomplete emptying</td></tr></table>
+<p>#### 2.3 NHSN CAUTI Definition (2024)</p>
+<p><b>All three</b> must be present:</p>
+<ol><li><b>Indwelling Foley catheter in place &gt;2 calendar days</b> (with day of insertion = day 1) and still in place on the date-of-event (or removed the day before).</li><li><b>At least one of:</b> fever (&gt;38.0 °C); suprapubic tenderness; costovertebral angle pain/tenderness; urinary urgency, frequency, or dysuria.</li><li><b>Urine culture with ≥10⁵ CFU/mL of no more than 2 species of microorganisms.</b></li></ol>
+<p>Asymptomatic bacteriuria (ASB) <b>does not count</b> as a CAUTI (only symptomatic UTI). <b>Pyuria alone is not diagnostic.</b> Yeast and moulds do not count toward CAUTI in NHSN surveillance (separate candiduria definition).</p>
+<p>#### 2.4 Clinical Presentation and Diagnosis</p>
+<ul><li>Symptomatic: dysuria, frequency, urgency, suprapubic pain, fever, flank pain, CVA tenderness, altered mental status (elderly), haematuria.</li><li><b>Catheter-associated asymptomatic bacteriuria (CA-ABU)</b> — common; do <b>not</b> treat except in pregnancy and pre-urological surgery (SHEA 2019, IDSA 2019).</li><li><b>Do not obtain routine urine cultures</b> when catheter is in place without symptoms (drives antibiotic overuse and resistance).</li><li><b>If catheter has been in place &gt;2 weeks</b> and symptomatic UTI suspected: <b>replace the catheter first</b> then culture the freshly placed catheter, because biofilm on the old catheter yields misleading flora.</li></ul>
+<p>#### 2.5 Treatment of CAUTI</p>
+<table class="ctable"><tr><th>Severity</th><th>Empirical regimen (adjust to culture & susceptibilities)</th></tr><tr><td>----------</td><td>------------------------------------------------------------</td></tr><tr><td>Uncomplicated, mild</td><td>Nitrofurantoin (if CrCl >30), fosfomycin, pivmecillinam</td></tr><tr><td>Moderate / systemic</td><td>3rd-gen cephalosporin, β-lactam/β-lactamase inhibitor, or fluoroquinolone; de-escalate to culture</td></tr><tr><td>*Pseudomonas* suspected</td><td>Piperacillin-tazobactam, cefepime, ceftazidime, carbapenem (per local susceptibility)</td></tr><tr><td>*Candida*</td><td>Fluconazole (if susceptible) or echinocandin</td></tr><tr><td>**Remove or replace catheter**</td><td>**Strongly recommended** for any symptomatic CAUTI; biofilm sterilisation is impossible otherwise</td></tr></table>
+<p><b>Duration:</b> 7 d for uncomplicated CAUTI responding to therapy; 10–14 d if complicated (urosepsis, pyelonephritis, structural abnormality). For candiduria asymptomatic, <b>do not treat</b> except pregnant patients and pre-urological surgery.</p>
+<p>#### 2.6 CAUTI Prevention — The <b>Catheter Bundle</b></p>
+<p><b>A. Avoid unnecessary catheterisation:</b></p>
+<ul><li>Daily review of catheter necessity — a "<b>Foley Friday</b>" or daily electronic prompt.</li><li>Strict indications (acute retention, output monitoring in critically ill, peri-operative for selected cases, open sacral wound in incontinent patient, end-of-life comfort, <b>not</b> for nurse convenience).</li><li>Alternatives: intermittent catheterisation (preferred in retention), condom catheters (men, no retention), bedside bladder scanner, prompted voiding.</li></ul>
+<p><b>B. Aseptic insertion technique:</b></p>
+<ul><li>Hand hygiene.</li><li>Sterile gloves, sterile drape, sterile single-use lubricant.</li><li>Sterile Foley of appropriate size (12–14 Fr for adults; 5–8 Fr for children).</li><li>Antiseptic periurethral cleaning with <b>sterile water or saline</b> (CHG may cause urethral irritation; not recommended for meatal cleaning).</li><li>Maintain <b>closed drainage system</b> (no disconnections); pre-connected sealed catheter-bag is preferred.</li></ul>
+<p><b>C. Maintenance:</b></p>
+<ul><li>Keep drainage bag <b>below bladder level</b>, off the floor; never invert.</li><li>Regular perineal hygiene (soap and water; <b>no</b> daily meatal cleaning with antiseptics — no benefit).</li><li>Empty bag into a clean container; avoid splashing.</li><li><b>Secure catheter</b> to thigh to prevent traction/urethral trauma.</li><li>Document indications daily; remove ASAP.</li><li><b>No routine catheter change</b> at fixed intervals.</li><li><b>Antimicrobial/antiseptic catheters</b> (silver alloy, nitrofurazone-impregnated) may be used in selected high-risk patients if cost-effective (CDC 2010, category II) but not routinely recommended.</li></ul>
+<p><b>D. Surveillance and feedback:</b></p>
+<ul><li>CAUTI rate = (CAUTI count ÷ Foley-days) × 1000.</li><li>DUR (catheter) = Foley-days ÷ patient-days.</li><li>NHSN TAP reports identify wards with greatest preventable burden.</li><li>Bundle compliance audit (insertion, maintenance) with feedback.</li></ul>
+<div class="callout"><b>Mnemonic — CAUTI bundle: "</b>A<b>void + </b>A<b>septic + </b>A<b>llow drainage + </b>A<b>udience with daily review"</b> (<b>4 As</b>).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: Surgical Site Infection (SSI)</div>
+<p>#### 3.1 Burden and Classification</p>
+<ul><li>SSI is the <b>most common HAI in surgical patients</b> (≈20% of all HAIs) and the leading cause of readmission after surgery.</li><li>Adds 7–10 inpatient days and <b>$20 000–30 000</b> per case; SSIs account for 3.5% of readmissions and are now CMS-reportable.</li><li>Attributable mortality 3% (variable); for cardiac and orthopaedic SSIs can reach 20–40%.</li><li><b>NHSN classification (depth):</b></li></ul>
+<table class="ctable"><tr><th>Type</th><th>Anatomic site</th><th>Timeframe</th><th>Examples</th></tr><tr><td>------</td><td>---------------</td><td>-----------</td><td>----------</td></tr><tr><td>**Superficial incisional SSI**</td><td>Skin + subcutaneous tissue</td><td>30 d</td><td>Wound erythema, pus, dehiscence limited to skin</td></tr><tr><td>**Deep incisional SSI**</td><td>Deep soft tissue (fascia + muscle)</td><td>30 d (90 d if implant)</td><td>Fascial dehiscence, deep abscess</td></tr><tr><td>**Organ/space SSI**</td><td>Any body organ/space deeper than the fascial/muscle layers</td><td>30 d (90 d if implant)</td><td>Intra-abdominal abscess, empyema, mediastinitis, joint infection</td></tr></table>
+<div class="callout">The <b>90-day rule applies to implants and prostheses</b> (joint, mesh, cardiac valve, neurostimulator, vascular graft). This is the most common surveillance point of confusion.</div>
+<p>#### 3.2 Microbiology by Surgery Type</p>
+<table class="ctable"><tr><th>Surgery</th><th>Likely organisms</th></tr><tr><td>---------</td><td>------------------</td></tr><tr><td>Clean (orthopaedic, cardiac, neuro)</td><td>*S. aureus* (MSSA/MRSA), CoNS, *Cutibacterium acnes* (prosthetic joint)</td></tr><tr><td>Clean-contaminated (GI, GU, gyn)</td><td>Mixed: *E. coli*, *Klebsiella*, *Bacteroides*, Enterococcus + *S. aureus*</td></tr><tr><td>Contaminated (trauma, spillage)</td><td>Polymicrobial GNB + anaerobes + *S. aureus*</td></tr><tr><td>Dirty (established infection)</td><td>Same as above + *Pseudomonas*; consider MDR-GNB</td></tr></table>
+<p>#### 3.3 Risk Factors — the <b>NNIS</b> / <b>NHSN SSI Risk Index</b></p>
+<p>NNIS (National Nosocomial Infections Surveillance) risk index (0–3): one point each for:</p>
+<ol><li><b>ASA score ≥ 3</b> (severe systemic disease).</li><li><b>Wound class ≥ 3</b> (contaminated or dirty-infected).</li><li><b>Duration of surgery &gt; T</b> (the 75th percentile cut-off for the procedure; e.g. 180 min for CABG, 120 min for colectomy).</li></ol>
+<div class="callout">ASA 3–5, wound class 3–4, and prolonged operative time are the <b>modifiable</b> triad — wound class via timely surgery; duration via skill and team; ASA via pre-operative optimisation (HbA1c, smoking, weight, anaemia, nutrition).</div>
+<table class="ctable"><tr><th>Modifiable</th><th>Non-modifiable</th></tr><tr><td>------------</td><td>----------------</td></tr><tr><td>Glycaemic control (target <180 mg/dL peri-op)</td><td>Age</td></tr><tr><td>Normothermia (>36 °C intra-op)</td><td>Sex</td></tr><tr><td>Tissue oxygenation (FiO₂ 0.8 vs 0.35 debate)</td><td>ASA score</td></tr><tr><td>Smoking cessation ≥4 weeks</td><td>Wound class</td></tr><tr><td>Weight optimisation</td><td>Emergency surgery</td></tr><tr><td>Pre-op skin antisepsis (alcohol-CHG > povidone-iodine)</td><td>Comorbidities</td></tr><tr><td>Antibiotic prophylaxis (correct drug, dose, timing, redosing)</td><td>Immunosuppression</td></tr><tr><td>Hair removal (clippers, not razors)</td><td></td></tr><tr><td>Glucose control post-op</td><td></td></tr><tr><td>S. aureus decolonisation (mupirocin + CHG) for cardiac/ortho</td><td></td></tr><tr><td>Wound-protective techniques, blood transfusion avoidance</td><td></td></tr></table>
+<p>#### 3.4 Antibiotic Prophylaxis — The <b>"Right Drug, Right Time, Right Dose, Right Duration"</b></p>
+<p><b>A. Indication:</b></p>
+<ul><li>Clean cases <b>with implant</b> (prophylaxis strongly recommended).</li><li>Clean cases <b>without implant</b> (single-dose prophylaxis still recommended for many clean surgeries due to consequences of infection).</li><li>Clean-contaminated cases (e.g. elective colorectal, hysterectomy).</li><li>Not recommended for clean non-implant cases (e.g. hernia repair with mesh debated; small breast biopsy; cataract).</li></ul>
+<p><b>B. Timing:</b></p>
+<ul><li><b>Within 60 min before skin incision</b> (this is the cornerstone of prophylaxis quality).</li><li><b>Within 120 min before incision</b> for vancomycin, fluoroquinolones (longer infusion time).</li><li><b>After cord clamping</b> for caesarean section (does not enter fetal circulation).</li></ul>
+<p><b>C. Choice (depends on surgery and local flora):</b></p>
+<table class="ctable"><tr><th>Surgery</th><th>Recommended prophylactic agent</th></tr><tr><td>---------</td><td>-------------------------------</td></tr><tr><td>**Cardiothoracic / vascular / orthopaedic / neurosurgery**</td><td>**Cefazolin** 2 g (3 g if >120 kg) IV</td></tr><tr><td>**Colorectal / appendicectomy / small-bowel**</td><td>**Cefazolin + metronidazole** (or cefoxitin, cefotetan, ertapenem, amoxicillin-clavulanate)</td></tr><tr><td>**Hepatobiliary / pancreatic**</td><td>Cefazolin ± metronidazole</td></tr><tr><td>**Gastroduodenal / oesophageal**</td><td>Cefazolin</td></tr><tr><td>**Hysterectomy (vaginal/abdominal) / caesarean**</td><td>Cefazolin (single dose after cord clamp for C-section)</td></tr><tr><td>**Urological with bowel entry / implant**</td><td>Cefazolin ± metronidazole (or fluoroquinolone)</td></tr><tr><td>**Orthopaedic with implant / arthroplasty / spine**</td><td>Cefazolin; add vancomycin if MRSA prevalence high or patient colonised</td></tr><tr><td>**Penicillin allergy (non-anaphylactic)**</td><td>Cefazolin still safe (cross-reactivity <2%)</td></tr><tr><td>**Penicillin anaphylaxis**</td><td>Vancomycin or clindamycin ± gentamicin</td></tr></table>
+<p><b>D. Dose and redosing:</b></p>
+<ul><li>Standard cefazolin dose 2 g IV (3 g if weight &gt;120 kg).</li><li><b>Redose</b> intra-op if surgery &gt;2 half-lives (cefazolin q4h; cefuroxime q3h; metronidazole q8h).</li><li>Adjust for blood loss ≥1500 mL.</li></ul>
+<p><b>E. Duration:</b></p>
+<ul><li><b>Single dose</b> is sufficient in most cases.</li><li><b>Do not extend</b> prophylaxis beyond 24 h post-op (no SSI reduction, more resistance, more CDI, more cost).</li><li>Cardiac surgery 48 h is an exception only if chest tubes remain.</li><li>Re-dose intra-op, but stop post-op.</li></ul>
+<p><b>F. Weight-based dosing:</b> Always use the patient's current weight; morbid obesity doubles the cefazolin dose.</p>
+<p>#### 3.5 Non-Antibiotic SSI Bundle (Surgical Care Improvement Project — SCIP and SSI bundles)</p>
+<table class="ctable"><tr><th>Element</th><th>Target</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Pre-op**</td><td>S. aureus screening (MSSA/MRSA) + decolonisation (mupirocin 2% intranasal BD × 5 d + CHG bathing) for cardiac/ortho/implants; smoking cessation ≥4 weeks; glucose control (HbA1c <7%); nutrition optimisation; alcohol cessation</td></tr><tr><td>**Skin antisepsis**</td><td>Alcohol-based CHG (CHG 2% with 70% isopropyl alcohol) > povidone-iodine alone; allow drying</td></tr><tr><td>**Hair removal**</td><td>Clippers, not razors; only if needed; immediately before</td></tr><tr><td>**Glycaemic control**</td><td>Peri-op blood glucose <180 mg/dL (10 mmol/L)</td></tr><tr><td>**Normothermia**</td><td>Core temp ≥36 °C pre-op and intra-op; forced-air warming; warmed fluids</td></tr><tr><td>**Oxygenation**</td><td>FiO₂ 0.8 intra-op and 2 h post-op debated; WHO 2016 guideline suggests **FiO₂ 0.8** for patients with endotracheal intubation; SSI reduction uncertain for non-intubated.</td></tr><tr><td>**Normovolaemia**</td><td>Avoid fluid overload; goal-directed fluid therapy</td></tr><tr><td>**Surgical technique**</td><td>Gentle tissue handling; minimal electrocautery damage; short operative time</td></tr><tr><td>**Wound closure**</td><td>Triclosan-coated sutures may reduce SSI in some settings</td></tr><tr><td>**Dressing**</td><td>Sterile occlusive dressing 24–48 h; do not wash wound for 24–48 h</td></tr><tr><td>**No routine post-op antibiotics**</td><td>Stop prophylaxis ≤24 h</td></tr><tr><td>**Surveillance**</td><td>30-d follow-up (90 d for implants); SSI rate per procedure, stratified by NNIS risk index</td></tr></table>
+<div class="callout"><b>Mnemonic — SSI bundle: "</b>H<b>air clipper, </b>H<b>and hygiene, </b>H<b>eat (normothermia), </b>H<b>yperoxygenation, </b>H<b>ypoglycaemia (avoid), </b>H<b>appy antibiotic timing (60 min)"</b> — the 6 Hs.</div>
+<p>#### 3.6 Treatment of Established SSI</p>
+<ul><li>Open and drain (primary therapy for most superficial and many deep SSIs); send pus for Gram stain and culture.</li><li>Antibiotics only if systemic signs, deep/organ-space infection, immunocompromise, prosthetic infection.</li><li>Empirical: cover <i>S. aureus</i> (anti-staphylococcal penicillin or cefazolin) + Gram-negative + anaerobe (metronidazole) if GI/GU; add vancomycin for MRSA risk.</li><li><b>Prosthetic joint / implant SSI</b> — almost always needs DAIR (debridement, antibiotics, implant retention) within 3 weeks, <b>or</b> removal + staged revision. ID and orthopaedic joint decision.</li><li><b>Deep sternal wound infection / mediastinitis</b> — surgical debridement + long-term targeted antibiotics (often 4–6 weeks IV); high mortality.</li><li><b>Intra-abdominal abscess</b> — percutaneous drainage + targeted antibiotics.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Ventilator-Associated Pneumonia (VAP) and Ventilator-Associated Events (VAE)</div>
+<p>#### 4.1 Definitions</p>
+<p><b>VAP (NHSN PNU1/PNU2):</b></p>
+<ul><li>New or progressive <b>and persistent</b> infiltrate on chest radiograph (or cavitation or pneumatocele in children &lt;12 mo).</li><li><b>Plus ≥1 systemic</b> sign: fever &gt;38.0 °C or &lt;36.0 °C, leukopenia &lt;4000 or leukocytosis ≥12 000, or altered mental status (≥70 y).</li><li><b>Plus ≥2 pulmonary</b> signs: new purulent sputum, change in sputum character, increased suctioning, new/worsened cough, dyspnoea, rales or bronchial breath sounds, worsening gas exchange (PaO₂/FiO₂, O₂ sat, increased ventilator demand).</li></ul>
+<p><b>Timing:</b> Onset ≥2 calendar days of mechanical ventilation, with day of event = day 3 or later.</p>
+<p><b>VAE (replacing VAP in many surveillance programmes, 2013+):</b></p>
+<ul><li><b>VAC</b> (Ventilator-Associated Condition): ≥2 calendar days of stable/declining FiO₂/PEEP, followed by <b>sustained (≥2 d) increase</b> in daily minimum FiO₂ ≥0.20 or PEEP ≥3 cmH₂O.</li><li><b>IVAC</b> (Infection-related VAC): VAC + temperature &lt;36 °C or &gt;38 °C <b>OR</b> WCC ≤4000 or ≥12 000 <b>AND</b> new antimicrobial started, continued ≥4 d.</li><li><b>Possible VAP</b> (PVAP): IVAC + purulent respiratory secretions (≥25 neutrophils and ≤10 epithelial cells per low-power field) <b>AND</b> positive respiratory culture (≥10⁵ CFU/mL for BAL, ≥10⁴ for mini-BAL, ≥10³ for protected specimen brush) <b>OR</b> positive pleural fluid culture / lung histopathology / diagnostic test for Legionella/influenza/etc.</li></ul>
+<p>#### 4.2 Pathogenesis</p>
+<p>Three routes:</p>
+<ol><li><b>Aspiration of oropharyngeal / gastric secretions</b> (the dominant route) — pooled subglottic secretions leak around an underinflated cuff into the lower airway.</li><li><b>Inhalation of contaminated aerosols</b> (nebulisers, ventilator circuits, condensate).</li><li><b>Haematogenous spread</b> from distant infection (line, wound) — less common.</li></ol>
+<p><b>Biofilm</b> on the endotracheal tube is rapidly colonised (often within 24 h) and is a source of repeated embolic bacterial showers.</p>
+<p><b>Risk factors (modifiable):</b></p>
+<ul><li>Duration of mechanical ventilation (cumulative).</li><li>Supine positioning (aspiration).</li><li>Underinflated ETT cuff (&lt;20 cmH₂O).</li><li>Sedation, paralytics.</li><li>Enteral feeding (controversy: route may not matter as much as aspiration).</li><li>Re-intubation.</li><li>Gastric alkalinisation (H2-blockers, PPIs).</li><li>Prior antibiotic exposure (selects MDR).</li><li>Oropharyngeal / gastric colonisation with MDR organisms.</li></ul>
+<p>#### 4.3 Microbiology</p>
+<table class="ctable"><tr><th>Patient profile</th><th>Likely organisms</th></tr><tr><td>-----------------</td><td>------------------</td></tr><tr><td>**Early-onset VAP** (<5 d MV, no MDR risk)</td><td>*S. pneumoniae*, *H. influenzae*, *S. aureus* (MSSA), *E. coli*, *Klebsiella*</td></tr><tr><td>**Late-onset VAP** (≥5 d MV)</td><td>*Pseudomonas aeruginosa*, *Acinetobacter baumannii*, *MRSA*, ESBL Enterobacterales, *Stenotrophomonas maltophilia*</td></tr><tr><td>**Aspiration-prone**</td><td>Mixed flora + anaerobes (early)</td></tr><tr><td>**Immunocompromised**</td><td>Above + *Pneumocystis*, *Aspergillus*, *CMV*</td></tr></table>
+<p>#### 4.4 Diagnosis</p>
+<ul><li><b>Clinical criteria alone are sensitive but non-specific</b>; overdiagnosis drives antibiotic overuse.</li><li><b>CPIS</b> (Clinical Pulmonary Infection Score) is a research/decision tool; CPIS ≤6 argues against VAP and supports 72-h antibiotic re-evaluation.</li><li><b>Microbiological confirmation</b> is preferred (respiratory sample within 48 h of new symptoms):</li><li><b>Endotracheal aspirate</b> (qualitative; ≥10⁵ CFU/mL) — most commonly used; high sensitivity.</li><li><b>Bronchoalveolar lavage (BAL)</b> (≥10⁴ CFU/mL quantitative) — higher specificity; preferred in immunocompromised.</li><li><b>Protected specimen brush (PSB)</b> (≥10³ CFU/mL) — high specificity; less used.</li><li><b>Mini-BAL</b>, <b>non-bronchoscopic BAL</b> — practical alternatives.</li><li><b>Blood cultures</b> (positive in &lt;25% — but identify pathogen).</li><li><b>Pleural fluid</b> if effusion.</li><li><b>Procalcitonin trend</b> supports de-escalation when VAP is treated.</li><li><b>Imaging</b> (CXR, CT) to confirm infiltrate and exclude differentials (atelectasis, ARDS, pulmonary oedema, PE).</li></ul>
+<p>#### 4.5 Treatment of VAP</p>
+<ul><li><b>Empirical therapy</b> within 1 h of suspected VAP (mortality rises with delay).</li><li><b>No MDR risk:</b> ceftriaxone OR levofloxacin/moxifloxacin OR ampicillin-sulbactam (if no concern for <i>Pseudomonas</i>).</li><li><b>MDR risk (late VAP, prior antibiotics, hospital ecology, structural lung disease, sepsis):</b> anti-pseudomonal β-lactam (cefepime, piperacillin-tazobactam, meropenem, imipenem) + anti-MRSA (vancomycin or linezolid). Add aminoglycoside or fluoroquinolone for double Gram-negative cover in septic shock or high-risk <i>Pseudomonas</i>.</li><li><b>De-escalate</b> at 48–72 h based on culture.</li><li><b>Duration: 7 d</b> (Chastre 2003; reduced mortality and resistance without worse outcomes). Extend to 14 d only for non-fermenters (<i>Pseudomonas</i>, <i>Acinetobacter</i>) or slow response.</li><li><b>Short course of aminoglycoside</b> rather than prolonged (efficacy from peak/MIC; toxicity from duration).</li></ul>
+<p>#### 4.6 Prevention — The <b>Ventilator Bundle (IHI "Ventilator Bundle" + 2014 updates)</b></p>
+<table class="ctable"><tr><th>Element</th><th>Mechanism</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**HOB elevation 30–45°** (semi-recumbent)</td><td>Reduces gastro-oesophageal reflux and aspiration</td></tr><tr><td>**Daily sedation vacation + spontaneous breathing trial (SBT)**</td><td>Reduces MV duration → reduces VAP risk</td></tr><tr><td>**Oral care with chlorhexidine 0.12%** q6h</td><td>Reduces oropharyngeal bacterial load</td></tr><tr><td>**Stress ulcer prophylaxis** (PPI or H2-blocker) — only if indicated</td><td>Reduces GI bleeding; avoids VAP risk from bleeding/aspiration</td></tr><tr><td>**VTE prophylaxis** (LMWH, UFH, mechanical)</td><td>Reduces VTE (often grouped into the bundle)</td></tr><tr><td>**Subglottic secretion drainage (SSD)** (continuous or intermittent)</td><td>Removes pooled secretions above the cuff</td></tr><tr><td>**ETT cuff pressure 20–30 cmH₂O**</td><td>Adequate seal against aspiration without mucosal ischaemia</td></tr><tr><td>**Avoid routine ventilator circuit change**</td><td>Biofilm on circuit not clinically relevant; changes are risk events</td></tr><tr><td>**Closed suctioning**</td><td>Reduces environmental contamination and derecruitment</td></tr><tr><td>**Selective decontamination of the digestive tract (SDD/SOD)**</td><td>Antibiotic + antifungal paste + IV cefotaxime (SDD) or oral paste only (SOD) — high-quality evidence for VAP reduction, debated in MDR settings (Dutch evidence, NEJM 2018)</td></tr><tr><td>**Probiotics** (e.g. *Lactobacillus rhamnosus* GG)</td><td>Modest VAP reduction in meta-analysis; not universal</td></tr><tr><td>**Avoid re-intubation**</td><td>Re-intubation multiplies VAP risk ×5</td></tr><tr><td>**Daily assessment of readiness to extubate**</td><td>Reduces MV duration</td></tr></table>
+<div class="callout"><b>Mnemonic — VAP bundle (5 core): "</b>H<b>OB-up, </b>H<b>alt sedation, </b>H<b>ygiene mouth, </b>H<b>eart (DVT/PUD prophylaxis), </b>H<b>andy" + </b>advanced:<b> SSD, cuff pressure, closed suction, SDD.</b></div>
+<p>#### 4.7 The Rise of VAE — Why VAP Is Being Replaced</p>
+<p>VAE was introduced by CDC in 2013 because:</p>
+<ol><li>VAP surveillance is subjective and inconsistent between ICUs.</li><li>VAP criteria detect both infectious and non-infectious events (ARDS, atelectasis, fluid overload, pulmonary oedema), inflating antibiotic use.</li><li>VAE is <b>objective, electronic, and reproducible</b> (uses ventilator settings only).</li><li>VAE is more strongly associated with mortality and length of stay than VAP.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Central Line-Associated Bloodstream Infection (CLABSI)</div>
+<p>#### 5.1 Definition and Epidemiology</p>
+<p><b>NHSN LCBI-1 (laboratory-confirmed BSI):</b></p>
+<ul><li><b>Patient has a recognised pathogen</b> identified from ≥1 blood specimen.</li><li><b>Organism is not related to an infection at another site.</b></li></ul>
+<p><b>NHSN LCBI-2:</b></p>
+<ul><li><b>Common commensal</b> (CoNS, <i>Micrococcus</i>, <i>Corynebacterium</i>, <i>Bacillus</i>, <i>Cutibacterium</i>) from ≥2 blood specimens collected on separate occasions.</li><li><b>Plus at least one</b> of: fever &gt;38.0 °C, chills, hypotension.</li></ul>
+<p><b>CLABSI = LCBI-1 or LCBI-2 in a patient with a central line in place &gt;2 calendar days, with the line still in place on the date-of-event (or removed the day before).</b></p>
+<ul><li>ICU CLABSI rate: historically 3–5/1000 central-line days; modern bundle programmes have reduced to &lt;1/1000 line-days (Keystone Michigan project; Pronovost 2006 — 66% reduction).</li><li>Each CLABSI adds ~$45 000 and 7–10 ICU days; attributable mortality 12–25%.</li><li><b>Common pathogens:</b></li><li><b>CoNS</b> (~30% — often contamination in non-CLABSI; in line-associated BSI, often true)</li><li><i><b>S. aureus</b></i> (MSSA/MRSA; <i>S. aureus</i> CLABSI → mandatory S. aureus BSI bundle — line removal, source control, anti-staphylococcal therapy, transoesophageal echo, repeat blood cultures)</li><li>***Candida* spp.** (often from TPN, total parenteral nutrition)</li><li><b>Enterobacterales</b> (Klebsiella, E. coli, Enterobacter, Serratia)</li><li><b>Pseudomonas, Acinetobacter</b> (MDR risk)</li><li><b>Corynebacterium jeikeium, Bacillus, Micrococcus</b> (in immunocompromised)</li></ul>
+<p>#### 5.2 Pathogenesis and Routes</p>
+<table class="ctable"><tr><th>Route</th><th>Mechanism</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Extraluminal** (50–70%)</td><td>Skin organisms migrate along the external catheter surface from insertion site to tip</td></tr><tr><td>**Intraluminal** (20–30%)</td><td>Hub contamination → colonisation of lumen → seeding</td></tr><tr><td>**Haematogenous** (10%)</td><td>From a distant infection site (urine, lung, abdomen)</td></tr><tr><td>**Contaminated infusate** (rare)</td><td>TPN, IV fluids, blood products</td></tr></table>
+<p><b>Biofilm</b> forms within 24 h on intravascular catheters; organisms within biofilm are 100–1000× more resistant to antibiotics than planktonic forms.</p>
+<p>#### 5.3 Risk Factors</p>
+<table class="ctable"><tr><th>Modifiable</th><th>Non-modifiable</th></tr><tr><td>------------</td><td>----------------</td></tr><tr><td>Insertion site (femoral > IJ > subclavian for CLABSI)</td><td>Age, comorbidity</td></tr><tr><td>Insertion conditions (emergent > elective)</td><td>Immunosuppression</td></tr><tr><td>Line type (CVC > PICC > tunneled cuffed > totally implanted port for short term)</td><td>Severity of illness (APACHE)</td></tr><tr><td>Line-days (cumulative)</td><td></td></tr><tr><td>Skin antisepsis (CHG > povidone)</td><td></td></tr><tr><td>Maximal sterile barrier (cap, mask, gown, gloves, large drape)</td><td></td></tr><tr><td>Hub care / closed connectors</td><td></td></tr><tr><td>Prompt removal of unnecessary lines</td><td></td></tr><tr><td>Dressing changes (CHG-impregnated dressings for high risk)</td><td></td></tr><tr><td>Hand hygiene</td><td></td></tr><tr><td>TPN (independent risk)</td><td></td></tr><tr><td>Bloodstream seeding from another site</td><td></td></tr><tr><td>High line-to-nurse ratio</td><td></td></tr></table>
+<p>#### 5.4 Site Selection</p>
+<table class="ctable"><tr><th>Site</th><th>CLABSI risk</th><th>Pneumothorax risk</th><th>Comments</th></tr><tr><td>------</td><td>-------------</td><td>-------------------</td><td>----------</td></tr><tr><td>**Subclavian** (preferred)</td><td>Lowest</td><td>Highest</td><td>Avoid in coagulopathy/thrombocytopenia</td></tr><tr><td>**Internal jugular**</td><td>Intermediate</td><td>Intermediate</td><td>Preferred in coagulopathy, but higher CLABSI than subclavian</td></tr><tr><td>**Femoral**</td><td>Highest (esp. adults, BMI >28, ICU)</td><td>Lowest</td><td>Avoid in adults; use in children <8 y if needed</td></tr><tr><td>**PICC**</td><td>Lower than CVC in some studies</td><td>None</td><td>DVT risk; catheter occlusion risk</td></tr></table>
+<div class="callout"><b>Mnemonic — Site from best to worst for CLABSI: "</b>S<b>ubclavian &gt; IJ &gt; Femoral"</b> (but <b>subclavian first</b> for adults unless coagulopathy or pneumothorax risk too high).</div>
+<p>#### 5.5 The <b>Central Line Bundle</b> (5 Core Elements — Pronovost / IHI)</p>
+<ol><li><b>Hand hygiene</b> before insertion.</li><li><b>Maximal sterile barrier precautions:</b> cap + mask + sterile gown + sterile gloves + large sterile drape covering the patient.</li><li><b>2% chlorhexidine gluconate (CHG) skin antisepsis</b> with 70% isopropyl alcohol (allow to dry ≥30 s; povidone-iodine only if CHG contraindicated).</li><li><b>Optimal site selection</b> — subclavian preferred; avoid femoral in adults; use CHG-impregnated dressings at the insertion site.</li><li><b>Daily review of line necessity</b> — remove any line that is no longer needed; "line rounds".</li></ol>
+<p><b>Maintenance bundle (added):</b></p>
+<ul><li>Daily assessment of line necessity.</li><li>Daily CHG bathing (in ICU; reduces CLABSI and MRSA).</li><li>Scrub the hub for 15 s before accessing (chlorhexidine, alcohol, or povidone-iodine).</li><li>Replace dressings every 7 d (or when soiled/loose) using aseptic technique; CHG-impregnated sponges reduce CLABSI in high-risk.</li><li>Replace administration sets every 96 h (24 h for blood, 6 h for lipid/lipid-containing TPN).</li><li><b>Do not routinely replace CVCs</b> at fixed intervals or over guidewire to prevent infection.</li></ul>
+<p>#### 5.6 Diagnosis and Management of Suspected CLABSI</p>
+<ul><li>Draw <b>paired blood cultures</b> (one from line, one from peripheral vein) <b>before</b> antibiotics.</li><li>Differential time to positivity (DTP) ≥2 h earlier from line vs peripheral supports line as source.</li><li>Save the line tip (5 cm, sterile) for culture (Maki roll or sonication) when removed.</li><li><b>Empirical therapy within 1 h</b> in septic patients; cover Gram-positives (vancomycin) ± Gram-negatives (cefepime/piperacillin-tazobactam) ± candida (echinocandin) in high-risk.</li><li><b>Remove the line</b> if:</li><li><i>S. aureus</i>, <i>Candida</i>, mycobacteria, <i>Pseudomonas</i>, <i>Acinetobacter</i> cultured.</li><li>Septic shock, persistent bacteraemia &gt;72 h, suppurative thrombophlebitis, endocarditis.</li><li>Tunnel infection or port abscess.</li><li><b>Try to salvage</b> with antibiotic lock + systemic therapy in:</li><li>Tunneled cuffed catheters (dialysis, oncology) with CoNS or <i>Bacillus</i>.</li><li>Long-term catheters in patients with limited access.</li><li><b>Duration:</b> 7 d for CoNS; 14 d for <i>S. aureus</i> (with negative TEE and no metastatic infection); 14 d for <i>Candida</i>; longer for complicated (endocarditis, thrombophlebitis, metastatic abscess — usually 4–6 weeks).</li><li>**Mandatory investigations after <i>S. aureus</i> BSI:** TTE → TEE (endocarditis), repeat blood cultures, source control, ophthalmology review (endophthalmitis), spine imaging (osteomyelitis), abdominal imaging (renal/splenic abscess).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: *Clostridioides difficile* Infection (CDI)</div>
+<p>#### 6.1 Microbiology and Pathogenesis</p>
+<ul><li><i><b>C. difficile</b></i> — anaerobic, spore-forming, Gram-positive rod; spores survive months on hospital surfaces and are resistant to alcohol-based hand rubs and most disinfectants.</li><li>Pathogenesis: disruption of colonic microbiota (usually by antibiotics) → ingestion of spores → germination in colon → toxins A (TcdA, enterotoxin) and B (TcdB, cytotoxin) → colonic inflammation, pseudomembranous colitis.</li><li>The <b>hypervirulent strain BI/NAP1/027</b> (ribotype 027; <i>tcdC</i> gene deletion → toxin hyperproduction; fluoroquinolone resistance) caused the 2000s epidemics; <i>tcdB</i> also ribotype 078, 244.</li><li><b>Antibiotic risk (descending):</b> clindamycin, fluoroquinolones, cephalosporins, carbapenems, broad-spectrum penicillins → amoxicillin/ampicillin → macrolides → trimethoprim/sulphonamides → metronidazole/vanc/tetracyclines/rifampicin (low).</li><li><b>PPI use</b> is a recognised risk factor (controversial mechanism — gastric barrier vs altered microbiome).</li></ul>
+<p>#### 6.2 Clinical Presentation</p>
+<table class="ctable"><tr><th>Severity</th><th>Features</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Non-severe**</td><td>≥3 unformed stools/24 h (Bristol 6–7), mild abdominal discomfort, no systemic features, WCC <15 × 10⁹/L, Cr <1.5 mg/dL</td></tr><tr><td>**Severe**</td><td>WCC ≥15 × 10⁹/L **OR** Cr >1.5 mg/dL (≥133 µmol/L)</td></tr><tr><td>**Fulminant (severe-complicated)**</td><td>Hypotension/shock, ileus, toxic megacolon, perforation, ICU admission, WBC ≥35 or <2, lactate >5</td></tr></table>
+<p>Spectrum: asymptomatic carriage (10–25% inpatients) → mild diarrhoea → pseudomembranous colitis → fulminant colitis with toxic megacolon, perforation, sepsis.</p>
+<p>#### 6.3 Diagnosis (IDSA/SHEA 2017/2021 update; ESCMID 2021)</p>
+<p><b>Stepwise / multistep algorithm (preferred):</b></p>
+<ol><li><b>GDH (glutamate dehydrogenase) antigen</b> + <b>toxin EIA</b> simultaneously.</li><li>If GDH+/Toxin− → resolve with <b>NAAT (PCR) for toxin gene</b>; if NAAT+ → treat as CDI.</li><li>If GDH−/Toxin− → CDI unlikely; consider other causes.</li></ol>
+<div class="callout"><b>Two-step testing</b> avoids overdiagnosing asymptomatic carriers with NAAT.</div>
+<p><b>Other tests:</b></p>
+<ul><li>Stool cytotoxicity assay (gold standard; rarely used).</li><li>Toxin B PCR (highly sensitive; may overdiagnose carriage).</li><li>Cell culture cytotoxicity neutralisation assay.</li><li>Endoscopy (pseudomembranes) — sensitive but not specific and risky in severe disease.</li><li>CT (colonic wall thickening, "accordion sign", ascites) in fulminant disease.</li><li><b>Repeat C. difficile testing is not recommended within 7 d of a positive result</b> (turnaround to negative takes weeks).</li></ul>
+<p>#### 6.4 Treatment of CDI</p>
+<table class="ctable"><tr><th>Severity</th><th>First-line (IDSA/SHEA 2017/2021, ESCMID 2021)</th><th>Alternative</th></tr><tr><td>----------</td><td>----------------------------------------------</td><td>-------------</td></tr><tr><td>**Initial non-severe**</td><td>**Fidaxomicin 200 mg BD × 10 d** (preferred; lower recurrence) **OR** vancomycin 125 mg PO QDS × 10 d</td><td>Metronidazole 500 mg TDS × 10–14 d (only if vanco/fidaxo unavailable)</td></tr><tr><td>**Initial severe**</td><td>**Fidaxomicin 200 mg BD × 10 d OR vancomycin 125 mg PO QDS × 10 d**</td><td>Metronidazole IV + PO/rectal vancomycin in fulminant</td></tr><tr><td>**Fulminant** (hypotension, ileus, megacolon)</td><td>**Vancomycin 500 mg PO/NG QDS + metronidazole 500 mg IV TDS**; if ileus → add vancomycin per rectum (500 mg in 100 mL saline retention enema)</td><td>Surgical consult: total colectomy or diverting loop ileostomy with colonic vancomycin lavage</td></tr><tr><td>**Recurrent — first**</td><td>**Fidaxomicin 200 mg BD × 10 d** (or standard vancomycin course)</td><td>Vancomycin taper-pulse regimen</td></tr><tr><td>**Recurrent — second / multiple**</td><td>**Fidaxomicin 200 mg BD × 10 d** **OR** vancomycin taper-pulse **OR** **FMT (fecal microbiota transplant)** via colonoscopy, NG/NJ, capsule</td><td>Live biotherapeutics: **REBYOTA** (RBX2660, rectally administered FMT product) and **VOWST** (SER-109, oral spore-based) — FDA-approved 2023</td></tr><tr><td>**Bezlotoxumab**</td><td>Human monoclonal antibody against toxin B; given IV as adjunct during antibiotic course to reduce recurrence in high-risk patients (age ≥65, immunocompromise, severe prior episode).</td><td></td></tr></table>
+<p><b>Stop the inciting antibiotic</b> whenever possible. <b>Avoid antimotility agents</b> (loperamide) in severe disease (theoretical toxic megacolon risk; safe in mild-moderate per recent data but usually avoided). <b>No repeat testing</b> for test-of-cure.</p>
+<div class="callout"><b>Mnemonic — CDI treatment by severity: "</b>M<b>ild → </b>V<b>ancomycin or </b>F<b>idaxomicin oral (</b>MVF<b>); </b>S<b>evere → same but watch; </b>F<b>ulminant → </b>V<b>anco PO/NG + </b>M<b>etronidazole IV ± </b>F<b>ecalan/Vanco enema; </b>R<b>ecurrent → </b>F<b>idaxomicin, </b>F<b>MT, </b>V**OWST."</div>
+<p>#### 6.5 <i>C. auris</i> — The 2010s Threat</p>
+<ul><li><i><b>Candida auris</b></i> — an emerging, often multidrug-resistant <i>Candida</i> (resistant to fluconazole, frequently to amphotericin, occasionally to echinocandins).</li><li>Persistent environmental coloniser; spreads readily in ICUs and LTCFs; can cause invasive candidaemia, wound infection, otitis.</li><li>**Differential from other *Candida***: MALDI-TOF or molecular sequencing; grows at 40 °C and on CHROMagar.</li><li><b>IPC measures:</b> contact precautions, single-room isolation, dedicated equipment, daily/twice-daily sporicidal cleaning, screening of contacts, decolonisation with chlorhexidine bathing.</li><li><b>Treatment:</b> echinocandin first-line; amphotericin B if resistant; pan-resistant strains are a crisis.</li></ul>
+<p>#### 6.6 CDI Prevention</p>
+<table class="ctable"><tr><th>Strategy</th><th>Effect</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Antimicrobial stewardship** (restrict clindamycin, FQ, cephalosporins, carbapenems)</td><td>Largest single intervention; reduces incidence 30–60%</td></tr><tr><td>**Contact precautions** (gown + gloves) for duration of diarrhoea (until 48 h after last unformed stool)</td><td>Reduces transmission</td></tr><tr><td>**Single-room isolation** (or cohort)</td><td>Reduces transmission</td></tr><tr><td>**Sporicidal cleaning** of rooms (terminal + daily): **bleach (NaOCl 1000 ppm) or hydrogen peroxide vapour (HPV)**</td><td>Kills spores</td></tr><tr><td>**Hand hygiene with soap and water** (alcohol does not kill spores); wash for 40–60 s</td><td>Removes spores mechanically</td></tr><tr><td>**Dedicated equipment** (stethoscope, BP cuff)</td><td>Reduces transmission</td></tr><tr><td>**Probiotics** (*Saccharomyces boulardii*, *Lactobacillus*) — modest primary prevention; do not use in immunocompromised or with central line (fungemia risk)</td><td></td></tr><tr><td>**Cautious PPI use**</td><td>Risk factor; deprescribe when possible</td></tr><tr><td>**Early identification and isolation**</td><td>Reduces environmental shedding</td></tr><tr><td>**Screening of asymptomatic carriers** — debated; useful in outbreaks</td><td></td></tr><tr><td>**Vaccines** — *C. difficile* toxoid vaccines in late-stage trials</td><td>Future option</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: Hospital-Acquired Pneumonia (HAP) and Non-Ventilator HAP</div>
+<p>#### 7.1 Definition</p>
+<ul><li><b>HAP:</b> pneumonia with onset <b>≥48 h after admission</b> that was not present or incubating at admission. (Often grouped with VAP in surveillance.)</li><li><b>Non-ventilator HAP (NV-HAP):</b> pneumonia in non-intubated hospitalised patients; increasingly recognised as common and preventable.</li><li><b>Ventilated HAP</b> = VAP by definition; same definition.</li><li><b>Aspiration pneumonia</b> is a related entity — community or hospital onset, often with anaerobes in classical aspiration.</li></ul>
+<p>#### 7.2 Microbiology and Treatment</p>
+<ul><li>HAP is the second most common HAI in non-ICU and the leading HAI overall in many series.</li><li>Pathogens: <i>S. aureus</i> (incl. MRSA), <i>Pseudomonas</i>, <i>Klebsiella</i>, <i>E. coli</i>, <i>Acinetobacter</i>, <i>S. pneumoniae</i>, <i>H. influenzae</i>, atypicals (rarely), aspiration anaerobes.</li><li><b>Treatment principles identical to VAP</b>; check local antibiogram.</li><li><b>Duration: 7 d</b> if good response (per ATS/IDSA 2016 HAP/VAP guidelines).</li></ul>
+<p>#### 7.3 Prevention</p>
+<ul><li>Standard: hand hygiene, head-of-bed elevation, oral care, avoid unnecessary tubes, mobility, aspiration precautions, swallow assessment in stroke/dysphagia.</li><li>NV-HAP prevention bundle: oral care, head-of-bed elevation, incentive spirometry, early mobility, screening for dysphagia, deep-breathing/coughing exercises (Munro 2014; Cassity 2021).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 8: HAI Surveillance — Methodology and Metrics</div>
+<p>#### 8.1 Purpose of Surveillance</p>
+<ul><li>Establish baseline and trend HAI rates.</li><li>Identify outbreaks.</li><li>Benchmark with peer institutions.</li><li>Drive quality improvement (reduce device-days, bundle compliance, infection rates).</li><li>Satisfy mandatory public reporting (CMS, ECDC, NHS England).</li><li>Inform risk adjustment for benchmarking.</li></ul>
+<p>#### 8.2 Active vs Passive, Prospective vs Retrospective</p>
+<ul><li><b>Active</b> — IPC team identifies HAIs by reviewing charts, lab data, radiology, line/catheter placement records; preferred.</li><li><b>Passive</b> — relies on clinician reporting; underestimates.</li><li><b>Prospective</b> — case-finding while patient is in hospital; best for outbreak detection and real-time feedback.</li><li><b>Retrospective</b> — chart review after discharge; usually misses late-onset and post-discharge SSIs.</li></ul>
+<p>#### 8.3 Denominator-Based Rates</p>
+<table class="ctable"><tr><th>Metric</th><th>Formula</th><th>Unit</th></tr><tr><td>--------</td><td>---------</td><td>------</td></tr><tr><td>Device-associated infection rate (DAIR)</td><td>HAI count ÷ device-days × 1000</td><td>per 1000 device-days</td></tr><tr><td>Device utilisation ratio (DUR)</td><td>Device-days ÷ patient-days</td><td>ratio</td></tr><tr><td>Central-line utilisation ratio (CLUR)</td><td>Central-line-days ÷ patient-days</td><td>ratio</td></tr><tr><td>Catheter-associated UTI rate</td><td>CAUTI count ÷ Foley-days × 1000</td><td>per 1000 Foley-days</td></tr><tr><td>VAP rate</td><td>VAP count ÷ ventilator-days × 1000</td><td>per 1000 ventilator-days</td></tr><tr><td>SSI rate</td><td>SSI count ÷ number of procedures × 100</td><td>% (per procedure)</td></tr><tr><td>CDI LabID rate</td><td>CDI count ÷ patient-days × 10 000</td><td>per 10 000 patient-days</td></tr></table>
+<div class="callout"><b>Target benchmarks</b> (NHSN, 2015 baseline, 2024 SIR goal): - CLABSI SIR &lt; 0.5 - CAUTI SIR &lt; 0.75 - SSI SIR &lt; 0.7 - CDI SIR &lt; 0.7 - MRSA BSI SIR &lt; 0.5 - VAP/VAE — variable; ICU-level tracking.</div>
+<p>#### 8.4 Standardised Infection Ratio (SIR)</p>
+<ul><li><b>SIR = Observed HAIs ÷ Expected (risk-adjusted predicted) HAIs.</b></li><li>Expected = predicted by multivariate model (NHSN risk adjustment) accounting for:</li><li><b>CLABSI</b> — hospital type, unit type, line-days, community-onset MRSA prevalence.</li><li><b>SSI</b> — procedure type, ASA, wound class, duration, hospital bed size, medical school affiliation.</li><li><b>CAUTI</b> — facility type, unit, patient population.</li><li><b>CDI LabID</b> — facility type, CDI test type, community-onset CDI prevalence.</li><li><b>Interpretation:</b></li><li>SIR = 1 — as expected (national baseline).</li><li>SIR &lt; 1 — better than expected.</li><li>SIR &gt; 1 — worse than expected.</li><li><b>CMS value-based purchasing</b> uses SIR for pay-for-performance (HAC Reduction Program).</li></ul>
+<div class="callout"><b>Worked example — CAUTI SIR:</b> - Hospital had <b>12 CAUTIs in 2024</b> in a 25-bed ICU. - ICU Foley-days = 5 000. - NHSN CAUTI baseline rate (2015) for similar ICU = 2.0/1000 catheter-days. - Expected CAUTIs = (5 000/1000) × 2.0 = <b>10</b>. - <b>SIR = 12/10 = 1.20</b> (worse than baseline). - Statistically significant only if 95% CI excludes 1.0 (e.g. 1.20, 95% CI 0.62–2.10 — not significant).</div>
+<p>#### 8.5 Targeted Assessment for Prevention (TAP) Strategy</p>
+<ul><li>NHSN analytic framework: ranks facilities/units by <b>excess HAIs</b> (observed − predicted).</li><li>Targets QI resources to highest-yield areas.</li></ul>
+<p>#### 8.6 Multidrug-Resistant Organism (MDRO) Surveillance</p>
+<ul><li><b>MDRO LabID events:</b> MRSA, VRE, ESBL, CRE (carbapenem-resistant Enterobacterales), CRAB, CR-PA, <i>C. auris</i>.</li><li>Active surveillance cultures on admission or periodically (e.g. MRSA nares, rectal swab for VRE/CRE) in high-risk units.</li><li>Outbreak detection via rising incidence.</li></ul>
+<p>#### 8.7 Microbial Typing and WGS</p>
+<ul><li>Phenotypic: antibiogram, biotype, serotype, phage type.</li><li>Genotypic: PFGE, MLVA, MLST, spa typing (MRSA), SCCmec typing, <i>C. difficile</i> ribotyping, WGS (the modern standard for outbreak investigation).</li><li>Whole-genome sequencing (WGS) has revolutionised outbreak attribution (e.g. NICU MRSA, ICU <i>M. chimaera</i> from heater-cooler units, <i>C. auris</i>).</li></ul>
+<p>#### 8.8 International Surveillance Systems</p>
+<table class="ctable"><tr><th>System</th><th>Region</th><th>Lead</th></tr><tr><td>--------</td><td>--------</td><td>------</td></tr><tr><td>**NHSN**</td><td>USA</td><td>CDC</td></tr><tr><td>**ECDC PPS / HAI-Net**</td><td>EU</td><td>European Centre for Disease Prevention and Control</td></tr><tr><td>**GLASS**</td><td>Global</td><td>WHO</td></tr><tr><td>**IPSG / IPSE**</td><td>UK</td><td>UKHSA (Public Health England) — mandatory HCAI surveillance</td></tr><tr><td>**ICON/INICC**</td><td>International (esp. LMIC)</td><td>INICC (International Nosocomial Infection Control Consortium)</td></tr><tr><td>**VINCat**</td><td>Catalonia</td><td>VINCat programme</td></tr><tr><td>**NSQIP**</td><td>USA (ACS)</td><td>Surgical outcomes</td></tr><tr><td>**CDC NHSN AU module**</td><td>USA</td><td>Antimicrobial use and resistance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 9: The Big 5 HAI at a Glance — Comparison Table</div>
+<table class="ctable"><tr><th>Feature</th><th>CAUTI</th><th>SSI</th><th>VAP/VAE</th><th>CLABSI</th><th>CDI</th></tr><tr><td>---------</td><td>-------</td><td>-----</td><td>---------</td><td>--------</td><td>-----</td></tr><tr><td>**Frequency rank**</td><td>1 (overall)</td><td>1 (surgical)</td><td>1 (ICU)</td><td>4</td><td>5</td></tr><tr><td>**Device/procedure**</td><td>Foley</td><td>Surgery</td><td>Endotracheal tube</td><td>Central line</td><td>Antibiotic exposure</td></tr><tr><td>**Top organism**</td><td>*E. coli*</td><td>*S. aureus*</td><td>*Pseudomonas* (late)</td><td>CoNS</td><td>*C. difficile*</td></tr><tr><td>**Timeframe**</td><td>>2 d catheter</td><td>30 d / 90 d implant</td><td>>2 d MV</td><td>>2 d line</td><td>Day 3 +</td></tr><tr><td>**Rate denominator**</td><td>/1000 catheter-days</td><td>/100 procedures</td><td>/1000 vent-days</td><td>/1000 line-days</td><td>/10 000 patient-days</td></tr><tr><td>**#1 prevention**</td><td>Avoid + early removal</td><td>Antibiotic prophylaxis + normothermia + glucose</td><td>HOB 30–45° + sedation vacation + oral CHG</td><td>Central line bundle</td><td>AMS + soap-water hand wash + bleach cleaning</td></tr><tr><td>**Bundle elements**</td><td>4 As (Avoid, Aseptic, Allow drainage, Audience)</td><td>6 Hs + glc/temp</td><td>5 + cuff + SSD</td><td>5 + maintenance</td><td>5 (steward, isolate, clean, hand wash, PPI caution)</td></tr><tr><td>**SIR target**</td><td><0.75</td><td><0.7</td><td>Variable</td><td><0.5</td><td><0.7</td></tr><tr><td>**Attributable mortality**</td><td>Low (2.3%)</td><td>3% (variable)</td><td>13%</td><td>12–25%</td><td>~6%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 10: Quality Improvement and Implementation Science</div>
+<p>#### 10.1 The IHI Breakthrough Series and Bundle Approach</p>
+<ul><li><b>IHI Central Line Bundle (2005)</b> — 5 elements, 100% compliance: a 66% reduction in CLABSI was demonstrated in Michigan ICUs (Pronovost 2006; NEJM).</li><li><b>Bundle logic:</b> all-or-nothing — implementation of every element is the standard; partial bundles show partial benefit.</li><li><b>Compliance audit</b> is essential; displayed on a dashboard.</li><li><b>Behavioural approach:</b> culture of safety, senior leadership, link nurses, "scrub-the-hub" reminders.</li></ul>
+<p>#### 10.2 PDSA Cycle</p>
+<ul><li><b>Plan</b> a change (e.g. CHG bathing on ICU).</li><li><b>Do</b> small test (one bay for 1 week).</li><li><b>Study</b> outcome (CLABSI rate, blood culture contamination).</li><li><b>Act</b> (refine, spread, or abandon).</li></ul>
+<p>#### 10.3 Driver Diagram</p>
+<ul><li>Aim: reduce CLABSI by 50% in 12 months.</li><li>Primary drivers: compliance with bundle, line-days, line-care maintenance.</li><li>Secondary drivers: education, audit, feedback, line-necessity rounds, leadership engagement.</li><li>Change ideas: EMR prompt, daily CHG bath, line-necessity column on ward round.</li></ul>
+<p>#### 10.4 Run Charts and Statistical Process Control (SPC)</p>
+<ul><li><b>Run chart</b> — plot HAI rate monthly; mark shifts, trends, runs, astronomical points.</li><li><b>Control chart (SPC)</b> — upper/lower control limits; new baseline is a "special cause" signal.</li></ul>
+<p>#### 10.5 Audits and Feedback</p>
+<ul><li><b>Insertion audits</b> — independent observer; checklist.</li><li><b>Maintenance audits</b> — daily CHG bathing, dressing integrity, line review.</li><li><b>Real-time feedback</b> to unit on dashboard.</li><li><b>Hand-hygiene audits</b> — direct observation; electric counters; electronic sinks; can be biased by Hawthorne effect.</li><li><b>Environmental cleaning audits</b> — fluorescent gel (DAZO), ATP bioluminescence, or specific organism detection (e.g. <i>C. auris</i>).</li></ul>
+<p>#### 10.6 Implementation Barriers and Strategies</p>
+<table class="ctable"><tr><th>Barrier</th><th>Strategy</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Knowledge**</td><td>E-learning, simulation, induction</td></tr><tr><td>**Behaviour**</td><td>Senior role modelling, link nurses, just-in-time coaching, accountability</td></tr><tr><td>**System**</td><td>EMR order sets, line-necessity prompts, line-trolley standardisation</td></tr><tr><td>**Resources**</td><td>Business case; bundle compliance reduces cost per HAI</td></tr><tr><td>**Culture**</td><td>Psychological safety, blame-free reporting, learning from events</td></tr><tr><td>**MDR organism pressure**</td><td>Active screening, cohort isolation, antibiotic restriction</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 11: Special Populations and Settings</div>
+<p>#### 11.1 Paediatric HAI</p>
+<ul><li>Different surveillance criteria (e.g. age-specific cut-offs, "perinatal" period).</li><li>Bundle modifications: femoral site acceptable in children &lt;8 y.</li><li>Neonatal CLABSI, VAP, and outbreak issues (especially <i>S. marcescens</i>, <i>S. aureus</i>, <i>E. coli</i>, <i>Cronobacter</i>).</li><li>RSV and viral HAI in paediatric wards; seasonal.</li><li>Breast-milk contamination (<i>Cronobacter sakazakii</i>); HACCP in formula preparation.</li></ul>
+<p>#### 11.2 ICU</p>
+<ul><li>Highest HAI density (cumulative device-days, severity of illness).</li><li>VAE/PVAP as primary ventilator surveillance.</li><li>Daily ICU rounds with IPC, AMS, intensivist, ICU pharmacist.</li></ul>
+<p>#### 11.3 Long-Term Care Facilities (LTCF)</p>
+<ul><li>Different surveillance standards (McGeer 2012 criteria in US; ECDC LTCF PPS in EU).</li><li>Common HAIs: UTI (often catheter-associated), respiratory, skin/soft tissue (including scabies), CDI, conjunctivitis, gastroenteritis.</li><li>C. auris and MDROs spread easily in LTCF; cohort nursing.</li><li>Minimum staffing, environmental cleaning, antimicrobial stewardship.</li></ul>
+<p>#### 11.4 Dialysis</p>
+<ul><li>Vascular-access-associated BSI (VAABSI); AV fistula &lt; graft &lt; tunneled CVC &lt; non-tunneled CVC (best to worst).</li><li>Buttonhole cannulation → higher <i>S. aureus</i> BSI.</li><li>Hepatitis B/C: monthly HBsAg, anti-HBc, anti-HCV, ALT in dialysis patients.</li></ul>
+<p>#### 11.5 Burn Units</p>
+<ul><li>Highest device-utilisation; invasive <i>Pseudomonas</i>, <i>Acinetobacter</i>, MRSA.</li><li>Daily CHG bathing; aggressive early excision; topical antimicrobials (silver sulfadiazine, mafenide); environmental cleaning.</li><li>Strict cohorting and contact precautions.</li></ul>
+<p>#### 11.6 Oncology and Haematology</p>
+<ul><li>Neutropenic BSI often classified as <b>MBI-LCBI</b> (mucosal barrier injury) rather than CLABSI.</li><li><i>S. mitis/oralis</i>, <i>Staphylococcus</i> spp. (CoNS), viridans streptococci, <i>Corynebacterium</i>, <i>Candida</i> common.</li><li>Indication-specific treatment: empiric antipseudomonal β-lactam ± vancomycin in septic neutropenic patients.</li></ul>
+<p>#### 11.7 Surgery and Cardiothoracic ICU</p>
+<ul><li>Sternal wound infection (mediastinitis) is a feared SSI; deep/organ-space; mortality 10–25%.</li><li>CABG, valve replacement, and joint arthroplasty: 90-day SSI surveillance.</li><li><i>Cutibacterium acnes</i> (anaerobic Gram-positive) in shoulder arthroplasty and neurosurgical implants.</li></ul>
+<p>#### 11.8 Outpatient / Office-Based Surgery</p>
+<ul><li>ASC HAI surveillance (NHSN 2024) is mandated for CMS certification.</li><li>SSI, IV-antibiotic infusion events.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 12: Environmental Cleaning, Engineering Controls, and Novel Technologies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Effect / Indication</th></tr><tr><td>----------</td><td>---------------------</td></tr><tr><td>**Manual cleaning + detergent**</td><td>Standard; high variability</td></tr><tr><td>**Bleach (NaOCl 1000 ppm) or accelerated H₂O₂**</td><td>*C. difficile* spore kill, *C. auris*, MDRO</td></tr><tr><td>**Hydrogen peroxide vapour (HPV) or dry-mist H₂O₂**</td><td>Terminal cleaning for *C. auris*, CDI, MDRO outbreaks</td></tr><tr><td>**UV-C light (pulsed xenon)**</td><td>Adjunct to manual cleaning; reduces VRE, MRSA, *C. difficile*</td></tr><tr><td>**ATP bioluminescence**</td><td>Cleaning quality monitoring</td></tr><tr><td>**Copper-impregnated surfaces**</td><td>Reduces bioburden; some evidence of HAI reduction</td></tr><tr><td>**Self-disinfecting surfaces (light-activated, copper, silver)**</td><td>Experimental</td></tr><tr><td>**Antimicrobial/CHG-coated catheters (CVC, urinary)**</td><td>Some benefit in high-risk, cost-dependent</td></tr><tr><td>**CHG bathing (2% wipes or solution)**</td><td>ICU: reduces CLABSI, MRSA, VRE</td></tr><tr><td>**Mupirocin + CHG decolonisation**</td><td>Pre-operative for cardiac/ortho; ICU MRSA decolonisation (REDUCE MRSA trial)</td></tr><tr><td>**Bacteriophage therapy**</td><td>Experimental for *Pseudomonas*, *S. aureus*, *A. baumannii*</td></tr><tr><td>**Probiotics**</td><td>CDI primary prevention; VAP prevention (modest)</td></tr><tr><td>**FMT / live biotherapeutics**</td><td>CDI recurrence</td></tr><tr><td>**Monoclonal antibodies (bezlotoxumab)**</td><td>CDI recurrence</td></tr><tr><td>**Heater-cooler unit decontamination**</td><td>*M. chimaera* eradication (NTM risk in cardiac surgery)</td></tr><tr><td>**Water management plans (Legionella)**</td><td>Taps, showers, ice machines</td></tr><tr><td>**Negative-pressure isolation rooms**</td><td>Airborne (TB, measles, varicella, SARS-CoV-2)</td></tr><tr><td>**HEPA filters (positive-pressure for immunocompromised)**</td><td>Aspergillus, viral</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 13: HAI Economics and Policy</div>
+<ul><li><b>Annual cost to US hospitals:</b> $28–45 billion (Scott CDC 2009; updated 2022).</li><li><b>CMS HAC Reduction Program:</b> 1% Medicare payment reduction for hospitals in the worst-performing quartile on HAI measures (CLABSI, CAUTI, SSI, CDI, MRSA BSI).</li><li><b>NHS England / UKHSA:</b> mandatory reporting of MSSA, MRSA, <i>E. coli</i>, <i>Klebsiella</i>, <i>Pseudomonas</i> BSI, CDI; financial incentives/penalties.</li><li><b>Public reporting:</b> mandated hospital-level HAI data on Hospital Compare (US), MyNHS (UK), etc.</li><li><b>WHO multimodal strategy</b> — 5 elements: system change, training/education, monitoring, reminders/comms, safety culture.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>ICU patient on MV day 6 with new fever, purulent sputum, O₂ desaturation, new CXR infiltrate</td><td>VAP suspected; draw blood cultures + non-quantitative endotracheal aspirate; start anti-pseudomonal + MRSA cover</td><td>Empirical cefepime + vancomycin; reassess at 48–72 h</td></tr><tr><td>Surgical patient on day 5 post-CABG with sternal wound erythema, purulent discharge, fever</td><td>Deep/organ-space SSI (mediastinitis) until proven otherwise</td><td>CT chest; ID + CT surgery consult; empirical vancomycin; debridement</td></tr><tr><td>Patient day 14 with central line, TPN, fever 39.0 °C, line site erythema, candidaemia</td><td>CLABSI with *Candida*</td><td>Remove line; blood cultures (peripheral + line); start echinocandin; ophthal review</td></tr><tr><td>Patient on cefepime for HAP develops 6 watery stools/24 h, abdominal pain, leucocytosis 18 000, Cr 1.7</td><td>Possible CDI; severity = severe</td><td>Stop cefepime if possible; start fidaxomicin or oral vancomycin; isolate; bleach cleaning; soap-water hand wash</td></tr><tr><td>Inpatient catheter day 4 with fever 38.5 °C, suprapubic tenderness, urine culture 10⁵ *E. coli*</td><td>CAUTI</td><td>Replace Foley; culture new catheter; targeted antibiotic 7 d</td></tr><tr><td>Pre-op orthopaedic patient found to be MRSA+ on screen</td><td>SSI prevention</td><td>Decolonise mupirocin intranasal BD × 5 d + CHG bathing × 5 d pre-op; add vancomycin to cefazolin prophylaxis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>HAI definition = infection ≥48 h after admission or ≤30 d post-op (90 d for implants).</b> - <b>CAUTI is the most common HAI; key prevention = avoid unnecessary catheter + early removal.</b> - <b>CLABSI bundle = 5 elements: hand hygiene, maximal sterile barrier, CHG skin prep, optimal site (subclavian), daily review.</b> - <b>Site from best to worst for CLABSI: subclavian &gt; IJ &gt; femoral</b> (in adults). - <b>VAP prevention bundle = HOB 30–45° + sedation vacation + oral CHG + PUD/DVT prophylaxis</b> (plus SSD, cuff pressure 20–30 cmH₂O). - <b>VAE is replacing VAP</b> for surveillance — objective, electronic, more reproducible. - <b>SSI prophylaxis timing: within 60 min before incision (120 min for vanco/FQ); within 15 min after cord clamp in C-section.</b> - <b>SSI prophylaxis duration: ≤24 h post-op for most; cardiac up to 48 h if chest tubes remain.</b> - <b>SSI non-antibiotic bundle = normothermia (&gt;36 °C), normoglycaemia (&lt;180 mg/dL), hair clipper (not razor), oxygenation, smoking cessation, skin CHG/alcohol prep.</b> - <b>CDI treatment: vancomycin PO 125 mg QDS or fidaxomicin; metronidazole only if neither available or in fulminant CDI as IV adjunct.</b> - <b>CDI hand wash: SOAP and WATER (alcohol does not kill spores).</b> - <b>CDI environment: bleach (1000 ppm) or hydrogen peroxide vapour.</b> - <b>Recurrent CDI: fidaxomicin → FMT (colonoscopy gold standard) → VOWST/REBYOTA (live biotherapeutics).</b> - <b>SIR = Observed / Expected (risk-adjusted).</b> SIR &lt; 1 = better than baseline. - <b>DUR = device-days / patient-days</b> — lower is better (less reliance on device). - <b>Drain catheter when no longer needed; daily review.</b></div>
+<div class="callout"><b>Common viva:</b> - "Define CAUTI / CLABSI / VAP per NHSN." - "Components of the central line bundle." - "Optimal timing of surgical antibiotic prophylaxis." - "How would you manage a patient with severe CDI / recurrent CDI?" - "SIR formula and how to interpret."</div>
+<div class="callout"><b>Exam trap:</b> - HAI is <b>≥48 h after admission</b>, not after 24 h. - Day of admission = <b>day 1</b> for surveillance (not day 0). - <b>Pyuria</b> alone does not make CAUTI. - **Positive NAAT/PCR for <i>C. difficile</i> toxin gene<b> does not always equal CDI — confirm with symptoms and clinical context. - </b>Alcohol gel does not kill <i>C. difficile</i> spores<b> — wash with soap and water. - </b>CLABSI line removal is mandatory** for <i>S. aureus</i>, <i>Candida</i>, <i>Pseudomonas</i>, <i>Acinetobacter</i> — not for CoNS in a tunneled line. - <b>Antibiotic prophylaxis ≤24 h post-op</b> (cardiac up to 48 h); single dose for most.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Correction</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>"HAI = 24 h after admission"</td><td>HAI = ≥48 h after admission (day 1 = admission day).</td></tr><tr><td>"VAE and VAP are the same"</td><td>VAE is the new objective surveillance; VAP uses clinical/radiographic criteria. Many ICUs now use VAE.</td></tr><tr><td>"CAUTI = asymptomatic bacteriuria"</td><td>CAUTI requires **symptoms** + positive culture; ASB is **not** treated except pregnancy/pre-urology.</td></tr><tr><td>"Positive C. difficile PCR = CDI"</td><td>Confirm with clinical criteria (≥3 unformed stools) — PCR is sensitive but detects carriers. Use GDH + toxin EIA two-step.</td></tr><tr><td>"Stop CDI antibiotics only after negative stool"</td><td>Stop based on **clinical response**; repeat testing discouraged within 7 d.</td></tr><tr><td>"Antibiotic prophylaxis should continue 3–5 d post-op"</td><td>Stop ≤24 h post-op (cardiac up to 48 h if chest tubes remain).</td></tr><tr><td>"Razors remove hair best"</td><td>Razors cause micro-abrasions; clippers or no hair removal preferred.</td></tr><tr><td>"Cefazolin redose every 8 h"</td><td>Cefazolin half-life ~1.8 h; redose **q4h** intra-op.</td></tr><tr><td>"Femoral line is best to avoid pneumothorax"</td><td>Femoral has highest CLABSI rate in adults; prefer subclavian.</td></tr><tr><td>"Line removal not needed if CoNS grown"</td><td>For tunneled lines with CoNS, can attempt lock + systemic; for short-term CVC, remove.</td></tr><tr><td>"Hand gel is enough for CDI"</td><td>Use **soap and water** — gel does not kill spores.</td></tr><tr><td>"FMT is the only option for recurrent CDI"</td><td>Fidaxomicin, VOWST (oral FMT), REBYOTA (rectal FMT) are FDA-approved alternatives.</td></tr><tr><td>"SIR < 1 means there are no HAIs"</td><td>SIR is **risk-adjusted ratio**; 0 HAIs = SIR 0; SIR < 1 = better than national baseline.</td></tr><tr><td>"VAP requires 7 d of antibiotics"</td><td>7 d is sufficient unless *Pseudomonas/Acinetobacter* (14 d) or slow response.</td></tr><tr><td>"VRE is the most common BSI pathogen"</td><td>CoNS is the most common CLABSI organism; *S. aureus* has highest mortality.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HAI types in frequency:</b> "<b>CC-S-V-D</b>" — <b>C</b>AUTI &gt; <b>C</b>LABSI &gt; <b>S</b>SI &gt; <b>V</b>AP &gt; <b>D</b>iarrhoea (CDI).</li><li><b>CAUTI bundle 4 As:</b> <b>A</b>void, <b>A</b>septic insertion, <b>A</b>llow drainage, <b>A</b>udience (daily review).</li><li><b>CLABSI bundle 5 elements:</b> "<b>H</b>and hygiene, <b>M</b>aximal barrier, <b>C</b>HG skin, <b>O</b>ptimal site (S<b>ub</b>clavian), <b>D</b>aily review" → "<b>HMCO</b>D**".</li><li><b>VAP bundle core 5:</b> "<b>H</b>OB up, <b>H</b>alt sedation, <b>H</b>ygiene mouth, <b>H</b>eart (DVT/PUD), <b>H</b>andy (lines/tubes)" → 5 H's.</li><li><b>SSI bundle 6 Hs:</b> "<b>H</b>air (clippers), <b>H</b>and hygiene, <b>H</b>eat (normothermia), <b>H</b>yperoxygenation (FiO₂ 0.8), <b>H</b>ypoglycaemia (avoid — glucose &lt;180), <b>H</b>appy antibiotic (within 60 min)."</li><li><b>CDI hand hygiene:</b> "<b>S</b>oap kills <b>S</b>pores; gel doesn't."</li><li><b>CDI treatment:</b> "<b>V</b>anco 125 QDS for <b>V</b>ancomycin-susceptible <b>V</b>ictims, or <b>F</b>idaxomicin for <b>F</b>uture-proofing."</li><li><b>SSI prophylaxis timing:</b> "<b>60</b> seconds before the cut; <b>120</b> for <b>V</b>anco or <b>Q</b>uinolone; cord clamp for C-section."</li><li><b>CLABSI site order:</b> "<b>S</b>ubclavian &gt; IJ &gt; Femoral" — "<b>S</b>ee IJs and Fems for trouble."</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((HAI Surveillance &amp; Prevention)) Definitions HAI 48h rule SSI 30d 90d rule Day 1 is admission day Big 5 HAIs CAUTI Most common Avoid + early removal 4 As bundle E coli Klebsiella SSI Superficial deep organ space Prophylaxis 60 min before 6 H bundle 24h stop VAP VAE MV 48h + infiltrate + signs HOB 30-45 Sedation vacation Oral CHG SSD cuff pressure CLABSI Central line 48h + BSI HMCO D bundle Subclavian preferred Line removal for Staph Candida CDI 3 stools + toxin or PCR Vancomycin or fidaxomicin FMT VOWST REBYOTA Soap water hand wash Bleach cleaning Surveillance NHSN ECDC GLASS DAIR device days DUR SIR risk adjusted TAP LabID events Antimicrobial Stewardship Restrict clindamycin FQ cephalosporins De-escalation DDD DOT Bundles Insertion maintenance Compliance audit All or nothing QI PDSA Run charts SPC Driver diagram Link nurses Special Settings ICU NICU LTCF Dialysis Burns Oncology MDRO MRSA VRE ESBL CRE CRAB C auris Active screening Cohorting Engineering H2O2 vapour UV-C CHG bathing Copper surfaces HPV </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart — HAI Investigation and Bundle Implementation</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Admit Patient] --&gt; B{Device or Procedure Needed?} B --&gt;|No| C[Reassess Daily] B --&gt;|Yes| D[Insert with Aseptic Bundle] D --&gt; E[Daily Review Necessity] E --&gt; F{Still Needed?} F --&gt;|Yes| G[Maintenance Bundle] F --&gt;|No| H[Remove Device Early] G --&gt; I{New Fever Infection Signs?} I --&gt;|No| E I --&gt;|Yes| J[Apply HAI Criteria] J --&gt; K[Bundle Type?] K --&gt;|CAUTI| L[Urine culture + replace Foley + targeted abx] K --&gt;|CLABSI| M[Paired BC + line removal + empirical vanco + GNR cover] K --&gt;|VAP| N[Respiratory sample + anti-pseudomonal + MRSA cover] K --&gt;|SSI| O[Inspect + drain + culture + targeted abx] K --&gt;|CDI| P[Stool testing + stop offending abx + vanco or fidaxomicin] L --&gt; Q[Surveillance + Feedback] M --&gt; Q N --&gt; Q O --&gt; Q P --&gt; Q Q --&gt; R[PDSA Cycle] R --&gt; S[Bundle Compliance Audit] S --&gt; T[Improved HAI Rate] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Flowchart — SSI Prophylaxis Decision</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient for Surgery] --&gt; B{Indication for Prophylaxis?} B --&gt;|Clean implant or clean-contaminated| C[Give Prophylaxis] B --&gt;|Clean no implant| D[Consider No Prophylaxis] B --&gt;|Contaminated dirty| E[Therapeutic Antibiotics not Prophylaxis] C --&gt; F[Choose Agent by Surgery Type] F --&gt; G{Cefazolin Allergy?} G --&gt;|No| H[Cefazolin 2 g IV 3 g if &gt;120 kg] G --&gt;|Yes non-severe| I[Still Cefazolin] G --&gt;|Severe anaphylaxis| J[Vancomycin or Clindamycin] H --&gt; K[Timing Within 60 min Before Incision] J --&gt; L[Timing Within 120 min Before] K --&gt; M[Redose q4h or blood loss 1500 mL] L --&gt; M M --&gt; N[Stop Within 24 h Post-op] N --&gt; O[Bundle: Normothermia + Glucose &lt;180 + Clipper + CHG-Alcohol Skin + O2] O --&gt; P[Surveillance 30 d 90 d Implant] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Flowchart — CDI Treatment Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[3+ Unformed Stools/24h] --&gt; B[Stop Inciting Antibiotic If Possible] B --&gt; C[GDH + Toxin EIA Two-step] C --&gt; D{GDH and Toxin Results?} D --&gt;|Both positive| E[CDI Confirmed] D --&gt;|GDH+ Toxin-| F[NAAT PCR] F --&gt;|Positive| E F --&gt;|Negative| G[CDI Unlikely] E --&gt; H{Severity?} H --&gt;|Non-severe| I[Fidaxomicin 200 mg BD 10 d] H --&gt;|Severe| I H --&gt;|Fulminant| J[Vancomycin 500 mg PO QDS + Metronidazole IV] I --&gt; K{Response at 48-72 h?} K --&gt;|Yes| L[Complete Course] K --&gt;|No| M[Consider FMT or Bezlotoxumab or Live Biotherapeutic] J --&gt; N[Surgical Consult Total Colectomy or Ileostomy] M --&gt; O[Recurrence 2nd Fidaxomicin 200 mg BD 10 d] O --&gt; P[Recurrence 3rd FMT VOWST REBYOTA] P --&gt; Q[Bezlotoxumab as Adjunct in High Risk] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>HAI = ≥48 h after admission OR ≤30 d post-op (≤90 d implants).</b> Day 1 = admission day. - <b>Big 5:</b> <b>CAUTI &gt; SSI &gt; VAP/VAE &gt; CLABSI &gt; CDI.</b> - <b>CAUTI prevention:</b> Avoid unnecessary catheter; aseptic insertion; closed system; daily review; early removal. The 4 As. - <b>CLABSI bundle:</b> Hand hygiene, Maximal barrier, CHG skin prep, Optimal site (subclavian), Daily review. Site order: S &gt; IJ &gt; F. - <b>VAP bundle:</b> HOB 30–45°, daily sedation vacation + SBT, oral CHG, PUD/DVT prophylaxis, SSD, cuff 20–30 cmH₂O. <b>VAE is replacing VAP</b> in surveillance. - <b>SSI prophylaxis:</b> Cefazolin within 60 min before incision (120 min for vanco/FQ), single dose (≤24 h post-op). Colorectal: cefazolin + metronidazole. Non-antibiotic bundle: normothermia, glucose &lt;180, clipper, CHG-alcohol skin, oxygenation. - <b>CDI:</b> ≥3 unformed stools + positive GDH/EIA or NAAT. <b>Vancomycin 125 mg QDS or fidaxomicin 200 mg BD 10 d.</b> Recurrent: fidaxomicin → FMT/VOWST/REBYOTA → bezlotoxumab. <b>Soap and water</b> for hands (no gel). <b>Bleach 1000 ppm</b> for cleaning. - <b>SIR = Observed / Expected (risk-adjusted).</b> <b>DUR = device-days / patient-days.</b> - <b>AMS is transversal HAI prevention</b> — restrict clindamycin, FQ, cephalosporins, carbapenems. - <b>C. auris:</b> sporicidal cleaning, contact precautions, screening, daily/twice-daily cleaning.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>HAI definition and the 48 h rule.</li><li>The Big 5 HAIs in frequency order.</li><li>CAUTI bundle 4 As.</li><li>CLABSI bundle 5 elements + site order.</li><li>VAP bundle 5 elements + VAE definition.</li><li>SSI prophylaxis timing, agent for colorectal, duration, non-antibiotic bundle.</li><li>CDI treatment of initial, severe, fulminant, recurrent.</li><li>CDI IPC measures (hand wash, bleach, contact precautions).</li><li>SIR formula and interpretation.</li><li>DUR formula and what it tells you.</li><li><i>C. auris</i> IPC.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>HAI definition, Big 5 types, NHSN criteria for CAUTI/CLABSI/VAP/SSI, CLABSI bundle 5 elements, CAUTI bundle, VAP bundle 5, SSI prophylaxis (timing/agent/duration), SSI non-antibiotic bundle, CDI treatment (vanco/fidaxo), CDI prevention, FMT for recurrent CDI, SIR/DUR/DAIR formulas, AMS as cross-cutting</td></tr><tr><td>**Should Know 🟡**</td><td>VAE vs VAP, NNIS SSI risk index, line salvage vs removal, MBI-LCBI, BSI workup after *S. aureus* CLABSI, *C. auris*, MDRO surveillance, IPC core components, environmental cleaning hierarchy, NHSN TAP strategy, public reporting, HAI economics, IPC team roles</td></tr><tr><td>**Nice to Know 🟢**</td><td>WGS for outbreak investigation, heater-cooler *M. chimaera* outbreaks, probiotic prophylaxis, SDD/SOD, antimicrobial catheters, UV-C/H₂O₂ vapour, CDI vaccine trials, paediatric/LTCF/dialysis/burn-specific HAI, MSSA BSI surveillance, OPAT AMS, paediatric SSI risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Plan:</b> HAI definition (48 h, 30/90-day rule) → Big 5 types with NHSN criteria → CLABSI bundle + site selection → VAP bundle + VAE concept → SSI bundle (antibiotic + non-antibiotic) → CDI diagnosis + treatment + prevention + FMT → surveillance (SIR, DUR) → AMS role → quality improvement.</p>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Plan:</b> Definition → NHSN criteria (Big 5) → Prevention bundle (one device) → SIR/DUR.</p>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p>"Define HAI; describe CLABSI bundle; list 4 of the 5 components; explain why femoral is worst and subclavian best in adults; mention hand hygiene + maximal barrier + CHG + daily review."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p>Post-op day 5 CABG patient with sternal wound dehiscence, fever, purulent discharge → classify SSI (deep/organ-space) → take wound swab and blood cultures → empirical anti-staphylococcal ± Gram-negative → CT surgery consult → repeat sternal debridement in OR → antibiotic duration 4–6 weeks if mediastinitis → close IPC measures: contact precautions, screening of contacts, environmental deep clean.</p>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<p>One-page summary above.</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<p>HAI = 48 h, Big 5 = CC-S-V-D (CAUTI &gt; CLABSI &gt; SSI &gt; VAP &gt; CDI), CLABSI bundle 5, VAP bundle 5, SSI prophylaxis 60 min ≤24 h, CDI = vanco/fidaxo + soap water + bleach, SIR = O/E, AMS cuts CDI.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>**A 68-year-old man has an indwelling Foley catheter for 4 days. On day 5 he develops fever 38.6 °C, suprapubic tenderness, and a urine culture grows 10⁵ CFU/mL <i>E. coli</i>. By NHSN criteria, this is best classified as:**</li></ol>
+<p>A. Asymptomatic bacteriuria B. Catheter-associated UTI (CAUTI) C. Catheter-associated asymptomatic candiduria D. Catheter-related bloodstream infection E. Community-acquired UTI <b>Answer: B</b></p>
+<ol><li><b>Which is NOT a component of the IHI Central Line Bundle?</b></li></ol>
+<p>A. Hand hygiene B. Maximal sterile barrier precautions C. 2% chlorhexidine skin antisepsis D. Routine catheter replacement every 7 days E. Daily review of line necessity <b>Answer: D</b></p>
+<ol><li><b>The optimal insertion site for a non-emergent central venous catheter in an adult to minimise CLABSI is:</b></li></ol>
+<p>A. Femoral B. Internal jugular C. Subclavian D. PICC E. Brachial <b>Answer: C</b></p>
+<ol><li><b>A 70-year-old man on cefepime for HAP develops 5 watery stools/24 h, abdominal cramping, WCC 18 000, Cr 1.7 mg/dL. Best initial management is:</b></li></ol>
+<p>A. Loperamide B. Metronidazole PO C. Fidaxomicin or oral vancomycin; stop cefepime if possible D. IV vancomycin E. Steroid enema <b>Answer: C</b></p>
+<ol><li><b>Standard surgical antibiotic prophylaxis with cefazolin should be administered:</b></li></ol>
+<p>A. 24 h before surgery B. At induction only if surgery &gt;2 h C. Within 60 min before skin incision D. Within 30 min after incision E. Post-operatively 6 h <b>Answer: C</b></p>
+<ol><li><b>The most common healthcare-associated infection in adult inpatients in most surveys is:</b></li></ol>
+<p>A. CLABSI B. SSI C. CAUTI D. VAP E. CDI <b>Answer: C</b></p>
+<ol><li><b>In VAP prevention, the head of the bed should be elevated to:</b></li></ol>
+<p>A. 10–15° B. 20° C. 30–45° D. 60° E. 90° <b>Answer: C</b></p>
+<ol><li>**A patient has had a positive NAAT for <i>C. difficile</i> toxin gene but only 1 formed stool/24 h and no clinical features. Best classification is:**</li></ol>
+<p>A. CDI B. Asymptomatic carriage — do not treat C. Fulminant CDI D. Recurrent CDI E. Toxic megacolon <b>Answer: B</b></p>
+<ol><li><b>Which cleaning agent is most appropriate for terminal cleaning of a room vacated by a patient with CDI?</b></li></ol>
+<p>A. Quaternary ammonium compound B. Alcohol C. 0.5% chlorhexidine D. Bleach (NaOCl 1000 ppm) or hydrogen peroxide vapour E. Phenol spray <b>Answer: D</b></p>
+<ol><li><b>The Standardised Infection Ratio (SIR) is calculated as:</b></li></ol>
+<p>A. Expected ÷ Observed HAIs B. Observed HAIs ÷ Expected (risk-adjusted) HAIs C. Device-days ÷ Patient-days D. HAI count × 1000 E. Sum of HAIs per year <b>Answer: B</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 45-year-old woman is admitted to ICU for septic shock. On day 4 she develops new fever, hypotension, and 2 of 2 blood cultures grow coagulase-negative staphylococci. She has a right internal jugular CVC inserted on day 1. Best management includes:</b></li></ol>
+<p>A. Continue CVC, give vancomycin B. Remove CVC, send tip for culture, start vancomycin C. Repeat blood culture only D. Add fluconazole E. Add echinocandin <b>Answer: B</b> — CoNS BSI in a CVC &gt;2 d = CLABSI; CVC removal is standard for short-term lines. <b>Why not A:</b> salvage is for tunneled long-term catheters. <b>Why not D/E:</b> no Candida. <b>Why not C:</b> must act on CoNS in ICU line.</p>
+<ol><li><b>A 75-year-old man develops severe CDI (WCC 22 000, Cr 2.5) for the third time this year after a 14-day course of oral vancomycin. Best next step is:</b></li></ol>
+<p>A. Repeat oral vancomycin for longer B. Fidaxomicin C. FMT via colonoscopy (or VOWST/REBYOTA) D. IV metronidazole monotherapy E. Total colectomy <b>Answer: C</b> — Recurrent CDI (≥2nd recurrence) is the canonical indication for FMT, with 80–90% cure. <b>Why not A/B:</b> already multiple courses. <b>Why not D:</b> IV metronidazole is not first-line. <b>Why not E:</b> colectomy is for fulminant/toxic megacolon.</p>
+<ol><li><b>A 65-year-old man undergoes elective colectomy for cancer. Anaesthesia induction is at 08:00. The optimal cefazolin 2 g IV is given at 07:00. Surgery is 4 h. Best subsequent antibiotic management is:</b></li></ol>
+<p>A. Continue cefazolin q12h × 7 d B. Continue cefazolin × 24 h post-op C. Give cefazolin intra-op redose at 4 h and stop within 24 h post-op D. Switch to piperacillin-tazobactam × 5 d E. Continue until drains removed <b>Answer: C</b> — Colorectal prophylaxis = cefazolin + metronidazole. Cefazolin redose q4h intra-op; stop ≤24 h post-op. <b>Why not A/D/E:</b> extended duration increases resistance and CDI without SSI benefit.</p>
+<ol><li>**A 32-year-old is admitted with severe head injury, intubated, on MV for 6 days. He develops new CXR infiltrate, fever 38.7 °C, purulent tracheal aspirate, increasing O₂ demand. Endotracheal aspirate culture returns 10⁵ <i>Pseudomonas aeruginosa</i> susceptible to cefepime. Best antibiotic duration is:**</li></ol>
+<p>A. 14 d always B. 21 d C. 7 d if clinical response D. Continue until infiltrates resolve E. 3 d <b>Answer: C</b> — VAP 7 d if good response. <b>Why not A:</b> Chastre 2003 showed 8 d vs 15 d no benefit; 14 d for non-fermenters debated but 7 d acceptable if responding. <b>Why not D:</b> prolonged courses no benefit. <b>Why not E:</b> too short.</p>
+<ol><li><b>An ICU notes a 30% increase in CLABSI rate over 3 months. The IPC team implements the central line bundle with daily CHG bathing. The first QI evaluation metric should be:</b></li></ol>
+<p>A. CAUTI rate B. Hand-hygiene compliance C. Bundle compliance (insertion + maintenance) D. SSI rate E. VAP rate <b>Answer: C</b> — Bundle compliance is the immediate measure of implementation; HAI rate change follows. <b>Why not B:</b> related but not the bundle. <b>Why not A/D/E:</b> different HAIs.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Q: HAI definition?</b></li></ul>
+<p><b>A:</b> Infection ≥48 h after admission (or ≤30 d post-op; 90 d if implant) that was not present or incubating at admission.</p>
+<ul><li><b>Q: NHSN CAUTI definition?</b></li></ul>
+<p><b>A:</b> Foley in place &gt;2 calendar days + symptoms (fever, suprapubic/CVA tenderness, urgency/frequency/dysuria) + urine culture ≥10⁵ CFU/mL of ≤2 species.</p>
+<ul><li><b>Q: NHSN CLABSI definition?</b></li></ul>
+<p><b>A:</b> Central line &gt;2 calendar days still in place (or removed previous day) + LCBI-1 (recognised pathogen in ≥1 blood culture) or LCBI-2 (common commensal in ≥2 cultures + fever/chills/hypotension) not related to another site.</p>
+<ul><li><b>Q: CLABSI bundle (5)?</b></li></ul>
+<p><b>A:</b> Hand hygiene, Maximal sterile barrier, Chlorhexidine 2% skin prep, Optimal site (subclavian), Daily review.</p>
+<ul><li><b>Q: VAP prevention bundle (5 core)?</b></li></ul>
+<p><b>A:</b> HOB 30–45°, Daily sedation vacation + SBT, Oral CHG, PUD/DVT prophylaxis, (advanced: subglottic secretion drainage, cuff pressure 20–30 cmH₂O).</p>
+<ul><li><b>Q: VAP diagnostic criteria?</b></li></ul>
+<p><b>A:</b> New/progressive CXR infiltrate + systemic signs (fever/leukocyte/AMS) + pulmonary signs (purulent sputum, gas exchange, crackles) after ≥2 d MV.</p>
+<ul><li><b>Q: VAE definition?</b></li></ul>
+<p><b>A:</b> Tiered objective surveillance: VAC (worsening oxygenation), IVAC (+ fever/WCC + new antimicrobial ≥4 d), PVAP (+ purulent secretions + positive culture).</p>
+<ul><li><b>Q: SSI prophylaxis timing?</b></li></ul>
+<p><b>A:</b> Cefazolin 2 g IV within 60 min before incision (120 min for vancomycin/FQ); 15 min after cord clamp in C-section; single dose ≤24 h post-op.</p>
+<ul><li><b>Q: SSI prophylaxis agent for colorectal surgery?</b></li></ul>
+<p><b>A:</b> Cefazolin + metronidazole (or cefoxitin, cefotetan, ertapenem).</p>
+<ul><li><b>Q: SSI non-antibiotic bundle (6 Hs)?</b></li></ul>
+<p><b>A:</b> Hair clippers (not razors), Hand hygiene, Heat (normothermia ≥36 °C), Hyperoxygenation (FiO₂ 0.8 intra-op), Hypoglycaemia (avoid; glucose &lt;180 mg/dL), Happy antibiotic (60 min).</p>
+<ul><li><b>Q: CDI first-line treatment?</b></li></ul>
+<p><b>A:</b> Fidaxomicin 200 mg BD × 10 d OR vancomycin 125 mg PO QDS × 10 d. Severe: same; fulminant: PO/NG vancomycin 500 mg QDS + IV metronidazole ± rectal vancomycin.</p>
+<ul><li><b>Q: Recurrent CDI (≥2nd)?</b></li></ul>
+<p><b>A:</b> Fidaxomicin 200 mg BD × 10 d OR vancomycin taper-pulse OR FMT (colonoscopy &gt; capsule &gt; enema) OR VOWST/REBYOTA (FDA-approved live biotherapeutics) ± bezlotoxumab in high-risk.</p>
+<ul><li><b>Q: CDI hand hygiene?</b></li></ul>
+<p><b>A:</b> Soap and water (40–60 s); alcohol-based hand rub does not kill spores.</p>
+<ul><li><b>Q: CDI environmental cleaning?</b></li></ul>
+<p><b>A:</b> Bleach 1000 ppm (5000 ppm in outbreaks) or hydrogen peroxide vapour; not quaternary ammonium.</p>
+<ul><li><b>Q: Which antibiotics should be restricted for CDI prevention?</b></li></ul>
+<p><b>A:</b> Clindamycin, fluoroquinolones, 2nd/3rd/4th-gen cephalosporins, carbapenems.</p>
+<ul><li><b>Q: SIR formula?</b></li></ul>
+<p><b>A:</b> Observed HAIs ÷ Expected (risk-adjusted predicted) HAIs. SIR &lt; 1 = better than baseline.</p>
+<ul><li><b>Q: DUR formula?</b></li></ul>
+<p><b>A:</b> Device-days ÷ patient-days. Lower = less device exposure.</p>
+<ul><li><b>Q: DAIR formula?</b></li></ul>
+<p><b>A:</b> HAI count ÷ device-days × 1000.</p>
+<ul><li><b>Q: VAE vs VAP?</b></li></ul>
+<p><b>A:</b> VAE = objective electronic surveillance (oxygenation-based); VAP = clinical pneumonia (subjective). VAE has higher mortality correlation and reduced antibiotic over-use.</p>
+<ul><li><b>Q: Subclavian vs IJ vs femoral for CLABSI?</b></li></ul>
+<p><b>A:</b> Subclavian (lowest CLABSI) &gt; IJ &gt; Femoral (highest CLABSI in adults).</p>
+<ul><li>**Q: Mandatory investigations after <i>S. aureus</i> BSI?**</li></ul>
+<p><b>A:</b> TTE → TEE, repeat blood cultures, source control (line removal), ophthal review, spine imaging if back pain, abdominal imaging if back/flank pain.</p>
+<ul><li><b>Q: CLABSI line removal — always remove for?</b></li></ul>
+<p><b>A:</b> <i>S. aureus</i>, <i>Candida</i>, <i>Pseudomonas</i>, <i>Acinetobacter</i>, mycobacteria, persistent bacteraemia &gt;72 h, septic shock, tunnel infection.</p>
+<ul><li><b>Q: HAP/VAP empirical therapy in MDR risk?</b></li></ul>
+<p><b>A:</b> Anti-pseudomonal β-lactam (cefepime, pip-tazo, meropenem) + anti-MRSA (vancomycin or linezolid); de-escalate at 48–72 h.</p>
+<ul><li><b>Q: VAP duration?</b></li></ul>
+<p><b>A:</b> 7 d (extend to 14 d for <i>Pseudomonas</i>/<i>Acinetobacter</i> or slow response).</p>
+<ul><li>**Q: <i>C. auris</i> IPC?**</li></ul>
+<p><b>A:</b> Single-room contact precautions, dedicated equipment, sporicidal cleaning daily and terminal, screening of contacts, chlorhexidine bathing, daily/terminal HPV/bleach.</p>
+<ul><li><b>Q: WHO 5 moments of hand hygiene?</b></li></ul>
+<p><b>A:</b> Before touching patient, before clean/aseptic procedure, after body fluid exposure, after touching patient, after touching patient surroundings.</p>
+<ul><li><b>Q: CHG bathing evidence?</b></li></ul>
+<p><b>A:</b> Daily 2% CHG bathing in ICU reduces CLABSI, MRSA, VRE.</p>
+<ul><li><b>Q: Antimicrobial stewardship role in HAI?</b></li></ul>
+<p><b>A:</b> Reduces CDI, MDR selection, antibiotic pressure; central to HAI prevention.</p>
+<ul><li><b>Q: FMT route with best evidence?</b></li></ul>
+<p><b>A:</b> Colonoscopy (most evidence, 80–90% cure); capsule and enema are alternatives.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — CAUTI requires Foley &gt;2 d + symptoms + positive culture ≥10⁵ CFU/mL. Asymptomatic bacteriuria is not CAUTI.</li><li><b>Correct: D</b> — Routine line replacement every 7 d is <b>not</b> part of the bundle; lines are replaced only when indicated. Central line bundle is HMCO D (Hand hygiene, Maximal barrier, CHG skin, Optimal site, Daily review).</li><li><b>Correct: C</b> — Subclavian has the lowest CLABSI risk in adults; femoral the highest.</li><li><b>Correct: C</b> — Stop inciting antibiotic if possible; start oral vancomycin or fidaxomicin. Loperamide is contraindicated in severe CDI; IV vancomycin does not cover CDI.</li><li><b>Correct: C</b> — Cefazolin within 60 min before incision for optimum tissue levels. Vancomycin/FQ have a 120-min window due to long infusion time.</li><li><b>Correct: C</b> — CAUTI is the most common HAI overall.</li><li><b>Correct: C</b> — HOB 30–45° reduces aspiration.</li><li><b>Correct: B</b> — Positive NAAT alone with no symptoms = carriage; do not treat (except pregnancy/pre-urology).</li><li><b>Correct: D</b> — Bleach (1000 ppm) or H₂O₂ vapour kills <i>C. difficile</i> spores; quaternary ammonium and alcohol do not.</li><li><b>Correct: B</b> — SIR = Observed ÷ Expected (risk-adjusted). SIR &lt; 1 = better than baseline.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — CoNS in 2 of 2 cultures + CVC &gt;2 d = CLABSI; remove the line and start vancomycin. CoNS is the most common CLABSI organism.</li><li><b>Correct: C</b> — Third episode of severe CDI = multiple recurrent CDI; FMT is standard (colonoscopy preferred); VOWST/REBYOTA are newer live biotherapeutic alternatives.</li><li><b>Correct: C</b> — Single-dose prophylaxis with intra-op redosing (cefazolin q4h) is sufficient; stop ≤24 h post-op. Prolonged prophylaxis increases CDI and resistance without benefit.</li><li><b>Correct: C</b> — VAP 7 d if good response (Chastre 2003). <i>Pseudomonas</i> may justify 14 d, but 7 d is acceptable if clinically responding.</li><li><b>Correct: C</b> — Bundle compliance is the immediate, actionable measure; HAI rate lags. Also useful are line-days, hand-hygiene compliance, CHG bathing compliance, and blood culture contamination.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Healthcare-Associated Infections (HAI) — Surveillance &amp; Prevention</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP and a high-yield, high-impact area of clinical practice. Mastery requires fluency with the <b>Big 5 HAIs</b> (CAUTI, SSI, VAP/VAE, CLABSI, CDI), their <b>NHSN/ECDC definitions</b>, and the <b>insertion and maintenance bundles</b> proven to prevent them. Understand <b>device-associated infection rates</b>, <b>DUR</b>, and the <b>risk-adjusted SIR</b> for surveillance, benchmarking, and public reporting. Apply <b>antimicrobial stewardship</b> as a transversal HAI prevention strategy — particularly for CDI. Recognise the role of <i>C. auris</i>, MDROs, and novel prevention technologies (CHG bathing, HPV, UV-C, antimicrobial catheters). Appreciate the <b>QI methodology</b> (PDSA, driver diagram, SPC) and the <b>WHO IPC core components</b> required for sustainable programmes.</p>
+<p><b>Key takeaway:</b> <b>HAI = infection ≥48 h after admission; prevent with bundles, AMS, and surveillance; SIR &lt; 1 is the goal.</b></p>
+<p><b>Exam focus:</b> Bundle components, HAI definitions, antibiotic prophylaxis timing/agent/duration, CDI treatment and prevention, surveillance metrics, and the rising role of VAE over VAP.</p>
+<p><b>Clinical relevance:</b> Every clinician owns HAI prevention — through hand hygiene, device stewardship, surgical prophylaxis, appropriate antibiotic prescribing, and early detection. The bundles are the practical everyday checklist; AMS is the programme-level lever.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File size: expanded from 6.7 KB scaffold to full FCPS/MRCP template. Aligned with Davidson 24e Chapter 6, NHSN 2024, SHEA/IDSA 2017/2021 (CDI), ATS/IDSA 2016 (HAP/VAP), and WHO IPC Core Components 2022.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Healthcare Associated Infections Hai Surveillance Prevention · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bias Confounding Effect Modification — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.1. EPIDEMIOLOGICAL METHODS & CONCEPTS</span>
+      <div class="h1">Bias Confounding Effect Modification</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify bias: selection, information, confounding</li><li>[ ] Identify major bias types in each study design</li><li>[ ] Define confounding: criteria, examples, control methods (design + analysis)</li><li>[ ] Distinguish effect modification (interaction) from confounding</li><li>[ ] Apply to critical appraisal: identify threats to validity in study scenarios</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Bias**</td><td>Systematic error in design/conduct/analysis → deviation of result from truth</td></tr><tr><td>**Selection Bias**</td><td>Systematic difference in characteristics between those selected vs not selected for study</td></tr><tr><td>**Information Bias**</td><td>Systematic error in measurement of exposure/outcome (misclassification)</td></tr><tr><td>**Confounding**</td><td>Distortion of exposure-outcome association by third factor associated with both</td></tr><tr><td>**Effect Modification**</td><td>True difference in effect magnitude across levels of third variable (not bias)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological concept - see bias typology below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Bias Typology by Design</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Bias Category</th><th>Type</th><th>Definition</th><th>Design Susceptible</th><th>Prevention/Control</th></tr><tr><td>---------------</td><td>------</td><td>------------</td><td>-------------------</td><td>-------------------</td></tr><tr><td>**Selection**</td><td>**Berkson's**</td><td>Hospital controls ≠ population exposure dist</td><td>Case-control</td><td>Population-based controls</td></tr><tr><td></td><td>**Healthy Worker**</td><td>Employed healthier than general pop</td><td>Cohort (occupational)</td><td>Internal comparison; general pop referent</td></tr><tr><td></td><td>**Non-response**</td><td>Responders differ from non-responders</td><td>Cross-sectional, Cohort</td><td>High response; compare responders vs non</td></tr><tr><td></td><td>**Loss to Follow-up**</td><td>Dropouts differ in outcome risk</td><td>Cohort, RCT</td><td>ITT; track reasons; sensitivity analysis</td></tr><tr><td></td><td>**Volunteer/Self-selection**</td><td>Volunteers differ from non-volunteers</td><td>RCT, Cohort</td><td>Broad recruitment; pragmatic trials</td></tr><tr><td>**Information**</td><td>**Recall**</td><td>Cases recall exposure differently than controls</td><td>Case-control</td><td>Blinded interview; records; biomarkers</td></tr><tr><td></td><td>**Interviewer**</td><td>Interviewer knows hypothesis/status</td><td>Case-control, Cohort</td><td>Blinded interviewers; standardised tools</td></tr><tr><td></td><td>**Detection/Surveillance**</td><td>Exposed group screened more intensively</td><td>Cohort, RCT</td><td>Equal surveillance; blinded outcome assess</td></tr><tr><td></td><td>**Misclassification**</td><td>Error in exposure/outcome measurement</td><td>All</td><td>Validation sub-study; objective measures</td></tr><tr><td></td><td>- **Non-differential**</td><td>Same in both groups → bias toward null</td><td>All</td><td>-</td></tr><tr><td></td><td>- **Differential**</td><td>Different between groups → unpredictable</td><td>All</td><td>-</td></tr><tr><td>**Confounding**</td><td>**Confounding by Indication**</td><td>Treatment given based on severity</td><td>Observational therapy studies</td><td>Propensity score; instrumental variable; RCT</td></tr><tr><td></td><td>**Channeling Bias**</td><td>Drugs channelled to specific patient types</td><td>Pharmacoepidemiology</td><td>New-user design; active comparator</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Confounding Criteria & Control)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Confounding Criteria (Must Meet ALL 3):</b></p>
+<ol><li>Associated with exposure (in source population)</li><li>Independent risk factor for outcome (in unexposed)</li><li>Not on causal pathway (not mediator)</li></ol>
+<p><b>Mermaid: Confounding vs Effect Modification</b> ```mermaid flowchart TD A[Third Variable Z] --&gt; B{Associated with Exposure?} B --&gt;|No| C[Not Confounder] B --&gt;|Yes| D{Risk Factor for Outcome&lt;br&gt;in Unexposed?} D --&gt;|No| C D --&gt;|Yes| E{On Causal Pathway?} E --&gt;|Yes| F[Mediator - DO NOT ADJUST] E --&gt;|No| G[CONFOUNDER - ADJUST]</p>
+<p>H[Third Variable Z] --&gt; I{Effect of X on Y&lt;br&gt;Differs by Z Level?} I --&gt;|Yes| J[EFFECT MODIFIER] I --&gt;|No| K[No Interaction] J --&gt; L[Stratify/Report Separately] J --&gt; M[DO NOT POOL]</p>
+<p>style G fill:#f96,stroke:#333 style F fill:#9f9,stroke:#333 style J fill:#f96,stroke:#333 ```</p>
+<p><b>Control of Confounding:</b></p>
+<table class="ctable"><tr><th>Stage</th><th>Methods</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Design**</td><td>Randomisation (RCT), Restriction, Matching (case-control, cohort)</td></tr><tr><td>**Analysis**</td><td>Stratification (Mantel-Haenszel), Multivariable regression, Propensity score (matching/weighting/stratification), Instrumental variable, G-methods (IPTW, g-estimation)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Key Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Confounding vs Effect Modification**</td><td>Confounding = bias (distortion); adjust to get TRUE effect. Effect modification = REAL difference in effect across subgroups; STRATIFY and report separately.</td></tr><tr><td>**Confounding vs Mediation**</td><td>Confounder: cause of both exposure & outcome (Z→X, Z→Y). Mediator: on pathway (X→Z→Y). Adjusting for mediator blocks part of effect → underestimates total effect.</td></tr><tr><td>**Matching ≠ Confounder Control**</td><td>Matching in case-control controls confounding ONLY if matched factor is confounder. Overmatching (matching on exposure correlate) causes bias. Matched analysis REQUIRED (conditional logistic).</td></tr><tr><td>**Non-differential Misclassification**</td><td>Biases toward null (RR→1, OR→1). Differential misclassification: unpredictable direction.</td></tr><tr><td>**Selection Bias in Case-Control**</td><td>Controls must represent exposure distribution in source population that produced cases. Hospital controls often fail this (Berkson's).</td></tr><tr><td>**Confounding by Indication**</td><td>Severity → treatment AND outcome. Standard regression may not fully adjust (unmeasured severity). Need propensity score, IV, or RCT.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Critical Appraisal Checklist)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Study</th><th>Key Bias Questions</th></tr><tr><td>-------</td><td>-------------------</td></tr><tr><td>**RCT**</td><td>Randomisation adequate? Allocation concealed? Blinding (participants, personnel, outcome assessors)? ITT analysis? Loss to follow-up <20% balanced?</td></tr><tr><td>**Cohort**</td><td>Exposed/unexposed comparable at baseline? Confounders measured/adjusted? Follow-up complete? Outcome assessment blinded?</td></tr><tr><td>**Case-Control**</td><td>Cases/controls from same source population? Controls represent exposure dist? Exposure assessment blinded? Recall bias minimised? Matching appropriate?</td></tr><tr><td>**Cross-Sectional**</td><td>Representative sample? Valid measurements? Temporality unclear?</td></tr><tr><td>**Systematic Review**</td><td>Comprehensive search? Risk of bias assessment (RoB 2, ROBINS-I)? Heterogeneity explored? Publication bias (funnel plot)?</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Confounder**</td><td>Meets 3 criteria: associated with exposure, risk factor for outcome, not on pathway. ADJUST.</td></tr><tr><td>**Effect Modifier**</td><td>Effect differs by stratum. STRATIFY and report separate effects. NOT bias.</td></tr><tr><td>**Mediator**</td><td>On causal pathway (X→Z→Y). DO NOT ADJUST for total effect.</td></tr><tr><td>**Selection Bias**</td><td>Berkson's (hospital controls), healthy worker, loss to follow-up, non-response.</td></tr><tr><td>**Information Bias**</td><td>Recall (cases remember more), interviewer, detection/surveillance, misclassification.</td></tr><tr><td>**Non-differential Misclass**</td><td>Bias toward null. Differential: unpredictable.</td></tr><tr><td>**Confounding Control**</td><td>Design: randomisation, restriction, matching. Analysis: stratification, regression, propensity score.</td></tr><tr><td>**Residual Confounding**</td><td>Imperfect measurement of confounder → incomplete adjustment. Always possible in observational.</td></tr><tr><td>**Collider Bias**</td><td>Conditioning on common effect of exposure & outcome → induces association. Avoid adjusting for colliders.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Define confounding. Give classic example.**</td><td>Distortion by third factor associated with both exposure and outcome, not on pathway. Classic: smoking → lung cancer confounded by age (age→smoking, age→cancer). Or alcohol→CHD confounded by smoking.</td></tr><tr><td>**How to distinguish confounding from effect modification?**</td><td>Confounding: crude ≠ adjusted (pooling biased). Effect modification: stratum-specific effects differ significantly (interaction p<0.05). Confounding = bias; EM = biology.</td></tr><tr><td>**What is confounding by indication? How to address?**</td><td>Treatment assigned based on severity (indication). Severity → treatment AND outcome. Address: propensity score, instrumental variable, active comparator, new-user design, RCT.</td></tr><tr><td>**Types of selection bias in case-control?**</td><td>Berkson's (hospital controls), control selection not from source population, overmatching.</td></tr><tr><td>**Recall bias - when occurs? Direction?**</td><td>Case-control. Cases recall exposures more thoroughly than controls. Biases OR away from null (overestimates).</td></tr><tr><td>**Non-differential vs differential misclassification?**</td><td>Non-differential: same error in both groups → bias toward null. Differential: error differs by group → unpredictable direction.</td></tr><tr><td>**When is matching appropriate in case-control? What analysis?**</td><td>Match on confounders (age, sex). Must use CONDITIONAL logistic regression. Overmatching (on exposure correlate) introduces bias.</td></tr><tr><td>**What is a collider? Example of collider bias.**</td><td>Variable caused by both exposure and outcome. Conditioning on it induces spurious association. E.g., hospital admission (collider) in study of risk factors for disease - both exposure and outcome increase admission probability.</td></tr><tr><td>**Propensity score - what is it? Methods?**</td><td>Probability of exposure given covariates. Methods: matching, inverse probability weighting (IPTW), stratification, covariate adjustment. Balances observed confounders.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Adjust for mediator = bad**</td><td>Blocks pathway → underestimates total effect. Use mediation analysis for direct/indirect effects.</td></tr><tr><td>**Stratification vs Regression**</td><td>Stratification: Mantel-Haenszel pooled estimate. Regression: multivariable adjustment. Both valid; regression handles continuous confounders better.</td></tr><tr><td>**Propensity Score ≠ Magic**</td><td>Only balances OBSERVED confounders. Unmeasured confounding remains.</td></tr><tr><td>**Interaction Scale**</td><td>Additive (RD) vs multiplicative (RR). Public health: additive. Etiology: multiplicative.</td></tr></table>
+<p><b>Mnemonic: BIAS TYPES</b></p>
+<ul><li><b>B</b>erkson's (selection)</li><li><b>I</b>nformation (recall, interviewer, detection)</li><li><b>A</b>llocation (selection in RCT)</li><li><b>S</b>urveillance (detection bias)</li></ul>
+<p><b>Mnemonic: CONFOUNDER CRITERIA (AIR)</b></p>
+<ul><li><b>A</b>ssociated with <b>E</b>xposure</li><li><b>I</b>ndependent risk factor for <b>O</b>utcome</li><li><b>R</b>oute not on causal pathway</li></ul>
+<p><b>Mnemonic: CONFOUNDING vs EFFECT MODIFICATION</b></p>
+<ul><li><b>C</b>onfounding = <b>C</b>orrection needed (adjust)</li><li><b>E</b>ffect <b>M</b>odification = <b>M</b>easure separately (stratify)</li></ul>
+<p><b>Mnemonic: BIAS DIRECTION</b></p>
+<ul><li><b>N</b>on-differential → <b>N</b>ull</li><li><b>D</b>ifferential → <b>D</b>irection unknown</li><li><b>R</b>ecall → <b>R</b>aises OR (away from null)</li><li><b>H</b>ealthy worker → <b>L</b>owers risk (spurious protection)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Bias, Confounding, EM)) Selection Bias Berkson's Healthy Worker Loss to Follow-up Non-response Volunteer Information Bias Recall Interviewer Detection/Surveillance Misclassification Non-differential → Null Differential → Unpredictable Confounding Criteria: AIR Control: Design + Analysis Confounding by Indication Collider Bias Effect Modification Interaction Stratify NOT Pool Additive vs Multiplicative </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Confounder**</td><td>AIR: Associated Exposure, Independent Outcome Risk, Not on Route</td></tr><tr><td>**Effect Modifier**</td><td>Stratify; report separate effects; biological truth</td></tr><tr><td>**Mediator**</td><td>On pathway; don't adjust for total effect</td></tr><tr><td>**Selection Bias**</td><td>Berkson's, healthy worker, loss to FU, non-response</td></tr><tr><td>**Info Bias**</td><td>Recall (cases>controls), interviewer, detection, misclass</td></tr><tr><td>**Misclassification**</td><td>Non-diff → null; Diff → unpredictable</td></tr><tr><td>**Confounding Control**</td><td>Design: randomise, restrict, match. Analysis: stratify, regress, PS</td></tr><tr><td>**Confounding by Indication**</td><td>Severity → Rx + Outcome; PS, IV, active comparator</td></tr><tr><td>**Collider**</td><td>X→C←Y; conditioning induces bias; don't adjust</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Bias Classification</td><td></td><td></td></tr><tr><td>Confounding Criteria</td><td></td><td></td></tr><tr><td>Confounding vs EM vs Mediator</td><td></td><td></td></tr><tr><td>Confounding Control Methods</td><td></td><td></td></tr><tr><td>Selection Bias Types</td><td></td><td></td></tr><tr><td>Information Bias Types</td><td></td><td></td></tr><tr><td>Critical Appraisal</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Study Designs (Descriptive, Analytical, Experimental).md]], [[Measures of Association (RR, OR, HR, AR, PAR).md]], [[Systematic Reviews, Meta-analysis, GRADE.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Bias Confounding Effect Modification · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

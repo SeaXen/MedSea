@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Immunisation Vaccination Programs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.2. POPULATION HEALTH ASSESSMENT</span>
+      <div class="h1">Immunisation Vaccination Programs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe UK routine immunisation schedule (childhood, adolescent, adult, selective)</li><li>[ ] Classify vaccine types: live attenuated, inactivated, subunit, mRNA, viral vector</li><li>[ ] Calculate herd immunity threshold: 1 - 1/R₀</li><li>[ ] Identify contraindications (true vs precaution) and precautions</li><li>[ ] Explain cold chain, JCVI role, vaccine hesitancy (5C model)</li><li>[ ] Apply to special groups: pregnancy, immunocompromised, travel, occupational</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Vaccination**</td><td>Administration of vaccine to stimulate adaptive immunity</td></tr><tr><td>**Immunisation**</td><td>Process of becoming immune (includes vaccination + natural infection)</td></tr><tr><td>**Herd Immunity**</td><td>Indirect protection when sufficient population immune → transmission interrupted</td></tr><tr><td>**Vaccine Efficacy (VE)**</td><td>(1 - RR) × 100% in RCT; VE = (ARU - ARV)/ARU</td></tr><tr><td>**Vaccine Effectiveness**</td><td>Real-world protection (observational studies)</td></tr><tr><td>**Cold Chain**</td><td>2-8°C storage/transport from manufacture to administration</td></tr><tr><td>**JCVI**</td><td>Joint Committee on Vaccination and Immunisation (UK advisory body)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>See schedule tables and vaccine types below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Vaccine Types</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Examples</th><th>Mechanism</th><th>Pros</th><th>Cons</th></tr><tr><td>------</td><td>----------</td><td>-----------</td><td>------</td><td>------</td></tr><tr><td>**Live Attenuated**</td><td>MMR, Varicella, Rotavirus, BCG, LAIV (nasal flu), Yellow Fever</td><td>Replicate weakly → strong humoral + cellular</td><td>Single dose often sufficient; durable; mucosal IgA</td><td>Contraindicated in pregnancy, immunocompromised; cold chain critical</td></tr><tr><td>**Inactivated/Whole Killed**</td><td>IPV, Hepatitis A, Rabies, Injectable Flu, Cholera</td><td>Dead pathogen → humoral mainly</td><td>Safe in immunocompromised, pregnancy</td><td>Multiple doses; boosters needed; weaker cellular</td></tr><tr><td>**Subunit/Recombinant**</td><td>Hepatitis B, HPV, MenB (4CMenB), Pertussis (acellular), Shingles</td><td>Purified antigen/protein</td><td>Safe; defined composition</td><td>Need adjuvant; multiple doses; cost</td></tr><tr><td>**Toxoid**</td><td>Diphtheria, Tetanus</td><td>Inactivated toxin</td><td>Prevents toxin-mediated disease</td><td>Boosters needed</td></tr><tr><td>**Conjugate**</td><td>Hib, MenACWY, PCV13/15/20</td><td>Polysaccharide + protein carrier → T-cell dependent</td><td>Works in infants (<2y); memory</td><td>Cost</td></tr><tr><td>**mRNA**</td><td>COVID-19 (Pfizer, Moderna)</td><td>Host cells produce antigen</td><td>Rapid development; no live virus; strong response</td><td>Cold chain (-20/-70°C); reactogenicity</td></tr><tr><td>**Viral Vector**</td><td>COVID-19 (AstraZeneca, J&J), Ebola (rVSV)</td><td>Vector delivers gene</td><td>Strong cellular; single dose possible</td><td>Pre-existing vector immunity; rare VITT (AZ)</td></tr><tr><td>**VLP (Virus-Like Particle)**</td><td>HPV (Gardasil)</td><td>Self-assembling structural proteins</td><td>Non-infectious; high immunogenicity</td><td>Cost</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (UK Schedule)</span>
+  </div>
+  <div class="sec-body">
+<p><b>UK Routine Childhood Schedule (2024):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;Vaccines&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>8 weeks</b>&lt;/td&gt;&lt;td&gt;DTaP/IPV/Hib/HepB (6-in-1), Rotavirus, MenB, PCV&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>12 weeks</b>&lt;/td&gt;&lt;td&gt;DTaP/IPV/Hib/HepB (6-in-1), Rotavirus, PCV&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>16 weeks</b>&lt;/td&gt;&lt;td&gt;DTaP/IPV/Hib/HepB (6-in-1), MenB&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>1 year</b>&lt;/td&gt;&lt;td&gt;Hib/MenC, MMR, PCV booster, MenB booster&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2-10 years (annual)</b>&lt;/td&gt;&lt;td&gt;LAIV (nasal flu)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3y 4m</b>&lt;/td&gt;&lt;td&gt;DTaP/IPV (pre-school booster), MMR 2nd dose&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>12-13 years</b>&lt;/td&gt;&lt;td&gt;HPV (2 doses, 6-24m apart), MenACWY&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>14 years</b>&lt;/td&gt;&lt;td&gt;Td/IPV (teenage booster), MenACWY (if missed)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>UK Adult &amp; Selective Programmes:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Group&lt;/th&gt;&lt;th&gt;Vaccines&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>65+ years</b>&lt;/td&gt;&lt;td&gt;PPV23 (pneumococcal), Shingles (70-79), Flu (annual)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Pregnancy</b>&lt;/td&gt;&lt;td&gt;Pertussis (16-32wks), Flu (any trimester), COVID, RSV (28wks+)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Immunocompromised</b>&lt;/td&gt;&lt;td&gt;Additional PCV, MenB, HepB, inactivated flu (not LAIV)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Healthcare Workers</b>&lt;/td&gt;&lt;td&gt;HepB, MMR, Varicella, BCG (if negative), Flu, COVID&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Travel</b>&lt;/td&gt;&lt;td&gt;HepA, Typhoid, Cholera, Yellow Fever, Rabies, JE, MenACWY&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Occupational</b>&lt;/td&gt;&lt;td&gt;HepB (lab, HCW), BCG (lab, vet, prison), Rabies (bat handlers)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Mermaid: Herd Immunity</b> ``<code>mermaid flowchart LR A[R₀] --&gt; B[HIT = 1 - 1/R₀] B --&gt; C[Vaccine Coverage × Efficacy &gt; HIT] C --&gt;|Yes| D[Elimination Possible] C --&gt;|No| E[Endemic Transmission] style D fill:#bfb,stroke:#333 </code>``</p>
+<p><b>Herd Immunity Thresholds:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Disease&lt;/th&gt;&lt;th&gt;R₀&lt;/th&gt;&lt;th&gt;HIT (1-1/R₀)&lt;/th&gt;&lt;th&gt;Vaccine Efficacy&lt;/th&gt;&lt;th&gt;Coverage Needed&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;-----&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;td&gt;------------------&lt;/td&gt;&lt;td&gt;-----------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Measles&lt;/td&gt;&lt;td&gt;12-18&lt;/td&gt;&lt;td&gt;92-95%&lt;/td&gt;&lt;td&gt;97% (2-dose MMR)&lt;/td&gt;&lt;td&gt;&gt;95%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Pertussis&lt;/td&gt;&lt;td&gt;12-17&lt;/td&gt;&lt;td&gt;92-94%&lt;/td&gt;&lt;td&gt;80-85%&lt;/td&gt;&lt;td&gt;&gt;95%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Polio&lt;/td&gt;&lt;td&gt;5-7&lt;/td&gt;&lt;td&gt;80-86%&lt;/td&gt;&lt;td&gt;99% (IPV)&lt;/td&gt;&lt;td&gt;&gt;90%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Rubella&lt;/td&gt;&lt;td&gt;6-7&lt;/td&gt;&lt;td&gt;83-86%&lt;/td&gt;&lt;td&gt;97% (MMR)&lt;/td&gt;&lt;td&gt;&gt;90%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Diphtheria&lt;/td&gt;&lt;td&gt;6-7&lt;/td&gt;&lt;td&gt;83-86%&lt;/td&gt;&lt;td&gt;95%&lt;/td&gt;&lt;td&gt;&gt;90%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;COVID (original)&lt;/td&gt;&lt;td&gt;2.5-3&lt;/td&gt;&lt;td&gt;60-67%&lt;/td&gt;&lt;td&gt;~90%&lt;/td&gt;&lt;td&gt;~75%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Contraindications & Precautions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>True Contraindications</th><th>Precautions (Defer)</th></tr><tr><td>----------</td><td>----------------------</td><td>---------------------</td></tr><tr><td>**All Vaccines**</td><td>Anaphylaxis to vaccine/component</td><td>Acute febrile illness (>38.5°C)</td></tr><tr><td>**Live Vaccines**</td><td>Pregnancy, Severe immunocompromise (CD4<200, chemo, high-dose steroids), Anaphylaxis to neomycin/gelatin</td><td>Recent blood products (interval 3-11m), TB skin test timing</td></tr><tr><td>**Specific**</td><td>Encephalopathy <7d post-pertussis (DTaP), Intussusception hx (Rotavirus)</td><td>Thrombocytopenia (MMR), GBS <6wks post-vaccine</td></tr></table>
+<p><b>Egg Allergy:</b></p>
+<ul><li><b>Influenza</b>: LAIV &amp; inactivated OK (ovalbumin &lt;0.12μg/ml); observe 15 min</li><li><b>Yellow Fever</b>: Contraindicated (higher ovalbumin); specialist referral</li><li><b>MMR</b>: Safe (grown in chick fibroblast, not egg)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Programme Delivery & Hesitancy)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Cold Chain:</b></p>
+<ul><li><b>2-8°C</b> standard; <b>monitor</b> with max-min thermometer/data logger</li><li><b>Breach</b>: Quarantine, risk assess, do NOT discard automatically; contact screening/immunisation team</li><li><b>Transport</b>: Validated cool boxes, ice packs, temperature monitoring</li></ul>
+<p><b>Vaccine Hesitancy (WHO SAGE 5C Model):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Determinant&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Intervention&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Confidence</b>&lt;/td&gt;&lt;td&gt;Trust in safety/efficacy/system&lt;/td&gt;&lt;td&gt;Transparent data, HCW recommendation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Complacency</b>&lt;/td&gt;&lt;td&gt;Low perceived risk&lt;/td&gt;&lt;td&gt;Risk communication, outbreaks reminders&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Convenience</b>&lt;/td&gt;&lt;td&gt;Access, cost, time&lt;/td&gt;&lt;td&gt;Extended hours, community venues, reminders&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Calculation</b>&lt;/td&gt;&lt;td&gt;Information seeking/weighing&lt;/td&gt;&lt;td&gt;Decision aids, tailored info&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Collective Responsibility</b>&lt;/td&gt;&lt;td&gt;Willingness to protect others&lt;/td&gt;&lt;td&gt;Altruism framing, community norms&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>JCVI Advice Process:</b> Horizon scanning → Evidence review (burden, safety, efficacy, cost-effectiveness) → Modelling → Consultation → Statement → DHSC Minister → Implementation</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Vaccine Types**</td><td>Live attenuated (MMR, Varicella, BCG, Rotavirus, LAIV) - contraindicated in pregnancy/immunocompromise</td></tr><tr><td>**Herd Immunity**</td><td>HIT = 1 - 1/R₀. Measles: R₀ 12-18 → HIT 92-95%. Need coverage × efficacy > HIT</td></tr><tr><td>**UK Schedule**</td><td>8/12/16w: 6-in-1, Rotavirus, MenB, PCV. 1y: Hib/MenC, MMR, PCV, MenB. 3y4m: DTaP/IPV, MMR2. 12-13y: HPV, MenACWY</td></tr><tr><td>**Pregnancy**</td><td>Pertussis 16-32wks, Flu any trimester, COVID, RSV 28wks+</td></tr><tr><td>**Contraindications**</td><td>Anaphylaxis (true). Live: pregnancy, severe immunocompromise. Precaution: acute febrile illness</td></tr><tr><td>**Egg Allergy**</td><td>Flu vaccines safe (low ovalbumin). Yellow fever contraindicated. MMR safe.</td></tr><tr><td>**Cold Chain**</td><td>2-8°C. Breach: quarantine, risk assess, contact team.</td></tr><tr><td>**Vaccine Hesitancy**</td><td>5C: Confidence, Complacency, Convenience, Calculation, Collective Responsibility</td></tr><tr><td>**JCVI**</td><td>Independent expert advisory committee; evidence-based recommendations</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Name live attenuated vaccines in UK schedule.**</td><td>MMR, Varicella, Rotavirus, BCG, LAIV (nasal flu), Yellow Fever (travel). Contraindicated in pregnancy and severe immunocompromise.</td></tr><tr><td>**What is herd immunity threshold for measles? How calculate?**</td><td>R₀=12-18. HIT=1-1/R₀ = 92-95%. Need vaccine coverage × efficacy > HIT.</td></tr><tr><td>**UK childhood immunisation schedule at 8, 12, 16 weeks?**</td><td>8w: 6-in-1, Rotavirus, MenB, PCV. 12w: 6-in-1, Rotavirus, PCV. 16w: 6-in-1, MenB.</td></tr><tr><td>**Vaccines in pregnancy?**</td><td>Pertussis (16-32wks), Flu (any trimester), COVID, RSV (28wks+). All inactivated.</td></tr><tr><td>**True contraindications to vaccination?**</td><td>Anaphylaxis to vaccine/component. Live vaccines: pregnancy, severe immunocompromise.</td></tr><tr><td>**Egg allergy - which vaccines safe?**</td><td>Influenza (LAIV & inactivated) safe (ovalbumin <0.12μg). Yellow fever contraindicated. MMR safe.</td></tr><tr><td>**What is cold chain? Action on breach?**</td><td>2-8°C storage/transport. Breach: quarantine vaccines, risk assess (duration, temp), contact immunisation team. Do NOT automatically discard.</td></tr><tr><td>**Vaccine hesitancy - WHO 5C model?**</td><td>Confidence, Complacency, Convenience, Calculation, Collective Responsibility.</td></tr><tr><td>**Difference between vaccine efficacy and effectiveness?**</td><td>Efficacy: RCT conditions (ideal). Effectiveness: real-world (observational).</td></tr><tr><td>**Conjugate vs plain polysaccharide vaccines?**</td><td>Conjugate (protein carrier) → T-cell dependent → works in infants, immunological memory. Plain polysaccharide → T-cell independent → no memory, poor <2y.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Vaccination vs Immunisation**</td><td>Vaccination = act of giving vaccine. Immunisation = process of becoming immune (includes natural infection).</td></tr><tr><td>**Efficacy vs Effectiveness**</td><td>Efficacy = RCT (ideal). Effectiveness = real world. Effectiveness ≤ Efficacy.</td></tr><tr><td>**LAIV vs Inactivated Flu**</td><td>LAIV: live attenuated, nasal, children 2-17y, contraindicated immunocompromised/pregnancy. Inactivated: injectable, all ages, safe in pregnancy/immunocompromised.</td></tr><tr><td>**MenB vs MenACWY**</td><td>MenB: 4CMenB (Bexsero), infant schedule. MenACWY: conjugate, adolescent/travel.</td></tr></table>
+<p><b>Mnemonic: LIVE VACCINES (UK)</b></p>
+<ul><li><b>M</b>MR</li><li><b>V</b>aricella</li><li><b>R</b>otavirus</li><li><b>B</b>CG</li><li><b>L</b>AIV (nasal flu)</li><li><b>Y</b>ellow Fever</li></ul>
+<p><b>Mnemonic: CONTRAINDICATIONS TO LIVE</b></p>
+<ul><li><b>P</b>regnancy</li><li><b>I</b>mmunocompromise (severe)</li><li><b>A</b>naphylaxis to component</li></ul>
+<p><b>Mnemonic: HERD IMMUNITY</b></p>
+<ul><li><b>H</b>IT = <b>1 - 1/R₀</b></li><li><b>M</b>easles <b>R</b>₀=12-18 → <b>H</b>IT=<b>92-95%</b></li><li><b>C</b>overage × <b>E</b>fficacy &gt; <b>H</b>IT</li></ul>
+<p><b>Mnemonic: UK CHILDHOOD SCHEDULE (8-12-16-1)</b></p>
+<ul><li><b>8w</b>: 6-in-1, Rota, MenB, PCV</li><li><b>12w</b>: 6-in-1, Rota, PCV</li><li><b>16w</b>: 6-in-1, MenB</li><li><b>1y</b>: Hib/MenC, MMR, PCV, MenB</li></ul>
+<p><b>Mnemonic: PREGNANCY VACCINES</b></p>
+<ul><li><b>P</b>ertussis (16-32wks)</li><li><b>F</b>lu (any)</li><li><b>C</b>OVID</li><li><b>R</b>SV (28wks+)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Immunisation &amp; Vaccination)) Vaccine Types Live Attenuated Inactivated Subunit/Recombinant Toxoid Conjugate mRNA Viral Vector UK Schedule Childhood: 8/12/16w, 1y, 3y4m, 12-13y Adult: 65+, Pregnancy, HCW, Travel Herd Immunity R₀, HIT = 1-1/R₀ Measles 92-95% Contraindications True: Anaphylaxis Live: Pregnancy, Immunocompromised Precautions: Febrile illness Programme Cold Chain 2-8°C JCVI Process Hesitancy: 5C Model </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Live Vaccines**</td><td>MMR, Varicella, Rotavirus, BCG, LAIV, Yellow Fever</td></tr><tr><td>**Contraindicated Live**</td><td>Pregnancy, Severe immunocompromise</td></tr><tr><td>**Herd Immunity**</td><td>HIT = 1 - 1/R₀. Measles 92-95%</td></tr><tr><td>**UK Childhood**</td><td>8/12/16w: 6-in-1+Rota+MenB+PCV. 1y: Hib/MenC+MMR+PCV+MenB. 3y4m: DTaP/IPV+MMR2. 12-13y: HPV+MenACWY</td></tr><tr><td>**Pregnancy**</td><td>Pertussis 16-32w, Flu, COVID, RSV 28w+</td></tr><tr><td>**Egg Allergy**</td><td>Flu OK. Yellow fever NO. MMR OK.</td></tr><tr><td>**Cold Chain**</td><td>2-8°C. Breach: quarantine, assess, contact team</td></tr><tr><td>**Hesitancy 5C**</td><td>Confidence, Complacency, Convenience, Calculation, Collective</td></tr><tr><td>**JCVI**</td><td>Independent advisory; evidence → modelling → recommendation</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Vaccine Types</td><td></td><td></td></tr><tr><td>UK Schedule</td><td></td><td></td></tr><tr><td>Herd Immunity / HIT</td><td></td><td></td></tr><tr><td>Contraindications</td><td></td><td></td></tr><tr><td>Pregnancy Vaccines</td><td></td><td></td></tr><tr><td>Cold Chain</td><td></td><td></td></tr><tr><td>Hesitancy 5C</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Infectious Disease Epidemiology.md]], [[Disease Surveillance &amp; Outbreak Investigation.md]], [[Health Promotion &amp; Disease Prevention (Primary, Secondary, Tertiary).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Immunisation Vaccination Programs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

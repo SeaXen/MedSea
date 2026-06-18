@@ -1,0 +1,514 @@
+# Thyroid Cancer
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **Thyroid Cancer = Most common endocrine malignancy**; **Differentiated (DTC) 90%**: **Papillary (PTC) 80%**, **Follicular (FTC) 10-15%**; **Medullary (MTC) 5-10% (RET, MEN2A/2B/FMTC)**; **Anaplastic (ATC) 1-2% (TP53, TERT, BRAF, Worst Prognosis)**; **NIFTP (Non-invasive Follicular Thyroid Neoplasm with Papillary-like Nuclear Features) = Reclassified from Encapsulated FVPTC, Indolent**; **ATA Risk Stratification (Low/Intermediate/High)** guides RAI and TSH Suppression; **Surgery: Total Thyroidectomy ± Central/Lateral ND**; **RAI: Remnant Ablation (Low-risk Deferred), Adjuvant (Intermediate/High), Metastatic**; **TSH Suppression: Low-risk 0.5-2.0, Int 0.1-0.5, High <0.1 mU/L**; **MTC: RET Germline → Prophylactic Thyroidectomy; TKIs (Vandetanib, Cabozantinib, Selpercatinib, Pralsetinib)**; **ATC: CCRT (Doxo), Dabrafenib+Trametinib (BRAF V600E)**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Classify **Thyroid Cancer Histology**: PTC, FTC, MTC, ATC, NIFTP
+- [ ] Apply **ATA Risk Stratification (Low/Intermediate/High)** for DTC
+- [ ] Select **Surgery Extent**: Hemithyroidectomy vs Total Thyroidectomy ± Neck Dissection
+- [ ] Indicate **RAI Therapy**: Remnant Ablation, Adjuvant, Metastatic
+- [ ] Prescribe **TSH Suppression** targets by Risk
+- [ ] Manage **Medullary Thyroid Cancer**: **RET Germline Testing**, Prophylactic Surgery, TKIs
+- [ ] Treat **Anaplastic Thyroid Cancer**: CCRT, BRAF/MEK Inhibitors
+- [ ] Perform **Surveillance**: Tg, TgAb, US, Stimulated Tg
+
+---
+
+## 2. Histological Classification
+
+| Type | Frequency | Key Features | Genetics | Prognosis |
+|------|-----------|--------------|----------|-----------|
+| **Papillary (PTC)** | **80%** | **Nuclear Features (Grooves, Inclusions, Orphan Annie Eyes)**, Psammoma bodies | **BRAF V600E (60%)**, RAS, RET/PTC, NTRK fusions | **Excellent** |
+| **Follicular (FTC)** | **10-15%** | **Capsular/Vascular Invasion** (No nuclear features) | **RAS (40-50%)**, PAX8-PPARG | **Excellent** (if minimally invasive) |
+| **Medullary (MTC)** | **5-10%** | **C-Cell Origin**, **Calcitonin+**, **CEA+**, Amyloid | **RET Germline (25%) / Somatic (75%)** | **Intermediate** |
+| **Anaplastic (ATC)** | **1-2%** | **Undifferentiated**, Spindle/Giant cells, Rapid | **TP53, TERT, BRAF, PI3K** | **Very Poor** (Months) |
+| **NIFTP** | Reclassified | **Encapsulated, Papillary Nuclear Features, No Invasion** | **RAS, PPARG** | **Indolent (No Cancer Suffix)** |
+| **Poorly Differentiated** | <5% | **High Mitoses, Necrosis, Trabecular/Insular** | TP53, TERT | Poor |
+
+---
+
+## 3. ATA Risk Stratification (Differentiated Thyroid Cancer)
+
+| Risk Group | Criteria (Post-Surgery) | Recurrence Risk |
+|------------|-------------------------|-----------------|
+| **Low** | **No** local/regional/distant metastases; **No** aggressive histology; **No** vascular invasion; **Clinical N0**; **T1-2** (if intrathyroidal); **RAI-avid** if done | <5% |
+| **Intermediate** | **Microscopic Invasion** (Perithyroidal, Lymphovascular); **Aggressive Histology** (Tall cell, Columnar cell, Hobnail); **N1** (Micromets ≤0.2cm / ENE-); **T3** (Gross extrathyroidal) | 5-20% |
+| **High** | **Macroscopic Invasion** (T4); **Gross N1** (Macromets >0.2cm / ENE+); **Distant Mets (M1)**; **Incomplete Resection (R1/R2)** | >20% |
+
+---
+
+## 4. Staging (AJCC 8th Edition — Age 55 Cutoff)
+
+| Stage | Age <55 | Age ≥55 |
+|-------|---------|---------|
+| **I** | Any T, Any N, M0 | T1-2a N0 M0 |
+| **II** | Any T, Any N, M1 | T1-2a N1 M0 / T2b-3a N0 M0 |
+| **III** | — | T1-3a N1 M0 / T3b M0 |
+| **IVA** | — | T4a N0-1 M0 |
+| **IVB** | — | T4b Any N M0 |
+| **IVC** | M1 | Any T Any N M1 |
+
+**Key:** **Age 55 is Major Prognostic Factor** — Young patients staged lower.
+
+---
+
+## 5. Management — Differentiated (PTC/FTC)
+
+### Surgery
+
+```mermaid
+flowchart TD
+    A[DTC Diagnosis] --> B{Tumour Size / Risk}
+    B -->|**Low Risk: ≤1cm, Unifocal, No ETE, cN0**| C[**Hemithyroidectomy ± Isthmusectomy**<br/>**ATA: Acceptable for Low Risk**<br/>**No Routine RAI**]
+    B -->|**>1cm OR Multifocal OR ETE OR cN+ OR High Risk Features**| D[**Total Thyroidectomy**]
+    D --> E{Neck Dissection}
+    E -->|**cN0 (Central Compartment)**| F[**Prophylactic Central ND (Level VI)**<br/>**ATA: Recommended for T3-4, cN+, High Risk**; **Optional for T1-2 N0**]
+    E -->|**cN+ (Lateral)**| G[**Therapeutic Lateral ND (Levels II-V)**<br/>**Compartment-Oriented**]
+    F --> H[**RAI Decision**]
+    G --> H
+```
+
+### Radioactive Iodine (RAI) Therapy
+
+| Indication | Activity | Preparation |
+|------------|----------|-------------|
+| **Remnant Ablation** (Low Risk) | **30-50 mCi** (Deferred per ATA 2015 for Low Risk) | **TSH >30 mU/L** (Thyroid Hormone Withdrawal) **OR rhTSH (Thyrogen) 0.9mg IM d-1, d0** |
+| **Adjuvant** (Intermediate/High Risk) | **100-150 mCi** | **TSH >30** or **rhTSH** |
+| **Metastatic Disease** | **150-200 mCi** (Repeated q6-12mo if avid) | **TSH >30**; **Dosimetry if High Activity** |
+
+**RAI Contraindications:** Pregnancy, Breastfeeding, Severe Uncontrolled Thyrotoxicosis.
+
+### TSH Suppression Targets
+
+| ATA Risk | TSH Target (mU/L) | Duration |
+|----------|-------------------|----------|
+| **Low** | **0.5 - 2.0** (Low-normal) | Long-term |
+| **Intermediate** | **0.1 - 0.5** | 5-10 years, then reassess |
+| **High** | **<0.1** (Undetectable) | Long-term (≥10 years) |
+
+### Surveillance
+
+| Modality | Schedule |
+|----------|----------|
+| **Serum Tg + TgAb** | **Every 6-12 months** (Low), **Every 3-6 months** (Int/High) |
+| **Neck US** | **Annually** (Low), **Every 6-12 months** (Int/High) |
+| **Stimulated Tg (rhTSH/Withdrawal)** | **If TgAb+, or Suspicion, or Post-RAI Remission Confirmation** |
+| **Chest CT** | If Tg Rising / Structural Disease Suspected |
+| **PET-CT** | **Tg+, RAI-Negative** (Dedifferentiated) |
+
+---
+
+## 6. Medullary Thyroid Cancer (MTC)
+
+### RET Mutation & Prophylactic Surgery
+
+| RET Mutation (ATA Risk Level) | Prophylactic Thyroidectomy Age | Associated Syndrome |
+|-------------------------------|--------------------------------|---------------------|
+| **Highest (MEN2B: M918T)** | **<1 Year** (6-12 months) | MEN2B (Mucosal Neuromas, Marfanoid) |
+| **High (MEN2A: C634)** | **<5 Years** (3-5 years) | MEN2A (Pheo, Parathyroid Hyperplasia) |
+| **Moderate (FMTC: Other Cysteine)** | **5-10 Years** | FMTC (Familial MTC Only) |
+| **Lower (Non-Cysteine)** | **Individualised** | Variable |
+
+### Systemic Therapy (Metastatic/Unresectable MTC)
+
+| TKI | Target | Key Trial |
+|-----|--------|-----------|
+| **Vandetanib** | VEGFR, EGFR, RET | **ZETA** — PFS benefit |
+| **Cabozantinib** | VEGFR2, MET, RET | **EXAM** — PFS benefit |
+| **Selpercatinib** | **RET Selective** (A883F, V804M, M918T) | **LIBRETTO-001** — **ORR 70-80%, CNS Activity** |
+| **Pralsetinib** | **RET Selective** | **ARROW** — **ORR ~70%** |
+
+**Selpercatinib/Pralsetinib Preferred for RET-mutant MTC (RET-specific, Better Tolerability).**
+
+---
+
+## 7. Anaplastic Thyroid Cancer (ATC)
+
+### Management
+
+| Setting | Treatment |
+|---------|-----------|
+| **Localised (Resectable)** | **Surgery (Total Thyroidectomy ± Tracheostomy) + CCRT (Doxorubicin-based)** |
+| **Locally Advanced** | **CCRT: Doxorubicin 20-25mg/m² weekly + RT 60-66Gy** |
+| **Metastatic / Unresectable** | **Dabrafenib 150mg BID + Trametinib 2mg OD** (if **BRAF V600E** — ~50% ATC) — **ROAR/Phase 2: ORR ~70%** |
+| **Palliative** | **Tracheostomy**, **RT for Airway**, **Best Supportive Care** |
+
+---
+
+## 8. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **PTC** | **80%**, **Nuclear Features**, **BRAF V600E (60%)**, **Excellent Prognosis** |
+| **FTC** | **10-15%**, **Capsular/Vascular Invasion**, **RAS/PAX8-PPARG** |
+| **NIFTP** | **Encapsulated FVPTC → Reclassified**, **Indolent**, **Surgery Only (Lobectomy)** |
+| **ATA Risk** | **Low/Int/High** → Guides **RAI, TSH Suppression, Surveillance** |
+| **Surgery** | **≤1cm Low Risk: Hemithyroidectomy**; **>1cm/ETE/N+: Total + Central ND** |
+| **RAI** | **Low: Deferred**; **Int/High: 100-150 mCi Adjuvant**; **Metastatic: 150-200 mCi** |
+| **TSH Suppression** | **Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1** |
+| **MTC** | **RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr)**; **TKIs: Selpercatinib/Pralsetinib (RET-Selective)** |
+| **ATC** | **1-2%**, **TP53/TERT/BRAF**, **CCRT (Doxo)**, **Dabrafenib+Trametinib (BRAF V600E)** |
+| **Surveillance** | **Tg + TgAb + US**; **Stim Tg if TgAb+ or Suspicion** |
+
+---
+
+## 9. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **35F, 1.5cm PTC, No ETE, cN0. ATA Risk? Surgery?** | **Intermediate Risk** (T2 >1cm, No ETE, cN0) → **Total Thyroidectomy + Central ND** (Prophylactic for T3-4/cN+/High Risk; Optional for T1-2 N0). |
+| **Same patient post-Total Thyroidectomy, Pathology: 2cm, Minimal ETE, 1/6 Central LN Micromet (0.1cm). ATA Risk? RAI?** | **Intermediate Risk** (Microscopic ETE, N1 Micromet) → **RAI 100-150 mCi Adjuvant** (TSH>30 or rhTSH). |
+| **ATA TSH Suppression Targets by Risk?** | **Low: 0.5-2.0 mU/L; Intermediate: 0.1-0.5; High: <0.1** |
+| **MTC — RET Mutation Testing — When Prophylactic Thyroidectomy?** | **Germline RET Positive** → **MEN2B (M918T): <1yr; MEN2A (C634): <5yr; FMTC: 5-10yr**. |
+| **MTC Metastatic — TKI of Choice for RET-mutant?** | **Selpercatinib / Pralsetinib** (RET-Selective, CNS Activity, Better Tolerability) — **Preferred over Vandetanib/Cabozantinib**. |
+| **Anaplastic Thyroid Cancer — BRAF V600E — Targeted Therapy?** | **Dabrafenib 150mg BID + Trametinib 2mg OD** (ROAR Trial: ORR ~70%, Median PFS ~6mo). |
+| **Total Thyroidectomy — Complications?** | **RLN Injury (Hoarseness)**, **Hypoparathyroidism (Transient > Permanent)**, **Bleeding**, **Infection**, **Scar** |
+| **RAI Preparation — Thyrogen vs Withdrawal?** | **rhTSH (Thyrogen) 0.9mg IM d-1, d0** — **Avoids Hypothyroid Symptoms**; **Equivalent Ablation**; **Preferred for Quality of Life** |
+| **NIFTP — What, Management?** | **Non-invasive Follicular Thyroid Neoplasm with Papillary-like Nuclear Features** — **Encapsulated FVPTC, No Invasion** → **Lobectomy Only, NO RAI, NO TSH Suppression** |
+| **Follicular Cancer — Diagnosis Requires?** | **Capsular AND/OR Vascular Invasion** — **Cannot Diagnose on FNA** (Requires Surgical Specimen); **Minimally vs Widely Invasive** |
+
+---
+
+## 10. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Hemithyroidectomy vs Total for PTC** | **≤1cm, Unifocal, No ETE, cN0, No High-Risk Features → Hemithyroidectomy Acceptable**; **Otherwise → Total** |
+| **RAI Ablation vs Adjuvant** | **Ablation**: Destroy Normal Remnant (Low Risk, Deferred); **Adjuvant**: Treat Microscopic Disease (Int/High Risk) |
+| **TSH Suppression — Why Not Always <0.1?** | **Risks**: Osteoporosis (Post-menopausal), Atrial Fibrillation, Cardiovascular; **Balanced by Recurrence Risk** |
+| **NIFTP — Not Cancer?** | **Reclassified from Encapsulated FVPTC**; **Indolent, No Invasion** → **Surgery Only (Lobectomy), NO RAI, NO TSH Suppression** |
+| **MTC — Sporadic vs Hereditary** | **Sporadic: RET Somatic (75%)**; **Hereditary: RET Germline (25%) → MEN2A/2A/FMTC** |
+| **ATC — BRAF V600E Targeted** | **Dabrafenib + Trametinib** — **Only if BRAF V600E+ (~50% ATC)**; **Standard CCRT Doxorubicin-Based if WT** |
+
+**Mnemonic: THYROID-CA**
+- **T**hyroid: **PTC 80% (BRAF V600E)**, **FTC 10-15% (RAS)**, **MTC 5-10% (RET)**, **ATC 1-2% (TP53/TERT)**
+- **H**istology: **Nuclear Features (PTC)**, **Capsular Invasion (FTC)**, **Calcitonin/CEA (MTC)**
+- **Y**oung: **Age <55 Stages Lower** (AJCC 8th)
+- **R**isk Stratification: **ATA Low/Int/High** → **RAI, TSH, Surveillance**
+- **O**peration: **≤1cm Hemithyroidectomy**; **>1cm Total + Central ND**
+- **I**odine (RAI): **Low: Deferred**; **Int/High: 100-150 mCi**; **Mets: 150-200 mCi**
+- **D**ose TSH: **Low 0.5-2.0; Int 0.1-0.5; High <0.1**
+- **C**alcitonin/CEA: **MTC Markers**; **RET Germline → Prophylactic Thyroidectomy**
+- **A**naplastic: **CCRT Doxo**; **BRAF V600E → Dabrafenib+Trametinib**
+- **N**IFTP: **Encapsulated FVPTC → Lobectomy Only, NO RAI**
+- **C**ontraindications RAI: **Pregnancy, Breastfeeding**
+- **A**TA Guidelines: **Surveillance Tg + TgAb + US**
+
+---
+
+## 11. Mind Map
+
+```mermaid
+mindmap
+  root((Thyroid Cancer))
+    Differentiated (90%)
+      PTC (80%) - BRAF V600E - Nuclear Features
+      FTC (10-15%) - RAS - Capsular/Vascular Invasion
+      NIFTP - Encapsulated FVPTC - Lobectomy Only
+      ATA Risk: Low/Int/High
+      Surgery: Hemi (≤1cm Low) / Total (+Central ND)
+      RAI: Low Deferred / Int-High Adjuvant / Mets 150-200mCi
+      TSH Suppression: Low 0.5-2 / Int 0.1-0.5 / High <0.1
+      Surveillance: Tg, TgAb, US, Stim Tg
+    Medullary (5-10%)
+      RET Germline (25%) - MEN2A/2B/FMTC
+      Prophylactic Thyroidectomy: MEN2B <1yr, MEN2A <5yr
+      TKIs: Selpercatinib/Pralsetinib (RET-Selective)
+    Anaplastic (1-2%)
+      TP53, TERT, BRAF
+      CCRT Doxorubicin
+      BRAF V600E → Dabrafenib+Trametinib
+    Staging
+      Age <55 vs ≥55 (AJCC 8th)
+```
+
+---
+
+## 12. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **PTC** | 80%, Nuclear Features, BRAF V600E 60% |
+| **FTC** | 10-15%, Capsular/Vascular Invasion, RAS |
+| **NIFTP** | Encapsulated FVPTC → Lobectomy Only, NO RAI |
+| **ATA Risk** | Low/Int/High → RAI, TSH, Surveillance |
+| **Surgery** | ≤1cm Low → Hemi; >1cm/ETE/N+ → Total + Central ND |
+| **RAI** | Low: Deferred; Int/High: 100-150mCi; Mets: 150-200mCi |
+| **TSH** | Low 0.5-2.0; Int 0.1-0.5; High <0.1 |
+| **MTC** | RET Germline → Prophylactic (MEN2B <1yr, MEN2A <5yr); TKIs: Selpercatinib/Pralsetinib |
+| **ATC** | CCRT Doxo; BRAF V600E → Dabrafenib+Trametinib |
+| **Surveillance** | Tg + TgAb + US; Stim Tg if TgAb+ |
+
+---
+
+## 13. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 14. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Histology Classification | | |
+| ATA Risk Stratification | | |
+| Surgery Indications | | |
+| RAI Indications/Activities | | |
+| TSH Suppression Targets | | |
+| MTC RET/Prophylactic Surgery | | |
+| TKI Selection (Selpercatinib) | | |
+| ATC Management | | |
+| NIFTP Management | | |
+
+---
+
+## 15. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[ATA Risk Stratification]], [[RAI Therapy]], [[TSH Suppression]], [[MEN2/RET]], [[Medullary Thyroid Cancer TKIs]], [[Anaplastic Thyroid Cancer]], [[BRAF V600E]], [[NIFTP]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 16. MCQs (10)
+
+
+**1.** Regarding Thyroid Cancer (PTC), which statement is correct?
+   A. **80%**, **Nuclear Features**, **BRAF V600E (60%)**, **Excellent Prognosis**
+   B. **80%**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **80%**, **Nuclear Features**, **BRAF V600E (60%)**, **Excellent Prognosis**
+
+
+**2.** Regarding Thyroid Cancer (FTC), which statement is correct?
+   A. **10-15%**, **Capsular/Vascular Invasion**, **RAS/PAX8-PPARG**
+   B. **10-15%**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **10-15%**, **Capsular/Vascular Invasion**, **RAS/PAX8-PPARG**
+
+
+**3.** Regarding Thyroid Cancer (NIFTP), which statement is correct?
+   A. **Encapsulated FVPTC → Reclassified**, **Indolent**, **Surgery Only (Lobectomy)**
+   B. **Encapsulated - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Encapsulated FVPTC → Reclassified**, **Indolent**, **Surgery Only (Lobectomy)**
+
+
+**4.** Regarding Thyroid Cancer (ATA Risk), which statement is correct?
+   A. **Low/Int/High** → Guides **RAI, TSH Suppression, Surveillance**
+   B. **Low/Int/High** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Low/Int/High** → Guides **RAI, TSH Suppression, Surveillance**
+
+
+**5.** Regarding Thyroid Cancer (Surgery), which statement is correct?
+   A. **≤1cm Low Risk: Hemithyroidectomy**
+   B. **≤1cm - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **≤1cm Low Risk: Hemithyroidectomy**; **>1cm/ETE/N+: Total + Central ND**
+
+
+**6.** Regarding Thyroid Cancer (RAI), which statement is correct?
+   A. **Low: Deferred**
+   B. **Low: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Low: Deferred**; **Int/High: 100-150 mCi Adjuvant**; **Metastatic: 150-200 mCi**
+
+
+**7.** Regarding Thyroid Cancer (TSH Suppression), which statement is correct?
+   A. **Low: 0.5-2.0
+   B. **Low: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1**
+
+
+**8.** Regarding Thyroid Cancer (MTC), which statement is correct?
+   A. **RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr)**
+   B. **RET - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr)**; **TKIs: Selpercatinib/Pralsetinib (RET-Sel...
+
+
+**9.** Regarding Thyroid Cancer (ATC), which statement is correct?
+   A. **1-2%**, **TP53/TERT/BRAF**, **CCRT (Doxo)**, **Dabrafenib+Trametinib (BRAF V600E)**
+   B. **1-2%**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **1-2%**, **TP53/TERT/BRAF**, **CCRT (Doxo)**, **Dabrafenib+Trametinib (BRAF V600E)**
+
+
+**10.** Regarding Thyroid Cancer (Surveillance), which statement is correct?
+   A. **Tg + TgAb + US**
+   B. **Tg - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Tg + TgAb + US**; **Stim Tg if TgAb+ or Suspicion**
+
+
+## 17. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **80%**, **Nuclear Features**, **BRAF V600E (60%)**, **Excellent Prognosis**
+   - B. **80%**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **80%**, **Nuclear Features**, **BRAF V600E (60%)**, **Excellent Prognosis**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **10-15%**, **Capsular/Vascular Invasion**, **RAS/PAX8-PPARG**
+   - B. **10-15%**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **10-15%**, **Capsular/Vascular Invasion**, **RAS/PAX8-PPARG**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Encapsulated FVPTC → Reclassified**, **Indolent**, **Surgery Only (Lobectomy)**
+   - B. **Encapsulated (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Encapsulated FVPTC → Reclassified**, **Indolent**, **Surgery Only (Lobectomy)**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Low/Int/High** → Guides **RAI, TSH Suppression, Surveillance**
+   - B. **Low/Int/High** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Low/Int/High** → Guides **RAI, TSH Suppression, Surveillance**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **≤1cm Low Risk: Hemithyroidectomy**
+   - B. **≤1cm (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **≤1cm Low Risk: Hemithyroidectomy**; **>1cm/ETE/N+: Total + Central ND**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **Low: Deferred**
+   - B. **Low: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **Low: Deferred**; **Int/High: 100-150 mCi Adjuvant**; **Metastatic: 150-200 mCi**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **Low: 0.5-2.0
+   - B. **Low: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1**
+
+
+**8.** The role of surgery in this case is:
+   - A. **RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr)**
+   - B. **RET (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr)**; **TKIs: Selpercatinib/Pralsetinib (RET-Sel...
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **1-2%**, **TP53/TERT/BRAF**, **CCRT (Doxo)**, **Dabrafenib+Trametinib (BRAF V600E)**
+   - B. **1-2%**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **1-2%**, **TP53/TERT/BRAF**, **CCRT (Doxo)**, **Dabrafenib+Trametinib (BRAF V600E)**
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **Tg + TgAb + US**
+   - B. **Tg (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **Tg + TgAb + US**; **Stim Tg if TgAb+ or Suspicion**
+
+
+## 18. Flashcards
+
+**Q1:** PTC?
+**A1:** 80%, Nuclear Features, BRAF V600E (60%), Excellent Prognosis
+
+**Q2:** FTC?
+**A2:** 10-15%, Capsular/Vascular Invasion, RAS/PAX8-PPARG
+
+**Q3:** NIFTP?
+**A3:** Encapsulated FVPTC → Reclassified, Indolent, Surgery Only (Lobectomy)
+
+**Q4:** ATA Risk?
+**A4:** Low/Int/High → Guides RAI, TSH Suppression, Surveillance
+
+**Q5:** Surgery?
+**A5:** ≤1cm Low Risk: Hemithyroidectomy; >1cm/ETE/N+: Total + Central ND
+
+**Q6:** RAI?
+**A6:** Low: Deferred; Int/High: 100-150 mCi Adjuvant; Metastatic: 150-200 mCi
+
+**Q7:** TSH Suppression?
+**A7:** Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1
+
+**Q8:** MTC?
+**A8:** RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr); TKIs: Selpercatinib/Pralsetinib (RET-Selective)
+
+## 19. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | PTC | 80%, Nuclear Features, BRAF V600E (60%), Excellent Prognosis |
+| 2 | A | FTC | 10-15%, Capsular/Vascular Invasion, RAS/PAX8-PPARG |
+| 3 | A | NIFTP | Encapsulated FVPTC → Reclassified, Indolent, Surgery Only (Lobectomy) |
+| 4 | A | ATA Risk | Low/Int/High → Guides RAI, TSH Suppression, Surveillance |
+| 5 | A | Surgery | ≤1cm Low Risk: Hemithyroidectomy; >1cm/ETE/N+: Total + Central ND |
+| 6 | A | RAI | Low: Deferred; Int/High: 100-150 mCi Adjuvant; Metastatic: 150-200 mCi |
+| 7 | A | TSH Suppression | Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1 |
+| 8 | A | MTC | RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr); TKIs: Selpercatinib/Pralsetinib (RET-Selective |
+| 9 | A | ATC | 1-2%, TP53/TERT/BRAF, CCRT (Doxo), Dabrafenib+Trametinib (BRAF V600E) |
+| 10 | A | Surveillance | Tg + TgAb + US; Stim Tg if TgAb+ or Suspicion |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | PTC | 80%, Nuclear Features, BRAF V600E (60%), Excellent Prognosis |
+| 2 | A | FTC | 10-15%, Capsular/Vascular Invasion, RAS/PAX8-PPARG |
+| 3 | A | NIFTP | Encapsulated FVPTC → Reclassified, Indolent, Surgery Only (Lobectomy) |
+| 4 | A | ATA Risk | Low/Int/High → Guides RAI, TSH Suppression, Surveillance |
+| 5 | A | Surgery | ≤1cm Low Risk: Hemithyroidectomy; >1cm/ETE/N+: Total + Central ND |
+| 6 | A | RAI | Low: Deferred; Int/High: 100-150 mCi Adjuvant; Metastatic: 150-200 mCi |
+| 7 | A | TSH Suppression | Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1 |
+| 8 | A | MTC | RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr); TKIs: Selpercatinib/Pralsetinib (RET-Selective |
+| 9 | A | ATC | 1-2%, TP53/TERT/BRAF, CCRT (Doxo), Dabrafenib+Trametinib (BRAF V600E) |
+| 10 | A | Surveillance | Tg + TgAb + US; Stim Tg if TgAb+ or Suspicion |
+
+## 20. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Head, Neck & Thyroid|Head, Neck & Thyroid]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

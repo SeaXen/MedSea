@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Notifiable Diseases International Health Regulations — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.2. POPULATION HEALTH ASSESSMENT</span>
+      <div class="h1">Notifiable Diseases International Health Regulations</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] List UK notifiable diseases (NOIDs) and causative organisms</li><li>[ ] Describe statutory notification process: clinician → proper officer → UKHSA</li><li>[ ] Explain International Health Regulations (IHR 2005): core capacities, PHEIC criteria</li><li>[ ] Distinguish notifiable diseases, notifiable organisms, notifiable causative agents</li><li>[ ] Apply Public Health Act powers: exclusion, restriction, detention</li><li>[ ] Identify UKHSA/WHO reporting pathways and timelines</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Notifiable Disease (NOID)**</td><td>Disease legally required to be reported by clinicians (clinical suspicion sufficient)</td></tr><tr><td>**Notifiable Organism**</td><td>Organism reported by laboratories (lab confirmation required)</td></tr><tr><td>**Proper Officer**</td><td>Consultant in Communicable Disease Control (CCDC) / UKHSA Health Protection Team</td></tr><tr><td>**IHR (2005)**</td><td>International Health Regulations - binding legal framework for global health security</td></tr><tr><td>**PHEIC**</td><td>Public Health Emergency of International Concern</td></tr><tr><td>**Core Capacities**</td><td>IHR required capabilities: surveillance, response, lab, risk communication, etc.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>See notification lists and processes below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / UK Notifiable Diseases (Health Protection Regulations 2010)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Notifiable Diseases (Clinical Notification - Suspicion Sufficient):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Disease&lt;/th&gt;&lt;th&gt;Causative Organism&lt;/th&gt;&lt;th&gt;Urgency&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;-------------------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Acute encephalitis</b>&lt;/td&gt;&lt;td&gt;Various (HSV, enterovirus, etc.)&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Acute meningitis</b>&lt;/td&gt;&lt;td&gt;Bacterial, viral&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Acute poliomyelitis</b>&lt;/td&gt;&lt;td&gt;Poliovirus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Anthrax</b>&lt;/td&gt;&lt;td&gt;Bacillus anthracis&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Botulism</b>&lt;/td&gt;&lt;td&gt;Clostridium botulinum&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Brucellosis</b>&lt;/td&gt;&lt;td&gt;Brucella spp.&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Cholera</b>&lt;/td&gt;&lt;td&gt;Vibrio cholerae O1/O139&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>COVID-19</b>&lt;/td&gt;&lt;td&gt;SARS-CoV-2&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Diphtheria</b>&lt;/td&gt;&lt;td&gt;Corynebacterium diphtheriae&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Enteric fever (typhoid/paratyphoid)</b>&lt;/td&gt;&lt;td&gt;Salmonella Typhi/Paratyphi&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Food poisoning</b>&lt;/td&gt;&lt;td&gt;Various&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Haemolytic uraemic syndrome (HUS)</b>&lt;/td&gt;&lt;td&gt;STEC (E. coli O157)&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hepatitis A, B, C, E</b>&lt;/td&gt;&lt;td&gt;HAV, HBV, HCV, HEV&lt;/td&gt;&lt;td&gt;Within 24h (A/E immediate)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Invasive Group A Strep (iGAS)</b>&lt;/td&gt;&lt;td&gt;S. pyogenes&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Legionellosis</b>&lt;/td&gt;&lt;td&gt;Legionella pneumophila&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Leprosy</b>&lt;/td&gt;&lt;td&gt;Mycobacterium leprae&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Malaria</b>&lt;/td&gt;&lt;td&gt;Plasmodium spp.&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Measles</b>&lt;/td&gt;&lt;td&gt;Measles virus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Meningococcal septicaemia</b>&lt;/td&gt;&lt;td&gt;Neisseria meningitidis&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>MERS-CoV</b>&lt;/td&gt;&lt;td&gt;MERS coronavirus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mpox</b>&lt;/td&gt;&lt;td&gt;Monkeypox virus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Plague</b>&lt;/td&gt;&lt;td&gt;Yersinia pestis&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Rabies</b>&lt;/td&gt;&lt;td&gt;Rabies lyssavirus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Rubella</b>&lt;/td&gt;&lt;td&gt;Rubella virus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>SARS</b>&lt;/td&gt;&lt;td&gt;SARS coronavirus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Scarlet fever</b>&lt;/td&gt;&lt;td&gt;S. pyogenes&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Smallpox</b>&lt;/td&gt;&lt;td&gt;Variola virus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Tetanus</b>&lt;/td&gt;&lt;td&gt;Clostridium tetani&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Tuberculosis</b>&lt;/td&gt;&lt;td&gt;Mycobacterium tuberculosis&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Typhus</b>&lt;/td&gt;&lt;td&gt;Rickettsia prowazekii&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Viral haemorrhagic fevers</b>&lt;/td&gt;&lt;td&gt;Ebola, Marburg, Lassa, etc.&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Whooping cough</b>&lt;/td&gt;&lt;td&gt;Bordetella pertussis&lt;/td&gt;&lt;td&gt;Within 24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Yellow fever</b>&lt;/td&gt;&lt;td&gt;Yellow fever virus&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Notifiable Organisms (Laboratory Notification):</b></p>
+<ul><li>Salmonella spp., Shigella spp., E. coli O157, Campylobacter, Cryptosporidium, Giardia, Norovirus, Rotavirus</li><li>Neisseria meningitidis, N. gonorrhoeae, S. pneumoniae, H. influenzae, Group A/B/C/G Strep</li><li>Mycobacterium tuberculosis, Chlamydia trachomatis, HIV, Hepatitis viruses</li><li>Influenza virus, RSV, SARS-CoV-2, MERS-CoV</li><li>And many more per Public Health (Notification) Regulations</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Notification Process)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Mermaid: UK Notification Flow</b> ``<code>mermaid flowchart TD A[Clinician Suspects NOID] --&gt; B[Notify Proper Officer\nVerbally/Phone - IMMEDIATE] B --&gt; C[Proper Officer (UKHSA HPT)] C --&gt; D[Risk Assessment\nCase Definition] D --&gt; E[Public Health Action\nContact tracing, exclusion, prophylaxis] E --&gt; F[Lab Confirmation\nNotifiable Organism] F --&gt; G[Lab → UKHSA\nElectronic (SGSS/Second Gen Sys)] G --&gt; H[UKHSA National Surveillance] H --&gt; I[Weekly/Monthly Reports\nWHO IHR Reporting] I --&gt; J[Feedback to Clinician] style B fill:#f96,stroke:#333 style E fill:#bfb,stroke:#333 </code>``</p>
+<p><b>Notification Timelines:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Urgency&lt;/th&gt;&lt;th&gt;Examples&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Immediate</b> (phone)&lt;/td&gt;&lt;td&gt;Measles, meningococcal, VHF, anthrax, botulism, polio, rabies, SARS, MERS, smallpox, plague, diphtheria, acute meningitis/encephalitis, iGAS, HUS&lt;/td&gt;&lt;td&gt;Phone proper officer immediately (24/7)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Within 24 hours</b> (written/electronic)&lt;/td&gt;&lt;td&gt;TB, hepatitis, malaria, typhoid, legionella, scarlet fever, whooping cough, mpox, COVID-19&lt;/td&gt;&lt;td&gt;Written notification within 24h&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Case Definitions (UKHSA):</b></p>
+<ul><li><b>Confirmed</b>: Lab confirmed</li><li><b>Probable</b>: Clinical + epidemiological link</li><li><b>Possible</b>: Clinical features only</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (IHR 2005)</span>
+  </div>
+  <div class="sec-body">
+<p><b>IHR (2005) - Key Elements:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Element&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Purpose</b>&lt;/td&gt;&lt;td&gt;Prevent, protect against, control, respond to international spread of disease&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Scope</b>&lt;/td&gt;&lt;td&gt;All public health risks (biological, chemical, radiological)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Core Capacities (Annex 1)</b>&lt;/td&gt;&lt;td&gt;Surveillance, Response, Laboratory, Risk Communication, Human Resources, Points of Entry, Chemical/Radiation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Decision Instrument (Annex 2)</b>&lt;/td&gt;&lt;td&gt;Algorithm for assessing events for PHEIC notification&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PHEIC Criteria</b>&lt;/td&gt;&lt;td&gt;1) Serious public health impact, 2) Unusual/unexpected, 3) International spread risk, 4) Travel/trade restrictions risk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>PHEIC Notification (Article 6-7):</b></p>
+<ul><li>State Party → WHO within 24h of assessment</li><li>WHO DG declares PHEIC based on Emergency Committee advice</li><li>Temporary Recommendations (non-binding but politically weighty)</li></ul>
+<p><b>Mermaid: PHEIC Decision</b> ``<code>mermaid flowchart TD A[Event Detected] --&gt; B{Decision Instrument\nAnnex 2} B --&gt;|Yes to any 4 criteria| C[Notify WHO within 24h] C --&gt; D[WHO DG convenes\nEmergency Committee] D --&gt; E{PHEIC?} E --&gt;|Yes| F[Temporary Recommendations\nIssued] E --&gt;|No| G[No PHEIC\nMonitor] F --&gt; H[Review q3 months\nTerminate when resolved] style C fill:#f96,stroke:#333 style F fill:#bfb,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Public Health Powers)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Public Health (Control of Disease) Act 1984 / Health Protection Regulations 2010:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Power&lt;/th&gt;&lt;th&gt;Application&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Exclusion</b>&lt;/td&gt;&lt;td&gt;Exclude child/staff from school/childcare (e.g., measles, pertussis)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Restriction</b>&lt;/td&gt;&lt;td&gt;Restrict movements, activities (e.g., food handler with Salmonella)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Detention</b>&lt;/td&gt;&lt;td&gt;Detain in hospital (rare, e.g., XDR-TB, VHF) - Magistrate order&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Disinfection</b>&lt;/td&gt;&lt;td&gt;Premises, articles, conveyances&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Information</b>&lt;/td&gt;&lt;td&gt;Require info from persons/organisations&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>UKHSA Health Protection Teams (HPTs):</b></p>
+<ul><li>Local: 14 centres across England → advice, contact tracing, outbreak control</li><li>National: Specialist teams (TB, GI, respiratory, VPD, travel, imported infections)</li><li>Field epidemiology: Outbreak investigation teams</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**NOIDs**</td><td>~30 diseases notifiable by clinicians on SUSPICION (not confirmation)</td></tr><tr><td>**Immediate Notification**</td><td>Measles, meningococcal, VHF, anthrax, botulism, polio, rabies, SARS, MERS, smallpox, plague, diphtheria, acute meningitis/encephalitis, iGAS, HUS</td></tr><tr><td>**24-hour Notification**</td><td>TB, hepatitis, malaria, typhoid, legionella, scarlet fever, whooping cough, mpox, COVID-19</td></tr><tr><td>**Proper Officer**</td><td>UKHSA Health Protection Team (CCDC)</td></tr><tr><td>**Lab Notification**</td><td>Separate duty; confirmed organisms; electronic (SGSS)</td></tr><tr><td>**IHR 2005**</td><td>Binding on 196 states; core capacities; PHEIC mechanism</td></tr><tr><td>**PHEIC**</td><td>WHO DG declares; 4 criteria met; temporary recommendations</td></tr><tr><td>**Public Health Powers**</td><td>Exclusion, restriction, detention (magistrate), disinfection</td></tr><tr><td>**UKHSA HPT**</td><td>Local + national; contact tracing, outbreak control, advice</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Which diseases require IMMEDIATE notification in UK?**</td><td>Measles, meningococcal septicaemia, viral haemorrhagic fevers, anthrax, botulism, acute poliomyelitis, rabies, SARS, MERS, smallpox, plague, diphtheria, acute meningitis, acute encephalitis, invasive Group A Strep, HUS.</td></tr><tr><td>**Who is the "proper officer" for notification?**</td><td>Consultant in Communicable Disease Control (CCDC) / UKHSA Health Protection Team.</td></tr><tr><td>**Difference between notifiable disease and notifiable organism?**</td><td>Notifiable disease: clinician notifies on SUSPICION (clinical). Notifiable organism: laboratory notifies on CONFIRMATION (lab).</td></tr><tr><td>**What is IHR 2005? What are core capacities?**</td><td>International Health Regulations - binding framework for global health security. Core capacities: surveillance, response, laboratory, risk communication, human resources, points of entry, chemical/radiation.</td></tr><tr><td>**What is PHEIC? Who declares it?**</td><td>Public Health Emergency of International Concern. WHO Director-General declares based on Emergency Committee advice.</td></tr><tr><td>**PHEIC criteria (4)?**</td><td>1) Serious public health impact, 2) Unusual/unexpected, 3) International spread risk, 4) Travel/trade restrictions risk.</td></tr><tr><td>**Public health powers for infectious disease?**</td><td>Exclusion (school/work), Restriction (movement/activity), Detention (hospital - magistrate order), Disinfection.</td></tr><tr><td>**Notification timeline for TB? Measles?**</td><td>TB: within 24 hours (written). Measles: IMMEDIATE (verbal/phone).</td></tr><tr><td>**What is SGSS?**</td><td>Second Generation Surveillance System - electronic lab reporting to UKHSA.</td></tr><tr><td>**Mpox notification status?**</td><td>Notifiable disease (immediate notification) since June 2022.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Clinical vs Lab Notification**</td><td>Clinical = suspicion sufficient (clinician duty). Lab = confirmation required (lab duty). Both required.</td></tr><tr><td>**Immediate vs 24h**</td><td>Immediate = phone/verbal now. 24h = written/electronic within 24h.</td></tr><tr><td>**Proper Officer ≠ GP**</td><td>Proper officer = UKHSA HPT (CCDC), not the GP.</td></tr><tr><td>**IHR vs WHO Constitution**</td><td>IHR = specific binding instrument for health emergencies. WHO Constitution = broader.</td></tr></table>
+<p><b>Mnemonic: IMMEDIATE NOTIFICATION (MAD-VIP RASH)</b></p>
+<ul><li><b>M</b>eningococcal</li><li><b>A</b>nthrax</li><li><b>D</b>iphtheria</li><li><b>V</b>iral Haemorrhagic Fevers</li><li><b>I</b>nvasive GAS / <b>I</b>mmediate (Meningitis/Encephalitis)</li><li><b>P</b>olio / <b>P</b>lague</li><li><b>R</b>abies</li><li><b>A</b>cute Meningitis/Encephalitis</li><li><b>S</b>ARS/MERS/Smallpox</li><li><b>H</b>US / <b>H</b>iGAS</li></ul>
+<p><b>Mnemonic: IHR CORE CAPACITIES (SLURP)</b></p>
+<ul><li><b>S</b>urveillance</li><li><b>L</b>aboratory</li><li><b>U</b>nified Response</li><li><b>R</b>isk Communication</li><li><b>P</b>oints of Entry / <b>P</b>ersonnel (Human Resources)</li></ul>
+<p><b>Mnemonic: PHEIC CRITERIA (SUIT)</b></p>
+<ul><li><b>S</b>erious impact</li><li><b>U</b>nusual/unexpected</li><li><b>I</b>nternational spread</li><li><b>T</b>ravel/trade restrictions</li></ul>
+<p><b>Mnemonic: PUBLIC HEALTH POWERS (ERDD)</b></p>
+<ul><li><b>E</b>xclusion</li><li><b>R</b>estriction</li><li><b>D</b>etention</li><li><b>D</b>isinfection</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Notifiable Diseases &amp; IHR)) UK NOIDs Immediate (Phone) Measles, Meningococcal, VHF Anthrax, Botulism, Polio, Rabies SARS, MERS, Smallpox, Plague Diphtheria, Meningitis/Encephalitis iGAS, HUS Within 24h (Written) TB, Hepatitis, Malaria Typhoid, Legionella Scarlet Fever, Whooping Cough Mpox, COVID-19 Lab Notification SGSS Electronic Confirmed Organisms IHR 2005 Core Capacities Decision Instrument PHEIC Process Public Health Powers Exclusion, Restriction Detention, Disinfection UKHSA HPT Local + National </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**NOIDs**</td><td>~30 diseases; clinician notifies on SUSPICION</td></tr><tr><td>**Immediate**</td><td>Measles, Meningococcal, VHF, Anthrax, Botulism, Polio, Rabies, SARS/MERS, Smallpox, Plague, Diphtheria, Meningitis/Encephalitis, iGAS, HUS</td></tr><tr><td>**24-hour**</td><td>TB, Hepatitis, Malaria, Typhoid, Legionella, Scarlet Fever, Pertussis, Mpox, COVID</td></tr><tr><td>**Proper Officer**</td><td>UKHSA HPT (CCDC)</td></tr><tr><td>**Lab Notify**</td><td>Confirmed organisms; SGSS electronic</td></tr><tr><td>**IHR 2005**</td><td>Binding; core capacities (surveillance, lab, response, etc.)</td></tr><tr><td>**PHEIC**</td><td>WHO DG declares; 4 criteria (SUIT)</td></tr><tr><td>**PH Powers**</td><td>Exclusion, Restriction, Detention, Disinfection</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Immediate vs 24h NOIDs</td><td></td><td></td></tr><tr><td>Notification Process</td><td></td><td></td></tr><tr><td>IHR Core Capacities</td><td></td><td></td></tr><tr><td>PHEIC Criteria</td><td></td><td></td></tr><tr><td>Public Health Powers</td><td></td><td></td></tr><tr><td>UKHSA Structure</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Disease Surveillance &amp; Outbreak Investigation.md]], [[Immunisation &amp; Vaccination Programs.md]], [[Infectious Disease Epidemiology.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Notifiable Diseases International Health Regulations · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Genetic Counselling Testing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.2. CANCER SCREENING & PREVENTION</span>
+      <div class="h1">Genetic Counselling Testing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Identify <b>indications for genetic counselling and testing</b></li><li>[ ] Conduct <b>pre-test</b> and <b>post-test counselling</b></li><li>[ ] Apply <b>cascade testing</b> for at-risk relatives</li><li>[ ] Understand <b>preimplantation genetic testing</b> (PGT-M, PGT-A, PGT-SR)</li><li>[ ] Navigate <b>legal/ethical frameworks</b> (GINA, GDPR, Insurance)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Indications for Genetic Counselling & Testing</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Scenario</th><th>Recommended Testing</th></tr><tr><td>-------------------</td><td>---------------------</td></tr><tr><td>**CRC <50 years**</td><td>Lynch, FAP, MAP, PPAP, PJS, JPS, PTEN</td></tr><tr><td>**TNBC <60 years**</td><td>BRCA1/2, PALB2, CHEK2, ATM</td></tr><tr><td>**Male Breast Cancer**</td><td>BRCA1/2, PALB2, CHEK2</td></tr><tr><td>**Ovarian Cancer**</td><td>BRCA1/2, Lynch, RAD51C/D, BRIP1</td></tr><tr><td>**Pancreatic Cancer**</td><td>BRCA1/2, PALB2, ATM, CDKN2A, Lynch</td></tr><tr><td>**Prostate Cancer (Metastatic)**</td><td>BRCA1/2, PALB2, ATM, CHEK2, Lynch</td></tr><tr><td>**Ashkenazi Jewish Ancestry**</td><td>BRCA1/2 (Founder Mutations)</td></tr><tr><td>**Family History** (≥2 FDR with CRC/EC/OC/GC <50)</td><td>Lynch, FAP, MAP, BRCA1/2, Lynch</td></tr><tr><td>**Multiple Primary Cancers**</td><td>Lynch, BRCA1/2, TP53, PTEN</td></tr><tr><td>**Known Family Mutation**</td><td>Predictive Testing for Relatives</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Genetic Counselling Process</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pre-Test Counselling</div>
+<table class="ctable"><tr><th>Component</th><th>Content</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Information Giving**</td><td>Condition, Inheritance, Penetrance, Cancer Risks</td></tr><tr><td>**Test Details**</td><td>Genes Tested, Method (NGS Panel), Sensitivity/Limitations</td></tr><tr><td>**Implications**</td><td>Medical (Surveillance, Surgery), Reproductive, Psychosocial, Insurance</td></tr><tr><td>**Consent**</td><td>**Informed, Voluntary, Written**, Right to Decline/Withdraw</td></tr><tr><td>**Confidentiality**</td><td>**GDPR/GINA**, Limits (Duty to Warn Relatives)</td></tr><tr><td>**Cost/Insurance**</td><td>NHS Criteria, Self-Fund, Lab Turnaround</td></tr></table>
+<div class="sub-h">Post-Test Counselling</div>
+<table class="ctable"><tr><th>Result</th><th>Counselling Focus</th></tr><tr><td>--------</td><td>-------------------</td></tr><tr><td>**Positive (Pathogenic/Likely Pathogenic)**</td><td>**Medical Management**, **Cascade Testing**, **Reproductive Options**, **Psychosocial Support**</td></tr><tr><td>**Negative (True Negative)**</td><td>**Residual Risk** (Population/Non-Genetic Factors), **Surveillance per Population**</td></tr><tr><td>**VUS (Variant of Uncertain Significance)**</td><td>**Not Actionable**, **Do Not Use for Clinical Decisions**, **Reclassification Follow-Up**</td></tr><tr><td>**Negative (No Mutation Found)**</td><td>**Does Not Exclude Hereditary Syndrome**, **Surveillance Based on Clinical/FH**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Cascade Testing</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pathway</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Index Case**</td><td>**Comprehensive Germline Testing** (NGS Panel)</td></tr><tr><td>**2. Identify Variant**</td><td>**Class 4/5 Pathogenic/Likely Pathogenic**</td></tr><tr><td>**2. Family Cascade**</td><td>**Inform Relatives** (Genetic Counselling, Predictive Testing)</td></tr><tr><td>**3. Predictive Testing**</td><td>**At-Risk Relatives** (50% AD, 25% AR)</td></tr><tr><td>**4. Surveillance Initiation**</td><td>**Per Syndrome Protocol** (If Positive)</td></tr></table>
+<div class="sub-h">Testing Strategy</div>
+<table class="ctable"><tr><th>Scenario</th><th>Approach</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Known Familial Mutation**</td><td>**Predictive Testing** (Targeted, Cheaper, Definitive)</td></tr><tr><td>**No Known Mutation**</td><td>**Comprehensive Panel** (NGS, Multiple Genes)</td></tr><tr><td>**Tumour First**</td><td>**MSI/IHC → Germline if MMR Deficient**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Preimplantation Genetic Testing (PGT)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Purpose</th><th>Indication</th></tr><tr><td>------</td><td>---------</td><td>------------</td></tr><tr><td>**PGT-M**</td><td>**Monogenic/Single Gene Disorder**</td><td>**Known Pathogenic Variant** (BRCA1/2, Lynch, CF, Huntington)</td></tr><tr><td>**PGT-A**</td><td>**Aneuploidy Screening**</td><td>**Advanced Maternal Age, Recurrent Loss, RIF**</td></tr><tr><td>**PGT-SR**</td><td>**Structural Rearrangement**</td><td>**Balanced Translocation/Inversion Carrier**</td></tr></table>
+<div class="sub-h">PGT Workflow</div>
+<table class="ctable"><tr><th>Step</th><th>Description</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**1. IVF/ICSI**</td><td>Oocyte Retrieval, Fertilisation</td></tr><tr><td>**2. Embryo Culture**</td><td>**Day 5/6 Blastocyst**</td></tr><tr><td>**3. Biopsy**</td><td>**Trophectoderm (5-10 Cells)**</td></tr><tr><td>**4. Analysis**</td><td>**NGS / PCR / FISH** (PGT-M/A/SR)</td></tr><tr><td>**5. Transfer**</td><td>**Euploid/Unaffected Embryo** (Frozen Embryo Transfer)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Legal & Ethical Frameworks</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Jurisdiction</th><th>Law/Regulation</th><th>Key Points</th></tr><tr><td>--------------</td><td>----------------</td><td>------------</td></tr><tr><td>**UK**</td><td>**GDPR, Data Protection Act 2018**</td><td>Consent, Data Subject Rights, DPIA</td></tr><tr><td>**UK**</td><td>**Human Tissue Act 2004**</td><td>Consent, Storage, Use of Tissue</td></tr><tr><td>**UK**</td><td>**Equality Act 2010**</td><td>Genetic Non-Discrimination (Employment, Services)</td></tr><tr><td>**US**</td><td>**GINA (2008)**</td><td>**Genetic Information Non-Discrimination Act** (Health Insurance, Employment)</td></tr><tr><td>**EU**</td><td>**GDPR**</td><td>Consent, Right to Erasure, Data Portability</td></tr><tr><td>**Insurance**</td><td>**UK: Concordat & Moratorium**</td><td>**Predictive Genetic Tests Declared** (Life Insurance >£500k)</td></tr></table>
+<div class="sub-h">Key Ethical Principles</div>
+<table class="ctable"><tr><th>Principle</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Autonomy**</td><td>**Informed Consent**, Right to Know/Not Know</td></tr><tr><td>**Beneficence**</td><td>Act in Best Interest (Early Detection, Prevention)</td></tr><tr><td>**Non-Maleficence**</td><td>Avoid Harm (Psychological, Discrimination, Stigma)</td></tr><tr><td>**Justice**</td><td>Equitable Access (Equity, Cultural Sensitivity)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Indications for Testing**</td><td>CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</td></tr><tr><td>**Cascade Testing**</td><td>Index → Germline → Relatives (50% AD Inheritance)</td></tr><tr><td>**Pre-Test Counselling**</td><td>Informed Consent, Implications, Confidentiality, Limitations</td></tr><tr><td>**Post-Test**</td><td>Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable</td></tr><tr><td>**PGT Types**</td><td>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</td></tr><tr><td>**Legal**</td><td>GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)</td></tr><tr><td>**VUS**</td><td>Not Actionable, Do Not Use for Clinical Decisions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Indications for Genetic Counselling/Testing?**</td><td>CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi.</td></tr><tr><td>**Cascade Testing Pathway?**</td><td>Index → Germline Testing → Identify Variant → Relatives Informed → Predictive Testing (50% AD).</td></tr><tr><td>**Pre-Test Counselling — Key Components?**</td><td>Informed Consent, Implications (Medical/Reproductive/Psychosocial), Confidentiality, Limitations, Cost.</td></tr><tr><td>**VUS — Management?**</td><td>**Not Actionable**, Do Not Use for Clinical Decisions, Reclassification Follow-Up, Surveillance per Clinical/FH.</td></tr><tr><td>**PGT Types — PGT-M vs PGT-A vs PGT-SR?**</td><td>**PGT-M**: Monogenic (BRCA, Lynch); **PGT-A**: Aneuploidy (Age, RIF); **PGT-SR**: Structural Rearrangement.</td></tr><tr><td>**GINA vs GDPR — Difference?**</td><td>**GINA**: US, Health Insurance/Employment Protection; **GDPR**: EU/UK, Data Protection, Consent, Erasure.</td></tr><tr><td>**VUS — Actionable?**</td><td>**No** — Not Used for Clinical Decisions, Reclassification Follow-Up.</td></tr><tr><td>**Duty to Warn Relatives — Legal/Ethical?**</td><td>**Ethical Duty** (Confidentiality vs Duty to Warn); **Clinical Judgement**, **Genetic Counselling Facilitates**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Cascade vs Population Screening**</td><td>**Cascade**: Targeted to Relatives of Known Carrier; **Population**: Universal Offer</td></tr><tr><td>**PGT-M vs PGT-A**</td><td>**PGT-M**: Monogenic (BRCA, Lynch); **PGT-A**: Aneuploidy (Age, RIF)</td></tr><tr><td>**VUS vs Pathogenic**</td><td>**VUS**: Uncertain Significance, Not Actionable; **Pathogenic**: Class 4/5, Actionable</td></tr><tr><td>**GINA vs GDPR**</td><td>**GINA**: US, Health Insurance/Employment; **GDPR**: EU/UK, Data Protection, Consent</td></tr><tr><td>**Predictive vs Diagnostic Testing**</td><td>**Predictive**: Asymptomatic, Known Familial Mutation; **Diagnostic**: Symptomatic, Confirm Diagnosis</td></tr><tr><td>**PGT-M vs PGT-SR**</td><td>**PGT-M**: Single Gene (BRCA, Lynch); **PGT-SR**: Chromosomal Rearrangement (Translocation)</td></tr></table>
+<p><b>Mnemonic: GENETIC-COUNSEL</b></p>
+<ul><li><b>G</b>enetic Counselling: <b>Pre/Post-Test</b>, <b>Informed Consent</b>, <b>Implications</b></li><li><b>E</b>ligibility: <b>CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</b></li><li><b>N</b>egative Result: <b>Residual Risk</b>, Not Exclusion</li><li><b>E</b>thical: <b>Autonomy, Beneficence, Non-Maleficence, Justice</b></li><li><b>T</b>est Types: <b>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</b></li><li><b>I</b>nformed Consent: <b>Voluntary, Written, Right to Withdraw</b></li><li><b>C</b>ascade Testing: <b>Index → Germline → Relatives (50% AD)</b></li><li><b>A</b>utonomy: <b>Right to Know/Not Know</b>, Withdrawal Right</li><li><b>L</b>egal: <b>GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)</b></li><li><b>S</b>ensitivity: <b>Psychosocial Support</b>, <b>Non-Directive Counselling</b></li><li><b>E</b>thical Duty: <b>Duty to Warn vs Confidentiality</b> (Clinical Judgement)</li><li><b>L</b>egal Frameworks: <b>GINA (US), GDPR (EU), Equality Act (UK)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Indications**</td><td>CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</td></tr><tr><td>**Cascade**</td><td>Index → Germline → Relatives (50% AD)</td></tr><tr><td>**Pre-Test**</td><td>Informed Consent, Implications, Confidentiality, VUS/Limitations</td></tr><tr><td>**Post-Test**</td><td>Positive: Cascade + Mgmt; Negative: Residual Risk; VUS: Not Actionable</td></tr><tr><td>**PGT**</td><td>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</td></tr><tr><td>**Legal**</td><td>GINA (US), GDPR (EU/UK), Concordat (Insurance)</td></tr><tr><td>**VUS**</td><td>Not Actionable, Reclassification Follow-Up</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Indications for Testing</td><td></td><td></td></tr><tr><td>Counselling Process</td><td></td><td></td></tr><tr><td>Cascade Testing</td><td></td><td></td></tr><tr><td>PGT Types</td><td></td><td></td></tr><tr><td>VUS Management</td><td></td><td></td></tr><tr><td>Legal/Ethical Frameworks</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Lynch Syndrome]], [[FAP]], [[BRCA1/2]], [[Li-Fraumeni]], [[Cascade Testing]], [[PGT]], [[Amsterdam II]], [[Bethesda Criteria]], [[PGT-M]], [[PGT-A]], [[PGT-SR]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Genetic Counselling &amp; Testing (Indications for Testing), which statement is correct? A. CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi B. CRC - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</li></ul>
+<p><b>2.</b> Regarding Genetic Counselling &amp; Testing (Cascade Testing), which statement is correct? A. Index → Germline → Relatives (50% AD Inheritance) B. Index - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Index → Germline → Relatives (50% AD Inheritance)</li></ul>
+<p><b>3.</b> Regarding Genetic Counselling &amp; Testing (Pre-Test Counselling), which statement is correct? A. Informed Consent, Implications, Confidentiality, Limitations B. Informed - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Informed Consent, Implications, Confidentiality, Limitations</li></ul>
+<p><b>4.</b> Regarding Genetic Counselling &amp; Testing (Post-Test), which statement is correct? A. Positive: Medical Mgmt + Cascade B. Positive: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable</li></ul>
+<p><b>5.</b> Regarding Genetic Counselling &amp; Testing (PGT Types), which statement is correct? A. PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural) B. PGT-M - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</li></ul>
+<p><b>6.</b> Regarding Genetic Counselling &amp; Testing (Legal), which statement is correct? A. GINA (US), GDPR/Equality Act (UK), Concordat (Insurance) B. GINA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)</li></ul>
+<p><b>7.</b> Regarding Genetic Counselling &amp; Testing (VUS), which statement is correct? A. Not Actionable, Do Not Use for Clinical Decisions B. Not - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Not Actionable, Do Not Use for Clinical Decisions</li></ul>
+<p><b>8.</b> Regarding Genetic Counselling &amp; Testing (FCPS/MRCP High Yield - Genetic), which statement is correct?</p>
+<ul><li>A. FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pa</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate M...</li></ul>
+<p><b>9.</b> Regarding Genetic Counselling &amp; Testing (Pre/Post-Test Counselling), which statement is correct?</p>
+<ul><li>A. Pre/Post-Test Counselling</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Pre/Post-Test Counselling</li></ul>
+<p><b>10.</b> Regarding Genetic Counselling &amp; Testing (PGT (PGT-M, PGT-A, PGT-SR)), which statement is correct?</p>
+<ul><li>A. PGT (PGT-M, PGT-A, PGT-SR)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — PGT (PGT-M, PGT-A, PGT-SR)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</li><li>B. CRC (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. Index → Germline → Relatives (50% AD Inheritance)</li><li>B. Index (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: Index → Germline → Relatives (50% AD Inheritance)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. Informed Consent, Implications, Confidentiality, Limitations</li><li>B. Informed (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: Informed Consent, Implications, Confidentiality, Limitations</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. Positive: Medical Mgmt + Cascade</li><li>B. Positive: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</li><li>B. PGT-M (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)</li><li>B. GINA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. Not Actionable, Do Not Use for Clinical Decisions</li><li>B. Not (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: Not Actionable, Do Not Use for Clinical Decisions</li></ul>
+<p><b>8.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pa</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate M...</li></ul>
+<p><b>9.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. Pre/Post-Test Counselling</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Pre/Post-Test Counselling</li></ul>
+<p><b>10.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. PGT (PGT-M, PGT-A, PGT-SR)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — PGT (PGT-M, PGT-A, PGT-SR)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Indications for Testing? <b>A1:</b> CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</p>
+<p><b>Q2:</b> Cascade Testing? <b>A2:</b> Index → Germline → Relatives (50% AD Inheritance)</p>
+<p><b>Q3:</b> Pre-Test Counselling? <b>A3:</b> Informed Consent, Implications, Confidentiality, Limitations</p>
+<p><b>Q4:</b> Post-Test? <b>A4:</b> Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable</p>
+<p><b>Q5:</b> PGT Types? <b>A5:</b> PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</p>
+<p><b>Q6:</b> Legal? <b>A6:</b> GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)</p>
+<p><b>Q7:</b> VUS? <b>A7:</b> Not Actionable, Do Not Use for Clinical Decisions</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>8</td><td>A</td><td>FCPS/MRCP High Yield - Genetic Counselling</td><td>FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate M</td></tr><tr><td>9</td><td>A</td><td>Pre/Post-Test Counselling</td><td>Pre/Post-Test Counselling</td></tr><tr><td>10</td><td>A</td><td>PGT (PGT-M, PGT-A, PGT-SR)</td><td>PGT (PGT-M, PGT-A, PGT-SR)</td></tr><tr><td>11</td><td>A</td><td>Ethical/Legal (GINA, GDPR, Insurance)</td><td>Ethical/Legal (GINA, GDPR, Insurance)</td></tr><tr><td>12</td><td>A</td><td>Hereditary Syndromes (Lynch, FAP, BRCA1/2, Li-Frau</td><td>Hereditary Syndromes (Lynch, FAP, BRCA1/2, Li-Fraumeni, VHL, MEN)</td></tr><tr><td>13</td><td>A</td><td>CRC <50 years</td><td>CRC <50 years: Lynch, FAP, MAP, PPAP, PJS, JPS, PTEN</td></tr><tr><td>14</td><td>A</td><td>TNBC <60 years</td><td>TNBC <60 years: BRCA1/2, PALB2, CHEK2, ATM</td></tr><tr><td>15</td><td>A</td><td>Male Breast Cancer</td><td>Male Breast Cancer: BRCA1/2, PALB2, CHEK2</td></tr><tr><td>16</td><td>A</td><td>Ovarian Cancer</td><td>Ovarian Cancer: BRCA1/2, Lynch, RAD51C/D, BRIP1</td></tr><tr><td>17</td><td>A</td><td>Pancreatic Cancer</td><td>Pancreatic Cancer: BRCA1/2, PALB2, ATM, CDKN2A, Lynch</td></tr><tr><td>18</td><td>A</td><td>Prostate Cancer (Metastatic)</td><td>Prostate Cancer (Metastatic): BRCA1/2, PALB2, ATM, CHEK2, Lynch</td></tr><tr><td>19</td><td>A</td><td>Ashkenazi Jewish Ancestry</td><td>Ashkenazi Jewish Ancestry: BRCA1/2 (Founder Mutations)</td></tr><tr><td>20</td><td>A</td><td>Multiple Primary Cancers</td><td>Multiple Primary Cancers: Lynch, BRCA1/2, TP53, PTEN</td></tr><tr><td>21</td><td>A</td><td>Known Family Mutation</td><td>Known Family Mutation: Predictive Testing for Relatives</td></tr><tr><td>22</td><td>A</td><td>Information Giving</td><td>Information Giving: Condition, Inheritance, Penetrance, Cancer Risks</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>8</td><td>A</td><td>FCPS/MRCP High Yield - Genetic Counselling</td><td>FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate M</td></tr><tr><td>9</td><td>A</td><td>Pre/Post-Test Counselling</td><td>Pre/Post-Test Counselling</td></tr><tr><td>10</td><td>A</td><td>PGT (PGT-M, PGT-A, PGT-SR)</td><td>PGT (PGT-M, PGT-A, PGT-SR)</td></tr><tr><td>11</td><td>A</td><td>Ethical/Legal (GINA, GDPR, Insurance)</td><td>Ethical/Legal (GINA, GDPR, Insurance)</td></tr><tr><td>12</td><td>A</td><td>Hereditary Syndromes (Lynch, FAP, BRCA1/2, Li-Frau</td><td>Hereditary Syndromes (Lynch, FAP, BRCA1/2, Li-Fraumeni, VHL, MEN)</td></tr><tr><td>13</td><td>A</td><td>CRC <50 years</td><td>CRC <50 years: Lynch, FAP, MAP, PPAP, PJS, JPS, PTEN</td></tr><tr><td>14</td><td>A</td><td>TNBC <60 years</td><td>TNBC <60 years: BRCA1/2, PALB2, CHEK2, ATM</td></tr><tr><td>15</td><td>A</td><td>Male Breast Cancer</td><td>Male Breast Cancer: BRCA1/2, PALB2, CHEK2</td></tr><tr><td>16</td><td>A</td><td>Ovarian Cancer</td><td>Ovarian Cancer: BRCA1/2, Lynch, RAD51C/D, BRIP1</td></tr><tr><td>17</td><td>A</td><td>Pancreatic Cancer</td><td>Pancreatic Cancer: BRCA1/2, PALB2, ATM, CDKN2A, Lynch</td></tr><tr><td>18</td><td>A</td><td>Prostate Cancer (Metastatic)</td><td>Prostate Cancer (Metastatic): BRCA1/2, PALB2, ATM, CHEK2, Lynch</td></tr><tr><td>19</td><td>A</td><td>Ashkenazi Jewish Ancestry</td><td>Ashkenazi Jewish Ancestry: BRCA1/2 (Founder Mutations)</td></tr><tr><td>20</td><td>A</td><td>Multiple Primary Cancers</td><td>Multiple Primary Cancers: Lynch, BRCA1/2, TP53, PTEN</td></tr><tr><td>21</td><td>A</td><td>Known Family Mutation</td><td>Known Family Mutation: Predictive Testing for Relatives</td></tr><tr><td>22</td><td>A</td><td>Information Giving</td><td>Information Giving: Condition, Inheritance, Penetrance, Cancer Risks</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Indications for Testing</td><td>CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</td></tr><tr><td>2</td><td>A</td><td>Cascade Testing</td><td>Index → Germline → Relatives (50% AD Inheritance)</td></tr><tr><td>3</td><td>A</td><td>Pre-Test Counselling</td><td>Informed Consent, Implications, Confidentiality, Limitations</td></tr><tr><td>4</td><td>A</td><td>Post-Test</td><td>Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable</td></tr><tr><td>5</td><td>A</td><td>PGT Types</td><td>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</td></tr><tr><td>6</td><td>A</td><td>Legal</td><td>GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)</td></tr><tr><td>7</td><td>A</td><td>VUS</td><td>Not Actionable, Do Not Use for Clinical Decisions</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Indications for Testing</td><td>CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi</td></tr><tr><td>2</td><td>A</td><td>Cascade Testing</td><td>Index → Germline → Relatives (50% AD Inheritance)</td></tr><tr><td>3</td><td>A</td><td>Pre-Test Counselling</td><td>Informed Consent, Implications, Confidentiality, Limitations</td></tr><tr><td>4</td><td>A</td><td>Post-Test</td><td>Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable</td></tr><tr><td>5</td><td>A</td><td>PGT Types</td><td>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</td></tr><tr><td>6</td><td>A</td><td>Legal</td><td>GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)</td></tr><tr><td>7</td><td>A</td><td>VUS</td><td>Not Actionable, Do Not Use for Clinical Decisions</td></tr></table>
+<p><b>Q8:</b> FCPS/MRCP High Yield - Genetic Counselling? <b>A8:</b> FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC &lt;50, TNBC &lt;60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer Screening &amp; Prevention|Cancer Screening &amp; Prevention]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Genetic Counselling Testing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

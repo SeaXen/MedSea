@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Injury Violence Epidemiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.3. EPIDEMIOLOGY OF MAJOR DISEASES</span>
+      <div class="h1">Injury Violence Epidemiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe global injury burden: 4.4M deaths, leading causes (RTA, falls, drowning, burns, violence)</li><li>[ ] Apply Haddon Matrix: pre-event, event, post-event × host, agent, environment</li><li>[ ] Distinguish unintentional vs intentional (violence) injuries</li><li>[ ] Apply Safe Systems approach (roads) and violence prevention frameworks</li><li>[ ] Interpret injury metrics: mortality, morbidity (disability, ISS), cost</li><li>[ ] Identify priority populations: children, elderly, LMICs, occupational</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Global (GBD 2019)</th><th>UK</th></tr><tr><td>--------</td><td>-------------------</td><td>-----</td></tr><tr><td>**Injury Deaths**</td><td>4.4 million (8% all deaths)</td><td>~13,000/year</td></tr><tr><td>**RTA Deaths**</td><td>1.35 million</td><td>~1,700</td></tr><tr><td>**Fall Deaths**</td><td>~700,000</td><td>~5,000 (leading injury death elderly)</td></tr><tr><td>**Drowning**</td><td>~236,000</td><td>~200</td></tr><tr><td>**Burns**</td><td>~180,000</td><td>~200</td></tr><tr><td>**Suicide**</td><td>~700,000</td><td>~5,500</td></tr><tr><td>**Homicide**</td><td>~400,000</td><td>~600</td></tr><tr><td>**DALYs**</td><td>~300 million</td><td>Major</td></tr><tr><td>**Leading Killer 5-29y**</td><td>**Road Traffic Accidents**</td><td>RTA</td></tr></table>
+<p><b>Injury Pyramid (for each death):</b></p>
+<ul><li>Deaths: 1</li><li>Hospitalisations: ~10-50</li><li>ED visits: ~100-200</li><li>Community-treated: ~500-1000</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Epidemiological patterns by mechanism - see classifications below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Injury Types</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Mechanism</th><th>Key Populations</th><th>Prevention Priority</th></tr><tr><td>----------</td><td>-----------</td><td>-----------------</td><td>---------------------</td></tr><tr><td>**Unintentional**</td><td></td><td></td><td></td></tr><tr><td>Road Traffic (RTA)</td><td>Vehicle occupant, pedestrian, cyclist, motorcyclist</td><td>5-29y (leading), LMICs (90% deaths)</td><td>Safe Systems, helmet, seatbelt, speed</td></tr><tr><td>Falls</td><td>Slips, trips, height, stairs</td><td>Elderly (>65y), children, occupational</td><td>Home mods, exercise, gait assessment</td></tr><tr><td>Drowning</td><td>Open water, pools, baths</td><td>Children 1-4y, males, LMICs, flood</td><td>Barriers, supervision, swim skills, lifejackets</td></tr><tr><td>Burns</td><td>Thermal, chemical, electrical</td><td>Children <5y (scalds), LMICs (cooking), occupational</td><td>Smoke alarms, water temp, first aid</td></tr><tr><td>Poisoning</td><td>Medicines, CO, chemicals</td><td>Children <5y, suicide intent, occupational</td><td>Child-resistant packs, CO alarms</td></tr><tr><td>**Intentional (Violence)**</td><td></td><td></td><td></td></tr><tr><td>Self-harm/Suicide</td><td>Hanging, pesticide, firearms, jumping</td><td>15-29y (4th leading), male completion</td><td>Means restriction, mental health, gatekeepers</td></tr><tr><td>Interpersonal/Homicide</td><td>Firearms, sharp objects, assault</td><td>Young males, intimate partner, gangs</td><td>Social programmes, alcohol control, policing</td></tr><tr><td>Collective/War</td><td>Conflict, terrorism</td><td>Populations in conflict zones</td><td>Peacebuilding, IHL, humanitarian protection</td></tr><tr><td>**Other**</td><td></td><td></td><td></td></tr><tr><td>Occupational</td><td>Machinery, falls, chemicals, ergonomic</td><td>Workers, informal sector</td><td>OSH regulations, hierarchy of controls</td></tr><tr><td>Sports/Recreation</td><td>Contact sports, water, adventure</td><td>Youth, athletes</td><td>Rules, protective gear, concussion protocols</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Frameworks & Metrics)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Haddon Matrix (Classic Injury Prevention Framework):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Phase \ Factor&lt;/th&gt;&lt;th&gt;<b>Host (Human)</b>&lt;/th&gt;&lt;th&gt;<b>Agent (Energy/Vehicle)</b>&lt;/th&gt;&lt;th&gt;<b>Physical Environment</b>&lt;/th&gt;&lt;th&gt;<b>Social Environment</b>&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------------&lt;/td&gt;&lt;td&gt;------------------&lt;/td&gt;&lt;td&gt;----------------------------&lt;/td&gt;&lt;td&gt;--------------------------&lt;/td&gt;&lt;td&gt;------------------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Pre-Event</b> (Prevent crash)&lt;/td&gt;&lt;td&gt;Licensing, training, sobriety, vision&lt;/td&gt;&lt;td&gt;Vehicle standards, brakes, tyres&lt;/td&gt;&lt;td&gt;Road design, lighting, signage&lt;/td&gt;&lt;td&gt;Speed limits, traffic laws, enforcement&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Event</b> (Reduce injury)&lt;/td&gt;&lt;td&gt;Seatbelts, helmets, airbags, child restraints&lt;/td&gt;&lt;td&gt;Crumple zones, collapsible steering&lt;/td&gt;&lt;td&gt;Barriers, clear zones, breakaway poles&lt;/td&gt;&lt;td&gt;Emergency notification (eCall)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Post-Event</b> (Improve outcome)&lt;/td&gt;&lt;td&gt;First aid, bystander CPR, trauma training&lt;/td&gt;&lt;td&gt;Fire suppression, fuel cut-off&lt;/td&gt;&lt;td&gt;Trauma system access, helicopter EMS&lt;/td&gt;&lt;td&gt;Trauma registries, rehabilitation, compensation&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Safe Systems Approach (Roads):</b></p>
+<ul><li><b>Safe Roads</b> (design, star rating)</li><li><b>Safe Speeds</b> (limits, enforcement, traffic calming)</li><li><b>Safe Vehicles</b> (standards, NCAP, tech: AEB, ESC)</li><li><b>Safe Road Users</b> (licensing, impairment, distraction, vulnerable users)</li><li><b>Post-Crash Response</b> (trauma care, data)</li></ul>
+<p><b>Violence Prevention (WHO INSPIRE / Ecological Model):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Level&lt;/th&gt;&lt;th&gt;Strategies&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Individual</b>&lt;/td&gt;&lt;td&gt;Life skills, parenting, CBT, substance treatment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Relationship</b>&lt;/td&gt;&lt;td&gt;Home visiting, mentoring, bystander programmes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Community</b>&lt;/td&gt;&lt;td&gt;Safe streets, alcohol outlet density, youth centres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Societal</b>&lt;/td&gt;&lt;td&gt;Legislation (firearms, alcohol), gender equality, poverty reduction, data systems&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Injury Severity Metrics:</b></p>
+<ul><li><b>ISS (Injury Severity Score)</b>: Sum of squares of highest AIS in 3 body regions (1-75; &gt;15 major trauma)</li><li><b>AIS (Abbreviated Injury Scale)</b>: 1-6 per injury (1 minor, 6 maximal)</li><li><b>RTS (Revised Trauma Score)</b>: Physiologic (GCS, SBP, RR) → triage</li><li><b>Disability Weights</b> (GBD): Fractures, TBI, spinal cord, burns</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Epidemiological Patterns)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pattern</th><th>Explanation</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**RTA: LMICs 90% deaths**</td><td>Mixed traffic, poor infrastructure, weak enforcement, older vehicles, delayed care</td></tr><tr><td>**Falls: Elderly exponential**</td><td>Sarcopenia, polypharmacy, comorbidity, environment; hip fracture → 20% 1-yr mortality</td></tr><tr><td>**Drowning: Children 1-4y**</td><td>Curiosity, lack of barriers, supervision lapses; buckets, wells, pools</td></tr><tr><td>**Burns: LMICs cooking**</td><td>Open fires, kerosene, loose clothing; female > male in some regions</td></tr><tr><td>**Suicide: Pesticides (LMICs), Firearms (US), Hanging (UK)**</td><td>Means restriction most effective single intervention</td></tr><tr><td>**Homicide: Young males, firearms**</td><td>Gangs, drugs, inequality, alcohol; intimate partner violence (female victims)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Prevention & Trauma Systems)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Evidence-Based Interventions (WHO "Best Buys"):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Injury&lt;/th&gt;&lt;th&gt;Intervention&lt;/th&gt;&lt;th&gt;Effectiveness&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;td&gt;---------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>RTA</b>&lt;/td&gt;&lt;td&gt;Speed cameras, helmet laws (motorcycle 42% ↓ death), seatbelts (45-50% ↓ death), BAC limits, child restraints&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Falls (Elderly)</b>&lt;/td&gt;&lt;td&gt;Exercise (balance/strength 30-40% ↓), home hazard assessment, medication review, vision correction&lt;/td&gt;&lt;td&gt;Moderate-High&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Drowning</b>&lt;/td&gt;&lt;td&gt;Pool fencing (isolation 70% ↓), lifejackets, swim lessons, supervision&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Burns</b>&lt;/td&gt;&lt;td&gt;Smoke alarms (50% ↓ death), water heater &lt;50°C, first aid (cool 20min)&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Suicide</b>&lt;/td&gt;&lt;td&gt;Pesticide bans (Sri Lanka 50% ↓), bridge barriers, gun safe storage, media guidelines&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Violence</b>&lt;/td&gt;&lt;td&gt;Early childhood programmes, alcohol pricing/availability, firearm laws, parenting&lt;/td&gt;&lt;td&gt;Moderate&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Trauma Systems:</b></p>
+<ul><li><b>Inclusive Trauma Systems</b>: Pre-hospital → ED → Definitive care → Rehab</li><li><b>Major Trauma Centres (MTCs)</b>: 24/7 consultants, CT, OR, ICU, all specialties</li><li><b>Trauma Networks</b>: Triage tools (RTS, ISS), bypass protocols, performance indicators (TARN)</li><li><b>Rehabilitation</b>: Early multidisciplinary, community integration, vocational</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Global Injury Deaths**</td><td>4.4M (8%); RTA 1.35M, Falls 700K, Suicide 700K, Homicide 400K, Drowning 236K, Burns 180K</td></tr><tr><td>**RTA #1 Killer 5-29y**</td><td>90% deaths in LMICs; pedestrians/cyclists/motorcyclists = 54% (vulnerable users)</td></tr><tr><td>**Falls Leading Elderly**</td><td>Hip fracture: 20% 1-yr mortality; exercise 30-40% ↓ falls</td></tr><tr><td>**Haddon Matrix**</td><td>Pre/Event/Post × Host/Agent/Physical Env/Social Env</td></tr><tr><td>**Safe Systems**</td><td>Safe Roads, Speeds, Vehicles, Users, Post-Crash</td></tr><tr><td>**Suicide Means Restriction**</td><td>Most effective single intervention (pesticides, firearms, barriers)</td></tr><tr><td>**Injury Pyramid**</td><td>1 death : 10-50 hosp : 100-200 ED : 500-1000 community</td></tr><tr><td>**ISS**</td><td>>15 major trauma; sum of squares top 3 AIS</td></tr><tr><td>**Trauma Systems**</td><td>MTCs, networks, TARN, rehab</td></tr><tr><td>**Violence Prevention**</td><td>INSPIRE: Implementation, Norms, Safe environments, Parenting, Income, Response, Education</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Global injury deaths and leading causes?**</td><td>4.4M/year (8%). RTA 1.35M, Falls ~700K, Suicide ~700K, Homicide ~400K, Drowning 236K, Burns 180K.</td></tr><tr><td>**RTA epidemiology - who most affected?**</td><td>Leading killer 5-29y. 90% deaths in LMICs. Vulnerable users (pedestrians, cyclists, motorcyclists) = 54% of deaths.</td></tr><tr><td>**Haddon Matrix - describe phases and factors.**</td><td>Phases: Pre-event (prevent), Event (reduce severity), Post-event (improve outcome). Factors: Host, Agent/Vehicle, Physical Environment, Social Environment.</td></tr><tr><td>**Safe Systems approach for road safety?**</td><td>5 pillars: Safe Roads (design), Safe Speeds (limits/calming), Safe Vehicles (standards/tech), Safe Road Users (behaviour), Post-Crash Response (trauma care).</td></tr><tr><td>**Falls in elderly - prevention evidence?**</td><td>Exercise (balance/strength) 30-40% reduction. Multifactorial: home hazards, medication review, vision, footwear. Hip fracture 20% 1-yr mortality.</td></tr><tr><td>**Suicide prevention - most effective intervention?**</td><td>Means restriction: pesticide bans (Sri Lanka 50% ↓), bridge barriers, firearm safe storage, media reporting guidelines.</td></tr><tr><td>**Drowning - key populations and prevention?**</td><td>Children 1-4y (buckets, pools, wells). Pool isolation fencing 70% ↓. Lifejackets, supervision, swim skills.</td></tr><tr><td>**Burns - LMIC vs HIC patterns?**</td><td>LMIC: cooking fires, kerosene, females, children. HIC: scalds (kids), flame (adults), occupational. Smoke alarms 50% ↓ death.</td></tr><tr><td>**What is ISS? How calculated?**</td><td>Injury Severity Score: sum of squares of highest AIS in 3 most injured body regions. Range 1-75. >15 = major trauma.</td></tr><tr><td>**Violence prevention - WHO INSPIRE?**</td><td>7 strategies: Implementation of laws, Norms change, Safe environments, Parenting support, Income strengthening, Response services, Education/life skills.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Unintentional vs Intentional**</td><td>Unintentional = RTA, falls, drowning, burns, poisoning. Intentional = suicide, homicide, war. Both use Haddon Matrix.</td></tr><tr><td>**Haddon vs Safe Systems**</td><td>Haddon = general framework (all injuries). Safe Systems = specific application for roads (vision zero).</td></tr><tr><td>**ISS vs AIS**</td><td>AIS = per injury (1-6). ISS = sum of squares top 3 body regions. ISS derived from AIS.</td></tr><tr><td>**Injury Pyramid**</td><td>Ratios vary by mechanism/context. Deaths = tip; hospitalisations/ED = burden for health systems.</td></tr><tr><td>**Violence = Public Health Issue**</td><td>Not just criminal justice. Ecological model: individual, relationship, community, societal.</td></tr></table>
+<p><b>Mnemonic: INJURY DEATHS (RFS-DHB)</b></p>
+<ul><li><b>R</b>TA 1.35M</li><li><b>F</b>alls 700K</li><li><b>S</b>uicide 700K</li><li><b>D</b>rowning 236K</li><li><b>H</b>omicide 400K</li><li><b>B</b>urns 180K</li></ul>
+<p><b>Mnemonic: HADDON MATRIX (PE-HAPS)</b></p>
+<ul><li><b>P</b>re, <b>E</b>vent, <b>P</b>ost</li><li><b>H</b>ost, <b>A</b>gent, <b>P</b>hysical, <b>S</b>ocial</li></ul>
+<p><b>Mnemonic: SAFE SYSTEMS (5 RSVUP)</b></p>
+<ul><li><b>R</b>oads (design)</li><li><b>S</b>peeds (limits)</li><li><b>V</b>ehicles (standards)</li><li><b>U</b>sers (behaviour)</li><li><b>P</b>ost-crash (trauma care)</li></ul>
+<p><b>Mnemonic: SUICIDE MEANS (RPFBG)</b></p>
+<ul><li><b>R</b>estriction <b>P</b>esticides</li><li><b>F</b>irearms safe storage</li><li><b>B</b>arriers (bridges)</li><li><b>G</b>uidelines (media)</li></ul>
+<p><b>Mnemonic: VIOLENCE INSPIRE (7)</b></p>
+<ul><li><b>I</b>mplementation of laws</li><li><b>N</b>orms change</li><li><b>S</b>afe environments</li><li><b>P</b>arenting</li><li><b>I</b>ncome</li><li><b>R</b>esponse services</li><li><b>E</b>ducation</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Injury &amp; Violence)) Burden 4.4M deaths (8%) RTA 1.35M (5-29y #1) Falls 700K (elderly) Suicide 700K Homicide 400K Drowning 236K Burns 180K Unintentional RTA: Safe Systems Falls: Exercise, Home mods Drowning: Barriers, Supervision Burns: Smoke alarms, First aid Poisoning: Child-proof, CO alarms Intentional Suicide: Means restriction Homicide: Alcohol, Firearms, Social Collective: IHL, Peacebuilding Frameworks Haddon Matrix (Pre/Event/Post × HAPS) Safe Systems (5 pillars) INSPIRE (7 strategies) Metrics Injury Pyramid ISS/AIS Trauma Systems (MTC, TARN) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Global Deaths**</td><td>4.4M: RTA 1.35M, Falls 700K, Suicide 700K, Homicide 400K</td></tr><tr><td>**RTA**</td><td>5-29y #1 killer; 90% LMICs; vulnerable users 54%</td></tr><tr><td>**Falls**</td><td>Elderly leading; hip fracture 20% 1-yr mort; exercise 30-40% ↓</td></tr><tr><td>**Haddon**</td><td>Pre/Event/Post × Host/Agent/Phys Env/Soc Env</td></tr><tr><td>**Safe Systems**</td><td>Roads, Speeds, Vehicles, Users, Post-Crash</td></tr><tr><td>**Suicide**</td><td>Means restriction most effective</td></tr><tr><td>**Drowning**</td><td>Kids 1-4y; pool fence 70% ↓</td></tr><tr><td>**ISS**</td><td>Sum squares top 3 AIS; >15 major</td></tr><tr><td>**INSPIRE**</td><td>7 violence prevention strategies</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Global Burden Stats</td><td></td><td></td></tr><tr><td>Mechanism-Specific Epi</td><td></td><td></td></tr><tr><td>Haddon Matrix</td><td></td><td></td></tr><tr><td>Safe Systems</td><td></td><td></td></tr><tr><td>Suicide/Violence Prevention</td><td></td><td></td></tr><tr><td>Trauma Systems/ISS</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Mental Health &amp; Neurological Disorders Epidemiology.md]], [[Global Burden of Disease (GBD Study, Risk Factors).md]], [[Health Promotion &amp; Disease Prevention (Primary, Secondary, Tertiary).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Injury Violence Epidemiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

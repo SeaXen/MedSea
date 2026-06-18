@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Root Causes — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.6. MEDICATION SAFETY</span>
+      <div class="h1">Root Causes</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply Swiss Cheese Model / Reason's Model of accident causation</li><li>[ ] Distinguish Active Errors (Sharp End) vs Latent Conditions (Blunt End)</li><li>[ ] Identify Human Factors: slips, lapses, mistakes, violations</li><li>[ ] Recognise System Factors: workflow, culture, technology, environment</li><li>[ ] Execute Root Cause Analysis (RCA) basics: 5 Whys, Fishbone, Timeline</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧀 Swiss Cheese Model (Reason, 1990)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR subgraph "Defences / Barriers" D1[Prescribing Checks] D2[Pharmacy Review] D3[Nurse Double-Check] D4[Patient ID Band] D5[Electronic Alerts] end H1[Hazard] --&gt;|Holes align| D1 -.-&gt; D2 -.-&gt; D3 -.-&gt; D4 -.-&gt; D5 -.-&gt; PT[Patient Harm] style H1 fill:#ffcccc style PT fill:#ff6666 </code>``</p>
+<table class="ctable"><tr><th>Layer</th><th>Defence</th><th>Typical "Holes" (Failures)</th></tr><tr><td>-------</td><td>---------</td><td>----------------------------</td></tr><tr><td>1</td><td>**Organisational** (Culture, Staffing, Policy)</td><td>Blame culture, understaffing, outdated guidelines</td></tr><tr><td>2</td><td>**Team / Ward** (Supervision, Handover, Communication)</td><td>Poor handover, hierarchy, fear of speaking up</td></tr><tr><td>3</td><td>**Individual** (Knowledge, Fatigue, Distraction)</td><td>Knowledge gap, fatigue, interruption, cognitive bias</td></tr><tr><td>4</td><td>**Technical / System** (CPOE, Alerts, Barcode, LASA storage)</td><td>Alert fatigue, poor UI, no barcode, LASA stored together</td></tr><tr><td>5</td><td>**Patient** (ID band, Allergy awareness, Self-advocacy)</td><td>Missing ID band, unconscious, language barrier</td></tr></table>
+<div class="callout"><b>Accident occurs when holes in all layers align</b> — <b>No single cause</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ Active Errors vs Latent Conditions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Examples</th><th>Timeframe</th></tr><tr><td>------</td><td>------------</td><td>----------</td><td>-----------</td></tr><tr><td>**Active Errors (Sharp End)**</td><td>**Errors at the point of care** — directly cause harm</td><td>Wrong dose given, wrong drug administered, allergy ignored</td><td>Immediate</td></tr><tr><td>**Latent Conditions (Blunt End)**</td><td>**System/organisational failures** — dormant until triggered</td><td>Understaffing, poor CPOE design, culture of blame, outdated protocols</td><td>Months–years before event</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Active errors are SYMPTOMS of latent conditions</b> — fixing only the active error (blaming the nurse) misses the root cause</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">👤 Human Factors — Error Taxonomy (Reason)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Error Type</th><th>Definition</th><th>Mechanism</th><th>Example</th></tr><tr><td>------------</td><td>------------</td><td>-----------</td><td>---------</td></tr><tr><td>**Slip**</td><td>**Action not as planned** (attentional failure)</td><td>**Automatic behaviour, distraction**</td><td>Intend to give 5mg, give 50mg (distraction); pick wrong vial (looks similar)</td></tr><tr><td>**Lapse**</td><td>**Memory failure** (omission)</td><td>**Forgetting step, interrupted**</td><td>Forget to give VTE prophylaxis; forget to check allergy status</td></tr><tr><td>**Mistake**</td><td>**Plan wrong** (knowledge/rule failure)</td><td>**Knowledge gap, misapplied rule**</td><td>Prescribe NSAID in HF (didn't know contraindicated); use wrong guideline</td></tr><tr><td>**Violation**</td><td>**Deliberate deviation** from protocol</td><td>**Routine, Optimising, Necessary**</td><td>Not double-checking insulin (routine); borrows drug from another ward (optimising)</td></tr></table>
+<table class="ctable"><tr><th>Violation Type</th><th>Motivation</th></tr><tr><td>----------------</td><td>------------</td></tr><tr><td>**Routine**</td><td>"Everyone does it this way" (cultural norm)</td></tr><tr><td>**Optimising**</td><td>"Trying to help / save time" (borrowing drugs, workarounds)</td></tr><tr><td>**Necessary / Situational**</td><td>"No other choice" (system failure forces workaround)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🏥 System / Organisational Factors</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Failure Modes</th></tr><tr><td>--------</td><td>---------------</td></tr><tr><td>**Workflow / Process**</td><td>Complex protocols, missing steps, no forcing functions, poor handovers</td></tr><tr><td>**Staffing / Workload**</td><td>**Understaffing, high patient:nurse ratio, excessive overtime, agency staff**</td></tr><tr><td>**Culture**</td><td>**Blame culture, fear of reporting, hierarchy, lack of psychological safety**</td></tr><tr><td>**Training / Competence**</td><td>Inadequate induction, no CPD, unfamiliar with formulary/guidelines</td></tr><tr><td>**Communication**</td><td>Poor handover (SBAR not used), illegible orders, abbreviation misuse, language barriers</td></tr><tr><td>**Environment**</td><td>**Interruptions, noise, poor lighting, similar packaging stored together (LASA)**</td></tr><tr><td>**Technology**</td><td>**Alert fatigue (CPOE)**, poor UI, no barcode scanning, no forced functions, downtime</td></tr><tr><td>**Policy / Guidelines**</td><td>Outdated, inaccessible, conflicting, not evidence-based</td></tr><tr><td>**Equipment / Supplies**</td><td>Missing drugs, look-alike vials, no prefilled syringes, infusion pump errors</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 High-Risk Situations (Error Traps)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Situation</th><th>Why High Risk</th><th>Mitigation</th></tr><tr><td>-----------</td><td>---------------</td><td>------------</td></tr><tr><td>**Transitions of Care**</td><td>Info loss at admission/transfer/discharge</td><td>**Medication Reconciliation** (gold standard)</td></tr><tr><td>**Look-Alike Sound-Alike (LASA)**</td><td>Name confusion, similar packaging</td><td>**Tall Man lettering, separate storage, alerts**</td></tr><tr><td>**High-Alert Drugs (PINCH)**</td><td>Narrow TI, severe harm if error</td><td>**Independent double-check, prefilled syringes, standard concentrations**</td></tr><tr><td>**Paediatrics / Neonates**</td><td>Weight-based dosing, small volumes, immature organs</td><td>**Weight-based protocols, pharmacist review**</td></tr><tr><td>**Renal / Hepatic Impairment**</td><td>Dose adjustment complexity</td><td>**eGFR/CrCl on every order, hepatic dose alerts**</td></tr><tr><td>**Critically Ill**</td><td>Multiple drugs, organ support, instability</td><td>**Daily review, pharmacist on rounds**</td></tr><tr><td>**Out-of-Hours / Weekend**</td><td>Reduced staffing, senior cover, formulary access</td><td>**On-call pharmacist, restricted formulary**</td></tr><tr><td>**New Starters / Locums**</td><td>Unfamiliar systems, guidelines, patients</td><td>**Structured induction, buddy system**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🔬 Root Cause Analysis (RCA) Methods</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. 5 Whys (Simple, Iterative)</div>
+<p>``<code>mermaid flowchart TD Q1[Why did patient get 10x insulin?] --&gt; A1[Drew 10mL from 100u/mL vial instead of 1mL] A1 --&gt; Q2[Why wrong volume?] --&gt; A2[Syringe had 10mL marks only, no 1mL] A2 --&gt; Q3[Why wrong syringe?] --&gt; A3[Only 10mL syringes stocked on ward] A3 --&gt; Q4[Why only 10mL?] --&gt; A4[Procurement policy — cost saving] A4 --&gt; Q5[Why cost over safety?] --&gt; A5[No safety input in procurement decisions] </code>`` <b>Root Cause</b>: <b>Procurement policy without safety review</b> → <b>System fix: Stock 1mL insulin syringes</b></p>
+<div class="sub-h">2. Fishbone / Ishikawa Diagram</div>
+<p>``<code>mermaid graph LR PROBLEM[Patient Harm: Insulin 10x Overdose] --&gt; MAN[Human: Fatigue, Distraction] PROBLEM --&gt; MACHINE[Equipment: 10mL Syringe Only] PROBLEM --&gt; METHOD[Process: No Independent Double-Check] PROBLEM --&gt; MATERIAL[Drug: 100u/mL Vial, No Prefilled] PROBLEM --&gt; ENV[Environment: Interruptions, Noise] PROBLEM --&gt; MGMT[Management: Procurement Policy, Staffing] </code>``</p>
+<div class="sub-h">3. Timeline / Chronology</div>
+<table class="ctable"><tr><th>Time</th><th>Event</th><th>Barrier Failed</th></tr><tr><td>------</td><td>-------</td><td>----------------</td></tr><tr><td>08:00</td><td>Dr prescribes insulin 10u</td><td>—</td></tr><tr><td>08:30</td><td>Pharmacy dispenses 100u/mL vial</td><td>—</td></tr><tr><td>09:00</td><td>Nurse draws up — uses 10mL syringe, draws 10mL (1000u)</td><td>**Independent double-check missed**</td></tr><tr><td>09:15</td><td>Patient given 1000u IV</td><td>**Patient ID / dose verification missed**</td></tr><tr><td>09:30</td><td>Hypoglycaemia, seizure</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Swiss Cheese**</td><td>Multiple defence layers; harm when holes align</td></tr><tr><td>**Active vs Latent**</td><td>Active = sharp end (immediate); Latent = blunt end (organisational)</td></tr><tr><td>**Human Error Types**</td><td>Slip (attention), Lapse (memory), Mistake (knowledge), Violation (deliberate)</td></tr><tr><td>**Violation Types**</td><td>Routine (cultural), Optimising (workaround), Necessary (forced)</td></tr><tr><td>**5 Whys**</td><td>Iterative "Why?" to reach latent root cause</td></tr><tr><td>**Fishbone**</td><td>Categories: Human, Machine, Method, Material, Environment, Management</td></tr><tr><td>**Top System Failures**</td><td>Understaffing, Alert fatigue, Blame culture, Poor handover, LASA storage</td></tr><tr><td>**High-Risk Situations**</td><td>Transitions, LASA, PINCH, Paediatrics, Renal/Hepatic, Critical care</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">❓ Viva Questions (8)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Swiss Cheese Model — what do the holes represent?</td><td>**Failures/weaknesses in defence layers** (organisational, team, individual, technical, patient); harm when holes align</td></tr><tr><td>2. Active error vs Latent condition — difference?</td><td>**Active = Sharp end** (frontline error, immediate); **Latent = Blunt end** (organisational failure, dormant, root cause)</td></tr><tr><td>3. Human error taxonomy — Slip vs Lapse vs Mistake?</td><td>**Slip** = action not as planned (attention); **Lapse** = memory failure (omission); **Mistake** = wrong plan (knowledge/rule)</td></tr><tr><td>4. Violation types — Routine, Optimising, Necessary?</td><td>**Routine** = cultural norm ("everyone does it"); **Optimising** = workaround to save time/help; **Necessary** = forced by system failure</td></tr><tr><td>5. 5 Whys — purpose?</td><td>**Iterative questioning to reach latent/organisational root cause** (not just frontline error)</td></tr><tr><td>6. Fishbone categories?</td><td>**Human, Machine, Method, Material, Environment, Management** (6 Ms)</td></tr><tr><td>7. Top 3 system factors contributing to medication errors?</td><td>**Understaffing/Workload, Alert Fatigue (CPOE), Blame Culture / Poor Reporting**</td></tr><tr><td>8. High-risk situations for medication errors — name 5?</td><td>**Transitions of care, LASA drugs, PINCH drugs, Paediatrics, Renal/Hepatic impairment, Critical illness, Out-of-hours, New staff**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Active error = root cause?**</td><td>**No** — active error is the **symptom**; latent condition is the **root cause**</td></tr><tr><td>**Slip vs Mistake**</td><td>**Slip** = right plan, wrong execution (attention); **Mistake** = wrong plan (knowledge)</td></tr><tr><td>**Violation = always bad?**</td><td>**Necessary violations** reveal system failures (e.g., borrowing drug because pharmacy closed)</td></tr><tr><td>**Swiss Cheese = blame individuals?**</td><td>**No** — model shows **systemic alignment of failures**, not individual blame</td></tr><tr><td>**RCA = blame exercise?**</td><td>**No** — RCA is **system-focused** (What failed? Why? How prevent?) not **Who failed?**</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"SWISS CHEESE = HOLES ALIGN"</b> = Multiple barriers, harm when holes line up</li><li><b>"ACTIVE = SHARP END"</b> = Frontline, immediate; <b>"LATENT = BLUNT END"</b> = Organisational, root cause</li><li><b>"SLIP = ATTENTION"</b> = Right plan, wrong action; <b>"LAPSE = MEMORY"</b> = Forgot step; <b>"MISTAKE = KNOWLEDGE"</b> = Wrong plan</li><li><b>"VIOLATION TYPES"</b> = <b>R</b>outine (culture), <b>O</b>ptimising (workaround), <b>N</b>ecessary (forced)</li><li><b>"5 WHYS = ROOT CAUSE"</b> = Keep asking "Why?" until organisational cause found</li><li><b>"FISHBONE 6 Ms"</b> = <b>M</b>an, <b>M</b>achine, <b>M</b>ethod, <b>M</b>aterial, <b>E</b>nvironment, <b>M</b>gmt</li><li><b>"ERROR TRAPS"</b> = <b>T</b>ransitions, <b>R</b>enal/Hepatic, <b>A</b>lert fatigue, <b>P</b>INCH, <b>S</b>TAFFING</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Root Causes)) Swiss Cheese Model 5 Layers: Org, Team, Individual, Technical, Patient Holes = failures Harm when holes align Active vs Latent Active: Sharp end, frontline Latent: Blunt end, organisational Human Error Taxonomy Slip: Attention (right plan, wrong action) Lapse: Memory (omission) Mistake: Knowledge (wrong plan) Violation: Deliberate Routine: Culture Optimising: Workaround Necessary: Forced System Factors Staffing/Workload Culture (Blame vs Just) Communication/Handover Technology (Alert fatigue) Environment (Interruptions, LASA) Policy/Guidelines High-Risk Situations Transitions LASA PINCH Paediatrics Renal/Hepatic Critical care Out-of-hours RCA Methods 5 Whys Fishbone (6 Ms) Timeline </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Swiss Cheese</td><td>6</td><td></td></tr><tr><td>Active vs Latent</td><td>6</td><td></td></tr><tr><td>Human error types</td><td>8</td><td></td></tr><tr><td>System factors</td><td>6</td><td></td></tr><tr><td>RCA methods</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>8</td><td></td></tr><tr><td>**Total**</td><td>**42**</td><td></td></tr></table>
+<p><b>Target</b>: ≥34/42 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Swiss Cheese Model and Active vs Latent errors."*</div>
+<ul><li><b>Swiss Cheese</b>: 5 defence layers (Organisational, Team, Individual, Technical, Patient); holes = failures; harm when holes align</li><li><b>Active Error</b> = Sharp end, frontline, immediate (wrong dose given)</li><li><b>Latent Condition</b> = Blunt end, organisational, dormant (understaffing, alert fatigue, culture)</li><li><b>Key</b>: Active errors are symptoms of latent conditions</li></ul>
+<div class="sub-h">Viva (1 min): *"Nurse gives 10x insulin. 5 Whys analysis?"*</div>
+<ol><li>Why 10x? → Drew 10mL from 100u/mL vial (1000u)</li><li>Why 10mL? → Only 10mL syringes stocked</li><li>Why only 10mL? → Procurement policy (cost)</li><li>Why cost over safety? → No safety input in procurement</li><li><b>Root Cause: Procurement policy without clinical safety review</b></li></ol>
+<ul><li><b>Fix</b>: Stock 1mL insulin syringes; independent double-check; prefilled pens</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Junior doctor prescribes NSAID for HF patient. Why? System fix?"*</div>
+<ul><li><b>Mistake</b> (knowledge gap — didn't know NSAID contraindicated in HF)</li><li><b>System fix</b>: CPOE alert for NSAID in HF; formulary restriction; education; pharmacist review</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Swiss Cheese = holes in defences align → harm</li><li>Active = sharp end; Latent = blunt end (root cause)</li><li>Slip = attention; Lapse = memory; Mistake = knowledge; Violation = deliberate</li><li>Violation types: Routine (culture), Optimising (workaround), Necessary (forced)</li><li>5 Whys = iterative to root cause</li><li>Fishbone = Man, Machine, Method, Material, Environment, Management</li><li>Error traps = Transitions, LASA, PINCH, Renal/Hepatic, Staffing, Alert fatigue</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>ROOT CAUSES:</b> <b>SWISS CHEESE</b> = 5 layers, holes align = harm <b>ACTIVE</b> = Sharp end (symptom); <b>LATENT</b> = Blunt end (root cause) <b>SLIP</b> = attention; <b>LAPSE</b> = memory; <b>MISTAKE</b> = knowledge; <b>VIOLATION</b> = deliberate <b>RCA</b> = 5 Whys / Fishbone (6 Ms) / Timeline <b>SYSTEM FAILURES</b> = Understaffing, Alert fatigue, Blame culture, Poor handover, LASA storage <b>ERROR TRAPS</b> = Transitions, LASA, PINCH, Renal/Hepatic, Critical care, Out-of-hours</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Swiss Cheese Model — what do holes represent?</b></li></ol>
+<p>A. Successful defences B. <b>Failures/weaknesses in defence layers</b> ✓ C. Patient factors only C. Technology failures only E. Individual errors only</p>
+<ol><li><b>Active error vs Latent condition:</b></li></ol>
+<p>A. Same thing B. <b>Active = Sharp end (frontline); Latent = Blunt end (organisational)</b> ✓ C. Active = Organisational; Latent = Frontline D. Active = always harmful; Latent = never harmful E. No difference</p>
+<ol><li><b>Slip — mechanism:</b></li></ol>
+<p>A. Memory failure B. Knowledge gap C. <b>Attentional failure (action not as planned)</b> ✓ D. Deliberate deviation E. System failure</p>
+<ol><li><b>Lapse — mechanism:</b></li></ol>
+<p>A. <b>Memory failure (omission)</b> ✓ B. Attentional failure C. Knowledge gap D. Deliberate deviation E. Rule misapplication</p>
+<ol><li><b>Routine violation — motivation:</b></li></ol>
+<p>A. Trying to help B. <b>Cultural norm ("everyone does it")</b> ✓ C. No other choice D. Knowledge gap E. Fatigue</p>
+<ol><li><b>5 Whys — purpose:</b></li></ol>
+<p>A. Blame the individual B. <b>Find latent/organisational root cause</b> ✓ C. Document the error D. Train the staff E. Report to regulators</p>
+<ol><li><b>Fishbone diagram — 6 M categories:</b></li></ol>
+<p>A. Man, Machine, Method, Material, Environment, Management ✓ B. Man, Machine, Money, Method, Market, Management C. Medical, Mental, Method, Material, Environment, Management D. Man, Machine, Method, Medication, Environment, Management E. Manual, Machine, Method, Material, Environment, Management</p>
+<ol><li><b>High-risk situation for medication errors:</b></li></ol>
+<p>A. Routine ward round B. <b>Transitions of care (admission/transfer/discharge)</b> ✓ C. Elective clinic D. Daytime pharmacy E. Weekend off</p>
+<ol><li><b>Alert fatigue — contributes to errors by:</b></li></ol>
+<p>A. Increasing knowledge B. <b>Clinicians overriding important alerts</b> ✓ C. Reducing workload D. Improving accuracy E. No effect</p>
+<ol><li><b>Just Culture — principle:</b></li></ol>
+<p>A. Blame individuals for all errors B. <b>Distinguish human error (console), at-risk behaviour (coach), reckless behaviour (punish)</b> ✓ C. No accountability D. Punish all errors equally E. Report only serious harm</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Swiss Cheese holes</td><td>Failures in defence layers</td></tr><tr><td>Active error</td><td>Sharp end, frontline, immediate</td></tr><tr><td>Latent condition</td><td>Blunt end, organisational, root cause</td></tr><tr><td>Slip</td><td>Attentional failure (right plan, wrong action)</td></tr><tr><td>Lapse</td><td>Memory failure (omission)</td></tr><tr><td>Mistake</td><td>Knowledge/rule failure (wrong plan)</td></tr><tr><td>Violation types</td><td>Routine (culture), Optimising (workaround), Necessary (forced)</td></tr><tr><td>5 Whys purpose</td><td>Iterative to latent root cause</td></tr><tr><td>Fishbone 6 Ms</td><td>Man, Machine, Method, Material, Environment, Management</td></tr><tr><td>Just Culture</td><td>Console human error, Coach at-risk, Punish reckless</td></tr><tr><td>Error traps</td><td>Transitions, LASA, PINCH, Renal/Hepatic, Critical, Out-of-hours, New staff</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Failures in defence layers</li><li><b>B</b> — Active = Sharp end; Latent = Blunt end</li><li><b>C</b> — Attentional failure</li><li><b>A</b> — Memory failure</li><li><b>B</b> — Cultural norm</li><li><b>B</b> — Find latent root cause</li><li><b>A</b> — Man, Machine, Method, Material, Environment, Management</li><li><b>B</b> — Transitions of care</li><li><b>B</b> — Clinicians overriding important alerts</li><li><b>B</b> — Console human error, Coach at-risk, Punish reckless</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Medication Safety/Root causes.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Root Causes · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

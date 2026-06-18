@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deprescribing Algorithms — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.9. POLYPHARMACY AND DEPRESCRIBING</span>
+      <div class="h1">Deprescribing Algorithms</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define deprescribing and distinguish from non-adherence / dose reduction</li><li>[ ] Apply structured deprescribing frameworks (5-step, CEASE, MATCH-D)</li><li>[ ] Execute drug-class specific algorithms (PPIs, benzodiazepines, anticholinergics, antihypertensives, statins, bisphosphonates, antipsychotics, opioids)</li><li>[ ] Calculate Antichognitive Burden (ACB) and Drug Burden Index (DBI)</li><li>[ ] Manage withdrawal syndromes and rebound phenomena</li><li>[ ] Communicate deprescribing decisions (shared decision-making, EMPOWER brochure)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📐 Core Deprescribing Frameworks</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">5-Step Deprescribing Process (Reeve et al.)</div>
+<p>``<code>mermaid flowchart TD A[1. ASCERTAIN all current medicines\nIndication, effectiveness, safety, adherence, patient goals] --&gt; B[2. IDENTIFY potentially inappropriate medicines\nSTOPP/START, Beers, ACB, DBI, clinical judgment] B --&gt; C[3. ASSESS each PIM for deprescribing\nBenefit-harm, life expectancy, goals of care, withdrawal risk] C --&gt; D[4. PRIORITISE sequence\nHigh harm / low benefit first; one drug at a time usually] D --&gt; E[5. IMPLEMENT &amp; MONITOR\nTaper plan, patient education, follow-up, restart criteria] E --&gt; F[REVIEW at each visit\nReassess indication, goals, new PIMs] </code>``</p>
+<div class="sub-h">CEASE Algorithm (Australian)</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**C**urrent medications</td><td>List all with indication, dose, duration</td></tr><tr><td>**E**levated risk</td><td>Identify PIMs (STOPP, Beers, clinical judgment)</td></tr><tr><td>**A**ssess</td><td>Benefit vs harm, alignment with goals, withdrawal risk</td></tr><tr><td>**S**top/Reduce</td><td>Prioritise, taper, monitor</td></tr><tr><td>**E**valuate</td><td>Review outcomes, document, communicate</td></tr></table>
+<div class="sub-h">MATCH-D Criteria (for Dementia)</div>
+<table class="ctable"><tr><th>M</th><th>**M**edication review indicated?</th></tr><tr><td>---</td><td>---</td></tr><tr><td>A</td><td>**A**ppropriate indication?</td></tr><tr><td>T</td><td>**T**ime to benefit > life expectancy?</td></tr><tr><td>C</td><td>**C**ognitive/functional impairment from drug?</td></tr><tr><td>H</td><td>**H**arm > benefit?</td></tr><tr><td>D</td><td>**D**ecision: deprescribe?</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">💊 Drug-Class Specific Deprescribing Algorithms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Proton Pump Inhibitors (PPIs) — **#1 Deprescribing Target**</div>
+<p>``<code>mermaid flowchart TD A[Patient on PPI &gt;4–8 weeks] --&gt; B{Current Indication?} B --&gt;|GERD healed / asymptomatic| C[<b>Step-down approach</b>] B --&gt;|Uncomplicated GERD maintenance| C B --&gt;|Stress ulcer prophylaxis (ICU) discharged| C B --&gt;|Barrett's / Severe erosive esophagitis / Zollinger-Ellison / Chronic NSAID/anticoagulant + GI risk| D[<b>CONTINUE</b> - long-term indication] B --&gt;|H. pylori eradicated| C C --&gt; E[Taper: daily → alternate day → PRN → stop\nOR switch to H2RA PRN] E --&gt; F{Relapse symptoms?} F --&gt;|Yes| G[Restart lowest effective dose\nReassess need for maintenance] F --&gt;|No| H[<b>SUCCESSFULLY DEPRESCRIBED</b>\nLifestyle: weight loss, head elevation, avoid triggers] </code>``</p>
+<p><b>Rebound Acid Hypersecretion</b>: 40–60% after abrupt stop → <b>taper 2–4 weeks</b> <b>Restart Criteria</b>: Troublesome symptoms &gt;2x/week, erosive esophagitis on endoscopy</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2. Benzodiazepines / Z-drugs (BZRA)</div>
+<p>``<code>mermaid flowchart TD A[Patient on BZRA &gt;4 weeks] --&gt; B{Indication still valid?} B --&gt;|Insomnia: CBT-i available| C[<b>TAPER &amp; STOP</b>] B --&gt;|Anxiety: SSRI/SNRI optimized| C B --&gt;|Spasticity / Alcohol withdrawal / Palliative| D[<b>CONTINUE</b> - review regularly] B --&gt;|Seizure disorder (clonazepam)| D C --&gt; E[Taper schedule:\n• Short-acting (lorazepam, oxazepam, zopiclone): reduce 25% q1–2wk\n• Long-acting (diazepam, clonazepam): reduce 10–25% q1–2wk\n• Convert to diazepam equivalent if complex\n• Slower if high dose / long duration / elderly] E --&gt; F{Withdrawal symptoms?} F --&gt;|Mild: anxiety, insomnia, tremor| G[Pause taper 1–2 weeks\nNon-pharm: CBT-i, sleep hygiene, relaxation] F --&gt;|Severe: seizures, psychosis, delirium| H[Return to previous dose\nSlower taper: 5–10% q2–4wk] F --&gt;|None| I[Continue taper to zero] </code>``</p>
+<p><b>Ashton Manual</b> taper (diazepam equivalent):</p>
+<ul><li>&gt;40 mg diazepam eq: reduce 2 mg q1–2wk</li><li>20–40 mg: reduce 1–2 mg q1–2wk</li><li>10–20 mg: reduce 1 mg q1–2wk</li><li>&lt;10 mg: reduce 0.5 mg q1–2wk</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3. Anticholinergics (ACB ≥3 Target)</div>
+<p>``<code>mermaid flowchart TD A[Calculate ACB Score\n≥3 = high priority] --&gt; B{Identify ACB contributors} B --&gt;|Tricyclics (amitriptyline 3)| C[Switch: duloxetine, nortriptyline (ACB 1), gabapentinoid] B --&gt;|First-gen antihistamines (diphenhydramine 3)| C2[Switch: cetirizine, loratadine (ACB 0)] B --&gt;|Antispasmodics (oxybutynin 3)| C3[Switch: mirabegron, solifenacin (ACB 1)] B --&gt;|Antipsychotics (chlorpromazine 3, olanzapine 3)| C4[Reduce dose / switch: quetiapine (1), aripiprazole (1)] B --&gt;|Opioids (morphine 1, codeine 1)| C5[Review indication; non-opioid alternatives] C &amp; C2 &amp; C3 &amp; C4 &amp; C5 --&gt; D[Taper one at a time\nMonitor cognition, falls, constipation] D --&gt; E{Reassess ACB at 4–12 weeks} E --&gt;|ACB &lt;3| F[<b>TARGET ACHIEVED</b>] E --&gt;|ACB ≥3| G[Next agent] </code>``</p>
+<p><b>ACB Scale (0–3):</b></p>
+<ul><li>0 = none; 1 = mild; 2 = moderate; 3 = severe</li><li><b>Target ACB &lt;3</b> (↑ falls, delirium, dementia progression, mortality)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4. Antihypertensives (Overtreatment in Frail Elderly)</div>
+<p>``<code>mermaid flowchart TD A[Patient &gt;80 or frail / multimorbid on ≥2 antihypertensives] --&gt; B{SBP &lt;120 or orthostatic drop &gt;20 mmHg or falls?} B --&gt;|Yes| C[<b>Deprescribe 1 agent</b>] B --&gt;|No| D[Continue; monitor] C --&gt; E{Which to stop?} E --&gt;|Diuretic + falls/orthostasis| F[Reduce/stop diuretic first] E --&gt;|Beta-blocker + bradycardia/fatigue| F2[Reduce/stop BB] E --&gt;|CCB + edema| F3[Reduce/stop CCB] E --&gt;|ACEi/ARB + AKI/hyperK| F4[Reduce/stop RAASi] F &amp; F2 &amp; F3 &amp; F4 --&gt; G[Taper over 2–4 weeks\nMonitor BP weekly x4, then monthly] G --&gt; H{SBP 130–150, no symptoms?} H --&gt;|Yes| I[<b>SUCCESS</b>] H --&gt;|No| J[Restart/restart lower dose] </code>``</p>
+<p><b>STOPP v3</b>: "Antihypertensives → SBP &lt;120 mmHg in frail elderly" = PIM <b>Target SBP</b>: 130–150 mmHg (frail &gt;80); &lt;130 if robust with CVD</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5. Statins (Primary Prevention in Limited Life Expectancy)</div>
+<p>``<code>mermaid flowchart TD A[Patient on statin for primary prevention] --&gt; B{Life expectancy &lt;1–2 years?\nFrailty / advanced dementia / metastatic cancer / end-stage organ failure} B --&gt;|Yes| C[<b>DEPRESCRIBE</b>\nNo CV benefit in this timeframe\nMyopathy risk persists] B --&gt;|No| D{Secondary prevention?\nPrior MI, stroke, PAD, ACS, revascularization} D --&gt;|Yes| E[<b>CONTINUE</b> - strong evidence] D --&gt;|No| F{Age &gt;75?} F --&gt;|Yes| G[Shared decision: NNT 50–100 over 5y\nConsider deprescribe if frail/intolerant] F --&gt;|No| H[Continue if benefit &gt; risk] </code>``</p>
+<p><b>Key</b>: NNT for primary prevention &gt;75yo = ~50–100 over 5 years; <b>time-to-benefit 2–3 years</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6. Bisphosphonates (Drug Holiday)</div>
+<p>``<code>mermaid flowchart TD A[Patient on oral bisphosphonate ≥3–5 years\nOR IV zoledronate ≥3 years] --&gt; B{Fracture risk?} B --&gt;|High: prior hip/vertebral fracture, T-score &lt;-2.5 on treatment, high FRAX| C[<b>CONTINUE</b>\nReassess annually] B --&gt;|Low/Moderate: no fracture, T-score improved, FRAX low| D[<b>DRUG HOLIDAY</b>] D --&gt; E[Stop oral BP ≥3y / IV ≥3y] E --&gt; F[Monitor: BMD q1–2y, clinical fracture review] F --&gt; G{BMD decline &gt;5% or fracture?} G --&gt;|Yes| H[<b>RESTART</b>] G --&gt;|No| I[Continue holiday up to 5y oral / 3y IV] </code>``</p>
+<p><b>Drug Holiday Evidence</b>: FLEX trial (alendronate 10y vs 5y+5y holiday) — similar non-vertebral fracture; ↑ clinical vertebral fracture in holiday group.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7. Antipsychotics in Dementia (BPSD)</div>
+<p>``<code>mermaid flowchart TD A[Dementia patient on antipsychotic for BPSD] --&gt; B{Indication?} B --&gt;|Severe aggression/psychosis → risk of harm| C[<b>Continue at lowest dose</b>\nRegular review q3mo\nTarget: stop within 3–6mo] B --&gt;|Mild agitation / wandering / sleep| D[<b>DEPRESCRIBE</b>] D --&gt; E[Taper: reduce 25–50% q2wk\nMonitor BPSD, NPI scale] E --&gt; F{Relapse?} F --&gt;|Yes| G[Restart previous dose\nReattempt taper in 3mo] F --&gt;|No| H[<b>STOPPED</b>\nNon-pharm: person-centered care, activity, environment] </code>``</p>
+<p><b>Black Box Warning</b>: ↑ mortality (1.6–1.7x), ↑ stroke (3x) in dementia <b>STOPP v3</b>: Antipsychotic for BPSD &gt;12 weeks without review = PIM</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">8. Opioids (Chronic Non-Cancer Pain)</div>
+<p>``<code>mermaid flowchart TD A[Patient on chronic opioid &gt;3 months] --&gt; B{Functional improvement?\nPain score ↓30% + function ↑} B --&gt;|No| C[<b>DEPRESCRIBE</b>] B --&gt;|Yes but high risk (OME &gt;90, sedatives, resp disease)| D[<b>TAPER TO SAFER DOSE</b>] B --&gt;|Yes, low risk| E[Continue; review q3mo] C --&gt; F[Taper schedule:\n• OME &lt;50mg: reduce 10% q1wk\n• OME 50–90mg: reduce 10% q2wk\n• OME &gt;90mg: reduce 5–10% q2–4wk\n• Pause if withdrawal\n• Non-opioid: duloxetine, gabapentinoid, PT, CBT] F --&gt; G{MME &lt;50 or off?} G --&gt;|Yes| H[<b>SUCCESS</b>] G --&gt;|No| I[Continue taper] </code>``</p>
+<p><b>CDC 2022 / NICE 2021</b>: Avoid &gt;90 MME; taper if no benefit</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📊 Anticholinergic Burden (ACB) & Drug Burden Index (DBI)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">ACB Calculation (Cumulative)</div>
+<table class="ctable"><tr><th>ACB Score</th><th>Examples</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**0**</td><td>Most antibiotics, antihypertensives, statins, PPIs, metformin</td></tr><tr><td>**1**</td><td>Ranitidine, nortriptyline, paroxetine, quetiapine, solifenacin, digoxin, prednisone</td></tr><tr><td>**2**</td><td>Amitriptyline (some scales), doxepin, clomipramine, chlorpheniramine, cyproheptadine</td></tr><tr><td>**3**</td><td>**Amitriptyline, imipramine, doxepin >50mg, chlorpromazine, olanzapine, clozapine, oxybutynin, tolterodine, diphenhydramine, hydroxyzine, cyclizine, promethazine, scopolamine, atropine, benztropine, trihexyphenidyl**</td></tr></table>
+<p><b>Target</b>: ACB <b>&lt;3</b> (each point ↑ falls 1.2x, delirium 1.5x, cognitive decline)</p>
+<div class="sub-h">DBI (Drug Burden Index)</div>
+<p>$$DBI = \sum \frac{D}{D + \delta}$$</p>
+<ul><li>$D$ = daily dose; $\delta$ = dose for 50% maximal effect</li><li><b>Sedation + Anticholinergic sub-scores</b></li><li>DBI ≥1 = ↑ falls, ↓ function, ↑ hospitalization</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🛑 Withdrawal Syndromes & Rebound Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug Class</th><th>Withdrawal Syndrome</th><th>Onset</th><th>Duration</th><th>Management</th></tr><tr><td>------------</td><td>-------------------</td><td>-------</td><td>----------</td><td>------------</td></tr><tr><td>**Benzodiazepines**</td><td>Anxiety, insomnia, tremor, seizures, psychosis</td><td>6–12h (short) / 2–7d (long)</td><td>Weeks–months</td><td>Slow taper (Ashton), diazepam conversion, CBT-i</td></tr><tr><td>**Antidepressants (SSRI/SNRI)**</td><td>Dizziness, "brain zaps", nausea, anxiety, flu-like</td><td>1–3 days</td><td>1–3 weeks</td><td>Taper 4+ weeks; fluoxetine self-tapers (long t½)</td></tr><tr><td>**Beta-blockers**</td><td>Rebound tachycardia, hypertension, angina, MI</td><td>1–3 days</td><td>1–2 weeks</td><td>Taper 2–4 weeks; avoid abrupt stop in CAD</td></tr><tr><td>**Clonidine**</td><td>Rebound hypertension (↑↑ BP), anxiety, tremor</td><td>12–24h</td><td>Days</td><td>Taper 1–2 weeks; never stop abruptly</td></tr><tr><td>**Corticosteroids**</td><td>Adrenal insufficiency, fatigue, arthralgia, hypotension</td><td>Days–weeks</td><td>Weeks–months</td><td>Taper by 2.5–5mg q1–2wk (prednisolone); assess HPA axis</td></tr><tr><td>**Opioids**</td><td>Yawning, sweating, diarrhea, anxiety, piloerection</td><td>6–12h (short) / 24–48h (long)</td><td>5–10 days</td><td>Taper 10%/wk; clonidine 0.1mg PRN, loperamide, buprenorphine bridge</td></tr><tr><td>**PPIs**</td><td>Rebound acid hypersecretion → heartburn</td><td>2–5 days</td><td>1–3 weeks</td><td>Taper 2–4 weeks; H2RA PRN bridge</td></tr><tr><td>**Gabapentinoids**</td><td>Anxiety, insomnia, nausea, pain, seizures (rare)</td><td>12–48h</td><td>1–2 weeks</td><td>Taper 1–2 weeks (↑ seizure risk if epilepsy)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗣️ Communication Scripts (Shared Decision-Making)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">EMPOWER Brochure Approach (PPIs, BZRAs)</div>
+<ol><li><b>E</b>xplain: "This medicine may no longer be needed"</li><li><b>M</b>otivate: "Stopping can reduce falls / improve memory"</li><li><b>P</b>rovide: "Here's a taper plan + alternatives"</li><li><b>O</b>ffer: "We'll do this together, slowly"</li><li><b>W</b>atch: "I'll follow up in 2 weeks"</li><li><b>E</b>valuate: "How are you feeling?"</li><li><b>R</b>eassure: "We can restart if needed"</li></ol>
+<div class="sub-h">Sample Script (Anticholinergic)</div>
+<div class="callout">"Mrs. Ahmed, your amitriptyline for sleep scores 3 on the anticholinergic scale. At your age, this increases falls risk by 30% and may worsen memory. I'd like to switch you to low-dose nortriptyline (score 1) or melatonin, and taper the amitriptyline over 4 weeks. We'll review in 2 weeks. If sleep worsens, we'll adjust. Does that sound reasonable?"</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Deprescribing Scenario</th><th>Key Action</th><th>Taper Speed</th></tr><tr><td>------------------------</td><td>------------</td><td>-------------</td></tr><tr><td>PPI >8 weeks, no indication</td><td>Step-down: daily → alternate → PRN → stop</td><td>2–4 weeks</td></tr><tr><td>BZRA >4 weeks, insomnia</td><td>Taper + CBT-i</td><td>4–12 weeks (Ashton)</td></tr><tr><td>ACB ≥3 in elderly</td><td>Switch high-ACB → low-ACB alternatives</td><td>One drug at a time, 2–4 weeks each</td></tr><tr><td>Antihypertensive + SBP<120/falls</td><td>Stop 1 agent (diuretic first)</td><td>2–4 weeks</td></tr><tr><td>Statin primary prevention + life exp <2y</td><td>Stop</td><td>Immediate</td></tr><tr><td>Bisphosphonate 3–5y, low fracture risk</td><td>Drug holiday</td><td>Stop; monitor BMD q1–2y</td></tr><tr><td>Antipsychotic BPSD >12w no review</td><td>Taper to stop</td><td>4–12 weeks</td></tr><tr><td>Opioid chronic pain no functional gain</td><td>Taper 10%/week</td><td>Weeks–months</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Expected Answer</th></tr><tr><td>---</td><td>-----------------</td></tr><tr><td>1. Define deprescribing. How does it differ from non-adherence?</td><td>**Deprescribing**: supervised, planned dose reduction/stopping of inappropriate medicine; **Non-adherence**: patient-initiated, unplanned, often hidden</td></tr><tr><td>2. What are the 5 steps of the deprescribing process?</td><td>1) Ascertain all meds 2) Identify PIMs (STOPP/Beers) 3) Assess each for deprescribing 4) Prioritise sequence 5) Implement & monitor</td></tr><tr><td>3. Patient on omeprazole 20mg daily 2 years for "GERD" now asymptomatic. Plan?</td><td>**Step-down taper**: 20mg daily → 20mg alternate day → 10mg daily → PRN → stop over 4 weeks; lifestyle advice; restart if symptoms >2x/week</td></tr><tr><td>4. 80-year-old on lorazepam 2mg nocte 5 years for sleep. Deprescribing plan?</td><td>**Convert to diazepam equivalent** (2mg lorazepam = 20mg diazepam); Ashton taper: reduce 2mg q1–2wk; CBT-i + sleep hygiene; expect 10–20 weeks</td></tr><tr><td>5. How do you calculate ACB? Target score?</td><td>Sum ACB scores of all drugs (0–3 each); **Target <3**; each point ↑ falls/delirium</td></tr><tr><td>6. When to deprescribe statin in primary prevention?</td><td>Life expectancy <1–2 years (frailty, advanced dementia, metastatic cancer); no CV benefit in this timeframe</td></tr><tr><td>7. Bisphosphonate drug holiday: criteria & monitoring?</td><td>Oral ≥3y / IV ≥3y + low fracture risk (no prior hip/vertebral, T-score improved, low FRAX); monitor BMD q1–2y; restart if ↓BMD >5% or fracture</td></tr><tr><td>8. Antipsychotic in dementia: when to deprescribe?</td><td>BPSD mild/moderate, >12 weeks without review (STOPP v3); taper 25–50% q2wk; non-pharm first</td></tr><tr><td>9. Clonidine withdrawal: presentation & prevention?</td><td>**Rebound hypertension** (can be severe), anxiety, tremor; **taper 1–2 weeks**; never stop abruptly</td></tr><tr><td>10. Patient on chronic opioid 80 MME, no functional improvement. Taper plan?</td><td>**Reduce 10%/week** (5–10% if >90 MME); non-opioid multimodal (duloxetine, PT, CBT); pause for withdrawal; target <50 MME or off</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Deprescribing vs dose reduction**</td><td>Deprescribing = **stopping** (with tapering); dose reduction = lowering dose but continuing</td></tr><tr><td>**Drug holiday vs deprescribing**</td><td>Drug holiday = **planned temporary stop** with restart criteria (bisphosphonates); deprescribing = permanent stop unless relapse</td></tr><tr><td>**ACB vs DBI**</td><td>ACB = simple additive score (0–3 per drug); DBI = pharmacokinetic model (dose/δ), more precise but complex</td></tr><tr><td>**STOPP vs Beers**</td><td>STOPP = explicit criteria + clinical context (organ failure, falls); Beers = US-focused, age-based lists</td></tr><tr><td>**Time-to-benefit**</td><td>Statins 2–3y; bisphosphonates 1–2y; antihypertensives 1–2y; anticoagulation (AF) immediate</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"CEASE"</b> = Current, Elevated risk, Assess, Stop, Evaluate</li><li><b>"MATCH-D"</b> = Medication, Appropriate, Time-to-benefit, Cognitive, Harm, Decision</li><li><b>"PILL"</b> for deprescribing priority: <b>P</b>reventable harm, <b>I</b>ndication lost, <b>L</b>imited life expectancy, <b>L</b>ow benefit</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Deprescribing)) Frameworks 5-Step Process CEASE MATCH-D Drug Classes PPIs --&gt; Step-down taper 2-4wk BZRAs --&gt; Ashton taper + CBTi Anticholinergics --&gt; ACB&lt;3 target Antihypertensives --&gt; SBP 130-150 frail Statins --&gt; Life exp &lt;2y stop Bisphosphonates --&gt; Drug holiday 3-5y Antipsychotics BPSD --&gt; Taper 4-12wk Opioids --&gt; Taper 10%/wk Tools ACB Score DBI STOPP/START v3 Beers Criteria Withdrawal BZD: seizures, taper slow BB: rebound tachycardia Clonidine: rebound HTN Steroid: adrenal insufficiency Opioid: flu-like, clonidine bridge PPI: rebound acid Communication EMPOWER Shared decision-making Restart criteria </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Next Interval</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>---------------</td></tr><tr><td>1 (Learn)</td><td></td><td></td><td>1 day</td></tr><tr><td>2</td><td></td><td></td><td>3 days</td></tr><tr><td>3</td><td></td><td></td><td>1 week</td></tr><tr><td>4</td><td></td><td></td><td>2 weeks</td></tr><tr><td>5</td><td></td><td></td><td>1 month</td></tr><tr><td>6</td><td></td><td></td><td>3 months</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Frameworks (5-step, CEASE, MATCH-D)</td><td>8</td><td></td><td></td></tr><tr><td>Drug-class algorithms (8 classes)</td><td>16</td><td></td><td></td></tr><tr><td>ACB/DBI calculation</td><td>6</td><td></td><td></td></tr><tr><td>Withdrawal syndromes</td><td>8</td><td></td><td></td></tr><tr><td>Communication</td><td>4</td><td></td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td><td></td></tr><tr><td>**Total**</td><td>**52**</td><td></td><td></td></tr></table>
+<p><b>Target</b>: ≥42/52 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Describe a structured approach to deprescribing in an 85-year-old frail patient on 12 medications including omeprazole, lorazepam, amitriptyline, and 3 antihypertensives with SBP 110 mmHg."*</div>
+<p><b>Structure:</b></p>
+<ol><li><b>Framework</b> (2): 5-step process / CEASE — ascertain all meds, identify PIMs via STOPP v3/Beers</li><li><b>PIM Identification</b> (3): Omeprazole (no active indication &gt;8w), Lorazepam (BZRA &gt;4w insomnia), Amitriptyline (ACB 3), Antihypertensives (SBP&lt;120 + falls risk)</li><li><b>Prioritisation</b> (2): High harm first — amitriptyline (falls/delirium), lorazepam (falls/fracture), then antihypertensives (SBP&lt;120), then PPI</li><li><b>Taper Plans</b> (2): Amitriptyline→nortriptyline 4wk; Lorazepam→diazepam Ashton 12wk; Stop 1 antihypertensive 2wk; PPI step-down 4wk</li><li><b>Monitoring &amp; Communication</b> (1): EMPOWER, restart criteria, follow-up 2wk</li></ol>
+<div class="sub-h">Short Question (5 marks): *"PPI deprescribing algorithm"*</div>
+<ul><li>Indication review → if no active indication (healed GERD, stress prophylaxis discharged) → step-down taper (daily→alternate→PRN→stop) over 2–4 weeks → lifestyle → restart if symptoms &gt;2x/week</li></ul>
+<div class="sub-h">Viva (2 min): *"80yo on amitriptyline 50mg nocte for sleep. ACB? Alternative? Taper?"*</div>
+<ul><li>ACB = <b>3</b> (high). <b>Stop</b>: switch to melatonin 2mg or nortriptyline 10mg (ACB 1). Taper amitriptyline 25mg→10mg→stop over 4 weeks. Monitor sleep, mood, anticholinergic SEs.</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on bisphosphonate 5 years. When drug holiday?"*</div>
+<ul><li>Oral ≥3y / IV ≥3y + <b>low fracture risk</b> (no hip/vertebral fracture, T-score &gt;-2.5, low FRAX) → stop, monitor BMD q1–2y, restart if fracture or BMD ↓&gt;5%</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>PPI: step-down 2–4wk</li><li>BZD: Ashton (diazepam equiv) + CBTi</li><li>ACB target &lt;3</li><li>Statin: stop if life exp &lt;2y (primary prev)</li><li>Bisphosphonate: holiday 3–5y low risk</li><li>Antipsychotic BPSD: taper 4–12wk</li><li>Clonidine: NEVER stop abrupt (rebound HTN)</li><li>Opioid: taper 10%/wk</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Deprescribing PRIORITY ORDER (PILL):</b> 1. <b>P</b>reventable harm (anticholinergics, BZRAs, antipsychotics) 2. <b>I</b>ndication lost (PPIs, duplicate therapy) 3. <b>L</b>imited life expectancy (statins, bisphosphonates primary prev) 4. <b>L</b>ow benefit/high burden (antihypertensives to SBP&lt;120)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which framework uses the mnemonic CEASE for deprescribing?</b></li></ol>
+<p>A. 5-Step Process B. <b>CEASE Algorithm</b> ✓ C. MATCH-D D. STOPP/START E. Beers Criteria</p>
+<ol><li><b>An 82-year-old woman on omeprazole 20 mg daily for 3 years for "reflux" is now asymptomatic. What is the recommended deprescribing approach?</b></li></ol>
+<p>A. Stop omeprazole abruptly B. <b>Step-down taper: daily → alternate day → PRN → stop over 2–4 weeks</b> ✓ C. Switch to ranitidine 150 mg bd indefinitely D. Continue lifelong; no need to review E. Reduce to 10 mg daily and continue indefinitely</p>
+<ol><li><b>Target Anticholinergic Burden (ACB) score in older adults is:</b></li></ol>
+<p>A. 0 B. &lt;1 C. <b>&lt;3</b> ✓ D. &lt;5 E. &lt;10</p>
+<ol><li><b>Which drug has ACB score of 3?</b></li></ol>
+<p>A. Paroxetine B. Nortriptyline C. <b>Amitriptyline</b> ✓ D. Quetiapine E. Solifenacin</p>
+<ol><li><b>Bisphosphonate drug holiday is considered after:</b></li></ol>
+<p>A. 1 year oral / 1 year IV B. 2 years oral / 2 years IV C. <b>3–5 years oral / 3 years IV</b> ✓ D. 5 years oral / 5 years IV E. 10 years oral / 5 years IV</p>
+<ol><li><b>In dementia with BPSD, antipsychotics should be deprescribed if:</b></li></ol>
+<p>A. Used for &gt;4 weeks B. <b>Used for &gt;12 weeks without review</b> ✓ C. Only if patient develops stroke D. Only if family requests E. Never; lifelong treatment needed</p>
+<ol><li><b>Rebound hypertension on abrupt cessation is CLASSIC for:</b></li></ol>
+<p>A. Beta-blockers B. ACE inhibitors C. <b>Clonidine</b> ✓ D. Calcium channel blockers E. Diuretics</p>
+<ol><li><b>Statin deprescribing in primary prevention is most appropriate when:</b></li></ol>
+<p>A. Age &gt;65 B. LDL &lt;2.0 mmol/L C. <b>Life expectancy &lt;1–2 years</b> ✓ D. Mild myalgia E. Diabetes mellitus</p>
+<ol><li><b>Ashton Manual taper for benzodiazepines uses which agent for conversion?</b></li></ol>
+<p>A. Lorazepam B. <b>Diazepam</b> ✓ C. Clonazepam D. Alprazolam E. Oxazepam</p>
+<ol><li><b>Opioid taper rate for chronic non-cancer pain (OME &lt;50 mg):</b></li></ol>
+<p>A. 25% per week B. <b>10% per week</b> ✓ C. 50% per week D. 10% per day E. Stop immediately</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🔬 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 78-year-old man (Clinical Frailty Scale 6) takes 14 medications including: ramipril 10mg, amlodipine 10mg, indapamide 2.5mg, bisoprolol 5mg, omeprazole 20mg (3 years, no current symptoms), lorazepam 1mg nocte (5 years, insomnia), amitriptyline 25mg nocte (sleep), atorvastatin 20mg (primary prevention). Sitting BP 110/65, standing 95/60. He has fallen twice in 3 months. Which deprescribing intervention is HIGHEST PRIORITY?</b></li></ol>
+<p>A. Stop atorvastatin B. Stop omeprazole C. <b>Stop amitriptyline (ACB 3) and lorazepam (BZRA)</b> ✓ D. Stop indapamide E. Stop bisoprolol</p>
+<ol><li><b>An 85-year-old woman with metastatic ovarian cancer (life expectancy 3 months) is on atorvastatin 40mg for primary prevention. Her daughter asks if it can be stopped. What is the MOST APPROPRIATE advice?</b></li></ol>
+<p>A. Continue; statins have pleiotropic benefits B. Reduce to 20mg C. <b>Stop atorvastatin; no cardiovascular benefit in this timeframe</b> ✓ D. Switch to ezetimibe E. Check LDL first; stop only if &lt;2.0</p>
+<ol><li><b>A 72-year-old man has taken alendronate 70mg weekly for 5 years. He has no prior fractures. DXA shows femoral neck T-score -1.8 (improved from -2.4). FRAX 10-year major osteoporotic fracture risk 8%. What is the RECOMMENDED management?</b></li></ol>
+<p>A. Continue alendronate indefinitely B. <b>Drug holiday: stop alendronate; monitor BMD q1–2y; restart if fracture or BMD decline &gt;5%</b> ✓ C. Switch to denosumab D. Reduce to 70mg monthly E. Stop permanently; no further monitoring needed</p>
+<ol><li><b>A 68-year-old woman on clonidine 0.1mg bd for hypertension misses 3 doses. She presents with BP 210/110, anxiety, tremor, headache. What is the MOST LIKELY diagnosis?</b></li></ol>
+<p>A. Pheochromocytoma B. <b>Clonidine withdrawal (rebound hypertension)</b> ✓ C. Acute stroke D. Thyrotoxicosis E. Panic attack</p>
+<ol><li><b>A 75-year-old man with dementia (MMSE 18) has been on risperidone 1mg bd for 6 months for "agitation." He is now sedated, has fallen once, and his agitation has improved. What is the BEST next step?</b></li></ol>
+<p>A. Continue risperidone lifelong B. Increase to 2mg bd C. <b>Taper risperidone over 4–12 weeks; non-pharmacological BPSD management</b> ✓ D. Switch to haloperidol 1mg bd E. Add donepezil</p>
+<ol><li><b>A 60-year-old woman on venlafaxine XR 150mg daily for 2 years wants to stop. She has no current depressive symptoms. What is the RECOMMENDED taper schedule?</b></li></ol>
+<p>A. Stop abruptly B. Reduce by 75mg weekly C. <b>Reduce by 37.5mg every 2–4 weeks; monitor for discontinuation syndrome</b> ✓ E. Switch to fluoxetine 20mg then stop</p>
+<ol><li><b>An 80-year-old woman (frail) on omeprazole 20mg daily for 4 years (indication: past GI bleed on NSAID, NSAID stopped 2 years ago) wants to reduce pills. What is the BEST approach?</b></li></ol>
+<p>A. Stop omeprazole abruptly B. <b>Step-down taper over 4 weeks: 20mg daily → 20mg alternate → 10mg daily → PRN → stop</b> ✓ C. Continue indefinitely; past GI bleed = lifelong indication D. Switch to famotidine 20mg bd lifelong E. Reduce to 10mg daily and continue</p>
+<ol><li><b>Which statement about Drug Burden Index (DBI) is TRUE?</b></li></ol>
+<p>A. DBI only measures anticholinergic burden B. <b>DBI incorporates dose-response relationships (D/(D+δ)) for sedative and anticholinergic drugs</b> ✓ C. DBI &gt;0 is abnormal D. DBI is calculated only for antipsychotics E. DBI replaces STOPP/START criteria</p>
+<ol><li><b>A 70-year-old man on chronic oxycodone 60mg daily (OME 90mg) for low back pain has no functional improvement after 6 months. He wants to taper. What is the RECOMMENDED initial taper rate?</b></li></ol>
+<p>A. 25% per week B. <b>5–10% every 2–4 weeks</b> ✓ C. 50% per week D. Switch to buprenorphine patch immediately E. Stop abruptly with clonidine cover</p>
+<ol><li><b>In the EMPOWER brochure approach to deprescribing, what does "E" stand for?</b></li></ol>
+<p>A. Eliminate B. <b>Explain</b> ✓ C. Evaluate D. Educate E. Empathize</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Deprescribing definition</td><td>Supervised, planned dose reduction/stopping of potentially inappropriate medication</td></tr><tr><td>5-Step Deprescribing Process</td><td>1) Ascertain 2) Identify PIMs 3) Assess 4) Prioritise 5) Implement & Monitor</td></tr><tr><td>CEASE mnemonic</td><td>Current, Elevated risk, Assess, Stop, Evaluate</td></tr><tr><td>MATCH-D mnemonic</td><td>Medication, Appropriate, Time-to-benefit, Cognitive, Harm, Decision</td></tr><tr><td>PPI deprescribing</td><td>Step-down taper 2–4wk if no active indication (healed GERD, stress prophylaxis)</td></tr><tr><td>BZRA deprescribing</td><td>Ashton taper (diazepam equiv) + CBTi; 4–12wk</td></tr><tr><td>ACB target</td><td>**<3**</td></tr><tr><td>ACB 3 drugs</td><td>Amitriptyline, oxybutynin, chlorpromazine, olanzapine, diphenhydramine, scopolamine</td></tr><tr><td>Statin deprescribe primary prev</td><td>Life expectancy <1–2y</td></tr><tr><td>Bisphosphonate holiday</td><td>Oral ≥3y / IV ≥3y + low fracture risk → stop, BMD q1–2y</td></tr><tr><td>Antipsychotic BPSD deprescribe</td><td>>12w no review → taper 4–12wk</td></tr><tr><td>Clonidine withdrawal</td><td>Rebound HTN; taper 1–2wk; NEVER abrupt</td></tr><tr><td>Opioid taper chronic pain</td><td>10%/wk (<50 MME); 5–10%/2–4wk (>90 MME)</td></tr><tr><td>EMPOWER</td><td>Explain, Motivate, Provide, Offer, Watch, Evaluate, Reassure</td></tr><tr><td>PILL priority</td><td>Preventable harm, Indication lost, Limited life expectancy, Low benefit</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — CEASE Algorithm (Australian)</li><li><b>B</b> — Step-down taper over 2–4 weeks</li><li><b>C</b> — ACB target &lt;3</li><li><b>C</b> — Amitriptyline ACB 3</li><li><b>C</b> — 3–5y oral / 3y IV</li><li><b>B</b> — STOPP v3: &gt;12 weeks without review</li><li><b>C</b> — Clonidine rebound hypertension</li><li><b>C</b> — Life expectancy &lt;1–2 years</li><li><b>B</b> — Diazepam conversion (long half-life)</li><li><b>B</b> — 10% per week</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> — Anticholinergic (amitriptyline ACB 3) + BZRA (lorazepam) = highest fall/delirium risk; PILL priority #1</li><li><b>C</b> — Statin primary prevention: time-to-benefit 2–3y; no benefit if life exp &lt;2y</li><li><b>B</b> — FLEX/other trials: drug holiday after 3–5y oral if low fracture risk</li><li><b>B</b> — Classic clonidine withdrawal: rebound hypertension + anxiety/tremor</li><li><b>C</b> — STOPP v3: antipsychotic BPSD &gt;12w without review = PIM; taper + non-pharm</li><li><b>C</b> — SNRI taper: 37.5mg q2–4wk; monitor discontinuation syndrome</li><li><b>B</b> — PPI step-down taper; indication lost (NSAID stopped 2y ago)</li><li><b>B</b> — DBI = Σ D/(D+δ) for sedative+anticholinergic; dose-response model</li><li><b>B</b> — CDC/NICE: 10%/wk if &lt;50 MME; 5–10%/2–4wk if &gt;90 MME</li><li><b>B</b> — Explain (first step of EMPOWER)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Polypharmacy and Deprescribing/Deprescribing Algorithms.md</code> | Status: <code>draft</code> → upgrade to <code>full-fcps-mrcp-note</code> after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Deprescribing Algorithms · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gynaecological Cancer Screening — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.2. CANCER SCREENING & PREVENTION</span>
+      <div class="h1">Gynaecological Cancer Screening</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe <b>which gynaecological cancers have population screening</b> (Cervical only)</li><li>[ ] Apply <b>high-risk surveillance</b> for ovarian, endometrial, vulval cancers</li><li>[ ] Interpret <b>UKCTOCS trial</b> results for ovarian screening</li><li>[ ] Apply <b>high-risk surveillance protocols</b> for Lynch, BRCA, Obesity, Tamoxifen, Lichen Sclerosus</li><li>[ ] Counsel patients on <b>screening vs surveillance</b> distinction</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Cervical Cancer Screening — Only Organised Programme</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Programme**</td><td>**NHS Cervical Screening Programme (NHS CSP)**</td></tr><tr><td>**Age Range**</td><td>**25-64 years**</td></tr><tr><td>**Interval**</td><td>**25-49: 3 years**, **50-64: 5 years**</td></tr><tr><td>**Primary Test**</td><td>**HPV Primary Screening** (hrHPV PCR)</td></tr><tr><td>**Triage**</td><td>**HPV+ → Cytology (LBC)**; **Cytology+ → Colposcopy**; **HPV- → Routine Recall**</td></tr><tr><td>**HPV Vaccination**</td><td>**9-valent (6,11,16,18,31,33,45,52,58)** → **~90% prevention**</td></tr><tr><td>**Mortality Reduction**</td><td>**~70%** since programme inception</td></tr></table>
+<div class="callout"><b>Only Organised Gynaecological Cancer Screening Programme in UK</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Ovarian Cancer — No Population Screening</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**Population Screening**</td><td>**Not Recommended** (UKCTOCS Trial: No Mortality Benefit)</td></tr><tr><td>**UKCTOCS Trial**</td><td>**200,000 women, Multimodal (CA125 + TVUS) vs US vs Control** → **No Mortality Benefit**</td></tr><tr><td>**High-Risk Surveillance**</td><td>**BRCA1/2**, **Lynch**, **Strong FH** → **CA125 + TVUS q6-12mo**</td></tr><tr><td>**Ovarian Cancer**</td><td>**CA125 + TVUS q6-12mo** (High-Risk Only)</td></tr><tr><td>**Genetic Counselling**</td><td>**BRCA1/2, Lynch** → **Cascade Testing, RRSO**</td></tr></table>
+<div class="sub-h">UKCTOCS Trial Summary</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Design**</td><td>**RCT, 200,000 women**, Multimodal (CA125+TVUS) vs US vs Control</td></tr><tr><td>**Primary Outcome**</td><td>**Ovarian Cancer Mortality**</td></tr><tr><td>**Result**</td><td>**No Significant Mortality Reduction** (HR 0.93, NS)</td></tr><tr><td>**Mode Shift**</td><td>**Earlier Stage Detection** (Stage I/II ↑) but **No Mortality Benefit**</td></tr><tr><td>**Conclusion**</td><td>**No Population Screening Recommended**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Endometrial Cancer — High-Risk Surveillance</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Risk Factor</th><th>Surveillance</th></tr><tr><td>-------------</td><td>--------------</td></tr><tr><td>**Lynch Syndrome**</td><td>**Annual Endometrial Sampling / TVUS** (From 30-35yr)</td></tr><tr><td>**Obesity (BMI >30)**</td><td>**Annual Endometrial Sampling / TVUS** (From 35-40yr)</td></tr><tr><td>**Tamoxifen Use**</td><td>**Annual TVUS** (During + 2-5yr Post-Treatment)</td></tr><tr><td>**Unopposed Oestrogen** (PCOS, HRT)</td><td>**Consider Annual Surveillance**</td></tr><tr><td>**Genetic Testing**</td><td>**If <50yr, FH, Obesity** → **Lynch/PTEN Testing**</td></tr></table>
+<div class="sub-h">Lynch Syndrome Gynaecological Surveillance</div>
+<table class="ctable"><tr><th>Surveillance</th><th>Frequency</th><th>Start Age</th></tr><tr><td>--------------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Endometrial Sampling / TVUS**</td><td>**Annual**</td><td>**30-35 years**</td></tr><tr><td>**Ovarian Surveillance**</td><td>**CA125 + TVUS q6-12mo**</td><td>**30-35 years**</td></tr><tr><td>**Gastric/SB/Urinary**</td><td>**OGD q2-3yr, Urinalysis**</td><td>**25-30 years**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Vulval & Vaginal Cancer — High-Risk Surveillance</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Surveillance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**Lichen Sclerosus (LS)**</td><td>**Annual Vulval Exam**, **Biopsy if Change**, **Topical Steroids**</td></tr><tr><td>**HPV Infection** (VIN)</td><td>**Colposcopy + Biopsy**, **Vaccination Preventive**</td></tr><tr><td>**Immunosuppression** (HIV, Post-Tx)</td><td>**Annual Vulval Exam**, **Colposcopy if Abnormal**</td></tr><tr><td>**Prior Cervical/Vaginal CIN/CA**</td><td>**Annual Vulval Exam + Colposcopy**</td></tr><tr><td>**VIN (Vulval Intraepithelial Neoplasia)**</td><td>**Surveillance q6-12mo**, **Treatment if Progression**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cancer</th><th>Population Screening</th><th>High-Risk Surveillance</th></tr><tr><td>--------</td><td>---------------------</td><td>------------------------</td></tr><tr><td>**Cervical**</td><td>**NHS CSP: 25-64, HPV Primary, 3/5yr**</td><td>**N/A (Programme Covers All)**</td></tr><tr><td>**Ovarian**</td><td>**NO Population Screening** (UKCTOCS Negative)</td><td>**BRCA1/2, Lynch, FH: CA125 + TVUS q6-12mo**</td></tr><tr><td>**Endometrial**</td><td>**No Population Screening**</td><td>**Lynch (Annual Endo Sampling/TVUS), Obesity (Annual), Tamoxifen (Annual TVUS)**</td></tr><tr><td>**Vulval/Vaginal**</td><td>**No Population Screening**</td><td>**LS (Annual Exam), HPV/VIN (Colposcopy), Immunosuppression (Annual)**</td></tr><tr><td>**UKCTOCS**</td><td>**Negative for Mortality Benefit**</td><td>**No Population Screening Recommended**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Gynaecological Cancers — Which Has Population Screening?**</td><td>**Cervical Only (NHS CSP 25-64, HPV Primary 3/5yr)**.</td></tr><tr><td>**Ovarian Cancer Screening — UKCTOCS Result?**</td><td>**No Mortality Benefit** (HR 0.93, NS); **Earlier Stage Detection but No Mortality Reduction** → **No Population Screening**.</td></tr><tr><td>**Ovarian High-Risk Surveillance — Who, What?**</td><td>**BRCA1/2, Lynch, Strong FH** → **CA125 + TVUS q6-12mo**.</td></tr><tr><td>**Endometrial High-Risk — Who, What?**</td><td>**Lynch (Annual Endo Sampling/TVUS)**, **Obesity BMI>30 (Annual TVUS)**, **Tamoxifen (Annual TVUS during + 2-5yr post)**.</td></tr><tr><td>**Vulval Cancer — High-Risk Groups, Surveillance?**</td><td>**LS (Annual Vulval Exam), HPV/VIN (Colposcopy), Immunosuppression (Annual)**.</td></tr><tr><td>**UKCTOCS — Design, Result, Conclusion?**</td><td>**RCT 200k, Multimodal (CA125+TVUS) vs US vs Control; No Mortality Benefit; Earlier Stage Shift → No Population Screening**.</td></tr><tr><td>**Lynch Syndrome Gynaecological Surveillance?**</td><td>**Endometrial Sampling/TVUS Annual (30-35+), CA125+TVUS q6-12mo (Ovarian), OGD q2-3yr, Gynae Surveillance**.</td></tr><tr><td>**Tamoxifen & Endometrial Cancer — Surveillance?**</td><td>**Annual TVUS During + 2-5yr Post-Treatment** (Risk ~2-3x).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Why No Ovarian Screening?**</td><td>**UKCTOCS: No Mortality Benefit** (Earlier Stage Shift ≠ Mortality Reduction); **CA125/TVUS Lack Specificity/Sensitivity for Population Screening**</td></tr><tr><td>**Cervical vs Ovarian Screening**</td><td>**Cervical: Organised Programme (HPV Primary)**; **Ovarian: No Programme (UKCTOCS Negative)**</td></tr><tr><td>**Endometrial vs Ovarian Surveillance**</td><td>**Endometrial: High-Risk (Lynch, Obesity, Tamoxifen) → Annual Sampling/TVUS**; **Ovarian: High-Risk (BRCA/Lynch) → CA125+TVUS**</td></tr><tr><td>**UKCTOCS — Why No Benefit?**</td><td>**Lead Time Bias** (Earlier Detection ≠ Mortality ↓); **No Stage Migration to Curable Disease**; **False Positives → Unnecessary Surgery**</td></tr><tr><td>**Vulval Cancer — Lichen Sclerosus Link**</td><td>**LS → dVIN → Differentiated VIN → Vulval SCC**; **Annual Vulval Exam Essential**</td></tr></table>
+<p><b>Mnemonic: GYNAE-SCREEN</b></p>
+<ul><li><b>G</b>ynaecological: <b>Only Cervical Has Population Programme</b></li><li><b>Y</b>early Cervical: <b>NHS CSP 25-64, HPV Primary, 3/5yr</b></li><li><b>N</b>o Ovarian Screening: <b>UKCTOCS Negative</b> (No Mortality Benefit)</li><li><b>A</b>dvanced Ovarian Risk: <b>BRCA/Lynch/FH → CA125+TVUS q6-12mo</b></li><li><b>E</b>ndometrial Risk: <b>Lynch, Obesity, Tamoxifen → Annual TVUS/Sampling</b></li><li><b>S</b>creening Only Cervical: <b>NHS CSP 25-64</b></li><li><b>C</b>ervical: <b>HPV Primary, 3/5yr Interval</b></li><li><b>R</b>ecruitment: <b>Cervical Only Organised Programme</b></li><li><b>E</b>ndometrial: <b>Lynch/Obese/Tamoxifen → Annual</b></li><li><b>E</b>arly Detection Only Cervical</li><li><b>N</b>o Ovarian: <b>UKCTOCS Negative</b></li><li><b>O</b>varian High-Risk: <b>BRCA/Lynch → CA125+TVUS</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cancer</th><th>Population Screening</th><th>High-Risk Surveillance</th></tr><tr><td>--------</td><td>---------------------</td><td>------------------------</td></tr><tr><td>**Cervical**</td><td>**NHS CSP: 25-64, HPV Primary, 3/5yr**</td><td>N/A</td></tr><tr><td>**Ovarian**</td><td>**NO** (UKCTOCS Negative)</td><td>**BRCA/Lynch/FH: CA125+TVUS q6-12mo**</td></tr><tr><td>**Endometrial**</td><td>**NO**</td><td>**Lynch (Annual Endo/TVUS), Obesity (TVUS), Tamoxifen (TVUS)**</td></tr><tr><td>**Vulval/Vaginal**</td><td>**NO**</td><td>**LS (Annual Exam), HPV (Colposcopy), Immunosuppression**</td></tr><tr><td>**UKCTOCS**</td><td>**200k, Multimodal vs US vs Control** → **No Mortality Benefit**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Cervical Screening Programme</td><td></td><td></td></tr><tr><td>UKCTOCS Result</td><td></td><td></td></tr><tr><td>Ovarian High-Risk Surveillance</td><td></td><td></td></tr><tr><td>Endometrial High-Risk Surveillance</td><td></td><td></td></tr><tr><td>Vulval High-Risk Surveillance</td><td></td><td></td></tr><tr><td>UKCTOCS Design/Result</td><td></td><td></td></tr><tr><td>Cervical vs Ovarian Screening</td><td></td><td></td></tr><tr><td>Lynch Gynaecological Surveillance</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Cervical Cancer Screening]], [[Ovarian Cancer]], [[Endometrial Cancer]], [[Vulval &amp; Vaginal Cancer]], [[UKCTOCS Trial]], [[Lynch Syndrome]], [[BRCA1/2]], [[Lynch Syndrome]], [[CA125]], [[TVUS]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Gynaecological Cancer Screening (Cervical), which statement is correct? A. <b>NHS CSP: 25-64, HPV Primary, 3/5yr</b> B. **NHS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>NHS CSP: 25-64, HPV Primary, 3/5yr</b></li></ul>
+<p><b>2.</b> Regarding Gynaecological Cancer Screening (Ovarian), which statement is correct? A. <b>NO Population Screening</b> (UKCTOCS Negative) B. **NO - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>NO Population Screening</b> (UKCTOCS Negative)</li></ul>
+<p><b>3.</b> Regarding Gynaecological Cancer Screening (Endometrial), which statement is correct? A. <b>No Population Screening</b> B. **No - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>No Population Screening</b></li></ul>
+<p><b>4.</b> Regarding Gynaecological Cancer Screening (Vulval/Vaginal), which statement is correct? A. <b>No Population Screening</b> B. **No - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>No Population Screening</b></li></ul>
+<p><b>5.</b> Regarding Gynaecological Cancer Screening (UKCTOCS), which statement is correct? A. <b>Negative for Mortality Benefit</b> B. **Negative - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Negative for Mortality Benefit</b></li></ul>
+<p><b>6.</b> Regarding Gynaecological Cancer Screening (Ovarian Cancer), which statement is correct?</p>
+<ul><li>A. Ovarian Cancer: No Population Screening (UKCTOCS Negative), High-Risk: BRCA1/2, Lynch → CA125 + TVUS</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Ovarian Cancer: No Population Screening (UKCTOCS Negative), High-Risk: BRCA1/2, Lynch → CA125 + TVUS q6-12mo</li></ul>
+<p><b>7.</b> Regarding Gynaecological Cancer Screening (Programme), which statement is correct?</p>
+<ul><li>A. Programme: NHS Cervical Screening Programme (NHS CSP)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Programme: NHS Cervical Screening Programme (NHS CSP)</li></ul>
+<p><b>8.</b> Regarding Gynaecological Cancer Screening (Interval), which statement is correct?</p>
+<ul><li>A. Interval: 25-49: 3 years, 50-64: 5 years</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Interval: 25-49: 3 years, 50-64: 5 years</li></ul>
+<p><b>9.</b> Regarding Gynaecological Cancer Screening (Primary Test), which statement is correct?</p>
+<ul><li>A. Primary Test: HPV Primary Screening (hrHPV PCR)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Primary Test: HPV Primary Screening (hrHPV PCR)</li></ul>
+<p><b>10.</b> Regarding Gynaecological Cancer Screening (Triage), which statement is correct?</p>
+<ul><li>A. Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>NHS CSP: 25-64, HPV Primary, 3/5yr</b></li><li>B. **NHS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>NHS CSP: 25-64, HPV Primary, 3/5yr</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>NO Population Screening</b> (UKCTOCS Negative)</li><li>B. **NO (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>NO Population Screening</b> (UKCTOCS Negative)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>No Population Screening</b></li><li>B. **No (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>No Population Screening</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>No Population Screening</b></li><li>B. **No (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>No Population Screening</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Negative for Mortality Benefit</b></li><li>B. **Negative (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Negative for Mortality Benefit</b></li></ul>
+<p><b>6.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. Ovarian Cancer: No Population Screening (UKCTOCS Negative), High-Risk: BRCA1/2, Lynch → CA125 + TVUS</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Ovarian Cancer: No Population Screening (UKCTOCS Negative), High-Risk: BRCA1/2, Lynch → CA125 + TVUS q6-12mo</li></ul>
+<p><b>7.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. Programme: NHS Cervical Screening Programme (NHS CSP)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Programme: NHS Cervical Screening Programme (NHS CSP)</li></ul>
+<p><b>8.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. Interval: 25-49: 3 years, 50-64: 5 years</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Interval: 25-49: 3 years, 50-64: 5 years</li></ul>
+<p><b>9.</b> Treatment is initiated. Most important monitoring parameter:</p>
+<ul><li>A. Primary Test: HPV Primary Screening (hrHPV PCR)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Primary Test: HPV Primary Screening (hrHPV PCR)</li></ul>
+<p><b>10.</b> Follow-up assessment reveals the following. Best next step:</p>
+<ul><li>A. Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Cervical? <b>A1:</b> NHS CSP: 25-64, HPV Primary, 3/5yr</p>
+<p><b>Q2:</b> Ovarian? <b>A2:</b> NO Population Screening (UKCTOCS Negative)</p>
+<p><b>Q3:</b> Endometrial? <b>A3:</b> No Population Screening</p>
+<p><b>Q4:</b> Vulval/Vaginal? <b>A4:</b> No Population Screening</p>
+<p><b>Q5:</b> UKCTOCS? <b>A5:</b> Negative for Mortality Benefit</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>Ovarian Cancer</td><td>Ovarian Cancer: No Population Screening (UKCTOCS Negative), High-Risk: BRCA1/2, Lynch → CA125 + TVUS q6-12mo</td></tr><tr><td>7</td><td>A</td><td>Programme</td><td>Programme: NHS Cervical Screening Programme (NHS CSP)</td></tr><tr><td>8</td><td>A</td><td>Interval</td><td>Interval: 25-49: 3 years, 50-64: 5 years</td></tr><tr><td>9</td><td>A</td><td>Primary Test</td><td>Primary Test: HPV Primary Screening (hrHPV PCR)</td></tr><tr><td>10</td><td>A</td><td>Triage</td><td>Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</td></tr><tr><td>11</td><td>A</td><td>HPV Vaccination</td><td>HPV Vaccination: 9-valent (6,11,16,18,31,33,45,52,58) → ~90% prevention</td></tr><tr><td>12</td><td>A</td><td>Mortality Reduction</td><td>Mortality Reduction: ~70% since programme inception</td></tr><tr><td>13</td><td>A</td><td>Population Screening</td><td>Population Screening: Not Recommended (UKCTOCS Trial: No Mortality Benefit)</td></tr><tr><td>14</td><td>A</td><td>UKCTOCS Trial</td><td>UKCTOCS Trial: 200,000 women, Multimodal (CA125 + TVUS) vs US vs Control → No Mortality Benefit</td></tr><tr><td>15</td><td>A</td><td>High-Risk Surveillance</td><td>High-Risk Surveillance: BRCA1/2, Lynch, Strong FH → CA125 + TVUS q6-12mo</td></tr><tr><td>16</td><td>A</td><td>Ovarian Cancer</td><td>Ovarian Cancer: CA125 + TVUS q6-12mo (High-Risk Only)</td></tr><tr><td>17</td><td>A</td><td>Genetic Counselling</td><td>Genetic Counselling: BRCA1/2, Lynch → Cascade Testing, RRSO</td></tr><tr><td>18</td><td>A</td><td>Design</td><td>Design: RCT, 200,000 women, Multimodal (CA125+TVUS) vs US vs Control</td></tr><tr><td>19</td><td>A</td><td>Primary Outcome</td><td>Primary Outcome: Ovarian Cancer Mortality</td></tr><tr><td>20</td><td>A</td><td>Result</td><td>Result: No Significant Mortality Reduction (HR 0.93, NS)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>Ovarian Cancer</td><td>Ovarian Cancer: No Population Screening (UKCTOCS Negative), High-Risk: BRCA1/2, Lynch → CA125 + TVUS q6-12mo</td></tr><tr><td>7</td><td>A</td><td>Programme</td><td>Programme: NHS Cervical Screening Programme (NHS CSP)</td></tr><tr><td>8</td><td>A</td><td>Interval</td><td>Interval: 25-49: 3 years, 50-64: 5 years</td></tr><tr><td>9</td><td>A</td><td>Primary Test</td><td>Primary Test: HPV Primary Screening (hrHPV PCR)</td></tr><tr><td>10</td><td>A</td><td>Triage</td><td>Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</td></tr><tr><td>11</td><td>A</td><td>HPV Vaccination</td><td>HPV Vaccination: 9-valent (6,11,16,18,31,33,45,52,58) → ~90% prevention</td></tr><tr><td>12</td><td>A</td><td>Mortality Reduction</td><td>Mortality Reduction: ~70% since programme inception</td></tr><tr><td>13</td><td>A</td><td>Population Screening</td><td>Population Screening: Not Recommended (UKCTOCS Trial: No Mortality Benefit)</td></tr><tr><td>14</td><td>A</td><td>UKCTOCS Trial</td><td>UKCTOCS Trial: 200,000 women, Multimodal (CA125 + TVUS) vs US vs Control → No Mortality Benefit</td></tr><tr><td>15</td><td>A</td><td>High-Risk Surveillance</td><td>High-Risk Surveillance: BRCA1/2, Lynch, Strong FH → CA125 + TVUS q6-12mo</td></tr><tr><td>16</td><td>A</td><td>Ovarian Cancer</td><td>Ovarian Cancer: CA125 + TVUS q6-12mo (High-Risk Only)</td></tr><tr><td>17</td><td>A</td><td>Genetic Counselling</td><td>Genetic Counselling: BRCA1/2, Lynch → Cascade Testing, RRSO</td></tr><tr><td>18</td><td>A</td><td>Design</td><td>Design: RCT, 200,000 women, Multimodal (CA125+TVUS) vs US vs Control</td></tr><tr><td>19</td><td>A</td><td>Primary Outcome</td><td>Primary Outcome: Ovarian Cancer Mortality</td></tr><tr><td>20</td><td>A</td><td>Result</td><td>Result: No Significant Mortality Reduction (HR 0.93, NS)</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Cervical</td><td>NHS CSP: 25-64, HPV Primary, 3/5yr</td></tr><tr><td>2</td><td>A</td><td>Ovarian</td><td>NO Population Screening (UKCTOCS Negative)</td></tr><tr><td>3</td><td>A</td><td>Endometrial</td><td>No Population Screening</td></tr><tr><td>4</td><td>A</td><td>Vulval/Vaginal</td><td>No Population Screening</td></tr><tr><td>5</td><td>A</td><td>UKCTOCS</td><td>Negative for Mortality Benefit</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Cervical</td><td>NHS CSP: 25-64, HPV Primary, 3/5yr</td></tr><tr><td>2</td><td>A</td><td>Ovarian</td><td>NO Population Screening (UKCTOCS Negative)</td></tr><tr><td>3</td><td>A</td><td>Endometrial</td><td>No Population Screening</td></tr><tr><td>4</td><td>A</td><td>Vulval/Vaginal</td><td>No Population Screening</td></tr><tr><td>5</td><td>A</td><td>UKCTOCS</td><td>Negative for Mortality Benefit</td></tr></table>
+<p><b>Q6:</b> Ovarian Cancer? <b>A6:</b> Ovarian Cancer: No Population Screening (UKCTOCS Negative), High-Risk: BRCA1/2, Lynch → CA125 + TVUS q6-12mo</p>
+<p><b>Q7:</b> Programme? <b>A7:</b> Programme: NHS Cervical Screening Programme (NHS CSP)</p>
+<p><b>Q8:</b> Interval? <b>A8:</b> Interval: 25-49: 3 years, 50-64: 5 years</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer Screening &amp; Prevention|Cancer Screening &amp; Prevention]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Gynaecological Cancer Screening · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

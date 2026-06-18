@@ -21,15 +21,15 @@ SITE = REPO_ROOT / "site"
 
 # Full Davidson 25th Edition chapter list (32 chapters)
 DAVIDSON_25TH = [
-    (1,  "Clinical decision-making",                None),
-    (2,  "Clinical therapeutics and good prescribing", None),
-    (3,  "Clinical genetics",                       None),
-    (4,  "Clinical immunology",                     None),
-    (5,  "Nutritional factors in disease",          None),
-    (6,  "Population health and epidemiology",      None),
-    (7,  "Principles of infection",                 None),
-    (8,  "Oncology",                                None),
-    (9,  "Palliative and supportive care",          None),
+    (1,  "Clinical decision-making",                "1-clinical-decision-making"),
+    (2,  "Clinical therapeutics and good prescribing", "2-clinical-therapeutics"),
+    (3,  "Clinical genetics",                       "3-clinical-genetics"),
+    (4,  "Clinical immunology",                     "4-clinical-immunology"),
+    (5,  "Nutritional factors in disease",          "5-nutritional-factors"),
+    (6,  "Population health and epidemiology",      "6-population-health"),
+    (7,  "Principles of infection",                 "7-principles-of-infection"),
+    (8,  "Oncology",                                "8-oncology"),
+    (9,  "Palliative and supportive care",          "9-palliative-care"),
     (10, "Acute medicine and critical illness",     None),
     (11, "Poisoning",                               None),
     (12, "Envenomation",                            None),
@@ -86,6 +86,60 @@ BUILT_CHAPTERS = {
         "https://app.notion.com/p/SeaHub/Chapter-21-Gastroenterology-bbfd97790eca482eaed8d47428a642b2",
         "Oesophageal, gastric, IBD, colorectal, pancreatic, malabsorption.",
         "#f59e0b",
+    ),
+    "1-clinical-decision-making": (
+        "Clinical Decision-Making",
+        "https://app.notion.com/p/SeaHub/Chapter-1-Clinical-decision-making-8e5cd1ec34904d69aa7fb21ab056a508",
+        "Clinical reasoning, EBM, communication, ethics, QI, guidelines.",
+        "#64748b",
+    ),
+    "2-clinical-therapeutics": (
+        "Clinical Therapeutics & Prescribing",
+        "https://app.notion.com/p/SeaHub/Chapter-2-Clinical-therapeutics-and-good-prescribing-5ec47a8c567148fc91af45d63691e6e6",
+        "ADRs, drug interactions, polypharmacy, rational prescribing, TDM.",
+        "#0ea5e9",
+    ),
+    "3-clinical-genetics": (
+        "Clinical Genetics",
+        "https://app.notion.com/p/SeaHub/Chapter-3-Clinical-genetics-0b1c71bf18984f99ab97018154d0ad71",
+        "Mendelian, chromosomal, genetic testing, cancer genetics, pharmacogenetics.",
+        "#84cc16",
+    ),
+    "4-clinical-immunology": (
+        "Clinical Immunology",
+        "https://app.notion.com/p/SeaHub/Chapter-4-Clinical-immunology-0b4e940adc464a56b120b1e4ba682c63",
+        "Immunodeficiency, autoimmunity, hypersensitivity, transplant, tumour immunology.",
+        "#f97316",
+    ),
+    "5-nutritional-factors": (
+        "Nutritional Factors in Disease",
+        "https://app.notion.com/p/SeaHub/Chapter-5-Nutritional-factors-in-disease-20ae0f805c75401983af5d981bccbe72",
+        "Macronutrients, vitamins, minerals, nutritional disorders, clinical nutrition.",
+        "#eab308",
+    ),
+    "6-population-health": (
+        "Population Health & Epidemiology",
+        "https://app.notion.com/p/SeaHub/Chapter-6-Population-health-and-epidemiology-83035ef3c78d462b816a3d8ad0b0e653",
+        "Epi methods, population health, major disease epidemiology, global health.",
+        "#14b8a6",
+    ),
+    "7-principles-of-infection": (
+        "Principles of Infection",
+        "https://app.notion.com/p/SeaHub/Chapter-7-Principles-of-infection-6469084f1ff046798f4f4bab9f1d0802",
+        "Microbial biology, antimicrobials, IPC, vaccines.",
+        "#dc2626",
+    ),
+    "8-oncology": (
+        "Oncology",
+        "https://app.notion.com/p/SeaHub/Chapter-8-Oncology-8d4228ea84974d4db2e7f62a746f39d1",
+        "CNS, breast, lung, GI, GU, haem, paediatric, oncologic emergencies.",
+        "#7c3aed",
+    ),
+    "9-palliative-care": (
+        "Palliative & Supportive Care",
+        "https://app.notion.com/p/SeaHub/Chapter-9-Palliative-and-supportive-care-c65289d8222748e3a809cb07e2b70f66",
+        "Pain management, opioids, adjuvant analgesics, EOL care, communication.",
+        "#be185d",
     ),
 }
 
@@ -1098,10 +1152,19 @@ docker run -d --name medsea --restart unless-stopped -p 0.0.0.0:8855:8855 medsea
 vercel deploy --prod
 ```
 
-## Chapters (5 live of 32)
+## Chapters (14 live of 32)
 
 | Ch | Slug | Topics | Live |
 |---|---|---|---|
+| 1  | 1-clinical-decision-making | 6 | ✅ |
+| 2  | 2-clinical-therapeutics | 71 | ✅ |
+| 3  | 3-clinical-genetics | 6 | ✅ |
+| 4  | 4-clinical-immunology | 2 | ✅ |
+| 5  | 5-nutritional-factors | 35 | ✅ |
+| 6  | 6-population-health | 27 | ✅ |
+| 7  | 7-principles-of-infection | 26 | ✅ |
+| 8  | 8-oncology | 119 | ✅ |
+| 9  | 9-palliative-care | 51 | ✅ |
 | 15 | 15-nephrology-urology | 49 | ✅ |
 | 16 | 16-cardiology | 330 | ✅ |
 | 17 | 17-respiratory-medicine | 149 | ✅ |

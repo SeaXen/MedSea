@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ethics Law — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 1 CLINICAL DECISION-MAKING / 1.4. ETHICS & LAW</span>
+      <div class="h1">Ethics Law</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>ethical frameworks</b>: 4 Principles (Beauchamp &amp; Childress), 4 Quadrants (Jonsen), Consequentialism vs Deontology</li><li>[ ] Navigate <b>UK medical law</b>: Consent (Montgomery), Capacity (MCA 2005), Negligence (Bolam/Bolitho), Confidentiality, End-of-life</li><li>[ ] Resolve <b>ethical dilemmas</b>: End-of-life (DNAR, Withdrawal), Resource allocation, Organ donation, Genetics, Research ethics</li><li>[ ] Understand <b>professional regulation</b>: GMC "Good Medical Practice", Fitness to practise, Duty of candour, Raising concerns</li><li>[ ] Apply <b>paediatric consent</b>: Gillick competence, Fraser guidelines, Parental responsibility</li><li>[ ] Answer viva: "Montgomery vs Bolam" and "DNAR decision framework" and "Confidentiality exceptions"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Ethics & Law in Clinical Practice</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Clinical Decision] --&gt; B{Ethical Analysis} B --&gt; C[4 Principles&lt;br/&gt;Autonomy, Beneficence,&lt;br/&gt;Non-maleficence, Justice] B --&gt; D[4 Quadrants&lt;br/&gt;Medical Indications,&lt;br/&gt;Patient Preferences,&lt;br/&gt;Quality of Life,&lt;br/&gt;Contextual Features] A --&gt; E{Legal Framework} E --&gt; F[Statute Law&lt;br/&gt;MCA 2005, HRA 1998,&lt;br/&gt;Data Protection 2018] E --&gt; G[Case Law&lt;br/&gt;Montgomery, Bolam,&lt;br/&gt;Bolitho, Re A, Gillick] E --&gt; H[Regulatory&lt;br/&gt;GMC Good Medical Practice,&lt;br/&gt;Fitness to Practise] C &amp; D &amp; F &amp; G &amp; H --&gt; I[Resolution:&lt;br/&gt;Ethically Justified &amp;&lt;br/&gt;Legally Defensible] </code>``</p>
+<div class="callout"><b>Key:</b> <i>Ethics asks "What </i>should<i> we do?" Law asks "What </i>must<i> we do?" Good practice aligns both.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Ethical Frameworks</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Four Principles (Beauchamp &amp; Childress)</div>
+<table class="ctable"><tr><th>Principle</th><th>Definition</th><th>Clinical Application</th></tr><tr><td>-----------</td><td>------------</td><td>----------------------</td></tr><tr><td>**Autonomy**</td><td>Respect patient's right to self-determination</td><td>Informed consent, Advance decisions, Confidentiality, Truth-telling</td></tr><tr><td>**Beneficence**</td><td>Act in patient's best interest</td><td>Provide effective treatment, Prevent harm, Promote wellbeing</td></tr><tr><td>**Non-maleficence**</td><td>"First, do no harm"</td><td>Avoid unnecessary risk, Side-effect minimisation, Error prevention</td></tr><tr><td>**Justice**</td><td>Fair distribution of benefits/burdens</td><td>Resource allocation, Triage, Non-discrimination, Access to care</td></tr></table>
+<div class="callout"><b>Conflict Resolution:</b> <i>No hierarchy. Use <b>proportionality</b> (benefit vs harm), <b>necessity</b> (least restrictive), <b>subsidiarity</b> (decide at lowest appropriate level).</i></div>
+<div class="sub-h">Four Quadrants Approach (Jonsen et al.)</div>
+<table class="ctable"><tr><th>Quadrant</th><th>Key Questions</th></tr><tr><td>----------</td><td>---------------</td></tr><tr><td>**1. Medical Indications**</td><td>What is the problem? Diagnosis, Prognosis, Treatment options, Benefits/Harms, Goals of care</td></tr><tr><td>**2. Patient Preferences**</td><td>Has patient been informed? Understands? Consents? Values? Goals? Advance directives?</td></tr><tr><td>**3. Quality of Life**</td><td>Current/future QoL? Patient's view of acceptable QoL? Bias in assessment?</td></tr><tr><td>**4. Contextual Features**</td><td>Family/social? Financial? Legal? Institutional? Religious/cultural? Resource allocation?</td></tr></table>
+<div class="callout"><b>Use:</b> <i>Systematic case analysis → Identify conflicts → Weigh principles in context.</i></div>
+<div class="sub-h">Other Ethical Theories</div>
+<table class="ctable"><tr><th>Theory</th><th>Core Idea</th><th>Limitation</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>**Consequentialism / Utilitarianism**</td><td>Maximise overall good (greatest happiness)</td><td>Ignores individual rights; "ends justify means"</td></tr><tr><td>**Deontology**</td><td>Duties/rules (Kant: categorical imperative)</td><td>Rigid; conflicts between duties</td></tr><tr><td>**Virtue Ethics**</td><td>Character of moral agent (phronesis/practical wisdom)</td><td>Vague; culturally relative</td></tr><tr><td>**Principlism** (Predominant in medicine)</td><td>Balance 4 principles in context</td><td>Requires judgement; no algorithm</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Key Ethical Dilemmas in Clinical Practice</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">End-of-Life Decisions</div>
+<table class="ctable"><tr><th>Issue</th><th>Ethical/Legal Framework</th></tr><tr><td>-------</td><td>-------------------------</td></tr><tr><td>**DNAR (Do Not Attempt Resuscitation)**</td><td>Not a "treatment decision" per se — clinical judgment on futility. Must discuss with patient/family (unless harm). Document on ReSPECT/NHS form. Not legally binding on other clinicians but strong guidance.</td></tr><tr><td>**Withholding vs Withdrawing Treatment**</td><td>**Legally & ethically equivalent** (Airedale v Bland). Both require best interests assessment. Withdrawing often harder psychologically.</td></tr><tr><td>**Artificial Nutrition & Hydration (ANH)**</td><td>Considered medical treatment (Airedale). Can be withheld/withdrawn if not in best interests.</td></tr><tr><td>**Advance Decisions (ADRT)**</td><td>Legally binding refusal if valid (MCA 2005). Must be "clear, specific, applicable". "Even if life at risk" for life-sustaining.</td></tr><tr><td>**Euthanasia / Assisted Dying**</td><td>**Illegal in UK** (Suicide Act 1961, Murder Act). Distinct from withdrawing treatment. Double effect doctrine: palliative sedation with intent to relieve suffering.</td></tr></table>
+<div class="sub-h">End-of-Life Decision Framework (ReSPECT / GMC)</div>
+<p>``<code>mermaid flowchart TD A[Patient with Deteriorating Condition] --&gt; B{Capacity?} B --&gt;|Yes| C[Discuss Goals of Care&lt;br/&gt;DNAR? Treatments? Ceiling?] B --&gt;|No| D[Best Interests Decision] C &amp; D --&gt; E{Agreement?} E --&gt;|Yes| F[Document ReSPECT/DNAR&lt;br/&gt;Share with Team/Family] E --&gt;|Disagreement| G[Second Opinion / Mediation&lt;br/&gt;Ethics Committee / Court] F &amp; G --&gt; H[Regular Review&lt;br/&gt;Escalate if Change] </code>``</p>
+<div class="sub-h">Resource Allocation (Distributive Justice)</div>
+<table class="ctable"><tr><th>Principle</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Utilitarian**</td><td>Maximise QALYs (NICE ICER £20-30k/QALY)</td></tr><tr><td>**Egalitarian**</td><td>Equal access regardless of outcome</td></tr><tr><td>**Prioritarian**</td><td>Priority to worst off (Rule of Rescue)</td></tr><tr><td>**Clinical Need**</td><td>NHS: "Comprehensive service free at point of use based on clinical need"</td></tr><tr><td>**Rationing**</td><td>Explicit (NICE) vs Implicit (clinician bedside)</td></tr></table>
+<div class="callout"><b>NICE = Explicit rationing</b> — Evidence-based, Transparent, Appealable.</div>
+<div class="sub-h">Organ Donation</div>
+<table class="ctable"><tr><th>Type</th><th>Consent Model</th></tr><tr><td>------</td><td>---------------</td></tr><tr><td>**Deceased Donation**</td><td>**Opt-out (England/Wales)** — Deemed consent unless opted out (Organ Donation Act 2019/2023). Family consulted.</td></tr><tr><td>**Living Donation**</td><td>Informed consent, Independent assessment, No coercion, Long-term follow-up</td></tr><tr><td>**DCD (Donation after Circulatory Death)**</td><td>Controlled (planned withdrawal) vs Uncontrolled. 5-min hands-off period.</td></tr></table>
+<div class="sub-h">Genetics &amp; Genomics</div>
+<table class="ctable"><tr><th>Issue</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Predictive Testing**</td><td>Autonomy (right to know / not know), Non-directive counselling, Family implications</td></tr><tr><td>**Incidental Findings**</td><td>ACMG actionable genes list; Duty to warn? Patient preference?</td></tr><tr><td>**Prenatal / Preimplantation**</td><td>Eugenics concerns, Disability rights, Reproductive autonomy</td></tr><tr><td>**Data Sharing**</td><td>GDPR, Familial implications, Insurance discrimination (Moratorium UK)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ UK Medical Law — Key Statutes & Cases</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Consent Law Evolution</div>
+<table class="ctable"><tr><th>Case</th><th>Principle</th></tr><tr><td>------</td><td>-----------</td></tr><tr><td>**Bolam (1957)**</td><td>"Responsible body of medical opinion" — Doctor not negligent if acts per accepted practice</td></tr><tr><td>**Bolitho (1997)**</td><td>Court can reject medical opinion if **not logical** / **not defensible**</td></tr><tr><td>**Sidaway (1985)**</td><td>Doctor decides what risks to disclose ("prudent patient")</td></tr><tr><td>**Chester v Afshar (2004)**</td><td>Failure to warn = Breach of duty (causation presumed for non-disclosure)</td></tr><tr><td>**Montgomery v Lanarkshire (2015)**</td><td>**Landmark**: **Patient-centred** — Must disclose **material risks** (reasonable person test) + **Reasonable alternatives**</td></tr></table>
+<div class="sub-h">Montgomery Test (2015) — 2-Limb Test</div>
+<table class="ctable"><tr><th>Limb</th><th>Test</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**1. Material Risk**</td><td>Would a **reasonable person** in patient's position attach significance? OR Doctor **reasonably aware** patient would attach significance?</td></tr><tr><td>**2. Alternatives**</td><td>Must discuss **reasonable alternative treatments** (including no treatment)</td></tr></table>
+<div class="callout"><b>Post-Montgomery:</b> No longer "What would reasonable doctor disclose?" → <b>"What would reasonable patient want to know?" + "What does THIS patient want to know?"</b></div>
+<div class="sub-h">Negligence — 4 Elements (Tort Law)</div>
+<table class="ctable"><tr><th>Element</th><th>Requirement</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Duty of Care**</td><td>Doctor-patient relationship established</td></tr><tr><td>**Breach of Duty**</td><td>Below standard of reasonable competent practitioner (Bolam/Bolitho)</td></tr><tr><td>**Causation**</td><td>"But for" breach → harm (Factual) + Legal causation (foreseeability)</td></tr><tr><td>**Damage**</td><td>Recognisable harm (Physical, Psychiatric, Financial)</td></tr></table>
+<div class="sub-h">Confidentiality — Legal Basis &amp; Exceptions</div>
+<table class="ctable"><tr><th>Legal Basis</th><th>Source</th></tr><tr><td>-------------</td><td>--------</td></tr><tr><td>**Common Law**</td><td>Duty of confidence (implied)</td></tr><tr><td>**Statute**</td><td>Data Protection Act 2018 / UK GDPR, Human Rights Act 1998 (Art 8)</td></tr><tr><td>**Contract**</td><td>Implied term in doctor-patient contract</td></tr></table>
+<table class="ctable"><tr><th>Exception</th><th>Legal Basis</th><th>Example</th></tr><tr><td>-----------</td><td>-------------</td><td>---------</td></tr><tr><td>**Patient Consent**</td><td>Explicit/Implied</td><td>Referral, Insurance report</td></tr><tr><td>**Legal Obligation**</td><td>Statute</td><td>Notifiable diseases (Public Health Act), Court order, Coroner</td></tr><tr><td>**Public Interest**</td><td>Common Law / Statute</td><td>**Risk of serious harm to others** (W v Egdell), Terrorism, Road safety (DVLA)</td></tr><tr><td>**Child Protection**</td><td>Children Act 1989/2004</td><td>Safeguarding override</td></tr><tr><td>**Anonymised Data**</td><td>GDPR (Recital 26)</td><td>Research, Audit (if truly anonymised)</td></tr></table>
+<div class="callout"><b>Child Protection:</b> "Welfare of child is paramount" (Children Act 1989). Information sharing without consent if risk of significant harm.</div>
+<div class="sub-h">Mental Capacity Act 2005 — Key Provisions</div>
+<table class="ctable"><tr><th>Provision</th><th>Summary</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**s.1 Principles**</td><td>Presume capacity; Support decisions; Unwise ≠ lack capacity; Best interests; Least restrictive</td></tr><tr><td>**s.2-3 Definition**</td><td>Impairment + Functional inability (Understand, Retain, Weigh, Communicate)</td></tr><tr><td>**s.4 Best Interests**</td><td>Checklist (Past wishes, Beliefs, Consult, No discrimination, Least restrictive)</td></tr><tr><td>**s.5-6 Protection from Liability**</td><td>Acts in best interests + Reasonable belief of incapacity = Protected</td></tr><tr><td>**s.9-14 LPA**</td><td>Property/Finance & Health/Welfare (Registered OPG)</td></tr><tr><td>**s.24-26 ADRT**</td><td>Advance Decision to Refuse Treatment (Valid, Applicable, Life-sustaining = written/signed/witnessed)</td></tr><tr><td>**s.35-41 IMCA**</td><td>Serious treatment / Accommodation change + No family/friends</td></tr><tr><td>**s.4A DoLS**</td><td>Deprivation of Liberty Safeguards (Care homes/hospitals)</td></tr></table>
+<div class="sub-h">Human Rights Act 1998 — Relevant Articles</div>
+<table class="ctable"><tr><th>Article</th><th>Clinical Relevance</th></tr><tr><td>---------</td><td>-------------------</td></tr><tr><td>**Art 2: Right to Life**</td><td>DNAR decisions, Withdrawal of treatment, Suicide prevention</td></tr><tr><td>**Art 3: Freedom from Inhuman/Degrading Treatment**</td><td>Pain relief, Dignity, Restraint, DoLS</td></tr><tr><td>**Art 5: Right to Liberty**</td><td>Detention (MHA), DoLS, Physical restraint</td></tr><tr><td>**Art 8: Right to Private/Family Life**</td><td>Confidentiality, Medical records, Family decisions, Genetic info</td></tr><tr><td>**Art 9: Freedom of Thought/Conscience/Religion**</td><td>Refusal of treatment (Blood products), Conscientious objection</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Paediatric Consent — Gillick & Fraser</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Gillick Competence**</td><td>Child <16 **can** consent if "sufficient understanding and intelligence to enable them to understand fully what is proposed" (Gillick v West Norfolk 1985).</td></tr><tr><td>**Fraser Guidelines**</td><td>Specifically for **contraceptive/sexual health advice** to <16 without parental consent: 1) Understands advice, 2) Cannot be persuaded to inform parents, 3) Likely to have sex anyway, 4) Health suffers without treatment, 5) Best interests.</td></tr><tr><td>**Parental Responsibility**</td><td>Mother (auto), Father (married/registered/court order), Others via court. Both parents can consent for <16.</td></tr><tr><td>**Refusal by Gillick-competent Child**</td><td>Can consent but **cannot refuse** life-saving treatment (Re R 1991). Court can override.</td></tr><tr><td>**16-17 Year Olds**</td><td>Presumed capacity (Family Law Reform Act 1969). Can consent. **Cannot refuse** life-saving (can be overridden by court/parent).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Professional Regulation — GMC & Fitness to Practise</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">GMC Good Medical Practice (2024) — 4 Domains</div>
+<table class="ctable"><tr><th>Domain</th><th>Key Standards</th></tr><tr><td>--------</td><td>---------------</td></tr><tr><td>**1. Knowledge, Skills & Performance**</td><td>Develop/maintain competence, Work within limits, Record keeping, CPD</td></tr><tr><td>**2. Safety & Quality**</td><td>Patient safety, Raise concerns, Risk management, Infection control</td></tr><tr><td>**3. Communication, Partnership & Teamwork**</td><td>Communication, Consent, Teamwork, Leadership, Teaching</td></tr><tr><td>**4. Maintaining Trust**</td><td>Honesty, Integrity, Confidentiality, Probity, Personal conduct</td></tr></table>
+<div class="sub-h">Fitness to Practise — Process</div>
+<table class="ctable"><tr><th>Stage</th><th>Action</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**Concern Raised**</td><td>Employer, Patient, Police, Self-referral</td></tr><tr><td>**Triage**</td><td>GMC assesses if meets threshold</td></tr><tr><td>**Investigation**</td><td>Evidence gathering, Health assessment, Language test</td></tr><tr><td>**Case Examiners**</td><td>Decide: No case / Undertakings / Warnings / Refer to MPTS</td></tr><tr><td>**MPTS (Tribunal)**</td><td>Hearings (public/private), Evidence, Witnesses</td></tr><tr><td>**Outcomes**</td><td>Erasure, Suspension, Conditions, Warning, No action</td></tr><tr><td>**Appeal**</td><td>High Court (England/Wales) / Court of Session (Scotland)</td></tr></table>
+<div class="sub-h">Duty of Candour (Statutory — Health &amp; Social Care Act 2008 Reg 20)</div>
+<table class="ctable"><tr><th>Trigger</th><th>Action</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Notifiable Safety Incident**</td><td>Unintended/unexpected: Death, Severe harm, Moderate harm, Prolonged psychological harm</td></tr><tr><td>**Organisational Duty**</td><td>Tell patient (in person + writing), Apologise, Explain, Support, Record</td></tr><tr><td>**Professional Duty**</td><td>Same + Report to regulator if required</td></tr></table>
+<div class="callout"><b>Candour ≠ Admission of Liability.</b> Apology = "I'm sorry this happened" (not "I'm sorry I was negligent").</div>
+<div class="sub-h">Raising Concerns (Whistleblowing)</div>
+<table class="ctable"><tr><th>Protection</th><th>Source</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**Public Interest Disclosure Act 1998 (PIDA)**</td><td>Protected disclosure if: Public interest, Reasonable belief, Made to prescribed person (GMC, CQC, NHS, etc.)</td></tr><tr><td>**GMC Duty**</td><td>"Must take prompt action if patient safety at risk" (GMP Domain 2)</td></tr><tr><td>**Process**</td><td>Local → Regulator → Public (last resort). Anonymous not ideal (harder to investigate).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Practical Decision Frameworks</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Ethical Decision-Making (4-Quadrant Checklist)</div>
+<p>``<code>mermaid flowchart TD A[Clinical Dilemma] --&gt; B[1. Medical Indications&lt;br/&gt;Diagnosis, Prognosis, Options, Goals] B --&gt; C[2. Patient Preferences&lt;br/&gt;Informed? Capacity? Consent? Values? Advance Directives?] C --&gt; D[3. Quality of Life&lt;br/&gt;Current/Future? Patient's View? Bias?] D --&gt; E[4. Contextual Features&lt;br/&gt;Family, Resources, Legal, Institutional, Cultural] E --&gt; F[Identify Conflicts&lt;br/&gt;Autonomy vs Beneficence? Justice?] F --&gt; G{Resolve: Proportionality,&lt;br/&gt;Necessity, Subsidiarity} G --&gt; H[Document Reasoning&lt;br/&gt;Consult Ethics Committee if Needed&lt;br/&gt;Implement with Communication] </code>``</p>
+<div class="sub-h">Consent Conversation Checklist (Montgomery-Compliant)</div>
+<ul><li>[ ] Diagnosis &amp; Prognosis (plain language)</li><li>[ ] Nature &amp; Purpose of proposed treatment</li><li>[ ] <b>Material Risks</b> (Common + Serious + Patient-specific)</li><li>[ ] <b>Reasonable Alternatives</b> (including No Treatment)</li><li>[ ] <b>Patient-specific Concerns</b> ("What matters to you?")</li><li>[ ] <b>Understanding Checked</b> (Teach-back: "In your own words...")</li><li>[ ] <b>Voluntariness</b> (No coercion, Time given)</li><li>[ ] <b>Documentation</b> (Signed form + Detailed notes)</li></ul>
+<div class="sub-h">Capacity Assessment Script (MCA 2005)</div>
+<p>``` "I need to check you can make this decision about [treatment].</p>
+<ol><li>Can you tell me what [treatment] involves and why it's recommended? (Understand)</li><li>Can you remember what we discussed for a few minutes? (Retain)</li><li>Can you tell me the pros and cons, and why you'd choose or not choose it? (Use/Weigh)</li><li>Can you tell me your decision? (Communicate)</li></ol>
+<p>If any NO → Lacks capacity for THIS decision → Best Interests." ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Ethical Principles**</td><td>Autonomy, Beneficence, Non-maleficence, Justice. Quadrants: Medical, Preferences, QoL, Context.</td></tr><tr><td>**Consent (Montgomery)**</td><td>**Material risk** (reasonable patient test) + **Reasonable alternatives**. Patient-centred. Document discussion.</td></tr><tr><td>**Capacity (MCA 2005)**</td><td>2-stage: 1) Impairment, 2) Functional (Understand, Retain, Use/Weigh, Communicate). Decision-specific.</td></tr><tr><td>**Best Interests**</td><td>Past wishes, Beliefs, Consult, No discrimination, Least restrictive. IMCA if no family + serious decision.</td></tr><tr><td>**Advance Decisions**</td><td>Binding refusal (written, signed, witnessed, "even if life at risk" for life-sustaining).</td></tr><tr><td>**DNAR / End-of-life**</td><td>Clinical judgment on futility. Discuss with patient/family. ReSPECT form. Not legally binding but strong guidance.</td></tr><tr><td>**Confidentiality Exceptions**</td><td>Consent, Legal obligation (notifiable diseases, court), Public interest (serious harm to others), Child protection.</td></tr><tr><td>**Negligence**</td><td>Duty → Breach (Bolam/Bolitho) → Causation → Damage. Bolitho = Court can reject illogical medical opinion.</td></tr><tr><td>**Child Consent**</td><td>Gillick <16 = competent if understands. Fraser = Contraception <16. <16 cannot refuse life-saving. 16-17 = presume capacity but can refuse life-saving.</td></tr><tr><td>**GMC Domains**</td><td>1. Knowledge/Skills, 2. Safety/Quality, 3. Communication/Teamwork, 4. Trust.</td></tr><tr><td>**Duty of Candour**</td><td>Notifiable incident → Tell patient (in person + writing), Apologise, Explain, Support, Record.</td></tr><tr><td>**Key Cases**</td><td>Montgomery (Material risk), Bolam/Bolitho (Negligence std), Gillick (Child competence), Airedale (Withdrawal = Withholding), Re A (Conjoined twins).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What are the 4 principles of medical ethics?</td><td>Autonomy, Beneficence, Non-maleficence, Justice.</td></tr><tr><td>2</td><td>What changed with Montgomery v Lanarkshire?</td><td>Shift from **Bolam (doctor-centric: "responsible body of opinion")** to **Montgomery (patient-centric: "reasonable patient test")** — Must disclose material risks + reasonable alternatives.</td></tr><tr><td>3</td><td>What is the Bolam test?</td><td>Doctor not negligent if acts in accordance with practice accepted as proper by responsible body of medical opinion.</td></tr><tr><td>4</td><td>What did Bolitho add?</td><td>Court can reject medical opinion if **not logical** or **not defensible** — not absolute deference.</td></tr><tr><td>4</td><td>Mental Capacity Act — 2-stage test?</td><td>Stage 1: Impairment of mind/brain? Stage 2: Functional — Can: a) Understand, b) Retain, c) Use/Weigh, d) Communicate? Decision-specific.</td></tr><tr><td>5</td><td>What makes an Advance Decision valid?</td><td>Written, Signed, Witnessed, "Even if life at risk" for life-sustaining treatment, Applicable to current situation.</td></tr><tr><td>5</td><td>When is IMCA required?</td><td>Serious medical treatment OR long-term accommodation change + **No family/friends** to consult.</td></tr><tr><td>6</td><td>DoLS — when does it apply?</td><td>Continuous supervision/control + Not free to leave + Lacks capacity → Requires authorisation.</td></tr><tr><td>6</td><td>Gillick competence — what does it mean?</td><td>Child <16 **can** consent if "sufficient understanding and intelligence to understand fully what is proposed".</td></tr><tr><td>7</td><td>Confidentiality — when can you disclose without consent?</td><td>Patient consent, Legal obligation (notifiable diseases, court), **Public interest (serious harm to others)**, Child protection.</td></tr><tr><td>8</td><td>Duty of Candour — what triggers it?</td><td>Notifiable safety incident: Unintended/unexpected Death, Severe harm, Moderate harm, Prolonged psychological harm.</td></tr><tr><td>9</td><td>What are the 4 domains of GMC Good Medical Practice?</td><td>1. Knowledge/Skills/Performance, 2. Safety/Quality, 3. Communication/Teamwork, 4. Maintaining Trust.</td></tr><tr><td>10</td><td>What is the difference between withholding and withdrawing treatment?</td><td>**Legally & ethically equivalent** (Airedale v Bland). Both require best interests assessment.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Bolam = Doctor can do whatever peers do"**</td><td>**NO.** Bolitho: Court can reject if **not logical/defensible**. Standard must withstand scrutiny.</td></tr><tr><td>**"Montgomery = Tell patient EVERY risk"**</td><td>**NO.** Only **material risks** (reasonable patient test + doctor's knowledge of patient).</td></tr><tr><td>**"If patient lacks capacity, family decides"**</td><td>**NO.** Family **consulted** but **clinician decides best interests** (or Court/LPA). IMCA if no family.</td></tr><tr><td>**"Advance Decision = Advance Statement"**</td><td>**NO.** Advance Decision = **Binding refusal** (specific treatment). Advance Statement = **Preferences** (guiding only).</td></tr><tr><td>**"Gillick = Child can refuse treatment"**</td><td>**NO.** Gillick = Can **consent**. **Cannot refuse** life-saving (court can override).</td></tr><tr><td>**"16-17 year olds = Full adult capacity"**</td><td>**NO.** Presumed capacity but **cannot refuse life-saving** treatment (court can override).</td></tr><tr><td>**"Duty of Candour = Admit negligence"**</td><td>**NO.** "I'm sorry this happened" ≠ "I was negligent." Apology ≠ Legal admission.</td></tr><tr><td>**"Next of kin has legal authority"**</td><td>**NO.** Next of kin = **Consultee** (best interests). Legal authority = **LPA / Court of Protection**.</td></tr><tr><td>**"DNAR = Do Not Treat"**</td><td>**NO.** DNAR = **No CPR only**. All other treatment continues. Must communicate clearly.</td></tr><tr><td>**"Bolam is dead after Montgomery"**</td><td>**NO.** Bolam still applies to **clinical judgment** (diagnosis, treatment choice). Montgomery = **Consent/disclosure** only.</td></tr></table>
+<div class="callout"><b>Mnemonic: ETHICS LAW UK CASES</b> <b>E</b>thical Principles: <b>Autonomy, Beneficence, Non-maleficence, Justice</b> (Beauchamp &amp; Childress) <b>T</b>reatment Decisions: <b>4 Quadrants</b> (Medical, Preferences, QoL, Context) — Jonsen <b>H</b>uman Rights Act: <b>Art 2 (Life), 3 (Degrading), 5 (Liberty), 8 (Privacy), 9 (Religion)</b> <b>I</b>nformed Consent: <b>Montgomery</b> (Material Risk + Alternatives) → <b>Bolam/Bolitho</b> (Negligence) <b>C</b>apacity: <b>MCA 2-Stage</b> → <b>Impairment → Functional (Understand, Retain, Weigh, Communicate)</b> <b>S</b> Best Interests: <b>Past Wishes, Beliefs, Consult, No Discrimination, Least Restrictive</b> <b>L</b>aw Cases: <b>Bolam (Peer), Bolitho (Logic), Montgomery (Patient), Airedale (Withdraw=Withhold), Gillick (Child), Re A (Conjoined)</b> <b>A</b>dvance Decisions: <b>Binding Refusal</b> (Written, Signed, Witnessed, "Even if Life at Risk") <b>W</b>elfare of Child: <b>Paramount</b> (Children Act) — <b>Gillick</b> (Consent &lt;16) / <b>Fraser</b> (Contraception) <b>C</b>onfidentiality Exceptions: <b>Consent, Legal Obligation, Public Interest (Harm to Others), Child Protection</b> <b>A</b>dvance Decision vs Statement: <b>Binding Refusal</b> vs <b>Guiding Preferences</b> <b>N</b>egligence: <b>Duty → Breach (Bolam/Bolitho) → Causation → Damage</b> <b>D</b>uty of Candour: <b>Notifiable Incident → Tell + Apologise + Explain + Support + Record</b> (Statutory) <b>O</b>PGA: <b>LPA (Health/Welfare + Property/Finance)</b> — Registered, Decides if Incapacity <b>U</b>nwise ≠ Lack Capacity: <b>Respect Autonomy</b> — Capacity = Functional, Decision-Specific <b>R</b>efusal &lt;16: <b>Cannot Refuse Life-Saving</b> (Court Overrides) — 16-17 Also Cannot Refuse Life-Saving <b>E</b>nd-of-Life: <b>DNAR = No CPR Only</b> — Clinical Futility + Discussion + ReSPECT — Withhold=Withdraw (Airedale) <b>G</b>MC 4 Domains: <b>Knowledge/Skills, Safety/Quality, Communication/Teamwork, Trust</b> <b>A</b>ssisted Dying: <b>Illegal UK</b> — Double Effect (Palliative Sedation Intent = Relief) <b>S</b>ocial Justice: <b>NICE ICER £20-30k/QALY</b> — Explicit Rationing — Equity vs Utility</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Ethics &amp; Law)) Ethical Frameworks 4 Principles 4 Quadrants Consequentialism vs Deontology Consent Montgomery (Material Risk) Bolam / Bolitho Capacity (MCA 2-Stage) Advance Decisions End-of-Life DNAR / ReSPECT Withhold = Withdraw (Airedale) Double Effect Euthanasia Illegal Confidentiality Exceptions (Consent, Law, Public Interest, Child) Paediatric Gillick / Fraser Parental Responsibility Refusal Override Professional Regulation GMC 4 Domains Fitness to Practise Duty of Candour Raising Concerns Key Cases Bolam / Bolitho / Montgomery Airedale / Gillick / Re A Montgomery / Chester v Afshar </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Ethical Principles & Frameworks</td><td>3</td><td></td><td></td></tr><tr><td>Consent Law (Montgomery, Bolam)</td><td>3</td><td></td><td></td></tr><tr><td>Capacity & MCA 2005</td><td>3</td><td></td><td></td></tr><tr><td>End-of-Life / DNAR / Advance Decisions</td><td>3</td><td></td><td></td></tr><tr><td>Confidentiality & Exceptions</td><td>2</td><td></td><td></td></tr><tr><td>Paediatric Consent (Gillick/Fraser)</td><td>2</td><td></td><td></td></tr><tr><td>Professional Regulation (GMC, Candour)</td><td>2</td><td></td><td></td></tr><tr><td>Key Cases (Bolam, Montgomery, Airedale, Gillick)</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Discuss the legal and ethical framework for consent in UK medical practice."</td><td>Montgomery (material risk + alternatives), Bolam/Bolitho (negligence standard), MCA 2005 (2-stage capacity), Advance decisions, Paediatric (Gillick), Exceptions (emergency, public interest)</td></tr><tr><td>**Short Note**</td><td>"Mental Capacity Act 2005 — Best interests and IMCA."</td><td>2-stage test → If lacks capacity → Best interests checklist (past wishes, beliefs, consult, least restrictive). IMCA if serious treatment + no family. DoLS for deprivation.</td></tr><tr><td>**Viva**</td><td>"Patient with capacity refuses life-saving treatment. Family wants treatment. What do you do?"</td><td>Respect autonomy (capacity = right to refuse). Best interests only if lacks capacity. Explore reasons, Address fears, Document. No court override if capacity intact.</td></tr><tr><td>**Ward Round**</td><td>"Junior doctor asks: 'Do I need to tell patient about 1% risk of stroke from this procedure?'"</td><td>**Yes — Montgomery.** Material risk = reasonable person would want to know + patient-specific factors. Must discuss alternatives. Document.</td></tr><tr><td>**Last-Night**</td><td>"4 Principles: Auto/Benefic/Non-malef/Justice. Montgomery: Material risk + Alternatives. Bolam/Bolitho. MCA: Impair→Func(U/R/W/C). AD=Binding refusal. DNAR=No CPR only. Confidentiality: Consent/Law/Public Interest/Child. Gillick<16 consent, no refuse life. DoLS: Continuous supervision. Candour: Tell+Apologise."</td><td>All key frameworks compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Ethical Principles</b>: Autonomy, Beneficence, Non-maleficence, Justice. 4-Quadrant analysis for complex cases.</li><li><b>Consent (Montgomery)</b>: <b>Material risk</b> (reasonable patient test) + <b>Reasonable alternatives</b>. Shift from doctor-centric (Bolam) to patient-centric.</li><li><b>Capacity (MCA 2005)</b>: 2-Stage — 1) Impairment, 2) Functional (Understand, Retain, Use/Weigh, Communicate). <b>Decision-specific, time-specific</b>.</li><li><b>Best Interests</b>: Past wishes, Beliefs, Consult, No discrimination, Least restrictive. <b>IMCA</b> if serious decision + no family.</li><li><b>Advance Decisions</b>: <b>Legally binding refusal</b> (written, signed, witnessed, "even if life at risk" for life-sustaining).</li><li><b>End-of-Life</b>: DNAR = No CPR only (clinical futility + discussion). Withhold = Withdraw (Airedale). Double effect for palliative sedation.</li><li><b>Confidentiality</b>: Exceptions = Consent, Legal obligation, <b>Public interest (serious harm)</b>, Child protection.</li><li><b>Paediatrics</b>: Gillick &lt;16 = Consent if competent. <b>Cannot refuse life-saving</b>. 16-17 = Presumed capacity but <b>cannot refuse life-saving</b>.</li><li><b>Professional Regulation</b>: GMC 4 Domains. <b>Duty of Candour</b> = Statutory (notifiable incident → Tell, Apologise, Explain, Support, Record).</li><li><b>Key Cases</b>: <b>Bolam</b> (peer standard), <b>Bolitho</b> (logic test), <b>Montgomery</b> (material risk), <b>Airedale</b> (withdraw=withhold), <b>Gillick</b> (child competence), <b>Re A</b> (best interests conjoined twins).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Montgomery v Lanarkshire — key change:</b></li></ol>
+<p>A. Doctor decides risks to disclose  B. <b>Patient-centred: reasonable person test</b>  C. No consent needed for minor procedures  D. Verbal consent sufficient <i>Answer: B. Shift from Bolam (doctor-centric) to Montgomery (patient-centric).</i></p>
+<ol><li><b>MCA 2005 — Stage 1 assesses:</b></li></ol>
+<p>A. Functional abilities  B. <b>Impairment of mind/brain</b>  C. Best interests  D. Past wishes <i>Answer: B. Stage 1: Impairment. Stage 2: Functional (Understand, Retain, Weigh, Communicate).</i></p>
+<ol><li><b>Advance Decision — valid for life-sustaining treatment requires:</b></li></ol>
+<p>A. Verbal statement  B. <b>Written, signed, witnessed, "even if life at risk"</b>  C. Doctor countersignature  D. Court approval <i>Answer: B. Strict formalities for life-sustaining refusal.</i></p>
+<ol><li><b>Gillick competence applies to:</b></li></ol>
+<p>A. Children &lt;16 consenting to treatment  B. <b>Children &lt;16 refusing life-saving treatment</b>  C. Adults with learning disability  D. Adolescents 16-17 <i>Answer: A. Gillick = Child &lt;16 <b>consenting</b> if understands. <b>Cannot refuse life-saving</b>.</i></p>
+<ol><li><b>IMCA required when:</b></li></ol>
+<p>A. Any treatment  B. <b>Serious medical treatment + No family/friends</b>  C. Patient requests  D. Mental Health Act used <i>Answer: B. Serious treatment OR accommodation change + No appropriate consultee.</i></p>
+<ol><li><b>Confidentiality — disclosure without consent allowed for:</b></li></ol>
+<p>A. Patient's employer  B. <b>Public interest (serious harm to others)</b>  C. Insurance company  D. Research without ethics approval <i>Answer: B. Public interest (W v Egdell) — serious harm to others. Also: Legal obligation, Child protection, Consent.</i></p>
+<ol><li><b>Bolam test — standard of care:</b></li></ol>
+<p>A. Reasonable patient  B. <b>Responsible body of medical opinion</b>  C. NICE guidelines  D. Hospital protocol <i>Answer: B. Doctor not negligent if acts per responsible body of medical opinion. Bolitho: Court can reject if illogical.</i></p>
+<ol><li><b>Duty of Candour — statutory trigger:</b></li></ol>
+<p>A. Any complaint  B. <b>Notifiable safety incident (Death, Severe/Moderate harm, Prolonged psychological harm)</b>  C. Any error  C. Patient request <i>Answer: B. Notifiable safety incident = Unintended/unexpected Death, Severe harm, Moderate harm, Prolonged psychological harm.</i></p>
+<ol><li><b>DNAR — legally binding?</b></li></ol>
+<p>A. Yes, on all clinicians  B. <b>No, clinical guidance only</b>  C. Only if patient signs  D. Only if court orders <i>Answer: B. DNAR = Clinical judgment (futility) + Discussion. Not legally binding but strong guidance. ReSPECT form for broader goals.</i></p>
+<ol><li><b>Withholding vs Withdrawing treatment — legal status:</b></li></ol>
+<p>A. Withdrawing = Murder  B. <b>Equivalent (Airedale v Bland)</b>  C. Withholding = Negligence  D. Different standards <i>Answer: B. <b>Legally and ethically equivalent</b> (Airedale v Bland). Both require best interests.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>70F with advanced dementia, severe pneumonia. No advance decision. Daughter demands "everything". Best approach?</b></li></ol>
+<p>A. Treat against wishes  B. <b>Capacity assessment → Best interests (consult daughter, past wishes)</b>  C. Daughter decides  D. Palliative only <i>Answer: B. Assess capacity for THIS decision. If lacks → Best interests (consult daughter, past wishes, beliefs, least restrictive).</i></p>
+<ol><li><b>15F requests contraception. Does not want parents informed. Fraser guidelines — which is NOT a criterion?</b></li></ol>
+<p>A. Understands advice  B. Cannot persuade to tell parents  C. <b>Parents must consent</b>  D. Health suffers without treatment <i>Answer: C. Fraser: 1) Understands, 2) Cannot persuade to tell parents, 3) Likely to have sex anyway, 4) Health suffers without, 5) Best interests. Parental consent NOT required.</i></p>
+<ol><li><b>Doctor accidentally administers 10x insulin dose. Patient hypoglycaemic but recovers. Candour?</b></li></ol>
+<p>A. No (no permanent harm)  B. <b>Yes (Moderate harm = Notifiable)</b>  C. Only if patient asks  D. Only if complaint <i>Answer: B. Moderate harm (significant but not permanent) = Notifiable under statutory duty.</i></p>
+<ol><li><b>DNAR decision for 85M with metastatic cancer, admitted with sepsis. Who makes decision?</b></li></ol>
+<p>A. Family  B. <b>Senior Clinician (Clinical judgment on futility)</b>  C. Patient (if capacity)  D. Court <i>Answer: C. If capacity → Patient decides (with info). If lacks → Clinical team decides (clinical judgment, best interests). Family consulted, not deciding.</i></p>
+<ol><li><b>Montgomery — "Material risk" definition:</b></li></ol>
+<p>A. Risk &gt;1%  B. <b>Risk reasonable patient would attach significance + Risk doctor knows patient would</b>  C. Risk &gt;5%  D. Only life-threatening risks <i>Answer: B. Subjective (patient-specific) + Objective (reasonable person) test.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-A, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-C, 3-B, 4-C, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1.3 Communication Skills]] — SPIKES, Shared decision-making, Consent conversation, Capacity assessment</li><li>[[1.1 Clinical Reasoning]] — Diagnostic process, Shared decision-making, Diagnostic uncertainty</li><li>[[1.2 Evidence-Based Medicine]] — Risk communication (ARR/NNT), Decision aids, GRADE</li><li>[[1.5 Quality Improvement &amp; Patient Safety]] — Duty of candour, Incident reporting, Clinical governance</li><li>[[1.6 Guidelines &amp; Pathways]] — Ethical implementation, Resource allocation, NICE</li><li>[../../Palliative Care/Ethics] — End-of-life decisions, ReSPECT, DNAR, Advance care planning</li><li>[../../Paediatric/Ethics] — Gillick, Fraser, Consent in children</li><li>[../../Medication Safety/Ethics] — Consent for high-risk drugs, Off-label use, Clinical trials</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Ethics Law · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

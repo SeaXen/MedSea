@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digoxin — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.13. TDM</span>
+      <div class="h1">Digoxin</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] State therapeutic range &amp; toxic thresholds</li><li>[ ] Apply renal adjustment &amp; P-gp interaction management</li><li>[ ] Recognise toxicity: ECG, clinical, biochemical</li><li>[ ] Execute Digoxin-specific Fab management</li><li>[ ] Apply sampling timing rules</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Therapeutic Range & Timing</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>**Therapeutic Range (ng/mL)**</th><th>**Toxic Threshold**</th></tr><tr><td>------------</td><td>-------------------------------</td><td>---------------------</td></tr><tr><td>**Atrial Fibrillation (Rate Control)**</td><td>**0.5–0.9** (some guidelines 0.5–1.0)</td><td>**>1.2–1.5**</td></tr><tr><td>**Heart Failure (HFrEF)**</td><td>**0.5–0.9** (lower end preferred)</td><td>**>1.0** (no mortality benefit above 0.9)</td></tr><tr><td>**Toxicity**</td><td>—</td><td>**>2.0 = severe toxicity**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>No proven benefit of levels &gt;0.9 ng/mL in HF</b>; target <b>0.5–0.9 for both AF and HF</b></div>
+<div class="sub-h">Sampling Timing — **CRITICAL**</div>
+<table class="ctable"><tr><th>Sample</th><th>Timing</th><th>Rationale</th></tr><tr><td>--------</td><td>--------</td><td>-----------</td></tr><tr><td>**Trough (pre-dose)**</td><td>**≥6h post-dose** (ideally **8–12h**)</td><td>Must be **post-distribution phase** (t½α ~1–2h)</td></tr><tr><td>**Random**</td><td>Any time</td><td>Use nomogram/software; NOT preferred</td></tr><tr><td>**Peak**</td><td>Not used</td><td>No clinical utility</td></tr></table>
+<div class="callout"><b>If level drawn &lt;6h post-dose</b>: <b>Falsely elevated</b> (distribution phase) — <b>REPEAT</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚖️ Renal Adjustment (CrCl-Based)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>CrCl (mL/min)</th><th>**Dose Adjustment**</th><th>**Monitoring**</th></tr><tr><td>---------------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**>80**</td><td>Standard (0.125–0.25mg daily)</td><td>Level at 5–7 days</td></tr><tr><td>**50–80**</td><td>**0.125mg daily** (↓ 25–50%)</td><td>Level at 5–7 days</td></tr><tr><td>**30–50**</td><td>**0.125mg daily or alternate day**</td><td>Level at 5–7 days</td></tr><tr><td>**10–30**</td><td>**0.0625–0.125mg alternate day**</td><td>Level at 5–7 days</td></tr><tr><td>**<10 / HD**</td><td>**0.0625mg post-HD** or alternate day</td><td>Level pre-HD</td></tr></table>
+<div class="callout"><b>Use Lean/IBW for Vd calculation</b>; <b>CrCl = Cockcroft-Gault</b> (not eGFR)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🔄 Major Drug Interactions (↑ Digoxin Levels)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug / Class</th><th>Mechanism</th><th>**Dose Reduction**</th></tr><tr><td>--------------</td><td>-----------</td><td>---------------------</td></tr><tr><td>**Amiodarone**</td><td>P-gp inhibition + ↓ renal clearance + ↓ Vd</td><td>**↓ 30–50%**</td></tr><tr><td>**Verapamil**</td><td>P-gp inhibition</td><td>**↓ 30–50%**</td></tr><tr><td>**Diltiazem**</td><td>P-gp inhibition</td><td>**↓ 30–50%**</td></tr><tr><td>**Quinidine**</td><td>**P-gp inhibition (most potent)** + ↓ Vd</td><td>**↓ 50%**</td></tr><tr><td>**Dronedarone**</td><td>P-gp inhibition</td><td>**↓ 30–50%**</td></tr><tr><td>**Clarithromycin / Erythromycin / Azithromycin**</td><td>P-gp inhibition (clarithro > erythro > azithro)</td><td>**↓ 30–50%**</td></tr><tr><td>**Itraconazole**</td><td>P-gp inhibition</td><td>**↓ 30–50%**</td></tr><tr><td>**Ciclosporin / Tacrolimus**</td><td>P-gp inhibition</td><td>**↓ 30–50%**</td></tr><tr><td>**Spironolactone / Eplerenone**</td><td>↓ Renal clearance (creatinine secretion competition)</td><td>Monitor K⁺, level</td></tr><tr><td>**Rifampicin**</td><td>**P-gp INDUCTION** → ↓ digoxin levels</td><td>**May need ↑ dose**</td></tr><tr><td>**St John's Wort**</td><td>**P-gp INDUCTION**</td><td>May need ↑ dose</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">☠️ Digoxin Toxicity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Cardiac (Most Dangerous)**</td><td>**Bradyarrhythmias** (sinus brady, AV block — *any degree*), **Ectopy** (PVCs, VT, **Bidirectional VT** = pathognomonic), **AF with slow ventricular response**</td></tr><tr><td>**GI**</td><td>Anorexia, Nausea, **Vomiting** (most common), Abdominal pain, Diarrhoea</td></tr><tr><td>**Neurological**</td><td>Fatigue, Weakness, Confusion, Visual disturbances (**Yellow-green halos / xanthopsia**), Headache, Dizziness</td></tr><tr><td>**Electrolyte**</td><td>**Hyperkalaemia** (acute toxicity) — **inhibits Na⁺/K⁺-ATPase → K⁺ not pumped into cells**</td></tr></table>
+<div class="sub-h">ECG Findings (Classic)</div>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**"Scooped" / "Reverse tick" ST depression** (salvador dalí sign)</td><td>**Therapeutic effect** (not toxicity)</td></tr><tr><td>**PR prolongation, AV block (1st, 2nd, 3rd degree)**</td><td>**Toxicity**</td></tr><tr><td>**Bidirectional VT**</td><td>**Severe toxicity** (pathognomonic)</td></tr><tr><td>**PVCs, Bigeminy, Trigeminy**</td><td>**Toxicity**</td></tr><tr><td>**Atrial tachycardia with block**</td><td>**Classic toxicity** (paroxysmal atrial tachycardia + AV block)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">💊 Management of Toxicity</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Severity</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Mild (Level 1.5–2.0, asymptomatic)**</td><td>Hold digoxin; correct K⁺/Mg²⁺; recheck level in 24–48h</td></tr><tr><td>**Moderate (Level >2.0, symptomatic: nausea, bradycardia, AV block)**</td><td>**Hold digoxin**; correct K⁺/Mg²⁺; **Consider Digoxin-Specific Fab** if persistent arrhythmia</td></tr><tr><td>**Severe (Life-threatening arrhythmia, K⁺ >5.5, Ingestion >10mg, Level >4 ng/mL)**</td><td>**Digoxin-Specific Fab (DigiFab)**</td></tr></table>
+<div class="sub-h">Digoxin-Specific Fab (DigiFab) Dosing</div>
+<table class="ctable"><tr><th>Scenario</th><th>**Vials (40mg/vial)**</th></tr><tr><td>----------</td><td>----------------------</td></tr><tr><td>**Known ingested dose**</td><td>**Vials = (Ingested mg × 100) / 40** = **Ingested mg × 2.5**</td></tr><tr><td>**Unknown ingested / Chronic toxicity**</td><td>**Vials = (Serum level ng/mL × Weight kg) / 100** (approx)</td></tr><tr><td>**Empirical (Cardiac arrest / Life-threatening)**</td><td>**10–20 vials**</td></tr></table>
+<div class="callout"><b>Each vial binds ~0.5 mg digoxin</b>; Give IV over 30 min; <b>Monitor K⁺</b> (Fab releases bound digoxin → can cause transient ↑ free digoxin); <b>Recheck level 24h post-Fab</b> (assay measures total digoxin = free + Fab-bound → falsely elevated)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Therapeutic range**</td><td>**0.5–0.9 ng/mL** (both AF & HF); **>1.0 toxic in HF**; **>2.0 severe**</td></tr><tr><td>**Sampling**</td><td>**Trough ≥6h post-dose** (ideally 8–12h); <6h = falsely high</td></tr><tr><td>**Renal adjustment**</td><td>**CrCl-based (Cockcroft-Gault)**; ↓ dose progressively</td></tr><tr><td>**Top interactions**</td><td>**Amiodarone, Verapamil, Quinidine, Dronedarone, Macrolides, Itraconazole, Ciclosporin** → ↓ dose 30–50%</td></tr><tr><td>**Toxicity ECG**</td><td>**AV block, Bidirectional VT, "Scooped" ST = therapeutic**</td></tr><tr><td>**Hyperkalaemia**</td><td>**Acute toxicity** (Na⁺/K⁺-ATPase inhibition)</td></tr><tr><td>**Digoxin Fab**</td><td>**Life-threatening arrhythmia, K⁺>5.5, Ingestion>10mg, Level>4**</td></tr><tr><td>**Rifampicin/St John's Wort**</td><td>**Inducers → ↓ digoxin levels** (may need ↑ dose)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Digoxin therapeutic range for AF and HF?</td><td>**0.5–0.9 ng/mL** for both; no benefit >0.9 in HF</td></tr><tr><td>2. When to sample digoxin level?</td><td>**Trough ≥6h post-dose (ideally 8–12h)**; <6h = falsely high (distribution)</td></tr><tr><td>3. Digoxin toxicity — pathognomonic ECG?</td><td>**Bidirectional ventricular tachycardia**</td></tr><tr><td>4. Digoxin toxicity — "therapeutic" ECG?</td><td>**Scooped / reverse tick ST depression** (Salvador Dalí sign) = therapeutic</td></tr><tr><td>5. Top 3 drugs that increase digoxin levels?</td><td>**Amiodarone, Verapamil, Quinidine** (P-gp inhibition); also Dronedarone, Clarithromycin, Itraconazole</td></tr><tr><td>6. Rifampicin effect on digoxin?</td><td>**P-gp INDUCTION → ↓ digoxin levels** (may need dose increase)</td></tr><tr><td>7. Hyperkalaemia in digoxin toxicity — mechanism?</td><td>**Na⁺/K⁺-ATPase inhibition → K⁺ not pumped into cells**</td></tr><tr><td>8. Digoxin-Specific Fab indications?</td><td>**Life-threatening arrhythmia, K⁺>5.5, Ingestion>10mg, Level>4 ng/mL**</td></tr><tr><td>9. Digoxin Fab dosing for known ingestion?</td><td>**Vials = Ingested mg × 2.5** (each vial binds 0.5 mg)</td></tr><tr><td>10. Renal adjustment — CrCl 30 mL/min?</td><td>**0.125mg daily or alternate day**; monitor level</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Scooped ST = toxicity?**</td><td>**No** — it's **therapeutic effect** (↑ Ca²⁺ in myocytes); toxicity = AV block, bidirectional VT</td></tr><tr><td>**Hyperkalaemia = toxicity**</td><td>**Yes** — **acute toxicity** (Na⁺/K⁺-ATPase inhibition); chronic toxicity may have normal K⁺</td></tr><tr><td>**Sampling <6h**</td><td>**Falsely elevated** — repeat at ≥6h</td></tr><tr><td>**Rifampicin = ↓ digoxin**</td><td>**Inducer** (P-gp) — opposite of most interactions</td></tr><tr><td>**Digoxin level post-Fab**</td><td>**Falsely elevated** (assay measures total = free + Fab-bound)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"DIGOXIN RANGE"</b> = <b>0.5–0.9</b> (AF &amp; HF); <b>&gt;1 toxic in HF</b>; <b>&gt;2 severe</b></li><li><b>"SAMPLE AT 6-H+ HOURS"</b> = <b>6h post-dose minimum</b> for trough</li><li><b>"TOXICITY = BIDIRECTIONAL VT + AV BLOCK + HYPERKALAEMIA"</b></li><li><b>"SCOOPED ST = THERAPEUTIC"</b> = Salvador Dalí moustache</li><li><b>"P-GP INHIBITORS = AMIODARONE, VERAPAMIL, QUINIDINE, DRONEDARONE, MACROLIDES, ITRACONAZOLE"</b> → <b>↓ DIGOXIN 30-50%</b></li><li><b>"RIFAMPICIN = INDUCER = ↓ DIGOXIN"</b></li><li><b>"FAB INDICATIONS"</b> = <b>K&gt;5.5, Ingestion&gt;10mg, Level&gt;4, Life-threatening arrhythmia</b></li><li><b>"FAB DOSE = INGESTED MG × 2.5"</b> (each vial 40mg binds 0.5mg digoxin)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Digoxin TDM)) Therapeutic Range AF: 0.5-0.9 HF: 0.5-0.9 (no benefit &gt;0.9) Toxic: &gt;1.0 (HF), &gt;1.2-1.5 (AF), &gt;2.0 severe Sampling Trough ≥6h post-dose (ideal 8-12h) &lt;6h = falsely high Renal Adjustment CrCl &gt;80: standard CrCl 50-80: 0.125mg daily CrCl 30-50: 0.125mg daily/alt day CrCl 10-30: 0.0625-0.125mg alt day HD: 0.0625mg post-HD P-gp Interactions (↑ Levels) Amiodarone, Verapamil, Quinidine (↓50%) Dronedarone, Clarithromycin, Itraconazole Ciclosporin, Tacrolimus, Spironolactone Inducers (↓ Levels) Rifampicin, St John's Wort Toxicity Cardiac: AV block, Bidirectional VT, PVCs GI: Nausea, Vomiting (common) Neuro: Yellow-green halos (xanthopsia) K+: Hyperkalaemia (acute) ECG Scooped ST = THERAPEUTIC AV block / Bidirectional VT = TOXICITY Fab (DigiFab) Indications: K&gt;5.5, Ingest&gt;10mg, Level&gt;4, Life-threatening arrhythmia Dose: Ingested mg × 2.5 vials Post-Fab level: falsely high (total = free + bound) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Range & sampling</td><td>6</td><td></td></tr><tr><td>Renal adjustment</td><td>6</td><td></td></tr><tr><td>Interactions</td><td>8</td><td></td></tr><tr><td>Toxicity & ECG</td><td>8</td><td></td></tr><tr><td>Fab management</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**44**</td><td></td></tr></table>
+<p><b>Target</b>: ≥35/44 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Digoxin therapeutic range, sampling, and toxicity features."*</div>
+<ul><li><b>Range</b>: <b>0.5–0.9 ng/mL</b> (AF &amp; HF); <b>&gt;1.0 toxic (HF)</b>, <b>&gt;2.0 severe</b></li><li><b>Sampling</b>: <b>Trough ≥6h post-dose</b> (ideally 8–12h); &lt;6h falsely high</li><li><b>Toxicity</b>: <b>AV block, Bidirectional VT</b> (pathognomonic), nausea/vomiting, <b>yellow-green halos</b>, <b>hyperkalaemia</b> (acute)</li><li><b>ECG</b>: <b>Scooped ST = therapeutic</b>; AV block/bidirectional VT = toxicity</li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on digoxin + amiodarone for AF. Presents with nausea, bradycardia 45 bpm, K⁺ 5.8. Digoxin level 2.8. Management?"*</div>
+<ul><li><b>Digoxin toxicity</b> (amiodarone ↑ digoxin via P-gp inhibition)</li><li><b>Hold digoxin</b>; correct K⁺/Mg²⁺</li><li><b>K⁺ 5.8 + bradycardia + level &gt;2.0 = Digoxin-Specific Fab indicated</b></li><li><b>DigiFab: Ingested dose unknown → empirical 10–20 vials</b> or level-based</li><li>Monitor K⁺ post-Fab (transient ↑); recheck level 24h (falsely high)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Digoxin level drawn 2h post-dose = 1.8 ng/mL. Interpretation?"*</div>
+<ul><li><b>Falsely elevated</b> — drawn in <b>distribution phase</b> (&lt;6h)</li><li><b>Repeat at ≥6h post-dose</b> (ideally 8–12h pre-dose)</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Digoxin range = 0.5–0.9 (AF &amp; HF); no benefit &gt;0.9 in HF</li><li>Sample trough ≥6h post-dose (ideally 8–12h)</li><li>Toxicity: AV block, Bidirectional VT, hyperkalaemia, yellow halos</li><li>Scooped ST = therapeutic (NOT toxicity)</li><li>P-gp inhibitors (Amiodarone, Verapamil, Quinidine) → ↓ digoxin 30–50%</li><li>Rifampicin/St John's Wort = inducers → ↓ digoxin</li><li>Digoxin Fab: K&gt;5.5, Ingest&gt;10mg, Level&gt;4, Life-threatening arrhythmia</li><li>Fab dose = Ingested mg × 2.5</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>DIGOXIN TDM:</b> <b>RANGE 0.5-0.9</b> (AF &amp; HF); <b>&gt;1 toxic in HF; &gt;2 severe</b> <b>TROUGH ≥6h POST-DOSE</b> (distribution phase &lt;6h = falsely high) <b>TOXICITY</b> = AV block, <b>BIDIRECTIONAL VT</b>, K⁺↑, Yellow halos <b>SCOOPED ST = THERAPEUTIC</b> <b>P-GP INHIBITORS</b> (Amiodarone, Verapamil, Quinidine) → <b>↓ DIGOXIN 30-50%</b> <b>FAB</b> = K&gt;5.5, Ingest&gt;10mg, Level&gt;4, Arrhythmia → <b>Dose = Ingested mg × 2.5</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Digoxin therapeutic range for both AF and HFrEF:</b></li></ol>
+<p>A. 0.8–1.5 ng/mL B. <b>0.5–0.9 ng/mL</b> ✓ C. 1.0–2.0 ng/mL D. 1.5–2.5 ng/mL E. 2.0–3.0 ng/mL</p>
+<ol><li><b>Correct trough sampling time for digoxin:</b></li></ol>
+<p>A. 1–2h post-dose B. 3–4h post-dose C. <b>≥6h post-dose (ideally 8–12h)</b> ✓ D. Immediately pre-dose only E. Any time</p>
+<ol><li><b>Pathognomonic ECG finding in digoxin toxicity:</b></li></ol>
+<p>A. Scooped ST depression B. PR prolongation C. <b>Bidirectional ventricular tachycardia</b> ✓ D. QT prolongation E. ST elevation</p>
+<ol><li><b>"Scooped" / "Reverse tick" ST depression in digoxin represents:</b></li></ol>
+<p>A. Toxicity B. <b>Therapeutic effect</b> ✓ C. Hypokalaemia D. Ischaemia E. LVH</p>
+<ol><li><b>Amiodarone + Digoxin interaction — digoxin dose adjustment:</b></li></ol>
+<p>A. No change B. <b>↓ 30–50%</b> ✓ C. ↑ 25% D. ↑ 50% E. Double</p>
+<ol><li><b>Rifampicin effect on digoxin levels:</b></li></ol>
+<p>A. ↑ Levels B. <b>↓ Levels (P-gp induction)</b> ✓ C. No effect D. Unpredictable E. Only with chronic use</p>
+<ol><li><b>Hyperkalaemia in digoxin toxicity — mechanism:</b></li></ol>
+<p>A. K⁺ retention B. <b>Na⁺/K⁺-ATPase inhibition → K⁺ not pumped into cells</b> ✓ C. Renal failure D. Acidosis E. Tissue breakdown</p>
+<ol><li><b>Digoxin-Specific Fab (DigiFab) — indication:</b></li></ol>
+<p>A. Mild nausea B. Level 1.5 ng/mL C. <b>K⁺ &gt;5.5 mmol/L with toxicity</b> ✓ D. Asymptomatic level 2.5 ng/mL E. All patients on digoxin</p>
+<ol><li><b>Digoxin Fab dose for known ingestion:</b></li></ol>
+<p>A. Vials = Ingested mg / 2 B. Vials = Ingested mg × 1 C. <b>Vials = Ingested mg × 2.5</b> ✓ D. Vials = Ingested mg × 5 E. 10 vials fixed</p>
+<ol><li><b>Digoxin level post-Fab — interpretation:</b></li></ol>
+<p>A. Accurate free level B. <b>Falsely elevated (measures total = free + Fab-bound)</b> ✓ C. Falsely low D. Unchanged E. Not interpretable</p>
+<ol><li><b>CrCl 25 mL/min — digoxin maintenance dose:</b></li></ol>
+<p>A. 0.25mg daily B. <b>0.0625–0.125mg alternate day</b> ✓ C. 0.125mg daily D. 0.25mg alternate day E. 0.5mg post-HD</p>
+<ol><li><b>Quinidine + Digoxin — most potent interaction because:</b></li></ol>
+<p>A. CYP3A4 inhibition B. <b>P-gp inhibition + ↓ Vd</b> ✓ C. CYP2D6 inhibition D. Protein binding displacement E. Renal excretion inhibition</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Digoxin range (AF & HF)</td><td>0.5–0.9 ng/mL</td></tr><tr><td>Digoxin toxic in HF</td><td>>1.0 ng/mL</td></tr><tr><td>Digoxin severe toxicity</td><td>>2.0 ng/mL</td></tr><tr><td>Sampling time</td><td>Trough ≥6h post-dose (ideal 8-12h)</td></tr><tr><td>Bidirectional VT</td><td>Pathognomonic digoxin toxicity</td></tr><tr><td>Scooped ST depression</td><td>Therapeutic effect (NOT toxicity)</td></tr><tr><td>Hyperkalaemia mechanism</td><td>Na/K-ATPase inhibition</td></tr><tr><td>P-gp inhibitors ↑ digoxin</td><td>Amiodarone, Verapamil, Quinidine, Dronedarone, Macrolides, Itraconazole</td></tr><tr><td>Quinidine</td><td>Most potent P-gp inhibitor (+ ↓ Vd) → ↓ digoxin 50%</td></tr><tr><td>Rifampicin/St John's Wort</td><td>P-gp INDUCERS → ↓ digoxin</td></tr><tr><td>Digoxin Fab indications</td><td>K>5.5, Ingest>10mg, Level>4, Life-threatening arrhythmia</td></tr><tr><td>Digoxin Fab dose</td><td>Ingested mg × 2.5 vials (each binds 0.5mg)</td></tr><tr><td>Post-Fab level</td><td>Falsely elevated (total = free + bound)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 0.5–0.9 ng/mL</li><li><b>C</b> — ≥6h post-dose (ideally 8–12h)</li><li><b>C</b> — Bidirectional VT</li><li><b>B</b> — Therapeutic effect</li><li><b>B</b> — ↓ 30–50%</li><li><b>B</b> — ↓ Levels (P-gp induction)</li><li><b>B</b> — Na⁺/K⁺-ATPase inhibition</li><li><b>C</b> — K⁺ &gt;5.5 mmol/L</li><li><b>C</b> — Vials = Ingested mg × 2.5</li><li><b>B</b> — Falsely elevated (total = free + bound)</li><li><b>B</b> — 0.0625–0.125mg alternate day</li><li><b>B</b> — P-gp inhibition + ↓ Vd</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/TDM/Digoxin.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Digoxin · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

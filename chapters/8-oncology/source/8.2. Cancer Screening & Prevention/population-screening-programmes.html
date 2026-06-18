@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Population Screening Programmes — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.2. CANCER SCREENING & PREVENTION</span>
+      <div class="h1">Population Screening Programmes</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe <b>UK population screening programmes</b> for breast, cervical, colorectal, lung</li><li>[ ] State <b>age ranges, intervals, tests</b> for each programme</li><li>[ ] Interpret <b>performance metrics</b> (Sensitivity, Specificity, PPV, NPV)</li><li>[ ] Explain <b>biases</b> in screening (Lead Time, Length Time, Overdiagnosis)</li><li>[ ] Contrast <b>PSA</b> with organised screening programmes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">UK Breast Screening Programme (NHS BSP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Age Range**</td><td>**50-70 years** (Extension to **47-73** in progress)</td></tr><tr><td>**Interval**</td><td>**Every 3 years**</td></tr><tr><td>**Test**</td><td>**Digital Mammography** (2-view: CC + MLO)</td></tr><tr><td>**Coverage**</td><td>**~75%** of eligible women</td></tr><tr><td>**Recall Rate**</td><td>**~4-5%**</td></tr><tr><td>**Cancer Detection Rate**</td><td>**~8-9 per 1000 screened**</td></tr><tr><td>**PPV**</td><td>**~15-20%** (Of recalled)</td></tr><tr><td>**Mortality Reduction**</td><td>**~20-25%**</td></tr><tr><td>**Overdiagnosis**</td><td>**~10-20%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">UK Cervical Screening Programme (NHS CSP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Age Range**</td><td>**25-64 years**</td></tr><tr><td>**Interval**</td><td>**25-49: 3 years**, **50-64: 5 years**</td></tr><tr><td>**Primary Test**</td><td>**HPV Primary Screening** (HR-HPV PCR)</td></tr><tr><td>**Triage**</td><td>**HPV+ → Cytology (LBC)**; **Cytology+ → Colposcopy**; **HPV- → Routine Recall**</td></tr><tr><td>**HPV Vaccination**</td><td>**9-valent (6,11,16,18,31,33,45,52,58)** → **~90% prevention**</td></tr><tr><td>**Self-Sampling**</td><td>**Pilot** (Increase uptake in non-attenders)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">UK Colorectal Cancer Screening (BCSP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Age Range**</td><td>**60-74 years** (Extension to **50-59** in progress)</td></tr><tr><td>**Interval**</td><td>**Every 2 years**</td></tr><tr><td>**Test**</td><td>**FIT (Faecal Immunochemical Test)** — Quantitative, Single Sample</td></tr><tr><td>**Threshold**</td><td>**≥120 µg Hb/g faeces**</td></tr><tr><td>**Colonoscopy Referral**</td><td>**FIT+ve → Colonoscopy**</td></tr><tr><td>**Mortality Reduction**</td><td>**~15-25%**</td></tr><tr><td>**FSIG (Bowel Scope)**</td><td>**Discontinued in England (2021)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">UK Lung Cancer Screening (Pilot)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Age Range**</td><td>**55-74 years**</td></tr><tr><td>**Eligibility**</td><td>**≥20 pack-year smoking history** (Current/Former <15yr quit)</td></tr><tr><td>**Test**</td><td>**Low-Dose CT (LDCT)**</td></tr><tr><td>**Interval**</td><td>**Annual**</td></tr><tr><td>**Key Trials**</td><td>**NLST (20% Mortality Reduction)**, **NELSON (24-26% in men)**</td></tr><tr><td>**Nodule Management**</td><td>**Lung-RADS** (Category 1-4)</td></tr><tr><td>**False Positives**</td><td>**High (~20-25%)**</td></tr><tr><td>**Overdiagnosis**</td><td>**~10-20%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">PSA Testing (Prostate) — Not Population Programme</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Status**</td><td>**Informed Choice Programme** (Men >50 can request PSA)</td></tr><tr><td>**Test**</td><td>**Serum PSA** (Age-specific cutoffs)</td></tr><tr><td>**Limitations**</td><td>**Low Specificity** (BPH, Prostatitis), **Overdiagnosis** (Gleason 6)</td></tr><tr><td>**ERSPC Trial**</td><td>**20% Mortality Reduction** (13yr FU), **NNS 570, NNT 18**</td></tr><tr><td>**PLCO Trial**</td><td>**No Mortality Benefit** (Contamination)</td></tr><tr><td>**MRI Pathway**</td><td>**mpMRI before Biopsy** (PI-RADS) → Reduces Unnecessary Biopsies</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Programme</th><th>Age</th><th>Test</th><th>Interval</th><th>Key Metric</th></tr><tr><td>-----------</td><td>-----</td><td>------</td><td>----------</td><td>------------</td></tr><tr><td>**Breast**</td><td>50-70</td><td>Mammogram</td><td>3 years</td><td>20-25% Mortality ↓</td></tr><tr><td>**Cervical**</td><td>25-64</td><td>HPV Primary</td><td>3yr (25-49) / 5yr (50-64)</td><td>70% Mortality ↓</td></tr><tr><td>**Colorectal**</td><td>60-74</td><td>FIT</td><td>2 years</td><td>15-25% Mortality ↓</td></tr><tr><td>**Lung**</td><td>55-74</td><td>LDCT</td><td>Annual</td><td>20% Mortality ↓</td></tr><tr><td>**PSA**</td><td>>50 (Choice)</td><td>PSA</td><td>Not Population</td><td>Overdiagnosis Risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Breast Screening — Age, Interval, Mortality Benefit?**</td><td>**50-70 years, Every 3 years, ~20-25% Mortality Reduction**.</td></tr><tr><td>**Cervical Screening — Primary Test, Triage?**</td><td>**Primary: HPV PCR**; **Triage: Cytology (LBC) if HPV+**; **Interval: 3yr (25-49), 5yr (50-64)**.</td></tr><tr><td>**Colorectal Screening — Test, Threshold, Interval?**</td><td>**FIT, ≥120µg Hb/g, Every 2 years (60-74)**.</td></tr><tr><td>**Lung Screening — Eligibility, Evidence?**</td><td>**55-74, ≥20 Pack-Years, Current/Former <15yr**; **NLST 20% Mortality Reduction, NELSON 24-26%**.</td></tr><tr><td>**PSA Screening — Why Not Population Programme?**</td><td>**Low Specificity (BPH/Prostatitis), Overdiagnosis (Gleason 6), Lead Time Bias, No Mortality Benefit in PLCO**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**FIT vs FOBT**</td><td>**FIT**: Quantitative, Antibody-Based, Specific for Human Hb, Single Sample; **FOBT**: Guaiac, Qualitative, Non-Specific, 3 Samples</td></tr><tr><td>**Cervical HPV Primary vs Cytology**</td><td>**HPV Primary**: More Sensitive, Detects Glandular Lesions; **Cytology Triage** of HPV+ Reduces Colposcopies</td></tr><tr><td>**FIT Threshold**</td><td>**Lower Threshold** = More Sensitivity, More Colonoscopies; **Higher** = More Specificity, Missed Cancers</td></tr><tr><td>**PSA vs Organised Screening**</td><td>**PSA**: Not Population Programme; **Overdiagnosis**, **Lead Time Bias**, **No Mortality Benefit in PLCO**</td></tr><tr><td>**FSIG Discontinued**</td><td>**One-off FSIG at 55** (Discontinued 2021); **FIT Superior** (Whole Colon, Non-Invasive)</td></tr></table>
+<p><b>Mnemonic: POP-SCREEN</b></p>
+<ul><li><b>P</b>opulation Breast: <b>50-70, Mammo 3yr</b></li><li><b>O</b>ropharyngeal/Cervical: <b>25-64, HPV Primary, 3/5yr</b></li><li><b>P</b>ulmonary/Lung: <b>55-74, 20pk-yr, LDCT Annual</b></li><li><b>S</b>tool/Colorectal: <b>60-74, FIT 2yr, 120µg/g</b></li><li><b>C</b>hoice PSA: <b>Informed Choice, Not Population</b></li><li><b>R</b>ecall Rate: <b>Breast 4-5%, Cervical HPV+</b></li><li><b>E</b>xtension: <b>Breast 47-73, Colorectal 50-59</b></li><li><b>E</b>vidence: <b>NLST 20% ↓, NELSON 24% ↓</b></li><li><b>E</b>valuation: <b>Sens/Spec/PPV/NPV</b></li><li><b>N</b>ot PSA: <b>Informed Choice, Overdiagnosis</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Programme</th><th>Age</th><th>Test</th><th>Interval</th><th>Mortality Reduction</th></tr><tr><td>-----------</td><td>-----</td><td>------</td><td>----------</td><td>---------------------</td></tr><tr><td>**Breast**</td><td>50-70</td><td>Mammogram</td><td>3 years</td><td>20-25%</td></tr><tr><td>**Cervical**</td><td>25-64</td><td>HPV Primary</td><td>3yr (25-49) / 5yr (50-64)</td><td>70%</td></tr><tr><td>**Colorectal**</td><td>60-74</td><td>FIT</td><td>2 years</td><td>15-25%</td></tr><tr><td>**Lung**</td><td>55-74</td><td>LDCT</td><td>Annual</td><td>20%</td></tr><tr><td>**PSA**</td><td>>50 Choice</td><td>PSA</td><td>Not Population</td><td>Overdiagnosis Risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Programme Parameters</td><td></td><td></td></tr><tr><td>Performance Metrics</td><td></td><td></td></tr><tr><td>Key Biases</td><td></td><td></td></tr><tr><td>PSA vs Organised Screening</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Wilson &amp; Jungner Criteria]], [[Breast Cancer Screening]], [[Cervical Cancer Screening]], [[Colorectal Cancer Screening]], [[Lung Cancer Screening]], [[PSA Testing]], [[Overdiagnosis]], [[Lead Time Bias]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Population Screening Programmes (Breast), which statement is correct? A. 50-70 B. 50-70 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 50-70</li></ul>
+<p><b>2.</b> Regarding Population Screening Programmes (Cervical), which statement is correct? A. 25-64 B. 25-64 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 25-64</li></ul>
+<p><b>3.</b> Regarding Population Screening Programmes (Colorectal), which statement is correct? A. 60-74 B. 60-74 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 60-74</li></ul>
+<p><b>4.</b> Regarding Population Screening Programmes (Lung), which statement is correct? A. 55-74 B. 55-74 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 55-74</li></ul>
+<p><b>5.</b> Regarding Population Screening Programmes (PSA), which statement is correct? A. &gt;50 (Choice) B. &gt;50 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — &gt;50 (Choice)</li></ul>
+<p><b>6.</b> Regarding Population Screening Programmes (FCPS/MRCP High Yield - UK Popu), which statement is correct?</p>
+<ul><li>A. FCPS/MRCP High Yield - UK Population Screening: Breast (50-70, Mammogram 3yrly), Cervical (25-64, HP</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - UK Population Screening: Breast (50-70, Mammogram 3yrly), Cervical (25-64, HPV Primary 3/5yr), Co...</li></ul>
+<p><b>7.</b> Regarding Population Screening Programmes (Sensitivity/Specificity/PPV/NP), which statement is correct?</p>
+<ul><li>A. Sensitivity/Specificity/PPV/NPV</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Sensitivity/Specificity/PPV/NPV</li></ul>
+<p><b>8.</b> Regarding Population Screening Programmes (Overdiagnosis, Lead Time Bias,), which statement is correct?</p>
+<ul><li>A. Overdiagnosis, Lead Time Bias, Length Time Bias</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Overdiagnosis, Lead Time Bias, Length Time Bias</li></ul>
+<p><b>9.</b> Regarding Population Screening Programmes (Programme Performance Metrics), which statement is correct?</p>
+<ul><li>A. Programme Performance Metrics</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Programme Performance Metrics</li></ul>
+<p><b>10.</b> Regarding Population Screening Programmes (Age Range), which statement is correct?</p>
+<ul><li>A. Age Range: 50-70 years (Extension to 47-73 in progress)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Age Range: 50-70 years (Extension to 47-73 in progress)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. 50-70</li><li>B. 50-70 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: 50-70</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. 25-64</li><li>B. 25-64 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: 25-64</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. 60-74</li><li>B. 60-74 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: 60-74</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. 55-74</li><li>B. 55-74 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: 55-74</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. &gt;50 (Choice)</li><li>B. &gt;50 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: &gt;50 (Choice)</li></ul>
+<p><b>6.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. FCPS/MRCP High Yield - UK Population Screening: Breast (50-70, Mammogram 3yrly), Cervical (25-64, HP</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - UK Population Screening: Breast (50-70, Mammogram 3yrly), Cervical (25-64, HPV Primary 3/5yr), Co...</li></ul>
+<p><b>7.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. Sensitivity/Specificity/PPV/NPV</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Sensitivity/Specificity/PPV/NPV</li></ul>
+<p><b>8.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. Overdiagnosis, Lead Time Bias, Length Time Bias</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Overdiagnosis, Lead Time Bias, Length Time Bias</li></ul>
+<p><b>9.</b> Treatment is initiated. Most important monitoring parameter:</p>
+<ul><li>A. Programme Performance Metrics</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Programme Performance Metrics</li></ul>
+<p><b>10.</b> Follow-up assessment reveals the following. Best next step:</p>
+<ul><li>A. Age Range: 50-70 years (Extension to 47-73 in progress)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Age Range: 50-70 years (Extension to 47-73 in progress)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Breast? <b>A1:</b> 50-70</p>
+<p><b>Q2:</b> Cervical? <b>A2:</b> 25-64</p>
+<p><b>Q3:</b> Colorectal? <b>A3:</b> 60-74</p>
+<p><b>Q4:</b> Lung? <b>A4:</b> 55-74</p>
+<p><b>Q5:</b> PSA? <b>A5:</b> &gt;50 (Choice)</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>FCPS/MRCP High Yield - UK Population Screening</td><td>FCPS/MRCP High Yield - UK Population Screening: Breast (50-70, Mammogram 3yrly), Cervical (25-64, HPV Primary 3/5yr), Co</td></tr><tr><td>7</td><td>A</td><td>Sensitivity/Specificity/PPV/NPV</td><td>Sensitivity/Specificity/PPV/NPV</td></tr><tr><td>8</td><td>A</td><td>Overdiagnosis, Lead Time Bias, Length Time Bias</td><td>Overdiagnosis, Lead Time Bias, Length Time Bias</td></tr><tr><td>9</td><td>A</td><td>Programme Performance Metrics</td><td>Programme Performance Metrics</td></tr><tr><td>10</td><td>A</td><td>Age Range</td><td>Age Range: 50-70 years (Extension to 47-73 in progress)</td></tr><tr><td>11</td><td>A</td><td>Test</td><td>Test: Digital Mammography (2-view: CC + MLO)</td></tr><tr><td>12</td><td>A</td><td>Coverage</td><td>Coverage: ~75% of eligible women</td></tr><tr><td>13</td><td>A</td><td>Cancer Detection Rate</td><td>Cancer Detection Rate: ~8-9 per 1000 screened</td></tr><tr><td>14</td><td>A</td><td>PPV</td><td>PPV: ~15-20% (Of recalled)</td></tr><tr><td>15</td><td>A</td><td>Mortality Reduction</td><td>Mortality Reduction: ~20-25%</td></tr><tr><td>16</td><td>A</td><td>Interval</td><td>Interval: 25-49: 3 years, 50-64: 5 years</td></tr><tr><td>17</td><td>A</td><td>Primary Test</td><td>Primary Test: HPV Primary Screening (HR-HPV PCR)</td></tr><tr><td>18</td><td>A</td><td>Triage</td><td>Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</td></tr><tr><td>19</td><td>A</td><td>HPV Vaccination</td><td>HPV Vaccination: 9-valent (6,11,16,18,31,33,45,52,58) → ~90% prevention</td></tr><tr><td>20</td><td>A</td><td>Self-Sampling</td><td>Self-Sampling: Pilot (Increase uptake in non-attenders)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>FCPS/MRCP High Yield - UK Population Screening</td><td>FCPS/MRCP High Yield - UK Population Screening: Breast (50-70, Mammogram 3yrly), Cervical (25-64, HPV Primary 3/5yr), Co</td></tr><tr><td>7</td><td>A</td><td>Sensitivity/Specificity/PPV/NPV</td><td>Sensitivity/Specificity/PPV/NPV</td></tr><tr><td>8</td><td>A</td><td>Overdiagnosis, Lead Time Bias, Length Time Bias</td><td>Overdiagnosis, Lead Time Bias, Length Time Bias</td></tr><tr><td>9</td><td>A</td><td>Programme Performance Metrics</td><td>Programme Performance Metrics</td></tr><tr><td>10</td><td>A</td><td>Age Range</td><td>Age Range: 50-70 years (Extension to 47-73 in progress)</td></tr><tr><td>11</td><td>A</td><td>Test</td><td>Test: Digital Mammography (2-view: CC + MLO)</td></tr><tr><td>12</td><td>A</td><td>Coverage</td><td>Coverage: ~75% of eligible women</td></tr><tr><td>13</td><td>A</td><td>Cancer Detection Rate</td><td>Cancer Detection Rate: ~8-9 per 1000 screened</td></tr><tr><td>14</td><td>A</td><td>PPV</td><td>PPV: ~15-20% (Of recalled)</td></tr><tr><td>15</td><td>A</td><td>Mortality Reduction</td><td>Mortality Reduction: ~20-25%</td></tr><tr><td>16</td><td>A</td><td>Interval</td><td>Interval: 25-49: 3 years, 50-64: 5 years</td></tr><tr><td>17</td><td>A</td><td>Primary Test</td><td>Primary Test: HPV Primary Screening (HR-HPV PCR)</td></tr><tr><td>18</td><td>A</td><td>Triage</td><td>Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</td></tr><tr><td>19</td><td>A</td><td>HPV Vaccination</td><td>HPV Vaccination: 9-valent (6,11,16,18,31,33,45,52,58) → ~90% prevention</td></tr><tr><td>20</td><td>A</td><td>Self-Sampling</td><td>Self-Sampling: Pilot (Increase uptake in non-attenders)</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Breast</td><td>50-70</td></tr><tr><td>2</td><td>A</td><td>Cervical</td><td>25-64</td></tr><tr><td>3</td><td>A</td><td>Colorectal</td><td>60-74</td></tr><tr><td>4</td><td>A</td><td>Lung</td><td>55-74</td></tr><tr><td>5</td><td>A</td><td>PSA</td><td>>50 (Choice)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Breast</td><td>50-70</td></tr><tr><td>2</td><td>A</td><td>Cervical</td><td>25-64</td></tr><tr><td>3</td><td>A</td><td>Colorectal</td><td>60-74</td></tr><tr><td>4</td><td>A</td><td>Lung</td><td>55-74</td></tr><tr><td>5</td><td>A</td><td>PSA</td><td>>50 (Choice)</td></tr></table>
+<p><b>Q6:</b> FCPS/MRCP High Yield - UK Population Screening? <b>A6:</b> FCPS/MRCP High Yield - UK Population Screening: Breast (50-70, Mammogram 3yrly), Cervical (25-64, HPV Primary 3/5yr), Colorectal (60-74, 2yrly FIT), Lung (55-74, 20pk-yr, LDCT Annual)</p>
+<p><b>Q7:</b> Key Point? <b>A7:</b> Sensitivity/Specificity/PPV/NPV</p>
+<p><b>Q8:</b> Key Point? <b>A8:</b> Overdiagnosis, Lead Time Bias, Length Time Bias</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer Screening &amp; Prevention|Cancer Screening &amp; Prevention]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Population Screening Programmes · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

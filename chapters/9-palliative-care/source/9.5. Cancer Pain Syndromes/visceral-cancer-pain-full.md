@@ -1,0 +1,204 @@
+# Visceral cancer pain
+
+Related: [[../../Pain and Palliative Care MOC]], [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Cancer Pain Syndromes**
+
+## 1. Definition
+
+Visceral cancer pain arises from infiltration, distension, compression, or ischaemia of viscera (liver, pancreas, bowel, bladder, kidney). Features: deep, dull, diffuse, poorly localised; may be referred (e.g., diaphragmatic irritation → shoulder pain, Kehr sign); often associated with autonomic features (N&V, sweating). Specific syndromes: liver capsule pain (right upper quadrant, dull), pancreatic cancer pain (epigastric, back), bowel obstruction (colicky). Treatment: WHO ladder + adjuvant (TCAs for neuropathic components, corticosteroids for capsule stretching, antiemetics), nerve blocks (coeliac plexus for pancreatic), surgery (bypass, stoma).
+
+## 2. Clinical Features and Presentation
+
+Visceral cancer pain arises from infiltration, distension, or obstruction of organs (liver, pancreas, bowel, lung, bladder). Common cancers: pancreatic, liver metastases, colorectal, ovarian, lung. Features: diffuse, deep, cramping, squeezing, with autonomic features (sweating, N&V, pallor), often referred to dermatomes (Head's zones), often with muscular guarding. Visceral hyperalgesia in referred zone. Often refractory to opioids alone.
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+Imaging: CT, MRI, ultrasound. Endoscopy if luminal (OGD, colonoscopy). Biomarkers (CA19-9, CEA, AFP). PET-CT for staging. Laparoscopy if needed.
+
+### Management
+WHO ladder + adjuvants: corticosteroid (liver capsule distension, pancreatic oedema); anticholinergics (hyoscine, hyoscine butylbromide, glycopyrronium for hollow viscus colic, bowel obstruction); antidepressants/neuropathic agents (if neuropathic component). Disease-modifying: chemotherapy, radiotherapy, surgery. Interventional: coeliac plexus block (pancreatic cancer, 70-90% relief), superior hypogastric block (pelvic visceral), neuraxial analgesia (intrathecal/epidural), neurolytic procedures.
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| Type | Visceral (organ) pain |
+| Feature | Deep, dull, diffuse, referred |
+| Autonomic | N&V, sweating, BP changes |
+| Liver capsule | RUQ, dull, corticosteroids |
+| Pancreatic | Epigastric, back, coeliac plexus block |
+| Bowel obstruction | Colicky, N&V, malignant |
+| Treatment | WHO ladder + adjuvant |
+| Coeliac plexus | Pancreatic cancer pain (procedural) |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Somatic pain | Well-localised, sharp |
+| Neuropathic | Burning, nerve distribution |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: Coeliac plexus block for which cancer? A: Pancreatic cancer pain; 70-90% effective.
+
+2. 2. Q: Adjuvants for visceral pain? A: Corticosteroid (capsule distension), anticholinergics (hollow viscus colic, bowel obstruction).
+
+3. 3. Q: Referred pain for diaphragmatic irritation? A: Shoulder tip (phrenic nerve C3, C4, C5).
+
+4. 4. Q: Why visceral pain often refractory to opioids? A: Visceral hyperalgesia, central sensitisation, mixed mechanism.
+
+5. 5. Q: Superior hypogastric block indication? A: Pelvic visceral pain (cervical, prostate, colorectal).
+
+
+## 7. Confusions and Mnemonics
+
+- See clinical features
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **Visceral cancer pain** |
+|-----------|-----------|
+| **Definition** | Visceral cancer pain arises from infiltration, distension, compression, or ischaemia of viscera (liv |
+| **Key Features** | Visceral (organ) pain |
+| **Investigation** | Clinical assessment + disease-specific tests |
+| **Management** | WHO ladder + adjuvant + non-pharmacological |
+| **Red Flags** | Severe pain, opioid side effects, total pain dimensions |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of Visceral cancer pain?
+   A. Visceral (organ) pain
+   B. Always self-limiting
+   C. Caused by infection only
+   D. Restricted to severe pain only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line management?
+   A. WHO analgesic ladder step 1
+   B. Immediate strong opioid
+   C. Surgery only
+   D. No treatment
+   E. Antidepressants only
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Pain assessment, total pain, comorbidities
+   B. None
+   C. ECG only
+   D. Eye exam only
+   E. Blood pressure only
+   **Answer: A**
+4. **Q:** What is the most important complication to monitor?
+   A. Disease-specific complications and treatment side effects
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key pharmacological/clinical feature?
+   A. Pancreatic cancer pain (procedural)
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient with Visceral cancer pain; first-line management?
+   A. WHO ladder + adjuvant + non-pharmacological
+   B. Strong opioid
+   C. Surgery
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+2. **Scenario:** Failed first-line; next step?
+   A. Step up WHO ladder
+   B. Stop all treatment
+   C. Surgery
+   D. Observation
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of treatment?
+   A. Side effects, opioid complications
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Holistic assessment?
+   A. Physical + emotional + social + spiritual
+   B. Physical only
+   C. Emotional only
+   D. None
+   E. Blood tests only
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. Pancreatic cancer pain (procedural)
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about Visceral cancer pain?
+  **A:** Visceral (organ) pain
+- **Q:** Another key point?
+  **A:** Deep, dull, diffuse, referred
+- **Q:** Most important complication?
+  **A:** N&V, sweating, BP changes
+- **Q:** First-line treatment?
+  **A:** RUQ, dull, corticosteroids
+- **Q:** Key pharmacological/clinical feature?
+  **A:** Epigastric, back, coeliac plexus block
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — Type: Visceral (organ) pain
+2. **A** — WHO ladder first-line
+3. **A** — Pain assessment essential
+4. **A** — Disease-specific complications
+5. **A** — Coeliac plexus: Pancreatic cancer pain (procedural)
+
+### SBAs
+1. **A** — WHO ladder + adjuvant + non-pharmacological
+2. **A** — Step up WHO ladder
+3. **A** — Side effects, opioid complications
+4. **A** — Total pain assessment
+5. **A** — Pancreatic cancer pain (procedural)
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../Cancer_Pain_Syndromes_Hub]]
+**Chapter Hierarchy:** [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../Pain and Palliative Care MOC]]
+
+---
+
+> **Exam focus:** Know definition, key clinical features, first-line management (WHO ladder), and the most important complication. Always consider total pain (physical, emotional, social, spiritual).

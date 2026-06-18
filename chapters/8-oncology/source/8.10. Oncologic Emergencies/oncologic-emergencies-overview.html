@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oncologic Emergencies Overview — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.10. ONCOLOGIC EMERGENCIES</span>
+      <div class="h1">Oncologic Emergencies Overview</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Recognise the <b>5 major oncologic emergencies</b>: MSCC, SVCO, TLS, Hypercalcaemia, Neutropenic Sepsis</li><li>[ ] Apply <b>immediate management algorithms</b> for each emergency</li><li>[ ] Recognise <b>clinical presentation</b> and <b>investigation findings</b> for each</li><li>[ ] Apply <b>treatment algorithms</b> with correct drug doses and timing</li><li>[ ] Understand <b>prognostic implications</b> and <b>follow-up</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Quick Reference: Top 5 Oncologic Emergencies</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Emergency</th><th>Key Presentation</th><th>Immediate Action</th><th>Time Criticality</th></tr><tr><td>-----------</td><td>------------------</td><td>------------------</td><td>------------------</td></tr><tr><td>**MSCC**</td><td>Back pain + neurological deficit</td><td>**High-dose Dex + urgent RT** (within 24h)</td><td>**Hours**</td></tr><tr><td>**SVCO**</td><td>Facial/arm swelling, dyspnoea, distended neck veins</td><td>**Head elevation, Dex, urgent RT/stent**</td><td>**Hours**</td></tr><tr><td>**TLS**</td><td>AKI, hyperK, hyperP, hypoCa, hyperUric</td><td>**Hydration, Rasburicase, Allopurinol**</td><td>**Hours**</td></tr><tr><td>**Hypercalcaemia**</td><td>Polyuria, confusion, constipation, ECG changes</td><td>**Hydration, Bisphosphonate, Denosumab**</td><td>**Hours-Days**</td></tr><tr><td>**Neutropenic Sepsis**</td><td>Fever + ANC <0.5 or <1.0</td><td>**IV antibiotics within 1 hour**</td><td>**Hour**</td></tr></table>
+<div class="callout">[!critical] <b>FCPS/MRCP Golden Rule</b>: <b>"MSCC and SVCO = Dexamethasone immediately, then urgent imaging/RT"</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Malignant Spinal Cord Compression (MSCC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition &amp; Epidemiology</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Compression of spinal cord/cauda equina** by metastatic tumour → neurological deficit</td></tr><tr><td>**Incidence**</td><td>**5-10%** of cancer patients; **Commonest: Breast, Lung, Prostate, Myeloma, RCC**</td></tr><tr><td>**Commonest Site**</td><td>**Thoracic (70%) > Lumbar (20%) > Cervical (10%)**</td></tr></table>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Presentation</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Back Pain**</td><td>**95%** — **worse lying flat, nocturnal, progressive**, may precede neuro deficit by weeks</td></tr><tr><td>**Motor Weakness**</td><td>**75%** — pyramidal pattern, asymmetric</td></tr><tr><td>**Sensory Loss**</td><td>**50-70%** — sensory level, dissociation</td></tr><tr><td>**Autonomic**</td><td>**Urinary retention/constipation** — late, poor prognostic sign</td></tr><tr><td>**Reflexes**</td><td>**Upper motor neurone signs** (hyperreflexia, spasticity, Babinski)</td></tr></table>
+<div class="callout">[!critical] <b>Red Flags for MSCC</b> - <b>New back pain + cancer history</b> - <b>Progressive neurological deficit</b> - <b>Urinary retention/saddle anaesthesia</b></div>
+<div class="sub-h">Investigations</div>
+<table class="ctable"><tr><th>Test</th><th>Role</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**MRI Whole Spine (Gold Standard)**</td><td>**Level, extent, cord compression, thecal sac compression** — **Do within 24h**</td></tr><tr><td>**CT Spine**</td><td>If MRI contraindicated; bony detail</td></tr><tr><td>**Plain X-ray**</td><td>Lytic lesions, collapse — **insensitive** (false negative 30-40%)</td></tr><tr><td>**Bloods**</td><td>FBC, U&E, Ca, LFT, Alk Phos, PSA, Myeloma screen</td></tr></table>
+<div class="callout">[!critical] <b>MRI Whole Spine = Gold Standard</b> — <b>Do NOT delay for plain X-ray</b></div>
+<div class="sub-h">Management Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Suspected MSCC] --&gt; B[<b>Immediate Dexamethasone 16mg PO/IV</b>\n(8mg q6h or 16mg daily)] B --&gt; C[<b>Urgent MRI Whole Spine</b>\nWithin 24h] C --&gt; D{Extent of Compression} D --&gt;|Localised| E[<b>Urgent Radiotherapy</b>\nWithin 24h of diagnosis\n8Gy/1fr or 20Gy/5fr] D --&gt;|Extensive/Collapse| F[<b>Neurosurgical Decompression</b>\n+ Stabilisation\nThen RT] E --&gt; G[<b>Dexamethasone Taper</b>\nOver 2-4 weeks\nMonitor for GI bleed, hyperglycaemia] F --&gt; G G --&gt; H[<b>Rehab, DVT Prophylaxis, Bladder/Bowel Care</b>] </code>``</p>
+<div class="sub-h">Key Management Points</div>
+<table class="ctable"><tr><th>Intervention</th><th>Detail</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Dexamethasone**</td><td>**16mg stat (8mg q6h or 16mg daily)** — **start IMMEDIATELY on suspicion**</td></tr><tr><td>**Radiotherapy**</td><td>**8Gy/1fr (good PS, limited life expectancy)** or **20Gy/5fr (better PS, longer survival)**</td></tr><tr><td>**Surgery**</td><td>**Laminectomy + fixation** if: hw compromise, progressive deficit on steroids, instability, radio-resistant tumour</td></tr><tr><td>**Prognosis**</td><td>**Ambulatory at diagnosis → 80% remain ambulant**; Non-ambulant → poor recovery</td></tr></table>
+<div class="callout">[!critical] <b>MSCC Prognosis = Ambulation at diagnosis</b> — <b>Ambulatory → 80% remain ambulant</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Superior Vena Cava Obstruction (SVCO)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition &amp; Aetiology</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Obstruction of SVC flow** → impaired venous return from head/neck/upper limbs</td></tr><tr><td>**Commonest Causes**</td><td>**Lung Cancer (60-80%) — SCLC > NSCLC**, Lymphoma, Mediastinal Mets, Thrombosis (catheter/pacemaker)</td></tr></table>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Presentation</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Facial/Periorbital Oedema**</td><td>**Early, worse on waking**</td></tr><tr><td>**Distended Neck Veins**</td><td>**Non-pulsatile, worse on bending/valsalva**</td></tr><tr><td>**Dyspnoea/Orthopnoea**</td><td>Due to upper airway oedema</td></tr><tr><td>**Headache/Confusion**</td><td>Cerebral oedema</td></tr><tr><td>**Collateral Veins**</td><td>Chest wall, upper abdomen ("caput medusae")</td></tr></table>
+<div class="sub-h">Investigations</div>
+<table class="ctable"><tr><th>Test</th><th>Role</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**CT Chest with Contrast (Gold Standard)**</td><td>**Site, extent, cause, collateral vessels**</td></tr><tr><td>**Venography**</td><td>If CT equivocal</td></tr><tr><td>**Bronchoscopy**</td><td>If lung cancer suspected</td></tr><tr><td>**Bloods**</td><td>FBC, U&E, Ca, LFT, Coagulation, D-dimer</td></tr></table>
+<div class="sub-h">Management Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Suspected SVCO] --&gt; B[<b>Head Up 45°</b>\nOxygen if hypoxic] B --&gt; C[<b>Dexamethasone 16mg stat</b>\n(8mg q6h)] C --&gt; D[<b>Urgent CT Chest with Contrast</b>] D --&gt; E[<b>Urgent Radiotherapy</b>\n30Gy/10fr or 20Gy/5fr\nStart within 24-48h] E --&gt; F{Symptoms Resolve?} F --&gt;|Yes| G[Dexamethasone Taper\nOver 2-4 weeks] F --&gt;|No (Severe/Refractory)| H[<b>Venous Stenting</b>\nImmediate relief\nThen RT] H --&gt; I[<b>Anticoagulation</b>\nIf thrombotic component] </code>``</p>
+<div class="sub-h">Key Management Points</div>
+<table class="ctable"><tr><th>Intervention</th><th>Detail</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Dexamethasone**</td><td>**16mg stat** — **do not delay**</td></tr><tr><td>**Radiotherapy**</td><td>**30Gy/10fr (2-3 weeks)** or **20Gy/5fr (1 week)** — **start within 24-48h**</td></tr><tr><td>**Stenting**</td><td>**Immediate relief** for life-threatening/failed RT</td></tr><tr><td>**Anticoagulation**</td><td>If thrombus component (catheter/pacemaker)</td></tr><tr><td>**Prognosis**</td><td>**Median survival 2-6 months** (depends on primary)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Tumour Lysis Syndrome (TLS)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition &amp; Risk Stratification</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Metabolic emergency** from massive tumour cell lysis → **Hyperkalaemia, Hyperphosphataemia, Hypocalcaemia, Hyperuricaemia** → **AKI, arrhythmias, seizures**</td></tr><tr><td>**Cairo-Bishop Definition**</td><td>**Laboratory TLS**: 2+ abnormalities (K, P, Ca, Urate) within 3d before/7d after chemo; **Clinical TLS** = Lab TLS + AKI/seizure/arrhythmia</td></tr><tr><td>**Risk Stratification**</td><td>**High**: Burkitt, ALL (high WBC), high-grade NHL, bulky disease; **Intermediate**: AML, DLBCL, bulky; **Low**: Solid tumours, indolent NHL</td></tr></table>
+<div class="sub-h">Laboratory TLS Criteria (Cairo-Bishop)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Uric Acid**</td><td>**>476 μmol/L (8 mg/dL)** or 25% increase</td></tr><tr><td>**Potassium**</td><td>**>6 mmol/L** or 25% increase</td></tr><tr><td>**Phosphate**</td><td>**>2.1 mmol/L (6.5 mg/dL)** or 25% increase</td></tr><tr><td>**Calcium**</td><td>**<1.75 mmol/L (7 mg/dL)** or 25% decrease</td></tr></table>
+<div class="sub-h">Management Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Risk Stratification] --&gt; B{High Risk} B --&gt;|Yes| C[<b>Prophylaxis</b>\nHydration 3-4L/day\n<b>Rasburicase 0.2mg/kg IV</b>\n(If contraindicated: Allopurinol 300mg)\nMonitor Q4-6h] B --&gt;|Intermediate| D[<b>Hydration 2-3L/day</b>\n<b>Allopurinol 300mg</b>\nMonitor Q8-12h] B --&gt;|Low| E[Hydration\nAllopurinol if needed\nMonitor Daily] C --&gt; F[TLS Develops?] D --&gt; F E --&gt; F F --&gt;|Yes| G[<b>Aggressive Hydration</b>\n<b>Rasburicase 0.2mg/kg IV</b>\nCorrect K, Ca, Phosphate\n<b>Dialysis if</b>: K&gt;6, pH&lt;7.2, Oliguria, Ca&lt;1.5, Phos&gt;8] F --&gt;|No| H[Continue Prophylaxis\nThrough Chemotherapy Cycle] </code>``</p>
+<div class="sub-h">Key Management Points</div>
+<table class="ctable"><tr><th>Intervention</th><th>Detail</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Hydration**</td><td>**3-4 L/day (High risk), 2-3L (Intermediate)** — target urine output >2 L/day</td></tr><tr><td>**Rasburicase**</td><td>**0.2 mg/kg IV single dose** — **recombinant urate oxidase**; **contraindicated in G6PD deficiency**</td></tr><tr><td>**Allopurinol**</td><td>**300mg daily (300mg/m²)** — start 24-48h pre-chemo; **avoid in high-risk (use rasburicase)**</td></tr><tr><td>**Electrolyte Correction**</td><td>**K>6**: Insulin+Glucose, Calcium gluconate, Salbutamol, Dialysis; **Phos>8**: Calcium gluconate, sevelamer, dialysis</td></tr><tr><td>**Dialysis Indications**</td><td>**K>6 refractory, pH<7.2, Oliguria/anuria, Ca<1.5, Phos>8, Seizures**</td></tr></table>
+<div class="callout">[!critical] <b>Rasburicase Contraindicated in G6PD Deficiency</b> — risk of haemolysis; check G6PD before giving</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Hypercalcaemia of Malignancy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aetiology &amp; Risk</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Cancers</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**PTHrP (Humoral)** — **80%**</td><td>**SCC Lung, Breast, RCC, SCC H&N, Bladder**</td></tr><tr><td>**Bone Metastasis (Osteolytic)** — 20%</td><td>**Breast, Myeloma, Prostate, Lung**</td></tr><tr><td>**Calcitriol (1,25-Vit D)**</td><td>**Lymphoma (esp. Hodgkin), **Sarcoidosis**</td></tr></table>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Presentation</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Polyuria/Polydipsia**</td><td>Early, renal concentrating defect</td></tr><tr><td>**Nausea/Vomiting/Constipation**</td><td>GI ileus</td></tr><tr><td>**Confusion/Lethargy/Coma**</td><td>CNS depression</td></tr><tr><td>**Polyuria → Dehydration**</td><td>Pre-renal AKI</td></tr><tr><td>**ECG**</td><td>**Shortened QT, widened QRS, bradycardia (severe)**</td></tr></table>
+<div class="sub-h">Diagnostic Criteria</div>
+<table class="ctable"><tr><th>Parameter</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Corrected Calcium**</td><td>**>2.6 mmol/L (10.4 mg/dL)**</td></tr><tr><td>**PTH**</td><td>**Suppressed** (if PTHrP-mediated)</td></tr><tr><td>**PTHrP**</td><td>**Elevated** (humoral)</td></tr><tr><td>**1,25-Vit D**</td><td>**Elevated** (lymphoma, granulomatous)</td></tr></table>
+<div class="sub-h">Management Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Hypercalcaemia Confirmed] --&gt; B[<b>IV Hydration: 0.9% Saline 3-4L/day</b>\nTarget urine &gt;2L/day\n<b>Avoid Thiazides</b>] B --&gt; C{Calcium Level / Severity} C --&gt;|Mild (2.6-3.0)| D[Hydration + Oral Bisphosphonate\n<b>Zoledronate 4mg IV</b> OR <b>Pamidronate 90mg IV</b>\nMonitor Ca q2d] C --&gt;|Moderate (3.0-3.5)| E[<b>IV Zoledronate 4mg</b>\nHydration + Monitor Ca daily] C --&gt;|Severe (&gt;3.5) or Symptomatic| F[<b>IV Zoledronate 4mg</b>\n<b>Calcitonin 4-8 U/kg SC q6-12h</b> (rapid, tachyphylaxis)\n<b>Denosumab 120mg SC</b> (if renal impairment)\n<b>Dialysis</b> if severe/refractory + renal failure] </code>``</p>
+<div class="sub-h">Key Drugs</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Onset</th><th>Duration</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td><td>----------</td><td>-------</td></tr><tr><td>**IV Hydration**</td><td>0.9% Saline 3-4L/day</td><td>Immediate</td><td>Ongoing</td><td>**Cornerstone**</td></tr><tr><td>**Zoledronate**</td><td>**4mg IV over 15 min**</td><td>24-48h</td><td>2-4 weeks</td><td>**1st line**; adjust for renal</td></tr><tr><td>**Pamidronate**</td><td>90mg IV over 2-4h</td><td>24-48h</td><td>1-2 weeks</td><td>Alternative</td></tr><tr><td>**Calcitonin**</td><td>4-8U/kg SC q6-12h</td><td>**2-4h**</td><td>2-3 days</td><td>**Rapid but tachyphylaxis**</td></tr><tr><td>**Denosumab**</td><td>120mg SC</td><td>Days</td><td>Weeks</td><td>**Renal impairment** (no renal clearance)</td></tr><tr><td>**Calcimimetics (Cinacalcet)**</td><td>30-90mg daily</td><td>Days</td><td>Chronic</td><td>PTH-mediated (rare)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Neutropenic Sepsis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition &amp; Risk</div>
+<table class="ctable"><tr><th>Criteria</th><th>Definition</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Fever**</td><td>**Single temp >38.3°C OR sustained >38.0°C >1h**</td></tr><tr><td>**Neutropenia**</td><td>**ANC <0.5 ×10⁹/L** or **<1.0 ×10⁹/L with predicted decline**</td></tr><tr><td>**Risk Stratification (MASCC Score)**</td><td>**Low risk (≥21)**: Outpatient oral abx possible; **High risk (<21)**: **IV antibiotics + admission**</td></tr></table>
+<div class="sub-h">MASCC Score</div>
+<table class="ctable"><tr><th>Factor</th><th>Points</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>Burden of illness (no/mild/mod/severe)</td><td>0/3/4</td></tr><tr><td>No/hypotension</td><td>5/0</td></tr><tr><td>No/COPD</td><td>4/0</td></tr><tr><td>Solid tumour/haematological</td><td>4/0</td></tr><tr><td>No/dehydration</td><td>3/0</td></tr><tr><td>No/mucositis</td><td>4/0</td></tr><tr><td>Age <60 / ≥60</td><td>2/0</td></tr></table>
+<p><b>Score ≥21 = Low risk (outpatient candidate)</b></p>
+<div class="sub-h">Management Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Febrile Neutropenia] --&gt; B[<b>Immediate IV Antibiotics</b>\n<b>Within 1 HOUR</b> (Door-to-needle)] B --&gt; C[<b>Piperacillin-Tazobactam 4.5g IV q6h</b>\nOR <b>Meropenem 1g q8h</b>\nOR <b>Cefepime 2g q8h</b>\n+ <b>Vancomycin</b> if: catheter, hemodynamic instability, MRSA risk, severe mucositis] C --&gt; D[<b>MASCC Score</b>] D --&gt;|≥21 (Low Risk)| E[<b>Oral Step-down</b>\nCiprofloxacin + Amoxicillin/Clavulanate\nOutpatient if stable] D --&gt;|&lt;21 (High Risk)| F[<b>Continue IV</b>\n48-72h afebrile → Oral step-down\nDuration: 5-7 days total (minimum)] F --&gt; G[<b>G-CSF</b> if: prolonged neutropenia, high risk, septic shock] F --&gt; H[<b>Source Control</b>\nLine removal if infected\nSurgical if abscess] </code>``</p>
+<div class="sub-h">Empiric Antibiotic Regimens</div>
+<table class="ctable"><tr><th>Regimen</th><th>Indication</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Piperacillin-Tazobactam 4.5g IV q6h**</td><td>**1st line** (broad spectrum, anti-pseudomonal)</td></tr><tr><td>**Meropenem 1g IV q8h**</td><td>Allergy to penicillin, ESBL risk</td></tr><tr><td>**Cefepime 2g IV q8h**</td><td>Alternative</td></tr><tr><td>**+ Vancomycin**</td><td>Line infection, MRSA risk, hypotension, severe mucositis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Emergency</th><th>Key Presentation</th><th>Immediate Action</th><th>Definitive Treatment</th></tr><tr><td>-----------</td><td>------------------</td><td>------------------</td><td>---------------------</td></tr><tr><td>**MSCC**</td><td>Back pain + neuro deficit</td><td>**Dex 16mg stat + MRI spine**</td><td>**RT 8Gy/1fr or 20Gy/5fr** ± Surgery</td></tr><tr><td>**SVCO**</td><td>Facial/arm swelling, distended neck veins</td><td>**Head up + Dex 16mg + CT chest**</td><td>**RT 20Gy/5fr or 30Gy/10fr** ± Stent</td></tr><tr><td>**TLS**</td><td>AKI, HyperK, HyperP, HypoCa, HyperUric</td><td>**Hydration + Rasburicase/Allopurinol**</td><td>**Rasburicase 0.2mg/kg IV** ± Dialysis</td></tr><tr><td>**Hypercalcaemia**</td><td>Polyuria, confusion, constipation, ECG</td><td>**Saline 3-4L/day + Zoledronate 4mg IV**</td><td>**Bisphosphonate ± Denosumab ± Calcitonin**</td></tr><tr><td>**Neutropenic Sepsis**</td><td>Fever + ANC <0.5</td><td>**IV abx within 1h** (Pip-Taz/Meropenem)</td><td>**MASCC Score → Outpt vs Inpt**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>"What are the 5 major oncologic emergencies?"</td><td>**MSCC, SVCO, TLS, Hypercalcaemia, Neutropenic Sepsis**</td></tr><tr><td>"What is the immediate management of suspected MSCC?"</td><td>**Dexamethasone 16mg stat + Urgent MRI whole spine within 24h**</td></tr><tr><td>"A patient on chemotherapy presents with fever 39°C and ANC 0.3. What do you do?"</td><td>**Neutropenic sepsis** — **IV antibiotics within 1 hour** (Pip-Taz or Meropenem), assess MASCC score</td></tr><tr><td>"What is the Cairo-Bishop definition of TLS?"</td><td>**Lab TLS**: 2+ of (K>6, Phos>2.1, Ca<1.75, Urate>476) within 3d before/7d after chemo. **Clinical TLS** = Lab TLS + AKI/seizure/arrhythmia</td></tr><tr><td>"What is the first-line treatment for hypercalcaemia of malignancy?"</td><td>**IV 0.9% Saline 3-4L/day + Zoledronate 4mg IV** (Calcitonin if severe)</td></tr><tr><td>"What is the immediate management of SVCO?"</td><td>**Head up 45°, Oxygen, Dex 16mg stat, CT chest, RT within 24-48h**</td></tr><tr><td>"When do you use Rasburicase vs Allopurinol in TLS prophylaxis?"</td><td>**High risk (Burkitt, high-grade NHL, bulky)**: Rasburicase. **Intermediate/Low**: Allopurinol. **G6PD deficiency → avoid Rasburicase**</td></tr><tr><td>"What is the Cairo-Bishop criteria for Laboratory TLS?"</td><td>**2+ of**: Uric acid >476 μmol/L, K >6 mmol/L, Phosphate >2.1 mmol/L, Calcium <1.75 mmol/L — within 3d before/7d after chemo</td></tr><tr><td>"When do you give calcitonin for hypercalcaemia?"</td><td>**Severe hypercalcaemia (>3.5 mmol/L) or symptomatic** — rapid onset (2-4h) but tachyphylaxis (2-3 days), use with bisphosphonate</td></tr><tr><td>"What is the MASCC score and how does it change neutropenic sepsis management?"</td><td>**Score ≥21 = Low risk** → can consider outpatient oral antibiotics; **<21 = High risk** → inpatient IV antibiotics</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**MSCC vs Cauda Equina**</td><td>MSCC = **UMN signs** (hyperreflexia, Babinski); Cauda = **LMN** (areflexia, saddle anaesthesia)</td></tr><tr><td>**SVCO vs SVC Thrombosis**</td><td>SVCO = **external compression** (tumour); SVC thrombosis = **intraluminal thrombus** (catheter/pacemaker) — both need anticoagulation if thrombotic</td></tr><tr><td>**TLS vs Hyperkalaemia**</td><td>TLS = **multi-electrolyte** (K, Phos, Ca, Uric); isolated hyperK = not TLS</td></tr><tr><td>**Calcitonin vs Bisphosphonate**</td><td>**Calcitonin = rapid (2-4h) but tachyphylaxis (2-3d)**; **Bisphosphonate = slower (24-48h) but sustained (2-4w)**</td></tr><tr><td>**Neutropenic Sepsis vs Febrile Neutropenia**</td><td>**FN = Fever + ANC<1.0**; **Neutropenic Sepsis = FN + sepsis criteria (hypotension, organ dysfunction)** — treat both with IV abx</td></tr></table>
+<p><b>Mnemonic: Top 5 Emergencies = "M-S-T-H-N"</b></p>
+<ul><li><b>M</b>SCC</li><li><b>S</b>VCO</li><li><b>T</b>LS</li><li><b>H</b>ypercalcaemia</li><li><b>N</b>eutropenic Sepsis</li></ul>
+<p><b>Mnemonic: MSCC = "DEX-MRI-RT"</b></p>
+<ul><li><b>DEX</b>amethasone 16mg stat</li><li><b>MRI</b> whole spine</li><li><b>RT</b> within 24h</li></ul>
+<p><b>Mnemonic: SVCO = "HEAD-DEX-CT-RT"</b></p>
+<ul><li><b>HEAD</b> up 45°</li><li><b>DEX</b>amethasone 16mg</li><li><b>CT</b> chest with contrast</li><li><b>RT</b> within 24-48h</li></ul>
+<p><b>Mnemonic: TLS = "HYDRA-RAS"</b></p>
+<ul><li><b>HYDRA</b>tion 3-4L/day</li><li><b>RAS</b>buricase (0.2mg/kg)</li></ul>
+<p><b>Mnemonic: Hypercalcaemia = "SALINE-ZOL"</b></p>
+<ul><li><b>SALINE</b> 3-4L/day</li><li><b>ZOL</b>edronate 4mg IV</li></ul>
+<p><b>Mnemonic: Neutropenic Sepsis = "FEVER-ANC-ABX1HR"</b></p>
+<ul><li><b>FEVER</b> &gt;38.3°C</li><li><b>ANC</b> &lt;0.5 (or &lt;1.0 predicted)</li><li><b>ABX</b> within <b>1 HOUR</b></li></ul>
+<p><b>Mnemonic: MASCC = "B-H-C-S-M-A"</b></p>
+<ul><li><b>B</b>urden of illness</li><li><b>H</b>ypotension</li><li><b>C</b>OPD</li><li><b>S</b>olid tumour</li><li><b>M</b>ucositis</li><li><b>A</b>ge &lt;60</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Oncologic Emergencies)) MSCC Dex_16mg_IMMEDIATE MRI_Whole_Spine_24h RT_8Gy_or_20Gy Surgery_if_Progressive SVCO Head_Up_45 Dex_16mg CT_Chest_Contrast RT_20-30Gy Stent_if_Refractory TLS Cairo_Bishop_Criteria Hydration_3-4L Rasburicase_0.2mg/kg Allopurinol_Alternative Dialysis_Indications Hypercalcaemia Saline_3-4L Zoledronate_4mg Calcitonin_Rapid Denosumab_Renal Neutropenic_Sepsis MASCC_Score IV_Abx_1hr Pip_Taz_or_Meropenem Vancomycin_Indications </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Emergency</th><th>Immediate Action</th><th>Definitive Treatment</th><th>Key Timeframe</th></tr><tr><td>-----------</td><td>------------------</td><td>----------------------</td><td>---------------</td></tr><tr><td>**MSCC**</td><td>**Dex 16mg stat + MRI spine**</td><td>RT 8Gy/1fr or 20Gy/5fr; Surgery if progressive</td><td>**Hours**</td></tr><tr><td>**SVCO**</td><td>**Head up + Dex 16mg + CT chest**</td><td>RT 20Gy/5fr (or 30Gy/10fr); Stent if refractory</td><td>**Hours**</td></tr><tr><td>**TLS**</td><td>**Hydration 3-4L + Rasburicase 0.2mg/kg**</td><td>Rasburicase/Allopurinol; Dialysis if indicated</td><td>**Hours**</td></tr><tr><td>**Hypercalcaemia**</td><td>**Saline 3-4L + Zoledronate 4mg IV**</td><td>Bisphosphonate ± Denosumab; Calcitonin if severe</td><td>**Hours-Days**</td></tr><tr><td>**Neutropenic Sepsis**</td><td>**IV Abx within 1hr (Pip-Taz/Meropenem ± Vancomycin)**</td><td>MASCC Score; 5-7d total; G-CSF if prolonged</td><td>**<1 Hour**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>MSCC Recognition & Management</td><td></td><td></td></tr><tr><td>SVCO Recognition & Management</td><td></td><td></td></tr><tr><td>TLS Criteria & Management</td><td></td><td></td></tr><tr><td>Hypercalcaemia Management</td><td></td><td></td></tr><tr><td>Neutropenic Sepsis MASCC & Abx</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncologic Emergencies|Oncologic Emergencies]]</li><li><b>Parent Topic Group</b>: [[Metabolic Emergencies]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Oncologic Emergencies Overview (MSCC), which statement is correct? A. Back pain + neuro deficit B. Back - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Back pain + neuro deficit</li></ul>
+<p><b>2.</b> Regarding Oncologic Emergencies Overview (SVCO), which statement is correct? A. Facial/arm swelling, distended neck veins B. Facial/arm - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Facial/arm swelling, distended neck veins</li></ul>
+<p><b>3.</b> Regarding Oncologic Emergencies Overview (TLS), which statement is correct? A. AKI, HyperK, HyperP, HypoCa, HyperUric B. AKI, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — AKI, HyperK, HyperP, HypoCa, HyperUric</li></ul>
+<p><b>4.</b> Regarding Oncologic Emergencies Overview (Hypercalcaemia), which statement is correct? A. Polyuria, confusion, constipation, ECG B. Polyuria, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Polyuria, confusion, constipation, ECG</li></ul>
+<p><b>5.</b> Regarding Oncologic Emergencies Overview (Neutropenic Sepsis), which statement is correct? A. Fever + ANC &lt;0.5 B. Fever - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Fever + ANC &lt;0.5</li></ul>
+<p><b>6.</b> Regarding Oncologic Emergencies Overview ([FCPS, MRCP Part 1, MRCP Part ), which statement is correct?</p>
+<ul><li>A. [FCPS, MRCP Part 1, MRCP Part 2, PACES]</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — [FCPS, MRCP Part 1, MRCP Part 2, PACES]</li></ul>
+<p><b>7.</b> Regarding Oncologic Emergencies Overview (MSCC), which statement is correct?</p>
+<ul><li>A. MSCC: Back pain + neurological deficit</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — MSCC: Back pain + neurological deficit</li></ul>
+<p><b>8.</b> Regarding Oncologic Emergencies Overview (SVCO), which statement is correct?</p>
+<ul><li>A. SVCO: Facial/arm swelling, dyspnoea, distended neck veins</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — SVCO: Facial/arm swelling, dyspnoea, distended neck veins</li></ul>
+<p><b>9.</b> Regarding Oncologic Emergencies Overview (TLS), which statement is correct?</p>
+<ul><li>A. TLS: AKI, hyperK, hyperP, hypoCa, hyperUric</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — TLS: AKI, hyperK, hyperP, hypoCa, hyperUric</li></ul>
+<p><b>10.</b> Regarding Oncologic Emergencies Overview (Hypercalcaemia), which statement is correct?</p>
+<ul><li>A. Hypercalcaemia: Polyuria, confusion, constipation, ECG changes</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Hypercalcaemia: Polyuria, confusion, constipation, ECG changes</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. Back pain + neuro deficit</li><li>B. Back (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: Back pain + neuro deficit</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. Facial/arm swelling, distended neck veins</li><li>B. Facial/arm (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: Facial/arm swelling, distended neck veins</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. AKI, HyperK, HyperP, HypoCa, HyperUric</li><li>B. AKI, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: AKI, HyperK, HyperP, HypoCa, HyperUric</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. Polyuria, confusion, constipation, ECG</li><li>B. Polyuria, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: Polyuria, confusion, constipation, ECG</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. Fever + ANC &lt;0.5</li><li>B. Fever (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: Fever + ANC &lt;0.5</li></ul>
+<p><b>6.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. [FCPS, MRCP Part 1, MRCP Part 2, PACES]</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — [FCPS, MRCP Part 1, MRCP Part 2, PACES]</li></ul>
+<p><b>7.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. MSCC: Back pain + neurological deficit</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — MSCC: Back pain + neurological deficit</li></ul>
+<p><b>8.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. SVCO: Facial/arm swelling, dyspnoea, distended neck veins</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — SVCO: Facial/arm swelling, dyspnoea, distended neck veins</li></ul>
+<p><b>9.</b> Treatment is initiated. Most important monitoring parameter:</p>
+<ul><li>A. TLS: AKI, hyperK, hyperP, hypoCa, hyperUric</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — TLS: AKI, hyperK, hyperP, hypoCa, hyperUric</li></ul>
+<p><b>10.</b> Follow-up assessment reveals the following. Best next step:</p>
+<ul><li>A. Hypercalcaemia: Polyuria, confusion, constipation, ECG changes</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Hypercalcaemia: Polyuria, confusion, constipation, ECG changes</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> MSCC? <b>A1:</b> Back pain + neuro deficit</p>
+<p><b>Q2:</b> SVCO? <b>A2:</b> Facial/arm swelling, distended neck veins</p>
+<p><b>Q3:</b> TLS? <b>A3:</b> AKI, HyperK, HyperP, HypoCa, HyperUric</p>
+<p><b>Q4:</b> Hypercalcaemia? <b>A4:</b> Polyuria, confusion, constipation, ECG</p>
+<p><b>Q5:</b> Neutropenic Sepsis? <b>A5:</b> Fever + ANC &lt;0.5</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>[FCPS, MRCP Part 1, MRCP Part 2, PACES]</td><td>[FCPS, MRCP Part 1, MRCP Part 2, PACES]</td></tr><tr><td>7</td><td>A</td><td>MSCC</td><td>MSCC: Back pain + neurological deficit</td></tr><tr><td>8</td><td>A</td><td>SVCO</td><td>SVCO: Facial/arm swelling, dyspnoea, distended neck veins</td></tr><tr><td>9</td><td>A</td><td>TLS</td><td>TLS: AKI, hyperK, hyperP, hypoCa, hyperUric</td></tr><tr><td>10</td><td>A</td><td>Hypercalcaemia</td><td>Hypercalcaemia: Polyuria, confusion, constipation, ECG changes</td></tr><tr><td>11</td><td>A</td><td>Neutropenic Sepsis</td><td>Neutropenic Sepsis: Fever + ANC <0.5 or <1.0</td></tr><tr><td>12</td><td>A</td><td>Definition</td><td>Definition: Compression of spinal cord/cauda equina by metastatic tumour → neurological deficit</td></tr><tr><td>13</td><td>A</td><td>Incidence</td><td>Incidence: 5-10% of cancer patients; Commonest: Breast, Lung, Prostate, Myeloma, RCC</td></tr><tr><td>14</td><td>A</td><td>Commonest Site</td><td>Commonest Site: Thoracic (70%) > Lumbar (20%) > Cervical (10%)</td></tr><tr><td>15</td><td>A</td><td>Back Pain</td><td>Back Pain: 95% — worse lying flat, nocturnal, progressive, may precede neuro deficit by weeks</td></tr><tr><td>16</td><td>A</td><td>Motor Weakness</td><td>Motor Weakness: 75% — pyramidal pattern, asymmetric</td></tr><tr><td>17</td><td>A</td><td>Sensory Loss</td><td>Sensory Loss: 50-70% — sensory level, dissociation</td></tr><tr><td>18</td><td>A</td><td>Autonomic</td><td>Autonomic: Urinary retention/constipation — late, poor prognostic sign</td></tr><tr><td>19</td><td>A</td><td>Reflexes</td><td>Reflexes: Upper motor neurone signs (hyperreflexia, spasticity, Babinski)</td></tr><tr><td>20</td><td>A</td><td>MRI Whole Spine (Gold Standard)</td><td>MRI Whole Spine (Gold Standard): Level, extent, cord compression, thecal sac compression — Do within 24h</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>[FCPS, MRCP Part 1, MRCP Part 2, PACES]</td><td>[FCPS, MRCP Part 1, MRCP Part 2, PACES]</td></tr><tr><td>7</td><td>A</td><td>MSCC</td><td>MSCC: Back pain + neurological deficit</td></tr><tr><td>8</td><td>A</td><td>SVCO</td><td>SVCO: Facial/arm swelling, dyspnoea, distended neck veins</td></tr><tr><td>9</td><td>A</td><td>TLS</td><td>TLS: AKI, hyperK, hyperP, hypoCa, hyperUric</td></tr><tr><td>10</td><td>A</td><td>Hypercalcaemia</td><td>Hypercalcaemia: Polyuria, confusion, constipation, ECG changes</td></tr><tr><td>11</td><td>A</td><td>Neutropenic Sepsis</td><td>Neutropenic Sepsis: Fever + ANC <0.5 or <1.0</td></tr><tr><td>12</td><td>A</td><td>Definition</td><td>Definition: Compression of spinal cord/cauda equina by metastatic tumour → neurological deficit</td></tr><tr><td>13</td><td>A</td><td>Incidence</td><td>Incidence: 5-10% of cancer patients; Commonest: Breast, Lung, Prostate, Myeloma, RCC</td></tr><tr><td>14</td><td>A</td><td>Commonest Site</td><td>Commonest Site: Thoracic (70%) > Lumbar (20%) > Cervical (10%)</td></tr><tr><td>15</td><td>A</td><td>Back Pain</td><td>Back Pain: 95% — worse lying flat, nocturnal, progressive, may precede neuro deficit by weeks</td></tr><tr><td>16</td><td>A</td><td>Motor Weakness</td><td>Motor Weakness: 75% — pyramidal pattern, asymmetric</td></tr><tr><td>17</td><td>A</td><td>Sensory Loss</td><td>Sensory Loss: 50-70% — sensory level, dissociation</td></tr><tr><td>18</td><td>A</td><td>Autonomic</td><td>Autonomic: Urinary retention/constipation — late, poor prognostic sign</td></tr><tr><td>19</td><td>A</td><td>Reflexes</td><td>Reflexes: Upper motor neurone signs (hyperreflexia, spasticity, Babinski)</td></tr><tr><td>20</td><td>A</td><td>MRI Whole Spine (Gold Standard)</td><td>MRI Whole Spine (Gold Standard): Level, extent, cord compression, thecal sac compression — Do within 24h</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>MSCC</td><td>Back pain + neuro deficit</td></tr><tr><td>2</td><td>A</td><td>SVCO</td><td>Facial/arm swelling, distended neck veins</td></tr><tr><td>3</td><td>A</td><td>TLS</td><td>AKI, HyperK, HyperP, HypoCa, HyperUric</td></tr><tr><td>4</td><td>A</td><td>Hypercalcaemia</td><td>Polyuria, confusion, constipation, ECG</td></tr><tr><td>5</td><td>A</td><td>Neutropenic Sepsis</td><td>Fever + ANC <0.5</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>MSCC</td><td>Back pain + neuro deficit</td></tr><tr><td>2</td><td>A</td><td>SVCO</td><td>Facial/arm swelling, distended neck veins</td></tr><tr><td>3</td><td>A</td><td>TLS</td><td>AKI, HyperK, HyperP, HypoCa, HyperUric</td></tr><tr><td>4</td><td>A</td><td>Hypercalcaemia</td><td>Polyuria, confusion, constipation, ECG</td></tr><tr><td>5</td><td>A</td><td>Neutropenic Sepsis</td><td>Fever + ANC <0.5</td></tr></table>
+<p><b>Q6:</b> Key Point? <b>A6:</b> [FCPS, MRCP Part 1, MRCP Part 2, PACES]</p>
+<p><b>Q7:</b> MSCC? <b>A7:</b> MSCC: Back pain + neurological deficit</p>
+<p><b>Q8:</b> SVCO? <b>A8:</b> SVCO: Facial/arm swelling, dyspnoea, distended neck veins</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Oncologic Emergencies|Oncologic Emergencies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Oncologic Emergencies Overview · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

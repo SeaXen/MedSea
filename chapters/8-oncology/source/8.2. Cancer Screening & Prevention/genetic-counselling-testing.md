@@ -1,0 +1,480 @@
+# Genetic Counselling & Testing
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **Genetic Counselling = Pre/Post-Test Communication for Informed Decisions**; **Indications**: CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi; **Cascade Testing**: Index → Germline → Relatives (50% AD); **PGT**: PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural); **Legal**: GINA (US), GDPR (EU), Insurance Discrimination Laws.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Identify **indications for genetic counselling and testing**
+- [ ] Conduct **pre-test** and **post-test counselling**
+- [ ] Apply **cascade testing** for at-risk relatives
+- [ ] Understand **preimplantation genetic testing** (PGT-M, PGT-A, PGT-SR)
+- [ ] Navigate **legal/ethical frameworks** (GINA, GDPR, Insurance)
+
+---
+
+## 2. Indications for Genetic Counselling & Testing
+
+| Clinical Scenario | Recommended Testing |
+|-------------------|---------------------|
+| **CRC <50 years** | Lynch, FAP, MAP, PPAP, PJS, JPS, PTEN |
+| **TNBC <60 years** | BRCA1/2, PALB2, CHEK2, ATM |
+| **Male Breast Cancer** | BRCA1/2, PALB2, CHEK2 |
+| **Ovarian Cancer** | BRCA1/2, Lynch, RAD51C/D, BRIP1 |
+| **Pancreatic Cancer** | BRCA1/2, PALB2, ATM, CDKN2A, Lynch |
+| **Prostate Cancer (Metastatic)** | BRCA1/2, PALB2, ATM, CHEK2, Lynch |
+| **Ashkenazi Jewish Ancestry** | BRCA1/2 (Founder Mutations) |
+| **Family History** (≥2 FDR with CRC/EC/OC/GC <50) | Lynch, FAP, MAP, BRCA1/2, Lynch |
+| **Multiple Primary Cancers** | Lynch, BRCA1/2, TP53, PTEN |
+| **Known Family Mutation** | Predictive Testing for Relatives |
+
+---
+
+## 3. Genetic Counselling Process
+
+### Pre-Test Counselling
+| Component | Content |
+|-----------|---------|
+| **Information Giving** | Condition, Inheritance, Penetrance, Cancer Risks |
+| **Test Details** | Genes Tested, Method (NGS Panel), Sensitivity/Limitations |
+| **Implications** | Medical (Surveillance, Surgery), Reproductive, Psychosocial, Insurance |
+| **Consent** | **Informed, Voluntary, Written**, Right to Decline/Withdraw |
+| **Confidentiality** | **GDPR/GINA**, Limits (Duty to Warn Relatives) |
+| **Cost/Insurance** | NHS Criteria, Self-Fund, Lab Turnaround |
+
+### Post-Test Counselling
+| Result | Counselling Focus |
+|--------|-------------------|
+| **Positive (Pathogenic/Likely Pathogenic)** | **Medical Management**, **Cascade Testing**, **Reproductive Options**, **Psychosocial Support** |
+| **Negative (True Negative)** | **Residual Risk** (Population/Non-Genetic Factors), **Surveillance per Population** |
+| **VUS (Variant of Uncertain Significance)** | **Not Actionable**, **Do Not Use for Clinical Decisions**, **Reclassification Follow-Up** |
+| **Negative (No Mutation Found)** | **Does Not Exclude Hereditary Syndrome**, **Surveillance Based on Clinical/FH** |
+
+---
+
+## 4. Cascade Testing
+
+### Pathway
+| Step | Action |
+|------|--------|
+| **1. Index Case** | **Comprehensive Germline Testing** (NGS Panel) |
+| **2. Identify Variant** | **Class 4/5 Pathogenic/Likely Pathogenic** |
+| **2. Family Cascade** | **Inform Relatives** (Genetic Counselling, Predictive Testing) |
+| **3. Predictive Testing** | **At-Risk Relatives** (50% AD, 25% AR) |
+| **4. Surveillance Initiation** | **Per Syndrome Protocol** (If Positive) |
+
+### Testing Strategy
+| Scenario | Approach |
+|--------|----------|
+| **Known Familial Mutation** | **Predictive Testing** (Targeted, Cheaper, Definitive) |
+| **No Known Mutation** | **Comprehensive Panel** (NGS, Multiple Genes) |
+| **Tumour First** | **MSI/IHC → Germline if MMR Deficient** |
+
+---
+
+## 5. Preimplantation Genetic Testing (PGT)
+
+| Type | Purpose | Indication |
+|------|---------|------------|
+| **PGT-M** | **Monogenic/Single Gene Disorder** | **Known Pathogenic Variant** (BRCA1/2, Lynch, CF, Huntington) |
+| **PGT-A** | **Aneuploidy Screening** | **Advanced Maternal Age, Recurrent Loss, RIF** |
+| **PGT-SR** | **Structural Rearrangement** | **Balanced Translocation/Inversion Carrier** |
+
+### PGT Workflow
+| Step | Description |
+|------|-------------|
+| **1. IVF/ICSI** | Oocyte Retrieval, Fertilisation |
+| **2. Embryo Culture** | **Day 5/6 Blastocyst** |
+| **3. Biopsy** | **Trophectoderm (5-10 Cells)** |
+| **4. Analysis** | **NGS / PCR / FISH** (PGT-M/A/SR) |
+| **5. Transfer** | **Euploid/Unaffected Embryo** (Frozen Embryo Transfer) |
+
+---
+
+## 6. Legal & Ethical Frameworks
+
+| Jurisdiction | Law/Regulation | Key Points |
+|--------------|----------------|------------|
+| **UK** | **GDPR, Data Protection Act 2018** | Consent, Data Subject Rights, DPIA |
+| **UK** | **Human Tissue Act 2004** | Consent, Storage, Use of Tissue |
+| **UK** | **Equality Act 2010** | Genetic Non-Discrimination (Employment, Services) |
+| **US** | **GINA (2008)** | **Genetic Information Non-Discrimination Act** (Health Insurance, Employment) |
+| **EU** | **GDPR** | Consent, Right to Erasure, Data Portability |
+| **Insurance** | **UK: Concordat & Moratorium** | **Predictive Genetic Tests Declared** (Life Insurance >£500k) |
+
+### Key Ethical Principles
+| Principle | Application |
+|-----------|-------------|
+| **Autonomy** | **Informed Consent**, Right to Know/Not Know |
+| **Beneficence** | Act in Best Interest (Early Detection, Prevention) |
+| **Non-Maleficence** | Avoid Harm (Psychological, Discrimination, Stigma) |
+| **Justice** | Equitable Access (Equity, Cultural Sensitivity) |
+
+---
+
+## 7. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Indications for Testing** | CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi |
+| **Cascade Testing** | Index → Germline → Relatives (50% AD Inheritance) |
+| **Pre-Test Counselling** | Informed Consent, Implications, Confidentiality, Limitations |
+| **Post-Test** | Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable |
+| **PGT Types** | PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural) |
+| **Legal** | GINA (US), GDPR/Equality Act (UK), Concordat (Insurance) |
+| **VUS** | Not Actionable, Do Not Use for Clinical Decisions |
+
+---
+
+## 8. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **Indications for Genetic Counselling/Testing?** | CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi. |
+| **Cascade Testing Pathway?** | Index → Germline Testing → Identify Variant → Relatives Informed → Predictive Testing (50% AD). |
+| **Pre-Test Counselling — Key Components?** | Informed Consent, Implications (Medical/Reproductive/Psychosocial), Confidentiality, Limitations, Cost. |
+| **VUS — Management?** | **Not Actionable**, Do Not Use for Clinical Decisions, Reclassification Follow-Up, Surveillance per Clinical/FH. |
+| **PGT Types — PGT-M vs PGT-A vs PGT-SR?** | **PGT-M**: Monogenic (BRCA, Lynch); **PGT-A**: Aneuploidy (Age, RIF); **PGT-SR**: Structural Rearrangement. |
+| **GINA vs GDPR — Difference?** | **GINA**: US, Health Insurance/Employment Protection; **GDPR**: EU/UK, Data Protection, Consent, Erasure. |
+| **VUS — Actionable?** | **No** — Not Used for Clinical Decisions, Reclassification Follow-Up. |
+| **Duty to Warn Relatives — Legal/Ethical?** | **Ethical Duty** (Confidentiality vs Duty to Warn); **Clinical Judgement**, **Genetic Counselling Facilitates**. |
+
+---
+
+## 9. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Cascade vs Population Screening** | **Cascade**: Targeted to Relatives of Known Carrier; **Population**: Universal Offer |
+| **PGT-M vs PGT-A** | **PGT-M**: Monogenic (BRCA, Lynch); **PGT-A**: Aneuploidy (Age, RIF) |
+| **VUS vs Pathogenic** | **VUS**: Uncertain Significance, Not Actionable; **Pathogenic**: Class 4/5, Actionable |
+| **GINA vs GDPR** | **GINA**: US, Health Insurance/Employment; **GDPR**: EU/UK, Data Protection, Consent |
+| **Predictive vs Diagnostic Testing** | **Predictive**: Asymptomatic, Known Familial Mutation; **Diagnostic**: Symptomatic, Confirm Diagnosis |
+| **PGT-M vs PGT-SR** | **PGT-M**: Single Gene (BRCA, Lynch); **PGT-SR**: Chromosomal Rearrangement (Translocation) |
+
+**Mnemonic: GENETIC-COUNSEL**
+- **G**enetic Counselling: **Pre/Post-Test**, **Informed Consent**, **Implications**
+- **E**ligibility: **CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi**
+- **N**egative Result: **Residual Risk**, Not Exclusion
+- **E**thical: **Autonomy, Beneficence, Non-Maleficence, Justice**
+- **T**est Types: **PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)**
+- **I**nformed Consent: **Voluntary, Written, Right to Withdraw**
+- **C**ascade Testing: **Index → Germline → Relatives (50% AD)**
+- **A**utonomy: **Right to Know/Not Know**, Withdrawal Right
+- **L**egal: **GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)**
+- **S**ensitivity: **Psychosocial Support**, **Non-Directive Counselling**
+- **E**thical Duty: **Duty to Warn vs Confidentiality** (Clinical Judgement)
+- **L**egal Frameworks: **GINA (US), GDPR (EU), Equality Act (UK)**
+
+---
+
+## 10. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Indications** | CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi |
+| **Cascade** | Index → Germline → Relatives (50% AD) |
+| **Pre-Test** | Informed Consent, Implications, Confidentiality, VUS/Limitations |
+| **Post-Test** | Positive: Cascade + Mgmt; Negative: Residual Risk; VUS: Not Actionable |
+| **PGT** | PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural) |
+| **Legal** | GINA (US), GDPR (EU/UK), Concordat (Insurance) |
+| **VUS** | Not Actionable, Reclassification Follow-Up |
+
+---
+
+## 11. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 12. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Indications for Testing | | |
+| Counselling Process | | |
+| Cascade Testing | | |
+| PGT Types | | |
+| VUS Management | | |
+| Legal/Ethical Frameworks | | |
+
+---
+
+## 13. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Lynch Syndrome]], [[FAP]], [[BRCA1/2]], [[Li-Fraumeni]], [[Cascade Testing]], [[PGT]], [[Amsterdam II]], [[Bethesda Criteria]], [[PGT-M]], [[PGT-A]], [[PGT-SR]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 14. MCQs (10)
+
+
+**1.** Regarding Genetic Counselling & Testing (Indications for Testing), which statement is correct?
+   A. CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi
+   B. CRC - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi
+
+
+**2.** Regarding Genetic Counselling & Testing (Cascade Testing), which statement is correct?
+   A. Index → Germline → Relatives (50% AD Inheritance)
+   B. Index - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Index → Germline → Relatives (50% AD Inheritance)
+
+
+**3.** Regarding Genetic Counselling & Testing (Pre-Test Counselling), which statement is correct?
+   A. Informed Consent, Implications, Confidentiality, Limitations
+   B. Informed - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Informed Consent, Implications, Confidentiality, Limitations
+
+
+**4.** Regarding Genetic Counselling & Testing (Post-Test), which statement is correct?
+   A. Positive: Medical Mgmt + Cascade
+   B. Positive: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable
+
+
+**5.** Regarding Genetic Counselling & Testing (PGT Types), which statement is correct?
+   A. PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)
+   B. PGT-M - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)
+
+
+**6.** Regarding Genetic Counselling & Testing (Legal), which statement is correct?
+   A. GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)
+   B. GINA - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)
+
+
+**7.** Regarding Genetic Counselling & Testing (VUS), which statement is correct?
+   A. Not Actionable, Do Not Use for Clinical Decisions
+   B. Not - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Not Actionable, Do Not Use for Clinical Decisions
+
+
+**8.** Regarding Genetic Counselling & Testing (FCPS/MRCP High Yield - Genetic), which statement is correct?
+   - A. FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pa
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate M...
+
+
+**9.** Regarding Genetic Counselling & Testing (Pre/Post-Test Counselling), which statement is correct?
+   - A. Pre/Post-Test Counselling
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Pre/Post-Test Counselling
+
+
+**10.** Regarding Genetic Counselling & Testing (PGT (PGT-M, PGT-A, PGT-SR)), which statement is correct?
+   - A. PGT (PGT-M, PGT-A, PGT-SR)
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — PGT (PGT-M, PGT-A, PGT-SR)
+
+
+## 15. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi
+   - B. CRC (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. Index → Germline → Relatives (50% AD Inheritance)
+   - B. Index (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: Index → Germline → Relatives (50% AD Inheritance)
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. Informed Consent, Implications, Confidentiality, Limitations
+   - B. Informed (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: Informed Consent, Implications, Confidentiality, Limitations
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. Positive: Medical Mgmt + Cascade
+   - B. Positive: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)
+   - B. PGT-M (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)
+   - B. GINA (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. Not Actionable, Do Not Use for Clinical Decisions
+   - B. Not (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: Not Actionable, Do Not Use for Clinical Decisions
+
+
+**8.** A clinician encounters a patient with this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pa
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate M...
+
+
+**9.** On further evaluation, the finding is confirmed. Most appropriate next step:
+   - A. Pre/Post-Test Counselling
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Pre/Post-Test Counselling
+
+
+**10.** The patient asks about management options. Best evidence-based response:
+   - A. PGT (PGT-M, PGT-A, PGT-SR)
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — PGT (PGT-M, PGT-A, PGT-SR)
+
+
+## 16. Flashcards
+
+**Q1:** Indications for Testing?
+**A1:** CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi
+
+**Q2:** Cascade Testing?
+**A2:** Index → Germline → Relatives (50% AD Inheritance)
+
+**Q3:** Pre-Test Counselling?
+**A3:** Informed Consent, Implications, Confidentiality, Limitations
+
+**Q4:** Post-Test?
+**A4:** Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable
+
+**Q5:** PGT Types?
+**A5:** PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)
+
+**Q6:** Legal?
+**A6:** GINA (US), GDPR/Equality Act (UK), Concordat (Insurance)
+
+**Q7:** VUS?
+**A7:** Not Actionable, Do Not Use for Clinical Decisions
+
+
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 8 | A | FCPS/MRCP High Yield - Genetic Counselling | FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate M |
+| 9 | A | Pre/Post-Test Counselling | Pre/Post-Test Counselling |
+| 10 | A | PGT (PGT-M, PGT-A, PGT-SR) | PGT (PGT-M, PGT-A, PGT-SR) |
+| 11 | A | Ethical/Legal (GINA, GDPR, Insurance) | Ethical/Legal (GINA, GDPR, Insurance) |
+| 12 | A | Hereditary Syndromes (Lynch, FAP, BRCA1/2, Li-Frau | Hereditary Syndromes (Lynch, FAP, BRCA1/2, Li-Fraumeni, VHL, MEN) |
+| 13 | A | CRC <50 years | CRC <50 years: Lynch, FAP, MAP, PPAP, PJS, JPS, PTEN |
+| 14 | A | TNBC <60 years | TNBC <60 years: BRCA1/2, PALB2, CHEK2, ATM |
+| 15 | A | Male Breast Cancer | Male Breast Cancer: BRCA1/2, PALB2, CHEK2 |
+| 16 | A | Ovarian Cancer | Ovarian Cancer: BRCA1/2, Lynch, RAD51C/D, BRIP1 |
+| 17 | A | Pancreatic Cancer | Pancreatic Cancer: BRCA1/2, PALB2, ATM, CDKN2A, Lynch |
+| 18 | A | Prostate Cancer (Metastatic) | Prostate Cancer (Metastatic): BRCA1/2, PALB2, ATM, CHEK2, Lynch |
+| 19 | A | Ashkenazi Jewish Ancestry | Ashkenazi Jewish Ancestry: BRCA1/2 (Founder Mutations) |
+| 20 | A | Multiple Primary Cancers | Multiple Primary Cancers: Lynch, BRCA1/2, TP53, PTEN |
+| 21 | A | Known Family Mutation | Known Family Mutation: Predictive Testing for Relatives |
+| 22 | A | Information Giving | Information Giving: Condition, Inheritance, Penetrance, Cancer Risks |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 8 | A | FCPS/MRCP High Yield - Genetic Counselling | FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate M |
+| 9 | A | Pre/Post-Test Counselling | Pre/Post-Test Counselling |
+| 10 | A | PGT (PGT-M, PGT-A, PGT-SR) | PGT (PGT-M, PGT-A, PGT-SR) |
+| 11 | A | Ethical/Legal (GINA, GDPR, Insurance) | Ethical/Legal (GINA, GDPR, Insurance) |
+| 12 | A | Hereditary Syndromes (Lynch, FAP, BRCA1/2, Li-Frau | Hereditary Syndromes (Lynch, FAP, BRCA1/2, Li-Fraumeni, VHL, MEN) |
+| 13 | A | CRC <50 years | CRC <50 years: Lynch, FAP, MAP, PPAP, PJS, JPS, PTEN |
+| 14 | A | TNBC <60 years | TNBC <60 years: BRCA1/2, PALB2, CHEK2, ATM |
+| 15 | A | Male Breast Cancer | Male Breast Cancer: BRCA1/2, PALB2, CHEK2 |
+| 16 | A | Ovarian Cancer | Ovarian Cancer: BRCA1/2, Lynch, RAD51C/D, BRIP1 |
+| 17 | A | Pancreatic Cancer | Pancreatic Cancer: BRCA1/2, PALB2, ATM, CDKN2A, Lynch |
+| 18 | A | Prostate Cancer (Metastatic) | Prostate Cancer (Metastatic): BRCA1/2, PALB2, ATM, CHEK2, Lynch |
+| 19 | A | Ashkenazi Jewish Ancestry | Ashkenazi Jewish Ancestry: BRCA1/2 (Founder Mutations) |
+| 20 | A | Multiple Primary Cancers | Multiple Primary Cancers: Lynch, BRCA1/2, TP53, PTEN |
+| 21 | A | Known Family Mutation | Known Family Mutation: Predictive Testing for Relatives |
+| 22 | A | Information Giving | Information Giving: Condition, Inheritance, Penetrance, Cancer Risks |## Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Indications for Testing | CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi |
+| 2 | A | Cascade Testing | Index → Germline → Relatives (50% AD Inheritance) |
+| 3 | A | Pre-Test Counselling | Informed Consent, Implications, Confidentiality, Limitations |
+| 4 | A | Post-Test | Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable |
+| 5 | A | PGT Types | PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural) |
+| 6 | A | Legal | GINA (US), GDPR/Equality Act (UK), Concordat (Insurance) |
+| 7 | A | VUS | Not Actionable, Do Not Use for Clinical Decisions |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Indications for Testing | CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi |
+| 2 | A | Cascade Testing | Index → Germline → Relatives (50% AD Inheritance) |
+| 3 | A | Pre-Test Counselling | Informed Consent, Implications, Confidentiality, Limitations |
+| 4 | A | Post-Test | Positive: Medical Mgmt + Cascade; Negative: Residual Risk; VUS: Not Actionable |
+| 5 | A | PGT Types | PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural) |
+| 6 | A | Legal | GINA (US), GDPR/Equality Act (UK), Concordat (Insurance) |
+| 7 | A | VUS | Not Actionable, Do Not Use for Clinical Decisions |
+
+
+**Q8:** FCPS/MRCP High Yield - Genetic Counselling?
+**A8:** FCPS/MRCP High Yield - Genetic Counselling: Indications (CRC <50, TNBC <60, Male Breast, Ovarian, Pancreatic, Prostate Met, FH, Ashkenazi)
+## 17. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Cancer Screening & Prevention|Cancer Screening & Prevention]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

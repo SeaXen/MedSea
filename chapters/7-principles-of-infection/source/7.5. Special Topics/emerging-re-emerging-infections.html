@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Emerging Re Emerging Infections — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.5. SPECIAL TOPICS</span>
+      <div class="h1">Emerging Re Emerging Infections</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define <b>emerging, re-emerging, and deliberately emerging</b> infections and give three examples of each.</li><li>Describe the <b>CLIMATIC</b> mnemonic of drivers of emergence and apply it to at least four examples.</li><li>Explain the <b>One Health</b> framework (human–animal–environment) and the role of the Quadripartite (WHO/FAO/WOAH/UNEP).</li><li>Outline the mechanisms of <b>zoonotic spillover</b> (reservoir, intermediate host, route of exposure, host susceptibility).</li><li>List and describe the <b>WHO R&amp;D Blueprint priority pathogens</b> (COVID-19, CCHF, Ebola/Marburg, Lassa, MERS/SARS, Nipah, RVF, Zika, Disease X).</li><li>Describe the key clinical/epidemiological features of <b>HIV/AIDS 1981, SARS-CoV 2002–03, H5N1 1997, H1N1 2009, MERS-CoV 2012, Ebola 2014, Zika 2015, COVID-19 2019, mpox 2022, Nipah, Hendra, SFTSV, C. auris</b>.</li><li>Discuss <b>climate change</b> effects on vector-borne, water-borne, food-borne and zoonotic disease patterns.</li><li>Explain the role of <b>AMR, horizontal gene transfer, viral reassortment, and gain-of-function research</b> in emergence.</li><li>Describe the <b>IHR (2005), GOARN, EWRS, EIOS, GISAID, Nextstrain, CEPI, Gavi, GPMB, GHSA, BTWC</b> and their roles in global preparedness and response.</li><li>Discuss the <b>biosecurity / bioweapon</b> dimension, including the BTWC, dual-use research of concern (DURC), gain-of-function oversight, and synthetic biology risks.</li><li>Recognise <b>future threats</b>: H5N1 mammalian spillover, <i>Candida auris</i>, <i>Coccidioides</i> warming, <i>Naegleria fowleri</i> warming, vector range expansion, AMR fungi, AI-engineered pathogens.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Emerging infection**</td><td>An infection that has **newly appeared** in a population, or has **existed previously but is rapidly increasing in incidence or geographic range** (e.g., HIV/AIDS 1981, COVID-19 2019, mpox 2022). Includes newly recognised agents.</td></tr><tr><td>**Re-emerging infection**</td><td>An infection that was **previously controlled** (vaccination, sanitation, antibiotics) but is **resurging** in incidence or geographic range (e.g., MDR-TB, measles, diphtheria, cholera, dengue, yellow fever, plague, pertussis).</td></tr><tr><td>**Deliberately emerging infection**</td><td>An infection resulting from **intentional release** (bioweapon, bioterrorism) or from **laboratory escape/synthetic biology** (e.g., 1979 Sverdlovsk anthrax, 2001 US anthrax letters, theoretical smallpox/1918 flu reconstruction).</td></tr><tr><td>**Disease X (WHO)**</td><td>A **placeholder** in the WHO R&D Blueprint for an **unknown pathogen** with pandemic potential. Drives platform technologies (mRNA, viral vector, broad-spectrum antivirals) to be ready in advance.</td></tr><tr><td>**Zoonosis / Zoonotic spillover**</td><td>Transmission of a pathogen from a **vertebrate animal to a human**. May be direct (rabies), via vector (Lyme, plague), via intermediate/amplifying host (Nipah via pig, SARS via palm civet), or via environment (Hantavirus, *Legionella*). 60–75 % of emerging infections are zoonotic.</td></tr><tr><td>**Reservoir**</td><td>The long-term host of a pathogen (e.g., bats for many RNA viruses, rodents for hantaviruses, birds for influenza A).</td></tr><tr><td>**Intermediate / amplifying host**</td><td>A species in which the pathogen **replicates to high titres** and is more readily transmitted to humans (e.g., pigs for Nipah, civets for SARS, camels for MERS, cattle for H5N1 in some outbreaks).</td></tr><tr><td>**Spillover**</td><td>Cross-species transmission event from animal to human; usually inefficient (single/sporadic cases), but can become efficient with adaptation.</td></tr><tr><td>**R₀ (Basic reproduction number)**</td><td>Average number of secondary cases generated by one primary case in a **fully susceptible** population. R₀ > 1 = outbreak; R < 1 = control. Measles 12–18, COVID-19 (ancestral) 2.5–3, Ebola 1.5–2.5, MERS < 1, H5N1 < 1 (so far).</td></tr><tr><td>**R<sub>t</sub> / Effective R**</td><td>R at time t accounting for immunity and interventions. Used to track outbreak control.</td></tr><tr><td>**One Health**</td><td>Integrated approach recognising that **human health is connected to animal health and the shared environment**. Joint surveillance, risk assessment, and response across sectors.</td></tr><tr><td>**Quadripartite**</td><td>**WHO + FAO + WOAH (formerly OIE) + UNEP** — the four UN bodies coordinating One Health globally (since 2022).</td></tr><tr><td>**Tripartite**</td><td>WHO + FAO + WOAH (pre-2022 One Health collaboration).</td></tr><tr><td>**IHR (International Health Regulations 2005)**</td><td>Legally binding framework for 196 States Parties to report public health events of international concern; **notify WHO within 24 h**; develop core capacities (surveillance, response, points of entry, zoonoses, biosafety).</td></tr><tr><td>**PHEIC (Public Health Emergency of International Concern)**</td><td>A formal WHO declaration (via IHR Emergency Committee) that an extraordinary event constitutes a global risk to public health. Examples: H1N1 (2009), polio (2014), Ebola (2014, 2019), Zika (2016), COVID-19 (2020–2023), mpox (2022, 2024).</td></tr><tr><td>**Disease X (WHO R&D Blueprint)**</td><td>A deliberately unknown pathogen used to drive **platform preparedness** so that the world is not caught unaware.</td></tr><tr><td>**WHO R&D Blueprint**</td><td>WHO framework (since 2015) prioritising R&D for pathogens with epidemic potential; lists priority diseases to accelerate vaccines, therapeutics, and diagnostics.</td></tr><tr><td>**CEPI (Coalition for Epidemic Preparedness Innovations)**</td><td>Global partnership founded 2017 (Davos) to finance and coordinate development of **vaccines against epidemic threats**; led COVAX during COVID-19.</td></tr><tr><td>**Gavi (Global Alliance for Vaccines and Immunisation)**</td><td>Public-private partnership financing vaccine introduction in low-income countries. Co-led COVAX with CEPI.</td></tr><tr><td>**GOARN (Global Outbreak Alert and Response Network)**</td><td>WHO-coordinated network of > 300 institutions that deploys multi-disciplinary teams to support outbreak response worldwide.</td></tr><tr><td>**EWRS (Early Warning and Response System, EU)**</td><td>EU-level platform for early warning and coordinated response to cross-border health threats.</td></tr><tr><td>**EIOS (Epidemic Intelligence from Open Sources)**</td><td>WHO-led initiative scanning open-source data (news, social media, official reports) for early signals of outbreaks.</td></tr><tr><td>**ProMED-mail**</td><td>**Program for Monitoring Emerging Diseases** — internet-based reporting system (1994+) for emerging infectious diseases in humans, animals, and plants. Free, open.</td></tr><tr><td>**GISAID (Global Initiative on Sharing All Influenza Data)**</td><td>Public-access database sharing influenza and SARS-CoV-2 genomic sequences. Central to COVID-19 variant tracking.</td></tr><tr><td>**Nextstrain**</td><td>Open-source project providing real-time **phylogenetic tracking** of evolving pathogens (SARS-CoV-2, influenza, mpox, RSV, dengue).</td></tr><tr><td>**BTWC (Biological Weapons Convention, 1972)**</td><td>Multilateral treaty banning development, production, stockpiling of biological weapons; lacks robust verification (no binding protocol since US 2001 withdrawal).</td></tr><tr><td>**DURC (Dual-Use Research of Concern)**</td><td>Research with legitimate beneficial intent that could be **misused** to threaten public health (e.g., enhanced virulence, transmissibility, host range, immune evasion).</td></tr><tr><td>**GOF (Gain-of-Function) research**</td><td>Research that enhances a pathogen's transmissibility, virulence, or host range. Controversial e.g. H5N1 ferret-airborne experiments (Fouchier, Kawaoka 2011–2012).</td></tr><tr><td>**AMR (Antimicrobial Resistance)**</td><td>Microbial adaptation to antimicrobials; key **re-emerging** driver. Mechanisms: mutation, HGT (plasmids, transposons, integrons, phages).</td></tr><tr><td>**Horizontal gene transfer (HGT)**</td><td>Conjugation, transformation, transduction — drives rapid AMR spread across species. Critical in *Klebsiella*, *Acinetobacter*, *Pseudomonas*.</td></tr><tr><td>**Reassortment**</td><td>Exchange of genome segments between co-infecting influenza A viruses (e.g., H1N1 2009 swine-flu triple reassortant).</td></tr><tr><td>**Antigenic drift**</td><td>Gradual accumulation of point mutations in HA/NA → seasonal influenza escape; needs annual vaccine update.</td></tr><tr><td>**Antigenic shift**</td><td>Major change in HA/NA via reassortment → pandemic strains (H1N1 2009, H2N2 1957, H3N2 1968).</td></tr><tr><td>**Wastewater surveillance**</td><td>Population-level detection of pathogens (polio, SARS-CoV-2, influenza, RSV, mpox) in sewage; early-warning for community transmission.</td></tr><tr><td>**Spillback / Reverse zoonosis**</td><td>Transmission from humans back to animals (e.g., SARS-CoV-2 in mink, deer, hamsters; mpox in rodents).</td></tr><tr><td>**Climate sensitivity index**</td><td>Likelihood that a disease's distribution is influenced by climate (e.g., vector-borne, water-borne, food-borne).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Framework — Definitions, Categories, Burden</div>
+<p>#### The Three Categories of Emergence</p>
+<ol><li><b>Emerging</b> — newly recognised, newly evolved, or newly arrived in humans</li></ol>
+<ul><li>HIV/AIDS (1981, cross-species SIVcpz from chimpanzee, recognised retrospectively from 1950s spillover)</li><li>SARS-CoV (2002–03, bat → palm civet → human, Guangdong)</li><li>H5N1 avian influenza (1997, Hong Kong; re-emerged and now panzootic in wild birds, mammals, dairy cattle)</li><li>H1N1 swine influenza (2009, triple-reassortant swine flu)</li><li>MERS-CoV (2012, bat → dromedary camel → human, Arabian Peninsula)</li><li><i>Clostridioides difficile</i> ribotype 027 (NAP1) (early 2000s, North America/Europe)</li><li><i>Candida auris</i> (2009, simultaneously on 3 continents; possibly climate-driven)</li><li>Ebola Zaire (2014, West Africa, largest ever; 2018–20 DRC Kivu)</li><li>Zika (2015–16, Brazil, microcephaly, GBS)</li><li>COVID-19 (2019–2023, SARS-CoV-2, global pandemic)</li><li>mpox (2022 global, Clade IIb; 2023–24 Clade I in DRC and global spread)</li><li><b>Nipah, Hendra, SFTSV, Bourbon, Heartland</b> viruses</li></ul>
+<ol><li><b>Re-emerging</b> — previously controlled, now resurging</li></ol>
+<ul><li><b>TB</b> (MDR-TB, XDR-TB, totally drug-resistant TB)</li><li><b>Dengue</b> (urbanisation, climate; 5-fold global increase since 2000)</li><li><b>Yellow fever</b> (deforestation, vaccine gaps, urban <i>Aedes aegypti</i> re-infestation)</li><li><b>Cholera</b> (Yemen 2016–22, Haiti 2010+, Zimbabwe 2018)</li><li><b>Measles</b> (vaccine hesitancy; &gt; 200 000 deaths in 2019; 2022–23 outbreaks in DRC, India, Pakistan)</li><li><b>Diphtheria</b> (Bangladesh 2017–18 Rohingya camps; Yemen; Russia 1990s)</li><li><b>Pertussis</b> (waning immunity, vaccine refusal)</li><li><b>Plague</b> (Madagascar 2017 urban pneumonic plague)</li><li><b>Polio</b> (cVDPV outbreaks 2018+ in Pakistan, Afghanistan, DRC, Yemen, Africa)</li><li><b>Syphilis, gonorrhoea, chlamydia</b> (resistance, behavioural change)</li><li><b>AMR</b> (CRE, CRAB, MRSA, XDR-TB, drug-resistant <i>Salmonella</i> Typhi, drug-resistant <i>Neisseria gonorrhoeae</i>, <i>Candida auris</i>)</li></ul>
+<ol><li><b>Deliberately emerging</b> — intentional release, bioweapon, or laboratory/synthetic biology</li></ol>
+<ul><li>1979 Sverdlovsk anthrax (USSR; accidental aerosolised <i>B. anthracis</i> spores)</li><li>2001 US anthrax letters (<i>B. anthracis</i> Ames, 22 cases, 5 deaths)</li><li>1984 Rajneeshee salmonellosis (<i>Salmonella</i> Typhimurium, Oregon, 751 cases)</li><li>Aum Shinrikyo Tokyo attacks (1990s, anthrax attempts)</li><li>Theoretical: smallpox weaponisation, 1918 H1N1 reconstruction, synthetic 1918-like influenza (Tumpey 2005), horsepox synthesis (2017)</li></ul>
+<p>#### Why Does Emergence Matter?</p>
+<ul><li><b>~60–75 %</b> of emerging infections are zoonotic (originate in animals).</li><li><b>&gt; 5 new emerging infectious diseases per year</b> (Jones et al. 2008; ongoing trend).</li><li>Cost: COVID-19 alone &gt; $10 trillion economic loss, &gt; 7 million deaths (2020–24).</li><li>AMR projected to cause <b>10 million deaths/year by 2050</b> (O'Neill 2016) if unchecked.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Drivers of Emergence — The CLIMATIC Mnemonic</div>
+<p><b>C — Climate change</b></p>
+<ul><li><b>Vector-borne</b>: range expansion of <i>Aedes aegypti/albopictus</i> → dengue, chikungunya, Zika now in southern Europe, southern US, Japan.</li><li><i>Aedes albopictus</i> established in Europe since 1990s (Italy, France, Spain).</li><li><b>Malaria</b> at altitude in East Africa highlands; resurgence in previously controlled zones.</li><li><b>Tick-borne</b>: Lyme (temperate expansion), <i>Hyalomma</i> ticks (Crimean-Congo HFV) moving north in Europe.</li><li><b>Water-borne/food-borne</b>: <i>Vibrio cholerae</i> (El Niño, sea surface temperature), <i>Vibrio vulnificus</i> (warming seas, more skin infections in temperate zones), <i>Naegleria fowleri</i> (warming freshwater → primary amoebic meningoencephalitis).</li><li><b>Fungal</b>: <i>Coccidioides immitis/posadasii</i> (valley fever) expanding north in US; <i>Histoplasma capsulatum</i> expansion; <i>Candida auris</i> may have emerged due to thermal tolerance in warming environments (Casadevall 2019 hypothesis).</li><li><b>Algal blooms</b> (cyanobacteria) → toxins (microcystins), shellfish poisoning.</li><li><b>Extreme weather</b> (floods, cyclones, droughts) → Leptospira (post-flood leptospirosis), cholera, rodent-borne disease.</li></ul>
+<p><b>L — Land use / Urbanisation / Deforestation</b></p>
+<ul><li><b>Deforestation</b> brings humans into bat/rodent habitats (Ebola in West Africa, Nipah in Malaysia/Bangladesh/India).</li><li><b>Fragmentation</b> increases human–wildlife contact.</li><li><b>Wildlife trade / wet markets</b> → direct contact with reservoir species (SARS-CoV 2003, likely COVID-19).</li><li><b>Livestock intensification</b> → large numbers of genetically similar hosts in close quarters (avian influenza H5N1, H5N6, H7N9, H9N2, swine flu).</li><li><b>Urbanisation</b> → slum crowding, poor WASH, <i>Aedes</i> breeding sites (dengue, Zika, chikungunya, yellow fever, urban YF), rat-borne diseases (leptospirosis, hantavirus, plague, murine typhus).</li><li><b>Dam construction / irrigation</b> → mosquito breeding (Rift Valley fever, malaria, Japanese encephalitis, schistosomiasis).</li><li><b>Mining / oil exploration</b> → forest encroachment (Marburg 2017 DRC, Ebola outbreaks).</li></ul>
+<p><b>I — International travel / Trade</b></p>
+<ul><li><b>Volume</b>: &gt; 4 billion air passengers/year; &lt; 36 h from any tropical hotspot to a major global city.</li><li>Examples: <b>SARS-CoV</b> 2002–03 spread to 26 countries in weeks; <b>COVID-19</b> seeded globally by January 2020; <b>H1N1</b> 2009 spread worldwide in &lt; 6 weeks; <b>MERS</b> exported by travellers (Korea 2015, UK 2013).</li><li><b>Food trade</b> spreads foodborne pathogens (<i>Salmonella</i>, STEC, <i>Cyclospora</i>, hepatitis A in berries).</li><li><b>Live animal trade</b> spreads zoonoses, vectors, <i>C. auris</i> (intercontinental).</li><li><b>Mosquito transport</b> in tyres/lucky bamboo (<i>Aedes albopictus</i> global spread).</li><li><b>Ships' ballast water</b> → <i>V. cholerae</i> dissemination.</li></ul>
+<p><b>M — Microbial adaptation / AMR / Horizontal gene transfer / Reassortment</b></p>
+<ul><li><b>AMR</b>: misuse of antibiotics in humans, agriculture, aquaculture drives <b>re-emerging</b> infections. <i>NDM-1</i> carbapenemase spread from India across the globe via medical tourism. <i>mcr-1</i> colistin resistance from Chinese pigs.</li><li><b>HGT</b>: conjugative plasmids, integrons, transposons spread resistance and virulence genes (e.g., <i>bla</i>&lt;sub&gt;KPC&lt;/sub&gt;, <i>bla</i>&lt;sub&gt;NDM&lt;/sub&gt;, <i>bla</i>&lt;sub&gt;OXA-48&lt;/sub&gt; in Enterobacterales; <i>bla</i>&lt;sub&gt;OXA-23&lt;/sub&gt; in <i>Acinetobacter</i>).</li><li><b>Viral reassortment</b>: influenza pandemic strains via segmented genome exchange (H1N1 2009 = swine + avian + human segments).</li><li><b>Antigenic drift</b>: seasonal flu, HIV escape.</li><li><b>Recombination</b>: coronaviruses, enteroviruses, norovirus (pandemic GII.4 Sydney 2012).</li><li><b>Host range expansion</b>: adaptation mutations (SARS-CoV-2 furin cleavage site; H5N1 PB2 627K in mammals).</li><li><b>Virulence factor acquisition</b>: <i>Streptococcus pyogenes</i> hypervirulent M1&lt;sub&gt;UK&lt;/sub&gt;; <i>Klebsiella</i> K1/K2 capsular types.</li></ul>
+<p><b>A — Animal–human interface / Zoonoses</b></p>
+<ul><li>~ 60–75 % emerging infections are zoonotic.</li><li><b>Livestock</b>: H5N1, H5N6, H7N9, H9N2 (poultry); Nipah (pigs); brucellosis, bovine TB, anthrax, Q fever.</li><li><b>Wildlife</b>: bats (Ebola, Marburg, SARS-CoVs, MERS-CoV, Nipah, Hendra, lyssaviruses); rodents (hantaviruses, Lassa, plague, leptospirosis); primates (HIV, Ebola, monkeypox); ungulates (Rift Valley fever).</li><li><b>Companion animals</b>: dogs (rabies), cats (toxoplasmosis, cat-scratch), reptiles (<i>Salmonella</i>).</li><li><b>Reverse zoonosis / spillback</b>: SARS-CoV-2 → mink, deer, hamsters, lions/tigers; mpox → pet prairie dogs; TB → badgers; <i>E. coli</i> ST131 → dogs.</li><li><b>One Health</b> essential to manage the interface.</li></ul>
+<p><b>T — Technology / Medical practice</b></p>
+<ul><li><b>Organ transplantation</b> → donor-derived infections (rabies, West Nile, HIV, Strongyloides, Chagas, <i>Balamuthia</i>, lymphocytic choriomeningitis virus).</li><li><b>Blood transfusion</b> → HIV, HCV, HBV, WNV, Zika, babesiosis.</li><li><b>Immunosuppression</b> (transplant, biologics, chemotherapy) → reactivation (TB, HBV, JC virus, Strongyloides) and opportunistic infection (PJP, CMV, BK, EBV-PTLD, <i>Aspergillus</i>, <i>C. auris</i>).</li><li><b>Invasive devices</b> → biofilms, HCAI (already in HAI note).</li><li><b>Massive monoculture agriculture</b> → new ecological niches.</li><li><b>Climate manipulation / synthetic biology</b> (see DURC, bioweapon).</li><li><b>Antibiotic / antifungal overuse</b> → AMR (above).</li></ul>
+<p><b>I — Inadequate surveillance / Public health infrastructure</b></p>
+<ul><li><b>Weak surveillance</b> in low-income / conflict settings delays detection (Ebola 2014 delay 3 months; COVID-19 early weeks).</li><li><b>Poor lab capacity</b> (genomic, isolation, BSL-3/4) limits early characterisation.</li><li><b>Insufficient IHR core capacities</b> (&gt; 100 countries not fully compliant as of 2024 JEE reports).</li><li><b>Underreporting / underdiagnosis</b>: deaths often misclassified (malaria in children, COVID-19 early in China).</li><li><b>Wildlife markets / farming</b> weakly regulated.</li><li><b>Trade in bushmeat, exotic pets, illegal ivory / pangolin</b> continues despite CITES.</li><li><b>Climate, water, sanitation gaps</b> in LMIC → cholera, typhoid, hepatitis E.</li><li><b>Conflict / displacement</b> → measles, cholera, diphtheria, leishmaniasis, TB, malnutrition-associated infection.</li></ul>
+<p><b>C — Conflict / Biosecurity</b> (often added as 9th driver)</p>
+<ul><li><b>Conflict</b> displaces populations, collapses vaccination, sanitation, IPC: Syria (polio 2013, measles 2013), Yemen (cholera 2016+), DRC (Ebola, measles, plague), Ukraine (war-related TB, AMR), Gaza (post-2023 infectious disease surge), Tigray.</li><li><b>Bioweapons</b>: state and non-state actors (historical — anthrax, plague, tularaemia, smallpox, botulinum, ricin, <i>B. pseudomallei</i>).</li><li><b>Dual-use research</b> (DURC) and <b>gain-of-function</b> (H5N1 ferret airborne transmission, Fouchier 2011).</li><li><b>Synthetic biology</b> → potential to recreate or engineer pathogens (2010 Mycoplasma mycoides (JCVI) — first synthetic cell; 2017 horsepox synthesis; 2018–2020 <i>Gene Drive</i> work).</li></ul>
+<p><b>A — Anti-vaccine movement / Social media misinformation</b> (often added as 10th driver)</p>
+<ul><li>Vaccine hesitancy (WHO listed among top 10 global health threats 2019).</li><li>Re-emergence of <b>measles</b> (Samoa 2019, 5700+ cases, 83 deaths), <b>diphtheria</b>, <b>pertussis</b>, <b>polio (cVDPV)</b>.</li><li><b>Social media misinformation</b>: 5G-COVID conspiracy, ivermectin, bleach, "plandemic" — undermines response.</li><li><b>Erosion of trust</b> in institutions, science, vaccines.</li><li><b>Pandemic fatigue</b> and behavioural fatigue reduce compliance with NPI.</li></ul>
+<div class="callout"><b>One-line summary:</b> <b>CLIMATIC + 2</b> — Climate, Land, International travel, Microbial adaptation, Animal interface, Technology, Inadequate surveillance + Conflict + Anti-vaccine (CLIMATIC-CAV).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: One Health — The Integrated Approach</div>
+<p>#### Definition One Health is a <b>collaborative, multisectoral, transdisciplinary</b> approach — working at the <b>local, regional, national, and global levels</b> — to achieve <b>optimal health outcomes</b> recognising the interconnection between <b>people, animals, plants, and their shared environment</b>.</p>
+<p>#### Governance</p>
+<ul><li><b>Tripartite</b> (WHO + FAO + WOAH, since 2010) — formalised the One Health approach. In 2022, <b>UNEP</b> (UN Environment Programme) joined → <b>Quadripartite</b>.</li><li><b>One Health High-Level Expert Panel (OHHLEP)</b> — independent scientific advisory body.</li><li>National One Health platforms: e.g., US OHHRP, UK OH-CC, India OH, Africa CDC.</li></ul>
+<p>#### Operational Examples</p>
+<ul><li><b>Joint risk assessment</b> for zoonoses (e.g., HPAI H5N1, RVF, brucellosis).</li><li><b>Integrated surveillance</b> in wildlife, livestock, and humans (e.g., GLEWS — Global Early Warning System for animal diseases including zoonoses).</li><li><b>Joint outbreak investigation</b>: OH teams for Hendra (Australia), Nipah (Bangladesh/India), RVF (Kenya).</li><li><b>Antimicrobial stewardship</b> across human and animal sectors (EU bans growth-promoter antibiotics, US FDA Guidance 209/213).</li><li><b>Wet market regulation</b> and wildlife trade (WHO 2021 advisory).</li><li><b>Lab biosafety and biosecurity</b> (WHO 2020 guidance, ISO 35001).</li><li><b>Climate and biodiversity</b> integrated into outbreak risk (IPBES 2020 workshop on biodiversity and pandemics).</li></ul>
+<p>#### One Health Zoonotic Priority Pathogens (WHO/FAO/WOAH 2022 list)</p>
+<ul><li><b>Filoviruses</b> (Ebola, Marburg)</li><li><b>Coronaviruses</b> (SARS, MERS, SARS-CoV-2)</li><li><b>Henipaviruses</b> (Nipah, Hendra)</li><li><b>Influenza A</b> (H5, H7, H9 subtypes; H1N1 pandemic)</li><li><b>Rabies / Rhabdoviruses</b></li><li><b>Bacterial zoonoses</b>: <i>Brucella</i>, <i>Bacillus anthracis</i>, <i>Coxiella burnetii</i> (Q fever), <i>Leptospira</i>, <i>Francisella tularensis</i>, <i>Rickettsia prowazekii</i>, <i>Salmonella enterica</i> serovars, <i>Yersinia pestis</i>.</li><li><b>Arboviruses</b>: Rift Valley fever, Crimean-Congo HFV, West Nile, JEV, dengue, Zika, chikungunya.</li><li><b>Protozoa / parasites</b>: <i>Toxoplasma</i>, <i>Echinococcus</i>, <i>Taenia solium</i> (neurocysticercosis), <i>Trypanosoma brucei</i>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Zoonotic Spillover — The Cascade</div>
+<p>Spillover is a <b>multi-step process</b>; most cross-species transmissions fail. Understanding each step enables targeted intervention.</p>
+<p><b>Step 1: Pathogen prevalence in reservoir.</b> Bats, rodents, birds, primates. <b>Step 2: Contact frequency</b> between reservoir and human (or amplifying host).</p>
+<ul><li>Deforestation, hunting, wet markets, livestock intensification, animal farming.</li></ul>
+<p><b>Step 3: Exposure route</b> (respiratory, faecal-oral, vector, bite, contact with body fluids).</p>
+<ul><li>Hendra: bat urine/aerosol to horses → humans.</li><li>Nipah: bat saliva on fruit → pig → human; or bat urine → date palm sap → human.</li><li>Ebola: bat → bushmeat → human, or bat → non-human primate → human, or human–human contact.</li></ul>
+<p><b>Step 4: Host susceptibility factors</b> (genetic, age, immune status, co-infections, malnutrition).</p>
+<ul><li>SARS-CoV-2: ACE2 binding; children less symptomatic.</li><li>Nipah: people in Bangladesh, India — exposure to date palm sap.</li></ul>
+<p><b>Step 5: Within-host replication</b> to a transmissible titre.</p>
+<ul><li>Some spillovers self-terminate (H5N1 in humans, MERS family clusters).</li></ul>
+<p><b>Step 6: Human-to-human transmission</b> (sustained, efficient).</p>
+<ul><li>Most spillover events do NOT progress (dead-end hosts).</li><li>Sustained transmission requires adaptation: e.g., SARS-CoV-2 furin site; H1N1 2009 efficient binding α2,6 sialic acids.</li></ul>
+<p><b>Step 7: Sustained community transmission</b> → epidemic/pandemic potential.</p>
+<div class="callout"><b>Intervention</b> targets each step: - Reduce contact: market closure, PPE, biosecurity. - Reduce exposure: vaccination of livestock (H5N1, brucellosis), bait vaccination of wildlife (rabies), control of vectors, WASH. - Reduce susceptibility: vaccination, prophylaxis, treatment (HIV PEP, rabies PEP). - Early detection &amp; response: surveillance, isolation, contact tracing.</div>
+<p>#### Bats as Special Reservoirs</p>
+<ul><li>&gt; 200 viruses identified in bats; they tolerate viral loads that would be lethal in humans.</li><li>Reasons hypothesised: dampened STING/interferon response, unique DNA repair, flight-related metabolic adaptations, long lifespan with chronic low-level infection.</li><li>Examples of bat-origin viruses: SARS-CoV, SARS-CoV-2, MERS-CoV, Ebola, Marburg, Nipah, Hendra, lyssaviruses, henipaviruses, filoviruses, Tioman, Melaka, coronaviruses HKU9, HKU4/5.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: WHO R&amp;D Blueprint Priority Pathogens</div>
+<p>The Blueprint (revised 2018, 2024) accelerates R&amp;D for pathogens with <b>epidemic potential</b> and <b>no/insufficient countermeasures</b>.</p>
+<table class="ctable"><tr><th>Pathogen</th><th>Family</th><th>R₀ / CFR</th><th>Vectors / Reservoir</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>----------</td><td>----------------------</td><td>-------</td></tr><tr><td>**COVID-19 (SARS-CoV-2)**</td><td>Coronaviridae</td><td>Ancestral R₀ 2.5–3 (Omicron > 10); IFR 0.5–1 %</td><td>Bat → ?intermediate → human</td><td>mRNA, viral vector, subunit vaccines developed in < 1 year.</td></tr><tr><td>**Crimean-Congo haemorrhagic fever (CCHF)**</td><td>Nairoviridae</td><td>CFR 10–40 %</td><td>*Hyalomma* tick → livestock (cattle, sheep, goat) → human; nosocomial</td><td>No approved vaccine for humans; ribavirin used empirically. Tick range expanding in Europe.</td></tr><tr><td>**Ebola virus disease (EVD, Zaire ebolavirus)**</td><td>Filoviridae</td><td>R₀ 1.5–2.5; CFR 40–90 % (avg ~ 50 %)</td><td>Bat reservoir; non-human primates amplifying; human–human via body fluids</td><td>Ervebo (rVSV-ZEBOV) vaccine; mAb (Inmazeb, Ebanga) approved.</td></tr><tr><td>**Marburg virus disease (MARDV)**</td><td>Filoviridae</td><td>CFR 24–88 %</td><td>Bat (Rousettus); non-human primates; human–human</td><td>No approved vaccine (recent trials of cAd3-Marburg and rVSV-MARV); remdesivir/ansuvimab in trials.</td></tr><tr><td>**Lassa fever**</td><td>Arenaviridae (Mammarenavirus)</td><td>CFR 1–15 % (hospitalised ~ 15–20 %)</td><td>Multimammate rat (*Mastomy natalensis*) → human (urine/faeces); nosocomial</td><td>West Africa, ~ 100 000–300 000 cases/year; ribavirin (uncertain benefit); ML29 and VSV-LASV vaccines in trials.</td></tr><tr><td>**MERS-CoV**</td><td>Coronaviridae</td><td>R₀ < 1 (limited human–human); CFR ~ 35 %</td><td>Bat → dromedary camel → human</td><td>No approved vaccine for humans; camel MERS vaccines for livestock under development.</td></tr><tr><td>**SARS-CoV (legacy, preparedness)**</td><td>Coronaviridae</td><td>R₀ 2–4; CFR ~ 10 %</td><td>Bat → civet → human</td><td>Eradicated (2003). Lessons for coronavirus preparedness.</td></tr><tr><td>**Nipah virus disease (NiV)**</td><td>Paramyxoviridae (Henipavirus)</td><td>CFR 40–75 %</td><td>Bat (flying fox) → pig (Malaysia) / date palm sap (Bangladesh, India) / direct (rare); human–human</td><td>No approved vaccine; m102.4 mAb, remdesivir in trials. Bangladesh/India annual spillover; mass-gathering risk.</td></tr><tr><td>**Rift Valley fever (RVF)**</td><td>Phenuiviridae</td><td>CFR 1–35 % (haemorrhagic 50 %)</td><td>*Aedes* mosquito (maintained in eggs) → livestock → mosquito → human; contact with slaughter</td><td>OIE/FAO livestock vaccines; no human vaccine; expanding in Africa/Middle East.</td></tr><tr><td>**Zika virus disease**</td><td>Flaviviridae</td><td>Usually mild; microcephaly, GBS (CFR low)</td><td>*Aedes aegypti/albopictus*; sexual, vertical, blood</td><td>Pandemic 2015–16; no vaccine; vector control + pregnancy advice.</td></tr><tr><td>**Disease X**</td><td>Unknown</td><td>Unknown</td><td>Unknown</td><td>A **placeholder** driving platform R&D (mRNA, viral vector, AI-driven discovery, broad-spectrum antivirals, pan-CoV vaccines).</td></tr></table>
+<div class="callout"><b>Why Disease X matters:</b> COVID-19 was, in retrospect, Disease X. The exercise forces R&amp;D to develop <b>platform technologies</b> so that on emergence of a novel pathogen, vaccine/therapeutic design, manufacture, and trials can begin within weeks (cf. mRNA COVID vaccines 11 months from sequence to emergency use).</div>
+<p>#### Other Important Emerging Pathogens (Watch-list, not top-priority)</p>
+<ul><li><b>Hendra</b> (Henipavirus, Australia, horse → human via bat)</li><li><b>SFTSV</b> (Severe Fever with Thrombocytopenia Syndrome virus, China/Korea/Japan, tick)</li><li><b>Bourbon virus</b> (US, tick)</li><li><b>Heartland virus</b> (US, tick)</li><li><b>Oropouche virus</b> (sloth/midges, Americas)</li><li><b>Mayaro virus</b> (mosquito, South America)</li><li><b>Nipah-related henipaviruses</b> (Cedar virus, Mojiang, Ghanaian bat virus)</li><li><b>Candida auris</b> (multi-drug-resistant fungus)</li><li><b>H5N1 / H5N6 / H7N9 / H9N2</b> avian influenza strains</li><li><b>Enterovirus D68 / A71</b> (acute flaccid myelitis, hand-foot-mouth outbreaks)</li><li>**Highly pathogenic <i>Leptospira</i> serovars**</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: Disease Profiles — Key Examples</div>
+<p>#### HIV / AIDS (1981 — ongoing)</p>
+<ul><li><b>Origin</b>: cross-species transmission of SIVcpz (chimpanzee) in Kinshasa, DRC, ~ 1920s. Spread silently for decades.</li><li><b>Recognition</b>: 1981 — <i>MMWR</i> clusters of <i>Pneumocystis jirovecii</i> pneumonia and Kaposi sarcoma in gay men (San Francisco, NYC).</li><li><b>Pathogen</b>: HIV-1 (groups M, N, O, P); HIV-2 (West Africa).</li><li><b>Burden</b>: 39 million living with HIV (2023); ~ 40 million deaths to date; ~ 1.3 million new infections/year; sub-Saharan Africa 65 % burden.</li><li><b>Control</b>: ART (HAART, integrase inhibitors, cabotegravir/lenacapavir long-acting), PrEP, PEP, PMTCT, harm reduction, U=U, opt-out testing, self-testing.</li><li><b>Lessons for emerging infections</b>: <b>silent spread for 70+ years</b>; the importance of strong public health infrastructure; equitable access to therapy; chronicity changes perception.</li></ul>
+<p>#### SARS-CoV (Severe Acute Respiratory Syndrome Coronavirus, 2002–2003)</p>
+<ul><li><b>Origin</b>: Guangdong, China, Nov 2002; spillover from bat coronavirus via palm civet (and possibly raccoon dog) sold in wet markets.</li><li><b>Spread</b>: 26 countries, 8096 cases, 774 deaths (CFR 9.6 %).</li><li><b>Clinical</b>: fever, dry cough, dyspnoea; lymphopenia; atypical pneumonia; ~ 20 % required ventilation; ARDS, nosocomial super-spreading.</li><li><b>Control</b>: isolation, contact tracing, quarantine, hospital IPC, <b>no vaccine or specific treatment</b>.</li><li><b>Elimination</b>: last case July 2003; chains broken by July 2003; civet markets closed, culling.</li></ul>
+<p>#### H5N1 Highly Pathogenic Avian Influenza (HPAI, 1997 — ongoing)</p>
+<ul><li><b>Origin</b>: 1997 Hong Kong, H5N1 in poultry, 18 cases, 6 deaths. Mass culling of 1.5 million poultry eliminated the line.</li><li><b>Re-emergence</b>: 2003+ Gs/GD lineage spread via migratory waterfowl across Asia, Europe, Africa, and (2014+) North America. Now <b>panzootic</b> in wild birds.</li><li><b>Human cases</b>: 1997+, sporadic clusters. 2003–2024: &gt; 880 human cases, &gt; 460 deaths (CFR ~ 50 %).</li><li><b>Cattle spillover (2022–2024)</b>: H5N1 clade 2.3.4.4b spread to dairy cattle in the US, with viral RNA in milk, occasional human conjunctivitis (1–2 cases, mild), and mammalian adaptation (PB2 627K).</li><li><b>Marine mammals</b>: 2022 massive die-off in Peru (sea lions), with mammal-adapted H5N1 (L226Q in HA).</li><li><b>Pandemic risk</b>: Currently low (H5N1 binds α2,3 sialic acid — avian-type receptors — poorly in human upper airway; R₀ &lt; 1 human-to-human). Concern: mammalian adaptation.</li><li><b>Vaccines</b>: H5N1 stockpiled (MF59-adjuvanted, AS03, inactivated, mRNA in trials).</li></ul>
+<p>#### H1N1 Swine-Origin Influenza A (2009)</p>
+<ul><li><b>Origin</b>: Triple-reassortant H1N1 (swine + avian + human segments) in Mexico, April 2009. Declared PHEIC June 2009; pandemic over Aug 2010.</li><li><b>Spread</b>: 200+ countries, ~ 700 million to 1.4 billion cases; ~ 150 000–575 000 deaths (CFR ~ 0.02 %, similar to seasonal).</li><li><b>Distinct features</b>: severe in young adults, pregnant women, obese, asthmatics.</li><li><b>Vaccine</b>: monovalent H1N1 2009 vaccine developed in 6 months; now incorporated into seasonal vaccine.</li><li><b>Lessons</b>: prepandemic surveillance (Swine H1N1 viruses had been monitored), global response, vulnerable groups (pregnancy, obesity), equity of vaccines.</li></ul>
+<p>#### MERS-CoV (Middle East Respiratory Syndrome, 2012 — ongoing)</p>
+<ul><li><b>Origin</b>: 2012 — isolated from Saudi patient with pneumonia; bat coronavirus; <b>dromedary camel</b> is intermediate host; widespread in Arabian Peninsula, Africa.</li><li><b>Cases (2012–2024)</b>: &gt; 2600 confirmed, ~ 940 deaths (CFR 35 %).</li><li><b>Human-to-human</b>: inefficient (R₀ &lt; 1) — usually clusters in households or hospitals (e.g., Korea 2015 from a returning traveller, 186 cases, 38 deaths, super-spreading in hospitals).</li><li><b>Vaccine</b>: none approved for humans; camel vaccines (MVA-H5, others) in trials.</li></ul>
+<p>#### Ebola Virus Disease (Zaire ebolavirus, 2014 — West Africa)</p>
+<ul><li><b>Index case</b>: 2-year-old in Guéckédou, Guinea, Dec 2013.</li><li><b>Spread</b>: 28 600+ cases, 11 325 deaths (CFR 39–70 %, avg ~ 50 %).</li><li><b>Drivers</b>: weak surveillance; cultural burial practices; cross-border movement; weak IPC in early months; urban spread (Monrovia).</li><li><b>Vaccines</b>: <b>rVSV-ZEBOV (Ervebo)</b> ring vaccination (2015) — first Ebola vaccine; &gt; 300 000 vaccinated; high efficacy.</li><li><b>Treatments</b>: mAb <b>ansuvimab (Ebanga)</b> and <b>atoltivimab/maftivimab/odesivimab (Inmazeb)</b> approved (PAVe trial).</li><li><b>DRC Kivu (2018–20)</b>: conflict zone, 3487 cases, 2287 deaths; ring vaccination used.</li><li><b>Sudan ebolavirus (SUDV)</b>: Uganda 2022 outbreak (164 cases, 55 deaths, CFR 33 %); vaccine (cAd3-SUDV) used in ring vaccination.</li></ul>
+<p>#### Zika Virus (2015–2016, Americas)</p>
+<ul><li><b>Spread</b>: Brazil 2015 → Caribbean → Americas (50+ countries).</li><li><b>CFR</b>: low in adults; <b>microcephaly</b> in 4–6 % of infected pregnancies; <b>Guillain-Barré syndrome</b> 1.6/10 000 infections.</li><li><b>PHEIC declared</b> Feb–Nov 2016.</li><li><b>Vector</b>: <i>Aedes aegypti</i> (and <i>albopictus</i>).</li><li><b>Control</b>: vector control (larvicide, <i>Wolbachia</i>-infected mosquitoes, sterile insect technique), pregnancy counselling, sexual transmission precautions.</li><li><b>No vaccine</b> approved (multiple in trials).</li></ul>
+<p>#### COVID-19 (2019–2023, ongoing endemic)</p>
+<ul><li><b>Origin</b>: Wuhan, Hubei, China, Dec 2019. Bat coronavirus (RaftGT2 / BANAL-52 relatives); intermediate host debated (pangolins, raccoon dogs, mink). Lab leak hypothesis debated; zoonotic spillover most supported by current evidence.</li><li><b>Pathogen</b>: SARS-CoV-2 (Betacoronavirus, subgenus <i>Sarbecovirus</i>); high-affinity ACE2 binding via furin cleavage site (unique among SARSr-CoVs).</li><li><b>Pandemic</b>: 700+ million confirmed cases, &gt; 7 million deaths (WHO, 2024).</li><li><b>Variants of concern (VOC)</b>: Alpha (B.1.1.7), Beta (B.1.351), Gamma (P.1), Delta (B.1.617.2), Omicron (BA.1, BA.2, BA.5, XBB, JN.1, KP.3, etc.).</li><li><b>Vaccines</b> (developed in &lt; 1 year): <b>BNT162b2 (Comirnaty)</b>, <b>mRNA-1273 (Spikevax)</b>, <b>ChAdOx1 nCoV-19 (Vaxzevria)</b>, <b>Ad26.COV2.S (Jcovden)</b>, <b>NVX-CoV2373 (Nuvaxovid)</b>, <b>BBIBP-CorV (Sinopharm)</b>, <b>CoronaVac (Sinovac)</b>, <b>Sputnik V</b>, <b>ZyCoV-D (DNA)</b>, <b>GEMCOVAC-19 (saRNA)</b>, <b>iNCOVACC (intranasal)</b>, <b>NVSI-06-08 (protein)</b>.</li><li><b>Therapeutics</b>: <b>remdesivir</b> (FDA EUA/EU conditional), <b>molnupiravir</b> (Lagevrio), <b>nirmatrelvir/ritonavir (Paxlovid)</b>, <b>sotrovimab / tixagevimab-cilgavimab / bebtelovimab</b> (mAb, efficacy waned with Omicron), <b>tocilizumab/dexamethasone</b> (severe).</li><li><b>Lessons</b>: preparedness, mRNA platform, R&amp;D speed, equity gaps, vaccine hesitancy, NPIs, surveillance, infodemic, long COVID.</li></ul>
+<p>#### mpox (Monkeypox, 2022 Clade IIb; 2023–24 Clade I)</p>
+<ul><li><b>Clade I (Congo Basin)</b>: 1–10 % CFR; classical zoonotic from squirrels, primates.</li><li><b>Clade II (West African)</b>: &lt; 1 % CFR.</li><li><b>2022 outbreak (Clade IIb)</b>: 90 000+ cases in 110+ countries; mainly men who have sex with men (MSM); sexual contact main route; WHO PHEIC 2022–23.</li><li><b>2023–24 Clade I outbreak</b>: Clade Ib in eastern DRC; 14 000+ suspected cases; broader transmission, including heterosexual contact, household; exported cases in Burundi, Rwanda, Uganda, Kenya, India, Sweden, Thailand, Pakistan.</li><li><b>Vaccines</b>: <b>MVA-BN (JYNNEOS, Imvanex, Imvamune)</b> — non-replicating MVA, 2 doses 28 days apart; ring vaccination; pre/post-exposure.</li><li><b>Treatment</b>: <b>tecovirimat (TPOXX)</b> approved for smallpox, available for mpox under EA-IND, expanded access, or national stockpiles.</li></ul>
+<p>#### Nipah Virus (1998 — ongoing)</p>
+<ul><li><b>First recognised</b>: 1998–99 Malaysia/Singapore (pig farms). 283 cases, 109 deaths (CFR 39 %).</li><li><b>Subsequent</b>: Bangladesh, India (West Bengal, Kerala) annual/regular spillover. CFR 40–75 %.</li><li><b>Reservoir</b>: fruit bats (<i>Pteropus</i> spp.).</li><li><b>Routes</b>: bat saliva/urine on fruit/date palm sap → human; or via pigs (amplifying host); rare human–human (Bangladesh, India; high CFR).</li><li><b>No approved vaccine or specific treatment</b> (ribavirin used, m102.4 mAb, remdesivir in trials).</li><li><b>Mass-gathering concern</b>: India/WHO IHR notified.</li></ul>
+<p>#### Hendra Virus (Australia, 1994 — ongoing)</p>
+<ul><li>Bat (flying fox) → horse → human (close contact with horse secretions). CFR 60–70 %.</li><li>Equine vaccine (HeV-sG-V, Equivac) — first wildlife reservoir vaccine deployed at scale.</li></ul>
+<p>#### SFTSV (Severe Fever with Thrombocytopenia Syndrome Virus, 2009 — ongoing)</p>
+<ul><li>China, Korea, Japan. Tick (<i>Haemaphysalis longicornis</i>) — also possibly direct contact, person-to-person.</li><li>CFR 6–30 %; elderly worst.</li><li>No vaccine; ribavirin uncertain.</li></ul>
+<p>#### <i>Candida auris</i> (2009 — ongoing)</p>
+<ul><li>Recognised 2009 (Japan, ear); now 40+ countries. <b>Pan-resistant</b> strains reported; 30–60 % fluconazole resistance; 5–10 % echinocandin/AM-doubly-resistant.</li><li>CLSI/BrothMicrodilution antifungal susceptibility testing required (commercial panels may miscall).</li><li><b>Survives on surfaces</b> for weeks; <b>chlorhexidine is not reliably active</b>; requires <b>sporicidal</b> disinfectants (hypochlorite, hydrogen peroxide).</li><li>High mortality (30–60 % invasive, partly due to underlying disease and diagnostic delay).</li><li><b>Origin hypothesis</b>: warming environment selected for thermal-tolerance in the <i>Candida haemulonii</i> clade, allowing emergence into mammals (Casadevall 2019).</li><li>Global public health threat (CDC, WHO critical-priority fungal).</li></ul>
+<p>#### Coccidioidomycosis (Valley Fever, <i>C. immitis / C. posadasii</i>)</p>
+<ul><li>Soil-dimorphic fungus, US Southwest/Mexico/Argentina/Brazil.</li><li><b>Climate-driven expansion</b> into northern California, Washington State, Utah, New Mexico.</li><li>Most asymptomatic; 5–10 % symptomatic pneumonia; 1 % disseminated (skin, bone, CNS).</li><li><b>Coccidioidal meningitis</b> is severe and requires lifelong fluconazole/itraconazole/voriconazole.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: Surveillance</div>
+<table class="ctable"><tr><th>Modality</th><th>Description</th><th>Example</th></tr><tr><td>----------</td><td>-------------</td><td>---------</td></tr><tr><td>**Indicator-based surveillance (IBS)**</td><td>Routine collection of structured data (cases, deaths, lab)</td><td>Notifiable diseases, lab reporting, hospital admissions</td></tr><tr><td>**Event-based surveillance (EBS)**</td><td>Detection of unusual signals from unstructured sources</td><td>**ProMED-mail**, **EIOS** (WHO), HealthMap, GPHIN, BioDiaspora, twitter/event-based scraping</td></tr><tr><td>**Sentinel surveillance**</td><td>Designated sites/systems for high-quality data</td><td>GP sentinel for ILI/SARI, lab-based for influenza, arbovirus</td></tr><tr><td>**Wastewater surveillance**</td><td>Population-level pathogen shedding in sewage</td><td>SARS-CoV-2 (since 2020), polio (Israel, UK, US 2022+), RSV, influenza, mpox</td></tr><tr><td>**Genomic / molecular surveillance**</td><td>WGS, metagenomics, RT-PCR variants</td><td>**GISAID** (influenza + SARS-CoV-2), **Nextstrain**, NCBI GenBank, BV-BRC, IRIDA, PHE/UKHSA pipelines</td></tr><tr><td>**Serological surveillance**</td><td>Population antibody prevalence</td><td>SARS-CoV-2 serosurveys, dengue seroprevalence, measles IgG</td></tr><tr><td>**Syndromic surveillance**</td><td>Pre-diagnosis signals</td><td>ED visits for ILI, GP consultations, OTC sales (Google Flu Trends — historical)</td></tr><tr><td>**Animal/One Health surveillance**</td><td>Wildlife, livestock, vector surveillance</td><td>GLEWS (WHO/FAO/WOAH), APHIS, OFFLU, GISAID hosts</td></tr><tr><td>**Antimicrobial resistance surveillance**</td><td>Resistance trends</td><td>GLASS (WHO), EARS-Net (ECDC), NARMS (US), AMR national plans</td></tr><tr><td>**Vector surveillance**</td><td>Mosquito/tick species, density, infection rates</td><td>*Aedes* mapping, *Hyalomma* tick mapping (Europe)</td></tr><tr><td>**Mortality surveillance**</td><td>All-cause excess mortality</td><td>EuroMOMO, US CDC excess deaths, country-level civil registration</td></tr></table>
+<p>#### Genomic Surveillance Pipeline (SARS-CoV-2 model)</p>
+<ol><li><b>Sample collection</b> (clinical or wastewater).</li><li><b>RT-PCR confirmation</b> with Ct value.</li><li><b>Sequencing</b>: Sanger, Illumina (consensus), Oxford Nanopore (rapid field-deployable), PacBio.</li><li><b>Bioinformatics</b>: ARTIC pipeline, IVAR, Freyja (lineage abundance from wastewater), Pangolin (lineage), Nextclade (mutations, clade).</li><li><b>Phylogeny</b>: Nextstrain / UShER / BEAST.</li><li><b>Phenotype correlation</b>: spike binding, ACE2 affinity, neutralisation escape (RBD mutations), immune evasion.</li><li><b>Public data deposition</b>: GISAID (with metadata), NCBI, ENA, China National GeneBank.</li><li><b>Public health interpretation</b>: variant tracking, vaccine strain selection (WHO TAG-CO-VAC, FDA VRBPAC), transmission clusters, outbreak detection.</li><li><b>Action</b>: travel restrictions, NPIs, vaccine/booster updates, monoclonal cocktail updates.</li></ol>
+<p>#### Genomic Surveillance Platforms — Examples</p>
+<ul><li><b>GISAID EpiCoV™</b> — SARS-CoV-2; 16+ million sequences shared.</li><li><b>GISAID EpiFlu™</b> — Influenza.</li><li><b>Nextstrain</b> — open-source real-time pathogen evolution (SARS-CoV-2, influenza, RSV, mpox, dengue, TB, West Nile, enterovirus D68, measles, mumps, norovirus, ebola).</li><li><b>NCBI GenBank / Genotype-to-Phenotype</b> — open access, broader.</li><li><b>European Nucleotide Archive (ENA)</b> — Europe.</li><li><b>China National GeneBank</b> — China.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 8: Preparedness, Response, and Governance</div>
+<p>#### International Health Regulations (IHR, 2005)</p>
+<ul><li>196 States Parties; legally binding; entered into force June 2007.</li><li><b>Core capacities</b> required (Annex 1A): legislation, financing, IHR-NFP, surveillance, response, preparedness, risk communication, HR, lab.</li><li><b>Notification within 24 h</b> of events that may constitute a PHEIC.</li><li><b>JEE (Joint External Evaluation)</b> — voluntary external assessment of core capacities; 100+ countries completed (since 2016).</li><li><b>National Action Plan for Health Security (NAPHS)</b> — post-JEE.</li><li><b>PHEIC declarations</b>: H1N1 (2009), polio (2014), Ebola (2014), Zika (2016), Ebola DRC (2019), COVID-19 (2020–2023), mpox (2022, 2024).</li></ul>
+<p>#### GOARN (Global Outbreak Alert and Response Network)</p>
+<ul><li>Established 2000; &gt; 300 partner institutions (ministries of health, academic, NGO, military, WHO collaborating centres).</li><li>Deploys multi-disciplinary teams (epidemiology, lab, clinical, IPC, logistics, risk communication) within 24–72 h.</li></ul>
+<p>#### EWRS (Early Warning and Response System, EU)</p>
+<ul><li>EU-level system (28+ countries) for alert and coordinated response to cross-border threats.</li><li><b>EpiPulse</b> — ECDC platform (since 2021) integrating WGS, ARHAI, COVID-19, vaccine coverage.</li></ul>
+<p>#### EIOS (Epidemic Intelligence from Open Sources)</p>
+<ul><li>WHO-led (with partners: HealthMap, ProMED, BlueDot, GPHIN, OIE-WAHIS, FAO, etc.).</li><li>AI/NLP on open-source news, social media, official reports to detect signals earlier than formal surveillance.</li></ul>
+<p>#### GHSA (Global Health Security Agenda)</p>
+<ul><li>Multinational initiative launched 2014; 70+ countries. Action packages: Zoonoses, Biosafety/Biosecurity, Immunisation, AMR, Lab, Surveillance, Workforce, Emergency Operations, Linking Policy &amp; Practice.</li></ul>
+<p>#### Pandemic Fund (2022)</p>
+<ul><li>World Bank-hosted; ~ $2 billion mobilised for low-income country pandemic preparedness; complements CEPI, Gavi, WHO, GPMB.</li></ul>
+<p>#### CEPI (Coalition for Epidemic Preparedness Innovations)</p>
+<ul><li>Founded 2017 (Davos).</li><li><b>Mission</b>: accelerate vaccine development against emerging infectious disease threats.</li><li><b>CEPI 2.0 / 100 Days Mission</b>: a vaccine within <b>100 days</b> of pathogen identification.</li><li>Funded by governments, Gates Foundation, Wellcome, EU, US, UK, Norway, Japan, etc.</li><li>Co-led <b>COVAX</b> with Gavi and WHO to provide equitable COVID-19 vaccines.</li></ul>
+<p>#### Gavi</p>
+<ul><li>Public-private partnership; immunises &gt; 75 % of the world's children; co-led COVAX.</li></ul>
+<p>#### GPMB (Global Preparedness Monitoring Board)</p>
+<ul><li>Co-convened by World Bank and WHO; 2019 Report <b>"A World at Risk"</b> warned of pandemic risk; <b>2020 report "A World in Disorder"</b>; <b>2023–24 reports</b> flag climate-amplified risk.</li></ul>
+<p>#### BTWC (Biological Weapons Convention, 1972)</p>
+<ul><li>First multilateral disarmament treaty; bans <b>development, production, stockpiling, transfer</b> of biological weapons.</li><li><b>192 States Parties</b>.</li><li>Lacks verification; no compliance protocol; annually 2022–24 Working Group on strengthening the convention.</li><li>Confidence-Building Measures (CBMs) — voluntary submissions (e.g., UK, US, Russia).</li></ul>
+<p>#### Dual-Use Research of Concern (DURC) and Gain-of-Function (GOF)</p>
+<ul><li><b>DURC</b> (US NIH definition): research with legitimate beneficial purpose that could be misused to threaten public health/national security (e.g., enhanced pathogen transmissibility, virulence, immune evasion, host range).</li><li><b>GOF</b>: subset of DURC — research enhancing transmissibility, virulence, or host range of a pathogen.</li><li><b>Fouchier (2011) and Kawaoka (2012)</b> — H5N1 ferret airborne transmission experiments → controversy → <b>US pause (2014–2017)</b> → HHS Framework (2017) and P3CO review.</li><li><b>PCAST (2025+)</b>: ongoing debate about oversight; funding agencies impose P3CO review.</li><li><b>Risk-benefit</b> approaches: structured risk assessment, mitigation, transparency.</li></ul>
+<p>#### Synthetic Biology Risks</p>
+<ul><li><b>De novo synthesis</b> of viruses (phiX174, 1918 influenza, horsepox 2017).</li><li><b>Gene drives</b> for vector control (Anopheles); ecological risk.</li><li><b>AI-designed proteins / pathogens</b> (e.g., 2022 AI-assisted COVID-19 spike design proposals).</li><li><b>DIY bio</b> — community labs with variable biosafety.</li></ul>
+<p>#### Health System Preparedness</p>
+<ul><li><b>Stockpiles</b> (PPE, ventilators, vaccines, mAbs, antivirals, antidotes, broad-spectrum agents).</li><li><b>Surge capacity</b> (ICU, isolation, oxygen, lab).</li><li><b>Workforce</b> (epidemiologists, IPC, lab, ICU).</li><li><b>Risk communication</b> and <b>infodemic management</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 9: Future Threats and Emerging Trends</div>
+<p>#### 1. H5N1 in Mammals and Humans</p>
+<ul><li>2022–2024: H5N1 clade 2.3.4.4b panzootic in wild birds, poultry, <b>dairy cattle (US, 2024+)</b>.</li><li>Mammalian adaptation mutations: <b>PB2-E627K, -D701N, -M631L</b>; <b>HA-Q226L</b> (mammalian receptor); <b>L226Q in H5 HA</b> in sea lions (Peru 2022).</li><li>Bovine H5N1 in US: &gt; 900 dairy herds infected; raw milk viral load high; <b>mild human cases</b> (conjunctivitis, respiratory) in dairy workers; 1 severe (H5N1 in Louisiana, Dec 2024, critical).</li><li>Pandemic risk: low but <b>rising</b>; WHO, CDC, ECDC closely monitoring; candidate vaccine viruses (CVVs) developed; mRNA H5N1 trials.</li></ul>
+<p>#### 2. Climate-Driven Fungal Emergence</p>
+<ul><li><i><b>Candida auris</b></i> (warming tolerance hypothesis).</li><li><i><b>Coccidioides</b></i> (range expansion north in US).</li><li><i><b>Histoplasma</b></i> (warming, bat guano).</li><li><i><b>Aspergillus</b></i> (resistance to azoles in soil, agricultural azole use).</li><li><i><b>Cryptococcus gattii</b></i> (Vancouver Island, Pacific NW).</li><li><i><b>Apophysomyces</b></i> and other mucoralean moulds in trauma post-floods/storms.</li></ul>
+<p>#### 3. AMR in Fungi</p>
+<ul><li><b>C. auris</b> (echinocandin and pan-resistant strains).</li><li><b>Aspergillus fumigatus</b> azole-resistance (TR34/L98H, TR46/Y121F/T289A from environmental azole use).</li><li><b>Candida glabrata</b> (multidrug).</li></ul>
+<p>#### 4. Vector Range Expansion</p>
+<ul><li><i>Aedes aegypti</i> / <i>albopictus</i> → dengue, chikungunya, Zika in Europe, US, Japan.</li><li><i>Hyalomma</i> tick → CCHF, Crimean haemorrhagic in Spain, France, Turkey.</li><li><i>Aedes koreicus</i> in Europe.</li><li><i>Anopheles stephensi</i> (urban malaria vector) — Horn of Africa.</li><li><i>Aedes vittatus</i> Africa.</li></ul>
+<p>#### 5. Synthetic Biology and AI</p>
+<ul><li><b>AI-designed proteins</b> (e.g., AlphaFold-derived therapeutic designs, but also potential dual-use).</li><li><b>Generative biology</b> — AI-designed sequences.</li><li><b>mRNA platforms</b> — rapid reprogramming for new pathogens.</li><li><b>DNA/RNA synthesis</b> — screening for dangerous sequences (IGSC 2024 framework).</li></ul>
+<p>#### 6. Other</p>
+<ul><li><b>XDR-TB</b> and totally drug-resistant TB.</li><li>**Drug-resistant *Shigella*** and <i>Neisseria gonorrhoeae</i>.</li><li><b>MDR-Typhoid</b> (H58 lineage, Pakistan outbreak).</li><li><b>E. coli ST131 H30Rx</b> and ST405.</li><li><b>Highly pathogenic avian influenza H7N9, H5N6, H9N2</b>.</li><li><b>Parvovirus B19</b> and other "old" pathogens resurging.</li><li><b>Adenovirus 7 / 14</b> atypical outbreaks.</li><li><b>EV-D68 / EV-A71</b> acute flaccid myelitis.</li><li><b>Measles, mumps, pertussis, diphtheria</b> (vaccine-preventable resurgence).</li><li><b>Polio cVDPV</b> spread (Pakistan, Afghanistan, DRC, Yemen, Israel, UK, US 2022).</li><li><b>Mpox Clade I</b> (DRC, 2023+).</li><li><b>Ebola Sudan</b> (Uganda 2022; Tanzania 2023; ongoing).</li><li><b>Marburg</b> (Rwanda 2024; Equatorial Guinea, Tanzania, Ghana 2022–23).</li><li><b>Nipah</b> (Bangladesh/India annual).</li><li><b>SFTSV</b> (Asia).</li><li><b>CCHF</b> (Turkey, Iraq, Iran, Pakistan, Afghanistan, Turkey, Bulgaria, Spain, Russia, Africa).</li><li><b>Leptospira</b> (post-flooding; outbreak settings).</li><li><b>Plasmodium knowlesi</b> (zoonotic malaria, Southeast Asia).</li><li><b>Hepatitis E</b> (zoonotic genotypes, wild boar, pig; pregnancy-associated high mortality).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Tables / Comparison Charts</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Table 1: Emerging vs Re-Emerging vs Deliberate</div>
+<table class="ctable"><tr><th>Feature</th><th>Emerging</th><th>Re-Emerging</th><th>Deliberate</th></tr><tr><td>---------</td><td>----------</td><td>-------------</td><td>-----------</td></tr><tr><td>Definition</td><td>Newly recognised</td><td>Previously controlled, now resurging</td><td>Intentional release</td></tr><tr><td>Examples</td><td>HIV, SARS, COVID, MERS, Ebola, Zika, mpox, Nipah, Hendra, SFTSV, *C. auris*</td><td>TB, dengue, measles, diphtheria, cholera, yellow fever, plague, AMR</td><td>Anthrax, smallpox (theoretical), *B. mallei*</td></tr><tr><td>Drivers</td><td>Zoonotic spillover, travel, climate, AMR</td><td>Vaccine gaps, conflict, AMR, climate, urbanisation</td><td>State, non-state, synthetic bio</td></tr><tr><td>Prevention</td><td>One Health, surveillance, biosecurity, R&D</td><td>Vaccination, WASH, AMS, conflict resolution</td><td>BTWC, DURC/GOF oversight, BWC, lab biosafety</td></tr></table>
+<div class="sub-h">Table 2: Pandemic Influenza Strains</div>
+<table class="ctable"><tr><th>Year</th><th>Subtype</th><th>Reassortant</th><th>Mortality</th><th>Notes</th></tr><tr><td>------</td><td>---------</td><td>-------------</td><td>-----------</td><td>-------</td></tr><tr><td>1918</td><td>H1N1</td><td>Avian</td><td>50–100 million</td><td>"Spanish flu"</td></tr><tr><td>1957</td><td>H2N2</td><td>Avian + human</td><td>1–2 million</td><td>"Asian flu"</td></tr><tr><td>1968</td><td>H3N2</td><td>Avian + human</td><td>0.5–1 million</td><td>"Hong Kong flu"</td></tr><tr><td>2009</td><td>H1N1</td><td>Swine triple</td><td>150 000–575 000</td><td>"Swine flu"</td></tr></table>
+<div class="sub-h">Table 3: Coronavirus Epidemics</div>
+<table class="ctable"><tr><th>Year</th><th>Virus</th><th>Reservoir</th><th>Intermediate</th><th>CFR</th><th>Outcome</th></tr><tr><td>------</td><td>-------</td><td>-----------</td><td>--------------</td><td>-----</td><td>---------</td></tr><tr><td>2002–03</td><td>SARS-CoV-1</td><td>Bat</td><td>Civet</td><td>~ 10 %</td><td>Eliminated by 2003</td></tr><tr><td>2012–</td><td>MERS-CoV</td><td>Bat</td><td>Camel</td><td>~ 35 %</td><td>Endemic, low R₀</td></tr><tr><td>2019–23</td><td>SARS-CoV-2</td><td>Bat</td><td>?</td><td>0.5–1 % (ancestral)</td><td>Pandemic → endemic</td></tr></table>
+<div class="sub-h">Table 4: Climate-Disease Links</div>
+<table class="ctable"><tr><th>Climate Driver</th><th>Vector/Pathogen Effect</th><th>Example</th></tr><tr><td>----------------</td><td>----------------------</td><td>---------</td></tr><tr><td>Warming</td><td>Vector range</td><td>*Aedes* expansion → dengue in Europe</td></tr><tr><td>Sea warming</td><td>*Vibrio* growth</td><td>*V. vulnificus* wound infections, *V. cholerae*</td></tr><tr><td>Rainfall (heavy)</td><td>Rodent population</td><td>Hantavirus, leptospirosis, plague</td></tr><tr><td>Drought</td><td>Water quality</td><td>Cholera, *Salmonella*, HAV</td></tr><tr><td>Cyclone/flood</td><td>Contamination</td><td>Leptospirosis, V. cholerae, hepatitis A/E</td></tr><tr><td>Drought + war</td><td>Conflict + food insecurity</td><td>Measles, diphtheria, scurvy, malnutrition</td></tr></table>
+<div class="sub-h">Table 5: Drivers — CLIMATIC + 2</div>
+<table class="ctable"><tr><th>Letter</th><th>Driver</th><th>Example</th></tr><tr><td>--------</td><td>--------</td><td>---------</td></tr><tr><td>**C**</td><td>Climate change</td><td>Dengue in Italy, *C. auris*</td></tr><tr><td>**L**</td><td>Land use</td><td>Ebola, Nipah, Lyme</td></tr><tr><td>**I**</td><td>International travel</td><td>SARS, COVID, mpox</td></tr><tr><td>**M**</td><td>Microbial adaptation</td><td>AMR, H5N1, reassortment</td></tr><tr><td>**A**</td><td>Animal–human interface</td><td>Most zoonoses</td></tr><tr><td>**T**</td><td>Technology/medical</td><td>Transplant infections, AMR</td></tr><tr><td>**I**</td><td>Inadequate surveillance/control</td><td>Late outbreak detection</td></tr><tr><td>**C**</td><td>Conflict/biosecurity</td><td>Yemen cholera, polio, bioweapons</td></tr><tr><td>**A**</td><td>Anti-vaccine / misinformation</td><td>Measles, COVID vaccine hesitancy</td></tr></table>
+<div class="sub-h">Table 6: One Health Players</div>
+<table class="ctable"><tr><th>Body</th><th>Role</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**WHO**</td><td>Human health</td></tr><tr><td>**FAO**</td><td>Food, agriculture, livestock, fisheries</td></tr><tr><td>**WOAH (OIE)**</td><td>Animal health</td></tr><tr><td>**UNEP**</td><td>Environment, biodiversity, climate</td></tr><tr><td>**Quadripartite**</td><td>Joint coordination (since 2022)</td></tr><tr><td>**OHHLEP**</td><td>One Health High-Level Expert Panel</td></tr><tr><td>**GLEWS**</td><td>Joint WHO/FAO/WOAH early warning</td></tr><tr><td>**OFFLU**</td><td>Animal influenza network</td></tr><tr><td>**GF-TADs**</td><td>FAO/WOAH progressive control of transboundary animal diseases</td></tr></table>
+<div class="sub-h">Table 7: Vaccine &amp; Therapeutic Platforms for Future Threats</div>
+<table class="ctable"><tr><th>Platform</th><th>Description</th><th>Pros</th><th>Cons</th></tr><tr><td>----------</td><td>-------------</td><td>------</td><td>------</td></tr><tr><td>**mRNA** (Pfizer, Moderna)</td><td>Lipid-nanoparticle-encapsulated mRNA encoding antigen</td><td>Fast design (days), scalable, high immunogenicity, modifiable</td><td>Cold chain, myocarditis (rare), boosting tolerance</td></tr><tr><td>**Viral vector (replicating/non-replicating)**</td><td>Adenovirus, MVA, VSV, NDV vectors</td><td>Strong cellular + humoral response, single dose possible (rare)</td><td>Pre-existing immunity (Ad5), safety in immunocompromised</td></tr><tr><td>**Subunit / protein**</td><td>Recombinant protein + adjuvant (e.g., NVX, GSK AS01, MF59)</td><td>Stable, established</td><td>Slower to develop</td></tr><tr><td>**DNA** (ZyCoV-D)</td><td>Plasmid DNA + electroporation</td><td>Stable, room-temp</td><td>Lower immunogenicity, needs device</td></tr><tr><td>**saRNA** (self-amplifying RNA)</td><td>Replicon RNA encoding antigen</td><td>Lower dose, longer expression</td><td>Newer, limited data</td></tr><tr><td>**VLPs**</td><td>Virus-like particles</td><td>Safe, immunogenic</td><td>Slower</td></tr><tr><td>**Inactivated**</td><td>Whole virus killed</td><td>Established, cold chain easier</td><td>Slower to update</td></tr><tr><td>**Live attenuated**</td><td>Attenuated organism</td><td>Strong response</td><td>Safety in IC, contraindicated in pregnancy</td></tr><tr><td>**Pan-coronavirus**</td><td>Conserved antigen design</td><td>Pre-emptive broad protection</td><td>Early stage</td></tr><tr><td>**mAb / polyclonal**</td><td>Direct neutralising antibody</td><td>Fast, can treat or prevent</td><td>Cost, escape, cold chain</td></tr><tr><td>**Broad-spectrum antiviral**</td><td>Targets conserved pathways (e.g., polymerase)</td><td>Pre-emptive</td><td>Few approved</td></tr><tr><td>**CRISPR-based diagnostics**</td><td>SHERLOCK, DETECTR</td><td>Rapid, field-deployable</td><td>Sensitivity, validation</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pandemic Influenza Preparedness</div>
+<ul><li><b>WHO Global Influenza Surveillance and Response System (GISRS)</b>; &gt; 130 National Influenza Centres; 6 WHO Collaborating Centres; 4 WHO Essential Regulatory Laboratories.</li><li><b>Candidate Vaccine Viruses (CVVs)</b> developed for strains of concern.</li><li><b>Pre-pandemic vaccines</b> stockpiled (H5N1, H7N9, H9N2).</li><li><b>Pandemic Severity Assessment Framework (PSAF)</b> — transmissibility, clinical severity, impact.</li><li><b>Pandemic vaccine allocation</b> framework.</li></ul>
+<div class="sub-h">Mass-Gathering Risk</div>
+<ul><li>Hajj/Umrah (MERS, meningococcal W, COVID, polio).</li><li>Olympics (Fukushima 2020 → Tokyo 2020/21 with COVID measures).</li><li>FIFA World Cup, Kumbh Mela, religious festivals.</li></ul>
+<div class="sub-h">Migrant / Refugee Health</div>
+<ul><li>Vaccine-preventable disease outbreaks in camps (measles, diphtheria, varicella, hepatitis A, TB, polio).</li><li>Multidrug-resistant organisms (TB, MRSA, NDM-producing Enterobacterales).</li><li>Skin infections, scabies, louse-borne relapsing fever, typhus, leishmaniasis.</li><li>Mental health, sexual violence, women's health.</li></ul>
+<div class="sub-h">Conflict Settings</div>
+<ul><li>Yemen (cholera 2016+, diphtheria, diphtheria 2017+), Syria (polio 2013, leishmaniasis, measles, scabies), South Sudan (kala-azar, cholera, malaria), DRC (Ebola, measles, plague, mpox, polio), Afghanistan (polio, measles, leishmaniasis, TB), Ukraine (war-related TB, AMR, polio 2021+), Tigray (famine + measles, cholera, malaria), Gaza (post-2023 — waterborne, measles, polio 2024, skin infections, leishmaniasis).</li></ul>
+<div class="sub-h">Cruise Ships / Aircraft</div>
+<ul><li>Norovirus, influenza, SARS-CoV-2, Legionella (hot tubs, water systems), TB, measles.</li><li>Air travel — economic drive for global spread.</li></ul>
+<div class="sub-h">Hospitals as Amplifiers</div>
+<ul><li>Outbreaks of MDRO, <i>C. auris</i>, SARS, MERS, COVID-19, measles, TB.</li><li>Long-term care facilities — particularly vulnerable.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Emerging = <b>new</b>; re-emerging = <b>controlled then rising</b>; deliberately emerging = <b>intentional/lab</b>.</li><li>~ 60–75 % of emerging infections are <b>zoonotic</b>; bats are major reservoirs.</li><li><b>CLIMATIC</b> = Climate, Land, International travel, Microbial adaptation, Animal interface, Technology, Inadequate surveillance (+ Conflict, Anti-vaccine).</li><li><b>One Health</b> = WHO + FAO + WOAH + UNEP (Quadripartite since 2022).</li><li>WHO R&amp;D Blueprint: <b>COVID-19, CCHF, Ebola, Marburg, Lassa, MERS, SARS, Nipah, RVF, Zika, Disease X</b>.</li><li><b>Disease X</b> = unknown pathogen with pandemic potential (placeholder for preparedness, drove mRNA platforms).</li><li><b>IHR (2005)</b> — 196 States Parties; <b>notify WHO within 24 h</b>; JEE; PHEIC declared by Director-General after Emergency Committee advice.</li><li><b>CEPI</b> = vaccine development for epidemic threats; <b>Gavi</b> = vaccination programmes; <b>GPMB</b> = monitoring board.</li><li><b>GISAID</b> for influenza and SARS-CoV-2 sequences; <b>Nextstrain</b> for phylogenetics.</li><li><b>R₀</b> comparison: measles 12–18; COVID-19 ancestral 2.5–3; Omicron &gt; 10; H5N1 &lt; 1; MERS &lt; 1; Ebola 1.5–2.5; SARS 2–4.</li><li><b>Bats</b> harbour 200+ viruses (Ebola, Marburg, SARS-CoVs, MERS, Nipah, Hendra); mechanisms: dampened STING, longevity, flight metabolism.</li><li><b>COVID-19 origin</b>: most likely zoonotic (bat coronavirus + intermediate host); lab-leak hypothesis debated; no definitive evidence either way.</li><li><b>Antigenic drift</b> = small mutations (seasonal); <b>shift</b> = reassortment (pandemic).</li><li><b>AMR drivers</b>: antibiotic overuse in humans, agriculture, aquaculture; HGT (plasmids, integrons, transposons); international travel and trade.</li><li><b>HGT types</b>: conjugation (plasmids), transformation (naked DNA), transduction (phages). Integrons carry multiple gene cassettes.</li><li><b>DURC / GOF</b>: dual-use research; H5N1 ferret experiments (Fouchier, Kawaoka) → US pause 2014–2017 → P3CO framework.</li><li><b>BTWC (1972)</b>: bans biological weapons; 192 States Parties; no verification mechanism.</li><li><b>Climate effects on infections</b>: vector range, water-borne, food-borne, fungal emergence (<i>C. auris</i>, <i>Coccidioides</i>).</li><li><b>Wastewater surveillance</b>: polio, SARS-CoV-2, RSV, influenza, mpox — early warning.</li><li><b>Spillback</b> = human-to-animal (e.g., SARS-CoV-2 in deer, mink, hamsters).</li><li><b>Zika 2015–16</b> = microcephaly, GBS; PHEIC 2016; sexual transmission; <i>Aedes</i> vectors.</li><li><b>Ebola 2014</b> = 28 600+ cases, ~ 11 000 deaths, West Africa; rVSV-ZEBOV ring vaccination; mAb therapies.</li><li><b>MERS-CoV</b> = camels; R₀ &lt; 1; CFR 35 %; mostly Arabian Peninsula; Korea 2015.</li><li><b>H5N1 1997+</b> = CFR ~ 50 %; panzootic in birds; 2022+ in dairy cattle, sea lions, sporadic humans.</li><li><b>H1N1 2009</b> = triple reassortant (swine + avian + human); spread globally in weeks; young adults worst.</li><li><b>Nipah</b> = bats + pigs / date palm sap; Bangladesh/India annual; CFR 40–75 %; no vaccine.</li><li><b>Hendra</b> = bat → horse → human; Australia; equine vaccine (HeV-sG).</li><li><b>mpox 2022 (Clade IIb)</b> = MSM, sexual contact; <b>2023–24 Clade I</b> = DRC, broader spread; MVA-BN vaccine, tecovirimat.</li><li><b>Viral haemorrhagic fevers</b> (Ebola, Marburg, CCHF, Lassa) require <b>AIIR</b> (negative pressure, ≥ 12 ACH, HEPA), <b>FFP3</b>, <b>body fluid precautions</b>, <b>safe burials</b>.</li><li><b>COVAX</b> = CEPI + Gavi + WHO COVID-19 vaccine equity; delivered &gt; 2 billion doses to &gt; 90 countries.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Differentiate emerging, re-emerging, and deliberately emerging infections. Give examples.</b></li><li><b>What is the CLIMATIC mnemonic of drivers? Apply to a specific outbreak.</b></li><li><b>Explain the One Health approach. Who are the Quadripartite partners?</b></li><li><b>Describe the steps of zoonotic spillover. How can each be interrupted?</b></li><li><b>What is Disease X? Why is it in the WHO R&amp;D Blueprint?</b></li><li><b>List the WHO R&amp;D Blueprint priority pathogens. Describe one (pathogenesis, control).</b></li><li><b>Compare R₀ for measles, COVID-19, Ebola, MERS, H5N1. What does R₀ &lt; 1 imply?</b></li><li><b>How does climate change drive emergence of vector-borne and water-borne disease?</b></li><li><b>Describe the role of IHR (2005), PHEIC, and JEE in global health security.</b></li><li><b>What is the role of CEPI, Gavi, GPMB, GHSA, GOARN?</b></li><li><b>Discuss the role of bats as viral reservoirs.</b></li><li><b>What is HGT, and how does it drive AMR emergence and spread?</b></li><li><b>Differentiate antigenic drift and antigenic shift. What causes pandemic influenza?</b></li><li><b>What are the main arguments for and against a lab-leak vs zoonotic origin of SARS-CoV-2?</b></li><li><b>Describe the COVID-19 timeline (Wuhan → PHEIC → VOCs → vaccines).</b></li><li><b>What is the 100-Days Mission?</b></li><li><b>Discuss the pros and cons of gain-of-function research.</b></li><li><b>What is the BTWC? What are its strengths and weaknesses?</b></li><li><b>Describe wastewater surveillance for emerging infections.</b></li><li><b>Discuss the One Health approach to AMR.</b></li><li><b>What is the role of GISAID and Nextstrain in genomic surveillance?</b></li><li><b>List three climate-sensitive infectious diseases and explain the mechanism.</b></li><li><b>Discuss the global AMR outlook by 2050 and the main countermeasures.</b></li><li><b>Describe Nipah virus and the spillover chain in Bangladesh.</b></li><li><b>What lessons from the 2014–16 Ebola outbreak apply to future filovirus outbreaks?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>"Emerging" ≠ always "new"</b> — emerging also includes long-existing infections now increasing or in new populations (e.g., measles is re-emerging, not emerging).</li><li><b>R₀ is not fixed</b> — it depends on population, setting, contact patterns; estimates for COVID-19 ranged 2.5 (ancestral) to &gt; 10 (Omicron).</li><li><b>H5N1 is not currently transmissible human-to-human</b> (R₀ &lt; 1) — pandemic risk is rising, not realised.</li><li><b>Disease X is a real WHO concept</b> — it is <b>not</b> a virus; it is a placeholder driving platform R&amp;D.</li><li><b>CEPI ≠ WHO</b> — CEPI is a public-private partnership; WHO is a UN agency.</li><li><b>Gavi ≠ WHO</b> — Gavi funds vaccine introduction, WHO provides technical guidance.</li><li><b>Tripartite</b> (WHO/FAO/WOAH) became <b>Quadripartite</b> with UNEP in 2022 — examine carefully.</li><li><b>MERS-CoV is still circulating</b> (not "eradicated"); SARS-CoV-1 was contained (no cases since 2003).</li><li><b>"Eradicated" vs "eliminated"</b> — smallpox eradicated, polio still not eradicated; many diseases are "eliminated" regionally (measles in some countries) but resurge.</li><li><b>"Sporadic" ≠ "spillover event"</b> — "sporadic" is a temporal descriptor (occasional isolated cases).</li><li><b>"Spillback"</b> is human → animal, not animal → human.</li><li><b>Antigenic drift</b> = small mutations (seasonal); <b>shift</b> = reassortment (pandemic). Both occur in <b>influenza A only</b> (not B, C).</li><li><b>Reassortment</b> is exclusive to <b>segmented RNA viruses</b> (influenza A, rotavirus, hantavirus).</li><li><b>"Disease X" is NOT</b> a code name for COVID-19 — it was coined in 2015–18 and COVID-19 was retrospectively Disease X.</li><li><b>IHR (2005) is legally binding</b> for WHO Member States; "capability to report and respond" is required.</li><li><b>JEE is voluntary</b> but politically expected.</li><li><b>AMR deaths</b> projected to be 10 million/year by 2050 (O'Neill 2016) — not "leading cause of death" yet.</li><li><b>COVID-19 "lab leak" is not proven</b> but also not fully excluded; current evidence supports zoonotic origin with intermediate host (pangolin, raccoon dog, mink).</li><li><b>Bats are reservoirs for many viruses, but not all</b> — Lyme is a tick-borne bacterial zoonosis, not bat.</li><li><b>One Health</b> is more than zoonoses — it also includes AMR, food safety, environmental contaminants, climate.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CLIMATIC</b> = <b>C</b>limate, <b>L</b>and use, <b>I</b>nternational travel, <b>M</b>icrobial adaptation, <b>A</b>nimal–human, <b>T</b>echnology, <b>I</b>nadequate surveillance (+ <b>C</b>onflict, <b>A</b>nti-vaccine).</li><li><b>Pathogens of pandemic potential (Pandemic Mnemonic)</b>: <b>EVE</b> (Ebola, Variola, EVD) — for haemorrhagic. <b>Nipah + Hendra</b> = "Henipa" — bat-borne. <b>CCHF, RVF, Lassa</b> = "CaRLo" — haemorrhagic. <b>SARS, MERS, COVID-19</b> = "SARS-CoV lineage". <b>Zika, Dengue, Yellow Fever, Chikungunya</b> = "<i>Aedes</i>" — arboviral.</li><li><b>PHEIC</b> chronology: H1N1 (2009), polio (2014), Ebola West Africa (2014), Zika (2016), Ebola DRC (2019), COVID-19 (2020–23), mpox (2022, 2024) = "<b>Ho-PE-Z-C-EP-M</b>".</li><li><b>IHR 24 h</b> — "24 h: Tell WHO." 4 Ds: Detect, Decide, Describe, Document.</li><li><b>Spillover cascade</b>: <b>PRCEH</b> = Pathogen → Reservoir → Contact → Exposure → Human.</li><li><b>EBS acronyms</b>: <b>ProMED, EIOS, GPHIN, HealthMap, GLEWS, OFFLU</b>.</li><li><b>Genomic surveillance platforms</b>: <b>GISAID</b> (influenza + SARS-CoV-2) and <b>Nextstrain</b> (real-time phylogeny).</li><li><b>Platforms for Future Pandemic Vaccines</b>: <b>mRNA, viral vector, subunit, DNA, saRNA, VLP, inactivated, live attenuated</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Emerging &amp; Re-Emerging Infections)) Definitions Emerging Re-emerging Deliberately emerging Disease X Drivers CLIMATIC Climate Land use International travel Microbial adaptation Animal human interface Technology Inadequate surveillance Conflict biosecurity Anti vaccine misinformation One Health Quadripartite WHO FAO WOAH UNEP GLEWS OFFLU Integrated surveillance Wildlife livestock human Zoonotic priority list WHO R and D Blueprint COVID-19 CCHF Ebola Marburg Lassa MERS SARS Nipah Rift Valley Zika Disease X Examples HIV AIDS 1981 SARS-CoV 2002 H5N1 1997 H1N1 2009 MERS-CoV 2012 Ebola 2014 Zika 2015 COVID-19 2019 mpox 2022 Nipah Hendra SFTSV Mechanisms Zoonotic spillover Reassortment HGT Antigenic drift shift Surveillance Indicator event Genomic GISAID Nextstrain Wastewater Serological Animal One Health Vector Preparedness IHR 2005 JEE PHEIC GOARN CEPI 100 Days Gavi GPMB GHSA BTWC DURC GOF Future threats H5N1 mammals cattle Candida auris Coccidioides expansion AMR fungi Vector expansion Synthetic biology AI Vaccine gaps </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Flowchart — Outbreak Detection to Response</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Signal: clinical, lab, event-based, wastewater, genomic] --&gt; B[Triage and verification] B --&gt; C{PHEIC?} C -- Yes --&gt; D[Notify WHO 24 h; declare PHEIC] C -- No --&gt; E[National action] D --&gt; F[GOARN deploy; EIOS/EWRS alert] E --&gt; G[GOARN support if requested] F --&gt; H[Joint risk assessment: One Health] G --&gt; H H --&gt; I[Activate R&amp;D Blueprint CEPI pipeline] I --&gt; J[Vaccine therapeutics diagnostics platform] J --&gt; K[Implement IHR core capacities] K --&gt; L[Control: source, transmission, host] L --&gt; M[Surveillance: genomic, wastewater, serology] M --&gt; N[Evaluate: AAR; IHR NAPHS update] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Emerging = new; Re-emerging = controlled but resurging; Deliberate = intentional/lab.</b></li><li><b>Drivers = CLIMATIC</b> + Conflict + Anti-vaccine.</li><li><b>One Health = Quadripartite (WHO/FAO/WOAH/UNEP); 60–75 % emerging infections are zoonotic; bats are major reservoirs.</b></li><li><b>WHO R&amp;D Blueprint = COVID-19, CCHF, Ebola, Marburg, Lassa, MERS, SARS, Nipah, RVF, Zika, Disease X.</b></li><li><b>Disease X = unknown pandemic pathogen (placeholder; drove mRNA platforms; COVID-19 was it).</b></li><li><b>IHR (2005) = 24 h notification; PHEIC by Director-General; JEE = voluntary external review.</b></li><li><b>GOARN = WHO network for technical deployment; EIOS = open-source epidemic intelligence; EWRS = EU.</b></li><li><b>CEPI = vaccine development (100 Days Mission); Gavi = vaccine financing; GPMB = independent monitoring board.</b></li><li><b>GISAID = influenza + SARS-CoV-2 sequences; Nextstrain = real-time phylogeny.</b></li><li><b>H5N1: panzootic, 2022+ mammals, dairy cattle (2024), 1 severe human case (Dec 2024); PB2 627K, HA Q226L mammalian adaptation; pandemic risk rising but R₀ &lt; 1 so far.</b></li><li><b>COVID-19: SARS-CoV-2, bat origin, furin cleavage site, Omicron R₀ &gt; 10; &gt; 7 million deaths.</b></li><li><b>Mpox: 2022 Clade IIb (MSM); 2023+ Clade I (DRC, broader); MVA-BN vaccine, tecovirimat.</b></li><li><b>Ebola: rVSV-ZEBOV ring vaccine, mAb (ansuvimab, Inmazeb); CFR 30–90 %.</b></li><li><b>Nipah: bat + pig/date palm sap; CFR 40–75 %; no vaccine.</b></li><li><b>DURC/GOF controversy (H5N1 ferret); BTWC 1972 lacks verification; synthetic biology risks.</b></li><li>**Climate = vector expansion, water-borne, <i>C. auris</i>, <i>Coccidioides</i> northward; AMF azole resistance; warming tolerance hypothesis for <i>C. auris</i>.**</li><li><b>AMR = HGT (plasmids, integrons); 10 million deaths/year by 2050; One Health AMS essential.</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define emerging, re-emerging, and deliberately emerging infections with two examples each.</b></li><li><b>What is the CLIMATIC mnemonic? Apply it to COVID-19, H5N1, dengue, and AMR.</b></li><li><b>What is One Health? Who are the Quadripartite? Give two operational examples.</b></li><li><b>Name the WHO R&amp;D Blueprint priority pathogens. What is Disease X?</b></li><li><b>Describe the spillover cascade. How can each step be interrupted?</b></li><li><b>List the major functions of IHR (2005), PHEIC, JEE, GOARN, EIOS, EWRS.</b></li><li><b>Differentiate CEPI, Gavi, GPMB, GHSA. What is the 100 Days Mission?</b></li><li><b>Describe the role of GISAID and Nextstrain.</b></li><li><b>Compare R₀ for measles, COVID-19 (ancestral vs Omicron), Ebola, MERS, H5N1.</b></li><li><b>Discuss climate change effects on vector-borne, water-borne, and fungal infections.</b></li><li><b>What is the difference between antigenic drift and shift? Which produces pandemics?</b></li><li><b>Discuss HGT mechanisms and their role in AMR spread.</b></li><li><b>What is the BTWC? What are its strengths and weaknesses?</b></li><li><b>Differentiate DURC and GOF. Outline the historical H5N1 ferret experiments.</b></li><li><b>Discuss the current status and risks of H5N1 in dairy cattle and marine mammals.</b></li><li><b>Describe the timeline of COVID-19: Wuhan → PHEIC → VOCs → vaccines → endemic.</b></li><li><b>List four ways climate change is driving infectious disease emergence.</b></li><li><b>What is wastewater surveillance? Give two example applications.</b></li><li><b>Discuss Nipah, Hendra, SFTSV, Bourbon, Heartland.</b></li><li><b>What is COVAX? What did CEPI/Gavi/WHO achieve?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Day 1 completed (Definitions, CLIMATIC, One Health, examples)</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision (R&amp;D Blueprint, spillover, One Health operations)</li><li>[ ] Day 15 revision (Disease profiles, surveillance platforms, preparedness bodies)</li><li>[ ] Day 30 revision (Future threats, biosecurity, MCQs, SBAs, flashcards, mind map)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know 🔴</div>
+<ul><li>Definitions: emerging, re-emerging, deliberately emerging, Disease X</li><li>CLIMATIC drivers</li><li>One Health (Quadripartite: WHO/FAO/WOAH/UNEP)</li><li>Zoonotic spillover cascade</li><li>WHO R&amp;D Blueprint pathogens (all 9/10)</li><li>Examples: COVID-19, Ebola, MERS, Nipah, Hendra, Zika, mpox, H5N1, H1N1, HIV, SFTSV</li><li>IHR (2005), PHEIC, JEE</li><li>GOARN, EIOS, EWRS</li><li>CEPI, Gavi, GPMB, GHSA</li><li>GISAID, Nextstrain</li><li>R₀ comparison</li><li>Antigenic drift vs shift</li><li>HGT mechanisms</li><li>Antimicrobial resistance drivers</li><li>Biosecurity: BTWC, DURC, GOF</li><li>Wastewater surveillance</li><li>Spillback</li></ul>
+<div class="sub-h">Should Know 🟡</div>
+<ul><li>Detailed pathogenesis of priority pathogens</li><li>CEPI 100 Days Mission</li><li>GLEWS, OFFLU, Quadripartite structures</li><li>GLEWS data sharing</li><li>Pandemic Influenza Preparedness (GISRS)</li><li>COVID-19 variants (Alpha, Beta, Gamma, Delta, Omicron, sublineages)</li><li>COVID-19 vaccine platforms (mRNA, viral vector, subunit, etc.)</li><li>H5N1 mammalian adaptation (PB2 627K, HA Q226L)</li><li><i>Candida auris</i> warming hypothesis</li><li>Coccidioides northward expansion</li><li>Climate–disease attribution models</li><li>Synthetic biology 2010 first synthetic cell, 2017 horsepox synthesis</li><li>Pandemic Severity Assessment Framework</li><li>Mass-gathering risk</li><li>Migrant / conflict zone infections</li><li>Ebola DRC 2018–20; Sudan ebolavirus 2022</li><li>Marburg 2022–24 outbreaks</li><li>Crimean-Congo haemorrhagic fever tick range</li><li>Hendra equine vaccine (HeV-sG)</li><li>Nipah Bangladesh, India dynamics</li><li>IHR (2005) Annex 1A capacities</li><li>BWC Working Group 2022–24</li><li>PCIP / DURC oversight</li></ul>
+<div class="sub-h">Nice to Know 🟢</div>
+<ul><li>Synthetic biology governance (IGSC screening 2024)</li><li>AI-designed proteins (e.g., AlphaFold-derived)</li><li>Gene drives for vector control</li><li><i>Wolbachia</i> (dengue control)</li><li>Sterile insect technique</li><li>Pan-coronavirus vaccines</li><li>Universal influenza vaccines</li><li>Broad-spectrum antivirals</li><li>Pandemic Fund (World Bank)</li><li>Mortality surveillance (EuroMOMO)</li><li>Mass-gathering Hajj/Umrah IPC</li><li>Mpox Clade I 2023–24 exportation</li><li>Polio cVDPV outbreaks (2018+)</li><li>COVID-19 reinfection / long COVID</li><li>BCG and NTM (cross-immunity hypotheses)</li><li>Bat interferon/STING mechanisms</li><li>Off-target effects of climate interventions on disease</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<p>- - -</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ol><li><b>Definitions</b> (emerging, re-emerging, deliberate; Disease X).</li><li><b>Drivers</b> (CLIMATIC + 2; explain each with example).</li><li><b>One Health</b> (Quadripartite; cascade; spillover).</li><li><b>WHO R&amp;D Blueprint</b> (list, key pathogens with R₀/CFR, vaccines).</li><li><b>Surveillance</b> (IBS, EBS, genomic, wastewater; platforms: GISAID, Nextstrain).</li><li><b>Preparedness/Response</b> (IHR 2005; PHEIC; JEE; GOARN; CEPI; Gavi; GPMB; GHSA).</li><li><b>Biosecurity</b> (BTWC; DURC; GOF; synthetic biology).</li><li><b>Future threats</b> (H5N1 mammals; <i>C. auris</i>; <i>Coccidioides</i>; AI; AMR).</li><li><b>One Health operational examples</b>.</li><li><b>Conclusions</b>.</li></ol>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Define; epidemiology; pathogen; clinical; control; example.</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Emerging = new; re-emerging = old resurging; deliberate = intentional."</li><li>"CLIMATIC = Climate, Land, International, Microbial, Animal, Technology, Inadequate."</li><li>"One Health = WHO + FAO + WOAH + UNEP (Quadripartite)."</li><li>"Disease X = unknown pandemic pathogen placeholder."</li><li>"IHR 2005 = 24 h notification; PHEIC = WHO Director-General declaration."</li><li>"CEPI 100 Days = vaccine in 100 days; COVAX = equity."</li><li>"GISAID = sequence sharing; Nextstrain = real-time phylogeny."</li><li>"H5N1 = panzootic, mammalian adaptation, pandemic risk rising."</li><li>"Bat = major reservoir, dampened STING, longevity."</li><li>"R₀: measles 12–18 &gt; COVID-19 Omicron &gt; SARS-CoV-1 &gt; MERS &lt; 1."</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Apply One Health to a relevant index case (Nipah encephalitis, H5N1 contact, mpox rash, viral haemorrhagic fever suspect).</li><li>Discuss isolation/AIIR, PPE, lab testing, public health notification, contact tracing, post-exposure prophylaxis.</li><li>Counsel on vaccine hesitancy, COVID-19 mRNA booster, MMR catch-up, hepatitis A post-exposure.</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Definitions (Emerging/Re-emerging/Deliberate/Disease X)</li><li>CLIMATIC drivers + 2</li><li>Quadripartite (WHO/FAO/WOAH/UNEP)</li><li>R&amp;D Blueprint pathogens</li><li>100 Days Mission (CEPI)</li><li>IHR 2005 + PHEIC</li><li>GOARN, EIOS, EWRS</li><li>GISAID, Nextstrain</li><li>BTWC, DURC, GOF</li><li>H5N1 2022–24 cattle + mammals</li><li><i>C. auris</i>, <i>Coccidioides</i></li><li>Bats = reservoirs</li><li>R₀ for key pathogens</li><li>Drift vs shift</li><li>HGT (conjugation, transformation, transduction)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>An emerging infection is BEST defined as:</b></li></ol>
+<p>A. An infection that is resistant to multiple drugs B. An infection that is endemic in tropical regions C. <b>A newly recognised or rapidly increasing infection in incidence or geographic range</b> D. A seasonal outbreak of influenza E. A nosocomial infection</p>
+<ol><li><b>Which of the following is a RE-EMERGING infection?</b></li></ol>
+<p>A. SARS-CoV-2 B. MERS-CoV C. **Multidrug-resistant *Mycobacterium tuberculosis*** D. Nipah virus E. <i>Candida auris</i></p>
+<ol><li><b>The WHO R&amp;D Blueprint "Disease X" is BEST described as:</b></li></ol>
+<p>A. A code name for SARS-CoV-2 B. A disease caused by <i>Xenopsylla</i> (plague vector) C. <b>A placeholder for an unknown pathogen with pandemic potential, used to drive platform R&amp;D</b> D. A WHO list of neglected tropical diseases E. Influenza strain X (H1N1pdm09)</p>
+<ol><li><b>The CLIMATIC mnemonic of drivers of emergence includes all of the following EXCEPT:</b></li></ol>
+<p>A. Climate change B. Land use change C. <b>Vitamin deficiency</b> D. International travel E. Microbial adaptation</p>
+<ol><li><b>Which percentage of emerging infections is estimated to be zoonotic?</b></li></ol>
+<p>A. &lt; 5 % B. ~ 10 % C. ~ 25 % D. <b>~ 60–75 %</b> E. &gt; 95 %</p>
+<ol><li><b>The Quadripartite One Health collaboration includes:</b></li></ol>
+<p>A. WHO + FAO + WOAH + <b>UNEP</b> (since 2022) B. WHO + UNICEF + FAO + WOAH C. WHO + Gavi + CEPI + World Bank D. WHO + CDC + ECDC + WOAH E. FAO + WOAH + WTO + UNESCO</p>
+<ol><li><b>MERS-CoV is primarily transmitted to humans via:</b></li></ol>
+<p>A. Bats directly B. <b>Dromedary camels (intermediate host)</b> C. Pigs D. Ticks E. Person-to-person with R₀ &gt; 5</p>
+<ol><li><b>The most likely source of the 2009 H1N1 pandemic was:</b></li></ol>
+<p>A. A laboratory escape B. <b>Triple-reassortant swine influenza (swine + avian + human segments) in Mexico</b> C. Avian H5N1 mutation D. Bat coronavirus E. Camels in Saudi Arabia</p>
+<ol><li><b>H5N1 in dairy cattle (US, 2022–2024) is significant because:</b></li></ol>
+<p>A. Cattle-derived milk is always pasteurised and safe B. <b>It shows mammalian adaptation and provides a new pathway for human exposure; ~ 1 severe human case has been reported</b> C. Cattle are the natural reservoir of H5N1 D. The virus is no longer a pandemic concern E. H5N1 cannot infect humans</p>
+<ol><li><b>Which of the following is a BWC-relevant principle?</b></li></ol>
+<p>A. Offensive bioweapons programmes are acceptable if national B. <b>The BTWC (1972) bans biological weapons development, production, and stockpiling but lacks robust verification</b> C. The BTWC has a strong verification protocol D. Bioweapons are a "controllable" arms class E. GOF research is a verified BTWC compliance tool</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<p><b>SBA 1.</b> A 35-year-old man in Kerala, India, presents with fever, altered mental status, and a history of drinking fresh date palm sap. He deteriorates with encephalitis and seizures. LP shows lymphocytic pleocytosis. Public health is investigating a cluster in his village.</p>
+<p>Which is the MOST likely pathogen and reservoir? A. Rabies — dog B. **Nipah virus — <i>Pteropus</i> fruit bat** C. Japanese encephalitis virus — <i>Culex</i> mosquito D. Chandipura virus — sandfly E. West Nile virus — <i>Culex</i> mosquito</p>
+<div class="callout">Answer: <b>B</b>. Date palm sap in Kerala, Bangladesh, and West Bengal is a known transmission route of Nipah virus, with fruit bat saliva/urine contaminating the sap. Japanese encephalitis and West Nile are <i>Culex</i>-borne, with no fresh-sap link. Rabies transmission is via bite. Chandipura is sandfly-transmitted.</div>
+<p><b>SBA 2.</b> A 60-year-old man in Saudi Arabia develops severe pneumonia 5 days after a camel market visit. He requires mechanical ventilation. PCR is positive for a coronavirus. Contact tracing identifies a single secondary case in his wife, but no further spread in the hospital.</p>
+<p>Which pathogen and R₀ characteristic fits BEST? A. SARS-CoV-2, R₀ &gt; 5 B. MERS-CoV, R₀ &lt; 1 (limited human–human) C. SARS-CoV-1, R₀ &gt; 3 D. H5N1, R₀ 2.5 E. Nipah virus, R₀ &gt; 1</p>
+<div class="callout">Answer: <b>B</b>. MERS-CoV (camel exposure) with a single secondary case, no hospital spread, and severe pneumonia. R₀ &lt; 1 in most clusters means human-to-human transmission is inefficient. SARS-CoV-2 has R₀ &gt; 5 in this context; SARS-CoV-1 efficient hospital spread; H5N1 and Nipah do not fit the camel exposure history.</div>
+<p><b>SBA 3.</b> A state is implementing a strategy to "pre-empt" the next respiratory pandemic. The plan mandates: (i) a pathogen-agnostic mRNA platform ready to insert any spike, (ii) sewage surveillance at 50 sites, (iii) JEE-driven strengthening of IHR core capacities, (iv) enrolment in CEPI's 100 Days Mission.</p>
+<p>Which WHO/UN body leads the "100 Days Mission" to deliver a vaccine within 100 days of pathogen identification? A. WHO R&amp;D Blueprint B. <b>CEPI (Coalition for Epidemic Preparedness Innovations)</b> C. Gavi D. World Bank E. GPMB</p>
+<div class="callout">Answer: <b>B</b>. CEPI leads the 100 Days Mission. The WHO R&amp;D Blueprint lists priority pathogens; Gavi funds vaccine programmes; World Bank hosts the Pandemic Fund; GPMB monitors preparedness.</div>
+<p><b>SBA 4.</b> A US patient has a chronic indwelling urinary catheter, multiple prior antibiotic courses, and develops candidemia. Blood culture grows <i>Candida auris</i>. The lab reports fluconazole resistance. The infection control team wants to disinfect the room.</p>
+<p>Which of the following is MOST appropriate for environmental decontamination? A. Standard quaternary ammonium B. **Sodium hypochlorite (1000 ppm) — <i>C. auris</i> requires sporicidal disinfectants** C. Chlorhexidine 2 % spray D. 70 % ethanol only E. UV light only without cleaning</p>
+<div class="callout">Answer: <b>B</b>. <i>C. auris</i> requires sporicidal disinfectants (sodium hypochlorite 1000 ppm, hydrogen peroxide vapour, certain quaternary ammonium-alcohol blends) because chlorhexidine is not reliably sporicidal. <i>C. auris</i> persists on surfaces for weeks; patients require contact precautions, single room, dedicated equipment, and screening of contacts.</div>
+<p><b>SBA 5.</b> A 24-year-old in São Paulo returns from a 3-week visit to Kinshasa, DRC, where she attended a large family gathering and ate bushmeat. She presents 7 days later with fever, bloody diarrhoea, and later bleeding from IV sites. Her contacts develop similar illness.</p>
+<p>Which of the following is the MOST appropriate immediate action? A. Routine bedside care, await culture B. <b>Isolate in AIIR (negative pressure, ≥ 12 ACH), use FFP3 respirator, fluid-resistant gown, double gloves, face shield; notify public health within 24 h; consider VHF differential (Ebola, Marburg, CCHF, Lassa, RVF)</b> C. Discharge with oral antibiotics D. Treat as traveler's diarrhoea; loperamide E. Begin TB isolation only</p>
+<div class="callout">Answer: <b>B</b>. DRC bushmeat exposure and bleeding signs (bloody diarrhoea, IV-site bleeding) trigger VHF suspicion (Ebola, Marburg, CCHF, Lassa, RVF). Immediate airborne + contact + droplet isolation in AIIR with FFP3, and 24 h public health notification are critical. Routine care, loperamide, and TB isolation are inadequate.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Q: Emerging vs re-emerging vs deliberate?</b></li></ul>
+<p>A: Emerging = newly recognised; re-emerging = previously controlled, resurging; deliberate = intentional release.</p>
+<ul><li><b>Q: CLIMATIC mnemonic of drivers?</b></li></ul>
+<p>A: <b>C</b>limate, <b>L</b>and use, <b>I</b>nternational travel, <b>M</b>icrobial adaptation, <b>A</b>nimal–human, <b>T</b>echnology, <b>I</b>nadequate surveillance (+ <b>C</b>onflict, <b>A</b>nti-vaccine).</p>
+<ul><li><b>Q: One Health = ?</b></li></ul>
+<p>A: Integrated human + animal + environment. <b>Quadripartite</b> = WHO + FAO + WOAH + <b>UNEP</b> (since 2022).</p>
+<ul><li><b>Q: 60–75 % of emerging infections are?</b></li></ul>
+<p>A: Zoonotic.</p>
+<ul><li><b>Q: Major bat-borne pathogens?</b></li></ul>
+<p>A: Ebola, Marburg, SARS-CoV, MERS-CoV, SARS-CoV-2, Nipah, Hendra, lyssaviruses.</p>
+<ul><li><b>Q: Disease X?</b></li></ul>
+<p>A: WHO R&amp;D Blueprint placeholder for an unknown pathogen with pandemic potential; drove mRNA platform preparedness.</p>
+<ul><li><b>Q: WHO R&amp;D Blueprint priority pathogens?</b></li></ul>
+<p>A: COVID-19, CCHF, Ebola, Marburg, Lassa, MERS, SARS, Nipah, RVF, Zika (+ Disease X).</p>
+<ul><li><b>Q: IHR (2005)?</b></li></ul>
+<p>A: 196 States Parties; report PHEIC within <b>24 h</b>; JEE for core capacities; PHEIC declared by Director-General.</p>
+<ul><li><b>Q: GOARN?</b></li></ul>
+<p>A: WHO-coordinated network of &gt; 300 institutions deploying outbreak response teams.</p>
+<ul><li><b>Q: EIOS?</b></li></ul>
+<p>A: Epidemic Intelligence from Open Sources — WHO-led open-source surveillance.</p>
+<ul><li><b>Q: CEPI?</b></li></ul>
+<p>A: Coalition for Epidemic Preparedness Innovations — vaccine development; <b>100 Days Mission</b>.</p>
+<ul><li><b>Q: Gavi?</b></li></ul>
+<p>A: Global Alliance for Vaccines and Immunisation — co-led COVAX.</p>
+<ul><li><b>Q: GPMB?</b></li></ul>
+<p>A: Global Preparedness Monitoring Board — independent monitoring (World Bank + WHO).</p>
+<ul><li><b>Q: GISAID?</b></li></ul>
+<p>A: Global Initiative on Sharing All Influenza Data — influenza + SARS-CoV-2 sequences.</p>
+<ul><li><b>Q: Nextstrain?</b></li></ul>
+<p>A: Open-source real-time pathogen phylogeny platform.</p>
+<ul><li><b>Q: R₀ comparison?</b></li></ul>
+<p>A: Measles 12–18; Omicron &gt; 10; COVID-19 ancestral 2.5–3; SARS 2–4; Ebola 1.5–2.5; MERS &lt; 1; H5N1 &lt; 1.</p>
+<ul><li><b>Q: Antigenic drift vs shift?</b></li></ul>
+<p>A: Drift = small HA/NA mutations (seasonal); shift = reassortment (pandemic). Influenza A only.</p>
+<ul><li><b>Q: HGT types?</b></li></ul>
+<p>A: Conjugation, transformation, transduction; plasmids, integrons, transposons.</p>
+<ul><li><b>Q: Nipah reservoir?</b></li></ul>
+<p>A: Fruit bats (<i>Pteropus</i>); via pig or date palm sap.</p>
+<ul><li><b>Q: MERS-CoV intermediate?</b></li></ul>
+<p>A: Dromedary camel.</p>
+<ul><li><b>Q: Ebola 2014 outbreak vaccine?</b></li></ul>
+<p>A: <b>rVSV-ZEBOV (Ervebo)</b> ring vaccination; mAb <b>ansuvimab (Ebanga)</b> or <b>atoltivimab/maftivimab/odesivimab (Inmazeb)</b>.</p>
+<ul><li><b>Q: Mpox vaccines?</b></li></ul>
+<p>A: <b>MVA-BN (JYNNEOS/Imvanex/Imvamune)</b>.</p>
+<ul><li><b>Q: Mpox 2022–2024 clades?</b></li></ul>
+<p>A: Clade IIb 2022 (MSM); Clade I 2023–24 DRC (broader spread, exported).</p>
+<ul><li><b>Q: Hendra intermediate?</b></li></ul>
+<p>A: Horse (vaccine HeV-sG-V available).</p>
+<ul><li><b>Q: SFTSV vector?</b></li></ul>
+<p>A: <i>Haemaphysalis longicornis</i> tick.</p>
+<ul><li>**Q: <i>Candida auris</i> key facts?**</li></ul>
+<p>A: Multi-resistant; persists on surfaces; <b>chlorhexidine is NOT sporicidal</b>; <b>sporicidal disinfectants</b> needed; warming tolerance hypothesis for emergence.</p>
+<ul><li>**Q: <i>Coccidioides</i> expansion?**</li></ul>
+<p>A: Valley fever expanding north in US (climate).</p>
+<ul><li><b>Q: H5N1 mammalian adaptation?</b></li></ul>
+<p>A: PB2 627K, HA 226 (Q226L), furin cleavage; 2022+ sea lions, 2024+ US dairy cattle.</p>
+<ul><li><b>Q: COVID-19 origin?</b></li></ul>
+<p>A: Most likely zoonotic (bat coronavirus + intermediate host); lab leak debated; furin cleavage site unique.</p>
+<ul><li><b>Q: Why bats as reservoirs?</b></li></ul>
+<p>A: 200+ viruses; dampened STING/IFN response; long lifespan; flight metabolism; chronic low-level infection.</p>
+<ul><li><b>Q: Spillback?</b></li></ul>
+<p>A: Human → animal transmission (e.g., SARS-CoV-2 in mink, deer, hamsters; mpox in rodents).</p>
+<ul><li><b>Q: BWC/BTWC?</b></li></ul>
+<p>A: Biological Weapons Convention 1972; 192 States Parties; <b>bans bioweapons</b>; <b>lacks verification</b>.</p>
+<ul><li><b>Q: DURC and GOF?</b></li></ul>
+<p>A: Dual-use research of concern; gain-of-function enhances transmissibility/virulence/host range; H5N1 ferret experiments (Fouchier 2011) controversial.</p>
+<ul><li><b>Q: 100 Days Mission?</b></li></ul>
+<p>A: CEPI-led goal of a vaccine in 100 days of pathogen identification.</p>
+<ul><li><b>Q: Wastewater surveillance examples?</b></li></ul>
+<p>A: Polio (UK, US 2022), SARS-CoV-2, influenza, RSV, mpox.</p>
+<ul><li><b>Q: GLEWS?</b></li></ul>
+<p>A: Global Early Warning System — joint WHO/FAO/WOAH for animal + zoonotic diseases.</p>
+<ul><li><b>Q: OFFLU?</b></li></ul>
+<p>A: Animal influenza network (FAO/WOAH).</p>
+<ul><li><b>Q: Five ways climate change drives infection?</b></li></ul>
+<p>A: Vector range, seasonality, water-borne, fungal emergence, extreme weather, algal blooms.</p>
+<ul><li><b>Q: Why is Disease X a "real" WHO concept?</b></li></ul>
+<p>A: Listed since 2015/18; COVID-19 was retrospectively Disease X; drives platform R&amp;D.</p>
+<ul><li><b>Q: Most effective way to prevent H5N1 spread?</b></li></ul>
+<p>A: Biosecurity in poultry farms; surveillance; PPE for workers; vaccination of poultry; avoid raw milk.</p>
+<ul><li><b>Q: Why is mpox Clade I 2023–24 of concern?</b></li></ul>
+<p>A: Higher CFR; broader transmission (heterosexual, household, paediatric); exported beyond Africa.</p>
+<ul><li><b>Q: Which bat viruses are haem-?</b></li></ul>
+<p>A: Ebola, Marburg, Hendra, Nipah, SARS-CoV, SARS-CoV-2, MERS-CoV, lyssaviruses.</p>
+<ul><li><b>Q: COVID-19 vaccines approved?</b></li></ul>
+<p>A: BNT162b2, mRNA-1273, ChAdOx1-S, Ad26.COV2.S, NVX-CoV2373, BBIBP-CorV, CoronaVac, Sputnik V, etc.</p>
+<ul><li><b>Q: COVID-19 antivirals?</b></li></ul>
+<p>A: Remdesivir, molnupiravir, nirmatrelvir/ritonavir, dexamethasone, tocilizumab.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: C</b> — Emerging = newly recognised or rapidly increasing. AMR (A) is part of re-emergence. Endemic in tropics (B) is not "emerging." Seasonal flu (D) is not emerging (it is the established seasonal pattern). Nosocomial (E) is by setting, not emergence.</li></ol>
+<ol><li><b>Correct: C</b> — MDR-TB is the classic re-emerging infection. SARS-CoV-2, MERS, Nipah, <i>C. auris</i> are emerging. Measles, cholera, yellow fever, diphtheria, plague are also re-emerging.</li></ol>
+<ol><li><b>Correct: C</b> — Disease X is a placeholder. It is <b>not</b> a code name for SARS-CoV-2 (A) and was coined before COVID-19. The concept drives platform R&amp;D (mRNA, viral vector) and pandemic preparedness.</li></ol>
+<ol><li><b>Correct: C</b> — Vitamin deficiency is not a driver. CLIMATIC = Climate, Land, International travel, Microbial, Animal, Technology, Inadequate. C and A are drivers (Conflict, Anti-vaccine).</li></ol>
+<ol><li><b>Correct: D</b> — 60–75 % of emerging infections are zoonotic (Woolhouse 2005; Jones 2008).</li></ol>
+<ol><li><b>Correct: A</b> — Quadripartite = WHO + FAO + WOAH + UNEP (since 2022). UNICEF, Gavi, CDC, ECDC, WTO, UNESCO are not part of the Quadripartite.</li></ol>
+<ol><li><b>Correct: B</b> — MERS-CoV = bat → camel → human. Bats are reservoir, camels are intermediate. Person-to-person R₀ &lt; 1 in most clusters. Ticks and pigs are not MERS routes.</li></ol>
+<ol><li><b>Correct: B</b> — 2009 H1N1 = triple reassortant of swine + avian + human segments in Mexico. Not lab escape, not H5N1 mutation, not bat, not camel.</li></ol>
+<ol><li><b>Correct: B</b> — 2024 US dairy outbreak: ~ 900+ herds affected, 1 severe human case (Dec 2024, Louisiana). Mammalian adaptation (PB2 mutations). Pasteurisation kills the virus; raw milk is the concern. Cattle are NOT the natural reservoir; wild waterfowl are.</li></ol>
+<ol><li><b>Correct: B</b> — BTWC 1972 bans bioweapons; <b>no verification protocol</b> (US 2001 rejected the protocol). DURC and GOF are not BTWC compliance tools.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — Date palm sap, encephalitis, Kerala — Nipah virus (Pteropus bat reservoir). JE/West Nile are <i>Culex</i>-borne, no sap link. Rabies is bite-transmitted. Chandipura is sandfly-borne, encephalitis uncommon.</li></ol>
+<ol><li><b>Correct: B</b> — Camel exposure, severe pneumonia, single secondary case → MERS-CoV. R₀ &lt; 1 = limited human spread. SARS-CoV-2 / SARS-CoV-1 have higher R₀ and broader spread; H5N1 and Nipah do not fit the camel history.</li></ol>
+<ol><li><b>Correct: B</b> — CEPI 100 Days Mission. WHO R&amp;D Blueprint lists priorities; Gavi funds introduction; GPMB monitors; World Bank hosts Pandemic Fund.</li></ol>
+<ol><li><b>Correct: B</b> — <i>C. auris</i> requires sporicidal disinfectants (sodium hypochlorite 1000 ppm). Quaternary ammonium, chlorhexidine, ethanol, UV alone are inadequate.</li></ol>
+<ol><li><b>Correct: B</b> — DRC bushmeat + bleeding = VHF differential (Ebola, Marburg, CCHF, Lassa, RVF). Immediate AIIR with FFP3 + body fluid precautions + 24 h public health notification. Routine care, loperamide, TB isolation are inadequate.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Emerging and re-emerging infections remain a defining challenge of modern medicine and global health security. <b>Emerging</b> infections (newly recognised: HIV/AIDS, SARS-CoV, MERS, H5N1, H1N1, Ebola, Zika, COVID-19, mpox, Nipah, Hendra, SFTSV, <i>C. auris</i>) and <b>re-emerging</b> infections (MDR-TB, dengue, measles, diphtheria, cholera, yellow fever, plague, AMR) are driven by a CLIMATIC constellation of factors (<b>C</b>limate change, <b>L</b>and use, <b>I</b>nternational travel, <b>M</b>icrobial adaptation, <b>A</b>nimal–human interface, <b>T</b>echnology, <b>I</b>nadequate surveillance, plus <b>C</b>onflict and <b>A</b>nti-vaccine misinformation). The <b>One Health</b> approach — formalised by the Quadripartite (WHO/FAO/WOAH/UNEP) — recognises that human health is inseparable from animal and environmental health; ~ 60–75 % of emerging infections are zoonotic, with bats serving as major viral reservoirs (Ebola, Marburg, SARS-CoVs, MERS, Nipah, Hendra). The <b>WHO R&amp;D Blueprint</b> prioritises R&amp;D against COVID-19, CCHF, Ebola/Marburg, Lassa, MERS/SARS, Nipah, RVF, Zika, and <b>Disease X</b> — a placeholder for unknown future pandemic pathogens that has driven mRNA and viral vector platform preparedness. <b>Surveillance</b> integrates indicator (IBS), event (EBS/EIOS/ProMED), genomic (GISAID, Nextstrain), wastewater, serological, animal, and vector data. <b>Preparedness</b> is anchored by the IHR (2005), PHEIC declaration, JEE, GOARN, EWRS, EIOS, and operational bodies like <b>CEPI</b> (vaccine R&amp;D, 100 Days Mission), <b>Gavi</b> (vaccine financing), <b>GPMB</b> (independent monitoring), and <b>GHSA</b> (multinational capacity-building). <b>Biosecurity</b> rests on the <b>BTWC (1972)</b>; <b>DURC</b> and <b>gain-of-function</b> research remain controversial after the H5N1 ferret-airborne transmission experiments. <b>Future threats</b> include H5N1 mammalian/cattle spillover, <i>Candida auris</i> (warming-tolerance hypothesis), <i>Coccidioides</i> northward expansion, fungal AMR, vector range expansion, and AI/synthetic biology. The clinician's role is to recognise the syndromes, institute rapid IPC (AIIR for VHF, measles, TB), notify public health within 24 h, participate in outbreak investigation, apply antimicrobial stewardship, and advocate for vaccination, equity, and One Health.</p>
+<p><b>Exam focus:</b> Definitions (emerging, re-emerging, deliberate, Disease X); CLIMATIC drivers; One Health (Quadripartite); R&amp;D Blueprint pathogens; spillover cascade; R₀ comparisons; COVID-19 timeline and vaccines; mpox (Clade IIb 2022 vs Clade I 2023–24); H5N1 mammalian adaptation; Nipah, Hendra, SFTSV; IHR/JEE/PHEIC; GOARN/EIOS/EWRS; CEPI 100 Days; GISAID/Nextstrain; BTWC/DURC/GOF; wastewater surveillance; AMR and One Health.</p>
+<p><b>Clinical relevance:</b> Every clinician will encounter emerging and re-emerging infections. Recognising the syndrome (viral haemorrhagic fever, atypical pneumonia, encephalitis post-bat exposure, mpox rash, <i>C. auris</i> candidemia), instituting IPC (AIIR for airborne, FFP3, body fluid precautions), notifying public health within 24 h, and contributing to antimicrobial stewardship and outbreak investigation are core responsibilities. Vaccine advocacy and community communication counter misinformation, while equity (COVAX, Gavi) addresses the global vulnerabilities that pandemics exploit.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | WHO/governance references current to 2024–2026 guidance (WHO R&amp;D Blueprint 2024 update, WHO PHEIC declarations, CDC, ECDC, UKHSA, CEPI 100 Days Mission, BTWC 2022–24 Working Group).</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Emerging Re Emerging Infections · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

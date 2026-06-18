@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reporting And Pharmacovigilance — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Reporting And Pharmacovigilance</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define <b>pharmacovigilance (PV)</b> and its purpose</li><li>[ ] Describe the <b>Yellow Card Scheme (UK MHRA)</b></li><li>[ ] Identify drugs on the <b>Black Triangle</b> (▼) list</li><li>[ ] Differentiate spontaneous reports from clinical trial data</li><li>[ ] Explain <b>Phase IV surveillance</b> and post-marketing studies</li><li>[ ] List WHO Pharmacovigilance Programme structure</li><li>[ ] Discuss signal detection, PRR/ROR, PSUR/PBRER, RMP</li><li>[ ] Recognise the role of healthcare professionals in ADR reporting</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Purpose</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Pharmacovigilance**</td><td>Science and activities relating to detection, assessment, understanding, and prevention of adverse effects or any other drug-related problems (WHO)</td></tr><tr><td>**Adverse Drug Reaction (ADR)**</td><td>Noxious, unintended response at normal doses (WHO 1972)</td></tr><tr><td>**Serious ADR**</td><td>Fatal, life-threatening, hospitalising, disabling, congenital anomaly, or other medically significant</td></tr><tr><td>**Unexpected ADR**</td><td>Reaction not consistent with SmPC (Summary of Product Characteristics)</td></tr><tr><td>**Signal**</td><td>Reported information on a possible causal relationship between an ADR and a drug, not previously known or incompletely documented</td></tr></table>
+<p><b>Purpose:</b></p>
+<ul><li>Identify previously unknown ADRs (especially rare, delayed)</li><li>Quantify risk (frequency, severity, populations)</li><li>Update prescribing information (SmPC, PIL)</li><li>Trigger regulatory action (warnings, restrictions, withdrawal)</li><li>Support risk-benefit re-assessment</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — Pharmacovigilance Workflow</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[ADR occurs in patient] --&gt; B[Healthcare professional identifies] B --&gt; C[YELLOW CARD to MHRA&lt;br/&gt;or national PV centre] C --&gt; D[National PV database&lt;br/&gt;VigiBase - WHO Uppsala] D --&gt; E[Signal detection&lt;br/&gt;PRR, ROR, EBCPV] E --&gt; F{Confirmed signal?} F --&gt;|No| G[Continued monitoring] F --&gt;|Yes| H[Regulatory action] H --&gt; I[SmPC update] H --&gt; J[DHPC letter] H --&gt; K[Black box warning] H --&gt; L[Drug withdrawal / restriction] H --&gt; M[PSUR / PBRER] I --&gt; N[Prescribers informed] J --&gt; N K --&gt; N L --&gt; N M --&gt; N N --&gt; O[Updated guidelines / NICE] </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Yellow Card Scheme (UK MHRA)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Established**</td><td>1964 (UK); 1st globally</td></tr><tr><td>**Trigger**</td><td>Thalidomide disaster (1956-62)</td></tr><tr><td>**Who reports**</td><td>Doctors, pharmacists, nurses, patients, CARs (Coroners)</td></tr><tr><td>**How**</td><td>Online, paper, app</td></tr><tr><td>**What to report**</td><td>Serious ADR; new/unexpected ADR; ADR to Black Triangle drug; ADR in child; congenital anomaly; ADR to herbal/OTC</td></tr><tr><td>**Confidentiality**</td><td>Patient identifier removed before MHRA</td></tr><tr><td>**Causality**</td><td>Not required — MHRA assesses</td></tr><tr><td>**Time**</td><td>Within 15 days for serious; ASAP</td></tr></table>
+<div class="sub-h">4.2 Black Triangle (▼) Scheme</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Symbol**</td><td>▼ (inverted black triangle)</td></tr><tr><td>**Indication**</td><td>Newly licensed drug (typically <5 yr) OR new formulation/route OR new indication</td></tr><tr><td>**Purpose**</td><td>Intensive post-marketing surveillance — ALL ADRs reportable (not just serious)</td></tr><tr><td>**List**</td><td>Updated monthly on BNF/MHRA</td></tr><tr><td>**Examples (recent)**</td><td>▼ sacubitril-valsartan, ▼ SGLT2 inhibitors (early), ▼ CAR-T therapies, ▼ mRNA COVID vaccines, ▼ bispecific antibodies</td></tr><tr><td>**Duration**</td><td>Usually 5 yr, but may be extended if safety concerns</td></tr></table>
+<div class="sub-h">4.3 Pharmacovigilance Tools &amp; Methods</div>
+<table class="ctable"><tr><th>Tool</th><th>Description</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**Spontaneous reports**</td><td>Voluntary (Yellow Card) — main source of signal</td></tr><tr><td>**Prescription Event Monitoring (PEM)**</td><td>UK Drug Safety Research Unit — patients identified from Rx</td></tr><tr><td>**Intensive Monitoring**</td><td>Hospital-based active surveillance</td></tr><tr><td>**Registries**</td><td>Disease-based or drug-based (e.g., TNF inhibitor registry)</td></tr><tr><td>**Sentinel Sites**</td><td>Designated hospitals for active reporting</td></tr><tr><td>**PSUR / PBRER**</td><td>Periodic Safety Update Report (now PBRER — Periodic Benefit-Risk Evaluation Report) — submitted by MAH</td></tr><tr><td>**RMP**</td><td>Risk Management Plan — proactive risk minimisation (now part of licence)</td></tr><tr><td>**PASS**</td><td>Post-Authorisation Safety Studies</td></tr><tr><td>**PAES**</td><td>Post-Authorisation Efficacy Studies</td></tr><tr><td>**DHPC**</td><td>Direct Healthcare Professional Communication — urgent safety info</td></tr></table>
+<div class="sub-h">4.4 Signal Detection — Quantitative Methods</div>
+<table class="ctable"><tr><th>Measure</th><th>Formula</th><th>Interpretation</th></tr><tr><td>---------</td><td>---------</td><td>----------------</td></tr><tr><td>**PRR** (Proportional Reporting Ratio)</td><td>(a/b) / (c/d) where a=reports drug+ADR, b=reports drug only, c=reports ADR only, d=reports neither</td><td>PRR ≥2 = signal; ≥3 = strong signal</td></tr><tr><td>**ROR** (Reporting Odds Ratio)</td><td>(a × d) / (b × c)</td><td>ROR ≥2 = signal</td></tr><tr><td>**IC** (Information Component, WHO-UMC)</td><td>Bayesian shrinkage estimate</td><td>IC >0 = signal (positive)</td></tr><tr><td>**EBGM** (Empirical Bayes Geometric Mean, FDA)</td><td>Bayesian</td><td>EBGM ≥2 = signal</td></tr></table>
+<div class="sub-h">4.5 Pharmacovigilance — National &amp; International</div>
+<table class="ctable"><tr><th>Level</th><th>Body</th><th>Role</th></tr><tr><td>-------</td><td>------</td><td>------</td></tr><tr><td>**Global**</td><td>WHO Programme for International Drug Monitoring (Uppsala Monitoring Centre, UMC)</td><td>Maintains VigiBase; IC analysis; signal sharing</td></tr><tr><td>**EU**</td><td>EMA (European Medicines Agency)</td><td>PRAC (Pharmacovigilance Risk Assessment Committee) — PSUR assessment, RMP</td></tr><tr><td>**UK**</td><td>MHRA + CHM (Commission on Human Medicines)</td><td>Yellow Card; regulatory action</td></tr><tr><td>**US**</td><td>FDA (MedWatch) + FAERS</td><td>FAERS database; Sentinel System</td></tr><tr><td>**Japan**</td><td>PMDA</td><td>Japan PV system</td></tr></table>
+<div class="sub-h">4.6 Causality Assessment in PV</div>
+<table class="ctable"><tr><th>Level</th><th>Description</th></tr><tr><td>-------</td><td>-------------</td></tr><tr><td>**Individual case**</td><td>Naranjo or WHO-UMC</td></tr><tr><td>**Aggregate (signal)**</td><td>PRR/ROR/IC in large database</td></tr><tr><td>**Confirmatory**</td><td>RCT, observational study, registry, case-control</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>Yellow Card established</td><td>1964 (1st globally)</td></tr><tr><td>Trigger for UK PV</td><td>Thalidomide (phocomelia, 1956-62)</td></tr><tr><td>Threshold for strong signal (PRR)</td><td>≥2</td></tr><tr><td>Black Triangle duration</td><td>~5 yr post-licensing</td></tr><tr><td>Reportable on Black Triangle</td><td>ALL ADRs (not just serious)</td></tr><tr><td>Yellow Card is for</td><td>All serious, new, or Black Triangle drug ADRs</td></tr><tr><td>Reporting ADR in child</td><td>Always report (rare events, off-label)</td></tr><tr><td>Pregnancy ADR</td><td>Always report (congenital anomalies)</td></tr><tr><td>PBRER (PSUR)</td><td>Submitted by MAH at intervals; assesses benefit-risk</td></tr><tr><td>RMP</td><td>Risk Management Plan; required for all new drugs</td></tr><tr><td>DHPC</td><td>Direct Healthcare Professional Communication — urgent safety alert</td></tr><tr><td>VigiBase</td><td>WHO global ADR database (Uppsala)</td></tr><tr><td>FAERS</td><td>FDA Adverse Event Reporting System (US)</td></tr><tr><td>Drug withdrawal example (signal)</td><td>Rofecoxib (Vioxx) 2004 — CV events; Rosiglitazone 2010 — MI</td></tr><tr><td>Spontaneous reporting limitation</td><td>Under-reporting (estimated <10%); bias; no denominator</td></tr><tr><td>When to report ADR</td><td>Any serious, new/unexpected, paediatric, congenital, or Black Triangle</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define pharmacovigilance.</b></li></ol>
+<p><i>The science and activities relating to the detection, assessment, understanding, and prevention of adverse effects or any other drug-related problems (WHO).</i></p>
+<ol><li><b>What was the trigger for modern pharmacovigilance?</b></li></ol>
+<p><i>Thalidomide disaster (1956-62) — caused severe congenital anomalies (phocomelia) in &gt;10,000 babies worldwide. Led to UK Yellow Card (1964) and Kefauver-Harris Amendment (US, 1962).</i></p>
+<ol><li><b>What is the Yellow Card Scheme? Who reports?</b></li></ol>
+<p><i>UK MHRA's spontaneous ADR reporting system (1964). Healthcare professionals (doctors, pharmacists, nurses) and patients can report.</i></p>
+<ol><li><b>What should be reported via Yellow Card?</b></li></ol>
+<p><i>All serious ADRs; new/unexpected ADRs; ADRs to Black Triangle drugs (▼); ADRs in children; congenital anomalies; ADR to herbal/OTC products.</i></p>
+<ol><li><b>What is the Black Triangle (▼) symbol?</b></li></ol>
+<p><i>Inverted black triangle indicating a newly licensed drug (&lt;5 yr) under intensive surveillance. ALL ADRs must be reported.</i></p>
+<ol><li><b>What is a "signal" in pharmacovigilance?</b></li></ol>
+<p><i>Reported information on a possible causal relationship between an ADR and a drug, not previously known or incompletely documented. Detected via disproportionality analysis (PRR, ROR, IC).</i></p>
+<ol><li><b>What is PRR? Threshold for a signal?</b></li></ol>
+<p><i>Proportional Reporting Ratio = (a/b)/(c/d) in spontaneous report database. PRR ≥2 = possible signal; ≥3 = strong signal.</i></p>
+<ol><li><b>What is PBRER?</b></li></ol>
+<p><i>Periodic Benefit-Risk Evaluation Report (formerly PSUR) — submitted by Marketing Authorisation Holder at defined intervals, summarising global safety data and benefit-risk assessment.</i></p>
+<ol><li><b>What is a Risk Management Plan (RMP)?</b></li></ol>
+<p><i>Document required for all new drug licences; describes identified risks, potential risks, missing information, and risk minimisation activities (e.g., Pregnancy Prevention Programme for thalidomide, isotretinoin, valproate).</i></p>
+<ol><li><b>What are the limitations of spontaneous reporting?</b></li></ol>
+<p><i>Under-reporting (estimated &lt;10% of serious ADRs); no denominator (cannot calculate incidence); reporter bias; duplicate reports; no comparator; confounded by polypharmacy. Must be complemented by active surveillance, registries, and analytical studies.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>Yellow Card vs Black Triangle</td><td>Yellow = report ADR; Black Triangle = newly licensed, ALL ADRs reportable</td></tr><tr><td>PRR vs ROR</td><td>PRR = proportional reporting; ROR = odds ratio equivalent. Both used in PV.</td></tr><tr><td>ADR vs ADE</td><td>ADR = causally related; ADE = any untoward event</td></tr><tr><td>Signal vs known ADR</td><td>Signal = hypothesis; known ADR = confirmed in SmPC</td></tr><tr><td>PSUR vs PBRER</td><td>PSUR = older term; PBRER = new (2012) — assesses benefit-risk, not just safety</td></tr><tr><td>RMP vs REMS</td><td>RMP = EU; REMS = US Risk Evaluation and Mitigation Strategy</td></tr><tr><td>PBRER vs DSUR</td><td>PBRER = post-marketing; DSUR = development (annual safety report during trials)</td></tr><tr><td>Passive vs active surveillance</td><td>Passive = spontaneous (Yellow Card); Active = sentinel, registries, PEM</td></tr><tr><td>VigiBase vs FAERS</td><td>VigiBase = WHO global; FAERS = US only</td></tr><tr><td>Under-reporting reason</td><td>Time, fear of blame, unsure of causality, "well-known" ADR</td></tr><tr><td>Phase IV vs PV</td><td>Phase IV = post-marketing trials; PV = broader (spontaneous + studies)</td></tr><tr><td>Spontaneous vs stimulated reporting</td><td>Spontaneous = voluntary (Yellow Card); Stimulated = e.g., PEM</td></tr></table>
+<p><b>Mnemonic — Yellow Card: "</b>Y<b>ellow = </b>Y<b>ellow card reports all </b>Y<b>ou need (serious, new, paediatric, congenital, Black Triangle)"</b></p>
+<p><b>Mnemonic — Black Triangle (▼): "</b>T<b>riangle = </b>T<b>race </b>T<b>horoughly"</b> (all ADRs in newly licensed drugs)</p>
+<p><b>Mnemonic — Signal threshold: "</b>PRR ≥2, ROR ≥2, IC &gt;0, EBGM ≥2<b>"</b> (proportional analysis)</p>
+<p><b>Mnemonic — Reportable ADRs: "</b>SSNPP<b>"</b> (Serious, Suspected new, Neonate, Pregnancy, Paediatric, Plus Black Triangle)</p>
+<p><b>Mnemonic — PV hierarchy: "</b>G<b>lobal (WHO) &gt; </b>R<b>egional (EMA) &gt; </b>N<b>ational (MHRA) &gt; </b>L<b>ocal (Trust)"</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Pharmacovigilance)) Yellow Card 1964 MHRA Doctors pharmacists Serious new paeds Black Triangle Newly licensed All ADRs 5 years Signal PRR ROR IC EBGM Tools Spontaneous PEM Registries PASS Regulatory EMA PRAC MHRA CHM FDA FAERS WHO UMC Documents PSUR PBRER RMP REMS DSUR Limitations Under-reporting No denominator Bias Examples Rofecoxib CV Rosiglitazone MI Valproate PPP </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>Yellow Card purpose</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Black Triangle criteria</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Signal definition</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>PRR/ROR</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>PBRER/RMP</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Thalidomide history</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>Yellow Card</td><td>/5</td></tr><tr><td>Black Triangle</td><td>/5</td></tr><tr><td>Signal detection</td><td>/5</td></tr><tr><td>PRR/ROR</td><td>/5</td></tr><tr><td>PBRER/RMP</td><td>/5</td></tr><tr><td>PV limitations</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/30**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The Yellow Card Scheme was established in the UK in:</b></li></ol>
+<p>A. 1944 B. 1964 ✓ C. 1984 D. 2004 E. 2014</p>
+<ol><li><b>The trigger for modern pharmacovigilance was:</b></li></ol>
+<p>A. Aspirin-induced GI bleed B. Thalidomide disaster ✓ C. Acetaminophen hepatotoxicity D. Rofecoxib CV events E. Pandemrix narcolepsy</p>
+<ol><li><b>The Black Triangle (▼) symbol indicates:</b></li></ol>
+<p>A. A dangerous drug B. A newly licensed drug requiring intensive monitoring ✓ C. A CD D. A withdrawn drug E. An off-label drug</p>
+<ol><li><b>A signal in pharmacovigilance refers to:</b></li></ol>
+<p>A. A confirmed ADR B. A possible causal relationship not previously known ✓ C. An SmPC update D. A drug withdrawal E. A serious ADR</p>
+<ol><li><b>PRR threshold for a signal is:</b></li></ol>
+<p>A. ≥1 B. ≥2 ✓ C. ≥5 D. ≥10 E. ≥20</p>
+<ol><li><b>PBRER is submitted by:</b></li></ol>
+<p>A. Doctors B. Pharmacists C. Marketing Authorisation Holder (MAH) ✓ D. Patients E. Nurses</p>
+<ol><li><b>Which ADR should be reported via Yellow Card?</b></li></ol>
+<p>A. Well-known side effect B. Serious, new, or Black Triangle drug ADR ✓ C. Non-serious D. Common ADR in BNF E. Old drug reactions</p>
+<ol><li><b>VigiBase is maintained by:</b></li></ol>
+<p>A. FDA B. EMA C. WHO Uppsala Monitoring Centre ✓ D. MHRA E. NHS</p>
+<ol><li><b>Rofecoxib was withdrawn in 2004 due to:</b></li></ol>
+<p>A. Hepatotoxicity B. Cardiovascular events ✓ C. Renal failure D. SJS E. Agranulocytosis</p>
+<ol><li><b>Limitations of spontaneous reporting include:</b></li></ol>
+<p>A. Over-reporting B. Has denominator C. Under-reporting, no denominator, bias ✓ D. Strict causality required E. Population-based</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A GP prescribes a newly licensed diabetes drug and the patient develops DKA within 2 weeks. The BEST action is:</b></li></ol>
+<ul><li>A) Stop and switch, no report</li><li>B) Report via Yellow Card — Black Triangle drug, ALL ADRs ✓</li><li>C) Wait for second case</li><li>D) Report to manufacturer only</li><li>E) Continue and observe</li></ul>
+<ol><li><b>A hospital pharmacist identifies an unusual cluster of pancreatitis cases with a gliptin. The next step is:</b></li></ol>
+<ul><li>A) Yellow Card for each</li><li>B) Submit aggregated signal to MHRA / CHM ✓</li><li>C) Wait for EMA</li><li>D) Publish only</li><li>E) Local review only</li></ul>
+<ol><li><b>An MAH submits an annual PBRER for a 10-year-old drug. The most important component is:</b></li></ol>
+<ul><li>A) Sales figures</li><li>B) Benefit-risk re-evaluation with cumulative safety data ✓</li><li>C) Marketing plan</li><li>D) Manufacturing data</li><li>E) Patent status</li></ul>
+<ol><li><b>A patient on ▼ drug develops mild headache. Should it be reported?</b></li></ol>
+<ul><li>A) No — too mild</li><li>B) Yes — all ADRs in Black Triangle drugs must be reported ✓</li><li>C) Only if serious</li><li>D) Only if hospitalised</li><li>E) Only if new</li></ul>
+<ol><li><b>Thalidomide is now used for multiple myeloma. The risk-minimisation tool is:</b></li></ol>
+<ul><li>A) Black Triangle</li><li>B) Pregnancy Prevention Programme (PPP) with iPLEDGE-style REMS ✓</li><li>C) Yellow Card</li><li>D) PBRER</li><li>E) DHPC</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>B</b> (1964 — first global PV system)</li><li><b>B</b> (Thalidomide)</li><li><b>B</b> (Newly licensed = intensive monitoring)</li><li><b>B</b> (Possible causal relationship, new)</li><li><b>B</b> (PRR ≥2)</li><li><b>C</b> (MAH submits PBRER)</li><li><b>B</b> (Serious, new, Black Triangle)</li><li><b>C</b> (WHO Uppsala)</li><li><b>B</b> (Vioxx — rofecoxib CV events)</li><li><b>C</b> (Under-reporting, no denominator, bias)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>B</b> — Black Triangle drug: report ALL ADRs (mild to serious).</li><li><b>B</b> — Aggregated signal to MHRA/CHM (cluster suggests possible new ADR).</li><li><b>B</b> — PBRER = Periodic Benefit-Risk Evaluation Report.</li><li><b>B</b> — Black Triangle: all ADRs reportable, even mild.</li><li><b>B</b> — Pregnancy Prevention Programme (PPP) — strict contraception, monthly pregnancy tests, iPLEDGE-style programme.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Pharmacovigilance = detection, assessment, understanding, prevention of ADRs.</b> Yellow Card (UK, 1964) is the global template; thalidomide triggered it. Black Triangle (▼) = newly licensed, ALL ADRs reportable. Signal detection uses PRR ≥2 / ROR ≥2 / IC &gt;0. PBRER (formerly PSUR) and RMP are regulatory tools. Spontaneous reporting has limitations: under-reporting (&lt;10%), no denominator, bias. Examples: rofecoxib (CV), rosiglitazone (MI), valproate (PPP).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../ADRs|ADRs]]</li><li><b>Sibling Topic-Groups</b>: [[Definition and classification]], [[Causality assessment]], [[Common ADR patterns by system]]</li><li><b>Heading Hub</b>: [[ADRs]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Drug Development and Regulation]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Reporting And Pharmacovigilance · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

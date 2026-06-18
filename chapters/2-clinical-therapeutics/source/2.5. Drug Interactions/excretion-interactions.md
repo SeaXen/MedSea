@@ -1,0 +1,365 @@
+# Excretion Interactions
+
+**Status**: `draft` | **Chapter**: 2 — Clinical Therapeutics and Good Prescribing | **Heading**: Drug Interactions → Pharmacokinetic Interactions | **Exam Priority**: ⭐⭐⭐ **HIGH** (Renal tubular secretion, transporter-mediated — warfarin, lithium, methotrexate, digoxin)
+
+---
+
+## 1. 🎯 Learning Objectives
+- [ ] Identify mechanisms of excretion interactions: renal tubular secretion, transporter inhibition, biliary excretion, urine pH
+- [ ] Apply to high-yield drugs: methotrexate, lithium, digoxin, warfarin
+- [ ] Recognise transporter-mediated interactions (OAT1/3, OCT2, MATE1/2-K, P-gp)
+- [ ] Understand urine pH trapping
+
+---
+
+## 2. 📊 Mechanisms of Excretion Interactions
+
+| Mechanism | Description | Examples |
+|-----------|-------------|----------|
+| **Renal Tubular Secretion (Proximal Tubule)** | Competitive inhibition of OAT1/3, OCT2, MATE1/2-K | **Methotrexate + NSAIDs/Probenecid/PPIs/Penicillins** (OAT1/3) |
+| **Glomerular Filtration** | Altered renal blood flow / GFR | **NSAIDs + Lithium** (↓ GFR, ↓ Li⁺ clearance → toxicity) |
+| **Urine pH** | Trapping of weak acids/bases | **Alkalinisation: ↑ Salicylate excretion (overdose)**; **Acidification: ↑ Amphetamine, Ephedrine, Quinidine excretion** |
+| **P-gp (ABCB1) at Renal Tubule** | Inhibitor → ↓ renal clearance of substrate | **Verapamil, Dronedarone, Ticagrelor + Digoxin** (↑ digoxin levels) |
+| **Biliary Excretion** | P-gp, BCRP inhibition in hepatocyte/canaliculus | **Rifampicin + Mycophenolate** (↓ MPA exposure — enterohepatic recycling disrupted) |
+| **Faecal Excretion (Enterohepatic)** | Antibiotics disrupt gut flora → ↓ recycling | **Rifampicin + OCP** (↓ enterohepatic recycling of ethinylestradiol) |
+
+---
+
+## 3. 🚨 High-Yield Excretion Interactions
+
+### 1. Methotrexate + NSAIDs/Probenecid/PPIs — **CRITICAL**
+| Mechanism | Methotrexate (MTX) is renally excreted via **OAT1/3 (proximal tubule secretion) + tubular reabsorption + filtration** |
+|----------|--------------------------------------------------------------|
+| **Inhibitors of OAT1/3** | **NSAIDs (esp. diclofenac, ibuprofen, ketoprofen), Probenecid, Sulfonamides, Beta-lactams (Penicillins, Cephalosporins), PPIs (omeprazole, esomeprazole, pantoprazole — MATE1 inhibition)** |
+| **Effect** | **↓ MTX clearance → ↑ MTX levels → pancytopenia, mucositis, renal failure** |
+| **Critical at High-Dose** | **HIGH-DOSE MTX** (>1 g/m²) for ALL, osteosarcoma, lymphoma |
+| **Management** | **AVOID combination**; if unavoidable, **monitor MTX levels, hydration, alkalinisation, leucovorin rescue**; NSAIDs at least **5–7 days before and after** high-dose MTX |
+| **Clinical Pearl** | **EULAR recommends paracetamol (not NSAIDs) for pain in RA patients on MTX**; aspirin/ibuprofen OK in low-dose MTX if needed |
+
+### 2. Lithium + NSAIDs/ACEi/Thiazides — **CRITICAL**
+| Mechanism | **↓ GFR (NSAIDs: ↓ afferent arteriolar PG)**; **↑ proximal reabsorption of Na⁺/Li⁺ (volume depletion from thiazides, ACEi, dehydration)** |
+|----------|------------------------------------------------------|
+| **Common Culprits** | **NSAIDs, Thiazides, ACE inhibitors, ARBs, Tetracyclines, Metronidazole, Dehydration, Fever, Vomiting, Diarrhoea** |
+| **Effect** | **↑ Serum Li⁺ (toxicity >1.5 mmol/L) — tremor, confusion, ataxia, seizures, NDI** |
+| **Management** | **Monitor Li⁺ at baseline, 1 week, then weekly ×4 after any change**; **avoid NSAIDs, thiazides, dehydration**; use **paracetamol** instead of NSAIDs; ensure adequate fluid/salt intake |
+
+### 3. Digoxin + P-gp Inhibitors — **HIGH**
+| Inhibitors | **Verapamil, Diltiazem, Amiodarone, Dronedarone, Quinidine, Spironolactone, Clarithromycin, Erythromycin, Itraconazole, Ritonavir, Ciclosporin, Tacrolimus, Ticagrelor** |
+|-----------|----------------------------------------------------------|
+| **Effect** | **↓ Renal clearance + ↓ biliary excretion of digoxin → ↑ digoxin levels → toxicity (arrhythmias, GI, visual)** |
+| **Most Clinically Significant** | **Quinidine** (↓ renal clearance + ↓ Vd → ↑↑ digoxin levels), **Verapamil**, **Amiodarone** |
+| **Management** | **Reduce digoxin dose by 30–50%** when adding inhibitor; **monitor digoxin levels**; monitor ECG, K⁺, Mg²⁺ |
+
+### 4. Urine pH Trapping
+| Manipulation | Drug | Clinical Use |
+|-------------|------|--------------|
+| **Alkalinisation (pH >7.5)** | **Salicylates** (forced alkaline diuresis for overdose) | Aspirin overdose |
+| **Alkalinisation** | **Methotrexate** (↑ solubility, prevent crystal nephropathy) | High-dose MTX |
+| **Acidification (pH <6)** | **Amphetamine, Ephedrine, Phencyclidine, Quinidine** | Stimulant overdose (theoretical) |
+| **Alkalinisation** | **Uric acid** (↑ solubility, prevent urate nephropathy) | Tumour lysis syndrome |
+
+### 5. Warfarin — Pharmacokinetic Sites
+| Site | Interaction | Effect |
+|------|-------------|--------|
+| **Absorption** | Cholestyramine, Orlistat, Sucralfate | ↓ Absorption (separate ≥2h) |
+| **Distribution** | Sulfonamides, Valproate, Aspirin (high-dose) | Displacement from albumin |
+| **Metabolism (CYP2C9)** | **Inhibitors (Sulfamethoxazole, Metronidazole, Amiodarone, Fluconazole, Miconazole, Disulfiram) → ↑ INR** | Critical |
+| | **Inducers (Rifampicin, Carbamazepine, Phenytoin, St John's Wort, Barbiturates) → ↓ INR** | Critical |
+| **Excretion** | Minimal renal (hepatic metabolism) | Less important |
+
+### 6. Biliary Excretion / Enterohepatic Recycling
+| Drug | Interaction | Effect |
+|------|-------------|--------|
+| **Mycophenolate (MPA)** | **Rifampicin** (disrupts enterohepatic recycling) | ↓ MPA exposure by 30–50% |
+| **Oral Contraceptives (OCP)** | **Rifampicin, Penicillins, Tetracyclines, Griseofulvin, Metronidazole** (disrupt gut flora → ↓ ethinylestradiol recycling) | ↓ OCP efficacy → **breakthrough pregnancy**; use **barrier method** |
+| **Digoxin** | **Antibiotics (Macrolides, Tetracyclines)** (↓ gut flora that inactivate digoxin) | ↑ Digoxin levels (small effect) |
+| **Thyroid Hormones** | **Cholestyramine, Iron, Calcium** | ↓ Absorption (separate ≥4h) |
+
+---
+
+## 4. 🎯 FCPS/MRCP High-Yield Summary
+
+| Combination | Mechanism | Effect | Action |
+|-------------|-----------|--------|--------|
+| **Methotrexate + NSAIDs/Probenecid/PPIs/Penicillins** | OAT1/3 inhibition (proximal tubule secretion) | **↑ MTX → pancytopenia, mucositis, AKI** | **AVOID** with high-dose MTX; paracetamol for pain in RA |
+| **Lithium + NSAIDs/Thiazides/ACEi/ARBs/Dehydration** | ↓ GFR + ↑ proximal reabsorption | **↑ Li⁺ → toxicity (tremor, confusion, NDI)** | **Monitor Li⁺ at 1wk, 2wk, 4wk**; avoid combos; use paracetamol |
+| **Digoxin + Verapamil/Amiodarone/Quinidine/Spironolactone/Macrolides/Itraconazole** | P-gp inhibition at renal tubule | **↑ Digoxin levels → toxicity (arrhythmias, GI, visual)** | **Reduce digoxin 30–50%**, monitor levels |
+| **OCP + Rifampicin/Penicillins/Tetracyclines/Griseofulvin** | Disruption of enterohepatic recycling (gut flora) | **↓ OCP efficacy → breakthrough pregnancy** | **Use barrier method** |
+| **Salicylate overdose** | Forced alkaline diuresis (pH 7.5–8) | ↑ Salicylate excretion | **NaHCO₃ IV**, monitor pH/K⁺ |
+| **High-dose MTX** | Alkalinisation (urine pH >7) | ↑ Solubility, prevent crystal nephropathy | **IV NaHCO₃ + hydration + leucovorin rescue** |
+| **Mycophenolate + Rifampicin** | Disrupted enterohepatic recycling | ↓ MPA exposure 30–50% | Dose adjust; monitor MPA levels |
+
+---
+
+## 5. ❓ Viva Questions (6)
+
+| Q | Answer |
+|---|--------|
+| 1. Why is methotrexate + NSAID combination critical? | NSAIDs inhibit **OAT1/3** (proximal tubule secretion of MTX) → ↓ MTX clearance → ↑ MTX levels → **pancytopenia, mucositis, AKI** |
+| 2. Methotrexate + PPI (omeprazole) — mechanism? | **MATE1 (Multidrug and Toxin Extrusion 1) inhibition** at renal tubule → ↓ MTX clearance |
+| 3. Lithium + thiazide — mechanism, management? | Thiazide ↓ volume + ↑ proximal Li⁺ reabsorption → ↑ Li⁺ levels; **monitor Li⁺ weekly ×4 after thiazide added**; consider ↓ Li⁺ dose 25–50% |
+| 4. Digoxin + verapamil — management? | Verapamil inhibits **P-gp** at renal tubule → ↓ digoxin clearance; **reduce digoxin 30–50%**, monitor digoxin levels and ECG |
+| 5. OCP + rifampicin — counselling? | Rifampicin induces **CYP3A4 + disrupts enterohepatic recycling** → ↓ OCP efficacy → **use barrier method** (additional contraception) |
+| 6. Forced alkaline diuresis — when indicated? | **Salicylate overdose** (urine pH 7.5–8 → ↑ ionisation → ↓ tubular reabsorption); **IV NaHCO₃**, monitor pH/K⁺ |
+
+---
+
+## 6. 🤯 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Methotrexate + paracetamol** | **Safe** — paracetamol is not a major OAT1/3 inhibitor; **prefer paracetamol in RA patients on MTX** |
+| **Methotrexate + aspirin/ibuprofen (low dose)** | **Generally safe** with **low-dose MTX (15–25mg/week)** in RA; **AVOID with high-dose MTX** (>1g/m²) |
+| **Lithium + ACEi/ARB** | ↓ GFR + ↑ Li⁺ reabsorption → monitor Li⁺ closely |
+| **Digoxin + Quinidine** | Quinidine = **most potent P-gp inhibitor** → ↑ digoxin 2–3x; **↓ digoxin 50%** |
+| **OCP + amoxicillin** | Less clear than rifampicin, but **advise barrier method** for the course + 7 days |
+| **Urine pH — clinical pearls** | **Alkalinisation** for Salicylates, MTX, Uric acid; **Acidification** for Amphetamines (rare) |
+
+**Mnemonics:**
+- **"MTX + NSAIDs/PPIs/Probenecid = TOXICITY"** = **OAT1/3 + MATE1 inhibition** → ↑ MTX
+- **"LITHIUM + NSAIDs/THIAZIDES/ACEi = ↑↑ Li⁺"** = **↓ GFR + ↑ reabsorption**
+- **"DIGOXIN + VERAPAMIL/AMIODARONE/QUINIDINE"** = **P-gp inhibition** → ↓ digoxin 30–50%
+- **"OCP + RIFAMPICIN = BREAKTHROUGH PREGNANCY"** = **CYP3A4 induction + gut flora disruption** → use barrier
+- **"ALKALINISE URINE"** = **S**alicylates, **M**ethotrexate, **U**rate (TLS, gout)
+- **"MATE = MULTIDRUG AND TOXIN EXTRUSION"** = PPI inhibits MATE1 → ↑ MTX
+
+---
+
+## 7. 🧠 Mind Map (Mermaid)
+
+```mermaid
+mindmap
+  root((Excretion Interactions))
+    Renal Tubular Secretion
+      OAT1/3 (proximal tubule)
+        Methotrexate + NSAIDs/Probenecid/Sulfa/Penicillins → ↑ MTX
+        MTX + PPIs (MATE1 inhibition) → ↑ MTX
+        Methotrexate + NSAIDs = CRITICAL (HD-MTX)
+      OCT2 / MATE1/2-K
+        PPIs (Omeprazole) + MTX
+        Cimetidine + Metformin (OCT2) → ↑ Metformin
+    Glomerular Filtration
+      NSAIDs + Lithium (↓ afferent PG → ↓ GFR)
+      ACEi/ARBs + Lithium (↓ GFR)
+    P-gp at Renal Tubule
+      Verapamil, Amiodarone, Quinidine, Dronedarone, Macrolides, Itraconazole, Ciclosporin
+      → ↑ Digoxin
+      Quinidine = most potent
+    Urine pH
+      Alkalinisation
+        Salicylate overdose (forced alkaline diuresis)
+        High-dose MTX (↑ solubility, prevent crystals)
+        Urate (TLS, gout)
+      Acidification
+        Amphetamines, Ephedrine (rare)
+    Enterohepatic Recycling
+      OCP + Rifampicin/Penicillins/Tetracyclines/Griseofulvin
+      Mycophenolate + Rifampicin (↓ MPA 30-50%)
+      Antibiotics + Digoxin (small effect)
+```
+
+---
+
+## 8. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score | Next |
+|--------|------|-------|------|
+| 1 | | | 1d |
+| 2 | | | 3d |
+| 3 | | | 1w |
+| 4 | | | 2w |
+| 5 | | | 1m |
+| 6 | | | 3m |
+
+---
+
+## 9. 🧪 Self-Test Scorecard
+
+| Section | Max | Score |
+|---------|-----|-------|
+| Mechanisms table | 8 | |
+| MTX interactions | 8 | |
+| Lithium interactions | 8 | |
+| Digoxin interactions | 6 | |
+| Urine pH trapping | 6 | |
+| Enterohepatic recycling | 6 | |
+| Viva answers | 6 | |
+| **Total** | **48** | |
+
+**Target**: ≥38/48 (80%)
+
+---
+
+## 10. 📝 Exam Answer Modes
+
+### Short Question (5 marks): *"Why is methotrexate + NSAID combination avoided in high-dose MTX?"*
+- NSAIDs inhibit **OAT1/3 (Organic Anion Transporter)** at proximal tubule → ↓ MTX secretion
+- PPIs inhibit **MATE1** → ↓ MTX secretion
+- ↓ MTX clearance → ↑ MTX levels → **pancytopenia, mucositis, AKI**
+- **AVOID NSAIDs 5–7 days before and after high-dose MTX**
+- Use **paracetamol** for pain in RA on MTX
+
+### Viva (1 min): *"Patient on lithium 800mg started hydrochlorothiazide for hypertension. 1 week later: tremor, confusion. Why? Management?"*
+- **Thiazide-induced lithium toxicity**
+- Thiazide → volume depletion + ↑ proximal Na⁺/Li⁺ reabsorption → ↑ Li⁺ levels
+- **STOP thiazide** (or switch to other antihypertensive)
+- **Hold Li⁺** until levels normal
+- **Monitor Li⁺ weekly ×4** after any antihypertensive change
+- Rechallenge Li⁺ at ↓ dose 25–50% if needed; consider ACEi/ARB alternative (also monitor) or amiloride
+
+### Ward Round (30 sec): *"Patient on digoxin, started verapamil for AF. 1 week later: nausea, yellow vision, bigeminy. Action?"*
+- **Digoxin toxicity from P-gp inhibition by verapamil**
+- **Stop digoxin** until symptoms resolve and level checked
+- **Restart at ↓ dose 30–50%** when verapamil continued
+- Monitor digoxin level (target 0.5–0.9 ng/mL for HF), K⁺, Mg²⁺, ECG
+
+### Last-Night Revision (1-liners):
+- MTX + NSAIDs/PPIs/Probenecid = OAT1/3 + MATE1 inhibition → ↑ MTX (avoid HD-MTX)
+- MTX + paracetamol = safe (no OAT inhibition)
+- Li⁺ + NSAIDs/Thiazides/ACEi/ARBs = ↑ Li⁺ (↓ GFR + ↑ reabsorption); monitor Li⁺
+- Digoxin + Verapamil/Amiodarone/Quinidine = P-gp inhibition → ↓ digoxin 30–50%
+- Quinidine = most potent P-gp inhibitor (↓ digoxin 50%)
+- OCP + Rifampicin = CYP3A4 induction + gut flora → breakthrough pregnancy (use barrier)
+- Salicylate overdose = forced alkaline diuresis (pH 7.5–8)
+- HD-MTX = urine alkalinisation (pH >7) + leucovorin + hydration
+- Mycophenolate + Rifampicin = ↓ MPA 30–50% (enterohepatic)
+
+---
+
+## 11. 📚 Summary Card
+
+> **EXCRETION INTERACTION TRIAD:**
+> 1. **MTX + NSAIDs/PPIs/Probenecid** = OAT1/3/MATE1 inhibition → ↑↑ MTX → **AVOID HD-MTX**
+> 2. **Lithium + NSAIDs/Thiazides/ACEi** = ↓ GFR + ↑ reabsorption → ↑↑ Li⁺ → **TOXICITY**
+> 3. **Digoxin + P-gp inhibitors (Verapamil/Amiodarone/Quinidine)** = ↓ renal clearance → ↑ digoxin → **↓ dose 30–50%**
+
+> **ENTER OCP + RIFAMPICIN** = **CYP3A4 + gut flora** → **breakthrough pregnancy** (use barrier)
+> **ALKALINISE URINE** for Salicylates, MTX, Urate
+
+---
+
+## 12. ❓ MCQs (12)
+
+1. **Methotrexate + NSAID — mechanism of interaction:**
+   A. CYP2C9 induction
+   B. **OAT1/3 inhibition in proximal tubule → ↓ MTX secretion** ✓
+   C. CYP3A4 inhibition
+   D. Increased absorption
+   E. Displacement from protein
+
+2. **Methotrexate + PPI (omeprazole) — mechanism:**
+   A. OAT1 inhibition
+   B. **MATE1 inhibition at renal tubule** ✓
+   C. CYP3A4 induction
+   D. Increased absorption
+   E. Displacement from protein
+
+3. **Lithium + Hydrochlorothiazide — interaction mechanism:**
+   A. ↓ Proximal reabsorption
+   B. **Volume depletion + ↑ proximal Na⁺/Li⁺ reabsorption** ✓
+   C. CYP3A4 induction
+   D. Increased clearance
+   E. Displacement from protein
+
+4. **Digoxin + Quinidine — management:**
+   A. No change
+   B. **Reduce digoxin dose 50%, monitor level** ✓
+   C. Increase digoxin dose
+   D. Stop both drugs
+   E. Switch to digitoxin
+
+5. **OCP + Rifampicin — counselling:**
+   A. Safe, no action
+   B. **Use barrier method throughout + 4 weeks after** ✓
+   C. Stop OCP
+   D. Increase OCP dose
+   E. Switch to progesterone-only
+
+6. **Forced alkaline diuresis — clinical indication:**
+   A. Lithium toxicity
+   B. **Salicylate overdose** ✓
+   C. Digoxin toxicity
+   D. Theophylline toxicity
+   E. Methanol poisoning
+
+7. **High-dose methotrexate — supportive measure:**
+   A. Forced diuresis only
+   B. **Hydration + urine alkalinisation (pH>7) + leucovorin rescue** ✓
+   C. Activated charcoal
+   D. Haemodialysis
+   E. N-acetylcysteine
+
+8. **Mycophenolate + Rifampicin — effect:**
+   A. No interaction
+   B. **↓ MPA exposure 30–50% (enterohepatic recycling disrupted)** ✓
+   C. ↑ MPA exposure
+   D. No dose change needed
+   E. Switch to azathioprine always
+
+9. **Digoxin + Verapamil — mechanism:**
+   A. CYP3A4 induction
+   B. **P-gp inhibition at renal tubule → ↓ digoxin clearance** ✓
+   C. Increased absorption
+   D. Displacement from protein
+   E. Increased tubular secretion
+
+10. **Lithium + ACEi — interaction:**
+    A. No interaction
+    B. **↓ GFR + ↑ Li⁺ reabsorption → ↑ Li⁺ toxicity** ✓
+    C. ↑ Li⁺ clearance
+    D. Reduced Li⁺ efficacy
+    E. CYP3A4 induction
+
+11. **Urine pH alkalinisation (pH >7) — useful in:**
+    A. Amphetamine overdose
+    B. **Uric acid nephropathy (TLS) + High-dose MTX + Salicylate overdose** ✓
+    C. Theophylline toxicity
+    D. Lithium toxicity
+    E. Phenobarbital toxicity
+
+12. **MTX + paracetamol (acetaminophen) in RA — appropriate?**
+    A. **Safe** — paracetamol is not an OAT1/3 inhibitor ✓
+    B. Avoid — increases MTX
+    C. Avoid — reduces MTX efficacy
+    D. Increases hepatotoxicity
+    E. Avoid in all cases
+
+---
+
+## 13. 🃏 Flashcards (Anki-ready)
+
+| Front | Back |
+|-------|------|
+| MTX + NSAID | OAT1/3 inhibition → ↓ MTX secretion → ↑ MTX (avoid HD-MTX) |
+| MTX + PPI | MATE1 inhibition → ↓ MTX secretion |
+| MTX + paracetamol | Safe (no OAT inhibition) |
+| Li⁺ + NSAID/Thiazide/ACEi | ↓ GFR + ↑ reabsorption → ↑ Li⁺ → toxicity |
+| Digoxin + Verapamil/Amiodarone/Quinidine | P-gp inhibition → ↓ digoxin clearance → ↑ digoxin |
+| Quinidine + Digoxin | Most potent P-gp inhibitor → ↓ digoxin 50% |
+| OCP + Rifampicin | CYP3A4 + gut flora → ↓ OCP → barrier method |
+| Forced alkaline diuresis | Salicylate overdose (pH 7.5–8) |
+| HD-MTX supportive | Hydration + alkalinisation (pH>7) + leucovorin |
+| Mycophenolate + Rifampicin | ↓ MPA 30–50% (enterohepatic) |
+| Cimetidine + Metformin | OCT2 inhibition → ↑ Metformin (rare lactic acidosis) |
+
+---
+
+## 14. ✅ Answer Keys
+
+### MCQs
+1. **B** — OAT1/3 inhibition
+2. **B** — MATE1 inhibition
+3. **B** — Volume depletion + ↑ reabsorption
+4. **B** — Reduce digoxin 50%
+5. **B** — Barrier method
+6. **B** — Salicylate overdose
+7. **B** — Hydration + alkalinisation + leucovorin
+8. **B** — ↓ MPA 30–50%
+9. **B** — P-gp inhibition
+10. **B** — ↑ Li⁺ toxicity
+11. **B** — Urate, MTX, Salicylate
+12. **A** — Safe (no OAT inhibition)
+
+---
+
+*File: `/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Interactions/Excretion interactions.md` | Status: `draft` → upgrade after review*

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Disease Surveillance Outbreak Investigation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.2. POPULATION HEALTH ASSESSMENT</span>
+      <div class="h1">Disease Surveillance Outbreak Investigation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe surveillance types: passive, active, sentinel, syndromic, event-based</li><li>[ ] Apply WHO 10-step outbreak investigation framework</li><li>[ ] Interpret epidemic curves: point source, propagated, continuous</li><li>[ ] Calculate attack rates, secondary attack rates, R0, generation time</li><li>[ ] Define PHEIC and IHR (2005) core capacities</li><li>[ ] Distinguish isolation, quarantine, contact tracing</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Surveillance**</td><td>Ongoing systematic collection, analysis, interpretation, dissemination of health data for action</td></tr><tr><td>**Outbreak**</td><td>Occurrence of cases in excess of expected in defined community/area/season</td></tr><tr><td>**Epidemic**</td><td>Widespread outbreak affecting large population</td></tr><tr><td>**Pandemic**</td><td>Epidemic spreading across countries/continents</td></tr><tr><td>**Endemic**</td><td>Constant presence at baseline level in geographic area</td></tr><tr><td>**R₀ (Basic Reproduction Number)**</td><td>Average secondary cases from 1 infectious in fully susceptible population</td></tr><tr><td>**Rₜ (Effective R)**</td><td>Average secondary cases at time t (with immunity/interventions)</td></tr><tr><td>**Generation Time**</td><td>Time between infection of infector and infectee</td></tr><tr><td>**Serial Interval**</td><td>Time between symptom onset in infector and infectee</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological process - see outbreak steps and surveillance types below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Surveillance Types</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Description</th><th>Example</th><th>Pros/Cons</th></tr><tr><td>------</td><td>-------------</td><td>---------</td><td>-----------</td></tr><tr><td>**Passive**</td><td>Routine reporting from providers (mandatory/voluntary)</td><td>Notifiable diseases, cancer registry</td><td>Low cost, but incomplete, delayed, biased</td></tr><tr><td>**Active**</td><td>Health dept proactively contacts sources</td><td>Ebola contact tracing, AFP surveillance</td><td>Complete, timely; resource-intensive</td></tr><tr><td>**Sentinel**</td><td>Selected representative sites report</td><td>GP influenza sentinel, HIV sentinel</td><td>Detailed, timely; may not be representative</td></tr><tr><td>**Syndromic**</td><td>Pre-diagnostic data (symptoms, codes)</td><td>A&E chief complaint, NHS 111, OTC sales</td><td>Real-time, non-specific; early warning</td></tr><tr><td>**Event-based**</td><td>Unstructured info (media, rumors, social)</td><td>GPHIN, ProMED, HealthMap</td><td>Very early; unverified, noisy</td></tr><tr><td>**Environmental**</td><td>Pathogens in environment</td><td>Wastewater SARS-CoV-2, polio sewage</td><td>Population-level, non-invasive; no clinical data</td></tr></table>
+<p><b>Surveillance Attributes (CDC Updated Guidelines):</b></p>
+<ul><li><b>Simplicity, Flexibility, Data Quality, Acceptability, Sensitivity, PVP, Representativeness, Timeliness, Stability</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Outbreak Investigation)</span>
+  </div>
+  <div class="sec-body">
+<p><b>WHO 10-Step Outbreak Investigation:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>1. Prepare</b>&lt;/td&gt;&lt;td&gt;Team, resources, PPE, communication plan&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2. Verify Diagnosis</b>&lt;/td&gt;&lt;td&gt;Confirm cases (lab/clinical), confirm outbreak (&gt;expected)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3. Case Definition</b>&lt;/td&gt;&lt;td&gt;Standardised: clinical + lab + time + place + person (suspect/probable/confirmed)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>4. Find Cases</b>&lt;/td&gt;&lt;td&gt;Active search: line lists, contact tracing, record review, media alerts&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>5. Descriptive Epidemiology</b>&lt;/td&gt;&lt;td&gt;Time (epi curve), Place (spot map), Person (attack rates by age/sex/risk)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>6. Develop Hypotheses</b>&lt;/td&gt;&lt;td&gt;Agent, source, transmission route, risk factors&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>7. Test Hypotheses</b>&lt;/td&gt;&lt;td&gt;Analytical study: cohort (point source) or case-control (propagated)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>8. Implement Control</b>&lt;/td&gt;&lt;td&gt;Source control, transmission interruption, protect susceptibles&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>9. Communicate</b>&lt;/td&gt;&lt;td&gt;Outbreak report, public alerts, stakeholder briefings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>10. Maintain Surveillance</b>&lt;/td&gt;&lt;td&gt;Monitor control effectiveness, detect resurgence&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Mermaid: Outbreak Investigation Flow</b> ``<code>mermaid flowchart TD A[Alert/Notification] --&gt; B[Verify &amp; Confirm] B --&gt; C[Case Definition\nSuspect/Probable/Confirmed] C --&gt; D[Active Case Finding\nLine List] D --&gt; E[Descriptive Epi\nTime, Place, Person] E --&gt; F[Epidemic Curve] E --&gt; G[Spot Map] E --&gt; H[Attack Rates by Group] F --&gt; I[Hypothesis Generation] G --&gt; I H --&gt; I I --&gt; J{Study Design} J --&gt;|Point Source| K[Retrospective Cohort] J --&gt;|Propagated| L[Case-Control] K --&gt; M[Statistical Association\nRR, OR, p-value] L --&gt; M M --&gt; N[Control Measures\nSource + Transmission + Susceptibles] N --&gt; O[Communication &amp; Report] O --&gt; P[Ongoing Surveillance] style C fill:#bbf,stroke:#333 style F fill:#f96,stroke:#333 style N fill:#bfb,stroke:#333 </code>``</p>
+<p><b>Epidemic Curve Patterns:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Pattern&lt;/th&gt;&lt;th&gt;Transmission&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Point Source</b>&lt;/td&gt;&lt;td&gt;Single exposure, sharp peak, rapid decline&lt;/td&gt;&lt;td&gt;Foodborne (salmonella at wedding)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Continuous Common Source</b>&lt;/td&gt;&lt;td&gt;Ongoing exposure, plateau&lt;/td&gt;&lt;td&gt;Contaminated water supply&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Propagated</b>&lt;/td&gt;&lt;td&gt;Person-to-person, serial peaks (generations)&lt;/td&gt;&lt;td&gt;Influenza, measles, COVID-19&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Key Calculations:</b></p>
+<ul><li><b>Attack Rate</b> = Cases / Population at risk (in outbreak)</li><li><b>Secondary Attack Rate</b> = Secondary cases / Susceptible contacts (measures transmissibility)</li><li><b>R₀</b> = β × c × D (transmissibility × contact rate × duration infectious)</li><li><b>Herd Immunity Threshold</b> = 1 – 1/R₀</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Surveillance/Outbreak Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Surveillance vs Outbreak Investigation**</td><td>Surveillance = ongoing monitoring. Outbreak investigation = acute response to signal.</td></tr><tr><td>**Case Definition Levels**</td><td>Suspect (clinical), Probable (clinical + epi link), Confirmed (lab). Balance sensitivity (suspect) vs specificity (confirmed).</td></tr><tr><td>**Passive vs Active Surveillance**</td><td>Passive = await reports. Active = seek reports. Active more complete but costly.</td></tr><tr><td>**Epidemic Curve vs Time Series**</td><td>Epi curve = cases by time of onset (bars). Time series = continuous data points.</td></tr><tr><td>**R₀ vs Rₜ**</td><td>R₀ = theoretical, fully susceptible. Rₜ = real-time, with immunity/control.</td></tr><tr><td>**Isolation vs Quarantine**</td><td>Isolation = separates SICK (confirmed). Quarantine = separates EXPOSED (contacts).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Control Measures)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Target</th><th>Measures</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Source Control**</td><td>Case isolation, treatment, culling (animals), recall (food), water treatment</td></tr><tr><td>**Transmission Interruption**</td><td>PPE, hygiene, ventilation, vector control, safe sex, needle exchange, distancing</td></tr><tr><td>**Protect Susceptibles**</td><td>Vaccination (ring, mass), PEP (HIV, rabies), prophylaxis (malaria), immunoglobulin</td></tr><tr><td>**Administrative**</td><td>Travel restrictions, school closure, event cancellation, contact tracing, quarantine</td></tr></table>
+<p><b>Contact Tracing:</b></p>
+<ul><li><b>Contact</b>: Person with exposure to confirmed case during infectious period</li><li><b>High-risk</b>: Household, healthcare, close proximity &gt;15 min</li><li><b>Actions</b>: Quarantine, monitoring (symptoms), testing, vaccination/PEP if available</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Surveillance Purpose**</td><td>Information for ACTION (not just data collection)</td></tr><tr><td>**Passive Surveillance**</td><td>Routine, low cost, incomplete (notifiable diseases)</td></tr><tr><td>**Active Surveillance**</td><td>Proactive, complete, resource-intensive (AFP, Ebola)</td></tr><tr><td>**Sentinel Surveillance**</td><td>Representative sites, detailed data (flu GP network)</td></tr><tr><td>**Syndromic Surveillance**</td><td>Pre-diagnostic, real-time, early warning (A&E, NHS 111)</td></tr><tr><td>**Case Definition**</td><td>Suspect/Probable/Confirmed; standardised; changes as outbreak evolves</td></tr><tr><td>**Epidemic Curve**</td><td>Point source (sharp), Continuous (plateau), Propagated (serial peaks)</td></tr><tr><td>**Outbreak Study**</td><td>Point source → Retrospective Cohort. Propagated → Case-Control</td></tr><tr><td>**R₀**</td><td>>1 = epidemic potential. Measles 12-18, COVID 2-3 (original), Flu 1.3</td></tr><tr><td>**Herd Immunity**</td><td>1 - 1/R₀. Measles 92-95%, COVID 50-67% (original)</td></tr><tr><td>**PHEIC**</td><td>Public Health Emergency of International Concern (IHR 2005)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**List the 10 steps of outbreak investigation.**</td><td>1) Prepare, 2) Verify diagnosis, 3) Case definition, 4) Find cases, 5) Descriptive epi (time/place/person), 6) Hypotheses, 7) Test hypotheses (analytical study), 8) Control measures, 9) Communicate, 10) Ongoing surveillance.</td></tr><tr><td>**Difference between passive and active surveillance?**</td><td>Passive: routine provider reporting (low cost, incomplete). Active: health dept seeks data (complete, timely, costly).</td></tr><tr><td>**What is a case definition? Why standardise?**</td><td>Standard criteria (clinical+lab+time+place+person) for suspect/probable/confirmed. Ensures consistency, comparability, valid attack rates.</td></tr><tr><td>**Describe three epidemic curve patterns.**</td><td>Point source: single exposure, sharp peak. Continuous common source: ongoing exposure, plateau. Propagated: person-to-person, serial peaks (generations).</td></tr><tr><td>**Point source outbreak: which analytical study?**</td><td>Retrospective cohort (defined exposed group, calculate attack rates by exposure).</td></tr><tr><td>**Propagated outbreak: which analytical study?**</td><td>Case-control (cases vs controls, compare exposures).</td></tr><tr><td>**What is R₀? What does R₀ > 1 mean?**</td><td>Basic reproduction number: average secondary cases from 1 infectious in fully susceptible population. R₀ > 1 = each case generates >1 new case → epidemic potential.</td></tr><tr><td>**Herd immunity threshold formula? Calculate for R₀=3.**</td><td>1 - 1/R₀ = 1 - 1/3 = 66.7%.</td></tr><tr><td>**Isolation vs quarantine?**</td><td>Isolation: separates sick/confirmed cases. Quarantine: separates exposed contacts (not yet ill).</td></tr><tr><td>**What is PHEIC? Who declares?**</td><td>Public Health Emergency of International Concern. WHO Director-General declares based on IHR Emergency Committee advice.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Line List**</td><td>One row per case: ID, demographics, clinical, exposure, outcome. Essential for descriptive epi.</td></tr><tr><td>**Attack Rate vs Incidence**</td><td>Attack rate = outbreak cumulative incidence in defined population over short period.</td></tr><tr><td>**Secondary Attack Rate**</td><td>Measures transmissibility in close contacts. High SAR = high transmissibility.</td></tr><tr><td>**Generation Time vs Serial Interval**</td><td>Generation = infection to infection. Serial = symptom to symptom. Serial ≈ Generation + incubation difference.</td></tr></table>
+<p><b>Mnemonic: OUTBREAK STEPS (10)</b></p>
+<ul><li><b>O</b>utbreak team <b>P</b>repare</li><li><b>U</b>rgent <b>V</b>erify diagnosis</li><li><b>T</b>hink <b>C</b>ase definition</li><li><b>B</b>e <b>F</b>inding cases</li><li><b>R</b>ecord <b>D</b>escriptive epi</li><li><b>E</b>xplore <b>H</b>ypotheses</li><li><b>A</b>nalyse <b>T</b>est hypotheses</li><li><b>K</b>ontrol <b>M</b>easures</li></ul>
+<p><b>Mnemonic: EPIDEMIC CURVES</b></p>
+<ul><li><b>E</b>xplosive peak = <b>P</b>oint source</li><li><b>P</b>lateau = <b>C</b>ontinuous source</li><li><b>S</b>erial <b>P</b>eaks = <b>P</b>ropagated</li></ul>
+<p><b>Mnemonic: SURVEILLANCE TYPES (PASS-SE)</b></p>
+<ul><li><b>P</b>assive (routine)</li><li><b>A</b>ctive (proactive)</li><li><b>S</b>entinel (selected sites)</li><li><b>S</b>yndromic (pre-diagnostic)</li><li><b>E</b>vent-based (media/rumors)</li></ul>
+<p><b>Mnemonic: ISOLATION vs QUARANTINE</b></p>
+<ul><li><b>I</b>solation = <b>I</b>ll (sick, confirmed)</li><li><b>Q</b>uarantine = <b>Q</b>uestionable (exposed, not yet ill)</li></ul>
+<p><b>Mnemonic: R-ZERO FORMULA</b></p>
+<ul><li><b>R</b>₀ = <b>β</b> (transmissibility) × <b>c</b> (contacts) × <b>D</b> (duration)</li><li><b>H</b>erd <b>I</b>mmunity = <b>1 - 1/R₀</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Surveillance &amp; Outbreak)) Surveillance Passive Active Sentinel Syndromic Event-based Environmental Outbreak Investigation 10 Steps WHO Case Definition Line List Descriptive Epi Time: Epi Curve Place: Spot Map Person: Attack Rates Analytical Study Point Source → Cohort Propagated → Case-Control Control Measures Communication Key Metrics Attack Rate Secondary Attack Rate R₀ / Rₜ Herd Immunity Generation Time IHR / PHEIC </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Surveillance**</td><td>Passive, Active, Sentinel, Syndromic, Event-based</td></tr><tr><td>**Outbreak Steps**</td><td>10-step WHO: Prepare → Verify → Define → Find → Describe → Hypothesis → Test → Control → Communicate → Monitor</td></tr><tr><td>**Case Definition**</td><td>Suspect / Probable / Confirmed (standardised)</td></tr><tr><td>**Epi Curve**</td><td>Point (sharp), Continuous (plateau), Propagated (serial peaks)</td></tr><tr><td>**Study Design**</td><td>Point source → Cohort; Propagated → Case-Control</td></tr><tr><td>**Attack Rate**</td><td>Cases / At-risk in outbreak</td></tr><tr><td>**SAR**</td><td>Secondary cases / Susceptible contacts</td></tr><tr><td>**R₀**</td><td>β × c × D. >1 = epidemic</td></tr><tr><td>**Herd Immunity**</td><td>1 - 1/R₀</td></tr><tr><td>**Isolation/Quarantine**</td><td>Ill vs Exposed</td></tr><tr><td>**PHEIC**</td><td>WHO DG declares (IHR 2005)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Surveillance Types</td><td></td><td></td></tr><tr><td>10-Step Outbreak</td><td></td><td></td></tr><tr><td>Epidemic Curve Patterns</td><td></td><td></td></tr><tr><td>Cohort vs Case-Control</td><td></td><td></td></tr><tr><td>R₀ / SAR Calculations</td><td></td><td></td></tr><tr><td>Control Measures</td><td></td><td></td></tr><tr><td>IHR / PHEIC</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Notifiable Diseases &amp; International Health Regulations.md]], [[Immunisation &amp; Vaccination Programs.md]], [[Infectious Disease Epidemiology.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Disease Surveillance Outbreak Investigation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

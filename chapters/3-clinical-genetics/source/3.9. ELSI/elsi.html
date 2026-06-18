@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elsi — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 3 CLINICAL GENETICS / 3.9. ELSI</span>
+      <div class="h1">Elsi</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>ethical frameworks</b> (Principlism, Consequentialism, Virtue ethics) to genetic dilemmas</li><li>[ ] Navigate <b>UK legal framework</b>: Consent (Montgomery), Capacity (MCA 2005), Confidentiality, Discrimination (Equality Act 2010), HFE Act</li><li>[ ] Analyse <b>key ELSI issues</b>: Predictive testing, Prenatal/PGT, VUS, Incidental findings, DTC testing, Gene editing</li><li>[ ] Apply <b>justice &amp; equity</b> principles: Access, Ancestry bias, Resource allocation, Global genomics</li><li>[ ] Navigate <b>professional regulation</b>: GMC, HCPC, Caldicott, Caldicott Guardians, Duty of candour</li><li>[ ] Answer viva: "Duty to warn vs Confidentiality" and "VUS ethics" and "Gene editing ethics"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: ELSI Framework</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[ELSI in Genetics] --&gt; B[Ethical Frameworks] B --&gt; B1[Principlism&lt;br/&gt;Autonomy, Beneficence, Non-maleficence, Justice] B --&gt; B2[Consequentialism&lt;br/&gt;Outcomes-based] B --&gt; B3[Virtue Ethics&lt;br/&gt;Character, Phronesis] A --&gt; C[Legal Framework] C --&gt; C1[Autonomy &amp; Consent&lt;br/&gt;Montgomery, MCA 2005] C --&gt; C2[Confidentiality &amp; Privacy&lt;br/&gt;Data Protection 2018, GDPR, Caldicott] C --&gt; C3[Anti-Discrimination&lt;br/&gt;Equality Act 2010, GINA (US), ABI Code] C --&gt; C4[Reproductive Law&lt;br/&gt;HFE Act 2008, Abortion Act 1967] C --&gt; C5[Research Ethics&lt;br/&gt;HRA, REC, GDPR, Declaration of Helsinki] A --&gt; D[Key ELSI Domains] D --&gt; D1[Predictive Testing] D --&gt; D2[Prenatal/PGT] D --&gt; D3[VUS &amp; Incidental Findings] D --&gt; D4[DTC Testing] D --&gt; D5[Gene Editing] D --&gt; D6[Equity &amp; Justice] D --&gt; D6b[Data Sharing &amp; Governance] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Ethical Frameworks</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Four Principles (Beauchamp &amp; Childress) — Dominant in Clinical Ethics</div>
+<table class="ctable"><tr><th>Principle</th><th>Definition</th><th>Genetic Application</th></tr><tr><td>-----------</td><td>------------</td><td>---------------------</td></tr><tr><td>**Autonomy**</td><td>Respect for self-determination</td><td>Informed consent, Right to know/not know, Reproductive choices, Advance decisions</td></tr><tr><td>**Beneficence**</td><td>Act in patient's best interest</td><td>Early diagnosis, Preventive surveillance, Cascade testing, Therapeutic intervention</td></tr><tr><td>**Non-maleficence**</td><td>"First, do no harm"</td><td>Avoid unnecessary testing, Prevent discrimination, Manage VUS carefully, Protect privacy</td></tr><tr><td>**Justice**</td><td>Fair distribution of benefits/burdens</td><td>Equitable access to testing/therapy, Resource allocation, Address ancestry bias</td></tr></table>
+<div class="sub-h">Other Ethical Theories</div>
+<table class="ctable"><tr><th>Theory</th><th>Core Idea</th><th>Genetic Application</th></tr><tr><td>--------</td><td>-----------</td><td>---------------------</td></tr><tr><td>**Consequentialism / Utilitarianism**</td><td>Maximise overall good</td><td>Population screening (Maximise QALYs), Resource allocation (NICE ICER)</td></tr><tr><td>**Deontology**</td><td>Duties/Rules (Kant: Categorical Imperative)</td><td>Duty to warn, Truth-telling, Respect for autonomy as duty</td></tr><tr><td>**Virtue Ethics**</td><td>Character of moral agent (Phronesis/Practical Wisdom)</td><td>Clinical judgement in VUS, Compassionate communication, Professional integrity</td></tr><tr><td>**Principlism** (Mainstream)</td><td>Balance 4 principles in context</td><td>Balanced decision-making in complex cases (e.g., PGT, VUS, Duty to warn)</td></tr></table>
+<div class="callout"><b>No Hierarchy:</b> Principles balanced case-by-case using <b>proportionality</b> (least restrictive means), <b>necessity</b>, <b>subsidiarity</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ UK Legal Framework — Key Statutes & Cases</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Autonomy &amp; Consent</div>
+<table class="ctable"><tr><th>Law/Case</th><th>Principle</th><th>Genetic Relevance</th></tr><tr><td>----------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Montgomery v Lanarkshire (2015)**</td><td>**Patient-centred consent**: Material risks (reasonable patient test) + Reasonable alternatives</td><td>Genetic test risks (VUS, incidental, psychosocial), Alternatives (No testing, Alternative tests)</td></tr><tr><td>**Mental Capacity Act 2005**</td><td>**2-stage test**: Impairment → Functional (Understand, Retain, Weigh, Communicate)</td><td>Capacity for genetic testing decisions; Best interests if lacks capacity</td></tr><tr><td>**Gillick Competence**</td><td>Child <16 can consent if "sufficient understanding"</td><td>Consent for genetic testing in mature minors</td></tr><tr><td>**Re B (Adult: Refusal of Treatment)**</td><td>Competent adult can refuse life-saving treatment</td><td>Right to decline genetic testing / preventive surgery</td></tr></table>
+<div class="sub-h">Negligence Standard</div>
+<table class="ctable"><tr><th>Case</th><th>Standard</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>**Bolam (1957)**</td><td>Not negligent if acts per "responsible body of medical opinion"</td></tr><tr><td>**Bolitho (1997)**</td><td>Court can reject medical opinion if **not logical / defensible**</td></tr><tr><td>**Chester v Afshar (2004)**</td><td>Failure to warn = Breach of duty (Causal link presumed for non-disclosure)</td></tr></table>
+<div class="sub-h">Confidentiality &amp; Data Protection</div>
+<table class="ctable"><tr><th>Law</th><th>Key Provisions</th></tr><tr><td>-----</td><td>----------------</td></tr><tr><td>**Data Protection Act 2018 / UK GDPR**</td><td>Lawful basis (Consent/Public task); Data minimisation; Subject rights (Access, Rectification, Erasure, Portability); DPIA for high-risk processing</td></tr><tr><td>**Common Law Duty of Confidence**</td><td>Implied; Breach only if: Consent, Legal obligation, Public interest (Serious harm to others)</td></tr><tr><td>**Caldicott Principles** (1997/2013/2020)</td><td>8 Principles: Justify purpose, Minimum necessary, Access on need-to-know, Awareness, Duty to share = Duty to protect, Legal compliance, Information governance</td></tr><tr><td>**Caldicott Guardians**</td><td>Senior clinician responsible for confidentiality in NHS organisations</td></tr></table>
+<div class="sub-h">Anti-Discrimination Law</div>
+<table class="ctable"><tr><th>Law</th><th>Protections</th></tr><tr><td>-----</td><td>-------------</td></tr><tr><td>**Equality Act 2010**</td><td>Protected characteristics (Disability includes genetic predisposition); Direct/Indirect discrimination, Harassment, Victimisation</td></tr><tr><td>**Genetic Information Non-discrimination Act (GINA) 2008 (US)**</td><td>Health insurance & Employment discrimination based on genetic info</td></tr><tr><td>**ABI Code on Genetic Testing (UK)**</td><td>Voluntary code: Insurers cannot require genetic tests; Only use results if voluntary disclosed; Predictive test results not used for most policies</td></tr></table>
+<div class="sub-h">Reproductive Law (UK)</div>
+<table class="ctable"><tr><th>Act</th><th>Provision</th></tr><tr><td>-----</td><td>-----------</td></tr><tr><td>**Human Fertilisation & Embryology Act 2008**</td><td>Regulates IVF, PGT, Embryo research, Gamete/Embryo donation, Surrogacy; HFEA regulation</td></tr><tr><td>**Abortion Act 1967**</td><td>Legal abortion <24w (Risk to mother > termination); Ground E: Substantial risk of serious handicap</td></tr><tr><td>**Mental Capacity Act 2005**</td><td>Best interests decision-making for those lacking capacity</td></tr><tr><td>**Children Act 1989/2004**</td><td>Welfare of child paramount; Gillick competence; Parental responsibility</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Key ELSI Domains</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">3.1 Predictive &amp; Presymptomatic Testing</div>
+<table class="ctable"><tr><th>Issue</th><th>Ethical/Legal Consideration</th></tr><tr><td>-------</td><td>----------------------------</td></tr><tr><td>**Adult-Onset (HD, Cancer)**</td><td>**Defer until 18** (Autonomy); Protocol: Pre-test counselling, Reflection, In-person disclosure</td></tr><tr><td>**Childhood-Onset (FAP, MEN, RET)**</td><td>**Test if childhood benefit** (FAP 10-12y, MEN2B <1y); Otherwise defer</td></tr><tr><td>**Paediatric Testing**</td><td>**Best interests**; Defer predictive unless childhood medical benefit</td></tr><tr><td>**Insurance**</td><td>UK: Equality Act 2010 (Genetic disability protected); ABI Code: No mandatory testing; Disclosure if asked</td></tr><tr><td>**Employment**</td><td>Equality Act 2010: Genetic discrimination illegal; GINA (US)</td></tr></table>
+<div class="sub-h">3.2 Prenatal &amp; Preimplantation Genetic Testing</div>
+<table class="ctable"><tr><th>Issue</th><th>Ethical/Legal Framework</th></tr><tr><td>-------</td><td>-------------------------</td></tr><tr><td>**Prenatal Diagnosis (PND)**</td><td>CVS/Amnio after high-risk screening; **Woman's right to choose** (Abortion Act 1967 Ground E); Non-directive counselling</td></tr><tr><td>**NIPT**</td><td>Screening only; High false + for rare conditions; Informed consent for cfDNA; **No sex selection** (UK illegal)</td></tr><tr><td>**PGT-M/PGT-A/PGT-SR**</td><td>HFEA regulated; PGT-M for known familial variant; PGT-A (Aneuploidy); PGT-SR (Translocations); Embryo selection ethics</td></tr><tr><td>**Sex Selection**</td><td>**Illegal in UK** (HFEA Act) except for X-linked disorders (e.g., DMD)</td></tr><tr><td>**Deaf/Disabled Embryo Selection**</td><td>Controversial; HFEA allows for "serious disability" (Contested by Deaf community)</td></tr></table>
+<div class="sub-h">3.2 VUS &amp; Incidental Findings</div>
+<table class="ctable"><tr><th>Issue</th><th>Guidance</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**VUS Communication**</td><td>"Not actionable"; Explain uncertainty; Do not use for clinical decisions; Offer segregation/functional studies; Plan re-analysis</td></tr><tr><td>**Incidental Findings (IF)**</td><td>**ACMG SF v3.1** (59 genes): Pathogenic/LP variants in actionable genes; **Opt-out** for secondary findings; Disclose if actionable</td></tr><tr><td>**Secondary Findings in PGT/WES**</td><td>ACMG SF list; Opt-out option; Counselling pre-test</td></tr><tr><td>**Re-classification**</td><td>VUS → P/LP over time; Duty to re-contact? Emerging duty (GMC); Re-analysis policy</td></tr></table>
+<div class="sub-h">3.3 Direct-to-Consumer (DTC) Genetic Testing</div>
+<table class="ctable"><tr><th>Issue</th><th>Concern</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Clinical Validity**</td><td>Not clinical grade; Limited variants; False +/-, Limited counselling</td></tr><tr><td>**Interpretation**</td><td>Consumers misinterpret risk; No genetic counselling included</td></tr><tr><td>**Data Privacy**</td><td>Data sharing/selling; GDPR applies but jurisdiction complex</td></tr><tr><td>**Regulation**</td><td>UK: MHRA (IVD regulation); FDA (US); Not clinical diagnostic standard</td></tr><tr><td>**Counselling Gap**</td><td>No pre/post-test counselling; Misinterpretation risk (e.g., BRCA, APOE)</td></tr></table>
+<div class="sub-h">3.4 Gene Editing (CRISPR/Cas9)</div>
+<table class="ctable"><tr><th>Application</th><th>Status</th><th>Ethical Issues</th></tr><tr><td>-------------</td><td>--------</td><td>----------------</td></tr><tr><td>**Somatic (Somatic gene therapy)**</td><td>Clinical trials (Sickle cell, Beta-thalassaemia, Leber congenital amaurosis)</td><td>Safety, Off-target effects, Access, Cost</td></tr><tr><td>**Germline (Heritable)**</td><td>**Globally prohibited** (WHO moratorium, UK HFEA illegal, CRISPR babies scandal 2018)</td><td>**Heritable changes**, Consent impossible, Eugenics, Equity, "Designer babies", Unintended consequences</td></tr><tr><td>**Research**</td><td>Permitted (UK: HFEA licence, 14-day rule for embryos)</td><td>14-day rule, No implantation, Strict oversight</td></tr></table>
+<div class="sub-h">3.5 Data Sharing &amp; Governance</div>
+<table class="ctable"><tr><th>Framework</th><th>Key Points</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**UK GDPR / DPA 2018**</td><td>Lawful basis (Public task/Consent); DPIA; Subject rights; International transfers (Adequacy decisions)</td></tr><tr><td>**Data Sharing Frameworks**</td><td>GA4GH (Framework for Responsible Sharing); National genomic data libraries (Genomics England, NHS GMS)</td></tr><tr><td>**Controlled Access**</td><td>DACs (Data Access Committees); Tiered access (Registered, Controlled, Open)</td></tr><tr><td>**Federated Analysis**</td><td>Analysis at source (No data transfer); Secure enclaves (Trusted Research Environments)</td></tr><tr><td>**Benefit Sharing**</td><td>Nagoya Protocol (Genetic resources); Benefit-sharing agreements for indigenous/population data</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Equity & Justice in Genomics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Ancestry Bias</div>
+<table class="ctable"><tr><th>Problem</th><th>Impact</th><th>Mitigation</th></tr><tr><td>---------</td><td>--------</td><td>------------</td></tr><tr><td>**GWAS 80%+ European**</td><td>PRS poor portability; Missed variants in underrepresented groups</td><td>Diverse biobanks (All of Us, Biobank Japan, H3Africa); Ancestry-specific PRS; Multi-ancestry GWAS</td></tr><tr><td>**PGx Guidelines Eurocentric**</td><td>Dosing algorithms fail in non-European</td><td>CPIC/DPWG expanding diversity; Ancestry-specific guidelines</td></tr><tr><td>**Reference Genomes**</td><td>GRCh38 primarily European</td><td>Pangenome graphs; Diverse reference panels</td></tr></table>
+<div class="sub-h">Access &amp; Equity</div>
+<table class="ctable"><tr><th>Dimension</th><th>Challenge</th><th>Solution</th></tr><tr><td>-----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Geographic**</td><td>Urban vs Rural access to genetics</td><td>Telegenetics, Mobile clinics, Hub-and-spoke</td></tr><tr><td>**Socioeconomic**</td><td>Cost, Insurance, Time off work</td><td>NHS free at point of care; Travel vouchers; Flexible hours</td></tr><tr><td>**Ethnic/Racial**</td><td>Underrepresentation in research; Mistrust</td><td>Community engagement; Diverse research teams; Culturally sensitive materials</td></tr><tr><td>**Language/Literacy**</td><td>Complex concepts, Low health literacy</td><td>Plain language, Interpreters, Visual aids, Teach-back</td></tr><tr><td>**Disability**</td><td>Accessible formats, Communication needs</td><td>Easy-read, BSL interpreters, Assistive technology</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Professional Regulation & Governance</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">GMC Good Medical Practice (2024) — 4 Domains</div>
+<table class="ctable"><tr><th>Domain</th><th>Genetic Relevance</th></tr><tr><td>--------</td><td>-----------------</td></tr><tr><td>**1. Knowledge, Skills & Performance**</td><td>Maintain genomic competence; Recognise limits; Use guidelines (NICE, NCCN)</td></tr><tr><td>**2. Safety & Quality**</td><td>Patient safety (VUS, Incidental findings); Risk management; Infection control</td></tr><tr><td>**3. Communication, Partnership & Teamwork**</td><td>Genetic counselling skills; Shared decision-making; MDT working (MDT, Genetics)</td></tr><tr><td>**4. Maintaining Trust**</td><td>Honesty (VUS uncertainty), Integrity, Confidentiality, Probity</td></tr></table>
+<div class="sub-h">HCPC Standards (Genetic Counsellors)</div>
+<ul><li><b>Standards of Proficiency</b>: Genetic risk assessment, Counselling skills, Ethical practice, CPD</li><li><b>Standards of Conduct</b>: Honesty, Integrity, Boundaries, Confidentiality</li></ul>
+<div class="sub-h">Clinical Governance</div>
+<table class="ctable"><tr><th>Element</th><th>Genetic Application</th></tr><tr><td>---------</td><td>---------------------</td></tr><tr><td>**Clinical Audit**</td><td>Testing turnaround, Diagnostic yield, VUS rate, Compliance with guidelines</td></tr><tr><td>**Incident Reporting**</td><td>Misdiagnosis, Wrong result, Wrong patient, Data breach, Duty of candour</td></tr><tr><td>**Risk Management**</td><td>Risk registers (VUS, Sample mix-up, Data breach); Mitigation plans</td></tr><tr><td>**Revalidation**</td><td>CPD in genomics; QI project; MSF/PSQ; Appraisal</td></tr><tr><td>**Caldicott Guardians**</td><td>Senior clinician overseeing genetic data confidentiality</td></tr></table>
+<div class="sub-h">Duty of Candour (Statutory — Reg 20 HSCA 2008)</div>
+<table class="ctable"><tr><th>Trigger</th><th>Action</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Notifiable Safety Incident**</td><td>Unintended/unexpected: Death, Severe harm, Moderate harm, Prolonged psychological harm</td></tr><tr><td>**Organisational Duty**</td><td>Tell patient (in person + writing), Apologise, Explain, Support, Record</td></tr><tr><td>**Professional Duty**</td><td>Same + Report to regulator if required</td></tr><tr><td>**Genetic Context**</td><td>Wrong result reported, VUS miscommunicated, Wrong patient tested, Data breach</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Ethical Principles**</td><td>Autonomy, Beneficence, Non-maleficence, Justice (Principlism)</td></tr><tr><td>**Consent Law**</td><td>Montgomery (Material risk + Alternatives), MCA 2005 (2-stage capacity), Montgomery > Bolam</td></tr><tr><td>**Confidentiality**</td><td>Common law + GDPR + Caldicott; Exceptions: Consent, Law, Public interest (Serious harm)</td></tr><tr><td>**Duty to Warn**</td><td>MHC 2019: Serious harm, Identifiable person, No other way</td></tr><tr><td>**Predictive Testing**</td><td>HD protocol (3 sessions, Reflection, 2 clinicians, No <18y); Cancer (NICE criteria, Cascade)</td></tr><tr><td>**Paediatric Testing**</td><td>Defer <18y unless childhood benefit (FAP 10-12y, MEN2B <1y, RET)</td></tr><tr><td>**Prenatal/PGT**</td><td>NIPT = Screening (Confirm CVS/Amnio); PGT-M/A/SR (HFEA); Sex selection illegal (UK)</td></tr><tr><td>**VUS**</td><td>Not actionable; Explain uncertainty; Segregation/Functional/Re-analysis; Document</td></tr><tr><td>**Incidental Findings**</td><td>ACMG SF v3.1 (59 genes); Opt-out option; Actionable only</td></tr><tr><td>**DTC Testing**</td><td>Not clinical grade; No counselling; Caveat emptor; Confirm in CLIA lab</td></tr><tr><td>**Gene Editing**</td><td>Somatic = Trials; Germline = Prohibited (WHO, HFEA); 14-day rule</td></tr><tr><td>**Discrimination**</td><td>Equality Act 2010 (Genetic disability protected); ABI Code (Insurance); GINA (US)</td></tr><tr><td>**Duty of Candour**</td><td>Statutory (Reg 20): Tell, Apologise, Explain, Support, Record (Notifiable incidents)</td></tr><tr><td>**Equity**</td><td>Ancestry bias (GWAS Eurocentric); Access disparities; Diverse biobanks needed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What are the 4 principles of medical ethics?</td><td>Autonomy, Beneficence, Non-maleficence, Justice (Principlism)</td></tr><tr><td>2</td><td>How did Montgomery v Lanarkshire change consent law?</td><td>Shifted from **Bolam (doctor-centric)** to **Montgomery (patient-centric)** — Must disclose **material risks** (reasonable patient test) + **reasonable alternatives**</td></tr><tr><td>3</td><td>When can you breach genetic confidentiality?</td><td>**Duty to warn** (MHC 2019): Serious harm to identifiable person, No other way to prevent harm. Also: Legal obligation (notifiable diseases, court order), Public interest (rare).</td></tr><tr><td>4</td><td>Predictive testing for Huntington disease — minimum age?</td><td>**18 years** (Gillick competence if mature minor; Standard protocol: 3 sessions, reflection, 2 clinicians).</td></tr><tr><td>5</td><td>VUS — how to communicate?</td><td>**Not actionable**; "We don't know if this causes disease"; Offer segregation/functional studies; Plan re-analysis; Document clearly.</td></tr><tr><td>6</td><td>Duty of Candour — when triggered?</td><td>**Notifiable safety incident**: Unintended/unexpected Death, Severe harm, Moderate harm, Prolonged psychological harm.</td></tr><tr><td>6</td><td>Paediatric predictive testing — when allowed?</td><td>Only if **medical benefit in childhood** (FAP 10-12y, MEN2B <1y, RET; NOT for HD, BRCA, adult-onset).</td></tr><tr><td>7</td><td>Gene editing — somatic vs germline?</td><td>**Somatic**: Clinical trials (Sickle cell, Thalassaemia, LCA). **Germline**: Prohibited (WHO moratorium, UK HFEA illegal).</td></tr><tr><td>8</td><td>Incidental findings in WES — ACMG SF v3.1?</td><td>59 actionable genes; **Opt-out option**; Report Pathogenic/LP only; Counselling pre-test.</td></tr><tr><td>9</td><td>Gene editing — therapeutic vs enhancement?</td><td>Therapy = Treat disease; Enhancement = Improve beyond normal. **Germline enhancement prohibited** (Eugenics, Equity, Consent).</td></tr><tr><td>10</td><td>DTC genetic testing — key concerns?</td><td>Not clinical grade; No counselling; Misinterpretation; Data privacy; Regulation gaps; Confirm in CLIA lab.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Montgomery = Tell all risks"**</td><td>**NO.** Only **material risks** (reasonable person test + doctor's knowledge of patient).</td></tr><tr><td>**"VUS = Probably pathogenic"**</td><td>**NO.** VUS = **Uncertain significance**; NOT actionable. Do not base clinical decisions on VUS.</td></tr><tr><td>**"Duty to warn = Tell family everything"**</td><td>**NO.** Only if: Serious harm, Identifiable person, No alternative. Proportionate disclosure.</td></tr><tr><td>**"Germline editing = CRISPR babies allowed"**</td><td>**NO.** **Prohibited globally** (WHO moratorium, UK HFEA illegal). 14-day rule for embryos.</td></tr><tr><td>**"Somatic editing = Same ethics as germline"**</td><td>**NO.** Somatic = Treat patient (Clinical trials); Germline = Heritable changes (Prohibited).</td></tr><tr><td>**"DTC testing = Clinical grade"**</td><td>**NO.** Not clinical grade; Variants limited; No counselling; Confirm in CLIA lab.</td></tr><tr><td>**"VUS = Likely pathogenic"**</td><td>**NO.** VUS = UNCERTAIN. Do not act on it. Segregation/Functional/Re-analysis needed.</td></tr><tr><td>**"Paediatric testing = Parents decide"**</td><td>**NO.** Child's autonomy; Defer until 18 unless childhood medical benefit (FAP, MEN, RET).</td></tr><tr><td>**"Duty of candour = Admit negligence"**</td><td>**NO.** Apology = "Sorry this happened" ≠ "I was negligent". Statutory duty to be open.</td></tr><tr><td>**"All genetic tests need consent"**</td><td>**Yes, but** exceptions: Emergency (implied consent), Legal obligation (notifiable diseases), Public interest.</td></tr></table>
+<div class="callout"><b>Mnemonic: ELSI GENETICS FRAMEWORK</b> <b>E</b>thical Principles: <b>Autonomy, Beneficence, Non-maleficence, Justice</b> (Principlism) <b>L</b>egal Framework: <b>Montgomery (Consent), MCA 2005 (Capacity), Equality Act 2010 (Discrimination)</b> <b>S</b>tatutes: <b>HRA 1998 (Art 2,3,5,8,9), Data Protection 2018/GDPR, HFE Act 2008, MCA 2005</b> <b>I</b>nformed Consent: <b>Montgomery (Material Risk + Alternatives)</b> — <b>Bolam/Bolitho</b> (Negligence) <b>G</b>enetic Counselling: <b>Non-directive, Confidential, Family-centred, Psychosocial</b> <b>E</b>thical Domains: <b>Predictive, Prenatal/PGT, VUS, Incidental, DTC, Editing, Equity</b> <b>N</b>on-directive: <b>Respect Autonomy</b> — Info not Advice; Patient Decides <b>E</b>xceptions to Confidentiality: <b>Consent, Legal Obligation, Public Interest (Serious Harm)</b> <b>T</b>esting Ethics: <b>Predictive (HD Protocol), Paediatric (Defer &lt;18 unless Benefit)</b> <b>I</b>ncidental Findings: <b>ACMG SF v3.1 (59 genes), Opt-out, Actionable Only</b> <b>C</b>ascade Testing: <b>Proband → 1st → 2nd Degree → Family Letters → Each Counseled</b> <b>S</b>creening Ethics: <b>Wilson &amp; Jungner (10 Criteria) — Informed Choice, Non-directive</b> <b>D</b>TC Testing: <b>Not Clinical Grade</b> — No Counselling, Caveat Emptor, Confirm CLIA <b>G</b>ene Editing: <b>Somatic (Trials) vs Germline (PROHIBITED — WHO/HFEA)</b> <b>E</b>quity: <b>Ancestry Bias (GWAS Eurocentric), Access, Diversity, Justice</b> <b>D</b>uty to Warn: <b>MHC 2019 — Serious Harm + Identifiable + No Alternative</b> <b>I</b>ncidental Findings: <b>ACMG SF v3.1 (59 Genes), Opt-out, Actionable Only</b> <b>S</b>omatic vs Germline: <b>Somatic = Patient; Germline = Heritable (Prohibited)</b> <b>C</b>andour: <b>Reg 20 HSCA — Tell, Apologise, Explain, Support, Record</b> <b>R</b>esponsible Innovation: <b>GA4GH Framework, Benefit Sharing, Data Governance</b> <b>E</b>diting Ethics: <b>Therapy vs Enhancement; Germline = Eugenics Risk</b> <b>T</b>rust: <b>GMC 4 Domains (Knowledge, Safety, Communication, Trust)</b> <b>I</b>nformation Governance: <b>Caldicott Principles (8), Caldicott Guardians, GDPR, DPA 2018</b> <b>C</b>ascade Testing: <b>Proband → 1st → 2nd → Family Letters → Each Counsels</b> <b>A</b>ccess &amp; Justice: <b>Ancestry Bias, Diverse Biobanks, PRS Portability, Community Engagement</b> <b>L</b>egal: <b>Equality Act 2010 (Genetic Disability Protected), ABI Code (Insurance), GINA (US)</b> <b>S</b>ocial Justice: <b>Genomic Justice — Fair Distribution of Benefits/Burdens</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((ELSI in Genetics)) Ethical Frameworks Principlism: Auto/Beneficence/Non-mal/Justice Consequentialism / Deontology / Virtue Ethics Legal Framework Montgomery (Consent) MCA 2005 (Capacity) Data Protection/GDPR Equality Act 2010 HFE Act 2008 Common Law Confidentiality Key ELSI Domains Predictive Testing (HD Protocol) Prenatal/PGT (NIPT, CVS, PGT-M/A/SR) VUS (Not Actionable) Incidental Findings (ACMG SF v3.1) DTC Testing (Not Clinical Grade) Gene Editing (Somatic Trials / Germline PROHIBITED) Equity &amp; Justice Ancestry Bias (GWAS Eurocentric) Access Disparities (Geo, SES, Ethnicity) PRS Portability Benefit Sharing Professional Regulation GMC 4 Domains HCPC (Counsellors) Caldicott Principles Duty of Candour (Reg 20) Clinical Governance Data Governance GDPR / DPA 2018 GA4GH Framework Controlled Access / Federated Analysis Benefit Sharing (Nagoya) Key Cases Montgomery / Bolam / Bolitho Gillick / Re B / Chester v Afshar Airedale / Re A / St George's v S </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Ethical Frameworks</td><td>2</td><td></td><td></td></tr><tr><td>Consent Law (Montgomery, MCA)</td><td>3</td><td></td><td></td></tr><tr><td>Confidentiality & Data Protection</td><td>3</td><td></td><td></td></tr><tr><td>Predictive Testing & HD Protocol</td><td>3</td><td></td><td></td></tr><tr><td>Prenatal/PGT Ethics</td><td>2</td><td></td><td></td></tr><tr><td>VUS & Incidental Findings</td><td>2</td><td></td><td></td></tr><tr><td>Gene Editing (Somatic vs Germline)</td><td>2</td><td></td><td></td></tr><tr><td>DTC Testing & DTC</td><td>2</td><td></td><td></td></tr><tr><td>Equity & Ancestry Bias</td><td>2</td><td></td><td></td></tr><tr><td>Professional Regulation (GMC, Candour)</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Discuss the ethical, legal, and social implications of predictive genetic testing for adult-onset conditions."</td><td>Autonomy/Principlism, HD protocol (3 sessions, reflection, 2 clinicians), Montgomery consent, VUS management, Insurance/Employment discrimination (Equality Act/ABI), Psychosocial impact, Counselling</td></tr><tr><td>**Short Note**</td><td>"Duty of candour in genetics."</td><td>Statutory (Reg 20 HSCA 2008); Notifiable incidents (Death, Severe/Mod harm, Psych harm); Tell + Apologise + Explain + Support + Record; Apology ≠ Admission of liability; Genetic examples (Wrong result, VUS, Data breach)</td></tr><tr><td>**Viva**</td><td>"Patient with BRCA1 mutation refuses to tell her sister. Your duty?"</td><td>Respect autonomy; Encourage disclosure; Offer family letter; **Duty to warn only if serious harm, identifiable, no alternative** (MHC 2019); Document</td></tr><tr><td>**Ward Round**</td><td>"WES returns VUS in BRCA2. Patient asks if she should have mastectomy. Your advice?"</td><td>**VUS not actionable**; Do not base surgery on VUS; Explain uncertainty; Offer segregation (test relatives), Functional studies, Re-analysis in 1-2y; Document</td></tr><tr><td>**Last-Night**</td><td>"Montgomery: Material risk + Alternatives. MCA: Impair→Func(U/R/W/C). Confidentiality: Consent/Law/Public Interest. VUS: Not actionable. HD: 3 sessions, 2 clinicians, 18+. Paediatric defer unless benefit. Gene editing: Somatic trials, Germline banned. DTC: Not clinical. Incidental: ACMG SF 59 genes, Opt-out. Candour: Tell+Apologise+Explain+Support+Record. Equity: Ancestry bias, PRS portability."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Ethical Frameworks</b>: <b>Principlism</b> (Autonomy, Beneficence, Non-maleficence, Justice) dominant; Also Consequentialism, Deontology, Virtue ethics.</li><li><b>Consent Law</b>: <b>Montgomery</b> (Material risk + Alternatives) &gt; <b>Bolam/Bolitho</b> (Negligence); <b>MCA 2005</b> 2-stage capacity test.</li><li><b>Confidentiality</b>: Common law + GDPR + Caldicott; Exceptions: Consent, Legal obligation, <b>Public interest (Serious harm to others — Duty to warn, MHC 2019)</b>.</li><li><b>Predictive Testing (HD)</b>: Protocol — 3 sessions (Genetics, Neurology, Psychiatry), Reflection (2-4 weeks), In-person disclosure by 2 clinicians, No testing &lt;18y.</li><li><b>Paediatric Testing</b>: <b>Defer until 18</b> unless childhood medical benefit (FAP 10-12y, MEN2B &lt;1y, RET).</li><li><b>VUS</b>: <b>Not actionable</b>; "We don't know"; Segregation/Functional/Re-analysis; Document clearly.</li><li><b>Incidental Findings</b>: <b>ACMG SF v3.1 (59 genes)</b>; Opt-out option; Report only Pathogenic/LP.</li><li><b>DTC Testing</b>: Not clinical grade; No counselling; Misinterpretation risk; Confirm in CLIA lab.</li><li><b>Gene Editing</b>: <b>Somatic</b> = Clinical trials (Sickle cell, Thalassaemia); <b>Germline</b> = <b>Prohibited</b> (WHO moratorium, UK HFEA illegal, 14-day rule).</li><li><b>Duty of Candour (Statutory Reg 20)</b>: Notifiable incident → Tell (in person+writing), Apologise, Explain, Support, Record.</li><li><b>Discrimination</b>: <b>Equality Act 2010</b> (Genetic disability protected); <b>ABI Code</b> (Insurance); <b>GINA</b> (US).</li><li><b>Equity</b>: <b>Ancestry bias</b> (GWAS 80%+ European → PRS poor portability); Diverse biobanks needed; Access disparities.</li><li><b>Professional Regulation</b>: GMC 4 Domains; HCPC (Counsellors); Caldicott Principles (8); Clinical Governance; Revalidation.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Montgomery v Lanarkshire — key change to consent law?</b></li></ol>
+<p>A. Doctor decides risks  B. <b>Patient-centred: Material risk test + Alternatives</b>  C. Written consent mandatory  D. Verbal consent sufficient <i>Answer: B. Shift from Bolam (doctor-centric) to Montgomery (patient-centric).</i></p>
+<ol><li><b>MCA 2005 — Stage 2 functional test assesses:</b></li></ol>
+<p>A. Diagnosis of dementia  B. <b>Understand, Retain, Use/Weigh, Communicate</b>  C. Best interests  D. Past wishes <i>Answer: B. Four functional abilities: Understand, Retain, Use/Weigh, Communicate.</i></p>
+<ol><li><b>VUS — correct management?</b></li></ol>
+<p>A. Treat as pathogenic  B. <b>Not actionable; Segregation/Functional/Re-analyse</b>  C. Report as benign  D. Ignore <i>Answer: B. VUS = Uncertain significance; Do not use for clinical decisions.</i></p>
+<ol><li><b>Duty to warn (MHC 2019) — when permitted?</b></li></ol>
+<p>A. Patient requests  B. <b>Serious harm, Identifiable person, No other way</b>  C. Family requests  D. Doctor decides <i>Answer: B. Serious harm to identifiable person + No alternative.</i></p>
+<ol><li><b>Paediatric predictive testing — when appropriate?</b></li></ol>
+<p>A. Always  B. Never  C. <b>If medical benefit in childhood (FAP, MEN, RET)</b>  D. Parent requests <i>Answer: C. Only if medical benefit in childhood (e.g., FAP 10-12y, MEN2B &lt;1y).</i></p>
+<ol><li><b>Germline gene editing — UK legal status?</b></li></ol>
+<p>A. Permitted with HFEA licence  B. <b>Prohibited (HFEA Act illegal, WHO moratorium)</b>  C. Allowed for severe disease  D. Research only <i>Answer: B. Prohibited (HFEA Act 2008; WHO moratorium; 14-day rule for embryos).</i></p>
+<ol><li><b>Incidental findings in WES — ACMG SF v3.1?</b></li></ol>
+<p>A. Report all variants  B. <b>59 actionable genes; Opt-out option; P/LP only</b>  C. Report VUS  D. No reporting <i>Answer: B. 59 actionable genes; Opt-out; Report P/LP only.</i></p>
+<ol><li><b>Duty of Candour — statutory trigger?</b></li></ol>
+<p>A. Any complaint  B. <b>Notifiable safety incident (Death, Severe/Moderate harm, Prolonged psychological harm)</b>  C. Any error  D. Patient request <i>Answer: B. Notifiable safety incident = Unintended/unexpected Death, Severe harm, Moderate harm, Prolonged psychological harm.</i></p>
+<ol><li><b>DTC genetic testing — key limitation?</b></li></ol>
+<p>A. Not clinical grade  B. No counselling  C. Data privacy issues  D. <b>All of the above</b> <i>Answer: D. Not clinical grade; No counselling; Data privacy; Misinterpretation risk.</i></p>
+<ol><li><b>PRS ancestry bias — cause?</b></li></ol>
+<p>A. Technical error  B. <b>GWAS predominantly European ancestry</b>  C. Sample size  D. Algorithm flaw <i>Answer: B. GWAS predominantly European ancestry → PRS poorly portable to other ancestries.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>35F requests predictive testing for HD. Mother affected. Protocol?</b></li></ol>
+<p>A. Test immediately  B. <b>3 pre-test sessions (Genetics, Neurology, Psychiatry) → Reflection → 2-clinician disclosure</b>  C. Test if she insists  D. Defer until 30 <i>Answer: B. Standard HD predictive testing protocol.</i></p>
+<ol><li><b>WES on child with DD returns VUS in SCN1A. Parents ask if child has Dravet syndrome. Counselling?</b></li></ol>
+<p>A. Yes, VUS = Pathogenic  B. <b>VUS = Uncertain; Not diagnostic; Segregation/Functional/Re-analyse</b>  C. No, VUS = Benign  D. Repeat test <i>Answer: B. VUS = Uncertain significance; Do not use for diagnosis.</i></p>
+<ol><li><b>Patient with BRCA1 mutation refuses to inform sister. Sister at 50% risk. Doctor's duty?</b></li></ol>
+<p>A. Tell sister  B. <b>Encourage disclosure; Offer family letter; Duty to warn only if serious harm + identifiable + no alternative</b>  C. Respect confidentiality absolutely  D. Refer to court <i>Answer: B. Respect autonomy; Encourage disclosure; Duty to warn only if MHC criteria met.</i></p>
+<ol><li><b>16-year-old requests predictive testing for BRCA1 (mother positive). Appropriate?</b></li></ol>
+<p>A. Yes, if Gillick competent  B. <b>Defer until 18 (No childhood benefit for BRCA)</b>  C. Test if parents consent  D. Test if psychologist agrees <i>Answer: B. Defer predictive testing until 18; No childhood benefit for BRCA.</i></p>
+<ol><li><b>WES on proband reveals incidental P/LP variant in LDLR (FH). Proband asymptomatic. Action?</b></li></ol>
+<p>A. Ignore (not primary indication)  B. <b>Report (ACMG SF v3.1 — LDLR actionable); Offer cascade testing</b>  C. Report only if proband consents  D. Refer to GP only <i>Answer: B. ACMG SF v3.1 includes LDLR — Report actionable incidental finding; Cascade testing.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-C, 6-B, 7-B, 8-B, 9-D, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1. Fundamentals of Medical Genetics]] — Genetic variation, Consent for genomic testing</li><li>[[2.1 Mendelian Inheritance]] — Inheritance risks in predictive/cascade testing</li><li>[[2.2 Non-Mendelian Inheritance]] — Imprinting, UPD, Mitochondrial in counselling</li><li>[[4.1 Autosomal Dominant Disorders]] — HD, FH, Marfan — Predictive testing protocols</li><li>[[4.2 Autosomal Recessive Disorders]] — CF, SMA, SMA carrier screening</li><li>[[4.3 X-Linked Disorders]] — DMD, Haemophilia, Fragile X reproductive counselling</li><li>[[5.1-5.4 Genetic Testing Technologies]] — NGS VUS management, Incidental findings (ACMG SF)</li><li>[[5.4 Prenatal &amp; Preimplantation Testing]] — NIPT, CVS, Amnio, PGT-M/A/SR ethics</li><li>[[5.5 Genetic Counselling]] — Counselling process, VUS communication, Cascade testing</li><li>[[6.1 Hereditary Cancer Syndromes]] — Predictive testing for BRCA, Lynch, LFS</li><li>[[6.2-6.3 Tumour Genetics &amp; Testing]] — Somatic vs Germline VUS, Incidental findings in tumour testing</li><li>[[7. Pharmacogenetics]] — PGx ethics, DTC testing, Equity</li><li>[[8. Population &amp; Newborn Screening]] — Screening ethics, Informed choice, Wilson &amp; Jungner</li><li>[[10. System-Based Clinical Genetics]] — ELSI per speciality (Cardiology, Neurology, etc.)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-14 <b>Next:</b> Build <code>10. System-Based Clinical Genetics.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Elsi · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

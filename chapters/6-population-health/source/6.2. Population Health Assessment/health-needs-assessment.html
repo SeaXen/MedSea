@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Needs Assessment — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.2. POPULATION HEALTH ASSESSMENT</span>
+      <div class="h1">Health Needs Assessment</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define Health Needs Assessment (HNA) and distinguish from health wants/demands</li><li>[ ] Describe 5-step HNA cycle and 3 methodological approaches</li><li>[ ] Apply HNA to commissioning: JSNA → JHWS → Commissioning plans</li><li>[ ] Identify equity considerations: proportional universalism, inverse care law</li><li>[ ] Distinguish HNA from Health Impact Assessment (HIA)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Health Need**</td><td>Capacity to benefit from healthcare intervention (ability to benefit)</td></tr><tr><td>**Health Want**</td><td>Patient/client perceived desire for care</td></tr><tr><td>**Health Demand**</td><td>Want expressed as action (e.g., appointment request)</td></tr><tr><td>**Health Needs Assessment**</td><td>Systematic method to identify unmet health needs, prioritise, plan services</td></tr><tr><td>**JSNA**</td><td>Joint Strategic Needs Assessment (UK statutory duty, LA + ICB)</td></tr><tr><td>**JHWS**</td><td>Joint Health and Wellbeing Strategy (informed by JSNA)</td></tr></table>
+<p><b>Bradshaw's Taxonomy of Need (1972):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Normative</b>&lt;/td&gt;&lt;td&gt;Expert-defined (guidelines, standards)&lt;/td&gt;&lt;td&gt;NICE guidelines, vaccination schedule&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Felt</b>&lt;/td&gt;&lt;td&gt;Patient-perceived need&lt;/td&gt;&lt;td&gt;"I want a knee replacement"&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Expressed</b>&lt;/td&gt;&lt;td&gt;Felt need turned into action&lt;/td&gt;&lt;td&gt;GP referral for knee X-ray&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Comparative</b>&lt;/td&gt;&lt;td&gt;Comparison with similar populations&lt;/td&gt;&lt;td&gt;Higher admission rate than peer CCGs&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological process - see HNA cycle below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / HNA Approaches</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Approach</th><th>Description</th><th>When Used</th></tr><tr><td>----------</td><td>-------------</td><td>-----------</td></tr><tr><td>**Epidemiological**</td><td>Population data: demographics, morbidity, mortality, risk factors, service use</td><td>Foundation for all HNA; objective, quantitative</td></tr><tr><td>**Comparative**</td><td>Compare with similar populations/areas/benchmarks</td><td>Identify unwarranted variation; equity audit</td></tr><tr><td>**Corporate/Qualitative**</td><td>Stakeholder views: patients, public, professionals, voluntary sector</td><td>Capture felt/expressed needs; acceptability, values</td></tr></table>
+<p><b>HNA Cycle (5 Steps):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Tools&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>1. Define Population</b>&lt;/td&gt;&lt;td&gt;Geographic, demographic, condition-specific&lt;/td&gt;&lt;td&gt;GIS mapping, population registers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2. Identify Needs</b>&lt;/td&gt;&lt;td&gt;Epidemiological data + stakeholder engagement&lt;/td&gt;&lt;td&gt;JSNA datasets, surveys, focus groups, complaints&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3. Prioritise Needs</b>&lt;/td&gt;&lt;td&gt;Criteria: magnitude, severity, inequality, effectiveness, cost-effectiveness, acceptability&lt;/td&gt;&lt;td&gt;MoSCoW, weighted scoring, PEM, CEA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>4. Plan Action</b>&lt;/td&gt;&lt;td&gt;Service redesign, commissioning, prevention, workforce&lt;/td&gt;&lt;td&gt;Logic models, theory of change&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>5. Evaluate Impact</b>&lt;/td&gt;&lt;td&gt;Process, outcome, impact evaluation&lt;/td&gt;&lt;td&gt;KPIs, PROMs, PREMs, equity metrics&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Data Sources & Methods)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Key Data Sources for Epidemiological HNA:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Source&lt;/th&gt;&lt;th&gt;Content&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>ONS/ Census</b>&lt;/td&gt;&lt;td&gt;Demographics, deprivation (IMD), ethnicity, housing&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Primary Care (GP)</b>&lt;/td&gt;&lt;td&gt;Prevalence (QOF), prescribing, referrals, LTC registers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Secondary Care (HES)</b>&lt;/td&gt;&lt;td&gt;Admissions, A&amp;E, procedures, outpatient, waiting times&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Public Health</b>&lt;/td&gt;&lt;td&gt;Screening uptake, immunisation, sexual health, substance misuse&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mortality (ONS)</b>&lt;/td&gt;&lt;td&gt;Cause-specific, avoidable, LE, healthy LE, SMR&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Surveys</b>&lt;/td&gt;&lt;td&gt;Health Survey England, GP Patient Survey, Active Lives&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Community Assets</b>&lt;/td&gt;&lt;td&gt;Voluntary sector, green space, leisure, social capital&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Mermaid: HNA to Commissioning Flow</b> ``<code>mermaid flowchart TD A[JSNA: Joint Strategic Needs Assessment] --&gt; B[Identify Needs\nEpi + Comparative + Corporate] B --&gt; C[Prioritise\nMagnitude, Inequity, Effectiveness] C --&gt; D[JHWS: Joint Health &amp; Wellbeing Strategy] D --&gt; E[Commissioning Plans\nICB / LA / NHS England] E --&gt; F[Service Specification\nContracts / Grants] F --&gt; G[Delivery &amp; Monitoring\nKPIs, Outcomes, Equity] G --&gt; H[Evaluation &amp; Feedback] H --&gt; A style A fill:#bbf,stroke:#333 style D fill:#bfb,stroke:#333 </code>``</p>
+<p><b>Prioritisation Frameworks:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Framework&lt;/th&gt;&lt;th&gt;Criteria&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PEM (Priority, Equity, Magnitude)</b>&lt;/td&gt;&lt;td&gt;Simple 3-criterion scoring&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>MoSCoW</b>&lt;/td&gt;&lt;td&gt;Must, Should, Could, Won't have&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hanlon Method</b>&lt;/td&gt;&lt;td&gt;(Magnitude + Severity) × Effectiveness ÷ Cost&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Multi-Criteria Decision Analysis (MCDA)</b>&lt;/td&gt;&lt;td&gt;Weighted criteria: health gain, equity, cost, acceptability, feasibility&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (HNA vs Related Concepts)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Distinction</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**HNA vs HIA**</td><td>HNA: identifies health needs for service planning. HIA: assesses health IMPACT of policies/projects (non-health sectors: transport, housing).</td></tr><tr><td>**HNA vs Audit**</td><td>HNA: forward-looking (what do we NEED?). Audit: backward-looking (are we doing what we SHOULD?).</td></tr><tr><td>**Need vs Demand**</td><td>Need = capacity to benefit. Demand = expressed want. Supply-induced demand = provider creates demand.</td></tr><tr><td>**Equity vs Equality**</td><td>Equality = same for all. Equity = proportionate to need (proportional universalism).</td></tr><tr><td>**Inverse Care Law**</td><td>Those with greatest need get least care (Tudor Hart 1971). Market forces, access barriers.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Application in UK System)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Structure</th><th>Role</th></tr><tr><td>-----------</td><td>------</td></tr><tr><td>**JSNA**</td><td>Statutory duty (Health & Social Care Act 2012). LA + ICB. Evidence base for JHWS.</td></tr><tr><td>**JHWS**</td><td>Strategy from JSNA. Priorities for commissioning.</td></tr><tr><td>**ICB (Integrated Care Board)**</td><td>NHS commissioning body. Uses JSNA/JHWS for 5-year plan.</td></tr><tr><td>**Place-based Partnerships**</td><td>Neighbourhood/Place/System levels. Population health management.</td></tr><tr><td>**Population Health Management (PHM)**</td><td>Data-driven segmentation, risk stratification, proactive care.</td></tr></table>
+<p><b>Proportional Universalism (Marmot):</b></p>
+<ul><li>Universal services for all</li><li>Scale and intensity proportionate to need/disadvantage</li><li>Reduces gradient, not just gap</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Need Definition**</td><td>Capacity to benefit from healthcare (not want/demand)</td></tr><tr><td>**Bradshaw's 4 Types**</td><td>Normative, Felt, Expressed, Comparative</td></tr><tr><td>**3 HNA Approaches**</td><td>Epidemiological (data), Comparative (benchmark), Corporate (stakeholder)</td></tr><tr><td>**5-Step Cycle**</td><td>Define population → Identify → Prioritise → Plan → Evaluate</td></tr><tr><td>**JSNA/JHWS**</td><td>Legal duty (LA+ICB). JSNA evidence → JHWS strategy → Commissioning</td></tr><tr><td>**Prioritisation**</td><td>Magnitude, severity, inequality, effectiveness, cost-effectiveness</td></tr><tr><td>**Equity**</td><td>Proportional universalism. Inverse care law = greatest need gets least care</td></tr><tr><td>**HNA vs HIA**</td><td>HNA = service needs. HIA = health impact of non-health policies.</td></tr><tr><td>**Population Health Management**</td><td>Risk stratification, segmentation, proactive intervention</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Define health need. How does it differ from want and demand?**</td><td>Need = capacity to benefit from intervention. Want = perceived desire. Demand = want expressed as action.</td></tr><tr><td>**What are Bradshaw's four types of need?**</td><td>Normative (expert), Felt (perceived), Expressed (action), Comparative (benchmark).</td></tr><tr><td>**Describe the 5-step HNA cycle.**</td><td>1) Define population, 2) Identify needs (epi/comparative/corporate), 3) Prioritise (criteria), 4) Plan action, 5) Evaluate impact.</td></tr><tr><td>**What is JSNA? Who is responsible?**</td><td>Joint Strategic Needs Assessment. Statutory duty of Local Authority + ICB (Health & Social Care Act 2012).</td></tr><tr><td>**How does JSNA link to commissioning?**</td><td>JSNA evidence → JHWS priorities → ICB/LA commissioning plans → service specs → contracts → monitoring.</td></tr><tr><td>**What are the three approaches to HNA?**</td><td>Epidemiological (population data), Comparative (benchmarks), Corporate/Qualitative (stakeholder views).</td></tr><tr><td>**Prioritisation criteria for health needs?**</td><td>Magnitude (how many), Severity (how bad), Inequity/inequality, Effectiveness of intervention, Cost-effectiveness, Acceptability.</td></tr><tr><td>**What is proportional universalism?**</td><td>Universal services for all, but scale and intensity proportionate to level of disadvantage (Marmot).</td></tr><tr><td>**Inverse Care Law - what is it?**</td><td>"The availability of good medical care tends to vary inversely with the need for it in the population served" (Tudor Hart 1971).</td></tr><tr><td>**HNA vs Health Impact Assessment?**</td><td>HNA: identifies unmet health needs for healthcare planning. HIA: predicts health effects of policies/projects in non-health sectors (transport, housing, planning).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**JSNA vs JHWS**</td><td>JSNA = assessment (evidence). JHWS = strategy (action plan).</td></tr><tr><td>**Normative vs Comparative**</td><td>Normative = expert standards. Comparative = benchmark vs peers.</td></tr><tr><td>**HNA is iterative**</td><td>Not one-off; cycles with commissioning and evaluation.</td></tr><tr><td>**Corporate approach = Qualitative**</td><td>Not just corporate sector; "corporate" = stakeholder/collective perspective.</td></tr></table>
+<p><b>Mnemonic: BRADSHAW NEEDS</b></p>
+<ul><li><b>N</b>ormative (expert)</li><li><b>E</b>xpressed (action)</li><li><b>E</b>quals comparative? No - <b>C</b>omparative</li><li><b>D</b>emand? No - <b>F</b>elt (perceived)</li></ul>
+<p><b>Mnemonic: HNA CYCLE (DIPPE)</b></p>
+<ul><li><b>D</b>efine population</li><li><b>I</b>dentify needs</li><li><b>P</b>rioritise</li><li><b>P</b>lan action</li><li><b>E</b>valuate</li></ul>
+<p><b>Mnemonic: JSNA → JHWS → COMMISSIONING</b></p>
+<ul><li><b>J</b>SNA = <b>J</b>ust the evidence (assessment)</li><li><b>J</b>HWS = <b>J</b>oin together for strategy</li><li><b>C</b>ommissioning = <b>C</b>ontracts for services</li></ul>
+<p><b>Mnemonic: PRIORITISATION (MSEICA)</b></p>
+<ul><li><b>M</b>agnitude</li><li><b>S</b>everity</li><li><b>E</b>quity / <b>I</b>nequity</li><li><b>I</b>ntervention effectiveness</li><li><b>C</b>ost-effectiveness</li><li><b>A</b>cceptability</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Health Needs Assessment)) Definition Need = Capacity to Benefit Want = Perceived Demand = Expressed Action Bradshaw's Types Normative Felt Expressed Comparative Approaches Epidemiological (Data) Comparative (Benchmark) Corporate (Stakeholder) Cycle (5 Steps) Define Population Identify Needs Prioritise Plan Action Evaluate UK System JSNA (Statutory) JHWS (Strategy) ICB Commissioning Population Health Mgmt Equity Proportional Universalism Inverse Care Law HNA vs HIA </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Need**</td><td>Capacity to benefit (not want/demand)</td></tr><tr><td>**Bradshaw**</td><td>Normative, Felt, Expressed, Comparative</td></tr><tr><td>**Approaches**</td><td>Epidemiological, Comparative, Corporate</td></tr><tr><td>**Cycle**</td><td>Define → Identify → Prioritise → Plan → Evaluate</td></tr><tr><td>**JSNA**</td><td>LA + ICB statutory duty; evidence base</td></tr><tr><td>**JHWS**</td><td>Strategy from JSNA priorities</td></tr><tr><td>**Prioritise**</td><td>Magnitude, Severity, Equity, Effectiveness, Cost, Acceptability</td></tr><tr><td>**Equity**</td><td>Proportional universalism (Marmot)</td></tr><tr><td>**Inverse Care Law**</td><td>Greatest need → least care</td></tr><tr><td>**HNA vs HIA**</td><td>HNA=service needs; HIA=policy health impact</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Need/Want/Demand</td><td></td><td></td></tr><tr><td>Bradshaw's 4 Types</td><td></td><td></td></tr><tr><td>3 Approaches</td><td></td><td></td></tr><tr><td>5-Step Cycle</td><td></td><td></td></tr><tr><td>JSNA/JHWS</td><td></td><td></td></tr><tr><td>Prioritisation Criteria</td><td></td><td></td></tr><tr><td>Equity Concepts</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Health Promotion &amp; Disease Prevention (Primary, Secondary, Tertiary).md]], [[Screening (Wilson-Jungner Criteria, Programs, Ethics).md]], [[Health Systems, UHC &amp; Health Economics.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Health Needs Assessment · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

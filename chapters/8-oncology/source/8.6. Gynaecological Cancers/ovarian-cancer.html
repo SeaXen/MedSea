@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ovarian Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.6. GYNAECOLOGICAL CANCERS</span>
+      <div class="h1">Ovarian Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify <b>epithelial subtypes</b> and their molecular features (HGSC: TP53 96%, HRD 50%; Endometrioid: ARID1A, PIK3CA, PTEN; Clear cell: ARID1A, PIK3CA; Mucinous: KRAS)</li><li>[ ] Apply <b>FIGO 2014 staging</b> for ovarian/fallopian tube/primary peritoneal</li><li>[ ] Define <b>HRD</b> (BRCA1/2, HRR genes: RAD51C/D, BRIP1, PALB2, ATM, etc.) and <b>PARPi eligibility</b></li><li>[ ] Prescribe <b>1L chemo ± Bev</b> and select <b>maintenance</b> (PARPi vs Bev vs None)</li><li>[ ] Distinguish <b>Platinum-sensitive (PFI&gt;6mo)</b> vs <b>Platinum-resistant (PFI&lt;6mo)</b> recurrence management</li><li>[ ] Sequence <b>PARP inhibitors</b>: Olaparib, Niraparib, Rucaparib, Talazoparib — indications, toxicity (anaemia, thrombocytopenia, fatigue, GI, MDS/AML risk)</li><li>[ ] Recognise <b>Germline BRCA testing</b> for all patients (cascade testing)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of ovarian surface epithelium / fallopian tube / primary peritoneum (same disease continuum)</td></tr><tr><td>**Incidence**</td><td>UK: ~7,500/year; 6th most common female cancer; **Most lethal gynaecological cancer**</td></tr><tr><td>**Prevalence**</td><td>5-year OS: Stage I ~90%, Stage III ~40%, Stage IV ~20%</td></tr><tr><td>**Peak Age**</td><td>60-70 years (HGSC); Younger for germ cell/sex cord-stromal</td></tr><tr><td>**Risk Factors**</td><td>**Nulliparity**, **Early menarche/Late menopause**, **Endometriosis** (Clear cell/Endometrioid), **Obesity**, **HRT**, **Family history**, **BRCA1/2** (↑40-60% lifetime), **Lynch Syndrome**</td></tr><tr><td>**Protective**</td><td>**OCP** (↓50%), **Multiparity**, **Breastfeeding**, **Tubal ligation**, **Salpingectomy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Ovarian Surface Epithelium / Fallopian Tube Fimbria] --&gt; B[Cell of Origin Debate] B --&gt; C1[<b>HGSC: Fallopian Tube (STIC lesions)</b> → TP53 mut → Genomic instability] B --&gt; C2[<b>Endometrioid/Clear Cell: Endometriosis</b> → ARID1A, PIK3CA, PTEN] B --&gt; C3[<b>Mucinous: Intestinal metaplasia</b> → KRAS, HER2] B --&gt; C4[<b>Low-grade Serous: MAPK pathway</b> → KRAS, NRAS, BRAF] C1 --&gt; D[<b>HRD: BRCA1/2, HRR genes</b> → PARPi sensitivity] C2 --&gt; E[<b>MMRd/MSI-H</b> → ICI potential] C3 --&gt; F[<b>KRAS, HER2</b> → Targeted therapy] </code>``</p>
+<div class="sub-h">Histological Subtypes &amp; Molecular Profile</div>
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Key Mutations</th><th>HRD/MSI</th><th>Prognosis</th></tr><tr><td>---------</td><td>-----------</td><td>---------------</td><td>---------</td><td>-----------</td></tr><tr><td>**High-Grade Serous (HGSC)**</td><td>**70%**</td><td>**TP53 (96%)**, **BRCA1/2 (20-25%)**, CCNE1 amp, RB1 loss</td><td>**HRD 50%**</td><td>Aggressive, Chemo-sensitive</td></tr><tr><td>**Endometrioid**</td><td>10%</td><td>ARID1A, PIK3CA, PTEN, CTNNB1, **MMRd 20-30%**</td><td>MSI-H subset</td><td>Better</td></tr><tr><td>**Clear Cell**</td><td>10%</td><td>**ARID1A (50%)**, PIK3CA, TP53 (rare), TERT</td><td>Rare</td><td>Chemo-resistant</td></tr><tr><td>**Mucinous**</td><td>3%</td><td>**KRAS (60%)**, HER2 amp, TP53, CDKN2A</td><td>Rare</td><td>Chemo-resistant if advanced</td></tr><tr><td>**Low-Grade Serous**</td><td>5%</td><td>**KRAS/NRAS/BRAF (MAPK)**, **No TP53**, ER+</td><td>No</td><td>Indolent, Chemo-resistant</td></tr><tr><td>**Carcinosarcoma (MMMT)**</td><td>2-5%</td><td>TP53, PIK3CA</td><td>Variable</td><td>Aggressive</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Asymptomatic**</td><td>Early stage often incidental</td></tr><tr><td>**Abdominal Distension**</td><td>**Ascites** (most common presentation)</td></tr><tr><td>**Bloating, Early Satiety**</td><td>GI symptoms</td></tr><tr><td>**Pelvic/Abdominal Pain**</td><td>Vague, chronic</td></tr><tr><td>**Urinary Frequency**</td><td>Bladder irritation</td></tr><tr><td>**Abnormal Vaginal Bleeding**</td><td>Post-menopausal</td></tr><tr><td>**Constitutional**</td><td>Weight loss, fatigue (advanced)</td></tr><tr><td>**Paraneoplastic**</td><td>**Trousseau's** (thrombosis), **Dermatomyositis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging (FIGO 2014)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Description</th></tr><tr><td>-------</td><td>-------------</td></tr><tr><td>**I**</td><td>Confined to ovaries/tubes</td></tr><tr><td>IA</td><td>One ovary/tube, intact capsule, no surface tumour, negative washings</td></tr><tr><td>IB</td><td>Both ovaries/tubes, intact capsules, no surface tumour, negative washings</td></tr><tr><td>IC</td><td>**IC1**: Intraoperative spillage; **IC2**: Capsule rupture pre-op / surface tumour; **IC3**: Malignant cells in ascites/washings</td></tr><tr><td>**II**</td><td>Pelvic extension</td></tr><tr><td>IIA</td><td>Uterus/Fallopian tubes</td></tr><tr><td>IIB</td><td>Other pelvic organs</td></tr><tr><td>**III**</td><td>**Microscopic (/Macroscopic) peritoneal mets outside pelvis**</td></tr><tr><td>IIIA1</td><td>Retroperitoneal nodes only (IIIA1i ≤10mm, IIIA1ii >10mm)</td></tr><tr><td>IIIA2</td><td>Microscopic peritoneal mets ± nodes</td></tr><tr><td>IIIB</td><td>Macroscopic peritoneal mets ≤2cm</td></tr><tr><td>IIIC</td><td>Macroscopic peritoneal mets >2cm</td></tr><tr><td>**IV**</td><td>Distant mets</td></tr><tr><td>IVA</td><td>Pleural effusion (positive cytology)</td></tr><tr><td>IVB</td><td>Parenchymal mets (liver, lung, spleen, nodes outside abdomen)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**CA125**</td><td>**Tumour marker** (not diagnostic alone)</td><td>↑ in 80% epithelial; **Premenopausal: ↑ in endometriosis, menstruation, PID**; **Postmenopausal: ↑ specificity**; **RMI** (Risk of Malignancy Index) = CA125 × Menopausal score × US score</td></tr><tr><td>**HE4 + ROMA**</td><td>Adjunct to CA125</td><td>Better specificity</td></tr><tr><td>**Transvaginal US**</td><td>First-line imaging</td><td>**Complex cystic/solid mass**, **Papillary projections**, **Ascites**</td></tr><tr><td>**CT Chest/Abdomen/Pelvis**</td><td>**Staging**</td><td>Peritoneal carcinomatosis, omental cake, nodes, liver/spleen surface mets, pleural effusion</td></tr><tr><td>**MRI Pelvis**</td><td>Local staging (uterine invasion)</td><td>Better soft tissue</td></tr><tr><td>**PET-CT**</td><td>Not routine; Recurrence, equivocal</td><td></td></tr><tr><td>**Diagnostic Laparoscopy**</td><td>Staging, biopsy if neoadjuvant planned</td><td></td></tr><tr><td>**Germline BRCA1/2 Testing**</td><td>**ALL patients** (NCCN/ESMO)</td><td>Cascade testing; PARPi eligibility</td></tr><tr><td>**Somatic HRD Testing**</td><td>Tumour BRCA + HRR panel + Genomic instability score (Myriad MyChoice, FoundationOne)</td><td>PARPi eligibility (HRD+)</td></tr><tr><td>**Biopsy**</td><td>Image-guided / Laparoscopic / Ascites cytology</td><td>Confirms histology; **Avoid tumour spillage if resectable**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Benign Ovarian Cyst**</td><td>Simple, thin-walled, no solid components, no ascites, CA125 normal/mildly ↑</td></tr><tr><td>**Borderline Tumour (Low Malignant Potential)**</td><td>**Serous/Mucinous**, Young, Stage I, **No stromal invasion**, Fertility-sparing surgery</td></tr><tr><td>**Fallopian Tube Cancer**</td><td>**STIC lesions**, Same treatment as ovarian</td></tr><tr><td>**Primary Peritoneal Cancer**</td><td>**Ovaries normal/minimal**, Same treatment</td></tr><tr><td>**Metastatic Cancer (Krukenberg)**</td><td>**Signet ring cells**, Stomach/Colon/Appendix/Breast primary; Bilateral</td></tr><tr><td>**Endometriosis**</td><td>Cystic (endometrioma), **Ground glass US**, CA125 ↑ (premenopausal)</td></tr><tr><td>**Pelvic Inflammatory Disease**</td><td>Acute pain, fever, ↑WBC, adnexal tenderness</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Primary Treatment Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Newly Diagnosed Ovarian Cancer] --&gt; B{Stage} B --&gt;|<b>Stage I (IA/IB Low-grade)</b>| C[<b>Fertility-sparing surgery</b> (if desired) + <b>Staging</b>&lt;br/&gt;<b>No adjuvant chemo</b> (IA/IB G1-2)&lt;br/&gt;<b>IC / High-grade: Adjuvant Carbo/Pac ×3-6 cycles</b>] B --&gt;|<b>Stage I (IC, High-grade) / II</b>| D[<b>Primary Debulking Surgery (PDS)</b> → <b>Adjuvant Carbo/Pac ×6 cycles</b>&lt;br/&gt;<b>± Bevacizumab</b> (if high-risk: Stage IC/II, clear cell, suboptimal debulking)] B --&gt;|<b>Stage III/IV</b>| E{Resectability / Fitness} E --&gt;|<b>Resectable to R0 / Fit</b>| F[<b>Primary Debulking Surgery (PDS)</b> → <b>Adjuvant Chemo ± Bev</b>] E --&gt;|<b>Unresectable / Unfit / High tumour burden</b>| G[<b>Neoadjuvant Chemotherapy (NACT)</b>&lt;br/&gt;<b>Carbo/Pac ×3 cycles</b> → <b>Interval Debulking Surgery (IDS)</b> → <b>Carbo/Pac ×3 cycles ± Bev</b>] F --&gt; H[<b>Maintenance Therapy</b>] G --&gt; H </code>``</p>
+<div class="sub-h">1L Chemotherapy Regimens</div>
+<table class="ctable"><tr><th>Regimen</th><th>Dose</th><th>Cycles</th><th>Indication</th></tr><tr><td>---------</td><td>------</td><td>--------</td><td>------------</td></tr><tr><td>**Carboplatin + Paclitaxel**</td><td>Carbo AUC5-6 + Pac 175mg/m² q3w</td><td>6 (3+3 if NACT)</td><td>**Standard 1L**</td></tr><tr><td>**Carbo/Pac + Bevacizumab**</td><td>+ Bev 15mg/kg q3w (with chemo) → Bev maint 15mg/kg q3w ×15mo</td><td>6 + maint</td><td>**High-risk / Stage IV / Suboptimal debulking** (GOG-0218, ICON7)</td></tr><tr><td>**Dose-dense Weekly Paclitaxel**</td><td>Carbo AUC5-6 q3w + Pac 80mg/m² weekly</td><td>6</td><td>**JGOG-3016/GOG-262**: PFS benefit (esp. no Bev)</td></tr></table>
+<div class="sub-h">Maintenance Therapy (Post-1L Response)</div>
+<p>``<code>mermaid flowchart TD A[Post-1L Chemo (CR/PR)] --&gt; B{HRD / BRCA Status} B --&gt;|<b>g/s BRCA1/2 mut</b>| C[<b>Olaparib 300mg BD</b> (SOLO-1) — <b>7-yr PFS benefit, OS trend</b>&lt;br/&gt;<b>OR Niraparib 300mg OD</b> (PRIMA) — <b>All-comers, BRCA+ HR 0.27</b>&lt;br/&gt;<b>OR Rucaparib 600mg BD</b> (ATHENA) — <b>BRCA+ve</b>] B --&gt;|<b>HRD+ (BRCA wt, HRR mut or GIS high)</b>| D[<b>Olaparib + Bevacizumab</b> (PAOLA-1) — <b>HRD+ PFS HR 0.33</b>&lt;br/&gt;<b>OR Niraparib</b> (PRIMA) — <b>HRD+ PFS HR 0.38</b>] B --&gt;|<b>HRD- (HR-proficient)</b>| E[<b>Niraparib</b> (PRIMA) — <b>HR-proficient PFS HR 0.68</b> (modest)&lt;br/&gt;<b>OR Bevacizumab maintenance</b> (if Bev used 1L: GOG-0218/ICO7)&lt;br/&gt;<b>OR Observation</b>] C --&gt; F[<b>PARPi Toxicity Management</b>] D --&gt; F E --&gt; F </code>``</p>
+<div class="sub-h">PARP Inhibitor Comparison</div>
+<table class="ctable"><tr><th>PARPi</th><th>Key Trial</th><th>Indication</th><th>Dose</th><th>Key Toxicity</th></tr><tr><td>-------</td><td>-----------</td><td>------------</td><td>------</td><td>--------------</td></tr><tr><td>**Olaparib**</td><td>SOLO-1 (gBRCA), PAOLA-1 (HRD+ + Bev)</td><td>**1L Maint: g/s BRCA+ (SOLO-1); HRD+ + Bev (PAOLA-1)**</td><td>300mg BD</td><td>**Anaemia (20-30%), Nausea, Fatigue, ↑MDS/AML (1-2%)**</td></tr><tr><td>**Niraparib**</td><td>PRIMA (All-comers), NOVA (Recurrent)</td><td>**1L Maint: All-comers (PRIMA); Recurrent: BRCA+/HRD+**</td><td>300mg OD (200mg if <77kg or Plt<150)</td><td>**Thrombocytopenia (30-40% Gr3-4), Anaemia, Neutropenia, HTN**</td></tr><tr><td>**Rucaparib**</td><td>ATHENA (1L), ARIEL (Recurrent)</td><td>**1L Maint: BRCA+ (ATHENA); Recurrent: BRCA+/HRD+**</td><td>600mg BD</td><td>**Anaemia, Nausea, AST/ALT↑, Photosensitivity**</td></tr><tr><td>**Talazoparib**</td><td>TALA</td><td>Emerging</td><td>1mg OD</td><td>Similar</td></tr></table>
+<div class="sub-h">Recurrent Disease Management</div>
+<table class="ctable"><tr><th>Setting</th><th>Definition</th><th>Treatment</th></tr><tr><td>---------</td><td>------------</td><td>-----------</td></tr><tr><td>**Platinum-Sensitive**</td><td>**PFI >6 months** (Platinum-Free Interval)</td><td>**Platinum Doublet Re-challenge** (Carbo/Pac, Carbo/Gem, Carbo/PLD) **+ PARPi Maintenance** (NOVA: Niraparib; ARIEL3: Rucaparib; ENGOT-OV16: Olaparib)</td></tr><tr><td>**Partially Sensitive**</td><td>PFI 6-12 months</td><td>Same as sensitive</td></tr><tr><td>**Platinum-Resistant**</td><td>**PFI <6 months**</td><td>**Non-Platinum Single Agent** ± Bevacizumab:<br/>• **PLD (PEGylated Liposomal Doxorubicin)** — **Standard**<br/>• **Weekly Paclitaxel**<br/>• **Topotecan** (IV/weekly/oral)<br/>• **Gemcitabine**<br/>• **Trabectedin + PLD** (OVA-301) if PFI 6-12mo<br/>• **Bevacizumab + Chemo** (AURELIA: Bev+Chemo vs Chemo alone — PFS HR 0.48)</td></tr><tr><td>**Platinum-Refractory**</td><td>Progression **on** platinum</td><td>Same as resistant; **Clinical Trial** priority</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Epithelial Subtypes**</td><td>**HGSC 70%** (TP53, BRCA, HRD 50%); Endometrioid (ARID1A, MMRd); Clear cell (ARID1A, chemo-resistant); Mucinous (KRAS); LGS (MAPK, indolent)</td></tr><tr><td>**FIGO 2014**</td><td>Stage I: Ovaries only; II: Pelvic; III: Peritoneal mets (A1 nodes, A2 micro, B ≤2cm, C >2cm); IV: Distant</td></tr><tr><td>**HRD**</td><td>**BRCA1/2 (germline/somatic 20-25%)** + **HRR genes (RAD51C/D, BRIP1, PALB2, ATM, etc.)** + **Genomic Instability Score** → **PARPi eligibility**</td></tr><tr><td>**1L Chemo**</td><td>**Carbo AUC5-6 + Pac 175mg/m² q3w ×6** ± **Bev 15mg/kg** (GOG-0218/ICON7); **Dose-dense weekly Pac** (JGOG-3016)</td></tr><tr><td>**Maintenance PARPi**</td><td>**BRCA+**: Olaparib (SOLO-1), Niraparib (PRIMA), Rucaparib (ATHENA); **HRD+**: Olaparib+Bev (PAOLA-1), Niraparib (PRIMA); **HRD-**: Niraparib modest, Bev maint if used 1L</td></tr><tr><td>**PARPi Toxicity**</td><td>**Olaparib**: Anaemia; **Niraparib**: Thrombocytopenia (dose by weight/plt); **Rucaparib**: AST/ALT↑, Photosensitivity; **All**: MDS/AML risk ~1-2%</td></tr><tr><td>**Recurrence**</td><td>**Platinum-sensitive (PFI>6mo)**: Plat-doublet + PARPi maint; **Platinum-resistant (PFI<6mo)**: Non-plat (PLD, Pac, Topo, Gem) ± Bev (AURELIA)</td></tr><tr><td>**Germline Testing**</td><td>**ALL patients** → Cascade testing; **Somatic HRD** if germline negative</td></tr><tr><td>**CA125**</td><td>**RMI = CA125 × Menopausal score × US score**; **>200 = High risk**; Not for screening</td></tr><tr><td>**Borderline Tumour**</td><td>Young, Stage I, **No stromal invasion**, Fertility-sparing surgery, No chemo</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**55F, pelvic mass, ascites, CA125 1200. CT: omental cake, peritoneal deposits. FIGO Stage?**</td><td>**Stage IIIC** (Macroscopic peritoneal mets >2cm).</td></tr><tr><td>**Same patient, germline BRCA2 mut. 1L chemo + maintenance?**</td><td>**Carbo/Pac + Bev (if high-risk) ×6 cycles → Olaparib 300mg BD maintenance (SOLO-1)** — **Preferred for gBRCA+**.</td></tr><tr><td>**HRD definition — what genes?**</td><td>**BRCA1/2 (germline/somatic)** + **HRR genes: RAD51C, RAD51D, BRIP1, PALB2, ATM, CHEK2, FANC genes, etc.** + **Genomic Instability Score (LOH, TAI, LST)**.</td></tr><tr><td>**SOLO-1 vs PAOLA-1 vs PRIMA — key differences?**</td><td>**SOLO-1**: **gBRCAm**, Olaparib vs Placebo → **7-yr PFS 48% vs 21%**; **PAOLA-1**: **HRD+**, Olaparib+Bev vs Bev → **PFS HR 0.33**; **PRIMA**: **All-comers**, Niraparib vs Placebo → **BRCA+ HR 0.27, HRD+ HR 0.38, HR-proficient HR 0.68**.</td></tr><tr><td>**Platinum-Free Interval (PFI) — sensitive vs resistant?**</td><td>**Sensitive: PFI >6 months** → Re-challenge platinum + PARPi maint; **Resistant: PFI <6 months** → Non-platinum chemo ± Bev.</td></tr><tr><td>**Platinum-resistant recurrence — standard options?**</td><td>**PLD, Weekly Paclitaxel, Topotecan, Gemcitabine** ± **Bevacizumab** (AURELIA: Bev+Chemo PFS HR 0.48).</td></tr><tr><td>**Niraparib dosing — weight/plt adjustment?**</td><td>**300mg OD**; **If <77kg OR Plt<150 → 200mg OD**; **Monitor CBC q2w×1mo, monthly×11mo, then q3mo** (thrombocytopenia risk).</td></tr><tr><td>**Olaparib vs Niraparib vs Rucaparib — key toxicity diff?**</td><td>**Olaparib**: Anaemia; **Niraparib**: **Thrombocytopenia** (dose-adjusted); **Rucaparib**: AST/ALT↑, Photosensitivity, Dysgeusia.</td></tr><tr><td>**Borderline ovarian tumour — management?**</td><td>**Fertility-sparing surgery** (unilateral salpingo-oophorectomy + staging), **No adjuvant chemo** if Stage I; **Complete surgery** if childbearing complete.</td></tr><tr><td>**Germline BRCA testing — when?**</td><td>**At diagnosis for ALL ovarian cancer patients** (NCCN/ESMO) — guides PARPi, cascade testing, risk-reducing surgery.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**HRD vs BRCA**</td><td>**BRCA+ = HRD+**; **HRD+ includes BRCA+ + HRR gene mut + GIS high**; **Test: Germline BRCA → Somatic HRD panel**</td></tr><tr><td>**PARPi Line of Therapy**</td><td>**1L Maintenance** (SOLO-1, PAOLA-1, PRIMA, ATHENA) — **Now standard**; **Recurrent Maintenance** (NOVA, ARIEL3, ENGOT-OV16) — **Historical**</td></tr><tr><td>**Bevacizumab 1L + PARPi Maint**</td><td>**PAOLA-1**: Olaparib + Bev maint for **HRD+**; **GOG-0218/ICON7**: Bev maint alone (no PARPi) — **Can combine if HRD+**</td></tr><tr><td>**Dose-dense Paclitaxel vs Standard**</td><td>**Weekly 80mg/m² + Carbo q3w** (JGOG-3016): PFS/OS benefit **esp. if no Bev**; **Not standard with Bev** (GOG-262)</td></tr><tr><td>**PFI Calculation**</td><td>**From last platinum dose to progression**; **Not from diagnosis**; **>6mo = Sensitive**</td></tr><tr><td>**Olaparib + Bev in PAOLA-1**</td><td>**Only HRD+**; **HRD- did NOT benefit** (HR 0.92); **Bev given 15mg/kg q3w ×15mo total**</td></tr><tr><td>**MDS/AML Risk with PARPi**</td><td>**~1-2%**; **Higher with prior chemo/RT**; **Monitor CBC**; **Discontinue if MDS/AML confirmed**</td></tr></table>
+<p><b>Mnemonic: OVARIAN-PARP</b></p>
+<ul><li><b>O</b>varian: <b>HGSC 70%</b> (TP53, BRCA, HRD 50%)</li><li><b>V</b>ARIANTS: Endo (MMRd), Clear (ARID1A), Muc (KRAS), LGS (MAPK)</li><li><b>A</b>SCO/FIGO: I (ovary), II (pelvis), III (peritoneal), IV (distant)</li><li><b>R</b>ecurrence: <b>PFI&gt;6mo Sensitive</b> (Plat+PARPi), <b>PFI&lt;6mo Resistant</b> (Non-plat±Bev)</li><li><b>I</b>nitial: Carbo/Pac ± Bev → <b>PARPi Maint</b> (BRCA: Olaparib; HRD+: Olaparib+Bev/Nira; HRD-: Nira/Bev/Obs)</li><li><b>A</b>ll patients: <b>Germline BRCA + Somatic HRD</b></li><li><b>N</b>iraparib: <b>Plt/Weight dose adjust</b> (Thrombocytopenia); <b>Olaparib</b>: Anaemia; <b>Rucaparib</b>: LFT/Photosensitivity</li><li><b>P</b>ARPi 1L Maint: <b>SOLO-1, PAOLA-1, PRIMA, ATHENA</b> — Now standard</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Ovarian Cancer)) Histology HGSC (70%) - TP53, BRCA, HRD 50% Endometrioid - ARID1A, MMRd Clear Cell - ARID1A, Chemoresist Mucinous - KRAS, HER2 LGS - MAPK, Indolent Staging FIGO 2014: I-IV (III: A1 nodes, A2 micro, B≤2cm, C&gt;2cm) HRD BRCA1/2 (germ/som) HRR genes GIS (LOH, TAI, LST) 1L Treatment Carbo/Pac ×6 ± Bev Dose-dense weekly Pac NACT-IDS if unresectable Maintenance BRCA+: Olaparib (SOLO-1), Nira (PRIMA) HRD+: Olaparib+Bev (PAOLA-1), Nira (PRIMA) HRD-: Nira modest, Bev maint, Obs Recurrence Sensitive (PFI&gt;6mo): Plat+PARPi Resistant (PFI&lt;6mo): PLD/Pac/Topo/Gem ± Bev </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Subtypes**</td><td>HGSC 70% (TP53, BRCA, HRD 50%); Endo (MMRd); Clear (ARID1A); Muc (KRAS)</td></tr><tr><td>**Staging**</td><td>FIGO 2014: IIIC = Peritoneal mets >2cm (most common at dx)</td></tr><tr><td>**HRD**</td><td>BRCA1/2 + HRR genes + GIS → PARPi eligibility</td></tr><tr><td>**1L**</td><td>Carbo AUC5-6 + Pac 175 ×6 ± Bev 15mg/kg</td></tr><tr><td>**Maint PARPi**</td><td>BRCA+: Olaparib/Nira/Ruca; HRD+: Olaparib+Bev/Nira; HRD-: Nira modest/Bev/Obs</td></tr><tr><td>**PARPi Tox**</td><td>Olaparib: Anaemia; Niraparib: Thrombocytopenia (dose adj); Rucaparib: LFT/Photosens</td></tr><tr><td>**Recurrence**</td><td>PFI>6mo: Plat+PARPi maint; PFI<6mo: PLD/Pac/Topo ± Bev (AURELIA)</td></tr><tr><td>**Germline**</td><td>Test ALL → Cascade; Somatic HRD if germline neg</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Histology & Molecular</td><td></td><td></td></tr><tr><td>FIGO Staging</td><td></td><td></td></tr><tr><td>HRD Definition/Testing</td><td></td><td></td></tr><tr><td>1L Chemo Regimens</td><td></td><td></td></tr><tr><td>PARPi Maintenance Trials</td><td></td><td></td></tr><tr><td>Recurrence Algorithms</td><td></td><td></td></tr><tr><td>PARPi Toxicity Profiles</td><td></td><td></td></tr><tr><td>Germline/Somatic Testing</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[PARP Inhibitors]], [[HRD Testing]], [[Bevacizumab]], [[Platinum Sensitivity]], [[BRCA1/2]], [[Endometrial Cancer]], [[Cervical Cancer]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Ovarian Cancer (Epithelial Subtypes), which statement is correct? A. <b>HGSC 70%</b> (TP53, BRCA, HRD 50%) B. **HGSC - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>HGSC 70%</b> (TP53, BRCA, HRD 50%); Endometrioid (ARID1A, MMRd); Clear cell (ARID1A, chemo-resistant); Mucinous (KRAS); ...</li></ul>
+<p><b>2.</b> Regarding Ovarian Cancer (FIGO 2014), which statement is correct? A. Stage I: Ovaries only B. Stage - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Stage I: Ovaries only; II: Pelvic; III: Peritoneal mets (A1 nodes, A2 micro, B ≤2cm, C &gt;2cm); IV: Distant</li></ul>
+<p><b>3.</b> Regarding Ovarian Cancer (HRD), which statement is correct? A. <b>BRCA1/2 (germline/somatic 20-25%)</b> + <b>HRR genes (RAD51C/D, BRIP1, PALB2, ATM, etc.)</b> + <b>Genomi B. </b>BRCA1/2 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BRCA1/2 (germline/somatic 20-25%)</b> + <b>HRR genes (RAD51C/D, BRIP1, PALB2, ATM, etc.)</b> + **Genomic Instability Score*...</li></ul>
+<p><b>4.</b> Regarding Ovarian Cancer (1L Chemo), which statement is correct? A. <b>Carbo AUC5-6 + Pac 175mg/m² q3w ×6</b> ± <b>Bev 15mg/kg</b> (GOG-0218/ICON7) B. **Carbo - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Carbo AUC5-6 + Pac 175mg/m² q3w ×6</b> ± <b>Bev 15mg/kg</b> (GOG-0218/ICON7); <b>Dose-dense weekly Pac</b> (JGOG-3016)</li></ul>
+<p><b>5.</b> Regarding Ovarian Cancer (Maintenance PARPi), which statement is correct? A. <b>BRCA+</b>: Olaparib (SOLO-1), Niraparib (PRIMA), Rucaparib (ATHENA) B. <b>BRCA+</b>: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BRCA+</b>: Olaparib (SOLO-1), Niraparib (PRIMA), Rucaparib (ATHENA); <b>HRD+</b>: Olaparib+Bev (PAOLA-1), Niraparib (PRIMA)...</li></ul>
+<p><b>6.</b> Regarding Ovarian Cancer (PARPi Toxicity), which statement is correct? A. <b>Olaparib</b>: Anaemia B. <b>Olaparib</b>: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Olaparib</b>: Anaemia; <b>Niraparib</b>: Thrombocytopenia (dose by weight/plt); <b>Rucaparib</b>: AST/ALT↑, Photosensitivity; ...</li></ul>
+<p><b>7.</b> Regarding Ovarian Cancer (Recurrence), which statement is correct? A. <b>Platinum-sensitive (PFI&gt;6mo)</b>: Plat-doublet + PARPi maint B. **Platinum-sensitive - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Platinum-sensitive (PFI&gt;6mo)</b>: Plat-doublet + PARPi maint; <b>Platinum-resistant (PFI&lt;6mo)</b>: Non-plat (PLD, Pac, Topo...</li></ul>
+<p><b>8.</b> Regarding Ovarian Cancer (Germline Testing), which statement is correct? A. <b>ALL patients</b> → Cascade testing B. **ALL - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ALL patients</b> → Cascade testing; <b>Somatic HRD</b> if germline negative</li></ul>
+<p><b>9.</b> Regarding Ovarian Cancer (CA125), which statement is correct? A. <b>RMI = CA125 × Menopausal score × US score</b> B. **RMI - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RMI = CA125 × Menopausal score × US score</b>; <b>&gt;200 = High risk</b>; Not for screening</li></ul>
+<p><b>10.</b> Regarding Ovarian Cancer (Borderline Tumour), which statement is correct? A. Young, Stage I, <b>No stromal invasion</b>, Fertility-sparing surgery, No chemo B. Young, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Young, Stage I, <b>No stromal invasion</b>, Fertility-sparing surgery, No chemo</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>HGSC 70%</b> (TP53, BRCA, HRD 50%)</li><li>B. **HGSC (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>HGSC 70%</b> (TP53, BRCA, HRD 50%); Endometrioid (ARID1A, MMRd); Clear cell (ARID1A, chemo-resistant); Mucinous (KRAS); ...</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. Stage I: Ovaries only</li><li>B. Stage (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: Stage I: Ovaries only; II: Pelvic; III: Peritoneal mets (A1 nodes, A2 micro, B ≤2cm, C &gt;2cm); IV: Distant</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>BRCA1/2 (germline/somatic 20-25%)</b> + <b>HRR genes (RAD51C/D, BRIP1, PALB2, ATM, etc.)</b> + **Genomi</li><li>B. **BRCA1/2 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>BRCA1/2 (germline/somatic 20-25%)</b> + <b>HRR genes (RAD51C/D, BRIP1, PALB2, ATM, etc.)</b> + **Genomic Instability Score*...</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Carbo AUC5-6 + Pac 175mg/m² q3w ×6</b> ± <b>Bev 15mg/kg</b> (GOG-0218/ICON7)</li><li>B. **Carbo (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Carbo AUC5-6 + Pac 175mg/m² q3w ×6</b> ± <b>Bev 15mg/kg</b> (GOG-0218/ICON7); <b>Dose-dense weekly Pac</b> (JGOG-3016)</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>BRCA+</b>: Olaparib (SOLO-1), Niraparib (PRIMA), Rucaparib (ATHENA)</li><li>B. <b>BRCA+</b>: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>BRCA+</b>: Olaparib (SOLO-1), Niraparib (PRIMA), Rucaparib (ATHENA); <b>HRD+</b>: Olaparib+Bev (PAOLA-1), Niraparib (PRIMA)...</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Olaparib</b>: Anaemia</li><li>B. <b>Olaparib</b>: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Olaparib</b>: Anaemia; <b>Niraparib</b>: Thrombocytopenia (dose by weight/plt); <b>Rucaparib</b>: AST/ALT↑, Photosensitivity; ...</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Platinum-sensitive (PFI&gt;6mo)</b>: Plat-doublet + PARPi maint</li><li>B. **Platinum-sensitive (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Platinum-sensitive (PFI&gt;6mo)</b>: Plat-doublet + PARPi maint; <b>Platinum-resistant (PFI&lt;6mo)</b>: Non-plat (PLD, Pac, Topo...</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>ALL patients</b> → Cascade testing</li><li>B. **ALL (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>ALL patients</b> → Cascade testing; <b>Somatic HRD</b> if germline negative</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>RMI = CA125 × Menopausal score × US score</b></li><li>B. **RMI (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>RMI = CA125 × Menopausal score × US score</b>; <b>&gt;200 = High risk</b>; Not for screening</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. Young, Stage I, <b>No stromal invasion</b>, Fertility-sparing surgery, No chemo</li><li>B. Young, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: Young, Stage I, <b>No stromal invasion</b>, Fertility-sparing surgery, No chemo</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Epithelial Subtypes? <b>A1:</b> HGSC 70% (TP53, BRCA, HRD 50%); Endometrioid (ARID1A, MMRd); Clear cell (ARID1A, chemo-resistant); Mucinous (KRAS); LGS (MAPK, indolent)</p>
+<p><b>Q2:</b> FIGO 2014? <b>A2:</b> Stage I: Ovaries only; II: Pelvic; III: Peritoneal mets (A1 nodes, A2 micro, B ≤2cm, C &gt;2cm); IV: Distant</p>
+<p><b>Q3:</b> HRD? <b>A3:</b> BRCA1/2 (germline/somatic 20-25%) + HRR genes (RAD51C/D, BRIP1, PALB2, ATM, etc.) + Genomic Instability Score → PARPi eligibility</p>
+<p><b>Q4:</b> 1L Chemo? <b>A4:</b> Carbo AUC5-6 + Pac 175mg/m² q3w ×6 ± Bev 15mg/kg (GOG-0218/ICON7); Dose-dense weekly Pac (JGOG-3016)</p>
+<p><b>Q5:</b> Maintenance PARPi? <b>A5:</b> BRCA+: Olaparib (SOLO-1), Niraparib (PRIMA), Rucaparib (ATHENA); HRD+: Olaparib+Bev (PAOLA-1), Niraparib (PRIMA); HRD-: Niraparib modest, Bev maint if used 1L</p>
+<p><b>Q6:</b> PARPi Toxicity? <b>A6:</b> Olaparib: Anaemia; Niraparib: Thrombocytopenia (dose by weight/plt); Rucaparib: AST/ALT↑, Photosensitivity; All: MDS/AML risk ~1-2%</p>
+<p><b>Q7:</b> Recurrence? <b>A7:</b> Platinum-sensitive (PFI&gt;6mo): Plat-doublet + PARPi maint; Platinum-resistant (PFI&lt;6mo): Non-plat (PLD, Pac, Topo, Gem) ± Bev (AURELIA)</p>
+<p><b>Q8:</b> Germline Testing? <b>A8:</b> ALL patients → Cascade testing; Somatic HRD if germline negative</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Epithelial Subtypes</td><td>HGSC 70% (TP53, BRCA, HRD 50%); Endometrioid (ARID1A, MMRd); Clear cell (ARID1A, chemo-resistant); Mucinous (KRAS); LGS</td></tr><tr><td>2</td><td>A</td><td>FIGO 2014</td><td>Stage I: Ovaries only; II: Pelvic; III: Peritoneal mets (A1 nodes, A2 micro, B ≤2cm, C >2cm); IV: Distant</td></tr><tr><td>3</td><td>A</td><td>HRD</td><td>BRCA1/2 (germline/somatic 20-25%) + HRR genes (RAD51C/D, BRIP1, PALB2, ATM, etc.) + Genomic Instability Score → PARPi el</td></tr><tr><td>4</td><td>A</td><td>1L Chemo</td><td>Carbo AUC5-6 + Pac 175mg/m² q3w ×6 ± Bev 15mg/kg (GOG-0218/ICON7); Dose-dense weekly Pac (JGOG-3016)</td></tr><tr><td>5</td><td>A</td><td>Maintenance PARPi</td><td>BRCA+: Olaparib (SOLO-1), Niraparib (PRIMA), Rucaparib (ATHENA); HRD+: Olaparib+Bev (PAOLA-1), Niraparib (PRIMA); HRD-:</td></tr><tr><td>6</td><td>A</td><td>PARPi Toxicity</td><td>Olaparib: Anaemia; Niraparib: Thrombocytopenia (dose by weight/plt); Rucaparib: AST/ALT↑, Photosensitivity; All: MDS/AML</td></tr><tr><td>7</td><td>A</td><td>Recurrence</td><td>Platinum-sensitive (PFI>6mo): Plat-doublet + PARPi maint; Platinum-resistant (PFI<6mo): Non-plat (PLD, Pac, Topo, Gem) ±</td></tr><tr><td>8</td><td>A</td><td>Germline Testing</td><td>ALL patients → Cascade testing; Somatic HRD if germline negative</td></tr><tr><td>9</td><td>A</td><td>CA125</td><td>RMI = CA125 × Menopausal score × US score; >200 = High risk; Not for screening</td></tr><tr><td>10</td><td>A</td><td>Borderline Tumour</td><td>Young, Stage I, No stromal invasion, Fertility-sparing surgery, No chemo</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Epithelial Subtypes</td><td>HGSC 70% (TP53, BRCA, HRD 50%); Endometrioid (ARID1A, MMRd); Clear cell (ARID1A, chemo-resistant); Mucinous (KRAS); LGS</td></tr><tr><td>2</td><td>A</td><td>FIGO 2014</td><td>Stage I: Ovaries only; II: Pelvic; III: Peritoneal mets (A1 nodes, A2 micro, B ≤2cm, C >2cm); IV: Distant</td></tr><tr><td>3</td><td>A</td><td>HRD</td><td>BRCA1/2 (germline/somatic 20-25%) + HRR genes (RAD51C/D, BRIP1, PALB2, ATM, etc.) + Genomic Instability Score → PARPi el</td></tr><tr><td>4</td><td>A</td><td>1L Chemo</td><td>Carbo AUC5-6 + Pac 175mg/m² q3w ×6 ± Bev 15mg/kg (GOG-0218/ICON7); Dose-dense weekly Pac (JGOG-3016)</td></tr><tr><td>5</td><td>A</td><td>Maintenance PARPi</td><td>BRCA+: Olaparib (SOLO-1), Niraparib (PRIMA), Rucaparib (ATHENA); HRD+: Olaparib+Bev (PAOLA-1), Niraparib (PRIMA); HRD-:</td></tr><tr><td>6</td><td>A</td><td>PARPi Toxicity</td><td>Olaparib: Anaemia; Niraparib: Thrombocytopenia (dose by weight/plt); Rucaparib: AST/ALT↑, Photosensitivity; All: MDS/AML</td></tr><tr><td>7</td><td>A</td><td>Recurrence</td><td>Platinum-sensitive (PFI>6mo): Plat-doublet + PARPi maint; Platinum-resistant (PFI<6mo): Non-plat (PLD, Pac, Topo, Gem) ±</td></tr><tr><td>8</td><td>A</td><td>Germline Testing</td><td>ALL patients → Cascade testing; Somatic HRD if germline negative</td></tr><tr><td>9</td><td>A</td><td>CA125</td><td>RMI = CA125 × Menopausal score × US score; >200 = High risk; Not for screening</td></tr><tr><td>10</td><td>A</td><td>Borderline Tumour</td><td>Young, Stage I, No stromal invasion, Fertility-sparing surgery, No chemo</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Gynaecological Cancers|Gynaecological Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Ovarian Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aminoglycosides — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.13. TDM</span>
+      <div class="h1">Aminoglycosides</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Compare traditional vs extended-interval dosing (once-daily)</li><li>[ ] Apply TDM targets: peak/trough for traditional, Hartford nomogram for extended-interval</li><li>[ ] Calculate dose adjustments based on CrCl</li><li>[ ] Identify nephrotoxicity + ototoxicity risk factors</li><li>[ ] Execute monitoring protocol</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Dosing Strategies</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>**Traditional (Multiple Daily)**</th><th>**Extended-Interval (Once-Daily/Hartford)**</th></tr><tr><td>-----------</td><td>----------------------------------</td><td>---------------------------------------------</td></tr><tr><td>**Dosing**</td><td>Every 8–12h (3–4×/day)</td><td>**Once daily** (q24h)</td></tr><tr><td>**Peak Target**</td><td>**Gentamicin: 5–8 mg/L** (Amikacin: 15–25)</td><td>**Not routinely measured**</td></tr><tr><td>**Trough Target**</td><td>**Gentamicin: <1–2 mg/L** (Amikacin: <5–10)</td><td>**<1 mg/L at 18–24h post-dose**</td></tr><tr><td>**AUC Target**</td><td>—</td><td>**AUC 70–100 mg·h/L** (Gentamicin)</td></tr><tr><td>**Advantages**</td><td>Familiar stewardship</td><td>**↓ Nephrotoxicity, ↓ Ototoxicity**, convenience, cost</td></tr><tr><td>**Contraindications**</td><td>—</td><td>**Pregnancy, Burns >20%, Ascites, ARC (CrCl>150), Synergistic therapy (Endocarditis)**</td></tr><tr><td>**Nephrotoxicity Risk**</td><td>Higher (sustained trough)</td><td>**Lower** (low trough)</td></tr><tr><td>**Post-Antibiotic Effect (PAE)**</td><td>Utilised but trough limits</td><td>**Maximised** (high peak, long drug-free interval)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🧮 Hartford Nomogram (Extended-Interval Gentamicin)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Calculate CrCl**</td><td>Cockcroft-Gault (actual body weight unless obese → IBW + 0.4×(ABW-IBW))</td></tr><tr><td>**2. Calculate Dose**</td><td>**5–7 mg/kg IBW** (traditional 7 mg/kg; obese use **adjusted body weight**)</td></tr><tr><td>**3. Administer**</td><td>IV infusion over **30–60 min**</td></tr><tr><td>**4. Obtain Levels**</td><td>**Single level at 6–14h post-dose** (ideally 10h)</td></tr><tr><td>**5. Plot on Hartford Nomogram**</td><td>X-axis = time post-dose (h); Y-axis = concentration (mg/L)</td></tr><tr><td>**6. Determine Interval**</td><td>**<2 mg/L at 6h** → q24h; **2–4 mg/L at 10h** → q24h; **>4 mg/L at 10h** → extend to q36h or q48h; **>8 mg/L at 14h** → q48h+</td></tr></table>
+<p>``<code>mermaid flowchart TD A[Extended-Interval Gentamicin] --&gt; B[Dose: 5-7 mg/kg IBW q24h IV 30-60min] B --&gt; C[Check level at 6-14h post-dose] C --&gt; D{Level at 10h?} D --&gt;|&lt;2 mg/L| E[q24h] D --&gt;|2-4 mg/L| E D --&gt;|4-8 mg/L| F[q36h] D --&gt;|&gt;8 mg/L| G[q48h+ or switch to traditional] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📏 Traditional Dosing TDM (If Used)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Timing</th><th>Sample</th><th>Target</th></tr><tr><td>--------</td><td>--------</td><td>--------</td></tr><tr><td>**Trough**</td><td>Just before next dose</td><td>**Gentamicin: <1–2 mg/L**; Amikacin: <5–10 mg/L</td></tr><tr><td>**Peak**</td><td>**30 min post-IV infusion**</td><td>**Gentamicin: 5–8 mg/L**; Amikacin: 15–25 mg/L</td></tr><tr><td>**Random**</td><td>Any time</td><td>Use Sawchuk-Zaske or Bayesian for prediction</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">⚖️ Renal Adjustment — CrCl-Based</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>CrCl (mL/min)</th><th>Gentamicin Traditional</th><th>Gentamicin Extended</th><th>Amikacin Traditional</th></tr><tr><td>---------------</td><td>-----------------------</td><td>---------------------</td><td>---------------------</td></tr><tr><td>**>60**</td><td>1.5–2 mg/kg q8h</td><td>**7 mg/kg q24h**</td><td>15 mg/kg q8h</td></tr><tr><td>**40–60**</td><td>1.5 mg/kg q8–12h</td><td>**5–7 mg/kg q36h**</td><td>7.5–10 mg/kg q8–12h</td></tr><tr><td>**20–40**</td><td>1–1.5 mg/kg q12–24h</td><td>**5 mg/kg q48h**</td><td>7.5 mg/kg q12–24h</td></tr><tr><td>**10–20**</td><td>1 mg/kg q24–48h</td><td>**AVOID** (use traditional)</td><td>5–7.5 mg/kg q24–48h</td></tr><tr><td>**<10 / HD**</td><td>1 mg/kg post-HD</td><td>**AVOID**</td><td>5–7.5 mg/kg post-HD</td></tr></table>
+<div class="callout"><b>CrCl estimation</b>: Use <b>Cockcroft-Gault</b> with <b>IBW</b> for aminoglycosides (not eGFR)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">☠️ Toxicity</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Toxicity</th><th>Mechanism</th><th>Risk Factors</th><th>Monitoring</th></tr><tr><td>----------</td><td>-----------</td><td>--------------</td><td>------------</td></tr><tr><td>**Nephrotoxicity** (ATN)</td><td>Proximal tubular phospholipidosis, ROS</td><td>**Pre-existing CKD, Age>60, Dehydration, Loop diuretics, Vancomycin, Amphotericin B, Contrast, Long duration (>7d), High trough**</td><td>**SCr, CrCl q2–3d**; ↑ SCr ≥25% or ≥26.5 μmol/L = hold</td></tr><tr><td>**Vestibular Ototoxicity**</td><td>Vestibular hair cell damage (irreversible)</td><td>**High cumulative dose, Renal impairment, Elderly, Pre-existing vestibular disease**</td><td>**Vestibular symptoms** (vertigo, imbalance, oscillopsia) — ask weekly</td></tr><tr><td>**Cochlear Ototoxicity**</td><td>Cochlear hair cell damage → high-frequency hearing loss (may be reversible early)</td><td>**High peak levels, Genetic predisposition (MT-RNR1 m.1555A>G)**</td><td>**Audiometry baseline + if prolonged**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Dosing strategy**</td><td>**Extended-interval (once-daily) preferred** — ↓ nephrotoxicity, ↓ ototoxicity, convenience</td></tr><tr><td>**Hartford nomogram**</td><td>Single level at **6–14h post-dose** → determine q24h/q36h/q48h</td></tr><tr><td>**Trough target (extended)**</td><td>**<1 mg/L at 18–24h post-dose**</td></tr><tr><td>**Renal adjustment**</td><td>**Cockcroft-Gault with IBW** — not eGFR</td></tr><tr><td>**Nephrotoxicity monitoring**</td><td>SCr **q2–3d**; ↑ SCr ≥25% → hold</td></tr><tr><td>**Ototoxicity**</td><td>Ask about **dizziness, hearing changes** weekly; audiometry if prolonged</td></tr><tr><td>**Duration**</td><td>**Limit to 7–10 days** if possible</td></tr><tr><td>**Contraindications to extended-interval**</td><td>Pregnancy, Burns >20%, Ascites, ARC (CrCl>150), Endocarditis (synergistic)</td></tr><tr><td>**Synergy (Endocarditis)**</td><td>Traditional dosing required for sustained bactericidal levels</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Extended-interval vs traditional gentamicin — advantages?</td><td>**↓ Nephrotoxicity, ↓ Ototoxicity, convenience, cost, utilises PAE**; peak-driven bactericidal</td></tr><tr><td>2. Hartford nomogram — when to sample?</td><td>**6–14h post-dose** (ideally 10h); single level</td></tr><tr><td>3. Extended-interval trough target?</td><td>**<1 mg/L at 18–24h post-dose**</td></tr><tr><td>4. Extended-interval contraindications?</td><td>**Pregnancy, Burns >20%, Ascites, ARC (CrCl>150), Endocarditis (synergistic)**</td></tr><tr><td>5. CrCl estimation for aminoglycosides?</td><td>**Cockcroft-Gault with IBW** (not eGFR)</td></tr><tr><td>6. Nephrotoxicity — risk factors?</td><td>**CKD, Age>60, Dehydration, Loop diuretics, Vancomycin, Amphotericin, Contrast, >7d duration, High trough**</td></tr><tr><td>7. Ototoxicity types — difference?</td><td>**Vestibular: vertigo, imbalance, irreversible**; **Cochlear: high-frequency hearing loss, may be partially reversible**</td></tr><tr><td>8. Ototoxicity — monitoring?</td><td>**Ask weekly: dizziness, hearing changes**; Audiometry if prolonged >14d</td></tr><tr><td>9. Extended-interval — when to extend interval per Hartford?</td><td>**Level >4 mg/L at 10h → q36h; >8 mg/L at 14h → q48h+**</td></tr><tr><td>10. Aminoglycoside + Vancomycin — interaction?</td><td>**Synergistic nephrotoxicity** — avoid if possible; if unavoidable, close monitoring</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Extended-interval = always better?**</td><td>No — **contraindicated in pregnancy, burns, ascites, ARC, endocarditis**</td></tr><tr><td>**CrCl vs eGFR**</td><td>**Use Cockcroft-Gault CrCl with IBW** for aminoglycosides</td></tr><tr><td>**Trough vs Peak**</td><td>Extended = trough-driven; Traditional = peak + trough</td></tr><tr><td>**Vestibular vs Cochlear**</td><td>Vestibular = balance (irreversible); Cochlear = hearing (some reversibility)</td></tr><tr><td>**Hartford nomogram time**</td><td>Sample at **6–14h** (ideally 10h) — not immediately post-dose</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"EXTENDED = BETTER TOXICITY"</b> = <b>↓ Nephrotoxicity, ↓ Ototoxicity</b></li><li><b>"HARTFORD"</b> = <b>H</b>artford: <b>H</b>alf-day (10h) sample, <b>A</b>djust interval (24/36/48h), <b>R</b>enal adjustment (CrCl), <b>T</b>rough &lt;1 mg/L, <b>F</b>orbid in pregnancy/burns/ascites/ARC, <b>O</b>nce daily, <b>R</b>eview nephrotoxicity, <b>D</b>uration limit 7–10d</li><li><b>"NEPHROTOX RISK"</b> = <b>N</b>ephrotoxicity ↑ with: <b>E</b>lderly, <b>P</b>re-existing CKD, <b>H</b>igh trough, <b>R</b>enal drugs (loop, vanco, ampho, contrast), <b>O</b>ver 7 days, <b>T</b>oxicity</li><li><b>"OTO = VESTIBULAR + COCHLEAR"</b> = <b>V</b>estibular = balance/vertigo (irreversible); <b>C</b>ochlear = hearing (partial reversibility)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid mindmap root((Aminoglycosides TDM)) Dosing Strategies Traditional q8-12h Peak 5-8 / Trough &lt;2 Extended (Once-Daily) PREFERRED q24h Hartford nomogram Trough &lt;1 at 18-24h Peak NOT routine Hartford Nomogram Dose 7 mg/kg IBW Level at 6-14h &lt;2 at 10h → q24h 2-4 at 10h → q24h 4-8 at 10h → q36h</p>
+<div class="callout">8 at 14h → q48h+</div>
+<p>Contraindications (Extended) Pregnancy Burns &gt;20% Ascites ARC (CrCl&gt;150) Endocarditis (synergy) Renal Adjustment Cockcroft-Gault + IBW CrCl &gt;60 → q24h CrCl 40-60 → q36h CrCl 20-40 → q48h CrCl &lt;20 → traditional only Toxicity Nephrotoxicity (ATN) Risk: CKD, Elderly, Loops, Vanco, Ampho, Contrast, &gt;7d Monitor SCr q2-3d Ototoxicity Vestibular (irreversible) Cochlear (hearing loss, partial rev) Ask weekly / Audiometry ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Dosing comparison</td><td>8</td><td></td></tr><tr><td>Hartford nomogram</td><td>8</td><td></td></tr><tr><td>Contraindications</td><td>6</td><td></td></tr><tr><td>Renal adjustment</td><td>6</td><td></td></tr><tr><td>Toxicity</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**46**</td><td></td></tr></table>
+<p><b>Target</b>: ≥37/46 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Extended-interval gentamicin — advantages, monitoring, contraindications."*</div>
+<ul><li><b>Advantages</b>: ↓ Nephrotoxicity (low trough), ↓ Ototoxicity, convenience, cost, utilises PAE</li><li><b>Monitoring</b>: Hartford nomogram — single level at <b>6–14h post-dose</b> (ideally 10h); target <b>trough &lt;1 mg/L at 18–24h</b>; SCr q2–3d; ask vestibular symptoms weekly</li><li><b>Contraindications</b>: <b>Pregnancy, Burns &gt;20%, Ascites, ARC (CrCl&gt;150), Endocarditis (synergistic)</b></li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on extended-interval gentamicin. Level at 10h = 6 mg/L. Action?"*</div>
+<ul><li><b>Level 6 mg/L at 10h → 4–8 mg/L zone → extend interval to q36h</b></li><li>Recheck level next dose at 10h</li><li>Monitor SCr q2–3d</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on gentamicin 7 days, SCr rising. Action?"*</div>
+<ul><li><b>Nephrotoxicity</b> (risk ↑ with duration &gt;7d)</li><li><b>Hold gentamicin</b>, switch to non-nephrotoxic alternative</li><li>Hydration, avoid other nephrotoxins</li><li>If must continue → switch to traditional monitoring</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Extended-interval = preferred (↓ nephro/ototoxicity); Hartford nomogram</li><li>Hartford: dose 7 mg/kg IBW q24h, level at 10h, &lt;2=q24h, 2-4=q24h, 4-8=q36h, &gt;8=q48h+</li><li>Contraindicated: Pregnancy, Burns&gt;20%, Ascites, ARC, Endocarditis</li><li>CrCl = Cockcroft-Gault + IBW (not eGFR)</li><li>Nephrotoxicity: monitor SCr q2-3d, hold if ↑≥25%</li><li>Ototoxicity: vestibular (irreversible), cochlear (hearing); ask weekly</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>AMINOGLYCOSIDES TDM:</b> <b>EXTENDED-INTERVAL PREFERRED</b> — Hartford nomogram Dose: <b>7 mg/kg IBW q24h</b> → Level at <b>10h</b> &lt;2 → q24h; 2-4 → q24h; 4-8 → q36h; &gt;8 → q48h+ <b>Trough target: &lt;1 mg/L at 18-24h</b> Contraindicated: <b>Pregnancy, Burns&gt;20%, Ascites, ARC, Endocarditis</b> Renal adjust: <b>Cockcroft-Gault + IBW</b> Monitor: <b>SCr q2-3d, Vestibular symptoms weekly</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Extended-interval gentamicin dosing — major advantage over traditional:</b></li></ol>
+<p>A. Lower peak levels B. <b>Lower nephrotoxicity and ototoxicity</b> ✓ C. Lower cost only D. More convenient only E. Higher trough levels</p>
+<ol><li><b>Hartford nomogram — when to draw level:</b></li></ol>
+<p>A. Immediately post-dose B. <b>6–14h post-dose (ideally 10h)</b> ✓ C. Trough (pre-dose) D. 30 min post-dose E. 2h post-dose</p>
+<ol><li><b>Extended-interval gentamicin trough target:</b></li></ol>
+<p>A. &lt;2 mg/L B. <b>&lt;1 mg/L at 18–24h post-dose</b> ✓ C. &lt;5 mg/L D. 5–8 mg/L E. No trough needed</p>
+<ol><li><b>Extended-interval gentamicin — contraindicated in:</b></li></ol>
+<p>A. CKD B. <b>Pregnancy, Burns &gt;20%, Ascites, ARC (CrCl&gt;150), Endocarditis</b> ✓ C. Elderly D. Sepsis E. Pneumonia</p>
+<ol><li><b>CrCl estimation for aminoglycoside dosing:</b></li></ol>
+<p>A. eGFR (CKD-EPI) B. <b>Cockcroft-Gault with IBW</b> ✓ C. MDRD D. BUN/Cr ratio E. 24h urine CrCl only</p>
+<ol><li><b>Gentamicin level at 10h = 6 mg/L on extended-interval dosing — action:</b></li></ol>
+<p>A. Continue q24h B. <b>Extend to q36h</b> ✓ C. Extend to q48h D. Switch to traditional E. Increase dose</p>
+<ol><li><b>Gentamicin level at 14h = 10 mg/L — action:</b></li></ol>
+<p>A. Continue q24h B. Extend to q36h C. <b>Extend to ≥q48h or switch to traditional</b> ✓ D. Increase dose E. No change</p>
+<ol><li><b>Aminoglycoside nephrotoxicity — monitoring:</b></li></ol>
+<p>A. SCr weekly B. <b>SCr q2–3d</b> ✓ C. SCr monthly D. BUN only E. UOP only</p>
+<ol><li><b>Ototoxicity — vestibular vs cochlear:</b></li></ol>
+<p>A. Both reversible B. <b>Vestibular irreversible; Cochlear partially reversible</b> ✓ C. Both irreversible D. Vestibular reversible; Cochlear irreversible E. Cochlear only</p>
+<ol><li><b>Aminoglycoside + Vancomycin interaction:</b></li></ol>
+<p>A. Additive antibacterial B. <b>Synergistic nephrotoxicity</b> ✓ C. Antagonistic D. No interaction E. Ototoxicity only</p>
+<ol><li><b>Extended-interval dosing contraindicated in endocarditis because:</b></li></ol>
+<p>A. Poor penetration B. <b>Synergistic therapy requires sustained bactericidal levels (traditional)</b> ✓ C. Higher nephrotoxicity D. Drug resistance E. Cost</p>
+<ol><li><b>Aminoglycoside duration — limit if possible to:</b></li></ol>
+<p>A. 3–5 days B. <b>7–10 days</b> ✓ C. 14–21 days D. 28 days E. No limit</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Extended-interval advantages</td><td>↓ Nepthotoxicity, ↓ Ototoxicity, convenience, cost, PAE</td></tr><tr><td>Hartford sampling time</td><td>6–14h post-dose (ideal 10h)</td></tr><tr><td>Hartford level <2 at 10h</td><td>q24h</td></tr><tr><td>Hartford level 2-4 at 10h</td><td>q24h</td></tr><tr><td>Hartford level 4-8 at 10h</td><td>q36h</td></tr><tr><td>Hartford level >8 at 14h</td><td>q48h+</td></tr><tr><td>Extended-interval trough target</td><td><1 mg/L at 18-24h</td></tr><tr><td>Extended contraindications</td><td>Pregnancy, Burns>20%, Ascites, ARC (CrCl>150), Endocarditis</td></tr><tr><td>CrCl for aminoglycosides</td><td>Cockcroft-Gault + IBW</td></tr><tr><td>Nephrotoxicity monitoring</td><td>SCr q2-3d, hold if ↑≥25%</td></tr><tr><td>Ototoxicity types</td><td>Vestibular (balance, irreversible), Cochlear (hearing, partial rev)</td></tr><tr><td>Ototoxicity monitoring</td><td>Ask weekly, Audiometry if >14d</td></tr><tr><td>Vanco + Aminoglycoside</td><td>Synergistic nephrotoxicity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Lower nephrotoxicity and ototoxicity</li><li><b>B</b> — 6–14h post-dose (ideally 10h)</li><li><b>B</b> — &lt;1 mg/L at 18–24h post-dose</li><li><b>B</b> — Pregnancy, Burns&gt;20%, Ascites, ARC, Endocarditis</li><li><b>B</b> — Cockcroft-Gault with IBW</li><li><b>B</b> — Extend to q36h (4-8 mg/L zone)</li><li><b>C</b> — Extend to ≥q48h or switch to traditional</li><li><b>B</b> — SCr q2–3d</li><li><b>B</b> — Vestibular irreversible, Cochlear partially reversible</li><li><b>B</b> — Synergistic nephrotoxicity</li><li><b>B</b> — Synergistic therapy requires sustained levels</li><li><b>B</b> — 7–10 days</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/TDM/Aminoglycosides.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Aminoglycosides · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

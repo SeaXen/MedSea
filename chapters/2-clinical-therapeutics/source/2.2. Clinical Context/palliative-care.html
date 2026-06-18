@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Palliative Care — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.2. CLINICAL CONTEXT</span>
+      <div class="h1">Palliative Care</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>anticipatory prescribing</b> for last days of life (5 key symptoms)</li><li>[ ] Calculate <b>SC opioid conversions</b> from oral/IV</li><li>[ ] Select <b>syringe driver drugs</b> and check <b>compatibility</b></li><li>[ ] Manage <b>common palliative symptoms</b>: Pain, N&amp;V, Agitation, Secretions, Dyspnoea</li><li>[ ] Understand <b>syringe driver setup</b>: Diluent, rate, duration, monitoring</li><li>[ ] Apply <b>renal/hepatic adjustments</b> in palliative care</li><li>[ ] Answer viva: "Syringe driver contents for dying patient" and "Opioid conversion SC vs PO"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Anticipatory Prescribing (Last Days of Life)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">5 Key Symptoms → 5 Drug Classes (GSF/NHS Standard)</div>
+<table class="ctable"><tr><th>Symptom</th><th>First-Line Drug</th><th>Route</th><th>Syringe Driver (24h)</th></tr><tr><td>---------</td><td>-----------------</td><td>-------</td><td>----------------------</td></tr><tr><td>**Pain**</td><td>Morphine / Oxycodone / Hydromorphone</td><td>SC</td><td>Yes</td></tr><tr><td>**Nausea / Vomiting**</td><td>Levomepromazine / Haloperidol / Cyclizine / Ondansetron</td><td>SC</td><td>Yes</td></tr><tr><td>**Agitation / Delirium**</td><td>Midazolam / Levomepromazine / Haloperidol</td><td>SC</td><td>Yes</td></tr><tr><td>**Respiratory Secretions**</td><td>Glycopyrronium / Hyoscine butylbromide / Hyoscine hydrobromide</td><td>SC</td><td>Yes</td></tr><tr><td>**Dyspnoea**</td><td>Morphine + Midazolam</td><td>SC</td><td>Yes</td></tr></table>
+<div class="callout"><b>Principle:</b> <i>Prescribe <b>PRN SC</b> for all 5 symptoms <b>in advance</b>. If ≥2 doses needed/24h → <b>start syringe driver</b> with regular dose + PRN breakthrough.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Opioid Conversion — Oral / IV → Subcutaneous</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Conversion Ratios (Approximate)</div>
+<table class="ctable"><tr><th>Drug</th><th>PO : SC</th><th>IV : SC</th><th>Notes</th></tr><tr><td>------</td><td>---------</td><td>---------</td><td>-------</td></tr><tr><td>**Morphine**</td><td>**2 : 1** (10mg PO = 5mg SC)</td><td>**1 : 1** (5mg IV = 5mg SC)</td><td>Standard</td></tr><tr><td>**Oxycodone**</td><td>**2 : 1** (10mg PO = 5mg SC)</td><td>**1 : 1** (5mg IV = 5mg SC)</td><td>More lipophilic</td></tr><tr><td>**Hydromorphone**</td><td>**5 : 1** (10mg PO = 2mg SC)</td><td>**2 : 1** (2mg IV = 1mg SC)</td><td>High potency</td></tr><tr><td>**Alfentanil**</td><td>—</td><td>**1 : 1** (SC = IV)</td><td>Short-acting; syringe driver favourite</td></tr><tr><td>**Fentanyl**</td><td>—</td><td>**1 : 1** (SC = IV)</td><td>TD patch preferred; SC for driver</td></tr><tr><td>**Diamorphine**</td><td>—</td><td>**1 : 1** (SC = IV)</td><td>**UK preferred** (more soluble than morphine)</td></tr><tr><td>**Buprenorphine**</td><td>—</td><td>Complex</td><td>TD patch; SC rarely used</td></tr></table>
+<div class="sub-h">Calculation Algorithm</div>
+<p>``<code> Step 1: Calculate total 24h oral opioid dose (OME) Step 2: Convert to SC equivalent using ratio Step 3: Divide by 24 = hourly syringe driver rate Step 4: Prescribe breakthrough = 1/6 to 1/10 of 24h SC dose (SC PRN Q1-2H) Step 5: If opioid-naïve → start low (morphine 5-10mg/24h SC) </code>``</p>
+<div class="sub-h">Example Conversions</div>
+<table class="ctable"><tr><th>Current Regimen</th><th>24h OME</th><th>SC Morphine Equiv</th><th>Syringe Driver (24h)</th><th>Breakthrough SC</th></tr><tr><td>-----------------</td><td>---------</td><td>-------------------</td><td>----------------------</td><td>-----------------</td></tr><tr><td>Morphine PO 60mg BD (120mg)</td><td>120mg</td><td>**60mg**</td><td>Morphine 60mg/24h</td><td>Morphine 5-10mg SC PRN</td></tr><tr><td>Oxycodone PO 20mg BD (40mg)</td><td>60mg</td><td>**30mg**</td><td>Morphine 30mg/24h</td><td>Morphine 3-5mg SC PRN</td></tr><tr><td>Fentanyl TD 50mcg/h</td><td>~120mg</td><td>**60mg**</td><td>Morphine 60mg/24h</td><td>Morphine 5-10mg SC PRN</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Diamorphine <b>more soluble</b> (200mg/mL) vs Morphine (30-50mg/mL) → <b>smaller volumes</b> for high doses.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Syringe Driver Setup</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Standard Parameters</div>
+<table class="ctable"><tr><th>Parameter</th><th>Standard</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Duration**</td><td>**24 hours** (some 12h for unstable)</td></tr><tr><td>**Diluent**</td><td>**Water for Injection (WFI)** — standard for most</td></tr><tr><td>**Alternative diluents**</td><td>NaCl 0.9% (Alfentanil, Ketamine, Octreotide)</td></tr><tr><td>**Line**</td><td>Standard giving set (change q24h)</td></tr><tr><td>**Site**</td><td>SC (abdomen, thigh, upper arm) — rotate q3-5 days</td></tr><tr><td>**Rate**</td><td>mL/hr = Total volume / 24</td></tr></table>
+<div class="sub-h">Syringe Sizes &amp; Concentrations</div>
+<table class="ctable"><tr><th>Syringe</th><th>Max Volume</th><th>Typical Drug Concentrations</th></tr><tr><td>---------</td><td>------------</td><td>-----------------------------</td></tr><tr><td>**20mL**</td><td>18-19mL</td><td>Morphine 30mg/20mL (1.5mg/mL), Diamorphine 100mg/20mL (5mg/mL)</td></tr><tr><td>**30mL**</td><td>28-29mL</td><td>Higher doses</td></tr><tr><td>**50mL**</td><td>48-49mL</td><td>Very high doses (diamorphine 200-300mg)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Drug Compatibility — Syringe Driver (Dickman / PCF)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">✅ COMPATIBLE Combinations (Common Palliative Mixes)</div>
+<table class="ctable"><tr><th>Mix</th><th>Drugs</th><th>Diluent</th><th>Notes</th></tr><tr><td>-----</td><td>-------</td><td>---------</td><td>-------</td></tr><tr><td>**Standard Analgesic/Sedative**</td><td>Morphine/Diamorphine + Midazolam (+/- Levomepromazine/Haloperidol)</td><td>WFI</td><td>**Most common**</td></tr><tr><td>**Analgesic + Antiemetic**</td><td>Morphine + Cyclizine</td><td>WFI</td><td>Cyclizine precipitates >50mg/24h — use Levomepromazine if >50mg</td></tr><tr><td>**Analgesic + Antisecretory**</td><td>Morphine + Glycopyrronium / Hyoscine butylbromide</td><td>WFI</td><td></td></tr><tr><td>**Triple Mix**</td><td>Morphine + Midazolam + Levomepromazine</td><td>WFI</td><td>Common for agitation + N&V</td></tr><tr><td>**Alfentanil-based**</td><td>Alfentanil + Midazolam (+/- Ketamine)</td><td>**NaCl 0.9%**</td><td>Alfentanil unstable in WFI</td></tr></table>
+<div class="sub-h">❌ INCOMPATIBLE / PRECIPITATION RISK</div>
+<table class="ctable"><tr><th>Drug Pair</th><th>Issue</th><th>Alternative</th></tr><tr><td>-----------</td><td>-------</td><td>-------------</td></tr><tr><td>**Cyclizine + Opioid**</td><td>Precipitation >50mg cyclizine/24h</td><td>**Levomepromazine** (compatible)</td></tr><tr><td>**Cyclizine + Midazolam**</td><td>Precipitation</td><td>Avoid</td></tr><tr><td>**Hyoscine hydrobromide + Opioid**</td><td>Precipitation risk</td><td>**Hyoscine butylbromide** or **Glycopyrronium**</td></tr><tr><td>**Ketamine + Opioid (WFI)**</td><td>Precipitation</td><td>Use **NaCl 0.9%** or separate line</td></tr><tr><td>**Octreotide + Opioid (WFI)**</td><td>Precipitation</td><td>Use **NaCl 0.9%** or separate line</td></tr><tr><td>**Dexamethasone + Opioid**</td><td>Precipitation</td><td>Avoid in driver (give PO/SC separate)</td></tr></table>
+<div class="sub-h">🔄 SEPARATE LINE REQUIRED</div>
+<table class="ctable"><tr><th>Drug</th><th>Reason</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Ketamine**</td><td>Incompatible in WFI; use NaCl 0.9% separate line</td></tr><tr><td>**Octreotide**</td><td>Incompatible in WFI; use NaCl 0.9% separate line</td></tr><tr><td>**Furosemide**</td><td>Incompatible; separate</td></tr><tr><td>**Metoclopamide**</td><td>Incompatible with many; usually PO/SC separate</td></tr></table>
+<div class="callout"><b>Rule:</b> <i>If unsure → <b>check compatibility chart (Dickman/PCF)</b>. <b>WFI = standard diluent</b>. <b>NaCl 0.9% for Alfentanil/Ketamine/Octreotide</b>. <b>Separate line if incompatible</b>.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Symptom-Specific Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pain — Opioid Choice by Renal Function</div>
+<table class="ctable"><tr><th>eGFR</th><th>Preferred SC Opioid</th><th>Avoid</th></tr><tr><td>------</td><td>---------------------</td><td>-------</td></tr><tr><td>**>30**</td><td>Morphine / Diamorphine / Oxycodone</td><td>—</td></tr><tr><td>**15–30**</td><td>**Oxycodone / Hydromorphone / Alfentanil / Fentanyl / Buprenorphine**</td><td>Morphine/Diamorphine (M6G accumulation)</td></tr><tr><td>**<15 / Dialysis**</td><td>**Alfentanil / Fentanyl / Buprenorphine / Hydromorphone**</td><td>Morphine, Diamorphine, Oxycodone (caution)</td></tr></table>
+<div class="sub-h">Nausea &amp; Vomiting — Receptor-Based Choice</div>
+<table class="ctable"><tr><th>Cause</th><th>Receptor</th><th>First-Line SC</th><th>Alternative</th></tr><tr><td>-------</td><td>----------</td><td>---------------</td><td>-------------</td></tr><tr><td>**Chemical (opioids, toxins, uraemia)**</td><td>**D₂ (CTZ)**</td><td>**Haloperidol 0.5-1.5mg/24h**</td><td>**Levomepromazine 6.25-25mg/24h**</td></tr><tr><td>**Vestibular / Motion**</td><td>**H₁ / Muscarinic**</td><td>**Cyclizine 50-150mg/24h** (if <50mg)</td><td>**Levomepromazine**</td></tr><tr><td>**Raised ICP / Meningeal**</td><td>**5-HT₃ / D₂**</td><td>**Ondansetron 8mg/24h**</td><td>Dexamethasone (PO/SC separate)</td></tr><tr><td>**Gastric stasis**</td><td>**D₂ (gut)**</td><td>**Metoclopramide 10-30mg/24h** (separate line)</td><td>Domperidone (PO)</td></tr><tr><td>**Multifactorial / Refractory**</td><td>Broad</td><td>**Levomepromazine 6.25-25mg/24h**</td><td>**Broad spectrum** (D₂, 5-HT, H₁, Muscarinic)</td></tr></table>
+<div class="callout"><b>Levomepromazine</b> = <b>broad-spectrum antiemetic + sedative</b> → useful for N&amp;V + agitation combined.</div>
+<div class="sub-h">Agitation / Delirium / Terminal Restlessness</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose (24h SC)</th><th>Notes</th></tr><tr><td>------</td><td>---------------</td><td>-------</td></tr><tr><td>**Midazolam**</td><td>**10-60mg** (start 10-20mg)</td><td>**First-line**; anxiolytic, sedative, anticonvulsant</td></tr><tr><td>**Levomepromazine**</td><td>**6.25-25mg**</td><td>Antipsychotic + antiemetic + sedative</td></tr><tr><td>**Haloperidol**</td><td>**1-10mg**</td><td>Antipsychotic; less sedating; **QTc caution**</td></tr><tr><td>**Clonazepam**</td><td>0.5-2mg (separate)</td><td>Myoclonus, seizure prophylaxis</td></tr></table>
+<div class="sub-h">Respiratory Secretions (Death Rattle)</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose (24h SC)</th><th>Notes</th></tr><tr><td>------</td><td>---------------</td><td>-------</td></tr><tr><td>**Glycopyrronium**</td><td>**0.6-2.4mg**</td><td>**First-line**; **does not cross BBB** (less CNS SE)</td></tr><tr><td>**Hyoscine butylbromide**</td><td>**40-120mg**</td><td>Peripheral antimuscarinic; less CNS SE</td></tr><tr><td>**Hyoscine hydrobromide**</td><td>**0.4-2.4mg**</td><td>Crosses BBB → sedation, confusion; **less preferred**</td></tr><tr><td>**Atropine eye drops (SL)**</td><td>1-2 drops SL Q4H</td><td>Alternative if no SC access</td></tr></table>
+<div class="sub-h">Dyspnoea</div>
+<table class="ctable"><tr><th>Drug</th><th>Approach</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>**Morphine**</td><td>Low-dose (2.5-5mg SC PRN) → reduces respiratory drive/anxiety</td></tr><tr><td>**Midazolam**</td><td>Add if anxiety/panic component (2.5-5mg SC PRN)</td></tr><tr><td>**Oxygen**</td><td>Only if hypoxic (not routine for dyspnoea)</td></tr><tr><td>**Fan / Positioning**</td><td>Non-pharmacologicalfirst</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Renal & Hepatic Adjustments in Palliative Care</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Opioids (SC)</div>
+<table class="ctable"><tr><th>Drug</th><th>eGFR >30</th><th>eGFR 15–30</th><th>eGFR <15</th><th>Hepatic Impairment</th></tr><tr><td>------</td><td>----------</td><td>------------</td><td>----------</td><td>-------------------</td></tr><tr><td>**Morphine**</td><td>✅</td><td>❌ Avoid</td><td>❌ Avoid</td><td>Reduce dose</td></tr><tr><td>**Diamorphine**</td><td>✅</td><td>❌ Avoid</td><td>❌ Avoid</td><td>Reduce dose</td></tr><tr><td>**Oxycodone**</td><td>✅</td><td>⚠️ 50% dose</td><td>❌ Avoid</td><td>Reduce dose</td></tr><tr><td>**Hydromorphone**</td><td>✅</td><td>✅ Preferred</td><td>✅ Preferred</td><td>Reduce dose</td></tr><tr><td>**Alfentanil**</td><td>✅</td><td>✅ Preferred</td><td>✅ Preferred</td><td>Reduce dose</td></tr><tr><td>**Fentanyl**</td><td>✅</td><td>✅ Preferred</td><td>✅ Preferred</td><td>Minimal change</td></tr><tr><td>**Buprenorphine**</td><td>✅</td><td>✅ Preferred</td><td>✅ Preferred</td><td>Minimal change</td></tr></table>
+<div class="sub-h">Antiemetics / Sedatives</div>
+<table class="ctable"><tr><th>Drug</th><th>Renal Adjustment</th><th>Hepatic Adjustment</th></tr><tr><td>------</td><td>------------------</td><td>-------------------</td></tr><tr><td>**Midazolam**</td><td>No change (↑ sensitivity)</td><td>Reduce dose 50%</td></tr><tr><td>**Levomepromazine**</td><td>Reduce dose (↑ SE)</td><td>Reduce dose</td></tr><tr><td>**Haloperidol**</td><td>No change</td><td>No change</td></tr><tr><td>**Cyclizine**</td><td>Reduce dose</td><td>Reduce dose</td></tr><tr><td>**Glycopyrronium**</td><td>No change</td><td>No change</td></tr><tr><td>**Hyoscine butylbromide**</td><td>No change</td><td>No change</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Anticipatory Prescribing Chart (Standard UK)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Symptom</th><th>Drug</th><th>SC PRN Dose</th><th>Frequency</th><th>Syringe Driver (24h)</th></tr><tr><td>---------</td><td>------</td><td>-------------</td><td>-----------</td><td>----------------------</td></tr><tr><td>**Pain**</td><td>Morphine / Oxycodone / Hydromorphone</td><td>1/6-1/10 24h dose</td><td>Q1-2H</td><td>Yes (if ≥2 PRN/24h)</td></tr><tr><td>**N&V**</td><td>Levomepromazine / Haloperidol / Cyclizine</td><td>Per protocol</td><td>Q4-6H</td><td>Yes</td></tr><tr><td>**Agitation**</td><td>Midazolam / Levomepromazine / Haloperidol</td><td>2.5-5mg / 6.25-12.5mg / 0.5-1.5mg</td><td>Q1-2H</td><td>Yes</td></tr><tr><td>**Secretions**</td><td>Glycopyrronium / Hyoscine butylbromide</td><td>0.2-0.4mg / 20mg</td><td>Q4-6H</td><td>Yes</td></tr><tr><td>**Dyspnoea**</td><td>Morphine + Midazolam</td><td>2.5-5mg + 2.5-5mg</td><td>Q1-2H</td><td>Yes</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Common Syringe Driver Recipes (24h, WFI)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Scenario</th><th>Syringe Driver Contents (24h)</th></tr><tr><td>-------------------</td><td>------------------------------</td></tr><tr><td>**Standard (Pain + Agitation)**</td><td>Morphine 30mg + Midazolam 20mg</td></tr><tr><td>**Pain + N&V + Agitation**</td><td>Morphine 30mg + Midazolam 20mg + Levomepromazine 12.5mg</td></tr><tr><td>**Renal Failure (eGFR<30)**</td><td>Alfentanil 2mg + Midazolam 20mg (in **NaCl 0.9%**)</td></tr><tr><td>**High Dose Opioid**</td><td>Diamorphine 150mg + Midazolam 30mg</td></tr><tr><td>**Severe Agitation**</td><td>Midazolam 40mg + Levomepromazine 25mg</td></tr><tr><td>**Secretions + Agitation**</td><td>Glycopyrronium 1.2mg + Midazolam 20mg</td></tr></table>
+<div class="callout"><b>Volume check:</b> Ensure total volume ≤ syringe capacity (e.g., 20mL syringe = max 18-19mL). <b>Concentration limits</b>: Morphine ≤30mg/mL, Diamorphine ≤100mg/mL, Midazolam ≤5mg/mL.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Practical Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient Approaching Last Days of Life] --&gt; B[Prescribe Anticipatory PRN SC for 5 Symptoms] B --&gt; B1[Pain: Morphine 2.5-5mg SC Q1-2H PRN] B --&gt; B2[N&amp;V: Levomepromazine 6.25mg SC Q4-6H PRN] B --&gt; B3[Agitation: Midazolam 2.5-5mg SC Q1-2H PRN] B --&gt; B4[Secretions: Glycopyrronium 0.2mg SC Q4-6H PRN] B --&gt; B5[Dyspnoea: Morphine 2.5mg + Midazolam 2.5mg SC Q1-2H PRN] B1 &amp; B2 &amp; B3 &amp; B4 &amp; B5 --&gt; C{≥2 PRN doses / 24h for any symptom?} C --&gt;|Yes| D[Start Syringe Driver&lt;br/&gt;Regular 24h dose = PRN usage × 3-4&lt;br/&gt;Keep PRN breakthrough = 1/6-1/10 24h dose] C --&gt;|No| E[Continue PRN; Review 4-12h] D --&gt; F[Check Compatibility (Dickman)&lt;br/&gt;WFI diluent (NaCl 0.9% for Alfentanil/Ketamine)&lt;br/&gt;Volume ≤ syringe capacity] F --&gt; G[Site SC; Rate mL/hr; Change q24h;&lt;br/&gt;Monitor: Pain, Sedation, RR, Site] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Anticipatory Prescribing**</td><td>**5 symptoms, 5 drug classes**: Pain (opioid), N&V (levomepromazine/haloperidol), Agitation (midazolam), Secretions (glycopyrronium), Dyspnoea (morphine+midazolam)</td></tr><tr><td>**Opioid Conversion PO:SC**</td><td>**Morphine/Oxycodone 2:1** (10mg PO = 5mg SC); **Hydromorphone 5:1**; IV:SC = 1:1</td></tr><tr><td>**Diamorphine**</td><td>**UK preferred SC opioid**; more soluble (200mg/mL) → smaller volumes</td></tr><tr><td>**Renal Failure Opioids**</td><td>eGFR<30: **Avoid morphine/diamorphine**; Use **alfentanil, fentanyl, hydromorphone, buprenorphine**</td></tr><tr><td>**Syringe Driver**</td><td>**24h, WFI diluent** (NaCl 0.9% for alfentanil/ketamine/octreotide), SC site, q24h change</td></tr><tr><td>**Compatibility**</td><td>**Morphine + Midazolam + Levomepromazine = ✅**; **Cyclizine >50mg = ❌** (use levomepromazine); **Hyoscine hydrobromide = ❌** (use butylbromide/glycopyrronium)</td></tr><tr><td>**N&V Receptor-Based**</td><td>Chemical → Haloperidol/Levomepromazine (D₂); Vestibular → Cyclizine (H₁); Raised ICP → Ondansetron (5-HT₃)</td></tr><tr><td>**Agitation**</td><td>**Midazolam first-line** (10-60mg/24h); Levomepromazine alternative</td></tr><tr><td>**Secretions**</td><td>**Glycopyrronium first-line** (0.6-2.4mg/24h); no BBB cross</td></tr><tr><td>**Breakthrough**</td><td>**1/6-1/10 of 24h dose** SC Q1-2H PRN</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What are the 5 anticipatory medications for last days of life?</td><td>**Pain** (morphine), **N&V** (levomepromazine/haloperidol), **Agitation** (midazolam), **Secretions** (glycopyrronium), **Dyspnoea** (morphine+midazolam).</td></tr><tr><td>2</td><td>Oral morphine to SC morphine conversion?</td><td>**2:1** (10mg PO = 5mg SC). IV:SC = 1:1.</td></tr><tr><td>3</td><td>Patient on morphine PO 60mg BD, now dying, needs SC syringe driver. Dose?</td><td>24h PO = 120mg → SC = **60mg/24h**. Breakthrough = 5-10mg SC Q1-2H PRN.</td></tr><tr><td>4</td><td>Renal failure (eGFR 20) — which opioid for syringe driver?</td><td>**Avoid morphine/diamorphine** (M6G). **Use alfentanil, fentanyl, hydromorphone, buprenorphine**.</td></tr><tr><td>5</td><td>Syringe driver diluent for morphine + midazolam?</td><td>**Water for Injection (WFI)**.</td></tr><tr><td>6</td><td>Cyclizine in syringe driver — maximum dose?</td><td>**50mg/24h** (precipitates above). If >50mg needed → **use levomepromazine**.</td></tr><tr><td>7</td><td>First-line antiemetic for opioid-induced nausea?</td><td>**Haloperidol 0.5-1.5mg/24h** or **Levomepromazine 6.25-25mg/24h** (D₂ antagonist at CTZ).</td></tr><tr><td>8</td><td>First-line for respiratory secretions?</td><td>**Glycopyrronium 0.6-2.4mg/24h SC** (peripheral, no BBB cross). Hyoscine butylbromide alternative.</td></tr><tr><td>9</td><td>Midazolam dose in syringe driver for terminal agitation?</td><td>**10-60mg/24h** (start 10-20mg, titrate).</td></tr><tr><td>10</td><td>Ketamine in syringe driver — diluent and compatibility?</td><td>**NaCl 0.9%** (not WFI); **incompatible with opioids in WFI** → separate line.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Morphine safe in all renal failure"**</td><td>**NO.** **eGFR<30: avoid morphine/diamorphine** (M6G accumulation → neurotoxicity). Use alfentanil/fentanyl/hydromorphone.</td></tr><tr><td>**"Cyclizine can be used at any dose in syringe driver"**</td><td>**NO.** **>50mg/24h precipitates**. Use levomepromazine for higher doses.</td></tr><tr><td>**"Hyoscine hydrobromide = first-line for secretions"**</td><td>**NO.** **Glycopyrronium preferred** (no BBB cross → less sedation/confusion). Hyoscine butylbromide alternative.</td></tr><tr><td>**"All drugs in WFI"**</td><td>**NO.** **Alfentanil, Ketamine, Octreotide → NaCl 0.9%**. Check Dickman chart.</td></tr><tr><td>**"Breakthrough dose = same as syringe driver hourly rate"**</td><td>**NO.** Breakthrough = **1/6 to 1/10 of 24h dose** (not hourly rate).</td></tr><tr><td>**"Ondansetron first-line for all N&V"**</td><td>**NO.** Receptor-based: **Chemical → Haloperidol/Levomepromazine**; **Vestibular → Cyclizine**; **Raised ICP → Ondansetron**.</td></tr><tr><td>**"Syringe driver = 48 hours"**</td><td>**Standard = 24 hours**. Some units use 12h for unstable patients.</td></tr><tr><td>**"Diamorphine = heroin = illegal"**</td><td>**NO.** **Diamorphine = pharmaceutical heroin**; **legal for medical use in UK**; preferred SC opioid (solubility).</td></tr></table>
+<div class="callout"><b>Mnemonic: PALLIATIVE SYRINGE</b> <b>P</b>ain: <b>Morphine/Diamorphine</b> (PO:SC 2:1; renal&lt;30 → Alfentanil/Fentanyl/Hydromorphone) <b>A</b>gitation: <b>Midazolam</b> (10-60mg/24h) ± Levomepromazine <b>L</b>ast days: <b>5 anticipatory PRN</b> (Pain, N&amp;V, Agitation, Secretions, Dyspnoea) <b>L</b>evomepromazine: <b>Broad antiemetic + sedative</b> (D₂, 5-HT, H₁, Muscarinic) <b>I</b>njectable route: <b>SC preferred</b>; IV if line in situ; PO if able <b>A</b>ntiemetics: <b>Receptor-based</b> (Chemical=Haloperidol; Vestibular=Cyclizine; ICP=Ondansetron) <b>T</b>itration: <b>≥2 PRN/24h → Syringe driver</b> (24h, WFI, breakthrough 1/6-1/10) <b>I</b>ncompatibility: <b>Cyclizine&gt;50mg=❌; Hyoscine hydrobromide=❌; Alfentanil/Ketamine=NaCl 0.9%</b> <b>V</b>olume: <b>20mL syringe ≤19mL</b>; Morphine ≤30mg/mL; Diamorphine ≤100mg/mL <b>E</b>uvolaemia: <b>Hydration review</b> (SC fluids if benefit &gt; burden) <b>S</b>ecretions: <b>Glycopyrronium 1st line</b> (0.6-2.4mg/24h; no BBB cross) <b>Y</b> (Why Diamorphine?) <b>Solubility 200mg/mL</b> vs Morphine 30mg/mL → smaller volumes <b>R</b>enal: <b>eGFR&lt;30 avoid Morphine/Diamorphine</b> → Alfentanil/Fentanyl/Hydromorphone/Buprenorphine <b>I</b>mmediate release: <b>Breakthrough = 1/6-1/10 24h dose</b> SC Q1-2H PRN <b>N</b>&amp;V chemical: <b>Haloperidol/Leveromep (D₂)</b>; Vestibular: <b>Cyclizine (H₁)</b>; ICP: <b>Ondansetron (5-HT₃)</b> <b>G</b>lycopyrronium: <b>Antisecretory 1st line</b> (peripheral, no sedation) <b>E</b>nd of life: <b>Anticipatory prescribing = standard of care</b> (NICE NG31)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Palliative Care&lt;br&gt;Syringe Driver)) Anticipatory Prescribing 5 Symptoms Pain / N&amp;V / Agitation / Secretions / Dyspnoea Opioid Conversion PO:SC = 2:1 (Morph/Oxy) IV:SC = 1:1 Diamorphine preferred SC Renal Opioids eGFR&gt;30: Morphine OK eGFR&lt;30: Alfentanil/Fentanyl/Hydromorphone Syringe Driver 24h, WFI diluent NaCl 0.9% for Alfentanil/Ketamine SC site, q24h change Compatibility Morph+Midaz+Levomep = ✅ Cyclizine&gt;50mg = ❌ Hyoscine hydrobromide = ❌ Symptom Control N&amp;V: Receptor-based Agitation: Midazolam 1st Secretions: Glycopyrronium 1st Dyspnoea: Morph+Midaz </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Anticipatory Prescribing</td><td>3</td><td></td><td></td></tr><tr><td>Opioid Conversion</td><td>3</td><td></td><td></td></tr><tr><td>Syringe Driver Setup</td><td>3</td><td></td><td></td></tr><tr><td>Compatibility</td><td>3</td><td></td><td></td></tr><tr><td>Symptom-Specific Management</td><td>4</td><td></td><td></td></tr><tr><td>Renal/Hepatic Adjustments</td><td>2</td><td></td><td></td></tr><tr><td>Practical Algorithm</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the management of common symptoms in the last days of life using a syringe driver."</td><td>5 anticipatory drugs, opioid conversion, syringe driver setup, compatibility, symptom-specific management, renal adjustments</td></tr><tr><td>**Short Note**</td><td>"Syringe driver drug compatibility."</td><td>WFI standard; Morph+Midaz+Levomep compatible; Cyclizine>50mg precipitates; Alfentanil/Ketamine need NaCl 0.9%; Hyoscine hydrobromide incompatible</td></tr><tr><td>**Viva**</td><td>"Renal failure patient (eGFR 15) on morphine PO, now needs SC syringe driver. Opioid choice?"</td><td>**Avoid morphine** (M6G accumulation). **Use alfentanil** (short t½, hepatic clearance, NaCl 0.9% diluent) **or fentanyl/hydromorphone**. Convert dose.</td></tr><tr><td>**Ward Round**</td><td>"Patient on syringe driver: morphine 40mg + midazolam 20mg/24h. Family reports increased secretions. Add to driver?"</td><td>**Add Glycopyrronium 0.6-1.2mg/24h** (compatible with morphine+midazolam in WFI). Do NOT add hyoscine hydrobromide (incompatible).</td></tr><tr><td>**Last-Night**</td><td>"5 anticipatory: Pain(Morph), N&V(Levo), Agit(Midaz), Secret(Glyco), Dysp(Morph+Midaz). PO:SC 2:1. Renal<30:avoid Morph. Driver:24h,WFI,NaCl for Alfent. Compat:Morph+Midaz+Levo✅; Cycliz>50❌; Glyco 1st secret. Breakthrough 1/6-1/10."</td><td>5 drugs. Conversion. Renal. Driver setup. Compatibility. Symptom-specific. Breakthrough.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Anticipatory Prescribing</b>: 5 symptoms → Pain (morphine), N&amp;V (levomepromazine/haloperidol), Agitation (midazolam), Secretions (glycopyrronium), Dyspnoea (morphine+midazolam)</li><li><b>Opioid Conversion</b>: PO:SC = <b>2:1</b> (morphine, oxycodone); IV:SC = <b>1:1</b>; <b>Diamorphine preferred</b> (solubility)</li><li><b>Renal Failure</b>: eGFR&lt;30 → <b>avoid morphine/diamorphine</b>; use <b>alfentanil, fentanyl, hydromorphone, buprenorphine</b></li><li><b>Syringe Driver</b>: <b>24h, WFI diluent</b> (NaCl 0.9% for alfentanil/ketamine/octreotide); SC site; change q24h</li><li><b>Compatibility</b>: <b>Morphine + Midazolam + Levomepromazine = ✅</b>; <b>Cyclizine &gt;50mg = ❌</b>; <b>Hyoscine hydrobromide = ❌</b> (use butylbromide/glycopyrronium); <b>Alfentanil/Ketamine = NaCl 0.9% separate if needed</b></li><li><b>N&amp;V</b>: Receptor-based — Chemical (opioids) → Haloperidol/Levomepromazine (D₂); Vestibular → Cyclizine (H₁); Raised ICP → Ondansetron (5-HT₃)</li><li><b>Agitation</b>: <b>Midazolam first-line</b> (10-60mg/24h)</li><li><b>Secretions</b>: <b>Glycopyrronium first-line</b> (0.6-2.4mg/24h; no BBB cross)</li><li><b>Breakthrough</b>: <b>1/6-1/10 of 24h dose</b> SC Q1-2H PRN</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Oral morphine to SC morphine conversion ratio:</b></li></ol>
+<p>A. 1:1  B. <b>2:1</b>  C. 1:2  D. 5:1 <i>Answer: B. 10mg PO = 5mg SC (2:1).</i></p>
+<ol><li><b>Preferred SC opioid in UK palliative care:</b></li></ol>
+<p>A. Morphine  B. <b>Diamorphine</b>  C. Oxycodone  D. Hydromorphone <i>Answer: B. Diamorphine — higher solubility (200mg/mL) → smaller volumes.</i></p>
+<ol><li><b>Maximum cyclizine dose in 24h syringe driver (WFI):</b></li></ol>
+<p>A. 25mg  B. <b>50mg</b>  C. 100mg  D. 150mg <i>Answer: B. &gt;50mg/24h precipitates in WFI. Use levomepromazine if higher dose needed.</i></p>
+<ol><li><b>First-line antisecretory for death rattle:</b></li></ol>
+<p>A. Hyoscine hydrobromide  B. <b>Glycopyrronium</b>  C. Atropine  D. Hyoscine butylbromide <i>Answer: B. Glycopyrronium — peripheral, no BBB cross → less sedation/confusion.</i></p>
+<ol><li><b>Syringe driver diluent for alfentanil:</b></li></ol>
+<p>A. Water for Injection  B. <b>Sodium Chloride 0.9%</b>  C. Glucose 5%  D. Hartmann's <i>Answer: B. Alfentanil unstable in WFI → use NaCl 0.9%.</i></p>
+<ol><li><b>Opioid AVOIDED in eGFR &lt;30:</b></li></ol>
+<p>A. Alfentanil  B. <b>Morphine</b>  C. Fentanyl  D. Hydromorphone <i>Answer: B. Morphine → M6G accumulation → neurotoxicity. Diamorphine also avoided.</i></p>
+<ol><li><b>First-line for terminal agitation in syringe driver:</b></li></ol>
+<p>A. Haloperidol  B. <b>Midazolam</b>  C. Levomepromazine  D. Clonazepam <i>Answer: B. Midazolam 10-60mg/24h SC — anxiolytic, sedative, anticonvulsant.</i></p>
+<ol><li><b>Breakthrough dose for patient on morphine 60mg/24h SC syringe driver:</b></li></ol>
+<p>A. 2mg  B. <b>5-10mg</b>  C. 20mg  D. 30mg <i>Answer: B. 1/6-1/10 of 24h dose = 6-10mg (use 5-10mg SC Q1-2H PRN).</i></p>
+<ol><li><b>Cyclizine incompatible with which antiemetic in syringe driver?</b></li></ol>
+<p>A. Levomepromazine  B. <b>Midazolam</b>  C. Haloperidol  D. Ondansetron <i>Answer: B. Cyclizine + Midazolam → precipitation. Also cyclizine &gt;50mg alone precipitates.</i></p>
+<ol><li><b>Patient on fentanyl TD 75mcg/h needs SC syringe driver for breakthrough. 24h OME ≈ ?</b></li></ol>
+<p>A. 90mg  B. <b>135mg</b>  C. 180mg  D. 225mg <i>Answer: B. Fentanyl 25mcg/h ≈ Morphine 60mg/24h PO. 75mcg/h = 3 × 60 = 180mg OME. SC morphine = 90mg/24h.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>75M, metastatic lung cancer, eGFR 18, on morphine PO 30mg BD. Now unable to swallow. SC opioid choice?</b></li></ol>
+<p>A. Morphine 15mg/24h SC  B. <b>Alfentanil 1-2mg/24h SC (NaCl 0.9%)</b>  C. Diamorphine 15mg/24h SC  D. Oxycodone 10mg/24h SC <i>Answer: B. eGFR&lt;30 → avoid morphine/diamorphine. Alfentanil preferred (hepatic clearance, short t½).</i></p>
+<ol><li><b>Syringe driver: morphine 40mg + midazolam 20mg/24h (WFI). Add antiemetic for chemical N&amp;V.</b></li></ol>
+<p>A. Cyclizine 100mg  B. <b>Levomepromazine 12.5mg</b>  C. Ondansetron 8mg  D. Metoclopramide 20mg <i>Answer: B. Levomepromazine compatible with morphine+midazolam. Cyclizine &gt;50mg precipitates. Ondansetron/metoclopramide incompatible.</i></p>
+<ol><li><b>Patient on syringe driver develops respiratory secretions. Current driver: diamorphine 80mg + midazolam 30mg/24h. Add?</b></li></ol>
+<p>A. Hyoscine hydrobromide 1.2mg  B. <b>Glycopyrronium 1.2mg</b>  C. Hyoscine butylbromide 60mg  D. Atropine 1mg <i>Answer: B. Glycopyrronium compatible, no BBB cross. Hyoscine hydrobromide incompatible in WFI.</i></p>
+<ol><li><b>Anticipatory prescribing — PRN SC dose for agitation (midazolam):</b></li></ol>
+<p>A. 0.5mg  B. <b>2.5-5mg</b>  C. 10mg  D. 20mg <i>Answer: B. Midazolam 2.5-5mg SC Q1-2H PRN. Driver dose 10-60mg/24h.</i></p>
+<ol><li><b>Renal failure patient on alfentanil syringe driver (NaCl 0.9%). Ketamine added for neuropathic pain. Compatibility?</b></li></ol>
+<p>A. Compatible in same syringe  B. <b>Incompatible — separate line with NaCl 0.9%</b>  C. Compatible in WFI  D. Not used in palliative care <i>Answer: B. Ketamine incompatible with opioids in WFI; requires NaCl 0.9% separate line.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Clinical Context/Pain Management]] — Opioid conversions, renal prescribing, breakthrough dosing</li><li>[[Special Populations/Renal Prescribing]] — Opioid choice in CKD/ESRD</li><li>[[Medication Safety and Errors/PINCH High-Risk Drugs]] — Opioids (N in PINCH), midazolam (sedation risk)</li><li>[[Drug Interactions/Pharmacokinetic interactions/Metabolism interactions]] — CYP3A4 interactions (midazolam, alfentanil)</li><li>[[Clinical Context/Perioperative Prescribing]] — Peri-operative palliative care, opioid management</li><li>[[Therapeutic Drug Monitoring]] — Not routine but TDM principles apply</li><li>[[Polypharmacy and Deprescribing/Assessment Tools]] — Deprescribing in palliative care</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Palliative Care · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

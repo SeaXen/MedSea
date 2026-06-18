@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sterilisation Disinfection Decontamination — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.3. INFECTION PREVENTION & CONTROL</span>
+      <div class="h1">Sterilisation Disinfection Decontamination</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Define and contrast</b> sterilisation, high-level disinfection (HLD), intermediate-level disinfection, and low-level disinfection; articulate the role of the Sterility Assurance Level (SAL, 10⁻⁶) and the D-value / Z-value kinetics.</li><li><b>Apply the Spaulding classification</b> (Critical / Semi-critical / Non-critical) to select the correct level of processing for any medical device and list canonical examples of each category.</li><li><b>Describe the mechanism, parameters, advantages, limitations, and monitoring of every major sterilisation method</b> — saturated steam (gravity-displacement and prevacuum), dry heat, ethylene oxide (EtO), H₂O₂ gas plasma (STERRAD, V-PRO), peracetic acid immersion, vaporised H₂O₂, ozone, NO₂, and ionising radiation (gamma, e-beam).</li><li><b>Compare high-level disinfectants</b> (glutaraldehyde, OPA, peracetic acid, H₂O₂, peracetic acid/H₂O₂ blends) by contact time, reuse-life, mycobactericidal activity, material compatibility, toxicity profile, and fixation of proteins.</li><li><b>Sequence the steps of endoscope reprocessing</b> (pre-clean, leak test, manual cleaning, HLD/sterilisation, rinse, drying, storage, transport, validation) and identify common failures (biofilm, channel damage, drying delay).</li><li><b>Describe the CSSD workflow</b> (point of use → receiving → disassembly → cleaning → inspection → packaging → sterilisation → sterile storage → distribution → tracking) and instrument-tracking systems (RFID, barcode, UDI).</li><li><b>Interpret sterilisation monitoring</b>: physical (cycle printout, T/P probes), chemical (Classes 1–6) and biological indicators (BIs); run a Bowie–Dick test (≥ 3.5 min at 134 °C); describe a BI failure response.</li><li><b>Manage prion-contaminated instruments</b> (dedicated, single-use preferred; otherwise 1 M NaOH + prevacuum 134 °C × 18 min, ISO 22466 / WHO guidance).</li><li><b>Select environmental disinfectants and concentrations</b> for routine cleaning, blood spills, MDROs, <i>C. difficile</i> (≥ 1000–5000 ppm available chlorine), and special pathogens.</li><li><b>Appraise newer technologies</b> (UV-C, pulsed-xenon, vaporised/aerosolised H₂O₂, ozone, antimicrobial copper/silver surfaces, supercritical CO₂) and their evidence base.</li><li><b>Know the regulatory framework</b> (ISO 17665 steam, ISO 11135 EtO, ISO 14937 generic, ISO 15883 washer-disinfectors, EN 285 large steriliser, EN 13060 small steriliser, EN 867 / ISO 11140 indicators, FDA 510(k) for HLDs, EU MDR 2017/745).</li><li><b>Manage a CSSD failure / recall</b>, including look-back, reprocessing, retraining, and notification.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Sterilisation**</td><td>Validated process that eliminates ALL viable microorganisms, including bacterial spores and prions (when validated), from a device. Achieves a Sterility Assurance Level (SAL) of **10⁻⁶** (≤ 1 in a million probability of a viable organism per unit).</td></tr><tr><td>**SAL (Sterility Assurance Level)**</td><td>Probability of a single viable microorganism surviving on an item after sterilisation. Universal pharmaceutical/medical target: **10⁻⁶**.</td></tr><tr><td>**Disinfection**</td><td>Process that eliminates most pathogenic microorganisms, **EXCEPT** bacterial endospores. May be high-, intermediate-, or low-level.</td></tr><tr><td>**Decontamination**</td><td>Umbrella term: cleaning + disinfection + sterilisation, used to render a device safe for handling.</td></tr><tr><td>**Cleaning**</td><td>Physical removal of soil, organic matter, and bioburden — the essential prerequisite to sterilisation/disinfection. Without cleaning, no sterilisation process is reliable.</td></tr><tr><td>**D-value**</td><td>Time (min) required to reduce microbial load by 90 % (1 log₁₀) at a specified temperature/condition. For *G. stearothermophilus* spores in steam: D₁₂₁ ≈ 1.5 min.</td></tr><tr><td>**Z-value**</td><td>Temperature (°C) increase needed to reduce the D-value by 1 log. Used to construct F₀ (equivalent time at 121 °C) and Fₑ (equivalent time at a reference temperature).</td></tr><tr><td>**F₀ / Fₑ**</td><td>Equivalent sterilisation time (min) delivered to a load, integrated from the temperature/time profile and referenced to a z-value of 10 °C. F₀ ≥ 8 min = overkill for steam.</td></tr><tr><td>**Bowie–Dick test**</td><td>Daily air-removal test for prevacuum steam autoclaves (Class 2 chemical indicator); pass = uniform colour change of the test sheet; failure = air entrapment / wet packs.</td></tr><tr><td>**High-Level Disinfection (HLD)**</td><td>Destroys all microorganisms except large numbers of bacterial spores; required for semi-critical devices. Achieved by 2 % glutaraldehyde, OPA, peracetic acid, 7.5 % H₂O₂.</td></tr><tr><td>**Intermediate-Level Disinfection**</td><td>Destroys bacteria, mycobacteria, most fungi and viruses, but **NOT** spores. Hypochlorite 1:100 (1000 ppm), 70 % IPA, phenolics.</td></tr><tr><td>**Low-Level Disinfection**</td><td>Destroys most vegetative bacteria, some fungi and viruses; **NOT** mycobacteria or spores. QACs, dilute hypochlorite (1:500).</td></tr><tr><td>**Spaulding Classification**</td><td>Stratifies device-processing requirements: **Critical** → sterilisation; **Semi-critical** → HLD (or sterilisation); **Non-critical** → low/intermediate-level disinfection.</td></tr><tr><td>**Critical item**</td><td>Enters sterile tissue, the vascular system, or sterile cavities (surgical instruments, cardiac catheters, implants, needles).</td></tr><tr><td>**Semi-critical item**</td><td>Contacts intact mucous membranes or non-intact skin (endoscopes, laryngoscopes, respiratory therapy equipment, transvaginal probes, TEE probes).</td></tr><tr><td>**Non-critical item**</td><td>Contacts intact skin only (blood-pressure cuffs, stethoscopes, bed rails, environmental surfaces).</td></tr><tr><td>**PCD (Process Challenge Device)**</td><td>A test load that mimics the most-difficult-to-process item in a steriliser; used to validate routine cycles.</td></tr><tr><td>**Biological Indicator (BI)**</td><td>Viable, standardised, resistant spores on a carrier (or in suspension) used to validate a sterilisation cycle. *G. stearothermophilus* for steam, H₂O₂ plasma, peracetic acid; *B. atrophaeus* for EtO, dry heat, formaldehyde.</td></tr><tr><td>**Chemical Indicator (CI)**</td><td>A non-biological marker (ink, paper, tape) that responds to one or more sterilisation parameters (Class 1–6).</td></tr><tr><td>**Aeration**</td><td>Post-EtO exposure time in a heated, ventilated chamber to allow toxic residues (EtO, ethylene chlorohydrin, ethylene glycol) to dissipate; **minimum 8–12 h (or 60 °C × 8 h) is required for patient safety**.</td></tr><tr><td>**Prevacuum / Porous-load autoclave**</td><td>Uses a vacuum pump to remove air from the chamber before steam admission, ensuring steam penetration into lumens, porous loads, and wrapped packs.</td></tr><tr><td>**Gravity-displacement autoclave**</td><td>Steam displaces air downward by gravity; suitable only for solid, non-porous, unwrapped instruments; slower, less reliable air removal.</td></tr><tr><td>**Vaporised H₂O₂ (VHP)**</td><td>H₂O₂ vapor (typically 30–35 % w/w) used for room/equipment decontamination; sporicidal at 100–1000 ppm × 1–4 h.</td></tr><tr><td>**MEC (Minimum Effective Concentration)**</td><td>Manufacturer-tested minimum concentration of an active ingredient (e.g., glutaraldehyde ≥ 1.5 %, OPA ≥ 0.3 %, peracetic acid ≥ 500 ppm) below which the solution must be discarded.</td></tr><tr><td>**Reuse-life**</td><td>Maximum number of days a reusable HLD solution remains effective (and the MEC remains above threshold) — typically 14–30 days for glutaraldehyde, 14 days for OPA, single-use for peracetic acid.</td></tr><tr><td>**Fixation**</td><td>Phenomenon in which aldehydes and alcohol cross-link and "fix" protein onto surfaces, making subsequent cleaning more difficult. Bedside pre-cleaning is therefore essential.</td></tr><tr><td>**Bioburden**</td><td>Total viable microbial load on a device before sterilisation. Higher bioburden → more time required for inactivation.</td></tr><tr><td>**Wet pack**</td><td>Pack emerging from steam cycle with visible moisture; **sterility is considered compromised** because moisture allows wicking of organisms.</td></tr><tr><td>**Superiority over classical / "overkill" approach**</td><td>In steam sterilisation, an F₀ of ≥ 15 min at 121 °C is conventionally considered overkill; routinely used cycles deliver F₀ of 12–30 min.</td></tr><tr><td>**Lumen factor**</td><td>Internal-diameter and length of a device channel are critical for sterilant penetration; manufacturers publish validated cycle parameters for specific device dimensions (e.g., V-PRO lumen claims).</td></tr><tr><td>**Single-use device (SUD)**</td><td>Intended for one procedure on one patient; labelled with the "②" symbol. May not be reprocessed unless authorised by a regulator (e.g., FDA Third-Party Reprocessor 510(k)).</td></tr><tr><td>**UDI (Unique Device Identifier)**</td><td>Globally standardised numeric/alphanumeric code allowing traceability of a device through manufacture, distribution, reprocessing, and patient use.</td></tr><tr><td>**CSSD / TSSU**</td><td>Central / Theatre Sterile Services Department — the unit responsible for receiving, decontaminating, inspecting, packaging, sterilising, storing, and distributing medical devices.</td></tr><tr><td>**AER (Automated Endoscope Reprocessor)**</td><td>A washer-disinfector that automates the cleaning, leak-testing, HLD, rinsing, and drying phases of endoscope processing.</td></tr><tr><td>**Validation**</td><td>Documented evidence that a process consistently produces a result meeting predetermined specifications (IQ — installation, OQ — operational, PQ — performance).</td></tr><tr><td>**Prion / TSE**</td><td>Transmissible spongiform encephalopathy agent: misfolded, protease-resistant prion protein (PrPˢᶜ). Highly resistant to conventional sterilisation.</td></tr><tr><td>**IUSS / IUS (Immediate-Use Steam Sterilisation)**</td><td>Previously "flash" sterilisation: minimal processing (unwrapped, 134 °C × 3 min in a prevacuum) for unanticipated, urgent need; **not for implants** in most jurisdictions.</td></tr><tr><td>**H₂O₂ plasma / VHP-V-PRO**</td><td>Low-temperature plasma sterilisation (45–55 °C) using vaporised H₂O₂; sporicidal; safe, fast (28–75 min cycles); **incompatible with cellulose, powders, oils, and non-validated long/lumen devices**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Core Principles — Definitions, Spectrum, and Spaulding Classification</div>
+<p>#### The Hierarchy of Microbial Susceptibility</p>
+<p>Understanding the relative resistance of microorganisms to chemical and physical agents is the basis for selecting a disinfection/sterilisation method.</p>
+<table class="ctable"><tr><th>Rank</th><th>Resistance</th><th>Examples</th><th>Required Process</th></tr><tr><td>------</td><td>------------</td><td>----------</td><td>------------------</td></tr><tr><td>1 (Most resistant)</td><td>Prions</td><td>vCJD, sporadic CJD</td><td>NaOH + extended prevacuum 134 °C × 18 min; incineration of high-risk tissue</td></tr><tr><td>2</td><td>Bacterial spores</td><td>*Bacillus*, *Clostridium* spp.</td><td>Sterilisation only (steam, EtO, H₂O₂ plasma, peracetic acid)</td></tr><tr><td>3</td><td>Mycobacteria</td><td>*M. tuberculosis*, atypical mycobacteria</td><td>HLD (glutaraldehyde 20–45 min, OPA 5 min, peracetic acid, 7.5 % H₂O₂); high-tolerance marker for HLD</td></tr><tr><td>4</td><td>Small non-enveloped viruses</td><td>Parvovirus B19, HAV, poliovirus, HPV, norovirus, enteroviruses</td><td>Intermediate- to high-level disinfection; HLD required for semi-critical</td></tr><tr><td>5</td><td>Fungi (vegetative)</td><td>*Candida*, *Aspergillus*</td><td>Low- to high-level disinfection</td></tr><tr><td>6</td><td>Vegetative bacteria (Gram+, Gram–)</td><td>Staphylococci, streptococci, *E. coli*, *Pseudomonas*</td><td>Low-level disinfection (QACs, dilute bleach)</td></tr><tr><td>7 (Least resistant)</td><td>Enveloped viruses</td><td>HIV, HBV, HCV, influenza, coronaviruses</td><td>Plain soap, alcohol, dilute hypochlorite — inactivated easily</td></tr></table>
+<div class="callout">[!tip] <b>Mnemonic — Most → Least Resistant: "Prions Survive, Microbes Drop"</b> <b>P</b>rions → <b>S</b>pores → <b>M</b>ycobacteria → (small non-enveloped) <b>V</b>iruses → <b>F</b>ungi → <b>B</b>acteria → enveloped <b>V</b>iruses. The mycobacterium is the marker organism for HLD efficacy (FDA: ≥ 10⁵ <i>M. terrae</i> killed in 45 min at 25 °C for an HLD to be cleared).</div>
+<p>#### The Spaulding Classification (1971) — The Most Tested Single Concept in IPC</p>
+<p>Spaulding's classification is <b>the</b> decision framework for medical device reprocessing in the FDA, CDC, WHO, and NHS frameworks.</p>
+<table class="ctable"><tr><th>Category</th><th>Tissue Contact</th><th>Examples</th><th>Required Process</th><th>Acceptable Methods</th></tr><tr><td>----------</td><td>----------------</td><td>----------</td><td>------------------</td><td>-------------------</td></tr><tr><td>**Critical**</td><td>Enters sterile tissue, vasculature, or sterile cavities</td><td>Surgical instruments, cardiac/vascular catheters, implants, needles, scalpel blades, arthroscopes, laparoscopes, eye instruments, biopsy forceps, intra-uterine devices</td><td>**Sterilisation** (SAL 10⁻⁶)</td><td>Steam, EtO, H₂O₂ plasma, peracetic acid, dry heat, radiation</td></tr><tr><td>**Semi-critical**</td><td>Contacts intact mucous membranes or non-intact skin</td><td>GI endoscopes, bronchoscopes, laryngoscopes, cystoscopes, TEE probes, transvaginal/transrectal ultrasound probes, respiratory therapy equipment, nasal specula, ear specula, laryngeal mask airways</td><td>**HLD (minimum); sterilisation preferred**</td><td>Glutaraldehyde, OPA, peracetic acid, 7.5 % H₂O₂ (for ≥ 20 min, mycobactericidal claim)</td></tr><tr><td>**Non-critical**</td><td>Contacts intact skin only</td><td>BP cuffs, stethoscopes, ECG leads, bed rails, infusion pumps, pulse oximeters, environmental surfaces, patient furniture, commodes</td><td>**Low- or intermediate-level disinfection**</td><td>70 % IPA, dilute hypochlorite (1:100–1:500), QACs, phenolics</td></tr></table>
+<div class="callout">[!warning] <b>Exam trap:</b> Confusing "high-level disinfection" with "sterilisation." HLD is adequate for semi-critical items but is <b>NOT</b> sterilisation — it does not reliably kill all spores. The classic test question is a flexible bronchoscope after contact with a TB patient (semi-critical, HLD acceptable) vs. a bronchoscope used through a sterile tracheal stoma (now <b>critical</b>, requires sterilisation).</div>
+<p>#### Spaulding Decision Algorithm</p>
+<p>``<code>mermaid flowchart TD A[Medical Device] --&gt; B{Enters sterile tissue / vasculature?} B -- Yes --&gt; C[CRITICAL: Sterilise SAL 10⁻⁶] B -- No --&gt; D{Contacts intact mucosa or non-intact skin?} D -- Yes --&gt; E[SEMI-CRITICAL: HLD minimum, sterilise preferred] D -- No --&gt; F[NON-CRITICAL: Low / intermediate disinfection] C --&gt; C1{Heat / moisture stable?} C1 -- Yes --&gt; C2[Steam autoclave 121°C/134°C] C1 -- No --&gt; C3[EtO, H₂O₂ plasma, VHP] E --&gt; E1{Manual then AER} E1 --&gt; E2[Glutaraldehyde / OPA / Peracetic acid] F --&gt; F1[70% IPA / 1:100 hypochlorite / QAC] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Sterilisation Methods</div>
+<p>#### Method 1 — Saturated Steam Under Pressure (Gold Standard)</p>
+<p><b>Mechanism:</b> Moist heat denatures and coagulates microbial proteins (irreversible). Steam condenses on cooler surfaces, releasing latent heat (2,260 kJ/kg) and contracting, drawing in fresh steam — the most efficient heat-transfer medium in reprocessing.</p>
+<p><b>Equipment:</b> Stainless-steel chamber with steam jacket, vacuum pump (in prevacuum models), temperature/pressure probes, independent chamber and load probes (EN 285 requires the printout to record both), water supply (purified, conductivity &lt; 5 µS/cm, &lt; 100 CFU/mL).</p>
+<p><b>Standard cycles:</b></p>
+<table class="ctable"><tr><th>Cycle</th><th>Temperature</th><th>Pressure</th><th>Hold Time</th><th>Load</th><th>Use</th></tr><tr><td>-------</td><td>-------------</td><td>----------</td><td>-----------</td><td>------</td><td>-----</td></tr><tr><td>Gravity-displacement (121 °C)</td><td>121 °C</td><td>15 psi (103 kPa)</td><td>**15–30 min**</td><td>Unwrapped, non-porous instruments, liquids (slow exhaust)</td><td>Simple robust items, lab media, liquids</td></tr><tr><td>Porous-load / prevacuum (134 °C)</td><td>134 °C</td><td>30 psi (207 kPa)</td><td>**3–4 min** (minimum 3.5 min for Bowie–Dick)</td><td>Wrapped, porous, lumened</td><td>Routine instrument sets, drapes, gowns</td></tr><tr><td>Prion cycle (134 °C prevacuum)</td><td>134 °C</td><td>30 psi</td><td>**18 min**</td><td>Quarantined instruments exposed to suspected CJD</td><td>Prion decontamination (WHO 2016)</td></tr><tr><td>IUSS ("flash")</td><td>132 °C</td><td>27 psi (gravity) / 134 °C (prevacuum)</td><td>3 min (prevacuum unwrapped)</td><td>Unwrapped single instrument</td><td>Emergency, no implant, no storage</td></tr><tr><td>Bowie–Dick test (prevacuum)</td><td>134 °C</td><td>30 psi</td><td>**3.5 min**</td><td>Test pack only</td><td>Daily air-removal test</td></tr></table>
+<p><b>Validation:</b> Each cycle must be parametrically validated (T, P, time within tolerances) AND monitored with a chemical indicator (Class 4 or 5) inside every pack AND a biological indicator weekly + with any implant loads (EN 13060, ISO 17665).</p>
+<p><b>Advantages:</b> non-toxic, fast (30–45 min total cycle including drying), cheap, reliable, good for stainless steel, most plastics, glass, rubber, and textiles; environmentally friendly; provides wet heat penetration to lumens and porous loads. Cycle is verifiable with type-specific BI and CI.</p>
+<p><b>Disadvantages / Pitfalls:</b> Damages heat-sensitive plastics, optics, electronics, and some pharmaceuticals. <b>Wet packs</b> are the most common failure (≥ 1 % in many audits) and indicate cycle or loading issues (overfilling, hot/dry load distribution, drainage, drying stage). <b>Superheating</b> (steam &gt; 100 °C with no condensate) is rare but invalidates the cycle. <b>Air entrapment</b> in lumens (≤ 1 mm internal diameter or &gt; 75 cm long) requires prevacuum with pulse fractionation; if a lumen is too long/dry, the steam fails to penetrate and a "wet lumen" + "dry pack" cycle results.</p>
+<p><b>Common defects leading to a wet pack:</b></p>
+<ul><li>Heavy loads</li><li>Inadequate drying stage (extend drying time, drain trap)</li><li>Stainless steel on cotton: steel dries first, cotton stays wet</li><li>Load too cold when loaded (pre-heat the chamber)</li><li>Saturated steam wetness &gt; 5 % (poor steam quality)</li><li>Dripping condensate on packs in the steriliser (overhead piping)</li></ul>
+<p>#### Method 2 — Dry Heat</p>
+<p><b>Mechanism:</b> Oxidative destruction of microbial cell components; no protein coagulation by moisture.</p>
+<p><b>Cycles:</b></p>
+<table class="ctable"><tr><th>Cycle</th><th>Temperature</th><th>Hold Time</th><th>Use</th></tr><tr><td>-------</td><td>-------------</td><td>-----------</td><td>-----</td></tr><tr><td>Standard (USP)</td><td>160 °C</td><td>**2 h**</td><td>Powders, oils, glassware, sharp instruments (e.g., ophthalmic instruments), instruments sensitive to moist heat</td></tr><tr><td>Higher</td><td>170 °C</td><td>1 h</td><td>Faster throughput</td></tr><tr><td>Very high</td><td>180 °C</td><td>30 min</td><td>Common in dentistry for burs</td></tr></table>
+<p><b>Equipment:</b> Hot-air oven (forced convection; gravity ovens outdated). Static-air ovens have ± 10 °C temperature variation and are not recommended. Mechanical convection ± 2 °C.</p>
+<p><b>Validation:</b> <i>B. atrophaeus</i> (formerly <i>B. subtilis</i> var <i>niger</i>) BI (10⁶ spores). **Cannot use <i>G. stearothermophilus</i> (moisture-adapted).**</p>
+<p><b>Advantages:</b> non-corrosive (good for sharp instruments and needles); good for oils, powders, glass, metal; no moisture.</p>
+<p><b>Disadvantages:</b> high temperatures destroy rubber, plastics, textiles, and many pharmaceuticals; long cycle; cannot process porous loads or lumens; slow heat transfer.</p>
+<p>#### Method 3 — Ethylene Oxide (EtO)</p>
+<p><b>Mechanism:</b> Alkylation of microbial proteins, RNA, and DNA — strong sporicidal activity at low temperatures.</p>
+<p><b>Cycles:</b> 37–63 °C, 35–60 % RH, EtO concentration 600–1200 mg/L, exposure 1–6 h, then <b>aeration 8–12 h in a dedicated aerator at 50–60 °C</b> (8 h mechanical aeration at 60 °C leaves &lt; 1 ppm EtO residue — FDA limit). FDA categorises EtO residue in medical devices as a known carcinogen (despite current acceptable occupational exposure limit ~ 0.5 ppm OSHA TWA × 8 h).</p>
+<p><b>Equipment:</b> Pure-EtO steriliser (e.g., 3M Steri-Vac, Steris) with built-in aeration chamber. Use in well-ventilated, dedicated rooms with continuous gas monitoring (employee safety).</p>
+<p><b>Validation:</b> <i>B. atrophaeus</i> BI (10⁶); 7-day culture or rapid (4-h) enzyme-based fluorescence readout (Attest).</p>
+<p><b>Indications:</b> Heat- and moisture-sensitive devices that cannot be steam-sterilised: polymer endoscopes, fibre-optic cables, electronic components, batteries, certain plastics.</p>
+<p><b>Advantages:</b> Excellent material compatibility; low temperature; high sporicidal activity; universal device acceptance.</p>
+<p><b>Disadvantages / Hazards:</b></p>
+<ul><li><b>Toxic</b> (carcinogen, mutagen, teratogen; respiratory sensitiser; neurotoxicity).</li><li><b>Flammable</b> (4–100 % in air); many units use 100 % EtO (Sterad 100 NX, Andersen).</li><li><b>Slow</b> (cycle + aeration ≥ 12–16 h total).</li><li><b>Residue problem</b> → mandatory aeration.</li><li><b>Environmental impact</b> (US EPA 2024 rule on EtO sterilisation facility emissions).</li><li>Cannot be used in poorly ventilated operating rooms or for any implant requiring emergency use.</li></ul>
+<div class="callout">[!warning] <b>Exam trap:</b> EtO-sterilised instruments cannot be released for immediate use on patients without aeration. An emergency instrument cannot be EtO-sterilised and used within the hour.</div>
+<p>#### Method 4 — Hydrogen Peroxide Plasma (STERRAD, V-PRO)</p>
+<p><b>Mechanism:</b> Vaporised H₂O₂ (≈ 58 % w/w for STERRAD, 59 % for V-PRO) diffuses into the load, kills by oxidation; then low-temperature plasma (radiofrequency-induced) breaks H₂O₂ into water and oxygen, leaving <b>non-toxic</b> by-products.</p>
+<p><b>Cycles (STERRAD 100S / NX / 100NX):</b></p>
+<table class="ctable"><tr><th>System</th><th>Cycle</th><th>H₂O₂</th><th>Temperature</th><th>Time</th><th>Indications</th></tr><tr><td>--------</td><td>-------</td><td>-------</td><td>-------------</td><td>------</td><td>-------------</td></tr><tr><td>STERRAD 100S</td><td>Standard</td><td>58 %</td><td>45–55 °C</td><td>55–75 min</td><td>Most reusable instruments, some endoscopes</td></tr><tr><td>STERRAD 100S</td><td>Advanced</td><td>58 %</td><td>45–55 °C</td><td>91 min</td><td>Lumens, single-channel stainless ≤ 3 mm × 400 mm</td></tr><tr><td>STERRAD NX</td><td>Standard</td><td>58 %</td><td>45–55 °C</td><td>28 min</td><td>Routine scopes, cables</td></tr><tr><td>STERRAD NX</td><td>Advanced</td><td>58 %</td><td>45–55 °C</td><td>38 min</td><td>Single-channel ≤ 1 mm × 500 mm</td></tr><tr><td>STERRAD 100NX</td><td>Standard</td><td>59 %</td><td>45–55 °C</td><td>47 min</td><td>Most devices</td></tr><tr><td>STERRAD 100NX</td><td>Flexoscope</td><td>59 %</td><td>45–55 °C</td><td>42 min</td><td>Flexible endoscopes with validated lumens</td></tr><tr><td>STERRAD 100NX</td><td>Duo</td><td>59 %</td><td>45–55 °C</td><td>60 min</td><td>Single-channel ≤ 1 mm × 850 mm</td></tr><tr><td>V-PRO 1 Plus</td><td>Standard</td><td>59 %</td><td>45–55 °C</td><td>30 min</td><td>Reusable metal/non-metal instruments</td></tr><tr><td>V-PRO 60</td><td>Lumen</td><td>59 %</td><td>45–55 °C</td><td>16–36 min</td><td>Double-channel ≤ 1.2 mm × 195 mm</td></tr></table>
+<p><b>Validation:</b> <i>G. stearothermophilus</i> BI for STERRAD/V-PRO. Type-specific chemical indicator (Class 1 external tape + Class 4 internal strip). Each device manufacturer must validate the cycle for their device + dimensions.</p>
+<p><b>Advantages:</b> Safe by-products (H₂O + O₂), no aeration, low temperature, short cycle, no toxic effluent, suitable for heat- and moisture-sensitive devices, including most single-channel flexible endoscopes and batteries.</p>
+<p><b>Limitations — what CANNOT be processed in H₂O₂ plasma:</b></p>
+<ul><li><b>Cellulose</b> (paper, cotton, linen, gauze, cellulose-containing packaging) — absorbent, absorbs the H₂O₂, and "starves" the load.</li><li><b>Powders</b> (talc, drugs).</li><li><b>Oils and greases.</b></li><li><b>Liquids.</b></li><li><b>Devices with dead-end lumens or channels not validated for cycle.</b> Manufacturer must list specific device/cycle compatibility (e.g., certain duodenoscopes with a 2-channel elevator are NOT validated for H₂O₂ plasma).</li><li><b>Long, narrow, multi-lumen flexible scopes</b> (&gt; 1 mm × 200 mm, 2 channels): only select cycles in STERRAD 100NX "Duo" and V-PRO Max 2.</li><li><b>Implants with dead-end crevices or some metals (e.g., silver, brass, leaded brass) — may react with H₂O₂.</b></li></ul>
+<div class="callout">[!warning] <b>Exam trap:</b> A duodenoscope with a 4 mm × 1100 mm channel + a non-removable distal cap cannot be processed in H₂O₂ plasma. It must be manually cleaned + HLD with peracetic acid / OPA, or it must be sent for EtO.</div>
+<p>#### Method 5 — Peracetic Acid (PAA)</p>
+<p><b>Mechanism:</b> Strong oxidising agent (CH₃COOOH) that denatures proteins and disrupts membranes. Sporicidal at low concentrations (0.2–0.35 %).</p>
+<p><b>Use:</b></p>
+<ul><li><b>Liquid PAA:</b> Immersion of flexible endoscopes, dental handpieces (e.g., 0.2 % for 5 min, 0.35 % for 5 min at 25 °C, FDA-cleared Steris System 1, Reliance EPS, Sterrad 100 NX with PAA cycle).</li><li><b>AER-based PAA:</b> STERIS System 1E (replaced System 1 in 2010 because of the FDA reclassification). Cycle: 0.2 % PAA at 46–55 °C, exposure 12 min, single-use.</li><li><b>VHP + PAA (Sterrad V-PRO):</b> Peracetic acid + low-temperature plasma alternative.</li></ul>
+<p><b>Advantages:</b> Spore-killing, low temp, no aldehyde toxicity, no fixation of protein (PAA is a strong oxidiser — does NOT fix proteins), safe by-products (acetic acid, water, O₂).</p>
+<p><b>Disadvantages:</b> Corrosive to some metals (brass, copper, mild steel — passivated stainless OK); un-stabilised solutions are unstable; pungent (vinegar-like) odour; eye/respiratory irritant; <b>single-use</b> in most formulations.</p>
+<p>#### Method 6 — Other Low-Temperature Methods</p>
+<table class="ctable"><tr><th>Method</th><th>Description</th><th>Pros</th><th>Cons</th></tr><tr><td>--------</td><td>-------------</td><td>------</td><td>------</td></tr><tr><td>**Vaporised H₂O₂ (VHP)**</td><td>30–35 % H₂O₂ vapor for room/equipment decontamination (e.g., Bioquell, Steris V-1000)</td><td>Sporicidal at room temp, residue-free, no toxic by-products</td><td>Long cycle, requires sealed room, materials compatibility</td></tr><tr><td>**Ozone (O₃)**</td><td>O₃ generated in situ (electrical discharge) at 30–40 °C</td><td>Rapid, no toxic residue, sporicidal</td><td>Corrosive to metals/rubber; limited device clearance</td></tr><tr><td>**Nitrogen Dioxide (NO₂)**</td><td>Used in NO₂ 100 steriliser (Noxilizer)</td><td>Low temperature (10–30 °C), rapid, safe for polymers, metals, biologics</td><td>Limited manufacturer cycle validations; toxic; new technology</td></tr><tr><td>**Supercritical CO₂**</td><td>CO₂ above critical temp/pressure with sterilant co-solvent</td><td>Low temp, no residue, no toxic effluent</td><td>Research/limited commercial; not FDA-cleared for routine use</td></tr><tr><td>**UV-C (254 nm)**</td><td>Surface disinfection; inactivates DNA/RNA</td><td>Rapid, no chemical residue, used for "no-touch" room disinfection (Xenex, Tru-D)</td><td>Line-of-sight, no shadowing, no penetration; no clearance for medical devices</td></tr><tr><td>**Pulsed Xenon UV**</td><td>Pulsed broad-spectrum high-intensity light</td><td>Rapid, broad-spectrum</td><td>Same limitations as UV-C; no device claims</td></tr><tr><td>**Filtration (0.22 µm)**</td><td>Cold sterilisation of heat-sensitive **liquids** (cell-culture media, antibiotics, ophthalmic solutions)</td><td>Preserves heat-labile actives; FDA-cleared 0.22 µm membranes (PES, PVDF, nylon)</td><td>Cannot sterilise solids; clogs with high-bioburden liquids; air-locked systems</td></tr></table>
+<p>#### Method 7 — Radiation Sterilisation (Industrial)</p>
+<table class="ctable"><tr><th>Modality</th><th>Source</th><th>Dose</th><th>Use</th></tr><tr><td>----------</td><td>--------</td><td>------</td><td>-----</td></tr><tr><td>**Gamma**</td><td>Cobalt-60 (1.17 + 1.33 MeV photons)</td><td>25–40 kGy (typical medical device)</td><td>Single-use syringes, gloves, sutures, implants; very high penetration</td></tr><tr><td>**Electron beam (e-beam)**</td><td>Linear accelerator (5–10 MeV electrons)</td><td>25–40 kGy</td><td>Single-use devices; lower penetration (≤ 5 cm depending on density); fast (seconds); tunable dose</td></tr><tr><td>**X-ray (Bremsstrahlung)**</td><td>Electron beam into tantalum target (5–7 MeV)</td><td>25–40 kGy</td><td>Industrial scale; more uniform dose than e-beam</td></tr></table>
+<p><b>Mechanism:</b> Ionising radiation damages DNA/RNA, generates reactive species.</p>
+<p><b>Validation:</b> Dosimetry only; <i>B. pumilus</i> BI used historically, but radiation is now considered parametric (dose mapping, VDmax 25 series approach per ISO 11137). <b>Single-use medical devices</b> are typically sterilised this way.</p>
+<div class="callout">[!tip] <b>Exam hook:</b> "Why are syringes gamma-irradiated rather than autoclaved?" — Because autoclaving would distort the plastic; radiation is room-temperature, hermetically-sealed, and FDA-validated.</div>
+<p>#### Comparative Summary — Sterilisation Methods</p>
+<table class="ctable"><tr><th>Method</th><th>Cycle Time</th><th>Temp</th><th>Compatible Materials</th><th>Key Limitation</th><th>BI</th></tr><tr><td>--------</td><td>-----------</td><td>------</td><td>----------------------</td><td>----------------</td><td>-----</td></tr><tr><td>Steam (prevac)</td><td>30–60 min</td><td>121–134 °C</td><td>Metal, glass, rubber, most textiles, heat-stable polymers</td><td>Damages heat/moisture-sensitive</td><td>*G. stearothermophilus*</td></tr><tr><td>Dry heat</td><td>60 min – 2 h</td><td>160–180 °C</td><td>Metal, glass, powders, oils</td><td>Destroys plastics, rubber; slow</td><td>*B. atrophaeus*</td></tr><tr><td>EtO</td><td>1–6 h + 8–12 h aeration</td><td>37–63 °C</td><td>Most plastics, electronics, polymer scopes</td><td>Toxic; long; residue; aeration required</td><td>*B. atrophaeus*</td></tr><tr><td>H₂O₂ plasma (STERRAD)</td><td>28–91 min</td><td>45–55 °C</td><td>Most polymers, metals, optics, electronics</td><td>No cellulose, powders, oils; lumen limits</td><td>*G. stearothermophilus*</td></tr><tr><td>Peracetic acid</td><td>5–12 min</td><td>25–55 °C</td><td>Endoscopes, metals, polymers (corrosive to Cu/Br)</td><td>Single-use; pungent</td><td>*G. stearothermophilus*</td></tr><tr><td>VHP (room)</td><td>1–4 h</td><td>30–35 °C</td><td>Room surfaces</td><td>Cannot use on devices directly</td><td>*G. stearothermophilus*</td></tr><tr><td>Ozone</td><td>30–60 min</td><td>30–40 °C</td><td>Most polymers, metals</td><td>Corrosive</td><td>*G. stearothermophilus*</td></tr><tr><td>NO₂</td><td>30–60 min</td><td>10–30 °C</td><td>Polymers, biologics, metals</td><td>Limited; new tech</td><td>*G. stearothermophilus*</td></tr><tr><td>Gamma / e-beam</td><td>Seconds (e-beam) to hours (gamma)</td><td>Ambient</td><td>Single-use devices, sutures, implants, gloves</td><td>Industrial only</td><td>Dosimetric</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: High-Level Disinfectants (HLD)</div>
+<p>HLD is the minimum for semi-critical devices. The FDA requires a 510(k)-cleared HLD to demonstrate ≥ 10⁵ <i>M. terrae</i> kill in 45 min at 25 °C, and complete kill of 10⁵–10⁶ <i>G. stearothermophilus</i> in 6 h at room temp (the "sporicidal" claim).</p>
+<table class="ctable"><tr><th>Agent</th><th>Concentration</th><th>Contact Time (HLD)</th><th>Mechanism</th><th>Reuse Life</th><th>Material Compat.</th><th>Toxicity</th><th>Fixation</th></tr><tr><td>-------</td><td>---------------</td><td>--------------------</td><td>-----------</td><td>-----------</td><td>------------------</td><td>----------</td><td>----------</td></tr><tr><td>**Glutaraldehyde (2 %)**</td><td>2 % aqueous (alkaline pH)</td><td>20–45 min (HLD); 6–10 h (sporicidal / sterilant)</td><td>Protein cross-linking (Schiff base)</td><td>14–30 days (test MEC ≥ 1.5 % daily)</td><td>Endoscopes, rubber, plastic, metal, optics</td><td>Vapour toxic (ACGIH TLV 0.05 ppm); respiratory irritant; skin/eye sensitiser; colitis/aneamia rarely</td><td>**Yes — protein-fixative**</td></tr><tr><td>**OPA (ortho-phthalaldehyde 0.55 %)**</td><td>0.55 %</td><td>**5 min** (HLD); 32 min (sporicidal)</td><td>Cross-links amine groups, similar to glutaraldehyde</td><td>**14 days** (test MEC ≥ 0.3 %); reusable, no activation</td><td>Similar to glutaraldehyde; can stain skin/linen (blue-grey)</td><td>**Less volatile**, no Vapour hazard; stains proteins (anaphylaxis risk in cystoscopy patients with bladder cancer — black necrotic bladder mucosa)</td><td>Yes (less)</td></tr><tr><td>**Peracetic acid (PAA) 0.2 %**</td><td>0.2 %</td><td>**5–12 min** (HLD); sporicidal within contact time</td><td>Strong oxidiser, denatures proteins/enzymes</td><td>**Single-use** (sterile)</td><td>Stainless steel (passivated OK), polycarbonates, PTFE</td><td>Pungent, eye/respiratory irritant; corrosive to Cu/Br</td><td>**No — no fixation**</td></tr><tr><td>**Hydrogen peroxide 7.5 %**</td><td>7.5 %</td><td>30 min (HLD); 6 h (sporicidal)</td><td>Produces hydroxyl radical, oxidises macromolecules</td><td>21 days (test MEC)</td><td>Metals, plastics, optics</td><td>Eye/respiratory irritant</td><td>No</td></tr><tr><td>**Glutaraldehyde–phenol/phenate**</td><td>2 % + 1.2 % phenol</td><td>20 min</td><td>Combined aldehyde + surfactant</td><td>30 days</td><td>Rubber, plastic, metal</td><td>Vapour toxic</td><td>Yes</td></tr><tr><td>**H₂O₂ + PAA blends (e.g., Acecide, PeraSafe)**</td><td>0.08–0.23 % PAA + 1–1.4 % H₂O₂</td><td>5–10 min</td><td>Combined oxidation</td><td>24 h to 14 days (varies)</td><td>Broad</td><td>Reduced vapor toxicity</td><td>No</td></tr></table>
+<p><b>Important comparative facts:</b></p>
+<ul><li><b>Glutaraldehyde</b> is the <b>classical</b> HLD but is increasingly being replaced by OPA and PAA due to toxic vapours and to occupational asthma in endoscopy nurses.</li><li><b>OPA is fastest</b> (5 min), no activation, no vapour hazard. <b>Anaphylaxis</b> in patients with bladder cancer undergoing repeated cystoscopy is a rare but documented concern.</li><li><b>PAA</b> is the <b>only</b> HLD that does NOT fix protein; preferred for poorly pre-cleaned devices, after inadequate cleaning, or where prion concerns exist. A 5-min PAA cycle is sporicidal and mycobactericidal in most commercial formulations.</li><li><b>H₂O₂ 7.5 %</b> is sporicidal at 6 h; used for HLD at 30 min.</li></ul>
+<div class="callout">[!warning] <b>Critical exam point — Aldehyde fixation of protein:</b> If an endoscope is not pre-cleaned at the bedside within <b>15 minutes</b> of use, blood and mucus "fix" onto the channel walls; subsequent HLD is less effective (and biofilm can form within 24 h). Bedside pre-cleaning (enzymatic detergent flush + suction) is <b>the single most important step in endoscope reprocessing</b>.</div>
+<p>#### Spaulding-to-HLD Selection</p>
+<table class="ctable"><tr><th>Device</th><th>Recommended HLD</th></tr><tr><td>--------</td><td>-----------------</td></tr><tr><td>Flexible GI endoscope (gastroscope, colonoscope)</td><td>OPA 5 min, PAA 5 min, glutaraldehyde 20 min, automated AER (FDA-cleared)</td></tr><tr><td>Duodenoscope (with elevator)</td><td>Manual cleaning + HLD with OPA or PAA; ideally sterilisation (H₂O₂ plasma or EtO) due to outbreaks</td></tr><tr><td>Bronchoscope</td><td>HLD (OPA 5 min or PAA 5 min) — TB risk</td></tr><tr><td>TEE probe</td><td>HLD with OPA / PAA / peracetic acid; some probes are sterilisation-compatible (manufacturer-dependent)</td></tr><tr><td>Cystoscope</td><td>HLD (OPA 5 min); rinse thoroughly; avoid OPA in bladder-cancer patients</td></tr><tr><td>Laryngoscope blade</td><td>Spaulding: semi-critical if used orally; HLD; sterilisation preferred</td></tr><tr><td>Transvaginal / transrectal ultrasound probe</td><td>Cover + HLD after use (OPA 5 min, PAA 5 min)</td></tr><tr><td>Dental handpiece</td><td>PAA or autoclave (heat-stable); HLD if not heat-stable</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Intermediate- and Low-Level Disinfectants (Environmental &amp; Non-Critical)</div>
+<p>These are used for <b>non-critical</b> devices and <b>environmental surfaces</b>. They are <b>NOT</b> sporicidal (most) and <b>NOT</b> mycobactericidal.</p>
+<table class="ctable"><tr><th>Agent</th><th>Concentration</th><th>Kill Spectrum</th><th>Notes</th></tr><tr><td>-------</td><td>---------------</td><td>---------------</td><td>-------</td></tr><tr><td>**Sodium hypochlorite (bleach)**</td><td>1000–5000 ppm (1:100 to 1:20 of 5 % stock)</td><td>Bactericidal, virucidal, fungicidal, mycobactericidal, sporicidal at high concentration</td><td>**C. difficile**: 1000–5000 ppm; norovirus 1000 ppm; spills 10,000 ppm; corrosive to metals, fabric; unstable once diluted (use within 24 h)</td></tr><tr><td>**Isopropyl/ethyl alcohol 60–90 %**</td><td>70 % v/v typical</td><td>Bactericidal, mycobactericidal (slow), virucidal (enveloped and some non-enveloped), fungicidal</td><td>NOT sporicidal; flammable; evaporates quickly; fixative if not cleaned first</td></tr><tr><td>**Phenolics (e.g., ortho-phenylphenol)**</td><td>1–2 %</td><td>Bactericidal, virucidal, mycobactericidal</td><td>NOT sporicidal; slow tuberculocidal; absorbed by porous materials</td></tr><tr><td>**Quaternary ammonium compounds (QACs) — benzalkonium chloride, didecyl dimethyl ammonium chloride (DDAC), cetrimide**</td><td>0.1–0.5 %</td><td>Bactericidal, fungistatic, virucidal (enveloped); **NOT mycobactericidal, NOT sporicidal**</td><td>Good cleaning agents; low toxicity; some MDROs (e.g., MRSA) may be intrinsically resistant; some Gram-negatives survive in diluted QACs</td></tr><tr><td>**Improved hydrogen peroxide (IHP, e.g., 0.5–1.5 % H₂O₂)**</td><td>0.5–3 %</td><td>Bactericidal, virucidal, mycobactericidal, fungicidal, **sporicidal at 1.5–3 %**</td><td>Rapid, safe, no toxic residue; short contact (1 min for routine)</td></tr><tr><td>**Peracetic acid (low %)**</td><td>0.04 % (environmental)</td><td>Sporicidal, mycobactericidal</td><td>Environmental, not for devices</td></tr></table>
+<p><b>Blood spill management:</b> 10,000 ppm hypochlorite (1:5 of 5 % stock), or 1:10 if spill is small. Absorb with paper towel, discard as clinical waste.</p>
+<p>***C. difficile* spore kill:** 1000 ppm hypochlorite (1:50) for routine cleaning, 5000 ppm (1:10) for outbreak settings. EPA-registered sporicidal agents (IHP, bleach, some IHP-QAC blends) are alternatives.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Endoscope Reprocessing — A Worked Algorithm</div>
+<p>Flexible endoscopes are the most common semi-critical device and the device most implicated in healthcare-associated outbreaks (CRE, MDR-<i>Pseudomonas</i>, <i>M. tuberculosis</i>, HBV, HCV, HIV). The CDC/HICPAC 2017 "Essential Elements of a Reprocessing Program for Flexible Endoscopes" and the BSG, ESGE, and ASGE guidance documents are the standards of practice.</p>
+<p>#### Reprocessing Steps (Multisociety, BSG, ESGE, ASGE 2018/2020/2022)</p>
+<p>``<code>mermaid flowchart TD A[Endoscope used on patient] --&gt; B[1. Point-of-use pre-cleaning IMMEDIATELY at bedside] B --&gt; B1[Flush channels with 200-300 mL enzymatic detergent + wipe exterior] B1 --&gt; C[2. Transport to reprocessing room in closed, leak-proof container] C --&gt; D[3. Leak test BEFORE immersion] D --&gt; E[4. Manual cleaning — FULL immersion in enzymatic detergent, brush all channels, 5-10 min, discard after each scope] E --&gt; F[5. Rinse with clean water] F --&gt; G[6. Visual inspection + borescope channel inspection if available] G --&gt; H[7. Automated Endoscope Reprocessor AER — wash, HLD, rinse, alcohol, drying] H --&gt; H1[HLD agent OPA 5 min or PAA 5 min at manufacturer temp] H1 --&gt; H2[Rinse with sterile / 0.2 µm filtered water] H2 --&gt; H3[70% alcohol flush + forced air dry ≥ 10 min] H3 --&gt; I[8. Storage — vertical, hanging, in a vented, monitored cabinet, max 7-14 days] I --&gt; J[9. Documentation: log scope, patient, AER cycle, BI/CI results] J --&gt; K[10. AER used before next patient] </code>``</p>
+<p>#### Key Points for Each Step</p>
+<ol><li><b>Bedside pre-cleaning (within 15 min):</b> Enzymatic detergent flushed through suction/biopsy channel; exterior wiped. Prevents drying of secretions and protein fixation.</li><li><b>Transport:</b> In a closed, leak-proof container labelled biohazard. The container itself is disinfected between uses.</li><li><b>Leak testing (mandatory before immersion):</b> Connect to leak tester, submerge in water, observe for bubbles indicating sheath damage. <b>A leaking scope cannot be processed</b> — it must be sent for repair (fluid infiltration in channels ruins electronics and creates biofilm reservoir).</li><li><b>Manual cleaning (THE MOST CRITICAL STEP):</b> All channels brushed with a single-use, channel-diameter-matched brush, the <b>elevator channel</b> (duodenoscopes) with an elevator-wire channel brush. Detergent immersion per IFU. <b>Visible soil after manual cleaning is the most common reason for a contaminated scope at AER completion.</b></li><li><b>Rinse</b> to remove detergent residue.</li><li><b>Visual inspection</b> under magnification; borescope inspection of channels (newer practice); leak-test again if necessary.</li><li><b>AER (Automated Endoscope Reprocessor):</b> Compliant with <b>ISO 15883-1/-4</b>; automated cycle of washing, HLD, rinse, alcohol flush, drying. <b>AER is a WASHER-DISINFECTOR, not a steriliser</b> — it is HLD, not sterilisation. AER water supply = critically-controlled (filtered, UV, or sterile for final rinse). The final rinse for duodenoscopes should be <b>sterile water</b> (CDC update 2015).</li><li><b>Storage:</b> Vertical, hanging to drain, in a <b>HEPA-filtered, positive-pressure, ventilated cabinet</b> to prevent recontamination by environmental pathogens. Reprocess again if not used within storage interval (typically 7–14 days; institutional).</li></ol>
+<div class="callout">[!warning] <b>Common failures / sources of outbreaks:</b> - Inadequate manual cleaning (esp. of the <b>elevator channel</b> of duodenoscopes). - Damage to channels (micro-defects harbouring biofilm). - Wet storage. - AER water-line contamination (biofilm, <i>Pseudomonas</i>). - Reuse of HLD past MEC / reuse-life. - Reuse of brushes or single-use valves.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: Sterilisation Monitoring &amp; Validation (Class 1–6 Indicators, BIs)</div>
+<p>ISO 11140 (sterilisation chemical indicators) and ISO 11138 (biological indicators) provide the framework. A robust monitoring program uses <b>physical, chemical, AND biological indicators simultaneously</b> — any failure halts use of the load.</p>
+<p>#### Physical Indicators</p>
+<ul><li>Cycle printout (or electronic record) of chamber temperature, chamber pressure, exposure time, dry time, jacket temperature, load probe.</li><li>Both chamber probe and load probe are now required in EN 285 / EN 13060. <b>The cycle is only released if both are within the validated tolerance</b> (e.g., ± 1 °C, ± 0.5 psi).</li></ul>
+<p>#### Chemical Indicators (CI) — Classes 1–6 (ISO 11140)</p>
+<table class="ctable"><tr><th>Class</th><th>Type</th><th>Function</th><th>Example</th></tr><tr><td>-------</td><td>------</td><td>----------</td><td>---------</td></tr><tr><td>**1**</td><td>External (process indicator)</td><td>Distinguish processed from unprocessed packs. Visible on outside (e.g., colour-change tape).</td><td>TAPE that changes from cream to dark when exposed to steam</td></tr><tr><td>**2**</td><td>Specific test (Bowie–Dick)</td><td>Daily air-removal test for prevacuum. Pass = uniform darkening of a defined test sheet.</td><td>Bowie–Dick test pack — fail = air pocket, retest</td></tr><tr><td>**3**</td><td>Single-variable (single-parameter)</td><td>Responds to ONE variable (e.g., 121 °C or 15 min)</td><td>Pellets/ink that melt at 121 °C</td></tr><tr><td>**4**</td><td>Multi-variable (multi-parameter)</td><td>Responds to ≥ 2 critical variables (e.g., T + time, or T + steam)</td><td>Strips that respond to 121 °C × 15 min</td></tr><tr><td>**5**</td><td>Integrating indicator</td><td>Responds to ALL critical variables; performance equivalent to a BI (≥ 10⁶ *G. stearothermophilus*) for steam</td><td>3M Attest mini-CI 5 (matched to BI)</td></tr><tr><td>**6**</td><td>Emulating indicator</td><td>Responds to ALL critical variables of a specific test cycle (e.g., 132 °C × 4 min vs 134 °C × 3.5 min)</td><td>Cycle-specific emulating strip</td></tr></table>
+<p><b>Practical rule:</b></p>
+<ul><li>Class 1 (tape) on every pack</li><li>Class 4 or 5 (inside every pack)</li><li>Class 5 in every implant load (often required as a release criterion)</li><li>Class 2 (Bowie–Dick) daily as a pre-cycle test</li><li>Class 6 only if specified by device manufacturer</li></ul>
+<p>#### Biological Indicators (BI) — ISO 11138</p>
+<table class="ctable"><tr><th>Sterilisation</th><th>BI Organism</th><th>Standard Inoculum</th><th>Readout Time</th></tr><tr><td>---------------</td><td>-------------</td><td>-------------------</td><td>--------------</td></tr><tr><td>Steam</td><td>*Geobacillus stearothermophilus* ATCC 7953</td><td>10⁵–10⁶ spores</td><td>24–48 h (traditional culture); 1–4 h (rapid fluorescence/enzymatic — e.g., Attest 3M, Thermalog)</td></tr><tr><td>H₂O₂ plasma</td><td>*G. stearothermophilus*</td><td>10⁶</td><td>24 h or rapid</td></tr><tr><td>EtO</td><td>*Bacillus atrophaeus* (ATCC 9372)</td><td>10⁶</td><td>48–72 h; rapid 4-h</td></tr><tr><td>Dry heat</td><td>*B. atrophaeus*</td><td>10⁶</td><td>48–72 h</td></tr><tr><td>PAA</td><td>*G. stearothermophilus*</td><td>10⁶</td><td>24 h</td></tr><tr><td>Peracetic acid immersion</td><td>*G. stearothermophilus*</td><td>10⁶</td><td>7 days for FDA "sporicidal" claim</td></tr></table>
+<p><b>Frequency of BI testing:</b></p>
+<ul><li>Steam: <b>At least weekly</b>, AND with every <b>implant</b> load (per ANSI/AAMI ST79, AORN, EN 285, ISO 17665). Some jurisdictions require BI in every load (e.g., Korea, parts of India).</li><li>H₂O₂ plasma: Per device manufacturer and per cycle validation; typically at least weekly in AERs for endoscopes.</li><li>EtO: With every load (slow cycle, low throughput).</li></ul>
+<p><b>Response to a failed BI:</b></p>
+<ol><li><b>Quarantine</b> the load and any other loads from the same steriliser since the last negative BI.</li><li><b>Recall</b> the items already distributed; assess patient exposure.</li><li>Retest the steriliser with a <b>positive control</b> BI (must grow) and <b>negative control</b> BI (must not grow).</li><li>Re-run a Bowie–Dick + 3 consecutive cycles with BIs. If all pass, return to service.</li><li>Document root cause (overload, wet pack, steriliser malfunction). Notify risk management if a patient has been exposed to a non-sterile implant.</li></ol>
+<p>#### The Bowie–Dick Test (Class 2, ISO 11140, ISO 17665)</p>
+<ul><li><b>Purpose:</b> Detects air entrapment and inadequate air removal in <b>prevacuum</b> (porous-load) steam steriliser.</li><li><b>Frequency:</b> <b>Daily, before the first processed load</b>, after major repair, after steam supply interruption.</li><li><b>Run:</b> Test pack (a uniform stack of cotton towels or a commercial pre-assembled BD test) at 134 °C × 3.5 min.</li><li><b>Interpretation:</b> Pass = uniform colour change across the entire sheet. Fail = light centre, dark edges = air pocket (retest; if still failing, take steriliser out of service).</li></ul>
+<div class="callout">[!tip] <b>Exam hook:</b> "You start a prevacuum steam steriliser and find the Bowie–Dick test has a light centre and dark edges. What is the cause?" — Air entrapment, vacuum pump failure, leak in chamber, or wet pack-causing failure. The steriliser must NOT be used until a repeat test passes.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: The CSSD (Central Sterile Services Department) Workflow</div>
+<p>CSSD (TSSU in the UK) is the heart of sterile services. The workflow is unidirectional from "dirty" to "clean" to "sterile" to "storage" to "issue" with physical separation to prevent recontamination.</p>
+<p>``<code>mermaid flowchart LR A[1. Point of Use] --&gt; B[2. Collection &amp; Transport to CSSD] B --&gt; C[3. Pre-Disinfection Soak] C --&gt; D[4. Decontamination Room Receiving] D --&gt; E[5. Disassembly &amp; Manual Cleaning] E --&gt; F[6. Washer-Disinfector ISO 15883] F --&gt; G[7. Inspection Function Test Lubrication] G --&gt; H[8. Assembly &amp; Packaging] H --&gt; I[9. Sterilisation] I --&gt; J[10. Sterile Storage] J --&gt; K[11. Distribution to OR / Wards] K --&gt; L[12. Tracking via UDI / RFID / Barcode] </code>``</p>
+<p>#### Key Features of a Modern CSSD</p>
+<ul><li><b>Three-zone layout:</b> Decontamination (negative pressure) → Clean assembly (positive pressure, ISO 7 / Class 7 if laminar) → Sterile storage (ISO 7 or ISO 8 with controlled humidity 30–60 %).</li><li><b>Workflow unidirectional</b> (dirty to clean), no backflow, separate staff where possible.</li><li><b>Instrument-tracking systems:</b> <b>barcode, RFID, UDI</b> integrated with the patient EMR for full traceability of which kit was used on which patient in which operation, and whether the BI/CI passed.</li><li><b>Washer-disinfectors</b> (ISO 15883-1, -2) for surgical instruments. They do NOT sterilise — they remove bioburden before sterilisation.</li><li><b>Function testing:</b> Scissor sharpness, needle-holder jaws, forceps alignment, light source output, etc.</li><li><b>Lubrication</b> with instrument milk (paraffin-based) for hinges.</li><li><b>Packaging:</b> Sterilisation pouches (paper/film) with a Class 1 external indicator; rigid containers with filter disks (Tyvek or cellulose); double-wrapped trays for steam. <b>H₂O₂ plasma uses non-cellulose, non-cotton wrappers (e.g., Tyvek/polypropylene).</b></li><li><b>Loading patterns:</b> Hinged instruments OPEN; paper side of pouch down; porous loads vertical; metal-on-metal prevented; max 70–80 % chamber utilisation.</li><li><b>Cycle release:</b> Cycle printout reviewed and signed; Class 1 external + Class 4/5 internal CIs verified; BI (if applicable) negative; no wet packs; load then transferred to sterile storage.</li></ul>
+<p>#### Steam Sterilisation Failures — Quick Reference</p>
+<table class="ctable"><tr><th>Problem</th><th>Likely Cause</th><th>Action</th></tr><tr><td>---------</td><td>--------------</td><td>--------</td></tr><tr><td>Wet pack</td><td>Overload, wet steam, inadequate drying, hot load on cold pack, drain blocked</td><td>Reduce load, drain trap, dry more, reheat chamber</td></tr><tr><td>Bowie–Dick fail</td><td>Vacuum pump failure, leak, chamber door seal, wet steam</td><td>Retest; if fail, service steriliser</td></tr><tr><td>BI fail</td><td>Underkill, cold spot, overloading, wrong cycle, steriliser malfunction</td><td>Quarantine + recall + retest + 3 negative cycles</td></tr><tr><td>Visible residue on instrument</td><td>Inadequate cleaning, detergent residue, hard water</td><td>Improve manual cleaning; final rinse with deionised water; check washer chemistry</td></tr><tr><td>Torn or wet packaging</td><td>Sharps, over-packing, mishandling</td><td>Repack and re-sterilise</td></tr><tr><td>Discolouration of instruments</td><td>Chlorhexidine residue, detergent, mineral deposition</td><td>Switch to non-corrosive, properly rinse</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 8: Prion Decontamination (CJD, vCJD, sCJD)</div>
+<p>Prions (PrPˢᶜ) are extraordinarily resistant to conventional sterilisation and disinfection. They are not nucleic-acid based and cannot be inactivated by heat-killing mechanisms effective on bacteria and viruses. WHO and the UK ACDP (Advisory Committee on Dangerous Pathogens) provide specific guidance.</p>
+<p><b>Spaulding rank for prions: above spores; below nothing.</b> They resist 121 °C × 15 min and 134 °C × 3 min. The only routinely available effective protocols are:</p>
+<table class="ctable"><tr><th>Step</th><th>Protocol</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>1</td><td>**Soak in 1 M NaOH** for 1 h at room temperature (inactivates 10⁴–10⁵ LD₅₀).</td></tr><tr><td>2</td><td>Autoclave in prevacuum at **134 °C × 18 min** (or 134 °C × 1 h for highest risk).</td></tr><tr><td>3</td><td>For total destruction of instrument, **incinerate** at > 850 °C.</td></tr><tr><td>Alternative (WHO 2016)</td><td>Combine: 1 M NaOH + 134 °C × 18 min as a single process, then rinse and sterilise by normal means.</td></tr><tr><td>Alternative (UK ACDP)</td><td>1 M NaOH soak + gravity-displacement 121 °C × 1 h (less effective).</td></tr><tr><td>Surface disinfection</td><td>1 M NaOH × 1 h, or undiluted bleach (20,000 ppm) × 1 h, or 4 M guanidine thiocyanate.</td></tr></table>
+<p><b>Practical management:</b></p>
+<ul><li><b>Use disposable / single-use instruments</b> whenever possible for known or suspected CJD patients.</li><li>For <b>re-usable instruments</b> in confirmed CJD, <b>quarantine and destroy (incinerate) after use</b> unless they can be processed in a dedicated prion protocol.</li><li>For <b>suspected CJD</b>, after confirmation of the diagnosis, instruments used in the diagnostic procedure are destroyed; instruments used <b>before</b> the procedure are similarly quarantined pending diagnosis.</li><li>For <b>eye (corneal) surgery</b> with reusable instruments in populations with vCJD, the UK used <b>disposable instruments</b> during the BSE/vCJD crisis.</li><li>Prion protocols apply to <b>neurosurgery, ophthalmic, and ENT/adenotonsillar surgery</b> (high-risk tissues: brain, spinal cord, posterior eye, olfactory epithelium, lymphoid tissue including tonsils, appendix, Peyer's patches).</li><li><b>Glutaraldehyde, OPA, PAA, H₂O₂ plasma, EtO, and even standard autoclaving do not reliably inactivate prions</b>; they cannot be used as a substitute for the WHO prion protocol.</li></ul>
+<div class="callout">[!warning] <b>Exam classic:</b> A patient with suspected CJD has just had an LP. The needle was stainless steel and re-usable. What do you do? — Quarantine the needle. If CJD is confirmed, <b>destroy by incineration</b>. If the diagnosis is excluded, the needle can be reprocessed normally.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 9: Environmental Cleaning &amp; Disinfection</div>
+<p>#### Routine Environmental Cleaning (CDC/HICPAC 2008, NHS National Cleaning Standards)</p>
+<p><b>Two-tier system in most countries:</b></p>
+<ul><li><b>High-touch / patient zone (high-risk) surfaces:</b> Bed rails, call bells, over-bed tables, infusion pump, monitors, BP cuff, stethoscope, door handles, light switches, lift buttons, taps. Cleaned <b>at least daily</b> and at patient discharge ("terminal cleaning"). Use hospital-grade disinfectant per hospital policy.</li><li><b>Low-touch surfaces:</b> Floors, walls, ceilings, windows. Cleaned on a scheduled basis. Floors are not a reservoir for most HAIs (evidence); the focus is high-touch.</li></ul>
+<p><b>Cleaning sequence:</b> <b>Clean → dirty, top → bottom, dry → wet</b>. Use microfibre or disposable wipes. Mop heads are laundered ≥ 70 °C; buckets emptied between rooms. <b>Change PPE and clean cloths between patient rooms.</b></p>
+<p><b>Disinfectants for routine environmental use:</b></p>
+<table class="ctable"><tr><th>Setting</th><th>Recommended</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>Routine daily cleaning (general ward)</td><td>Neutral detergent + 0.1 % hypochlorite OR 1 % H₂O₂ OR 1:100 hypochlorite (1000 ppm)</td></tr><tr><td>Blood spills</td><td>1:10 hypochlorite (10,000 ppm), absorb, dispose as clinical waste</td></tr><tr><td>*C. difficile* room</td><td>1:10–1:50 hypochlorite (5000–1000 ppm) OR EPA-registered sporicidal (IHP, PA, chlorine dioxide)</td></tr><tr><td>Norovirus</td><td>1000 ppm hypochlorite (1:50 of 5 % stock); steam clean soft furnishings</td></tr><tr><td>Multi-resistant organisms (MRSA, VRE, CRE)</td><td>Terminal cleaning with hypochlorite 1000 ppm, then IHP/UV-C "no-touch" room disinfection</td></tr><tr><td>ICU / isolation rooms</td><td>Terminal cleaning at discharge, including high-touch + equipment + bed</td></tr><tr><td>Operating theatre</td><td>After every case: 70 % IPA on surfaces or 1000 ppm hypochlorite</td></tr></table>
+<p><b>"No-touch" room disinfection (NTD)</b> is increasingly used <b>after</b> terminal cleaning for high-risk areas:</p>
+<ul><li><b>UV-C (254 nm):</b> Pulsed-xenon (Xenex PX-UV) or mercury (Tru-D SmartUVC). 4–15 min cycle, ~ log 3–4 reduction of C. difficile. No shadowing (line-of-sight limitation). Multiple positions for full coverage.</li><li><b>Vaporised H₂O₂ (VHP):</b> Bioquell BQ-50, Steris V-1000. &gt; log 6 reduction of C. difficile, MRSA, viruses, fungi. 1.5–4 h cycle, requires room sealing, no staff entry during cycle. Compatible with most materials except some dyes, brass, copper, photographic film.</li><li><b>Hydrogen peroxide vapour (HPV) — HPV-AR, Glosair</b> systems (aerosolised 5–6 % H₂O₂, lower concentration than VHP).</li><li><b>Chlorine dioxide, ozone, electrostatic sprayers (e.g., Protexx)</b> — emerging evidence.</li></ul>
+<div class="callout">[!tip] <b>Common exam question — UV-C vs VHP:</b> VHP achieves higher log reductions and is sporicidal, but requires room sealing and is incompatible with brass/copper. UV-C is faster but line-of-sight, so shadows in the room are not disinfected. Both are an <i>adjunct</i> to manual cleaning, not a replacement.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 10: Newer &amp; Emerging Technologies</div>
+<table class="ctable"><tr><th>Technology</th><th>Application</th><th>Evidence</th><th>Limitations</th></tr><tr><td>------------</td><td>-------------</td><td>----------</td><td>-------------</td></tr><tr><td>**UV-C (mercury / LED)**</td><td>High-touch surface and room decontamination</td><td>Reduces HAI by 10–30 % in MRSA/VRE/C. diff outbreak</td><td>Line-of-sight; quartz-glass penetration issues; expensive</td></tr><tr><td>**Pulsed xenon UV**</td><td>Room decontamination</td><td>Equivalent to mercury UV</td><td>Same shadowing</td></tr><tr><td>**Vaporised H₂O₂ (VHP)**</td><td>Room + ambulance + isolator decontamination</td><td>Log 6 reduction of spores</td><td>Slow, requires sealing, materials compatibility</td></tr><tr><td>**Plasma (cold atmospheric, CAP)**</td><td>Surface disinfection, biofilm</td><td>Experimental</td><td>Limited device clearance</td></tr><tr><td>**Antimicrobial surfaces:** copper, silver-ion-impregnated polymers, light-activated TiO₂, organosilane (Aegis), polyhexamethylene biguanide (PHMB)</td><td>High-touch surfaces</td><td>Variable, some reductions in HAI</td><td>Cost; durability; some loss of activity with soiling</td></tr><tr><td>**H₂O₂ nebulisation / dry-mist H₂O₂**</td><td>Whole-room disinfection</td><td>Sporicidal, faster than VHP</td><td>Requires sealing, less log reduction than VHP</td></tr><tr><td>**Bacteriophage cocktails**</td><td>Surface biofilm control</td><td>Experimental</td><td>Regulatory complexity, narrow host range</td></tr><tr><td>**Microfibre vs cotton**</td><td>Cleaning</td><td>Microfibre removes 95 % + of microbes vs 50–70 % for cotton</td><td>More expensive; need laundering protocol</td></tr><tr><td>**Electrolysed water (hypochlorous acid)**</td><td>Surface, instrument soak, wound irrigation</td><td>Broad-spectrum, low toxicity, sporicidal at 100–200 ppm</td><td>Stability; corrosion of metals at high concentration</td></tr><tr><td>**Gluteraldehyde-free HLDs (ASP Cidex OPA, Anios)**</td><td>Endoscope HLD</td><td>Reduced toxicity, faster</td><td>Some still fix protein</td></tr><tr><td>**Supercritical CO₂**</td><td>Drug and device sterilisation</td><td>Low temp, no residue</td><td>Few devices cleared</td></tr><tr><td>**Cold nitrogen dioxide (NO₂, Noxilizer)**</td><td>Polymer, biologic, combination products</td><td>Low temp (10–30 °C), short cycle</td><td>Limited devices; toxic; new technology</td></tr><tr><td>**UV-LED (265–285 nm)**</td><td>Endoscope channel, hand hygiene, water</td><td>Compact, instant on, no mercury</td><td>Lower output than mercury; penetration issues</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 11: Regulatory Framework (Selected)</div>
+<table class="ctable"><tr><th>Standard / Regulation</th><th>Scope</th></tr><tr><td>-----------------------</td><td>-------</td></tr><tr><td>**ISO 17665**</td><td>Moist heat sterilisation of health care products</td></tr><tr><td>**ISO 11135**</td><td>Ethylene oxide sterilisation</td></tr><tr><td>**ISO 11137**</td><td>Radiation sterilisation (γ, e-beam, X-ray)</td></tr><tr><td>**ISO 14937**</td><td>Sterilisation of health care products — general requirements</td></tr><tr><td>**ISO 11138**</td><td>Biological indicators (Parts 1–5)</td></tr><tr><td>**ISO 11140**</td><td>Chemical indicators (Classes 1–6)</td></tr><tr><td>**ISO 15883**</td><td>Washer-disinfectors (Parts 1–7)</td></tr><tr><td>**EN 285**</td><td>Large steam steriliser specification (European)</td></tr><tr><td>**EN 13060**</td><td>Small steam steriliser specification (B / S / N class cycles)</td></tr><tr><td>**EN 867 / ISO 11140-3**</td><td>Bowie–Dick tests</td></tr><tr><td>**FDA 510(k)**</td><td>US clearance for HLDs and sterilisation devices</td></tr><tr><td>**EU MDR 2017/745**</td><td>Medical Device Regulation (Annex I — General Safety and Performance Requirements, GSPR 11.1–11.7 on infection)</td></tr><tr><td>**UK MHRA / CQC**</td><td>UK compliance</td></tr><tr><td>**CDC / HICPAC**</td><td>US guidelines</td></tr><tr><td>**WHO Decontamination Manual**</td><td>Global reference</td></tr><tr><td>**AAMI ST79**</td><td>Comprehensive guide to steam sterilisation in healthcare (US)</td></tr><tr><td>**AAMI ST91**</td><td>Flexible endoscope reprocessing (US)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>Reusable bronchoscope after TB-positive patient</td><td>Spaulding: semi-critical (mucous membrane); HLD required</td><td>HLD with OPA 5 min or PAA 5 min in AER; no special TB protocol needed (M. tuberculosis is killed by standard HLD)</td></tr><tr><td>Colonoscope for a CJD patient</td><td>Prion contamination</td><td>**Destroy by incineration**; do NOT use standard HLD/sterilisation; if forced, use dedicated instruments + 1 M NaOH + 134 °C × 18 min</td></tr><tr><td>Duodenoscope with isolated CRE outbreak</td><td>High-risk semi-critical device; Spaulding: semi-critical but consider sterilisation</td><td>Switch to H₂O₂ plasma (Sterrad 100NX Flexoscope), or single-use duodenoscope, or EtO after manual cleaning + borescope inspection</td></tr><tr><td>Single-use ophthalmic instruments in high-vCJD-prevalence area (UK 1997–2012)</td><td>Prion risk</td><td>**Single-use disposable** instruments; destroy after use</td></tr><tr><td>Heat-stable orthopaedic implant</td><td>Critical (enters bone)</td><td>Steam 134 °C prevacuum; **BI in every implant load**; Class 5 internal CI; Class 1 external</td></tr><tr><td>Heat-labile fibre-optic laryngoscope</td><td>Semi-critical</td><td>H₂O₂ plasma (Sterrad NX/100NX) or EtO with aeration; some HLD with OPA</td></tr><tr><td>Spill of blood on the floor</td><td>Biohazard</td><td>10,000 ppm hypochlorite, absorb, dispose as clinical waste; PPE (gloves + apron)</td></tr><tr><td>Patient with C. difficile</td><td>Spore contamination of environment</td><td>1000–5000 ppm hypochlorite; IHP or sporicidal; **soap and water for hand hygiene** (alcohol does not kill C. diff spores); contact precautions</td></tr><tr><td>Bowie–Dick test fails on Tuesday morning</td><td>Air-removal test failure</td><td>**Do NOT use steriliser**; retest; if repeat fail, service and re-validate</td></tr><tr><td>Steriliser BI fails on Friday afternoon</td><td>Sterility assurance failure</td><td>**Recall** all loads from this steriliser since last negative BI; quarantine; investigate; 3 negative cycles before reuse</td></tr><tr><td>Power-cut during a prevacuum steam cycle</td><td>Cycle abort</td><td>Load is **NOT sterile**; re-pack and re-cycle (or destroy very heat-sensitive items)</td></tr><tr><td>Re-using glutaraldehyde 2 % for the 8th day with MEC reading 1.2 %</td><td>Below threshold (≥ 1.5 %)</td><td>**Discard**; remake; or convert to OPA/PAA</td></tr><tr><td>Flexible endoscope stored for 12 days without use</td><td>Possible recontamination</td><td>**Reprocess** before use (institutional storage interval policy, typically 7–14 days)</td></tr><tr><td>Bronchoscope with positive leak test</td><td>Channel breach</td><td>**Send for repair**; do not use; channel can harbour biofilm and leak fixative/HLD into patient</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Spaulding's three categories</b> must be answered in <b>any</b> IPC exam question on a medical device. - <b>Mycobacterium</b> is the <b>marker organism for HLD efficacy</b> (FDA requirement: 10⁵ <i>M. terrae</i> killed in 45 min at 25 °C). - <b>Bowie–Dick test = daily, prevacuum, 134 °C × 3.5 min</b>; failure = air entrapment, steriliser out of service. - <b>EtO requires aeration</b> (8–12 h; FDA limit &lt; 1 ppm residue). Cannot be rushed. - <b>H₂O₂ plasma cannot process cellulose, powders, or oils</b> — these are the most common exam "trick" answers. - <b>Steam 121 °C × 15 min @ 15 psi</b> OR <b>134 °C × 3–4 min prevacuum</b>; <b>134 °C × 18 min</b> for prions. - <b>Bleach 1:10 = 5000 ppm; 1:100 = 1000 ppm.</b> <b>C. difficile = 1000–5000 ppm</b>; blood spills = 10,000 ppm. - <b>H₂O₂ plasma BI = G. stearothermophilus</b>; <b>EtO BI = B. atrophaeus</b>; <b>steam BI = G. stearothermophilus</b>. - <b>Prion decontamination = 1 M NaOH + 134 °C × 18 min</b>; incinerate for high-risk tissue. - <b>Aldehyde-based HLDs (glutaraldehyde, OPA) fix protein</b> → bedside pre-cleaning is essential. - <b>H₂O₂ plasma cycle: 28–91 min; STERRAD NX (28 min)</b>, STERRAD 100NX Standard (47 min). - <b>Endoscope reprocessing failure = outbreaks of CRE, MDR-Pseudomonas, HCV</b> — the duodenoscope is the highest-risk scope due to its elevator channel.</div>
+<div class="callout">[!warning] - <b>Exam trap:</b> A duodenoscope is semi-critical (Spaulding), but in modern practice many guidelines now recommend <b>sterilisation</b> (H₂O₂ plasma) after each use, not just HLD, because of CRE outbreaks. - <b>Exam trap:</b> 70 % alcohol is NOT sporicidal; it cannot be used for high-level disinfection. - <b>Exam trap:</b> Quaternary ammonium compounds are <b>NOT mycobactericidal</b>; do not use for TB-contaminated surfaces. - <b>Exam trap:</b> Alcohol does <b>not</b> kill C. difficile spores → use <b>soap and water</b> for hand hygiene in C. diff rooms.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Sterilisation = HLD</td><td>**NO.** Sterilisation kills all spores; HLD does not.</td></tr><tr><td>H₂O₂ plasma can replace EtO for everything</td><td>NO — H₂O₂ plasma cannot handle cellulose, powders, oils, very long/multi-lumen devices, or certain metals.</td></tr><tr><td>100 % EtO is not flammable</td><td>100 % EtO is not flammable in pure form, but mixes with air at 3–100 % ARE explosive; many new systems use non-flammable EtO blends (e.g., 8.5 % EtO + 91.5 % CO₂ or HCFC).</td></tr><tr><td>Bleach is the best for everything</td><td>Bleach is corrosive, inactivated by organic soil, unstable when diluted; it is the workhorse for *C. diff* and blood spills but is not always ideal for routine surfaces (H₂O₂, QACs, IHP are alternatives).</td></tr><tr><td>UV-C decontaminates a whole room</td><td>NO. UV-C is line-of-sight. Shadows (under beds, behind monitors) are not disinfected. Multiple positions needed.</td></tr><tr><td>70 % IPA sterilises</td><td>NO. 70 % IPA is bactericidal, mycobactericidal, virucidal; **not sporicidal**.</td></tr><tr><td>Aldehyde HLD kills prions</td><td>NO. None of the HLDs inactivate prions.</td></tr><tr><td>"Hot" glutaraldehyde is the same as PAA</td><td>NO. Glutaraldehyde is an alkylating aldehyde that **fixes** protein; PAA is a strong oxidiser that **does not** fix protein. PAA is preferred for inadequate pre-cleaning.</td></tr><tr><td>Bowie–Dick test is for steam quality</td><td>It is for **air removal in prevacuum** steriliser; steam quality is checked separately.</td></tr><tr><td>H₂O₂ plasma can be used for liquid sterilisation</td><td>NO. H₂O₂ plasma is for non-liquid, dry, single-channel, non-cellulose devices.</td></tr><tr><td>"Flash" sterilisation (IUSS) is acceptable for implants</td><td>Most guidelines (AORN, AAMI, NHS) **DO NOT** allow IUSS for implants; if unavoidable, full BI-required cycle.</td></tr><tr><td>OPA is just a "faster glutaraldehyde"</td><td>OPA has different chemistry, no vapour hazard, less irritant, but **stains** skin/linen/protein and is associated with **anaphylaxis** in bladder-cancer patients undergoing cystoscopy.</td></tr><tr><td>Hydrogen peroxide 3 % is the same as 7.5 %</td><td>3 % H₂O₂ is **intermediate-level** (NOT sporicidal, slow mycobactericidal); 7.5 % H₂O₂ is HLD (mycobactericidal in 30 min, sporicidal in 6 h).</td></tr><tr><td>All "low-temperature" methods are equivalent</td><td>No. H₂O₂ plasma ≠ EtO ≠ VHP ≠ PAA ≠ ozone. Different chemistries, different material compatibilities, different cycle parameters.</td></tr><tr><td>Endoscope storage 30 days is fine</td><td>Most institutions set **7–14 days** as the maximum storage interval; longer storage = re-process.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Spaulding "CSN":</b> <b>C</b>ritical = <b>S</b>terilise (tissue/vascular), <b>S</b>emi-critical = <b>H</b>LD (mucosa), <b>N</b>on-critical = <b>L</b>ow-level (skin).</li><li><b>"Mr Spock" — Most-Resistant → Least:</b> <b>P</b>rion → <b>S</b>pore → <b>M</b>ycobacterium → (<b>V</b>irus non-enveloped) → <b>F</b>ungus → <b>B</b>acteria → <b>V</b>irus enveloped.</li><li><b>"KILL KBS"</b> — <b>K</b>ill sequence of disinfectants: kills bacteria, fungi, viruses (most), mycobacteria (intermediate/high only), spores (sterilisation only).</li><li><b>"Two Ts and an M":</b> <b>T</b>emperature, <b>T</b>ime, <b>M</b>oisture (steam) = the trio for moist-heat sterilisation; remove any one and the cycle fails.</li><li><b>Steam BI = "G</b>eo<b>S</b>team"** (<i>G. stearothermophilus</i>). <b>EtO BI = "</b>A<b>trophaeus = </b>A<b>erospace"</b> (<i>B. atrophaeus</i>).</li><li><b>CSSD dirty → clean → sterile: "DiCKS"</b>.</li><li><b>"C" for CJD cycle = 1 M NaOH + 134 °C × 18 min.</b></li><li><b>"4 Hs of HLD":</b> <b>H</b>igh-level, <b>H</b>ospital, <b>H</b>eat-sensitive devices, <b>H</b>umans (semi-critical contact with patients).</li><li><b>"PADD" for endoscope reprocessing:</b> <b>P</b>re-clean → <b>A</b>ER/manual clean → <b>D</b>isinfect (HLD) → <b>D</b>ry &amp; store.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Sterilisation, Disinfection &amp; Decontamination)) Definitions Sterilisation SAL 10⁻⁶ HLD Intermediate Low-level Decontamination umbrella Spaulding Classification Critical Sterilise Semi-critical HLD Non-critical Low Sterilisation Methods Steam Autoclave Gravity 121°C 15 min Prevacuum 134°C 3-4 min Prion 134°C 18 min Bowie-Dick daily Dry Heat 160°C 2 h EtO 37-63°C + aeration 8-12 h Toxic flammable B atrophaeus BI H2O2 Plasma STERRAD V-PRO 45-55°C 28-91 min No cellulose powders oils G stearothermophilus BI Peracetic Acid 0.2% 5-12 min No protein fixation Single-use Radiation Gamma Cobalt-60 E-beam accelerator Single-use devices Filtration 0.22 μm Liquids only High-Level Disinfectants Glutaraldehyde 2% 20-45 min 14-30 d Vapour toxic fixation OPA 0.55% 5 min 14 d Stains anaphylaxis Peracetic Acid 0.2% 5-12 min No fixation H2O2 7.5% 30 min 21 d No fixation Environmental Disinfectants Hypochlorite 1:10 to 1:100 70% IPA QACs not mycobactericidal Phenolics Endoscope Reprocessing Bedside pre-clean Leak test Manual clean AER ISO 15883 HLD rinse dry Storage cabinet 7-14 d max CSSD Workflow Receiving Cleaning Washer-disinfector ISO 15883 Inspection Function test Packaging Class 1 Sterilisation Cycle Sterile storage Tracking UDI RFID Sterilisation Monitoring Physical T P time Chemical Class 1-6 Biological G stearothermophilus steam plasma B atrophaeus EtO dry heat Bowie-Dick daily prevac Implant BI every load Prions 1 M NaOH 134°C 18 min Incinerate high-risk tissue Single-use preferred Environmental Cleaning High-touch daily Hypochlorite C diff VHP UV-C no-touch Regulatory ISO 17665 steam ISO 11135 EtO ISO 11137 radiation ISO 15883 washer EN 285 EN 13060 FDA 510k EU MDR 2017-745 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart — Spaulding & Method Selection</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Medical Device] --&gt; B{Enters sterile tissue or vascular system?} B -- Yes --&gt; C[CRITICAL] B -- No --&gt; D{Contacts intact mucosa or non-intact skin?} D -- Yes --&gt; E[SEMI-CRITICAL] D -- No --&gt; F[NON-CRITICAL] C --&gt; G{Heat moisture stable?} G -- Yes --&gt; H[Steam 121-134°C] G -- No --&gt; I{Validated lumen?} I -- Yes --&gt; J[H2O2 plasma V-PRO] I -- No --&gt; K[EtO with aeration] E --&gt; L[Pre-clean then HLD] L --&gt; M{Time critical?} M -- Yes --&gt; N[OPA 5 min or PAA 5 min] M -- No --&gt; O[Glutaraldehyde 20-45 min] F --&gt; P[70% IPA or QAC or 1:100 hypochlorite] H --&gt; Q[BI weekly; implant BI every load; Bowie-Dick daily] J --&gt; R[G stearothermophilus BI per cycle] K --&gt; S[B atrophaeus BI every load; aerate 8-12 h] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Flowchart — Prion-Contaminated Instrument</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Instrument used on confirmed or strongly suspected CJD/vCJD] --&gt; B{Single-use available?} B -- Yes --&gt; C[Use disposable; incinerate after use] B -- No --&gt; D[Reusable dedicated instrument set] D --&gt; E[1. Soak in 1 M NaOH for 1 h at room temperature] E --&gt; F[2. Autoclave prevacuum 134°C × 18 min] F --&gt; G{After procedure, has CJD been confirmed?} G -- Yes --&gt; H[Quarantine instrument; incinerate] G -- No --&gt; I[Return to routine processing after prion cycle] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Spaulding triangle diagram (Critical / Semi-critical / Non-critical) with example instruments</li><li>[ ] Comparison table of sterilisation methods (cycle T, time, material compatibility)</li><li>[ ] Bowie–Dick test interpretation image (pass = uniform dark; fail = light centre)</li><li>[ ] CSSD floor plan (3-zone layout: decontamination, clean, sterile storage)</li><li>[ ] Endoscope reprocessing step-by-step photographs</li><li>[ ] BI incubator + ampoule comparison</li><li>[ ] Prion cycle 134 °C × 18 min highlighted</li><li>[ ] H₂O₂ plasma compatible vs incompatible materials infographic</li><li>[ ] Hypochlorite dilution chart (1:10, 1:50, 1:100, 1:500)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] WHO Decontamination and Reprocessing of Medical Devices — open WHO course</li><li>[ ] AAMI / AORN "Steam Sterilisation" webinar</li><li>[ ] CDC "Essential Elements of a Reprocessing Program for Flexible Endoscopes"</li><li>[ ] STERRAD / V-PRO manufacturer training videos</li><li>[ ] NHS Estates HTM 01-01 / HTM 01-06 walk-through</li><li>[ ] Bioquell VHP room decontamination cycle</li><li>[ ] Dr. Michelle Alfa's "Endoscope Reprocessing 101" lectures</li><li>[ ] CDC / ATSDR "Prion Diseases and Reprocessing" webinar</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Definitions:</b> <b>Sterilisation</b> = SAL 10⁻⁶, all microbial life incl. spores. <b>HLD</b> = kills all except spores. <b>Intermediate</b> = kills mycobacteria, not spores. <b>Low-level</b> = kills vegetative bacteria, not mycobacteria/spores. - <b>Spaulding:</b> <b>Critical = Sterilise</b> (surgical instruments, implants, cardiac catheters). <b>Semi-critical = HLD</b> (endoscopes, laryngoscopes, TEE). <b>Non-critical = Low/intermediate</b> (BP cuffs, stethoscopes, surfaces). - <b>Steam:</b> 121 °C × 15 min @ 15 psi (gravity); <b>134 °C × 3–4 min prevac</b>; <b>134 °C × 18 min for prions</b>. - <b>Bowie–Dick:</b> Daily prevacuum, 134 °C × 3.5 min, uniform dark = pass. - <b>EtO:</b> 37–63 °C, <b>aeration 8–12 h</b> (residue toxic), <i>B. atrophaeus</i> BI, every load. - <b>H₂O₂ plasma (STERRAD/V-PRO):</b> 45–55 °C, 28–91 min, <b>no cellulose/powders/oils/long multi-lumen</b>, <i>G. stearothermophilus</i> BI. - <b>Glutaraldehyde 2 %:</b> 20–45 min HLD, <b>fixes protein</b>, vapour toxic; MEC ≥ 1.5 %; 14–30 d reuse. - <b>OPA 0.55 %:</b> 5 min HLD, no vapour, <b>stains protein</b>; rare anaphylaxis in cystoscopy; 14 d reuse. - <b>Peracetic acid 0.2 %:</b> 5–12 min HLD, <b>does NOT fix protein</b>; single-use. - <b>H₂O₂ 7.5 %:</b> 30 min HLD, 6 h sporicidal; 21 d reuse. - <b>Environmental:</b> 1:10 hypochlorite for blood/C. diff; 1:100 for routine; <b>70 % IPA</b> for non-porous; <b>QAC not mycobactericidal</b>; <b>UV-C line-of-sight, VHP seal-room</b>. - <b>Endoscope:</b> Pre-clean at bedside → leak test → manual clean → AER HLD → rinse → alcohol flush → dry → store ≤ 7–14 d; <b>sterile water for final rinse</b> of duodenoscopes. - <b>Prions:</b> <b>1 M NaOH + 134 °C × 18 min</b>; destroy by incineration for high-risk tissue; no HLD/sterilisation inactivates prions. - <b>BI:</b> Steam/H₂O₂ plasma/PAA = <i>G. stearothermophilus</i>; EtO/dry heat = <i>B. atrophaeus</i>. - <b>Regulatory:</b> ISO 17665 (steam), 11135 (EtO), 11137 (radiation), 15883 (washer-disinfector), EN 285/13060 (sterilisers), AAMI ST79 (steam), ST91 (endoscopes). - <b>CI Classes:</b> 1 = tape outside; 2 = Bowie–Dick; 3 = single variable; 4 = multi-variable; 5 = integrating (BI-equivalent); 6 = emulating cycle-specific.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define sterilisation, HLD, intermediate-level, low-level disinfection. Give one example of each.</li><li>Spaulding classification — list the three categories with two example devices in each.</li><li>Steam autoclave standard cycle (gravity, prevacuum) — temperature, pressure, time.</li><li>Prion cycle — temperature, time, NaOH concentration.</li><li>Bowie–Dick test — purpose, frequency, temperature, time, interpretation.</li><li>EtO — temperature, time, why aeration, BI organism, OSHA hazard.</li><li>H₂O₂ plasma — typical temperature, time, what materials are NOT processed, BI organism.</li><li>Glutaraldehyde — concentration, contact time, mechanism (fixation), reuse life, key hazard.</li><li>OPA — concentration, contact time, special warning (cystoscopy).</li><li>Peracetic acid — concentration, contact time, why preferred after inadequate pre-cleaning.</li><li>Endoscope reprocessing — list the 7–10 steps in order.</li><li><i>C. difficile</i> environmental cleaning — agent, concentration, why alcohol does not work.</li><li>Sterilisation chemical indicator classes 1–6 — one example of each.</li><li>Biological indicator for steam and EtO — name the organisms.</li><li><i>C. difficile</i> hand hygiene — soap and water vs alcohol, why.</li><li>Prion decontamination — 1 M NaOH and 134 °C × 18 min; instrument fate.</li><li>List 5 things that H₂O₂ plasma cannot sterilise.</li><li>Why is glutaraldehyde being replaced by OPA and PAA in endoscopy?</li><li>ISO standards — 17665, 11135, 15883 — what does each cover?</li><li>Newer "no-touch" room disinfection technologies — UV-C vs VHP — pros and cons.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Spaulding classification (3 categories, examples, decisions); Steam sterilisation (121 °C/15 min, 134 °C/3–4 min, prion cycle 134 °C/18 min); Bowie–Dick test (134 °C × 3.5 min, daily, prevacuum); HLD agents (glutaraldehyde, OPA, PAA, H₂O₂ — concentration, time, key warning); Endoscope reprocessing (10 steps); C. difficile cleaning (1000–5000 ppm hypochlorite; soap and water for hands); BI organisms (G. stearothermophilus, B. atrophaeus); Chemical indicator classes 1–6; Prion decontamination (1 M NaOH + 134 °C × 18 min).</td></tr><tr><td>**Should Know 🟡**</td><td>EtO aeration 8–12 h, *B. atrophaeus* BI, every load; H₂O₂ plasma limitations (no cellulose/powders/oils); Lumen validation per device/cycle; AER and ISO 15883; CSSD workflow and 3-zone layout; UDI/RFID instrument tracking; High-touch vs low-touch surfaces; UV-C and VHP no-touch room disinfection; 70 % IPA, QAC, phenolic, IHP — spectrum of activity; Blood spill 10,000 ppm hypochlorite; Spaulding 3-zone flowchart; Regulatory framework (ISO 17665, 11135, 15883, AAMI ST79/91, EU MDR).</td></tr><tr><td>**Nice to Know 🟢**</td><td>Supercritical CO₂; Cold NO₂ (Noxilizer); UV-LED 265 nm; Pulsed xenon; Electrolysed water (HOCl); Antimicrobial copper/silver surfaces; TEE probe specific decontamination; H₂O₂ plasma cycle parameters (STERRAD NX vs 100NX vs 100S); V-PRO cycle claims; Sterrad 100NX "Duo" for long lumens; AAMI ST79 BI frequency; Prion strain differences (vCJD lymphoid vs sCJD CNS); Reprocessing of robotic instruments; AI / borescope channel inspection; Quantitative microbiological surveillance of endoscopes (culturing protocols per CDC).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li><b>Definition &amp; spectrum</b> of microbial resistance (prion → spore → mycobacteria → viruses → fungi → bacteria) → <b>Spaulding classification</b> with examples → <b>Sterilisation methods</b> (steam, dry heat, EtO, H₂O₂ plasma, PAA, radiation) with parameters and limitations → <b>HLD agents</b> (glutaraldehyde, OPA, PAA, H₂O₂) → <b>Endoscope reprocessing</b> in detail → <b>Sterilisation monitoring</b> (CI 1–6, BI, Bowie–Dick) → <b>CSSD workflow</b> → <b>Prion decontamination</b> → <b>Environmental cleaning</b> → <b>Regulatory framework</b> → <b>Emerging technologies</b>.</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Spaulding + decision tree</li><li>Steam sterilisation cycles + monitoring</li><li>HLD comparison (glutaraldehyde vs OPA vs PAA vs H₂O₂)</li><li>Endoscope reprocessing steps</li><li>Prion decontamination</li><li>CI / BI / Bowie–Dick</li><li>CSSD workflow</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"Sterilisation versus disinfection?" — Sterilisation = SAL 10⁻⁶ (all microbial life incl. spores); disinfection ≠ sporicidal. Three levels: high (kills mycobacteria, not spores reliably), intermediate (kills mycobacteria, not spores), low (vegetative bacteria only). Spaulding is the decision framework: critical = sterilise; semi-critical = HLD; non-critical = low/intermediate.</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Patient with MDR-<i>Pseudomonas</i> VAP, last bronchoscopy 24 h ago → was the scope reprocessed correctly? → use of AER + OPA 5 min, manual cleaning with borescope check, sterile water rinse, dried before storage → consider CRE duodenoscope outbreaks and recent shift to sterilisation of duodenoscopes.</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above.</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>Spaulding triangle; steam 121/134 cycle; HLD 4 agents; prion cycle; Bowie–Dick; C. diff bleach 1000 ppm; BI organisms.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1. A flexible colonoscope is to be reprocessed after use on a patient with active pulmonary TB. According to Spaulding's classification, what is the minimum level of decontamination required?</b> A. Cleaning only B. Low-level disinfection C. Intermediate-level disinfection D. <b>High-level disinfection (HLD)</b> ✅ E. Sterilisation is mandatory</p>
+<p><b>2. Steam sterilisation in a prevacuum porous-load autoclave at 134 °C — what is the standard minimum hold time (in addition to Bowie–Dick test time)?</b> A. 30 s B. 1 min C. <b>3 min</b> ✅ D. 10 min E. 30 min</p>
+<p><b>3. Which of the following materials CANNOT be sterilised in a hydrogen peroxide plasma (STERRAD) system?</b> A. Stainless-steel surgical instruments B. Heat-sensitive endoscopic camera heads C. <b>Cotton gauze swabs</b> ✅ D. Single-channel flexible endoscopes (validated) E. Rigid laparoscopes</p>
+<p><b>4. Ethylene oxide (EtO) sterilisation has which of the following as a mandatory post-cycle step?</b> A. Quarantine for culture B. Cooling under vacuum C. <b>Aeration to remove toxic residues</b> ✅ D. UV-C decontamination E. Sterile water rinse</p>
+<p><b>5. Glutaraldehyde 2 % at 25 °C requires what minimum contact time to achieve high-level disinfection?</b> A. 5 min B. <b>20 min</b> ✅ C. 45 min D. 6 h E. 12 h</p>
+<p><b>6. The Bowie–Dick test is used to verify:</b> A. Steam quality (superheat) B. <b>Air removal in a prevacuum steam steriliser</b> ✅ C. Biological inactivation D. The integrity of packaging E. The MEC of glutaraldehyde</p>
+<p><b>7. Which biological indicator organism is used to validate STEAM sterilisation cycles?</b> A. <i>Bacillus atrophaeus</i> B. <b>Geobacillus stearothermophilus</b> ✅ C. <i>Bacillus pumilus</i> D. <i>Clostridium sporogenes</i> E. <i>Aspergillus niger</i></p>
+<p><b>8. A patient with confirmed Creutzfeldt–Jakob disease (CJD) has just had a lumbar puncture performed with a reusable stainless-steel needle. The most appropriate management of the needle is:</b> A. Standard steam sterilisation at 134 °C × 3 min B. Soak in 2 % glutaraldehyde for 1 h C. Routine HLD with OPA D. <b>Incinerate the needle (after quarantine pending confirmation)</b> ✅ E. H₂O₂ plasma sterilisation</p>
+<p>**9. For environmental cleaning of a room previously occupied by a patient with <i>Clostridioides difficile</i> diarrhoea, the recommended agent is:<b> A. 70 % isopropyl alcohol B. Quaternary ammonium compound C. </b>Sodium hypochlorite 1000–5000 ppm (or EPA-registered sporicidal)** ✅ D. 3 % hydrogen peroxide E. Phenolic disinfectant</p>
+<p><b>10. A 2 % ortho-phthalaldehyde (OPA) solution has a high-level disinfection contact time of:</b> A. 1 min B. <b>5 min</b> ✅ C. 20 min D. 45 min E. 12 h</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<p>**1. A 60-year-old man with biliary obstruction undergoes ERCP using a duodenoscope. After the procedure, the scope is reprocessed in the AER with 0.55 % OPA for 5 min, rinsed, alcohol-flushed, and stored. Two weeks later, an outbreak of carbapenem-resistant <i>Klebsiella pneumoniae</i> is linked to the unit. Which of the following is the MOST LIKELY root cause?<b> A. The OPA contact time was too short B. </b>Inadequate manual cleaning of the elevator channel** ✅ C. Failure to use sterile water for the final rinse D. Re-use of OPA past the 14-day reuse-life E. The storage cabinet was not HEPA-filtered</p>
+<p><b>2. A theatre nurse notes that a prevacuum steam steriliser's Bowie–Dick test (134 °C × 3.5 min) shows a light centre and dark edges. The MOST appropriate next step is:</b> A. Discard the test, perform a routine cycle, document on the printout B. Repeat the Bowie–Dick; if still failing, do not use the steriliser until serviced ✅ C. Increase the temperature to 138 °C and retest D. Replace the chemical indicator tape on all packs from this steriliser E. Run a biological indicator cycle and wait 48 h</p>
+<p><b>3. A new endoscope washer-disinfector (AER) is being commissioned. Validation requires three IQ/OQ/PQ steps. The PQ (performance qualification) MUST include:</b> A. Bowie–Dick test daily B. <b>Quantitative microbiological testing of final rinse water and recovery of test organisms from artificially contaminated scopes</b> ✅ C. Sterility test of every scope D. Class 6 emulating indicator E. Pressure-leak test of the chamber</p>
+<p><b>4. A hospital pharmacist is compounding a heat-labile ophthalmic solution (an antibiotic for intravitreal injection). The MOST appropriate sterilisation method is:</b> A. Autoclave at 121 °C × 15 min B. Dry heat at 160 °C × 2 h C. <b>Filtration through a 0.22 µm membrane into a sterile container</b> ✅ D. Ethylene oxide E. Hydrogen peroxide plasma</p>
+<p><b>5. An infection control nurse is asked to clean a spill of blood on a tile floor outside the operating theatre. The MOST appropriate disinfectant concentration of sodium hypochlorite (5 % stock) is:</b> A. 1:1000 dilution (50 ppm) B. 1:500 dilution (100 ppm) C. 1:100 dilution (500 ppm) D. <b>1:10 dilution (5000 ppm) for routine blood spills; 1:5 (10,000 ppm) for large spills</b> ✅ E. 1:2 dilution (25,000 ppm)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Spaulding Critical?</li></ul>
+<p>A: <b>Sterilisation</b> (enters sterile tissue, vasculature; e.g., surgical instruments, implants, cardiac catheters)</p>
+<ul><li>Q: Spaulding Semi-critical?</li></ul>
+<p>A: <b>HLD minimum</b> (sterilisation preferred). Contacts intact mucosa / non-intact skin (endoscopes, laryngoscopes, TEE probes)</p>
+<ul><li>Q: Spaulding Non-critical?</li></ul>
+<p>A: <b>Low- or intermediate-level disinfection</b> (intact skin only; e.g., BP cuff, stethoscope, bed rail)</p>
+<ul><li>Q: Steam gravity cycle?</li></ul>
+<p>A: <b>121 °C × 15–30 min @ 15 psi</b> (unwrapped, non-porous, simple items)</p>
+<ul><li>Q: Steam prevacuum routine cycle?</li></ul>
+<p>A: <b>134 °C × 3–4 min @ 30 psi</b> (wrapped, porous, lumened)</p>
+<ul><li>Q: Steam prion cycle?</li></ul>
+<p>A: <b>134 °C × 18 min prevacuum + 1 M NaOH soak</b> (WHO)</p>
+<ul><li>Q: EtO aeration time?</li></ul>
+<p>A: <b>8–12 h at 50–60 °C</b> (FDA residue &lt; 1 ppm)</p>
+<ul><li>Q: H₂O₂ plasma temperature and BI?</li></ul>
+<p>A: **45–55 °C, <i>G. stearothermophilus</i> BI**</p>
+<ul><li>Q: H₂O₂ plasma 5 things it CANNOT process?</li></ul>
+<p>A: <b>Cellulose (paper/cotton), powders, oils, liquids, long multi-lumen devices</b></p>
+<ul><li>Q: Glutaraldehyde 2 % — concentration, time, hazard?</li></ul>
+<p>A: <b>2 %, 20–45 min HLD, 14–30 d reuse; vapour toxic, protein-fixative</b></p>
+<ul><li>Q: OPA 0.55 % — concentration, time, special warning?</li></ul>
+<p>A: <b>0.55 %, 5 min HLD, 14 d reuse; anaphylaxis risk in cystoscopy + bladder cancer; stains protein</b></p>
+<ul><li>Q: Peracetic acid — concentration, time, advantage?</li></ul>
+<p>A: <b>0.2 %, 5–12 min HLD; does NOT fix protein; single-use</b></p>
+<ul><li>Q: H₂O₂ 7.5 % — contact time?</li></ul>
+<p>A: <b>30 min for HLD, 6 h for sporicidal</b></p>
+<ul><li>Q: Bowie–Dick test purpose, time, frequency?</li></ul>
+<p>A: <b>Daily air-removal test for prevacuum steam at 134 °C × 3.5 min</b></p>
+<ul><li>Q: BI for steam / H₂O₂ plasma / PAA?</li></ul>
+<p>A: <i><b>Geobacillus stearothermophilus</b></i></p>
+<ul><li>Q: BI for EtO and dry heat?</li></ul>
+<p>A: <i><b>Bacillus atrophaeus</b></i></p>
+<ul><li>Q: Class 1 chemical indicator?</li></ul>
+<p>A: <b>External tape — distinguishes processed vs unprocessed</b></p>
+<ul><li>Q: Class 2 indicator?</li></ul>
+<p>A: <b>Bowie–Dick air-removal test</b></p>
+<ul><li>Q: Class 5 indicator?</li></ul>
+<p>A: <b>Integrating — performance equivalent to BI; in every implant load</b></p>
+<ul><li>Q: Prion decontamination?</li></ul>
+<p>A: <b>1 M NaOH soak + 134 °C × 18 min prevacuum; incinerate high-risk tissue</b></p>
+<ul><li>Q: <i>C. difficile</i> environmental cleaning?</li></ul>
+<p>A: <b>1000–5000 ppm hypochlorite OR sporicidal; soap and water for hands (alcohol does not kill spores)</b></p>
+<ul><li>Q: Blood spill?</li></ul>
+<p>A: <b>10,000 ppm hypochlorite, 1:5 of 5 % stock</b></p>
+<ul><li>Q: AER standard?</li></ul>
+<p>A: <b>ISO 15883-1/-4</b> (washer-disinfector)</p>
+<ul><li>Q: Endoscope reprocessing steps?</li></ul>
+<p>A: <b>Pre-clean → Leak test → Manual clean → AER HLD → Rinse → Alcohol flush → Dry → Store in vented cabinet ≤ 7–14 d</b></p>
+<ul><li>Q: Duodenoscope final rinse water?</li></ul>
+<p>A: <b>Sterile water (CDC 2015 update)</b></p>
+<ul><li>Q: FDA 510(k) requirement for HLD?</li></ul>
+<p>A: **≥ 10⁵ <i>M. terrae</i> killed in 45 min at 25 °C**</p>
+<ul><li>Q: IUSS ("flash") rule for implants?</li></ul>
+<p>A: <b>NOT recommended</b> (most guidelines prohibit)</p>
+<ul><li>Q: ISO for steam sterilisation?</li></ul>
+<p>A: <b>ISO 17665</b>; EN 285 (large) / EN 13060 (small)</p>
+<ul><li>Q: ISO for EtO?</li></ul>
+<p>A: <b>ISO 11135</b></p>
+<ul><li>Q: ISO for radiation?</li></ul>
+<p>A: <b>ISO 11137</b></p>
+<ul><li>Q: Single-use symbol?</li></ul>
+<p>A: <b>"②" with slash = do not re-use</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>D — High-Level Disinfection (HLD).</b> A colonoscope contacts intact colonic mucosa, placing it in the <b>semi-critical</b> Spaulding category. The minimum required is HLD. Tuberculosis is a mycobacterium, the marker organism for HLD efficacy — so a properly validated HLD (OPA 5 min, PAA 5 min, glutaraldehyde 20 min) reliably kills <i>M. tuberculosis</i>. Sterilisation is preferred but not mandatory for a routine flexible endoscope.</li><li><b>C — 3 min.</b> EN 285 / AAMI ST79 specify a minimum 3-min hold at 134 °C (3.5 min for the Bowie–Dick test) after the load reaches temperature, with prevacuum pulses to remove air. The 30-s option is too short (instantaneous), 1 min is below the standard, 10/30 min are excessive for routine (used for prion or IUSS).</li><li><b>C — Cotton gauze swabs.</b> H₂O₂ plasma cannot process <b>cellulose</b> (cotton, paper, linen, cellulose-based packaging) because cellulose absorbs the hydrogen peroxide, "starving" the load and causing cycle failure. Powders, oils, and liquids are also incompatible. Stainless steel, electronics, and validated flexible endoscopes are fine.</li><li><b>C — Aeration to remove toxic residues.</b> EtO and its by-products (ethylene chlorohydrin, ethylene glycol) are toxic carcinogens; the FDA requires aeration to &lt; 1 ppm residue, typically 8–12 h in a heated aerator (60 °C) or longer at room temperature. Quarantine, cooling, UV-C, and sterile water rinse are not standard.</li><li><b>B — 20 min.</b> The FDA-cleared HLD claim for 2 % glutaraldehyde is 20 min at 25 °C (and 45 min at 25 °C for some formulations, depending on the manufacturer). 5 min is for low-level disinfection; 45 min is a conservative option; 6 h is the <b>sporicidal / sterilant</b> time; 12 h is the sporidical extended claim.</li><li><b>B — Air removal in a prevacuum steam steriliser.</b> The Bowie–Dick test specifically detects residual air in the chamber, which can prevent steam penetration, cause wet packs, and compromise sterilisation. Steam quality is checked separately. Biological indicator performance is tested with a separate BI run.</li><li>**B — <i>Geobacillus stearothermophilus</i>.** This thermophilic, moist-heat-resistant spore-former is the gold-standard BI for steam (D₁₂₁ ≈ 1.5 min, z ≈ 10 °C). <i>B. atrophaeus</i> is for EtO and dry heat. <i>B. pumilus</i> is used for radiation. <i>C. sporogenes</i> and <i>A. niger</i> are biological indicators in pharmaceutical / food contexts.</li><li><b>D — Incinerate the needle (after quarantine pending confirmation).</b> Prions (the agent of CJD) are highly resistant to standard sterilisation, including steam, HLD, H₂O₂ plasma, and EtO. The WHO protocol is 1 M NaOH + 134 °C × 18 min, but for known/suspected CJD, instruments should be <b>destroyed by incineration</b> to eliminate all risk. If the diagnosis is excluded, the instrument can be reprocessed routinely; if confirmed, it is destroyed.</li><li><b>C — Sodium hypochlorite 1000–5000 ppm.</b> <i>C. difficile</i> spores are resistant to alcohol, QACs, and phenolics. EPA-registered sporicidal agents (1:10–1:50 hypochlorite, improved H₂O₂, chlorine dioxide) are required. Hand hygiene must be <b>soap and water</b> (alcohol does not kill spores).</li><li><b>B — 5 min.</b> OPA 0.55 % achieves HLD in <b>5 min at 20–25 °C</b> (per the FDA-cleared label of Cidex OPA). It is faster than glutaraldehyde, has no vapour hazard, and does not require activation. However, it <b>stains</b> protein, is expensive, and has been associated with anaphylaxis in patients with bladder cancer undergoing repeated cystoscopy.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B — Inadequate manual cleaning of the elevator channel.</b> CRE outbreaks linked to duodenoscopes (e.g., the 2013–2015 UCLA/Cedars-Sinai outbreaks) are most often attributed to <b>incomplete manual cleaning of the distal-elevator channel</b>, which is a complex moving mechanism that is difficult to brush. OPA 5 min is an appropriate HLD time; sterile water for final rinse is recommended but not the leading cause. Reuse-life of OPA would be a compliance issue but is less common. HEPA cabinet is for storage, not the index event. (Bonus: many institutions have since moved to H₂O₂ plasma or single-use duodenoscopes.)</li><li><b>B — Repeat the Bowie–Dick; if still failing, do not use the steriliser until serviced.</b> A failed Bowie–Dick indicates air entrapment (vacuum pump failure, leak, or wet steam). The steriliser must NOT be used for any patient load until a repeat test passes. Increasing temperature is dangerous; using it before the next test puts patients at risk. A BI takes 24–48 h and should follow a successful Bowie–Dick + cycle validation.</li><li><b>B — Quantitative microbiological testing of final rinse water and recovery of test organisms from artificially contaminated scopes.</b> Performance qualification (PQ) of an AER (ISO 15883-4) requires demonstrating that the washer-disinfector consistently produces microbiologically clean, disinfected, and rinse-water-pure endoscopes. This includes challenge organisms (<i>M. terrae</i>, <i>Pseudomonas</i> biofilm), TOC/conductivity of final rinse water, and absence of residual HLD/chemicals.</li><li><b>C — Filtration through a 0.22 µm membrane into a sterile container.</b> Heat-labile drugs cannot be autoclaved; filtration through a 0.22 µm sterilising-grade membrane (PES, PVDF, or nylon) is the standard cold sterilisation method for ophthalmic, cell-culture, and antibiotic solutions. The filter is then transferred aseptically into a pre-sterilised container in a laminar flow hood (ISO 5 / Class 100). EtO and H₂O₂ plasma are inappropriate for liquids.</li><li><b>D — 1:10 dilution (5000 ppm) for routine blood spills; 1:5 (10,000 ppm) for large spills.</b> UK/NHS/CDC guidance: 10,000 ppm hypochlorite for blood spills (1:5 of 5 % stock), 1000 ppm for routine cleaning, 1000–5000 ppm for <i>C. difficile</i>. Lower concentrations are inadequate for organic load.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Sterilisation, Disinfection &amp; Decontamination is a <b>Must Know 🔴</b> topic for FCPS/MRCP and a cornerstone of Infection Prevention &amp; Control. <b>Spaulding's classification</b> (Critical → sterilise; Semi-critical → HLD; Non-critical → low/intermediate) is the single most-tested concept and applies to every medical device. Steam autoclaving (121 °C × 15 min gravity; 134 °C × 3–4 min prevacuum; 134 °C × 18 min prion) remains the <b>gold standard</b>; <b>H₂O₂ plasma</b> has displaced EtO in many settings but cannot process cellulose, powders, or oils. <b>High-level disinfectants</b> are dominated by <b>OPA</b> (5 min), <b>peracetic acid</b> (5–12 min, no protein fixation), and <b>glutaraldehyde</b> (20–45 min, vapour toxic, protein-fixative). Endoscope reprocessing must be impeccable — the elevator channel of duodenoscopes has caused CRE outbreaks. <b>Sterilisation monitoring</b> uses a 6-class chemical indicator system, daily Bowie–Dick testing, and weekly (or per-implant) biological indicators (<i>G. stearothermophilus</i> for steam; <i>B. atrophaeus</i> for EtO). Prion decontamination requires <b>1 M NaOH + 134 °C × 18 min</b>, and ideally <b>incineration</b> for high-risk tissue. Environmental cleaning relies on <b>sodium hypochlorite 1000–5000 ppm</b> for <i>C. difficile</i> and 10,000 ppm for blood spills. CSSD workflow is unidirectional dirty → clean → sterile, with full UDI/RFID tracking. Newer no-touch room disinfection (UV-C, VHP) is an adjunct, not a replacement. <b>Exam focus:</b> expect Spaulding scenarios, HLD contact times, sterilisation cycle parameters, BI organisms, Bowie–Dick interpretation, prion protocols, and endoscope reprocessing steps. <b>Clinical relevance:</b> every device in every ward and every theatre depends on this system — and the failures are real (CRE, MDR-<i>Pseudomonas</i>, prion, C. difficile).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 2.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | Status: full-fcps-mrcp-topic-note | Word count ≈ 7,000 | Estimated reading time 30 min</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Sterilisation Disinfection Decontamination · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

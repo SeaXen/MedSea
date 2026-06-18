@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Breast Cancer Overview — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.3. CANCER OF THE BREAST</span>
+      <div class="h1">Breast Cancer Overview</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify breast cancer by <b>molecular subtypes</b> (ER/PR/HER2/Ki67) and <b>apply treatment algorithms</b></li><li>[ ] Apply <b>TNM 8th Edition staging</b> and <b>stage-based treatment algorithms</b></li><li>[ ] Apply <b>adjuvant/neoadjuvant treatment algorithms</b> based on subtype and stage</li><li>[ ] Manage <b>metastatic breast cancer</b> by subtype (ER+, HER2+, TNBC)</li><li>[ ] Understand <b>screening principles</b> and <b>high-risk management</b> (BRCA, high-risk lesions)</li><li>[ ] Manage <b>special populations</b> (pregnancy, young women, male breast cancer)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Epidemiology & Risk Factors</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>**~2.3M new cases/year** (commonest female cancer)</td></tr><tr><td>**Mortality**</td><td>**~685,000 deaths/year**</td></tr><tr><td>**Peak Age**</td><td>**50-70 years** (screening age)</td></tr><tr><td>**Risk Factors**</td><td>**Female, Age, Family history (BRCA1/2), Early menarche, Late menopause, Nulliparity, Late first pregnancy, HRT, Alcohol, Obesity, Prior chest RT, Dense breasts**</td></tr><tr><td>**Hereditary**</td><td>**5-10%** — **BRCA1 (18% lifetime risk), BRCA2 (11%), PALB2, CHEK2, ATM, TP53 (Li-Fraumeni)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Molecular Subtypes — **HIGH-YIELD FOR EXAMS**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Subtype</th><th>IHC Definition</th><th>Frequency</th><th>Prognosis</th><th>Key Targets</th></tr><tr><td>---------</td><td>----------------</td><td>-----------</td><td>-----------</td><td>-------------</td></tr><tr><td>**Luminal A**</td><td>**ER+, PR+, HER2-, Ki67 low (<20%)**</td><td>**40-50%**</td><td>**Best**</td><td>Endocrine therapy</td></tr><tr><td>**Luminal B (HER2-)**</td><td>**ER+, PR low/-, HER2-, Ki67 high (≥20%)**</td><td>**15-20%**</td><td>Intermediate</td><td>Endocrine ± Chemo</td></tr><tr><td>**Luminal B (HER2+)**</td><td>**ER+, HER2+** (any PR, any Ki67)</td><td>**10-15%**</td><td>Intermediate-Worse</td><td>**Anti-HER2 + Endocrine ± Chemo**</td></tr><tr><td>**HER2-Enriched**</td><td>**ER-, PR-, HER2+**</td><td>**10-15%**</td><td>Worse (historically)</td><td>**Anti-HER2 + Chemo**</td></tr><tr><td>**Triple Negative (TNBC)**</td><td>**ER-, PR-, HER2-**</td><td>**15-20%**</td><td>**Worst** (historically)</td><td>**Chemo, Immunotherapy, PARPi**</td></tr></table>
+<div class="callout">[!critical] <b>St Gallen / ASCO 2023 Subtype Definitions</b> - <b>Luminal A</b>: ER+, PR≥20%, HER2-, Ki67 &lt;20% - <b>Luminal B (HER2-)</b>: ER+, (PR&lt;20% or Ki67≥20%), HER2- - <b>Luminal B (HER2+)</b>: ER+, HER2+ (any PR, any Ki67) - <b>HER2-Enriched</b>: ER-, PR-, HER2+ - <b>TNBC</b>: ER-, PR-, HER2- (≤1% or 0%)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Staging & Treatment — **Stage-Based Algorithms**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Early Breast Cancer (Stage I-III) — **Curative Intent**</div>
+<p>``<code>mermaid flowchart TD A[Early Breast Cancer] --&gt; B{Molecular Subtype} B --&gt;|Luminal A| C[<b>Surgery → Endocrine Therapy</b>\n(Tamoxifen 5-10y / AI 5-10y)\n± RT if BCS] B --&gt;|Luminal B (HER2-)| D[<b>Surgery → Endocrine ± Chemo</b>\n(Oncotype/RS if borderline)\n± RT] B --&gt;|Luminal B (HER2+)| E[<b>Neoadjuvant: Chemo + Dual HER2 Blockade</b>\n(TCHP or AC-TH/P) → Surgery → Adjuvant HER2 (1yr)\n± Endocrine if ER+] B --&gt;|HER2-Enriched| F[<b>Neoadjuvant: Chemo + Dual HER2 Blockade</b>\n→ Surgery → Adjuvant HER2 (1yr)] B --&gt;|TNBC| G[<b>Neoadjuvant Chemo + Immunotherapy</b>\n(Carboplatin + Paclitaxel + Pembrolizumab)\n→ Surgery → Adjuvant Pembrolizumab (KEYNOTE-522)] </code>``</p>
+<div class="sub-h">Neoadjuvant vs Adjuvant Decision</div>
+<table class="ctable"><tr><th>Scenario</th><th>Preferred Approach</th></tr><tr><td>----------</td><td>-------------------</td></tr><tr><td>**Locally Advanced (T3-4, N2-3)**</td><td>**Neoadjuvant** — downstage, assess response, breast conservation</td></tr><tr><td>**HER2+ / TNBC >2cm or N+**</td><td>**Neoadjuvant** — assess pCR, tailor adjuvant</td></tr><tr><td>**Luminal A/B HER2- ≤2cm N0**</td><td>**Surgery first** — adjuvant decision by genomic assay</td></tr></table>
+<div class="sub-h">Pathological Complete Response (pCR)</div>
+<table class="ctable"><tr><th>Definition</th><th>Significance</th></tr><tr><td>------------</td><td>--------------</td></tr><tr><td>**ypT0/is ypN0**</td><td>**No invasive cancer in breast/nodes**</td></tr><tr><td>**Prognostic Value**</td><td>**TNBC, HER2+: Strong predictor of DFS/OS**<br>Luminal: Weaker predictor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Molecular Subtypes — Treatment Algorithms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Luminal A (ER+, PR+, HER2-, Ki67&lt;20%)</div>
+<table class="ctable"><tr><th>Setting</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Adjuvant**</td><td>**Endocrine monotherapy** (Tamoxifen 5-10y premeno / AI 5-10y postmeno) ± RT if BCS</td></tr><tr><td>**Genomic Assay**</td><td>**Oncotype DX ≤25 (≤50y) / ≤25 (>50y)** → **Endocrine alone**</td></tr><tr><td>**Metastatic**</td><td>**Endocrine ± CDK4/6i** (Palbociclib, Ribociclib, Abemaciclib)</td></tr></table>
+<div class="sub-h">Luminal B HER2- (ER+, PR low/-, HER2-, Ki67≥20%)</div>
+<table class="ctable"><tr><th>Setting</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Adjuvant**</td><td>**Endocrine + Chemo** (if genomic high/clinical high)</td></tr><tr><td>**Genomic Assay**</td><td>**Oncotype DX >25 (≤50y) / >25 (>50y)** → Chemo + Endocrine</td></tr><tr><td>**Metastatic**</td><td>**Endocrine + CDK4/6i** (1L); Chemo later lines</td></tr></table>
+<div class="sub-h">Luminal B HER2+ (ER+, HER2+)</div>
+<table class="ctable"><tr><th>Setting</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Neoadjuvant**</td><td>**TCHP (Docetaxel + Carboplatin + Trastuzumab + Pertuzumab)** or **AC-THP**</td></tr><tr><td>**Adjuvant**</td><td>**THP → Trastuzumab 1yr + Pertuzumab** (APHINITY); **Endocrine if ER+**</td></tr><tr><td>**Metastatic**</td><td>**Taxane + Trastuzumab + Pertuzumab** (CLEOPATRA); T-DM2 (EMILIA); T-DXd (DESTINY-Breast03)</td></tr></table>
+<div class="sub-h">HER2-Enriched (ER-, PR-, HER2+)</div>
+<table class="ctable"><tr><th>Setting</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Neoadjuvant**</td><td>**TCHP or AC-THP** (dual HER2 blockade)</td></tr><tr><td>**Adjuvant**</td><td>**TCHP → Trastuzumab 1yr ± Pertuzumab**</td></tr><tr><td>**Metastatic**</td><td>**THP (CLEOPATRA)**; T-DM2; **T-DXd (DESTINY-Breast03)**</td></tr></table>
+<div class="sub-h">Triple Negative (TNBC)</div>
+<table class="ctable"><tr><th>Setting</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Neoadjuvant**</td><td>**Carboplatin + Paclitaxel + Pembrolizumab** (KEYNOTE-522) → Surgery → Adjuvant Pembrolizumab 9 cycles</td></tr><tr><td>**Adjuvant**</td><td>**Capecitabine** if residual disease (CREATE-X); **Olaparib** if BRCA1/2 mut (OlympiA)</td></tr><tr><td>**Metastatic**</td><td>**1L: Chemo + Pembrolizumab** (PD-L1+) or Chemo alone; **Later: Sacituzumab govitecan (TROPiCS-02), PARPi if BRCA, T-DXd if HER2-low**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">HER2-Targeted Therapy — **High-Yield**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Agent</th><th>Mechanism</th><th>Key Indications</th></tr><tr><td>-------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**Trastuzumab**</td><td>Anti-HER2 mAb</td><td>Adjuvant (1yr), Metastatic (1L+chemo)</td></tr><tr><td>**Pertuzumab**</td><td>Anti-HER2 dimerization</td><td>**Neoadj (TCHP), Metastatic 1L (CLEOPATRA), Adjuvant (APHINITY)**</td></tr><tr><td>**T-DM1 (Kadcyla)**</td><td>ADC (Trastuzumab-DM1)</td><td>**Adjuvant residual disease** (KATHERINE), **Metastatic 2L** (EMILIA)</td></tr><tr><td>**T-DXd (Enhertu)**</td><td>ADC (Trastuzumab-DXd)</td><td>**DESTINY-Breast03** (vs T-DM1), **DESTINY-Breast04 (HER2-low)**</td></tr><tr><td>**Tucatinib**</td><td>TKI (HER2-selective)</td><td>**HER2CLIMB** (brain mets)</td></tr><tr><td>**Margetuximab**</td><td>Fc-engineered mAb</td><td>SOPHIA (3L+)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Endocrine Therapy — **High-Yield**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Agent</th><th>Mechanism</th><th>Indication</th></tr><tr><td>-------</td><td>-----------</td><td>------------</td></tr><tr><td>**Tamoxifen**</td><td>SERM</td><td>Premeno (5-10y); Postmeno if AI contraindicated</td></tr><tr><td>**Aromatase Inhibitors (AI)**</td><td>Aromatase inhibition (Letrozole, Anastrozole, Exemestane)</td><td>**Postmeno 1st line** (5-10y); Sequential/Switch</td></tr><tr><td>**Fulvestrant**</td><td>SERD (ER degrader)</td><td>Advanced (post-AI), +CDK4/6i</td></tr><tr><td>**Ovarian Suppression (OFS)**</td><td>GnRH agonist (Goserelin)</td><td>Premeno high-risk + AI/Tam; SOFT/TEXT trials</td></tr></table>
+<div class="callout">[!critical] <b>Duration: 5-10 years</b> (ATLAS, aTTom, MA.17R) - <b>Tamoxifen</b>: 10y &gt; 5y (ATLAS) - <b>AI</b>: 10y vs 5y (MA.17R, DATA) — <b>extended AI if high risk</b></div>
+<div class="sub-h">CDK4/6 Inhibitors — **Metastatic ER+ Breast Cancer**</div>
+<table class="ctable"><tr><th>Drug</th><th>Key Trial</th><th>PFS Benefit</th></tr><tr><td>------</td><td>-----------</td><td>-------------</td></tr><tr><td>**Palbociclib**</td><td>PALOMA-2, PALOMA-3</td><td>~24-28 mo</td></tr><tr><td>**Ribociclib**</td><td>MONALEESA-2, -3, -7</td><td>~28-40 mo</td></tr><tr><td>**Abemaciclib**</td><td>MONARCH-2, -3</td><td>~28-32 mo</td></tr></table>
+<div class="callout">[!critical] <b>CDK4/6i + Endocrine = 1L Standard for Metastatic ER+</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Triple Negative Breast Cancer (TNBC) — **High-Yield**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Setting</th><th>Key Regimens</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**Neoadjuvant**</td><td>**Carboplatin + Paclitaxel + Pembrolizumab** (KEYNOTE-522) → **pCR 65%**</td></tr><tr><td>**Adjuvant**</td><td>**Pembrolizumab 9 cycles** adj (KEYNOTE-522); **Capecitabine** if residual (CREATE-X); **Olaparib** 1y if gBRCA (OlympiA)</td></tr><tr><td>**Metastatic 1L**</td><td>**PD-L1+ (CPS≥10)**: **Pembrolizumab + Chemo** (KEYNOTE-355)<br>**PD-L1 low/neg**: Chemo (Taxane/Platinum)</td></tr><tr><td>**Later Line**</td><td>**Sacituzumab Govitecan** (TROPiCS-02) — **3L+**<br>**PARPi (Olaparib/Talazoparib)** if gBRCA<br>**T-DXd** if **HER2-low (IHC 1+/2+, FISH-)** (DESTINY-Breast04)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">CDK4/6 Inhibitors — **High-Yield**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Key Trial</th><th>Key Toxicities</th></tr><tr><td>------</td><td>-----------</td><td>----------------</td></tr><tr><td>**Palbociclib**</td><td>PALOMA-2, PALOMA-3</td><td>Neutropenia, fatigue, nausea</td></tr><tr><td>**Ribociclib**</td><td>MONALEESA-2, -3, -7</td><td>QTc prolongation, hepatotoxicity</td></tr><tr><td>**Abemaciclib**</td><td>MONARCH-2, -3</td><td>**Diarrhoea** (common), neutropenia, VTE</td></tr></table>
+<div class="callout">[!critical] <b>CDK4/6i + Endocrine = 1L Standard for Metastatic ER+ Breast Cancer</b> (PALOMA-2, MONALEESA-2, MONARCH-3)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">High-Risk Management & Screening</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Screening / Risk Reduction</th></tr><tr><td>-----------</td><td>----------------------------</td></tr><tr><td>**BRCA1/2**</td><td>**MRI + Mammo annually from 25-30y**; **RRSO 35-45y**; **Risk-reducing mastectomy**</td></tr><tr><td>**High-risk lesions** (ADH, ALH, LCIS)</td><td>**Tamoxifen 5y** (NSABP-P1, IBIS-I) — **50% risk reduction**</td></tr><tr><td>**Screening**</td><td>**Mammo 50-70y q3y** (UK); **40-49y individualised**; **MRI + Mammo** if dense breasts/high risk</td></tr><tr><td>**Male Breast Cancer**</td><td>**<1% of BC**; **BRCA2** risk; **Treatment similar**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Special Populations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Key Points</th></tr><tr><td>------------</td><td>------------</td></tr><tr><td>**Pregnancy**</td><td>**Surgery safe any trimester**; **Chemo 2nd/3rd trimester** (Anthracycline/Taxane); **No endocrine/targeted/RT**; **Termination not mandatory**</td></tr><tr><td>**Young Women (<35y)**</td><td>More aggressive biology; **Fertility preservation** (Oocyte/embryo cryopreservation, GnRHa); **Genetic testing**</td></tr><tr><td>**Male Breast Cancer**</td><td>**<1%**; **BRCA2** risk; **Gynaecomastia differential**; Treatment similar to female</td></tr><tr><td>**Elderly (>70)**</td><td>**Geriatric assessment** (GA); **De-escalation** if frail; **AI ± CDK4/6i** preferred</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Molecular Subtypes**</td><td>**Luminal A/B, HER2+, TNBC** — defined by ER, PR, HER2, Ki67</td></tr><tr><td>**Luminal A**</td><td>ER+, PR+, HER2-, Ki67<20% → **Endocrine alone**</td></tr><tr><td>**Luminal B HER2-**</td><td>ER+, PR low/-, HER2-, Ki67≥20% → **Endocrine + Chemo**</td></tr><tr><td>**Luminal B HER2+**</td><td>ER+, HER2+ → **Anti-HER2 + Chemo + Endocrine**</td></tr><tr><td>**HER2-Enriched**</td><td>ER-, PR-, HER2+ → **Anti-HER2 + Chemo**</td></tr><tr><td>**TNBC**</td><td>ER-, PR-, HER2- → **Chemo + Immunotherapy (Pembrolizumab)**</td></tr><tr><td>**Neoadjuvant**</td><td>**Preferred for HER2+, TNBC, locally advanced** — assess pCR</td></tr><tr><td>**pCR**</td><td>**ypT0/is ypN0** — **TNBC/HER2+: Strong prognostic value**</td></tr><tr><td>**HER2 Therapy**</td><td>**TCHP neoadj; T-DM1 adjuvant residual; T-DXd metastatic; Tucatinib brain mets**</td></tr><tr><td>**CDK4/6i**</td><td>**Palbociclib/Ribociclib/Abemaciclib + AI/Fulv** = 1L metastatic ER+</td></tr><tr><td>**TNBC Metastatic**</td><td>**PD-L1+ (CPS≥10): Pembro+Chemo**; Sacituzumab 3L; PARPi if BRCA; T-DXd if HER2-low</td></tr><tr><td>**BRCA**</td><td>**RRSO 35-45y**; **Risk-reducing mastectomy**; **PARPi (OlympiA adjuvant, metastatic)**</td></tr><tr><td>**Pregnancy**</td><td>Surgery OK; **Chemo 2nd/3rd tri** (Anthracycline/Taxane); **No endocrine/targeted/RT**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>"What are the molecular subtypes of breast cancer and their treatment?"</td><td>Luminal A (Endocrine), Luminal B HER2- (Endo+Chemo), Luminal B HER2+ (Anti-HER2+Chemo+Endo), HER2-enriched (Anti-HER2+Chemo), TNBC (Chemo+Immunotherapy)</td></tr><tr><td>"How do you decide on adjuvant chemotherapy for ER+ HER2- breast cancer?"</td><td>**Clinical factors** (size, grade, nodes, age) + **Genomic assays** (Oncotype DX, MammaPrint, Prosigna, EndoPredict) — if high risk/clinically high → chemo</td></tr><tr><td>"What is the standard neoadjuvant regimen for HER2+ breast cancer?"</td><td>**TCHP (Docetaxel + Carboplatin + Trastuzumab + Pertuzumab)** or **AC-THP** (Anthracycline → Taxane + Dual HER2 blockade)</td></tr><tr><td>"What is the role of pembrolizumab in TNBC?"</td><td>**Neoadj**: Carboplatin+Paclitaxel+Pembro → Adj Pembro (KEYNOTE-522); **Metastatic**: PD-L1 CPS≥10 → Pembro+Chemo (KEYNOTE-355)</td></tr><tr><td>"What is the role of CDK4/6 inhibitors in ER+ metastatic breast cancer?"</td><td>**Palbociclib/Ribociclib/Abemaciclib + AI/Fulvestrant** = **1L standard** (PALOMA-2, MONALEESA-2, MONARCH-3) — improves PFS</td></tr><tr><td>"What is the adjuvant treatment for residual disease after neoadjuvant chemo in TNBC?"</td><td>**Capecitabine** (CREATE-X trial) — improves DFS/OS</td></tr><tr><td>"What is the role of PARP inhibitors in breast cancer?"</td><td>**Olaparib/Talazoparib** for **gBRCA1/2 mutated** — adjuvant (OlympiA) & metastatic</td></tr><tr><td>"How do you manage breast cancer in pregnancy?"</td><td>**Surgery any trimester**; **Chemo 2nd/3rd tri** (Anthracycline/Taxane); **NO endocrine/targeted/RT**; Multidisciplinary team</td></tr><tr><td>"What is the role of T-DXd in HER2+ breast cancer?"</td><td>**DESTINY-Breast03**: T-DXd superior to T-DM1 in 2L HER2+ metastatic; **DESTINY-Breast04**: T-DXd effective in HER2-low (IHC 1+/2+, FISH-)</td></tr><tr><td>"How do you manage high-risk early breast cancer with BRCA mutation?"</td><td>**Adjuvant Olaparib 1yr** (OlympiA) if gBRCAm, high-risk (T2-3 or N1-3) — improves iDFS</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Luminal A vs B**</td><td>**Luminal A**: PR≥20%, Ki67<20%, HER2- → **Endocrine alone**; **Luminal B**: PR<20% or Ki67≥20% or HER2+ → **Chemo + Endocrine**</td></tr><tr><td>**HER2-low vs HER2-zero**</td><td>**HER2-low** = IHC 1+/2+ (FISH-); **HER2-zero** = IHC 0; **T-DXd active in HER2-low** (DESTINY-Breast04)</td></tr><tr><td>**Ki67 Cutoff**</td><td>**20%** (St Gallen); **<20% = Luminal A**, **≥20% = Luminal B**</td></tr><tr><td>**pCR Definition**</td><td>**ypT0/is ypN0** — no invasive cancer in breast or nodes</td></tr><tr><td>**Adjuvant vs Neoadjuvant**</td><td>**Neoadj preferred** for HER2+, TNBC, locally advanced; **Adjuvant** if small, node-negative, luminal A</td></tr><tr><td>**CDK4/6i Toxicities**</td><td>**Palbociclib**: Neutropenia; **Ribociclib**: QTc prolongation, hepatotoxicity; **Abemaciclib**: **Diarrhoea** (dose-limiting)</td></tr></table>
+<p><b>Mnemonic: Subtypes = "LALA HER TRIP"</b></p>
+<ul><li><b>LA</b>uminal <b>A</b></li><li><b>LA</b>uminal <b>B</b> (HER2-)</li><li><b>HER</b>2-enriched</li><li><b>TRIP</b>le Negative (TNBC)</li></ul>
+<p><b>Mnemonic: HER2 Therapy = "T-DM1 → T-DXd → TUCA"</b></p>
+<ul><li><b>T-DM1</b> (Adjuvant residual, KATHERINE)</li><li><b>T-DXd</b> (Metastatic 2L, HER2-low DESTINY-Breast04)</li><li><b>TUCA</b>tinib (Brain mets, HER2CLIMB)</li></ul>
+<p><b>Mnemonic: TNBC Treatment = "KEYNOTE 522 → CREATE-X → TROPiCS → OLYMPIA"</b></p>
+<ul><li><b>KEYNOTE-522</b>: Neoadj Pembro+Chemo</li><li><b>CREATE-X</b>: Adj Capecitabine residual</li><li><b>TROPiCS-02</b>: 3L Sacituzumab Govitecan</li><li><b>OLYMPIA</b>: Adj Olaparib gBRCA</li></ul>
+<p><b>Mnemonic: CDK4/6i = "PAL-RIB-ABE"</b></p>
+<ul><li><b>PAL</b>bociclib (Neutropenia)</li><li><b>RIB</b>ociclib (QTc, Hepato)</li><li><b>ABE</b>maciclib (Diarrhoea)</li></ul>
+<p><b>Mnemonic: PARPi = "OLYMPIA TALAZO"</b></p>
+<ul><li><b>OLYMPIA</b>: Adjuvant Olaparib gBRCA</li><li><b>TALAZO</b>parib (Metastatic)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Breast Cancer)) Subtypes Luminal_A Luminal_B_HER2neg Luminal_B_HER2pos HER2_Enriched TNBC Staging TNM_8th Stage_I_II_III Treatment Surgery BCS_vs_Mastectomy SLNB Neoadjuvant HER2_TNBC pCR Adjuvant Endocrine Chemo Anti_HER2 CDK46i PARPi Metastatic ERpos_CDK46 HER2_TDXd_Tucatinib TNBC_Sacituzumab_PARPi Subtypes_Detail Luminal_A_Endocrine Luminal_B_Chemo HER2_TCHP_TDM1_TDXd TNBC_Pembro_Sacituzumab_PARPi Special Pregnancy Young_Women Male_BC BRCA </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Subtypes**</td><td>**Luminal A**: ER+, PR+, HER2-, Ki67<20% → Endocrine<br>**Luminal B HER2-**: ER+, PR low/-, HER2-, Ki67≥20% → Endo+Chemo<br>**Luminal B HER2+**: ER+, HER2+ → Anti-HER2+Chemo+Endo<br>**HER2-Enriched**: ER-, HER2+ → Anti-HER2+Chemo<br>**TNBC**: ER-, PR-, HER2- → Chemo+Immunotherapy</td></tr><tr><td>**Neoadjuvant**</td><td>**Preferred**: HER2+, TNBC, locally advanced; **pCR = ypT0/is ypN0**</td></tr><tr><td>**HER2 Therapy**</td><td>**TCHP neoadj** → **T-DM1 adj residual** → **T-DXd 2L** → **Tucatinib brain mets**</td></tr><tr><td>**TNBC**</td><td>**Neoadj: Carbo+Pacli+Pembro** → **Adj Pembro**; **Met: PD-L1+ Pembro+Chemo**; **Sacituzumab 3L**; **PARPi gBRCA**; **T-DXd HER2-low**</td></tr><tr><td>**CDK4/6i**</td><td>**Palbo/Ribo/Abe + AI/Fulv** = 1L metastatic ER+</td></tr><tr><td>**PARPi**</td><td>**Olaparib/Talazoparib** gBRCA (Adjuvant OlympiA, Metastatic)</td></tr><tr><td>**BRCA**</td><td>**RRSO 35-45y**; **RR Mastectomy**; **PARPi**</td></tr><tr><td>**Pregnancy**</td><td>Surgery OK; **Chemo 2nd/3rd tri**; **No endocrine/targeted/RT**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Molecular Subtypes Classification</td><td></td><td></td></tr><tr><td>Neoadjuvant/Adjuvant Decision</td><td></td><td></td></tr><tr><td>HER2 Treatment Algorithm</td><td></td><td></td></tr><tr><td>TNBC Management</td><td></td><td></td></tr><tr><td>CDK4/6i & PARPi Indications</td><td></td><td></td></tr><tr><td>Pregnancy/Young Women Management</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Cancer of the Breast|Cancer of the Breast]]</li><li><b>Parent Topic Group</b>: [[Early Breast Cancer]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[TNM Staging &amp; Prognostication]] · [[Cancer Biology &amp; Hallmarks of Cancer]] · [[Cancer Screening &amp; Prevention]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Breast Cancer Overview (Molecular Subtypes), which statement is correct? A. <b>Luminal A/B, HER2+, TNBC</b> B. **Luminal - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Luminal A/B, HER2+, TNBC</b> — defined by ER, PR, HER2, Ki67</li></ul>
+<p><b>2.</b> Regarding Breast Cancer Overview (Luminal A), which statement is correct? A. ER+, PR+, HER2-, Ki67&lt;20% → <b>Endocrine alone</b> B. ER+, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — ER+, PR+, HER2-, Ki67&lt;20% → <b>Endocrine alone</b></li></ul>
+<p><b>3.</b> Regarding Breast Cancer Overview (Luminal B HER2-), which statement is correct? A. ER+, PR low/-, HER2-, Ki67≥20% → <b>Endocrine + Chemo</b> B. ER+, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — ER+, PR low/-, HER2-, Ki67≥20% → <b>Endocrine + Chemo</b></li></ul>
+<p><b>4.</b> Regarding Breast Cancer Overview (Luminal B HER2+), which statement is correct? A. ER+, HER2+ → <b>Anti-HER2 + Chemo + Endocrine</b> B. ER+, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — ER+, HER2+ → <b>Anti-HER2 + Chemo + Endocrine</b></li></ul>
+<p><b>5.</b> Regarding Breast Cancer Overview (HER2-Enriched), which statement is correct? A. ER-, PR-, HER2+ → <b>Anti-HER2 + Chemo</b> B. ER-, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — ER-, PR-, HER2+ → <b>Anti-HER2 + Chemo</b></li></ul>
+<p><b>6.</b> Regarding Breast Cancer Overview (TNBC), which statement is correct? A. ER-, PR-, HER2- → <b>Chemo + Immunotherapy (Pembrolizumab)</b> B. ER-, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — ER-, PR-, HER2- → <b>Chemo + Immunotherapy (Pembrolizumab)</b></li></ul>
+<p><b>7.</b> Regarding Breast Cancer Overview (Neoadjuvant), which statement is correct? A. <b>Preferred for HER2+, TNBC, locally advanced</b> B. **Preferred - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Preferred for HER2+, TNBC, locally advanced</b> — assess pCR</li></ul>
+<p><b>8.</b> Regarding Breast Cancer Overview (pCR), which statement is correct? A. <b>ypT0/is ypN0</b> B. **ypT0/is - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ypT0/is ypN0</b> — <b>TNBC/HER2+: Strong prognostic value</b></li></ul>
+<p><b>9.</b> Regarding Breast Cancer Overview (HER2 Therapy), which statement is correct? A. <b>TCHP neoadj B. </b>TCHP - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>TCHP neoadj; T-DM1 adjuvant residual; T-DXd metastatic; Tucatinib brain mets</b></li></ul>
+<p><b>10.</b> Regarding Breast Cancer Overview (CDK4/6i), which statement is correct? A. <b>Palbociclib/Ribociclib/Abemaciclib + AI/Fulv</b> = 1L metastatic ER+ B. **Palbociclib/Ribociclib/Abemaciclib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Palbociclib/Ribociclib/Abemaciclib + AI/Fulv</b> = 1L metastatic ER+</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Luminal A/B, HER2+, TNBC</b></li><li>B. **Luminal (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Luminal A/B, HER2+, TNBC</b> — defined by ER, PR, HER2, Ki67</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. ER+, PR+, HER2-, Ki67&lt;20% → <b>Endocrine alone</b></li><li>B. ER+, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: ER+, PR+, HER2-, Ki67&lt;20% → <b>Endocrine alone</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. ER+, PR low/-, HER2-, Ki67≥20% → <b>Endocrine + Chemo</b></li><li>B. ER+, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: ER+, PR low/-, HER2-, Ki67≥20% → <b>Endocrine + Chemo</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. ER+, HER2+ → <b>Anti-HER2 + Chemo + Endocrine</b></li><li>B. ER+, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: ER+, HER2+ → <b>Anti-HER2 + Chemo + Endocrine</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. ER-, PR-, HER2+ → <b>Anti-HER2 + Chemo</b></li><li>B. ER-, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: ER-, PR-, HER2+ → <b>Anti-HER2 + Chemo</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. ER-, PR-, HER2- → <b>Chemo + Immunotherapy (Pembrolizumab)</b></li><li>B. ER-, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: ER-, PR-, HER2- → <b>Chemo + Immunotherapy (Pembrolizumab)</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Preferred for HER2+, TNBC, locally advanced</b></li><li>B. **Preferred (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Preferred for HER2+, TNBC, locally advanced</b> — assess pCR</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>ypT0/is ypN0</b></li><li>B. **ypT0/is (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>ypT0/is ypN0</b> — <b>TNBC/HER2+: Strong prognostic value</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. **TCHP neoadj</li><li>B. **TCHP (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>TCHP neoadj; T-DM1 adjuvant residual; T-DXd metastatic; Tucatinib brain mets</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Palbociclib/Ribociclib/Abemaciclib + AI/Fulv</b> = 1L metastatic ER+</li><li>B. **Palbociclib/Ribociclib/Abemaciclib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Palbociclib/Ribociclib/Abemaciclib + AI/Fulv</b> = 1L metastatic ER+</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Molecular Subtypes? <b>A1:</b> Luminal A/B, HER2+, TNBC — defined by ER, PR, HER2, Ki67</p>
+<p><b>Q2:</b> Luminal A? <b>A2:</b> ER+, PR+, HER2-, Ki67&lt;20% → Endocrine alone</p>
+<p><b>Q3:</b> Luminal B HER2-? <b>A3:</b> ER+, PR low/-, HER2-, Ki67≥20% → Endocrine + Chemo</p>
+<p><b>Q4:</b> Luminal B HER2+? <b>A4:</b> ER+, HER2+ → Anti-HER2 + Chemo + Endocrine</p>
+<p><b>Q5:</b> HER2-Enriched? <b>A5:</b> ER-, PR-, HER2+ → Anti-HER2 + Chemo</p>
+<p><b>Q6:</b> TNBC? <b>A6:</b> ER-, PR-, HER2- → Chemo + Immunotherapy (Pembrolizumab)</p>
+<p><b>Q7:</b> Neoadjuvant? <b>A7:</b> Preferred for HER2+, TNBC, locally advanced — assess pCR</p>
+<p><b>Q8:</b> pCR? <b>A8:</b> ypT0/is ypN0 — TNBC/HER2+: Strong prognostic value</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Molecular Subtypes</td><td>Luminal A/B, HER2+, TNBC — defined by ER, PR, HER2, Ki67</td></tr><tr><td>2</td><td>A</td><td>Luminal A</td><td>ER+, PR+, HER2-, Ki67<20% → Endocrine alone</td></tr><tr><td>3</td><td>A</td><td>Luminal B HER2-</td><td>ER+, PR low/-, HER2-, Ki67≥20% → Endocrine + Chemo</td></tr><tr><td>4</td><td>A</td><td>Luminal B HER2+</td><td>ER+, HER2+ → Anti-HER2 + Chemo + Endocrine</td></tr><tr><td>5</td><td>A</td><td>HER2-Enriched</td><td>ER-, PR-, HER2+ → Anti-HER2 + Chemo</td></tr><tr><td>6</td><td>A</td><td>TNBC</td><td>ER-, PR-, HER2- → Chemo + Immunotherapy (Pembrolizumab)</td></tr><tr><td>7</td><td>A</td><td>Neoadjuvant</td><td>Preferred for HER2+, TNBC, locally advanced — assess pCR</td></tr><tr><td>8</td><td>A</td><td>pCR</td><td>ypT0/is ypN0 — TNBC/HER2+: Strong prognostic value</td></tr><tr><td>9</td><td>A</td><td>HER2 Therapy</td><td>TCHP neoadj; T-DM1 adjuvant residual; T-DXd metastatic; Tucatinib brain mets</td></tr><tr><td>10</td><td>A</td><td>CDK4/6i</td><td>Palbociclib/Ribociclib/Abemaciclib + AI/Fulv = 1L metastatic ER+</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Molecular Subtypes</td><td>Luminal A/B, HER2+, TNBC — defined by ER, PR, HER2, Ki67</td></tr><tr><td>2</td><td>A</td><td>Luminal A</td><td>ER+, PR+, HER2-, Ki67<20% → Endocrine alone</td></tr><tr><td>3</td><td>A</td><td>Luminal B HER2-</td><td>ER+, PR low/-, HER2-, Ki67≥20% → Endocrine + Chemo</td></tr><tr><td>4</td><td>A</td><td>Luminal B HER2+</td><td>ER+, HER2+ → Anti-HER2 + Chemo + Endocrine</td></tr><tr><td>5</td><td>A</td><td>HER2-Enriched</td><td>ER-, PR-, HER2+ → Anti-HER2 + Chemo</td></tr><tr><td>6</td><td>A</td><td>TNBC</td><td>ER-, PR-, HER2- → Chemo + Immunotherapy (Pembrolizumab)</td></tr><tr><td>7</td><td>A</td><td>Neoadjuvant</td><td>Preferred for HER2+, TNBC, locally advanced — assess pCR</td></tr><tr><td>8</td><td>A</td><td>pCR</td><td>ypT0/is ypN0 — TNBC/HER2+: Strong prognostic value</td></tr><tr><td>9</td><td>A</td><td>HER2 Therapy</td><td>TCHP neoadj; T-DM1 adjuvant residual; T-DXd metastatic; Tucatinib brain mets</td></tr><tr><td>10</td><td>A</td><td>CDK4/6i</td><td>Palbociclib/Ribociclib/Abemaciclib + AI/Fulv = 1L metastatic ER+</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer of the Breast|Cancer of the Breast]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Breast Cancer Overview · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

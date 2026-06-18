@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Infectious Disease Epidemiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.3. EPIDEMIOLOGY OF MAJOR DISEASES</span>
+      <div class="h1">Infectious Disease Epidemiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe transmission modes: direct, indirect, vector-borne, vertical</li><li>[ ] Calculate and interpret R₀, Rₜ, herd immunity threshold, generation time</li><li>[ ] Apply epidemic models: SIR, SEIR, compartmental</li><li>[ ] Distinguish epidemic patterns: point source, propagated, endemic, pandemic</li><li>[ ] Explain antimicrobial resistance (AMR) epidemiology: drivers, surveillance, containment</li><li>[ ] Apply vaccine epidemiology: efficacy vs effectiveness, impact, hesitancy</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Infectious Disease Epidemiology**</td><td>Study of distribution, determinants, dynamics of infections in populations</td></tr><tr><td>**Transmission**</td><td>Pathogen movement from reservoir to susceptible host</td></tr><tr><td>**R₀ (Basic Reproduction Number)**</td><td>Average secondary cases from 1 infectious in fully susceptible population</td></tr><tr><td>**Rₜ (Effective Reproduction Number)**</td><td>Average secondary cases at time t (with immunity/interventions)</td></tr><tr><td>**Herd Immunity Threshold**</td><td>Proportion immune needed to interrupt transmission: 1 - 1/R₀</td></tr><tr><td>**Serial Interval**</td><td>Time between symptom onset in infector-infectee pair</td></tr><tr><td>**Generation Time**</td><td>Time between infection of infector and infectee</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological concepts - see transmission and modelling below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Transmission Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Mechanism</th><th>Examples</th></tr><tr><td>------</td><td>-----------</td><td>----------</td></tr><tr><td>**Direct Contact**</td><td>Person-to-person physical contact</td><td>STIs, skin infections, Ebola</td></tr><tr><td>**Droplet**</td><td>Large droplets >5μm, short range (<1-2m)</td><td>Influenza, pertussis, meningococcal, COVID-19 (partly)</td></tr><tr><td>**Airborne**</td><td>Aerosols <5μm, long-range, prolonged suspension</td><td>Measles, TB, varicella, SARS-CoV-2 (partly)</td></tr><tr><td>**Fomite**</td><td>Contaminated inanimate objects</td><td>Norovirus, rotavirus, C. difficile</td></tr><tr><td>**Faecal-Oral**</td><td>Ingestion of faecally contaminated material</td><td>Cholera, typhoid, hepatitis A, polio</td></tr><tr><td>**Vector-Borne**</td><td>Arthropod vector transmits</td><td>Malaria (mosquito), dengue, Lyme, plague</td></tr><tr><td>**Vehicle-Borne**</td><td>Food, water, blood, IV fluids</td><td>Salmonellosis, hepatitis B/C, HIV (blood)</td></tr><tr><td>**Vertical**</td><td>Mother to fetus/infant</td><td>HIV, syphilis, CMV, rubella, Zika, HBV</td></tr><tr><td>**Zoonotic**</td><td>Animal to human</td><td>Rabies, Ebola, COVID-19 (suspected), avian flu</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Modelling & Metrics)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Key Metrics:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Metric&lt;/th&gt;&lt;th&gt;Formula&lt;/th&gt;&lt;th&gt;Interpretation&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;----------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>R₀</b>&lt;/td&gt;&lt;td&gt;β × c × D&lt;/td&gt;&lt;td&gt;&gt;1 = epidemic potential; &lt;1 = dies out&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>HIT</b>&lt;/td&gt;&lt;td&gt;1 - 1/R₀&lt;/td&gt;&lt;td&gt;Proportion immune for elimination&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Attack Rate</b>&lt;/td&gt;&lt;td&gt;Cases / Exposed population&lt;/td&gt;&lt;td&gt;Outbreak intensity&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Case Fatality Rate</b>&lt;/td&gt;&lt;td&gt;Deaths / Confirmed cases&lt;/td&gt;&lt;td&gt;Severity&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Incubation Period</b>&lt;/td&gt;&lt;td&gt;Exposure to symptom onset&lt;/td&gt;&lt;td&gt;Quarantine duration&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Serial Interval</b>&lt;/td&gt;&lt;td&gt;Symptom onset infector → infectee&lt;/td&gt;&lt;td&gt;Contact tracing window&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>R₀ Values (Approximate):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Disease&lt;/th&gt;&lt;th&gt;R₀&lt;/th&gt;&lt;th&gt;HIT (1-1/R₀)&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;----&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Measles&lt;/td&gt;&lt;td&gt;12-18&lt;/td&gt;&lt;td&gt;92-95%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Pertussis&lt;/td&gt;&lt;td&gt;12-17&lt;/td&gt;&lt;td&gt;92-94%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chickenpox&lt;/td&gt;&lt;td&gt;10-12&lt;/td&gt;&lt;td&gt;90-92%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Polio&lt;/td&gt;&lt;td&gt;5-7&lt;/td&gt;&lt;td&gt;80-86%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Rubella&lt;/td&gt;&lt;td&gt;6-7&lt;/td&gt;&lt;td&gt;83-86%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;COVID-19 (original)&lt;/td&gt;&lt;td&gt;2.5-3.5&lt;/td&gt;&lt;td&gt;60-71%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Influenza&lt;/td&gt;&lt;td&gt;1.3-1.8&lt;/td&gt;&lt;td&gt;23-44%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ebola&lt;/td&gt;&lt;td&gt;1.5-2.5&lt;/td&gt;&lt;td&gt;33-60%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MERS&lt;/td&gt;&lt;td&gt;&lt;1 (limited human spread)&lt;/td&gt;&lt;td&gt;N/A&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Compartmental Models:</b></p>
+<ul><li><b>SIR</b>: Susceptible → Infectious → Recovered (measles, influenza)</li><li><b>SEIR</b>: Susceptible → Exposed (latent) → Infectious → Recovered (COVID, TB)</li><li><b>SIS</b>: Susceptible → Infectious → Susceptible (no immunity: gonorrhoea)</li><li><b>SIRS</b>: Temporary immunity wanes</li></ul>
+<p><b>Mermaid: SIR Model</b> ``<code>mermaid flowchart LR S[Susceptible] --&gt;|β × I/N| I[Infectious] I --&gt;|γ| R[Recovered/Immune] R -.-&gt;|waning| S style S fill:#bbf,stroke:#333 style I fill:#f96,stroke:#333 style R fill:#bfb,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Epidemic Patterns)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pattern</th><th>Description</th><th>Example</th></tr><tr><td>---------</td><td>-------------</td><td>---------</td></tr><tr><td>**Point Source**</td><td>Single exposure, sharp peak, rapid decline</td><td>Foodborne outbreak</td></tr><tr><td>**Continuous Common Source**</td><td>Ongoing exposure, plateau</td><td>Contaminated water supply</td></tr><tr><td>**Propagated**</td><td>Person-to-person, serial peaks (generations)</td><td>Influenza, measles, COVID-19</td></tr><tr><td>**Endemic**</td><td>Constant baseline in population</td><td>Malaria (hyperendemic areas)</td></tr><tr><td>**Epidemic**</td><td>Cases > expected in area/time</td><td>Seasonal influenza</td></tr><tr><td>**Pandemic**</td><td>Worldwide spread across continents</td><td>COVID-19, 1918 influenza</td></tr><tr><td>**Sporadic**</td><td>Occasional, irregular cases</td><td>Rabies, tetanus</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Control Strategies & AMR)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Transmission Control:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Target&lt;/th&gt;&lt;th&gt;Measures&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Reduce Susceptibles</b>&lt;/td&gt;&lt;td&gt;Vaccination, prophylaxis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Reduce Infectiousness</b>&lt;/td&gt;&lt;td&gt;Treatment (antibiotics, antivirals), isolation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Reduce Contact Rate</b>&lt;/td&gt;&lt;td&gt;Distancing, quarantine, school closure, travel restriction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Reduce Transmission Probability</b>&lt;/td&gt;&lt;td&gt;Masks, ventilation, hand hygiene, PPE, vector control&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Antimicrobial Resistance (AMR) Epidemiology:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Driver&lt;/th&gt;&lt;th&gt;Examples&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Human Use</b>&lt;/td&gt;&lt;td&gt;Overprescribing, incomplete courses, OTC access&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Animal/Agriculture</b>&lt;/td&gt;&lt;td&gt;Growth promotion, prophylaxis, residues&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Environmental</b>&lt;/td&gt;&lt;td&gt;Pharma waste, hospital effluent, agriculture runoff&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Transmission</b>&lt;/td&gt;&lt;td&gt;Poor IPC, travel, migration, healthcare-associated&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>AMR Surveillance:</b></p>
+<ul><li><b>GLASS</b> (WHO Global Antimicrobial Resistance Surveillance System)</li><li><b>EARS-Net</b> (Europe), <b>NARMS</b> (US), <b>CARA</b> (UK)</li><li><b>Priority Pathogens</b>: CRE, MRSA, VRE, MDR-TB, XDR-TB, ESBL, fluoroquinolone-resistant Salmonella</li></ul>
+<p><b>One Health Approach:</b> Human + Animal + Environmental health integration for zoonoses and AMR.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Transmission Modes**</td><td>Direct, droplet, airborne, fomite, faecal-oral, vector, vehicle, vertical, zoonotic</td></tr><tr><td>**R₀**</td><td>β × c × D. >1 = epidemic. Measles 12-18, COVID 2.5-3.5, Flu 1.3-1.8</td></tr><tr><td>**Herd Immunity**</td><td>HIT = 1 - 1/R₀. Measles 92-95%, COVID 60-71%</td></tr><tr><td>**Epidemic Curves**</td><td>Point (sharp), Continuous (plateau), Propagated (serial peaks)</td></tr><tr><td>**Models**</td><td>SIR (measles), SEIR (COVID, TB), SIS (gonorrhoea)</td></tr><tr><td>**Serial Interval**</td><td>Symptom to symptom. Contact tracing window.</td></tr><tr><td>**AMR**</td><td>Human/animal/environment drivers. One Health. WHO priority pathogens.</td></tr><tr><td>**Vaccine Impact**</td><td>Direct (protect vaccinee) + Indirect (herd) = Total effect</td></tr><tr><td>**Outbreak Control**</td><td>Reduce β (transmission prob), c (contacts), D (duration infectious)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Define R₀ and herd immunity threshold.**</td><td>R₀ = average secondary cases from 1 infectious in fully susceptible population. HIT = 1 - 1/R₀ = proportion immune needed to interrupt transmission.</td></tr><tr><td>**R₀ of measles, COVID, influenza?**</td><td>Measles 12-18, COVID original 2.5-3.5, Influenza 1.3-1.8.</td></tr><tr><td>**Difference between R₀ and Rₜ?**</td><td>R₀ = theoretical, fully susceptible population. Rₜ = effective at time t, accounting for immunity, interventions, depletion of susceptibles.</td></tr><tr><td>**Transmission modes - give examples.**</td><td>Direct: STIs. Droplet: influenza. Airborne: measles, TB. Faecal-oral: cholera. Vector: malaria. Fomite: norovirus. Vertical: HIV, syphilis.</td></tr><tr><td>**SIR vs SEIR model?**</td><td>SIR: S→I→R (no latent period). SEIR: S→E→I→R (E=exposed/latent). SEIR for diseases with incubation period (COVID, TB).</td></tr><tr><td>**Epidemic curve patterns?**</td><td>Point source: single exposure, sharp peak. Continuous: ongoing exposure, plateau. Propagated: person-to-person, serial peaks.</td></tr><tr><td>**AMR drivers - One Health?**</td><td>Human: overuse, misuse. Animal: growth promotion, prophylaxis. Environment: pharma waste. Transmission: poor IPC, travel.</td></tr><tr><td>**Vaccine efficacy vs effectiveness?**</td><td>Efficacy: RCT (ideal conditions). Effectiveness: real-world observational. Effectiveness ≤ Efficacy.</td></tr><tr><td>**Serial interval vs generation time?**</td><td>Generation: infection→infection. Serial: symptom→symptom. Serial ≈ generation + incubation difference.</td></tr><tr><td>**How reduce Rₜ below 1?**</td><td>Reduce β (masks, ventilation, treatment), reduce c (distancing, quarantine), reduce D (early isolation, treatment), increase immunity (vaccination).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**R₀ vs Attack Rate**</td><td>R₀ = transmission potential. Attack rate = proportion infected in outbreak. Related but distinct.</td></tr><tr><td>**Airborne vs Droplet**</td><td>Airborne: <5μm, long-range, N95/FFP3. Droplet: >5μm, <1-2m, surgical mask. COVID has both components.</td></tr><tr><td>**Incubation vs Latent Period**</td><td>Incubation: exposure→symptoms. Latent: exposure→infectious. Latent ≤ Incubation (can be infectious before symptoms).</td></tr><tr><td>**Vaccine Impact**</td><td>Total = Direct + Indirect (herd). Indirect can exceed direct for high R₀ diseases.</td></tr><tr><td>**Endemic vs Epidemic**</td><td>Endemic = constant baseline. Epidemic = >expected. Hyperendemic = high constant.</td></tr></table>
+<p><b>Mnemonic: TRANSMISSION MODES (DD-AFV-Z)</b></p>
+<ul><li><b>D</b>irect <b>D</b>roplet</li><li><b>A</b>irborne</li><li><b>F</b>omite <b>F</b>aecal-oral</li><li><b>V</b>ector <b>V</b>ehicle</li><li><b>Z</b>oonotic <b>Z</b>ертикальная (Vertical)</li></ul>
+<p><b>Mnemonic: R-ZERO (βCD)</b></p>
+<ul><li><b>R</b>₀ = <b>β</b> (transmissibility) × <b>c</b> (contacts) × <b>D</b> (duration)</li></ul>
+<p><b>Mnemonic: HERD IMMUNITY (HIT)</b></p>
+<ul><li><b>H</b>IT = <b>1 - 1/R₀</b></li><li><b>M</b>easles <b>R</b>₀=12-18 → <b>H</b>IT=<b>92-95%</b></li></ul>
+<p><b>Mnemonic: EPIDEMIC PATTERNS (PCP)</b></p>
+<ul><li><b>P</b>oint source = <b>P</b>eak</li><li><b>C</b>ontinuous = <b>C</b>onstant/Plateau</li><li><b>P</b>ropagated = <b>P</b>eaks serial</li></ul>
+<p><b>Mnemonic: AMR ONE HEALTH (HAET)</b></p>
+<ul><li><b>H</b>uman use</li><li><b>A</b>nimal agriculture</li><li><b>E</b>nvironment</li><li><b>T</b>ransmission (IPC, travel)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Infectious Disease Epidemiology)) Transmission Direct, Droplet, Airborne Faecal-Oral, Vector Fomite, Vehicle Vertical, Zoonotic Metrics R₀, Rₜ, HIT Attack Rate, CFR Incubation, Serial Interval Models SIR (measles, flu) SEIR (COVID, TB) SIS (gonorrhoea) Patterns Point Source Continuous Source Propagated Endemic/Epidemic/Pandemic Control Reduce β, c, D Vaccination Isolation/Quarantine AMR One Health Human/Animal/Environment WHO Priority Pathogens Vaccines Efficacy vs Effectiveness Direct + Indirect = Total </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Transmission**</td><td>Direct, droplet, airborne, fomite, faecal-oral, vector, vehicle, vertical, zoonotic</td></tr><tr><td>**R₀**</td><td>β × c × D. Measles 12-18, COVID 2.5-3.5, Flu 1.3-1.8</td></tr><tr><td>**HIT**</td><td>1 - 1/R₀. Measles 92-95%</td></tr><tr><td>**Models**</td><td>SIR (no latency), SEIR (latency), SIS (no immunity)</td></tr><tr><td>**Epidemic Curves**</td><td>Point (peak), Continuous (plateau), Propagated (serial peaks)</td></tr><tr><td>**Serial Interval**</td><td>Symptom→symptom; contact tracing window</td></tr><tr><td>**AMR**</td><td>One Health: Human, Animal, Environment</td></tr><tr><td>**Control**</td><td>Reduce β (masks, treatment), c (distancing), D (isolation)</td></tr><tr><td>**Vaccine**</td><td>Efficacy (RCT) vs Effectiveness (real world)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Transmission Modes</td><td></td><td></td></tr><tr><td>R₀ / HIT Calculations</td><td></td><td></td></tr><tr><td>SIR/SEIR Models</td><td></td><td></td></tr><tr><td>Epidemic Patterns</td><td></td><td></td></tr><tr><td>AMR One Health</td><td></td><td></td></tr><tr><td>Vaccine Epidemiology</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Disease Surveillance &amp; Outbreak Investigation.md]], [[Immunisation &amp; Vaccination Programs.md]], [[Notifiable Diseases &amp; International Health Regulations.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Infectious Disease Epidemiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

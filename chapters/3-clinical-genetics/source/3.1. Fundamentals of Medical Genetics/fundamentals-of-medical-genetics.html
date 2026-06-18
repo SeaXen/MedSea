@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fundamentals Of Medical Genetics — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 3 CLINICAL GENETICS / 3.1. FUNDAMENTALS OF MEDICAL GENETICS</span>
+      <div class="h1">Fundamentals Of Medical Genetics</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe <b>DNA structure</b>, replication, transcription, translation (Central Dogma)</li><li>[ ] Explain <b>gene structure</b> (exons, introns, UTRs, promoters, enhancers, splice sites)</li><li>[ ] Describe <b>human genome organisation</b> (nuclear chromosomes, mitochondrial DNA)</li><li>[ ] Apply <b>Hardy-Weinberg equilibrium</b> calculations for carrier/disease frequencies</li><li>[ ] Interpret <b>chromosome nomenclature</b> (ISCN), banding patterns, FISH, microarray</li><li>[ ] Classify <b>mutation types</b> (SNV, CNV, Indel, Splice, Repeat expansion) and consequences</li><li>[ ] Answer viva: "Hardy-Weinberg equilibrium for CF carrier frequency" and "Chromosome banding nomenclature"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: From DNA to Phenotype</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart LR A[DNA (Gene)] --&gt; B[Transcription&lt;br/&gt;Pre-mRNA] B --&gt; C[Splicing&lt;br/&gt;Exons/Introns] C --&gt; D[Mature mRNA] D --&gt; E[Translation&lt;br/&gt;Ribosome] E --&gt; F[Protein] F --&gt; G[Function/Phenotype]</p>
+<p>style A fill:#e1f5fe style F fill:#fff3e0 style G fill:#e8f5e9 ```</p>
+<div class="callout"><b>Central Dogma:</b> DNA → RNA → Protein. <b>Regulation</b> at every step (transcription, splicing, translation, post-translational).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ DNA, Genes & Genome Organisation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">DNA Structure &amp; Replication</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Structure**</td><td>Double helix, Antiparallel strands, Base pairing (A-T, G-C)</td></tr><tr><td>**Directionality**</td><td>5' → 3' (synthesis), Template read 3' → 5'</td></tr><tr><td>**Replication**</td><td>Semi-conservative, Origin of replication, Leading/lagging strand</td></tr><tr><td>**Polymerases**</td><td>Pol α (priming), Pol δ/ε (nuclear), Pol γ (mitochondrial)</td></tr><tr><td>**Telomeres**</td><td>TTAGGG repeats, Telomerase (TERT + TERC) — Shortening → Ageing</td></tr></table>
+<div class="sub-h">Gene Structure</div>
+<table class="ctable"><tr><th>Element</th><th>Function</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Promoter**</td><td>Transcription initiation (TF binding, TATA box, CpG island)</td></tr><tr><td>**Enhancer/Silencer**</td><td>Distal regulatory elements (tissue-specific)</td></tr><tr><td>**5' UTR**</td><td>Translation regulation, uORFs</td></tr><tr><td>**Exons**</td><td>Coding sequence (CDS)</td></tr><tr><td>**Introns**</td><td>Spliced out, Regulatory elements, Alternative splicing</td></tr><tr><td>**Splice Sites**</td><td>5' GU, 3' AG, Branch point — Spliceosome (snRNPs)</td></tr><tr><td>**3' UTR**</td><td>Stability, Localisation, miRNA binding</td></tr><tr><td>**Poly-A Tail**</td><td>Stability, Nuclear export, Translation</td></tr></table>
+<div class="sub-h">Human Genome Organisation</div>
+<table class="ctable"><tr><th>Feature</th><th>Value</th></tr><tr><td>---------</td><td>-------</td></tr><tr><td>**Nuclear Genome**</td><td>~3.2 Gb, ~20,000 protein-coding genes</td></tr><tr><td>**Chromosomes**</td><td>22 autosomes + X/Y (46,XX / 46,XY)</td></tr><tr><td>**Mitochondrial DNA**</td><td>16.5 kb circular, 37 genes (13 protein, 22 tRNA, 2 rRNA)</td></tr><tr><td>**Gene Density**</td><td>~1 gene/100 kb (variable)</td></tr><tr><td>**Non-coding**</td><td>~98% (regulatory, repetitive, pseudogenes, lncRNA)</td></tr><tr><td>**Repetitive DNA**</td><td>~50% (LINEs, SINEs/Alu, Satellites, Transposons)</td></tr></table>
+<div class="callout"><b>Key Databases:</b> OMIM (phenotypes), GeneReviews (clinical summaries), ClinVar (variant classification), gnomAD (population frequencies), HGNC (nomenclature), UCSC/Ensembl (genome browser).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Chromosome Structure & Analysis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Chromosome Morphology</div>
+<table class="ctable"><tr><th>Type</th><th>Centromere Position</th><th>Arms</th></tr><tr><td>-------</td><td>-------------------</td><td>------</td></tr><tr><td>**Metacentric**</td><td>Middle</td><td>p = q (chr 1, 3, 16, 19, 20)</td></tr><tr><td>**Submetacentric**</td><td>Off-centre</td><td>p < q (chr 2, 4-12, 17, 18, X)</td></tr><tr><td>**Acrocentric**</td><td>Near end</td><td>p very small (chr 13, 14, 15, 21, 22) — NORs on p arm</td></tr><tr><td>**Telocentric**</td><td>At end</td><td>p absent (not in humans)</td></tr></table>
+<div class="sub-h">Chromosome Banding (ISCN)</div>
+<ul><li><b>G-banding</b> (Trypsin + Giemsa): Light = G-light (GC-rich, gene-rich, early replicating), Dark = G-dark (AT-rich, gene-poor, late replicating)</li><li><b>Resolution</b>: ~400-550 bands (standard) → 850 bands (high-res)</li><li><b>Nomenclature</b>: e.g., <b>46,XY,del(22)(q11.2)</b> = Male, deletion chr22 long arm band 11.2</li></ul>
+<div class="sub-h">Molecular Cytogenetics</div>
+<table class="ctable"><tr><th>Technique</th><th>Principle</th><th>Resolution</th><th>Clinical Use</th></tr><tr><td>-----------</td><td>-----------</td><td>------------</td><td>--------------</td></tr><tr><td>**FISH**</td><td>Fluorescent probe hybridisation</td><td>~50-500 kb</td><td>Microdeletions (22q11), Prenatal (QF-PCR), Oncology (HER2, BCR::ABL)</td></tr><tr><td>**aCGH**</td><td>Test vs Ref DNA hybridisation to array</td><td>~50-100 kb</td><td>**1st-tier DD/ID/CA**, CNV, LOH, UPD</td></tr><tr><td>**SNP Array**</td><td>SNP allele intensity + BAF</td><td>~10-50 kb</td><td>CNV + LOH + UPD + Mosaicism</td></tr><tr><td>**SKY/M-FISH**</td><td>Chromosome painting</td><td>Whole chr</td><td>Complex translocations</td></tr></table>
+<div class="callout"><b>aCGH vs SNP Array:</b> aCGH = CNV only. SNP Array = CNV + LOH (autozygosity) + UPD + Mosaicism detection.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Cell Division & Genetic Variation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mitosis vs Meiosis</div>
+<table class="ctable"><tr><th>Feature</th><th>Mitosis</th><th>Meiosis</th></tr><tr><td>---------</td><td>---------</td><td>---------</td></tr><tr><td>**Purpose**</td><td>Growth, Repair</td><td>Gametogenesis</td></tr><tr><td>**Divisions**</td><td>1</td><td>2 (Meiosis I + II)</td></tr><tr><td>**DNA Replication**</td><td>Once (S phase)</td><td>Once (pre-Meiotic S)</td></tr><tr><td>**Chromosome Number**</td><td>2n → 2n</td><td>2n → n</td></tr><tr><td>**Recombination**</td><td>No</td><td>**Yes (Meiosis I, Prophase I)**</td></tr><tr><td>**Independent Assortment**</td><td>No</td><td>**Yes (Metaphase I)**</td></tr><tr><td>**Errors**</td><td>Mosaicism</td><td>**Non-disjunction → Aneuploidy**</td></tr></table>
+<div class="sub-h">Meiotic Errors → Disease</div>
+<table class="ctable"><tr><th>Error</th><th>Stage</th><th>Consequence</th></tr><tr><td>-------</td><td>-------</td><td>-------------</td></tr><tr><td>**Non-disjunction**</td><td>Meiosis I (homologs)</td><td>Whole chromosome aneuploidy (Trisomy 21, 45,X)</td></tr><tr><td>**Non-disjunction**</td><td>Meiosis II (sister chromatids)</td><td>Identical chromatids → Isochromosome / UPD risk</td></tr><tr><td>**Recombination Error**</td><td>Prophase I (crossing over)</td><td>Deletion/Duplication, Translocation</td></tr></table>
+<div class="sub-h">Mutation Classification</div>
+<table class="ctable"><tr><th>Type</th><th>DNA Change</th><th>Protein Consequence</th><th>Example</th></tr><tr><td>------</td><td>------------</td><td>---------------------</td><td>---------</td></tr><tr><td>**Missense**</td><td>Single base substitution</td><td>Amino acid change</td><td>Sickle cell (Glu→Val)</td></tr><tr><td>**Nonsense**</td><td>Substitution → Stop codon</td><td>Truncated protein</td><td>Duchenne MD (DMD)</td></tr><tr><td>**Frameshift**</td><td>Insertion/Deletion (not 3n)</td><td>Reading frame shift → Premature stop</td><td>CF (ΔF508 is in-frame del)</td></tr><tr><td>**Splice Site**</td><td>GT/AG consensus altered</td><td>Exon skipping, Intron retention</td><td>β-Thalassaemia (IVS1-110)</td></tr><tr><td>**In-frame Indel**</td><td>3n bp insertion/deletion</td><td>Amino acid insert/delete</td><td>CF ΔF508 (3 bp del)</td></tr><tr><td>**CNV**</td><td>Deletion/Duplication (>1 kb)</td><td>Dosage effect</td><td>22q11.2 del, CMT1A dup</td></tr><tr><td>**Repeat Expansion**</td><td>TNR increase</td><td>Toxic RNA/protein, Anticipation</td><td>HD, FXS, DM1, FRDA</td></tr><tr><td>**Regulatory**</td><td>Promoter/Enhancer variant</td><td>Expression change</td><td>β-Thalassaemia promoter</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Population Genetics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Hardy-Weinberg Equilibrium (HWE)</div>
+<p><b>Assumptions:</b> Large population, Random mating, No mutation/migration/selection, Diploid, Autosomal</p>
+<table class="ctable"><tr><th>Equation</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**p + q = 1**</td><td>Allele frequencies (p = normal, q = disease)</td></tr><tr><td>**p² + 2pq + q² = 1**</td><td>Genotype frequencies</td></tr><tr><td>**p²**</td><td>Homozygous normal</td></tr><tr><td>**2pq**</td><td>**Heterozygous carriers**</td></tr><tr><td>**q²**</td><td>**Homozygous affected (disease frequency)**</td></tr></table>
+<div class="sub-h">Key Calculations</div>
+<table class="ctable"><tr><th>Scenario</th><th>Formula</th><th>Example (CF, q² = 1/2500)</th></tr><tr><td>----------</td><td>---------</td><td>---------------------------</td></tr><tr><td>**Disease frequency**</td><td>q²</td><td>1/2500 = 0.0004</td></tr><tr><td>**Allele frequency (q)**</td><td>√q²</td><td>√0.0004 = **0.02**</td></tr><tr><td>**Normal allele (p)**</td><td>1 - q</td><td>1 - 0.02 = **0.98**</td></tr><tr><td>**Carrier frequency (2pq)**</td><td>2 × p × q</td><td>2 × 0.98 × 0.02 = **0.0392 (1/25.5)**</td></tr><tr><td>**Affected freq (q²)**</td><td>q²</td><td>**1/2500**</td></tr></table>
+<div class="sub-h">Consanguinity &amp; Inbreeding</div>
+<table class="ctable"><tr><th>Relationship</th><th>Inbreeding Coefficient (F)</th><th>AR Risk Increase</th></tr><tr><td>--------------</td><td>---------------------------</td><td>------------------</td></tr><tr><td>First cousins</td><td>**1/16 = 0.0625**</td><td>× ~20-40 for rare AR</td></tr><tr><td>Uncle-niece</td><td>1/8 = 0.125</td><td>Higher</td></tr><tr><td>Double first cousins</td><td>1/8 = 0.125</td><td>Higher</td></tr></table>
+<div class="callout"><b>Autosomal Recessive Risk in Consanguinity:</b> Risk = q² + F × q (approx). For rare disease (q small), <b>F × q</b> dominates.</div>
+<div class="sub-h">Linkage Disequilibrium (LD) &amp; Haplotypes</div>
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**LD**</td><td>Non-random association of alleles at different loci (D' or r²)</td></tr><tr><td>**Haplotype**</td><td>Combination of alleles on same chromosome</td></tr><tr><td>**Tag SNP**</td><td>SNP capturing LD block (r² > 0.8)</td></tr><tr><td>**Recombination Hotspot**</td><td>Region of high crossover rate (PRDM9-mediated)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Central Dogma**</td><td>DNA → (Transcription/Splicing) → mRNA → (Translation) → Protein</td></tr><tr><td>**Gene Structure**</td><td>Promoter, Exons, Introns, Splice sites (GT-AG), UTRs, Enhancers</td></tr><tr><td>**Chromosome Bands**</td><td>G-banding (400-550 bands), ISCN nomenclature (e.g., del(22)(q11.2))</td></tr><tr><td>**FISH/aCGH/SNP Array**</td><td>FISH = targeted; aCGH = CNV; SNP Array = CNV + LOH + UPD</td></tr><tr><td>**Meiosis Errors**</td><td>Non-disjunction MI → Trisomy; MII → Isochromosome/UPD; Recombination → Del/Dup</td></tr><tr><td>**Mutation Types**</td><td>Missense, Nonsense, Frameshift, Splice, CNV, Repeat expansion, Regulatory</td></tr><tr><td>**Hardy-Weinberg**</td><td>p+q=1; p²+2pq+q²=1; Carrier freq = 2pq; Disease freq = q²</td></tr><tr><td>**CF Example**</td><td>q²=1/2500 → q=0.02 → Carrier 2pq=1/25</td></tr><tr><td>**Consanguinity**</td><td>F=1/16 (1st cousins) → AR risk ↑ = F×q (for rare diseases)</td></tr><tr><td>**LD & Haplotypes**</td><td>Non-random allele association; Tag SNPs capture blocks</td></tr><tr><td>**Mutation Nomenclature**</td><td>HGVS: c. for cDNA, g. for genomic, p. for protein (e.g., c.1521_1523delCTT p.Phe508del)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What is the central dogma of molecular biology?</td><td>DNA → Transcription → Pre-mRNA → Splicing → Mature mRNA → Translation → Protein</td></tr><tr><td>2</td><td>What is the structure of a typical eukaryotic gene?</td><td>Promoter, 5' UTR, Exons (CDS), Introns (splice sites GT-AG), 3' UTR, Poly-A tail</td></tr><tr><td>3</td><td>Difference between G-light and G-dark bands?</td><td>G-light = GC-rich, gene-rich, early replication. G-dark = AT-rich, gene-poor, late replication.</td></tr><tr><td>4</td><td>What does FISH detect that karyotype cannot?</td><td>Submicroscopic deletions/insertions (<5 Mb), specific locus amplification/deletion</td></tr><tr><td>5</td><td>Hardy-Weinberg equilibrium — if disease frequency = 1/10,000, carrier frequency?</td><td>q² = 1/10,000 = 0.0001 → q = 0.01 → 2pq = 2 × 0.99 × 0.01 = **1/50**</td></tr><tr><td>6</td><td>Consanguinity — first cousin marriage increases risk of which inheritance?</td><td>**Autosomal Recessive** (F = 1/16, risk ≈ q² + Fq)</td></tr><tr><td>7</td><td>Meiosis I vs II non-disjunction — difference in outcome?</td><td>MI → Homologs fail to separate → Trisomy (extra whole chromosome). MII → Sister chromatids fail → Identical chromatids (isochromosome/UPD risk)</td></tr><tr><td>8</td><td>Types of mutation — which causes frameshift?</td><td>Insertion/Deletion not multiple of 3 nucleotides</td></tr><tr><td>9</td><td>ACMG variant classification — 5 tiers?</td><td>Pathogenic (P), Likely Pathogenic (LP), Variant of Uncertain Significance (VUS), Likely Benign (LB), Benign (B)</td></tr><tr><td>10</td><td>Linkage disequilibrium — what does r² = 1 mean?</td><td>Perfect correlation, alleles always inherited together (no recombination between loci)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Intron = Junk DNA"**</td><td>**NO.** Introns contain regulatory elements, alternative splicing, ncRNA, evolutionary novelty</td></tr><tr><td>**"HWE applies to all populations"**</td><td>**NO.** Assumptions often violated (selection, drift, migration, non-random mating, mutation)</td></tr><tr><td>**"q = disease allele frequency in HWE"**</td><td>**Only for autosomal recessive.** For dominant, q = allele freq but disease freq ≠ q²</td></tr><tr><td>**"First cousins share 1/8 DNA"**</td><td>**NO.** They share **~1/8 (12.5%)** of DNA. **F = 1/16** (probability both alleles IBD)</td></tr><tr><td>**"FISH = Karyotype replacement"**</td><td>**NO.** FISH = Targeted (single locus). Karyotype = Genome-wide. Use both.</td></tr><tr><td>**"SNP Array = Karyotype + FISH"**</td><td>**Not exactly.** SNP array detects CNV + LOH + UPD. Misses balanced translocations, low-level mosaicism (<10-20%).</td></tr><tr><td>**"Repeat expansion = frameshift"**</td><td>**NO.** TNR expansions are in-frame (CAG, CGG, CTG, GAA). Toxic **gain of function** (RNA/protein).</td></tr><tr><td>**"Carrier = Affected in recessive disorders"**</td><td>**NO.** Carriers (heterozygotes) are **asymptomatic** (exceptions: Sickle trait, G6PD carriers, FXS premutation)</td></tr></table>
+<div class="callout"><b>Mnemonic: FUNDAMENTALS GENETICS</b> <b>F</b>oundational: <b>DNA → RNA → Protein</b> (Central Dogma) <b>U</b>TRs: <b>5' UTR (translation reg), 3' UTR (stability/miRNA)</b> <b>N</b>omenclature: <b>ISCN</b> (e.g., 46,XX,del(22)(q11.2)) <b>D</b>NA Structure: <b>Double helix, Antiparallel, 5'→3' synthesis</b> <b>A</b>llele Frequencies: <b>HWE p+q=1, p²+2pq+q²=1</b> <b>M</b>eiosis: <b>MI (homologs) → Trisomy if ND; MII (sisters) → Isochr/UPD</b> <b>E</b>xons/Introns: <b>Exons Code, Introns Splice (GT-AG)</b> <b>N</b>ucleotide Changes: <b>Missense, Nonsense, Frameshift, Splice, CNV, Repeat</b> <b>T</b>elomeres: <b>TTAGGG, Telomerase (TERT+TERC), Shortening=Aging</b> <b>A</b>CNVs: <b>Deletion/Duplication &gt;1kb, aCGH/SNP Array detect</b> <b>L</b>OH/UPD: <b>SNP Array only (not aCGH)</b> <b>S</b>plice Sites: <b>5' GU, 3' AG, Branch Point</b> — Spliceosome (U1,U2,U4,U5,U6) <b>G</b>enome Org: <b>3.2Gb, ~20k genes, 46 chr (22A+XY), mtDNA 16.5kb</b> <b>E</b>pigenetics: <b>Methylation (Imprinting), Histone mods, ncRNA</b> <b>T</b>ransposons: <b>LINEs, SINEs (Alu), ERVs — ~50% genome</b> <b>I</b>SCN: <b>Karyotype nomenclature (46,XY,del(22)(q11.2))</b> <b>C</b>entral Dogma: <b>DNA→RNA→Protein</b> (Splicing, PTM regulation) <b>S</b>equencing: <b>Sanger → NGS (Panels/WES/WGS) → Variant Classification (ACMG 5-tier)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Fundamentals of&lt;br&gt;Medical Genetics)) Central Dogma DNA → RNA → Protein Splicing (Exons/Introns) Translation/PTM Gene Structure Promoter/Enhancer Exons/Introns UTRs/Splice Sites ncRNA Regulatory Chromosome Structure Banding (G-light/G-dark) Morphology (Meta/Sub/Acro) ISCN Nomenclature FISH/aCGH/SNP Array Cell Division Mitosis (2n→2n) Meiosis (2n→n) Recombination/Independent Assortment ND MI vs MII Mutation Types SNV (Missense/Nonsense) Indel (Frameshift/In-frame) Splice Site CNV (&gt;1kb) Repeat Expansion Population Genetics HWE (p+q=1, p²+2pq+q²=1) Carrier Freq = 2pq Consanguinity (F=1/16) LD/Haplotypes Databases OMIM/ClinVar/gnomAD GeneReviews/HGNC UCSC/Ensembl </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Central Dogma & Gene Structure</td><td>3</td><td></td><td></td></tr><tr><td>Chromosome Analysis (Karyotype/FISH/Array)</td><td>3</td><td></td><td></td></tr><tr><td>Cell Division & Meiotic Errors</td><td>3</td><td></td><td></td></tr><tr><td>Mutation Classification</td><td>3</td><td></td><td></td></tr><tr><td>Hardy-Weinberg Calculations</td><td>3</td><td></td><td></td></tr><tr><td>Consanguinity & Population Genetics</td><td>2</td><td></td><td></td></tr><tr><td>Databases & Nomenclature</td><td>2</td><td></td><td></td></tr><tr><td>Clinical Application</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the structure of the human genome and the principles of population genetics relevant to clinical practice."</td><td>Genome organisation, Chromosome structure, HWE, Consanguinity, LD, Mutation types, Databases</td></tr><tr><td>**Short Note**</td><td>"Hardy-Weinberg equilibrium and its clinical application."</td><td>p+q=1, p²+2pq+q²=1, Carrier freq 2pq, Disease freq q², Assumptions, CF example 1/2500 → carriers 1/25</td></tr><tr><td>**Viva**</td><td>"Couple are first cousins. What is the risk of autosomal recessive disease in offspring if population carrier frequency = 1/50?"</td><td>q = 1/100 = 0.01. Population risk q² = 1/10,000. Consanguinity risk = q² + Fq = 0.0001 + (1/16)×0.01 = 0.0001 + 0.000625 = 0.000725 ≈ **1/1380** (vs 1/10,000 baseline). F = 1/16 for first cousins.</td></tr><tr><td>**Ward Round**</td><td>"Parents of child with CF (ΔF508 homozygous). What is recurrence risk? Testing for future pregnancies?"</td><td>AR → 25% recurrence. Prenatal: CVS (qf-PCR + CFTR sequencing) or Amnio. NIPT not for single gene. PGD-M available. Carrier testing for relatives.</td></tr><tr><td>**Last-Night**</td><td>"Central: DNA→RNA→Protein. Gene: Prom/Ex/In/UTR. Chr: G-band/ISCN/FISH/aCGH/SNP. Meiosis: MI ND=Trisomy, MII ND=Isochr. Mut: Miss/Nonsense/Frameshift/Splice/CNV/Repeat. HWE: p+q=1, 2pq=carrier, q²=disease. CF: 1/2500=disease, 1/25=carrier. Consang: F=1/16."</td><td>Compressed framework.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Central Dogma</b>: DNA → Transcription → Pre-mRNA → Splicing → Mature mRNA → Translation → Protein (PTM regulation)</li><li><b>Gene Architecture</b>: Promoter, 5' UTR, Exons (coding), Introns (splice sites GT-AG, regulatory), 3' UTR, Poly-A</li><li><b>Chromosome Analysis</b>: G-banding (400-550 bands, ISCN), FISH (targeted), <b>aCGH (CNV)</b>, <b>SNP Array (CNV+LOH+UPD)</b>, SKY (translocations)</li><li><b>Cell Division</b>: Mitosis (2n→2n) vs Meiosis (2n→n, recombination, independent assortment). <b>Non-disjunction MI → Trisomy; MII → Isochromosome/UPD</b></li><li><b>Mutation Types</b>: SNV (Missense/Nonsense), Indel (Frameshift if not 3n), Splice site, CNV (&gt;1kb), Repeat expansion (TNR), Regulatory</li><li><b>Population Genetics</b>: <b>HWE: p+q=1, p²+2pq+q²=1</b>. Disease freq = q², Carrier freq = <b>2pq</b>. <b>CF: q²=1/2500 → q=0.02 → Carrier 2pq=1/25</b></li><li><b>Consanguinity</b>: First cousins <b>F=1/16</b>. AR risk = q² + Fq (for rare disease, ≈ Fq). <b>Genetic drift, Founder effect, Bottleneck</b></li><li><b>LD/Haplotypes</b>: Non-random allele association. Tag SNPs for GWAS. Recombination hotspots (PRDM9).</li><li><b>Key Databases</b>: OMIM (phenotype), ClinVar (variants), gnomAD (frequencies), GeneReviews (clinical), HGNC (names), UCSC/Ensembl (browser).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Central Dogma — correct sequence:</b></li></ol>
+<p>A. DNA → Protein → RNA  B. <b>DNA → RNA → Protein</b>  C. RNA → DNA → Protein  D. Protein → RNA → DNA <i>Answer: B. DNA → Transcription → RNA → Translation → Protein.</i></p>
+<ol><li><b>Splice donor site consensus sequence:</b></li></ol>
+<p>A. AG  B. <b>GU</b>  C. AT  D. CG <i>Answer: B. 5' splice site = GU (GT in DNA). 3' splice site = AG.</i></p>
+<ol><li><b>Hardy-Weinberg — if q = 0.01, carrier frequency (2pq)?</b></li></ol>
+<p>A. 0.01  B. <b>0.0198</b>  C. 0.0001  D. 0.98 <i>Answer: B. p = 0.99, q = 0.01 → 2pq = 2 × 0.99 × 0.01 = 0.0198 (≈ 1/50).</i></p>
+<ol><li><b>Meiosis I non-disjunction outcome:</b></li></ol>
+<p>A. Isochromosome  B. <b>Trisomy</b>  C. UPD  D. Mosaicism <i>Answer: B. Homologs fail to separate → gamete with 2 copies → Trisomy on fertilisation.</i></p>
+<ol><li><b>aCGH vs SNP Array — key difference:</b></li></ol>
+<p>A. aCGH detects LOH  B. <b>SNP Array detects LOH and UPD</b>  C. aCGH higher resolution  D. SNP detects balanced translocations <i>Answer: B. SNP Array provides B-allele frequency → LOH (autozygosity) and UPD detection.</i></p>
+<ol><li><b>Cystic fibrosis incidence 1/2500 — carrier frequency?</b></li></ol>
+<p>A. 1/50  B. <b>1/25</b>  C. 1/100  D. 1/10 <i>Answer: B. q² = 1/2500 → q = 0.02. 2pq = 2 × 0.98 × 0.02 = 0.0392 ≈ 1/25.</i></p>
+<ol><li><b>First cousin consanguinity coefficient (F):</b></li></ol>
+<p>A. 1/8  B. <b>1/16</b>  C. 1/32  D. 1/4 <i>Answer: B. First cousins share 1/8 DNA → F = 1/16 (probability both alleles identical by descent).</i></p>
+<ol><li><b>ACMG variant classification — "VUS" means:</b></li></ol>
+<p>A. Variant Unlikely Significant  B. <b>Variant of Uncertain Significance</b>  C. Variant Under Study  D. Variant Unclassified Significance <i>Answer: B. Variant of Uncertain Significance — insufficient evidence for pathogenic or benign.</i></p>
+<ol><li><b>Mitochondrial DNA — size and gene count:</b></li></ol>
+<p>A. 16.5 kb, 37 genes  B. 16.5 Mb, 370 genes  C. 1.65 kb, 13 genes  D. 165 kb, 370 genes <i>Answer: A. 16.5 kb circular, 13 protein + 22 tRNA + 2 rRNA = 37 genes.</i></p>
+<ol><li><b>Linkage disequilibrium — r² = 0.8 means:</b></li></ol>
+<p>A. No correlation  B. <b>Strong correlation (tag SNP captures 80% variance)</b>  C. Perfect correlation  D. Negative correlation <i>Answer: B. r² = proportion of variance explained. r² &gt; 0.8 = good tag SNP for LD block.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Couple, first cousins, seek pre-conception counselling. Population CF carrier freq 1/25. Risk affected child?</b></li></ol>
+<p>A. 1/2500  B. <b>~1/1600</b>  D. 1/2500 + 1/400  D. 1/100 <i>Answer: B. Population q² = 1/2500 (q=0.02). Consang risk = q² + Fq = 0.0004 + (1/16)×0.02 = 0.0004 + 0.00125 = 0.00165 ≈ <b>1/606</b>. Wait — q for CF is 1/25 carrier = 0.04 allele? No: carrier 1/25 = 2pq ≈ 2q → q=0.02. Population q²=0.0004. Fq = (1/16)×0.02 = 0.00125. Total = 0.00165 ≈ 1/606.</i></p>
+<ol><li><b>Child with developmental delay, dysmorphia. First-tier genetic test?</b></li></ol>
+<p>A. Karyotype  B. <b>Chromosomal Microarray (aCGH/SNP Array)</b>  C. Whole Exome Sequencing  D. Fragile X PCR <i>Answer: B. Microarray = 1st-tier for DD/ID/CA (15-20% yield). Detects CNV, LOH, UPD.</i></p>
+<ol><li><b>25-year-old woman, brother has Duchenne MD. Mother is carrier. Her risk of being carrier?</b></li></ol>
+<p>A. 1/4  B. <b>1/2</b>  D. 2/3  D. 1 <i>Answer: B. X-linked recessive. Mother obligate carrier → 50% chance daughter inherits mutant allele.</i></p>
+<ol><li><b>NGS panel for epilepsy returns VUS in SCN1A. Next step?</b></li></ol>
+<p>A. Report as pathogenic  B. <b>Segregation analysis in parents + phenotype correlation</b>  C. Ignore  D. Repeat Sanger <i>Answer: B. VUS requires segregation (de novo vs inherited), phenotype match, functional data for reclassification.</i></p>
+<ol><li><b>Prenatal screening — NIPT (cfDNA) sensitivity for Trisomy 21?</b></li></ol>
+<p>A. 90%  B. <b>&gt;99%</b>  C. 95%  D. 99.9% <i>Answer: B. NIPT sensitivity/specificity &gt;99% for T21. False positives: placental mosaicism, maternal malignancy, vanishing twin.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 5-B, 6-B, 7-B, 8-B, 9-A, 10-B</td><td>1-C, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Mendelian Inheritance]] — AD, AR, XL patterns built on DNA/chromosome fundamentals</li><li>[[2.2 Non-Mendelian Inheritance]] — Mitochondrial, Imprinting, Mosaicism mechanisms</li><li>[[3. Chromosomal Disorders]] — Karyotype, FISH, Microarray applications</li><li>[[5.1-5.4 Genetic Testing Technologies]] — All technologies built on DNA/chromosome structure</li><li>[[4.3 X-Linked Disorders]] — DMD, Haemophilia, G6PD, FXS molecular basis</li><li>[[4.4 Mitochondrial Disorders]] — mtDNA structure, maternal inheritance</li><li>[[4.5 Imprinting &amp; UPD]] — Methylation, UPD mechanisms</li><li>[[6.1 Hereditary Cancer Syndromes]] — Germline mutations, Tumour suppressor genes</li><li>[[7. Pharmacogenetics]] — CYP, HLA, DPYD variants in genome context</li><li>[[8. Population &amp; Newborn Screening]] — HWE application in screening programmes</li><li>[[9. ELSI]] — Genetic discrimination, Privacy, Consent based on genetic principles</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-14 <b>Next:</b> Build <code>2.1 Mendelian Inheritance.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fundamentals Of Medical Genetics · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

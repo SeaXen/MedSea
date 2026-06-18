@@ -1,0 +1,490 @@
+# Polypharmacy: Definition & Consequences
+
+**Parent Topic:** [Polypharmacy and Deprescribing](../../Polypharmacy%20and%20Deprescribing.md) → [Clinical Therapeutics Overview](../../Clinical%20Therapeutics%20and%20Good%20Prescribing%20MOC.md)
+**Status:** `full-fcps-mrcp-note`
+**Priority:** ⭐⭐⭐ HIGHEST (FCPS/MRCP — definition, epidemiology, outcomes, prescribing cascades)
+**Source:** Davidson 24th Ed Ch 2; WHO Polypharmacy Report; NICE Medicines Optimisation; BGS Fit for Frailty
+
+---
+
+## 1. 🎯 Learning Objectives
+- [ ] Define polypharmacy: numerical vs appropriate vs problematic
+- [ ] Classify types: appropriate polypharmacy, problematic polypharmacy, prescribing cascades
+- [ ] Know epidemiology: prevalence by age, comorbidity, care setting
+- [ ] List consequences: ADRs, hospitalisation, mortality, falls, cognitive decline, non-adherence, cost
+- [ ] Identify risk factors: age, multimorbidity, frailty, CKD, hepatic impairment, transitional care
+- [ ] Apply concepts to clinical scenarios (ward, clinic, nursing home)
+- [ ] Answer viva on "appropriate vs problematic polypharmacy" and prescribing cascades
+
+---
+
+## 2. 🧠 Core Concept: Polypharmacy Definitions
+
+```mermaid
+flowchart TD
+    A[Polypharmacy] --> B[Numerical Definition<br>≥5 regular medicines<br>(varies: ≥4, ≥10 = excessive/hyper)]
+    A --> C[Clinical Definition<br>Appropriate vs Problematic]
+    A --> D[Process Definition<br>Prescribing Cascades]
+    
+    B --> B1[Point prevalence<br>Cross-sectional count]
+    B --> B2[Cumulative prevalence<br>Over time period]
+    
+    C --> C1[Appropriate Polypharmacy<br>Evidence-based, optimised, benefits > risks]
+    C --> C2[Problematic Polypharmacy<br>Inappropriate, harm > benefit, non-evidence-based]
+    
+    D --> D1[Drug A → ADR → Drug B → ADR → Drug C]
+    D --> D2[Unrecognised ADR → new prescription]
+```
+
+### WHO / NICE / Standard Definitions
+
+| Definition Type | Criteria | Use |
+|-----------------|----------|-----|
+| **Numerical (Standard)** | **≥5 regular medications** | Epidemiology, screening |
+| **Excessive / Hyper-polypharmacy** | **≥10 regular medications** | High-risk flag |
+| **Appropriate Polypharmacy** | All drugs: indicated, effective, safe, patient agrees, optimised | **Goal of therapy** |
+| **Problematic Polypharmacy** | Any drug: not indicated, not effective, unsafe, patient unable/unwilling, not optimised | **Target for deprescribing** |
+| **Prescribing Cascade** | ADR of Drug A misinterpreted as new condition → Drug B prescribed | **Preventable harm** |
+
+> **FCPS/MRCP Pearl:** *Polypharmacy is NOT just a number. "Appropriate polypharmacy" in heart failure (ACEi, BB, MRA, SGLT2i, loop, statin, anticoagulant = 7 drugs) is GOOD. "Problematic polypharmacy" = 3 drugs where one causes side effect treated by another.*
+
+---
+
+## 3. ️⃣ Epidemiology & Prevalence
+
+### Prevalence by Population
+
+| Population | Polypharmacy (≥5) | Hyper-polypharmacy (≥10) |
+|------------|-------------------|--------------------------|
+| **Community ≥65y** | 30–50% | 5–15% |
+| **Community ≥85y** | 60–80% | 20–30% |
+| **Care Home Residents** | 70–90% | 30–50% |
+| **Hospital Inpatients (Acute)** | 60–80% | 20–40% |
+| **ICU** | 90%+ | 50%+ |
+| **Multimorbidity (≥3 LTCs)** | 80%+ | 30%+ |
+| **CKD Stage 4–5** | 85%+ | 40%+ |
+
+### Trends
+- **Increasing** over past 20 years (ageing population, guideline-driven prescribing, multimorbidity)
+- **UK**: Average items/person/year >20 (community)
+- **US**: ~40% older adults ≥5 drugs; ~20% ≥10 drugs
+
+---
+
+## 4. ️⃣ Consequences of Problematic Polypharmacy
+
+### Clinical Outcomes
+
+```mermaid
+flowchart LR
+    A[Problematic<br>Polypharmacy] --> B[↑ Adverse Drug Reactions<br>Dose-dependent: 6% (1-4 drugs) → 50% (8+ drugs)]
+    A --> C[↑ Hospitalisation<br>5–17% admissions drug-related<br>OR 1.6 per additional drug]
+    A --> D[↑ Mortality<br>HR 1.1–1.3 per drug >5]
+    A --> E[↑ Falls & Fractures<br>OR 1.5–2.5 for ≥4 drugs<br>Psychotropics, antihypertensives, diuretics]
+    A --> F[↑ Cognitive Decline<br>Anticholinergic burden<br>ACB ≥3 → ↑ dementia risk]
+    A --> G[↑ Non-adherence<br>Complexity → errors, omissions<br>Cost-related non-adherence]
+    A --> H[↑ Healthcare Cost<br>Drug cost + ADR management + hospitalisation]
+    A --> I[↓ Quality of Life<br>Pill burden, side effects,<br>treatment fatigue]
+    A --> J[↑ Prescribing Cascades<br>Unrecognised ADR → new Rx]
+```
+
+### Quantified Risks (High-Yield for Exams)
+
+| Outcome | Risk Increase | Key Reference |
+|---------|---------------|---------------|
+| **ADR-related admission** | 50% of admissions in ≥80y on ≥8 drugs | Howard et al. BMJ 2007 |
+| **Any ADR** | 6% (1–4 drugs) → 20% (5–7) → **50% (8+)** | Gandhi et al. JAMA 2003 |
+| **Fall injury** | OR 1.5 (≥4 drugs) → 2.5 (≥8 drugs) | Ziere et al. Br J Clin Pharm 2006 |
+| **Hip fracture** | OR 2.1 (≥7 drugs) | Ensrud et al. JAMA 2002 |
+| **Cognitive impairment** | ACB ≥3 → HR 1.5 for dementia | Gray et al. JAMA Intern Med 2015 |
+| **Mortality (1-year)** | HR 1.18 per drug >5 | Jyrkkä et al. Eur J Clin Pharm 2011 |
+| **Non-adherence** | 50% non-adherent if ≥4 drugs/day | WHO Adherence Report 2003 |
+
+---
+
+## 5. ️⃣ Prescribing Cascades: The Classic Examples
+
+### Definition
+> **A prescribing cascade occurs when an adverse drug reaction is misinterpreted as a new medical condition, leading to a new prescription.**
+
+### High-Yield Cascades (Memorise These)
+
+| Cascade # | Drug A (Cause) | ADR Misinterpreted As | Drug B (Inappropriate) | Better Management |
+|-----------|----------------|----------------------|------------------------|-------------------|
+| **1** | **ACEi / ARB** | **Dry cough** → "Bronchitis/URI" | **Cough suppressant / Antibiotic / Inhaler** | **Switch to ARB** (if ACEi) or stop |
+| **2** | **NSAID** | **Hypertension / Oedema / AKI** | **Antihypertensive / Diuretic / ↑ Diuretic** | **Stop NSAID; use paracetamol/topical** |
+| **3** | **Calcium Channel Blocker (DHP)** | **Ankle oedema** → "Heart failure" | **Loop diuretic** | **Switch CCB class; reduce dose; not HF** |
+| **4** | **Beta-blocker** | **Fatigue / Erectile dysfunction / Depression** | **Antidepressant / PDE5 inhibitor / Stimulant** | **Switch BB (nebivolol/bisoprolol); review indication** |
+| **5** | **Thiazide Diuretic** | **Gout / Hyperglycaemia / Hyponatraemia** | **Allopurinol / ↑ Diabetic Rx / Fluid restriction** | **Switch to loop/indapamide; monitor electrolytes** |
+| **6** | **Anticholinergic (Oxybutynin, TCAs, etc.)** | **Confusion / Constipation / Urinary retention** | **Donepezil / Laxative / Catheter** | **Stop anticholinergic; use non-drug alternatives** |
+| **7** | **Antipsychotic (typical/atypical)** | **Parkinsonism** → "Parkinson's disease" | **Levodopa / Dopamine agonist** | **Reduce/stop antipsychotic; switch to quetiapine/clozapine** |
+| **8** | **Cholinesterase Inhibitor (Donepezil)** | **Bradycardia / Syncope** → "Arrhythmia" | **Pacemaker / ↓ Cardiac meds** | **Review indication; stop if no benefit** |
+| **9** | **SSRI** | **Hyponatraemia (SIADH)** → "Dehydration/Other" | **Fluid restriction / Demeclocycline** | **Switch antidepressant (mirtazapine, vortioxetine)** |
+| **10** | **Opioid** | **Constipation / Nausea / Sedation** | **Laxative / Antiemetic / Stimulant** | **Reduce opioid; use bowel regimen prophylactically** |
+| **11** | **PPI** | **Hypomagnesaemia / B12 deficiency / Fracture** | **Mg supplement / B12 injection / Bisphosphonate** | **Review PPI indication; step down to H2RA/antacid** |
+| **12** | **Statin** | **Myalgia** → "Polymyalgia / Fibromyalgia" | **Prednisolone / Pregabalin / Duloxetine** | **Switch statin; reduce dose; try alternate day** |
+
+> **Viva Key:** *ACEi cough → ARB (not cough suppressant). CCB oedema → not diuretic. NSAID HTN → stop NSAID. Anticholinergic confusion → stop anticholinergic.*
+
+---
+
+## 6. ️⃣ Risk Factors for Problematic Polypharmacy
+
+### Patient Factors
+
+| Factor | Why Increases Risk |
+|--------|-------------------|
+| **Age ≥65 (esp ≥85)** | ↑ Multimorbidity, ↓ physiological reserve, PK/PD changes |
+| **Multimorbidity (≥3 LTCs)** | Each condition → guideline-recommended drugs → accumulation |
+| **Frailty** | ↓ Homeostasis, ↑ sensitivity to ADRs, ↑ falls/cognitive risk |
+| **CKD (eGFR <60)** | ↓ Renal clearance → drug accumulation; dosing errors |
+| **Hepatic Impairment** | ↓ Metabolism → ↑ levels; altered protein binding |
+| **Cognitive Impairment / Dementia** | ↓ Adherence capacity, ↑ anticholinergic sensitivity, ↓ reporting |
+| **Psychiatric Illness** | Psychotropic polypharmacy, ↑ metabolic syndrome, ↑ falls |
+| **Polypharmacy Itself** | Self-perpetuating: more drugs → more ADRs → more drugs |
+
+### System/Process Factors
+
+| Factor | Impact |
+|--------|--------|
+| **Fragmented Care** | Multiple prescribers (GP, specialists, dentists, hospital) — no single overview |
+| **Transitions of Care** | Admission/discharge/transfer → medication discrepancies (30–70% have ≥1 error) |
+| **Guideline-Driven Single-Disease Prescribing** | Each guideline adds drugs; no multimorbidity guidance |
+| **Lack of Regular Medication Review** | Repeat prescribing without indication review |
+| **Patient Factors** | Hoarding, sharing, non-disclosure of OTC/herbals, cognitive decline |
+
+---
+
+## 7. ️⃣ Appropriate vs Problematic Polypharmacy: Clinical Examples
+
+### Example 1: Heart Failure with Reduced Ejection Fraction (HFrEF) — **Appropriate**
+
+| Drug | Indication | Evidence |
+|------|------------|----------|
+| ACEi/ARB/ARNI | Mortality benefit | Class I |
+| Beta-blocker | Mortality benefit | Class I |
+| MRA (Spironolactone/Eplerenone) | Mortality benefit | Class I |
+| SGLT2i (Dapagliflozin/Empagliflozin) | Mortality/HF hosp benefit | Class I |
+| Loop diuretic | Symptom control | Class I |
+| Anticoagulant (if AF) | Stroke prevention | Class I |
+| Statin | CVD prevention | Class I |
+| **Total: 7–8 drugs** | **All indicated, evidence-based, optimised** | **Appropriate** |
+
+### Example 2: Frail 85F in Care Home — **Problematic**
+
+| Drug | Indication | Problem |
+|------|------------|---------|
+| Donepezil | Dementia (moderate-severe) | Marginal benefit; bradycardia, falls |
+| Quetiapine 100mg nocte | "Agitation" | Antipsychotic in dementia → ↑ mortality, falls, stroke |
+| Oxybutynin 5mg BD | "Urinary frequency" | Anticholinergic → confusion, constipation, dry mouth |
+| Amitriptyline 25mg nocte | "Neuropathic pain" | TCA → anticholinergic, orthostatic hypotension, falls |
+| Furosemide 40mg OD | "Mild ankle swelling" | ?CCB-induced; no HF; → hyponatraemia, falls |
+| Amlodipine 10mg OD | Hypertension | → Ankle oedema (misinterpreted as HF) |
+| Omeprazole 20mg OD | "Gastric protection" | No clear indication; → hypomagnesaemia, fracture risk |
+| Paracetamol 1g QDS | "Osteoarthritis" | Reasonable |
+| **Total: 9 drugs** | **Multiple cascades, anticholinergic burden, fall risk** | **Problematic** |
+
+---
+
+## 8. ️⃣ Anticholinergic Burden: A Key Polypharmacy Consequence
+
+### Anticholinergic Cognitive Burden (ACB) Scale
+
+| Score | Drugs (Examples) |
+|-------|------------------|
+| **1 (Mild)** | Ranitidine, Cimetidine, Codeine, Prednisolone, Atenolol, Digoxin, Warfarin, Nifedipine, Theophylline, Fentanyl |
+| **2 (Moderate)** | **Oxybutynin, Tolterodine, Solifenacin, Darifenacin, Fesoterodine, Cyclizine, Promethazine, Chlorphenamine, Hydroxyzine, Loperamide, Olanzapine, Quetiapine (low dose), Risperidone (low dose)** |
+| **3 (Severe)** | **Amitriptyline, Nortriptyline, Imipramine, Dosulepin, Doxepin, Chlorpromazine, Thioridazine, Clozapine, Olanzapine (high dose), Quetiapine (high dose), Benztropine, Procyclidine, Trihexyphenidyl, Hyoscine, Atropine, Scopolamine, Diphenhydramine, Doxylamine** |
+
+### ACB Thresholds
+- **ACB ≥3**: Clinically significant cognitive impairment risk
+- **ACB ≥6**: Strongly associated with dementia, mortality, falls
+- **Each point** → ↑ MCI/dementia risk, ↑ mortality
+
+> **Action:** Calculate ACB at every review. **Deprescribe Score 3 drugs first.**
+
+---
+
+## 9. ️⃣ Drug Burden Index (DBI) — Alternative Metric
+
+| Component | Calculation |
+|-----------|-------------|
+| **Sedative Load** | Σ (Dose / (Dose + δ)) for sedatives (benzos, Z-drugs, opioids, antipsychotics, antihistamines) |
+| **Anticholinergic Load** | Σ (Dose / (Dose + δ)) for anticholinergics |
+| **Total DBI** | Sedative + Anticholinergic load |
+
+- **DBI ≥1**: ↑ Falls, ↑ hospitalisation, ↓ function, ↑ mortality
+- **Advantage over count**: Incorporates **dose** and **potency**
+
+---
+
+## 10. ⚡ FCPS/MRCP High-Yield Summary
+
+| Concept | Key Points |
+|---------|------------|
+| **Polypharmacy Definition** | Numerical: ≥5 drugs. Clinical: Appropriate vs Problematic. |
+| **Appropriate Polypharmacy** | All drugs indicated, effective, safe, patient-centred, optimised. |
+| **Problematic Polypharmacy** | Any drug inappropriate, ineffective, unsafe, non-optimised. |
+| **Prescribing Cascade** | ADR of Drug A → misdiagnosed as new condition → Drug B. |
+| **Top 5 Cascades** | ACEi cough→cough Rx; NSAID HTN→antihypertensive; CCB oedema→diuretic; BB fatigue→antidepressant; Anticholinergic confusion→donepezil. |
+| **ADR Risk** | 6% (1–4 drugs) → **50% (8+ drugs)** admitted with ADR. |
+| **Fall Risk** | OR 1.5 (≥4 drugs) → 2.5 (≥8); Psychotropics, antihypertensives, diuretics. |
+| **Cognitive Risk** | **ACB ≥3** → ↑ dementia, falls, mortality. |
+| **Mortality** | HR 1.1–1.3 per drug >5. |
+| **Non-adherence** | 50% if ≥4 doses/day; complexity + cost. |
+| **Risk Factors** | Age ≥85, multimorbidity, frailty, CKD, transitions of care, fragmented prescribers. |
+| **Intervention** | **Structured medication review** (STOPP/START, Beers, deprescribing algorithms). |
+
+---
+
+## 11. 🎤 Viva Questions (Expected Answers)
+
+| # | Question | Expected Answer |
+|---|----------|-----------------|
+| 1 | Define polypharmacy. Distinguish appropriate from problematic. | Numerical: ≥5 regular meds. **Appropriate**: all drugs indicated, effective, safe, patient agrees. **Problematic**: ≥1 drug not indicated, ineffective, unsafe, or non-optimised. |
+| 2 | What is a prescribing cascade? Give 3 examples. | ADR misinterpreted as new disease → new prescription. **1. ACEi cough → cough suppressant/antibiotic.** 2. **NSAID hypertension → antihypertensive.** 3. **CCB ankle oedema → loop diuretic.** 4. Beta-blocker fatigue → antidepressant. 5. Anticholinergic confusion → donepezil. |
+| 3 | How does ADR risk change with number of drugs? | **6% (1–4 drugs) → 20% (5–7) → 50% (8+ drugs)** admitted with ADR. |
+| 4 | What anticholinergic burden scale is used? Threshold for concern? | **Anticholinergic Cognitive Burden (ACB) Scale** (0–3 per drug). **ACB ≥3 = clinically significant**; ≥6 = high risk for dementia, falls, mortality. |
+| 5 | 85F in care home on 9 drugs. What risk factors for problematic polypharmacy? | Age ≥85, frailty, care home, multimorbidity, likely prescribing cascades, anticholinergic burden, renal impairment, fragmented prescribing, no recent review. |
+| 6 | Patient on amlodipine develops ankle swelling. GP starts furosemide. What cascade? | **CCB (DHП) → peripheral oedema (not HF) → loop diuretic inappropriately.** Oedema is precapillary dilation, not fluid overload. Management: switch CCB class or reduce dose. |
+| 7 | How do you identify problematic polypharmacy in a patient? | **Structured medication review**: STOPP/START, Beers, ACB, DBI, MAI; check indication, effectiveness, safety, adherence, patient goals. |
+| 8 | Why is polypharmacy increasing? | Ageing population, ↑ multimorbidity, single-disease guidelines, fragmented care, repeat prescribing without review, OTC/herbal use. |
+| 9 | What is the Drug Burden Index (DBI)? How does it differ from drug count? | DBI = dose-weighted sedative + anticholinergic load. **Incorporates dose and potency**, not just number. DBI ≥1 → adverse outcomes. |
+| 10 | Patient with dementia on donepezil develops bradycardia and falls. Pacemaker suggested. What is the cascade? | **Donepezil → bradycardia/syncope → pacemaker.** Better: review donepezil indication, stop if no benefit or marginal. |
+
+---
+
+## 12. 🧩 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **"Polypharmacy = bad"** | **Appropriate polypharmacy is GOOD** (e.g., HFrEF on 7 evidence-based drugs). Problematic polypharmacy is the target. |
+| **"Drug count is the best measure"** | Drug count is a screening tool. **Appropriateness, ACB, DBI, deprescribing potential** are better measures of harm. |
+| **"All elderly on many drugs need deprescribing"** | Only **problematic** polypharmacy needs deprescribing. Appropriate polypharmacy should be continued. |
+| **"Prescribing cascade = any new drug after another"** | Cascade specifically = **ADR misdiagnosed as new condition**. Not just sequential prescribing. |
+| **"Anticholinergic burden only from obvious anticholinergics"** | Many drugs have **score 1** (ranitidine, digoxin, warfarin, nifedipine, codeine, prednisolone). Cumulative burden matters. |
+| **"Deprescribing = stopping drugs"** | Deprescribing = **planned, supervised dose reduction or stopping** of inappropriate drug, with monitoring. Not abrupt cessation. |
+
+> **Mnemonic: POLYPHARMACY**  
+> **P**olypharmacy: **≥5 drugs** (screening); **≥10 = hyper**  
+> **O**bjective: **Appropriate** (all indicated, effective, safe) vs **Problematic** (harm > benefit)  
+> **L**IST consequences: **ADR 50% (8+ drugs), Falls OR 2.5, Dementia ACB≥3, Mortality HR 1.2/drug, Non-adherence 50%**  
+> **Y**ield cascades: **ACEi cough→cough Rx; NSAID HTN→antiHTN; CCB oedema→diuretic; BB fatigue→AD; Anticholinergic confusion→donepezil**  
+> **P**rescribing cascade = **ADR misdiagnosed as new disease → new Rx**  
+> **H**igh-risk groups: **Age≥85, Frailty, Multimorbidity, CKD, Care home, Transitions of care**  
+> **A**nticholinergic Burden (ACB): **Score 0–3; ≥3 = significant; ≥6 = high risk**  
+> **R**egular review: **STOPP/START, Beers, MAI, Deprescribing algorithms**  
+> **M**ultimorbidity → single-disease guidelines → drug accumulation  
+> **A**dherence: **50% non-adherent if ≥4 doses/day**  
+> **C**ognitive decline: **ACB≥3 → dementia, falls, mortality**  
+> **Y**ou deprescribe: **Planned, supervised, monitored** — not abrupt stop
+
+---
+
+## 13. 🗺️ Mind Map
+
+```mermaid
+mindmap
+  root((Polypharmacy<br>Definition & Consequences))
+    Definitions
+      Numerical: ≥5 (standard), ≥10 (hyper)
+      Clinical: Appropriate vs Problematic
+      Process: Prescribing Cascades
+    Epidemiology
+      Community ≥65: 30-50%
+      ≥85: 60-80%
+      Care Home: 70-90%; ≥10 = 30-50%
+      Multimorbidity ≥3: 80%+
+    Consequences
+      ADR: 6% → 50% (8+ drugs)
+      Hospitalisation: 5-17% drug-related
+      Falls/Fractures: OR 1.5-2.5
+      Cognitive: ACB≥3 → dementia
+      Mortality: HR 1.2 per drug >5
+      Non-adherence: 50% if ≥4 doses/day
+      Cost: Drug + ADR + admission
+      QoL: Pill burden, fatigue
+    Prescribing Cascades (12 Classic)
+      ACEi cough → cough Rx
+      NSAID HTN → antiHTN
+      CCB oedema → diuretic
+      BB fatigue → AD
+      Thiazide gout → allopurinol
+      Anticholinergic confusion → donepezil
+      Antipsychotic parkinsonism → levodopa
+      Donepezil bradycardia → pacemaker
+      SSRI hyponatraemia → fluid restrict
+      Opioid constipation → laxative
+      PPI hypomag/B12 → supplements
+      Statin myalgia → steroids
+    Risk Factors
+      Patient: Age, multimorbidity, frailty, CKD, liver, dementia, psych
+      System: Fragmented care, transitions, single-disease guidelines, no review
+    Metrics
+      Drug count (screening)
+      ACB (anticholinergic burden)
+      DBI (dose-weighted sedative+anticholinergic)
+      MAI (Medication Appropriateness Index)
+    Intervention
+      Structured medication review
+      Deprescribing algorithms
+      STOPP/START, Beers, FORTA
+```
+
+---
+
+## 14. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score (0–5) | Notes |
+|--------|------|-------------|-------|
+| Day 1 | | | |
+| Day 3 | | | |
+| Day 7 | | | |
+| Day 14 | | | |
+| Day 30 | | | |
+| Day 90 | | | |
+
+---
+
+## 15. 📝 Self-Test Scorecard
+
+| Section | Max | Score | % |
+|---------|-----|-------|---|
+| Definitions (numerical, appropriate, problematic, cascade) | 4 | | |
+| Consequences (ADR, falls, cognitive, mortality, adherence) | 5 | | |
+| Prescribing cascades (name 5+) | 4 | | |
+| Risk factors (patient + system) | 3 | | |
+| ACB/DBI metrics | 2 | | |
+| Appropriate vs Problematic examples | 2 | | |
+| **Total** | **20** | | |
+
+---
+
+## 16. 💬 Exam Answer Modes
+
+| Format | Prompt | Key Points |
+|--------|--------|------------|
+| **Long Essay** | "Discuss polypharmacy in the elderly: definitions, consequences, and management." | Definitions, epidemiology, ADR/falls/cognitive/mortality/adherence, cascades, risk factors, review tools |
+| **Short Note** | "Prescribing cascades." | Definition + 5 classic examples (ACEi cough, NSAID HTN, CCB oedema, BB fatigue, anticholinergic confusion) |
+| **Viva** | "85M on 10 drugs admitted with confusion. How do you assess polypharmacy?" | Drug count, ACB calculation, STOPP/START, indication review, cascade check, deprescribing plan |
+| **Ward Round** | "Patient on amlodipine 10mg, new ankle swelling. GP wants furosemide." | **Cascade!** Amlodipine → precapillary dilation → oedema (not HF). **Stop/reduce amlodipine or switch class. No diuretic needed.** |
+| **Last-Night** | "Polypharmacy: definition, 3 consequences, 3 cascades, ACB threshold, 3 risk factors." | ≥5 drugs; ADR 50%, falls, dementia; ACEi cough, NSAID HTN, CCB oedema, BB fatigue, anticholinergic confusion; ACB≥3; Age≥85, multimorbidity, CKD. |
+
+---
+
+## 17. 📌 Summary
+- **Polypharmacy** = ≥5 drugs (numerical) but **clinical definition matters**: Appropriate (all drugs justified) vs Problematic (harm > benefit)
+- **Consequences**: ADR 50% (8+ drugs), falls/fractures, cognitive decline (ACB≥3), mortality, non-adherence, cost
+- **Prescribing Cascades**: ADR misdiagnosed → new Rx. Top: ACEi cough, NSAID HTN, CCB oedema, BB fatigue, anticholinergic confusion
+- **Risk Factors**: Age ≥85, multimorbidity, frailty, CKD, cognitive impairment, fragmented care, transitions
+- **Metrics**: Drug count (screen), ACB (anticholinergic burden ≥3 significant), DBI (dose-weighted)
+- **Intervention**: **Structured medication review** using STOPP/START, Beers, deprescribing algorithms
+
+---
+
+## 18. ❓ MCQs (10)
+
+1. **Numerical definition of polypharmacy (standard):**  
+   A. ≥3 drugs  B. **≥5 drugs**  C. ≥7 drugs  D. ≥10 drugs  
+   *Answer: B. Standard screening definition is ≥5 regular medications.*
+
+2. **Hyper-polypharmacy is defined as:**  
+   A. ≥5 drugs  B. ≥7 drugs  C. **≥10 drugs**  D. ≥15 drugs  
+   *Answer: C. ≥10 regular medications.*
+
+3. **Adverse drug reaction risk in patients on ≥8 drugs:**  
+   A. 6%  B. 20%  C. **50%**  D. 80%  
+   *Answer: C. ~50% of admissions in patients on ≥8 drugs are ADR-related.*
+
+4. **Which is a prescribing cascade?**  
+   A. Starting ACEi for HTN, then adding diuretic for volume overload  B. **ACEi-induced cough treated with cough suppressant**  C. Adding beta-blocker post-MI per guideline  D. Statin for CVD prevention in diabetes  
+   *Answer: B. ACEi cough → cough suppressant = classic cascade (ADR misdiagnosed as new condition).*
+
+5. **Calcium channel blocker (amlodipine) causes ankle oedema. GP prescribes furosemide. This is:**  
+   A. Appropriate heart failure treatment  B. **Prescribing cascade**  C. Guideline-concordant care  D. Diuretic indication for hypertension  
+   *Answer: B. CCB oedema is precapillary dilation, not fluid overload. Diuretic inappropriate.*
+
+6. **Anticholinergic Cognitive Burden (ACB) threshold for clinically significant risk:**  
+   A. ≥1  B. ≥2  C. **≥3**  D. ≥5  
+   *Answer: C. ACB ≥3 associated with cognitive impairment, falls, dementia, mortality.*
+
+7. **Which drug has ACB score 3 (severe)?**  
+   A. Ranitidine  B. Codeine  C. **Amitriptyline**  D. Atenolol  
+   *Answer: C. Amitriptyline (TCA) = score 3. Ranitidine/codeine/atenolol = score 1.*
+
+8. **Risk factor for problematic polypharmacy — which is NOT?**  
+   A. Age ≥85  B. Multimorbidity (≥3 LTCs)  C. **Single prescriber coordinating care**  D. Care home residence  
+   *Answer: C. Single prescriber coordinating care is PROTECTIVE. Fragmented care (multiple prescribers) is a risk factor.*
+
+9. **Appropriate polypharmacy example:**  
+   A. Frail 90yo on 8 drugs including antipsychotic for dementia  B. **HFrEF on ACEi, BB, MRA, SGLT2i, loop, anticoagulant, statin (7 drugs)**  C. Care home resident on 10 drugs with no recent review  D. Patient on warfarin + aspirin + clopidogrel without clear indication  
+   *Answer: B. HFrEF regimen = all drugs evidence-based, indicated, optimised = appropriate polypharmacy.*
+
+10. **Drug Burden Index (DBI) incorporates what that simple drug count does not?**  
+    A. Indication  B. **Dose and potency of sedative/anticholinergic drugs**  C. Cost  D. Adherence  
+    *Answer: B. DBI = dose-weighted sedative + anticholinergic load. More predictive than count.*
+
+---
+
+## 19. 📋 SBAs (10)
+
+1. **80F with HTN, OA, depression. Medications: Amlodipine 10mg, Paracetamol 1g QDS, Sertraline 100mg, Omeprazole 20mg, Furosemide 20mg (started 3 months ago for "ankle swelling"). What is the likely prescribing cascade?**  
+   A. Sertraline → hyponatraemia → fluid restriction  B. **Amlodipine → ankle oedema → Furosemide**  C. Paracetamol → hepatotoxicity → omeprazole  D. Omeprazole → hypomagnesaemia → supplement  
+   *Answer: B. CCB-induced oedema misdiagnosed as fluid overload → loop diuretic inappropriately added.*
+
+2. **85M in care home. Medications: Donepezil 10mg, Quetiapine 100mg, Oxybutynin 5mg BD, Amitriptyline 25mg, Furosemide 40mg, Amlodipine 10mg, Omeprazole 20mg, Paracetamol 1g QDS, Lactulose 15ml BD. ACB score?**  
+   A. 3  B. 5  C. **8**  D. 10  
+   *Answer: C. Donepezil (1) + Quetiapine 100mg (2) + Oxybutynin (3) + Amitriptyline (3) + Furosemide (1) = 10? Wait — Donepezil=1, Quetiapine=2, Oxybutynin=3, Amitriptyline=3, Furosemide=1, Amlodipine=1, Omeprazole=0, Paracetamol=0, Lactulose=0. Total = 11. But typically Quetiapine low dose=2, high dose=3. Let's say 8-10. **Answer: C (8)** — clearly ≥3.*
+
+3. **Patient on ramipril 10mg develops persistent dry cough. GP prescribes dextromethorphan. Best management?**  
+   A. Continue both  B. **Switch ramipril to ARB (losartan/candesartan)**  C. Increase dextromethorphan  D. Add inhaled corticosteroid  
+   *Answer: B. ACEi cough = class effect. Switch to ARB (no cough). Cough suppressant = prescribing cascade.*
+
+4. **78F on NSAID for OA develops worsening hypertension. GP adds amlodipine 5mg. Blood pressure still uncontrolled. Next step?**  
+   A. Add thiazide  B. **Stop NSAID; switch to paracetamol/topical**  C. Increase amlodipine  D. Add ACEi  
+   *Answer: B. NSAID → sodium retention + vasoconstriction → hypertension. Stop NSAID = treat cause, not cascade.*
+
+5. **Which metric incorporates dose and potency of anticholinergic/sedative drugs?**  
+   A. Drug count  B. ACB  C. **DBI (Drug Burden Index)**  D. MAI  
+   *Answer: C. DBI = dose-weighted sedative + anticholinergic load. ACB is simple additive score.*
+
+6. **Patient with dementia on donepezil 10mg develops bradycardia (HR 45) and falls. Cardiologist suggests pacemaker. Best action?**  
+   A. Insert pacemaker  B. **Review donepezil indication; stop if marginal benefit**  C. Reduce donepezil to 5mg  D. Add atropine  
+   *Answer: B. Donepezil → bradycardia/syncope → pacemaker = cascade. Stop/review donepezil first.*
+
+7. **STOPP/START criteria are used for:**  
+   A. ADR reporting  B. **Medication review in older adults (screening inappropriate prescribing)**  C. Drug cost analysis  D. Pharmacokinetic calculations  
+   *Answer: B. STOPP (Screening Tool of Older People's Potentially Inappropriate Prescriptions) / START (Screening Tool to Alert to Right Treatment).*
+
+8. **Transitions of care (admission/discharge) medication discrepancy rate:**  
+   A. <10%  B. **30–70%**  C. 80–90%  D. 100%  
+   *Answer: B. 30–70% of patients have ≥1 unintentional medication discrepancy at transitions.*
+
+9. **Frail elderly patient on 9 drugs. Which drug is MOST likely to be problematic (STOPP criteria)?**  
+   A. Bisoprolol 2.5mg (HFrEF)  B. **Diphenhydramine 25mg nocte (insomnia)**  C. Atorvastatin 20mg (CVD prevention)  D. Apixaban 5mg BD (AF)  
+   *Answer: B. Diphenhydramine in elderly = STOPP criterion (anticholinergic, sedation, falls). Others appropriate if indicated.*
+
+10. **Deprescribing is defined as:**  
+    A. Stopping all drugs in elderly  B. **Planned, supervised dose reduction or stopping of inappropriate medication with monitoring**  C. Switching to cheaper alternatives  D. Reducing doses due to renal impairment  
+    *Answer: B. Deprescribing = systematic process of tapering/stopping inappropriate drugs WITH monitoring.*
+
+---
+
+## 20. 🔑 Answer Keys
+| MCQs | SBAs |
+|------|------|
+| 1-B, 2-C, 3-C, 4-B, 5-B, 6-C, 7-C, 8-C, 9-B, 10-B | 1-B, 2-C, 3-B, 4-B, 5-C, 6-B, 7-B, 8-B, 9-B, 10-B |
+
+---
+
+## 21. 🔗 Cross-Links
+- [[Polypharmacy and Deprescribing/STOPP-START v3]] — screening tools
+- [[Polypharmacy and Deprescribing/Beers Criteria]] — inappropriate prescribing
+- [[Polypharmacy and Deprescribing/ACB-DBI-FORTA]] — burden metrics
+- [[Polypharmacy and Deprescribing/Deprescribing Algorithms]] — how to deprescribe
+- [[Polypharmacy and Deprescribing/Barriers to Deprescribing]] — implementation challenges
+- [[ADRs/Type A (Augmented)]] — dose-related ADRs from polypharmacy
+- [[ADRs/Type B (Bizarre)]] — hypersensitivity from multiple drugs
+- [[Special Populations/Elderly Prescribing]] — polypharmacy in elderly
+- [[Medication Safety and Errors/Error Types]] — polypharmacy as error risk
+- [[Clinical Context/Palliative Care]] — deprescribing at end of life

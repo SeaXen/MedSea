@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gastric Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.18. UPPER GI CANCERS</span>
+      <div class="h1">Gastric Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify by Lauren (Intestinal vs Diffuse) and WHO histology</li><li>[ ] Describe staging (TNM 8th ed) and role of D2 lymphadenectomy</li><li>[ ] Compare perioperative FLOT vs adjuvant chemoradiation (INT-0116) vs preoperative chemo (MAGIC)</li><li>[ ] Identify HER2+ and CLDN18.2+ as actionable targets</li><li>[ ] Manage linitis plastica and peritoneal carcinomatosis</li><li>[ ] Recognise hereditary syndromes: HDGC (CDH1), Lynch, FAP</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant epithelial tumour of stomach; **Adenocarcinoma** >90%; classified by **Lauren** (Intestinal vs Diffuse) and **WHO** (Tubular, Papillary, Mucinous, Signet-ring, Poorly cohesive)</td></tr><tr><td>**Incidence**</td><td>UK: ~6,500/year; Global: 5th most common cancer; M:F = 2:1; Declining in West, high in East Asia (Korea, Japan, China)</td></tr><tr><td>**Prevalence**</td><td>3rd leading cause of cancer death globally; 5-year OS ~30% (stage-dependent)</td></tr><tr><td>**Peak Age**</td><td>60-80 years (median 70); Young-onset (<45) ↑ in diffuse type</td></tr><tr><td>**Sex Ratio**</td><td>Male 2:1 (Intestinal > Diffuse)</td></tr><tr><td>**Risk Factors**</td><td>**H. pylori** (Class I carcinogen, ↑6x), Smoking, Salt/smoked foods, Nitrosamines, **Pernicious anaemia** (atrophic gastritis), **Blood group A**, Obesity (cardia), **Familial**: HDGC (CDH1), Lynch, FAP, GAPPS</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Risk Factors] --&gt; B[Pathways] B --&gt; C1[Intestinal Type&lt;br/&gt;Correa Cascade] B --&gt; C2[Diffuse Type&lt;br/&gt;CDH1/EMT Pathway] C1 --&gt; D1[Chronic Gastritis → Atrophy → Intestinal Metaplasia → Dysplasia → Cancer] C2 --&gt; D2[CDH1 Loss → E-cadherin ↓ → Loss of Cell Adhesion → Signet Ring Cells → Infiltrative Growth] D1 --&gt; E[Tumour Formation] D2 --&gt; E E --&gt; F[Spread: Lymphatic → Haematogenous → Peritoneal] F --&gt; G[Clinical Presentation] </code>``</p>
+<div class="sub-h">Lauren Classification — Key Differences</div>
+<table class="ctable"><tr><th>Feature</th><th>**Intestinal Type**</th><th>**Diffuse Type**</th></tr><tr><td>---------</td><td>---------------------</td><td>------------------</td></tr><tr><td>**Epidemiology**</td><td>Older, Male > Female, High H. pylori areas</td><td>Younger, Female predominance, ↑ genetic</td></tr><tr><td>**Precursor**</td><td>Atrophic gastritis → Intestinal metaplasia → Dysplasia</td><td>No defined precursor; **CDH1 mutation** (HDGC)</td></tr><tr><td>**Growth Pattern**</td><td>Exophytic, ulcerating, cohesive glands</td><td>Infiltrative, linitis plastica, signet-ring cells</td></tr><tr><td>**Molecular**</td><td>TP53, APC, KRAS, MSI-H (10-15%)</td><td>**CDH1** (E-cadherin), RHOA, CLDN18-ARHGAP fusions</td></tr><tr><td>**Metastasis**</td><td>Lymphatic > Haematogenous</td><td>**Early peritoneal** (Krukenberg tumour), ovarian mets</td></tr><tr><td>**Prognosis**</td><td>Better</td><td>Worse</td></tr><tr><td>**Therapeutic Targets**</td><td>HER2 (15-20%), EBV+ (9%)</td><td>**CLDN18.2** (40-50%), FGFR2</td></tr></table>
+<div class="sub-h">Molecular Subtypes (TCGA / ACRG)</div>
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Key Features</th><th>Targets</th></tr><tr><td>---------</td><td>-----------</td><td>--------------</td><td>---------</td></tr><tr><td>**EBV+**</td><td>9%</td><td>PIK3CA mut, PD-L1↑, CDKN2A silencing</td><td>PD-1 inhibitors, PI3K inhibitors</td></tr><tr><td>**MSI-H**</td><td>10-15%</td><td>MLH1 methylation, hypermutation, frameshifts</td><td>**ICI (Pembrolizumab)** — 1L MSI-H/dMMR</td></tr><tr><td>**Genomically Stable (GS)**</td><td>20%</td><td>Diffuse type, **CDH1**, RHOA, CLDN18 fusions</td><td>**CLDN18.2** (zolbetuximab)</td></tr><tr><td>**Chromosomal Instability (CIN)**</td><td>50%</td><td>Intestinal type, aneuploidy, RTK/RAS amplifications</td><td>**HER2**, EGFR, VEGFR2, FGFR2</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Early Gastric Cancer (EGC)**</td><td>Often **asymptomatic**; detected on screening endoscopy (Japan/Korea)</td></tr><tr><td>**Advanced Gastric Cancer**</td><td>Epigastric pain, weight loss, anorexia, early satiety, nausea, GI bleeding (melena/haematemesis)</td></tr><tr><td>**Linitis Plastica**</td><td>Diffuse type; rigid, thickened stomach ("leather bottle"); **poor prognosis**, often T4a</td></tr><tr><td>**Gastric Outlet Obstruction**</td><td>Antral tumour; nausea, vomiting, dehydration</td></tr><tr><td>**Virchow's Node**</td><td>Left supraclavicular node (Troisier's sign)</td></tr><tr><td>**Sister Mary Joseph Nodule**</td><td>Periumbilical metastasis</td></tr><tr><td>**Krukenberg Tumour**</td><td>Bilateral ovarian metastases (signet-ring cells) — Diffuse type</td></tr><tr><td>**Peritoneal Carcinomatosis**</td><td>Ascites, abdominal distension — Diffuse type</td></tr><tr><td>**Paraneoplastic**</td><td>TTP (ADAMTS13 inhibitor), DVT/PE (Trousseau's), Acanthosis nigricans, Leser-Trélat</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**TNM 8th Edition**</td><td>T1: Mucosa/Submucosa (T1a/T1b) → T2: Muscularis propria → T3: Subserosa → T4a: Serosa → T4b: Adjacent organs</td></tr><tr><td>**N Stage**</td><td>N1: 1-2 nodes, N2: 3-6, N3a: 7-15, N3b: ≥16 nodes</td></tr><tr><td>**M Stage**</td><td>M0 vs M1; Peritoneal mets = M1 (not N)</td></tr><tr><td>**Stage Grouping**</td><td>IA (T1N0), IB (T2N0/T1N1), IIA (T3N0/T2N1/T1N2), IIB (T4aN0/T3N1/T2N2/T1N3), IIIA (T4aN1/T3N2/T2N3), IIIB (T4aN2/T3N3/T4bN0-1), IIIC (T4aN3/T4bN2-3), IV (M1)</td></tr><tr><td>**Japanese Classification**</td><td>More granular (depth: M, SM1, SM2, MP, SS, SE, Si, A1-A3) — guides ESD eligibility</td></tr></table>
+<div class="sub-h">D2 Lymphadenectomy</div>
+<ul><li><b>Standard for curative resection</b> (per Japanese/JCOG guidelines)</li><li><b>Stations</b>: 1-12a (perigastric) + 12b (hepatic), 8a (anterosuperior), 9 (celiac), 11p/d (splenic), 12a (hepato-duodenal)</li><li><b>Spleen/Pancreas preservation</b> unless direct invasion</li><li><b>Mortality &lt;3%</b> in high-volume centres</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Findings</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td></tr><tr><td>**Upper GI Endoscopy + Biopsy**</td><td>**Gold standard**</td><td>Multiple biopsies (≥6) from ulcer edge & centre; Histology, Lauren, WHO</td></tr><tr><td>**EUS**</td><td>Local T/N staging (T1-2)</td><td>Limited by stenosis; not for advanced</td></tr><tr><td>**CT Chest/Abdomen/Pelvis**</td><td>Distant mets, resectability</td><td>Liver, lung, peritoneal mets, lymph nodes</td></tr><tr><td>**PET-CT**</td><td>Occult mets, metabolic response</td><td>Not routine for staging; helpful for equivocal CT</td></tr><tr><td>**Diagnostic Laparoscopy + Peritoneal Lavage**</td><td>**Occult peritoneal mets** (cytology + visualization)</td><td>Upstages 15-30% (esp. diffuse, >T2); **Standard before curative surgery**</td></tr><tr><td>**Biomarkers**</td><td>**Mandatory**: HER2 IHC/FISH, **CLDN18.2 IHC**, PD-L1 CPS, MSI/MMR, EBV (EBER-ISH)</td><td>Guide targeted/ICI therapy</td></tr><tr><td>**Tumour Markers**</td><td>CEA, CA 19-9, CA 72-4</td><td>Monitoring response, not diagnosis</td></tr><tr><td>**H. pylori Testing**</td><td>If positive → eradication (prevents metachronous)</td><td>Urea breath test, stool antigen, histology</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Peptic Ulcer**</td><td>Benign margins on endoscopy, H. pylori+, responds to PPI, biopsies negative</td></tr><tr><td>**GIST**</td><td>Submucosal mass, KIT/CD117+, DOG1+, CD34+; no epithelial dysplasia</td></tr><tr><td>**MALT Lymphoma**</td><td>H. pylori+, endoscopic appearance similar, B-cell markers, responds to H. pylori eradication</td></tr><tr><td>**Lymphoma (DLBCL)**</td><td>Large folds, ulcers, B-cell markers, no gland formation</td></tr><tr><td>**Metastasis to Stomach**</td><td>Breast, lung, melanoma; history of primary; IHC for primary markers</td></tr><tr><td>**Benign Polyps**</td><td>Hyperplastic, fundic gland, adenomatous — endoscopic resection</td></tr><tr><td>**Gastritis**</td><td>Diffuse erythema, biopsies show inflammation only</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Diagnosis &amp; Staging] --&gt; B{Resectable?} B --&gt;|T1a N0 (EGC)| C[Endoscopic Resection: ESD/EMR&lt;br/&gt;Criteria: Differentiated, ≤2cm, no ulcer, no LVI] B --&gt;|Locally Advanced&lt;br/&gt;T1b-T4a N0-3 M0| D[Perioperative FLOT&lt;br/&gt;Docetaxel/Oxaliplatin/5-FU/Leucovorin&lt;br/&gt;4 cycles pre + 4 post-op&lt;br/&gt;(FLOT4-AIO: OS benefit vs ECF/ECX)] B --&gt;|Metastatic / Unresectable| E[Palliative Systemic Therapy] C --&gt; F[Surveillance] D --&gt; G[Surgery: D2 Gastrectomy&lt;br/&gt;Total vs Distal vs Proximal&lt;br/&gt;Roux-en-Y / Billroth I/II] G --&gt; H[Adjuvant FLOT completion] H --&gt; F E --&gt; I1[1L: FOLFOX/CAPOX + Nivolumab&lt;br/&gt;(CheckMate 649) if PD-L1 CPS ≥5] E --&gt; I2[HER2+: FOLFOX + Trastuzumab&lt;br/&gt;(ToGA) ± Pembrolizumab (KEYNOTE-811)] E --&gt; I3[CLDN18.2+: CAPOX + Zolbetuximab&lt;br/&gt;(SPOTLIGHT/GLOW)] E --&gt; I4[MSI-H/dMMR: Pembrolizumab 1L&lt;br/&gt;(KEYNOTE-062/158)] E --&gt; I5[2L: Paclitaxel ± Ramucirumab&lt;br/&gt;(RAINBOW); Docetaxel; Irinotecan; Trifluridine-tipiracil] E --&gt; I6[3L+: Docetaxel / Irinotecan / TAS-102 / Clinical Trial] F --&gt; J[Surveillance: CT q6-12mo x5yr&lt;br/&gt;Endoscopy annually&lt;br/&gt;Tumour markers q3-6mo] </code>``</p>
+<div class="sub-h">Treatment by Stage</div>
+<table class="ctable"><tr><th>Stage</th><th>Standard Treatment</th><th>Key Trials</th></tr><tr><td>-------</td><td>-------------------</td><td>------------</td></tr><tr><td>**T1a N0 (EGC)**</td><td>**ESD/EMR** if meet criteria (differentiated, ≤2cm, no ulcer, no LVI, no SM invasion)</td><td>JCOG guidelines</td></tr><tr><td>**T1b N0**</td><td>Surgery + D2 lymphadenectomy</td><td>No adjuvant needed if R0</td></tr><tr><td>**T2-T4a / N+ (Resectable)**</td><td>**Perioperative FLOT** (4 pre + 4 post) **Preferred**<br/>Alternative: Preop chemo (MAGIC: ECF) → Surgery → Adjuvant chemo</td><td>**FLOT4-AIO**: FLOT ↑OS vs ECX (HR 0.77)<br/>**MAGIC**: Perioperative ECF ↑OS vs Surgery alone</td></tr><tr><td>**Locally Advanced Unresectable**</td><td>Neoadjuvant FLOT → Reassess → Surgery if downstaged</td><td>FLOT downstaging</td></tr><tr><td>**Post-op (if no preop)**</td><td>Adjuvant **Chemoradiation** (INT-0116: 5-FU/Leucovorin + 45 Gy) — **US standard**<br/>OR Adjuvant **Capecitabine + Oxaliplatin** (CLASSIC, ACTS-GC) — **Asian standard**</td><td>INT-0116, CLASSIC, ACTS-GC</td></tr><tr><td>**D2 Surgery Done**</td><td>Adjuvant **Capecitabine + Oxaliplatin** (XELOX) 6 months</td><td>CLASSIC, ACTS-GC</td></tr><tr><td>**Metastatic**</td><td>**1L: FOLFOX/CAPOX + Nivolumab** (CPS ≥5, CheckMate 649)<br/>**HER2+**: + Trastuzumab (ToGA) ± Pembrolizumab (KEYNOTE-811)<br/>**CLDN18.2+**: + Zolbetuximab (SPOTLIGHT/GLOW)<br/>**MSI-H/dMMR**: Pembrolizumab 1L</td><td>CheckMate 649, ToGA, KEYNOTE-811, SPOTLIGHT, GLOW, KEYNOTE-062</td></tr><tr><td>**Peritoneal Carcinomatosis**</td><td>Systemic chemo ± HIPEC (selected centres) ± PIPAC (pressurised aerosol)</td><td>GASTRICHIP, PERISCOPE</td></tr></table>
+<div class="sub-h">Surgical Procedures</div>
+<table class="ctable"><tr><th>Procedure</th><th>Indication</th><th>Reconstruction</th></tr><tr><td>-----------</td><td>------------</td><td>----------------</td></tr><tr><td>**Total Gastrectomy**</td><td>Proximal/mid, diffuse, linitis, hereditary (CDH1)</td><td>Roux-en-Y oesophagojejunostomy (+ jejunal pouch)</td></tr><tr><td>**Distal Gastrectomy**</td><td>Distal antral (≤2/3 stomach)</td><td>Billroth I (gastroduodenostomy) / Billroth II / Roux-en-Y</td></tr><tr><td>**Proximal Gastrectomy**</td><td>Cardia/proximal (Siewert II/III)</td><td>Oesophagogastrostomy + jejunal interposition / Double tract</td></tr><tr><td>**D2 Lymphadenectomy**</td><td>All curative resections</td><td>Stations 1-12a, 8a, 9, 11p/d, 12b</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Lauren Classification**</td><td>**Intestinal** (exophytic, H. pylori, older, better prognosis, HER2+) vs **Diffuse** (infiltrative, signet-ring, CDH1, younger, peritoneal spread, CLDN18.2+)</td></tr><tr><td>**Linitis Plastica**</td><td>Diffuse type; rigid stomach; **T4a**; poor prognosis; often inoperable at presentation</td></tr><tr><td>**H. pylori**</td><td>Class I carcinogen; Eradication ↓ metachronous cancer risk; Test & treat</td></tr><tr><td>**FLOT**</td><td>**Standard perioperative** for resectable (T2+ or N+): Docetaxel/Oxaliplatin/5-FU/LV q2w ×4 pre + 4 post</td></tr><tr><td>**HER2+**</td><td>15-20% (intestinal, GEJ); **ToGA**: Trastuzumab + Chemo ↑OS; **KEYNOTE-811**: +Pembro ↑ORR</td></tr><tr><td>**CLDN18.2+**</td><td>40-50% (diffuse); **Zolbetuximab** (chimeric Ab) + CAPOX ↑PFS/OS (SPOTLIGHT/GLOW)</td></tr><tr><td>**MSI-H/dMMR**</td><td>10-15% (intestinal); **Pembrolizumab 1L** (KEYNOTE-062/158/177)</td></tr><tr><td>**EBV+**</td><td>9%; PD-L1↑, PIK3CA mut; Good ICI response</td></tr><tr><td>**D2 Lymphadenectomy**</td><td>≥15 nodes examined; Standard for curative; Spleen/pancreas preservation</td></tr><tr><td>**Peritoneal Mets**</td><td>M1; Diffuse type; HIPEC/PIPAC experimental; Poor prognosis</td></tr><tr><td>**Hereditary**</td><td>**HDGC (CDH1)**: Prophylactic total gastrectomy age 20-30; **Lynch (MMR)**, **FAP (APC)**, **GAPPS (APC)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**50M with linitis plastica, signet-ring cells, no distant mets. Management?**</td><td>**Perioperative FLOT** (diffuse type responds to chemo) → Reassess → Surgery if downstaged (D2 total gastrectomy). Diagnostic laparoscopy mandatory to exclude occult peritoneal mets.</td></tr><tr><td>**What is the Lauren classification? Clinical significance?**</td><td>Intestinal (gland-forming, H. pylori, older, HER2+) vs Diffuse (signet-ring, CDH1, infiltrative, peritoneal spread, CLDN18.2+). Guides prognosis & targeted therapy.</td></tr><tr><td>**HER2 testing in gastric cancer — when and how?**</td><td>**All metastatic adenocarcinoma**. IHC 0/1+ = negative; 2+ = equivocal → FISH; 3+ = positive. HER2+ = Trastuzumab + chemo (ToGA).</td></tr><tr><td>**CLDN18.2 — what is it? Which trials?**</td><td>**Claudin 18.2** tight junction protein; target for **zolbetuximab**. **SPOTLIGHT** (FOLFOX + zolbetuximab) & **GLOW** (CAPOX + zolbetuximab) showed PFS/OS benefit in CLDN18.2+ metastatic.</td></tr><tr><td>**FLOT regimen — drugs and schedule?**</td><td>Docetaxel 50 + Oxaliplatin 85 + Leucovorin 200 + 5-FU 2600 mg/m² (24h) **q2 weeks ×4 cycles pre-op + 4 post-op**.</td></tr><tr><td>**INT-0116 vs CLASSIC vs FLOT — differences?**</td><td>INT-0116: **Adjuvant CRT** (5-FU/LV + 45 Gy) post D0/D1 surgery (US). CLASSIC: **Adjuvant XELOX** post D2 surgery (Asia). FLOT: **Perioperative chemo** (no RT) — **current global standard**.</td></tr><tr><td>**Diagnostic laparoscopy — when indicated?**</td><td>**Before curative surgery** for T2+ or diffuse type or clinical suspicion. Detects occult peritoneal mets (upstages 15-30%).</td></tr><tr><td>**Krukenberg tumour — primary? Histology?**</td><td>**Bilateral ovarian mets** from **gastric signet-ring cell carcinoma** (diffuse type).</td></tr><tr><td>**HDGC (CDH1) — management?**</td><td>**Prophylactic total gastrectomy** age 20-30 (or earlier if family history). D2 lymphadenectomy. Endoscopic surveillance insufficient.</td></tr><tr><td>**Peritoneal carcinomatosis — treatment options?**</td><td>Systemic chemo (FLOT/FOLFOX); **HIPEC** (hyperthermic intraperitoneal chemo) — selected centres; **PIPAC** (pressurised aerosol) — palliative; **EPIC** (early post-op IP chemo).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Intestinal vs Diffuse — which has HER2?**</td><td>**Intestinal** (15-20%); Diffuse rarely HER2+</td></tr><tr><td>**Intestinal vs Diffuse — which has CLDN18.2?**</td><td>**Diffuse** (40-50%); Intestinal lower</td></tr><tr><td>**FLOT vs MAGIC vs INT-0116**</td><td>FLOT = Perioperative **docetaxel-based** (no RT); MAGIC = Perioperative **ECF** (epirubicin/cisplatin/5-FU); INT-0116 = **Adjuvant CRT** (post D0/D1 surgery)</td></tr><tr><td>**D1 vs D2 lymphadenectomy**</td><td>D1 = perigastric nodes only (stations 1-6); D2 = D1 + stations 7-12a (celiac, hepatic, splenic) — **D2 standard**</td></tr><tr><td>**Signet-ring vs Mucinous**</td><td>Signet-ring = **Diffuse type** (mucin pushes nucleus to periphery); Mucinous = **Intestinal type** (extracellular mucin pools)</td></tr><tr><td>**Peritoneal mets staging**</td><td>**Peritoneal = M1** (not N); Cytology+ without visible = M1 (CY+)</td></tr></table>
+<p><b>Mnemonic: GASTRIC</b></p>
+<ul><li><b>G</b>rading: Lauren (Intestinal vs Diffuse)</li><li><b>A</b>dvanced: Linitis plastica = Diffuse = T4a</li><li><b>S</b>ign-parts: Signet-ring = Diffuse = CDH1, CLDN18.2</li><li><b>T</b>argets: HER2 (Intestinal), CLDN18.2 (Diffuse), MSI/ICI, EBV/ICI</li><li><b>R</b>esection: D2 lymphadenectomy mandatory</li><li><b>I</b>mmuno: MSI-H/dMMR → Pembrolizumab 1L</li><li><b>C</b>hemo: <b>FLOT</b> perioperative (Docetaxel/Oxali/5-FU/LV)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Gastric Cancer)) Classification Lauren Intestinal H. pylori HER2+ Better prognosis Diffuse CDH1/HDGC Linitis plastica Signet-ring CLDN18.2+ Peritoneal spread Molecular (TCGA) EBV+ (9%) MSI-H (15%) Genomically Stable (Diffuse) CIN (Intestinal) Staging TNM 8th EUS (Early) CT/PET (Advanced) Diagnostic Laparoscopy (Peritoneal) Biomarkers HER2 (IHC/FISH) CLDN18.2 (IHC) PD-L1 CPS MSI/MMR EBV (EBER) Treatment Early (T1a) ESD/EMR Resectable FLOT Perioperative D2 Gastrectomy Post-op (no preop) XELOX (D2) / CRT (D0/1) Metastatic 1L: FOLFOX + Nivo (CPS≥5) HER2+: + Tras + Pembro CLDN18.2+: + Zolb MSI-H: Pembro 1L 2L: Pacli ± Ramu Surgery Total / Distal / Proximal D2 Lymphadenectomy Reconstruction Hereditary HDGC (CDH1) Lynch (MMR) FAP/GAPPS (APC) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Definition**</td><td>Adenocarcinoma; Lauren: Intestinal (H. pylori, HER2+) vs Diffuse (CDH1, signet-ring, CLDN18.2+)</td></tr><tr><td>**Red Flag**</td><td>Dysphagia/Weight loss/Epigastric pain >55yr; Virchow's node, Sister Mary Joseph nodule</td></tr><tr><td>**Staging**</td><td>EUS (T1-2), CT/PET (M), **Diagnostic Laparoscopy** (occult peritoneal) mandatory pre-curative</td></tr><tr><td>**Biomarkers**</td><td>**HER2** (adeno, met), **CLDN18.2** (diffuse), PD-L1 CPS, MSI/dMMR, EBV</td></tr><tr><td>**T1a N0**</td><td>ESD/EMR (differentiated, ≤2cm, no ulcer, no LVI)</td></tr><tr><td>**Resectable (T2+/N+)**</td><td>**Perioperative FLOT** (Docetaxel/Oxali/5-FU/LV q2w ×4 pre + 4 post) → D2 Gastrectomy</td></tr><tr><td>**D2 Gastrectomy**</td><td>Stations 1-12a, 7-11; ≥15 nodes; Spleen/pancreas preservation</td></tr><tr><td>**Metastatic 1L**</td><td>FOLFOX/CAPOX + **Nivolumab** (CPS≥5); **HER2+**: +Tras ± Pembro; **CLDN18.2+**: +Zolb; **MSI-H**: Pembro</td></tr><tr><td>**2L**</td><td>Paclitaxel ± **Ramucirumab** (RAINBOW); Docetaxel; Irinotecan; TAS-102</td></tr><tr><td>**Hereditary**</td><td>**HDGC (CDH1)**: Prophylactic total gastrectomy age 20-30</td></tr><tr><td>**Surveillance**</td><td>CT q6-12mo ×5yr; Endoscopy annually; CEA/CA19-9 q3-6mo</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Lauren classification</td><td></td><td></td></tr><tr><td>Molecular subtypes</td><td></td><td></td></tr><tr><td>FLOT regimen & trial</td><td></td><td></td></tr><tr><td>HER2/CLDN18.2 targets</td><td></td><td></td></tr><tr><td>D2 lymphadenectomy</td><td></td><td></td></tr><tr><td>Adjuvant strategies</td><td></td><td></td></tr><tr><td>Metastatic 1L/2L algorithms</td><td></td><td></td></tr><tr><td>Linitis plastica</td><td></td><td></td></tr><tr><td>Hereditary syndromes</td><td></td><td></td></tr><tr><td>Peritoneal carcinomatosis</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Oesophageal Cancer]], [[GIST]], [[HER2+ Gastric Cancer]], [[CLDN18.2 Targeted Therapy]], [[Peritoneal Carcinomatosis]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Gastric Cancer (Lauren Classification), which statement is correct? A. <b>Intestinal</b> (exophytic, H. pylori, older, better prognosis, HER2+) vs <b>Diffuse</b> (infiltrative, B. <b>Intestinal</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Intestinal</b> (exophytic, H. pylori, older, better prognosis, HER2+) vs <b>Diffuse</b> (infiltrative, signet-ring, CDH1, y...</li></ul>
+<p><b>2.</b> Regarding Gastric Cancer (Linitis Plastica), which statement is correct? A. Diffuse type B. Diffuse - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Diffuse type; rigid stomach; <b>T4a</b>; poor prognosis; often inoperable at presentation</li></ul>
+<p><b>3.</b> Regarding Gastric Cancer (H. pylori), which statement is correct? A. Class I carcinogen B. Class - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Class I carcinogen; Eradication ↓ metachronous cancer risk; Test &amp; treat</li></ul>
+<p><b>4.</b> Regarding Gastric Cancer (FLOT), which statement is correct? A. <b>Standard perioperative</b> for resectable (T2+ or N+): Docetaxel/Oxaliplatin/5-FU/LV q2w ×4 pre + 4 B. **Standard - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Standard perioperative</b> for resectable (T2+ or N+): Docetaxel/Oxaliplatin/5-FU/LV q2w ×4 pre + 4 post</li></ul>
+<p><b>5.</b> Regarding Gastric Cancer (HER2+), which statement is correct? A. 15-20% (intestinal, GEJ) B. 15-20% - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 15-20% (intestinal, GEJ); <b>ToGA</b>: Trastuzumab + Chemo ↑OS; <b>KEYNOTE-811</b>: +Pembro ↑ORR</li></ul>
+<p><b>6.</b> Regarding Gastric Cancer (CLDN18.2+), which statement is correct? A. 40-50% (diffuse) B. 40-50% - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 40-50% (diffuse); <b>Zolbetuximab</b> (chimeric Ab) + CAPOX ↑PFS/OS (SPOTLIGHT/GLOW)</li></ul>
+<p><b>7.</b> Regarding Gastric Cancer (MSI-H/dMMR), which statement is correct? A. 10-15% (intestinal) B. 10-15% - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 10-15% (intestinal); <b>Pembrolizumab 1L</b> (KEYNOTE-062/158/177)</li></ul>
+<p><b>8.</b> Regarding Gastric Cancer (EBV+), which statement is correct? A. 9% B. 9% - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 9%; PD-L1↑, PIK3CA mut; Good ICI response</li></ul>
+<p><b>9.</b> Regarding Gastric Cancer (D2 Lymphadenectomy), which statement is correct? A. ≥15 nodes examined B. ≥15 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — ≥15 nodes examined; Standard for curative; Spleen/pancreas preservation</li></ul>
+<p><b>10.</b> Regarding Gastric Cancer (Peritoneal Mets), which statement is correct? A. M1 B. M1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — M1; Diffuse type; HIPEC/PIPAC experimental; Poor prognosis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Intestinal</b> (exophytic, H. pylori, older, better prognosis, HER2+) vs <b>Diffuse</b> (infiltrative,</li><li>B. <b>Intestinal</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Intestinal</b> (exophytic, H. pylori, older, better prognosis, HER2+) vs <b>Diffuse</b> (infiltrative, signet-ring, CDH1, y...</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. Diffuse type</li><li>B. Diffuse (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: Diffuse type; rigid stomach; <b>T4a</b>; poor prognosis; often inoperable at presentation</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. Class I carcinogen</li><li>B. Class (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: Class I carcinogen; Eradication ↓ metachronous cancer risk; Test &amp; treat</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Standard perioperative</b> for resectable (T2+ or N+): Docetaxel/Oxaliplatin/5-FU/LV q2w ×4 pre + 4</li><li>B. **Standard (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Standard perioperative</b> for resectable (T2+ or N+): Docetaxel/Oxaliplatin/5-FU/LV q2w ×4 pre + 4 post</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. 15-20% (intestinal, GEJ)</li><li>B. 15-20% (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: 15-20% (intestinal, GEJ); <b>ToGA</b>: Trastuzumab + Chemo ↑OS; <b>KEYNOTE-811</b>: +Pembro ↑ORR</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. 40-50% (diffuse)</li><li>B. 40-50% (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: 40-50% (diffuse); <b>Zolbetuximab</b> (chimeric Ab) + CAPOX ↑PFS/OS (SPOTLIGHT/GLOW)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. 10-15% (intestinal)</li><li>B. 10-15% (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: 10-15% (intestinal); <b>Pembrolizumab 1L</b> (KEYNOTE-062/158/177)</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. 9%</li><li>B. 9% (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: 9%; PD-L1↑, PIK3CA mut; Good ICI response</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. ≥15 nodes examined</li><li>B. ≥15 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: ≥15 nodes examined; Standard for curative; Spleen/pancreas preservation</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. M1</li><li>B. M1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: M1; Diffuse type; HIPEC/PIPAC experimental; Poor prognosis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Lauren Classification? <b>A1:</b> Intestinal (exophytic, H. pylori, older, better prognosis, HER2+) vs Diffuse (infiltrative, signet-ring, CDH1, younger, peritoneal spread, CLDN18.2+)</p>
+<p><b>Q2:</b> Linitis Plastica? <b>A2:</b> Diffuse type; rigid stomach; T4a; poor prognosis; often inoperable at presentation</p>
+<p><b>Q3:</b> H. pylori? <b>A3:</b> Class I carcinogen; Eradication ↓ metachronous cancer risk; Test &amp; treat</p>
+<p><b>Q4:</b> FLOT? <b>A4:</b> Standard perioperative for resectable (T2+ or N+): Docetaxel/Oxaliplatin/5-FU/LV q2w ×4 pre + 4 post</p>
+<p><b>Q5:</b> HER2+? <b>A5:</b> 15-20% (intestinal, GEJ); ToGA: Trastuzumab + Chemo ↑OS; KEYNOTE-811: +Pembro ↑ORR</p>
+<p><b>Q6:</b> CLDN18.2+? <b>A6:</b> 40-50% (diffuse); Zolbetuximab (chimeric Ab) + CAPOX ↑PFS/OS (SPOTLIGHT/GLOW)</p>
+<p><b>Q7:</b> MSI-H/dMMR? <b>A7:</b> 10-15% (intestinal); Pembrolizumab 1L (KEYNOTE-062/158/177)</p>
+<p><b>Q8:</b> EBV+? <b>A8:</b> 9%; PD-L1↑, PIK3CA mut; Good ICI response</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Lauren Classification</td><td>Intestinal (exophytic, H. pylori, older, better prognosis, HER2+) vs Diffuse (infiltrative, signet-ring, CDH1, younger,</td></tr><tr><td>2</td><td>A</td><td>Linitis Plastica</td><td>Diffuse type; rigid stomach; T4a; poor prognosis; often inoperable at presentation</td></tr><tr><td>3</td><td>A</td><td>H. pylori</td><td>Class I carcinogen; Eradication ↓ metachronous cancer risk; Test & treat</td></tr><tr><td>4</td><td>A</td><td>FLOT</td><td>Standard perioperative for resectable (T2+ or N+): Docetaxel/Oxaliplatin/5-FU/LV q2w ×4 pre + 4 post</td></tr><tr><td>5</td><td>A</td><td>HER2+</td><td>15-20% (intestinal, GEJ); ToGA: Trastuzumab + Chemo ↑OS; KEYNOTE-811: +Pembro ↑ORR</td></tr><tr><td>6</td><td>A</td><td>CLDN18.2+</td><td>40-50% (diffuse); Zolbetuximab (chimeric Ab) + CAPOX ↑PFS/OS (SPOTLIGHT/GLOW)</td></tr><tr><td>7</td><td>A</td><td>MSI-H/dMMR</td><td>10-15% (intestinal); Pembrolizumab 1L (KEYNOTE-062/158/177)</td></tr><tr><td>8</td><td>A</td><td>EBV+</td><td>9%; PD-L1↑, PIK3CA mut; Good ICI response</td></tr><tr><td>9</td><td>A</td><td>D2 Lymphadenectomy</td><td>≥15 nodes examined; Standard for curative; Spleen/pancreas preservation</td></tr><tr><td>10</td><td>A</td><td>Peritoneal Mets</td><td>M1; Diffuse type; HIPEC/PIPAC experimental; Poor prognosis</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Lauren Classification</td><td>Intestinal (exophytic, H. pylori, older, better prognosis, HER2+) vs Diffuse (infiltrative, signet-ring, CDH1, younger,</td></tr><tr><td>2</td><td>A</td><td>Linitis Plastica</td><td>Diffuse type; rigid stomach; T4a; poor prognosis; often inoperable at presentation</td></tr><tr><td>3</td><td>A</td><td>H. pylori</td><td>Class I carcinogen; Eradication ↓ metachronous cancer risk; Test & treat</td></tr><tr><td>4</td><td>A</td><td>FLOT</td><td>Standard perioperative for resectable (T2+ or N+): Docetaxel/Oxaliplatin/5-FU/LV q2w ×4 pre + 4 post</td></tr><tr><td>5</td><td>A</td><td>HER2+</td><td>15-20% (intestinal, GEJ); ToGA: Trastuzumab + Chemo ↑OS; KEYNOTE-811: +Pembro ↑ORR</td></tr><tr><td>6</td><td>A</td><td>CLDN18.2+</td><td>40-50% (diffuse); Zolbetuximab (chimeric Ab) + CAPOX ↑PFS/OS (SPOTLIGHT/GLOW)</td></tr><tr><td>7</td><td>A</td><td>MSI-H/dMMR</td><td>10-15% (intestinal); Pembrolizumab 1L (KEYNOTE-062/158/177)</td></tr><tr><td>8</td><td>A</td><td>EBV+</td><td>9%; PD-L1↑, PIK3CA mut; Good ICI response</td></tr><tr><td>9</td><td>A</td><td>D2 Lymphadenectomy</td><td>≥15 nodes examined; Standard for curative; Spleen/pancreas preservation</td></tr><tr><td>10</td><td>A</td><td>Peritoneal Mets</td><td>M1; Diffuse type; HIPEC/PIPAC experimental; Poor prognosis</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Upper GI Cancers|Upper GI Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Gastric Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

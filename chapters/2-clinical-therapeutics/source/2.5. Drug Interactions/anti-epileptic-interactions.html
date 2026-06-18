@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anti Epileptic Interactions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Anti Epileptic Interactions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify AEDs by enzyme induction/inhibition potential</li><li>[ ] Identify critical interactions: AED–AED, AED–Non-AED (OCP, Warfarin, DOACs, Steroids, ARVs, TB drugs, Antidepressants)</li><li>[ ] Apply monitoring strategies (levels, clinical, labs)</li><li>[ ] Manage key scenarios: Pregnancy, Renal/Hepatic impairment, Status epilepticus</li><li>[ ] Recognise HLA screening indications (Carbamazepine, Phenytoin)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 AED Classification by Enzyme Effect</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Drugs</th><th>**Enzyme Effect**</th><th>**Key Interactions**</th></tr><tr><td>----------</td><td>-------</td><td>-------------------</td><td>---------------------</td></tr><tr><td>**Strong Inducers**</td><td>**Carbamazepine (CBZ), Phenytoin (PHT), Phenobarbital (PB), Primidone (PRM)**</td><td>**Induce CYP3A4, 2C9, 2C19, 1A2, UGT, P-gp**</td><td>**↓ Levels of: OCP, Warfarin, DOACs, Steroids, ARVs, TB drugs, Antidepressants, CCBs, Statins, Immunosuppressants, Theophylline**</td></tr><tr><td>**Moderate Inducers**</td><td>**Oxcarbazepine (OXC), Eslicarbazepine (ESL), Topiramate (TPM) (>200mg), Rufinamide, Perampanel**</td><td>**Induce CYP3A4, UGT (weaker)**</td><td>Similar but less potent; OXC/ESL induce CYP3A4; TPM dose-dependent</td></tr><tr><td>**Neutral / Minimal**</td><td>**Levetiracetam (LEV), Lamotrigine (LTG), Lacosamide (LCM), Gabapentin (GBP), Pregabalin (PGB), Vigabatrin (VGB), Brivaracetam (BRV), Zonisamide (ZNS), Ethosuximide (ESM), Valproate (VPA) — *see below***</td><td>**No significant CYP induction**</td><td>**Preferred in polypharmacy**; LTG levels ↓ by inducers; VPA inhibits some CYP/UGT</td></tr><tr><td>**Inhibitors**</td><td>**Valproate (VPA), Stiripentol (STP), Rufinamide (weak), Cannabidiol (CBD)**</td><td>**VPA: Inhibits UGT, CYP2C9, CYP2C19, β-oxidation, epoxide hydrolase**<br>**STP: Potent CYP3A4, 2C19, UGT inhibitor**</td><td>**↑ Levels of: LTG (2x), CBZ-epoxide, PHT, PB, ZNS, Topiramate, Cannabidiol, Rufinamide**</td></tr></table>
+<div class="callout"><b>Valproate = SPECIAL</b> — <b>Inhibits LTG glucuronidation (↑ LTG 2x)</b>; <b>Inhibits CBZ epoxide hydrolase (↑ CBZ-epoxide → toxicity)</b>; <b>Displaces PHT from albumin (↑ free PHT)</b>; <b>Inhibits β-oxidation (hyperammonaemia risk)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ Critical Interaction Scenarios</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. **Enzyme-Inducing AEDs (CBZ, PHT, PB) + Non-AED Drugs**</div>
+<table class="ctable"><tr><th>Drug Class</th><th>Effect</th><th>Clinical Consequence</th><th>Management</th></tr><tr><td>------------</td><td>--------</td><td>---------------------</td><td>------------</td></tr><tr><td>**Combined OCP**</td><td>**↓ Ethinylestradiol 40–60%**</td><td>**Contraceptive failure**</td><td>**Add barrier method**; Use IUD/Implant (levonorgestrel IUS preferred); **Avoid progestin-only pill with CBZ/PHT/PB**</td></tr><tr><td>**Progestin-only Pill / Implant**</td><td>**↓ Progestin**</td><td>**Failure risk**</td><td>**Avoid implant with inducers**; Use IUS or DMPA injection (less affected)</td></tr><tr><td>**Warfarin**</td><td>**↓ Warfarin levels**</td><td>**Subtherapeutic INR → Thrombosis**</td><td>**Increase Warfarin dose**; Monitor INR **2x/week** after AED change</td></tr><tr><td>**DOACs (Apixaban, Rivaroxaban, Dabigatran, Edoxaban)**</td><td>**↓ DOAC levels (CYP3A4/P-gp induction)**</td><td>**Thrombosis risk**</td><td>**AVOID DOACs with strong inducers**; Use **Warfarin (with INR monitoring)** or **UFH/LMWH**</td></tr><tr><td>**Corticosteroids (Prednisolone, Dexamethasone, Budesonide)**</td><td>**↓ Steroid levels**</td><td>**Treatment failure (asthma, COPD, autoimmune)**</td><td>**Increase steroid dose**; Consider non-inducing AED</td></tr><tr><td>**Antiretrovirals (PIs, INSTIs, NNRTIs)**</td><td>**↓ ARV levels**</td><td>**Virological failure**</td><td>**AVOID strong inducers with ARVs**; Use non-inducing AEDs (LEV, LTG, LCM, VPA)</td></tr><tr><td>**Anti-TB (Rifampicin, Rifabutin)**</td><td>**↓ Rifamycin levels**</td><td>**TB treatment failure**</td><td>**Rifampicin induces AEDs too** — bidirectional; Use non-inducing AEDs</td></tr><tr><td>**Calcineurin Inhibitors (Tacrolimus, Ciclosporin)**</td><td>**↓ Levels → Rejection**</td><td>**Transplant rejection**</td><td>**Increase CNI dose**; Monitor trough levels **2x/week**</td></tr><tr><td>**Antidepressants (SSRIs, SNRIs, TCAs)**</td><td>**↓ Levels**</td><td>**Depression relapse**</td><td>**Monitor; ↑ dose if needed**</td></tr><tr><td>**CCBs (Verapamil, Diltiazem), Statins**</td><td>**↓ Levels**</td><td>**Loss of BP/lipid control**</td><td>**Monitor; ↑ dose**</td></tr></table>
+<div class="sub-h">2. **Valproate (VPA) — Special Inhibitor Profile**</div>
+<table class="ctable"><tr><th>Interaction</th><th>Mechanism</th><th>Clinical Effect</th><th>Management</th></tr><tr><td>-------------</td><td>-----------</td><td>----------------</td><td>------------</td></tr><tr><td>**Lamotrigine (LTG)**</td><td>**Inhibits UGT1A4 → ↓ LTG glucuronidation**</td><td>**LTG levels ↑ 2x** → **Rash/SJS risk**</td><td>**LTG dose ↓ 50%**; **Slow titration** (25mg q2wks if with VPA)</td></tr><tr><td>**Carbamazepine (CBZ)**</td><td>**Inhibits epoxide hydrolase → ↑ CBZ-epoxide**</td><td>**CBZ-epoxide ↑ → Neurotoxicity (tremor, ataxia, diplopia)**</td><td>**Monitor CBZ + CBZ-epoxide levels**; ↓ CBZ dose</td></tr><tr><td>**Phenytoin (PHT)**</td><td>**Displaces PHT from albumin + inhibits CYP2C9**</td><td>**Free PHT ↑↑ → Toxicity (nystagmus, ataxia) at normal total level**</td><td>**Monitor FREE PHT level**; ↓ PHT dose</td></tr><tr><td>**Phenobarbital (PB)**</td><td>**Inhibits PB metabolism**</td><td>**PB levels ↑**</td><td>**Monitor PB level**; ↓ PB dose</td></tr><tr><td>**Zonisamide (ZNS)**</td><td>**Inhibits ZNS metabolism**</td><td>**ZNS levels ↑**</td><td>**Monitor; ↓ ZNS dose**</td></tr><tr><td>**Topiramate (TPM)**</td><td>**Inhibits TPM metabolism (weak)**</td><td>**TPM levels ↑ slightly**</td><td>**Monitor**</td></tr><tr><td>**Cannabidiol (CBD)**</td><td>**Inhibits CYP2C19, CYP3A4**</td><td>**CBD levels↑, Clobazam metabolite ↑**</td><td>**Monitor; ↓ Clobazam dose**</td></tr><tr><td>**Rufinamide**</td><td>**Inhibits Rufinamide metabolism**</td><td>**Rufinamide levels ↑**</td><td>**Monitor**</td></tr></table>
+<div class="sub-h">3. **AED–AED Interactions (Key Pairs)**</div>
+<table class="ctable"><tr><th>AED Pair</th><th>Interaction</th><th>Clinical Effect</th><th>Management</th></tr><tr><td>----------</td><td>-------------</td><td>----------------</td><td>------------</td></tr><tr><td>**CBZ + LTG**</td><td>CBZ induces LTG glucuronidation</td><td>**LTG levels ↓ 40–50%**</td><td>**↑ LTG dose**; monitor level</td></tr><tr><td>**CBZ + PHT**</td><td>Mutual induction/protein binding displacement</td><td>**Unpredictable levels**</td><td>**Monitor both FREE levels**</td></tr><tr><td>**VPA + LTG**</td><td>VPA inhibits LTG glucuronidation</td><td>**LTG ↑ 2x** → SJS risk</td><td>**LTG dose 50%**; slow titration</td></tr><tr><td>**VPA + PHT**</td><td>VPA displaces PHT + inhibits CYP2C9</td><td>**Free PHT ↑↑**</td><td>**Monitor FREE PHT**; ↓ PHT dose</td></tr><tr><td>**VPA + CBZ**</td><td>VPA inhibits CBZ epoxide hydrolase</td><td>**CBZ-epoxide ↑ → Neurotoxicity**</td><td>**Monitor CBZ-epoxide**; ↓ CBZ dose</td></tr><tr><td>**VPA + PB**</td><td>VPA inhibits PB metabolism</td><td>**PB levels ↑**</td><td>**Monitor PB level**</td></tr><tr><td>**PHT + LTG**</td><td>PHT induces LTG</td><td>**LTG levels ↓**</td><td>**↑ LTG dose**</td></tr><tr><td>**TPM + OCPs**</td><td>TPM (>200mg) induces CYP3A4</td><td>**↓ Ethinylestradiol**</td><td>**Add barrier method**</td></tr><tr><td>**OXC/ESL + OCP**</td><td>OXC/ESL induce CYP3A4</td><td>**↓ Ethinylestradiol**</td><td>**Add barrier method**</td></tr></table>
+<div class="sub-h">4. **Other Key Non-AED Interactions**</div>
+<table class="ctable"><tr><th>Drug</th><th>Interacting AEDs</th><th>Effect</th><th>Management</th></tr><tr><td>------</td><td>------------------</td><td>--------</td><td>------------</td></tr><tr><td>**Antidepressants (SSRIs, TCAs, Bupropion, MAOIs)**</td><td>CBZ, PHT, PB (inducers)</td><td>**↓ Antidepressant levels**</td><td>Monitor; ↑ dose; consider non-inducing AED</td></tr><tr><td>**Antipsychotics (Clozapine, Olanzapine, Quetiapine, Risperidone)**</td><td>CBZ, PHT, PB</td><td>**↓ Levels → Relapse**</td><td>Monitor; ↑ dose; avoid clozapine with CBZ (↑ agranulocytosis risk)</td></tr><tr><td>**Benzodiazepines (Clonazepam, Clobazam, Midazolam, Diazepam)**</td><td>CBZ, PHT, PB (inducers)</td><td>**↓ BZD levels**</td><td>**Clobazam + VPA → ↑ N-desmethylclobazam (active)**</td></tr><tr><td>**Methadone / Buprenorphine**</td><td>CBZ, PHT, PB, EFV, Rifampicin</td><td>**↓ Levels → Withdrawal**</td><td>**↑ Methadone dose**; Monitor</td></tr><tr><td>**Theophylline**</td><td>CBZ, PHT, PB</td><td>**↓ Theophylline levels**</td><td>Monitor level; ↑ dose</td></tr><tr><td>**Ciclosporin / Tacrolimus**</td><td>CBZ, PHT, PB</td><td>**↓ Levels → Rejection**</td><td>**Monitor trough 2x/week**; ↑ dose</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Strong Inducers**</td><td>**CBZ, PHT, PB, PRM** — Induce CYP3A4, 2C9, 2C19, 1A2, UGT, P-gp</td></tr><tr><td>**Non-inducing AEDs (Preferred)**</td><td>**LEV, LTG, LCM, GBP, PGB, VGB, BRV, ZNS, ESM**</td></tr><tr><td>**Valproate**</td><td>**Inhibits: LTG glucuronidation (↑ 2x), CBZ epoxide hydrolase (↑ epoxide), PHT displacement (↑ free PHT)**</td></tr><tr><td>**OCP + Inducers**</td><td>**↓ Ethinylestradiol 40–60%** → **Barrier method; IUD preferred**</td></tr><tr><td>**Warfarin + Inducers**</td><td>**↓ Warfarin** → **↑ Warfarin dose, INR 2x/week**</td></tr><tr><td>**DOACs + Inducers**</td><td>**AVOID DOACs** → Use Warfarin or LMWH</td></tr><tr><td>**Steroids + Inducers**</td><td>**↓ Steroid levels** → ↑ Steroid dose</td></tr><tr><td>**ARVs + Inducers**</td><td>**AVOID** — Use non-inducing AEDs (LEV, LTG, LCM, VPA)</td></tr><tr><td>**LTG + VPA**</td><td>**LTG ↑ 2x** → **LTG dose 50%, slow titration**</td></tr><tr><td>**LTG + CBZ**</td><td>**LTG ↓ 40–50%** → **↑ LTG dose**</td></tr><tr><td>**HLA-B*15:02**</td><td>**Screen before CBZ/OXC/ESL** in Asian ancestry (SJS/TEN risk)</td></tr><tr><td>**HLA-A*31:01**</td><td>**Screen before CBZ** in European/Japanese (DRESS/SJS risk)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Strong enzyme-inducing AEDs — list 4?</td><td>**Carbamazepine, Phenytoin, Phenobarbital, Primidone**</td></tr><tr><td>2. Non-inducing AEDs (preferred in polypharmacy) — list 5?</td><td>**Levetiracetam, Lamotrigine, Lacosamide, Gabapentin, Pregabalin, Vigabatrin, Brivaracetam, Zonisamide, Ethosuximide**</td></tr><tr><td>3. Valproate + Lamotrigine — interaction & management?</td><td>**VPA inhibits LTG glucuronidation → LTG levels ↑ 2x** → **LTG dose 50%, slow titration (25mg q2wks)**</td></tr><tr><td>4. Valproate + Phenytoin — interaction & monitoring?</td><td>**VPA displaces PHT from albumin + inhibits CYP2C9 → Free PHT ↑↑** → **Monitor FREE PHT level** (total unreliable); ↓ PHT dose</td></tr><tr><td>5. Valproate + Carbamazepine — toxic metabolite?</td><td>**CBZ-epoxide** (VPA inhibits epoxide hydrolase) → **Neurotoxicity (tremor, ataxia, diplopia)**</td></tr><tr><td>6. Enzyme-inducing AED + Combined OCP — failure risk?</td><td>**↓ Ethinylestradiol 40–60%** → **Contraceptive failure** → **Add barrier method; IUD preferred**</td></tr><tr><td>7. Enzyme-inducing AED + Warfarin — management?</td><td>**Inducers ↑ Warfarin metabolism → Subtherapeutic INR** → **Increase Warfarin dose; Monitor INR 2x/week**</td></tr><tr><td>8. Enzyme-inducing AED + DOACs — recommendation?</td><td>**AVOID DOACs** → Use **Warfarin (with INR monitoring)** or **LMWH/UFH**</td></tr><tr><td>9. HLA screening before Carbamazepine — which alleles, which populations?</td><td>**HLA-B*15:02** (Asian ancestry — SJS/TEN); **HLA-A*31:01** (European/Japanese — DRESS/SJS)</td></tr><tr><td>10. Lamotrigine + Carbamazepine — LTG levels?</td><td>**CBZ induces LTG glucuronidation → LTG levels ↓ 40–50%** → **Increase LTG dose**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Inducers vs Inhibitors**</td><td>**Inducers (CBZ, PHT, PB)** = ↓ levels of other drugs; **Inhibitors (VPA, STP)** = ↑ levels of specific drugs</td></tr><tr><td>**Valproate = Inhibitor?**</td><td>**Yes but complex** — Inhibits UGT (↑ LTG), epoxide hydrolase (↑ CBZ-epoxide), displaces PHT (↑ free PHT)</td></tr><tr><td>**LTG dose with VPA vs CBZ**</td><td>**VPA → LTG dose 50%**; **CBZ → LTG dose ↑**</td></tr><tr><td>**Free vs Total Phenytoin**</td><td>**With VPA or hypoalbuminaemia** → **Use FREE level** (total underestimates effect)</td></tr><tr><td>**DOACs + Inducers**</td><td>**AVOID** — use Warfarin/LMWH instead</td></tr><tr><td>**Progestin-only implant + Inducers**</td><td>**Avoid** — failure risk; Use IUS or DMPA injection</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"INDUCERS = CBZ, PHT, PB, PRIMIDONE"</b> = Strong CYP3A4/2C9/2C19/1A2/UGT/P-gp inducers</li><li><b>"NON-INDUCERS = LEV, LTG, LCM, GBP, PGB, VGB, BRV, ZNS, ETHOSUXIMIDE"</b> = Safe in polypharmacy</li><li><b>"VALPROATE = INHIBITOR"</b> = <b>↑ LTG 2x</b> (dose 50%); <b>↑ CBZ-epoxide</b> (neurotoxicity); <b>↑ Free PHT</b> (free level!)</li><li><b>"LTG + VPA = HALF DOSE"</b>; <b>"LTG + CBZ = DOUBLE DOSE"</b></li><li><b>"FREE PHENYTOIN"</b> = Hypoalbuminaemia, VPA, Renal failure, Elderly</li><li><b>"INDUCERS + OCP = BARRIER METHOD"</b> = 40-60% ↓ ethinylestradiol</li><li><b>"INDUCERS + WARFARIN = ↑ DOSE, INR 2x/WEEK"</b></li><li><b>"INDUCERS + DOAC = AVOID"</b></li><li>**"HLA-B*15:02 = ASIAN + CBZ/OXC/ESL"**</li><li>**"HLA-A*31:01 = EUROPEAN/JAPANESE + CBZ"**</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Anti-Epileptic Interactions)) Strong Inducers Carbamazepine, Phenytoin, Phenobarbital, Primidone Induce: CYP3A4, 2C9, 2C19, 1A2, UGT, P-gp ↓ OCP, Warfarin, DOACs, Steroids, ARVs, TB, Immunosuppressants Non-Inducers (Preferred) Levetiracetam, Lamotrigine, Lacosamide, Gabapentin Pregabalin, Vigabatrin, Brivaracetam, Zonisamide, Ethosuximide Valproate (Inhibitor) ↑ Lamotrigine 2x (UGT1A4) → LTG dose 50% ↑ CBZ-epoxide (epoxide hydrolase) → Neurotoxicity ↑ Free Phenytoin (displacement + CYP2C9 inhibition) → Free PHT level ↑ Phenobarbital, Zonisamide AED-AED Key Pairs CBZ + LTG → LTG ↓ 40-50% (↑ LTG dose) VPA + LTG → LTG ↑ 2x (LTG dose 50%) VPA + PHT → Free PHT ↑↑ (FREE level) VPA + CBZ → CBZ-epoxide ↑ (Neurotoxicity) PHT + LTG → LTG ↓ (↑ LTG dose) Non-AED Interactions OCP + Inducers → Barrier method / IUD Warfarin + Inducers → ↑ Warfarin dose, INR 2x/week DOACs + Inducers → AVOID (use Warfarin/LMWH) Steroids + Inducers → ↑ Steroid dose ARVs + Inducers → AVOID (use non-inducing AEDs) CNIs + Inducers → Monitor trough 2x/week HLA Screening HLA-B<i>15:02 → Asian + CBZ/OXC/ESL (SJS/TEN) HLA-A</i>31:01 → European/Japanese + CBZ (DRESS/SJS) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Inducers vs Non-inducers</td><td>8</td><td></td></tr><tr><td>Valproate interactions</td><td>8</td><td></td></tr><tr><td>AED-AED pairs</td><td>8</td><td></td></tr><tr><td>Non-AED interactions</td><td>8</td><td></td></tr><tr><td>HLA screening</td><td>4</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**46**</td><td></td></tr></table>
+<p><b>Target</b>: ≥37/46 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Enzyme-inducing AEDs and their impact on non-AED drugs."*</div>
+<ul><li><b>Strong inducers</b>: <b>CBZ, PHT, PB, Primidone</b> — Induce CYP3A4, 2C9, 2C19, 1A2, UGT, P-gp</li><li><b>Effect on non-AEDs</b>: <b>↓ Levels</b> of OCP (↓ ethinylestradiol 40–60%), Warfarin, DOACs, Steroids, ARVs, TB drugs, CNIs, CCBs, Statins</li><li><b>Management</b>: <b>OCP → Barrier/IUD</b>; <b>Warfarin → ↑ dose, INR 2x/week</b>; <b>DOACs → AVOID (use Warfarin/LMWH)</b>; <b>Steroids → ↑ dose</b>; <b>ARVs → Avoid inducers, use LEV/LTG/LCM/VPA</b></li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on Carbamazepine, started on Lamotrigine. 2 weeks later: diffuse rash, fever. Why? Management?"*</div>
+<ul><li><b>CBZ induces LTG glucuronidation → LTG levels ↓</b> but <b>rash occurs during titration</b></li><li><b>Rapid titration + CBZ induction</b> → <b>LTG levels fluctuating</b> → <b>Hypersensitivity risk</b></li><li><b>Management</b>: <b>STOP LTG immediately</b> (SJS/TEN risk); <b>Switch to non-aromatic AED</b> (Levetiracetam, Lacosamide); <b>Avoid rechallenge</b>; Consider HLA-B*15:02 if Asian</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on Valproate 1000mg, started Phenytoin 300mg for breakthrough seizures. 1 week later: nystagmus, ataxia, confusion. Total PHT level 18 µg/mL (therapeutic). Why toxic?"*</div>
+<ul><li><b>VPA displaces PHT from albumin + inhibits CYP2C9 → Free PHT ↑↑</b></li><li><b>Total PHT level MISLEADING</b> (normal 10–20, but free ↑↑)</li><li><b>Check FREE PHT level</b> — will be &gt;2 µg/mL</li><li><b>↓ Phenytoin dose</b>; Monitor free level</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Inducers = CBZ, PHT, PB, Primidone (CYP3A4/2C9/2C19/1A2/UGT/P-gp)</li><li>Non-inducers = LEV, LTG, LCM, GBP, PGB, VGB, BRV, ZNS, ESM</li><li>VPA = inhibitor: ↑ LTG 2x (dose 50%), ↑ CBZ-epoxide, ↑ Free PHT</li><li>LTG + CBZ = ↑ LTG dose; LTG + VPA = LTG dose 50%</li><li>Free PHT when: VPA, hypoalbuminaemia, renal, elderly</li><li>Inducers + OCP = barrier/IUD; Inducers + Warfarin = ↑ dose, INR 2x/wk</li><li>Inducers + DOACs = AVOID</li><li>HLA-B<i>15:02 = Asian + CBZ/OXC/ESL; HLA-A</i>31:01 = Euro/Japanese + CBZ</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>AED INTERACTIONS:</b> <b>INDUCERS</b> = CBZ, PHT, PB, Primidone → ↓ OCP, Warfarin, DOACs, Steroids, ARVs, CNIs <b>NON-INDUCERS</b> = LEV, LTG, LCM, GBP, PGB, VGB, BRV, ZNS, ESM <b>VALPROATE</b> = INHIBITOR → ↑ LTG 2x (½ dose), ↑ CBZ-epoxide, ↑ Free PHT (FREE level!) <b>LTG + CBZ</b> = ↑ LTG dose; <b>LTG + VPA</b> = ½ LTG dose <b>FREE PHT</b> = VPA, Hypoalbuminaemia, Renal, Elderly <b>INDUCERS + OCP</b> = BARRIER/IUD; <b>+ WARFARIN</b> = ↑ DOSE, INR 2x/wk; <b>+ DOAC</b> = AVOID <b>HLA</b> = B<i>15:02 (Asian+CBZ), A</i>31:01 (Euro/Jap+CBZ)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Strong enzyme-inducing AEDs:</b></li></ol>
+<p>A. Levetiracetam, Lamotrigine, Lacosamide B. <b>Carbamazepine, Phenytoin, Phenobarbital, Primidone</b> ✓ C. Valproate, Gabapentin, Pregabalin D. Topiramate, Zonisamide, Ethosuximide E. Lacosamide, Brivaracetam, Vigabatrin</p>
+<ol><li><b>Valproate + Lamotrigine — effect on LTG levels:</b></li></ol>
+<p>A. ↓ 50% B. No change C. <b>↑ 2x</b> ✓ D. ↓ 2x E. Unpredictable</p>
+<ol><li><b>Valproate + Phenytoin — which level to monitor?</b></li></ol>
+<p>A. Total PHT B. <b>Free PHT</b> ✓ C. VPA level D. Albumin E. CBZ-epoxide</p>
+<ol><li><b>Enzyme-inducing AED + Combined OCP — ethinylestradiol change:</b></li></ol>
+<p>A. ↑ 50% B. <b>↓ 40–60%</b> ✓ C. No change D. ↑ 2x D. Unpredictable</p>
+<ol><li><b>Enzyme-inducing AED + Warfarin — management:</b></li></ol>
+<p>A. ↓ Warfarin dose B. <b>↑ Warfarin dose, INR 2x/week</b> ✓ C. Switch to DOAC D. No change E. Stop Warfarin</p>
+<ol><li><b>Enzyme-inducing AED + DOACs — recommendation:</b></li></ol>
+<p>A. Safe B. <b>AVOID (use Warfarin/LMWH)</b> ✓ C. ↑ DOAC dose D. Monitor anti-Xa only E. Use edoxaban only</p>
+<ol><li><b>Lamotrigine + Carbamazepine — LTG levels:</b></li></ol>
+<p>A. ↑ 2x B. <b>↓ 40–50%</b> ✓ C. No change D. ↓ 2x E. Unpredictable</p>
+<ol><li>**HLA-B*15:02 screening — population &amp; drug:**</li></ol>
+<p>A. European + Phenytoin B. <b>Asian + Carbamazepine/Oxcarbazepine/Eslicarbazepine</b> ✓ C. African + Valproate D. All populations + all AEDs E. Japanese + Phenobarbital</p>
+<ol><li>**HLA-A*31:01 screening — population &amp; drug:**</li></ol>
+<p>A. Asian + Carbamazepine B. <b>European/Japanese + Carbamazepine</b> ✓ C. All + Phenytoin D. African + Lamotrigine E. All + Valproate</p>
+<ol><li><b>Valproate + Carbamazepine — toxic metabolite:</b></li></ol>
+<p>A. CBZ-diol B. <b>CBZ-epoxide</b> ✓ C. CBZ-trans-diol D. CBZ-imidazoline E. VPA-glucuronide</p>
+<ol><li><b>Non-inducing AEDs (preferred in polypharmacy):</b></li></ol>
+<p>A. CBZ, PHT, PB B. <b>LEV, LTG, LCM, GBP, PGB, VGB, BRV, ZNS, ESM</b> ✓ C. TPM, OXC, ESL D. VPA, STP, CBD E. PRM, PHB, PHT</p>
+<ol><li><b>Valproate inhibits epoxide hydrolase → ↑ CBZ-epoxide → clinical effect:</b></li></ol>
+<p>A. Hepatotoxicity B. <b>Neurotoxicity (tremor, ataxia, diplopia)</b> ✓ C. Rash D. Hyponatraemia E. Thrombocytopenia</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Strong inducers</td><td>CBZ, PHT, PB, Primidone</td></tr><tr><td>Non-inducers</td><td>LEV, LTG, LCM, GBP, PGB, VGB, BRV, ZNS, ESM</td></tr><tr><td>VPA + LTG</td><td>LTG ↑ 2x → dose 50%, slow titrate</td></tr><tr><td>VPA + PHT</td><td>Free PHT ↑↑ → monitor FREE level</td></tr><tr><td>VPA + CBZ</td><td>CBZ-epoxide ↑ → neurotoxicity</td></tr><tr><td>Inducers + OCP</td><td>↓ ethinylestradiol 40-60% → barrier/IUD</td></tr><tr><td>Inducers + Warfarin</td><td>↑ Warfarin dose, INR 2x/week</td></tr><tr><td>Inducers + DOACs</td><td>AVOID (use Warfarin/LMWH)</td></tr><tr><td>LTG + CBZ</td><td>LTG ↓ 40-50% → ↑ LTG dose</td></tr><tr><td>HLA-B*15:02</td><td>Asian + CBZ/OXC/ESL (SJS/TEN)</td></tr><tr><td>HLA-A*31:01</td><td>European/Japanese + CBZ (DRESS/SJS)</td></tr><tr><td>Free PHT needed</td><td>VPA, Hypoalbuminaemia, Renal failure, Elderly</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Carbamazepine, Phenytoin, Phenobarbital, Primidone</li><li><b>C</b> — ↑ 2x</li><li><b>B</b> — Free PHT</li><li><b>B</b> — ↓ 40–60%</li><li><b>B</b> — ↑ Warfarin dose, INR 2x/week</li><li><b>B</b> — AVOID (use Warfarin/LMWH)</li><li><b>B</b> — ↓ 40–50%</li><li><b>B</b> — Asian + Carbamazepine/OXC/ESL</li><li><b>B</b> — European/Japanese + Carbamazepine</li><li><b>B</b> — CBZ-epoxide</li><li><b>B</b> — LEV, LTG, LCM, GBP, PGB, VGB, BRV, ZNS, ESM</li><li><b>B</b> — Neurotoxicity (tremor, ataxia, diplopia)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Interactions/Anti-epileptic interactions.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Anti Epileptic Interactions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cardiovascular Disease Epidemiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.3. EPIDEMIOLOGY OF MAJOR DISEASES</span>
+      <div class="h1">Cardiovascular Disease Epidemiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe global CVD burden (GBD): IHD, stroke, hypertensive heart disease</li><li>[ ] Classify risk factors: non-modifiable, modifiable (behavioural, metabolic), novel</li><li>[ ] Apply prevention levels: primordial, primary, secondary, tertiary</li><li>[ ] Calculate cardiovascular risk: QRISK3, SCORE2, ASCVD</li><li>[ ] Explain population vs high-risk prevention strategies (Rose)</li><li>[ ] Describe polypill concept and implementation challenges</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Global (GBD 2019)</th><th>UK</th></tr><tr><td>--------</td><td>-------------------</td><td>-----</td></tr><tr><td>**CVD Deaths**</td><td>18.6 million (32% all deaths)</td><td>~160,000/year (27% deaths)</td></tr><tr><td>**IHD Deaths**</td><td>9.1 million</td><td>~65,000</td></tr><tr><td>**Stroke Deaths**</td><td>6.6 million</td><td>~35,000</td></tr><tr><td>**CVD DALYs**</td><td>393 million</td><td>Major contributor</td></tr><tr><td>**Prevalence**</td><td>520+ million cases</td><td>~7.6 million UK</td></tr></table>
+<p><b>Trends:</b></p>
+<ul><li>Age-standardised mortality ↓ in HICs (50% since 1990)</li><li>Absolute numbers ↑ due to aging/population growth</li><li>LMICs: rising burden (epidemiological transition)</li><li>Premature CVD (&lt;70y) major focus for SDG 3.4</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Epidemiological patterns - see risk factors and prevention below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Risk Factors</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Risk Factor</th><th>Population Attributable Fraction (PAF)</th></tr><tr><td>----------</td><td>-------------</td><td>----------------------------------------</td></tr><tr><td>**Non-Modifiable**</td><td>Age, Sex (male > female pre-menopause), Ethnicity (South Asian >), Family History, Genetics (polygenic)</td><td>N/A</td></tr><tr><td>**Behavioural**</td><td>Tobacco (smoking, smokeless), Unhealthy diet (high Na, low fruit/veg, trans fat), Physical inactivity, Harmful alcohol use</td><td>Tobacco ~15-20% CVD; Diet ~30%</td></tr><tr><td>**Metabolic**</td><td>Hypertension (SBP≥140), Dyslipidaemia (LDL-C↑, HDL-C↓), Diabetes/Hyperglycaemia, Overweight/Obesity (BMI≥25)</td><td>Hypertension ~50% stroke, ~40% IHD; Lipids ~30%</td></tr><tr><td>**Novel/Emerging**</td><td>Air pollution (PM2.5), Sleep apnoea, Chronic inflammation (hs-CRP), Psychosocial stress, Depression, Migraine, Autoimmune, CKD, HIV, Cancer therapy</td><td>Air pollution ~20% CVD deaths</td></tr><tr><td>**Social Determinants**</td><td>Deprivation, Education, Employment, Housing, Access to care</td><td>Gradient: most deprived 2-3x CVD mortality</td></tr></table>
+<p><b>Major Risk Factor Clustering:</b></p>
+<ul><li><b>Metabolic Syndrome</b>: Central obesity + 2 of (HTN, high TG, low HDL, high fasting glucose)</li><li><b>Cardiorenal Metabolic Syndrome</b>: CVD + CKD + DM + Obesity interplay</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Risk Scores & Prevention)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Cardiovascular Risk Scores (Primary Prevention):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Score&lt;/th&gt;&lt;th&gt;Population&lt;/th&gt;&lt;th&gt;Variables&lt;/th&gt;&lt;th&gt;Output&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>QRISK3</b>&lt;/td&gt;&lt;td&gt;UK, 25-84y&lt;/td&gt;&lt;td&gt;Age, sex, ethnicity, deprivation, smoking, BP, cholesterol, BMI, DM, CKD, AF, RA, SLE, family history, meds&lt;/td&gt;&lt;td&gt;10-year CVD risk %&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>SCORE2</b>&lt;/td&gt;&lt;td&gt;Europe, 40-69y&lt;/td&gt;&lt;td&gt;Age, sex, smoking, SBP, total cholesterol&lt;/td&gt;&lt;td&gt;10-year fatal CVD risk (calibrated per region)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>ASCVD (US)</b>&lt;/td&gt;&lt;td&gt;US, 40-79y&lt;/td&gt;&lt;td&gt;Age, sex, race, TC, HDL, SBP, treatment, DM, smoking&lt;/td&gt;&lt;td&gt;10-year ASCVD risk %&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Framingham</b>&lt;/td&gt;&lt;td&gt;Historical&lt;/td&gt;&lt;td&gt;Age, sex, TC, HDL, SBP, treatment, smoking, DM&lt;/td&gt;&lt;td&gt;10-year CHD risk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>UK Thresholds (NICE CG181):</b></p>
+<ul><li><b>≥10% 10-year QRISK</b> → Offer statin (atorvastatin 20mg)</li><li><b>&lt;10%</b> → Lifestyle advice, reassess</li></ul>
+<p><b>Mermaid: Rose's Prevention Strategies</b> ``<code>mermaid flowchart TD A[Population Distribution\nof Risk Factor] --&gt; B{Strategy} B --&gt;|High-Risk| C[Identify high-risk individuals\nTargeted intervention] B --&gt;|Population| D[Shift entire distribution\nSmall benefit per person\nLarge population benefit] C --&gt; E[Clinical approach\nScreening, risk scores] D --&gt; F[Policy approach\nSalt reduction, trans fat ban,\ntobacco control, urban design] style E fill:#bbf,stroke:#333 style F fill:#bfb,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Prevention Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**High-Risk vs Population Strategy**</td><td>High-risk: identify/treat individuals above threshold (clinical). Population: shift whole distribution (policy). Rose: "A large number of people at small risk may give rise to more cases than a small number at high risk."</td></tr><tr><td>**Primordial vs Primary**</td><td>Primordial: prevent risk factor emergence (trans fat ban, urban design). Primary: prevent disease in those with risk factors (statin, antihypertensive).</td></tr><tr><td>**Secondary Prevention**</td><td>Post-event: antiplatelet, statin, beta-blocker, ACEi, cardiac rehab. Targets: LDL<1.4, BP<130/80, HbA1c<48.</td></tr><tr><td>**Polypill**</td><td>Fixed-dose combination (statin + 2-3 antihypertensives ± aspirin). Improves adherence, cost-effective. TIPS-3, PolyIran trials showed CVD reduction.</td></tr><tr><td>**QRISK vs SCORE**</td><td>QRISK: UK, includes deprivation, ethnicity, more variables. SCORE: Europe, fatal CVD only, calibrated by region.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Prevention Strategies)</span>
+  </div>
+  <div class="sec-body">
+<p><b>WHO "Best Buys" for CVD Prevention:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Intervention&lt;/th&gt;&lt;th&gt;Cost-Effectiveness&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;td&gt;-------------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Tobacco tax, smoke-free laws, plain packaging&lt;/td&gt;&lt;td&gt;Very cost-effective&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Salt reduction (reformulation, labelling)&lt;/td&gt;&lt;td&gt;Very cost-effective&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Trans fat elimination (legislative)&lt;/td&gt;&lt;td&gt;Very cost-effective&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Public awareness (diet, physical activity)&lt;/td&gt;&lt;td&gt;Cost-effective&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Drug therapy for high CVD risk (≥20-30% 10yr)&lt;/td&gt;&lt;td&gt;Cost-effective&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Aspirin for secondary prevention&lt;/td&gt;&lt;td&gt;Cost-effective&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Secondary Prevention Targets (ESC/NICE):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Target&lt;/th&gt;&lt;th&gt;Goal&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>LDL-C</b>&lt;/td&gt;&lt;td&gt;&lt;1.4 mmol/L (≥50% reduction from baseline)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Non-HDL-C</b>&lt;/td&gt;&lt;td&gt;&lt;2.2 mmol/L&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>BP</b>&lt;/td&gt;&lt;td&gt;&lt;130/80 mmHg&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>HbA1c</b>&lt;/td&gt;&lt;td&gt;&lt;48 mmol/mol (6.5%)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Smoking</b>&lt;/td&gt;&lt;td&gt;Complete cessation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>BMI</b>&lt;/td&gt;&lt;td&gt;20-25 kg/m²&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Physical Activity</b>&lt;/td&gt;&lt;td&gt;150 min moderate/week&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**CVD #1 Global Killer**</td><td>18.6M deaths (32%); IHD 9.1M, Stroke 6.6M</td></tr><tr><td>**Top Risk Factors**</td><td>Hypertension (PAF ~40% IHD, 50% stroke), Tobacco, Diet, High LDL, Air Pollution</td></tr><tr><td>**Rose's Theorem**</td><td>Population strategy > high-risk for total burden; high-risk for individual benefit</td></tr><tr><td>**QRISK3**</td><td>UK standard; ≥10% 10-yr → statin; includes ethnicity, deprivation, comorbidities</td></tr><tr><td>**SCORE2**</td><td>Europe; fatal CVD; calibrated by region</td></tr><tr><td>**Polypill**</td><td>Statin + 2-3 BP meds ± aspirin; ↑ adherence, ↓ cost; TIPS-3: 31% CVD reduction</td></tr><tr><td>**Secondary Prevention**</td><td>"ABCDE": Antiplatelet, BP, Cholesterol, Diet/Diabetes, Exercise</td></tr><tr><td>**SDG 3.4**</td><td>Reduce premature NCD mortality by 1/3 by 2030</td></tr><tr><td>**UK CVD**</td><td>~160K deaths/year; 7.6M living with CVD; major health inequality driver</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**What are the major modifiable risk factors for CVD?**</td><td>Hypertension, tobacco, unhealthy diet, physical inactivity, dyslipidaemia, diabetes, obesity, harmful alcohol, air pollution.</td></tr><tr><td>**Explain Rose's population vs high-risk strategy.**</td><td>High-risk: identify/treat individuals above threshold (clinical). Population: shift entire risk distribution via policy (salt reduction, tobacco control). Population prevents more total cases; high-risk gives larger individual benefit.</td></tr><tr><td>**What is QRISK3? When offer statin per NICE?**</td><td>UK CVD risk score (25-84y). Includes age, sex, ethnicity, deprivation, smoking, BP, lipids, BMI, DM, CKD, AF, RA, family history. NICE: ≥10% 10-year risk → offer atorvastatin 20mg.</td></tr><tr><td>**Polypill - components and evidence?**</td><td>Fixed-dose: statin + 2-3 antihypertensives (ACEi/ARB, CCB, thiazide) ± aspirin. PolyIran: 34% CVD reduction. TIPS-3: 31% reduction in intermediate risk. Improves adherence, cost-effective.</td></tr><tr><td>**Secondary prevention targets post-MI?**</td><td>LDL<1.4 (or ≥50% reduction), BP<130/80, HbA1c<48, BMI 20-25, smoking cessation, cardiac rehab, antiplatelet, statin, beta-blocker, ACEi/ARB.</td></tr><tr><td>**Population attributable fraction of hypertension for stroke?**</td><td>~50% of stroke attributable to hypertension.</td></tr><tr><td>**Trans fat elimination - WHO REPLACE?**</td><td>Review sources, Promote replacement, Legislate, Assess, Create awareness, Enforce. Cost-saving, prevents CVD.</td></tr><tr><td>**Air pollution and CVD?**</td><td>PM2.5 → oxidative stress, inflammation, atherosclerosis, arrhythmia. ~20% CVD deaths attributable. WHO target 5 μg/m³ annual mean.</td></tr><tr><td>**CVD health inequalities in UK?**</td><td>Most deprived 2-3x CVD mortality vs least deprived. Marmot: proportional universalism.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**QRISK vs Framingham**</td><td>QRISK: UK, ethnicity, deprivation, more variables, better calibrated for UK. Framingham: US, overestimates in UK.</td></tr><tr><td>**Primary vs Secondary Prevention Statin**</td><td>Primary: QRISK≥10%, atorvastatin 20mg. Secondary: established CVD, atorvastatin 80mg (high intensity).</td></tr><tr><td>**SCORE vs SCORE2**</td><td>SCORE2: updated (2021), includes non-fatal? No, still fatal CVD only; better calibration, age 40-69, region-specific.</td></tr><tr><td>**Polypill = Fixed Dose**</td><td>Not personalised titration; but adherence benefit outweighs for population.</td></tr></table>
+<p><b>Mnemonic: CVD RISK FACTORS (HALT-D)</b></p>
+<ul><li><b>H</b>ypertension</li><li><b>A</b>ge / <b>A</b>ir pollution</li><li><b>L</b>ipids (LDL↑)</li><li><b>T</b>obacco</li><li><b>D</b>iabetes / <b>D</b>iet / <b>D</b>eprivation</li></ul>
+<p><b>Mnemonic: ROSE STRATEGIES</b></p>
+<ul><li><b>H</b>igh-Risk = <b>H</b>ospital/Clinical (individual)</li><li><b>P</b>opulation = <b>P</b>olicy/Public Health (societal)</li></ul>
+<p><b>Mnemonic: QRISK3 VARIABLES (A SEB-DC RAF)</b></p>
+<ul><li><b>A</b>ge, <b>S</b>ex, <b>E</b>thnicity, <b>B</b>MI</li><li><b>D</b>eprivation, <b>C</b>holesterol/BP</li><li><b>R</b>A/SLE, <b>A</b>F, <b>F</b>amily History</li></ul>
+<p><b>Mnemonic: SECONDARY PREVENTION (ABCDE)</b></p>
+<ul><li><b>A</b>ntiplatelet / <b>A</b>CEi</li><li><b>B</b>eta-blocker / <b>B</b>P &lt;130/80</li><li><b>C</b>holesterol (LDL&lt;1.4) / <b>C</b>ardiac Rehab</li><li><b>D</b>iabetes (HbA1c&lt;48) / <b>D</b>iet</li><li><b>E</b>xercise / <b>E</b>ducation</li></ul>
+<p><b>Mnemonic: POLYPILL COMPONENTS (SAT)</b></p>
+<ul><li><b>S</b>tatin</li><li><b>A</b>CEi/ARB + <b>A</b>mlodipine + <b>T</b>hiazide</li><li>± <b>A</b>spirin</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((CVD Epidemiology)) Burden 18.6M deaths (32%) IHD 9.1M, Stroke 6.6M DALYs 393M Inequalities (deprivation) Risk Factors Non-Modifiable: Age, Sex, Ethnicity, Genes Behavioural: Tobacco, Diet, Inactivity, Alcohol Metabolic: HTN, Lipids, DM, Obesity Novel: Air Pollution, Stress, Sleep Social: Deprivation, Education Prevention Primordial: Policy, Environment Primary: Risk scores, Statins, BP meds Secondary: ABCDE targets Tertiary: Rehab, HF management Tools QRISK3 (UK) SCORE2 (Europe) ASCVD (US) Polypill concept </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Global Burden**</td><td>18.6M deaths (IHD 9.1M, Stroke 6.6M)</td></tr><tr><td>**Top Risk**</td><td>Hypertension (PAF 40-50%), Tobacco, Diet, LDL, Air Pollution</td></tr><tr><td>**Rose**</td><td>Population shift > high-risk for total cases</td></tr><tr><td>**QRISK3**</td><td>UK; ≥10% → atorvastatin 20mg</td></tr><tr><td>**SCORE2**</td><td>Europe; fatal CVD; regional calibration</td></tr><tr><td>**Polypill**</td><td>Statin + 2-3 BP meds ± aspirin; TIPS-3 31% reduction</td></tr><tr><td>**Secondary Targets**</td><td>LDL<1.4, BP<130/80, HbA1c<48, No smoking</td></tr><tr><td>**Best Buys**</td><td>Tobacco tax, Salt reduction, Trans fat ban</td></tr><tr><td>**Inequalities**</td><td>Deprived 2-3x mortality</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>CVD Burden Statistics</td><td></td><td></td></tr><tr><td>Risk Factor PAFs</td><td></td><td></td></tr><tr><td>Rose's Strategies</td><td></td><td></td></tr><tr><td>QRISK3/SCORE2</td><td></td><td></td></tr><tr><td>Polypill Evidence</td><td></td><td></td></tr><tr><td>Secondary Prevention</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Measures of Disease Burden (DALY, QALY, HALE, YLL, YLD).md]], [[Health Promotion &amp; Disease Prevention (Primary, Secondary, Tertiary).md]], [[Global Burden of Disease (GBD Study, Risk Factors).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cardiovascular Disease Epidemiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alcohol Nutrition — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.7. SPECIAL TOPICS</span>
+      <div class="h1">Alcohol Nutrition</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define alcohol energy: 7 kcal/g (empty calories); 1 unit = 8 g (UK) or 10 g (WHO)</li><li>[ ] State ARLD spectrum: steatosis (reversible) → alcoholic hepatitis (Mallory bodies, neutrophils, AST&gt;ALT ratio &gt;2) → cirrhosis → HCC</li><li>[ ] Recognise nutritional deficiencies: thiamine (Wernicke-Korsakoff), B12, folate, fat-soluble vitamins (A, D, E, K), Zn, Mg, Fe</li><li>[ ] State refeeding risk in alcoholics: high risk; thiamine BEFORE feeding; monitor PO4/K/Mg</li><li>[ ] State safe limits: UK CMOs (2016): ≤14 units/week M, ≤8 F; US: ≤2 drinks/day M, ≤1 F</li><li>[ ] Describe alcohol effects on weight: obesity paradox, lean mass loss, sarcopenia</li><li>[ ] Identify Wernicke encephalopathy triad: ophthalmoplegia, ataxia, confusion; thiamine 500 mg IV TDS ×3-5 days BEFORE glucose</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Alcohol Unit (UK)**</td><td>10 mL = 8 g ethanol; 1 standard drink = 1 unit</td></tr><tr><td>**Alcohol Unit (US)**</td><td>14 g ethanol; "standard drink" 12 oz beer, 5 oz wine, 1.5 oz spirits</td></tr><tr><td>**WHO Unit**</td><td>10 g ethanol</td></tr><tr><td>**Energy Density**</td><td>7 kcal/g (alcohol); empty calories</td></tr><tr><td>**ALD (Alcoholic Liver Disease)**</td><td>Spectrum: steatosis, hepatitis, cirrhosis, HCC</td></tr><tr><td>**NAFLD vs ARLD**</td><td>NAFLD = metabolic (insulin resistance, obesity); ARLD = alcohol</td></tr><tr><td>**Steatosis (Fatty Liver)**</td><td>First stage; reversible; triglyceride accumulation in hepatocytes; 90% of heavy drinkers</td></tr><tr><td>**Alcoholic Hepatitis (AH)**</td><td>Acute inflammatory; Mallory-Denk bodies, neutrophils, ballooning; AST:ALT >2; Maddrey's DF</td></tr><tr><td>**Maddrey's Discriminant Function (MDF)**</td><td>Score for AH severity; MDF ≥32 = severe; corticosteroid Rx</td></tr><tr><td>**Cirrhosis**</td><td>Fibrosis + regenerative nodules; end-stage; portal HTN, ascites, varices, HCC</td></tr><tr><td>**Wernicke Encephalopathy**</td><td>Thiamine deficiency; ophthalmoplegia, ataxia, confusion; IV thiamine 500 mg TDS ×3-5d BEFORE glucose</td></tr><tr><td>**Korsakoff Syndrome**</td><td>Chronic anterograde amnesia, confabulation; mammillary body atrophy; often irreversible</td></tr><tr><td>**WKS (Wernicke-Korsakoff Syndrome)**</td><td>Continuum; chronic alcohol use; thiamine deficiency</td></tr><tr><td>**Alcoholic Ketoacidosis**</td><td>Recent heavy drinking + vomiting + starvation; ↑NADH/NAD ratio; ketones (β-hydroxybutyrate); anion gap metabolic acidosis; treat with dextrose + thiamine</td></tr><tr><td>**Alcohol Withdrawal**</td><td>6-24h tremor, anxiety; 12-48h seizures; 48-96h DT (delirium tremens)</td></tr><tr><td>**CAGE Questionnaire**</td><td>Cut down, Annoyed, Guilty, Eye-opener; 2/4 = positive (screening)</td></tr><tr><td>**AUDIT (Alcohol Use Disorders Identification Test)**</td><td>WHO; 10 items; score 0-40; ≥8 = hazardous drinking</td></tr><tr><td>**SMAST / AUDIT-C**</td><td>Shorter screening</td></tr><tr><td>**Disulfiram**</td><td>Aldehyde dehydrogenase inhibitor; aversion therapy; flushing, headache, nausea</td></tr><tr><td>**Naltrexone**</td><td>μ-opioid antagonist; ↓alcohol craving; hepatotoxic (monitor LFT)</td></tr><tr><td>**Acamprosate**</td><td>NMDA antagonist; ↓craving; safe in liver disease; 6-month course</td></tr><tr><td>**Baclofen**</td><td>GABA-B agonist; ↓alcohol craving; safe in cirrhosis (randomised trial)</td></tr><tr><td>**CIWA-Ar**</td><td>Clinical Institute Withdrawal Assessment for Alcohol; 10 items; score-guided benzodiazepine</td></tr><tr><td>**Lille Score**</td><td>AH response to 7-day corticosteroids; predicts survival</td></tr><tr><td>**MELD Score**</td><td>Model End-Stage Liver Disease; severity of cirrhosis; transplant listing</td></tr><tr><td>**Empty Calories**</td><td>Energy without nutrients (alcohol, refined sugar)</td></tr><tr><td>**FAS (Foetal Alcohol Syndrome)**</td><td>Craniofacial abnormalities, growth restriction, neurodevelopmental; 100% preventable</td></tr><tr><td>**ARBD (Alcohol-Related Neurodevelopmental Disorder)**</td><td>Less severe than FAS; cognitive/behavioural issues</td></tr><tr><td>**Safe Limits (UK CMOs 2016)**</td><td>≤14 units/wk M, ≤8 F; if drinking, spread over 3+ days; alcohol-free days</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Energy &amp; Macronutrient Effects</div>
+<p><b>Energy:</b></p>
+<ul><li>7 kcal/g (second only to fat at 9 kcal/g); "empty calories"</li><li>1 unit (UK) = 8 g = 56 kcal</li><li>25 units/week = 1400 kcal/week (≈ 1.4 kg/week potential weight gain if not compensated)</li></ul>
+<p><b>Metabolic Effects:</b></p>
+<ul><li><b>Carbohydrate:</b> ↓gluconeogenesis (lactate → glucose blocked); <b>hypoglycaemia</b> in fasting/starvation</li><li><b>Fat:</b> ↑hepatic fatty acid synthesis (↑NADH); ↑VLDL; ↑triglycerides; alcohol-induced hypertriglyceridaemia</li><li><b>Protein:</b> ↓albumin synthesis (nutritional + cirrhosis); muscle wasting (sarcopenia); ↑urea</li><li><b>Micronutrients:</b> ↓thiamine (B1), ↓B12, ↓folate, ↓fat-soluble vitamins (A, D, E, K), ↓Zn, ↓Mg, ↓Fe, ↓Se, ↓Cu (binding)</li></ul>
+<div class="sub-h">Section 2: Alcoholic Liver Disease (ALD/ARLD)</div>
+<p><b>Spectrum:</b></p>
+<ol><li><b>Steatosis (Fatty Liver):</b> 90% of heavy drinkers; reversible; triglycerides in hepatocytes; macrovesicular; ↑GGT, ↑ALT/AST (mild); 4-6 weeks to resolve with abstinence</li><li><b>Alcoholic Steatohepatitis (ASH/AH):</b> Steatosis + inflammation + hepatocyte injury; <b>Mallory-Denk bodies</b> (eosinophilic intracytoplasmic inclusions), neutrophils, ballooning degeneration, pericellular fibrosis; AST:ALT <b>&gt;2</b> (mnemonic "A<b>S</b>T = <b>S</b>cotch, A<b>L</b>T = <b>L</b>ager"); ↑GGT, ↑bilirubin; MDF score for severity</li><li><b>Cirrhosis:</b> Fibrosis + regenerative nodules; end-stage; portal HTN (varices, ascites, splenomegaly), synthetic dysfunction (↓albumin, ↑INR), hepatocellular failure (jaundice, encephalopathy, ascites); ↑HCC risk</li><li><b>HCC (Hepatocellular Carcinoma):</b> Cirrhosis → HCC; surveillance with 6-monthly US + AFP</li></ol>
+<p><b>Maddrey's Discriminant Function (MDF):</b></p>
+<ul><li>MDF = 4.6 × (PT - control PT) + serum bilirubin (mg/dL)</li><li><b>MDF ≥32 = severe AH</b>; consider corticosteroids (prednisolone 40 mg ×28 days, with Lille score at day 7)</li><li><b>Lille Score:</b> Response to corticosteroids; predicts 6-month survival</li></ul>
+<p><b>Management:</b></p>
+<ul><li><b>Abstinence</b> (cornerstone)</li><li><b>Nutritional support</b> (ESPEN: 35-40 kcal/kg, 1.2-1.5 g protein/kg, frequent meals, nocturnal snack)</li><li><b>Thiamine 200 mg IV/PO before feeding</b></li><li><b>Corticosteroids</b> (MDF ≥32; prednisolone 40 mg ×28d, taper)</li><li><b>Pentoxifylline</b> (controversial; anti-TNF; MDF ≥32, contraindicated to steroids)</li><li><b>N-acetylcysteine</b> (with steroids in severe AH; NAC + steroid)</li><li><b>Liver transplant</b> (end-stage; requires 6 months abstinence typically)</li></ul>
+<div class="sub-h">Section 3: Nutritional Deficiencies</div>
+<table class="ctable"><tr><th>Deficiency</th><th>Mechanism</th><th>Clinical</th></tr><tr><td>-----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Thiamine (B1)**</td><td>↓Intake, ↓absorption, ↓hepatic storage; ↑demand (alcohol metabolism)</td><td>**Wernicke** (ophthalmoplegia, ataxia, confusion); **Korsakoff** (amnesia, confabulation); **Beriberi** (wet = CCF, dry = neuropathy)</td></tr><tr><td>**Folate**</td><td>↓Intake, ↓absorption, alcohol inhibits absorption</td><td>Macrocytic anaemia; ↑homocysteine</td></tr><tr><td>**B12**</td><td>↓Intake, ↓absorption (pancreatic insufficiency, ileal)</td><td>Macrocytic anaemia; neuropathy</td></tr><tr><td>**Vitamin A**</td><td>↓Intake, ↓absorption, ↓mobilisation (RBP ↓)</td><td>Night blindness; ↑infection; poor wound healing</td></tr><tr><td>**Vitamin D**</td><td>↓Sun exposure, ↓intake, ↓absorption</td><td>Osteomalacia; osteoporosis; fracture</td></tr><tr><td>**Vitamin E**</td><td>↓Intake, ↓absorption</td><td>Neuropathy; ataxia</td></tr><tr><td>**Vitamin K**</td><td>↓Intake, ↓synthesis (gut flora), ↓absorption</td><td>Coagulopathy (↑INR); bleeding</td></tr><tr><td>**Zinc**</td><td>↓Intake, ↓absorption, ↑urinary loss</td><td>Dermatitis, alopecia, immune dysfunction, hypogonadism, taste loss</td></tr><tr><td>**Magnesium**</td><td>↓Intake, ↑urinary loss, ↓absorption</td><td>Refractory hypokalaemia, hypocalcaemia; arrhythmias</td></tr><tr><td>**Iron**</td><td>GI bleeding (varices, gastritis); ↓intake</td><td>IDA</td></tr><tr><td>**Selenium**</td><td>↓Intake</td><td>Cardiomyopathy (Keshan)</td></tr></table>
+<div class="sub-h">Section 4: Alcoholic Ketoacidosis (AKA)</div>
+<p><b>Pathophysiology:</b></p>
+<ul><li>Heavy drinking + vomiting + starvation</li><li>↑NADH/NAD ratio (alcohol metabolism)</li><li>Acetate (from ethanol) → acetyl-CoA; but <b>gluconeogenesis impaired</b> (lactate, alanine not converted)</li><li>β-hydroxybutyrate (predominant) and acetoacetate accumulation</li><li><b>Anion gap metabolic acidosis</b></li><li><b>Glucose</b> may be low/normal/high (especially if drinking sweet mixers)</li></ul>
+<p><b>Clinical:</b></p>
+<ul><li>Recent heavy drinking; nausea/vomiting; abdominal pain</li><li>Tachypnoea (Kussmaul); dehydration; ↓Na (pseudohyponatraemia)</li><li><b>Anion gap metabolic acidosis</b> with <b>ketosis</b> (β-OHB predominant)</li><li><b>Wide osmolar gap</b> (if methanol/ethylene glycol co-ingestion)</li><li>Glucose variable (often low in starved)</li></ul>
+<p><b>Treatment:</b></p>
+<ul><li><b>Dextrose 5% IV</b> (corrects NADH/NAD; inhibits ketogenesis; provides glucose)</li><li><b>Thiamine 200 mg IV</b> BEFORE glucose (Wernicke's prevention)</li><li><b>IV NS</b> (rehydration)</li><li><b>Electrolyte replacement</b> (K, Mg, PO4)</li><li><b>Avoid insulin</b> (DKA mimic; but glucose usually not high)</li><li><b>Avoid bicarbonate</b> (paradoxical CSF acidosis; hypokalaemia)</li><li><b>Watch for withdrawal</b> (CIWA-Ar; benzodiazepines)</li><li>Short course (12-24h); resolves quickly</li></ul>
+<div class="sub-h">Section 5: Alcohol Withdrawal &amp; Treatment</div>
+<p><b>Timeline:</b></p>
+<ul><li><b>6-24h:</b> Tremor, anxiety, GI upset, headache, diaphoresis, palpitations</li><li><b>12-48h:</b> Alcoholic hallucinosis (visual, tactile, auditory); seizures (generalised tonic-clonic)</li><li><b>48-96h:</b> <b>Delirium tremens (DT):</b> confusion, agitation, tremor, autonomic instability (↑HR, ↑BP, ↑temp), diaphoresis, hallucinations, seizures; mortality 5-15% untreated</li></ul>
+<p><b>CIWA-Ar (Clinical Institute Withdrawal Assessment for Alcohol):</b></p>
+<ul><li>10 items: nausea/vomiting, tremor, paroxysmal sweats, anxiety, agitation, tactile disturbances, auditory disturbances, visual disturbances, headache, orientation</li><li>Score 0-67; &lt;8 = mild; 8-15 = moderate; 16-20 = severe; &gt;20 = very severe</li><li>Score-guided treatment: benzodiazepines</li></ul>
+<p><b>Treatment:</b></p>
+<ul><li><b>Benzodiazepines</b> (lorazepam, diazepam, chlordiazepoxide); symptom-triggered (CIWA-Ar) or fixed dose</li><li><b>Thiamine 200 mg IV/PO</b> BEFORE glucose (Wernicke's prevention)</li><li><b>Electrolyte correction</b> (K, Mg, PO4)</li><li><b>Supportive care</b> (fluids, monitoring)</li><li><b>ICU admission</b> for DT/severe</li><li><b>Anticonvulsants</b> (benzodiazepines; phenytoin ineffective)</li></ul>
+<div class="sub-h">Section 6: Nutritional Management in Alcoholism</div>
+<p><b>ESPEN Guidelines:</b></p>
+<ul><li><b>Energy:</b> 35-40 kcal/kg/day</li><li><b>Protein:</b> 1.2-1.5 g/kg/day</li><li><b>Frequent meals</b> (4-6/day) + <b>nocturnal snack</b> (↓catabolism)</li><li><b>Thiamine</b> (before any glucose)</li><li><b>Multivitamin + minerals</b> (Zn, Mg, B12, folate)</li><li><b>Fat-soluble vitamins</b> (A, D, E, K) if cholestasis</li><li><b>Sodium restriction</b> in ascites</li><li><b>Fluid restriction</b> in hyponatraemia (cirrhosis)</li></ul>
+<p><b>Parenteral Nutrition in Severe ALD:</b></p>
+<ul><li>Severe malnutrition unable to eat</li><li>Use cautiously (worsens encephalopathy, infection, fluid overload)</li></ul>
+<div class="sub-h">Section 7: Foetal Alcohol Syndrome (FAS)</div>
+<p><b>Criteria:</b></p>
+<ul><li>Maternal alcohol exposure during pregnancy</li><li><b>Craniofacial:</b> smooth philtrum, thin vermillion border, small palpebral fissures, midface hypoplasia</li><li><b>Growth restriction</b> (height, weight &lt;10th percentile)</li><li><b>CNS:</b> microcephaly, intellectual disability, behavioural problems</li></ul>
+<p><b>ARBD (Alcohol-Related Neurodevelopmental Disorder):</b> Less severe; cognitive/ behavioural issues without full FAS features</p>
+<p><b>Prevention:</b> 100% preventable; <b>NO safe level</b> of alcohol in pregnancy; especially 1st trimester critical</p>
+<div class="sub-h">Section 8: Long-term Complications</div>
+<table class="ctable"><tr><th>System</th><th>Complication</th></tr><tr><td>--------</td><td>--------------</td></tr><tr><td>**Liver**</td><td>Steatosis, hepatitis, cirrhosis, HCC</td></tr><tr><td>**CNS**</td><td>WKS, cerebellar degeneration, central pontine myelinolysis, peripheral neuropathy</td></tr><tr><td>**CV**</td><td>Dilated cardiomyopathy, ↑BP, ↑TG</td></tr><tr><td>**GI**</td><td>Gastritis, pancreatitis, malnutrition</td></tr><tr><td>**Haem**</td><td>Macrocytosis (B12/folate), sideroblastic anaemia, ↓platelets</td></tr><tr><td>**MSK**</td><td>Osteoporosis, fractures, myopathy</td></tr><tr><td>**Endo**</td><td>Hypoglycaemia, ↓T3/T4 (sick euthyroid), hypogonadism</td></tr><tr><td>**Immune**</td><td>↑Infection risk (pneumonia, TB)</td></tr><tr><td>**Cancer**</td><td>Mouth, throat, oesophagus, larynx, liver, breast, colorectal (all ↑ with alcohol)</td></tr><tr><td>**Psych**</td><td>Depression, anxiety, suicide, Korsakoff, alcohol use disorder (AUD)</td></tr></table>
+<div class="sub-h">Section 9: Treatment of Alcohol Use Disorder (AUD)</div>
+<p><b>Psychosocial:</b></p>
+<ul><li><b>Brief intervention</b> (motivational interviewing)</li><li><b>CBT, motivational enhancement, 12-step (AA)</b></li><li><b>Family therapy</b> (spouse, children)</li><li><b>Residential rehab</b> (severe)</li></ul>
+<p><b>Pharmacotherapy:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Drug&lt;/th&gt;&lt;th&gt;Mechanism&lt;/th&gt;&lt;th&gt;Notes&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Naltrexone</b>&lt;/td&gt;&lt;td&gt;μ-opioid antagonist; ↓craving, ↓reward&lt;/td&gt;&lt;td&gt;Hepatotoxic (monitor LFT); 50 mg PO daily or 380 mg IM monthly&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Acamprosate</b>&lt;/td&gt;&lt;td&gt;NMDA antagonist; ↓craving; safe in liver disease&lt;/td&gt;&lt;td&gt;666 mg TDS PO; 6-month course; not metabolised by liver&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Disulfiram</b>&lt;/td&gt;&lt;td&gt;Aldehyde dehydrogenase inhibitor; aversion&lt;/td&gt;&lt;td&gt;Disulfiram-ethanol reaction (severe flushing, headache, vomiting); compliance issue&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Baclofen</b>&lt;/td&gt;&lt;td&gt;GABA-B agonist; ↓craving; safe in cirrhosis&lt;/td&gt;&lt;td&gt;10-30 mg TDS; RCT in cirrhosis (Addolorato)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Nalmefene</b>&lt;/td&gt;&lt;td&gt;μ-opioid antagonist; PRN&lt;/td&gt;&lt;td&gt;As-needed (target reduction)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Gabapentin</b>&lt;/td&gt;&lt;td&gt;α2δ Ca channel; off-label&lt;/td&gt;&lt;td&gt;↓insomnia, anxiety&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>45M, alcohol, confusion, ophthalmoplegia, ataxia</td><td>**Wernicke encephalopathy**; **IV thiamine 500 mg TDS ×3-5 days BEFORE glucose**; consider WKS</td><td>Thiamine first</td></tr><tr><td>50M, alcohol, vomiting, Kussmaul, HCO3 10, ketones, glucose 4</td><td>**Alcoholic ketoacidosis**; D5W + NS + thiamine IV 200 mg; K, Mg, PO4 replacement; CIWA-Ar monitoring</td><td>AKA; not DKA</td></tr><tr><td>60M, alcohol, jaundice, AST 200, ALT 80, AST:ALT 2.5, PT 22s, bilirubin 8</td><td>**Alcoholic hepatitis**; MDF = 4.6×(22-13) + 8 = 4.6×9 + 8 = 49 (severe); consider prednisolone 40 mg ×28d; Lille at day 7; abstinence; nutrition</td><td>AH; severe MDF</td></tr><tr><td>35F, 20w pregnancy, 4 units/day</td><td>**Alcohol cessation**; FAS risk; midwife, addiction services, social work; **NO SAFE LEVEL in pregnancy**; thiamine, folate</td><td>FAS prevention</td></tr><tr><td>50M, alcohol, tremor, anxiety, last drink 12h ago</td><td>**Alcohol withdrawal**; CIWA-Ar score; lorazepam 2-4 mg q15 min; thiamine IV 200 mg; electrolytes</td><td>Withdrawal scoring</td></tr><tr><td>55M, alcohol, BMI 18, malnutrition, refuses food</td><td>**Refeeding risk**; thiamine IV 200 mg; start 10-15 kcal/kg; monitor PO4/K/Mg; nutrition support</td><td>Refeeding</td></tr><tr><td>60M, cirrhosis, ascites, Na 128, BMI 22</td><td>**Na restriction <2 g/day; fluid restriction 1-1.5 L**; albumin 20 g/L paracentesis if tense; lactulose; rifaximin; midodrine; nutrition 35-40 kcal/kg</td><td>Decompensated cirrhosis</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Alcohol 7 kcal/g; ARLD spectrum (steatosis → hepatitis → cirrhosis); AST:ALT &gt;2 in AH; Mallory-Denk bodies; Wernicke triad (ophthalmoplegia, ataxia, confusion); thiamine 500 mg IV BEFORE glucose; AKA (D5W + thiamine); safe limits (UK 14 M/8 F); CIWA-Ar; refeeding risk; alcohol + pregnancy NO safe level - <b>Common viva:</b> Wernicke Rx, AKA treatment, AST:ALT ratio, MDF score, alcohol withdrawal, CIWA-Ar, refeeding prevention, alcohol + pregnancy, AUDIT screening, naltrexone vs acamprosate - <b>Exam trap:</b> Giving glucose before thiamine in alcoholics; missing refeeding risk; AH treated without abstinence; recommending alcohol for "cardiovascular" benefit; missing FAS risk</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Alcohol = nutrition</td><td>**Alcohol has empty calories (7 kcal/g); no protein, vitamins, minerals**</td></tr><tr><td>AST/ALT in alcohol</td><td>**AST:ALT >2** (Scotch:Lager mnemonic); transaminases rarely >500</td></tr><tr><td>Wernicke classic triad</td><td>**Only 10-30% have full triad**; treat on clinical suspicion</td></tr><tr><td>Glucose for confused alcoholic</td><td>**Thiamine FIRST**; glucose depletes residual thiamine → Wernicke</td></tr><tr><td>AKA = DKA</td><td>**AKA: glucose low/normal; AG metabolic acidosis; β-OHB predominant**; D5W + thiamine</td></tr><tr><td>Naltrexone in cirrhosis</td><td>**Hepatotoxic; monitor LFT**; acamprosate or baclofen safer</td></tr><tr><td>Disulfiram for all</td><td>**Aversion; compliance issue; severe reactions**; not first-line</td></tr><tr><td>Alcohol cardioprotective</td><td>**No safe level (WHO); ↑cancer risk; ↑HTN, AF, cardiomyopathy**</td></tr><tr><td>Safe limit in pregnancy</td><td>**0 alcohol**; especially 1st trimester; FAS 100% preventable</td></tr><tr><td>Stop drinking suddenly = no risk</td><td>**Withdrawal 6-24h; DT 48-96h; can be fatal**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ALD spectrum:</b> <b>S</b>teatosis → <b>S</b>teato<b>H</b>epatitis (AH) → <b>C</b>irrhosis → <b>H</b>CC = <b>SSCH</b></li><li><b>AST:ALT in alcohol:</b> <b>A</b>ST = <b>S</b>cotch (whisky); <b>A</b>LT = <b>L</b>ager (beer); AST &gt; ALT (&gt;2) in alcohol</li><li><b>Wernicke triad:</b> <b>O</b>phthalmoplegia, <b>A</b>taxia, <b>C</b>onfusion = <b>OAC</b></li><li><b>Wernicke Rx:</b> <b>Thiamine 500 mg IV TDS ×3-5 days BEFORE glucose</b> (Pabrinex 2 pairs)</li><li><b>Safe limits (UK 2016):</b> <b>14 M, 8 F</b> units/week; alcohol-free days</li><li><b>CIWA-Ar:</b> 10 items; <b>score-guided benzodiazepines</b></li><li><b>AKA Rx:</b> <b>D5W + Thiamine + NS + K/Mg/PO4</b> (D5NS TKP)</li><li><b>Naltrexone:</b> μ-opioid antagonist; monitor LFT (hepatotoxic)</li><li><b>Acamprosate:</b> NMDA antagonist; safe in liver; 666 mg TDS</li><li><b>Disulfiram:</b> Aversion; disulfiram-ethanol reaction</li><li><b>Baclofen:</b> GABA-B; safe in cirrhosis</li><li><b>Alcohol unit (UK):</b> 10 mL = 8 g</li><li><b>Alcohol kcal:</b> <b>7 kcal/g</b> (second to fat at 9)</li><li><b>AH treatment:</b> Prednisolone 40 mg ×28d; MDF ≥32; Lille day 7</li><li><b>Thiamine ALWAYS BEFORE glucose in alcoholics</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Alcohol &amp; Nutrition)) Energy 7 kcal/g Empty calories ARLD Steatosis AH (AST&gt;ALT) Cirrhosis HCC Deficiencies Thiamine (Wernicke) Folate, B12 ADEK Zn, Mg Wernicke OAC triad Thiamine 500 mg IV TDS Before glucose AKA D5W + Thiamine K, Mg, PO4 β-OHB Withdrawal 6-24h tremor 48-96h DT CIWA-Ar Treatment Naltrexone Acamprosate Baclofen Disulfiram Pregnancy NO safe level FAS 100% preventable Safe Limits UK 14 M / 8 F US 2 M / 1 F </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Alcohol: 7 kcal/g; empty calories</li><li>ARLD: steatosis → AH → cirrhosis → HCC</li><li>AST:ALT &gt;2 in AH (Scotch:Lager)</li><li>Wernicke triad: OAC (ophthalmoplegia, ataxia, confusion)</li><li>Wernicke Rx: thiamine 500 mg IV TDS ×3-5d BEFORE glucose</li><li>AKA: D5W + thiamine; β-OHB; AG metabolic acidosis</li><li>Withdrawal: 6-24h tremor, 12-48h seizures, 48-96h DT</li><li>Safe limits: UK 14 M / 8 F units/week; pregnancy 0</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Alcohol 7 kcal/g; ARLD spectrum; AST:ALT >2; Mallory-Denk; Wernicke (OAC, thiamine 500 IV TDS); AKA (D5W + thiamine); CIWA-Ar; withdrawal timeline; MDF score; prednisolone AH; refeeding; safe limits (UK 14/8); pregnancy 0</td></tr><tr><td>**Should Know 🟡**</td><td>Lille score; ESPEN cirrhosis nutrition (35-40 kcal/kg, 1.2-1.5 g protein, nocturnal snack); Lille; AUDIT; CAGE; naltrexone/acamprosate/baclofen/disulfiram; FAS features; pentoxifylline; NAC + steroid in severe AH</td></tr><tr><td>**Nice to Know 🟢**</td><td>Gut-liver axis; microbiome in ALD; liver transplant rules; granulocytic defaecation; ceroid-laden macrophages; ASH vs NASH histology</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] MDF calculation</li><li>[ ] Lille score specifics</li><li>[ ] Disulfiram-ethanol reaction details</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Alcohol-related nutritional deficiencies and management"</p>
+<ul><li>Alcohol 7 kcal/g (empty calories); contributes to obesity paradox + sarcopenia</li><li><b>Thiamine (B1):</b> ↓intake, ↓absorption, ↓hepatic storage; ↑demand; <b>Wernicke-Korsakoff syndrome</b>; thiamine 500 mg IV TDS ×3-5 days BEFORE glucose</li><li><b>Folate, B12:</b> Macrocytic anaemia; alcohol inhibits folate absorption</li><li><b>Fat-soluble vitamins (A, D, E, K):</b> ↓intake, ↓absorption (bile); vitamin D deficiency common</li><li><b>Zinc, Mg:</b> Dermatitis, hypogonadism, refractory hypokalaemia/hypocalcaemia</li><li><b>Refeeding syndrome:</b> High risk; thiamine 200 mg IV before feeding; start 10-15 kcal/kg; monitor PO4/K/Mg</li><li><b>AKA:</b> D5W + thiamine; β-OHB; anion gap metabolic acidosis</li><li><b>ARLD spectrum:</b> Steatosis → AH (AST&gt;ALT, MDF) → cirrhosis → HCC</li><li><b>Treatment:</b> Naltrexone (monitor LFT), acamprosate (safe in liver), baclofen (safe in cirrhosis)</li><li><b>Pregnancy:</b> NO safe level; FAS 100% preventable</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Wernicke-Korsakoff Syndrome"</p>
+<ul><li><b>Acute Wernicke:</b> Triad = ophthalmoplegia (nystagmus, lateral gaze palsy), ataxia, confusion; only 10-30% have full triad</li><li><b>MRI:</b> Mamillary body, periaqueductal, medial thalami hyperintensity</li><li><b>Korsakoff:</b> Anterograde amnesia, confabulation, mammillary body atrophy; often irreversible</li><li><b>Cause:</b> Thiamine (B1) deficiency; alcohol (most common), malnutrition, hyperemesis, bariatric</li><li><b>Treatment:</b> <b>IV Thiamine 500 mg TDS ×3-5 days</b> (Pabrinex 2 pairs); 200-300 mg IV before any glucose</li><li><b>Prevention:</b> Thiamine 200 mg IV/PO before feeding in alcoholics</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "How do you manage Wernicke encephalopathy?" "A: <b>Wernicke: thiamine 500 mg IV TDS ×3-5 days</b> (Pabrinex 2 pairs TDS); then 200 mg PO daily. <b>ALWAYS before any glucose</b> (glucose depletes residual thiamine, worsens Wernicke). Continue for 5-7 days; convert to oral. <b>Thiamine BEFORE refeeding</b> in malnourished. <b>Add magnesium</b> (cofactor). <b>Treat precipitants</b> (infection, dehydration). Investigate for <b>Korsakoff</b> (anterograde amnesia, confabulation) if persistent — often irreversible."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 55M, alcohol use disorder, vomiting, abdominal pain, glucose 5, HCO3 12, anion gap 24, ketones 4+, AST 150, ALT 80, K 3.2. "Diagnosis: <b>Alcoholic ketoacidosis + alcohol withdrawal risk</b>. <b>Action: 1) D5W or D5NS</b> (corrects NADH/NAD, inhibits ketogenesis, provides glucose); 2) <b>Thiamine 200 mg IV</b> BEFORE glucose; 3) <b>IV NS</b> for volume (1-1.5 L); 4) <b>K, Mg, PO4 replacement</b> (K 3.2 — IV KCl); 5) <b>CIWA-Ar monitoring</b> every 4h; 6) <b>Lorazepam</b> if withdrawal (CIWA-Ar &gt;8); 7) <b>Avoid insulin</b> (not DKA); 8) <b>Avoid bicarbonate</b> (paradoxical CSF acidosis); 9) <b>Investigate</b> (amylase, lipase, abdominal US); 10) <b>Disulfiram caution</b> (compliance); 11) <b>Long-term:</b> naltrexone/acamprosate; 12) <b>Nutrition</b> (35-40 kcal/kg, 1.2-1.5 g protein, thiamine, multivitamin)."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min</div>
+<ul><li><b>Alcohol: 7 kcal/g (empty calories)</b></li><li><b>ARLD:</b> Steatosis → AH (AST:ALT &gt;2) → cirrhosis → HCC</li><li><b>Mallory-Denk bodies</b> in AH</li><li><b>MDF ≥32</b> = severe AH; prednisolone 40 mg ×28d</li><li><b>Wernicke triad:</b> OAC (ophthalmoplegia, ataxia, confusion)</li><li><b>Thiamine 500 mg IV TDS ×3-5d BEFORE glucose</b></li><li><b>AKA:</b> D5W + thiamine; β-OHB; AG metabolic acidosis</li><li><b>Withdrawal:</b> 6-24h tremor, 12-48h seizures, 48-96h DT</li><li><b>CIWA-Ar</b> score-guided benzodiazepines</li><li><b>Safe limits:</b> UK 14 M / 8 F units/wk; pregnancy 0</li><li><b>Treatment:</b> Naltrexone, Acamprosate, Baclofen, Disulfiram</li><li><b>Refeeding:</b> Thiamine 200 mg IV; start 10-15 kcal/kg</li><li><b>FAS:</b> 100% preventable; NO safe level in pregnancy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Alcohol energy content:</b></li></ol>
+<p>A. 4 kcal/g B. 5 kcal/g C. <b>7 kcal/g</b> D. 9 kcal/g E. 11 kcal/g</p>
+<ol><li><b>AST:ALT ratio characteristic of alcoholic hepatitis:</b></li></ol>
+<p>A. &lt;1 B. =1 C. <b>&gt;2</b> D. &gt;5 E. &lt;0.5</p>
+<ol><li><b>Maddrey's Discriminant Function (MDF) severe threshold:</b></li></ol>
+<p>A. ≥16 B. ≥24 C. <b>≥32</b> C. ≥50 E. ≥100</p>
+<ol><li><b>Wernicke encephalopathy triad (classic):</b></li></ol>
+<p>A. Dementia, seizures, coma B. <b>Ophthalmoplegia, ataxia, confusion</b> C. Tremor, rigidity, bradykinesia D. Hallucinations, delusions, paranoia E. Hemiplegia, aphasia, hemianopia</p>
+<ol><li><b>First-line treatment of Wernicke encephalopathy:</b></li></ol>
+<p>A. IV dextrose first, then thiamine B. <b>IV thiamine 500 mg TDS ×3-5 days BEFORE glucose</b> C. Oral thiamine 100 mg daily D. Steroids E. Anticonvulsants</p>
+<ol><li><b>Alcoholic ketoacidosis (AKA) treatment:</b></li></ol>
+<p>A. IV insulin + dextrose B. <b>D5W + thiamine IV + NS + K, Mg, PO4</b> C. Sodium bicarbonate D. IV insulin only E. TPN</p>
+<ol><li><b>Alcohol withdrawal timeline (delirium tremens):</b></li></ol>
+<p>A. 6-12h B. 12-24h C. 24-48h D. <b>48-96h</b> E. 5-7 days</p>
+<ol><li><b>Safe alcohol limits (UK CMOs 2016) per week:</b></li></ol>
+<p>A. 7 units M, 5 F B. <b>14 units M, 8 F</b> C. 21 units M, 14 F D. 28 units M, 21 F E. No limit</p>
+<ol><li><b>Foetal Alcohol Syndrome (FAS) is:</b></li></ol>
+<p>A. 50% preventable B. 75% preventable C. <b>100% preventable (no safe level in pregnancy)</b> D. Genetic E. Treatable with folate</p>
+<ol><li><b>Pharmacotherapy for alcohol use disorder:</b></li></ol>
+<p>A. Naltrexone (μ-opioid antagonist; monitor LFT) B. Acamprosate (NMDA antagonist; safe in liver) C. Baclofen (GABA-B; safe in cirrhosis) D. Disulfiram (aversion; compliance issue) E. <b>All of the above</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 50-year-old man with chronic alcoholism, confusion, ophthalmoplegia, ataxic gait. Most appropriate management?</b></li></ol>
+<p>A. IV dextrose first B. <b>IV thiamine 500 mg TDS ×3-5 days BEFORE any glucose; consider Wernicke-Korsakoff syndrome</b> C. Oral thiamine 100 mg D. MRI brain E. Sedation</p>
+<ol><li><b>A 55-year-old alcoholic with vomiting, Kussmaul breathing, HCO3 12, anion gap 24, ketones positive, glucose 4.5. Most likely diagnosis and treatment?</b></li></ol>
+<p>A. DKA; insulin B. <b>Alcoholic ketoacidosis; D5W + IV thiamine 200 mg + NS + K, Mg, PO4</b> C. Lactic acidosis; bicarbonate D. Renal failure; dialysis E. TPN</p>
+<ol><li><b>A 60-year-old man with chronic alcohol use, jaundice, AST 250, ALT 100, PT 18s, bilirubin 6, MDF 36. Best treatment?</b></li></ol>
+<p>A. No treatment B. <b>Prednisolone 40 mg daily ×28 days (MDF ≥32); Lille score at day 7</b> C. Pentoxifylline only D. TPN E. NAC alone</p>
+<ol><li><b>A 45-year-old alcoholic, BMI 18, malnourished, starting refeeding. Day 3, hypophosphataemia 0.2, weakness, hypoventilation. Most likely cause?</b></li></ol>
+<p>A. Wernicke's encephalopathy B. <b>Refeeding syndrome (PO4/K/Mg intracellular shift with insulin)</b> C. Hypoglycaemia D. Alcohol withdrawal E. Sepsis</p>
+<ol><li><b>A 35-year-old pregnant woman, 12 weeks gestation, drinking 6 units/day. Best advice?</b></li></ol>
+<p>A. Reduce to 2 units/day B. Reduce to 4 units/day C. <b>Complete abstinence (FAS 100% preventable, no safe level)</b> D. Continue as is E. Switch to wine</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Alcohol energy</li></ul>
+<p>A: <b>7 kcal/g</b> (empty calories)</p>
+<ul><li>Q: ARLD spectrum</li></ul>
+<p>A: <b>Steatosis → AH → cirrhosis → HCC</b></p>
+<ul><li>Q: AST:ALT in alcohol</li></ul>
+<p>A: <b>AST:ALT &gt;2</b> (Scotch &gt; Lager)</p>
+<ul><li>Q: Mallory-Denk bodies</li></ul>
+<p>A: <b>Eosinophilic intracytoplasmic inclusions</b> in AH</p>
+<ul><li>Q: Wernicke triad</li></ul>
+<p>A: <b>Ophthalmoplegia, Ataxia, Confusion</b> (OAC)</p>
+<ul><li>Q: Wernicke Rx</li></ul>
+<p>A: <b>IV Thiamine 500 mg TDS ×3-5 days BEFORE glucose</b> (Pabrinex 2 pairs)</p>
+<ul><li>Q: AKA Rx</li></ul>
+<p>A: <b>D5W + Thiamine IV + NS + K/Mg/PO4</b></p>
+<ul><li>Q: Withdrawal timeline</li></ul>
+<p>A: <b>6-24h tremor, 12-48h seizures, 48-96h DT</b></p>
+<ul><li>Q: CIWA-Ar</li></ul>
+<p>A: <b>10 items; score-guided benzodiazepines</b></p>
+<ul><li>Q: Safe limits (UK 2016)</li></ul>
+<p>A: <b>14 units/week M, 8 F</b>; alcohol-free days</p>
+<ul><li>Q: Pregnancy</li></ul>
+<p>A: <b>0 alcohol</b>; FAS 100% preventable</p>
+<ul><li>Q: MDF severe threshold</li></ul>
+<p>A: <b>≥32</b>; prednisolone 40 mg ×28d; Lille day 7</p>
+<ul><li>Q: Naltrexone</li></ul>
+<p>A: <b>μ-opioid antagonist</b>; monitor LFT (hepatotoxic)</p>
+<ul><li>Q: Acamprosate</li></ul>
+<p>A: <b>NMDA antagonist</b>; safe in liver; 666 mg TDS; 6-month</p>
+<ul><li>Q: Disulfiram</li></ul>
+<p>A: <b>Aldehyde dehydrogenase inhibitor</b>; aversion; severe reaction</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — Alcohol 7 kcal/g; second only to fat (9 kcal/g); "empty calories" (no nutrients).</li><li><b>C</b> — AST:ALT &gt;2 in alcoholic hepatitis (mnemonic: AST = Scotch, ALT = Lager).</li><li><b>C</b> — MDF ≥32 = severe alcoholic hepatitis; consider prednisolone 40 mg ×28 days; Lille score at day 7.</li><li><b>B</b> — Wernicke triad (classic): ophthalmoplegia, ataxia, confusion; only 10-30% have all three.</li><li><b>B</b> — Wernicke Rx: IV thiamine 500 mg TDS ×3-5 days BEFORE any glucose (glucose depletes residual thiamine, worsens Wernicke).</li><li><b>B</b> — AKA: D5W (corrects NADH/NAD, inhibits ketogenesis) + thiamine 200 mg IV (before glucose) + NS (volume) + K/Mg/PO4 replacement.</li><li><b>D</b> — Alcohol withdrawal DT: 48-96 hours after last drink; confusion, agitation, autonomic instability, seizures.</li><li><b>B</b> — UK CMOs (2016) safe limits: ≤14 units/week for men, ≤8 units/week for women; alcohol-free days.</li><li><b>C</b> — FAS: 100% preventable; NO safe alcohol level in pregnancy; especially 1st trimester.</li><li><b>E</b> — AUD pharmacotherapy: Naltrexone, Acamprosate, Baclofen, Disulfiram (all used; selection based on patient/liver).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Wernicke (OAC): IV thiamine 500 mg TDS ×3-5 days BEFORE glucose; WKS consideration.</li><li><b>B</b> — Alcoholic with vomiting, Kussmaul, AG metabolic acidosis, glucose 4.5: AKA; D5W + thiamine + NS + K/Mg/PO4 (NOT DKA, NOT insulin).</li><li><b>B</b> — AH with MDF 36 (≥32 severe): prednisolone 40 mg ×28 days; Lille score at day 7 to assess response.</li><li><b>B</b> — Refeeding syndrome: malnourished alcoholic, day 3 refeeding, hypophosphataemia 0.2, weakness, hypoventilation; insulin-driven PO4 shift.</li><li><b>C</b> — Pregnancy + alcohol: complete abstinence (FAS 100% preventable); no safe level; midwifery, addiction services, social work.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Alcohol &amp; Nutrition</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> <b>Alcohol 7 kcal/g (empty calories).</b> <b>ARLD: Steatosis → AH (AST:ALT &gt;2, Mallory-Denk) → Cirrhosis → HCC; MDF ≥32 = severe, prednisolone 40 mg ×28d, Lille day 7.</b> <b>Wernicke triad (OAC) = ophthalmoplegia, ataxia, confusion; thiamine 500 mg IV TDS ×3-5d BEFORE glucose.</b> <b>AKA: D5W + thiamine; β-OHB; AG metabolic acidosis.</b> <b>Withdrawal: 6-24h tremor, 12-48h seizures, 48-96h DT; CIWA-Ar.</b> <b>Safe limits: UK 14 M/8 F units/wk; pregnancy 0 alcohol (FAS 100% preventable).</b> <b>Treatment: naltrexone (monitor LFT), acamprosate (safe in liver), baclofen (safe in cirrhosis), disulfiram (aversion).</b> <b>Refeeding: thiamine 200 mg IV, start 10-15 kcal/kg.</b> <b>Exam focus:</b> Wernicke Rx, AKA, AST:ALT, MDF, withdrawal, CIWA-Ar, refeeding, safe limits, pregnancy. <b>Clinical relevance:</b> ED, ICU, liver clinics, addiction services, antenatal, public health.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Alcohol Nutrition · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

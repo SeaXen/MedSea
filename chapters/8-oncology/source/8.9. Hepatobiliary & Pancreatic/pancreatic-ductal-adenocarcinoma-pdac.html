@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pancreatic Ductal Adenocarcinoma Pdac — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.9. HEPATOBILIARY & PANCREATIC</span>
+      <div class="h1">Pancreatic Ductal Adenocarcinoma Pdac</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify resectability per NCCN: Resectable, Borderline, Locally Advanced, Metastatic</li><li>[ ] Compare adjuvant regimens: mFOLFIRINOX (PRODIGE-24) vs Gem/Cape (ESPAC-4)</li><li>[ ] Sequence metastatic therapy: FOLFIRINOX vs Gem/Nab-Pac → 2L options</li><li>[ ] Identify <b>BRCA1/2, PALB2</b> for PARP inhibitor maintenance (Olaparib)</li><li>[ ] Know Whipple (PD) vs Distal pancreatectomy ± splenectomy</li><li>[ ] Manage complications: Pancreatic fistula, DGE, diabetes, malnutrition</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of pancreatic ductal epithelium; **PDAC >90%**; Other: Neuroendocrine (NET), Acinar, Solid-pseudopapillary</td></tr><tr><td>**Incidence**</td><td>UK: ~10,500/year; 10th most common; 5th leading cause of cancer death; Rising incidence</td></tr><tr><td>**Prevalence**</td><td>5-year OS ~10% (all stages); Median OS metastatic ~11 months (FOLFIRINOX)</td></tr><tr><td>**Peak Age**</td><td>70-80 years; Rare <45</td></tr><tr><td>**Sex Ratio**</td><td>Slight male predominance (1.3:1)</td></tr><tr><td>**Risk Factors**</td><td>**Smoking** (↑2-3x), **Chronic pancreatitis** (↑10-20x), **Diabetes** (new-onset >50yr = red flag), **Obesity**, **Family history** (FPC, BRCA2, PALB2, CDKN2A, Lynch, Peutz-Jeghers), **Alcohol** (heavy), **Processed meat**, **Blood group non-O**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Risk Factors] --&gt; B[Pancreatic Injury/Inflammation] B --&gt; C[Precursor Lesions] C --&gt; D1[PanIN (Pancreatic Intraepithelial Neoplasia) — 90%] C --&gt; D2[IPMN (Intraductal Papillary Mucinous Neoplasm)] C --&gt; D3[MCN (Mucinous Cystic Neoplasm)] D1 --&gt; E[Molecular Progression] D2 --&gt; E D3 --&gt; E E --&gt; F1[KRAS (90%) — Early] E --&gt; F2[CDKN2A/p16 (90%) — Intermediate] E --&gt; F3[TP53 (75%) — Late] E --&gt; F4[SMAD4 (55%) — Late] E --&gt; F5[BRCA1/2, PALB2 (5-10%) — HRD] F1 --&gt; G[PDAC Development] F2 --&gt; G F3 --&gt; G F4 --&gt; G F5 --&gt; G G --&gt; H[Desmoplastic Stroma → Hypovascular → Poor Drug Delivery] </code>``</p>
+<div class="sub-h">Molecular Profile</div>
+<table class="ctable"><tr><th>Alteration</th><th>Frequency</th><th>Significance</th></tr><tr><td>------------</td><td>-----------</td><td>--------------</td></tr><tr><td>**KRAS** (G12D/V/R)</td><td>**>90%**</td><td>**Founder mutation**; Early (PanIN-1); Not directly targetable (yet)</td></tr><tr><td>**CDKN2A/p16**</td><td>90%</td><td>Cell cycle; Homozygous del/methylation</td></tr><tr><td>**TP53**</td><td>75%</td><td>Late; Genomic instability</td></tr><tr><td>**SMAD4/DPC4**</td><td>55%</td><td>TGF-β pathway; Loss = worse prognosis, ↑ metastatic</td></tr><tr><td>**BRCA1/2, PALB2**</td><td>5-10% (germline + somatic)</td><td>**HRD** → **PARP inhibitors**; Platinum sensitivity</td></tr><tr><td>**MSI-H/dMMR**</td><td>1-2%</td><td>**ICI** (Pembrolizumab)</td></tr><tr><td>**NTRK fusions**</td><td><1%</td><td>**Larotrectinib/Entrectinib**</td></tr><tr><td>**HER2 amp**</td><td>2-5%</td><td>Trastuzumab-based</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Classic Triad**</td><td>**Painless jaundice** (head), **Weight loss**, **Epigastric/back pain** (body/tail)</td></tr><tr><td>**New-Onset Diabetes**</td><td>>50 years, lean, no family history → **Red flag** for PDAC (1-2% have PDAC)</td></tr><tr><td>**Courvoisier's Sign**</td><td>Palpable, non-tender GB + jaundice = **Malignant obstruction** (PDAC head)</td></tr><tr><td>**Trousseau's Sign**</td><td>Migratory thrombophlebitis (hypercoagulability)</td></tr><tr><td>**Ascites**</td><td>Peritoneal mets (late)</td></tr><tr><td>**Depression**</td><td>Paraneoplastic; Often precedes diagnosis</td></tr><tr><td>**Steatorrhea**</td><td>Exocrine insufficiency (late, distal tumours)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**TNM 8th Edition / AJCC**</td><td>T1: ≤2cm; T2: >2-4cm; T3: >4cm or extrapancreatic; T4: Celial/SMA/SMV invasion</td></tr><tr><td>**N Stage**</td><td>N1: 1-3 nodes; N2: ≥4 nodes</td></tr><tr><td>**M Stage**</td><td>M0 vs M1</td></tr><tr><td>**Stage Grouping**</td><td>IA (T1N0), IB (T2N0), IIA (T3N0), IIB (T1-3N1), III (Any T N2 OR T4 Any N), IV (M1)</td></tr></table>
+<div class="sub-h">NCCN Resectability Classification (Clinical Decision-Making)</div>
+<table class="ctable"><tr><th>Category</th><th>Arterial (SMA/CHA/CA)</th><th>Venous (SMV/PV)</th><th>Nodes</th><th>Management</th></tr><tr><td>----------</td><td>----------------------</td><td>-----------------</td><td>-------</td><td>------------</td></tr><tr><td>**Resectable**</td><td>No contact</td><td>No contact / ≤180° no contour irregularity</td><td>Regional only</td><td>**Upfront Surgery → Adjuvant**</td></tr><tr><td>**Borderline Resectable**</td><td>**Solid tumour contact ≤180°** (SMA/CHA/CA)</td><td>**Contact >180°** or contour irregularity / thrombosis but reconstructible</td><td>Regional</td><td>**Neoadjuvant Chemo ± RT → Reassess → Surgery**</td></tr><tr><td>**Locally Advanced**</td><td>**Contact >180°** or **occlusion** (SMA/CHA/CA)</td><td>Unreconstructible thrombosis</td><td>Regional</td><td>**Neoadjuvant Chemo ± RT** (no surgery)</td></tr><tr><td>**Metastatic**</td><td>—</td><td>—</td><td>Distant (Liver, Lung, Peritoneal)</td><td>**Palliative Systemic**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Findings</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td></tr><tr><td>**CT Abdomen/Pelvis (Pancreas Protocol)**</td><td>**Gold standard** — Diagnosis, Staging, Resectability</td><td>**Triple-phase**: Pancreatic parenchymal (arterial), Portal venous, Delayed; **Hypoenhancing mass**, Ductal dilatation, Vascular contact</td></tr><tr><td>**CA19-9**</td><td>Tumour marker (not diagnostic)</td><td>↑ in 80%; **False -ve in Lewis a-b- (5-10%)**; **False +ve in obstruction/cholangitis**; Prognostic; Monitor response</td></tr><tr><td>**CEA**</td><td>Supportive</td><td>Less specific</td></tr><tr><td>**EUS-FNA**</td><td>Tissue diagnosis (if neoadjuvant planned or unresectable)</td><td>**High sensitivity (90%)**; Risk of seeding (rare); **Mandatory before neoadjuvant**</td></tr><tr><td>**MRI/MRCP**</td><td>Equivocal CT; Cystic lesions (IPMN/MCN)</td><td>Better soft tissue; No radiation</td></tr><tr><td>**PET-CT**</td><td>Occult mets (peritoneal, nodal)</td><td>Not routine; False +ve in inflammation</td></tr><tr><td>**Germline Testing**</td><td>**All patients** (NCCN) — BRCA1/2, PALB2, CDKN2A, MMR, etc.</td><td>Guides PARP maintenance; Family screening</td></tr><tr><td>**Somatic NGS**</td><td>Metastatic — BRCA, MSI, NTRK, HER2, KRAS G12C</td><td>Targeted therapy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Chronic Pancreatitis**</td><td>Irregular contour, calcifications, ductal strictures, history; **No mass** (or mass = suspicious)</td></tr><tr><td>**Autoimmune Pancreatitis (AIP)**</td><td>**Type 1**: IgG4↑, diffuse enlargement, "sausage" pancreas, responds to steroids; **Type 2**: GELs, no IgG4</td></tr><tr><td>**IPMN**</td><td>Cystic lesion communicating with main duct; **Main duct >10mm = high risk**; Branch duct: surveillance by size/mural nodule</td></tr><tr><td>**MCN**</td><td>Cystic, ovarian-type stroma; Women 40-50y; Body/tail; No duct communication</td></tr><tr><td>**SCN (Serous Cystadenoma)**</td><td>Microcystic, central scar, calcification; Benign; VHL association</td></tr><tr><td>**Pancreatic NET**</td><td>Hypervascular on CT; Functional (insulinoma, gastrinoma) or Non-functional; Chromogranin A↑</td></tr><tr><td>**Metastasis to Pancreas**</td><td>RCC, Lung, Breast, Melanoma; Known primary; Biopsy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Diagnosis + Staging] --&gt; B{NCCN Category} B --&gt;|Resectable| C[<b>Upfront Surgery</b>] C --&gt; C1[<b>Head/Uncinate: Whipple (PD)</b>&lt;br/&gt;or Pylorus-Preserving PD] C --&gt; C2[<b>Body/Tail: Distal Pancreatectomy</b>&lt;br/&gt;± Splenectomy] C --&gt; C3[<b>Adjuvant: mFOLFIRINOX</b> (PRODIGE-24)&lt;br/&gt;<b>Preferred if fit</b>&lt;br/&gt;Alternative: Gem/Cape (ESPAC-4)] B --&gt;|Borderline Resectable| D[<b>Neoadjuvant: FOLFIRINOX</b> (or Gem/Nab-Pac) ± RT&lt;br/&gt;Reassess CT → Surgery if resectable] B --&gt;|Locally Advanced| E[<b>Neoadjuvant/Definitive Chemo ± RT</b>&lt;br/&gt;FOLFIRINOX or Gem/Nab-Pac&lt;br/&gt;RT: 50.4 Gy + Capecitabine (LAP07 negative for OS)&lt;br/&gt;Reassess → Surgery if downstaged (rare)] B --&gt;|Metastatic| F[<b>Palliative Systemic</b>] F --&gt; F1[<b>Fit (ECOG 0-1)</b>: <b>FOLFIRINOX</b>&lt;br/&gt;(PRODIGE/ACCORD-11) — <b>Preferred</b>] F --&gt; F2[<b>Frail/Unfit</b>: <b>Gemcitabine + Nab-Paclitaxel</b>&lt;br/&gt;(MPACT) — Better tolerability] F --&gt; F3[<b>BRCA1/2 / PALB2 mut</b>: <b>1L Platinum-based</b> (FOLFIRINOX/GemCis) →&lt;br/&gt;<b>Maintenance Olaparib</b> (POLO) if no progression] F --&gt; F4[<b>MSI-H/dMMR</b>: <b>Pembrolizumab</b> 1L] F --&gt; F5[<b>2L (post-FOLFIRINOX)</b>: <b>Gem/Nab-Pac</b> or <b>Nal-IRI + 5-FU/LV</b> (NAPOLI-1)] F --&gt; F6[<b>2L (post-Gem/Nab-Pac)</b>: <b>FOLFIRINOX</b> or <b>Nal-IRI + 5-FU/LV</b>] C1 --&gt; G[Surveillance: CA19-9 q3-6mo&lt;br/&gt;CT q6mo ×2yr then annually] C2 --&gt; G C3 --&gt; G D --&gt; G </code>``</p>
+<div class="sub-h">Surgical Procedures</div>
+<table class="ctable"><tr><th>Procedure</th><th>Indication</th><th>Key Details</th></tr><tr><td>-----------</td><td>------------</td><td>-------------</td></tr><tr><td>**Whipple (Pancreaticoduodenectomy)**</td><td>Head/uncinate/neck tumours</td><td>**En bloc**: Head pancreas, duodenum, distal bile duct, GB, ± distal stomach (classic) / pylorus (PPPD) → Reconstruction: Pancreaticojejunostomy, Hepaticojejunostomy, Gastrojejunostomy</td></tr><tr><td>**Pylorus-Preserving PD (PPPD)**</td><td>Increasingly standard</td><td>Preserves gastric emptying; Similar oncologic outcomes</td></tr><tr><td>**Distal Pancreatectomy**</td><td>Body/tail tumours</td><td>± **Splenectomy** (if nodal stations 10/11); **Vaccines** (Pneumococcal, MenACWY, Hib) pre-op if splenectomy</td></tr><tr><td>**Total Pancreatectomy**</td><td>Multicentric, diffuse IPMN</td><td>**Brittle diabetes** (no islet autotransplant routinely)</td></tr><tr><td>**Vascular Resection**</td><td>Borderline/Selected LA</td><td>SMV/PV resection + reconstruction (graft/interposition); Arterial (SMA/CA) = higher morbidity, selected</td></tr></table>
+<div class="sub-h">Adjuvant Therapy Evidence</div>
+<table class="ctable"><tr><th>Trial</th><th>Regimen</th><th>Population</th><th>Outcome</th></tr><tr><td>-------</td><td>---------</td><td>------------</td><td>---------</td></tr><tr><td>**PRODIGE-24 / ACCORD-24**</td><td>**mFOLFIRINOX** ×12 cycles</td><td>Resected PDAC (R0/R1)</td><td>**mOS 54.4 vs 35.0 mo (HR 0.64)** — **Standard for fit**</td></tr><tr><td>**ESPAC-4**</td><td>**Gemcitabine + Capecitabine** ×6 cycles</td><td>Resected PDAC</td><td>mOS 28.0 vs 25.5 mo (HR 0.82) — Standard if unfit for FOLFIRINOX</td></tr><tr><td>**ESPAC-1/3**</td><td>5-FU/FA or Gemcitabine alone</td><td>Historical</td><td>Gemcitabine = 5-FU; 5-FU + FA ↑OS</td></tr><tr><td>**RTOG 9704**</td><td>Gem → 5-FU/RT → Gem</td><td>US standard historically</td><td>RT benefit unclear</td></tr></table>
+<div class="sub-h">Metastatic 1L Regimens</div>
+<table class="ctable"><tr><th>Regimen</th><th>Schedule</th><th>Key Trial</th><th>Population</th></tr><tr><td>---------</td><td>----------</td><td>-----------</td><td>------------</td></tr><tr><td>**FOLFIRINOX**</td><td>Oxaliplatin 85 + Irinotecan 180 + Leucovorin 400 + 5-FU 2400 (46h) q2w</td><td>PRODIGE/ACCORD-11</td><td>**ECOG 0-1, Age <75, Adequate organ function** — mOS 11.1 vs 6.8 mo (Gem)</td></tr><tr><td>**Gemcitabine + Nab-Paclitaxel**</td><td>Gem 1000 + Nab-Pac 125 d1,8,15 q4w</td><td>MPACT</td><td>**ECOG 0-1, Age any** — mOS 8.5 vs 6.7 mo (Gem); Better tolerability</td></tr><tr><td>**Gemcitabine + Cisplatin**</td><td>Gem 1000 d1,8,15 + Cis 30 d1,8 q4w</td><td>—</td><td>**BRCA/PALB2 mut** (platinum sensitivity)</td></tr></table>
+<div class="sub-h">BRCA/PALB2 — PARP Inhibitor Maintenance</div>
+<table class="ctable"><tr><th>Trial</th><th>Population</th><th>Regimen</th><th>Outcome</th></tr><tr><td>-------</td><td>------------</td><td>---------</td><td>---------</td></tr><tr><td>**POLO**</td><td>**gBRCA1/2 mut**, metastatic, **no progression on 1L Platinum (≥16 weeks)**</td><td>**Olaparib 300mg BID** vs Placebo</td><td>**mPFS 7.4 vs 3.8 mo (HR 0.53)**; OS trend</td></tr><tr><td>**Usage**</td><td>**Maintenance after 1L Platinum-based chemo** (FOLFIRINOX or Gem/Cis)</td><td>Continue until progression</td><td>**NICE/NHS approved**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**PDAC = 90%**</td><td>Ductal adenocarcinoma; Desmoplastic stroma; Hypovascular</td></tr><tr><td>**New-Onset Diabetes >50yr**</td><td>**Red flag** — Screen with CT if unexplained weight loss</td></tr><tr><td>**Resectability (NCCN)**</td><td>**Resectable** → Surgery → Adjuvant; **Borderline** → Neoadjuvant → Surgery; **LA** → Neoadjuvant (no surgery); **Mets** → Systemic</td></tr><tr><td>**Borderline Definition**</td><td>**Arterial contact ≤180°** OR **Venous >180°/reconstructible thrombosis**</td></tr><tr><td>**Whipple (PD)**</td><td>Head tumours; Classic vs Pylorus-Preserving (PPPD)</td></tr><tr><td>**Distal Pancreatectomy**</td><td>Body/tail; ± Splenectomy → Vaccines pre-op</td></tr><tr><td>**Adjuvant**</td><td>**mFOLFIRINOX ×12 cycles** (PRODIGE-24) — **Standard for fit**; **Gem/Cape** (ESPAC-4) if unfit</td></tr><tr><td>**Metastatic 1L**</td><td>**FOLFIRINOX** (fit) OR **Gem/Nab-Pac** (frail)</td></tr><tr><td>**BRCA/PALB2**</td><td>**Germline testing all patients**; **Olaparib maintenance** post-platinum (POLO)</td></tr><tr><td>**2L Options**</td><td>Cross-over: FOLFIRINOX ↔ Gem/Nab-Pac; **Nal-IRI + 5-FU/LV** (NAPOLI-1)</td></tr><tr><td>**CA19-9**</td><td>Lewis a-b- = false -ve; Obstruction = false +ve; Monitor trend</td></tr><tr><td>**Complications**</td><td>**Pancreatic Fistula** (ISGPF Grade A/B/C), **DGE**, Diabetes, Malnutrition</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**65M, painless jaundice, CT: 2.5cm head mass, no vascular contact, no mets. Management?**</td><td>**Resectable PDAC** → **Upfront Whipple (PD/PPPD)** → **Adjuvant mFOLFIRINOX ×12 cycles** (if fit) or Gem/Cape.</td></tr><tr><td>**Same patient but SMV contact >180° with contour irregularity. Management?**</td><td>**Borderline resectable** → **Neoadjuvant FOLFIRINOX (or Gem/Nab-Pac) ± RT** → Reassess CT → Surgery if downstaged.</td></tr><tr><td>**FOLFIRINOX vs Gem/Nab-Pac — when to use which?**</td><td>**FOLFIRINOX**: Fit, ECOG 0-1, age <75, adequate marrow/renal/hepatic — **Preferred if tolerated**.<br/>**Gem/Nab-Pac**: Frail, elderly, comorbidities, neuropathy — Better tolerability.</td></tr><tr><td>**PRODIGE-24 — adjuvant regimen, outcome?**</td><td>**mFOLFIRINOX** (Oxali 85, Irino 50, LV 400, 5-FU 2400 q2w ×12 cycles). **mOS 54.4 vs 35.0 mo (HR 0.64)**.</td></tr><tr><td>**ESPAC-4 — adjuvant regimen?**</td><td>**Gemcitabine 1000 d1,8,15 + Capecitabine 830 BID d1-21 q4w ×6 cycles**. mOS 28.0 vs 25.5 mo.</td></tr><tr><td>**BRCA2 mutation in metastatic PDAC — 1L and maintenance?**</td><td>**1L: Platinum-based** (FOLFIRINOX or Gem/Cis) → If **no progression at 16 weeks** → **Maintenance Olaparib 300mg BID** (POLO trial).</td></tr><tr><td>**CA19-9 false negative — when?**</td><td>**Lewis a-b- phenotype** (5-10% population) — cannot synthesise CA19-9.</td></tr><tr><td>**Neoadjuvant for borderline — RT role?**</td><td>**Controversial**; LAP07 (LA) showed no OS benefit for RT. **Alliance A021501** (Borderline): FOLFIRINOX ± RT — RT arm closed for futility. **Chemo alone often sufficient**.</td></tr><tr><td>**Pancreatic fistula — ISGPF grading?**</td><td>**Grade A**: Transient, no clinical impact; **Grade B**: Requires intervention (drain, antibiotics, TPN); **Grade C**: Life-threatening (reoperation, organ failure, death).</td></tr><tr><td>**Distal pancreatectomy — splenectomy indications?**</td><td>**Oncologic**: Tumour proximity to splenic hilum, nodal stations 10/11 involvement; **Vaccines**: Pneumococcal, MenACWY, Hib ≥2 weeks pre-op.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Borderline vs Locally Advanced — Arterial contact**</td><td>**Borderline**: ≤180° contact; **LA**: >180° or occlusion</td></tr><tr><td>**Borderline vs Locally Advanced — Venous contact**</td><td>**Borderline**: >180° or contour irregularity **but reconstructible**; **LA**: Unreconstructible thrombosis</td></tr><tr><td>**mFOLFIRINOX vs FOLFIRINOX**</td><td>**mFOLFIRINOX** (adjuvant): **Irinotecan 50** (not 180), 5-FU bolus 400 + infusion 2400; **FOLFIRINOX** (metastatic): Irinotecan 180</td></tr><tr><td>**Gem/Cape vs Gem/Nab-Pac**</td><td>**Gem/Cape** = **Adjuvant** (ESPAC-4); **Gem/Nab-Pac** = **Metastatic 1L** (MPACT)</td></tr><tr><td>**Olaparib maintenance — when to start?**</td><td>After **≥16 weeks (4 cycles) of 1L Platinum-based chemo** with **no progression** (POLO criteria)</td></tr><tr><td>**CA19-9 in obstruction**</td><td>**False +ve** — must interpret with clinical context; Trend more useful than absolute</td></tr></table>
+<p><b>Mnemonic: PANCREAS</b></p>
+<ul><li><b>P</b>ainless jaundice (Head) / Back pain (Body/Tail)</li><li><b>A</b>denocarcinoma (PDAC 90%)</li><li><b>N</b>ew-onset diabetes &gt;50yr = Red flag</li><li><b>C</b>A19-9 (Lewis a-b- = false -ve; Obstruction = false +ve)</li><li><b>R</b>esectability: NCCN (Resectable/Borderline/LA/Mets)</li><li><b>E</b>spac-4: Gem/Cape adjuvant; <b>Progide-24: mFOLFIRINOX adjuvant</b></li><li><b>A</b>BRCA/PALB2 → <b>Olaparib maintenance</b> (POLO)</li><li><b>S</b>urgery: Whipple (Head) / Distal Pancreatectomy (Body/Tail)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Pancreatic Cancer - PDAC)) Risk Factors Smoking Chronic Pancreatitis New-Onset DM &gt;50yr BRCA2, PALB2, CDKN2A Lynch, Peutz-Jeghers Molecular KRAS &gt;90% (Founder) CDKN2A 90% TP53 75% SMAD4 55% BRCA/PALB2 5-10% (HRD) Diagnosis CT Pancreas Protocol (Gold Std) CA19-9 (Monitor) EUS-FNA (Neoadjuvant/Unresectable) Germline NGS (All) Staging TNM 8th NCCN Resectability Resectable Borderline Locally Advanced Metastatic Treatment Resectable Surgery (Whipple / Distal) Adjuvant: mFOLFIRINOX (Fit) / Gem/Cape Borderline Neoadjuvant FOLFIRINOX ± RT → Surgery Locally Advanced Neoadjuvant Chemo ± RT (No Surgery) Metastatic 1L: FOLFIRINOX (Fit) / Gem/Nab-Pac (Frail) BRCA: Platinum → Olaparib Maint 2L: Cross-over / Nal-IRI+5-FU/LV Surgery Whipple / PPPD Distal Pancreatectomy ± Splenectomy Vascular Resection (Selected) Complications Pancreatic Fistula (ISGPF A/B/C) DGE Diabetes Malnutrition </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Definition**</td><td>PDAC 90%; Desmoplastic; Hypovascular</td></tr><tr><td>**Red Flag**</td><td>New-onset diabetes >50yr + weight loss = CT Pancreas</td></tr><tr><td>**Diagnosis**</td><td>CT Pancreas Protocol (Triphasic); CA19-9; EUS-FNA if neoadjuvant; Germline NGS all</td></tr><tr><td>**Resectability (NCCN)**</td><td>**Resectable**: No vascular contact → Surgery → Adjuvant<br/>**Borderline**: Arterial ≤180° OR Venous >180° reconstructible → Neoadjuvant → Surgery<br/>**LA**: Arterial >180° OR Venous unreconstructible → Chemo ± RT (no surgery)<br/>**Mets**: Systemic</td></tr><tr><td>**Surgery**</td><td>**Head**: Whipple (PD/PPPD); **Body/Tail**: Distal Pancreatectomy ± Splenectomy</td></tr><tr><td>**Adjuvant**</td><td>**mFOLFIRINOX ×12** (PRODIGE-24) — Fit; **Gem/Cape ×6** (ESPAC-4) — Unfit</td></tr><tr><td>**Metastatic 1L**</td><td>**FOLFIRINOX** (Fit) — mOS 11.1 mo; **Gem/Nab-Pac** (Frail) — mOS 8.5 mo</td></tr><tr><td>**BRCA/PALB2**</td><td>**Olaparib maintenance** post-platinum ≥16wk no progression (POLO)</td></tr><tr><td>**2L**</td><td>Cross-over; **Nal-IRI + 5-FU/LV** (NAPOLI-1)</td></tr><tr><td>**CA19-9**</td><td>Lewis a-b- = false -ve; Obstruction = false +ve</td></tr><tr><td>**Fistula**</td><td>ISGPF Grade A/B/C; Grade C = reoperation/death</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>NCCN resectability criteria</td><td></td><td></td></tr><tr><td>FOLFIRINOX vs Gem/Nab-Pac</td><td></td><td></td></tr><tr><td>PRODIGE-24 vs ESPAC-4</td><td></td><td></td></tr><tr><td>BRCA/PARP maintenance</td><td></td><td></td></tr><tr><td>Whipple vs Distal Pancreatectomy</td><td></td><td></td></tr><tr><td>CA19-9 pitfalls</td><td></td><td></td></tr><tr><td>Neoadjuvant RT role</td><td></td><td></td></tr><tr><td>Pancreatic fistula grading</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Cholangiocarcinoma]], [[Hepatocellular Carcinoma (HCC)]], [[Ampullary Cancer]], [[BRCA/PARP Inhibitors]], [[FOLFIRINOX]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (PDAC = 90%), which statement is correct? A. Ductal adenocarcinoma B. Ductal - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Ductal adenocarcinoma; Desmoplastic stroma; Hypovascular</li></ul>
+<p><b>2.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (New-Onset Diabetes &gt;50yr), which statement is correct? A. <b>Red flag</b> B. **Red - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Red flag</b> — Screen with CT if unexplained weight loss</li></ul>
+<p><b>3.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (Resectability (NCCN)), which statement is correct? A. <b>Resectable</b> → Surgery → Adjuvant B. <b>Resectable</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Resectable</b> → Surgery → Adjuvant; <b>Borderline</b> → Neoadjuvant → Surgery; <b>LA</b> → Neoadjuvant (no surgery); <b>Mets</b>...</li></ul>
+<p><b>4.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (Borderline Definition), which statement is correct? A. <b>Arterial contact ≤180°</b> OR <b>Venous &gt;180°/reconstructible thrombosis</b> B. **Arterial - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Arterial contact ≤180°</b> OR <b>Venous &gt;180°/reconstructible thrombosis</b></li></ul>
+<p><b>5.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (Whipple (PD)), which statement is correct? A. Head tumours B. Head - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Head tumours; Classic vs Pylorus-Preserving (PPPD)</li></ul>
+<p><b>6.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (Distal Pancreatectomy), which statement is correct? A. Body/tail B. Body/tail - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Body/tail; ± Splenectomy → Vaccines pre-op</li></ul>
+<p><b>7.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (Adjuvant), which statement is correct? A. <b>mFOLFIRINOX ×12 cycles</b> (PRODIGE-24) B. **mFOLFIRINOX - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>mFOLFIRINOX ×12 cycles</b> (PRODIGE-24) — <b>Standard for fit</b>; <b>Gem/Cape</b> (ESPAC-4) if unfit</li></ul>
+<p><b>8.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (Metastatic 1L), which statement is correct? A. <b>FOLFIRINOX</b> (fit) OR <b>Gem/Nab-Pac</b> (frail) B. <b>FOLFIRINOX</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>FOLFIRINOX</b> (fit) OR <b>Gem/Nab-Pac</b> (frail)</li></ul>
+<p><b>9.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (BRCA/PALB2), which statement is correct? A. <b>Germline testing all patients</b> B. **Germline - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Germline testing all patients</b>; <b>Olaparib maintenance</b> post-platinum (POLO)</li></ul>
+<p><b>10.</b> Regarding Pancreatic Ductal Adenocarcinoma (PDAC) (2L Options), which statement is correct? A. Cross-over: FOLFIRINOX ↔ Gem/Nab-Pac B. Cross-over: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Cross-over: FOLFIRINOX ↔ Gem/Nab-Pac; <b>Nal-IRI + 5-FU/LV</b> (NAPOLI-1)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. Ductal adenocarcinoma</li><li>B. Ductal (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: Ductal adenocarcinoma; Desmoplastic stroma; Hypovascular</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Red flag</b></li><li>B. **Red (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Red flag</b> — Screen with CT if unexplained weight loss</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Resectable</b> → Surgery → Adjuvant</li><li>B. <b>Resectable</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Resectable</b> → Surgery → Adjuvant; <b>Borderline</b> → Neoadjuvant → Surgery; <b>LA</b> → Neoadjuvant (no surgery); <b>Mets</b>...</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Arterial contact ≤180°</b> OR <b>Venous &gt;180°/reconstructible thrombosis</b></li><li>B. **Arterial (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Arterial contact ≤180°</b> OR <b>Venous &gt;180°/reconstructible thrombosis</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. Head tumours</li><li>B. Head (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: Head tumours; Classic vs Pylorus-Preserving (PPPD)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. Body/tail</li><li>B. Body/tail (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: Body/tail; ± Splenectomy → Vaccines pre-op</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>mFOLFIRINOX ×12 cycles</b> (PRODIGE-24)</li><li>B. **mFOLFIRINOX (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>mFOLFIRINOX ×12 cycles</b> (PRODIGE-24) — <b>Standard for fit</b>; <b>Gem/Cape</b> (ESPAC-4) if unfit</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>FOLFIRINOX</b> (fit) OR <b>Gem/Nab-Pac</b> (frail)</li><li>B. <b>FOLFIRINOX</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>FOLFIRINOX</b> (fit) OR <b>Gem/Nab-Pac</b> (frail)</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Germline testing all patients</b></li><li>B. **Germline (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Germline testing all patients</b>; <b>Olaparib maintenance</b> post-platinum (POLO)</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. Cross-over: FOLFIRINOX ↔ Gem/Nab-Pac</li><li>B. Cross-over: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: Cross-over: FOLFIRINOX ↔ Gem/Nab-Pac; <b>Nal-IRI + 5-FU/LV</b> (NAPOLI-1)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> PDAC = 90%? <b>A1:</b> Ductal adenocarcinoma; Desmoplastic stroma; Hypovascular</p>
+<p><b>Q2:</b> New-Onset Diabetes &gt;50yr? <b>A2:</b> Red flag — Screen with CT if unexplained weight loss</p>
+<p><b>Q3:</b> Resectability (NCCN)? <b>A3:</b> Resectable → Surgery → Adjuvant; Borderline → Neoadjuvant → Surgery; LA → Neoadjuvant (no surgery); Mets → Systemic</p>
+<p><b>Q4:</b> Borderline Definition? <b>A4:</b> Arterial contact ≤180° OR Venous &gt;180°/reconstructible thrombosis</p>
+<p><b>Q5:</b> Whipple (PD)? <b>A5:</b> Head tumours; Classic vs Pylorus-Preserving (PPPD)</p>
+<p><b>Q6:</b> Distal Pancreatectomy? <b>A6:</b> Body/tail; ± Splenectomy → Vaccines pre-op</p>
+<p><b>Q7:</b> Adjuvant? <b>A7:</b> mFOLFIRINOX ×12 cycles (PRODIGE-24) — Standard for fit; Gem/Cape (ESPAC-4) if unfit</p>
+<p><b>Q8:</b> Metastatic 1L? <b>A8:</b> FOLFIRINOX (fit) OR Gem/Nab-Pac (frail)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>PDAC = 90%</td><td>Ductal adenocarcinoma; Desmoplastic stroma; Hypovascular</td></tr><tr><td>2</td><td>A</td><td>New-Onset Diabetes >50yr</td><td>Red flag — Screen with CT if unexplained weight loss</td></tr><tr><td>3</td><td>A</td><td>Resectability (NCCN)</td><td>Resectable → Surgery → Adjuvant; Borderline → Neoadjuvant → Surgery; LA → Neoadjuvant (no surgery); Mets → Systemic</td></tr><tr><td>4</td><td>A</td><td>Borderline Definition</td><td>Arterial contact ≤180° OR Venous >180°/reconstructible thrombosis</td></tr><tr><td>5</td><td>A</td><td>Whipple (PD)</td><td>Head tumours; Classic vs Pylorus-Preserving (PPPD)</td></tr><tr><td>6</td><td>A</td><td>Distal Pancreatectomy</td><td>Body/tail; ± Splenectomy → Vaccines pre-op</td></tr><tr><td>7</td><td>A</td><td>Adjuvant</td><td>mFOLFIRINOX ×12 cycles (PRODIGE-24) — Standard for fit; Gem/Cape (ESPAC-4) if unfit</td></tr><tr><td>8</td><td>A</td><td>Metastatic 1L</td><td>FOLFIRINOX (fit) OR Gem/Nab-Pac (frail)</td></tr><tr><td>9</td><td>A</td><td>BRCA/PALB2</td><td>Germline testing all patients; Olaparib maintenance post-platinum (POLO)</td></tr><tr><td>10</td><td>A</td><td>2L Options</td><td>Cross-over: FOLFIRINOX ↔ Gem/Nab-Pac; Nal-IRI + 5-FU/LV (NAPOLI-1)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>PDAC = 90%</td><td>Ductal adenocarcinoma; Desmoplastic stroma; Hypovascular</td></tr><tr><td>2</td><td>A</td><td>New-Onset Diabetes >50yr</td><td>Red flag — Screen with CT if unexplained weight loss</td></tr><tr><td>3</td><td>A</td><td>Resectability (NCCN)</td><td>Resectable → Surgery → Adjuvant; Borderline → Neoadjuvant → Surgery; LA → Neoadjuvant (no surgery); Mets → Systemic</td></tr><tr><td>4</td><td>A</td><td>Borderline Definition</td><td>Arterial contact ≤180° OR Venous >180°/reconstructible thrombosis</td></tr><tr><td>5</td><td>A</td><td>Whipple (PD)</td><td>Head tumours; Classic vs Pylorus-Preserving (PPPD)</td></tr><tr><td>6</td><td>A</td><td>Distal Pancreatectomy</td><td>Body/tail; ± Splenectomy → Vaccines pre-op</td></tr><tr><td>7</td><td>A</td><td>Adjuvant</td><td>mFOLFIRINOX ×12 cycles (PRODIGE-24) — Standard for fit; Gem/Cape (ESPAC-4) if unfit</td></tr><tr><td>8</td><td>A</td><td>Metastatic 1L</td><td>FOLFIRINOX (fit) OR Gem/Nab-Pac (frail)</td></tr><tr><td>9</td><td>A</td><td>BRCA/PALB2</td><td>Germline testing all patients; Olaparib maintenance post-platinum (POLO)</td></tr><tr><td>10</td><td>A</td><td>2L Options</td><td>Cross-over: FOLFIRINOX ↔ Gem/Nab-Pac; Nal-IRI + 5-FU/LV (NAPOLI-1)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Hepatobiliary &amp; Pancreatic|Hepatobiliary &amp; Pancreatic]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Pancreatic Ductal Adenocarcinoma Pdac · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

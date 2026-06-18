@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Melanoma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.16. SKIN CANCER</span>
+      <div class="h1">Melanoma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>AJCC 8th Staging</b>: Breslow, Ulceration, Mitoses, SLNB, Nodes</li><li>[ ] Determine <b>WLE Margins</b> by Breslow Thickness</li><li>[ ] Indicate <b>SLNB</b> for T1b-T4 (Not T1a)</li><li>[ ] Select <b>Adjuvant Therapy</b>: Stage III (BRAF/MEKi if V600E, ICI); Stage IIB/IIC (ICI)</li><li>[ ] Sequence <b>Metastatic Therapy</b>: BRAF V600E → BRAF/MEKi OR ICI; BRAF WT → ICI</li><li>[ ] Manage <b>Brain Mets</b>: SRS + ICI/BRAF-MEKi</li><li>[ ] Perform <b>Surveillance</b>: Clinical, US, LDH, Imaging by Stage</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of melanocytes; **Cutaneous (90%)**, **Acral**, **Mucosal**, **Uveal**</td></tr><tr><td>**Incidence**</td><td>UK: **~16,000/year**; **5th Most Common Cancer**; Rising</td></tr><tr><td>**Prevalence**</td><td>5-year OS: Stage I >95%, Stage II 80-90%, Stage III 50-70%, Stage IV ~25% (Improving)</td></tr><tr><td>**Peak Age**</td><td>60-70 (Chronic Sun), **Young Adults (15-39) — Intermittent High-Dose UVR**</td></tr><tr><td>**Sex Ratio**</td><td>M > F (Slight)</td></tr><tr><td>**Risk Factors**</td><td>**UVR (Intermittent High-Dose = Sunburns)**, **Multiple Nevi (>100)**, **Atypical Nevi**, **Fair Skin (Fitzpatrick I-II)**, **Red Hair**, **Family History**, **CDKN2A (Familial Melanoma)**, **Immunosuppression**, **Xeroderma Pigmentosum**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Molecular Pathogenesis</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[UVR / Mutagen] --&gt; B[Driver Mutations] B --&gt; B1[<b>BRAF V600E (50%)</b> — <b>MAPK Pathway</b>] B --&gt; B2[<b>NRAS Q61 (25%)</b> — <b>MAPK + PI3K</b>] B --&gt; B3[<b>NF1 Loss (15%)</b> — <b>RAS Activation</b>] B --&gt; B4[<b>KIT (Acral/Mucosal/Uveal)</b> — <b>SCF/c-KIT</b>] B --&gt; B5[<b>TERT Promoter (80%)</b> — <b>Telomerase</b>] B1 --&gt; C[<b>Constitutive MAPK Signalling</b>] B2 --&gt; C B3 --&gt; C C --&gt; D[Proliferation, Survival, Invasion] </code>``</p>
+<div class="sub-h">Subtype-Specific Mutations</div>
+<table class="ctable"><tr><th>Subtype</th><th>BRAF</th><th>NRAS</th><th>NF1</th><th>KIT</th><th>TERT</th></tr><tr><td>---------</td><td>------</td><td>------</td><td>-----</td><td>-----</td><td>------</td></tr><tr><td>**Superficial Spreading (SSM)**</td><td>**50-60%**</td><td>20%</td><td>15%</td><td>Rare</td><td>70%</td></tr><tr><td>**Nodular (NM)**</td><td>40%</td><td>**30%**</td><td>20%</td><td>Rare</td><td>80%</td></tr><tr><td>**Lentigo Maligna (LMM/LMM)**</td><td>**<10%**</td><td>**20%**</td><td>**30%**</td><td>Rare</td><td>70%</td></tr><tr><td>**Acral Lentiginous (ALM)**</td><td>**<10%**</td><td>**20%**</td><td>**20%**</td><td>**15-20%**</td><td>70%</td></tr><tr><td>**Mucosal**</td><td>Rare</td><td>**20%**</td><td>**20%**</td><td>**20%**</td><td>70%</td></tr><tr><td>**Uveal**</td><td>Rare</td><td>Rare</td><td>Rare</td><td>Rare</td><td>**TERT 80%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features & Subtypes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Site</th><th>Features</th></tr><tr><td>---------</td><td>-----------</td><td>------</td><td>----------</td></tr><tr><td>**Superficial Spreading (SSM)**</td><td>**70%**</td><td>Trunk (M), Legs (F)</td><td>**Radial Growth Phase → Vertical**, Irregular Borders, Variable Colour</td></tr><tr><td>**Nodular (NM)**</td><td>**15-20%**</td><td>Any</td><td>**Vertical Growth from Start**, Symmetric, Uniform Colour, **Rapid Growth**</td></tr><tr><td>**Lentigo Maligna (LMM/LMM)**</td><td>**10-15%**</td><td>**Face (Sun-Damaged)**</td><td>**Slow Radial Growth**, **Years to Decades**, **In-Situ → Invasive**</td></tr><tr><td>**Acral Lentiginous (ALM)**</td><td>**5-10%**</td><td>**Palms, Soles, Nail Beds**</td><td>**Non-Sun-Exposed**, **KIT Mut**, **Late Diagnosis**</td></tr><tr><td>**Mucosal**</td><td>**<1%**</td><td>Oral, Genital, Anorectal</td><td>**KIT/NRAS**, **Poor Prognosis**</td></tr><tr><td>**Desmoplastic**</td><td>**<5%**</td><td>Head/Neck</td><td>**Neurotropic**, **Low Metastatic Rate**, **High Local Recurrence**</td></tr><tr><td>**Spitzoid**</td><td>Rare</td><td>Children/Young</td><td>**Spitz Tumour Spectrum**, **HRAS, MAP3K8**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging (AJCC 8th Edition)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">T Category (Primary Tumour)</div>
+<table class="ctable"><tr><th>T</th><th>Breslow Thickness</th><th>Ulceration</th></tr><tr><td>---</td><td>-------------------</td><td>------------</td></tr><tr><td>Tis</td><td>**In-Situ (Melanoma In Situ)**</td><td>-</td></tr><tr><td>T1a</td><td>**<0.8mm**</td><td>No</td></tr><tr><td>T1b</td><td>**0.8-1.0mm**</td><td>No **OR** <0.8mm **With Ulceration**</td></tr><tr><td>T2a</td><td>**1.01-2.0mm**</td><td>No</td></tr><tr><td>T2b</td><td>**1.01-2.0mm**</td><td>**Yes**</td></tr><tr><td>T3a</td><td>**2.01-4.0mm**</td><td>No</td></tr><tr><td>T3b</td><td>**2.01-4.0mm**</td><td>**Yes**</td></tr><tr><td>T4a</td><td>**>4.0mm**</td><td>No</td></tr><tr><td>T4b</td><td>**>4.0mm**</td><td>**Yes**</td></tr></table>
+<p><b>Mitoses:</b> Not used for T categorisation in 8th Edition (Removed from 7th).</p>
+<div class="sub-h">N Category (Regional Nodes)</div>
+<table class="ctable"><tr><th>N</th><th>Description</th></tr><tr><td>---</td><td>-------------</td></tr><tr><td>N0</td><td>No Regional Mets</td></tr><tr><td>N1</td><td>**1 Node** (N1a: SLNB+, N1b: Clinical+)</td></tr><tr><td>N2</td><td>**2-3 Nodes** (N2a: SLNB+, N2b: Clinical+, N2c: In-Transit/Satellite + N0-1)</td></tr><tr><td>N3</td><td>**≥4 Nodes** (N3a: Clinical, N3b: Clinical + In-Transit, N3c: Clinical Node Cluster)</td></tr></table>
+<div class="sub-h">M Category (Distant Mets)</div>
+<table class="ctable"><tr><th>M</th><th>Description</th></tr><tr><td>---</td><td>-------------</td></tr><tr><td>M0</td><td>No Distant Mets</td></tr><tr><td>M1a</td><td>**Skin, Subcutaneous, Distant LN**</td></tr><tr><td>M1b</td><td>**Lung**</td></tr><tr><td>M1c</td><td>**Non-CNS Visceral (Liver, GI, Bone, etc.)**</td></tr><tr><td>M1d</td><td>**CNS (Brain)**</td></tr></table>
+<div class="sub-h">Stage Grouping</div>
+<table class="ctable"><tr><th>Stage</th><th>T</th><th>N</th><th>M</th></tr><tr><td>-------</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**0**</td><td>Tis</td><td>N0</td><td>M0</td></tr><tr><td>**IA**</td><td>T1a</td><td>N0</td><td>M0</td></tr><tr><td>**IB**</td><td>T1b / T2a</td><td>N0</td><td>M0</td></tr><tr><td>**IIA**</td><td>T2b / T3a</td><td>N0</td><td>M0</td></tr><tr><td>**IIB**</td><td>T3b / T4a</td><td>N0</td><td>M0</td></tr><tr><td>**IIC**</td><td>T4b</td><td>N0</td><td>M0</td></tr><tr><td>**IIIA**</td><td>T1-2a</td><td>N1a/N2a</td><td>M0</td></tr><tr><td>**IIIB**</td><td>T0</td><td>N1b/N2b/N2c</td><td>M0</td></tr><tr><td></td><td>T1-2a</td><td>N1b/N2b/N2c</td><td>M0</td></tr><tr><td></td><td>T3a</td><td>N1a/N2a</td><td>M0</td></tr><tr><td>**IIIC**</td><td>T3b/T4a</td><td>N1a/N2a</td><td>M0</td></tr><tr><td></td><td>T1-4a</td><td>N2b/N2c/N3</td><td>M0</td></tr><tr><td></td><td>T4b</td><td>N1a/N2a</td><td>M0</td></tr><tr><td>**IIID**</td><td>T4b</td><td>N1b/N2b/N2c/N3</td><td>M0</td></tr><tr><td>**IV**</td><td>Any T</td><td>Any N</td><td>M1</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Primary Surgery (Wide Local Excision)</div>
+<p>``<code>mermaid flowchart TD A[Primary Melanoma] --&gt; B{Breslow Thickness} B --&gt;|<b>In-Situ (Tis)</b>| C[<b>WLE 0.5-1cm Margin</b>] B --&gt;|<b>&lt;1mm (T1a/T1b)</b>| D[<b>WLE 1cm Margin</b>] B --&gt;|<b>1-2mm (T2)</b>| E[<b>WLE 1-2cm Margin</b>] B --&gt;|<b>2-4mm (T3)</b>| F[<b>WLE 2cm Margin</b>] B --&gt;|<b>&gt;4mm (T4)</b>| G[<b>WLE 2cm Margin</b>] C --&gt; H[<b>Sentinel Lymph Node Biopsy (SLNB)</b>] D --&gt; H E --&gt; H F --&gt; H G --&gt; H </code>``</p>
+<div class="sub-h">Sentinel Lymph Node Biopsy (SLNB)</div>
+<table class="ctable"><tr><th>Indication</th><th>Recommendation</th></tr><tr><td>------------</td><td>----------------</td></tr><tr><td>**T1a (<0.8mm, No Ulceration)**</td><td>**NOT Recommended** (Low Risk <5%)</td></tr><tr><td>**T1b (0.8-1.0mm OR Ulceration)**</td><td>**Recommended (Discuss)**</td></tr><tr><td>**T2-T4 (≥1mm)**</td><td>**Recommended**</td></tr><tr><td>**T1b with High Risk Features** (Mitoses, Young Age, Lymphovascular)</td><td>**Strongly Consider**</td></tr></table>
+<p><b>SLNB Technique:</b> <b>Technetium-99m + Patent Blue</b> → <b>Gamma Probe</b> → <b>Frozen Section + IHC (S100, HMB45, Melan-A, SOX10)</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Adjuvant Therapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stage III (Node-Positive)</div>
+<p>``<code>mermaid flowchart TD A[Stage III Melanoma (Post-SLNB/Complete ND)] --&gt; B{BRAF Status} B --&gt;|<b>BRAF V600E/K Mutant</b>| C[<b>Option 1: BRAF + MEK Inhibitor</b>&lt;br/&gt;<b>Dabrafenib 150mg BID + Trametinib 2mg OD</b> (COMBI-AD)&lt;br/&gt;<b>RFS HR 0.51, OS HR 0.57</b>&lt;br/&gt;<b>Duration: 1 Year</b>] B --&gt;|<b>BRAF Wild-Type OR Mutant (Patient Choice)</b>| D[<b>Option 2: Immune Checkpoint Inhibitor</b>&lt;br/&gt;<b>Nivolumab 480mg q4wk</b> (CheckMate 238) — <b>RFS HR 0.65</b>&lt;br/&gt;<b>Pembrolizumab 200mg q3w</b> (KEYNOTE-054) — <b>RFS HR 0.57</b>&lt;br/&gt;<b>Duration: 1 Year</b>] C --&gt; E[<b>Toxicity Management</b>] D --&gt; E E --&gt; E1[<b>BRAF/MEKi</b>: Pyrexia, Chills, Arthralgia, Cutaneous SCC, Cardiomyopathy, Uveitis] E --&gt; E2[<b>ICI</b>: Colitis, Hepatitis, Endocrinopathies, Pneumonitis, Skin] </code>``</p>
+<div class="sub-h">Stage IIB/IIC (High-Risk Node-Negative)</div>
+<table class="ctable"><tr><th>Trial</th><th>Regimen</th><th>Population</th><th>Outcome</th></tr><tr><td>-------</td><td>---------</td><td>------------</td><td>---------</td></tr><tr><td>**KEYNOTE-716**</td><td>**Pembrolizumab 200mg q3w ×1 Year**</td><td>**Stage IIB (T3b-4a N0) / IIC (T4b N0)**</td><td>**RFS HR 0.62** — **Approved**</td></tr></table>
+<p><b>Note:</b> No adjuvant BRAF/MEKi approved for Stage II (Only ICI).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Metastatic (Stage IV) Therapy</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Stage IV Melanoma] --&gt; B{BRAF Status} B --&gt;|<b>BRAF V600E/K Mutant</b>| C{Patient Factors} C --&gt;|<b>Symptomatic, High Tumour Burden, Brain Mets</b>| D[<b>BRAF + MEK Inhibitor (Preferred)</b>&lt;br/&gt;<b>Dabrafenib 150mg BID + Trametinib 2mg OD</b> (COMBI-d/v)&lt;br/&gt;<b>Encorafenib 450mg + Binimetinib 45mg BID</b> (COLUMBUS)&lt;br/&gt;<b>Rapid Response, CNS Activity</b>&lt;br/&gt;<b>Sequential ICI if Progress</b>] C --&gt;|<b>Asymptomatic, Low Burden, No Brain Mets</b>| E[<b>Immune Checkpoint Inhibitor</b>&lt;br/&gt;<b>Pembrolizumab 200mg q3w</b> (KEYNOTE-006) — <b>OS HR 0.68</b>&lt;br/&gt;<b>Nivolumab 480mg q4wk</b> (CheckMate 067) — <b>OS HR 0.71</b>&lt;br/&gt;<b>Ipilimumab 3mg/kg + Nivolumab 1mg/kg q3w ×4 → Nivo Maint</b> (CheckMate 067) — <b>Highest ORR/CR, Most Toxic</b>&lt;br/&gt;<b>Durable Responses, Long-Tail OS</b>] B --&gt;|<b>BRAF Wild-Type</b>| F[<b>Immune Checkpoint Inhibitor (Only Option)</b>&lt;br/&gt;<b>Pembrolizumab 200mg q3w</b> (KEYNOTE-006) — <b>OS HR 0.68</b>&lt;br/&gt;<b>Nivolumab 480mg q4wk</b> (CheckMate 067) — <b>OS HR 0.71</b>&lt;br/&gt;<b>Ipilimumab 3mg/kg + Nivolumab 1mg/kg q3w ×4 → Nivo Maint</b> (CheckMate 067) — <b>Highest ORR/CR, Best Long-Tail OS, Most Toxic</b>&lt;br/&gt;<b>Durable Responses, Long-Tail OS</b>] D --&gt; G[<b>Progression → Switch to Other Class</b>] E --&gt; G F --&gt; G </code>``</p>
+<div class="sub-h">Brain Metastases</div>
+<table class="ctable"><tr><th>Setting</th><th>Management</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Oligometastatic (1-3)**</td><td>**SRS (Stereotactic Radiosurgery) ± Systemic**</td></tr><tr><td>**Multiple (>3)**</td><td>**WBRT (Whole Brain RT) ± Systemic** (Prefer SRS if possible)</td></tr><tr><td>**BRAF Mutant**</td><td>**Dabrafenib + Trametinib** — **CNS Activity (COMBI-MB: ORR 58%)**</td></tr><tr><td>**BRAF Wild-Type**</td><td>**ICI (Pembro/Nivo/Ipi+Nivo)** — **Intracranial Activity (CheckMate 204: ORR 46-57%)**</td></tr><tr><td>**SRS + ICI/BRAF-MEKi**</td><td>**Synergistic** — **Abscopal Effect**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Supportive Care</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Issue</th><th>Management</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Vasogenic Oedema**</td><td>**Dexamethasone 4-16mg/day** (IV/PO) — **Taper Over 1-2 Weeks** once RT Started/Stable</td></tr><tr><td>**Seizures**</td><td>**Levetiracetam** (Prophylaxis if Supratentorial); **No Routine Prophylaxis for Infratentorial**</td></tr><tr><td>**VTE Prophylaxis**</td><td>**LMWH (Enoxaparin 40mg daily)** — **High Risk (Cancer + Immobility + Brain)**; **DOACs if No Active Bleeding**</td></tr><tr><td>**Anticoagulation (Therapeutic)**</td><td>**LMWH Preferred** (DOACs: Intracranial Haemorrhage Risk)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Major Risk**</td><td>**UVR (Intermittent Sunburns)**, **Multiple Nevi**, **Fair Skin**, **Family CDKN2A**</td></tr><tr><td>**Subtypes**</td><td>**SSM 70%**, **NM 15-20%**, **LMM 10-15%**, **ALM 5-10%**, **Mucosal <1%**</td></tr><tr><td>**Mutations**</td><td>**BRAF V600E 50%**, **NRAS 25%**, **NF1 15%**, **KIT (Acral/Mucosal)**, **TERT 80%**</td></tr><tr><td>**AJCC 8th**</td><td>**Breslow, Ulceration** (Mitoses Removed); **SLNB for N**; **Stage III = N+**</td></tr><tr><td>**Primary Surgery**</td><td>**WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm**</td></tr><tr><td>**SLNB**</td><td>**T1b-T4 Recommended**; **T1a Not**</td></tr><tr><td>**Adjuvant Stage III**</td><td>**BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)**; **BRAF WT: ICI**</td></tr><tr><td>**Adjuvant Stage IIB/IIC**</td><td>**Pembrolizumab (KEYNOTE-716)**</td></tr><tr><td>**Metastatic BRAF Mut**</td><td>**BRAF/MEKi (Rapid, CNS) OR ICI (Durable)**; **BRAF WT: ICI Only**</td></tr><tr><td>**Brain Mets**</td><td>**SRS (Oligo) + Systemic**; **BRAF Mut: Dab/Tram CNS Activity**; **BRAF WT: ICI CNS Activity**</td></tr><tr><td>**Surveillance**</td><td>**Stage-Dependent**: Clinical, US Nodes, LDH, CT/PET-CT</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**40F, 1.5mm Melanoma, Ulcerated, Back. Breslow 1.5mm, Ulceration+. WLE Margin? SLNB?**</td><td>**WLE 1-2cm Margin** (1-2mm); **SLNB Recommended** (T2b: 1.01-2mm with Ulceration).</td></tr><tr><td>**BRAF V600E Stage III Melanoma — Adjuvant Options?**</td><td>**1) Dabrafenib 150mg BID + Trametinib 2mg OD ×1yr (COMBI-AD)**; **2) Pembrolizumab 200mg q3w ×1yr (KEYNOTE-054) OR Nivolumab 480mg q4wk ×1yr (CheckMate 238)**.</td></tr><tr><td>**BRAF Wild-Type Stage III — Adjuvant?**</td><td>**ICI Only**: **Pembrolizumab 200mg q3w ×1yr (KEYNOTE-054) OR Nivolumab 480mg q4wk ×1yr (CheckMate 238)**.</td></tr><tr><td>**Stage IIC Melanoma (T4b N0) — Adjuvant?**</td><td>**Pembrolizumab 200mg q3w ×1yr (KEYNOTE-716)** — **RFS Benefit**.</td></tr><tr><td>**Metastatic BRAF V600E, Asymptomatic, No Brain Mets — 1L?**</td><td>**ICI Preferred (Durable)**: **Pembro/Nivo OR Ipi+Nivo**; **OR BRAF/MEKi (Rapid Response)** — **Discuss Patient Preference**.</td></tr><tr><td>**Metastatic BRAF V600E, Symptomatic, Brain Mets — 1L?**</td><td>**BRAF/MEKi (Dab/Tram) — CNS Activity (COMBI-MB)** + **SRS for Brain Mets**.</td></tr><tr><td>**Adjuvant COMBI-AD — Regimen, Duration, Key Toxicity?**</td><td>**Dabrafenib 150mg BID + Trametinib 2mg OD ×1 Year**; **Key Tox: Pyrexia (50%), Chills, Arthralgia, Cutaneous SCC, Cardiomyopathy, Uveitis**.</td></tr><tr><td>**KEYNOTE-054 vs CheckMate 238 — ICI Adjuvant?**</td><td>**KEYNOTE-054: Pembro 200mg q3w ×1yr (RFS HR 0.57)**; **CheckMate 238: Nivo 480mg q4wk ×1yr (RFS HR 0.65)** — **Both Approved, Pembro Slightly Better RFS**.</td></tr><tr><td>**Brain Mets Melanoma — SRS vs WBRT?**</td><td>**Oligo (1-3): SRS Preferred** (Less Cognitive Decline); **Multiple (>3): WBRT** (or SRS if feasible); **Always + Systemic (ICI/BRAF-MEKi)**.</td></tr><tr><td>**Surveillance Stage III — Schedule?**</td><td>**Clinical q3mo ×3yr, q4mo ×2yr, q6mo ×2yr, then Annually**; **US Nodes q3-6mo ×3yr**; **CT/PET-CT q6mo ×3yr, then Annually**; **LDH q3mo**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**WLE Margins — 1cm vs 2cm for 1-2mm**</td><td>**1-2mm: 1-2cm Margin** (Not 1cm); **<1mm: 1cm**; **>2mm: 2cm**</td></tr><tr><td>**SLNB T1a vs T1b**</td><td>**T1a (<0.8mm, No Ulceration): NO SLNB**; **T1b (0.8-1.0mm OR Ulceration): YES SLNB**</td></tr><tr><td>**Adjuvant Stage II vs III**</td><td>**Stage IIB/IIC: ICI Only (Pembro)**; **Stage III: BRAF/MEKi (If V600E) OR ICI**</td></tr><tr><td>**BRAF/MEKi vs ICI — 1L Metastatic**</td><td>**BRAF/MEKi: Rapid Response, CNS Activity, Finite Duration (Resistance ~1yr)**; **ICI: Slower, Durable (Long-Tail OS), Indefinite, Immune Tox**</td></tr><tr><td>**Ipi+Nivo vs Nivo vs Pembro**</td><td>**Ipi+Nivo: Highest ORR/CR, Best Long-Tail, Most Toxic (Grade 3-4 55%+)**; **Nivo/Pembro: Better Tolerability, Similar OS**</td></tr><tr><td>**Adjuvant Duration**</td><td>**1 Year for All (BRAF/MEKi, ICI)** — **Not Indefinite**</td></tr><tr><td>**Brain Mets — SRS vs WBRT**</td><td>**Oligo (1-3): SRS**; **Multiple (>3): WBRT** (or SRS if feasible); **Always + Systemic (ICI/BRAF-MEKi)**</td></tr></table>
+<p><b>Mnemonic: MELANOMA-AJCC</b></p>
+<ul><li><b>M</b>elanoma: <b>UVR (Intermittent Sunburns)</b>, <b>Nevi</b>, <b>Fair Skin</b>, <b>CDKN2A</b></li><li><b>E</b>pidemiology: <b>5th Common</b>, <b>Young Adults (15-39) + Elderly</b></li><li><b>L</b>entigo Maligna: <b>Face, Sun-Damaged</b>, <b>Slow Radial Growth</b></li><li><b>A</b>cral Lentiginous: <b>Palms/Soles/Nails</b>, <b>KIT Mut</b>, <b>Late Dx</b></li><li><b>N</b>odular: <b>Vertical Growth</b>, <b>Rapid</b>, <b>Uniform Colour</b></li><li><b>O</b>cular/Uveal: <b>Separate Entity</b>, <b>TERT, GNAQ/11</b></li><li><b>M</b>utations: <b>BRAF V600E 50%</b>, <b>NRAS 25%</b>, <b>NF1 15%</b>, <b>KIT (Acral/Mucosal)</b>, <b>TERT 80%</b></li><li><b>A</b>JCC 8th: <b>Breslow + Ulceration</b> (Mitoses Removed), <b>SLNB for N</b>, <b>Stage III = N+</b></li><li><b>S</b>LNB: <b>T1b-T4 Yes</b>, <b>T1a No</b>; <b>WLE: In-Situ 0.5-1cm, &lt;1mm 1cm, 1-2mm 1-2cm, &gt;2mm 2cm</b></li><li><b>S</b>tage III Adjuvant: <b>BRAF V600E → Dab/Tram OR ICI</b>; <b>BRAF WT → ICI</b></li><li><b>S</b>tage IIB/IIC Adjuvant: <b>Pembro (KEYNOTE-716)</b></li><li><b>Metastatic</b>: <b>BRAF Mut → Dab/Tram (Rapid/CNS) OR ICI (Durable)</b>; <b>BRAF WT → ICI</b></li><li><b>Brain Mets</b>: <b>SRS (Oligo) + Systemic</b>; <b>BRAF Mut: Dab/Tram CNS</b>; <b>BRAF WT: ICI CNS</b></li><li><b>Surveillance</b>: <b>Stage-Dependent (Clinical, US, LDH, CT/PET)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Melanoma)) Risk Factors UVR (Intermittent Sunburns) Multiple Nevi (&gt;100) Fair Skin, Red Hair Family (CDKN2A) Immunosuppression Subtypes SSM (70%) - Radial→Vertical NM (15-20%) - Vertical LMM (10-15%) - Face, Slow ALM (5-10%) - KIT Mucosal (&lt;1%) - KIT/NRAS Desmoplastic - Neurotropic Mutations BRAF V600E (50%) NRAS (25%) NF1 (15%) KIT (Acral/Mucosal) TERT (80%) Staging AJCC 8th T: Breslow + Ulceration N: SLNB/Clinical Nodes M: M1a-d Stage III = N+ Surgery WLE: Breslow-Based Margins SLNB: T1b-T4 (Not T1a) Adjuvant Stage III: BRAF V600E→Dab/Tram OR ICI; WT→ICI Stage IIB/IIC: Pembro Metastatic BRAF Mut: Dab/Tram OR ICI BRAF WT: ICI (Pembro/Nivo/Ipi+Nivo) Brain Mets: SRS + Systemic </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Risk**</td><td>UVR Sunburns, Nevi, Fair Skin, CDKN2A</td></tr><tr><td>**Mutations**</td><td>BRAF V600E 50%, NRAS 25%, NF1 15%, KIT (Acral)</td></tr><tr><td>**Staging**</td><td>Breslow + Ulceration; SLNB for N; Stage III = N+</td></tr><tr><td>**WLE**</td><td>In-Situ 0.5-1cm; <1mm 1cm; 1-2mm 1-2cm; >2mm 2cm</td></tr><tr><td>**SLNB**</td><td>T1b-T4 Yes; T1a No</td></tr><tr><td>**Adjuvant III**</td><td>BRAF V600E: Dab/Tram OR ICI; WT: ICI</td></tr><tr><td>**Adjuvant IIB/IIC**</td><td>Pembro (KEYNOTE-716)</td></tr><tr><td>**Metastatic**</td><td>BRAF Mut: Dab/Tram OR ICI; WT: ICI</td></tr><tr><td>**Brain Mets**</td><td>SRS (Oligo) + Systemic; CNS Activity Both</td></tr><tr><td>**Surveillance**</td><td>Clinical, US Nodes, LDH, CT/PET by Stage</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>AJCC 8th Staging</td><td></td><td></td></tr><tr><td>WLE Margins</td><td></td><td></td></tr><tr><td>SLNB Indications</td><td></td><td></td></tr><tr><td>Adjuvant Algorithms</td><td></td><td></td></tr><tr><td>Metastatic Sequencing</td><td></td><td></td></tr><tr><td>Brain Mets Management</td><td></td><td></td></tr><tr><td>Surveillance Schedule</td><td></td><td></td></tr><tr><td>Mutation-Guided Therapy</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[AJCC 8th Staging]], [[SLNB]], [[BRAF/MEK Inhibitors]], [[Immune Checkpoint Inhibitors]], [[Adjuvant Melanoma]], [[Brain Mets Melanoma]], [[NRAS]], [[NF1]], [[Adjuvant Pembro/Nivo]], [[KEYNOTE-054]], [[CheckMate 238]], [[COMBI-AD]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Melanoma (Major Risk), which statement is correct? A. <b>UVR (Intermittent Sunburns)</b>, <b>Multiple Nevi</b>, <b>Fair Skin</b>, <b>Family CDKN2A</b> B. **UVR - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>UVR (Intermittent Sunburns)</b>, <b>Multiple Nevi</b>, <b>Fair Skin</b>, <b>Family CDKN2A</b></li></ul>
+<p><b>2.</b> Regarding Melanoma (Subtypes), which statement is correct? A. <b>SSM 70%</b>, <b>NM 15-20%</b>, <b>LMM 10-15%</b>, <b>ALM 5-10%</b>, <b>Mucosal &lt;1%</b> B. **SSM - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SSM 70%</b>, <b>NM 15-20%</b>, <b>LMM 10-15%</b>, <b>ALM 5-10%</b>, <b>Mucosal &lt;1%</b></li></ul>
+<p><b>3.</b> Regarding Melanoma (Mutations), which statement is correct? A. <b>BRAF V600E 50%</b>, <b>NRAS 25%</b>, <b>NF1 15%</b>, <b>KIT (Acral/Mucosal)</b>, <b>TERT 80%</b> B. **BRAF - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BRAF V600E 50%</b>, <b>NRAS 25%</b>, <b>NF1 15%</b>, <b>KIT (Acral/Mucosal)</b>, <b>TERT 80%</b></li></ul>
+<p><b>4.</b> Regarding Melanoma (AJCC 8th), which statement is correct? A. <b>Breslow, Ulceration</b> (Mitoses Removed) B. **Breslow, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Breslow, Ulceration</b> (Mitoses Removed); <b>SLNB for N</b>; <b>Stage III = N+</b></li></ul>
+<p><b>5.</b> Regarding Melanoma (Primary Surgery), which statement is correct? A. <b>WLE Margins: In-Situ 0.5-1cm, &lt;1mm 1cm, 1-2mm 1-2cm, &gt;2mm 2cm</b> B. **WLE - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>WLE Margins: In-Situ 0.5-1cm, &lt;1mm 1cm, 1-2mm 1-2cm, &gt;2mm 2cm</b></li></ul>
+<p><b>6.</b> Regarding Melanoma (SLNB), which statement is correct? A. <b>T1b-T4 Recommended</b> B. **T1b-T4 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>T1b-T4 Recommended</b>; <b>T1a Not</b></li></ul>
+<p><b>7.</b> Regarding Melanoma (Adjuvant Stage III), which statement is correct? A. <b>BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)</b> B. **BRAF - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)</b>; <b>BRAF WT: ICI</b></li></ul>
+<p><b>8.</b> Regarding Melanoma (Adjuvant Stage IIB/IIC), which statement is correct? A. <b>Pembrolizumab (KEYNOTE-716)</b> B. **Pembrolizumab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Pembrolizumab (KEYNOTE-716)</b></li></ul>
+<p><b>9.</b> Regarding Melanoma (Metastatic BRAF Mut), which statement is correct? A. <b>BRAF/MEKi (Rapid, CNS) OR ICI (Durable)</b> B. **BRAF/MEKi - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BRAF/MEKi (Rapid, CNS) OR ICI (Durable)</b>; <b>BRAF WT: ICI Only</b></li></ul>
+<p><b>10.</b> Regarding Melanoma (Brain Mets), which statement is correct? A. <b>SRS (Oligo) + Systemic</b> B. **SRS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SRS (Oligo) + Systemic</b>; <b>BRAF Mut: Dab/Tram CNS Activity</b>; <b>BRAF WT: ICI CNS Activity</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>UVR (Intermittent Sunburns)</b>, <b>Multiple Nevi</b>, <b>Fair Skin</b>, <b>Family CDKN2A</b></li><li>B. **UVR (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>UVR (Intermittent Sunburns)</b>, <b>Multiple Nevi</b>, <b>Fair Skin</b>, <b>Family CDKN2A</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>SSM 70%</b>, <b>NM 15-20%</b>, <b>LMM 10-15%</b>, <b>ALM 5-10%</b>, <b>Mucosal &lt;1%</b></li><li>B. **SSM (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>SSM 70%</b>, <b>NM 15-20%</b>, <b>LMM 10-15%</b>, <b>ALM 5-10%</b>, <b>Mucosal &lt;1%</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>BRAF V600E 50%</b>, <b>NRAS 25%</b>, <b>NF1 15%</b>, <b>KIT (Acral/Mucosal)</b>, <b>TERT 80%</b></li><li>B. **BRAF (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>BRAF V600E 50%</b>, <b>NRAS 25%</b>, <b>NF1 15%</b>, <b>KIT (Acral/Mucosal)</b>, <b>TERT 80%</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Breslow, Ulceration</b> (Mitoses Removed)</li><li>B. **Breslow, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Breslow, Ulceration</b> (Mitoses Removed); <b>SLNB for N</b>; <b>Stage III = N+</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>WLE Margins: In-Situ 0.5-1cm, &lt;1mm 1cm, 1-2mm 1-2cm, &gt;2mm 2cm</b></li><li>B. **WLE (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>WLE Margins: In-Situ 0.5-1cm, &lt;1mm 1cm, 1-2mm 1-2cm, &gt;2mm 2cm</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>T1b-T4 Recommended</b></li><li>B. **T1b-T4 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>T1b-T4 Recommended</b>; <b>T1a Not</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)</b></li><li>B. **BRAF (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)</b>; <b>BRAF WT: ICI</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Pembrolizumab (KEYNOTE-716)</b></li><li>B. **Pembrolizumab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Pembrolizumab (KEYNOTE-716)</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>BRAF/MEKi (Rapid, CNS) OR ICI (Durable)</b></li><li>B. **BRAF/MEKi (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>BRAF/MEKi (Rapid, CNS) OR ICI (Durable)</b>; <b>BRAF WT: ICI Only</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>SRS (Oligo) + Systemic</b></li><li>B. **SRS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>SRS (Oligo) + Systemic</b>; <b>BRAF Mut: Dab/Tram CNS Activity</b>; <b>BRAF WT: ICI CNS Activity</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Major Risk? <b>A1:</b> UVR (Intermittent Sunburns), Multiple Nevi, Fair Skin, Family CDKN2A</p>
+<p><b>Q2:</b> Subtypes? <b>A2:</b> SSM 70%, NM 15-20%, LMM 10-15%, ALM 5-10%, Mucosal &lt;1%</p>
+<p><b>Q3:</b> Mutations? <b>A3:</b> BRAF V600E 50%, NRAS 25%, NF1 15%, KIT (Acral/Mucosal), TERT 80%</p>
+<p><b>Q4:</b> AJCC 8th? <b>A4:</b> Breslow, Ulceration (Mitoses Removed); SLNB for N; Stage III = N+</p>
+<p><b>Q5:</b> Primary Surgery? <b>A5:</b> WLE Margins: In-Situ 0.5-1cm, &lt;1mm 1cm, 1-2mm 1-2cm, &gt;2mm 2cm</p>
+<p><b>Q6:</b> SLNB? <b>A6:</b> T1b-T4 Recommended; T1a Not</p>
+<p><b>Q7:</b> Adjuvant Stage III? <b>A7:</b> BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo); BRAF WT: ICI</p>
+<p><b>Q8:</b> Adjuvant Stage IIB/IIC? <b>A8:</b> Pembrolizumab (KEYNOTE-716)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Major Risk</td><td>UVR (Intermittent Sunburns), Multiple Nevi, Fair Skin, Family CDKN2A</td></tr><tr><td>2</td><td>A</td><td>Subtypes</td><td>SSM 70%, NM 15-20%, LMM 10-15%, ALM 5-10%, Mucosal <1%</td></tr><tr><td>3</td><td>A</td><td>Mutations</td><td>BRAF V600E 50%, NRAS 25%, NF1 15%, KIT (Acral/Mucosal), TERT 80%</td></tr><tr><td>4</td><td>A</td><td>AJCC 8th</td><td>Breslow, Ulceration (Mitoses Removed); SLNB for N; Stage III = N+</td></tr><tr><td>5</td><td>A</td><td>Primary Surgery</td><td>WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm</td></tr><tr><td>6</td><td>A</td><td>SLNB</td><td>T1b-T4 Recommended; T1a Not</td></tr><tr><td>7</td><td>A</td><td>Adjuvant Stage III</td><td>BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo); BRAF WT: ICI</td></tr><tr><td>8</td><td>A</td><td>Adjuvant Stage IIB/IIC</td><td>Pembrolizumab (KEYNOTE-716)</td></tr><tr><td>9</td><td>A</td><td>Metastatic BRAF Mut</td><td>BRAF/MEKi (Rapid, CNS) OR ICI (Durable); BRAF WT: ICI Only</td></tr><tr><td>10</td><td>A</td><td>Brain Mets</td><td>SRS (Oligo) + Systemic; BRAF Mut: Dab/Tram CNS Activity; BRAF WT: ICI CNS Activity</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Major Risk</td><td>UVR (Intermittent Sunburns), Multiple Nevi, Fair Skin, Family CDKN2A</td></tr><tr><td>2</td><td>A</td><td>Subtypes</td><td>SSM 70%, NM 15-20%, LMM 10-15%, ALM 5-10%, Mucosal <1%</td></tr><tr><td>3</td><td>A</td><td>Mutations</td><td>BRAF V600E 50%, NRAS 25%, NF1 15%, KIT (Acral/Mucosal), TERT 80%</td></tr><tr><td>4</td><td>A</td><td>AJCC 8th</td><td>Breslow, Ulceration (Mitoses Removed); SLNB for N; Stage III = N+</td></tr><tr><td>5</td><td>A</td><td>Primary Surgery</td><td>WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm</td></tr><tr><td>6</td><td>A</td><td>SLNB</td><td>T1b-T4 Recommended; T1a Not</td></tr><tr><td>7</td><td>A</td><td>Adjuvant Stage III</td><td>BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo); BRAF WT: ICI</td></tr><tr><td>8</td><td>A</td><td>Adjuvant Stage IIB/IIC</td><td>Pembrolizumab (KEYNOTE-716)</td></tr><tr><td>9</td><td>A</td><td>Metastatic BRAF Mut</td><td>BRAF/MEKi (Rapid, CNS) OR ICI (Durable); BRAF WT: ICI Only</td></tr><tr><td>10</td><td>A</td><td>Brain Mets</td><td>SRS (Oligo) + Systemic; BRAF Mut: Dab/Tram CNS Activity; BRAF WT: ICI CNS Activity</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Skin Cancer|Skin Cancer]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Melanoma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

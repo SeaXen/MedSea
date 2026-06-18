@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Renal Adrs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Renal Adrs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify drug-induced kidney injury by mechanism (AKI, AIN, Crystal nephropathy, ATN, Tubular toxicity)</li><li>[ ] Apply KDIGO AKI staging</li><li>[ ] Identify high-risk drugs for each renal lesion</li><li>[ ] Execute management: drug cessation, renal replacement, rechallenge avoidance</li><li>[ ] Know dosing adjustments for renal impairment (covered in Special Populations)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Classification of Renal ADRs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Lesion Type</th><th>Mechanism</th><th>Typical Drugs</th><th>Key Features</th></tr><tr><td>-------------</td><td>-----------</td><td>---------------</td><td>--------------</td></tr><tr><td>**Acute Interstitial Nephritis (AIN)**</td><td>**Type IV hypersensitivity** (T-cell mediated)</td><td>**NSAIDs, Antibiotics (β-lactams, sulfonamides, rifampicin), PPIs, Diuretics (thiazide, loop), Allopurinol, ICD drugs**</td><td>Subacute (days–weeks), fever, rash, eosinophilia (blood/urine), sterile pyuria, ↑ Cr</td></tr><tr><td>**Acute Tubular Necrosis (ATN)**</td><td>Direct tubular toxicity / ischaemia</td><td>**Aminoglycosides, Amphotericin B, Contrast, Cisplatin, Vancomycin (high trough), Tenofovir, Lithium**</td><td>↑ Cr, muddy brown casts, FENa >2%, non-oliguric often</td></tr><tr><td>**Crystal Nephropathy**</td><td>Intraluminal crystal precipitation</td><td>**Acyclovir, Indinavir, Atazanavir, Sulfonamides, Methotrexate (high-dose), Triamterene, Ciprofloxacin**</td><td>Flank pain, haematuria, crystals on US/microscopy, ↑ Cr</td></tr><tr><td>**Glomerular Disease**</td><td>Immune complex / podocyte injury</td><td>**Gold, Penicillamine, NSAIDs (MCD), Interferon-α, Heparin (HIT), Cancer immunotherapy (ICI)**</td><td>Proteinuria (nephrotic/nephritic), haematuria, ↑ Cr</td></tr><tr><td>**Thrombotic Microangiopathy (TMA)**</td><td>Endothelial injury</td><td>**Ciclosporin, Tacrolimus, Sirolimus, Clopidogrel, Ticlopidine, Quinine, Gemcitabine, VEGF inhibitors**</td><td>MAHA (schistocytes), thrombocytopenia, ↑ Cr, neurological</td></tr><tr><td>**Electrolyte / Tubular**</td><td>Specific tubular dysfunction</td><td>**Lithium (NDI), Amphotericin B (RTA type 1), Ifosfamide (Fanconi), Tenofovir (Fanconi), Cisplatin (Mg²⁺/K⁺ wasting)**</td><td>Polyuria, electrolyte abnormalities, ↑ Cr</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🔬 Acute Interstitial Nephritis (AIN) — *Most Common Drug-Induced Renal Lesion*</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Presentation</div>
+<table class="ctable"><tr><th>Feature</th><th>Typical</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Onset**</td><td>Days to weeks (NSAIDs: weeks–months)</td></tr><tr><td>**Symptoms**</td><td>Fever (30–50%), rash (25–50%), arthralgia</td></tr><tr><td>**Labs**</td><td>↑ Cr, **eosinophilia** (blood 30%, urine 80%), **sterile pyuria**, **WBC casts**</td></tr><tr><td>**Urine**</td><td>Low-grade proteinuria (<1g/d), haematuria</td></tr><tr><td>**Biopsy**</td><td>Interstitial oedema, **inflammatory infiltrate (eosinophils, lymphocytes, plasma cells)**, tubulitis</td></tr></table>
+<div class="sub-h">High-Risk Drugs for AIN</div>
+<table class="ctable"><tr><th>Drug Class</th><th>Specific Agents</th><th>Notes</th></tr><tr><td>------------</td><td>-----------------</td><td>-------</td></tr><tr><td>**NSAIDs**</td><td>All (esp. fenoprofen, ibuprofen)</td><td>**Most common cause**; delayed onset (weeks–months); often no fever/rash/eosinophilia</td></tr><tr><td>**Antibiotics**</td><td>β-lactams (penicillins, cephalosporins), **Sulfonamides**, Rifampicin, Quinolones</td><td>Classic triad (fever, rash, eosinophilia) more common</td></tr><tr><td>**PPIs**</td><td>Omeprazole, Esomeprazole, Lansoprazole</td><td>Increasing recognition; often insidious</td></tr><tr><td>**Diuretics**</td><td>Thiazides, Loop, Triamterene</td><td>Often with other features</td></tr><tr><td>**Allopurinol**</td><td>Allopurinol</td><td>Part of DRESS/hypersensitivity</td></tr><tr><td>**ICI (Immunotherapy)**</td><td>Pembrolizumab, Nivolumab, Ipilimumab</td><td>**Immune checkpoint inhibitor nephritis** — distinct entity, high-dose steroids</td></tr></table>
+<div class="sub-h">Management</div>
+<ol><li><b>STOP offending drug immediately</b></li><li><b>Supportive</b>: hydration, avoid nephrotoxins, correct electrolytes</li><li><b>Corticosteroids</b>: Prednisolone 1mg/kg/day (0.5–1mg/kg) × 2–4 weeks → taper 4–8 weeks</li></ol>
+<ul><li>Best if started <b>early (&lt;7–10 days from Cr rise)</b></li><li>NSAID-AIN: less responsive to steroids</li></ul>
+<ol><li><b>Renal replacement</b> if indicated (KDIGO criteria)</li><li><b>Follow-up</b>: Monitor Cr for 6–12 months (risk of CKD)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">💊 Aminoglycoside Nephrotoxicity (ATN)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Mechanism**</td><td>Proximal tubular uptake → lysosomal phospholipidosis → mitochondrial dysfunction</td></tr><tr><td>**Risk Factors**</td><td>**Extended-interval dosing (↓ risk)**, age>60, pre-existing CKD, dehydration, loop diuretics, amphotericin, vancomycin, contrast</td></tr><tr><td>**Presentation**</td><td>Non-oliguric ↑ Cr (day 5–10), **mdrd casts**, FENa >2%, tubular proteinuria (β2-microglobulin, NAG)</td></tr><tr><td>**Monitoring**</td><td>**Extended-interval (Hartford)**: single daily dose; **trough <1 mg/L** at 18h post-dose</td></tr><tr><td>**Management**</td><td>Stop/hold aminoglycoside; hydration; avoid other nephrotoxins; usually reversible</td></tr><tr><td>**TDM**</td><td>**Target**: Peak 14–20 mg/L (traditional); **Trough <1 mg/L** (extended-interval)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💎 Crystal Nephropathy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Crystals</th><th>Presentation</th><th>Prevention</th></tr><tr><td>------</td><td>----------</td><td>--------------</td><td>------------</td></tr><tr><td>**Acyclovir**</td><td>Needle-like (urine pH dependent)</td><td>AKI, flank pain, crystalluria</td><td>**Hydration** (IV 1.5–2L/day), adjust for renal, avoid rapid infusion</td></tr><tr><td>**Indinavir / Atazanavir**</td><td>Rectangular / star-shaped</td><td>Flank pain, haematuria, obstructive uropathy</td><td>**Hydration** (2–3L/day); atazanavir less nephrotoxic</td></tr><tr><td>**Sulfonamides**</td><td>Sheaf-of-wheat</td><td>Crystalluria, obstruction</td><td>Hydration, alkalinisation (historical)</td></tr><tr><td>**Methotrexate (HD)**</td><td>MTX + 7-OH-MTX</td><td>AKI, tubular precipitation</td><td>**Leucovorin rescue**, hydration, urine alkalinisation (pH>7), monitor levels</td></tr><tr><td>**Ciprofloxacin**</td><td>Needle-like</td><td>Rare crystalluria</td><td>Hydration</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🩸 Thrombotic Microangiopathy (TMA)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Context</th><th>Features</th></tr><tr><td>------</td><td>---------</td><td>----------</td></tr><tr><td>**Ciclosporin / Tacrolimus / Sirolimus**</td><td>Transplant</td><td>MAHA, thrombocytopenia, ↑ Cr, neurological; **dose-dependent**; ↓ dose/stop</td></tr><tr><td>**Clopidogrel / Ticlopidine**</td><td>Antiplatelet</td><td>Rare; onset days–weeks; **stop drug → plasma exchange**</td></tr><tr><td>**Quinine / Quinine**</td><td>Malaria/leg cramps</td><td>Immune-mediated; **stop immediately**</td></tr><tr><td>**Gemcitabine / VEGF inhibitors**</td><td>Chemotherapy</td><td>Dose-dependent; may need drug cessation</td></tr><tr><td>**HIT (Heparin)**</td><td>Anticoagulation</td><td>**4Ts score**; ↓ platelets >50%; **stop heparin, argatroban/bivalirudin**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📋 KDIGO AKI Staging (for Drug-Induced AKI)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Serum Creatinine</th><th>Urine Output</th></tr><tr><td>-------</td><td>------------------</td><td>--------------</td></tr><tr><td>**1**</td><td>**1.5–1.9× baseline** OR **≥26.5 μmol/L increase**</td><td>**<0.5 mL/kg/h for 6–12h**</td></tr><tr><td>**2**</td><td>**2.0–2.9× baseline**</td><td>**<0.5 mL/kg/h for ≥12h**</td></tr><tr><td>**3**</td><td>**≥3.0× baseline** OR **≥354 μmol/L** OR **RRT** OR **<0.3 mL/kg/h for ≥24h** / **anuria ≥12h**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Picture</th><th>Most Likely Renal ADR</th><th>Key Drug</th><th>Action</th></tr><tr><td>------------------</td><td>----------------------</td><td>----------</td><td>--------</td></tr><tr><td>65yo on ibuprofen 2mo, ↑ Cr, eosinophilia, sterile pyuria, no fever/rash</td><td>**NSAID-induced AIN**</td><td>NSAIDs (most common)</td><td>Stop NSAID; steroids if no recovery 1wk</td></tr><tr><td>30yo on piperacillin-tazobactam 2wk, fever, rash, eosinophilia, ↑ Cr</td><td>**Antibiotic-induced AIN**</td><td>β-lactams</td><td>Stop abx; steroids</td></tr><tr><td>70yo on gentamicin 7d, ↑ Cr, muddy brown casts, FENa >2%</td><td>**Aminoglycoside ATN**</td><td>Gentamicin</td><td>Hold gentamicin; hydration; TDM</td></tr><tr><td>40yo on acyclovir IV 3d, flank pain, crystalluria, ↑ Cr</td><td>**Acyclovir crystal nephropathy**</td><td>Acyclovir</td><td>Hydration; alkalinise; stop if severe</td></tr><tr><td>Transplant on tacrolimus, Hb↓, platelets↓, schistocytes, ↑ Cr, confusion</td><td>**Tacrolimus TMA**</td><td>Tacrolimus/Ciclosporin</td><td>↓ dose/stop; plasma exchange if severe</td></tr><tr><td>50yo on lithium 10y, polyuria, hypernatremia, ↑ Cr</td><td>**Lithium NDI**</td><td>Lithium</td><td>Water access; consider switch; amiloride</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Classify drug-induced renal lesions.</td><td>AIN (Type IV hypersensitivity), ATN (direct tubular toxicity), Crystal nephropathy, Glomerular (immune complex), TMA (endothelial injury), Tubular/electrolyte (specific transporters)</td></tr><tr><td>2. Most common cause of drug-induced AIN?</td><td>**NSAIDs** (but often insidious, no classic triad)</td></tr><tr><td>3. Classic AIN triad vs NSAID-AIN?</td><td>**Classic**: fever, rash, eosinophilia (β-lactams, sulfonamides); **NSAID-AIN**: often **no fever/rash/eosinophilia**, delayed onset, older patients</td></tr><tr><td>4. PPI-induced AIN — features?</td><td>Increasingly recognised; often **insidious**, subacute; biopsy shows eosinophilic infiltrate; steroids effective</td></tr><tr><td>5. Aminoglycoside nephrotoxicity — risk factors, monitoring?</td><td>Risk: age>60, CKD, dehydration, loop diuretics, vancomycin, amphotericin; **Monitoring: extended-interval dosing, trough <1 mg/L at 18h**</td></tr><tr><td>6. Acyclovir nephrotoxicity — mechanism, prevention?</td><td>**Crystal precipitation** in tubules (pH dependent); **Prevention: IV hydration 1.5–2L/day, adjust dose for renal, infuse over 1h**</td></tr><tr><td>7. Indinavir/Atazanavir crystal nephropathy — presentation, prevention?</td><td>Flank pain, haematuria, obstruction; **Hydration 2–3L/day**</td></tr><tr><td>8. TMA — drug causes, management?</td><td>Ciclosporin, tacrolimus, sirolimus (dose-dependent); clopidogrel/ticlopidine (immune); quinine; gemcitabine; **Management: stop/reduce drug, plasma exchange if immune**</td></tr><tr><td>9. Lithium nephrotoxicity — types, management?</td><td>**NDI** (polyuria, hypernatremia) — **most common**; Chronic tubulointerstitial nephritis (↑ Cr); **Management: water access, amiloride 5–10mg BD, consider switch**</td></tr><tr><td>10. Contrast-induced nephropathy — definition, prevention?</td><td>↑ Cr ≥26.5 μmol/L or 1.5× baseline within 48h of contrast; **Prevention: hydration (IV 0.9% NaCl), NAC (controversial), iso-osmolar contrast, ↓ volume, hold nephrotoxins**</td></tr><tr><td>11. Vancomycin nephrotoxicity — risk factors, TDM target?</td><td>Risk: **trough >15–20 mg/L**, concomitant nephrotoxins (aminoglycosides, piperacillin-tazobactam), age>65, CKD; **Target AUC 400–600 mg·h/L** (trough 10–20 old)</td></tr><tr><td>12. KDIGO AKI Stage 2 criteria?</td><td>Cr 2.0–2.9× baseline OR UO <0.5 mL/kg/h for ≥12h</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**AIN vs ATN**</td><td>AIN = **immune** (eosinophilia, WBC casts, sterile pyuria, fever/rash); ATN = **toxic/ischaemic** (muddy brown casts, FENa>2%, no eosinophilia)</td></tr><tr><td>**NSAID-AIN vs Antibiotic-AIN**</td><td>NSAID = insidious, no triad, older; Antibiotic = classic triad, younger</td></tr><tr><td>**Crystal nephropathy vs AIN**</td><td>Crystal = **flank pain, crystalluria, obstructive**; AIN = **allergic features, eosinophilia**</td></tr><tr><td>**TMA vs HUS/TTP**</td><td>Drug-induced TMA = **stop drug first**; TTP = **ADAMTS13 deficiency → plasma exchange**; HUS = **STEC/shiga toxin**</td></tr><tr><td>**Lithium NDI vs DI**</td><td>**NDI** = renal resistance to ADH (lithium, amphotericin); **DI** = central ADH deficiency</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"AIN DRUGS"</b> = <b>A</b>ntibiotics (β-lactams, sulfa, rifampicin), <b>I</b>buprofen/NSAIDs, <b>N</b>exium/PPIs, <b>D</b>iuretics, <b>R</b>ifampicin, <b>U</b>ric acid (allopurinol), <b>G</b>old, <b>S</b>ulfonamides</li><li><b>"ATN TOXINS"</b> = <b>A</b>minoglycosides, <b>T</b>enofovir, <b>N</b>ephrotoxins (Ampho B, Cisplatin, Contrast, Vancomycin)</li><li><b>"CRYSTALS"</b> = <b>C</b>iprofloxacin, <b>R</b>ifampicin (rare), <b>Y</b> (Acyclovir), <b>S</b>ulfonamides, <b>T</b>riamterene, <b>A</b>tazanavir/Indinavir, <b>L</b>ithium (not crystal), <b>S</b> (Methotrexate HD)</li><li><b>"TMA DRUGS"</b> = <b>T</b>acrolimus/Ciclosporin/Sirolimus, <b>M</b>itomycin/Gemcitabine/VEGF, <b>A</b>ntiplatelet (Clopidogrel/Ticlopidine), <b>D</b>rug (Quinine), <b>R</b>are, <b>U</b>ncommon, <b>G</b>emcitabine, <b>S</b>top drug</li><li><b>"LITHIUM"</b> = <b>L</b>ithium → <b>N</b>ephrogenic <b>D</b>I (NDI) → <b>Polyuria, Hypernatremia</b> → <b>Amiloride</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Renal ADRs)) AIN (Type IV) NSAIDs (most common, insidious) Antibiotics (β-lactams, sulfa, rifampicin - classic triad) PPIs (increasing) Diuretics Allopurinol ICI (checkpoint inhibitors) Rx: STOP drug, Steroids 1mg/kg 2-4wk taper ATN Aminoglycosides (proximal tubular phospholipidosis) Amphotericin B Contrast Cisplatin Vancomycin (high trough) Tenofovir Lithium (chronic interstitial) Rx: Stop, Hydration, TDM Crystal Nephropathy Acyclovir (hydration, alkalinisation) Indinavir/Atazanavir (hydration 2-3L) Sulfonamides Methotrexate HD (leucovorin, alkalinisation) Ciprofloxacin Glomerular NSAIDs (MCD) Gold/Penicillamine (MN) Interferon (FSGS) Heparin (HIT) ICI TMA CNIs (Tacro/Ciclo/Siro) - dose dependent Clopidogrel/Ticlopidine (immune) Quinine Chemo (Gemcitabine, VEGF) Rx: Stop/reduce, PLEX if immune Tubular/Electrolyte Lithium (NDI + chronic interstitial) Amphotericin (RTA type 1) Tenofovir (Fanconi) Cisplatin (Mg/K wasting) KDIGO AKI Staging Stage 1: 1.5-1.9x Cr or +26.5 Stage 2: 2.0-2.9x Cr Stage 3: 3.0x Cr or RRT </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Classification table</td><td>10</td><td></td></tr><tr><td>AIN details</td><td>12</td><td></td></tr><tr><td>ATN/Aminoglycosides</td><td>8</td><td></td></tr><tr><td>Crystal nephropathy</td><td>8</td><td></td></tr><tr><td>TMA</td><td>6</td><td></td></tr><tr><td>KDIGO staging</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td></tr><tr><td>**Total**</td><td>**62**</td><td></td></tr></table>
+<p><b>Target</b>: ≥50/62 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Classify drug-induced kidney injury. Discuss AIN in detail."*</div>
+<ol><li><b>Classification</b> (2): 6 categories (AIN, ATN, Crystal, Glomerular, TMA, Tubular) with mechanisms</li><li><b>AIN</b> (4): Pathophysiology (Type IV), drugs (NSAIDs #1, antibiotics, PPIs), clinical features (classic triad vs NSAID-AIN), biopsy, management (stop drug, steroids 1mg/kg)</li><li><b>Other key lesions</b> (3): ATN (aminoglycosides, TDM), Crystal (acylovir hydration), TMA (CNIs, clopidogrel)</li><li><b>AKI Staging</b> (1): KDIGO 3 stages</li></ol>
+<div class="sub-h">Short Question (5 marks): *"NSAID-induced AIN vs Antibiotic-induced AIN"*</div>
+<table class="ctable"><tr><th>Feature</th><th>NSAID-AIN</th><th>Antibiotic-AIN</th></tr><tr><td>---------</td><td>-----------</td><td>----------------</td></tr><tr><td>Onset</td><td>Weeks–months</td><td>Days–weeks</td></tr><tr><td>Classic triad</td><td>**Often absent**</td><td>**Present** (fever, rash, eosinophilia)</td></tr><tr><td>Age</td><td>Older</td><td>Any</td></tr><tr><td>Eosinophilia</td><td>Often absent</td><td>Common</td></tr><tr><td>Biopsy</td><td>Similar</td><td>Similar</td></tr><tr><td>Steroid response</td><td>Less responsive</td><td>More responsive</td></tr></table>
+<div class="sub-h">Viva (2 min): *"70yo on ibuprofen 3 months for OA, Cr 180 (baseline 90), no fever/rash, urine eosinophils+. Diagnosis? Management?"*</div>
+<ul><li><b>NSAID-induced AIN</b> (insidious, no classic triad)</li><li><b>STOP ibuprofen immediately</b></li><li>Hydration, avoid nephrotoxins</li><li><b>Prednisolone 1mg/kg/day × 2–4 weeks</b> → taper 4–8 weeks</li><li>Monitor Cr weekly ×4, then monthly ×6–12mo</li><li>Switch to paracetamol/topical NSAID for OA</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on IV acyclovir for HSV encephalitis, day 3: flank pain, crystalluria, Cr rising. Action?"*</div>
+<ul><li><b>Acyclovir crystal nephropathy</b></li><li><b>Aggressive IV hydration</b> (2–3L/day), <b>urine alkalinisation</b> (target pH&gt;7), slow infusion</li><li>Adjust dose for renal function</li><li>Stop if severe AKI</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>AIN = Type IV hypersensitivity; NSAIDs #1 cause (insidious); antibiotics = classic triad</li><li>AIN management: Stop drug → Steroids 1mg/kg × 2–4wk → taper</li><li>ATN: Aminoglycosides, Ampho B, Contrast, Cisplatin, Vancomycin (trough&gt;15), Tenofovir</li><li>Crystal nephropathy: Acyclovir (hydration), Indinavir/Atazanavir (hydration), MTX HD (alkalinisation + leucovorin)</li><li>TMA: CNIs (dose-dependent), Clopidogrel (immune → PLEX)</li><li>Lithium = NDI (polyuria, hypernatremia) + chronic interstitial → amiloride</li><li>KDIGO: Stage 1 (1.5× Cr), Stage 2 (2×), Stage 3 (3×/RRT)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>RENAL ADR TRIAD:</b> 1. <b>AIN</b> — <b>NSAIDs #1</b> (insidious); Abx = classic triad; <b>Steroids 1mg/kg</b> 2. <b>ATN</b> — Aminoglycosides (trough&lt;1), Ampho B, Contrast, Cisplatin, Vancomycin (AUC 400–600) 3. <b>CRYSTAL</b> — Acyclovir/Indinavir = <b>HYDRATION</b>; MTX HD = ALKALINISATION + LEUCOVORIN  <b>LITHIUM</b> = NDI → Amiloride <b>TMA</b> = CNIs (↓ dose); Clopidogrel (PLEX) <b>KDIGO</b> = 1.5× / 2× / 3× Cr</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Most common cause of drug-induced AIN:</b></li></ol>
+<p>A. Penicillins B. <b>NSAIDs</b> ✓ C. Sulfonamides D. PPIs E. Diuretics</p>
+<ol><li><b>Classic AIN triad (fever, rash, eosinophilia) is MOST typical of:</b></li></ol>
+<p>A. NSAID-induced AIN B. <b>Antibiotic-induced AIN (β-lactams, sulfonamides)</b> ✓ C. PPI-induced AIN D. Diuretic-induced AIN E. Allopurinol-induced AIN</p>
+<ol><li><b>Aminoglycoside nephrotoxicity — preferred dosing to reduce risk:</b></li></ol>
+<p>A. Traditional multiple daily dosing B. <b>Extended-interval (once daily) dosing</b> ✓ C. Continuous infusion D. No difference E. Avoid in all elderly</p>
+<ol><li><b>Extended-interval aminoglycoside TDM target:</b></li></ol>
+<p>A. Peak 14–20 mg/L B. <b>Trough &lt;1 mg/L at 18h post-dose</b> ✓ C. Trough 5–10 mg/L D. AUC 400–600 E. Random level 2–4 mg/L</p>
+<ol><li><b>Acyclovir nephrotoxicity — mechanism:</b></li></ol>
+<p>A. Direct tubular toxicity B. <b>Crystal precipitation in tubules (pH dependent)</b> ✓ C. Immune-mediated AIN D. Crystal-induced ATN E. Glomerulonephritis</p>
+<ol><li><b>Acyclovir crystal nephropathy prevention:</b></li></ol>
+<p>A. Urine acidification B. <b>IV hydration 1.5–2L/day, adjust for renal, infuse over 1h</b> ✓ C. Loop diuretic co-administration D. Sodium bicarbonate only E. No prevention possible</p>
+<ol><li><b>Tacrolimus/ciclosporin associated TMA — mechanism:</b></li></ol>
+<p>A. Immune-mediated (ADAMTS13 deficiency) B. <b>Dose-dependent endothelial injury</b> ✓ C. Crystal precipitation D. Complement activation E. Antiplatelet antibody</p>
+<ol><li><b>Clopidogrel-induced TMA — management:</b></li></ol>
+<p>A. Reduce dose B. <b>Stop clopidogrel + Plasma exchange</b> ✓ C. Continue with steroids D. Switch to ticagrelor E. IVIG only</p>
+<ol><li><b>Lithium nephrotoxicity — most common manifestation:</b></li></ol>
+<p>A. Acute tubular necrosis B. <b>Nephrogenic diabetes insipidus (NDI)</b> ✓ C. Acute interstitial nephritis D. Glomerulonephritis E. Crystal nephropathy</p>
+<ol><li><b>Lithium-induced NDI management:</b></li></ol>
+<p>A. Desmopressin B. <b>Amiloride 5–10mg BD</b> ✓ C. Loop diuretic D. Thiazide diuretic E. Fluid restriction</p>
+<ol><li><b>Vancomycin nephrotoxicity — current TDM target:</b></li></ol>
+<p>A. Trough 10–20 mg/L B. <b>AUC 400–600 mg·h/L (AUC/MIC)</b> ✓ C. Peak 20–40 mg/L D. Trough 5–10 mg/L E. Random level</p>
+<ol><li><b>Contrast-induced nephropathy definition (KDIGO):</b></li></ol>
+<p>A. Cr increase &gt;50% within 24h B. <b>Cr ≥26.5 μmol/L or 1.5× baseline within 48h</b> ✓ C. Cr doubling within 72h D. Need for RRT within 1 week E. Any Cr rise after contrast</p>
+<ol><li><b>KDIGO AKI Stage 3 — urine output criterion:</b></li></ol>
+<p>A. &lt;0.5 mL/kg/h for 6h B. &lt;0.5 mL/kg/h for 12h C. <b>&lt;0.3 mL/kg/h for ≥24h OR anuria ≥12h</b> ✓ D. &lt;1 mL/kg/h for 24h E. &lt;0.1 mL/kg/h for 6h</p>
+<ol><li><b>Methotrexate high-dose nephrotoxicity prevention:</b></li></ol>
+<p>A. Urine acidification B. <b>Hydration + Urine alkalinisation (pH&gt;7) + Leucovorin rescue</b> ✓ C. Loop diuretic D. NSAID co-administration E. Hydration only</p>
+<ol><li><b>Drug-induced glomerular disease — NSAIDs classically cause:</b></li></ol>
+<p>A. Membranous nephropathy B. Focal segmental glomerulosclerosis C. <b>Minimal change disease (MCD)</b> ✓ D. IgA nephropathy E. Crescentic GN</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>AIN most common cause</td><td>NSAIDs (insidious, no triad)</td></tr><tr><td>Classic AIN triad</td><td>Fever, rash, eosinophilia (β-lactams, sulfonamides)</td></tr><tr><td>NSAID-AIN features</td><td>Insidious, older, no triad, delayed onset, less steroid responsive</td></tr><tr><td>AIN management</td><td>STOP drug → Pred 1mg/kg 2-4wk → taper 4-8wk</td></tr><tr><td>Aminoglycoside dosing</td><td>Extended-interval (once daily) preferred</td></tr><tr><td>Aminoglycoside TDM</td><td>Trough <1 mg/L at 18h (Hartford)</td></tr><tr><td>ATN drugs</td><td>Aminoglycosides, Ampho B, Contrast, Cisplatin, Vancomycin (AUC), Tenofovir</td></tr><tr><td>Acyclovir nephrotoxicity</td><td>Crystal precipitation (pH dependent)</td></tr><tr><td>Acyclovir prevention</td><td>IV hydration 1.5-2L/day, renal adjust, infuse 1h</td></tr><tr><td>Indinavir/Atazanavir</td><td>Hydration 2-3L/day</td></tr><tr><td>MTX HD nephrotoxicity</td><td>Hydration + alkalinisation (pH>7) + leucovorin</td></tr><tr><td>TMA drugs</td><td>CNIs (dose-dependent), Clopidogrel/Ticlopidine (immune → PLEX), Quinine</td></tr><tr><td>Lithium NDI</td><td>Polyuria, hypernatremia → Amiloride 5-10mg BD</td></tr><tr><td>Lithium chronic</td><td>Tubulointerstitial nephritis → ↑ Cr</td></tr><tr><td>Vancomycin TDM</td><td>AUC 400-600 mg·h/L (AUC/MIC)</td></tr><tr><td>Contrast nephropathy</td><td>Cr ≥26.5 or 1.5× baseline within 48h</td></tr><tr><td>KDIGO Stage 1</td><td>1.5-1.9× Cr or +26.5</td></tr><tr><td>KDIGO Stage 2</td><td>2.0-2.9× Cr</td></tr><tr><td>KDIGO Stage 3</td><td>3.0× Cr or RRT or UO <0.3 for 24h/anuria 12h</td></tr><tr><td>NSAID glomerular</td><td>Minimal change disease (MCD)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — NSAIDs most common AIN cause</li><li><b>B</b> — Classic triad with antibiotics</li><li><b>B</b> — Extended-interval (once daily) ↓ nephrotoxicity</li><li><b>B</b> — Trough &lt;1 mg/L at 18h</li><li><b>B</b> — Crystal precipitation</li><li><b>B</b> — Hydration 1.5–2L/day</li><li><b>B</b> — CNI TMA = dose-dependent endothelial injury</li><li><b>B</b> — Stop clopidogrel + PLEX</li><li><b>B</b> — Lithium = NDI most common</li><li><b>B</b> — Amiloride for NDI</li><li><b>B</b> — AUC 400–600 (current standard)</li><li><b>B</b> — Cr ≥26.5 or 1.5× in 48h</li><li><b>C</b> — UO &lt;0.3 for 24h or anuria 12h</li><li><b>B</b> — Hydration + alkalinisation + leucovorin</li><li><b>C</b> — NSAIDs → MCD</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/Renal ADRs.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Renal Adrs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

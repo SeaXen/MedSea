@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quality Improvement Patient Safety — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 1 CLINICAL DECISION-MAKING / 1.5. QUALITY IMPROVEMENT & PATIENT SAFETY</span>
+      <div class="h1">Quality Improvement Patient Safety</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>QI methodology</b>: Model for Improvement (PDSA), Lean, Six Sigma, Driver diagrams, Run charts, Control charts</li><li>[ ] Distinguish <b>measurement types</b>: Outcome, Process, Balancing; Understand variation (Common vs Special cause)</li><li>[ ] Conduct <b>root cause analysis</b>: Fishbone, 5 Whys, Swiss Cheese, SEIPS, RCA report structure</li><li>[ ] Identify <b>Never Events</b> (NHS); Understand <b>Duty of Candour</b> (Statutory)</li><li>[ ] Describe <b>Clinical Governance</b> pillars; CQC regulation; Revalidation; Clinical audit cycle</li><li>[ ] Apply <b>Human Factors / Ergonomics</b>: SEIPS, TeamSTEPPS, Checklists, Time-outs</li><li>[ ] Design <b>safety interventions</b>: Surgical checklists, Medication reconciliation, VTE prophylaxis, Sepsis bundles</li><li>[ ] Answer viva: "PDSA cycle steps" and "Root cause analysis tools" and "Never Events list"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Quality Improvement = System Science</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Problem Identified] --&gt; B[Understand System&lt;br/&gt;Process Mapping, Data] B --&gt; C[Model for Improvement&lt;br/&gt;3 Questions + PDSA] C --&gt; D[Test Changes&lt;br/&gt;Small Scale → Scale Up] D --&gt; E[Measure Impact&lt;br/&gt;Run Charts, SPC] E --&gt; F{Sustain &amp; Spread} F --&gt;|Standardise| G[Embed in Pathways&lt;br/&gt;Policy, EHR, Training] F --&gt;|Adapt| C[New PDSA Cycle] </code>``</p>
+<div class="callout"><b>Key:</b> <i>QI is not "audit" — it's <b>iterative testing of changes</b> to improve systems. Safety is a <b>system property</b>, not individual vigilance.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ QI Methodology — Model for Improvement (IHI)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">The 3 Fundamental Questions</div>
+<ol><li><b>What are we trying to accomplish?</b> (Aim Statement — SMART: Specific, Measurable, Achievable, Relevant, Time-bound)</li><li><b>How will we know a change is an improvement?</b> (Measures: Outcome, Process, Balancing)</li><li><b>What changes can we make that will result in improvement?</b> (Change Ideas — Theory-driven, Evidence-based)</li></ol>
+<div class="sub-h">PDSA Cycle (Plan-Do-Study-Act)</div>
+<table class="ctable"><tr><th>Phase</th><th>Actions</th><th>Tools</th></tr><tr><td>-------</td><td>---------</td><td>-------</td></tr><tr><td>**Plan**</td><td>Define objective, Predictions, Plan data collection, Assign roles</td><td>Aim statement, Driver diagram, Measurement plan</td></tr><tr><td>**Do**</td><td>Execute on small scale, Document problems, Collect data</td><td>Test on 1 patient/ward/day</td></tr><tr><td>**Study**</td><td>Analyse data vs predictions, Compare to baseline, Summarise learning</td><td>Run chart, Pareto chart, Qualitative feedback</td></tr><tr><td>**Act**</td><td>Adopt, Adapt, or Abandon; Plan next cycle</td><td>Standardise if successful, Modify if partial</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Multiple rapid PDSAs &gt; One big implementation. Test → Learn → Scale.</i></div>
+<div class="sub-h">Driver Diagram — Linking Aim to Changes</div>
+<p>``<code>mermaid flowchart TD A[Aim&lt;br/&gt;Reduce sepsis mortality by 20% in 12 months] --&gt; B[Primary Drivers] B --&gt; B1[Early Recognition&lt;br/&gt;NEWS2, Screening] B --&gt; B2[Timely Treatment&lt;br/&gt;Sepsis 6 Bundle] B --&gt; B3[Reliable Processes&lt;br/&gt;Pathways, Education] B1 --&gt; C1[Secondary: NEWS2 on all wards] B1 --&gt; C2[Secondary: Sepsis Screening Tool] B2 --&gt; C3[Secondary: IV Abx &lt;1h Protocol] B2 --&gt; C4[Secondary: Lactate &lt;1h] B3 --&gt; C5[Secondary: Sepsis Champion/Team] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Measurement for Improvement</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Types of Measures</div>
+<table class="ctable"><tr><th>Type</th><th>What It Measures</th><th>Examples</th><th>Frequency</th></tr><tr><td>------</td><td>------------------</td><td>----------</td><td>-----------</td></tr><tr><td>**Outcome**</td><td>Voice of patient/system</td><td>Mortality, Readmission, Infection rate, Patient experience</td><td>Monthly/Quarterly</td></tr><tr><td>**Process**</td><td>Voice of workings</td><td>Time to antibiotics, VTE prophylaxis compliance, Checklist completion</td><td>Weekly/Daily</td></tr><tr><td>**Balancing**</td><td>Unintended consequences</td><td>C. difficile rate, Antibiotic resistance, Staff burnout, Cost</td><td>Monthly</td></tr></table>
+<div class="sub-h">Data Visualisation — Run Charts vs Control Charts</div>
+<table class="ctable"><tr><th>Feature</th><th>Run Chart</th><th>Control Chart (SPC)</th></tr><tr><td>---------</td><td>-----------</td><td>---------------------</td></tr><tr><td>**Purpose**</td><td>Detect trends/shifts over time</td><td>Distinguish Common vs Special Cause variation</td></tr><tr><td>**Center Line**</td><td>Median</td><td>Mean</td></tr><tr><td>**Rules**</td><td>6 points same side, 5 trending, 14 alternating</td><td>Western Electric / Nelson Rules (Zone tests)</td></tr><tr><td>**Limits**</td><td>None</td><td>UCL/LCL (±3σ)</td></tr><tr><td>**Use**</td><td>Early QI, Small data</td><td>Sustained monitoring, Stability assessment</td></tr></table>
+<div class="sub-h">Run Chart Rules (Perla et al.)</div>
+<ol><li><b>Shift</b>: 6+ consecutive points above/below median</li><li><b>Trend</b>: 5+ consecutive increasing/decreasing</li><li><b>Runs</b>: Too few/too many runs (non-random)</li><li><b>Astronomical</b>: Obvious outlier</li></ol>
+<div class="sub-h">Variation — Common vs Special Cause (Deming/Shewhart)</div>
+<table class="ctable"><tr><th>Variation Type</th><th>Source</th><th>Management Response</th></tr><tr><td>----------------</td><td>--------</td><td>---------------------</td></tr><tr><td>**Common Cause**</td><td>Inherent in system (94-97% of variation)</td><td>**Improve the system** (redesign, standardise, train)</td></tr><tr><td>**Special Cause**</td><td>Assignable, external, unusual (3-6%)</td><td>**Investigate & Remove** (root cause, fix specific issue)</td></tr></table>
+<div class="callout"><b>Tampering</b> = Reacting to common cause as if special → Increases variation.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Root Cause Analysis (RCA) — Tools & Process</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">RCA Process (NHS / NPSA)</div>
+<p>``<code>mermaid flowchart TD A[Incident Identified] --&gt; B[Immediate Safety Actions] B --&gt; C[Team Formation&lt;br/&gt;Multidisciplinary, Independent] C --&gt; D[Data Collection&lt;br/&gt;Timeline, Interviews, Records] D --&gt; E[Analysis&lt;br/&gt;Fishbone, 5 Whys, Swiss Cheese] E --&gt; F[Root Causes&lt;br/&gt;&amp; Contributing Factors] F --&gt; G[Action Plan&lt;br/&gt;SMART: Strong/Intermediate/Weak] G --&gt; H[Implementation &amp; Monitoring] H --&gt; I[Review &amp; Close] </code>``</p>
+<div class="sub-h">RCA Tools</div>
+<table class="ctable"><tr><th>Tool</th><th>Purpose</th><th>Application</th></tr><tr><td>------</td><td>---------</td><td>-------------</td></tr><tr><td>**Fishbone (Ishikawa)**</td><td>Categorise causes</td><td>6 Ms: Man, Machine, Method, Material, Measurement, Mother Nature (Environment)</td></tr><tr><td>**5 Whys**</td><td>Drill to root</td><td>Ask "Why?" iteratively (typically 5×) until systemic cause</td></tr><tr><td>**Swiss Cheese Model**</td><td>Visualise defences</td><td>Latent holes (system) align with active error → Harm. Defences: Protocols, Training, Supervision, Equipment</td></tr><tr><td>**SEIPS**</td><td>Systems analysis</td><td>**Systems Engineering Initiative for Patient Safety**: Person, Tasks, Tools, Environment, Organization → Processes → Outcomes</td></tr><tr><td>**Timeline / Chronology**</td><td>Sequence events</td><td>Identify gaps, delays, handover failures</td></tr><tr><td>**Barrier Analysis**</td><td>Defences failed</td><td>Identify which barriers were absent/ineffective</td></tr></table>
+<div class="sub-h">Action Hierarchy (Strength of Interventions)</div>
+<table class="ctable"><tr><th>Strength</th><th>Examples</th><th>Sustainability</th></tr><tr><td>----------</td><td>----------</td><td>----------------</td></tr><tr><td>**Strong**</td><td>**Forcing functions** (Hard stops, Lockouts), Automation, Computerised alerts, Physical redesign</td><td>**High** — Independent of human memory</td></tr><tr><td>**Intermediate**</td><td>Checklists, Standardised protocols, Cognitive aids, Redundancy (double-check), Simplification</td><td>Medium</td></tr><tr><td>**Weak**</td><td>Education/Training, Policies/Procedures, Memos, Reminders, Discipline</td><td>Low — Reliant on human compliance</td></tr></table>
+<div class="callout"><b>Hierarchy of Effectiveness</b>: Forcing Functions &gt; Automation &gt; Standardisation &gt; Checklists &gt; Education &gt; Punishment</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Patient Safety — Core Concepts</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Never Events (NHS England — 2018 Framework)</div>
+<table class="ctable"><tr><th>Category</th><th>Examples</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Surgical**</td><td>Wrong site surgery, Wrong implant/prosthesis, Retained foreign object, Wrong procedure</td></tr><tr><td>**Medication**</td><td>IV KCl on wards, Insulin "U" error, Intrathecal vincristine, Overdose midazolam in child</td></tr><tr><td>**Device**</td><td>Misplaced NG/OG tube (no pH check), Oxygen tubing to air flowmeter</td></tr><tr><td>**General**</td><td>Falls from unrestricted windows, Chest/neck entrapment in bedrails, Transfusion ABO mismatch</td></tr></table>
+<div class="callout"><b>Never Event = "Serious, largely preventable safety incident that should not occur if preventive measures implemented."</b> Mandatory reporting, RCA required, CQC notified.</div>
+<div class="sub-h">Incident Reporting &amp; Learning</div>
+<table class="ctable"><tr><th>System</th><th>Purpose</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**NRLS / LFPSE**</td><td>National Reporting & Learning System / Learn from Patient Safety Events (England)</td></tr><tr><td>**Datix / Ulysses / Safeguard**</td><td>Local incident reporting systems</td></tr><tr><td>**Yellow Card**</td><td>Medicines/Devices (MHRA)</td></tr><tr><td>**SIRI**</td><td>Serious Incident Requiring Investigation (STEIS)</td></tr><tr><td>**HSIB**</td><td>Healthcare Safety Investigation Branch (Independent, no-blame)</td></tr></table>
+<div class="sub-h">Duty of Candour (Statutory — Regulation 20, HSCA 2008)</div>
+<table class="ctable"><tr><th>Trigger</th><th>Notifiable Safety Incident</th></tr><tr><td>---------</td><td>---------------------------</td></tr><tr><td>**Death**</td><td>Unintended/unexpected</td></tr><tr><td>**Severe Harm**</td><td>Permanent lessening of function (physical/psychological)</td></tr><tr><td>**Moderate Harm**</td><td>Significant but not permanent harm; Requires further treatment</td></tr><tr><td>**Prolonged Psychological Harm**</td><td>≥28 days</td></tr></table>
+<table class="ctable"><tr><th>Organisational Duty</th><th>Professional Duty</th></tr><tr><td>---------------------</td><td>-------------------</td></tr><tr><td>Tell patient (in person + writing)</td><td>Same + Report to regulator if required</td></tr><tr><td>Apologise (empathy, not liability admission)</td><td></td></tr><tr><td>Explain what happened, known/unknown</td><td></td></tr><tr><td>Provide support</td><td></td></tr><tr><td>Record & Keep records</td><td></td></tr></table>
+<div class="sub-h">Human Factors / Ergonomics</div>
+<table class="ctable"><tr><th>Framework</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**SEIPS 2.0/3.0**</td><td>Person, Tasks, Tools, Environment, Organization → Processes → Outcomes (Patient, Staff, System)</td></tr><tr><td>**TeamSTEPPS**</td><td>Team structure, Communication (SBAR, Call-out, Check-back), Leadership, Situation monitoring, Mutual support</td></tr><tr><td>**Non-Technical Skills (NOTSS / ANTS)**</td><td>Situation awareness, Decision-making, Communication, Teamwork, Leadership</td></tr><tr><td>**Checklists**</td><td>Forcing function (WHO Surgical Safety Checklist, Central Line Bundle, Sepsis 6)</td></tr><tr><td>**Time-out / Sign-in / Sign-out**</td><td>WHO Surgical Checklist (Briefing → Time-out → Debriefing)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Clinical Governance — 7 Pillars (NHS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pillar</th><th>Key Activities</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**1. Clinical Effectiveness**</td><td>Evidence-based practice, NICE guidelines, Outcome measurement, CQUIN</td></tr><tr><td>**2. Clinical Audit**</td><td>Standard → Measure → Compare → Act → Re-audit (Cycle)</td></tr><tr><td>**3. Risk Management**</td><td>Incident reporting, RCA, Risk registers, Never Events, Claims management</td></tr><tr><td>**4. Patient & Public Involvement**</td><td>Experience surveys, Co-design, PALS, Healthwatch</td></tr><tr><td>**5. Education & Training**</td><td>CPD, Revalidation, Simulation, Human factors training</td></tr><tr><td>**6. Staffing & Workforce**</td><td>Safe staffing, Rostering, Wellbeing, Raising concerns</td></tr><tr><td>**7. Information & IT**</td><td>Clinical coding, EHR, Information governance, Data quality</td></tr></table>
+<div class="sub-h">Clinical Audit Cycle</div>
+<p>``<code>mermaid flowchart LR A[Select Topic&lt;br/&gt;High risk, High volume, Evidence gap] --&gt; B[Set Standards&lt;br/&gt;Evidence-based, Measurable] B --&gt; C[Collect Data&lt;br/&gt;Retrospective/Prospective] C --&gt; D[Compare&lt;br/&gt;Actual vs Standard] D --&gt; E[Implement Change&lt;br/&gt;PDSA if Needed] E --&gt; F[Re-audit&lt;br/&gt;Sustain Improvement] </code>``</p>
+<div class="callout"><b>Audit ≠ Research.</b> Audit = "Are we doing what we should?" Research = "What should we do?"</div>
+<div class="sub-h">Revalidation (GMC) — 5-Year Cycle</div>
+<ol><li><b>CPD</b> — 50 hours/year (mix of personal, internal, external)</li><li><b>Quality Improvement Activity</b> — At least 1 per 5 years</li><li><b>Significant Events</b> — Reflection on SEAs/Complaints</li><li><b>Patient/Colleague Feedback</b> — Formal surveys (MSF/PSQ)</li><li><b>Appraisal</b> — Annual with trained appraiser → Recommendation to GMC</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ High-Reliability Safety Interventions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">WHO Surgical Safety Checklist (2008)</div>
+<table class="ctable"><tr><th>Phase</th><th>Key Checks</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Sign-in (Before Anaesthesia)**</td><td>Patient ID, Site, Consent, Allergy, Airway risk, Blood loss risk</td></tr><tr><td>**Time-out (Before Incision)**</td><td>Team intro, Procedure, Site, Antibiotics (given ≤60min), Imaging, Critical events anticipated</td></tr><tr><td>**Sign-out (Before Wound Closure)**</td><td>Procedure name, Counts (swabs/instruments), Specimen labelling, Equipment issues, Recovery plan</td></tr></table>
+<div class="callout"><b>Evidence:</b> 30-50% reduction in mortality/complications (Haynes NEJM 2009).</div>
+<div class="sub-h">Central Line Bundle (CLAB Prevention)</div>
+<table class="ctable"><tr><th>Component</th><th>Standard</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Hand Hygiene**</td><td>Before/after</td></tr><tr><td>**Maximal Barrier**</td><td>Cap, Mask, Gown, Gloves, Full drape</td></tr><tr><td>**Chlorhexidine 2%**</td><td>Skin prep (allow to dry)</td></tr><tr><td>**Optimal Site**</td><td>Subclavian preferred (lowest infection)</td></tr><tr><td>**Daily Review**</td><td>Necessity? Remove ASAP</td></tr></table>
+<div class="sub-h">Sepsis 6 Bundle (UK Sepsis Trust)</div>
+<table class="ctable"><tr><th>Within 1 Hour</th><th></th></tr><tr><td>---------------</td><td>--</td></tr><tr><td>1. Give Oxygen (target SpO₂ 94-98%)</td><td>4. Take Blood Cultures (before abx)</td></tr><tr><td>2. IV Antibiotics (broad-spectrum)</td><td>5. Measure Serum Lactate</td></tr><tr><td>3. IV Fluid Resuscitation (500ml crystalloid)</td><td>6. Measure Urine Output (catheter if needed)</td></tr></table>
+<div class="sub-h">Medication Safety — High-Alert Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Example</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Forcing Functions**</td><td>KCl off wards, No morphine 30mg/mL on wards, Separate storage LASA drugs</td></tr><tr><td>**Standardisation**</td><td>Concentrations, Protocols, Order sets, Smart pumps</td></tr><tr><td>**Tall Man Lettering**</td><td>HYDROmorphone, OXYcodone, MORPHine</td></tr><tr><td>**Independent Double-Check**</td><td>High-alert drugs (Insulin, Heparin, Chemotherapy, KCl, Opioids IV)</td></tr><tr><td>**Medication Reconciliation**</td><td>Admission, Transfer, Discharge (Gold standard)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Practical QI Project Template</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[1. Identify Problem&lt;br/&gt;Data, Stakeholder Voice] --&gt; B[2. Form Team&lt;br/&gt;Multidisciplinary, Sponsor] B --&gt; C[3. Aim Statement&lt;br/&gt;SMART: Who, What, By When, How Much] C --&gt; D[4. Driver Diagram&lt;br/&gt;Primary/Secondary Drivers] D --&gt; E[5. Measurement Plan&lt;br/&gt;Outcome/Process/Balancing&lt;br/&gt;Run Chart / SPC] E --&gt; F[6. PDSA Cycles&lt;br/&gt;Test Small → Learn → Scale] F --&gt; G[7. Sustain&lt;br/&gt;Embed in Policy/EHR&lt;br/&gt;Standard Work] G --&gt; H[8. Spread&lt;br/&gt;Other Wards/Trusts&lt;br/&gt;Share Learning] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Model for Improvement**</td><td>3 Questions (Aim, Measures, Changes) → **PDSA** (Plan, Do, Study, Act)</td></tr><tr><td>**Driver Diagram**</td><td>Aim → Primary Drivers → Secondary Drivers → Change Ideas</td></tr><tr><td>**Measures**</td><td>Outcome (patient), Process (system), Balancing (unintended)</td></tr><tr><td>**Run Chart**</td><td>Median, Shift (6), Trend (5), Runs, Astronomical — Detect improvement</td></tr><tr><td>**Control Chart (SPC)**</td><td>Mean ±3σ, Special vs Common Cause, Western Electric rules</td></tr><tr><td>**PDSA**</td><td>Rapid cycles: Plan → Do (small) → Study (data) → Act (Adopt/Adapt/Abandon)</td></tr><tr><td>**RCA Tools**</td><td>Fishbone (6Ms), 5 Whys, Swiss Cheese, SEIPS, Timeline</td></tr><tr><td>**Action Hierarchy**</td><td>**Forcing Functions > Automation > Standardisation > Checklists > Education > Punishment**</td></tr><tr><td>**Never Events**</td><td>Wrong site surgery, Retained foreign object, KCl on wards, Insulin "U", Intrathecal vincristine, NG misplacement</td></tr><tr><td>**Duty of Candour**</td><td>Statutory (Reg 20): Tell + Apologise + Explain + Support + Record (Notifiable: Death, Severe/Moderate harm, Psych harm)</td></tr><tr><td>**Clinical Governance**</td><td>7 Pillars: Effectiveness, Audit, Risk, Patient Involvement, Education, Workforce, Information</td></tr><tr><td>**Audit Cycle**</td><td>Standard → Measure → Compare → Act → Re-audit (Not research)</td></tr><tr><td>**Human Factors**</td><td>SEIPS, TeamSTEPPS, NOTSS, Checklists, Time-outs, Non-technical skills</td></tr><tr><td>**Safety Interventions**</td><td>WHO Checklist, Central Line Bundle, Sepsis 6, Medication Reconciliation, VTE Prophylaxis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What is the Model for Improvement and PDSA cycle?</td><td>3 Questions: Aim, Measures, Changes. PDSA: Plan (predict, plan data), Do (small test), Study (analyse vs prediction), Act (Adopt/Adapt/Abandon).</td></tr><tr><td>2</td><td>What are the 3 types of measures in QI?</td><td>**Outcome** (patient result), **Process** (system function), **Balancing** (unintended consequences).</td></tr><tr><td>3</td><td>Run chart — rules for special cause?</td><td>Shift (6 same side of median), Trend (5 increasing/decreasing), Runs (too few/many), Astronomical (outlier).</td></tr><tr><td>4</td><td>Common vs Special cause variation?</td><td>Common = Inherent in system (improve system). Special = Assignable, external (investigate & remove).</td></tr><tr><td>5</td><td>What is a Never Event? Name 5.</td><td>Wrong site surgery, Retained foreign object, KCl on wards, Insulin "U" error, Intrathecal vincristine, NG misplacement, Transfusion ABO mismatch, Bedrail entrapment.</td></tr><tr><td>6</td><td>RCA — Fishbone diagram categories?</td><td>6 Ms: Man (People), Machine, Method, Material, Measurement, Mother Nature (Environment).</td></tr><tr><td>7</td><td>5 Whys — how does it work?</td><td>Ask "Why?" iteratively (~5 times) to drill from symptom to systemic root cause.</td></tr><tr><td>8</td><td>Action hierarchy — strongest intervention?</td><td>**Forcing functions / Automation** (hard stops, lockouts, computerised alerts) — independent of human memory.</td></tr><tr><td>9</td><td>Duty of Candour — statutory triggers?</td><td>Death, Severe harm, Moderate harm, Prolonged psychological harm (unintended/unexpected).</td></tr><tr><td>10</td><td>WHO Surgical Checklist — 3 phases?</td><td>Sign-in (before anaesthesia), Time-out (before incision), Sign-out (before closure).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"QI = Audit"**</td><td>**NO.** Audit = "Are we meeting standard?" QI = "Can we improve system?" (PDSA, iterative).</td></tr><tr><td>**"Run chart = Control chart"**</td><td>**NO.** Run chart = Median + Shift/Trend rules. Control chart = Mean ±3σ, Zone rules, Distinguish common/special cause.</td></tr><tr><td>**"Special cause = Most variation"**</td><td>**NO.** **Common cause = 94-97%** of variation. Special cause = 3-6%.</td></tr><tr><td>**"RCA = Blame individuals"**</td><td>**NO.** RCA = **Systems analysis** (Swiss Cheese, SEIPS). Focus on latent conditions, not blame.</td></tr><tr><td>**"Education = Strong intervention"**</td><td>**NO.** Education = **Weak** (relies on memory/compliance). **Forcing functions = Strongest**.</td></tr><tr><td>**"Audit = Research"**</td><td>**NO.** Audit = "Are we doing what we should?" Research = "What should we do?"</td></tr><tr><td>**"Duty of Candour = Admit negligence"**</td><td>**NO.** "Sorry this happened" ≠ "I was negligent." Apology ≠ Legal admission.</td></tr><tr><td>**"Checklist = Magic bullet"**</td><td>**NO.** Checklist = **Intermediate** strength. Works with culture, training, leadership buy-in.</td></tr><tr><td>**"PDSA = One big cycle"**</td><td>**NO.** Multiple **rapid** PDSAs (days/weeks) > One big implementation. Test → Learn → Scale.</td></tr><tr><td>**"Common cause = Fix the person"**</td><td>**NO.** Common cause = **Fix the SYSTEM** (process redesign, standardisation).</td></tr></table>
+<div class="callout"><b>Mnemonic: QI PATIENT SAFETY</b> <b>Q</b>uality Improvement: <b>Model for Improvement → 3 Questions → PDSA (Rapid Cycles)</b> <b>P</b>lan: <b>Aim (SMART), Driver Diagram, Measurement Plan (Outcome/Process/Balancing)</b> <b>A</b>ct: <b>PDSA Cycles</b> (Test Small → Learn → Scale) → <b>Adopt, Adapt, Abandon</b> <b>T</b>ools: <b>Run Chart</b> (Median, Shift/Trend Rules) vs <b>SPC</b> (Mean±3σ, Common vs Special Cause) <b>I</b>mprovement: <b>Standardise → Embed in EHR/Policy → Spread</b> <b>E</b>ngage: <b>Multidisciplinary Team, Patient Voice, Executive Sponsor</b> <b>N</b>ever Events: <b>Wrong Site, Retained Object, KCl, Insulin U, Intrathecal Vincristine, NG Misplacement</b> <b>T</b>ransparency: <b>Duty of Candour</b> (Statutory: Tell, Apologise, Explain, Support, Record) <b>P</b>atient Safety: <b>Hierarchy of Interventions</b> — Forcing Functions &gt; Automation &gt; Standardisation &gt; Checklists &gt; Education <b>A</b>nalysis (RCA): <b>Fishbone (6Ms), 5 Whys, Swiss Cheese, SEIPS, Timeline</b> <b>I</b>ntervention Strength: <b>Forcing Function &gt; Automation &gt; Standardisation &gt; Checklists &gt; Education</b> <b>E</b>rror Theory: <b>Swiss Cheese</b> (Latent Holes + Active Error → Harm) <b>N</b>HS Governance: <b>7 Pillars</b> (Effectiveness, Audit, Risk, Involvement, Education, Workforce, Info) <b>S</b>afety Culture: <b>Just Culture</b> (Human Error → Console; At-risk → Coach; Reckless → Punish) <b>A</b>udit Cycle: <b>Standard → Measure → Compare → Act → Re-audit</b> (Not Research!) <b>F</b>eedback: <b>Run Chart Rules</b> (Shift 6, Trend 5, Runs, Astronomical) <b>E</b>xecutive Sponsor: <b>Essential for Resources + Barrier Removal</b> <b>T</b>eamSTEPPS: <b>Communication (SBAR), Leadership, Situation Awareness, Mutual Support</b> <b>Y</b> (Why?): <b>Root Cause → 5 Whys → System Fix, Not Blame</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Quality Improvement&lt;br&gt;&amp; Patient Safety)) Model for Improvement 3 Questions: Aim, Measures, Changes PDSA: Plan, Do, Study, Act Measurement Outcome / Process / Balancing Run Charts (Median, Shift/Trend) SPC Charts (Mean±3σ, Special Cause) QI Methodology Driver Diagram PDSA Cycles (Test Small → Scale) Action Hierarchy (Forcing &gt; Education) Root Cause Analysis Fishbone (6Ms) 5 Whys Swiss Cheese SEIPS / Timeline Patient Safety Never Events (Wrong Site, KCl, Insulin U, etc.) Duty of Candour (Statutory) Incident Reporting (NRLS, SIRI, HSIB) Human Factors SEIPS / TeamSTEPPS Checklists / Time-outs NOTSS / ANTS Clinical Governance 7 Pillars Audit Cycle (Standard→Measure→Compare→Act→Re-audit) Revalidation (5-year) Safety Interventions WHO Checklist Central Line Bundle Sepsis 6 Medication Reconciliation VTE Prophylaxis </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Model for Improvement / PDSA</td><td>3</td><td></td><td></td></tr><tr><td>Measurement (Outcome/Process/Balancing)</td><td>2</td><td></td><td></td></tr><tr><td>Run Charts / SPC</td><td>3</td><td></td><td></td></tr><tr><td>RCA Tools</td><td>3</td><td></td><td></td></tr><tr><td>Action Hierarchy</td><td>2</td><td></td><td></td></tr><tr><td>Never Events</td><td>2</td><td></td><td></td></tr><tr><td>Duty of Candour</td><td>2</td><td></td><td></td></tr><tr><td>Clinical Governance / Audit</td><td>2</td><td></td><td></td></tr><tr><td>Human Factors / Safety Interventions</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the methodology for a quality improvement project to reduce time-to-antibiotics in sepsis."</td><td>Model for Improvement → Aim → Driver Diagram → Measures (Outcome/Process/Balancing) → PDSA cycles → Run Charts → Sustain → Spread. Include sepsis-specific: Sepsis 6, NEWS2, Sepsis screening.</td></tr><tr><td>**Short Note**</td><td>"Root cause analysis tools."</td><td>Fishbone (6Ms), 5 Whys, Swiss Cheese, SEIPS, Timeline. Action hierarchy: Forcing functions > Education.</td></tr><tr><td>**Viva**</td><td>"You're leading a QI project to reduce falls on elderly ward. Run chart shows 6 points below median after intervention. Interpretation?"</td><td>**Shift = Special cause = Improvement signal.** Run chart rule: 6 consecutive points on one side of median = statistically significant change.</td></tr><tr><td>**Ward Round**</td><td>"Incident: Wrong-site block performed. Immediate actions?"</td><td>1. Patient safety (stop, assess harm). 2. Duty of Candour (inform patient/family, apologise). 3. Report (NRLS/SIRI). 4. Immediate safety actions (stop list). 5. RCA (Fishbone, 5 Whys). 6. Action plan (Forcing functions: site marking, time-out). 7. Share learning.</td></tr><tr><td>**Last-Night**</td><td>"Model: Aim→Measures→Changes→PDSA. Measures: Outcome/Process/Balancing. Run: Shift6/Trend5. RCA: Fishbone/5Whys/SwissCheese. Hierarchy: Forcing>Auto>Standard>Checklist>Edu. NeverEvents: WrongSite/KCl/InsulinU/IntrathecalVinca/NGmisplace. Candour: Death/Severe/Mod/Psych. Audit: Std→Meas→Compare→Act→Reaudit. Governance: 7Pillars. JustCulture: Human/At-risk/Reckless."</td><td>Compressed frameworks.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Model for Improvement</b>: 3 Questions (Aim, Measures, Changes) → <b>PDSA</b> cycles (Plan, Do, Study, Act) — rapid, iterative</li><li><b>Driver Diagram</b>: Aim → Primary Drivers → Secondary Drivers → Change Ideas</li><li><b>Measures</b>: <b>Outcome</b> (patient), <b>Process</b> (system), <b>Balancing</b> (unintended)</li><li><b>Run Charts</b>: Median + Rules (Shift 6, Trend 5, Runs, Astronomical) — detect improvement signals</li><li><b>Control Charts (SPC)</b>: Mean ±3σ, Distinguish <b>Common Cause</b> (improve system) vs <b>Special Cause</b> (investigate)</li><li><b>RCA Tools</b>: <b>Fishbone (6Ms)</b>, <b>5 Whys</b>, <b>Swiss Cheese</b>, <b>SEIPS</b>, Timeline</li><li><b>Action Hierarchy</b>: <b>Forcing Functions &gt; Automation &gt; Standardisation &gt; Checklists &gt; Education &gt; Punishment</b></li><li><b>Never Events</b>: Wrong site, Retained object, KCl on wards, Insulin "U", Intrathecal vincristine, NG misplacement, Transfusion mismatch</li><li><b>Duty of Candour (Statutory)</b>: Death/Severe/Moderate harm/Psych harm → Tell, Apologise, Explain, Support, Record</li><li><b>Clinical Governance</b>: 7 Pillars (Effectiveness, Audit, Risk, Involvement, Education, Workforce, Information)</li><li><b>Audit Cycle</b>: Standard → Measure → Compare → Act → Re-audit (Not research!)</li><li><b>Human Factors</b>: SEIPS, TeamSTEPPS, Checklists, Time-outs, Non-technical skills (NOTSS)</li><li><b>Key Safety Interventions</b>: WHO Surgical Checklist, Central Line Bundle, Sepsis 6, Medication Reconciliation, VTE Prophylaxis</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Model for Improvement — 3 Questions are:</b></li></ol>
+<p>A. What, Why, How  B. <b>Aim, Measures, Changes</b>  C. Plan, Do, Study  D. Who, What, When <i>Answer: B. 1) What are we trying to accomplish? 2) How will we know? 3) What changes can we make?</i></p>
+<ol><li><b>Run chart rule for "Shift":</b></li></ol>
+<p>A. 5 points trending  B. <b>6 consecutive points on same side of median</b>  C. 14 alternating  D. 1 point outside 3σ <i>Answer: B. 6+ consecutive points above or below median = Shift (special cause).</i></p>
+<ol><li><b>Common cause variation — percentage of total variation:</b></li></ol>
+<p>A. 3-6%  B. 10-20%  C. <b>94-97%</b>  D. 50% <i>Answer: C. Common cause = inherent system variation (94-97%). Special cause = 3-6%.</i></p>
+<ol><li><b>Strongest intervention in action hierarchy:</b></li></ol>
+<p>A. Education  B. Policy  C. <b>Forcing function / Automation</b>  D. Checklist <i>Answer: C. Forcing functions (hard stops, lockouts) &gt; Automation &gt; Standardisation &gt; Checklists &gt; Education.</i></p>
+<ol><li><b>NHS Never Event — which is listed?</b></li></ol>
+<p>A. Hospital-acquired infection  B. <b>IV potassium on wards</b>  C. Pressure ulcer  D. Drug reaction <i>Answer: B. IV concentrated KCl on wards = Never Event. Others are preventable harm but not Never Events.</i></p>
+<ol><li><b>Duty of Candour — notifiable harm includes:</b></li></ol>
+<p>A. Minor harm  B. <b>Moderate harm (significant but not permanent)</b>  C. Near miss  D. Patient dissatisfaction <i>Answer: B. Notifiable: Death, Severe harm, Moderate harm, Prolonged psychological harm.</i></p>
+<ol><li><b>WHO Surgical Checklist — Time-out phase includes:</b></li></ol>
+<p>A. Allergy check  B. <b>Team intros, Procedure, Site, Antibiotics given, Imaging, Critical events</b>  C. Blood loss estimate  D. DVT prophylaxis <i>Answer: B. Time-out = Team intro, Procedure, Site, Antibiotics (≤60min), Imaging, Anticipated critical events.</i></p>
+<ol><li><b>Audit vs Research:</b></li></ol>
+<p>A. Same  B. <b>Audit = "Are we doing what we should?" Research = "What should we do?"</b>  C. Research = Audit with ethics  D. Audit = Retrospective, Research = Prospective <i>Answer: B. Audit compares practice to standard; Research generates new knowledge.</i></p>
+<ol><li><b>Just Culture — At-risk behaviour response:</b></li></ol>
+<p>A. Punish  B. Console  C. <b>Coach</b>  D. Ignore <i>Answer: B. Human Error → Console; At-risk Behaviour → Coach; Reckless Behaviour → Punish.</i></p>
+<ol><li><b>SEIPS model components:</b></li></ol>
+<p>A. Safety, Environment, Infection, Process, Staff  B. <b>Systems, Engineering, Initiative, Patient, Safety</b>  C. <b>Person, Tasks, Tools, Environment, Organization</b>  D. Structure, Process, Outcome, Input, Output <i>Answer: C. Systems Engineering Initiative for Patient Safety: Person, Tasks, Tools, Environment, Organization → Processes → Outcomes.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>QI project: Reduce door-to-needle time for stroke thrombolysis. Current median 60 min. After intervention, run chart shows 7 consecutive points below median. Interpretation?</b></li></ol>
+<p>A. Common cause variation  B. <b>Special cause improvement (Shift rule)</b>  C. No change  D. Deterioration <i>Answer: B. Shift = 6+ consecutive points on one side of median = signal of improvement.</i></p>
+<ol><li><b>Never Event occurs: Wrong-site skin lesion excised. Immediate organisational duty?</b></li></ol>
+<p>A. Root cause analysis within 72h  B. <b>Duty of Candour: Inform patient, Apologise, Support, Record</b>  C. Suspend surgeon  D. Report to GMC only <i>Answer: B. Statutory Duty of Candour triggered: Tell patient (in person+writing), Apologise, Explain, Support, Record.</i></p>
+<ol><li><b>QI team proposes "educate all nurses on new VTE protocol" as primary intervention. Assessment?</b></li></ol>
+<p>A. Strong  B. Intermediate  C. <b>Weak (Education alone)</b>  D. Forcing function <i>Answer: C. Education = Weak (relies on memory/compliance). Need standardisation, checklists, forcing functions.</i></p>
+<ol><li><b>Control chart rule — point above UCL (Upper Control Limit at +3σ):</b></li></ol>
+<p>A. Common cause  B. <b>Special cause</b>  C. Process improvement  D. Measurement error <i>Answer: B. Point beyond ±3σ = Special cause signal (Western Electric Rule 1).</i></p>
+<ol><li><b>Just Culture — nurse bypasses barcode scan "to save time" repeatedly. Classification?</b></li></ol>
+<p>A. Human Error  B. <b>At-risk Behaviour</b>  C. Reckless Behaviour  D. System Failure <i>Answer: B. At-risk Behaviour (choosing shortcut despite knowing protocol) → Coach, Address system factors.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-C, 4-C, 5-B, 6-B, 7-B, 8-B, 9-C, 10-C</td><td>1-B, 2-B, 3-C, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1.1 Clinical Reasoning &amp; Diagnostic Process]] — Diagnostic error, Cognitive biases, Safety-netting</li><li>[[1.2 Evidence-Based Medicine]] — Evidence-based QI, GRADE for QI, Statistics for improvement</li><li>[[1.3 Communication Skills]] — SBAR/ISBAR handover, TeamSTEPPS, Duty of candour conversation</li><li>[[1.4 Ethics &amp; Law]] — Duty of candour (Legal), Consent for QI, Confidentiality in reporting</li><li>[[1.6 Guidelines &amp; Pathways]] — QI for guideline implementation, Clinical pathways, Variance tracking</li><li>[../../Medication Safety/QI] — Medication reconciliation, High-alert drug safety, PINCH drugs</li><li>[../../Perioperative/QI] — WHO Checklist, VTE prophylaxis bundles, SSI bundles</li><li>[../../Clinical Context/Antimicrobial Stewardship] — Sepsis bundles, Antibiotic stewardship QI</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Quality Improvement Patient Safety · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

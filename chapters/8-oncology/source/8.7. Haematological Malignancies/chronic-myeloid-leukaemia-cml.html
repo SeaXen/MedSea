@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chronic Myeloid Leukaemia Cml — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.7. HAEMATOLOGICAL MALIGNANCIES</span>
+      <div class="h1">Chronic Myeloid Leukaemia Cml</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Diagnose CML using <b>BCR::ABL1 (t(9;22))</b> and apply <b>ELTS/Sokal/ELN risk scores</b></li><li>[ ] Apply <b>TKI sequencing</b> (Imatinib → 2nd/3rd/4th gen) based on response milestones &amp; resistance</li><li>[ ] Monitor <b>molecular response</b> (BCR-ABL1 IS qPCR) — <b>MR4.5 (MR4.5 = MR4.5) = TFR eligibility</b></li><li>[ ] Manage <b>TKI resistance</b> (T315I mutation → Ponatinib; compound mutations)</li><li>[ ] Apply <b>Treatment-Free Remission (TFR)</b> criteria and monitoring</li><li>[ ] Recognise and manage <b>Blast Crisis</b> and <b>TKI resistance mechanisms</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Myeloproliferative neoplasm** driven by **BCR::ABL1 (t(9;22))** constitutively active tyrosine kinase</td></tr><tr><td>**Incidence**</td><td>**1-2/100,000/year**</td></tr><tr><td>**Median Age**</td><td>**55-65 years**</td></tr><tr><td>**Sex Ratio**</td><td>**M > F** (1.5:1)</td></tr><tr><td>**Natural History**</td><td>**Chronic Phase (CP) → Accelerated Phase (AP) → Blast Crisis (BC)** — untreated CP → AP → BC in 3-5 years</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Diagnosis & Risk Stratification</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnostic Criteria</div>
+<table class="ctable"><tr><th>Criterion</th><th>Requirement</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**BCR::ABL1**</td><td>**t(9;22) (q34;q11)** — **FISH/RT-PCR positive**</td></tr><tr><td>**WBC**</td><td>**Typically >100×10⁹/L** (can be normal in "leukaemic" phase)</td></tr><tr><td>**Bone Marrow**</td><td>**Hypercellualr, left-shifted myelopoiesis**, **<10% blasts (CP)**</td></tr><tr><td>**Basophilia**</td><td>**>2%** (characteristic)</td></tr></table>
+<div class="sub-h">Risk Scores (Chronic Phase)</div>
+<table class="ctable"><tr><th>Score</th><th>Variables</th><th>Risk Groups</th><th>Use</th></tr><tr><td>-------</td><td>-----------</td><td>-------------</td><td>-----</td></tr><tr><td>**Sokal**</td><td>Age, Spleen size, Plt %, Blast %</td><td>Low / Intermediate / High</td><td>Historical</td></tr><tr><td>**Hasford (ELTS)**</td><td>Age, Spleen, Plt, Blast, Eos, Baso</td><td>Low / Intermediate / High</td><td>**Preferred**</td></tr><tr><td>**ELTS**</td><td>Age, Spleen, Plt, Blast, Eos, Baso</td><td>Low / Intermediate / High</td><td>**Current Standard**</td></tr><tr><td>**EUTOS**</td><td>Spleen, Basophils%</td><td>Low / High</td><td>Simplified</td></tr></table>
+<table class="ctable"><tr><th>Risk</th><th>Sokal Score</th><th>Hasford Score</th><th>ELTS Score</th></tr><tr><td>------</td><td>-------------</td><td>---------------</td><td>------------</td></tr><tr><td>**Low**</td><td><0.8</td><td><780</td><td>0</td></tr><tr><td>**Intermediate**</td><td>0.8-1.2</td><td>780-1480</td><td>1-2</td></tr><tr><td>**High**</td><td>>1.2</td><td>>1480</td><td>≥3</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">TKI Therapy — **Treatment Revolution**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">TKI Generations &amp; Indications</div>
+<table class="ctable"><tr><th>Generation</th><th>TKI</th><th>Dose</th><th>Key Indications</th></tr><tr><td>------------</td><td>-----</td><td>------</td><td>-----------------</td></tr><tr><td>**1st Gen**</td><td>**Imatinib**</td><td>400mg OD</td><td>**1L Standard** (IRIS trial)</td></tr><tr><td>**2nd Gen**</td><td>**Dasatinib**</td><td>100mg OD</td><td>**1L (superior molecular response)**, Resistance/Intolerance to Imatinib</td></tr><tr><td></td><td>**Nilotinib**</td><td>300mg BD</td><td>**1L**, Faster deep molecular response</td></tr><tr><td></td><td>**Bosutinib**</td><td>400mg OD</td><td>**Resistance/Intolerance**</td></tr><tr><td>**3rd Gen**</td><td>**Ponatinib**</td><td>**45mg OD**</td><td>**T315I mutation**, **Resistance to 2nd/3rd gen**, **Last resort**</td></tr><tr><td>**4th Gen**</td><td>**Asciminib**</td><td>40mg BD</td><td>**STAMP inhibitors** — **T315I, resistance to all TKIs**</td></tr></table>
+<div class="callout">[!critical] <b>TKI Choice for 1L</b> - <b>Imatinib 400mg OD</b> = <b>Standard 1L</b> (IRIS: 89% 8-yr OS) - <b>Dasatinib/Nilotinib</b> = <b>Faster/Deeper MMR</b>, higher CCyR/MMR rates — <b>Preferred if high risk (Sokal/Hasford High)</b> - <b>Nilotinib</b> — <b>QTc prolongation, hyperglycaemia, pancreatitis</b> — avoid if cardiac risk - <b>Dasatinib</b> — <b>Pleural effusion, pulmonary HTN</b> — avoid if lung disease - <b>Bosutinib</b> — <b>Diarrhoea, hepatotoxicity</b> — 2L/3L - <b>Ponatinib</b> — <b>ONLY for T315I or multi-TKI resistance</b> — <b>Arterial thrombosis, HTN, pancreatitis</b> - <b>Asciminib</b> — <b>STAMP inhibitor (myristoyl pocket)</b> — <b>T315I, post-Ponatinib</b> — No arterial toxicity</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Molecular Response Monitoring — **BCR-ABL1 IS (International Scale)**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Response Level</th><th>Definition (IS)</th><th>Clinical Significance</th></tr><tr><td>----------------</td><td>-----------------</td><td>----------------------</td></tr><tr><td>**CHR (Complete Haematological Response)**</td><td>**WBC <10, Plt <450, Basophils <5%, No extramedullary disease**</td><td>Baseline</td></tr><tr><td>**CyR (Cytogenetic Response)**</td><td>**CCyR: 0% Ph+ metaphases**; **PCyR: 1-35%**</td><td>Standard cytogenetics</td></tr><tr><td>**MMR (Major Molecular Response)**</td><td>**BCR-ABL1 ≤0.1% IS** (≤0.1%)</td><td>**Key milestone** (≤0.1% = MMR)</td></tr><tr><td>**MR4 (MR4)**</td><td>**BCR-ABL1 ≤0.01% IS**</td><td>**Deep Molecular Response**</td></tr><tr><td>**MR4.5 (MR4.5)**</td><td>**BCR-ABL1 ≤0.0032% IS** (≤0.0032%)</td><td>**TFR Eligibility**</td></tr><tr><td>**MR5 (MR5)**</td><td>**BCR-ABL1 ≤0.001% IS** (undetectable)</td><td>**Undetectable**</td></tr></table>
+<div class="callout">[!critical] <b>Monitoring Schedule (ELN/NCCN)</b> - <b>Every 3 months</b> until MMR - <b>Every 3-6 months</b> after MMR - <b>Every 6 months</b> after MR4.5</div>
+<div class="callout">[!critical] <b>Response Milestones (ELN 2020)</b> - <b>3 months</b>: <b>BCR-ABL1 ≤10%</b> (Early molecular response) - <b>6 months</b>: <b>BCR-ABL1 ≤1%</b> (MMR trajectory) - <b>12 months</b>: <b>MMR (≤0.1%)</b> — <b>Failure if &gt;0.1%</b> → switch TKI - <b>18 months</b>: <b>MR4 (≤0.01%)</b> - <b>24 months</b>: <b>MR4.5</b> → TFR eligibility</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Treatment Failure & Resistance Definitions (ELN 2020)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Timepoint</th><th>Failure</th><th>Warning</th><th>Optimal</th></tr><tr><td>-----------</td><td>---------</td><td>---------</td><td>---------</td></tr><tr><td>**3 months**</td><td>BCR-ABL1 >10%</td><td>1-10%</td><td>≤1%</td></tr><tr><td>**6 months**</td><td>>1%</td><td>0.1-1%</td><td>≤0.1% (MMR)</td></tr><tr><td>**12 months**</td><td>>0.1%</td><td>0.01-0.1%</td><td>≤0.01% (MR4)</td></tr><tr><td>**18 months**</td><td>>0.01%</td><td>0.001-0.01%</td><td>≤0.001 (MR4.5)</td></tr><tr><td>**Any time**</td><td>Loss of CHR, Loss of CyR, Loss of MMR, New mutations</td><td></td><td></td></tr></table>
+<div class="callout">[!critical] <b>Failure at any timepoint = Switch TKI</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">TKI Resistance & Mutation Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Resistance Mechanisms</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Examples</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**BCR-ABL1 Kinase Domain Mutations**</td><td>**T315I (gatekeeper)**, Y253H, E255K/V, F317L, T315A, F359V, Y253F</td></tr><tr><td>**BCR-ABL1 Amplification**</td><td>Gene amplification</td></tr><tr><td>**BCR-ABL1 Independent**</td><td>SRC kinase activation, Lyn, Hck, alternative pathways</td></tr></table>
+<div class="sub-h">TKI Selection by Mutation</div>
+<table class="ctable"><tr><th>Mutation</th><th>Imatinib</th><th>Dasatinib</th><th>Nilotinib</th><th>Bosutinib</th><th>Ponatinib</th><th>Asciminib</th></tr><tr><td>----------</td><td>----------</td><td>-----------</td><td>-----------</td><td>----------</td><td>-----------</td><td>-----------</td></tr><tr><td>**T315I**</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>**✓**</td><td>**✓**</td></tr><tr><td>**Y253H / E255K/V**</td><td>✗</td><td>**✓**</td><td>✗</td><td>**✓**</td><td>**✓**</td><td>**✓**</td></tr><tr><td>**F317L**</td><td>✗</td><td>✗</td><td>**✓**</td><td>**✓**</td><td>**✓**</td><td>**✓**</td></tr><tr><td>**T315A**</td><td>✗</td><td>**✓**</td><td>✗</td><td>**✓**</td><td>**✓**</td><td>**✓**</td></tr><tr><td>**F359V**</td><td>✗</td><td>**✓**</td><td>**✓**</td><td>**✓**</td><td>**✓**</td><td>**✓**</td></tr><tr><td>**Y253F**</td><td>✗</td><td>**✓**</td><td>✗</td><td>**✓**</td><td>**✓**</td><td>**✓**</td></tr><tr><td>**No mutation (BCR-ABL1 indep.)**</td><td>✗</td><td>±</td><td>±</td><td>±</td><td>**✓**</td><td>**✓**</td></tr></table>
+<div class="callout">[!critical] <b>T315I = Ponatinib or Asciminib ONLY</b> - <b>Ponatinib 45mg OD</b> → <b>Arterial thrombosis, HTN, pancreatitis</b> - <b>Asciminib 40mg BD</b> — <b>STAMP inhibitor (myristoyl pocket)</b>, <b>No arterial toxicity</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Treatment-Free Remission (TFR) — **New Endpoint**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Criteria</th><th>Requirement</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**Deep Molecular Response**</td><td>**MR4.5 (BCR-ABL1 ≤0.0032% IS) sustained ≥2 years**</td></tr><tr><td>**TKI Duration**</td><td>**≥3 years** on TKI prior to stopping</td></tr><tr><td>**Age**</td><td>Any (but more data in adults)</td></tr><tr><td>**Prior HSC Transplant**</td><td>Allowed if in sustained MR4.5</td></tr><tr><td>**Monitoring Post-Stop**</td><td>**q4-6 weeks ×1yr, q3mo ×2yr, q6mo thereafter**</td></tr><tr><td>**Relapse Definition**</td><td>**Loss of MMR (BCR-ABL1 >0.1%)** → **Restart same TKI**</td></tr></table>
+<table class="ctable"><tr><th>TFR Success Rate</th><th>Data</th></tr><tr><td>------------------</td><td>------</td></tr><tr><td>**Imatinib (STOP 2G-TFR)**</td><td>**~40-50% TFR at 2y**</td></tr><tr><td>**Nilotinib (ENESTfreedom)**</td><td>**~50% TFR at 2y**</td></tr><tr><td>**Dasatinib (DASFREE)**</td><td>**~50% TFR at 2y**</td></tr><tr><td>**Predictors of TFR Success**</td><td>**Longer MR4.5 duration, Lower Sokal, Female, Younger age**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Blast Crisis — **Transformation**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Blasts ≥20% in PB/BM** OR **Extramedullary blasts**</td></tr><tr><td>**Lineage**</td><td>**Myeloid (70%)** > **Lymphoid (20-30%)** > Mixed/Undifferentiated</td></tr><tr><td>**Prognosis**</td><td>**Poor** (Median OS 3-6 months)</td></tr><tr><td>**Treatment**</td><td>**Induction per lineage (AML-type or ALL-type) + TKI** → **Allo-HSCT if CR**</td></tr><tr><td>**TKI in Blast Crisis**</td><td>**3rd/4th gen (Ponatinib/Asciminib) + Induction Chemo**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Pregnancy**</td><td>**Imatinib** (Category D but safest TKI) — **Stop other TKIs**; **Breastfeeding: Imatinib OK** (low milk transfer)</td></tr><tr><td>**Renal Impairment**</td><td>**Imatinib/Nilotinib/Bosutinib** dose adjust; **Dasatinib/Ponatinib/Asciminib** no adjustment</td></tr><tr><td>**Hepatic Impairment**</td><td>**Dose reduce**: Nilotinib, Bosutinib, Ponatinib, Asciminib</td></tr><tr><td>**Cardiovascular Disease**</td><td>**Avoid Nilotinib (QTc, vascular events), Ponatinib (arterial thrombosis)** — Prefer Dasatinib/Bosutinib/Imatinib/Asciminib</td></tr><tr><td>**Pleural Effusion**</td><td>**Dasatinib** — Hold, diurectic, steroids; Switch if recurrent</td></tr><tr><td>**QTc Prolongation**</td><td>**Nilotinib** — Avoid if QTc >450ms; Correct electrolytes</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Diagnosis**</td><td>**BCR::ABL1 t(9;22)**; WBC high, basophilia, splenomegaly</td></tr><tr><td>**Risk Scores**</td><td>**ELTS preferred** (Age, Spleen, Plt, Blast, Eos, Baso)</td></tr><tr><td>**1L TKI Choice**</td><td>**Imatinib 400mg** (Standard); **Dasatinib/Nilotinib** if High Risk/Sokal; **Bosutinib** 2L</td></tr><tr><td>**Response Milestones**</td><td>**3mo: ≤10%; 6mo: ≤1% (MMR); 12mo: ≤0.1% (MR4); 24mo: ≤0.0032% (MR4.5)**</td></tr><tr><td>**Failure**</td><td>>10% at 3mo, >1% at 6mo, >0.1% at 12mo, >0.01% at 18mo</td></tr><tr><td>**Resistance Mutations**</td><td>**T315I = Ponatinib/Asciminib**; Y253H/E255K → Dasatinib/Bosutinib; F317L → Nilotinib/Bosutinib</td></tr><tr><td>**T315I**</td><td>**Ponatinib 45mg or Asciminib 40mg BD** — Asciminib preferred (no arterial toxicity)</td></tr><tr><td>**MR4.5 + 2yr TKI**</td><td>**TFR Eligibility** — Stop TKI, monitor q4-6wk → ×2yr</td></tr><tr><td>**Blast Crisis**</td><td>**Blasts ≥20%** — Induction per lineage + 3rd/4th gen TKI → Allo-HSCT</td></tr><tr><td>**Pregnancy**</td><td>**Imatinib only** (Category D but safest); Stop others</td></tr><tr><td>**Cardiac Toxicity**</td><td>**Nilotinib (QTc, ischaemia), Ponatinib (arterial thrombosis)** — Avoid</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>"What are the response milestones for CML on TKI therapy?"</td><td>**3mo: ≤10%; 6m: ≤1% (MMR); 12m: ≤0.1% (MR4); 18m: ≤0.01% (MR4.5); 24m: ≤0.0032% (MR4.5)**</td></tr><tr><td>"A CML patient on imatinib has BCR-ABL1 5% at 6 months. What do you do?"</td><td>**Treatment failure (BCR-ABL1 >1% at 6mo)** — **Switch to 2nd gen TKI** (Dasatinib/Nilotinib/Bosutinib) or consider mutation testing.</td></tr><tr><td>"What mutation confers resistance to all TKIs except Ponatinib and Asciminib?"</td><td>**T315I (gatekeeper mutation)** — resistance to Imatinib, Dasatinib, Nilotinib, Bosutinib.</td></tr><tr><td>"How do you monitor molecular response in CML?"</td><td>**BCR-ABL1 IS qPCR on peripheral blood** — **every 3 months until MMR, then 3-6 monthly**</td></tr><tr><td>"What are the criteria for Treatment-Free Remission (TFR)?"</td><td>**MR4.5 (BCR-ABL1 ≤0.0032% IS) sustained ≥2 years**, **TKI duration ≥3 years**, then stop TKI and monitor q4-6wk ×1yr, q3mo ×2yr.</td></tr><tr><td>"A patient on dasatinib develops pleural effusion. Management?"</td><td>**Hold dasatinib, diuretics, consider steroids**; if recurrent → **switch to alternative TKI (nilotinib, bosutinib, imatinib)**</td></tr><tr><td>"What is the difference between Nilotinib and Dasatinib toxicities?"</td><td>**Nilotinib**: QTc prolongation, hyperglycaemia, pancreatitis, peripheral neuropathy. **Dasatinib**: Pleural effusion, pulmonary HTN, diarrhoea, thrombocytopenia.</td></tr><tr><td>"What is the monitoring schedule for CML on TKI?"</td><td>**q3mo until MMR**, then **q3-6mo until MR4.5**, then **6-monthly**</td></tr><tr><td>"When is Allo-HSCT indicated in CML?"</td><td>**Blast crisis, TKI failure (2+ lines), T315I mutation**, advanced phase (AP/BC)</td></tr><tr><td>"What is warning response at 6 months?"</td><td>**BCR-ABL1 0.1-1% (not MMR but not failure)** — Continue TKI, monitor closely</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Imatinib vs 2nd Gen 1L**</td><td>**Imatinib = Standard 1L** (cost-effective); **2nd Gen (Dasatinib/Nilotinib)** = Faster/Deeper MMR, preferred if High Sokal/Hasford/ELTS risk</td></tr><tr><td>**Ponatinib vs Asciminib (T315I)**</td><td>**Ponatinib**: 45mg OD, **Arterial thrombosis, HTN, pancreatitis**. **Asciminib**: 40mg BD, **STAMP inhibitor (myristoyl pocket), NO arterial toxicity** — Preferred if CV risk</td></tr><tr><td>**TFR vs Stop Imatinib**</td><td>**TFR = Planned stop** after MR4.5 ≥2y + 3y TKI; **Restart if MMR lost**. Random stop = high relapse.</td></tr><tr><td>**MMR vs MR4 vs MR4.5**</td><td>**MMR ≤0.1%**, **MR4 ≤0.01%**, **MR4.5 ≤0.0032%** (IS)</td></tr><tr><td>**Loss of MMR after TFR**</td><td>**Restart SAME TKI immediately** — high chance of re-achieving MMR</td></tr></table>
+<p><b>Mnemonic: TKI Generations = "I-DASH-NIL-BOS-PON-ASC"</b></p>
+<ul><li><b>I</b>matinib (1st)</li><li><b>DAS</b>atinib, <b>NIL</b>otinib, <b>BOS</b>utinib (2nd)</li><li><b>PON</b>atinib, <b>ASC</b>iminib (3rd/4th)</li></ul>
+<p><b>Mnemonic: T315I = "PON-ASC ONLY"</b></p>
+<ul><li><b>PON</b>atinib</li><li><b>ASC</b>iminib</li><li><b>ONLY</b> for T315I</li></ul>
+<p><b>Mnemonic: Resistance Mutations = "YET-FLY"</b></p>
+<ul><li><b>Y</b>253H</li><li><b>E</b>255K/V</li><li><b>T</b>315I</li><li><b>F</b>317L</li><li><b>L</b> (T315A, F359V, Y253F)</li></ul>
+<p><b>Mnemonic: TKI Toxicity = "DAS-PLEURAL, NIL-QTC, PON-ARTERIAL, BOS-DIARRHEA"</b></p>
+<ul><li><b>DAS</b>atinib → <b>PLEU</b>ral effusion, Pulm HTN</li><li><b>NIL</b>otinib → <b>QTC</b> prolongation, Hyperglycaemia</li><li><b>PON</b>atinib → <b>ARTERIAL</b> thrombosis, HTN, Pancreatitis</li><li><b>BOS</b>utinib → <b>DIARRHEA</b>, Hepato</li></ul>
+<p><b>Mnemonic: TFR Criteria = "MR4.5 + 2YR + 3YR TKI"</b></p>
+<ul><li><b>M</b>R4.5</li><li><b>2</b> years sustained</li><li><b>3</b> years TKI prior</li></ul>
+<p><b>Mnemonic: Blast Crisis = "BC = BLASTS GE 20%"</b></p>
+<ul><li><b>B</b></li><li><b>C</b> = <b>Blasts ≥20%</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((CML)) Diagnosis BCR_ABL1_t9_22 FISH_RT_PCR High_WBC_Basophilia Risk_Stratification Sokal Hasford ELTS EUTOS TKI_Generations 1st_Imatinib 2nd_Dasatinib_Nilotinib_Bosutinib 3rd_Ponatinib 4th_Asciminib STAMP_Inhibitor Response_Monitoring CHR_CyR_MMR_MR4_MR4.5 BCR_ABL1_IS_qPCR Milestones_3_6_12_18_24mo Resistance T315I_Ponatinib_Asciminib Y253H_E255K_Dasatinib_Bosutinib F317L_Nilotinib_Bosutinib Treatment_Free_Remission MR4_5_ge_2yr TKI_ge_3yr Stop_Monitor_Restart Special_Situations Pregnancy_Imatinib Renal_Hepatic CV_Risk Blast_Crisis </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Diagnosis**</td><td>**BCR::ABL1 t(9;22)**; High WBC, Basophilia, Splenomegaly</td></tr><tr><td>**Risk Scores**</td><td>**ELTS preferred** (Age, Spleen, Plt, Blast, Eos, Baso)</td></tr><tr><td>**1L TKI**</td><td>**Imatinib 400mg** (Standard); **Dasatinib/Nilotinib** if High Risk</td></tr><tr><td>**Response Milestones**</td><td>3mo ≤10%, 6mo ≤1% (MMR), 12mo ≤0.1% (MR4), 18mo ≤0.01% (MR4.5)</td></tr><tr><td>**Failure**</td><td>>10% (3mo), >1% (6mo), >0.1% (12mo), >0.01% (18mo)</td></tr><tr><td>**Resistance**</td><td>**T315I → Ponatinib/Asciminib**; Y253H/E255K → Dasatinib/Bosutinib; F317L → Nilotinib/Bosutinib</td></tr><tr><td>**TFR**</td><td>MR4.5 ≥2yr + TKI ≥3yr → STOP, monitor q4-6wk</td></tr><tr><td>**Blast Crisis**</td><td>Blasts ≥20% → Induction per lineage + 3rd/4th gen TKI → Allo-HSCT</td></tr><tr><td>**Pregnancy**</td><td>**Imatinib only** (others contraindicated)</td></tr><tr><td>**Key Toxicities**</td><td>**Dasatinib**: Pleural effusion, Pulm HTN; **Nilotinib**: QTc, Hyperglycaemia; **Ponatinib**: Arterial thrombosis, HTN</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>ELTS/Sokal Risk Stratification</td><td></td><td></td></tr><tr><td>TKI Selection & Sequencing</td><td></td><td></td></tr><tr><td>Molecular Response Milestones</td><td></td><td></td></tr><tr><td>Resistance Mutations & TKI Choice</td><td></td><td></td></tr><tr><td>TFR Eligibility & Monitoring</td><td></td><td></td></tr><tr><td>Blast Crisis Management</td><td></td><td></td></tr><tr><td>Special Situations (Pregnancy, CV)</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Parent Topic Group</b>: [[Chronic Leukaemias]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Chronic Lymphocytic Leukaemia (CLL)]] · [[BCR-ABL1 Pathway]] · [[TKI Resistance Mechanisms]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Chronic Myeloid Leukaemia (CML) (Diagnosis), which statement is correct? A. <b>BCR::ABL1 t(9 B. </b>BCR::ABL1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BCR::ABL1 t(9;22)</b>; WBC high, basophilia, splenomegaly</li></ul>
+<p><b>2.</b> Regarding Chronic Myeloid Leukaemia (CML) (Risk Scores), which statement is correct? A. <b>ELTS preferred</b> (Age, Spleen, Plt, Blast, Eos, Baso) B. **ELTS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ELTS preferred</b> (Age, Spleen, Plt, Blast, Eos, Baso)</li></ul>
+<p><b>3.</b> Regarding Chronic Myeloid Leukaemia (CML) (1L TKI Choice), which statement is correct? A. <b>Imatinib 400mg</b> (Standard) B. **Imatinib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Imatinib 400mg</b> (Standard); <b>Dasatinib/Nilotinib</b> if High Risk/Sokal; <b>Bosutinib</b> 2L</li></ul>
+<p><b>4.</b> Regarding Chronic Myeloid Leukaemia (CML) (Response Milestones), which statement is correct? A. <b>3mo: ≤10% B. </b>3mo: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>3mo: ≤10%; 6mo: ≤1% (MMR); 12mo: ≤0.1% (MR4); 24mo: ≤0.0032% (MR4.5)</b></li></ul>
+<p><b>5.</b> Regarding Chronic Myeloid Leukaemia (CML) (Failure), which statement is correct? A. &gt;10% at 3mo, &gt;1% at 6mo, &gt;0.1% at 12mo, &gt;0.01% at 18mo B. &gt;10% - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — &gt;10% at 3mo, &gt;1% at 6mo, &gt;0.1% at 12mo, &gt;0.01% at 18mo</li></ul>
+<p><b>6.</b> Regarding Chronic Myeloid Leukaemia (CML) (Resistance Mutations), which statement is correct? A. <b>T315I = Ponatinib/Asciminib</b> B. **T315I - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>T315I = Ponatinib/Asciminib</b>; Y253H/E255K → Dasatinib/Bosutinib; F317L → Nilotinib/Bosutinib</li></ul>
+<p><b>7.</b> Regarding Chronic Myeloid Leukaemia (CML) (T315I), which statement is correct? A. <b>Ponatinib 45mg or Asciminib 40mg BD</b> B. **Ponatinib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Ponatinib 45mg or Asciminib 40mg BD</b> — Asciminib preferred (no arterial toxicity)</li></ul>
+<p><b>8.</b> Regarding Chronic Myeloid Leukaemia (CML) (MR4.5 + 2yr TKI), which statement is correct? A. <b>TFR Eligibility</b> B. **TFR - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>TFR Eligibility</b> — Stop TKI, monitor q4-6wk → ×2yr</li></ul>
+<p><b>9.</b> Regarding Chronic Myeloid Leukaemia (CML) (Blast Crisis), which statement is correct? A. <b>Blasts ≥20%</b> B. **Blasts - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Blasts ≥20%</b> — Induction per lineage + 3rd/4th gen TKI → Allo-HSCT</li></ul>
+<p><b>10.</b> Regarding Chronic Myeloid Leukaemia (CML) (Pregnancy), which statement is correct? A. <b>Imatinib only</b> (Category D but safest) B. **Imatinib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Imatinib only</b> (Category D but safest); Stop others</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. **BCR::ABL1 t(9</li><li>B. **BCR::ABL1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>BCR::ABL1 t(9;22)</b>; WBC high, basophilia, splenomegaly</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>ELTS preferred</b> (Age, Spleen, Plt, Blast, Eos, Baso)</li><li>B. **ELTS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>ELTS preferred</b> (Age, Spleen, Plt, Blast, Eos, Baso)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Imatinib 400mg</b> (Standard)</li><li>B. **Imatinib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Imatinib 400mg</b> (Standard); <b>Dasatinib/Nilotinib</b> if High Risk/Sokal; <b>Bosutinib</b> 2L</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. **3mo: ≤10%</li><li>B. **3mo: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>3mo: ≤10%; 6mo: ≤1% (MMR); 12mo: ≤0.1% (MR4); 24mo: ≤0.0032% (MR4.5)</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. &gt;10% at 3mo, &gt;1% at 6mo, &gt;0.1% at 12mo, &gt;0.01% at 18mo</li><li>B. &gt;10% (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: &gt;10% at 3mo, &gt;1% at 6mo, &gt;0.1% at 12mo, &gt;0.01% at 18mo</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>T315I = Ponatinib/Asciminib</b></li><li>B. **T315I (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>T315I = Ponatinib/Asciminib</b>; Y253H/E255K → Dasatinib/Bosutinib; F317L → Nilotinib/Bosutinib</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Ponatinib 45mg or Asciminib 40mg BD</b></li><li>B. **Ponatinib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Ponatinib 45mg or Asciminib 40mg BD</b> — Asciminib preferred (no arterial toxicity)</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>TFR Eligibility</b></li><li>B. **TFR (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>TFR Eligibility</b> — Stop TKI, monitor q4-6wk → ×2yr</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Blasts ≥20%</b></li><li>B. **Blasts (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Blasts ≥20%</b> — Induction per lineage + 3rd/4th gen TKI → Allo-HSCT</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Imatinib only</b> (Category D but safest)</li><li>B. **Imatinib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Imatinib only</b> (Category D but safest); Stop others</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Diagnosis? <b>A1:</b> BCR::ABL1 t(9;22); WBC high, basophilia, splenomegaly</p>
+<p><b>Q2:</b> Risk Scores? <b>A2:</b> ELTS preferred (Age, Spleen, Plt, Blast, Eos, Baso)</p>
+<p><b>Q3:</b> 1L TKI Choice? <b>A3:</b> Imatinib 400mg (Standard); Dasatinib/Nilotinib if High Risk/Sokal; Bosutinib 2L</p>
+<p><b>Q4:</b> Response Milestones? <b>A4:</b> 3mo: ≤10%; 6mo: ≤1% (MMR); 12mo: ≤0.1% (MR4); 24mo: ≤0.0032% (MR4.5)</p>
+<p><b>Q5:</b> Failure? <b>A5:</b> &gt;10% at 3mo, &gt;1% at 6mo, &gt;0.1% at 12mo, &gt;0.01% at 18mo</p>
+<p><b>Q6:</b> Resistance Mutations? <b>A6:</b> T315I = Ponatinib/Asciminib; Y253H/E255K → Dasatinib/Bosutinib; F317L → Nilotinib/Bosutinib</p>
+<p><b>Q7:</b> T315I? <b>A7:</b> Ponatinib 45mg or Asciminib 40mg BD — Asciminib preferred (no arterial toxicity)</p>
+<p><b>Q8:</b> MR4.5 + 2yr TKI? <b>A8:</b> TFR Eligibility — Stop TKI, monitor q4-6wk → ×2yr</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Diagnosis</td><td>BCR::ABL1 t(9;22); WBC high, basophilia, splenomegaly</td></tr><tr><td>2</td><td>A</td><td>Risk Scores</td><td>ELTS preferred (Age, Spleen, Plt, Blast, Eos, Baso)</td></tr><tr><td>3</td><td>A</td><td>1L TKI Choice</td><td>Imatinib 400mg (Standard); Dasatinib/Nilotinib if High Risk/Sokal; Bosutinib 2L</td></tr><tr><td>4</td><td>A</td><td>Response Milestones</td><td>3mo: ≤10%; 6mo: ≤1% (MMR); 12mo: ≤0.1% (MR4); 24mo: ≤0.0032% (MR4.5)</td></tr><tr><td>5</td><td>A</td><td>Failure</td><td>>10% at 3mo, >1% at 6mo, >0.1% at 12mo, >0.01% at 18mo</td></tr><tr><td>6</td><td>A</td><td>Resistance Mutations</td><td>T315I = Ponatinib/Asciminib; Y253H/E255K → Dasatinib/Bosutinib; F317L → Nilotinib/Bosutinib</td></tr><tr><td>7</td><td>A</td><td>T315I</td><td>Ponatinib 45mg or Asciminib 40mg BD — Asciminib preferred (no arterial toxicity)</td></tr><tr><td>8</td><td>A</td><td>MR4.5 + 2yr TKI</td><td>TFR Eligibility — Stop TKI, monitor q4-6wk → ×2yr</td></tr><tr><td>9</td><td>A</td><td>Blast Crisis</td><td>Blasts ≥20% — Induction per lineage + 3rd/4th gen TKI → Allo-HSCT</td></tr><tr><td>10</td><td>A</td><td>Pregnancy</td><td>Imatinib only (Category D but safest); Stop others</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Diagnosis</td><td>BCR::ABL1 t(9;22); WBC high, basophilia, splenomegaly</td></tr><tr><td>2</td><td>A</td><td>Risk Scores</td><td>ELTS preferred (Age, Spleen, Plt, Blast, Eos, Baso)</td></tr><tr><td>3</td><td>A</td><td>1L TKI Choice</td><td>Imatinib 400mg (Standard); Dasatinib/Nilotinib if High Risk/Sokal; Bosutinib 2L</td></tr><tr><td>4</td><td>A</td><td>Response Milestones</td><td>3mo: ≤10%; 6mo: ≤1% (MMR); 12mo: ≤0.1% (MR4); 24mo: ≤0.0032% (MR4.5)</td></tr><tr><td>5</td><td>A</td><td>Failure</td><td>>10% at 3mo, >1% at 6mo, >0.1% at 12mo, >0.01% at 18mo</td></tr><tr><td>6</td><td>A</td><td>Resistance Mutations</td><td>T315I = Ponatinib/Asciminib; Y253H/E255K → Dasatinib/Bosutinib; F317L → Nilotinib/Bosutinib</td></tr><tr><td>7</td><td>A</td><td>T315I</td><td>Ponatinib 45mg or Asciminib 40mg BD — Asciminib preferred (no arterial toxicity)</td></tr><tr><td>8</td><td>A</td><td>MR4.5 + 2yr TKI</td><td>TFR Eligibility — Stop TKI, monitor q4-6wk → ×2yr</td></tr><tr><td>9</td><td>A</td><td>Blast Crisis</td><td>Blasts ≥20% — Induction per lineage + 3rd/4th gen TKI → Allo-HSCT</td></tr><tr><td>10</td><td>A</td><td>Pregnancy</td><td>Imatinib only (Category D but safest); Stop others</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Chronic Myeloid Leukaemia Cml · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

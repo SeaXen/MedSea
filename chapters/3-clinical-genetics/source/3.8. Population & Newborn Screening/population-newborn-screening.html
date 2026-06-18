@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Population Newborn Screening — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 3 CLINICAL GENETICS / 3.8. POPULATION & NEWBORN SCREENING</span>
+      <div class="h1">Population Newborn Screening</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>Wilson &amp; Jungner criteria</b> for screening programme appraisal</li><li>[ ] Describe <b>UK Newborn Blood Spot (NBS) Screening</b> programme (9 conditions)</li><li>[ ] Understand <b>carrier screening</b> strategies (Population, Ethnicity-based, Expanded panels)</li><li>[ ] Apply <b>prenatal screening</b> pathways (Combined test, NIPT, Diagnostic)</li><li>[ ] Understand <b>cascade testing</b> and <b>family screening</b> for genetic conditions</li><li>[ ] Evaluate <b>screening ethics</b>: Benefits, Harms, Informed choice, Equity</li><li>[ ] Answer viva: "Wilson &amp; Jungner criteria" and "NBS pathway for CF"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Screening Principles</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Screening Programme] --&gt; B[Wilson &amp; Jungner Criteria] B --&gt; B1[Important Health Problem] B --&gt; B2[Recognisable Latent Stage] B --&gt; B3[Acceptable Test] B3 --&gt; B4[Sensitivity/Specificity/PPV/NPV] B --&gt; B5[Effective Treatment Available] B --&gt; B6[Agreed Policy on Whom to Treat] B --&gt; B7[Cost-Effectiveness] B --&gt; B8[Continuous Process]</p>
+<p>A --&gt; C[Programme Governance] C --&gt; C1[UK NSC Oversight] C --&gt; C2[QA/QC Standards] C --&gt; C3[Equity &amp; Access] C --&gt; C4[Informed Choice] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Wilson & Jungner Criteria (1968, Updated WHO 2008)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Criterion</th><th>Key Question</th></tr><tr><td>---</td><td>-----------</td><td>--------------</td></tr><tr><td>1</td><td>**Important Health Problem**</td><td>Is the condition a significant public health burden?</td></tr><tr><td>2</td><td>**Latent/Early Stage**</td><td>Is there a detectable preclinical phase?</td></tr><tr><td>3</td><td>**Natural History Understood**</td><td>Progression from latent to clinical disease known?</td></tr><tr><td>4</td><td>**Suitable Test**</td><td>Acceptable, Safe, Validated, Reproducible; High Sens/Spec</td></tr><tr><td>5</td><td>**Acceptable to Population**</td><td>Acceptable to those screened & professionals</td></tr><tr><td>6</td><td>**Effective Treatment**</td><td>Evidence-based intervention for screen-detected cases</td></tr><tr><td>7</td><td>**Diagnostic/Treatment Pathway**</td><td>Clear pathway from screen+ → Diagnosis → Treatment</td></tr><tr><td>8</td><td>**Agreed Policy on Whom to Treat**</td><td>Defined eligibility, Intervals, Referral criteria</td></tr><tr><td>9</td><td>**Cost-Effectiveness**</td><td>Cost per QALY gained acceptable (NICE £20-30k/QALY)</td></tr><tr><td>10</td><td>**Continuous Process**</td><td>Not a one-off; Ongoing quality assurance, Review</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Screening ≠ Diagnosis. Screening = Population test to identify at-risk; Diagnostic = Confirmatory.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ UK Newborn Blood Spot (NBS) Screening Programme</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Programme Overview</div>
+<ul><li><b>Timing</b>: Day 5 (Day 3-8 acceptable)</li><li><b>Sample</b>: Heel prick → 4 spots on Guthrie card</li><li><b>Coverage</b>: &gt;99% of newborns in UK</li><li><b>Governance</b>: UK NSC / NHS England / PHE</li><li><b>Quality</b>: UKAS accredited labs, NEQAS participation</li></ul>
+<div class="sub-h">9 Core Conditions (UK NBS Programme)</div>
+<table class="ctable"><tr><th>Condition</th><th>Method</th><th>Incidence</th><th>Key Action if Positive</th></tr><tr><td>-----------</td><td>--------</td><td>-----------</td><td>------------------------</td></tr><tr><td>**Phenylketonuria (PKU)**</td><td>Tandem MS (Phe, Phe/Tyr)</td><td>1/10,000</td><td>Refer to metabolic team; Low-Phe diet + Sapropterin</td></tr><tr><td>**Congenital Hypothyroidism (CHT)**</td><td>TSH (Time-resolved fluoroimmunoassay)</td><td>1/3,000</td><td>Refer to paediatric endocrinology; Levothyroxine</td></tr><tr><td>**Cystic Fibrosis (CF)**</td><td>**IRT** → If high, **CFTR panel** (≥2 muts or 1 mut + high IRT) → Sweat test</td><td>1/2,500</td><td>Refer to CF centre; Multidisciplinary care, CFTR modulators</td></tr><tr><td>**Sickle Cell Disease (SCD)**</td><td>HPLC / IEF (HbS, HbC, HbD, HbE)</td><td>1/2,000 (High in African/Caribbean)</td><td>Refer to haematology; Penicillin prophylaxis, Vaccines, TCD screening</td></tr><tr><td>**Medium-Chain Acyl-CoA Dehydrogenase Deficiency (MCADD)**</td><td>Tandem MS (C8 acylcarnitine)</td><td>1/10,000</td><td>Avoid fasting; Emergency regimen; Carnitine supplement</td></tr><tr><td>**Maple Syrup Urine Disease (MSUD)**</td><td>Tandem MS (Leu, Ile, Val, Alloisoleucine)</td><td>1/100,000</td><td>Metabolic team; BCAA-restricted diet, Emergency regimen</td></tr><tr><td>**Isovaleric Acidaemia (IVA)**</td><td>Tandem MS (C5 isovalerylcarnitine)</td><td>1/100,000</td><td>Glycine/Carnitine; Protein restriction, Emergency regimen</td></tr><tr><td>**Glutaric Aciduria Type 1 (GA1)**</td><td>Tandem MS (Glutarylcarnitine C5DC)</td><td>1/100,000</td><td>L-carnitine, Riboflavin, Protein restriction, Emergency regimen</td></tr><tr><td>**Homocystinuria (HCU)**</td><td>Tandem MS (Homocysteine, Metionine)</td><td>1/200,000</td><td>Pyridoxine (B6) responsiveness test; Low-Met diet, Betaine, B6/B12/Folate</td></tr></table>
+<div class="callout"><b>Future Expansions (Under Review)</b>: SCID (TREC assay), Spinal Muscular Atrophy (SMN1), Tyrosinaemia Type 1.</div>
+<div class="sub-h">NBS Pathway for Cystic Fibrosis (Example)</div>
+<p>``<code>mermaid flowchart TD A[Day 5 Heel Prick] --&gt; B[IRT Measurement] B --&gt; C{IRT Elevated?} C --&gt;|No| D[Negative Result → Report] C --&gt;|Yes| E[CFTR Mutation Panel&lt;br/&gt;≥2 mutations OR 1 mut + high IRT] E --&gt; F{CFTR Result} F --&gt;|≥2 muts| G[CF Probable → Sweat Test] F --&gt;|1 mut + high IRT| G F --&gt;|Negative| H[Carrier Result → Genetic Counselling] G --&gt; I[Sweat Cl⁻ &gt;60 mmol/L = CF Confirmed] I --&gt; J[Refer CF Centre] </code>``</p>
+<div class="sub-h">Quality Metrics (UK NBS)</div>
+<table class="ctable"><tr><th>Metric</th><th>Standard</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Coverage**</td><td>>99.5% eligible newborns tested</td></tr><tr><td>**Timeliness**</td><td>Sample taken Day 5 (Day 3-8); Result by Day 17</td></tr><tr><td>**False Positive Rate**</td><td><1% (Varies by condition)</td></tr><tr><td>**PPV**</td><td>>10% (Varies; CF ~1:3-1:5 screen positives)</td></tr><tr><td>**False Negative Rate**</td><td><0.5% (Audit via clinical presentation)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Carrier Screening Programmes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Strategy Types</div>
+<table class="ctable"><tr><th>Strategy</th><th>Target Population</th><th>Examples</th></tr><tr><td>----------</td><td>-------------------</td><td>----------</td></tr><tr><td>**Population-Based**</td><td>Entire population (or newborns)</td><td>**UK NBS** (PKU, CHT, CF, SCD, MCADD, etc.)</td></tr><tr><td>**Ethnicity-Based**</td><td>High-prevalence groups</td><td>**Thalassaemia** (Mediterranean, Asian, Middle Eastern); **Tay-Sachs** (Ashkenazi Jewish); **SCD** (African/Caribbean); **CF** (Caucasian)</td></tr><tr><td>**Expanded Panels**</td><td>Pre-conception / Early pregnancy</td><td>Commercial panels (100-300 genes); **ACMG/ACOG** recommend offer to all</td></tr><tr><td>**Cascade Testing**</td><td>Relatives of index case</td><td>**Familial hypercholesterolaemia**, **BRCA**, **Lynch**, **FAP**, **CF**</td></tr></table>
+<div class="sub-h">UK Antenatal Screening Programmes</div>
+<table class="ctable"><tr><th>Programme</th><th>Timing</th><th>Test</th><th>Conditions</th></tr><tr><td>-----------</td><td>--------</td><td>------</td><td>------------</td></tr><tr><td>**Sickle Cell & Thalassaemia**</td><td>Booking (<10w)</td><td>FBC + Hb variant analysis (HPLC/IEF)</td><td>Sickle cell, Thalassaemia</td></tr><tr><td>**Down’s/Edwards/Patau**</td><td>11-14w</td><td>**Combined Test** (NT + PAPP-A + β-hCG)</td><td>T21, T18, T13</td></tr><tr><td>**NIPT**</td><td>≥10w</td><td>cfDNA (cfDNA)</td><td>T21, T18, T13, Sex chromosomes (Screening)</td></tr><tr><td>**Infectious Diseases**</td><td>Booking</td><td>Serology</td><td>HIV, Syphilis, Hepatitis B, Rubella</td></tr></table>
+<div class="callout"><b>NIPT Pathway (UK):</b> High-risk Combined test (&gt;1:150) → NIPT → If positive → <b>Diagnostic CVS/Amnio + Microarray</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Cascade Testing & Family Screening</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cascade Testing Pathway</div>
+<p>``<code>mermaid flowchart TD A[Index Case Diagnosed] --&gt; B[Identify At-Risk Relatives] B --&gt; C[Provide Family Letters&lt;br/&gt;Standardised Template] C --&gt; D[Cascade Testing&lt;br/&gt;1st-degree → 2nd → 3rd] D --&gt; E{Result} E --&gt;|Positive| F[Clinical Management&lt;br/&gt;Surveillance / Treatment] E --&gt;|Negative| G[Reassurance&lt;br/&gt;No increased risk] E --&gt;|VUS| H[Counselling&lt;br/&gt;Segregation/Re-analysis] F &amp; G &amp; H --&gt; I[Long-term Follow-up&lt;br/&gt;&amp; Re-contact] </code>``</p>
+<div class="sub-h">Cascade Testing by Condition</div>
+<table class="ctable"><tr><th>Condition</th><th>Inheritance</th><th>1st-Degree Risk</th><th>Testing Strategy</th></tr><tr><td>-----------</td><td>-------------</td><td>-----------------</td><td>------------------</td></tr><tr><td>**Familial Hypercholesterolaemia**</td><td>AD</td><td>50%</td><td>LDL-C + Genetic testing (LDLR/APOB/PCSK9)</td></tr><tr><td>**Lynch Syndrome**</td><td>AD</td><td>50%</td><td>MMR IHC/MSI → Germline testing</td></tr><tr><td>**HBOC (BRCA1/2)**</td><td>AD</td><td>50%</td><td>Targeted variant test</td></tr><tr><td>**FAP**</td><td>AD</td><td>50%</td><td>APC sequencing</td></tr><tr><td>**Cystic Fibrosis**</td><td>AR</td><td>67% (if 1 affected sib)</td><td>CFTR sequencing (siblings)</td></tr><tr><td>**Haemophilia A/B**</td><td>XLR</td><td>50% daughters carriers</td><td>Factor assay + Genetic testing</td></tr><tr><td>**DMD**</td><td>XLR</td><td>50% daughters carriers</td><td>DMD MLPA/sequencing</td></tr></table>
+<div class="callout"><b>Family Letters</b>: Standardised template (Diagnosis, Gene, Variant, Inheritance, Risk, Testing options, Contact details).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Prenatal Screening — Down Syndrome & Aneuploidy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Combined Test (11-14 weeks)</div>
+<table class="ctable"><tr><th>Component</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**NT**</td><td>Nuchal Translucency (CRL 45-84mm)</td></tr><tr><td>**PAPP-A**</td><td>Low in T21</td></tr><tr><td>**Free β-hCG**</td><td>High in T21, Low in T18/T13</td></tr><tr><td>**Maternal Age**</td><td>Continuous variable</td></tr><tr><td>**Output**</td><td>Risk score (e.g., 1:150)</td></tr></table>
+<div class="sub-h">Risk Thresholds (UK)</div>
+<table class="ctable"><tr><th>Threshold</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**≥1:150**</td><td>**High Risk** → Offer **NIPT** (cfDNA)</td></tr><tr><td>**1:151 to 1:1000**</td><td>Low Risk → No further testing</td></tr><tr><td>**<1:1000**</td><td>Very Low Risk → Reassurance</td></tr></table>
+<div class="sub-h">NIPT (cfDNA) — cfDNA Screening</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Timing**</td><td>≥10 weeks</td></tr><tr><td>**Detects**</td><td>T21 (>99%), T18 (>98%), T13 (>95%), Sex chromosome aneuploidies</td></tr><tr><td>**Fetal Fraction**</td><td>≥4% required (Mean 10-15% at 10-12w)</td></tr><tr><td>**PPV**</td><td>T21 ~90% (High risk), T18 ~80%, T13 ~50%</td></tr><tr><td>**Limitations**</td><td>**Screening only**; False + (Maternal mosaicism, Vanishing twin, Malignancy); **Diagnostic confirmation required**</td></tr></table>
+<div class="sub-h">Diagnostic Confirmation</div>
+<table class="ctable"><tr><th>Method</th><th>Gestation</th><th>Risk</th><th>Indication</th></tr><tr><td>--------</td><td>-----------</td><td>------</td><td>------------</td></tr><tr><td>**CVS**</td><td>11-14 weeks</td><td>0.5-1% miscarriage</td><td>High-risk NIPT, Structural anomalies, Known familial variant</td></tr><tr><td>**Amniocentesis**</td><td>15-20 weeks</td><td>0.1-0.3% miscarriage</td><td>High-risk NIPT, Structural anomalies, Late presentation</td></tr><tr><td>**Microarray**</td><td>On CVS/Amnio</td><td>Standard for anomalies</td><td>Replaces karyotype for CNV/LOH/UPD</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Screening Ethics & Evaluation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Ethical Principles (Wilson &amp; Jungner + Modern)</div>
+<table class="ctable"><tr><th>Principle</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Informed Choice**</td><td>Not mandatory; Balanced info (Benefits, Harms, Uncertainty); Opt-out respected</td></tr><tr><td>**Beneficence vs Harm**</td><td>Benefit (Early treatment) vs Harm (False + anxiety, Overdiagnosis, False - false reassurance)</td></tr><tr><td>**Justice/Equity**</td><td>Equal access (Geographic, Socioeconomic, Ethnic); Address disparities</td></tr><tr><td>**Autonomy**</td><td>Right to decline; Right to know / not know; Pre-test counselling</td></tr><tr><td>**Confidentiality**</td><td>Data protection (GDPR); Sample retention policies</td></tr></table>
+<div class="sub-h">Programme Evaluation Metrics</div>
+<table class="ctable"><tr><th>Metric</th><th>Target</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Coverage**</td><td>>95% eligible population</td></tr><tr><td>**Detection Rate (Sensitivity)**</td><td>>95% for target conditions</td></tr><tr><td>**False Positive Rate**</td><td><1-5% (Condition-specific)</td></tr><tr><td>**Positive Predictive Value (PPV)**</td><td>>10% (Varies by condition)</td></tr><tr><td>**Timeliness**</td><td>Sample → Result within defined window (e.g., NBS by Day 17)</td></tr><tr><td>**Uptake of Diagnostic**</td><td>>90% of screen+ve accept diagnostic test</td></tr><tr><td>**Treatment Initiation**</td><td>>95% screen+ve start treatment by defined age</td></tr><tr><td>**Equity**</td><td>No disparity by deprivation/ethnicity/geography</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Screening Programme</th><th>Key Points</th></tr><tr><td>---------------------</td><td>------------</td></tr><tr><td>**Wilson & Jungner**</td><td>10 Criteria (Health problem, Latent stage, Test, Treatment, Cost-effective, QA)</td></tr><tr><td>**UK NBS (Day 5)**</td><td>9 conditions: PKU, CHT, CF, SCD, MCADD, MSUD, IVA, GA1, HCU</td></tr><tr><td>**CF NBS Pathway**</td><td>IRT → CFTR panel → Sweat test (Cl⁻ >60)</td></tr><tr><td>**SCD/Thalassaemia Screening**</td><td>Antenatal booking (HPLC/IEF) + NBS (HPLC)</td></tr><tr><td>**Down Syndrome**</td><td>Combined test (NT+PAPP-A+β-hCG) 11-14w → High risk → NIPT → CVS/Amnio</td></tr><tr><td>**NIPT**</td><td>cfDNA ≥10w; >99% Sens T21; **Screening only** → Confirm CVS/Amnio</td></tr><tr><td>**Carrier Screening**</td><td>Population (NBS), Ethnicity-based (Thal, SCD, Tay-Sachs), Expanded panels</td></tr><tr><td>**Cascade Testing**</td><td>Proband → 1st-degree (50%) → 2nd-degree; Family letters, Genetic counselling</td></tr><tr><td>**Ethics**</td><td>Informed choice, Non-mandatory, Equity, False +/-, Overdiagnosis, Confidentiality</td></tr><tr><td>**Wilson & Jungner**</td><td>10 criteria (Health problem, Latent stage, Test, Treatment, Cost-effective)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Wilson & Jungner criteria — name 5?</td><td>1) Important health problem 2) Recognisable latent stage 3) Suitable test 4) Effective treatment 5) Cost-effectiveness</td></tr><tr><td>2</td><td>UK NBS — which 9 conditions screened?</td><td>PKU, CHT, CF, SCD, MCADD, MSUD, IVA, GA1, HCU</td></tr><tr><td>3</td><td>CF newborn screening pathway?</td><td>Heel prick Day 5 → IRT → If elevated, CFTR panel → If 2 muts or 1 mut + high IRT → Sweat test (Cl⁻ >60 = CF)</td></tr><tr><td>4</td><td>NIPT — what does it screen for?</td><td>T21, T18, T13, Sex chromosomes; **Screening only** → Confirm with CVS/Amnio</td></tr><tr><td>5</td><td>CF carrier couple — prenatal options?</td><td>CVS (11-14w) qf-PCR + CFTR sequencing, or Amnio (15-20w); PGT-M available</td></tr><tr><td>6</td><td>Cascade testing — who first?</td><td>**Proband** → 1st-degree relatives (50% risk) → 2nd-degree (25%); Family letters, Genetic counselling each</td></tr><tr><td>7</td><td>Sickle cell trait vs disease — NBS detection?</td><td>**HPLC/IEF** on dried blood spot detects HbS, HbC, HbD, HbE; Differentiates trait (AS) vs disease (SS, SC, Sβ-thal)</td></tr><tr><td>8</td><td>NIPT positive for T21 — next step?</td><td>**Confirm with CVS (11-14w) or Amniocentesis (15-20w) + Microarray/Karyotype**</td></tr><tr><td>9</td><td>Expanded carrier screening — what is it?</td><td>Panel of 100-300 genes offered pre-conception/early pregnancy; Detects carrier status for multiple AR/XL conditions</td></tr><tr><td>10</td><td>False positive NBS — impact on family?</td><td>Anxiety, Unnecessary testing, Potential harm to bonding; Need rapid confirmatory testing & counselling</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"NBS = Diagnostic"**</td><td>**NO.** NBS = Screening; Positive → Diagnostic confirmation (Sweat test, Genetic test)</td></tr><tr><td>**"NIPT = Diagnostic"**</td><td>**NO.** NIPT = **Screening only** (cfDNA); **Must confirm** with CVS/Amnio + Microarray/Karyotype</td></tr><tr><td>**"All screen-positive = Disease"**</td><td>**NO.** PPV varies (CF ~20-30%, SCD higher); False positives occur (Carriers, Transient)</td></tr><tr><td>**"Carrier screening = Mandatory"**</td><td>**NO.** **Informed choice** — Opt-out is valid; Non-directive counselling</td></tr><tr><td>**"Cascade testing = Mandatory for relatives"**</td><td>**NO.** Relatives choose; **Family letters** inform; Individual counselling each</td></tr><tr><td>**"Expanded carrier screening = Better"**</td><td>**Not always.** More VUS, Anxiety, Cost; ACMG: Offer to all, but counsel on limitations</td></tr><tr><td>**"NBS = Diagnostic for CF"**</td><td>**NO.** NBS +ve → Sweat test (Cl⁻ >60 diagnostic) + Genetic confirmation</td></tr><tr><td>**"All genetic conditions screened at birth"**</td><td>**NO.** Only 9 conditions in UK NBS; Others: Carrier status detected incidentally</td></tr><tr><td>**"False positive NBS = No harm"**</td><td>**NO.** Anxiety, Unnecessary tests, Bonding disruption; Rapid confirmatory pathway essential</td></tr><tr><td>**"Carrier = Affected"**</td><td>**NO.** Carrier (heterozygote) usually asymptomatic; AR carriers = asymptomatic (mostly)</td></tr></table>
+<div class="callout"><b>Mnemonic: SCREENING PRINCIPLES UK</b> <b>S</b>creening ≠ Diagnosis: <b>Screen → Confirm → Treat</b> <b>C</b>riteria Wilson &amp; Jungner: <b>10 Points</b> (Health prob, Latent, Test, Treat, Cost-effective, QA) <b>R</b>ecall: <b>Day 5 Heel Prick</b> → <b>9 Conditions</b> (PKU, CHT, CF, SCD, MCADD, MSUD, IVA, GA1, HCU) <b>E</b>arly Detection: <b>CF (IRT→CFTR→Sweat), SCD (HPLC), CHT (TSH), PKU (Phe/Tyr)</b> <b>E</b>quity: <b>Informed Choice</b> — Opt-out OK; Non-directive counselling <b>N</b>IPT: <b>cfDNA Screening</b> (T21/T18/T13) → <b>Confirm CVS/Amnio</b> <b>I</b>nformed Choice: <b>Non-directive, Opt-out OK, Balanced Info</b> <b>N</b>ewborn CF Pathway: <b>IRT → CFTR Panel → Sweat Cl⁻ &gt;60 = CF</b> <b>G</b>estational Age: <b>Combined 11-14w → NIPT ≥10w → CVS 11-14w / Amnio 15-20w</b> <b>P</b>ositive Predictive Value: <b>Varies (CF ~20%, SCD higher)</b> — False positives exist <b>R</b>eflex Testing: <b>CFTR Panel after IRT; Hb Variant HPLC on NBS</b> <b>A</b>ntenatal: <b>Sickle/Thal (Booking), Down’s (Combined 11-14w), NIPT (High risk)</b> <b>M</b>ulti-cancer: <b>MCED (Galleri) — Research, Not Standard</b> <b>S</b>ickle Cell Trait: <b>NBS Detects</b> (HPLC/IEF) — Carrier vs Disease Differentiated <b>C</b>ascade Testing: <b>Proband → 1st → 2nd degree</b> — Family Letters, Counselling <b>R</b>eflex: <b>CFTR after IRT; Hb Variant after NBS</b> <b>E</b>thics: <b>Autonomy, Beneficence, Justice</b> — Informed Choice, Equity, Non-harm <b>E</b>valuation: <b>Coverage, Sensitivity, PPV, Timeliness, Equity</b> <b>N</b>BS Programme: <b>UK NSC Governance, UKAS Labs, NEQAS QA, Day 5 Heel Prick</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Population &amp; Newborn Screening)) Wilson &amp; Jungner 10 Criteria Health Problem → Latent Stage → Test → Treatment → Cost-effective → QA UK NBS (Day 5) 9 Conditions: PKU, CHT, CF, SCD, MCADD, MSUD, IVA, GA1, HCU Pathways: CF (IRT→CFTR→Sweat), SCD (HPLC), PKU (Phe/Tyr) Antenatal Screening Sickle/Thal (Booking) Down's (Combined 11-14w) NIPT (cfDNA) → CVS/Amnio Carrier Screening Population (NBS) Ethnicity-based (Thal, SCD, Tay-Sachs, CF) Expanded Panels (Pre-conception) Prenatal Combined Test (NT+PAPP-A+β-hCG) NIPT (cfDNA &gt;99% T21) CVS/Amnio Diagnostic Cascade Testing Proband → 1st→2nd degree Family Letters Counselling each Ethics Informed Choice Non-directive Equity False +/- Management Evaluation Coverage, Sensitivity, PPV Timeliness, Equity </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Wilson & Jungner Criteria</td><td>3</td><td></td><td></td></tr><tr><td>UK NBS Programme (9 conditions)</td><td>3</td><td></td><td></td></tr><tr><td>CF NBS Pathway</td><td>2</td><td></td><td></td></tr><tr><td>Antenatal/DN Screening</td><td>3</td><td></td><td></td></tr><tr><td>NIPT & Diagnostic Confirmation</td><td>3</td><td></td><td></td></tr><tr><td>Carrier Screening Types</td><td>2</td><td></td><td></td></tr><tr><td>Cascade Testing</td><td>2</td><td></td><td></td></tr><tr><td>Ethics & Evaluation</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the UK newborn screening programme and its ethical framework."</td><td>Day 5 heel prick, 9 conditions, Pathways (CF, SCD, PKU, CHT), Wilson & Jungner criteria, Ethics (Informed choice, Equity, False + management), Governance (UK NSC, UKAS, NEQAS)</td></tr><tr><td>**Short Note**</td><td>"Wilson & Jungner criteria for screening programmes."</td><td>10 criteria: Health problem, Latent stage, Suitable test, Effective treatment, Diagnostic pathway, Cost-effectiveness, Acceptability, Equity, QA, Continuous process</td></tr><tr><td>**Viva**</td><td>"Couple with CF child, pregnant 10 weeks. CF screening options?"</td><td>NIPT (cfDNA) not for CF; CVS 11-14w with qf-PCR + CFTR sequencing (known familial mutations); Amniocentesis 15-20w; PGT-M option for future</td></tr><tr><td>**Ward Round**</td><td>"Neonate with positive NBS for CF (IRT high, 1 CFTR mutation). Sweat chloride 55 mmol/L. Next step?"</td><td>**Sweat Cl⁻ 55 = Intermediate (30-59)**; Repeat sweat test in 2-4 weeks; Genetic counselling; CFTR sequencing for 2nd mutation</td></tr><tr><td>**Last-Night**</td><td>"Wilson: 10 criteria. NBS: 9 cond (PKU,CHT,CF,SCD,MCADD,MSUD,IVA,GA1,HCU). CF: IRT→CFTR→Sweat>60. Sickle: HPLC. Antenatal: Sickle/Thal booking, Down's Combined 11-14w, NIPT≥10w→CVS/Amnio. Cascade: Proband→1st→2nd. Ethics: Choice/Equity/False+. Wilson 10pts."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Wilson &amp; Jungner</b>: 10 criteria (Health burden, Latent stage, Test, Treatment, Cost-effectiveness, QA, etc.)</li><li><b>UK NBS</b>: Day 5 heel prick, <b>9 conditions</b> (PKU, CHT, CF, SCD, MCADD, MSUD, IVA, GA1, HCU)</li><li><b>CF Pathway</b>: IRT → CFTR panel → Sweat Cl⁻ &gt;60 = CF</li><li><b>Antenatal</b>: Sickle/Thal at booking; <b>Down’s: Combined Test (NT+PAPP-A+β-hCG) 11-14w</b> → High risk → <b>NIPT (cfDNA)</b> → <b>CVS/Amnio + Microarray</b></li><li><b>NIPT</b>: cfDNA ≥10w, <b>Screening only</b> (&gt;99% T21), <b>Confirm CVS/Amnio + Microarray</b></li><li><b>Carrier Screening</b>: NBS (Population), Ethnicity-based (Thal, SCD, Tay-Sachs), <b>Expanded panels</b> (Pre-conception)</li><li><b>Cascade Testing</b>: Proband → 1st-degree (50%) → 2nd-degree (25%); Family letters; Counselling each</li><li><b>Ethics</b>: Informed choice (Opt-out OK), Non-directive, Equity, False +/-, Overdiagnosis, Confidentiality</li><li><b>Evaluation</b>: Coverage &gt;95%, Sensitivity &gt;95%, PPV, Timeliness, Equity, Treatment initiation</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Wilson &amp; Jungner — which is NOT a criterion?</b></li></ol>
+<p>A. Important health problem  B. Latent stage  C. <b>Test must be 100% sensitive</b>  D. Cost-effectiveness <i>Answer: C. Test must be acceptable/sensitive/specific — not 100%.</i></p>
+<ol><li><b>UK NBS — which is NOT screened?</b></li></ol>
+<p>A. PKU  B. CHT  C. <b>Duchenne MD</b>  D. MCADD <i>Answer: C. DMD not in UK NBS (9 conditions: PKU, CHT, CF, SCD, MCADD, MSUD, IVA, GA1, HCU).</i></p>
+<ol><li><b>CF NBS — borderline sweat chloride (30-59 mmol/L)?</b></li></ol>
+<p>A. Diagnose CF  B. <b>Repeat in 2-4 weeks</b>  C. Diagnose carrier  D. No further action <i>Answer: B. Intermediate (30-59) → Repeat in 2-4 weeks; &gt;60 = CF; &lt;30 = Normal.</i></p>
+<ol><li><b>NIPT — what is confirmed by CVS/Amnio?</b></li></ol>
+<p>A. Positive NIPT  B. Negative NIPT  C. Inconclusive NIPT  D. All of above <i>Answer: A. Positive NIPT → Diagnostic confirmation with CVS/Amnio + Microarray.</i></p>
+<ol><li><b>Sickle cell newborn screening — method?</b></li></ol>
+<p>A. IRT  B. <b>HPLC / IEF</b>  C. TSH  C. Tandem MS for Phe/Tyr <i>Answer: B. HPLC or Isoelectric Focusing (IEF) on dried blood spot.</i></p>
+<ol><li><b>Carrier screening — which is population-based in UK?</b></li></ol>
+<p>A. Thalassaemia  B. <b>Newborn Blood Spot (PKU, CF, etc.)</b>  C. Tay-Sachs  D. Ashkenazi panel <i>Answer: B. Newborn Blood Spot = Population screening for 9 conditions.</i></p>
+<ol><li><b>CF carrier couple — prenatal diagnosis options?</b></li></ol>
+<p>A. NIPT only  B. <b>CVS 11-14w (qf-PCR + CFTR seq) or Amnio 15-20w</b>  C. Ultrasound only  D. Wait for birth <i>Answer: B. CVS (11-14w) with qf-PCR + CFTR sequencing for known familial variants; Amnio 15-20w.</i></p>
+<ol><li><b>Cascade testing — who is tested first?</b></li></ol>
+<p>A. Grandparents  B. <b>Proband (Index case)</b>  C. 2nd-degree relatives  D. All simultaneously <i>Answer: B. Proband → 1st-degree (50%) → 2nd-degree (25%).</i></p>
+<ol><li><b>NIPT positive for T21 — next step?</b></li></ol>
+<p>A. Terminate  B. <b>Confirm with CVS/Amnio + Microarray</b>  C. Repeat NIPT  D. Ultrasound only <i>Answer: B. NIPT = Screening; Confirm with diagnostic CVS/Amnio + Microarray.</i></p>
+<ol><li><b>Expanded carrier screening — key counselling point?</b></li></ol>
+<p>A. Tests all genetic diseases  B. <b>May identify VUS, anxiety, cost; Counselling on limitations</b>  C. Replaces NBS  D. Mandatory <i>Answer: B. Expanded panels: More VUS, Anxiety, Cost; Counselling on limitations essential.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>UK newborn screening — day of sample collection?</b></li></ol>
+<p>A. Day 1  B. Day 3  C. <b>Day 5</b>  D. Day 7 <i>Answer: Day 5 (Day 3-8 acceptable).</i></p>
+<ol><li><b>Sickle cell disease vs trait on NBS — differentiation?</b></li></ol>
+<p>A. Not possible  B. <b>HPLC/IEF quantifies HbS, HbA, HbF</b>  C. Requires genetic test  D. Clinical only <i>Answer: B. HPLC/IEF quantifies Hb fractions: SS/SC/Sβ-thal = Disease; AS = Trait.</i></p>
+<ol><li><b>Down syndrome screening — high risk Combined Test. Next step?</b></li></ol>
+<p>A. Diagnostic CVS  B. <b>NIPT (cfDNA)</b>  C. Amniocentesis  D. Repeat Combined Test <i>Answer: B. NIPT (cfDNA) offered for high-risk Combined test (≥1:150).</i></p>
+<ol><li><b>Cascade testing for FH — who tested first?</b></li></ol>
+<p>A. Grandparents  B. <b>Proband → 1st-degree relatives</b>  C. Children  D. All family <i>Answer: B. Proband → 1st-degree (50% risk) → 2nd-degree.</i></p>
+<ol><li><b>NIPT positive for Trisomy 18 — confirmatory test?</b></li></ol>
+<p>A. Repeat NIPT  B. <b>CVS/Amniocentesis + Microarray</b>  C. Ultrasound only  D. Combined test <i>Answer: B. Diagnostic confirmation with CVS/Amnio + Microarray required.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-C, 2-C, 3-B, 4-A, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-C, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Mendelian Inheritance]] — AR/AD/XL inheritance in screened conditions</li><li>[[1. Fundamentals of Medical Genetics]] — HWE for carrier frequency calculations</li><li>[[5.4 Prenatal &amp; Preimplantation Testing]] — NIPT, CVS, Amnio, PGT-M pathways</li><li>[[5.5 Genetic Counselling]] — Pre-test counselling, Result disclosure, Reproductive options</li><li>[[4.2 Autosomal Recessive Disorders]] — CF, Sickle cell, Thalassaemia, PKU, MCADD, MSUD, IVA, GA1, HCU</li><li>[[4.3 X-Linked Disorders]] — DMD, Haemophilia, G6PD in screening context</li><li>[[5.1-5.4 Genetic Testing Technologies]] — NIPT (cfDNA), Microarray, qf-PCR, MLPA</li><li>[[5.5 Genetic Counselling]] — Pre-test counselling, Result disclosure, Cascade testing</li><li>[[8. Population &amp; Newborn Screening]] — UK NSC governance, QA/QC, NEQAS</li><li>[[9. ELSI]] — Screening ethics, Consent, Equity, False positives, Data protection</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-14 <b>Next:</b> Build <code>9. ELSI.md</code>, <code>10. System-Based Clinical Genetics.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Population Newborn Screening · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

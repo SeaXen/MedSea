@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acute Promyelocytic Leukaemia Apl — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.7. HAEMATOLOGICAL MALIGNANCIES</span>
+      <div class="h1">Acute Promyelocytic Leukaemia Apl</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 **Learning Objectives**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Objective</th><th>Level</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>Recognise APL as a **true oncological emergency** requiring immediate ATRA</td><td>Must Know</td></tr><tr><td>Explain **PML-RARA** fusion pathophysiology & differentiation block</td><td>Must Know</td></tr><tr><td>Describe **coagulopathy** mechanism (DIC + hyperfibrinolysis)</td><td>Must Know</td></tr><tr><td>Differentiate **ATRA differentiation syndrome** from sepsis/progression</td><td>Must Know</td></tr><tr><td>Outline **ATRA + ATO** regimens (low-risk vs high-risk)</td><td>Must Know</td></tr><tr><td>Interpret **MRD monitoring** (RT-qPCR for PML-RARA)</td><td>Must Know</td></tr><tr><td>Manage **relapse** (ATO-based, GO, HSCT)</td><td>Should Know</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 **Definition & Classification**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**WHO Classification**</td><td>Acute promyelocytic leukaemia with PML-RARA</td></tr><tr><td>**FAB Subtype**</td><td>AML-M3 (hypergranular) / M3v (microgranular/hypogranular)</td></tr><tr><td>**Genetic Hallmark**</td><td>**t(15;17)(q24;q21)** → **PML::RARA** fusion (balanced reciprocal translocation)</td></tr><tr><td>**Variant Translocations** (rare, <1%)</td><td>PLZF-RARA (t(11;17)), NPM-RARA (t(5;17)), STAT5B-RARA, NuMA-RARA → **ATRA resistant**</td></tr><tr><td>**Incidence**</td><td>5-10% of adult AML; median age 40 y; slight male predominance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🧬 **Pathophysiology**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">**PML-RARA Fusion Protein**</div>
+<ul><li><b>PML</b> (chromosome 15) + <b>RARA</b> (chromosome 17) → chimeric transcription factor</li><li><b>Normal RARA</b>: Retinoic acid receptor α → binds RA → recruits co-activators → myeloid differentiation</li><li><b>PML-RARA</b>:</li><li>Binds RARE with <b>higher affinity</b> → recruits <b>co-repressors</b> (N-CoR, SMRT, HDACs) → <b>blocks differentiation</b> at promyelocyte stage</li><li>Disrupts <b>PML nuclear bodies</b> → impairs apoptosis, senescence, genomic stability</li><li>Upregulates <b>cathepsin G, annexin II</b> → <b>procoagulant / profibrinolytic</b> surface</li></ul>
+<div class="sub-h">**Coagulopathy Mechanism (DIC + Hyperfibrinolysis)**</div>
+<table class="ctable"><tr><th>Component</th><th>Mechanism</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Tissue Factor (TF)**</td><td>Promyelocytes express TF → extrinsic pathway activation → thrombin generation</td></tr><tr><td>**Cancer Procoagulant**</td><td>Direct factor X activation (cysteine protease)</td></tr><tr><td>**Annexin II Overexpression**</td><td>Binds tPA & plasminogen → **100-fold ↑ plasmin generation** → hyperfibrinolysis</td></tr><tr><td>**Thrombomodulin ↓**</td><td>Impaired protein C activation → loss of anticoagulant brake</td></tr><tr><td>**NETosis**</td><td>Neutrophil extracellular traps → prothrombotic scaffold</td></tr></table>
+<div class="callout"><b>Clinical Pearl:</b> APL coagulopathy = <b>DIC + primary hyperfibrinolysis</b> (unlike typical DIC where fibrinolysis is secondary). <b>FDP/D-dimer massively elevated</b>; fibrinogen often <b>very low</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🏥 **Clinical Features**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">**Presenting Symptoms (from coagulopathy)**</div>
+<table class="ctable"><tr><th>Manifestation</th><th>Frequency</th></tr><tr><td>---------------</td><td>-----------</td></tr><tr><td>**Bleeding** (mucosal, cutaneous, intracranial)</td><td>60-80%</td></tr><tr><td>**Thrombosis** (DVT, PE, arterial)</td><td>5-10%</td></tr><tr><td>**Both bleeding & thrombosis**</td><td>20-30%</td></tr></table>
+<div class="sub-h">**Haematological**</div>
+<ul><li><b>Pancytopenia</b> (anaemia, thrombocytopenia, neutropenia)</li><li><b>Peripheral blasts</b>: Abnormal promyelocytes (hypergranular M3) or bilobed "butterfly" nuclei (M3v)</li><li><b>Auer rods</b>: Multiple per cell ("faggot cells") — pathognomonic</li></ul>
+<div class="sub-h">**Infectious**</div>
+<ul><li>Neutropenic sepsis (major cause of early death)</li><li><b>Differentiation syndrome</b> mimics sepsis (see below)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🔬 **Diagnostic Workup**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">**Essential at Diagnosis (BEFORE ATRA if possible, but DON'T DELAY ATRA)**</div>
+<table class="ctable"><tr><th>Test</th><th>Purpose</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**FBC + Film**</td><td>Blast %, Auer rods, morphology (M3 vs M3v)</td></tr><tr><td>**Coagulation Screen**</td><td>PT, APTT, **fibrinogen**, **D-dimer/FDP**, platelets</td></tr><tr><td>**Biochemistry**</td><td>LFT, U&E, urate, Ca²⁺, Mg²⁺, PO₄³⁻ (TLS risk)</td></tr><tr><td>**Infection Screen**</td><td>Blood cultures, CXR, urinalysis</td></tr><tr><td>**Cardiac**</td><td>ECG, Echo (LVEF baseline for anthracyclines)</td></tr><tr><td>**Central Line**</td><td>PICC/Port (frequent transfusions, ATO infusion)</td></tr></table>
+<div class="sub-h">**Definitive Diagnosis (ALL required for confirmation)**</div>
+<table class="ctable"><tr><th>Test</th><th>Target</th><th>Turnaround</th><th>Notes</th></tr><tr><td>------</td><td>--------</td><td>------------</td><td>-------</td></tr><tr><td>**FISH**</td><td>PML-RARA fusion</td><td>4-24 hrs</td><td>**Rapid**, provisional Dx → start ATRA</td></tr><tr><td>**RT-PCR**</td><td>PML-RARA transcript (bcr1/bcr2/bcr3)</td><td>24-48 hrs</td><td>Quantitative baseline for MRD</td></tr><tr><td>**Karyotype**</td><td>t(15;17) + additional abnormalities</td><td>5-10 days</td><td>Adds prognostic info (e.g. +8, del(7q))</td></tr><tr><td>**Immunophenotype**</td><td>CD33+, CD13+, CD117+, **CD34−, HLA-DR−**, CD11b+ (partial)</td><td>24 hrs</td><td>**HLA-DR negativity** = clue to APL</td></tr></table>
+<div class="callout"><b>Critical:</b> <b>Start ATRA immediately on clinical suspicion</b> (WBC &lt;10 × 10⁹/L → ATRA alone; WBC ≥10 → ATRA + ATO or ATRA + chemo). <b>Do not wait for genetics.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🧭 **Diagnostic Algorithm**</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Suspected APL: Pancytopenia + Bleeding/Thrombosis + Promyelocytes on Film] --&gt; B{Immediate Actions} B --&gt; B1[<b>Start ATRA 45 mg/m²/day PO/IV STAT</b>] B --&gt; B2[Aggressive Blood Product Support: Plts &gt;30-50, Fib &gt;1.5, INR &lt;1.5] B --&gt; B3[Infection Prophylaxis: Antibiotics, Antifungals, HSV/VZV prophylaxis] B --&gt; B4[TLS Prophylaxis: Hydration, Allopurinol/Rasburicase] B --&gt; B5[<b>Send FISH/RT-PCR for PML-RARA</b>] B1 --&gt; C[Risk Stratification by WBC at Diagnosis] B2 --&gt; C B3 --&gt; C B4 --&gt; C B5 --&gt; C C --&gt; D{WBC &lt; 10 × 10⁹/L?} D --&gt;|Yes| E[<b>Low/Intermediate Risk</b>&lt;br/&gt;ATRA + ATO&lt;br/&gt;(Lo-Coco regimen)] D --&gt;|No| F[<b>High Risk</b>&lt;br/&gt;WBC ≥10&lt;br/&gt;ATRA + ATO + <b>Anthracycline</b>&lt;br/&gt;OR ATRA + Chemo] E --&gt; G[Induction → Consolidation → Maintenance] F --&gt; G G --&gt; H[MRD Monitoring q3mo × 2yr, q6mo × 3yr] H --&gt; I{MRD Positive?} I --&gt;|Yes| J[Pre-emptive ATO ± GO → HSCT] I --&gt;|No| K[Continue Surveillance] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">💊 **Management — Risk-Adapted (Lo-Coco / Sanz / APL0406 / APL2006 Protocols)**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">**Risk Stratification (Sanz Score)**</div>
+<table class="ctable"><tr><th>Risk Group</th><th>WBC</th><th>Platelets</th><th>2-yr OS (ATRA+ATO)</th></tr><tr><td>------------</td><td>-----</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Low**</td><td><10</td><td>>40</td><td>97%</td></tr><tr><td>**Intermediate**</td><td><10</td><td>≤40</td><td>91%</td></tr><tr><td>**High**</td><td>≥10</td><td>Any</td><td>84%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">**1. INDUCTION (until CR or Day 60 max)**</div>
+<table class="ctable"><tr><th>Regimen</th><th>Low/Intermediate Risk</th><th>High Risk</th></tr><tr><td>---------</td><td>----------------------</td><td>-----------</td></tr><tr><td>**Standard (Preferred)**</td><td>**ATRA 45 mg/m²/day** + **ATO 0.15 mg/kg/day IV** daily until CR</td><td>**ATRA + ATO + Idarubicin 5 mg/m² Days 1-4** (or Daunorubicin 60 mg/m² Days 1-3)</td></tr><tr><td>**Alternative (if ATO unavailable)**</td><td>ATRA + **Idarubicin** (or Daunorubicin)</td><td>ATRA + **Anthracycline + Cytarabine** (AIDA protocol)</td></tr><tr><td>**Duration**</td><td>Continue until CR (median 39 days)</td><td>Same</td></tr><tr><td>**CR Criteria**</td><td>BM blasts <5%, Plts >100, ANC >1.0, no Auer rods, no extramedullary disease</td><td>Same</td></tr></table>
+<div class="callout"><b>Key:</b> ATO given <b>daily including weekends</b> (no breaks). ATRA oral/IV divided BID.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">**2. CONSOLIDATION (Post-CR)**</div>
+<table class="ctable"><tr><th>Risk Group</th><th>Regimen</th><th>Cycles</th></tr><tr><td>------------</td><td>---------</td><td>--------</td></tr><tr><td>**Low**</td><td>ATO 0.15 mg/kg/day × 25 doses (5 weeks) × **2 cycles**</td><td>2</td></tr><tr><td>**Intermediate**</td><td>ATO × 25 doses × **3 cycles**</td><td>3</td></tr><tr><td>**High**</td><td>ATO × 25 doses × **3 cycles** + **Anthracycline** (2 cycles)</td><td>3</td></tr><tr><td>**All**</td><td>**NO maintenance** if MRD-negative after consolidation (ATRA+ATO regimens)</td><td>—</td></tr></table>
+<div class="callout"><b>Historical:</b> ATRA + Chemo regimens require <b>maintenance ATRA</b> (2 years).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">**3. MAINTENANCE (Only for ATRA+Chemo arms)**</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Schedule</th><th>Duration</th></tr><tr><td>------</td><td>------</td><td>----------</td><td>----------</td></tr><tr><td>ATRA</td><td>45 mg/m²/day</td><td>15 days on / 15 days off</td><td>2 years</td></tr><tr><td>6-MP</td><td>60 mg/m²/day</td><td>Daily</td><td>2 years</td></tr><tr><td>Methotrexate</td><td>10 mg/m²/week</td><td>Weekly</td><td>2 years</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">⚠️ **Complications & Emergency Management**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">**1. ATRA Differentiation Syndrome (ATRA-DS) — *Formerly "RA Syndrome"***</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>25-30% (ATRA alone), 10-15% (ATRA+ATO)</td></tr><tr><td>**Timing**</td><td>Days 7-21 (median Day 11)</td></tr><tr><td>**Pathophysiology**</td><td>Differentiating promyelocytes → cytokine storm (IL-1, IL-6, TNF-α) → capillary leak</td></tr><tr><td>**Diagnostic Criteria (Frankel)**</td><td>**Unexplained** fever + weight gain >5 kg + respiratory distress + pleural/pericardial effusion + hypoxaemia + renal failure + **neutrophilia** (≥10 × 10⁹/L)</td></tr><tr><td>**Differential**</td><td>Sepsis, TLS, heart failure, transfusion reactions, progression</td></tr><tr><td>**Management**</td><td>**Dexamethasone 10 mg IV q12h** until resolution → taper over 3-5 days<br/>**Continue ATRA/ATO** unless life-threatening (then hold 24-48h)<br/>Diuretics, O₂, ICU if severe</td></tr><tr><td>**Prophylaxis**</td><td>**Dexamethasone 10 mg IV q12h Days 1-14** (high-risk: WBC >10, high BMI) reduces incidence to <5%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">**2. Arsenic Trioxide (ATO) Toxicities**</div>
+<table class="ctable"><tr><th>Toxicity</th><th>Monitoring</th><th>Management</th></tr><tr><td>----------</td><td>------------</td><td>------------</td></tr><tr><td>**QTc Prolongation**</td><td>ECG baseline, q1-2 weeks, electrolytes</td><td>K⁺ >4.5, Mg²⁺ >2.0; hold if QTc >500 ms</td></tr><tr><td>**Transaminitis**</td><td>LFTs 2x/week</td><td>Hold if ALT/AST >5× ULN; resume at ≤2.5×</td></tr><tr><td>**Differentiation Syndrome**</td><td>Same as ATRA-DS</td><td>Same (dexamethasone)</td></tr><tr><td>**Peripheral Neuropathy**</td><td>Clinical</td><td>Dose reduce/hold; often reversible</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">**3. Coagulopathy Support — *Lifesaving***</div>
+<table class="ctable"><tr><th>Target</th><th>Product</th><th>Threshold</th></tr><tr><td>--------</td><td>---------</td><td>-----------</td></tr><tr><td>**Platelets**</td><td>Platelet transfusion</td><td>**>30** (active bleed: >50); **>50** for procedures</td></tr><tr><td>**Fibrinogen**</td><td>Cryoprecipitate (1 pool/10 kg) or Fibrinogen concentrate</td><td>**>1.5 g/L** (active bleed: >2.0)</td></tr><tr><td>**INR**</td><td>FFP (15 mL/kg)</td><td>**<1.5**</td></tr><tr><td>**D-dimer/FDP**</td><td>Monitor trend</td><td>No specific target; guides bleed risk</td></tr></table>
+<div class="callout"><b>Practical:</b> Check fibrinogen <b>6-hourly</b> first 72h. <b>Cryo &gt; FFP</b> for fibrinogen replacement (concentrated, less volume).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">**4. Tumour Lysis Syndrome (TLS)**</div>
+<ul><li>Risk: High (high WBC, high LDH, renal impairment)</li><li><b>Rasburicase</b> preferred (uric acid → allantoin) — <b>check G6PD first</b></li><li>Hydration 3 L/m²/day, target urine output &gt;100 mL/h</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">**5. CNS Relapse Prophylaxis**</div>
+<ul><li><b>Incidence:</b> 1-2% (higher in high-risk, WBC &gt;10)</li><li><b>Standard:</b> <b>Intrathecal MTX</b> during induction/consolidation (controversial; some omit with ATRA+ATO)</li><li><b>High-risk:</b> Consider cranial irradiation (historical) or intensified IT therapy</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🔬 **MRD Monitoring — *Standard of Care***</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Method**</td><td>**RT-qPCR for PML-RARA** (bcr1/bcr2/bcr3 isoform-specific)</td></tr><tr><td>**Sample**</td><td>**Peripheral Blood (PB)** preferred (validated surrogate for BM)</td></tr><tr><td>**Frequency**</td><td>**End of induction, end of consolidation, then q3mo × 2 years, q6mo × 3 years**</td></tr><tr><td>**Sensitivity**</td><td>10⁻⁴ to 10⁻⁵ (1 leukaemia cell in 10,000-100,000)</td></tr><tr><td>**Action Thresholds**</td><td></td></tr><tr><td>→ **Molecular Relapse**</td><td>**2 consecutive positive PB** (or 1 positive BM) → **Pre-emptive ATO**</td></tr><tr><td>→ **Haematological Relapse**</td><td>Blasts on film/BM → full re-induction</td></tr></table>
+<div class="callout"><b>Landmark:</b> MRD-negative at end of consolidation = <b>&gt;95% 5-yr OS</b>; MRD-positive = <b>pre-emptive ATO achieves 80% 5-yr OS</b> vs 20% if wait for haematological relapse.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🔁 **Relapsed / Refractory APL**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Preferred Approach</th></tr><tr><td>----------</td><td>-------------------</td></tr><tr><td>**Molecular Relapse (MRD+)**</td><td>**ATO monotherapy** (0.15 mg/kg/day × 25-50 doses) → 80-90% MRD clearance</td></tr><tr><td>**Haematological Relapse (ATRA+ATO naive)**</td><td>**ATRA + ATO** (same as frontline)</td></tr><tr><td>**Haematological Relapse (post ATRA+ATO)**</td><td>**Gemtuzumab Ozogamicin (GO)** 3 mg/m² Days 1, 4, 7 → ± ATO → **Allo-HSCT** in CR2</td></tr><tr><td>**CNS Relapse**</td><td>IT MTX + ARA-C + Dex + systemic ATO ± cranial RT</td></tr><tr><td>**ATRA-Resistant Variants** (PLZF-RARA, etc.)</td><td>**Standard chemo + Allo-HSCT** (ATRA/ATO ineffective)</td></tr></table>
+<div class="callout"><b>Key:</b> <b>ATO is the single most active agent in relapsed APL.</b> GO adds CD33-targeted cytotoxicity.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📊 **Prognosis & Outcomes**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>ATRA + ATO (Modern)</th><th>ATRA + Chemo (Historical)</th></tr><tr><td>--------</td><td>---------------------</td><td>---------------------------</td></tr><tr><td>**CR Rate**</td><td>95-99%</td><td>90-95%</td></tr><tr><td>**Early Death (≤30 days)**</td><td>3-5%</td><td>5-10%</td></tr><tr><td>**2-yr OS (Low/Int)**</td><td>97% / 91%</td><td>85% / 75%</td></tr><tr><td>**2-yr OS (High)**</td><td>84%</td><td>70%</td></tr><tr><td>**5-yr OS**</td><td>**>85% overall**</td><td>65-75%</td></tr><tr><td>**Relapse Rate**</td><td>5-10%</td><td>15-20%</td></tr><tr><td>**Cure Fraction**</td><td>**Majority cured**</td><td>Majority cured</td></tr></table>
+<p><b>Prognostic Factors (Adverse):</b></p>
+<ul><li>High WBC ≥10 × 10⁹/L (Sanz high-risk)</li><li><b>FLT3-ITD</b> mutation (15-20%, associated with high WBC)</li><li><b>bcr3 isoform</b> (short transcript) → higher WBC, more DS</li><li>Additional cytogenetic abnormalities (+8, del(7q))</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">💊 **Drug Interactions & Specifics**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Interaction</th><th>Clinical Significance</th></tr><tr><td>------</td><td>-------------</td><td>----------------------</td></tr><tr><td>**ATRA**</td><td>CYP3A4 inducer</td><td>↓ levels of cyclosporine, tacrolimus, voriconazole, hormonal contraceptives</td></tr><tr><td>**ATRA**</td><td>Ketoconazole/itraconazole</td><td>↑ ATRA levels → ↑ DS risk</td></tr><tr><td>**ATO**</td><td>QTc-prolonging drugs (azoles, fluoroquinolones, ondansetron)</td><td>Additive QTc prolongation → arrhythmia risk</td></tr><tr><td>**ATO**</td><td>Loop diuretics</td><td>Hypokalaemia → ↑ QTc risk</td></tr><tr><td>**Dexamethasone**</td><td>CYP3A4 inducer</td><td>May ↓ ATRA levels (clinically minor)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🩺 **Procedures & Practical Tips**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Procedure</th><th>Indication</th><th>Notes</th></tr><tr><td>-----------</td><td>------------</td><td>-------</td></tr><tr><td>**Central Venous Access (PICC/Port)**</td><td>All patients</td><td>Frequent transfusions, ATO infusion, blood sampling</td></tr><tr><td>**Bone Marrow Aspiration/Trephine**</td><td>Diagnosis, CR assessment, MRD (if PB negative)</td><td>Delay if coagulopathy uncorrected (correct first)</td></tr><tr><td>**Lumbar Puncture (IT Chemo)**</td><td>CNS prophylaxis/treatment</td><td>**Correct coagulopathy first** (Plts >50, Fib >2, INR <1.5)</td></tr><tr><td>**ECG Monitoring**</td><td>ATO therapy</td><td>Baseline, then 2-3h post-infusion weekly × 2, then q2w</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🚨 **Red Flags / Emergency Scenarios**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Immediate Action</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**New neurological deficit / severe headache**</td><td>**CT Head STAT** → ? Intracranial haemorrhage → correct coagulopathy emergently, neurosurgery</td></tr><tr><td>**Acute respiratory distress + fever + weight gain + neutrophilia**</td><td>**Differentiation Syndrome** → **Dex 10 mg IV q12h** +diuretics+O₂; continue ATRA/ATO</td></tr><tr><td>**QTc >500 ms or >60 ms increase**</td><td>**Hold ATO**, correct K⁺/Mg²⁺, review drugs, cardiology</td></tr><tr><td>**Severe transaminitis (ALT/AST >10× ULN)**</td><td>Hold ATO + ATRA, investigate (viral, drug, TLS), resume at ≤2.5×</td></tr><tr><td>**WBC rising rapidly >50 × 10⁹/L**</td><td>Consider **leukapheresis** + hydroxyurea + **start ATRA immediately**</td></tr><tr><td>**Unexplained fever + hypotension**</td><td>**Sepsis** (blood cultures, broad-spectrum ABx) + **Differentiation Syndrome** workup</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🔗 **Topic Correlation Map**</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid graph LR APL[APL] --&gt; PML[PML-RARA Fusion] APL --&gt; Coag[DIC + Hyperfibrinolysis] APL --&gt; DS[Differentiation Syndrome] APL --&gt; ATRA[ATRA 45 mg/m²] APL --&gt; ATO[ATO 0.15 mg/kg] APL --&gt; MRD[RT-qPCR MRD] APL --&gt; Rel[Relapse Management]</p>
+<p>PML --&gt; Block[Differentiation Block] PML --&gt; Procoag[Annexin II / Cathepsin G]</p>
+<p>Coag --&gt; Fib[Fibrinogen &lt;1.5] Coag --&gt; DD[D-dimer ↑↑] Coag --&gt; Bleed[Bleeding/Thrombosis]</p>
+<p>ATRA --&gt; Diff[Differentiation] ATRA --&gt; DS ATRA --&gt; CYP[CYP3A4 Inducer]</p>
+<p>ATO --&gt; Apopt[Apoptosis + Differentiation] ATO --&gt; QTc[QTc Prolongation] ATO --&gt; Hep[Transaminitis]</p>
+<p>MRD --&gt; Neg[MRD-ve = Cured] MRD --&gt; Pos[MRD+ve → Pre-emptive ATO]</p>
+<p>Rel --&gt; ATO2[ATO Salvage] Rel --&gt; GO[Gemtuzumab Ozogamicin] Rel --&gt; HSCT[Allo-HSCT in CR2]</p>
+<p>style APL fill:#ffebee,stroke:#c62828 style DS fill:#fff3e0,stroke:#e65100 style MRD fill:#e8f5e9,stroke:#2e7d32 ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🧠 **High-Yield Exam Points (FCPS/MRCP)**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Most common cause of death in APL**</td><td>**Early haemorrhage** (intracranial) — before/early ATRA</td></tr><tr><td>**Diagnostic triad**</td><td>Pancytopenia + **Bleeding/DIC** + **Promyelocytes with Auer rods**</td></tr><tr><td>**Genetic hallmark**</td><td>**t(15;17) → PML-RARA** (RARA on 17q21, PML on 15q24)</td></tr><tr><td>**Immunophenotype**</td><td>**CD34−, HLA-DR−** (vs other AML: CD34+, HLA-DR+)</td></tr><tr><td>**First-line treatment**</td><td>**ATRA + ATO** (all risk groups); add anthracycline if high-risk</td></tr><tr><td>**Differentiation syndrome treatment**</td><td>**Dexamethasone 10 mg IV q12h** — **do NOT stop ATRA/ATO** unless life-threatening</td></tr><tr><td>**MRD method**</td><td>**RT-qPCR for PML-RARA on peripheral blood**</td></tr><tr><td>**Molecular relapse definition**</td><td>**2 consecutive positive PB RT-qPCR**</td></tr><tr><td>**Relapse treatment**</td><td>**ATO single agent** (most active); GO for post-ATO relapse → Allo-HSCT</td></tr><tr><td>**Variant translocations**</td><td>**PLZF-RARA (t(11;17)) = ATRA resistant** (need chemo + HSCT)</td></tr><tr><td>**Coagulopathy unique feature**</td><td>**Hyperfibrinolysis** (annexin II) → **D-dimer massively ↑**, fibrinogen very low</td></tr><tr><td>**ATO monitoring**</td><td>**QTc** (K⁺ >4.5, Mg²⁺ >2.0), LFTs</td></tr><tr><td>**Cure rate**</td><td>**>85% overall** with ATRA+ATO (modern era)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">❓ **Viva / OSCE Questions**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Model Answer Structure</th></tr><tr><td>----------</td><td>------------------------</td></tr><tr><td>**"How would you manage a 35-year-old man presenting with bleeding gums, Hb 70, Plts 15, WBC 8, film shows promyelocytes with Auer rods?"**</td><td>1. **Recognise APL emergency**<br/>2. **Start ATRA 45 mg/m² STAT** (don't wait for genetics)<br/>3. **Aggressive blood products**: Plts >30-50, Cryo for Fib >1.5, FFP for INR<br/>4. **FISH/RT-PCR for PML-RARA**<br/>5. **TLS prophylaxis**, antibiotics, central line<br/>6. **Risk stratify by WBC** → Low/Int: ATRA+ATO; High: +anthracycline</td></tr><tr><td>**"Explain the coagulopathy in APL."**</td><td>**DIC + primary hyperfibrinolysis**:<br/>• TF + cancer procoagulant → thrombin generation<br/>• Annexin II → ↑ tPA/plasminogen → **plasmin ↑↑** (hyperfibrinolysis)<br/>• Thrombomodulin ↓ → impaired protein C<br/>→ **Low fibrinogen, very high D-dimer/FDP**, both bleeding & thrombosis</td></tr><tr><td>**"What is differentiation syndrome? How do you treat?"**</td><td>Cytokine storm from differentiating promyelocytes (IL-6, TNF-α) → capillary leak.<br/>**Frankel criteria**: fever + weight gain + resp distress + effusion + neutrophilia.<br/>**Treatment: Dex 10 mg IV q12h**, continue ATRA/ATO, diuretics, O₂, ICU if severe.</td></tr><tr><td>**"How do you monitor APL after treatment?"**</td><td>**RT-qPCR PML-RARA on peripheral blood**: end induction, end consolidation, then q3mo × 2yr, q6mo × 3yr.<br/>**Molecular relapse = 2 consecutive +ve PB** → pre-emptive ATO.<br/>MRD-neg at end consolidation = excellent prognosis.</td></tr><tr><td>**"What if APL relapses after ATRA+ATO?"**</td><td>**ATO monotherapy** (salvage) → 80-90% MRD clearance.<br/>If haematological relapse post-ATO → **Gemtuzumab Ozogamicin** ± ATO → **Allo-HSCT in CR2**.</td></tr><tr><td>**"Which APL variant is ATRA-resistant?"**</td><td>**PLZF-RARA (t(11;17))** — PLZF doesn't release co-repressors with ATRA. Treat with chemo + HSCT.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🤔 **Confusions & Mnemonics**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**APL vs DIC vs TTP vs HUS**</td><td>APL = **DIC + hyperfibrinolysis** + promyelocytes; TTP = microangiopathy (ADAMTS13 deficiency); HUS = Shiga toxin / complement</td></tr><tr><td>**ATRA-DS vs Sepsis**</td><td>ATRA-DS: **neutrophilia**, weight gain, effusion, responds to **dexamethasone**; Sepsis: neutropenia, no weight gain, needs antibiotics</td></tr><tr><td>**ATRA vs ATO**</td><td>ATRA = **differentiation** (binds RARA, releases co-repressors); ATO = **apoptosis + differentiation** (degrades PML-RARA, ROS, caspase activation)</td></tr><tr><td>**bcr1 vs bcr2 vs bcr3**</td><td>bcr1 (long) = 60%, lower WBC; bcr2 = 5%; bcr3 (short) = 35%, **higher WBC, more DS**</td></tr><tr><td>**Maintenance needed?**</td><td>**No** with ATRA+ATO (MRD-neg); **Yes** 2 years (ATRA+6-MP+MTX) with ATRA+chemo</td></tr></table>
+<p><b>Mnemonic: "APL EMERGENCY"</b></p>
+<ul><li><b>A</b>TRA <b>S</b>TAT</li><li><b>P</b>latelets &gt;30, <b>F</b>ibrinogen &gt;1.5</li><li><b>L</b>ife-threatening bleed (ICH)</li><li><b>E</b>arly death = haemorrhage</li><li><b>M</b>RD PCR monitoring</li><li><b>E</b>xpect DS (Dex prophylaxis)</li><li><b>R</b>elapse → ATO salvage</li><li><b>G</b>enetics: t(15;17) PML-RARA</li><li><b>E</b>lectrolytes (K/Mg for ATO QTc)</li><li><b>N</b>o maintenance (if ATRA+ATO)</li><li><b>C</b>oagulopathy = DIC + fibrinolysis</li><li><b>Y</b>ellow (ATO arsenic)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🗺️ **One-Page Revision Card**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**APL (AML-M3) — FCPS/MRCP Revision Card**</th></tr><tr><td>---</td></tr><tr><td>**Definition**: AML with **t(15;17) → PML-RARA**; FAB M3/M3v; 5-10% AML</td></tr><tr><td>**Emergency**: **Bleeding (ICH) = #1 early death** — **START ATRA IMMEDIATELY**</td></tr><tr><td>**Triad**: Pancytopenia + **Coagulopathy (DIC + fibrinolysis)** + **Auer rods (faggot cells)**</td></tr><tr><td>**Genetics**: **PML-RARA** (RARA on 17q21); variants: PLZF-RARA (t(11;17) — **ATRA resistant**)</td></tr><tr><td>**Immunophenotype**: **CD34−, HLA-DR−, CD33+, CD117+, CD13+**</td></tr><tr><td>**Coagulopathy**: TF + cancer procoagulant + **annexin II → hyperfibrinolysis** → ↓↓ Fib, ↑↑ D-dimer</td></tr><tr><td>**Risk (Sanz)**: Low WBC<10/Plt>40; Int WBC<10/Plt≤40; High WBC≥10</td></tr><tr><td>**Induction**: **ATRA 45mg/m² + ATO 0.15mg/kg daily** until CR; High-risk + anthracycline</td></tr><tr><td>**Consolidation**: ATO cycles (Low 2, Int/High 3); **No maintenance if MRD-neg**</td></tr><tr><td>**DS (Diff Syndrome)**: Fever + weight gain + effusion + neutrophilia → **Dex 10mg IV q12h**</td></tr><tr><td>**ATO Toxicity**: **QTc prolongation** (K>4.5, Mg>2), transaminitis</td></tr><tr><td>**MRD**: **RT-qPCR PML-RARA on PB** q3mo×2yr → q6mo×3yr; **2× +ve = molecular relapse**</td></tr><tr><td>**Relapse**: **ATO monotherapy** → GO → Allo-HSCT in CR2</td></tr><tr><td>**Prognosis**: **>85% OS** modern era; Early death 3-5%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📅 **Trackers (Spaced Repetition)**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date</th><th>Status</th><th>Score /10</th><th>Notes</th></tr><tr><td>----------------</td><td>------</td><td>--------</td><td>-----------</td><td>-------</td></tr><tr><td>**24 hours**</td><td>2025-07-11</td><td>☐ Pending</td><td></td><td></td></tr><tr><td>**7 days**</td><td>2025-07-17</td><td>☐ Pending</td><td></td><td></td></tr><tr><td>**15 days**</td><td>2025-07-25</td><td>☐ Pending</td><td></td><td></td></tr><tr><td>**30 days**</td><td>2025-07-31</td><td>☐ Pending</td><td></td><td></td></tr><tr><td>**3 months**</td><td>2025-10-10</td><td>☐ Pending</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">📚 **Must/Should/Nice to Know**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Tier</th><th>Content</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>APL emergency, ATRA immediate start, coagulopathy (DIC+fibrinolysis), t(15;17)/PML-RARA, ATRA+ATO regimen, differentiation syndrome (Dex), MRD RT-qPCR, relapse = ATO</td></tr><tr><td>**Should Know**</td><td>Sanz risk stratification, consolidation cycles, ATO toxicities (QTc, LFT), variant translocations, CNS prophylaxis, supportive care targets (Plts, Fib, INR)</td></tr><tr><td>**Nice to Know**</td><td>bcr isoforms, Frankel criteria details, GO mechanism, historical ATRA+chemo regimens, FLT3-ITD prognosis, specific drug interactions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">✅ **Self-Test Scorecard**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Answer</th><th>✓/✗</th></tr><tr><td>----------</td><td>--------</td><td>-----</td></tr><tr><td>What is the genetic hallmark of APL?</td><td></td><td></td></tr><tr><td>Why is APL a medical emergency?</td><td></td><td></td></tr><tr><td>Describe the coagulopathy mechanism.</td><td></td><td></td></tr><tr><td>What is the immunophenotype of APL blasts?</td><td></td><td></td></tr><tr><td>First-line induction for low-risk APL?</td><td></td><td></td></tr><tr><td>Diagnostic criteria for differentiation syndrome?</td><td></td><td></td></tr><tr><td>Treatment of differentiation syndrome?</td><td></td><td></td></tr><tr><td>MRD monitoring method & frequency?</td><td></td><td></td></tr><tr><td>Definition of molecular relapse?</td><td></td><td></td></tr><tr><td>Treatment of molecular relapse?</td><td></td><td></td></tr><tr><td>Treatment of haematological relapse post-ATO?</td><td></td><td></td></tr><tr><td>Which variant translocation is ATRA-resistant?</td><td></td><td></td></tr><tr><td>ATO monitoring parameters?</td><td></td><td></td></tr><tr><td>Blood product targets in APL?</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Total: /14</b> — Target: <b>≥12/14</b> for exam readiness</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 35-year-old presents with sudden bleeding, pancytopenia, and DIC. Bone marrow shows hypergranular promyelocytes. What is the diagnosis?</p>
+<ul><li>A. Acute lymphoblastic leukaemia</li><li>B. <b>Acute promyelocytic leukaemia (APL) — t(15;17) PML-RARA</b></li><li>C. Chronic myeloid leukaemia blast crisis</li><li>D. Myelodysplastic syndrome</li><li><b>Answer: B</b> — APL = WHO-defined AML subtype with PML-RARA fusion; medical emergency due to DIC</li></ul>
+<p><b>2.</b> What is the FIRST treatment priority in suspected APL?</p>
+<ul><li>A. Bone marrow biopsy</li><li>B. <b>Immediate ATRA (all-trans retinoic acid) — do not delay for cytogenetics</b></li><li>C. Platelet transfusion only</li><li>D. Hydroxyurea</li><li><b>Answer: B</b> — ATRA rapidly corrects coagulopathy; should be started on clinical suspicion</li></ul>
+<p><b>3.</b> A patient with APL on ATRA develops fever, dyspnoea, weight gain, and pulmonary infiltrates. What is the diagnosis?</p>
+<ul><li>A. Pneumonia</li><li>B. <b>Differentiation syndrome (ATRA-DS) — formerly retinoic acid syndrome</b></li><li>C. Pulmonary embolism</li><li>D. Heart failure</li><li><b>Answer: B</b> — Treat with dexamethasone 10mg IV BD; continue ATRA if mild</li></ul>
+<p><b>4.</b> What is the standard induction regimen for LOW-RISK APL (Sanz score)?</p>
+<ul><li>A. Standard 3+7</li><li>B. <b>ATRA + ATO (arsenic trioxide) without chemotherapy (Lo-Coco / APL0406)</b></li><li>C. High-dose cytarabine</li><li>D. Palliative care</li><li><b>Answer: B</b> — ATRA + ATO alone achieves 100% CR in low-risk; standard of care</li></ul>
+<p><b>5.</b> A high-risk APL (WBC &gt;10) is started on induction. Which regimen is most appropriate?</p>
+<ul><li>A. ATRA + ATO only</li><li>B. <b>ATRA + ATO + anthracycline (e.g., idarubicin/daunorubicin)</b></li><li>C. Best supportive care</li><li>D. Stem cell transplant</li><li><b>Answer: B</b> — High-risk requires addition of anthracycline; ATRA + ATO alone insufficient</li></ul>
+<p><b>6.</b> Which genetic abnormality defines APL?</p>
+<ul><li>A. BCR-ABL</li><li>B. <b>t(15;17)(q22;q12) — PML-RARA fusion</b></li><li>C. t(8;21)</li><li>D. inv(16)</li><li><b>Answer: B</b> — PML (15q22) + RARA (17q12) fusion</li></ul>
+<p><b>7.</b> What coagulation abnormality is most characteristic of APL?</p>
+<ul><li>A. Isolated thrombocytopenia</li><li>B. <b>Disseminated intravascular coagulation (DIC) with hyperfibrinolysis</b></li><li>C. Factor V Leiden</li><li>D. Heparin-induced thrombocytopenia</li><li><b>Answer: B</b> — DIC from release of procoagulants + annexin II-mediated plasminogen activation</li></ul>
+<p><b>8.</b> Differentiation syndrome in APL is treated with:</p>
+<ul><li>A. Stop ATRA permanently</li><li>B. <b>Dexamethasone 10mg IV BD; consider temporarily holding ATRA if severe</b></li><li>C. Antibiotics</li><li>D. Heparin</li><li><b>Answer: B</b> — Steroids are first-line; ATRA can often be continued</li></ul>
+<p><b>9.</b> What is the long-term cure rate of low-risk APL with modern ATRA + ATO therapy?</p>
+<ul><li>A. &lt;30%</li><li>B. 50-60%</li><li>C. <b>&gt;90% (approaching 100% CR; 97% 5-year OS)</b></li><li>D. Same as AML (40-50%)</li><li><b>Answer: C</b> — APL has the BEST prognosis of all AML subtypes with modern therapy</li></ul>
+<p><b>10.</b> A patient with APL completes induction and consolidation. What is the recommended long-term follow-up?</p>
+<ul><li>A. No follow-up needed</li><li>B. <b>Serial monitoring for relapse, secondary MDS/AML, cardiac toxicity (from anthracyclines)</b></li><li>C. Weekly bone marrow</li><li>D. Palliative care</li><li><b>Answer: B</b> — Late effects include anthracycline cardiotoxicity; secondary malignancies from etoposide</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A patient presents with sudden bleeding, low platelets, prolonged PT/aPTT, low fibrinogen, and high D-dimer. The most likely diagnosis is:</p>
+<ul><li>A. ITP</li><li>B. <b>Acute promyelocytic leukaemia (APL) — medical emergency</b></li><li>C. Haemophilia</li><li>D. Von Willebrand disease</li><li><b>Answer: B</b> — DIC + pancytopenia + bleeding in young adult = APL until proven otherwise</li></ul>
+<p><b>2.</b> A patient with suspected APL has not yet had cytogenetic confirmation. What should be done first?</p>
+<ul><li>A. Wait for confirmation</li><li>B. <b>Start ATRA immediately on clinical suspicion</b></li><li>C. Start standard AML induction</li><li>D. Platelet transfusion only</li><li><b>Answer: B</b> — ATRA reduces early death; do not delay for cytogenetics</li></ul>
+<p><b>3.</b> A 45-year-old with low-risk APL (WBC &lt;10, platelets &gt;40) is on ATRA + ATO. Best supportive care during induction includes:</p>
+<ul><li>A. Routine antibiotics</li><li>B. <b>Frequent coagulation monitoring, FFP/cryoprecipitate to keep fibrinogen &gt;1.5, platelets &gt;30-50</b></li><li>C. Platelet transfusion only</li><li>D. No monitoring needed</li><li><b>Answer: B</b> — Aggressive blood product support critical during early treatment</li></ul>
+<p><b>4.</b> Differentiation syndrome most commonly occurs:</p>
+<ul><li>A. At relapse only</li><li>B. <b>Within first 1-2 weeks of ATRA initiation (median 7-12 days)</b></li><li>C. After 6 months</li><li>D. Never</li><li><b>Answer: B</b> — Median onset day 7-12 of ATRA; monitor for fever, hypoxia, weight gain</li></ul>
+<p><b>5.</b> A patient on ATRA develops differentiation syndrome. The first-line treatment is:</p>
+<ul><li>A. Stop ATRA permanently</li><li>B. <b>Dexamethasone 10mg IV BD</b></li><li>C. Antibiotics</li><li>D. Heparin</li><li><b>Answer: B</b> — Steroids; continue ATRA if mild syndrome</li></ul>
+<p><b>6.</b> What is the role of arsenic trioxide (ATO) in APL?</p>
+<ul><li>A. Palliative only</li><li>B. <b>Curative agent; induces PML-RARA degradation via SUMOylation/ubiquitination; standard of care</b></li><li>C. Not used</li><li>D. Only for relapse</li><li><b>Answer: B</b> — ATO + ATRA synergistic; mechanism distinct from chemotherapy</li></ul>
+<p><b>7.</b> A patient completes APL treatment with ATRA + ATO. The 5-year overall survival is approximately:</p>
+<ul><li>A. &lt;50%</li><li>B. 60-70%</li><li>C. <b>&gt;90% in low-risk; 80-90% in high-risk</b></li><li>D. 30%</li><li><b>Answer: C</b> — APL has best prognosis of all AML subtypes with modern therapy</li></ul>
+<p><b>8.</b> A patient with relapsed APL achieves second CR with ATRA + ATO. Consolidation strategy is:</p>
+<ul><li>A. Standard chemotherapy</li><li>B. <b>Autologous stem cell transplant (if molecular CR); consider allogeneic in 2nd relapse</b></li><li>C. No further treatment</li><li>D. Palliative care</li><li><b>Answer: B</b> — SCT in CR2 standard; molecular MRD monitoring</li></ul>
+<p><b>9.</b> Pseudotumor cerebri is a recognised complication of:</p>
+<ul><li>A. Cytarabine</li><li>B. <b>ATRA — especially in children and young women</b></li><li>C. ATO</li><li>D. Hydroxyurea</li><li><b>Answer: B</b> — Headache, papilloedema; consider acetazolamide, dose reduction</li></ul>
+<p><b>10.</b> A patient on ATO develops QT prolongation. The most appropriate action is:</p>
+<ul><li>A. Continue ATO at same dose</li><li>B. <b>Hold ATO, check electrolytes (K+ &gt;4.0, Mg2+ &gt;2.0), review medications; resume if QTc &lt;500ms</b></li><li>C. Stop ATO permanently</li><li>D. Increase ATO dose</li><li><b>Answer: B</b> — QTc monitoring mandatory; ATO causes torsades if QTc &gt;500ms</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> What is the defining cytogenetic abnormality of APL? <b>A1:</b> t(15;17)(q22;q12) — PML-RARA fusion gene</p>
+<p><b>Q2:</b> What is the first drug to give in suspected APL? <b>A2:</b> ATRA (all-trans retinoic acid) — immediately on clinical suspicion, do not wait for cytogenetics</p>
+<p><b>Q3:</b> What is the standard induction for low-risk APL? <b>A3:</b> ATRA + ATO (arsenic trioxide) — without chemotherapy (Lo-Coco / APL0406 protocol)</p>
+<p><b>Q4:</b> What is the syndrome characterised by fever, hypoxia, weight gain on ATRA? <b>A4:</b> Differentiation syndrome (ATRA-DS) — treat with dexamethasone 10mg IV BD</p>
+<p><b>Q5:</b> What coagulation abnormality defines APL presentation? <b>A5:</b> Disseminated intravascular coagulation (DIC) with hyperfibrinolysis — medical emergency</p>
+<p><b>Q6:</b> What is the long-term OS of low-risk APL with modern therapy? <b>A6:</b> &gt;90% (approaching 100% CR; 97% 5-year OS in low-risk)</p>
+<p><b>Q7:</b> What is the role of arsenic trioxide (ATO)? <b>A7:</b> Induces PML-RARA degradation via SUMOylation/ubiquitination; synergistic with ATRA</p>
+<p><b>Q8:</b> What cardiac monitoring is needed for ATO? <b>A8:</b> ECG for QTc prolongation; maintain K+ &gt;4.0, Mg2+ &gt;2.0; hold if QTc &gt;500ms</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>SBA</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-----</td><td>-------------</td></tr><tr><td>1</td><td>B</td><td>-</td><td>t(15;17) PML-RARA defines APL; medical emergency due to DIC</td></tr><tr><td>2</td><td>B</td><td>-</td><td>ATRA rapidly corrects coagulopathy; do not delay for cytogenetics</td></tr><tr><td>3</td><td>B</td><td>-</td><td>Differentiation syndrome on ATRA; treat with dexamethasone</td></tr><tr><td>4</td><td>B</td><td>-</td><td>ATRA + ATO without chemo = standard for low-risk (Lo-Coco)</td></tr><tr><td>5</td><td>B</td><td>-</td><td>High-risk APL: ATRA + ATO + anthracycline required</td></tr><tr><td>6</td><td>B</td><td>-</td><td>PML (15q22) + RARA (17q12) = defining fusion</td></tr><tr><td>7</td><td>B</td><td>-</td><td>DIC with hyperfibrinolysis from annexin II-mediated plasminogen activation</td></tr><tr><td>8</td><td>B</td><td>-</td><td>Dexamethasone 10mg IV BD; continue ATRA if mild</td></tr><tr><td>9</td><td>C</td><td>-</td><td>>90% cure in low-risk with modern therapy</td></tr><tr><td>10</td><td>B</td><td>-</td><td>Long-term monitoring for cardiac, secondary malignancy</td></tr><tr><td>1</td><td>-</td><td>B</td><td>DIC + pancytopenia + bleeding = APL emergency</td></tr><tr><td>2</td><td>-</td><td>B</td><td>Start ATRA on clinical suspicion</td></tr><tr><td>3</td><td>-</td><td>B</td><td>Aggressive FFP/cryo/platelet support during induction</td></tr><tr><td>4</td><td>-</td><td>B</td><td>Differentiation syndrome onset day 7-12 of ATRA</td></tr><tr><td>5</td><td>-</td><td>B</td><td>Dexamethasone first-line for differentiation syndrome</td></tr><tr><td>6</td><td>-</td><td>B</td><td>ATO induces PML-RARA degradation</td></tr><tr><td>7</td><td>-</td><td>C</td><td>>90% 5y OS in low-risk; APL best AML subtype prognosis</td></tr><tr><td>8</td><td>-</td><td>B</td><td>Autologous SCT in CR2; allogeneic for 2nd relapse</td></tr><tr><td>9</td><td>-</td><td>B</td><td>Pseudotumor cerebri is ATRA side effect</td></tr><tr><td>10</td><td>-</td><td>B</td><td>QTc monitoring; hold ATO if QTc >500ms</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acute Promyelocytic Leukaemia Apl · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

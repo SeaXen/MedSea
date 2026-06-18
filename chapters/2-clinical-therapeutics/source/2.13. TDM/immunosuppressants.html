@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Immunosuppressants — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.13. TDM</span>
+      <div class="h1">Immunosuppressants</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] State target trough/AUC ranges for Tacrolimus, Ciclosporin, Sirolimus, Everolimus, Mycophenolate</li><li>[ ] Apply CYP3A4/P-gp interaction management (azoles, macrolides, CCBs, rifampicin, etc.)</li><li>[ ] Recognise toxicity: nephrotoxicity, neurotoxicity, metabolic, infectious</li><li>[ ] Manage dose adjustments for renal/hepatic impairment</li><li>[ ] Execute monitoring protocols post-transplant</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Target Ranges & Pharmacokinetics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>**Target Trough (ng/mL)**</th><th>**AUC Target**</th><th>**Key PK**</th></tr><tr><td>------</td><td>---------------------------</td><td>----------------</td><td>------------</td></tr><tr><td>**Tacrolimus (Tac)**</td><td>**Kidney: 5–15** (early 10–15, late 5–10)<br>**Liver: 5–10**<br>**Heart/Lung: 10–15**</td><td>**AUC 200–300 ng·h/mL** (limited use)</td><td>**CYP3A4/5 substrate**<br>**P-gp substrate**<br>**High Vd, low bioavailability (20–25%)**<br>**t½ ~12h**</td></tr><tr><td>**Ciclosporin (CsA)**</td><td>**Kidney: 100–300** (early 200–300, late 100–200)<br>**Liver: 100–200**<br>**C2 monitoring (2h post): 800–1500**</td><td>**AUC 3000–5000 ng·h/mL**</td><td>**CYP3A4/5 substrate**<br>**P-gp substrate**<br>**Low bioavailability (20–50%), variable**<br>**t½ ~6–12h**</td></tr><tr><td>**Sirolimus (SRL)**</td><td>**4–12** (de novo kidney: 8–12; with CsA: 4–8)</td><td>**AUC 100–200 ng·h/mL**</td><td>**CYP3A4/5 substrate**<br>**P-gp substrate**<br>**High Vd, low bioavailability (14%)**<br>**t½ ~60h**</td></tr><tr><td>**Everolimus (EVR)**</td><td>**3–8** (with CsA: 3–5; with Tac: 6–10)</td><td>**AUC 30–80 ng·h/mL**</td><td>**CYP3A4/5 substrate**<br>**P-gp substrate**<br>**t½ ~30h**</td></tr><tr><td>**Mycophenolate (MMF/MPA)**</td><td>**Not routinely trough** (MPA trough 1–3.5 µg/mL)</td><td>**AUC 30–60 mg·h/L (MPA)**</td><td>**UGT1A9 glucuronidation**<br>**Enterohepatic recycling**<br>**No CYP metabolism**<br>**Renal excretion of MPAG**</td></tr></table>
+<div class="callout"><b>C2 monitoring (Ciclosporin)</b>: 2h post-dose level correlates better with AUC; used in some centres for <b>de novo kidney/liver</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🔄 Major CYP3A4/P-gp Interactions — **CRITICAL**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Strong Inhibitors (↑ Levels 2–10x) — **REDUCE DOSE**</div>
+<table class="ctable"><tr><th>Inhibitor</th><th>**Tac / CsA / SRL / EVR Dose Adjustment**</th><th>Notes</th></tr><tr><td>-----------</td><td>------------------------------------------</td><td>-------</td></tr><tr><td>**Ketoconazole**</td><td>**↓ 66–80%** (Tac: divide by 3–5)</td><td>**Potent CYP3A4 + P-gp inhibitor**</td></tr><tr><td>**Itraconazole**</td><td>**↓ 50–66%**</td><td></td></tr><tr><td>**Posaconazole**</td><td>**↓ 50–66%**</td><td></td></tr><tr><td>**Voriconazole**</td><td>**↓ 66–90%** (Tac: **reduce to 1/10–1/3 dose**)</td><td>**Most potent** — monitor levels **daily**</td></tr><tr><td>**Fluconazole**</td><td>**↓ 50%**</td><td></td></tr><tr><td>**Clarithromycin / Erythromycin**</td><td>**↓ 50–66%**</td><td>**Azithromycin safer** (no CYP3A4 inhibition)</td></tr><tr><td>**Verapamil / Diltiazem**</td><td>**↓ 30–50%**</td><td></td></tr><tr><td>**Dronedarone**</td><td>**↓ 50%**</td><td></td></tr><tr><td>**Amiodarone**</td><td>**↓ 30–50%**</td><td></td></tr><tr><td>**Grapefruit Juice**</td><td>**↓ 30–50%**</td><td>Intestinal CYP3A4 + P-gp inhibition</td></tr><tr><td>**Protease Inhibitors** (Ritonavir, etc.)</td><td>**↓ 80–90%**</td><td>Avoid if possible</td></tr></table>
+<div class="sub-h">Strong Inducers (↓ Levels 50–90%) — **INCREASE DOSE / AVOID**</div>
+<table class="ctable"><tr><th>Inducer</th><th>**Effect**</th><th>Management</th></tr><tr><td>---------</td><td>------------</td><td>------------</td></tr><tr><td>**Rifampicin**</td><td>**↓ 80–90%** (near complete loss)</td><td>**AVOID**; if essential: ↑ dose 3–5x, monitor levels **daily**</td></tr><tr><td>**Rifabutin**</td><td>**↓ 50–80%**</td><td>↑ Dose, monitor</td></tr><tr><td>**Carbamazepine / Phenytoin / Phenobarbital**</td><td>**↓ 50–80%**</td><td>↑ Dose, monitor</td></tr><tr><td>**St John's Wort**</td><td>**↓ 50–80%**</td><td>**AVOID**</td></tr><tr><td>**Dexamethasone (high dose)**</td><td>**↓ 30–50%**</td><td>Monitor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">☠️ Toxicity Profiles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>**Nephrotoxicity**</th><th>**Neurotoxicity**</th><th>**Metabolic / Other**</th><th>**Infection / Malignancy**</th></tr><tr><td>------</td><td>-------------------</td><td>-------------------</td><td>----------------------</td><td>----------------------------</td></tr><tr><td>**Tacrolimus**</td><td>**Afferent arteriolar vasoconstriction** → ↑ Cr, ↓ GFR (dose-dep, reversible)</td><td>**Tremor, Headache, Insomnia, Seizures, PRES** (high levels)</td><td>**New-onset diabetes (PTDM) — 15–20%**, Hyperkalaemia, Hypomagnesaemia, Hyperlipidaemia</td><td>↑ CMV, BK virus, **PTLD (EBV)**, Skin cancer</td></tr><tr><td>**Ciclosporin**</td><td>**Afferent vasoconstriction** → ↑ Cr (dose-dep); **Thrombotic microangiopathy** (TMA)</td><td>**Tremor, Hirsutism, Gingival hyperplasia, Seizures, PRES**</td><td>**Hyperlipidaemia**, Hyperuricaemia/gout, Hypertension, Hyperkalaemia</td><td>↑ CMV, BK, PTLD, Skin cancer</td></tr><tr><td>**Sirolimus / Everolimus**</td><td>**Proteinuria** (podocyte injury), ↓ Wound healing, Lymphocele</td><td>**Oral ulcers**, Dysgeusia</td><td>**Hyperlipidaemia (↑ TG/Chol)**, **Hyperglycaemia**, Thrombocytopenia, Anaemia, Impaired wound healing, Pneumonitis (rare)</td><td>↑ Infections (atypical), PTLD risk lower than CNI</td></tr><tr><td>**Mycophenolate**</td><td>**Rare**</td><td>Rare (dizziness)</td><td>**GI (diarrhoea, N/V) — 30–40%**, **Bone marrow suppression (leukopenia, anaemia)**</td><td>↑ CMV, HSV, VZV; **Teratogenic**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Tacrolimus trough**</td><td>Kidney: 5–15 (early 10–15, late 5–10); Liver: 5–10; Heart/Lung: 10–15</td></tr><tr><td>**Ciclosporin trough**</td><td>Kidney: 100–300 (early 200–300, late 100–200); C2: 800–1500</td></tr><tr><td>**Sirolimus trough**</td><td>4–12 (higher if CNI-free)</td></tr><tr><td>**Voriconazole + Tacrolimus**</td><td>**↓ Tac dose to 1/10–1/3 (90% reduction)**; monitor levels **daily**</td></tr><tr><td>**Azoles + CNI**</td><td>All azoles ↓ CNI dose; **Fluconazole ↓ 50%; Voriconazole ↓ 90%**</td></tr><tr><td>**Clarithromycin + CNI**</td><td>**↓ CNI dose 50–66%**; **Use azithromycin instead**</td></tr><tr><td>**Rifampicin + CNI**</td><td>**↓ Levels 80–90% — AVOID**</td></tr><tr><td>**Tacrolimus nephrotoxicity**</td><td>Afferent vasoconstriction; distinguish from rejection (biopsy)</td></tr><tr><td>**Sirolimus proteinuria**</td><td>Podocyte injury; switch to CNI if >1g/day</td></tr><tr><td>**Mycophenolate GI**</td><td>Dose reduction, divided doses, enteric-coated (mycophenolate sodium)</td></tr><tr><td>**PTDM (Tacrolimus)**</td><td>**New-onset diabetes** — 15–20% kidney, 30% liver; monitor HbA1c, glucose</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Tacrolimus target trough for kidney transplant (early vs late)?</td><td>**Early (0–3mo): 10–15 ng/mL; Late (>3mo): 5–10 ng/mL**</td></tr><tr><td>2. Ciclosporin target trough for kidney transplant?</td><td>**Early: 200–300 ng/mL; Late: 100–200 ng/mL**; C2 (2h post): 800–1500 ng/mL</td></tr><tr><td>3. Sirolimus target trough?</td><td>**4–12 ng/mL** (de novo 8–12; with CsA 4–8)</td></tr><tr><td>4. Voriconazole + Tacrolimus — dose adjustment?</td><td>**Reduce tacrolimus to 1/10–1/3 of dose (90% reduction)**; monitor levels **daily**</td></tr><tr><td>5. Fluconazole + Tacrolimus — dose adjustment?</td><td>**Reduce tacrolimus by 50%**; monitor levels</td></tr><tr><td>6. Clarithromycin + Ciclosporin — dose adjustment?</td><td>**Reduce ciclosporin by 50–66%**; **prefer azithromycin**</td></tr><tr><td>7. Rifampicin + Tacrolimus — effect?</td><td>**↓ Tacrolimus levels 80–90% (near complete loss)** — **AVOID**</td></tr><tr><td>8. Tacrolimus vs Ciclosporin — key toxicity difference?</td><td>**Tac: PTDM (diabetes), tremor, neurotoxicity**; **CsA: Hirsutism, gingival hyperplasia, hyperlipidaemia, gout, hypertension, TMA**</td></tr><tr><td>9. Sirolimus — unique toxicities?</td><td>**Proteinuria (podocyte), Impaired wound healing, Lymphocele, Hyperlipidaemia (TG/Chol), Pneumonitis, Oral ulcers**</td></tr><tr><td>10. Mycophenolate — main toxicities?</td><td>**GI (diarrhoea, nausea — 30–40%), Bone marrow suppression (leukopenia, anaemia), Teratogenic**</td></tr><tr><td>11. CNI nephrotoxicity — mechanism?</td><td>**Afferent arteriolar vasoconstriction** → ↓ GFR; dose-dependent, reversible</td></tr><tr><td>12. PTDM — which CNI higher risk?</td><td>**Tacrolimus > Ciclosporin**; 15–20% kidney, 30% liver</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Tacrolimus trough 5–15 — what does it mean?**</td><td>Early post-Tx (0–3mo) = **10–15**; Maintenance (>3mo) = **5–10**</td></tr><tr><td>**C2 monitoring**</td><td>**2h post-dose CsA level** — correlates better with AUC; used in some centres</td></tr><tr><td>**Voriconazole interaction**</td><td>**Most potent** — Tac ↓ to **1/10–1/3 dose (90% reduction)**</td></tr><tr><td>**Azithromycin vs Clarithromycin**</td><td>**Azithromycin = NO CYP3A4 inhibition** — safe with CNI</td></tr><tr><td>**Tacrolimus vs CsA diabetes**</td><td>**Tacrolimus >> CsA** for new-onset diabetes (PTDM)</td></tr><tr><td>**Sirolimus proteinuria**</td><td>**Podocyte injury** — if >1g/day, consider switch to CNI</td></tr><tr><td>**Mycophenolate + Rifampicin**</td><td>**Rifampicin ↓ MPA AUC 30–50%** (disrupts enterohepatic recycling)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"TAC RANGE"</b> = <b>Kidney: 10-15 early, 5-10 late</b>; <b>Liver: 5-10</b>; <b>Heart/Lung: 10-15</b></li><li><b>"CSA RANGE"</b> = <b>Kidney: 200-300 early, 100-200 late</b>; <b>C2: 800-1500</b></li><li><b>"SRL RANGE"</b> = <b>4-12</b> (higher if CNI-free)</li><li><b>"VORI = 1/10 TAC"</b> = Voriconazole → <b>Tacrolimus dose 1/10–1/3</b></li><li><b>"FLUCONAZOLE = 1/2 TAC"</b> = Fluconazole → <b>Tacrolimus 50% dose</b></li><li><b>"CLARI = 1/2 CSA"</b> = Clarithromycin → <b>Ciclosporin 50-66%</b></li><li><b>"RIFA = AVOID CNI"</b> = Rifampicin → <b>↓ CNI 80-90%</b> — AVOID</li><li><b>"AZITHRO = SAFE"</b> = Azithromycin = no CYP3A4 inhibition</li><li><b>"TAC = DIABETES, TREMOR, PRES"</b></li><li><b>"CSA = HIRSUTISM, GINGIVAL, HYPERLIPID, GOUT, HTN, TMA"</b></li><li><b>"SRL = PROTEINURIA, WOUND HEALING, HYPERLIPID, PNEUMONITIS"</b></li><li><b>"MMF = GI, BONE MARROW, TERATOGENIC"</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Immunosuppressants TDM)) Target Ranges Tacrolimus Kidney: 10-15 early, 5-10 late Liver: 5-10 Heart/Lung: 10-15 Ciclosporin Kidney: 200-300 early, 100-200 late C2: 800-1500 Sirolimus 4-12 (higher if CNI-free) Everolimus 3-8 Mycophenolate AUC 30-60 mg·h/L (MPA) CYP3A4/P-gp Interactions Strong Inhibitors (↓ dose) Azoles: Voriconazole (1/10), Itra/Posa (1/3), Fluconazole (1/2) Macrolides: Clari/Ery (1/2) — Azithro SAFE CCBs: Verapamil/Diltiazem (1/2) Amio/Dronedarone (1/2) Grapefruit (1/2) Strong Inducers (↑ dose / AVOID) Rifampicin (AVOID - 90% loss) Carba/Phenytoin/Phenobarb St John's Wort Dexamethasone high dose Toxicity Tacrolimus Nephro: Afferent vasoconstriction Neuro: Tremor, PRES PTDM (diabetes) HyperK, HypoMg Ciclosporin Nephro: Afferent vasoconstriction + TMA Neuro: Tremor, PRES Hirsutism, Gingival hyperplasia Hyperlipid, Gout, HTN Sirolimus/Everolimus Proteinuria (podocyte) Impaired wound healing Hyperlipid (TG/Chol) Oral ulcers, Pneumonitis Mycophenolate GI (diarrhoea, nausea) Bone marrow suppression Teratogenic </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Target ranges</td><td>8</td><td></td></tr><tr><td>Interactions (inhibitors/inducers)</td><td>10</td><td></td></tr><tr><td>Toxicity profiles</td><td>10</td><td></td></tr><tr><td>CNI differences</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td></tr><tr><td>**Total**</td><td>**46**</td><td></td></tr></table>
+<p><b>Target</b>: ≥37/46 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Tacrolimus target trough ranges and key drug interactions."*</div>
+<ul><li><b>Kidney</b>: Early (0–3mo) <b>10–15</b>; Late (&gt;3mo) <b>5–10</b> ng/mL</li><li><b>Liver</b>: <b>5–10</b>; <b>Heart/Lung</b>: <b>10–15</b></li><li><b>Strong inhibitors (↓ dose)</b>: Voriconazole (<b>1/10–1/3</b>), Itraconazole/Posaconazole (<b>1/3</b>), Fluconazole (<b>1/2</b>), Clarithromycin/Erythromycin (<b>1/2</b>), Verapamil/Diltiazem (<b>1/2</b>)</li><li><b>Strong inducers (AVOID/↑ dose)</b>: Rifampicin (<b>AVOID</b>, ↓ 90%), Carbamazepine/Phenytoin/Phenobarbital, St John's Wort</li><li><b>Azithromycin safe</b> (no CYP3A4 inhibition)</li></ul>
+<div class="sub-h">Viva (1 min): *"Kidney transplant patient on tacrolimus 4mg BD, started on voriconazole for aspergillosis. Tacrolimus level next day 45 ng/mL (target 5–10). Action?"*</div>
+<ul><li><b>Voriconazole = potent CYP3A4/P-gp inhibitor → ↑ tacrolimus 5–10x</b></li><li><b>IMMEDIATELY reduce tacrolimus to 1/10–1/3 dose</b> (e.g., 4mg BD → 0.5mg daily or 1mg daily)</li><li><b>Monitor tacrolimus level DAILY</b> until stable</li><li>Re-titrate after voriconazole stopped (return to baseline over 3–5 days)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Transplant patient on ciclosporin, prescribed clarithromycin for chest infection. Alternative?"*</div>
+<ul><li><b>Clarithromycin inhibits CYP3A4 → ↑ ciclosporin 2–3x</b></li><li><b>SWITCH to azithromycin</b> (no CYP3A4 inhibition)</li><li>If clarithromycin essential: ↓ ciclosporin 50–66%, monitor levels daily</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Tac: Kidney 10-15→5-10; Liver 5-10; Heart/Lung 10-15</li><li>CsA: Kidney 200-300→100-200; C2 800-1500</li><li>SRL: 4-12; EVR: 3-8</li><li>Vori + Tac = 1/10–1/3 dose (DAILY levels); Fluconazole = 1/2; Clari = 1/2</li><li>Rifampicin = AVOID (↓ 90%); Azithromycin = SAFE</li><li>Tac toxicity = PTDM, Tremor, PRES, Nephro (afferent vasoconstriction)</li><li>CsA toxicity = Hirsutism, Gingival, TMA, Gout, HTN, Hyperlipid</li><li>SRL = Proteinuria, Wound healing, Hyperlipid, Pneumonitis</li><li>MMF = GI, Bone marrow, Teratogenic</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>IMMUNOSUPPRESSANT TDM:</b> <b>TAC</b>: Kidney 10-15→5-10; Liver 5-10; Heart/Lung 10-15 <b>CSA</b>: Kidney 200-300→100-200; C2 800-1500 <b>SRL</b>: 4-12; EVR: 3-8 <b>VORI + TAC = 1/10 DOSE (DAILY LEVELS)</b> <b>FLUCO + TAC = 1/2 DOSE</b> <b>CLARI + CSA = 1/2 DOSE (USE AZITHRO)</b> <b>RIFA = AVOID (↓ 90%)</b> <b>TAC = PTDM, TREMOR, PRES</b>; <b>CSA = HIRSUTISM, TMA, GOUT</b> <b>SRL = PROTEINURIA, WOUND HEALING, HYPERLIPID</b> <b>MMF = GI, BONE MARROW, TERATOGENIC</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Tacrolimus target trough for kidney transplant maintenance (&gt;3 months):</b></li></ol>
+<p>A. 10–15 ng/mL B. <b>5–10 ng/mL</b> ✓ C. 15–20 ng/mL D. 3–5 ng/mL E. 20–30 ng/mL</p>
+<ol><li><b>Ciclosporin C2 monitoring — when to sample:</b></li></ol>
+<p>A. Pre-dose (trough) B. <b>2 hours post-dose</b> ✓ C. 4 hours post-dose D. 6 hours post-dose E. Random</p>
+<ol><li><b>Voriconazole + Tacrolimus — tacrolimus dose reduction:</b></li></ol>
+<p>A. 25% B. 50% C. 75% D. <b>90% (reduce to 1/10–1/3 of dose)</b> ✓ E. No reduction needed</p>
+<ol><li><b>Fluconazole + Tacrolimus — tacrolimus dose reduction:</b></li></ol>
+<p>A. No reduction B. <b>50%</b> ✓ C. 75% D. 90% E. 25%</p>
+<ol><li><b>Clarithromycin + Ciclosporin — preferred alternative:</b></li></ol>
+<p>A. Erythromycin B. <b>Azithromycin</b> ✓ C. Doxycycline D. Ciprofloxacin E. Amoxicillin</p>
+<ol><li><b>Rifampicin + Tacrolimus — effect on tacrolimus levels:</b></li></ol>
+<p>A. No change B. ↑ 50% C. <b>↓ 80–90%</b> ✓ D. ↑ 200% E. Unpredictable</p>
+<ol><li><b>Tacrolimus vs Ciclosporin — which has higher risk of new-onset diabetes (PTDM)?</b></li></ol>
+<p>A. Ciclosporin B. <b>Tacrolimus</b> ✓ C. Equal D. Neither E. Only with steroids</p>
+<ol><li><b>Sirolimus — unique toxicity:</b></li></ol>
+<p>A. Gingival hyperplasia B. <b>Proteinuria (podocyte injury)</b> ✓ C. Hirsutism D. Gout E. TMA</p>
+<ol><li><b>Mycophenolate — main dose-limiting toxicity:</b></li></ol>
+<p>A. Nephrotoxicity B. <b>GI (diarrhoea, nausea) + Bone marrow suppression</b> ✓ C. Neurotoxicity D. Hepatotoxicity E. Cardiotoxicity</p>
+<ol><li><b>CNI nephrotoxicity — mechanism:</b></li></ol>
+<p>A. Tubular necrosis B. <b>Afferent arteriolar vasoconstriction</b> ✓ C. Interstitial nephritis D. Glomerulonephritis E. Crystal nephropathy</p>
+<ol><li><b>Mycophenolate + Rifampicin interaction:</b></li></ol>
+<p>A. No interaction B. <b>↓ MPA AUC 30–50% (enterohepatic recycling disrupted)</b> ✓ C. ↑ MPA levels D. ↑ Bone marrow toxicity E. ↑ GI toxicity only</p>
+<ol><li><b>Azithromycin + Tacrolimus — interaction:</b></li></ol>
+<p>A. ↑ Tacrolimus 2x B. <b>No significant interaction</b> ✓ C. ↓ Tacrolimus 50% D. ↑ Tacrolimus 50% E. Contraindicated</p>
+<ol><li><b>Sirolimus proteinuria — action if &gt;1g/day:</b></li></ol>
+<p>A. Increase sirolimus B. <b>Switch to CNI (reduce/stop sirolimus)</b> ✓ C. Add ACEi only D. No action E. Add steroid</p>
+<ol><li><b>Tacrolimus-induced hyperkalaemia — mechanism:</b></li></ol>
+<p>A. Aldosterone excess B. <b>↓ Distal Na⁺ delivery → ↓ K⁺ secretion (type 4 RTA-like)</b> ✓ C. Renal K⁺ retention D. Acidosis E. Tissue breakdown</p>
+<ol><li><b>Ciclosporin-induced thrombotic microangiopathy (TMA) — management:</b></li></ol>
+<p>A. Increase ciclosporin B. <b>Reduce/stop ciclosporin; consider switch to Tac/SRL</b> ✓ C. Plasma exchange only D. Eculizumab E. No change needed</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Tac kidney early</td><td>10–15 ng/mL</td></tr><tr><td>Tac kidney late</td><td>5–10 ng/mL</td></tr><tr><td>Tac liver</td><td>5–10 ng/mL</td></tr><tr><td>Tac heart/lung</td><td>10–15 ng/mL</td></tr><tr><td>CsA kidney early</td><td>200–300 ng/mL</td></tr><tr><td>CsA kidney late</td><td>100–200 ng/mL</td></tr><tr><td>CsA C2</td><td>800–1500 ng/mL (2h post-dose)</td></tr><tr><td>SRL</td><td>4–12 ng/mL</td></tr><tr><td>EVR</td><td>3–8 ng/mL</td></tr><tr><td>Vori + Tac</td><td>1/10–1/3 dose (DAILY levels)</td></tr><tr><td>Fluco + Tac</td><td>1/2 dose</td></tr><tr><td>Clari + CSA</td><td>1/2 dose (AZITHRO safe)</td></tr><tr><td>Rifampicin + CNI</td><td>AVOID (↓ 90%)</td></tr><tr><td>Tac toxicity</td><td>PTDM, Tremor, PRES, Nephro (afferent vasoconstriction)</td></tr><tr><td>CSA toxicity</td><td>Hirsutism, Gingival, TMA, Gout, HTN, Hyperlipid</td></tr><tr><td>SRL toxicity</td><td>Proteinuria, Wound healing, Hyperlipid, Pneumonitis</td></tr><tr><td>MMF toxicity</td><td>GI, Bone marrow, Teratogenic</td></tr><tr><td>CNI nephro mechanism</td><td>Afferent arteriolar vasoconstriction</td></tr><tr><td>MMF + Rifampicin</td><td>↓ MPA 30-50% (enterohepatic)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 5–10 ng/mL</li><li><b>B</b> — 2 hours post-dose</li><li><b>D</b> — 90% (reduce to 1/10–1/3)</li><li><b>B</b> — 50%</li><li><b>B</b> — Azithromycin</li><li><b>C</b> — ↓ 80–90%</li><li><b>B</b> — Tacrolimus</li><li><b>B</b> — Proteinuria (podocyte injury)</li><li><b>B</b> — GI + Bone marrow suppression</li><li><b>B</b> — Afferent arteriolar vasoconstriction</li><li><b>B</b> — ↓ MPA AUC 30–50%</li><li><b>B</b> — No significant interaction</li><li><b>B</b> — Switch to CNI</li><li><b>B</b> — ↓ Distal Na⁺ delivery → ↓ K⁺ secretion</li><li><b>B</b> — Reduce/stop ciclosporin; switch to Tac/SRL</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/TDM/Immunosuppressants.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Immunosuppressants · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

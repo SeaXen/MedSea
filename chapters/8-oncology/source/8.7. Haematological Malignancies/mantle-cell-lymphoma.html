@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mantle Cell Lymphoma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.7. HAEMATOLOGICAL MALIGNANCIES</span>
+      <div class="h1">Mantle Cell Lymphoma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Identify <b>t(11;14)/Cyclin D1</b> as diagnostic hallmark</li><li>[ ] Apply <b>MIPI / MIPI-c</b> (clinical + biological: Ki-67) for risk stratification</li><li>[ ] Choose <b>Intensive</b> (Nordic: R-CHOP/R-DHAP alt → ASCT) vs <b>Non-intensive</b> (BR, R-CHOP) pathway</li><li>[ ] Sequence <b>Relapsed/Refractory</b>: <b>BTKi</b> (Ibrutinib 1L/2L), <b>Venetoclax</b>, <b>CAR-T (Brexu-cel)</b>, <b>PI3Kδi</b></li><li>[ ] Recognise <b>Blastoid/Pleomorphic variants</b> (TP53 mut, Ki-67 high, poor prognosis)</li><li>[ ] Manage <b>BTKi toxicities</b>: AFib, Bleeding, HTN, Diarrhoea, Infections</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Mature B-cell NHL; **t(11;14)(q13;q32)** → **CCND1/IgH fusion** → **Cyclin D1 overexpression** (nuclear); **SOX11+** (cyclin D1-negative cases)</td></tr><tr><td>**Incidence**</td><td>5-7% of NHL; ~500-600/year UK; M:F = 2:1</td></tr><tr><td>**Prevalence**</td><td>Median age 65-70; **Incurable with conventional chemo**; Median OS ~8-10 years (improving with BTKi)</td></tr><tr><td>**Peak Age**</td><td>60-75 years</td></tr><tr><td>**Sex Ratio**</td><td>Male 2:1</td></tr><tr><td>**Risk Factors**</td><td>Age, Male sex; **No strong environmental links**; Association with **boron exposure** (weak)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[t(11;14) Translocation] --&gt; B[CCND1 / IgH Fusion] B --&gt; C[Cyclin D1 Overexpression] C --&gt; D[Constitutive CDK4/6 Activation] D --&gt; E[RB Phosphorylation → E2F Release → Cell Cycle Progression] E --&gt; F[G1/S Transition Dysregulation] F --&gt; G[Genomic Instability] G --&gt; H1[Classic MCL: Nodal, SOX11+, Ki-67 low-moderate] G --&gt; H2[Leukemic Non-nodal: SOX11-, Ki-67 low, CCND1 high, Indolent] G --&gt; H3[Blastoid/Pleomorphic: TP53 mut, Ki-67 HIGH, Aggressive] F --&gt; I[Secondary Hits: ATM, TP53, BIRC3, WHSC1, NOTCH1/2] </code>``</p>
+<div class="sub-h">Histological Variants</div>
+<table class="ctable"><tr><th>Variant</th><th>Frequency</th><th>Morphology</th><th>Ki-67</th><th>TP53</th><th>Prognosis</th></tr><tr><td>---------</td><td>-----------</td><td>------------</td><td>-------</td><td>------</td><td>-----------</td></tr><tr><td>**Classic (Nodal)**</td><td>70%</td><td>Small-medium cells, irregular nuclei</td><td>Low-Moderate (<30%)</td><td>Rare</td><td>Standard</td></tr><tr><td>**Leukemic Non-nodal**</td><td>10-15%</td><td>Small cells, PB involvement, splenomegaly</td><td>Low (<10%)</td><td>Rare</td><td>**Indolent** — Watch & Wait possible</td></tr><tr><td>**Blastoid**</td><td>10-15%</td><td>Medium-large, high N:C, fine chromatin</td><td>**High (>30-50%)**</td><td>**Common (30-40%)**</td><td>**Poor**</td></tr><tr><td>**Pleomorphic**</td><td><5%</td><td>Large, pleomorphic, prominent nucleoli</td><td>High</td><td>Very Common</td><td>Very Poor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Lymphadenopathy**</td><td>Generalised, often bulky; **Walleye's sign** (facial plethora from SVC obstruction) rare</td></tr><tr><td>**Splenomegaly**</td><td>Common (50-70%)</td></tr><tr><td>**GI Involvement**</td><td>**Polyposis (lymphomatous polyposis)** → Abdominal pain, obstruction, bleeding, intussusception</td></tr><tr><td>**Bone Marrow**</td><td>Involved in 70-90% (paratrabecular pattern)</td></tr><tr><td>**Peripheral Blood**</td><td>Lymphocytosis (leukemic variant); Cyclin D1+ cells</td></tr><tr><td>**B Symptoms**</td><td>Fever, night sweats, weight loss (~30%)</td></tr><tr><td>**CNS Involvement**</td><td>Rare at diagnosis (2-4%); Higher in blastoid</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Ann Arbor / Lugano**</td><td>Stage I-IV (same as DLBCL); Most present Stage III-IV</td></tr><tr><td>**MIPI (Mantle Cell Lymphoma International Prognostic Index)**</td><td>**4 Factors**: 1) Age, 2) ECOG PS, 3) LDH, 4) WBC count<br/>**Low**: <5.7; **Intermediate**: 5.7-6.2; **High**: >6.2</td></tr><tr><td>**MIPI-c (Clinical + Biological)**</td><td>**MIPI + Ki-67** (Ki-67 >30% = adverse); **Better discrimination**</td></tr><tr><td>**Ki-67**</td><td>**<10%**: Indolent; **10-30%**: Standard; **>30%**: Aggressive (Blastoid-like)</td></tr></table>
+<div class="sub-h">MIPI Score Calculation</div>
+<table class="ctable"><tr><th>Variable</th><th>Points</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>Age (years)</td><td>0.0354 × Age</td></tr><tr><td>ECOG PS (0-1 vs 2-4)</td><td>0.6793 if 2-4</td></tr><tr><td>LDH (×ULN)</td><td>0.8362 if >ULN</td></tr><tr><td>WBC (×10⁹/L)</td><td>0.0133 × WBC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Findings</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td></tr><tr><td>**Lymph Node Biopsy (Excisional)**</td><td>**Gold standard**</td><td>**Cyclin D1+ (nuclear)**, **SOX11+**, CD5+, CD20+, CD23-, CD10-, BCL2+, **Ki-67**</td></tr><tr><td>**FISH / Karyotype**</td><td>**Confirm t(11;14)**</td><td>**CCND1/IgH fusion**; Complex karyotype = adverse</td></tr><tr><td>**Flow Cytometry**</td><td>Immunophenotype</td><td>**CD5+, CD20+, CD19+, CD22+, FMC7+, CD23-, CD10-, CD200-, Cyclin D1+**</td></tr><tr><td>**CT Neck/Chest/Abd/Pelvis**</td><td>Staging</td><td>Nodal, Splenic, Extranodal (GI polyposis)</td></tr><tr><td>**PET-CT**</td><td>Limited role (indolent); Baseline for bulky</td><td>Not standard for response (Deauville not validated)</td></tr><tr><td>**Bone Marrow Biopsy**</td><td>Staging</td><td>Paratrabecular infiltration; Flow cytometry</td></tr><tr><td>**Colonoscopy**</td><td>GI screening</td><td>Lymphomatous polyposis (multiple polyps)</td></tr><tr><td>**CNS Prophylaxis**</td><td>Blastoid, high Ki-67, high LDH</td><td>Intrathecal MTX/Ara-C + High-dose MTX/Ara-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**CLL/SLL**</td><td>CD5+, CD23+, CD200+, CD20 dim, **Cyclin D1-**, **SOX11-**</td></tr><tr><td>**Marginal Zone Lymphoma**</td><td>CD5-, CD10-, Cyclin D1-; MZL markers</td></tr><tr><td>**Follicular Lymphoma**</td><td>CD10+, BCL6+, BCL2+, **Cyclin D1-**</td></tr><tr><td>**Hairy Cell Leukaemia**</td><td>CD11c+, CD25+, CD103+, CD200+, **Cyclin D1-**</td></tr><tr><td>**Lymphoplasmacytic Lymphoma**</td><td>CD5-, CD10-, CD23-, **IgM paraprotein**, MYD88 L265P</td></tr><tr><td>**Blastoid MCL vs DLBCL**</td><td>**Cyclin D1+, SOX11+, CD5+** vs Cyclin D1-</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Diagnosis + Staging + MIPI/MIPI-c] --&gt; B{Patient Fitness / Age} B --&gt;|<b>Fit, &lt;65-70yr</b>&lt;br/&gt;<b>MIPI Low/Int</b>| C[<b>Intensive Immunochemotherapy</b>] C --&gt; C1[<b>Nordic MCL2/3 Protocol</b>&lt;br/&gt;<b>R-CHOP / R-DHAP Alternating</b> ×3-4 cycles&lt;br/&gt;<b>R-DHAP</b>: Ritux + Dex + High-dose Ara-C + Cisplatin&lt;br/&gt;<b>R-CHOP</b>: Standard] C1 --&gt; C2[<b>Consolidation: High-dose Chemo + ASCT</b>&lt;br/&gt;<b>BEAM</b> (BCNU, Etoposide, Ara-C, Melphalan) preferred&lt;br/&gt;<b>OR TBI-based</b>] C2 --&gt; C3[<b>Rituximab Maintenance</b>&lt;br/&gt;375mg/m² q2mo ×3yr (Nordic MCL2/3)&lt;br/&gt;<b>DFS/OS benefit</b>] B --&gt;|<b>Older / Unfit / Frail</b>&lt;br/&gt;<b>MIPI High</b>| D[<b>Non-Intensive Immunochemotherapy</b>] D --&gt; D1[<b>BR (Bendamustine + Rituximab)</b>&lt;br/&gt;<b>Preferred</b> (StiL NHL7, BRIGHT)&lt;br/&gt;Benda 90mg/m² d1,2 + Ritux 375mg/m² d1 q4w ×6 cycles] D --&gt; D2[<b>R-CHOP</b>&lt;br/&gt;Standard if Benda contraindicated] D1 --&gt; D3[<b>Rituximab Maintenance</b>&lt;br/&gt;q2mo ×2-3yr (ECOG/SAKK)] D3 --&gt; E[Response Assessment: CT + BM + Markers] C3 --&gt; E E --&gt; F{Relapsed / Refractory} F --&gt;|1L Relapse| G[<b>BTK Inhibitor</b>] G --&gt; G1[<b>Ibrutinib</b> (RAY, SPARK) — <b>1L Relapse or Intolerant</b>&lt;br/&gt;420mg daily until progression/toxicity] G --&gt; G2[<b>Acalabrutinib</b> (ASPEN) — <b>2nd Gen, More Selective</b>&lt;br/&gt;100mg BID; Less AFib, HTN, Diarrhoea] G --&gt; G3[<b>Zanubrutinib</b> (ASPEN) — <b>2nd Gen, Highly Selective</b>&lt;br/&gt;160mg BID; Best safety profile] F --&gt;|Post-BTKi| H[<b>Venetoclax</b> (BCL2 Inhibitor)&lt;br/&gt;Ramp-up (20→400mg) + Rituximab&lt;br/&gt;Tumour Lysis Syndrome risk — Monitor] H --&gt; I[<b>CAR-T: Brexucabtagene Autoleucel (Brexu-cel)</b>&lt;br/&gt;(ZUMA-2) — <b>Anti-CD19</b>&lt;br/&gt;Post-BTKi + Anti-CD20; ORR ~90%, CR ~60%] I --&gt; J[<b>PI3Kδ Inhibitors</b>&lt;br/&gt;Idelalisib / Duvelisib / Parsaclisib&lt;br/&gt;Toxicity: Colitis, Hepatitis, Infections, Pneumonitis] J --&gt; K[<b>Clinical Trial / Allo-HSCT</b> (selected young, fit)] </code>``</p>
+<div class="sub-h">First-Line Regimens Detail</div>
+<table class="ctable"><tr><th>Regimen</th><th>Schedule</th><th>Key Trial</th><th>Population</th></tr><tr><td>---------</td><td>----------</td><td>-----------</td><td>------------</td></tr><tr><td>**Nordic MCL3**</td><td>**R-CHOP / R-DHAP alt ×3** → **ASCT (BEAM)** → **Ritux Maint ×3yr**</td><td>Nordic MCL3</td><td>Fit, ≤65yr, MIPI Low/Int</td></tr><tr><td>**R-CHOP/R-DHAP alt**</td><td>R-CHOP d1 + R-DHAP d15 q28d ×6</td><td>Nordic MCL2</td><td>Fit, ≤65yr</td></tr><tr><td>**VR-CAP**</td><td>Bortezomib + Ritux + Cyclo + Doxo + Pred</td><td>LYM-3002 (VR-CAP vs R-CHOP)</td><td>Alternative intensive</td></tr><tr><td>**BR**</td><td>Benda 90 d1,2 + Ritux d1 q4w ×6-8</td><td>StiL NHL7, BRIGHT</td><td>**Standard for >65/unfit**</td></tr><tr><td>**R-CHOP**</td><td>Standard ×6-8</td><td>—</td><td>If Benda contraindicated</td></tr></table>
+<div class="sub-h">Relapsed/Refractory Sequencing</div>
+<table class="ctable"><tr><th>Line</th><th>Preferred Agents</th><th>Key Trials</th></tr><tr><td>------</td><td>------------------</td><td>------------</td></tr><tr><td>**1st Relapse**</td><td>**BTKi: Ibrutinib / Acalabrutinib / Zanubrutinib**</td><td>RAY (Ibrutinib vs Temsirolimus), SPARK (Zanubrutinib), ASPEN (Acalabrutinib vs Ibrutinib)</td></tr><tr><td>**Post-BTKi**</td><td>**Venetoclax + Rituximab** (Ramp-up)</td><td>SYMPATICO, Phase 2</td></tr><tr><td>**Post-BTKi + Anti-CD20**</td><td>**CAR-T: Brexu-cel**</td><td>ZUMA-2</td></tr><tr><td>**Later Lines**</td><td>PI3Kδi (Idelalisib/Duvelisib) — Toxicity limits use</td><td>—</td></tr></table>
+<div class="sub-h">BTKi Toxicity Management</div>
+<table class="ctable"><tr><th>Toxicity</th><th>Ibrutinib</th><th>Acalabrutinib/Zanubrutinib</th><th>Management</th></tr><tr><td>----------</td><td>-----------</td><td>---------------------------</td><td>------------</td></tr><tr><td>**Atrial Fibrillation**</td><td>**10-15%** (↑ age, HTN)</td><td>**Lower (3-5%)**</td><td>Hold → Rate control → Anticoagulate (CHA2DS2-VASc) → Restart at lower dose / Switch</td></tr><tr><td>**Bleeding**</td><td>**Major 3-5%** (↑ anticoag/antiplatelet)</td><td>Lower</td><td>Hold if major; Avoid concurrent anticoag if possible</td></tr><tr><td>**Hypertension**</td><td>**15-20%** (new/worsening)</td><td>Lower</td><td>ACEi/ARB/CCB; Monitor BP</td></tr><tr><td>**Diarrhoea**</td><td>**10-20%**</td><td>Lower</td><td>Loperamide; Hold if Grade 3</td></tr><tr><td>**Infections**</td><td>↑ Pneumonia, HSV, Fungal</td><td>Similar</td><td>Prophylaxis (PJP, HSV); IVIG if hypogammaglobulinaemia</td></tr><tr><td>**Arthralgia/Myalgia**</td><td>Common</td><td>Common</td><td>NSAIDs; Hold if severe</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Diagnosis**</td><td>**t(11;14) → Cyclin D1+ (nuclear)** — Pathognomonic; **SOX11+** (cyclin D1-ve cases)</td></tr><tr><td>**Immunophenotype**</td><td>**CD5+, CD20+, CD23-, CD10-, Cyclin D1+** — Distinguishes from CLL (CD23+)</td></tr><tr><td>**Variants**</td><td>Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / **Blastoid/Pleomorphic (TP53, Ki-67 high, poor)**</td></tr><tr><td>**MIPI / MIPI-c**</td><td>**Age, ECOG, LDH, WBC** + **Ki-67** (c-index) → Low/Int/High risk</td></tr><tr><td>**Fit Young (<65-70)**</td><td>**Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr** — **Best OS**</td></tr><tr><td>**Older/Unfit**</td><td>**BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr** — Standard</td></tr><tr><td>**Relapsed**</td><td>**BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)**</td></tr><tr><td>**Post-BTKi**</td><td>**Venetoclax + Ritux** (TLS risk) → **CAR-T (Brexu-cel)**</td></tr><tr><td>**Blastoid**</td><td>TP53 mut, Ki-67 high → **Intensive chemo less effective** → Early BTKi / Trial / Allo-HSCT</td></tr><tr><td>**CNS Prophylaxis**</td><td>Blastoid, Ki-67>30%, LDH high, Stage IV — **Intrathecal + HD-MTX/Ara-C**</td></tr><tr><td>**GI Polyposis**</td><td>**Lymphomatous polyposis** — Colonoscopy screening; Treat with systemic therapy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**65M, lymphadenopathy, splenomegaly, lymphocytosis. Biopsy: CD5+, CD20+, Cyclin D1+. Diagnosis?**</td><td>**Mantle Cell Lymphoma** — **t(11;14) → Cyclin D1 overexpression** pathognomonic.</td></tr><tr><td>**MIPI risk factors — what are they?**</td><td>**Age, ECOG PS, LDH, WBC count** — MIPI-c adds **Ki-67**.</td></tr><tr><td>**Young fit MCL — 1L treatment?**</td><td>**Nordic protocol: R-CHOP / R-DHAP alternating ×3-4 cycles → Consolidation ASCT (BEAM) → Rituximab maintenance ×3 years**.</td></tr><tr><td>**Elderly unfit MCL — 1L treatment?**</td><td>**BR (Bendamustine + Rituximab) ×6-8 cycles → Rituximab maintenance ×2-3 years**.</td></tr><tr><td>**Ibrutinib — mechanism, key toxicities?**</td><td>**BTK inhibitor (covalent)** — Blocks BCR signalling. **Toxicities: AFib (10-15%), Bleeding, HTN, Diarrhoea, Infections, Arthralgia**.</td></tr><tr><td>**Acalabrutinib vs Ibrutinib — differences?**</td><td>**2nd generation, more selective** — Less AFib, HTN, Diarrhoea, Arthralgia; **BID dosing**; No CYP3A4 strong inhibition.</td></tr><tr><td>**Relapsed MCL post-BTKi — options?**</td><td>**Venetoclax + Rituximab** (ramp-up, TLS monitoring) → **CAR-T (Brexu-cel)** → **PI3Kδi** (Idelalisib - toxicity) → **Allo-HSCT** (selected).</td></tr><tr><td>**Blastoid variant — features, prognosis?**</td><td>**High Ki-67 (>30-50%), TP53 mut common**, aggressive morphology → **Poor prognosis**, intensive chemo less effective.</td></tr><tr><td>**CNS prophylaxis in MCL — when?**</td><td>**Blastoid variant, Ki-67 >30%, LDH high, Stage IV** — Intrathecal MTX/Ara-C + HD-MTX/Ara-C.</td></tr><tr><td>**Leukemic non-nodal MCL — management?**</td><td>**Indolent, SOX11-, low Ki-67** — **Watch & Wait** (like CLL) if asymptomatic; Treat if symptomatic/progressive.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**MCL vs CLL — CD5+ both**</td><td>**Cyclin D1+ / SOX11+ / CD23- / CD200- / FMC7+** = MCL; **CD23+ / CD200+ / CD20 dim / Cyclin D1-** = CLL</td></tr><tr><td>**MIPI vs MIPI-c**</td><td>**MIPI**: Clinical only (Age, ECOG, LDH, WBC); **MIPI-c**: Adds **Ki-67** (biological) — Better prognostic discrimination</td></tr><tr><td>**Nordic vs R-CHOP alone**</td><td>Nordic = **R-CHOP/R-DHAP alternating + ASCT + Ritux Maint** — Superior to R-CHOP alone</td></tr><tr><td>**BR vs R-CHOP in elderly**</td><td>**BR preferred** (StiL NHL7: PFS benefit; BRIGHT: Non-inferior OS, less alopecia, less neuropathy)</td></tr><tr><td>**Ibrutinib vs Acalabrutinib/Zanubrutinib**</td><td>**2nd gen more selective** — Less off-target (ITK, EGFR, TEC) → **Less AFib, HTN, Diarrhoea**; Zanubrutinib most selective</td></tr><tr><td>**Venetoclax TLS risk in MCL**</td><td>**High tumour burden (MCL = high BCL2)** → **Mandatory ramp-up + Hydration + Allopurinol/Rasburicase**</td></tr></table>
+<p><b>Mnemonic: MANTLE</b></p>
+<ul><li><b>M</b>IPI / MIPI-c (Age, ECOG, LDH, WBC + Ki-67)</li><li><b>A</b>lteration: <b>t(11;14) → Cyclin D1+</b> (Pathognomonic)</li><li><b>N</b>odal vs Leukemic vs Blastoid variants</li><li><b>T</b>reatment: <b>Young/Fit → Nordic (R-CHOP/R-DHAP → ASCT → Ritux Maint)</b>; <b>Old/Unfit → BR → Ritux Maint</b></li><li><b>L</b>ine Relapse: <b>BTKi (Ibru/Acala/Zanu)</b> → <b>Venetoclax</b> → <b>CAR-T (Brexu-cel)</b></li><li><b>E</b>xtranodal: <b>GI Polyposis</b> (Colonoscopy); <b>CNS Prophylaxis</b> (Blastoid/High Ki-67)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Mantle Cell Lymphoma)) Pathogenesis t(11;14) → CCND1/IgH → Cyclin D1↑ SOX11+ (cyclin D1-ve cases) Secondary: ATM, TP53, NOTCH, BIRC3 Variants Classic Nodal (70%) Leukemic Non-nodal (Indolent) Blastoid / Pleomorphic (TP53, Ki-67↑) Diagnosis Cyclin D1+ (Nuclear) CD5+, CD20+, CD23-, CD10-, SOX11+ FISH t(11;14) Ki-67 (%) Risk Stratification MIPI: Age, ECOG, LDH, WBC MIPI-c: + Ki-67 1L Treatment Fit &lt;65-70: Nordic R-CHOP/R-DHAP alt → ASCT → Ritux Maint Older/Unfit: BR → Ritux Maint VR-CAP alternative Relapsed BTKi: Ibrutinib / Acalabrutinib / Zanubrutinib Post-BTKi: Venetoclax + Ritux CAR-T: Brexu-cel PI3Kδi Toxicities BTKi: AFib, Bleeding, HTN, Diarrhoea, Infections Venetoclax: TLS (Ramp-up) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Diagnosis**</td><td>**t(11;14) → Cyclin D1+ (nuclear)**; CD5+, CD20+, CD23-, CD10-, SOX11+</td></tr><tr><td>**Variants**</td><td>Classic (nodal); Leukemic non-nodal (indolent, watch & wait); **Blastoid/Pleomorphic (TP53, Ki-67↑, poor)**</td></tr><tr><td>**Risk**</td><td>**MIPI**: Age, ECOG, LDH, WBC; **MIPI-c**: + Ki-67 (>30% adverse)</td></tr><tr><td>**1L Fit**</td><td>**Nordic: R-CHOP/R-DHAP alt ×3-4 → ASCT (BEAM) → Ritux Maint ×3yr**</td></tr><tr><td>**1L Unfit**</td><td>**BR (Benda 90 d1,2 + Ritux q4w ×6-8) → Ritux Maint ×2-3yr**</td></tr><tr><td>**Relapse 1L**</td><td>**BTKi: Ibrutinib / Acalabrutinib / Zanubrutinib** (2nd gen safer)</td></tr><tr><td>**Post-BTKi**</td><td>**Venetoclax + Ritux** (Ramp-up, TLS) → **CAR-T: Brexu-cel**</td></tr><tr><td>**Blastoid**</td><td>Ki-67>30%, TP53 mut → Early BTKi / Trial / Allo-HSCT; CNS Prophylaxis</td></tr><tr><td>**GI**</td><td>Lymphomatous polyposis — Colonoscopy</td></tr><tr><td>**Key Tox**</td><td>Ibrutinib: AFib, Bleeding, HTN; Acalabrutinib/Zanubrutinib: Safer</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>t(11;14) / Cyclin D1</td><td></td><td></td></tr><tr><td>MIPI / MIPI-c calculation</td><td></td><td></td></tr><tr><td>Nordic vs BR pathway</td><td></td><td></td></tr><tr><td>BTKi toxicities & 2nd gen</td><td></td><td></td></tr><tr><td>Relapse sequencing</td><td></td><td></td></tr><tr><td>Blastoid variant</td><td></td><td></td></tr><tr><td>CNS prophylaxis criteria</td><td></td><td></td></tr><tr><td>Leukemic non-nodal management</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[CLL]], [[DLBCL]], [[Follicular Lymphoma]], [[BTK Inhibitors]], [[Venetoclax]], [[CAR-T]], [[MIPI Risk Score]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Mantle Cell Lymphoma (MCL) (Diagnosis), which statement is correct? A. <b>t(11 B. </b>t(11 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>t(11;14) → Cyclin D1+ (nuclear)</b> — Pathognomonic; <b>SOX11+</b> (cyclin D1-ve cases)</li></ul>
+<p><b>2.</b> Regarding Mantle Cell Lymphoma (MCL) (Immunophenotype), which statement is correct? A. <b>CD5+, CD20+, CD23-, CD10-, Cyclin D1+</b> B. **CD5+, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CD5+, CD20+, CD23-, CD10-, Cyclin D1+</b> — Distinguishes from CLL (CD23+)</li></ul>
+<p><b>3.</b> Regarding Mantle Cell Lymphoma (MCL) (Variants), which statement is correct? A. Classic (nodal) / Leukemic non-nodal (indolent, watch &amp; wait) / **Blastoid/Pleomorphic (TP53, Ki-67 B. Classic - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Classic (nodal) / Leukemic non-nodal (indolent, watch &amp; wait) / <b>Blastoid/Pleomorphic (TP53, Ki-67 high, poor)</b></li></ul>
+<p><b>4.</b> Regarding Mantle Cell Lymphoma (MCL) (MIPI / MIPI-c), which statement is correct? A. <b>Age, ECOG, LDH, WBC</b> + <b>Ki-67</b> (c-index) → Low/Int/High risk B. **Age, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Age, ECOG, LDH, WBC</b> + <b>Ki-67</b> (c-index) → Low/Int/High risk</li></ul>
+<p><b>5.</b> Regarding Mantle Cell Lymphoma (MCL) (Fit Young (&lt;65-70)), which statement is correct? A. <b>Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr</b> B. **Nordic - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr</b> — <b>Best OS</b></li></ul>
+<p><b>6.</b> Regarding Mantle Cell Lymphoma (MCL) (Older/Unfit), which statement is correct? A. <b>BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr</b> B. **BR - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr</b> — Standard</li></ul>
+<p><b>7.</b> Regarding Mantle Cell Lymphoma (MCL) (Relapsed), which statement is correct? A. <b>BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)</b> B. **BTKi: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)</b></li></ul>
+<p><b>8.</b> Regarding Mantle Cell Lymphoma (MCL) (Post-BTKi), which statement is correct? A. <b>Venetoclax + Ritux</b> (TLS risk) → <b>CAR-T (Brexu-cel)</b> B. **Venetoclax - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Venetoclax + Ritux</b> (TLS risk) → <b>CAR-T (Brexu-cel)</b></li></ul>
+<p><b>9.</b> Regarding Mantle Cell Lymphoma (MCL) (Blastoid), which statement is correct? A. TP53 mut, Ki-67 high → <b>Intensive chemo less effective</b> → Early BTKi / Trial / Allo-HSCT B. TP53 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — TP53 mut, Ki-67 high → <b>Intensive chemo less effective</b> → Early BTKi / Trial / Allo-HSCT</li></ul>
+<p><b>10.</b> Regarding Mantle Cell Lymphoma (MCL) (CNS Prophylaxis), which statement is correct? A. Blastoid, Ki-67&gt;30%, LDH high, Stage IV B. Blastoid, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Blastoid, Ki-67&gt;30%, LDH high, Stage IV — <b>Intrathecal + HD-MTX/Ara-C</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. **t(11</li><li>B. **t(11 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>t(11;14) → Cyclin D1+ (nuclear)</b> — Pathognomonic; <b>SOX11+</b> (cyclin D1-ve cases)</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>CD5+, CD20+, CD23-, CD10-, Cyclin D1+</b></li><li>B. **CD5+, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>CD5+, CD20+, CD23-, CD10-, Cyclin D1+</b> — Distinguishes from CLL (CD23+)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. Classic (nodal) / Leukemic non-nodal (indolent, watch &amp; wait) / **Blastoid/Pleomorphic (TP53, Ki-67</li><li>B. Classic (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: Classic (nodal) / Leukemic non-nodal (indolent, watch &amp; wait) / <b>Blastoid/Pleomorphic (TP53, Ki-67 high, poor)</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Age, ECOG, LDH, WBC</b> + <b>Ki-67</b> (c-index) → Low/Int/High risk</li><li>B. **Age, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Age, ECOG, LDH, WBC</b> + <b>Ki-67</b> (c-index) → Low/Int/High risk</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr</b></li><li>B. **Nordic (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr</b> — <b>Best OS</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr</b></li><li>B. **BR (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr</b> — Standard</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)</b></li><li>B. **BTKi: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Venetoclax + Ritux</b> (TLS risk) → <b>CAR-T (Brexu-cel)</b></li><li>B. **Venetoclax (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Venetoclax + Ritux</b> (TLS risk) → <b>CAR-T (Brexu-cel)</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. TP53 mut, Ki-67 high → <b>Intensive chemo less effective</b> → Early BTKi / Trial / Allo-HSCT</li><li>B. TP53 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: TP53 mut, Ki-67 high → <b>Intensive chemo less effective</b> → Early BTKi / Trial / Allo-HSCT</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. Blastoid, Ki-67&gt;30%, LDH high, Stage IV</li><li>B. Blastoid, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: Blastoid, Ki-67&gt;30%, LDH high, Stage IV — <b>Intrathecal + HD-MTX/Ara-C</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Diagnosis? <b>A1:</b> t(11;14) → Cyclin D1+ (nuclear) — Pathognomonic; SOX11+ (cyclin D1-ve cases)</p>
+<p><b>Q2:</b> Immunophenotype? <b>A2:</b> CD5+, CD20+, CD23-, CD10-, Cyclin D1+ — Distinguishes from CLL (CD23+)</p>
+<p><b>Q3:</b> Variants? <b>A3:</b> Classic (nodal) / Leukemic non-nodal (indolent, watch &amp; wait) / Blastoid/Pleomorphic (TP53, Ki-67 high, poor)</p>
+<p><b>Q4:</b> MIPI / MIPI-c? <b>A4:</b> Age, ECOG, LDH, WBC + Ki-67 (c-index) → Low/Int/High risk</p>
+<p><b>Q5:</b> Fit Young (&lt;65-70)? <b>A5:</b> Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr — Best OS</p>
+<p><b>Q6:</b> Older/Unfit? <b>A6:</b> BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr — Standard</p>
+<p><b>Q7:</b> Relapsed? <b>A7:</b> BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)</p>
+<p><b>Q8:</b> Post-BTKi? <b>A8:</b> Venetoclax + Ritux (TLS risk) → CAR-T (Brexu-cel)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Diagnosis</td><td>t(11;14) → Cyclin D1+ (nuclear) — Pathognomonic; SOX11+ (cyclin D1-ve cases)</td></tr><tr><td>2</td><td>A</td><td>Immunophenotype</td><td>CD5+, CD20+, CD23-, CD10-, Cyclin D1+ — Distinguishes from CLL (CD23+)</td></tr><tr><td>3</td><td>A</td><td>Variants</td><td>Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / Blastoid/Pleomorphic (TP53, Ki-67 high, poor)</td></tr><tr><td>4</td><td>A</td><td>MIPI / MIPI-c</td><td>Age, ECOG, LDH, WBC + Ki-67 (c-index) → Low/Int/High risk</td></tr><tr><td>5</td><td>A</td><td>Fit Young (<65-70)</td><td>Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr — Best OS</td></tr><tr><td>6</td><td>A</td><td>Older/Unfit</td><td>BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr — Standard</td></tr><tr><td>7</td><td>A</td><td>Relapsed</td><td>BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)</td></tr><tr><td>8</td><td>A</td><td>Post-BTKi</td><td>Venetoclax + Ritux (TLS risk) → CAR-T (Brexu-cel)</td></tr><tr><td>9</td><td>A</td><td>Blastoid</td><td>TP53 mut, Ki-67 high → Intensive chemo less effective → Early BTKi / Trial / Allo-HSCT</td></tr><tr><td>10</td><td>A</td><td>CNS Prophylaxis</td><td>Blastoid, Ki-67>30%, LDH high, Stage IV — Intrathecal + HD-MTX/Ara-C</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Diagnosis</td><td>t(11;14) → Cyclin D1+ (nuclear) — Pathognomonic; SOX11+ (cyclin D1-ve cases)</td></tr><tr><td>2</td><td>A</td><td>Immunophenotype</td><td>CD5+, CD20+, CD23-, CD10-, Cyclin D1+ — Distinguishes from CLL (CD23+)</td></tr><tr><td>3</td><td>A</td><td>Variants</td><td>Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / Blastoid/Pleomorphic (TP53, Ki-67 high, poor)</td></tr><tr><td>4</td><td>A</td><td>MIPI / MIPI-c</td><td>Age, ECOG, LDH, WBC + Ki-67 (c-index) → Low/Int/High risk</td></tr><tr><td>5</td><td>A</td><td>Fit Young (<65-70)</td><td>Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr — Best OS</td></tr><tr><td>6</td><td>A</td><td>Older/Unfit</td><td>BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr — Standard</td></tr><tr><td>7</td><td>A</td><td>Relapsed</td><td>BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)</td></tr><tr><td>8</td><td>A</td><td>Post-BTKi</td><td>Venetoclax + Ritux (TLS risk) → CAR-T (Brexu-cel)</td></tr><tr><td>9</td><td>A</td><td>Blastoid</td><td>TP53 mut, Ki-67 high → Intensive chemo less effective → Early BTKi / Trial / Allo-HSCT</td></tr><tr><td>10</td><td>A</td><td>CNS Prophylaxis</td><td>Blastoid, Ki-67>30%, LDH high, Stage IV — Intrathecal + HD-MTX/Ara-C</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Mantle Cell Lymphoma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

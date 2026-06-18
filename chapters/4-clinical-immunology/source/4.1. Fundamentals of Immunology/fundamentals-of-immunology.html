@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fundamentals Of Immunology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 4 CLINICAL IMMUNOLOGY / 4.1. FUNDAMENTALS OF IMMUNOLOGY</span>
+      <div class="h1">Fundamentals Of Immunology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe <b>innate immunity</b> components: barriers, cells, PRRs, complement, cytokines</li><li>[ ] Explain <b>adaptive immunity</b>: B/T cell development, activation, memory, regulation</li><li>[ ] Understand <b>complement system</b>: 3 pathways, regulation, deficiencies</li><li>[ ] Apply <b>cytokine classification</b> and signalling (JAK-STAT)</li><li>[ ] Describe <b>HLA/MHC</b> structure, expression, disease associations</li><li>[ ] Apply <b>immunological techniques</b>: Flow cytometry, ELISA, HLA typing, PCR</li><li>[ ] Answer viva: "Innate vs adaptive immunity" and "Complement pathways"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Immune System Overview</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Immune System] --&gt; B[Innate Immunity&lt;br/&gt;Rapid, Non-specific, No memory] A --&gt; C[Adaptive Immunity&lt;br/&gt;Slow, Specific, Memory]</p>
+<p>B --&gt; B1[Barriers&lt;br/&gt;Skin, Mucosa, Microbiome] B --&gt; B2[Cells&lt;br/&gt;Neutrophils, Macrophages, NK, DCs, ILCs] B --&gt; B3[PRRs&lt;br/&gt;TLR, NLR, RLR, CLR] B --&gt; B4[Humoral&lt;br/&gt;Complement, Acute phase, Cytokines]</p>
+<p>C --&gt; C1[B Cells&lt;br/&gt;Antibodies, Plasma cells, Memory] C --&gt; C2[T Cells&lt;br/&gt;CD4+ Th subsets, CD8+ CTL, Tregs] C --&gt; C3[Antigen Presentation&lt;br/&gt;MHC I/II, Cross-presentation] C --&gt; C4[Regulation&lt;br/&gt;Checkpoints, Tregs, Cytokines]</p>
+<p>D[Complement&lt;br/&gt;Classical, Lectin, Alternative] --&gt; A D[Cytokines&lt;br/&gt;Type 1/2/3/17/Regulatory] --&gt; A D[HLA/MHC&lt;br/&gt;Class I/II, Disease associations] --&gt; A ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Innate Immunity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Physical &amp; Chemical Barriers</div>
+<table class="ctable"><tr><th>Barrier</th><th>Mechanism</th><th>Clinical Relevance</th></tr><tr><td>---------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Skin**</td><td>Keratin, low pH, antimicrobial peptides (defensins, cathelicidins)</td><td>Breach → Infection</td></tr><tr><td>**Mucosal**</td><td>Mucus, ciliary clearance, IgA, lysozyme, lactoferrin</td><td>Respiratory, GI, GU defence</td></tr><tr><td>**Microbiome**</td><td>Colonisation resistance, SCFA, immune training</td><td>Dysbiosis → IBD, C. diff</td></tr><tr><td>**Chemical**</td><td>Low pH (stomach, vagina), surfactant, surfactants</td><td>Barrier breach → Infection</td></tr></table>
+<div class="sub-h">Cellular Components</div>
+<table class="ctable"><tr><th>Cell Type</th><th>Origin</th><th>Key Functions</th><th>Surface Markers</th><th>Clinical Relevance</th></tr><tr><td>-----------</td><td>--------</td><td>---------------</td><td>-----------------</td><td>-------------------</td></tr><tr><td>**Neutrophils**</td><td>Myeloid</td><td>Phagocytosis, NETs, ROS, degranulation</td><td>CD15+, CD16+, CD66b+</td><td>Neutropenia → sepsis; CGD, LAD</td></tr><tr><td>**Monocytes/Macrophages**</td><td>Myeloid</td><td>Phagocytosis, Ag presentation, cytokine production</td><td>CD14+, CD68+, HLA-DR+</td><td>Tissue-specific (Kupffer, Microglia, Alveolar)</td></tr><tr><td>**Dendritic Cells (DCs)**</td><td>Myeloid/Lymphoid</td><td>Professional APC, T cell priming</td><td>CD11c+, HLA-DR+, CD80/86</td><td>Migration to LNs, Cross-presentation</td></tr><tr><td>**Natural Killer (NK)**</td><td>Lymphoid</td><td>Cytotoxicity (missing self), ADCC, cytokines</td><td>CD56+, CD16+, KIRs</td><td>Missing self, ADCC, KIR mismatch</td></tr><tr><td>**Innate Lymphoid Cells (ILCs)**</td><td>Lymphoid</td><td>ILC1 (IFN-γ), ILC2 (IL-5/13), ILC3 (IL-17/22)</td><td>Lineage-, CD127+</td><td>Mucosal immunity, tissue repair</td></tr><tr><td>**Mast Cells**</td><td>Myeloid</td><td>IgE-mediated degranulation, histamine</td><td>FcεRI+, c-Kit+</td><td>Anaphylaxis, allergy</td></tr><tr><td>**Basophils/Eosinophils**</td><td>Myeloid</td><td>Parasite defence, allergy</td><td>FcεRI+, CCR3+</td><td>Parasites, asthma, drug reactions</td></tr></table>
+<div class="sub-h">Inflammatory Response</div>
+<table class="ctable"><tr><th>Phase</th><th>Key Events</th><th>Mediators</th><th>Clinical Relevance</th></tr><tr><td>-------</td><td>------------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Recognition**</td><td>PRR-PAMP binding, DAMP release</td><td>—</td><td>Initial detection</td></tr><tr><td>**Vasodilation**</td><td>Histamine, PGD2, LTB4, NO</td><td>Mast cells, Macrophages</td><td>Heat, redness, swelling</td></tr><tr><td>**Cellular Recruitment**</td><td>Chemokines (CXCL8, CCL2), Adhesion molecules</td><td>Endothelium, Neutrophils</td><td>Neutrophilia, Pus formation</td></tr><tr><td>**Phagocytosis**</td><td>Opsonisation (IgG, C3b), FcγR/CR engagement</td><td>Neutrophils, Macrophages</td><td>Pathogen clearance</td></tr><tr><td>**Resolution**</td><td>Lipoxins, Resolvins, Protectins, Annexin A1</td><td>Macrophages, Neutrophils</td><td>Return to homeostasis, Anti-inflammatory</td></tr></table>
+<table class="ctable"><tr><th>### Pattern Recognition Receptors (PRRs)</th></tr><tr><td>PRR Family</td><td>Location</td><td>Ligands</td><td>Signalling</td><td>Clinical Relevance</td></tr><tr><td>------------</td><td>----------</td><td>---------</td><td>------------</td><td>-------------------</td></tr><tr><td>**TLRs** (1-10)</td><td>Surface/Endosomal</td><td>PAMPs (LPS, flagellin, CpG, ssRNA, dsRNA)</td><td>MyD88/TRIF → NF-κB</td><td>Sepsis, vaccine adjuvants</td></tr><tr><td>**NLRs** (NOD1/2, NLRP3)</td><td>Cytosol</td><td>Peptidoglycan, crystals, ATP</td><td>Inflammasome (caspase-1)</td><td>CAPS (NLRP3), Crohn's (NOD2)</td></tr><tr><td>**RLRs** (RIG-I, MDA5)</td><td>Cytosol</td><td>Viral RNA (dsRNA, 5'ppp)</td><td>MAVS → IFN-α/β</td><td>Antiviral immunity</td></tr><tr><td>**CLRs** (Dectin-1, Mincle)</td><td>Surface</td><td>Fungal β-glucans, mycobacteria</td><td>Syk/CARD9</td><td>Fungal immunity, CARD9 deficiency</td></tr><tr><td>**cGAS-STING**</td><td>Cytosol</td><td>Cytosolic DNA</td><td>STING → IFN-β</td><td>Autoimmune (SAVI), DNA viruses</td></tr></table>
+<div class="sub-h">Complement System</div>
+<table class="ctable"><tr><th>Pathway</th><th>Trigger</th><th>Key Components</th><th>Regulation</th><th>Clinical Relevance</th></tr><tr><td>---------</td><td>---------</td><td>----------------</td><td>------------</td><td>-------------------</td></tr><tr><td>**Classical**</td><td>Ab-Ag complexes (IgG/IgM)</td><td>C1q, C1r, C1s → C4, C2</td><td>C1-INH, C4BP</td><td>SLE (C1q/C4/C2), Immune complexes</td></tr><tr><td>**Lectin**</td><td>MBL/Ficolins on pathogens</td><td>MASP-1/2 → C4, C2</td><td>C1-INH</td><td>MBL deficiency → infections</td></tr><tr><td>**Alternative**</td><td>Spontaneous C3 hydrolysis</td><td>Factor B, D, Properdin → C3bBb</td><td>Factor H, I, CD55, CD46, CD59</td><td>aHUS (FH, FI, MCP), C3G, C3GN</td></tr><tr><td>**Common Terminal**</td><td>C5 convertase</td><td>C5b-9 (MAC)</td><td>CD59, Vitronectin, Clusterin</td><td>PNH (CD55/59), aHUS, C5 inhibitors</td></tr></table>
+<table class="ctable"><tr><th>Component</th><th>Deficiency Syndrome</th><th>Key Features</th></tr><tr><td>-----------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**C1q, C1r, C1s, C4, C2**</td><td>Classical pathway</td><td>SLE-like, recurrent infections</td></tr><tr><td>**C3**</td><td>Central</td><td>Severe recurrent pyogenic infections</td></tr><tr><td>**C5, C6, C7, C8, C9**</td><td>Terminal (MAC)</td><td>**Neisserial infections** (meningitis)</td></tr><tr><td>**Factor H, I, MCP (CD46)**</td><td>Alternative (Regulatory)</td><td>aHUS, C3G, C3GN</td></tr><tr><td>**C1-INH**</td><td>C1-INH deficiency</td><td>Hereditary angioedema (HAE)</td></tr><tr><td>**Properdin**</td><td>Alternative (Positive)</td><td>Neisserial infections</td></tr><tr><td>**MBL**</td><td>Lectin</td><td>Recurrent infections, especially childhood</td></tr></table>
+<div class="callout"><b>Key:</b> mbL (Mannose-Binding Lectin) deficiency → recurrent infections in children; C1-INH deficiency → HAE (C4 low, C1q normal)</div>
+<div class="sub-h">Acute Phase Proteins &amp; Cytokines</div>
+<table class="ctable"><tr><th>Acute Phase Protein</th><th>Inducer</th><th>Function</th><th>Clinical Use</th></tr><tr><td>---------------------</td><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>**CRP**</td><td>IL-6</td><td>Opsonisation, complement activation</td><td>Inflammation marker</td></tr><tr><td>**Serum Amyloid A (SAA)**</td><td>IL-6, TNF-α</td><td>HDL modulation, chemotaxis</td><td>Inflammation, amyloidosis</td></tr><tr><td>**Fibrinogen**</td><td>IL-6</td><td>Coagulation, wound healing</td><td>ESR, thrombosis risk</td></tr><tr><td>**Ferritin**</td><td>IL-1, IL-6</td><td>Iron sequestration</td><td>Inflammation, HLH, Still's</td></tr><tr><td>**Procalcitonin**</td><td>Bacterial toxins</td><td>Sepsis marker</td><td>Sepsis diagnosis</td></tr><tr><td>**Hepcidin**</td><td>IL-6</td><td>Iron restriction</td><td>Anaemia of chronic disease</td></tr></table>
+<table class="ctable"><tr><th>Cytokine Family</th><th>Key Members</th><th>Signalling</th><th>Key Functions</th></tr><tr><td>----------------</td><td>-------------</td><td>------------</td><td>---------------</td></tr><tr><td>**Type I IFNs**</td><td>IFN-α, IFN-β</td><td>JAK1/TYK2-STAT1/2</td><td>Antiviral, MHC upreg</td></tr><tr><td>**Type II IFN**</td><td>IFN-γ</td><td>JAK1/2-STAT1</td><td>Macrophage activation, Th1</td></tr><tr><td>**IL-1 Family**</td><td>IL-1α, IL-1β, IL-18, IL-33</td><td>MyD88 → NF-κB</td><td>Inflammation, fever, Th17</td></tr><tr><td>**TNF Family**</td><td>TNF-α, LT-α, LT-β, BAFF, APRIL</td><td>TNFR → NF-κB</td><td>Inflammation, lymphoid organogenesis</td></tr><tr><td>**IL-6 Family**</td><td>IL-6, IL-11, OSM, LIF</td><td>JAK-STAT3</td><td>Acute phase, B cell diff, Th17</td></tr><tr><td>**IL-12 Family**</td><td>IL-12, IL-23, IL-27, IL-35</td><td>STAT3/4</td><td>Th1 (IL-12), Th17 (IL-23), Treg (IL-27)</td></tr><tr><td>**IL-17 Family**</td><td>IL-17A-F</td><td>ACT1 → NF-κB</td><td>Neutrophil recruitment, mucosal immunity</td></tr><tr><td>**Chemokines**</td><td>CCL, CXCL, CX3CL, XCL</td><td>GPCR</td><td>Leukocyte trafficking</td></tr><tr><td>**Type 2**</td><td>IL-4, IL-5, IL-13</td><td>STAT6</td><td>Th2, allergy, helminths, IgE</td></tr><tr><td>**Regulatory**</td><td>IL-10, TGF-β</td><td>STAT3, SMAD</td><td>Suppression, Treg, tolerance</td></tr></table>
+<div class="sub-h">JAK-STAT Signalling</div>
+<table class="ctable"><tr><th>Cytokine Receptor</th><th>JAKs</th><th>STATs</th><th>Clinical Relevance</th></tr><tr><td>-------------------</td><td>------</td><td>-------</td><td>-------------------</td></tr><tr><td>**Type I IFN R**</td><td>JAK1/TYK2</td><td>STAT1/2</td><td>Antiviral, SLE (IFN signature)</td></tr><tr><td>**IFN-γ R**</td><td>JAK1/2</td><td>STAT1</td><td>MSMD, TB susceptibility</td></tr><tr><td>**IL-6 R**</td><td>JAK1/2</td><td>STAT3</td><td>Hyper-IgE, Castleman, tocilizumab</td></tr><tr><td>**IL-12/23 R**</td><td>JAK2/TYK2</td><td>STAT3/4</td><td>Th1/Th17, ustekinumab</td></tr><tr><td>**IL-6/GP130**</td><td>JAK1/2/TYK2</td><td>STAT3</td><td>Tocilizumab, sarilumab</td></tr><tr><td>**JAK2 V617F**</td><td>—</td><td>Constitutive</td><td>MPN (PV, ET, MF)</td></tr><tr><td>**JAK Inhibitors**</td><td>Tofacitinib (JAK1/3), Baricitinib (JAK1/2), Upadacitinib (JAK1), Filgotinib (JAK1)</td><td>RA, PsA, UC, AD, Alopecia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Adaptive Immunity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">B Cell Development &amp; Humoral Immunity</div>
+<table class="ctable"><tr><th>Stage</th><th>Location</th><th>Key Events</th><th>Markers</th><th>Clinical Relevance</th></tr><tr><td>-------</td><td>----------</td><td>------------</td><td>---------</td><td>-------------------</td></tr><tr><td>**Pro-B**</td><td>Bone Marrow</td><td>D-J rearrangement</td><td>CD19+, CD43+, TdT+</td><td>Pre-BCR checkpoint</td></tr><tr><td>**Pre-B**</td><td>Bone Marrow</td><td>V-DJ rearrangement, μ heavy chain</td><td>CD19+, CD20-, μ+</td><td>Pre-BCR checkpoint</td></tr><tr><td>**Immature B**</td><td>Bone Marrow</td><td>IgM expression, negative selection</td><td>IgM+, IgD-</td><td>Central tolerance</td></tr><tr><td>**Transitional**</td><td>Spleen</td><td>Peripheral selection</td><td>IgMhi, IgD+</td><td>BAFF-R, transitional</td></tr><tr><td>**Mature Naive**</td><td>Spleen/LN</td><td>IgM+IgD+, recirculation</td><td>IgM+, IgD+, CD21+, CD23+</td><td>FO B vs MZ B</td></tr><tr><td>**Germinal Centre**</td><td>Lymph Node</td><td>SHM, CSR, Affinity maturation</td><td>BCL6+, AID+, GL7+</td><td>SHM/CSR defects → Hyper-IgM</td></tr><tr><td>**Memory B**</td><td>Spleen/LN/BM</td><td>Long-lived, rapid response</td><td>CD27+, IgG/IgA/IgE</td><td>Vaccine memory</td></tr><tr><td>**Plasma Cell**</td><td>BM/Spleen/LN</td><td>Antibody factory</td><td>CD138+, Blimp-1+, XBP-1+</td><td>Antibody secretion</td></tr></table>
+<div class="sub-h">Immunoglobulin Structure &amp; Function</div>
+<table class="ctable"><tr><th>Isotype</th><th>Heavy Chain</th><th>Structure</th><th>Half-life</th><th>Key Functions</th><th>Clinical Relevance</th></tr><tr><td>---------</td><td>-------------</td><td>-----------</td><td>-----------</td><td>---------------</td><td>-------------------</td></tr><tr><td>**IgG**</td><td>γ</td><td>Monomer</td><td>21-28 days</td><td>Opsonisation, complement, ADCC, placental transfer</td><td>IVIG, HDFN, subclass deficiency</td></tr><tr><td>**IgM**</td><td>μ</td><td>Pentamer (J chain)</td><td>5 days</td><td>First response, complement activation</td><td>Early infection, cryoglobulins</td></tr><tr><td>**IgA**</td><td>α</td><td>Dimer (secretory)</td><td>6 days</td><td>Mucosal immunity (SIgA)</td><td>Secretory IgA, IgA nephropathy</td></tr><tr><td>**IgE**</td><td>ε</td><td>Monomer</td><td>2 days</td><td>Mast cell/basophil activation, parasites</td><td>Allergy, helminths, IgE myeloma</td></tr><tr><td>**IgD**</td><td>δ</td><td>Monomer</td><td>3 days</td><td>BCR, unknown</td><td>IgD myeloma, hyper-IgD syndrome</td></tr></table>
+<div class="sub-h">B Cell Activation &amp; Class Switching</div>
+<table class="ctable"><tr><th>Signal</th><th>Source</th><th>Molecule</th><th>Outcome</th></tr><tr><td>--------</td><td>--------</td><td>----------</td><td>---------</td></tr><tr><td>**Signal 1**</td><td>Antigen</td><td>BCR (mIg)</td><td>Antigen internalisation</td></tr><tr><td>**Signal 2**</td><td>T cell (CD4+)</td><td>CD40L-CD40</td><td>Activation, proliferation, CSR</td></tr><tr><td>**Cytokines**</td><td>Tfh</td><td>IL-4, IL-21, IFN-γ, TGF-β</td><td>**CSR direction**</td></tr><tr><td>**AID**</td><td>—</td><td>Activation-induced deaminase</td><td>SHM + CSR enzyme</td></tr></table>
+<table class="ctable"><tr><th>Cytokine</th><th>CSR Target</th><th>Antibody Class</th></tr><tr><td>----------</td><td>------------</td><td>----------------</td></tr><tr><td>**IL-4, IL-13**</td><td>ε, γ1</td><td>IgE, IgG1</td></tr><tr><td>**IFN-γ**</td><td>γ2a (γ3 human)</td><td>IgG2a (IgG3)</td></tr><tr><td>**TGF-β + IL-4**</td><td>ε</td><td>IgE</td></tr><tr><td>**TGF-β**</td><td>α</td><td>IgA</td></tr></table>
+<div class="sub-h">T Cell Development &amp; Cell-Mediated Immunity</div>
+<table class="ctable"><tr><th>Stage</th><th>Location</th><th>Key Events</th><th>Markers</th><th>Clinical Relevance</th></tr><tr><td>-------</td><td>----------</td><td>------------</td><td>---------</td><td>-------------------</td></tr><tr><td>**DN1-4**</td><td>Thymus (Cortex)</td><td>TCR β/α rearrangement, β-selection</td><td>CD4-, CD8-, CD44, CD25</td><td>β-selection (pre-TCR)</td></tr><tr><td>**DP (CD4+CD8+)**</td><td>Thymus (Cortex)</td><td>Positive selection (MHC I/II)</td><td>CD4+CD8+, TCRlo</td><td>MHC restriction</td></tr><tr><td>**SP (CD4+ or CD8+)**</td><td>Thymus (Medulla)</td><td>Negative selection (AIRE)</td><td>CD4+ or CD8+, TCRhi</td><td>Central tolerance</td></tr><tr><td>**Naive T**</td><td>Periphery</td><td>Homeostasis (IL-7, TCR tonic)</td><td>CD45RA+, CCR7+, CD62L+</td><td>Recent thymic emigrants</td></tr><tr><td>**Effector**</td><td>Periphery</td><td>Activation, differentiation</td><td>CD45RO+, CCR7-, Effector molecules</td><td>Th1/Th2/Th17/Tfh/Treg</td></tr><tr><td>**Memory**</td><td>Periphery</td><td>Long-lived, rapid recall</td><td>CD45RO+, CCR7±, CD127+</td><td>Central (Tcm) vs Effector (Tem)</td></tr></table>
+<div class="sub-h">T Cell Subsets (CD4+ Th)</div>
+<table class="ctable"><tr><th>Subset</th><th>Master Transcription Factor</th><th>Signature Cytokines</th><th>Function</th><th>Key Inducers</th><th>Pathology</th></tr><tr><td>--------</td><td>----------------------------</td><td>---------------------</td><td>----------</td><td>--------------</td><td>-----------</td></tr><tr><td>**Th1**</td><td>T-bet</td><td>IFN-γ, TNF-α, IL-2</td><td>Intracellular pathogens, macrophage activation</td><td>IL-12, IFN-γ</td><td>Autoimmunity (RA, MS), TB</td></tr><tr><td>**Th2**</td><td>GATA3</td><td>IL-4, IL-5, IL-13</td><td>Helminths, allergy, IgE</td><td>IL-4, TSLP</td><td>Allergy, asthma, helminths</td></tr><tr><td>**Th17**</td><td>RORγt</td><td>IL-17A/F, IL-21, IL-22</td><td>Extracellular bacteria/fungi, mucosal immunity</td><td>IL-6, TGF-β, IL-23, IL-1β</td><td>Psoriasis, IBD, autoimmune</td></tr><tr><td>**Tfh**</td><td>Bcl-6</td><td>IL-21, CXCL13</td><td>B cell help, GC formation</td><td>ICOS, IL-6, IL-21</td><td>Autoimmunity, GC reactions</td></tr><tr><td>**Treg**</td><td>FoxP3</td><td>IL-10, TGF-β, IL-35</td><td>Suppression, tolerance</td><td>TGF-β, IL-2</td><td>IPEX (FoxP3 mut), cancer</td></tr><tr><td>**Tr1**</td><td>—</td><td>IL-10</td><td>Suppression, tolerance</td><td>IL-10, IL-27</td><td>Tolerance</td></tr><tr><td>**Th9**</td><td>PU.1/IRF4</td><td>IL-9</td><td>Helminths, allergy</td><td>TGF-β + IL-4</td><td>Allergy, asthma</td></tr></table>
+<div class="sub-h">CD8+ Cytotoxic T Lymphocytes (CTL)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Recognition**</td><td>Peptide-MHC I (endogenous antigens)</td></tr><tr><td>**Effector**</td><td>Perforin, Granzymes, FasL, IFN-γ, TNF-α</td></tr><tr><td>**Memory**</td><td>TEM (effector), TCM (central), TRM (tissue-resident)</td></tr><tr><td>**Exhaustion**</td><td>PD-1, TIM-3, LAG-3, TIGIT, TOX (chronic infection, cancer)</td></tr><tr><td>**Cross-presentation**</td><td>DCs present exogenous Ag on MHC I → CD8+ priming</td></tr></table>
+<div class="sub-h">Immunological Memory</div>
+<table class="ctable"><tr><th>Feature</th><th>B Cell Memory</th><th>T Cell Memory</th></tr><tr><td>---------</td><td>---------------</td><td>---------------</td></tr><tr><td>**Longevity**</td><td>Decades (LLPC in BM)</td><td>Years-decades</td></tr><tr><td>**Recall**</td><td>Rapid Ab (days)</td><td>Rapid expansion (days)</td></tr><tr><td>**Subsets**</td><td>MBC, LLPC</td><td>Tcm (CCR7+), Tem (CCR7-), Trm (tissue)</td></tr><tr><td>**Recall Response**</td><td>Higher affinity, faster, more Ab</td><td>Faster proliferation, effector function</td></tr><tr><td>**Vaccines**</td><td>Booster induces GC reaction</td><td>Prime-boost expands memory</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Antigen Presentation & MHC/HLA</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MHC Class I vs II</div>
+<table class="ctable"><tr><th>Feature</th><th>MHC Class I</th><th>MHC Class II</th></tr><tr><td>---------</td><td>-------------</td><td>--------------</td></tr><tr><td>**Genes**</td><td>HLA-A, -B, -C (Class Ia); E, F, G (Class Ib)</td><td>HLA-DP, -DQ, -DR (Class II)</td></tr><tr><td>**Structure**</td><td>α chain (HLA) + β2-microglobulin</td><td>α + β chains (both polymorphic)</td></tr><tr><td>**Expression**</td><td>All nucleated cells</td><td>APCs (DC, Mac, B), Thymus, Activated T</td></tr><tr><td>**Peptide Source**</td><td>Endogenous (cytosolic)</td><td>Exogenous (phagocytosed)</td></tr><tr><td>**Peptide Length**</td><td>8-10 aa</td><td>13-25 aa</td></tr><tr><td>**Binding Groove**</td><td>Closed ends</td><td>Open ends</td></tr><tr><td>**TCR Restriction**</td><td>CD8+ T cells</td><td>CD4+ T cells</td></tr><tr><td>**Cross-presentation**</td><td>DCs: Exogenous → MHC I</td><td>—</td></tr></table>
+<div class="sub-h">Antigen Processing Pathways</div>
+<table class="ctable"><tr><th>Pathway</th><th>Source</th><th>Processing</th><th>Loading</th><th>MHC</th></tr><tr><td>---------</td><td>--------</td><td>------------</td><td>---------</td><td>-----</td></tr><tr><td>**Class I (Endogenous)**</td><td>Cytosolic proteins</td><td>Proteasome → TAP → ER</td><td>Chaperones (Calnexin, Tapasin)</td><td>MHC I</td></tr><tr><td>**Class II (Exogenous)**</td><td>Phagocytosed/Endocytosed</td><td>Endosome/Lysosome → CLIP exchange</td><td>HLA-DM (CLIP exchange)</td><td>MHC II</td></tr><tr><td>**Cross-presentation**</td><td>Exogenous (dead cells)</td><td>Phagosome → Cytosol → Proteasome → TAP → ER</td><td>Same as Class I</td><td>MHC I</td></tr></table>
+<div class="sub-h">HLA Disease Associations (High-Yield)</div>
+<table class="ctable"><tr><th>HLA Allele</th><th>Disease</th><th>Odds Ratio</th><th>Population</th></tr><tr><td>------------</td><td>---------</td><td>-----------</td><td>------------</td></tr><tr><td>**HLA-B27**</td><td>Ankylosing Spondylitis</td><td>>100</td><td>Strongest HLA association</td></tr><tr><td></td><td>Reactive Arthritis</td><td>High</td><td></td></tr><tr><td></td><td>Acute Anterior Uveitis</td><td>High</td><td></td></tr><tr><td>**HLA-DR3 (DRB1*03)**</td><td>SLE, T1DM, Autoimmune Hepatitis, Coeliac (DQ2)</td><td>2-5</td><td>European</td></tr><tr><td>**HLA-DR4 (DRB1*04)**</td><td>RA (SE), T1DM</td><td>3-5</td><td>SE (QKRAA)</td></tr><tr><td>**HLA-DQ2 (DQA1*05:DQB1*02)**</td><td>Coeliac Disease</td><td>>10</td><td>90-95% DQ2+</td></tr><tr><td>**HLA-DQ8 (DQA1*03:DQB1*0302)**</td><td>Coeliac, T1DM</td><td>High</td><td></td></tr><tr><td>**HLA-B51**</td><td>Behçet's Disease</td><td>High</td><td>Mediterranean, Asian</td></tr><tr><td>**HLA-B57:01**</td><td>Abacavir Hypersensitivity</td><td>>1000</td><td>Screening required</td></tr><tr><td>**HLA-B*15:02**</td><td>Carbamazepine SJS/TEN</td><td>>100</td><td>Han Chinese, Thai, Malaysian</td></tr><tr><td>**HLA-B*58:01**</td><td>Allopurinol SJS/TEN/DRESS</td><td>>100</td><td>Han Chinese, Korean, Thai</td></tr><tr><td>**HLA-DR15 (DRB1*15:01)**</td><td>MS, Narcolepsy</td><td>3-5</td><td>European</td></tr><tr><td>**HLA-DR2 (DRB1*15:01)**</td><td>MS, Goodpasture</td><td>High</td><td></td></tr><tr><td>**HLA-DR4 (DRB1*04:01/04)**</td><td>RA (Shared Epitope)</td><td>3-5</td><td>SE motif QKRAA</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">3 Immune System Development & Ageing</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Primary &amp; Secondary Lymphoid Organs</div>
+<table class="ctable"><tr><th>Organ</th><th>Type</th><th>Key Function</th><th>Clinical Relevance</th></tr><tr><td>-------</td><td>------</td><td>--------------</td><td>-------------------</td></tr><tr><td>**Bone Marrow**</td><td>Primary</td><td>Haematopoiesis, B cell development</td><td>Aplastic anaemia, Leukaemia, B cell PID</td></tr><tr><td>**Thymus**</td><td>Primary</td><td>T cell maturation, Central tolerance</td><td>DiGeorge syndrome, Thymoma, Myasthenia gravis</td></tr><tr><td>**Lymph Nodes**</td><td>Secondary</td><td>Antigen trapping, T/B cell activation</td><td>Lymphadenopathy, Lymphoma, Sentinel node biopsy</td></tr><tr><td>**Spleen**</td><td>Secondary</td><td>Blood filtration, Encapsulated bacteria clearance</td><td>Splenectomy → OPSI, ITP, Hereditary spherocytosis</td></tr><tr><td>**MALT/GALT**</td><td>Secondary</td><td>Mucosal immunity, IgA production</td><td>IBD, Coeliac, IgA nephropathy</td></tr><tr><td>**Tonsils/Adenoids**</td><td>Secondary</td><td>Upper respiratory immune surveillance</td><td>Tonsillitis, Adenoid hypertrophy</td></tr></table>
+<div class="sub-h">Thymic Involution &amp; Immunosenescence</div>
+<table class="ctable"><tr><th>Feature</th><th>Mechanism</th><th>Clinical Consequence</th></tr><tr><td>---------</td><td>-----------</td><td>---------------------</td></tr><tr><td>**Thymic Involution**</td><td>Fatty replacement from puberty; ↓ 3% per year after puberty</td><td>↓ Naive T cell output, ↓ TCR diversity</td></tr><tr><td>**T Cell Changes**</td><td>↓ CD45RA+ naive, ↑ CD45RO+ memory, ↓ CD28, ↑ Senescent (CD57+, KLRG1+), ↑ Tregs</td><td>↓ Response to novel pathogens/vaccines, ↑ Latent virus reactivation (VZV, CMV)</td></tr><tr><td>**B Cell Changes**</td><td>↓ Naive B cells, ↓ Class switch recombination, ↓ SHM</td><td>↓ Vaccine response (lower affinity/avidity), ↓ New antigen response</td></tr><tr><td>**Innate Dysfunction**</td><td>Neutrophil chemotaxis/phagocytosis ↓, Macrophage dysfunction, ↓ NK cytotoxicity</td><td>↑ Bacterial/fungal infections, ↓ Tumour surveillance</td></tr><tr><td>**Inflammageing**</td><td>Chronic low-grade inflammation (↑ IL-6, TNF-α, CRP, IL-1β, IFN-γ)</td><td>Frailty, Sarcopenia, Atherosclerosis, Neurodegeneration, Insulin resistance, Cancer</td></tr><tr><td>**CMV Seropositivity**</td><td>Accelerates immunosenescence — massive CMV-specific T cell expansions (memory inflation)</td><td>↑ Mortality, ↓ Vaccine response, ↑ Frailty</td></tr></table>
+<div class="sub-h">Neonatal Immunity</div>
+<table class="ctable"><tr><th>Component</th><th>Characteristic</th><th>Clinical Relevance</th></tr><tr><td>-----------</td><td>----------------</td><td>-------------------</td></tr><tr><td>**Passive Immunity**</td><td>Transplacental IgG (peaks at 40w); Breast milk IgA</td><td>Protection until 6-12 months; Wanes → PID presentation</td></tr><tr><td>**Innate Immunity**</td><td>↓ Neutrophil chemotaxis/ROS; ↓ Complement (C3 30-60% adult); ↓ NK cytotoxicity</td><td>↑ Sepsis risk (GBS, E. coli, Listeria)</td></tr><tr><td>**Adaptive Immunity**</td><td>↓ Naive T cells; Th2-skewed; ↓ IgG2/IgG4; ↓ Memory</td><td>↑ Intracellular infections; Poor polysaccharide vaccine response</td></tr><tr><td>**Vaccination**</td><td>BCG, Hep B at birth; Delayed live vaccines if immunocompromised</td><td>Maternal antibodies interfere with measles <12m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Immunological Techniques</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Flow Cytometry &amp; Immunophenotyping</div>
+<table class="ctable"><tr><th>Application</th><th>Markers</th><th>Clinical Use</th></tr><tr><td>-------------</td><td>---------</td><td>--------------</td></tr><tr><td>**T/B/NK**</td><td>CD3, CD4, CD8, CD19, CD56, CD16</td><td>Lymphocyte subsets, PID (XLA, SCID)</td></tr><tr><td>**Activation**</td><td>CD25, CD69, HLA-DR, CD38</td><td>Activation, HLH, activation syndromes</td></tr><tr><td>**Memory**</td><td>CD45RA/RO, CCR7, CD27, CD28</td><td>Naive vs Memory (Tcm vs Tem)</td></tr><tr><td>**Treg**</td><td>CD4+CD25hiCD127loFoxP3+</td><td>IPEX, Treg defects</td></tr><tr><td>**B cell subsets**</td><td>CD19, CD20, CD27, IgD, IgM, CD38, CD24</td><td>CVID, XLA, Transitional, Memory</td></tr><tr><td>**Plasma cells**</td><td>CD138, CD38, CD19-</td><td>Myeloma, Plasmablasts</td></tr><tr><td>**Intracellular cytokines**</td><td>IFN-γ, IL-4, IL-17, TNF-α (PMA/Ionomycin)</td><td>Th1/Th2/Th17, TB (IGRA)</td></tr></table>
+<div class="sub-h">Serological Assays</div>
+<table class="ctable"><tr><th>Assay</th><th>Principle</th><th>Applications</th></tr><tr><td>-------</td><td>-----------</td><td>--------------</td></tr><tr><td>**ELISA**</td><td>Ag-Ab + Enzyme → Colour</td><td>Autoantibodies, Hormones, Infectious serology</td></tr><tr><td>**ELISA (Capture/Sandwich)**</td><td>Capture Ab + Ag + Detection Ab</td><td>Cytokines, Hormones, Antigens</td></tr><tr><td>**Western Blot**</td><td>SDS-PAGE + Transfer + Ab</td><td>HIV confirm, Lyme, Paraneoplastic</td></tr><tr><td>**Immunofluorescence (IIF)**</td><td>Ab + Fluorochrome on substrate</td><td>ANA pattern, ANCA, Antibody ID</td></tr><tr><td>**Immunoprecipitation**</td><td>Ab + Ag → Precipitation</td><td>IP-MS, Co-IP</td></tr><tr><td>**Luminex (Multiplex)**</td><td>Beads + Ab + Reporter</td><td>Cytokine panels, HLA antibodies (SAB)</td></tr></table>
+<div class="sub-h">Molecular Techniques</div>
+<table class="ctable"><tr><th>Technique</th><th>Application</th><th>Clinical Use</th></tr><tr><td>-----------</td><td>-------------</td><td>--------------</td></tr><tr><td>**PCR (Conventional/RT/Real-time)**</td><td>Gene amplification</td><td>Gene rearrangements (TCR/BCR), Viral load, Chimerism</td></tr><tr><td>**HLA Typing**</td><td>SSO/SSP/NGS</td><td>Transplant matching, Disease association, Pharmacogenetics</td></tr><tr><td>**NGS Panels/WES/WGS**</td><td>Gene panels, Exome, Genome</td><td>PID panels, Cancer, Rare disease</td></tr><tr><td>**FISH**</td><td>Locus-specific probes</td><td>BCR::ABL1, HER2, Microdeletions, Translocations</td></tr><tr><td>**MLPA**</td><td>Exon CNV, Methylation</td><td>DMD, SMN1, PMS2, MS-MLPA (PWS/AS/BWS)</td></tr><tr><td>**Repeat-Primed PCR**</td><td>Repeat expansions</td><td>FXS (CGG), HD (CAG), DM1 (CTG), FRDA (GAA), C9orf72</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Innate Cells**</td><td>Neutrophil (phagocytosis, NETs), Macrophage (phagocytosis, Ag presentation), NK (missing self, ADCC), DC (professional APC), ILCs (ILC1/2/3), Mast cells (IgE, anaphylaxis)</td></tr><tr><td>**PRRs**</td><td>TLRs (surface/endosomal), NLRs (inflammasome/NOD2), RLRs (viral RNA), CLRs (fungi), cGAS-STING (DNA)</td></tr><tr><td>**Complement**</td><td>Classical (C1q, Ab-Ag), Lectin (MBL), Alternative (spontaneous), Terminal (MAC), Regulators (C1-INH, FH, FI, CD55/46/59)</td></tr><tr><td>**Complement Deficiencies**</td><td>C1q/C4/C2 → SLE; C3 → severe infections; C5-9 → Neisseria; FH/FI/MCP → aHUS; C1-INH → HAE</td></tr><tr><td>**Cytokines**</td><td>Type I IFN (antiviral), IFN-γ (Th1, macrophage), IL-12 (Th1), IL-23 (Th17), IL-4/5/13 (Th2), IL-1/6/TNF (inflammation), IL-17 (neutrophil), IL-10/TGF-β (Treg)</td></tr><tr><td>**JAK-STAT**</td><td>JAK1/3 (γc cytokines), JAK1/2 (IL-6, IFN-γ), JAK2 (EPO/TPO, MPN), TYK2 (IFN-α/β, IL-12/23)</td></tr><tr><td>**B Cells**</td><td>Development (BM → Spleen), CSR/SHM (AID), GC reaction (Tfh), Plasma cells (BM), Ig classes (IgG, IgM, IgA, IgE, IgD)</td></tr><tr><td>**T Cells**</td><td>Thymus development (DP → SP, ± selection), Th subsets (Th1/Th2/Th17/Tfh/Treg), CTL (MHC I), Memory (Tcm/Tem/Trm)</td></tr><tr><td>**MHC/HLA**</td><td>Class I (HLA-A/B/C) → CD8; Class II (HLA-DR/DP/DQ) → CD4; Disease associations (B27, DR3/4, DQ2/8, B51, B57:01, B*15:02)</td></tr><tr><td>**Immunological Techniques**</td><td>Flow (CD markers), ELISA/ELISPOT, IFA (ANA/ANCA), Luminex (cytokines, HLA Ab), PCR/NGS (TCR/BCR rearrangement, HLA typing, variants)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Differentiate innate vs adaptive immunity</td><td>Innate: Rapid (hrs), non-specific, no memory, germline-encoded PRRs. Adaptive: Slow (days), specific, memory, somatic recombination (TCR/BCR).</td></tr><tr><td>2</td><td>Describe the three complement pathways</td><td>Classical: C1q-Ab-Ag; Lectin: MBL; Alternative: Spontaneous C3 tickover. All converge at C3 → C5 → MAC.</td></tr><tr><td>3</td><td>Complement deficiency → Neisserial infections</td><td>Terminal pathway (C5-C9) deficiency → Impaired MAC formation on Neisseria.</td></tr><tr><td>4</td><td>C1-INH deficiency → HAE</td><td>C1-INH inhibits C1r/s, MASP-1/2, Kallikrein. Deficiency → Uncontrolled bradykinin → Angioedema. C4 low, C1q normal.</td></tr><tr><td>5</td><td>IL-12 vs IL-23</td><td>IL-12 → STAT4 → Th1 (IFN-γ); IL-23 → STAT3 → Th17 (IL-17/22).</td></tr><tr><td>6</td><td>Th1 vs Th2 vs Th17</td><td>Th1: T-bet, IFN-γ, intracellular; Th2: GATA3, IL-4/5/13, helminths/allergy; Th17: RORγt, IL-17/22, extracellular bacteria/fungi.</td></tr><tr><td>7</td><td>Treg mechanism</td><td>FoxP3+, IL-10, TGF-β, IL-35, CTLA-4, CD39/73. Suppress via cytokines, cytolysis, metabolic disruption, DC modulation.</td></tr><tr><td>8</td><td>MHC Class I vs II</td><td>Class I: HLA-A/B/C + β2m, endogenous peptides, CD8+. Class II: HLA-DR/DP/DQ, exogenous peptides, CD4+.</td></tr><tr><td>9</td><td>HLA-B27 associations</td><td>Ankylosing spondylitis (>100), Reactive arthritis, Acute anterior uveitis, PsA, IBD-associated SpA.</td></tr><tr><td>10</td><td>Cross-presentation</td><td>DCs phagocytose dead cells → antigens escape to cytosol → proteasome → TAP → MHC I → CD8+ T cell priming.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Classical vs Lectin vs Alternative"**</td><td>Classical = Antibody-dependent; Lectin = MBL/Ficolin (sugar); Alternative = Spontaneous C3 tickover (always on)</td></tr><tr><td>**"C3 deficiency vs C5-9 deficiency"**</td><td>C3 = Severe pyogenic infections (central); C5-9 = Neisserial infections only (MAC)</td></tr><tr><td>**"C1-INH deficiency = C1q low"**</td><td>**NO.** C1-INH deficiency → C4 low, C2 low, **C1q normal**.</td></tr><tr><td>**"Th1 = IFN-γ, Th2 = IL-4, Th17 = IL-17"**</td><td>Also: Th1 = T-bet/IFN-γ (intracellular); Th2 = GATA3/IL-4/5/13 (helminths/allergy); Th17 = RORγt/IL-17/22 (extracellular bacteria/fungi).</td></tr><tr><td>**"Treg = FoxP3 only"**</td><td>**NO.** FoxP3 is master regulator but stability needs TSDR demethylation. Tr1 = IL-10, FoxP3-.</td></tr><tr><td>**"MHC I = all cells, MHC II = APCs only"**</td><td>Mostly true. MHC II also on thymic epithelium, activated T cells (human), some endothelium.</td></tr><tr><td>**"HLA-B27 = AS only"**</td><td>**NO.** Also Reactive arthritis, Acute anterior uveitis, PsA, IBD-associated SpA.</td></tr><tr><td>**"CD4 = Helper, CD8 = Killer only"**</td><td>**NO.** CD4 can be cytotoxic (Th1, Treg). CD8 can have helper functions.</td></tr><tr><td>**"NK cells = Adaptive immunity"**</td><td>**NO.** NK = Innate (missing self, activating/inhibitory KIRs). But "memory-like" NK exists.</td></tr><tr><td>**"TLR4 = only LPS"**</td><td>TLR4 also recognises RSV fusion protein, HSPs, HMGB1, viral proteins.</td></tr></table>
+<div class="callout"><b>Mnemonic: IMMUNOLOGY FUNDAMENTALS</b> <b>I</b>nnate: <b>Neutrophil (NETs), Macrophage, NK (Missing self), DC (APC), ILC1/2/3, Mast (IgE)</b> <b>M</b>ucosal Barriers: <b>Skin (Defensins), Gut (IgA, Microbiome), Lung (Surfactant, Cilia)</b> <b>M</b>PRRs: <b>TLR (LPS, Flagellin, CpG, RNA), NLR (NOD2, NLRP3), RLR (RNA), CLR (Fungi), cGAS-STING (DNA)</b> <b>U</b>niversal Complement: <b>Classical (Ab), Lectin (MBL), Alternative (Tickover) → C3 → C5 → MAC</b> <b>N</b>eutrophil: <b>Phagocytosis, NETs, ROS, Degranulation, Chemotaxis (fMLP, C5a, LTB4)</b> <b>O</b>psonisation: <b>IgG, C3b, MBL</b> → FcγR, CR1, CR3 <b>L</b>ymphocytes: <b>B (Ab), T (CD4 Th, CD8 CTL, Treg)</b> <b>O</b>ntogeny: <b>B (BM), T (Thymus: DN→DP→SP, ± Selection)</b> <b>G</b>erminal Centre: <b>SHM (AID), CSR (AID + Cytokines), Tfh (Bcl6, IL-21, CD40L)</b> <b>Y</b>-Globulins: <b>IgG (Opson, Placenta), IgM (Pentamer, 1st), IgA (Mucosal), IgE (Mast cell, Allergy), IgD (BCR)</b> <b>T</b> Cell Subsets: <b>Th1 (T-bet, IFNγ, Intra), Th2 (GATA3, IL4/5/13, Allergy), Th17 (RORγt, IL17/22, Extra), Tfh (Bcl6, GC), Treg (FoxP3, IL10, TGFβ)</b> <b>C</b>D8 CTL: <b>MHC I, Perforin/Granzyme, FasL, Exhaustion (PD1, TIM3, LAG3, TIGIT)</b> <b>A</b>ntigen Presentation: <b>MHC I (Endogenous, CD8), MHC II (Exogenous, CD4), Cross-presentation (DC, Dead cells)</b> <b>A</b>llorecognition: <b>Direct (Donor MHC), Indirect (Recipient APC), Semi-direct (Exosomes)</b> <b>C</b>omplement: <b>Classical (C1q, Ab), Lectin (MBL), Alternative (Tickover) → C3 → C5 → MAC</b> <b>Y</b>okefellow Cytokines: <b>IL-12→Th1, IL-23→Th17, IL-4→Th2, IL-6+TGFβ→Th17, IL-6/TGFβ→Treg</b> <b>J</b>AK-STAT: <b>JAK1/3 (γc), JAK1/2 (IL-6, IFNγ), JAK2 (EPO/TPO/MPN), TYK2 (IFNα/β, IL-12/23)</b> <b>H</b>LA: **Class I (A,B,C→CD8), Class II (DR,DP,DQ→CD4). B27=AS, DR3/4=SLE/RA, DQ2/8=Celiac, B51=Behcet, B57:01=Abacavir, B*15:02=Carbamazepine<b> </b>T<b>echniques: </b>Flow (CD3/4/8/19/56), ELISA/IFA (ANA/ANCA), Luminex (Cytokines, HLA Ab), PCR/NGS (TCR/BCR, HLA, Variants)<b> </b>P<b>athogen Recognition: </b>TLR4=LPS, TLR3=dsRNA, TLR7/8=ssRNA, TLR9=CpG, NLRP3=Inflammasome, cGAS=DNA<b> </b>E<b>pigenetics: </b>AID (SHM/CSR), FoxP3 (Treg), Bcl6 (Tfh/GC), RORγt (Th17), T-bet (Th1), GATA3 (Th2)<b> </b>T<b>umour Immunology: </b>Immunoediting (Elimination/Equilibrium/Escape), Checkpoints (PD1/PD-L1, CTLA4, LAG3, TIGIT), CAR-T (CD19, BCMA)<b> </b>V<b>accines: </b>Platforms (mRNA, Viral vector, Protein, Live attenuated), Hesitancy, Schedules<b> </b>F<b>undamental: </b>Self vs Non-self, Central/Peripheral Tolerance, Immune Memory, Immunodeficiency**</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Immunology Fundamentals)) Innate Immunity Barriers (Skin, Mucosa, Microbiome) Cells (Neutrophil, Macrophage, NK, DC, ILC, Mast) PRRs (TLR, NLR, RLR, CLR, cGAS-STING) Complement (Classical, Lectin, Alternative, Terminal) Acute Phase (CRP, SAA, PCT, Ferritin, Hepcidin) Adaptive Immunity B Cells Development (Pro-B → Plasma) Ig Classes (IgG, IgM, IgA, IgE, IgD) GC Reaction (SHM, CSR, Tfh) T Cells Thymus (DN→DP→SP, ± Selection) Subsets (Th1, Th2, Th17, Tfh, Treg, Th9) CTL (CD8, Perforin/Granzyme/FasL) Memory (Tcm, Tem, Trm) Antigen Presentation MHC I (Endogenous, CD8) vs MHC II (Exogenous, CD4) Cross-presentation HLA (Class I A/B/C, Class II DR/DP/DQ) Complement Pathways (Classical, Lectin, Alternative) Terminal Pathway (MAC) Regulators (C1-INH, FH, FI, CD55/46/59) Cytokines &amp; Signalling Type I/II IFN, TNF, IL-1, IL-6, IL-12/23, IL-17, IL-4/5/13 JAK-STAT (JAK1/3, JAK1/2, JAK2, TYK2) HLA &amp; Disease Class I (A, B, C) vs Class II (DR, DP, DQ) Disease Associations (B27, DR3/4, DQ2, B51, B57:01, B*15:02) Techniques Flow, ELISA, IFA, Luminex, PCR/NGS, MLPA, FISH, HLA Typing </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Innate Immunity (Cells, PRRs, Barriers)</td><td>3</td><td></td><td></td></tr><tr><td>Complement (Pathways, Deficiencies, Regulation)</td><td>3</td><td></td><td></td></tr><tr><td>Cytokines & JAK-STAT</td><td>3</td><td></td><td></td></tr><tr><td>B Cell & Humoral Immunity</td><td>3</td><td></td><td></td></tr><tr><td>T Cell Development & Subsets</td><td>3</td><td></td><td></td></tr><tr><td>Antigen Presentation & MHC/HLA</td><td>3</td><td></td><td></td></tr><tr><td>Immunological Techniques</td><td>2</td><td></td><td></td></tr><tr><td>Key Associations & Clinical Application</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the innate and adaptive immune responses to a bacterial infection."</td><td>Barriers, PRRs, Neutrophil recruitment, Complement, DC migration, T cell priming, Th1/Th17, Antibody production, Memory</td></tr><tr><td>**Short Note**</td><td>"Complement pathways and clinical deficiencies."</td><td>3 pathways, Convergence at C3, MAC, Deficiencies (C1q/C4/C2→SLE, C3→sepsis, C5-9→Neisseria, FH/FI→aHUS, C1-INH→HAE)</td></tr><tr><td>**Viva**</td><td>"Explain the difference between MHC Class I and II antigen presentation."</td><td>MHC I: Endogenous, HLA-A/B/C+β2m, CD8+, 8-10aa, closed groove. MHC II: Exogenous, HLA-DR/DP/DQ, CD4+, 13-25aa, open groove, HLA-DM.</td></tr><tr><td>**Ward Round**</td><td>"Patient with recurrent Neisseria meningitidis. Which complement deficiency?"</td><td>**Terminal pathway (C5-C9)** deficiency. Test: CH50, AH50, Individual components (C5, C6, C7, C8, C9). Screen family.</td></tr><tr><td>**Last-Night**</td><td>"Innate: Neutrophil, Mac, NK, DC, PRR (TLR/NLR/RLR/CLR/cGAS). Complement: 3 paths→C3→MAC. Def: C1q/C4/C2=SLE, C3=sepsis, C5-9=Neisseria, FH/FI=aHUS, C1-INH=HAE. Cytokines: IL12→Th1, IL23→Th17, IL4→Th2, IL6+TGFb→Th17/Treg. JAK-STAT: JAK1/3(γc), JAK1/2(IL6/IFNγ), JAK2(EPO), TYK2(IFNα/β,IL12/23). B: Pro→Pre→Imm→Trans→Mature→GC→Plasma/Mem. Ig: G(M,O,A,D), M(pentamer), A(dimer), E(mast), D(BCR). T: Thymus(DN→DP→SP), Th1(Tbet/IFNγ), Th2(GATA3/IL4), Th17(RORγt/IL17), Tfh(Bcl6/IL21), Treg(FoxP3). MHC: I(A,B,C→CD8), II(DR,DP,DQ→CD4). HLA: B27=AS, DR3/4=SLE/RA, DQ2/8=Celiac, B57=Abacavir, B*15:02=Carbamazepine. Tech: Flow, ELISA, IFA, Luminex, PCR/NGS, MLPA, FISH, HLA Typing."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Innate Immunity</b>: Barriers, Neutrophils (NETs, phagocytosis), Macrophages (phagocytosis, presentation), NK (missing self, ADCC), DCs (professional APC), ILCs, Mast cells; PRRs (TLR, NLR, RLR, CLR, cGAS-STING); Complement (Classical, Lectin, Alternative → C3 → MAC), Regulators (C1-INH, FH, FI, CD55/46/59)</li><li><b>Complement Deficiencies</b>: C1q/C4/C2 → SLE; C3 → severe pyogenic infections; C5-9 → Neisserial infections; FH/FI/MCP → aHUS; C1-INH → HAE (C4 low, C1q normal)</li><li><b>Cytokines</b>: Type I IFN (antiviral), IFN-γ (Th1), IL-12 (Th1), IL-23 (Th17), IL-4/5/13 (Th2), IL-1/6/TNF (inflammation), IL-17 (neutrophils), IL-10/TGF-β (Treg); JAK-STAT pathways</li><li><b>B Cells</b>: BM development → GC (SHM, CSR via AID) → Plasma cells (BM) &amp; Memory; Ig classes (IgG, IgM, IgA, IgE, IgD)</li><li><b>T Cells</b>: Thymus (DP→SP, ± selection); Th1 (T-bet, IFN-γ), Th2 (GATA3, IL-4/5/13), Th17 (RORγt, IL-17/22), Tfh (Bcl6, IL-21), Treg (FoxP3), CTL (CD8, perforin/granzyme)</li><li><b>MHC/HLA</b>: Class I (HLA-A/B/C + β2m, endogenous, CD8+); Class II (HLA-DR/DP/DQ, exogenous, CD4+); Cross-presentation; Disease associations (B27, DR3/4, DQ2/8, B51, B57:01, B*15:02)</li><li><b>Techniques</b>: Flow (immunophenotyping), ELISA/ELISPOT, IFA (ANA/ANCA), Luminex (cytokines, HLA Abs), PCR/NGS (TCR/BCR rearrangement, HLA typing), MLPA (CNV, methylation), FISH</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Complement deficiency most associated with SLE:</b></li></ol>
+<p>A. C3  B. <b>C1q, C4, or C2</b>  C. C5  D. Factor H <i>Answer: B. Classical pathway deficiencies (C1q, C4, C2) strongly associated with SLE.</i></p>
+<ol><li><b>Terminal complement pathway deficiency predisposes to:</b></li></ol>
+<p>A. Staphylococcus aureus  B. <b>Neisseria meningitidis</b>  C. Streptococcus pneumoniae  D. Escherichia coli <i>Answer: B. Terminal pathway (C5-C9) deficiency → impaired MAC formation on Neisseria.</i></p>
+<ol><li><b>Which cytokine drives Th17 differentiation?</b></li></ol>
+<p>A. IL-12  B. IL-4  C. <b>IL-23 (+ IL-6, TGF-β, IL-1β)</b>  D. IFN-γ <i>Answer: C. IL-23 (with IL-6, TGF-β, IL-1β) → RORγt → Th17 (IL-17A/F, IL-22).</i></p>
+<ol><li><b>Transcription factor for Th1 differentiation:</b></li></ol>
+<p>A. GATA3  B. <b>T-bet</b>  C. RORγt  D. FoxP3 <i>Answer: B. T-bet is master regulator for Th1 (IFN-γ).</i></p>
+<ol><li><b>MHC Class I presents peptides to:</b></li></ol>
+<p>A. CD4+ T cells  B. <b>CD8+ T cells</b>  C. B cells  D. NK cells <i>Answer: B. MHC Class I (HLA-A/B/C) presents endogenous peptides to CD8+ CTLs.</i></p>
+<ol><li><b>HLA-B27 is strongly associated with:</b></li></ol>
+<p>A. Rheumatoid Arthritis  B. <b>Ankylosing Spondylitis</b>  C. SLE  D. Type 1 Diabetes <i>Answer: B. HLA-B27 &gt;100 odds ratio for Ankylosing Spondylitis.</i></p>
+<ol><li><b>Which cytokine signals via JAK1/JAK3?</b></li></ol>
+<p>A. IFN-γ  B. IL-6  C. <b>IL-2 (γc chain cytokines)</b>  D. IFN-α <i>Answer: C. γc cytokines (IL-2, 4, 7, 9, 15, 21) use JAK1/JAK3.</i></p>
+<ol><li><b>AID (Activation-Induced Deaminase) function:</b></li></ol>
+<p>A. IgG synthesis  B. <b>SHM and CSR in B cells</b>  C. T cell activation  D. Complement activation <i>Answer: B. AID mediates somatic hypermutation and class switch recombination in GC B cells.</i></p>
+<ol><li>**HLA-B*57:01 screening is required before prescribing:**</li></ol>
+<p>A. Carbamazepine  B. <b>Abacavir</b>  C. Allopurinol  D. Phenytoin <i>Answer: B. HLA-B</i>57:01 strongly associated with abacavir hypersensitivity reaction.*</p>
+<ol><li><b>Treg master transcription factor:</b></li></ol>
+<p>A. T-bet  B. GATA3  C. RORγt  D. <b>FoxP3</b> <i>Answer: D. FoxP3 is master regulator of Treg development and function.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25M with recurrent pneumococcal pneumonia. Low IgG2, normal IgG, IgA, IgM. Likely diagnosis?</b></li></ol>
+<p>A. XLA  B. <b>IgG subclass deficiency</b>  C. CVID  D. Specific antibody deficiency <i>Answer: B. Selective IgG2 subclass deficiency → recurrent encapsulated bacteria.</i></p>
+<ol><li><b>Child with recurrent Staph aureus, Aspergillus. NBT test normal. DHR flow cytometry: No oxidative burst. Diagnosis?</b></li></ol>
+<p>A. CGD  B. <b>CGD (Confirmed by DHR)</b>  C. LAD  D. CHS <i>Answer: B. Dihydrorhodamine (DHR) flow cytometry is gold standard for CGD (absent oxidative burst).</i></p>
+<ol><li><b>Patient with hereditary angioedema. C4 low, C1q normal. Deficiency?</b></li></ol>
+<p>A. C1q  B. <b>C1-INH</b>  C. C4  D. C2 <i>Answer: B. C1-INH deficiency → Uncontrolled C1r/s → Low C4, Normal C1q.</i></p>
+<ol><li>**HLA-B*57:01 screening is mandatory before:**</li></ol>
+<p>A. Carbamazepine  B. <b>Abacavir</b>  C. Allopurinol  D. Phenytoin <i>Answer: B. Abacavir hypersensitivity strongly associated with HLA-B</i>57:01.*</p>
+<ol><li><b>Patient on azathioprine develops severe neutropenia. TPMT genotype?</b></li></ol>
+<p>A. <i>1/</i>1 (Normal)  B. <b>Homozygous variant (Poor metabolizer)</b>  C. Heterozygous (Intermediate)  D. <i>1/</i>17 (Ultra-rapid) <i>Answer: B. TPMT poor metaboliser (homozygous variant) → Severe myelosuppression with azathioprine.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B (C1q/C4/C2), 2-B (Neisseria), 3-C (IL-23), 4-B (T-bet), 5-B (CD8+), 6-B (AS), 7-C (γc cytokines), 8-B (SHM/CSR), 8-B (Abacavir), 10-D (FoxP3)</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Clinical Immunology MOC]] — Master index</li><li>[[2.1 Primary Immunodeficiencies]] — Complement deficiencies, Phagocytic defects</li><li>[[3.2 Systemic Autoimmune Diseases]] — SLE (Complement), Complement in SLE</li><li>[[3.4 Autoimmune Diagnostics]] — Complement levels (C3, C4, CH50)</li><li>[[2.2 Secondary Immunodeficiencies]] — HIV complement, Splenectomy</li><li>[[5.1-5.4 Transplant Immunology]] — Complement in rejection, C4d staining</li><li>[[6.1-6.7 Tumour Immunology &amp; Immunotherapy]] — Complement in tumour microenvironment</li><li>[[7.1-7.6 Immune-Based Therapies]] — Eculizumab (C5 inhibitor), Ravulizumab</li><li>[[8.1-8.6 Special Situations Immunology]] — Complement in sepsis, Ageing</li><li>[[9. ELSI]] — Genetic testing for complement deficiencies</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-14 <b>Next:</b> Build <code>2.1 Primary Immunodeficiencies.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fundamentals Of Immunology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

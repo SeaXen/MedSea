@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>High Risk Drug Combinations — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">High Risk Drug Combinations</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] List the <b>highest-risk drug combinations</b> encountered in clinical practice</li><li>[ ] Apply <b>management strategies</b> for each combination</li><li>[ ] Recognize <b>warfarin + NSAID/amiodarone</b> interactions</li><li>[ ] Identify <b>immunosuppressant + azole/macrolide</b> interactions</li><li>[ ] Discuss <b>lithium + NSAID/ACEi</b> toxicity</li><li>[ ] Recognise <b>serotonin syndrome</b> (MAOI + SSRI)</li><li>[ ] Identify <b>QT-prolonging combinations</b> (torsades risk)</li><li>[ ] Apply <b>epilepsy drug interactions</b> (CYP450)</li><li>[ ] Discuss <b>DOAC interactions</b> (P-gp, CYP3A4)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition: "High-Risk Combination"</span>
+  </div>
+  <div class="sec-body">
+<p>A drug combination is <b>high-risk</b> when it:</p>
+<ul><li>Causes <b>severe, life-threatening</b> outcome (e.g., bleed, AKI, serotonin syndrome, torsades)</li><li>Has <b>narrow therapeutic index</b> in either drug</li><li>Affects a <b>common prescription scenario</b> (high prevalence)</li><li>Is often <b>preventable</b> with awareness</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — Approach to High-Risk Combo</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Two drugs co-prescribed] --&gt; B{Check BNF/Stockley&lt;br/&gt;is this on&lt;br/&gt;high-risk list?} B --&gt;|No| C[Continue with awareness] B --&gt;|Yes| D{Is there a&lt;br/&gt;safer alternative?} D --&gt;|Yes| E[Switch one drug] D --&gt;|No| F[Use lowest effective doses] F --&gt; G[Plan monitoring&lt;br/&gt;TDM, clinical, lab] G --&gt; H[Document + counsel patient] H --&gt; I[Review at follow-up] E --&gt; I </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Warfarin Interactions (Mnemonic: "**WATCH OUT**")</div>
+<table class="ctable"><tr><th>Drug/Food</th><th>Effect on INR</th><th>Mechanism</th></tr><tr><td>-----------</td><td>---------------</td><td>-----------</td></tr><tr><td>**W**arfarin (baseline)</td><td>2.0-3.0 (or 2.5-3.5)</td><td>—</td></tr><tr><td>**A**miodarone</td><td>↑ INR (1.5-2x)</td><td>CYP2C9/3A4 inhibition</td></tr><tr><td>**T**rimethoprim</td><td>↑ INR</td><td>CYP2C9 inhibition</td></tr><tr><td>**C**iprofloxacin / macrolides</td><td>↑ INR</td><td>CYP inhibition + gut flora ↓</td></tr><tr><td>**H**eparin (added)</td><td>↑ Bleed</td><td>Additive</td></tr><tr><td>**O**CP, **O**meprazole</td><td>Modest ↑</td><td>CYP</td></tr><tr><td>**U**Seful (Vitamin K)</td><td>↓ INR</td><td>Antidote (warfarin antagonist)</td></tr><tr><td>**T**hyroid (carbimazole, levothyroxine)</td><td>↑/↓</td><td>Affects clotting factors</td></tr></table>
+<p><b>Drugs that increase bleeding risk (not via INR):</b></p>
+<ul><li>NSAIDs (GI mucosal injury, antiplatelet)</li><li>Antiplatelets (aspirin, clopidogrel, ticagrelor)</li><li>SSRIs (↓ platelet serotonin)</li><li>Corticosteroids (with NSAID = ulcer risk)</li></ul>
+<p><b>Drugs that DECREASE warfarin effect (↓ INR):</b></p>
+<ul><li>Enzyme inducers: rifampicin, carbamazepine, phenytoin, St John's Wort</li><li>Vitamin K-rich foods: leafy greens (kale, spinach, broccoli)</li><li>OCP (estrogen ↑ clotting factors)</li><li>Cholestyramine (↓ absorption)</li></ul>
+<div class="sub-h">4.2 DOAC (Direct Oral Anticoagulant) Interactions</div>
+<table class="ctable"><tr><th>DOAC</th><th>Metabolism/Transport</th><th>Major Interactions</th><th>Effect</th></tr><tr><td>------</td><td>----------------------</td><td>---------------------</td><td>--------</td></tr><tr><td>**Apixaban**</td><td>CYP3A4 (minor), P-gp</td><td>Strong CYP3A4 + P-gp inhibitors (ketoconazole, ritonavir)</td><td>↑ Apixaban (bleed)</td></tr><tr><td></td><td></td><td>Strong inducers (rifampicin, carbamazepine, phenytoin, SJW)</td><td>↓ Apixaban (clot)</td></tr><tr><td>**Rivaroxaban**</td><td>CYP3A4, P-gp</td><td>Same as apixaban</td><td>↑/↓ Levels</td></tr><tr><td>**Dabigatran**</td><td>P-gp (not CYP)</td><td>P-gp inhibitors (verapamil, amiodarone, quinidine, ketoconazole)</td><td>↑ Dabigatran (bleed)</td></tr><tr><td></td><td></td><td>P-gp inducers (rifampicin, SJW)</td><td>↓ Dabigatran (clot)</td></tr><tr><td>**Edoxaban**</td><td>P-gp (minimal CYP)</td><td>P-gp inhibitors (verapamil, quinidine, amiodarone, dronedarone)</td><td>↑ Edoxaban</td></tr></table>
+<p><b>Key rule:</b> With strong dual CYP3A4+P-gp inhibitors (ketoconazole, ritonavir) → avoid apixaban/rivaroxaban. With strong inducers → avoid all DOACs (use warfarin).</p>
+<div class="sub-h">4.3 Immunosuppressant (Ciclosporin, Tacrolimus) Interactions</div>
+<table class="ctable"><tr><th>Drug</th><th>Effect on Level</th><th>Mechanism</th><th>Action</th></tr><tr><td>------</td><td>-----------------</td><td>-----------</td><td>--------</td></tr><tr><td>**CYP3A4 inhibitors (azole, macrolide, grapefruit, diltiazem, verapamil)**</td><td>↑ Ciclosporin/tacrolimus</td><td>↓ Metabolism</td><td>↓ Dose 50-90%; TDM</td></tr><tr><td>**CYP3A4 inducers (rifampicin, carbamazepine, phenytoin, SJW)**</td><td>↓ Levels</td><td>↑ Metabolism</td><td>↑ Dose; TDM; avoid SJW</td></tr><tr><td>**NSAIDs**</td><td>↑ Nephrotoxicity</td><td>Renal</td><td>Monitor U&E; avoid in transplant</td></tr><tr><td>**Aminoglycosides**</td><td>↑ Nephrotoxicity</td><td>Renal</td><td>Avoid; if needed, TDM</td></tr><tr><td>**Statins**</td><td>↑ Myopathy (especially simvastatin + ciclosporin)</td><td>CYP3A4</td><td>Use pravastatin/rosuvastatin</td></tr><tr><td>**Azathioprine + allopurinol**</td><td>↑ AZA toxicity (myelosuppression)</td><td>Xanthine oxidase</td><td>Reduce AZA to 25%</td></tr></table>
+<div class="sub-h">4.4 Lithium Interactions (Mnemonic: "**NAT**")</div>
+<table class="ctable"><tr><th>Drug</th><th>Effect on Li</th><th>Mechanism</th></tr><tr><td>------</td><td>--------------</td><td>-----------</td></tr><tr><td>**N**SAIDs (esp. ibuprofen, diclofenac, indomethacin)</td><td>↑ Li (1.5-2x)</td><td>↓ Renal prostaglandins → ↓ Li clearance</td></tr><tr><td>**A**CEi / ARBs</td><td>↑ Li (1.5-2x)</td><td>↓ GFR + ↓ tubular Li excretion</td></tr><tr><td>**T**hiazides (and to lesser extent, loop)</td><td>↑ Li (1.5-2x)</td><td>↓ Li clearance (paradoxical)</td></tr></table>
+<p><b>Drugs that ↓ Li (less common):</b></p>
+<ul><li>Theophylline, caffeine, acetazolamide, NaHCO₃ (↑ Li clearance)</li><li>Osmotic diuretics, sodium loading</li></ul>
+<p><b>Lithium toxicity levels:</b></p>
+<ul><li>Therapeutic: 0.6-1.0 mmol/L (maintenance); 0.8-1.0 (acute mania)</li><li>Mild toxicity: 1.0-1.5</li><li>Moderate: 1.5-2.0</li><li>Severe: &gt;2.0 (&gt;4.0 = life-threatening)</li></ul>
+<div class="sub-h">4.5 Serotonin Syndrome (Mnemonic: "**MAOI + any serotonergic = SS**")</div>
+<table class="ctable"><tr><th>Trigger</th><th>Examples</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**MAOI + SSRI**</td><td>Phenelzine + sertraline (washout 2 weeks each way; fluoxetine 5 weeks)</td></tr><tr><td>**MAOI + TCA**</td><td>Phenelzine + amitriptyline</td></tr><tr><td>**MAOI + tramadol / pethidine / fentanyl**</td><td>Severe SS</td></tr><tr><td>**MAOI + linezolid / methylene blue**</td><td>Linezolid is a reversible MAOI</td></tr><tr><td>**SSRI + tramadol / triptan / lithium**</td><td>Moderate risk</td></tr><tr><td>**SSRI + St John's Wort**</td><td>↑ Risk</td></tr><tr><td>**SSRI + dextromethorphan**</td><td>"Triple C" abuse</td></tr><tr><td>**SSRI + buspirone / LSD**</td><td>↑ Risk</td></tr></table>
+<p><b>Clinical features (Hunter Criteria):</b></p>
+<ul><li>Spontaneous clonus</li><li>Inducible clonus + agitation/diaphoresis</li><li>Ocular clonus + agitation/diaphoresis</li><li>Tremor + hyperreflexia</li><li>Hypertonia + temp &gt;38°C + ocular/inducible clonus</li></ul>
+<p><b>Management:</b> Stop drug, supportive, cyproheptadine (5-HT2A antagonist), dantrolene, cooling.</p>
+<div class="sub-h">4.6 QT-Prolonging Combinations (Torsades Risk)</div>
+<p><b>Mnemonic: "</b>SAAD MaFLOHTO<b>" (Drugs that prolong QT)</b></p>
+<table class="ctable"><tr><th>Group</th><th>Examples</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**S**otalol, **A**miodarone, **A**ntiarrhythmics (class Ia, III), **D**ofetilide</td><td>Antiarrhythmics</td></tr><tr><td>**M**acrolides (erythromycin, clarithromycin, azithromycin mild)</td><td>Antibiotics</td></tr><tr><td>**F**luoroquinolones (moxifloxacin highest)</td><td>Antibiotics</td></tr><tr><td>**L**amotrigine (some), lithium, levofloxacin</td><td>Misc</td></tr><tr><td>**O**ndansetron, **H**aloperidol, droperidol</td><td>Antiemetics/antipsychotics</td></tr><tr><td>**T**CAs, **M**ethadone, **Q**uinidine</td><td>Antidepressants/opioids</td></tr></table>
+<p><b>Risk factors for Torsades:</b></p>
+<ul><li>≥2 QT-prolonging drugs</li><li>Female sex (longer baseline QTc)</li><li>Hypokalaemia, hypomagnesaemia</li><li>Bradycardia</li><li>Pre-existing long QT</li><li>High drug level</li><li>Family history of sudden death</li></ul>
+<p><b>Rule:</b> Avoid ≥2 QT-prolonging drugs; if unavoidable, check ECG and electrolytes (K⁺, Mg²⁺).</p>
+<div class="sub-h">4.7 Epilepsy Drug Interactions (AEDs)</div>
+<table class="ctable"><tr><th>AED</th><th>Effect on Other AEDs</th><th>Key Interactions</th></tr><tr><td>-----</td><td>----------------------</td><td>------------------</td></tr><tr><td>**Phenytoin**</td><td>Strong inducer (1A2, 2C9, 2C19, 3A4) — ↓ OCP, warfarin, simvastatin, ciclosporin, many</td><td>Narrow TI; saturable kinetics</td></tr><tr><td>**Carbamazepine**</td><td>Strong inducer (1A2, 2C9, 2C19, 3A4) — ↓ many drugs</td><td>Induces own metabolism (auto-induction)</td></tr><tr><td>**Phenobarbital**</td><td>Strong inducer (1A2, 2C9, 2C19, 3A4)</td><td>↓ OCP, warfarin, many</td></tr><tr><td>**Valproate**</td><td>Inhibitor (UGT1A4, 2C9) — ↑ lamotrigine, phenytoin</td><td>Pancreatitis, hepatotoxicity, teratogenicity</td></tr><tr><td>**Lamotrigine**</td><td>No significant effect on others</td><td>Stevens-Johnson risk (slow titration)</td></tr><tr><td>**Levetiracetam**</td><td>No significant effect (renally cleared)</td><td>Few interactions</td></tr><tr><td>**Topiramate**</td><td>Mild inducer (3A4)</td><td>↓ OCP (with >200 mg/day)</td></tr></table>
+<div class="sub-h">4.8 Antiretroviral Interactions</div>
+<table class="ctable"><tr><th>ARV</th><th>Effect</th><th>Key Interactions</th></tr><tr><td>-----</td><td>--------</td><td>------------------</td></tr><tr><td>**Protease inhibitors (PI: ritonavir, lopinavir, atazanavir)**</td><td>Strong CYP3A4 inhibitors</td><td>↑ Statins (avoid simvastatin; use pravastatin/atorvastatin cautiously), ↑ CCB, ↑ PDE5</td></tr><tr><td>**NNRTI (efavirenz, nevirapine, etravirine)**</td><td>CYP3A4 inducers (variable)</td><td>↓ OCP, methadone, statins</td></tr><tr><td>**Integrase inhibitors (dolutegravir, raltegravir)**</td><td>Few interactions (CYP-independent)</td><td>Cations (Ca²⁺, Mg²⁺, Fe²⁺) ↓ absorption</td></tr><tr><td>**NRTI (tenofovir, abacavir, emtricitabine)**</td><td>Few interactions</td><td>Tenofovir + nephrotoxic drugs (NSAID, aminoglycoside)</td></tr></table>
+<div class="sub-h">4.9 Methotrexate High-Risk Combinations</div>
+<table class="ctable"><tr><th>Combination</th><th>Effect</th><th>Action</th></tr><tr><td>-------------</td><td>--------</td><td>--------</td></tr><tr><td>**MTX + trimethoprim / co-trimoxazole**</td><td>Pancytopenia (additive antifolate)</td><td>Avoid</td></tr><tr><td>**MTX + NSAID (esp. aspirin)**</td><td>MTX toxicity (↓ renal clearance + protein binding)</td><td>Avoid or monitor MTX level closely</td></tr><tr><td>**MTX + PPI**</td><td>↑ MTX (↓ renal clearance)</td><td>Monitor</td></tr><tr><td>**MTX + penicillins**</td><td>↓ MTX clearance</td><td>Monitor</td></tr><tr><td>**MTX + allopurinol**</td><td>↑ MTX (XO inhibition)</td><td>Reduce MTX dose 50%</td></tr><tr><td>**MTX + live vaccine**</td><td>Infection</td><td>Avoid live vaccines</td></tr><tr><td>**MTX + leflunomide**</td><td>Hepatotoxicity, marrow</td><td>Monitor LFT, FBC</td></tr></table>
+<div class="sub-h">4.10 Digoxin High-Risk Combinations</div>
+<table class="ctable"><tr><th>Drug</th><th>Effect on Digoxin</th><th>Mechanism</th></tr><tr><td>------</td><td>-------------------</td><td>-----------</td></tr><tr><td>**Amiodarone**</td><td>↑ 70-100%</td><td>P-gp + renal</td></tr><tr><td>**Diltiazem / Verapamil**</td><td>↑ 50-100%</td><td>P-gp</td></tr><tr><td>**Quinidine**</td><td>↑ 100%</td><td>P-gp + renal</td></tr><tr><td>**Macrolides (clarithro, erythro)**</td><td>↑ Levels</td><td>P-gp</td></tr><tr><td>**Spironolactone**</td><td>↑ Levels (but K⁺ ↓ → toxicity)</td><td>P-gp + K⁺</td></tr><tr><td>**Diuretics (loop, thiazide)**</td><td>↑ Toxicity (via K⁺, Mg²⁺ ↓)</td><td>Electrolyte</td></tr><tr><td>**St John's Wort**</td><td>↓ Levels</td><td>P-gp induction</td></tr><tr><td>**Rifampicin**</td><td>↓ Levels</td><td>P-gp induction</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>Most common fatal warfarin combination</td><td>Warfarin + NSAID (or antiplatelet)</td></tr><tr><td>Lithium toxicity precipitants</td><td>NSAID, ACEi/ARB, thiazide (NAT)</td></tr><tr><td>Triple whammy</td><td>ACEi + diuretic + NSAID → AKI</td></tr><tr><td>Strongest CYP3A4 inducers</td><td>Rifampicin, carbamazepine, phenytoin, SJW</td></tr><tr><td>Strongest CYP3A4 inhibitors</td><td>Ritonavir, ketoconazole, clarithromycin, grapefruit</td></tr><tr><td>SJW + ciclosporin</td><td>Acute rejection (always avoid)</td></tr><tr><td>Simvastatin + clarithromycin</td><td>Rhabdomyolysis (hold statin)</td></tr><tr><td>Serotonin syndrome washout</td><td>MAOI → SSRI: 2 weeks; fluoxetine → MAOI: 5 weeks</td></tr><tr><td>Methotrexate + trimethoprim</td><td>Avoid (pancytopenia)</td></tr><tr><td>QT prolongation threshold</td><td>QTc >500 ms or Δ >60 ms = high risk</td></tr><tr><td>QT-prolonging combinations</td><td>≥2 QT-prolonging drugs (esp. with risk factors)</td></tr><tr><td>DOAC + strong CYP3A4+P-gp inhibitor</td><td>Avoid apixaban/rivaroxaban</td></tr><tr><td>DOAC + strong inducer</td><td>Avoid all DOACs (use warfarin)</td></tr><tr><td>Azathioprine + allopurinol</td><td>Reduce AZA to 25% (XOI)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>List 5 high-risk warfarin combinations.</b></li></ol>
+<p><i>1) Warfarin + NSAID (GI bleed); 2) Warfarin + amiodarone (↑ INR); 3) Warfarin + ciprofloxacin/macrolide (↑ INR); 4) Warfarin + trimethoprim (↑ INR); 5) Warfarin + rifampicin (↓ INR, loss of anticoagulation); 6) Warfarin + SSRI (↑ bleed); 7) Warfarin + cranberry (↑ INR).</i></p>
+<ol><li><b>Name the 3 most common precipitants of lithium toxicity.</b></li></ol>
+<p><i>NSAID, ACEi/ARB, thiazide diuretics (mnemonic NAT). All reduce renal lithium clearance.</i></p>
+<ol><li><b>What is the most life-threatening interaction with MAOIs?</b></li></ol>
+<p><i>Serotonin syndrome with SSRIs/serotonergic drugs (tramadol, linezolid). Washout: 2 weeks each way; fluoxetine 5 weeks before MAOI (long t1/2).</i></p>
+<ol><li><b>Name 3 strong CYP3A4 inducers that reduce ciclosporin levels.</b></li></ol>
+<p><i>Rifampicin, carbamazepine, phenytoin, St John's Wort. All cause transplant rejection; SJW is the most common patient self-medication.</i></p>
+<ol><li><b>Why is simvastatin contraindicated with ciclosporin?</b></li></ol>
+<p><i>Ciclosporin is a strong CYP3A4 inhibitor → ↑ simvastatin → myopathy/rhabdomyolysis. Use pravastatin/rosuvastatin (not CYP3A4).</i></p>
+<ol><li><b>List 3 drugs that double digoxin levels.</b></li></ol>
+<p><i>Amiodarone, diltiazem, verapamil, quinidine, macrolides (clarithromycin). All inhibit P-gp.</i></p>
+<ol><li><b>Why is methotrexate + trimethoprim avoided?</b></li></ol>
+<p><i>Additive antifolate effect → pancytopenia. Both inhibit folate metabolism (MTX = DHFR; TMP = DHFR).</i></p>
+<ol><li><b>A patient is on apixaban. Which drugs should be avoided?</b></li></ol>
+<p><i>Strong dual CYP3A4 + P-gp inhibitors (ketoconazole, ritonavir) → ↑ apixaban. Strong inducers (rifampicin, carbamazepine, phenytoin, SJW) → ↓ apixaban. Both increase bleeding/clot risk.</i></p>
+<ol><li><b>What is the washout period when switching fluoxetine to an MAOI?</b></li></ol>
+<p><i>5 weeks (fluoxetine's half-life is long, norfluoxetine metabolite is active for 2 weeks). Standard washout for SSRIs to MAOI is 2 weeks, but fluoxetine needs 5 weeks.</i></p>
+<ol><li><b>A patient is on azathioprine. Allopurinol is started for gout. What dose adjustment?</b></li></ol>
+<p><i>Reduce azathioprine to 25% (1/4) of original dose. Allopurinol inhibits xanthine oxidase, which metabolises 6-MP (active AZA metabolite), leading to severe myelosuppression. Alternative: switch to febuxostat (cautiously) or allopurinol + low-dose AZA.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>Amiodarone + warfarin direction</td><td>Amiodarone ↑ INR; reduce warfarin 30-50%</td></tr><tr><td>DOAC + strong inducer</td><td>↓ DOAC → clotting; switch to warfarin (more flexible INR)</td></tr><tr><td>SSRI + warfarin</td><td>Both ↑ bleeding (SSRI ↓ platelet 5HT)</td></tr><tr><td>Quinolone + theophylline</td><td>Ciprofloxacin inhibits CYP1A2 → ↑ theophylline</td></tr><tr><td>Lithium toxicity level</td><td>Therapeutic 0.6-1.0; Toxic >1.5; Severe >2.0</td></tr><tr><td>Grapefruit drugs</td><td>Statins (simvastatin, atorvastatin — NOT pravastatin), CCB, ciclosporin, tacrolimus, sildenafil, apixaban</td></tr><tr><td>Anticholinergic drugs</td><td>TCA, 1st-gen antihistamine, oxybutynin, antipsychotic, hyoscine</td></tr><tr><td>Serotonin vs NMS</td><td>Serotonin: hours, hyperreflexia, clonus; NMS: days-weeks, rigidity, CK↑</td></tr><tr><td>QT vs Torsades</td><td>QT prolongation is the surrogate; torsades is the arrhythmia</td></tr><tr><td>Warfarin + cranberry</td><td>↑ INR (CYP2C9)</td></tr><tr><td>OCP + rifampicin</td><td>↓ OCP → pregnancy; advise barrier or higher-dose</td></tr><tr><td>Methotrexate weekly</td><td>Weekly for RA (NOT daily, fatal)</td></tr></table>
+<p><b>Mnemonic — Lithium NAT: "</b>N<b>SAID, </b>A<b>CEi, </b>T<b>hiazide = ↑ Li"</b></p>
+<p><b>Mnemonic — Warfarin up/down: "</b>H<b>eart </b>A<b>ntibiotics, </b>T<b>hyroid, </b>A<b>miodarone ↑; </b>R<b>ifampicin, </b>C<b>arbamazepine, </b>P<b>henytoin, </b>S<b>t </b>J<b>ohn's ↓"</b></p>
+<p><b>Mnemonic — QT prolongation: "</b>SAAD MaFLOHTO<b>"</b> (Sotalol, Amiodarone, Antiarrhythmics, Dofetilide; Macrolides, Fluoroquinolones, Ondansetron, Haloperidol, TCAs, Methadone)</p>
+<p><b>Mnemonic — Serotonin syndrome features: "</b>H<b>yper</b>r<b>eflexia, </b>C<b>lonus, </b>A<b>gitation, </b>D<b>iaphoresis, </b>T<b>emp↑"</b> (Hunter Criteria)</p>
+<p><b>Mnemonic — DOAC + strong dual inhibitors: "</b>K<b>etoconazole, </b>I<b>traconazole, </b>R<b>itonavir, </b>C<b>larithromycin — avoid apixaban/rivaroxaban"</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((High-Risk Combos)) Warfarin NSAID Amiodarone TMP Macrolide Quinolone SSRI Cranberry DOAC CYP3A4 + P-gp Strong inducers Immunosuppressants Azoles Macrolides SJW Statin + CYA Lithium NAT NSAID ACEi Thiazide Serotonin MAOI + SSRI Tramadol Linezolid QT SAAD MaFLOHTO Risk factors AEDs Phenytoin inducer Valproate inhibitor ARVs PI CYP3A4 inh NNRTI inducer MTX TMP NSAID Digoxin Amiodarone Diltiazem Macrolides </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Combination</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>Warfarin + NSAID</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Warfarin + amiodarone</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Lithium + NAT</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>MAOI + SSRI</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Simvastatin + macrolide</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Ciclosporin + SJW</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>DOAC + ketoconazole</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>MTX + TMP</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Triple whammy</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>QT ≥2 drugs</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>Warfarin</td><td>/5</td></tr><tr><td>DOAC</td><td>/5</td></tr><tr><td>Immunosuppressants</td><td>/5</td></tr><tr><td>Lithium</td><td>/5</td></tr><tr><td>Serotonin</td><td>/5</td></tr><tr><td>QT</td><td>/5</td></tr><tr><td>AEDs/ARVs/MTX/Digoxin</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/35**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The "triple whammy" is:</b></li></ol>
+<p>A. ACEi + diuretic + NSAID ✓ B. ACEi + β-blocker + CCB C. NSAID + paracetamol + opioid D. ACEi + ARB + spironolactone E. Statin + fibrate + ezetimibe</p>
+<ol><li><b>Lithium toxicity is precipitated by all EXCEPT:</b></li></ol>
+<p>A. NSAIDs B. ACEi C. Thiazides D. Paracetamol ✓ E. ARBs</p>
+<ol><li><b>MAOIs should NEVER be combined with:</b></li></ol>
+<p>A. Paracetamol B. SSRIs (serotonin syndrome) ✓ C. β-blockers D. Statins E. Warfarin</p>
+<ol><li><b>Simvastatin + ciclosporin causes:</b></li></ol>
+<p>A. Hepatotoxicity B. Rhabdomyolysis ✓ C. Renal failure D. Bleeding E. Myocardial infarction</p>
+<ol><li><b>SJW + ciclosporin causes:</b></li></ol>
+<p>A. Ciclosporin toxicity B. Acute rejection (CYP3A4 induction) ✓ C. Renal failure D. Hepatotoxicity E. No effect</p>
+<ol><li><b>Methotrexate + trimethoprim causes:</b></li></ol>
+<p>A. Renal failure B. Hepatotoxicity C. Pancytopenia ✓ D. Bleeding E. No effect</p>
+<ol><li><b>Warfarin + amiodarone requires:</b></li></ol>
+<p>A. Stop warfarin B. Reduce warfarin 30-50%, monitor INR ✓ C. Switch to DOAC D. Add vitamin K E. No change</p>
+<ol><li><b>DOACs are contraindicated with:</b></li></ol>
+<p>A. Paracetamol B. Strong CYP3A4 + P-gp inhibitors (ketoconazole) ✓ C. β-blockers D. Statins E. CCB</p>
+<ol><li><b>Azathioprine + allopurinol requires:</b></li></ol>
+<p>A. Stop azathioprine B. Reduce AZA to 25% of original dose ✓ C. Increase AZA D. Add folic acid E. No change</p>
+<ol><li><b>Two QT-prolonging drugs with risk factors require:</b></li></ol>
+<p>A. Routine use B. ECG + K⁺/Mg²⁺ check; avoid if possible ✓ C. Reduce dose D. Switch drugs E. Add β-blocker</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A transplant patient on tacrolimus starts diltiazem for AF. Two weeks later, tacrolimus level is 28 ng/mL (toxic). Mechanism:</b></li></ol>
+<ul><li>A) Diltiazem induces CYP3A4</li><li>B) Diltiazem inhibits CYP3A4 + P-gp → ↑ tacrolimus ✓</li><li>C) Diltiazem displaces tacrolimus</li><li>D) Tacrolimus dose too high</li><li>E) Renal failure</li></ul>
+<ol><li><b>A 60-year-old on warfarin (INR 2.5) starts TMP for UTI. INR rises to 6.0. Mechanism:</b></li></ol>
+<ul><li>A) TMP induces CYP2C9</li><li>B) TMP inhibits CYP2C9 → ↓ warfarin-S metabolism ✓</li><li>C) TMP displaces warfarin</li><li>D) TMP causes bleeding</li><li>E) TMP is toxic</li></ul>
+<ol><li><b>A 70-year-old on lithium takes ibuprofen for back pain. Three days later, lithium = 1.8 mmol/L, with tremor and ataxia. Action:</b></li></ol>
+<ul><li>A) Continue lithium, add ibuprofen</li><li>B) Stop ibuprofen, IV fluids, consider haemodialysis ✓</li><li>C) Add more lithium</li><li>D) Switch to paracetamol</li><li>E) Add carbamazepine</li></ul>
+<ol><li><b>A patient on phenelzine (MAOI) takes fluoxetine (SSRI). Within 6 hours, develops hyperreflexia, clonus, hyperthermia. Diagnosis:</b></li></ol>
+<ul><li>A) Neuroleptic malignant syndrome</li><li>B) Serotonin syndrome ✓</li><li>C) Malignant hyperthermia</li><li>D) Anticholinergic toxicity</li><li>E) Lithium toxicity</li></ul>
+<ol><li><b>A patient on apixaban for AF takes carbamazepine for epilepsy. AF recurs with stroke. Mechanism:</b></li></ol>
+<ul><li>A) Carbamazepine inhibits CYP3A4 → ↑ apixaban</li><li>B) Carbamazepine induces CYP3A4 + P-gp → ↓ apixaban (clot) ✓</li><li>C) Carbamazepine displaces apixaban</li><li>D) Carbamazepine enhances AF</li><li>E) Apixaban dose too low</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>A</b> (Triple whammy)</li><li><b>D</b> (Paracetamol doesn't affect Li)</li><li><b>B</b> (MAOI + SSRI = serotonin syndrome)</li><li><b>B</b> (Rhabdomyolysis)</li><li><b>B</b> (SJW induces CYP3A4 → ↓ ciclosporin → rejection)</li><li><b>C</b> (Pancytopenia)</li><li><b>B</b> (Reduce warfarin 30-50%, monitor INR)</li><li><b>B</b> (Ketoconazole strong CYP3A4+P-gp inhibitor)</li><li><b>B</b> (Reduce AZA to 25%)</li><li><b>B</b> (ECG + K⁺/Mg²⁺; avoid if possible)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>B</b> — Diltiazem inhibits CYP3A4 + P-gp → ↑ tacrolimus. Reduce tacrolimus 50-70%, TDM.</li><li><b>B</b> — TMP inhibits CYP2C9 → ↓ warfarin-S metabolism → ↑ INR. Hold warfarin, monitor INR, restart lower.</li><li><b>B</b> — Stop NSAID, IV fluids, monitor Li level, consider haemodialysis if severe (&gt;2.5 with renal failure).</li><li><b>B</b> — Serotonin syndrome (Hunter Criteria: hyperreflexia, clonus, agitation, diaphoresis, hyperthermia).</li><li><b>B</b> — Carbamazepine induces CYP3A4 + P-gp → ↓ apixaban → clot. Switch to warfarin (or different AED).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Top 10 high-risk drug combinations</b> to remember: (1) Warfarin + NSAID/amiodarone/macrolide/TMP; (2) Triple whammy (ACEi+diuretic+NSAID) → AKI; (3) Lithium + NAT (NSAID, ACEi, Thiazide); (4) MAOI + SSRI/serotonergic → serotonin syndrome; (5) Simvastatin + ciclosporin/clarithromycin → rhabdo; (6) Ciclosporin + SJW → rejection; (7) MTX + TMP/NSAID → pancytopenia; (8) DOAC + strong CYP3A4/P-gp inhibitors or inducers; (9) Azathioprine + allopurinol → ↓ AZA dose 25%; (10) ≥2 QT-prolonging drugs → torsades.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../Drug Interactions|Drug Interactions]]</li><li><b>Sibling Topic-Groups</b>: [[Pharmacokinetic interactions]], [[Clinical significance]]</li><li><b>Heading Hub</b>: [[Drug Interactions]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[ADRs]], [[CYP450 Drug Interactions]], [[High-risk drug combinations/Warfarin interactions]], [[High-risk drug combinations/Immunosuppressant interactions]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · High Risk Drug Combinations · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

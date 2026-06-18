@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Severe Acute Malnutrition Who Management — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.5. NUTRITIONAL DISORDERS</span>
+      <div class="h1">Severe Acute Malnutrition Who Management</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define SAM: WHZ &lt;-3, MUAC &lt;11.5 cm, OR bilateral pitting oedema in 6m–5y children</li><li>[ ] List WHO 10 steps: hypoglycaemia, hypothermia, dehydration (ReSoMal), electrolytes (K, Mg), infection (antibiotics for ALL), micronutrients (vit A, NO iron acute), feeding (F-75), catch-up (F-100), stimulation, discharge</li><li>[ ] Differentiate inpatient vs outpatient: complications (medical, oedema, no appetite, weight &lt;4 kg, age &lt;6m) → inpatient; uncomplicated → community RUTF</li><li>[ ] State F-75: stabilisation (low protein 0.9 g/kg, low calories 80 kcal/kg); F-100: rehabilitation (high protein 2.5–3 g/kg, high calories 150–200 kcal/kg)</li><li>[ ] Describe complications: hypoglycaemia, hypothermia, infection (TB, HIV, pneumonia, diarrhoea), severe anaemia, electrolyte imbalances</li><li>[ ] Recognise RUTF (Ready-to-Use Therapeutic Food, Plumpy'nut): peanut-based, calorie-dense, long shelf life, community-based management</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**SAM (Severe Acute Malnutrition)**</td><td>WHZ <-3, MUAC <11.5 cm, OR bilateral pitting oedema</td></tr><tr><td>**MAM (Moderate)**</td><td>WHZ <-2 to ≥-3, MUAC 11.5–12.5 cm</td></tr><tr><td>**WHZ (Weight-for-Height Z-score)**</td><td><-2 wasting; <-3 severe wasting (SAM)</td></tr><tr><td>**MUAC (Mid-Upper Arm Circumference)**</td><td>6–59m: <11.5 cm SAM, 11.5–12.5 cm MAM</td></tr><tr><td>**RUTF (Ready-to-Use Therapeutic Food)**</td><td>Peanut-based, milk powder, sugar, oil, vitamins; 500 kcal/92 g sachet; Plumpy'nut</td></tr><tr><td>**F-75 Formula**</td><td>Stabilisation: 75 kcal/dL, 0.9 g protein/100 mL; days 1–7</td></tr><tr><td>**F-100 Formula**</td><td>Rehabilitation: 100 kcal/dL, 2.5 g protein/100 mL; days 4–26+</td></tr><tr><td>**ReSoMal (Rehydration Solution for Malnutrition)**</td><td>Low-Na ORS for SAM; K 40 mmol/L, Na 45 mmol/L, glucose 125 mmol/L</td></tr><tr><td>**Appetite Test**</td><td>RUTF offered; eats >50% = community; <50% = inpatient</td></tr><tr><td>**10 Steps (WHO)**</td><td>Standardised management protocol (1999, updated)</td></tr><tr><td>**Relactation**</td><td>Breastfeeding support during recovery</td></tr><tr><td>**CVD (Cardiovascular Disease) of SAM**</td><td>↓Cardiac output, ↓renal perfusion, ↓muscle tone; cautious fluid</td></tr><tr><td>**Recovery (Cure)**</td><td>WHZ >-2 OR MUAC >12.5 cm AND oedema free ×2 weeks</td></tr><tr><td>**Defaulting**</td><td>Absent for 2 consecutive visits; intensive follow-up</td></tr><tr><td>**Failed Response**</td><td>No weight gain by day 14 OR oedema not resolved by day 14 OR weight loss after initial gain</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: WHO 10 Steps for Inpatient SAM Management</div>
+<p><b>Phase 1: Stabilisation (Days 1–7; F-75)</b> <b>1. Treat/Prevent Hypoglycaemia</b> (blood glucose &lt;3 mmol/L)</p>
+<ul><li>Symptomatic: 5 mL/kg D10% IV or D10% NG tube</li><li>Asymptomatic: feed immediately, F-75 every 2–3 h</li><li>If blood glucose &lt;3: monitor every 30 min</li><li>If persistent: 50 mL D10% bolus + maintenance</li></ul>
+<p><b>2. Treat/Prevent Hypothermia</b> (axillary &lt;35°C or rectal &lt;35.5°C)</p>
+<ul><li>Rewarming: skin-to-skin, warm blankets, hats</li><li>Hot water bottles (carefully)</li><li>Warm room (&gt;25°C)</li><li>Treat sepsis if present (often coexisting)</li></ul>
+<p><b>3. Treat/Prevent Dehydration</b></p>
+<ul><li><b>ReSoMal (low-Na ORS):</b> 5 mL/kg/h oral/NG over 4–6 h, then 5–10 mL/kg/h (replacement + maintenance)</li><li><b>NOT standard ORS</b> (high Na, risks hypernatraemia in SAM)</li><li><b>Drip only if shock</b> (cautious; Ringer's lactate 15 mL/kg/h; reassess)</li><li>Reassess every 30 min; reclassify dehydration status</li><li><b>Avoid:</b> iv dextrose 5% (hypoNa), blood/plasma in absence of shock</li></ul>
+<p><b>4. Correct Electrolyte Imbalance</b></p>
+<ul><li><b>Potassium:</b> 3–4 mmol/kg/day (F-75 already supplemented)</li><li><b>Magnesium:</b> 0.3–0.6 mmol/kg/day</li><li><b>Na:</b> AVOID Na supplementation (already retained)</li><li>Even with normal serum K/Mg, intracellular depletion exists</li></ul>
+<p><b>5. Treat/Prevent Infection</b></p>
+<ul><li><b>Empirical antibiotics for ALL</b> (even if asymptomatic) — silent sepsis common</li><li><b>First-line:</b> Ampicillin (50 mg/kg q6h) + Gentamicin (5 mg/kg/day) ×7–10 days</li><li><b>Alternative:</b> Ceftriaxone 50–100 mg/kg/day IV/IM ×10 days</li><li>Add <b>metronidazole</b> if diarrhoea (amoebiasis, giardia)</li><li><b>Malaria test</b> (RDT/smear); treat if positive</li><li><b>Deworming:</b> Albendazole/mebendazole after day 7</li><li><b>TB screening:</b> Clinical + IGRA/GeneXpert (HIV endemic)</li></ul>
+<p><b>6. Correct Micronutrient Deficiencies</b></p>
+<ul><li><b>Vit A:</b> Day 1, 2, 14 (high dose; 200,000 IU if &gt;12m, 100,000 if 6–12m)</li><li><b>Folic acid:</b> 5 mg day 1; 1 mg daily</li><li><b>Multivitamin:</b> daily; F-75 contains</li><li><b>Zinc:</b> 2 mg/kg/day (in F-75)</li><li><b>NO IRON</b> in acute phase (↓transferrin, free Fe → infection) — start day 7–14 with F-100</li></ul>
+<p><b>7. Cautious Feeding (F-75)</b></p>
+<ul><li><b>F-75</b> = 80–100 kcal/kg/day, 0.9–1.2 g protein/kg/day</li><li><b>Frequency:</b> Every 2–3 hours (8–12 feeds/day, including night)</li><li><b>Mode:</b> NG tube if &lt;80% intake</li><li><b>Avoid overfeeding</b> → refeeding syndrome</li><li><b>Transition criteria:</b> appetite returns, oedema resolving, no infections</li></ul>
+<p><b>8. Achieve Catch-up Growth (Transition + Rehabilitation)</b></p>
+<ul><li><b>Transition (days 4–7):</b> F-100 (or RUTF), 100–135 kcal/kg/day</li><li><b>Rehabilitation:</b> F-100 150–220 kcal/kg/day, 2.5–3.0 g protein/kg/day</li><li><b>RUTF (Plumpy'nut) 150–220 kcal/kg/day</b></li><li>Target weight gain: 10–15 g/kg/day</li><li><b>Iron</b> now added (F-100 contains)</li></ul>
+<p><b>9. Provide Sensory Stimulation and Emotional Support</b></p>
+<ul><li>Play, structured environment, parental involvement</li><li>Critical for neurodevelopmental recovery (long-term)</li><li>Mitigate post-discharge sequelae</li></ul>
+<p><b>10. Prepare for Discharge and Follow-up</b></p>
+<ul><li>Criteria: WHZ &gt;-2 OR MUAC &gt;12.5 cm, oedema free ×2 weeks, immunisations updated, mother/caregiver trained, food security ensured</li><li><b>RUTF</b> for home (1–2 sachets/day × 2–3 months)</li><li><b>Follow-up:</b> 2 weeks, 1 month, 3 months, 6 months</li><li><b>Relapse prevention:</b> Continued feeding, immunisations, vitamin A every 6 months</li></ul>
+<div class="sub-h">Section 2: Phase 2 Transition</div>
+<ul><li>When appetite returns (days 4–7) and oedema resolving</li><li><b>F-100 or RUTF</b></li><li>100–135 kcal/kg/day (transition)</li><li>150–220 kcal/kg/day (rehabilitation)</li><li>Iron added</li></ul>
+<div class="sub-h">Section 3: Community-Based Management (CMAM)</div>
+<p><b>Uncomplicated SAM</b> (&gt;75% of SAM cases): Appetite present, no medical complications, alert</p>
+<ul><li><b>Outpatient RUTF programme</b> (since WHO 2007)</li><li>Weekly or biweekly clinic visits</li><li>RUTF 150–220 kcal/kg/day (~1 sachet per 5 kg body weight/day)</li><li>Routine medications: amoxicillin (broad-spectrum), albendazole, vit A, measles vaccination</li><li>Failure criteria: weight loss ×2 visits, no weight gain ×2 visits, oedema not resolved</li><li><b>Defaulting:</b> 2 consecutive missed visits</li></ul>
+<p><b>CMAM Advantages:</b></p>
+<ul><li>Coverage ↑ (esp. rural)</li><li>↓Hospitalisation cost</li><li>Family intact</li><li>↓Hospital-acquired infection</li></ul>
+<div class="sub-h">Section 4: Recovery &amp; Discharge Criteria</div>
+<ul><li><b>Recovery (Cure):</b> WHZ &gt;-2 OR MUAC &gt;12.5 cm AND oedema free ×2 weeks</li><li><b>Mortality:</b> ~10–20% untreated, 5% with WHO protocol</li><li><b>Average length of stay:</b> 3–6 weeks (inpatient)</li><li><b>Transfer criteria</b> between phases: Appetite + no complications</li><li><b>Discharge</b> with RUTF, food security, immunisation, family education, follow-up</li></ul>
+<div class="sub-h">Section 5: Pharmacological Protocol Summary</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Timing</th><th>Purpose</th></tr><tr><td>------</td><td>------</td><td>--------</td><td>---------</td></tr><tr><td>**Amoxicillin**</td><td>50 mg/kg q6h (oral)</td><td>All SAM (inpatient + outpatient)</td><td>Antibiotic</td></tr><tr><td>**Gentamicin**</td><td>5 mg/kg/day IM</td><td>Inpatient (or ceftriaxone)</td><td>Antibiotic</td></tr><tr><td>**Vitamin A**</td><td>200,000 IU (12m+), 100,000 (6–12m)</td><td>Day 1, 2, 14</td><td>Xerophthalmia, mortality</td></tr><tr><td>**Folic acid**</td><td>5 mg day 1, 1 mg daily</td><td>Day 1+</td><td>Anaemia</td></tr><tr><td>**Albendazole**</td><td>400 mg (2–5y), 200 mg (1–2y)</td><td>After day 7</td><td>Deworming</td></tr><tr><td>**Measles vaccine**</td><td>Single dose</td><td>After recovery (or day 7+)</td><td>Immunisation</td></tr><tr><td>**Iron**</td><td>3–6 mg/kg elemental</td><td>After day 7 (with F-100)</td><td>Anaemia (NOT acute)</td></tr><tr><td>**Potassium**</td><td>3–4 mmol/kg/day</td><td>Throughout</td><td>K replacement</td></tr><tr><td>**Magnesium**</td><td>0.3–0.6 mmol/kg/day</td><td>Throughout</td><td>Mg replacement</td></tr><tr><td>**RUTF**</td><td>150–220 kcal/kg/day</td><td>Stabilisation phase exit onward</td><td>Catch-up growth</td></tr></table>
+<div class="sub-h">Section 6: Complications of SAM</div>
+<table class="ctable"><tr><th>Complication</th><th>Signs</th><th>Action</th></tr><tr><td>--------------</td><td>-------</td><td>--------</td></tr><tr><td>**Hypoglycaemia**</td><td><3 mmol/L; lethargy, seizures</td><td>D10% IV/NG, feed within 30 min</td></tr><tr><td>**Hypothermia**</td><td><35°C</td><td>Warm room, blankets, skin-to-skin</td></tr><tr><td>**Severe anaemia**</td><td>Hb <40 g/L (with symptoms)</td><td>Blood transfusion (cautious) 10–15 mL/kg over 4 h</td></tr><tr><td>**Septicaemia/Shock**</td><td>↓BP, cap refill >3s, cold, lethargy</td><td>Ringer's lactate 15 mL/kg/h; antibiotics; consider inotropes</td></tr><tr><td>**Pneumonia**</td><td>Tachypnoea, retractions, crepitations</td><td>Antibiotics, oxygen</td></tr><tr><td>**Severe diarrhoea**</td><td>With dehydration</td><td>ReSoMal; antibiotics</td></tr><tr><td>**TB/HIV**</td><td>Wasting, chronic cough, lymphadenopathy</td><td>Screening, treatment</td></tr><tr><td>**Cardiac failure (refeeding)**</td><td>Tachycardia, hepatomegaly, oedema, gallop</td><td>Slow/stop feeding; furosemide; cautious</td></tr><tr><td>**Skin lesions (kwashiorkor)**</td><td>Flaky paint</td><td>Topical care, F-75, K/Zn</td></tr><tr><td>**Hypokalaemia**</td><td>Weakness, ileus, U waves</td><td>K 3–4 mmol/kg/day</td></tr><tr><td>**Refeeding syndrome**</td><td>Hypophosphataemia, cardiac</td><td>Thiamine, slow feed, monitor</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>18m child, WHZ <-3, MUAC <11.5, no oedema, no complications, alert</td><td>**Community-based RUTF** (Plumpy'nut); amoxicillin; albendazole; vit A; follow-up</td><td>>75% SAM uncomplicated</td></tr><tr><td>2y child, WHZ <-3, oedema, pneumonia</td><td>**Inpatient**: F-75 stabilisation; antibiotics (ampicillin + gentamicin); oxygen; ReSoMal if dehydration; vit A</td><td>Complicated SAM</td></tr><tr><td>6m child, WHZ <-3, refusing to eat, hypoglycaemia</td><td>**Inpatient F-75**; NG feeding; D10% bolus; ampicillin + gentamicin; vit A</td><td>Appetite test failed</td></tr><tr><td>30m child, recovered from SAM, oedema free ×2 weeks, WHZ >-2</td><td>**Discharge with RUTF**; food security; immunisations; follow-up at 2w, 1m, 3m, 6m</td><td>Cure criteria met</td></tr><tr><td>4y child, SAM, HIV+, TB</td><td>**Inpatient SAM**; TB treatment (RHE); ART; OI prophylaxis (cotrimoxazole); RUTF continuation</td><td>HIV-TB co-infection</td></tr><tr><td>18m child, SAM, day 5 of F-75, no improvement, oedema increasing</td><td>**Failed response**; reconsider: inadequate feeding, infection (TB, HIV, parasites), re-feeding wrong formula, electrolytes (K, Mg), missed diagnosis</td><td>Review protocol</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> SAM criteria (WHZ &lt;-3, MUAC &lt;11.5, OR oedema); 10 steps; F-75 (stabilisation: 80 kcal/kg, 0.9 g protein); F-100 (rehab: 150–200 kcal/kg, 2.5–3 g protein); RUTF (Plumpy'nut, community); vit A 200k IU day 1, 2, 14; NO iron acute; antibiotics for ALL SAM; ReSoMal (low-Na ORS); thiamine before feeding - <b>Common viva:</b> SAM criteria; 10 steps; F-75 vs F-100; community-based RUTF; vit A timing; no iron acute; when to admit vs outpatient; ReSoMal vs ORS - <b>Exam trap:</b> Giving iron in acute; standard ORS; high-calorie feed initially; missing complications; forgetting amoxicillin; no antibiotics for "well" SAM</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Iron always in anaemia</td><td>**NO iron in acute SAM** (↓transferrin, infection); wait 7–14 days</td></tr><tr><td>Standard ORS for dehydration</td><td>**ReSoMal** (low Na); standard ORS too high Na → hyperNa</td></tr><tr><td>All SAM inpatient</td><td>**>75% community-based** with RUTF; only complicated inpatient</td></tr><tr><td>Same formula throughout</td><td>**F-75 stabilisation (days 1–7) → F-100/RUTF rehabilitation (days 4–26+)**</td></tr><tr><td>Antibiotics only if sick</td><td>**ALL SAM get empirical antibiotics** (silent sepsis)</td></tr><tr><td>High-calorie from day 1</td><td>**F-75 = 80 kcal/kg/day** (low); increases slowly (refeeding)</td></tr><tr><td>Vit A single dose</td><td>**Day 1, 2, 14** (3 doses total)</td></tr><tr><td>Vitamin A given with measles</td><td>**Yes** (200k IU; ↓mortality 50%)</td></tr><tr><td>Kwashiorkor = less severe</td><td>**Highest mortality** (especially marasmic-kwashiorkor)</td></tr><tr><td>SAM recovery = "fixed"</td><td>**Long-term neurodevelopmental risks**; stimulation, follow-up</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>SAM criteria:</b> <b>WHZ &lt;-3 OR MUAC &lt;11.5 OR oedema</b></li><li><b>10 steps:</b> <b>H-H-D-E-I-M-F-C-S-D</b> = <b>H</b>ypoglycaemia, <b>H</b>ypothermia, <b>D</b>ehydration (ReSoMal), <b>E</b>lectrolytes, <b>I</b>nfection (all SAM), <b>M</b>icronutrients (vit A, NO iron), <b>F</b>eeding F-75, <b>C</b>atch-up F-100, <b>S</b>timulation, <b>D</b>ischarge</li><li><b>F-75:</b> 75 kcal/dL, 0.9 g protein, 5–7 days stabilisation</li><li><b>F-100:</b> 100 kcal/dL, 2.5 g protein, rehabilitation</li><li><b>RUTF:</b> <b>R</b>eady to <b>U</b>se, <b>T</b>herapeutic <b>F</b>ood; community; Plumpy'nut</li><li><b>ReSoMal:</b> <b>R</b>ehydration <b>S</b>olution for <b>Mal</b>nutrition; low Na, high K</li><li><b>Vit A schedule:</b> <b>Day 1, 2, 14</b></li><li><b>NO iron:</b> Acute SAM; start day 7–14 with F-100</li><li><b>Empirical antibiotics:</b> ALL SAM inpatient; ampicillin + gentamicin</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((SAM)) Criteria WHZ &lt;-3 MUAC &lt;11.5 cm Bilateral pitting oedema WHO 10 Steps Hypoglycaemia Hypothermia Dehydration (ReSoMal) Electrolytes (K, Mg) Infection (all SAM antibiotics) Micronutrients (vit A, NO iron) Feeding F-75 (stabilise) Catch-up F-100 Stimulation Discharge Phase 1 F-75 80 kcal/kg/day 0.9 g protein/kg 5-7 days Phase 2 F-100 150-220 kcal/kg/day 2.5-3 g protein/kg Rehabilitation Community RUTF Uncomplicated SAM Plumpy'nut 150-220 kcal/kg/day Outpatient Medications Vit A day 1, 2, 14 Ampicillin + Gentamicin NO iron initially Folic acid Albendazole Measles vaccine Complications Hypoglycaemia, hypothermia Sepsis, pneumonia Diarrhoea, dehydration Cardiac failure Refeeding syndrome </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>SAM criteria: WHZ &lt;-3 OR MUAC &lt;11.5 OR bilateral pitting oedema</li><li>WHO 10 steps: H-H-D-E-I-M-F-C-S-D</li><li>F-75 stabilisation: 80 kcal/kg, 0.9 g protein, 5-7 days</li><li>F-100 rehabilitation: 150-220 kcal/kg, 2.5-3 g protein</li><li>RUTF: Plumpy'nut, community, uncomplicated SAM</li><li>Vit A 200k IU day 1, 2, 14; NO iron acute; antibiotics ALL SAM</li><li>ReSoMal (low-Na ORS); thiamine before feeding</li><li>Community &gt;75% SAM; RUTF weekly visits; cure = WHZ &gt;-2 AND oedema free ×2 weeks</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>SAM criteria; WHO 10 steps; F-75 vs F-100 composition; RUTF for uncomplicated SAM; vit A day 1, 2, 14; NO iron acute; antibiotics for ALL SAM; ReSoMal (low-Na); thiamine before feeding; community-based management (>75% SAM); complications (hypoglycaemia, hypothermia, sepsis)</td></tr><tr><td>**Should Know 🟡**</td><td>Appetite test; phase 1 vs phase 2 timing; recovery/cure criteria; failed response evaluation; HIV/TB co-infection management; severe anaemia transfusion; cardiac failure; F-100 iron; defaulting criteria; follow-up schedule</td></tr><tr><td>**Nice to Know 🟢**</td><td>CMAM history; WHO 1999 protocol evolution; F-75/F-100 composition details; pHOENIX trial; CMV in SAM; catch-up growth kinetics; immunisation catch-up</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] F-75 vs F-100 specific macronutrient content</li><li>[ ] ReSoMal exact composition</li><li>[ ] Appetite test sensitivity/specificity</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Severe acute malnutrition: WHO 10-step management"</p>
+<ul><li>SAM criteria: WHZ &lt;-3, MUAC &lt;11.5 cm, OR bilateral pitting oedema</li><li>Phase 1 stabilisation (F-75, days 1–7):</li></ul>
+<ol><li>Hypoglycaemia (D10% if glucose &lt;3)</li><li>Hypothermia (warm room, skin-to-skin)</li><li>Dehydration (ReSoMal 5 mL/kg/h, not standard ORS)</li><li>Electrolytes (K 3–4, Mg 0.3–0.6 mmol/kg/day; NO Na supplementation)</li><li>Infection (empirical ampicillin + gentamicin for ALL SAM)</li><li>Micronutrients (vit A day 1, 2, 14; folic acid; multivitamin; NO iron acute)</li><li>Cautious feeding (F-75 80 kcal/kg, 0.9 g protein/kg, every 2–3 h)</li></ol>
+<ul><li>Phase 2 transition (days 4–7) → rehabilitation (F-100 150–220 kcal/kg, 2.5–3 g protein/kg, iron added)</li><li>RUTF (Plumpy'nut) for community-based management of uncomplicated SAM</li><li>Complications: hypoglycaemia, hypothermia, sepsis, refeeding syndrome, cardiac failure</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "F-75 vs F-100 in SAM Management" &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Feature&lt;/th&gt;&lt;th&gt;F-75&lt;/th&gt;&lt;th&gt;F-100&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Phase&lt;/td&gt;&lt;td&gt;Stabilisation (days 1–7)&lt;/td&gt;&lt;td&gt;Rehabilitation (days 4–26+)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Calories&lt;/td&gt;&lt;td&gt;80–100 kcal/kg/day&lt;/td&gt;&lt;td&gt;150–220 kcal/kg/day&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Protein&lt;/td&gt;&lt;td&gt;0.9–1.2 g/kg/day&lt;/td&gt;&lt;td&gt;2.5–3.0 g/kg/day&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Iron&lt;/td&gt;&lt;td&gt;<b>NO</b>&lt;/td&gt;&lt;td&gt;<b>YES</b> (start day 7–14)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Frequency&lt;/td&gt;&lt;td&gt;Every 2–3 h&lt;/td&gt;&lt;td&gt;Every 4 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Route&lt;/td&gt;&lt;td&gt;NG if intake &lt;80%&lt;/td&gt;&lt;td&gt;Oral/RUTF&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "Why is iron contraindicated in acute SAM?" "A: <b>Iron is a growth factor for bacteria</b> (siderophilic pathogens). In acute SAM, <b>transferrin is depleted</b> → free Fe available → bacterial proliferation. <b>Iron supplementation in acute phase → ↑infection risk, mortality</b>. WHO protocol: <b>wait 7–14 days</b> until infection treated, appetite returns, anaemia treated, AND F-100 (with iron) initiated."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 18m child, WHZ &lt;-3, MUAC &lt;11.5, no oedema, alert, eating well, no infections, mother willing for community management. "Uncomplicated SAM: community-based RUTF. 1. <b>RUTF 150–220 kcal/kg/day</b> (1 sachet per 5 kg/day); 2. <b>Routine medications</b> (amoxicillin ×5 days, albendazole day 7, vit A day 1 + day 2 + day 14, measles vaccine if &gt;9m); 3. <b>Weekly clinic visits</b>; 4. <b>Mother education</b> (feeding, hygiene, RUTF storage); 5. <b>Continue breastfeeding</b>; 6. <b>Discharge</b> when WHZ &gt;-2 AND oedema free ×2 weeks."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>SAM criteria:</b> WHZ &lt;-3 OR MUAC &lt;11.5 OR oedema</li><li><b>10 steps:</b> <b>H</b>ypogly, <b>H</b>ypoT, <b>D</b>ehydration (ReSoMal), <b>E</b>lectrolytes (K, Mg), <b>I</b>nfection (all SAM), <b>M</b>icronutrients (vit A day 1, 2, 14; NO iron), <b>F</b>eeding F-75, <b>C</b>atch-up F-100, <b>S</b>timulation, <b>D</b>ischarge</li><li><b>F-75:</b> 80 kcal/kg, 0.9 g protein, 5-7 days stabilisation</li><li><b>F-100:</b> 150-220 kcal/kg, 2.5-3 g protein, rehabilitation, IRON added</li><li><b>RUTF (Plumpy'nut):</b> Community; &gt;75% SAM uncomplicated</li><li><b>Antibiotics:</b> ALL SAM (ampicillin + gentamicin)</li><li><b>Vit A:</b> 200k IU day 1, 2, 14 (&gt;12m)</li><li><b>NO iron acute:</b> Wait 7-14 days</li><li><b>ReSoMal:</b> Low-Na ORS for SAM dehydration</li><li><b>Cure:</b> WHZ &gt;-2 AND oedema free ×2 weeks</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>SAM diagnostic criteria (WHO) in 6m–59m children include all EXCEPT:</b></li></ol>
+<p>A. WHZ &lt;-3 B. MUAC &lt;11.5 cm C. Bilateral pitting oedema D. <b>Visible severe wasting with MUAC &lt;12.5 cm</b> E. <b>All of the above are correct</b></p>
+<ol><li><b>F-75 stabilisation formula composition:</b></li></ol>
+<p>A. 100 kcal/kg, 2.5 g protein/kg B. <b>80 kcal/kg, 0.9 g protein/kg (days 1–7)</b> C. 150 kcal/kg, 3 g protein/kg D. 50 kcal/kg, 0.5 g protein/kg E. 200 kcal/kg, 4 g protein/kg</p>
+<ol><li><b>F-100 rehabilitation formula composition:</b></li></ol>
+<p>A. 80 kcal/kg, 0.9 g protein/kg B. <b>150–220 kcal/kg, 2.5–3 g protein/kg (days 4–26+)</b> C. 50 kcal/kg, 0.5 g protein/kg D. 100 kcal/kg, 1 g protein/kg E. 250 kcal/kg, 5 g protein/kg</p>
+<ol><li><b>RUTF (Ready-to-Use Therapeutic Food):</b></li></ol>
+<p>A. Inpatient SAM only B. Stabilisation phase only C. <b>Community-based management of uncomplicated SAM (Plumpy'nut)</b> D. Acute dehydration only E. Refeeding syndrome only</p>
+<ol><li><b>ReSoMal (Rehydration Solution for Malnutrition) used in SAM because:</b></li></ol>
+<p>A. Higher K content B. Lower osmolarity C. <b>Standard ORS too high Na; risks hypernatraemia in malnourished</b> D. Lower glucose E. Better taste compliance</p>
+<ol><li><b>Iron in acute SAM:</b></li></ol>
+<p>A. Give immediately B. <b>AVOID in acute phase (↓transferrin, infection); start 7–14 days after stabilisation</b> C. High-dose IV D. With antibiotics E. Daily for 1 month</p>
+<ol><li><b>Vitamin A high-dose regimen in SAM:</b></li></ol>
+<p>A. 100,000 IU day 1 only B. <b>200,000 IU day 1, 2, 14 (age 12m+)</b> C. 500,000 IU weekly D. 50,000 IU daily ×7 days E. 100,000 IU day 1, 7, 14</p>
+<ol><li><b>Empirical antibiotics in SAM:</b></li></ol>
+<p>A. Only if febrile B. Only if chest signs C. <b>All SAM (silent sepsis common); ampicillin + gentamicin</b> D. Only on admission E. Only on culture results</p>
+<ol><li><b>SAM cure criteria:</b></li></ol>
+<p>A. WHZ &gt;-1 OR MUAC &gt;12 cm B. <b>WHZ &gt;-2 OR MUAC &gt;12.5 cm AND oedema free ×2 weeks</b> C. Weight gain only D. No complications only E. Appetite normal only</p>
+<ol><li><b>RUTF vs F-100 — community SAM advantage of RUTF:</b></li></ol>
+<p>A. Lower calories B. Higher protein C. <b>Long shelf life, doesn't need preparation, family-based care, no refrigeration</b> D. More iron E. More vitamins</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 3-year-old child with bilateral pitting oedema, WHZ &lt;-3, MUAC 10.5, no medical complications, alert, eating. Best management?</b></li></ol>
+<p>A. Inpatient F-75 B. <b>Community-based RUTF (uncomplicated SAM despite oedema, alert, eating)</b> C. F-100 inpatient D. TPN E. NG tube feeding only</p>
+<ol><li><b>A 2-year-old child with SAM, pneumonia, hypoglycaemia 2.5 mmol/L, lethargic. Most appropriate immediate management?</b></li></ol>
+<p>A. <b>D10% IV 5 mL/kg + antibiotics + F-75 + vit A + monitoring</b> B. F-100 immediately C. RUTF outpatient D. IV iron E. NS bolus 20 mL/kg</p>
+<ol><li><b>A 9-month-old SAM child with persistent oedema on day 14 of treatment. Action?</b></li></ol>
+<p>A. Stop treatment B. <b>Investigate for failed response (TB, HIV, electrolyte imbalance, inadequate feeding)</b> C. Increase to F-100 only D. Add iron E. Add RUTF</p>
+<ol><li><b>A 2-year-old SAM child with shock (lethargic, cap refill 5s, BP 60/40). Best initial fluid?</b></li></ol>
+<p>A. NS bolus 20 mL/kg rapidly B. <b>Ringer's lactate 15 mL/kg/h; reassess; consider inotropes; broad-spectrum antibiotics</b> C. Dextrose 5% D. D10% only E. ReSoMal 5 mL/kg/h</p>
+<ol><li><b>A 5-year-old child with SAM, no oedema, alert, eating, no complications. Best management?</b></li></ol>
+<p>A. Inpatient F-75 B. <b>Community-based RUTF (outpatient management)</b> C. F-100 inpatient D. TPN E. NG tube</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: SAM criteria</li></ul>
+<p>A: <b>WHZ &lt;-3 OR MUAC &lt;11.5 cm OR bilateral pitting oedema (6-59m)</b></p>
+<ul><li>Q: WHO 10 steps mnemonic</li></ul>
+<p>A: <b>H-H-D-E-I-M-F-C-S-D</b> = Hypo, HypoT, Dehydration, Electrolytes, Infection, Micronutrients, Feeding F-75, Catch-up F-100, Stimulation, Discharge</p>
+<ul><li>Q: F-75 composition</li></ul>
+<p>A: <b>80 kcal/kg/day, 0.9 g protein/kg/day, 5-7 days stabilisation</b></p>
+<ul><li>Q: F-100 composition</li></ul>
+<p>A: <b>150-220 kcal/kg/day, 2.5-3 g protein/kg/day, rehabilitation, IRON added</b></p>
+<ul><li>Q: RUTF</li></ul>
+<p>A: <b>Plumpy'nut; community SAM; 150-220 kcal/kg/day; long shelf life</b></p>
+<ul><li>Q: ReSoMal</li></ul>
+<p>A: <b>Low-Na ORS for SAM dehydration (Na 45, K 40 mmol/L)</b></p>
+<ul><li>Q: Vit A schedule</li></ul>
+<p>A: <b>200,000 IU day 1, 2, 14 (&gt;12m); 100,000 IU (6-12m)</b></p>
+<ul><li>Q: Iron in SAM</li></ul>
+<p>A: <b>AVOID acute phase (↓transferrin, infection); start 7-14 days</b></p>
+<ul><li>Q: Antibiotics in SAM</li></ul>
+<p>A: <b>ALL SAM (silent sepsis); ampicillin + gentamicin</b></p>
+<ul><li>Q: Cure criteria</li></ul>
+<p>A: <b>WHZ &gt;-2 OR MUAC &gt;12.5 cm AND oedema free ×2 weeks</b></p>
+<ul><li>Q: Appetite test</li></ul>
+<p>A: <b>RUTF offered; eats &gt;50% = community; &lt;50% = inpatient</b></p>
+<ul><li>Q: Empirical antibiotics</li></ul>
+<p>A: <b>Ampicillin 50 mg/kg q6h + Gentamicin 5 mg/kg/day ×7-10 days</b></p>
+<ul><li>Q: ReSoMal vs ORS</li></ul>
+<p>A: <b>ReSoMal: Na 45, K 40, glucose 125; ORS: Na 75, K 20, glucose 75</b></p>
+<ul><li>Q: Phase 1 duration</li></ul>
+<p>A: <b>5-7 days F-75</b> (stabilisation)</p>
+<ul><li>Q: Phase 2 transition criteria</li></ul>
+<p>A: <b>Appetite returns, oedema resolving, no infections</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>D</b> — All of the above are correct: WHZ &lt;-3, MUAC &lt;11.5 cm, bilateral pitting oedema are the WHO SAM criteria.</li><li><b>B</b> — F-75 stabilisation: 80 kcal/kg/day, 0.9 g protein/kg/day, 5–7 days; F-100 = rehabilitation.</li><li><b>B</b> — F-100 rehabilitation: 150–220 kcal/kg/day, 2.5–3 g protein/kg/day, days 4–26+; includes iron.</li><li><b>C</b> — RUTF (Plumpy'nut): community-based management of uncomplicated SAM; &gt;75% of SAM.</li><li><b>C</b> — ReSoMal: low-Na ORS for SAM dehydration; standard ORS high Na risks hypernatraemia in malnourished.</li><li><b>B</b> — Iron in acute SAM: AVOID (↓transferrin, free Fe → infection); start 7–14 days after stabilisation with F-100.</li><li><b>B</b> — Vit A in SAM: 200,000 IU day 1, 2, 14 (age 12m+); ↓measles mortality 50%; treats xerophthalmia.</li><li><b>C</b> — Antibiotics in SAM: ALL SAM (silent sepsis common); ampicillin + gentamicin ×7–10 days.</li><li><b>B</b> — SAM cure: WHZ &gt;-2 OR MUAC &gt;12.5 cm AND oedema free ×2 weeks.</li><li><b>C</b> — RUTF advantage: long shelf life, no preparation, family-based care, no refrigeration; community management.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — SAM (oedema, WHZ &lt;-3, MUAC 10.5) but uncomplicated (alert, eating, no complications): community-based RUTF.</li><li><b>A</b> — SAM + pneumonia + hypoglycaemia: D10% 5 mL/kg + antibiotics (ampicillin + gentamicin) + F-75 + vit A + monitoring.</li><li><b>B</b> — Failed response: persistent oedema on day 14; investigate (TB, HIV, electrolyte imbalance, inadequate feeding).</li><li><b>B</b> — SAM + shock: cautious Ringer's lactate 15 mL/kg/h (not aggressive NS); reassess; antibiotics; consider inotropes.</li><li><b>B</b> — SAM uncomplicated (5y, no oedema, alert, eating): community-based RUTF (outpatient).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Severe Acute Malnutrition (SAM)</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> SAM = WHZ &lt;-3, MUAC &lt;11.5 cm, OR bilateral pitting oedema. WHO 10 steps: 1) Hypoglycaemia (D10%), 2) Hypothermia, 3) Dehydration (ReSoMal), 4) Electrolytes (K, Mg, NO Na), 5) Infection (ampicillin + gentamicin ALL SAM), 6) Micronutrients (vit A day 1, 2, 14; <b>NO iron acute</b>), 7) Feeding (F-75 80 kcal/kg, 0.9 g protein, 5–7 days), 8) Catch-up (F-100 150–220 kcal/kg, 2.5–3 g protein, IRON), 9) Stimulation, 10) Discharge. <b>RUTF (Plumpy'nut) for community-based &gt;75% SAM.</b> Cure = WHZ &gt;-2 AND oedema free ×2 weeks. <b>Exam focus:</b> SAM criteria, 10 steps, F-75 vs F-100, vit A schedule, NO iron, antibiotics all SAM, ReSoMal, community management. <b>Clinical relevance:</b> Global child health (14M children SAM); WHO 10-step protocol; community-based management expansion; HIV/TB co-infection.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Severe Acute Malnutrition Who Management · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fungal Structure Classification Pathogenesis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.1. MICROBIAL BIOLOGY & PATHOGENESIS</span>
+      <div class="h1">Fungal Structure Classification Pathogenesis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe fungal cell structure: cell wall (chitin, β-glucans), membrane (ergosterol), organelles</li><li>[ ] Classify fungi by morphology (yeast, mould, dimorphic) and taxonomy (phyla)</li><li>[ ] Explain key virulence factors: thermotolerance, melanin, adhesins, proteases, phospholipases, capsule</li><li>[ ] Understand host defence: neutrophils, macrophages, Th1/Th17, complement, antibodies</li><li>[ ] Apply classification to predict likely pathogens in clinical syndromes (e.g., yeast in blood = Candida; mould in sinus = Aspergillus)</li><li>[ ] Interpret diagnostic tests: microscopy, culture, antigen detection (GM, BDG, CrAg), PCR, histology (GMS, PAS)</li><li>[ ] Answer viva: "Yeast vs mould vs dimorphic fungi", "Ergosterol biosynthesis pathway &amp; antifungal targets", "Galactomannan vs β-D-glucan utility", "Dimorphic fungi endemic areas"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Hypha**</td><td>Tubular filament (2-10 µm); septate (Aspergillus) or coenocytic/non-septate (Mucorales)</td></tr><tr><td>**Mycelium**</td><td>Network of hyphae</td></tr><tr><td>**Yeast**</td><td>Unicellular, oval/round, reproduce by budding (blastoconidia) or fission</td></tr><tr><td>**Pseudohyphae**</td><td>Elongated yeast cells attached end-to-end (Candida albicans)</td></tr><tr><td>**Dimorphic**</td><td>Switch between mould (25-30°C, environment) and yeast (37°C, host); thermally regulated</td></tr><tr><td>**Conidia**</td><td>Asexual spores: microconidia (small), macroconidia (large), arthroconidia (fragmented hyphae)</td></tr><tr><td>**Sporangiospores**</td><td>Spores in a sac (sporangium) — Mucorales</td></tr><tr><td>**Chitin**</td><td>β-1,4-N-acetylglucosamine polymer; structural scaffold (like cellulose but N-acetylated)</td></tr><tr><td>**β-1,3-Glucan**</td><td>Major structural polysaccharide; target of echinocandins; PAMP for Dectin-1</td></tr><tr><td>**β-1,6-Glucan**</td><td>Branching points linking β-1,3-glucan to mannoproteins/chitin</td></tr><tr><td>**Mannoproteins**</td><td>Heavily glycosylated proteins; outer wall; adhesins, immune modulation</td></tr><tr><td>**Ergosterol**</td><td>Fungal membrane sterol (vs cholesterol in mammals); target of azoles, polyenes, allylamines</td></tr><tr><td>**Thermotolerance**</td><td>Ability to grow at 37-42°C; essential for systemic pathogenesis</td></tr><tr><td>**Melanin**</td><td>DHN or DOPA melanin in wall; scavenges ROS, protects from UV, inhibits phagocytosis</td></tr><tr><td>**Galactomannan (GM)**</td><td>Aspergillus cell wall polysaccharide; released during growth; serum/BAL ELISA = diagnosis</td></tr><tr><td>**β-D-Glucan (BDG)**</td><td>Pan-fungal cell wall component (except Mucorales, Cryptococcus); serum assay = screening</td></tr><tr><td>**Cryptococcal Antigen (CrAg)**</td><td>Capsular glucuronoxylomannan (GXM); lateral flow/latex agglutination; serum/CSF/blood</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Fungal Cell Structure &amp; Composition</div>
+<p>#### Cell Wall Architecture</p>
+<p>``<code>mermaid mindmap root((Fungal Cell Wall)) Inner Layer (Skeleton) Chitin (β-1,4-GlcNAc) Microfibrils Chitin synthases (CHS1-3) β-1,3-Glucan Linear backbone Fks1 (target of echinocandins) β-1,6-Glucan Branch points Outer Layer (Matrix) Mannoproteins (N/O-linked mannose) Adhesins (Als, Epa) Enzymes (lipases, proteases) Immune modulators Specialised Structures Capsule (Cryptococcus: GXM/GalXM) Melanin (DHN/DOPA pathway) Rodlet layer (Hydrophobins: Aspergillus) </code>``</p>
+<table class="ctable"><tr><th>Component</th><th>Chemical Nature</th><th>Function</th><th>Antifungal Target / Diagnostic</th></tr><tr><td>-----------</td><td>----------------</td><td>----------</td><td>--------------------------------</td></tr><tr><td>**Chitin**</td><td>β-1,4-N-acetylglucosamine</td><td>Structural rigidity, septum formation</td><td>Nikkomycin Z (chitin synthase inhibitor — experimental)</td></tr><tr><td>**β-1,3-Glucan**</td><td>β-1,3-linked glucose (linear)</td><td>Main load-bearing; PAMP for Dectin-1</td><td>**Echinocandins** (caspofungin, micafungin, anidulafungin) inhibit Fks1; **β-D-glucan assay** (pan-fungal)</td></tr><tr><td>**β-1,6-Glucan**</td><td>Branching glucan</td><td>Links β-1,3-glucan to mannoproteins/chitin</td><td>—</td></tr><tr><td>**Mannoproteins**</td><td>Proteins with N/O-mannose</td><td>Outer surface; adhesion, enzyme display, immune evasion</td><td>—</td></tr><tr><td>**Galactomannan**</td><td>Galactose-mannose polymer</td><td>Aspergillus-specific; released during hyphal growth</td><td>**Galactomannan ELISA** (serum/BAL) — Aspergillus diagnosis</td></tr><tr><td>**Capsule (Cryptococcus)**</td><td>Glucuronoxylomannan (GXM) + Galactoxylomannan (GalXM)</td><td>Antiphagocytic, immunomodulatory, antioxidant</td><td>**CrAg LFA** (serum/CSF/blood) — Cryptococcus diagnosis</td></tr><tr><td>**Melanin**</td><td>DHN (di-hydroxy-naphthalene) or DOPA polymer</td><td>ROS scavenging, UV protection, inhibits phagolysosomal fusion</td><td>—</td></tr><tr><td>**Hydrophobins (Rodlets)**</td><td>Small cysteine-rich proteins</td><td>Surface hydrophobicity, conidial dispersal, immune evasion</td><td>Aspergillus rodlet layer masks PAMPs</td></tr></table>
+<p>#### Cell Membrane — Ergosterol Biosynthesis Pathway</p>
+<p>```mermaid flowchart LR A[Acetyl-CoA] --&gt; B[HMG-CoA] --&gt; C[Mevalonate] --&gt; D[Squalene] D --&gt; E[Squalene Epoxide] --&gt; F[Lanosterol] --&gt; G[Zymosterol] --&gt; H[Ergosterol]</p>
+<p>B -.-&gt;|HMG-CoA Reductase| I[Statins - not antifungal] D -.-&gt;|Squalene Epoxidase| J[<b>Terbinafine</b> (Allylamine)] E -.-&gt;|Lanosterol 14α-Demethylase (CYP51/Erg11)| K[<b>Azoles</b> (Fluconazole, Itraconazole, Voriconazole, Posaconazole, Isavuconazole)] F -.-&gt;|C-24 Methyl Transferase| L[Experimental] H -.-&gt;|Binding| M[<b>Polyenes</b> (Amphotericin B, Nystatin) → Pores] ```</p>
+<table class="ctable"><tr><th>Enzyme Step</th><th>Inhibitor Class</th><th>Drug Examples</th><th>Clinical Use</th></tr><tr><td>-------------</td><td>-----------------</td><td>---------------</td><td>--------------</td></tr><tr><td>**Squalene epoxidase**</td><td>Allylamines</td><td>**Terbinafine**</td><td>Dermatophytes (skin/nail), some moulds</td></tr><tr><td>**14α-Demethylase (CYP51/Erg11)**</td><td>Azoles (Imidazoles/Triazoles)</td><td>Fluconazole, Itraconazole, Voriconazole, Posaconazole, Isavuconazole</td><td>Broad: Candida, Aspergillus, endemic mycoses, prophylaxis</td></tr><tr><td>**Ergosterol binding**</td><td>Polyenes</td><td>**Amphotericin B** (deoxycholate, lipid formulations), Nystatin</td><td>Life-threatening: invasive candidiasis, cryptococcal meningitis, mucormycosis, endemic mycoses</td></tr><tr><td>**β-1,3-Glucan synthase (Fks1)**</td><td>Echinocandins</td><td>Caspofungin, Micafungin, Anidulafungin</td><td>Candidemia, invasive candidiasis, prophylaxis (HSCT); salvage aspergillosis</td></tr></table>
+<div class="callout"><b>Key Difference:</b> Human cells use <b>cholesterol</b> (no ergosterol) → selective toxicity. <b>Azoles also inhibit human CYP450s</b> → drug interactions (CYP3A4, 2C9, 2C19).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Fungal Classification — Morphology &amp; Taxonomy</div>
+<p>#### Morphological Groups (Clinical Lab Approach)</p>
+<table class="ctable"><tr><th>Group</th><th>Morphology at 37°C</th><th>Key Features</th><th>Major Pathogens</th></tr><tr><td>-------</td><td>-------------------</td><td>--------------</td><td>-----------------</td></tr><tr><td>**Yeasts**</td><td>Unicellular budding</td><td>Round/oval, blastoconidia, pseudohyphae</td><td>Candida spp., Cryptococcus neoformans/gattii, Trichosporon, Malassezia, Blastomyces (yeast phase), Histoplasma (yeast phase)</td></tr><tr><td>**Moulds**</td><td>Hyphae, conidia</td><td>Septate (Aspergillus, Fusarium, Scedosporium) or non-septate (Mucorales)</td><td>Aspergillus, Mucor/Rhizopus, Fusarium, Scedosporium, Penicillium, Paecilomyces, Scopulariopsis</td></tr><tr><td>**Dimorphic**</td><td>Mould (25°C) ↔ Yeast (37°C)</td><td>Thermally regulated switch; "Mould in room, yeast in human"</td><td>Histoplasma, Blastomyces, Coccidioides, Paracoccidioides, Talaromyces (Penicillium marneffei), Sporothrix</td></tr></table>
+<p>#### Taxonomic Classification (Modern Phylogeny)</p>
+<table class="ctable"><tr><th>Phylum</th><th>Subphylum/Class</th><th>Key Orders</th><th>Major Human Pathogens</th></tr><tr><td>--------</td><td>----------------</td><td>------------</td><td>----------------------</td></tr><tr><td>**Ascomycota** (Sac fungi)</td><td>Pezizomycotina</td><td>Eurotiales, Onygenales, Saccharomycetales</td><td>Aspergillus, Penicillium, Histoplasma, Blastomyces, Coccidioides, Candida (Saccharomycetales)</td></tr><tr><td>**Basidiomycota** (Club fungi)</td><td>Agaricomycotina / Pucciniomycotina</td><td>Tremellales, Malasseziales</td><td>Cryptococcus, Malassezia, Trichosporon</td></tr><tr><td>**Mucoromycota** (formerly Zygomycota)</td><td>Mucoromycotina</td><td>Mucorales</td><td>Rhizopus, Mucor, Lichtheimia, Cunninghamella, Apophysomyces</td></tr><tr><td>**Microsporidia** (Obligate intracellular)</td><td>—</td><td>—</td><td>Enterocytozoon, Encephalitozoon, Nosema</td></tr></table>
+<div class="callout"><b>Note:</b> "Zygomycetes" is obsolete; now <b>Mucoromycota</b> (Mucorales). <b>Pneumocystis</b> = Ascomycota (Taphrinomycotina), not a protozoan.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: Key Fungal Pathogens — Clinical Syndromes &amp; Virulence</div>
+<p>#### A. Candida Species — Commensal → Opportunistic</p>
+<table class="ctable"><tr><th>Species</th><th>Virulence Factors</th><th>Clinical Syndromes</th><th>Antifugal Susceptibility Notes</th></tr><tr><td>---------</td><td>-------------------</td><td>-------------------</td><td>--------------------------------</td></tr><tr><td>**C. albicans**</td><td>Hyphae/pseudohyphae, Als adhesins, Sap proteases, phospholipases, biofilm, phenotypic switching</td><td>Thrush, oesophagitis, vulvovaginitis, candidemia, invasive candidiasis, endocarditis, endophthalmitis</td><td>Susceptible to all; resistance rare</td></tr><tr><td>**C. glabrata**</td><td>No true hyphae (pseudohyphae only), Epa adhesins, high efflux pumps, biofilm</td><td>Candidemia (2nd most common), UTI, prosthetic devices</td><td>**Intrinsic reduced azole susceptibility** (dose-dependent); echinocandin **first-line**</td></tr><tr><td>**C. parapsilosis**</td><td>Pseudohyphae, biofilm on prosthetics, lipase</td><td>Catheter-related candidemia, neonatal, prosthetic joints</td><td>**Higher echinocandin MICs** (paradoxical effect); azoles OK</td></tr><tr><td>**C. krusei**</td><td>No hyphae, high MDR</td><td>Candidemia (haematology)</td><td>**Intrinsic fluconazole RESISTANT**; voriconazole/posaconazole/isavuconazole/echinocandins OK</td></tr><tr><td>**C. auris**</td><td>Thermotolerant (42°C), biofilm, MDR, skin colonisation, persistent environment</td><td>Outbreaks in ICU, candidemia, wound/otic</td><td>**Multidrug-resistant** (often azole + echinocandin + ampho B resistant); pan-resistant strains exist</td></tr></table>
+<div class="callout"><b>Candidemia Source Control:</b> <b>Remove central line</b> if possible; <b>ophthalmology exam</b> (endophthalmitis 10-20%); <b>echo</b> if persistent (endocarditis).</div>
+<p>#### B. Cryptococcus neoformans / gattii — Encapsulated Yeast</p>
+<table class="ctable"><tr><th>Feature</th><th>C. neoformans</th><th>C. gattii</th></tr><tr><td>---------</td><td>--------------</td><td>-----------</td></tr><tr><td>**Ecology**</td><td>Pigeon droppings (guano), soil worldwide</td><td>Eucalyptus trees, tropical/subtropical</td></tr><tr><td>**Host**</td><td>Immunocompromised (HIV CD4<100)</td><td>Immunocompetent (but also immunocompromised)</td></tr><tr><td>**Capsule**</td><td>Large (GXM); induces capsule enlargement in vivo</td><td>Similar</td></tr><tr><td>**Melanin**</td><td>Laccase → DHN melanin (brown on birdseed agar)</td><td>Laccase+</td></tr><tr><td>**Urease**</td><td>Strong +</td><td>Strong +</td></tr><tr><td>**Key Syndrome**</td><td>**Meningitis** (subacute, headache, fever, raised ICP)</td><td>Meningitis, pulmonary, CNS mass lesions (cryptococcoma)</td></tr></table>
+<p><b>Management of Cryptococcal Meningitis (HIV):</b></p>
+<ol><li><b>Induction:</b> Amphotericin B deoxycholate 0.7-1 mg/kg/day + Flucytosine 100 mg/kg/day × 2 weeks (or AmB lipid 3-5 mg/kg + 5FC)</li><li><b>Consolidation:</b> Fluconazole 400-800 mg/day × 8 weeks</li><li><b>Maintenance:</b> Fluconazole 200 mg/day until CD4&gt;100 for 3 months on ART</li><li><b>ICP Management:</b> Serial LPs for raised ICP (critical); avoid steroids</li></ol>
+<p>#### C. Aspergillus fumigatus / flavus / niger / terreus — Septate Mould</p>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Morphology**</td><td>Septate hyphae, acute-angle branching (45°), conidial heads (vesicle + phialides)</td></tr><tr><td>**Conidia**</td><td>Small (2-3 µm), airborne → inhaled → alveoli</td></tr><tr><td>**Virulence**</td><td>Thermotolerant (48-50°C), gliotoxin (immunosuppressive), melanin, proteases, Siderophores</td></tr><tr><td>**Clinical Syndromes**</td><td></td></tr><tr><td>• **Allergic bronchopulmonary aspergillosis (ABPA)**</td><td>Asthma/CF + IgE hypersensitivity → central bronchiectasis, mucoid impaction</td></tr><tr><td>• **Aspergilloma (fungus ball)**</td><td>Pre-existing cavity (TB, sarcoid) → saprophytic growth → haemoptysis</td></tr><tr><td>• **Chronic pulmonary aspergillosis (CPA)**</td><td>Cavitary/nodular/fibrosing; months-years; weight loss, haemoptysis</td></tr><tr><td>• **Invasive aspergillosis (IA)**</td><td>Neutropenia, steroids, transplant, ICU (influenza/COVID), CGD → angioinvasion, infarction, dissemination</td></tr><tr><td>• **Cutaneous/Sinus**</td><td>Direct inoculation, sinusitis (immunocompromised)</td></tr><tr><td>**Diagnosis**</td><td>**Galactomannan (GM) ELISA** (serum/BAL; sensitivity 70-90%, specificity 85-95%)<br>**β-D-glucan** (pan-fungal; negative in mucormycosis/cryptococcosis)<br>PCR (blood/BAL); Culture (slow, low yield); Histology (GMS/PAS: septate hyphae, acute branching)</td></tr><tr><td>**Antifungal Resistance**</td><td>**A. terreus** = intrinsic amphotericin B resistance; **TR34/L98H** mutation = azole resistance (environmental)</td></tr></table>
+<p>#### D. Mucorales (Mucormycosis / Zygomycosis) — Non-septate Moulds</p>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Genera**</td><td>Rhizopus (most common), Mucor, Lichtheimia, Cunninghamella, Apophysomyces, Saksenaea</td></tr><tr><td>**Morphology**</td><td>**Broad, ribbon-like, non-septate (coenocytic) hyphae**, right-angle (90°) branching, sporangia</td></tr><tr><td>**Virulence**</td><td>**High thermotolerance**, iron acquisition (rhizoferrin), sporangiospores, rapid angioinvasion</td></tr><tr><td>**Risk Factors**</td><td>**Diabetic ketoacidosis (DKA)** (iron availability + acidosis), neutropenia, steroids, deferoxamine (iron chelator = siderophore), transplant, trauma/burns, COVID-19 (steroids + hyperglycaemia)</td></tr><tr><td>**Clinical Syndromes**</td><td>**Rhino-orbital-cerebral (ROCM)** (most common: sinus → orbit → brain); Pulmonary; Cutaneous; GI; Disseminated</td></tr><tr><td>**Diagnosis**</td><td>**Histology critical**: broad non-septate hyphae, 90° branching, angioinvasion, necrosis<br>Culture (grows rapidly, fills plate); PCR; **GM/BDG NEGATIVE** (no galactomannan, glucan masked)</td></tr><tr><td>**Treatment**</td><td>**Liposomal Amphotericin B 5-10 mg/kg/day** (high dose) + **Surgical debridement** (urgent, radical)<br>Posaconazole/isavuconazole step-down/salvage; Iron chelation avoidance</td></tr></table>
+<div class="callout"><b>Viva Pearl:</b> "How to differentiate Aspergillus from Mucorales on histology?" → Aspergillus: septate, acute-angle (45°) branching; Mucorales: non-septate, 90° branching, broader hyphae.</div>
+<p>#### E. Dimorphic Fungi — Endemic Mycoses</p>
+<table class="ctable"><tr><th>Fungus</th><th>Endemic Area</th><th>Mould Form (25°C)</th><th>Yeast Form (37°C)</th><th>Transmission</th><th>Clinical Syndromes</th></tr><tr><td>--------</td><td>--------------</td><td>-------------------</td><td>-------------------</td><td>--------------</td><td>-------------------</td></tr><tr><td>**Histoplasma capsulatum**</td><td>Ohio/Mississippi River valleys (US), Central/South America, Africa, SE Asia</td><td>Tubercular macroconidia, microconidia</td><td>**Small (2-4 µm) intracellular yeast in macrophages**</td><td>Inhalation of microconidia (bird/bat guano)</td><td>Acute pulmonary (flu-like); Chronic cavitary (like TB); Disseminated (HIV, immunosuppressed); Mediastinal fibrosis</td></tr><tr><td>**Blastomyces dermatitidis**</td><td>Great Lakes, Mississippi/Ohio valleys, Canada, Africa</td><td>White fluffy mould, lollipop conidia</td><td>**Large (8-15 µm) thick-walled yeast, broad-based budding**</td><td>Inhalation</td><td>Pulmonary (pneumonia, ARDS); Cutaneous (verrucous ulcers); Osteomyelitis; GU (prostatitis); CNS</td></tr><tr><td>**Coccidioides immitis/posadasii**</td><td>SW USA (CA, AZ), N Mexico, C/S America</td><td>Arthroconidia (barrel-shaped, fragile)</td><td>**Spherules (20-80 µm) with endospores**</td><td>Inhalation of arthroconidia (dust storms)</td><td>Valley fever (self-limited flu-like); Chronic pulmonary; Disseminated (meningitis, skin, bone) — **High risk: Filipinos, Blacks, pregnant, immunocompromised**</td></tr><tr><td>**Paracoccidioides brasiliensis/lutzii**</td><td>Latin America (Brazil, Venezuela, Colombia, Argentina)</td><td>White mould, conidia</td><td>**"Pilot's wheel" / "Mickey Mouse" yeast (multiple budding)**</td><td>Inhalation</td><td>Chronic mucocutaneous (oral/nasal ulcers); Pulmonary; Adrenal insufficiency; Lymphadenopathy</td></tr><tr><td>**Talaromyces marneffei** (Penicillium marneffei)</td><td>SE Asia, S China, NE India</td><td>Green mould, conidiophores</td><td>**Yeast with transverse septum (fission), intracellular**</td><td>Inhalation (bamboo rats)</td><td>**HIV/AIDS defining illness** in endemic areas; Disseminated: fever, anaemia, skin umbilicated lesions, lymphadenopathy</td></tr><tr><td>**Sporothrix schenckii/luriei/brasiliensis**</td><td>Worldwide (temperate/tropical)</td><td>Mould, conidia in rosettes</td><td>**Cigar-shaped yeast**</td><td>Traumatic inoculation (rose thorns, sphagnum moss)</td><td>**Lymphocutaneous** (sporotrichoid spread along lymphatics); Fixed cutaneous; Disseminated (immunocompromised)</td></tr></table>
+<p>#### F. Pneumocystis jirovecii — Atypical Ascomycete</p>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Taxonomy**</td><td>Ascomycota, Taphrinomycotina, Pneumocystidaceae</td></tr><tr><td>**Life Cycle**</td><td>Trophic forms (pleomorphic) → Cysts (8 intracystic bodies)</td></tr><tr><td>**Transmission**</td><td>Airborne person-to-person; colonisation common</td></tr><tr><td>**Pathogenesis**</td><td>Attaches to Type I pneumocytes → blocks gas exchange → foamy alveolar exudate</td></tr><tr><td>**Risk**</td><td>**HIV CD4<200**, immunosuppression (steroids, transplant, biologics), malnutrition</td></tr><tr><td>**Clinical**</td><td>Subacute dyspnoea, dry fever, hypoxia; CXR: bilateral perihilar interstitial (ground glass)</td></tr><tr><td>**Diagnosis**</td><td>**Induced sputum/BAL**: PCR (gold standard), GMS/PAS (cysts), DFA; **β-D-glucan** elevated (high sensitivity)</td></tr><tr><td>**Treatment**</td><td>**TMP-SMX** (15-20 mg/kg/day TMP × 21 days); Alternatives: Primaquine+clindamycin, Pentamidine, Atovaquone, Dapsone+TMP</td></tr><tr><td>**Prophylaxis**</td><td>TMP-SMX daily/3x week (CD4<200 or prior PJP); Dapsone, Atovaquone, aerosolised pentamidine</td></tr></table>
+<p>#### G. Dermatophytes &amp; Superficial Mycoses</p>
+<table class="ctable"><tr><th>Group</th><th>Genera</th><th>Clinical Syndrome</th><th>Diagnosis</th><th>Treatment</th></tr><tr><td>-------</td><td>--------</td><td>-------------------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Dermatophytes**</td><td>Trichophyton, Microsporum, Epidermophyton</td><td>Tinea capitis, corporis, cruris, pedis, unguium (onychomycosis)</td><td>KOH prep (hyphae), Culture (DTM), PCR</td><td>Topical azoles/terbinafine; Oral terbinafine/azole (nail/scalp)</td></tr><tr><td>**Malassezia**</td><td>M. furglobosa, restricta, globosa, etc.</td><td>Pityriasis versicolor, seborrhoeic dermatitis, folliculitis, catheter sepsis (lipid-dependent)</td><td>KOH ("spaghetti & meatballs"), Culture (need lipid)</td><td>Topical selenium sulfide/ketoconazole; Systemic if fungemia</td></tr><tr><td>**Piedra**</td><td>Trichosporon (white), Piedraia (black)</td><td>Soft nodules on hair shafts</td><td>KOH, Culture</td><td>Shave hair, topical/oral azoles</td></tr><tr><td>**Candidal intertrigo**</td><td>Candida albicans</td><td>Erythematous rash in folds (satellite lesions)</td><td>KOH (yeast + pseudohyphae)</td><td>Topical azole/nystatin + dryness</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Host Defence Against Fungi</div>
+<p>#### Innate Immunity</p>
+<table class="ctable"><tr><th>Component</th><th>Mechanism</th><th>Key Fungi Targeted</th></tr><tr><td>-----------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Neutrophils**</td><td>Phagocytosis, ROS (NADPH oxidase), NETs, degranulation (MPO, elastase)</td><td>**Candida, Aspergillus, Mucorales**</td></tr><tr><td>**Macrophages**</td><td>Phagocytosis, cytokine production (TNF, IL-1, IL-6), antigen presentation</td><td>Histoplasma, Cryptococcus, Pneumocystis</td></tr><tr><td>**Dectin-1 (CLEC7A)**</td><td>Recognises β-1,3-glucan → Syk/CARD9 → Th17, ROS, cytokines</td><td>Candida, Aspergillus, Pneumocystis</td></tr><tr><td>**Dectin-2 / Mincle**</td><td>Recognise α-mannans, mycobacterial cord factor</td><td>Candida, Malassezia</td></tr><tr><td>**TLR2/4/9**</td><td>Recognise phospholipomannan, O-mannosylated proteins, DNA</td><td>Candida, Aspergillus</td></tr><tr><td>**Complement**</td><td>C3b opsonisation; C5a chemotaxis; MAC lysis (limited)</td><td>All</td></tr><tr><td>**Pentraxin-3 (PTX3)**</td><td>Opsonin for Aspergillus conidia; genetic variants → susceptibility</td><td>Aspergillus</td></tr></table>
+<p>#### Adaptive Immunity</p>
+<table class="ctable"><tr><th>Pathway</th><th>Key Cytokines</th><th>Role</th><th>Susceptibility if Defective</th></tr><tr><td>---------</td><td>---------------</td><td>------</td><td>----------------------------</td></tr><tr><td>**Th1**</td><td>IFN-γ, IL-2, TNF</td><td>Macrophage activation, intracellular killing</td><td>Histoplasma, Cryptococcus, Coccidioides, TB</td></tr><tr><td>**Th17**</td><td>IL-17A/F, IL-22</td><td>Neutrophil recruitment, epithelial defence (β-defensins)</td><td>**Candida (mucosal), Aspergillus, Staphylococcus**</td></tr><tr><td>**Treg**</td><td>IL-10, TGF-β</td><td>Limit immunopathology</td><td>Chronic fungal infections</td></tr><tr><td>**Antibodies**</td><td>IgG (opsonisation), IgA (mucosal)</td><td>Enhance phagocytosis, neutralise toxins</td><td>Limited primary role; some protection (Candida, Cryptococcus)</td></tr></table>
+<div class="callout"><b>Critical:</b> <b>CGD (Chronic Granulomatous Disease)</b> = NADPH oxidase defect → no ROS → recurrent Staphylococcus, Aspergillus, Burkholderia, Serratia, Nocardia. <b>CARD9 deficiency</b> = defective Dectin-1 signalling → severe mucosal Candida, invasive moulds. <b>STAT1/STAT3 GOF/LOF</b> → Th1/Th17 defects → CMC (chronic mucocutaneous candidiasis).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Fungal Diagnostics — Algorithm</div>
+<p>#### Direct Microscopy</p>
+<table class="ctable"><tr><th>Stain/Method</th><th>Principle</th><th>Fungi Detected</th><th>Sensitivity/Specificity</th></tr><tr><td>--------------</td><td>-----------</td><td>----------------</td><td>------------------------</td></tr><tr><td>**KOH (10-20%)**</td><td>Dissolves keratin/protein, leaves fungi</td><td>Yeasts, hyphae, pseudohyphae, spores</td><td>Rapid, low cost; operator-dependent</td></tr><tr><td>**Gram Stain**</td><td>Yeasts = Gram+; Hyphae = Gram+</td><td>Candida, Cryptococcus (capsule may not stain), moulds</td><td>Routine on clinical samples</td></tr><tr><td>**India Ink**</td><td>Negative staining — capsule halo</td><td>**Cryptococcus** (thick capsule)</td><td>Specific for Crypto; insensitive early</td></tr><tr><td>**Calcofluor White**</td><td>Binds chitin/β-glucan → fluorescence</td><td>All fungi (yeasts, hyphae, spores)</td><td>High sensitivity; needs fluorescence microscope</td></tr><tr><td>**GMS (Gomori Methenamine Silver)**</td><td>Stains fungal wall black/brown</td><td>All fungi in tissue</td><td>Gold standard histology</td></tr><tr><td>**PAS (Periodic Acid-Schiff)**</td><td>Stains polysaccharide wall magenta</td><td>All fungi in tissue</td><td>Good; also stains bacteria</td></tr></table>
+<p>#### Culture &amp; Identification</p>
+<table class="ctable"><tr><th>Medium</th><th>Purpose</th><th>Key Features</th></tr><tr><td>--------</td><td>---------</td><td>--------------</td></tr><tr><td>**Sabouraud Dextrose Agar (SDA)**</td><td>General fungal culture</td><td>Low pH (5.6), antibiotics (chloramphenicol/gentamicin) — inhibits bacteria</td></tr><tr><td>**Brain Heart Infusion (BHI) + Blood**</td><td>Dimorphic fungi, fastidious</td><td>Enhanced growth for Histoplasma, Blastomyces</td></tr><tr><td>**Dermatophyte Test Medium (DTM)**</td><td>Dermatophytes</td><td>Colour change (pH indicator) = red → dermatophyte</td></tr><tr><td>**Birdseed (Niger seed) Agar**</td><td>Cryptococcus</td><td>Brown colonies (melanin via laccase); C. neoformans +, C. gattii +</td></tr><tr><td>**CHROMagar Candida**</td><td>Candida speciation</td><td>Colour: C. albicans (green), C. tropicalis (blue), C. krusei (pink), C. glabrata (cream)</td></tr><tr><td>**MALDI-TOF MS**</td><td>Protein fingerprint ID</td><td>Rapid (mins), species-level for yeasts/moulds; expanding databases</td></tr><tr><td>**Molecular (PCR/Sequencing)**</td><td>ITS, D1/D2, β-tubulin, calmodulin</td><td>Species ID, resistance (TR34/L98H, FKS), mixed infections</td></tr></table>
+<p>#### Antigen &amp; Antibody Detection</p>
+<table class="ctable"><tr><th>Test</th><th>Target</th><th>Clinical Use</th><th>Performance</th></tr><tr><td>------</td><td>--------</td><td>--------------</td><td>-------------</td></tr><tr><td>**Galactomannan (GM) ELISA**</td><td>Aspergillus GM (serum/BAL)</td><td>**Invasive aspergillosis** (neutropenia, transplant, ICU)</td><td>Serum: Sens 70-80%, Spec 85-90%; BAL: Sens 85-95%</td></tr><tr><td>**β-D-Glucan (BDG)**</td><td>Pan-fungal (1,3-β-D-glucan)</td><td>**Screening** for invasive fungal infection (IFI)</td><td>Sens 75-90%, Spec 70-85%; **False +**: haemodialysis, IVIG, surgery, mucositis; **False -**: Mucorales, Cryptococcus, Blastomyces, yeasts (low release)</td></tr><tr><td>**Cryptococcal Antigen (CrAg)**</td><td>Capsular GXM (LFA/latex)</td><td>**Cryptococcal meningitis** (serum/CSF/blood); Screen HIV CD4<100</td><td>Sens >95%, Spec >95%; Quantitative titre correlates with burden</td></tr><tr><td>**Histoplasma Antigen (EIA)**</td><td>H. capsulatum polysaccharide</td><td>Disseminated histoplasmosis (urine/serum/BAL); Cross-reacts with Blastomyces</td><td>Sens 90% urine (disseminated); Cross-reactivity limits specificity</td></tr><tr><td>**Blastomyces Antigen (EIA)**</td><td>B. dermatitidis antigen</td><td>Pulmonary/disseminated blastomycosis</td><td>Sens 80-90% urine; Cross-reacts with Histoplasma</td></tr><tr><td>**Coccidioides Antibody (EIA/CF/ID)**</td><td>IgM (early), IgG (CF)</td><td>Coccidioidal meningitis (CSF IgG/IgM); CF titre for monitoring</td><td>IgM: acute; IgG/CF: chronic/meningitis; CF titre ≥1:32 CSF = meningitis</td></tr><tr><td>**Aspergillus Antibody (Precipitins/IgG)**</td><td>Aspergillus antigens</td><td>**CPA, ABPA** (IgE + IgG); Not for IA (delayed, low sens in immunocompromised)</td><td>CPA: Sens 80-90%; ABPA: Total IgE >1000 + specific IgE/IgG</td></tr></table>
+<p>#### Molecular Diagnostics</p>
+<table class="ctable"><tr><th>Application</th><th>Method</th><th>Utility</th></tr><tr><td>-------------</td><td>--------</td><td>---------</td></tr><tr><td>**Aspergillus PCR**</td><td>Blood, BAL, serum</td><td>Early IA diagnosis; not standardised; EORTC/MSG criteria include PCR (BAL)</td></tr><tr><td>**Candida PCR (T2MR)**</td><td>Blood (T2Candida panel)</td><td>Species ID (C. albicans, glabrata, parapsilosis, tropicalis, krusei) in 3-5 hrs; no culture delay</td></tr><tr><td>**Pneumocystis PCR**</td><td>Induced sputum, BAL</td><td>Gold standard (high sens/spec); replaces microscopy</td></tr><tr><td>**Mucorales PCR**</td><td>Blood, tissue</td><td>Early mucormycosis; GM/BDG negative</td></tr><tr><td>**Pan-fungal PCR + Sequencing**</td><td>Tissue, sterile fluids</td><td>Culture-negative cases; species ID; resistance genes (FKS, CYP51A)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Scenario</th><th>Likely Fungus</th><th>Diagnostic Approach</th><th>Key Management</th></tr><tr><td>-------------------</td><td>---------------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**Neutropenic fever (ANC<500) + pulmonary nodule (halo sign)**</td><td>Aspergillus</td><td>BAL GM + culture + PCR; Serum GM ×2; Chest CT</td><td>**Voriconazole** 1st line; Liposomal AmB alternative; Isavuconazole/posaconazole options</td></tr><tr><td>**DKA + facial pain + black eschar + ophthalmoplegia**</td><td>Mucorales (Rhizopus)</td><td>**Tissue biopsy: histology (broad non-septate hyphae, 90° branching) + culture**</td><td>**Liposomal AmB 10 mg/kg** + **Urgent surgical debridement**; Posaconazole/isavuconazole step-down</td></tr><tr><td>**HIV CD4<100 + subacute headache + fever**</td><td>Cryptococcus</td><td>**CrAg LFA (serum/CSF)**; India ink CSF; Culture</td><td>**Induction: AmB + Flucytosine ×2wks** → **Consolidation: Fluconazole ×8wks** → **Maintenance: Fluconazole**</td></tr><tr><td>**Prosthetic valve endocarditis + yeast in blood**</td><td>Candida (C. albicans, glabrata, parapsilosis)</td><td>Blood culture + T2Candida; Echo (TEE); Ophthalmology</td><td>**Echinocandin** (or Liposomal AmB) + **Valve replacement**; C. glabrata → echinocandin 1st line</td></tr><tr><td>**Traveller from SW USA + pneumonia + erythema nodosum**</td><td>Coccidioides</td><td>Serology (IgM/IgG), CF titre; PCR; Culture (BAP)</td><td>Fluconazole/itraconazole if disseminated/meningitis; Primary pulmonary often self-limited</td></tr><tr><td>**Farmer/caver from Ohio Valley + fever + hepatosplenomegaly**</td><td>Histoplasma</td><td>**Urine/serum Histoplasma Ag**; Blood culture (lysis-centrifugation); Bone marrow biopsy</td><td>Disseminated: Liposomal AmB ×2wks → Itraconazole ×12mo; Mild pulmonary: observation/itraconazole</td></tr><tr><td>**Immunocompromised + diffuse ground glass on CT + hypoxia**</td><td>Pneumocystis</td><td>**Induced sputum/BAL PCR**; β-D-glucan (high sens); GMS on BAL</td><td>**TMP-SMX** 21 days; Adjunct steroids if PaO₂<70 or A-a gradient>35</td></tr><tr><td>**Skin nodules along lymphatic after rose thorn injury**</td><td>Sporothrix</td><td>Culture (mould → yeast conversion); Skin biopsy (yeast in macrophages)</td><td>**Itraconazole 200mg/day** ×3-6 months; Severe: Liposomal AmB → Itraconazole</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know:</b> Fungal cell wall (chitin, β-glucan, mannoproteins), membrane (ergosterol), morphology (yeast/mould/dimorphic), key virulence (thermotolerance, melanin, capsule, adhesins), host defence (neutrophils, Th1/Th17, Dectin-1), major pathogens (Candida, Crypto, Aspergillus, Mucorales, dimorphics, PJP), antifungal targets (ergosterol pathway, glucan synthase), diagnostics (microscopy, culture, GM, BDG, CrAg, Histo Ag, PCR) - <b>Common viva:</b> "Yeast vs mould vs dimorphic", "Ergosterol pathway &amp; drug targets", "Galactomannan vs β-D-glucan — indications &amp; limitations", "Differentiate Aspergillus vs Mucor on histology", "Dimorphic fungi endemic areas &amp; yeast forms", "Cryptococcal meningitis management in HIV", "PJP prophylaxis criteria" - <b>Exam trap:</b> Mucorales = non-septate, 90° branching, GM/BDG negative; Cryptococcus = encapsulated yeast, India ink, CrAg, NOT BDG; C. krusei = intrinsic fluconazole resistance; C. glabrata = dose-dependent azole resistance; C. parapsilosis = higher echinocandin MICs; Pneumocystis = fungus (not protozoan), BDG+, TMP-SMX 1st line; Talaromyces = HIV in SE Asia</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**All fungi have ergosterol**</td><td>Most do; but some (e.g., Pneumocystis) have cholesterol-like sterols — polyenes less effective</td></tr><tr><td>**β-D-glucan positive = any fungus**</td><td>**Negative in**: Mucorales (glucan masked), Cryptococcus (capsule), Blastomyces, some yeasts (low release)</td></tr><tr><td>**Galactomannan = specific for Aspergillus**</td><td>Cross-reactivity: Penicillium, Paecilomyces, some antibiotics (piperacillin-tazobactam), Bifidobacterium (gut translocation)</td></tr><tr><td>**Cryptococcus = positive BDG**</td><td>**False negative** — capsule masks glucan; use **CrAg**</td></tr><tr><td>**Mucormycosis = GM positive**</td><td>**GM negative** — Mucorales lack galactomannan; diagnose by histology/culture/PCR</td></tr><tr><td>**All dimorphic fungi are mould at 25°C, yeast at 37°C**</td><td>True for classic dimorphics; **Coccidioides** = mould with arthroconidia at 25°C, **spherules** (not typical yeast) at 37°C</td></tr><tr><td>**C. albicans = only Candida forming true hyphae**</td><td>**C. tropicalis, C. dubliniensis** also form true hyphae; C. albicans = germ tube test +</td></tr><tr><td>**Fluconazole covers all Candida**</td><td>**C. krusei = intrinsic resistant**; C. glabrata = reduced susceptibility (dose-dependent); C. auris = often MDR</td></tr><tr><td>**Amphotericin B = nephrotoxic always**</td><td>**Liposomal AmB** = significantly less nephrotoxic (dose up to 10 mg/kg); monitor K+/Mg²⁺/Cr</td></tr><tr><td>**PJP = only in HIV**</td><td>**Non-HIV immunosuppressed** (steroids >20mg pred >4wks, transplant, biologics, malignancy) = high risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Fungal Cell Wall Layers:</b> <b>"Inner CHITIN, Middle GLUCAN, Outer MANNOPROTEIN"</b></li><li><b>Ergosterol Pathway Drugs:</b> <b>"STATIN → SQULLENE EPOXIDASE (Terbinafine) → LANOSTEROL DEMETHYLASE (Azoles) → ERGOSTEROL (Polyenes bind)"</b></li><li><b>Azole Spectrum:</b> <b>"Fluco (yeasts) &lt; Itra/Vori/Posa/Isavu (moulds + yeasts)"</b> — Fluconazole NO mould activity</li><li><b>Echinocandin Spectrum:</b> <b>"Candidemia 1st line; NO Cryptococcus, NO Mucorales, NO Fusarium (limited), NO Trichosporon"</b></li><li><b>Dimorphic Endemic Areas:</b> <b>"HIS BLAST COCCI PARA TALAR SPORO"</b> → <b>His</b>toplasma (Ohio/Mississippi), <b>Blast</b>omyces (Great Lakes), <b>Cocci</b>dioides (SW USA), <b>Para</b>coccidioides (LatAm), <b>Talar</b>omyces (SE Asia), <b>Sporo</b>thrix (worldwide temperate)</li><li><b>Dimorphic Yeast Forms:</b> <b>"HISTO = Small in Macrophage; BLASTO = Large Broad-based; COCCI = Spherule/Endospore; PARA = Pilot's Wheel; TALAR = Fission/Transverse Septum; SPORO = Cigar-shaped"</b></li><li><b>Mucorales Histology:</b> <b>"BROAD, NON-SEPTATE, 90° BRANCHING"</b> vs Aspergillus: <b>"SEPTATE, 45° BRANCHING"</b></li><li><b>Candida Species Resistance:</b> <b>"GLABRATA = Azole dose-dep; KRUSEI = Fluco RESISTANT; PARAPSILOSIS = Echinocandin higher MIC; AURIS = PAN-RESISTANT"</b></li><li><b>PJP Diagnosis:</b> <b>"PCR &gt; Antigen &gt; Microscopy"</b>; <b>β-D-glucan HIGH SENSITIVITY</b></li><li><b>Antifungal Prophylaxis:</b> <b>"POSA/ISAVO (moulds) &gt; FLUCO (yeasts) &gt; MICA (candida) &gt; TERBI (dermatophytes)"</b></li><li><b>Cryptococcal Meningitis Rx:</b> <b>"AmB + 5FC ×2wk → Fluco ×8wk → Fluco maint until CD4&gt;100"</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Fungal Structure, Classification &amp; Pathogenesis)) Structure Cell Wall Chitin (scaffold) β-1,3-Glucan (PAMP, echinocandin target) β-1,6-Glucan (branch) Mannoproteins (adhesins, enzymes) Special: Capsule (Crypto), Melanin, Galactomannan (Aspergillus) Membrane Ergosterol (target: azoles, polyenes, allylamines) Biosynthesis: Squalene → Squalene epoxide → Lanosterol → Ergosterol Classification Morphology Yeasts (budding) Moulds (hyphae: septate vs non-septate) Dimorphic (temp switch) Taxonomy Ascomycota (Candida, Aspergillus, Histoplasma, Blastomyces, Coccidioides, Pneumocystis) Basidiomycota (Cryptococcus, Malassezia, Trichosporon) Mucoromycota (Rhizopus, Mucor, Lichtheimia) Microsporidia (Enterocytozoon, Encephalitozoon) Virulence Thermotolerance (37-42°C) Adhesins (Als, Epa) Proteases (Sap), Phospholipases Melanin (DHN/DOPA) Capsule (GXM) Iron acquisition (siderophores, rhizoferrin) Gliotoxin (Aspergillus) Biofilm Host Defence Innate: Neutrophils (ROS, NETs), Macrophages, Dectin-1 (β-glucan), Complement, PTX3 Adaptive: Th1 (IFN-γ), Th17 (IL-17/22), Antibodies (opsonisation) Defects: CGD (NADPH oxidase), CARD9, STAT1/3, HIV (CD4) Key Pathogens Candida (albicans, glabrata, parapsilosis, krusei, auris) Cryptococcus (neoformans, gattii) Aspergillus (fumigatus, flavus, terreus) Mucorales (Rhizopus, Mucor, Lichtheimia) Dimorphics (Histoplasma, Blastomyces, Coccidioides, Paracoccidioides, Talaromyces, Sporothrix) Pneumocystis jirovecii Dermatophytes/Malassezia Diagnostics Microscopy (KOH, Gram, India ink, Calcofluor, GMS, PAS) Culture (SDA, BHI, DTM, Birdseed, CHROMagar, MALDI-TOF) Antigen: GM (Aspergillus), BDG (pan-fungal), CrAg (Crypto), Histo Ag, Blasto Ag Antibody: Coccidioides (IgM/IgG/CF), Aspergillus (CPA/ABPA) Molecular: PCR (Aspergillus, Candida T2, PJP, Mucorales, Pan-fungal) Antifungals Polyenes (AmB, Liposomal AmB, Nystatin) - Ergosterol binding Azoles (Fluco, Itra, Vori, Posa, Isavu) - CYP51/Erg11 inhibition Echinocandins (Caspo, Mica, Anidula) - Fks1/β-1,3-glucan synthase Allylamines (Terbinafine) - Squalene epoxidase Antimetabolite (Flucytosine) - 5-FC → 5-FU </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart: Invasive Fungal Infection Diagnostic Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Clinical Suspicion: Host + Syndrome] --&gt; B{Sample Type} B --&gt;|Blood| C[Blood Culture (lysis-centrifugation optimal)] C --&gt; D[Candida? T2Candida PCR] C --&gt; E[Cryptococcus? CrAg Serum] C --&gt; F[Aspergillus? Serum GM] C --&gt; G[Mucorales? PCR] C --&gt; H[Dimorphics? Blood Culture + PCR] C --&gt; I[β-D-Glucan Serum]</p>
+<p>B --&gt;|Respiratory (BAL/Sputum)| J[BAL: Cell count, Diff, Microscopy (GMS), Culture] J --&gt; K[Aspergillus: BAL GM + PCR + Culture] J --&gt; L[PJP: PCR (Gold standard) + BDG] J --&gt; M[Mucorales: PCR + Histology] J --&gt; N[Dimorphics: Culture + PCR]</p>
+<p>B --&gt;|CSF| O[Opening Pressure!] O --&gt; P[CrAg LFA (Serum/CSF) - CRYPTOCOCCUS] O --&gt; Q[India Ink] O --&gt; R[Culture] O --&gt; S[PCR Panel (Viral/Bacterial/Fungal)] O --&gt; T[β-D-Glucan]</p>
+<p>B --&gt;|Tissue/Biopsy| U[<b>HISTOLOGY: GMS/PAS - CRITICAL</b>] U --&gt; V[Septate hyphae, 45° branch = Aspergillus/Fusarium/Scedosporium] U --&gt; W[Non-septate, 90° branch = Mucorales] U --&gt; X[Yeast in macrophages = Histoplasma] U --&gt; Y[Large yeast, broad-based bud = Blastomyces] U --&gt; Z[Spherules/endospores = Coccidioides] U --&gt; AA[Cigar yeast = Sporothrix] U --&gt; AB[Pilot wheel yeast = Paracoccidioides] U --&gt; AC[Intracellular yeast w/ septum = Talaromyces]</p>
+<p>B --&gt;|Urine| AD[Histoplasma Ag, Blastomyces Ag, Cryptococcus Ag, β-D-Glucan]</p>
+<p>D --&gt; AE[Species ID + Susceptibility] K --&gt; AE P --&gt; AE U --&gt; AE AE --&gt; AF[Targeted Therapy + Source Control] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Fungal cell wall ultrastructure (chitin microfibrils, glucan matrix, mannoprotein outer layer)</li><li>[ ] Ergosterol biosynthesis pathway with drug targets highlighted</li><li>[ ] Yeast vs mould vs dimorphic morphology (microscopy images)</li><li>[ ] Aspergillus: conidial head, acute branching; Mucorales: sporangium, 90° branching</li><li>[ ] Dimorphic yeast forms: Histoplasma (intracellular), Blastomyces (broad-based), Coccidioides (spherule), Paracoccidioides (pilot wheel), Talaromyces (fission), Sporothrix (cigar)</li><li>[ ] Cryptococcus: India ink halo, mucicarmine stain</li><li>[ ] Pneumocystis: GMS cysts (crushed ping-pong balls), trophic forms</li><li>[ ] Galactomannan/β-D-glucan/CrAg assay principles</li><li>[ ] Neutrophil ROS/NETs killing fungi</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] SketchyMicro: Candida, Cryptococcus, Aspergillus, Mucormycosis, Dimorphic fungi, PJP</li><li>[ ] Armando Hasudungan: Fungal structure, Cell wall, Antifungal mechanisms</li><li>[ ] MedCram: Invasive aspergillosis, Mucormycosis, Cryptococcal meningitis</li><li>[ ] IDSA Guidelines videos: Candidiasis, Aspergillosis, Mucormycosis, Cryptococcosis</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Definitions:</b> Hypha, mycelium, yeast, pseudohyphae, dimorphic, conidia, sporangiospores, chitin, β-glucan, mannoproteins, ergosterol, thermotolerance, melanin, GM, BDG, CrAg - <b>Classification:</b> Morphology (yeast/mould/dimorphic); Taxonomy (Ascomycota, Basidiomycota, Mucoromycota, Microsporidia); Key pathogens per group - <b>Cell Wall:</b> Chitin (scaffold) → β-1,3-glucan (load-bearing, Dectin-1 PAMP, echinocandin target) → β-1,6-glucan (branch) → Mannoproteins (outer, adhesins) - <b>Membrane:</b> Ergosterol (fungal sterol) ← Squalene epoxidase (terbinafine) ← 14α-demethylase CYP51 (azoles) ← Ergosterol binding (polyenes) - <b>Virulence:</b> Thermotolerance (essential), Melanin (ROS scavenging), Capsule (Crypto: antiphagocytic), Adhesins/Enzymes, Biofilm, Iron acquisition - <b>Host Defence:</b> Neutrophils (ROS/NETs), Macrophages, Dectin-1 (β-glucan→Th17), Th1 (IFN-γ→intracellular), Th17 (IL-17→mucosal Candida) - <b>Major Pathogens:</b> - Candida: albicans (hyphae), glabrata (azoles↓), parapsilosis (prosthetic/biofilm), krusei (fluco R), auris (MDR) - Crypto: neoformans (HIV), gattii (immunocompetent); Meningitis; CrAg diagnosis; AmB+5FC→Fluco - Aspergillus: fumigatus; IA, CPA, ABPA, aspergilloma; GM/BDG/PCR; Voriconazole 1st line - Mucorales: Rhizopus; DKA, steroids; ROCM; Histology (non-septate, 90°); Liposomal AmB 10mg/kg + Surgery - Dimorphics: HISTO (Ohio, macrophage yeast), BLASTO (Great Lakes, broad-based), COCCI (SW USA, spherules), PARA (LatAm, pilot wheel), TALAR (SE Asia, HIV, fission), SPORO (worldwide, lymphocutaneous) - PJP: HIV CD4&lt;200; PCR/BDG; TMP-SMX 21d; Prophylaxis CD4&lt;200 - <b>Diagnostics:</b> Microscopy (KOH, India ink, GMS), Culture (SDA, CHROMagar, MALDI-TOF), Antigens (GM, BDG, CrAg, Histo Ag), PCR (T2Candida, PJP, Aspergillus, Mucorales), Histology (GMS/PAS) - <b>Key Numbers:</b> GM cut-off ODI 0.5-1.0; BDG &gt;80 pg/mL; CrAg titre &gt;1:1024 high burden; Liposomal AmB 5-10 mg/kg; Voriconazole TDM (trough 1-5.5 mg/L)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Draw fungal cell wall layers; label chitin, β-1,3-glucan, β-1,6-glucan, mannoproteins</li><li>Ergosterol pathway: squalene → squalene epoxide (terbinafine) → lanosterol → ergosterol (azoles inhibit demethylase, polyenes bind)</li><li>Morphology: Yeast (budding) vs Mould (hyphae) vs Dimorphic (temp switch); Septate (Aspergillus) vs Non-septate (Mucorales)</li><li>Candida species resistance patterns: Glabrata (azole dose-dep), Krusei (fluco R), Parapsilosis (echino MIC↑), Auris (MDR)</li><li>Galactomannan vs β-D-glucan vs CrAg: indications, samples, false +/-</li><li>Dimorphic fungi: 6 classic + endemic areas + yeast forms + clinical syndromes</li><li>Mucormycosis: DKA, histology (broad, non-septate, 90°), GM/BDG negative, Liposomal AmB + Surgery</li><li>PJP: HIV CD4&lt;200, PCR gold standard, BDG high sens, TMP-SMX 21 days, prophylaxis criteria</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Fungal structure (wall, membrane, ergosterol pathway); Morphology classification; Key virulence; Major pathogens (Candida, Crypto, Aspergillus, Mucorales, Dimorphics, PJP); Antifungal classes & targets; Diagnostics (microscopy, culture, GM, BDG, CrAg, PCR, histology); Host defence (neutrophils, Th1/Th17, Dectin-1)</td></tr><tr><td>**Should Know 🟡**</td><td>Detailed species differences (Candida, Aspergillus); Cross-reactivity in GM/BDG; Resistance mechanisms (FKS, CYP51A, ERG3); TDM for azoles; Lipid formulations of AmB; Non-HIV PJP risk factors; Talaromyces in SE Asia HIV; Superficial mycoses</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel antifungals (ibrexafungerp, fosmanogepix, olorofim, rezafungin); MIC breakpoints (EUCAST/CLSI); Pharmacokinetics/PD optimisation; Fungal genomics for resistance; Immunotherapy (IFN-γ, GM-CSF, monoclonal antibodies)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li><li>[ ] Dimorphic fungi yeast form morphology distinctions</li><li>[ ] Azole TDM target ranges</li><li>[ ] Differentiating Fusarium/Scedosporium from Aspergillus on histology</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Structure: Cell structure (wall/membrane) → Classification (morphology/taxonomy) → Virulence factors → Host defence → Major pathogen profiles → Antifungal targets → Diagnostics → Clinical syndromes &amp; management</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet: Wall components &amp; drug targets, Morphology table, Candida species resistance, Aspergillus vs Mucor histology, Dimorphic endemic areas, Diagnostic algorithm, PJP management</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"In your own words..." — Lead with yeast/mould/dimorphic distinction, give ergosterol pathway with drugs, name 3 virulence factors, mention GM/BDG/CrAg indications</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>"Neutropenic patient with fever + pulmonary nodule: CT halo sign → BAL for GM/PCR/culture → Start voriconazole empirically → If GM+ or culture+ → Continue voriconazole; If deteriorates → Consider Liposomal AmB; If Mucorales suspected (DKA, non-septate histology) → Liposomal AmB 10mg/kg + urgent ENT/neurosurgery"</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>Cell wall: Chitin/Glucan/Mannoproteins; Ergosterol pathway: Terbinafine (squalene epoxidase) → Azoles (CYP51) → Polyenes (bind ergosterol) → Echinocandins (Fks1/glucan synthase)</li><li>Candida: Albicans (hyphae), Glabrata (azole↓), Krusei (fluco R), Parapsilosis (echino↑), Auris (MDR)</li><li>Histology: Aspergillus (septate/45°) vs Mucor (non-septate/90°)</li><li>Dimorphics: HIS (Ohio, macrophage), BLAST (Great Lakes, broad-base), COCCI (SW, spherule), PARA (LatAm, pilot), TALAR (SE Asia, fission), SPORO (lymphocutaneous)</li><li>Diagnostics: GM (Aspergillus), BDG (pan-fungal, neg Mucor/Crypto), CrAg (Crypto), Histo Ag (Histoplasma)</li><li>PJP: PCR/BDG, TMP-SMX 21d, prophylaxis CD4&lt;200</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which component of the fungal cell wall is the target of echinocandins?</b></li></ol>
+<p>A. Chitin B. β-1,3-Glucan C. β-1,6-Glucan D. Mannoproteins E. Ergosterol</p>
+<ol><li><b>A 45-year-old man with poorly controlled diabetes presents with facial pain, nasal congestion, and a black eschar on the nasal turbinate. He has altered mental status. MRI shows sinusitis with orbital and cerebral extension. Biopsy shows broad, ribbon-like, non-septate hyphae with 90° branching. The most likely pathogen is:</b></li></ol>
+<p>A. Aspergillus fumigatus B. Rhizopus oryzae C. Fusarium solani D. Scedosporium apiospermum E. Candida albicans</p>
+<ol><li><b>Which statement about β-D-glucan (BDG) assay is CORRECT?</b></li></ol>
+<p>A. It is positive in all invasive fungal infections including mucormycosis and cryptococcosis B. It is a component of the Cryptococcal capsule C. It is elevated in Pneumocystis jirovecii pneumonia D. It is specific for Aspergillus species E. It is not affected by concurrent antibacterial therapy</p>
+<ol><li><b>A 30-year-old HIV-positive patient (CD4 80) presents with 2 weeks of headache, fever, and photophobia. CSF: opening pressure 35 cm H₂O, lymphocytic pleocytosis, low glucose, high protein. India ink is positive. Cryptococcal antigen (CrAg) titre is 1:1024. The recommended INDUCTION therapy is:</b></li></ol>
+<p>A. Fluconazole 400mg daily alone B. Amphotericin B deoxycholate 0.7-1 mg/kg/day + Flucytosine 100 mg/kg/day for 2 weeks C. Liposomal Amphotericin B 3 mg/kg/day alone for 2 weeks D. Amphotericin B deoxycholate 0.7-1 mg/kg/day alone for 2 weeks E. Voriconazole 6mg/kg BD + Flucytosine for 2 weeks</p>
+<ol><li><b>Which dimorphic fungus is endemic in the Ohio and Mississippi River valleys and appears as small intracellular yeasts within macrophages in tissue?</b></li></ol>
+<p>A. Blastomyces dermatitidis B. Coccidioides immitis C. Histoplasma capsulatum D. Paracoccidioides brasiliensis E. Sporothrix schenckii</p>
+<ol><li><b>A 60-year-old man with AML on induction chemotherapy (neutropenic) develops fever and a pulmonary nodule with a "halo sign" on CT. Serum galactomannan index is 2.5 (positive). BAL galactomannan is positive. The first-line antifungal treatment is:</b></li></ol>
+<p>A. Liposomal Amphotericin B 3 mg/kg/day B. Voriconazole 6mg/kg BD IV day 1, then 4mg/kg BD C. Caspofungin 70mg load then 50mg daily D. Fluconazole 400mg daily E. Posaconazole 300mg BD day 1, then 300mg daily</p>
+<ol><li><b>Which Candida species is INTRINSICALLY resistant to fluconazole?</b></li></ol>
+<p>A. Candida albicans B. Candida glabrata C. Candida parapsilosis D. Candida krusei E. Candida tropicalis</p>
+<ol><li><b>A 25-year-old agricultural worker from South America presents with a chronic ulcers on his face and nasal mucosa. Biopsy shows "pilot's wheel" yeast forms (multiple budding). The most likely diagnosis is:</b></li></ol>
+<p>A. Histoplasmosis B. Blastomycosis C. Coccidioidomycosis D. Paracoccidioidomycosis E. Sporotrichosis</p>
+<ol><li><b>Which antifungal agent acts by inhibiting squalene epoxidase?</b></li></ol>
+<p>A. Fluconazole B. Amphotericin B C. Caspofungin D. Terbinafine E. Flucytosine</p>
+<ol><li><b>Pneumocystis jirovecii pneumonia (PJP) prophylaxis is indicated in which of the following HIV patients?</b></li></ol>
+<p>A. CD4 count 250 cells/µL on ART with undetectable viral load B. CD4 count 150 cells/µL not on ART C. CD4 count 300 cells/µL with prior PJP D. CD4 count 400 cells/µL on ART E. CD4 count 500 cells/µL with oral thrush</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 55-year-old man with diabetes mellitus presents with DKA (pH 7.1, glucose 480). On day 3 of ICU admission, he develops right-sided facial swelling, ptosis, and decreased vision. MRI shows right sphenoid sinusitis with cavernous sinus thrombosis and orbital apex involvement. Endoscopic biopsy shows broad, non-septate hyphae with 90° branching. Blood culture is negative. Serum galactomannan and β-D-glucan are negative. The most appropriate immediate management is:</b></li></ol>
+<p>A. Start voriconazole 6mg/kg BD IV and arrange sinus surgery within 48 hours B. Start liposomal amphotericin B 10 mg/kg/day IV and arrange <b>urgent (within hours) surgical debridement</b> C. Start isavuconazole 200mg TDS IV for 2 days then daily and monitor D. Start caspofungin 70mg load then 50mg daily and add posaconazole E. Start fluconazole 800mg daily and arrange biopsy for culture</p>
+<ol><li><b>A 35-year-old woman with SLE on high-dose prednisone (40mg/day) and mycophenolate for lupus nephritis presents with fever and multiple tender subcutaneous nodules on her legs. Skin biopsy shows suppurative granulomas with yeast forms showing broad-based budding. She recently visited the Great Lakes region. The most likely diagnosis is:</b></li></ol>
+<p>A. Histoplasmosis B. Blastomycosis C. Coccidioidomycosis D. Sporotrichosis E. Cryptococcosis</p>
+<ol><li><b>A 28-year-old man with HIV (CD4 50, not on ART) presents with 3 weeks of dyspnoea, dry cough, and fever. SpO₂ 88% on room air. CXR shows bilateral perihilar interstitial infiltrates. Induced sputum PCR is positive for Pneumocystis jirovecii. β-D-glucan is elevated. The recommended treatment is:</b></li></ol>
+<p>A. TMP-SMX 15-20 mg/kg/day (TMP component) IV/PO for 21 days + prednisone 40mg BD ×5d then taper (since PaO₂&lt;70) B. Pentamidine 4mg/kg/day IV for 21 days C. Atovaquone 750mg BD PO for 21 days D. Dapsone 100mg daily + TMP 15mg/kg/day for 21 days E. Primaquine 30mg daily + clindamycin 600mg TDS for 21 days</p>
+<ol><li><b>A 65-year-old man post-allogeneic stem cell transplant (day +30) on tacrolimus for GVHD prophylaxis develops fever and right lower lobe consolidation. BAL galactomannan index is 4.2. Culture grows Aspergillus fumigatus. He is started on voriconazole. Two weeks later, he develops visual hallucinations and elevated liver enzymes (ALT 3x ULN). Voriconazole trough level is 6.5 mg/L. The most appropriate action is:</b></li></ol>
+<p>A. Increase voriconazole dose to achieve higher trough B. Switch to isavuconazole (no TDM needed, less hepatotoxicity, no visual effects) C. Switch to liposomal amphotericin B 5 mg/kg/day D. Add caspofungin and continue voriconazole at same dose E. Reduce voriconazole dose and recheck trough in 3 days</p>
+<ol><li><b>A 40-year-old man with HIV (CD4 30) presents with fever, weight loss, and hepatosplenomegaly. Blood culture (lysis-centrifugation) grows a dimorphic fungus that converts to yeast at 37°C. The yeast forms are small (2-4 µm) and reside within macrophages. He recently visited the Mississippi River valley. The most likely pathogen is:</b></li></ol>
+<p>A. Blastomyces dermatitidis B. Histoplasma capsulatum C. Coccidioides immitis D. Talaromyces marneffei E. Sporothrix schenckii</p>
+<ol><li><b>A 70-year-old woman on long-term corticosteroids for polymyalgia rheumatica develops a chronic cavitary lung lesion in the right upper lobe. Aspergillus fumigatus is cultured from sputum. Serum galactomannan is negative. IgG precipitins for Aspergillus are positive. Total IgE is 250 IU/mL (normal &lt;100). She has no allergies, no asthma, no bronchiectasis. The most likely diagnosis is:</b></li></ol>
+<p>A. Allergic bronchopulmonary aspergillosis (ABPA) B. Chronic pulmonary aspergillosis (CPA) C. Invasive aspergillosis D. Aspergilloma (fungus ball) E. Aspergillus bronchitis</p>
+<ol><li><b>A 45-year-old man with HIV (CD4 80) on ART presents with 2 weeks of headache and fever. CSF CrAg is positive (titre 1:512). Opening pressure is 30 cm H₂O. He is started on amphotericin B deoxycholate 1 mg/kg/day + flucytosine 100 mg/kg/day. On day 3, he develops worsening headache and confusion. Repeat LP shows opening pressure 40 cm H₂O. The most appropriate next step is:</b></li></ol>
+<p>A. Increase amphotericin B dose to 1.5 mg/kg/day B. Add dexamethasone 10mg IV Q6H C. <b>Therapeutic lumbar puncture (remove 20-30mL CSF) daily until pressure normalises</b> D. Switch to liposomal amphotericin B 5 mg/kg/day E. Add fluconazole 800mg daily</p>
+<ol><li><b>A 30-year-old woman returns from a hiking trip in Arizona. She develops fever, cough, erythema nodosum on shins, and arthralgias. Chest X-ray shows hilar lymphadenopathy. Coccidioides IgM is positive, CF titre 1:8. She is immunocompetent. The most appropriate management is:</b></li></ol>
+<p>A. Fluconazole 400mg daily for 6 months B. Itraconazole 200mg BD for 12 months C. <b>Symptomatic treatment only; primary pulmonary coccidioidomycosis is usually self-limited</b> D. Amphotericin B deoxycholate 0.7 mg/kg/day for 2 weeks E. No treatment needed; she is immune and will not disseminate</p>
+<ol><li><b>A 50-year-old man on haemodialysis for ESRD develops fever and hypotension 2 hours into a dialysis session. Blood culture grows Candida parapsilosis. He has a tunnelled dialysis catheter. TEE shows a 1.5 cm vegetation on the catheter tip. The most appropriate management is:</b></li></ol>
+<p>A. Remove catheter; start fluconazole 400mg daily for 14 days post-negative cultures B. <b>Remove catheter; start an echinocandin (caspofungin/micafungin/anidulafungin) for 14 days post-negative cultures</b> C. Retain catheter; start fluconazole 400mg daily for 28 days D. Remove catheter; start liposomal amphotericin B 3 mg/kg/day for 14 days E. Retain catheter; start caspofungin 70mg load then 50mg daily for 28 days</p>
+<ol><li><b>An 80-year-old nursing home resident with advanced dementia develops fever and a painful, erythematous rash in the groin and axillae with satellite lesions. KOH prep of skin scraping shows budding yeasts and pseudohyphae. The most appropriate treatment is:</b></li></ol>
+<p>A. Oral fluconazole 150mg single dose B. Topical clotrimazole 1% cream BD for 2 weeks C. Oral terbinafine 250mg daily for 2 weeks D. Topical nystatin powder TDS for 2 weeks E. <b>Topical azole (clotrimazole/miconazole) cream BD for 2 weeks + keep area dry + review diabetes control</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>Fungal cell wall layers (inner → outer)?</b></li></ul>
+<p>A: Chitin → β-1,3-glucan → β-1,6-glucan → Mannoproteins</p>
+<ul><li>Q: <b>Ergosterol pathway drug targets?</b></li></ul>
+<p>A: Squalene epoxidase (Terbinafine) → 14α-demethylase CYP51 (Azoles) → Ergosterol binding (Polyenes); Echinocandins = β-1,3-glucan synthase (Fks1) — separate pathway</p>
+<ul><li>Q: <b>Morphology: Yeast vs Mould vs Dimorphic?</b></li></ul>
+<p>A: Yeast = budding unicellular; Mould = hyphae (septate/non-septate); Dimorphic = mould at 25°C, yeast at 37°C</p>
+<ul><li>Q: <b>Aspergillus vs Mucor histology?</b></li></ul>
+<p>A: Aspergillus = septate, acute-angle (45°) branching; Mucor = non-septate (coenocytic), 90° branching, broader</p>
+<ul><li>Q: <b>Candida resistance patterns?</b></li></ul>
+<p>A: C. krusei = fluco R (intrinsic); C. glabrata = azole dose-dep/susceptible-dose dependent; C. parapsilosis = echinocandin MIC higher; C. auris = MDR/pan-R</p>
+<ul><li>Q: <b>Galactomannan vs β-D-glucan vs CrAg?</b></li></ul>
+<p>A: GM = Aspergillus (serum/BAL); BDG = pan-fungal (NEG in Mucor/Crypto/Blasto); CrAg = Crypto (serum/CSF/blood)</p>
+<ul><li>Q: <b>Dimorphic fungi 6 + areas + yeast forms?</b></li></ul>
+<p>A: HIS (Ohio, macrophage), BLAST (Great Lakes, broad-base), COCCI (SW, spherule), PARA (LatAm, pilot), TALAR (SE Asia, fission), SPORO (worldwide, cigar)</p>
+<ul><li>Q: <b>PJP prophylaxis CD4?</b></li></ul>
+<p>A: &lt;200 cells/µL OR oropharyngeal candidiasis OR prior PJP (HIV); Non-HIV: steroids &gt;20mg pred &gt;4wks, transplant, biologics</p>
+<ul><li>Q: <b>Cryptococcal meningitis induction?</b></li></ul>
+<p>A: AmB deoxycholate 0.7-1 + 5FC 100 ×2wks → Fluco 400-800 ×8wks → Fluco 200 maint until CD4&gt;100×3mo</p>
+<ul><li>Q: <b>Mucormycosis Rx?</b></li></ul>
+<p>A: Liposomal AmB 10 mg/kg + URGENT surgical debridement</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — Echinocandins inhibit <b>β-1,3-glucan synthase (Fks1 subunit)</b> → block β-1,3-glucan synthesis. Chitin (A) = nikkomycin target. Ergosterol (E) = azoles/polyenes.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Rhizopus (Mucorales)</b> = classic rhino-orbital-cerebral mucormycosis in DKA. Histology: <b>broad, non-septate, 90° branching</b>. Aspergillus (A) = septate, 45°. Fusarium/Scedosporium (C/D) = septate, hyaline moulds.</li></ol>
+<ol><li><b>Correct: C</b> — <b>BDG elevated in PJP</b> (high sensitivity, used for screening). <b>False negative in Mucorales</b> (glucan masked) and <b>Cryptococcus</b> (capsule). Not specific for Aspergillus (D). False positives with IVIG, dialysis, surgery (E).</li></ol>
+<ol><li><b>Correct: B</b> — <b>IDSA Guidelines</b>: Induction = <b>AmB deoxycholate 0.7-1 mg/kg + Flucytosine 100 mg/kg × 2 weeks</b> (preferred). Liposomal AmB 3-5 mg/kg alternative if renal toxicity. Fluconazole alone (A) inferior. AmB alone (D) inferior. Voriconazole (E) not 1st line.</li></ol>
+<ol><li><b>Correct: C</b> — <b>Histoplasma capsulatum</b>: Endemic Ohio/Mississippi valleys; <b>small intracellular yeasts (2-4 µm) in macrophages</b>. Blastomyces (A) = large broad-based budding. Coccidioides (B) = spherules. Paracoccidioides (D) = pilot wheel. Sporothrix (E) = cigar-shaped.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Voriconazole</b> = 1st line for invasive aspergillosis (IA). Liposomal AmB (A) = alternative. Echinocandins (C) = salvage/combination only. Fluconazole (D) = NO MOULD ACTIVITY. Posaconazole (E) = prophylaxis/salvage.</li></ol>
+<ol><li><b>Correct: D</b> — <b>C. krusei</b> = intrinsic fluconazole resistance (ERG3 mutation → altered sterol pathway). C. glabrata (B) = dose-dependent susceptibility (SDD). C. parapsilosis (C) = higher echinocandin MICs.</li></ol>
+<ol><li><b>Correct: D</b> — <b>Paracoccidioides</b> = "pilot's wheel" / "Mickey Mouse" yeast (multiple budding). Endemic Latin America. Chronic mucocutaneous ulcers.</li></ol>
+<ol><li><b>Correct: D</b> — <b>Terbinafine</b> = allylamine → inhibits <b>squalene epoxidase</b>. Fluconazole (A) = CYP51. AmB (B) = binds ergosterol. Caspofungin (C) = β-1,3-glucan synthase. Flucytosine (E) = 5-FC → 5-FU → inhibits thymidylate synthetase &amp; RNA/DNA synthesis.</li></ol>
+<ol><li><b>Correct: B</b> — <b>PJP Prophylaxis</b>: HIV CD4&lt;200 (B), prior PJP, oropharyngeal candidiasis. CD4 250 on ART with VL suppressed (A) = NO prophylaxis needed. CD4 300 with prior PJP (C) = prophylaxis indicated BUT CD4&lt;200 is the main criterion; prior PJP is independent indication but not in options. CD4 400 on ART (D) = No. CD4 500 with thrush (E) = thrush is indication BUT CD4&lt;200 is the classic; however thrush alone is also indication. BUT B (CD4 150 not on ART) is the classic clear indication.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — <b>Mucormycosis</b>: <b>Liposomal AmB 10 mg/kg</b> (high dose) + <b>URGENT surgical debridement</b> (within hours). Voriconazole (A) NO activity vs Mucorales. Isavuconazole (C) = step-down/salvage, not 1st line. Caspofungin (D) NO activity. Fluconazole (E) NO activity.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Blastomyces</b>: Great Lakes/Mississippi-Ohio valleys; <b>broad-based budding yeast</b>; cutaneous nodules with suppurative granulomas. Histoplasma (A) = small intracellular. Coccidioides (C) = spherules, erythema nodosum (desert rheumatism). Sporothrix (D) = lymphocutaneous. Crypto (E) = meningitis.</li></ol>
+<ol><li><b>Correct: A</b> — <b>PJP Treatment</b>: <b>TMP-SMX 15-20 mg/kg/day (TMP) × 21 days</b> 1st line. <b>Adjunct steroids</b> if PaO₂&lt;70 or A-a gradient &gt;35 (this patient SpO₂ 88% → likely hypoxemic). Pentamidine (B) = 2nd line (more toxic). Atovaquone (C) = mild-mod only. Dapsone+TMP (D) = alternative. Primaquine+clindamycin (E) = alternative.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Voriconazole toxicity</b>: Visual hallucinations + hepatotoxicity at trough 6.5 (&gt;5.5). <b>Isavuconazole</b> = alternative for IA: no TDM needed, less hepatotoxicity, no visual effects, once daily, better renal profile. Switch recommended. L-AmB (C) = more nephrotoxic. Caspofungin add-on (D) = not for toxicity. Dose reduction (E) = subtherapeutic.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Histoplasma</b>: Mississippi/Ohio valleys; <b>small intracellular yeast in macrophages</b>; disseminated in HIV CD4&lt;150. Blastomyces (A) = broad-based budding, cutaneous. Coccidioides (C) = spherules, SW USA. Talaromyces (D) = SE Asia, fission yeast. Sporothrix (E) = cigar yeast, lymphocutaneous.</li></ol>
+<ol><li><b>Correct: B</b> — <b>CPA (Chronic Pulmonary Aspergillosis)</b>: Cavitary lesion &gt;3 months, Aspergillus culture+, <b>IgG precipitins+</b>, <b>Total IgE mildly elevated</b> (&lt;1000), NO asthma/allergy/bronchiectasis (excludes ABPA). Aspergilloma (D) = fungus ball in pre-existing cavity, mobile on imaging. IA (C) = immunocompromised, angioinvasion.</li></ol>
+<ol><li><b>Correct: C</b> — <b>Cryptococcal meningitis + raised ICP</b>: <b>Therapeutic LP (remove 20-30mL) daily</b> until pressure normalises. <b>Steroids CONTRAINDICATED</b> (worsens outcome). Higher AmB (A) not for ICP. L-AmB (D) not for ICP. Fluconazole (E) consolidation not induction.</li></ol>
+<ol><li><b>Correct: C</b> — <b>Primary pulmonary coccidioidomycosis in immunocompetent</b>: <b>Self-limited (95%)</b>; symptomatic treatment only. Antifungals if: disseminated, meningitis, immunosuppressed, chronic pulmonary, severe symptoms &gt;2 months, CF titre &gt;1:16, comorbidities. Fluconazole/itraconazole (A/B) for treatment indications only.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Candida parapsilosis</b> = biofilm on prosthetics; <b>echinocandin 1st line</b> (higher echinocandin MICs but still preferred over azoles for device-related candidemia). <b>Catheter removal essential</b>. Fluconazole (A) = alternative if susceptible but echinocandin preferred. Retain catheter (C/E) = inadequate source control. L-AmB (D) = alternative if echinocandin-resistant.</li></ol>
+<ol><li><b>Correct: E</b> — <b>Candidal intertrigo</b>: <b>Topical azole cream BD 2 weeks + keep dry + address predisposing factors (diabetes, occlusion)</b>. Oral fluconazole (A) = extensive/severe/immunocompromised. Terbinafine (C) = dermatophytes/onychomycosis. Nystatin (D) = less effective than azoles for Candida.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Fungal Structure, Classification &amp; Pathogenesis</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Fungi = eukaryotes with chitin/glucan/mannoprotein wall + ergosterol membrane. Classification by morphology (yeast/mould/dimorphic) guides clinical suspicion. Virulence = thermotolerance + melanin + capsule + adhesins/enzymes. Host defence = neutrophils (ROS/NETs), Th1/Th17, Dectin-1. Candida (bloodstream), Crypto (meningitis), Aspergillus (pulmonary/sinus), Mucorales (DKA/sinus/brain), Dimorphics (endemic), PJP (HIV/immunosuppressed). Diagnostics: microscopy (GMS/PAS), culture, antigens (GM, BDG, CrAg, Histo Ag), PCR. Antifungals: Azoles (CYP51), Polyenes (ergosterol binding), Echinocandins (β-glucan synthase), Allylamines (squalene epoxidase). <b>Exam focus:</b> Yeast/mould/dimorphic distinction, ergosterol pathway, Candida species resistance, Aspergillus vs Mucor histology, GM vs BDG vs CrAg, Dimorphic endemic areas/yeast forms, PJP prophylaxis/treatment, Cryptococcal meningitis management. <b>Clinical relevance:</b> Empiric voriconazole IA; Liposomal AmB 10mg/kg + surgery mucormycosis; Echinocandin 1st line candidemia; CrAg screen HIV CD4&lt;100; TMP-SMX PJP prophylaxis CD4&lt;200.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fungal Structure Classification Pathogenesis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

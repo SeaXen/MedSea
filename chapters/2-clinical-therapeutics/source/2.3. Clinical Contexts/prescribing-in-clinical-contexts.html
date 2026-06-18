@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prescribing In Clinical Contexts — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.3. CLINICAL CONTEXTS</span>
+      <div class="h1">Prescribing In Clinical Contexts</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Scope</span>
+  </div>
+  <div class="sec-body">
+<p>Context-specific prescribing: Pain management, Antimicrobial stewardship, Palliative care, Perioperative medication management.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Sub-Topics (Topic-Groups)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">[[Clinical Contexts/Pain management|Pain Management Prescribing]]</div>
+<ul><li>[[Clinical Contexts/WHO analgesic ladder|WHO Analgesic Ladder]] (Step 1-3 + Adjuvants)</li><li>[[Clinical Contexts/Neuropathic pain|Neuropathic Pain Agents]] — Gabapentinoids, TCAs, SNRIs, Topical</li><li>[[Clinical Contexts/Opioid prescribing|Opioid Prescribing Safety]] — Equianalgesic conversion, Rotation, STOPP, CDC/NICE guidelines</li></ul>
+<div class="sub-h">[[Clinical Contexts/Antimicrobial stewardship|Antimicrobial Stewardship Prescribing]]</div>
+<ul><li>[[Clinical Contexts/Empiric vs directed|Empiric vs Directed Therapy]] — Local epidemiology, Severity</li><li>[[Clinical Contexts/Duration stewardship|Duration of Therapy Stewardship]] — Short-course evidence, Stop rules</li><li>[[Clinical Contexts/Prophylaxis|Surgical &amp; Medical Prophylaxis]] — Timing, Duration, Agent selection</li></ul>
+<div class="sub-h">[[Clinical Contexts/Palliative care|Palliative Care Prescribing]]</div>
+<ul><li>[[Clinical Contexts/Symptom control|Symptom Control]] — Nausea, Dyspnoea, Secretions, Pain, Agitation</li><li>[[Clinical Contexts/Syringe drivers|Syringe Driver Compatibility]] — Drug combinations, Diluent, Stability</li></ul>
+<div class="sub-h">[[Clinical Contexts/Perioperative|Perioperative Medication Management]]</div>
+<ul><li>[[Clinical Contexts/Preoperative holding|Preoperative Drug Holding]] — ACEi/ARB, Metformin, Anticoagulants, Steroids, SGLT2i</li><li>[[Clinical Contexts/Postoperative resumption|Postoperative Resumption]] — Timing, Restart criteria</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">WHO Analgesic Ladder (1986, Updated)</div>
+<table class="ctable"><tr><th>Step</th><th>Pain Level</th><th>Drugs</th><th>Examples</th></tr><tr><td>------</td><td>------------</td><td>-------</td><td>----------</td></tr><tr><td>**Step 1**</td><td>Mild (1-3/10)</td><td>**Non-opioid ± Adjuvant**</td><td>Paracetamol 1g QDS, NSAIDs (Ibuprofen 400mg TDS, Naproxen 250-500mg BD)</td></tr><tr><td>**Step 2**</td><td>Moderate (4-6/10)</td><td>**Weak opioid ± Non-opioid ± Adjuvant**</td><td>Codeine 30-60mg QDS, Tramadol 50-100mg QDS, Dihydrocodeine 30mg QDS</td></tr><tr><td>**Step 3**</td><td>Severe (7-10/10)</td><td>**Strong opioid ± Non-opioid ± Adjuvant**</td><td>**Morphine** (PO 10-20mg 4hly, SC 5-10mg 4hly), Oxycodone, Fentanyl, Alfentanil, Hydromorphone</td></tr></table>
+<p><b>Adjuvants (Any Step):</b></p>
+<ul><li><b>Neuropathic:</b> Gabapentin, Pregabalin, Amitriptyline/Nortriptyline, Duloxetine, Carbamazepine</li><li><b>Bone pain:</b> Bisphosphonates (Zoledronic acid), Denosumab, Radiotherapy</li><li><b>Muscle spasm:</b> Baclofen, Tizanidine, Diazepam</li><li><b>Corticosteroids:</b> Dexamethasone (nerve compression, raised ICP, bone pain)</li></ul>
+<div class="sub-h">Opioid Equianalgesic Conversion (Approximate — Individualise!)</div>
+<table class="ctable"><tr><th>Drug</th><th>PO Dose (mg)</th><th>SC/IV Dose (mg)</th><th>Relative Potency</th></tr><tr><td>------</td><td>--------------</td><td>-----------------</td><td>------------------</td></tr><tr><td>**Morphine**</td><td>30</td><td>10</td><td>1 (Reference)</td></tr><tr><td>**Oxycodone**</td><td>20</td><td>10</td><td>1.5-2x Morphine PO</td></tr><tr><td>**Hydromorphone**</td><td>7.5</td><td>1.5</td><td>4-5x Morphine PO</td></tr><tr><td>**Fentanyl**</td><td>—</td><td>0.1 (100µg)</td><td>100x Morphine IV</td></tr><tr><td>**Alfentanil**</td><td>—</td><td>0.5-1mg</td><td>10-20x Morphine IV</td></tr><tr><td>**Tramadol**</td><td>300</td><td>100</td><td>0.1x Morphine PO</td></tr><tr><td>**Codeine**</td><td>200</td><td>—</td><td>0.15x Morphine PO</td></tr><tr><td>**Buprenorphine (Patch)**</td><td>20µg/h ≈ 60mg Morphine/24h</td><td>—</td><td>Transdermal</td></tr></table>
+<p><b>Pearls:</b> Reduce calculated dose by <b>25-50% on rotation</b> (incomplete cross-tolerance); Renal impairment → Avoid morphine (M6G accumulation) → Use <b>Oxycodone, Fentanyl, Alfentanil, Buprenorphine</b>; <b>Methadone</b> complex conversion — Specialist only.</p>
+<div class="sub-h">Neuropathic Pain — NICE CG173 / SIGN 136 Algorithm</div>
+<table class="ctable"><tr><th>Line</th><th>Drug</th><th>Dose Range</th><th>Key Points</th></tr><tr><td>------</td><td>------</td><td>------------</td><td>------------</td></tr><tr><td>**1st**</td><td>**Gabapentin** OR **Pregabalin** OR **Amitriptyline** OR **Duloxetine**</td><td>Gabapentin 300-3600mg/day; Pregabalin 150-600mg/day; Amitriptyline 10-75mg nocte; Duloxetine 60-120mg/day</td><td>Titrate slowly; Renal adjust gabapentin/pregabalin; Amitriptyline caution elderly/cardiac</td></tr><tr><td>**2nd**</td><td>Switch to alternative 1st line OR Combine</td><td>—</td><td>Combination evidence limited</td></tr><tr><td>**3rd**</td><td>**Tramadol** (short-term) OR **Specialist referral**</td><td>Tramadol max 400mg/day</td><td>Avoid long-term; Consider spinal/interventional</td></tr><tr><td>**Topical**</td><td>**Lidocaine 5% plaster** (PHN) OR **Capsaicin 0.075%/8%**</td><td>PLasters 12h on/12h off</td><td>Localised neuropathic pain</td></tr></table>
+<div class="sub-h">Antimicrobial Stewardship — Core Principles</div>
+<table class="ctable"><tr><th>Principle</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Start Smart**</td><td>Empiric therapy per local guidelines; Cultures BEFORE antibiotics; Document indication, duration, review date</td></tr><tr><td>**Focus**</td><td>Review at 48-72h: De-escalate (narrow), Switch IV→PO, Stop if culture negative / non-infectious</td></tr><tr><td>**Shortest Effective Duration**</td><td>CAP: 5d; UTI: 3d (women), 7d (men/complicated); SSTI: 5d; Intra-abdominal: 4d post-source control; Bacteremia (uncomplicated): 7d</td></tr><tr><td>**IV to PO Switch**</td><td>Clinical improvement, Oral absorption intact, Suitable PO agent available — **Usually 48-72h**</td></tr></table>
+<div class="sub-h">Surgical Antibiotic Prophylaxis</div>
+<table class="ctable"><tr><th>Surgery Type</th><th>Agent</th><th>Timing</th><th>Duration</th></tr><tr><td>--------------</td><td>-------</td><td>--------</td><td>----------</td></tr><tr><td>**Clean (Cardiac, Ortho, Vascular, Neuro)**</td><td>Cefuroxime 1.5g IV (or Cefazolin)</td><td>**0-60 min before incision** (Fluoroquinolones 60-120 min)</td><td>**Single dose** (Redose if >4h or blood loss >1.5L)</td></tr><tr><td>**Clean-contaminated (GI, GU, OBGYN, H&N)**</td><td>Cefuroxime + Metronidazole (or Co-amoxiclav)</td><td>0-60 min before incision</td><td>Single dose (Extend 24h if drain/contamination)</td></tr><tr><td>**Contaminated/Dirty**</td><td>Therapeutic antibiotics (not prophylaxis)</td><td>ASAP</td><td>Full therapeutic course</td></tr></table>
+<div class="sub-h">Palliative Symptom Control — Quick Prescribing</div>
+<table class="ctable"><tr><th>Symptom</th><th>1st Line</th><th>2nd Line / Alternatives</th><th>Syringe Driver (24h)</th></tr><tr><td>---------</td><td>----------</td><td>-------------------------</td><td>----------------------</td></tr><tr><td>**Pain**</td><td>Morphine PO/SC</td><td>Oxycodone, Fentanyl, Alfentanil</td><td>Morphine 10-30mg/24h (titrate)</td></tr><tr><td>**Nausea/Vomiting**</td><td>**Haloperidol** 1.5-5mg SC/PO (Dopaminergic)</td><td>Levomepromazine 6.25-25mg SC (Broad), Cyclizine 50mg SC (Vestibular), Ondansetron 4-8mg (5-HT3)</td><td>Haloperidol 5-10mg/24h, Levomepromazine 12.5-25mg/24h</td></tr><tr><td>**Dyspnoea**</td><td>**Morphine** 2.5-5mg PO/SC (Low dose)</td><td>Oxycodone, Fentanyl; Benzodiazepine (Anxiety component)</td><td>Morphine 5-10mg/24h + Midazolam 5-10mg/24h</td></tr><tr><td>**Respiratory Secretions**</td><td>**Glycopyrronium** 0.2-0.4mg SC (Preferred, less CNS)</td><td>Hyoscine butylbromide 20mg SC, Hyoscine hydrobromide 0.4mg SC (Central)</td><td>Glycopyrronium 0.6-1.2mg/24h</td></tr><tr><td>**Agitation/Delirium**</td><td>**Haloperidol** 0.5-5mg SC/PO (1st line)</td><td>Levomepromazine 6.25-25mg SC, Midazolam 2.5-10mg SC (Terminal agitation)</td><td>Haloperidol 5-10mg/24h, Midazolam 10-30mg/24h</td></tr></table>
+<div class="sub-h">Syringe Driver Compatibility (Common Safe Combinations — Water for Injection diluent)</div>
+<table class="ctable"><tr><th>Compatible Combination</th><th>Notes</th></tr><tr><td>------------------------</td><td>-------</td></tr><tr><td>**Morphine + Haloperidol**</td><td>Most common; Stable 24h</td></tr><tr><td>**Morphine + Haloperidol + Midazolam**</td><td>Stable; Midazolam may precipitate at high conc >5mg/mL</td></tr><tr><td>**Morphine + Hyoscine butylbromide**</td><td>Stable</td></tr><tr><td>**Oxycodone + Haloperidol + Midazolam**</td><td>Stable</td></tr><tr><td>**Alfentanil + Midazolam + Haloperidol**</td><td>Stable</td></tr><tr><td>**AVOID**</td><td>**Cyclizine** (precipitates with opioids, hyoscines); **Dexamethasone** (precipitates); **Furosemide** (incompatible); **Metoclopramide** (incompatible with many)</td></tr></table>
+<div class="sub-h">Perioperative Drug Holding/Resumption</div>
+<table class="ctable"><tr><th>Drug Class</th><th>Preoperative Holding</th><th>Postoperative Resumption</th></tr><tr><td>------------</td><td>----------------------</td><td>--------------------------</td></tr><tr><td>**ACEi / ARB**</td><td>**Omit morning of surgery** (↑ intraoperative hypotension)</td><td>Restart when euvolaemic, stable renal function, not on nephrotoxins (usually POD 1-2)</td></tr><tr><td>**Metformin**</td><td>**Omit day of surgery** (↑ lactic acidosis risk if AKI)</td><td>Restart when eating/drinking, renal function normal (eGFR ≥60) — usually POD 1-2</td></tr><tr><td>**SGLT2 Inhibitors** (Empagliflozin, Dapagliflozin)</td><td>**Stop 3 days before** (↑ euglycaemic DKA risk)</td><td>Restart when eating/drinking normally, ketones negative — usually POD 2-3</td></tr><tr><td>**Warfarin**</td><td>**Stop 5 days pre-op**; Bridge with LMWH if high thrombotic risk (Mechanical mitral, AF CHA₂DS₂-VASc≥7, VTE<3mo)</td><td>Restart warfarin POD 1 (if haemostasis secure); Bridge with LMWH until INR therapeutic</td></tr><tr><td>**DOACs**</td><td>**CrCl >50: Omit 24h**; **CrCl 30-50: Omit 48h**; **CrCl 15-30: Omit 72h** (No bridging routinely)</td><td>Restart 24h post-op (low bleed risk); 48-72h (high bleed risk); No bridging</td></tr><tr><td>**Aspirin / Clopidogrel**</td><td>**Aspirin: Continue** (most surgery); **Clopidogrel: Stop 5-7d** if high bleed risk (Neuro, Ocular, Cardiac)</td><td>Aspirin: Continue; Clopidogrel: Restart 24h post-op if haemostasis secure</td></tr><tr><td>**Corticosteroids** (≥10mg Pred/day >3wk)</td><td>**Stress-dose hydrocortisone** 50-100mg IV q8h peri-op (If HPA suppression suspected)</td><td>Resume usual dose; Taper stress-dose over 24-48h</td></tr><tr><td>**Immunosuppressants** (Tacrolimus, Ciclosporin, MMF)</td><td>**Continue** (Transplant patients — avoid rejection)</td><td>Continue; Monitor levels</td></tr><tr><td>**DOACs (Mechanical Valve)**</td><td>**CONTRAINDICATED** — Must use Warfarin</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Chapter</b>: [[Davidson Chapter 2 - Clinical Therapeutics Hierarchy|Chapter 2 Hierarchy]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Template</b>: [[../Templates/Clinical Therapeutics and Good Prescribing Topic Template|Topic Template]]</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Tags</span>
+  </div>
+  <div class="sec-body">
+<p>#medicine #clinical-therapeutics #davidson #hub #pain-management #opioids #neuropathic-pain #antimicrobial-stewardship #palliative-care #perioperative #syringe-driver #fcps #mrcp</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Prescribing in clinical contexts is a <b>core FCPS/MRCP skill</b>. Master the <b>WHO analgesic ladder</b>, <b>opioid equianalgesic conversion</b>, <b>neuropathic pain algorithm (NICE CG173)</b>, <b>antimicrobial stewardship</b> (Start Smart → Focus → IV→PO → Shortest duration), <b>palliative symptom control</b> (morphine/haloperidol/glycopyrronium), <b>syringe driver compatibility</b>, and <b>perioperative drug holding/resumption algorithms</b>.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>WHO analgesic ladder Step 3 — drug of choice for severe cancer pain?</b></li></ol>
+<p>A. Codeine B. Tramadol C. <b>Morphine (oral/SC)</b> D. Paracetamol + NSAID</p>
+<ol><li><b>Opioid equianalgesic conversion — oral morphine 30mg = oral oxycodone?</b></li></ol>
+<p>A. 10mg B. <b>20mg</b> C. 30mg D. 40mg</p>
+<ol><li><b>Neuropathic pain — NICE first-line agents?</b></li></ol>
+<p>A. NSAIDs B. <b>Gabapentin, Pregabalin, Amitriptyline, Duloxetine</b> C. Weak opioids D. Paracetamol + Codeine</p>
+<ol><li><b>Antimicrobial stewardship — "Start Smart" principle?</b></li></ol>
+<p>A. Start antibiotics immediately without cultures B. <b>Empiric therapy per local guidelines; CULTURES BEFORE ABX; Document indication, duration, review date</b> C. Broad-spectrum always D. Wait for culture results before starting</p>
+<ol><li><b>IV to PO switch — criteria for switching?</b></li></ol>
+<p>A. Only when patient demands C. After 14 days C. <b>Clinical improvement, Oral absorption intact, Suitable PO agent available — Usually 48-72h</b> D. Only if culture negative</p>
+<ol><li><b>Surgical antibiotic prophylaxis — clean surgery agent and timing?</b></li></ol>
+<p>A. Vancomycin 1h before B. <b>Cefuroxime 1.5g IV 0-60 min before incision; Single dose</b> C. Meropenem 1h before D. Gentamicin 30 min before</p>
+<ol><li><b>Palliative care — first-line antiemetic for chemical cause (e.g., opioids)?</b></li></ol>
+<p>A. Ondansetron B. <b>Haloperidol 1.5-5mg SC/PO (Dopaminergic)</b> C. Cyclizine D. Dexamethasone</p>
+<ol><li><b>Syringe driver — incompatible with cyclizine?</b></li></ol>
+<p>A. Morphine + Haloperidol B. Morphine + Midazolam C. <b>Cyclizine (precipitates with opioids, hyoscines)</b> D. Morphine + Haloperidol + Midazolam</p>
+<ol><li><b>Perioperative — ACEi/ARB holding before surgery?</b></li></ol>
+<p>A. Continue unchanged B. Stop 7 days before C. <b>Omit morning of surgery (↑ intraoperative hypotension); Restart when euvolaemic</b> D. Stop 24h before</p>
+<ol><li><b>DOAC perioperative — rivaroxaban 20mg OD (CrCl 50) holding before surgery?</b></li></ol>
+<p>A. Omit 24h B. <b>Omit 24h (CrCl &gt;50); 48h (CrCl 30-50); 72h (CrCl 15-30)</b> C. Continue unchanged D. Stop 7 days before</p>
+<ol><li><b>SGLT2 inhibitor perioperative — when to stop?</b></li></ol>
+<p>A. Day of surgery B. <b>Stop 3 days before surgery (↑ euglycaemic DKA risk)</b> C. 1 week before D. Do not stop</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>65M on morphine sulphate 60mg BD for cancer pain. Needs conversion to transdermal fentanyl. Equivalent dose?</b></li></ol>
+<p>A. 12µg/h B. <b>25µg/h (60mg oral morphine/24h ≈ 25µg/h fentanyl patch)</b> C. 50µg/h D. 75µg/h <i>Answer: B</i></p>
+<ol><li><b>Patient on morphine 60mg/24h SC via syringe driver needs conversion to oxycodone SC. Dose?</b></li></ol>
+<p>A. 30mg/24h B. <b>40mg/24h (Oxycodone 1.5-2x morphine PO; SC ≈ 1.5x)</b> C. 60mg/24h D. 90mg/24h <i>Answer: B</i></p>
+<ol><li><b>Patient on morphine SC for cancer pain develops neuropathic pain. First-line adjuvant?</b></li></ol>
+<p>A. Ibuprofen B. <b>Gabapentin OR Pregabalin OR Amitriptyline OR Duloxetine (NICE CG173)</b> C. Codeine D. Paracetamol <i>Answer: B</i></p>
+<ol><li><b>Surgical prophylaxis — clean-contaminated GI surgery?</b></li></ol>
+<p>A. Vancomycin single dose B. <b>Cefuroxime 1.5g + Metronidazole (or Co-amoxiclav) 0-60 min before incision; Single dose</b> C. Meropenem D. Gentamicin + Metronidazole <i>Answer: B</i></p>
+<ol><li><b>Syringe driver compatibility — safe combination?</b></li></ol>
+<p>A. Morphine + Cyclizine B. Morphine + Dexamethasone C. <b>Morphine + Haloperidol + Midazolam (stable)</b> D. Morphine + Furosemide <i>Answer: C</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-C, 2-B, 3-B, 4-B, 5-C, 6-B, 7-C, 8-C, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>WHO analgesic ladder — steps and drugs?</td><td>**Step 1 (Mild):** Paracetamol ± NSAID. **Step 2 (Moderate):** Weak opioid (Codeine/Tramadol) ± Step 1. **Step 3 (Severe):** Strong opioid (Morphine/Oxycodone/Fentanyl) ± Step 1. Adjuvants at any step: Gabapentinoids, TCAs, SNRIs for neuropathic; Bisphosphonates/Denosumab for bone; Benzos for spasm; Dexamethasone for nerve compression/ICP.</td></tr><tr><td>2</td><td>Opioid rotation — morphine to oxycodone conversion?</td><td>**Oral morphine 30mg ≈ Oral oxycodone 20mg (1.5x potency). Reduce by 25-50% on rotation due to incomplete cross-tolerance.**</td></tr><tr><td>3</td><td>Neuropathic pain management algorithm?</td><td>**1st line:** Gabapentin/Pregabalin/Amitriptyline/Duloxetine (titrate slowly, renal adjust Gaba/Prega). **2nd line:** Switch or combine. **3rd line:** Tramadol short-term or specialist referral. **Topical:** Lidocaine 5% plaster (PHN), Capsaicin.</td></tr><tr><td>4</td><td>Antimicrobial stewardship — "Start Smart, Focus, Finish Smart"?</td><td>**Start Smart:** Empiric per local guidelines, cultures BEFORE abx, document indication/duration/review. **Focus:** Review at 48-72h → De-escalate, IV→PO, Stop if negative. **Shortest Duration:** CAP 5d, UTI 3d (F)/7d (M), SSTI 5d, IA 4d post-source control, Bacteremia 7d.</td></tr><tr><td>5. IV to PO switch — criteria?</td><td>**Clinical improvement, oral absorption intact, suitable PO agent available. Usually at 48-72h.**</td></tr><tr><td>6</td><td>Syringe driver compatibility — morphine combinations?</td><td>**SAFE:** Morphine+Haloperidol; Morphine+Haloperidol+Midazolam; Morphine+Hyoscine butylbromide; Oxycodone+Haloperidol+Midazolam; Alfentanil+Midazolam+Haloperidol. **AVOID:** Cyclizine (precipitates), Dexamethasone (precipitates), Furosemide (incompatible), Metoclopramide (incompatible).</td></tr><tr><td>7</td><td>Perioperative ACEi/ARB — hold or continue?</td><td>**Omit morning of surgery** (↑ intraoperative hypotension). Restart when euvolaemic, stable renal function, not on nephrotoxins (usually POD 1-2).</td></tr><tr><td>8</td><td>DOAC perioperative — rivaroxaban holding?</td><td>**CrCl >50: omit 24h; CrCl 30-50: omit 48h; CrCl 15-30: omit 72h.** No routine bridging. Restart 24h (low bleed) or 48-72h (high bleed).</td></tr><tr><td>9</td><td>SGLT2 inhibitor peri-op — when to stop?</td><td>**Stop 3 days before surgery** (↑ euglycaemic DKA risk). Restart when eating/drinking normally, ketones negative — usually POD 2-3.</td></tr><tr><td>10</td><td>Warfarin bridging — when to bridge?</td><td>**High thrombotic risk:** Mechanical mitral valve, AF CHA₂DS₂-VASc ≥7, VTE <3mo. Bridge with LMWH during warfarin interruption.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Opioid rotation = direct conversion**</td><td>**NO.** Reduce calculated equianalgesic dose by **25-50%** due to incomplete cross-tolerance.</td></tr><tr><td>**All strong opioids = renal safe**</td><td>**NO.** Morphine → active M6G metabolite accumulates in renal failure → use Oxycodone, Fentanyl, Alfentanil, Buprenorphine.</td></tr><tr><td>**IV to PO switch = always at 48h**</td><td>**Criteria-based, not time-based:** Clinical improvement + oral absorption + suitable PO agent.</td></tr><tr><td>**All antibiotics need IV→PO switch**</td><td>**NO.** Some require full IV course (e.g., endocarditis, meningitis, osteomyelitis, severe sepsis).</td></tr><tr><td>**Syringe driver = any drugs together**</td><td>**NO.** Cyclizine, Dexamethasone, Furosemide, Metoclopramide INCOMPATIBLE with many combinations.</td></tr><tr><td>**ACEi/ARB = stop 48h before all surgery**</td><td>**Only omit morning of surgery** for most; stop 24-48h for high bleed risk surgery.</td></tr><tr><td>**DOACs = bridge like warfarin**</td><td>**NO BRIDGING routinely.** Hold per renal function (CrCl-based). Restart based on bleed risk.</td></tr><tr><td>**SGLT2i = stop day of surgery**</td><td>**Stop 3 DAYS before** (euglycaemic DKA risk persists).</td></tr><tr><td>**All neuropathic pain = gabapentin first**</td><td>**NO.** NICE: Gabapentin, Pregabalin, Amitriptyline, Duloxetine ALL 1st line options.</td></tr><tr><td>**Antibiotics always 7 days**</td><td>**NO.** CAP 5d, UTI 3d (F)/7d (M), SSTI 5d, IA 4d post-source control, Bacteremia 7d.</td></tr></table>
+<div class="callout"><b>Mnemonic: CLINICAL CONTEXTS — PAIN ANTI PALL PERI</b> <b>P</b>ain: <b>WHO Ladder</b> (1=Paracetamol/NSAID, 2=Weak Opioid, 3=Strong Opioid+Adjuvants) <b>A</b>djuvants: <b>G</b>abapentin/<b>P</b>regabalin/<b>A</b>mitriptyline/<b>D</b>uloxetine (Neuropathic); <b>B</b>isphosphonates/<b>D</b>enosumab (Bone); <b>B</b>enzos (Spasm); <b>D</b>ex (Nerve/ICP) <b>I</b>nnervation → <b>O</b>pioid Conversion: <b>M</b>orphine 30mg PO = <b>O</b>xycodone 20mg = <b>F</b>entanyl 100µg IV = <b>H</b>ydromorphone 7.5mg PO <b>N</b>europathic: <b>1</b>st <b>G</b>aba/<b>P</b>rega/<b>A</b>mi/<b>D</b>ulo → <b>2</b>nd Switch/Combine → <b>3</b>rd <b>T</b>ramadol/Specialist <b>T</b>opical: <b>L</b>ido 5% plaster (PHN) / <b>C</b>apsaicin <b>A</b>ntimicrobial Stewardship: <b>S</b>tart Smart (Empiric local, Culture 1st, Document), <b>F</b>ocus (48-72h De-escalate/IV→PO/Stop), <b>S</b>hortest (CAP 5d, UTI 3/7d, SSTI 5d, IA 4d post-control, Bact 7d) <b>P</b>rophylaxis: Clean (Cefuroxime 0-60min), Clean-Contam (Cefuroxime+Metro), Dirty (Therapeutic) <b>P</b>alliative: <b>M</b>orphine (Pain), <b>H</b>aloperidol (Nausea/Delirium), <b>G</b>lycopyrronium (Secretions), <b>M</b>orphine (Dyspnoea), <b>M</b>idazolam (Agitation) <b>S</b>yringe Driver: <b>SAFE</b> Morphine+Haloperidol(+Mida); <b>AVOID</b> Cyclizine, Dex, Furosemide, Metoclopramide <b>P</b>erioperative: <b>A</b>CEi/ARB (Omit AM surgery), <b>M</b>etformin (Omit Day), <b>S</b>GLT2i (Stop 3d pre), <b>W</b>arfarin (Stop 5d, Bridge high risk), <b>D</b>OAC (Hold: CrCl&gt;50=24h, 30-50=48h, 15-30=72h), <b>S</b>teroids (Stress dose if &gt;10mg&gt;3wk)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Prescribing in Clinical Contexts)) Pain Management WHO Ladder: 1=Paracetamol/NSAID, 2=Weak Opioid, 3=Strong Opioid Adjuvants: Neuropathic (Gaba/Prega/Ami/Dulo), Bone (Bisphos/Deno), Spasm (Baclofen), Steroids Opioid Conversion: Morphine 30=Oxycodone 20=Fentanyl 100mcg IV Rotation: Reduce 25-50% (Incomplete cross-tolerance) Renal: Avoid Morphine → Oxycodone/Fentanyl/Alfentanil/Buprenorphine Neuropathic Pain 1st: Gaba/Prega/Ami/Dulo 2nd: Switch/Combine 3rd: Tramadol/Specialist Topical: Lido 5%, Capsaicin Antimicrobial Stewardship Start Smart: Culture 1st, Document, Local Guidelines Focus: 48-72h → De-escalate, IV→PO, Stop Duration: CAP 5d, UTI 3/7d, SSTI 5d, IA 4d, Bact 7d IV→PO: 48-72h, Clinical improvement, PO absorption Palliative Care Pain: Morphine Nausea: Haloperidol (1st), Levomepromazine, Cyclizine, Ondansetron Dyspnoea: Morphine (low dose) Secretions: Glycopyrronium Agitation: Haloperidol, Midazolam Syringe Driver: Morphine+Halo(+Mida) SAFE; AVOID Cyclizine, Dex, Furosemide, Metoclopramide Perioperative ACEi/ARB: Omit AM surgery Metformin: Omit Day of Surgery SGLT2i: Stop 3d Pre-op Warfarin: Stop 5d, Bridge High Risk DOAC: Hold CrCl&gt;50=24h, 30-50=48h, 15-30=72h Steroids: Stress Dose if &gt;10mg&gt;3wk DOAC Mechanical Valve: CONTRAINDICATED </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Pain Management (WHO Ladder, Opioids, Adjuvants)</td><td>4</td><td></td><td></td></tr><tr><td>Neuropathic Pain Algorithm</td><td>3</td><td></td><td></td></tr><tr><td>Antimicrobial Stewardship</td><td>3</td><td></td><td></td></tr><tr><td>Palliative Care & Syringe Driver</td><td>3</td><td></td><td></td></tr><tr><td>Perioperative Management</td><td>3</td><td></td><td></td></tr><tr><td>Opioid Conversion & Rotation</td><td>2</td><td></td><td></td></tr><tr><td>Syringe Driver Compatibility</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the WHO analgesic ladder, opioid conversion, and management of neuropathic pain."</td><td>WHO 3 Steps (1=Para/NSAID, 2=Weak Opioid, 3=Strong Opioid+Adjuvants); Conversion: Morphine 30=Oxy 20=Fent 100mcg IV; Rotation -25-50%; Neuropathic: 1st Gaba/Prega/Ami/Dulo, 2nd Switch/Combine, 3rd Tramdol/Specialist; Adjuvants.</td></tr><tr><td>**Short Note**</td><td>"Antimicrobial stewardship — Start Smart, Focus, Finish Smart."</td><td>Start Smart: Empiric local, Culture 1st, Document. Focus: 48-72h Review → De-escalate, IV→PO, Stop. Finish Smart: Shortest duration (CAP 5d, UTI 3/7d, SSTI 5d, IA 4d, Bact 7d), IV→PO at 48-72h.</td></tr><tr><td>**Viva**</td><td>"Patient on morphine 60mg/24h SC for cancer pain needs conversion to transdermal fentanyl. Dose?"</td><td>**60mg oral morphine/24h ≈ 25µg/h fentanyl patch.** Reduce by 25-50% on rotation. Monitor for respiratory depression.</td></tr><tr><td>**Ward Round**</td><td>"Patient on morphine PCA develops neuropathic pain. Add adjuvant?"</td><td>**Add gabapentin 300mg nocte, titrate to 300-3600mg/day (renal adjust). OR Pregabalin 75mg BD, titrate to 150-600mg/day. OR Amitriptyline 10mg nocte → 75mg. Monitor sedation, renal function.**</td></tr><tr><td>**Last-Night**</td><td>"Pain: WHO 1=Para/NSAID, 2=Weak Opioid, 3=Strong Opioid+Adj. Opioid Conv: M30=O20=F100mcg IV=H7.5=Oxynorm10=Tramadol300. Rotation -25-50%. Renal: Avoid Morph→Oxy/Fent/Alfen/Bupren. Neuropathic: 1st Gaba/Preg/Ami/Dulo, 2nd Switch/Combine, 3rd Tram/Specialist. AntiB: Start Smart (Culture 1st), Focus (48h De-escalate/IV→PO/Stop), Duration (CAP5d, UTI3/7d, SSTI5d, IA4d, Bact7d). Pall: Morph Pain, Halo Nausea, Glyco Secretions, Morph Dyspnoea, Halo/Mida Agitation. Syringe: Morphine+Halo+Mida SAFE; AVOID Cyclizine/Dex/Furo/Metoclop. PeriOp: ACEi/ARB Omit AM, Metformin Omit Day, SGLT2i Stop 3d, Warf Stop 5d Bridge High, DOAC Hold CrCl>50=24h/30-50=48h/15-30=72h, Steroid Stress Dose if >10mg>3wk."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>WHO Analgesic Ladder:</b> Step 1 (Paracetamol±NSAID) → Step 2 (Weak Opioid±Step 1) → Step 3 (Strong Opioid±Step 1). <b>Adjuvants at any step</b>.</li><li><b>Opioid Conversion:</b> Morphine 30mg PO = Oxycodone 20mg PO = Fentanyl 100µg IV = Hydromorphone 7.5mg PO. <b>Rotation: Reduce 25-50%</b> (incomplete cross-tolerance).</li><li><b>Renal Impairment:</b> Avoid morphine (M6G accumulation) → Use <b>Oxycodone, Fentanyl, Alfentanil, Buprenorphine</b>.</li><li><b>Neuropathic Pain (NICE):</b> 1st line <b>Gabapentin/Pregabalin/Amitriptyline/Duloxetine</b>; 2nd line Switch/Combine; 3rd line Tramadol/Specialist; Topical <b>Lidocaine 5% plaster</b> (PHN).</li><li><b>Antimicrobial Stewardship:</b> <b>Start Smart</b> (Culture 1st, empiric local, document), <b>Focus</b> (48-72h: De-escalate, IV→PO, Stop), <b>Shortest Duration</b> (CAP 5d, UTI 3d/7d, SSTI 5d, IA 4d post-control, Bact 7d).</li><li><b>Palliative Care:</b> <b>Pain</b> → Morphine; <b>Nausea</b> → Haloperidol (1st), Levomepromazine, Cyclizine, Ondansetron; <b>Dyspnoea</b> → Morphine low dose; <b>Secretions</b> → Glycopyrronium; <b>Agitation</b> → Haloperidol, Midazolam.</li><li><b>Syringe Driver:</b> <b>SAFE:</b> Morphine+Haloperidol(+Midazolam); <b>AVOID:</b> Cyclizine, Dexamethasone, Furosemide, Metoclopramide.</li><li><b>Perioperative:</b> <b>ACEi/ARB</b> Omit morning of surgery; <b>Metformin</b> Omit day of surgery; <b>SGLT2i</b> Stop 3 days pre-op; <b>Warfarin</b> Stop 5 days, Bridge if high risk; <b>DOAC</b> Hold: CrCl&gt;50: 24h, 30-50: 48h, 15-30: 72h; <b>Steroids</b> Stress-dose hydrocortisone if &gt;10mg pred &gt;3wk.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>WHO analgesic ladder Step 3 — drug of choice for severe cancer pain?</b></li></ol>
+<p>A. Codeine B. Tramadol C. <b>Morphine (oral/SC)</b> D. Paracetamol + NSAID</p>
+<ol><li><b>Opioid equianalgesic conversion — oral morphine 30mg = oral oxycodone?</b></li></ol>
+<p>A. 10mg B. <b>20mg</b> C. 30mg D. 40mg</p>
+<ol><li><b>Neuropathic pain — NICE first-line agents?</b></li></ol>
+<p>A. NSAIDs B. <b>Gabapentin, Pregabalin, Amitriptyline, Duloxetine</b> C. Weak opioids D. Paracetamol + Codeine</p>
+<ol><li><b>Antimicrobial stewardship — "Start Smart" principle?</b></li></ol>
+<p>A. Start antibiotics immediately without cultures B. <b>Empiric therapy per local guidelines; CULTURES BEFORE ABX; Document indication, duration, review date</b> C. Broad-spectrum always D. Wait for culture results before starting</p>
+<ol><li><b>IV to PO switch — criteria for switching?</b></li></ol>
+<p>A. Only when patient demands B. After 14 days C. <b>Clinical improvement, Oral absorption intact, Suitable PO agent available — Usually 48-72h</b> D. Only if culture negative</p>
+<ol><li><b>Surgical antibiotic prophylaxis — clean surgery agent and timing?</b></li></ol>
+<p>A. Vancomycin 1h before B. <b>Cefuroxime 1.5g IV 0-60 min before incision; Single dose</b> C. Meropenem 1h before D. Gentamicin 30 min before</p>
+<ol><li><b>Palliative care — first-line antiemetic for chemical cause (e.g., opioids)?</b></li></ol>
+<p>A. Ondansetron B. <b>Haloperidol 1.5-5mg SC/PO (Dopaminergic)</b> C. Cyclizine D. Dexamethasone</p>
+<ol><li><b>Syringe driver — incompatible with cyclizine?</b></li></ol>
+<p>A. Morphine + Haloperidol B. Morphine + Midazolam C. <b>Cyclizine (precipitates with opioids, hyoscines)</b> D. Morphine + Haloperidol + Midazolam</p>
+<ol><li><b>Perioperative — ACEi/ARB holding before surgery?</b></li></ol>
+<p>A. Continue unchanged B. Stop 7 days before C. <b>Omit morning of surgery (↑ intraoperative hypotension); Restart when euvolaemic</b> D. Stop 24h before</p>
+<ol><li><b>DOAC perioperative — rivaroxaban 20mg OD (CrCl 50) holding before surgery?</b></li></ol>
+<p>A. Omit 24h B. <b>Omit 24h (CrCl &gt;50); 48h (CrCl 30-50); 72h (CrCl 15-30)</b> C. Continue unchanged D. Stop 7 days before</p>
+<ol><li><b>SGLT2 inhibitor perioperative — when to stop?</b></li></ol>
+<p>A. Day of surgery B. <b>Stop 3 days before surgery (↑ euglycaemic DKA risk)</b> C. 1 week before D. Do not stop</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>65M on morphine sulphate 60mg BD for cancer pain. Needs conversion to transdermal fentanyl. Equivalent dose?</b></li></ol>
+<p>A. 12µg/h B. <b>25µg/h (60mg oral morphine/24h ≈ 25µg/h fentanyl patch)</b> C. 50µg/h D. 75µg/h <i>Answer: B</i></p>
+<ol><li><b>Patient on morphine 60mg/24h SC via syringe driver needs conversion to oxycodone SC. Dose?</b></li></ol>
+<p>A. 30mg/24h B. <b>40mg/24h (Oxycodone 1.5-2x morphine PO; SC ≈ 1.5x)</b> C. 60mg/24h D. 90mg/24h <i>Answer: B</i></p>
+<ol><li><b>Patient on morphine SC for cancer pain develops neuropathic pain. First-line adjuvant?</b></li></ol>
+<p>A. Ibuprofen B. <b>Gabapentin OR Pregabalin OR Amitriptyline OR Duloxetine (NICE CG173)</b> C. Codeine D. Paracetamol <i>Answer: B</i></p>
+<ol><li><b>Surgical prophylaxis — clean-contaminated GI surgery?</b></li></ol>
+<p>A. Vancomycin single dose B. <b>Cefuroxime 1.5g + Metronidazole (or Co-amoxiclav) 0-60 min before incision; Single dose</b> C. Meropenem D. Gentamicin + Metronidazole <i>Answer: B</i></p>
+<ol><li><b>Syringe driver compatibility — safe combination?</b></li></ol>
+<p>A. Morphine + Cyclizine B. Morphine + Dexamethasone C. <b>Morphine + Haloperidol + Midazolam (stable)</b> D. Morphine + Furosemide <i>Answer: C</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-C, 2-B, 3-B, 4-B, 5-C, 6-B, 7-C, 8-C, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Principles of Rational Prescribing]] — WHO 6-step, monitoring</li><li>[[ADRs]] — Opioid ADRs, NSAID GI risk</li><li>[[Drug Interactions]] — Opioid + BZD, Macrolide + Statin</li><li>[[Polypharmacy and Deprescribing]] — Opioid deprescribing, PPI with opioids</li><li>[[Prescribing in Special Populations]] — Renal/hepatic/elderly prescribing in contexts</li><li>[[Therapeutic Drug Monitoring]] — TDM in contexts</li><li>[[CYP450 Drug Interactions]] — Interaction effects on context drugs</li><li>[[Medication Safety and Errors]] — Opioid safety, PCA errors</li><li>[[Population &amp; Newborn Screening]] — Neonatal pain, pregnancy prescribing</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Prescribing in Clinical Contexts Hub: COMPLETE with Full Exam Suite (Viva Qs, MCQs, SBAs, Answer Keys, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Prescribing In Clinical Contexts · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

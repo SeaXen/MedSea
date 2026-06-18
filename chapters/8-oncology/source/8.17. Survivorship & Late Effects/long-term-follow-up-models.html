@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Long Term Follow Up Models — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.17. SURVIVORSHIP & LATE EFFECTS</span>
+      <div class="h1">Long Term Follow Up Models</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Compare <b>long-term follow-up models</b> (Shared Care, Nurse-Led, Survivorship Clinics, Risk-Stratified, Digital)</li><li>[ ] Design <b>Survivorship Care Plans (SCP)</b> with all core components</li><li>[ ] Manage <b>paediatric to adult transition</b> using transition clinics and coordinators</li><li>[ ] Apply <b>risk-stratified follow-up</b> based on treatment exposures</li><li>[ ] Implement <b>digital/remote monitoring</b> and <b>self-management support</b></li><li>[ ] Apply <b>guideline-recommended</b> surveillance (NCCN, ASCO, ESMO, COG, ICC)</li><li>[ ] Evaluate <b>quality metrics</b> for follow-up programmes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Follow-Up Care Models</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Comparison of Models</div>
+<table class="ctable"><tr><th>Model</th><th>Structure</th><th>Strengths</th><th>Limitations</th></tr><tr><td>-------</td><td>-----------</td><td>-----------</td><td>-------------</td></tr><tr><td>**Oncologist-Led (Traditional)**</td><td>**Oncology Clinic** — Oncologist Sees All Survivors</td><td>**Expertise, Continuity, Direct Access to Trials**</td><td>**Capacity Constraints**, **Costly**, **Not Sustainable for Growing Population**</td></tr><tr><td>**Shared Care (Oncology + Primary Care)**</td><td>**Formal Agreement** — **Oncologist: High-Risk/Complex**, **GP: Low-Risk/Routine**</td><td>**Capacity, Continuity, Holistic Care, Cost-Effective**</td><td>**Communication Challenges**, **Role Clarity**, **GP Workload**</td></tr><tr><td>**Nurse-Led / Advanced Practice Provider (APP) Clinics**</td><td>**Specialist Nurse/APP** — **Protocol-Driven**, **Oncologist Backup**</td><td>**Cost-Effective, High Patient Satisfaction, Accessible**, **Holistic Focus**</td><td>**Scope Limitations**, **Complex Cases Need Oncologist**</td></tr><tr><td>**Multidisciplinary Survivorship Clinics**</td><td>**Oncologist + Nurse + Psychosocial + Dietitian + Physio + Vocational**</td><td>**Comprehensive**, **One-Stop**, **Integrated Care**</td><td>**Resource-Intensive**, **Coordination Complex**</td></tr><tr><td>**Risk-Stratified**</td><td>**High-Risk: Oncologist**, **Moderate: Nurse/APP**, **Low-Risk: GP/Self-Management**</td><td>**Resource Optimisation**, **Tailored Intensity**</td><td>**Requires Robust Risk Algorithm**, **Dynamic Re-Stratification**</td></tr><tr><td>**Self-Management Support**</td><td>**Patient Activation**, **Digital Tools**, **Care Plans**, **Peer Support**</td><td>**Empowerment**, **Scalable**, **Cost-Effective**</td><td>**Digital Literacy**, **Health Literacy**, **Not for High-Risk**</td></tr><tr><td>**Digital/Remote Monitoring**</td><td>**Telehealth, Apps, Wearables, PRO Collection**</td><td>**Accessibility, Real-Time Data, Convenience**, **Pandemic-Resilient**</td><td>**Digital Divide**, **Clinical Validation**, **Data Security**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Survivorship Care Plan (SCP) — Core Components</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">IOM/ASCO/NCCN Recommended Elements</div>
+<table class="ctable"><tr><th>Component</th><th>Content</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**1. Treatment Summary**</td><td>**Diagnosis, Stage, Date**; **Surgeries (Type, Date, Margins)**; **Chemo (Regimen, Cumulative Doses, Dates)**; **RT (Site, Dose, Fractions, Technique)**; **Targeted/Immunotherapy (Agents, Duration)**; **Transplant (Type, Conditioning, GVHD)**; **Complications/Toxicities (Grade, Management)**</td></tr><tr><td>**2. Risk-Based Surveillance Plan**</td><td>**Site-Specific Recurrence** (Imaging, Tumour Markers, Endoscopy); **Late Effects** (Cardiac, Pulmonary, Endocrine, Renal, Neuro, Bone, Secondary Malignancy); **Psychosocial** (Distress, Fear of Recurrence, Cognitive, Fatigue, Sleep, Sexual, Financial); **Health Promotion** (Vaccinations, Screening, Lifestyle)</td></tr><tr><td>**3. Psychosocial & Vocational Assessment**</td><td>**Distress Screening**, **Fear of Recurrence**, **Cognitive Function**, **Fatigue**, **Sleep**, **Depression/Anxiety**, **Body Image**, **Sexual Function**, **Financial Toxicity**, **Return-to-Work/Study**, **Caregiver Burden**</td></tr><tr><td>**4. Healthy Lifestyle & Prevention**</td><td>**Physical Activity (150min/wk Moderate)**, **Nutrition (Plant-Based, Limit Alcohol/Red Meat)**, **Weight Management**, **Smoking Cessation**, **Alcohol Limitation**, **Sun Protection**, **Vaccinations (Influenza, Pneumococcal, COVID, HPV, Shingles)**, **Primary Cancer Screening (Age-Appropriate)**</td></tr><tr><td>**5. Care Coordination**</td><td>**Named Coordinator/Navigator**, **Primary Care Provider**, **Oncology Contact**, **Emergency Plan**, **Community Resources**, **Support Groups**, **Palliative/Hospice Criteria**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Paediatric to Adult Transition</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Transition Challenges</div>
+<table class="ctable"><tr><th>Domain</th><th>Challenge</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Medical**</td><td>**Loss of Paediatric Expertise**, **Different Surveillance Protocols**, **Loss of Family-Centered Care**</td></tr><tr><td>**Psychosocial**</td><td>**Loss of Long-Term Relationships**, **Autonomy Development**, **Identity Formation**</td></tr><tr><td>**Systemic**</td><td>**Insurance Changes**, **Different Healthcare Systems**, **Loss of Paediatric Support Services**</td></tr><tr><td>**Knowledge Gap**</td><td>**Survivors Often Unaware of Late Risks**, **Treatment History Incomplete**</td></tr></table>
+<div class="sub-h">Transition Models</div>
+<table class="ctable"><tr><th>Model</th><th>Structure</th><th>Key Features</th></tr><tr><td>-------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Joint Transition Clinic**</td><td>**Paediatric + Adult Oncologist Joint Visit**</td><td>**Handover**, **Shared Decision-Making**, **Gradual Transfer**</td></tr><tr><td>**Transition Coordinator**</td><td>**Dedicated Nurse/Navigator**</td><td>**Coordinates Care**, **Education**, **Advocacy**, **Tracks Milestones**</td></tr><tr><td>**Survivorship Care Plan Handover**</td><td>**Standardised SCP**</td><td>**Treatment Summary + Surveillance Plan** — **Portable, Interoperable**</td></tr><tr><td>**Phased Transition**</td><td>**Age 16-18: Preparation** → **18-21: Joint Visits** → **21+: Adult Care**</td><td>**Gradual**, **Age-Appropriate**</td></tr></table>
+<div class="sub-h">COG/Children's Oncology Group Transition Recommendations</div>
+<table class="ctable"><tr><th>Age</th><th>Activity</th></tr><tr><td>-----</td><td>----------</td></tr><tr><td>**12-14**</td><td>**Initiate Transition Discussion**, **Assess Knowledge**, **Begin Self-Management Skills**</td></tr><tr><td>**14-16**</td><td>**Transition Clinic Visits**, **Develop Transition Plan**, **Handheld Record/SCP**</td></tr><tr><td>**16-18**</td><td>**Joint Paediatric/Adult Visits**, **Adult Provider Identified**, **Insurance/Transition Planning**</td></tr><tr><td>**18-21**</td><td>**Transfer to Adult Care**, **First Adult Visit with SCP**, **Ongoing Transition Coordinator Support**</td></tr><tr><td>**21+**</td><td>**Adult Care Established**, **Annual Adult Survivorship Clinic** (If High-Risk)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Risk-Stratified Follow-Up Protocols</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">General Framework</div>
+<table class="ctable"><tr><th>Risk Tier</th><th>Criteria</th><th>Follow-Up</th><th>Provider</th></tr><tr><td>-----------</td><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>**High**</td><td>**Anthracycline ≥300mg/m², Chest RT ≥30Gy, TBI, HSCT, t-MN, Relapse, Genetic Syndrome, Persistent Toxicity**</td><td>**Oncologist-Led**, **q3-6mo Clinic**, **Full Imaging/Biomarker Panel**, **Cardio-Oncology, Endocrine, Fertility, Psychosocial**</td><td>**Oncologist/Multidisciplinary**</td></tr><tr><td>**Moderate**</td><td>**Anthracycline <300mg/m², Limited RT, No HSCT, Resolved Toxicity**</td><td>**Nurse/APP-Led**, **q6-12mo Clinic**, **Targeted Surveillance (Echo, Labs, Psychosocial)**</td><td>**Nurse/APP + Oncologist Backup**</td></tr><tr><td>**Low**</td><td>**Surgery Only, Low-Dose Chemo, No RT, No Persistent Issues, >5-10yr from Treatment**</td><td>**Primary Care / Self-Management**, **Annual GP Review**, **Health Promotion, Screening**</td><td>**GP + Patient Self-Management**</td></tr></table>
+<div class="sub-h">Dynamic Re-Stratification Triggers</div>
+<table class="ctable"><tr><th>Event</th><th>Action</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**New Late Effect Diagnosed**</td><td>**Upstage**</td></tr><tr><td>**Relapse / Second Primary**</td><td>**Upstage to High**</td></tr><tr><td>**Sustained Recovery (5+ years, No Issues)**</td><td>**Consider Down-Stage**</td></tr><tr><td>**New Comorbidity**</td><td>**Reassess Tier**</td></tr><tr><td>**Patient Preference**</td><td>**Shared Decision**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Digital & Remote Follow-Up</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Telehealth Components</div>
+<table class="ctable"><tr><th>Component</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Video Consultations**</td><td>**Routine Follow-Up, Symptom Review, Psychosocial Support**</td></tr><tr><td>**Remote PRO Collection**</td><td>**ePRO (e.g., PROMIS, FACT-G, EORTC QLQ-C30) via App/Portal** — **Real-Time Alerts**</td></tr><tr><td>**Wearables/Sensors**</td><td>**Activity, Heart Rate, Sleep, SpO2** — **Early Deterioration Detection**</td></tr><tr><td>**Remote Monitoring**</td><td>**Vital Signs, Weight, Symptoms (Heart Failure, Lung Toxicity)**</td></tr><tr><td>**Digital Pathways**</td><td>**Structured ePRO + Algorithm → Triage (Green/Amber/Red)**</td></tr></table>
+<div class="sub-h">Evidence &amp; Challenges</div>
+<table class="ctable"><tr><th>Aspect</th><th>Evidence/Status</th></tr><tr><td>--------</td><td>-----------------</td></tr><tr><td>**Patient Satisfaction**</td><td>**High** (Convenience, Reduced Travel)</td></tr><tr><td>**Clinical Outcomes**</td><td>**Non-Inferior for Low/Moderate Risk** (RCTs)</td></tr><tr><td>**Cost-Effectiveness**</td><td>**Mixed** (Setup Costs vs Reduced Visits)</td></tr><tr><td>**Equity**</td><td>**Digital Divide** (Age, Socioeconomic, Rural, Disability)</td></tr><tr><td>**Data Security**</td><td>**GDPR/HIPAA Compliance**, **Encryption**, **Consent**</td></tr><tr><td>**Clinical Validation**</td><td>**Needed for Algorithms/AI Triage**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Self-Management Support</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Core Components</div>
+<table class="ctable"><tr><th>Component</th><th>Intervention</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**Patient Activation**</td><td>**Knowledge, Skills, Confidence** (PAM — Patient Activation Measure)</td></tr><tr><td>**Personalised Care Plan**</td><td>**Co-Created**, **Goal-Setting**, **Action Plans**</td></tr><tr><td>**Symptom Self-Monitoring**</td><td>**Digital Diaries, ePRO, Red Flags**</td></tr><tr><td>**Healthy Behaviour Change**</td><td>**Goal-Setting, Action Planning, Feedback, Motivational Interviewing**</td></tr><tr><td>**Peer Support**</td><td>**Support Groups, Peer Mentors, Online Communities**</td></tr><tr><td>**Digital Tools**</td><td>**Apps (e.g., Untire, My Cancer Coach, Belong, Kaiku), Wearables, Portals**</td></tr></table>
+<div class="sub-h">Evidence-Based Interventions</div>
+<table class="ctable"><tr><th>Intervention</th><th>Evidence</th></tr><tr><td>--------------</td><td>----------</td></tr><tr><td>**CBT-Based Self-Management**</td><td>**Reduces Distress, Improves Self-Efficacy**</td></tr><tr><td>**Exercise Self-Management**</td><td>**Improves Physical Function, Fatigue, QOL**</td></tr><tr><td>**Mindfulness/MBSR Apps**</td><td>**Reduces Distress, Improves Sleep, QOL**</td></tr><tr><td>**Peer Mentoring**</td><td>**Improves Self-Efficacy, Reduces Isolation**</td></tr><tr><td>**Digital Cognitive Training**</td><td>**Improves Cognitive Function (Chemo Brain)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Quality Metrics & Programme Evaluation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Donabedian Framework</div>
+<table class="ctable"><tr><th>Domain</th><th>Metrics</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Structure**</td><td>**Programme Existence**, **Staffing (FTEs, Roles)**, **Facilities, Digital Infrastructure**, **Guideline Adherence Protocols**, **Equity Policies**</td></tr><tr><td>**Process**</td><td>**SCP Completion Rate**, **Surveillance Adherence**, **Distress Screening Rate**, **Vaccination/Health Promotion Uptake**, **Transition Completion Rate**, **Care Plan Accessibility**</td></tr><tr><td>**Outcome**</td><td>**Patient-Reported Outcomes (FACT-G, EORTC QLQ-C30, PRO-CTCAE)**, **Late Effect Detection Rate**, **Recurrence Detection Stage**, **Survival (OS, DFS)**, **Patient Satisfaction (CAHPS, PREMs)**, **Cost-Effectiveness (Cost per QALY)**</td></tr><tr><td>**Equity**</td><td>**Access by Demographics (Age, Ethnicity, SES, Rurality, Disability)**, **Digital Inclusion**</td></tr></table>
+<div class="sub-h">Key Performance Indicators (KPIs)</div>
+<table class="ctable"><tr><th>KPI</th><th>Target</th></tr><tr><td>-----</td><td>--------</td></tr><tr><td>**SCP Completion at End of Treatment**</td><td>**>90%**</td></tr><tr><td>**Surveillance Adherence (High-Risk)**</td><td>**>90%**</td></tr><tr><td>**Distress Screening Rate**</td><td>**>80%**</td></tr><tr><td>**Transition Completion (Paediatric)**</td><td>**>95%**</td></tr><tr><td>**Patient Activation Measure (PAM) Improvement**</td><td>**>10 Points**</td></tr><tr><td>**Patient Satisfaction (Overall)**</td><td>**>85%**</td></tr><tr><td>**Cost per Survivor/Year**</td><td>**Benchmark vs Historical**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Follow-Up Models**</td><td>**Shared Care, Nurse-Led, MDT Clinic, Risk-Stratified, Digital, Self-Management**</td></tr><tr><td>**SCP Core**</td><td>**Treatment Summary, Surveillance Plan, Psychosocial/Vocational, Lifestyle, Coordination**</td></tr><tr><td>**Paediatric Transition**</td><td>**Joint Clinic, Coordinator, SCP Handover, Phased (12-21yr)**</td></tr><tr><td>**Risk Stratification**</td><td>**High (Oncologist), Moderate (Nurse), Low (GP/Self)**</td></tr><tr><td>**Dynamic Re-Stratification**</td><td>**New Late Effect → Upstage; Sustained Recovery → Downstage**</td></tr><tr><td>**Digital/Remote**</td><td>**Telehealth, ePRO, Wearables, Triage Algorithms**</td></tr><tr><td>**Self-Management**</td><td>**Activation, Care Plans, Digital Tools, Peer Support**</td></tr><tr><td>**Quality Metrics**</td><td>**Structure/Process/Outcome**, **PROs, Adherence, Equity, Cost-Effectiveness**</td></tr><tr><td>**Paediatric Transition**</td><td>**Joint Clinics, Coordinator, SCP Handover, Phased 12-21yr**</td></tr><tr><td>**Guidelines**</td><td>**NCCN, ASCO, ESMO, COG, ICC**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Long-term follow-up models — Name 4.**</td><td>**1) Oncologist-Led, 2) Shared Care (Oncology+GP), 3) Nurse-Led, 4) Survivorship Clinic (MDT), 5) Risk-Stratified, 6) Digital/Self-Management**.</td></tr><tr><td>**Survivorship Care Plan — Core 5 Components?**</td><td>**1) Treatment Summary, 2) Surveillance Plan, 3) Psychosocial/Vocational, 4) Healthy Lifestyle, 5) Care Coordination**.</td></tr><tr><td>**Paediatric Transition — Key Elements?**</td><td>**Joint Clinic, Transition Coordinator, SCP Handover, Phased (12-21yr), Adult Provider Identified**.</td></tr><tr><td>**Risk Stratification — High-Risk Criteria?**</td><td>**Anthracycline ≥300mg/m², Chest RT ≥30Gy, TBI, HSCT, t-MN, Relapse, Genetic Syndrome, Persistent Toxicity**.</td></tr><tr><td>**Dynamic Re-Stratification — When to Upstage/Downstage?**</td><td>**Upstage: New Late Effect, Relapse, Second Primary**; **Downstage: Sustained Recovery 5+ Years, No Issues**.</td></tr><tr><td>**Digital Follow-Up — Components, Challenges?**</td><td>**Telehealth, ePRO, Wearables, AI Triage** — **Challenges: Digital Divide, Validation, Security, Equity**.</td></tr><tr><td>**Self-Management — Key Interventions?**</td><td>**CBT-Based, Exercise, Mindfulness Apps, Peer Support, Digital Cognitive Training, Motivational Interviewing**.</td></tr><tr><td>**Quality Metrics — Donabedian Framework?**</td><td>**Structure (Staffing, Protocols), Process (SCP Rate, Screening Rate), Outcome (PROs, Survival, Satisfaction, Cost)**.</td></tr><tr><td>**Paediatric Transition — Optimal Age, Coordinator Role?**</td><td>**Start 12-14, Transfer 18-21**; **Coordinator: Education, Coordination, Advocacy, Milestone Tracking**.</td></tr><tr><td>**Shared Care Model — Key Success Factors?**</td><td>**Clear Protocols, Communication Channels, Role Clarity, GP Training, Oncology Backup**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Shared Care vs Nurse-Led**</td><td>**Shared Care**: Formal Oncology-GP Partnership, Defined Roles; **Nurse-Led**: Nurse/APP Autonomous (Protocol-Driven), Oncology Backup</td></tr><tr><td>**Risk-Stratified vs Traditional**</td><td>**Traditional**: All See Oncologist; **Risk-Stratified**: Intensity Matched to Need (High=Onc, Mod=Nurse, Low=GP/Self)</td></tr><tr><td>**Transition vs Transfer**</td><td>**Transition**: **Process** (Preparation, Education, Gradual); **Transfer**: **Event** (Handover to Adult Provider)</td></tr><tr><td>**Dynamic Re-Stratification vs Static**</td><td>**Static**: Fixed at End of Treatment; **Dynamic**: Continuous Reassessment Based on Events/Recovery</td></tr><tr><td>**Digital vs Telehealth**</td><td>**Telehealth**: Synchronous Video/Phone; **Digital**: Broader (Apps, Wearables, ePRO, AI, Asynchronous)</td></tr><tr><td>**Self-Management vs Compliance**</td><td>**Self-Management**: **Active Partnership**, **Skills/Confidence**; **Compliance: Passive Adherence**</td></tr><tr><td>**PRO vs PREM**</td><td>**PRO**: Patient-Reported Outcome (Health Status); **PREM**: Patient-Reported Experience (Care Quality)</td></tr></table>
+<p><b>Mnemonic: FOLLOW-UP-MODELS</b></p>
+<ul><li><b>F</b>ollow-Up Models: <b>Shared, Nurse-Led, MDT, Risk-Stratified, Digital, Self-Mgmt</b></li><li><b>O</b>ncologist-Led: <b>Traditional, Capacity Issues</b></li><li><b>L</b>ow Risk: <b>GP/Self-Management</b></li><li><b>L</b>ow/Med/High: <b>Risk-Stratified (GP/Nurse/Oncologist)</b></li><li><b>O</b>ncology + GP: <b>Shared Care</b> (Formal Agreement, Roles Defined)</li><li><b>W</b>eb/Digital: <b>Telehealth, ePRO, Wearables, AI Triage</b></li><li><b>U</b>nderstanding Survivorship: <b>SCP (5 Components)</b></li><li><b>P</b>aediatric Transition: <b>Joint Clinic, Coordinator, SCP Handover, Phased 12-21</b></li><li><b>M</b>etrics: <b>Donabedian (Structure/Process/Outcome) + PROs + Equity</b></li><li><b>O</b>utcomes: <b>PROs (FACT-G, EORTC), Survival, Satisfaction, Cost-Effectiveness</b></li><li><b>D</b>ynamic: <b>Re-Stratify (Up/Down) Based on Events</b></li><li><b>E</b>quity: <b>Access by Demographics, Digital Inclusion</b></li><li><b>L</b>evels of Care: <b>Oncologist → Nurse/APP → GP → Self</b></li><li><b>S</b>elf-Management: <b>Activation, Care Plans, Digital Tools, Peer Support</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Long-Term Follow-Up Models)) Models Oncologist-Led (Traditional) Shared Care (Onc + GP) Nurse-Led / APP MDT Survivorship Clinic Risk-Stratified (High/Med/Low) Digital/Remote Self-Management SCP Core Treatment Summary Surveillance Plan Psychosocial/Vocational Healthy Lifestyle Coordination Risk Stratification High: Oncologist q3-6mo Medium: Nurse q6-12mo Low: GP/Self q12mo Dynamic Re-Stratification Paediatric Transition Joint Clinic Transition Coordinator SCP Handover Phased 12-21yr Digital/Remote Telehealth ePRO/Remote PRO Wearables/Sensors AI Triage Self-Management Activation (PAM) Care Plans/Goal Setting Digital Tools/Apps Peer Support Quality Donabedian (Structure/Process/Outcome) PROs (FACT-G, EORTC) Equity/Digital Inclusion Cost-Effectiveness </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Models**</td><td>Shared Care, Nurse-Led, MDT, Risk-Stratified, Digital, Self-Management</td></tr><tr><td>**SCP**</td><td>Treatment Summary, Surveillance, Psychosocial, Lifestyle, Coordination</td></tr><tr><td>**Risk Tiers**</td><td>High: Oncologist q3-6mo; Med: Nurse q6-12mo; Low: GP/Self q12mo</td></tr><tr><td>**Re-Stratify**</td><td>Up: New Late Effect/Relapse; Down: 5+yr Recovery</td></tr><tr><td>**Paed Transition**</td><td>Joint Clinic, Coordinator, SCP Handover, Phased 12-21yr</td></tr><tr><td>**Digital**</td><td>Telehealth, ePRO, Wearables, AI Triage</td></tr><tr><td>**Self-Mgmt**</td><td>Activation, Care Plans, Apps, Peer Support</td></tr><tr><td>**Quality**</td><td>Donabedian + PROs + Equity + Cost-Effectiveness</td></tr><tr><td>**Guidelines**</td><td>NCCN, ASCO, ESMO, COG, ICC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Follow-Up Models</td><td></td><td></td></tr><tr><td>SCP Components</td><td></td><td></td></tr><tr><td>Risk Stratification</td><td></td><td></td></tr><tr><td>Dynamic Re-Stratification</td><td></td><td></td></tr><tr><td>Paediatric Transition</td><td></td><td></td></tr><tr><td>Digital/Remote Models</td><td></td><td></td></tr><tr><td>Self-Management Interventions</td><td></td><td></td></tr><tr><td>Quality Metrics/Donabedian</td><td></td><td></td></tr><tr><td>Guideline Application</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Survivorship Care Plan]], [[Shared Care]], [[Transition of Care]], [[Nurse-Led Follow-Up]], [[Digital Health]], [[Patient-Reported Outcomes]], [[COG Guidelines]], [[NCCN Survivorship]], [[Self-Management]], [[Health Promotion]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Follow-Up Models), which statement is correct? A. <b>Shared Care, Nurse-Led, MDT Clinic, Risk-Stratified, Digital, Self-Management</b> B. **Shared - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Shared Care, Nurse-Led, MDT Clinic, Risk-Stratified, Digital, Self-Management</b></li></ul>
+<p><b>2.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (SCP Core), which statement is correct? A. <b>Treatment Summary, Surveillance Plan, Psychosocial/Vocational, Lifestyle, Coordination</b> B. **Treatment - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Treatment Summary, Surveillance Plan, Psychosocial/Vocational, Lifestyle, Coordination</b></li></ul>
+<p><b>3.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Paediatric Transition), which statement is correct? A. <b>Joint Clinic, Coordinator, SCP Handover, Phased (12-21yr)</b> B. **Joint - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Joint Clinic, Coordinator, SCP Handover, Phased (12-21yr)</b></li></ul>
+<p><b>4.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Risk Stratification), which statement is correct? A. <b>High (Oncologist), Moderate (Nurse), Low (GP/Self)</b> B. **High - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>High (Oncologist), Moderate (Nurse), Low (GP/Self)</b></li></ul>
+<p><b>5.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Dynamic Re-Stratification), which statement is correct? A. <b>New Late Effect → Upstage B. </b>New - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>New Late Effect → Upstage; Sustained Recovery → Downstage</b></li></ul>
+<p><b>6.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Digital/Remote), which statement is correct? A. <b>Telehealth, ePRO, Wearables, Triage Algorithms</b> B. **Telehealth, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Telehealth, ePRO, Wearables, Triage Algorithms</b></li></ul>
+<p><b>7.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Self-Management), which statement is correct? A. <b>Activation, Care Plans, Digital Tools, Peer Support</b> B. **Activation, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Activation, Care Plans, Digital Tools, Peer Support</b></li></ul>
+<p><b>8.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Quality Metrics), which statement is correct? A. <b>Structure/Process/Outcome</b>, <b>PROs, Adherence, Equity, Cost-Effectiveness</b> B. <b>Structure/Process/Outcome</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Structure/Process/Outcome</b>, <b>PROs, Adherence, Equity, Cost-Effectiveness</b></li></ul>
+<p><b>9.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Paediatric Transition), which statement is correct? A. <b>Joint Clinics, Coordinator, SCP Handover, Phased 12-21yr</b> B. **Joint - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Joint Clinics, Coordinator, SCP Handover, Phased 12-21yr</b></li></ul>
+<p><b>10.</b> Regarding Long-Term Follow-Up Models for Cancer Survivors (Guidelines), which statement is correct? A. <b>NCCN, ASCO, ESMO, COG, ICC</b> B. **NCCN, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>NCCN, ASCO, ESMO, COG, ICC</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Shared Care, Nurse-Led, MDT Clinic, Risk-Stratified, Digital, Self-Management</b></li><li>B. **Shared (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Shared Care, Nurse-Led, MDT Clinic, Risk-Stratified, Digital, Self-Management</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Treatment Summary, Surveillance Plan, Psychosocial/Vocational, Lifestyle, Coordination</b></li><li>B. **Treatment (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Treatment Summary, Surveillance Plan, Psychosocial/Vocational, Lifestyle, Coordination</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Joint Clinic, Coordinator, SCP Handover, Phased (12-21yr)</b></li><li>B. **Joint (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Joint Clinic, Coordinator, SCP Handover, Phased (12-21yr)</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>High (Oncologist), Moderate (Nurse), Low (GP/Self)</b></li><li>B. **High (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>High (Oncologist), Moderate (Nurse), Low (GP/Self)</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. **New Late Effect → Upstage</li><li>B. **New (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>New Late Effect → Upstage; Sustained Recovery → Downstage</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Telehealth, ePRO, Wearables, Triage Algorithms</b></li><li>B. **Telehealth, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Telehealth, ePRO, Wearables, Triage Algorithms</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Activation, Care Plans, Digital Tools, Peer Support</b></li><li>B. **Activation, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Activation, Care Plans, Digital Tools, Peer Support</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Structure/Process/Outcome</b>, <b>PROs, Adherence, Equity, Cost-Effectiveness</b></li><li>B. <b>Structure/Process/Outcome</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Structure/Process/Outcome</b>, <b>PROs, Adherence, Equity, Cost-Effectiveness</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Joint Clinics, Coordinator, SCP Handover, Phased 12-21yr</b></li><li>B. **Joint (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Joint Clinics, Coordinator, SCP Handover, Phased 12-21yr</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>NCCN, ASCO, ESMO, COG, ICC</b></li><li>B. **NCCN, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>NCCN, ASCO, ESMO, COG, ICC</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Follow-Up Models? <b>A1:</b> Shared Care, Nurse-Led, MDT Clinic, Risk-Stratified, Digital, Self-Management</p>
+<p><b>Q2:</b> SCP Core? <b>A2:</b> Treatment Summary, Surveillance Plan, Psychosocial/Vocational, Lifestyle, Coordination</p>
+<p><b>Q3:</b> Paediatric Transition? <b>A3:</b> Joint Clinic, Coordinator, SCP Handover, Phased (12-21yr)</p>
+<p><b>Q4:</b> Risk Stratification? <b>A4:</b> High (Oncologist), Moderate (Nurse), Low (GP/Self)</p>
+<p><b>Q5:</b> Dynamic Re-Stratification? <b>A5:</b> New Late Effect → Upstage; Sustained Recovery → Downstage</p>
+<p><b>Q6:</b> Digital/Remote? <b>A6:</b> Telehealth, ePRO, Wearables, Triage Algorithms</p>
+<p><b>Q7:</b> Self-Management? <b>A7:</b> Activation, Care Plans, Digital Tools, Peer Support</p>
+<p><b>Q8:</b> Quality Metrics? <b>A8:</b> Structure/Process/Outcome, PROs, Adherence, Equity, Cost-Effectiveness</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Follow-Up Models</td><td>Shared Care, Nurse-Led, MDT Clinic, Risk-Stratified, Digital, Self-Management</td></tr><tr><td>2</td><td>A</td><td>SCP Core</td><td>Treatment Summary, Surveillance Plan, Psychosocial/Vocational, Lifestyle, Coordination</td></tr><tr><td>3</td><td>A</td><td>Paediatric Transition</td><td>Joint Clinic, Coordinator, SCP Handover, Phased (12-21yr)</td></tr><tr><td>4</td><td>A</td><td>Risk Stratification</td><td>High (Oncologist), Moderate (Nurse), Low (GP/Self)</td></tr><tr><td>5</td><td>A</td><td>Dynamic Re-Stratification</td><td>New Late Effect → Upstage; Sustained Recovery → Downstage</td></tr><tr><td>6</td><td>A</td><td>Digital/Remote</td><td>Telehealth, ePRO, Wearables, Triage Algorithms</td></tr><tr><td>7</td><td>A</td><td>Self-Management</td><td>Activation, Care Plans, Digital Tools, Peer Support</td></tr><tr><td>8</td><td>A</td><td>Quality Metrics</td><td>Structure/Process/Outcome, PROs, Adherence, Equity, Cost-Effectiveness</td></tr><tr><td>9</td><td>A</td><td>Paediatric Transition</td><td>Joint Clinics, Coordinator, SCP Handover, Phased 12-21yr</td></tr><tr><td>10</td><td>A</td><td>Guidelines</td><td>NCCN, ASCO, ESMO, COG, ICC</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Follow-Up Models</td><td>Shared Care, Nurse-Led, MDT Clinic, Risk-Stratified, Digital, Self-Management</td></tr><tr><td>2</td><td>A</td><td>SCP Core</td><td>Treatment Summary, Surveillance Plan, Psychosocial/Vocational, Lifestyle, Coordination</td></tr><tr><td>3</td><td>A</td><td>Paediatric Transition</td><td>Joint Clinic, Coordinator, SCP Handover, Phased (12-21yr)</td></tr><tr><td>4</td><td>A</td><td>Risk Stratification</td><td>High (Oncologist), Moderate (Nurse), Low (GP/Self)</td></tr><tr><td>5</td><td>A</td><td>Dynamic Re-Stratification</td><td>New Late Effect → Upstage; Sustained Recovery → Downstage</td></tr><tr><td>6</td><td>A</td><td>Digital/Remote</td><td>Telehealth, ePRO, Wearables, Triage Algorithms</td></tr><tr><td>7</td><td>A</td><td>Self-Management</td><td>Activation, Care Plans, Digital Tools, Peer Support</td></tr><tr><td>8</td><td>A</td><td>Quality Metrics</td><td>Structure/Process/Outcome, PROs, Adherence, Equity, Cost-Effectiveness</td></tr><tr><td>9</td><td>A</td><td>Paediatric Transition</td><td>Joint Clinics, Coordinator, SCP Handover, Phased 12-21yr</td></tr><tr><td>10</td><td>A</td><td>Guidelines</td><td>NCCN, ASCO, ESMO, COG, ICC</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Survivorship &amp; Late Effects|Survivorship &amp; Late Effects]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Long Term Follow Up Models · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

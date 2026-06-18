@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antifungal Agents Classification Mechanisms — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.2. ANTIMICROBIAL THERAPY</span>
+      <div class="h1">Antifungal Agents Classification Mechanisms</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify antifungals by mechanism of action and chemical class</li><li>[ ] Know the spectrum of activity of each class (yeasts vs moulds vs endemic mycoses vs Pneumocystis)</li><li>[ ] Understand PK/PD principles and dosing strategies</li><li>[ ] Identify major adverse effects, drug interactions, and TDM requirements</li><li>[ ] Apply to first-line therapy for invasive candidiasis, aspergillosis, mucormycosis, cryptococcosis, endemic mycoses</li><li>[ ] Know mechanisms of antifungal resistance (ERG11, FKS1, efflux pumps)</li><li>[ ] Recognise prophylaxis indications in immunocompromised hosts</li><li>[ ] Answer viva: "Echinocandin vs azole", "Why liposomal AmB for mucormycosis", "Voriconazole TDM targets", "C. auris management"</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Fungicidal**</td><td>Kills fungi at therapeutic concentrations (amphotericin B, echinocandins vs Candida)</td></tr><tr><td>**Fungistatic**</td><td>Inhibits growth (azoles, flucytosine, echinocandins vs Aspergillus, terbinafine)</td></tr><tr><td>**Ergosterol**</td><td>Main sterol in fungal cell membrane (analogue of mammalian cholesterol) — primary antifungal target</td></tr><tr><td>**CYP51 / ERG11**</td><td>Lanosterol 14α-demethylase — converts lanosterol to ergosterol; azole target</td></tr><tr><td>**Fks1/Fks2**</td><td>Catalytic subunit of β-1,3-glucan synthase; echinocandin target; hotspot mutations confer resistance</td></tr><tr><td>**Squalene epoxidase (ERG1)**</td><td>Enzyme converting squalene to 2,3-oxidosqualene; allylamine target (terbinafine, naftifine)</td></tr><tr><td>**Gwt1**</td><td>Glycerol-3-phosphate acyltransferase; required for mannoprotein GPI anchor anchoring; fosmanogepix target</td></tr><tr><td>**DHODH**</td><td>Dihydroorotate dehydrogenase; pyrimidine biosynthesis; olorofim target</td></tr><tr><td>**PAFE**</td><td>Post-Antifungal Effect; persistent suppression after brief exposure above MIC (echinocandins, polyenes have long PAFE)</td></tr><tr><td>**TDM**</td><td>Therapeutic Drug Monitoring; essential for voriconazole (trough), posaconazole (trough), flucytosine (peak)</td></tr><tr><td>**C. krusei**</td><td>Intrinsic fluconazole resistance; echinocandin or amphotericin B preferred</td></tr><tr><td>**C. glabrata**</td><td>Dose-Dependent Susceptibility (SDD) to fluconazole; echinocandin preferred empirically</td></tr><tr><td>**C. auris**</td><td>Multidrug-resistant yeast; difficult to identify; echinocandin first-line, source control crucial</td></tr><tr><td>**SDD**</td><td>Susceptible-Dose Dependent (intermediate); higher doses required</td></tr><tr><td>**LAmB**</td><td>Liposomal Amphotericin B; reduced nephrotoxicity vs deoxycholate</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Azoles — CYP51 (Lanosterol 14α-Demethylase) Inhibitors</div>
+<p><b>Mechanism:</b> Inhibit fungal CYP51 (ERG11), a cytochrome P450 enzyme that converts lanosterol to ergosterol → ergosterol depletion + accumulation of toxic methylated sterols → membrane instability → <b>fungistatic</b> (yeasts) / <b>mould-static</b> (Aspergillus, no activity vs Mucorales except posa/isavuconazole).</p>
+<p><b>Chemical classification:</b></p>
+<ul><li><b>Triazoles</b> (3 N in azole ring): Fluconazole, itraconazole, voriconazole, posaconazole, isavuconazole</li><li><b>Imidazoles</b> (2 N): Ketoconazole (systemic use abandoned), clotrimazole/miconazole (topical)</li></ul>
+<p><b>Common class features:</b></p>
+<ul><li>All inhibit CYP450 (especially CYP3A4) → <b>drug interactions</b> (calcineurin inhibitors, warfarin, OCP, statins, etc.)</li><li>All <b>teratogenic</b> (voriconazole associated with facial clefts, cardiac defects; avoid in pregnancy; effective contraception)</li><li>All <b>hepatotoxic</b> (monitor LFTs)</li><li>All prolong <b>QTc</b> (especially posaconazole and isavuconazole)</li></ul>
+<p>#### Comparative Table of Systemic Triazoles</p>
+<table class="ctable"><tr><th>Drug</th><th>Spectrum</th><th>Dose</th><th>PK</th><th>CYP450</th><th>TDM Target</th><th>Key Notes</th></tr><tr><td>------</td><td>----------</td><td>------</td><td>----</td><td>--------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Fluconazole**</td><td>Candida (most, NOT krusei, ±glabrata), Cryptococcus, endemic mycoses (mild), Coccidioides</td><td>200-800 mg IV/PO daily; 6-12 mg/kg in paeds</td><td>**Renal excretion (80% unchanged)**, CSF penetration excellent (60-80%), long t½ 30h</td><td>Minimal CYP3A4 inhibition (dose-dep); inhibits CYP2C9/2C19</td><td>No TDM (linear PK)</td><td>Safe in pregnancy (Cat D but used in crypto/Cocci); renal dose adjust</td></tr><tr><td>**Itraconazole**</td><td>Aspergillus, dimorphic fungi, dermatophytes, Sporothrix; variable Candida</td><td>200mg BD PO (cap); 100mg BD IV</td><td>Hepatic (CYP3A4 substrate), **needs acid for absorption** (avoid PPIs/H2 blockers), **cyclodextrin vehicle (IV)**</td><td>**Strong CYP3A4 inhibitor; substrate of CYP3A4**</td><td>Trough >0.5-1 mg/L (HPLC)</td><td>**Negative inotropy → avoid in HFrEF**; cyclodextrin nephrotoxic (avoid IV if CrCl<30)</td></tr><tr><td>**Voriconazole**</td><td>**Aspergillus (1st line)**, Fusarium, Scedosporium, dematiaceous moulds; Candida (incl. krusei, glabrata); dimorphic fungi</td><td>6 mg/kg q12h x 2 loading then 4 mg/kg q12h IV; 200-300 mg q12h PO (fasted)</td><td>Hepatic; **CYP2C19 > CYP3A4 > CYP2C9 metabolism**; nonlinear PK; **CYP2C19 polymorphism** (poor metabolisers have 4x levels); excellent CSF</td><td>Substrate + inhibitor CYP2C19/3A4/2C9</td><td>**Trough 1-5.5 mg/L** (treat >2, prophyl >1); 0.5-2 mg/L if toxicity</td><td>Visual disturbances (15-30%, transient), photosensitivity + **skin Ca (SCC)** with chronic use, periostitis, hallucinations, hepatotoxicity</td></tr><tr><td>**Posaconazole**</td><td>**Moulds (Aspergillus, Mucorales)**, Fusarium, dematiaceous; Candida; prophylaxis in AML/MDS/GVHD</td><td>300mg IV/PO (delayed-release tab/oral susp) daily; suspension 200mg QID</td><td>Hepatic; substrate + inhibitor CYP3A4 (P-gp); **absorption improved with fatty meal** (DR tab better); IV = cyclodextrin</td><td>Strong CYP3A4 inhibitor</td><td>**Trough >0.7-1 mg/L (prophylaxis); >1-1.5 mg/L (treatment)**</td><td>Alternative to LAmB for mucormycosis (oral); QTc; available as DR tab, IV, oral susp</td></tr><tr><td>**Isavuconazole** (prodrug isavuconazonium)</td><td>Aspergillus, **Mucorales**; broad yeasts; dimorphic fungi</td><td>200mg q8h x 6 doses loading → 200mg daily IV/PO</td><td>Hepatic; substrate + moderate CYP3A4 inhibitor; **CYP2C19 not involved**; predictable PK</td><td>Inhibitor CYP3A4 (less than others)</td><td>Trough 1-3 mg/L (suggested)</td><td>**No QTc shortening (shortens QTc, not prolongs)**; may be safer than vori in QT issues; **water-soluble prodrug — no cyclodextrin**</td></tr></table>
+<p>#### Azole Drug Interactions (Pivotal)</p>
+<table class="ctable"><tr><th>Azole</th><th>Major Interactions</th><th>Mechanism</th></tr><tr><td>-------</td><td>-------------------</td><td>-----------</td></tr><tr><td>**All azoles**</td><td>↑ Tacrolimus, ↑ Cyclosporine, ↑ Sirolimus, ↑ Statins (simvastatin contraindicated), ↑ Warfarin, ↑ DOACs, ↑ Benzodiazepines (midazolam), ↑ Ergot alkaloids (CI), ↑ Quetiapine</td><td>**CYP3A4 inhibition**</td></tr><tr><td>**Voriconazole**</td><td>+ Rifampicin (contraindicated — ↓ vori 95%), + Phenytoin, + Efavirenz (CI), + Omeprazole (↑), + Methadone</td><td>**CYP2C19 substrate (most affected by polymorphism)**</td></tr><tr><td>**Posaconazole**</td><td>+ Rifampicin (CI), + Phenytoin, + Cimetidine (↓absorption)</td><td>**CYP3A4 substrate + inhibitor; P-gp**</td></tr><tr><td>**Itraconazole**</td><td>+ PPIs, H2 blockers (↓absorption)</td><td>**Acid needed for absorption**</td></tr></table>
+<p>#### Azole Resistance Mechanisms</p>
+<ol><li><b>ERG11 (CYP51) point mutations</b> — azole target alteration (A. fumigatus TR34/L98H, Y121F, M220; C. albicans Y132F, G464S, G448E)</li><li><b>ERG3/ERG5 mutations</b> — bypass pathway</li><li><b>Efflux pumps</b>:</li></ol>
+<ul><li><b>CDR1/CDR2</b> (Candida albicans) — ABC transporters</li><li><b>MDR1</b> (C. albicans) — MFS transporter</li><li><b>AflMDR1/AfIMDR2</b> (Aspergillus)</li></ul>
+<ol><li><b>Biofilm formation</b> (C. albicans on devices)</li><li><b>C. krusei</b> — intrinsically resistant to fluconazole (ERG11 has low affinity)</li><li><b>C. glabrata</b> — SDD (often reduced susceptibility; upregulates CDR1/CDR2)</li></ol>
+<div class="sub-h">Section 2: Polyenes — Amphotericin B (Ergosterol Binding)</div>
+<p><b>Mechanism:</b> Bind <b>ergosterol</b> in fungal membrane → form aqueous pores ("barrel-stave" model) → leakage of K⁺, Mg²⁺, intracellular contents → cell death. <b>Fungicidal</b> (concentration-dependent). Also oxidative damage, immunomodulation (TLR2, inflammasome).</p>
+<p><b>Spectrum:</b> Broadest of all antifungals — yeasts (Candida, Cryptococcus), moulds (Aspergillus, <b>Mucorales</b> — drug of choice for mucormycosis), dimorphic fungi (Histoplasma, Blastomyces, Coccidioides, Paracoccidioides), Trichosporon, some protozoa (Leishmania — not used systemically).</p>
+<p><b>Key polyenes:</b></p>
+<table class="ctable"><tr><th>Formulation</th><th>Dose (mg/kg/day)</th><th>Nephrotoxicity</th><th>Infusion Reactions</th><th>Cost</th><th>Notes</th></tr><tr><td>-------------</td><td>------------------</td><td>----------------</td><td>--------------------</td><td>------</td><td>-------</td></tr><tr><td>**AmB deoxycholate (Fungizone)**</td><td>0.5-1.0</td><td>**High (30-50%)**</td><td>Common (fever, chills, rigors)</td><td>Low</td><td>"Classic" form; rarely used now except resource-limited</td></tr><tr><td>**Liposomal AmB (LAmB, AmBisome)**</td><td>**3-5 (moulds), 6-10 (mucormycosis), 3-4 (crypto induction)**</td><td>**Low (~5-10%)**</td><td>Less</td><td>High</td><td>**Drug of choice for mucormycosis, cryptococcal meningitis, empirical neutropenic fever**</td></tr><tr><td>**AmB lipid complex (ABLC, Abelcet)**</td><td>5</td><td>Moderate</td><td>Moderate</td><td>High</td><td>Alternative; not for crypto induction (less CSF penetration)</td></tr><tr><td>**AmB colloidal dispersion (ABCD, Amphocil)**</td><td>3-4</td><td>Moderate-high</td><td>Common</td><td>High</td><td>Largely abandoned</td></tr></table>
+<p><b>Liposomal AmB is preferred over deoxycholate</b> due to:</p>
+<ul><li>Reduced nephrotoxicity (5x less)</li><li>Reduced infusion reactions</li><li>Higher doses possible (5-10 mg/kg)</li><li>Better CNS penetration (LAmB only — 3-4% serum CSF; ABLC/ABCD do not cross BBB)</li></ul>
+<p><b>Toxicities:</b></p>
+<ul><li><b>Nephrotoxicity</b> (most important) — afferent arteriolar vasoconstriction; <b>prevent</b> with normal saline pre-hydration (500 mL-1 L), avoid concomitant nephrotoxins (aminoglycosides, vancomycin, calcineurin inhibitors, IV contrast, loop diuretics)</li><li><b>Electrolyte wasting</b> — K⁺, Mg²⁺, HCO₃⁻ (distal RTA) — replace aggressively</li><li><b>Infusion reactions</b> — fever, chills, rigors, hypotension, bronchospasm (deoxycholate &gt;&gt; LAmB); pretreat with paracetamol, pethidine, hydrocortisone</li><li><b>Anaemia</b> (normochromic, normocytic) — reversible</li><li><b>Hepatotoxicity</b> (mild)</li></ul>
+<p><b>Resistance:</b> Rare. Mostly:</p>
+<ul><li>↓ Ergosterol content</li><li>Alteration in ergosterol biosynthesis pathway (substitution by other sterols)</li><li>Biofilm (C. auris, C. parapsilosis)</li></ul>
+<div class="sub-h">Section 3: Echinocandins — Fks1 Inhibition (β-1,3-Glucan Synthase)</div>
+<p><b>Mechanism:</b> Inhibit <b>β-1,3-glucan synthase</b> (Fks1 catalytic subunit; Fks2 in C. glabrata) → block cell wall β-glucan synthesis → osmotic instability → <b>fungicidal</b> (Candida); <b>fungistatic</b> (Aspergillus — hyphae grow abnormally but not killed).</p>
+<p><b>Class members:</b></p>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>PK</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>----</td><td>-------</td></tr><tr><td>**Caspofungin**</td><td>70 mg loading → 50 mg daily IV</td><td>Hepatic; **NOT** CYP3A4 substrate (poor interaction profile)</td><td>↑ Hepatic enzymes (ALT/AST); dose reduce in moderate hepatic impairment; **cyclosporine ↑ caspofungin levels (consider dose reduction)**</td></tr><tr><td>**Micafungin**</td><td>100-150 mg daily IV (50 mg in paeds)</td><td>Hepatic; minimal CYP interactions</td><td>Used in paediatrics (including neonates); prophylaxis in HSCT; no dose adjustment in renal failure</td></tr><tr><td>**Anidulafungin**</td><td>200 mg loading → 100 mg daily IV</td><td>**NOT metabolised by CYP** (slow chemical degradation); no dose adjustment renal/hepatic</td><td>Fewest drug interactions; safe in hepatic/renal failure</td></tr></table>
+<p><b>Class features:</b></p>
+<ul><li>All <b>IV only</b> (high MW, protein-bound)</li><li>Excellent safety profile; <b>few drug interactions</b> (esp. anidulafungin)</li><li><b>No nephrotoxicity</b> (vs AmB); no significant hepatotoxicity</li><li>Long <b>PAFE</b> (post-antifungal effect)</li><li><b>Concentration-dependent</b> killing (Cmax/MIC target)</li><li><b>Synergistic</b> with azoles and AmB (in vitro)</li></ul>
+<p><b>Spectrum:</b></p>
+<ul><li><b>Candida spp. (excellent, including fluconazole-resistant)</b> — fungicidal; 1st line for candidaemia</li><li><b>Aspergillus spp.</b> — fungistatic; salvage/combination therapy; alternative 1st line if vori contraindicated</li><li><b>C. neoformans, Mucorales, Fusarium, Scedosporium, Trichosporon — NO activity</b></li></ul>
+<p><b>Resistance (FKS1/FKS2 mutations):</b></p>
+<ul><li><b>C. albicans</b> — Fks1 hotspot 1 (S645P) and hotspot 2 (R1361)</li><li><b>C. glabrata</b> — Fks1 and Fks2 hotspots; echinocandin resistance rising</li><li><b>C. auris</b> — many isolates echinocandin-resistant</li><li><b>C. parapsilosis</b> — intrinsically higher MIC (clinical relevance debated; usually still responsive)</li><li>Treatment failures require MIC testing and switch to AmB/azole</li></ul>
+<div class="sub-h">Section 4: Allylamines — Terbinafine (Squalene Epoxidase Inhibitor)</div>
+<p><b>Mechanism:</b> Inhibit <b>squalene epoxidase (Erg1)</b> → block ergosterol synthesis + squalene accumulation (toxic to fungus) → <b>fungicidal</b> (dermatophytes), fungistatic (yeasts).</p>
+<p><b>Spectrum:</b> <b>Dermatophytes (Trichophyton, Microsporum, Epidermophyton) — drug of choice</b>. Also activity vs Sporothrix, some dimorphic fungi, Aspergillus (variable).</p>
+<p><b>Use:</b> <b>Onychomycosis</b> (T. unguium — 250 mg daily x 6 weeks fingernails, 12 weeks toenails), tinea capitis, tinea corporis/cruris/pedis.</p>
+<p><b>Dose:</b> 250 mg PO daily (or pulse: 1 week/month x 3-4 months for onychomycosis).</p>
+<p><b>Adverse:</b> GI, taste disturbance (dysgeusia 1-3%, can be permanent), hepatotoxicity, <b>SJS/TEN</b> (rare), headache, rash.</p>
+<p><b>Interactions:</b> CYP2D6 inhibitor; minimal CYP3A4 effects (safer than azoles).</p>
+<div class="sub-h">Section 5: Flucytosine (5-FC)</div>
+<p><b>Mechanism:</b> 5-FC is taken up by fungal cytosine permease → deaminated to <b>5-fluorouracil (5-FU)</b> → converted to 5-FdUMP → inhibits <b>thymidylate synthase</b> + 5-FUTP → disrupts DNA/RNA/protein synthesis → <b>fungistatic</b> (or fungicidal at high concentrations).</p>
+<p><b>Critical:</b> <b>5-FC has NO standalone antifungal activity in clinical use</b> — used ONLY in combination (rapid resistance emerges monotherapy).</p>
+<p><b>Spectrum:</b> Cryptococcus, Candida (variable, especially C. albicans, C. tropicalis, C. parapsilosis); some Aspergillus, dematiaceous moulds; <b>no activity</b> vs Mucorales, Fusarium, C. krusei.</p>
+<p><b>Use:</b> <b>Cryptococcal meningitis induction</b> (with AmB); chromoblastomycosis; some refractory candidaemia (with AmB).</p>
+<p><b>Dose:</b> 100-150 mg/kg/day PO in 4 divided doses; <b>TDM</b> (peak 50-100 mg/L 2h post-dose; trough &lt;25 mg/L to avoid toxicity).</p>
+<p><b>Toxicity (dose-related):</b></p>
+<ul><li><b>Bone marrow suppression</b> (5-FU effect — pancytopenia, esp. with prolonged high levels)</li><li><b>Hepatotoxicity</b> (reversible)</li><li><b>GI</b> (nausea, diarrhoea)</li><li><b>Rash</b></li></ul>
+<p><b>Resistance:</b> Single-step mutations in cytosine deaminase or permease. Hence combination with AmB (synergistic — AmB increases 5-FC uptake).</p>
+<p><b>Caution:</b> Cytosine arabinoside, allopurinol (inhibit xanthine oxidase) → not 5-FC. 5-FC converted to 5-FU → teratogenic, <b>avoid in pregnancy</b>.</p>
+<div class="sub-h">Section 6: Griseofulvin</div>
+<p><b>Mechanism:</b> Binds <b>microtubules</b> (fungal β-tubulin) → disrupts mitotic spindle → inhibits fungal mitosis; deposits in <b>keratin precursor cells</b> → new keratin resistant to dermatophyte infection.</p>
+<p><b>Spectrum:</b> <b>Dermatophytes ONLY</b> (Trichophyton, Microsporum, Epidermophyton); NO activity vs Candida, moulds, dimorphic fungi.</p>
+<p><b>Use:</b> Tinea capitis (1st line in some regions, esp. with terbinafine resistance), refractory dermatophyte infections.</p>
+<p><b>Dose:</b> 500-1000 mg daily PO (or 20-25 mg/kg in paeds); 6-8 weeks (skin/hair) to 6-12 months (nails).</p>
+<p><b>Adverse:</b> <b>Disulfiram-like reaction</b> with alcohol; induces CYP450 (↓ warfarin, OCP — need barrier contraception); teratogenic (avoid in pregnancy); headache, GI; <b>can worsen SLE, acute porphyria</b>.</p>
+<p><b>Drug interactions:</b> ↓ Warfarin efficacy, ↓ OCP (caution — need additional contraception), ↑ Alcohol effect.</p>
+<div class="sub-h">Section 7: Newer Antifungal Agents</div>
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>Spectrum</th><th>Stage</th><th>Notes</th></tr><tr><td>------</td><td>-----------</td><td>----------</td><td>-------</td><td>-------</td></tr><tr><td>**Ibrexafungerp** (Brexafemme)</td><td>Triterpenoid; inhibits β-1,3-glucan synthase (different site from echinocandins)</td><td>Candida (incl. echinocandin-R), Pneumocystis</td><td>**FDA-approved 2021** for vulvovaginal candidiasis</td><td>**Oral**; in trials for invasive candidiasis; active vs C. auris</td></tr><tr><td>**Rezafungin** (Rezzayo)</td><td>Echinocandin (anidulafungin analogue)</td><td>Candida, Aspergillus</td><td>**FDA-approved 2023** for candidaemia/invasive candidiasis</td><td>**Once-weekly IV** (long t½ 80h) vs daily anidula; non-inferior in ReSTORE trial</td></tr><tr><td>**Fosmanogepix** (prodrug of gepix)</td><td>Inhibits **Gwt1** (GPI-anchored mannoprotein maturation)</td><td>Candida (incl. C. auris), Aspergillus, Mucorales, Fusarium, Scedosporium, dimorphics</td><td>Phase 2-3</td><td>**IV and oral**; broad-spectrum; in trials for C. auris and moulds</td></tr><tr><td>**Olorofim**</td><td>Inhibits **DHODH** (pyrimidine biosynthesis)</td><td>**Aspergillus** (incl. azole-R), Scedosporium, Fusarium, dimorphic fungi, Coccidioides</td><td>Phase 3 (failed initial mould trial — reformulated); named-patient access in UK</td><td>**Oral**; no activity vs Candida, Mucorales, Cryptococcus</td></tr><tr><td>**Encochleated AmB (MAT2203 / oral AmB)**</td><td>Cochleate lipid formulation of AmB</td><td>Broad (like IV AmB)</td><td>Phase 2-3</td><td>**Oral**; targets intracellular pathogens; cryptococcal meningitis trials</td></tr><tr><td>**AT-008 (opelconazole)**</td><td>Inhaled triazole</td><td>ABPA, aspergillosis, mucormycosis</td><td>Phase 2</td><td>Inhaled; minimal systemic exposure</td></tr><tr><td>**VL-2397 (formerly ASP2397)**</td><td>Siderophore uptake; novel mechanism</td><td>Aspergillus, Candida, C. auris</td><td>Phase 1-2</td><td>Siderophore; intracellular action</td></tr></table>
+<div class="sub-h">Section 8: Pneumocystis jirovecii (PCP) — Special Considerations</div>
+<p>Although Pneumocystis is technically a fungus (now classified), it has unique features: <b>lacks ergosterol in membrane</b> → azoles and polyenes are INACTIVE.</p>
+<p><b>Treatment (TMP-SMX is mainstay, not "antifungals" sensu stricto):</b></p>
+<ul><li><b>First-line:</b> TMP-SMX 15-20 mg/kg/day TMP in 3-4 divided doses x 21 days</li><li>Adjunctive corticosteroids if PaO₂ &lt;70 mmHg or A-a gradient &gt;35 mmHg</li><li><b>Alternatives (TMP-SMX intolerant/contraindicated):</b></li><li><b>Pentamidine</b> 4 mg/kg/day IV (hypotension, nephrotoxicity, pancreatitis, dysglycaemia, QTc, hypocalcaemia)</li><li><b>Clindamycin + Primaquine</b> (G6PD test first; haemolysis risk)</li><li><b>Atovaquone</b> (PO, mild-moderate only; 750 mg BD with food)</li><li><b>Dapsone + TMP</b> (G6PD test)</li><li><b>Prophylaxis:</b> TMP-SMX (1 SS or DS tab daily); alternatives dapsone, atovaquone, aerosolised pentamidine (300 mg monthly Respigard II nebuliser)</li></ul>
+<p><b>Note:</b> PCP contains low levels of ergosterol and sterol biosynthesis genes — experimental use of <b>echinocandins</b> (caspofungin) in combination for salvage, not standard.</p>
+<div class="sub-h">Section 9: Combination Antifungal Therapy</div>
+<table class="ctable"><tr><th>Combination</th><th>Synergy</th><th>Evidence</th></tr><tr><td>-------------</td><td>---------</td><td>----------</td></tr><tr><td>**AmB + 5-FC**</td><td>✓ Synergistic (5-FC uptake ↑)</td><td>Cryptococcal meningitis (gold standard)</td></tr><tr><td>**Azoles + Echinocandins**</td><td>Additive/synergistic (different targets)</td><td>Refractory aspergillosis (Marr trial)</td></tr><tr><td>**AmB + Echinocandin**</td><td>Variable</td><td>Salvage therapy</td></tr><tr><td>**AmB + Rifampicin**</td><td>Synergistic in vitro</td><td>NOT recommended clinically (rifampicin induces AmB metabolism)</td></tr><tr><td>**Azoles + Azoles**</td><td>None</td><td>Avoid (antagonistic)</td></tr></table>
+<p><b>Clinical scenarios for combination:</b></p>
+<ul><li><b>Cryptococcal meningitis</b> (AmB + 5-FC)</li><li><b>Refractory invasive aspergillosis</b> (vori + anidula or LAmB + echinocandin)</li><li><b>Hematologic malignancy febrile neutropenia</b> (AmB + echinocandin for breakthrough)</li><li><b>C. auris</b> (AmB + echinocandin; some centres use triple)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation — First-Line Therapy for Major Mycoses</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>First-Line</th><th>Alternative</th><th>Duration</th></tr><tr><td>----------</td><td>-----------</td><td>-------------</td><td>----------</td></tr><tr><td>**Candidaemia, non-neutropenic**</td><td>**Echinocandin (caspofungin 70/50, micafungin 100, anidula 200/100)**</td><td>Fluconazole (if susceptible, stable); LAmB 3 mg/kg</td><td>14 days after first negative blood culture; remove CVC</td></tr><tr><td>**Candidaemia, neutropenic**</td><td>Echinocandin ± voriconazole (if C. krusei)</td><td>LAmB 3-5 mg/kg</td><td>14 days; ocular exam if Candidaemia > 1 week</td></tr><tr><td>**Invasive candidiasis, chronic disseminated (hepatosplenic)**</td><td>Fluconazole 6 mg/kg daily (after 2 wk LAmB)</td><td>LAmB</td><td>3-6 months; until lesions resolve on imaging</td></tr><tr><td>**Invasive aspergillosis (IA)**</td><td>**Voriconazole 6 mg/kg q12h x 2 then 4 mg/kg q12h**</td><td>LAmB 3-5 mg/kg; isavuconazole; posaconazole; combination vori+anidula (refractory)</td><td>6-12 weeks minimum; longer in immunocompromised</td></tr><tr><td>**Mucormycosis (Rhizopus, Mucor, Lichtheimia)**</td><td>**Liposomal AmB 5-10 mg/kg/day + surgical debridement**</td><td>Posaconazole DR (oral/IV) step-down; isavuconazole alternative; AmB deoxycholate if LAmB unavailable</td><td>3-6 weeks acute; months; until imaging clear</td></tr><tr><td>**Cryptococcal meningitis, HIV**</td><td>**Induction: AmB 0.7-1 mg/kg + 5-FC 100 mg/kg x 2 weeks → Consolidation: fluconazole 400 mg x 8 weeks → Maintenance: fluconazole 200 mg** (until immune reconstitution)</td><td>Flucytosine-sparing: AmB + fluconazole 800-1200 mg (less effective)</td><td>1 year if HIV (until CD4>200 sustained)</td></tr><tr><td>**Cryptococcal meningitis, non-HIV (transplant, idiopathic)**</td><td>LAmB 3-4 mg/kg + 5-FC</td><td>LAmB 6 mg/kg monotherapy</td><td>4-6 weeks induction; 6-12 months consolidation</td></tr><tr><td>**Histoplasmosis, disseminated (HIV, severe)**</td><td>LAmB 3 mg/kg → itraconazole 200 mg BD</td><td>Itraconazole (mild)</td><td>2 weeks induction; 12 months total</td></tr><tr><td>**Coccidioidomycosis, severe**</td><td>LAmB 3-5 mg/kg → fluconazole 400-800 mg (or itraconazole)</td><td>Fluconazole monotherapy (mild)</td><td>6-12 months; longer if meningitis</td></tr><tr><td>**Blastomycosis, severe**</td><td>LAmB 3-5 mg/kg → itraconazole 200 mg BD</td><td>Itraconazole (mild)</td><td>6-12 months</td></tr><tr><td>**Sporotrichosis, lymphocutaneous**</td><td>Itraconazole 200 mg daily</td><td>Saturated solution of potassium iodide (SSKI)</td><td>3-6 months</td></tr><tr><td>**Aspergilloma (fungus ball)**</td><td>Surgery; itraconazole (some benefit)</td><td>Observation if asymptomatic</td><td>—</td></tr><tr><td>**Chronic pulmonary aspergillosis**</td><td>Itraconazole 200 mg BD or voriconazole</td><td>Posaconazole</td><td>6-12 months</td></tr><tr><td>**ABPA (allergic)**</td><td>Itraconazole 200 mg BD (steroid-sparing)</td><td>Prednisone + omalizumab</td><td>Months-years</td></tr><tr><td>**C. auris (candidaemia/colonisation)**</td><td>Echinocandin; LAmB 5 mg/kg for severe/resistant</td><td>Combination; chlorhexidine wash + isolation</td><td>14 days minimum after negative culture</td></tr><tr><td>**Dermatophyte onychomycosis**</td><td>Terbinafine 250 mg daily</td><td>Itraconazole pulse; fluconazole 150 mg weekly</td><td>6 wk (finger) / 12 wk (toe)</td></tr><tr><td>**Tinea capitis**</td><td>Griseofulvin OR Terbinafine (paeds >4)</td><td>—</td><td>6-8 weeks</td></tr><tr><td>**Vulvovaginal candidiasis**</td><td>Fluconazole 150 mg single dose; ibrexafungerp 150 mg x2 doses</td><td>Topical azoles (clotrimazole)</td><td>Single dose</td></tr><tr><td>**Oropharyngeal candidiasis (HIV)**</td><td>Fluconazole 100 mg daily x 7-14 days</td><td>Itraconazole solution; miconazole buccal</td><td>7-14 days</td></tr><tr><td>**Oesophageal candidiasis (HIV)**</td><td>Fluconazole 200-400 mg daily</td><td>Itraconazole solution; voriconazole; echinocandin</td><td>14-21 days</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Antifungal Prophylaxis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Drug</th><th>Dose</th><th>Duration</th><th>Notes</th></tr><tr><td>------------</td><td>------</td><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**AML induction, MDS**</td><td>**Posaconazole** DR 300 mg daily</td><td>200 mg TID (susp)</td><td>Until neutrophil recovery</td><td>**First-line per IDSA 2009**; reduced IA and mortality (Cornely et al. NEJM 2007)</td></tr><tr><td>**Allogeneic HSCT, GVHD**</td><td>**Posaconazole** DR 300 mg daily</td><td>Same</td><td>Until immunosuppression taper</td><td>First-line for GVHD</td></tr><tr><td>**HSCT (neutropenic phase)**</td><td>**Fluconazole** 400 mg daily (if low IA risk)</td><td>IV/PO</td><td>Until engraftment</td><td>Many centres use micafungin 50 mg</td></tr><tr><td>**SOT (lung, heart-lung)**</td><td>**Voriconazole** OR Itraconazole OR Posaconazole</td><td>—</td><td>3-6 months (lung)</td><td>Aspergillus prevention</td></tr><tr><td>**SOT (liver)**</td><td>Fluconazole 100-400 mg (Candida)</td><td>—</td><td>1-2 months</td><td>—</td></tr><tr><td>**HIV (CD4<200, prior PCP)**</td><td>TMP-SMX (PCP)</td><td>—</td><td>Until CD4>200 x 3 months</td><td>—</td></tr><tr><td>**HIV (CD4<150, endemic mycoses)**</td><td>Itraconazole 200 mg daily (Histoplasma endemic)</td><td>—</td><td>Until CD4>150</td><td>—</td></tr><tr><td>**Recurrent VVC**</td><td>Fluconazole 150 mg q72h x 3 doses, then 150 mg weekly</td><td>—</td><td>6 months</td><td>—</td></tr><tr><td>**Pre-engraftment HSCT**</td><td>Micafungin 50 mg IV daily</td><td>—</td><td>Until neutrophil recovery</td><td>Alternative in vori-intolerant</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Class mechanisms (azoles = CYP51; polyenes = ergosterol binder; echinocandins = β-1,3-glucan synthase; 5-FC = DNA/RNA via 5-FU; allylamines = squalene epoxidase; griseofulvin = microtubules); spectrum of each class; first-line therapy (echinocandin for candidaemia, voriconazole for IA, LAmB for mucormycosis, AmB+5-FC for crypto); TDM (vori, posa, 5-FC); major drug interactions (azole + calcineurin); intrinsic resistance (C. krusei to fluco; C. auris MDR) - <b>Common viva:</b> "Why echinocandin first for candidaemia?" (fungicidal, broad, no nephro, low interaction, covers C. glabrata, C. krusei); "Why voriconazole for IA?" (only agent with mortality benefit vs AmB — Herbrecht NEJM 2002); "Why LAmB for mucormycosis?" (only polyene with activity + least nephro at high doses); "Voriconazole TDM target?" (trough 1-5.5 mg/L); "C. auris management?" (echinocandin; isolate; chlorhexidine; contact precautions) - <b>Exam trap:</b> C. krusei = intrinsic fluco R; C. glabrata = SDD fluco; C. auris = MDR (echinocandin first); Voriconazole = CYP2C19 polymorphism; Itraconazole = acid-dependent absorption, negative inotrope; Flucytosine NEVER monotherapy; Griseofulvin only for dermatophytes; Micafungin/anidula ≠ CYP3A4</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Azole class:</b> <b>"FIVPI"</b> = <b>F</b>luconazole, <b>I</b>traconazole, <b>V</b>oriconazole, <b>P</b>osaconazole, <b>I</b>savuconazole</li><li><b>Voriconazole AE:</b> <b>"VFSVP"</b> = <b>V</b>isual (transient), <b>F</b>otosensitivity, <b>S</b>kin (SCC), <b>V</b>isual hallucinations, <b>P</b>eriostitis</li><li><b>Azole spectrum (mucormycosis):</b> <b>"PI"</b> = <b>P</b>osaconazole, <b>I</b>savuconazole (active); Vori/fluco/itraconazole = NO</li><li><b>Crypto induction:</b> <b>"A5F"</b> = <b>A</b>mphotericin B + <b>5</b>-FC → <b>F</b>luconazole consolidation</li><li><b>CYP2C19 polymorphism matters for:</b> <b>"Voriconazole"</b> (most), "Other azoles less so" (isavuconazole exempt)</li><li><b>5-FC toxicities:</b> <b>"BMH"</b> = <b>B</b>one marrow, <b>M</b>arrow suppression, <b>H</b>epatotoxicity</li><li><b>Echinocandin spectrum:</b> <b>"CCA"</b> = <b>C</b>andida, <b>C</b>A. (Aspergillus) — <b>NOT</b> Crypto, NOT Mucor, NOT Fusarium</li><li><b>Fungistatic vs Fungicidal:</b> <b>"AE" = Always (cid) Echinocandin (vs Candida), polyenes"</b>; <b>"AA" = Azoles = Always static</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Antifungal Agents)) Ergosterol_Synthesis Azoles_CYP51 Triazoles Fluconazole Itraconazole Voriconazole Posaconazole Isavuconazole Allylamines Terbinafine_squalene_epoxidase Ergosterol_Binding Polyenes AmB_deoxycholate Liposomal_AmB_LAmB ABLC Cell_Wall Echinocandins_Fks1 Caspofungin Micafungin Anidulafungin Newer Ibrexafungerp_triterpenoid Rezafungin_weekly Nucleic_Acid Flucytosine_5FU Microtubules Griseofulvin Novel_Targets Fosmanogepix_Gwt1 Olorofim_DHODH Clinical_Use Candidemia_Echinocandin Invasive_Aspergillosis_Voriconazole Mucormycosis_LAmB_surgery Crypto_Meningitis_AmB_5FC TDM_Vori_Posa Prophylaxis_Posaconazole Resistance C_krusei_intrinsic_fluco C_glabrata_SDD C_auris_MDR ERG11_mutations FKS1_hotspots Efflux_CDR_MDR1 </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Antifungal classes by mechanism (azoles, polyenes, echinocandins, allylamines, 5-FC, griseofulvin)</li><li>First-line therapy: candidaemia (echinocandin), invasive aspergillosis (voriconazole), mucormycosis (LAmB), crypto meningitis (AmB+5-FC)</li><li>Voriconazole TDM: trough 1-5.5 mg/L; CYP2C19 polymorphism</li><li>Posaconazole TDM: trough &gt;0.7-1 mg/L (prophyl), &gt;1-1.5 mg/L (treat)</li><li>C. krusei = intrinsic fluco R; C. glabrata = SDD; C. auris = MDR (echinocandin first)</li><li>Azole + calcineurin inhibitors → ↑ tacrolimus/cyclosporine (CYP3A4)</li><li>Echinocandin: fungicidal vs Candida; fungistatic vs Aspergillus</li><li>LAmB for mucormycosis 5-10 mg/kg + surgery (only effective regimen)</li><li>5-FC NEVER monotherapy (rapid resistance); always combine with AmB</li><li>Griseofulvin only for dermatophytes; binds microtubules; CYP450 inducer (↓ OCP, ↓ warfarin)</li><li>Terbinafine for onychomycosis (T. unguium) 250mg/d x 6-12 wk; taste disturbance AE</li><li>PCP: TMP-SMX first line (NOT azoles — Pneumocystis lacks ergosterol)</li><li>Azoles: avoid in pregnancy; all prolong QTc; hepatotoxic</li><li>Newer agents: ibrexafungerp (oral glucan synthase), rezafungin (weekly echinocandin), fosmanogepix (Gwt1), olorofim (DHODH — Aspergillus only)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Classes, spectrum, first-line therapy for major mycoses, PK/PD, major drug interactions, toxicity, prophylaxis</td></tr><tr><td>**Should Know 🟡**</td><td>PK/PD targets (AUC/MIC azoles, Cmax/MIC echinocandins), therapeutic drug monitoring, renal/hepatic dosing, pregnancy, C. auris management</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel mechanisms (Gwt1, DHODH), resistance mechanisms (ERG11, FKS1, CDR/MDR efflux), combination therapy evidence, antifungal stewardship, pharmacology of newer agents</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add personal weak areas after self-testing</i></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li><b>Structure:</b> Introduction (fungal vs human cell targets) → Azoles (mechanism, individual agents with spectrum/dose/TDM) → Polyenes (AmB formulations, why LAmB preferred, toxicity) → Echinocandins (Fks1, spectrum, 1st line candidaemia) → 5-FC (5-FU prodrug, combination only) → Allylamines/Griseofulvin (dermatophytes) → Resistance (ERG11, FKS1, efflux) → TDM &amp; drug interactions → First-line therapy table for major mycoses → Newer agents</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet: Azole spectrum + TDM table; Polyene formulations; Echinocandin spectrum + 1st line use; Mucormycosis management; Crypto induction; Resistance in Candida</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>Lead with mechanism, give spectrum, 1st-line indication, exam trap</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply: "Candidaemia → echinocandin + CVC removal; IA → voriconazole + TDM; Mucormycosis → LAmB 5-10 mg/kg + surgery; Crypto → AmB + 5-FC induction; PCP → TMP-SMX; Prophylaxis in AML → posaconazole"</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>Azoles</b>: CYP51 inhibitors; CYP3A4 interactions; <b>Fluco</b> = NOT krusei; <b>Vori</b> = IA 1st; <b>Posa/Isavu</b> = Mucorales</li><li><b>Polyenes</b>: LAmB for Mucor 5-10 mg/kg + surgery; LAmB for crypto induction; nephrotoxic — hydrate, replace K⁺/Mg²⁺</li><li><b>Echinocandins</b>: 1st line candidaemia; Fks1; fungicidal Candida / static Aspergillus; <b>NOT Crypto, NOT Mucor</b></li><li><b>5-FC</b>: 5-FU prodrug; NEVER mono; always + AmB for crypto; TDM (peak 50-100); BM toxicity</li><li><b>Terbinafine</b>: Squalene epoxidase; onychomycosis 250mg x 6-12 wk; taste loss</li><li><b>Griseofulvin</b>: Microtubules; dermatophytes only; CYP inducer; disulfiram with alcohol</li><li><b>PCP</b>: TMP-SMX (Pneumocystis lacks ergosterol); adjunctive steroids if PaO₂&lt;70</li><li><b>C. auris</b>: Echinocandin 1st + isolation + chlorhexidine</li><li><b>TDM</b>: Vori trough 1-5.5; Posa trough &gt;1; 5-FC peak 50-100</li><li><b>CYP2C19 polymorphism</b>: Voriconazole most affected</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Mechanism of azole antifungals:</b></li></ol>
+<p>A. Inhibit β-1,3-glucan synthase B. Inhibit lanosterol 14α-demethylase (CYP51) C. Bind ergosterol D. Inhibit squalene epoxidase E. Inhibit thymidylate synthase</p>
+<ol><li><b>First-line therapy for candidaemia in a non-neutropenic patient:</b></li></ol>
+<p>A. Fluconazole B. Voriconazole C. <b>Echinocandin (caspofungin, micafungin, or anidulafungin)</b> D. Liposomal AmB E. Flucytosine</p>
+<ol><li><b>First-line for invasive aspergillosis (with survival benefit demonstrated in RCT):</b></li></ol>
+<p>A. Caspofungin B. Fluconazole C. <b>Voriconazole</b> D. Itraconazole E. Micafungin</p>
+<ol><li><b>Mucormycosis — drug of choice:</b></li></ol>
+<p>A. Voriconazole B. Caspofungin C. <b>Liposomal AmB 5-10 mg/kg + surgical debridement</b> D. Fluconazole E. Itraconazole</p>
+<ol><li><b>Cryptococcal meningitis induction therapy in HIV (first 2 weeks):</b></li></ol>
+<p>A. Fluconazole 400 mg B. Voriconazole C. <b>Amphotericin B + Flucytosine</b> D. Caspofungin E. Posaconazole</p>
+<ol><li><b>Candida species with intrinsic resistance to fluconazole:</b></li></ol>
+<p>A. C. albicans B. C. tropicalis C. <b>C. krusei</b> D. C. parapsilosis E. C. dubliniensis</p>
+<ol><li><b>Echinocandin is:</b></li></ol>
+<p>A. Fungicidal vs Aspergillus; fungistatic vs Candida B. <b>Fungicidal vs Candida; fungistatic vs Aspergillus</b> C. Fungistatic vs all fungi D. Bactericidal and fungicidal E. Only active against Pneumocystis</p>
+<ol><li><b>Therapeutic drug monitoring target for voriconazole (trough):</b></li></ol>
+<p>A. 0.1-0.5 mg/L B. <b>1-5.5 mg/L (treat &gt;2 mg/L; prophylaxis &gt;1 mg/L)</b> C. 5-10 mg/L D. 10-15 mg/L E. &gt;20 mg/L</p>
+<ol><li><b>Flucytosine is never used as monotherapy because:</b></li></ol>
+<p>A. It is fungistatic B. <b>Resistance develops rapidly (single-step mutations)</b> C. It causes severe nephrotoxicity D. It is only oral E. It is metabolised by CYP3A4</p>
+<ol><li><b>C. auris best empiric therapy for candidaemia:</b></li></ol>
+<p>A. Fluconazole B. Voriconazole C. <b>Echinocandin</b> D. Amphotericin B (always) E. Griseofulvin</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 55-year-old man with AML on induction chemotherapy develops neutropenic fever despite broad-spectrum antibacterials. CT chest shows nodule with halo sign. Empirical therapy is started. Which agent has demonstrated mortality benefit in invasive aspergillosis (Herbrecht trial)?</b></li></ol>
+<p>A. Caspofungin B. Liposomal AmB C. <b>Voriconazole</b> D. Itraconazole E. Posaconazole</p>
+<ol><li><b>A 35-year-old diabetic with rhino-orbital-cerebral mucormycosis. What is the optimal antifungal regimen and key adjunctive measure?</b></li></ol>
+<p>A. Voriconazole + endoscopic debridement B. Caspofungin + steroids C. <b>Liposomal AmB 5-10 mg/kg + urgent surgical debridement</b> D. Fluconazole + amphotericin E. Itraconazole + glycaemic control alone</p>
+<ol><li><b>A 40-year-old HIV patient (CD4 50) presents with cryptococcal meningitis. CSF opening pressure 35 cm H₂O. Best induction regimen for first 2 weeks:</b></li></ol>
+<p>A. Fluconazole 800 mg daily B. Voriconazole C. <b>Amphotericin B deoxycholate 0.7-1 mg/kg + Flucytosine 100 mg/kg</b> D. Caspofungin E. Posaconazole</p>
+<ol><li><b>A patient on voriconazole develops visual hallucinations and elevated LFTs. Trough level is 8 mg/L. Best management:</b></li></ol>
+<p>A. Continue at same dose B. <b>Reduce dose (or hold) and recheck trough; aim 1-5.5 mg/L</b> C. Switch to fluconazole D. Switch to itraconazole E. Stop voriconazole permanently</p>
+<ol><li><b>A 60-year-old HSCT recipient on tacrolimus for GVHD requires antifungal prophylaxis. Which azole is most likely to require tacrolimus dose reduction due to drug interaction?</b></li></ol>
+<p>A. Fluconazole (low dose) B. <b>Voriconazole (CYP3A4 inhibitor) — reduce tacrolimus by ~67%</b> C. Griseofulvin D. Terbinafine E. Flucytosine</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>Candidaemia 1st line (non-neutropenic)?</b></li></ul>
+<p>A: Echinocandin (caspofungin / micafungin / anidulafungin)</p>
+<ul><li>Q: <b>Invasive aspergillosis 1st line?</b></li></ul>
+<p>A: Voriconazole (Herbrecht NEJM 2002)</p>
+<ul><li>Q: <b>Mucormycosis 1st line?</b></li></ul>
+<p>A: Liposomal AmB 5-10 mg/kg + surgical debridement</p>
+<ul><li>Q: <b>Cryptococcal meningitis induction (first 2 weeks)?</b></li></ul>
+<p>A: AmB + Flucytosine (A5F) → fluconazole consolidation</p>
+<ul><li>Q: <b>PCP treatment (moderate-severe)?</b></li></ul>
+<p>A: TMP-SMX 15-20 mg/kg/day TMP + adjunctive steroids if PaO₂&lt;70</p>
+<ul><li>Q: <b>Azole mechanism?</b></li></ul>
+<p>A: Inhibit lanosterol 14α-demethylase (CYP51) → ergosterol depletion</p>
+<ul><li>Q: <b>Polyene (AmB) mechanism?</b></li></ul>
+<p>A: Bind ergosterol → membrane pores → K⁺ leakage → cell death</p>
+<ul><li>Q: <b>Echinocandin mechanism?</b></li></ul>
+<p>A: Inhibit β-1,3-glucan synthase (Fks1) → cell wall defect</p>
+<ul><li>Q: <b>Allylamine (terbinafine) mechanism?</b></li></ul>
+<p>A: Inhibit squalene epoxidase → ergosterol depletion + squalene accumulation</p>
+<ul><li>Q: <b>Flucytosine mechanism?</b></li></ul>
+<p>A: 5-FC → 5-FU → inhibits thymidylate synthase + 5-FUTP → DNA/RNA damage</p>
+<ul><li>Q: <b>Griseofulvin mechanism?</b></li></ul>
+<p>A: Binds fungal microtubules → inhibits mitosis; keratin deposits</p>
+<ul><li>Q: <b>Voriconazole TDM target trough?</b></li></ul>
+<p>A: 1-5.5 mg/L (treat &gt;2; proph &gt;1); 0.5-2 if toxicity</p>
+<ul><li>Q: <b>Posaconazole TDM target trough?</b></li></ul>
+<p>A: &gt;0.7-1 mg/L (prophylaxis); &gt;1-1.5 mg/L (treatment)</p>
+<ul><li>Q: <b>C. krusei resistance?</b></li></ul>
+<p>A: Intrinsic resistance to fluconazole (ERG11 low affinity)</p>
+<ul><li>Q: <b>C. glabrata susceptibility?</b></li></ul>
+<p>A: SDD to fluconazole; echinocandin preferred empirically</p>
+<ul><li>Q: <b>C. auris management?</b></li></ul>
+<p>A: Echinocandin first + isolation + chlorhexidine wash + contact precautions; MDR concerns</p>
+<ul><li>Q: <b>Echinocandin fungicidal activity?</b></li></ul>
+<p>A: Candida (yes — fungicidal); Aspergillus (no — fungistatic, hyphal abnormal)</p>
+<ul><li>Q: <b>Echinocandin NO activity?</b></li></ul>
+<p>A: Cryptococcus, Mucorales, Fusarium, Scedosporium, Trichosporon</p>
+<ul><li>Q: <b>Liposomal AmB advantages vs deoxycholate?</b></li></ul>
+<p>A: Less nephrotoxicity, less infusion reactions, higher doses possible (5-10 mg/kg), better CSF penetration</p>
+<ul><li>Q: <b>AmB nephrotoxicity prevention?</b></li></ul>
+<p>A: Saline pre-hydration, replace K⁺/Mg²⁺, avoid concomitant nephrotoxins (amino, vanco, calcineurin)</p>
+<ul><li>Q: <b>5-FC major toxicities?</b></li></ul>
+<p>A: Bone marrow suppression, hepatotoxicity; dose-related; TDM</p>
+<ul><li>Q: <b>Azole + calcineurin inhibitor interaction?</b></li></ul>
+<p>A: ↑ Tacrolimus, cyclosporine, sirolimus (CYP3A4 inhibition); reduce dose 50-67%</p>
+<ul><li>Q: <b>Itraconazole absorption requires?</b></li></ul>
+<p>A: Acidic gastric pH (avoid PPIs/H2); cyclodextrin vehicle; negative inotrope (avoid in HFrEF)</p>
+<ul><li>Q: <b>Voriconazole CYP2C19 polymorphism significance?</b></li></ul>
+<p>A: Poor metabolisers have ~4x higher levels; significant PK variability → TDM essential</p>
+<ul><li>Q: <b>Posaconazole DR tab dose?</b></li></ul>
+<p>A: 300 mg daily (after 300 mg BID x 1 day or not needed); better absorption than suspension</p>
+<ul><li>Q: <b>Isavuconazole advantage?</b></li></ul>
+<p>A: IV and oral; water-soluble (no cyclodextrin); <b>no QTc prolongation (shortens QT)</b>; mucormycosis activity</p>
+<ul><li>Q: <b>Voriconazole visual AE?</b></li></ul>
+<p>A: Photopsia, blurred vision, hallucinations (15-30%) — transient; patient education important</p>
+<ul><li>Q: <b>Posaconazole prophylaxis (AML/GVHD) target?</b></li></ul>
+<p>A: Trough &gt;0.7-1 mg/L; reduced IA and mortality (Cornely NEJM 2007)</p>
+<ul><li>Q: <b>Newer agents summary?</b></li></ul>
+<p>A: Ibrexafungerp (oral glucan synthase); Rezafungin (weekly echinocandin); Fosmanogepix (Gwt1); Olorofim (DHODH — Aspergillus only)</p>
+<ul><li>Q: <b>C. parapsilosis echinocandin MIC?</b></li></ul>
+<p>A: Intrinsically higher MIC (clinical significance debated; usually still responsive but monitor)</p>
+<ul><li>Q: <b>Griseofulvin indication?</b></li></ul>
+<p>A: Dermatophytes only (Tinea capitis); tinea corporis refractory</p>
+<ul><li>Q: <b>Terbinafine indication and dose?</b></li></ul>
+<p>A: Onychomycosis 250 mg PO daily x 6 wk (finger) / 12 wk (toe); dermatophytes</p>
+<ul><li>Q: <b>Pneumocystis lacks ergosterol — what is true?</b></li></ul>
+<p>A: Azoles and polyenes INACTIVE; TMP-SMX first line</p>
+<ul><li>Q: <b>Fungal C. auris identification?</b></li></ul>
+<p>A: Often misidentified as C. haemulonii by VITEK 2; need MALDI-TOF or molecular; carbapenemase-producing colistin-resistant contamination possible</p>
+<ul><li>Q: <b>Major drug interaction azoles + statins?</b></li></ul>
+<p>A: Simvastatin CONTRAINDICATED (rhabdomyolysis); atorvastatin dose reduce</p>
+<ul><li>Q: <b>CYP3A4 inducers that lower azole levels?</b></li></ul>
+<p>A: Rifampicin, phenytoin, carbamazepine, phenobarbitone, St John's Wort; often contraindicated with vori/posa</p>
+<ul><li>Q: <b>Azole teratogenicity?</b></li></ul>
+<p>A: Voriconazole (facial clefts, cardiac defects); single-dose fluconazole in 1st trimester = potential risk; topical azoles safer in pregnancy</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Azoles inhibit CYP51 (ERG11) = lanosterol 14α-demethylase, blocking ergosterol synthesis. (A) is echinocandins, (C) is polyenes, (D) is allylamines, (E) is flucytosine.</li><li><b>C</b> — Echinocandin = IDSA 1st-line for candidaemia in non-neutropenic adults (fungicidal, broad, low toxicity, low interaction, covers C. glabrata, C. krusei).</li><li><b>C</b> — Voriconazole shown superior to AmB deoxycholate in Herbrecht NEJM 2002 (better survival + response). Caspofungin/Micafungin are alternatives; posa is salvage.</li><li><b>C</b> — LAmB 5-10 mg/kg + urgent surgery is gold standard. Voriconazole/itraconazole/fluconazole have NO Mucorales activity (except posa/isavuconazole — used as step-down or alternative).</li><li><b>C</b> — AmB + 5-FC (A5F) for 2 weeks is the gold standard induction per IDSA; reduces mortality and sterilises CSF faster. 5-FC alone is never used.</li><li><b>C</b> — C. krusei has intrinsically low-affinity ERG11 → fluconazole-R by definition. C. glabrata is SDD. C. albicans/tropicalis are usually susceptible.</li><li><b>B</b> — Echinocandins are fungicidal vs Candida (concentration-dependent) and fungistatic vs Aspergillus (cause abnormal hyphae but do not kill).</li><li><b>B</b> — Voriconazole trough 1-5.5 mg/L; aim &gt;2 for treatment, &gt;1 for prophylaxis. Below 1 = subtherapeutic; &gt;5.5 = toxicity risk (encephalopathy, hepatotoxicity, hallucinations).</li><li><b>B</b> — 5-FC monotherapy rapidly selects for single-step mutations in cytosine deaminase/permease → resistance. Always combine with AmB (synergy + prevention of resistance).</li><li><b>C</b> — C. auris often fluconazole-R; many isolates are also AmB-R; echinocandin (anidulafungin preferred) is current 1st-line per CDC.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> — Voriconazole shown to improve survival vs AmB deoxycholate in Herbrecht NEJM 2002. Caspofungin/itraconazole are alternatives but vori = agent with mortality benefit. Posaconazole = salvage/prophylaxis.</li><li><b>C</b> — Mucormycosis requires LAmB 5-10 mg/kg + urgent surgical debridement + reversal of risk factors (DKA correction, iron chelation). Voriconazole/echinocandins = no Mucorales activity. Mortality remains 30-50% even with treatment.</li><li><b>C</b> — AmB 0.7-1 mg/kg + 5-FC 100 mg/kg/day for 2 weeks is IDSA-recommended induction. Fluconazole monotherapy inadequate; voriconazole not standard. Add serial LPs for raised ICP.</li><li><b>B</b> — Trough 8 mg/L is above target (1-5.5 mg/L) and likely causing toxicity (hallucinations, hepatotoxicity). Reduce dose and recheck. Do NOT continue; do NOT stop permanently without trial; switch is not first step.</li><li><b>B</b> — Voriconazole is a strong CYP3A4 inhibitor → significant ↑ tacrolimus. Reduce tacrolimus dose by ~67% and monitor levels. Posaconazole/itraconazole also inhibit. Fluconazole less so at low dose. Griseofulvin/terbinafine/flucytosine have no/minimal interaction.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Antifungal Agents: Classification &amp; Mechanisms</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Antifungals target 4 main fungal processes — ergosterol synthesis (azoles, allylamines), ergosterol binding (polyenes), cell wall β-glucan synthesis (echinocandins), and nucleic acid synthesis (flucytosine). Echinocandins = 1st line candidaemia; Voriconazole = 1st line IA; LAmB + surgery = 1st line mucormycosis; AmB + 5-FC = 1st line crypto meningitis. TDM essential for vori, posa, 5-FC. C. krusei (fluco R), C. glabrata (SDD), C. auris (MDR) require awareness. <b>Exam focus:</b> Class mechanisms + spectrum; 1st line for major mycoses; vori/posa TDM; azole-CYP3A4 interactions (calcineurin); intrinsic resistance patterns; PCP ≠ typical fungus (no ergosterol); terbinafine/griseofulvin for dermatophytes only. <b>Clinical relevance:</b> Empiric regimen selection, IV-to-oral step-down, TDM-guided dosing, antifungal stewardship, source control (CVC removal in candidaemia), surgical debridement in mucormycosis.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antifungal Agents Classification Mechanisms · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

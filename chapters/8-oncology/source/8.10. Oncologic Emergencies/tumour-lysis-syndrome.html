@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tumour Lysis Syndrome — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.10. ONCOLOGIC EMERGENCIES</span>
+      <div class="h1">Tumour Lysis Syndrome</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>Cairo-Bishop Criteria</b> for Laboratory and Clinical TLS diagnosis</li><li>[ ] Stratify <b>TLS Risk</b> (High, Intermediate, Low) by tumour type</li><li>[ ] Prescribe <b>Rasburicase</b> (High Risk/Established) vs <b>Allopurinol</b> (Prophylaxis)</li><li>[ ] Implement <b>Aggressive Hydration</b> (3L/m²/d)</li><li>[ ] Monitor <b>Electrolytes, Uric Acid, Renal Function, ECG</b> q4-6h</li><li>[ ] Manage <b>Complications</b>: Hyperkalaemia, Hypocalcaemia, AKI, Arrhythmias</li><li>[ ] Recognise <b>G6PD Deficiency</b> contraindication for Rasburicase</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Event</th><th>Mechanism</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Massive Tumour Cell Lysis**</td><td>Spontaneous or Post-Chemotherapy → Intracellular Contents Released</td></tr><tr><td>**Potassium Release**</td><td>**Intracellular K⁺ (150 mmol/L)** → Hyperkalaemia</td></tr><tr><td>**Phosphate Release**</td><td>**Intracellular Phosphate** → Hyperphosphataemia</td></tr><tr><td>**Nucleic Acid Catabolism**</td><td>**Purines → Uric Acid** (via Xanthine Oxidase) → Hyperuricaemia</td></tr><tr><td>**Calcium Phosphate Precipitation**</td><td>**Hyperphosphataemia + Hypocalcaemia** → CaPO₄ Crystals in Renal Tubules</td></tr><tr><td>**Uric Acid Crystallisation**</td><td>**Low Solubility at pH<5.5** → Renal Tubular Obstruction → AKI</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Cairo-Bishop Criteria (2004)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Laboratory TLS (≥2 of the following within 3 days pre- / 7 days post-chemotherapy)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Uric Acid**</td><td>**≥476 μmol/L (8 mg/dL)**</td></tr><tr><td>**Potassium**</td><td>**≥6.0 mmol/L**</td></tr><tr><td>**Phosphate**</td><td>**≥2.1 mmol/L (6.5 mg/dL)** (Adults) / **≥2.9 mmol/L** (Children)</td></tr><tr><td>**Calcium**</td><td>**≤1.75 mmol/L (7 mg/dL)**</td></tr></table>
+<div class="sub-h">Clinical TLS (Laboratory TLS + ≥1 of)</div>
+<table class="ctable"><tr><th>Complication</th><th>Definition</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Renal**</td><td>Creatinine >1.5x ULN</td></tr><tr><td>**Cardiac**</td><td>Arrhythmia / Sudden Death</td></tr><tr><td>**Neurological**</td><td>Seizure</td></tr><tr><td>**Fatal**</td><td>Death</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Risk Stratification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Risk Group</th><th>Tumour Types</th><th>TLS Incidence</th><th>Prophylaxis</th></tr><tr><td>------------</td><td>--------------</td><td>---------------</td><td>-------------</td></tr><tr><td>**High**</td><td>**Burkitt Lymphoma**, **ALL (WBC >50-100×10⁹/L)**, **AML (WBC >50×10⁹/L)**, **High-Grade NHL (Lymphoblastic, DLBCL High Tumour Burden)**, **SCLC**</td><td>**5-25%**</td><td>**Rasburicase + Aggressive Hydration**</td></tr><tr><td>**Intermediate**</td><td>**DLBCL (Bulky)**, **Other NHL**, **Multiple Myeloma**, **Acute Leukaemias (Lower WBC)**, **Solid Tumours (High Turnover)**</td><td>**1-5%**</td><td>**Allopurinol + Hydration**</td></tr><tr><td>**Low**</td><td>**Solid Tumours (Low Turnover)**, **Indolent NHL (CLL, Follicular)**, **CML Chronic Phase**</td><td>**<1%**</td><td>**Hydration + Allopurinol PRN**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[TLS Suspected / High Risk] --&gt; B[<b>Aggressive Hydration: 3L/m²/d IV 0.9% Saline</b> (Target Urine &gt;100mL/h)] B --&gt; C[<b>Rasburicase 0.2mg/kg IV Daily</b> (Until Uric Acid Normal) — <b>Gold Standard</b>] C --&gt; D[<b>Allopurinol 300mg OD</b> (If Rasburicase Unavailable / Prophylaxis)] D --&gt; E[<b>Monitor: Uric Acid, K, Phos, Ca, Creatinine, ECG q4-6h</b>] E --&gt; F{Uric Acid / Electrolytes} F --&gt;|<b>K ≥6.0 / ECG Changes</b>| G[<b>Calcium Gluconate 10mL 10% IV</b>, <b>Insulin/Dextrose</b>, <b>Salbutamol</b>, <b>Dialysis if Refractory</b>] F --&gt;|<b>Phos ≥2.1 / Ca ≤1.75</b>| H[<b>Phosphate Binders (Sevelamer), Calcium Supplement (If Hypocalcaemic)</b>] F --&gt;|<b>AKI / Oliguria</b>| I[<b>Renal Replacement Therapy (Dialysis)</b>] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Rasburicase vs Allopurinol</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**Rasburicase**</th><th>**Allopurinol**</th></tr><tr><td>---------</td><td>-----------------</td><td>-----------------</td></tr><tr><td>**Mechanism**</td><td>**Recombinant Urate Oxidase** → Converts Uric Acid → **Allantoin** (5-10x More Soluble)</td><td>**Xanthine Oxidase Inhibitor** → Prevents Uric Acid Formation</td></tr><tr><td>**Onset**</td><td>**Hours** (Rapid Uric Acid Reduction)</td><td>**Days** (Prevents New Formation Only)</td></tr><tr><td>**Indication**</td><td>**Established TLS / High Risk**</td><td>**Prophylaxis / Intermediate Risk**</td></tr><tr><td>**Contraindication**</td><td>**G6PD Deficiency** (Haemolysis, Methaemoglobinaemia)</td><td>**Hypersensitivity** (Stevens-Johnson, DRESS)</td></tr><tr><td>**Cost**</td><td>**High**</td><td>**Low**</td></tr><tr><td>**Dose**</td><td>**0.2mg/kg IV Daily** (1-5 Days)</td><td>**300mg OD** (Renal Adjust if CrCl<30)</td></tr><tr><td>**Monitoring**</td><td>**Uric Acid q4-6h**, **Methaemoglobin**</td><td>**Uric Acid Daily**, **LFTs**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">G6PD Deficiency & Rasburicase</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>G6PD Deficiency Prevalence</th><th>Action</th></tr><tr><td>------------</td><td>---------------------------</td><td>--------</td></tr><tr><td>**African, Mediterranean, Middle Eastern, Asian**</td><td>**5-25%**</td><td>**Screen Before Rasburicase** if High Prevalence</td></tr><tr><td>**Test**</td><td>**Quantitative G6PD Assay** (Not Qualitative)</td><td>**If Deficient: Avoid Rasburicase, Use Allopurinol**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complication Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Hyperkalaemia (K⁺ ≥6.0 mmol/L or ECG Changes)</div>
+<table class="ctable"><tr><th>Step</th><th>Treatment</th></tr><tr><td>------</td><td>-----------</td></tr><tr><td>**1. Cardiac Stabilisation**</td><td>**Calcium Gluconate 10mL 10% IV** (Over 5-10min)</td></tr><tr><td>**2. Shift K⁺ Intracellular**</td><td>**Insulin 10U + Dextrose 50mL 50% IV**; **Salbutamol 5mg Nebulised**</td></tr><tr><td>**3. Enhance Excretion**</td><td>**Furosemide 40-80mg IV** (If Urine Output Adequate); **Sodium Polystyrene Sulfonate**</td></tr><tr><td>**4. Definitive**</td><td>**Dialysis** (Refractory, Severe AKI, ECG Changes Persist)</td></tr></table>
+<div class="sub-h">Hypocalcaemia (Corrected Ca ≤1.75 mmol/L)</div>
+<table class="ctable"><tr><th>Scenario</th><th>Treatment</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**Symptomatic (Tetany, Seizures, QT Prolongation)**</td><td>**Calcium Gluconate 10mL 10% IV** (Repeat PRN)</td></tr><tr><td>**Asymptomatic**</td><td>**Oral Calcium + Vitamin D**; **Avoid IV if Phosphate High** (Risk CaPO₄ Precipitation)</td></tr></table>
+<div class="sub-h">Acute Kidney Injury</div>
+<table class="ctable"><tr><th>Indication for Dialysis</th><th>Modality</th></tr><tr><td>-------------------------</td><td>----------</td></tr><tr><td>**Refractory Hyperkalaemia**</td><td>**Intermittent HD / CRRT**</td></tr><tr><td>**Severe Metabolic Acidosis**</td><td>**CRRT Preferred**</td></tr><tr><td>**Fluid Overload / Pulmonary Oedema**</td><td>**CRRT / HD**</td></tr><tr><td>**Uric Acid >1000 μmol/L Refractory**</td><td>**HD**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Monitoring Protocol (q4-6h during High Risk)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Frequency</th><th>Target</th></tr><tr><td>-----------</td><td>-----------</td><td>--------</td></tr><tr><td>**Uric Acid**</td><td>q4-6h</td><td><360 μmol/L (6 mg/dL)</td></tr><tr><td>**Potassium**</td><td>q4-6h</td><td><5.5 mmol/L</td></tr><tr><td>**Phosphate**</td><td>q4-6h</td><td><1.5 mmol/L</td></tr><tr><td>**Calcium (Corrected/Ionised)**</td><td>q4-6h</td><td>>2.0 mmol/L</td></tr><tr><td>**Creatinine/U&E**</td><td>q4-6h</td><td>Stable/Improving</td></tr><tr><td>**ECG**</td><td>Continuous/q6h</td><td>No Peaked T, Widened QRS</td></tr><tr><td>**Fluid Balance**</td><td>Hourly</td><td>Urine >100mL/h</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Cairo-Bishop Lab TLS**</td><td>**≥2 of**: UA ≥476, K≥6.0, Phos≥2.1, Ca≤1.75 (within 3d pre/7d post chemo)</td></tr><tr><td>**Clinical TLS**</td><td>Lab TLS + Creatinine>1.5xULN, Arrhythmia, Seizure, Death</td></tr><tr><td>**Risk Groups**</td><td>**High**: Burkitt, ALL/AML (High WBC), High-Grade NHL; **Intermediate**: DLBCL, Myeloma; **Low**: Indolent</td></tr><tr><td>**Hydration**</td><td>**3L/m²/d 0.9% Saline**, Urine >100mL/h, Alkalisation (Not Routine with Rasburicase)</td></tr><tr><td>**Rasburicase**</td><td>**0.2mg/kg IV Daily** (GOLD Standard), **G6PD Contraindicated**, Until UA Normal</td></tr><tr><td>**Allopurinol**</td><td>**300mg OD** (Prophylaxis/Intermediate), Xanthine Oxidase Inhibitor</td></tr><tr><td>**Hyperkalaemia**</td><td>**Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis**</td></tr><tr><td>**Hypocalcaemia**</td><td>**Do NOT Correct Aggressively** (CaPO₄ Precipitation Risk); Symptomatic → Ca Gluconate</td></tr><tr><td>**G6PD**</td><td>**Screen if High Prevalence**; **Contraindicated with Rasburicase**</td></tr><tr><td>**TLS Prevention**</td><td>**Hydration + Rasburicase (High Risk) / Allopurinol (Intermediate)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Cairo-Bishop Laboratory TLS Criteria?**</td><td>**≥2 of: UA ≥476 μmol/L, K≥6.0, Phos≥2.1, Ca≤1.75** within 3d pre / 7d post chemo.</td></tr><tr><td>**Clinical TLS Definition?**</td><td>**Lab TLS + ≥1: Creatinine>1.5xULN, Arrhythmia, Seizure, Death**.</td></tr><tr><td>**High Risk Tumours for TLS?**</td><td>**Burkitt, ALL (WBC>50-100), AML (WBC>50), High-Grade NHL, SCLC**.</td></tr><tr><td>**Rasburicase vs Allopurinol — When Which?**</td><td>**Rasburicase: High Risk/Established TLS (Rapid UA↓)**; **Allopurinol: Prophylaxis/Intermediate Risk**.</td></tr><tr><td>**Rasburicase Contraindication?**</td><td>**G6PD Deficiency** (Haemolysis, Methaemoglobinaemia).</td></tr><tr><td>**Rasburicase Dose, Duration?**</td><td>**0.2mg/kg IV Daily** until Uric Acid Normal (Typically 1-5 Days).</td></tr><tr><td>**Hyperkalaemia in TLS — Immediate Management?**</td><td>**Calcium Gluconate 10mL 10% IV → Insulin/Dextrose → Salbutamol Neb → Dialysis if Refractory**.</td></tr><tr><td>**Hypocalcaemia in TLS — Why Not Aggressively Correct?**</td><td>**CaPO₄ Precipitation Risk** (Worsens Nephropathy); **Only Correct If Symptomatic**.</td></tr><tr><td>**G6PD Deficiency — Rasburicase Action?**</td><td>**Contraindicated** → **Use Allopurinol**; **Screen if High Prevalence Population**.</td></tr><tr><td>**TLS Prevention — Intermediate Risk?**</td><td>**Allopurinol 300mg OD + Hydration 3L/m²/d**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Rasburicase vs Allopurinol**</td><td>**Rasburicase**: Degrades Existing UA (Urate Oxidase); **Allopurinol**: Prevents New UA (XO Inhibitor)</td></tr><tr><td>**Lab TLS vs Clinical TLS**</td><td>**Lab**: ≥2 Biochemical Abnormalities; **Clinical**: Lab TLS + Organ Dysfunction</td></tr><tr><td>**Rasburicase in G6PD**</td><td>**Contraindicated** (Haemolysis); **Allopurinol Safe**</td></tr><tr><td>**Phosphate in TLS**</td><td>**↑** (Intracellular Release) → **Hypocalcaemia** (CaPO₄ Precipitation)</td></tr><tr><td>**Hypocalcaemia Correction**</td><td>**Do Not Overcorrect** → Risk CaPO₄ Precipitation; Only Symptomatic</td></tr><tr><td>**TLS vs Hypercalcaemia — Phosphate**</td><td>**TLS: Phos ↑**; **Hypercalcaemia: Phos Normal/↓** (PTHrP → Phos ↓)</td></tr><tr><td>**Allopurinol in Renal Impairment**</td><td>**Dose Reduce** (CrCl<30: 100mg OD/Alternate Day); **Rasburicase: No Renal Adjustment**</td></tr></table>
+<p><b>Mnemonic: TLS-CAIRO-BISHOP</b></p>
+<ul><li><b>T</b>umour <b>L</b>ysis <b>S</b>yndrome</li><li><b>C</b>AIRO: <b>Ca</b> (Hypocalcaemia ≤1.75), <b>I</b> (UA ≥476), <b>R</b> (K≥6.0), <b>O</b> (Phos ≥2.1)</li><li><b>B</b>ishop: <b>Clinical = Lab + Organ Dysfunction</b> (Creatinine, Arrhythmia, Seizure, Death)</li><li><b>R</b>isk: <b>Burkitt, ALL, AML (High WBC), High-Grade NHL</b></li><li><b>A</b>llopurinol: <b>Prophylaxis/Intermediate</b> (XO Inhibitor)</li><li><b>S</b>creen G6PD: <b>Rasburicase Contraindicated</b></li><li><b>H</b>ydration: <b>3L/m²/d Saline</b>, Urine &gt;100mL/h</li><li><b>I</b>mmediate: <b>Rasburicase 0.2mg/kg IV</b> (Urate Oxidase → Allantoin)</li><li><b>O</b>rgan Dysfunction: <b>AKI, Arrhythmia, Seizure</b></li><li><b>P</b>hosphate: <b>↑ → Hypocalcaemia</b> (CaPO₄ Precipitation)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Tumour Lysis Syndrome)) Definition Massive Cell Lysis → K, Phos, UA Release CaPO4 Precipitation → AKI Cairo-Bishop Lab TLS: ≥2 (UA, K, Phos, Ca) Clinical TLS: Lab + Organ Dysfunction Risk High: Burkitt, ALL/AML (High WBC), High-Grade NHL Intermediate: DLBCL, Myeloma Low: Indolent NHL, Solid Tumours Management Hydration 3L/m²/d Rasburicase (High Risk) / Allopurinol (Prophylaxis) Monitor q4-6h (UA, K, Phos, Ca, Cr, ECG) Complications Hyperkalaemia: Ca Gluconate → Insulin/Dextrose → Dialysis Hypocalcaemia: Symptomatic Only (CaPO4 Risk) AKI: Dialysis Rasburicase vs Allopurinol Rasburicase: Urate Oxidase, Rapid, G6PD Contraindicated Allopurinol: XO Inhibitor, Prophylaxis </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Lab TLS**</td><td>≥2 of: UA≥476, K≥6.0, Phos≥2.1, Ca≤1.75</td></tr><tr><td>**Clinical TLS**</td><td>Lab TLS + Creatinine>1.5xULN, Arrhythmia, Seizure</td></tr><tr><td>**Risk**</td><td>High: Burkitt, ALL/AML (High WBC), High-Grade NHL</td></tr><tr><td>**Hydration**</td><td>3L/m²/d Saline, Urine >100mL/h</td></tr><tr><td>**Rasburicase**</td><td>0.2mg/kg IV Daily, G6PD Contraindicated</td></tr><tr><td>**Allopurinol**</td><td>300mg OD Prophylaxis/Intermediate</td></tr><tr><td>**Hyperkalaemia**</td><td>Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis</td></tr><tr><td>**Hypocalcaemia**</td><td>Symptomatic Only (CaPO₄ Risk)</td></tr><tr><td>**G6PD**</td><td>Screen Before Rasburicase</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Cairo-Bishop Criteria</td><td></td><td></td></tr><tr><td>Risk Stratification</td><td></td><td></td></tr><tr><td>Rasburicase vs Allopurinol</td><td></td><td></td></tr><tr><td>Complication Management</td><td></td><td></td></tr><tr><td>G6PD Screening</td><td></td><td></td></tr><tr><td>Monitoring Protocol</td><td></td><td></td></tr><tr><td>Hydration Protocol</td><td></td><td></td></tr><tr><td>Dialysis Indications</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Hypercalcaemia of Malignancy]], [[SIADH]], [[Neutropenic Sepsis]], [[Cairo-Bishop Criteria]], [[Rasburicase]], [[Allopurinol]], [[G6PD Deficiency]], [[Oncologic Emergencies]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Tumour Lysis Syndrome (TLS) (Cairo-Bishop Lab TLS), which statement is correct? A. <b>≥2 of</b>: UA ≥476, K≥6.0, Phos≥2.1, Ca≤1.75 (within 3d pre/7d post chemo) B. **≥2 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>≥2 of</b>: UA ≥476, K≥6.0, Phos≥2.1, Ca≤1.75 (within 3d pre/7d post chemo)</li></ul>
+<p><b>2.</b> Regarding Tumour Lysis Syndrome (TLS) (Clinical TLS), which statement is correct? A. Lab TLS + Creatinine&gt;1.5xULN, Arrhythmia, Seizure, Death B. Lab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Lab TLS + Creatinine&gt;1.5xULN, Arrhythmia, Seizure, Death</li></ul>
+<p><b>3.</b> Regarding Tumour Lysis Syndrome (TLS) (Risk Groups), which statement is correct? A. <b>High</b>: Burkitt, ALL/AML (High WBC), High-Grade NHL B. <b>High</b>: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>High</b>: Burkitt, ALL/AML (High WBC), High-Grade NHL; <b>Intermediate</b>: DLBCL, Myeloma; <b>Low</b>: Indolent</li></ul>
+<p><b>4.</b> Regarding Tumour Lysis Syndrome (TLS) (Hydration), which statement is correct? A. <b>3L/m²/d 0.9% Saline</b>, Urine &gt;100mL/h, Alkalisation (Not Routine with Rasburicase) B. **3L/m²/d - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>3L/m²/d 0.9% Saline</b>, Urine &gt;100mL/h, Alkalisation (Not Routine with Rasburicase)</li></ul>
+<p><b>5.</b> Regarding Tumour Lysis Syndrome (TLS) (Rasburicase), which statement is correct? A. <b>0.2mg/kg IV Daily</b> (GOLD Standard), <b>G6PD Contraindicated</b>, Until UA Normal B. **0.2mg/kg - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>0.2mg/kg IV Daily</b> (GOLD Standard), <b>G6PD Contraindicated</b>, Until UA Normal</li></ul>
+<p><b>6.</b> Regarding Tumour Lysis Syndrome (TLS) (Allopurinol), which statement is correct? A. <b>300mg OD</b> (Prophylaxis/Intermediate), Xanthine Oxidase Inhibitor B. **300mg - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>300mg OD</b> (Prophylaxis/Intermediate), Xanthine Oxidase Inhibitor</li></ul>
+<p><b>7.</b> Regarding Tumour Lysis Syndrome (TLS) (Hyperkalaemia), which statement is correct? A. <b>Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis</b> B. **Ca - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis</b></li></ul>
+<p><b>8.</b> Regarding Tumour Lysis Syndrome (TLS) (Hypocalcaemia), which statement is correct? A. <b>Do NOT Correct Aggressively</b> (CaPO₄ Precipitation Risk) B. **Do - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Do NOT Correct Aggressively</b> (CaPO₄ Precipitation Risk); Symptomatic → Ca Gluconate</li></ul>
+<p><b>9.</b> Regarding Tumour Lysis Syndrome (TLS) (G6PD), which statement is correct? A. <b>Screen if High Prevalence</b> B. **Screen - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Screen if High Prevalence</b>; <b>Contraindicated with Rasburicase</b></li></ul>
+<p><b>10.</b> Regarding Tumour Lysis Syndrome (TLS) (TLS Prevention), which statement is correct? A. <b>Hydration + Rasburicase (High Risk) / Allopurinol (Intermediate)</b> B. **Hydration - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Hydration + Rasburicase (High Risk) / Allopurinol (Intermediate)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>≥2 of</b>: UA ≥476, K≥6.0, Phos≥2.1, Ca≤1.75 (within 3d pre/7d post chemo)</li><li>B. **≥2 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>≥2 of</b>: UA ≥476, K≥6.0, Phos≥2.1, Ca≤1.75 (within 3d pre/7d post chemo)</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. Lab TLS + Creatinine&gt;1.5xULN, Arrhythmia, Seizure, Death</li><li>B. Lab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: Lab TLS + Creatinine&gt;1.5xULN, Arrhythmia, Seizure, Death</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>High</b>: Burkitt, ALL/AML (High WBC), High-Grade NHL</li><li>B. <b>High</b>: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>High</b>: Burkitt, ALL/AML (High WBC), High-Grade NHL; <b>Intermediate</b>: DLBCL, Myeloma; <b>Low</b>: Indolent</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>3L/m²/d 0.9% Saline</b>, Urine &gt;100mL/h, Alkalisation (Not Routine with Rasburicase)</li><li>B. **3L/m²/d (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>3L/m²/d 0.9% Saline</b>, Urine &gt;100mL/h, Alkalisation (Not Routine with Rasburicase)</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>0.2mg/kg IV Daily</b> (GOLD Standard), <b>G6PD Contraindicated</b>, Until UA Normal</li><li>B. **0.2mg/kg (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>0.2mg/kg IV Daily</b> (GOLD Standard), <b>G6PD Contraindicated</b>, Until UA Normal</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>300mg OD</b> (Prophylaxis/Intermediate), Xanthine Oxidase Inhibitor</li><li>B. **300mg (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>300mg OD</b> (Prophylaxis/Intermediate), Xanthine Oxidase Inhibitor</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis</b></li><li>B. **Ca (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Do NOT Correct Aggressively</b> (CaPO₄ Precipitation Risk)</li><li>B. **Do (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Do NOT Correct Aggressively</b> (CaPO₄ Precipitation Risk); Symptomatic → Ca Gluconate</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Screen if High Prevalence</b></li><li>B. **Screen (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Screen if High Prevalence</b>; <b>Contraindicated with Rasburicase</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Hydration + Rasburicase (High Risk) / Allopurinol (Intermediate)</b></li><li>B. **Hydration (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Hydration + Rasburicase (High Risk) / Allopurinol (Intermediate)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Cairo-Bishop Lab TLS? <b>A1:</b> ≥2 of: UA ≥476, K≥6.0, Phos≥2.1, Ca≤1.75 (within 3d pre/7d post chemo)</p>
+<p><b>Q2:</b> Clinical TLS? <b>A2:</b> Lab TLS + Creatinine&gt;1.5xULN, Arrhythmia, Seizure, Death</p>
+<p><b>Q3:</b> Risk Groups? <b>A3:</b> High: Burkitt, ALL/AML (High WBC), High-Grade NHL; Intermediate: DLBCL, Myeloma; Low: Indolent</p>
+<p><b>Q4:</b> Hydration? <b>A4:</b> 3L/m²/d 0.9% Saline, Urine &gt;100mL/h, Alkalisation (Not Routine with Rasburicase)</p>
+<p><b>Q5:</b> Rasburicase? <b>A5:</b> 0.2mg/kg IV Daily (GOLD Standard), G6PD Contraindicated, Until UA Normal</p>
+<p><b>Q6:</b> Allopurinol? <b>A6:</b> 300mg OD (Prophylaxis/Intermediate), Xanthine Oxidase Inhibitor</p>
+<p><b>Q7:</b> Hyperkalaemia? <b>A7:</b> Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis</p>
+<p><b>Q8:</b> Hypocalcaemia? <b>A8:</b> Do NOT Correct Aggressively (CaPO₄ Precipitation Risk); Symptomatic → Ca Gluconate</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Cairo-Bishop Lab TLS</td><td>≥2 of: UA ≥476, K≥6.0, Phos≥2.1, Ca≤1.75 (within 3d pre/7d post chemo)</td></tr><tr><td>2</td><td>A</td><td>Clinical TLS</td><td>Lab TLS + Creatinine>1.5xULN, Arrhythmia, Seizure, Death</td></tr><tr><td>3</td><td>A</td><td>Risk Groups</td><td>High: Burkitt, ALL/AML (High WBC), High-Grade NHL; Intermediate: DLBCL, Myeloma; Low: Indolent</td></tr><tr><td>4</td><td>A</td><td>Hydration</td><td>3L/m²/d 0.9% Saline, Urine >100mL/h, Alkalisation (Not Routine with Rasburicase)</td></tr><tr><td>5</td><td>A</td><td>Rasburicase</td><td>0.2mg/kg IV Daily (GOLD Standard), G6PD Contraindicated, Until UA Normal</td></tr><tr><td>6</td><td>A</td><td>Allopurinol</td><td>300mg OD (Prophylaxis/Intermediate), Xanthine Oxidase Inhibitor</td></tr><tr><td>7</td><td>A</td><td>Hyperkalaemia</td><td>Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis</td></tr><tr><td>8</td><td>A</td><td>Hypocalcaemia</td><td>Do NOT Correct Aggressively (CaPO₄ Precipitation Risk); Symptomatic → Ca Gluconate</td></tr><tr><td>9</td><td>A</td><td>G6PD</td><td>Screen if High Prevalence; Contraindicated with Rasburicase</td></tr><tr><td>10</td><td>A</td><td>TLS Prevention</td><td>Hydration + Rasburicase (High Risk) / Allopurinol (Intermediate)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Cairo-Bishop Lab TLS</td><td>≥2 of: UA ≥476, K≥6.0, Phos≥2.1, Ca≤1.75 (within 3d pre/7d post chemo)</td></tr><tr><td>2</td><td>A</td><td>Clinical TLS</td><td>Lab TLS + Creatinine>1.5xULN, Arrhythmia, Seizure, Death</td></tr><tr><td>3</td><td>A</td><td>Risk Groups</td><td>High: Burkitt, ALL/AML (High WBC), High-Grade NHL; Intermediate: DLBCL, Myeloma; Low: Indolent</td></tr><tr><td>4</td><td>A</td><td>Hydration</td><td>3L/m²/d 0.9% Saline, Urine >100mL/h, Alkalisation (Not Routine with Rasburicase)</td></tr><tr><td>5</td><td>A</td><td>Rasburicase</td><td>0.2mg/kg IV Daily (GOLD Standard), G6PD Contraindicated, Until UA Normal</td></tr><tr><td>6</td><td>A</td><td>Allopurinol</td><td>300mg OD (Prophylaxis/Intermediate), Xanthine Oxidase Inhibitor</td></tr><tr><td>7</td><td>A</td><td>Hyperkalaemia</td><td>Ca Gluconate → Insulin/Dextrose → Salbutamol → Dialysis</td></tr><tr><td>8</td><td>A</td><td>Hypocalcaemia</td><td>Do NOT Correct Aggressively (CaPO₄ Precipitation Risk); Symptomatic → Ca Gluconate</td></tr><tr><td>9</td><td>A</td><td>G6PD</td><td>Screen if High Prevalence; Contraindicated with Rasburicase</td></tr><tr><td>10</td><td>A</td><td>TLS Prevention</td><td>Hydration + Rasburicase (High Risk) / Allopurinol (Intermediate)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Oncologic Emergencies|Oncologic Emergencies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Tumour Lysis Syndrome · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prostate Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.19. UROLOGICAL CANCERS</span>
+      <div class="h1">Prostate Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>NCCN/EAU risk stratification</b> for localised disease</li><li>[ ] Select <b>Active Surveillance</b> criteria (Very Low/Low risk)</li><li>[ ] Compare <b>Radical Prostatectomy</b> vs <b>Radiotherapy</b> (EBRT + Brachy boost) for intermediate/high risk</li><li>[ ] Sequence <b>mHSPC</b>: ADT + <b>ARSI (Abiraterone/Enzalutamide/Apalutamide/Darolutamide)</b> or <b>Docetaxel</b></li><li>[ ] Sequence <b>mCRPC</b>: <b>ARSI → ARSI switch</b>, <b>Docetaxel/Cabazitaxel</b>, <b>PARPi (BRCA)</b>, <b>Radium-223</b>, <b>PSMA-Lu177</b></li><li>[ ] Apply <b>Galsky criteria</b> for docetaxel eligibility in mCRPC</li><li>[ ] Interpret <b>PSMA-PET</b> for staging, oligometastatic directed therapy, Lu177 eligibility</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of prostate epithelium; **Acinar Adenocarcinoma >95%**; Variants: Ductal, Small cell, Neuroendocrine, Squamous</td></tr><tr><td>**Incidence**</td><td>UK: ~52,000/year; **Most common male cancer**; 2nd cause of cancer death (M)</td></tr><tr><td>**Prevalence**</td><td>5-year OS ~95% (localised), ~30% (metastatic)</td></tr><tr><td>**Peak Age**</td><td>65-75 years; Rare <50</td></tr><tr><td>**Sex Ratio**</td><td>Male only</td></tr><tr><td>**Risk Factors**</td><td>**Age**, **Family history** (↑2-3x if 1st degree), **BRCA2** (↑5-8x, earlier onset), **BRCA1**, **HOXB13**, **Lynch**, **African ancestry** (↑ incidence & mortality), **Obesity** (aggressive disease), **Diet** (high dairy, processed meat)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Initiation] --&gt; B[Androgen Receptor (AR) Pathway] B --&gt; C[Luminal Cell Differentiation] C --&gt; D[Early Events] D --&gt; D1[TMPRSS2-ERG Fusion (50%)] D --&gt; D2[SPINK1 Overexpression (10%)] D --&gt; D3[SPOP Mutation (10%)] D --&gt; D4[FOXA1 Mutation] C --&gt; E[Progression to CRPC] E --&gt; E1[AR Amplification/Mutation (T878A, L702H)] E --&gt; E2[AR Splice Variants (AR-V7)] E --&gt; E3[Glucocorticoid Receptor Activation] E --&gt; E4[Neuroendocrine Differentiation (RB1/TP53 loss)] E --&gt; E5[BRCA1/2, ATM, PALB2 Loss (HRD)] </code>``</p>
+<div class="sub-h">Molecular Subtypes</div>
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Key Features</th><th>Therapeutic Implications</th></tr><tr><td>---------</td><td>-----------</td><td>--------------</td><td>-------------------------</td></tr><tr><td>**TMPRSS2-ERG**</td><td>50%</td><td>Androgen-driven fusion</td><td>Early event; Not directly targetable</td></tr><tr><td>**SPINK1**</td><td>10%</td><td>Mutually exclusive with ERG</td><td>Aggressive</td></tr><tr><td>**SPOP**</td><td>10%</td><td>Chromatin remodelling</td><td>Better prognosis</td></tr><tr><td>**BRCA2/ATM/PALB2 (HRD)**</td><td>5-10% (germline+somatic)</td><td>**Homologous Recombination Deficiency**</td><td>**PARPi (Olaparib, Talazoparib)**, Platinum sensitivity</td></tr><tr><td>**MSI-H/dMMR**</td><td>3-5%</td><td>Hypermutation</td><td>**ICI (Pembrolizumab)**</td></tr><tr><td>**Neuroendocrine (NEPC)**</td><td>1-2% (↑ post-ARSI)</td><td>**RB1/TP53 loss**, ASCL1, NE markers</td><td>Platinum+Etoposide; Poor prognosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Localised**</td><td>Often **asymptomatic**; Detected on PSA screening; **LUTS** (frequency, nocturia, weak stream) — usually BPH</td></tr><tr><td>**Locally Advanced**</td><td>Urinary obstruction, haematuria, bladder outlet obstruction</td></tr><tr><td>**Metastatic**</td><td>**Bone pain** (axial skeleton, pelvis, femur), Spinal cord compression, Pathological fractures, Lymphadenopathy, Visceral mets (late)</td></tr><tr><td>**Paraneoplastic**</td><td>Rare; Hypertrophic pulmonary osteoarthropathy (HPOA)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**TNM 8th Edition**</td><td>T1: Incidental (T1a ≤5%, T1b >5%, T1c needle bx); T2: Organ-confined (T2a ≤1/2 lobe, T2b >1/2 lobe, T2c bilateral); T3: Extracapsular (T3a ECE, T3b SVI); T4: Adjacent organs</td></tr><tr><td>**N Stage**</td><td>N1: Regional nodes</td></tr><tr><td>**M Stage**</td><td>M1a: Non-regional nodes; M1b: Bone; M1c: Visceral</td></tr><tr><td>**Grade Groups (ISUP 2014)**</td><td>**GG1**: Gleason 3+3=6; **GG2**: 3+4=7; **GG3**: 4+3=7; **GG4**: 4+4=8, 3+5=8, 5+3=8; **GG5**: 4+5=9, 5+4=9, 5+5=10</td></tr></table>
+<div class="sub-h">Risk Stratification</div>
+<table class="ctable"><tr><th>System</th><th>Categories</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**NCCN**</td><td>**Very Low**: T1c, GG1, PSA<10, <3 cores +, ≤50% core involvement, PSA density <0.15<br/>**Low**: T1-T2a, GG1, PSA<10<br/>**Intermediate Favourable**: T2b-T2c, GG2, PSA 10-20 (1 factor)<br/>**Intermediate Unfavourable**: ≥2 factors or GG3<br/>**High**: T3a, GG4-5, PSA>20<br/>**Very High**: T3b-T4, Primary Gleason 5, >4 cores GG4-5</td></tr><tr><td>**EAU**</td><td>**Low**: T1-2a, GG1, PSA<10<br/>**Intermediate**: T2b-2c, GG2-3, PSA 10-20<br/>**High**: T3-4, GG4-5, PSA>20</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Findings</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td></tr><tr><td>**PSA**</td><td>Screening, Monitoring</td><td>**Age-specific ref ranges**; ↑ in cancer, BPH, prostatitis, UTI, post-TURP, post-RT; **Free:Total PSA ratio** (↑ specificity if <10-15%)</td></tr><tr><td>**DRE**</td><td>Clinical staging</td><td>Asymmetry, induration, nodule; cT stage</td></tr><tr><td>**MRI (mpMRI)**</td><td>**Pre-biopsy** (PI-RADS v2.1) — Targeted biopsy</td><td>**PI-RADS 3-5** → Targeted + Systematic biopsy; Avoids overdiagnosis of GG1</td></tr><tr><td>**Transperineal Biopsy**</td><td>**Preferred over TRUS** — Lower sepsis risk, better anterior sampling</td><td>Template or MRI-targeted</td></tr><tr><td>**PSMA-PET/CT (Ga-68 / F-18)**</td><td>**Staging (High risk)**, **Restaging (BCR)**, **Lu177 eligibility**</td><td>Superior to CT/Bone scan; Detects oligometastatic disease</td></tr><tr><td>**CT Chest/Abd/Pelvis**</td><td>Conventional staging (if PSMA-PET unavailable)</td><td>Nodes >1cm, Visceral mets</td></tr><tr><td>**Bone Scan (Tc-99m)**</td><td>Conventional bone staging</td><td>Superseded by PSMA-PET</td></tr><tr><td>**Germline Testing**</td><td>**All metastatic**; High-risk localised; Family history</td><td>**BRCA1/2, ATM, PALB2, CHEK2, MMR, HOXB13**</td></tr><tr><td>**Somatic NGS**</td><td>mCRPC</td><td>HRD, MSI, AR-V7 (blood), TMB</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Benign Prostatic Hyperplasia (BPH)**</td><td>LUTS, symmetrically enlarged prostate, PSA ↑ (usually <10), **No nodules on DRE**</td></tr><tr><td>**Prostatitis**</td><td>Acute: Fever, dysuria, tender prostate; Chronic: Pelvic pain, PSA ↑; **Resolves with antibiotics**</td></tr><tr><td>**Neuroendocrine Prostate Cancer**</td><td>Rapid progression, **low PSA**, visceral mets, elevated NSE/Chromogranin; **RB1/TP53 loss**</td></tr><tr><td>**Small Cell Carcinoma**</td><td>Aggressive, paraneoplastic (SIADH, Lambert-Eaton), **PSA often low**, Platinum+Etoposide</td></tr><tr><td>**Metastasis to Prostate**</td><td>Rare; Bladder, RCC, Lung, Melanoma; History of primary</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Localised Disease</div>
+<p>``<code>mermaid flowchart TD A[Diagnosis + Risk Group] --&gt; B{NCCN/EAU Risk} B --&gt;|Very Low / Low| C[<b>Active Surveillance</b>&lt;br/&gt;PSA q3-6mo, DRE q6-12mo, mpMRI q1-2yr, Re-bx q1-3yr&lt;br/&gt;<b>Triggers for Tx</b>: GG≥2, PSA DT&lt;3yr, &gt;2 cores +, Volume↑] B --&gt;|Intermediate Favourable| D[<b>Active Surveillance</b> (selected) <b>OR</b>&lt;br/&gt;<b>Radical Prostatectomy</b> (Open/Lap/Robot) <b>OR</b>&lt;br/&gt;<b>EBRT ± Brachy Boost</b> ± Short-course ADT (4-6mo)] B --&gt;|Intermediate Unfavourable| E[<b>Radical Prostatectomy</b> + PLND (if risk&gt;5%) <b>OR</b>&lt;br/&gt;<b>EBRT + Brachy Boost</b> + ADT 4-6mo (preferred over surgery if &gt;70/comorbid)] B --&gt;|High / Very High| F[<b>Multimodal</b>] F --&gt; F1[<b>Radical Prostatectomy</b> + Extended PLND <b>OR</b>&lt;br/&gt;<b>EBRT + Brachy Boost</b> + <b>ADT 18-36mo</b> (long-course)] F --&gt; F2[<b>Triple Therapy</b> (STAMPEDE/PEACE-1): ADT + Docetaxel + Abiraterone (mHSPC) — if metastatic] </code>``</p>
+<p><b>Active Surveillance Criteria (Strict):</b></p>
+<ul><li>NCCN Very Low/Low; EAU Low</li><li>Life expectancy &gt;10 years</li><li>Compliance with protocol</li></ul>
+<div class="sub-h">mHSPC (Metastatic Hormone-Sensitive)</div>
+<p>``<code>mermaid flowchart TD A[mHSPC Diagnosis] --&gt; B[<b>ADT (GnRH Agonist/Antagonist)</b>&lt;br/&gt;<b>+ ARSI</b> or <b>Docetaxel</b>] B --&gt; B1[<b>Abiraterone + Prednisone</b> (LATITUDE, STAMPEDE)&lt;br/&gt;<b>Preferred if high-volume/symptomatic</b>] B --&gt; B2[<b>Enzalutamide</b> (ENZAMET, ARCHES, STAMPEDE)&lt;br/&gt;<b>Preferred if low-volume/asymptomatic, no seizure hx</b>] B --&gt; B3[<b>Apalutamide</b> (TITAN)&lt;br/&gt;Crosses BBB less] B --&gt; B4[<b>Darolutamide</b> (ARASENS)&lt;br/&gt;<b>No seizure risk</b>, minimal drug interactions (CYP3A4)] B --&gt; B5[<b>Docetaxel 75mg/m² q3w ×6 cycles</b> (STAMPEDE, CHAARTED, GETUG-AFU 15)&lt;br/&gt;<b>If high-volume, fit, rapid progression</b>] B1 --&gt; C[<b>Bone Health: Denosumab/Zoledronic Acid</b>&lt;br/&gt;if ADT &gt;1yr or osteopenia] B2 --&gt; C B3 --&gt; C B4 --&gt; C B5 --&gt; C </code>``</p>
+<div class="sub-h">mCRPC (Metastatic Castration-Resistant)</div>
+<p>``<code>mermaid flowchart TD A[mCRPC: PSA rise + Castrate Testosterone (&lt;50ng/dL)] --&gt; B{Prior Therapy} B --&gt;|ADT only (mHSPC not treated)| C[<b>ARSI: Abiraterone / Enzalutamide / Apalutamide / Darolutamide</b>] B --&gt;|Post-ARSI (Abira or Enza)| D[<b>Switch ARSI</b>&lt;br/&gt;Abira → Enza/Apal/Daro (or vice versa)&lt;br/&gt;<b>Cross-resistance ~30-50%</b>] B --&gt;|Post-ARSI + Chemo| E[<b>Sequencing Options</b>] C --&gt; E D --&gt; E E --&gt; E1[<b>Docetaxel 75mg/m² q3w ×10 cycles</b> (TAX327, SWOG 9916)&lt;br/&gt;<b>If fit, visceral mets, rapid progression</b>] E --&gt; E2[<b>Cabazitaxel 25mg/m² q3w</b> (TROPIC, PROSELICA)&lt;br/&gt;<b>Post-Docetaxel</b>; 20mg/m² non-inferior, less toxic] E --&gt; E3[<b>PARP Inhibitor</b>&lt;br/&gt;<b>Olaparib</b> (PROfound) / <b>Talazoparib</b> (TALAPRO-2)&lt;br/&gt;<b>BRCA1/2, ATM, PALB2</b> (HRD)] E --&gt; E4[<b>Radium-223</b> (ALSYMPCA)&lt;br/&gt;<b>Bone-only mets, symptomatic, no visceral</b>&lt;br/&gt;55 kBq/kg q4w ×6 cycles; <b>No concurrent ARSI (ERA-223 ↑ fractures)</b>] E --&gt; E5[<b>PSMA-Lutetium-177</b> (VISION)&lt;br/&gt;<b>PSMA-PET positive</b> (Ga-68/F-18)&lt;br/&gt;7.4 GBq q6wk ×6 cycles; <b>Post-ARSI + Taxane</b>] E --&gt; E6[<b>Immunotherapy</b>&lt;br/&gt;<b>Pembrolizumab</b> if <b>MSI-H/dMMR</b>&lt;br/&gt;<b>Ipilimumab+Nivo</b> — not standard] E1 --&gt; F[Further Sequencing: ARSI switch → Taxane → PARPi → Ra-223 → Lu-177 → Trial] E2 --&gt; F E3 --&gt; F E4 --&gt; F E5 --&gt; F </code>``</p>
+<div class="sub-h">Oligometastatic Disease (≤3-5 mets)</div>
+<ul><li><b>PSMA-PET directed</b>: SBRT to all mets + ADT ± ARSI (STOMP, ORIOLE)</li><li><b>Defer systemic therapy</b> if asymptomatic</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Screening**</td><td>**PSA + DRE**; Age 50-70 (earlier if FH/Black); **MRI before biopsy** (PI-RADS)</td></tr><tr><td>**Grade Groups**</td><td>**GG1 (3+3=6)** to **GG5 (9-10)**; Replaces Gleason 6-10</td></tr><tr><td>**Risk Stratification**</td><td>NCCN: Very Low/Low/Int Fav/Int Unfav/High/Very High; EAU: Low/Int/High</td></tr><tr><td>**Active Surveillance**</td><td>**Very Low/Low risk**; Triggers: GG≥2, PSA DT<3yr, volume↑, >2 cores +</td></tr><tr><td>**Localised Rx**</td><td>**Int Fav**: AS / RP / RT+ADT; **Int Unfav/High**: RP+PLND / RT+Brachy+ADT 4-6mo / RT+ADT 18-36mo</td></tr><tr><td>**mHSPC**</td><td>**ADT + ARSI (Abira/Enza/Apa/Daro) OR Docetaxel**; **STAMPEDE**: Abira+ADT ↓mortality 37%; **ARASENS**: Daro+Doc+ADT</td></tr><tr><td>**mCRPC Sequence**</td><td>**1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (bone-only) → Lu-177 (PSMA+)**</td></tr><tr><td>**PARPi**</td><td>**Olaparib / Talazoparib** for **BRCA1/2, ATM, PALB2** (PROfound, TALAPRO-2)</td></tr><tr><td>**Radium-223**</td><td>**Bone-only, symptomatic, no visceral**; **No concurrent ARSI** (↑ fractures)</td></tr><tr><td>**PSMA-Lu177**</td><td>**VISION**: PSMA-PET+, Post-ARSI + Taxane → **OS HR 0.62**</td></tr><tr><td>**PSMA-PET**</td><td>**Staging (High risk)**, **Restaging (BCR, PSA>0.2/0.5)**, **Lu177 eligibility**</td></tr><tr><td>**Bone Health**</td><td>**Denosumab 60mg q6mo / Zoledronic Acid 4mg q3-6mo** on ADT</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**65M, PSA 6, MRI PI-RADS 3, bx: GG1 (3+3=6) in 1/12 cores. Management?**</td><td>**Active Surveillance** (Very Low/Low risk): PSA q3-6mo, DRE q12mo, mpMRI q1-2yr, Re-bx q3yr. Triggers: GG≥2, >2 cores +, PSA DT<3yr.</td></tr><tr><td>**70M, cT2c, GG4 (4+4=8), PSA 25. Localised treatment options?**</td><td>**High risk**: **Radical Prostatectomy + Extended PLND** OR **EBRT + Brachy Boost + ADT 18-36mo** (long-course). Surgery preferred if <70, fit.</td></tr><tr><td>**mHSPC — high-volume (CHAARTED: visceral or ≥4 bone mets with ≥1 beyond axial). 1L?**</td><td>**ADT + Abiraterone** (LATITUDE/STAMPEDE) **OR** **ADT + Docetaxel** (CHAARTED/STAMPEDE). **ARASENS**: ADT + Docetaxel + Darolutamide (triple therapy).</td></tr><tr><td>**mHSPC — low-volume, asymptomatic. 1L?**</td><td>**ADT + Enzalutamide** (ENZAMET/ARCHES) **OR** **ADT + Apalutamide** (TITAN) **OR** **ADT + Darolutamide** (ARASENS — all comers).</td></tr><tr><td>**mCRPC post-Abira — next?**</td><td>**Enzalutamide/Apalutamide/Darolutamide** (switch ARSI) **OR** **Docetaxel** (if fit, visceral, rapid progression).</td></tr><tr><td>**PARPi in mCRPC — indications, trials?**</td><td>**Olaparib** (PROfound) / **Talazoparib** (TALAPRO-2) → **BRCA1/2, ATM, PALB2** (HRD). Not for all-comers.</td></tr><tr><td>**Radium-223 — indication, contraindication?**</td><td>**Bone-only mCRPC, symptomatic, no visceral mets**; **Contraindicated with concurrent ARSI** (ERA-223: ↑ fractures, no OS benefit).</td></tr><tr><td>**PSMA-Lu177 — eligibility, trial?**</td><td>**VISION**: **PSMA-PET+** (Ga-68/F-18), **Post-ARSI + Taxane** → 7.4 GBq q6wk ×6 → **OS HR 0.62**.</td></tr><tr><td>**PSMA-PET — when indicated?**</td><td>**Staging**: High-risk localised (NCCN High/Very High); **Restaging**: BCR (PSA>0.2 post-RP, PSA>2 post-RT); **Lu177 eligibility**.</td></tr><tr><td>**Denosumab vs Zoledronic Acid on ADT?**</td><td>Both reduce fractures; **Denosumab 60mg SC q6mo** (no renal adjustment); **ZA 4mg IV q3-6mo** (renal adjust).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Gleason vs Grade Groups**</td><td>**GG1=3+3=6**, **GG2=3+4=7**, **GG3=4+3=7**, **GG4=8 (4+4, 3+5, 5+3)**, **GG5=9-10**</td></tr><tr><td>**Abiraterone vs Enzalutamide — when which?**</td><td>**Abira**: High-volume, symptomatic (LATITUDE); **Enza**: Low-volume, asymptomatic, **no seizure hx**; **Apa**: Similar to Enza; **Daro**: No seizure risk, **no CYP3A4 interaction** (ARASENS)</td></tr><tr><td>**ARSI switch — efficacy?**</td><td>**Cross-resistance ~30-50%**; Response to 2nd ARSI lower than 1st</td></tr><tr><td>**Radium-223 + ARSI**</td><td>**CONTRAINDICATED** (ERA-223: ↑ fractures, no OS benefit); Sequential OK</td></tr><tr><td>**PSMA-PET vs Bone Scan**</td><td>**PSMA-PET superior**: Higher sensitivity/specificity; Detects nodal/visceral; **Standard for high-risk staging & BCR**</td></tr><tr><td>**Oligometastatic definition**</td><td>**≤3-5 mets** on PSMA-PET; **SBRT to all mets + ADT** (STOMP, ORIOLE)</td></tr></table>
+<p><b>Mnemonic: PROSTATE</b></p>
+<ul><li><b>P</b>SA + DRE + mpMRI (PI-RADS) → Diagnosis</li><li><b>R</b>isk: NCCN (VLow/Low/IntF/IntU/High/VHigh) / EAU (Low/Int/High)</li><li><b>O</b>ligometastatic: ≤5 mets → SBRT + ADT</li><li><b>S</b>creening: Age 50-70 (earlier FH/Black)</li><li><b>T</b>reatment Localised: AS (VLow/Low) / RP / RT±ADT (Int/High)</li><li><b>A</b>DT + <b>ARSI</b> (Abira/Enza/Apa/Daro) or <b>Docetaxel</b> = mHSPC 1L</li><li><b>T</b>axane (Docetaxel → Cabazitaxel) = mCRPC chemo</li><li><b>E</b>NHANCE: PARPi (BRCA), Ra-223 (bone), Lu-177 (PSMA+)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Prostate Cancer)) Risk Stratification NCCN: VLow / Low / IntFav / IntUnfav / High / VHigh EAU: Low / Intermediate / High Grade Groups (ISUP): GG1-5 Localised Active Surveillance (VLow/Low) Radical Prostatectomy (RP) RT: EBRT ± Brachy Boost ADT: Short (4-6mo) / Long (18-36mo) mHSPC ADT (GnRH Ag/Ant) + ARSI: Abira / Enza / Apa / Daro + Docetaxel (High-volume) Triple: ADT + Doc + Daro (ARASENS) mCRPC Sequence 1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA/ATM/PALB2) → Ra-223 (Bone-only) → Lu-177 (PSMA+) Biomarkers PSA (Screening, Monitoring) PSMA-PET (Staging, BCR, Lu-177) Germline: BRCA2, ATM, PALB2, MMR Somatic: BRCA, AR-V7, MSI Bone Health Denosumab / Zoledronic Acid on ADT </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Diagnosis**</td><td>PSA + DRE → **mpMRI (PI-RADS)** → **Transperineal bx** (targeted + systematic)</td></tr><tr><td>**Grade Groups**</td><td>GG1(6) → GG5(9-10); GG1=Very Low risk</td></tr><tr><td>**Risk (NCCN)**</td><td>VLow: T1c, GG1, PSA<10, <3 cores+ / Low: T1-2a, GG1, PSA<10 / Int / High / VHigh</td></tr><tr><td>**Active Surveillance**</td><td>VLow/Low; PSA q3-6mo, MRI q1-2yr, Re-bx q3yr; Triggers: GG≥2, DT<3yr, Vol↑</td></tr><tr><td>**Localised Rx**</td><td>Int Fav: AS / RP / RT±ADT; Int Unfav/High: RP+PLND / RT+Brachy+ADT 4-6mo / RT+ADT 18-36mo</td></tr><tr><td>**mHSPC**</td><td>ADT + **Abira** (High-vol) / **Enza/Apa/Daro** (Low-vol/All) / **Docetaxel** (High-vol/fit)</td></tr><tr><td>**mCRPC Seq**</td><td>Abira ↔ Enza/Apa/Daro → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (Bone) → Lu-177 (PSMA+)</td></tr><tr><td>**PARPi**</td><td>BRCA1/2, ATM, PALB2 (Olaparib PROfound, Talazoparib TALAPRO-2)</td></tr><tr><td>**Ra-223**</td><td>Bone-only, symptomatic, **NO concurrent ARSI**</td></tr><tr><td>**Lu-177**</td><td>PSMA-PET+, Post-ARSI+Taxane (VISION)</td></tr><tr><td>**PSMA-PET**</td><td>Staging (High risk), BCR (PSA>0.2/2), Lu-177 elig</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>NCCN/EAU risk groups</td><td></td><td></td></tr><tr><td>Active Surveillance criteria</td><td></td><td></td></tr><tr><td>Localised treatment selection</td><td></td><td></td></tr><tr><td>mHSPC 1L (Abira vs Enza vs Doc)</td><td></td><td></td></tr><tr><td>mCRPC sequencing</td><td></td><td></td></tr><tr><td>PARPi indications</td><td></td><td></td></tr><tr><td>Ra-223 / Lu-177 indications</td><td></td><td></td></tr><tr><td>PSMA-PET indications</td><td></td><td></td></tr><tr><td>Bone health on ADT</td><td></td><td></td></tr><tr><td>Germline testing criteria</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Bladder Cancer]], [[Renal Cell Carcinoma (RCC)]], [[Testicular Cancer]], [[mCRPC Sequencing]], [[PSMA-Targeted Therapy]], [[Radium-223]], [[BRCA/PARP in Prostate]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Prostate Cancer (Screening), which statement is correct? A. <b>PSA + DRE</b> B. **PSA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PSA + DRE</b>; Age 50-70 (earlier if FH/Black); <b>MRI before biopsy</b> (PI-RADS)</li></ul>
+<p><b>2.</b> Regarding Prostate Cancer (Grade Groups), which statement is correct? A. <b>GG1 (3+3=6)</b> to <b>GG5 (9-10)</b> B. **GG1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>GG1 (3+3=6)</b> to <b>GG5 (9-10)</b>; Replaces Gleason 6-10</li></ul>
+<p><b>3.</b> Regarding Prostate Cancer (Risk Stratification), which statement is correct? A. NCCN: Very Low/Low/Int Fav/Int Unfav/High/Very High B. NCCN: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — NCCN: Very Low/Low/Int Fav/Int Unfav/High/Very High; EAU: Low/Int/High</li></ul>
+<p><b>4.</b> Regarding Prostate Cancer (Active Surveillance), which statement is correct? A. <b>Very Low/Low risk</b> B. **Very - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Very Low/Low risk</b>; Triggers: GG≥2, PSA DT&lt;3yr, volume↑, &gt;2 cores +</li></ul>
+<p><b>5.</b> Regarding Prostate Cancer (Localised Rx), which statement is correct? A. <b>Int Fav</b>: AS / RP / RT+ADT B. **Int - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Int Fav</b>: AS / RP / RT+ADT; <b>Int Unfav/High</b>: RP+PLND / RT+Brachy+ADT 4-6mo / RT+ADT 18-36mo</li></ul>
+<p><b>6.</b> Regarding Prostate Cancer (mHSPC), which statement is correct? A. <b>ADT + ARSI (Abira/Enza/Apa/Daro) OR Docetaxel</b> B. **ADT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ADT + ARSI (Abira/Enza/Apa/Daro) OR Docetaxel</b>; <b>STAMPEDE</b>: Abira+ADT ↓mortality 37%; <b>ARASENS</b>: Daro+Doc+ADT</li></ul>
+<p><b>7.</b> Regarding Prostate Cancer (mCRPC Sequence), which statement is correct? A. <b>1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (bone-only) → Lu-177 B. </b>1st - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (bone-only) → Lu-177 (PSMA+)</b></li></ul>
+<p><b>8.</b> Regarding Prostate Cancer (PARPi), which statement is correct? A. <b>Olaparib / Talazoparib</b> for <b>BRCA1/2, ATM, PALB2</b> (PROfound, TALAPRO-2) B. **Olaparib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Olaparib / Talazoparib</b> for <b>BRCA1/2, ATM, PALB2</b> (PROfound, TALAPRO-2)</li></ul>
+<p><b>9.</b> Regarding Prostate Cancer (Radium-223), which statement is correct? A. <b>Bone-only, symptomatic, no visceral</b> B. **Bone-only, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Bone-only, symptomatic, no visceral</b>; <b>No concurrent ARSI</b> (↑ fractures)</li></ul>
+<p><b>10.</b> Regarding Prostate Cancer (PSMA-Lu177), which statement is correct? A. <b>VISION</b>: PSMA-PET+, Post-ARSI + Taxane → <b>OS HR 0.62</b> B. <b>VISION</b>: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>VISION</b>: PSMA-PET+, Post-ARSI + Taxane → <b>OS HR 0.62</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>PSA + DRE</b></li><li>B. **PSA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>PSA + DRE</b>; Age 50-70 (earlier if FH/Black); <b>MRI before biopsy</b> (PI-RADS)</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>GG1 (3+3=6)</b> to <b>GG5 (9-10)</b></li><li>B. **GG1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>GG1 (3+3=6)</b> to <b>GG5 (9-10)</b>; Replaces Gleason 6-10</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. NCCN: Very Low/Low/Int Fav/Int Unfav/High/Very High</li><li>B. NCCN: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: NCCN: Very Low/Low/Int Fav/Int Unfav/High/Very High; EAU: Low/Int/High</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Very Low/Low risk</b></li><li>B. **Very (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Very Low/Low risk</b>; Triggers: GG≥2, PSA DT&lt;3yr, volume↑, &gt;2 cores +</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Int Fav</b>: AS / RP / RT+ADT</li><li>B. **Int (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Int Fav</b>: AS / RP / RT+ADT; <b>Int Unfav/High</b>: RP+PLND / RT+Brachy+ADT 4-6mo / RT+ADT 18-36mo</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>ADT + ARSI (Abira/Enza/Apa/Daro) OR Docetaxel</b></li><li>B. **ADT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>ADT + ARSI (Abira/Enza/Apa/Daro) OR Docetaxel</b>; <b>STAMPEDE</b>: Abira+ADT ↓mortality 37%; <b>ARASENS</b>: Daro+Doc+ADT</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. **1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (bone-only) → Lu-177</li><li>B. **1st (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (bone-only) → Lu-177 (PSMA+)</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Olaparib / Talazoparib</b> for <b>BRCA1/2, ATM, PALB2</b> (PROfound, TALAPRO-2)</li><li>B. **Olaparib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Olaparib / Talazoparib</b> for <b>BRCA1/2, ATM, PALB2</b> (PROfound, TALAPRO-2)</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Bone-only, symptomatic, no visceral</b></li><li>B. **Bone-only, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Bone-only, symptomatic, no visceral</b>; <b>No concurrent ARSI</b> (↑ fractures)</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>VISION</b>: PSMA-PET+, Post-ARSI + Taxane → <b>OS HR 0.62</b></li><li>B. <b>VISION</b>: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>VISION</b>: PSMA-PET+, Post-ARSI + Taxane → <b>OS HR 0.62</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Screening? <b>A1:</b> PSA + DRE; Age 50-70 (earlier if FH/Black); MRI before biopsy (PI-RADS)</p>
+<p><b>Q2:</b> Grade Groups? <b>A2:</b> GG1 (3+3=6) to GG5 (9-10); Replaces Gleason 6-10</p>
+<p><b>Q3:</b> Risk Stratification? <b>A3:</b> NCCN: Very Low/Low/Int Fav/Int Unfav/High/Very High; EAU: Low/Int/High</p>
+<p><b>Q4:</b> Active Surveillance? <b>A4:</b> Very Low/Low risk; Triggers: GG≥2, PSA DT&lt;3yr, volume↑, &gt;2 cores +</p>
+<p><b>Q5:</b> Localised Rx? <b>A5:</b> Int Fav: AS / RP / RT+ADT; Int Unfav/High: RP+PLND / RT+Brachy+ADT 4-6mo / RT+ADT 18-36mo</p>
+<p><b>Q6:</b> mHSPC? <b>A6:</b> ADT + ARSI (Abira/Enza/Apa/Daro) OR Docetaxel; STAMPEDE: Abira+ADT ↓mortality 37%; ARASENS: Daro+Doc+ADT</p>
+<p><b>Q7:</b> mCRPC Sequence? <b>A7:</b> 1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (bone-only) → Lu-177 (PSMA+)</p>
+<p><b>Q8:</b> PARPi? <b>A8:</b> Olaparib / Talazoparib for BRCA1/2, ATM, PALB2 (PROfound, TALAPRO-2)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Screening</td><td>PSA + DRE; Age 50-70 (earlier if FH/Black); MRI before biopsy (PI-RADS)</td></tr><tr><td>2</td><td>A</td><td>Grade Groups</td><td>GG1 (3+3=6) to GG5 (9-10); Replaces Gleason 6-10</td></tr><tr><td>3</td><td>A</td><td>Risk Stratification</td><td>NCCN: Very Low/Low/Int Fav/Int Unfav/High/Very High; EAU: Low/Int/High</td></tr><tr><td>4</td><td>A</td><td>Active Surveillance</td><td>Very Low/Low risk; Triggers: GG≥2, PSA DT<3yr, volume↑, >2 cores +</td></tr><tr><td>5</td><td>A</td><td>Localised Rx</td><td>Int Fav: AS / RP / RT+ADT; Int Unfav/High: RP+PLND / RT+Brachy+ADT 4-6mo / RT+ADT 18-36mo</td></tr><tr><td>6</td><td>A</td><td>mHSPC</td><td>ADT + ARSI (Abira/Enza/Apa/Daro) OR Docetaxel; STAMPEDE: Abira+ADT ↓mortality 37%; ARASENS: Daro+Doc+ADT</td></tr><tr><td>7</td><td>A</td><td>mCRPC Sequence</td><td>1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (bone-only) → Lu-177 (PSMA+)</td></tr><tr><td>8</td><td>A</td><td>PARPi</td><td>Olaparib / Talazoparib for BRCA1/2, ATM, PALB2 (PROfound, TALAPRO-2)</td></tr><tr><td>9</td><td>A</td><td>Radium-223</td><td>Bone-only, symptomatic, no visceral; No concurrent ARSI (↑ fractures)</td></tr><tr><td>10</td><td>A</td><td>PSMA-Lu177</td><td>VISION: PSMA-PET+, Post-ARSI + Taxane → OS HR 0.62</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Screening</td><td>PSA + DRE; Age 50-70 (earlier if FH/Black); MRI before biopsy (PI-RADS)</td></tr><tr><td>2</td><td>A</td><td>Grade Groups</td><td>GG1 (3+3=6) to GG5 (9-10); Replaces Gleason 6-10</td></tr><tr><td>3</td><td>A</td><td>Risk Stratification</td><td>NCCN: Very Low/Low/Int Fav/Int Unfav/High/Very High; EAU: Low/Int/High</td></tr><tr><td>4</td><td>A</td><td>Active Surveillance</td><td>Very Low/Low risk; Triggers: GG≥2, PSA DT<3yr, volume↑, >2 cores +</td></tr><tr><td>5</td><td>A</td><td>Localised Rx</td><td>Int Fav: AS / RP / RT+ADT; Int Unfav/High: RP+PLND / RT+Brachy+ADT 4-6mo / RT+ADT 18-36mo</td></tr><tr><td>6</td><td>A</td><td>mHSPC</td><td>ADT + ARSI (Abira/Enza/Apa/Daro) OR Docetaxel; STAMPEDE: Abira+ADT ↓mortality 37%; ARASENS: Daro+Doc+ADT</td></tr><tr><td>7</td><td>A</td><td>mCRPC Sequence</td><td>1st ARSI → 2nd ARSI switch → Docetaxel → Cabazitaxel → PARPi (BRCA) → Ra-223 (bone-only) → Lu-177 (PSMA+)</td></tr><tr><td>8</td><td>A</td><td>PARPi</td><td>Olaparib / Talazoparib for BRCA1/2, ATM, PALB2 (PROfound, TALAPRO-2)</td></tr><tr><td>9</td><td>A</td><td>Radium-223</td><td>Bone-only, symptomatic, no visceral; No concurrent ARSI (↑ fractures)</td></tr><tr><td>10</td><td>A</td><td>PSMA-Lu177</td><td>VISION: PSMA-PET+, Post-ARSI + Taxane → OS HR 0.62</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Urological Cancers|Urological Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Prostate Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

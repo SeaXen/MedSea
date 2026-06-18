@@ -1,0 +1,547 @@
+# Small Cell Lung Cancer (SCLC)
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **SCLC = 13-15% of lung cancer**; **Neuroendocrine, high-grade**; **Central, rapid doubling time**; **Almost exclusively smokers**; **Staging: Limited Stage (LS-SCLC) = confined to one hemithorax + regional nodes (T1-4, N0-3, M0) vs Extensive Stage (ES-SCLC) = disease beyond (M1)**. **LS-SCLC**: **Concurrent Chemoradiation** (Cisplatin + Etoposide ×4 + **RT 45Gy/30fx** or **60Gy/40fx** if sequential) → **PCI (Prophylactic Cranial Irradiation 25Gy/10fx)** if response. **ES-SCLC**: **1L Chemo-IO** (Cis/Carbo + Etoposide ×4 + **Atezolizumab** IMpower133 / **Pembrolizumab** KEYNOTE-604 / **Durvalumab** CASPIAN) → **Maintenance IO** → **PCI if CR/PR**. **Relapse**: **Topotecan** (oral/IV), **Amrubicin** (Japan), **Lurbinectedin** (ATLANTIS), **IO recharge** if >6mo remission.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Define **Limited vs Extensive Stage** SCLC (VALG 2-stage system)
+- [ ] Prescribe **LS-SCLC standard**: Concurrent Cisplatin/Etoposide + RT (45Gy/30fx) → PCI
+- [ ] Prescribe **ES-SCLC 1L**: Platinum/Etoposide + **IO (Atezo/Pembro/Durva)** ×4 → Maintenance IO
+- [ ] Indicate **PCI (25Gy/10fx)** for LS (all responders) and ES (CR/PR)
+- [ ] Recognise **paraneoplastic syndromes**: SIADH, Lambert-Eaton, Anti-Hu (encephalitis), Cushing's (ACTH), Hypercalcaemia (rare)
+- [ ] Sequence **relapsed SCLC**: **Topotecan** (standard 2L), **Amrubicin**, **Lurbinectedin**, **IO recharge** (if ≥6mo remission)
+- [ ] Manage **neutropenic sepsis** (prophylactic G-CSF), **tumour lysis** (bulky disease)
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Definition** | High-grade **neuroendocrine carcinoma** of lung; **Small cells** (scant cytoplasm, nuclear moulding, high N:C, absent nucleoli); **Ki-67 >50-80%** |
+| **Incidence** | **13-15% of lung cancer**; ~6,500/year UK; Declining with smoking reduction |
+| **Prevalence** | **Very aggressive**: Median OS LS 18-24mo, ES 8-12mo (improving with IO); **5-year OS LS ~25-30%, ES ~3-5%** |
+| **Peak Age** | 60-70 years |
+| **Sex Ratio** | M > F (2:1); **Strongest smoking association of all lung cancers** |
+| **Risk Factors** | **Smoking** (near 100%), **Radon**, **Asbestos**, **Prior RT**, **Family history** |
+
+---
+
+## 3. Aetiology & Pathophysiology
+
+```mermaid
+flowchart LR
+    A[Smoking Carcinogens] --> B[TP53 Loss (90-100%)]
+    B --> C[RB1 Loss (90%)]
+    C --> D[Cell Cycle Deregulation]
+    D --> E[MYC Family Amplification]
+    E --> E1[MYC (30%)]
+    E --> E2[MYCL (10%)]
+    E --> E3[MYCN (10%)]
+    C --> F[Neuroendocrine Differentiation]
+    F --> G[ASCL1 (Classical SCLC)]
+    F --> H[NEUROD1 (Variant)]
+    F --> I[POU2F3 (Tuft cell)]
+    F --> J[YAP1 (Non-NE)]
+    G --> K[High Proliferation, Early Metastasis]
+    H --> K
+    I --> K
+    J --> K
+```
+
+### Molecular Subtypes (Transcriptional)
+
+| Subtype | Transcription Factor | Frequency | Features |
+|---------|---------------------|-----------|----------|
+| **SCLC-A (Classical)** | **ASCL1** | **70-80%** | **High NE markers**, DLL3+, **Sensitive to DLL3-targeted (Tarlatamab)** |
+| **SCLC-N** | **NEUROD1** | 10-15% | Lower NE, **Ki-67 lower**, different metabolism |
+| **SCLC-P** | **POU2F3** | 5-10% | **Tuft cell**, Low NE, **Chemoresistant** |
+| **SCLC-Y** | **YAP1** | 5% | **Non-NE**, **Immune-inflamed**, **Mesenchymal** |
+
+---
+
+## 4. Clinical Features
+
+| Feature | Description |
+|---------|-------------|
+| **Central Mass** | Hilar/perihilar, bulky mediastinal nodes; **SVC obstruction** common |
+| **Rapid Onset** | Weeks; **Doubling time ~30 days** |
+| **Respiratory** | Cough, dyspnoea, haemoptysis, stridor (airway compression) |
+| **Paraneoplastic** | **SIADH** (hyponatraemia) — **Most common (15%)**; **Lambert-Eaton** (proximal weakness, ↓reflexes, ↓CMAP facilitation) — **VGCC Ab**; **Anti-Hu** (encephalomyelitis, sensory neuropathy) — **ANNA-1**; **Cushing's** (ACTH); **Peripheral neuropathy** |
+| **Metastatic** | Brain (LS 10-15%, ES 20-25% at dx), Liver, Bone, Adrenal, Marrow |
+
+---
+
+## 5. Staging & Classification
+
+| System | Detail |
+|--------|--------|
+| **VALG / AJCC 2-Stage** | **Limited Stage (LS)**: Confined to one hemithorax + regional nodes (incl. contralateral hilar/supraclavicular) — **Radiation portal encompassable**<br/>**Extensive Stage (ES)**: Disease beyond LS (M1, contralateral lung, pleural effusion, distant mets) |
+| **TNM 8th Edition** | Also applicable but **LS/ES used clinically** |
+| **LDH** | **Prognostic**: High LDH = worse outcome |
+
+---
+
+## 6. Diagnosis & Investigations
+
+| Investigation | Role | Key Details |
+|---------------|------|-------------|
+| **Biopsy (Bronchoscopy/CT-guided)** | Diagnosis | **Small cells, nuclear moulding, scant cytoplasm, high Ki-67** |
+| **IHC** | Confirm NE differentiation | **Chromogranin A+, Synaptophysin+, CD56+, TTF-1+**, **Ki-67 >50% (usually 80-100%)** |
+| **CT Chest/Abdomen + Brain MRI** | Staging | **Brain MRI mandatory** (high brain met rate) |
+| **PET-CT** | Optional, not standard | CT + Bone scan alternative |
+| **Bone Marrow Biopsy** | If cytopenias / suspected marrow involvement | Not routine |
+| **LDH** | Baseline prognostic | Serial monitoring |
+| **Paraneoplastic Abs** | If clinical suspicion | **Anti-Hu (ANNA-1), VGCC (Lambert-Eaton), Anti-Ri, Anti-Yo** |
+
+---
+
+## 7. Differential Diagnosis
+
+| Condition | Distinguishing Features |
+|-----------|-------------------------|
+| **Large Cell Neuroendocrine Carcinoma (LCNEC)** | **Large cells**, **Ki-67 high**, NE markers+, **TTF-1+**; Treated similar to NSCLC (some use SCLC regimen) |
+| **NSCLC with NE differentiation** | Adeno/Squamous with NE markers; Not pure NE |
+| **Carcinoid (Typical/Atypical)** | **Well-differentiated**, **Ki-67 <20% (Typical) / 20-50% (Atypical)**; Indolent; Surgery curative |
+| **Lymphoma** | CD45+, CD20+; Mediastinal mass; LDH high |
+| **Merkel Cell Carcinoma** | Skin primary, CK20+ (perinuclear dot), MCPyV+ |
+| **Metastatic Neuroendocrine** | Known primary (GI, Pancreas); Different clinical context |
+
+---
+
+## 8. Management
+
+### Limited Stage (LS-SCLC)
+
+```mermaid
+flowchart TD
+    A[LS-SCLC Diagnosis] --> B[**Concurrent Chemoradiation**]
+    B --> B1[**Chemo: Cisplatin 75-80mg/m² d1 + Etoposide 100mg/m² d1-3 q3w ×4 cycles**]
+    B --> B2[**RT: 45Gy/30fx (1.5Gy BID) or 60-66Gy/30-33fx (2Gy daily)**<br/>**Start RT with Cycle 1 or 2** (Concurrent superior) — **CONVERT trial**]
+    B1 --> C[Response Assessment]
+    B2 --> C
+    C -->|**CR/PR**| D[**PCI: 25Gy/10fx (2.5Gy daily)**<br/>**Reduces brain mets 50%, improves OS**<br/>**Standard for all LS responders**]
+    C -->|**SD/PD**| E[No PCI; Consider salvage RT/Chemo]
+    D --> F[Surveillance: CT q3mo×2yr, q6mo×3yr; Brain MRI annually]
+```
+
+### Extensive Stage (ES-SCLC)
+
+```mermaid
+flowchart TD
+    A[ES-SCLC Diagnosis] --> B[**1L: Platinum + Etoposide + IO**]
+    B --> B1[**Cisplatin 75-80mg/m² d1 + Etoposide 100mg/m² d1-3 q3w ×4 cycles**<br/>**OR Carboplatin AUC5 d1 + Etoposide d1-3** (if Cis contraindicated: renal, neuropathy, elderly)]
+    B --> B2[**+ IO (Choose 1):**]
+    B2 --> C1[**Atezolizumab 1200mg d1 q3w** (IMpower133)<br/>**OS HR 0.76**, mOS 12.3 vs 10.3 mo]
+    B2 --> C2[**Pembrolizumab 200mg d1 q3w** (KEYNOTE-604)<br/>**OS HR 0.80** (not statistically significant], DFS benefit]
+    B2 --> C3[**Durvalumab 1500mg d1 q3w** (CASPIAN)<br/>**OS HR 0.73**, mOS 12.9 vs 10.5 mo<br/>**No PCI in trial** — PCI allowed post-response]
+    B1 --> D[**Maintenance IO** (Continue IO until progression)]
+    C1 --> D
+    C2 --> D
+    C3 --> D
+    D --> E{Response}
+    E -->|**CR/PR**| F[**PCI 25Gy/10fx** (Controversial for ES)<br/>**NCCN: Consider if CR/PR**; ESMO: Individualise<br/>**CASPIAN: PCI permitted post-response**]
+    E -->|**SD/PD**| G[No PCI; 2L Therapy]
+```
+
+### Relapsed/Refractory SCLC
+
+| Setting | Preferred Regimen |
+|---------|-------------------|
+| **Chemosensitive Relapse (≥6mo)** | **Re-challenge Platinum + Etoposide** OR **IO Re-challenge** (if IO used 1L) OR **Topotecan / Lurbinectedin** |
+| **Chemoresistant Relapse (<6mo)** | **Topotecan** (IV 1.5mg/m² d1-5 q3w OR Oral 2.3mg/m² d1-5 q3w) — **Standard 2L**<br/>**Amrubicin** (Japan/Asia, 40-50mg/m² d1-3 q3w) — Single agent<br/>**Lurbinectedin** (ATLANTIS) 3.2mg/m² q3w — ORR ~35%, **FDA approved**<br/>**Clinical Trial** (DLL3-targeted: Tarlatamab, BITE; PARPi; BCL2i) |
+| **Brain Mets at Relapse** | **SRS** (oligo); **WBRT** (multiple); **Topotecan** has CNS penetration |
+
+### Prophylactic Cranial Irradiation (PCI)
+
+| Setting | Dose | Indication |
+|---------|------|------------|
+| **LS-SCLC** | **25Gy/10fx (2.5Gy daily)** | **All patients with CR/PR** after chemoradiation — **Standard** |
+| **ES-SCLC** | **25Gy/10fx** | **Selected**: CR/PR after 1L, good PS, no active brain mets — **Individualised** (PCI in CASPIAN/IMpower133 subsets showed benefit) |
+
+---
+
+## 9. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **SCLC** | **13-15%**; **Neuroendocrine**; **Central, rapid**; **Smoking 100%**; **Ki-67 >50%** |
+| **Staging** | **VALG 2-stage**: **LS** (one hemithorax, radiation portal) vs **ES** (beyond) |
+| **LS-SCLC** | **Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx** → **PCI 25Gy/10fx** (all responders) |
+| **ES-SCLC 1L** | **Platinum/Etoposide ×4 + IO** (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → **Maintenance IO** |
+| **PCI** | **25Gy/10fx**; **Mandatory LS responders**; **Optional ES CR/PR** |
+| **Paraneoplastic** | **SIADH** (↑ADH) — **Most common**; **Lambert-Eaton** (VGCC Ab, proximal weakness, facilitation); **Anti-Hu** (encephalitis); **ACTH** (Cushing's) |
+| **Relapse** | **Chemosensitive (≥6mo)**: Re-challenge Plat/Etop or IO recharge; **Chemoresistant (<6mo)**: **Topotecan (standard), Amrubicin, Lurbinectedin** |
+| **Topotecan** | **Topo I inhibitor**; IV/oral; **Myelosuppression** (G-CSF support); **CNS penetration** |
+| **Lurbinectedin** | **Trabectedin analogue**; Selective inhibitor of RNA Pol II; **ATLANTIS: ORR 35%, mPFS 3.5mo** |
+| **DLL3-targeted** | **Tarlatamab (BITE)** — SCLC-A (ASCL1+) expresses DLL3; **DeLLphi-301: ORR ~40%** |
+
+---
+
+## 10. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **60M smoker, central mass, bulky nodes, brain MRI negative. Biopsy: small cells, Ki-67 90%, Chromogranin+. Stage?** | **Limited Stage SCLC** (confined to one hemithorax + regional nodes, no distant mets). |
+| **LS-SCLC standard treatment?** | **Concurrent Chemoradiation**: **Cisplatin 75-80mg/m² d1 + Etoposide 100mg/m² d1-3 q3w ×4 cycles** + **Thoracic RT 45Gy/30fx (1.5Gy BID) starting Cycle 1/2** → **PCI 25Gy/10fx if response**. |
+| **Why concurrent RT not sequential?** | **CONVERT trial**: Concurrent 45Gy/30fx BID **non-inferior to 66Gy/33fx sequential**, less oesophagitis; **Concurrent superior to sequential** in meta-analyses. |
+| **ES-SCLC 1L regimen?** | **Cisplatin/Carboplatin + Etoposide ×4 cycles + IO** (Atezolizumab **IMpower133** OR Pembrolizumab **KEYNOTE-604** OR Durvalumab **CASPIAN**) → **Maintenance IO**. |
+| **PCI in ES-SCLC — when?** | **Individualised**: **CR/PR after 1L**, good PS, no brain mets. **Not universal** like LS. **CASPIAN/IMp133 subsets showed benefit with PCI post-response**. |
+| **Paraneoplastic syndromes in SCLC — name 3 with antibodies.** | **1) SIADH** (clinical, no Ab); **2) Lambert-Eaton** — **VGCC (P/Q-type) Ab**, proximal weakness, ↓reflexes, **facilitation on RNS**; **3) Anti-Hu (ANNA-1)** — Encephalomyelitis, sensory neuropathy; **4) ACTH** — Ectopic Cushing's. |
+| **Chemosensitive vs Chemoresistant relapse — definition?** | **Chemosensitive**: **Relapse ≥6 months** after 1L; **Chemoresistant**: **Relapse <6 months** (or progression on treatment). |
+| **2L Chemoresistant — standard?** | **Topotecan** (IV 1.5mg/m² d1-5 q3w OR Oral 2.3mg/m² d1-5 q3w) — **Standard**; **Amrubicin** (Asia); **Lurbinectedin** (FDA approved). |
+| **Lurbinectedin — mechanism, trial?** | **Selective RNA Pol II inhibitor** → Transcriptional inhibition; **ATLANTIS**: 2L SCLC, ORR 35%, mPFS 3.5mo. |
+| **DLL3-targeted therapy — what, for whom?** | **Tarlatamab (BITE)** — **DLL3 x CD3**; **SCLC-A (ASCL1+)** expresses DLL3 (70-80%); **DeLLphi-301**: ORR ~40%. |
+
+---
+
+## 11. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **LS vs ES SCLC** | **LS** = Radiation portal encompassable (one hemithorax + regional nodes); **ES** = Beyond that (M1, contralateral lung, malignant effusion) |
+| **Cisplatin vs Carboplatin in SCLC** | **Cisplatin preferred** (standard in trials); **Carboplatin** if renal impairment, neuropathy, elderly, poor PS — **Similar efficacy in retrospective** |
+| **PCI dose/fractionation** | **25Gy in 10 fractions (2.5Gy daily)** — **Standard**; **Not 30Gy/15fx** (higher neurotoxicity) |
+| **IO in SCLC — which agents?** | **Atezolizumab** (IMpower133), **Pembrolizumab** (KEYNOTE-604), **Durvalumab** (CASPIAN) — **All anti-PD-L1/PD-1 added to Plat/Etop** |
+| **KEYNOTE-604 OS** | **OS HR 0.80 (p=0.016) — NOT statistically significant** (pre-specified boundary p<0.005); **DFS benefit significant** |
+| **Topotecan IV vs Oral** | **Oral 2.3mg/m² d1-5 ≈ IV 1.5mg/m² d1-5**; Oral more convenient, similar efficacy/myelo |
+| **SCLC vs LCNEC** | **LCNEC**: Large cells, **Ki-67 high**, NE+, **Treatment: NSCLC-like (some use SCLC regimen)**; **Pure SCLC**: Small cells, ASCL1+ |
+
+**Mnemonic: SCLC-ESSENTIALS**
+- **S**mall cells, **S**moking 100%, **S**IADH common
+- **C**entral, **C**hemoradiation (LS), **C**isplatin+Etoposide
+- **L**imited vs **E**xtensive (VALG 2-stage)
+- **C**oncurrent RT (45Gy/30fx BID) > Sequential
+- **P**CI 25Gy/10fx: **Mandatory LS**, **Optional ES (CR/PR)**
+- **E**S 1L: **Plat/Etop + IO** (Atezo/Pembro/Durva) → Maint IO
+- **N**eutropenic sepsis prophylaxis (G-CSF)
+- **T**opotecan 2L standard (chemoresistant)
+- **I**O recharge if chemosensitive relapse (≥6mo)
+- **A**nti-Hu, **L**ambert-Eaton (VGCC), **S**IADH — Paraneoplastic
+- **L**urbinectedin / **S**econd-line options
+- **S**CLC-A (ASCL1) → **DLL3** → **Tarlatamab (BITE)**
+
+---
+
+## 12. Mind Map
+
+```mermaid
+mindmap
+  root((Small Cell Lung Cancer))
+    Histology
+      Small cells, Nuclear moulding
+      Ki-67 >50-80%
+      Chromogranin+, Synaptophysin+, CD56+, TTF-1+
+    Subtypes
+      SCLC-A (ASCL1) 70-80% → DLL3+
+      SCLC-N (NEUROD1)
+      SCLC-P (POU2F3) Tuft cell
+      SCLC-Y (YAP1) Non-NE
+    Staging
+      LS: One hemithorax (±nodes)
+      ES: Beyond (M1, contralateral, effusion)
+    LS Treatment
+      Concurrent Cis+Etop ×4 + RT 45Gy/30fx BID
+      PCI 25Gy/10fx (all responders)
+    ES Treatment
+      Plat+Etop ×4 + IO (Atezo/Pembro/Durva)
+      Maint IO
+      PCI if CR/PR (individualised)
+    Paraneoplastic
+      SIADH (ADH)
+      Lambert-Eaton (VGCC Ab)
+      Anti-Hu (ANNA-1)
+      Ectopic ACTH
+    Relapse
+      Sensitive (≥6mo): Re-challenge / IO recharge
+      Resistant (<6mo): Topotecan / Amrubicin / Lurbinectedin
+    Emerging
+      Tarlatamab (DLL3 x CD3 BITE)
+```
+
+---
+
+## 13. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Staging** | **LS** = One hemithorax + nodes (radiation portal); **ES** = Beyond |
+| **LS Tx** | **Concurrent Cis+Etop ×4 + RT 45Gy/30fx BID** → **PCI 25Gy/10fx** |
+| **ES 1L** | **Cis/Carbo + Etop ×4 + IO** (Atezo IMp133 / Pembro K-604 / Durva CASPIAN) → Maint IO |
+| **PCI** | 25Gy/10fx; **LS: All responders**; **ES: CR/PR, individualised** |
+| **Paraneoplastic** | **SIADH** (common); **Lambert-Eaton** (VGCC Ab, facilitation); **Anti-Hu** (encephalitis) |
+| **Relapse** | **≥6mo**: Re-challenge; **<6mo**: **Topotecan** (std), Amrubicin, Lurbinectedin |
+| **Topotecan** | Topo I inhibitor; IV/oral; Myelosuppression; CNS penetration |
+| **Emerging** | Tarlatamab (DLL3 BITE) for SCLC-A (ASCL1+) |
+
+---
+
+## 14. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 15. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| LS vs ES staging | | |
+| LS chemoradiation details | | |
+| ES 1L regimens (3 IO trials) | | |
+| PCI indications | | |
+| Paraneoplastic syndromes | | |
+| Chemosensitive vs resistant definition | | |
+| 2L options | | |
+| DLL3/Tarlatamab | | |
+
+---
+
+## 16. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map**: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related**: [[NSCLC]], [[Paraneoplastic Syndromes]], [[PCI]], [[Topotecan]], [[Lurbinectedin]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 17. MCQs (10)
+
+
+**1.** Regarding Small Cell Lung Cancer (SCLC) (SCLC), which statement is correct?
+   A. **13-15%**
+   B. **13-15%** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **13-15%**; **Neuroendocrine**; **Central, rapid**; **Smoking 100%**; **Ki-67 >50%**
+
+
+**2.** Regarding Small Cell Lung Cancer (SCLC) (Staging), which statement is correct?
+   A. **VALG 2-stage**: **LS** (one hemithorax, radiation portal) vs **ES** (beyond)
+   B. **VALG - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **VALG 2-stage**: **LS** (one hemithorax, radiation portal) vs **ES** (beyond)
+
+
+**3.** Regarding Small Cell Lung Cancer (SCLC) (LS-SCLC), which statement is correct?
+   A. **Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx** → **PCI 25Gy/10fx** (all res
+   B. **Concurrent - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx** → **PCI 25Gy/10fx** (all responders)
+
+
+**4.** Regarding Small Cell Lung Cancer (SCLC) (ES-SCLC 1L), which statement is correct?
+   A. **Platinum/Etoposide ×4 + IO** (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → **Maintenan
+   B. **Platinum/Etoposide - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Platinum/Etoposide ×4 + IO** (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → **Maintenance IO**
+
+
+**5.** Regarding Small Cell Lung Cancer (SCLC) (PCI), which statement is correct?
+   A. **25Gy/10fx**
+   B. **25Gy/10fx** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **25Gy/10fx**; **Mandatory LS responders**; **Optional ES CR/PR**
+
+
+**6.** Regarding Small Cell Lung Cancer (SCLC) (Paraneoplastic), which statement is correct?
+   A. **SIADH** (↑ADH)
+   B. **SIADH** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **SIADH** (↑ADH) — **Most common**; **Lambert-Eaton** (VGCC Ab, proximal weakness, facilitation); **Anti-Hu** (encephali...
+
+
+**7.** Regarding Small Cell Lung Cancer (SCLC) (Relapse), which statement is correct?
+   A. **Chemosensitive (≥6mo)**: Re-challenge Plat/Etop or IO recharge
+   B. **Chemosensitive - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Chemosensitive (≥6mo)**: Re-challenge Plat/Etop or IO recharge; **Chemoresistant (<6mo)**: **Topotecan (standard), Amr...
+
+
+**8.** Regarding Small Cell Lung Cancer (SCLC) (Topotecan), which statement is correct?
+   A. **Topo I inhibitor**
+   B. **Topo - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Topo I inhibitor**; IV/oral; **Myelosuppression** (G-CSF support); **CNS penetration**
+
+
+**9.** Regarding Small Cell Lung Cancer (SCLC) (Lurbinectedin), which statement is correct?
+   A. **Trabectedin analogue**
+   B. **Trabectedin - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Trabectedin analogue**; Selective inhibitor of RNA Pol II; **ATLANTIS: ORR 35%, mPFS 3.5mo**
+
+
+**10.** Regarding Small Cell Lung Cancer (SCLC) (DLL3-targeted), which statement is correct?
+   A. **Tarlatamab (BITE)**
+   B. **Tarlatamab - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Tarlatamab (BITE)** — SCLC-A (ASCL1+) expresses DLL3; **DeLLphi-301: ORR ~40%**
+
+
+## 18. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **13-15%**
+   - B. **13-15%** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **13-15%**; **Neuroendocrine**; **Central, rapid**; **Smoking 100%**; **Ki-67 >50%**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **VALG 2-stage**: **LS** (one hemithorax, radiation portal) vs **ES** (beyond)
+   - B. **VALG (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **VALG 2-stage**: **LS** (one hemithorax, radiation portal) vs **ES** (beyond)
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx** → **PCI 25Gy/10fx** (all res
+   - B. **Concurrent (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx** → **PCI 25Gy/10fx** (all responders)
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Platinum/Etoposide ×4 + IO** (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → **Maintenan
+   - B. **Platinum/Etoposide (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Platinum/Etoposide ×4 + IO** (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → **Maintenance IO**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **25Gy/10fx**
+   - B. **25Gy/10fx** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **25Gy/10fx**; **Mandatory LS responders**; **Optional ES CR/PR**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **SIADH** (↑ADH)
+   - B. **SIADH** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **SIADH** (↑ADH) — **Most common**; **Lambert-Eaton** (VGCC Ab, proximal weakness, facilitation); **Anti-Hu** (encephali...
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **Chemosensitive (≥6mo)**: Re-challenge Plat/Etop or IO recharge
+   - B. **Chemosensitive (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **Chemosensitive (≥6mo)**: Re-challenge Plat/Etop or IO recharge; **Chemoresistant (<6mo)**: **Topotecan (standard), Amr...
+
+
+**8.** The role of surgery in this case is:
+   - A. **Topo I inhibitor**
+   - B. **Topo (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **Topo I inhibitor**; IV/oral; **Myelosuppression** (G-CSF support); **CNS penetration**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **Trabectedin analogue**
+   - B. **Trabectedin (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **Trabectedin analogue**; Selective inhibitor of RNA Pol II; **ATLANTIS: ORR 35%, mPFS 3.5mo**
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **Tarlatamab (BITE)**
+   - B. **Tarlatamab (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **Tarlatamab (BITE)** — SCLC-A (ASCL1+) expresses DLL3; **DeLLphi-301: ORR ~40%**
+
+
+## 19. Flashcards
+
+**Q1:** SCLC?
+**A1:** 13-15%; Neuroendocrine; Central, rapid; Smoking 100%; Ki-67 >50%
+
+**Q2:** Staging?
+**A2:** VALG 2-stage: LS (one hemithorax, radiation portal) vs ES (beyond)
+
+**Q3:** LS-SCLC?
+**A3:** Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx → PCI 25Gy/10fx (all responders)
+
+**Q4:** ES-SCLC 1L?
+**A4:** Platinum/Etoposide ×4 + IO (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → Maintenance IO
+
+**Q5:** PCI?
+**A5:** 25Gy/10fx; Mandatory LS responders; Optional ES CR/PR
+
+**Q6:** Paraneoplastic?
+**A6:** SIADH (↑ADH) — Most common; Lambert-Eaton (VGCC Ab, proximal weakness, facilitation); Anti-Hu (encephalitis); ACTH (Cushing's)
+
+**Q7:** Relapse?
+**A7:** Chemosensitive (≥6mo): Re-challenge Plat/Etop or IO recharge; Chemoresistant (<6mo): Topotecan (standard), Amrubicin, Lurbinectedin
+
+**Q8:** Topotecan?
+**A8:** Topo I inhibitor; IV/oral; Myelosuppression (G-CSF support); CNS penetration
+
+## 20. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | SCLC | 13-15%; Neuroendocrine; Central, rapid; Smoking 100%; Ki-67 >50% |
+| 2 | A | Staging | VALG 2-stage: LS (one hemithorax, radiation portal) vs ES (beyond) |
+| 3 | A | LS-SCLC | Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx → PCI 25Gy/10fx (all responders) |
+| 4 | A | ES-SCLC 1L | Platinum/Etoposide ×4 + IO (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → Maintenance IO |
+| 5 | A | PCI | 25Gy/10fx; Mandatory LS responders; Optional ES CR/PR |
+| 6 | A | Paraneoplastic | SIADH (↑ADH) — Most common; Lambert-Eaton (VGCC Ab, proximal weakness, facilitation); Anti-Hu (encephalitis); ACTH (Cush |
+| 7 | A | Relapse | Chemosensitive (≥6mo): Re-challenge Plat/Etop or IO recharge; Chemoresistant (<6mo): Topotecan (standard), Amrubicin, Lu |
+| 8 | A | Topotecan | Topo I inhibitor; IV/oral; Myelosuppression (G-CSF support); CNS penetration |
+| 9 | A | Lurbinectedin | Trabectedin analogue; Selective inhibitor of RNA Pol II; ATLANTIS: ORR 35%, mPFS 3.5mo |
+| 10 | A | DLL3-targeted | Tarlatamab (BITE) — SCLC-A (ASCL1+) expresses DLL3; DeLLphi-301: ORR ~40% |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | SCLC | 13-15%; Neuroendocrine; Central, rapid; Smoking 100%; Ki-67 >50% |
+| 2 | A | Staging | VALG 2-stage: LS (one hemithorax, radiation portal) vs ES (beyond) |
+| 3 | A | LS-SCLC | Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx → PCI 25Gy/10fx (all responders) |
+| 4 | A | ES-SCLC 1L | Platinum/Etoposide ×4 + IO (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → Maintenance IO |
+| 5 | A | PCI | 25Gy/10fx; Mandatory LS responders; Optional ES CR/PR |
+| 6 | A | Paraneoplastic | SIADH (↑ADH) — Most common; Lambert-Eaton (VGCC Ab, proximal weakness, facilitation); Anti-Hu (encephalitis); ACTH (Cush |
+| 7 | A | Relapse | Chemosensitive (≥6mo): Re-challenge Plat/Etop or IO recharge; Chemoresistant (<6mo): Topotecan (standard), Amrubicin, Lu |
+| 8 | A | Topotecan | Topo I inhibitor; IV/oral; Myelosuppression (G-CSF support); CNS penetration |
+| 9 | A | Lurbinectedin | Trabectedin analogue; Selective inhibitor of RNA Pol II; ATLANTIS: ORR 35%, mPFS 3.5mo |
+| 10 | A | DLL3-targeted | Tarlatamab (BITE) — SCLC-A (ASCL1+) expresses DLL3; DeLLphi-301: ORR ~40% |
+
+## 21. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Cancer of the Lung|Cancer of the Lung]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Electrolytes Sodium Potassium Chloride — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.4. MINERALS & TRACE ELEMENTS</span>
+      <div class="h1">Electrolytes Sodium Potassium Chloride</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe Na⁺/K⁺/Cl⁻ distribution: Na⁺/Cl⁻ ECF, K⁺ ICF; plasma concentrations; daily requirements</li><li>[ ] State hyponatraemia: 1) Hypovolaemic (renal/extra-renal loss), 2) Euvolaemic (SIADH, hypothyroid, adrenal), 3) Hypervolaemic (CCF, cirrhosis, nephrosis)</li><li>[ ] Recognise severe hyponatraemia symptoms: nausea, confusion, seizures, coma; <b>chronic asymptomatic correction slowly</b> (≤8 mmol/L/24h) to avoid osmotic demyelination (central pontine)</li><li>[ ] State hypernatraemia: water loss (DM, DI) or Na gain; ADH axis; brain shrinkage (↑risk SDH)</li><li>[ ] Recognise hypokalaemia: muscle weakness, ileus, arrhythmias (U waves, T flattening, QT prolongation, ↑digoxin toxicity); causes (renal/extra-renal)</li><li>[ ] State hyperkalaemia: peaked T, widened QRS, sine wave, V-fib; causes (renal failure, drugs - ACE, K-sparing, aldosterone antagonists)</li><li>[ ] Hyperchloraemic metabolic acidosis: loss of HCO3⁻ or Cl⁻ gain; normal anion gap</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Na⁺**</td><td>Major ECF cation; 135–145 mmol/L; total body 60 mmol/kg; serum osmolality major contributor</td></tr><tr><td>**K⁺**</td><td>Major ICF cation; plasma 3.5–5.0; total body 3500 mmol (98% ICF); Na⁺/K⁺-ATPase maintains gradient</td></tr><tr><td>**Cl⁻**</td><td>Major ECF anion; 98–107 mmol/L; follows Na⁺/H⁺/K⁺</td></tr><tr><td>**ECF (Extracellular Fluid)**</td><td>Plasma + interstitial; 1/3 TBW; ICF 2/3</td></tr><tr><td>**ADH (Vasopressin, AVP)**</td><td>Posterior pituitary; V2R renal collecting duct; aquaporin-2; water reabsorption</td></tr><tr><td>**RAAS**</td><td>Renin → angiotensin II → aldosterone; Na retention, K excretion, ADH release</td></tr><tr><td>**Aldosterone**</td><td>Adrenal zona glomerulosa; ↑Na reabsorption (ENaC), ↑K excretion (ROMK); hypokalaemia ↓aldosterone</td></tr><tr><td>**Hypovolaemic Hyponatraemia**</td><td>Both Na and water loss, but water more (or replaced)</td></tr><tr><td>**Euvolaemic Hyponatraemia**</td><td>SIADH, hypothyroidism, adrenal insufficiency, polydipsia, beer potomania</td></tr><tr><td>**Hypervolaemic Hyponatraemia**</td><td>Oedematous states (CCF, cirrhosis, nephrosis); excess water > Na</td></tr><tr><td>**SIADH**</td><td>↑ADH; euvolaemic, concentrated urine, low serum osmolality</td></tr><tr><td>**Osmotic Demyelination Syndrome (ODS)**</td><td>Central pontine/extrapontine myelinolysis; rapid Na correction (chronic hypoNa); quadriparesis, dysarthria, pseudobulbar palsy</td></tr><tr><td>**Diabetes Insipidus (DI)**</td><td>ADH deficiency (central) or renal insipidus (NDI); polyuria, polydipsia, hypernatraemia</td></tr><tr><td>**U Wave**</td><td>ECG sign of hypokalaemia (between T and P); also bradyarrhythmia</td></tr><tr><td>**Peaked T Waves**</td><td>ECG sign of hyperkalaemia; early; → widened QRS, sine wave, VF/asystole</td></tr><tr><td>**Anion Gap (AG)**</td><td>Na⁺ – (Cl⁻ + HCO3⁻); normal 8–12; ↑HAGMA (DKA, lactic, uraemia, drugs); ↓AG = hypoalbuminaemia, Li, Br</td></tr><tr><td>**Hyperchloraemic Acidosis**</td><td>Normal AG; GI (diarrhoea, fistula) or renal (RTA) HCO3⁻ loss; Cl⁻ gain (NS, TPN)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Sodium</div>
+<p><b>Body content:</b> 60 mmol/kg; 50% in ECF, 40% in bone (slow exchange), 10% ICF. <b>Plasma:</b> 135–145 mmol/L. <b>Daily requirement:</b> ~500 mg (22 mmol); Western diet 3.5 g (8–10× excess); contributes to hypertension.</p>
+<p><b>Sodium &amp; Osmolality:</b></p>
+<ul><li><b>Serum osmolality:</b> 2×Na + Glucose/18 + Urea/2.8 = 275–295 mOsm/kg</li><li><b>Tonicity (effective osmolality):</b> 2×Na + Glucose/18 (urea freely permeable)</li><li><b>ADH regulation:</b> Plasma osmolality ±2% → ADH release; also volume (baroreceptor), nausea, stress</li><li><b>Thirst:</b> Osmoreceptor (hypothalamus) → drinking; &lt;1% variation</li></ul>
+<p><b>Hyponatraemia (Na &lt;135):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Category&lt;/th&gt;&lt;th&gt;Causes&lt;/th&gt;&lt;th&gt;Urine Na&lt;/th&gt;&lt;th&gt;Volume Status&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;---------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hypovolaemic</b>&lt;/td&gt;&lt;td&gt;Renal (diuretics, mineralocorticoid def, salt-wasting, RTA); Extra-renal (vomiting, NG, diarrhoea, third-spacing, burns)&lt;/td&gt;&lt;td&gt;&gt;20 (renal) or &lt;20 (extra-renal)&lt;/td&gt;&lt;td&gt;↓&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Euvolaemic</b>&lt;/td&gt;&lt;td&gt;SIADH, hypothyroid, adrenal insuff (cortisol), polydipsia, beer potomania, low solute (tea + toast), reset osmostat (pregnancy)&lt;/td&gt;&lt;td&gt;Variable; &gt;40 SIADH&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hypervolaemic</b>&lt;/td&gt;&lt;td&gt;CCF, cirrhosis, nephrosis (effective ↓volume → ADH); AKI, CKD&lt;/td&gt;&lt;td&gt;&lt;20 (if prerenal)&lt;/td&gt;&lt;td&gt;↑ (oedema)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>SIADH:</b> Euvolaemic; ↓serum osmolality (&lt;275); inappropriately ↑urine osmolality (&gt;100); urine Na &gt;40; normal thyroid, adrenal, renal; treat with <b>fluid restriction (≤800 mL/day), demeclocycline, tolvaptan (V2 blocker)</b>.</p>
+<p><b>Treatment of Hyponatraemia:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Severity&lt;/th&gt;&lt;th&gt;Symptoms&lt;/th&gt;&lt;th&gt;Correction&lt;/th&gt;&lt;th&gt;Target&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Severe (&lt;120, seizures, coma)</b>&lt;/td&gt;&lt;td&gt;Seizure, coma, severe confusion&lt;/td&gt;&lt;td&gt;<b>3% hypertonic saline 100 mL bolus ×2–3 over 10 min</b>; check Na 1–2h; repeat if symptoms&lt;/td&gt;&lt;td&gt;<b>5 mmol/L in 1st hour</b>, then <b>≤8 mmol/L/24h</b> (avoid ODS)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Moderate (120–125)</b>&lt;/td&gt;&lt;td&gt;Nausea, headache, mild confusion&lt;/td&gt;&lt;td&gt;Slow correction&lt;/td&gt;&lt;td&gt;≤8 mmol/L/24h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mild (125–135)</b>&lt;/td&gt;&lt;td&gt;Asymptomatic&lt;/td&gt;&lt;td&gt;Treat underlying cause&lt;/td&gt;&lt;td&gt;≤8 mmol/L/24h&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Chronic Hyponatraemia:</b> Risk <b>osmotic demyelination</b> (central pontine) if corrected &gt;8 mmol/L/24h or &gt;18 mmol/L/48h; biphasic course (initial improvement → delayed deterioration); avoid in alcoholics, malnourished, hypokalaemic, liver disease.</p>
+<p><b>Hypernatraemia (Na &gt;145):</b></p>
+<ul><li><b>Causes:</b> Water loss (DM, DI, osmotic diuresis, insensible); Na gain (salt tablets, hypertonic saline, hyperaldosteronism); hypodipsia (elderly, dementia)</li><li><b>Symptoms:</b> Lethargy, weakness, irritability, confusion, seizures, <b>subdural haemorrhage</b> (brain shrinkage)</li><li><b>Treatment:</b> <b>Slow correction (≤10 mmol/L/24h)</b> to avoid cerebral oedema; oral water if possible; D5W or 0.45% NS IV; address underlying cause</li></ul>
+<div class="sub-h">Section 2: Potassium</div>
+<p><b>Body content:</b> 3500 mmol (98% ICF); 75 mmol/L ICF vs 4 mmol/L plasma; <b>Na⁺/K⁺-ATPase</b> maintains. <b>Daily requirement:</b> 3500 mg (90 mmol); DASH diet rich in K. <b>Plasma:</b> 3.5–5.0 mmol/L; narrow range critical for cardiac/neuromuscular function.</p>
+<p><b>Hypokalaemia (K &lt;3.5):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Category&lt;/th&gt;&lt;th&gt;Causes&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>↓Intake</b>&lt;/td&gt;&lt;td&gt;Poor diet, alcoholism, anorexia&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>GI loss</b>&lt;/td&gt;&lt;td&gt;Vomiting, NG suction, diarrhoea, laxatives, fistulae, malabsorption&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Renal loss</b>&lt;/td&gt;&lt;td&gt;Diuretics (loop, thiazide), mineralocorticoid excess (Conn, Cushing, ectopic ACTH, RAS, Liddle, Bartter, Gitelman, licorice, 11β-HSD2 deficiency), RTA, DKA, hypomagnesaemia&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Intracellular shift</b>&lt;/td&gt;&lt;td&gt;Insulin, β-agonists (salbutamol, adrenaline), alkalosis, hypokalaemic periodic paralysis, refeeding, ↑insulin (TPN), Ba²⁺, CsCl (rare)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Clinical:</b> Muscle weakness (legs → trunk), ileus, constipation, <b>paralysis</b> (severe), rhabdomyolysis, ↓reflexes; ECG: <b>U waves, T flattening, ST ↓, QT ↑, PR ↑, arrhythmias (AF, VF, TdP)</b>; ↑Digoxin toxicity; nephrogenic DI; ↓pressor response to catecholamines.</p>
+<p><b>Treatment:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Severity&lt;/th&gt;&lt;th&gt;Treatment&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Severe (&lt;2.5, arrhythmias, paralysis)</b>&lt;/td&gt;&lt;td&gt;<b>IV KCl 20–40 mmol/h via central line (peripheral max 20 mmol/h); cardiac monitor; max 200–400 mmol/day</b>; correct Mg simultaneously&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Moderate (2.5–3.0)</b>&lt;/td&gt;&lt;td&gt;IV KCl 10–20 mmol/h OR oral KCl 40–80 mmol/day&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mild (3.0–3.5)</b>&lt;/td&gt;&lt;td&gt;Oral KCl or K citrate (40–80 mmol/day); K-sparing diuretic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Chronic</b>&lt;/td&gt;&lt;td&gt;K-sparing (amiloride, spironolactone); K-rich diet (banana, orange, tomato, avocado)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Hyperkalaemia (K &gt;5.0):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Category&lt;/th&gt;&lt;th&gt;Causes&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>↓Excretion</b>&lt;/td&gt;&lt;td&gt;CKD, AKI, Addison, hypoaldosteronism, drugs (ACE-I, ARB, K-sparing: spironolactone, amiloride, triamterene, TMP-SMX, heparin, NSAIDs, calcineurin inhibitors)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>↑Release</b>&lt;/td&gt;&lt;td&gt;Rhabdomyolysis, tumour lysis, haemolysis, severe tissue injury, DKA, β-blocker, succinylcholine, digoxin&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>↑Shift</b>&lt;/td&gt;&lt;td&gt;Acidosis, insulin deficiency, hyperosmolarity&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Pseudohyperkalaemia</b>&lt;/td&gt;&lt;td&gt;Tourniquet, fist clenching, haemolysis in tube, thrombocytosis, leucocytosis&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>ECG progression:</b> Peaked T (early) → ↓P, PR ↑ → wide QRS → sine wave → VF/asystole.</p>
+<p><b>Treatment:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Mechanism&lt;/th&gt;&lt;th&gt;Drug&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>1. Cardiac stabilise</b>&lt;/td&gt;&lt;td&gt;Membrane stabilise&lt;/td&gt;&lt;td&gt;<b>10% Ca gluconate 10 mL IV over 2–5 min</b> (if ECG changes)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2. Shift K⁺ into cells</b>&lt;/td&gt;&lt;td&gt;Insulin + glucose, β-agonist, NaHCO₃ (acidosis)&lt;/td&gt;&lt;td&gt;<b>Insulin 10 U IV + 50 mL D50%</b>; salbutamol 5 mg nebulised; NaHCO₃ 50 mmol (controversial)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3. Remove K⁺ from body</b>&lt;/td&gt;&lt;td&gt;Diuresis, GI binding, dialysis&lt;/td&gt;&lt;td&gt;Furosemide 40 mg IV; <b>Patiromer/Veltassa</b> or <b>Sodium zirconium cyclosilicate (Lokelma)</b> for chronic; <b>haemodialysis</b> (refractory/severe)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Ca polystyrene sulfonate (Resonium)</b>&lt;/td&gt;&lt;td&gt;Old; ↑Na load, GI necrosis if sorbitol; AVOID&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Emergency hyperkalaemia:</b> <b>Ca gluconate (stabilise) + Insulin/glucose (shift) + Salbutamol (shift) + Diuresis/dialysis (remove)</b>; maximum 4–5 mmol/L/24h correction.</p>
+<div class="sub-h">Section 3: Chloride</div>
+<p><b>Body content:</b> 33 mmol/kg; 70% ECF. <b>Plasma:</b> 98–107 mmol/L. <b>Daily requirement:</b> ~750 mg; follows Na⁺/H⁺/K⁺.</p>
+<p><b>Hyperchloraemic Metabolic Acidosis (Normal Anion Gap):</b></p>
+<ul><li><b>Anion gap = Na⁺ – (Cl⁻ + HCO3⁻)</b> = 8–12; ↓AG or normal AG = hyperchloraemic</li><li><b>Causes:</b></li><li><b>GI HCO3⁻ loss:</b> Diarrhoea, pancreatic/jejunal fistula, ileostomy, ureterosigmoidostomy</li><li><b>Renal HCO3⁻ loss:</b> Proximal RTA (Type 2), distal RTA (Type 1), hypoaldosteronism</li><li><b>Cl⁻ gain:</b> 0.9% NS infusion (large volumes), TPN, NH₄Cl, CaCl₂</li><li><b>Compensation:</b> Hyperventilation (Kussmaul)</li></ul>
+<p><b>Hypochloraemia:</b></p>
+<ul><li><b>Vomiting, NG suction</b> (loss of HCl; metabolic alkalosis)</li><li><b>Diuretic therapy</b> (contraction alkalosis)</li><li><b>Cystic fibrosis</b> (↓Cl⁻ in sweat)</li><li><b>Bartter, Gitelman syndromes</b> (renal loss)</li></ul>
+<p><b>Chloride-responsive metabolic alkalosis (saline-responsive):</b> Vomiting, NG, diuretics; treat with NS to correct volume + Cl⁻.</p>
+<p><b>Chloride-resistant metabolic alkalosis (saline-resistant):</b> Hyperaldosteronism, Cushing, Bartter, Gitelman, severe hypokalaemia, licorice.</p>
+<div class="sub-h">Section 4: Body Fluid Compartments &amp; Osmolality</div>
+<ul><li><b>TBW:</b> 60% body weight (M, young); 50% (F, elderly); 70% in infants</li><li><b>ECF (1/3 TBW):</b> Plasma (1/4 ECF), interstitial (3/4); 20% body weight</li><li><b>ICF (2/3 TBW):</b> 40% body weight</li><li><b>Plasma osmolality:</b> 275–295 mOsm/kg; mostly Na⁺, Cl⁻, glucose, urea</li><li><b>Tonicity (effective osmolality):</b> Na⁺ + glucose; urea freely permeable</li><li><b>ADH:</b> Hypoosmolar → ↓ADH; hyperosmolar → ↑ADH; volume baroreceptors also</li><li><b>Thirst:</b> Hypothalamic osmoreceptor (sodium, glucose); drives drinking</li></ul>
+<div class="sub-h">Section 5: Fluid Resuscitation &amp; Maintenance</div>
+<p><b>Daily maintenance fluid (4-2-1 rule):</b></p>
+<ul><li>4 mL/kg/h first 10 kg (40 mL/h for 10 kg)</li><li>2 mL/kg/h next 10 kg</li><li>1 mL/kg/h thereafter</li><li>Adult 70 kg: 40 + 20 + 50 = 110 mL/h = ~2.5 L/day</li></ul>
+<p><b>Resuscitation:</b></p>
+<ul><li><b>Crystalloid:</b> 0.9% NS (isotonic, 154 Na/Cl), Hartmann's/Ringer's lactate (Na 131, K 5, Ca 2.7, lactate 29), D5W, 0.45% NS</li><li><b>Colloid:</b> Albumin 4–5%, gelatin, starch (avoid in sepsis)</li><li><b>Crystalloid vs colloid:</b> No mortality benefit; albumin may be used in cirrhosis; balanced crystalloid (Hartmann's) ↓AKI, ↓mortality vs NS (BaSICS, PLUS trials)</li><li><b>Dose:</b> 30 mL/kg in sepsis/septic shock (Surviving Sepsis); reassess fluid responsiveness (passive leg raise, IVC variation, stroke volume variation)</li></ul>
+<p><b>Special considerations:</b></p>
+<ul><li><b>DKA:</b> 0.9% NS first (volume), switch to 0.45% NS if Na normal/high; <b>5–10% dextrose</b> when glucose &lt;14 mmol/L (allow continued insulin + prevent hypoglycaemia)</li><li><b>Hypernatraemia:</b> Slow correction (≤10 mmol/L/24h); D5W or 0.45% NS</li><li><b>Hyponatraemia:</b> Hypertonic saline 3% for severe; vaptans (tolvaptan) for SIADH</li><li><b>Cardiac surgery:</b> Cautious fluid; avoid hypervolaemia</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>70F, hip fracture post-op, Na 118, confusion</td><td>**3% NaCl 100 mL bolus**; check Na 1h; ≤8 mmol/24h</td><td>Symptomatic hypoNa; risk ODS if chronic</td></tr><tr><td>50M, alcohol, beer 10 L/day, Na 110, euvolaemic</td><td>**Beer potomania**; fluid restriction 800 mL/day; **monitor** (avoid rapid correction ODS)</td><td>Low-solute; ↑ADH</td></tr><tr><td>60F, lung cancer, Na 118, ↓plasma osm, urine osm 600, urine Na 50</td><td>**SIADH** (small cell lung cancer); fluid restriction 800 mL; consider demeclocycline, tolvaptan</td><td>Paraneoplastic; percosec in SCLC</td></tr><tr><td>30M, marathon, Na 158, confusion</td><td>**D5W or 0.45% NS** slowly; **≤10 mmol/24h** (avoid cerebral oedema)</td><td>Exercise-associated hypernatraemia; SDH risk</td></tr><tr><td>70M, on furosemide, K 2.8, muscle weakness, U waves</td><td>**IV KCl 20–40 mmol/h via central line; oral K; check Mg; K-sparing**</td><td>HypoK with diuretics; correct Mg</td></tr><tr><td>70F, CKD, K 7.0, peaked T, wide QRS</td><td>**10% Ca gluconate 10 mL IV (stabilise)**; **insulin/glucose + salbutamol** (shift); **dialysis** (remove)</td><td>Emergency hyperK; ECG-driven</td></tr><tr><td>50F, severe vomiting, Cl 95, HCO3 32, pH 7.5</td><td>**Hypochloraemic metabolic alkalosis**; NS + KCl; correct volume</td><td>Saline-responsive alkalosis</td></tr><tr><td>75F, diarrhoea, Cl 110, HCO3 15, pH 7.25, AG 12</td><td>**Hyperchloraemic (normal AG) metabolic acidosis**; NS + K; treat cause</td><td>GI HCO3⁻ loss</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Na/K/Cl distribution (Na/Cl ECF, K ICF); daily requirements; hyponatraemia 3 categories (hypo/eu/hypervolaemic); SIADH features; hypertonic saline 3% for severe; <b>slow correction ≤8 mmol/24h (ODS)</b>; hypokalaemia causes (renal/extra-renal); ECG U waves; hyperkalaemia Ca gluconate → insulin → salbutamol → dialysis; anion gap - <b>Common viva:</b> SIADH vs hypovolaemic; ODS prevention; hyperK emergency Rx; U waves; RTA types; hyperchloraemic acidosis; fluid maintenance 4-2-1 - <b>Exam trap:</b> Correcting chronic hyponatraemia rapidly (ODS); missing hyperK ECG changes; giving KCl in 0.9% NS (don't mix); central vs peripheral K; giving Ca in DKA (insulin K)</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>All hyponatraemia = SIADH</td><td>**3 categories**: hypo/eu/hypervolaemic; check volume status first</td></tr><tr><td>Correct hypoNa rapidly</td><td>**Chronic: ≤8 mmol/24h, ≤18 mmol/48h** (ODS risk); **acute (seizures): 5 mmol/L in 1st hour**</td></tr><tr><td>HyperK Rx: just stop drugs</td><td>**ECG changes: Ca gluconate first** (stabilise membrane); then shift (insulin/salb); then remove</td></tr><tr><td>KCl IM/IV push</td><td>**Always dilute; central line for >20 mmol/h; never bolus** (cardiac arrest)</td></tr><tr><td>SIADH = give NS</td><td>**Fluid restriction 800 mL/day**; NS worsens; tolvaptan if severe</td></tr><tr><td>NS better than Hartmann's</td><td>**Balanced crystalloid (Hartmann's) ↓AKI, ↓mortality** vs NS in large volume (BaSICS, PLUS)</td></tr><tr><td>Beer potomania = chronic alcoholism only</td><td>**Low solute intake (any cause) + high water intake**; "tea-and-toast"</td></tr><tr><td>HyperK: give Ca chloride</td><td>**Ca gluconate** (less vein irritation); Ca chloride for cardiac arrest only</td></tr><tr><td>Diabetes insipidus = nephrogenic</td><td>**Central (ADH deficiency)**: desmopressin; **Nephrogenic (ADH resistance)**: thiazide + ↓Na, NSAIDs</td></tr><tr><td>AG metabolic acidosis = high</td><td>**↑HAGMA: MUDPILES** (Methanol, Uraemia, DKA, Paraldehyde, Iron/INH, Lactic, Ethylene glycol, Salicylates); **NAGMA: GI, RTA, Cl⁻, TPN**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Na/K distribution:</b> <b>Na out, K in</b> (pump maintains 30:1 gradient)</li><li><b>Daily Na requirement:</b> <b>~500 mg</b>; Western <b>3.5 g</b> (8–10× excess)</li><li><b>Daily K requirement:</b> <b>3.5 g</b> (90 mmol)</li><li><b>HypoNa correction:</b> <b>≤8/24h, ≤18/48h</b> (ODS); <b>acute: 5 mmol/L in 1st hour</b></li><li><b>HyperK Rx:</b> <b>CIGS-D</b> = <b>C</b>a gluconate, <b>I</b>nsulin, <b>G</b>lucose, <b>S</b>albutamol, <b>D</b>ialysis</li><li><b>HypoK ECG:</b> <b>U</b> = <b>U</b> wave (between T and P)</li><li><b>HyperK ECG:</b> <b>Peaked T → Wide QRS → Sine wave → VF</b></li><li><b>Anion gap:</b> <b>Na – (Cl + HCO3)</b> = 8–12</li><li><b>HAGMA:</b> <b>MUDPILES</b> = Methanol, Uraemia, DKA, Paraldehyde, Iron, Lactic, Ethylene glycol, Salicylates</li><li><b>NAGMA:</b> <b>DCC</b> = <b>D</b>iarrhoea, <b>C</b>lostridium (?), <b>C</b>hloride (NS, TPN)</li><li><b>SIADH:</b> <b>S</b>erum hypo-osm, <b>A</b>DH inappropriately ↑, <b>A</b>symptomatic, <b>D</b>ilute urine (not maximally dilute), euvolaemic, <b>H</b>yponatraemia</li><li><b>Beer potomania:</b> <b>B</b>eer, <b>B</b>eans (high carb), <b>B</b>ig volume, <b>B</b>rain oedema if rapid correction</li><li><b>U waves:</b> <b>U</b> = h<b>U</b>ge K deficit (often &gt;100 mmol to resolve)</li><li><b>KCl central line:</b> <b>&gt;20 mmol/h needs central; max 40 mmol/h with monitor</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Electrolytes)) Sodium (Na+) ECF 135-145 mmol/L Daily 500 mg (3.5 g Western) Hyponatraemia Hypovolaemic (renal/extra-renal) Euvolaemic (SIADH, hypothyroid, adrenal) Hypervolaemic (CCF, cirrhosis, nephrosis) Rx: 3% NaCl if severe; ≤8/24h ODS if rapid correction Hypernatraemia Water loss, Na gain Rx: D5W or 0.45% NS slowly (≤10/24h) Potassium (K+) ICF 3.5-5.0 mmol/L Na/K-ATPase Hypokalaemia U waves, weakness, ileus Renal/extra-renal loss IV/oral KCl; correct Mg Hyperkalaemia Peaked T, wide QRS CIGS-D Rx Ca gluconate first Chloride (Cl-) ECF 98-107 NAGMA: DCC (diarrhoea, chloride, TPN) Saline-responsive alkalosis Anion Gap Na – (Cl + HCO3) = 8-12 HAGMA: MUDPILES NAGMA: GI, RTA, Cl- Fluid Resuscitation Crystalloid vs colloid 0.9% NS vs Hartmann's 30 mL/kg in sepsis 4-2-1 maintenance </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Na/K distribution: Na⁺/Cl⁻ ECF, K⁺ ICF; daily Na 500 mg, K 3.5 g</li><li>Hyponatraemia: 3 categories (hypo/eu/hypervolaemic); SIADH = euvolaemic</li><li>Hyponatraemia correction: ≤8 mmol/24h (ODS); severe = 3% NaCl 100 mL bolus</li><li>Hypokalaemia: U waves, muscle weakness, ileus, digoxin toxicity</li><li>Hyperkalaemia ECG: peaked T → wide QRS → sine wave → VF</li><li>HyperK Rx: Ca gluconate → insulin + glucose → salbutamol → dialysis (CIGS-D)</li><li>Anion gap = Na – (Cl + HCO3) = 8-12; HAGMA = MUDPILES</li><li>Hyperchloraemic (NAGMA): GI loss, RTA, NS, TPN</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Na/K/Cl distribution; daily requirements; hypoNa 3 categories; SIADH; chronic hypoNa correction ≤8/24h (ODS); 3% NaCl for severe; hypoK causes, U waves, digoxin; hyperK CIGS-D Rx (Ca gluconate first); AG (Na-Cl-HCO3); HAGMA MUDPILES; NAGMA causes</td></tr><tr><td>**Should Know 🟡**</td><td>Hypernatraemia correction ≤10/24h; pseudohyperK; beer potomania; RESET osmostat; fluid maintenance 4-2-1; crystalloid vs colloid; 30 mL/kg sepsis; balanced crystalloid (Hartmann's); ADH regulation; nephrogenic DI</td></tr><tr><td>**Nice to Know 🟢**</td><td>Osmotic demyelination; CPM vs EPM; Aggressive volume resuscitation vs restrictive (RIFA, CLASSIC); patiromer/Lokelma for chronic; tolvaptan liver toxicity; DDAVP</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] ODS risk factors detail</li><li>[ ] Hypernatraemia correction rate debate</li><li>[ ] Crystalloid choice trial data (BaSICS, PLUS, CLOVERS)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Electrolyte disorders: hyponatraemia, hyperkalaemia, and anion gap"</p>
+<ul><li>Na/K/Cl distribution (Na/Cl ECF, K ICF); daily requirements</li><li>Hyponatraemia: 3 categories (hypovolaemic: renal/extra-renal; euvolaemic: SIADH; hypervolaemic: CCF/cirrhosis/nephrosis)</li><li>SIADH: euvolaemic, ↓plasma osm, ↑urine osm, urine Na &gt;40</li><li>Hyponatraemia correction: ≤8 mmol/24h (ODS prevention); severe = 3% NaCl 100 mL bolus</li><li>Hypokalaemia: U waves, weakness, digoxin toxicity; IV KCl via central line; correct Mg</li><li>Hyperkalaemia: peaked T → wide QRS → sine wave; <b>CIGS-D Rx (Ca gluconate first)</b></li><li>Anion gap: Na – (Cl + HCO3) = 8-12; HAGMA MUDPILES; NAGMA GI/RTA/Cl⁻</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "SIADH"</p>
+<ul><li><b>Causes:</b> Small cell lung cancer (paraneoplastic), CNS disorders, drugs (SSRI, carbamazepine, cyclophosphamide), pulmonary (TB, pneumonia), pain, nausea</li><li><b>Features:</b> Euvolaemic hyponatraemia; ↓plasma osmolality (&lt;275); ↑urine osmolality (&gt;100); urine Na &gt;40; normal thyroid, adrenal, renal</li><li><b>Differential:</b> Hypothyroidism, adrenal insufficiency, polydipsia, beer potomania</li><li><b>Treatment:</b> Fluid restriction 800 mL/day; demeclocycline (ADH antagonist); tolvaptan (V2 blocker); treat underlying cause (chemotherapy for SCLC)</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "How do you manage severe hyponatraemia with seizures?" "A: <b>Severe symptomatic (seizures, coma):</b> <b>3% hypertonic saline 100 mL bolus over 10 min</b>; can repeat ×2-3; target <b>5 mmol/L rise in 1st hour</b> to stop seizures. <b>Then slow correction (≤8 mmol/24h) to avoid osmotic demyelination (central pontine)</b>. Check Na 1-2h. Risk factors for ODS: chronic hypoNa, alcoholism, malnutrition, hypokalaemia, liver disease."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 70F, CKD stage 4, K 7.0, peaked T, wide QRS on ECG. "Emergency hyperkalaemia with ECG changes. <b>Step 1: 10% Calcium gluconate 10 mL IV over 2-5 min</b> (stabilise cardiac membrane). <b>Step 2: Insulin 10 U + 50 mL D50% IV</b> + <b>Salbutamol 5 mg nebulised</b> (shift K into cells). <b>Step 3: Furosemide 80 mg IV</b> (urinary K excretion) + consider <b>Patiromer/Lokelma</b> (long-term binder). <b>Haemodialysis</b> if refractory/severe acidosis. Identify cause: stop ACE-I, ARB, K-sparing; check digoxin, K intake."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>Na⁺/K⁺/Cl⁻:</b> Na/Cl ECF, K ICF; Na daily 500 mg, K 3.5 g</li><li><b>HypoNa:</b> 3 categories (hypo/eu/hypervolaemic); SIADH (euvolaemic)</li><li><b>Chronic hypoNa correction:</b> <b>≤8 mmol/24h, ≤18 mmol/48h</b> (ODS risk)</li><li><b>Severe hypoNa:</b> 3% NaCl 100 mL bolus; target 5 mmol/L in 1st hour</li><li><b>HypoK:</b> U waves, weakness, ileus, ↑digoxin; correct Mg</li><li><b>HyperK ECG:</b> Peaked T → Wide QRS → Sine wave</li><li><b>HyperK Rx:</b> <b>CIGS-D</b> = Ca gluconate (1st) → Insulin+Glucose, Salbutamol → Dialysis</li><li><b>AG = Na – (Cl + HCO3) = 8-12</b></li><li><b>HAGMA:</b> MUDPILES</li><li><b>NAGMA:</b> Diarrhoea, RTA, Cl⁻ (NS, TPN)</li><li><b>Fluid maintenance:</b> 4-2-1 rule; resuscitation 30 mL/kg</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Body distribution of potassium:</b></li></ol>
+<p>A. Mostly extracellular B. <b>98% intracellular, 2% extracellular</b> C. Equally distributed D. 70% ICF, 30% ECF E. 50% ICF, 50% ECF</p>
+<ol><li><b>Safe correction rate of chronic hyponatraemia:</b></li></ol>
+<p>A. ≤2 mmol/L/24h B. <b>≤8 mmol/L/24h (≤18/48h)</b> C. ≤15 mmol/L/24h D. ≤20 mmol/L/24h E. No limit; correct rapidly</p>
+<ol><li><b>Anion gap formula:</b></li></ol>
+<p>A. Cl⁻ – (Na⁺ + HCO3⁻) B. Na⁺ + K⁺ – (Cl⁻ + HCO3⁻) C. <b>Na⁺ – (Cl⁻ + HCO3⁻)</b> D. Na⁺ + Cl⁻ – HCO3⁻ E. Na⁺ × Cl⁻ / HCO3⁻</p>
+<ol><li><b>MUDPILES mnemonic for high anion gap metabolic acidosis EXCEPT:</b></li></ol>
+<p>A. Methanol B. Uraemia C. DKA D. Paraldehyde E. <b>Diuretic (acetazolamide)</b></p>
+<ol><li><b>Hyperkalaemia ECG progression:</b></li></ol>
+<p>A. U waves → T inversion → QT prolongation B. <b>Peaked T → wide QRS → sine wave → VF</b> C. ST elevation → PR depression D. Tall R → deep S E. J waves (Osborn)</p>
+<ol><li><b>First-line treatment for severe hyperkalaemia with ECG changes:</b></li></ol>
+<p>A. Insulin + glucose B. Salbutamol C. <b>IV calcium gluconate 10% (10 mL over 2-5 min)</b> D. Sodium bicarbonate E. Haemodialysis</p>
+<ol><li><b>SIADH characteristic features:</b></li></ol>
+<p>A. Hypovolaemic, dilute urine B. Euvolaemic, concentrated urine, ↓plasma osmolality C. Hypervolaemic, dilute urine D. Euvolaemic, dilute urine, ↑plasma osmolality E. Oedematous, ↑plasma osmolality</p>
+<ol><li><b>U waves on ECG are characteristic of:</b></li></ol>
+<p>A. Hyperkalaemia B. <b>Hypokalaemia</b> C. Hyponatraemia D. Hypercalcaemia E. Hypernatraemia</p>
+<ol><li><b>Hypochloraemic metabolic alkalosis is seen in:</b></li></ol>
+<p>A. Diarrhoea B. Distal renal tubular acidosis C. <b>Persistent vomiting</b> D. Salicylate toxicity E. Diabetic ketoacidosis</p>
+<ol><li><b>Hyperchloraemic (normal anion gap) metabolic acidosis common cause:</b></li></ol>
+<p>A. Lactic acidosis B. Diabetic ketoacidosis C. <b>Diarrhoea (GI HCO3⁻ loss)</b> D. Salicylate poisoning E. Renal failure (acute)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 65-year-old man on ACE inhibitor, spironolactone, and digoxin presents with K 7.0, peaked T waves on ECG. First-line emergency treatment?</b></li></ol>
+<p>A. Insulin + glucose B. <b>10% IV calcium gluconate 10 mL over 2-5 min</b> C. Salbutamol nebulisation D. Sodium bicarbonate E. Calcium polystyrene sulfonate (Resonium)</p>
+<ol><li><b>A 70-year-old woman on diuretics for hypertension presents with weakness, ileus, K 2.5, Mg 0.4. Best initial management?</b></li></ol>
+<p>A. IV KCl bolus B. <b>IV KCl 20-40 mmol/h via central line; replace Mg</b> C. Oral KCl 600 mg daily D. Spironolactone E. Amiloride</p>
+<ol><li><b>A 55-year-old man with small cell lung cancer has Na 118, plasma osm 250 mOsm/kg, urine osm 600 mOsm/kg, urine Na 50. Diagnosis?</b></li></ol>
+<p>A. Hypovolaemic hyponatraemia B. <b>SIADH (paraneoplastic, euvolaemic, concentrated urine, ↓plasma osm)</b> C. Hypervolaemic hyponatraemia D. Adrenal insufficiency E. Pseudohyponatraemia</p>
+<ol><li><b>A 75-year-old man presents with confusion, Na 158, plasma osm 340 mOsm/kg, urine osm 100 (inappropriately dilute). Most likely cause?</b></li></ol>
+<p>A. SIADH B. <b>Diabetes insipidus (central or nephrogenic)</b> C. Salt poisoning D. Hypodipsia E. Hyperaldosteronism</p>
+<ol><li><b>A 50-year-old man with chronic alcohol use presents with seizures and Na 110. What is the most appropriate emergency management?</b></li></ol>
+<p>A. Rapid NS correction to 130 B. <b>3% hypertonic saline 100 mL IV bolus over 10 min; repeat if seizures; target 5 mmol/L in 1st hour; ≤8 mmol/24h</b> C. Fluid restriction D. Tolvaptan E. Demeclocycline</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Na/K/Cl distribution</li></ul>
+<p>A: <b>Na/Cl = ECF, K = ICF (98%)</b></p>
+<ul><li>Q: Daily Na/K requirement</li></ul>
+<p>A: <b>Na 500 mg (3.5 g Western), K 3.5 g</b></p>
+<ul><li>Q: Hyponatraemia 3 categories</li></ul>
+<p>A: <b>Hypovolaemic (renal/extra-renal), Euvolaemic (SIADH), Hypervolaemic (CCF/cirrhosis/nephrosis)</b></p>
+<ul><li>Q: SIADH features</li></ul>
+<p>A: <b>Euvolaemic, ↓plasma osm, ↑urine osm (&gt;100), urine Na &gt;40</b></p>
+<ul><li>Q: Chronic hypoNa correction rate</li></ul>
+<p>A: <b>≤8 mmol/L/24h, ≤18/48h</b> (avoid ODS)</p>
+<ul><li>Q: Severe hypoNa Rx</li></ul>
+<p>A: <b>3% NaCl 100 mL bolus over 10 min; target 5 mmol/L in 1st hour</b></p>
+<ul><li>Q: HypoK ECG</li></ul>
+<p>A: <b>U waves, T flattening, ST ↓, QT ↑</b></p>
+<ul><li>Q: HyperK ECG progression</li></ul>
+<p>A: <b>Peaked T → Wide QRS → Sine wave → VF</b></p>
+<ul><li>Q: HyperK Rx (CIGS-D)</li></ul>
+<p>A: <b>C</b>a gluconate, <b>I</b>nsulin+glucose, <b>G</b>lucose, <b>S</b>albutamol, <b>D</b>ialysis</p>
+<ul><li>Q: Anion gap</li></ul>
+<p>A: <b>Na – (Cl + HCO3) = 8–12</b></p>
+<ul><li>Q: HAGMA MUDPILES</li></ul>
+<p>A: <b>M</b>ethanol, <b>U</b>raemia, <b>D</b>KA, <b>P</b>araldehyde, <b>I</b>ron/INH, <b>L</b>actic, <b>E</b>thylene glycol, <b>S</b>alicylates</p>
+<ul><li>Q: Fluid maintenance</li></ul>
+<p>A: <b>4-2-1 rule</b> (4 mL/kg/h first 10 kg, 2 next 10, 1 thereafter)</p>
+<ul><li>Q: Crystalloid in sepsis</li></ul>
+<p>A: <b>30 mL/kg bolus</b>; balanced (Hartmann's) preferred over NS</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 98% K⁺ intracellular, 2% extracellular; Na⁺/K⁺-ATPase maintains 30:1 gradient.</li><li><b>B</b> — Chronic hyponatraemia correction ≤8 mmol/L/24h, ≤18/48h to prevent osmotic demyelination syndrome.</li><li><b>C</b> — Anion gap = Na⁺ – (Cl⁻ + HCO3⁻); normal 8–12.</li><li><b>E</b> — MUDPILES: Methanol, Uraemia, DKA, Paraldehyde, Iron, Lactic, Ethylene glycol, Salicylates; NOT acetazolamide (NAGMA).</li><li><b>B</b> — Hyperkalaemia ECG: peaked T (early) → wide QRS → sine wave → VF/asystole; U waves = hypokalaemia.</li><li><b>C</b> — Severe hyperK with ECG changes: IV Ca gluconate 10% 10 mL over 2-5 min (stabilise membrane) FIRST, then shift (insulin/salb), then remove.</li><li><b>B</b> — SIADH: euvolaemic, ↓plasma osmolality (&lt;275), ↑urine osmolality (&gt;100, inappropriate), urine Na &gt;40.</li><li><b>B</b> — U waves on ECG = hypokalaemia; between T and P waves; reflect delayed repolarisation.</li><li><b>C</b> — Hypochloraemic metabolic alkalosis: persistent vomiting (loss of HCl); saline-responsive.</li><li><b>C</b> — Hyperchloraemic (NAGMA) acidosis: GI HCO3⁻ loss (diarrhoea, fistula); normal anion gap.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Severe hyperK + ECG: IV Ca gluconate 10% 10 mL over 2-5 min FIRST (membrane stabilise); then shift (insulin/salb), then remove.</li><li><b>B</b> — Hypokalaemia (K 2.5) + hypomagnesaemia: IV KCl 20-40 mmol/h via central line + Mg replacement; correct both.</li><li><b>B</b> — SIADH: SCLC paraneoplastic; euvolaemic hyponatraemia; ↓plasma osm, ↑urine osm (concentrated), urine Na &gt;40.</li><li><b>B</b> — Diabetes insipidus: hypernatraemia + ↑plasma osm + inappropriately dilute urine (urine osm &lt;300); central vs nephrogenic (water deprivation test).</li><li><b>B</b> — Severe symptomatic hyponatraemia (seizures + Na 110): 3% NaCl 100 mL bolus ×2-3; target 5 mmol/L in 1st hour; alcohol + chronic = ODS risk if rapid correction.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Electrolytes (Na, K, Cl)</b> are <b>Must Know 🔴</b> topics for FCPS/MRCP. <b>Key takeaway:</b> Na/Cl ECF, K ICF. <b>Hyponatraemia: 3 categories (hypo/eu/hypervolaemic); SIADH euvolaemic, ↓plasma osm, ↑urine osm</b>; chronic correction ≤8 mmol/24h (ODS); severe = 3% NaCl 100 mL bolus. <b>Hypokalaemia: U waves, weakness, ileus, digoxin</b>; correct Mg. <b>Hyperkalaemia: peaked T → wide QRS → sine wave; CIGS-D Rx (Ca gluconate first)</b>. <b>Anion gap = Na – (Cl + HCO3) = 8-12; HAGMA MUDPILES; NAGMA GI/RTA/Cl⁻</b>. Fluid maintenance 4-2-1; resuscitation 30 mL/kg. <b>Exam focus:</b> Hyponatraemia correction, SIADH, hyperK Rx CIGS-D, U waves, anion gap, MUDPILES. <b>Clinical relevance:</b> Every ward patient has electrolytes; ODS prevention; emergency hyperK; fluid resuscitation; ICU management.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Electrolytes Sodium Potassium Chloride · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

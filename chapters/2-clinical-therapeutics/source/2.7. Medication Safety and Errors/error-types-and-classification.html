@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Error Types And Classification — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.7. MEDICATION SAFETY AND ERRORS</span>
+      <div class="h1">Error Types And Classification</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define <b>medication error</b> vs <b>adverse drug event (ADE)</b> vs <b>adverse drug reaction (ADR)</b></li><li>[ ] Classify errors using <b>NCC MERP Index</b> (Categories A–I) and <b>WHO Taxonomy</b></li><li>[ ] Apply <b>Prescribing, Transcribing, Dispensing, Administration, Monitoring</b> (PTDAM) framework</li><li>[ ] Identify <b>high-risk error types</b>: wrong drug, wrong dose, wrong patient, wrong route, wrong time, omission</li><li>[ ] Distinguish <b>active errors</b> (slips/lapses/mistakes) vs <b>latent conditions</b> (system failures)</li><li>[ ] Know <b>Look-Alike Sound-Alike (LASA)</b> drugs and <b>Tall Man Lettering</b></li><li>[ ] Apply <b>PINCH</b> high-risk drug classes</li><li>[ ] Answer viva: "Classify this error using NCC MERP" and "How to prevent LASA errors?"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Definitions & Taxonomy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Key Definitions</div>
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Medication Error (ME)**</td><td>Any preventable event that may cause or lead to inappropriate medication use or patient harm while the medication is in the control of the healthcare professional, patient, or consumer (NCC MERP)</td></tr><tr><td>**Adverse Drug Event (ADE)**</td><td>Injury resulting from medical intervention related to a drug (includes errors + ADRs)</td></tr><tr><td>**Adverse Drug Reaction (ADR)**</td><td>Noxious, unintended response to a drug at normal doses (Type A/B) — **not an error**</td></tr><tr><td>**Near Miss**</td><td>Error that reached patient but caused no harm (NCC MERP Category B–C)</td></tr><tr><td>**Potential ADE**</td><td>Error with potential to cause harm but intercepted (Category A–C)</td></tr><tr><td>**Preventable ADE**</td><td>Harm from an error (Category E–I)</td></tr><tr><td>**Non-preventable ADE**</td><td>ADR (no error)</td></tr></table>
+<div class="sub-h">Relationship</div>
+<p>``<code>mermaid flowchart LR A[Medication&lt;br&gt;Error] --&gt; B{Intercepted?} B --&gt;|Yes| C[Near Miss /&lt;br&gt;Potential ADE&lt;br&gt;(Cat A-C)] B --&gt;|No| D[Actual Error&lt;br&gt;Reaches Patient] D --&gt; E{Harm?} E --&gt;|No| F[Error, No Harm&lt;br&gt;(Cat D)] E --&gt;|Yes| G[Preventable ADE&lt;br&gt;(Cat E-I)] H[ADR&lt;br&gt;(Type A/B)] --&gt; I[Non-preventable ADE] G --&gt; J[Total ADEs] I --&gt; J </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ NCC MERP Index — Harm-Based Classification (Categories A–I)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Description</th><th>Harm Level</th><th>Example</th></tr><tr><td>----------</td><td>-------------</td><td>------------</td><td>---------</td></tr><tr><td>**A**</td><td>**Circumstances/events with capacity to cause error** (no error occurred)</td><td>None</td><td>Look-alike drug names on shelf; confusing label</td></tr><tr><td>**B**</td><td>**Error occurred but did not reach patient** (intercepted)</td><td>None</td><td>Pharmacist catches prescribing error before dispensing</td></tr><tr><td>**C**</td><td>**Error reached patient but did not cause harm**</td><td>None</td><td>Wrong dose given but no clinical effect</td></tr><tr><td>**D**</td><td>**Error reached patient, required monitoring/pre-treatment** but no harm</td><td>None</td><td>Double dose given → monitor vitals, no harm</td></tr><tr><td>**E**</td><td>**Error caused temporary harm, required intervention**</td><td>Temporary</td><td>Wrong drug → allergic reaction → treated with antihistamine</td></tr><tr><td>**F**</td><td>**Error caused temporary harm, required initial/prolonged hospitalisation**</td><td>Temporary (hospital)</td><td>Overdose → admission for observation</td></tr><tr><td>**G**</td><td>**Error caused permanent harm**</td><td>Permanent</td><td>Intrathecal vincristine → paralysis</td></tr><tr><td>**H**</td><td>**Error required intervention to sustain life**</td><td>Life-threatening</td><td>Tenfold insulin overdose → ICU, ventilation</td></tr><tr><td>**I**</td><td>**Error resulted in death**</td><td>Death</td><td>Potassium chloride IV push → cardiac arrest</td></tr></table>
+<div class="callout"><b>Exam Key:</b> <i>Categories A–D = no harm (near miss/potential). E–I = harm occurred (preventable ADE). I = death.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ WHO Taxonomy — Process-Based Classification</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stages of Medication Use Process</div>
+<table class="ctable"><tr><th>Stage</th><th>Description</th><th>Typical Errors</th></tr><tr><td>-------</td><td>-------------</td><td>----------------</td></tr><tr><td>**Prescribing**</td><td>Selecting drug, dose, route, frequency, duration</td><td>Wrong drug, wrong dose, allergy ignored, interaction missed, indication unclear</td></tr><tr><td>**Transcribing**</td><td>Writing/entering order (paper → electronic)</td><td>Illegible handwriting, decimal point error, abbreviation misread, wrong patient</td></tr><tr><td>**Dispensing**</td><td>Preparing & supplying drug</td><td>Wrong drug/strength/quantity, labelling error, LASA confusion, expiry missed</td></tr><tr><td>**Administration**</td><td>Giving drug to patient</td><td>Wrong patient, wrong route, wrong time, wrong rate, omitted dose, technique error</td></tr><tr><td>**Monitoring/Documentation**</td><td>Follow-up, lab review, response assessment</td><td>Missed TDM, missed renal/hepatic monitoring, failure to act on ADR, documentation error</td></tr></table>
+<div class="sub-h">Error Types (Psychological Classification)</div>
+<table class="ctable"><tr><th>Type</th><th>Description</th><th>Example</th></tr><tr><td>------</td><td>-------------</td><td>---------</td></tr><tr><td>**Slip**</td><td>**Action not as planned** (attentional failure)</td><td>Intended to write 5mg, wrote 50mg (motor slip)</td></tr><tr><td>**Lapse**</td><td>**Memory failure** (forgotten step)</td><td>Forgot to prescribe VTE prophylaxis on admission</td></tr><tr><td>**Mistake**</td><td>**Plan wrong** (knowledge/rule-based failure)</td><td>Prescribed penicillin for "penicillin allergy" (knowledge) or used adult dose in child (rule)</td></tr><tr><td>**Violation**</td><td>**Deliberate deviation** from protocol</td><td>Giving IV push instead of infusion to save time</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ PTDAM Framework — Practical Classification</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Medication Use Process] --&gt; B[Prescribing] A --&gt; C[Transcribing] A --&gt; D[Dispensing] A --&gt; E[Administration] A --&gt; F[Monitoring]</p>
+<p>B --&gt; B1[Wrong drug&lt;br&gt;Wrong dose&lt;br&gt;Wrong frequency&lt;br&gt;Allergy ignored&lt;br&gt;Interaction missed&lt;br&gt;Indication unclear&lt;br&gt;Contraindication missed] C --&gt; C1[Illegible writing&lt;br&gt;Decimal error (5.0 vs .5)&lt;br&gt;Abbreviation (U→units, QD→OD)&lt;br&gt;Wrong patient ID] D --&gt; D1[Wrong drug/strength&lt;br&gt;LASA confusion&lt;br&gt;Labelling error&lt;br&gt;Expiry missed&lt;br&gt;Compounding error] E --&gt; E1[Wrong patient&lt;br&gt;Wrong route (IV vs IM)&lt;br&gt;Wrong time (±1h vs &gt;1h)&lt;br&gt;Wrong rate (IV infusion)&lt;br&gt;Omitted dose&lt;br&gt;Technique error (inhaler)] F --&gt; F1[Missed TDM&lt;br&gt;Missed renal/hepatic monitor&lt;br&gt;Missed ADR recognition&lt;br&gt;Failure to act on result&lt;br&gt;Documentation error] ```</p>
+<div class="sub-h">High-Yield: Administration "Rights" (Expanded)</div>
+<table class="ctable"><tr><th>Right</th><th>Description</th><th>Error Type</th></tr><tr><td>-------</td><td>-------------</td><td>------------</td></tr><tr><td>**Right Patient**</td><td>Two identifiers (name + DOB/MRN)</td><td>Wrong patient</td></tr><tr><td>**Right Drug**</td><td>Match prescription, check allergies</td><td>Wrong drug</td></tr><tr><td>**Right Dose**</td><td>Calculate, double-check, weight-based</td><td>Wrong dose</td></tr><tr><td>**Right Route**</td><td>IV/IM/SC/PO/PR/Inhaler/Topical</td><td>Wrong route</td></tr><tr><td>**Right Time**</td><td>±30 min (standard) / ±1h (extended)</td><td>Wrong time</td></tr><tr><td>**Right Documentation**</td><td>Record immediately after admin</td><td>Documentation error</td></tr><tr><td>**Right Reason**</td><td>Indication matches diagnosis</td><td>Indication error</td></tr><tr><td>**Right Response**</td><td>Monitor for effect/ADR</td><td>Monitoring error</td></tr><tr><td>**Right to Refuse**</td><td>Respect autonomy</td><td>Ethical error</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Look-Alike Sound-Alike (LASA) Drugs</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mechanism</div>
+<ul><li><b>Visual similarity</b> (look-alike): similar spelling, packaging, font</li><li><b>Phonetic similarity</b> (sound-alike): similar pronunciation</li><li><b>Strength similarity</b>: same drug, different strength (e.g., 5mg vs 50mg)</li></ul>
+<div class="sub-h">Prevention Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Implementation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Tall Man Lettering**</td><td>Highlight dissimilar letters: **hydrOXYzine** vs **hydrALAZINE**, **dopamine** vs **DOBUTamine**, **glipiZIDE** vs **glyBURIDE**</td></tr><tr><td>**Separate storage**</td><td>Physical separation in pharmacy/ward</td></tr><tr><td>**Electronic alerts**</td><td>CPOE pop-up for LASA pairs</td></tr><tr><td>**Read-back verification**</td><td>Verbal orders: read back drug name, dose, patient</td></tr><tr><td>**Barcode scanning**</td><td>At dispensing and administration</td></tr><tr><td>**Patient education**</td><td>"Know your medicines"</td></tr></table>
+<div class="sub-h">High-Risk LASA Pairs (Must Know for Exam)</div>
+<table class="ctable"><tr><th>Pair</th><th>Risk</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**HydrALAZINE / HydrOXYzine**</td><td>Antihypertensive vs Antihistamine</td></tr><tr><td>**Dopamine / DOBUTamine**</td><td>Vasopressor vs Inotrope</td></tr><tr><td>**GlipiZIDE / GlyBURIDE**</td><td>Sulfonylureas (different potency/duration)</td></tr><tr><td>**CloZAPINE / ClomiPRAMINE / CloBAZam**</td><td>Antipsychotic vs TCA vs Anticonvulsant</td></tr><tr><td>**Carbamazepine / CarbIMAZOLE / CarBOPLATIN**</td><td>Anticonvulsant vs Antithyroid vs Chemo</td></tr><tr><td>**Methotrexate / Metolazone**</td><td>Immunosuppressant vs Diuretic</td></tr><tr><td>**PrednisoLONE / PredniSONE / Methylprednisolone**</td><td>Corticosteroids (different potency)</td></tr><tr><td>**FentaNYL / SufentaNYL / AlfentaNYL**</td><td>Opioids (potency 100x, 500x, 10x morphine)</td></tr><tr><td>**Insulin Glargine / Insulin Lispro / Insulin Aspart**</td><td>Long-acting vs Rapid-acting</td></tr><tr><td>**Bisoprolol / Bisacodyl**</td><td>Beta-blocker vs Laxative</td></tr><tr><td>**AmLODIPINE / AmIODARONE**</td><td>CCB vs Antiarrhythmic</td></tr><tr><td>**Ceftriaxone / Cefotaxime / CefTAZIDIME**</td><td>Cephalosporins (different spectra)</td></tr><tr><td>**Zolpidem / Zopiclone**</td><td>Z-drugs (similar but not identical)</td></tr><tr><td>**Lamotrigine / Lamivudine / Labetalol**</td><td>Anticonvulsant vs ARV vs Alpha/beta-blocker</td></tr></table>
+<div class="callout"><b>Tall Man Lettering Examples (ISMP/FDA):</b> - <b>bupropion</b> vs <b>busPIRone</b> - <b>chlorproMAZINE</b> vs <b>chlorproPAMIDE</b> - <b>DOBUTamine</b> vs <b>dopamine</b> - <b>glipiZIDE</b> vs <b>glyBURIDE</b> - <b>hydrALAZINE</b> vs <b>hydrOXYzine</b> - <b>methylPREDNISolone</b> vs <b>methylTESTOSTERONE</b> - <b>nitroGLYCERIN</b> vs <b>nitroPRUSSIDE</b> - <b>OxyCODONE</b> vs <b>OxyCONTIN</b> (brand) - <b>vinBLASTINE</b> vs <b>vinCRISTINE</b> (fatal if swapped)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ High-Risk Error Scenarios</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Wrong Route Errors (Often Fatal)</div>
+<table class="ctable"><tr><th>Error</th><th>Consequence</th><th>Prevention</th></tr><tr><td>-------</td><td>-------------</td><td>------------</td></tr><tr><td>**Intrathecal vincristine**</td><td>Ascending paralysis, death</td><td>**Never** store vincristine near intrathecal drugs; use separate syringe labels; "FOR IV USE ONLY"</td></tr><tr><td>**IV potassium chloride bolus**</td><td>Cardiac arrest</td><td>**Never** give KCl IV push; only via controlled infusion pump</td></tr><tr><td>**Epidural bupivacaine IV**</td><td>Cardiovascular collapse, seizures</td><td>Clear labelling; separate storage; coloured syringes</td></tr><tr><td>**Oral methotrexate daily instead of weekly**</td><td>Pancytopenia, mucositis, death</td><td>Weekly dosing protocols; "METHOTREXATE — WEEKLY DOSE" bold label; patient counselling</td></tr><tr><td>**IV insulin instead of SC**</td><td>Hypoglycaemia, death</td><td>Separate insulin syringes; barcode scanning</td></tr></table>
+<div class="sub-h">Decimal Point / Dose Errors (10x / 100x)</div>
+<table class="ctable"><tr><th>Error</th><th>Example</th><th>Prevention</th></tr><tr><td>-------</td><td>---------</td><td>------------</td></tr><tr><td>**Trailing zero**</td><td>5.0mg read as 50mg</td><td>**Never use trailing zeros** (write 5mg not 5.0mg)</td></tr><tr><td>**Missing leading zero**</td><td>.5mg read as 5mg</td><td>**Always use leading zero** (write 0.5mg not .5mg)</td></tr><tr><td>**Abbreviation "U"**</td><td>10U read as 100 (units)</td><td>**Write "units"**</td></tr><tr><td>**Abbreviation "QD"**</td><td>QD read as QID (4x daily)</td><td>**Write "daily" or "once daily"**</td></tr><tr><td>**mg vs mcg**</td><td>100mcg read as 100mg</td><td>Write "micrograms" or "mcg" clearly</td></tr></table>
+<div class="sub-h">Omission Errors</div>
+<table class="ctable"><tr><th>Type</th><th>Example</th><th>Risk</th></tr><tr><td>------</td><td>---------</td><td>------</td></tr><tr><td>**VTE prophylaxis omitted**</td><td>Post-op, immobile medical patient</td><td>PE, DVT</td></tr><tr><td>**Antibiotic omitted in sepsis**</td><td>Delayed >1h</td><td>Mortality ↑ 7–8% per hour</td></tr><tr><td>**Steroid omitted in adrenal insufficiency**</td><td>Addisonian crisis</td><td>Life-threatening</td></tr><tr><td>**Anticoagulant omitted in AF**</td><td>Stroke</td><td>Disabling/fatal</td></tr><tr><td>**Drug omitted at transitions**</td><td>Admission/discharge/transfer</td><td>Rebound, withdrawal, treatment failure</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Paediatric / Neonatal Specific Errors</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Factor</th><th>Error Risk</th><th>Mitigation</th></tr><tr><td>--------</td><td>------------</td><td>------------</td></tr><tr><td>**Weight-based dosing**</td><td>Calculation error (mg/kg)</td><td>Weight-based CPOE; double-check calc; use ideal body weight for obese</td></tr><tr><td>**Body surface area (BSA)**</td><td>Chemo dosing errors</td><td>BSA calculator; protocol sheets</td></tr><tr><td>**Dilution/concentration**</td><td>10x concentration errors</td><td>Standard concentrations; ready-to-use preparations</td></tr><tr><td>**Off-label / unlicensed**</td><td>No paediatric formulation</td><td>Compounding standards; specialist pharmacy</td></tr><tr><td>**Neonatal renal/hepatic immaturity**</td><td>Accumulation toxicity</td><td>Age-specific dosing (e.g., gentamicin extended interval)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Error Reporting & Learning</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Reporting Culture</div>
+<ul><li><b>Just Culture</b>: Distinguish human error (console), at-risk behaviour (coach), reckless behaviour (punish)</li><li><b>Psychological safety</b>: No blame for reporting</li><li><b>Mandatory reporting</b>: Death, severe harm (UK: Never Events; NHS: PSII)</li></ul>
+<div class="sub-h">Reporting Systems</div>
+<ul><li><b>UK</b>: NRLS (National Reporting and Learning System) → LFPSE (Learn from Patient Safety Events)</li><li><b>US</b>: FAERS, MedWatch, ISMP MERP</li><li><b>International</b>: WHO VigiBase</li></ul>
+<div class="sub-h">Root Cause Analysis (RCA) — See [Root Causes &amp; Systems Approach](../Medication%20Safety%20and%20Errors/Root%20Causes%20and%20Systems%20Approach.md)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**ME vs ADE vs ADR**</td><td>ME = preventable process failure; ADE = harm from drug (includes ME + ADR); ADR = noxious response at normal dose (not error)</td></tr><tr><td>**NCC MERP Categories**</td><td>A=capacity for error; B=intercepted; C=reached patient no harm; D=monitoring needed; E=temporary harm + intervention; F=hospitalisation; G=permanent harm; H=life-threatening; I=death</td></tr><tr><td>**WHO Stages**</td><td>Prescribing, Transcribing, Dispensing, Administration, Monitoring</td></tr><tr><td>**Error Types**</td><td>Slip (action), Lapse (memory), Mistake (plan), Violation (deliberate)</td></tr><tr><td>**Administration Rights**</td><td>Patient, Drug, Dose, Route, Time, Documentation, Reason, Response, Refuse</td></tr><tr><td>**LASA Prevention**</td><td>Tall Man Lettering, separate storage, barcode scanning, read-back, CPOE alerts</td></tr><tr><td>**High-Risk LASA Pairs**</td><td>HydrALAZINE/hydrOXYzine, Dopamine/DOBUTamine, GlipiZIDE/glyBURIDE, CloZAPINE/ClomiPRAMINE, FentaNYL/SufentaNYL, vinBLASTINE/vinCRISTINE</td></tr><tr><td>**Decimal Rules**</td><td>**No trailing zeros** (5mg not 5.0mg); **Always leading zero** (0.5mg not .5mg); Write "units" not "U"; Write "daily" not "QD"</td></tr><tr><td>**Wrong Route Fatal Errors**</td><td>Intrathecal vincristine, IV KCl bolus, Epidural bupivacaine IV, Daily methotrexate, IV insulin</td></tr><tr><td>**Omission High-Risk**</td><td>VTE prophylaxis, Sepsis antibiotics, Steroids in adrenal insufficiency, Anticoagulants in AF</td></tr><tr><td>**Paediatric**</td><td>Weight-based calc errors, BSA chemo, dilution errors, off-label, neonatal immaturity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Define medication error vs ADE vs ADR.</td><td>**ME**: Preventable event causing inappropriate medication use/harm. **ADE**: Injury from drug intervention (includes ME + ADR). **ADR**: Noxious unintended response at normal dose — **not an error**.</td></tr><tr><td>2</td><td>NCC MERP Category E vs F?</td><td>**E**: Temporary harm requiring intervention (e.g., allergic reaction treated). **F**: Temporary harm requiring hospitalisation (e.g., overdose admission).</td></tr><tr><td>3</td><td>Classify: Pharmacist catches 10x morphine overdose before dispensing.</td><td>**Category B** — Error occurred but did not reach patient (intercepted).</td></tr><tr><td>4</td><td>Classify: Patient given double dose of warfarin, INR 8, given vit K, no bleed.</td><td>**Category D** — Error reached patient, required monitoring/pre-treatment (vit K), no harm.</td></tr><tr><td>5</td><td>Slip vs Lapse vs Mistake — give examples.</td><td>**Slip**: Action not as planned — wrote 50mg instead of 5mg. **Lapse**: Memory failure — forgot VTE prophylaxis. **Mistake**: Wrong plan — prescribed penicillin to allergic patient (knowledge) or adult dose in child (rule).</td></tr><tr><td>6</td><td>What is Tall Man Lettering? Give 3 examples.</td><td>Highlighting dissimilar letters in LASA names: **hydrALAZINE/hydrOXYzine**, **DOBUTamine/dopamine**, **glipiZIDE/glyBURIDE**, **vinBLASTINE/vinCRISTINE**, **cloZAPINE/clomiPRAMINE**.</td></tr><tr><td>7</td><td>Why avoid trailing zeros and abbreviations "U" and "QD"?</td><td>**Trailing zero**: 5.0mg → 50mg (10x). **Leading zero missing**: .5mg → 5mg (10x). **"U"**: 10U → 100 units. **"QD"**: QD → QID (4x daily).</td></tr><tr><td>8</td><td>What are the 5 "Rights" of drug administration?</td><td>**Patient, Drug, Dose, Route, Time** (Expanded: Documentation, Reason, Response, Refuse).</td></tr><tr><td>9</td><td>Most dangerous wrong-route errors?</td><td>**Intrathecal vincristine** (paralysis/death), **IV KCl bolus** (cardiac arrest), **Epidural bupivacaine IV** (CV collapse), **Daily methotrexate** (pancytopenia), **IV insulin** (hypoglycaemia).</td></tr><tr><td>10</td><td>High-risk omission errors in hospital?</td><td>**VTE prophylaxis omitted**, **Sepsis antibiotics delayed**, **Steroids omitted in adrenal insufficiency**, **Anticoagulation omitted in AF**, **Drugs omitted at transitions of care**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"ADR is a medication error"**</td><td>**NO.** ADR = inherent drug property at normal dose (Type A/B). ME = preventable process failure. ADR can *result* from error (e.g., overdose → Type A ADR), but ADR itself is not an error.</td></tr><tr><td>**"Near miss = no error occurred"**</td><td>**NO.** Near miss = error **occurred but intercepted** before reaching patient (Category B–C). "Capacity for error" (Category A) = no error yet.</td></tr><tr><td>**"Category D = harm"**</td><td>**NO.** Category D = error reached patient, required monitoring/pre-treatment, **but NO harm**. Harm starts at Category E.</td></tr><tr><td>**"All LASA errors are look-alike"**</td><td>**Both** look-alike (visual) AND sound-alike (phonetic). Tall Man Lettering addresses visual. Read-back addresses sound-alike.</td></tr><tr><td>**"Paediatric dosing = just weight-based"**</td><td>**Also BSA** (chemo), **age-based** (neonates), **dilution/concentration** errors. Neonatal renal/hepatic immaturity = different PK.</td></tr><tr><td>**"Violation = mistake"**</td><td>**Violation = deliberate** deviation from protocol (e.g., giving IV push to save time). Mistake = unintentional wrong plan.</td></tr></table>
+<div class="callout"><b>Mnemonic: MEDICATION ERRORS</b> <b>M</b>ERP Categories: A=capacity, B=intercepted, C=no harm, D=monitor, E=harm+intervention, F=hospital, G=permanent, H=life-threat, I=death <b>E</b>rror types: Slip (action), Lapse (memory), Mistake (plan), Violation (deliberate) <b>D</b>efinitions: ME≠ADE≠ADR — ME=process fail, ADE=harm from drug, ADR=noxious response normal dose <b>I</b>ntercepted = Near miss (B-C); Reached patient no harm (D); Harm (E-I) <b>C</b>ategories WHO: Prescribing, Transcribing, Dispensing, Administration, Monitoring <b>A</b>dmin Rights: Patient, Drug, Dose, Route, Time, Documentation, Reason, Response, Refuse <b>T</b>all Man Lettering: hydrALAZINE/hydrOXYzine, DOBUTamine/dopamine, glipiZIDE/glyBURIDE, vinBLASTINE/vinCRISTINE <b>I</b>LASA pairs: Hydralazine/hydroxyzine, Dopamine/dobutamine, Glipizide/glyburide, Clozapine/clomipramine, Fentanyl/sufentanil <b>O</b>mission risks: VTE prophylaxis, Sepsis antibiotics, Steroids (adrenal), Anticoagulation (AF), Transitions <b>N</b>o trailing zeros (5mg not 5.0mg); <b>L</b>eading zero always (0.5mg not .5mg) <b>W</b>rite "units" not "U"; "daily" not "QD"; "micrograms" not "mcg" <b>R</b>oute fatal errors: Intrathecal vincristine, IV KCl bolus, Epidural bupivacaine IV, Daily MTX, IV insulin <b>O</b>mission at transitions: Admission, Transfer, Discharge — med rec essential <b>R</b>CA: System approach (Swiss cheese), not blame — See Root Causes note <b>S</b>ystems: Just Culture — Human error (console), At-risk (coach), Reckless (punish)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Medication&lt;br&gt;Errors)) Definitions ME: Preventable process failure ADE: Harm from drug (ME + ADR) ADR: Noxious response normal dose (not error) NCC MERP (Harm) A: Capacity for error B: Intercepted C: Reached, no harm D: Monitor needed E: Temp harm + intervention F: Hospitalisation G: Permanent harm H: Life-threatening I: Death WHO Stages (Process) Prescribing Transcribing Dispensing Administration Monitoring Error Types (Psychology) Slip: Action fail Lapse: Memory fail Mistake: Plan fail (knowledge/rule) Violation: Deliberate deviation Admin Rights Patient, Drug, Dose, Route, Time Documentation, Reason, Response, Refuse LASA Prevention Tall Man Lettering Separate storage Barcode scanning Read-back CPOE alerts High-Risk Errors Wrong route: IT vincristine, IV KCl, Epidural IV, Daily MTX, IV insulin Decimal: Trailing zero, Missing leading zero, U, QD Omission: VTE, Sepsis ABx, Steroids, Anticoag, Transitions Paediatric Weight-based calc BSA chemo Dilution errors Neonatal PK </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Definitions (ME/ADE/ADR)</td><td>2</td><td></td><td></td></tr><tr><td>NCC MERP Categories (A–I)</td><td>3</td><td></td><td></td></tr><tr><td>WHO Stages / PTDAM</td><td>3</td><td></td><td></td></tr><tr><td>Error Types (Slip/Lapse/Mistake/Violation)</td><td>2</td><td></td><td></td></tr><tr><td>Admin Rights (9)</td><td>2</td><td></td><td></td></tr><tr><td>LASA / Tall Man Lettering</td><td>3</td><td></td><td></td></tr><tr><td>High-Risk Error Scenarios</td><td>3</td><td></td><td></td></tr><tr><td>Paediatric / Reporting</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Classify medication errors and describe prevention strategies."</td><td>Definitions, NCC MERP, WHO stages, error types, admin rights, LASA prevention, high-risk scenarios, decimal rules, paediatric, reporting culture</td></tr><tr><td>**Short Note**</td><td>"NCC MERP Index."</td><td>Categories A–I with examples; harm vs no harm distinction</td></tr><tr><td>**Viva**</td><td>"Junior doctor prescribes 5.0mg morphine. Patient given 50mg. Classify and prevent."</td><td>**Category E** (temp harm + intervention) or **F** (if admitted). Prevention: **no trailing zeros** (5mg), CPOE dose limits, barcode admin, double-check.</td></tr><tr><td>**Ward Round**</td><td>"Nurse administers IV vincristine intrathecally."</td><td>**Never Event**. **Category I** (death) or **G** (permanent harm). Prevention: separate storage, "FOR IV ONLY" labels, different syringes, pharmacy prepares intrathecal separately.</td></tr><tr><td>**Last-Night**</td><td>"MERP: A,B,C,D no harm; E,F,G,H,I harm. Admin rights: 5+4. LASA: 3 pairs. Decimal: 2 rules. Fatal routes: 3."</td><td>MERP: A-D no harm, E-I harm. Rights: Patient/Drug/Dose/Route/Time + Doc/Reason/Response/Refuse. LASA: Hydralazine/hydroxyzine, Dopamine/dobutamine, Vincristine/vinblastine. Decimal: No trailing zero, leading zero. Fatal: IT vincristine, IV KCl, Epidural IV.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ME</b> = preventable process failure; <b>ADE</b> = harm from drug (ME + ADR); <b>ADR</b> = noxious response at normal dose (not error)</li><li><b>NCC MERP</b>: A=capacity, B=intercepted, C=reached no harm, D=monitor needed, <b>E=temporary harm+intervention</b>, F=hospitalisation, G=permanent harm, H=life-threatening, I=death</li><li><b>WHO Stages</b>: Prescribing, Transcribing, Dispensing, Administration, Monitoring</li><li><b>Error Types</b>: Slip (action), Lapse (memory), Mistake (knowledge/rule), Violation (deliberate)</li><li><b>Admin Rights</b>: Patient, Drug, Dose, Route, Time, Documentation, Reason, Response, Refuse</li><li><b>LASA Prevention</b>: Tall Man Lettering (hydrALAZINE/hydrOXYzine, DOBUTamine/dopamine, glipiZIDE/glyBURIDE, vinBLASTINE/vinCRISTINE), separate storage, barcode, read-back</li><li><b>Decimal Rules</b>: <b>No trailing zeros</b> (5mg), <b>Always leading zero</b> (0.5mg), Write "units"/"daily"/"micrograms"</li><li><b>Fatal Wrong-Route</b>: Intrathecal vincristine, IV KCl bolus, Epidural bupivacaine IV, Daily methotrexate, IV insulin</li><li><b>High-Risk Omissions</b>: VTE prophylaxis, Sepsis antibiotics, Steroids (adrenal), Anticoagulation (AF), Transitions of care</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Medication error that reached patient but caused no harm = NCC MERP Category:</b></li></ol>
+<p>A. B  B. <b>C</b>  C. D  D. E <i>Answer: B. Category C = error reached patient, no harm. B = intercepted before patient. D = monitoring needed.</i></p>
+<ol><li><b>Difference between ADE and ADR:</b></li></ol>
+<p>A. ADE is preventable, ADR is not  B. <b>ADE includes medication errors; ADR does not</b>  C. ADR only Type A  D. Same thing <i>Answer: B. ADE = harm from drug intervention (includes errors + ADRs). ADR = noxious response at normal dose (not an error).</i></p>
+<ol><li><b>Trailing zero error: 5.0mg written, interpreted as:</b></li></ol>
+<p>A. 0.5mg  B. 5mg  C. <b>50mg</b>  D. 500mg <i>Answer: C. 5.0mg → 50mg (10x overdose). Never use trailing zeros.</i></p>
+<ol><li><b>"U" for units — 10U read as:</b></li></ol>
+<p>A. 1 unit  B. <b>100 units</b>  C. 10 units  D. 1000 units <i>Answer: B. "U" looks like "0" → 10U → 100. Write "units".</i></p>
+<ol><li><b>Slip vs Mistake: Prescribing penicillin to patient with documented penicillin allergy is:</b></li></ol>
+<p>A. Slip  B. Lapse  C. <b>Mistake (knowledge-based)</b>  D. Violation <i>Answer: C. Wrong plan due to knowledge failure (didn't know/check allergy). Slip = action error (e.g., wrong drug selected from dropdown).</i></p>
+<ol><li><b>Tall Man Lettering for hydralazine/hydroxyzine:</b></li></ol>
+<p>A. HYDRALAZINE/HYDROXYZINE  B. <b>hydrALAZINE/hydrOXYzine</b>  C. HydrALAZINE/HydrOXYzine  D. HYDralazine/HYDroxyzine <i>Answer: B. Highlight dissimilar letters: AL vs OXY.</i></p>
+<ol><li><b>Most dangerous wrong-route error (often fatal):</b></li></ol>
+<p>A. IM instead of IV  B. <b>Intrathecal vincristine</b>  C. SC instead of IM  D. PO instead of IV <i>Answer: B. Intrathecal vincristine → ascending paralysis, death. Never Event.</i></p>
+<ol><li><b>Category of error: Double dose of warfarin given, INR 8, vit K given, no bleed:</b></li></ol>
+<p>A. C  B. <b>D</b>  C. E  D. F <i>Answer: B. Category D = error reached patient, required monitoring/pre-treatment (vit K), no harm.</i></p>
+<ol><li><b>Omission error with highest mortality if missed in sepsis:</b></li></ol>
+<p>A. VTE prophylaxis  B. <b>Antibiotics (delay &gt;1h)</b>  C. Steroid  D. Anticoagulant <i>Answer: B. Sepsis: mortality ↑ 7–8% per hour of antibiotic delay.</i></p>
+<ol><li><b>Paediatric dosing error risk factor:</b></li></ol>
+<p>A. Fixed dosing  B. <b>Weight-based calculation</b>  C. Adult formulations  D. No monitoring <i>Answer: B. Weight-based calculation errors (mg/kg) are the #1 paediatric dosing error source.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Foundation doctor prescribes "morphine 5.0mg IV" for post-op pain. Nurse administers 50mg. Patient requires naloxone and ICU admission. NCC MERP Category?</b></li></ol>
+<p>A. C  B. D  C. <b>E</b>  D. F <i>Answer: C. Temporary harm (respiratory depression) requiring intervention (naloxone, ICU) = Category E. If prolonged ICU stay = F.</i></p>
+<ol><li><b>Pharmacist dispenses hydrOXYzine instead of hydrALAZINE for hypertension. Patient takes 2 doses, develops drowsiness but no harm. Category?</b></li></ol>
+<p>A. <b>C</b>  B. D  C. E  D. F <i>Answer: A. Error reached patient, no harm = Category C. Drowsiness = expected effect of wrong drug, not "harm requiring intervention".</i></p>
+<ol><li><b>Which abbreviation is SAFE to use?</b></li></ol>
+<p>A. QD  B. U  C. <b>daily</b>  D. .5mg <i>Answer: C. "daily" is safe. QD→QID, U→0, .5mg→5mg all dangerous.</i></p>
+<ol><li><b>Intrathecal vincristine error — why is it fatal?</b></li></ol>
+<p>A. Cardiotoxicity  B. <b>Ascending paralysis (myelin destruction)</b>  C. Hepatic necrosis  D. Renal failure <i>Answer: B. Vincristine is a microtubule inhibitor → destroys myelin in CNS → ascending paralysis, encephalopathy, death.</i></p>
+<ol><li><b>Neonatal gentamicin dosing — special consideration?</b></li></ol>
+<p>A. Same mg/kg as adult  B. <b>Extended interval (e.g., 36-48h) due to immature renal function</b>  C. Higher mg/kg  D. Oral preferred <i>Answer: B. Neonates have ↓ renal clearance → extended interval dosing (Hartford nomogram / 4-5mg/kg q36-48h).</i></p>
+<ol><li><b>Just Culture: Nurse bypasses barcode scanner to save time. This is:</b></li></ol>
+<p>A. Human error  B. <b>At-risk behaviour</b>  C. Reckless behaviour  D. System failure <i>Answer: B. At-risk behaviour (chooses shortcut, drift from protocol). Coach/educate. Human error = inadvertent slip. Reckless = conscious disregard of substantial risk.</i></p>
+<ol><li><b>Transition of care — highest risk for omission error:</b></li></ol>
+<p>A. Admission  B. <b>Discharge</b>  C. Ward transfer  D. Clinic visit <i>Answer: B. Discharge: medications stopped, started, changed; communication to GP/community pharmacy often incomplete.</i></p>
+<ol><li><b>Look-alike pair: vinblastine vs vincristine — key difference in toxicity:</b></li></ol>
+<p>A. Vinblastine: neurotoxicity; Vincristine: myelosuppression  B. <b>Vinblastine: myelosuppression; Vincristine: neurotoxicity</b>  C. Both same  D. Vincristine: cardiotoxicity <i>Answer: B. Vinblastine = dose-limiting myelosuppression. Vincristine = dose-limiting neurotoxicity. Swapping = fatal.</i></p>
+<ol><li><b>Medication reconciliation at admission — primary purpose:</b></li></ol>
+<p>A. Cost saving  B. <b>Identify discrepancies between pre-admission and hospital meds</b>  C. Formulary compliance  D. Research data <i>Answer: B. Med rec = accurate medication list across transitions to prevent omission/duplication/dosing errors.</i></p>
+<ol><li><b>WHO taxonomy stage: Doctor writes "5mg" but intends "0.5mg" — decimal error. Which stage?</b></li></ol>
+<p>A. Prescribing  B. <b>Transcribing</b>  C. Dispensing  D. Administration <i>Answer: B. Transcribing = recording the order (paper or electronic). Prescribing = clinical decision. Dispensing = pharmacy supply. Administration = giving to patient.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-C, 4-B, 5-C, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-C, 2-A, 3-C, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Medication Safety and Errors/Root Causes and Systems Approach]] — Swiss cheese, RCA, human factors</li><li>[[Medication Safety and Errors/PINCH High-Risk Drugs]] — Drugs most associated with errors</li><li>[[Drug Interactions/Pharmacokinetic interactions]] — Interaction errors at prescribing stage</li><li>[[Special Populations/Paediatric Prescribing]] — Paediatric error vulnerabilities</li><li>[[Special Populations/Elderly Prescribing]] — Polypharmacy/error risk in elderly</li><li>[[Polypharmacy and Deprescribing/Assessment Tools]] — STOPP/START preventing prescribing errors</li><li>[[Clinical Context/Perioperative Prescribing]] — Perioperative error risks (VTE, antibiotics, anticoagulation)</li><li>[[Therapeutic Drug Monitoring]] — Monitoring errors (missed TDM)</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Error Types And Classification · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hla Associated Adrs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Hla Associated Adrs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] List key HLA alleles with established drug associations and the specific drugs they predict</li><li>[ ] Explain screening recommendations (mandatory vs. recommended) by ethnicity and drug</li><li>[ ] Describe the pathophysiology: HLA-restricted T-cell activation → cytotoxic reactions (SJS/TEN/DRESS)</li><li>[ ] Calculate Number Needed to Screen (NNS) and cost-effectiveness thresholds</li><li>[ ] Answer viva questions on allele-drug pairs, screening logistics, and negative predictive value</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧬 High-Yield HLA Allele–Drug Association Table</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>HLA Allele</th><th>Drug(s)</th><th>Reaction Predicted</th><th>Population Prevalence</th><th>Screening Status</th><th>Key Exam Points</th></tr><tr><td>------------</td><td>---------</td><td>-------------------</td><td>----------------------</td><td>------------------</td><td>-----------------</td></tr><tr><td>**HLA-B*15:02**</td><td>Carbamazepine, Phenytoin, Lamotrigine, Oxcarbazepine</td><td>**SJS / TEN**</td><td>Han Chinese: 10–15%; Thai: 8–15%; Indian: 2–4%; European: <1%</td><td>**Mandatory** before CZP/PTX in Asian ancestry (FDA/EMA/MHRA)</td><td>**Strongest association** (OR >1000). Also predict CZP-induced DRESS. NPV ~100%</td></tr><tr><td>**HLA-B*58:01**</td><td>Allopurinol</td><td>**SJS/TEN, DRESS, AHS**</td><td>Han Chinese: 6–8%; Korean: 4–6%; Thai: 8–10%; European: 1–2%</td><td>**Strongly recommended** (mandatory in Taiwan, Hong Kong, Thailand)</td><td>Allopurinol SCAR: OR ~100. Renal impairment ↑ risk independent of HLA. Screen before starting</td></tr><tr><td>**HLA-B*57:01**</td><td>Abacavir</td><td>**Hypersensitivity syndrome (HSS)**</td><td>European: 5–8%; African: 2–3%; Asian: <1%</td><td>**Mandatory** before ABC (universal)</td><td>NPV 98–100%. PPV only ~50% — clinical diagnosis still needed. PREDICT-1 trial proved utility</td></tr><tr><td>**HLA-B*13:01**</td><td>Dapsone</td><td>**Dapsone Hypersensitivity Syndrome (DHS)**</td><td>Chinese: 5–10%</td><td>Recommended in endemic areas</td><td>DHS: fever, rash, hepatitis, eosinophilia. Also HLA-B*38:01, HLA-DQB1*06:01</td></tr><tr><td>**HLA-A*31:01**</td><td>Carbamazepine</td><td>**DRESS, MPE, SJS/TEN**</td><td>European: 2–5%; Japanese: 10–15%; Chinese: 2–3%</td><td>Recommended (esp. European/Japanese)</td><td>Broader phenotype than B*15:02. NPV for DRESS ~98%. Not FDA-mandated</td></tr><tr><td>**HLA-DRB1*07:01 / DQA1*02:01**</td><td>Flucloxacillin</td><td>**DILI (cholestatic)**</td><td>European: ~15%</td><td>Not routine; research context</td><td>OR ~80. Low PPV. HLA-B*57:01 also implicated in some cohorts</td></tr><tr><td>**HLA-B*59:01**</td><td>Methazolamide, Sulfonamides</td><td>**SJS/TEN**</td><td>Japanese: ~1%</td><td>Not routine</td><td>Rare but strong association in Japanese</td></tr><tr><td>**HLA-B*38:01 / DQB1*06:01**</td><td>Dapsone, Nevirapine</td><td>**DHS, Nevirapine SJS/TEN**</td><td>Variable</td><td>Research</td><td>Nevirapine: also CD4>250 in women ↑ risk</td></tr><tr><td>**HLA-DPB1*03:01**</td><td>Aspirin-exacerbated respiratory disease (AERD)</td><td>**Aspirin intolerance**</td><td>Not a drug ADR per se</td><td>N/A</td><td>Not HLA class I; pharmacogenomic</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📊 Screening Algorithms (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Carbamazepine/Oxcarbazepine — HLA-B*15:02</div>
+<p>``<code>mermaid flowchart TD A[Patient needs Carbamazepine/Oxcarbazepine] --&gt; B{Ancestry?} B --&gt;|Han Chinese, Thai, Malaysian, Indian, Filipino| C[**MANDATORY HLA-B*15:02 testing<b>] B --&gt;|European, African, Hispanic| D[Testing optional; low prevalence] C --&gt; E{Result} E --&gt;|Positive| F[</b>AVOID carbamazepine/oxcarbazepine**\nUse alternative: levetiracetam, valproate, lamotrigine\n(caution: lamotrigine also has B*15:02 link)] E --&gt;|Negative| G[Proceed with carbamazepine\nMonitor for SJS/TEN first 8–12 weeks] D --&gt; G </code>``</p>
+<div class="sub-h">Allopurinol — HLA-B*58:01</div>
+<p>``<code>mermaid flowchart TD A[Patient needs Allopurinol] --&gt; B{Ancestry / Risk factors?} B --&gt;|Han Chinese, Korean, Thai, African ancestry\nOR CKD stage 3+| C[**STRONGLY RECOMMENDED HLA-B*58:01<b>] B --&gt;|European, no CKD| D[Start low dose 100 mg/day; titrate slowly] C --&gt; E{Result} E --&gt;|Positive| F[</b>AVOID allopurinol**\nUse febuxostat\n(CARE: febuxostat CV risk — CARES trial)] E --&gt;|Negative| G[Start 100 mg/day (50 mg if eGFR&lt;30)\nTitrate by 100 mg q2–4wk to target urate] D --&gt; G </code>``</p>
+<div class="sub-h">Abacavir — HLA-B*57:01</div>
+<p>``<code>mermaid flowchart TD A[Patient needs Abacavir] --&gt; B[**UNIVERSAL HLA-B*57:01 screening<b>] B --&gt; C{Result} C --&gt;|Positive| D[</b>CONTRAINDICATED**\nDo not rechallenge\nDocument allergy: \"Abacavir HLA-B*57:01 +ve\"] C --&gt;|Negative| E[Proceed with ABC\nMonitor for HSS first 6 weeks\nSymptoms: fever, rash, GI, resp, constitutional] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">⚖️ Number Needed to Screen (NNS) & Cost-Effectiveness</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug + Allele</th><th>Population</th><th>NNS to Prevent 1 SJS/TEN</th><th>Cost-Effectiveness</th><th>Policy</th></tr><tr><td>---------------</td><td>------------</td><td>---------------------------</td><td>-------------------</td><td>--------</td></tr><tr><td>CZP + B*15:02</td><td>Han Chinese</td><td>**~350**</td><td>Highly cost-effective (<$50k/QALY)</td><td>**Mandatory** (FDA boxed warning)</td></tr><tr><td>CZP + B*15:02</td><td>European</td><td>~50,000</td><td>Not cost-effective</td><td>Not recommended</td></tr><tr><td>ALLO + B*58:01</td><td>Han Chinese</td><td>**~400**</td><td>Cost-effective</td><td>**Mandatory** (Taiwan, HK, Thailand)</td></tr><tr><td>ALLO + B*58:01</td><td>European</td><td>~10,000</td><td>Borderline</td><td>Recommended if CKD</td></tr><tr><td>ABC + B*57:01</td><td>European</td><td>**~200**</td><td>Highly cost-effective</td><td>**Mandatory universal**</td></tr></table>
+<div class="callout"><b>Exam Pearl</b>: NNS = 1 / (Allele Frequency × Attributable Risk). High allele freq + high OR → low NNS → cost-effective.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧠 Pathophysiology: HLA-Restricted T-Cell Activation</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Drug / Metabolite] --&gt; B[Covalent binding to peptide / direct HLA binding] B --&gt; C[Altered peptide repertoire presented by HLA] C --&gt; D[Activation of drug-specific CD8+ cytotoxic T cells] D --&gt; E[Proliferation + cytokine release: IFN-γ, TNF-α, granulysin] E --&gt; F[Keratinocyte apoptosis → SJS/TEN\nOR systemic cytokine storm → DRESS] </code>``</p>
+<p><b>Two Mechanisms (p-i concept + altered peptide repertoire):</b></p>
+<ol><li><b>p-i (pharmacological interaction)</b>: Drug binds directly to HLA/TCR without covalent binding (e.g., abacavir in HLA-B*57:01 groove)</li><li><b>Altered peptide repertoire</b>: Drug binds HLA groove → changes self-peptide selection → neoantigen presentation</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Correct Action</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>Han Chinese patient, new seizure, needs CZP</td><td>**Test HLA-B*15:02 FIRST** — if +ve, avoid CZP/PTX/OXC</td></tr><tr><td>European patient, gout, eGFR 45, needs allopurinol</td><td>Start **allopurinol 100 mg/day**; HLA-B*58:01 not mandatory but consider</td></tr><tr><td>Thai patient, allopurinol induced SJS</td><td>**HLA-B*58:01 will be +ve** — lifelong avoid allopurinol; use febuxostat</td></tr><tr><td>HIV patient, HLA-B*57:01 negative, develops fever/rash week 3 on ABC</td><td>**Still possible HSS** — PPV only 50%; stop ABC, never rechallenge</td></tr><tr><td>Carbamazepine-induced DRESS in Japanese patient</td><td>Likely **HLA-A*31:01** (not B*15:02) — screen family if indicated</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Expected Answer</th></tr><tr><td>---</td><td>-----------------</td></tr><tr><td>1. Which HLA allele mandates screening before carbamazepine in Asian patients?</td><td>**HLA-B*15:02** — FDA/EMA boxed warning; OR >1000 for SJS/TEN</td></tr><tr><td>2. What is the NPV of HLA-B*15:02 for carbamazepine SJS/TEN?</td><td>**~100%** — negative test effectively rules out SJS/TEN from CZP</td></tr><tr><td>3. Allopurinol SCAR: which allele? Screening in whom?</td><td>**HLA-B*58:01**; Han Chinese, Korean, Thai, African, CKD≥3</td></tr><tr><td>4. Abacavir hypersensitivity: allele? PPV/NPV?</td><td>**HLA-B*57:01**; NPV 98–100%, PPV ~50% (clinical diagnosis needed)</td></tr><tr><td>5. Carbamazepine DRESS in Europeans/Japanese: which allele?</td><td>**HLA-A*31:01** (not B*15:02)</td></tr><tr><td>6. Flucloxacillin DILI: HLA association?</td><td>**HLA-DRB1*07:01 / DQA1*02:01** (class II, not class I)</td></tr><tr><td>7. Dapsone hypersensitivity syndrome: key alleles?</td><td>**HLA-B*13:01** (primary), B*38:01, DQB1*06:01</td></tr><tr><td>8. Why is HLA-B*57:01 screening universal but B*15:02 ancestry-based?</td><td>B*57:01 prevalence 5–8% in Europeans (cost-effective universal); B*15:02 <1% in Europeans (NNS too high)</td></tr><tr><td>9. Patient on allopurinol develops SJS. HLA-B*58:01 negative. Explain.</td><td>5–10% of allopurinol SCAR are B*58:01 negative — other mechanisms (renal impairment, other genes). Clinical diagnosis stands.</td></tr><tr><td>10. Can you rechallenge abacavir if HLA-B*57:01 negative but HSS occurred?</td><td>**NO** — absolute contraindication. Rechallenge causes fatal hypotension. Document as allergy.</td></tr><tr><td>11. Cost-effectiveness threshold for genetic screening?</td><td>Generally <$50,000–100,000/QALY (US); NICE £20–30k/QALY. NNS <1000 usually favorable.</td></tr><tr><td>12. Pregnancy and HLA screening?</td><td>No change — screen if indicated. No teratogenicity from test. Counsel re: fetal risk if drug avoided.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**B*15:02 vs A*31:01 for CZP**</td><td>B*15:02 = SJS/TEN (Asians); A*31:01 = DRESS/MPE (Europeans/Japanese)</td></tr><tr><td>**B*58:01 for allopurinol vs febuxostat**</td><td>B*58:01 predicts allopurinol SCAR only; febuxostat NOT associated — safe in B*58:01+</td></tr><tr><td>**ABC HSS vs IRIS**</td><td>HSS: week 1–6, HLA-B*57:01 linked; IRIS: week 2–12, immune recovery, no HLA link</td></tr><tr><td>**Screening = prevention?**</td><td>Screening prevents *initiation* in +ve; does NOT mitigate risk if drug already started</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"B15 for CZP SJS"</b> → HLA-<b>B</b>*15:02<b> = </b>C<b>arbamazepine </b>S<b>JS/</b>T**EN</li><li><b>"B58 for Allo SCAR"</b> → HLA-<b>B</b>*58:01<b> = </b>A<b>llopurinol </b>S**CAR</li><li><b>"B57 for ABC HSS"</b> → HLA-<b>B</b>*57:01<b> = </b>A<b>baca</b>v<b>ir </b>H**SS</li><li><b>"A31 for CZP DRESS"</b> → HLA-<b>A</b>*31:01<b> = CZP </b>DRESS** (Europeans)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((HLA-ADR)) Class I B<i>15:02 --&gt; Carbamazepine/PHT/OXC/LMG B</i>58:01 --&gt; Allopurinol B<i>57:01 --&gt; Abacavir B</i>13:01 --&gt; Dapsone B<i>38:01 --&gt; Dapsone/Nevirapine A</i>31:01 --&gt; Carbamazepine DRESS B<i>59:01 --&gt; Methazolamide Class II DRB1</i>07:01/DQA1<i>02:01 --&gt; Flucloxacillin DILI DPB1</i>03:01 --&gt; AERD (not classic ADR) Screening Policy Mandatory --&gt; B<i>15:02 Asians, B</i>57:01 Universal Recommended --&gt; B<i>58:01 Asians/CKD, A</i>31:01 Europeans/Japanese Not Routine --&gt; B<i>13:01, B</i>38:01, Class II </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Next Interval</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>---------------</td></tr><tr><td>1 (Learn)</td><td></td><td></td><td>1 day</td></tr><tr><td>2</td><td></td><td></td><td>3 days</td></tr><tr><td>3</td><td></td><td></td><td>1 week</td></tr><tr><td>4</td><td></td><td></td><td>2 weeks</td></tr><tr><td>5</td><td></td><td></td><td>1 month</td></tr><tr><td>6</td><td></td><td></td><td>3 months</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Allele–Drug pairs</td><td>10</td><td></td><td></td></tr><tr><td>Screening indications</td><td>8</td><td></td><td></td></tr><tr><td>NNS/Cost-effectiveness</td><td>4</td><td></td><td></td></tr><tr><td>Pathophysiology</td><td>4</td><td></td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td><td></td></tr><tr><td>**Total**</td><td>**38**</td><td></td><td></td></tr></table>
+<p><b>Target</b>: ≥30/38 (80%) for FCPS/MRCP readiness</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Discuss HLA-B*57:01 screening before abacavir therapy"*</div>
+<p><b>Structure:</b></p>
+<ol><li><b>Introduction</b> (1): ABC HSS, incidence 5–8%, HLA-B*57:01 association</li><li><b>Evidence</b> (3): PREDICT-1 trial (prospective RCT), SHOP study, NPV 98–100%, PPV 50%</li><li><b>Screening Algorithm</b> (2): Universal pre-treatment testing; +ve = absolute contraindication</li><li><b>Clinical Nuances</b> (2): Negative test ≠ zero risk (clinical vigilance); never rechallenge; document allergy</li><li><b>Cost-effectiveness</b> (1): NNS ~200, highly cost-effective, standard of care globally</li><li><b>Conclusion</b> (1): Mandatory screening prevents mortality; exemplar of pharmacogenomics implementation</li></ol>
+<div class="sub-h">Short Question (5 marks): *"HLA-B*15:02 and carbamazepine"*</div>
+<ul><li>Allele: HLA-B*15:02</li><li>Reaction: SJS/TEN (OR &gt;1000)</li><li>Population: Han Chinese, Thai, Malaysian, Indian (freq 2–15%)</li><li>Screening: <b>Mandatory</b> before CZP/PTX/OXC in these ancestries</li><li>Alternative if +ve: Levetiracetam, valproate, topiramate (NOT lamotrigine — also B*15:02 risk)</li><li>NPV ~100%</li></ul>
+<div class="sub-h">Viva (2 min): *"Why screen for HLA-B*58:01 before allopurinol but not HLA-B*15:02 in Europeans?"*</div>
+<ul><li>B*58:01 freq 1–2% Europeans but ↑ risk with CKD; NNS ~10,000 general, ~400 CKD → consider in renal impairment</li><li>B*15:02 freq &lt;1% Europeans; NNS &gt;50,000 → not cost-effective; no mandate</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on allopurinol 300 mg, eGFR 25, develops rash + fever day 10. Plan?"*</div>
+<ul><li><b>STOP allopurinol immediately</b>. Suspect SCAR. Check HLA-B*58:01 (retrospective). Start febuxostat 40 mg later. Derm/ ICU referral if mucosal/organ involvement.</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>B*15:02 = CZP SJS (Asians mandatory)</li><li>B*58:01 = Allo SCAR (Asians/CKD screen)</li><li>B*57:01 = ABC HSS (Universal mandatory)</li><li>A*31:01 = CZP DRESS (Eur/Jpn recommended)</li><li>DRB1*07:01 = Fluclox DILI (Class II, research)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>HLA-ADR Trinity for Exams:</b> 1. **B<i>15:02<b> — Carbamazepine → SJS/TEN (Asians) — </b>Mandatory screen<b> 2. </b>B</i>58:01<b> — Allopurinol → SCAR (Asians/CKD) — </b>Strongly recommend screen<b> 3. </b>B*57:01<b> — Abacavir → HSS (All) — </b>Universal mandatory screen<b>  </b>Bonus**: A<i>31:01 — CZP DRESS (Eur/Jpn); DRB1</i>07:01 — Fluclox DILI (Class II)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 25-year-old Han Chinese woman requires carbamazepine for newly diagnosed focal epilepsy. Which HLA allele should be tested BEFORE initiation?</b></li></ol>
+<p>A. HLA-B*57:01 B. **HLA-B*15:02** ✓ C. HLA-B<i>58:01 D. HLA-A</i>31:01 E. HLA-DRB1*07:01</p>
+<ol><li>**Which statement about HLA-B*57:01 and abacavir is CORRECT?**</li></ol>
+<p>A. Positive predictive value &gt;90% B. <b>Negative predictive value ~98–100%</b> ✓ C. Screening only required in African ancestry D. Rechallenge safe if HLA-B*57:01 negative D. Associated with SJS/TEN phenotype</p>
+<ol><li><b>Allopurinol-induced SJS/TEN is most strongly associated with:</b></li></ol>
+<p>A. HLA-B<i>15:02 B. HLA-A</i>31:01 C. **HLA-B*58:01** ✓ D. HLA-B<i>57:01 E. HLA-B</i>13:01</p>
+<ol><li>**A European patient with gout and CKD stage 3 (eGFR 40) is started on allopurinol. Regarding HLA-B*58:01 screening:**</li></ol>
+<p>A. Mandatory for all Europeans B. Not indicated; prevalence too low C. <b>Recommended given CKD</b> ✓ D. Only if family history of SCAR E. Only if previous allopurinol allergy</p>
+<ol><li><b>Carbamazepine-induced DRESS in a Japanese patient is associated with:</b></li></ol>
+<p>A. HLA-B*15:02 B. **HLA-A*31:01** ✓ C. HLA-B<i>58:01 D. HLA-B</i>57:01 E. HLA-DQB1*06:01</p>
+<ol><li><b>Flucloxacillin-induced cholestatic DILI is associated with which HLA class?</b></li></ol>
+<p>A. Class I (HLA-B) B. <b>Class II (HLA-DR/DQ)</b> ✓ C. Class I (HLA-A) D. Class I (HLA-C) E. Non-HLA</p>
+<ol><li><b>Number Needed to Screen (NNS) to prevent one case of carbamazepine SJS/TEN in Han Chinese is approximately:</b></li></ol>
+<p>A. 50 B. <b>350</b> ✓ C. 1,000 D. 5,000 E. 50,000</p>
+<ol><li>**A patient tests HLA-B*57:01 negative, starts abacavir, and develops fever, rash, and dyspnea at week 4. Management?**</li></ol>
+<p>A. Continue with antihistamines B. <b>Stop abacavir permanently; never rechallenge</b> ✓ C. Reduce dose and monitor D. Switch to another NRTI but can rechallenge later E. Treat as IRIS; continue ART</p>
+<ol><li><b>Which HLA allele is associated with dapsone hypersensitivity syndrome (DHS)?</b></li></ol>
+<p>A. HLA-B<i>15:02 B. HLA-B</i>58:01 C. **HLA-B*13:01** ✓ D. HLA-B<i>57:01 E. HLA-A</i>31:01</p>
+<ol><li>**A Thai patient develops SJS after 2 weeks of allopurinol. HLA-B*58:01 testing returns negative. What does this mean?**</li></ol>
+<p>A. Allopurinol not the cause B. **5–10% of allopurinol SCAR are B*58:01 negative; clinical diagnosis stands** ✓ C. Can cautiously restart allopurinol D. Test for HLA-B*15:02 instead E. Febuxostat contraindicated</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🔬 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>**A 30-year-old Malaysian man starts carbamazepine for trigeminal neuralgia. On day 14, he develops fever, widespread targetoid lesions, and oral mucosal erosions with 25% BSA detachment. Nikolsky sign positive. HLA-B*15:02 testing (done pre-treatment) was negative. What is the MOST LIKELY explanation?**</li></ol>
+<p>A. False negative HLA test B. <b>Phenytoin cross-reactivity (he was on it briefly)</b> C. HLA-A*31:01 mediated reaction (not screened) D. Non-HLA mediated idiosyncratic reaction E. Stevens-Johnson syndrome from concomitant allopurinol</p>
+<ol><li>**An HIV-positive European woman (CD4 350) is ART-naive. Pre-treatment HLA-B*57:01 is negative. She starts ABC/3TC/DTG. At week 3, she develops fever, rash, nausea, and fatigue. CRP elevated. What is the NEXT BEST STEP?**</li></ol>
+<p>A. Continue ABC; treat symptomatically B. <b>Stop ABC permanently; switch to TAF/FTC/DTG</b> ✓ C. Reduce ABC dose by 50% D. Add prednisolone 40 mg and continue ABC E. Re-test HLA-B*57:01; if still negative, continue</p>
+<ol><li>**A 65-year-old Chinese man with CKD stage 4 (eGFR 22) and gout is started on allopurinol 100 mg daily. HLA-B*58:01 was not tested. On day 10, he develops fever, facial edema, diffuse maculopapular rash, eosinophilia (2.5×10⁹/L), and ALT 3×ULN. What is the MOST APPROPRIATE management?**</li></ol>
+<p>A. Continue allopurinol; add antihistamine B. Stop allopurinol; start febuxostat 40 mg immediately C. <b>Stop allopurinol; avoid febuxostat until SCAR resolved; supportive care</b> ✓ D. Reduce allopurinol to 50 mg; monitor LFTs E. Pulse methylprednisolone; continue allopurinol</p>
+<ol><li><b>Which of the following HLA–drug pairs has the HIGHEST positive predictive value (PPV)?</b></li></ol>
+<p>A. HLA-B*57:01 – Abacavir B. **HLA-B*15:02 – Carbamazepine SJS/TEN** ✓ C. HLA-B<i>58:01 – Allopurinol SCAR D. HLA-A</i>31:01 – Carbamazepine DRESS E. HLA-DRB1*07:01 – Flucloxacillin DILI</p>
+<ol><li>**A Japanese woman requires carbamazepine. She tests negative for HLA-B*15:02. Which additional allele should be considered for screening given her ancestry?**</li></ol>
+<p>A. HLA-B<i>57:01 B. HLA-B</i>58:01 C. **HLA-A*31:01** ✓ D. HLA-B<i>13:01 E. HLA-DPB1</i>03:01</p>
+<ol><li><b>Regarding cost-effectiveness of HLA screening: which statement is TRUE?</b></li></ol>
+<p>A. HLA-B*15:02 screening in Europeans is highly cost-effective B. **HLA-B*57:01 universal screening is cost-effective (NNS ~200)** ✓ C. HLA-B<i>58:01 screening in all gout patients is cost-effective D. HLA-A</i>31:01 screening in all carbamazepine users is cost-effective E. NNS &gt;10,000 is generally considered cost-effective</p>
+<ol><li>**A patient with HLA-B*58:01 positive status requires urate-lowering therapy. What is the RECOMMENDED alternative?**</li></ol>
+<p>A. Allopurinol 50 mg daily with close monitoring B. <b>Febuxostat</b> ✓ C. Probenecid D. Benzbromarone E. Pegloticase as first-line</p>
+<ol><li>**Which SCAR phenotype is MOST COMMONLY associated with HLA-A*31:01?**</li></ol>
+<p>A. SJS/TEN B. <b>DRESS</b> ✓ C. DHS D. AGEP E. HSS</p>
+<ol><li>**A 40-year-old European man develops cholestatic jaundice 3 weeks after starting flucloxacillin for MSSA bacteremia. HLA-DRB1*07:01 testing is positive. What is the PPV of this allele for flucloxacillin DILI?**</li></ol>
+<p>A. &gt;90% B. 50–70% C. <b>&lt;10% (low PPV despite high OR)</b> ✓ D. 100% (diagnostic) E. Not established</p>
+<ol><li><b>Which statement about HLA screening and pregnancy is CORRECT?</b></li></ol>
+<p>A. HLA-B<i>15:02 testing contraindicated in pregnancy B. <b>Screening indicated if drug needed; no fetal risk from test</b> ✓ C. All HLA screening deferred until postpartum D. Only HLA-B</i>57:01 safe in pregnancy E. HLA alleles change during pregnancy</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>HLA-B*15:02 → Drug + Reaction + Population</td><td>Carbamazepine/phenytoin/oxcarbazepine/lamotrigine → **SJS/TEN** → Han Chinese, Thai, Malaysian, Indian (freq 2–15%)</td></tr><tr><td>HLA-B*58:01 → Drug + Reaction + Screening</td><td>Allopurinol → **SJS/TEN/DRESS/AHS** → Screen Asians, CKD≥3</td></tr><tr><td>HLA-B*57:01 → Drug + Reaction + Policy</td><td>Abacavir → **HSS** → **Universal mandatory** screen; NPV 98–100%, PPV 50%</td></tr><tr><td>HLA-A*31:01 → Drug + Reaction + Population</td><td>Carbamazepine → **DRESS/MPE/SJS** → Europeans (2–5%), Japanese (10–15%)</td></tr><tr><td>Flucloxacillin DILI → HLA alleles</td><td>**HLA-DRB1*07:01 / DQA1*02:01** (Class II) — OR ~80, low PPV</td></tr><tr><td>Dapsone hypersensitivity (DHS) → Key allele</td><td>**HLA-B*13:01** (also B*38:01, DQB1*06:01)</td></tr><tr><td>NNS for CZP B*15:02 in Han Chinese</td><td>**~350** (highly cost-effective)</td></tr><tr><td>NNS for ABC B*57:01 in Europeans</td><td>**~200** (highly cost-effective)</td></tr><tr><td>NNS for ALLO B*58:01 in Han Chinese</td><td>**~400** (cost-effective)</td></tr><tr><td>B*57:01 negative + HSS on ABC → Action</td><td>**Stop ABC permanently; never rechallenge** (clinical dx > genetic)</td></tr><tr><td>Pathophysiology: p-i concept</td><td>Drug binds **directly to HLA/TCR** without processing (e.g., abacavir in B*57:01 groove)</td></tr><tr><td>Pathophysiology: Altered peptide repertoire</td><td>Drug binds HLA groove → **changes self-peptide selection** → neoantigen → T-cell activation</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — HLA-B*15:02 mandatory pre-CZP in Asian ancestry</li><li><b>B</b> — NPV 98–100%; PPV only ~50%</li><li><b>C</b> — HLA-B*58:01 for allopurinol SCAR</li><li><b>C</b> — Recommended in CKD (↑ risk independent of HLA)</li><li><b>B</b> — HLA-A*31:01 for CZP DRESS in Japanese/Europeans</li><li><b>B</b> — Class II (DR/DQ), not Class I</li><li><b>B</b> — NNS ~350 in Han Chinese</li><li><b>B</b> — Stop permanently; never rechallenge even if HLA negative</li><li><b>C</b> — HLA-B*13:01 for dapsone hypersensitivity</li><li><b>B</b> — 5–10% B*58:01 negative SCAR; clinical diagnosis stands</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> — HLA-A<i>31:01 mediates CZP DRESS/SJS in B</i>15:02 negative Asians (Japanese data)</li><li><b>B</b> — ABC HSS: stop permanently regardless of HLA; switch to non-ABC regimen</li><li><b>C</b> — SCAR: stop culprit; febuxostat can be started AFTER resolution (not during acute SCAR)</li><li><b>B</b> — B<i>15:02 has highest PPV (~100% for SJS/TEN in Asians); B</i>57:01 PPV only ~50%</li><li><b>C</b> — HLA-A*31:01 for CZP DRESS in Japanese (10–15% freq)</li><li><b>B</b> — Universal B*57:01 screening NNS ~200 = cost-effective</li><li><b>B</b> — Febuxostat safe in B*58:01+; no HLA association</li><li><b>B</b> — A*31:01 → DRESS (primarily)</li><li><b>C</b> — DRB1*07:01 OR high but PPV low (&lt;10%) — not diagnostic</li><li><b>B</b> — Genetic testing safe in pregnancy; screen if drug indicated</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/HLA-associated ADRs.md</code> | Status: <code>draft</code> → upgrade to <code>full-fcps-mrcp-note</code> after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hla Associated Adrs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

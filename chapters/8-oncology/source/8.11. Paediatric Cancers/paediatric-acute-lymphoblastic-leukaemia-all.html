@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paediatric Acute Lymphoblastic Leukaemia All — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.11. PAEDIATRIC CANCERS</span>
+      <div class="h1">Paediatric Acute Lymphoblastic Leukaemia All</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>NCI/Rome Risk Stratification</b> (Age, WBC, Cytogenetics, MRD)</li><li>[ ] Identify <b>Favourable (ETV6-RUNX1, High Hyperdiploidy)</b> vs <b>Unfavourable (Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21)</b> Genetics</li><li>[ ] Manage <b>Ph+ ALL</b> with <b>TKI (Imatinib/Dasatinib) + Chemotherapy</b></li><li>[ ] Recognise <b>Ph-like ALL</b> (CRLF2, JAK/STAT, ABL-class) → <b>TKI Targeted</b></li><li>[ ] Treat <b>Infant KMT2A-r ALL</b> with <b>Interfant/Intensive Protocols</b></li><li>[ ] Implement <b>CNS Prophylaxis</b>: <b>Intrathecal MTX/AraC + Systemic HD-MTX</b> (No Routine Cranial RT)</li><li>[ ] Use <b>MRD (Flow/PCR)</b> for Risk Adaptation</li><li>[ ] Indicate <b>CAR-T (Tisagenlecleucel)</b> for Relapsed/Refractory B-ALL</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant proliferation of **Lymphoid Precursors** (Lymphoblasts) in BM, Blood, Extramedullary Sites</td></tr><tr><td>**Incidence**</td><td>**Most Common Childhood Cancer (25-30%)**; ~400-500/year UK</td></tr><tr><td>**Prevalence**</td><td>**5-yr OS >90% (Standard Risk)**, **70-80% (High Risk)**; **Cure ~90% Overall**</td></tr><tr><td>**Peak Age**</td><td>**2-5 years** (B-ALL); **T-ALL: Older (10-15)**</td></tr><tr><td>**Sex Ratio**</td><td>**M:F = 1.2:1** (B-ALL); **T-ALL: 3:1**</td></tr><tr><td>**Subtypes**</td><td>**B-ALL 85%** (Pro-B, Pre-B, Pre-pre-B); **T-ALL 15%** (Cortical, Mature)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Risk Stratification (NCI / Rome / COG / UKALL)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">NCI/Rome Standard Criteria (Initial)</div>
+<table class="ctable"><tr><th>Group</th><th>Age</th><th>WBC (×10⁹/L)</th></tr><tr><td>-------</td><td>-----</td><td>--------------</td></tr><tr><td>**Standard Risk (SR)**</td><td>**1-9.99 years**</td><td>**<50**</td></tr><tr><td>**High Risk (HR)**</td><td>**≥10 years**</td><td>**≥50**</td></tr></table>
+<div class="sub-h">Integrated Risk (Adding Cytogenetics + MRD) — UKALL 2011 / COG</div>
+<table class="ctable"><tr><th>Risk Group</th><th>Criteria</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Low Risk (LR)**</td><td>**SR Clinical + Favourable Genetics (ETV6-RUNX1, High Hyperdiploidy 51-65)** + **MRD Negative (Day 29/78)**</td></tr><tr><td>**Standard Risk (SR)**</td><td>**SR Clinical + Non-Favourable/Non-Unfavourable Genetics** + **MRD Negative/Intermediate**</td></tr><tr><td>**High Risk (HR)**</td><td>**HR Clinical OR Unfavourable Genetics (Ph+, Ph-like, KMT2A-r, Hypodiploidy <44, iAMP21, T-ALL)** OR **MRD Positive (Day 29 ≥0.01% or Day 78 >0%)**</td></tr><tr><td>**Very High Risk (VHR)**</td><td>**Induction Failure (M3 Day 29)**, **MRD ≥1% Day 78**, **Ph+ (Historical)**, **Hypodiploidy <44**, **iAMP21**</td></tr></table>
+<div class="callout"><b>MRD (Minimal Residual Disease)</b> by <b>Flow Cytometry (LAIP)</b> or <b>PCR (IgH/TCR)</b> — <b>Critical for Risk Adaptation</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Key Cytogenetic Subgroups</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Subgroup</th><th>Frequency</th><th>Prognosis</th><th>Targeted Therapy</th></tr><tr><td>----------</td><td>-----------</td><td>-----------</td><td>------------------</td></tr><tr><td>**ETV6-RUNX1 (TEL-AML1)**</td><td>**25% (B-ALL)**</td><td>**Favourable**</td><td>—</td></tr><tr><td>**High Hyperdiploidy (51-65 chr)**</td><td>**25-30%**</td><td>**Favourable**</td><td>—</td></tr><tr><td>**BCR-ABL1 (Ph+)**</td><td>**3-5%**</td><td>**Historically Poor**</td><td>**TKI (Imatinib/Dasatinib) + Chemo**</td></tr><tr><td>**Ph-like (BCR-ABL1-like)**</td><td>**10-15%**</td><td>**Poor**</td><td>**TKI (Dasatinib/Ruxolitinib) + Chemo**</td></tr><tr><td>**KMT2A-r (11q23)**</td><td>**70% Infant, 5-10% Older**</td><td>**Poor (Infants)**</td><td>**Intensive (Interfant)**</td></tr><tr><td>**Hypodiploidy (<44 chr)**</td><td>**<1%**</td><td>**Very Poor**</td><td>**Allo-HSCT CR1**</td></tr><tr><td>**iAMP21**</td><td>**2%**</td><td>**Poor**</td><td>**Intensive + Allo-HSCT**</td></tr><tr><td>**TCF3-PBX1 (E2A-PBX1)**</td><td>**5%**</td><td>**Intermediate**</td><td>—</td></tr><tr><td>**Near Haploidy / Low Hypodiploidy**</td><td>Rare</td><td>**Very Poor**</td><td>**Allo-HSCT**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Treatment Protocols (UKALL 2011 / COG AALL 0932 / Interfant)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Induction (4-6 Weeks) — Goal: Morphological CR + MRD Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Standard Risk</th><th>High Risk</th></tr><tr><td>-----------</td><td>---------------</td><td>-----------</td></tr><tr><td>**Vincristine**</td><td>Weekly ×4</td><td>Weekly ×4</td></tr><tr><td>**Dexamethasone**</td><td>6mg/m²/d ×28d</td><td>10mg/m²/d ×28d</td></tr><tr><td>**Asparaginase (PEG/Pegaspargase)**</td><td>Day 4, 18, 32</td><td>Day 4, 18, 32 (Higher Dose)</td></tr><tr><td>**Daunorubicin**</td><td>Day 1, 8, 15, 22</td><td>Day 1, 8, 15, 22 (Higher Dose)</td></tr><tr><td>**Intrathecal MTX**</td><td>Day 1, 8, 15, 22</td><td>Day 1, 8, 15, 22 (x4-6)</td></tr><tr><td>**Cyclophosphamide**</td><td>—</td><td>Day 15, 29 (HR)</td></tr></table>
+<p><b>Day 15/29 Marrow → M1/M2/M3 → MRD Flow/PCR</b></p>
+<div class="sub-h">Consolidation / Interim Maintenance / Delayed Intensification</div>
+<table class="ctable"><tr><th>Phase</th><th>Key Components</th></tr><tr><td>-------</td><td>----------------</td></tr><tr><td>**Consolidation**</td><td>Cyclophosphamide, Cytarabine, Mercaptopurine, MTX</td></tr><tr><td>**Interim Maintenance**</td><td>Vincristine, Asparaginase, MTX, Mercaptopurine</td></tr><tr><td>**Delayed Intensification (DI)**</td><td>**Re-induction style**: Vincristine, Dex, Doxo, Asparaginase, Cyclo, Cytarabine, 6-TG, IT MTX</td></tr><tr><td>**Maintenance**</td><td>**Daily 6-MP + Weekly MTX + Monthly Vincristine/Pred ×2-3 Years**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Special Subtype Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Ph+ ALL (BCR-ABL1)</div>
+<table class="ctable"><tr><th>Component</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**TKI**</td><td>**Imatinib** (Historical) / **Dasatinib** (Preferred, CNS Penetration) / **Nilotinib**</td></tr><tr><td>**Schedule**</td><td>**TKI from Day 15/29 + Throughout All Phases**</td></tr><tr><td>**Allo-HSCT**</td><td>**CR1 if MRD Positive / Poor Response**; **Dasatinib Era: Chemo+TKI Alone May Suffice** (EsPhALL, COG AALL0031)</td></tr><tr><td>**TKI Duration**</td><td>**Throughout Therapy + 1-2 Years Post**</td></tr></table>
+<div class="sub-h">Ph-like ALL (CRLF2-r, JAK/STAT, ABL-class)</div>
+<table class="ctable"><tr><th>Subtype</th><th>Target</th><th>TKI</th></tr><tr><td>---------</td><td>--------</td><td>-----</td></tr><tr><td>**CRLF2-r + JAK Mut**</td><td>**JAK/STAT**</td><td>**Ruxolitinib**</td></tr><tr><td>**ABL-class (ABL1/2, PDGFR, CSF1R Fusions)**</td><td>**ABL Kinase**</td><td>**Dasatinib** (Imatinib Less Effective)</td></tr><tr><td>**Other**</td><td>**Various**</td><td>**Dasatinib/Ruxolitinib Trial**</td></tr></table>
+<div class="sub-h">Infant ALL (KMT2A-r / 11q23) — Interfant Protocol</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Age**</td><td>**<1 year** (Peak 3-6 months)</td></tr><tr><td>**KMT2A-r**</td><td>**70-80%** (AFF1, MLLT1, MLLT3, ELL)</td></tr><tr><td>**Protocol**</td><td>**Interfant-06/99**: **Intensive (Cytarabine, Daunorubicin, Etoposide, High-Dose MTX, Asparaginase)**</td></tr><tr><td>**CNS Prophylaxis**</td><td>**Intrathecal ×6-8 + HD-MTX** (No Cranial RT)</td></tr><tr><td>**Allo-HSCT**</td><td>**CR1 for High-Risk (KMT2A-r + Age<6mo / WBC>300 / Poor Response)**</td></tr><tr><td>**Outcome**</td><td>**5-yr OS ~50-60%** (Improving)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">CNS Prophylaxis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Modality</th><th>Dose/Schedule</th><th>Role</th></tr><tr><td>----------</td><td>---------------</td><td>------</td></tr><tr><td>**Intrathecal MTX**</td><td>**Age-Adjusted**: <1yr 8mg, 1-1.99yr 10mg, 2-2.99yr 12mg, ≥3yr 15mg</td><td>**Direct CNS Delivery** (Weeks 1, 2, 4, 8, 12, 16...)</td></tr><tr><td>**Intrathecal Cytarabine**</td><td>30mg (1-2yr), 50mg (2-3yr), 70mg (≥3yr)</td><td>**Alternative/Additive**</td></tr><tr><td>**Systemic HD-MTX**</td><td>**5g/m² (Capizzi) / 3-8g/m²**</td><td>**CNS Penetration** (Capizzi/Escalating)</td></tr><tr><td>**Cranial RT**</td><td>**12-18Gy**</td><td>**NOT ROUTINE** (Neurocognitive Toxicity); **Reserved: CNS3 at Diagnosis, Traumatic LP with Blasts, Relapse**</td></tr></table>
+<p><b>CNS Status at Diagnosis:</b></p>
+<ul><li><b>CNS1</b>: No Blasts in CSF</li><li><b>CNS2</b>: &lt;5 WBC/µL with Blasts</li><li><b>CNS3</b>: ≥5 WBC/µL with Blasts OR Cranial Nerve Palsy / Ocular Involvement</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">MRD-Guided Therapy (UKALL 2011 / COG)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Timepoint</th><th>MRD Threshold</th><th>Action</th></tr><tr><td>-----------</td><td>---------------</td><td>--------</td></tr><tr><td>**Day 15/29 (End Induction)**</td><td>**≥0.01% (Flow) / ≥10⁻⁴ (PCR)**</td><td>**Upstage to HR**</td></tr><tr><td>**Day 78 (End Consolidation)**</td><td>**>0% (Flow) / Detectable (PCR)**</td><td>**Upstage to HR/VHR**</td></tr><tr><td>**Week 12/15**</td><td>**Persistent Positive**</td><td>**Consider Allo-HSCT**</td></tr></table>
+<p><b>MRD Negative = &lt;0.01% (Flow) / Undetectable (PCR) — Critical for De-escalation</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Relapsed/Refractory ALL</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Setting</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Early BM Relapse (<18mo CR1)**</td><td>**Allo-HSCT CR2** (After Re-induction)</td></tr><tr><td>**Late BM Relapse (>18mo)**</td><td>**Re-induction Chemo ± Allo-HSCT**</td></tr><tr><td>**Isolated CNS/Testicular Relapse**</td><td>**Local RT + Intensive Chemo** (No Allo-HSCT if Isolated)</td></tr><tr><td>**R/R B-ALL (CD19+)**</td><td>**CAR-T: Tisagenlecleucel (Kymriah)** — **ORR 80-90%, CR 60-80%**</td></tr><tr><td>**R/R T-ALL**</td><td>**Nelarabine**, **CAR-T (CD7/CD5)**, **Allo-HSCT**</td></tr><tr><td>**Post-CAR-T Relapse**</td><td>**Allo-HSCT**, **Second CAR-T**, **BiTE (Blinatumomab)**</td></tr></table>
+<div class="sub-h">Blinatumomab (BiTE CD19xCD3)</div>
+<table class="ctable"><tr><th>Indication</th><th>Schedule</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**R/R B-ALL**</td><td>**Cycle 1: 9µg/d ×14d → 28µg/d ×14d**; **Cycle 2+: 28µg/d ×28d** q6wk</td></tr><tr><td>**MRD+ (Post-Chemo)**</td><td>**1 Cycle (28µg/d ×28d)** — **MRD Clearance ~80%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Supportive Care & Toxicity</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Toxicity</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Febrile Neutropenia**</td><td>**Piperacillin-Tazobactam / Meropenem**; **G-CSF (Secondary Prophylaxis)**</td></tr><tr><td>**TLS**</td><td>**Hydration, Allopurinol/Rasburicase**, **Monitor K, P, Urate, Ca**</td></tr><tr><td>**Asparaginase Toxicity**</td><td>**Pancreatitis (Stop), Thrombosis (Anticoag), Hypersensitivity (Switch Erwinia/Pegaspargase)**</td></tr><tr><td>**Osteonecrosis (AVN)**</td><td>**Bisphosphonates, Surgical Core Decompression** (Adolescents, Dex)</td></tr><tr><td>**Neurotoxicity (Vinca)**</td><td>**Dose Reduce/Hold**, **Physiotherapy**</td></tr><tr><td>**Infection Prophylaxis**</td><td>**Co-trimoxazole (PJP)**, **Acyclovir (HSV)**, **Posaconazole (Prolonged Neutropenia)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Paediatric ALL**</td><td>**Most Common Childhood Cancer**, **B-ALL 85%, T-ALL 15%**, **Peak 2-5yr**</td></tr><tr><td>**NCI Risk**</td><td>**SR: Age 1-9.99, WBC<50**; **HR: Age≥10, WBC≥50**</td></tr><tr><td>**Genetics**</td><td>**Favourable: ETV6-RUNX1, High Hyperdiploidy**; **Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21**</td></tr><tr><td>**MRD**</td><td>**Critical for Risk Adaptation**; **Day 29/78 Thresholds**</td></tr><tr><td>**Ph+ ALL**</td><td>**TKI (Dasatinib) + Chemo**; **Allo-HSCT CR1 if MRD+**</td></tr><tr><td>**Ph-like**</td><td>**CRLF2/JAK/ABL** → **TKI (Ruxolitinib/Dasatinib)**</td></tr><tr><td>**Infant KMT2A-r**</td><td>**Interfant Intensive**; **Allo-HSCT CR1 High-Risk**</td></tr><tr><td>**CNS Prophylaxis**</td><td>**IT MTX/AraC + HD-MTX**; **NO Routine Cranial RT**</td></tr><tr><td>**CAR-T**</td><td>**Tisagenlecleucel (CD19)** — **R/R B-ALL, ORR 80-90%**</td></tr><tr><td>**Blinatumomab**</td><td>**BiTE CD19xCD3**; **R/R, MRD+**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**4yr, WBC 12, B-ALL, ETV6-RUNX1+, Day 29 MRD Negative. Risk Group?**</td><td>**Low Risk (SR Clinical + Favourable Genetics + MRD Negative)** → **De-escalated Therapy**.</td></tr><tr><td>**12yr, WBC 100, B-ALL, BCR-ABL1+. Management?**</td><td>**High Risk (Age≥10, WBC≥50, Ph+)** → **TKI (Dasatinib) + Intensive Chemo** → **Allo-HSCT CR1 if MRD+**.</td></tr><tr><td>**6mo Infant, B-ALL, KMT2A-r. Protocol?**</td><td>**Interfant-06/99**: **Intensive (High-Dose Cytarabine, Daunorubicin, Etoposide, HD-MTX, Asparaginase)** + **IT MTX ×6-8** + **HD-MTX**.</td></tr><tr><td>**Ph-like ALL — Genetic Features, Targeted Therapy?**</td><td>**CRLF2-r + JAK Mut → Ruxolitinib**; **ABL-class Fusion → Dasatinib**; **Identified by RNA-Seq/Transcriptome**.</td></tr><tr><td>**CNS Prophylaxis — Standard, Cranial RT?**</td><td>**Intrathecal MTX/AraC + HD-MTX**; **Cranial RT NOT Routine** (Neurocognitive Toxicity); **Only CNS3/Traumatic LP/Relapse**.</td></tr><tr><td>**Day 29 MRD 0.05% — Risk Implication?**</td><td>**MRD Positive (≥0.01%)** → **Upstage to High Risk**, **Intensified Therapy**.</td></tr><tr><td>**Relapsed B-ALL at 10mo — Management?**</td><td>**Early Relapse (<18mo)** → **Re-induction → Allo-HSCT CR2**.</td></tr><tr><td>**CAR-T for ALL — Product, Indication, Outcome?**</td><td>**Tisagenlecleucel (CD19 CAR-T)** — **R/R B-ALL** — **ORR 80-90%, CR 60-80%**; **Cytokine Release Syndrome (CRS), Neurotoxicity (ICANS)**.</td></tr><tr><td>**Blinatumomab — Indication, Schedule?**</td><td>**R/R B-ALL, MRD+**; **Cycle 1: 9→28µg/d ×28d**, **Cycles 2+: 28µg/d ×28d q6wk**.</td></tr><tr><td>**Asparaginase Hypersensitivity — Alternative?**</td><td>**Erwinia Asparaginase (Erwinase)** or **Pegaspargase (If Native E. coli)** — **Different Immunogenicity**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**NCI vs Integrated Risk**</td><td>**NCI = Initial (Age + WBC Only)**; **Integrated = NCI + Cytogenetics + MRD** (Final)</td></tr><tr><td>**Ph+ vs Ph-like**</td><td>**Ph+ = BCR-ABL1 Fusion (TKI: Imatinib/Dasatinib)**; **Ph-like = BCR-ABL1-like Transcriptome, NO BCR-ABL1 (TKI: Dasatinib/Ruxolitinib)**</td></tr><tr><td>**MRD Thresholds**</td><td>**Flow: ≥0.01% = Positive**; **PCR: ≥10⁻⁴ = Positive**; **Day 29 & Day 78 Key Timepoints**</td></tr><tr><td>**Cranial RT Indications**</td><td>**CNS3 at Dx, Traumatic LP with Blasts, CNS Relapse** — **NOT Routine Prophylaxis**</td></tr><tr><td>**Infant vs Older KMT2A-r**</td><td>**Infant (<1yr): 70-80% KMT2A-r, Intensive Interfant**; **Older: 5-10%, HR but Standard Intensive**</td></tr><tr><td>**Allo-HSCT Timing**</td><td>**Ph+ MRD+ / VHR / Early Relapse → CR1/CR2**; **Modern TKI Era: Ph+ CR1 HSCT Decreasing**</td></tr></table>
+<p><b>Mnemonic: PAED-ALL</b></p>
+<ul><li><b>P</b>aediatric: <b>Most Common Childhood Cancer (25-30%)</b></li><li><b>A</b>LL: <b>B-ALL 85%, T-ALL 15%</b>, Peak 2-5yr</li><li><b>E</b>TV6-RUNX1, <b>High Hyperdiploidy</b> = <b>Favourable</b></li><li><b>D</b>asatinib: <b>Ph+ / Ph-like (ABL-class)</b>, <b>Ruxolitinib: Ph-like (JAK)</b></li><li><b>A</b>ge/WBC: <b>NCI SR (1-9.99yr, &lt;50)</b>, <b>HR (≥10yr, ≥50)</b></li><li><b>L</b>ow Risk: <b>SR + Favourable Genetics + MRD-</b></li><li><b>L</b>MRD: <b>Day 29/78, ≥0.01% = HR</b>, <b>Critical for Adaptation</b></li><li><b>C</b>NS Prophylaxis: <b>IT MTX/AraC + HD-MTX</b>, <b>No Cranial RT Routine</b></li><li><b>A</b>LL Subtypes: <b>Ph+ (TKI), Ph-like (TKI), KMT2A-r (Infant Intensive), iAMP21/hypodiploidy (VHR)</b></li><li><b>R</b>elapse: <b>Early (&lt;18mo) → Allo-HSCT</b>, <b>Late → Re-induction</b></li><li><b>C</b>AR-T: <b>Tisagenlecleucel (CD19)</b> — <b>R/R B-ALL</b></li><li><b>B</b>linatumomab: <b>BiTE CD19xCD3</b>, <b>MRD+, R/R</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Paediatric ALL)) Subtypes B-ALL (85%) - Peak 2-5yr T-ALL (15%) - Older (10-15yr) Risk Stratification NCI: SR (1-9.99yr, WBC&lt;50) vs HR (≥10yr, WBC≥50) Genetics: Favourable (ETV6-RUNX1, Hyperdiploid) vs Unfavourable (Ph+, Ph-like, KMT2A-r, Hypodiploid, iAMP21) MRD (Day 29/78): Negative vs Positive Special Subtypes Ph+ (BCR-ABL1): TKI (Dasatinib) + Chemo Ph-like (CRLF2/JAK/ABL): TKI (Ruxolitinib/Dasatinib) Infant KMT2A-r (&lt;1yr): Interfant Intensive iAMP21/Hypodiploid: VHR Treatment Induction: Vincristine, Dex, Asparaginase, Daunorubicin, IT MTX Consolidation/DI/Maintenance (2-3yr) CNS Prophylaxis: IT MTX/AraC + HD-MTX (NO Cranial RT) MRD Day 29/78: ≥0.01% = HR Guides Intensification/De-escalation Relapse Early (&lt;18mo): Allo-HSCT CR2 Late: Re-induction ± HSCT CAR-T: Tisagenlecleucel (CD19) Blinatumomab (BiTE) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Subtypes**</td><td>B-ALL 85%, T-ALL 15%</td></tr><tr><td>**NCI Risk**</td><td>SR: 1-9.99yr, WBC<50; HR: ≥10yr, WBC≥50</td></tr><tr><td>**Favourable Genetics**</td><td>ETV6-RUNX1, High Hyperdiploidy (51-65)</td></tr><tr><td>**Unfavourable**</td><td>Ph+, Ph-like, KMT2A-r, Hypodiploidy <44, iAMP21</td></tr><tr><td>**MRD**</td><td>Day 29/78 ≥0.01% = HR; Guides Therapy</td></tr><tr><td>**Ph+**</td><td>TKI (Dasatinib) + Chemo</td></tr><tr><td>**Ph-like**</td><td>CRLF2/JAK → Ruxolitinib; ABL-class → Dasatinib</td></tr><tr><td>**Infant KMT2A-r**</td><td>Interfant Intensive</td></tr><tr><td>**CNS Prophylaxis**</td><td>IT MTX/AraC + HD-MTX; NO Cranial RT Routine</td></tr><tr><td>**CAR-T**</td><td>Tisagenlecleucel (CD19) for R/R B-ALL</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>NCI Risk Stratification</td><td></td><td></td></tr><tr><td>Genetic Subgroups</td><td></td><td></td></tr><tr><td>MRD Interpretation</td><td></td><td></td></tr><tr><td>Ph+ / Ph-like Management</td><td></td><td></td></tr><tr><td>Infant ALL Protocol</td><td></td><td></td></tr><tr><td>CNS Prophylaxis</td><td></td><td></td></tr><tr><td>CAR-T / Blinatumomab</td><td></td><td></td></tr><tr><td>Relapse Management</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Paediatric AML]], [[Paediatric Lymphomas]], [[Paediatric Solid Tumours]], [[Paediatric CNS Tumours]], [[CAR-T]], [[Blinatumomab]], [[MRD Monitoring]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Paediatric ALL), which statement is correct? A. <b>Most Common Childhood Cancer</b>, <b>B-ALL 85%, T-ALL 15%</b>, <b>Peak 2-5yr</b> B. **Most - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Most Common Childhood Cancer</b>, <b>B-ALL 85%, T-ALL 15%</b>, <b>Peak 2-5yr</b></li></ul>
+<p><b>2.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (NCI Risk), which statement is correct? A. <b>SR: Age 1-9.99, WBC&lt;50</b> B. **SR: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SR: Age 1-9.99, WBC&lt;50</b>; <b>HR: Age≥10, WBC≥50</b></li></ul>
+<p><b>3.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Genetics), which statement is correct? A. <b>Favourable: ETV6-RUNX1, High Hyperdiploidy</b> B. **Favourable: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Favourable: ETV6-RUNX1, High Hyperdiploidy</b>; <b>Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21</b></li></ul>
+<p><b>4.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (MRD), which statement is correct? A. <b>Critical for Risk Adaptation</b> B. **Critical - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Critical for Risk Adaptation</b>; <b>Day 29/78 Thresholds</b></li></ul>
+<p><b>5.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Ph+ ALL), which statement is correct? A. <b>TKI (Dasatinib) + Chemo</b> B. **TKI - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>TKI (Dasatinib) + Chemo</b>; <b>Allo-HSCT CR1 if MRD+</b></li></ul>
+<p><b>6.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Ph-like), which statement is correct? A. <b>CRLF2/JAK/ABL</b> → <b>TKI (Ruxolitinib/Dasatinib)</b> B. <b>CRLF2/JAK/ABL</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CRLF2/JAK/ABL</b> → <b>TKI (Ruxolitinib/Dasatinib)</b></li></ul>
+<p><b>7.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Infant KMT2A-r), which statement is correct? A. <b>Interfant Intensive</b> B. **Interfant - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Interfant Intensive</b>; <b>Allo-HSCT CR1 High-Risk</b></li></ul>
+<p><b>8.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (CNS Prophylaxis), which statement is correct? A. <b>IT MTX/AraC + HD-MTX</b> B. **IT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>IT MTX/AraC + HD-MTX</b>; <b>NO Routine Cranial RT</b></li></ul>
+<p><b>9.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (CAR-T), which statement is correct? A. <b>Tisagenlecleucel (CD19)</b> B. **Tisagenlecleucel - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Tisagenlecleucel (CD19)</b> — <b>R/R B-ALL, ORR 80-90%</b></li></ul>
+<p><b>10.</b> Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Blinatumomab), which statement is correct? A. <b>BiTE CD19xCD3</b> B. **BiTE - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BiTE CD19xCD3</b>; <b>R/R, MRD+</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Most Common Childhood Cancer</b>, <b>B-ALL 85%, T-ALL 15%</b>, <b>Peak 2-5yr</b></li><li>B. **Most (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Most Common Childhood Cancer</b>, <b>B-ALL 85%, T-ALL 15%</b>, <b>Peak 2-5yr</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>SR: Age 1-9.99, WBC&lt;50</b></li><li>B. **SR: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>SR: Age 1-9.99, WBC&lt;50</b>; <b>HR: Age≥10, WBC≥50</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Favourable: ETV6-RUNX1, High Hyperdiploidy</b></li><li>B. **Favourable: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Favourable: ETV6-RUNX1, High Hyperdiploidy</b>; <b>Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Critical for Risk Adaptation</b></li><li>B. **Critical (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Critical for Risk Adaptation</b>; <b>Day 29/78 Thresholds</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>TKI (Dasatinib) + Chemo</b></li><li>B. **TKI (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>TKI (Dasatinib) + Chemo</b>; <b>Allo-HSCT CR1 if MRD+</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>CRLF2/JAK/ABL</b> → <b>TKI (Ruxolitinib/Dasatinib)</b></li><li>B. <b>CRLF2/JAK/ABL</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>CRLF2/JAK/ABL</b> → <b>TKI (Ruxolitinib/Dasatinib)</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Interfant Intensive</b></li><li>B. **Interfant (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Interfant Intensive</b>; <b>Allo-HSCT CR1 High-Risk</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>IT MTX/AraC + HD-MTX</b></li><li>B. **IT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>IT MTX/AraC + HD-MTX</b>; <b>NO Routine Cranial RT</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Tisagenlecleucel (CD19)</b></li><li>B. **Tisagenlecleucel (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Tisagenlecleucel (CD19)</b> — <b>R/R B-ALL, ORR 80-90%</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>BiTE CD19xCD3</b></li><li>B. **BiTE (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>BiTE CD19xCD3</b>; <b>R/R, MRD+</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Paediatric ALL? <b>A1:</b> Most Common Childhood Cancer, B-ALL 85%, T-ALL 15%, Peak 2-5yr</p>
+<p><b>Q2:</b> NCI Risk? <b>A2:</b> SR: Age 1-9.99, WBC&lt;50; HR: Age≥10, WBC≥50</p>
+<p><b>Q3:</b> Genetics? <b>A3:</b> Favourable: ETV6-RUNX1, High Hyperdiploidy; Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21</p>
+<p><b>Q4:</b> MRD? <b>A4:</b> Critical for Risk Adaptation; Day 29/78 Thresholds</p>
+<p><b>Q5:</b> Ph+ ALL? <b>A5:</b> TKI (Dasatinib) + Chemo; Allo-HSCT CR1 if MRD+</p>
+<p><b>Q6:</b> Ph-like? <b>A6:</b> CRLF2/JAK/ABL → TKI (Ruxolitinib/Dasatinib)</p>
+<p><b>Q7:</b> Infant KMT2A-r? <b>A7:</b> Interfant Intensive; Allo-HSCT CR1 High-Risk</p>
+<p><b>Q8:</b> CNS Prophylaxis? <b>A8:</b> IT MTX/AraC + HD-MTX; NO Routine Cranial RT</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Paediatric ALL</td><td>Most Common Childhood Cancer, B-ALL 85%, T-ALL 15%, Peak 2-5yr</td></tr><tr><td>2</td><td>A</td><td>NCI Risk</td><td>SR: Age 1-9.99, WBC<50; HR: Age≥10, WBC≥50</td></tr><tr><td>3</td><td>A</td><td>Genetics</td><td>Favourable: ETV6-RUNX1, High Hyperdiploidy; Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21</td></tr><tr><td>4</td><td>A</td><td>MRD</td><td>Critical for Risk Adaptation; Day 29/78 Thresholds</td></tr><tr><td>5</td><td>A</td><td>Ph+ ALL</td><td>TKI (Dasatinib) + Chemo; Allo-HSCT CR1 if MRD+</td></tr><tr><td>6</td><td>A</td><td>Ph-like</td><td>CRLF2/JAK/ABL → TKI (Ruxolitinib/Dasatinib)</td></tr><tr><td>7</td><td>A</td><td>Infant KMT2A-r</td><td>Interfant Intensive; Allo-HSCT CR1 High-Risk</td></tr><tr><td>8</td><td>A</td><td>CNS Prophylaxis</td><td>IT MTX/AraC + HD-MTX; NO Routine Cranial RT</td></tr><tr><td>9</td><td>A</td><td>CAR-T</td><td>Tisagenlecleucel (CD19) — R/R B-ALL, ORR 80-90%</td></tr><tr><td>10</td><td>A</td><td>Blinatumomab</td><td>BiTE CD19xCD3; R/R, MRD+</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Paediatric ALL</td><td>Most Common Childhood Cancer, B-ALL 85%, T-ALL 15%, Peak 2-5yr</td></tr><tr><td>2</td><td>A</td><td>NCI Risk</td><td>SR: Age 1-9.99, WBC<50; HR: Age≥10, WBC≥50</td></tr><tr><td>3</td><td>A</td><td>Genetics</td><td>Favourable: ETV6-RUNX1, High Hyperdiploidy; Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21</td></tr><tr><td>4</td><td>A</td><td>MRD</td><td>Critical for Risk Adaptation; Day 29/78 Thresholds</td></tr><tr><td>5</td><td>A</td><td>Ph+ ALL</td><td>TKI (Dasatinib) + Chemo; Allo-HSCT CR1 if MRD+</td></tr><tr><td>6</td><td>A</td><td>Ph-like</td><td>CRLF2/JAK/ABL → TKI (Ruxolitinib/Dasatinib)</td></tr><tr><td>7</td><td>A</td><td>Infant KMT2A-r</td><td>Interfant Intensive; Allo-HSCT CR1 High-Risk</td></tr><tr><td>8</td><td>A</td><td>CNS Prophylaxis</td><td>IT MTX/AraC + HD-MTX; NO Routine Cranial RT</td></tr><tr><td>9</td><td>A</td><td>CAR-T</td><td>Tisagenlecleucel (CD19) — R/R B-ALL, ORR 80-90%</td></tr><tr><td>10</td><td>A</td><td>Blinatumomab</td><td>BiTE CD19xCD3; R/R, MRD+</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Paediatric Cancers|Paediatric Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Paediatric Acute Lymphoblastic Leukaemia All · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

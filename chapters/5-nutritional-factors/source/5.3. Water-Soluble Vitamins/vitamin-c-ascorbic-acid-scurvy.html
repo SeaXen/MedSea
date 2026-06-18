@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vitamin C Ascorbic Acid Scurvy — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.3. WATER-SOLUBLE VITAMINS</span>
+      <div class="h1">Vitamin C Ascorbic Acid Scurvy</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe ascorbic acid structure, sources (fruits/veg, NOT produced endogenously), absorption (DGLUT1/SVCT1, sodium-dependent), renal reabsorption</li><li>[ ] List functions: cofactor for prolyl/lysyl hydroxylase (collagen cross-linking), dopamine β-hydroxylase (NA synthesis), PAM (peptide amidation), carnitine synthesis, Fe³⁺ → Fe²⁺ reduction</li><li>[ ] Recognise scurvy: perifollicular haemorrhages, corkscrew hairs, bleeding/spongy gums, subperiosteal haemorrhages, poor wound healing, ecchymosis, joint effusions</li><li>[ ] Identify at-risk: alcohol, elderly, restrictive diet, "tea-and-toast", anorexia, dialysis, post-bariatric</li><li>[ ] State diagnosis: plasma ascorbate &lt;11 µmol/L; buffy-coat (leucocyte) ascorbate = tissue stores</li><li>[ ] Treatment: oral vitamin C 300 mg/day ×1 month (loading), then 100 mg/day maintenance; parenteral if needed</li><li>[ ] Smoking +30 mg/day requirement; megadose (&gt;1 g/day) → renal stones, GI upset, oxalate</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Ascorbic Acid (Vitamin C)**</td><td>Water-soluble; 6-carbon lactone; cofactor for 8 human enzymes; L-gulonate pathway defective in humans (cannot synthesise)</td></tr><tr><td>**DGLUT1 (Glucose Transporter 1)**</td><td>Low-affinity, high-capacity ascorbate transporter; intestinal, RBC uptake</td></tr><tr><td>**SVCT1 / SVCT2 (Sodium-Ascorbate Cotransporters)**</td><td>SLC23A1 (intestine, liver, kidney) / SLC23A2 (brain, adrenal, eye)</td></tr><tr><td>**Dehydroascorbate (DHA)**</td><td>Oxidised form; transported by GLUT1 (intracellular reduction by GSH/NADH)</td></tr><tr><td>**Prolyl Hydroxylase**</td><td>Ascorbate + Fe²⁺ + α-ketoglutarate → hydroxylation of proline in collagen → triple helix stability; deficiency → defective collagen</td></tr><tr><td>**Lysyl Hydroxylase**</td><td>Similar mechanism; hydroxylysine for collagen cross-linking; deficiency → Ehlers-Danlos-like features</td></tr><tr><td>**Dopamine β-Hydroxylase**</td><td>Ascorbate + Cu → dopamine → noradrenaline (chromaffin granules, sympathetic nerve endings)</td></tr><tr><td>**PAM (Peptidylglycine α-Amidating Monooxygenase)**</td><td>Ascorbate + Cu → peptide C-terminal α-amidation (TRH, oxytocin, vasopressin, gastrin, cholecystokinin)</td></tr><tr><td>**Carnitine Biosynthesis**</td><td>Ascorbate + Fe + α-KG hydroxylases → trimethyllysine → carnitine (FA β-oxidation)</td></tr><tr><td>**TET (Ten-Eleven Translocation) Enzymes**</td><td>Ascorbate cofactor for DNA/RNA demethylation; Fe²⁺ regeneration; cancer/stem cell role</td></tr><tr><td>**Hypoxia-Inducible Factor (HIF)**</td><td>Prolyl hydroxylase destabilises HIF-1α in normoxia; ascorbate (recycles Fe²⁺) → ↓HIF-1α (anti-tumour?)</td></tr><tr><td>**Scurvy**</td><td>Frank deficiency (<10 mg/day × 1–3 months); bleeding gums, perifollicular, corkscrew hairs, poor wound healing</td></tr><tr><td>**Perifollicular Haemorrhage**</td><td>Pathognomonic; peribulbar pinpoint haemorrhages; typically lower extremities; "S-curvy sign"</td></tr><tr><td>**Corkscrew (Swollen) Hairs**</td><td>Hyperkeratotic hair follicles; corkscrew/curled; pathognomonic</td></tr><tr><td>**Subperiosteal Haemorrhage**</td><td>Children; pain, swelling, pseudoparalysis; can mimic osteomyelitis/tumour</td></tr><tr><td>**Scorbutic Rosary**</td><td>Costochondral beading in children (similar to rickets but in scurvy)</td></tr><tr><td>**Sjögren's Syndrome (Not to confuse)**</td><td>Sicca syndrome; different entity; coexists with vit C issues? No</td></tr><tr><td>**Smokers**</td><td>↑Turnover, ↓plasma ascorbate; +30 mg/day; oxidative stress</td></tr><tr><td>**Haemochromatosis**</td><td>Iron overload; vit C ↑Fe absorption (avoid supplementation in HH); antioxidant paradox</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Ascorbic Acid Biochemistry</div>
+<p><b>Structure:</b> L-ascorbic acid = 2,3-enediol-L-gulonic acid lactone; reversible oxidation to dehydroascorbate (DHA). <b>Synthesis:</b> Most mammals synthesise from UDP-glucose → L-gulonate → L-gulono-γ-lactone → ascorbate (L-gulonolactone oxidase). <b>Humans, primates, guinea pigs LACK L-gulonolactone oxidase</b> (pseudogene) → dietary essential. <b>Absorption:</b> Small intestine; <b>DGLUT1</b> (low affinity, high capacity) for DHA; <b>SVCT1</b> (SLC23A1) for ascorbate; <b>dose-dependent passive diffusion</b> at high dose (&gt;200 mg). <b>Tissue distribution:</b> Adrenal cortex (high), pituitary, brain, eye, liver, kidney, pancreas; <b>very low in muscle</b>; total body pool 1.5 g. <b>Transport in plasma:</b> Free ascorbate (saturable). <b>Renal handling:</b> Filtered + reabsorbed (SVCT1, threshold ~85 µmol/L); saturation → oxalate excretion; <b>megadose → renal oxalate stones</b>. <b>Excretion:</b> Oxalate (major metabolite), 2,3-diketo-L-gulonate.</p>
+<div class="sub-h">Section 2: 8 Human Enzymes Requiring Ascorbate</div>
+<ol><li><b>Prolyl 3-hydroxylase, Prolyl 4-hydroxylase:</b> Collagen triple helix stability</li><li><b>Lysyl hydroxylase:</b> Collagen cross-linking</li><li><b>Dopamine β-hydroxylase:</b> Dopamine → Noradrenaline</li><li><b>PAM (Peptidylglycine α-amidating monooxygenase):</b> C-terminal peptide amidation (TRH, oxytocin, AVP, gastrin, CCK)</li><li><b>Trimethyllysine hydroxylase:</b> Carnitine biosynthesis (FA β-oxidation)</li><li><b>6-N-Trimethyllysine hydroxylase:</b> Carnitine (alternative pathway)</li><li><b>γ-Butyrobetaine hydroxylase:</b> Carnitine (final step)</li><li><b>4-Hydroxyphenylpyruvate dioxygenase (4-HPPD):</b> Tyrosine catabolism; deficiency → tyrosinaemia II (tyrosyluria, palmoplantar keratosis, intellectual disability)</li></ol>
+<div class="sub-h">Section 3: Antioxidant Function</div>
+<p><b>Direct antioxidant:</b> Ascorbate + radical (R•) → semidehydroascorbyl radical + RH; regenerates vitamin E (tocopheroxyl radical → tocopherol). <b>Glutathione cycle:</b> Ascorbate + DHA reductase + GSH → regenerate ascorbate from DHA. <b>Neutrophil function:</b> Ascorbate concentrated in neutrophils (mM); protects against ROS; deficiency → impaired chemotaxis, phagocytosis. <b>Iron metabolism:</b> Reduces dietary Fe³⁺ → Fe²⁺ (duodenal DMT1 uptake); also mobilises stored Fe (ferritin → transferrin). <b>Cofactor for TET 5-methylcytosine demethylation:</b> Ascorbate regenerates Fe²⁺ for TET enzymes; DNA/RNA demethylation; epigenetic regulation; cancer/stem cell biology.</p>
+<div class="sub-h">Section 4: Requirements &amp; Sources</div>
+<p><b>RDA (EFSA 2013 / IOM 2000):</b></p>
+<ul><li>Adult male: 90 mg/day</li><li>Adult female: 75 mg/day</li><li>Pregnancy: 85 mg/day (UK 50 mg)</li><li>Lactation: 120 mg/day</li><li>Smokers: +30 mg/day (extra requirement)</li><li>Sepsis/burns/critical illness: ↑dose (200–1000 mg/day, controversial)</li></ul>
+<p><b>UL:</b> 2 g/day (renal stones, GI upset, oxalate) <b>Sources (mg/100 g):</b></p>
+<ul><li>Acerola (1677), Guava (228), Blackcurrant (181), Red pepper (128), Kiwi (93), Strawberry (59), Orange (53), Broccoli (89), Cauliflower (48), Potato (20)</li><li><b>Citrus</b> is the iconic source but many fruits/veg higher</li><li><b>Water-soluble, thermolabile:</b> Overcooking destroys 50–80%</li><li><b>Body stores 1.5 g</b>; deficiency after 1–3 months zero intake</li></ul>
+<div class="sub-h">Section 5: Scurvy — Clinical Features</div>
+<table class="ctable"><tr><th>Category</th><th>Features</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Cutaneous**</td><td>**Perifollicular haemorrhages** (legs); **corkscrew hairs**; hyperkeratosis; ecchymoses; petechiae (especially pressure sites)</td></tr><tr><td>**Gingival**</td><td>**Bleeding, swollen, spongy gums**; gum hypertrophy; loosening of teeth; halitosis</td></tr><tr><td>**Subperiosteal**</td><td>Bone pain, swelling, tenderness (esp. long bones); pseudoparalysis; cortical thinning</td></tr><tr><td>**Joint**</td><td>Effusions (haemarthrosis); myalgia; bone pain</td></tr><tr><td>**Wound healing**</td><td>**Poor wound healing**; scars reopen; keloid formation; surgical dehiscence</td></tr><tr><td>**Cardiac**</td><td>Pericardial effusion; ECG changes (ST, T wave); arrhythmias; hypotension</td></tr><tr><td>**Constitutional**</td><td>Fatigue, weakness, anorexia, weight loss, depression</td></tr><tr><td>**Anaemia**</td><td>Multifactorial: GI bleeding, ↓iron absorption, ↓folate, haemolysis, ACD, sideroblastic (B6)</td></tr><tr><td>**Children (Barlow's disease)**</td><td>Scorbutic rosary (costochondral); pseudoparalysis; tenderness; poor growth</td></tr></table>
+<p><b>Pathophysiology:</b> ↓Prolyl/lysyl hydroxylase → ↓hydroxyproline/hydroxylysine → defective collagen cross-linking → blood vessel fragility, poor wound healing, gum fragility, bone matrix defects.</p>
+<div class="sub-h">Section 6: At-Risk Groups</div>
+<table class="ctable"><tr><th>Group</th><th>Mechanism</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Alcohol / Drug use**</td><td>↓Intake, ↓absorption, lifestyle</td></tr><tr><td>**Elderly**</td><td>"Tea-and-toast" diet, poor intake, smoking history</td></tr><tr><td>**Anorexia / Bulimia**</td><td>Severe restriction</td></tr><tr><td>**Smokers**</td><td>↑Turnover, ↓plasma; +30 mg/day</td></tr><tr><td>**Pregnancy/Lactation**</td><td>↑Demand</td></tr><tr><td>**Malabsorption**</td><td>Coeliac, Crohn's, bariatric, Whipple's</td></tr><tr><td>**Dialysis**</td><td>Loss in dialysate</td></tr><tr><td>**TPN without vitamin C**</td><td>Ascorbate 100 mg/day must be added</td></tr><tr><td>**Scurvy historically**</td><td>Sailors, polar explorers, prisoners, refugees</td></tr><tr><td>**Children (restrictive diet)**</td><td>Cow's milk (low vit C), boiled/processed foods</td></tr></table>
+<div class="sub-h">Section 7: Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Normal</th><th>Deficiency</th><th>Notes</th></tr><tr><td>------</td><td>--------</td><td>------------</td><td>-------</td></tr><tr><td>**Plasma ascorbate**</td><td>40–80 µmol/L</td><td><11 µmol/L (deficiency)</td><td>Acute status; <10 µmol/L = scurvy</td></tr><tr><td>**Buffy-coat (leucocyte) ascorbate**</td><td>20–50 µg/10⁸ cells</td><td><10 µg/10⁸</td><td>Tissue stores (preferred)</td></tr><tr><td>**24h urinary ascorbate**</td><td>>10 mg/day</td><td><2 mg/day</td><td>If normal, scurvy unlikely</td></tr><tr><td>**Clinical**</td><td>—</td><td>Perifollicular, corkscrew hairs, gum</td><td>Usually sufficient</td></tr></table>
+<div class="sub-h">Section 8: Treatment</div>
+<p><b>Scurvy:</b></p>
+<ul><li><b>Oral vitamin C 300 mg/day × 1 month</b> (or 1 g/day × 1 week, then 100 mg/day)</li><li><b>IV vitamin C 200 mg/day</b> if severe/intolerance (rare)</li><li><b>Multivitamin</b> if other deficiencies suspected</li><li><b>Dietary counselling</b> (citrus, peppers, broccoli, kiwi)</li><li><b>Smokers:</b> +30 mg/day ongoing</li><li><b>Infant scurvy:</b> 50–100 mg IV/PO daily</li></ul>
+<p><b>Toxicity (&gt;1 g/day chronic):</b></p>
+<ul><li><b>Renal:</b> Calcium oxalate stones (hyperoxaluria)</li><li><b>GI:</b> Diarrhoea, nausea, abdominal cramps</li><li><b>Iron overload:</b> In haemochromatosis, ↑iron absorption</li><li><b>False lab:</b> Glucose (ascorbate interferes with some assays → falsely low/elevated); faecal occult blood (false negative)</li><li><b>Pro-oxidant at high dose?</b> Theoretical; cancer patients caution</li><li><b>Increased risk of cardiovascular events?</b> Conflicting data</li></ul>
+<p><b>Therapeutic doses (controversial):</b></p>
+<ul><li><b>Sepsis (CITRIS-ALI):</b> No benefit (high-dose IV vit C in ARDS)</li><li><b>Common cold prevention:</b> Modest effect (~0.5–1 day shorter); prophylactic in extreme physical stress</li><li><b>Cancer:</b> IV high-dose controversial (pancreatic); pro-oxidant mechanism</li><li><b>Iron deficiency:</b> Augment iron absorption (co-administer with iron supplements)</li><li><b>Scurvy prevention in TPN:</b> 100 mg/day added</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>65M, "tea-and-toast" diet, gum bleeding, perifollicular haemorrhages</td><td>**Vitamin C 300 mg/day ×1 month, then 100 mg/day**; dietary counselling</td><td>Scurvy; address social isolation</td></tr><tr><td>30F, restrictive diet (anorexia), poor wound healing after surgery, corkscrew hairs</td><td>**Vitamin C 500 mg IV daily ×5, then oral 200 mg/day**; nutritional rehab</td><td>Severe scurvy; refeeding risk</td></tr><tr><td>6m infant, cow's milk, irritability, pseudoparalysis, scorbutic rosary</td><td>**Vitamin C 100 mg IV, then 50 mg daily**; weaning, citrus/veg</td><td>Barlow's disease</td></tr><tr><td>50M, smoker (30 pack-years), recurrent gum bleeding, petechiae</td><td>**Vitamin C 100 mg/day ongoing**; smoking cessation</td><td>Smoker requirement +30 mg/day</td></tr><tr><td>70M, haemochromatosis, ↑Fe, on phlebotomy, considering high-dose vit C</td><td>**AVOID high-dose vitamin C** (>500 mg) — ↑iron absorption → Fe overload</td><td>HH: avoid megadose</td></tr><tr><td>80M, post-hip surgery, dehiscence, ↑CRP, marginal nutrition</td><td>**Vitamin C 200 mg/day**; protein; wound care</td><td>Wound healing support</td></tr><tr><td>25F, on OCP, recurrent epistaxis, gum bleeding, plasma ascorbate 15 µmol/L</td><td>**Vitamin C 200 mg/day**; dietary improvement</td><td>Mild scurvy; smokers/co-factors</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Humans cannot synthesise (L-gulonolactone oxidase mutation); functions: prolyl/lysyl hydroxylase (collagen), dopamine β-hydroxylase (NA), PAM (peptide amidation), Fe³⁺ reduction; scurvy signs (perifollicular haemorrhage, corkscrew hairs, bleeding gums, poor wound healing); RDA 90 (M) / 75 (F) mg/day; smokers +30 mg; treatment 300 mg/day ×1 month - <b>Common viva:</b> Why humans need dietary vit C; scurvy clinical features; smokers requirement; prolyl hydroxylase mechanism; TET enzyme role; renal oxalate stones with megadose; children scurvy (Barlow) - <b>Exam trap:</b> Confusing scurvy gum bleeding with periodontal disease; missing corkscrew hairs; thinking orange has highest vit C; recommending in haemochromatosis; megadose cancer treatment (controversial)</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Citrus = highest vitamin C</td><td>**Acerola (1677), Guava (228), Blackcurrant (181) > Orange (53)**</td></tr><tr><td>All mammals synthesise vit C</td><td>**Humans, primates, guinea pigs CANNOT** (L-gulonolactone oxidase defect)</td></tr><tr><td>Vit C prevents common cold</td><td>**Marginal effect** (0.5–1d shorter); modest in extreme stress; not preventive</td></tr><tr><td>Scurvy only with severe dietary restriction</td><td>**Within 1–3 months zero intake**; smokers, elderly, restrictive diets</td></tr><tr><td>Perifollicular haemorrhages = vasculitis</td><td>**Corkscrew hairs + gum bleeding distinguishes scurvy**</td></tr><tr><td>Vitamin C megadose for cancer</td><td>**CITRIS-ALI: no benefit in sepsis; cancer use controversial**</td></tr><tr><td>Vitamin C ↑Fe absorption in IDA only</td><td>**In haemochromatosis, ↑Fe absorption → Fe overload → AVOID**</td></tr><tr><td>Megadose safe</td><td>**UL 2 g/day**; oxalate stones, GI upset, false glucose/FOB tests</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Vit C = Ascorbic acid (ascorb = against scurvy)</b></li><li><b>Sources high → low:</b> <b>AGBKR</b> = <b>A</b>cerola, <b>G</b>uava, <b>B</b>lackcurrant, <b>K</b>iwi, <b>R</b>ed pepper</li><li><b>Scurvy triad:</b> <b>PGW</b> = <b>P</b>erifollicular, <b>G</b>um bleeding, <b>W</b>ound healing poor</li><li><b>Corkscrew hairs + perifollicular = pathognomonic</b></li><li><b>RDA:</b> <b>90/75</b> = 90 mg M / 75 mg F; <b>+30</b> smokers</li><li><b>UL:</b> <b>2 g/day</b> (oxalate stones)</li><li><b>Ascorbate enzymes:</b> <b>3 H + PAM + DBH + Carnitine + 4HPPD</b> = 3 hydroxylases (prolyl, lysyl, trimethyllysine) + 3 (PAM, DBH, carnitine) + 4HPPD = 8</li><li><b>Scurvy deficiency time:</b> <b>1–3 months</b> (body pool 1.5 g)</li><li><b>Subperiosteal haemorrhage</b> → children → pseudoparalysis, bone pain</li><li><b>Scurvy = collagen problem</b> (defective cross-linking, hydroxyproline/hydroxylysine)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Vitamin C)) Biochemistry L-ascorbic acid Humans lack L-gulonolactone oxidase DGLUT1, SVCT1/2 Body pool 1.5 g 1-3 months zero intake → scurvy Functions (8 enzymes) Prolyl hydroxylase (collagen) Lysyl hydroxylase (collagen) Dopamine β-hydroxylase (NA) PAM (peptide amidation) Carnitine synthesis (3 steps) 4-HPPD (tyrosine catabolism) TET enzymes (DNA demethylation) Antioxidant Scavenges radicals Regenerates vitamin E Recycles glutathione Neutrophil function Sources Acerola, Guava, Blackcurrant Kiwi, Red pepper Citrus, Broccoli, Strawberry Thermolabile (cooking destroys) Requirements M 90 mg/day F 75 mg/day Smokers +30 mg/day UL 2 g/day Scurvy Features Perifollicular haemorrhage Corkscrew hairs Bleeding/spongy gums Poor wound healing Subperiosteal haemorrhage Ecchymoses, petechiae Scorbutic rosary (children) Barlow's disease (infants) At-Risk Alcohol, Elderly Anorexia, Smokers Pregnancy, Dialysis TPN without vit C Bariatric, Malabsorption Diagnosis Plasma ascorbate &lt;11 µmol/L Buffy-coat &lt;10 µg/10^8 Urinary ascorbate &lt;2 mg/day Treatment Oral 300 mg/day ×1 month Then 100 mg/day IV if severe Dietary counselling Toxicity Oxalate renal stones GI upset, diarrhoea False glucose/FOB tests ↑Fe absorption (avoid in HH) </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Humans cannot synthesise vit C (L-gulonolactone oxidase); dietary essential</li><li>Functions: prolyl/lysyl hydroxylase (collagen), dopamine β-hydroxylase, PAM, carnitine</li><li>Scurvy triad: perifollicular haemorrhage, corkscrew hairs, bleeding gums</li><li>RDA 90/75 mg; smokers +30 mg; UL 2 g/day</li><li>At-risk: alcohol, elderly, restrictive diet, smoking, TPN</li><li>Treatment: 300 mg/day oral ×1 month</li><li>Megadose: oxalate stones, GI upset, false glucose</li><li>TET enzymes: DNA/RNA demethylation (cancer/stem cell role)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Cannot synthesise (L-gulonolactone oxidase); prolyl/lysyl hydroxylase (collagen); scurvy clinical features (perifollicular, corkscrew, gums, wound healing); RDA 90/75 mg; smokers +30 mg; treatment 300 mg ×1 month; UL 2 g (oxalate)</td></tr><tr><td>**Should Know 🟡**</td><td>8 enzymes; TET demethylation; carnitine synthesis; PAM peptide amidation; CITRIS-ALI (no benefit in sepsis); subperiosteal haemorrhage; Barlow's disease; iron enhancement (avoid in HH)</td></tr><tr><td>**Nice to Know 🟢**</td><td>Acerola/guava (highest); ascorbate in cancer (controversial); ICU/high-dose vit C; vit C in Charcot-Marie-Tooth (some forms); histamine degradation; nitrosamine reduction</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] TET enzyme mechanism detail</li><li>[ ] CITRIS-ALI trial design</li><li>[ ] High-dose vit C in cancer (Mehlman et al. controversies)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Vitamin C: biochemistry, deficiency, and management"</p>
+<ul><li>Chemistry: L-ascorbate; humans lack L-gulonolactone oxidase (cannot synthesise)</li><li>Functions: prolyl/lysyl hydroxylase (collagen cross-linking), dopamine β-hydroxylase (NA), PAM (peptide amidation), carnitine synthesis, TET (DNA demethylation)</li><li>Antioxidant: scavenges radicals, regenerates vit E</li><li>Scurvy: perifollicular haemorrhages, corkscrew hairs, bleeding gums, poor wound healing, subperiosteal (children, Barlow)</li><li>RDA 90/75 mg; smokers +30 mg; UL 2 g (oxalate)</li><li>At-risk: alcohol, elderly, restrictive diet, TPN</li><li>Treatment: 300 mg/day oral ×1 month; dietary counselling</li><li>Toxicity: renal oxalate, false glucose/FOB; avoid in HH</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Scurvy: Clinical Features and Pathophysiology"</p>
+<ul><li><b>Pathophysiology:</b> ↓Prolyl/lysyl hydroxylase (Fe²⁺ + α-KG + ascorbate) → ↓hydroxyproline/hydroxylysine → defective collagen cross-linking → vessel fragility, poor wound healing, gum fragility</li><li><b>Features:</b> <b>Perifollicular haemorrhages</b> (legs), <b>corkscrew hairs</b>, <b>bleeding/spongy gums</b>, poor wound healing, subperiosteal haemorrhage (children), ecchymoses, joint effusions</li><li><b>Children (Barlow's):</b> Pseudoparalysis, scorbutic rosary, irritability</li><li><b>Diagnosis:</b> Plasma ascorbate &lt;11 µmol/L; clinical response to vitamin C</li><li><b>Treatment:</b> 300 mg/day oral ×1 month; dietary counselling</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "Why do humans require dietary vitamin C?" "A: <b>Most mammals synthesise L-ascorbic acid from UDP-glucose via L-gulonolactone oxidase</b> in the liver/kidney. <b>Humans, primates, and guinea pigs have a non-functional L-gulonolactone oxidase gene</b> (pseudogene) → cannot synthesise → dietary essential. <b>RDA 90 mg (M) / 75 mg (F); smokers +30 mg/day</b> (oxidative stress)."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 70M, recently widowed, "tea-and-toast" diet, presents with gum bleeding, leg petechiae, and corkscrew hairs on abdomen. Plasma ascorbate 8 µmol/L. "Diagnosis: <b>Scurvy</b> (vit C deficiency; 1–3 months inadequate intake). <b>Treatment: Vitamin C 300 mg PO daily ×1 month</b>, then 100 mg/day. <b>Dietary counselling</b> (citrus, peppers, broccoli, kiwi). <b>Address social issues</b> (bereavement, isolation, ability to shop/cook). Smoker status — add +30 mg. <b>Multivitamin</b> for other deficiencies (thiamine, folate, B12, Fe)."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>Chemistry:</b> L-ascorbate; humans lack L-gulonolactone oxidase (cannot synthesise)</li><li><b>Functions:</b> Prolyl/lysyl hydroxylase (collagen), dopamine β-hydroxylase (NA), PAM (peptide amidation), carnitine, TET (DNA demethylation)</li><li><b>Scurvy:</b> Perifollicular haemorrhages, corkscrew hairs, bleeding gums, poor wound healing</li><li><b>Children:</b> Subperiosteal haemorrhage, scorbutic rosary (Barlow's)</li><li><b>RDA:</b> 90/75 mg (M/F); Smokers +30 mg; UL 2 g (oxalate)</li><li><b>Sources:</b> Acerola, Guava, Blackcurrant &gt; Citrus; thermolabile (cooking destroys)</li><li><b>Treatment:</b> 300 mg/day oral ×1 month, then 100 mg/day</li><li><b>Toxicity:</b> Oxalate renal stones, GI upset, false glucose/FOB; <b>avoid high-dose in haemochromatosis</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Ascorbic acid cofactor for collagen synthesis:</b></li></ol>
+<p>A. Dopamine β-hydroxylase B. <b>Prolyl/lysyl hydroxylase</b> C. Tryptophan hydroxylase D. Tyrosine hydroxylase E. Phenylalanine hydroxylase</p>
+<ol><li><b>Pathognomonic skin finding in scurvy:</b></li></ol>
+<p>A. Henoch-Schönlein purpura B. <b>Perifollicular haemorrhages with corkscrew hairs</b> C. Erythema multiforme D. Pyoderma gangrenosum E. Kaposi sarcoma</p>
+<ol><li><b>RDA vitamin C for adult male (US/UK):</b></li></ol>
+<p>A. 30 mg B. 50 mg C. <b>90 mg</b> D. 200 mg E. 500 mg</p>
+<ol><li><b>Additional vitamin C requirement in smokers:</b></li></ol>
+<p>A. 10 mg B. <b>30 mg</b> C. 50 mg D. 100 mg E. 200 mg</p>
+<ol><li><b>Vitamin C deficiency in children (Barlow's disease) features:</b></li></ol>
+<p>A. Genu valgum B. <b>Subperiosteal haemorrhages, scorbutic rosary, pseudoparalysis</b> C. Craniotabes D. Harrison's groove E. Bowed legs</p>
+<ol><li><b>Vitamin C megadose (&gt;1 g/day) toxicity:</b></li></ol>
+<p>A. Hepatotoxicity B. <b>Oxalate renal stones, diarrhoea, false glucose/FOB tests</b> C. Retinotoxicity D. Ototoxicity E. Cardiotoxicity</p>
+<ol><li><b>Human capability regarding vitamin C synthesis:</b></li></ol>
+<p>A. Synthesise from UDP-glucose B. <b>Cannot synthesise (L-gulonolactone oxidase pseudogene)</b> C. Synthesise from amino acids D. Convert from vitamin A E. Synthesise gut bacteria-derived</p>
+<ol><li><b>Vitamin C enhances absorption of:</b></li></ol>
+<p>A. Calcium B. <b>Iron (Fe³⁺ → Fe²⁺)</b> C. Vitamin D D. Vitamin B12 E. Folate</p>
+<ol><li><b>Cofactor for dopamine β-hydroxylase (dopamine → noradrenaline):</b></li></ol>
+<p>A. NAD B. <b>Ascorbate + Copper</b> C. FAD D. PLP E. Biotin</p>
+<ol><li><b>CITRIS-ALI trial finding (high-dose IV vitamin C in sepsis/ARDS):</b></li></ol>
+<p>A. Reduced mortality B. Reduced organ failure C. <b>No benefit (improved SOFA, but no mortality reduction)</b> D. Increased mortality E. Improved vasopressor requirements</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 60-year-old alcoholic man presents with bleeding, swollen gums, corkscrew hairs on the abdomen, and perifollicular haemorrhages on the lower extremities. Plasma ascorbate 8 µmol/L. Best treatment?</b></li></ol>
+<p>A. Fresh frozen plasma B. <b>Vitamin C 300 mg PO daily ×1 month</b> C. Vitamin C 1 g IV daily ×3 days D. Vitamin K 10 mg IV E. Iron supplementation</p>
+<ol><li><b>A 30-year-old woman is being investigated for iron deficiency anaemia. She has heavy menstrual periods and is advised to take iron supplements. What cofactor enhances iron absorption?</b></li></ol>
+<p>A. Calcium B. <b>Vitamin C (ascorbic acid)</b> C. Vitamin D D. Vitamin B12 E. Folate</p>
+<ol><li><b>A 65-year-old man with hereditary haemochromatosis is considering supplementation with high-dose vitamin C. What is the concern?</b></li></ol>
+<p>A. Increased cardiovascular risk B. <b>Increased iron absorption and tissue iron deposition</b> C. Increased vitamin A toxicity D. Increased copper absorption E. Decreased folate absorption</p>
+<ol><li><b>A 50-year-old smoker with gum bleeding and recurrent infections. Smoker (40 pack-years). What is his additional vitamin C requirement beyond the standard RDA?</b></li></ol>
+<p>A. 0 mg B. 10 mg C. <b>30 mg</b> D. 100 mg E. 200 mg</p>
+<ol><li><b>A 6-month-old infant on cow's milk (not breastfed) presents with irritability, pseudoparalysis of the leg, painful swelling of the thigh, and scorbutic rosary. Most likely diagnosis?</b></li></ol>
+<p>A. Rickets B. <b>Infantile scurvy (Barlow's disease)</b> C. Osteomyelitis D. Septic arthritis E. Congenital syphilis</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Vit C synthesis in humans</li></ul>
+<p>A: <b>CANNOT</b> synthesise (L-gulonolactone oxidase pseudogene); dietary essential</p>
+<ul><li>Q: Vit C cofactor for collagen</li></ul>
+<p>A: <b>Prolyl/lysyl hydroxylase</b> (Fe²⁺ + α-KG + ascorbate → hydroxylation)</p>
+<ul><li>Q: Scurvy pathognomonic</li></ul>
+<p>A: <b>Perifollicular haemorrhages + corkscrew hairs + bleeding gums</b></p>
+<ul><li>Q: Vit C RDA (M/F)</li></ul>
+<p>A: <b>90/75 mg/day</b>; Smokers +30 mg/day</p>
+<ul><li>Q: Scurvy deficiency time</li></ul>
+<p>A: <b>1–3 months</b> zero intake (body pool 1.5 g)</p>
+<ul><li>Q: Vit C UL</li></ul>
+<p>A: <b>2 g/day</b> (oxalate renal stones, diarrhoea)</p>
+<ul><li>Q: 8 Vit C enzymes</li></ul>
+<p>A: <b>3 hydroxylases (prolyl, lysyl, trimethyllysine) + DBH + PAM + Carnitine + 4HPPD</b> = 8</p>
+<ul><li>Q: Vit C + iron</li></ul>
+<p>A: <b>Reduces Fe³⁺ → Fe²⁺</b> (enhances duodenal absorption); <b>AVOID high-dose in HH</b></p>
+<ul><li>Q: Children scurvy</li></ul>
+<p>A: <b>Barlow's disease: subperiosteal haemorrhage, scorbutic rosary, pseudoparalysis</b></p>
+<ul><li>Q: Sources high to low</li></ul>
+<p>A: <b>AGBKR</b> = Acerola, Guava, Blackcurrant, Kiwi, Red pepper &gt; Citrus</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Prolyl/lysyl hydroxylase requires ascorbate + Fe²⁺ + α-ketoglutarate; hydroxylates proline/lysine in collagen for triple helix stability.</li><li><b>B</b> — Perifollicular haemorrhages with corkscrew hairs is pathognomonic for scurvy.</li><li><b>C</b> — RDA (US/IOM 2000): 90 mg/day for adult males; 75 mg for females.</li><li><b>B</b> — Smokers have increased turnover and oxidative stress; require +30 mg/day.</li><li><b>B</b> — Infantile scurvy (Barlow's disease): subperiosteal haemorrhages, painful pseudoparalysis, scorbutic rosary, gingival bleeding.</li><li><b>B</b> — Megadose toxicity: oxalate renal stones (calcium oxalate), osmotic diarrhoea, false lab values (glucose, faecal occult blood).</li><li><b>B</b> — Humans have non-functional L-gulonolactone oxidase (pseudogene) → cannot synthesise; dietary essential.</li><li><b>B</b> — Ascorbate reduces Fe³⁺ to Fe²⁺ → enhanced duodenal absorption via DMT1.</li><li><b>B</b> — Dopamine β-hydroxylase requires ascorbate + copper; converts dopamine to noradrenaline in chromaffin granules/sympathetic nerves.</li><li><b>C</b> — CITRIS-ALI: high-dose IV vitamin C in sepsis/ARDS improved SOFA scores but did not reduce mortality or organ failure.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Scurvy (clinical + plasma ascorbate 8 µmol/L): oral vitamin C 300 mg daily ×1 month; dietary counselling.</li><li><b>B</b> — Vitamin C reduces dietary Fe³⁺ to absorbable Fe²⁺; co-administer with iron supplements for IDA.</li><li><b>B</b> — Haemochromatosis: avoid high-dose vitamin C (&gt;500 mg) due to increased iron absorption → iron overload/worsening tissue damage.</li><li><b>C</b> — Smokers require +30 mg/day beyond standard RDA due to increased turnover and oxidative stress.</li><li><b>B</b> — Barlow's disease: cow's milk low in vit C (and iron); infantile scurvy with subperiosteal haemorrhage, scorbutic rosary, pseudoparalysis.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Vitamin C (Ascorbic Acid)</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Humans cannot synthesise (L-gulonolactone oxidase mutation); essential for <b>prolyl/lysyl hydroxylase (collagen)</b>, dopamine β-hydroxylase (NA), PAM, carnitine, TET. <b>Scurvy: perifollicular haemorrhage + corkscrew hairs + bleeding gums + poor wound healing.</b> RDA 90/75 mg; <b>smokers +30 mg</b>; UL 2 g (oxalate stones). Children: Barlow's disease (subperiosteal haemorrhage, scorbutic rosary). Treatment: <b>300 mg/day oral ×1 month.</b> Avoid high-dose in haemochromatosis (↑Fe absorption). CITRIS-ALI: no benefit in sepsis. <b>Exam focus:</b> 8 enzymes, scurvy clinical features, RDA + smokers, subperiosteal in children, oxalate toxicity, TET demethylation, Fe enhancement. <b>Clinical relevance:</b> Smoker counselling; elderly "tea-and-toast" diet; wound healing support; TPN supplementation; co-administration with iron.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Vitamin C Ascorbic Acid Scurvy · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

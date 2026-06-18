@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Protein Energy Malnutrition Marasmus Kwashiorkor — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.5. NUTRITIONAL DISORDERS</span>
+      <div class="h1">Protein Energy Malnutrition Marasmus Kwashiorkor</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define PEM: marasmus (chronic severe caloric + protein deficiency) vs kwashiorkor (acute protein deficiency with relatively preserved carbs)</li><li>[ ] Recognise marasmus: severe wasting (↓muscle, ↓fat, "skin and bone"), loss of subcutaneous fat, "old man face", irritability, but no oedema, hair normal</li><li>[ ] Recognise kwashiorkor: <b>pitting oedema</b> (feet → face), <b>flaky paint dermatosis</b> (hyperpigmented patches → desquamating), <b>flag sign</b> hair (alternating bands), <b>fatty liver</b> (apolipoprotein B deficiency → ↓VLDL export), apathetic, anorexic</li><li>[ ] Diagnose by anthropometry: weight-for-height (WHZ) &lt;-2 SD = wasting; &lt;-3 SD = severe; height-for-age &lt;-2 SD = stunting; MUAC &lt;11.5 cm = severe acute malnutrition</li><li>[ ] State WHO management: stabilisation (F-75 formula), transition (F-100/RUTF), rehabilitation (catch-up growth, RUTF), follow-up; treat complications (hypoglycaemia, hypothermia, dehydration, infection)</li><li>[ ] Identify causes: poverty, weaning, infections (measles, diarrhoea, TB, HIV), famine, neglect; children 6m–5y vulnerable</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**PEM (Protein-Energy Malnutrition)**</td><td>Insufficient caloric AND/OR protein intake; spectrum: marasmus–kwashiorkor–mixed</td></tr><tr><td>**Marasmus (Chronic Wasting)**</td><td>Severe caloric + protein deficiency; ↓muscle, ↓fat, "skin and bone"; NO oedema; "old man face"</td></tr><tr><td>**Kwashiorkor (Acute Protein)**</td><td>Relatively more protein deficiency (with carbs); **pitting oedema**, flaky paint dermatosis, flag sign, fatty liver</td></tr><tr><td>**Marasmic-Kwashiorkor**</td><td>Combined; wasting + oedema (most severe; ↑mortality)</td></tr><tr><td>**WHZ (Weight-for-Height Z-score)**</td><td><-2 SD = wasting; <-3 SD = severe wasting (marasmus)</td></tr><tr><td>**HAZ (Height-for-Age Z-score)**</td><td><-2 SD = stunting (chronic); <-3 SD = severe stunting</td></tr><tr><td>**WHZ <−3**</td><td>Severe acute malnutrition (SAM)</td></tr><tr><td>**MUAC (Mid-Upper Arm Circumference)**</td><td>6–59 months: <11.5 cm = SAM; 11.5–12.5 cm = MAM; >12.5 cm = normal</td></tr><tr><td>**Flaky Paint Dermatosis**</td><td>Hyperpigmented, peeling, erosive patches; friction/pressure points; kwashiorkor</td></tr><tr><td>**Flag Sign**</td><td>Alternating bands of pigmented/normal hair; kwashiorkor</td></tr><tr><td>**Apolipoprotein B Deficiency (Kwashiorkor)**</td><td>↓apoB synthesis → ↓VLDL export → hepatic steatosis (fatty liver)</td></tr><tr><td>**Oedema (Kwashiorkor)**</td><td>Bilateral pitting, starts feet, ascends; spares hands (in severe); differs from cardiac/renal oedema (↓oncotic pressure)</td></tr><tr><td>**RUTF (Ready-to-Use Therapeutic Food)**</td><td>Lipid-based paste (peanut, sugar, milk, micronutrients); F-100 equivalent; community-based SAM treatment</td></tr><tr><td>**F-75 Formula**</td><td>Stabilisation phase; low protein (0.9 g/kg/day), low calories (80 kcal/kg/day); 5–7 days</td></tr><tr><td>**F-100 Formula**</td><td>Rehabilitation phase; high protein (2.5–3.0 g/kg/day), high calories (150–200 kcal/kg/day)</td></tr><tr><td>**Refeeding Syndrome**</td><td>In malnourished when refed (esp. carbohydrates); insulin surge → intracellular shift of PO4, K, Mg; ↓PO4 most dangerous</td></tr><tr><td>**Cystic Fibrosis (CF) Malnutrition**</td><td>Pancreatic insufficiency + ↑energy needs + chronic inflammation; can resemble marasmus</td></tr><tr><td>**Hospital Malnutrition**</td><td>30–50% of inpatients; sarcopenia, ↓immunity, poor wound healing, ↑LOS, ↑mortality</td></tr><tr><td>**MUST Score**</td><td>Malnutrition Universal Screening Tool; BMI + unplanned weight loss + acute disease effect</td></tr><tr><td>**NRS-2002**</td><td>Nutritional Risk Screening 2002; ESPEN; BMI + weight loss + intake + severity of disease + age</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: PEM Spectrum &amp; Definitions</div>
+<p><b>Marasmus (chronic wasting):</b></p>
+<ul><li><b>Pathophysiology:</b> Severe caloric + protein deficiency (chronic); adaptive response to maintain gluconeogenesis from muscle; ↓fat, ↓muscle; <b>NO oedema</b>; ↓visceral protein synthesis preserved</li><li><b>Onset:</b> Months–years (chronic)</li><li><b>Clinical:</b></li><li>Severe wasting: ↓muscle (temporalis, biceps, gluteal), ↓fat (buccal pad, limb, gluteal)</li><li>"Skin and bone" appearance, prominent ribs, stick limbs</li><li>"Old man face" (loss of buccal fat, sunken eyes)</li><li><b>Normal hair</b>, no skin lesions</li><li><b>Apathetic, irritable, but alert</b> (preserved mental)</li><li>Bradycardia, hypotension, hypothermia</li><li><b>NO oedema</b>, NO fatty liver</li><li>Hypoglycaemia, hypothermia, infection risk</li></ul>
+<p><b>Kwashiorkor (acute protein):</b></p>
+<ul><li><b>Pathophysiology:</b> Relatively more protein deficiency (with carbs) → ↓albumin → ↓oncotic pressure → oedema; ↓apoB → ↓VLDL → fatty liver; oxidative stress/antioxidant deficiency</li><li><b>Onset:</b> Weeks (acute) — post-weaning, infection, famine</li><li><b>Clinical:</b></li><li><b>Pitting oedema</b> (feet → legs → face; ascites, pleural effusion)</li><li><b>Flaky paint dermatosis</b> (erythematous, hyperpigmented, peeling, erosive; friction/pressure)</li><li><b>Flag sign</b> (alternating bands of normal/pigmented hair; growth interruption)</li><li><b>Hair:</b> Sparse, fine, easily pluckable, hypopigmented</li><li><b>Apathetic, lethargic, anorexic</b> (more than marasmus)</li><li><b>Hepatomegaly</b> (fatty liver; <b>steatosis</b>)</li><li>Distended abdomen (hepatomegaly + ascites + ↓bowel motility)</li><li>Diarrhoea (common)</li></ul>
+<p><b>Marasmic-Kwashiorkor (mixed):</b> Both wasting AND oedema; most severe; ↑↑mortality.</p>
+<div class="sub-h">Section 2: WHO Classification (6m–59m Children)</div>
+<table class="ctable"><tr><th>Indicator</th><th>Moderate Acute Malnutrition (MAM)</th><th>Severe Acute Malnutrition (SAM)</th></tr><tr><td>-----------</td><td>----------------------------------</td><td>------------------------------</td></tr><tr><td>**WHZ**</td><td><-2 to ≥-3 SD</td><td>**<-3 SD**</td></tr><tr><td>**MUAC**</td><td>11.5 to <12.5 cm</td><td>**<11.5 cm**</td></tr><tr><td>**Bilateral pitting oedema**</td><td>—</td><td>**+ (any grade)**</td></tr><tr><td>**Visible severe wasting**</td><td>—</td><td>**+**</td></tr></table>
+<ul><li><b>Stunting:</b> HAZ &lt;-2 SD (chronic undernutrition)</li><li><b>Wasting:</b> WHZ &lt;-2 SD (acute)</li><li><b>Underweight:</b> WAZ &lt;-2 SD (combined)</li></ul>
+<div class="sub-h">Section 3: Causes &amp; Risk Factors</div>
+<table class="ctable"><tr><th>Category</th><th>Examples</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Poverty / Food insecurity**</td><td>LMIC, famine, displacement</td></tr><tr><td>**Weaning**</td><td>6–24m transition; poor weaning food, contamination</td></tr><tr><td>**Infection**</td><td>Diarrhoea, measles, TB, HIV, malaria; ↑catabolism, ↓appetite</td></tr><tr><td>**Neglect / Maternal**</td><td>Orphan, maternal depression, poor feeding</td></tr><tr><td>**Chronic disease**</td><td>CF, IBD, malignancy, cardiac, renal</td></tr><tr><td>**Hospital malnutrition**</td><td>NPO > 5d, ↑requirements, poor intake</td></tr><tr><td>**Eating disorders**</td><td>Anorexia nervosa, ARFID</td></tr><tr><td>**Elderly**</td><td>Poverty, dementia, poor dentition, polypharmacy</td></tr><tr><td>**Substance**</td><td>Alcohol, drugs</td></tr></table>
+<div class="sub-h">Section 4: Pathophysiology</div>
+<p><b>Marasmus:</b></p>
+<ul><li>↓Insulin, ↑glucagon, ↑cortisol (catabolic state)</li><li><b>Glycogen depletion</b> (12-24h); then gluconeogenesis from muscle proteolysis</li><li>↓Lean body mass, ↓visceral mass</li><li>↓IgA, ↓T-cell, ↓complement → infection susceptibility</li><li>↓Cardiac output, ↓renal perfusion, ↓GI motility</li></ul>
+<p><b>Kwashiorkor:</b></p>
+<ul><li>↓Amino acids → ↓albumin → ↓oncotic pressure → <b>oedema</b></li><li>↓ApoB → ↓VLDL export → <b>hepatic steatosis</b> (fatty liver)</li><li>↓β-lipoprotein, ↓chylomicrons → ↓fat absorption, ↓fat-soluble vitamins</li><li><b>Antioxidant depletion</b> (Se, Zn, vit E, glutathione) → oxidative stress → <b>skin lesions</b>, muscle damage</li><li>↑AF (aflatoxin), ↑free radical exposure (specific aetiology theory)</li><li><b>Inflammation + protein deficiency</b> (acute on chronic) → kwashiorkor</li></ul>
+<div class="sub-h">Section 5: WHO 10 Steps for Inpatient SAM Management</div>
+<p><b>Phase 1: Stabilisation (F-75, days 1–7)</b></p>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>1. **Hypoglycaemia**</td><td>If glucose <3 mmol/L: 50 mL D10% IV/PO; feed within 30 min</td></tr><tr><td>2. **Hypothermia**</td><td>Warm room, skin-to-skin, blankets; axillary <35°C</td></tr><tr><td>3. **Dehydration**</td><td>ReSoMal (low-Na ORS) 5 mL/kg/h ×4–6h (NOT standard ORS — high Na)</td></tr><tr><td>4. **Electrolytes**</td><td>K (3–4 mmol/kg/day), Mg (0.3–0.6 mmol/kg/day); NO Na supplementation</td></tr><tr><td>5. **Infection**</td><td>Empirical broad-spectrum antibiotics (e.g., ampicillin + gentamicin) for ALL SAM; malaria test; deworming</td></tr><tr><td>6. **Correct micronutrient deficiencies**</td><td>Vit A (high dose single), folic acid, zinc, multivitamins; **NO IRON YET** (↓transferrin, infection risk)</td></tr><tr><td>7. **Cautious feeding**</td><td>**F-75** (low protein 0.9 g/kg, low calories 80 kcal/kg); 2-3 hourly; night feeds; **avoid overfeeding** (refeeding)</td></tr><tr><td>8. **Catch-up growth**</td><td>(Transition phase — Phase 2)</td></tr><tr><td>9. **Sensory stimulation**</td><td>Emotional, play, structured environment (long-term impact)</td></tr><tr><td>10. **Discharge planning**</td><td>After recovery (15% weight gain; WHZ >-2; oedema resolved; immunisations updated; feeding support)</td></tr></table>
+<p><b>Phase 2: Transition + Rehabilitation (F-100/RUTF, weeks 2–6)</b></p>
+<ul><li><b>Transition (3–5 days):</b> F-100 OR RUTF; F-100 100 kcal/kg/day</li><li><b>Rehabilitation:</b> F-100 150–220 kcal/kg/day; protein 2.5–3.0 g/kg/day; <b>RUTF (Plumpy'nut) for community management</b></li><li>Target: 10–15 g/kg/day weight gain; WHZ &gt;-2; no oedema ×2 weeks</li><li>Add <b>iron</b> after 7–14 days</li><li><b>Outpatient/community-based:</b> WHO-recommended for SAM without complications (&gt;75% of SAM); RUTF weekly/biweekly</li></ul>
+<div class="sub-h">Section 6: Micronutrient Issues in PEM</div>
+<table class="ctable"><tr><th>Nutrient</th><th>Issue</th><th>Treatment</th></tr><tr><td>----------</td><td>-------</td><td>-----------</td></tr><tr><td>**Vit A**</td><td>Night blindness, ↑mortality, Bitot's, keratomalacia</td><td>**High dose 200,000 IU (age 12m+) day 1, 2, 14**; protective against measles mortality</td></tr><tr><td>**Iron**</td><td>Anaemia; AVOID in acute (↓transferrin, infection risk)</td><td>Iron only after stabilisation (~7–14 days, with oral Fe + F-100)</td></tr><tr><td>**Zinc**</td><td>Dermatitis, alopecia, immune</td><td>F-75/F-100 contain Zn</td></tr><tr><td>**Folic acid**</td><td>Anaemia, deficiency common</td><td>5 mg day 1; ongoing in F-75/F-100</td></tr><tr><td>**Vit D, E, K**</td><td>Deficient</td><td>F-75 contains</td></tr><tr><td>**Copper, selenium**</td><td>Deficient</td><td>Multivitamin</td></tr><tr><td>**Potassium, magnesium**</td><td>Deficient (diarrhoea)</td><td>K 3–4 mmol/kg/day, Mg 0.3–0.6 mmol/kg/day</td></tr></table>
+<div class="sub-h">Section 7: Hospital (Adult) Malnutrition</div>
+<p><b>Prevalence:</b> 30–50% inpatients; 70% elderly; ↑LOS, ↑mortality, ↑complications. <b>Causes:</b> ↑Metabolic demand (surgery, trauma, infection), ↓intake (NPO, dysphagia, dementia), malabsorption (IBD, RYGB, radiation). <b>Screening tools:</b></p>
+<ul><li><b>MUST</b> (UK): BMI + unplanned weight loss + acute disease effect → 0–6</li><li><b>NRS-2002</b> (ESPEN): BMI + weight loss + intake + severity + age ≥70 → 0–7</li><li><b>MNA-SF</b> (elderly): Screening</li><li><b>SGA/PG-SGA</b> (Subjective Global Assessment): Clinical</li></ul>
+<p><b>Treatment:</b> Enteral preferred; ONS (oral nutritional supplements) 1.5–2.5 kcal/mL; <b>NICE: oral sip feeds for malnourished + acutely ill, 300–900 kcal/day, 1st line for 10–14 days</b>; PN if GI not working.</p>
+<div class="sub-h">Section 8: Refeeding Syndrome (Critical!)</div>
+<p><b>Definition:</b> Life-threatening complications when malnourished patient is refed (especially carbohydrates). <b>Mechanism:</b> Refeeding → insulin surge → intracellular shift of <b>PO4, K, Mg</b>; ↓ATP, ↓2,3-BPG, cardiac/respiratory failure. <b>Risk factors:</b> BMI &lt;16, &gt;15% weight loss/3m, minimal intake &gt;10d, refeeding syndrome history; low electrolytes. <b>Manifestations:</b></p>
+<ul><li><b>Hypophosphataemia</b> (hallmark; cardiac, respiratory, rhabdomyolysis)</li><li>Hypokalaemia, hypomagnesaemia</li><li>Fluid overload, cardiac failure</li><li>Hypoglycaemia</li><li>Thiamine deficiency (Wernicke's)</li><li>Delirium</li></ul>
+<p><b>Prevention:</b></p>
+<ul><li>Start at 10 kcal/kg/day (low), increase slowly over 4–7 days</li><li><b>Prophylactic thiamine</b> 200–300 mg IV/PO before feeding</li><li><b>Prophylactic PO4, K, Mg</b> supplements</li><li>Daily monitoring of electrolytes (esp. PO4)</li><li>Cardiac monitor in severe</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>18m child, severe wasting, no oedema, weight-for-height <-3 SD</td><td>**Marasmus (SAM uncomplicated)**; community RUTF; if complications → inpatient F-75</td><td>Most SAM now community-managed</td></tr><tr><td>2y child, pitting oedema, flaky paint rash, hepatomegaly, flag sign</td><td>**Kwashiorkor (SAM complicated)**; inpatient; F-75 stabilisation; treat complications</td><td>↑mortality; micronutrient issues</td></tr><tr><td>60M, alcohol, BMI 16, admitted with pneumonia</td><td>**Hospital malnutrition; high refeeding risk**; start at 10 kcal/kg/day; thiamine 200 mg IV before feeding; monitor PO4, K, Mg</td><td>Refeeding syndrome prevention</td></tr><tr><td>70F, hip fracture, BMI 19, weight loss 10% in 6m</td><td>**MUST 2**; oral nutritional supplements (sip feeds) 600–900 kcal/day</td><td>NICE: 1st line 10–14 days</td></tr><tr><td>30F, anorexia nervosa, BMI 14, hypophosphataemia day 4 refeeding</td><td>**Severe refeeding risk**; thiamine + K/PO4/Mg; cardiac monitor; slow refeeding</td><td>Anorexia = highest refeeding risk</td></tr><tr><td>5m child, marasmus + pneumonia + diarrhoea</td><td>**Inpatient SAM with complications**; F-75; antibiotics; ReSoMal for dehydration</td><td>WHO 10 steps</td></tr><tr><td>4y child, stunting (height-for-age <-2), not wasted</td><td>**Chronic undernutrition**; long-term food security, sanitation, deworming; education</td><td>Chronic; HAZ intervention</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Marasmus (wasting, no oedema) vs Kwashiorkor (oedema, dermatosis, flag sign, fatty liver); WHO classification (WHZ, MUAC); F-75 stabilisation, F-100/RUTF rehabilitation; 10 steps; vit A (day 1, 2, 14); NO iron in acute; refeeding syndrome (PO4, K, Mg shift) - <b>Common viva:</b> Marasmus vs kwashiorkor features; WHZ/MUAC cutoffs; F-75 vs F-100; when to give iron; refeeding syndrome; thiamine before feeding; oedema in kwashiorkor - <b>Exam trap:</b> Giving iron in acute SAM; using standard ORS (high Na); high-calorie feeding initially; missing complications (hypoglycaemia, hypothermia); kwashiorkor = 'wet' PEM</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Marasmus = 'wet' PEM</td><td>**Marasmus = 'dry' PEM (no oedema); Kwashiorkor = 'wet' (oedema)**</td></tr><tr><td>Iron always given in anaemia</td><td>**NO iron in acute SAM** (↓transferrin, infection risk); wait 7–14 days</td></tr><tr><td>Standard ORS for dehydration</td><td>**ReSoMal** (low-Na ORS); standard ORS too high Na in SAM</td></tr><tr><td>High-calorie feeding initially</td><td>**F-75 low calorie 80 kcal/kg → slowly increase** (refeeding prevention)</td></tr><tr><td>Oedema = heart/renal</td><td>**Kwashiorkor: ↓albumin → ↓oncotic → oedema** (not cardiac/renal)</td></tr><tr><td>Kwashiorkor = chronic</td><td>**ACUTE on chronic** (weeks); post-weaning, infection, famine</td></tr><tr><td>All SAM inpatient</td><td>**>75% community-managed with RUTF**; only complications inpatient</td></tr><tr><td>Refeeding = refeed fast</td><td>**Refeeding SYNDROME = refeed slowly (10 kcal/kg/day), monitor PO4**</td></tr><tr><td>Vit A in measles</td><td>**Yes** (200,000 IU day 1, 2, 14); ↓measles mortality 50%</td></tr><tr><td>TPN = high risk refeeding</td><td>**Start at 10 kcal/kg/day, increase gradually; thiamine 200 mg IV**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Marasmus vs Kwashiorkor:</b> <b>M = Muscle (no oedema), K = Kwashiorkor (Kidney/Plasma protein ↓ → K wets/oedema)</b></li><li><b>Marasmus:</b> <b>M</b>arasmus = <b>M</b>alnutrition of <b>M</b>uscle; "<b>M</b>arasmus = <b>M</b>arasmus (all from 'Mar-' = 'wasting')" — <b>No oedema, No fat, No rash, Normal hair</b></li><li><b>Kwashiorkor:</b> <b>K</b>washiorkor = <b>K</b>ey features: <b>O</b>edema, <b>D</b>ermatosis (flaky paint), <b>F</b>atty liver, <b>F</b>lag hair, <b>A</b>pathy, <b>A</b>norexia</li><li><b>WHZ cutoffs:</b> <b>&lt;-2 wasting, &lt;-3 severe wasting (SAM)</b></li><li><b>MUAC cutoffs:</b> <b>&lt;11.5 SAM, 11.5–12.5 MAM, &gt;12.5 normal</b></li><li><b>10 Steps (initial):</b> <b>H</b>ypo, <b>H</b>ypoT, <b>D</b>ehydration, <b>E</b>lectrolytes, <b>I</b>nfection, <b>M</b>icronutrients, <b>F</b>eeding, <b>C</b>atch-up, <b>S</b>timulation, <b>D</b>ischarge</li><li><b>F-75 vs F-100:</b> <b>F-75 = Stabilise (75 kcal/dL; 0.9 g protein); F-100 = Rehabilitate (100 kcal/dL; 2.5–3 g protein)</b></li><li><b>Refeeding prevention:</b> <b>Thiamine 200 mg, K/PO4/Mg supplements, 10 kcal/kg/day start, monitor</b></li><li><b>SAM = must be admitted if:</b> <b>&lt;6m, oedema, complications (hypogly, hypothermia, infection, dehydration, severe anaemia)</b></li><li><b>Vit A schedule:</b> <b>Day 1, 2, 14</b>; &lt;6m: 100,000 IU; 6–12m: 200,000 IU; &gt;12m: 200,000 IU</li><li><b>Hospital malnutrition:</b> <b>30–50%</b> inpatients; MUST/NRS-2002 screening; oral supplements 1st line</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((PEM)) Marasmus Chronic wasting No oedema Loss of muscle and fat "Old man face" Normal hair, no rash Kwashiorkor Oedema (pitting) Flaky paint dermatosis Flag sign (hair) Fatty liver Apathy, anorexia Marasmic-Kwashiorkor Combined Worst prognosis WHO Classification WHZ &lt;-2 wasting; &lt;-3 SAM MUAC &lt;11.5 SAM; 11.5-12.5 MAM Oedema = SAM Causes Poverty, weaning Infection (measles, TB) Famine Hospital malnutrition WHO 10 Steps Stabilisation (F-75) Hypoglycaemia, hypothermia ReSoMal (low-Na ORS) No iron in acute F-75 (75 kcal/kg) Antibiotics all SAM Transition/Rehab F-100 (100 kcal/kg) RUTF (community) Catch-up growth 10-15 g/kg/day Micronutrients Vit A day 1, 2, 14 K, Mg, Zn, folate NO iron initially Hospital Malnutrition 30-50% inpatients MUST, NRS-2002 ONS 600-900 kcal Refeeding Syndrome PO4, K, Mg shift Thiamine 200 mg Start 10 kcal/kg/day Monitor electrolytes </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Marasmus: wasting, NO oedema, "old man face", normal hair</li><li>Kwashiorkor: oedema, flaky paint, flag sign, fatty liver, apathy</li><li>SAM criteria: WHZ &lt;-3, OR MUAC &lt;11.5, OR oedema</li><li>F-75 stabilisation (0.9 g protein, 80 kcal/kg) → F-100 rehab (2.5–3 g protein, 150–200 kcal/kg)</li><li>10 steps: Hypo, HypoT, Dehydration, Electrolytes, Infection, Micronutrients, Feeding, Catch-up, Stimulation, Discharge</li><li>Vit A 200k IU day 1, 2, 14; NO iron in acute</li><li>Refeeding syndrome: PO4/K/Mg shift; thiamine 200 mg IV; start 10 kcal/kg</li><li>RUTF (Plumpy'nut) community-based SAM</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Marasmus vs Kwashiorkor; WHZ/MUAC SAM criteria; F-75/F-100/RUTF; WHO 10 steps; vit A day 1, 2, 14; NO iron in acute; refeeding syndrome (PO4/K/Mg shift, thiamine); oedema in kwashiorkor (↓albumin); fatty liver (↓apoB → ↓VLDL)</td></tr><tr><td>**Should Know 🟡**</td><td>Marasmic-kwashiorkor; WHZ cutoffs; ReSoMal (low-Na ORS); K/Mg supplementation; community RUTF for uncomplicated SAM; Hospital malnutrition (MUST, NRS-2002, ONS); NICE 10–14 day trial of ONS; CF malnutrition</td></tr><tr><td>**Nice to Know 🟢**</td><td>10-step WHO protocol detail; appetite test (RUTF for community); catch-up growth kinetics; HIV/TB malnutrition overlap; aflatoxin theory of kwashiorkor; antioxidant depletion</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] ReSoMal composition vs ORS</li><li>[ ] MUAC age-specific cutoffs</li><li>[ ] Appetite test criteria for community management</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "PEM: spectrum, clinical features, and management"</p>
+<ul><li>Marasmus: chronic caloric + protein deficiency, wasting, no oedema, "old man face", normal hair, bradycardia</li><li>Kwashiorkor: acute protein deficiency, pitting oedema, flaky paint dermatosis, flag sign, fatty liver (↓apoB), apathy, anorexia</li><li>WHO classification: WHZ &lt;-2 wasting, &lt;-3 SAM; MUAC &lt;11.5 SAM; oedema = SAM</li><li>Causes: poverty, weaning, infection (measles, TB, HIV), famine</li><li>WHO 10 steps: stabilisation (F-75 80 kcal/kg, 0.9 g protein); 1) hypogly, 2) hypothermia, 3) dehydration (ReSoMal), 4) electrolytes, 5) infection (antibiotics), 6) micronutrients (vit A day 1, 2, 14; NO iron), 7) feeding, 8) catch-up, 9) stimulation, 10) discharge</li><li>Transition F-100 150 kcal/kg; RUTF community</li><li>Refeeding syndrome: PO4/K/Mg shift; thiamine 200 mg; start 10 kcal/kg</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Kwashiorkor vs Marasmus" &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Feature&lt;/th&gt;&lt;th&gt;Marasmus&lt;/th&gt;&lt;th&gt;Kwashiorkor&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Onset&lt;/td&gt;&lt;td&gt;Chronic (months-years)&lt;/td&gt;&lt;td&gt;Acute (weeks)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Calorie + Protein&lt;/td&gt;&lt;td&gt;Both ↓&lt;/td&gt;&lt;td&gt;Protein &gt; Calorie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Oedema</b>&lt;/td&gt;&lt;td&gt;<b>NO</b>&lt;/td&gt;&lt;td&gt;<b>YES</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Subcutaneous fat</b>&lt;/td&gt;&lt;td&gt;<b>↓↓</b>&lt;/td&gt;&lt;td&gt;Normal/mild ↓&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Muscle</b>&lt;/td&gt;&lt;td&gt;<b>↓↓</b>&lt;/td&gt;&lt;td&gt;Mild ↓&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hair</b>&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;td&gt;Flag sign, hypopigmented&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Skin</b>&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;td&gt;Flaky paint dermatosis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Liver</b>&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;td&gt;<b>Fatty liver</b> (↓apoB)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Mental&lt;/td&gt;&lt;td&gt;Apathetic, irritable&lt;/td&gt;&lt;td&gt;<b>More apathetic, anorexic</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Albumin&lt;/td&gt;&lt;td&gt;Normal/mild ↓&lt;/td&gt;&lt;td&gt;<b>↓↓</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Prognosis&lt;/td&gt;&lt;td&gt;Better&lt;/td&gt;&lt;td&gt;Worse&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "Why is oedema present in kwashiorkor but not marasmus?" "A: <b>Kwashiorkor: relatively more protein deficiency</b> (with carbs). ↓Amino acids → ↓albumin synthesis → ↓oncotic pressure → <b>pitting oedema</b>. Also ↓apoB → ↓VLDL export → <b>hepatic steatosis</b> (fatty liver). Kwashiorkor often post-weaning (acute) when child gets starchy pap but insufficient protein. <b>Marasmus: chronic caloric + protein deficiency; body adapts with catabolism; no hypoalbuminaemia, no oedema</b>."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 2y child, Marasmic-Kwashiorkor (wasting + oedema), pneumonia, hypoglycaemia 2.5 mmol/L, hypothermic 34°C. "Emergency management: 1) <b>Hypoglycaemia</b>: 50 mL D10% IV/PO; feed within 30 min. 2) <b>Hypothermia</b>: warm room, blankets, skin-to-skin. 3) <b>Antibiotics</b>: ampicillin + gentamicin. 4) <b>F-75</b> 80 kcal/kg/day; <b>ReSoMal</b> (not standard ORS) for dehydration. 5) <b>Vit A 200k IU</b> (single dose). 6) <b>NO iron</b> in acute phase. 7) Monitor electrolytes (PO4, K, Mg). 8) F-100 transition day 4–7; RUTF for catch-up. <b>10% mortality; watch for refeeding syndrome.</b>"</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>Marasmus:</b> Chronic wasting, no oedema, "old man face", muscle/fat ↓</li><li><b>Kwashiorkor:</b> Acute protein deficiency, oedema, flaky paint, flag sign, fatty liver</li><li><b>SAM criteria:</b> WHZ &lt;-3, OR MUAC &lt;11.5, OR bilateral pitting oedema</li><li><b>F-75 (stabilise):</b> 80 kcal/kg, 0.9 g protein; <b>F-100 (rehab):</b> 150-200 kcal/kg, 2.5-3 g protein</li><li><b>RUTF (Plumpy'nut):</b> community-based SAM</li><li><b>10 steps:</b> Hypoglycaemia, Hypothermia, Dehydration (ReSoMal), Electrolytes, Infection, Micronutrients (vit A day 1, 2, 14), Feeding, Catch-up, Stimulation, Discharge</li><li><b>Vit A:</b> 200k IU day 1, 2, 14 (measles, xerophthalmia)</li><li><b>NO IRON in acute SAM</b> (↓transferrin, infection)</li><li><b>Refeeding syndrome:</b> PO4/K/Mg shift; thiamine 200 mg; start 10 kcal/kg</li><li><b>MUST/NRS-2002:</b> Hospital malnutrition screening</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Marasmus vs Kwashiorkor: key distinguishing feature:</b></li></ol>
+<p>A. Marasmus = oedema B. <b>Kwashiorkor = oedema, fatty liver, flaky paint dermatosis</b> C. Marasmus = flag sign D. Kwashiorkor = severe wasting only E. Marasmus = hepatomegaly</p>
+<ol><li><b>SAM diagnostic criteria (WHO) in 6m–5y children include all EXCEPT:</b></li></ol>
+<p>A. WHZ &lt;-3 B. MUAC &lt;11.5 cm C. Bilateral pitting oedema D. <b>Height-for-age &lt;-2 SD</b></p>
+<ol><li><b>F-75 formula composition:</b></li></ol>
+<p>A. 100 kcal/kg, 2.5 g protein/kg B. <b>80 kcal/kg, 0.9 g protein/kg (stabilisation)</b> C. 150 kcal/kg, 3 g protein/kg D. 50 kcal/kg, 0.5 g protein/kg E. 200 kcal/kg, 4 g protein/kg</p>
+<ol><li><b>F-100 formula used in:</b></li></ol>
+<p>A. Stabilisation phase B. <b>Rehabilitation phase (catch-up growth)</b> C. Discharge phase D. Acute hypoglycaemia E. Refeeding syndrome</p>
+<ol><li><b>Iron in SAM:</b></li></ol>
+<p>A. Give immediately in acute phase B. Give with antibiotics always C. <b>Avoid in acute phase (↓transferrin, infection); wait 7-14 days</b> D. Give IV always E. High-dose oral 200 mg/day</p>
+<ol><li><b>Vitamin A high-dose regimen in measles:</b></li></ol>
+<p>A. 100,000 IU day 1 only B. <b>200,000 IU day 1, 2, 14 (age 12m+)</b> C. 500,000 IU weekly D. 50,000 IU daily ×7 days E. 100,000 IU day 1, 7, 14</p>
+<ol><li><b>ReSoMal (low-Na ORS) used in SAM because:</b></li></ol>
+<p>A. Higher K content B. Lower osmolarity C. <b>Standard ORS too high Na; risk of hyperNa in malnourished</b> D. Lower glucose E. Better taste compliance</p>
+<ol><li><b>RUTF (Ready-to-Use Therapeutic Food) for:</b></li></ol>
+<p>A. Inpatient SAM only B. Stabilisation phase only C. <b>Community-based management of uncomplicated SAM</b> D. Acute dehydration E. Refeeding syndrome only</p>
+<ol><li><b>Refeeding syndrome first electrolyte to drop:</b></li></ol>
+<p>A. Sodium B. Calcium C. <b>Phosphate (PO4)</b> (intracellular shift with insulin) D. Chloride E. Bicarbonate</p>
+<ol><li><b>Thiamine prophylaxis in refeeding/malnutrition:</b></li></ol>
+<p>A. 50 mg IV B. 100 mg PO C. <b>200–300 mg IV/PO before feeding</b> D. 500 mg IM E. Not required</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 2-year-old child with severe wasting (WHZ &lt;-3), NO oedema, normal hair, alert but irritable. Most likely diagnosis?</b></li></ol>
+<p>A. Kwashiorkor B. <b>Marasmus (chronic wasting, no oedema, preserved mental, normal hair)</b> C. Marasmic-kwashiorkor D. Severe acute malnutrition with oedema E. Chronic stunting</p>
+<ol><li><b>A 3-year-old child with pitting oedema feet, hepatomegaly, flaky paint dermatosis, flag sign hair, apathy. WHZ &lt;-3, MUAC &lt;11.5. WHO 10-step management initial stabilisation formula?</b></li></ol>
+<p>A. F-100 (150 kcal/kg) B. <b>F-75 (80 kcal/kg, 0.9 g protein) for days 1-7 stabilisation</b> C. Standard ORS D. High-protein diet 5 g/kg/day E. TPN</p>
+<ol><li><b>A 65-year-old malnourished alcoholic, BMI 16, admitted with pneumonia. On day 3 of refeeding, develops weakness, hypoventilation, PO4 0.2. Diagnosis?</b></li></ol>
+<p>A. Hypokalaemic periodic paralysis B. <b>Refeeding syndrome (hypophosphataemia)</b> C. Wernicke's encephalopathy D. Alcoholic ketoacidosis E. Diabetic ketoacidosis</p>
+<ol><li><b>In acute SAM, iron supplementation should be:</b></li></ol>
+<p>A. Started immediately with high dose B. Started with high dose orally C. <b>Avoided initially (↓transferrin, infection risk); started 7-14 days after stabilisation</b> D. Given IV E. Only with antibiotics</p>
+<ol><li><b>A 6-month-old infant with breast milk failure, weight-for-height &lt;-3, no oedema, no complications, alert. Best management?</b></li></ol>
+<p>A. Inpatient F-75 B. <b>Community-based RUTF (no complications)</b> C. F-100 inpatient D. TPN E. NG tube feeding only</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Marasmus features</li></ul>
+<p>A: <b>Chronic wasting, no oedema, "old man face", loss muscle/fat, normal hair, alert</b></p>
+<ul><li>Q: Kwashiorkor features</li></ul>
+<p>A: <b>Oedema, flaky paint, flag sign, fatty liver (↓apoB), apathy, anorexia</b></p>
+<ul><li>Q: SAM WHO criteria</li></ul>
+<p>A: <b>WHZ &lt;-3 OR MUAC &lt;11.5 OR bilateral pitting oedema</b></p>
+<ul><li>Q: F-75</li></ul>
+<p>A: <b>Stabilisation: 80 kcal/kg, 0.9 g protein/kg, days 1-7</b></p>
+<ul><li>Q: F-100</li></ul>
+<p>A: <b>Rehabilitation: 150-200 kcal/kg, 2.5-3 g protein/kg</b></p>
+<ul><li>Q: RUTF</li></ul>
+<p>A: <b>Ready-to-Use Therapeutic Food (Plumpy'nut); community-based SAM</b></p>
+<ul><li>Q: Vit A in SAM/measles</li></ul>
+<p>A: <b>200,000 IU day 1, 2, 14</b> (age 12m+); 100,000 IU &lt;6m</p>
+<ul><li>Q: Iron in SAM</li></ul>
+<p>A: <b>AVOID acute phase (↓transferrin, infection risk); 7-14 days after</b></p>
+<ul><li>Q: 10 steps</li></ul>
+<p>A: <b>Hypogly, HypoT, Dehydration, Electrolytes, Infection, Micronutrients, Feeding, Catch-up, Stimulation, Discharge</b></p>
+<ul><li>Q: ReSoMal</li></ul>
+<p>A: <b>Low-Na ORS for SAM dehydration (standard ORS too high Na)</b></p>
+<ul><li>Q: Refeeding syndrome</li></ul>
+<p>A: <b>PO4, K, Mg shift (insulin); thiamine 200 mg; start 10 kcal/kg/day</b></p>
+<ul><li>Q: MUAC cutoffs</li></ul>
+<p>A: <b>&lt;11.5 SAM, 11.5-12.5 MAM, &gt;12.5 normal (6-59m children)</b></p>
+<ul><li>Q: Appetite test</li></ul>
+<p>A: <b>RUTF offered; eats &gt;50% = community-based; eats &lt;50% = inpatient</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Kwashiorkor hallmarks: oedema (↓albumin), flaky paint dermatosis, flag sign, fatty liver (↓apoB → ↓VLDL export).</li><li><b>D</b> — SAM criteria: WHZ &lt;-3, MUAC &lt;11.5 cm, OR bilateral pitting oedema; HAZ &lt;-2 SD = stunting (chronic, not acute).</li><li><b>B</b> — F-75 stabilisation: 80 kcal/kg/day, 0.9 g protein/kg/day, 5–7 days; F-100 = 150–200 kcal/kg, 2.5–3 g protein.</li><li><b>B</b> — F-100 = rehabilitation phase (catch-up growth); F-75 = stabilisation.</li><li><b>C</b> — Iron in acute SAM: AVOID (↓transferrin, infection risk); start 7–14 days after stabilisation with F-100.</li><li><b>B</b> — Vit A in measles/SAM: 200,000 IU single dose day 1, 2, 14 (age 12m+); 100,000 IU &lt;6m; ↓measles mortality 50%.</li><li><b>C</b> — ReSoMal: low-Na ORS for SAM dehydration; standard ORS high Na risks hypernatraemia in malnourished.</li><li><b>C</b> — RUTF (Plumpy'nut): community-based management of uncomplicated SAM; WHO 2007+ protocol.</li><li><b>C</b> — Refeeding syndrome: insulin surge → intracellular shift of PO4 (and K, Mg); hypophosphataemia = first and most dangerous.</li><li><b>C</b> — Thiamine 200–300 mg IV/PO before feeding in malnutrition; prevents Wernicke's; critical in alcohol + malnourished.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Marasmus: chronic wasting, no oedema, "old man face", loss of muscle and fat, normal hair, alert but irritable.</li><li><b>B</b> — SAM (kwashiorkor features): F-75 stabilisation (80 kcal/kg, 0.9 g protein/kg) for days 1–7; transition to F-100 day 4–7.</li><li><b>B</b> — Refeeding syndrome: malnourished alcoholic, day 3 refeeding, hypophosphataemia (PO4 0.2), muscle weakness, hypoventilation; insulin-driven PO4 shift.</li><li><b>C</b> — Iron in acute SAM: avoid (↓transferrin = infection risk); start 7–14 days after stabilisation when F-100/iron can be added safely.</li><li><b>B</b> — SAM uncomplicated (no oedema, no complications, alert): community-based RUTF; &gt;75% of SAM now community-managed.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Protein-Energy Malnutrition (PEM)</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Marasmus = chronic wasting, no oedema, "old man face", normal hair; Kwashiorkor = acute protein, oedema, flaky paint, flag sign, fatty liver (↓apoB). WHO SAM: WHZ &lt;-3, MUAC &lt;11.5, or oedema. <b>10 steps: F-75 stabilisation (80 kcal/kg, 0.9 g protein) → F-100 rehabilitation (150–200 kcal/kg, 2.5–3 g protein); RUTF community</b>. <b>Vit A 200k IU day 1, 2, 14; NO iron acute</b>. ReSoMal (low-Na ORS). Refeeding syndrome: <b>PO4/K/Mg shift, thiamine 200 mg, start 10 kcal/kg/day</b>. <b>Exam focus:</b> Marasmus vs kwashiorkor, SAM criteria, F-75 vs F-100, vit A schedule, NO iron acute, refeeding, 10 steps. <b>Clinical relevance:</b> Global child health; hospital malnutrition screening (MUST, NRS-2002); refeeding in critical care; community-based management.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Protein Energy Malnutrition Marasmus Kwashiorkor · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

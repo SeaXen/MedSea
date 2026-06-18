@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mesothelioma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.4. CANCER OF THE LUNG</span>
+      <div class="h1">Mesothelioma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Link <b>asbestos exposure</b> to mesothelioma (latency, types: crocidolite &gt; amosite &gt; chrysotile)</li><li>[ ] Apply <b>IHC panel</b> for diagnosis vs adenocarcinoma (Calretinin/WT1/D2-40 vs CEA/BerEP4)</li><li>[ ] Classify <b>histological subtypes</b> (Epithelioid, Sarcomatoid, Biphasic) and prognostic impact</li><li>[ ] Stage <b>pleural mesothelioma</b> using TNM 8th Edition</li><li>[ ] Prescribe <b>1L</b>: Cisplatin + Pemetrexed <b>± Bevacizumab</b> (MAPS trial)</li><li>[ ] Prescribe <b>2L</b>: <b>Nivolumab + Ipilimumab</b> (CheckMate 743) — <b>Standard 2L</b></li><li>[ ] Compare <b>EPP vs P/D</b> (MARS 2: P/D non-inferior, less morbidity)</li><li>[ ] Indicate <b>RT</b>: Prophylactic tract RT (PREVENT trial — negative), Palliative RT</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant neoplasm of mesothelial cells; **Pleura (80%)**, **Peritoneum (20%)**, Pericardium/Tunica vaginalis (rare)</td></tr><tr><td>**Incidence**</td><td>UK: ~2,700/year; **Peak 2010-2020** (asbestos legacy); Male:Female = 5:1 (occupational)</td></tr><tr><td>**Prevalence**</td><td>**Median OS 12-18 months**; 5-year OS ~10% (improving with IO)</td></tr><tr><td>**Peak Age**</td><td>70-80 years</td></tr><tr><td>**Latency**</td><td>**20-50 years** post-exposure</td></tr><tr><td>**Risk Factors**</td><td>**Asbestos** (crocidolite > amosite > chrysotile); **Occupational**: Shipbuilding, construction, insulation, brake linings; **Para-occupational** (family laundry); **Environmental** (vicinity to mines); **Radiation** (therapeutic); **Simian Virus 40** (controversial); **BAP1 germline** (predisposition)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Asbestos Fibres] --&gt; B[Phagocytosis by Mesothelial Cells/Macrophages] B --&gt; C[Frustrated Phagocytosis] C --&gt; D[ROS/RNS Generation] D --&gt; E[DNA Damage] E --&gt; F[Chronic Inflammation] F --&gt; G[Cytokine Release (TNF-α, IL-1β, TGF-β)] G --&gt; H[Genomic Alterations] H --&gt; H1[BAP1 Loss (60%) - Tumour Suppressor] H --&gt; H2[CDKN2A/p16 Loss (70%) - Cell Cycle] H --&gt; H3[NF2/Merlin Loss (40%) - Contact Inhibition] H --&gt; H4[TP53 Mut (15-20%)] H --&gt; H5[SETD2, PBRM1 Mut] H1 --&gt; I[Mesothelioma Development] H2 --&gt; I H3 --&gt; I H4 --&gt; I H5 --&gt; I </code>``</p>
+<div class="sub-h">Histological Subtypes (WHO 2021)</div>
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Prognosis</th><th>Key Features</th></tr><tr><td>---------</td><td>-----------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Epithelioid**</td><td>**60%**</td><td>**Best** (Median OS 18-24mo)</td><td>Tubulopapillary, solid, deciduoid; **Calretinin+, WT1+**</td></tr><tr><td>**Sarcomatoid**</td><td>**10%**</td><td>**Worst** (Median OS 6-10mo)</td><td>Spindle cells, desmoplastic; **Resistant to chemo**; **Vimentin+, Calretinin variable**</td></tr><tr><td>**Biphasic**</td><td>**30%**</td><td>**Intermediate**</td><td>Mixed epithelioid + sarcomatoid; **Prognosis by % epithelioid**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Pleural</th><th>Peritoneal</th></tr><tr><td>---------</td><td>---------</td><td>------------</td></tr><tr><td>**Pain**</td><td>**Pleuritic chest pain** (80%)</td><td>Abdominal pain (50%)</td></tr><tr><td>**Dyspnoea**</td><td>**Effusion** (90%)</td><td>Distension, ascites</td></tr><tr><td>**Weight Loss**</td><td>Common</td><td>Common</td></tr><tr><td>**Fever/Night Sweats**</td><td>Paraneoplastic</td><td>Paraneoplastic</td></tr><tr><td>**Clubbing/HPOA**</td><td>5-10%</td><td>Rare</td></tr><tr><td>**Palpable Mass**</td><td>Chest wall invasion</td><td>Abdominal mass</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification (Pleural — TNM 8th)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>T Stage</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>T1a</td><td>Ipsilateral parietal pleura (mediastinal, diaphragmatic) ± visceral</td></tr><tr><td>T1b</td><td>T1a + scattered foci on visceral pleura</td></tr><tr><td>T2</td><td>T1 + diaphragmatic/lung invasion</td></tr><tr><td>T3</td><td>Endothoracic fascia, chest wall, pericardium, phrenic nerve, mediastinal fat</td></tr><tr><td>T4</td><td>Contralateral pleura, peritoneum, mediastinal organs, spine, great vessels</td></tr></table>
+<table class="ctable"><tr><th>N Stage</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>N1</td><td>Ipsilateral hilar, bronchopulmonary</td></tr><tr><td>N2</td><td>Ipsilateral mediastinal, subcarinal, internal mammary</td></tr></table>
+<table class="ctable"><tr><th>M Stage</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>M1</td><td>Distant mets</td></tr></table>
+<table class="ctable"><tr><th>Stage Grouping</th><th></th></tr><tr><td>----------------</td><td>---</td></tr><tr><td>IA</td><td>T1a N0 M0</td></tr><tr><td>IB</td><td>T1b N0 M0</td></tr><tr><td>II</td><td>T2 N0 M0</td></tr><tr><td>IIIA</td><td>T3 N0 M0</td></tr><tr><td>IIIB</td><td>T1-3 N1 M0 / T4 N0 M0</td></tr><tr><td>IV</td><td>Any N2 M0 / Any M1</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**Pleural Fluid Cytology**</td><td>Initial</td><td>**Low sensitivity (30%)**; **Cell block for IHC**</td></tr><tr><td>**Thoracoscopic Biopsy (VATS)**</td><td>**Gold standard**</td><td>**Multiple biopsies**; **Adequate tissue for IHC + Molecular**</td></tr><tr><td>**Image-guided Core Biopsy**</td><td>If VATS not feasible</td><td>Lower yield</td></tr><tr><td>**IHC Panel (Mesothelial vs Adenocarcinoma)**</td><td>**Diagnostic**</td><td>**Mesothelial markers**: **Calretinin+, WT1+, D2-40 (Podoplanin)+, CK5/6+**<br/>**Adenocarcinoma markers**: **CEA+, BerEP4+, MOC-31+, TTF-1+ (lung), Napsin A+ (lung)**</td></tr><tr><td>**CT Chest/Abdomen (Pleural/Peritoneal)**</td><td>Staging</td><td>**Pleural thickening, nodularity, effusion, interlobar fissure**</td></tr><tr><td>**PET-CT**</td><td>Staging, Response</td><td>**SUVmax correlates with histology** (Epitheliod higher)</td></tr><tr><td>**MRI**</td><td>Chest wall/diaphragm invasion</td><td>Superior soft tissue</td></tr><tr><td>**BAP1 IHC / Germline**</td><td>Prognosis, Predisposition</td><td>**Loss = worse prognosis**; Germline testing if young/family history</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Metastatic Adenocarcinoma (Lung, Breast, Ovary, GI)**</td><td>**CEA+, BerEP4+, MOC-31+, TTF-1+ (lung)**; **Calretinin-/WT1-**</td></tr><tr><td>**Reactive Mesothelial Hyperplasia**</td><td>**BAP1 retained**, No invasion, Uniform cells; **p53 normal**</td></tr><tr><td>**Pleural Plaques / Fibrosis**</td><td>Benign, calcified, parietal; **No nodules/effusion**</td></tr><tr><td>**Solitary Fibrous Tumour**</td><td>**STAT6+, CD34+, BCL2+**; **Calretinin-**</td></tr><tr><td>**Lymphoma**</td><td>**CD45+, CD20+** (B-cell); Pleural effusion cytology</td></tr><tr><td>**Peritoneal Carcinomatosis**</td><td>Adenocarcinoma markers+, WT1+ (ovarian) — **PAX8+ for ovarian**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line Systemic Therapy</div>
+<p>``<code>mermaid flowchart TD A[Unresectable Mesothelioma] --&gt; B{Performance Status / Fitness} B --&gt;|<b>Fit (ECOG 0-1)</b>| C[<b>Cisplatin 75mg/m² d1 + Pemetrexed 500mg/m² d1 q3w ×4-6 cycles</b>&lt;br/&gt;<b>+ Bevacizumab 15mg/kg d1</b> (MAPS trial) — <b>Preferred if eligible</b>&lt;br/&gt;<b>OS 18.8 vs 16.1 mo (HR 0.77)</b>; <b>PFS 9.2 vs 7.3 mo</b>] B --&gt;|<b>Unfit / Cisplatin contraindicated</b>| D[<b>Carboplatin AUC5 d1 + Pemetrexed 500mg/m² d1 q3w ×4-6 cycles</b>&lt;br/&gt;<b>Non-inferior to Cisplatin</b> (IFCT-GFPC 0801)&lt;br/&gt;<b>No Bev with Carbo</b> (not studied)] C --&gt; E[<b>Maintenance Pemetrexed</b> (if response/SD, standard NSCLC practice)] D --&gt; E E --&gt; F[<b>Folic Acid 400mcg daily + B12 1mg IM q3 cycles</b>&lt;br/&gt;<b>Dexamethasone 8mg BID d-1,0,1</b> (premedication for Pem)] </code>``</p>
+<div class="sub-h">Second-Line / Subsequent Therapy</div>
+<p>``<code>mermaid flowchart TD A[Progression post Platinum+Pemetrexed] --&gt; B{Histology / Biomarkers} B --&gt;|<b>All subtypes</b>| C[<b>Nivolumab 360mg q3w + Ipilimumab 1mg/kg q6w</b> (CheckMate 743)&lt;br/&gt;<b>OS HR 0.74</b>, mOS 18.1 vs 14.1 mo&lt;br/&gt;<b>Superior to Chemo (Gem/Vinorelbine)</b>&lt;br/&gt;<b>Standard 2L regardless of histology</b>] B --&gt;|<b>Epithelioid</b>| D[<b>Pembrolizumab</b> (KEYNOTE-158) — ORR ~20%&lt;br/&gt;<b>Single-agent IO</b> — less effective than Nivo+Ipi] C --&gt; E[<b>3L+</b>: Gemcitabine / Vinorelbine / Clinical Trial / Re-challenge Pem (if long interval)] </code>``</p>
+<div class="sub-h">Surgery (Selected Early Stage)</div>
+<table class="ctable"><tr><th>Procedure</th><th>Description</th><th>Evidence</th></tr><tr><td>-----------</td><td>-------------</td><td>----------</td></tr><tr><td>**EPP (Extrapleural Pneumonectomy)**</td><td>**En bloc**: Lung, parietal/visceral pleura, pericardium, diaphragm → **Gortex reconstruction**</td><td>**MARS 1**: EPP + Chemo + RT vs Chemo + RT → **No OS benefit, high mortality**</td></tr><tr><td>**P/D (Pleurectomy/Decortication)**</td><td>**Parietal + Visceral pleurectomy** (lung-sparing)</td><td>**MARS 2**: **P/D non-inferior to EPP**, **Lower mortality (1.7% vs 4.5%)**, Less morbidity **→ Preferred**</td></tr><tr><td>**Cytoreductive Surgery + HIPEC**</td><td>Peritoneal mesothelioma</td><td>**Selected centres**, Epithelioid, Complete cytoreduction (CC-0/1)</td></tr></table>
+<div class="sub-h">Radiation Therapy</div>
+<table class="ctable"><tr><th>Indication</th><th>Details</th></tr><tr><td>------------</td><td>---------</td></tr><tr><td>**Prophylactic Tract RT**</td><td>**PREVENT trial**: 21Gy/3fx to intervention tracts **NO benefit** for procedure tract metastases — **Not routine**</td></tr><tr><td>**Palliative RT**</td><td>**30Gy/10fx** or **20Gy/5fx** for pain, SVC obstruction, nerve root compression</td></tr><tr><td>**Adjuvant RT (Post-EPP)**</td><td>**Hemithorax 50-54Gy** (historical, MARS era) — **Not standard post-P/D**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Asbestos**</td><td>**Crocidolite (blue) > Amosite (brown) > Chrysotile (white)**; **Latency 20-50yr**; **All types carcinogenic**</td></tr><tr><td>**IHC**</td><td>**Mesothelioma**: Calretinin+/WT1+/D2-40+/CK5/6+; **Adenocarcinoma**: CEA+/BerEP4+/MOC-31+/TTF-1+</td></tr><tr><td>**Histology**</td><td>**Epithelioid (60%) best**, Sarcomatoid (10%) worst, Biphasic (30%) intermediate</td></tr><tr><td>**Staging**</td><td>**TNM 8th (Pleural)**; Peritoneal: PCI (Peritoneal Cancer Index)</td></tr><tr><td>**1L**</td><td>**Cisplatin + Pemetrexed ± Bevacizumab (MAPS)**; **Carbo+Pem if Cis unfit**; **Folate/B12 + Dex premed**</td></tr><tr><td>**2L**</td><td>**Nivolumab + Ipilimumab** (CheckMate 743) — **OS HR 0.74**, **Standard 2L**</td></tr><tr><td>**Surgery**</td><td>**P/D > EPP** (MARS 2: non-inferior, less mortality); **Trimodality (Chemo → P/D → RT) selected centres**</td></tr><tr><td>**RT**</td><td>**Prophylactic tract RT: PREVENT trial NEGATIVE** — Not routine; **Palliative RT** for symptoms</td></tr><tr><td>**BAP1**</td><td>**Loss = worse prognosis**; **Germline BAP1** = Cancer predisposition syndrome (mesothelioma, uveal melanoma, RCC)</td></tr><tr><td>**Peritoneal**</td><td>**CRS + HIPEC** (Epithelioid, CC-0/1); **Systemic: Same as pleural**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**70M ex-shipbuilder, pleural effusion, pleural thickening. Biopsy: Calretinin+, WT1+, CEA-, BerEP4-. Diagnosis?**</td><td>**Malignant Pleural Mesothelioma (Epithelioid)** — **Asbestos exposure, IHC confirms mesothelial lineage**</td></tr><tr><td>**Asbestos types — which most carcinogenic?**</td><td>**Crocidolite (blue amphibole) > Amosite (brown amphibole) > Chrysotile (white serpentine)**; **All cause mesothelioma**</td></tr><tr><td>**Mesothelioma IHC panel — mesothelial vs adenocarcinoma markers?**</td><td>**Mesothelial**: Calretinin, WT1, D2-40 (Podoplanin), CK5/6<br/>**Adenocarcinoma**: CEA, BerEP4, MOC-31, TTF-1 (lung), Napsin A (lung)</td></tr><tr><td>**1L systemic therapy for fit patient?**</td><td>**Cisplatin 75mg/m² + Pemetrexed 500mg/m² q3w ×4-6 cycles + Bevacizumab 15mg/kg** (MAPS) — **OS 18.8 vs 16.1 mo**</td></tr><tr><td>**If cisplatin contraindicated?**</td><td>**Carboplatin AUC5 + Pemetrexed** (non-inferior); **No Bevacizumab with Carbo**</td></tr><tr><td>**2L therapy — standard?**</td><td>**Nivolumab 360mg q3w + Ipilimumab 1mg/kg q6w** (CheckMate 743) — **OS HR 0.74**, superior to chemo</td></tr><tr><td>**Surgery — EPP vs P/D?**</td><td>**MARS 2**: **P/D non-inferior to EPP**, **Lower 30-day mortality (1.7% vs 4.5%)**, Less morbidity → **P/D preferred**</td></tr><tr><td>**Prophylactic tract RT — PREVENT trial result?**</td><td>**21Gy/3fx to biopsy/chest drain tracts — NO reduction in tract metastases** — **Not recommended**</td></tr><tr><td>**BAP1 — significance?**</td><td>**Somatic loss (60%) = worse prognosis**; **Germline mutation** = **BAP1 tumour predisposition syndrome** (mesothelioma, uveal melanoma, RCC, BCC)</td></tr><tr><td>**Peritoneal mesothelioma — curative option?**</td><td>**CRS + HIPEC** (Cytoreductive Surgery + Hyperthermic Intraperitoneal Chemotherapy) — **Epithelioid, CC-0/1, selected centres**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Mesothelioma vs Adenocarcinoma (Lung) IHC**</td><td>**Calretinin/WT1/D2-40/CK5/6 = Mesothelioma**; **CEA/BerEP4/MOC-31/TTF-1 = Lung Adeno**; **Use PANEL, not single marker**</td></tr><tr><td>**EPP vs P/D**</td><td>**EPP** = Lung resection + Pleurectomy + Pericardium + Diaphragm; **P/D** = **Pleurectomy only (lung-sparing)**; **MARS 2: P/D preferred**</td></tr><tr><td>**Bevacizumab in MAPS**</td><td>**Only with Cisplatin** (not studied with Carbo); **Contraindicated**: Haemoptysis, recent surgery, anticoagulation, brain mets</td></tr><tr><td>**CheckMate 743 — Nivo+Ipi vs Chemo**</td><td>**Nivo+Ipi superior OS in ALL histologies** (Epithelioid HR 0.86, Non-epitheliod HR 0.46); **No PD-L1 selection**</td></tr><tr><td>**PREVENT trial**</td><td>**Prophylactic RT to intervention tracts (21Gy/3fx) — NEGATIVE** — Do not routinely irradiate biopsy/drain tracts</td></tr><tr><td>**Peritoneal vs Pleural staging**</td><td>**Pleural**: TNM 8th; **Peritoneal**: **PCI (Peritoneal Cancer Index)** + Simplified Staging</td></tr></table>
+<p><b>Mnemonic: MESOTHELIOMA</b></p>
+<ul><li><b>M</b>esothelial IHC: <b>Calretinin, WT1, D2-40, CK5/6+</b></li><li><b>E</b>pithelioid best, <b>S</b>arcomatoid worst, <b>O</b>utcome by histology</li><li><b>T</b>NM 8th (Pleural), <b>H</b>IPEC (Peritoneal)</li><li><b>E</b>xposure: <b>Asbestos</b> (Crocidolite &gt; Amosite &gt; Chrysotile), Latency 20-50yr</li><li><b>L</b>ung Adeno markers: <b>CEA, BerEP4, MOC-31, TTF-1</b> (Negative in Meso)</li><li><b>I</b>pilimumab + <b>N</b>ivolumab = <b>2L Standard</b> (CheckMate 743)</li><li><b>O</b>riginal 1L: <b>Cis+Pem ± Bev</b> (MAPS)</li><li><b>M</b>ARS 2: <b>P/D &gt; EPP</b> (Lung-sparing, less mortality)</li><li><b>A</b>djuvant RT: <b>PREVENT NEGATIVE</b> (No prophylactic tract RT)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Mesothelioma)) Aetiology Asbestos (Crocidolite &gt; Amosite &gt; Chrysotile) Latency 20-50yr BAP1 germline predisposition Histology Epithelioid (60%) - Best Sarcomatoid (10%) - Worst Biphasic (30%) - Intermediate Diagnosis VATS Biopsy (Gold Std) IHC: Calretinin+/WT1+/D2-40+/CEA-/BerEP4- BAP1 IHC (Prognosis) Staging Pleural: TNM 8th Peritoneal: PCI 1L Systemic Fit: Cis+Pem + Bev (MAPS) Unfit: Carbo+Pem Folate/B12 + Dex 2L Systemic Nivo + Ipi (CheckMate 743) - All histologies Surgery P/D &gt; EPP (MARS 2) CRS + HIPEC (Peritoneal) RT Prophylactic Tract: PREVENT NEGATIVE Palliative: 30Gy/10fx </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Exposure**</td><td>Asbestos (Crocidolite > Amosite > Chrysotile); Latency 20-50yr</td></tr><tr><td>**IHC**</td><td>**Meso: Calretinin+/WT1+/D2-40+/CK5/6+**; **Adeno: CEA+/BerEP4+/MOC-31+/TTF-1+**</td></tr><tr><td>**Histology**</td><td>Epithelioid 60% (best), Sarcomatoid 10% (worst), Biphasic 30%</td></tr><tr><td>**1L**</td><td>**Cis+Pem + Bev** (MAPS) — Fit; **Carbo+Pem** — Unfit</td></tr><tr><td>**2L**</td><td>**Nivo 360mg q3w + Ipi 1mg/kg q6w** (CheckMate 743) — **OS HR 0.74**</td></tr><tr><td>**Surgery**</td><td>**P/D > EPP** (MARS 2); CRS+HIPEC (Peritoneal)</td></tr><tr><td>**RT**</td><td>**Prophylactic tract: PREVENT NEGATIVE** — Not routine</td></tr><tr><td>**BAP1**</td><td>Somatic loss = poor prognosis; Germline = predisposition syndrome</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Asbestos types & latency</td><td></td><td></td></tr><tr><td>IHC panel (Meso vs Adeno)</td><td></td><td></td></tr><tr><td>Histology prognosis</td><td></td><td></td></tr><tr><td>1L regimens (MAPS)</td><td></td><td></td></tr><tr><td>2L Nivo+Ipi</td><td></td><td></td></tr><tr><td>EPP vs P/D / MARS 2</td><td></td><td></td></tr><tr><td>PREVENT trial</td><td></td><td></td></tr><tr><td>BAP1 significance</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Asbestos Exposure]], [[Pemetrexed]], [[Bevacizumab]], [[CheckMate 743]], [[MARS 2 Trial]], [[BAP1 Syndrome]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Mesothelioma (Asbestos), which statement is correct? A. <b>Crocidolite (blue) &gt; Amosite (brown) &gt; Chrysotile (white)</b> B. **Crocidolite - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Crocidolite (blue) &gt; Amosite (brown) &gt; Chrysotile (white)</b>; <b>Latency 20-50yr</b>; <b>All types carcinogenic</b></li></ul>
+<p><b>2.</b> Regarding Mesothelioma (IHC), which statement is correct? A. <b>Mesothelioma</b>: Calretinin+/WT1+/D2-40+/CK5/6+ B. <b>Mesothelioma</b>: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Mesothelioma</b>: Calretinin+/WT1+/D2-40+/CK5/6+; <b>Adenocarcinoma</b>: CEA+/BerEP4+/MOC-31+/TTF-1+</li></ul>
+<p><b>3.</b> Regarding Mesothelioma (Histology), which statement is correct? A. <b>Epithelioid (60%) best</b>, Sarcomatoid (10%) worst, Biphasic (30%) intermediate B. **Epithelioid - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Epithelioid (60%) best</b>, Sarcomatoid (10%) worst, Biphasic (30%) intermediate</li></ul>
+<p><b>4.</b> Regarding Mesothelioma (Staging), which statement is correct? A. <b>TNM 8th (Pleural)</b> B. **TNM - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>TNM 8th (Pleural)</b>; Peritoneal: PCI (Peritoneal Cancer Index)</li></ul>
+<p><b>5.</b> Regarding Mesothelioma (1L), which statement is correct? A. <b>Cisplatin + Pemetrexed ± Bevacizumab (MAPS)</b> B. **Cisplatin - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Cisplatin + Pemetrexed ± Bevacizumab (MAPS)</b>; <b>Carbo+Pem if Cis unfit</b>; <b>Folate/B12 + Dex premed</b></li></ul>
+<p><b>6.</b> Regarding Mesothelioma (2L), which statement is correct? A. <b>Nivolumab + Ipilimumab</b> (CheckMate 743) B. **Nivolumab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Nivolumab + Ipilimumab</b> (CheckMate 743) — <b>OS HR 0.74</b>, <b>Standard 2L</b></li></ul>
+<p><b>7.</b> Regarding Mesothelioma (Surgery), which statement is correct? A. <b>P/D &gt; EPP</b> (MARS 2: non-inferior, less mortality) B. **P/D - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>P/D &gt; EPP</b> (MARS 2: non-inferior, less mortality); <b>Trimodality (Chemo → P/D → RT) selected centres</b></li></ul>
+<p><b>8.</b> Regarding Mesothelioma (RT), which statement is correct? A. <b>Prophylactic tract RT: PREVENT trial NEGATIVE</b> B. **Prophylactic - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Prophylactic tract RT: PREVENT trial NEGATIVE</b> — Not routine; <b>Palliative RT</b> for symptoms</li></ul>
+<p><b>9.</b> Regarding Mesothelioma (BAP1), which statement is correct? A. <b>Loss = worse prognosis</b> B. **Loss - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Loss = worse prognosis</b>; <b>Germline BAP1</b> = Cancer predisposition syndrome (mesothelioma, uveal melanoma, RCC)</li></ul>
+<p><b>10.</b> Regarding Mesothelioma (Peritoneal), which statement is correct? A. <b>CRS + HIPEC</b> (Epithelioid, CC-0/1) B. **CRS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CRS + HIPEC</b> (Epithelioid, CC-0/1); <b>Systemic: Same as pleural</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Crocidolite (blue) &gt; Amosite (brown) &gt; Chrysotile (white)</b></li><li>B. **Crocidolite (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Crocidolite (blue) &gt; Amosite (brown) &gt; Chrysotile (white)</b>; <b>Latency 20-50yr</b>; <b>All types carcinogenic</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Mesothelioma</b>: Calretinin+/WT1+/D2-40+/CK5/6+</li><li>B. <b>Mesothelioma</b>: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Mesothelioma</b>: Calretinin+/WT1+/D2-40+/CK5/6+; <b>Adenocarcinoma</b>: CEA+/BerEP4+/MOC-31+/TTF-1+</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Epithelioid (60%) best</b>, Sarcomatoid (10%) worst, Biphasic (30%) intermediate</li><li>B. **Epithelioid (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Epithelioid (60%) best</b>, Sarcomatoid (10%) worst, Biphasic (30%) intermediate</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>TNM 8th (Pleural)</b></li><li>B. **TNM (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>TNM 8th (Pleural)</b>; Peritoneal: PCI (Peritoneal Cancer Index)</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Cisplatin + Pemetrexed ± Bevacizumab (MAPS)</b></li><li>B. **Cisplatin (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Cisplatin + Pemetrexed ± Bevacizumab (MAPS)</b>; <b>Carbo+Pem if Cis unfit</b>; <b>Folate/B12 + Dex premed</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Nivolumab + Ipilimumab</b> (CheckMate 743)</li><li>B. **Nivolumab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Nivolumab + Ipilimumab</b> (CheckMate 743) — <b>OS HR 0.74</b>, <b>Standard 2L</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>P/D &gt; EPP</b> (MARS 2: non-inferior, less mortality)</li><li>B. **P/D (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>P/D &gt; EPP</b> (MARS 2: non-inferior, less mortality); <b>Trimodality (Chemo → P/D → RT) selected centres</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Prophylactic tract RT: PREVENT trial NEGATIVE</b></li><li>B. **Prophylactic (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Prophylactic tract RT: PREVENT trial NEGATIVE</b> — Not routine; <b>Palliative RT</b> for symptoms</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Loss = worse prognosis</b></li><li>B. **Loss (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Loss = worse prognosis</b>; <b>Germline BAP1</b> = Cancer predisposition syndrome (mesothelioma, uveal melanoma, RCC)</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>CRS + HIPEC</b> (Epithelioid, CC-0/1)</li><li>B. **CRS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>CRS + HIPEC</b> (Epithelioid, CC-0/1); <b>Systemic: Same as pleural</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Asbestos? <b>A1:</b> Crocidolite (blue) &gt; Amosite (brown) &gt; Chrysotile (white); Latency 20-50yr; All types carcinogenic</p>
+<p><b>Q2:</b> IHC? <b>A2:</b> Mesothelioma: Calretinin+/WT1+/D2-40+/CK5/6+; Adenocarcinoma: CEA+/BerEP4+/MOC-31+/TTF-1+</p>
+<p><b>Q3:</b> Histology? <b>A3:</b> Epithelioid (60%) best, Sarcomatoid (10%) worst, Biphasic (30%) intermediate</p>
+<p><b>Q4:</b> Staging? <b>A4:</b> TNM 8th (Pleural); Peritoneal: PCI (Peritoneal Cancer Index)</p>
+<p><b>Q5:</b> 1L? <b>A5:</b> Cisplatin + Pemetrexed ± Bevacizumab (MAPS); Carbo+Pem if Cis unfit; Folate/B12 + Dex premed</p>
+<p><b>Q6:</b> 2L? <b>A6:</b> Nivolumab + Ipilimumab (CheckMate 743) — OS HR 0.74, Standard 2L</p>
+<p><b>Q7:</b> Surgery? <b>A7:</b> P/D &gt; EPP (MARS 2: non-inferior, less mortality); Trimodality (Chemo → P/D → RT) selected centres</p>
+<p><b>Q8:</b> RT? <b>A8:</b> Prophylactic tract RT: PREVENT trial NEGATIVE — Not routine; Palliative RT for symptoms</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Asbestos</td><td>Crocidolite (blue) > Amosite (brown) > Chrysotile (white); Latency 20-50yr; All types carcinogenic</td></tr><tr><td>2</td><td>A</td><td>IHC</td><td>Mesothelioma: Calretinin+/WT1+/D2-40+/CK5/6+; Adenocarcinoma: CEA+/BerEP4+/MOC-31+/TTF-1+</td></tr><tr><td>3</td><td>A</td><td>Histology</td><td>Epithelioid (60%) best, Sarcomatoid (10%) worst, Biphasic (30%) intermediate</td></tr><tr><td>4</td><td>A</td><td>Staging</td><td>TNM 8th (Pleural); Peritoneal: PCI (Peritoneal Cancer Index)</td></tr><tr><td>5</td><td>A</td><td>1L</td><td>Cisplatin + Pemetrexed ± Bevacizumab (MAPS); Carbo+Pem if Cis unfit; Folate/B12 + Dex premed</td></tr><tr><td>6</td><td>A</td><td>2L</td><td>Nivolumab + Ipilimumab (CheckMate 743) — OS HR 0.74, Standard 2L</td></tr><tr><td>7</td><td>A</td><td>Surgery</td><td>P/D > EPP (MARS 2: non-inferior, less mortality); Trimodality (Chemo → P/D → RT) selected centres</td></tr><tr><td>8</td><td>A</td><td>RT</td><td>Prophylactic tract RT: PREVENT trial NEGATIVE — Not routine; Palliative RT for symptoms</td></tr><tr><td>9</td><td>A</td><td>BAP1</td><td>Loss = worse prognosis; Germline BAP1 = Cancer predisposition syndrome (mesothelioma, uveal melanoma, RCC)</td></tr><tr><td>10</td><td>A</td><td>Peritoneal</td><td>CRS + HIPEC (Epithelioid, CC-0/1); Systemic: Same as pleural</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Asbestos</td><td>Crocidolite (blue) > Amosite (brown) > Chrysotile (white); Latency 20-50yr; All types carcinogenic</td></tr><tr><td>2</td><td>A</td><td>IHC</td><td>Mesothelioma: Calretinin+/WT1+/D2-40+/CK5/6+; Adenocarcinoma: CEA+/BerEP4+/MOC-31+/TTF-1+</td></tr><tr><td>3</td><td>A</td><td>Histology</td><td>Epithelioid (60%) best, Sarcomatoid (10%) worst, Biphasic (30%) intermediate</td></tr><tr><td>4</td><td>A</td><td>Staging</td><td>TNM 8th (Pleural); Peritoneal: PCI (Peritoneal Cancer Index)</td></tr><tr><td>5</td><td>A</td><td>1L</td><td>Cisplatin + Pemetrexed ± Bevacizumab (MAPS); Carbo+Pem if Cis unfit; Folate/B12 + Dex premed</td></tr><tr><td>6</td><td>A</td><td>2L</td><td>Nivolumab + Ipilimumab (CheckMate 743) — OS HR 0.74, Standard 2L</td></tr><tr><td>7</td><td>A</td><td>Surgery</td><td>P/D > EPP (MARS 2: non-inferior, less mortality); Trimodality (Chemo → P/D → RT) selected centres</td></tr><tr><td>8</td><td>A</td><td>RT</td><td>Prophylactic tract RT: PREVENT trial NEGATIVE — Not routine; Palliative RT for symptoms</td></tr><tr><td>9</td><td>A</td><td>BAP1</td><td>Loss = worse prognosis; Germline BAP1 = Cancer predisposition syndrome (mesothelioma, uveal melanoma, RCC)</td></tr><tr><td>10</td><td>A</td><td>Peritoneal</td><td>CRS + HIPEC (Epithelioid, CC-0/1); Systemic: Same as pleural</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer of the Lung|Cancer of the Lung]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Mesothelioma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

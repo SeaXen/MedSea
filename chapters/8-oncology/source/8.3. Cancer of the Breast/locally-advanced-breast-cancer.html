@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Locally Advanced Breast Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.3. CANCER OF THE BREAST</span>
+      <div class="h1">Locally Advanced Breast Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define <b>locally advanced breast cancer</b> (Stage IIIA-IIIB, Inflammatory)</li><li>[ ] Prescribe <b>neoadjuvant chemotherapy</b> regimens by subtype</li><li>[ ] Define <b>pathological complete response (pCR)</b> and its prognostic value</li><li>[ ] Select <b>surgery post-neoadjuvant</b>: BCS vs Mastectomy, ALND vs SLNB</li><li>[ ] Prescribe <b>adjuvant therapy post-neoadjuvant</b> by subtype and response</li><li>[ ] Manage <b>Inflammatory Breast Cancer</b> (T4d) with multimodal approach</li><li>[ ] Apply <b>radiotherapy indications</b> post-neoadjuvant surgery</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Staging</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>TNM Criteria</th><th>Subtypes</th></tr><tr><td>-------</td><td>--------------</td><td>----------</td></tr><tr><td>**IIIA**</td><td>T0-2 N2, T3 N1-2, T4 N0-1</td><td>Any receptor status</td></tr><tr><td>**IIIB**</td><td>T4a-c N0-2</td><td>Chest wall/skin involvement</td></tr><tr><td>**IIIC**</td><td>Any T N3</td><td>Ipsilateral supraclavicular/IMN</td></tr><tr><td>**Inflammatory (T4d)**</td><td>**Clinical**: Rapid onset, peau d'orange, erythema >1/3 breast, warmth, ridge</td><td>**Dermal lymphatic invasion** (Pathology)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>No distant mets (M0)</b>. <b>Multimodal treatment mandatory</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Neoadjuvant Systemic Therapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Regimens by Subtype</div>
+<table class="ctable"><tr><th>Subtype</th><th>Preferred Regimen</th><th>Key Trials</th></tr><tr><td>---------</td><td>-------------------</td><td>------------</td></tr><tr><td>**HR+/HER2-** (Luminal)</td><td>**Anthracycline/Taxane** (AC → T, FEC → T, DD AC → T)</td><td>**NSABP B-18, B-27, GeparTrio**</td></tr><tr><td>**HER2+**</td><td>**TCHP** (Docetaxel + Carboplatin + Trastuzumab + Pertuzumab) OR **THP**</td><td>**KRISTINE, TRYPHAENA, NeoSphere**</td></tr><tr><td>**TNBC**</td><td>**Carboplatin + Paclitaxel ×12 → Dose-Dense AC ×4** ± **Pembrolizumab**</td><td>**KEYNOTE-522, GeparSixto, BrighTNess**</td></tr><tr><td>**HR+/HER2- (High Risk)**</td><td>**Anthracycline/Taxane ± Capecitabine**</td><td>**GeparTrio, GEICAM**</td></tr></table>
+<div class="sub-h">Dose-Dense vs Standard</div>
+<table class="ctable"><tr><th>Schedule</th><th>Regimen</th><th>Advantage</th></tr><tr><td>----------</td><td>---------</td><td>-----------</td></tr><tr><td>**Dose-Dense** (q2w + G-CSF)</td><td>**AC q2w ×4 → Paclitaxel q2w ×4**</td><td>**CALGB 9741**: Improved DFS/OS</td></tr><tr><td>**Standard** (q3w)</td><td>**AC q3w ×4 → Paclitaxel q3w ×4**</td><td>Less myelosuppression, standard</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Pathological Complete Response (pCR)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition</div>
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**pCR (ypT0/is ypN0)**</td><td>**No invasive cancer in breast AND nodes** (DCIS allowed)</td></tr><tr><td>**RCB (Residual Cancer Burden)**</td><td>**RCB-0 = pCR**; RCB-I/II/III = Residual disease</td></tr></table>
+<div class="sub-h">Prognostic Value by Subtype</div>
+<table class="ctable"><tr><th>Subtype</th><th>pCR Rate</th><th>Prognostic Value if pCR</th></tr><tr><td>---------</td><td>----------</td><td>------------------------</td></tr><tr><td>**TNBC**</td><td>**40-65%**</td><td>**Excellent** (DFS >90%)</td></tr><tr><td>**HER2+ (Non-pCR)**</td><td>**30-60%**</td><td>**Excellent** (DFS >90%)</td></tr><tr><td>**HER2+ (Non-pCR)**</td><td>—</td><td>**Poorer** (Needs T-DM1)</td></tr><tr><td>**HR+/HER2-**</td><td>**10-20%**</td><td>**Good but less predictive**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Surgery Post-Neoadjuvant</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Breast Surgery</div>
+<table class="ctable"><tr><th>Pre-NAC Stage</th><th>Post-NAC Response</th><th>Surgery</th></tr><tr><td>---------------</td><td>-------------------</td><td>---------</td></tr><tr><td>**cT1-2, cN0**</td><td>**Downstaged to ≤2cm, cN0**</td><td>**BCS + SLNB** (if feasible)</td></tr><tr><td>**cT2-3, cN0**</td><td>**Downstaged, N0**</td><td>**BCS + SLNB** (if margins clear)</td></tr><tr><td>**cT3-4, cN0**</td><td>**Significant response**</td><td>**BCS** (if margins/breast ratio ok)</td></tr><tr><td>**Any cN+**</td><td>**cN+ → ypN0**</td><td>**Mastectomy + ALND** (or TAD if ypN0)</td></tr></table>
+<div class="sub-h">Axilla Post-Neoadjuvant</div>
+<table class="ctable"><tr><th>Pre-NAC</th><th>Post-NAC</th><th>Surgery</th></tr><tr><td>---------</td><td>----------</td><td>---------</td></tr><tr><td>**cN0**</td><td>**ycN0**</td><td>**SLNB** (Standard)</td></tr><tr><td>**cN1**</td><td>**ypN0**</td><td>**TAD (Preferred) OR SLNB** (SENTINA, ACOSOG Z1071)</td></tr><tr><td>**cN1-2**</td><td>**ypN+**</td><td>**ALND**</td></tr></table>
+<div class="callout"><b>TAD (Targeted Axillary Dissection)</b>: Clip placed in positive node pre-NAC → SLNB + clip retrieval → <b>If clip+SLN negative → No ALND</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Adjuvant Therapy Post-Neoadjuvant</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">HER2+ Disease</div>
+<table class="ctable"><tr><th>Response</th><th>Adjuvant Therapy</th><th>Trial</th></tr><tr><td>----------</td><td>------------------</td><td>-------</td></tr><tr><td>**pCR (ypT0/is ypN0)**</td><td>**Continue Trastuzumab ± Pertuzumab to complete 1yr**</td><td>**KRISTINE, APHINITY**</td></tr><tr><td>**Residual Disease (ypT/ypN+)**</td><td>**T-DM1 (Kadcyla) ×14 cycles**</td><td>**KATHERINE: DFS HR 0.50**</td></tr><tr><td>**Residual + Pertuzumab-naive**</td><td>**Trastuzumab + Pertuzumab**</td><td>APHINITY subset</td></tr></table>
+<div class="sub-h">TNBC</div>
+<table class="ctable"><tr><th>Response</th><th>Adjuvant Therapy</th><th>Trial</th></tr><tr><td>----------</td><td>------------------</td><td>-------</td></tr><tr><td>**pCR**</td><td>**Observation** (No further chemo)</td><td>**KEYNOTE-522, CREATE-X**</td></tr><tr><td>**Residual Disease**</td><td>**Capecitabine 6-8 cycles** (1250mg/m² bid d1-14 q3w)</td><td>**CREATE-X: DFS HR 0.70**</td></tr><tr><td>**Residual + BRCA1/2 mutation**</td><td>**Olaparib 1yr**</td><td>**OlympiA: DFS HR 0.58**</td></tr></table>
+<div class="sub-h">HR+/HER2-</div>
+<table class="ctable"><tr><th>Response</th><th>Adjuvant Therapy</th></tr><tr><td>----------</td><td>------------------</td></tr><tr><td>**Any**</td><td>**Continue Endocrine Therapy** (AI/Tamoxifen ± OFS per menopausal status)</td></tr><tr><td>**High Risk (Residual, Node+)**</td><td>**Consider Chemo** (if not given neoadjuvant)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Radiotherapy Post-Neoadjuvant</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Surgery</th><th>RT Indication</th></tr><tr><td>---------</td><td>---------------</td></tr><tr><td>**BCS**</td><td>**Always** (Whole breast ± boost)</td></tr><tr><td>**Mastectomy**</td><td>**Pre-NAC T3/T4 or N+** → **Chest wall + Regional Nodes**</td></tr><tr><td>**Post-NAC ypN+**</td><td>**Chest wall + Regional Nodes (Supraclav/IMN)**</td></tr><tr><td>**Post-NAC ypN0 but pre-NAC N+**</td><td>**Consider RT to Regional Nodes** (NSABP B-18/NSABP B-27)</td></tr><tr><td>**Inflammatory**</td><td>**Mastectomy + Chest Wall + Regional Nodes RT**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>RT fields based on PRE-NAC stage</b> (Not post-NAC pathological stage)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Inflammatory Breast Cancer (IBC)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**T4d**: Rapid onset (<6mo), peau d'orange >1/3, erythema, warmth, ridging, dermal lymphatic invasion</td></tr><tr><td>**Stage**</td><td>**Stage IIIB (T4d N0-2) or IIIC (N3)**</td></tr><tr><td>**Biology**</td><td>**Aggressive**, High grade, Often HER2+/TNBC, Young age</td></tr><tr><td>**Standard Approach**</td><td>**Neoadjuvant Chemo → Modified Radical Mastectomy → Chest Wall + Regional Nodal RT**</td></tr><tr><td>**Neoadjuvant Regimen**</td><td>**Anthracycline/Taxane** (Dose-Dense) ± **Pembrolizumab (TNBC)** / **Trastuzumab±Pertuzumab (HER2+)**</td></tr><tr><td>**Surgery**</td><td>**Modified Radical Mastectomy** (BCS contraindicated)</td></tr><tr><td>**RT**</td><td>**Chest Wall + Supraclavicular + IMN** (50-60Gy)</td></tr><tr><td>**Prognosis**</td><td>**5-yr OS ~40-50%** (Improved with multimodal)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Locoregional Recurrence (LRR)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Isolated Chest Wall**</td><td>**Surgery (Wide Excision) + RT** (if not previously irradiated)</td></tr><tr><td>**Isolated Nodal (Axilla/SCF/IMN)**</td><td>**Surgery (Lymphadenectomy) + RT** (if not previously irradiated)</td></tr><tr><td>**Combined Chest Wall + Nodal**</td><td>**Surgery + RT** (if not previously irradiated)</td></tr><tr><td>**Previously Irradiated**</td><td>**Surgery ± Re-RT (Re-irradiation)** / **Systemic Therapy**</td></tr><tr><td>**Distant Mets + LRR**</td><td>**Systemic Therapy** (Local therapy palliative)</td></tr><tr><td>**Systemic Therapy**</td><td>**Based on receptor status** (Endocrine, Chemo, HER2, TNBC protocols)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Definition**</td><td>**Stage IIIA-IIIC (T3/T4, N2-3, T4d Inflammatory)**</td></tr><tr><td>**Neoadjuvant Standard**</td><td>**Anthracycline/Taxane**; **HER2+: Trastuzumab±Pertuzumab**; **TNBC: Carboplatin ± Pembrolizumab**</td></tr><tr><td>**pCR Definition**</td><td>**ypT0/is ypN0** (DCIS allowed); **Strongest prognostic in TNBC/HER2+**</td></tr><tr><td>**Surgery Post-NAC**</td><td>**BCS if downstaged/resectable**; **Mastectomy + ALND if cN+ or bulky**</td></tr><tr><td>**Axilla Post-NAC**</td><td>**cN0 → SLNB**; **cN+ ypN0 → TAD/SLNB**; **cN+ ypN+ → ALND**</td></tr><tr><td>**HER2+ Residual**</td><td>**T-DM1 ×14 cycles (KATHERINE)**</td></tr><tr><td>**TNBC Residual**</td><td>**Capecitabine (CREATE-X)**; **BRCA+ → Olaparib (OlympiA)**</td></tr><tr><td>**Inflammatory**</td><td>**Neoadj Chemo → Mastectomy + RT (No BCS)**</td></tr><tr><td>**RT Post-NAC**</td><td>**Based on PRE-NAC stage** (T3/T4/N+ → Chest Wall + Regional Nodes)</td></tr><tr><td>**Locoregional Recurrence**</td><td>**Surgery + RT (If not previously irradiated)** + Systemic therapy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Locally Advanced Breast Cancer — Definition?**</td><td>**Stage IIIA-IIIC (T3/T4, N2-3, Inflammatory T4d), M0**.</td></tr><tr><td>**Neoadjuvant Chemo — Preferred Regimen for HER2+?**</td><td>**TCHP (Docetaxel + Carboplatin + Trastuzumab + Pertuzumab)** or **THP**.</td></tr><tr><td>**pCR Definition?**</td><td>**ypT0/is ypN0** (No invasive cancer in breast or nodes; DCIS allowed).</td></tr><tr><td>**pCR Prognostic Value — Which Subtype?**</td><td>**Highest in TNBC (40-65% pCR) and HER2+ (30-60% pCR)**; **Lowest in Luminal (10-20%)**.</td></tr><tr><td>**cN+ Post-NAC ypN0 — Axillary Surgery?**</td><td>**TAD (Targeted Axillary Dissection) preferred** OR **SLNB**; **If TAD+ → ALND**.</td></tr><tr><td>**HER2+ Residual Disease Post-NAC — Adjuvant?**</td><td>**T-DM1 (Kadcyla) ×14 cycles** (KATHERINE: DFS HR 0.50).</td></tr><tr><td>**TNBC Residual Disease Post-NAC — Adjuvant?**</td><td>**Capecitabine 6-8 cycles** (CREATE-X: DFS HR 0.70); **BRCA+ → Olaparib 1yr (OlympiA)**.</td></tr><tr><td>**Inflammatory Breast Cancer — T4d Definition?**</td><td>**Rapid onset, peau d'orange >1/3 breast, erythema, warmth, dermal lymphatic invasion**.</td></tr><tr><td>**Inflammatory Breast Cancer — Treatment Sequence?**</td><td>**Neoadj Chemo → Mastectomy → Chest Wall + Regional RT (No BCS)**.</td></tr><tr><td>**Locoregional Recurrence — Management if Previously Radiated?**</td><td>**Surgery ± Re-RT / Systemic Therapy** (Palliative intent if distant mets).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**pCR vs RCB-0**</td><td>**Synonymous**; **pCR = RCB-0** (No invasive cancer breast/nodes)</td></tr><tr><td>**cN+ vs ycN+**</td><td>**cN+**: Clinical node positive pre-NAC; **ycN+**: Pathological node positive post-NAC</td></tr><tr><td>**TAD vs SLNB**</td><td>**TAD**: Clip placed pre-NAC in positive node → Retrieve clip + SLNB post-NAC; **Higher accuracy than SLNB alone**</td></tr><tr><td>**pCR in Luminal**</td><td>**Low rate (10-20%)**, **Not as prognostically discriminatory** as in TNBC/HER2+</td></tr><tr><td>**Post-Mastectomy RT in Inflammatory**</td><td>**Mandatory: Chest wall + Supraclavicular + IMN (50-60Gy)**; **No BCS**</td></tr><tr><td>**Locoregional Recurrence Post-RT**</td><td>**Surgery ± Re-RT**; **If distant mets → Systemic therapy only**</td></tr></table>
+<p><b>Mnemonic: LADC-LOCAL-ADV</b></p>
+<ul><li><b>L</b>ocally Advanced: <b>Stage IIIA-IIIC, T4d Inflammatory</b></li><li><b>A</b>djuvant Neoadj: <b>Anthracycline/Taxane</b> backbone</li><li><b>D</b>ownstaging: <b>pCR = ypT0/is ypN0</b> (Best in TNBC/HER2+)</li><li><b>C</b>hemo HER2+: <b>TCHP (Doc+Cis+Tras+Per)</b> or <b>THP</b></li><li><b>L</b>ymph Nodes Post-NAC: <b>cN0→SLNB; cN+ ypN0→TAD; cN+ ypN+→ALND</b></li><li><b>O</b>utcome pCR: <b>TNBC/HER2+ Excellent</b>; <b>Luminal Low pCR rate</b></li><li><b>A</b>djuvant Post-NAC: <b>HER2+ Residual→T-DM1; TNBC Residual→Capecitabine/Olaparib</b></li><li><b>L</b>ymph Node RT: <b>PRE-NAC Stage Based</b> (N+ → Chest Wall + Regional)</li><li><b>I</b>nflammatory: <b>Neoadj Chemo → Mastectomy (No BCS) → RT Chest Wall + SCF + IMN</b></li><li><b>C</b>locoregional Recurrence: <b>Surgery + RT (If not previously irradiated)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Locally Advanced Breast Cancer)) Definition Stage IIIA-IIIC (T3/T4, N2-3, T4d) Inflammatory (T4d) Neoadjuvant HR+/HER2-: Anthracycline/Taxane HER2+: TCHP / THP (Trastuzumab ± Pertuzumab) TNBC: Carbo+Taxane ± Pembro pCR ypT0/is ypN0 TNBC/HER2+: High pCR, Excellent Prognosis Luminal: Low pCR Surgery BCS if downstaged/resectable Mastectomy + ALND if cN+ Adjuvant Post-NAC HER2+ pCR: Continue Tras±Per HER2+ Residual: T-DM1 (KATHERINE) TNBC Residual: Capecitabine (CREATE-X) / Olaparib (OlympiA) Inflammatory (T4d) Neoadj Chemo → Mastectomy → RT (No BCS) RT Post-NAC Based on PRE-NAC Stage (T3/T4/N+ → Chest Wall + Regional) Locoregional Recurrence Surgery + RT (if not previously irradiated) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Definition**</td><td>Stage III (T3/T4, N2-3, T4d)</td></tr><tr><td>**Neoadjuvant**</td><td>Anthracycline/Taxane backbone; HER2+: TCHP/THP; TNBC: Carbo+Taxane±Pembro</td></tr><tr><td>**pCR**</td><td>ypT0/is ypN0; Best in TNBC/HER2+</td></tr><tr><td>**Surgery**</td><td>BCS if downstaged; Mastectomy+ALND if cN+</td></tr><tr><td>**Axilla Post-NAC**</td><td>cN0→SLNB; cN+ypN0→TAD; cN+ypN+→ALND</td></tr><tr><td>**HER2+ Residual**</td><td>T-DM1 ×14 (KATHERINE)</td></tr><tr><td>**TNBC Residual**</td><td>Capecitabine (CREATE-X); BRCA+ → Olaparib (OlympiA)</td></tr><tr><td>**Inflammatory**</td><td>Neoadj Chemo → Mastectomy → RT (No BCS)</td></tr><tr><td>**RT**</td><td>PRE-NAC stage based; Chest Wall + Regional if T3/T4/N+</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Definition & Staging</td><td></td><td></td></tr><tr><td>Neoadjuvant Regimens</td><td></td><td></td></tr><tr><td>pCR Definition/Prognosis</td><td></td><td></td></tr><tr><td>Post-NAC Surgery/Axilla</td><td></td><td></td></tr><tr><td>Adjuvant Post-NAC</td><td></td><td></td></tr><tr><td>Inflammatory Breast Cancer</td><td></td><td></td></tr><tr><td>RT Indications</td><td></td><td></td></tr><tr><td>Locoregional Recurrence</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC["]: [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Early Breast Cancer]], [[Neoadjuvant Chemo Breast]], [[Inflammatory Breast Cancer]], [[pCR]], [[T-DM1]], [[Capecitabine]], [[Olaparib]], [[Radiotherapy Breast]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Locally Advanced Breast Cancer (Definition), which statement is correct? A. <b>Stage IIIA-IIIC (T3/T4, N2-3, T4d Inflammatory)</b> B. **Stage - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Stage IIIA-IIIC (T3/T4, N2-3, T4d Inflammatory)</b></li></ul>
+<p><b>2.</b> Regarding Locally Advanced Breast Cancer (Neoadjuvant Standard), which statement is correct? A. <b>Anthracycline/Taxane</b> B. <b>Anthracycline/Taxane</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Anthracycline/Taxane</b>; <b>HER2+: Trastuzumab±Pertuzumab</b>; <b>TNBC: Carboplatin ± Pembrolizumab</b></li></ul>
+<p><b>3.</b> Regarding Locally Advanced Breast Cancer (pCR Definition), which statement is correct? A. <b>ypT0/is ypN0</b> (DCIS allowed) B. **ypT0/is - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ypT0/is ypN0</b> (DCIS allowed); <b>Strongest prognostic in TNBC/HER2+</b></li></ul>
+<p><b>4.</b> Regarding Locally Advanced Breast Cancer (Surgery Post-NAC), which statement is correct? A. <b>BCS if downstaged/resectable</b> B. **BCS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BCS if downstaged/resectable</b>; <b>Mastectomy + ALND if cN+ or bulky</b></li></ul>
+<p><b>5.</b> Regarding Locally Advanced Breast Cancer (Axilla Post-NAC), which statement is correct? A. <b>cN0 → SLNB</b> B. **cN0 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>cN0 → SLNB</b>; <b>cN+ ypN0 → TAD/SLNB</b>; <b>cN+ ypN+ → ALND</b></li></ul>
+<p><b>6.</b> Regarding Locally Advanced Breast Cancer (HER2+ Residual), which statement is correct? A. <b>T-DM1 ×14 cycles (KATHERINE)</b> B. **T-DM1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>T-DM1 ×14 cycles (KATHERINE)</b></li></ul>
+<p><b>7.</b> Regarding Locally Advanced Breast Cancer (TNBC Residual), which statement is correct? A. <b>Capecitabine (CREATE-X)</b> B. **Capecitabine - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Capecitabine (CREATE-X)</b>; <b>BRCA+ → Olaparib (OlympiA)</b></li></ul>
+<p><b>8.</b> Regarding Locally Advanced Breast Cancer (Inflammatory), which statement is correct? A. <b>Neoadj Chemo → Mastectomy + RT (No BCS)</b> B. **Neoadj - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Neoadj Chemo → Mastectomy + RT (No BCS)</b></li></ul>
+<p><b>9.</b> Regarding Locally Advanced Breast Cancer (RT Post-NAC), which statement is correct? A. <b>Based on PRE-NAC stage</b> (T3/T4/N+ → Chest Wall + Regional Nodes) B. **Based - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Based on PRE-NAC stage</b> (T3/T4/N+ → Chest Wall + Regional Nodes)</li></ul>
+<p><b>10.</b> Regarding Locally Advanced Breast Cancer (Locoregional Recurrence), which statement is correct? A. <b>Surgery + RT (If not previously irradiated)</b> + Systemic therapy B. **Surgery - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Surgery + RT (If not previously irradiated)</b> + Systemic therapy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Stage IIIA-IIIC (T3/T4, N2-3, T4d Inflammatory)</b></li><li>B. **Stage (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Stage IIIA-IIIC (T3/T4, N2-3, T4d Inflammatory)</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Anthracycline/Taxane</b></li><li>B. <b>Anthracycline/Taxane</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Anthracycline/Taxane</b>; <b>HER2+: Trastuzumab±Pertuzumab</b>; <b>TNBC: Carboplatin ± Pembrolizumab</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>ypT0/is ypN0</b> (DCIS allowed)</li><li>B. **ypT0/is (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>ypT0/is ypN0</b> (DCIS allowed); <b>Strongest prognostic in TNBC/HER2+</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>BCS if downstaged/resectable</b></li><li>B. **BCS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>BCS if downstaged/resectable</b>; <b>Mastectomy + ALND if cN+ or bulky</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>cN0 → SLNB</b></li><li>B. **cN0 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>cN0 → SLNB</b>; <b>cN+ ypN0 → TAD/SLNB</b>; <b>cN+ ypN+ → ALND</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>T-DM1 ×14 cycles (KATHERINE)</b></li><li>B. **T-DM1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>T-DM1 ×14 cycles (KATHERINE)</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Capecitabine (CREATE-X)</b></li><li>B. **Capecitabine (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Capecitabine (CREATE-X)</b>; <b>BRCA+ → Olaparib (OlympiA)</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Neoadj Chemo → Mastectomy + RT (No BCS)</b></li><li>B. **Neoadj (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Neoadj Chemo → Mastectomy + RT (No BCS)</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Based on PRE-NAC stage</b> (T3/T4/N+ → Chest Wall + Regional Nodes)</li><li>B. **Based (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Based on PRE-NAC stage</b> (T3/T4/N+ → Chest Wall + Regional Nodes)</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Surgery + RT (If not previously irradiated)</b> + Systemic therapy</li><li>B. **Surgery (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Surgery + RT (If not previously irradiated)</b> + Systemic therapy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Definition? <b>A1:</b> Stage IIIA-IIIC (T3/T4, N2-3, T4d Inflammatory)</p>
+<p><b>Q2:</b> Neoadjuvant Standard? <b>A2:</b> Anthracycline/Taxane; HER2+: Trastuzumab±Pertuzumab; TNBC: Carboplatin ± Pembrolizumab</p>
+<p><b>Q3:</b> pCR Definition? <b>A3:</b> ypT0/is ypN0 (DCIS allowed); Strongest prognostic in TNBC/HER2+</p>
+<p><b>Q4:</b> Surgery Post-NAC? <b>A4:</b> BCS if downstaged/resectable; Mastectomy + ALND if cN+ or bulky</p>
+<p><b>Q5:</b> Axilla Post-NAC? <b>A5:</b> cN0 → SLNB; cN+ ypN0 → TAD/SLNB; cN+ ypN+ → ALND</p>
+<p><b>Q6:</b> HER2+ Residual? <b>A6:</b> T-DM1 ×14 cycles (KATHERINE)</p>
+<p><b>Q7:</b> TNBC Residual? <b>A7:</b> Capecitabine (CREATE-X); BRCA+ → Olaparib (OlympiA)</p>
+<p><b>Q8:</b> Inflammatory? <b>A8:</b> Neoadj Chemo → Mastectomy + RT (No BCS)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Definition</td><td>Stage IIIA-IIIC (T3/T4, N2-3, T4d Inflammatory)</td></tr><tr><td>2</td><td>A</td><td>Neoadjuvant Standard</td><td>Anthracycline/Taxane; HER2+: Trastuzumab±Pertuzumab; TNBC: Carboplatin ± Pembrolizumab</td></tr><tr><td>3</td><td>A</td><td>pCR Definition</td><td>ypT0/is ypN0 (DCIS allowed); Strongest prognostic in TNBC/HER2+</td></tr><tr><td>4</td><td>A</td><td>Surgery Post-NAC</td><td>BCS if downstaged/resectable; Mastectomy + ALND if cN+ or bulky</td></tr><tr><td>5</td><td>A</td><td>Axilla Post-NAC</td><td>cN0 → SLNB; cN+ ypN0 → TAD/SLNB; cN+ ypN+ → ALND</td></tr><tr><td>6</td><td>A</td><td>HER2+ Residual</td><td>T-DM1 ×14 cycles (KATHERINE)</td></tr><tr><td>7</td><td>A</td><td>TNBC Residual</td><td>Capecitabine (CREATE-X); BRCA+ → Olaparib (OlympiA)</td></tr><tr><td>8</td><td>A</td><td>Inflammatory</td><td>Neoadj Chemo → Mastectomy + RT (No BCS)</td></tr><tr><td>9</td><td>A</td><td>RT Post-NAC</td><td>Based on PRE-NAC stage (T3/T4/N+ → Chest Wall + Regional Nodes)</td></tr><tr><td>10</td><td>A</td><td>Locoregional Recurrence</td><td>Surgery + RT (If not previously irradiated) + Systemic therapy</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Definition</td><td>Stage IIIA-IIIC (T3/T4, N2-3, T4d Inflammatory)</td></tr><tr><td>2</td><td>A</td><td>Neoadjuvant Standard</td><td>Anthracycline/Taxane; HER2+: Trastuzumab±Pertuzumab; TNBC: Carboplatin ± Pembrolizumab</td></tr><tr><td>3</td><td>A</td><td>pCR Definition</td><td>ypT0/is ypN0 (DCIS allowed); Strongest prognostic in TNBC/HER2+</td></tr><tr><td>4</td><td>A</td><td>Surgery Post-NAC</td><td>BCS if downstaged/resectable; Mastectomy + ALND if cN+ or bulky</td></tr><tr><td>5</td><td>A</td><td>Axilla Post-NAC</td><td>cN0 → SLNB; cN+ ypN0 → TAD/SLNB; cN+ ypN+ → ALND</td></tr><tr><td>6</td><td>A</td><td>HER2+ Residual</td><td>T-DM1 ×14 cycles (KATHERINE)</td></tr><tr><td>7</td><td>A</td><td>TNBC Residual</td><td>Capecitabine (CREATE-X); BRCA+ → Olaparib (OlympiA)</td></tr><tr><td>8</td><td>A</td><td>Inflammatory</td><td>Neoadj Chemo → Mastectomy + RT (No BCS)</td></tr><tr><td>9</td><td>A</td><td>RT Post-NAC</td><td>Based on PRE-NAC stage (T3/T4/N+ → Chest Wall + Regional Nodes)</td></tr><tr><td>10</td><td>A</td><td>Locoregional Recurrence</td><td>Surgery + RT (If not previously irradiated) + Systemic therapy</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer of the Breast|Cancer of the Breast]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Locally Advanced Breast Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

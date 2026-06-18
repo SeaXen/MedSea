@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type A Augmented — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Type A Augmented</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define Type A ADR: dose-dependent, predictable from pharmacology</li><li>[ ] Distinguish Type A vs Type B (idiosyncratic) — classic exam differentiation</li><li>[ ] List major mechanisms: excessive therapeutic effect, unwanted pharmacological effect, secondary pharmacological effect</li><li>[ ] Identify high-risk drugs with narrow therapeutic index (NTI)</li><li>[ ] Apply monitoring strategies to prevent Type A ADRs</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Definition & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**Type A (Augmented)**</th><th>**Type B (Bizarre)**</th></tr><tr><td>---------</td><td>------------------------</td><td>----------------------</td></tr><tr><td>**Mechanism**</td><td>Exaggerated pharmacological effect</td><td>Idiosyncratic, non-pharmacological</td></tr><tr><td>**Dose-dependence**</td><td>**Yes** — ↑ dose = ↑ risk</td><td>No — unpredictable</td></tr><tr><td>**Predictability**</td><td>**Predictable** from known pharmacology</td><td>Unpredictable</td></tr><tr><td>**Incidence**</td><td>**Common** (high)</td><td>Rare</td></tr><tr><td>**Mortality**</td><td>Low (usually reversible)</td><td>High (unpredictable severity)</td></tr><tr><td>**Examples**</td><td>Warfarin bleed, insulin hypoglycaemia</td><td>Anaphylaxis, SJS/TEN, DRESS</td></tr><tr><td>**Management**</td><td>Dose reduction, monitoring, antagonist</td><td>**Drug withdrawal**, avoid rechallenge</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🧬 Mechanisms of Type A ADRs</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Excessive Therapeutic Effect (On-target, excessive)</div>
+<table class="ctable"><tr><th>Drug</th><th>Therapeutic Effect</th><th>Type A ADR (Excessive)</th></tr><tr><td>------</td><td>-------------------</td><td>------------------------</td></tr><tr><td>Warfarin</td><td>Anticoagulation</td><td>**Haemorrhage** (INR >4)</td></tr><tr><td>Insulin / Sulfonylureas</td><td>↓ Blood glucose</td><td>**Hypoglycaemia**</td></tr><tr><td>Antihypertensives</td><td>↓ BP</td><td>**Symptomatic hypotension, falls**</td></tr><tr><td>Diuretics</td><td>Natriuresis</td><td>**Hyponatraemia, hypokalaemia, dehydration**</td></tr><tr><td>Beta-blockers</td><td>↓ HR, ↓ contractility</td><td>**Bradycardia, heart block, HF exacerbation**</td></tr><tr><td>Opioids</td><td>Analgesia</td><td>**Respiratory depression, sedation**</td></tr><tr><td>Digoxin</td><td>↑ Contractility</td><td>**Toxicity: nausea, arrhythmias, visual changes**</td></tr></table>
+<div class="sub-h">2. Unwanted Pharmacological Effect (Off-target, predictable)</div>
+<table class="ctable"><tr><th>Drug</th><th>Primary Target</th><th>Unwanted Effect (Off-target)</th></tr><tr><td>------</td><td>----------------</td><td>------------------------------</td></tr><tr><td>**NSAIDs**</td><td>COX-2 (inflammation)</td><td>**COX-1 → Gastric ulcer, renal vasoconstriction, platelet inhibition**</td></tr><tr><td>**Tricyclics (Amitriptyline)**</td><td>NA/5-HT reuptake</td><td>**Anticholinergic: dry mouth, constipation, urinary retention, confusion**</td></tr><tr><td>**First-gen antihistamines**</td><td>H1 receptor</td><td>**CNS H1 → Sedation; Anticholinergic; Alpha-1 → Hypotension**</td></tr><tr><td>**Beta-agonists (Salbutamol)**</td><td>Beta-2 (bronchodilation)</td><td>**Beta-1 → Tachycardia; Beta-2 → Tremor, Hypokalaemia**</td></tr><tr><td>**ACE inhibitors**</td><td>ACE → ↓ Ang II</td><td>**Bradykinin accumulation → Dry cough, Angioedema**</td></tr><tr><td>**Calcium channel blockers**</td><td>Vascular smooth muscle</td><td>**Reflex tachycardia (dihydropyridines); Constipation; Ankle oedema**</td></tr></table>
+<div class="sub-h">3. Secondary Pharmacological Effect (Downstream consequence)</div>
+<table class="ctable"><tr><th>Drug</th><th>Primary Effect</th><th>Secondary Effect → ADR</th></tr><tr><td>------</td><td>----------------</td><td>------------------------</td></tr><tr><td>**Corticosteroids**</td><td>Anti-inflammatory</td><td>**Hyperglycaemia, osteoporosis, adrenal suppression, Cushing's**</td></tr><tr><td>**Diuretics (Loop/Thiazide)**</td><td>Natriuresis</td><td>**Hypokalaemia → Arrhythmias, Digoxin toxicity; Hyponatraemia; Gout**</td></tr><tr><td>**Antibiotics (Broad-spectrum)**</td><td>Bactericidal</td><td>**C. difficile colitis; Resistance; Superinfection (Candida)**</td></tr><tr><td>**Bisphosphonates**</td><td>Osteoclast inhibition</td><td>**Oesophagitis; Atypical femoral fracture; ONJ**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">⚠️ High-Risk Drugs for Type A ADRs (Narrow Therapeutic Index)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Monitoring Parameter</th><th>Target Range</th><th>ADR if Exceeded</th></tr><tr><td>------</td><td>---------------------</td><td>--------------</td><td>-----------------</td></tr><tr><td>**Warfarin**</td><td>INR</td><td>2.0–3.0 (most) / 2.5–3.5 (mechanical mitral)</td><td>**Major haemorrhage**</td></tr><tr><td>**Digoxin**</td><td>Serum level</td><td>0.5–0.9 ng/mL (HF) / 0.8–2.0 (AF)</td><td>**Nausea, arrhythmias, visual (yellow halos)**</td></tr><tr><td>**Lithium**</td><td>Serum level</td><td>0.6–1.0 mmol/L (maintenance)</td><td>**Tremor, NDI, renal, neurotoxicity (>1.5)**</td></tr><tr><td>**Phenytoin**</td><td>Total level</td><td>10–20 µg/mL (free 1–2)</td><td>**Nystagmus, ataxia, gingival hyperplasia**</td></tr><tr><td>**Gentamicin**</td><td>Trough (extended interval)</td><td><1 mg/L (Hartford)</td><td>**Nephrotoxicity, Ototoxicity**</td></tr><tr><td>**Vancomycin**</td><td>AUC₀₋₂₄/MIC</td><td>400–600</td><td>**Nephrotoxicity, Ototoxicity**</td></tr><tr><td>**Theophylline**</td><td>Serum level</td><td>10–20 mg/L</td><td>**Seizures, arrhythmias, nausea**</td></tr><tr><td>**Ciclosporin / Tacrolimus**</td><td>Trough (C0)</td><td>Drug/indication specific</td><td>**Nephrotoxicity, HTN, neurotox, hyperK**</td></tr><tr><td>**Methotrexate (high-dose)**</td><td>Serum level (24h, 48h)</td><td><1 µmol/L (24h)</td><td>**Myelosuppression, mucositis, hepatotoxicity**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🛡️ Prevention Strategies (Exam Essentials)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Strategy</th><th>Application</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**Start low, go slow**</td><td>Elderly, renal/hepatic impairment, polypharmacy</td></tr><tr><td>**Therapeutic Drug Monitoring (TDM)**</td><td>NTI drugs: warfarin, digoxin, lithium, phenytoin, aminoglycosides, vancomycin, immunosuppressants</td></tr><tr><td>**Renal dose adjustment**</td><td>Cockcroft-Gault CrCl for: DOACs, metformin, aminoglycosides, gabapentin, allopurinol, antibiotics</td></tr><tr><td>**Hepatic dose adjustment**</td><td>Child-Pugh for: warfarin, phenytoin, theophylline, morphine, statins</td></tr><tr><td>**Drug interaction screening**</td><td>CYP450, P-gp, renal transporters — esp. initiators/inhibitors</td></tr><tr><td>**Patient education**</td><td>Hypoglycaemia symptoms, INR monitoring, fall risk, adrenal insufficiency (steroids)</td></tr><tr><td>**Deprescribing**</td><td>Review indication, time-to-benefit, ACB, DBI — STOPP/START</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Type A ADR</th><th>Mechanism</th></tr><tr><td>----------</td><td>------------</td><td>-----------</td></tr><tr><td>Warfarin + antibiotics → INR 8, haematuria</td><td>**Haemorrhage**</td><td>Excessive therapeutic effect (↑ anticoagulation)</td></tr><tr><td>Elderly on furosemide 80mg → falls, confusion, Na⁺ 125</td><td>**Hyponatraemia**</td><td>Unwanted effect (impaired water excretion)</td></tr><tr><td>Amitriptyline 50mg → dry mouth, constipation, urinary retention</td><td>**Anticholinergic syndrome**</td><td>Off-target (muscarinic blockade)</td></tr><tr><td>Salbutamol neb → tremor, tachycardia, K⁺ 2.8</td><td>**Beta-2 stimulation**</td><td>Off-target (beta-1/2)</td></tr><tr><td>ACEi → persistent dry cough</td><td>**Bradykinin accumulation**</td><td>Secondary pharmacological effect</td></tr><tr><td>Prednisolone 30mg long-term → hyperglycaemia, osteoporosis</td><td>**Metabolic, bone**</td><td>Secondary pharmacological effect</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (8)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Define Type A ADR. Give 3 examples.</td><td>Dose-dependent, predictable from pharmacology. Examples: warfarin bleed, insulin hypoglycaemia, NSAID gastric ulcer</td></tr><tr><td>2. How does Type A differ from Type B?</td><td>Type A: dose-dependent, predictable, common, low mortality. Type B: idiosyncratic, unpredictable, rare, high mortality</td></tr><tr><td>3. Patient on warfarin, INR 6.5, no bleeding. Management?</td><td>**Omit 1–2 doses; vitamin K 1–2mg PO if INR >8 or risk factors; restart at lower dose when INR therapeutic**</td></tr><tr><td>4. Elderly patient on amitriptyline develops confusion, dry mouth, constipation. ADR type? Mechanism?</td><td>**Type A** — anticholinergic (off-target muscarinic blockade)</td></tr><tr><td>5. Why are NSAIDs high-risk for Type A ADRs in elderly?</td><td>COX-1 inhibition → ↓ gastric PG → ulcer; ↓ renal PG → AKI; antiplatelet → bleed; ↑ CV risk</td></tr><tr><td>6. What monitoring prevents Type A ADRs with digoxin?</td><td>**Serum level (0.5–0.9 ng/mL), K⁺, Mg²⁺, renal function, ECG** — hypokalaemia ↑ toxicity</td></tr><tr><td>7. Patient on ACEi develops angioedema. Mechanism? Management?</td><td>**Bradykinin accumulation** (ACE degrades bradykinin). **Stop ACEi; avoid ARB (30% cross-reactivity); use alternative**</td></tr><tr><td>8. How does "Start low, go slow" prevent Type A ADRs?</td><td>Allows homeostatic adaptation; identifies susceptibility; reduces peak concentrations; crucial in elderly/renal/hepatic impairment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Type A vs B dose-dependence**</td><td>Type A = **dose-dependent**; Type B = **dose-independent** (but may need minimum dose to trigger)</td></tr><tr><td>**Type A = always mild?**</td><td>No — warfarin bleed, digoxin toxicity, insulin hypoglycaemia can be **fatal**</td></tr><tr><td>**On-target vs off-target**</td><td>On-target = excessive therapeutic (warfarin bleed); Off-target = unwanted pharmacology (amitriptyline anticholinergic)</td></tr><tr><td>**Secondary effect = Type C?**</td><td>No — secondary pharmacological effect is still **Type A** (predictable cascade). Type C = **chronic** (time-dependent, e.g., steroid osteoporosis)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"A = Augmented = Dose-Dependent = Predictable"</b> — A for <b>Augmented</b>, <b>Anticipated</b>, <b>A lot</b> (common)</li><li><b>"Dose makes the poison"</b> — Type A</li><li><b>"B = Bizarre = Idiosyncratic"</b> — Type B</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Type A ADR)) Characteristics Dose-dependent Predictable Common Low mortality (usually) Mechanisms Excessive therapeutic effect Warfarin bleed Insulin hypo Digoxin toxicity Unwanted pharmacological effect NSAID COX-1 GI/renal TCA anticholinergic ACEi bradykinin cough Beta-agonist tremor/hypoK Secondary pharmacological effect Steroid metabolic/bone Diuretic electrolyte Abx C.diff/superinfection High-Risk NTI Drugs Warfarin (INR) Digoxin (level, K, Mg) Lithium (level, renal) Phenytoin (level, free) Aminoglycosides (trough) Vancomycin (AUC) Immunosuppressants (trough) Prevention Start low, go slow TDM Renal/hepatic adjust Interaction screen Deprescribing </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Definition & comparison Type A vs B</td><td>6</td><td></td></tr><tr><td>Mechanisms (3 categories + examples)</td><td>12</td><td></td></tr><tr><td>NTI drugs & monitoring</td><td>10</td><td></td></tr><tr><td>Prevention strategies</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>8</td><td></td></tr><tr><td>**Total**</td><td>**42**</td><td></td></tr></table>
+<p><b>Target</b>: ≥34/42 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Classify ADRs with examples. Discuss Type A ADRs in detail."*</div>
+<ol><li><b>Classification</b> (2): Rawlins/Thompson → Type A (Augmented), Type B (Bizarre), Type C (Chronic), D (Delayed), E (End of use), F (Failure) — or DoTS</li><li><b>Type A Definition</b> (2): Dose-dependent, predictable, common, low mortality</li><li><b>Three Mechanisms</b> (3): Excessive therapeutic, Unwanted pharmacological, Secondary pharmacological — with 2 examples each</li><li><b>High-risk NTI drugs</b> (2): Table of drug, monitoring, target, ADR</li><li><b>Prevention</b> (1): Start low/go slow, TDM, dose adjust, interaction screen, deprescribing</li></ol>
+<div class="sub-h">Short Question (5 marks): *"Type A vs Type B ADR"*</div>
+<ul><li>Table: Mechanism, Dose-dependence, Predictability, Incidence, Mortality, Examples, Management</li></ul>
+<div class="sub-h">Viva (2 min): *"80yo on warfarin, INR 5.8, no bleed. Why Type A? Manage."*</div>
+<ul><li><b>Type A</b>: Excessive anticoagulation (dose-dependent, predictable)</li><li><b>Manage</b>: Omit 1–2 doses; Vit K 1mg PO if high bleed risk/elderly; Restart lower dose; Review interacting drugs</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on furosemide 80mg, K⁺ 2.9. Type A or B?"*</div>
+<ul><li><b>Type A</b> — Unwanted pharmacological effect (renal K⁺ wasting). <b>Action</b>: K⁺ replacement, ↓ dose, add K⁺-sparing, review indication.</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Type A = Augmented = Dose-dependent = Predictable = Common</li><li>Type B = Bizarre = Idiosyncratic = Unpredictable = Rare = High mortality</li><li>NTI drugs: Warfarin, Digoxin, Lithium, Phenytoin, Gentamicin, Vancomycin, Tacrolimus, Theophylline</li><li>Mechanisms: 1° Excessive therapeutic 2° Off-target 3° Secondary cascade</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>TYPE A ADR TRIAD:</b> 1. <b>Excessive therapeutic</b> — Warfarin bleed, Insulin hypo, Digoxin toxicity 2. <b>Unwanted pharmacological</b> — NSAID GI/renal, TCA anticholinergic, ACEi cough, Beta-agonist tremor 3. <b>Secondary pharmacological</b> — Steroid metabolic/bone, Diuretic electrolytes, Abx C.diff  <b>PREVENTION:</b> Start low, go slow + TDM (NTI) + Renal/hepatic adjust + Interaction screen + Deprescribe</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which characteristic defines a Type A (Augmented) ADR?</b></li></ol>
+<p>A. Idiosyncratic, unpredictable B. <b>Dose-dependent, predictable from pharmacology</b> ✓ C. Occurs after long-term use only D. Immunologically mediated E. Genetic predisposition required</p>
+<ol><li><b>Warfarin-induced haemorrhage with INR &gt;4 is an example of which Type A mechanism?</b></li></ol>
+<p>A. Unwanted pharmacological effect B. <b>Excessive therapeutic effect</b> ✓ C. Secondary pharmacological effect D. Idiosyncratic reaction E. Drug interaction effect</p>
+<ol><li><b>Amitriptyline causing dry mouth, constipation, and urinary retention represents:</b></li></ol>
+<p>A. Type B ADR B. <b>Type A: Unwanted pharmacological effect (anticholinergic)</b> ✓ C. Excessive therapeutic effect D. Secondary pharmacological effect E. Drug interaction</p>
+<ol><li><b>ACE inhibitor-induced dry cough is mediated by:</b></li></ol>
+<p>A. Excessive therapeutic effect (oversuppression of Ang II) B. <b>Bradykinin accumulation (secondary pharmacological effect)</b> ✓ C. Unwanted pharmacological effect (off-target receptor) D. Direct bronchial irritation E. Type B idiosyncratic reaction</p>
+<ol><li><b>Which drug does NOT have a narrow therapeutic index requiring TDM?</b></li></ol>
+<p>A. Digoxin B. Lithium C. Phenytoin D. <b>Amoxicillin</b> ✓ E. Warfarin</p>
+<ol><li><b>An elderly patient on furosemide 80 mg daily develops hyponatraemia (Na⁺ 125 mmol/L). This is a Type A ADR via which mechanism?</b></li></ol>
+<p>A. Excessive therapeutic effect B. <b>Unwanted pharmacological effect (impaired water excretion)</b> ✓ C. Secondary pharmacological effect D. Type B idiosyncratic E. Drug interaction</p>
+<ol><li><b>Salbutamol-induced tremor and hypokalaemia are due to:</b></li></ol>
+<p>A. Excessive beta-2 bronchodilation B. <b>Unwanted pharmacological effect (beta-2 stimulation in muscle, beta-1 in heart)</b> ✓ C. Secondary effect of hypoxia correction D. Type B hypersensitivity E. Drug interaction with steroids</p>
+<ol><li><b>Corticosteroid-induced osteoporosis is classified as:</b></li></ol>
+<p>A. Type A: Excessive therapeutic effect B. Type A: Unwanted pharmacological effect C. <b>Type A: Secondary pharmacological effect (metabolic/bone)</b> ✓ D. Type C: Chronic ADR only E. Type B: Idiosyncratic</p>
+<ol><li><b>Key prevention strategy for Type A ADRs in elderly polypharmacy patients:</b></li></ol>
+<p>A. Avoid all medications B. <b>Start low, go slow; regular review; deprescribing</b> ✓ C. Use only Type B drugs D. Increase doses gradually to tolerance E. Routine genetic testing</p>
+<ol><li><b>Patient on digoxin 125 mcg develops nausea, yellow vision, and bradycardia. Serum K⁺ 3.1. Most likely explanation:</b></li></ol>
+<p>A. Type B ADR B. <b>Type A ADR: Digoxin toxicity precipitated by hypokalaemia</b> ✓ C. Drug interaction with ACEi D. Secondary pharmacological effect E. Idiopathic intolerance</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Type A ADR definition</td><td>Dose-dependent, predictable from pharmacology, common, usually reversible</td></tr><tr><td>Type B ADR definition</td><td>Idiosyncratic, non-dose-dependent, unpredictable, rare, high mortality</td></tr><tr><td>Type A mechanism 1</td><td>**Excessive therapeutic effect** — Warfarin bleed, Insulin hypo, Digoxin toxicity</td></tr><tr><td>Type A mechanism 2</td><td>**Unwanted pharmacological (off-target)** — NSAID COX-1 GI/renal, TCA anticholinergic, ACEi cough, Beta-agonist tremor</td></tr><tr><td>Type A mechanism 3</td><td>**Secondary pharmacological** — Steroid metabolic/bone, Diuretic electrolytes, Abx C.diff</td></tr><tr><td>NTI drugs requiring TDM</td><td>Warfarin (INR), Digoxin (level/K/Mg), Lithium (level/renal), Phenytoin (level), Gentamicin (trough), Vancomycin (AUC), Tacrolimus/Ciclosporin (trough), Theophylline (level)</td></tr><tr><td>ACEi cough mechanism</td><td>Bradykinin accumulation (ACE degrades bradykinin)</td></tr><tr><td>NSAID GI/renal mechanism</td><td>COX-1 inhibition → ↓ prostaglandins → ↓ gastric mucus/HCO₃⁻, ↓ renal vasodilation</td></tr><tr><td>TCA anticholinergic SEs</td><td>Dry mouth, constipation, urinary retention, confusion, blurred vision, tachycardia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Type A = dose-dependent, predictable</li><li><b>B</b> — Warfarin bleed = excessive anticoagulation (therapeutic effect)</li><li><b>B</b> — TCA anticholinergic = unwanted off-target muscarinic blockade</li><li><b>B</b> — Bradykinin accumulation = secondary pharmacological effect</li><li><b>D</b> — Amoxicillin wide TI, no TDM</li><li><b>B</b> — Furosemide hyponatraemia = unwanted effect (impaired dilution)</li><li><b>B</b> — Salbutamol tremor/hypoK = beta-2 off-target (muscle, K⁺ shift)</li><li><b>C</b> — Steroid osteoporosis = secondary metabolic effect (chronological but pharmacologically mediated)</li><li><b>B</b> — Start low/go slow + review + deprescribe</li><li><b>B</b> — Digoxin toxicity + hypokalaemia = Type A (predictable, dose/exposure dependent)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/Type A (Augmented).md</code> | Status: <code>draft</code> → upgrade to <code>full-fcps-mrcp-note</code> after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Type A Augmented · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

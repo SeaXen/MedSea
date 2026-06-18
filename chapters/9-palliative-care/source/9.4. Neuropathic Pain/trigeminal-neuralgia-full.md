@@ -1,0 +1,208 @@
+# Trigeminal neuralgia
+
+Related: [[../../Pain and Palliative Care MOC]], [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Neuropathic Pain**
+
+## 1. Definition
+
+Trigeminal neuralgia (tic douloureux) is a chronic neuropathic pain disorder characterised by sudden, severe, brief, electric shock-like or stabbing unilateral facial pain in the distribution of one or more branches of the trigeminal nerve (V2, V3 most common). Triggered by light touch, chewing, talking, brushing teeth, cold air. Cause: most often idiopathic or due to neurovascular compression (superior cerebellar artery); secondary: tumour, MS, post-herpetic. Treatment: carbamazepine (first-line); oxcarbazepine, baclofen, gabapentin, lamotrigine; surgery (microvascular decompression, glycerol rhizotomy, balloon compression, radiofrequency).
+
+## 2. Clinical Features and Presentation
+
+Trigeminal neuralgia (tic douloureux) is a chronic neuropathic pain disorder of the trigeminal nerve (CN V) with sudden, severe, brief (seconds-2 min), electric shock-like or stabbing unilateral facial pain in V2/V3 distribution (V1 rare). Triggers: light touch, chewing, talking, brushing teeth, cold air, shaving. May be primary (idiopathic, neurovascular compression of root entry zone by superior cerebellar artery) or secondary (tumour — cerebellopontine angle, MS — bilateral, post-herpetic, trauma).
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+Clinical diagnosis (typical features). MRI brain with trigeminal nerve protocol to exclude secondary cause (tumour, MS, vascular malformation). LP if MS suspected.
+
+### Management
+First-line: carbamazepine 100-200mg BD titrated to 400-1200mg/day (effective in 70% initially, may lose efficacy with time); oxcarbazepine 300-600mg BD (similar efficacy, better tolerated). Second-line: baclofen 5-10mg TDS, lamotrigine 100-400mg/day (slow titration), gabapentin 300-3600mg/day. Refractory: microvascular decompression (Jannetta procedure, 80% long-term success, 1% mortality/0.5% stroke); percutaneous procedures (glycerol rhizotomy, balloon compression, radiofrequency thermocoagulation); stereotactic radiosurgery (Gamma knife).
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| Type | Trigeminal nerve (V) neuropathic pain |
+| Site | V2, V3 (V1 rare) |
+| Character | Electric, stabbing, paroxysmal |
+| Trigger | Touch, chewing, talking, brushing teeth |
+| Cause | Neurovascular compression (SCA); MS; tumour |
+| First-line | Carbamazepine (or oxcarbazepine) |
+| Second-line | Baclofen, gabapentin, lamotrigine |
+| Surgery | Microvascular decompression, glycerol, balloon, RFA |
+| MS | Younger, bilateral |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Cluster headache | Longer, autonomic features |
+| TMD | Continuous, jaw |
+| Dental pain | Localised, triggers on bite |
+| PHN | V1, post-herpetic |
+| Tumour | Persistent, neurological signs |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: First-line treatment for trigeminal neuralgia? A: Carbamazepine (or oxcarbazepine).
+
+2. 2. Q: Most common cause? A: Neurovascular compression (superior cerebellar artery).
+
+3. 3. Q: When to suspect MS as cause? A: Bilateral or young patient (under 50).
+
+4. 4. Q: Most common divisions involved? A: V2 (maxillary) and V3 (mandibular); V1 (ophthalmic) rare.
+
+5. 5. Q: Surgical options? A: Microvascular decompression (Jannetta) — first-line surgery; percutaneous procedures (glycerol, balloon, radiofrequency); Gamma knife.
+
+
+## 7. Confusions and Mnemonics
+
+- See clinical features
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **Trigeminal neuralgia** |
+|-----------|-----------|
+| **Definition** | Trigeminal neuralgia (tic douloureux) is a chronic neuropathic pain disorder characterised by sudden |
+| **Key Features** | Trigeminal nerve (V) neuropathic pain |
+| **Investigation** | Clinical assessment + disease-specific tests |
+| **Management** | WHO ladder + adjuvant + non-pharmacological |
+| **Red Flags** | Severe pain, opioid side effects, total pain dimensions |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of Trigeminal neuralgia?
+   A. Trigeminal nerve (V) neuropathic pain
+   B. Always self-limiting
+   C. Caused by infection only
+   D. Restricted to severe pain only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line management?
+   A. WHO analgesic ladder step 1
+   B. Immediate strong opioid
+   C. Surgery only
+   D. No treatment
+   E. Antidepressants only
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Pain assessment, total pain, comorbidities
+   B. None
+   C. ECG only
+   D. Eye exam only
+   E. Blood pressure only
+   **Answer: A**
+4. **Q:** What is the most important complication to monitor?
+   A. Disease-specific complications and treatment side effects
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key pharmacological/clinical feature?
+   A. Younger, bilateral
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient with Trigeminal neuralgia; first-line management?
+   A. WHO ladder + adjuvant + non-pharmacological
+   B. Strong opioid
+   C. Surgery
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+2. **Scenario:** Failed first-line; next step?
+   A. Step up WHO ladder
+   B. Stop all treatment
+   C. Surgery
+   D. Observation
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of treatment?
+   A. Side effects, opioid complications
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Holistic assessment?
+   A. Physical + emotional + social + spiritual
+   B. Physical only
+   C. Emotional only
+   D. None
+   E. Blood tests only
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. Younger, bilateral
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about Trigeminal neuralgia?
+  **A:** Trigeminal nerve (V) neuropathic pain
+- **Q:** Another key point?
+  **A:** V2, V3 (V1 rare)
+- **Q:** Most important complication?
+  **A:** Electric, stabbing, paroxysmal
+- **Q:** First-line treatment?
+  **A:** Touch, chewing, talking, brushing teeth
+- **Q:** Key pharmacological/clinical feature?
+  **A:** Neurovascular compression (SCA); MS; tumour
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — Type: Trigeminal nerve (V) neuropathic pain
+2. **A** — WHO ladder first-line
+3. **A** — Pain assessment essential
+4. **A** — Disease-specific complications
+5. **A** — MS: Younger, bilateral
+
+### SBAs
+1. **A** — WHO ladder + adjuvant + non-pharmacological
+2. **A** — Step up WHO ladder
+3. **A** — Side effects, opioid complications
+4. **A** — Total pain assessment
+5. **A** — Younger, bilateral
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../Neuropathic_Pain_Hub]]
+**Chapter Hierarchy:** [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../Pain and Palliative Care MOC]]
+
+---
+
+> **Exam focus:** Know definition, key clinical features, first-line management (WHO ladder), and the most important complication. Always consider total pain (physical, emotional, social, spiritual).

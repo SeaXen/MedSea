@@ -1,0 +1,518 @@
+# Malignant Spinal Cord Compression (MSCC)
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **MSCC = Oncologic Emergency from Vertebral Metastasis → Epidural Cord Compression**; **Prostate, Breast, Lung, Myeloma, Lymphoma, RCC**; **Dexamethasone 16mg IV Stat → 4mg q6h**; **Urgent MRI Whole Spine**; **Ambulatory: RT 20Gy/5fx (Within 24h)**; **Non-Ambulatory <48h: Surgery + RT** (Single Level, Good Prognosis); **Non-Ambulatory >48h/Paraplegia: RT Alone**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Recognise **clinical presentation** of MSCC (Back Pain, Motor/Sensory Deficits, Sphincter Dysfunction)
+- [ ] Identify **common primary tumours** causing MSCC
+- [ ] Initiate **immediate dexamethasone** therapy
+- [ ] Perform **urgent MRI whole spine** for diagnosis and planning
+- [ ] Apply **Bilsky/Modified Bilsky grading** for epidural compression severity
+- [ ] Determine **RT vs Surgery** based on ambulatory status, prognosis, radiosensitivity
+- [ ] Apply **RT fractionation** (20Gy/5fx for ambulatory, 30Gy/10fx for post-op)
+- [ ] Implement **supportive care** (Neuro checks q4h, DVT prophylaxis, Bladder care)
+
+---
+
+## 2. Aetiology & Common Primaries
+
+| Primary Tumour | Frequency |
+|----------------|-----------|
+| **Prostate** | **15-20%** |
+| **Breast** | **15-20%** |
+| **Lung** | **15-20%** |
+| **Multiple Myeloma** | **10-15%** |
+| **Lymphoma (NHL, HL)** | **5-10%** |
+| **Renal Cell Carcinoma** | **5-10%** |
+| **Other** | **Thyroid, Gastrointestinal, Melanoma, Sarcoma, Unknown Primary** |
+
+> **Route**: Haematogenous Spread → Vertebral Body → Epidural Space → Cord Compression
+
+---
+
+## 3. Clinical Features
+
+| Feature | Frequency | Significance |
+|---------|-----------|--------------|
+| **Back Pain** (Local, Nocturnal, Worse Lying Down) | **90-95%** | **Most Common**, Often Precedes Motor Deficits by Weeks |
+| **Motor Weakness** | 60-80% | Progressive, Ascending |
+| **Sensory Loss** (Level-Specific) | 50-70% | |
+| **Sphincter Dysfunction** (Urinary Retention, Constipation) | 40-60% | Late Sign |
+| **Lhermitte's Sign** (Neck Flexion → Electric Shock Down Spine) | Classic | Suggests Cervical Cord Involvement |
+| **Autonomic Dysfunction** | | Orthostatic Hypotension, Ileus |
+
+---
+
+## 4. Diagnosis & Investigations
+
+| Investigation | Role | Key Details |
+|---------------|------|-------------|
+| **MRI Whole Spine (Gold Standard)** | **Diagnosis, Level, Extent, Number of Levels** | **T2: Cord Compression/Edema**, **T1 Post-Gad: Enhancing Epidural Mass**, **STIR: Marrow Replacement** |
+| **CT Spine** | If MRI Contraindicated | Bony Destruction, Stability Assessment |
+| **Plain X-ray** | Limited Sensitivity | Vertebral Collapse, Sclerosis |
+| **Bone Scan / PET-CT** | Occult Metastases, Systemic Staging | |
+| **CSF Analysis** | If Leptomeningeal Suspected | Cytology, Flow, Protein, Glucose |
+| **Bone Marrow Biopsy** | If Myeloma/Lymphoma Suspected | |
+
+---
+
+## 5. Bilsky / Modified Bilsky Grading (Epidural Compression Severity)
+
+| Grade | Description |
+|-------|-------------|
+| **Grade 0** | **No Epidural Impingement** |
+| **Grade 1** | **Epidural Impingement** (Deforms Thecal Sac, No Cord Compression) |
+| **Grade 2** | **Cord Abutment/Compression** (No CSF Visible Around Cord) |
+| **Grade 3** | **Cord Displacement/Deformation** (CSF Space Obliterated) |
+
+> **Clinical Correlation**: **Grade 1-2** = Ambulatory (Often); **Grade 3** = Non-Ambulatory (Often)
+
+---
+
+## 6. Management Algorithm
+
+```mermaid
+flowchart TD
+    A[Suspected MSCC] --> B[**Dexamethasone 16mg IV Stat, Then 4mg q6h** (Reduce Oedema, Preserve Function)]
+    B --> C[**Urgent MRI Whole Spine (Within 24h, Ideally 4-6h)** — **Confirm Level, Extent, Number**]
+    C --> D{Neurological Status}
+    D -->|**Ambulatory (Grade 1-2)**| E[**Urgent RT: 20Gy/5fx (Within 24h)**]
+    D -->|**Non-Ambulatory <48h (Grade 3)**| F[**Decompressive Surgery + RT (If: Single Level, Good Prognosis, Life Expectancy >3mo)**]
+    D -->|**Non-Ambulatory >48h / Complete Paraplegia**| G[**RT Alone (Surgery Futile)**]
+    E --> H[**Monitor: Neuro Checks q4h, DVT Prophylaxis, Bladder Care**]
+    F --> H
+    G --> H
+```
+
+---
+
+## 7. Surgery vs Radiotherapy Decision
+
+| Scenario | Preferred Approach |
+|----------|-------------------|
+| **Ambulatory (Walking)** | **RT Alone (20Gy/5fx)** — Standard, Preserves Function |
+| **Non-Ambulatory <48h, Single Level, Good PS, Life Exp >3mo** | **Surgery (Decompression + Stabilisation) + Post-op RT (30Gy/10fx)** |
+| **Non-Ambulatory >48h / Complete Paraplegia** | **RT Alone (Surgery Futile)** |
+| **Radioresistant Tumour** (RCC, Melanoma, Sarcoma, Thyroid) | **Surgery Preferred (If Resectable)** |
+| **Multiple Levels / Extensive Disease** | **RT (Surgery Morbidity High)** |
+| **Chemosensitive** (Lymphoma, SCLC, Germ Cell) | **Chemo + RT** (Surgery Rarely Needed) |
+| **Pathological Fracture / Instability** | **Surgery (Stabilisation) + RT** |
+
+---
+
+## 8. Radiotherapy Details
+
+| Scenario | Dose/Fractionation |
+|---------|-------------------|
+| **Ambulatory (Definitive RT)** | **20Gy in 5 Fractions** (4Gy ×5) — **Within 24h** |
+| **Post-Operative RT** | **30Gy in 10 Fractions** (3Gy ×10) |
+| **Poor Prognosis / Palliative** | **8Gy ×1** OR **20Gy/5fx** |
+| **Re-Irradiation** | **Hypofractionated (e.g., 20Gy/5fx)** — Cumulative Dose Limits |
+
+---
+
+## 9. Supportive Care & Monitoring
+
+| Intervention | Details |
+|------------|---------|
+| **Dexamethasone** | **16mg IV Stat → 4mg q6h** (Reduce Oedema, Preserve Function); Taper Over 1-2 Weeks Post-RT |
+| **Neurological Monitoring** | **q4h** (Motor Power, Sensory Level, Reflexes, Sphincter Function) |
+| **DVT Prophylaxis** | **LMWH (Enoxaparin 40mg OD)** — High Risk (Immobility + Cancer) |
+| **Bladder Care** | **Intermittent Catheterization** (If Retention); **Suprapubic Catheter** if Long-Term |
+| **Bowel Care** | **Laxatives, Enemas** (Constipation Common) |
+| **Pressure Area Care** | **2-Hourly Turning**, **Pressure-Relieving Mattress** |
+| **Physiotherapy** | **Early Mobilisation** (If Ambulatory), **Passive ROM** (If Paraplegic) |
+| **Pain Management** | **WHO Ladder**, **Neuropathic Agents** (Gabapentin/Pregabalin) |
+| **Catheter/Stoma Care** | **If Surgical** |
+
+---
+
+## 10. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **MSCC Definition** | Vertebral Mets → Epidural Compression → Cord Dysfunction |
+| **Common Primaries** | **Prostate, Breast, Lung, Myeloma, Lymphoma, RCC** |
+| **Key Symptom** | **Back Pain (90%)** — Nocturnal, Worse Lying Down, Precedes Motor Deficits |
+| **Dexamethasone** | **16mg IV Stat → 4mg q6h** — **First-Line, Reduces Oedema** |
+| **Imaging** | **Urgent MRI Whole Spine** (Within 24h, Ideally 4-6h) |
+| **Bilsky Grading** | **1: Impingement**, **2: Abutment**, **3: Compression/Displacement** |
+| **Ambulatory** | **RT 20Gy/5fx (Within 24h)** — Standard |
+| **Non-Ambulatory <48h** | **Surgery + RT** (Single Level, Good PS, Life Exp >3mo) |
+| **Non-Ambulatory >48h** | **RT Alone** (Surgery Futile) |
+| **Radioresistant** (RCC, Melanoma, Sarcoma) | **Surgery Preferred** |
+| **Post-Op RT** | **30Gy/10fx** |
+| **Supportive** | **Neuro q4h, DVT Prophylaxis (LMWH), Bladder/Bowel Care, Pressure Relief** |
+
+---
+
+## 11. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **MSCC — Most Common Primary Tumours?** | **Prostate, Breast, Lung, Myeloma, Lymphoma, RCC** (Haematogenous Spread to Vertebrae). |
+| **MSCC — Key Presenting Symptom?** | **Back Pain (90%)** — Nocturnal, Worse Lying Down, Often Precedes Motor Deficits by Weeks. |
+| **MSCC — Dexamethasone Dose?** | **16mg IV Stat → 4mg q6h** (High Dose for Vasogenic Oedema Reduction). |
+| **MSCC — First Investigation?** | **Urgent MRI Whole Spine** (Within 24h, Ideally 4-6h) — **Gold Standard**. |
+| **Bilsky Grade 2 vs 3 — Clinical Significance?** | **Grade 2**: Cord Abutment, CSF Space Present; **Grade 3**: Cord Compression/Displacement, CSF Obliterated — **Grade 3 Often Non-Ambulatory**. |
+| **Ambulatory MSCC — Standard Treatment?** | **RT 20Gy/5fx** (Within 24h of Diagnosis). |
+| **Non-Ambulatory MSCC <48h — When Surgery?** | **Single Level, Good PS, Life Expectancy >3mo, Radioresistant Tumour (RCC, Melanoma, Sarcoma)**. |
+| **Paraplegia >48h — Management?** | **RT Alone** (Surgery Futile, No Functional Recovery). |
+| **Radioresistant Tumours (RCC, Melanoma, Sarcoma) — MSCC Management?** | **Surgery (Decompression + Stabilisation) + Post-op RT** (RT Alone Ineffective). |
+| **Post-Op RT Dose for MSCC?** | **30Gy/10fx** (Standard). |
+
+---
+
+## 12. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **MSCC vs SVCO** | **MSCC**: Back Pain, Motor/Sensory Deficit, Sphincter Dysfunction; **SVCO**: Facial/Arm Swelling, Distended Veins, Dyspnoea, No Motor Deficit |
+| **RT vs Surgery for Non-Ambulatory** | **<48h, Single Level, Good Prognosis → Surgery + RT**; **>48h / Complete Paraplegia → RT Alone** |
+| **Dexamethasone Dose** | **16mg IV Stat → 4mg q6h** (Not 8mg or 2mg); **Taper Over 1-2 Weeks Post-RT** |
+| **Bilsky Grade 1-3** | **1: Impingement Only**; **2: Abutment (CSF Visible)**; **3: Compression (No CSF)** |
+| **RT Fractionation** | **20Gy/5fx (Ambulatory Definitive)**; **30Gy/10fx (Post-Op)**; **8Gy×1 (Palliative)** |
+| **Surgery Timing** | **Ideally <24h from Diagnosis** for Non-Ambulatory; **<48h Onset** for Best Outcomes |
+| **RT Alone for Radiosensitive** | **Lymphoma, SCLC, Germ Cell, Myeloma** — Highly Radiosensitive, Surgery Rarely Needed |
+| **Spinal Instability** | **Pathological Fracture, Kyphosis, SINS Score >12** → **Surgery + RT** |
+
+**Mnemonic: MSCC-BACK-PAIN**
+- **M**alignant **S**pinal **C**ord **C**ompression
+- **B**ack Pain (90%) — **Nocturnal, Worse Lying Down**
+- **A**mbulatory: **RT 20Gy/5fx** (Standard)
+- **C**orticosteroids: **Dex 16mg IV → 4mg q6h**
+- **K**ey Imaging: **MRI Whole Spine (Gold Std, Within 24h)**
+- **B**ilsky Grading: **1 Impingement, 2 Abutment, 3 Compression**
+- **A**utonomic: **Bladder/Bowel Dysfunction (Late)**
+- **C**omplete Paraplegia >48h: **RT Alone** (Surgery Futile)
+- **K**ey Decision: **Surgery <48h Non-Ambulatory** (Single Level, Good Prognosis)
+- **P**ost-Op RT: **30Gy/10fx**
+- **A**utonomic Dysreflexia: **Cervical/Thoracic Lesions**
+- **I**mmediate Dex: **Preserve Function**
+- **N**eurological Monitoring: **q4h (Power, Sensory, Reflexes, Sphincter)**
+
+---
+
+## 13. Mind Map
+
+```mermaid
+mindmap
+  root((Malignant Spinal Cord Compression))
+    Causes
+      Prostate, Breast, Lung, Myeloma, Lymphoma, RCC
+      Haematogenous → Vertebral Body → Epidural
+    Presentation
+      Back Pain (90%) — Nocturnal
+      Motor Weakness (60-80%)
+      Sensory Loss
+      Sphincter Dysfunction (40-60%)
+      Lhermitte's Sign
+    Diagnosis
+      MRI Whole Spine (Gold Standard)
+      Bilsky Grading (1-3)
+    Dexamethasone
+      16mg IV Stat → 4mg q6h
+    Management
+      Ambulatory: RT 20Gy/5fx
+      Non-Ambul <48h: Surgery + RT
+      Non-Ambul >48h: RT Alone
+      Radioresistant: Surgery + RT
+    RT
+      20Gy/5fx (Definitive)
+      30Gy/10fx (Post-Op)
+      8Gy×1 (Palliative)
+    Supportive
+      Neuro Checks q4h
+      LMWH (VTE)
+      Bladder/Bowel Care
+```
+
+---
+
+## 14. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Presentation** | Back Pain (90%, Nocturnal), Motor/Sensory Deficits, Sphincter Dysfunction |
+| **Primaries** | Prostate, Breast, Lung, Myeloma, Lymphoma, RCC |
+| **First-Line** | **Dexamethasone 16mg IV → 4mg q6h** |
+| **Imaging** | **Urgent MRI Whole Spine** (Gold Standard) |
+| **Bilsky Grade** | 1: Impingement; 2: Abutment; 3: Compression/Displacement |
+| **Ambulatory** | **RT 20Gy/5fx** (Within 24h) |
+| **Non-Ambulatory <48h** | **Surgery + RT** (Single Level, Good Prognosis) |
+| **Non-Ambulatory >48h** | **RT Alone** |
+| **Radioresistant** | Surgery + RT (RCC, Melanoma, Sarcoma) |
+| **Post-Op RT** | 30Gy/10fx |
+
+---
+
+## 15. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 16. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Clinical Presentation | | |
+| Bilsky Grading | | |
+| Dexamethasone Dosing | | |
+| RT vs Surgery Decision | | |
+| RT Fractionation | | |
+| Supportive Care | | |
+| Radioresistant Tumours | | |
+| Neurological Monitoring | | |
+
+---
+
+## 17. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[SVCO]], [[Neutropenic Sepsis]], [[Hypercalcaemia]], [[TLS]], [[SIADH]], [[Airway Obstruction]], [[Oncologic Emergencies]], [[Dexamethasone]], [[Bilsky Grading]], [[Spinal Surgery]], [[Radiotherapy]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 18. MCQs (10)
+
+
+**1.** Regarding Malignant Spinal Cord Compression (MSCC) (MSCC Definition), which statement is correct?
+   A. Vertebral Mets → Epidural Compression → Cord Dysfunction
+   B. Vertebral - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Vertebral Mets → Epidural Compression → Cord Dysfunction
+
+
+**2.** Regarding Malignant Spinal Cord Compression (MSCC) (Common Primaries), which statement is correct?
+   A. **Prostate, Breast, Lung, Myeloma, Lymphoma, RCC**
+   B. **Prostate, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Prostate, Breast, Lung, Myeloma, Lymphoma, RCC**
+
+
+**3.** Regarding Malignant Spinal Cord Compression (MSCC) (Key Symptom), which statement is correct?
+   A. **Back Pain (90%)**
+   B. **Back - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Back Pain (90%)** — Nocturnal, Worse Lying Down, Precedes Motor Deficits
+
+
+**4.** Regarding Malignant Spinal Cord Compression (MSCC) (Dexamethasone), which statement is correct?
+   A. **16mg IV Stat → 4mg q6h**
+   B. **16mg - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **16mg IV Stat → 4mg q6h** — **First-Line, Reduces Oedema**
+
+
+**5.** Regarding Malignant Spinal Cord Compression (MSCC) (Imaging), which statement is correct?
+   A. **Urgent MRI Whole Spine** (Within 24h, Ideally 4-6h)
+   B. **Urgent - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Urgent MRI Whole Spine** (Within 24h, Ideally 4-6h)
+
+
+**6.** Regarding Malignant Spinal Cord Compression (MSCC) (Bilsky Grading), which statement is correct?
+   A. **1: Impingement**, **2: Abutment**, **3: Compression/Displacement**
+   B. **1: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **1: Impingement**, **2: Abutment**, **3: Compression/Displacement**
+
+
+**7.** Regarding Malignant Spinal Cord Compression (MSCC) (Ambulatory), which statement is correct?
+   A. **RT 20Gy/5fx (Within 24h)**
+   B. **RT - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **RT 20Gy/5fx (Within 24h)** — Standard
+
+
+**8.** Regarding Malignant Spinal Cord Compression (MSCC) (Non-Ambulatory <48h), which statement is correct?
+   A. **Surgery + RT** (Single Level, Good PS, Life Exp >3mo)
+   B. **Surgery - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Surgery + RT** (Single Level, Good PS, Life Exp >3mo)
+
+
+**9.** Regarding Malignant Spinal Cord Compression (MSCC) (Non-Ambulatory >48h), which statement is correct?
+   A. **RT Alone** (Surgery Futile)
+   B. **RT - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **RT Alone** (Surgery Futile)
+
+
+**10.** Regarding Malignant Spinal Cord Compression (MSCC) (Post-Op RT), which statement is correct?
+   A. **30Gy/10fx**
+   B. **30Gy/10fx** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **30Gy/10fx**
+
+
+## 19. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. Vertebral Mets → Epidural Compression → Cord Dysfunction
+   - B. Vertebral (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: Vertebral Mets → Epidural Compression → Cord Dysfunction
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **Prostate, Breast, Lung, Myeloma, Lymphoma, RCC**
+   - B. **Prostate, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **Prostate, Breast, Lung, Myeloma, Lymphoma, RCC**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Back Pain (90%)**
+   - B. **Back (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Back Pain (90%)** — Nocturnal, Worse Lying Down, Precedes Motor Deficits
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **16mg IV Stat → 4mg q6h**
+   - B. **16mg (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **16mg IV Stat → 4mg q6h** — **First-Line, Reduces Oedema**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Urgent MRI Whole Spine** (Within 24h, Ideally 4-6h)
+   - B. **Urgent (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Urgent MRI Whole Spine** (Within 24h, Ideally 4-6h)
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **1: Impingement**, **2: Abutment**, **3: Compression/Displacement**
+   - B. **1: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **1: Impingement**, **2: Abutment**, **3: Compression/Displacement**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **RT 20Gy/5fx (Within 24h)**
+   - B. **RT (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **RT 20Gy/5fx (Within 24h)** — Standard
+
+
+**8.** The role of surgery in this case is:
+   - A. **Surgery + RT** (Single Level, Good PS, Life Exp >3mo)
+   - B. **Surgery (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **Surgery + RT** (Single Level, Good PS, Life Exp >3mo)
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **RT Alone** (Surgery Futile)
+   - B. **RT (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **RT Alone** (Surgery Futile)
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **30Gy/10fx**
+   - B. **30Gy/10fx** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **30Gy/10fx**
+
+
+## 20. Flashcards
+
+**Q1:** MSCC Definition?
+**A1:** Vertebral Mets → Epidural Compression → Cord Dysfunction
+
+**Q2:** Common Primaries?
+**A2:** Prostate, Breast, Lung, Myeloma, Lymphoma, RCC
+
+**Q3:** Key Symptom?
+**A3:** Back Pain (90%) — Nocturnal, Worse Lying Down, Precedes Motor Deficits
+
+**Q4:** Dexamethasone?
+**A4:** 16mg IV Stat → 4mg q6h — First-Line, Reduces Oedema
+
+**Q5:** Imaging?
+**A5:** Urgent MRI Whole Spine (Within 24h, Ideally 4-6h)
+
+**Q6:** Bilsky Grading?
+**A6:** 1: Impingement, 2: Abutment, 3: Compression/Displacement
+
+**Q7:** Ambulatory?
+**A7:** RT 20Gy/5fx (Within 24h) — Standard
+
+**Q8:** Non-Ambulatory <48h?
+**A8:** Surgery + RT (Single Level, Good PS, Life Exp >3mo)
+
+## 21. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | MSCC Definition | Vertebral Mets → Epidural Compression → Cord Dysfunction |
+| 2 | A | Common Primaries | Prostate, Breast, Lung, Myeloma, Lymphoma, RCC |
+| 3 | A | Key Symptom | Back Pain (90%) — Nocturnal, Worse Lying Down, Precedes Motor Deficits |
+| 4 | A | Dexamethasone | 16mg IV Stat → 4mg q6h — First-Line, Reduces Oedema |
+| 5 | A | Imaging | Urgent MRI Whole Spine (Within 24h, Ideally 4-6h) |
+| 6 | A | Bilsky Grading | 1: Impingement, 2: Abutment, 3: Compression/Displacement |
+| 7 | A | Ambulatory | RT 20Gy/5fx (Within 24h) — Standard |
+| 8 | A | Non-Ambulatory <48h | Surgery + RT (Single Level, Good PS, Life Exp >3mo) |
+| 9 | A | Non-Ambulatory >48h | RT Alone (Surgery Futile) |
+| 10 | A | Post-Op RT | 30Gy/10fx |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | MSCC Definition | Vertebral Mets → Epidural Compression → Cord Dysfunction |
+| 2 | A | Common Primaries | Prostate, Breast, Lung, Myeloma, Lymphoma, RCC |
+| 3 | A | Key Symptom | Back Pain (90%) — Nocturnal, Worse Lying Down, Precedes Motor Deficits |
+| 4 | A | Dexamethasone | 16mg IV Stat → 4mg q6h — First-Line, Reduces Oedema |
+| 5 | A | Imaging | Urgent MRI Whole Spine (Within 24h, Ideally 4-6h) |
+| 6 | A | Bilsky Grading | 1: Impingement, 2: Abutment, 3: Compression/Displacement |
+| 7 | A | Ambulatory | RT 20Gy/5fx (Within 24h) — Standard |
+| 8 | A | Non-Ambulatory <48h | Surgery + RT (Single Level, Good PS, Life Exp >3mo) |
+| 9 | A | Non-Ambulatory >48h | RT Alone (Surgery Futile) |
+| 10 | A | Post-Op RT | 30Gy/10fx |
+
+## 22. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Oncologic Emergencies|Oncologic Emergencies]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

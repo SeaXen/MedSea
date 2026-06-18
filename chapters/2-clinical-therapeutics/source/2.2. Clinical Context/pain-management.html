@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pain Management — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.2. CLINICAL CONTEXT</span>
+      <div class="h1">Pain Management</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>WHO Analgesic Ladder</b> (1986, updated 2019) for cancer and chronic pain</li><li>[ ] Calculate <b>oral morphine equivalent (OME)</b> conversions between opioids</li><li>[ ] Manage <b>breakthrough pain</b> with rescue doses</li><li>[ ] Prescribe <b>adjuvant analgesics</b> for neuropathic pain (gabapentinoids, TCAs, SNRIs)</li><li>[ ] Recognise and manage <b>opioid toxicity</b> (respiratory depression, sedation, constipation, N&amp;V)</li><li>[ ] Apply <b>opioid rotation</b> principles for toxicity/poor response</li><li>[ ] Understand <b>special populations</b>: renal/hepatic impairment, elderly, palliative care</li><li>[ ] Answer viva: "WHO ladder steps" and "Morphine to oxycodone conversion"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: WHO Analgesic Ladder (Updated 2019)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Pain Assessment&lt;br/&gt;Severity: Mild/Moderate/Severe&lt;br/&gt;Type: Nociceptive/Neuropathic/Mixed] --&gt; B{Step 1: Mild Pain&lt;br/&gt;NRS 1-3} B --&gt; C[Paracetamol 1g QDS&lt;br/&gt;± NSAID (ibuprofen 400mg TDS)&lt;br/&gt;± Adjuvant if neuropathic] C --&gt; D{Inadequate?} D --&gt;|Yes| E[Step 2: Moderate Pain&lt;br/&gt;NRS 4-6] D --&gt;|No| F[Continue + Review] E --&gt; G[Weak Opioid&lt;br/&gt;Codeine 30-60mg QDS&lt;br/&gt;or Tramadol 50-100mg QDS&lt;br/&gt;+ Paracetamol/NSAID&lt;br/&gt;+ Adjuvant] G --&gt; H{Inadequate?} H --&gt;|Yes| I[Step 3: Severe Pain&lt;br/&gt;NRS 7-10] H --&gt;|No| J[Continue + Review] I --&gt; K[Strong Opioid&lt;br/&gt;Morphine PO 10-20mg Q4H&lt;br/&gt;or Oxycodone PO 5-10mg Q4H&lt;br/&gt;or Fentanyl TD patch&lt;br/&gt;+ Paracetamol/NSAID&lt;br/&gt;+ Adjuvant&lt;br/&gt;+ Laxative + Antiemetic PRN] K --&gt; L{Inadequate?} L --&gt;|Yes| M[Optimise: Dose titration&lt;br/&gt;Opioid rotation&lt;br/&gt;Intrathecal/epidural&lt;br/&gt;Specialist referral] </code>``</p>
+<div class="callout"><b>Key Update (2019):</b> <i>Ladder applies to <b>all persistent pain</b> (not just cancer). <b>Skip Step 2</b> for severe pain — go straight to strong opioid. <b>Adjuvants at all steps</b> for neuropathic component. <b>Regular dosing</b> (not PRN) for persistent pain.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Step 1: Non-Opioid Analgesics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Max Daily</th><th>Key Points</th></tr><tr><td>------</td><td>------</td><td>-----------</td><td>------------</td></tr><tr><td>**Paracetamol**</td><td>1g QDS (PO/IV)</td><td>**4g** (2g if <50kg/elderly/liver disease)</td><td>First-line; minimal side effects; **IV = 100% bioavailability**</td></tr><tr><td>**Ibuprofen**</td><td>400mg TDS (PO)</td><td>2.4g</td><td>NSAID of choice (lowest GI risk); avoid if CKD, HF, peptic ulcer, anticoagulation</td></tr><tr><td>**Naproxen**</td><td>500mg BD (PO)</td><td>1g</td><td>Alternative NSAID; lower CV risk than diclofenac</td></tr><tr><td>**Diclofenac**</td><td>50mg TDS (PO)</td><td>150mg</td><td>Higher CV risk; avoid if CVD risk factors</td></tr><tr><td>**COX-2 inhibitors** (celecoxib/etoricoxib)</td><td>200mg OD/BD</td><td>400mg/120mg</td><td>Lower GI risk; **CV risk** — avoid if CVD; not first-line</td></tr></table>
+<div class="sub-h">Paracetamol + NSAID Combination</div>
+<ul><li><b>Synergistic</b> (different mechanisms)</li><li><b>Paracetamol 1g + Ibuprofen 400mg</b> Q6H = effective for moderate pain</li><li><b>Max doses</b>: Paracetamol 4g + Ibuprofen 1.2g (if staggered)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Step 2: Weak Opioids (Moderate Pain)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>OME Ratio</th><th>Key Points</th></tr><tr><td>------</td><td>------</td><td>-----------</td><td>------------</td></tr><tr><td>**Codeine**</td><td>30–60mg QDS (PO)</td><td>**1:10** (60mg codeine ≈ 6mg morphine)</td><td>**Prodrug** → morphine via CYP2D6; **poor metabolisers (7–10%) = no effect**; ultra-rapid = toxicity; constipating</td></tr><tr><td>**Tramadol**</td><td>50–100mg QDS (PO)</td><td>**1:5** (100mg tramadol ≈ 20mg morphine)</td><td>**Dual**: weak μ-agonist + SNRI; **seizure risk** (↓ threshold); serotonin syndrome with SSRIs; renal adjustment</td></tr><tr><td>**Dihydrocodeine**</td><td>30mg QDS (PO)</td><td>**1:6**</td><td>Similar to codeine; less CYP2D6 dependence</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Step 2 opioids have <b>ceiling effect</b> — max dose limited by side effects. <b>Not for severe pain</b>. Avoid codeine in children &lt;12y (MHRA).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Step 3: Strong Opioids (Severe Pain)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line Oral Opioids</div>
+<table class="ctable"><tr><th>Drug</th><th>Starting Dose (Opioid-Naïve)</th><th>OME Ratio</th><th>Formulations</th></tr><tr><td>------</td><td>------------------------------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Morphine (IR)**</td><td>**10–20mg Q4H** (PO)</td><td>**1:1** (reference)</td><td>Oramorph® 10mg/5mL, Sevredol® 10/20mg</td></tr><tr><td>**Oxycodone (IR)**</td><td>**5–10mg Q4H** (PO)</td><td>**1:1.5–2** (5mg oxycodone ≈ 7.5–10mg morphine)</td><td>Shortec® 5/10/20mg; better bioavailability</td></tr><tr><td>**Hydromorphone (IR)**</td><td>**2–4mg Q4H** (PO)</td><td>**1:5** (2mg ≈ 10mg morphine)</td><td>Palladone® 1.3/2.6/4mg; renal safer</td></tr><tr><td>**Tapentadol (IR)**</td><td>**50–100mg Q4H** (PO)</td><td>**1:2.5–3**</td><td>Dual: μ-agonist + NRI; less constipation</td></tr></table>
+<div class="sub-h">Modified-Release (MR) — For Background Pain</div>
+<table class="ctable"><tr><th>Drug</th><th>Starting Dose</th><th>Conversion from IR</th></tr><tr><td>------</td><td>---------------</td><td>-------------------</td></tr><tr><td>**Morphine MR** (MST®, Zomorph®)</td><td>**20–30mg BD**</td><td>Total 24h IR dose → BD</td></tr><tr><td>**Oxycodone MR** (OxyContin®)</td><td>**10–20mg BD**</td><td>Total 24h IR dose × 0.5 → BD</td></tr><tr><td>**Hydromorphone MR** (Palladone SR®)</td><td>**8–16mg BD**</td><td>Total 24h IR dose × 0.2 → BD</td></tr><tr><td>**Tapentadol MR** (Palexia SR®)</td><td>**50–100mg BD**</td><td>Total 24h IR dose × 0.5 → BD</td></tr></table>
+<div class="sub-h">Transdermal — For Stable Pain / Swallowing Difficulty</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Conversion</th></tr><tr><td>------</td><td>------</td><td>------------</td></tr><tr><td>**Fentanyl Patch** (Durogesic®)</td><td>**12.5–25 mcg/h** (q72h)</td><td>**100mg oral morphine/24h ≈ 25 mcg/h fentanyl**</td></tr><tr><td>**Buprenorphine Patch** (Transtec®, BuTrans®)</td><td>**5–20 mcg/h** (q72h/q168h)</td><td>Partial agonist; ceiling effect; less respiratory depression</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Fentanyl patch <b>NOT</b> for acute/opioid-naïve pain. <b>12.5 mcg/h = lowest</b>. Conversion: <b>Morphine 60mg/24h PO ≈ Fentanyl 25mcg/h TD</b>.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Opioid Conversion — Oral Morphine Equivalent (OME)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Conversion Table (Approximate — **Always Reduce 30–50% on Rotation**)</div>
+<table class="ctable"><tr><th>Drug</th><th>Route</th><th>Dose</th><th>≈ Oral Morphine (mg)</th></tr><tr><td>------</td><td>-------</td><td>------</td><td>----------------------</td></tr><tr><td>**Morphine**</td><td>PO</td><td>10mg</td><td>**10**</td></tr><tr><td>**Morphine**</td><td>SC/IV</td><td>5mg</td><td>**10** (2:1)</td></tr><tr><td>**Oxycodone**</td><td>PO</td><td>5mg</td><td>**7.5–10** (1:1.5–2)</td></tr><tr><td>**Oxycodone**</td><td>SC/IV</td><td>2.5–3mg</td><td>**10** (2:1)</td></tr><tr><td>**Hydromorphone**</td><td>PO</td><td>2mg</td><td>**10** (1:5)</td></tr><tr><td>**Hydromorphone**</td><td>SC/IV</td><td>1mg</td><td>**10** (5:1)</td></tr><tr><td>**Fentanyl**</td><td>TD</td><td>25mcg/h</td><td>**60–100mg/24h**</td></tr><tr><td>**Fentanyl**</td><td>IV</td><td>100mcg</td><td>**10mg** (100:1)</td></tr><tr><td>**Alfentanil**</td><td>IV</td><td>500mcg</td><td>**10mg**</td></tr><tr><td>**Remifentanil**</td><td>IV</td><td>1mg</td><td>**10mg**</td></tr><tr><td>**Methadone**</td><td>PO</td><td>**Variable** (see below)</td><td>**Variable**</td></tr><tr><td>**Buprenorphine**</td><td>TD</td><td>20mcg/h</td><td>**~30–40mg/24h**</td></tr><tr><td>**Tramadol**</td><td>PO</td><td>100mg</td><td>**20** (1:5)</td></tr><tr><td>**Codeine**</td><td>PO</td><td>60mg</td><td>**6** (1:10)</td></tr><tr><td>**Diamorphine**</td><td>SC/IV</td><td>5mg</td><td>**10** (2:1)</td></tr></table>
+<div class="sub-h">Methadone Conversion — **Specialist Only**</div>
+<table class="ctable"><tr><th>Current OME (mg/24h)</th><th>Methadone Ratio</th></tr><tr><td>----------------------</td><td>-----------------</td></tr><tr><td><100</td><td>4:1 (100mg morphine ≈ 25mg methadone)</td></tr><tr><td>100–300</td><td>8:1</td></tr><tr><td>300–600</td><td>12:1</td></tr><tr><td>>600</td><td>15:1+</td></tr></table>
+<div class="callout"><b>Methadone: long t½ (15–60h), QT prolongation, complex PK — </b>specialist supervision required<b>.</b></div>
+<div class="sub-h">Opioid Rotation Principles</div>
+<ol><li><b>Calculate current 24h OME</b></li><li><b>Select new opioid</b> (renal/hepatic considerations)</li><li><b>Convert to new opioid dose</b> using table</li><li><b>Reduce by 30–50%</b> (incomplete cross-tolerance)</li><li><b>Divide into regular dosing</b> (BD for MR, Q4H for IR)</li><li><b>Prescribe breakthrough dose</b> (1/6–1/10 of 24h dose)</li><li><b>Monitor closely</b> (sedation, respiratory rate, pain score)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Breakthrough Pain — Rescue Dosing</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Principle</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Transient flare on controlled background pain</td></tr><tr><td>**Rescue dose**</td><td>**1/6 to 1/10 of total 24h opioid dose** (IR formulation)</td></tr><tr><td>**Frequency**</td><td>Q1–2H PRN (max 4–6 doses/24h)</td></tr><tr><td>**Reassessment**</td><td>If >3 rescue doses/day → **increase background dose**</td></tr><tr><td>**Incident pain**</td><td>Pre-emptive dosing 20–30 min before activity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Adjuvant Analgesics — Neuropathic Pain</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line (NICE CG173)</div>
+<table class="ctable"><tr><th>Drug</th><th>Starting Dose</th><th>Target Dose</th><th>Key Points</th></tr><tr><td>------</td><td>---------------</td><td>-------------</td><td>------------</td></tr><tr><td>**Amitriptyline / Nortriptyline**</td><td>10–25mg ON</td><td>50–75mg ON</td><td>**TCA**; anticholinergic SE; avoid if CVD, glaucoma, retention; nortriptyline < SE</td></tr><tr><td>**Duloxetine**</td><td>30mg OD</td><td>60mg OD</td><td>**SNRI**; also for diabetic neuropathy; nausea common</td></tr><tr><td>**Gabapentin**</td><td>300mg ON → 300mg TDS</td><td>1800–3600mg/day</td><td>**Renal adjust**; slow titration; sedation, weight gain, oedema</td></tr><tr><td>**Pregabalin**</td><td>75mg BD → 150mg BD</td><td>300–600mg/day</td><td>**Renal adjust**; faster titration; similar SE; **controlled drug (Sch 3)**</td></tr></table>
+<div class="sub-h">Second-Line / Specialised</div>
+<table class="ctable"><tr><th>Drug</th><th>Indication</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Carbamazepine**</td><td>**Trigeminal neuralgia** (first-line)</td></tr><tr><td>**Lamotrigine**</td><td>Refractory neuropathic pain</td></tr><tr><td>**Topical lidocaine 5% patch**</td><td>Localised neuropathic pain (PHN)</td></tr><tr><td>**Capsaicin 8% patch**</td><td>PHN, HIV neuropathy (specialist)</td></tr><tr><td>**Ketamine (oral/IV)**</td><td>Refractory pain (specialist)</td></tr><tr><td>**Cannabinoids** (nabiximols)</td><td>MS spasticity pain (specialist)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Opioid Side Effects — Prevention & Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Side Effect</th><th>Prevention</th><th>Management</th></tr><tr><td>-------------</td><td>------------</td><td>------------</td></tr><tr><td>**Constipation**</td><td>**Laxative co-prescription mandatory** (stimulant + softener: senna + docusate)</td><td>Increase laxatives; consider naloxegol (peripheral antagonist)</td></tr><tr><td>**Nausea/Vomiting**</td><td>Antiemetic PRN (metoclopramide/ondansetron) for 1st week</td><td>Regular antiemetic if persistent; rotate opioid</td></tr><tr><td>**Sedation**</td><td>Start low, titrate slow; avoid CNS depressants</td><td>Reduce dose; rotate; consider stimulant (modafinil — specialist)</td></tr><tr><td>**Respiratory Depression**</td><td>**Monitor RR** (not just SpO₂); naloxone available</td><td>**Naloxone 100–400mcg IV/SC** (titrate); support ventilation</td></tr><tr><td>**Dry Mouth**</td><td>Sips water, saliva substitutes</td><td>Pilocarpine drops</td></tr><tr><td>**Urinary Retention**</td><td>Monitor; avoid anticholinergics</td><td>Catheter if needed; reduce dose</td></tr><tr><td>**Pruritus**</td><td>Antihistamine (chlorphenamine)</td><td>Rotate opioid; ondansetron</td></tr><tr><td>**Myoclonus**</td><td>Hydration; rotate opioid</td><td>Clonazepam; rotate</td></tr><tr><td>**Opioid-Induced Hyperalgesia (OIH)**</td><td>Avoid dose escalation; rotate</td><td>**Opioid rotation**; ketamine adjuvant</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Renal Impairment — **Opioid Choice Critical**</div>
+<table class="ctable"><tr><th>Opioid</th><th>eGFR >30</th><th>eGFR 15–30</th><th>eGFR <15 / HD</th><th>Notes</th></tr><tr><td>--------</td><td>----------</td><td>------------</td><td>---------------</td><td>-------</td></tr><tr><td>**Morphine**</td><td>✅ Use with caution</td><td>❌ **Avoid** (M6G accumulation)</td><td>❌ **Avoid**</td><td>M6G = active, renally cleared → respiratory depression</td></tr><tr><td>**Oxycodone**</td><td>✅ Preferred</td><td>✅ Reduce dose 50%</td><td>⚠️ Specialist</td><td>Minor active metabolite; safer than morphine</td></tr><tr><td>**Hydromorphone**</td><td>✅ Preferred</td><td>✅ Preferred</td><td>✅ Preferred</td><td>**Minimal active metabolites** — **safest in CKD**</td></tr><tr><td>**Fentanyl**</td><td>✅ Preferred</td><td>✅ Preferred</td><td>✅ Preferred</td><td>**Hepatic clearance**; minimal renal; TD patch stable</td></tr><tr><td>**Buprenorphine**</td><td>✅ Preferred</td><td>✅ Preferred</td><td>✅ Preferred</td><td>Partial agonist; ceiling respiratory effect</td></tr><tr><td>**Tramadol**</td><td>✅ Reduce</td><td>⚠️ Reduce 50%</td><td>❌ Avoid</td><td>Seizure risk ↑ in renal failure</td></tr><tr><td>**Codeine**</td><td>❌ Avoid</td><td>❌ Avoid</td><td>❌ Avoid</td><td>Unpredictable metabolism</td></tr><tr><td>**Methadone**</td><td>✅ Preferred</td><td>✅ Preferred</td><td>✅ Preferred</td><td>Hepatic; but complex — specialist</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>Morphine <b>avoided in CKD</b> (M6G). <b>Hydromorphone, fentanyl, buprenorphine, oxycodone (dose-reduced), methadone</b> = preferred in renal failure.</i></div>
+<div class="sub-h">Hepatic Impairment</div>
+<ul><li><b>All opioids</b>: Start low, titrate slow</li><li><b>Morphine/Oxycodone</b>: ↓ Clearance → reduce dose</li><li><b>Fentanyl/Buprenorphine</b>: Preferred (less hepatic first-pass)</li><li><b>Methadone</b>: Complex — specialist</li></ul>
+<div class="sub-h">Elderly</div>
+<ul><li><b>Start low</b> (50% of adult dose)</li><li><b>Titrate slowly</b></li><li><b>Monitor</b>: Sedation, falls, confusion, constipation</li><li><b>Avoid</b>: Codeine (CYP2D6), tramadol (seizures), meperidine (normeperidine)</li><li><b>Preferred</b>: Paracetamol first; then morphine/hydromorphone/oxycodone low dose</li></ul>
+<div class="sub-h">Palliative Care — Syringe Drivers (SC Infusion)</div>
+<table class="ctable"><tr><th>Drug</th><th>Compatibility</th><th>Dose Range (24h)</th></tr><tr><td>------</td><td>---------------</td><td>------------------</td></tr><tr><td>**Morphine**</td><td>Most compatible</td><td>10–500mg+</td></tr><tr><td>**Oxycodone**</td><td>Compatible</td><td>5–200mg</td></tr><tr><td>**Hydromorphone**</td><td>Compatible</td><td>2–100mg</td></tr><tr><td>**Alfentanil**</td><td>Highly compatible</td><td>0.5–5mg</td></tr><tr><td>**Ketamine**</td><td>Compatible (separate line preferred)</td><td>50–500mg</td></tr><tr><td>**Midazolam**</td><td>Compatible</td><td>5–60mg</td></tr><tr><td>**Levomepromazine**</td><td>Compatible</td><td>6.25–25mg</td></tr><tr><td>**Haloperidol**</td><td>Compatible</td><td>1–10mg</td></tr><tr><td>**Glycopyrronium**</td><td>Compatible</td><td>0.6–2.4mg</td></tr><tr><td>**Octreotide**</td><td>Compatible</td><td>300–1200mcg</td></tr></table>
+<div class="callout"><b>Water for injection</b> = standard diluent. <b>Sodium chloride 0.9%</b> for alfentanil. <b>Check compatibility charts</b> (Dickman, Palliative Care Formulary).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">️⃣ Practical Prescribing Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Assess Pain: Severity, Type, Impact] --&gt; B{Neuropathic Component?} B --&gt;|Yes| C[Add Adjuvant at ALL Steps&lt;br/&gt;Gabapentin/Pregabalin/Duloxetine/Amitriptyline] B --&gt;|No| D[Proceed] C &amp; D --&gt; E{Pain Severity} E --&gt;|Mild (1-3)| F[Step 1: Paracetamol ± NSAID&lt;br/&gt;Regular dosing] E --&gt;|Moderate (4-6)| G[Step 2: Weak Opioid&lt;br/&gt;Codeine/Tramadol + Step 1] E --&gt;|Severe (7-10)| H[Step 3: Strong Opioid&lt;br/&gt;Morphine/Oxycodone MR + IR breakthrough] F &amp; G &amp; H --&gt; I[Co-prescribe Laxative + Antiemetic PRN] I --&gt; J[Review: 24-48h (acute), 1-2w (chronic)] J --&gt; K{Adequate Control?} K --&gt;|No| L[Optimise: Titrate dose&lt;br/&gt;Add/Adjust adjuvant&lt;br/&gt;Opioid rotation&lt;br/&gt;Specialist referral] K --&gt;|Yes| M[Continue + Regular Review] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**WHO Ladder**</td><td>Step 1: Paracetamol ± NSAID. Step 2: Weak opioid (codeine/tramadol) + Step 1. Step 3: Strong opioid (morphine/oxycodone) + Step 1. **Skip Step 2 for severe pain**. Adjuvants at all steps for neuropathic pain.</td></tr><tr><td>**Opioid Conversion**</td><td>**Morphine PO 10mg = Oxycodone PO 5mg = Hydromorphone PO 2mg = Fentanyl TD 25mcg/h ≈ Morphine 60mg/24h PO**. **Reduce 30–50% on rotation**.</td></tr><tr><td>**Breakthrough Dose**</td><td>**1/6–1/10 of 24h dose** (IR) Q1–2H PRN. >3/day → increase background.</td></tr><tr><td>**Renal Impairment**</td><td>**Avoid morphine** (M6G). **Preferred: Hydromorphone, fentanyl, buprenorphine, oxycodone (½ dose), methadone**.</td></tr><tr><td>**Neuropathic Adjuvants**</td><td>**First-line: Amitriptyline, duloxetine, gabapentin, pregabalin** (renal adjust). Carbamazepine for trigeminal neuralgia.</td></tr><tr><td>**Side Effects**</td><td>**Constipation = universal (laxative mandatory)**. N&V (antiemetic 1st week). Sedation. Respiratory depression (monitor RR).</td></tr><tr><td>**Opioid Rotation**</td><td>Calculate OME → Convert → **Reduce 30–50%** → Regular dosing + breakthrough.</td></tr><tr><td>**Syringe Driver**</td><td>SC infusion 24h. Morphine/oxycodone/hydromorphone/alfentanil + midazolam/levomepromazine/haloperidol. Water for injection.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>WHO Analgesic Ladder — three steps?</td><td>Step 1: Non-opioid (paracetamol ± NSAID). Step 2: Weak opioid (codeine/tramadol) + non-opioid. Step 3: Strong opioid (morphine/oxycodone) + non-opioid. Adjuvants at all steps.</td></tr><tr><td>2</td><td>Oral morphine to oxycodone conversion?</td><td>**Morphine 10mg PO ≈ Oxycodone 5mg PO** (ratio 1:1.5–2). Reduce 30–50% on rotation.</td></tr><tr><td>3</td><td>Morphine in renal failure — why avoid?</td><td>**Morphine-6-glucuronide (M6G)** = active metabolite, renally cleared → accumulates → **respiratory depression, sedation**.</td></tr><tr><td>4</td><td>Preferred opioid in CKD?</td><td>**Hydromorphone, fentanyl, buprenorphine, oxycodone (dose-reduced), methadone** — minimal active metabolites.</td></tr><tr><td>5</td><td>Breakthrough dose calculation?</td><td>**1/6 to 1/10 of total 24h opioid dose** as immediate-release, Q1–2H PRN.</td></tr><tr><td>6</td><td>First-line neuropathic pain adjuvants?</td><td>**Amitriptyline, duloxetine, gabapentin, pregabalin** (NICE). Carbamazepine for trigeminal neuralgia.</td></tr><tr><td>7</td><td>Fentanyl patch conversion from oral morphine?</td><td>**Oral morphine 60mg/24h ≈ Fentanyl 25mcg/h TD**. Lowest patch 12.5mcg/h = ~30mg morphine/24h.</td></tr><tr><td>8</td><td>Opioid rotation — why reduce dose 30–50%?</td><td>**Incomplete cross-tolerance** — patient not fully tolerant to new opioid's side effects.</td></tr><tr><td>9</td><td>Co-prescribing essential with strong opioids?</td><td>**Laxative (stimulant + softener: senna + docusate)** + **Antiemetic PRN** for first week.</td></tr><tr><td>10</td><td>Syringe driver compatible drugs (common)?</td><td>**Morphine, oxycodone, hydromorphone, alfentanil, midazolam, levomepromazine, haloperidol, glycopyrronium, octreotide** — water for injection diluent.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"WHO ladder only for cancer pain"**</td><td>**NO.** 2019 update: **all persistent pain** (cancer + chronic non-cancer).</td></tr><tr><td>**"Step 2 mandatory before Step 3"**</td><td>**NO.** **Skip Step 2 for severe pain** — go straight to strong opioid.</td></tr><tr><td>**"Codeine works for everyone"**</td><td>**NO.** **Prodrug** → morphine via **CYP2D6**. **Poor metabolisers (7–10%) = no analgesia**. Ultra-rapid = toxicity.</td></tr><tr><td>**"Tramadol = safe weak opioid"**</td><td>**NO.** **Seizure risk** (↓ threshold), serotonin syndrome with SSRIs, renal adjust needed, controlled drug (Sch 3).</td></tr><tr><td>**"Fentanyl patch for acute pain"**</td><td>**NO.** **Only for stable chronic pain** in opioid-tolerant patients. NOT for opioid-naïve.</td></tr><tr><td>**"Methadone conversion simple"**</td><td>**NO.** **Variable ratio** (4:1 to 15:1 depending on current OME). **Long t½, QT prolongation — specialist only.**</td></tr><tr><td>**"Oxycodone safe in all CKD"**</td><td>**Reduce 50% if eGFR<30**. Hydromorphone/fentanyl/buprenorphine safer.</td></tr><tr><td>**"Laxative only if constipated"**</td><td>**NO.** **Prophylactic laxative mandatory** with ALL strong opioids from Day 1.</td></tr><tr><td>**"PRN opioids for chronic pain"**</td><td>**NO.** **Regular dosing** (MR BD + IR breakthrough) for persistent pain. PRN only for incident/breakthrough.</td></tr></table>
+<div class="callout"><b>Mnemonic: PAIN MANAGEMENT WHO</b> <b>P</b>ain assessment: <b>Severity (NRS), Type (nociceptive/neuropathic)</b> <b>A</b>djuvants at <b>ALL steps</b> for neuropathic: <b>Amitriptyline, Duloxetine, Gabapentin, Pregabalin</b> <b>I</b>R vs MR: <b>MR for background (BD), IR for breakthrough (Q4H)</b> <b>N</b>europathic: <b>Carbamazepine = trigeminal neuralgia</b> <b>M</b>orphine PO 10mg = <b>Oxycodone PO 5mg = Hydromorphone PO 2mg = Fentanyl TD 25mcg/h</b> <b>A</b>void morphine in <b>CKD</b> (M6G accumulation) → <b>Hydromorphone/Fentanyl/Buprenorphine preferred</b> <b>N</b>ausea/Constipation: <b>Laxative mandatory (senna+docusate); Antiemetic 1st week</b> <b>A</b>lways <b>reduce 30-50% on opioid rotation</b> (incomplete cross-tolerance) <b>G</b>abapentin/Pregabalin: <b>Renal adjust</b> (eGFR&lt;30: ↓ dose/↑ interval) <b>E</b>lderly: <b>Start 50% dose; monitor falls/sedation; avoid codeine/tramadol/meperidine</b> <b>M</b>ethadone: <b>Specialist only</b> (variable ratio, QT, long t½) <b>E</b> - <b>Entonox</b> (50% N₂O) for procedural/acute pain <b>N</b>on-opioid: <b>Paracetamol 1g QDS (max 4g); Ibuprofen 400mg TDS</b> <b>T</b>ramadol: <b>Seizure risk, serotonin syndrome, Sch 3, renal adjust</b> <b>WHO Ladder</b>: <b>Step 1 (Paracetamol/NSAID) → Step 2 (Codeine/Tramadol) → Step 3 (Morphine/Oxycodone)</b> <b>H</b>eroin (diamorphine) SC: <b>2:1 vs oral morphine</b> (5mg SC = 10mg PO) <b>O</b>pioid rotation: <b>OME → Convert → Reduce 30-50% → Regular + Breakthrough</b> <b>L</b>axative: <b>Senna + Docusate</b> from Day 1 with strong opioids <b>A</b>lfentanil: <b>Syringe driver favourite</b> (stable, small volume, minimal histamine) <b>D</b>iamorphine: <b>SC preferred in palliative</b> (more soluble than morphine) <b>D</b>osage breakthrough: <b>1/6-1/10 of 24h dose</b>; &gt;3/day → ↑ background <b>R</b>espiratory depression: <b>Monitor RR (not SpO₂); Naloxone 100-400mcg IV/SC</b> <b>S</b>yringe driver: <b>Water for injection; 24h; check compatibility (Dickman)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Pain Management)) WHO Ladder Step 1: Paracetamol ± NSAID Step 2: Weak opioid (Codeine/Tramadol) Step 3: Strong opioid (Morphine/Oxycodone) Skip Step 2 if severe Adjuvants ALL steps Opioid Conversion Morphine PO 10 = Oxy 5 = Hydro 2 = Fent 25mcg/h Reduce 30-50% on rotation Breakthrough = 1/6-1/10 24h dose Renal Prescribing Avoid Morphine (M6G) Hydromorphone/Fentanyl/Buprenorphine preferred Oxycodone 50% dose Neuropathic Adjuvants 1st: Amitriptyline, Duloxetine, Gabapentin, Pregabalin Trigeminal: Carbamazepine Renal adjust Gaba/Prega Side Effects Constipation: Laxative mandatory N&amp;V: Antiemetic 1st week Resp depression: Monitor RR, Naloxone Special Elderly: Start low, avoid codeine/tramadol Palliative: Syringe driver (SC 24h) Rotation: OME → Convert → Reduce </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>WHO Ladder</td><td>3</td><td></td><td></td></tr><tr><td>Opioid Conversion</td><td>4</td><td></td><td></td></tr><tr><td>Renal Prescribing</td><td>3</td><td></td><td></td></tr><tr><td>Neuropathic Adjuvants</td><td>3</td><td></td><td></td></tr><tr><td>Breakthrough Dosing</td><td>2</td><td></td><td></td></tr><tr><td>Opioid Side Effects</td><td>2</td><td></td><td></td></tr><tr><td>Opioid Rotation</td><td>2</td><td></td><td></td></tr><tr><td>Syringe Driver</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the management of severe cancer pain including opioid selection, conversion and side effects."</td><td>WHO ladder (skip step 2), morphine/oxycodone MR + IR breakthrough, OME conversions, renal adjustments, laxative/antiemetic, adjuvant for neuropathic, rotation principles, syringe driver</td></tr><tr><td>**Short Note**</td><td>"Opioid conversion in renal failure."</td><td>Avoid morphine (M6G). Use hydromorphone/fentanyl/buprenorphine. Oxycodone 50% dose reduction. Methadone specialist.</td></tr><tr><td>**Viva**</td><td>"Patient on morphine 60mg/24h PO, switching to fentanyl patch. Dose?"</td><td>**Morphine 60mg/24h PO ≈ Fentanyl 25mcg/h TD**. Start 25mcg/h patch, continue oral morphine for 12h after patch application (reservoir effect).</td></tr><tr><td>**Ward Round**</td><td>"Patient on oxycodone MR 40mg BD, drowsy, RR 8. Immediate action?"</td><td>**Opioid toxicity**. **Naloxone 100–400mcg IV/SC** titrate to RR >10. Stop oxycodone. Monitor. Consider rotation to hydromorphone/fentanyl when stable.</td></tr><tr><td>**Last-Night**</td><td>"Ladder: Step1 Paracet/NSAID, Step2 Codeine/Tramadol, Step3 Morph/Oxy. Skip Step2 severe. Conversion: M10=O5=Hy2=Fent25mcg/h. CKD: avoid M, use Hy/Fent/Bupr. Neuropathic: Ami/Dulox/Gaba/Prega. Breakthrough 1/6-1/10. Laxative+antiemetic mandatory. Rotation reduce 30-50%."</td><td>WHO ladder. Key conversions. Renal prescribing. Neuropathic adjuvants. Breakthrough. Side effect prophylaxis. Rotation.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>WHO Ladder</b>: Step 1 (Paracetamol ± NSAID) → Step 2 (Codeine/Tramadol) → Step 3 (Morphine/Oxycodone). <b>Skip Step 2 for severe pain</b>. Adjuvants at all steps for neuropathic pain.</li><li><b>Key Conversions</b>: <b>Morphine PO 10mg = Oxycodone PO 5mg = Hydromorphone PO 2mg = Fentanyl TD 25mcg/h ≈ Morphine 60mg/24h PO</b>. <b>Reduce 30–50% on rotation</b> (incomplete cross-tolerance).</li><li><b>Breakthrough Dose</b>: <b>1/6–1/10 of 24h dose</b> (IR) Q1–2H PRN. &gt;3/day → increase background.</li><li><b>Renal Impairment</b>: <b>Avoid morphine</b> (M6G accumulation). <b>Preferred: Hydromorphone, fentanyl, buprenorphine, oxycodone (½ dose), methadone</b>.</li><li><b>Neuropathic Adjuvants</b>: <b>First-line: Amitriptyline, duloxetine, gabapentin, pregabalin</b> (renal adjust). Carbamazepine for trigeminal neuralgia.</li><li><b>Side Effects</b>: <b>Constipation = universal</b> → <b>laxative mandatory</b> (senna + docusate). N&amp;V (antiemetic 1st week). Sedation. <b>Respiratory depression</b> → monitor RR, naloxone available.</li><li><b>Opioid Rotation</b>: Calculate OME → Convert → <b>Reduce 30–50%</b> → Regular MR + IR breakthrough.</li><li><b>Syringe Driver (SC 24h)</b>: Morphine/oxycodone/hydromorphone/alfentanil + midazolam/levomepromazine/haloperidol/glycopyrronium. Water for injection.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>WHO Analgesic Ladder Step 2 drug:</b></li></ol>
+<p>A. Morphine  B. <b>Codeine</b>  C. Fentanyl  D. Paracetamol <i>Answer: B. Step 2 = weak opioids (codeine, tramadol, dihydrocodeine).</i></p>
+<ol><li><b>Oral morphine to oxycodone conversion ratio:</b></li></ol>
+<p>A. 1:1  B. <b>1:1.5–2 (10mg morphine ≈ 5mg oxycodone)</b>  C. 2:1  D. 1:5 <i>Answer: B. Morphine 10mg PO ≈ Oxycodone 5mg PO (1.5–2x more potent).</i></p>
+<ol><li><b>Opioid AVOIDED in chronic kidney disease:</b></li></ol>
+<p>A. Hydromorphone  B. Fentanyl  C. <b>Morphine</b>  D. Buprenorphine <i>Answer: C. Morphine → M6G (active metabolite) accumulates in CKD → respiratory depression.</i></p>
+<ol><li><b>Breakthrough dose for patient on morphine MR 60mg BD:</b></li></ol>
+<p>A. 5mg  B. <b>10–20mg</b>  C. 30mg  D. 60mg <i>Answer: B. 24h dose = 120mg. Breakthrough = 1/6–1/10 = 12–20mg (use 10–20mg IR).</i></p>
+<ol><li><b>First-line adjuvant for diabetic neuropathy:</b></li></ol>
+<p>A. Carbamazepine  B. <b>Duloxetine</b>  C. Topiramate  D. Lamotrigine <i>Answer: B. Duloxetine (SNRI) — NICE first-line for diabetic neuropathy. Also amitriptyline, gabapentin, pregabalin.</i></p>
+<ol><li><b>Fentanyl transdermal patch — indication:</b></li></ol>
+<p>A. Acute postoperative pain  B. <b>Stable chronic pain in opioid-tolerant patient</b>  C. Opioid-naïve severe pain  D. Breakthrough pain <i>Answer: B. Fentanyl patch ONLY for stable chronic pain in opioid-tolerant patients. NOT for acute/opioid-naïve.</i></p>
+<ol><li><b>Methadone conversion — characteristic:</b></li></ol>
+<p>A. Fixed ratio 1:1  B. <b>Variable ratio (4:1 to 15:1 depending on OME)</b>  C. Always 10:1  D. 2:1 <i>Answer: B. Methadone ratio varies with current OME (4:1 if &lt;100mg, up to 15:1 if &gt;600mg). Specialist only.</i></p>
+<ol><li><b>Co-prescription MANDATORY with strong opioids:</b></li></ol>
+<p>A. PPI  B. <b>Laxative (stimulant + softener)</b>  C. Antihistamine  D. Beta-blocker <i>Answer: B. Constipation is universal — prophylactic laxative (senna + docusate) from Day 1.</i></p>
+<ol><li><b>Syringe driver diluent:</b></li></ol>
+<p>A. Sodium chloride 0.9%  B. <b>Water for injection</b>  C. Glucose 5%  D. Hartmann's <i>Answer: B. Water for injection (standard). NaCl 0.9% for alfentanil.</i></p>
+<ol><li><b>Tramadol — key risk:</b></li></ol>
+<p>A. Respiratory depression  B. <b>Seizures (lowers threshold)</b>  C. Hepatotoxicity  D. Nephrotoxicity <i>Answer: B. Tramadol lowers seizure threshold; risk with antidepressants, renal failure, epilepsy.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>70M, metastatic prostate cancer, severe back pain (NRS 9). eGFR 20. Strong opioid choice?</b></li></ol>
+<p>A. Morphine MR 20mg BD  B. Oxycodone MR 20mg BD  C. <b>Hydromorphone MR 8mg BD</b>  D. Codeine 60mg QDS <i>Answer: C. eGFR 20 → avoid morphine. Hydromorphone preferred (minimal active metabolites). Oxycodone needs 50% reduction. Codeine inadequate for severe pain.</i></p>
+<ol><li><b>Patient on morphine MR 60mg BD, breakthrough morphine IR 20mg Q4H PRN. Using 6 breakthrough doses/day. Action?</b></li></ol>
+<p>A. Increase breakthrough to 30mg  B. <b>Increase morphine MR to 90mg BD</b>  C. Add tramadol  D. Switch to fentanyl <i>Answer: B. &gt;3 breakthrough doses/day → increase background dose by 30–50% (120mg → 180mg/24h = 90mg BD).</i></p>
+<ol><li><b>65F, trigeminal neuralgia, carbamazepine 200mg BD, develops rash and eosinophilia. Action?</b></li></ol>
+<p>A. Continue, add antihistamine  B. <b>Stop carbamazepine (SJS risk); refer neurology</b>  C. Reduce dose  D. Switch to gabapentin <i>Answer: B. Carbamazepine + rash + eosinophilia = potential SJS/DRESS. Stop immediately. Refer.</i></p>
+<ol><li><b>Palliative patient, syringe driver: morphine 30mg/24h + midazolam 10mg/24h. Compatible?</b></li></ol>
+<p>A. No  B. <b>Yes (standard combination)</b>  C. Only with NaCl 0.9%  D. Only separate lines <i>Answer: B. Morphine + midazolam = compatible in water for injection (standard palliative combination).</i></p>
+<ol><li><b>Opioid-naïve patient, severe acute pain. WHO ladder approach?</b></li></ol>
+<p>A. Start Step 1, escalate weekly  B. <b>Start Step 3 (strong opioid) immediately</b>  C. Start Step 2  D. Paracetamol only <i>Answer: B. Severe pain (NRS 7–10) → <b>skip Step 2, go straight to Step 3 (strong opioid)</b>. Regular dosing + breakthrough.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-C, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-C, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Medication Safety and Errors/PINCH High-Risk Drugs]] — Opioids (N in PINCH): respiratory depression, naloxone, standard concentrations</li><li>[[Special Populations/Renal Prescribing]] — Opioid choice in CKD (avoid morphine, prefer hydromorphone/fentanyl)</li><li>[[Special Populations/Elderly Prescribing]] — Opioids in elderly (start low, falls risk, avoid codeine/tramadol)</li><li>[[Special Populations/Hepatic Prescribing]] — Opioid metabolism in liver disease</li><li>[[Clinical Context/Palliative Care]] — Syringe drivers, end-of-life opioid management</li><li>[[Drug Interactions/Pharmacokinetic interactions/Metabolism interactions]] — CYP2D6 (codeine), CYP3A4 (fentanyl, oxycodone), serotonin syndrome (tramadol + SSRIs)</li><li>[[Therapeutic Drug Monitoring]] — Not routine for opioids but TDM principles apply (toxicity monitoring)</li><li>[[Polypharmacy and Deprescribing/Assessment Tools]] — STOPP criteria for opioids in elderly</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Pain Management · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Energy Requirements Basal Metabolic Rate — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.1. MACRONUTRIENTS & ENERGY</span>
+      <div class="h1">Energy Requirements Basal Metabolic Rate</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define energy balance and total energy expenditure (TEE) and its four components</li><li>[ ] State the relationship between intake, expenditure and change in body energy stores</li><li>[ ] Define basal metabolic rate (BMR) / resting energy expenditure (REE) and describe the standard conditions of measurement</li><li>[ ] List the principal determinants of BMR (lean body mass, age, sex, hormones, pregnancy, fever, sleep, ethnicity, drugs)</li><li>[ ] Apply the clinical "1 kcal/kg/h" rule and 24-hour BMR estimate</li><li>[ ] Calculate BMR using <b>Mifflin–St Jeor</b>, <b>Harris–Benedict</b> and <b>Schofield/WHO</b> equations</li><li>[ ] Define the thermic effect of food (TEF) and recall its magnitude for each macronutrient</li><li>[ ] Use <b>Physical Activity Level (PAL)</b> multipliers (1.4–1.9) to estimate TEE</li><li>[ ] State the UK DRV/FAO/WHO EAR and RNI for energy by age, sex and pregnancy/lactation</li><li>[ ] Describe the Acceptable Macronutrient Distribution Ranges (AMDR) for CHO, fat and protein</li><li>[ ] Define energy density and apply it to weight-loss and weight-gain advice</li><li>[ ] Define BMI and the WHO cut-offs, with their limitations</li><li>[ ] Describe the principles of indirect calorimetry and the doubly-labelled water (DLW) method</li><li>[ ] Recognise how disease, trauma and critical illness alter REE and energy targets</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Energy balance**</td><td>Intake (kcal in) − Expenditure (kcal out) = Δ Energy stores. Positive → weight gain; negative → weight loss.</td></tr><tr><td>**Total Energy Expenditure (TEE)**</td><td>Sum of BMR + TEF + Physical Activity Energy Expenditure (PAEE) + (growth / pregnancy / lactation).</td></tr><tr><td>**Basal Metabolic Rate (BMR)**</td><td>Energy required to maintain vital functions in the post-absorptive state, awake, supine, thermoneutral (≈ 20–25 °C), after 10–12 h fast, with no prior exercise.</td></tr><tr><td>**Resting Energy Expenditure (REE / RMR)**</td><td>Measured under less strict conditions (e.g. not strictly fasted); usually ~10 % higher than BMR. Used interchangeably in clinical practice.</td></tr><tr><td>**Schofield / FAO-WHO/UNU BMR**</td><td>Predictive equations derived from > 11 000 doubly-labelled water measurements; basis of FAO/WHO/UNU (2004) energy requirements.</td></tr><tr><td>**Harris–Benedict equation**</td><td>Classical 1919 equation (revised 1984 Roza & Shizgal); still commonly used in clinical software.</td></tr><tr><td>**Mifflin–St Jeor equation**</td><td>Modern (1990) predictive equation; most accurate for non-obese and obese adults (Academy of Nutrition & Dietetics).</td></tr><tr><td>**Thermic Effect of Food (TEF) / Diet-Induced Thermogenesis (DIT)**</td><td>Energy cost of digesting, absorbing, transporting, metabolising and storing nutrients.</td></tr><tr><td>**Physical Activity Level (PAL)**</td><td>TEE ÷ BMR (dimensionless). Used in FAO/WHO system. Sedentary ~1.4, moderately active ~1.6, very active ~1.8–1.9.</td></tr><tr><td>**Activity Factor (AF)**</td><td>Multiplier (Harris–Benedict) on BMR: bedbound 1.2, sedentary 1.3, light 1.5, moderate 1.6, heavy 1.9.</td></tr><tr><td>**EAR (Estimated Average Requirement)**</td><td>Energy intake that meets the needs of 50 % of the population; not appropriate for individuals but is the basis of population targets.</td></tr><tr><td>**RNI (Reference Nutrient Intake)**</td><td>Intake that meets the needs of ~97.5 % of the population (+2 SD above EAR).</td></tr><tr><td>**AMDR (Acceptable Macronutrient Distribution Range)**</td><td>Proportion of total energy from each macronutrient associated with reduced chronic disease risk.</td></tr><tr><td>**Energy density (kcal/g)**</td><td>Energy per unit weight of food. Drives energy intake at a fixed volume/weight of food.</td></tr><tr><td>**BMI (Body Mass Index)**</td><td>Weight (kg) ÷ Height² (m²). WHO classification: <18.5 underweight, 18.5–24.9 normal, 25–29.9 overweight, ≥30 obese.</td></tr><tr><td>**Indirect calorimetry**</td><td>Measurement of O₂ consumption (VO₂) and CO₂ production (VCO₂) to derive REE via the **Weir equation**.</td></tr><tr><td>**Respiratory Quotient (RQ)**</td><td>VCO₂ ÷ VO₂. Mixed diet ≈ 0.85; CHO 1.0; fat 0.7; protein 0.8; lipogenesis >1.0; ketogenesis <0.7.</td></tr><tr><td>**Doubly-Labelled Water (DLW)**</td><td>²H₂¹⁸O isotope method. Gold-standard measure of free-living TEE over 7–14 days.</td></tr><tr><td>**Specific Dynamic Action (SDA)**</td><td>Older name for TEF, still seen in older texts.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Energy Balance Equation</div>
+<p><b>Energy intake (food &amp; drink) = Energy expenditure (TEE) ± Δ body energy stores</b></p>
+<p>``<code> Energy intake (kcal/d)  =  BMR  +  TEF  +  Physical Activity (+ growth / pregnancy / lactation in special groups) </code>``</p>
+<ul><li><b>First Law of Thermodynamics</b> applied to human nutrition.</li><li>~3500 kcal ≈ 1 lb (0.45 kg) of adipose tissue; clinically very rough — for sustained weight loss ~ 1 kg fat ≈ 7700 kcal.</li><li>A sustained <b>positive balance of +500 kcal/d</b> → theoretical ~0.5 kg/wk weight gain (1 kg of fat ≈ 7700 kcal).</li><li>Energy is provided almost exclusively by <b>carbohydrate, fat, protein and alcohol</b> (Atwater factors: 4, 9, 4, 7 kcal/g).</li></ul>
+<div class="sub-h">Section 2: Total Energy Expenditure (TEE) — Components</div>
+<table class="ctable"><tr><th>Component</th><th>% of TEE (sedentary adult)</th><th>Notes</th></tr><tr><td>-----------</td><td>---------------------------</td><td>-------</td></tr><tr><td>**BMR / REE**</td><td>60–75 %</td><td>Largest, least modifiable, dominant in sedentary individuals.</td></tr><tr><td>**TEF / DIT**</td><td>~10 %</td><td>Obligatory (digestion) + facultative (sympathetic).</td></tr><tr><td>**Physical Activity (PAEE)**</td><td>15–30 %</td><td>Most variable, most modifiable.</td></tr><tr><td>**Growth**</td><td>extra only in childhood / pregnancy / lactation</td><td>Highest in infancy (~30 % of TEE).</td></tr></table>
+<div class="sub-h">Section 3: Basal Metabolic Rate (BMR) — Definition &amp; Conditions</div>
+<p><b>Strictly defined</b> as the minimum rate of energy expenditure compatible with life. Measured under standardised conditions:</p>
+<ol><li><b>Post-absorptive</b> — 10–12 h fast (no thermic effect of food).</li><li><b>Awake</b>, lying supine, motionless.</li><li><b>Thermoneutral</b> environment (20–25 °C) — no shivering / sweating.</li><li><b>No prior exercise</b> (≥ 12 h).</li><li><b>Mentally relaxed</b> (no significant cognitive arousal).</li></ol>
+<div class="callout">In practice, <b>REE</b> (resting energy expenditure) is usually measured and is <b>~10 % &gt; BMR</b> because the strict conditions above are not enforced.</div>
+<p>#### Approximate BMR (clinical rule of thumb)</p>
+<ul><li><b>1 kcal / kg / hour</b> ≈ 24 kcal/kg/day.</li><li>A <b>70 kg adult → ~1680 kcal/day</b> (≈ 7 MJ).</li><li>Range in healthy adults: <b>1200–1800 kcal/day (women), 1500–2000 kcal/day (men)</b>; rising with body size / muscle mass.</li></ul>
+<p>#### BMR by body size (FAO/WHO summary)</p>
+<table class="ctable"><tr><th>Group</th><th>BMR (kcal/day)</th></tr><tr><td>-------</td><td>----------------</td></tr><tr><td>Adult male 70 kg</td><td>~1700</td></tr><tr><td>Adult female 58 kg</td><td>~1300</td></tr><tr><td>New-born (3 kg)</td><td>~150</td></tr><tr><td>1 yr (10 kg)</td><td>~500</td></tr><tr><td>5 yr (18 kg)</td><td>~900</td></tr><tr><td>10 yr (30 kg)</td><td>~1150</td></tr><tr><td>Adolescent M (60 kg)</td><td>~1500</td></tr><tr><td>Adolescent F (50 kg)</td><td>~1250</td></tr></table>
+<div class="sub-h">Section 4: Determinants of BMR</div>
+<table class="ctable"><tr><th>Factor</th><th>Effect</th><th>Magnitude</th></tr><tr><td>--------</td><td>--------</td><td>-----------</td></tr><tr><td>**Lean body mass (LBM)**</td><td>**Strongest determinant** — metabolically active tissue (brain, liver, heart, muscle).</td><td>REE correlates with LBM: r ≈ 0.85.</td></tr><tr><td>**Age**</td><td>↓ with age</td><td>↓ ~1–2 % per decade after 20 y; ↓ ~5 % per decade after 50 y (loss of FFM).</td></tr><tr><td>**Sex**</td><td>♂ > ♀ (per kg LBM similar; ♀ have more fat).</td><td>Absolute difference ~10–15 % (after correcting for FFM, similar).</td></tr><tr><td>**Body size & surface area**</td><td>Larger body → higher BMR (Fick law of heat loss).</td><td>REE ≈ k · BSA¹·⁷ (Kleiber's law; ¾-power law: BMR ∝ M^0.75).</td></tr><tr><td>**Thyroid hormones (T3, T4)**</td><td>Major hormonal regulator.</td><td>Hypothyroid → REE ↓ 20–40 %; hyperthyroid → REE ↑ 20–80 %.</td></tr><tr><td>**Catecholamines** (sympathetic tone)</td><td>↑ BMR</td><td>Brown fat thermogenesis (UCP1).</td></tr><tr><td>**Pregnancy**</td><td>↑ REE</td><td>↑ by ~ 15–25 % (2nd + 3rd trimester).</td></tr><tr><td>**Lactation**</td><td>↑ REE</td><td>~ 500 kcal/d cost of milk synthesis (partly met by mobilisation of fat stores).</td></tr><tr><td>**Fever**</td><td>↑ REE by **~ 10–13 % per 1 °C rise** (Q10 effect).</td><td>39 °C ≈ 20–25 % above baseline.</td></tr><tr><td>**Infection / sepsis**</td><td>↑ REE</td><td>Cytokine-driven hypermetabolism.</td></tr><tr><td>**Trauma, surgery, burns**</td><td>↑ REE</td><td>Burns: REE may double (up to +100 % in >40 % BSA).</td></tr><tr><td>**Sleep**</td><td>BMR ↓ ~5–10 % vs awake resting.</td><td></td></tr><tr><td>**Starvation / fasting**</td><td>Initial ↓, then adaptive ↓ (~ 15–25 %)</td><td>↓ T3, ↓ sympathetic tone.</td></tr><tr><td>**Ethnicity**</td><td>Slight differences (e.g. South Asian LBM lower per kg).</td><td>Adjust equations.</td></tr><tr><td>**Drugs**</td><td>β-blockers ↓, β-agonists / salbutamol ↑, theophylline ↑, caffeine ↑.</td><td></td></tr><tr><td>**Pregnancy**</td><td>↑ REE</td><td>See above.</td></tr></table>
+<div class="callout"><b>Clinical pearl:</b> Two men of equal weight can have BMRs differing by <b>&gt;500 kcal/d</b> purely on the basis of body composition (muscle vs fat).</div>
+<div class="sub-h">Section 5: Predictive Equations for BMR</div>
+<p>#### A. Mifflin–St Jeor (1990) — most accurate for non-obese &amp; obese adults (Academy of Nutrition &amp; Dietetics 2002)</p>
+<ul><li><b>Men:</b>    BMR = <b>10 × W + 6.25 × H − 5 × A + 5</b></li><li><b>Women:</b>  BMR = <b>10 × W + 6.25 × H − 5 × A − 161</b></li><li>W = weight (kg), H = height (cm), A = age (years)</li><li>Example: 70 kg, 175 cm, 35 y male → 10(70) + 6.25(175) − 5(35) + 5 = 700 + 1093.75 − 175 + 5 = <b>1624 kcal/d</b></li></ul>
+<p>#### B. Harris–Benedict (revised by Roza &amp; Shizgal, 1984)</p>
+<ul><li><b>Men:</b>    BMR = <b>88.36 + 13.4 W + 4.8 H − 5.68 A</b></li><li><b>Women:</b>  BMR = <b>447.6 + 9.25 W + 3.10 H − 4.33 A</b></li><li>(W kg, H cm, A yrs)</li><li>Tends to <b>overestimate</b> BMR in modern (heavier, less active) populations by 5–15 %.</li></ul>
+<p>#### C. Schofield (1985) — basis of FAO/WHO/UNU (2004) equations, large (n = 11 000+) DLW database</p>
+<table class="ctable"><tr><th>Age (y)</th><th>Sex</th><th>Equation (kcal/d)</th></tr><tr><td>---------</td><td>-----</td><td>-------------------</td></tr><tr><td>< 3</td><td>M</td><td>59.5 W − 30</td></tr><tr><td>< 3</td><td>F</td><td>58.3 W − 31</td></tr><tr><td>3–10</td><td>M</td><td>22.7 W + 504</td></tr><tr><td>3–10</td><td>F</td><td>20.3 W + 486</td></tr><tr><td>10–18</td><td>M</td><td>17.7 W + 658</td></tr><tr><td>10–18</td><td>F</td><td>13.4 W + 692</td></tr><tr><td>18–30</td><td>M</td><td>15.1 W + 692</td></tr><tr><td>18–30</td><td>F</td><td>14.8 W + 487</td></tr><tr><td>30–60</td><td>M</td><td>11.5 W + 873</td></tr><tr><td>30–60</td><td>F</td><td>8.1 W + 846</td></tr><tr><td>> 60</td><td>M</td><td>11.7 W + 588</td></tr><tr><td>> 60</td><td>F</td><td>9.1 W + 658</td></tr></table>
+<p>(W in kg, gives BMR in kcal/d.)</p>
+<p>#### D. Simple clinical rule</p>
+<ul><li><b>Harris–Benedict × activity factor</b> (sedentary 1.3 → heavy 1.9) → TEE.</li><li><b>Schofield × PAL</b> (1.4 → 1.9) → TEE.</li><li><b>Quick estimate for a sedentary 70 kg adult: 25–30 kcal/kg/day</b> (BMI 18.5–25 → 25 kcal/kg; obese → use adjusted body weight 22 kcal/kg).</li></ul>
+<p>#### Comparison of equations (accuracy)</p>
+<ul><li><b>Mifflin–St Jeor</b> — most accurate in 80 % of healthy individuals (±10 % of measured REE).</li><li><b>Harris–Benedict</b> — still widely used; overestimates by 5–15 %.</li><li><b>Schofield / WHO</b> — best for population estimates.</li><li><b>Penn State (2003) / Ireton-Jones (1992)</b> — for ventilated ICU patients (include MV, Tmax, diagnosis).</li></ul>
+<div class="sub-h">Section 6: Thermic Effect of Food (TEF / DIT / SDA)</div>
+<p>Energy expended to digest, absorb, transport, metabolise and store food.</p>
+<table class="ctable"><tr><th>Macronutrient</th><th>TEF (% of kcal ingested)</th></tr><tr><td>---------------</td><td>--------------------------</td></tr><tr><td>**Protein**</td><td>**20–30 %** (highest — deamination, urea synthesis, gluconeogenesis)</td></tr><tr><td>**Carbohydrate**</td><td>**5–10 %** (insulin-driven storage as glycogen and fat)</td></tr><tr><td>**Fat**</td><td>**0–3 %** (lowest — efficient storage, minimal processing)</td></tr><tr><td>**Mixed meal**</td><td>~ **10 %** of TEE</td></tr></table>
+<div class="callout"><b>Key point:</b> Higher-protein diets modestly <b>increase TEE</b> (the "metabolic advantage") and have higher satiety → beneficial in weight loss.</div>
+<ul><li>TEF peaks at ~ 1 h post-meal, lasts 4–6 h.</li><li>Reduced in <b>obesity, insulin resistance, β-blockade</b>; raised by <b>sympathetic activity, hyperthyroidism, exercise training</b>.</li><li><b>Practical:</b> TEE ≈ BMR × <b>1.10</b> for a mixed diet.</li></ul>
+<div class="sub-h">Section 7: Physical Activity Energy Expenditure (PAEE) &amp; PAL</div>
+<p><b>PAEE</b> = TEE − (BMR + TEF). Most variable component (15–30 % in sedentary, up to 50 % in elite athletes).</p>
+<p>#### Physical Activity Level (PAL) — TEE/BMR</p>
+<table class="ctable"><tr><th>Activity</th><th>PAL (TEE/BMR)</th><th>Notes</th></tr><tr><td>----------</td><td>---------------</td><td>-------</td></tr><tr><td>**Bed-bound / chair-bound**</td><td>1.2</td><td>Acute illness, ventilated ICU.</td></tr><tr><td>**Sedentary** (office, little leisure activity)</td><td>1.4</td><td>Most UK adults.</td></tr><tr><td>**Lightly active** (walking 30–60 min/day)</td><td>1.5</td><td></td></tr><tr><td>**Moderately active** (vigorous 30 min, 3–4 d/wk)</td><td>1.6–1.7</td><td>FAO target for healthy adults.</td></tr><tr><td>**Very active** (vigorous 60 min, 5+ d/wk)</td><td>1.8–1.9</td><td>Manual workers, athletes.</td></tr></table>
+<ul><li><b>Sedentary lifestyle</b> is the principal driver of positive energy balance and obesity.</li><li><b>Non-Exercise Activity Thermogenesis (NEAT)</b> — small but cumulatively important; differences in NEAT may explain ± 200–500 kcal/d inter-individual variation.</li></ul>
+<div class="sub-h">Section 8: Energy Requirements (DRV/EAR/RNI)</div>
+<p>#### FAO/WHO/UNU (2004) TEE by PAL × BMR</p>
+<table class="ctable"><tr><th>Group</th><th>Sedentary TEE (kcal/d)</th><th>Moderately active</th><th>Very active</th></tr><tr><td>-------</td><td>------------------------</td><td>-------------------</td><td>-------------</td></tr><tr><td>Adult M 70 kg</td><td>~ 2400</td><td>~ 2900</td><td>~ 3400</td></tr><tr><td>Adult F 58 kg</td><td>~ 1900</td><td>~ 2200</td><td>~ 2500</td></tr><tr><td>Pregnancy (3rd tri)</td><td>+ 475 (UK COMA: + 200 2nd/3rd)</td><td></td><td></td></tr><tr><td>Lactation 0–6 m</td><td>+ 500 (UK: + 450)</td><td></td><td></td></tr><tr><td>Infant 0–3 m</td><td>~ 550 (per kg ~ 115)</td><td></td><td></td></tr><tr><td>Child 5 y</td><td>~ 1500</td><td></td><td></td></tr><tr><td>Adolescent M 15 y</td><td>~ 2500</td><td></td><td></td></tr><tr><td>Adolescent F 15 y</td><td>~ 2000</td><td></td><td></td></tr></table>
+<ul><li><b>UK COMA 1991</b> reference values (kcal/d, RNI ≈ population target ≈ mean of population):</li><li>M 19–50 y: 2550; F 19–50 y: 1940.</li><li>Pregnancy: + 200 (last two trimesters). Lactation: + 450.</li><li><b>Note:</b> RNI is sometimes used in UK for energy where EAR is more appropriate. The "intake that meets the needs of 97.5 %" concept is fine for nutrients, but <b>energy intakes above the population mean cause weight gain in many</b>. For individuals, <b>BMI 18.5–25 + PAL 1.4–1.9 + stable weight</b> is the practical target.</li></ul>
+<div class="sub-h">Section 9: Macronutrient Distribution (AMDR)</div>
+<table class="ctable"><tr><th>Macronutrient</th><th>AMDR (% total energy)</th><th>Notes</th></tr><tr><td>---------------</td><td>-----------------------</td><td>-------</td></tr><tr><td>**Carbohydrate**</td><td>**45–65 %**</td><td>Free sugars < 5 % (WHO) / < 10 % (UK SACN). Fibre 30 g/day (adult).</td></tr><tr><td>**Fat**</td><td>**20–35 %**</td><td>SFA < 10 %, MUFA 15–20 %, PUFA ~ 6–11 % (ω-3 0.6–1.2 %, ω-6 5–8 %). Trans < 1 %.</td></tr><tr><td>**Protein**</td><td>**15–25 %** (typically ~ 0.8–1.0 g/kg ideal body weight in healthy adults)</td><td>UK RNI 0.75 g/kg; elderly 1.0–1.2 g/kg to preserve LBM.</td></tr><tr><td>**Alcohol**</td><td>not part of AMDR</td><td>7 kcal/g; substitute for fat/CHO when consumed.</td></tr></table>
+<div class="callout"><b>"5-a-day"</b>, <b>"free sugars &lt; 5 %"</b>, <b>"two portions fish/wk, one oily"</b> (UK/EU), Mediterranean-style dietary pattern — all summarised in population guidance.</div>
+<div class="sub-h">Section 10: Energy Density (kcal/g of food)</div>
+<ul><li><b>Low ED (&lt; 1.5 kcal/g):</b> most fruit, vegetables, broth, salad.</li><li><b>Medium ED (1.5–4 kcal/g):</b> cooked grains, legumes, lean meat, cheese.</li><li><b>High ED (≥ 4 kcal/g):</b> nuts, oils, butter, chocolate, fried foods, confectionery.</li><li><b>Water content</b> is the main determinant: adding water/vegetables to mixed dishes reduces ED, increases satiety per kcal.</li><li><b>Applied in practice:</b> weight-loss advice = <b>reduce ED</b>, <b>increase volume</b>, <b>front-load protein</b>; weight-gain advice = <b>fortify</b> (skim-milk powder, double cream, nut butters, oil-based dressings).</li></ul>
+<div class="sub-h">Section 11: Body Mass Index (BMI) &amp; Body Composition</div>
+<p><b>BMI = weight (kg) / height² (m²)</b></p>
+<table class="ctable"><tr><th>BMI (kg/m²)</th><th>WHO classification</th><th>Risk</th></tr><tr><td>-------------</td><td>--------------------</td><td>------</td></tr><tr><td>< 16.0</td><td>Severe underweight</td><td>+++</td></tr><tr><td>16.0–16.9</td><td>Moderate underweight</td><td>++</td></tr><tr><td>17.0–18.4</td><td>Mild underweight</td><td>+</td></tr><tr><td>**18.5–24.9**</td><td>**Normal range**</td><td>Reference</td></tr><tr><td>25.0–29.9</td><td>Overweight (pre-obese)</td><td>↑</td></tr><tr><td>30.0–34.9</td><td>Obesity class I</td><td>++</td></tr><tr><td>35.0–39.9</td><td>Obesity class II</td><td>+++</td></tr><tr><td>≥ 40</td><td>Obesity class III ("morbid")</td><td>++++</td></tr><tr><td>**South Asian / Chinese thresholds**</td><td>Overweight ≥ 23, obese ≥ 27.5 (WHO 2004)</td><td>Higher metabolic risk at lower BMI.</td></tr></table>
+<ul><li><b>Limitations:</b> doesn't distinguish LBM from fat, doesn't reflect fat distribution.</li><li><b>Alternative/complementary measures:</b> waist circumference (M ≥ 102 cm, F ≥ 88 cm — increased CV risk); waist:hip ratio (M &gt; 1.0, F &gt; 0.85); waist:height ratio &gt; 0.5 ↑ cardiometabolic risk; DEXA / bio-impedance for body composition.</li></ul>
+<div class="sub-h">Section 12: Measurement of Energy Expenditure</div>
+<p>#### Indirect Calorimetry (clinical "gold standard" for REE)</p>
+<ul><li>Patient lies under a ventilated hood; O₂ consumption (VO₂) and CO₂ production (VCO₂) measured for 20–30 min.</li><li><b>Weir equation (1949):</b></li><li><b>REE (kcal/d) = 1.44 × [3.94 × VO₂ (mL/min) + 1.11 × VCO₂ (mL/min)]</b></li><li>Or, simplified (RQ = 0.85): <b>REE ≈ 3.94 × VO₂ + 1.11 × VCO₂</b> (kcal/d).</li><li><b>RQ (VCO₂/VO₂)</b> identifies substrate use:</li><li>Pure CHO oxidation = 1.00</li><li>Mixed diet = 0.85</li><li>Pure fat oxidation = 0.70</li><li>Pure protein = 0.80</li><li>Lipogenesis (overfeeding) = &gt; 1.00 (often 1.05–1.20)</li><li>Ketogenesis / starvation = &lt; 0.70</li><li><b>Indications:</b> ICU ventilated patients (calorie targets to avoid over-/under-feeding), severe malnutrition, obesity pharmacotherapy, refeeding.</li><li><b>Pitfalls:</b> air leak, O₂ &gt; 60 %, chest drains, agitation, recent Ryle's tube feed → invalid measurement.</li></ul>
+<p>#### Doubly-Labelled Water (²H₂¹⁸O) — gold standard for <b>free-living TEE</b></p>
+<ul><li>Subject drinks water labelled with <b>²H (deuterium)</b> and <b>¹⁸O</b>.</li><li>²H lost as H₂O, ¹⁸O lost as both H₂O and CO₂.</li><li>Difference between the two elimination rates = <b>CO₂ production</b>.</li><li>Combined with RQ (from urinary N), TEE is calculated over <b>7–14 days</b>.</li><li><b>Pros:</b> non-invasive, accurate (± 2–5 %), free-living.</li><li><b>Cons:</b> expensive isotopes, mass spectrometry needed, no time-resolution, can't separate BMR from PAEE.</li><li>Used mainly in <b>research</b> (e.g. setting DRV); indirectly the basis of Schofield equations.</li></ul>
+<p>#### Other methods</p>
+<ul><li><b>Heart-rate monitoring</b> (Flex-HR method) — proxy for PAEE.</li><li><b>Accelerometry</b> (ActiGraph, etc.) — movement counts; need individual calibration.</li><li><b>Whole-body calorimetry / respiration chamber</b> — highly accurate; research only.</li><li><b>Predictive equations</b> (above) — routine clinical use.</li><li><b>Harris–Benedict / Mifflin</b> in bedded patients: REE often <b>over-predicts by 5–15 %</b>; in critical illness use <b>Penn State, Ireton-Jones, or indirect calorimetry</b>.</li></ul>
+<div class="sub-h">Section 13: Energy Needs in Special Conditions</div>
+<table class="ctable"><tr><th>Group</th><th>Adjustment</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Pregnancy**</td><td>REE ↑ ~ 15–25 %; UK + 200 kcal/d (2nd–3rd trimester). 1st trimester: minimal.</td></tr><tr><td>**Lactation**</td><td>~ 500 kcal/d cost of milk synthesis; UK + 450 kcal/d for 0–6 m, + 350 thereafter.</td></tr><tr><td>**Infants / children**</td><td>Per kg requirement much higher: 0–6 m ~ 115 kcal/kg; 1 y ~ 95; 5 y ~ 80; adolescent 50–60.</td></tr><tr><td>**Elderly**</td><td>Lower BMR (less LBM), but lower PAL; target BMI 23–29 (mortality curve n-shaped, U at higher). **Protein ↑ 1.0–1.2 g/kg** to preserve LBM (ESPEN/SACN).</td></tr><tr><td>**Obesity**</td><td>Use **adjusted body weight** (ABW = IBW + 0.4 × (actual − IBW)) for prediction; hypocaloric feeding (60–70 % TEE) for weight loss; avoid aggressive over-feeding.</td></tr><tr><td>**Critical illness**</td><td>Indirect calorimetry ideal. ASPEN/SCCM: 25–30 kcal/kg/day (use IBW if BMI ≥ 30). Hypocaloric, high-protein (1.2–2.0 g/kg).</td></tr><tr><td>**Burns**</td><td>+50–100 % TEE; e.g. **Curreri formula** (adult): 25 × W + 40 × %TBSA burn.</td></tr><tr><td>**Trauma / surgery**</td><td>+20–30 %; resolve over 2–3 wk.</td></tr><tr><td>**Fever**</td><td>+ 10–13 % per 1 °C (Q10 effect).</td></tr><tr><td>**Hyperthyroidism**</td><td>+ 20–80 %.</td></tr><tr><td>**Starvation / anorexia**</td><td>↓ 15–25 % (adaptive; ↓ T3, ↓ sympathetic).</td></tr><tr><td>**Dementia / stroke**</td><td>↓ intake; consider PEG only with clear goals.</td></tr></table>
+<div class="sub-h">Section 14: Practical Approach to Estimating Energy Requirements</div>
+<ol><li><b>Measure or estimate weight and height</b> (actual; if BMI &gt; 30, also IBW and ABW).</li><li><b>Estimate BMR</b> — Mifflin–St Jeor preferred; Schofield for population/EU/WHO/UK.</li><li><b>Multiply by activity factor (or PAL) → TEE</b>:</li></ol>
+<ul><li>Bed-bound 1.2, sedentary 1.3, light 1.5, moderate 1.6, heavy 1.9.</li></ul>
+<ol><li><b>Add clinical stress/inflammation factor</b> (e.g. minor surgery × 1.1; severe sepsis × 1.4; major burns × 1.5–2.0).</li><li><b>Add growth/pregnancy/lactation allowance</b> if relevant.</li><li><b>Cross-check with actual intake / weight trend</b> over 1–2 weeks.</li><li><b>Reassess regularly</b> (REE changes with weight, inflammation, mobility).</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>35 y male, 80 kg, 175 cm, office worker, wants weight loss</td><td>Mifflin BMR ≈ 1780; PAL 1.4 → TEE ≈ 2500 kcal/d. Subtract 500 kcal/d deficit → ~ 2000 kcal/d target; 25 kcal/kg.</td><td>Monitor 1 kg/wk loss.</td></tr><tr><td>28 y pregnant 1st trimester, BMI 24, sedentary</td><td>No extra energy in T1; + 200 kcal/d T2/T3 (UK).</td><td>Folate, Fe, Ca, vit D supplementation.</td></tr><tr><td>70 y malnourished female, 45 kg, 160 cm (BMI 17.6)</td><td>Mifflin BMR ≈ 1030; PAL 1.4 → 1440 kcal/d. Aim 30–35 kcal/kg → 1350–1600 kcal/d.</td><td>**Refeeding risk** — start 5–10 kcal/kg, monitor electrolytes.</td></tr><tr><td>60 y ICU ventilated male, 80 kg, BMI 27, septic</td><td>Indirect calorimetry ideal; failing that, 25 × 80 × 0.7 (adjusted for obesity) → ~ 1400 kcal/d hypocaloric; protein 1.2–2.0 g/kg IBW.</td><td>Avoid overfeeding → refeeding, hypercapnia, uraemia.</td></tr><tr><td>25 y female, 18.5 BMI, lactating 3 months</td><td>BMR ↑ + 500 kcal milk synthesis; + 450 kcal/d intake target.</td><td>Iodine 200 µg/d, vit D 10 µg, Ca 1250 mg.</td></tr><tr><td>50 y, hypothyroid on insufficient levothyroxine, weight gain</td><td>T4 replacement → REE normalises.</td><td>Check TSH, free T4.</td></tr><tr><td>Patient with BMI 17 + prolonged vomiting</td><td>Assess with MUST score; consider nasogastric or IV fluids.</td><td>Rule out refeeding before feeding.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> TEE = BMR (60–75 %) + TEF (~10 %) + PA (15–30 %); BMR ≈ 1 kcal/kg/h; lean body mass is the <b>strongest</b> determinant; sex difference largely due to body composition; fever ↑ BMR by <b>10–13 % per 1 °C</b>; TEF: protein 20–30 % &gt; CHO 5–10 % &gt; fat 0–3 %; PAL 1.4–1.9; AMDR CHO 45–65 %, fat 20–35 %, protein 15–25 %; BMI 18.5–24.9 normal (South Asian 18.5–22.9). - <b>Common viva:</b> "Estimate the energy requirement of a 70 kg sedentary adult male." → ~ 25 kcal/kg/d = 1750–2100 kcal/d. "Why are women different from men at the same weight?" → different body composition (more fat, less FFM). "Which equation is most accurate in clinical practice?" → Mifflin–St Jeor. "How do you measure TEE in free-living subjects?" → doubly-labelled water. - <b>Exam trap:</b> Confusing BMR with REE; BMR is measured under stricter conditions and is ~10 % lower. <b>Harris–Benedict</b> overestimates vs Mifflin–St Jeor. For <b>obesity</b> use adjusted body weight, not actual. <b>RNI + 2 SD</b> is for nutrients; for <b>energy</b> RNI is close to the population mean — energy excess is harmful.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>BMR and REE are identical.</td><td>BMR is strictly defined (post-absorptive, supine, thermoneutral, awake, motionless). REE is more pragmatic; REE ≈ BMR × 1.1.</td></tr><tr><td>Mifflin–St Jeor is the same as Harris–Benedict.</td><td>Mifflin–St Jeor (1990) more accurate; Harris–Benedict (1919/1984) overestimates by 5–15 %.</td></tr><tr><td>RQ is fixed at 0.85.</td><td>RQ is substrate-dependent: CHO 1.0, fat 0.7, protein 0.8, lipogenesis > 1.0, ketogenesis < 0.7.</td></tr><tr><td>BMR ↑ with age.</td><td>BMR **decreases** with age (loss of FFM, ↓ T3, ↓ activity).</td></tr><tr><td>Energy density doesn't matter for weight.</td><td>Energy density drives passive over-consumption; 100 kcal of oil vs 100 kcal of vegetables → 5 g vs 500 g (volume/satiety).</td></tr><tr><td>"A pound of fat = 3500 kcal, so 500 kcal/d deficit = 1 lb/wk loss."</td><td>Rule-of-thumb only; real weight loss is non-linear, plateaus by adaptive thermogenesis; 1 kg fat ≈ 7700 kcal.</td></tr><tr><td>Doubly-labelled water measures BMR.</td><td>DLW measures **TEE** over 7–14 days in free-living conditions; cannot partition into BMR/TEF/PAEE.</td></tr><tr><td>Indirect calorimetry works on any ICU patient.</td><td>Pitfalls: FiO₂ > 60 %, air leak, agitation, chest drains, recent feed change — measurements unreliable.</td></tr><tr><td>Pregnancy energy needs triple.</td><td>Energy needs only ↑ ~ 15–25 % in 2nd–3rd trimester; 1st trimester no extra. Lactation + 450–500 kcal/d.</td></tr><tr><td>Mifflin–St Jeor is best in critical illness.</td><td>**No** — Mifflin/Harris–Benedict are population equations. For ICU use **indirect calorimetry**, or **Penn State / Ireton-Jones** if unavailable.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>BMR ↑ factors = "LASH TIPS"</b>: <b>L</b>ean body mass, <b>A</b>ge (↓), <b>S</b>ex (♂&gt;♀), <b>H</b>ormones (T3, T4, catecholamines), <b>T</b>emperature (fever, cold), <b>I</b>llness (sepsis, trauma, burns), <b>P</b>regnancy, <b>S</b>leep (↓).</li><li><b>TEF order (high → low) = "PCF"</b> (Protein 25, CHO 8, Fat 2) ≈ "<b>P</b>rotein <b>C</b>osts <b>F</b>at's share".</li><li><b>PAL categories = "BLMV"</b>: <b>B</b>ed (1.2), <b>L</b>ight (1.5), <b>M</b>oderate (1.7), <b>V</b>ery active (1.9).</li><li><b>AMDR = "CPF 50-30-20"</b> (rough): <b>C</b>HO ~50 %, <b>P</b>rotein ~20 %, <b>F</b>at ~30 %.</li><li><b>RQ substrates = "PF CO 1.0 / 0.7"</b>: Protein 0.8, Fat 0.7, CHO 1.0.</li><li><b>BMI WHO</b>: <b>"U-N-OWO"</b>: &lt;18.5 U, 18.5–25 N, 25–30 OverW, ≥30 Obese.</li><li><b>DLW = "D for diet?"</b> — D = ²H (deuterium, water), ¹⁸O = oxygen (water + CO₂) → difference = CO₂ production → TEE.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Energy Requirements &amp; BMR)) Energy Balance Intake vs TEE Δ stores = weight change 7700 kcal ≈ 1 kg fat TEE Components BMR 60-75 percent TEF 10 percent PAEE 15-30 percent Growth/Pregnancy BMR 1 kcal/kg/h LBM strongest driver Age down Male greater than Female T3 T4 catecholamines up Fever +10-13 percent per C Pregnancy +15-25 percent Predictive Equations Mifflin-St Jeor Harris-Benedict Schofield WHO Penn State ICU TEF Protein 20-30 CHO 5-10 Fat 0-3 PAL Sedentary 1.4 Moderate 1.6 Very active 1.9 Requirements EAR 50 percent RNI 97.5 percent UK DRV Pregnancy +200 Lactation +450 AMDR CHO 45-65 Protein 15-25 Fat 20-35 Energy Density Low vegetables fruit High fats oils Volume vs kcal BMI 18.5 to 24.9 South Asian 23 to 27.5 Measurement Indirect calorimetry Weir equation RQ substrate Doubly-labelled water Accelerometry </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Write the energy balance equation and the four components of TEE with their typical percentages.</li><li>List, in order, the macronutrient contributions to TEF and the percentage for each.</li><li>State Mifflin–St Jeor for a 70 kg, 175 cm, 35-year-old man.</li><li>Define BMI cut-offs (WHO + South Asian) and waist thresholds for cardiometabolic risk.</li><li>Calculate the BMR of a 60 kg, 30 y female (Mifflin–St Jeor) and her TEE at PAL 1.6.</li><li>Explain why RQ differs in CHO, fat, and protein oxidation and during lipogenesis.</li><li>Describe the principle, advantages and limitations of the doubly-labelled water method.</li><li>State the energy adjustments for pregnancy (each trimester) and for the first 6 months of lactation.</li><li>Give the AMDR for each macronutrient and the WHO target for free sugars.</li><li>Describe the major determinants of BMR and rank them by importance.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>TEE equation; BMR definition & 1 kcal/kg/h; lean body mass is the dominant determinant; TEF (P 25 / C 8 / F 2 %); PAL 1.4–1.9; Mifflin–St Jeor & Harris–Benedict; AMDR; BMI 18.5–24.9; fever +10–13 %/°C; doubly-labelled water measures TEE.</td></tr><tr><td>**Should Know 🟡**</td><td>Schofield / WHO equations; Weir equation; RQ interpretation; pregnancy (+200) and lactation (+450) additions; South Asian BMI thresholds; waist circumference cut-offs; energy density concept.</td></tr><tr><td>**Nice to Know 🟢**</td><td>Penn State / Ireton-Jones ICU equations; Curreri burns formula; Kleiber's ¾-power law; ESPEN elderly protein targets; NEAT and adaptive thermogenesis; UK COMA 1991 reference values.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ]</li><li>[ ]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li><i>"Discuss the regulation of human energy balance. Define total energy expenditure, describe its components, outline the major determinants of basal metabolic rate, and explain how these are altered in pregnancy, sepsis, obesity and ageing."</i> — Open with the first law of thermodynamics and the energy balance equation. Tabulate BMR determinants with quantitative examples. Conclude with clinical measurements (indirect calorimetry vs doubly-labelled water).</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li><i>"Thermic effect of food"</i> — Definition; TEF for protein 20–30 %, CHO 5–10 %, fat 0–3 %; mixed diet ~ 10 %; peaks 60 min, lasts 4–6 h; ↑ by sympathetic tone / exercise, ↓ by β-blockade / obesity; role in weight management.</li><li><i>"Mifflin–St Jeor equation"</i> — Formula for men/women; rationale; accuracy vs Harris–Benedict; example calculation; limitations in critical illness.</li><li><i>"Doubly-labelled water"</i> — Principle (²H vs ¹⁸O elimination); gold-standard TEE in free-living; pros/cons; research use.</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li><b>Q: "What is BMR and how do you measure it?"</b> → Energy to maintain vital function under standardised conditions (post-absorptive, supine, thermoneutral, awake, no exercise); ~ 1 kcal/kg/h; measured by indirect calorimetry (Weir equation). Clinical rule of thumb: 25–30 kcal/kg/day for sedentary adult.</li><li><b>Q: "Why is lean body mass more important than total weight?"</b> → Skeletal muscle and visceral organs have high metabolic rate per kg; adipose tissue is metabolically "cheap". Two people of same weight but different LBM differ in REE by hundreds of kcal/day.</li><li><b>Q: "How do you set a weight-loss target?"</b> → Estimate TEE (Mifflin × AF), subtract 500 kcal/d → 0.5 kg/wk; protein ↑ 25–30 % of intake; food diary; energy density; review at 4 weeks.</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li><i>"A 65 y female (60 kg, BMI 22) is admitted with hip fracture, post-op day 2, unable to eat. You are asked to plan nutrition."</i> → Calculate BMR (Mifflin ≈ 1140 kcal/d) × PAL 1.3 (bed-bound) × stress 1.2 (post-op) ≈ 1780 kcal/d. Add protein 1.5–2.0 g/kg (90–120 g). Plan: enteral via NG if gut works; if not, parenteral within 24–48 h. Monitor refeeding risk (low BMI, recent poor intake).</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>TEE = BMR (60–75 %) + TEF (10 %) + PAEE (15–30 %).</b></li><li><b>BMR ≈ 1 kcal/kg/h; ♂ &gt; ♀; LBM &gt; everything.</b></li><li><b>Fever +10–13 %/°C; T₃/T₄, catecholamines, pregnancy, sepsis → ↑; sleep, starvation, ageing → ↓.</b></li><li><b>TEF: Protein 20–30, CHO 5–10, Fat 0–3.</b></li><li><b>PAL 1.4 / 1.6 / 1.9 (sed / mod / very).</b></li><li><b>Mifflin–St Jeor:</b> Men 10W+6.25H−5A+5; Women 10W+6.25H−5A−161.</li><li><b>AMDR:</b> CHO 45–65, Protein 15–25, Fat 20–35.</li><li><b>BMI 18.5–24.9; South Asian 18.5–22.9 normal, ≥ 23 over, ≥ 27.5 obese.</b></li><li><b>Indirect calorimetry = clinical gold standard REE; DLW = research gold standard TEE.</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Q:</b> The thermic effect of food (TEF) is highest for which macronutrient?</li></ol>
+<p>A. Carbohydrate B. Fat C. Protein D. Alcohol E. Fibre <b>[correct: C]</b></p>
+<ol><li><b>Q:</b> A 25-year-old man (70 kg, 175 cm) is on a standard hospital diet and is sedentary. Using the <b>Mifflin–St Jeor</b> equation, what is his approximate BMR?</li></ol>
+<p>A. 1500 kcal/d B. 1620 kcal/d C. 1680 kcal/d D. 1750 kcal/d E. 1900 kcal/d <b>[correct: B]</b> — 10(70) + 6.25(175) − 5(25) + 5 = 700 + 1093.75 − 125 + 5 = 1673.75 ≈ 1670. Closest is 1680.</p>
+<ol><li><b>Q:</b> Which of the following is the single strongest determinant of basal metabolic rate?</li></ol>
+<p>A. Age B. Sex C. Lean body mass D. Ambient temperature E. Recent food intake <b>[correct: C]</b></p>
+<ol><li><b>Q:</b> A patient has a body temperature of 40 °C. By approximately how much is his basal metabolic rate increased compared to afebrile baseline?</li></ol>
+<p>A. 5–8 % B. 10–13 % per °C (≈ 30–40 %) C. 50 % D. 100 % E. No effect <b>[correct: B]</b></p>
+<ol><li><b>Q:</b> Which Physical Activity Level (PAL = TEE/BMR) is most appropriate for a desk-bound office worker with no leisure exercise?</li></ol>
+<p>A. 1.2 B. 1.4 C. 1.7 D. 1.9 E. 2.0 <b>[correct: B]</b></p>
+<ol><li><b>Q:</b> The respiratory quotient (RQ = VCO₂/VO₂) for <b>pure carbohydrate oxidation</b> is:</li></ol>
+<p>A. 0.70 B. 0.80 C. 0.85 D. 1.00 E. 1.20 <b>[correct: D]</b></p>
+<ol><li><b>Q:</b> The "doubly-labelled water" method uses isotopes of which two elements?</li></ol>
+<p>A. Carbon-13 and Nitrogen-15 B. Deuterium (²H) and Oxygen-18 (¹⁸O) C. Tritium and Carbon-14 D. Iodine-125 and Iron-59 E. Sodium-22 and Potassium-40 <b>[correct: B]</b></p>
+<ol><li><b>Q:</b> The Acceptable Macronutrient Distribution Range (AMDR) for total fat, as a % of total energy, in adults is:</li></ol>
+<p>A. 5–10 % B. 10–20 % C. 20–35 % D. 35–45 % E. 45–65 % <b>[correct: C]</b></p>
+<ol><li><b>Q:</b> According to WHO, an adult South Asian (Indian subcontinent) is classified as "overweight" at a BMI of:</li></ol>
+<p>A. ≥ 20 B. ≥ 23 C. ≥ 25 D. ≥ 27.5 E. ≥ 30 <b>[correct: B]</b></p>
+<ol><li><b>Q:</b> The energy cost of the <b>thermic effect of food (mixed diet)</b> is approximately what percentage of total energy expenditure?</li></ol>
+<p>A. 1 % B. 10 % C. 25 % D. 40 % E. 60 % <b>[correct: B]</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>[SBA — clinical vignette]</b> A 28-year-old lactating woman (3 months post-partum) is seeking dietary advice. She is a healthy 60 kg, 165 cm non-smoker with a sedentary occupation. Using Mifflin–St Jeor, her BMR is ~1300 kcal/d. What is the most appropriate total energy intake target (kcal/day) per UK COMA recommendations?</li></ol>
+<p>A. 1800 kcal/d B. 2000 kcal/d C. 2150 kcal/d D. 2450 kcal/d E. 2800 kcal/d <b>[correct: D]</b> — BMR ~ 1300 × PAL 1.4 (sedentary) = ~1820, + 450 lactation = ~2270; with rounding and a 1.5 activity factor reasonable for a moderately active mother, ~ 2400–2500 kcal/d. D is closest.</p>
+<ol><li><b>[SBA — clinical vignette]</b> A 70 kg man is admitted to the ICU after major abdominal surgery, is intubated and ventilated on FiO₂ 0.50. The team wants to set a calorie target. Which of the following is the <b>best</b> method to determine his energy requirement?</li></ol>
+<p>A. Harris–Benedict equation × 1.3 B. Mifflin–St Jeor × 1.5 C. 25–30 kcal/kg ideal body weight D. Indirect calorimetry (ventilated) E. Penn State equation <b>[correct: D]</b> — Indirect calorimetry is the gold standard when feasible; in ventilated patients with high FiO₂ (&lt; 0.6) it remains the most accurate, but where it is unavailable or unreliable (e.g. FiO₂ &gt; 0.6, air leak) the Penn State equation is the next best.</p>
+<ol><li><b>[SBA — clinical vignette]</b> A 60-year-old man (80 kg, BMI 27) presents for weight loss advice. Which set of <b>macronutrient distribution (% total energy)</b> is closest to the AMDR for a healthy adult?</li></ol>
+<p>A. CHO 30, Protein 10, Fat 60 B. CHO 55, Protein 20, Fat 25 C. CHO 70, Protein 15, Fat 15 D. CHO 80, Protein 10, Fat 10 E. CHO 45, Protein 40, Fat 15 <b>[correct: B]</b> — AMDR CHO 45–65, Protein 15–25, Fat 20–35.</p>
+<ol><li><b>[SBA — clinical vignette]</b> A 35-year-old woman with BMI 22 plans to lose 5 kg over 12 weeks. She currently eats ~ 2000 kcal/d and is sedentary. Assuming 1 kg of fat ≈ 7700 kcal, what is the average daily energy deficit required?</li></ol>
+<p>A. 250 kcal/d B. 450 kcal/d C. 700 kcal/d D. 1000 kcal/d E. 1500 kcal/d <b>[correct: B]</b> — 5 kg × 7700 = 38 500 kcal; over 84 d → 458 kcal/d deficit. Closest is 450.</p>
+<ol><li><b>[SBA — clinical vignette]</b> A 25-year-old man with newly diagnosed Graves' disease has lost 8 kg. His resting energy expenditure is now ~ 190 % of predicted (Mifflin). What is the most likely mechanism?</li></ol>
+<p>A. Reduced sympathetic tone B. Increased T3/T4 with upregulated Na⁺/K⁺-ATPase and mitochondrial uncoupling C. Decreased catecholamine secretion D. Increased brown adipose tissue with UCP-1 E. Reduced physical activity <b>[correct: B]</b> — Hyperthyroidism raises REE via T3-mediated ↑ Na⁺/K⁺-ATPase activity and increased mitochondrial substrate cycling; clinical weight loss + ↑ REE despite unchanged intake is the textbook picture. (D contributes but is not the dominant mechanism in adult thyrotoxicosis.)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Define total energy expenditure (TEE) and its components.</li></ul>
+<p>A: TEE = BMR (60–75 %) + TEF (~10 %) + PAEE (15–30 %) + (growth / pregnancy / lactation).</p>
+<ul><li>Q: What is the clinical "rule-of-thumb" BMR in adults?</li></ul>
+<p>A: ~ 1 kcal/kg/h ≈ 24 kcal/kg/day (range 1500–1800 kcal/d in adults).</p>
+<ul><li>Q: Strongest single determinant of BMR?</li></ul>
+<p>A: Lean body mass (FFM).</p>
+<ul><li>Q: Effect of fever on BMR?</li></ul>
+<p>A: ↑ by ~ 10–13 % per 1 °C rise in core temperature (Q10 effect).</p>
+<ul><li>Q: Mifflin–St Jeor for men?</li></ul>
+<p>A: BMR = 10·W + 6.25·H − 5·A + 5 (W kg, H cm, A yrs).</p>
+<ul><li>Q: Mifflin–St Jeor for women?</li></ul>
+<p>A: BMR = 10·W + 6.25·H − 5·A − 161.</p>
+<ul><li>Q: TEF for protein / CHO / fat?</li></ul>
+<p>A: Protein 20–30 %, CHO 5–10 %, Fat 0–3 %; mixed meal ~ 10 %.</p>
+<ul><li>Q: PAL for a sedentary office worker?</li></ul>
+<p>A: 1.4 (TEE/BMR).</p>
+<ul><li>Q: UK extra energy allowance for pregnancy (2nd/3rd trimester)?</li></ul>
+<p>A: + 200 kcal/d.</p>
+<ul><li>Q: UK extra energy allowance for lactation (0–6 months)?</li></ul>
+<p>A: + 450 kcal/d.</p>
+<ul><li>Q: AMDR for carbohydrate, protein, fat (% total energy)?</li></ul>
+<p>A: CHO 45–65 %, Protein 15–25 %, Fat 20–35 %.</p>
+<ul><li>Q: WHO BMI cut-offs for overweight / obese (general population)?</li></ul>
+<p>A: Overweight ≥ 25, Obese ≥ 30 kg/m².</p>
+<ul><li>Q: South Asian BMI cut-offs (WHO 2004)?</li></ul>
+<p>A: Overweight ≥ 23, Obese ≥ 27.5 kg/m².</p>
+<ul><li>Q: RQ for pure fat oxidation?</li></ul>
+<p>A: 0.70.</p>
+<ul><li>Q: RQ for pure carbohydrate oxidation?</li></ul>
+<p>A: 1.00.</p>
+<ul><li>Q: RQ for mixed Western diet?</li></ul>
+<p>A: ~ 0.85.</p>
+<ul><li>Q: RQ during lipogenesis (overfeeding)?</li></ul>
+<p>A: &gt; 1.0 (typically 1.05–1.20).</p>
+<ul><li>Q: Principle of doubly-labelled water?</li></ul>
+<p>A: ²H₂¹⁸O; difference in ²H and ¹⁸O elimination = CO₂ production → TEE (over 7–14 d, free-living).</p>
+<ul><li>Q: Indications for indirect calorimetry?</li></ul>
+<p>A: ICU ventilated patients, severe malnutrition, refeeding risk, obesity, research.</p>
+<ul><li>Q: Atwater factors (kcal/g) for protein, CHO, fat, alcohol?</li></ul>
+<p>A: 4, 4, 9, 7.</p>
+<ul><li>Q: Energy cost of 1 kg of adipose tissue?</li></ul>
+<p>A: ~ 7700 kcal (~ 1 lb ≈ 3500 kcal).</p>
+<ul><li>Q: Energy density of oil vs apple?</li></ul>
+<p>A: Oil ~ 9 kcal/g; apple ~ 0.5 kcal/g.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — Protein requires deamination, urea synthesis, gluconeogenesis, and protein turnover → highest TEF (20–30 %).</li><li><b>B</b> — Mifflin–St Jeor = 10(70) + 6.25(175) − 5(25) + 5 = 1673.75 ≈ 1680 kcal/d.</li><li><b>C</b> — Skeletal muscle and viscera are metabolically very active; adipose is "cheap". FFM correlates with REE r ≈ 0.85.</li><li><b>B</b> — Q10 effect: each 1 °C ↑ core T = 10–13 % ↑ REE; 40 °C baseline 37 °C → + 3 °C → + 30–40 %.</li><li><b>B</b> — Sedentary PAL 1.4 (FAO/WHO).</li><li><b>D</b> — Pure CHO: 6O₂ + C₆H₁₂O₆ → 6CO₂ + 6H₂O → RQ = 6/6 = 1.0.</li><li><b>B</b> — ²H (deuterium) and ¹⁸O are the two stable isotopes in DLW.</li><li><b>C</b> — AMDR fat 20–35 % of total energy.</li><li><b>B</b> — South Asian WHO cut-offs: overweight ≥ 23 kg/m² (obese ≥ 27.5).</li><li><b>B</b> — Mixed meal TEF ≈ 10 % of TEE.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>D</b> — BMR 1300 × 1.4 = 1820 + 450 (lactation) = 2270; for moderate activity ~ 2400–2500. (2000 is too low; 2800 too high.)</li><li><b>D</b> — Indirect calorimetry is the gold standard in ICU when feasible. Where unreliable (FiO₂ &gt; 0.6, air leak) → Penn State.</li><li><b>B</b> — Within all three AMDR ranges; A too high fat, C &amp; D too low fat, E too high protein.</li><li><b>B</b> — 5 kg × 7700 = 38 500 kcal ÷ 84 d = 458 kcal/d → 450.</li><li><b>B</b> — Thyrotoxicosis raises REE via ↑ T3/T4 → ↑ Na⁺/K⁺-ATPase, ↑ mitochondrial oxidation, ↑ catecholamine sensitivity.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Energy Requirements &amp; Basal Metabolic Rate</b> is a <b>must-know</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Energy balance is governed by intake vs expenditure; TEE = <b>BMR + TEF + physical activity</b> (+ growth/pregnancy/lactation). <b>BMR</b> is the largest component (~ 60–75 %), ~ 1 kcal/kg/h, dominated by <b>lean body mass</b> and modified by age, sex, hormones (T3/T4, catecholamines), pregnancy, fever (<b>+10–13 %/°C</b>), and disease. Predictive equations (Mifflin–St Jeor preferred; Harris–Benedict, Schofield) are scaled by PAL <b>1.4–1.9</b> to give TEE. Macronutrient distribution follows <b>AMDR</b> (CHO 45–65 %, fat 20–35 %, protein 15–25 %); <b>TEF</b> is highest for protein (20–30 %), lowest for fat (0–3 %). <b>BMI</b> (18.5–24.9 normal; 23/27.5 for South Asians) anchors the population weight assessment. <b>Indirect calorimetry</b> (Weir equation, RQ) is the clinical gold standard for REE; <b>doubly-labelled water</b> is the research gold standard for free-living TEE. <b>Exam focus:</b> Equations (write one out), determinants of BMR (LBM, age, sex, hormones, fever, pregnancy), TEF order, PAL multipliers, AMDR, BMI cut-offs, and the principles of indirect calorimetry and DLW. <b>Clinical relevance:</b> Underpins every weight-management consultation, every ICU feeding prescription, every refeeding plan, and every public-health energy-intake recommendation.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Energy Requirements Basal Metabolic Rate · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

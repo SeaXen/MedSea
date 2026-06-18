@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Respiratory Disease Epidemiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.3. EPIDEMIOLOGY OF MAJOR DISEASES</span>
+      <div class="h1">Respiratory Disease Epidemiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe global and UK burden of COPD, asthma, pneumonia, influenza</li><li>[ ] Apply key epidemiological measures (prevalence, incidence, mortality, DALYs)</li><li>[ ] Identify risk factors: smoking, air pollution, occupational, infections, genetics</li><li>[ ] Apply prevention strategies: SECURE for COPD, vaccination, air quality, smoking cessation</li><li>[ ] Differentiate COPD vs Asthma epidemiology and management implications</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Chronic Obstructive Pulmonary Disease (COPD)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">2.1 Burden</div>
+<table class="ctable"><tr><th>Metric</th><th>Global (2019)</th><th>UK</th></tr><tr><td>--------</td><td>---------------</td><td>-----</td></tr><tr><td>**Prevalence**</td><td>~380 million (2019)</td><td>**1.2M diagnosed** (2M+ undiagnosed)</td></tr><tr><td>**Deaths/year**</td><td>**3.2M** (3rd leading cause)</td><td>**~30,000** (5% of deaths)</td></tr><tr><td>**DALYs**</td><td>~74 million</td><td>~1.2M DALYs</td></tr><tr><td>**Cost**</td><td>>$2 trillion global (2010)</td><td>**NHS £1.9B/year**</td></tr></table>
+<div class="sub-h">2.2 Risk Factors</div>
+<table class="ctable"><tr><th>Category</th><th>Factors</th><th>Population Attributable Fraction (PAF)</th></tr><tr><td>----------</td><td>---------</td><td>----------------------------------------</td></tr><tr><td>**Smoking**</td><td>**Active** (>80% COPD), passive</td><td>**~70–80%**</td></tr><tr><td>**Air Pollution**</td><td>**Ambient PM2.5** (outdoor), Household (biomass fuel)</td><td>**~15–20%**</td></tr><tr><td>**Occupational**</td><td>Dusts (silica, coal, cotton), fumes (welding), gases (cadmium)</td><td>**~15%**</td></tr><tr><td>**Genetics**</td><td>**Alpha-1 antitrypsin deficiency** (PiZZ)</td><td>1–2% of COPD</td></tr><tr><td>**Early Life**</td><td>Low birth weight, childhood infections, maternal smoking</td><td>Early life programming</td></tr><tr><td>**Ageing**</td><td>Lung function declines with age</td><td>Accelerated in smokers</td></tr></table>
+<div class="sub-h">2.3 SECURE Strategy (COPD Management Framework)</div>
+<table class="ctable"><tr><th>Letter</th><th>Component</th><th>Key Actions</th></tr><tr><td>--------</td><td>-----------</td><td>-------------</td></tr><tr><td>**S**</td><td>**Smoking Cessation**</td><td>**Most effective intervention**; NRT, varenicline, behavioural support</td></tr><tr><td>**E**</td><td>**Exercise** (Pulmonary Rehabilitation)</td><td>**Gold standard**; improves exercise capacity, QoL, reduces admissions</td></tr><tr><td>**C**</td><td>**Comorbidity Management**</td><td>Cardiovascular, osteoporosis, anxiety/depression, diabetes, GERD</td></tr><tr><td>**U**</td><td>**Understand Medication**</td><td>Inhaler technique, adherence, stepping up/down (ICS/LABA/LAMA)</td></tr><tr><td>**R**</td><td>**Rescue Pack / Rescue Plan**</td><td>Antibiotics + steroids at home; action plan</td></tr><tr><td>**E**</td><td>**Exacerbation Prevention**</td><td>Vaccines (flu, pneumococcal, COVID), self-management plan</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Asthma</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">2.1 Burden</div>
+<table class="ctable"><tr><th>Metric</th><th>Global</th><th>UK</th></tr><tr><td>--------</td><td>--------</td><td>-----</td></tr><tr><td>**Prevalence**</td><td>**~260 million** (2019)</td><td>**~5.4M** (8% adults, 9% children)</td></tr><tr><td>**Deaths/year**</td><td>~455,000</td><td>~1,400 (preventable)</td></tr><tr><td>**DALYs**</td><td>~22M</td><td>~600,000 DALYs</td></tr><tr><td>**Childhood Onset**</td><td>**Most common chronic disease in children**</td><td>1 in 11 children</td></tr></table>
+<div class="sub-h">2.2 Risk Factors</div>
+<table class="ctable"><tr><th>Category</th><th>Factors</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Genetic**</td><td>Atopy (family history), IL-4/IL-13 pathways, filaggrin mutations</td></tr><tr><td>**Environmental**</td><td>**Allergens** (house dust mite, pet dander, pollen, mould), **Air pollution** (PM2.5, NO₂, O₃), **Tobacco smoke** (prenatal + passive)</td></tr><tr><td>**Infections**</td><td>**RSV bronchiolitis** (early life), viral exacerbations (rhinovirus)</td></tr><tr><td>**Occupational**</td><td>**~15% adult asthma**; isocyanates, flour, latex, animals, wood dust</td></tr><tr><td>**Obesity**</td><td>Mechanical + inflammatory (adipokines)</td></tr><tr><td>**Early Life**</td><td>Antibiotic use, C-section, low microbial diversity (hygiene hypothesis)</td></tr></table>
+<div class="sub-h">2.3 Asthma Epidemiology by Age</div>
+<table class="ctable"><tr><th>Age Group</th><th>Pattern</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Childhood**</td><td>Male > Female; atopic; viral triggers; remission possible in adolescence</td></tr><tr><td>**Adult-Onset**</td><td>Female > Male; often non-atopic; more severe; occupational triggers</td></tr><tr><td>**Elderly**</td><td>Underdiagnosed; overlap with COPD (ACOS); polypharmacy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Pneumonia</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">2.1 Burden</div>
+<table class="ctable"><tr><th>Metric</th><th>Global</th><th>UK</th></tr><tr><td>--------</td><td>--------</td><td>-----</td></tr><tr><td>**Incidence**</td><td>~450M cases/yr (LRTI)</td><td>~220,000 hospital admissions/yr</td></tr><tr><td>**Deaths**</td><td>**~2.5M** (leading infectious killer)</td><td>**~30,000/yr** (6th leading cause)</td></tr><tr><td>**High-Risk Groups**</td><td><5y, >65y, immunocompromised, chronic disease</td><td>Age >65 = 10× risk</td></tr></table>
+<div class="sub-h">2.2 Aetiology</div>
+<table class="ctable"><tr><th>Setting</th><th>Common Pathogens</th></tr><tr><td>---------</td><td>------------------</td></tr><tr><td>**CAP (Community-Acquired)**</td><td>*S. pneumoniae* (most common), *H. influenzae*, *M. pneumoniae*, *C. pneumoniae*, *Legionella*, Viruses (Flu, RSV, COVID)</td></tr><tr><td>**HAP (Hospital-Acquired)**</td><td>*S. aureus* (MRSA), *P. aeruginosa*, *Klebsiella*, *Acinetobacter*</td></tr><tr><td>**VAP**</td><td>*P. aeruginosa*, *S. aureus*, *Enterobacteriaceae*</td></tr><tr><td>**Aspiration**</td><td>Anaerobes, *S. pneumoniae*, *S. aureus*</td></tr></table>
+<div class="sub-h">2.3 Prevention</div>
+<table class="ctable"><tr><th>Strategy</th><th>Intervention</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**Vaccination**</td><td>**Pneumococcal** (PCV13/PCV20 kids; PPV23/PCV20 adults >65/risk), **Influenza** (annual), **Hib**, **COVID-19**</td></tr><tr><td>**Smoking Cessation**</td><td>Major risk reduction</td></tr><tr><td>**Aspiration Prevention**</td><td>HOB elevation, oral care, dysphagia management</td></tr><tr><td>**Aspiration Pneumonia**</td><td>HOB elevation, oral care, dysphagia screening</td></tr><tr><td>**HAP/VAP Prevention**</td><td>HOB 30°, sedation holiday, oral chlorhexidine, subglottic suction</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Influenza</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">3.1 Epidemiology</div>
+<table class="ctable"><tr><th>Parameter</th><th>Details</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Seasonality**</td><td>**Winter** (Northern Hemisphere: Dec–Mar); Year-round tropics</td></tr><tr><td>**Attack Rate**</td><td>5–10% adults; 20–30% children annually</td></tr><tr><td>**Burden**</td><td>**3–5M severe cases**, 290–650k deaths/yr globally; UK ~10–20k deaths/yr</td></tr><tr><td>**High-Risk**</td><td>>65y, <5y, pregnant, chronic disease, immunosuppressed, care home residents</td></tr></table>
+<div class="sub-h">3.2 Virus Types &amp; Evolution</div>
+<table class="ctable"><tr><th>Type</th><th>Characteristics</th></tr><tr><td>------</td><td>-----------------</td></tr><tr><td>**Influenza A**</td><td>**Pandemic potential**; H1N1, H3N2 subtypes; antigenic drift/shift</td></tr><tr><td>**Influenza B**</td><td>Seasonal; two lineages (Victoria, Yamagata); less severe than A</td></tr><tr><td>**Influenza C**</td><td>Mild; sporadic</td></tr><tr><td>**Influenza D**</td><td>Cattle; not human pathogen</td></tr></table>
+<table class="ctable"><tr><th>Evolution Mechanism</th><th>Description</th></tr><tr><td>---------------------</td><td>-------------</td></tr><tr><td>**Antigenic Drift**</td><td>Point mutations in HA/NA → seasonal epidemics</td></tr><tr><td>**Antigenic Shift**</td><td>Reassortment → new HA/NA subtype → **Pandemic**</td></tr></table>
+<div class="sub-h">3.3 Vaccination</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Composition**</td><td>Updated biannually (WHO GISRS); Trivalent/Quadrivalent (A/H1N1, A/H3N2, B/Victoria, B/Yamagata)</td></tr><tr><td>**Effectiveness**</td><td>**40–60%** (varies by match, age, immune status)</td></tr><tr><td>**Target Groups (UK)**</td><td>>65y, <5y, pregnant, chronic disease, immunosuppressed, care home residents, HCWs, carers</td></tr><tr><td>**Vaccine Types**</td><td>Inactivated (IIV), Live Attenuated (LAIV, nasal, children), Recombinant (Flublok), Adjuvanted (aIIV, >65)</td></tr><tr><td>**Effectiveness**</td><td>**40–60%** overall; lower in elderly; reduces severity even if infection occurs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">COVID-19 (Brief - See Infectious Disease Note)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Agent**</td><td>SARS-CoV-2 (Betacoronavirus)</td></tr><tr><td>**R₀**</td><td>Ancestral ~3; Delta 5–8; Omicron 8–15</td></tr><tr><td>**Variants**</td><td>Alpha, Beta, Gamma, Delta, Omicron (BA.1, BA.2, BA.5, XBB, JN.1)</td></tr><tr><td>**Vaccines**</td><td>mRNA (Pfizer, Moderna), Viral Vector (AZ), Protein (Novavax)</td></tr><tr><td>**Long COVID**</td><td>~10–20% symptomatic >12 weeks; multisystem</td></tr><tr><td>**Surveillance**</td><td>Genomic (COG-UK), wastewater, seroprevalence, hospitalisations</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Air Pollution & Respiratory Health</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pollutant</th><th>Sources</th><th>Respiratory Effects</th><th>Cardiovascular</th></tr><tr><td>-----------</td><td>---------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**PM2.5**</td><td>Combustion (traffic, industry, domestic)</td><td>COPD exacerbation, asthma, lung cancer, reduced lung growth</td><td>MI, stroke, HF, arrhythmia</td></tr><tr><td>**PM10**</td><td>Dust, construction, roads</td><td>Chronic bronchitis, reduced lung function</td><td></td></tr><tr><td>**NO₂**</td><td>Traffic, gas cooking</td><td>Asthma exacerbation, airway hyperresponsiveness</td><td></td></tr><tr><td>**O₃**</td><td>Photochemical (NOx + VOCs)</td><td>Airway inflammation, reduced lung function</td><td></td></tr><tr><td>**SO₂**</td><td>Coal, shipping</td><td>Bronchoconstriction (asthma)</td><td></td></tr><tr><td>**Indoor**</td><td>Biomass fuel (3B people), radon, VOCs</td><td>COPD (women in LMICs), lung cancer, ALRI</td><td></td></tr></table>
+<table class="ctable"><tr><th>Metric</th><th>WHO Air Quality Guidelines (2021)</th></tr><tr><td>----------</td><td>-----------------------------------</td></tr><tr><td>**PM2.5 Annual**</td><td>**5 µg/m³**</td></tr><tr><td>**PM2.5 24-hr**</td><td>15 µg/m³</td></tr><tr><td>**PM10 Annual**</td><td>15 µg/m³</td></tr><tr><td>**NO₂ Annual**</td><td>10 µg/m³</td></tr><tr><td>**O₃ 8-hr**</td><td>100 µg/m³</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Occupational Respiratory Disease</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Disease</th><th>Agent</th><th>Job Examples</th></tr><tr><td>---------</td><td>-------</td><td>--------------</td></tr><tr><td>**Occupational Asthma**</td><td>Isocyanates, flour, latex, animals, wood dust, colophony</td><td>Spray painters, bakers, healthcare, woodworkers</td></tr><tr><td>**Asbestosis / Mesothelioma**</td><td>Asbestos</td><td>Construction, shipbuilding, insulation</td></tr><tr><td>**Silicosis**</td><td>Silica dust</td><td>Mining, quarrying, sandblasting, stone cutting</td></tr><tr><td>**Coal Workers' Pneumoconiosis**</td><td>Coal dust</td><td>Coal mining</td></tr><tr><td>**Byssinosis**</td><td>Cotton dust</td><td>Textile workers</td></tr><tr><td>**Farmer's Lung**</td><td>Mouldy hay (thermophilic actinomycetes)</td><td>Farmers</td></tr><tr><td>**Berylliosis**</td><td>Beryllium</td><td>Aerospace, electronics</td></tr><tr><td>**Occupational COPD**</td><td>Dusts, fumes, gases (cadmium, welding)</td><td>Mining, construction, welding</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Exam Pearls (FCPS/MRCP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**COPD Burden**</td><td>**3rd leading cause of death globally**; ~1.2M UK; 3.2M deaths/yr</td></tr><tr><td>**COPD Main Risk**</td><td>**Smoking (~70–80% PAF)**; Air pollution, occupational, A1AT deficiency</td></tr><tr><td>**SECURE Strategy**</td><td>Smoking cessation, Exercise (PR), Comorbidities, Understand meds, Rescue pack, Exacerbation prevention</td></tr><tr><td>**Asthma Prevalence**</td><td>~5.4M UK (8% adults, 9% children); Most common chronic childhood disease</td></tr><tr><td>**Asthma Risk Factors**</td><td>Atopy, allergens, pollution, tobacco, obesity, occupational (~15%)</td></tr><tr><td>**Pneumonia**</td><td>Leading infectious killer (~2.5M/yr global); CAP vs HAP vs VAP</td></tr><tr><td>**Pneumonia Vaccines**</td><td>PCV (kids), PPV23/PPSV23 (adults), Flu, COVID, Hib</td></tr><tr><td>**Influenza**</td><td>Seasonal (A/B); Antigenic drift/shift; VE 40–60%; Annual vaccination</td></tr><tr><td>**Influenza Vaccine Effectiveness**</td><td>40–60% (varies by match, age)</td></tr><tr><td>**COVID-19 Variants**</td><td>Original R₀~3; Delta 5–8; Omicron 8–15</td></tr><tr><td>**Air Pollution**</td><td>PM2.5 (WHO 5 µg/m³); Major risk for COPD, asthma, lung cancer, CVD</td></tr><tr><td>**Occupational Asthma**</td><td>~15% adult asthma; Isocyanates, flour, latex, animals</td></tr><tr><td>**COPD SECURE**</td><td>Smoking cessation, Exercise (PR), Comorbidities, Understand meds, Rescue pack, Exacerbation prevention</td></tr><tr><td>**Influenza VE**</td><td>40–60% (varies by match, age)</td></tr><tr><td>**Pneumonia CAP Pathogens**</td><td>S. pneumoniae > H. influenzae > Mycoplasma > Viruses</td></tr><tr><td>**VAP/HAP Prevention**</td><td>HOB 30°, sedation holiday, oral care, subglottic suction</td></tr><tr><td>**COPD Exacerbation**</td><td>Anthonisen criteria: ↑ Dyspnoea, ↑ Sputum volume, ↑ Sputum purulence</td></tr><tr><td>**Asthma Exacerbation**</td><td>PEF <50% predicted, HR >120, RR >25, unable to speak, silent chest = life-threatening</td></tr><tr><td>**Pneumococcal Vaccines**</td><td>PCV13/15/20 (kids), PPV23/PPSV23 (adults >65/risk)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**COPD vs Asthma**</td><td>COPD = irreversible, smoking; Asthma = reversible, atopic, variable</td></tr><tr><td>**COPD vs Asthma Exacerbation**</td><td>COPD: ↑ dyspnoea, sputum volume/purulence; Asthma: wheeze, PEF drop</td></tr><tr><td>**CAP vs HAP vs VAP**</td><td>CAP = community; HAP = >48h hospital; VAP = >48h ventilator</td></tr><tr><td>**Influenza A vs B**</td><td>A = pandemic potential (drift/shift); B = seasonal, two lineages</td></tr><tr><td>**Antigenic Drift vs Shift**</td><td>Drift = point mutations (seasonal); Shift = reassortment (pandemic)</td></tr><tr><td>**COPD Exacerbation**</td><td>Anthonisen: ↑ Dyspnoea, ↑ Sputum volume, ↑ Purulence (2/3 = treat)</td></tr><tr><td>**Asthma Severity**</td><td>Life-threatening: PEF <33%, SpO₂ <92%, silent chest, cyanosis</td></tr><tr><td>**Pneumonia CURB-65**</td><td>Confusion, Urea>7, RR≥30, BP<90/60, age≥65 (Score ≥2 = admit)</td></tr><tr><td>**COPD vs Asthma**</td><td>COPD = fixed obstruction, smoking; Asthma = reversible, variable, atopic</td></tr><tr><td>**Pneumonia Types**</td><td>CAP (community), HAP (hospital >48h), VAP (ventilator >48h)</td></tr><tr><td>**Influenza Vaccine**</td><td>Annual; Quadri/Trivalent; LAIV (kids); aIIV (elderly)</td></tr><tr><td>**COPD Management**</td><td>SECURE: Smoking, Exercise, Comorbidities, Understand meds, Rescue, Exacerbation prevention</td></tr><tr><td>**Air Pollution PM2.5**</td><td>WHO 5 µg/m³ annual; Major COPD/asthma/lung cancer risk</td></tr><tr><td>**Occupational Asthma**</td><td>15% adult asthma; Isocyanates, flour, latex, animals</td></tr><tr><td>**Long COVID**</td><td>Symptoms >12 weeks; Multisystem; 10–20% infected</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Respiratory Disease Epidemiology)) COPD Burden: 3rd leading death, 1.2M UK, 3.2M global Risks: Smoking (70-80%), Air pollution, Occupational, A1AT SECURE: Smoking, Exercise (PR), Comorbidities, Understand meds, Rescue pack, Exacerbation prevention Asthma Prevalence: 5.4M UK, 260M global Risks: Atopy, Allergens, Pollution, Tobacco, Obesity, Occupational (15%) Models: COM-B, TTM, HBM Pneumonia Leading infectious killer (2.5M/yr) CAP: S. pneumoniae #1 HAP/VAP: S. aureus, Pseudomonas Vaccines: Pneumococcal, Flu, COVID, Hib Influenza Seasonal, A/B, Drift/Shift VE 40-60% Pandemic potential (Shift) COVID-19 R0: Original 3, Delta 5-8, Omicron 8-15 Vaccines: mRNA, Vector, Protein Long COVID: 10-20% Air Pollution PM2.5 (5 ug/m3 WHO), NO2, O3 COPD, Asthma, Lung Cancer, CVD Occupational Asthma (Isocyanates, Flour, Latex) Pneumoconiosis (Asbestosis, Silicosis, CWP) COPD (Dusts, Fumes) Surveillance Syndromic (111, ED, OTC) Wastewater (COVID, Polio, AMR) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Exam Pearls (FCPS/MRCP) - Rapid Recall</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**COPD Global Burden**</td><td>3rd leading cause of death; 3.2M deaths/yr</td></tr><tr><td>**COPD UK Prevalence**</td><td>~1.2M diagnosed; 2M+ undiagnosed</td></tr><tr><td>**COPD Main Risk**</td><td>**Smoking (~70–80% PAF)**</td></tr><tr><td>**SECURE Strategy**</td><td>Smoking, Exercise (PR), Comorbidities, Understand meds, Rescue pack, Exacerbation prevention</td></tr><tr><td>**Asthma Prevalence**</td><td>~5.4M UK (8% adults, 9% children)</td></tr><tr><td>**Asthma Risk Factors**</td><td>Atopy, Allergens, Pollution, Tobacco, Obesity, Occupational (~15%)</td></tr><tr><td>**COPD Exacerbation**</td><td>Anthonisen: 2/3 of (↑ Dyspnoea, ↑ Sputum volume, ↑ Purulence)</td></tr><tr><td>**Pneumonia**</td><td>Leading infectious killer (~2.5M/yr global)</td></tr><tr><td>**CAP Pathogen**</td><td>*S. pneumoniae* (most common)</td></tr><tr><td>**Pneumonia Vaccines**</td><td>PCV (kids), PPV23 (adults), Flu, COVID, Hib</td></tr><tr><td>**Influenza VE**</td><td>40–60% (varies by match, age)</td></tr><tr><td>**COVID Variants**</td><td>Original R₀~3; Delta 5–8; Omicron 8–15</td></tr><tr><td>**Air Pollution PM2.5**</td><td>WHO 5 µg/m³ annual; Major COPD/asthma/lung cancer/CVD risk</td></tr><tr><td>**Occupational Asthma**</td><td>~15% adult asthma; Isocyanates, flour, latex, animals</td></tr><tr><td>**COPD Management**</td><td>SECURE: Smoking, Exercise, Comorbidities, Understand meds, Rescue, Exacerbation prevention</td></tr><tr><td>**Influenza Vaccine**</td><td>Annual; 40–60% VE; Quadrivalent/High-dose/Adjuvanted for elderly</td></tr><tr><td>**COVID-19 Variants**</td><td>Original R₀~3; Delta 5–8; Omicron 8–15</td></tr><tr><td>**Long COVID**</td><td>>12 weeks symptoms; 10–20% prevalence</td></tr><tr><td>**Pneumonia CURB-65**</td><td>Confusion, Urea>7, RR≥30, BP<90/60, Age≥65 (Score ≥2 = admit)</td></tr><tr><td>**Asthma Life-Threatening**</td><td>PEF <33%, SpO₂<92%, silent chest, cyanosis, exhaustion</td></tr><tr><td>**COPD vs Asthma**</td><td>COPD = irreversible, smoking; Asthma = reversible, atopic</td></tr><tr><td>**HAP/VAP Prevention**</td><td>HOB 30°, sedation holiday, oral care, subglottic suction</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Global COPD burden and top risk factor?**</td><td>~3.2M deaths/year (3rd leading cause globally). Smoking 70-80% PAF. ~1.2M diagnosed in UK.</td></tr><tr><td>**Asthma prevalence and key risks?**</td><td>~262M global; ~5.4M UK (8% adults, 9% children). Atopy 30-50%, air pollution, occupational 15%, obesity.</td></tr><tr><td>**Anthonisen criteria for COPD exacerbation?**</td><td>3 cardinal symptoms: ↑ Dyspnoea, ↑ Sputum volume, ↑ Sputum purulence. 2/3 = treat with antibiotics ± steroids.</td></tr><tr><td>**CURB-65 score for pneumonia?**</td><td>**C**onfusion, **U**rea >7, **R**R ≥30, **B**P <90/60, **A**ge ≥65. Score 0-1: outpatient; 2: admit; 3-5: severe/admit.</td></tr><tr><td>**Pneumonia pathogens - CAP vs HAP/VAP?**</td><td>CAP: S. pneumoniae > H. influenzae > Mycoplasma > Viruses. HAP/VAP: S. aureus, Pseudomonas, Klebsiella.</td></tr><tr><td>**COPD vs Asthma spirometry?**</td><td>Both: FEV1/FVC <0.7 obstruction. COPD: limited reversibility (<12%/200ml post-BD). Asthma: significant reversibility (>12%/200ml), variable.</td></tr><tr><td>**Influenza A vs B - which causes pandemics?**</td><td>Influenza A: pandemic potential (antigenic shift = HA/NA reassortment). Influenza B: seasonal, two lineages (Victoria, Yamagata).</td></tr><tr><td>**Antigenic drift vs shift?**</td><td>Drift: point mutations in HA/NA (seasonal epidemics, annual vaccine). Shift: reassortment of HA/NA (pandemics every 10-40 years).</td></tr><tr><td>**Air pollution - main culprit for respiratory disease?**</td><td>PM2.5 (fine particulate matter). WHO guideline 5 μg/m³ annual mean. Major risk for COPD, asthma, lung cancer, CVD.</td></tr><tr><td>**Occupational asthma - commonest causes?**</td><td>Isocyanates (paint, foam), flour (bakers), animal dander (vets), latex (HCW), wood dust, metal salts. ~15% of adult asthma.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Burden Statistics (COPD, Asthma, Pneumonia)</td><td></td><td></td><td></td></tr><tr><td>Risk Factors (Smoking, Pollution, Occupational)</td><td></td><td></td><td></td></tr><tr><td>Spirometry Interpretation</td><td></td><td></td><td></td></tr><tr><td>Anthonisen / CURB-65</td><td></td><td></td><td></td></tr><tr><td>Influenza Drift/Shift</td><td></td><td></td><td></td></tr><tr><td>Vaccine Types & Schedule</td><td></td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation (for Dashboard UI)</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Parent</b>: [Population Health and Epidemiology MOC](../Population Health and Epidemiology MOC.md) <b>Hierarchy</b>: [Davidson Chapter 5 Hierarchy](../Davidson Chapter 5 - Population Health and Epidemiology Hierarchy.md) <b>Template</b>: <code>../../Templates/Epidemiology Topic Template.md</code> <b>See also</b>: [Cardiovascular Disease Epidemiology](../Cardiovascular Disease Epidemiology.md) | [Infectious Disease Epidemiology](../Infectious Disease Epidemiology.md) | [Environmental &amp; Occupational Health](../Environmental &amp; Occupational Health.md) | [Health Promotion &amp; Disease Prevention](../Health Promotion &amp; Disease Prevention (Primary, Secondary, Tertiary).md) | [Immunisation &amp; Vaccination Programs](../Immunisation &amp; Vaccination Programs.md)</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Respiratory Disease Epidemiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

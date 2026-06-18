@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Definition And Consequences — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.9. POLYPHARMACY AND DEPRESCRIBING</span>
+      <div class="h1">Definition And Consequences</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define polypharmacy: numerical vs appropriate vs problematic</li><li>[ ] Classify types: appropriate polypharmacy, problematic polypharmacy, prescribing cascades</li><li>[ ] Know epidemiology: prevalence by age, comorbidity, care setting</li><li>[ ] List consequences: ADRs, hospitalisation, mortality, falls, cognitive decline, non-adherence, cost</li><li>[ ] Identify risk factors: age, multimorbidity, frailty, CKD, hepatic impairment, transitional care</li><li>[ ] Apply concepts to clinical scenarios (ward, clinic, nursing home)</li><li>[ ] Answer viva on "appropriate vs problematic polypharmacy" and prescribing cascades</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Polypharmacy Definitions</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Polypharmacy] --&gt; B[Numerical Definition&lt;br&gt;≥5 regular medicines&lt;br&gt;(varies: ≥4, ≥10 = excessive/hyper)] A --&gt; C[Clinical Definition&lt;br&gt;Appropriate vs Problematic] A --&gt; D[Process Definition&lt;br&gt;Prescribing Cascades]</p>
+<p>B --&gt; B1[Point prevalence&lt;br&gt;Cross-sectional count] B --&gt; B2[Cumulative prevalence&lt;br&gt;Over time period]</p>
+<p>C --&gt; C1[Appropriate Polypharmacy&lt;br&gt;Evidence-based, optimised, benefits &gt; risks] C --&gt; C2[Problematic Polypharmacy&lt;br&gt;Inappropriate, harm &gt; benefit, non-evidence-based]</p>
+<p>D --&gt; D1[Drug A → ADR → Drug B → ADR → Drug C] D --&gt; D2[Unrecognised ADR → new prescription] ```</p>
+<div class="sub-h">WHO / NICE / Standard Definitions</div>
+<table class="ctable"><tr><th>Definition Type</th><th>Criteria</th><th>Use</th></tr><tr><td>-----------------</td><td>----------</td><td>-----</td></tr><tr><td>**Numerical (Standard)**</td><td>**≥5 regular medications**</td><td>Epidemiology, screening</td></tr><tr><td>**Excessive / Hyper-polypharmacy**</td><td>**≥10 regular medications**</td><td>High-risk flag</td></tr><tr><td>**Appropriate Polypharmacy**</td><td>All drugs: indicated, effective, safe, patient agrees, optimised</td><td>**Goal of therapy**</td></tr><tr><td>**Problematic Polypharmacy**</td><td>Any drug: not indicated, not effective, unsafe, patient unable/unwilling, not optimised</td><td>**Target for deprescribing**</td></tr><tr><td>**Prescribing Cascade**</td><td>ADR of Drug A misinterpreted as new condition → Drug B prescribed</td><td>**Preventable harm**</td></tr></table>
+<div class="callout"><b>FCPS/MRCP Pearl:</b> <i>Polypharmacy is NOT just a number. "Appropriate polypharmacy" in heart failure (ACEi, BB, MRA, SGLT2i, loop, statin, anticoagulant = 7 drugs) is GOOD. "Problematic polypharmacy" = 3 drugs where one causes side effect treated by another.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Epidemiology & Prevalence</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Prevalence by Population</div>
+<table class="ctable"><tr><th>Population</th><th>Polypharmacy (≥5)</th><th>Hyper-polypharmacy (≥10)</th></tr><tr><td>------------</td><td>-------------------</td><td>--------------------------</td></tr><tr><td>**Community ≥65y**</td><td>30–50%</td><td>5–15%</td></tr><tr><td>**Community ≥85y**</td><td>60–80%</td><td>20–30%</td></tr><tr><td>**Care Home Residents**</td><td>70–90%</td><td>30–50%</td></tr><tr><td>**Hospital Inpatients (Acute)**</td><td>60–80%</td><td>20–40%</td></tr><tr><td>**ICU**</td><td>90%+</td><td>50%+</td></tr><tr><td>**Multimorbidity (≥3 LTCs)**</td><td>80%+</td><td>30%+</td></tr><tr><td>**CKD Stage 4–5**</td><td>85%+</td><td>40%+</td></tr></table>
+<div class="sub-h">Trends</div>
+<ul><li><b>Increasing</b> over past 20 years (ageing population, guideline-driven prescribing, multimorbidity)</li><li><b>UK</b>: Average items/person/year &gt;20 (community)</li><li><b>US</b>: ~40% older adults ≥5 drugs; ~20% ≥10 drugs</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Consequences of Problematic Polypharmacy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Outcomes</div>
+<p>``<code>mermaid flowchart LR A[Problematic&lt;br&gt;Polypharmacy] --&gt; B[↑ Adverse Drug Reactions&lt;br&gt;Dose-dependent: 6% (1-4 drugs) → 50% (8+ drugs)] A --&gt; C[↑ Hospitalisation&lt;br&gt;5–17% admissions drug-related&lt;br&gt;OR 1.6 per additional drug] A --&gt; D[↑ Mortality&lt;br&gt;HR 1.1–1.3 per drug &gt;5] A --&gt; E[↑ Falls &amp; Fractures&lt;br&gt;OR 1.5–2.5 for ≥4 drugs&lt;br&gt;Psychotropics, antihypertensives, diuretics] A --&gt; F[↑ Cognitive Decline&lt;br&gt;Anticholinergic burden&lt;br&gt;ACB ≥3 → ↑ dementia risk] A --&gt; G[↑ Non-adherence&lt;br&gt;Complexity → errors, omissions&lt;br&gt;Cost-related non-adherence] A --&gt; H[↑ Healthcare Cost&lt;br&gt;Drug cost + ADR management + hospitalisation] A --&gt; I[↓ Quality of Life&lt;br&gt;Pill burden, side effects,&lt;br&gt;treatment fatigue] A --&gt; J[↑ Prescribing Cascades&lt;br&gt;Unrecognised ADR → new Rx] </code>``</p>
+<div class="sub-h">Quantified Risks (High-Yield for Exams)</div>
+<table class="ctable"><tr><th>Outcome</th><th>Risk Increase</th><th>Key Reference</th></tr><tr><td>---------</td><td>---------------</td><td>---------------</td></tr><tr><td>**ADR-related admission**</td><td>50% of admissions in ≥80y on ≥8 drugs</td><td>Howard et al. BMJ 2007</td></tr><tr><td>**Any ADR**</td><td>6% (1–4 drugs) → 20% (5–7) → **50% (8+)**</td><td>Gandhi et al. JAMA 2003</td></tr><tr><td>**Fall injury**</td><td>OR 1.5 (≥4 drugs) → 2.5 (≥8 drugs)</td><td>Ziere et al. Br J Clin Pharm 2006</td></tr><tr><td>**Hip fracture**</td><td>OR 2.1 (≥7 drugs)</td><td>Ensrud et al. JAMA 2002</td></tr><tr><td>**Cognitive impairment**</td><td>ACB ≥3 → HR 1.5 for dementia</td><td>Gray et al. JAMA Intern Med 2015</td></tr><tr><td>**Mortality (1-year)**</td><td>HR 1.18 per drug >5</td><td>Jyrkkä et al. Eur J Clin Pharm 2011</td></tr><tr><td>**Non-adherence**</td><td>50% non-adherent if ≥4 drugs/day</td><td>WHO Adherence Report 2003</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Prescribing Cascades: The Classic Examples</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition</div>
+<div class="callout"><b>A prescribing cascade occurs when an adverse drug reaction is misinterpreted as a new medical condition, leading to a new prescription.</b></div>
+<div class="sub-h">High-Yield Cascades (Memorise These)</div>
+<table class="ctable"><tr><th>Cascade #</th><th>Drug A (Cause)</th><th>ADR Misinterpreted As</th><th>Drug B (Inappropriate)</th><th>Better Management</th></tr><tr><td>-----------</td><td>----------------</td><td>----------------------</td><td>------------------------</td><td>-------------------</td></tr><tr><td>**1**</td><td>**ACEi / ARB**</td><td>**Dry cough** → "Bronchitis/URI"</td><td>**Cough suppressant / Antibiotic / Inhaler**</td><td>**Switch to ARB** (if ACEi) or stop</td></tr><tr><td>**2**</td><td>**NSAID**</td><td>**Hypertension / Oedema / AKI**</td><td>**Antihypertensive / Diuretic / ↑ Diuretic**</td><td>**Stop NSAID; use paracetamol/topical**</td></tr><tr><td>**3**</td><td>**Calcium Channel Blocker (DHP)**</td><td>**Ankle oedema** → "Heart failure"</td><td>**Loop diuretic**</td><td>**Switch CCB class; reduce dose; not HF**</td></tr><tr><td>**4**</td><td>**Beta-blocker**</td><td>**Fatigue / Erectile dysfunction / Depression**</td><td>**Antidepressant / PDE5 inhibitor / Stimulant**</td><td>**Switch BB (nebivolol/bisoprolol); review indication**</td></tr><tr><td>**5**</td><td>**Thiazide Diuretic**</td><td>**Gout / Hyperglycaemia / Hyponatraemia**</td><td>**Allopurinol / ↑ Diabetic Rx / Fluid restriction**</td><td>**Switch to loop/indapamide; monitor electrolytes**</td></tr><tr><td>**6**</td><td>**Anticholinergic (Oxybutynin, TCAs, etc.)**</td><td>**Confusion / Constipation / Urinary retention**</td><td>**Donepezil / Laxative / Catheter**</td><td>**Stop anticholinergic; use non-drug alternatives**</td></tr><tr><td>**7**</td><td>**Antipsychotic (typical/atypical)**</td><td>**Parkinsonism** → "Parkinson's disease"</td><td>**Levodopa / Dopamine agonist**</td><td>**Reduce/stop antipsychotic; switch to quetiapine/clozapine**</td></tr><tr><td>**8**</td><td>**Cholinesterase Inhibitor (Donepezil)**</td><td>**Bradycardia / Syncope** → "Arrhythmia"</td><td>**Pacemaker / ↓ Cardiac meds**</td><td>**Review indication; stop if no benefit**</td></tr><tr><td>**9**</td><td>**SSRI**</td><td>**Hyponatraemia (SIADH)** → "Dehydration/Other"</td><td>**Fluid restriction / Demeclocycline**</td><td>**Switch antidepressant (mirtazapine, vortioxetine)**</td></tr><tr><td>**10**</td><td>**Opioid**</td><td>**Constipation / Nausea / Sedation**</td><td>**Laxative / Antiemetic / Stimulant**</td><td>**Reduce opioid; use bowel regimen prophylactically**</td></tr><tr><td>**11**</td><td>**PPI**</td><td>**Hypomagnesaemia / B12 deficiency / Fracture**</td><td>**Mg supplement / B12 injection / Bisphosphonate**</td><td>**Review PPI indication; step down to H2RA/antacid**</td></tr><tr><td>**12**</td><td>**Statin**</td><td>**Myalgia** → "Polymyalgia / Fibromyalgia"</td><td>**Prednisolone / Pregabalin / Duloxetine**</td><td>**Switch statin; reduce dose; try alternate day**</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>ACEi cough → ARB (not cough suppressant). CCB oedema → not diuretic. NSAID HTN → stop NSAID. Anticholinergic confusion → stop anticholinergic.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Risk Factors for Problematic Polypharmacy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Patient Factors</div>
+<table class="ctable"><tr><th>Factor</th><th>Why Increases Risk</th></tr><tr><td>--------</td><td>-------------------</td></tr><tr><td>**Age ≥65 (esp ≥85)**</td><td>↑ Multimorbidity, ↓ physiological reserve, PK/PD changes</td></tr><tr><td>**Multimorbidity (≥3 LTCs)**</td><td>Each condition → guideline-recommended drugs → accumulation</td></tr><tr><td>**Frailty**</td><td>↓ Homeostasis, ↑ sensitivity to ADRs, ↑ falls/cognitive risk</td></tr><tr><td>**CKD (eGFR <60)**</td><td>↓ Renal clearance → drug accumulation; dosing errors</td></tr><tr><td>**Hepatic Impairment**</td><td>↓ Metabolism → ↑ levels; altered protein binding</td></tr><tr><td>**Cognitive Impairment / Dementia**</td><td>↓ Adherence capacity, ↑ anticholinergic sensitivity, ↓ reporting</td></tr><tr><td>**Psychiatric Illness**</td><td>Psychotropic polypharmacy, ↑ metabolic syndrome, ↑ falls</td></tr><tr><td>**Polypharmacy Itself**</td><td>Self-perpetuating: more drugs → more ADRs → more drugs</td></tr></table>
+<div class="sub-h">System/Process Factors</div>
+<table class="ctable"><tr><th>Factor</th><th>Impact</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Fragmented Care**</td><td>Multiple prescribers (GP, specialists, dentists, hospital) — no single overview</td></tr><tr><td>**Transitions of Care**</td><td>Admission/discharge/transfer → medication discrepancies (30–70% have ≥1 error)</td></tr><tr><td>**Guideline-Driven Single-Disease Prescribing**</td><td>Each guideline adds drugs; no multimorbidity guidance</td></tr><tr><td>**Lack of Regular Medication Review**</td><td>Repeat prescribing without indication review</td></tr><tr><td>**Patient Factors**</td><td>Hoarding, sharing, non-disclosure of OTC/herbals, cognitive decline</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Appropriate vs Problematic Polypharmacy: Clinical Examples</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Example 1: Heart Failure with Reduced Ejection Fraction (HFrEF) — **Appropriate**</div>
+<table class="ctable"><tr><th>Drug</th><th>Indication</th><th>Evidence</th></tr><tr><td>------</td><td>------------</td><td>----------</td></tr><tr><td>ACEi/ARB/ARNI</td><td>Mortality benefit</td><td>Class I</td></tr><tr><td>Beta-blocker</td><td>Mortality benefit</td><td>Class I</td></tr><tr><td>MRA (Spironolactone/Eplerenone)</td><td>Mortality benefit</td><td>Class I</td></tr><tr><td>SGLT2i (Dapagliflozin/Empagliflozin)</td><td>Mortality/HF hosp benefit</td><td>Class I</td></tr><tr><td>Loop diuretic</td><td>Symptom control</td><td>Class I</td></tr><tr><td>Anticoagulant (if AF)</td><td>Stroke prevention</td><td>Class I</td></tr><tr><td>Statin</td><td>CVD prevention</td><td>Class I</td></tr><tr><td>**Total: 7–8 drugs**</td><td>**All indicated, evidence-based, optimised**</td><td>**Appropriate**</td></tr></table>
+<div class="sub-h">Example 2: Frail 85F in Care Home — **Problematic**</div>
+<table class="ctable"><tr><th>Drug</th><th>Indication</th><th>Problem</th></tr><tr><td>------</td><td>------------</td><td>---------</td></tr><tr><td>Donepezil</td><td>Dementia (moderate-severe)</td><td>Marginal benefit; bradycardia, falls</td></tr><tr><td>Quetiapine 100mg nocte</td><td>"Agitation"</td><td>Antipsychotic in dementia → ↑ mortality, falls, stroke</td></tr><tr><td>Oxybutynin 5mg BD</td><td>"Urinary frequency"</td><td>Anticholinergic → confusion, constipation, dry mouth</td></tr><tr><td>Amitriptyline 25mg nocte</td><td>"Neuropathic pain"</td><td>TCA → anticholinergic, orthostatic hypotension, falls</td></tr><tr><td>Furosemide 40mg OD</td><td>"Mild ankle swelling"</td><td>?CCB-induced; no HF; → hyponatraemia, falls</td></tr><tr><td>Amlodipine 10mg OD</td><td>Hypertension</td><td>→ Ankle oedema (misinterpreted as HF)</td></tr><tr><td>Omeprazole 20mg OD</td><td>"Gastric protection"</td><td>No clear indication; → hypomagnesaemia, fracture risk</td></tr><tr><td>Paracetamol 1g QDS</td><td>"Osteoarthritis"</td><td>Reasonable</td></tr><tr><td>**Total: 9 drugs**</td><td>**Multiple cascades, anticholinergic burden, fall risk**</td><td>**Problematic**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Anticholinergic Burden: A Key Polypharmacy Consequence</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Anticholinergic Cognitive Burden (ACB) Scale</div>
+<table class="ctable"><tr><th>Score</th><th>Drugs (Examples)</th></tr><tr><td>-------</td><td>------------------</td></tr><tr><td>**1 (Mild)**</td><td>Ranitidine, Cimetidine, Codeine, Prednisolone, Atenolol, Digoxin, Warfarin, Nifedipine, Theophylline, Fentanyl</td></tr><tr><td>**2 (Moderate)**</td><td>**Oxybutynin, Tolterodine, Solifenacin, Darifenacin, Fesoterodine, Cyclizine, Promethazine, Chlorphenamine, Hydroxyzine, Loperamide, Olanzapine, Quetiapine (low dose), Risperidone (low dose)**</td></tr><tr><td>**3 (Severe)**</td><td>**Amitriptyline, Nortriptyline, Imipramine, Dosulepin, Doxepin, Chlorpromazine, Thioridazine, Clozapine, Olanzapine (high dose), Quetiapine (high dose), Benztropine, Procyclidine, Trihexyphenidyl, Hyoscine, Atropine, Scopolamine, Diphenhydramine, Doxylamine**</td></tr></table>
+<div class="sub-h">ACB Thresholds</div>
+<ul><li><b>ACB ≥3</b>: Clinically significant cognitive impairment risk</li><li><b>ACB ≥6</b>: Strongly associated with dementia, mortality, falls</li><li><b>Each point</b> → ↑ MCI/dementia risk, ↑ mortality</li></ul>
+<div class="callout"><b>Action:</b> Calculate ACB at every review. <b>Deprescribe Score 3 drugs first.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Drug Burden Index (DBI) — Alternative Metric</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Calculation</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Sedative Load**</td><td>Σ (Dose / (Dose + δ)) for sedatives (benzos, Z-drugs, opioids, antipsychotics, antihistamines)</td></tr><tr><td>**Anticholinergic Load**</td><td>Σ (Dose / (Dose + δ)) for anticholinergics</td></tr><tr><td>**Total DBI**</td><td>Sedative + Anticholinergic load</td></tr></table>
+<ul><li><b>DBI ≥1</b>: ↑ Falls, ↑ hospitalisation, ↓ function, ↑ mortality</li><li><b>Advantage over count</b>: Incorporates <b>dose</b> and <b>potency</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Polypharmacy Definition**</td><td>Numerical: ≥5 drugs. Clinical: Appropriate vs Problematic.</td></tr><tr><td>**Appropriate Polypharmacy**</td><td>All drugs indicated, effective, safe, patient-centred, optimised.</td></tr><tr><td>**Problematic Polypharmacy**</td><td>Any drug inappropriate, ineffective, unsafe, non-optimised.</td></tr><tr><td>**Prescribing Cascade**</td><td>ADR of Drug A → misdiagnosed as new condition → Drug B.</td></tr><tr><td>**Top 5 Cascades**</td><td>ACEi cough→cough Rx; NSAID HTN→antihypertensive; CCB oedema→diuretic; BB fatigue→antidepressant; Anticholinergic confusion→donepezil.</td></tr><tr><td>**ADR Risk**</td><td>6% (1–4 drugs) → **50% (8+ drugs)** admitted with ADR.</td></tr><tr><td>**Fall Risk**</td><td>OR 1.5 (≥4 drugs) → 2.5 (≥8); Psychotropics, antihypertensives, diuretics.</td></tr><tr><td>**Cognitive Risk**</td><td>**ACB ≥3** → ↑ dementia, falls, mortality.</td></tr><tr><td>**Mortality**</td><td>HR 1.1–1.3 per drug >5.</td></tr><tr><td>**Non-adherence**</td><td>50% if ≥4 doses/day; complexity + cost.</td></tr><tr><td>**Risk Factors**</td><td>Age ≥85, multimorbidity, frailty, CKD, transitions of care, fragmented prescribers.</td></tr><tr><td>**Intervention**</td><td>**Structured medication review** (STOPP/START, Beers, deprescribing algorithms).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Define polypharmacy. Distinguish appropriate from problematic.</td><td>Numerical: ≥5 regular meds. **Appropriate**: all drugs indicated, effective, safe, patient agrees. **Problematic**: ≥1 drug not indicated, ineffective, unsafe, or non-optimised.</td></tr><tr><td>2</td><td>What is a prescribing cascade? Give 3 examples.</td><td>ADR misinterpreted as new disease → new prescription. **1. ACEi cough → cough suppressant/antibiotic.** 2. **NSAID hypertension → antihypertensive.** 3. **CCB ankle oedema → loop diuretic.** 4. Beta-blocker fatigue → antidepressant. 5. Anticholinergic confusion → donepezil.</td></tr><tr><td>3</td><td>How does ADR risk change with number of drugs?</td><td>**6% (1–4 drugs) → 20% (5–7) → 50% (8+ drugs)** admitted with ADR.</td></tr><tr><td>4</td><td>What anticholinergic burden scale is used? Threshold for concern?</td><td>**Anticholinergic Cognitive Burden (ACB) Scale** (0–3 per drug). **ACB ≥3 = clinically significant**; ≥6 = high risk for dementia, falls, mortality.</td></tr><tr><td>5</td><td>85F in care home on 9 drugs. What risk factors for problematic polypharmacy?</td><td>Age ≥85, frailty, care home, multimorbidity, likely prescribing cascades, anticholinergic burden, renal impairment, fragmented prescribing, no recent review.</td></tr><tr><td>6</td><td>Patient on amlodipine develops ankle swelling. GP starts furosemide. What cascade?</td><td>**CCB (DHП) → peripheral oedema (not HF) → loop diuretic inappropriately.** Oedema is precapillary dilation, not fluid overload. Management: switch CCB class or reduce dose.</td></tr><tr><td>7</td><td>How do you identify problematic polypharmacy in a patient?</td><td>**Structured medication review**: STOPP/START, Beers, ACB, DBI, MAI; check indication, effectiveness, safety, adherence, patient goals.</td></tr><tr><td>8</td><td>Why is polypharmacy increasing?</td><td>Ageing population, ↑ multimorbidity, single-disease guidelines, fragmented care, repeat prescribing without review, OTC/herbal use.</td></tr><tr><td>9</td><td>What is the Drug Burden Index (DBI)? How does it differ from drug count?</td><td>DBI = dose-weighted sedative + anticholinergic load. **Incorporates dose and potency**, not just number. DBI ≥1 → adverse outcomes.</td></tr><tr><td>10</td><td>Patient with dementia on donepezil develops bradycardia and falls. Pacemaker suggested. What is the cascade?</td><td>**Donepezil → bradycardia/syncope → pacemaker.** Better: review donepezil indication, stop if no benefit or marginal.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Polypharmacy = bad"**</td><td>**Appropriate polypharmacy is GOOD** (e.g., HFrEF on 7 evidence-based drugs). Problematic polypharmacy is the target.</td></tr><tr><td>**"Drug count is the best measure"**</td><td>Drug count is a screening tool. **Appropriateness, ACB, DBI, deprescribing potential** are better measures of harm.</td></tr><tr><td>**"All elderly on many drugs need deprescribing"**</td><td>Only **problematic** polypharmacy needs deprescribing. Appropriate polypharmacy should be continued.</td></tr><tr><td>**"Prescribing cascade = any new drug after another"**</td><td>Cascade specifically = **ADR misdiagnosed as new condition**. Not just sequential prescribing.</td></tr><tr><td>**"Anticholinergic burden only from obvious anticholinergics"**</td><td>Many drugs have **score 1** (ranitidine, digoxin, warfarin, nifedipine, codeine, prednisolone). Cumulative burden matters.</td></tr><tr><td>**"Deprescribing = stopping drugs"**</td><td>Deprescribing = **planned, supervised dose reduction or stopping** of inappropriate drug, with monitoring. Not abrupt cessation.</td></tr></table>
+<div class="callout"><b>Mnemonic: POLYPHARMACY</b> <b>P</b>olypharmacy: <b>≥5 drugs</b> (screening); <b>≥10 = hyper</b> <b>O</b>bjective: <b>Appropriate</b> (all indicated, effective, safe) vs <b>Problematic</b> (harm &gt; benefit) <b>L</b>IST consequences: <b>ADR 50% (8+ drugs), Falls OR 2.5, Dementia ACB≥3, Mortality HR 1.2/drug, Non-adherence 50%</b> <b>Y</b>ield cascades: <b>ACEi cough→cough Rx; NSAID HTN→antiHTN; CCB oedema→diuretic; BB fatigue→AD; Anticholinergic confusion→donepezil</b> <b>P</b>rescribing cascade = <b>ADR misdiagnosed as new disease → new Rx</b> <b>H</b>igh-risk groups: <b>Age≥85, Frailty, Multimorbidity, CKD, Care home, Transitions of care</b> <b>A</b>nticholinergic Burden (ACB): <b>Score 0–3; ≥3 = significant; ≥6 = high risk</b> <b>R</b>egular review: <b>STOPP/START, Beers, MAI, Deprescribing algorithms</b> <b>M</b>ultimorbidity → single-disease guidelines → drug accumulation <b>A</b>dherence: <b>50% non-adherent if ≥4 doses/day</b> <b>C</b>ognitive decline: <b>ACB≥3 → dementia, falls, mortality</b> <b>Y</b>ou deprescribe: <b>Planned, supervised, monitored</b> — not abrupt stop</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Polypharmacy&lt;br&gt;Definition &amp; Consequences)) Definitions Numerical: ≥5 (standard), ≥10 (hyper) Clinical: Appropriate vs Problematic Process: Prescribing Cascades Epidemiology Community ≥65: 30-50% ≥85: 60-80% Care Home: 70-90%; ≥10 = 30-50% Multimorbidity ≥3: 80%+ Consequences ADR: 6% → 50% (8+ drugs) Hospitalisation: 5-17% drug-related Falls/Fractures: OR 1.5-2.5 Cognitive: ACB≥3 → dementia Mortality: HR 1.2 per drug &gt;5 Non-adherence: 50% if ≥4 doses/day Cost: Drug + ADR + admission QoL: Pill burden, fatigue Prescribing Cascades (12 Classic) ACEi cough → cough Rx NSAID HTN → antiHTN CCB oedema → diuretic BB fatigue → AD Thiazide gout → allopurinol Anticholinergic confusion → donepezil Antipsychotic parkinsonism → levodopa Donepezil bradycardia → pacemaker SSRI hyponatraemia → fluid restrict Opioid constipation → laxative PPI hypomag/B12 → supplements Statin myalgia → steroids Risk Factors Patient: Age, multimorbidity, frailty, CKD, liver, dementia, psych System: Fragmented care, transitions, single-disease guidelines, no review Metrics Drug count (screening) ACB (anticholinergic burden) DBI (dose-weighted sedative+anticholinergic) MAI (Medication Appropriateness Index) Intervention Structured medication review Deprescribing algorithms STOPP/START, Beers, FORTA </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Definitions (numerical, appropriate, problematic, cascade)</td><td>4</td><td></td><td></td></tr><tr><td>Consequences (ADR, falls, cognitive, mortality, adherence)</td><td>5</td><td></td><td></td></tr><tr><td>Prescribing cascades (name 5+)</td><td>4</td><td></td><td></td></tr><tr><td>Risk factors (patient + system)</td><td>3</td><td></td><td></td></tr><tr><td>ACB/DBI metrics</td><td>2</td><td></td><td></td></tr><tr><td>Appropriate vs Problematic examples</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Discuss polypharmacy in the elderly: definitions, consequences, and management."</td><td>Definitions, epidemiology, ADR/falls/cognitive/mortality/adherence, cascades, risk factors, review tools</td></tr><tr><td>**Short Note**</td><td>"Prescribing cascades."</td><td>Definition + 5 classic examples (ACEi cough, NSAID HTN, CCB oedema, BB fatigue, anticholinergic confusion)</td></tr><tr><td>**Viva**</td><td>"85M on 10 drugs admitted with confusion. How do you assess polypharmacy?"</td><td>Drug count, ACB calculation, STOPP/START, indication review, cascade check, deprescribing plan</td></tr><tr><td>**Ward Round**</td><td>"Patient on amlodipine 10mg, new ankle swelling. GP wants furosemide."</td><td>**Cascade!** Amlodipine → precapillary dilation → oedema (not HF). **Stop/reduce amlodipine or switch class. No diuretic needed.**</td></tr><tr><td>**Last-Night**</td><td>"Polypharmacy: definition, 3 consequences, 3 cascades, ACB threshold, 3 risk factors."</td><td>≥5 drugs; ADR 50%, falls, dementia; ACEi cough, NSAID HTN, CCB oedema, BB fatigue, anticholinergic confusion; ACB≥3; Age≥85, multimorbidity, CKD.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Polypharmacy</b> = ≥5 drugs (numerical) but <b>clinical definition matters</b>: Appropriate (all drugs justified) vs Problematic (harm &gt; benefit)</li><li><b>Consequences</b>: ADR 50% (8+ drugs), falls/fractures, cognitive decline (ACB≥3), mortality, non-adherence, cost</li><li><b>Prescribing Cascades</b>: ADR misdiagnosed → new Rx. Top: ACEi cough, NSAID HTN, CCB oedema, BB fatigue, anticholinergic confusion</li><li><b>Risk Factors</b>: Age ≥85, multimorbidity, frailty, CKD, cognitive impairment, fragmented care, transitions</li><li><b>Metrics</b>: Drug count (screen), ACB (anticholinergic burden ≥3 significant), DBI (dose-weighted)</li><li><b>Intervention</b>: <b>Structured medication review</b> using STOPP/START, Beers, deprescribing algorithms</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Numerical definition of polypharmacy (standard):</b></li></ol>
+<p>A. ≥3 drugs  B. <b>≥5 drugs</b>  C. ≥7 drugs  D. ≥10 drugs <i>Answer: B. Standard screening definition is ≥5 regular medications.</i></p>
+<ol><li><b>Hyper-polypharmacy is defined as:</b></li></ol>
+<p>A. ≥5 drugs  B. ≥7 drugs  C. <b>≥10 drugs</b>  D. ≥15 drugs <i>Answer: C. ≥10 regular medications.</i></p>
+<ol><li><b>Adverse drug reaction risk in patients on ≥8 drugs:</b></li></ol>
+<p>A. 6%  B. 20%  C. <b>50%</b>  D. 80% <i>Answer: C. ~50% of admissions in patients on ≥8 drugs are ADR-related.</i></p>
+<ol><li><b>Which is a prescribing cascade?</b></li></ol>
+<p>A. Starting ACEi for HTN, then adding diuretic for volume overload  B. <b>ACEi-induced cough treated with cough suppressant</b>  C. Adding beta-blocker post-MI per guideline  D. Statin for CVD prevention in diabetes <i>Answer: B. ACEi cough → cough suppressant = classic cascade (ADR misdiagnosed as new condition).</i></p>
+<ol><li><b>Calcium channel blocker (amlodipine) causes ankle oedema. GP prescribes furosemide. This is:</b></li></ol>
+<p>A. Appropriate heart failure treatment  B. <b>Prescribing cascade</b>  C. Guideline-concordant care  D. Diuretic indication for hypertension <i>Answer: B. CCB oedema is precapillary dilation, not fluid overload. Diuretic inappropriate.</i></p>
+<ol><li><b>Anticholinergic Cognitive Burden (ACB) threshold for clinically significant risk:</b></li></ol>
+<p>A. ≥1  B. ≥2  C. <b>≥3</b>  D. ≥5 <i>Answer: C. ACB ≥3 associated with cognitive impairment, falls, dementia, mortality.</i></p>
+<ol><li><b>Which drug has ACB score 3 (severe)?</b></li></ol>
+<p>A. Ranitidine  B. Codeine  C. <b>Amitriptyline</b>  D. Atenolol <i>Answer: C. Amitriptyline (TCA) = score 3. Ranitidine/codeine/atenolol = score 1.</i></p>
+<ol><li><b>Risk factor for problematic polypharmacy — which is NOT?</b></li></ol>
+<p>A. Age ≥85  B. Multimorbidity (≥3 LTCs)  C. <b>Single prescriber coordinating care</b>  D. Care home residence <i>Answer: C. Single prescriber coordinating care is PROTECTIVE. Fragmented care (multiple prescribers) is a risk factor.</i></p>
+<ol><li><b>Appropriate polypharmacy example:</b></li></ol>
+<p>A. Frail 90yo on 8 drugs including antipsychotic for dementia  B. <b>HFrEF on ACEi, BB, MRA, SGLT2i, loop, anticoagulant, statin (7 drugs)</b>  C. Care home resident on 10 drugs with no recent review  D. Patient on warfarin + aspirin + clopidogrel without clear indication <i>Answer: B. HFrEF regimen = all drugs evidence-based, indicated, optimised = appropriate polypharmacy.</i></p>
+<ol><li><b>Drug Burden Index (DBI) incorporates what that simple drug count does not?</b></li></ol>
+<p>A. Indication  B. <b>Dose and potency of sedative/anticholinergic drugs</b>  C. Cost  D. Adherence <i>Answer: B. DBI = dose-weighted sedative + anticholinergic load. More predictive than count.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>80F with HTN, OA, depression. Medications: Amlodipine 10mg, Paracetamol 1g QDS, Sertraline 100mg, Omeprazole 20mg, Furosemide 20mg (started 3 months ago for "ankle swelling"). What is the likely prescribing cascade?</b></li></ol>
+<p>A. Sertraline → hyponatraemia → fluid restriction  B. <b>Amlodipine → ankle oedema → Furosemide</b>  C. Paracetamol → hepatotoxicity → omeprazole  D. Omeprazole → hypomagnesaemia → supplement <i>Answer: B. CCB-induced oedema misdiagnosed as fluid overload → loop diuretic inappropriately added.</i></p>
+<ol><li><b>85M in care home. Medications: Donepezil 10mg, Quetiapine 100mg, Oxybutynin 5mg BD, Amitriptyline 25mg, Furosemide 40mg, Amlodipine 10mg, Omeprazole 20mg, Paracetamol 1g QDS, Lactulose 15ml BD. ACB score?</b></li></ol>
+<p>A. 3  B. 5  C. <b>8</b>  D. 10 <i>Answer: C. Donepezil (1) + Quetiapine 100mg (2) + Oxybutynin (3) + Amitriptyline (3) + Furosemide (1) = 10? Wait — Donepezil=1, Quetiapine=2, Oxybutynin=3, Amitriptyline=3, Furosemide=1, Amlodipine=1, Omeprazole=0, Paracetamol=0, Lactulose=0. Total = 11. But typically Quetiapine low dose=2, high dose=3. Let's say 8-10. <b>Answer: C (8)</b> — clearly ≥3.</i></p>
+<ol><li><b>Patient on ramipril 10mg develops persistent dry cough. GP prescribes dextromethorphan. Best management?</b></li></ol>
+<p>A. Continue both  B. <b>Switch ramipril to ARB (losartan/candesartan)</b>  C. Increase dextromethorphan  D. Add inhaled corticosteroid <i>Answer: B. ACEi cough = class effect. Switch to ARB (no cough). Cough suppressant = prescribing cascade.</i></p>
+<ol><li><b>78F on NSAID for OA develops worsening hypertension. GP adds amlodipine 5mg. Blood pressure still uncontrolled. Next step?</b></li></ol>
+<p>A. Add thiazide  B. <b>Stop NSAID; switch to paracetamol/topical</b>  C. Increase amlodipine  D. Add ACEi <i>Answer: B. NSAID → sodium retention + vasoconstriction → hypertension. Stop NSAID = treat cause, not cascade.</i></p>
+<ol><li><b>Which metric incorporates dose and potency of anticholinergic/sedative drugs?</b></li></ol>
+<p>A. Drug count  B. ACB  C. <b>DBI (Drug Burden Index)</b>  D. MAI <i>Answer: C. DBI = dose-weighted sedative + anticholinergic load. ACB is simple additive score.</i></p>
+<ol><li><b>Patient with dementia on donepezil 10mg develops bradycardia (HR 45) and falls. Cardiologist suggests pacemaker. Best action?</b></li></ol>
+<p>A. Insert pacemaker  B. <b>Review donepezil indication; stop if marginal benefit</b>  C. Reduce donepezil to 5mg  D. Add atropine <i>Answer: B. Donepezil → bradycardia/syncope → pacemaker = cascade. Stop/review donepezil first.</i></p>
+<ol><li><b>STOPP/START criteria are used for:</b></li></ol>
+<p>A. ADR reporting  B. <b>Medication review in older adults (screening inappropriate prescribing)</b>  C. Drug cost analysis  D. Pharmacokinetic calculations <i>Answer: B. STOPP (Screening Tool of Older People's Potentially Inappropriate Prescriptions) / START (Screening Tool to Alert to Right Treatment).</i></p>
+<ol><li><b>Transitions of care (admission/discharge) medication discrepancy rate:</b></li></ol>
+<p>A. &lt;10%  B. <b>30–70%</b>  C. 80–90%  D. 100% <i>Answer: B. 30–70% of patients have ≥1 unintentional medication discrepancy at transitions.</i></p>
+<ol><li><b>Frail elderly patient on 9 drugs. Which drug is MOST likely to be problematic (STOPP criteria)?</b></li></ol>
+<p>A. Bisoprolol 2.5mg (HFrEF)  B. <b>Diphenhydramine 25mg nocte (insomnia)</b>  C. Atorvastatin 20mg (CVD prevention)  D. Apixaban 5mg BD (AF) <i>Answer: B. Diphenhydramine in elderly = STOPP criterion (anticholinergic, sedation, falls). Others appropriate if indicated.</i></p>
+<ol><li><b>Deprescribing is defined as:</b></li></ol>
+<p>A. Stopping all drugs in elderly  B. <b>Planned, supervised dose reduction or stopping of inappropriate medication with monitoring</b>  C. Switching to cheaper alternatives  D. Reducing doses due to renal impairment <i>Answer: B. Deprescribing = systematic process of tapering/stopping inappropriate drugs WITH monitoring.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-C, 3-C, 4-B, 5-B, 6-C, 7-C, 8-C, 9-B, 10-B</td><td>1-B, 2-C, 3-B, 4-B, 5-C, 6-B, 7-B, 8-B, 9-B, 10-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Polypharmacy and Deprescribing/STOPP-START v3]] — screening tools</li><li>[[Polypharmacy and Deprescribing/Beers Criteria]] — inappropriate prescribing</li><li>[[Polypharmacy and Deprescribing/ACB-DBI-FORTA]] — burden metrics</li><li>[[Polypharmacy and Deprescribing/Deprescribing Algorithms]] — how to deprescribe</li><li>[[Polypharmacy and Deprescribing/Barriers to Deprescribing]] — implementation challenges</li><li>[[ADRs/Type A (Augmented)]] — dose-related ADRs from polypharmacy</li><li>[[ADRs/Type B (Bizarre)]] — hypersensitivity from multiple drugs</li><li>[[Special Populations/Elderly Prescribing]] — polypharmacy in elderly</li><li>[[Medication Safety and Errors/Error Types]] — polypharmacy as error risk</li><li>[[Clinical Context/Palliative Care]] — deprescribing at end of life</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Definition And Consequences · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

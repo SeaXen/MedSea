@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Promotion Disease Prevention Primary Secondary Tertiary — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.2. POPULATION HEALTH ASSESSMENT</span>
+      <div class="h1">Health Promotion Disease Prevention Primary Secondary Tertiary</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define and distinguish primary, secondary, tertiary, quaternary prevention</li><li>[ ] Describe Ottawa Charter 5 action areas and 3 strategies</li><li>[ ] Apply Beattie's model: health persuasion, legislative action, personal counselling, community development</li><li>[ ] Explain NICE behaviour change: individual, community, population approaches</li><li>[ ] Distinguish health promotion vs health education vs disease prevention</li><li>[ ] Apply health literacy, social marketing, nudge theory, COM-B</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Health Promotion**</td><td>Process of enabling people to increase control over, and improve, their health (Ottawa 1986)</td></tr><tr><td>**Disease Prevention**</td><td>Specific interventions to avoid disease onset or progression</td></tr><tr><td>**Primary Prevention**</td><td>Prevent disease BEFORE onset (reduce incidence)</td></tr><tr><td>**Secondary Prevention**</td><td>Early detection + intervention to halt progression (reduce prevalence/severity)</td></tr><tr><td>**Tertiary Prevention**</td><td>Reduce complications/disability from established disease (improve quality of life)</td></tr><tr><td>**Quaternary Prevention**</td><td>Protect from overmedicalisation/iatrogenic harm (avoid unnecessary interventions)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Conceptual framework - see prevention examples by disease below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Prevention Levels with Examples</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Timing</th><th>Target</th><th>Examples</th></tr><tr><td>-------</td><td>--------</td><td>--------</td><td>----------</td></tr><tr><td>**Primordial**</td><td>Before risk factors emerge</td><td>Society/policy</td><td>Healthy urban design, trans fat bans, smoke-free laws, education</td></tr><tr><td>**Primary**</td><td>Before disease onset</td><td>At-risk / General</td><td>Vaccination, smoking cessation, healthy diet, exercise, fluoridation, condom use</td></tr><tr><td>**Secondary**</td><td>Early asymptomatic disease</td><td>Screen-detected</td><td>Screening (breast, cervical, bowel), BP/cholesterol checks, diabetic eye, pre-DM intervention</td></tr><tr><td>**Tertiary**</td><td>Established disease</td><td>Patients</td><td>Cardiac rehab, stroke rehab, diabetic foot care, CKD management, palliative care</td></tr><tr><td>**Quaternary**</td><td>Risk of overmedicalisation</td><td>Patients/providers</td><td>Deprescribing, avoiding defensive medicine, shared decision-making, Choosing Wisely</td></tr></table>
+<p><b>Mermaid: Prevention Spectrum</b> ``<code>mermaid flowchart LR A[Primordial\nPolicy/Environment] --&gt; B[Primary\nVaccination/Lifestyle] B --&gt; C[Secondary\nScreening/Early Rx] C --&gt; D[Tertiary\nRehab/Complication Mgmt] D --&gt; E[Quaternary\nDeprescribing/Avoid Harm] style A fill:#bbf,stroke:#333 style E fill:#f96,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Frameworks & Models)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Ottawa Charter (1986) - 5 Action Areas:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Area&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>1. Build Healthy Public Policy</b>&lt;/td&gt;&lt;td&gt;Legislation, fiscal measures, organisational change (tax, regulation, planning)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2. Create Supportive Environments</b>&lt;/td&gt;&lt;td&gt;Physical/social environments enabling health (housing, transport, workplaces)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3. Strengthen Community Action</b>&lt;/td&gt;&lt;td&gt;Empower communities, participation, ownership (community development)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>4. Develop Personal Skills</b>&lt;/td&gt;&lt;td&gt;Health education, life skills, literacy (individual empowerment)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>5. Reorient Health Services</b>&lt;/td&gt;&lt;td&gt;Shift from curative to preventive, primary care, health promotion in clinical settings&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Ottawa Charter - 3 Strategies:</b></p>
+<ul><li><b>Advocate</b> for health (political commitment)</li><li><b>Enable</b> equity (reduce disparities)</li><li><b>Mediate</b> between sectors (health + other sectors)</li></ul>
+<p><b>Beattie's Model (4 Quadrants):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Quadrant&lt;/th&gt;&lt;th&gt;Approach&lt;/th&gt;&lt;th&gt;Focus&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Health Persuasion</b>&lt;/td&gt;&lt;td&gt;Authoritative, top-down&lt;/td&gt;&lt;td&gt;Individual&lt;/td&gt;&lt;td&gt;Media campaigns, brief advice, nudges&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Legislative Action</b>&lt;/td&gt;&lt;td&gt;Authoritative, top-down&lt;/td&gt;&lt;td&gt;Population&lt;/td&gt;&lt;td&gt;Smoking ban, sugar tax, seatbelt law&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Personal Counselling</b>&lt;/td&gt;&lt;td&gt;Negotiated, bottom-up&lt;/td&gt;&lt;td&gt;Individual&lt;/td&gt;&lt;td&gt;Motivational interviewing, CBT, coaching&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Community Development</b>&lt;/td&gt;&lt;td&gt;Negotiated, bottom-up&lt;/td&gt;&lt;td&gt;Population&lt;/td&gt;&lt;td&gt;Peer support, community gardens, health champions&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>NICE Behaviour Change (PH6):</b></p>
+<ul><li><b>Individual</b>: Brief advice, MI, CBT, digital interventions</li><li><b>Community</b>: Peer support, community champions, asset-based</li><li><b>Population</b>: Mass media, social marketing, fiscal/regulatory, environmental design</li></ul>
+<p><b>COM-B Model (Michie):</b></p>
+<ul><li><b>C</b>apability (Physical, Psychological)</li><li><b>O</b>pportunity (Social, Physical environment)</li><li><b>M</b>otivation (Reflective, Automatic)</li></ul>
+<p>→ <b>B</b>ehaviour</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Concept Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Health Promotion vs Disease Prevention**</td><td>Health promotion = broader, positive (enabling control). Disease prevention = specific, negative (avoiding disease). Overlap: vaccination is both.</td></tr><tr><td>**Primary vs Primordial**</td><td>Primordial = prevent risk factors from emerging (societal). Primary = prevent disease in those with/without risk factors.</td></tr><tr><td>**Secondary vs Screening**</td><td>Screening = tool for secondary prevention. Secondary prevention = early detection + intervention.</td></tr><tr><td>**Tertiary vs Rehabilitation**</td><td>Rehabilitation = key component of tertiary. Tertiary also includes chronic disease management, palliative care.</td></tr><tr><td>**Quaternary Prevention**</td><td>Newer concept: protecting patients from unnecessary medical interventions, overdiagnosis, overtreatment.</td></tr><tr><td>**Health Education vs Health Promotion**</td><td>Health education = information/knowledge. Health promotion = includes education PLUS policy, environment, empowerment.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Implementation & Evaluation)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Logic Model for Health Promotion:</b> ``<code> Inputs → Activities → Outputs → Outcomes (Short/Med/Long) → Impact </code>``</p>
+<p><b>Evaluation Types:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Question&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Process</b>&lt;/td&gt;&lt;td&gt;Was it delivered as planned?&lt;/td&gt;&lt;td&gt;Reach, fidelity, dose, satisfaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Impact</b>&lt;/td&gt;&lt;td&gt;Immediate effects?&lt;/td&gt;&lt;td&gt;Knowledge, attitudes, behaviour change&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Outcome</b>&lt;/td&gt;&lt;td&gt;Long-term health effects?&lt;/td&gt;&lt;td&gt;Incidence, mortality, QALYs, equity&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Economic</b>&lt;/td&gt;&lt;td&gt;Cost-effectiveness?&lt;/td&gt;&lt;td&gt;Cost per QALY, SROI&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Equity in Health Promotion:</b></p>
+<ul><li><b>Proportionate Universalism</b> (Marmot): Universal actions, scale/intensity proportionate to need</li><li><b>Targeted vs Universal</b>: Targeted = efficient but stigmatising; Universal = equitable but costly</li><li><b>Health Literacy</b>: Functional, Interactive, Critical (Nutbeam)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Primordial Prevention**</td><td>Prevent risk factor emergence (policy, environment). Trans fat ban, urban planning.</td></tr><tr><td>**Primary Prevention**</td><td>Vaccination, lifestyle, pre-exposure prophylaxis. Reduces INCIDENCE.</td></tr><tr><td>**Secondary Prevention**</td><td>Screening, early detection, early treatment. Reduces PREVALENCE/SEVERITY.</td></tr><tr><td>**Tertiary Prevention**</td><td>Rehab, chronic disease mgmt, palliative. Reduces COMPLICATIONS/DISABILITY.</td></tr><tr><td>**Quaternary Prevention**</td><td>Avoid overmedicalisation, deprescribing, Choosing Wisely.</td></tr><tr><td>**Ottawa Charter**</td><td>5 Actions: Policy, Environment, Community, Skills, Services. 3 Strategies: Advocate, Enable, Mediate.</td></tr><tr><td>**Beattie's Model**</td><td>4 quadrants: Persuasion, Legislation, Counselling, Community Development.</td></tr><tr><td>**NICE PH6**</td><td>Individual, Community, Population approaches. COM-B for diagnosis.</td></tr><tr><td>**Health Literacy**</td><td>Functional (read), Interactive (communicate), Critical (analyse).</td></tr><tr><td>**Social Marketing**</td><td>4 Ps: Product, Price, Place, Promotion. Behaviour change focus.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Define primary, secondary, tertiary prevention with examples.**</td><td>Primary: before onset (vaccination, smoking cessation). Secondary: early detection/screening (mammography, BP check). Tertiary: reduce complications (cardiac rehab, diabetic foot care).</td></tr><tr><td>**What is quaternary prevention?**</td><td>Protecting patients from overmedicalisation, overtreatment, iatrogenic harm. Deprescribing, shared decision-making, Choosing Wisely.</td></tr><tr><td>**Ottawa Charter 5 action areas?**</td><td>1) Build healthy public policy, 2) Create supportive environments, 3) Strengthen community action, 4) Develop personal skills, 5) Reorient health services.</td></tr><tr><td>**Ottawa Charter 3 strategies?**</td><td>Advocate (political), Enable (equity), Mediate (cross-sector).</td></tr><tr><td>**Beattie's model - 4 quadrants?**</td><td>Authoritative top-down: Health Persuasion (individual), Legislative Action (population). Negotiated bottom-up: Personal Counselling (individual), Community Development (population).</td></tr><tr><td>**COM-B model components?**</td><td>Capability (Physical/Psychological), Opportunity (Social/Physical), Motivation (Reflective/Automatic) → Behaviour.</td></tr><tr><td>**Primordial vs Primary prevention?**</td><td>Primordial: prevent risk factors emerging (societal policy). Primary: prevent disease in at-risk individuals (vaccination, lifestyle).</td></tr><tr><td>**Health promotion vs health education?**</td><td>Health education = knowledge transfer. Health promotion = education + policy + environment + empowerment (Ottawa).</td></tr><tr><td>**Proportionate universalism?**</td><td>Universal services for all, but scale/intensity proportionate to disadvantage (Marmot). Reduces gradient, not just gap.</td></tr><tr><td>**Social marketing 4 Ps?**</td><td>Product (behaviour), Price (cost/barriers), Place (access), Promotion (communication).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Prevention levels = temporal**</td><td>Primordial → Primary → Secondary → Tertiary → Quaternary (chronological)</td></tr><tr><td>**Beattie axes**</td><td>X-axis: Authoritative ↔ Negotiated. Y-axis: Individual ↔ Population.</td></tr><tr><td>**Nudge Theory**</td><td>Libertarian paternalism: choice architecture alters behaviour without restricting options.</td></tr><tr><td>**SROI**</td><td>Social Return on Investment: monetises social/environmental outcomes.</td></tr></table>
+<p><b>Mnemonic: PREVENTION LEVELS (PSTQ)</b></p>
+<ul><li><b>P</b>rimordial (Policy before risk)</li><li><b>S</b>econdary (Screening early)</li><li><b>T</b>ertiary (Treatment complications)</li><li><b>Q</b>uaternary (Quality/avoid harm)</li><li><i>Primary = Prevention before disease</i></li></ul>
+<p><b>Mnemonic: OTTAWA 5 ACTIONS (BCESS)</b></p>
+<ul><li><b>B</b>uild <b>H</b>ealthy <b>P</b>olicy</li><li><b>C</b>reate <b>S</b>upportive <b>E</b>nvironments</li><li><b>S</b>trengthen <b>C</b>ommunity <b>A</b>ction</li><li><b>D</b>evelop <b>P</b>ersonal <b>S</b>kills</li><li><b>R</b>eorient <b>H</b>ealth <b>S</b>ervices</li></ul>
+<p><b>Mnemonic: BEATTIE QUADRANTS</b></p>
+<ul><li><b>A</b>uthoritative <b>P</b>opulation = <b>L</b>egislation</li><li><b>A</b>uthoritative <b>I</b>ndividual = <b>P</b>ersuasion</li><li><b>N</b>egotiated <b>P</b>opulation = <b>C</b>ommunity <b>D</b>evelopment</li><li><b>N</b>egotiated <b>I</b>ndividual = <b>C</b>ounselling</li></ul>
+<p><b>Mnemonic: COM-B</b></p>
+<ul><li><b>C</b>apability (Can I?)</li><li><b>O</b>pportunity (Do I have chance?)</li><li><b>M</b>otivation (Do I want to?)</li></ul>
+<p>→ <b>B</b>ehaviour</p>
+<p><b>Mnemonic: HEALTH LITERACY (FIC)</b></p>
+<ul><li><b>F</b>unctional (Read/understand)</li><li><b>I</b>nteractive (Communicate/act)</li><li><b>C</b>ritical (Analyse/empower)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Health Promotion &amp; Prevention)) Prevention Levels Primordial (Policy/Environment) Primary (Vaccination/Lifestyle) Secondary (Screening/Early Rx) Tertiary (Rehab/Chronic Mgmt) Quaternary (Deprescribing/Avoid Harm) Ottawa Charter 5 Actions: Policy, Env, Community, Skills, Services 3 Strategies: Advocate, Enable, Mediate Beattie Model Persuasion (Auth/Ind) Legislation (Auth/Pop) Counselling (Neg/Ind) Community Dev (Neg/Pop) NICE PH6 / COM-B Individual / Community / Population Capability, Opportunity, Motivation Concepts Health Literacy (FIC) Social Marketing (4Ps) Nudge Theory Proportional Universalism </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Primordial**</td><td>Prevent risk emergence (policy, env)</td></tr><tr><td>**Primary**</td><td>Prevent onset (vaccines, lifestyle)</td></tr><tr><td>**Secondary**</td><td>Early detect + treat (screening)</td></tr><tr><td>**Tertiary**</td><td>Rehab, complication mgmt</td></tr><tr><td>**Quaternary**</td><td>Avoid overmedicalisation</td></tr><tr><td>**Ottawa 5**</td><td>Policy, Environment, Community, Skills, Services</td></tr><tr><td>**Ottawa 3**</td><td>Advocate, Enable, Mediate</td></tr><tr><td>**Beattie**</td><td>Auth/Ind=Persuasion, Auth/Pop=Legislation, Neg/Ind=Counselling, Neg/Pop=Community Dev</td></tr><tr><td>**COM-B**</td><td>Capability, Opportunity, Motivation → Behaviour</td></tr><tr><td>**Proportional Universalism**</td><td>Universal + proportionate to need</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Prevention Levels</td><td></td><td></td></tr><tr><td>Ottawa Charter</td><td></td><td></td></tr><tr><td>Beattie Model</td><td></td><td></td></tr><tr><td>COM-B / NICE PH6</td><td></td><td></td></tr><tr><td>Health Literacy</td><td></td><td></td></tr><tr><td>Quaternary Prevention</td><td></td><td></td></tr><tr><td>Equity Concepts</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Screening (Wilson-Jungner Criteria, Programs, Ethics).md]], [[Immunisation &amp; Vaccination Programs.md]], [[Health Needs Assessment.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Health Promotion Disease Prevention Primary Secondary Tertiary · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

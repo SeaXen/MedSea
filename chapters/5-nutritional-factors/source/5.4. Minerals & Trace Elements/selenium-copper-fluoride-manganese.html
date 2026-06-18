@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Selenium Copper Fluoride Manganese — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.4. MINERALS & TRACE ELEMENTS</span>
+      <div class="h1">Selenium Copper Fluoride Manganese</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe selenium: selenocysteine, selenoproteins (GPx1-4, TRxR, deiodinases), RDA 55 µg, sources (Brazil nuts, organ meats, cereals)</li><li>[ ] Recognise selenium deficiency: Keshan disease (cardiomyopathy in children), Kashin-Beck (endemic osteoarthropathy), reversible myxedematous cretinism, infertility</li><li>[ ] State selenium excess: selenosis (alopecia, nail brittleness, garlic breath, GI upset, peripheral neuropathy); UL 400 µg/day</li><li>[ ] Describe copper metabolism: absorption (DMT1, duodenum), transport (albumin), storage (MT), excretion (biliary)</li><li>[ ] Identify copper deficiency: Menkes (kinky hair, neurodegeneration, hypopigmentation), acquired (bariatric, Zn excess, malabsorption)</li><li>[ ] State copper excess: Wilson's disease (ATP7B), Indian childhood cirrhosis, ICC</li><li>[ ] Explain fluoride: dental enamel fluoridation, anti-cariogenic, bone formation, RDA 3–4 mg, sources (water, tea, fish); toxicity = fluorosis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Selenocysteine (Sec)**</td><td>21st amino acid; UGA codon; co-translational insertion; selenoprotein active site</td></tr><tr><td>**Selenoprotein P (SELENOP)**</td><td>Plasma carrier (60% plasma Se); also antioxidant; deficiency → Se deficiency</td></tr><tr><td>**Glutathione Peroxidases (GPx1-4)**</td><td>Se-dependent; reduce H₂O₂/lipid peroxides (GPx4 in sperm); deficiency → oxidative stress</td></tr><tr><td>**Thioredoxin Reductases (TRxR1-3)**</td><td>Se-dependent; DNA synthesis, redox signalling</td></tr><tr><td>**Iodothyronine Deiodinases (DIO1-3)**</td><td>Se-dependent; T4 → T3 (DIO1/2) or rT3 (DIO3); cofactor for thyroid hormone metabolism</td></tr><tr><td>**Keshan Disease**</td><td>Endemic cardiomyopathy in children (China, Keshan); responsive to Se; Coxsackie/influenza synergy; congestive cardiomyopathy</td></tr><tr><td>**Kashin-Beck Disease**</td><td>Endemic osteoarthropathy (Tibet, China, Russia); joint enlargement, dwarfism, dystrophy; Se + iodine deficiency</td></tr><tr><td>**Selenosis**</td><td>Se excess; alopecia, nail brittleness, garlic breath (dimethyl selenide), GI upset, paresthesia, peripheral neuropathy</td></tr><tr><td>**Copper (Cu)**</td><td>Trace; 100 mg body; ceruloplasmin (95% plasma Cu), albumin, transcuprein</td></tr><tr><td>**Cu/Zn-SOD (SOD1)**</td><td>Cytosolic superoxide dismutase; Cu + Zn; antioxidant</td></tr><tr><td>**Cytochrome c Oxidase (CCO)**</td><td>Mitochondrial complex IV; Cu + heme a; ATP synthesis</td></tr><tr><td>**Caeruloplasmin (Cp)**</td><td>95% plasma Cu; ferroxidase (Fe²⁺ → Fe³⁺); acute phase reactant</td></tr><tr><td>**Menkes Disease (MD)**</td><td>X-linked recessive; ATP7A mutation; ↓Cu absorption, ↓Cu transport to brain; kinky hair, neurodegeneration, hypopigmentation; **death by 3y**</td></tr><tr><td>**ATP7A**</td><td>Cu-ATPase; intestinal Cu absorption, blood-brain barrier, placental</td></tr><tr><td>**ATP7B**</td><td>Cu-ATPase; hepatocyte Cu biliary excretion; **Wilson's disease**</td></tr><tr><td>**Wilson's Disease (WD)**</td><td>AR; ATP7B mutation; ↓Cu biliary excretion, ↓ceruloplasmin binding; liver, brain (basal ganglia), eye (Kayser-Fleischer), kidney</td></tr><tr><td>**Kayser-Fleischer Ring**</td><td>Corneal Cu deposition in Descemet's membrane; WD; slit-lamp exam</td></tr><tr><td>**Fluorosis**</td><td>Chronic F excess; dental mottling (mild), skeletal fluorosis (severe; osteosclerosis, calcification)</td></tr><tr><td>**Manganese (Mn)**</td><td>Trace; cofactor (SOD2, arginase, pyruvate carboxylase, glycosyltransferases)</td></tr><tr><td>**Manganism**</td><td>Mn neurotoxicity (welders, miners); Parkinson-like (basal ganglia Mn deposition); chelation (EDTA, PAS)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Selenium Metabolism</div>
+<p><b>Forms:</b> Selenocysteine (Sec, active in selenoproteins); selenomethionine (storage, non-specific incorporation); selenate, selenite (inorganic, supplements). <b>Absorption:</b> Duodenum, jejunum; passive diffusion; selenomethionine absorbed like methionine. <b>Transport:</b> Albumin; <b>SELENOP</b> (60% plasma Se); taken up by liver, brain, testes, kidney. <b>Excretion:</b> Urine (trimethylselenonium); exhalation (dimethyl selenide, garlic odour); sweat. <b>RDA:</b> 55 µg/day; UL 400 µg/day; intake varies by soil (China, USA high; Europe low).</p>
+<p><b>Selenoproteins (25 in humans; key examples):</b></p>
+<ul><li><b>GPx1-4:</b> Cytosolic (GPx1), GI (GPx2), plasma (GPx3), phospholipid hydroperoxide (GPx4, sperm)</li><li><b>Thioredoxin reductases (TRxR1-3):</b> Redox regulation</li><li><b>Iodothyronine deiodinases (DIO1-3):</b> T4 activation/inactivation</li><li><b>Selenoprotein P (SELENOP):</b> Plasma transport, antioxidant</li><li><b>Selenoprotein K, S, W:</b> Various functions</li></ul>
+<p><b>Functions:</b> Antioxidant (GPx/TRxR); thyroid hormone metabolism (DIO); spermatogenesis (GPx4 in sperm); immunity; reproduction; anti-cancer (↓cancer risk in some).</p>
+<div class="sub-h">Section 2: Selenium Deficiency &amp; Diseases</div>
+<p><b>Keshan Disease:</b></p>
+<ul><li><b>Geography:</b> China (Keshan county, Heilongjiang), Siberia, Africa; <b>Se-deficient soil</b></li><li><b>Age:</b> Children 2–10y, women of childbearing age</li><li><b>Pathophysiology:</b> Coxsackievirus B3/influenza A mutation in Se deficiency → virulent; cardiac antioxidant failure</li><li><b>Clinical:</b> Congestive cardiomyopathy (cardiomegaly, arrhythmias, heart failure); often fatal</li><li><b>Prevention:</b> Se supplementation (sodium selenite 0.5–1 mg/week) dramatically reduces incidence</li><li><b>Treatment:</b> Selenium + cardiac support</li></ul>
+<p><b>Kashin-Beck Disease:</b></p>
+<ul><li><b>Geography:</b> Tibet, China, Siberia, North Korea</li><li><b>Age:</b> Children 5–15y</li><li><b>Pathophysiology:</b> Se + iodine deficiency; possibly Fusarium mycotoxins</li><li><b>Clinical:</b> Symmetrical osteoarthropathy (joint swelling, pain, loss of motion), short stature (dwarfism), dystrophic changes</li><li><b>Prevention:</b> Se + iodine supplementation</li></ul>
+<p><b>Other Se Deficiency:</b></p>
+<ul><li><b>Myxedematous (endemic) cretinism:</b> Se + iodine deficiency; responsive to Se + thyroxine</li><li><b>Cardiomyopathy (Western, non-endemic):</b> Se deficiency post-TPN, HIV, dialysis</li><li><b>Sperm motility:</b> Se supplementation may improve male fertility</li><li><b>Cancer:</b> Observational: ↓Se = ↑cancer risk; SELECT trial: Se ± Vit E no prostate cancer benefit</li><li><b>Hashimoto's:</b> ↓Se activity may worsen; supplementation may ↓TPO Ab (controversial)</li></ul>
+<div class="sub-h">Section 3: Selenium Toxicity (Selenosis)</div>
+<p><b>Threshold:</b> UL 400 µg/day (acute: 5 mg/kg) <b>Sources:</b> Brazil nuts (high; up to 1917 µg/nut), supplements, occupational (metal refining) <b>Features:</b> Alopecia, nail brittleness/transverse lines, <b>garlic breath</b> (dimethyl selenide), GI upset, peripheral neuropathy, fatigue, dermatitis, garlic sweat, myopathy.</p>
+<div class="sub-h">Section 4: Copper Metabolism</div>
+<p><b>Body content:</b> 100–150 mg; liver, brain, heart, kidney. <b>Absorption:</b> Duodenum, proximal jejunum; <b>DMT1</b> (Fe²⁺/Cu²⁺ transporter); enterocyte basolateral exporter <b>ATP7A</b>; Cu bound to albumin → portal blood. <b>Hepatic processing:</b> Cu → albumin → ceruloplasmin (Cp) → tissue; <b>ATP7B</b> exports Cu into bile for excretion; excess → stored as MT. <b>Excretion:</b> <b>Biliary (80%, faecal)</b> = main route; urinary (&lt;5%); sweat, menstrual blood, desquamation. <b>RDA:</b> 0.9 mg/day (adult); UL 10 mg/day.</p>
+<div class="sub-h">Section 5: Copper Deficiency</div>
+<p><b>Causes:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Cause&lt;/th&gt;&lt;th&gt;Mechanism&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Menkes disease</b>&lt;/td&gt;&lt;td&gt;ATP7A mutation (XLR); ↓Cu absorption, ↓BBB transport, ↓placental&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Acquired malabsorption</b>&lt;/td&gt;&lt;td&gt;Bariatric (RYGB), IBD, short bowel, CF, celiac&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Excess Zn</b>&lt;/td&gt;&lt;td&gt;Zn induces MT → Cu trapped in enterocyte → ↓Cu absorption (similar to WD Rx mechanism)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Excess iron</b>&lt;/td&gt;&lt;td&gt;Competes with Cu absorption (DMT1)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>TPN without Cu</b>&lt;/td&gt;&lt;td&gt;Months → deficiency&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Penicillamine, trientine</b>&lt;/td&gt;&lt;td&gt;Chelation (WD Rx)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Premature infants</b>&lt;/td&gt;&lt;td&gt;↓Hepatic stores, ↑demand&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Menkes Disease (MD):</b></p>
+<ul><li><b>Genetics:</b> XLR; ATP7A; 1:100,000; males affected</li><li><b>Pathophysiology:</b> ↓Cu absorption, ↓Cu transport to CNS (failing BBB), ↓lysyl oxidase activity (kinky hair), ↓mitochondrial CCO, ↓SOD1</li><li><b>Clinical:</b></li><li><b>Hair:</b> Sparse, brittle, kinky, hypopigmented, "steely" (pili torti on microscopy)</li><li><b>Skin:</b> Hypopigmentation, lax, "cutis laxa" (↓elastin cross-linking)</li><li><b>CNS:</b> Progressive neurodegeneration, seizures, hypotonia, MR; <b>death by 3 years</b> (without treatment)</li><li><b>Other:</b> Hypothermia, bone abnormalities (metaphyseal dysplasia, osteoporosis), vascular tortuosity, bladder diverticula</li><li><b>Diagnosis:</b> ↓Cu, ↓Cp, abnormal Cu uptake in fibroblasts; <b>mutation ATP7A</b></li><li><b>Treatment:</b> <b>Subcutaneous Cu-histidine</b> (early; before 28d; experimental) — modest neurological benefit; <b>Cu chloride IV</b> also used; paroxetine (controversial)</li></ul>
+<p><b>Acquired Cu deficiency:</b></p>
+<ul><li><b>Post-bariatric</b> (RYGB): Cu deficiency in 10–20% within 2 years</li><li><b>Hyperzincuria (excess Zn)</b>: Wilson's Rx, denture cream</li><li><b>B12 / Fe / Cu supplementation:</b> B12 + Fe may not be enough; add Cu</li><li><b>TPN:</b> Add Cu 0.5–1.5 mg/day</li><li><b>Clinical:</b> Myeloneuropathy (similar to B12 — dorsal column), ataxia, peripheral neuropathy, anaemia (Fe-resistant), neutropenia, hyperpigmentation (skin, hair)</li><li><b>Differential:</b> B12 deficiency, Zn excess, severe malabsorption</li></ul>
+<div class="sub-h">Section 6: Wilson's Disease (See also Zinc file)</div>
+<ul><li>AR; ATP7B mutation (chromosome 13); ↓Cu biliary excretion, ↓Cp binding, ↑Cu accumulation</li><li><b>Hepatic:</b> Steatosis → hepatitis → cirrhosis → HCC; acute liver failure</li><li><b>Neurological:</b> Basal ganglia (putamen, globus pallidus, caudate); movement disorders (tremor, dystonia, parkinsonism, choreoathetosis, dysarthria)</li><li><b>Psychiatric:</b> Depression, psychosis, personality change</li><li><b>Ocular:</b> Kayser-Fleischer ring (Descemet's membrane Cu); sunflower cataract</li><li><b>Renal:</b> Fanconi syndrome, nephrolithiasis</li><li><b>Haematological:</b> Haemolytic anaemia (Coombs-negative; free Cu in serum)</li><li><b>Treatment:</b> <b>Penicillamine</b> (chelator; first-line for acute neurological), <b>Trientine</b> (alternative chelator), <b>Zinc</b> (induces MT; maintenance/pregnancy/children), <b>Liver transplantation</b> (end-stage)</li></ul>
+<div class="sub-h">Section 7: Copper Excess</div>
+<p><b>Wilson's disease:</b> See above <b>Indian Childhood Cirrhosis (ICC):</b> Historically high mortality; infant Cu exposure (vessels, milk); <b>sporadic ICC</b> in some populations <b>Acute Cu poisoning:</b> Self-harm (sulphate ingestion); GI bleeding, methaemoglobinaemia, haemolysis, hepatic necrosis, shock <b>Chronic Cu excess:</b> Industrial exposure, contaminated water (Wilson disease carriers, haemochromatosis)</p>
+<div class="sub-h">Section 8: Fluoride</div>
+<p><b>Sources:</b> Water (1 ppm optimal), tea (high), fish (with bones), toothpaste (NaF), salt (some countries), supplements <b>RDA:</b> 3 mg (M) / 3 mg (F); UL 10 mg/day <b>Functions:</b></p>
+<ul><li><b>Dental:</b> Enamel fluorapatite (resistant to acid); anti-cariogenic; ↓demineralisation, ↑remineralisation</li><li><b>Bone:</b> Hydroxyfluoroapatite; ↓osteoclast activity, ↑osteoblast; ↓fracture in optimal range</li><li><b>Topical:</b> Toothpaste, mouthwash, varnish</li></ul>
+<p><b>Deficiency:</b> Rare (not essential); ↑dental caries, possibly osteoporosis <b>Excess (Fluorosis):</b></p>
+<ul><li><b>Dental (mild, &lt;4 ppm F):</b> Mottling, white spots, brown staining; cosmetic</li><li><b>Skeletal (chronic, &gt;4 ppm F):</b> Osteosclerosis (↑trabecular bone), calcification of ligaments, osteophytes, bone pain, ↑fracture risk</li><li><b>Severe (industrial):</b> Crippling fluorosis; vertebrae fusion, nerve compression, disability</li><li><b>Acute toxicity:</b> GI upset, salivation, hyperreflexia, seizures (rare; very high dose)</li></ul>
+<div class="sub-h">Section 9: Manganese</div>
+<p><b>Sources:</b> Whole grains, nuts, legumes, tea; absorption 1–5% <b>RDA:</b> 2.3 mg (M) / 1.8 mg (F); UL 11 mg/day <b>Functions:</b> SOD2 (mitochondrial; Mn); pyruvate carboxylase; arginase; glutamine synthetase; glycosyltransferases (proteoglycan synthesis) <b>Deficiency (rare):</b> Bone demineralisation, hair depigmentation, dermatitis, weight loss, hypercholesterolaemia (animals) <b>Toxicity (Manganism):</b></p>
+<ul><li><b>Sources:</b> Welders (Mn fumes), miners, contaminated water</li><li><b>Pathology:</b> Mn deposition in <b>basal ganglia</b> (especially globus pallidus)</li><li><b>Clinical:</b> Parkinson-like — bradykinesia, rigidity, postural instability, dystonia, gait disturbance, neuropsychiatric</li><li><b>Diagnosis:</b> T1-weighted MRI hyperintensity in basal ganglia</li><li><b>Treatment:</b> Stop exposure; chelation (EDTA, PAS, levodopa, trientine); antioxidants</li><li><b>Differentiation:</b> Responds poorly to levodopa; more dystonia; ↑Mn on imaging</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>5y child, Keshan county China, heart failure, ↓Se</td><td>**Sodium selenite 0.5–1 mg/week**; cardiac support</td><td>Keshan disease; Se dramatically improves</td></tr><tr><td>12y Tibetan child, joint pain, swollen fingers, dwarfism</td><td>**Se + iodine supplementation**; physiotherapy</td><td>Kashin-Beck; endemic area</td></tr><tr><td>60M, RYGB 3y ago, ataxia, spastic gait, dorsiflexion loss, normal B12</td><td>**Serum Cu, Cp, 24h urinary Cu**; **IV Cu** (if severe)</td><td>Cu deficiency myeloneuropathy</td></tr><tr><td>30F, Wilson's disease, neurological, started on penicillamine, progressive</td><td>**Add Zn 50 mg ×3 (empty stomach)**; consider trientine switch; diet (avoid Cu-rich foods)</td><td>WD therapy</td></tr><tr><td>5m boy, kinky hair, seizures, hypotonia, ↓Cu, ↓Cp</td><td>**ATP7A testing** → Menkes; **Cu-histidine SC** (early); paroxetine; supportive</td><td>Menkes; fatal by 3y untreated</td></tr><tr><td>65F, dental mottling, well-water area (F 8 ppm)</td><td>**Avoid water source**; dental cosmetic Rx; skeletal assessment if symptomatic</td><td>Fluorosis (mild)</td></tr><tr><td>45M, welder, Parkinson-like, MRI T1 basal ganglia</td><td>**Stop Mn exposure**; chelation (EDTA, PAS); trientine</td><td>Manganism; levodopa-resistant</td></tr><tr><td>50F, RYGB 2y, anaemia not responding to Fe and B12, neutropenia, hyperpigmentation</td><td>**Check Cu, Cp**; if low, IV Cu + oral Cu gluconate 2–4 mg/day</td><td>Cu deficiency in bariatric</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Se = selenocysteine, 25 selenoproteins (GPx, TRxR, DIO); Keshan (cardiomyopathy in children, China) + Kashin-Beck (osteoarthropathy, Tibet); RDA 55 µg; selenosis (garlic breath, alopecia); Cu = 100 mg, caeruloplasmin, ATP7A/ATP7B; Menkes (ATP7A, kinky hair, neurodegeneration, fatal &lt;3y); Wilson's (ATP7B, KF ring, liver/brain); RDA 0.9 mg; F = dental fluorapatide, fluorosis (mottling, skeletal); Mn = SOD2, manganism (Parkinson-like) - <b>Common viva:</b> Keshan disease, Kashin-Beck, selenosis garlic breath; Menkes disease (ATP7A, kinky hair); Wilson's disease (ATP7B); Cu deficiency in RYGB; fluoride fluorosis; manganism in welders - <b>Exam trap:</b> Confusing Menkes (XLR) with Wilson's (AR); missing Cu deficiency in RYGB; confusing selenosis with arsenic toxicity; Mn toxicity levodopa-resistant</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Menkes = Wilson's</td><td>**Menkes: XLR, ATP7A, kinky hair, fatal <3y; Wilson's: AR, ATP7B, liver/brain, treatable**</td></tr><tr><td>Cu deficiency = bariatric</td><td>**ALL bariatric patients need Cu screening** (in addition to Fe, B12, Ca, D)</td></tr><tr><td>Selenosis = acute toxicity</td><td>**Chronic selenosis from supplements/Brazil nuts**; garlic breath (dimethyl selenide)</td></tr><tr><td>Keshan only in China</td><td>**Endemic in Se-deficient areas globally**; sporadic cases in malnourished</td></tr><tr><td>Manganism = Parkinson's</td><td>**Mn: T1 hyperintensity basal ganglia, dystonia prominent, levodopa-resistant**</td></tr><tr><td>Fluorosis = dental</td><td>**Skeletal fluorosis from chronic F excess** (industrial, water >4 ppm)</td></tr><tr><td>Se supplementation always safe</td><td>**UL 400 µg; selenosis**; SELECT trial: Se ± Vit E no cancer benefit</td></tr><tr><td>Wilson's: penicillamine always first</td><td>**Zn maintenance/pregnancy/paediatrics; CHELATE trial Zn non-inferior**</td></tr><tr><td>Cu/Cp always low in Cu deficiency</td><td>**Cp is acute phase reactant** (↑in inflammation); Cp may be normal in Cu deficiency with inflammation</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Selenoproteins:</b> <b>GPx-TRxR-DIO</b> = <b>G</b>lutathione <b>P</b>eroxidases, <b>T</b>hio<b>R</b>edoxin <b>R</b>eductases, <b>D</b>e<b>I</b>O<b>d</b>inases</li><li><b>Keshan:</b> <b>K</b>eshan = <b>K</b>ardiomyopathy; <b>C</b>hina, <b>C</b>oxsackie, <b>C</b>hildren</li><li><b>Kashin-Beck:</b> <b>K</b>ashin-Beck = <b>K</b>nees (osteoarthropathy); <b>T</b>ibet, <b>C</b>hildren 5-15y</li><li><b>Selenosis:</b> <b>G</b>arlic breath, <b>A</b>lopecia, <b>N</b>ail brittleness = <b>GAN</b></li><li><b>Menkes:</b> <b>M</b>enkes = <b>M</b>utation in <b>ATP7A</b> = <b>K</b>inky <b>H</b>air; XLR</li><li><b>Wilson's:</b> <b>W</b>ilson's = <b>ATP7B</b>; <b>L</b>iver, <b>B</b>rain, <b>E</b>ye, <b>K</b>idney, <b>A</b>naemia = <b>LB-EKA</b></li><li><b>Caeruloplasmin:</b> <b>95%</b> plasma Cu; <b>C</b>o<b>P</b> Cu; acute phase reactant</li><li><b>Fluoride:</b> <b>F</b>or dental <b>F</b>luorapatite; <b>D</b>oses 1 ppm water</li><li><b>Manganism:</b> <b>M</b>anganese = <b>M</b>otor (basal ganglia); welder's Parkinson</li><li><b>Cu absorption:</b> <b>DMT1</b> (with Fe); <b>ATP7A</b> (enterocyte export, menkes); <b>ATP7B</b> (hepatocyte biliary, Wilson's)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Se, Cu, F, Mn)) Selenium Selenocysteine (21st AA) 25 Selenoproteins GPx, TRxR, DIO1-3 RDA 55 µg Deficiency Keshan: cardiomyopathy, China Kashin-Beck: osteoarthropathy, Tibet Myxedematous cretinism Excess: Selenosis Garlic breath, alopecia, nail Copper 100-150 mg Caeruloplasmin (95%) ATP7A (Menkes) ATP7B (Wilson's) RDA 0.9 mg Deficiency Menkes: XLR, kinky hair, fatal &lt;3y Acquired: RYGB, Zn excess, TPN Myeloneuropathy, anaemia Excess: Wilson's disease Fluoride Dental fluorapatite RDA 3-4 mg Sources: water, tea, fish Fluorosis: dental mottling, skeletal Manganese SOD2, glycosyltransferases RDA 2.3 M / 1.8 F mg Manganism (welder's Parkinson) T1 basal ganglia Levodopa-resistant </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Se: selenocysteine, 25 selenoproteins (GPx, TRxR, DIO); RDA 55 µg</li><li>Keshan: cardiomyopathy in children (China, Coxsackie); Kashin-Beck: osteoarthropathy</li><li>Selenosis: garlic breath, alopecia, nail brittleness</li><li>Cu: caeruloplasmin (95%); ATP7A (Menkes), ATP7B (Wilson's)</li><li>Menkes: XLR, kinky hair, neurodegeneration, fatal &lt;3y</li><li>Wilson's: AR, KF ring, liver/brain, treatable (penicillamine, Zn, trientine)</li><li>Cu deficiency in RYGB: myeloneuropathy, anaemia</li><li>Mn: SOD2; manganism in welders; levodopa-resistant</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Se selenoproteins (GPx, TRxR, DIO); Keshan cardiomyopathy; Kashin-Beck osteoarthropathy; selenosis (garlic breath, alopecia); Cu caeruloplasmin; Menkes (ATP7A, kinky hair, XLR); Wilson's (ATP7B, KF ring); Cu deficiency in RYGB; fluoride fluorosis; Mn manganism</td></tr><tr><td>**Should Know 🟡**</td><td>SELECT trial (Se no prostate cancer benefit); myxedematous cretinism; Cu histidine SC in Menkes; trientine in WD; CHELATE trial; Mn T1 MRI basal ganglia; dental fluorosis; skeletal fluorosis; ICC</td></tr><tr><td>**Nice to Know 🟢**</td><td>Se in Hashimoto's; Se in male fertility; Se in HIV/cancer; paroxetine in Menkes; acute Cu poisoning; Cu in Indian childhood cirrhosis; DMT1 in Cu/Fe absorption; MT in Cu homeostasis</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Kashin-Beck pathophysiology detail</li><li>[ ] Menkes Cu-histidine dosing</li><li>[ ] Mn chelation specifics</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Selenium, Copper, Fluoride, Manganese: functions, deficiency, and toxicity"</p>
+<ul><li>Se: selenocysteine, 25 selenoproteins (GPx, TRxR, DIO); Keshan (cardiomyopathy in children, China), Kashin-Beck (osteoarthropathy, Tibet); selenosis (garlic breath, alopecia)</li><li>Cu: caeruloplasmin (95%), ATP7A/ATP7B; Menkes (XLR, kinky hair, fatal &lt;3y); Wilson's (AR, liver/brain, KF ring); Cu deficiency in RYGB</li><li>Fluoride: dental fluorapatite, anti-cariogenic; fluorosis (mottling, skeletal)</li><li>Mn: SOD2; manganism in welders; T1 basal ganglia; levodopa-resistant</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Menkes Disease"</p>
+<ul><li>XLR; ATP7A mutation; ↓Cu absorption, ↓BBB transport, ↓lysyl oxidase (kinky hair), ↓mitochondrial CCO</li><li>Clinical: Sparse, brittle, kinky hair (pili torti); hypopigmentation; progressive neurodegeneration; seizures; hypotonia; bone abnormalities; <b>death by 3 years</b></li><li>Diagnosis: ↓Cu, ↓Cp, abnormal Cu uptake in fibroblasts, ATP7A mutation</li><li>Treatment: Subcutaneous Cu-histidine (early, &lt;28d, experimental); paroxetine (controversial); supportive</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "Differentiate Menkes from Wilson's disease." "A: <b>Menkes:</b> XLR, ATP7A, ↓Cu absorption, kinky hair, neurodegeneration, fatal by 3y; no effective treatment. <b>Wilson's:</b> AR, ATP7B, ↓Cu biliary excretion, KF ring, liver cirrhosis + basal ganglia degeneration, treatable (penicillamine, trientine, Zn). Both: ↓Cu transport, but Menkes = systemic deficiency; Wilson's = accumulation."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 50F, RYGB 2y ago, progressive ataxia, dorsal column signs, Fe-resistant anaemia, neutropenia, hyperpigmentation, B12 and folate normal. "Diagnosis: <b>Acquired Cu deficiency</b> post-bariatric. <b>Check Cu, Cp, 24h urinary Cu</b>; <b>IV Cu chloride</b> (severe); oral Cu gluconate 2–4 mg/day maintenance; monitor Hb, neutropenia. Add multivitamin with Cu, Fe, B12, D, Ca long-term."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>Se:</b> Selenocysteine; 25 selenoproteins (GPx, TRxR, DIO); Keshan (cardiomyopathy, China, children), Kashin-Beck (osteoarthropathy, Tibet); selenosis (garlic breath, alopecia, nail)</li><li><b>Cu:</b> Caeruloplasmin (95% plasma Cu); ATP7A (Menkes), ATP7B (Wilson's)</li><li><b>Menkes:</b> XLR, ATP7A, kinky hair (pili torti), neurodegeneration, fatal &lt;3y</li><li><b>Wilson's:</b> AR, ATP7B, liver/brain, KF ring, treatable (penicillamine, trientine, Zn)</li><li><b>Cu deficiency in RYGB:</b> Myeloneuropathy, Fe-resistant anaemia, neutropenia</li><li><b>Fluorosis:</b> Dental mottling (mild), skeletal (severe); F in water 1 ppm optimal</li><li><b>Mn:</b> SOD2; manganism in welders (Parkinson-like, levodopa-resistant); T1 MRI basal ganglia</li><li><b>Wilson's Rx:</b> Penicillamine, Trientine, <b>Zinc (induces MT; maintenance)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Selenocysteine is the 21st amino acid; key selenoproteins include:</b></li></ol>
+<p>A. ALA synthase, ferrochelatase B. <b>Glutathione peroxidase, thioredoxin reductase, deiodinase</b> C. Cytochrome P450, ALAD D. Lactase, sucrase E. Hexokinase, glucokinase</p>
+<ol><li><b>Keshan disease is endemic cardiomyopathy in:</b></li></ol>
+<p>A. Africa (malnutrition) B. China (Keshan county, Heilongjiang) C. India (vitamin deficiency) D. South America (altitude) E. Europe (industrial)</p>
+<ol><li><b>Selenosis clinical features include:</b></li></ol>
+<p>A. Blue-grey discolouration B. <b>Garlic breath, alopecia, nail brittleness</b> C. Hypothyroidism only D. Rash only E. Foetor hepaticus</p>
+<ol><li><b>Caeruloplasmin carries what % of plasma copper:</b></li></ol>
+<p>A. 5% B. 30% C. 50% D. <b>95%</b> E. 100%</p>
+<ol><li><b>Menkes disease mutation:</b></li></ol>
+<p>A. ATP7B B. <b>ATP7A</b> C. Cu/Zn-SOD D. Hephaestin E. Cytochrome c oxidase</p>
+<ol><li><b>Menkes disease hallmark clinical feature:</b></li></ol>
+<p>A. KF ring B. <b>Kinky hair (pili torti) + neurodegeneration</b> C. Hypopigmented macules D. Blue sclerae E. Coombs-positive haemolysis</p>
+<ol><li><b>Wilson's disease copper-ATPase:</b></li></ol>
+<p>A. ATP7A B. <b>ATP7B</b> C. SOD1 D. Albumin E. Caeruloplasmin</p>
+<ol><li><b>Copper deficiency in post-bariatric patients classically causes:</b></li></ol>
+<p>A. Megaloblastic anaemia B. <b>Myeloneuropathy (dorsal column) + Fe-resistant anaemia</b> C. Hyperparathyroidism D. Adrenal insufficiency E. Pulmonary fibrosis</p>
+<ol><li><b>Manganism (welder's Parkinson) MRI finding:</b></li></ol>
+<p>A. Caudate atrophy B. <b>T1-weighted hyperintensity in basal ganglia (especially globus pallidus)</b> C. Substantia nigra hyperintensity D. White matter lesions E. Cerebellar atrophy</p>
+<ol><li><b>Fluoride toxicity at chronic high water exposure (&gt;4 ppm):</b></li></ol>
+<p>A. <b>Dental mottling, skeletal fluorosis (osteosclerosis, calcification)</b> B. Acute liver failure C. Hypothyroidism D. Adrenal crisis E. Bone marrow suppression</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 5-month-old boy with kinky hair, hypotonia, seizures, hypopigmentation, ↓Cu, ↓Cp. Most likely diagnosis?</b></li></ol>
+<p>A. Kwashiorkor B. <b>Menkes disease (ATP7A mutation)</b> C. Wilson's disease (very young) D. Albinism E. Ectodermal dysplasia</p>
+<ol><li><b>A 25-year-old woman with Wilson's disease, neurological symptoms, started on penicillamine. Best adjunct therapy?</b></li></ol>
+<p>A. Vitamin C B. <b>Zinc 50 mg ×3/day (empty stomach) to induce metallothionein</b> C. Iron supplementation D. Calcium E. Vitamin E</p>
+<ol><li><b>A 50-year-old welder presents with bradykinesia, rigidity, dystonia, postural instability. T1-weighted MRI shows hyperintensity in the globus pallidus. Best treatment?</b></li></ol>
+<p>A. Levodopa/carbidopa B. <b>Stop Mn exposure; consider chelation (EDTA, PAS)</b> C. Anticholinergics D. Dopamine agonists E. Steroids</p>
+<ol><li><b>A 30-year-old man from Keshan county, China, presents with congestive cardiomyopathy in childhood. Most likely nutritional deficiency?</b></li></ol>
+<p>A. Vitamin B1 B. <b>Selenium (Keshan disease)</b> C. Iodine D. Vitamin D E. Iron</p>
+<ol><li><b>A 60-year-old woman post-RYGB presents with progressive ataxia, dorsal column signs, Fe-resistant anaemia, neutropenia. B12 normal. Most likely cause?</b></li></ol>
+<p>A. Vitamin B12 deficiency B. <b>Copper deficiency (post-bariatric)</b> C. Folate deficiency D. Vitamin E deficiency E. Niacin deficiency</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Selenoproteins</li></ul>
+<p>A: <b>GPx, TRxR, DIO</b> (deiodinases)</p>
+<ul><li>Q: Keshan disease</li></ul>
+<p>A: <b>Endemic cardiomyopathy in children (China); Se + Coxsackie synergy</b></p>
+<ul><li>Q: Kashin-Beck disease</li></ul>
+<p>A: <b>Endemic osteoarthropathy (Tibet); Se + I deficiency</b></p>
+<ul><li>Q: Selenosis features</li></ul>
+<p>A: <b>Garlic breath (dimethyl selenide), alopecia, nail brittleness, paresthesia</b></p>
+<ul><li>Q: Caeruloplasmin %</li></ul>
+<p>A: <b>95%</b> of plasma Cu</p>
+<ul><li>Q: Menkes gene</li></ul>
+<p>A: <b>ATP7A</b> (XLR); ↓Cu absorption, BBB</p>
+<ul><li>Q: Menkes features</li></ul>
+<p>A: <b>Kinky hair (pili torti), neurodegeneration, hypopigmentation, fatal &lt;3y</b></p>
+<ul><li>Q: Wilson's gene</li></ul>
+<p>A: <b>ATP7B</b> (AR); ↓Cu biliary excretion</p>
+<ul><li>Q: Wilson's features</li></ul>
+<p>A: <b>KF ring, basal ganglia (movement), liver, kidney, Coombs-ve HA</b></p>
+<ul><li>Q: Cu deficiency post-bariatric</li></ul>
+<p>A: <b>Myeloneuropathy + Fe-resistant anaemia + neutropenia</b></p>
+<ul><li>Q: Fluoride functions</li></ul>
+<p>A: <b>Dental fluorapatite, anti-cariogenic, bone formation</b></p>
+<ul><li>Q: Fluorosis (chronic F excess)</li></ul>
+<p>A: <b>Dental mottling (mild), skeletal osteosclerosis + calcification (severe)</b></p>
+<ul><li>Q: Manganism</li></ul>
+<p>A: <b>Welder's Parkinson; T1 basal ganglia; levodopa-resistant</b></p>
+<ul><li>Q: Mn function</li></ul>
+<p>A: <b>SOD2 (mitochondrial); pyruvate carboxylase; arginase</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Key selenoproteins: glutathione peroxidases (GPx1-4, antioxidant), thioredoxin reductases (TRxR1-3, redox), iodothyronine deiodinases (DIO1-3, T4→T3).</li><li><b>B</b> — Keshan disease: endemic cardiomyopathy in children in Keshan county (Heilongjiang, China) and other Se-deficient soil areas; Coxsackie/influenza synergy.</li><li><b>B</b> — Selenosis: garlic breath (dimethyl selenide), alopecia, nail brittleness, GI upset, paresthesia, peripheral neuropathy.</li><li><b>D</b> — Caeruloplasmin (Cp) carries 95% of plasma Cu; also ferroxidase (Fe²⁺→Fe³⁺) and acute phase reactant.</li><li><b>B</b> — Menkes disease: ATP7A mutation; X-linked recessive; ↓Cu absorption and ↓BBB Cu transport.</li><li><b>B</b> — Menkes hallmark: kinky/brittle hair (pili torti on microscopy) + neurodegeneration; fatal by 3y if untreated.</li><li><b>B</b> — Wilson's disease: ATP7B mutation; ↓Cu biliary excretion, ↓Cp binding; Cu accumulation in liver, brain, eye (KF ring).</li><li><b>B</b> — Post-bariatric Cu deficiency: myeloneuropathy (dorsal column signs, similar to B12), Fe-resistant anaemia, neutropenia, hyperpigmentation.</li><li><b>B</b> — Manganism MRI: T1-weighted hyperintensity in basal ganglia (especially globus pallidus); differentiates from Parkinson's (no specific MRI).</li><li><b>A</b> — Fluorosis: chronic F excess (water &gt;4 ppm); dental mottling (mild, cosmetic), skeletal fluorosis (severe; osteosclerosis, calcification of ligaments, joint restriction).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Menkes disease: 5-month boy, kinky hair (pili torti), hypotonia, seizures, hypopigmentation, ↓Cu, ↓Cp; XLR ATP7A mutation; fatal by 3y.</li><li><b>B</b> — Wilson's neurological: penicillamine + Zn (induces metallothionein, blocks Cu absorption; adjuvant/maintenance).</li><li><b>B</b> — Manganism: welder + Parkinson-like + T1 basal ganglia hyperintensity; stop Mn exposure, consider chelation (EDTA, PAS); levodopa-resistant.</li><li><b>B</b> — Keshan disease: Se deficiency + Coxsackie synergy → congestive cardiomyopathy in children (Keshan county, China).</li><li><b>B</b> — Post-bariatric Cu deficiency: myeloneuropathy (dorsal column), Fe-resistant anaemia, neutropenia; B12 normal distinguishes from B12 deficiency.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Selenium, Copper, Fluoride, Manganese</b> are <b>Must Know 🔴</b> topics for FCPS/MRCP. <b>Key takeaway:</b> <b>Se = selenocysteine, 25 selenoproteins (GPx, TRxR, DIO)</b>; <b>Keshan (cardiomyopathy in children, China), Kashin-Beck (osteoarthropathy, Tibet)</b>; selenosis (garlic breath, alopecia). <b>Cu = caeruloplasmin (95%)</b>; <b>Menkes (ATP7A, XLR, kinky hair, fatal &lt;3y); Wilson's (ATP7B, AR, liver/brain, KF ring)</b>; Cu deficiency in RYGB (myeloneuropathy, Fe-resistant anaemia). Fluoride = dental fluorapatite, anti-cariogenic, fluorosis (mottling, skeletal). Mn = SOD2; manganism in welders (Parkinson-like, levodopa-resistant). <b>Exam focus:</b> Se selenoproteins, Keshan/Kashin-Beck, selenosis, caeruloplasmin, Menkes vs Wilson's, Cu deficiency, fluoride, manganism. <b>Clinical relevance:</b> RYGB Cu screening; Wilson's monitoring; Se in endemic areas; Mn occupational protection; fluoridation.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Selenium Copper Fluoride Manganese · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

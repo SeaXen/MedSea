@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tumour Heterogeneity Evolution — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.14. PRINCIPLES OF CANCER MANAGEMENT</span>
+      <div class="h1">Tumour Heterogeneity Evolution</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define <b>spatial and temporal heterogeneity</b> in tumours</li><li>[ ] Explain <b>mechanisms</b> generating heterogeneity (CIN, MSI, Chromothripsis)</li><li>[ ] Distinguish <b>linear vs branching evolution</b> and <b>punctuated equilibrium</b></li><li>[ ] Apply <b>heterogeneity concepts</b> to therapy resistance and metastasis</li><li>[ ] Describe <b>TRACERx/PEACE</b> study insights on tumour evolution</li><li>[ ] Interpret <b>phylogenetic trees</b> (linear vs branching, parallel vs convergent evolution)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Types of Tumour Heterogeneity</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Dimension</th><th>Type</th><th>Description</th></tr><tr><td>-----------</td><td>------</td><td>-------------</td></tr><tr><td>**Spatial**</td><td>**Intra-tumour (ITH)**</td><td>Genetic/phenotypic differences within same tumour (primary vs regions)</td></tr><tr><td></td><td>**Inter-tumour**</td><td>Differences between primary and metastatic sites, or between patients</td></tr><tr><td>**Temporal**</td><td>**Clonal Evolution**</td><td>**Linear** (stepwise), **Branching** (parallel subclones), **Neutral** (no selection)</td></tr><tr><td></td><td>**Punctuated Equilibrium**</td><td>**Bursts of genomic change** (Chromothripsis, Kataegis) followed by stability</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mechanisms of Heterogeneity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Genomic Instability</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Description</th><th>Associated Cancers</th></tr><tr><td>-----------</td><td>-------------</td><td>-------------------</td></tr><tr><td>**CIN** (Chromosomal Instability)</td><td>**Aneuploidy**, Large-scale CNV, Chromothripsis</td><td>Most solid tumours (CRC, Breast, Ovarian, Lung)</td></tr><tr><td>**MSI** (Microsatellite Instability)</td><td>**MMR Deficiency**, Hypermutation, Indels</td><td>Lynch, CRC (15%), Endometrial, Gastric</td></tr><tr><td>**Chromothripsis**</td><td>**Catastrophic Chromosome Shattering** (1-2 events)</td><td>Medulloblastoma, Neuroblastoma, Bone Sarcomas, 2-3% Cancers</td></tr><tr><td>**Kataegis**</td><td>**Localised Hypermutation** (APOBEC)</td><td>Breast, Cervical, Bladder, Head & Neck</td></tr><tr><td>**APOBEC Signatures**</td><td>**Cytosine Deamination** (SBS2, SBS13)</td><td>Breast, Cervical, Head & Neck, Bladder</td></tr><tr><td>**HRD** (Homologous Recombination Deficiency)</td><td>**BRCA1/2, PALB2, RAD51** Loss</td><td>Ovarian, Breast, Prostate, Pancreatic</td></tr></table>
+<div class="sub-h">Mutational Signatures (COSMIC)</div>
+<table class="ctable"><tr><th>Signature</th><th>Aetiology</th><th>Associated Cancers</th></tr><tr><td>-----------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**SBS1**</td><td>Ageing (Spontaneous deamination)</td><td>Universal</td></tr><tr><td>**SBS2/13**</td><td>**APOBEC** (Cytosine Deamination)</td><td>Breast, Cervical, Bladder, Head & Neck</td></tr><tr><td>**SBS3**</td><td>**HRD** (BRCA1/2)</td><td>Ovarian, Breast, Pancreatic</td></tr><tr><td>**SBS4**</td><td>**Tobacco** (Benzo[a]pyrene)</td><td>Lung, Head & Neck, Liver</td></tr><tr><td>**SBS7**</td><td>**UV Radiation**</td><td>Melanoma, Skin SCC</td></tr><tr><td>**SBS6**</td><td>**MMR Deficiency** (MSI)</td><td>Lynch, CRC, Endometrial</td></tr><tr><td>**SBS17**</td><td>Unknown</td><td>Gastric, Oesophageal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clonal Evolution Models</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Linear vs Branching Evolution</div>
+<table class="ctable"><tr><th>Model</th><th>Description</th><th>Pattern</th></tr><tr><td>-------</td><td>-------------</td><td>---------</td></tr><tr><td>**Linear**</td><td>Sequential acquisition of mutations in single lineage</td><td>**Sequential**, Stepwise</td></tr><tr><td>**Branching**</td><td>**Parallel subclones** diverge from common ancestor</td><td>**Parallel Subclones**, Coexistence</td></tr><tr><td>**Neutral**</td><td>No selection, drift dominates</td><td>**Many Low-Frequency Subclones**</td></tr><tr><td>**Punctuated Equilibrium**</td><td>**Bursts** (Chromothripsis, Kataegis) + **Stasis**</td><td>**Burst-Stasis-Burst**</td></tr></table>
+<div class="sub-h">Phylogenetic Tree Interpretation</div>
+<table class="ctable"><tr><th>Tree Pattern</th><th>Evolutionary Mode</th><th>Clinical Implication</th></tr><tr><td>--------------</td><td>-------------------</td><td>---------------------</td></tr><tr><td>**Star-like**</td><td>**Star-like**</td><td>**Rapid expansion**, Single dominant clone</td></tr><tr><td>**Branching**</td><td>**Multiple subclones**</td><td>**Heterogeneity**, Therapy Resistance</td></tr><tr><td>**Linear**</td><td>**Sequential**</td><td>**Sequential Treatments** possible</td></tr><tr><td>**Punctuated**</td><td>**Bursts + Stasis**</td><td>**Rapid Evolution**, Early Metastasis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Impact of Heterogeneity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Therapy Resistance</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Example</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Pre-existing Resistant Subclone**</td><td>**EGFR T790M** in NSCLC pre-exists at low frequency</td></tr><tr><td>**Adaptive Evolution**</td><td>**EGFR C797S** emerges under Osimertinib pressure</td></tr><tr><td>**Parallel Resistance**</td><td>**Multiple subclones** with different resistance mechanisms (MET amp, HER2 amp, SCLC transformation)</td></tr><tr><td>**Lineage Plasticity**</td><td>**Lineage Switch** (Adenocarcinoma → SCLC under EGFR TKI)</td></tr></table>
+<div class="sub-h">Metastasis</div>
+<table class="ctable"><tr><th>Concept</th><th>Description</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Parallel Progression**</td><td>**Metastases seed early**, evolve in parallel with primary</td></tr><tr><td>**Linear Progression**</td><td>**Metastasis from dominant subclone** late in evolution</td></tr><tr><td>**Self-Seeding**</td><td>**Metastases re-seed primary** tumour</td></tr></table>
+<div class="sub-h">Sampling Bias &amp; Liquid Biopsy</div>
+<table class="ctable"><tr><th>Issue</th><th>Impact</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**Single Biopsy**</td><td>**Underestimates ITH**, Misses subclones</td></tr><tr><td>**Multi-region Sequencing**</td><td>**Better ITH capture**, Impractical clinically</td></tr><tr><td>**Liquid Biopsy (ctDNA)**</td><td>**Captures global heterogeneity**, Detects minor subclones</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Landmark Studies</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">TRACERx (Non-Small Cell Lung Cancer)</div>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>--------</td><td>--------------</td></tr><tr><td>**High ITH**</td><td>**Branching evolution** dominant, Parallel subclones</td></tr><tr><td>**Metastasis**</td><td>**Parallel dissemination** from primary, not linear</td></tr><tr><td>**Driver Events**</td><td>**Early** (EGFR, KRAS, TP53), **Late** (MYC, CCNE1 amp)</td></tr><tr><td>**Resistance**</td><td>**Parallel evolution** of resistance in metastases</td></tr></table>
+<div class="sub-h">PEACE (Post-mortem Cancer Evolution)</div>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>--------</td><td>--------------</td></tr><tr><td>**Widespread Metastasis**</td><td>**Polyclonal seeding**, Multiple waves</td></tr><tr><td>**Driver Mutations**</td><td>**Truncal** (TP53, KRAS), **Branch** (APC, PIK3CA)</td></tr><tr><td>**Metastasis Seeding**</td><td>**Polyclonal**, Multiple primary clones</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Parallel vs Convergent Evolution</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Example</th></tr><tr><td>------</td><td>------------</td><td>---------</td></tr><tr><td>**Parallel Evolution**</td><td>**Independent acquisition** of same mutation in different subclones</td><td>**EGFR T790M** arising independently in multiple subclones under EGFR TKI pressure</td></tr><tr><td>**Convergent Evolution**</td><td>**Different mutations** in same gene/pathway converging on same phenotype</td><td>**EGFR C797S** (TKI resistance) + **MET Amp** (Bypass) → Both cause EGFR TKI resistance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Clinical Applications</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Liquid Biopsy &amp; Heterogeneity</div>
+<table class="ctable"><tr><th>Application</th><th>Advantage</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**ctDNA MRD**</td><td>Captures **global heterogeneity** (vs single biopsy)</td></tr><tr><td>**Resistance Tracking**</td><td>**Early detection** of resistance mutations (EGFR T790M, ESR1, KRAS)</td></tr><tr><td>**Tumour Fraction**</td><td>**Prognostic**, **Response monitoring**, **MRD**</td></tr><tr><td>**Phylogenetic Inference**</td><td>**ctDNA phylogeny** → Tumour evolutionary history</td></tr></table>
+<div class="sub-h">Clinical Decision-Making</div>
+<table class="ctable"><tr><th>Scenario</th><th>Heterogeneity-Informed Decision</th></tr><tr><td>--------</td><td>--------------------------------</td></tr><tr><td>**Targeted Therapy**</td><td>**Target truncal drivers** (present in all subclones)</td></tr><tr><td>**Combination Therapy**</td><td>**Target multiple pathways** to prevent resistance</td></tr><tr><td>**Adaptive Therapy**</td><td>**Dose modulation** to maintain sensitive cells suppressing resistant ones</td></tr><tr><td>**Surveillance**</td><td>**ctDNA serial monitoring** for emerging resistance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**ITH**</td><td>**Intra-tumour heterogeneity** — Spatial + Temporal</td></tr><tr><td>**Spatial**</td><td>**Intra-tumour** (within tumour), **Inter-tumour** (primary vs met)</td></tr><tr><td>**Temporal**</td><td>**Clonal Evolution** (Linear, Branching, Neutral), **Punctuated Equilibrium**</td></tr><tr><td>**Mechanisms**</td><td>**CIN** (CIN, Chromothripsis), **MSI**, **Kataegis**, **HRD**, **APOBEC**</td></tr><tr><td>**Evolution Models**</td><td>**Linear** (Sequential) vs **Branching** (Parallel) vs **Punctuated** (Bursts)</td></tr><tr><td>**TRACERx**</td><td>**NSCLC: Branching dominant, Parallel metastasis, Early drivers**</td></tr><tr><td>**PEACE**</td><td>**Post-mortem: Polyclonal seeding, Multiple waves**</td></tr><tr><td>**Parallel vs Convergent**</td><td>**Parallel**: Same mutation independently; **Convergent**: Different mutations → Same phenotype</td></tr><tr><td>**Clinical Impact**</td><td>**Resistance: Pre-existing + Adaptive**, **Metastasis: Parallel + Linear**, **Biopsy Bias**</td></tr><tr><td>**Liquid Biopsy**</td><td>**ctDNA captures global heterogeneity**, **MRD, Resistance tracking, Tumour fraction**</td></tr><tr><td>**Clinical Action**</td><td>**Target truncal drivers**, **Combination therapy**, **Adaptive therapy**, **ctDNA surveillance**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Intra-tumour vs Inter-tumour Heterogeneity?**</td><td>**Intra**: Within same tumour (spatial/temporal); **Inter**: Between primary/metastasis or between patients.</td></tr><tr><td>**Linear vs Branching Evolution?**</td><td>**Linear**: Sequential mutations, single lineage; **Branching**: Parallel subclones from common ancestor.</td></tr><tr><td>**Punctuated Equilibrium — Mechanism?**</td><td>**Chromothripsis/Kataegis** → **Burst of mutations** → Stasis → Next burst.</td></tr><tr><td>**TRACERx — Key Finding on Metastasis?**</td><td>**Parallel dissemination** from primary (not linear) — Metastases seed early, evolve in parallel.</td></tr><tr><td>**Parallel vs Convergent Evolution — Difference?**</td><td>**Parallel**: Same mutation independently in multiple subclones; **Convergent**: Different mutations in same pathway → Same phenotype.</td></tr><tr><td>**Chromothripsis vs Kataegis**</td><td>**Chromothripsis**: Catastrophic chromosome shattering (1 event); **Kataegis**: Localised hypermutation (APOBEC clusters).</td></tr><tr><td>**TRACERx — pCR vs Evolution?**</td><td>**High pCR = Low ITH**; **Low pCR = High ITH, Branching Evolution**.</td></tr><tr><td>**Liquid Biopsy vs Tissue Biopsy for Heterogeneity**</td><td>**ctDNA: Captures global heterogeneity**, Detects minor subclones; **Tissue: Limited by sampling bias**.</td></tr><tr><td>**Parallel Evolution Example?**</td><td>**EGFR T790M** emerging independently in multiple subclones under EGFR TKI pressure.</td></tr><tr><td>**Convergent Evolution Example?**</td><td>**EGFR C797S** (TKI resistance) + **MET Amplification** (Bypass) → Both cause EGFR TKI resistance.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**ITH vs Inter-tumour**</td><td>**ITH**: Within single tumour; **Inter-tumour**: Between different tumours (primary vs met, or between patients)</td></tr><tr><td>**Linear vs Branching**</td><td>**Linear**: One clone → Next clone; **Branching**: Multiple subclones coexist from common ancestor</td></tr><tr><td>**Punctuated Equilibrium**</td><td>**Not continuous** — **Bursts (Chromothripsis/Kataegis)** followed by **Stasis**</td></tr><tr><td>**Parallel vs Convergent**</td><td>**Parallel**: Same mutation, independent; **Convergent**: Different mutations, same pathway/output</td></tr><tr><td>**TRACERx vs PEACE**</td><td>**TRACERx**: NSCLC, prospective, longitudinal; **PEACE**: Multi-cancer, post-mortem, deep sequencing</td></tr><tr><td>**Parallel vs Linear Metastasis**</td><td>**Parallel**: Early dissemination, parallel evolution; **Linear**: Late, from dominant clone</td></tr><tr><td>**CHIP vs Tumour Heterogeneity**</td><td>**CHIP**: Blood-derived, age-related; **Tumour**: Tissue-derived, cancer-specific</td></tr><tr><td>**Parallel Evolution vs Clonal Expansion**</td><td>**Parallel**: Same mutation in parallel branches; **Clonal Expansion**: Single clone expands</td></tr></table>
+<p><b>Mnemonic: TUMOUR-EVOLUTION</b></p>
+<ul><li><b>T</b>umour <b>H</b>eterogeneity: <b>Spatial (Intra/Inter) + Temporal (Evolution)</b></li><li><b>U</b>niformity: <b>Not Uniform</b> — Heterogeneity is Universal</li><li><b>M</b>echanisms: <b>CIN, MSI, Chromothripsis, Kataegis, APOBEC, HRD</b></li><li><b>O</b>rigin: <b>Clonal Evolution</b> (Linear, Branching, Punctuated)</li><li><b>U</b>niform vs <b>B</b>ranching: <b>Linear vs Branching</b> Evolution</li><li><b>R</b>esistance: <b>Pre-existing + Adaptive</b> (Parallel + Convergent)</li><li><b>E</b>volution Models: <b>Linear, Branching, Neutral, Punctuated</b></li><li><b>P</b>arallel vs Convergent: <b>Same Mutation vs Same Pathway</b></li><li><b>H</b>eterogeneity Impact: <b>Resistance, Metastasis, Sampling Bias</b></li><li><b>E</b>volutionary Studies: <b>TRACERx (NSCLC), PEACE (Post-mortem)</b></li><li><b>T</b>emporal: <b>Clonal Evolution over Time</b></li><li><b>I</b>TH vs Inter: <b>Intra-tumour vs Inter-tumour</b></li><li><b>O</b>n-Treatment: <b>ctDNA Captures Evolution</b>, <b>MRD, Resistance</b></li><li><b>N</b>eutral Evolution: <b>Drift Dominates, No Selection</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Tumour Heterogeneity &amp; Evolution)) Spatial Intra-tumour (ITH) Inter-tumour (Primary vs Met) Temporal Clonal Evolution Linear (Sequential) Branching (Parallel) Neutral Punctuated Equilibrium Mechanisms CIN (Chromothripsis, Kataegis) MSI (MMR Deficiency) HRD (BRCA1/2) APOBEC (Kataegis) HRD Evolution Models Linear: Sequential Branching: Parallel Punctuated: Bursts + Stasis Landmark Studies TRACERx (NSCLC): Branching, Parallel Metastasis PEACE: Polyclonal Seeding Patterns Parallel Evolution: Same Mutation Independent Convergent: Different Mutations → Same Pathway Clinical Impact Resistance: Pre-existing + Adaptive Metastasis: Parallel + Linear Biopsy Bias: Single Region Misses Heterogeneity Liquid Biopsy: ctDNA Captures Global Heterogeneity Clinical Application Target Truncal Drivers Combination Therapy Adaptive Therapy ctDNA Surveillance </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**ITH**</td><td>Spatial (Intra/Inter-tumour) + Temporal (Evolution)</td></tr><tr><td>**Mechanisms**</td><td>CIN, MSI, Chromothripsis, Kataegis, APOBEC, HRD</td></tr><tr><td>**Evolution**</td><td>Linear, Branching, Neutral, Punctuated Equilibrium</td></tr><tr><td>**TRACERx**</td><td>Branching dominant, Parallel metastasis, Early drivers</td></tr><tr><td>**PEACE**</td><td>Polyclonal seeding, Multiple waves</td></tr><tr><td>**Parallel vs Convergent**</td><td>Same Mut Independent vs Different Mut Same Pathway</td></tr><tr><td>**Resistance**</td><td>Pre-existing + Adaptive; Parallel + Convergent</td></tr><tr><td>**Metastasis**</td><td>Parallel (Early) + Linear (Late)</td></tr><tr><td>**Biopsy Bias**</td><td>Single Region Misses Heterogeneity</td></tr><tr><td>**Liquid Biopsy**</td><td>ctDNA Captures Global Heterogeneity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>ITH vs Inter-tumour</td><td></td><td></td></tr><tr><td>Evolution Models</td><td></td><td></td></tr><tr><td>Mechanisms (CIN, MSI, etc.)</td><td></td><td></td></tr><tr><td>TRACERx/PEACE Findings</td><td></td><td></td></tr><tr><td>Parallel vs Convergent</td><td></td><td></td></tr><tr><td>Clinical Impact</td><td></td><td></td></tr><tr><td>Liquid Biopsy Utility</td><td></td><td></td></tr><tr><td>Phylogenetic Trees</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Somatic Mutations &amp; Driver Genes]], [[Liquid Biopsy]], [[MRD Monitoring]], [[Resistance Mechanisms]], [[Phylogenetic Analysis]], [[TRACERx]], [[PEACE]], [[Phylogenetic Trees]], [[Branching Evolution]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Tumour Heterogeneity &amp; Evolution (ITH), which statement is correct? A. <b>Intra-tumour heterogeneity</b> B. **Intra-tumour - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Intra-tumour heterogeneity</b> — Spatial + Temporal</li></ul>
+<p><b>2.</b> Regarding Tumour Heterogeneity &amp; Evolution (Spatial), which statement is correct? A. <b>Intra-tumour</b> (within tumour), <b>Inter-tumour</b> (primary vs met) B. <b>Intra-tumour</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Intra-tumour</b> (within tumour), <b>Inter-tumour</b> (primary vs met)</li></ul>
+<p><b>3.</b> Regarding Tumour Heterogeneity &amp; Evolution (Temporal), which statement is correct? A. <b>Clonal Evolution</b> (Linear, Branching, Neutral), <b>Punctuated Equilibrium</b> B. **Clonal - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Clonal Evolution</b> (Linear, Branching, Neutral), <b>Punctuated Equilibrium</b></li></ul>
+<p><b>4.</b> Regarding Tumour Heterogeneity &amp; Evolution (Mechanisms), which statement is correct? A. <b>CIN</b> (CIN, Chromothripsis), <b>MSI</b>, <b>Kataegis</b>, <b>HRD</b>, <b>APOBEC</b> B. <b>CIN</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CIN</b> (CIN, Chromothripsis), <b>MSI</b>, <b>Kataegis</b>, <b>HRD</b>, <b>APOBEC</b></li></ul>
+<p><b>5.</b> Regarding Tumour Heterogeneity &amp; Evolution (Evolution Models), which statement is correct? A. <b>Linear</b> (Sequential) vs <b>Branching</b> (Parallel) vs <b>Punctuated</b> (Bursts) B. <b>Linear</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Linear</b> (Sequential) vs <b>Branching</b> (Parallel) vs <b>Punctuated</b> (Bursts)</li></ul>
+<p><b>6.</b> Regarding Tumour Heterogeneity &amp; Evolution (TRACERx), which statement is correct? A. <b>NSCLC: Branching dominant, Parallel metastasis, Early drivers</b> B. **NSCLC: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>NSCLC: Branching dominant, Parallel metastasis, Early drivers</b></li></ul>
+<p><b>7.</b> Regarding Tumour Heterogeneity &amp; Evolution (PEACE), which statement is correct? A. <b>Post-mortem: Polyclonal seeding, Multiple waves</b> B. **Post-mortem: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Post-mortem: Polyclonal seeding, Multiple waves</b></li></ul>
+<p><b>8.</b> Regarding Tumour Heterogeneity &amp; Evolution (Parallel vs Convergent), which statement is correct? A. <b>Parallel</b>: Same mutation independently B. <b>Parallel</b>: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Parallel</b>: Same mutation independently; <b>Convergent</b>: Different mutations → Same phenotype</li></ul>
+<p><b>9.</b> Regarding Tumour Heterogeneity &amp; Evolution (Clinical Impact), which statement is correct? A. <b>Resistance: Pre-existing + Adaptive</b>, <b>Metastasis: Parallel + Linear</b>, <b>Biopsy Bias</b> B. **Resistance: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Resistance: Pre-existing + Adaptive</b>, <b>Metastasis: Parallel + Linear</b>, <b>Biopsy Bias</b></li></ul>
+<p><b>10.</b> Regarding Tumour Heterogeneity &amp; Evolution (Liquid Biopsy), which statement is correct? A. <b>ctDNA captures global heterogeneity</b>, <b>MRD, Resistance tracking, Tumour fraction</b> B. **ctDNA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ctDNA captures global heterogeneity</b>, <b>MRD, Resistance tracking, Tumour fraction</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Intra-tumour heterogeneity</b></li><li>B. **Intra-tumour (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Intra-tumour heterogeneity</b> — Spatial + Temporal</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Intra-tumour</b> (within tumour), <b>Inter-tumour</b> (primary vs met)</li><li>B. <b>Intra-tumour</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Intra-tumour</b> (within tumour), <b>Inter-tumour</b> (primary vs met)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Clonal Evolution</b> (Linear, Branching, Neutral), <b>Punctuated Equilibrium</b></li><li>B. **Clonal (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Clonal Evolution</b> (Linear, Branching, Neutral), <b>Punctuated Equilibrium</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>CIN</b> (CIN, Chromothripsis), <b>MSI</b>, <b>Kataegis</b>, <b>HRD</b>, <b>APOBEC</b></li><li>B. <b>CIN</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>CIN</b> (CIN, Chromothripsis), <b>MSI</b>, <b>Kataegis</b>, <b>HRD</b>, <b>APOBEC</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Linear</b> (Sequential) vs <b>Branching</b> (Parallel) vs <b>Punctuated</b> (Bursts)</li><li>B. <b>Linear</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Linear</b> (Sequential) vs <b>Branching</b> (Parallel) vs <b>Punctuated</b> (Bursts)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>NSCLC: Branching dominant, Parallel metastasis, Early drivers</b></li><li>B. **NSCLC: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>NSCLC: Branching dominant, Parallel metastasis, Early drivers</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Post-mortem: Polyclonal seeding, Multiple waves</b></li><li>B. **Post-mortem: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Post-mortem: Polyclonal seeding, Multiple waves</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Parallel</b>: Same mutation independently</li><li>B. <b>Parallel</b>: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Parallel</b>: Same mutation independently; <b>Convergent</b>: Different mutations → Same phenotype</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Resistance: Pre-existing + Adaptive</b>, <b>Metastasis: Parallel + Linear</b>, <b>Biopsy Bias</b></li><li>B. **Resistance: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Resistance: Pre-existing + Adaptive</b>, <b>Metastasis: Parallel + Linear</b>, <b>Biopsy Bias</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>ctDNA captures global heterogeneity</b>, <b>MRD, Resistance tracking, Tumour fraction</b></li><li>B. **ctDNA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>ctDNA captures global heterogeneity</b>, <b>MRD, Resistance tracking, Tumour fraction</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> ITH? <b>A1:</b> Intra-tumour heterogeneity — Spatial + Temporal</p>
+<p><b>Q2:</b> Spatial? <b>A2:</b> Intra-tumour (within tumour), Inter-tumour (primary vs met)</p>
+<p><b>Q3:</b> Temporal? <b>A3:</b> Clonal Evolution (Linear, Branching, Neutral), Punctuated Equilibrium</p>
+<p><b>Q4:</b> Mechanisms? <b>A4:</b> CIN (CIN, Chromothripsis), MSI, Kataegis, HRD, APOBEC</p>
+<p><b>Q5:</b> Evolution Models? <b>A5:</b> Linear (Sequential) vs Branching (Parallel) vs Punctuated (Bursts)</p>
+<p><b>Q6:</b> TRACERx? <b>A6:</b> NSCLC: Branching dominant, Parallel metastasis, Early drivers</p>
+<p><b>Q7:</b> PEACE? <b>A7:</b> Post-mortem: Polyclonal seeding, Multiple waves</p>
+<p><b>Q8:</b> Parallel vs Convergent? <b>A8:</b> Parallel: Same mutation independently; Convergent: Different mutations → Same phenotype</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>ITH</td><td>Intra-tumour heterogeneity — Spatial + Temporal</td></tr><tr><td>2</td><td>A</td><td>Spatial</td><td>Intra-tumour (within tumour), Inter-tumour (primary vs met)</td></tr><tr><td>3</td><td>A</td><td>Temporal</td><td>Clonal Evolution (Linear, Branching, Neutral), Punctuated Equilibrium</td></tr><tr><td>4</td><td>A</td><td>Mechanisms</td><td>CIN (CIN, Chromothripsis), MSI, Kataegis, HRD, APOBEC</td></tr><tr><td>5</td><td>A</td><td>Evolution Models</td><td>Linear (Sequential) vs Branching (Parallel) vs Punctuated (Bursts)</td></tr><tr><td>6</td><td>A</td><td>TRACERx</td><td>NSCLC: Branching dominant, Parallel metastasis, Early drivers</td></tr><tr><td>7</td><td>A</td><td>PEACE</td><td>Post-mortem: Polyclonal seeding, Multiple waves</td></tr><tr><td>8</td><td>A</td><td>Parallel vs Convergent</td><td>Parallel: Same mutation independently; Convergent: Different mutations → Same phenotype</td></tr><tr><td>9</td><td>A</td><td>Clinical Impact</td><td>Resistance: Pre-existing + Adaptive, Metastasis: Parallel + Linear, Biopsy Bias</td></tr><tr><td>10</td><td>A</td><td>Liquid Biopsy</td><td>ctDNA captures global heterogeneity, MRD, Resistance tracking, Tumour fraction</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>ITH</td><td>Intra-tumour heterogeneity — Spatial + Temporal</td></tr><tr><td>2</td><td>A</td><td>Spatial</td><td>Intra-tumour (within tumour), Inter-tumour (primary vs met)</td></tr><tr><td>3</td><td>A</td><td>Temporal</td><td>Clonal Evolution (Linear, Branching, Neutral), Punctuated Equilibrium</td></tr><tr><td>4</td><td>A</td><td>Mechanisms</td><td>CIN (CIN, Chromothripsis), MSI, Kataegis, HRD, APOBEC</td></tr><tr><td>5</td><td>A</td><td>Evolution Models</td><td>Linear (Sequential) vs Branching (Parallel) vs Punctuated (Bursts)</td></tr><tr><td>6</td><td>A</td><td>TRACERx</td><td>NSCLC: Branching dominant, Parallel metastasis, Early drivers</td></tr><tr><td>7</td><td>A</td><td>PEACE</td><td>Post-mortem: Polyclonal seeding, Multiple waves</td></tr><tr><td>8</td><td>A</td><td>Parallel vs Convergent</td><td>Parallel: Same mutation independently; Convergent: Different mutations → Same phenotype</td></tr><tr><td>9</td><td>A</td><td>Clinical Impact</td><td>Resistance: Pre-existing + Adaptive, Metastasis: Parallel + Linear, Biopsy Bias</td></tr><tr><td>10</td><td>A</td><td>Liquid Biopsy</td><td>ctDNA captures global heterogeneity, MRD, Resistance tracking, Tumour fraction</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Principles of Cancer Management|Principles of Cancer Management]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Tumour Heterogeneity Evolution · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

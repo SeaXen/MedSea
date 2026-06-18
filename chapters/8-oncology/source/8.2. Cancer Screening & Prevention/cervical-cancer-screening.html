@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cervical Cancer Screening — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.2. CANCER SCREENING & PREVENTION</span>
+      <div class="h1">Cervical Cancer Screening</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe <b>UK NHS Cervical Screening Programme</b> (NHS CSP) parameters</li><li>[ ] Explain <b>HPV Primary Screening</b> with <b>Cytology Triage</b></li><li>[ ] Apply <b>HPV Vaccination</b> impact and schedule</li><li>[ ] Manage <b>screening results</b> and <b>colposcopy referral</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">UK NHS Cervical Screening Programme (NHS CSP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Age Range**</td><td>**25-64 years**</td></tr><tr><td>**Interval**</td><td>**25-49: 3 years**, **50-64: 5 years**</td></tr><tr><td>**Primary Test**</td><td>**HPV Primary Screening** (HR-HPV PCR)</td></tr><tr><td>**Triage**</td><td>**HPV+ → Cytology (LBC)**; **Cytology+ → Colposcopy**; **HPV- → Routine Recall**</td></tr><tr><td>**HPV Vaccination**</td><td>**9-valent (6,11,16,18,31,33,45,52,58)** → **~90% prevention**</td></tr><tr><td>**Self-Sampling**</td><td>**Pilot** (Increase uptake in non-attenders)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">HPV Primary Screening Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[HPV Primary Screen] --&gt; B{HPV Result} B --&gt;|<b>HPV Negative</b>| C[<b>Return to Routine Recall</b> (3yr/5yr)] B --&gt;|<b>HPV Positive</b>| D[<b>Reflex Cytology (LBC)</b>] D --&gt; E{Cytology Result} E --&gt;|<b>Normal</b>| F[<b>Repeat HPV at 12 months</b>] E --&gt;|<b>Abnormal</b>| G[<b>Refer Colposcopy</b>] F --&gt; H{12-month HPV} H --&gt;|Negative| I[<b>Routine Recall</b>] H --&gt;|Positive| J[<b>Refer Colposcopy</b>] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">HPV Vaccination</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Vaccine**</td><td>**9-valent (Gardasil 9)**: Types 6,11,16,18,31,33,45,52,58</td></tr><tr><td>**Coverage**</td><td>**~90% prevention** of CIN3+ and cervical cancer</td></tr><tr><td>**Schedule**</td><td>**<15yr: 2 doses (0, 6-12mo)**; **≥15yr: 3 doses (0, 1-2, 6mo)**</td></tr><tr><td>**Target**</td><td>**Girls/Boys 12-13yr** (School programme); **Catch-up to 25**</td></tr><tr><td>**Impact**</td><td>**~90% reduction** in CIN3+ and cervical cancer</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Screening Pathway & Colposcopy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. HPV Primary Screen**</td><td>hrHPV PCR (Cobas, Abbott, BD)</td></tr><tr><td>**2. HPV+ → Cytology Triage**</td><td>Liquid-Based Cytology (LBC)</td></tr><tr><td>**3. Cytology +ve → Colposcopy**</td><td>**2-week wait** target</td></tr><tr><td>**3. Cytology -ve, HPV+**</td><td>**Repeat HPV at 12 months**</td></tr><tr><td>**4. Colposcopy**</td><td>**Directed Biopsy**, **See-and-Treat (LLETZ)** if appropriate</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**NHS CSP**</td><td>**25-64**, **HPV Primary**, **3yr (25-49) / 5yr (50-64)**</td></tr><tr><td>**HPV Primary**</td><td>**hrHPV PCR → Cytology Triage**</td></tr><tr><td>**HPV Vaccination**</td><td>**9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention**</td></tr><tr><td>**Self-Sampling**</td><td>**Pilot** for non-attenders</td></tr><tr><td>**HPV+ / Cytology -ve**</td><td>**Repeat HPV at 12mo**</td></tr><tr><td>**HPV+ / Cytology +ve**</td><td>**Colposcopy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Cervical Screening — Age, Interval, Primary Test?**</td><td>**25-64, HPV Primary, 3yr (25-49)/5yr (50-64)**.</td></tr><tr><td>**HPV Primary — Triage?**</td><td>**HPV+ → Cytology (LBC); Cytology+ → Colposcopy; Cytology- → Repeat HPV 12mo**</td></tr><tr><td>**HPV Vaccination — Schedule, Types?**</td><td>**9-valent; 2-dose <15yr (0, 6-12mo); 3-dose ≥15yr (0, 1-2, 6mo); 90% prevention**.</td></tr><tr><td>**HPV+ / Cytology Negative — Management?**</td><td>**Repeat HPV at 12 months**; **If persistent → Colposcopy**.</td></tr><tr><td>**Self-Sampling — Role?**</td><td>**Pilot for non-attenders**, improves uptake in underserved groups.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**HPV Primary vs Cytology Primary**</td><td>**HPV Primary**: More sensitive, detects glandular lesions; **Cytology Triage** of HPV+ reduces colposcopies</td></tr><tr><td>**FIT vs FOBT**</td><td>**FIT**: Quantitative, Antibody-Based, Specific for Human Hb, Single Sample; **FOBT**: Guaiac, Qualitative, Non-Specific, 3 Samples</td></tr><tr><td>**HPV Vaccination — Dosing**</td><td>**<15yr: 2-dose (0, 6-12mo)**; **≥15yr: 3-dose (0, 1-2, 6mo)**</td></tr><tr><td>**Cervical Screening Interval**</td><td>**25-49: 3yr**; **50-64: 5yr** (Based on cancer risk)</td></tr><tr><td>**Self-Sampling vs Clinician Sample**</td><td>**Self-Sampling: Non-inferior for HPV detection**, improves uptake in non-attenders</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Age Range**</td><td>25-64, 3yr (25-49), 5yr (50-64)</td></tr><tr><td>**Primary Test**</td><td>**HPV PCR (hrHPV)**</td></tr><tr><td>**Triage**</td><td>HPV+ → Cytology (LBC)</td></tr><tr><td>**HPV+ / Cytology +ve**</td><td>Colposcopy</td></tr><tr><td>**HPV+ / Cytology -ve**</td><td>Repeat HPV 12mo</td></tr><tr><td>**Vaccination**</td><td>9-valent, 2-dose <15yr, 3-dose ≥15yr</td></tr><tr><td>**Prevention**</td><td>90% CIN3+ and Cervical Cancer</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>NHS CSP Parameters</td><td></td><td></td></tr><tr><td>HPV Primary Algorithm</td><td></td><td></td></tr><tr><td>HPV Vaccination</td><td></td><td></td></tr><tr><td>Colposcopy Indications</td><td></td><td></td></tr><tr><td>Self-Sampling</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Population Screening Programmes]], [[HPV Vaccination]], [[HPV Testing]], [[Cervical Cancer]], [[Colposcopy]], [[CIN Management]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Cervical Cancer Screening (NHS CSP), which statement is correct? A. <b>25-64</b>, <b>HPV Primary</b>, <b>3yr (25-49) / 5yr (50-64)</b> B. <b>25-64</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>25-64</b>, <b>HPV Primary</b>, <b>3yr (25-49) / 5yr (50-64)</b></li></ul>
+<p><b>2.</b> Regarding Cervical Cancer Screening (HPV Primary), which statement is correct? A. <b>hrHPV PCR → Cytology Triage</b> B. **hrHPV - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>hrHPV PCR → Cytology Triage</b></li></ul>
+<p><b>3.</b> Regarding Cervical Cancer Screening (HPV Vaccination), which statement is correct? A. <b>9-valent, 2-dose &lt;15yr, 3-dose ≥15yr, 90% prevention</b> B. **9-valent, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>9-valent, 2-dose &lt;15yr, 3-dose ≥15yr, 90% prevention</b></li></ul>
+<p><b>4.</b> Regarding Cervical Cancer Screening (Self-Sampling), which statement is correct? A. <b>Pilot</b> for non-attenders B. <b>Pilot</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Pilot</b> for non-attenders</li></ul>
+<p><b>5.</b> Regarding Cervical Cancer Screening (HPV+ / Cytology -ve), which statement is correct? A. <b>Repeat HPV at 12mo</b> B. **Repeat - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Repeat HPV at 12mo</b></li></ul>
+<p><b>6.</b> Regarding Cervical Cancer Screening (HPV+ / Cytology +ve), which statement is correct? A. <b>Colposcopy</b> B. <b>Colposcopy</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Colposcopy</b></li></ul>
+<p><b>7.</b> Regarding Cervical Cancer Screening (FCPS/MRCP High Yield - UK NHS ), which statement is correct?</p>
+<ul><li>A. FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr</li></ul>
+<p><b>8.</b> Regarding Cervical Cancer Screening (HPV Vaccination (9-valent) 90%), which statement is correct?</p>
+<ul><li>A. HPV Vaccination (9-valent) 90% prevention</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — HPV Vaccination (9-valent) 90% prevention</li></ul>
+<p><b>9.</b> Regarding Cervical Cancer Screening (HPV Primary + Cytology Triage), which statement is correct?</p>
+<ul><li>A. HPV Primary + Cytology Triage</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — HPV Primary + Cytology Triage</li></ul>
+<p><b>10.</b> Regarding Cervical Cancer Screening (Mortality Reduction 70%), which statement is correct?</p>
+<ul><li>A. Mortality Reduction 70%</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Mortality Reduction 70%</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>25-64</b>, <b>HPV Primary</b>, <b>3yr (25-49) / 5yr (50-64)</b></li><li>B. <b>25-64</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>25-64</b>, <b>HPV Primary</b>, <b>3yr (25-49) / 5yr (50-64)</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>hrHPV PCR → Cytology Triage</b></li><li>B. **hrHPV (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>hrHPV PCR → Cytology Triage</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>9-valent, 2-dose &lt;15yr, 3-dose ≥15yr, 90% prevention</b></li><li>B. **9-valent, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>9-valent, 2-dose &lt;15yr, 3-dose ≥15yr, 90% prevention</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Pilot</b> for non-attenders</li><li>B. <b>Pilot</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Pilot</b> for non-attenders</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Repeat HPV at 12mo</b></li><li>B. **Repeat (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Repeat HPV at 12mo</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Colposcopy</b></li><li>B. <b>Colposcopy</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Colposcopy</b></li></ul>
+<p><b>7.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr</li></ul>
+<p><b>8.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. HPV Vaccination (9-valent) 90% prevention</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — HPV Vaccination (9-valent) 90% prevention</li></ul>
+<p><b>9.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. HPV Primary + Cytology Triage</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — HPV Primary + Cytology Triage</li></ul>
+<p><b>10.</b> Treatment is initiated. Most important monitoring parameter:</p>
+<ul><li>A. Mortality Reduction 70%</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Mortality Reduction 70%</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> NHS CSP? <b>A1:</b> 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</p>
+<p><b>Q2:</b> HPV Primary? <b>A2:</b> hrHPV PCR → Cytology Triage</p>
+<p><b>Q3:</b> HPV Vaccination? <b>A3:</b> 9-valent, 2-dose &lt;15yr, 3-dose ≥15yr, 90% prevention</p>
+<p><b>Q4:</b> Self-Sampling? <b>A4:</b> Pilot for non-attenders</p>
+<p><b>Q5:</b> HPV+ / Cytology -ve? <b>A5:</b> Repeat HPV at 12mo</p>
+<p><b>Q6:</b> HPV+ / Cytology +ve? <b>A6:</b> Colposcopy</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>7</td><td>A</td><td>FCPS/MRCP High Yield - UK NHS Cervical Screening</td><td>FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr</td></tr><tr><td>8</td><td>A</td><td>HPV Vaccination (9-valent) 90% prevention</td><td>HPV Vaccination (9-valent) 90% prevention</td></tr><tr><td>9</td><td>A</td><td>HPV Primary + Cytology Triage</td><td>HPV Primary + Cytology Triage</td></tr><tr><td>10</td><td>A</td><td>Mortality Reduction 70%</td><td>Mortality Reduction 70%</td></tr><tr><td>11</td><td>A</td><td>Interval</td><td>Interval: 25-49: 3 years, 50-64: 5 years</td></tr><tr><td>12</td><td>A</td><td>Primary Test</td><td>Primary Test: HPV Primary Screening (HR-HPV PCR)</td></tr><tr><td>13</td><td>A</td><td>Triage</td><td>Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</td></tr><tr><td>14</td><td>A</td><td>HPV Vaccination</td><td>HPV Vaccination: 9-valent (6,11,16,18,31,33,45,52,58) → ~90% prevention</td></tr><tr><td>15</td><td>A</td><td>Self-Sampling</td><td>Self-Sampling: Pilot (Increase uptake in non-attenders)</td></tr><tr><td>16</td><td>A</td><td>Vaccine</td><td>Vaccine: 9-valent (Gardasil 9): Types 6,11,16,18,31,33,45,52,58</td></tr><tr><td>17</td><td>A</td><td>Coverage</td><td>Coverage: ~90% prevention of CIN3+ and cervical cancer</td></tr><tr><td>18</td><td>A</td><td>Schedule</td><td>Schedule: <15yr: 2 doses (0, 6-12mo); ≥15yr: 3 doses (0, 1-2, 6mo)</td></tr><tr><td>19</td><td>A</td><td>Target</td><td>Target: Girls/Boys 12-13yr (School programme); Catch-up to 25</td></tr><tr><td>20</td><td>A</td><td>Impact</td><td>Impact: ~90% reduction in CIN3+ and cervical cancer</td></tr><tr><td>21</td><td>A</td><td>1. HPV Primary Screen</td><td>1. HPV Primary Screen: hrHPV PCR (Cobas, Abbott, BD)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>7</td><td>A</td><td>FCPS/MRCP High Yield - UK NHS Cervical Screening</td><td>FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr</td></tr><tr><td>8</td><td>A</td><td>HPV Vaccination (9-valent) 90% prevention</td><td>HPV Vaccination (9-valent) 90% prevention</td></tr><tr><td>9</td><td>A</td><td>HPV Primary + Cytology Triage</td><td>HPV Primary + Cytology Triage</td></tr><tr><td>10</td><td>A</td><td>Mortality Reduction 70%</td><td>Mortality Reduction 70%</td></tr><tr><td>11</td><td>A</td><td>Interval</td><td>Interval: 25-49: 3 years, 50-64: 5 years</td></tr><tr><td>12</td><td>A</td><td>Primary Test</td><td>Primary Test: HPV Primary Screening (HR-HPV PCR)</td></tr><tr><td>13</td><td>A</td><td>Triage</td><td>Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall</td></tr><tr><td>14</td><td>A</td><td>HPV Vaccination</td><td>HPV Vaccination: 9-valent (6,11,16,18,31,33,45,52,58) → ~90% prevention</td></tr><tr><td>15</td><td>A</td><td>Self-Sampling</td><td>Self-Sampling: Pilot (Increase uptake in non-attenders)</td></tr><tr><td>16</td><td>A</td><td>Vaccine</td><td>Vaccine: 9-valent (Gardasil 9): Types 6,11,16,18,31,33,45,52,58</td></tr><tr><td>17</td><td>A</td><td>Coverage</td><td>Coverage: ~90% prevention of CIN3+ and cervical cancer</td></tr><tr><td>18</td><td>A</td><td>Schedule</td><td>Schedule: <15yr: 2 doses (0, 6-12mo); ≥15yr: 3 doses (0, 1-2, 6mo)</td></tr><tr><td>19</td><td>A</td><td>Target</td><td>Target: Girls/Boys 12-13yr (School programme); Catch-up to 25</td></tr><tr><td>20</td><td>A</td><td>Impact</td><td>Impact: ~90% reduction in CIN3+ and cervical cancer</td></tr><tr><td>21</td><td>A</td><td>1. HPV Primary Screen</td><td>1. HPV Primary Screen: hrHPV PCR (Cobas, Abbott, BD)</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>NHS CSP</td><td>25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</td></tr><tr><td>2</td><td>A</td><td>HPV Primary</td><td>hrHPV PCR → Cytology Triage</td></tr><tr><td>3</td><td>A</td><td>HPV Vaccination</td><td>9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention</td></tr><tr><td>4</td><td>A</td><td>Self-Sampling</td><td>Pilot for non-attenders</td></tr><tr><td>5</td><td>A</td><td>HPV+ / Cytology -ve</td><td>Repeat HPV at 12mo</td></tr><tr><td>6</td><td>A</td><td>HPV+ / Cytology +ve</td><td>Colposcopy</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>NHS CSP</td><td>25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</td></tr><tr><td>2</td><td>A</td><td>HPV Primary</td><td>hrHPV PCR → Cytology Triage</td></tr><tr><td>3</td><td>A</td><td>HPV Vaccination</td><td>9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention</td></tr><tr><td>4</td><td>A</td><td>Self-Sampling</td><td>Pilot for non-attenders</td></tr><tr><td>5</td><td>A</td><td>HPV+ / Cytology -ve</td><td>Repeat HPV at 12mo</td></tr><tr><td>6</td><td>A</td><td>HPV+ / Cytology +ve</td><td>Colposcopy</td></tr></table>
+<p><b>Q7:</b> FCPS/MRCP High Yield - UK NHS Cervical Screening? <b>A7:</b> FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr</p>
+<p><b>Q8:</b> Key Point? <b>A8:</b> HPV Vaccination (9-valent) 90% prevention</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer Screening &amp; Prevention|Cancer Screening &amp; Prevention]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cervical Cancer Screening · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

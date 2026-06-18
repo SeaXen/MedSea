@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cervical Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.6. GYNAECOLOGICAL CANCERS</span>
+      <div class="h1">Cervical Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe <b>HPV carcinogenesis</b> (E6/E7 → p53/pRb degradation)</li><li>[ ] Apply <b>FIGO 2018 Staging</b> (imaging-based: MRI, PET-CT)</li><li>[ ] Manage <b>CIN</b>: CIN1 observation, CIN2/3 LLETZ/Cone</li><li>[ ] Select <b>fertility-sparing surgery</b> for IA1 (no LVI) / IA2 / IB1</li><li>[ ] Prescribe <b>CCRT</b>: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachytherapy</li><li>[ ] Sequence <b>metastatic therapy</b>: Carbo/Pac ± Bev → Pembrolizumab (CPS≥1)</li><li>[ ] Know <b>HPV Vaccination</b> schedule</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of cervical epithelium; **SCC 70-80%, Adenocarcinoma 20-25%**; **HPV-driven (>99%)**</td></tr><tr><td>**Incidence**</td><td>UK: ~3,200/year; **Global: 4th most common female cancer** (600k new, 340k deaths)</td></tr><tr><td>**Prevalence**</td><td>5-year OS: Stage I ~90%, Stage II ~60%, Stage III ~40%, Stage IV ~15%</td></tr><tr><td>**Peak Age**</td><td>**Bimodal**: 35-45 (HPV-related), 60-70 (screening failures)</td></tr><tr><td>**Risk Factors**</td><td>**HPV 16/18 (70%)**, **Multiple partners**, **Early coitarche**, **Smoking** (↑2-3x), **Immunosuppression (HIV)**, **Long-term OCP**, **High parity**, **DES exposure**</td></tr><tr><td>**Protective**</td><td>**HPV Vaccination**, **Condoms**, **Circumcision (male partner)**, **Screening**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[HPV Infection (16/18)] --&gt; B[E6/E7 Oncoproteins] B --&gt; C1[E6 → p53 Degradation (Ubiquitination)] B --&gt; C2[E7 → pRb Degradation → E2F Release] C1 --&gt; D[Genomic Instability] C2 --&gt; D D --&gt; E[Cell Cycle Dysregulation] E --&gt; F[Integration into Host Genome] F --&gt; G[CIN → Invasive Cancer] G --&gt; H1[SCC (Usual, Keratinising, Verrucous)] G --&gt; H2[Adenocarcinoma (Usual, Mucinous, Villoglandular)] G --&gt; H3[Adenosquamous, Neuroendocrine, Glassy cell] </code>``</p>
+<div class="sub-h">Histological Types</div>
+<table class="ctable"><tr><th>Type</th><th>Frequency</th><th>HPV Association</th><th>Features</th></tr><tr><td>------</td><td>-----------</td><td>-----------------</td><td>----------</td></tr><tr><td>**Squamous Cell Carcinoma**</td><td>**70-80%**</td><td>**HPV16/18/45**</td><td>Keratinising, Non-keratinising, Basaloid, Verrucous</td></tr><tr><td>**Adenocarcinoma**</td><td>**20-25%**</td><td>**HPV16/18/45**</td><td>Usual, Mucinous, Villoglandular, Clear cell</td></tr><tr><td>**Adenosquamous**</td><td>3-5%</td><td>HPV+</td><td>Mixed glandular + squamous</td></tr><tr><td>**Neuroendocrine**</td><td><1%</td><td>Variable (HPV+)</td><td>Small cell, Large cell — Aggressive</td></tr><tr><td>**Glassy Cell**</td><td>Rare</td><td>HPV+</td><td>Poor prognosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Abnormal Vaginal Bleeding**</td><td>**Post-coital (classic)**, Intermenstrual, Post-menopausal</td></tr><tr><td>**Vaginal Discharge**</td><td>Watery, foul-smelling (advanced)</td></tr><tr><td>**Pelvic Pain**</td><td>Late (parametrial invasion, ureteric obstruction)</td></tr><tr><td>**Leg Oedema**</td><td>Lymphatic/venous obstruction</td></tr><tr><td>**Ureteric Obstruction**</td><td>Silent renal failure (advanced)</td></tr><tr><td>**Asymptomatic**</td><td>Screen-detected (increasing)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging (FIGO 2018 — Imaging-Based)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Description</th></tr><tr><td>-------</td><td>-------------</td></tr><tr><td>**I**</td><td>Confined to cervix</td></tr><tr><td>IA1</td><td>Stromal invasion **<3mm**, **<7mm width**, No LVI</td></tr><tr><td>IA2</td><td>Stromal invasion **3-<5mm**, **<7mm width**</td></tr><tr><td>IB1</td><td>**≥5mm**, **<2cm**</td></tr><tr><td>IB2</td><td>**≥2cm**, **<4cm**</td></tr><tr><td>IB3</td><td>**≥4cm**</td></tr><tr><td>**II**</td><td>Beyond uterus, not to pelvic wall/lower vagina</td></tr><tr><td>IIA1</td><td>**<4cm** upper vagina</td></tr><tr><td>IIA2</td><td>**≥4cm** upper vagina</td></tr><tr><td>IIB</td><td>**Parametrial invasion**</td></tr><tr><td>**III**</td><td>Pelvic wall / Lower 1/3 vagina / Hydronephrosis / Non-functioning kidney</td></tr><tr><td>IIIA</td><td>Lower 1/3 vagina</td></tr><tr><td>IIIB</td><td>Pelvic wall / Hydronephrosis</td></tr><tr><td>IIIC1</td><td>**Pelvic LN+** (imaging/pathology) — **r/i** suffix</td></tr><tr><td>IIIC2</td><td>**Para-aortic LN+** — **r/i** suffix</td></tr><tr><td>**IV**</td><td>Beyond true pelvis / Bladder/Rectal mucosa</td></tr><tr><td>IVA</td><td>Bladder/Rectal mucosa invasion</td></tr><tr><td>IVB</td><td>Distant mets</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**Cervical Screening (HPV Primary)**</td><td>Population screening</td><td>**HPV HR types → Cytology triage** → Colposcopy if +ve</td></tr><tr><td>**Colposcopy + Biopsy**</td><td>**Diagnosis**</td><td>**CIN1/2/3**, **Invasive Cancer**</td></tr><tr><td>**LLETZ / Cone Biopsy**</td><td>**Pre-cancer treatment + Microinvasion assessment**</td><td>**Margins, LVI, Depth**</td></tr><tr><td>**MRI Pelvis**</td><td>**Gold Standard Local Staging**</td><td>Tumour size, Stromal invasion, Parametrium, Nodes, Vagina</td></tr><tr><td>**PET-CT**</td><td>**Nodal/Distant Staging** (Stage IB2+)</td><td>Superior to CT for nodes; **FIGO 2018 allows imaging**</td></tr><tr><td>**CT Chest/Abd/Pelvis**</td><td>Alternative if PET unavailable</td><td></td></tr><tr><td>**Examination Under Anaesthesia (EUA)**</td><td>Clinical staging (cystoscopy, proctoscopy)</td><td>Mandatory for FIGO clinical staging</td></tr><tr><td>**Biomarkers**</td><td>SCC Ag (SCC), CEA (Adeno)</td><td>Monitoring</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**CIN (1/2/3)**</td><td>**No stromal invasion**; High-grade dysplasia only</td></tr><tr><td>**Endocervical Polyp**</td><td>Benign, polypoid, no invasion</td></tr><tr><td>**Cervical Ectropion**</td><td>Physiological, red zone, no atypia</td></tr><tr><td>**Cervicitis**</td><td>Inflammatory, infectious (Chlamydia, Gonorrhoea)</td></tr><tr><td>**Endometrial Cancer**</td><td>Uterine origin, PMB, different staging</td></tr><tr><td>**Vaginal Cancer**</td><td>Vaginal origin, different epidemiology</td></tr><tr><td>**Cervical Pregnancy**</td><td>β-hCG+, gestational sac in cervix</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pre-Cancer (CIN)</div>
+<p>``<code>mermaid flowchart TD A[CIN Diagnosis] --&gt; B{Grade} B --&gt;|<b>CIN1 (LSIL)</b>| C[<b>Observation</b> (60-70% regress)&lt;br/&gt;<b>HPV test at 12mo</b>&lt;br/&gt;If persistent → Treat] B --&gt;|<b>CIN2 (HSIL)</b>| D[<b>LLETZ (Large Loop Excision)</b>&lt;br/&gt;<b>OR Observation</b> (if &lt;25yo, 50% regress)&lt;br/&gt;<b>Fertility-sparing</b>] B --&gt;|<b>CIN3 (HSIL)</b>| E[<b>LLETZ / Cold Knife Cone</b>&lt;br/&gt;<b>Margins must be clear</b>&lt;br/&gt;<b>If margins +ve → Repeat excision / Hysterectomy</b>] D --&gt; F[<b>Follow-up: HPV + Cytology at 6mo, then 12mo, then 3yr</b>] E --&gt; F </code>``</p>
+<div class="sub-h">Early Stage (IA1-IB1)</div>
+<p>``<code>mermaid flowchart TD A[Early Stage Cervical Cancer] --&gt; B{Stage} B --&gt;|<b>IA1 (No LVI)</b>| C[<b>Fertility-Sparing: Cone Biopsy / Trachelectomy</b>&lt;br/&gt;<b>If margins clear, no LVI → No further Rx</b>&lt;br/&gt;<b>If childbearing complete → Simple Hysterectomy</b>] B --&gt;|<b>IA2 (LVI-)</b>| D[<b>Radical Trachelectomy + PLND</b> (Fertility)&lt;br/&gt;<b>OR Radical Hysterectomy + PLND</b>] B --&gt;|<b>IB1 (&lt;2cm)</b>| E[<b>Radical Hysterectomy + PLND</b>&lt;br/&gt;<b>Type III (Wertheim-Meigs) preferred</b>&lt;br/&gt;<b>OR CCRT (Weekly Cisplatin + EBRT + Brachy) — Equivalent OS</b>] C --&gt; F[<b>PLND: Sentinel Node Mapping (ICG) preferred</b>&lt;br/&gt;<b>If SLN+ → Complete PLND / RT to pelvis</b>] D --&gt; F E --&gt; F </code>``</p>
+<div class="sub-h">Locally Advanced (IB2-IVA)</div>
+<p>``<code>mermaid flowchart TD A[Locally Advanced (IB2-IVA)] --&gt; B[<b>Concurrent Chemoradiation (CCRT)</b>] B --&gt; B1[<b>EBRT: 45-50.4Gy/25-28fx</b> (Pelvis ± Para-aortic if nodes+)] B --&gt; B2[<b>Weekly Cisplatin 40mg/m²</b> ×5-6 cycles (during RT)] B --&gt; B3[<b>Brachytherapy: HDR/PDR</b>&lt;br/&gt;<b>Image-guided (MRI/CT)</b>&lt;br/&gt;<b>Point A Dose: ~85Gy EQD2</b>&lt;br/&gt;<b>Total EQD2 (EBRT+BT): ~85-90Gy</b>] B1 --&gt; C[<b>Response Assessment (MRI/PET at 3mo)</b>] B2 --&gt; C B3 --&gt; C C --&gt;|<b>Residual Disease</b>| D[<b>Salvage Surgery (Exenteration) / RT Boost / Chemo</b>] C --&gt;|<b>CR</b>| E[<b>Surveillance</b>] </code>``</p>
+<div class="sub-h">Metastatic / Recurrent</div>
+<p>``<code>mermaid flowchart TD A[Metastatic/Recurrent Cervical Cancer] --&gt; B{PD-L1 CPS} B --&gt;|<b>CPS ≥1</b>| C[<b>Carboplatin AUC5 + Paclitaxel 175mg/m² q3w ×6</b>&lt;br/&gt;<b>+ Bevacizumab 15mg/kg</b> (GOG-240) — <b>If eligible</b>&lt;br/&gt;<b>+ Pembrolizumab 200mg q3w</b> (KEYNOTE-826) — <b>OS HR 0.64, PFS HR 0.62</b>&lt;br/&gt;<b>→ Maintenance: Pembro + Bev</b>] B --&gt;|<b>CPS &lt;1</b>| D[<b>Carbo/Pac ± Bevacizumab</b> (GOG-240)&lt;br/&gt;<b>No Pembrolizumab</b> (OS not sig benefit)&lt;br/&gt;<b>2L: PLD, Topotecan, Gemcitabine, Bev ± Chemo</b>] D --&gt; E[<b>Clinical Trial / Re-challenge</b>] </code>``</p>
+<div class="sub-h">KEYNOTE-826 Regimen</div>
+<table class="ctable"><tr><th>Component</th><th>Dose/Schedule</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Pembrolizumab**</td><td>200mg IV q3w</td></tr><tr><td>**Carboplatin**</td><td>AUC5 IV d1 q3w</td></tr><tr><td>**Paclitaxel**</td><td>175mg/m² IV d1 q3w</td></tr><tr><td>**Bevacizumab**</td><td>15mg/kg IV d1 q3w (optional, if eligible)</td></tr><tr><td>**Cycles**</td><td>6 cycles chemo → **Maintenance Pembrolizumab + Bev**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HPV**</td><td>**HPV16/18 (70%)**, E6→p53 deg, E7→pRb deg; **Screening prevents 70%**</td></tr><tr><td>**FIGO 2018**</td><td>**Imaging-based** (MRI, PET-CT); **LN+ = IIIC1 (pelvic), IIIC2 (para-aortic)**; **IA1 <3mm no LVI**</td></tr><tr><td>**Screening**</td><td>**Primary HPV → Cytology triage** → Colposcopy</td></tr><tr><td>**CIN**</td><td>**CIN1: Obs**; **CIN2: LLETZ/Obs (<25yo)**; **CIN3: LLETZ/Cone**</td></tr><tr><td>**IA1 (No LVI)**</td><td>**Cone/Trachelectomy** (fertility) **OR Simple Hysterectomy**</td></tr><tr><td>**IB1 (<2cm)**</td><td>**Radical Hysterectomy Type III + PLND** **OR CCRT** (equivalent OS)</td></tr><tr><td>**Locally Advanced**</td><td>**CCRT: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachy**</td></tr><tr><td>**Brachytherapy**</td><td>**Image-guided (MRI/CT)**, **Point A ~85Gy EQD2**, **Total ~85-90Gy EQD2**</td></tr><tr><td>**Metastatic**</td><td>**Carbo/Pac + Bev + Pembro** (KEYNOTE-826) **if CPS≥1** → **OS HR 0.64**</td></tr><tr><td>**HPV Vaccine**</td><td>**9-valent (6,11,16,18,31,33,45,52,58)** — **2-dose <15yr, 3-dose ≥15yr**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**35F, screen-detected, biopsy: SCC IA2 (4mm invasion, no LVI). Fertility desired. Management?**</td><td>**Radical Trachelectomy + PLND** (fertility-sparing) **OR** **Radical Hysterectomy + PLND** (if childbearing complete).</td></tr><tr><td>**45F, 3cm cervical mass, parametrial invasion, PET: pelvic nodes+. FIGO Stage?**</td><td>**IIIC1r** (Imaging-detected pelvic nodes) — **Stage IIIB parametrial + IIIC1 nodes = IIIC1**</td></tr><tr><td>**Locally advanced CCRT — Cisplatin dose/schedule?**</td><td>**Weekly Cisplatin 40mg/m²** ×5-6 cycles **concurrent with EBRT** (45-50.4Gy/25-28fx).</td></tr><tr><td>**Brachytherapy — target dose?**</td><td>**Point A EQD2 ~85Gy** (combined EBRT+BT); **HDR: 7Gy ×4 fractions** or **PDR: 0.5-1Gy/hr**; **Image-guided (MRI/CT)**.</td></tr><tr><td>**KEYNOTE-826 — population, regimen, outcome?**</td><td>**Metastatic/Recurrent, PD-L1 CPS≥1**, **Carbo/Pac + Bev + Pembro vs Placebo** → **OS HR 0.64, PFS HR 0.62**.</td></tr><tr><td>**CPS <1 — pembrolizumab benefit?**</td><td>**No significant OS benefit in CPS<1** — **Not indicated**.</td></tr><tr><td>**Fertility-sparing for IB1 — criteria?**</td><td>**<2cm, No LVI, No nodal mets, Childbearing desire** → **Radical Trachelectomy + PLND** (conization margins clear).</td></tr><tr><td>**CIN2 in 22F — management?**</td><td>**LLETZ preferred** (or observation if compliant, 50% regression); **Follow-up HPV+Cytology 6mo**.</td></tr><tr><td>**HPV vaccination — schedule?**</td><td>**9-valent: 2-dose (0, 6-12mo) if <15yr; 3-dose (0, 1-2, 6mo) if ≥15yr**.</td></tr><tr><td>**Radical Hysterectomy Type III — what is removed?**</td><td>**Uterus, Cervix, Upper 1-2cm Vagina, Parametrium (medial 1/2), Pelvic LN** — **Ovaries preserved if premenopausal**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**FIGO 2009 vs 2018**</td><td>**2018: Imaging-based (MRI/PET)**; **LN+ upstages to IIIC**; **IA1 <3mm, IA2 3-5mm, IB1-3 by size**; **Old clinical staging obsolete**</td></tr><tr><td>**CCRT vs Surgery for IB1**</td><td>**Equivalent OS**; **Surgery: Surgical morbidity, pathology staging**; **CCRT: Organ preservation, better sexual function, avoids surgery if unfit**</td></tr><tr><td>**CPS ≥1 vs <1 in KEYNOTE-826**</td><td>**CPS≥1: Pembro + Chemo/Bev → OS HR 0.64**; **CPS<1: No OS benefit** — **CPS is predictive**</td></tr><tr><td>**Brachytherapy — Point A vs Dose to HR-CTV**</td><td>**Modern: HR-CTV (High-Risk Clinical Target Volume) D90 ≥85-90Gy EQD2**; **Point A historical surrogate**</td></tr><tr><td>**GOG-240 vs KEYNOTE-826**</td><td>**GOG-240**: Carbo/Pac ± Bev (Bev added PFS/OS); **KEYNOTE-826**: Adds Pembro → **Further OS benefit in CPS≥1**</td></tr><tr><td>**Trachelectomy vs Cone for IA1**</td><td>**Cone: IA1 no LVI (excisional)**; **Trachelectomy: IA2/IB1 (radical, removes parametrium + uterosacral ligaments)**</td></tr></table>
+<p><b>Mnemonic: CERVICAL</b></p>
+<ul><li><b>C</b>ervical: <b>HPV 16/18 (70%)</b>, E6/p53, E7/pRb</li><li><b>E</b>arly: <b>IA1 Cone/Trachelectomy</b>; <b>IB1 Radical Hyst III OR CCRT</b></li><li><b>R</b>adical Hysterectomy Type III (Wertheim-Meigs)</li><li><b>V</b>accination: <b>9-valent, 2-dose&lt;15yr, 3-dose≥15yr</b></li><li><b>I</b>maging-based: <b>FIGO 2018</b> (MRI/PET, LN+ = IIIC)</li><li><b>C</b>CRT: <b>Weekly Cisplatin 40mg/m² + EBRT → Brachy</b> (Point A 85Gy EQD2)</li><li><b>A</b>dvanced: <b>KEYNOTE-826</b> — Carbo/Pac/Bev + <b>Pembro (CPS≥1)</b> — OS HR 0.64</li><li><b>A</b>bnormal bleeding: <b>Post-coital</b> classic</li><li><b>L</b>LETZ: <b>CIN2/3</b>; <b>CIN1 Obs</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Cervical Cancer)) Aetiology HPV 16/18 (70%) E6→p53, E7→pRb Integration Screening Primary HPV → Cytology triage Colposcopy → LLETZ/Cone Pre-Cancer CIN1: Obs CIN2: LLETZ/Obs CIN3: LLETZ/Cone Staging FIGO 2018 IA1 (&lt;3mm no LVI) IA2 (3-5mm) IB1-3 (size) II (Parametrium/Vagina) III (Wall/Vagina/Hydro/Nodes) IIIC1/2 (Nodes) IV (Bladder/Rectal/Distant) Early IA1: Cone/Trachelectomy IB1: Rad Hyst III + PLND OR CCRT Locally Advanced CCRT: Cis 40mg/wk + EBRT → Brachy Brachy: HR-CTV D90 85-90Gy EQD2 Metastatic CPS≥1: Carbo/Pac/Bev + Pembro (K-826) CPS&lt;1: Carbo/Pac ± Bev Prevention HPV Vaccine 9-valent </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**HPV**</td><td>16/18 (70%), E6/p53, E7/pRb</td></tr><tr><td>**FIGO 2018**</td><td>IA1<3mm, IA2 3-5mm, IB1<2cm, IB2 2-4cm, IB3≥4cm, LN+=IIIC</td></tr><tr><td>**Screening**</td><td>Primary HPV → Cytology triage</td></tr><tr><td>**CIN**</td><td>CIN1 Obs, CIN2 LLETZ, CIN3 LLETZ/Cone</td></tr><tr><td>**IA1**</td><td>Cone/Trachelectomy (no LVI)</td></tr><tr><td>**IB1**</td><td>Rad Hyst III + PLND OR CCRT</td></tr><tr><td>**Loc Adv**</td><td>CCRT: Cis 40mg/wk + EBRT 45-50.4Gy → Brachy (85Gy EQD2)</td></tr><tr><td>**Metastatic**</td><td>CPS≥1: Carbo/Pac/Bev + Pembro (K-826); CPS<1: Carbo/Pac ± Bev</td></tr><tr><td>**Vaccine**</td><td>9-valent, 2-dose<15yr, 3-dose≥15yr</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>FIGO 2018 Staging</td><td></td><td></td></tr><tr><td>CCRT Regimen</td><td></td><td></td></tr><tr><td>Brachytherapy Dosing</td><td></td><td></td></tr><tr><td>KEYNOTE-826 / GOG-240</td><td></td><td></td></tr><tr><td>Fertility-Sparing Criteria</td><td></td><td></td></tr><tr><td>CIN Management</td><td></td><td></td></tr><tr><td>HPV Vaccination</td><td></td><td></td></tr><tr><td>CPS in KEYNOTE-826</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Ovarian Cancer]], [[Endometrial Cancer]], [[HPV Vaccination]], [[CIN/LLETZ]], [[FIGO 2018]], [[KEYNOTE-826]], [[PD-L1 CPS]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Cervical Cancer (HPV), which statement is correct? A. <b>HPV16/18 (70%)</b>, E6→p53 deg, E7→pRb deg B. **HPV16/18 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>HPV16/18 (70%)</b>, E6→p53 deg, E7→pRb deg; <b>Screening prevents 70%</b></li></ul>
+<p><b>2.</b> Regarding Cervical Cancer (FIGO 2018), which statement is correct? A. <b>Imaging-based</b> (MRI, PET-CT) B. <b>Imaging-based</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Imaging-based</b> (MRI, PET-CT); <b>LN+ = IIIC1 (pelvic), IIIC2 (para-aortic)</b>; <b>IA1 &lt;3mm no LVI</b></li></ul>
+<p><b>3.</b> Regarding Cervical Cancer (Screening), which statement is correct? A. <b>Primary HPV → Cytology triage</b> → Colposcopy B. **Primary - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Primary HPV → Cytology triage</b> → Colposcopy</li></ul>
+<p><b>4.</b> Regarding Cervical Cancer (CIN), which statement is correct? A. <b>CIN1: Obs</b> B. **CIN1: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CIN1: Obs</b>; <b>CIN2: LLETZ/Obs (&lt;25yo)</b>; <b>CIN3: LLETZ/Cone</b></li></ul>
+<p><b>5.</b> Regarding Cervical Cancer (IA1 (No LVI)), which statement is correct? A. <b>Cone/Trachelectomy</b> (fertility) <b>OR Simple Hysterectomy</b> B. <b>Cone/Trachelectomy</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Cone/Trachelectomy</b> (fertility) <b>OR Simple Hysterectomy</b></li></ul>
+<p><b>6.</b> Regarding Cervical Cancer (IB1 (&lt;2cm)), which statement is correct? A. <b>Radical Hysterectomy Type III + PLND</b> <b>OR CCRT</b> (equivalent OS) B. **Radical - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Radical Hysterectomy Type III + PLND</b> <b>OR CCRT</b> (equivalent OS)</li></ul>
+<p><b>7.</b> Regarding Cervical Cancer (Locally Advanced), which statement is correct? A. <b>CCRT: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachy</b> B. **CCRT: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CCRT: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachy</b></li></ul>
+<p><b>8.</b> Regarding Cervical Cancer (Brachytherapy), which statement is correct? A. <b>Image-guided (MRI/CT)</b>, <b>Point A ~85Gy EQD2</b>, <b>Total ~85-90Gy EQD2</b> B. **Image-guided - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Image-guided (MRI/CT)</b>, <b>Point A ~85Gy EQD2</b>, <b>Total ~85-90Gy EQD2</b></li></ul>
+<p><b>9.</b> Regarding Cervical Cancer (Metastatic), which statement is correct? A. <b>Carbo/Pac + Bev + Pembro</b> (KEYNOTE-826) <b>if CPS≥1</b> → <b>OS HR 0.64</b> B. **Carbo/Pac - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Carbo/Pac + Bev + Pembro</b> (KEYNOTE-826) <b>if CPS≥1</b> → <b>OS HR 0.64</b></li></ul>
+<p><b>10.</b> Regarding Cervical Cancer (HPV Vaccine), which statement is correct? A. <b>9-valent (6,11,16,18,31,33,45,52,58)</b> B. **9-valent - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>9-valent (6,11,16,18,31,33,45,52,58)</b> — <b>2-dose &lt;15yr, 3-dose ≥15yr</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>HPV16/18 (70%)</b>, E6→p53 deg, E7→pRb deg</li><li>B. **HPV16/18 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>HPV16/18 (70%)</b>, E6→p53 deg, E7→pRb deg; <b>Screening prevents 70%</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Imaging-based</b> (MRI, PET-CT)</li><li>B. <b>Imaging-based</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Imaging-based</b> (MRI, PET-CT); <b>LN+ = IIIC1 (pelvic), IIIC2 (para-aortic)</b>; <b>IA1 &lt;3mm no LVI</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Primary HPV → Cytology triage</b> → Colposcopy</li><li>B. **Primary (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Primary HPV → Cytology triage</b> → Colposcopy</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>CIN1: Obs</b></li><li>B. **CIN1: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>CIN1: Obs</b>; <b>CIN2: LLETZ/Obs (&lt;25yo)</b>; <b>CIN3: LLETZ/Cone</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Cone/Trachelectomy</b> (fertility) <b>OR Simple Hysterectomy</b></li><li>B. <b>Cone/Trachelectomy</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Cone/Trachelectomy</b> (fertility) <b>OR Simple Hysterectomy</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Radical Hysterectomy Type III + PLND</b> <b>OR CCRT</b> (equivalent OS)</li><li>B. **Radical (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Radical Hysterectomy Type III + PLND</b> <b>OR CCRT</b> (equivalent OS)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>CCRT: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachy</b></li><li>B. **CCRT: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>CCRT: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachy</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Image-guided (MRI/CT)</b>, <b>Point A ~85Gy EQD2</b>, <b>Total ~85-90Gy EQD2</b></li><li>B. **Image-guided (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Image-guided (MRI/CT)</b>, <b>Point A ~85Gy EQD2</b>, <b>Total ~85-90Gy EQD2</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Carbo/Pac + Bev + Pembro</b> (KEYNOTE-826) <b>if CPS≥1</b> → <b>OS HR 0.64</b></li><li>B. **Carbo/Pac (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Carbo/Pac + Bev + Pembro</b> (KEYNOTE-826) <b>if CPS≥1</b> → <b>OS HR 0.64</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>9-valent (6,11,16,18,31,33,45,52,58)</b></li><li>B. **9-valent (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>9-valent (6,11,16,18,31,33,45,52,58)</b> — <b>2-dose &lt;15yr, 3-dose ≥15yr</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> HPV? <b>A1:</b> HPV16/18 (70%), E6→p53 deg, E7→pRb deg; Screening prevents 70%</p>
+<p><b>Q2:</b> FIGO 2018? <b>A2:</b> Imaging-based (MRI, PET-CT); LN+ = IIIC1 (pelvic), IIIC2 (para-aortic); IA1 &lt;3mm no LVI</p>
+<p><b>Q3:</b> Screening? <b>A3:</b> Primary HPV → Cytology triage → Colposcopy</p>
+<p><b>Q4:</b> CIN? <b>A4:</b> CIN1: Obs; CIN2: LLETZ/Obs (&lt;25yo); CIN3: LLETZ/Cone</p>
+<p><b>Q5:</b> IA1 (No LVI)? <b>A5:</b> Cone/Trachelectomy (fertility) OR Simple Hysterectomy</p>
+<p><b>Q6:</b> IB1 (&lt;2cm)? <b>A6:</b> Radical Hysterectomy Type III + PLND OR CCRT (equivalent OS)</p>
+<p><b>Q7:</b> Locally Advanced? <b>A7:</b> CCRT: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachy</p>
+<p><b>Q8:</b> Brachytherapy? <b>A8:</b> Image-guided (MRI/CT), Point A ~85Gy EQD2, Total ~85-90Gy EQD2</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>HPV</td><td>HPV16/18 (70%), E6→p53 deg, E7→pRb deg; Screening prevents 70%</td></tr><tr><td>2</td><td>A</td><td>FIGO 2018</td><td>Imaging-based (MRI, PET-CT); LN+ = IIIC1 (pelvic), IIIC2 (para-aortic); IA1 <3mm no LVI</td></tr><tr><td>3</td><td>A</td><td>Screening</td><td>Primary HPV → Cytology triage → Colposcopy</td></tr><tr><td>4</td><td>A</td><td>CIN</td><td>CIN1: Obs; CIN2: LLETZ/Obs (<25yo); CIN3: LLETZ/Cone</td></tr><tr><td>5</td><td>A</td><td>IA1 (No LVI)</td><td>Cone/Trachelectomy (fertility) OR Simple Hysterectomy</td></tr><tr><td>6</td><td>A</td><td>IB1 (<2cm)</td><td>Radical Hysterectomy Type III + PLND OR CCRT (equivalent OS)</td></tr><tr><td>7</td><td>A</td><td>Locally Advanced</td><td>CCRT: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachy</td></tr><tr><td>8</td><td>A</td><td>Brachytherapy</td><td>Image-guided (MRI/CT), Point A ~85Gy EQD2, Total ~85-90Gy EQD2</td></tr><tr><td>9</td><td>A</td><td>Metastatic</td><td>Carbo/Pac + Bev + Pembro (KEYNOTE-826) if CPS≥1 → OS HR 0.64</td></tr><tr><td>10</td><td>A</td><td>HPV Vaccine</td><td>9-valent (6,11,16,18,31,33,45,52,58) — 2-dose <15yr, 3-dose ≥15yr</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>HPV</td><td>HPV16/18 (70%), E6→p53 deg, E7→pRb deg; Screening prevents 70%</td></tr><tr><td>2</td><td>A</td><td>FIGO 2018</td><td>Imaging-based (MRI, PET-CT); LN+ = IIIC1 (pelvic), IIIC2 (para-aortic); IA1 <3mm no LVI</td></tr><tr><td>3</td><td>A</td><td>Screening</td><td>Primary HPV → Cytology triage → Colposcopy</td></tr><tr><td>4</td><td>A</td><td>CIN</td><td>CIN1: Obs; CIN2: LLETZ/Obs (<25yo); CIN3: LLETZ/Cone</td></tr><tr><td>5</td><td>A</td><td>IA1 (No LVI)</td><td>Cone/Trachelectomy (fertility) OR Simple Hysterectomy</td></tr><tr><td>6</td><td>A</td><td>IB1 (<2cm)</td><td>Radical Hysterectomy Type III + PLND OR CCRT (equivalent OS)</td></tr><tr><td>7</td><td>A</td><td>Locally Advanced</td><td>CCRT: Weekly Cisplatin 40mg/m² + EBRT 45-50.4Gy → Brachy</td></tr><tr><td>8</td><td>A</td><td>Brachytherapy</td><td>Image-guided (MRI/CT), Point A ~85Gy EQD2, Total ~85-90Gy EQD2</td></tr><tr><td>9</td><td>A</td><td>Metastatic</td><td>Carbo/Pac + Bev + Pembro (KEYNOTE-826) if CPS≥1 → OS HR 0.64</td></tr><tr><td>10</td><td>A</td><td>HPV Vaccine</td><td>9-valent (6,11,16,18,31,33,45,52,58) — 2-dose <15yr, 3-dose ≥15yr</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Gynaecological Cancers|Gynaecological Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cervical Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

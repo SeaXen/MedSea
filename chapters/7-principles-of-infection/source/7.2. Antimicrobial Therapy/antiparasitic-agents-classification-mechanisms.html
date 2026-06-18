@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antiparasitic Agents Classification Mechanisms — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.2. ANTIMICROBIAL THERAPY</span>
+      <div class="h1">Antiparasitic Agents Classification Mechanisms</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify antiparasitics by target organism, life-cycle stage, and mechanism</li><li>[ ] Know first-line therapy for major parasitic infections (FCPS/MRCP viva)</li><li>[ ] Understand ACT, radical cure, severe malaria, mass drug administration</li><li>[ ] Apply to prophylaxis (malaria, traveller's diarrhoea, strongyloidiasis)</li><li>[ ] Recognise toxicity: G6PD haemolysis, neurotoxicity, ototoxicity, ocular toxicity</li><li>[ ] Know resistance patterns: chloroquine (P. falciparum, P. vivax), SP, artemisinin (partial, Mekong)</li><li>[ ] Special populations: pregnancy, paediatrics, immunocompromised (HIV, transplant)</li><li>[ ] Answer viva: "ACT for falciparum", "Radical cure for vivax", "Strongyloides drug", "Cysticercosis"</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Schizonticide**</td><td>Drug acting on asexual blood-stage Plasmodium (clinical cure)</td></tr><tr><td>**Gametocide**</td><td>Drug killing sexual stages (blocks transmission)</td></tr><tr><td>**Sporonticide**</td><td>Drug preventing sporogony in mosquito (causal prophylaxis)</td></tr><tr><td>**Tissue schizonticide**</td><td>Drug acting on liver-stage (causal prophylaxis / radical cure)</td></tr><tr><td>**Hypnozoite**</td><td>Dormant liver form of P. vivax/ovale (relapse) — target of primaquine/tafenoquine</td></tr><tr><td>**Radical cure**</td><td>Eradication of hypnozoites (vivax/ovale) plus blood-stage cure</td></tr><tr><td>**ACT**</td><td>Artemisinin-based Combination Therapy (WHO standard for uncomplicated falciparum)</td></tr><tr><td>**G6PD deficiency**</td><td>X-linked enzyme defect; 8-aminoquinolines (primaquine, tafenoquine) cause haemolysis — TEST FIRST</td></tr><tr><td>**Luminal agent**</td><td>Drug acting on intestinal lumen (e.g. paromomycin, diloxanide) — must follow tissue amoebicide</td></tr><tr><td>**MDA**</td><td>Mass Drug Administration (LF, onchocerciasis, schistosomiasis, STH)</td></tr><tr><td>**Hypertrophic osteoarthropathy / Myalgias**</td><td>Ivermectin in Loa loa → encephalopathy if high microfilarial load</td></tr><tr><td>**Mazzotti reaction**</td><td>Severe inflammatory response to dying microfilariae (ivermectin in onchocerciasis)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Antimalarials — Classification by Life-Cycle Stage</div>
+<table class="ctable"><tr><th>Class</th><th>Target Stage</th><th>Examples</th></tr><tr><td>-------</td><td>--------------</td><td>----------</td></tr><tr><td>**Tissue schizonticide (causal prophylaxis)**</td><td>Liver forms</td><td>Primaquine, tafenoquine, proguanil, atovaquone</td></tr><tr><td>**Blood schizonticide (clinical cure)**</td><td>Asexual RBC forms</td><td>Chloroquine, quinine, artemisinins, mefloquine, lumefantrine, amodiaquine, piperaquine, SP, doxycycline</td></tr><tr><td>**Gametocide**</td><td>Sexual forms</td><td>Primaquine, tafenoquine, artemisinins</td></tr><tr><td>**Sporonticide**</td><td>Mosquito stages</td><td>Proguanil, primaquine</td></tr></table>
+<div class="sub-h">Section 2: 4-Aminoquinolines — Chloroquine</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Mechanism**</td><td>Concentrates in parasite acidic food vacuole → inhibits **haem polymerase** (heme detoxification) → free haem is toxic to parasite</td></tr><tr><td>**Spectrum**</td><td>Blood schizonticide; P. vivax, P. ovale, P. malariae, P. knowlesi (sensitive strains); gametocide for P. vivax/ovale/malariae</td></tr><tr><td>**Resistance**</td><td>Widespread in P. falciparum (most endemic areas); emerging in P. vivax (Indonesia, Papua, S. America)</td></tr><tr><td>**PK**</td><td>Excellent oral absorption, large Vd (tissue binding), hepatic metabolism, renal excretion, long t½ (1-2 months)</td></tr><tr><td>**Adverse effects**</td><td>Bitter taste, GI, pruritus (Africans), retinopathy with prolonged use (>5 yr cumulative), QTc prolongation</td></tr><tr><td>**Contraindications**</td><td>Psoriasis (worsens), porphyria, G6PD (haemolysis for primaquine)</td></tr><tr><td>**Use**</td><td>First-line for chloroquine-sensitive vivax/ovale/malariae/knowlesi; prophylaxis (limited areas)</td></tr></table>
+<div class="sub-h">Section 3: Quinine &amp; Quinidine</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Mechanism**</td><td>Same as chloroquine (inhibit haem polymerase)</td></tr><tr><td>**Spectrum**</td><td>Blood schizonticide (incl. chloroquine-resistant falciparum); NOT for prophylaxis</td></tr><tr><td>**IV quinine/quinidine**</td><td>Severe malaria (replaced by artesunate where available)</td></tr><tr><td>**Loading dose**</td><td>20 mg/kg IV over 4 h, then 10 mg/kg q8h</td></tr><tr><td>**Adverse effects**</td><td>**Cinchonism** (tinnitus, headache, nausea, blurred vision), **hypoglycaemia** (β-cell stimulation), QTc prolongation, hypotension (rapid IV)</td></tr><tr><td>**Combination**</td><td>Always with **doxycycline** or **clindamycin** (7 d) to clear falciparum & prevent recrudescence</td></tr><tr><td>**Pregnancy**</td><td>Safe in all trimesters; with clindamycin</td></tr></table>
+<div class="sub-h">Section 4: Artemisinin &amp; Derivatives — "The Magic Bullet"</div>
+<table class="ctable"><tr><th>Drug</th><th>Route</th><th>Notes</th></tr><tr><td>------</td><td>-------</td><td>-------</td></tr><tr><td>**Artesunate**</td><td>IV/IM/PO/rectal</td><td>First-line severe malaria; water-soluble; t½ 45 min</td></tr><tr><td>**Artemether**</td><td>IM/PO</td><td>Oil-based IM; severe (pre-referral)</td></tr><tr><td>**Dihydroartemisinin (DHA)**</td><td>PO</td><td>Active metabolite of artesunate; partner drug in DHA-piperaquine</td></tr><tr><td>**Artemisinin**</td><td>PO/Rectal</td><td>Parent compound (sesquiterpene lactone endoperoxide bridge)</td></tr></table>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Mechanism**</td><td>Endoperoxide bridge activated by **haem iron / Fe²⁺** → generates reactive oxygen species → alkylate parasite proteins (PfATP6, PI3K, etc.)</td></tr><tr><td>**Spectrum**</td><td>Blood schizonticide (rapid); gametocide (↓ transmission); kills ring-stage rapidly</td></tr><tr><td>**PK**</td><td>Short t½ (1-3 h); require partner drug (long t½) to clear residual parasites → **ACT**</td></tr><tr><td>**Adverse effects**</td><td>Generally well-tolerated; rare delayed haemolysis post-treatment (2-3 wk), QTc, teratogenicity 1st trimester (avoid)</td></tr><tr><td>**Resistance**</td><td>Delayed parasite clearance in **Mekong region** (Cambodia, Myanmar, Thailand, Laos, Vietnam) — *kelch13* mutations; spreading in Africa (Rwanda, Uganda)</td></tr><tr><td>**Severe malaria (WHO)**</td><td>**IV artesunate 2.4 mg/kg at 0, 12, 24 h then daily** (≥3 doses); switch to ACT when oral</td></tr></table>
+<div class="sub-h">Section 5: Artemisinin-Based Combination Therapy (ACT) — WHO First-Line for Uncomplicated Falciparum</div>
+<table class="ctable"><tr><th>ACT Regimen</th><th>Components</th><th>Notes</th></tr><tr><td>-------------</td><td>-----------</td><td>-------</td></tr><tr><td>**Artemether-Lumefantrine (AL, Coartem®)**</td><td>Artemether 20 mg + Lumefantrine 120 mg</td><td>6-dose over 3 days; take with **fatty food** (↑ lumefantrine absorption); 1st line in Africa</td></tr><tr><td>**Artesunate-Amodiaquine (AS-AQ)**</td><td>Artesunate + Amodiaquine</td><td>3 days; West Africa; AQ → agranulocytosis/hepatitis</td></tr><tr><td>**Artesunate-Mefloquine (AS-MQ)**</td><td>Artesunate + Mefloquine</td><td>SE Asia, S. America; mefloquine → neuropsychiatric</td></tr><tr><td>**DHA-Piperaquine (DHA-PPQ, Eurartesim®)**</td><td>DHA + Piperaquine</td><td>3 days; long t½ PPQ (post-prophylaxis effect); QTc prolongation</td></tr><tr><td>**Artesunate-Sulfadoxine-Pyrimethamine (AS-SP)**</td><td>Triple</td><td>Where SP still effective; obsolete elsewhere</td></tr><tr><td>**Artesunate-Pyronaridine (Pyramax®)**</td><td>Artesunate + Pyronaridine</td><td>New; multi-resistant areas; hepatic monitoring</td></tr></table>
+<p><b>Why ACT?</b></p>
+<ul><li>Artemisinin ↓ parasite biomass by ~10,000-fold per cycle (3 days)</li><li>Partner drug (long t½) clears residual parasites → <b>mutual protection against resistance</b></li><li>Artemisinin also gametocidal → ↓ transmission</li></ul>
+<div class="sub-h">Section 6: 8-Aminoquinolines — Primaquine &amp; Tafenoquine</div>
+<table class="ctable"><tr><th>Drug</th><th>Use</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>-----</td><td>------</td><td>-------</td></tr><tr><td>**Primaquine**</td><td>**Radical cure** (vivax/ovale hypnozoites); terminal prophylaxis; gametocide (falciparum)</td><td>30 mg base (0.5 mg/kg) OD × **14 days** (vivax); 45 mg weekly × 8 wk (prophylaxis); 45 mg single dose (gametocide, falciparum)</td><td>**TEST G6PD FIRST**; contraindicated in pregnancy, infants <6 mo, G6PD-deficient</td></tr><tr><td>**Tafenoquine (Krintafel®, Arakoda®)**</td><td>Radical cure vivax; prophylaxis</td><td>300 mg single dose (radical cure, with chloroquine); 200 mg OD × 3 d then weekly (prophylaxis)</td><td>Long t½ (~14-28 d); also G6PD test required; only for non-deficient</td></tr></table>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Mechanism**</td><td>Generate reactive oxygen species in parasite mitochondria; unclear exact target (mitochondrial ETC)</td></tr><tr><td>**Hypnozoite activity**</td><td>UNIQUE to 8-aminoquinolines — only drugs that kill dormant liver forms</td></tr><tr><td>**Adverse effects**</td><td>**Haemolysis in G6PD deficiency** (dose-dependent, severe); GI; methaemoglobinaemia (rare)</td></tr><tr><td>**Pregnancy**</td><td>**CONTRAINDICATED**; defer until postpartum; for vivax in pregnancy use chloroquine weekly prophylaxis</td></tr><tr><td>**G6PD testing**</td><td>Quantitative enzymatic assay (not just qualitative) before prescription; phenotype variants (African vs Mediterranean)</td></tr></table>
+<p><b>G6PD Algorithm:</b></p>
+<p>``<code>mermaid flowchart TD A[Patient requires primaquine/tafenoquine] --&gt; B{G6PD status} B --&gt;|Normal| C[Proceed: 14-day primaquine OR single-dose tafenoquine] B --&gt;|Deficient - Female het| D[Quantitative G6PD - retest] B --&gt;|Deficient - Male hemizygous| E[AVOID 8-aminoquinolines; consider alternative for vivax] B --&gt;|Pregnant| F[AVOID; use chloroquine prophylaxis postpartum] E --&gt; G[Alternative: weekly chloroquine for vivax; not ideal for hypnozoites] B --&gt;|Unknown &amp; urgent| H[Delay treatment; test ASAP] </code>``</p>
+<div class="sub-h">Section 7: Other Antimalarials</div>
+<table class="ctable"><tr><th>Drug</th><th>Class</th><th>Use</th><th>Notes</th></tr><tr><td>------</td><td>-------</td><td>-----</td><td>-------</td></tr><tr><td>**Mefloquine**</td><td>Quinoline-methanol</td><td>Prophylaxis; treatment (AS-MQ)</td><td>Long t½; **neuropsychiatric** (dizziness, vivid dreams, seizures); avoid epilepsy, psychiatric hx; not 1st trimester; resistance in SE Asia</td></tr><tr><td>**Atovaquone-Proguanil (Malarone®)**</td><td>Mitochondrial + DHFR</td><td>Prophylaxis & treatment</td><td>250/100 mg adult OD; 1 d before, during, 7 d after travel; t½ 2-3 d; well-tolerated; expensive; resistance if given alone</td></tr><tr><td>**Doxycycline**</td><td>Tetracycline</td><td>Prophylaxis (alternative); Rx (with quinine)</td><td>100 mg OD; start 1-2 d before, 4 wk after; photosensitivity, oesophagitis; **NOT <8 yr, not pregnant**</td></tr><tr><td>**Sulfadoxine-Pyrimethamine (SP, Fansidar®)**</td><td>DHPS + DHFR</td><td>Intermittent preventive treatment (IPTp, IPTi), seasonal malaria chemoprevention (SMC)</td><td>Single-dose; resistance widespread (dhps/dhfr mutations); no longer for treatment</td></tr><tr><td>**Proguanil**</td><td>DHFR</td><td>With atovaquone (Malarone)</td><td>Causal prophylaxis; folate antagonist</td></tr><tr><td>**Clindamycin**</td><td>Lincosamide</td><td>With quinine (pregnancy); babesiosis</td><td>Safe in pregnancy, children</td></tr><tr><td>**Chloroquine-proguanil**</td><td>Combination</td><td>Prophylaxis (historical)</td><td>Obsolete due to resistance</td></tr></table>
+<p><b>Babesiosis (B. microti):</b> Atovaquone + azithromycin (mild) OR clindamycin + quinine (severe); exchange transfusion if severe.</p>
+<div class="sub-h">Section 8: Antiamoebics — Entamoeba histolytica</div>
+<table class="ctable"><tr><th>Agent</th><th>Class</th><th>Use</th><th>Notes</th></tr><tr><td>-------</td><td>-------</td><td>-----</td><td>-------</td></tr><tr><td>**Metronidazole**</td><td>5-nitroimidazole</td><td>**Tissue amoebicide** (invasive): dysentery, liver abscess</td><td>750 mg TDS × 7-10 d; tinidazole 2 g OD × 3 d alt; **ALWAYS follow with luminal agent**</td></tr><tr><td>**Tinidazole**</td><td>5-nitroimidazole</td><td>Same as metronidazole (better tolerated, OD dosing)</td><td>2 g OD × 3 d (intestinal) or 5 d (liver)</td></tr><tr><td>**Paromomycin**</td><td>Aminoglycoside (not absorbed)</td><td>**Luminal agent** (asymptomatic cyst passer; after tissue agent)</td><td>500 mg TDS × 7 d; NOT systemic; ototoxic if absorbed; safe in pregnancy</td></tr><tr><td>**Diloxanide furoate**</td><td>Luminal</td><td>Same as paromomycin</td><td>500 mg TDS × 10 d; not available everywhere</td></tr><tr><td>**Nitazoxanide**</td><td>Antiprotozoal</td><td>Cryptosporidium, Giardia, mild amoebiasis</td><td>500 mg BD × 3 d; safe in children >1 yr</td></tr></table>
+<p><b>Mechanism of 5-nitroimidazoles:</b> Pro-drug activated by parasite <b>ferredoxin / pyruvate-ferredoxin oxidoreductase</b> → nitro radical → DNA damage.</p>
+<p><b>Adverse effects of metronidazole:</b> Metallic taste, disulfiram-like reaction (with alcohol), peripheral neuropathy (prolonged), seizures (rare), hepatotoxicity.</p>
+<p><b>Treatment algorithm — Amoebiasis:</b></p>
+<table class="ctable"><tr><th>Syndrome</th><th>Treatment</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**Asymptomatic cyst passer**</td><td>Luminal agent alone (paromomycin/diloxanide)</td></tr><tr><td>**Intestinal (dysentery)**</td><td>Metronidazole/tinidazole + luminal agent</td></tr><tr><td>**Liver abscess**</td><td>Metronidazole/tinidazole × 5-10 d + luminal agent; **drainage if**: large, left lobe, threatening rupture, no improvement in 72 h</td></tr><tr><td>**Pregnancy**</td><td>Paromomycin for luminal; metronidazole 2nd/3rd trimester (avoid 1st)</td></tr></table>
+<div class="sub-h">Section 9: Antigiardials — Giardia lamblia</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Metronidazole**</td><td>250-500 mg TDS × 5-7 d</td><td>First-line; tinidazole 2 g single dose (better compliance)</td></tr><tr><td>**Tinidazole**</td><td>2 g single dose</td><td>Preferred (single dose, 90% cure)</td></tr><tr><td>**Nitazoxanide**</td><td>500 mg BD × 3 d</td><td>Alternative; children >1 yr</td></tr><tr><td>**Albendazole**</td><td>400 mg OD × 5 d</td><td>Alternative (also anti-helminth)</td></tr><tr><td>**Mepacrine**</td><td>100 mg TDS × 5-7 d</td><td>Historical; yellow staining</td></tr></table>
+<div class="sub-h">Section 10: Antitrichomoniasis — Trichomonas vaginalis</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Metronidazole**</td><td>2 g single dose OR 400-500 mg BD × 5-7 d</td><td>First-line; **TREAT PARTNER**; avoid sex until cured</td></tr><tr><td>**Tinidazole**</td><td>2 g single dose</td><td>Alternative</td></tr><tr><td>**Pregnancy**</td><td>Metronidazole 2nd/3rd tri (avoid 1st if possible)</td><td>Symptomatic Rx only; partner treatment</td></tr></table>
+<div class="sub-h">Section 11: Antileishmanials — Leishmania (VL, CL, MCL)</div>
+<table class="ctable"><tr><th>Drug</th><th>Class</th><th>Use</th><th>Notes</th></tr><tr><td>------</td><td>-------</td><td>-----</td><td>-------</td></tr><tr><td>**Liposomal Amphotericin B (LAmB, AmBisome®)**</td><td>Polyene</td><td>**First-line VL** (Indian subcontinent, East Africa, Brazil); CL (complex); MCL</td><td>3-5 mg/kg/d (total dose 15-21 mg/kg over 3-5 d; or 10 mg/kg single dose in India); expensive but safe; inf reactions</td></tr><tr><td>**Miltefosine**</td><td>Alkylphosphocholine</td><td>**Oral VL**; CL (esp. L. viannia, L. mexicana); MCL</td><td>2.5 mg/kg/d × 28 d (max 150 mg/d); **teratogenic** (contraception × 3 mo); GI toxicity; oral — community-based Rx</td></tr><tr><td>**Paromomycin**</td><td>Aminoglycoside</td><td>VL (with SSG or LAmB); CL (IM, intralesional)</td><td>IM 15 mg/kg/d × 21 d (VL); ototoxic (monitor); not absorbed orally</td></tr><tr><td>**Sodium Stibogluconate (SSG, Pentostam®)**</td><td>Pentavalent antimonial</td><td>VL (1st line in East Africa), CL, MCL (historical)</td><td>20 mg Sb⁵⁺/kg/d IV/IM × 20-28 d; **toxic**: cardiotoxicity (QTc, arrhythmia), pancreatitis, hepatotoxicity, myalgia; resistance in Bihar, India</td></tr><tr><td>**Meglumine antimoniate (Glucantime®)**</td><td>Pentavalent antimonial</td><td>Same as SSG (Latin America, Old World)</td><td>20 mg Sb⁵⁺/kg/d × 20 d</td></tr><tr><td>**Pentamidine**</td><td>Aromatic diamidine</td><td>VL (alternative); CL (L. aethiopica); **PJP**</td><td>4 mg/kg IM alt days × 7-10 doses; toxic: hypoglycaemia → DM, nephrotoxicity, QTc</td></tr></table>
+<p><b>VL Treatment Regimens by Region:</b></p>
+<table class="ctable"><tr><th>Region</th><th>First-line</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Indian subcontinent (Bangladesh, Bhutan, India, Nepal)**</td><td>LAmB (single dose 10 mg/kg), OR LAmB + miltefosine, OR miltefosine + paromomycin (all 10-11 d)</td></tr><tr><td>**East Africa (Sudan, Ethiopia, Kenya, Somalia, Uganda)**</td><td>SSG + paromomycin × 17 d OR LAmB (40 mg/kg total over 3-5 d)</td></tr><tr><td>**South America (Brazil)**</td><td>LAmB (3-5 mg/kg/d × 3-7 d, total 15-25 mg/kg)</td></tr><tr><td>**Mediterranean / Middle East**</td><td>LAmB (3-5 mg/kg/d × 5-7 d)</td></tr><tr><td>**Immunocompromised (HIV co-infection)**</td><td>LAmB (higher dose 3-5 mg/kg/d × 5-10 d), then secondary prophylaxis</td></tr></table>
+<p><b>Cutaneous Leishmaniasis (Old World, simple):</b> Cryotherapy / intralesional SSG / topical paromomycin; <b>complex CL (multiple, large, facial, immunocomp):</b> systemic LAmB, miltefosine, SSG.</p>
+<div class="sub-h">Section 12: Antitrypanosomals — African &amp; American</div>
+<p>#### African Trypanosomiasis (Sleeping Sickness)</p>
+<table class="ctable"><tr><th>Stage / Species</th><th>Drug</th><th>Notes</th></tr><tr><td>----------------</td><td>------</td><td>-------</td></tr><tr><td>**T.b. gambiense, 1st stage (blood/lymph)**</td><td>**Pentamidine** (4 mg/kg IM alt days × 7-10 doses)</td><td>Does NOT cross BBB; safe; hypoglycaemia; alternative: fexinidazole (≥6 yr, <200 mg/dL CSF)</td></tr><tr><td>**T.b. gambiense, 2nd stage (CNS)**</td><td>**Fexinidazole** (oral, 1800 mg × 10 d) OR **NECT** (nifurtimox + eflornithine) OR eflornithine monotherapy</td><td>Fexinidazole now 1st-line in many settings</td></tr><tr><td>**T.b. rhodesiense, 1st stage**</td><td>**Suramin** (test dose 5 mg/kg, then 20 mg/kg IV weekly × 5 doses)</td><td>Nephrotoxicity, anaphylaxis (test dose); does NOT cross BBB</td></tr><tr><td>**T.b. rhodesiense, 2nd stage (CNS)**</td><td>**Melarsoprol** (2.2 mg/kg IV × 10 d) OR **Fexinidazole**</td><td>Melarsoprol = arsenical, **toxic** (encephalopathy 5-10% mortality); fexinidazole preferred</td></tr></table>
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>Notes</th></tr><tr><td>------</td><td>-----------</td><td>-------</td></tr><tr><td>**Suramin**</td><td>Inhibits parasite glycolysis (multiple enzymes)</td><td>Old drug; 1920s; trypanocidal</td></tr><tr><td>**Pentamidine**</td><td>Inhibits DNA, RNA, folate synthesis, mitochondrial Topo II</td><td>Aromatic diamidine</td></tr><tr><td>**Melarsoprol**</td><td>Arsenical — reacts with SH groups (trypanothione)</td><td>Highly toxic; reactive arsenoxide</td></tr><tr><td>**Eflornithine (DFMO)**</td><td>Irreversible inhibitor of **ornithine decarboxylase** → polyamine depletion → kills T.b. gambiense</td><td>"Lose hair" = depilatory (originally cosmetic); T.b. rhodesiense resistant</td></tr><tr><td>**Nifurtimox**</td><td>Nitrofuran — generates ROS, nitroreductase activation</td><td>T. cruzi (Chagas); African (with eflornithine)</td></tr><tr><td>**Fexinidazole**</td><td>5-nitroimidazole (like metronidazole)</td><td>Activated by nitroreductase; oral; game-changer; not for severe CNS (CSF >100 WBC/μL)</td></tr></table>
+<p>#### American Trypanosomiasis (Chagas Disease) — T. cruzi</p>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Benznidazole**</td><td>5-7 mg/kg/d × 30-60 d</td><td>**First-line**; ~80% cure acute, ~20% chronic; photosensitivity, peripheral neuropathy, bone marrow suppression</td></tr><tr><td>**Nifurtimox**</td><td>8-10 mg/kg/d × 60-120 d</td><td>Alternative; GI, neurotoxicity (irritability, insomnia), weight loss</td></tr></table>
+<p><b>Treatment indications:</b> Acute, congenital, reactivated, women of childbearing age, children with chronic; <b>NOT recommended in advanced cardiomyopathy</b> (cardiac damage irreversible); consider if recent infection.</p>
+<div class="sub-h">Section 13: Antitoxoplasma — Toxoplasma gondii</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Treatment</th><th>Notes</th></tr><tr><td>----------</td><td>-----------</td><td>-------</td></tr><tr><td>**Immunocompetent, asymptomatic**</td><td>None</td><td>Self-limiting</td></tr><tr><td>**Immunocompetent, severe / ocular (chorioretinitis)**</td><td>Pyrimethamine + sulfadiazine + folinic acid × 4-6 wk</td><td>Pyrimethamine loading 200 mg, then 50-75 mg/d; sulfadiazine 1-1.5 g q6h; folinic acid 5-20 mg/d (prevent BM)</td></tr><tr><td>**Pregnancy - 1st trimester (acquired)**</td><td>**Spiramycin** 3 g/d (until delivery)</td><td>↓ transplacental transmission; does not treat fetus if infected</td></tr><tr><td>**Pregnancy - fetal infection confirmed (≥2nd tri)**</td><td>Pyrimethamine + sulfadiazine + folinic acid</td><td>After 1st trimester</td></tr><tr><td>**HIV (CD4 <100, Toxo encephalitis)**</td><td>Pyrimethamine + sulfadiazine + folinic acid × 6 wk, then secondary prophylaxis</td><td>Loading pyrimethamine 200 mg; alternative: pyrimethamine + clindamycin; acute: add steroids if mass effect</td></tr><tr><td>**Prophylaxis (CD4 <100, Toxo IgG+)**</td><td>TMP-SMX 1 DS OD</td><td>Same as PCP prophylaxis</td></tr></table>
+<p><b>Mechanism:</b> Pyrimethamine = DHFR inhibitor; sulfadiazine = DHPS inhibitor (folate synthesis blockade — synergistic).</p>
+<div class="sub-h">Section 14: PJP / Pneumocystis Treatment (jirovecii)</div>
+<table class="ctable"><tr><th>Drug</th><th>Indication</th><th>Notes</th></tr><tr><td>------</td><td>-----------</td><td>-------</td></tr><tr><td>**TMP-SMX (Co-trimoxazole)**</td><td>**First-line** treatment & prophylaxis</td><td>Treatment: 15-20 mg/kg/d TMP in 3-4 divided doses × 21 d; prophylaxis: 1 DS (160/800) OD or 3×/wk</td></tr><tr><td>**Pentamidine (IV)**</td><td>Severe / TMP-SMX intolerant</td><td>4 mg/kg/d IV × 21 d; nephrotoxic, hypoglycaemia, pancreatitis</td></tr><tr><td>**Atovaquone (PO)**</td><td>Mild-moderate (alternative)</td><td>750 mg BD × 21 d; take with fatty food</td></tr><tr><td>**Clindamycin + Primaquine**</td><td>Moderate-severe (alternative)</td><td>Synergistic; clindamycin 600-900 mg IV q6-8h + primaquine 15-30 mg base OD; check G6PD</td></tr><tr><td>**Dapsone + TMP**</td><td>Alternative</td><td>Dapsone 100 mg OD + TMP 5 mg/kg q6h; check G6PD (dapsone)</td></tr><tr><td>**Adjunct corticosteroids**</td><td>PaO₂ <70 mmHg OR A-a gradient >35 mmHg</td><td>Prednisone 40 mg BD × 5 d, then 40 mg OD × 5 d, then 20 mg OD × 11 d; reduces mortality</td></tr></table>
+<p><b>Prophylaxis indications:</b> HIV with CD4 &lt;200/μL; transplant; high-dose steroids (&gt;20 mg pred &gt;1 mo); CTD on immunosuppression.</p>
+<div class="sub-h">Section 15: Anthelmintics — Broad-Spectrum Benzimidazoles</div>
+<table class="ctable"><tr><th>Drug</th><th>Spectrum</th><th>Notes</th></tr><tr><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Albendazole**</td><td>**Broad**: Ascaris, hookworm, Trichuris, Strongyloides (alt), Enterobius, Taenia, Echinococcus, **neurocysticercosis**, Giardia, cutaneous larva migrans, microsporidia</td><td>400 mg single dose (STH); 400 mg BD × 8-30 d (cysticercosis, Echinococcus); with fatty food (↑ absorption 5×); **teratogenic** (avoid 1st tri)</td></tr><tr><td>**Mebendazole**</td><td>Ascaris, Trichuris, hookworm, Enterobius</td><td>500 mg single dose (STH) or 100 mg BD × 3 d (Enterobius); less absorbed → safer in pregnancy (2nd/3rd tri)</td></tr><tr><td>**Triclabendazole**</td><td>**Fasciola hepatica/gigantica**; Paragonimus</td><td>10 mg/kg single dose (or 20 mg/kg divided); only drug effective for Fasciola</td></tr><tr><td>**Thiabendazole**</td><td>Obsolete; cutaneous larva migrans, Strongyloides</td><td>Toxic (CNS, hepatotoxic); replaced by albendazole/ivermectin</td></tr></table>
+<p><b>Mechanism:</b> Bind β-tubulin → inhibit microtubule polymerisation → disrupt parasite glucose uptake → glycogen depletion → death (slow).</p>
+<p><b>Adverse effects of benzimidazoles:</b> GI, hepatotoxicity (monitor LFTs in prolonged use), alopecia (rare, albendazole high dose), teratogenicity (albendazole, animal data), leukopenia, Stevens-Johnson (rare).</p>
+<div class="sub-h">Section 16: Avermectins — Ivermectin &amp; Related</div>
+<table class="ctable"><tr><th>Drug</th><th>Spectrum</th><th>Notes</th></tr><tr><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Ivermectin (Mectizan®, Stromectol®)**</td><td>**Strongyloides, Onchocerca, Wuchereria, Loa loa, scabies, head lice**</td><td>200 μg/kg single dose (Strongyloides repeat day 14); repeat 6-12 mo (onchocerciasis); **Mazzotti reaction** (fever, rash, myalgia, hypotension, ocular); **Encephalopathy in Loa loa high Mf** (>30,000 Mf/mL → screen/apheresis)</td></tr><tr><td>**Doxycycline (for Onchocerca)**</td><td>Wolbachia endosymbiont → kills adult worm</td><td>100 mg BD × 6 wk; macrofilaricidal (kills adults)</td></tr><tr><td>**Moxidectin**</td><td>Onchocerca (longer t½)</td><td>Newer; better microfilaricidal suppression</td></tr></table>
+<p><b>Mechanism:</b> Bind glutamate-gated chloride channels (GluCl) → paralysis of nematode pharynx / arthropod muscle; not in mammals (different receptor distribution).</p>
+<div class="sub-h">Section 17: DEC (Diethylcarbamazine) — Filariasis</div>
+<table class="ctable"><tr><th>Drug</th><th>Use</th><th>Notes</th></tr><tr><td>------</td><td>-----</td><td>-------</td></tr><tr><td>**DEC**</td><td>**Lymphatic filariasis** (Wuchereria, Brugia), **Loa loa**, tropical pulmonary eosinophilia</td><td>6 mg/kg/d × 12 d (LF); 8-10 mg/kg/d × 21 d (Loa loa); **Mazzotti reaction** (faster than ivermectin); **encephalopathy in Loa loa high Mf**; pretreatment albendazole/ivermectin sometimes used</td></tr></table>
+<p><b>Mechanism:</b> Activates filarial arachidonic acid metabolism → host immune clearance.</p>
+<div class="sub-h">Section 18: Praziquantel — Trematodes &amp; Cestodes</div>
+<table class="ctable"><tr><th>Drug</th><th>Spectrum</th><th>Notes</th></tr><tr><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Praziquantel**</td><td>**Schistosoma spp.** (S. haematobium, S. mansoni, S. japonicum, S. intercalatum, S. mekongi); **Cestodes** (Taenia saginata/solium, Hymenolepis, Diphyllobothrium); other trematodes (Clonorchis, Opisthorchis, Paragonimus)</td><td>40-60 mg/kg divided (S. mansoni/haematobium 1 d; S. japonicum 60 mg/kg in 2-3 d); 5-10 mg/kg single (Taenia); take with food; bitter; **not in ocular cysticercosis**; safe in pregnancy (2nd/3rd tri; WHO 2022 — use in 1st tri if needed)</td></tr></table>
+<p><b>Mechanism:</b> ↑ parasite membrane Ca²⁺ permeability → tetanic contraction → tegument disruption → host immune attack. Also ↑ host adenosine.</p>
+<p><b>Adverse effects:</b> GI, headache, dizziness, fever, rash; rare: arrhythmia, seizures.</p>
+<div class="sub-h">Section 19: Pyrantel Pamoate — Nematodes</div>
+<table class="ctable"><tr><th>Drug</th><th>Spectrum</th><th>Notes</th></tr><tr><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Pyrantel pamoate**</td><td>Ascaris, hookworm (Necator, Ancylostoma), Enterobius</td><td>11 mg/kg single dose (max 1 g); 2 d for hookworm; depolarising neuromuscular blockade (nicotinic agonist); OTC; alternative to albendazole</td></tr></table>
+<div class="sub-h">Section 20: Other Anthelmintics</div>
+<table class="ctable"><tr><th>Drug</th><th>Use</th><th>Notes</th></tr><tr><td>------</td><td>-----</td><td>-------</td></tr><tr><td>**Niclosamide**</td><td>Taenia, Diphyllobothrium (intestinal cestodes)</td><td>2 g single dose; **NOT for cysticercosis or hydatid**; inhibits oxidative phosphorylation</td></tr><tr><td>**Pyrvinium**</td><td>Enterobius</td><td>5 mg/kg single dose; stains stool red</td></tr><tr><td>**Levamisole**</td><td>Ascaris, hookworm</td><td>2.5-5 mg/kg single dose; nicotine agonist; also immunomodulator</td></tr><tr><td>**Bephenium**</td><td>Hookworm</td><td>Historical</td></tr><tr><td>**Oxamniquine**</td><td>Schistosoma mansoni</td><td>Largely replaced by praziquantel</td></tr></table>
+<div class="sub-h">Section 21: Treatment of Specific Helminths</div>
+<table class="ctable"><tr><th>Parasite</th><th>First-line</th><th>Alternative / Special</th></tr><tr><td>----------</td><td>-----------</td><td>----------------------</td></tr><tr><td>**Ascaris lumbricoides**</td><td>Albendazole 400 mg SD or Mebendazole 500 mg SD</td><td>Pyrantel, Ivermectin</td></tr><tr><td>**Trichuris trichiura (whipworm)**</td><td>Albendazole 400 mg × 3 d</td><td>Mebendazole 500 mg × 3 d (better)</td></tr><tr><td>**Hookworm (Ancylostoma, Necator)**</td><td>Albendazole 400 mg SD</td><td>Mebendazole 100 mg BD × 3 d; iron supplementation</td></tr><tr><td>**Enterobius vermicularis (pinworm)**</td><td>Albendazole 400 mg SD (repeat 2 wk) or Mebendazole 100 mg SD</td><td>Hygiene; treat household</td></tr><tr><td>**Strongyloides stercoralis**</td><td>**Ivermectin 200 μg/kg OD × 2 d (repeat day 14)**</td><td>Albendazole 400 mg BD × 7 d (less effective); hyperinfection: ivermectin daily + AB support</td></tr><tr><td>**Trichinella spiralis**</td><td>Albendazole 400 mg BD × 14 d + steroids</td><td>Severe: albendazole + steroids</td></tr><tr><td>**Toxocara (visceral larva migrans)**</td><td>Albendazole 400 mg BD × 5 d</td><td>Diethylcarbamazine alt; steroids for severe</td></tr><tr><td>**Cutaneous larva migrans (Ancylostoma braziliense)**</td><td>Albendazole 400 mg OD × 3-7 d</td><td>Ivermectin single dose</td></tr><tr><td>**Wuchereria bancrofti / Brugia malayi (LF)**</td><td>**DEC 6 mg/kg/d × 12 d** OR **Ivermectin 200 μg/kg + albendazole 400 mg (MDA)**</td><td>Doxycycline 200 mg/d × 6 wk (Wolbachia → macrofilaricidal)</td></tr><tr><td>**Onchocerca volvulus (river blindness)**</td><td>**Ivermectin 150 μg/kg** every 6-12 mo; **Doxycycline 100 mg BD × 6 wk** (kills adult via Wolbachia)</td><td>MDA: ivermectin every 6 mo</td></tr><tr><td>**Loa loa**</td><td>**DEC 8-10 mg/kg/d × 21 d** (not in MDA — encephalopathy risk)</td><td>**Pre-treat with albendazole 200 mg BD × 21 d** to ↓ Mf; apheresis if Mf >30,000/mL; avoid ivermectin in high Mf</td></tr><tr><td>**Schistosoma haematobium / mansoni**</td><td>Praziquantel 40 mg/kg SD</td><td>Repeat in 4-6 wk</td></tr><tr><td>**Schistosoma japonicum / mekongi**</td><td>Praziquantel 60 mg/kg in 2-3 divided doses</td><td></td></tr><tr><td>**Fasciola hepatica**</td><td>**Triclabendazole 10 mg/kg SD** (or 20 mg/kg in 2 doses)</td><td>Praziquantel NOT effective</td></tr><tr><td>**Clonorchis, Opisthorchis**</td><td>Praziquantel 75 mg/kg in 3 doses × 1 d</td><td>Albendazole alt</td></tr><tr><td>**Paragonimus**</td><td>Praziquantel 75 mg/kg/d in 3 doses × 2 d</td><td>Triclabendazole 20 mg/kg (single or divided)</td></tr><tr><td>**Taenia saginata (beef), T. solium (pork intestinal)**</td><td>Praziquantel 5-10 mg/kg SD OR Niclosamide 2 g SD</td><td>For T. solium: treat constipation (purge) — avoid cysticercosis autoinfection</td></tr><tr><td>**Diphyllobothrium latum**</td><td>Praziquantel 5-10 mg/kg SD OR Niclosamide</td><td>B12 deficiency correction</td></tr><tr><td>**Hymenolepis nana**</td><td>Praziquantel 25 mg/kg SD</td><td>Niclosamide 2 g × 7 d (less effective)</td></tr><tr><td>**Taenia solium — Neurocysticercosis**</td><td>**Albendazole 15 mg/kg/d (max 800 mg) × 28 d + Praziquantel 50 mg/kg/d**</td><td>**+ Steroids first (prednisone 1 mg/kg/d or dexamethasone)** before/with antiparasitics to ↓ oedema; antiepileptics; ± surgery; ± ventriculoperitoneal shunt (hydrocephalus)</td></tr><tr><td>**Echinococcus granulosus (cystic hydatid)**</td><td>**Albendazole 10-15 mg/kg/d × 3-6 mo**; PAIR (puncture, aspiration, injection, re-aspiration)</td><td>Albendazole peri-procedure; surgery for large/complex</td></tr><tr><td>**Echinococcus multilocularis (alveolar)**</td><td>Albendazole lifelong (or until cure)</td><td>Radical surgery if possible</td></tr></table>
+<p><b>Strongyloides hyperinfection / disseminated disease:</b> Ivermectin 200 μg/kg/d PO (or rectal/PRN) + albendazole; reduce immunosuppression (steroids!); up to 2 wk.</p>
+<div class="sub-h">Section 22: Malaria Treatment — WHO Algorithms</div>
+<p><b>Uncomplicated falciparum malaria:</b></p>
+<table class="ctable"><tr><th>Population</th><th>First-line</th></tr><tr><td>------------</td><td>-----------</td></tr><tr><td>**Adults & children >5 kg**</td><td>**ACT × 3 d** (artemether-lumefantrine preferred)</td></tr><tr><td>**Pregnancy 1st trimester**</td><td>**Quinine + clindamycin × 7 d** (ACT not yet fully endorsed; recent evidence supports ACT)</td></tr><tr><td>**Pregnancy 2nd/3rd trimester**</td><td>**ACT**</td></tr><tr><td>**Travellers returning to non-endemic area**</td><td>Atovaquone-proguanil OR quinine + doxycycline</td></tr></table>
+<p><b>Severe malaria (any species):</b></p>
+<ul><li><b>IV artesunate 2.4 mg/kg at 0, 12, 24 h, then daily</b> (≥3 doses)</li><li>Switch to full ACT course when oral intake possible</li><li><b>Quinine</b> (20 mg/kg load, then 10 mg/kg q8h) alternative if artesunate unavailable</li><li>Supportive: fluids (cautious, risk ARDS), transfusion (Hb &lt;7), glucose, treat seizures</li></ul>
+<p><b>Vivax/Ovale (chloroquine-sensitive areas):</b></p>
+<ol><li><b>Chloroquine 25 mg/kg over 3 d</b> (10, 10, 5) — blood stage</li><li><b>Primaquine 0.5 mg/kg/d × 14 d</b> — radical cure (G6PD normal)</li></ol>
+<p><b>Vivax (chloroquine-resistant, e.g. Indonesia/Papua):</b></p>
+<ol><li><b>ACT (DHA-piperaquine or AL) × 3 d</b></li><li><b>Primaquine 14 d</b> or <b>Tafenoquine 300 mg single dose</b> (G6PD normal)</li></ol>
+<p><b>Cure for mixed P. falciparum + vivax:</b> ACT + primaquine (if vivax hypnozoites; check G6PD).</p>
+<div class="sub-h">Section 23: Mass Drug Administration (MDA)</div>
+<table class="ctable"><tr><th>Disease</th><th>Regimen</th><th>Frequency</th><th>Target</th></tr><tr><td>---------</td><td>---------</td><td>-----------</td><td>--------</td></tr><tr><td>**Lymphatic filariasis**</td><td>Ivermectin + albendazole (Africa, onchocerciasis co-endemic) OR DEC + albendazole (Asia, Americas)</td><td>Annual × 4-6 yr</td><td>All eligible population</td></tr><tr><td>**Onchocerciasis**</td><td>Ivermectin 150 μg/kg</td><td>Annual or 6-monthly</td><td>≥90% coverage</td></tr><tr><td>**Schistosomiasis**</td><td>Praziquantel 40 mg/kg (S. haematobium, mansoni)</td><td>Annual</td><td>School-age children</td></tr><tr><td>**Soil-transmitted helminths (STH)**</td><td>Albendazole 400 mg or Mebendazole 500 mg</td><td>Annual (low prevalence) / 2×/yr (high)</td><td>Pre-SAC, SAC, WRA</td></tr><tr><td>**Trachoma**</td><td>Azithromycin</td><td>Annual</td><td>(Bacterial, not parasite)</td></tr></table>
+<p><b>WHO target:</b> LF, onchocerciasis, trachoma elimination by 2030 (NTD roadmap).</p>
+<div class="sub-h">Section 24: Emerging Antimalarials (Pipeline)</div>
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>Status</th><th>Notes</th></tr><tr><td>------</td><td>-----------</td><td>--------</td><td>-------</td></tr><tr><td>**Artemisinin partial resistance**</td><td>Kelch13 propeller mutations (R561H, C580Y, A675V)</td><td>Spreading in Africa (Rwanda, Uganda)</td><td>Threatens ACT</td></tr><tr><td>**KAE609 (Cipargamin)**</td><td>PfATP4 (Na⁺ pump)</td><td>Phase III</td><td>Rapid, novel; multi-resistant</td></tr><tr><td>**Ganaplacide-Lumefantrine (R21/Matrix-M)**</td><td>New ACT</td><td>Phase III</td><td>KAE609 equivalent</td></tr><tr><td>**MMV048**</td><td>PI4K inhibitor</td><td>Phase I/II</td><td>New</td></tr><tr><td>**DSM265**</td><td>DHODH inhibitor</td><td>Phase II</td><td>New target</td></tr><tr><td>**OZ277 (Arterolane)**</td><td>Synthetic peroxide</td><td>Approved (India)</td><td>Part of new ACTs</td></tr><tr><td>**RTS,S/AS01 (Mosquirix®)**</td><td>Pre-erythrocytic vaccine (circumsporozoite)</td><td>WHO recommended (2021)</td><td>4 doses; modest efficacy (~30%); pilot Ghana, Malawi, Kenya</td></tr><tr><td>**R21/Matrix-M**</td><td>Pre-erythrocytic vaccine</td><td>WHO recommended (2023)</td><td>Higher efficacy (~75%); emerging as preferred</td></tr></table>
+<div class="sub-h">Section 25: Antiparasitic Resistance — Key Patterns</div>
+<table class="ctable"><tr><th>Drug</th><th>Resistance</th><th>Region / Notes</th></tr><tr><td>------</td><td>-----------</td><td>----------------</td></tr><tr><td>**Chloroquine**</td><td>P. falciparum (widespread), P. vivax (emerging)</td><td>Africa, Asia, S. America; Papua/Indonesia vivax</td></tr><tr><td>**SP**</td><td>P. falciparum (dhfr/dhps mutations)</td><td>Africa, Asia — no longer for treatment</td></tr><tr><td>**Quinine**</td><td>Partial (SE Asia)</td><td>Declining sensitivity Mekong</td></tr><tr><td>**Mefloquine**</td><td>Borderline (SE Asia)</td><td>Multi-resistant areas</td></tr><tr><td>**Artemisinins**</td><td>Delayed clearance (Kelch13)</td><td>Cambodia, Myanmar, Thailand, Laos, Vietnam; now Africa</td></tr><tr><td>**Atovaquone**</td><td>Single-point mutation (cytochrome b)</td><td>Used with proguanil to protect</td></tr><tr><td>**Melarsoprol**</td><td>T. brucei (arsenical resistance)</td><td>Historical; replaced by NECT</td></tr><tr><td>**SSG**</td><td>L. donovani (Bihar, India)</td><td>LAmB 1st line</td></tr><tr><td>**Benznidazole**</td><td>T. cruzi (variable)</td><td>Strain-dependent</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Drug</th><th>Duration</th></tr><tr><td>----------</td><td>------</td><td>----------</td></tr><tr><td>Uncomplicated falciparum</td><td>Artemether-lumefantrine</td><td>3 d</td></tr><tr><td>Severe falciparum (any)</td><td>IV artesunate</td><td>≥3 doses, then ACT</td></tr><tr><td>Vivax (CQ-sensitive)</td><td>Chloroquine + primaquine</td><td>3 d + 14 d</td></tr><tr><td>Vivax (CQ-resistant)</td><td>ACT + tafenoquine/primaquine</td><td>3 d + 14 d (or SD)</td></tr><tr><td>Amoebic liver abscess</td><td>Metronidazole + paromomycin</td><td>5-10 d + 7 d</td></tr><tr><td>Visceral leishmaniasis (India)</td><td>LAmB single dose (10 mg/kg)</td><td>1 d</td></tr><tr><td>Visceral leishmaniasis (Africa)</td><td>SSG + paromomycin</td><td>17 d</td></tr><tr><td>T.b. gambiense stage 2</td><td>NECT or fexinidazole</td><td>10 d</td></tr><tr><td>T.b. rhodesiense stage 2</td><td>Melarsoprol or fexinidazole</td><td>10 d</td></tr><tr><td>Chagas acute</td><td>Benznidazole</td><td>30-60 d</td></tr><tr><td>Toxoplasma encephalitis (HIV)</td><td>Pyrimethamine + sulfadiazine + folinic acid</td><td>6 wk + secondary prophy</td></tr><tr><td>Strongyloides</td><td>Ivermectin 200 μg/kg D1 & D14</td><td>2 doses</td></tr><tr><td>Onchocerciasis (MDA)</td><td>Ivermectin</td><td>Annual</td></tr><tr><td>LF (MDA)</td><td>DEC + albendazole</td><td>Annual × 4-6 yr</td></tr><tr><td>Schistosomiasis</td><td>Praziquantel 40 mg/kg</td><td>Single (or 60 mg/kg S. japonicum)</td></tr><tr><td>Neurocysticercosis</td><td>Steroids → albendazole + praziquantel</td><td>28 d + antiepileptics</td></tr><tr><td>Echinococcus (hydatid)</td><td>Albendazole</td><td>3-6 mo + PAIR/surgery</td></tr><tr><td>Fasciola</td><td>Triclabendazole</td><td>Single</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> ACT for falciparum, IV artesunate for severe, primaquine/tafenoquine for vivax hypnozoites (G6PD!), metronidazole + luminal for amoebiasis, LAmB for VL, NECT for T.b. gambiense, benznidazole for Chagas, pyrimethamine+sulfadiazine+folinic for Toxo, ivermectin for Strongyloides/onchocerciasis, praziquantel for schistosomiasis, albendazole+praziquantel+steroids for neurocysticercosis, DEC for LF. - <b>Common viva:</b> "Why G6PD before primaquine?", "What does tafenoquine offer over primaquine?", "Treatment of severe malaria", "Loa loa encephalopathy mechanism", "Why albendazole for hydatid with PAIR?", "Differences among benzimidazoles" - <b>Exam trap:</b> Mefloquine = neuropsychiatric (NOT chloroquine); Tafenoquine single dose; triclabendazole (NOT praziquantel) for Fasciola; LAmB for VL/VL-HIV (NOT SSG in India); albendazole + steroids first (NOT albendazole alone) in neurocysticercosis; suramin/pentamidine do NOT cross BBB; eflornithine only T.b. gambiense.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Quinine = 1st line severe malaria**</td><td>IV artesunate is now 1st line (WHO); quinine is alternative</td></tr><tr><td>**Primaquine for falciparum**</td><td>Primaquine is gametocide for falciparum (transmission); for vivax/ovale hypnozoite eradication</td></tr><tr><td>**Tafenoquine = primaquine alternative**</td><td>Both 8-aminoquinolines; tafenoquine is single dose but both need G6PD test</td></tr><tr><td>**Mefloquine = neuropsychiatric**</td><td>Yes; chloroquine = retinopathy, pruritus; quinine = cinchonism, hypoglycaemia</td></tr><tr><td>**Praziquantel for Fasciola**</td><td>NO — only triclabendazole works for Fasciola</td></tr><tr><td>**Albendazole single dose for neurocysticercosis**</td><td>NO — needs 28 d + steroids first + praziquantel adjunct + antiepileptics</td></tr><tr><td>**Albendazole is safe in pregnancy**</td><td>NO — teratogenic (1st trimester avoided); use mebendazole cautiously 2nd/3rd tri or pyrantel</td></tr><tr><td>**SSG = first line VL everywhere**</td><td>NO — resistance in Bihar, India; LAmB is 1st line there</td></tr><tr><td>**Suramin & pentamidine cross BBB**</td><td>NO — only for stage 1; melarsoprol/eflornithine/fexinidazole for stage 2</td></tr><tr><td>**Eflornithine for T.b. rhodesiense**</td><td>NO — only T.b. gambiense (rhodesiense resistant)</td></tr><tr><td>**Chloroquine still works for vivax everywhere**</td><td>NO — resistance emerging in Indonesia, Papua, S. America (use ACT)</td></tr><tr><td>**DEC for onchocerciasis**</td><td>DEC is CONTRAINDICATED in onchocerciasis (Mazzotti); use ivermectin</td></tr><tr><td>**Mebendazole safe in pregnancy**</td><td>Mebendazole 2nd/3rd tri cautiously; albendazole 1st tri avoided</td></tr><tr><td>**Ivermectin for scabies single dose**</td><td>Standard; crusted scabies needs 3-7 doses + keratolytic + ivermectin 200 μg/kg weekly</td></tr><tr><td>**Pyrimethamine monotherapy for Toxo**</td><td>Always combine with sulfadiazine + folinic acid (synergy + prevent BM)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Antimalarial by life-cycle stage:</b> <b>"B-T-G-S"</b> → <b>B</b>lood (chloroquine, quinine, ACT), <b>T</b>issue (primaquine, tafenoquine), <b>G</b>ametocyte (primaquine, artemisinins), <b>S</b>poront (proguanil, primaquine)</li><li><b>WHO first-line ACTs:</b> <b>"AL-ASQ-DHP-ASMQ-ASSP-ASPQ"</b> → 6 ACTs; <b>"A</b>rtemether-<b>L</b>umefantrine" = default</li><li><b>Severe malaria:</b> <b>"AAA"</b> → <b>A</b>rtesunate IV, <b>A</b>void fluids, <b>A</b>nticonvulsant if seizures</li><li><b>Vivax cure = 2 drugs:</b> <b>"BC + PT"</b> → <b>B</b>lood stage (chloroquine/ACT) + hypnozoite (<b>P</b>rimaquine/<b>T</b>afenoquine)</li><li><b>G6PD drugs (haemolysis):</b> <b>"PAPS-S"</b> → <b>P</b>rimaquine, <b>A</b>modiaquine (mild), <b>P</b>amaquine, <b>S</b>ulfonamides, <b>S</b>tibogluconate, dapsone, nitrofurantoin</li><li><b>Amoebiasis treatment = 2 phases:</b> <b>"Tissue (Metro) + Luminal (Paro)"</b></li><li><b>VL treatment by region:</b> <b>"India = LAmB single dose; Africa = SSG + Paro"</b></li><li><b>African tryp stage 2 drugs:</b> <b>"FEM"</b> → <b>F</b>exinidazole, <b>E</b>flornithine (± Nifurtimox = NECT), <b>M</b>elarsoprol (T.b. rhodesiense)</li><li><b>Strongyloides = Ivermectin (NOT albendazole)</b>: <b>"S</b>trongyloides <b>I</b>vermectin <b>D</b>ay 1 + 14"</li><li><b>Schistosomiasis vs Fasciola:</b> <b>"P</b>raziquantel for <b>P</b>latyhelminths (trematodes) EXCEPT <b>F</b>asciola (<b>T</b>riclabendazole)"</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Antiparasitic Agents)) Antimalarials Blood_schizonticides Chloroquine_CQ Quinine_Quinidine Artemisinins_ACT Mefloquine_Lumefantrine Atovaquone_Proguanil SP_Doxycycline Tissue_schizonticides Primaquine_G6PD Tafenoquine_SD Proguanil_Atovaquone Gametocides Primaquine Artemisinins Severe_malaria IV_Artesunate Quinine_alternative Antiprotozoals_non_malaria Metronidazole_Tinidazole Amoebiasis_tissue Giardia Trichomonas Anaerobes Luminal Paromomycin Diloxanide Leishmaniasis LAmB_1st_line Miltefosine_oral Paromomycin SSG_Pentamidine Trypanosomiasis African_Pentamidine_Suramin Stage2_Fexinidazole_NECT_Melarsoprol Chagas_Benznidazole_Nifurtimox Toxoplasma Pyrimethamine_Sulfadiazine_Folinic Spiramycin_pregnancy TMP_SMX_prophylaxis PJP TMP_SMX_1st Pentamidine_Atovaquone_Clinda_Primaquine Anthelmintics Benzimidazoles Albendazole_broad Mebendazole Triclabendazole_Fasciola Avermectins Ivermectin_Strongyloides_Onchocerca_LF_Scabies Doxycycline_Wolbachia DEC LF_Loa_loa Praziquantel Schistosomes Cestodes_Taenia Pyrantel Ascaris_Hookworm_Pinworm Special_Scenarios G6PD_testing_algorithm Pregnancy Mass_Drug_Administration Severe_malaria Strongyloides_hyperinfection Neurocysticercosis </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>ACT regimens for uncomplicated falciparum</li><li>Radical cure for vivax/ovale (primaquine 14 d or tafenoquine single dose) + G6PD testing</li><li>Severe malaria: IV artesunate (≥3 doses)</li><li>Amoebiasis: metronidazole + luminal (paromomycin/diloxanide)</li><li>Visceral leishmaniasis 1st line: LAmB (India), SSG+paromomycin (Africa)</li><li>African trypanosomiasis 2nd stage: Fexinidazole (1st line), NECT, or melarsoprol</li><li>Chagas disease: benznidazole (or nifurtimox)</li><li>Toxoplasma: pyrimethamine + sulfadiazine + folinic acid (+ steroids if severe, + TMP-SMX prophylaxis)</li><li>Helminths: albendazole (broad), mebendazole, ivermectin (Strongyloides, onchocerciasis), praziquantel (schistosomes, cestodes), DEC (LF, loa loa)</li><li>Strongyloides: ivermectin 200 μg/kg day 1 + 14</li><li>Neurocysticercosis: steroids FIRST → albendazole + praziquantel</li><li>Trichinella, hydatid, neurocysticercosis dosing</li><li>Mass drug administration: LF (DEC/ivermectin + albendazole), oncho (ivermectin), schisto (praziquantel), STH (albendazole/mebendazole)</li><li>Antimalarial resistance: chloroquine, SP, artemisinin (kelch13)</li><li>Pregnancy malaria: quinine + clindamycin (1st tri); ACT (2nd/3rd)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>ACT regimens, severe malaria (IV artesunate), radical cure (G6PD testing), amoebiasis (metro + luminal), VL (LAmB, regional), trypanosomiasis (NECT, fexinidazole, melarsoprol), Chagas (benznidazole), toxoplasma (pyr + sulfa + folinic), PJP (TMP-SMX), major helminths (albendazole, mebendazole, ivermectin, praziquantel, DEC, triclabendazole), Strongyloides, neurocysticercosis (steroids first), MDA, G6PD algorithm</td></tr><tr><td>**Should Know 🟡**</td><td>Resistance patterns (kelch13, dhfr/dhps), PK of antimalarials, paediatric dosing, pregnancy safety, new antimalarials (KAE609, MMV048, DSM265, ganaplacide), vaccines (RTS,S, R21), tafenoquine pharmacology, Ivermectin for scabies, MDA programmes (NTD roadmap)</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel targets (PI4K, DHODH, PfATP4), monoclonal antibodies for malaria, Wolbachia depletion, vector control integration (ITN, IRS), ivermectin for COVID (controversial), elimination programmes, leishmaniasis vaccine (LEISH-F3+)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Antimalarials by life-cycle stage → ACT components → severe malaria → vivax radical cure (G6PD algorithm) → Amoebiasis (tissue + luminal) → VL (regional regimens) → Trypanosomiasis (stage + species-based) → Helminths spectrum → Resistance</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>ACT for falciparum; IV artesunate for severe malaria; G6PD testing algorithm; Amoebic liver abscess; LAmB for VL; NECT for T.b. gambiense; Ivermectin for Strongyloides; Praziquantel spectrum; Neurocysticercosis; Toxoplasma treatment</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>Lead with mechanism, mention life-cycle stage, give first-line, mention key adverse (e.g. G6PD, cinchonism), exam trap (chloroquine resistance, albendazole not for pinworm reinfection)</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Falciparum with severe features → IV artesunate; Vivax → CQ + primaquine (test G6PD); Amoebic dysentery → Metro + paromomycin; Strongyloides in immunosuppressed → ivermectin; Neurocysticercosis → steroids first + albendazole + praziquantel</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>First-line treatment for uncomplicated P. falciparum malaria (WHO):</b></li></ol>
+<p>A. Chloroquine B. Quinine + doxycycline C. <b>Artemether-lumefantrine (ACT)</b> D. Mefloquine monotherapy E. Atovaquone-proguanil</p>
+<ol><li><b>Severe P. falciparum malaria — drug of choice:</b></li></ol>
+<p>A. IV quinine B. Oral ACT C. <b>IV artesunate 2.4 mg/kg</b> D. IM artemether E. Chloroquine IM</p>
+<ol><li><b>Radical cure for P. vivax requires:</b></li></ol>
+<p>A. Chloroquine alone B. <b>Primaquine 0.5 mg/kg × 14 d OR tafenoquine 300 mg single dose (after G6PD testing)</b> C. ACT alone D. Mefloquine E. Atovaquone-proguanil</p>
+<ol><li><b>Mechanism of chloroquine resistance in P. falciparum:</b></li></ol>
+<p>A. DHFR mutation B. <b>PfCRT (K76T) and PfMDR1 mutations → ↓ drug accumulation in food vacuole</b> C. Cytochrome b mutation D. Topoisomerase mutation E. Kelch13 mutation</p>
+<ol><li><b>Amoebic liver abscess — complete treatment:</b></li></ol>
+<p>A. Metronidazole alone B. <b>Metronidazole + luminal agent (paromomycin or diloxanide furoate)</b> C. Albendazole D. Chloroquine E. Tinidazole alone</p>
+<ol><li><b>Visceral leishmaniasis (India, Bihar) — first line:</b></li></ol>
+<p>A. Pentavalent antimony (SSG) B. <b>Liposomal Amphotericin B (single dose 10 mg/kg) OR miltefosine-paromomycin combination</b> C. Pentamidine D. Miltefosine alone E. Paromomycin alone</p>
+<ol><li><b>T.b. gambiense 2nd stage (CNS) — first-line treatment (2023):</b></li></ol>
+<p>A. Suramin B. Pentamidine C. Melarsoprol D. <b>Fexinidazole (oral × 10 d) OR NECT (nifurtimox + eflornithine)</b> E. Eflornithine alone</p>
+<ol><li><b>Strongyloides stercoralis — first-line:</b></li></ol>
+<p>A. Albendazole 400 mg single dose B. Mebendazole 500 mg single dose C. <b>Ivermectin 200 μg/kg day 1 and day 14</b> D. Praziquantel 40 mg/kg E. DEC 6 mg/kg</p>
+<ol><li><b>Neurocysticercosis — best initial management:</b></li></ol>
+<p>A. Albendazole alone B. Praziquantel alone C. <b>Corticosteroids first to reduce cerebral oedema, then albendazole + praziquantel + antiepileptics</b> D. Surgery alone E. Ivermectin</p>
+<ol><li><b>Praziquantel is effective against all EXCEPT:</b></li></ol>
+<p>A. Schistosoma haematobium B. Taenia saginata C. <b>Fasciola hepatica (use triclabendazole)</b> D. Hymenolepis nana E. Schistosoma japonicum</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 25-year-old man returns from Papua, Indonesia with P. vivax malaria. G6PD screening is normal. Best single-dose radical cure option:</b></li></ol>
+<p>A. Chloroquine only B. <b>Tafenoquine 300 mg single dose (with chloroquine for blood stage)</b> C. Primaquine 14 d D. Mefloquine E. ACT only</p>
+<ol><li><b>HIV patient with CD4 50, ring-enhancing brain lesion on MRI, Toxo IgG+. Best empirical treatment:</b></li></ol>
+<p>A. Dexamethasone only B. <b>Pyrimethamine (loading 200 mg, then 75 mg/d) + sulfadiazine 1.5 g q6h + folinic acid × 6 weeks</b> C. Albendazole D. Atovaquone monotherapy E. Primaquine + clindamycin</p>
+<ol><li><b>Strongyloides hyperinfection in a 65-year-old on prednisolone 20 mg for PMR. Best management:</b></li></ol>
+<p>A. Albendazole 400 mg single dose B. <b>Ivermectin 200 μg/kg daily PO (or rectal/SC) + reduce immunosuppression + broad-spectrum antibiotics</b> C. Praziquantel D. DEC E. Mebendazole</p>
+<ol><li><b>Pregnant woman (12 weeks) with uncomplicated falciparum malaria in a low-transmission setting. Best regimen:</b></li></ol>
+<p>A. ACT (artemether-lumefantrine) B. <b>Quinine 10 mg/kg q8h + clindamycin 5 mg/kg q8h × 7 days</b> C. Chloroquine D. Mefloquine E. IV artesunate</p>
+<ol><li><b>6-year-old in Onchocerciasis-endemic area (Mazzotti-positive skin snip). Most appropriate MDA drug and concern:</b></li></ol>
+<p>A. DEC — risk of severe Mazzotti reaction B. <b>Ivermectin 150 μg/kg — risk of Mazzotti reaction but manageable; DEC is contraindicated in onchocerciasis</b> C. Albendazole alone D. Praziquantel E. Doxycycline</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>First-line ACT for uncomplicated falciparum?</b></li></ul>
+<p>A: Artemether-lumefantrine × 3 days (with fatty food)</p>
+<ul><li>Q: <b>Severe falciparum treatment?</b></li></ul>
+<p>A: IV artesunate 2.4 mg/kg at 0, 12, 24 h, then daily; switch to ACT when oral</p>
+<ul><li>Q: <b>Radical cure vivax/ovale?</b></li></ul>
+<p>A: Primaquine 0.5 mg/kg × 14 d OR tafenoquine 300 mg single dose (after G6PD test)</p>
+<ul><li>Q: <b>Why G6PD test before primaquine?</b></li></ul>
+<p>A: 8-aminoquinolines cause severe haemolysis in G6PD-deficient patients</p>
+<ul><li>Q: <b>Mechanism of chloroquine?</b></li></ul>
+<p>A: Concentrates in parasite food vacuole → inhibits haem polymerase → free haem kills parasite</p>
+<ul><li>Q: <b>ACT components?</b></li></ul>
+<p>A: Artemisinin derivative (short t½, rapid kill) + partner drug (long t½, clears residual)</p>
+<ul><li>Q: <b>Artemisinin resistance gene?</b></li></ul>
+<p>A: Kelch13 (K13 propeller) — delayed parasite clearance</p>
+<ul><li>Q: <b>Amoebic liver abscess regimen?</b></li></ul>
+<p>A: Metronidazole 750 mg TDS × 5-10 d + paromomycin (luminal) 500 mg TDS × 7 d</p>
+<ul><li>Q: <b>Metronidazole mechanism?</b></li></ul>
+<p>A: Pro-drug → activated by ferredoxin (nitroreductase) → toxic radicals → DNA damage</p>
+<ul><li>Q: <b>Disulfiram-like reaction with metronidazole?</b></li></ul>
+<p>A: Yes (avoid alcohol)</p>
+<ul><li>Q: <b>Visceral leishmaniasis 1st line in India?</b></li></ul>
+<p>A: LAmB 10 mg/kg single dose (or LAmB + miltefosine; or miltefosine + paromomycin)</p>
+<ul><li>Q: <b>SSG toxicity?</b></li></ul>
+<p>A: QTc, arrhythmia, pancreatitis, hepatotoxicity, myalgia</p>
+<ul><li>Q: <b>Miltefosine main concern?</b></li></ul>
+<p>A: Teratogenic (contraception × 3 months)</p>
+<ul><li>Q: <b>T.b. gambiense stage 1 drug?</b></li></ul>
+<p>A: Pentamidine 4 mg/kg IM on alternate days × 7-10</p>
+<ul><li>Q: <b>T.b. gambiense stage 2 drug?</b></li></ul>
+<p>A: Fexinidazole (oral × 10 d) or NECT (nifurtimox + eflornithine × 7 d)</p>
+<ul><li>Q: <b>T.b. rhodesiense stage 2 drug?</b></li></ul>
+<p>A: Melarsoprol (arsenical, toxic) or fexinidazole</p>
+<ul><li>Q: <b>Chagas disease 1st line?</b></li></ul>
+<p>A: Benznidazole 5-7 mg/kg/d × 30-60 d</p>
+<ul><li>Q: <b>Toxoplasma treatment triad?</b></li></ul>
+<p>A: Pyrimethamine + sulfadiazine + folinic acid (6 wk + secondary prophylaxis)</p>
+<ul><li>Q: <b>Why folinic acid with pyrimethamine?</b></li></ul>
+<p>A: Prevents bone marrow suppression (leucovorin rescue)</p>
+<ul><li>Q: <b>PJP 1st line treatment?</b></li></ul>
+<p>A: TMP-SMX high dose × 21 d</p>
+<ul><li>Q: <b>When to add steroids in PJP?</b></li></ul>
+<p>A: PaO₂ &lt;70 mmHg or A-a gradient &gt;35 mmHg</p>
+<ul><li>Q: <b>Ivermectin indications?</b></li></ul>
+<p>A: Strongyloides, onchocerciasis, LF (with albendazole), scabies, loa loa (caution)</p>
+<ul><li>Q: <b>Strongyloides dose?</b></li></ul>
+<p>A: Ivermectin 200 μg/kg D1 &amp; D14</p>
+<ul><li>Q: <b>Ivermectin in Loa loa risk?</b></li></ul>
+<p>A: Encephalopathy if Mf &gt;30,000/mL (screen or pre-treat with albendazole)</p>
+<ul><li>Q: <b>DEC use?</b></li></ul>
+<p>A: LF, loa loa, tropical pulmonary eosinophilia (NOT onchocerciasis)</p>
+<ul><li>Q: <b>DEC in onchocerciasis?</b></li></ul>
+<p>A: Contraindicated (severe Mazzotti)</p>
+<ul><li>Q: <b>Albendazole spectrum?</b></li></ul>
+<p>A: Broad: Ascaris, hookworm, Trichuris, Enterobius, Strongyloides (alt), Taenia, Echinococcus, neurocysticercosis, Giardia</p>
+<ul><li>Q: <b>Triclabendazole use?</b></li></ul>
+<p>A: Fasciola hepatica (only drug effective)</p>
+<ul><li>Q: <b>Praziquantel spectrum?</b></li></ul>
+<p>A: Schistosomes + most trematodes + cestodes (NOT Fasciola)</p>
+<ul><li>Q: <b>Neurocysticercosis regimen?</b></li></ul>
+<p>A: Steroids → albendazole (15 mg/kg/d) + praziquantel + antiepileptics</p>
+<ul><li>Q: <b>Echinococcus (hydatid) regimen?</b></li></ul>
+<p>A: Albendazole 10-15 mg/kg/d × 3-6 months ± PAIR/surgery</p>
+<ul><li>Q: <b>Mazzotti reaction?</b></li></ul>
+<p>A: Inflammatory response to dying microfilariae (fever, rash, myalgia, hypotension, ocular)</p>
+<ul><li>Q: <b>Mebendazole vs albendazole in pregnancy?</b></li></ul>
+<p>A: Albendazole teratogenic (avoid 1st tri); mebendazole cautiously 2nd/3rd tri</p>
+<ul><li>Q: <b>Resistance — chloroquine?</b></li></ul>
+<p>A: P. falciparum (widespread); P. vivax (Indonesia, Papua, S. America)</p>
+<ul><li>Q: <b>Resistance — SP?</b></li></ul>
+<p>A: dhfr/dhps mutations (no longer for treatment)</p>
+<ul><li>Q: <b>Antimalarial mechanism categories?</b></li></ul>
+<p>A: Schizonticide (blood/tissue), gametocide, sporonticide</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — ACT (artemether-lumefantrine) is WHO first-line. Chloroquine (A) resistance. Quinine+doxy (B) is treatment alternative, not first-line. Mefloquine monotherapy (D) resistance. Atovaquone-proguanil (E) for travellers.</li><li><b>C</b> — IV artesunate 2.4 mg/kg ≥3 doses (WHO 2010+). IV quinine (A) alternative but inferior. ACT (B) needs oral. Artemether IM (D) is pre-referral. Chloroquine (E) resistance.</li><li><b>B</b> — Primaquine 14 d (or tafenoquine SD) eradicates hypnozoites (radical cure). Chloroquine (A) is blood-stage only. ACT (C) does not kill hypnozoites. Mefloquine (D), Atovaquone-proguanil (E) are not for vivax hypnozoites.</li><li><b>B</b> — PfCRT K76T + PfMDR1 mutations cause CQ efflux from food vacuole. DHFR (A) is for pyrimethamine. Cytochrome b (C) is atovaquone. Topo (D) is fluoroquinolone. Kelch13 (E) is artemisinin.</li><li><b>B</b> — Tissue amoebicide (metronidazole) + luminal (paromomycin) is essential to prevent relapse/intestinal carriage. Metronidazole alone (A) fails to clear intestinal cysts. Albendazole (C) is antihelminth. Chloroquine (D) is antimalarial. Tinidazole alone (E) is tissue only.</li><li><b>B</b> — LAmB (single dose) is WHO 1st line in Indian subcontinent (Bihar SSG resistance). SSG (A) resistance in Bihar. Pentamidine (C) toxic. Miltefosine/paromomycin alone (D/E) are alternatives.</li><li><b>D</b> — Fexinidazole (oral × 10 d) is new 1st line; NECT (nifurtimox + eflornithine) is alternative. Suramin (A) and pentamidine (B) don't cross BBB. Melarsoprol (C) is T.b. rhodesiense. Eflornithine alone (E) is monotherapy, less effective.</li><li><b>C</b> — Ivermectin 200 μg/kg D1 &amp; D14 is 1st line for uncomplicated Strongyloides. Albendazole 400 mg SD (A) less effective. Mebendazole (B) is poor for Strongyloides. Praziquantel (D) and DEC (E) are not for Strongyloides.</li><li><b>C</b> — Steroids FIRST (reduce cerebral oedema from dying cysticerci), then albendazole + praziquantel + antiepileptics. Albendazole alone (A) causes severe inflammation. Praziquantel alone (B) is suboptimal. Surgery (D) for hydrocephalus, not routine. Ivermectin (E) is for nematodes, not cestodes.</li><li><b>C</b> — Fasciola requires triclabendazole (praziquantel is ineffective — Fasciola is "tolerant" to praziquantel due to tegument structure). All others listed are praziquantel-susceptible.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Tafenoquine 300 mg single dose (with chloroquine for blood-stage) is the latest radical cure option (G6PD normal); superior compliance to 14-d primaquine. C is correct but tafenoquine is the answer the examiner wants.</li><li><b>B</b> — Empirical toxoplasmosis in HIV: pyrimethamine (loading 200 mg) + sulfadiazine (1-1.5 g q6h) + folinic acid (5-20 mg/d). Steroids only if significant mass effect. Albendazole is for helminths. Atovaquone is salvage.</li><li><b>B</b> — Hyperinfection requires daily ivermectin (oral/PR/SC), reduce immunosuppression (steroids!), and broad-spectrum antibiotics (Gram-negative translocation). Albendazole (A) is inferior. Praziquantel/DEC/mebendazole (C/D/E) are not for Strongyloides.</li><li><b>B</b> — Quinine + clindamycin is the safest regimen in 1st trimester (recent evidence supports ACT, but quinine + clinda is classical). ACT (A) is now being used 1st tri but historically quinine + clinda. Chloroquine (C) is resistance. Mefloquine (D) — concerns. IV artesunate (E) reserved for severe.</li><li><b>B</b> — Ivermectin is MDA drug for onchocerciasis (DEC is contraindicated — severe Mazzotti). Albendazole/praziquantel (C/D) are not for oncho. Doxycycline (E) is for adults (kills Wolbachia), not used in MDA in children.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Antiparasitic Agents: Classification &amp; Mechanisms</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Match drug to life-cycle stage (radical cure = 8-aminoquinoline for vivax hypnozoites; ACT for asexual falciparum; tissue + luminal for amoebiasis; species + stage for trypanosomiasis). Test G6PD before primaquine/tafenoquine. Anthelmintics by class: benzimidazoles (broad), ivermectin (Strongyloides/oncho), praziquantel (schisto/cestodes — NOT Fasciola), DEC (LF/loa loa), triclabendazole (Fasciola only). <b>Exam focus:</b> ACT components &amp; first-line; IV artesunate for severe; G6PD algorithm; amoebiasis dual therapy; LAmB for VL; fexinidazole/NECT for African trypanosomiasis stage 2; benznidazole for Chagas; pyr+sulfa+folinic for Toxo; neurocysticercosis steroids first; albendazole hydatid; ivermectin for Strongyloides; praziquantel spectrum. <b>Clinical relevance:</b> Drug choice depends on species, stage, host (pregnancy, G6PD, immunosuppression), and geography (resistance). Mass drug administration is key to NTD elimination. New antimalarials in pipeline (KAE609, ganaplacide) for artemisinin resistance.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antiparasitic Agents Classification Mechanisms · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Screening Wilson Jungner Criteria Programs Ethics — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.2. POPULATION HEALTH ASSESSMENT</span>
+      <div class="h1">Screening Wilson Jungner Criteria Programs Ethics</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] List and apply Wilson-Jungner criteria (10 principles) for screening programmes</li><li>[ ] Describe UK National Screening Programmes (adult + antenatal/newborn)</li><li>[ ] Explain screening biases: lead-time, length, overdiagnosis, selection</li><li>[ ] Calculate PPV/NPV in screening context; understand prevalence dependence</li><li>[ ] Distinguish screening vs diagnostic testing; screening vs case-finding</li><li>[ ] Apply ethical framework: benefits, harms, autonomy, justice, proportionality</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Screening**</td><td>Systematic application of test to asymptomatic population to identify those at high risk, who benefit from early intervention</td></tr><tr><td>**Case-Finding**</td><td>Opportunistic testing of at-risk individuals presenting for other reasons</td></tr><tr><td>**Diagnostic Test**</td><td>Applied to symptomatic individuals to confirm/exclude diagnosis</td></tr><tr><td>**Wilson-Jungner Criteria (1968)**</td><td>10 principles for screening programme appraisal</td></tr><tr><td>**Programme Standards**</td><td>Failsafe, quality assurance, informed choice, equity of access</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological framework - see Wilson-Jungner criteria and bias types below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Wilson-Jungner Criteria (10 Principles)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Criterion</th><th>Description</th><th>Modern Interpretation</th></tr><tr><td>-----------</td><td>-------------</td><td>----------------------</td></tr><tr><td>**1. Important Health Problem**</td><td>High burden (prevalence × severity)</td><td>Measured by DALYs, QALYs, mortality</td></tr><tr><td>**2. Accepted Treatment**</td><td>Effective intervention for screen-detected cases</td><td>Evidence-based, accessible, timely</td></tr><tr><td>**3. Facilities for Diagnosis/Treatment**</td><td>Service capacity for screen-positive</td><td>Workforce, pathways, MDTs</td></tr><tr><td>**4. Recognisable Latent/Early Stage**</td><td>Detectable preclinical phase (DPCP)</td><td>Biology allows early detection</td></tr><tr><td>**5. Suitable Test**</td><td>Valid, acceptable, safe, cost-effective</td><td>Sn/Sp, LR, AUC; patient-acceptable</td></tr><tr><td>**6. Test Acceptable to Population**</td><td>High uptake, low anxiety</td><td>Cultural, literacy, invasiveness</td></tr><tr><td>**7. Natural History Understood**</td><td>Progression from latent to clinical</td><td>Epidemiological evidence</td></tr><tr><td>**8. Agreed Treatment Policy**</td><td>Who to treat, when, how</td><td>Guidelines, thresholds, pathways</td></tr><tr><td>**9. Cost-Effective**</td><td>Resource use vs benefit (ICER < threshold)</td><td>£/QALY, budget impact, opportunity cost</td></tr><tr><td>**10. Continuous Process**</td><td>Not one-off; quality assured, monitored</td><td>Failsafe, KPIs, equity audit</td></tr></table>
+<p><b>UK National Screening Committee (UK NSC) Criteria</b> - updated Wilson-Jungner with explicit evidence requirements.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (UK Screening Programmes)</span>
+  </div>
+  <div class="sec-body">
+<p><b>UK Adult Screening Programmes (England):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Programme&lt;/th&gt;&lt;th&gt;Target&lt;/th&gt;&lt;th&gt;Test&lt;/th&gt;&lt;th&gt;Interval&lt;/th&gt;&lt;th&gt;Key Metrics&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Abdominal Aortic Aneurysm (AAA)</b>&lt;/td&gt;&lt;td&gt;Men 65&lt;/td&gt;&lt;td&gt;Ultrasound&lt;/td&gt;&lt;td&gt;Once&lt;/td&gt;&lt;td&gt;Rupture risk &gt;5.5cm&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Bowel Cancer</b>&lt;/td&gt;&lt;td&gt;60-74 (extending to 50)&lt;/td&gt;&lt;td&gt;FIT (faecal immunochemical)&lt;/td&gt;&lt;td&gt;2 years&lt;/td&gt;&lt;td&gt;FIT &gt;120 μg/g → colonoscopy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Breast Cancer</b>&lt;/td&gt;&lt;td&gt;Women 50-70 (47-73 invite)&lt;/td&gt;&lt;td&gt;Mammography&lt;/td&gt;&lt;td&gt;3 years&lt;/td&gt;&lt;td&gt;2-view mammogram&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Cervical Cancer</b>&lt;/td&gt;&lt;td&gt;Women 25-64&lt;/td&gt;&lt;td&gt;HPV primary + cytology&lt;/td&gt;&lt;td&gt;3yr (25-49), 5yr (50-64)&lt;/td&gt;&lt;td&gt;HPV +ve → cytology/triage&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Diabetic Eye</b>&lt;/td&gt;&lt;td&gt;Diabetics 12+&lt;/td&gt;&lt;td&gt;Digital retinal photography&lt;/td&gt;&lt;td&gt;Annual&lt;/td&gt;&lt;td&gt;R0/R1/R2/M0 grading&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>UK Antenatal &amp; Newborn Screening:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Programme&lt;/th&gt;&lt;th&gt;Timing&lt;/th&gt;&lt;th&gt;Test&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Sickle Cell &amp; Thalassaemia</b>&lt;/td&gt;&lt;td&gt;10 wks antenatal&lt;/td&gt;&lt;td&gt;Blood test (HPLC)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Infectious Diseases (HIV, Hep B, Syphilis)</b>&lt;/td&gt;&lt;td&gt;Booking&lt;/td&gt;&lt;td&gt;Serology&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Down's/Edwards/Patau</b>&lt;/td&gt;&lt;td&gt;10-14 wks&lt;/td&gt;&lt;td&gt;Combined test (NT + PAPP-A + β-hCG) or NIPT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Fetal Anomaly</b>&lt;/td&gt;&lt;td&gt;18-21 wks&lt;/td&gt;&lt;td&gt;Ultrasound (TIFFA)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Newborn Blood Spot</b>&lt;/td&gt;&lt;td&gt;Day 5&lt;/td&gt;&lt;td&gt;Heel prick (9 conditions: PKU, MCADD, MSUD, IVA, GA1, HCU, CHT, CF, SCD)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Newborn Hearing</b>&lt;/td&gt;&lt;td&gt;Before 4 wks&lt;/td&gt;&lt;td&gt;AOAE / AABR&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Newborn Physical Exam</b>&lt;/td&gt;&lt;td&gt;72 hrs &amp; 6-8 wks&lt;/td&gt;&lt;td&gt;Hips, heart, eyes, testes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Screening Biases)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Bias</th><th>Mechanism</th><th>Effect</th><th>Mitigation</th></tr><tr><td>------</td><td>-----------</td><td>--------</td><td>------------</td></tr><tr><td>**Lead-Time Bias**</td><td>Earlier detection without changing death time</td><td>Apparent ↑ survival (artificial)</td><td>Use mortality (not survival) as endpoint; RCT with mortality</td></tr><tr><td>**Length Bias**</td><td>Screening detects slower-growing (less aggressive) cases</td><td>Overestimates benefit; misses aggressive fast-progressing</td><td>RCT; interval cancer analysis</td></tr><tr><td>**Overdiagnosis**</td><td>Detects lesions that would never cause symptoms/death</td><td>Harm from unnecessary treatment</td><td>RCT; autopsy studies; long-term follow-up</td></tr><tr><td>**Selection Bias**</td><td>Volunteers healthier/higher risk than non-volunteers</td><td>Distorts benefit estimate</td><td>Population-based invitation; intention-to-screen analysis</td></tr><tr><td>**Self-Selection Bias**</td><td>Those attending differ systematically</td><td>Overestimates effectiveness</td><td>Compare invitees vs non-invitees</td></tr></table>
+<p><b>Mermaid: Lead-Time Bias</b> ``<code>mermaid flowchart LR A[Disease Onset] --&gt; B[Screen Detection] B --&gt; C[Clinical Diagnosis] C --&gt; D[Death] A -.-&gt;|Lead Time| B style B fill:#f96,stroke:#333 style C fill:#bbf,stroke:#333 </code>``</p>
+<p><b>Mermaid: Overdiagnosis</b> ``<code>mermaid flowchart LR A[Preclinical Cancer] --&gt; B[Slow: Never Progress] A --&gt; C[Fast: Clinical Disease] B --&gt; D[Screen Detection] D --&gt; E[Overdiagnosis\nUnnecessary Treatment] C --&gt; F[Clinical Detection] F --&gt; G[True Benefit] style D fill:#f96,stroke:#333 style E fill:#fbb,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Programme Quality & Ethics)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Failsafe System:</b></p>
+<ul><li>Track every step: invitation → test → result → referral → treatment</li><li>No patient lost; alerts for delays</li><li>Audit: coverage, uptake, detection rate, PPV, interval cancers</li></ul>
+<p><b>Ethical Framework (Nuffield Council / WHO):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Principle&lt;/th&gt;&lt;th&gt;Application&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Beneficence</b>&lt;/td&gt;&lt;td&gt;Net benefit &gt; harm (mortality reduction &gt; overdiagnosis)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Non-maleficence</b>&lt;/td&gt;&lt;td&gt;Minimise false positives, anxiety, overtreatment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Autonomy</b>&lt;/td&gt;&lt;td&gt;Informed choice (not just consent); balanced info on harms/benefits&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Justice</b>&lt;/td&gt;&lt;td&gt;Equitable access; address uptake inequalities (deprivation, ethnicity)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Proportionality</b>&lt;/td&gt;&lt;td&gt;Intrusiveness proportionate to benefit&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Informed Choice vs Informed Consent:</b></p>
+<ul><li><b>Informed Choice</b>: Screening is offer; balanced info; decision aid; no pressure</li><li><b>Informed Consent</b>: Diagnostic/treatment; specific procedure risks</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Wilson-Jungner 10**</td><td>Important problem, treatment, facilities, latent stage, suitable test, acceptable, natural history, policy, cost-effective, continuous</td></tr><tr><td>**Screening vs Diagnostic**</td><td>Screening: asymptomatic population, high Sn. Diagnostic: symptomatic, high Sp.</td></tr><tr><td>**PPV in Screening**</td><td>LOW because prevalence low in asymptomatic. PPV = (Sn×Prev)/(Sn×Prev+(1-Sp)×(1-Prev))</td></tr><tr><td>**Lead-Time Bias**</td><td>Earlier diagnosis → longer survival FROM DIAGNOSIS, but same death time. Use mortality endpoint!</td></tr><tr><td>**Length Bias**</td><td>Screening picks up slow-growing (indolent) cases more than fast. Overestimates benefit.</td></tr><tr><td>**Overdiagnosis**</td><td>Detecting "cancer" that would never harm. Breast: ~19% overdiagnosis. Prostate: high with PSA.</td></tr><tr><td>**UK Adult Programmes**</td><td>AAA (men 65), Bowel (FIT 60-74), Breast (mammo 50-70), Cervical (HPV 25-64), Diabetic Eye (annual 12+)</td></tr><tr><td>**UK Newborn**</td><td>Blood spot (9 conditions), Hearing (AOAE/AABR), Physical exam (hips, heart, eyes, testes)</td></tr><tr><td>**Failsafe**</td><td>Track every step; no patient lost; audit coverage, uptake, detection, PPV, interval cancers</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**List Wilson-Jungner criteria (or key ones).**</td><td>1) Important health problem, 2) Accepted treatment, 3) Facilities, 4) Recognisable latent stage, 5) Suitable test, 6) Acceptable to population, 7) Natural history understood, 8) Agreed treatment policy, 9) Cost-effective, 10) Continuous process.</td></tr><tr><td>**Screening vs diagnostic test - difference?**</td><td>Screening: asymptomatic population, aims for high sensitivity (rule out). Diagnostic: symptomatic, aims for high specificity (rule in).</td></tr><tr><td>**What is lead-time bias? How avoid?**</td><td>Earlier detection makes survival from diagnosis appear longer without changing death time. Use disease-specific MORTALITY (not survival) in RCTs.</td></tr><tr><td>**What is length bias?**</td><td>Screening more likely to detect slow-growing/less aggressive disease (longer preclinical phase). Overestimates benefit; misses fast aggressive cancers.</td></tr><tr><td>**What is overdiagnosis? Example.**</td><td>Detection of disease that would never cause symptoms/death in patient's lifetime. Breast screening ~19% overdiagnosis; PSA prostate high overdiagnosis.</td></tr><tr><td>**Why is PPV low in screening?**</td><td>Prevalence of preclinical disease in asymptomatic population is low. PPV = (Sn×Prev)/[Sn×Prev+(1-Sp)×(1-Prev)]. Low Prev → low PPV.</td></tr><tr><td>**Name UK adult screening programmes.**</td><td>AAA (men 65), Bowel (FIT 60-74), Breast (mammo 50-70), Cervical (HPV primary 25-64), Diabetic Eye (annual 12+).</td></tr><tr><td>**Failsafe in screening - what is it?**</td><td>System ensuring no patient lost at any step: invite → test → result → referral → treatment. Audit: coverage, uptake, detection rate, PPV, interval cancers.</td></tr><tr><td>**Informed choice vs informed consent?**</td><td>Informed choice: screening offer with balanced info on benefits/harms, decision aids, no pressure. Informed consent: for diagnostic/treatment procedures.</td></tr><tr><td>**Ethical principles for screening?**</td><td>Beneficence (net benefit), Non-maleficence (minimise harm), Autonomy (informed choice), Justice (equitable access), Proportionality.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Screening = Prevention?**</td><td>Screening = SECONDARY prevention (early detection). Primary = prevent onset. Tertiary = reduce complications.</td></tr><tr><td>**Interval Cancers**</td><td>Cancers diagnosed between screening rounds. Reflect test sensitivity, sojourn time, screening interval.</td></tr><tr><td>**Sojourn Time**</td><td>Time in detectable preclinical phase. Long sojourn → less frequent screening needed.</td></tr><tr><td>**NIPT vs Combined Test**</td><td>NIPT: cell-free DNA, higher Sn/Sp for trisomies, not diagnostic. Combined: NT + biochemistry. NIPT contingent on high-risk combined.</td></tr></table>
+<p><b>Mnemonic: WILSON-JUNGNER (10)</b></p>
+<ul><li><b>W</b>orthwhile problem (Important)</li><li><b>I</b>ntervention accepted (Treatment)</li><li><b>L</b>ogistics ready (Facilities)</li><li><b>S</b>tage detectable (Latent stage)</li><li><b>O</b>ptimal test (Suitable test)</li><li><b>N</b>eed acceptance (Acceptable)</li><li><b>J</b>ourney known (Natural history)</li><li><b>U</b>nified policy (Treatment policy)</li><li><b>N</b>et benefit (Cost-effective)</li><li><b>G</b>oing concern (Continuous)</li><li><b>E</b>vidence-based (Modern add)</li><li><b>R</b>eview ongoing (Modern add)</li></ul>
+<p><b>Mnemonic: SCREENING BIASES (LLOSS)</b></p>
+<ul><li><b>L</b>ead-time (survival artifact)</li><li><b>L</b>ength (indolent over-represented)</li><li><b>O</b>verdiagnosis (never-harm detected)</li><li><b>S</b>election (volunteer bias)</li><li><b>S</b>elf-selection (attenders differ)</li></ul>
+<p><b>Mnemonic: UK SCREENING PROGRAMMES (ABBCD)</b></p>
+<ul><li><b>A</b>AA (men 65)</li><li><b>B</b>owel (FIT 60-74)</li><li><b>B</b>reast (mammo 50-70)</li><li><b>C</b>ervical (HPV 25-64)</li><li><b>D</b>iabetic Eye (annual 12+)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Screening)) Wilson-Jungner (10) Important Problem Treatment Exists Facilities Ready Latent Stage Suitable Test Acceptable Natural History Agreed Policy Cost-Effective Continuous UK Programmes Adult: AAA, Bowel, Breast, Cervical, Diabetic Eye Antenatal: SCT, Infectious, Down's, Anomaly Newborn: Blood Spot, Hearing, Physical Exam Biases Lead-Time (mortality not survival) Length (indolent bias) Overdiagnosis (never-harm) Selection (volunteer) Ethics Beneficence / Non-maleficence Autonomy (Informed Choice) Justice (Equity) Proportionality Quality Failsafe Coverage, Uptake, PPV Interval Cancers </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Wilson-Jungner**</td><td>10 criteria: problem, treatment, facilities, latent stage, test, acceptable, natural history, policy, cost-effective, continuous</td></tr><tr><td>**Screening vs Diagnostic**</td><td>Screening: asymptotic, high Sn. Diagnostic: symptomatic, high Sp.</td></tr><tr><td>**PPV in Screening**</td><td>Low (low prevalence) → many false positives</td></tr><tr><td>**Lead-Time Bias**</td><td>Earlier dx → longer survival FROM DX, same death. Use MORTALITY.</td></tr><tr><td>**Length Bias**</td><td>Detects slow-growing more → overestimates benefit</td></tr><tr><td>**Overdiagnosis**</td><td>Detects never-harm disease → unnecessary treatment</td></tr><tr><td>**UK Adult 5**</td><td>AAA, Bowel, Breast, Cervical, Diabetic Eye</td></tr><tr><td>**Newborn 3**</td><td>Blood Spot (9 cond), Hearing, Physical Exam</td></tr><tr><td>**Failsafe**</td><td>Track invite → test → result → referral → treat</td></tr><tr><td>**Informed Choice**</td><td>Balanced info, decision aids, no pressure</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Wilson-Jungner Criteria</td><td></td><td></td></tr><tr><td>UK Screening Programmes</td><td></td><td></td></tr><tr><td>Lead-Time Bias</td><td></td><td></td></tr><tr><td>Length Bias</td><td></td><td></td></tr><tr><td>Overdiagnosis</td><td></td><td></td></tr><tr><td>PPV/Prevalence</td><td></td><td></td></tr><tr><td>Ethics</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Validity, Reliability &amp; Diagnostic Accuracy (Sensitivity, Specificity, PPV, NPV, ROC).md]], [[Health Promotion &amp; Disease Prevention (Primary, Secondary, Tertiary).md]], [[Measures of Disease Frequency (Incidence, Prevalence, Rates).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Screening Wilson Jungner Criteria Programs Ethics · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

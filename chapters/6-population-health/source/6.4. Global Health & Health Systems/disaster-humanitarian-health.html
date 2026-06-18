@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Disaster Humanitarian Health — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.4. GLOBAL HEALTH & HEALTH SYSTEMS</span>
+      <div class="h1">Disaster Humanitarian Health</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify disasters: natural (geophysical, climatic, biological), technological, conflict</li><li>[ ] Apply disaster cycle: preparedness, response, recovery, mitigation</li><li>[ ] Describe SPHERE standards: humanitarian charter, minimum standards</li><li>[ ] Distinguish mass casualty triage systems: START, SALT, JumpSTART</li><li>[ ] Apply humanitarian principles: humanity, neutrality, impartiality, independence</li><li>[ ] Identify public health priorities: WASH, shelter, food/nutrition, communicable disease control</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Disaster Type</th><th>Annual Frequency</th><th>Deaths (avg)</th><th>Examples</th></tr><tr><td>---------------</td><td>------------------</td><td>--------------</td><td>----------</td></tr><tr><td>**Geophysical** (Earthquake, volcanic)</td><td>~20-30</td><td>50,000-100,000</td><td>2010 Haiti, 2023 Türkiye-Syria, 2004 Indian Ocean Tsunami</td></tr><tr><td>**Climatic/Meteorological** (Flood, storm, heatwave)</td><td>~300-400</td><td>10,000-30,000</td><td>Pakistan floods 2022, European heatwave 2003 (70K), Hurricane Katrina 2005</td></tr><tr><td>**Biological** (Pandemic, epidemic)</td><td>Rare high-impact</td><td>Variable</td><td>COVID-19, Ebola 2014-16</td></tr><tr><td>**Technological/Industrial** (Chemical, radiological, transport)</td><td>~200-300</td><td>5,000-15,000</td><td>Bhopal 1984 (3,800+), Chernobyl 1986, Grenfell 2017</td></tr><tr><td>**Conflict/Complex Emergencies**</td><td>~30 active</td><td>100,000+</td><td>Syria, Yemen, Sudan, DRC, Gaza</td></tr></table>
+<p><b>Disaster Trends:</b></p>
+<ul><li>350-500 disasters/year globally (EM-DAT, CRED)</li><li>40-100 million affected/year</li><li>Climate change ↑ frequency/intensity (heatwaves, floods, wildfires)</li><li>90% deaths in LMICs; vulnerable populations disproportionately affected</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological process - see disaster cycle and standards below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Disaster Cycle & Triage</span>
+  </div>
+  <div class="sec-body">
+<p><b>Disaster Cycle (4 Phases):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Phase&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Timeframe&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Preparedness</b>&lt;/td&gt;&lt;td&gt;Planning, training, drills, stockpiles, EWS, risk assessment, vulnerability mapping&lt;/td&gt;&lt;td&gt;Pre-disaster&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Response</b>&lt;/td&gt;&lt;td&gt;Search &amp; rescue, triage, emergency care, evacuation, humanitarian aid&lt;/td&gt;&lt;td&gt;Hours-days&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Recovery</b>&lt;/td&gt;&lt;td&gt;Reconstruction, livelihoods, mental health support, debris removal, infrastructure&lt;/td&gt;&lt;td&gt;Weeks-years&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mitigation</b>&lt;/td&gt;&lt;td&gt;Risk reduction, building codes, early warning, climate adaptation, land use&lt;/td&gt;&lt;td&gt;Long-term&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Mass Casualty Triage Systems:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;System&lt;/th&gt;&lt;th&gt;Categories&lt;/th&gt;&lt;th&gt;Criteria&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>START (Simple Triage and Rapid Treatment)</b>&lt;/td&gt;&lt;td&gt;Green (Walking), Yellow (Delayed), Red (Immediate), Black (Deceased)&lt;/td&gt;&lt;td&gt;Can walk, RR, perfusion, mental status&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>SALT (Sort, Assess, Lifesaving, Treatment/Transport)</b>&lt;/td&gt;&lt;td&gt;Same colors&lt;/td&gt;&lt;td&gt;Hemorrhage control, airway, respirations, perfusion, mental&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>JumpSTART (Paediatric)</b>&lt;/td&gt;&lt;td&gt;Same, modified for children&lt;/td&gt;&lt;td&gt;Age-adjusted breathing, perfusion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Triage Sieve (UK Pre-hospital)</b>&lt;/td&gt;&lt;td&gt;T1-T4&lt;/td&gt;&lt;td&gt;Modified for UK&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>P1-P4 (UK ED)</b>&lt;/td&gt;&lt;td&gt;P1 (Immediate), P2 (Urgent), P3 (Delayed), P4 (Expectant)&lt;/td&gt;&lt;td&gt;UK clinical use&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Mermaid: START Triage</b> ``<code>mermaid flowchart TD A[Casualty] --&gt; B{Ambulatory?} B --&gt;|Yes| G[GREEN\nMinor] B --&gt;|No| C{RR &gt;30?} C --&gt;|Yes| R[RED\nImmediate] C --&gt;|No| D{Perfusion?\nCRT &gt;2s} D --&gt;|Yes| R D --&gt;|No| E{Mental\nStatus?} E --&gt;|Unable to follow| R E --&gt;|Can follow| Y[YELLOW\nDelayed] style G fill:#bfb,stroke:#333 style Y fill:#ff9,stroke:#333 style R fill:#f96,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (SPHERE & Public Health)</span>
+  </div>
+  <div class="sec-body">
+<p><b>SPHERE Standards (2018 Edition):</b></p>
+<ul><li><b>Humanitarian Charter</b>: Right to life with dignity, right to humanitarian assistance</li><li><b>Core Humanitarian Standard (CHS)</b>: 9 commitments</li><li><b>Technical Chapters</b>:</li><li>Water supply, sanitation, hygiene (WASH)</li><li>Food security and nutrition</li><li>Shelter, settlement, non-food items</li><li>Health action (clinical, public health)</li></ul>
+<p><b>Key Indicators (WASH):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Standard&lt;/th&gt;&lt;th&gt;Indicator&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Water&lt;/td&gt;&lt;td&gt;15 L/person/day, &lt;1 km, &lt;30 min round trip&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sanitation&lt;/td&gt;&lt;td&gt;1 latrine/20 people, separated by sex&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Hygiene&lt;/td&gt;&lt;td&gt;250g soap/person/month, handwashing facilities&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Mortality Threshold (Emergency Phase):</b></p>
+<ul><li><b>Crude Mortality Rate (CMR)</b>: &lt;1/10,000/day acceptable; &gt;1/10,000/day = alert; &gt;2/10,000/day = severe</li><li><b>Under-5 Mortality Rate (U5MR)</b>: &lt;2/10,000/day acceptable; &gt;4.5 = severe</li></ul>
+<p><b>Public Health Priorities in Disasters:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Priority&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Initial Assessment</b>&lt;/td&gt;&lt;td&gt;Rapid needs assessment (MIRA, SNA), mortality/morbidity&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>WASH</b>&lt;/td&gt;&lt;td&gt;Water, sanitation, hygiene&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Shelter</b>&lt;/td&gt;&lt;td&gt;Emergency shelter, family separation prevention&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Food/Nutrition</b>&lt;/td&gt;&lt;td&gt;Food aid, micronutrients, malnutrition screening (MUAC, z-scores)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Communicable Disease</b>&lt;/td&gt;&lt;td&gt;Surveillance, EPI, outbreak response, vector control&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Maternal/Child Health</b>&lt;/td&gt;&lt;td&gt;Emergency obstetric, neonatal care, child protection&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mental Health</b>&lt;/td&gt;&lt;td&gt;PFA (Psychological First Aid), mhGAP&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Healthcare</b>&lt;/td&gt;&lt;td&gt;Restore primary care, referral, supply chains&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Disaster Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Disaster vs Emergency**</td><td>Emergency: single event/patient. Disaster: overwhelming needs, response systems strained.</td></tr><tr><td>**Complex Emergency**</td><td>Caused by conflict/political crisis; total social/Political fabric breakdown; chronic + acute.</td></tr><tr><td>**START vs SALT**</td><td>Both color-coded. SALT = mass casualty (shootings, MCI). START = most common in field.</td></tr><tr><td>**Triage in MCI**</td><td>Switch from "most critical first" to "most salvageable" (reverse triage).</td></tr><tr><td>**Displacement vs Refuge**</td><td>IDP (internal, within country). Refugee (crossed border, 1951 Convention).</td></tr><tr><td>**Disaster Mitigation**</td><td>Prevention ≠ mitigation. Mitigation = reducing impact when event occurs.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Humanitarian Action & Principles)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Humanitarian Principles (OCHA):</b></p>
+<ol><li><b>Humanity</b>: Save lives, alleviate suffering</li><li><b>Neutrality</b>: Do not take sides in hostilities</li><li><b>Impartiality</b>: Aid on need alone (not nationality, religion, etc.)</li><li><b>Independence</b>: Autonomous from political/economic/military</li></ol>
+<p><b>Cluster System (IASC, 2005):</b></p>
+<ul><li>11 clusters: Health, WASH, Nutrition, Shelter, Food Security, Logistics, Education, Protection, Early Recovery, Camp Coordination, Emergency Telecom</li><li>Lead agency + partners per cluster</li><li>Strengthens coordination, accountability, gaps identification</li></ul>
+<p><b>Conflict Health:</b></p>
+<ul><li><b>ICRC/IHL</b>: International Humanitarian Law; protection of civilians, medics, facilities</li><li><b>Geneva Conventions</b>: Medical neutrality (attacks on hospitals war crimes)</li><li><b>Healthcare Under Attack</b>: WHO Surveillance System (2023: 1,500+ attacks in 30 countries)</li><li><b>War Crimes</b>: Targeting health workers, denial of care, sexual violence, displacement</li></ul>
+<p><b>UK Preparedness:</b></p>
+<ul><li><b>Civil Contingencies Act 2004</b>: Category 1 responders (NHS, LA, emergency services, UKHSA, MoD)</li><li><b>Emergency Preparedness, Resilience and Response (EPRR)</b>: NHS standards</li><li><b>MACA</b>: Military Aid to Civil Authorities</li><li><b>NHS Core Standards for EPRR</b>: Annual assurance</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Disasters**</td><td>350-500/yr; 40-100M affected; 90% deaths LMICs</td></tr><tr><td>**Disaster Types**</td><td>Geophysical, Climatic, Biological, Technological, Conflict</td></tr><tr><td>**Disaster Cycle**</td><td>Preparedness, Response, Recovery, Mitigation</td></tr><tr><td>**START Triage**</td><td>Green/Yellow/Red/Black; walk, RR, perfusion, mental</td></tr><tr><td>**SPHERE**</td><td>Humanitarian Charter + Core Humanitarian Standard + Technical</td></tr><tr><td>**WASH**</td><td>15L/p/d, <1km, 1 latrine/20 people</td></tr><tr><td>**CMR Threshold**</td><td><1/10K/d acceptable; >2/10K/d severe</td></tr><tr><td>**Cluster System**</td><td>11 IASC clusters, lead agency per cluster</td></tr><tr><td>**Humanitarian Principles**</td><td>Humanity, Neutrality, Impartiality, Independence</td></tr><tr><td>**Healthcare Under Attack**</td><td>IHL violation; medical neutrality</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**What are the 4 phases of disaster cycle?**</td><td>Preparedness, Response, Recovery, Mitigation.</td></tr><tr><td>**START Triage categories and criteria?**</td><td>Green (walking/minor), Yellow (delayed), Red (immediate), Black (deceased). Criteria: walk, RR>30, CRT>2s, mental status.</td></tr><tr><td>**SPHERE standards - what are they?**</td><td>Humanitarian Charter + Core Humanitarian Standard (9 commitments) + Technical chapters (WASH, food, shelter, health).</td></tr><tr><td>**Public health priorities in disasters?**</td><td>Initial assessment, WASH, shelter, food/nutrition, communicable disease control, maternal/child health, mental health, primary care.</td></tr><tr><td>**WASH minimum standards?**</td><td>15 L water/person/day, <1 km, <30 min. 1 latrine/20 people, sex-separated. 250g soap/person/month.</td></tr><tr><td>**Crude mortality rate threshold in emergencies?**</td><td><1/10,000/day acceptable; >1/10K/d alert; >2/10K/d severe.</td></tr><tr><td>**What is a complex emergency?**</td><td>Caused by conflict/political crisis; breakdown of authority; chronic + acute features; mass displacement.</td></tr><tr><td>**Humanitarian principles (OCHA)?**</td><td>1) Humanity, 2) Neutrality, 3) Impartiality, 4) Independence.</td></tr><tr><td>**Cluster system (IASC) - what is it?**</td><td>Coordination mechanism: 11 clusters (Health, WASH, Nutrition, Shelter, etc.) with lead agency + partners. Improves response coordination.</td></tr><tr><td>**IDP vs Refugee?**</td><td>IDP (Internally Displaced Person): crossed border? No - within own country. Refugee: crossed international border, 1951 Convention protection.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Disaster ≠ Mass Casualty**</td><td>Disaster = overwhelmed resources. MCI = many casualties (e.g., 50 in 1 incident). Disasters often include MCI.</td></tr><tr><td>**Preparedness ≠ Response**</td><td>Preparedness = pre-event (plans, drills, stockpiles). Response = acute (search, rescue, medical).</td></tr><tr><td>**CMR vs U5MR**</td><td>CMR = all ages. U5MR = under-5s. U5MR more sensitive in disasters (children vulnerable).</td></tr><tr><td>**Reverse Triage**</td><td>In MCI: prioritise most salvageable (not most critical as in normal practice).</td></tr><tr><td>**Cluster vs Sector**</td><td>Cluster = formal coordination. Sector = generic (pre-2005).</td></tr></table>
+<p><b>Mnemonic: DISASTER CYCLE (PRRM)</b></p>
+<ul><li><b>P</b>reparedness</li><li><b>R</b>esponse</li><li><b>R</b>ecovery</li><li><b>M</b>itigation</li></ul>
+<p><b>Mnemonic: START TRIAGE COLORS (GRYB)</b></p>
+<ul><li><b>G</b>reen - Walking/Minor</li><li><b>Y</b>ellow - Delayed</li><li><b>R</b>ed - Immediate</li><li><b>B</b>lack - Deceased/Expectant</li></ul>
+<p><b>Mnemonic: HUMANITARIAN PRINCIPLES (HNII)</b></p>
+<ul><li><b>H</b>umanity</li><li><b>N</b>eutrality</li><li><b>I</b>mpartiality</li><li><b>I</b>ndependence</li></ul>
+<p><b>Mnemonic: WASH STANDARDS (15-1-20)</b></p>
+<ul><li><b>15</b>L water/p/d</li><li><b>1</b> km distance</li><li><b>20</b> people/latrine</li></ul>
+<p><b>Mnemonic: PUBLIC HEALTH PRIORITIES (WASH-FANS)</b></p>
+<ul><li><b>W</b>ater/<b>S</b>anitation/<b>H</b>ygiene</li><li><b>A</b>ssess (initial)</li><li><b>N</b>utrition</li><li><b>S</b>helter</li><li>(MCH, Mental, Communicable disease, Healthcare)</li></ul>
+<p><b>Mnemonic: CMR THRESHOLDS (1-2)</b></p>
+<ul><li><b>1</b>/10K/d acceptable</li><li><b>2</b>/10K/d severe</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Disaster &amp; Humanitarian)) Types Geophysical, Climatic Biological, Technological Conflict/Complex Cycle (PRRM) Preparedness Response Recovery Mitigation Triage START: Green, Yellow, Red, Black SALT, JumpSTART Reverse triage in MCI SPHERE Humanitarian Charter Core Humanitarian Standard Technical: WASH, Food, Shelter, Health Public Health WASH: 15L, 1km, 20/latrine Nutrition, Shelter Communicable disease MCH, Mental Principles (HNII) Humanity, Neutrality Impartiality, Independence UK Civil Contingencies Act EPRR MACA </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Disasters**</td><td>350-500/yr; 90% deaths LMICs</td></tr><tr><td>**Cycle**</td><td>Preparedness, Response, Recovery, Mitigation</td></tr><tr><td>**START**</td><td>Green/Yellow/Red/Black; walk, RR, perfusion, mental</td></tr><tr><td>**SPHERE**</td><td>Humanitarian Charter + CHS + Technical</td></tr><tr><td>**WASH**</td><td>15L/p/d, 1km, 1 latrine/20</td></tr><tr><td>**CMR**</td><td><1/10K/d OK; >2/10K/d severe</td></tr><tr><td>**Principles**</td><td>Humanity, Neutrality, Impartiality, Independence</td></tr><tr><td>**Cluster**</td><td>11 IASC clusters</td></tr><tr><td>**IDP vs Refugee**</td><td>Internal vs international border</td></tr><tr><td>**UK EPRR**</td><td>Civil Contingencies Act 2004</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Disaster Types</td><td></td><td></td></tr><tr><td>Disaster Cycle</td><td></td><td></td></tr><tr><td>Triage (START)</td><td></td><td></td></tr><tr><td>SPHERE Standards</td><td></td><td></td></tr><tr><td>Public Health Priorities</td><td></td><td></td></tr><tr><td>Humanitarian Principles</td><td></td><td></td></tr><tr><td>UK EPRR</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Injury &amp; Violence Epidemiology.md]], [[Notifiable Diseases &amp; International Health Regulations.md]], [[Environmental &amp; Occupational Health.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Disaster Humanitarian Health · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

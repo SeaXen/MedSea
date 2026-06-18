@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Breast Cancer Screening — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.2. CANCER SCREENING & PREVENTION</span>
+      <div class="h1">Breast Cancer Screening</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe <b>UK NHS Breast Screening Programme</b> (NHS BSP) parameters</li><li>[ ] Interpret <b>mammography performance metrics</b> (Sensitivity, Specificity, PPV, NPV)</li><li>[ ] Explain <b>benefits vs harms</b>: Mortality reduction vs Overdiagnosis</li><li>[ ] Apply <b>age extension</b> and <b>tomosynthesis</b> developments</li><li>[ ] Counsel patients on <b>screening benefits vs harms</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">UK NHS Breast Screening Programme (NHS BSP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Age Range**</td><td>**50-70 years** (Extension to **47-73** in progress)</td></tr><tr><td>**Interval**</td><td>**Every 3 years**</td></tr><tr><td>**Test**</td><td>**Digital Mammography** (2-view: CC + MLO)</td></tr><tr><td>**Coverage**</td><td>**~75%** of eligible women</td></tr><tr><td>**Recall Rate**</td><td>**~4-5%**</td></tr><tr><td>**Cancer Detection Rate**</td><td>**~8-9 per 1000 screened**</td></tr><tr><td>**PPV**</td><td>**~15-20%** (Of recalled)</td></tr><tr><td>**Mortality Reduction**</td><td>**~20-25%** (RCTs + Observational)</td></tr><tr><td>**Overdiagnosis**</td><td>**~10-20%** of screen-detected cancers</td></tr><tr><td>**Age Extension**</td><td>**47-49** (Trial), **71-73** (Self-referral)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mammography Technical Aspects</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>View</th><th>Description</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**CC (Cranio-Caudal)**</td><td>**Superior-inferior compression**, Visualises medial/lateral breast</td></tr><tr><td>**MLO (Medio-Lateral Oblique)**</td><td>**Oblique compression**, **Best for axillary tail/upper outer quadrant**</td></tr></table>
+<div class="sub-h">Tomosynthesis (3D Mammography)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Principle**</td><td>**Multiple low-dose projections → Reconstructed slices**</td></tr><tr><td>**Advantage**</td><td>**Reduces overlap**, **Improves specificity**, **Reduces recall rate**</td></tr><tr><td>**Evidence**</td><td>**STORM, TOMMY trials**: **Higher cancer detection, Lower recall**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Performance Metrics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr><tr><td>--------</td><td>-------</td><td>----------------</td></tr><tr><td>**Sensitivity**</td><td>**85-90%**</td><td>**Rule Out** (SnNout)</td></tr><tr><td>**Specificity**</td><td>**95-97%**</td><td>**Rule In** (SpPin)</td></tr><tr><td>**PPV**</td><td>**15-20%**</td><td>Of recalled, cancer found</td></tr><tr><td>**NPV**</td><td>**>99.9%**</td><td>Of not recalled, cancer unlikely</td></tr><tr><td>**Overdiagnosis**</td><td>**10-20%**</td><td>Indolent cancers never causing harm</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**NHS BSP**</td><td>**50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis**</td></tr><tr><td>**Mammogram Performance**</td><td>**Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%**</td></tr><tr><td>**Age Extension**</td><td>**47-49 (Trial), 71-73 (Self-referral)**</td></tr><tr><td>**Tomosynthesis**</td><td>**3D Mammography, ↓Recall, ↑Detection**</td></tr><tr><td>**Biases**</td><td>**Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)**</td></tr><tr><td>**Test Metrics**</td><td>**Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**UK Breast Screening — Age, Interval, Mortality Reduction?**</td><td>**50-70 years, Every 3 years, ~20-25% Mortality Reduction**.</td></tr><tr><td>**Mammogram Sensitivity/Specificity/PPV?**</td><td>**Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%**.</td></tr><tr><td>**Overdiagnosis — Definition, Rate?**</td><td>**Detection of indolent cancers never causing harm**; **10-20% of screen-detected**.</td></tr><tr><td>**Lead Time vs Length Time Bias?**</td><td>**Lead Time: Earlier Dx → Survival Time Artificially ↑**; **Length Time: Slow-Growing Tumours More Likely Screen-Detected**.</td></tr><tr><td>**Tomosynthesis vs 2D Mammo?**</td><td>**3D: Multiple projections → Slices → Less overlap, ↑Specificity, ↓Recall**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**NHS BSP**</td><td>50-70, 3yrly Mammo, 20-25% Mortality ↓, 10-20% Overdiagnosis</td></tr><tr><td>**Mammogram**</td><td>Sens 85-90%, Spec 95-97%, PPV 15-20%</td></tr><tr><td>**Age Extension**</td><td>47-49 (Trial), 71-73 (Self-referral)</td></tr><tr><td>**Tomosynthesis**</td><td>3D Mammo, ↓Recall, ↑Detection</td></tr><tr><td>**Biases**</td><td>Lead Time (Artificial Survival ↑), Length Time (Slow Tumours), Overdiagnosis (Indolent)</td></tr><tr><td>**Test Metrics**</td><td>Sens (Rule Out), Spec (Rule In), PPV (Prob Disease if +ve)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>NHS BSP Parameters</td><td></td><td></td></tr><tr><td>Mammogram Performance</td><td></td><td></td></tr><tr><td>Age Extension</td><td></td><td></td></tr><tr><td>Tomosynthesis</td><td></td><td></td></tr><tr><td>Bias Definitions</td><td></td><td></td></tr><tr><td>Test Metrics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Population Screening Programmes]], [[Wilson &amp; Jungner Criteria]], [[Mammography]], [[Breast Cancer Surveillance]], [[Overdiagnosis]], [[Lead Time Bias]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Breast Cancer Screening (NHS BSP), which statement is correct? A. <b>50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis</b> B. **50-70, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis</b></li></ul>
+<p><b>2.</b> Regarding Breast Cancer Screening (Mammogram Performance), which statement is correct? A. <b>Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%</b> B. **Sensitivity - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%</b></li></ul>
+<p><b>3.</b> Regarding Breast Cancer Screening (Age Extension), which statement is correct? A. <b>47-49 (Trial), 71-73 (Self-referral)</b> B. **47-49 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>47-49 (Trial), 71-73 (Self-referral)</b></li></ul>
+<p><b>4.</b> Regarding Breast Cancer Screening (Tomosynthesis), which statement is correct? A. <b>3D Mammography, ↓Recall, ↑Detection</b> B. **3D - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>3D Mammography, ↓Recall, ↑Detection</b></li></ul>
+<p><b>5.</b> Regarding Breast Cancer Screening (Biases), which statement is correct? A. <b>Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Ca B. </b>Lead - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</b></li></ul>
+<p><b>6.</b> Regarding Breast Cancer Screening (Test Metrics), which statement is correct? A. <b>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</b> B. **Sensitivity - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</b></li></ul>
+<p><b>7.</b> Regarding Breast Cancer Screening (Age Range), which statement is correct?</p>
+<ul><li>A. Age Range: 50-70 years (Extension to 47-73 in progress)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Age Range: 50-70 years (Extension to 47-73 in progress)</li></ul>
+<p><b>8.</b> Regarding Breast Cancer Screening (Test), which statement is correct?</p>
+<ul><li>A. Test: Digital Mammography (2-view: CC + MLO)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Test: Digital Mammography (2-view: CC + MLO)</li></ul>
+<p><b>9.</b> Regarding Breast Cancer Screening (Coverage), which statement is correct?</p>
+<ul><li>A. Coverage: ~75% of eligible women</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Coverage: ~75% of eligible women</li></ul>
+<p><b>10.</b> Regarding Breast Cancer Screening (Cancer Detection Rate), which statement is correct?</p>
+<ul><li>A. Cancer Detection Rate: ~8-9 per 1000 screened</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Cancer Detection Rate: ~8-9 per 1000 screened</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis</b></li><li>B. **50-70, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%</b></li><li>B. **Sensitivity (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>47-49 (Trial), 71-73 (Self-referral)</b></li><li>B. **47-49 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>47-49 (Trial), 71-73 (Self-referral)</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>3D Mammography, ↓Recall, ↑Detection</b></li><li>B. **3D (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>3D Mammography, ↓Recall, ↑Detection</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. **Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Ca</li><li>B. **Lead (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</b></li><li>B. **Sensitivity (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</b></li></ul>
+<p><b>7.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. Age Range: 50-70 years (Extension to 47-73 in progress)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Age Range: 50-70 years (Extension to 47-73 in progress)</li></ul>
+<p><b>8.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. Test: Digital Mammography (2-view: CC + MLO)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Test: Digital Mammography (2-view: CC + MLO)</li></ul>
+<p><b>9.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. Coverage: ~75% of eligible women</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Coverage: ~75% of eligible women</li></ul>
+<p><b>10.</b> Treatment is initiated. Most important monitoring parameter:</p>
+<ul><li>A. Cancer Detection Rate: ~8-9 per 1000 screened</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Cancer Detection Rate: ~8-9 per 1000 screened</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> NHS BSP? <b>A1:</b> 50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis</p>
+<p><b>Q2:</b> Mammogram Performance? <b>A2:</b> Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%</p>
+<p><b>Q3:</b> Age Extension? <b>A3:</b> 47-49 (Trial), 71-73 (Self-referral)</p>
+<p><b>Q4:</b> Tomosynthesis? <b>A4:</b> 3D Mammography, ↓Recall, ↑Detection</p>
+<p><b>Q5:</b> Biases? <b>A5:</b> Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</p>
+<p><b>Q6:</b> Test Metrics? <b>A6:</b> Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>7</td><td>A</td><td>Age Range</td><td>Age Range: 50-70 years (Extension to 47-73 in progress)</td></tr><tr><td>8</td><td>A</td><td>Test</td><td>Test: Digital Mammography (2-view: CC + MLO)</td></tr><tr><td>9</td><td>A</td><td>Coverage</td><td>Coverage: ~75% of eligible women</td></tr><tr><td>10</td><td>A</td><td>Cancer Detection Rate</td><td>Cancer Detection Rate: ~8-9 per 1000 screened</td></tr><tr><td>11</td><td>A</td><td>PPV</td><td>PPV: ~15-20% (Of recalled)</td></tr><tr><td>12</td><td>A</td><td>Mortality Reduction</td><td>Mortality Reduction: ~20-25% (RCTs + Observational)</td></tr><tr><td>13</td><td>A</td><td>Overdiagnosis</td><td>Overdiagnosis: ~10-20% of screen-detected cancers</td></tr><tr><td>14</td><td>A</td><td>Age Extension</td><td>Age Extension: 47-49 (Trial), 71-73 (Self-referral)</td></tr><tr><td>15</td><td>A</td><td>CC (Cranio-Caudal)</td><td>CC (Cranio-Caudal): Superior-inferior compression, Visualises medial/lateral breast</td></tr><tr><td>16</td><td>A</td><td>MLO (Medio-Lateral Oblique)</td><td>MLO (Medio-Lateral Oblique): Oblique compression, Best for axillary tail/upper outer quadrant</td></tr><tr><td>17</td><td>A</td><td>Principle</td><td>Principle: Multiple low-dose projections → Reconstructed slices</td></tr><tr><td>18</td><td>A</td><td>Advantage</td><td>Advantage: Reduces overlap, Improves specificity, Reduces recall rate</td></tr><tr><td>19</td><td>A</td><td>Evidence</td><td>Evidence: STORM, TOMMY trials: Higher cancer detection, Lower recall</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>7</td><td>A</td><td>Age Range</td><td>Age Range: 50-70 years (Extension to 47-73 in progress)</td></tr><tr><td>8</td><td>A</td><td>Test</td><td>Test: Digital Mammography (2-view: CC + MLO)</td></tr><tr><td>9</td><td>A</td><td>Coverage</td><td>Coverage: ~75% of eligible women</td></tr><tr><td>10</td><td>A</td><td>Cancer Detection Rate</td><td>Cancer Detection Rate: ~8-9 per 1000 screened</td></tr><tr><td>11</td><td>A</td><td>PPV</td><td>PPV: ~15-20% (Of recalled)</td></tr><tr><td>12</td><td>A</td><td>Mortality Reduction</td><td>Mortality Reduction: ~20-25% (RCTs + Observational)</td></tr><tr><td>13</td><td>A</td><td>Overdiagnosis</td><td>Overdiagnosis: ~10-20% of screen-detected cancers</td></tr><tr><td>14</td><td>A</td><td>Age Extension</td><td>Age Extension: 47-49 (Trial), 71-73 (Self-referral)</td></tr><tr><td>15</td><td>A</td><td>CC (Cranio-Caudal)</td><td>CC (Cranio-Caudal): Superior-inferior compression, Visualises medial/lateral breast</td></tr><tr><td>16</td><td>A</td><td>MLO (Medio-Lateral Oblique)</td><td>MLO (Medio-Lateral Oblique): Oblique compression, Best for axillary tail/upper outer quadrant</td></tr><tr><td>17</td><td>A</td><td>Principle</td><td>Principle: Multiple low-dose projections → Reconstructed slices</td></tr><tr><td>18</td><td>A</td><td>Advantage</td><td>Advantage: Reduces overlap, Improves specificity, Reduces recall rate</td></tr><tr><td>19</td><td>A</td><td>Evidence</td><td>Evidence: STORM, TOMMY trials: Higher cancer detection, Lower recall</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>NHS BSP</td><td>50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis</td></tr><tr><td>2</td><td>A</td><td>Mammogram Performance</td><td>Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%</td></tr><tr><td>3</td><td>A</td><td>Age Extension</td><td>47-49 (Trial), 71-73 (Self-referral)</td></tr><tr><td>4</td><td>A</td><td>Tomosynthesis</td><td>3D Mammography, ↓Recall, ↑Detection</td></tr><tr><td>5</td><td>A</td><td>Biases</td><td>Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</td></tr><tr><td>6</td><td>A</td><td>Test Metrics</td><td>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>NHS BSP</td><td>50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis</td></tr><tr><td>2</td><td>A</td><td>Mammogram Performance</td><td>Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%</td></tr><tr><td>3</td><td>A</td><td>Age Extension</td><td>47-49 (Trial), 71-73 (Self-referral)</td></tr><tr><td>4</td><td>A</td><td>Tomosynthesis</td><td>3D Mammography, ↓Recall, ↑Detection</td></tr><tr><td>5</td><td>A</td><td>Biases</td><td>Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</td></tr><tr><td>6</td><td>A</td><td>Test Metrics</td><td>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</td></tr></table>
+<p><b>Q7:</b> Age Range? <b>A7:</b> Age Range: 50-70 years (Extension to 47-73 in progress)</p>
+<p><b>Q8:</b> Test? <b>A8:</b> Test: Digital Mammography (2-view: CC + MLO)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer Screening &amp; Prevention|Cancer Screening &amp; Prevention]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Breast Cancer Screening · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

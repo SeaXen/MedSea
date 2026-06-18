@@ -1,0 +1,412 @@
+# Cervical Cancer Screening
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **UK NHS Cervical Screening Programme (NHS CSP)**: **Age 25-64, HPV Primary Screening**; **Interval: 3yr (25-49), 5yr (50-64)**; **HPV Primary + Cytology Triage**; **HPV Vaccination (9-valent) 90% Prevention**; **Self-Sampling Pilot**; **Mortality Reduction ~70%**
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Describe **UK NHS Cervical Screening Programme** (NHS CSP) parameters
+- [ ] Explain **HPV Primary Screening** with **Cytology Triage**
+- [ ] Apply **HPV Vaccination** impact and schedule
+- [ ] Manage **screening results** and **colposcopy referral**
+
+---
+
+## 2. UK NHS Cervical Screening Programme (NHS CSP)
+
+| Parameter | Detail |
+|-----------|--------|
+| **Age Range** | **25-64 years** |
+| **Interval** | **25-49: 3 years**, **50-64: 5 years** |
+| **Primary Test** | **HPV Primary Screening** (HR-HPV PCR) |
+| **Triage** | **HPV+ → Cytology (LBC)**; **Cytology+ → Colposcopy**; **HPV- → Routine Recall** |
+| **HPV Vaccination** | **9-valent (6,11,16,18,31,33,45,52,58)** → **~90% prevention** |
+| **Self-Sampling** | **Pilot** (Increase uptake in non-attenders) |
+
+---
+
+## 3. HPV Primary Screening Algorithm
+
+```mermaid
+flowchart TD
+    A[HPV Primary Screen] --> B{HPV Result}
+    B -->|**HPV Negative**| C[**Return to Routine Recall** (3yr/5yr)]
+    B -->|**HPV Positive**| D[**Reflex Cytology (LBC)**]
+    D --> E{Cytology Result}
+    E -->|**Normal**| F[**Repeat HPV at 12 months**]
+    E -->|**Abnormal**| G[**Refer Colposcopy**]
+    F --> H{12-month HPV}
+    H -->|Negative| I[**Routine Recall**]
+    H -->|Positive| J[**Refer Colposcopy**]
+```
+
+---
+
+## 4. HPV Vaccination
+
+| Parameter | Detail |
+|-----------|--------|
+| **Vaccine** | **9-valent (Gardasil 9)**: Types 6,11,16,18,31,33,45,52,58 |
+| **Coverage** | **~90% prevention** of CIN3+ and cervical cancer |
+| **Schedule** | **<15yr: 2 doses (0, 6-12mo)**; **≥15yr: 3 doses (0, 1-2, 6mo)** |
+| **Target** | **Girls/Boys 12-13yr** (School programme); **Catch-up to 25** |
+| **Impact** | **~90% reduction** in CIN3+ and cervical cancer |
+
+---
+
+## 5. Screening Pathway & Colposcopy
+
+| Step | Action |
+|------|--------|
+| **1. HPV Primary Screen** | hrHPV PCR (Cobas, Abbott, BD) |
+| **2. HPV+ → Cytology Triage** | Liquid-Based Cytology (LBC) |
+| **3. Cytology +ve → Colposcopy** | **2-week wait** target |
+| **3. Cytology -ve, HPV+** | **Repeat HPV at 12 months** |
+| **4. Colposcopy** | **Directed Biopsy**, **See-and-Treat (LLETZ)** if appropriate |
+
+---
+
+## 6. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **NHS CSP** | **25-64**, **HPV Primary**, **3yr (25-49) / 5yr (50-64)** |
+| **HPV Primary** | **hrHPV PCR → Cytology Triage** |
+| **HPV Vaccination** | **9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention** |
+| **Self-Sampling** | **Pilot** for non-attenders |
+| **HPV+ / Cytology -ve** | **Repeat HPV at 12mo** |
+| **HPV+ / Cytology +ve** | **Colposcopy** |
+
+---
+
+## 7. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **Cervical Screening — Age, Interval, Primary Test?** | **25-64, HPV Primary, 3yr (25-49)/5yr (50-64)**. |
+| **HPV Primary — Triage?** | **HPV+ → Cytology (LBC); Cytology+ → Colposcopy; Cytology- → Repeat HPV 12mo** |
+| **HPV Vaccination — Schedule, Types?** | **9-valent; 2-dose <15yr (0, 6-12mo); 3-dose ≥15yr (0, 1-2, 6mo); 90% prevention**. |
+| **HPV+ / Cytology Negative — Management?** | **Repeat HPV at 12 months**; **If persistent → Colposcopy**. |
+| **Self-Sampling — Role?** | **Pilot for non-attenders**, improves uptake in underserved groups. |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **HPV Primary vs Cytology Primary** | **HPV Primary**: More sensitive, detects glandular lesions; **Cytology Triage** of HPV+ reduces colposcopies |
+| **FIT vs FOBT** | **FIT**: Quantitative, Antibody-Based, Specific for Human Hb, Single Sample; **FOBT**: Guaiac, Qualitative, Non-Specific, 3 Samples |
+| **HPV Vaccination — Dosing** | **<15yr: 2-dose (0, 6-12mo)**; **≥15yr: 3-dose (0, 1-2, 6mo)** |
+| **Cervical Screening Interval** | **25-49: 3yr**; **50-64: 5yr** (Based on cancer risk) |
+| **Self-Sampling vs Clinician Sample** | **Self-Sampling: Non-inferior for HPV detection**, improves uptake in non-attenders |
+
+---
+
+## 9. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Age Range** | 25-64, 3yr (25-49), 5yr (50-64) |
+| **Primary Test** | **HPV PCR (hrHPV)** |
+| **Triage** | HPV+ → Cytology (LBC) |
+| **HPV+ / Cytology +ve** | Colposcopy |
+| **HPV+ / Cytology -ve** | Repeat HPV 12mo |
+| **Vaccination** | 9-valent, 2-dose <15yr, 3-dose ≥15yr |
+| **Prevention** | 90% CIN3+ and Cervical Cancer |
+
+---
+
+## 10. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 11. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| NHS CSP Parameters | | |
+| HPV Primary Algorithm | | |
+| HPV Vaccination | | |
+| Colposcopy Indications | | |
+| Self-Sampling | | |
+
+---
+
+## 12. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Population Screening Programmes]], [[HPV Vaccination]], [[HPV Testing]], [[Cervical Cancer]], [[Colposcopy]], [[CIN Management]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 13. MCQs (10)
+
+
+**1.** Regarding Cervical Cancer Screening (NHS CSP), which statement is correct?
+   A. **25-64**, **HPV Primary**, **3yr (25-49) / 5yr (50-64)**
+   B. **25-64**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **25-64**, **HPV Primary**, **3yr (25-49) / 5yr (50-64)**
+
+
+**2.** Regarding Cervical Cancer Screening (HPV Primary), which statement is correct?
+   A. **hrHPV PCR → Cytology Triage**
+   B. **hrHPV - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **hrHPV PCR → Cytology Triage**
+
+
+**3.** Regarding Cervical Cancer Screening (HPV Vaccination), which statement is correct?
+   A. **9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention**
+   B. **9-valent, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention**
+
+
+**4.** Regarding Cervical Cancer Screening (Self-Sampling), which statement is correct?
+   A. **Pilot** for non-attenders
+   B. **Pilot** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Pilot** for non-attenders
+
+
+**5.** Regarding Cervical Cancer Screening (HPV+ / Cytology -ve), which statement is correct?
+   A. **Repeat HPV at 12mo**
+   B. **Repeat - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Repeat HPV at 12mo**
+
+
+**6.** Regarding Cervical Cancer Screening (HPV+ / Cytology +ve), which statement is correct?
+   A. **Colposcopy**
+   B. **Colposcopy** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Colposcopy**
+
+
+**7.** Regarding Cervical Cancer Screening (FCPS/MRCP High Yield - UK NHS ), which statement is correct?
+   - A. FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr
+
+
+**8.** Regarding Cervical Cancer Screening (HPV Vaccination (9-valent) 90%), which statement is correct?
+   - A. HPV Vaccination (9-valent) 90% prevention
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — HPV Vaccination (9-valent) 90% prevention
+
+
+**9.** Regarding Cervical Cancer Screening (HPV Primary + Cytology Triage), which statement is correct?
+   - A. HPV Primary + Cytology Triage
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — HPV Primary + Cytology Triage
+
+
+**10.** Regarding Cervical Cancer Screening (Mortality Reduction 70%), which statement is correct?
+   - A. Mortality Reduction 70%
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Mortality Reduction 70%
+
+
+## 14. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **25-64**, **HPV Primary**, **3yr (25-49) / 5yr (50-64)**
+   - B. **25-64**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **25-64**, **HPV Primary**, **3yr (25-49) / 5yr (50-64)**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **hrHPV PCR → Cytology Triage**
+   - B. **hrHPV (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **hrHPV PCR → Cytology Triage**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention**
+   - B. **9-valent, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Pilot** for non-attenders
+   - B. **Pilot** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Pilot** for non-attenders
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Repeat HPV at 12mo**
+   - B. **Repeat (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Repeat HPV at 12mo**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **Colposcopy**
+   - B. **Colposcopy** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **Colposcopy**
+
+
+**7.** A clinician encounters a patient with this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr
+
+
+**8.** On further evaluation, the finding is confirmed. Most appropriate next step:
+   - A. HPV Vaccination (9-valent) 90% prevention
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — HPV Vaccination (9-valent) 90% prevention
+
+
+**9.** The patient asks about management options. Best evidence-based response:
+   - A. HPV Primary + Cytology Triage
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — HPV Primary + Cytology Triage
+
+
+**10.** Treatment is initiated. Most important monitoring parameter:
+   - A. Mortality Reduction 70%
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Mortality Reduction 70%
+
+
+## 15. Flashcards
+
+**Q1:** NHS CSP?
+**A1:** 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)
+
+**Q2:** HPV Primary?
+**A2:** hrHPV PCR → Cytology Triage
+
+**Q3:** HPV Vaccination?
+**A3:** 9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention
+
+**Q4:** Self-Sampling?
+**A4:** Pilot for non-attenders
+
+**Q5:** HPV+ / Cytology -ve?
+**A5:** Repeat HPV at 12mo
+
+**Q6:** HPV+ / Cytology +ve?
+**A6:** Colposcopy
+
+
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 7 | A | FCPS/MRCP High Yield - UK NHS Cervical Screening | FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr |
+| 8 | A | HPV Vaccination (9-valent) 90% prevention | HPV Vaccination (9-valent) 90% prevention |
+| 9 | A | HPV Primary + Cytology Triage | HPV Primary + Cytology Triage |
+| 10 | A | Mortality Reduction 70% | Mortality Reduction 70% |
+| 11 | A | Interval | Interval: 25-49: 3 years, 50-64: 5 years |
+| 12 | A | Primary Test | Primary Test: HPV Primary Screening (HR-HPV PCR) |
+| 13 | A | Triage | Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall |
+| 14 | A | HPV Vaccination | HPV Vaccination: 9-valent (6,11,16,18,31,33,45,52,58) → ~90% prevention |
+| 15 | A | Self-Sampling | Self-Sampling: Pilot (Increase uptake in non-attenders) |
+| 16 | A | Vaccine | Vaccine: 9-valent (Gardasil 9): Types 6,11,16,18,31,33,45,52,58 |
+| 17 | A | Coverage | Coverage: ~90% prevention of CIN3+ and cervical cancer |
+| 18 | A | Schedule | Schedule: <15yr: 2 doses (0, 6-12mo); ≥15yr: 3 doses (0, 1-2, 6mo) |
+| 19 | A | Target | Target: Girls/Boys 12-13yr (School programme); Catch-up to 25 |
+| 20 | A | Impact | Impact: ~90% reduction in CIN3+ and cervical cancer |
+| 21 | A | 1. HPV Primary Screen | 1. HPV Primary Screen: hrHPV PCR (Cobas, Abbott, BD) |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 7 | A | FCPS/MRCP High Yield - UK NHS Cervical Screening | FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr |
+| 8 | A | HPV Vaccination (9-valent) 90% prevention | HPV Vaccination (9-valent) 90% prevention |
+| 9 | A | HPV Primary + Cytology Triage | HPV Primary + Cytology Triage |
+| 10 | A | Mortality Reduction 70% | Mortality Reduction 70% |
+| 11 | A | Interval | Interval: 25-49: 3 years, 50-64: 5 years |
+| 12 | A | Primary Test | Primary Test: HPV Primary Screening (HR-HPV PCR) |
+| 13 | A | Triage | Triage: HPV+ → Cytology (LBC); Cytology+ → Colposcopy; HPV- → Routine Recall |
+| 14 | A | HPV Vaccination | HPV Vaccination: 9-valent (6,11,16,18,31,33,45,52,58) → ~90% prevention |
+| 15 | A | Self-Sampling | Self-Sampling: Pilot (Increase uptake in non-attenders) |
+| 16 | A | Vaccine | Vaccine: 9-valent (Gardasil 9): Types 6,11,16,18,31,33,45,52,58 |
+| 17 | A | Coverage | Coverage: ~90% prevention of CIN3+ and cervical cancer |
+| 18 | A | Schedule | Schedule: <15yr: 2 doses (0, 6-12mo); ≥15yr: 3 doses (0, 1-2, 6mo) |
+| 19 | A | Target | Target: Girls/Boys 12-13yr (School programme); Catch-up to 25 |
+| 20 | A | Impact | Impact: ~90% reduction in CIN3+ and cervical cancer |
+| 21 | A | 1. HPV Primary Screen | 1. HPV Primary Screen: hrHPV PCR (Cobas, Abbott, BD) |## Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | NHS CSP | 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64) |
+| 2 | A | HPV Primary | hrHPV PCR → Cytology Triage |
+| 3 | A | HPV Vaccination | 9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention |
+| 4 | A | Self-Sampling | Pilot for non-attenders |
+| 5 | A | HPV+ / Cytology -ve | Repeat HPV at 12mo |
+| 6 | A | HPV+ / Cytology +ve | Colposcopy |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | NHS CSP | 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64) |
+| 2 | A | HPV Primary | hrHPV PCR → Cytology Triage |
+| 3 | A | HPV Vaccination | 9-valent, 2-dose <15yr, 3-dose ≥15yr, 90% prevention |
+| 4 | A | Self-Sampling | Pilot for non-attenders |
+| 5 | A | HPV+ / Cytology -ve | Repeat HPV at 12mo |
+| 6 | A | HPV+ / Cytology +ve | Colposcopy |
+
+
+**Q7:** FCPS/MRCP High Yield - UK NHS Cervical Screening?
+**A7:** FCPS/MRCP High Yield - UK NHS Cervical Screening: 25-64, HPV Primary 3/5yr
+
+**Q8:** Key Point?
+**A8:** HPV Vaccination (9-valent) 90% prevention
+## 16. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Cancer Screening & Prevention|Cancer Screening & Prevention]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

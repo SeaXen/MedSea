@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Communication Skills — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 1 CLINICAL DECISION-MAKING / 1.3. COMMUNICATION SKILLS</span>
+      <div class="h1">Communication Skills</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe <b>consultation models</b>: Calgary-Cambridge, Neighbour, Pendleton, Four Habits</li><li>[ ] Demonstrate <b>core communication skills</b>: Active listening, Facilitation, Summarising, Signposting, Chunk &amp; Check</li><li>[ ] Apply <b>SPIKES</b> for breaking bad news; adapt for different scenarios</li><li>[ ] Conduct <b>shared decision-making</b>: Option grids, Decision aids, Risk communication, Values clarification</li><li>[ ] Assess <b>capacity</b> under MCA 2005 (2-stage test); understand best interests, IMCA, DoLS, LPA</li><li>[ ] Obtain <b>valid consent</b> (Montgomery principles: Material risk, Reasonable patient standard)</li><li>[ ] Document effectively: Medical records, SBAR/ISBAR handover, Discharge summaries</li><li>[ ] Answer viva: "SPIKES steps" and "MCA 2-stage test" and "Montgomery vs Bolam"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Communication as Clinical Skill</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Patient-Centred Communication] --&gt; B[Consultation Models&lt;br/&gt;Structure &amp; Process] A --&gt; C[Core Microskills&lt;br/&gt;Observable Behaviours] A --&gt; D[Special Situations&lt;br/&gt;SPIKES, Capacity, Conflict] A --&gt; E[Shared Decision-Making&lt;br/&gt;Partnership &amp; Autonomy] A --&gt; F[Documentation &amp; Handover&lt;br/&gt;Continuity &amp; Safety] </code>``</p>
+<div class="callout"><b>Key Principle:</b> <i>Communication is not "soft skill" — it's a <b>core clinical competency</b> with measurable impact on outcomes (adherence, satisfaction, safety, litigation).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Consultation Models</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Calgary-Cambridge Guide (Most widely taught in UK)</div>
+<table class="ctable"><tr><th>Stage</th><th>Content</th><th>Key Skills</th></tr><tr><td>-------</td><td>---------</td><td>------------</td></tr><tr><td>**1. Initiating**</td><td>Greeting, Introductions, Identify agenda, Establish rapport</td><td>Open posture, Eye contact, "What brings you in today?"</td></tr><tr><td>**2. Gathering**</td><td>**Explore patient's perspective** (Ideas, Concerns, Expectations — ICE), Bio-psychosocial history, Facilitation</td><td>Active listening, Open questions, Facilitation ("Tell me more"), Clarification, Summarising</td></tr><tr><td>**3. Physical Exam**</td><td>Signposting ("I'll examine your chest now"), Explain findings, Chunk & Check</td><td>Permission, Explanation, Checking understanding</td></tr><tr><td>**4. Explanation & Planning**</td><td>Diagnosis in plain language, Shared decision-making, Safety-netting, Follow-up</td><td>Chunk & Check, Teach-back, Negotiated plan, "What questions do you have?"</td></tr><tr><td>**5. Closing**</td><td>Summarise, Safety-net, Next steps, "Is there anything else?"</td><td>Summarise, "Any other concerns?", Clear next steps</td></tr></table>
+<div class="callout"><b>Calgary-Cambridge = Gold standard for UK medical education &amp; MRCP PACES.</b></div>
+<div class="sub-h">Neighbour's "Inner Consultation" (5 Checkpoints)</div>
+<table class="ctable"><tr><th>Checkpoint</th><th>Question</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**1. Connecting**</td><td>"Can I connect with this patient?"</td></tr><tr><td>**2. Summarising**</td><td>"What is the patient really saying?" (ICE)</td></tr><tr><td>**3. Handover**</td><td>"What is my working diagnosis/plan?"</td></tr><tr><td>**4. Safety Netting**</td><td>"What if I'm wrong?" / "When to return?"</td></tr><tr><td>**5. Housekeeping**</td><td>"Am I looking after myself?" (reflection, stress)</td></tr></table>
+<div class="sub-h">Pendleton's Rules (Feedback Model — 7 Steps)</div>
+<ol><li><b>Clarify facts</b> — "What happened?"</li><li><b>What went well</b> — Learner identifies strengths</li><li><b>What could be improved</b> — Learner identifies weaknesses</li><li><b>Observer feedback on strengths</b></li><li><b>Observer feedback on improvements</b></li><li><b>Action plan</b> — Specific, Measurable, Achievable, Relevant, Time-bound (SMART)</li><li><b>Summary</b> — Key learning points</li></ol>
+<div class="sub-h">Four Habits Model (Kaiser Permanente)</div>
+<table class="ctable"><tr><th>Habit</th><th>Focus</th></tr><tr><td>-------</td><td>-------</td></tr><tr><td>**1. Invest in the Beginning**</td><td>Build rapport, Elicit agenda, Set expectations</td></tr><tr><td>**2. Elicit the Patient's Perspective**</td><td>ICE, Psychosocial context, Functional impact</td></tr><tr><td>**3. Demonstrate Empathy**</td><td>Name emotions, Validate, Support</td></tr><tr><td>**4. Invest in the End**</td><td>Deliver info (chunk & check), Shared decision-making, Safety-net, Close</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Core Microskills (Observable Behaviours)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Skill</th><th>Description</th><th>Example Phrases</th></tr><tr><td>-------</td><td>-------------</td><td>-----------------</td></tr><tr><td>**Active Listening**</td><td>Full attention, Minimal encouragers</td><td>"Mm-hmm", "Go on", "I see", Nodding</td></tr><tr><td>**Facilitation**</td><td>Encourage elaboration</td><td>"Can you tell me more about...?" "What else?"</td></tr><tr><td>**Open Questions**</td><td>Cannot be answered yes/no</td><td>"How has this affected your daily life?"</td></tr><tr><td>**Closed Questions**</td><td>Specific facts</td><td>"Do you have chest pain?"</td></tr><tr><td>**Clarification**</td><td>Check understanding</td><td>"So the pain is sharp, not dull?"</td></tr><tr><td>**Summarising**</td><td>Reflect back key points</td><td>"So far you've told me: pain for 2 weeks, worse on exertion, worried about heart attack..."</td></tr><tr><td>**Signposting**</td><td>Explicitly state structure</td><td>"First I'll ask about your symptoms, then examine you, then discuss options."</td></tr><tr><td>**Chunk & Check**</td><td>Small info pieces + verify</td><td>"There are three options... [Option 1]. Does that make sense?"</td></tr><tr><td>**Teach-back**</td><td>Patient explains in own words</td><td>"Can you tell me in your own words how you'll take this medicine?"</td></tr><tr><td>**Empathy Statements**</td><td>Name, Validate, Support</td><td>"I can see this is really worrying for you." "It's understandable you feel anxious."</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ SPIKES Protocol — Breaking Bad News</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Action</th><th>Key Phrases</th></tr><tr><td>------</td><td>--------</td><td>-------------</td></tr><tr><td>**S — Setting**</td><td>Privacy, Time, No interruptions, Support person, Sit down, Eye level</td><td>"I've asked you here to discuss your test results. Is it okay if your wife stays?"</td></tr><tr><td>**P — Perception**</td><td>Assess patient's current understanding</td><td>"What have you been told so far?" "What do you understand about your condition?"</td></tr><tr><td>**I — Invitation**</td><td>Ask how much detail wanted</td><td>"How much detail would you like me to give?" "Would you like the full picture?"</td></tr><tr><td>**K — Knowledge**</td><td>**Warning shot** → Info in chunks → Check understanding → Avoid jargon</td><td>"Unfortunately, I have some difficult news. The biopsy shows..." [Pause] "This means..." [Check]</td></tr><tr><td>**E — Emotions**</td><td>**Observe, Name, Validate, Empathise, Explore**</td><td>"I can see this is devastating." "It's completely understandable to feel shocked." "Tell me more about what you're feeling."</td></tr><tr><td>**S — Strategy/Summary**</td><td>Agree next steps, Offer follow-up, Written info, Team involvement</td><td>"Let's talk about what happens next. We'll involve the specialist nurse. Here's written info. I'll see you again in 2 days."</td></tr></table>
+<div class="callout"><b>Key:</b> <i>SPIKES is a <b>framework</b>, not a script. Adapt to patient, culture, context. <b>Never</b> give bad news over phone if avoidable. <b>Never</b> say "There's nothing more we can do."</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Shared Decision-Making (SDM)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">3-Talk Model (Elwyn et al.)</div>
+<table class="ctable"><tr><th>Talk</th><th>Goal</th><th>Key Actions</th></tr><tr><td>------</td><td>------</td><td>-------------</td></tr><tr><td>**1. Choice Talk**</td><td>"There are options."</td><td>Introduce choices, "We have a decision to make", Check understanding of options</td></tr><tr><td>**2. Option Talk**</td><td>Compare options.</td><td>**Absolute risks** (NNT, icon arrays), Decision aids, Compare benefits/harms</td></tr><tr><td>**3. Decision Talk**</td><td>Elicit preferences.</td><td>"What matters most to you?", Values clarification, "Given what you've heard, what feels right?"</td></tr></table>
+<div class="sub-h">Risk Communication — Absolute &gt; Relative</div>
+<table class="ctable"><tr><th>Format</th><th>Example</th><th>Why</th></tr><tr><td>--------</td><td>---------</td><td>-----</td></tr><tr><td>**Relative Risk Reduction**</td><td>"Reduces risk by 50%!"</td><td>Misleading (ignores baseline)</td></tr><tr><td>**Absolute Risk Reduction**</td><td>"From 4 in 100 to 2 in 100"</td><td>Transparent</td></tr><tr><td>**NNT**</td><td>"100 people treated for 1 benefit"</td><td>Concrete</td></tr><tr><td>**Icon Arrays**</td><td>100 faces, 2 red = event</td><td>Visual, intuitive</td></tr><tr><td>**Natural Frequencies**</td><td>"2 out of 100" vs "2%"</td><td>Easier to process</td></tr></table>
+<div class="callout"><b>Never give RRR alone.</b> Always pair with ARR/NNT.</div>
+<div class="sub-h">Decision Aids (IPDAS Criteria)</div>
+<table class="ctable"><tr><th>Component</th><th>Standard</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Content**</td><td>Options, Benefits/Harms, Probabilities, Values clarification</td></tr><tr><td>**Format**</td><td>Paper, Video, Web, Interactive, Option grids</td></tr><tr><td>**Quality**</td><td>Evidence-based, Balanced, Up-to-date, Conflict-of-interest free</td></tr><tr><td>**Testing**</td><td>User-tested, Improves knowledge, Reduces decisional conflict</td></tr></table>
+<div class="sub-h">Values Clarification Methods</div>
+<table class="ctable"><tr><th>Method</th><th>Description</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Threshold Technique**</td><td>"At what risk would you choose surgery?"</td></tr><tr><td>**Best-Worst Scaling**</td><td>Rank attributes from most to least important</td></tr><tr><td>**Discrete Choice Experiments**</td><td>Trade-offs between attribute levels</td></tr><tr><td>**Swing Weighting**</td><td>Assign weights to criteria</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Consent & Capacity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Valid Consent — 3 Elements (GMC)</div>
+<table class="ctable"><tr><th>Element</th><th>Requirement</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Voluntary**</td><td>Free from coercion, Pressure, Undue influence</td></tr><tr><td>**Informed**</td><td>Nature, Purpose, Benefits, Risks, Alternatives, **Material risks** (Montgomery), No treatment option</td></tr><tr><td>**Capacity**</td><td>Able to understand, retain, weigh, communicate</td></tr></table>
+<div class="sub-h">Montgomery v Lanarkshire (2015) — UK Landmark</div>
+<table class="ctable"><tr><th>Principle</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Material Risk Test**</td><td>Would a **reasonable person** in patient's position attach significance? OR **Doctor aware** patient would attach significance?</td></tr><tr><td>**Duty to Warn**</td><td>Disclose **material risks** (not all risks) + **Reasonable alternatives**</td></tr><tr><td>**Patient-Centred**</td><td>"What matters to **this patient**?" (not "What would reasonable doctor say?")</td></tr><tr><td>**Documentation**</td><td>Record discussion, Risks discussed, Patient's questions, Decision</td></tr></table>
+<div class="callout"><b>Pre-Montgomery (Bolam/Bolitho):</b> "Responsible body of medical opinion" standard. <b>Post-Montgomery:</b> "Reasonable patient" standard.</div>
+<div class="sub-h">Mental Capacity Act 2005 (England &amp; Wales) — 2-Stage Test</div>
+<p>``<code>mermaid flowchart TD A[Decision Required] --&gt; B{Stage 1: Impairment?} B --&gt;|No| C[Capacity Presumed] B --&gt;|Yes| D{Stage 2: Functional Test} D --&gt;|Can a) Understand?| E[All 4 = Capacity] D --&gt;|Can b) Retain?| E D --&gt;|Can c) Use/Weigh?| E D --&gt;|Can d) Communicate?| E D --&gt;|Any NO| F[Lacks Capacity for THIS Decision] F --&gt; G[Best Interests Decision] G --&gt; H{Urgent?} H --&gt;|Yes| I[Act Immediately] H --&gt;|No| J[Best Interests Checklist&lt;br/&gt;IMCA if no family/friends&lt;br/&gt;DoLS if deprivation of liberty] </code>``</p>
+<table class="ctable"><tr><th>Functional Ability</th><th>Assessment</th></tr><tr><td>--------------------</td><td>------------</td></tr><tr><td>**a) Understand**</td><td>Can grasp relevant information (nature, purpose, consequences of decision)</td></tr><tr><td>**b) Retain**</td><td>Hold info long enough to use it (even briefly)</td></tr><tr><td>**c) Use/Weigh**</td><td>Manipulate info, Compare options, Reason</td></tr><tr><td>**d) Communicate**</td><td>Any method (speech, writing, gestures, blinking)</td></tr></table>
+<div class="callout"><b>Capacity is decision-specific &amp; time-specific.</b> Presumed unless proven otherwise. <b>Unwise decisions ≠ Lack of capacity.</b></div>
+<div class="sub-h">Best Interests Checklist (MCA s.4)</div>
+<ol><li><b>Past &amp; present wishes</b> (advance statements, verbal)</li><li><b>Beliefs &amp; values</b> (religious, cultural, moral)</li><li><b>Consult</b> family, carers, attorneys, deputies</li><li><b>Avoid discrimination</b> (age, disability, appearance)</li><li><b>Less restrictive option</b> (least restriction of rights)</li><li><b>Encourage participation</b> (involve person as much as possible)</li></ol>
+<div class="sub-h">IMCA (Independent Mental Capacity Advocate)</div>
+<ul><li><b>Required</b> if: Serious medical treatment <b>OR</b> Long-term accommodation change <b>AND</b> No family/friends to consult</li><li><b>Role</b>: Represent patient, Challenge decisions, Access records</li></ul>
+<div class="sub-h">DoLS (Deprivation of Liberty Safeguards)</div>
+<ul><li><b>Criteria</b>: Continuous supervision/control + Not free to leave + Lacks capacity</li><li><b>Authorisation</b>: Standard (21 days) / Urgent (7 days) → Supervisory body authorisation</li><li><b>Review</b>: Regular reviews, Right to challenge (Court of Protection)</li></ul>
+<div class="sub-h">Advance Decisions &amp; LPA</div>
+<table class="ctable"><tr><th>Instrument</th><th>Scope</th><th>Requirements</th></tr><tr><td>------------</td><td>-------</td><td>--------------</td></tr><tr><td>**Advance Decision (ADRT)**</td><td>Refuse specific treatment</td><td>Written, Signed, Witnessed, "Even if life at risk" for life-sustaining</td></tr><tr><td>**LPA Health & Welfare**</td><td>Attorney makes decisions</td><td>Registered with OPG, Only if lacks capacity</td></tr><tr><td>**Advance Statement**</td><td>Wishes/preferences (not legally binding)</td><td>Written/Verbal, Guides best interests</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Difficult Conversations — Beyond SPIKES</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Key Principles</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Angry Patient**</td><td>Acknowledge emotion ("I see you're angry"), Don't defend, Apologise for experience, Explore underlying concern, Set boundaries if abusive</td></tr><tr><td>**Denial / Collusion**</td><td>Respect pace, "What have you been told?", "Some people find it hard to hear...", Don't force, Leave door open</td></tr><tr><td>**Cultural / Language Barriers**</td><td>Professional interpreter (not family), Cultural humility, "Help me understand your perspective", Avoid assumptions</td></tr><tr><td>**Complaints**</td><td>Listen fully, Acknowledge distress, Apologise for experience (not admission of liability), Explain process, Offer escalation</td></tr><tr><td>**End-of-Life / DNAR**</td><td>SPIKES + Values ("What does quality of life mean to you?"), ReSPECT process, Document clearly</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Documentation & Handover</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Medical Records (GMC Standards)</div>
+<ul><li><b>Contemporaneous</b> — At time or ASAP</li><li><b>Legible</b> — Ink, Date, Time, Signature/ID</li><li><b>Accurate</b> — Facts vs Opinion (label: "Patient reports...", "I observed...")</li><li><b>Complete</b> — History, Exam, Assessment, Plan, Consent discussed, Safety-net</li><li><b>Confidential</b> — Secure storage, Minimum necessary access</li></ul>
+<div class="sub-h">SBAR / ISBAR Handover</div>
+<table class="ctable"><tr><th>Component</th><th>Content</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**I**dentify</td><td>Patient name, DOB, Location, Your name/role</td></tr><tr><td>**S**ituation</td><td>Current concern, Reason for handover, Acuity</td></tr><tr><td>**B**ackground</td><td>Admission reason, Relevant history, Key results, Current plan</td></tr><tr><td>**A**ssessment</td><td>Current clinical impression, Concerns, Trends (NEWS2)</td></tr><tr><td>**R**ecommendation</td><td>Actions needed, Timeframes, Escalation plan, "What would you do if...?"</td></tr></table>
+<div class="callout"><b>ISBAR = Standard for NHS handovers. Read-back encouraged.</b></div>
+<div class="sub-h">Discharge Summary Essentials</div>
+<ul><li>Diagnosis, Procedures, Investigations</li><li>Medication changes (Start/Stop/Change + Reason)</li><li>Follow-up (Appointments, Investigations, Red flags)</li><li>GP actions (Monitoring, Prescribing, Referrals)</li><li>Patient understanding / Safety-netting advice</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Practical Algorithms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Capacity Assessment Flow</div>
+<p>``<code>mermaid flowchart TD A[Decision Needed] --&gt; B{Presume Capacity?} B --&gt;|Yes| C[Assess 4 Abilities&lt;br/&gt;Understand, Retain, Weigh, Communicate] C --&gt; D{All 4 Present?} D --&gt;|Yes| E[Capacity → Valid Consent/Refusal] D --&gt;|No| F[Lacks Capacity for THIS Decision] F --&gt; G[Best Interests Process] G --&gt; H{Urgent Life-Sustaining?} H --&gt;|Yes| I[Treat Immediately&lt;br/&gt;Least Restrictive] H --&gt;|No| J[Best Interests Checklist&lt;br/&gt;IMCA if no consultee&lt;br/&gt;DoLS if Deprivation] </code>``</p>
+<div class="sub-h">Consent Conversation Checklist</div>
+<ul><li>[ ] Diagnosis &amp; Prognosis explained</li><li>[ ] Nature &amp; Purpose of treatment</li><li>[ ] <b>Material risks</b> (Montgomery) + Common side effects</li><li>[ ] <b>Alternatives</b> (including no treatment)</li><li>[ ] <b>Patient-specific concerns</b> explored ("What matters to you?")</li><li>[ ] Questions invited &amp; answered</li><li>[ ] Understanding checked (Teach-back)</li><li>[ ] Decision documented (Signed form + Notes)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Calgary-Cambridge**</td><td>5 stages: Initiating, Gathering (ICE), Exam, Explanation/Planning, Closing — **UK standard**</td></tr><tr><td>**SPIKES**</td><td>Setting, Perception, Invitation, Knowledge (warning→chunk→check), Emotions (name/validate), Strategy/Summary</td></tr><tr><td>**Shared Decision-Making**</td><td>3-Talk: Choice (options exist), Option (compare absolute risks/NNT), Decision (values)</td></tr><tr><td>**Risk Communication**</td><td>**Absolute risks (ARR/NNT/icon arrays) > Relative (RRR)**. Decision aids (IPDAS).</td></tr><tr><td>**Consent (Montgomery)**</td><td>Material risk test (reasonable patient), Alternatives, Patient-specific, Document</td></tr><tr><td>**Capacity (MCA 2005)**</td><td>2-stage: 1) Impairment, 2) Functional (Understand, Retain, Use/Weigh, Communicate). Decision-specific.</td></tr><tr><td>**Best Interests**</td><td>Checklist (past wishes, beliefs, consult, least restrictive). IMCA if no family + serious treatment.</td></tr><tr><td>**DoLS**</td><td>Continuous supervision + Not free to leave + Lacks capacity → Authorisation required.</td></tr><tr><td>**Advance Decisions**</td><td>Written, Signed, Witnessed, "Even if life at risk" for life-sustaining.</td></tr><tr><td>**LPA**</td><td>Health & Welfare (decisions if lacks capacity); Property & Financial (separate).</td></tr><tr><td>**SBAR/ISBAR**</td><td>Identify, Situation, Background, Assessment, Recommendation — **NHS standard handover**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What are the 5 stages of Calgary-Cambridge?</td><td>Initiating, Gathering (ICE), Physical Exam, Explanation & Planning, Closing</td></tr><tr><td>2</td><td>SPIKES — what does each letter stand for?</td><td>**S**etting, **P**erception, **I**nvitation, **K**nowledge, **E**motions, **S**trategy/Summary</td></tr><tr><td>3</td><td>How do you assess capacity under MCA 2005?</td><td>**2-stage**: 1) Impairment of mind/brain? 2) Functional test — Can: a) Understand, b) Retain, c) Use/Weigh, d) Communicate? Decision-specific, time-specific.</td></tr><tr><td>4</td><td>Montgomery v Lanarkshire — what changed consent law?</td><td>Shifted from **Bolam (doctor-centric)** to **Montgomery (patient-centric)**: Must disclose **material risks** (reasonable patient test) and **reasonable alternatives**.</td></tr><tr><td>5</td><td>What is the difference between Advance Decision and Advance Statement?</td><td>**Advance Decision** = Legally binding refusal of specific treatment (written, signed, witnessed). **Advance Statement** = Wishes/preferences (guiding, not legally binding).</td></tr><tr><td>6</td><td>What is IMCA and when required?</td><td>Independent Mental Capacity Advocate. Required for **serious medical treatment** or **long-term accommodation change** when **no family/friends** to consult.</td></tr><tr><td>7</td><td>DoLS — when does it apply?</td><td>**Continuous supervision/control** + **Not free to leave** + **Lacks capacity** → Requires authorisation (Standard 21d / Urgent 7d).</td></tr><tr><td>8</td><td>Shared decision-making — 3-talk model?</td><td>**Choice Talk**: Options exist. **Option Talk**: Compare absolute risks (NNT), decision aids. **Decision Talk**: Elicit values/preferences.</td></tr><tr><td>9</td><td>SBAR vs ISBAR — what does the 'I' add?</td><td>**Identify** — Patient name, DOB, Location, Your role.</td></tr><tr><td>10</td><td>How to communicate risk effectively?</td><td>**Absolute risks** (ARR, NNT, "X in 100"), **Icon arrays**, **Natural frequencies** ("2 in 100"), **Avoid RRR alone**. Use decision aids (IPDAS).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Capacity = Competence"**</td><td>**Capacity = Legal (decision-specific). Competence = Legal status (global).** Capacity presumed unless proven otherwise.</td></tr><tr><td>**"Unwise decision = Lack of capacity"**</td><td>**NO.** "Unwise" ≠ "Lack capacity." People have right to make unwise decisions if they can understand/weigh.</td></tr><tr><td>**"Next of kin can consent for incapable adult"**</td><td>**NO.** Next of kin **cannot** legally consent. **Best interests decision** by clinician (consult family). LPA / Court of Protection for formal authority.</td></tr><tr><td>**"Advance Decision = Advance Statement"**</td><td>**NO.** **Advance Decision** = Legally binding refusal (specific treatment). **Advance Statement** = Preferences (guide only).</td></tr><tr><td>**"Montgomery = Tell all risks"**</td><td>**NO.** **Material risks only** (what reasonable patient would want to know + what doctor knows patient would want to know). Not exhaustive list.</td></tr><tr><td>**"SBAR = ISBAR"**</td><td>**ISBAR adds "Identify"** — Critical for patient safety (wrong patient handover).</td></tr><tr><td>**"Consent form = Consent"**</td><td>**NO.** Form = Documentation. Consent = **Process** (Information + Understanding + Voluntary agreement).</td></tr><tr><td>**"SPIKES is only for cancer"**</td><td>**NO.** Any bad news: Chronic disease diagnosis, Genetic result, Disability, End-of-life, COVID ICU outcome.</td></tr></table>
+<div class="callout"><b>Mnemonic: COMMUNICATION SPIKES</b> <b>C</b>algary-Cambridge: <b>5 Stages</b> (Initiate, Gather-ICE, Examine, Explain/Plan, Close) — UK Gold Standard <b>O</b>bserving Microskills: <b>Active Listening, Facilitation, Open/Closed Qs, Summarising, Signposting, Chunk&amp;Check, Teach-back</b> <b>M</b>ontgomery Consent: <b>Material Risk</b> (Reasonable Patient) + Alternatives + Patient-Specific + Document <b>M</b>CA 2-Stage: <b>Impairment → Functional (Understand, Retain, Weigh, Communicate)</b> — Decision-Specific <b>U</b>nwise ≠ Lack Capacity: <b>Respect Autonomy</b> even for "bad" choices if capacity intact <b>N</b>ext of Kin ≠ Consent: <b>Best Interests</b> by Clinician; LPA/Court for Legal Authority <b>I</b>MCA for <b>Serious Treatment/Accommodation</b> + No Family/Friends <b>C</b>hoice/Option/Decision = <b>3-Talk SDM</b> (Elwyn) — Absolute Risks (NNT, Icons) + Values <b>A</b>dvance Decision (Binding Refusal) vs <b>Advance Statement</b> (Guiding Wishes) <b>T</b>each-back: <b>"Tell me in your own words..."</b> — Confirms Understanding <b>I</b>D/SBAR: <b>Identify, Situation, Background, Assessment, Recommendation</b> — Read-back! <b>O</b>pinion: <b>Bolam (Doctor) → Montgomery (Patient)</b> — Material Risk Disclosure <b>N</b>egotiate: <b>Safety-Net</b> ("If worse, come back"; "Red flags: X, Y, Z") <b>N</b>eighbour's 5 Checkpoints: <b>Connect, Summarise, Handover, Safety-net, Housekeeping</b> <b>S</b>PIKES: <b>Setting, Perception, Invitation, Knowledge, Emotions, Strategy</b> — Bad News Framework <b>K</b>ey: <b>Warning Shot → Chunk &amp; Check → Avoid Jargon</b> <b>E</b>motions: <b>Observe, Name, Validate, Empathise</b> — "I can see this is..." <b>S</b>trategy: <b>Shared Plan, Written Info, Follow-up, Team</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Communication Skills)) Consultation Models Calgary-Cambridge: 5 Stages Neighbour: 5 Checkpoints Pendleton: 7 Steps (Feedback) Four Habits: Invest/Elicit/Empathise/End Core Skills Active Listening Facilitation / Open Qs Summarising / Signposting Chunk &amp; Check / Teach-back SPIKES Setting / Perception / Invitation Knowledge (Warning→Chunk→Check) Emotions (Name, Validate) Strategy/Summary Shared Decision-Making 3-Talk: Choice/Option/Decision Absolute Risks (NNT, Icons) Decision Aids (IPDAS) Values Clarification Consent &amp; Capacity Montgomery (Material Risk) MCA 2-Stage (Impairment → Functional) Best Interests / IMCA / DoLS Advance Decision vs Statement LPA Health &amp; Welfare Difficult Conversations Angry Patient / Denial / Cultural Complaints / End-of-life Documentation &amp; Handover Medical Records (GMC) ISBAR Handover Discharge Summaries </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Consultation Models</td><td>2</td><td></td><td></td></tr><tr><td>Core Microskills</td><td>2</td><td></td><td></td></tr><tr><td>SPIKES</td><td>3</td><td></td><td></td></tr><tr><td>Shared Decision-Making</td><td>3</td><td></td><td></td></tr><tr><td>Consent (Montgomery)</td><td>2</td><td></td><td></td></tr><tr><td>Capacity (MCA 2005)</td><td>3</td><td></td><td></td></tr><tr><td>Advance Decisions/IMCA/DoLS</td><td>2</td><td></td><td></td></tr><tr><td>Documentation/SBAR</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the principles of effective clinical communication including breaking bad news and shared decision-making."</td><td>Calgary-Cambridge, SPIKES, SDM 3-talk, Absolute risk communication, Consent (Montgomery), Capacity (MCA), Documentation (SBAR)</td></tr><tr><td>**Short Note**</td><td>"Mental Capacity Act 2005 — 2-stage test and best interests."</td><td>2-stage: Impairment → Functional (Understand, Retain, Weigh, Communicate). Decision-specific. Best interests checklist. IMCA/DoLS/LPA.</td></tr><tr><td>**Viva**</td><td>"Patient with dementia refuses life-saving surgery. Daughter demands you operate. What do you do?"</td><td>Assess capacity (2-stage). If lacks → Best interests (past wishes, beliefs, consult daughter, least restrictive). IMCA if no other consultee. Document.</td></tr><tr><td>**Ward Round**</td><td>"Junior obtains consent for procedure using form only. No discussion of alternatives. Your action?"</td><td>**Consent = Process, not form.** Must discuss: Diagnosis, Material risks (Montgomery), Alternatives, No treatment option. Teach-back. Document conversation.</td></tr><tr><td>**Last-Night**</td><td>"Calgary: 5 stages. SPIKES: S/P/I/K/E/S. SDM: Choice/Option/Decision (abs risks). Montgomery: Material risk. MCA: Impair→Func (U/R/W/C). Best interests: Past wishes, beliefs, consult, IMCA. DoLS: Continuous supervision. AD=Binding, AS=Guide. ISBAR: Identify added."</td><td>All key frameworks compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Calgary-Cambridge</b> = UK consultation gold standard (5 stages, ICE, Chunk &amp; Check)</li><li><b>SPIKES</b> = Bad news framework (Setting, Perception, Invitation, Knowledge, Emotions, Strategy)</li><li><b>Shared Decision-Making</b> = 3-Talk (Choice, Option, Decision); Absolute risks (NNT, icon arrays); Decision aids</li><li><b>Consent (Montgomery)</b> = Material risks (reasonable patient), Alternatives, Patient-specific, Document process</li><li><b>Capacity (MCA 2005)</b> = 2-Stage: Impairment → Functional (Understand, Retain, Use/Weigh, Communicate); Decision &amp; time specific</li><li><b>Best Interests</b> = Past wishes, Beliefs, Consult, Least restrictive; IMCA if no family + serious decision</li><li><b>DoLS</b> = Continuous supervision + Not free to leave + Lacks capacity → Authorisation required</li><li><b>Advance Decisions</b> = Legally binding refusal (written, signed, witnessed, "even if life at risk")</li><li><b>SBAR/ISBAR</b> = Identify, Situation, Background, Assessment, Recommendation — NHS handover standard</li><li><b>Teach-back</b> = "Tell me in your own words..." — Confirms understanding, closes loop</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Calgary-Cambridge — "Gathering" stage includes:</b></li></ol>
+<p>A. Physical examination  B. <b>ICE (Ideas, Concerns, Expectations)</b>  C. Safety-netting  D. Closing <i>Answer: B. Gathering = Explore patient perspective (ICE), Bio-psychosocial history.</i></p>
+<ol><li><b>SPIKES — 'E' stands for:</b></li></ol>
+<p>A. Explanation  B. <b>Emotions</b>  C. Engagement  D. Evaluation <i>Answer: B. Emotions — Observe, Name, Validate, Empathise.</i></p>
+<ol><li><b>MCA 2005 — Stage 2 Functional Test assesses:</b></li></ol>
+<p>A. Diagnosis of dementia  B. <b>Understand, Retain, Use/Weigh, Communicate</b>  C. Best interests  D. Past wishes <i>Answer: B. Four abilities: Understand, Retain, Use/Weigh, Communicate.</i></p>
+<ol><li><b>Montgomery ruling — material risk defined by:</b></li></ol>
+<p>A. <b>Reasonable patient test</b>  B. Responsible medical opinion  C. Hospital protocol  D. GMC guidance only <i>Answer: A. "Would a reasonable person in patient's position attach significance?" + doctor's knowledge of patient.</i></p>
+<ol><li><b>Advance Decision vs Advance Statement — legally binding?</b></li></ol>
+<p>A. Both binding  B. <b>Advance Decision only</b>  C. Advance Statement only  D. Neither <i>Answer: B. Advance Decision (refusal of treatment) = binding if valid. Advance Statement = guide only.</i></p>
+<ol><li><b>IMCA required when:</b></li></ol>
+<p>A. Any treatment decision  B. <b>Serious medical treatment + No family/friends</b>  C. Patient requests  D. Court orders <i>Answer: B. Serious medical treatment OR long-term accommodation change AND no appropriate family/friends.</i></p>
+<ol><li><b>DoLS applies if patient:</b></li></ol>
+<p>A. Refuses treatment  B. <b>Under continuous supervision + Not free to leave + Lacks capacity</b>  C. Has LPA  D. Makes unwise decision <i>Answer: B. Continuous supervision/control + Not free to leave + Lacks capacity = Deprivation of Liberty.</i></p>
+<ol><li><b>Shared decision-making — best risk format:</b></li></ol>
+<p>A. Relative risk reduction  B. <b>Absolute risk (NNT, icon arrays)</b>  C. Odds ratio  D. Hazard ratio <i>Answer: B. Absolute risks (ARR, NNT, icon arrays, natural frequencies) — transparent, patient-centred.</i></p>
+<ol><li><b>SBAR vs ISBAR — 'I' adds:</b></li></ol>
+<p>A. Intervention  B. <b>Identify (Patient name, DOB, Location, Role)</b>  C. Impression  D. Investigation <i>Answer: B. Identify = Patient demographics + Your role. Prevents wrong-patient handover.</i></p>
+<ol><li><b>Teach-back purpose:</b></li></ol>
+<p>A. Test patient memory  B. <b>Confirm patient understanding</b>  C. Save time  D. Legal requirement <i>Answer: B. Patient explains in own words → Confirms understanding, closes loop, identifies gaps.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>75M with dementia (moderate), admitted with hip fracture. Needs surgery. Daughter insists on surgery. Capacity assessment?</b></li></ol>
+<p>A. Dementia = No capacity  B. <b>Assess 4 abilities for THIS decision</b>  C. Daughter decides  D. Best interests immediately <i>Answer: B. Dementia ≠ automatic lack of capacity. Assess 4 abilities for THIS decision (surgery).</i></p>
+<ol><li><b>Patient with learning disability, acute appendicitis. Needs surgery. No family. No LPA. Next step?</b></li></ol>
+<p>A. Operate without consent  B. <b>Refer IMCA</b>  C. Wait for Court of Protection  D. Ask neighbour <i>Answer: B. Serious medical treatment + No family/friends → IMCA required.</i></p>
+<ol><li><b>Patient refuses blood transfusion (Jehovah's Witness). Hb 50, symptomatic. Capacity intact. Doctor's duty?</b></li></ol>
+<p>A. Override (life-saving)  B. <b>Respect refusal (valid advance decision)</b>  C. Get court order  D. Give anyway, document <i>Answer: B. Capacity intact → Valid refusal. Advance decision (if written) or contemporaneous refusal binding.</i></p>
+<ol><li><b>Discharge summary — essential components (NICE/NHS):</b></li></ol>
+<p>A. Diagnosis only  B. <b>Diagnosis, Med changes with reasons, Follow-up, Red flags, GP actions</b>  C. Medication list only  D. Investigation results only <i>Answer: B. Complete discharge summary includes all: Diagnosis, Procedures, Med changes (with reasons), Follow-up, Red flags, GP actions.</i></p>
+<ol><li><b>Handover — correct ISBAR sequence:</b></li></ol>
+<p>A. Situation, Background, Assessment, Recommendation, Identify  B. <b>Identify, Situation, Background, Assessment, Recommendation</b>  C. Identify, Assessment, Situation, Background, Recommendation  D. Background, Situation, Identify, Assessment, Recommendation <i>Answer: B. I-S-B-A-R in order.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-A, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1.1 Clinical Reasoning &amp; Diagnostic Process]] — History taking (ICE), Diagnostic process, Shared decision-making</li><li>[[1.2 Evidence-Based Medicine]] — Risk communication (ARR/NNT), Decision aids, GRADE, Guidelines</li><li>[[1.4 Ethics &amp; Law]] — Consent law (Montgomery), Ethics of autonomy/beneficence, End-of-life decisions</li><li>[[1.5 Quality Improvement &amp; Patient Safety]] — Handover safety (ISBAR), Incident reporting, Duty of candour</li><li>[[1.6 Guidelines &amp; Pathways]] — Decision aids, Implementation, Patient pathways</li><li>[../../Palliative Care/Communication] — SPIKES in end-of-life, DNAR conversations, ReSPECT</li><li>[../../Medication Safety/Communication] — Medication reconciliation, Patient counselling, Adherence</li><li>[../../Perioperative/Communication] — Pre-op consent, Post-op handover, Anaesthetic communication</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Communication Skills · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

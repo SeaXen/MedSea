@@ -1,0 +1,520 @@
+# Vitamin B12 (Cobalamin)- Pernicious Anaemia
+
+**Related:** [[Nutritional Factors in Disease MOC]], [[Davidson Chapter 22 - Nutritional Factors in Disease Hierarchy]], [[../00_Index/Medicine MOC|Medicine MOC]]
+
+> [!important]
+> **Vitamin B12 (cobalamin) cofactor for methionine synthase (Hcy→Met + 5-methyl-THF) and methylmalonyl-CoA mutase (MMA→succinyl-CoA); deficiency = megaloblastic anaemia + subacute combined degeneration (posterior + lateral columns, neuropathy, dementia); ↑↑MMA specific; pernicious anaemia = autoimmune IF antibodies.**
+
+## 1. Learning Objectives
+- [ ] Describe B12 forms (methylcobalamin, 5'-deoxyadenosylcobalamin, hydroxo-, cyano-), absorption (R-binder, intrinsic factor, terminal ileum cubilin receptors), liver storage (3–5y)
+- [ ] Explain 2 reactions: methionine synthase (methyl-B12, Hcy→Met + 5-methyl-THF→THF) and methylmalonyl-CoA mutase (adenosyl-B12, MMA→succinyl-CoA)
+- [ ] List deficiency causes: dietary (vegan, elderly), pernicious anaemia (autoimmune IF/parietal cell Ab), ileal (Crohn's, RYGB), bacterial overgrowth, H. pylori, D. latum, metformin
+- [ ] Recognise neurological triad: subacute combined degeneration (SCD) = posterior + lateral columns + peripheral neuropathy + dementia; megaloblastic madness
+- [ ] State diagnosis: ↓serum B12 (<150 pmol/L), ↑↑MMA (specific), ↑Hcy; intrinsic factor Ab (+ for PA), parietal cell Ab (less specific); Schilling test (historical)
+- [ ] Treatment: hydroxocobalamin 1 mg IM alternate days × 2 weeks, then 1 mg IM every 3 months OR oral 1–2 mg/day if intrinsic factor issue
+- [ ] Folate BEFORE B12 check (folate hides B12 anaemia, worsens B12 neuro)
+
+## 2. Definitions / Key Concepts
+
+| Term | Definition |
+|------|------------|
+| **Vitamin B12 (Cobalamin)** | Water-soluble; cobalt-containing corrin ring; methyl, 5'-deoxyadenosyl, hydroxo, cyano forms |
+| **Methylcobalamin** | Active methyl carrier; methionine synthase cofactor (cytosolic) |
+| **5'-Deoxyadenosylcobalamin (Adenosyl-B12)** | Mitochondrial; methylmalonyl-CoA mutase cofactor |
+| **Haptocorrin (R-binder, Transcobalamin I, TCN1)** | Salivary, gastric; binds B12 in stomach; protects from acid |
+| **Intrinsic Factor (IF, GIF)** | Parietal cell glycoprotein; binds B12 after R-binder cleaved (pancreatic proteases in duodenum) |
+| **Cubam Receptor (Cubilin + Amnionless)** | Terminal ileum apical; B12-IF complex internalised |
+| **Transcobalamin II (TCN2)** | Plasma transporter; delivers B12 to cells (haptocorrin = scavenger/storage) |
+| **Pernicious Anaemia (PA)** | Autoimmune; autoantibodies to IF + parietal cell; atrophic body gastritis; ↑gastric Ca risk |
+| **Atrophic Body Gastritis** | Loss of parietal cells in body/fundus; autoimmunity (PA) or H. pylori; achlorhydria + ↓IF |
+| **Anti-Intrinsic Factor Antibody (Anti-IF)** | **Specific** for PA (sensitivity 50–60%, specificity 100%) |
+| **Anti-Parietal Cell Antibody (PCA)** | Less specific (sensitivity 80%, specificity 90%); also in other autoimmune |
+| **Schilling Test** | Historical: radiolabelled B12 absorption with/without IF, after antibiotics, after pancreatic enzymes |
+| **Subacute Combined Degeneration (SCD)** | Posterior column (vibration, proprioception) + lateral corticospinal (UMN signs, spasticity) + spinocerebellar |
+| **Methylmalonic Acid (MMA)** | Specific B12 marker; ↑↑ in B12 deficiency; requires adenosyl-B12 mutase |
+| **Homocysteine** | ↑ in BOTH folate and B12; less specific |
+| **Megaloblastic Madness** | Cognitive decline, depression, paranoia, "folie à trois" in B12 deficiency |
+| **Folinic Acid Trap** | Methyl-THF accumulates in B12 deficiency (Hcy cannot be remethylated); 5-methyl-THF cannot donate carbon; THF depletion despite folate adequacy → functional folate deficiency |
+| **Holotranscobalamin (HoloTC, Active B12)** | B12-TCN2 complex; early marker of B12 status (decreased before total B12) |
+| **H. pylori** | Gastric colonisation; atrophic gastritis → ↓IF; B12 deficiency |
+| **Diphyllobothrium latum** | Fish tapeworm; consumes B12; B12 deficiency |
+| **Nitrous Oxide (N₂O)** | Oxidises B12 → inactivates methionine synthase; recreational → neuropathy (SCD); post-op |
+| **Cobalamin Transporter Defects (TCN2, HCFC1, ABCD4)** | CbIC, CbIG, CbIJ; severe infantile B12; methylation + MMA defects |
+
+## 3. Core Content
+
+### Section 1: B12 Biochemistry & Absorption
+**Sources:** Animal products only (meat, fish, eggs, dairy, liver); strict vegans require fortified foods/supplements.
+**Forms:** Methylcobalamin, 5'-deoxyadenosylcobalamin, hydroxo-, cyano-; cobalamin = generic (Co³⁺).
+**Absorption pathway (5 steps):**
+1. **Stomach:** Food B12 released (acid + pepsin); binds salivary **haptocorrin (R-binder, TCN1)**; protected from acid
+2. **Duodenum:** Pancreatic proteases degrade R-binder; free B12 binds **intrinsic factor (IF)** from parietal cells
+3. **Terminal ileum:** B12-IF complex binds **cubam receptor (cubilin + amnionless)**; Ca²⁺-dependent
+4. **Intracellular:** B12-IF complex internalised; B12 released; IF recycled
+5. **Plasma:** B12 binds **transcobalamin II (TCN2)** → **holotranscobalamin (active B12)** delivers to cells
+**Haptocorrin (TCN1):** 80–90% plasma B12; scavenger/storage; **TCN2 = physiologically active**
+**Storage:** Liver 2–5 mg; stores last 3–5 years (deficiency develops after years of malabsorption)
+**Loss:** Biliary secretion 5–10 µg/day; enterohepatic circulation (mostly reabsorbed); **no enterohepatic ifileal disease** → rapid depletion
+
+### Section 2: 2 Key Reactions
+**Reaction 1: Methionine Synthase (Cytosolic; Methyl-B12 cofactor)**
+- Homocysteine + 5-methyl-THF → **Methionine + THF**
+- Critical for: (1) Methionine cycle (→ SAM → methyl transfer to DNA, histones, neurotransmitters); (2) Regenerates THF from 5-methyl-THF (escape from methyl-folate trap; needed for dUMP→dTMP)
+- **Deficiency:** ↑homocysteine, **methyl-folate trap** → functional folate deficiency → megaloblastic anaemia
+
+**Reaction 2: Methylmalonyl-CoA Mutase (Mitochondrial; Adenosyl-B12 cofactor)**
+- Methylmalonyl-CoA → **Succinyl-CoA** (enters Krebs)
+- Sources: odd-chain FA, BCAA (Val, Ile, Met, Thr), cholesterol side-chain
+- **Deficiency:** ↑methylmalonic acid (MMA); accumulation of propionyl-CoA → abnormal FA synthesis (C15/C17 odd-chain FA in myelin) → **neurological damage**
+
+### Section 3: Deficiency Causes
+| Cause | Mechanism |
+|-------|-----------|
+| **Dietary** | Strict vegan, vegetarian + pregnancy/lactation, elderly (poor diet, achlorhydria) |
+| **Pernicious Anaemia** | Autoimmune: anti-IF + anti-parietal cell Ab; atrophic body gastritis; ↑gastric Ca; other autoimmune (thyroid, T1DM, vitiligo, Addison) |
+| **Gastric** | Partial/total gastrectomy, gastric bypass (RYGB), gastric lymphoma, atrophic gastritis, H. pylori |
+| **Pancreatic insufficiency** | ↓Pancreatic proteases → R-binder not degraded → B12 not released to bind IF |
+| **Ileal** | Crohn's, ileal resection, blind loop, coeliac (distal), tuberculosis, radiation enteritis |
+| **Bacterial overgrowth** | SIBO (diverticulosis, blind loop, motility) → B12 consumption |
+| **Parasites** | Diphyllobothrium latum (fish tapeworm); Giardia |
+| **Drugs** | PPIs (↓acid, ↓B12 release from food), H2 blockers, **metformin** (↓absorption), colchicine, cholestyramine, OCPs (controversial), N₂O (inactivates B12) |
+| **Genetic** | Imerslund-Gräsbeck (cubam defect); TCN2, ABCD4, HCFC1, MUT (mutase) |
+
+### Section 4: Clinical Features
+
+**Haematological (megaloblastic anaemia):** Macrocytic (MCV >100), hypersegmented neutrophils (earliest), pancytopenia, **HOWELL-JOLLY BODIES** (autosplenectomy in severe); in PA, autoimmune haemolysis (Ab cross-reactivity); intramedullary haemolysis → ↑LDH, ↑bilirubin.
+
+**Neurological (SCD — subacute combined degeneration):**
+- **Posterior columns:** Loss of vibration sense, proprioception; sensory ataxia (positive Romberg); **Lhermitte's sign** (electric shock sensation on neck flexion)
+- **Lateral corticospinal tracts:** Spasticity, hyperreflexia, Babinski positive, weakness
+- **Peripheral neuropathy:** Symmetrical, distal, sensorimotor axonal
+- **Cranial nerves:** Optic neuropathy, anosmia, gustatory loss
+- **Cognitive:** "Megaloblastic madness" — depression, confusion, paranoia, dementia; can be presenting feature
+- **Autonomic:** Impotence, incontinence, orthostatic hypotension
+
+**GI:** Glossitis (beefy red, Hunter's glossitis), anorexia, weight loss, diarrhoea.
+**Other:** Hyperpigmentation (knuckles, nails, oral mucosa — esp. in dark-skinned); infertility; ↑risk neural tube defects (periconception); vitiligo, premature greying (PA autoimmune association); osteoporosis; ↑homocysteine → ↑CVD risk; nail changes (longitudinal, brittle).
+
+### Section 5: Pernicious Anaemia (Specific)
+**Pathogenesis:** Autoimmune destruction of gastric parietal cells → atrophic body gastritis → ↓IF + achlorhydria.
+**Autoantibodies:**
+- **Anti-IF antibody:** Sensitivity 50–60%, **specificity 100%** (diagnostic)
+- **Anti-parietal cell antibody (PCA):** Sensitivity 80%, specificity 90% (other autoimmune also positive)
+**Epidemiology:** Common in older women (60–70y); Northern European descent; associated with other autoimmune (Hashimoto, T1DM, vitiligo, Addison).
+**Complications:** ↑Risk gastric adenocarcinoma (3–5x), gastric NET; iron deficiency (achlorhydria); osteoporosis (↓Ca absorption).
+**Treatment:** Hydroxocobalamin IM lifelong (see below); screen for other autoimmune; periodic upper GI surveillance (controversial).
+
+### Section 6: Diagnosis
+| Test | B12 Deficiency | Cut-off |
+|------|----------------|---------|
+| **Serum B12** | ↓ | <150 pmol/L (<200 ng/L) deficiency; grey zone 150–250 (use MMA/HoloTC) |
+| **Active B12 (HoloTC)** | ↓ (earlier than total) | <20 pmol/L |
+| **MMA** | **↑↑ (specific)** | >0.4 µmol/L |
+| **Homocysteine** | ↑ (also ↑ in folate) | >15 µmol/L |
+| **Anti-IF Ab** | + in PA | Specificity 100% |
+| **PCA** | + in PA (less specific) | 80% sens |
+| **Bone marrow** | Megaloblastic (gold standard, rarely done) | Ring-shaped cells |
+| **Biopsy** | Gastric atrophic gastritis (PA) | Diffuse corpus atrophy |
+
+**Methylmalonic Aciduria & Homocystinuria (CblC):** Genetic MMACHC mutation; severe infantile; combines B12 + folate defects.
+
+### Section 7: Treatment
+
+**Standard UK/European Protocol (B12 deficiency):**
+| Phase | Dose | Frequency | Duration |
+|-------|------|-----------|----------|
+| **Loading** | Hydroxocobalamin 1 mg IM | Alternate days × 2 weeks (5 doses) | First 2 weeks |
+| **Maintenance** | Hydroxocobalamin 1 mg IM | **Every 3 months (q3m)** | Lifelong if non-reversible |
+| **Reversible cause (dietary, drug)** | Maintenance may stop | After 3–6 months | Monitor |
+
+**Oral:** Cyanocobalamin 1–2 mg/day PO; effective in most causes (1% passive absorption independent of IF); 50–100 µg PO daily in dietary; may work even in PA (passive absorption).
+**Intranasal/Sublingual:** Available in some countries.
+**Nitrous Oxide Reversal:** Hydroxocobalamin + methionine; supportive.
+**CblC Disease:** Hydroxocobalamin IM + betaine + folic acid; partial response.
+
+**Response monitoring:**
+- Day 5–7: Reticulocytosis (peak)
+- Day 7–10: Hypersegmented neutrophils normalise
+- Day 14: LDH normalises
+- Week 2–4: Hb rises
+- Week 4–6: MCV normalises
+- **Neurological recovery:** Variable; months; **irreversible if severe/prolonged**
+
+**Potassium:** Watch for **hypokalaemia** in severe deficiency (K⁺ into new RBCs); monitor and replace.
+**Iron:** Often co-deficient (esp. PA, elderly, women); check ferritin; replace if needed.
+**Folate:** Check + replace if co-deficient; BUT only AFTER B12 started (folate worsens B12 neuro if given alone).
+
+## 4. Clinical Correlation
+
+| Scenario | Action | Notes |
+|----------|--------|-------|
+| 65F, fatigue, pallor, MCV 110, hypersegmented neutrophils, B12 80 pmol/L, MMA 2.5 | **Hydroxocobalamin 1 mg IM alternate days × 5**, then q3m | Standard B12 replacement; investigate cause |
+| 50M, vegan, macrocytic anaemia, B12 100, neurological signs | **Hydroxocobalamin 1 mg IM**; dietary counselling; oral B12 50 µg/day | Dietary cause; less likely to need lifelong |
+| 60F, pernicious anaemia, anti-IF+, sensory ataxia, vibration loss | **Hydroxocobalamin 1 mg IM alternate days × 5, then q3m lifelong**; check TFT, glucose, anti-TPO; screen for gastric Ca | PA = lifelong; check iron, folate |
+| 40M, 3y post-RYGB, B12 90, fatigue, no neurological signs | **Hydroxocobalamin 1 mg IM alternate days × 5, then q3m + oral B12** | Bariatric = lifelong B12 + Fe + Ca + D + multivitamin |
+| 25F, anorexia nervosa, vegetarian, B12 110, ↓Hb 8.5, MCV 115 | **Hydroxocobalamin 1 mg IM**; nutritional rehab; psych | B12 deficiency + malnutrition |
+| 55M, MCV 105, B12 95, MMA 0.3 (normal), folate 3 (low) | **Folate 5 mg/day × 4m**; dietary counselling | Folate deficiency (MMA normal) |
+| 35M, N₂O abuse, SCD-like, B12 200, MMA 0.6 | **Hydroxocobalamin 1 mg IM**; N₂O cessation; methionine | N₂O inactivates B12; B12 may be normal |
+| 70M, metformin 2 g, MCV 100, B12 130, asymptomatic | **Oral B12 50–100 µg/day**; metformin dose review; consider B12 monitoring | Metformin ↓B12 absorption 10–30% |
+
+## 5. High-Yield FCPS/MRCP Points
+
+> [!important]
+> - **Must know:** Absorption: R-binder → IF (parietal) → terminal ileum (cubam) → TCN2; 2 reactions: methionine synthase (Hcy→Met, methyl-B12) and mutase (MMA→succinyl-CoA, adenosyl-B12); deficiency = megaloblastic + SCD; **MMA specific** (↑ in B12 only); PA = anti-IF (specific) + PCA; treatment: hydroxocobalamin 1 mg IM alternate days × 5, then q3m; **never give folate before B12**
+> - **Common viva:** Why B12 deficiency takes 3–5y to develop (liver stores); PA autoantibodies; SCD (posterior + lateral columns); MMA vs Hcy; metformin and B12; N₂O toxicity; cubam receptor; Schilling test components
+> - **Exam trap:** Folate for macrocytic anaemia before checking B12 (hides anaemia, worsens B12 neuro); confusing methylmalonic aciduria (organic acidaemia) with B12 MMA; missing PA association (T1DM, Hashimoto, vitiligo, gastric Ca)
+
+## 6. Common Confusions / Exam Traps
+
+| Trap | Correction |
+|------|------------|
+| B12 deficiency takes months to develop | **3–5 years** (liver stores 2–5 mg; daily loss 5–10 µg) |
+| MMA and Hcy both specific for B12 | **MMA specific**; Hcy ↑ in folate and B12 |
+| Folate treatment in B12 deficiency is safe | **Worsens B12 neurological disease**; always check B12 first |
+| Methyl-B12 only active form | **Adenosyl-B12 also active** (mutase); cyanocobalamin = synthetic stable form |
+| B12 deficiency always causes anaemia | **Neuro can occur without anaemia** ("neuro B12"); isolated neuropsychiatric presentation |
+| PA only in elderly women | **PA can occur in younger**; familial form; associated with other autoimmune |
+| Schilling test always needed | **Largely obsolete**; clinical + antibodies + response to treatment |
+| N₂O safe in B12 deficiency | **Oxidises B12** → inactivates methionine synthase → SCD; prolonged OR recreational → irreversible |
+| Cubam = cubilin + amnionless (terminal ileum receptor) | YES — genetic defect = Imerslund-Gräsbeck (megaloblastic anaemia + proteinuria) |
+| Hydroxocobalamin IM is the only treatment | **Oral high-dose 1–2 mg/day** works in most (1% passive absorption) |
+
+## 7. Mnemonics
+
+- **B12 absorption:** **HRIPC** = **H**aptocorrin (R-binder, TCN1) → **R**eleased by pancreatic proteases → **I**ntrinsic Factor (parietal) → **P**arenteral delivery → **C**ubam receptor (terminal ileum) → **T**CN2 (active plasma)
+- **2 reactions:** **M**ethionine (methyl-B12) + **M**utase (adenosyl-B12) = **MM** B12 reactions
+- **PA autoantibodies:** **IF specific, PCA sensitive** = **IF = 100% specific**; **PCA = 80% sensitive**
+- **SCD triad:** **PLS** = **P**osterior column, **L**ateral corticospinal, **S**pinocerebellar
+- **B12 deficiency causes (DD):** **DIPS** = **D**iet, **I**F (PA), **P**ancreas, **S**mall bowel (ileal)
+- **MMA in B12:** **MM**A = **M**utase **M**ethylmalonic acid (adenosyl-B12 → succinyl-CoA)
+- **PA + autoimmune:** **PAID** = **P**A + **A**utoimmune (Hashimoto, T1DM, vitiligo, Addison)
+- **PA + malignancy:** **Gastric cancer + NET 3–5x**
+- **Treatment:** **HIM** = **H**ydroxocobalamin 1mg, **I**M alternate days ×5, then **M**aintenance q3m
+- **Response:** **7-7-14-28** = Reticulocyte 7d, HNL normalise 7d, LDH 14d, MCV 28d
+- **SCD Lhermitte:** **LH**er**M**itte = **L**ightening shooting down spine on neck flexion
+
+## 8. Mind Map
+
+```mermaid
+mindmap
+  root((Vitamin B12))
+    Chemistry
+      Cobalt-corrin complex
+      Methyl-B12 (cytosolic)
+      Adenosyl-B12 (mitochondrial)
+      Hydroxo, Cyano (synthetic)
+    Absorption
+      Stomach: Haptocorrin (R-binder) binds B12
+      Duodenum: Pancreatic proteases release
+      IF binds B12 (parietal cell)
+      Terminal ileum: Cubam receptor (cubilin+amnionless)
+      TCN2 plasma delivery (active B12)
+    Storage
+      Liver 2-5 mg
+      Deficiency: 3-5 years zero intake
+    2 Reactions
+      Methionine Synthase (Methyl-B12)
+        Hcy + 5-MTHF → Met + THF
+        Methyl-folate trap if B12 low
+        Functional folate deficiency
+      Methylmalonyl-CoA Mutase (Adenosyl-B12)
+        MMA-CoA → Succinyl-CoA (Krebs)
+        ↑MMA = specific B12 marker
+        Odd-chain FA, myelin
+    Deficiency
+      Dietary: vegan, elderly
+      PA: anti-IF (specific) + PCA
+      Gastric: gastrectomy, RYGB
+      Pancreatic: ↓proteases
+      Ileal: Crohn's, RYGB
+      Drugs: Metformin, PPIs, N2O
+      Genetic: Cubam, TCN2, MUT
+    Clinical Features
+      Haematological
+        Macrocytic, hypersegmented, pancytopenia
+        ↑LDH, ↑bilirubin
+        Howell-Jolly (autosplenectomy)
+      Neurological (SCD)
+        Posterior column: vibration, proprioception
+        Lateral corticospinal: spasticity, Babinski
+        Peripheral neuropathy
+        Optic atrophy, dementia
+      GI: Glossitis (Hunter), anorexia
+      Other: Hyperpigmentation, infertility
+    Diagnosis
+      Serum B12 <150 pmol/L
+      HoloTC <20 pmol/L (early)
+      MMA ↑↑ (specific)
+      Hcy ↑ (folate also)
+      Anti-IF + (PA)
+      PCA + (less specific)
+    Pernicious Anaemia
+      Atrophic body gastritis
+      Autoimmune (T1DM, Hashimoto)
+      ↑Gastric Ca risk (3-5x)
+      Lifelong B12 IM
+    Treatment
+      Hydroxocobalamin 1 mg IM
+      Loading: alt days × 5
+      Maintenance: q3m
+      Oral 1-2 mg/day alternative
+      Response: 7-7-14-28 days
+      Watch K+ (hypokalaemia)
+```
+
+## 9. -Hour Recall Prompts
+1. Absorption: Haptocorrin → IF → cubam (terminal ileum) → TCN2
+2. 2 reactions: methionine synthase (methyl-B12) + mutase (adenosyl-B12)
+3. Deficiency causes: DIPS (Diet, IF/PA, Pancreas, Small bowel)
+4. SCD: Posterior + Lateral columns; Lhermitte's sign
+5. Diagnosis: B12 <150, ↑MMA (specific), ↑Hcy; anti-IF for PA
+6. PA: autoimmune (anti-IF specific), gastric Ca risk 3-5x, lifelong IM B12
+7. Treatment: hydroxocobalamin 1mg IM alt days × 5, then q3m
+8. Always check B12 BEFORE folate; folate hides anaemia, worsens neuro
+
+## 10. -Day / 15-Day / 30-Day Revision Tracker
+
+| Day | Date | Recall Quality (1-5) | Time Spent | Notes |
+|-----|------|---------------------|------------|-------|
+| 1   |      |                     |            |       |
+| 7   |      |                     |            |       |
+| 15  |      |                     |            |       |
+| 30  |      |                     |            |       |
+
+---
+
+## 11. Must Know / Should Know / Nice to Know
+
+| Priority | Content |
+|----------|---------|
+| **Must Know 🔴** | Absorption (Haptocorrin → IF → cubam → TCN2); 2 reactions (methionine synthase, mutase); deficiency causes (DIPS); SCD (posterior + lateral columns); MMA specific; PA autoantibodies (anti-IF specific, PCA sensitive); hydroxocobalamin 1mg IM loading + q3m maintenance; NEVER give folate before B12 |
+| **Should Know 🟡** | Liver storage 3-5y; N₂O toxicity; metformin and B12; methyl-folate trap; HoloTC (active B12); PA + autoimmune (T1DM, Hashimoto); gastric Ca surveillance; Imerslund-Gräsbeck; schilling test; Lhermitte's sign |
+| **Nice to Know 🟢** | CblC disease (MMACHC); CbIG (TCN1) mutation; N₂O prolonged post-op neuropathy; B12 in autism/HIV; cobalamin transport disorders (ABCD4, HCFC1); Schilling variants |
+
+## 12. My Weak Points
+- [ ] Methyl-folate trap mechanism detail
+- [ ] CblC clinical features
+- [ ] Imerslund-Gräsbeck proteinuria mechanism
+
+## 13. Self-Test Scorecard
+
+| Domain | Score /10 | Target /10 |
+|--------|-----------|------------|
+| Understanding |    | 8+ |
+| Recall |    | 8+ |
+| MCQ Performance |    | 8+ |
+| SBA Performance |    | 8+ |
+| Viva Confidence |    | 8+ |
+| **TOTAL** |    | **40+/50** |
+
+## 14. Exam Answer Modes
+
+### Long Answer / Essay (20 min)
+**Topic:** "Vitamin B12: absorption, biochemistry, deficiency, and management"
+- Chemistry: cobalt-corrin; methyl-B12 (cytosolic, methionine synthase), adenosyl-B12 (mitochondrial, mutase)
+- Absorption: R-binder (haptocorrin) → pancreatic proteases → IF (parietal) → cubam receptor (terminal ileum) → TCN2
+- Storage: liver 2–5 mg; deficiency 3–5y
+- 2 reactions: methionine synthase (Hcy→Met) + mutase (MMA→succinyl-CoA)
+- Causes: DIPS (Diet, IF/PA, Pancreas, Small bowel); metformin, PPIs, N₂O
+- Features: megaloblastic (MCV >100, hypersegmented), SCD (posterior + lateral), glossitis, hyperpigmentation
+- Diagnosis: ↓B12, ↑MMA (specific), ↑Hcy, anti-IF+ for PA
+- Treatment: hydroxocobalamin 1mg IM loading (×5), then q3m; NEVER folate first
+
+### Short Note (7 min)
+**Topic:** "Pernicious Anaemia"
+- Autoimmune; anti-IF antibody (specific 100%) + PCA (sensitive 80%)
+- Atrophic body gastritis; ↓IF + achlorhydria
+- Associated: T1DM, Hashimoto, vitiligo, Addison (autoimmune cluster)
+- Complications: gastric adenocarcinoma (3–5×), NET, iron deficiency
+- Treatment: Hydroxocobalamin 1 mg IM alternate days ×5, then **q3m lifelong**; check iron/folate; screen for other autoimmune
+
+### Viva Answer (3 min)
+**Q:** "Why does B12 deficiency take years to develop?"
+"A: **Liver stores 2–5 mg** (B12 only vitamin stored significantly); daily loss 5–10 µg. With complete malabsorption, body uses hepatic stores — deficiency takes **3–5 years**. (Compare folate: no storage, deficiency in weeks.)"
+
+### Ward Case Discussion (5 min)
+**Case:** 68F, fatigue, pallor, MCV 112, hypersegmented neutrophils, B12 80 pmol/L, MMA 2.5 µmol/L, anti-IF+; vibration sense reduced.
+"Diagnosis: **Pernicious anaemia with B12 deficiency** (SCD early). **Treatment: Hydroxocobalamin 1 mg IM alternate days ×5 loading, then 1 mg IM every 3 months lifelong.** Check ferritin (iron often co-deficient), folate. Monitor: reticulocytes 5–7d, Hb 2–3w. Screen for other autoimmune (TPO, glucose). Counsel: ↑gastric cancer risk — discuss surveillance; consider gastroscopy."
+
+### Last-Night-Before-Exam Sheet (1 min)
+- **Absorption:** Haptocorrin → Pancreatic proteases → IF (parietal) → Cubam (terminal ileum) → TCN2
+- **2 reactions:** Methionine Synthase (methyl-B12, Hcy→Met) + Mutase (adenosyl-B12, MMA→Succinyl-CoA)
+- **Causes:** DIPS (Diet, IF/PA, Pancreas, Small bowel)
+- **SCD:** Posterior + Lateral columns; Lhermitte's; SCD can occur without anaemia
+- **Diagnosis:** ↓B12, ↑↑MMA (specific), ↑Hcy, anti-IF+ (PA specific)
+- **PA:** autoimmune (anti-IF specific), atrophic gastritis, ↑gastric Ca 3-5x
+- **Treatment:** Hydroxocobalamin 1mg IM alt days ×5, then **q3m** lifelong (PA)
+- **NEVER GIVE FOLATE BEFORE B12** (hides anaemia, worsens B12 neuro)
+- **Drugs:** Metformin, PPIs, N₂O (oxidises B12)
+
+## 15. MCQs (10)
+
+1. **Most common cause of vitamin B12 deficiency in the elderly:**
+   A. Vegan diet  
+   B. **Pernicious anaemia**  
+   C. Crohn's disease  
+   D. Metformin use  
+   E. Diphyllobothrium latum  
+
+2. **Specific antibody for pernicious anaemia:**
+   A. Anti-parietal cell antibody  
+   B. **Anti-intrinsic factor antibody**  
+   C. Anti-H. pylori antibody  
+   D. Anti-tissue transglutaminase  
+   E. Anti-TTG  
+
+3. **Biochemical marker SPECIFIC for vitamin B12 deficiency:**
+   A. Homocysteine  
+   B. **Methylmalonic acid (MMA)**  
+   C. Cystathionine  
+   D. Methionine  
+   E. Methylcitrate  
+
+4. **Vitamin B12 cofactor for methylmalonyl-CoA mutase:**
+   A. Methylcobalamin  
+   B. **5'-Deoxyadenosylcobalamin**  
+   C. Hydroxocobalamin  
+   D. Cyanocobalamin  
+   E. Cobinamide  
+
+5. **Site of intrinsic factor production:**
+   A. Chief cells (gastric antrum)  
+   B. **Parietal cells (gastric body/fundus)**  
+   C. Pancreatic acinar cells  
+   D. Duodenal goblet cells  
+   E. Hepatocytes  
+
+6. **Subacute combined degeneration affects:**
+   A. Spinocerebellar tracts only  
+   B. **Posterior columns + lateral corticospinal tracts**  
+   C. Anterior horn cells  
+   D. Dorsal root ganglia  
+   E. Sympathetic chain  
+
+7. **Liver storage of vitamin B12:**
+   A. 2 weeks' worth  
+   B. 2 months' worth  
+   C. **3–5 years' worth**  
+   D. Not stored  
+   E. 1 year  
+
+8. **Lhermitte's sign in B12 deficiency is due to:**
+   A. Optic nerve demyelination  
+   B. **Demyelination of posterior columns**  
+   C. Lateral corticospinal lesion  
+   D. Peripheral neuropathy  
+   E. Cortical lesion  
+
+9. **PA-associated autoimmune diseases include all EXCEPT:**
+   A. Type 1 diabetes  
+   B. Hashimoto's thyroiditis  
+   C. Vitiligo  
+   D. Addison's disease  
+   E. **Rheumatoid arthritis**  
+
+10. **Standard UK B12 loading regimen for confirmed deficiency:**
+    A. Cyanocobalamin 1 mg IM once  
+    B. **Hydroxocobalamin 1 mg IM alternate days × 5, then 1 mg IM q3m**  
+    C. Hydroxocobalamin 1 mg IV daily × 7  
+    D. Cyanocobalamin 50 µg PO daily  
+    E. Hydroxocobalamin 100 mg IM weekly  
+
+## 16. SBA Questions (5)
+
+1. **A 70-year-old woman presents with fatigue, macrocytic anaemia (Hb 8.5, MCV 112), and loss of vibration sense in both feet. B12 is 80 pmol/L, MMA 2.5 µmol/L, anti-intrinsic factor antibody positive. Most appropriate treatment?**
+   A. Oral cyanocobalamin 50 µg daily  
+   B. **Hydroxocobalamin 1 mg IM alternate days × 5, then 1 mg IM every 3 months lifelong**  
+   C. Folic acid 5 mg daily × 4 months  
+   D. Intrinsic factor replacement  
+   E. Gastric surgery  
+
+2. **A 50-year-old man with pernicious anaemia on long-term B12 IM therapy develops increasing fatigue 1 year after switching to oral cyanocobalamin 50 µg daily. B12 level 90 pmol/L. Most likely cause?**
+   A. Non-compliance  
+   B. **Insufficient oral dose (need 1–2 mg/day for passive absorption)**  
+   C. New gastric malignancy  
+   D. Anti-IF antibody not blocking oral absorption  
+   E. Concurrent metformin use  
+
+3. **A 30-year-old woman presents with loss of vibration and proprioception, spastic paraparesis, and macrocytic anaemia. She is a strict vegan. B12 100 pmol/L, MMA 2.0 µmol/L, homocysteine 50 µmol/L. Most appropriate management?**
+   A. Oral folic acid 5 mg/day  
+   B. **Hydroxocobalamin 1 mg IM alternate days × 5, then dietary + oral B12 50–100 µg/day**  
+   C. Reassurance; advise dairy intake  
+   D. B12 IM monthly for life  
+   E. Iron + B12 IM  
+
+4. **A 25-year-old who is a heavy user of nitrous oxide recreationally presents with progressive lower limb sensory loss and gait ataxia. Serum B12 is 250 pmol/L (normal). Next best step?**
+   A. MRI brain and spine  
+   B. **Check MMA (likely elevated) and start hydroxocobalamin IM; N₂O cessation**  
+   C. Lumbar puncture  
+   D. Reassure; B12 normal  
+   E. Folate 5 mg/day  
+
+5. **A 55-year-old with type 2 diabetes on metformin 2 g/day, Hb 9 g/dL, MCV 100, B12 130 pmol/L, asymptomatic. Best management?**
+   A. Stop metformin  
+   B. IM hydroxocobalamin lifelong  
+   C. **Oral cyanocobalamin 50–100 µg/day; consider metformin dose reduction**  
+   D. Folate 5 mg/day  
+   E. Recheck in 1 year  
+
+## 17. Flashcards
+
+- Q: B12 absorption pathway  
+  A: **Haptocorrin → Pancreatic proteases → IF (parietal) → Cubam (terminal ileum) → TCN2**
+- Q: 2 B12 reactions  
+  A: **Methionine synthase (methyl-B12, Hcy→Met) + Mutase (adenosyl-B12, MMA→Succinyl-CoA)**
+- Q: B12 deficiency causes  
+  A: **DIPS** = **D**iet, **I**F (PA), **P**ancreas, **S**mall bowel (ileal)
+- Q: SCD tracts  
+  A: **PLS** = **P**osterior columns, **L**ateral corticospinal, **S**pinocerebellar
+- Q: SCD Lhermitte's  
+  A: **Lightening sensation down spine on neck flexion (posterior columns)**
+- Q: B12 specific marker  
+  A: **MMA ↑↑** (methylmalonyl-CoA mutase; specific for B12, not folate)
+- Q: PA specific antibody  
+  A: **Anti-IF** (specificity 100%, sensitivity 50–60%)
+- Q: PA sensitive antibody  
+  A: **PCA** (sensitivity 80%, specificity 90%)
+- Q: Treatment loading  
+  A: **Hydroxocobalamin 1 mg IM alternate days × 5, then q3m**
+- Q: PA + autoimmune  
+  A: **PAID** = **P**A + T1DM, **A**ddison, **I**mmune (Hashimoto, vitiligo)
+- Q: PA + malignancy  
+  A: **Gastric adenocarcinoma + NET (3–5x risk)**
+- Q: B12 storage  
+  A: **Liver 2–5 mg (3–5 years of deficiency development)**
+- Q: B12 vs folate MMA  
+  A: **MMA ↑ in B12 only; Hcy ↑ in both**
+- Q: N₂O and B12  
+  A: **Oxidises cobalt → inactivates methionine synthase → SCD**
+- Q: Metformin and B12  
+  A: **↓B12 absorption 10–30%** (long-term use)
+
+## 18. Answer Key with Explanations
+
+### MCQs
+1. **B** — Pernicious anaemia (autoimmune IF destruction) is the most common cause in elderly.
+2. **B** — Anti-IF antibody is 100% specific for PA; PCA is sensitive but less specific.
+3. **B** — Methylmalonic acid (MMA) is specific for B12 (requires adenosyl-B12 mutase); homocysteine ↑ in both folate and B12.
+4. **B** — Adenosyl-B12 (5'-deoxyadenosylcobalamin) is the cofactor for methylmalonyl-CoA mutase (mitochondrial).
+5. **B** — Intrinsic factor is secreted by parietal cells in the body/fundus; chief cells make pepsinogen.
+6. **B** — SCD affects posterior columns (vibration, proprioception) and lateral corticospinal tracts (spasticity, UMN signs).
+7. **C** — Liver stores 2–5 mg; depletion takes 3–5 years (compare folate: no storage, weeks).
+8. **B** — Lhermitte's sign (electric shock on neck flexion) is from posterior column demyelination.
+9. **E** — PA associated with T1DM, Hashimoto's, vitiligo, Addison (organ-specific autoimmune); RA is generalised autoimmune.
+10. **B** — Standard UK protocol: hydroxocobalamin 1 mg IM alternate days × 5, then 1 mg IM q3m (maintenance).
+
+### SBAs
+1. **B** — PA with neurological SCD: hydroxocobalamin IM loading ×5, then q3m lifelong; oral 50 µg insufficient.
+2. **B** — Oral B12 absorption: 1% passive (independent of IF); need 1–2 mg/day for adequate replacement; 50 µg insufficient.
+3. **B** — Vegan + SCD: hydroxocobalamin IM loading for neurological recovery; then oral 50–100 µg daily for maintenance (reversible cause).
+4. **B** — N₂O oxidises B12 → inactivates methionine synthase → SCD despite normal B12; check MMA, treat with hydroxocobalamin, N₂O cessation.
+5. **C** — Metformin-induced B12 deficiency: oral B12 50–100 µg/day; consider metformin dose reduction; monitor Hb.
+
+## 19. Summary
+
+**Vitamin B12 (Cobalamin)** is a **Must Know 🔴** topic for FCPS/MRCP.
+**Key takeaway:** Absorption: R-binder → IF (parietal) → cubam (terminal ileum) → TCN2; liver stores 2–5 mg (3–5y depletion). 2 reactions: methionine synthase (methyl-B12, Hcy→Met) + methylmalonyl-CoA mutase (adenosyl-B12, MMA→succinyl-CoA). Deficiency causes: DIPS (Diet, IF/PA, Pancreas, Small bowel). **SCD: posterior + lateral columns; Lhermitte's sign.** **MMA is SPECIFIC** (↑ in B12 only); Hcy ↑ in both. **PA: anti-IF (specific) + PCA**; ↑gastric Ca 3–5x. Treatment: **hydroxocobalamin 1mg IM loading ×5, then q3m lifelong (PA).** **NEVER give folate before B12.**
+**Exam focus:** Absorption pathway, 2 reactions, SCD, MMA vs Hcy, PA antibodies, treatment schedule, drug interactions (metformin, PPIs, N₂O), pregnancy/neurodevelopment.
+**Clinical relevance:** Vegetarian/vegan counselling; elderly macrocytic anaemia workup; metformin monitoring; post-bariatric supplementation; N₂O awareness.
+
+*Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented*

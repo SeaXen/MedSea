@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Theophylline — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.13. TDM</span>
+      <div class="h1">Theophylline</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] State therapeutic and toxic ranges for theophylline</li><li>[ ] Apply CYP1A2 interaction management (smoking, fluvoxamine, ciprofloxacin, etc.)</li><li>[ ] Recognise toxicity: cardiac, neurological, GI, metabolic</li><li>[ ] Manage overdose: HALT algorithm, charcoal, dialysis indications</li><li>[ ] Apply dosing in special populations (heart failure, liver disease, elderly)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Therapeutic Range & Sampling</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>**Therapeutic Range (mg/L or µg/mL)**</th><th>**Toxic Threshold**</th></tr><tr><td>------------</td><td>--------------------------------------</td><td>---------------------</td></tr><tr><td>**Chronic Asthma / COPD**</td><td>**10–20**</td><td>**>20**</td></tr><tr><td>**Acute Severe Asthma (IV Aminophylline)**</td><td>**10–20**</td><td>**>20**</td></tr></table>
+<div class="callout"><b>Target 10–20 mg/L</b> — <b>↑ Efficacy above 10, ↑ Toxicity above 20</b></div>
+<div class="sub-h">Sampling Timing</div>
+<table class="ctable"><tr><th>Route</th><th>**Sampling Time**</th></tr><tr><td>-------</td><td>------------------</td></tr><tr><td>**Oral (Sustained-Release)**</td><td>**Trough (pre-dose)** at steady state (48h)</td></tr><tr><td>**IV Aminophylline**</td><td>**4–6h after infusion start** (or pre-next dose if intermittent)</td></tr><tr><td>**Loading Dose**</td><td>**30 min post-infusion**</td></tr></table>
+<div class="callout"><b>Steady state</b>: <b>~48h</b> (t½ ~8h in non-smokers; ~3–5h in smokers)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚖️ Factors Affecting Clearance (CYP1A2)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Factor</th><th>**Effect on Clearance**</th><th>**Dose Adjustment**</th></tr><tr><td>--------</td><td>------------------------</td><td>---------------------</td></tr><tr><td>**Cigarette Smoking**</td><td>**↑↑ Clearance (induces CYP1A2) — 2–3x faster**</td><td>**Smokers need 2–3x higher dose**</td></tr><tr><td>**Marijuana**</td><td>↑ Clearance (induces CYP1A2)</td><td>↑ Dose</td></tr><tr><td>**Age (Elderly >65)**</td><td>↓ Clearance (↓ CYP activity, ↓ Vd)</td><td>**↓ Dose 25–50%**</td></tr><tr><td>**Heart Failure**</td><td>↓ Clearance (↓ hepatic blood flow)</td><td>**↓ Dose 25–50%**</td></tr><tr><td>**Liver Disease (Cirrhosis)**</td><td>↓↓ Clearance</td><td>**↓ Dose 50–75%**</td></tr><tr><td>**Viral Infection / Fever**</td><td>↓ Clearance</td><td>↓ Dose</td></tr><tr><td>**Pregnancy (3rd Trimester)**</td><td>↑ Clearance</td><td>↑ Dose</td></tr><tr><td>**Obesity**</td><td>**Use Ideal Body Weight (IBW)** for dosing</td><td>IBW-based</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🔄 Key CYP1A2 Interactions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Inhibitors (↑ Theophylline Levels → Toxicity Risk)</div>
+<table class="ctable"><tr><th>Inhibitor</th><th>**Effect**</th><th>**Management**</th></tr><tr><td>-----------</td><td>------------</td><td>----------------</td></tr><tr><td>**Fluvoxamine**</td><td>**↑ Levels 3–5x** (potent CYP1A2 inhibitor)</td><td>**AVOID**; if essential: ↓ theophylline **75–90%**, monitor levels</td></tr><tr><td>**Ciprofloxacin**</td><td>**↑ Levels 2–3x**</td><td>**AVOID**; use alternative; if essential: ↓ theophylline **50%**, monitor</td></tr><tr><td>**Enoxacin / Ofloxacin / Norfloxacin**</td><td>↑ Levels 2–3x</td><td>Similar to ciprofloxacin</td></tr><tr><td>**Moxifloxacin / Levofloxacin**</td><td>↑ Levels (weak/mod)</td><td>Monitor; ↓ dose if needed</td></tr><tr><td>**Cimetidine**</td><td>↑ Levels 30–50%</td><td>**AVOID**; use famotidine/ranitidine (no CYP inhibition)</td></tr><tr><td>**Allopurinol**</td><td>↑ Levels 20–30%</td><td>Monitor levels</td></tr><tr><td>**Oral Contraceptives**</td><td>↑ Levels 30–50%</td><td>Monitor levels</td></tr><tr><td>**Interferon-α**</td><td>↑ Levels</td><td>Monitor</td></tr><tr><td>**Propranolol**</td><td>↑ Levels (mod)</td><td>Monitor</td></tr><tr><td>**Mexiletine**</td><td>↑ Levels</td><td>Monitor</td></tr></table>
+<div class="sub-h">Inducers (↓ Theophylline Levels → Subtherapeutic)</div>
+<table class="ctable"><tr><th>Inducer</th><th>**Effect**</th><th>**Management**</th></tr><tr><td>---------</td><td>------------</td><td>----------------</td></tr><tr><td>**Cigarette Smoking**</td><td>**↑ Clearance 2–3x** (major)</td><td>**Smokers need 2–3x dose**; check level 1 week after quitting</td></tr><tr><td>**Marijuana**</td><td>↑ Clearance</td><td>↑ Dose</td></tr><tr><td>**Rifampicin**</td><td>**↑ Clearance 2–3x**</td><td>↑ Dose; monitor</td></tr><tr><td>**Carbamazepine / Phenytoin / Phenobarbital**</td><td>↑ Clearance (CYP1A2 + 3A4)</td><td>↑ Dose; monitor</td></tr><tr><td>**St John's Wort**</td><td>↑ Clearance</td><td>↑ Dose; monitor</td></tr><tr><td>**High Protein / Low Carb Diet**</td><td>↑ Clearance</td><td>Monitor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">☠️ Theophylline Toxicity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute vs Chronic</div>
+<table class="ctable"><tr><th>Feature</th><th>**Acute Overdose**</th><th>**Chronic Toxicity**</th></tr><tr><td>---------</td><td>-------------------</td><td>----------------------</td></tr><tr><td>**Context**</td><td>Intentional / accidental massive ingestion</td><td>**Therapeutic dosing + precipitant** (inhibitor, HF, liver disease, elderly)</td></tr><tr><td>**Level Correlation**</td><td>**Good** — level predicts severity</td><td>**Poor** — **level may be only mildly elevated (20–30)** but severe toxicity</td></tr><tr><td>**GI**</td><td>**Prominent** (N/V, haematemesis)</td><td>**Mild**</td></tr><tr><td>**Cardiac**</td><td>**Prominent** (arrhythmias, hypotension)</td><td>**Prominent** (arrhythmias)</td></tr><tr><td>**Neurological**</td><td>Seizures (late)</td><td>**Seizures (often refractory)**</td></tr><tr><td>**Metabolic**</td><td>Hypokalaemia, Hyperglycaemia, Metabolic acidosis</td><td>Similar</td></tr></table>
+<div class="sub-h">Clinical Features by Level</div>
+<table class="ctable"><tr><th>Level (mg/L)</th><th>Features</th></tr><tr><td>--------------</td><td>----------</td></tr><tr><td>**10–20**</td><td>Therapeutic</td></tr><tr><td>**20–30**</td><td>N/V, Tremor, Tachycardia, Palpitations, Hypokalaemia, Hyperglycaemia</td></tr><tr><td>**30–50**</td><td>**Seizures (often refractory)**, **Arrhythmias (SVT, VT, VF)**, Hypotension, Rhabdomyolysis, Metabolic acidosis</td></tr><tr><td>**>50**</td><td>**Life-threatening** — Status epilepticus, VF, Multi-organ failure</td></tr></table>
+<div class="callout"><b>Chronic toxicity</b>: <b>Seizures can occur at levels 20–30 mg/L</b> (unlike acute where seizures &gt;30)</div>
+<div class="sub-h">Key Toxicity Mechanisms</div>
+<table class="ctable"><tr><th>System</th><th>Mechanism</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Cardiac**</td><td>Adenosine receptor antagonism → ↑ cAMP → ↑ Ca²⁺ influx → **① Tachyarrhythmias (SVT, VT)**, **② Hypotension (β2 vasodilation)**</td></tr><tr><td>**Neurological**</td><td>Adenosine A1 antagonism → **Seizures**; Phosphodiesterase inhibition → ↑ cAMP/cGMP</td></tr><tr><td>**GI**</td><td>Phosphodiesterase inhibition → ↑ Gastric acid, ↓ LES tone → **N/V, Reflux, Haematemesis**</td></tr><tr><td>**Metabolic**</td><td>β2 agonism → **Hypokalaemia** (K⁺ shift into cells), **Hyperglycaemia** (glycogenolysis), Lipolysis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">💊 Management of Toxicity / Overdose</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">HALT Algorithm (Acute Overdose)</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**H**</td><td>**HALT theophylline** (stop immediately)</td></tr><tr><td>**A**</td><td>**Activated Charcoal** — **Multiple-dose (MDAC) 50g q4h** (enhances elimination via gut dialysis); **Whole bowel irrigation** if sustained-release</td></tr><tr><td>**L**</td><td>**Laxative** (sorbitol) with first charcoal dose only</td></tr><tr><td>**T**</td><td>**Treat** complications</td></tr></table>
+<div class="sub-h">Specific Treatments</div>
+<table class="ctable"><tr><th>Complication</th><th>Treatment</th></tr><tr><td>--------------</td><td>-----------</td></tr><tr><td>**Seizures**</td><td>**IV Benzodiazepines** (Lorazepam 4mg / Diazepam 10mg); **Refractory: Propofol / Phenobarbital / Midazolam infusion**; **Phenytoin LESS effective** (may ↓ seizure threshold)</td></tr><tr><td>**Arrhythmias**</td><td>**β-blockers (Esmolol, Metoprolol)** for SVT/VT; **Amiodarone** for VF/VT; **Avoid verapamil/diltiazem** (↑ theophylline)</td></tr><tr><td>**Hypotension**</td><td>IV Fluids; **Noradrenaline** (avoid dopamine — β1 may worsen arrhythmias)</td></tr><tr><td>**Hypokalaemia**</td><td>**IV KCl** replacement (target K⁺ >4.0)</td></tr><tr><td>**Metabolic Acidosis**</td><td>**IV Sodium Bicarbonate** (if pH <7.2)</td></tr></table>
+<div class="sub-h">Dialysis Indications (Extracorporeal Removal)</div>
+<table class="ctable"><tr><th>Indication</th><th>Threshold</th></tr><tr><td>------------</td><td>-----------</td></tr><tr><td>**Haemodialysis / Haemoperfusion**</td><td>**Level >100 mg/L (acute)** OR **Level >60 mg/L (chronic)**</td></tr><tr><td>**Severe toxicity**</td><td>**Refractory seizures, Life-threatening arrhythmias, Haemodynamic instability**</td></tr><tr><td>**Renal failure**</td><td>If concurrent AKI — dialysis for both</td></tr></table>
+<div class="callout"><b>Theophylline dialyzable</b> (low protein binding, low Vd, MW 180) — <b>HD is highly effective</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Therapeutic range**</td><td>**10–20 mg/L**</td></tr><tr><td>**Toxic**</td><td>**>20 mg/L**; **Chonic toxicity seizures at 20–30**</td></tr><tr><td>**Smoking**</td><td>**Induces CYP1A2 → 2–3x clearance** → smokers need **2–3x dose**</td></tr><tr><td>**Fluvoxamine**</td><td>**Potent inhibitor** → ↑ levels **3–5x** — **AVOID**</td></tr><tr><td>**Ciprofloxacin**</td><td>↑ Levels **2–3x** — **AVOID**</td></tr><tr><td>**Cimetidine**</td><td>↑ Levels **30–50%** — **AVOID** (use famotidine)</td></tr><tr><td>**HF / Liver disease / Elderly**</td><td>**↓ Clearance** → **↓ Dose 25–50%**</td></tr><tr><td>**Chronic toxicity**</td><td>**Seizures at 20–30 mg/L** (lower than acute)</td></tr><tr><td>**Overdose**</td><td>**MDAC 50g q4h** (enhanced elimination); **HD if >100 acute / >60 chronic**</td></tr><tr><td>**Seizure treatment**</td><td>**Benzodiazepines first**; Phenytoin LESS effective</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Theophylline therapeutic range?</td><td>**10–20 mg/L**</td></tr><tr><td>2. Smoking effect on theophylline?</td><td>**Induces CYP1A2 → ↑ clearance 2–3x** → smokers need **2–3x higher dose**; check level 1 week after quitting</td></tr><tr><td>3. Fluvoxamine + theophylline — effect?</td><td>**Potent CYP1A2 inhibitor → ↑ levels 3–5x** — **AVOID**</td></tr><tr><td>4. Ciprofloxacin + theophylline — effect?</td><td>**↑ Levels 2–3x** — **AVOID**; if essential: ↓ theophylline 50%, monitor</td></tr><tr><td>5. Cimetidine + theophylline — effect?</td><td>**↑ Levels 30–50%** — **AVOID** (use famotidine)</td></tr><tr><td>6. Chronic vs acute theophylline toxicity — seizure threshold?</td><td>**Chronic: seizures at 20–30 mg/L**; **Acute: seizures >30 mg/L**</td></tr><tr><td>7. Theophylline overdose — enhanced elimination?</td><td>**Multiple-dose activated charcoal (MDAC) 50g q4h**; Whole bowel irrigation if SR</td></tr><tr><td>8. Theophylline overdose — dialysis indications?</td><td>**Acute >100 mg/L; Chronic >60 mg/L; Refractory seizures; Life-threatening arrhythmias**</td></tr><tr><td>9. Theophylline seizure treatment — first line?</td><td>**IV Benzodiazepines (Lorazepam/Diazepam)**; **Phenytoin LESS effective**</td></tr><tr><td>10. Heart failure + theophylline — dose adjustment?</td><td>**↓ Clearance (↓ hepatic blood flow)** → **↓ Dose 25–50%**; monitor levels</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Acute vs Chronic seizures**</td><td>**Chronic toxicity = seizures at LOWER levels (20–30)**; Acute = seizures >30</td></tr><tr><td>**Fluvoxamine = strongest inhibitor**</td><td>**Fluvoxamine > Ciprofloxacin > Cimetidine > OCP**</td></tr><tr><td>**Phenytoin for theophylline seizures**</td><td>**LESS effective** — may even ↓ seizure threshold; **Benzodiazepines first**</td></tr><tr><td>**Smoking cessation**</td><td>**Clearance ↓ 2–3x** after quitting → **check level 1 week post-quit**; ↓ dose</td></tr><tr><td>**Dialysis**</td><td>**Highly effective** (low protein binding, low Vd, small MW)</td></tr><tr><td>**Esmolol for arrhythmias**</td><td>**β-blocker of choice** (short-acting, cardioselective); **Avoid verapamil/diltiazem** (↑ theophylline)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"THEOPHYLLINE 10-20"</b> = Therapeutic range 10-20 mg/L</li><li><b>"SMOKER = 2-3X DOSE"</b> = CYP1A2 induction → 2-3x clearance</li><li><b>"FLUVOXAMINE = 3-5X TOXIC"</b> = Potent CYP1A2 inhibitor</li><li><b>"CIPRO = 2-3X TOXIC"</b> = Avoid with theophylline</li><li><b>"CIMETIDINE = AVOID"</b> = ↑ 30-50% (use famotidine)</li><li><b>"CHRONIC SEIZURES = 20-30"</b> = Lower threshold than acute</li><li><b>"MDAC = 50G Q4H"</b> = Multiple-dose activated charcoal</li><li><b>"DIALYSIS &gt;100 ACUTE / &gt;60 CHRONIC"</b></li><li><b>"BENZOS FOR SEIZURES"</b> = Phenytoin less effective</li><li><b>"HF/LIVER/ELDERLY = ↓ DOSE 25-50%"</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Theophylline TDM)) Range Therapeutic: 10-20 mg/L Toxic: &gt;20 Chronic seizure threshold: 20-30 Factors Affecting Clearance (CYP1A2) Smoking: ↑↑ 2-3x (inducer) Elderly: ↓ Heart Failure: ↓↓ (hepatic flow) Liver Disease: ↓↓↓ Viral/Fever: ↓ Pregnancy: ↑ Obesity: Use IBW Inhibitors (↑ Levels) Fluvoxamine: 3-5x (POTENT) Ciprofloxacin: 2-3x Enoxacin/Ofloxacin: 2-3x Cimetidine: 30-50% OCP: 30-50% Allopurinol: 20-30% Propranolol, Mexiletine, Interferon Inducers (↓ Levels) Smoking (major) Rifampicin Carbamazepine/Phenytoin/Phenobarbital St John's Wort Toxicity Acute: GI prominent, Seizures &gt;30 Chronic: Neuro prominent, Seizures 20-30 Cardiac: SVT, VT, VF, Hypotension Metabolic: HypoK, Hyperglycaemia, Acidosis Overdose Management HALT theophylline MDAC 50g q4h Benzos for seizures Esmolol for arrhythmias HD: &gt;100 acute, &gt;60 chronic </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Range & factors</td><td>8</td><td></td></tr><tr><td>Interactions</td><td>8</td><td></td></tr><tr><td>Toxicity (acute vs chronic)</td><td>8</td><td></td></tr><tr><td>Overdose management</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**42**</td><td></td></tr></table>
+<p><b>Target</b>: ≥34/42 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Theophylline therapeutic range, key interactions, and overdose management."*</div>
+<ul><li><b>Range</b>: <b>10–20 mg/L</b>; Toxic &gt;20; Chronic seizures 20–30</li><li><b>Inhibitors</b>: Fluvoxamine (3–5x), Ciprofloxacin (2–3x), Cimetidine (30–50%), OCP (30–50%)</li><li><b>Inducers</b>: Smoking (2–3x clearance), Rifampicin, Carbamazepine/Phenytoin</li><li><b>Overdose</b>: <b>HALT + MDAC 50g q4h + Benzos for seizures + Esmolol for arrhythmias + HD if &gt;100 acute / &gt;60 chronic</b></li></ul>
+<div class="sub-h">Viva (1 min): *"COPD patient on theophylline, started ciprofloxacin for exacerbation. 2 days later: N/V, tachycardia, tremor. Level 28. Management?"*</div>
+<ul><li><b>Ciprofloxacin inhibits CYP1A2 → ↑ theophylline 2–3x → toxicity</b></li><li><b>STOP theophylline</b>; <b>STOP ciprofloxacin</b> (switch to azithromycin/doxycycline)</li><li><b>Activated charcoal</b> if recent ingestion</li><li><b>IV Benzodiazepines</b> if seizures; <b>Esmolol</b> for tachycardia/arrhythmias</li><li><b>K⁺ replacement</b> (hypokalaemia)</li><li><b>HD if level &gt;60 (chronic) or refractory toxicity</b></li><li>Monitor level q6h</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Smoker on theophylline 400mg BD, quits smoking. 1 week later: N/V, tremor. Why?"*</div>
+<ul><li><b>Smoking cessation → CYP1A2 induction stops → clearance ↓ 2–3x → theophylline accumulation → toxicity</b></li><li><b>Check level 1 week after quitting</b>; ↓ theophylline dose <b>50–66%</b></li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Theophylline range = 10–20; Toxic &gt;20; Chronic seizures 20–30</li><li>Smoking = CYP1A2 inducer → 2–3× clearance → smokers need 2–3× dose</li><li>Fluvoxamine = potent inhibitor (3–5×) — AVOID</li><li>Ciprofloxacin = 2–3× inhibitor — AVOID</li><li>Cimetidine = 30–50% inhibitor — use famotidine</li><li>HF/Liver/Elderly = ↓ clearance → ↓ dose 25–50%</li><li>Chronic toxicity seizures at 20–30 (lower than acute)</li><li>Overdose: HALT + MDAC 50g q4h + Benzos + Esmolol</li><li>HD if &gt;100 acute / &gt;60 chronic</li><li>Smoking cessation = check level 1 week, ↓ dose</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>THEOPHYLLINE TDM:</b> <b>RANGE 10-20 mg/L</b> <b>SMOKING = CYP1A2 INDUCER → 2-3x CLEARANCE → 2-3x DOSE</b> <b>FLUVOXAMINE = 3-5x TOXIC (AVOID)</b> <b>CIPRO = 2-3x TOXIC (AVOID)</b> <b>CIMETIDINE = ↑ 30-50% (USE FAMOTIDINE)</b> <b>CHRONIC TOXICITY SEIZURES = 20-30</b> (lower than acute) <b>HF/LIVER/ELDERLY = ↓ DOSE 25-50%</b> <b>OVERDOSE</b> = HALT + <b>MDAC 50g q4h</b> + <b>BENZOS</b> + <b>ESMOLOL</b> <b>DIALYSIS</b> = &gt;100 acute / &gt;60 chronic</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Theophylline therapeutic range:</b></li></ol>
+<p>A. 5–10 mg/L B. <b>10–20 mg/L</b> ✓ C. 20–30 mg/L D. 30–40 mg/L E. 40–50 mg/L</p>
+<ol><li><b>Cigarette smoking effect on theophylline clearance:</b></li></ol>
+<p>A. ↓ Clearance 50% B. No effect C. <b>↑ Clearance 2–3x (CYP1A2 induction)</b> ✓ D. ↑ Clearance 10x E. Unpredictable</p>
+<ol><li><b>Fluvoxamine + Theophylline — effect on theophylline levels:</b></li></ol>
+<p>A. No change B. ↑ 20–30% C. ↑ 2–3x D. <b>↑ 3–5x</b> ✓ E. ↓ 50%</p>
+<ol><li><b>Ciprofloxacin + Theophylline — effect:</b></li></ol>
+<p>A. No interaction B. <b>↑ Levels 2–3x</b> ✓ C. ↓ Levels 50% D. ↑ 3–5x E. ↓ 2–3x</p>
+<ol><li><b>Cimetidine + Theophylline — preferred H2 blocker alternative:</b></li></ol>
+<p>A. Ranitidine B. <b>Famotidine</b> ✓ C. Nizatidine D. Omeprazole E. No alternative needed</p>
+<ol><li><b>Chronic theophylline toxicity — seizures can occur at level:</b></li></ol>
+<p>A. &gt;10 mg/L B. <b>20–30 mg/L</b> ✓ C. &gt;30 mg/L D. &gt;40 mg/L E. &gt;50 mg/L</p>
+<ol><li><b>Acute theophylline overdose — seizures typically at level:</b></li></ol>
+<p>A. 15–20 mg/L B. 20–30 mg/L C. <b>&gt;30 mg/L</b> ✓ D. &gt;50 mg/L E. &gt;100 mg/L</p>
+<ol><li><b>Theophylline overdose — enhanced elimination method:</b></li></ol>
+<p>A. Forced alkaline diuresis B. <b>Multiple-dose activated charcoal (MDAC) 50g q4h</b> ✓ C. Haemoperfusion only D. Haemodialysis only (no charcoal) E. Whole bowel irrigation only</p>
+<ol><li><b>Theophylline seizure — first-line treatment:</b></li></ol>
+<p>A. Phenytoin B. <b>IV Benzodiazepines (Lorazepam/Diazepam)</b> ✓ C. Phenobarbital D. Propofol E. Levetiracetam</p>
+<ol><li><b>Theophylline arrhythmia — preferred β-blocker:</b></li></ol>
+<p>A. Propranolol B. Metoprolol C. <b>Esmolol</b> ✓ D. Atenolol E. Bisoprolol</p>
+<ol><li><b>Theophylline dialysis indications — chronic toxicity:</b></li></ol>
+<p>A. Level &gt;30 mg/L B. <b>Level &gt;60 mg/L</b> ✓ C. Level &gt;80 mg/L D. Level &gt;100 mg/L E. Any level with seizure</p>
+<ol><li><b>Smoking cessation — theophylline dose adjustment:</b></li></ol>
+<p>A. No change B. <b>↓ Dose 50–66%; check level 1 week post-quit</b> ✓ C. ↑ Dose D. Check level only E. Switch to alternative</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Theophylline range</td><td>10–20 mg/L</td></tr><tr><td>Smoking effect</td><td>CYP1A2 induction → 2-3x clearance → 2-3x dose needed</td></tr><tr><td>Fluvoxamine</td><td>Potent CYP1A2 inhibitor → 3-5x theophylline (AVOID)</td></tr><tr><td>Ciprofloxacin</td><td>2-3x theophylline (AVOID)</td></tr><tr><td>Cimetidine</td><td>↑ 30-50% (use famotidine)</td></tr><tr><td>Chronic toxicity seizures</td><td>20-30 mg/L</td></tr><tr><td>Acute toxicity seizures</td><td>>30 mg/L</td></tr><tr><td>Overdose: enhanced elimination</td><td>MDAC 50g q4h</td></tr><tr><td>Overdose: seizure Rx</td><td>IV Benzodiazepines (phenytoin less effective)</td></tr><tr><td>Overdose: arrhythmia Rx</td><td>Esmolol (avoid verapamil/diltiazem)</td></tr><tr><td>Dialysis indication</td><td>>100 acute / >60 chronic / refractory seizure / life-threatening arrhythmia</td></tr><tr><td>Smoking cessation</td><td>Clearance ↓ 2-3x → check level 1 week, ↓ dose 50-66%</td></tr><tr><td>HF/Liver/Elderly</td><td>↓ clearance → ↓ dose 25-50%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 10–20 mg/L</li><li><b>C</b> — ↑ Clearance 2–3x (CYP1A2 induction)</li><li><b>D</b> — ↑ 3–5x</li><li><b>B</b> — ↑ Levels 2–3x</li><li><b>B</b> — Famotidine</li><li><b>B</b> — 20–30 mg/L</li><li><b>C</b> — &gt;30 mg/L</li><li><b>B</b> — MDAC 50g q4h</li><li><b>B</b> — IV Benzodiazepines</li><li><b>C</b> — Esmolol</li><li><b>B</b> — Level &gt;60 mg/L (chronic)</li><li><b>B</b> — ↓ Dose 50–66%; check level 1 week post-quit</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/TDM/Theophylline.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Theophylline · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

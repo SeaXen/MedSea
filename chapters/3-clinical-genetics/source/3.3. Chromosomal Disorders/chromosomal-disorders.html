@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chromosomal Disorders — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 3 CLINICAL GENETICS / 3.3. CHROMOSOMAL DISORDERS</span>
+      <div class="h1">Chromosomal Disorders</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>aneuploidy ultrasound features</b> and <b>recurrence risks</b></li><li>[ ] Interpret <b>balanced vs unbalanced translocations</b> (Robertsonian, Reciprocal) and recurrence risks</li><li>[ ] Recognise <b>microdeletion/duplication syndromes</b> (22q11, 1p36, 5p, 7q11, 15q, 17p, 17q)</li><li>[ ] Recognise <b>chromosomal instability syndromes</b> (Fanconi, Bloom, AT, NBS)</li><li>[ ] Calculate <b>recurrence risks</b> for translocation carriers</li><li>[ ] Answer viva: "Robertsonian translocation 14;21 recurrence risk" and "Microdeletion 22q11.2 features"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Chromosomal Architecture</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Chromosomal Disorders] --&gt; B[Aneuploidy&lt;br/&gt;Numerical] A --&gt; B2[Structural Rearrangements&lt;br/&gt;Balanced/Unbalanced] A --&gt; B3[Microdeletion/Duplication&lt;br/&gt;Submicroscopic] A --&gt; B4[Instability Syndromes&lt;br/&gt;DNA Repair Defects]</p>
+<p>B --&gt; C1[Trisomy 21 (Down)] B --&gt; C2[Trisomy 18 (Edwards)] B --&gt; C3[Trisomy 13 (Patau)] B --&gt; C4[Sex Chromosome (45,X; 47,XXY; 47,XXX; 47,XYY)]</p>
+<p>B2 --&gt; D1[Robertsonian Translocation] B2 --&gt; D2[Reciprocal Translocation] B2 --&gt; D3[Inversions] B2 --&gt; D4[Insertions/Rings/Dicentrics]</p>
+<p>B3 --&gt; E1[22q11.2 (DiGeorge/VCFS)] B3 --&gt; E2[1p36, 5p (Cri-du-chat), 7q11 (Williams)] B3 --&gt; E3[15q11-13 (PWS/AS), 17p13 (Miller-Dieker)] B3 --&gt; E4[17q12 (HNF1B), 16p11.2, 1q21.1]</p>
+<p>B4 --&gt; F1[Fanconi Anaemia (FA pathway)] B2 --&gt; F2[Bloom Syndrome (BLM)] B2 --&gt; F3[AT (ATM)] B2 --&gt; F4[NBS (NBN)] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Autosomal Aneuploidies</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Trisomy 21 — Down Syndrome</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>1/700-1/1000 live births; ↑ with maternal age</td></tr><tr><td>**Karyotype**</td><td>**47,XX,+21** / **47,XY,+21** (95% free trisomy)</td></tr><tr><td>**Mosaicism**</td><td>46,XX/47,XX,+21 (2-3%) — Milder phenotype</td></tr><tr><td>**Robertsonian Translocation**</td><td>**46,XX,der(14;21)(q10;q10)** — 3-4% of cases</td></tr><tr><td>**Prenatal Features**</td><td>Increased NT (>3.5mm), Absent nasal bone, Echogenic bowel, Short femur, AVSD, Duodenal atresia</td></tr><tr><td>**Neonatal Features**</td><td>Hypotonia, Flat face, Epicanthic folds, Upward slanting palpebral fissures, Single palmar crease, Sandal gap</td></tr><tr><td>**Medical Issues**</td><td>**AVSD (40-50%)**, Gastrointestinal (Duodenal atresia, Hirschsprung), Leukaemia risk (ALL/AMKL), Hypothyroidism, Atlantoaxial instability, Early-onset Alzheimer's (>40y)</td></tr><tr><td>**Life Expectancy**</td><td>~60 years (improved with cardiac surgery)</td></tr></table>
+<div class="sub-h">Trisomy 18 — Edwards Syndrome</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>1/5000-1/7000</td></tr><tr><td>**Karyotype**</td><td>47,XX,+18 / 47,XY,+18 (90% free trisomy)</td></tr><tr><td>**Prenatal**</td><td>IUGR, Polyhydramnios, Clenched hands (index over middle), Rocker-bottom feet, Omphalocele, CHD (VSD, ASD), Cystic hygroma</td></tr><tr><td>**Survival**</td><td>Median 3-14 days; 5-10% survive >1 year</td></tr></table>
+<div class="sub-h">Trisomy 13 — Patau Syndrome</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>1/10,000-1/20,000</td></tr><tr><td>**Karyotype**</td><td>47,XX,+13 / 47,XY,+13</td></tr><tr><td>**Prenatal**</td><td>Holoprosencephaly, Facial clefts, Polydactyly (postaxial), Cardiac defects, Renal cysts, Rocker-bottom feet</td></tr><tr><td>**Survival**</td><td>Median 3-7 days; >90% die by 1 year</td></tr></table>
+<div class="sub-h">Prenatal Screening for Aneuploidy</div>
+<table class="ctable"><tr><th>Test</th><th>Timing</th><th>Detection Rate (T21)</th><th>False Positive</th></tr><tr><td>------</td><td>--------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**Combined Test**</td><td>11-14w</td><td>85-90%</td><td>3-5%</td></tr><tr><td>**NIPT (cfDNA)**</td><td>10w+</td><td>>99%</td><td><0.1%</td></tr><tr><td>**Quadruple Test**</td><td>15-20w</td><td>80%</td><td>5%</td></tr><tr><td>**Diagnostic**</td><td>CVS (11-14w) / Amnio (15-20w)</td><td>>99.9%</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Sex Chromosome Aneuploidies</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Karyotype</th><th>Incidence</th><th>Key Features</th></tr><tr><td>----------</td><td>-----------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Turner Syndrome**</td><td>**45,X** (50% mosaic 45,X/46,XX)</td><td>1/2500 females</td><td>**Short stature**, Webbed neck, Lymphoedema (neonatal), Coarctation, Bicuspid aortic valve, Streak ovaries (POI), Horseshoe kidney, Autoimmune thyroiditis</td></tr><tr><td>**Klinefelter Syndrome**</td><td>**47,XXY** (80%); Variants: 48,XXXY, 49,XXXXY</td><td>1/600 males</td><td>**Tall stature**, Small firm testes, **Azoospermia**, Gynaecomastia, Low testosterone, Learning difficulties, Language delay</td></tr><tr><td>**Triple X Syndrome**</td><td>**47,XXX**</td><td>1/1000 females</td><td>Tall stature, Learning difficulties, Seizures, Premature ovarian insufficiency (10-15%)</td></tr><tr><td>**XYY Syndrome**</td><td>**47,XYY**</td><td>1/1000 males</td><td>Tall stature, Learning difficulties, Behavioural issues, Normal fertility</td></tr><tr><td>**Tetrasomy X**</td><td>48,XXXX</td><td>Rare</td><td>Severe ID, Facial dysmorphism, Cardiac/renal anomalies</td></tr><tr><td>**48,XXXY / 49,XXXXY**</td><td>Variants of Klinefelter</td><td>Rare</td><td>More severe phenotype, Severe ID, Radioulnar synostosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Structural Chromosomal Rearrangements</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Balanced vs Unbalanced</div>
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Phenotype</th><th>Recurrence Risk</th></tr><tr><td>------</td><td>------------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**Balanced**</td><td>No net gain/loss</td><td>Usually normal (unless breakpoint disrupts gene)</td><td>See below</td></tr><tr><td>**Unbalanced**</td><td>Net gain/loss</td><td>Abnormal (DD/CA)</td><td>Depends on rearrangement type</td></tr></table>
+<div class="sub-h">3.1 Robertsonian Translocations</div>
+<ul><li><b>Involves</b>: Acrocentric chromosomes (13, 14, 15, 21, 22) — fusion at centromeres</li><li><b>Karyotype</b>: 45,XX,rob(14;21)(q10;q10) — 45 chromosomes</li><li><b>Formation</b>: Centric fusion of long arms; Short arms lost (acrocentric p arms = rDNA, non-essential)</li></ul>
+<table class="ctable"><tr><th>Translocation</th><th>Carrier Karyotype</th><th>Gametes</th><th>Offspring Risk</th></tr><tr><td>---------------</td><td>-------------------</td><td>---------</td><td>----------------</td></tr><tr><td>**rob(14;21)**</td><td>45,XX,rob(14;21)</td><td>6 types</td><td>**Down syndrome risk ~10-15%** if mother carrier; ~1-2% if father carrier</td></tr><tr><td>**rob(13;14)**</td><td>45,XX,rob(13;14)</td><td>6 types</td><td>**No viable unbalanced** (Trisomy 13/14 lethal); Carrier risk 50%</td></tr><tr><td>**rob(21;21)**</td><td>45,XX,rob(21;21)</td><td>100% unbalanced</td><td>**100% Down syndrome** if carrier parent; **Do not reproduce without PGT**</td></tr><tr><td>**rob(13;15), 14;15, 15;21, 15;22, 13;21, 13;22, 22;21**</td><td>Various</td><td>Various</td><td>Trisomy risk for larger chromosome (13, 15, 21, 22)</td></tr></table>
+<div class="callout"><b>Key:</b> <b>rob(21;21) = 100% Down syndrome</b> if carrier parent. <b>rob(14;21)</b> risk depends on parent of origin (maternal &gt; paternal).</div>
+<div class="sub-h">3.2 Reciprocal Translocations</div>
+<ul><li><b>Exchange</b> of segments between non-homologous chromosomes</li><li><b>Karyotype</b>: e.g., 46,XX,t(2;5)(q31;q14)</li><li><b>Segregation Patterns</b>:</li><li><b>Alternate</b> → Balanced (Normal or Carrier) — <b>Viable</b></li><li><b>Adjacent-1</b> → Unbalanced (Duplication + Deletion) — <b>Non-viable/Abnormal</b></li><li><b>Adjacent-2</b> → Unbalanced — <b>Non-viable/Abnormal</b></li><li><b>3:1 Segregation</b> → Highly unbalanced — Usually non-viable</li></ul>
+<table class="ctable"><tr><th>Parameter</th><th>Value</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**Liveborn Unbalanced Risk**</td><td>~5-10% (depends on segment size)</td></tr><tr><td>**Carrier Risk (balanced)**</td><td>~30-40%</td></tr><tr><td>**Pregnancy Loss**</td><td>High (30-50%)</td></tr></table>
+<div class="sub-h">3.3 Inversions</div>
+<table class="ctable"><tr><th>Type</th><th>Description</th><th>Recombinant Risk</th></tr><tr><td>------</td><td>-------------</td><td>------------------</td></tr><tr><td>**Paracentric**</td><td>Inversion within arm (no centromere)</td><td>Acentric/Dicentric recombinants → Non-viable</td></tr><tr><td>**Pericentric**</td><td>Includes centromere</td><td>**Recombinant viable** → Partial dup/del</td></tr></table>
+<div class="sub-h">3.4 Other Structural Variants</div>
+<table class="ctable"><tr><th>Variant</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Ring Chromosome**</td><td>Deletion both ends + fusion → Ring; Mitotic instability → Variegated phenotype</td></tr><tr><td>**Dicentric**</td><td>Two centromeres → Mitotic instability, Breakage</td></tr><tr><td>**Insertion**</td><td>Segment inserted into non-homologous chromosome</td></tr><tr><td>**Isochromosome**</td><td>Mirror-image arms (e.g., i(Xq) in Turner)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Microdeletion / Microduplication Syndromes (Genomic Disorders)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Recurrent Microdeletion Syndromes (Recurrent = NAHR between LCRs)</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Locus</th><th>Size</th><th>Key Features</th></tr><tr><td>----------</td><td>-------</td><td>------</td><td>--------------</td></tr><tr><td>**22q11.2 Deletion (DiGeorge/VCFS)**</td><td>22q11.2</td><td>~3 Mb (LCR22 A-D)</td><td>**CATCH-22**: Cardiac (conotruncal), Abnormal facies, Thymic hypoplasia/aplasia, Cleft palate, Hypocalcaemia (hypoparathyroidism); **1/4000**</td></tr><tr><td>**1p36 Deletion**</td><td>1p36.3</td><td>~2-10 Mb</td><td>**Severe ID**, Microcephaly, Seizures, Cardiomyopathy, Facial dysmorphism, Hearing loss, Delayed growth</td></tr><tr><td>**5p Deletion (Cri-du-chat)**</td><td>5p15.2</td><td>Variable</td><td>**High-pitched cat-like cry**, Microcephaly, Round face, Hypertelorism, ID, Developmental delay</td></tr><tr><td>**7q11.23 Deletion (Williams)**</td><td>7q11.23</td><td>~1.5-1.8 Mb</td><td>**Elfin facies**, Supravalvular aortic stenosis, **Hypercalcaemia**, **Elfin facies**, Outgoing personality, **Hyperacusis**, ID (mild-moderate)</td></tr><tr><td>**15q11-q13 Deletion**</td><td>15q11-q13</td><td>~4-6 Mb</td><td>**Prader-Willi (paternal)** / **Angelman (maternal)** — Imprinting</td></tr><tr><td>**17p13.3 Deletion (Miller-Dieker)**</td><td>17p13.3</td><td>~1 Mb</td><td>**Lissencephaly** (smooth brain), Severe epilepsy, Profound ID, Characteristic face</td></tr><tr><td>**17p12 Deletion (Smith-Magenis)**</td><td>17p11.2</td><td>~3.7 Mb</td><td>**Sleep disturbance**, Self-hugging, Brachydactyly, Hoarse voice, Behavioural issues, ID</td></tr><tr><td>**16p11.2 Deletion**</td><td>16p11.2</td><td>~600 kb</td><td>**Autism, ID, Obesity, Macrocephaly**, Seizures, Schizophrenia risk</td></tr><tr><td>**1q21.1 Deletion/Duplication**</td><td>1q21.1</td><td>~1.35 Mb</td><td>Variable: ID, Microcephaly/Macrocephaly, Cardiac, Psychiatric</td></tr><tr><td>**3q29 Deletion**</td><td>3q29</td><td>~1.6 Mb</td><td>ID, Autism, Schizophrenia risk, Microcephaly</td></tr><tr><td>**15q13.3 Deletion**</td><td>15q13.3</td><td>~2 Mb</td><td>Epilepsy, ID, Autism, Schizophrenia risk</td></tr><tr><td>**Xp22.3 Deletion (STS)**</td><td>Xp22.3</td><td>Various</td><td>X-linked ichthyosis (STS), Kallmann (ANOS1), Chondrodysplasia punctata</td></tr></table>
+<div class="sub-h">Non-Recurrent (Unique) CNVs</div>
+<ul><li><b>De novo</b>, Random breakpoints</li><li>Variable phenotype depending on genes involved</li><li><b>DGV (Database of Genomic Variants)</b> for population frequency</li></ul>
+<div class="sub-h">Recurrent Microduplication Syndromes</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Locus</th><th>Key Features</th></tr><tr><td>----------</td><td>-------</td><td>--------------</td></tr><tr><td>**22q11.2 Duplication**</td><td>22q11.2</td><td>Variable: ID, Autism, Schizophrenia risk, Normal</td></tr><tr><td>**16p11.2 Duplication**</td><td>16p11.2</td><td>**Low BMI**, ID, Autism, SCZ risk, Microcephaly</td></tr><tr><td>**17p12 Duplication (CMT1A)**</td><td>17p12</td><td>**PMP22 duplication** → Charcot-Marie-Tooth Type 1A</td></tr><tr><td>**Xp22.3 Duplication (MECP2)**</td><td>Xq28</td><td>**MECP2 duplication syndrome** (Males) — Severe ID, Epilepsy, Spasticity</td></tr><tr><td>**7q11.23 Duplication**</td><td>7q11.23</td><td>**Reciprocal of Williams** — Severe speech delay, Autism, Anxiety</td></tr><tr><td>**15q11-13 Duplication (maternal)**</td><td>15q11-q13</td><td>**Autism, ID, Epilepsy** (maternal dup)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Chromosomal Instability Syndromes (DNA Repair Defects)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Gene</th><th>Pathway</th><th>Key Features</th><th>Cancer Risk</th></tr><tr><td>----------</td><td>------</td><td>---------</td><td>--------------</td><td>-------------</td></tr><tr><td>**Fanconi Anaemia (FA)**</td><td>FANCA-FANCW (22 genes)</td><td>FA/BRCA pathway (ICL repair)</td><td>**Thumb/Radius anomalies**, Skin hyperpigmentation, **BM failure (median 7y)**, Microcephaly, Renal/Heart anomalies</td><td>**AML (5-10%)**, HNSCC, Gynae, GI</td></tr><tr><td>**Bloom Syndrome**</td><td>BLM</td><td>RecQ Helicase (HR)</td><td>**Photosensitivity**, Facial telangiectasia, **Short stature**, Immunodeficiency, **Sister chromatid exchanges (SCE ↑)**</td><td>**All cancers** (early onset, multiple)</td></tr><tr><td>**Ataxia-Telangiectasia (AT)**</td><td>ATM</td><td>PIKK (DSB response, HR/NHEJ)</td><td>**Cerebellar ataxia**, Oculocutaneous telangiectasia, **Immunodeficiency** (IgA/IgG2), **Radiosensitivity**, **Chromosomal breakage (7;14 translocations)**</td><td>**Lymphoma, Leukaemia** (10-30%)</td></tr><tr><td>**Nijmegen Breakage Syndrome (NBS)**</td><td>NBN (NBS1)</td><td>MRN Complex (DSB sensing)</td><td>**Microcephaly**, **Bird-like face**, Immunodeficiency, **Radiosensitivity**, **Chromosomal breakage**</td><td>**Lymphoma** (50% by 20y)</td></tr><tr><td>**LIG4 Syndrome**</td><td>LIG4</td><td>NHEJ (Ligation)</td><td>Microcephaly, Growth retardation, Immunodeficiency, Radiosensitivity</td><td>Lymphoma</td></tr><tr><td>**DNA Ligase IV**</td><td>LIG4</td><td>NHEJ</td><td>Similar to NBS</td></tr><tr><td>**Cernunnos/XLF**</td><td>NHEJ1</td><td>NHEJ</td><td>Microcephaly, Growth failure, Immunodeficiency</td></tr><tr><td>**RAD50 Deficiency**</td><td>RAD50</td><td>MRN Complex</td><td>NBS-like, Radiosensitivity</td></tr></table>
+<div class="callout"><b>All:</b> <b>Radiosensitivity</b> (avoid X-rays), <b>Chromosomal breakage</b> (DEB/MMC test for FA, <b>SCE for Bloom</b>), <b>Cancer predisposition</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Down Syndrome**</td><td>Trisomy 21 (95%), Robertsonian rob(14;21) 3-4%, Mosaic 2-3%; AVSD 40-50%, AVSD, Leukaemia, Alzheimer's >40</td></tr><tr><td>**Edwards (T18)**</td><td>1/5000, Clenched hands, Rocker-bottom feet, Lethal by 1yr</td></tr><tr><td>**Patau (T13)**</td><td>1/10-20K, Holoprosencephaly, Polydactyly, Cleft lip/palate, Lethal</td></tr><tr><td>**Turner (45,X)**</td><td>Short, Webbed neck, Coarctation, Streak ovaries, Bicuspid AV</td></tr><tr><td>**Klinefelter (47,XXY)**</td><td>Tall, Small testes, Azoospermia, Gynaecomastia</td></tr><tr><td>**Robertsonian Translocation**</td><td>rob(14;21) → Down risk: **Mother ~10-15%, Father ~1-2%**; rob(21;21) = 100% DS</td></tr><tr><td>**Reciprocal Translocation**</td><td>Alternate = Balanced; Adjacent = Unbalanced; Liveborn unbalanced ~5-10%</td></tr><tr><td>**22q11.2 Del (DiGeorge)**</td><td>CATCH-22: Cardiac, Abnormal facies, Thymic hypoplasia, Cleft palate, Hypocalcaemia</td></tr><tr><td>**Williams (7q11.23 del)**</td><td>Elfin facies, SVAS, Hypercalcaemia, Outgoing personality</td></tr><tr><td>**Cri-du-chat (5p-)**</td><td>Cat-like cry, Microcephaly, ID</td></tr><tr><td>**Smith-Magenis (17p11.2)**</td><td>Self-hug, Sleep disorder, Hoarse voice</td></tr><tr><td>**FA/Bloom/AT/NBS**</td><td>**Radiosensitivity**, Chromosomal breakage, **Cancer predisposition**</td></tr><tr><td>**FA**</td><td>Thumb/Radius, BM failure, DEB/MMC test</td></tr><tr><td>**Bloom**</td><td>SCE ↑, Short stature, Photosensitivity</td></tr><tr><td>**AT**</td><td>Ataxia, Telangiectasia, Radiosensitivity, 7;14 translocations, Lymphoma</td></tr><tr><td>**NBS**</td><td>Microcephaly, Bird-like face, Radiosensitivity, Lymphoma</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Robertsonian translocation 14;21 — Down syndrome risk if mother carrier?</td><td>**~10-15%** (if father carrier ~1-2%). 6 gamete types: 1 normal, 1 balanced carrier, 1 trisomy 21, 1 monosomy 21 (lethal), 2 unbalanced other.</td></tr><tr><td>2</td><td>Robertsonian 21;21 — recurrence risk?</td><td>**100% Down syndrome** — All gametes carry extra 21. Carrier should not reproduce without PGT.</td></tr><tr><td>3</td><td>Reciprocal translocation — viable unbalanced risk?</td><td>**5-10%** (alternate segregation = balanced; adjacent-1/2 = unbalanced; 3:1 usually lethal).</td></tr><tr><td>4</td><td>22q11.2 deletion — CATCH-22 mnemonic?</td><td>**C**ardiac (conotruncal), **A**bnormal facies, **T**hymic hypoplasia, **C**left palate, **H**ypocalcaemia (hypoparathyroidism).</td></tr><tr><td>5</td><td>Williams syndrome — cardiovascular hallmark?</td><td>**Supravalvular aortic stenosis** (SVAS); Hypercalcaemia, Elfin facies, Outgoing personality.</td></tr><tr><td>6</td><td>Cri-du-chat — characteristic cry?</td><td>**High-pitched, cat-like cry** (laryngeal anomaly); Microcephaly, ID.</td></tr><tr><td>6</td><td>Fanconi anaemia — diagnostic test?</td><td>**DEB (Diepoxybutane) or MMC (Mitomycin C) chromosome breakage test** — ↑ Chromosomal breakage.</td></tr><tr><td>7</td><td>Bloom syndrome — characteristic cytogenetic finding?</td><td>**Sister Chromatid Exchanges (SCE) markedly increased** (10x normal).</td></tr><tr><td>8</td><td>Ataxia-Telangiectasia — characteristic chromosomal abnormality?</td><td>**Reciprocal translocations involving chromosomes 7 and 14** (TCR/IG loci).</td></tr><tr><td>9</td><td>Reciprocal translocation carrier — recurrence risk for unbalanced liveborn?</td><td>**~5-10%** (Alternate segregation = balanced/viable; Adjacent = unbalanced).</td></tr><tr><td>10</td><td>Cri-du-chat — origin of name?</td><td>**High-pitched cat-like cry** (laryngeal/hypoplastic epiglottis) in infancy.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"All translocations cause disease"**</td><td>**NO.** **Balanced** carriers usually phenotypically normal unless breakpoint disrupts gene.</td></tr><tr><td>**"Robertsonian 14;21 = 50% Down risk"**</td><td>**NO.** Risk depends on **parent of origin** (Mother ~15%, Father ~1-2%) due to oogenesis vs spermatogenesis selection.</td></tr><tr><td>**"All Robertsonian = 1/3 risk"**</td><td>**NO.** rob(21;21) = **100% DS**. rob(13;14) = no viable unbalanced.</td></tr><tr><td>**"Reciprocal translocation = 50% unbalanced"**</td><td>**NO.** Most unbalanced gametes non-viable → **Liveborn unbalanced risk ~5-10%**.</td></tr><tr><td>**"All 22q11.2 deletions = DiGeorge"**</td><td>**Variable** — VCFS (no cardiac), Conotruncal Anomaly Face Syndrome (CAFS) — same deletion, variable expressivity.</td></tr><tr><td>**"Mosaicism = Always milder"**</td><td>**Not always** — Can be severe if high % abnormal cells in critical tissues.</td></tr><tr><td>**"All acrocentric can form Robertsonian"**</td><td>**Only specific pairs** form Robertsonian in practice (13;14, 14;21, 21;22 most common).</td></tr><tr><td>**"Ring chromosome = Always mosaic"**</td><td>**No. Ring can be non-mosaic** but often unstable → Mosaicism in later cells.</td></tr><tr><td>**"AT = Always immunodeficiency"**</td><td>**Variable** — IgA/IgG2 deficiency common, but some have normal immunoglobulins.</td></tr><tr><td>**"FA = Only thumb anomalies"**</td><td>**NO.** Thumb/radius most visible, but **BM failure** is major cause of mortality.</td></tr></table>
+<div class="callout"><b>Mnemonic: CHROMOSOMAL DISORDERS</b> <b>C</b>hr 21: <b>Down (T21)</b>, Rob(14;21) — M=15%, F=1% <b>H</b>r 18: <b>Edwards</b> — Clenched hand, Rocker bottom, Lethal <b>R</b>hr 13: <b>Patau</b> — Holoprosencephaly, Polydactyly, Lethal <b>O</b>ptic Sex: <b>Turner (45,X) — Short/Coarctation/Streak; Klinefelter (47,XXY) — Tall/Azoospermia</b> <b>M</b>icrodeletions: <b>22q11 (CATCH-22), 7q11 (Williams), 5p (Cri-du-chat), 1p36, 17p11 (SMS)</b> <b>S</b>mith-Magenis: <b>Self-hug, Sleep disorder, Hoarse voice</b> <b>O</b>ther: <b>16p11.2 (Autism/Obesity), 1q21.1 (Variable), 15q13 (Epilepsy)</b> <b>M</b>osaicism: <b>Level matters</b> — Blood vs Tissue; Recurrence risk if Gonadal <b>A</b>neuploidy: <b>T21 (95%), T18, T13, 45,X, 47,XXY/XXX/XYY</b> <b>A</b>crocentric Robertsonian: <b>13/14/15/21/22</b> — Centric fusion <b>L</b>oss: <b>Balanced vs Unbalanced</b> — Alternate viable, Adjacent lethal <b>D</b>uplications: <b>CMT1A (17p12 PMP22 dup), MECP2 dup (Xq28), 22q11 dup</b> <b>I</b>nstability: <b>FA/Bloom/AT/NBS</b> — <b>Radiosensitive, Breakage, Cancer</b> <b>I</b>SCN: <b>t(2;5), rob(14;21), der(14;21)</b> <b>S</b>creening: <b>Combined (NT+PAPP-A), NIPT (&gt;99%), CFTS, Quad</b> <b>O</b>ther: <b>Inversions (Pari/Peri), Rings, Dicentrics, Insertions</b> <b>R</b>eciprocal: <b>Alternate (Balanced) vs Adjacent (Unbalanced)</b> <b>D</b>iagnosis: <b>Karyotype + FISH + Microarray (1st tier DD/ID)</b> <b>E</b>nd: <b>Genetic Counselling</b> — Recurrence risk, Prenatal options, PGT <b>R</b>ecurrence: <b>Rob(14;21) Mat 15%/Pat 1%; Rob(21;21)=100%; Reciprocal ~5-10%</b> <b>D</b>Eletion: <b>22q11 CATCH-22, 7q11 Williams, 5p Cri-du-chat, 1p36, 17p11 SMS</b> <b>S</b>yndromes: <b>FA=DEB test, Bloom=SCE, AT=7;14 transloc, NBS=Microcephaly</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Chromosomal Disorders)) Aneuploidy Trisomy 21 (Down) Trisomy 18 (Edwards) Trisomy 13 (Patau) Sex Chr (45,X / 47,XXY / 47,XXX / 47,XYY) Structural Robertsonian (Acrocentric) rob(14;21) Mat 15% Pat 1% rob(21;21) = 100% DS Reciprocal Alternate vs Adjacent Unbalanced ~5-10% Inversions (Pari/Peri) Rings/Dicentrics/Insertions Microdeletions 22q11 (CATCH-22) 7q11 (Williams) 5p (Cri-du-chat) 1p36, 17p11 (SMS), 17p13 (Miller-Dieker) 16p11.2, 1q21.1, 3q29, 15q13 Microduplications 22q11 dup, 16p11.2 dup (Low BMI) 17p12 (CMT1A) MECP2 dup (Xq28) Instability Syndromes FA (DEB test, BM failure) Bloom (SCE↑) AT (7;14 transloc, radiosensitive) NBS (Microcephaly, Bird face) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Aneuploidies (T21/18/13, Sex Chr)</td><td>4</td><td></td><td></td></tr><tr><td>Robertsonian Translocations</td><td>3</td><td></td><td></td></tr><tr><td>Reciprocal Translocations</td><td>3</td><td></td><td></td></tr><tr><td>Microdeletion Syndromes</td><td>4</td><td></td><td></td></tr><tr><td>Microduplication Syndromes</td><td>2</td><td></td><td></td></tr><tr><td>Instability Syndromes (FA/Bloom/AT/NBS)</td><td>4</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Classify chromosomal disorders with recurrence risks."</td><td>Aneuploidy (T21/18/13, Sex), Structural (Rob/Recip/Inv/Ring), Microdeletions (22q11, 7q11, 5p, 1p36), Microduplications, Instability (FA/Bloom/AT/NBS)</td></tr><tr><td>**Short Note**</td><td>"Robertsonian translocation 14;21 — recurrence risk."</td><td>Mother carrier ~15%, Father ~1%; rob(21;21)=100%; Mechanism: centric fusion of acrocentrics.</td></tr><tr><td>**Viva**</td><td>"Newborn with cat-like cry, microcephalia, hypertelorism. Diagnosis? Genetic test?"</td><td>**Cri-du-chat (5p-)**. Test: Microarray (detects 5p del) + FISH for 5p.</td></tr><tr><td>**Ward Round**</td><td>"Couple with recurrent miscarriages. Karyotype shows balanced t(11;22). Counselling?"</td><td>Balanced reciprocal translocation. Liveborn unbalanced risk ~5-10%. Offer PGT-M. Prenatal: CVS/Amnio.</td></tr><tr><td>**Last-Night**</td><td>"T21: Trisomy (95%), Rob(14;21) M15% F1%, Rob(21;21)=100%. T18: Clench/Rocker. T13: Holo/Poly. Turner 45,X: Short/Coarct/Streak. Klinefelter 47,XXY: Tall/Azoosperm. Rob(14;21): Mat 15% F 1%. Recip: Alt bal, Adj unb ~5-10%. 22q11 CATCH-22. Williams 7q11: SVAS/HyperCa/Elfin. FA: DEB, Bloom: SCE, AT: 7;14/radiosense, NBS: Micro/Bird."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Aneuploidies</b>: T21 (Down) 1/700, T18 (Edwards) 1/5000, T13 (Patau) 1/10-20K. Sex: Turner 45,X (1/2500 ♀), Klinefelter 47,XXY (1/600 ♂), Triple X (1/1000 ♀), XYY (1/1000 ♂).</li><li><b>Robertsonian</b>: Acrocentric fusion (13,14,15,21,22). <b>rob(14;21)</b> → DS risk: Mother ~15%, Father ~1-2%. <b>rob(21;21) = 100% DS</b>. Carrier karyotype 45,XX,rob(14;21).</li><li><b>Reciprocal Translocation</b>: Balanced exchange. <b>Alternate segregation = Balanced; Adjacent = Unbalanced</b>. Liveborn unbalanced risk ~5-10%.</li><li><b>Microdeletions</b>: <b>22q11.2 (DiGeorge/VCFS) — CATCH-22</b>, 7q11.23 (Williams: SVAS, HyperCa, Elfin), 5p- (Cri-du-chat), 1p36, 17p11.2 (SMS), 17p13.3 (Miller-Dieker).</li><li><b>Microduplications</b>: 17p12 (CMT1A), 16p11.2 dup (Low BMI/Autism), 22q11.2 dup (Variable), MECP2 dup (Xq28), 7q11.23 dup.</li><li><b>Instability Syndromes</b>: <b>FA</b> (DEB/MMC test, BM failure), <b>Bloom</b> (SCE↑, short stature), <b>AT</b> (7;14 transloc, radiosensitivity, lymphoma), <b>NBS</b> (Microcephaly, bird face, lymphoma). All = <b>Radiosensitive, Chromosomal breakage, Cancer predisposition</b>.</li><li><b>Recurrence Risks</b>: Rob(14;21) Mother ~15% / Father ~1-2%; Rob(21;21) = 100%; Reciprocal ~5-10% live unbalanced; FA/Bloom/AT/NBS = AR (25% sib recurrence).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Robertsonian translocation 14;21 — Down syndrome risk if mother carrier?</b></li></ol>
+<p>A. 1-2%  B. 25%  C. <b>10-15%</b>  D. 50% <i>Answer: C. Maternal carrier risk ~10-15%; Paternal ~1-2%.</i></p>
+<ol><li><b>Reciprocal translocation — viable unbalanced offspring risk?</b></li></ol>
+<p>A. 25%  B. <b>5-10%</b>  C. 50%  D. 75% <i>Answer: B. Alternate segregation = balanced; Adjacent = unbalanced (mostly non-viable). Liveborn unbalanced ~5-10%.</i></p>
+<ol><li><b>22q11.2 deletion — CATCH-22 mnemonic?</b></li></ol>
+<p>A. Cardiac, Abnormal facies, Thymic hypoplasia, Cleft palate, Hypocalcaemia B. Cardiac, Arthritis, Thrombocytopenia, Cataracts, Hepatitis, Alkalosis C. Cleft, Atresia, Tracheoesophageal, Cardiac, Hypospadias, Hypocalcaemia D. Coarctation, Aneurysm, Torsion, Cystic, Hydrocephalus, Atresia <i>Answer: A. <b>C</b>ardiac, <b>A</b>bnormal facies, <b>T</b>hymic hypoplasia, <b>C</b>left palate, <b>H</b>ypocalcaemia (parathyroid).</i></p>
+<ol><li><b>Williams syndrome — hallmark CV defect?</b></li></ol>
+<p>A. TOF  B. VSD  C. <b>Supravalvular Aortic Stenosis</b>  D. Coarctation <i>Answer: C. SVAS is hallmark; Also peripheral pulmonary stenosis, Hypercalcaemia, Elfin facies.</i></p>
+<ol><li><b>Cri-du-chat syndrome — deletion locus?</b></li></ol>
+<p>A. 22q11  B. 7q11  C. <b>5p15</b>  D. 1p36 <i>Answer: C. 5p15.2 deletion (Cri-du-chat).</i></p>
+<ol><li><b>Fanconi anaemia — diagnostic test?</b></li></ol>
+<p>A. Karyotype  B. <b>DEB/MMC chromosome breakage test</b>  C. SNP Array  D. FISH <i>Answer: B. DEB (Diepoxybutane) or MMC (Mitomycin C) induces chromosomal breakage in FA cells.</i></p>
+<ol><li><b>Bloom syndrome — characteristic cytogenetic finding?</b></li></ol>
+<p>A. Translocations  B. <b>Sister Chromatid Exchanges (SCE) ↑</b>  C. Dicentrics  D. Acentric fragments <i>Answer: B. SCE markedly increased (10-100x normal) due to BLM helicase defect.</i></p>
+<ol><li><b>Ataxia-Telangiectasia — characteristic translocations?</b></li></ol>
+<p>A. 8;14  B. 9;22  C. <b>7;14</b>  D. 11;14 <i>Answer: C. Reciprocal translocations involving TCR (14) and IGH (14) loci; also 7;14.</i></p>
+<ol><li><b>Robertsonian 21;21 — Down syndrome risk?</b></li></ol>
+<p>A. 25%  B. <b>100%</b>  C. 50%  D. 1% <i>Answer: B. All gametes carry extra 21 → 100% DS if carrier parent.</i></p>
+<ol><li><b>Nijmegen Breakage Syndrome — facial appearance?</b></li></ol>
+<p>A. Elfin facies  B. <b>Bird-like face</b>  C. Coarse features  D. Coarse with hirsutism <i>Answer: B. Microcephaly, Bird-like face (prominent midface, receding forehead).</i></p>
+<ol><li><b>Ataxia-Telangiectasia — deficient protein?</b></li></ol>
+<p>A. FANCA  B. BLM  C. <b>ATM</b>  D. NBN <i>Answer: C. ATM (Ataxia-Telangiectasia Mutated) — PIKK, DSB response.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Couple with recurrent miscarriages. Karyotype: 46,XX,t(11;22)(q23;q11). Recurrence risk for liveborn unbalanced?</b></li></ol>
+<p>A. 25%  B. 50%  C. <b>5-10%</b>  D. 1% <i>Answer: C. Reciprocal translocation carrier → Liveborn unbalanced risk ~5-10%.</i></p>
+<ol><li><b>Newborn: Cat-like cry, microcephaly, hypertelorism, low-set ears. Likely diagnosis?</b></li></ol>
+<p>A. 22q11 del  B. <b>5p- (Cri-du-chat)</b>  C. 1p36 del  D. 17p11 del <i>Answer: B. High-pitched cat-like cry = Cri-du-chat (5p15.2 deletion).</i></p>
+<ol><li><b>22q11.2 deletion — which feature is NOT part of CATCH-22?</b></li></ol>
+<p>A. Cardiac (conotruncal)  B. Hypocalcaemia  C. <b>Renal agenesis</b>  D. Cleft palate <i>Answer: C. Renal agenesis not typical for 22q11.2 del (C = Cardiac, A = Abnormal facies, T = Thymic, C = Cleft, H = Hypocalcaemia).</i></p>
+<ol><li><b>Couple with Down syndrome child. Karyotype: 46,XX,der(14;21)(q10;q10). Mother carrier. Recurrence risk?</b></li></ol>
+<p>A. 1%  B. <b>10-15%</b>  C. 25%  D. 50% <i>Answer: B. Maternal carrier of rob(14;21) → ~10-15% DS risk.</i></p>
+<ol><li><b>Child with microcephaly, bird-like face, immunodeficiency, chromosomal breakage. Gene?</b></li></ol>
+<p>A. FANCA  B. BLM  C. ATM  D. <b>NBN</b> <i>Answer: D. NBS (NBN/NBS1): Microcephaly, Bird-like face, Immunodeficiency, Radiosensitivity.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-C, 2-B, 3-A, 4-C, 5-C, 6-B, 6-B, 7-C, 8-B, 9-B, 10-C</td><td>1-C, 2-B, 3-C, 4-B, 5-D</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1. Fundamentals of Medical Genetics]] — Chromosome structure, ISCN, Mutation types (CNV)</li><li>[[2.1 Mendelian Inheritance]] — Translocation carriers → Mendelian segregation risks</li><li>[[2.2 Non-Mendelian Inheritance]] — UPD from trisomy rescue, Mosaicism</li><li>[[4.5 Imprinting &amp; UPD]] — 15q11-13 del (PWS/AS), 11p15 (BWS/SRS)</li><li>[[5.1-5.4 Genetic Testing Technologies]] — Karyotype, FISH, Microarray, NGS for detection</li><li>[[5.5 Genetic Counselling]] — Recurrence risk counselling for translocation carriers</li><li>[[4.5 Imprinting &amp; UPD]] — 15q11-13 (PWS/AS), 11p15 (BWS/SRS) overlap</li><li>[[5.4 Prenatal &amp; Preimplantation Testing]] — PND for aneuploidy/translocations, PGT for carriers</li><li>[[6.1 Hereditary Cancer Syndromes]] — Instability syndromes (FA, Bloom, AT, NBS) → Cancer predisposition</li><li>[[9. ELSI]] — Prenatal diagnosis ethics, PGT ethics, Discrimination</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-14 <b>Next:</b> Build <code>4.1 Autosomal Dominant Disorders.md</code>, <code>4.2 Autosomal Recessive Disorders.md</code>, <code>4.3 X-Linked Disorders.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Chromosomal Disorders · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

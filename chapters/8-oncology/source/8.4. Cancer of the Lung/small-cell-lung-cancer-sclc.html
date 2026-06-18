@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Small Cell Lung Cancer Sclc — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.4. CANCER OF THE LUNG</span>
+      <div class="h1">Small Cell Lung Cancer Sclc</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define <b>Limited vs Extensive Stage</b> SCLC (VALG 2-stage system)</li><li>[ ] Prescribe <b>LS-SCLC standard</b>: Concurrent Cisplatin/Etoposide + RT (45Gy/30fx) → PCI</li><li>[ ] Prescribe <b>ES-SCLC 1L</b>: Platinum/Etoposide + <b>IO (Atezo/Pembro/Durva)</b> ×4 → Maintenance IO</li><li>[ ] Indicate <b>PCI (25Gy/10fx)</b> for LS (all responders) and ES (CR/PR)</li><li>[ ] Recognise <b>paraneoplastic syndromes</b>: SIADH, Lambert-Eaton, Anti-Hu (encephalitis), Cushing's (ACTH), Hypercalcaemia (rare)</li><li>[ ] Sequence <b>relapsed SCLC</b>: <b>Topotecan</b> (standard 2L), <b>Amrubicin</b>, <b>Lurbinectedin</b>, <b>IO recharge</b> (if ≥6mo remission)</li><li>[ ] Manage <b>neutropenic sepsis</b> (prophylactic G-CSF), <b>tumour lysis</b> (bulky disease)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>High-grade **neuroendocrine carcinoma** of lung; **Small cells** (scant cytoplasm, nuclear moulding, high N:C, absent nucleoli); **Ki-67 >50-80%**</td></tr><tr><td>**Incidence**</td><td>**13-15% of lung cancer**; ~6,500/year UK; Declining with smoking reduction</td></tr><tr><td>**Prevalence**</td><td>**Very aggressive**: Median OS LS 18-24mo, ES 8-12mo (improving with IO); **5-year OS LS ~25-30%, ES ~3-5%**</td></tr><tr><td>**Peak Age**</td><td>60-70 years</td></tr><tr><td>**Sex Ratio**</td><td>M > F (2:1); **Strongest smoking association of all lung cancers**</td></tr><tr><td>**Risk Factors**</td><td>**Smoking** (near 100%), **Radon**, **Asbestos**, **Prior RT**, **Family history**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Smoking Carcinogens] --&gt; B[TP53 Loss (90-100%)] B --&gt; C[RB1 Loss (90%)] C --&gt; D[Cell Cycle Deregulation] D --&gt; E[MYC Family Amplification] E --&gt; E1[MYC (30%)] E --&gt; E2[MYCL (10%)] E --&gt; E3[MYCN (10%)] C --&gt; F[Neuroendocrine Differentiation] F --&gt; G[ASCL1 (Classical SCLC)] F --&gt; H[NEUROD1 (Variant)] F --&gt; I[POU2F3 (Tuft cell)] F --&gt; J[YAP1 (Non-NE)] G --&gt; K[High Proliferation, Early Metastasis] H --&gt; K I --&gt; K J --&gt; K </code>``</p>
+<div class="sub-h">Molecular Subtypes (Transcriptional)</div>
+<table class="ctable"><tr><th>Subtype</th><th>Transcription Factor</th><th>Frequency</th><th>Features</th></tr><tr><td>---------</td><td>---------------------</td><td>-----------</td><td>----------</td></tr><tr><td>**SCLC-A (Classical)**</td><td>**ASCL1**</td><td>**70-80%**</td><td>**High NE markers**, DLL3+, **Sensitive to DLL3-targeted (Tarlatamab)**</td></tr><tr><td>**SCLC-N**</td><td>**NEUROD1**</td><td>10-15%</td><td>Lower NE, **Ki-67 lower**, different metabolism</td></tr><tr><td>**SCLC-P**</td><td>**POU2F3**</td><td>5-10%</td><td>**Tuft cell**, Low NE, **Chemoresistant**</td></tr><tr><td>**SCLC-Y**</td><td>**YAP1**</td><td>5%</td><td>**Non-NE**, **Immune-inflamed**, **Mesenchymal**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Central Mass**</td><td>Hilar/perihilar, bulky mediastinal nodes; **SVC obstruction** common</td></tr><tr><td>**Rapid Onset**</td><td>Weeks; **Doubling time ~30 days**</td></tr><tr><td>**Respiratory**</td><td>Cough, dyspnoea, haemoptysis, stridor (airway compression)</td></tr><tr><td>**Paraneoplastic**</td><td>**SIADH** (hyponatraemia) — **Most common (15%)**; **Lambert-Eaton** (proximal weakness, ↓reflexes, ↓CMAP facilitation) — **VGCC Ab**; **Anti-Hu** (encephalomyelitis, sensory neuropathy) — **ANNA-1**; **Cushing's** (ACTH); **Peripheral neuropathy**</td></tr><tr><td>**Metastatic**</td><td>Brain (LS 10-15%, ES 20-25% at dx), Liver, Bone, Adrenal, Marrow</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**VALG / AJCC 2-Stage**</td><td>**Limited Stage (LS)**: Confined to one hemithorax + regional nodes (incl. contralateral hilar/supraclavicular) — **Radiation portal encompassable**<br/>**Extensive Stage (ES)**: Disease beyond LS (M1, contralateral lung, pleural effusion, distant mets)</td></tr><tr><td>**TNM 8th Edition**</td><td>Also applicable but **LS/ES used clinically**</td></tr><tr><td>**LDH**</td><td>**Prognostic**: High LDH = worse outcome</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**Biopsy (Bronchoscopy/CT-guided)**</td><td>Diagnosis</td><td>**Small cells, nuclear moulding, scant cytoplasm, high Ki-67**</td></tr><tr><td>**IHC**</td><td>Confirm NE differentiation</td><td>**Chromogranin A+, Synaptophysin+, CD56+, TTF-1+**, **Ki-67 >50% (usually 80-100%)**</td></tr><tr><td>**CT Chest/Abdomen + Brain MRI**</td><td>Staging</td><td>**Brain MRI mandatory** (high brain met rate)</td></tr><tr><td>**PET-CT**</td><td>Optional, not standard</td><td>CT + Bone scan alternative</td></tr><tr><td>**Bone Marrow Biopsy**</td><td>If cytopenias / suspected marrow involvement</td><td>Not routine</td></tr><tr><td>**LDH**</td><td>Baseline prognostic</td><td>Serial monitoring</td></tr><tr><td>**Paraneoplastic Abs**</td><td>If clinical suspicion</td><td>**Anti-Hu (ANNA-1), VGCC (Lambert-Eaton), Anti-Ri, Anti-Yo**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Large Cell Neuroendocrine Carcinoma (LCNEC)**</td><td>**Large cells**, **Ki-67 high**, NE markers+, **TTF-1+**; Treated similar to NSCLC (some use SCLC regimen)</td></tr><tr><td>**NSCLC with NE differentiation**</td><td>Adeno/Squamous with NE markers; Not pure NE</td></tr><tr><td>**Carcinoid (Typical/Atypical)**</td><td>**Well-differentiated**, **Ki-67 <20% (Typical) / 20-50% (Atypical)**; Indolent; Surgery curative</td></tr><tr><td>**Lymphoma**</td><td>CD45+, CD20+; Mediastinal mass; LDH high</td></tr><tr><td>**Merkel Cell Carcinoma**</td><td>Skin primary, CK20+ (perinuclear dot), MCPyV+</td></tr><tr><td>**Metastatic Neuroendocrine**</td><td>Known primary (GI, Pancreas); Different clinical context</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Limited Stage (LS-SCLC)</div>
+<p>``<code>mermaid flowchart TD A[LS-SCLC Diagnosis] --&gt; B[<b>Concurrent Chemoradiation</b>] B --&gt; B1[<b>Chemo: Cisplatin 75-80mg/m² d1 + Etoposide 100mg/m² d1-3 q3w ×4 cycles</b>] B --&gt; B2[<b>RT: 45Gy/30fx (1.5Gy BID) or 60-66Gy/30-33fx (2Gy daily)</b>&lt;br/&gt;<b>Start RT with Cycle 1 or 2</b> (Concurrent superior) — <b>CONVERT trial</b>] B1 --&gt; C[Response Assessment] B2 --&gt; C C --&gt;|<b>CR/PR</b>| D[<b>PCI: 25Gy/10fx (2.5Gy daily)</b>&lt;br/&gt;<b>Reduces brain mets 50%, improves OS</b>&lt;br/&gt;<b>Standard for all LS responders</b>] C --&gt;|<b>SD/PD</b>| E[No PCI; Consider salvage RT/Chemo] D --&gt; F[Surveillance: CT q3mo×2yr, q6mo×3yr; Brain MRI annually] </code>``</p>
+<div class="sub-h">Extensive Stage (ES-SCLC)</div>
+<p>``<code>mermaid flowchart TD A[ES-SCLC Diagnosis] --&gt; B[<b>1L: Platinum + Etoposide + IO</b>] B --&gt; B1[<b>Cisplatin 75-80mg/m² d1 + Etoposide 100mg/m² d1-3 q3w ×4 cycles</b>&lt;br/&gt;<b>OR Carboplatin AUC5 d1 + Etoposide d1-3</b> (if Cis contraindicated: renal, neuropathy, elderly)] B --&gt; B2[<b>+ IO (Choose 1):</b>] B2 --&gt; C1[<b>Atezolizumab 1200mg d1 q3w</b> (IMpower133)&lt;br/&gt;<b>OS HR 0.76</b>, mOS 12.3 vs 10.3 mo] B2 --&gt; C2[<b>Pembrolizumab 200mg d1 q3w</b> (KEYNOTE-604)&lt;br/&gt;<b>OS HR 0.80</b> (not statistically significant], DFS benefit] B2 --&gt; C3[<b>Durvalumab 1500mg d1 q3w</b> (CASPIAN)&lt;br/&gt;<b>OS HR 0.73</b>, mOS 12.9 vs 10.5 mo&lt;br/&gt;<b>No PCI in trial</b> — PCI allowed post-response] B1 --&gt; D[<b>Maintenance IO</b> (Continue IO until progression)] C1 --&gt; D C2 --&gt; D C3 --&gt; D D --&gt; E{Response} E --&gt;|<b>CR/PR</b>| F[<b>PCI 25Gy/10fx</b> (Controversial for ES)&lt;br/&gt;<b>NCCN: Consider if CR/PR</b>; ESMO: Individualise&lt;br/&gt;<b>CASPIAN: PCI permitted post-response</b>] E --&gt;|<b>SD/PD</b>| G[No PCI; 2L Therapy] </code>``</p>
+<div class="sub-h">Relapsed/Refractory SCLC</div>
+<table class="ctable"><tr><th>Setting</th><th>Preferred Regimen</th></tr><tr><td>---------</td><td>-------------------</td></tr><tr><td>**Chemosensitive Relapse (≥6mo)**</td><td>**Re-challenge Platinum + Etoposide** OR **IO Re-challenge** (if IO used 1L) OR **Topotecan / Lurbinectedin**</td></tr><tr><td>**Chemoresistant Relapse (<6mo)**</td><td>**Topotecan** (IV 1.5mg/m² d1-5 q3w OR Oral 2.3mg/m² d1-5 q3w) — **Standard 2L**<br/>**Amrubicin** (Japan/Asia, 40-50mg/m² d1-3 q3w) — Single agent<br/>**Lurbinectedin** (ATLANTIS) 3.2mg/m² q3w — ORR ~35%, **FDA approved**<br/>**Clinical Trial** (DLL3-targeted: Tarlatamab, BITE; PARPi; BCL2i)</td></tr><tr><td>**Brain Mets at Relapse**</td><td>**SRS** (oligo); **WBRT** (multiple); **Topotecan** has CNS penetration</td></tr></table>
+<div class="sub-h">Prophylactic Cranial Irradiation (PCI)</div>
+<table class="ctable"><tr><th>Setting</th><th>Dose</th><th>Indication</th></tr><tr><td>---------</td><td>------</td><td>------------</td></tr><tr><td>**LS-SCLC**</td><td>**25Gy/10fx (2.5Gy daily)**</td><td>**All patients with CR/PR** after chemoradiation — **Standard**</td></tr><tr><td>**ES-SCLC**</td><td>**25Gy/10fx**</td><td>**Selected**: CR/PR after 1L, good PS, no active brain mets — **Individualised** (PCI in CASPIAN/IMpower133 subsets showed benefit)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**SCLC**</td><td>**13-15%**; **Neuroendocrine**; **Central, rapid**; **Smoking 100%**; **Ki-67 >50%**</td></tr><tr><td>**Staging**</td><td>**VALG 2-stage**: **LS** (one hemithorax, radiation portal) vs **ES** (beyond)</td></tr><tr><td>**LS-SCLC**</td><td>**Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx** → **PCI 25Gy/10fx** (all responders)</td></tr><tr><td>**ES-SCLC 1L**</td><td>**Platinum/Etoposide ×4 + IO** (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → **Maintenance IO**</td></tr><tr><td>**PCI**</td><td>**25Gy/10fx**; **Mandatory LS responders**; **Optional ES CR/PR**</td></tr><tr><td>**Paraneoplastic**</td><td>**SIADH** (↑ADH) — **Most common**; **Lambert-Eaton** (VGCC Ab, proximal weakness, facilitation); **Anti-Hu** (encephalitis); **ACTH** (Cushing's)</td></tr><tr><td>**Relapse**</td><td>**Chemosensitive (≥6mo)**: Re-challenge Plat/Etop or IO recharge; **Chemoresistant (<6mo)**: **Topotecan (standard), Amrubicin, Lurbinectedin**</td></tr><tr><td>**Topotecan**</td><td>**Topo I inhibitor**; IV/oral; **Myelosuppression** (G-CSF support); **CNS penetration**</td></tr><tr><td>**Lurbinectedin**</td><td>**Trabectedin analogue**; Selective inhibitor of RNA Pol II; **ATLANTIS: ORR 35%, mPFS 3.5mo**</td></tr><tr><td>**DLL3-targeted**</td><td>**Tarlatamab (BITE)** — SCLC-A (ASCL1+) expresses DLL3; **DeLLphi-301: ORR ~40%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**60M smoker, central mass, bulky nodes, brain MRI negative. Biopsy: small cells, Ki-67 90%, Chromogranin+. Stage?**</td><td>**Limited Stage SCLC** (confined to one hemithorax + regional nodes, no distant mets).</td></tr><tr><td>**LS-SCLC standard treatment?**</td><td>**Concurrent Chemoradiation**: **Cisplatin 75-80mg/m² d1 + Etoposide 100mg/m² d1-3 q3w ×4 cycles** + **Thoracic RT 45Gy/30fx (1.5Gy BID) starting Cycle 1/2** → **PCI 25Gy/10fx if response**.</td></tr><tr><td>**Why concurrent RT not sequential?**</td><td>**CONVERT trial**: Concurrent 45Gy/30fx BID **non-inferior to 66Gy/33fx sequential**, less oesophagitis; **Concurrent superior to sequential** in meta-analyses.</td></tr><tr><td>**ES-SCLC 1L regimen?**</td><td>**Cisplatin/Carboplatin + Etoposide ×4 cycles + IO** (Atezolizumab **IMpower133** OR Pembrolizumab **KEYNOTE-604** OR Durvalumab **CASPIAN**) → **Maintenance IO**.</td></tr><tr><td>**PCI in ES-SCLC — when?**</td><td>**Individualised**: **CR/PR after 1L**, good PS, no brain mets. **Not universal** like LS. **CASPIAN/IMp133 subsets showed benefit with PCI post-response**.</td></tr><tr><td>**Paraneoplastic syndromes in SCLC — name 3 with antibodies.**</td><td>**1) SIADH** (clinical, no Ab); **2) Lambert-Eaton** — **VGCC (P/Q-type) Ab**, proximal weakness, ↓reflexes, **facilitation on RNS**; **3) Anti-Hu (ANNA-1)** — Encephalomyelitis, sensory neuropathy; **4) ACTH** — Ectopic Cushing's.</td></tr><tr><td>**Chemosensitive vs Chemoresistant relapse — definition?**</td><td>**Chemosensitive**: **Relapse ≥6 months** after 1L; **Chemoresistant**: **Relapse <6 months** (or progression on treatment).</td></tr><tr><td>**2L Chemoresistant — standard?**</td><td>**Topotecan** (IV 1.5mg/m² d1-5 q3w OR Oral 2.3mg/m² d1-5 q3w) — **Standard**; **Amrubicin** (Asia); **Lurbinectedin** (FDA approved).</td></tr><tr><td>**Lurbinectedin — mechanism, trial?**</td><td>**Selective RNA Pol II inhibitor** → Transcriptional inhibition; **ATLANTIS**: 2L SCLC, ORR 35%, mPFS 3.5mo.</td></tr><tr><td>**DLL3-targeted therapy — what, for whom?**</td><td>**Tarlatamab (BITE)** — **DLL3 x CD3**; **SCLC-A (ASCL1+)** expresses DLL3 (70-80%); **DeLLphi-301**: ORR ~40%.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**LS vs ES SCLC**</td><td>**LS** = Radiation portal encompassable (one hemithorax + regional nodes); **ES** = Beyond that (M1, contralateral lung, malignant effusion)</td></tr><tr><td>**Cisplatin vs Carboplatin in SCLC**</td><td>**Cisplatin preferred** (standard in trials); **Carboplatin** if renal impairment, neuropathy, elderly, poor PS — **Similar efficacy in retrospective**</td></tr><tr><td>**PCI dose/fractionation**</td><td>**25Gy in 10 fractions (2.5Gy daily)** — **Standard**; **Not 30Gy/15fx** (higher neurotoxicity)</td></tr><tr><td>**IO in SCLC — which agents?**</td><td>**Atezolizumab** (IMpower133), **Pembrolizumab** (KEYNOTE-604), **Durvalumab** (CASPIAN) — **All anti-PD-L1/PD-1 added to Plat/Etop**</td></tr><tr><td>**KEYNOTE-604 OS**</td><td>**OS HR 0.80 (p=0.016) — NOT statistically significant** (pre-specified boundary p<0.005); **DFS benefit significant**</td></tr><tr><td>**Topotecan IV vs Oral**</td><td>**Oral 2.3mg/m² d1-5 ≈ IV 1.5mg/m² d1-5**; Oral more convenient, similar efficacy/myelo</td></tr><tr><td>**SCLC vs LCNEC**</td><td>**LCNEC**: Large cells, **Ki-67 high**, NE+, **Treatment: NSCLC-like (some use SCLC regimen)**; **Pure SCLC**: Small cells, ASCL1+</td></tr></table>
+<p><b>Mnemonic: SCLC-ESSENTIALS</b></p>
+<ul><li><b>S</b>mall cells, <b>S</b>moking 100%, <b>S</b>IADH common</li><li><b>C</b>entral, <b>C</b>hemoradiation (LS), <b>C</b>isplatin+Etoposide</li><li><b>L</b>imited vs <b>E</b>xtensive (VALG 2-stage)</li><li><b>C</b>oncurrent RT (45Gy/30fx BID) &gt; Sequential</li><li><b>P</b>CI 25Gy/10fx: <b>Mandatory LS</b>, <b>Optional ES (CR/PR)</b></li><li><b>E</b>S 1L: <b>Plat/Etop + IO</b> (Atezo/Pembro/Durva) → Maint IO</li><li><b>N</b>eutropenic sepsis prophylaxis (G-CSF)</li><li><b>T</b>opotecan 2L standard (chemoresistant)</li><li><b>I</b>O recharge if chemosensitive relapse (≥6mo)</li><li><b>A</b>nti-Hu, <b>L</b>ambert-Eaton (VGCC), <b>S</b>IADH — Paraneoplastic</li><li><b>L</b>urbinectedin / <b>S</b>econd-line options</li><li><b>S</b>CLC-A (ASCL1) → <b>DLL3</b> → <b>Tarlatamab (BITE)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Small Cell Lung Cancer)) Histology Small cells, Nuclear moulding Ki-67 &gt;50-80% Chromogranin+, Synaptophysin+, CD56+, TTF-1+ Subtypes SCLC-A (ASCL1) 70-80% → DLL3+ SCLC-N (NEUROD1) SCLC-P (POU2F3) Tuft cell SCLC-Y (YAP1) Non-NE Staging LS: One hemithorax (±nodes) ES: Beyond (M1, contralateral, effusion) LS Treatment Concurrent Cis+Etop ×4 + RT 45Gy/30fx BID PCI 25Gy/10fx (all responders) ES Treatment Plat+Etop ×4 + IO (Atezo/Pembro/Durva) Maint IO PCI if CR/PR (individualised) Paraneoplastic SIADH (ADH) Lambert-Eaton (VGCC Ab) Anti-Hu (ANNA-1) Ectopic ACTH Relapse Sensitive (≥6mo): Re-challenge / IO recharge Resistant (&lt;6mo): Topotecan / Amrubicin / Lurbinectedin Emerging Tarlatamab (DLL3 x CD3 BITE) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Staging**</td><td>**LS** = One hemithorax + nodes (radiation portal); **ES** = Beyond</td></tr><tr><td>**LS Tx**</td><td>**Concurrent Cis+Etop ×4 + RT 45Gy/30fx BID** → **PCI 25Gy/10fx**</td></tr><tr><td>**ES 1L**</td><td>**Cis/Carbo + Etop ×4 + IO** (Atezo IMp133 / Pembro K-604 / Durva CASPIAN) → Maint IO</td></tr><tr><td>**PCI**</td><td>25Gy/10fx; **LS: All responders**; **ES: CR/PR, individualised**</td></tr><tr><td>**Paraneoplastic**</td><td>**SIADH** (common); **Lambert-Eaton** (VGCC Ab, facilitation); **Anti-Hu** (encephalitis)</td></tr><tr><td>**Relapse**</td><td>**≥6mo**: Re-challenge; **<6mo**: **Topotecan** (std), Amrubicin, Lurbinectedin</td></tr><tr><td>**Topotecan**</td><td>Topo I inhibitor; IV/oral; Myelosuppression; CNS penetration</td></tr><tr><td>**Emerging**</td><td>Tarlatamab (DLL3 BITE) for SCLC-A (ASCL1+)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>LS vs ES staging</td><td></td><td></td></tr><tr><td>LS chemoradiation details</td><td></td><td></td></tr><tr><td>ES 1L regimens (3 IO trials)</td><td></td><td></td></tr><tr><td>PCI indications</td><td></td><td></td></tr><tr><td>Paraneoplastic syndromes</td><td></td><td></td></tr><tr><td>Chemosensitive vs resistant definition</td><td></td><td></td></tr><tr><td>2L options</td><td></td><td></td></tr><tr><td>DLL3/Tarlatamab</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[NSCLC]], [[Paraneoplastic Syndromes]], [[PCI]], [[Topotecan]], [[Lurbinectedin]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Small Cell Lung Cancer (SCLC) (SCLC), which statement is correct? A. <b>13-15%</b> B. <b>13-15%</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>13-15%</b>; <b>Neuroendocrine</b>; <b>Central, rapid</b>; <b>Smoking 100%</b>; <b>Ki-67 &gt;50%</b></li></ul>
+<p><b>2.</b> Regarding Small Cell Lung Cancer (SCLC) (Staging), which statement is correct? A. <b>VALG 2-stage</b>: <b>LS</b> (one hemithorax, radiation portal) vs <b>ES</b> (beyond) B. **VALG - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>VALG 2-stage</b>: <b>LS</b> (one hemithorax, radiation portal) vs <b>ES</b> (beyond)</li></ul>
+<p><b>3.</b> Regarding Small Cell Lung Cancer (SCLC) (LS-SCLC), which statement is correct? A. <b>Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx</b> → <b>PCI 25Gy/10fx</b> (all res B. **Concurrent - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx</b> → <b>PCI 25Gy/10fx</b> (all responders)</li></ul>
+<p><b>4.</b> Regarding Small Cell Lung Cancer (SCLC) (ES-SCLC 1L), which statement is correct? A. <b>Platinum/Etoposide ×4 + IO</b> (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → <b>Maintenan B. </b>Platinum/Etoposide - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Platinum/Etoposide ×4 + IO</b> (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → <b>Maintenance IO</b></li></ul>
+<p><b>5.</b> Regarding Small Cell Lung Cancer (SCLC) (PCI), which statement is correct? A. <b>25Gy/10fx</b> B. <b>25Gy/10fx</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>25Gy/10fx</b>; <b>Mandatory LS responders</b>; <b>Optional ES CR/PR</b></li></ul>
+<p><b>6.</b> Regarding Small Cell Lung Cancer (SCLC) (Paraneoplastic), which statement is correct? A. <b>SIADH</b> (↑ADH) B. <b>SIADH</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SIADH</b> (↑ADH) — <b>Most common</b>; <b>Lambert-Eaton</b> (VGCC Ab, proximal weakness, facilitation); <b>Anti-Hu</b> (encephali...</li></ul>
+<p><b>7.</b> Regarding Small Cell Lung Cancer (SCLC) (Relapse), which statement is correct? A. <b>Chemosensitive (≥6mo)</b>: Re-challenge Plat/Etop or IO recharge B. **Chemosensitive - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Chemosensitive (≥6mo)</b>: Re-challenge Plat/Etop or IO recharge; <b>Chemoresistant (&lt;6mo)</b>: **Topotecan (standard), Amr...</li></ul>
+<p><b>8.</b> Regarding Small Cell Lung Cancer (SCLC) (Topotecan), which statement is correct? A. <b>Topo I inhibitor</b> B. **Topo - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Topo I inhibitor</b>; IV/oral; <b>Myelosuppression</b> (G-CSF support); <b>CNS penetration</b></li></ul>
+<p><b>9.</b> Regarding Small Cell Lung Cancer (SCLC) (Lurbinectedin), which statement is correct? A. <b>Trabectedin analogue</b> B. **Trabectedin - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Trabectedin analogue</b>; Selective inhibitor of RNA Pol II; <b>ATLANTIS: ORR 35%, mPFS 3.5mo</b></li></ul>
+<p><b>10.</b> Regarding Small Cell Lung Cancer (SCLC) (DLL3-targeted), which statement is correct? A. <b>Tarlatamab (BITE)</b> B. **Tarlatamab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Tarlatamab (BITE)</b> — SCLC-A (ASCL1+) expresses DLL3; <b>DeLLphi-301: ORR ~40%</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>13-15%</b></li><li>B. <b>13-15%</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>13-15%</b>; <b>Neuroendocrine</b>; <b>Central, rapid</b>; <b>Smoking 100%</b>; <b>Ki-67 &gt;50%</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>VALG 2-stage</b>: <b>LS</b> (one hemithorax, radiation portal) vs <b>ES</b> (beyond)</li><li>B. **VALG (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>VALG 2-stage</b>: <b>LS</b> (one hemithorax, radiation portal) vs <b>ES</b> (beyond)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx</b> → <b>PCI 25Gy/10fx</b> (all res</li><li>B. **Concurrent (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx</b> → <b>PCI 25Gy/10fx</b> (all responders)</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Platinum/Etoposide ×4 + IO</b> (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → **Maintenan</li><li>B. **Platinum/Etoposide (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Platinum/Etoposide ×4 + IO</b> (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → <b>Maintenance IO</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>25Gy/10fx</b></li><li>B. <b>25Gy/10fx</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>25Gy/10fx</b>; <b>Mandatory LS responders</b>; <b>Optional ES CR/PR</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>SIADH</b> (↑ADH)</li><li>B. <b>SIADH</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>SIADH</b> (↑ADH) — <b>Most common</b>; <b>Lambert-Eaton</b> (VGCC Ab, proximal weakness, facilitation); <b>Anti-Hu</b> (encephali...</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Chemosensitive (≥6mo)</b>: Re-challenge Plat/Etop or IO recharge</li><li>B. **Chemosensitive (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Chemosensitive (≥6mo)</b>: Re-challenge Plat/Etop or IO recharge; <b>Chemoresistant (&lt;6mo)</b>: **Topotecan (standard), Amr...</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Topo I inhibitor</b></li><li>B. **Topo (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Topo I inhibitor</b>; IV/oral; <b>Myelosuppression</b> (G-CSF support); <b>CNS penetration</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Trabectedin analogue</b></li><li>B. **Trabectedin (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Trabectedin analogue</b>; Selective inhibitor of RNA Pol II; <b>ATLANTIS: ORR 35%, mPFS 3.5mo</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Tarlatamab (BITE)</b></li><li>B. **Tarlatamab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Tarlatamab (BITE)</b> — SCLC-A (ASCL1+) expresses DLL3; <b>DeLLphi-301: ORR ~40%</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> SCLC? <b>A1:</b> 13-15%; Neuroendocrine; Central, rapid; Smoking 100%; Ki-67 &gt;50%</p>
+<p><b>Q2:</b> Staging? <b>A2:</b> VALG 2-stage: LS (one hemithorax, radiation portal) vs ES (beyond)</p>
+<p><b>Q3:</b> LS-SCLC? <b>A3:</b> Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx → PCI 25Gy/10fx (all responders)</p>
+<p><b>Q4:</b> ES-SCLC 1L? <b>A4:</b> Platinum/Etoposide ×4 + IO (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → Maintenance IO</p>
+<p><b>Q5:</b> PCI? <b>A5:</b> 25Gy/10fx; Mandatory LS responders; Optional ES CR/PR</p>
+<p><b>Q6:</b> Paraneoplastic? <b>A6:</b> SIADH (↑ADH) — Most common; Lambert-Eaton (VGCC Ab, proximal weakness, facilitation); Anti-Hu (encephalitis); ACTH (Cushing's)</p>
+<p><b>Q7:</b> Relapse? <b>A7:</b> Chemosensitive (≥6mo): Re-challenge Plat/Etop or IO recharge; Chemoresistant (&lt;6mo): Topotecan (standard), Amrubicin, Lurbinectedin</p>
+<p><b>Q8:</b> Topotecan? <b>A8:</b> Topo I inhibitor; IV/oral; Myelosuppression (G-CSF support); CNS penetration</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>SCLC</td><td>13-15%; Neuroendocrine; Central, rapid; Smoking 100%; Ki-67 >50%</td></tr><tr><td>2</td><td>A</td><td>Staging</td><td>VALG 2-stage: LS (one hemithorax, radiation portal) vs ES (beyond)</td></tr><tr><td>3</td><td>A</td><td>LS-SCLC</td><td>Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx → PCI 25Gy/10fx (all responders)</td></tr><tr><td>4</td><td>A</td><td>ES-SCLC 1L</td><td>Platinum/Etoposide ×4 + IO (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → Maintenance IO</td></tr><tr><td>5</td><td>A</td><td>PCI</td><td>25Gy/10fx; Mandatory LS responders; Optional ES CR/PR</td></tr><tr><td>6</td><td>A</td><td>Paraneoplastic</td><td>SIADH (↑ADH) — Most common; Lambert-Eaton (VGCC Ab, proximal weakness, facilitation); Anti-Hu (encephalitis); ACTH (Cush</td></tr><tr><td>7</td><td>A</td><td>Relapse</td><td>Chemosensitive (≥6mo): Re-challenge Plat/Etop or IO recharge; Chemoresistant (<6mo): Topotecan (standard), Amrubicin, Lu</td></tr><tr><td>8</td><td>A</td><td>Topotecan</td><td>Topo I inhibitor; IV/oral; Myelosuppression (G-CSF support); CNS penetration</td></tr><tr><td>9</td><td>A</td><td>Lurbinectedin</td><td>Trabectedin analogue; Selective inhibitor of RNA Pol II; ATLANTIS: ORR 35%, mPFS 3.5mo</td></tr><tr><td>10</td><td>A</td><td>DLL3-targeted</td><td>Tarlatamab (BITE) — SCLC-A (ASCL1+) expresses DLL3; DeLLphi-301: ORR ~40%</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>SCLC</td><td>13-15%; Neuroendocrine; Central, rapid; Smoking 100%; Ki-67 >50%</td></tr><tr><td>2</td><td>A</td><td>Staging</td><td>VALG 2-stage: LS (one hemithorax, radiation portal) vs ES (beyond)</td></tr><tr><td>3</td><td>A</td><td>LS-SCLC</td><td>Concurrent Cis+Etoposide ×4 + RT 45Gy/30fx (BID) or 60-66Gy/30-33fx → PCI 25Gy/10fx (all responders)</td></tr><tr><td>4</td><td>A</td><td>ES-SCLC 1L</td><td>Platinum/Etoposide ×4 + IO (Atezo IMpower133 / Pembro KEYNOTE-604 / Durva CASPIAN) → Maintenance IO</td></tr><tr><td>5</td><td>A</td><td>PCI</td><td>25Gy/10fx; Mandatory LS responders; Optional ES CR/PR</td></tr><tr><td>6</td><td>A</td><td>Paraneoplastic</td><td>SIADH (↑ADH) — Most common; Lambert-Eaton (VGCC Ab, proximal weakness, facilitation); Anti-Hu (encephalitis); ACTH (Cush</td></tr><tr><td>7</td><td>A</td><td>Relapse</td><td>Chemosensitive (≥6mo): Re-challenge Plat/Etop or IO recharge; Chemoresistant (<6mo): Topotecan (standard), Amrubicin, Lu</td></tr><tr><td>8</td><td>A</td><td>Topotecan</td><td>Topo I inhibitor; IV/oral; Myelosuppression (G-CSF support); CNS penetration</td></tr><tr><td>9</td><td>A</td><td>Lurbinectedin</td><td>Trabectedin analogue; Selective inhibitor of RNA Pol II; ATLANTIS: ORR 35%, mPFS 3.5mo</td></tr><tr><td>10</td><td>A</td><td>DLL3-targeted</td><td>Tarlatamab (BITE) — SCLC-A (ASCL1+) expresses DLL3; DeLLphi-301: ORR ~40%</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer of the Lung|Cancer of the Lung]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Small Cell Lung Cancer Sclc · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

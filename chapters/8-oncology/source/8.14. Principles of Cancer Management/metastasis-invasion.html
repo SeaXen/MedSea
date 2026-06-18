@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Metastasis Invasion — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.14. PRINCIPLES OF CANCER MANAGEMENT</span>
+      <div class="h1">Metastasis Invasion</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe the <b>Invasion-Metastasis Cascade</b> step-by-step</li><li>[ ] Explain <b>Epithelial-Mesenchymal Transition (EMT)</b> and <b>Mesenchymal-Epithelial Transition (MET)</b></li><li>[ ] Apply <b>Paget's Seed &amp; Soil Hypothesis</b> and modern organotropism concepts</li><li>[ ] Identify <b>common metastatic sites</b> for major cancers</li><li>[ ] Distinguish <b>lymphatic vs haematogenous spread</b> patterns</li><li>[ ] Interpret <b>CTCs and ctDNA</b> for prognosis and monitoring</li><li>[ ] Explain <b>metastatic dormancy</b> mechanisms</li><li>[ ] Describe <b>tumour budding</b> and its prognostic significance</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Invasion-Metastasis Cascade</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Primary Tumour] --&gt; B[<b>1. Local Invasion</b>] B --&gt; B1[EMT: E-cadherin ↓, N-cadherin ↑, Vimentin ↑] B --&gt; B2[Proteolysis: MMPs, uPA, Cathepsins] B --&gt; B3[Motility: Rho/ROCK, Integrins, FAK, Src] B1 --&gt; C[<b>2. Intravasation</b>] B2 --&gt; C B3 --&gt; C C --&gt; C1[Basement Membrane Breach] C --&gt; C2[Endothelial Transmigration] C --&gt; C3[<b>CTCs in Circulation</b>] C1 --&gt; D[<b>3. Survival in Circulation</b>] C2 --&gt; D C3 --&gt; D D --&gt; D1[Platelet Cloaking (TF, P-selectin)] D --&gt; D2[Immune Evasion (NK, CD8+ T)] D --&gt; D3[Shear Stress Resistance] D1 --&gt; E[<b>4. Extravasation</b>] D2 --&gt; E D3 --&gt; E E --&gt; E1[Endothelial Adhesion (Selectins, Integrins)] E --&gt; E2[Transendothelial Migration] E --&gt; E3[<b>Micrometastasis</b>] E1 --&gt; F[<b>5. Colonisation</b>] E2 --&gt; F E3 --&gt; F F --&gt; F1[MET: Mesenchymal → Epithelial] F --&gt; F2[Angiogenesis (VEGF)] F --&gt; F3[Cancer Stem Cells (CSCs)] F --&gt; F4[Organ-Specific Adaptation] F1 --&gt; G[<b>Macrometastasis</b>] </code>``</p>
+<div class="sub-h">Step-by-Step Breakdown</div>
+<table class="ctable"><tr><th>Step</th><th>Key Events</th><th>Molecular Mediators</th></tr><tr><td>------</td><td>------------</td><td>---------------------</td></tr><tr><td>**1. Local Invasion**</td><td>EMT, ECM Degradation, Motility</td><td>**EMT-TFs**: SNAIL, SLUG, TWIST, ZEB1; **E-cadherin loss**, **N-cadherin/Vimentin gain**; **MMPs (2, 9, 14)**, uPA, Cathepsins; **Rho/ROCK**, Integrins, FAK, Src</td></tr><tr><td>**2. Intravasation**</td><td>Basement Membrane Breach, Endothelial Crossing</td><td>**VEGFR2**, ANGPT2, **CXCR4/CXCL12**, **ICAM-1/VCAM-1**, **VE-Cadherin**</td></tr><tr><td>**3. Circulation Survival**</td><td>Platelet Cloaking, Immune Evasion, Shear Stress</td><td>**Platelets**: TF, P-Selectin, TGF-β; **CTC Clusters** (Higher Metastatic Potential); **NK Evasion** (MHC-I Downregulation, PD-L1); **Anoikis Resistance** (Integrin Switching, PI3K/AKT)</td></tr><tr><td>**4. Extravasation**</td><td>Endothelial Adhesion, Transmigration</td><td>**Selectins (E/P-Selectin)**, **Integrins (α4β1, αLβ2)**, **ICAM-1/VCAM-1**, **CXCL12/CXCR4**</td></tr><tr><td>**5. Colonisation**</td><td>MET, Angiogenesis, CSC Expansion, Niche Adaptation</td><td>**MET**: E-cadherin Restoration; **VEGF**, FGF, Angiopoietins; **CSCs** (CD44, CD133, ALDH1); **Organ-Specific Factors**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Epithelial-Mesenchymal Transition (EMT) & MET</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">EMT: Molecular Hallmarks</div>
+<table class="ctable"><tr><th>Feature</th><th>Epithelial</th><th>Mesenchymal</th></tr><tr><td>---------</td><td>------------</td><td>-------------</td></tr><tr><td>**Adhesion**</td><td>**E-Cadherin High**</td><td>**E-Cadherin Low**, **N-Cadherin High**</td></tr><tr><td>**Cytoskeleton**</td><td>**Cytokeratins**</td><td>**Vimentin**, Fibronectin</td></tr><tr><td>**Polarity**</td><td>Apical-Basal</td><td>Front-Rear</td></tr><tr><td>**Motility**</td><td>Immobile</td><td>Migratory, Invasive</td></tr><tr><td>**TFs**</td><td>—</td><td>**SNAIL (SNAI1)**, **SLUG (SNAI2)**, **TWIST1**, **ZEB1**, **ZEB2**, **FOXC2**</td></tr><tr><td>**Signalling**</td><td>—</td><td>**TGF-β**, **Wnt/β-catenin**, **Notch**, **HIF-1α**, **NF-κB**, **RAS/ERK**, **PI3K/AKT**</td></tr></table>
+<div class="sub-h">EMT Spectrum &amp; Plasticity</div>
+<table class="ctable"><tr><th>State</th><th>Description</th><th>Clinical Relevance</th></tr><tr><td>-------</td><td>-------------</td><td>-------------------</td></tr><tr><td>**Epithelial**</td><td>Full E-cadherin, Polarised</td><td>Primary Tumour Core</td></tr><tr><td>**Partial/ Hybrid EMT**</td><td>Co-expression (E-cad + Vimentin)</td><td>**Highest Metastatic Potential**, **Stemness**, **Therapy Resistance**</td></tr><tr><td>**Mesenchymal**</td><td>Full Vimentin, Migratory</td><td>Circulating Tumour Cells (CTCs)</td></tr><tr><td>**MET (Mesenchymal-Epithelial Transition)**</td><td>Reversion to Epithelial</td><td>**Colonisation**, **Macrometastasis Formation**</td></tr></table>
+<div class="callout"><b>EMT is Reversible &amp; Dynamic</b> — <b>Plasticity</b> enables adaptation; <b>Partial EMT</b> = <b>Most Aggressive</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Seed & Soil Hypothesis & Organotropism</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Paget's Seed &amp; Soil (1889)</div>
+<div class="callout"><b>"When a plant goes to seed, its seeds are carried in all directions; but they can only live and grow if they fall on congenial soil."</b> — <b>Stephen Paget</b></div>
+<ul><li><b>Seed</b> = <b>Cancer Cell</b> (Intrinsic Properties: Mutations, EMT, Stemness)</li><li><b>Soil</b> = <b>Target Organ Microenvironment</b> (Permissive Factors: Growth Factors, ECM, Immune Landscape, Vascular Architecture)</li></ul>
+<div class="sub-h">Organotropism: Common Metastatic Patterns</div>
+<table class="ctable"><tr><th>Primary Cancer</th><th>Common Metastatic Sites</th><th>Mechanism</th></tr><tr><td>----------------</td><td>------------------------</td><td>-----------</td></tr><tr><td>**Breast**</td><td>**Bone (>70%)**, Lung, Liver, Brain</td><td>**CXCR4/CXCL12** (Bone Marrow), **Integrin αvβ3**, **PTHrP** (Osteolysis)</td></tr><tr><td>**Prostate**</td><td>**Bone (>90%)**, Lymph Nodes, Lung</td><td>**PSA**, **Bone Sialoprotein**, **CXCR4**, **ETS Fusion**</td></tr><tr><td>**Lung (NSCLC)**</td><td>**Brain, Bone, Liver, Adrenal, Contralateral Lung**</td><td>**EGFR/ALK** → Brain; **Integrin αvβ3** → Bone</td></tr><tr><td>**Colorectal**</td><td>**Liver (Portal Vein) > Lung > Peritoneum**</td><td>**Portal VEnous Drainage** → Liver First Pass; **CDX2**, **CXCR4**</td></tr><tr><td>**Melanoma**</td><td>**Lung, Liver, Brain, Bone, Skin/Subcut**</td><td>**Integrin α4β1 (VCAM-1)**, **CXCR4**, **MCAM/MUC18**</td></tr><tr><td>**Renal (RCC)**</td><td>**Lung, Bone, Liver, Brain, Adrenal**</td><td>**VHL Loss → HIF/VEGF**, **CXCR4**, **CAIX**</td></tr><tr><td>**Gastric**</td><td>**Peritoneum, Liver, Lung, Bone**, Ovary (Krukenberg)</td><td>**Transcoelomic Spread** (Peritoneal), **Haematogenous**</td></tr><tr><td>**Ovarian**</td><td>**Peritoneum (Transcoelomic) > Liver, Lung**</td><td>**Transcoelomic**, **MUC16/CA125**, **HER2**</td></tr><tr><td>**Thyroid (DTC)**</td><td>**Lung, Bone**</td><td>**TSH Receptor**, **Thyroglobulin**</td></tr><tr><td>**Neuroblastoma**</td><td>**Bone Marrow, Liver, Skin, Bone**</td><td>**GD2**, **Integrin α4β1**</td></tr></table>
+<div class="sub-h">Modern Organotropism Mechanisms</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Example</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Exosome Integrins**</td><td>**α6β4/α6β1 → Lung**, **αvβ5 → Liver**, **αvβ3 → Brain**, **α2β1 → Bone**</td></tr><tr><td>**Chemokine Receptors**</td><td>**CXCR4/CXCL12** (Bone Marrow, Lymph Node), **CCR7/CCL19/21** (Lymph Node), **CXCR3/CXCL9-11** (Inflamed Tissues)</td></tr><tr><td>**Adhesion Molecules**</td><td>**Integrin αvβ3** (Bone, Brain), **α4β1/VCAM-1** (Bone Marrow, Lung), **E-Selectin/CD44** (Liver, Lung)</td></tr><tr><td>**Organ-Specific Growth Factors**</td><td>**PTHrP/TGF-β** (Bone Osteolysis), **HGF/c-MET** (Liver), **BDNF/TrkB** (Brain)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Routes of Spread</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Lymphatic Spread</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Pattern**</td><td>**Sequential**: Primary → Sentinel Node → Regional Nodes → Thoracic Duct → Venous Circulation</td></tr><tr><td>**Sentinel Lymph Node (SLN)**</td><td>**First Draining Node**; **Mapping**: Technetium-99m + Blue Dye; **Biopsy** → Staging, Prognosis</td></tr><tr><td>**Tumour Types**</td><td>**Carcinomas** (Breast, Melanoma, H&N, Thyroid, Gastric, Colorectal, Gynae, Lung); **Sarcoma** (Rare)</td></tr><tr><td>**Pattern**</td><td>**Skip Metastasis** (Bypass SLN), **Interval Nodes**, **Skip Metastasis** = Poor Prognosis</td></tr></table>
+<div class="sub-h">Haematogenous Spread</div>
+<table class="ctable"><tr><th>Route</th><th>Cancers</th><th>Target Organs</th></tr><tr><td>-------</td><td>---------</td><td>---------------</td></tr><tr><td>**Portal Venous**</td><td>**GI Cancers** (Colorectal, Gastric, Pancreatic, Hepatocellular, Neuroendocrine)</td><td>**Liver (First Pass)** → Lung → Systemic</td></tr><tr><td>**Systemic Arterial**</td><td>**Most Carcinomas, Sarcomas, Melanoma, RCC, Thyroid**</td><td>**Lung (First Filter)** → Brain, Bone, Liver, Adrenal</td></tr><tr><td>**Pulmonary Venous**</td><td>**Pulmonary Capillaries** (Lung Primaries)</td><td>**Systemic** (Paradoxical Emboli)</td></tr><tr><td>**Caval/IVC**</td><td>**Renal, Adrenal, Hepatic, Retroperitoneal**</td><td>**Lung, Liver**</td></tr><tr><td>**Batson's Plexus**</td><td>**Prostate, Breast, Pelvic**</td><td>**Vertebral Column (Bone Mets)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Circulating Tumour Cells (CTCs) & ctDNA</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">CTCs</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Tumour Cells in Peripheral Blood** (≥1 CTC/7.5mL = Unfavourable in Metastatic Breast/Prostate/Colorectal)</td></tr><tr><td>**Detection**</td><td>**CellSearch (EpCAM+ CK+ CD45- DAPI+)** — **FDA Cleared**; **Microfluidics**, **Size-Based (ISET)**, **CTC-iChip**, **RNA-Seq**</td></tr><tr><td>**Prognosis**</td><td>**≥5 CTCs/7.5mL (Breast/Prostate)** = Poor OS; **Baseline + Serial Monitoring**</td></tr><tr><td>**CTC Clusters**</td><td>**2-50 Cells** → **23-50x Higher Metastatic Potential** vs Single CTCs</td></tr><tr><td>**Phenotyping**</td><td>**EMT Markers** (Vimentin, Twist), **Stemness** (CD44, CD133, ALDH1), **PD-L1**, **HER2**, **AR-V7** (Prostate)</td></tr></table>
+<div class="sub-h">ctDNA (Circulating Tumour DNA)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Tumour-Derived DNA Fragments** in Plasma (160-180bp, <1% of cfDNA)</td></tr><tr><td>**Detection**</td><td>**NGS (Targeted Panels, WES, WGS)**, **Digital PCR (dPCR, BEAMing)**, **Methylation-Based**</td></tr><tr><td>**Applications**</td><td>**MRD Detection** (Post-Surgery, Post-Chemo), **Resistance Mutations** (EGFR T790M, ESR1, KRAS), **Tumour Fraction**, **TMB**, **MSI**, **Early Detection (Screening)**</td></tr><tr><td>**Advantages**</td><td>**Minimally Invasive**, **Real-Time**, **Spatial/Temporal Heterogeneity**, **MRD Sensitivity 10⁻⁴-10⁻⁶**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Metastatic Dormancy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Types of Dormancy</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Triggers for Reactivation</th></tr><tr><td>------</td><td>-----------</td><td>---------------------------</td></tr><tr><td>**Cellular Dormancy**</td><td>**Single Disseminated Tumour Cell (DTC)** in **G0/G1 Arrest**; **p38high/ERKlow**, **NR2F1**, **TGF-β2**, **BMP**, **Gas6/AXL**</td><td>**Inflammation**, **Angiogenic Switch**, **Fibrosis**, **Hormonal Changes**, **Immune Decline**, **Surgery/Trauma**</td></tr><tr><td>**Micrometastatic Dormancy**</td><td>**Micrometastasis** (Balanced Proliferation/Apoptosis); **Angiogenic Dormancy** (Thrombospondin-1 > VEGF)</td><td>**Angiogenic Switch** (VEGF ↑, TSP-1 ↓), **Inflammation**, **Metabolic Changes**</td></tr><tr><td>**Immune-Mediated Dormancy**</td><td>**Equilibrium Phase** (Immunoediting); **CD8+ T Cells, IFN-γ** Control</td><td>**Immune Evasion** (MHC-I Loss, PD-L1), **Immunosenescence**, **Checkpoint Upregulation**</td></tr></table>
+<div class="callout"><b>Clinical</b>: <b>Late Recurrence</b> (Years-Decades) = Dormancy Escape; <b>Breast (ER+), Melanoma, Prostate, RCC</b> Prone to Dormancy.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Tumour Budding</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Single Cells or Small Clusters (<5 Cells)** at **Invasive Front** of Tumour</td></tr><tr><td>**Mechanism**</td><td>**EMT at Invasive Front** → Detachment of Single Cells/Clusters</td></tr><tr><td>**Assessment**</td><td>**H&E**, **Cytokeratin IHC**; **Count at 20x Field** (10 Highest Budding Areas)</td></tr><tr><td>**Scoring (ITBCC)**</td><td>**Bd1 (Low): 0-4 buds**, **Bd2 (Intermediate): 5-9 buds**, **Bd3 (High): ≥10 buds**</td></tr><tr><td>**Prognosis**</td><td>**High Budding (Bd3) = Lymph Node Mets, Lymphovascular Invasion, Poor OS/DFS**</td></tr><tr><td>**Cancers**</td><td>**Colorectal (Validated)**, **Oral SCC**, **Gastric**, **Oesophageal**, **Pancreatic**, **Lung**, **Breast**, **Gynae**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Metastasis Cascade**</td><td>Local Invasion (EMT) → Intravasation → Circulation (CTCs) → Extravasation → Colonisation (MET)</td></tr><tr><td>**EMT**</td><td>**SNAIL/SLUG/TWIST/ZEB** → E-cad ↓, N-cad/Vimentin ↑; **Partial EMT = Most Aggressive**</td></tr><tr><td>**MET**</td><td>Mesenchymal → Epithelial Reversion → **Colonisation**</td></tr><tr><td>**Seed & Soil**</td><td>**Paget**: Seed (Cell) + Soil (Organ Microenvironment) = Organotropism</td></tr><tr><td>**Organotropism**</td><td>Breast/Prostate → Bone; Lung → Brain/Adrenal; CRC → Liver (Portal); Melanoma → Brain/Lung</td></tr><tr><td>**Spread Routes**</td><td>**Lymphatic** (Carcinomas, Sequential SLN); **Haematogenous** (Portal → Liver; Systemic → Lung First)</td></tr><tr><td>**CTCs**</td><td>**CellSearch (EpCAM/CK/CD45)**; **≥5/7.5mL = Poor Prognosis**; **Clusters = High Risk**</td></tr><tr><td>**ctDNA**</td><td>**MRD (Post-Surgery), Resistance Mutations, Tumour Fraction, TMB**</td></tr><tr><td>**Dormancy**</td><td>**Cellular (p38high/ERKlow, NR2F1)** vs **Micrometastatic (Angiogenic)**; **Late Recurrence**</td></tr><tr><td>**Tumour Budding**</td><td>**Invasive Front, <5 Cells**; **ITBCC: Bd1 (0-4), Bd2 (5-9), Bd3 (≥10)**; **High = Poor Prognosis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Describe the Metastatic Cascade steps.**</td><td>1) Local Invasion (EMT, MMPs), 2) Intravasation, 3) Circulation (CTCs, Platelet Cloaking), 4) Extravasation, 5) Colonisation (MET, Angiogenesis).</td></tr><tr><td>**EMT vs MET — Key Differences?**</td><td>**EMT**: E-cad ↓, N-cad/Vimentin ↑, Motility ↑ (SNAIL/SLUG/TWIST/ZEB); **MET**: Reverse (E-cad ↑, Colonisation).</td></tr><tr><td>**Seed & Soil Hypothesis — Who, What?**</td><td>**Stephen Paget (1889)**; **"Seed & Soil"**: Cancer Cell (Seed) + Organ Microenvironment (Soil) = Organotropism.</td></tr><tr><td>**Breast Cancer Metastatic Sites?**</td><td>**Bone (70%), Lung, Liver, Brain**; **Mechanism: PTHrP Osteolysis, CXCR4/CXCL12 (Bone Marrow)**.</td></tr><tr><td>**CRC Metastatic Pattern?**</td><td>**Portal Venous → Liver (First Pass) → Lung → Peritoneum**.</td></tr><tr><td>**CTCs — Detection, Prognosis?**</td><td>**CellSearch (EpCAM+/CK+/CD45-)**; **≥5/7.5mL = Poor OS (Breast/Prostate/CRC)**; **Clusters = High Metastatic Potential**.</td></tr><tr><td>**ctDNA — Uses?**</td><td>**MRD Post-Surgery**, **Resistance Mutations (EGFR T790M, ESR1, KRAS)**, **Tumour Fraction**, **TMB, MSI**.</td></tr><tr><td>**Dormancy Types — Cellular vs Micrometastatic?**</td><td>**Cellular**: Single DTC, G0/G1 Arrest (p38high/ERKlow, NR2F1); **Micrometastatic**: Balanced Growth/Death, Angiogenic Dormancy (TSP-1 > VEGF).</td></tr><tr><td>**Tumour Budding — Definition, Scoring?**</td><td>**Single Cells/Clusters <5 at Invasive Front**; **ITBCC: Bd1 (0-4), Bd2 (5-9), Bd3 (≥10)**; **High = LN Mets, LVI, Poor OS**.</td></tr><tr><td>**Lymphatic vs Haematogenous Spread?**</td><td>**Lymphatic**: Carcinomas, Sequential (SLN → Regional → Thoracic Duct); **Haematogenous**: Portal (GI→Liver) or Systemic (Lung First Filter).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**EMT vs MET**</td><td>**EMT**: Epithelial → Mesenchymal (Invasion, Dissemination); **MET**: Mesenchymal → Epithelial (Colonisation, Outgrowth)</td></tr><tr><td>**CTCs vs ctDNA**</td><td>**CTCs**: Whole Cells (Rare, Viability Issues, Functional Studies); **ctDNA**: DNA Fragments (Abundant, Sensitive, Mutation Tracking)</td></tr><tr><td>**Cellular vs Micrometastatic Dormancy**</td><td>**Cellular**: Single DTC, Quiescent (G0); **Micrometastatic**: Micrometastasis, Balanced Turnover, Angiogenic Dormancy</td></tr><tr><td>**Budding vs LVI**</td><td>**Budding**: Single Cells at Invasive Front (EMT); **LVI**: Tumour Cells Inside Lymph/Vascular Spaces</td></tr><tr><td>**Exosome Integrins vs Chemokines**</td><td>**Integrins**: Organotropism (Targeting); **Chemokines**: Recruitment, Survival (CXCR4/CXCL12 = Bone Marrow)</td></tr><tr><td>**Portal vs Systemic Haematogenous**</td><td>**Portal**: GI Cancers → Liver First; **Systemic**: Lung First Filter → Systemic</td></tr></table>
+<p><b>Mnemonic: METASTASIS-CASCADE</b></p>
+<ul><li><b>M</b>etastasis: <b>90% Cancer Deaths</b></li><li><b>E</b>MT: <b>SNAIL/SLUG/TWIST/ZEB</b> → E-cad ↓, Vimentin ↑</li><li><b>T</b>ransit: <b>Intravasation → Circulation (CTCs) → Extravasation</b></li><li><b>A</b>noikis Resistance: <b>PI3K/AKT, Integrin Switching</b></li><li><b>S</b>eed &amp; Soil: <b>Paget</b> (Seed + Soil = Organotropism)</li><li><b>T</b>ransport: <b>Lymphatic (Sequential) vs Haematogenous (Portal/Systemic)</b></li><li><b>A</b>ngiogenesis: <b>VEGF/HIF-1α</b> (Colonisation)</li><li><b>S</b>tem Cells: <b>CSCs (CD44, CD133, ALDH1)</b> → Colonisation</li><li><b>I</b>ntravasation: <b>EMT + MMPs + Motility</b></li><li><b>S</b>temness: <b>Partial EMT = Highest Stemness</b></li><li><b>C</b>TCs: <b>CellSearch (EpCAM/CK/CD45)</b>, <b>Clusters = High Risk</b></li><li><b>A</b>ngio Switch: <b>VEGF &gt; TSP-1</b> (Colonisation)</li><li><b>D</b>ormancy: <b>Cellular (NR2F1) / Micro (TSP-1/VEGF) / Immune</b></li><li><b>E</b>xosomes: <b>Integrins → Organotropism (α6β4 Lung, αvβ5 Liver, α2β1 Bone)</b></li><li><b>S</b>oil: <b>Target Organ Microenvironment</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid mindmap root((Metastasis &amp; Invasion)) Cascade</p>
+<ol><li>Local Invasion (EMT, MMPs)</li><li>Intravasation</li><li>Circulation (CTCs, Platelets)</li><li>Extravasation</li><li>Colonisation (MET, Angio)</li></ol>
+<p>EMT/MET EMT-TFs: SNAIL, SLUG, TWIST, ZEB E-cad ↓, N-cad/Vimentin ↑ Partial EMT = Stemness MET = Colonisation Organotropism Seed &amp; Soil (Paget) Exosome Integrins (α6β4 Lung, αvβ5 Liver) Chemokines (CXCR4 Bone) Common Sites by Primary Routes Lymphatic: SLN → Regional → Thoracic Duct Haematogenous: Portal (Liver) / Systemic (Lung First) CTCs/ctDNA CTCs: CellSearch, Clusters High Risk ctDNA: MRD, Resistance, Tumour Fraction Dormancy Cellular (NR2F1, p38high) Micrometastatic (Angiogenic) Immune-Mediated Tumour Budding Invasive Front &lt;5 Cells ITBCC: Bd1/Bd2/Bd3 High = Poor Prognosis ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Cascade**</td><td>Invasion (EMT) → Intravasation → Circulation → Extravasation → Colonisation (MET)</td></tr><tr><td>**EMT**</td><td>SNAIL/SLUG/TWIST/ZEB; E-cad ↓, N-cad/Vimentin ↑; TGF-β, Wnt, HIF-1α</td></tr><tr><td>**MET**</td><td>Reverse EMT → Colonisation</td></tr><tr><td>**Seed & Soil**</td><td>Paget: Seed (Cell) + Soil (Organ) = Organotropism</td></tr><tr><td>**Organotropism**</td><td>Breast/Prostate→Bone; Lung→Brain/Adrenal; CRC→Liver (Portal); Melanoma→Brain/Lung</td></tr><tr><td>**Spread**</td><td>Lymphatic (SLN Sequential); Haematogenous: Portal (GI→Liver), Systemic (Lung First)</td></tr><tr><td>**CTCs**</td><td>CellSearch (EpCAM/CK/CD45); ≥5/7.5mL = Poor; Clusters = High Risk</td></tr><tr><td>**ctDNA**</td><td>MRD, Resistance Mutations, Tumour Fraction, TMB</td></tr><tr><td>**Dormancy**</td><td>Cellular (NR2F1, G0); Micrometastatic (Angiogenic); Immune</td></tr><tr><td>**Tumour Budding**</td><td>Invasive Front <5 Cells; Bd1 (0-4), Bd2 (5-9), Bd3 (≥10); High = Poor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Metastatic Cascade Steps</td><td></td><td></td></tr><tr><td>EMT/MET Molecular</td><td></td><td></td></tr><tr><td>Seed & Soil / Organotropism</td><td></td><td></td></tr><tr><td>Spread Routes</td><td></td><td></td></tr><tr><td>CTCs/ctDNA Uses</td><td></td><td></td></tr><tr><td>Dormancy Types</td><td></td><td></td></tr><tr><td>Tumour Budding Scoring</td><td></td><td></td></tr><tr><td>Common Met Sites by Cancer</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Tumour Microenvironment]], [[EMT]], [[CTCs]], [[ctDNA]], [[Seed and Soil]], [[Pre-Metastatic Niche]], [[Dormancy]], [[Tumour Budding]], [[Lymphatic Spread]], [[Haematogenous Spread]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Metastasis &amp; Invasion (Metastasis Cascade), which statement is correct? A. Local Invasion (EMT) → Intravasation → Circulation (CTCs) → Extravasation → Colonisation (MET) B. Local - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Local Invasion (EMT) → Intravasation → Circulation (CTCs) → Extravasation → Colonisation (MET)</li></ul>
+<p><b>2.</b> Regarding Metastasis &amp; Invasion (EMT), which statement is correct? A. <b>SNAIL/SLUG/TWIST/ZEB</b> → E-cad ↓, N-cad/Vimentin ↑ B. <b>SNAIL/SLUG/TWIST/ZEB</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SNAIL/SLUG/TWIST/ZEB</b> → E-cad ↓, N-cad/Vimentin ↑; <b>Partial EMT = Most Aggressive</b></li></ul>
+<p><b>3.</b> Regarding Metastasis &amp; Invasion (MET), which statement is correct? A. Mesenchymal → Epithelial Reversion → <b>Colonisation</b> B. Mesenchymal - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Mesenchymal → Epithelial Reversion → <b>Colonisation</b></li></ul>
+<p><b>4.</b> Regarding Metastasis &amp; Invasion (Seed &amp; Soil), which statement is correct? A. <b>Paget</b>: Seed (Cell) + Soil (Organ Microenvironment) = Organotropism B. <b>Paget</b>: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Paget</b>: Seed (Cell) + Soil (Organ Microenvironment) = Organotropism</li></ul>
+<p><b>5.</b> Regarding Metastasis &amp; Invasion (Organotropism), which statement is correct? A. Breast/Prostate → Bone B. Breast/Prostate - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Breast/Prostate → Bone; Lung → Brain/Adrenal; CRC → Liver (Portal); Melanoma → Brain/Lung</li></ul>
+<p><b>6.</b> Regarding Metastasis &amp; Invasion (Spread Routes), which statement is correct? A. <b>Lymphatic</b> (Carcinomas, Sequential SLN) B. <b>Lymphatic</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Lymphatic</b> (Carcinomas, Sequential SLN); <b>Haematogenous</b> (Portal → Liver; Systemic → Lung First)</li></ul>
+<p><b>7.</b> Regarding Metastasis &amp; Invasion (CTCs), which statement is correct? A. <b>CellSearch (EpCAM/CK/CD45)</b> B. **CellSearch - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CellSearch (EpCAM/CK/CD45)</b>; <b>≥5/7.5mL = Poor Prognosis</b>; <b>Clusters = High Risk</b></li></ul>
+<p><b>8.</b> Regarding Metastasis &amp; Invasion (ctDNA), which statement is correct? A. <b>MRD (Post-Surgery), Resistance Mutations, Tumour Fraction, TMB</b> B. **MRD - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>MRD (Post-Surgery), Resistance Mutations, Tumour Fraction, TMB</b></li></ul>
+<p><b>9.</b> Regarding Metastasis &amp; Invasion (Dormancy), which statement is correct? A. <b>Cellular (p38high/ERKlow, NR2F1)</b> vs <b>Micrometastatic (Angiogenic)</b> B. **Cellular - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Cellular (p38high/ERKlow, NR2F1)</b> vs <b>Micrometastatic (Angiogenic)</b>; <b>Late Recurrence</b></li></ul>
+<p><b>10.</b> Regarding Metastasis &amp; Invasion (Tumour Budding), which statement is correct? A. <b>Invasive Front, &lt;5 Cells</b> B. **Invasive - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Invasive Front, &lt;5 Cells</b>; <b>ITBCC: Bd1 (0-4), Bd2 (5-9), Bd3 (≥10)</b>; <b>High = Poor Prognosis</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. Local Invasion (EMT) → Intravasation → Circulation (CTCs) → Extravasation → Colonisation (MET)</li><li>B. Local (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: Local Invasion (EMT) → Intravasation → Circulation (CTCs) → Extravasation → Colonisation (MET)</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>SNAIL/SLUG/TWIST/ZEB</b> → E-cad ↓, N-cad/Vimentin ↑</li><li>B. <b>SNAIL/SLUG/TWIST/ZEB</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>SNAIL/SLUG/TWIST/ZEB</b> → E-cad ↓, N-cad/Vimentin ↑; <b>Partial EMT = Most Aggressive</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. Mesenchymal → Epithelial Reversion → <b>Colonisation</b></li><li>B. Mesenchymal (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: Mesenchymal → Epithelial Reversion → <b>Colonisation</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Paget</b>: Seed (Cell) + Soil (Organ Microenvironment) = Organotropism</li><li>B. <b>Paget</b>: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Paget</b>: Seed (Cell) + Soil (Organ Microenvironment) = Organotropism</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. Breast/Prostate → Bone</li><li>B. Breast/Prostate (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: Breast/Prostate → Bone; Lung → Brain/Adrenal; CRC → Liver (Portal); Melanoma → Brain/Lung</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Lymphatic</b> (Carcinomas, Sequential SLN)</li><li>B. <b>Lymphatic</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Lymphatic</b> (Carcinomas, Sequential SLN); <b>Haematogenous</b> (Portal → Liver; Systemic → Lung First)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>CellSearch (EpCAM/CK/CD45)</b></li><li>B. **CellSearch (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>CellSearch (EpCAM/CK/CD45)</b>; <b>≥5/7.5mL = Poor Prognosis</b>; <b>Clusters = High Risk</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>MRD (Post-Surgery), Resistance Mutations, Tumour Fraction, TMB</b></li><li>B. **MRD (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>MRD (Post-Surgery), Resistance Mutations, Tumour Fraction, TMB</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Cellular (p38high/ERKlow, NR2F1)</b> vs <b>Micrometastatic (Angiogenic)</b></li><li>B. **Cellular (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Cellular (p38high/ERKlow, NR2F1)</b> vs <b>Micrometastatic (Angiogenic)</b>; <b>Late Recurrence</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Invasive Front, &lt;5 Cells</b></li><li>B. **Invasive (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Invasive Front, &lt;5 Cells</b>; <b>ITBCC: Bd1 (0-4), Bd2 (5-9), Bd3 (≥10)</b>; <b>High = Poor Prognosis</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Metastasis Cascade? <b>A1:</b> Local Invasion (EMT) → Intravasation → Circulation (CTCs) → Extravasation → Colonisation (MET)</p>
+<p><b>Q2:</b> EMT? <b>A2:</b> SNAIL/SLUG/TWIST/ZEB → E-cad ↓, N-cad/Vimentin ↑; Partial EMT = Most Aggressive</p>
+<p><b>Q3:</b> MET? <b>A3:</b> Mesenchymal → Epithelial Reversion → Colonisation</p>
+<p><b>Q4:</b> Seed &amp; Soil? <b>A4:</b> Paget: Seed (Cell) + Soil (Organ Microenvironment) = Organotropism</p>
+<p><b>Q5:</b> Organotropism? <b>A5:</b> Breast/Prostate → Bone; Lung → Brain/Adrenal; CRC → Liver (Portal); Melanoma → Brain/Lung</p>
+<p><b>Q6:</b> Spread Routes? <b>A6:</b> Lymphatic (Carcinomas, Sequential SLN); Haematogenous (Portal → Liver; Systemic → Lung First)</p>
+<p><b>Q7:</b> CTCs? <b>A7:</b> CellSearch (EpCAM/CK/CD45); ≥5/7.5mL = Poor Prognosis; Clusters = High Risk</p>
+<p><b>Q8:</b> ctDNA? <b>A8:</b> MRD (Post-Surgery), Resistance Mutations, Tumour Fraction, TMB</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Metastasis Cascade</td><td>Local Invasion (EMT) → Intravasation → Circulation (CTCs) → Extravasation → Colonisation (MET)</td></tr><tr><td>2</td><td>A</td><td>EMT</td><td>SNAIL/SLUG/TWIST/ZEB → E-cad ↓, N-cad/Vimentin ↑; Partial EMT = Most Aggressive</td></tr><tr><td>3</td><td>A</td><td>MET</td><td>Mesenchymal → Epithelial Reversion → Colonisation</td></tr><tr><td>4</td><td>A</td><td>Seed & Soil</td><td>Paget: Seed (Cell) + Soil (Organ Microenvironment) = Organotropism</td></tr><tr><td>5</td><td>A</td><td>Organotropism</td><td>Breast/Prostate → Bone; Lung → Brain/Adrenal; CRC → Liver (Portal); Melanoma → Brain/Lung</td></tr><tr><td>6</td><td>A</td><td>Spread Routes</td><td>Lymphatic (Carcinomas, Sequential SLN); Haematogenous (Portal → Liver; Systemic → Lung First)</td></tr><tr><td>7</td><td>A</td><td>CTCs</td><td>CellSearch (EpCAM/CK/CD45); ≥5/7.5mL = Poor Prognosis; Clusters = High Risk</td></tr><tr><td>8</td><td>A</td><td>ctDNA</td><td>MRD (Post-Surgery), Resistance Mutations, Tumour Fraction, TMB</td></tr><tr><td>9</td><td>A</td><td>Dormancy</td><td>Cellular (p38high/ERKlow, NR2F1) vs Micrometastatic (Angiogenic); Late Recurrence</td></tr><tr><td>10</td><td>A</td><td>Tumour Budding</td><td>Invasive Front, <5 Cells; ITBCC: Bd1 (0-4), Bd2 (5-9), Bd3 (≥10); High = Poor Prognosis</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Metastasis Cascade</td><td>Local Invasion (EMT) → Intravasation → Circulation (CTCs) → Extravasation → Colonisation (MET)</td></tr><tr><td>2</td><td>A</td><td>EMT</td><td>SNAIL/SLUG/TWIST/ZEB → E-cad ↓, N-cad/Vimentin ↑; Partial EMT = Most Aggressive</td></tr><tr><td>3</td><td>A</td><td>MET</td><td>Mesenchymal → Epithelial Reversion → Colonisation</td></tr><tr><td>4</td><td>A</td><td>Seed & Soil</td><td>Paget: Seed (Cell) + Soil (Organ Microenvironment) = Organotropism</td></tr><tr><td>5</td><td>A</td><td>Organotropism</td><td>Breast/Prostate → Bone; Lung → Brain/Adrenal; CRC → Liver (Portal); Melanoma → Brain/Lung</td></tr><tr><td>6</td><td>A</td><td>Spread Routes</td><td>Lymphatic (Carcinomas, Sequential SLN); Haematogenous (Portal → Liver; Systemic → Lung First)</td></tr><tr><td>7</td><td>A</td><td>CTCs</td><td>CellSearch (EpCAM/CK/CD45); ≥5/7.5mL = Poor Prognosis; Clusters = High Risk</td></tr><tr><td>8</td><td>A</td><td>ctDNA</td><td>MRD (Post-Surgery), Resistance Mutations, Tumour Fraction, TMB</td></tr><tr><td>9</td><td>A</td><td>Dormancy</td><td>Cellular (p38high/ERKlow, NR2F1) vs Micrometastatic (Angiogenic); Late Recurrence</td></tr><tr><td>10</td><td>A</td><td>Tumour Budding</td><td>Invasive Front, <5 Cells; ITBCC: Bd1 (0-4), Bd2 (5-9), Bd3 (≥10); High = Poor Prognosis</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Principles of Cancer Management|Principles of Cancer Management]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Metastasis Invasion · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

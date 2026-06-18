@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Barriers To Deprescribing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.9. POLYPHARMACY AND DEPRESCRIBING</span>
+      <div class="h1">Barriers To Deprescribing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Categorise barriers: Patient, Prescriber, System, Drug-specific, Ethical/Legal</li><li>[ ] Apply <b>PATIENT</b> mnemonic for patient barriers</li><li>[ ] Apply <b>PRESCRIBER</b> mnemonic for clinician barriers</li><li>[ ] Identify system/organisational barriers</li><li>[ ] Know enablers/facilitators for each barrier category</li><li>[ ] Apply shared decision-making framework for deprescribing conversations</li><li>[ ] Answer viva: "Why is deprescribing difficult in practice?" and "How to overcome barriers?"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Barrier Categories</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Barriers to Deprescribing] --&gt; B[Patient-Level Barriers] A --&gt; C[Prescriber-Level Barriers] A --&gt; D[System / Organisational Barriers] A --&gt; E[Drug-Specific Barriers] A --&gt; F[Ethical / Legal Barriers]</p>
+<p>B --&gt; B1[Psychological attachment&lt;br&gt;Fear of withdrawal/relapse&lt;br&gt;Lack of awareness&lt;br&gt;Therapeutic relationship&lt;br&gt;Cognitive impairment&lt;br&gt;Health literacy] C --&gt; C1[Inertia / Status quo bias&lt;br&gt;Fear of harm / litigation&lt;br&gt;Lack of knowledge/confidence&lt;br&gt;Time constraints&lt;br&gt;Guideline conflict&lt;br&gt;Therapeutic relationship] D --&gt; D1[Fragmented care&lt;br&gt;Lack of medication review&lt;br&gt;IT/EMR limitations&lt;br&gt;Incentive structures&lt;br&gt;Formulary restrictions&lt;br&gt;Transitions of care gaps] E --&gt; E1[Withdrawal syndromes&lt;br&gt;Disease rebound&lt;br&gt;No clear taper protocol&lt;br&gt;Long half-life / active metabolites&lt;br&gt;Patient on "specialist" drug] F --&gt; F1[Duty of care vs autonomy&lt;br&gt;Informed consent complexity&lt;br&gt;Capacity assessment&lt;br&gt;Advance directives&lt;br&gt;Medico-legal fear] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Patient-Level Barriers: The PATIENT Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">PATIENT Mnemonic</div>
+<table class="ctable"><tr><th>Letter</th><th>Barrier</th><th>Description</th><th>Enabler/Strategy</th></tr><tr><td>--------</td><td>---------</td><td>-------------</td><td>------------------</td></tr><tr><td>**P**</td><td>**Psychological attachment**</td><td>"This pill keeps me alive"; identity tied to medication; fear of losing benefit</td><td>Explore beliefs; validate; trial of reduction; emphasise "test dose reduction" not "stopping forever"</td></tr><tr><td>**A**</td><td>**Awareness lacking**</td><td>Doesn't know drug is inappropriate; thinks all drugs necessary; unaware of ADRs</td><td>Education; show STOPP/START/Beers evidence; shared decision aids; "Your kidney function means this drug accumulates"</td></tr><tr><td>**T**</td><td>**Therapeutic relationship fear**</td><td>"My doctor will abandon me"; "Specialist will be angry"; loyalty to prescriber</td><td>Continuity of care; involve original prescriber; "We're working together, not against your specialist"</td></tr><tr><td>**I**</td><td>**Inertia / Status quo**</td><td>"I've taken it for 20 years"; habit; routine; don't question</td><td>Normalise review: "Everyone's meds reviewed yearly"; link to health goals (falls, memory)</td></tr><tr><td>**E**</td><td>**Evidence of benefit (perceived)**</td><td>"I feel better on it"; attributes wellness to drug; placebo effect; fear of relapse</td><td>Distinguish perception vs evidence; trial reduction with monitoring; "Let's try 4 weeks lower dose"</td></tr><tr><td>**N**</td><td>**No withdrawal plan fear**</td><td>Fear of withdrawal symptoms; past bad experience; no taper plan offered</td><td>Co-create taper plan; slow taper; rescue plan; "We'll go at your pace, with support"</td></tr><tr><td>**T**</td><td>**Trust/communication issues**</td><td>Language barriers; health literacy; cognitive impairment; family conflict</td><td>Plain language; teach-back; involve family/carer; interpreter; written plans</td></tr></table>
+<div class="sub-h">Additional Patient Barriers</div>
+<ul><li><b>Fear of relapse/recurrence</b> — especially antidepressants, antipsychotics, opioids, PPIs</li><li><b>Cognitive impairment</b> — inability to understand, consent, adhere to taper</li><li><b>Family/carer pressure</b> — "Don't stop mum's pills"; carer burden of monitoring</li><li><b>Cost concerns</b> — "New drug expensive"; "Why stop free drug?"</li><li><b>Polypharmacy normalisation</b> — "Everyone my age takes this many"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Prescriber-Level Barriers: The PRESCRIBER Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">PRESCRIBER Mnemonic</div>
+<table class="ctable"><tr><th>Letter</th><th>Barrier</th><th>Description</th><th>Enabler/Strategy</th></tr><tr><td>--------</td><td>---------</td><td>-------------</td><td>------------------</td></tr><tr><td>**P**</td><td>**Professional inertia**</td><td>"If it ain't broke, don't fix it"; status quo bias; clinical momentum</td><td>Routine triggers (age 75, admission, new diagnosis); audit/feedback; "Deprescribing as quality metric"</td></tr><tr><td>**R**</td><td>**Risk aversion / Litigation fear**</td><td>"If I stop and patient harmed, I'm liable"; defensive prescribing</td><td>Evidence-based guidelines (STOPP/START); documentation of shared decision; medico-legal support</td></tr><tr><td>**E**</td><td>**Evidence gaps**</td><td>"No trial data for deprescribing in frail elderly"; uncertainty</td><td>Use explicit criteria (STOPP/START); pragmatic approach; "Absence of evidence ≠ evidence of absence"</td></tr><tr><td>**S**</td><td>**Specialist territory**</td><td>"Cardiologist started it, not my place to stop"; siloed care</td><td>Interdisciplinary communication; shared care agreements; "I'll write to cardiologist with suggestion"</td></tr><tr><td>**C**</td><td>**Clinical knowledge deficit**</td><td>Unaware of STOPP/START/Beers; don't know taper protocols; drug interactions</td><td>Education/Training; pocket cards; EMR alerts; pharmacist-led reviews</td></tr><tr><td>**R**</td><td>**Relationship preservation**</td><td>"Patient will think I'm giving up"; don't want to upset patient</td><td>Frame as "optimising"; "Reducing side effects to improve quality of life"; shared decision</td></tr><tr><td>**I**</td><td>**Incentives misaligned**</td><td>QOF/Quality payments for *starting* drugs (e.g., ACEi, statin); none for stopping</td><td>Align incentives; deprescribing KPIs; "Medication review" as quality indicator</td></tr><tr><td>**B**</td><td>**Busyness / Time pressure**</td><td>10-min consult; review takes 30+ min; no protected time</td><td>Dedicated medication review slots; pharmacist-led; pre-review by pharmacist/nurse</td></tr><tr><td>**E**</td><td>**EMR/IT limitations**</td><td>No deprescribing module; hard to track taper; no STOPP/START integration</td><td>EMR deprescribing templates; taper schedules; decision support alerts</td></tr><tr><td>**R**</td><td>**Resistance to change**</td><td>"This is how I've always practiced"; sceptical of guidelines</td><td>Audit/feedback; peer champions; case-based learning; show patient outcomes</td></tr></table>
+<div class="sub-h">Additional Prescriber Barriers</div>
+<ul><li><b>Diagnostic uncertainty</b> — "Is this symptom drug-related or disease?"</li><li><b>Guideline conflict</b> — Single-disease guidelines say START, multimorbidity says STOPP</li><li><b>Lack of follow-up systems</b> — No safety net for monitoring after deprescribing</li><li><b>Formulary/Commissioning restrictions</b> — Can't switch to preferred alternative</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ System / Organisational Barriers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Barrier</th><th>Description</th><th>Solution/Enabler</th></tr><tr><td>---------</td><td>-------------</td><td>------------------</td></tr><tr><td>**Fragmented care**</td><td>Multiple prescribers (GP, cardiologist, psychiatrist, geriatrician, dentist); no single overview</td><td>**Named medication reviewer**; shared record; interdisciplinary MDT</td></tr><tr><td>**Transitions of care gaps**</td><td>Admission/discharge/transfer → discrepancies 30–70%; no reconciled list</td><td>**Medication reconciliation** at every transition; discharge medication review</td></tr><tr><td>**Lack of structured review process**</td><td>No routine review; repeat prescribing without indication check</td><td>**Annual structured review** (age ≥75, care home, ≥10 drugs, frailty); pharmacist-led</td></tr><tr><td>**EMR/Decision support lacking**</td><td>No STOPP/START integration; no taper templates; alerts only for starting</td><td>**EMR deprescribing module**; taper schedulers; STOPP/START alerts</td></tr><tr><td>**Incentive structures**</td><td>Pay-for-performance for *starting* (QOF, HEDIS); no reward for stopping</td><td>**Deprescribing KPIs**; "Appropriate polypharmacy" metrics; shared savings</td></tr><tr><td>**Workforce gaps**</td><td>No pharmacist in team; GP time-poor; no deprescribing champion</td><td>**Embed clinical pharmacist**; deprescribing nurse; training</td></tr><tr><td>**Information flow**</td><td>Specialist letters don't include deprescribing plans; OTC/herbal not recorded</td><td>**Standardised communication**; patient-held medication list; include OTC</td></tr><tr><td>**Care home specific**</td><td>"When required" (PRN) given regularly; no review; agency staff</td><td>**Regular pharmacist reviews**; STOPP/START for care homes; PRN audit</td></tr><tr><td>**Research evidence gaps**</td><td>Few RCTs of deprescribing outcomes in multimorbidity/frailty</td><td>**Pragmatic trials**; real-world evidence; observational data</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Drug-Specific Barriers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug Class</th><th>Barrier</th><th>Management Strategy</th></tr><tr><td>------------</td><td>---------</td><td>---------------------</td></tr><tr><td>**Benzodiazepines / Z-drugs**</td><td>Withdrawal (anxiety, insomnia, seizures); dependence; patient attachment</td><td>**Slow taper** (weeks–months); CBT-I for insomnia; switch to melatonin; patient education</td></tr><tr><td>**Antidepressants (SSRI/SNRI/TCA)**</td><td>Discontinuation syndrome (dizziness, electric shocks, flu-like); relapse fear</td><td>**Taper over 4+ weeks** (longer if high dose/long duration); monitor; restart if relapse</td></tr><tr><td>**Antipsychotics**</td><td>Withdrawal dyskinesia; relapse (psychosis/BPSD); specialist ONLY perception</td><td>**Reduce by 25–50% every 1–2 weeks**; monitor; involve psychiatrist; non-pharm first</td></tr><tr><td>**Opioids**</td><td>Withdrawal (pain, anxiety, GI); hyperalgesia; patient fear of pain</td><td>**Taper 10% weekly** (slower if long-term); non-opioid alternatives; pain management plan</td></tr><tr><td>**PPIs**</td><td>Rebound acid hypersecretion; patient "need" for symptom control</td><td>**Step down**: PPI → H2RA → antacid → on-demand; lifestyle measures; 4–8 week taper</td></tr><tr><td>**Beta-blockers**</td><td>Rebound tachycardia/HTN; ischaemia risk if CAD</td><td>**Taper over 1–2 weeks**; monitor HR/BP; avoid abrupt stop if CAD</td></tr><tr><td>**Corticosteroids**</td><td>Adrenal insufficiency; disease flare</td><td>**Physiological taper** (weeks–months); stress dosing education; specialist input</td></tr><tr><td>**Anticoagulants**</td><td>Thrombosis risk if stopped inappropriately</td><td>**Only stop if indication resolved** (e.g., AF ablated, VTE >3m provoked); shared decision with haematology</td></tr><tr><td>**Statins**</td><td>Perceived CVD risk; guideline conflict (primary prevention >85)</td><td>**Shared decision**; life expectancy discussion; consider stopping if frailty/life expectancy <1y</td></tr><tr><td>**Bisphosphonates**</td><td>"Drug holiday" uncertainty; fracture risk</td><td>**Review after 3–5y (oral) / 3y (IV)**; bone density; fracture risk; drug holiday if low risk</td></tr><tr><td>**Cholinesterase inhibitors**</td><td>Perceived cognitive benefit; family resistance; no clear stop rule</td><td>**Review at 6–12m**; stop if no benefit (MMSE decline >2-3 points/year, functional decline)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Ethical & Legal Barriers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Barrier</th><th>Description</th><th>Navigation</th></tr><tr><td>---------</td><td>-------------</td><td>------------</td></tr><tr><td>**Autonomy vs Beneficence**</td><td>Patient wants to continue; clinician thinks harm > benefit</td><td>**Shared decision-making**; informed consent; respect refusal if capacity</td></tr><tr><td>**Capacity assessment**</td><td>Cognitive impairment → can patient consent to deprescribing?</td><td>**Mental Capacity Act** (UK) / local law; assess decision-specific; involve advocate/family</td></tr><tr><td>**Advance directives**</td><td>Patient previously said "never stop my heart pills"</td><td>**Review in context**; current best interest; advance care planning conversations</td></tr><tr><td>**Duty of care / Negligence**</td><td>Fear: "If I deprescribe and harm occurs, I'm negligent"</td><td>**Evidence-based guidelines** (STOPP/START); documentation; shared decision = defence</td></tr><tr><td>**Informed consent complexity**</td><td>Explaining uncertainty, NNT/NNH, withdrawal risk in 10 mins</td><td>**Decision aids**; written info; pharmacist support; multiple conversations</td></tr><tr><td>**Substitute decision-makers**</td><td>Family demands continue/stop against patient wishes/clinician view</td><td>**Best interest framework**; patient's known wishes; ethics consultation if conflict</td></tr><tr><td>**Resource allocation**</td><td>"Deprescribing saves money — is that the motive?"</td><td>**Transparent**: "Goal is safety/quality, not cost"; patient benefit primary</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Enablers / Facilitators: Overcoming Barriers</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Multilevel Intervention Framework</div>
+<p>```mermaid flowchart LR A[System Enablers] --&gt; B[Organisational Enablers] --&gt; C[Team Enablers] --&gt; D[Individual Enablers]</p>
+<p>A --&gt; A1[Policy: Deprescribing KPIs&lt;br&gt;Funding: Pharmacist posts&lt;br&gt;Guidelines: National deprescribing guidance] B --&gt; B1[Protected review time&lt;br&gt;MDT medication review clinic&lt;br&gt;EMR deprescribing module&lt;br&gt;Audit &amp; feedback] C --&gt; C1[Pharmacist-led reviews&lt;br&gt;Nurse prescribing support&lt;br&gt;Specialist liaison pathways&lt;br&gt;Shared care agreements] D --&gt; D1[Communication skills training&lt;br&gt;Decision aids&lt;br&gt;Patient education materials&lt;br&gt;Reflective practice] ```</p>
+<div class="sub-h">Evidence-Based Enablers (What Works)</div>
+<table class="ctable"><tr><th>Intervention</th><th>Evidence</th><th>Effect</th></tr><tr><td>--------------</td><td>----------</td><td>--------</td></tr><tr><td>**Pharmacist-led medication review**</td><td>Cochrane RCT meta-analysis</td><td>↓ PIMs 20–30%; ↓ ADRs; ↓ falls</td></tr><tr><td>**STOPP/START-guided review**</td><td>RCT (O'Mahony et al.)</td><td>↓ PIMs 40%; ↓ ADRs; cost-saving</td></tr><tr><td>**Patient decision aids**</td><td>Systematic review</td><td>↑ Knowledge; ↑ participation; ↑ deprescribing</td></tr><tr><td>**Multidisciplinary case conferences**</td><td>Geriatric evaluation trials</td><td>↓ Inappropriate drugs; ↑ appropriate drugs</td></tr><tr><td>**EMR clinical decision support**</td><td>Cluster RCT (STOPP/START alerts)</td><td>↓ PIM prescribing at point of care</td></tr><tr><td>**Deprescribing algorithms/protocols**</td><td>Implementation studies</td><td>↑ Confidence; ↑ deprescribing rates</td></tr><tr><td>**Communication training (shared decision-making)**</td><td>Qualitative + RCT</td><td>↑ Patient satisfaction; ↑ adherence to taper</td></tr><tr><td>**Named medication reviewer / champion**</td><td>Service evaluations</td><td>Sustained culture change; ↑ review rates</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Deprescribing Conversation Framework: The 5-Step Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Step 1: Prepare</div>
+<ul><li>Review medications (STOPP/START, Beers, ACB, FORTA)</li><li>Identify target drugs (PIMs, high ACB, no indication)</li><li>Check guidelines, taper protocols, alternatives</li><li>Consider patient context: goals, frailty, life expectancy, preferences</li></ul>
+<div class="sub-h">Step 2: Introduce</div>
+<div class="callout"><b>"I'd like to review your medications to make sure they're still the best for you. Some medicines that were right before might not be right now. Can we talk about this?"</b></div>
+<div class="sub-h">Step 3: Explore (Shared Decision-Making)</div>
+<table class="ctable"><tr><th>Technique</th><th>Example</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Ask-Tell-Ask**</td><td>"What do you know about this medicine?" → Tell evidence → "What do you think?"</td></tr><tr><td>**Elicit goals**</td><td>"What matters most to you? Staying independent? Avoiding falls? Memory?"</td></tr><tr><td>**Present options**</td><td>"We could continue, reduce slowly, or stop with a plan. What feels right?"</td></tr><tr><td>**Use numbers**</td><td>"Out of 100 people like you, this drug prevents 2 heart attacks but causes 10 falls."</td></tr><tr><td>**Address fears**</td><td>"You're worried about withdrawal. We'll go very slowly, and I'll see you weekly."</td></tr></table>
+<div class="sub-h">Step 4: Agree &amp; Plan</div>
+<ul><li><b>Co-create taper plan</b>: Drug, current dose, reduction schedule, monitoring, rescue plan</li><li><b>Written plan</b> given to patient/carer</li><li><b>Follow-up schedule</b> (phone/video/in-person at 1–2 weeks, then monthly)</li><li><b>Safety net</b>: "If X happens, call Y / go to Z"</li></ul>
+<div class="sub-h">Step 5: Monitor &amp; Review</div>
+<ul><li>Assess for: withdrawal symptoms, disease recurrence, ADR resolution, goal achievement</li><li>Adjust taper speed: slower if symptoms, faster if well</li><li>Celebrate success: "You've stopped 3 drugs and feel steadier on your feet!"</li><li>Document outcome in EMR (deprescribing outcome: success/partial/failed)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Special Populations: Extra Barriers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Extra Barriers</th><th>Adaptations</th></tr><tr><td>------------</td><td>----------------</td><td>-------------</td></tr><tr><td>**Care Home Residents**</td><td>PRN given regularly; agency staff; no GP review; family distant; swallowing issues</td><td>**Pharmacist-led 6-monthly reviews**; STOPP/START; PRN audit; liquid formulations</td></tr><tr><td>**Dementia / Cognitive Impairment**</td><td>Capacity fluctuates; can't self-report ADRs; family proxy; behavioural expressions of distress</td><td>**Best interest decisions**; involve family/advocate; observational pain/distress scales; slow tapers</td></tr><tr><td>**End of Life / Palliative**</td><td>Goal shift: comfort > prevention; "Why stop statin if dying?"; symptom control priority</td><td>**Explicit goals-of-care conversation**; STOPPFrail criteria; stop preventives (statin, bisphosphonate, antihypertensive if asymptomatic)</td></tr><tr><td>**Intellectual Disability**</td><td>Communication barriers; carer-dependent; atypical ADR presentation; long-term psychotropics</td><td>**Annual health check + med review**; easy-read materials; carer education; specialist LD psychiatrist</td></tr><tr><td>**Ethnic Minority / Non-English Speakers**</td><td>Health literacy; cultural beliefs about medicines; interpreter access; trust</td><td>**Professional interpreter**; culturally adapted materials; community pharmacist; family involvement</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Barrier Category</th><th>Key Barriers</th><th>Key Enablers</th></tr><tr><td>------------------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Patient (PATIENT)**</td><td>Psychological attachment, Awareness lack, Therapeutic relationship fear, Inertia, Evidence of benefit (perceived), No withdrawal plan, Trust/communication</td><td>Education, shared decision aids, trial reduction, co-created taper, continuity</td></tr><tr><td>**Prescriber (PRESCRIBER)**</td><td>Professional inertia, Risk aversion, Evidence gaps, Specialist territory, Clinical knowledge deficit, Relationship preservation, Incentives misaligned, Busyness, EMR limitations, Resistance to change</td><td>Routine triggers, guidelines, documentation, interdisciplinary comms, training, protected time, EMR tools, champion</td></tr><tr><td>**System**</td><td>Fragmented care, Transition gaps, No review process, Poor EMR, Misaligned incentives, Workforce gaps, Info flow, Care home issues</td><td>Named reviewer, reconciliation, annual review, EMR module, deprescribing KPIs, embedded pharmacist, standardised comms</td></tr><tr><td>**Drug-Specific**</td><td>Withdrawal syndromes (benzos, ADs, antipsychotics, opioids, PPIs, BBs, steroids); disease rebound; no taper protocol</td><td>Evidence-based taper schedules; monitoring; patient education; specialist liaison</td></tr><tr><td>**Ethical/Legal**</td><td>Autonomy vs beneficence, Capacity, Advance directives, Negligence fear, Informed consent complexity, Substitute decision-makers</td><td>Shared decision-making, capacity assessment, documentation, decision aids, best interest framework</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What are the main categories of barriers to deprescribing?</td><td>**Patient-level, Prescriber-level, System/Organisational, Drug-specific, Ethical/Legal**</td></tr><tr><td>2</td><td>Use the PATIENT mnemonic to describe patient barriers.</td><td>**P**sychological attachment, **A**wareness lacking, **T**herapeutic relationship fear, **I**nertia, **E**vidence of benefit (perceived), **N**o withdrawal plan fear, **T**rust/communication issues</td></tr><tr><td>3</td><td>Use the PRESCRIBER mnemonic for clinician barriers.</td><td>**P**rofessional inertia, **R**isk aversion, **E**vidence gaps, **S**pecialist territory, **C**linical knowledge deficit, **R**elationship preservation, **I**ncentives misaligned, **B**usyness, **E**MR limitations, **R**esistance to change</td></tr><tr><td>4</td><td>Why do prescribers fear litigation when deprescribing?</td><td>"If I stop a drug and patient harmed, I'm liable." Defensive prescribing. **Enabler**: Evidence-based guidelines (STOPP/START), documentation of shared decision-making, medico-legal advice.</td></tr><tr><td>5</td><td>What system changes would facilitate deprescribing?</td><td>Protected review time, pharmacist-led reviews, EMR deprescribing module, deprescribing KPIs, medication reconciliation at transitions, named medication reviewer, MDT case conferences.</td></tr><tr><td>6</td><td>Patient on lorazepam 2mg nocte × 10 years refuses to stop. Barriers?</td><td>**Patient**: Psychological attachment, fear of withdrawal/insomnia, perceived benefit. **Prescriber**: Relationship preservation, time, lack of taper confidence. **Approach**: Empathise, educate on risks (falls, cognition), co-create VERY slow taper (0.25mg reduction every 2–4 weeks), CBT-I, melatonin, regular follow-up.</td></tr><tr><td>7</td><td>How do you handle "Specialist started it, I can't stop it"?</td><td>**Communication**: Write to specialist with STOPP/START evidence, propose taper plan, ask for agreement. **Shared care agreement**: Define deprescribing responsibilities. **If urgent safety issue**: Stop with documentation, inform specialist.</td></tr><tr><td>8</td><td>What is the 5-step deprescribing conversation framework?</td><td>1. **Prepare** (review, identify targets), 2. **Introduce** (normalize review), 3. **Explore** (shared decision-making, ask-tell-ask, goals, options, numbers), 4. **Agree & Plan** (co-create taper, written plan, follow-up, safety net), 5. **Monitor & Review** (withdrawal, recurrence, adjust, document).</td></tr><tr><td>9</td><td>End-of-life patient on statin, bisphosphonate, ACEi. Family wants all continued.</td><td>**Goals-of-care conversation**: Shift from prevention to comfort. **STOPPFrail**: Stop statin, bisphosphonate (no benefit in limited life expectancy). ACEi: continue if symptomatic HF, else consider stop. **Frame**: "These won't help comfort; they add pill burden and side effects."</td></tr><tr><td>10</td><td>What evidence-based interventions increase deprescribing success?</td><td>**Pharmacist-led reviews** (Cochrane: ↓ PIMs 20–30%), **STOPP/START-guided review** (↓ PIMs 40%), **Patient decision aids** (↑ participation), **MDT case conferences**, **EMR decision support** (↓ PIM prescribing), **Deprescribing algorithms**, **Communication training**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Deprescribing = stopping drugs"**</td><td>Deprescribing = **planned, supervised, monitored dose reduction OR stopping** of inappropriate medication. Not abrupt cessation.</td></tr><tr><td>**"If patient refuses, I can't deprescribe"**</td><td>**Respect autonomy** if capacity. Document shared decision. Revisit later. Exception: immediate safety risk (e.g., hypoglycaemia on sulfonylurea in CKD) → may need to act in best interest.</td></tr><tr><td>**"Specialist drugs are off-limits"**</td><td>**Collaborate, don't abdicate.** GPs can and should question specialist prescriptions if inappropriate. Specialist liaison pathways help.</td></tr><tr><td>**"No evidence for deprescribing = don't do it"**</td><td>**Absence of evidence ≠ evidence of absence.** Use explicit criteria (STOPP/START), physiological reasoning, NNT/NNH. Pragmatic approach.</td></tr><tr><td>**"Deprescribing saves money → that's the motive"**</td><td>**Primary goal = patient safety/quality of life.** Cost-saving is secondary benefit. Be transparent with patients.</td></tr><tr><td>**"Older people don't want to stop drugs"**</td><td>**Many DO want fewer pills** when risks explained. Studies show ~90% willing to stop ≥1 drug if doctor recommends.</td></tr></table>
+<div class="callout"><b>Mnemonic: BARRIERS TO DEPRESCRIBING</b> <b>B</b>eliefs (patient): Psychological attachment, perceived benefit, fear of relapse <b>A</b>wareness: Patient doesn't know drug inappropriate; prescriber doesn't know STOPP/START <b>R</b>elationship fears: Patient fears abandonment; prescriber fears upsetting patient <b>R</b>isk aversion: Litigation fear; defensive prescribing; "if I stop and harm..." <b>I</b>nertia: Status quo bias (both patient &amp; prescriber); "always been on it" <b>E</b>vidence gaps: No deprescribing RCTs in frail multimorbid; guideline conflict <b>R</b>esources: Time, pharmacist, EMR support, protected review slots <b>S</b>ystem fragmentation: Multiple prescribers, no overview, transition gaps <b>T</b>aper complexity: Withdrawal syndromes, no protocols, disease rebound fear <b>O</b>rganisational incentives: QOF rewards starting, not stopping; no deprescribing KPIs <b>D</b>rug-specific: Benzos, ADs, antipsychotics, opioids, PPIs, steroids — each needs protocol <b>E</b>thical/Legal: Autonomy vs beneficence, capacity, advance directives, negligence fear <b>P</b>atient factors: Cognitive impairment, health literacy, family pressure, cost concerns <b>R</b>esistance to change: "Always done it this way"; scepticism of guidelines <b>E</b>MR limitations: No taper templates, no STOPP/START alerts, hard to track <b>S</b>pecialist territory: "Not my drug to stop"; siloed care, no shared agreements <b>C</b>ommunication gaps: No shared decision-making skills; no decision aids; language barriers <b>R</b>eview absence: No routine trigger; repeat prescribing without indication check <b>I</b>ncentives misaligned: Pay for starting, not stopping; volume over value <b>B</b>usyness: 10-min consult; review needs 30+ min; no protected time <b>I</b>nformation flow: Specialist letters no deprescribing plan; OTC/herbal not recorded <b>N</b>o follow-up system: No safety net after deprescribing; who monitors? <b>G</b>oals of care mismatch: Prevention vs comfort (especially end-of-life)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Barriers to&lt;br&gt;Deprescribing)) Patient (PATIENT) Psychological attachment Awareness lacking Therapeutic relationship fear Inertia / Status quo Evidence of benefit (perceived) No withdrawal plan fear Trust / Communication Prescriber (PRESCRIBER) Professional inertia Risk aversion / Litigation fear Evidence gaps Specialist territory Clinical knowledge deficit Relationship preservation Incentives misaligned Busyness / Time pressure EMR / IT limitations Resistance to change System / Organisational Fragmented care Transitions of care gaps No structured review process EMR / Decision support lacking Incentive structures misaligned Workforce gaps Information flow Care home specific Research evidence gaps Drug-Specific Benzo/Z-drug: withdrawal, dependence Antidepressant: discontinuation syndrome Antipsychotic: withdrawal dyskinesia, relapse Opioid: withdrawal, hyperalgesia PPI: rebound acid Beta-blocker: rebound tachycardia Steroid: adrenal insufficiency Anticoagulant: thrombosis risk Statin: perceived CVD benefit Bisphosphonate: drug holiday uncertainty Cholinesterase inhibitor: no clear stop rule Ethical / Legal Autonomy vs Beneficence Capacity assessment Advance directives Duty of care / Negligence Informed consent complexity Substitute decision-makers Resource allocation perception Enablers (What Works) Pharmacist-led reviews STOPP/START-guided review Patient decision aids MDT case conferences EMR clinical decision support Deprescribing algorithms Communication training Named champion / reviewer </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>PATIENT mnemonic (7 patient barriers)</td><td>4</td><td></td><td></td></tr><tr><td>PRESCRIBER mnemonic (10 prescriber barriers)</td><td>4</td><td></td><td></td></tr><tr><td>System barriers (5+)</td><td>3</td><td></td><td></td></tr><tr><td>Drug-specific barriers (5+ classes)</td><td>3</td><td></td><td></td></tr><tr><td>Ethical/legal barriers (4+)</td><td>2</td><td></td><td></td></tr><tr><td>Enablers / 5-step conversation framework</td><td>4</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Discuss barriers to deprescribing in older adults and strategies to overcome them."</td><td>PATIENT, PRESCRIBER, System, Drug-specific, Ethical; Enablers: pharmacist reviews, STOPP/START, decision aids, MDT, EMR, algorithms, communication training</td></tr><tr><td>**Short Note**</td><td>"Patient barriers to deprescribing (PATIENT mnemonic)."</td><td>7 barriers with enablers</td></tr><tr><td>**Viva**</td><td>"80yo on diazepam 5mg × 20 years. Daughter says 'don't stop it'. How to approach?"</td><td>Explore fears (PATIENT), educate risks (falls, cognition), shared decision, co-create VERY slow taper (0.5mg q2-4w), CBT-I, melatonin, involve daughter, regular review, document</td></tr><tr><td>**Ward Round**</td><td>"Patient on quetiapine 100mg for dementia agitation × 3 years. STOPP says stop. Psychiatrist started it."</td><td>STOPP C10 (antipsychotic BPSD >12w). Write to psychiatrist with evidence. Propose taper 25% q1-2w. Monitor BPSD. Non-pharm first. If refusal: document shared decision, revisit.</td></tr><tr><td>**Last-Night**</td><td>"Barriers: 3 patient, 3 prescriber, 3 system. Enablers: 3 evidence-based. 5-step conversation."</td><td>PATIENT (3), PRESCRIBER (3), System (fragmented, transitions, no review). Enablers: pharmacist review, STOPP/START, decision aids. 5-step: Prepare, Introduce, Explore, Agree, Monitor.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Patient barriers (PATIENT)</b>: Psychological attachment, Awareness lacking, Therapeutic relationship fear, Inertia, Evidence of benefit (perceived), No withdrawal plan, Trust/communication</li><li><b>Prescriber barriers (PRESCRIBER)</b>: Professional inertia, Risk aversion, Evidence gaps, Specialist territory, Clinical knowledge deficit, Relationship preservation, Incentives misaligned, Busyness, EMR limitations, Resistance to change</li><li><b>System barriers</b>: Fragmented care, Transition gaps, No review process, Poor EMR, Misaligned incentives, Workforce gaps</li><li><b>Drug-specific</b>: Withdrawal syndromes (benzos, ADs, antipsychotics, opioids, PPIs, BBs, steroids), rebound, disease recurrence, no taper protocols</li><li><b>Ethical/Legal</b>: Autonomy vs beneficence, capacity, advance directives, negligence fear, informed consent complexity</li><li><b>Enablers</b>: Pharmacist-led reviews, STOPP/START, decision aids, MDT, EMR support, algorithms, communication training, named champion</li><li><b>Conversation</b>: Prepare → Introduce → Explore (shared decision) → Agree &amp; Plan (co-create taper) → Monitor &amp; Review</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>PATIENT mnemonic: "P" stands for:</b></li></ol>
+<p>A. Polypharmacy  B. <b>Psychological attachment</b>  C. Prescriber  D. Protocol <i>Answer: B. Psychological attachment — "This pill keeps me alive."</i></p>
+<ol><li><b>PRESCRIBER mnemonic: "R" (first R) stands for:</b></li></ol>
+<p>A. Review  B. <b>Risk aversion / Litigation fear</b>  C. Resistance  D. Relationship <i>Answer: B. Risk aversion / Litigation fear — "If I stop and harm occurs, I'm liable."</i></p>
+<ol><li><b>Which is a SYSTEM barrier to deprescribing?</b></li></ol>
+<p>A. Patient fears withdrawal  B. Prescriber lacks knowledge  C. <b>Fragmented care with multiple prescribers</b>  D. Drug has withdrawal syndrome <i>Answer: C. Fragmented care = system barrier. Others are patient, prescriber, drug-specific.</i></p>
+<ol><li><b>Most common patient barrier to deprescribing benzodiazepines?</b></li></ol>
+<p>A. Cost  B. <b>Fear of withdrawal/insomnia recurrence</b>  C. Lack of awareness  D. Family pressure <i>Answer: B. Fear of withdrawal symptoms and return of insomnia/anxiety.</i></p>
+<ol><li><b>Evidence-based enabler with strongest RCT evidence:</b></li></ol>
+<p>A. Patient leaflets  B. <b>Pharmacist-led medication review</b>  C. GP education  D. EMR alerts alone <i>Answer: B. Cochrane meta-analysis: pharmacist-led reviews ↓ PIMs 20–30%, ↓ ADRs, ↓ falls.</i></p>
+<ol><li><b>In the 5-step conversation, "Explore" involves:</b></li></ol>
+<p>A. Writing the taper plan  B. <b>Shared decision-making: ask-tell-ask, elicit goals, present options, use numbers</b>  C. Checking blood tests  D. Contacting specialist <i>Answer: B. Explore = shared decision-making conversation.</i></p>
+<ol><li><b>End-of-life deprescribing: which preventive drug is MOST appropriate to stop?</b></li></ol>
+<p>A. Beta-blocker for HFrEF  B. <b>Statin for primary prevention</b>  C. Anticoagulant for AF  D. Inhaler for COPD <i>Answer: B. Statin primary prevention: no benefit in limited life expectancy (STOPPFrail). BB for HFrEF = symptom control. Anticoag for AF = stroke prevention (symptom if stroke). Inhaler = symptom control.</i></p>
+<ol><li><b>Prescriber barrier: "Cardiologist started the amiodarone, not my place to stop." This is:</b></li></ol>
+<p>A. Professional inertia  B. <b>Specialist territory</b>  C. Risk aversion  D. Evidence gaps <i>Answer: B. Specialist territory (PRESCRIBER "S").</i></p>
+<ol><li><b>Deprescribing is defined as:</b></li></ol>
+<p>A. Stopping all unnecessary drugs abruptly  B. <b>Planned, supervised dose reduction or stopping of inappropriate medication with monitoring</b>  C. Switching to cheaper generics  D. Reducing doses due to renal impairment only <i>Answer: B. Key elements: planned, supervised, inappropriate medication, monitoring.</i></p>
+<ol><li><b>Which intervention has NO evidence for increasing deprescribing?</b></li></ol>
+<p>A. Pharmacist-led review  B. STOPP/START-guided review  C. <b>Passive education leaflets alone</b>  D. Patient decision aids <i>Answer: C. Passive leaflets alone ineffective. Need active shared decision-making, decision aids, pharmacist support.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>85F on temazepam 20mg nocte × 15y for insomnia. Refuses to stop: "I won't sleep." Most likely barrier?</b></li></ol>
+<p>A. Cost  B. <b>Fear of withdrawal/relapse (Patient: No withdrawal plan fear, Evidence of benefit)</b>  C. Lack of awareness  D. Family pressure <i>Answer: B. PATIENT "N" (No withdrawal plan fear) and "E" (Evidence of benefit perceived).</i></p>
+<ol><li><b>GP wants to stop patient's amitriptyline 50mg (neuropathic pain) per STOPP. Patient on it 10y. Best approach?</b></li></ol>
+<p>A. Stop immediately  B. <b>Co-create slow taper (10mg reduction q2w), offer duloxetine/gabapentin, regular review</b>  C. Refer to pain clinic only  D. Continue, document exception <i>Answer: B. Taper + alternative + monitoring = safe deprescribing.</i></p>
+<ol><li><b>Care home resident on 12 drugs. No medication review in 2 years. System barrier?</b></li></ol>
+<p>A. Patient refusal  B. <b>Lack of structured review process</b>  C. Prescriber knowledge deficit  D. Drug withdrawal risk <i>Answer: B. System: no routine review process for care homes.</i></p>
+<ol><li><b>Patient with dementia (MMSE 15) on risperidone 1mg BD for agitation × 2y. Daughter (proxy) insists continue. STOPP triggered. Action?</b></li></ol>
+<p>A. Stop immediately  B. <b>Best interest meeting: discuss risks (stroke, mortality), propose slow taper, non-pharm alternatives, document</b>  C. Defer to daughter  D. Increase dose <i>Answer: B. Capacity impaired → best interest decision. Document discussion. Slow taper if agreed.</i></p>
+<ol><li><b>GP practice: QOF pays for statin prescribing in CVD. No incentive for stopping statin in frail 90yo. Barrier?</b></li></ol>
+<p>A. Clinical knowledge  B. <b>Incentives misaligned (PRESCRIBER "I")</b>  C. EMR limitations  D. Specialist territory <i>Answer: B. PRESCRIBER "I" = Incentives misaligned.</i></p>
+<ol><li><b>Deprescribing conversation Step 3 (Explore) — which technique is used?</b></li></ol>
+<p>A. Write prescription  B. <b>Ask-Tell-Ask + elicit goals + present options + use numbers</b>  C. Order blood test  D. Refer to specialist <i>Answer: B. Core shared decision-making techniques.</i></p>
+<ol><li><b>Patient on PPI 40mg OD × 5y for "dyspepsia" (no endoscopy). STOPP C14. Taper plan?</b></li></ol>
+<p>A. Stop immediately  B. <b>Step down: 40mg → 20mg 4w → 20mg alt day 4w → H2RA PRN 4w → stop; lifestyle advice</b>  C. Continue indefinitely  D. Switch to ranitidine <i>Answer: B. PPI taper: step down over 8–12 weeks to avoid rebound acid hypersecretion.</i></p>
+<ol><li><b>End-of-life patient (weeks prognosis) on atorvastatin, alendronate, ramipril, morphine. Which to CONTINUE?</b></li></ol>
+<p>A. Atorvastatin  B. Alendronate  C. <b>Ramipril (if symptomatic HF)</b>  D. All preventive <i>Answer: C. Ramipril if symptomatic HF = symptom control. Statin/bisphosphonate = stop (STOPPFrail). Morphine = symptom control.</i></p>
+<ol><li><b>Most effective single intervention to reduce PIMs in primary care?</b></li></ol>
+<p>A. GP education seminar  B. <b>Pharmacist-led medication review</b>  C. EMR alert pop-up  D. Patient leaflet <i>Answer: B. Strongest RCT evidence (Cochrane).</i></p>
+<ol><li><b>Ethical principle primarily challenged when patient with capacity refuses deprescribing of a harmful drug?</b></li></ol>
+<p>A. Beneficence  B. <b>Autonomy</b>  C. Non-maleficence  D. Justice <i>Answer: B. Autonomy (patient's right to decide) vs Beneficence (clinician's duty to do good). Respect autonomy if capacity.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-C, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-C</td><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-C, 9-B, 10-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Polypharmacy and Deprescribing/Definition and Consequences]] — why deprescribing needed</li><li>[[Polypharmacy and Deprescribing/Assessment Tools]] — STOPP/START, Beers, ACB, FORTA to identify targets</li><li>[[Polypharmacy and Deprescribing/Deprescribing Algorithms]] — specific taper protocols per drug class</li><li>[[Special Populations/Elderly Prescribing]] — multimorbidity, frailty context</li><li>[[Clinical Context/Palliative Care]] — end-of-life deprescribing (STOPPFrail)</li><li>[[Medication Safety and Errors/Error Types]] — ADRs from inappropriate polypharmacy</li><li>[[Therapeutic Drug Monitoring]] — monitoring during tapers (lithium, anticonvulsants, immunosuppressants)</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Barriers To Deprescribing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

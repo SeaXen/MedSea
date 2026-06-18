@@ -1,0 +1,209 @@
+# Pain physiology and pathways
+
+Related: [[../../Pain and Palliative Care MOC]], [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Pain Physiology & Assessment**
+
+## 1. Definition
+
+Pain is defined by the IASP as 'an unpleasant sensory and emotional experience associated with, or resembling that associated with, actual or potential tissue damage'. Pain pathways involve nociception (transduction), transmission, modulation, and perception. Nociceptors (Aδ and C fibres) detect noxious stimuli; transmission via dorsal horn → spinothalamic tract → thalamus → somatosensory cortex (sensory), limbic system (emotional). Modulation by descending pathways (periaqueductal grey → rostroventral medulla → dorsal horn), endogenous opioids, serotonin, noradrenaline. Central sensitisation (wind-up) amplifies pain in chronic states.
+
+## 2. Clinical Features and Presentation
+
+Pain is a complex sensory and emotional experience with both nociceptive and neuropathic components. Nociceptors (free nerve endings) are activated by mechanical, thermal, and chemical stimuli, with Aδ fibres mediating fast, sharp, well-localised pain, and C fibres mediating slow, dull, burning, poorly-localised pain. Clinical features of acute pain: sympathetic activation (tachycardia, hypertension, sweating, dilated pupils), protective behaviour, muscle spasm, anxiety. Chronic pain (>3 months): maladaptation, depression, sleep disturbance, functional impairment, autonomic changes, often no sympathetic activation. Pain types: nociceptive (somatic — well-localised, sharp; visceral — diffuse, cramping, referred), neuropathic (shooting, burning, electric, with allodynia, hyperalgesia, dysaesthesia), mixed. Central sensitisation explains the wind-up phenomenon in chronic pain (NMDA-mediated, hyperexcitable dorsal horn neurons).
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+Clinical assessment with validated tools: NRS (numerical 0-10), VAS (visual analogue 0-100mm), VRS (verbal rating, none/mild/moderate/severe), McGill Pain Questionnaire, BPI (Brief Pain Inventory), LANSS (Leeds Assessment of Neuropathic Symptoms and Signs), DN4 (Douleur Neuropathique 4), PAIN-AD (Pain in Advanced Dementia). Disease-specific: imaging (X-ray, CT, MRI for bone/visceral/neuropathic), nerve conduction studies, blood tests (ESR, CRP, autoimmune, infection, metabolic), quantitative sensory testing (QST).
+
+### Management
+Multimodal approach: treat underlying cause; total pain concept (physical + psychological + social + spiritual); WHO analgesic ladder with adjuvants for neuropathic; non-pharmacological (TENS, CBT, physiotherapy, acupuncture, exercise, mindfulness); interventional (nerve blocks, spinal cord stimulation, intrathecal pump); psychological support; address sleep, depression, anxiety; family/social support.
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| IASP | Unpleasant sensory and emotional experience |
+| Nociceptors | Aδ (fast, sharp) and C (slow, dull) fibres |
+| Transduction | Stimulus → electrical signal via ion channels (TRPV1, Nav1.7) |
+| Transmission | Dorsal horn → spinothalamic → thalamus → cortex |
+| Modulation | Descending: PAG, RVM, dorsal horn; endorphins, serotonin, NA |
+| Perception | Sensory cortex (somatic), limbic (emotional), frontal (cognitive) |
+| Central sensitisation | Wind-up; NMDA-mediated; chronic pain |
+| Gate control | Melzack & Wall, 1965; large fibre activation inhibits small fibre |
+| Endogenous opioids | Enkephalins, endorphins, dynorphins; μ, δ, κ receptors |
+| Neuropathic | Lesion/disease of somatosensory system |
+| Nociceptive | Actual or threatened tissue damage |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Nociceptive pain | Somatic/visceral; tissue damage; opioid-responsive |
+| Neuropathic pain | Nerve damage; burning/shooting; LANSS/DN4+ |
+| Nociplastic pain | No tissue/nerve damage (e.g., fibromyalgia); central sensitisation |
+| Psychogenic pain | Psychiatric; somatoform; no organic basis |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: What is the IASP definition of pain? A: An unpleasant sensory and emotional experience associated with, or resembling that associated with, actual or potential tissue damage.
+
+2. 2. Q: Which fibres mediate fast and slow pain? A: Aδ fibres = fast, sharp, well-localised; C fibres = slow, dull, burning.
+
+3. 3. Q: What is central sensitisation? A: NMDA-mediated hyperexcitability of dorsal horn neurons in chronic pain, leading to wind-up and allodynia.
+
+4. 4. Q: Name 4 ascending/descending pain pathways. A: Ascending: spinothalamic (lateral — pain/temp; medial — crude touch); spinoreticular; trigeminothalamic. Descending: PAG → rostroventral medulla → dorsal horn (serotonin, NA, endogenous opioids).
+
+5. 5. Q: What is the difference between nociceptive and neuropathic pain? A: Nociceptive = tissue damage, well-localised, opioid-responsive; neuropathic = nerve damage, burning/shooting, opioid-poorly-responsive, requires adjuvants (gabapentin, TCA, SNRI).
+
+
+## 7. Confusions and Mnemonics
+
+1. **T-T-M-P** = Transduction, Transmission, Modulation, Perception
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **Pain physiology and pathways** |
+|-----------|-----------|
+| **Definition** | Pain is defined by the IASP as 'an unpleasant sensory and emotional experience associated with, or r |
+| **Key Features** | Unpleasant sensory and emotional experience |
+| **Investigation** | Clinical assessment + disease-specific tests |
+| **Management** | WHO ladder + adjuvant + non-pharmacological |
+| **Red Flags** | Severe pain, opioid side effects, total pain dimensions |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of Pain physiology and pathways?
+   A. Unpleasant sensory and emotional experience
+   B. Always self-limiting
+   C. Caused by infection only
+   D. Restricted to severe pain only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line management?
+   A. WHO analgesic ladder step 1
+   B. Immediate strong opioid
+   C. Surgery only
+   D. No treatment
+   E. Antidepressants only
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Pain assessment, total pain, comorbidities
+   B. None
+   C. ECG only
+   D. Eye exam only
+   E. Blood pressure only
+   **Answer: A**
+4. **Q:** What is the most important complication to monitor?
+   A. Disease-specific complications and treatment side effects
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key pharmacological/clinical feature?
+   A. Actual or threatened tissue damage
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient with Pain physiology and pathways; first-line management?
+   A. WHO ladder + adjuvant + non-pharmacological
+   B. Strong opioid
+   C. Surgery
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+2. **Scenario:** Failed first-line; next step?
+   A. Step up WHO ladder
+   B. Stop all treatment
+   C. Surgery
+   D. Observation
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of treatment?
+   A. Side effects, opioid complications
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Holistic assessment?
+   A. Physical + emotional + social + spiritual
+   B. Physical only
+   C. Emotional only
+   D. None
+   E. Blood tests only
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. Actual or threatened tissue damage
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about Pain physiology and pathways?
+  **A:** Unpleasant sensory and emotional experience
+- **Q:** Another key point?
+  **A:** Aδ (fast, sharp) and C (slow, dull) fibres
+- **Q:** Most important complication?
+  **A:** Stimulus → electrical signal via ion channels (TRPV1, Nav1.7)
+- **Q:** First-line treatment?
+  **A:** Dorsal horn → spinothalamic → thalamus → cortex
+- **Q:** Key pharmacological/clinical feature?
+  **A:** Descending: PAG, RVM, dorsal horn; endorphins, serotonin, NA
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — IASP: Unpleasant sensory and emotional experience
+2. **A** — WHO ladder first-line
+3. **A** — Pain assessment essential
+4. **A** — Disease-specific complications
+5. **A** — Nociceptive: Actual or threatened tissue damage
+
+### SBAs
+1. **A** — WHO ladder + adjuvant + non-pharmacological
+2. **A** — Step up WHO ladder
+3. **A** — Side effects, opioid complications
+4. **A** — Total pain assessment
+5. **A** — Actual or threatened tissue damage
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../Pain_Physiology_&_Assessment_Hub]]
+**Chapter Hierarchy:** [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../Pain and Palliative Care MOC]]
+
+---
+
+> **Exam focus:** Know definition, key clinical features, first-line management (WHO ladder), and the most important complication. Always consider total pain (physical, emotional, social, spiritual).

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clinical Reasoning Diagnostic Process — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 1 CLINICAL DECISION-MAKING / 1.1. CLINICAL REASONING & DIAGNOSTIC PROCESS</span>
+      <div class="h1">Clinical Reasoning Diagnostic Process</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe the <b>diagnostic process</b>: History → Examination → Hypothesis generation → Testing → Diagnosis</li><li>[ ] Distinguish <b>Type 1 (intuitive) vs Type 2 (analytical) thinking</b>; recognise cognitive biases</li><li>[ ] Apply <b>probabilistic reasoning</b>: Pre-test probability, Likelihood ratios, Post-test probability, Threshold model</li><li>[ ] Calculate <b>diagnostic test metrics</b>: Sensitivity, Specificity, PPV, NPV, LR+, LR-, ROC/AUC</li><li>[ ] Evaluate <b>clinical decision rules</b>: Derivation, Validation, Impact analysis (Wells, Centor, Ottawa, PERC)</li><li>[ ] Identify <b>diagnostic error types</b> and mitigation strategies</li><li>[ ] Answer viva: "Pre-test probability 30%, LR+ 5 → post-test probability?" and "Type 1 vs Type 2 thinking"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: The Diagnostic Process</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient Presentation] --&gt; B[History Taking&lt;br/&gt;Focused, hypothesis-driven] B --&gt; C[Physical Examination&lt;br/&gt;Targeted to hypotheses] C --&gt; D[Clinical Hypothesis Generation&lt;br/&gt;Pattern recognition Type 1&lt;br/&gt;Analytical reasoning Type 2] D --&gt; E[Pre-test Probability&lt;br/&gt;Epidemiology + Clinical gestalt] E --&gt; F{Test Selection} F --&gt;|Rule-out| G[High Sensitivity Test&lt;br/&gt;SnNout] F --&gt;|Rule-in| H[High Specificity Test&lt;br/&gt;SpPin] G &amp; H --&gt; I[Likelihood Ratio&lt;br/&gt;LR+ = Sens/(1-Spec)&lt;br/&gt;LR- = (1-Sens)/Spec] I --&gt; J[Post-test Probability&lt;br/&gt;Fagan Nomogram / Bayes] J --&gt; K{Compare to Thresholds} K --&gt;|Below Test Threshold| L[No further testing&lt;br/&gt;Watchful waiting] K --&gt;|Above Treatment Threshold| M[Treat empirically] K --&gt;|Between| N[Further testing / Referral] N --&gt; O[Iterate until diagnosis&lt;br/&gt;or certainty threshold met] </code>``</p>
+<div class="callout"><b>Key Principle:</b> <i>Diagnosis is a <b>probabilistic, iterative process</b> — not a binary event. The goal is to reduce uncertainty to cross a <b>decision threshold</b>.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Clinical Reasoning Models</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Dual Process Theory (Kahneman / Croskerry)</div>
+<table class="ctable"><tr><th>System</th><th>Characteristics</th><th>Clinical Example</th></tr><tr><td>--------</td><td>----------------</td><td>------------------</td></tr><tr><td>**Type 1 (System 1)**</td><td>Fast, intuitive, automatic, pattern recognition, heuristic-based, low effort</td><td>"This looks like MI" on seeing diaphoresis + crushing chest pain</td></tr><tr><td>**Type 2 (System 2)**</td><td>Slow, analytical, deliberate, rule-based, high effort, working memory intensive</td><td>Calculating Wells score, applying Bayes theorem, differential diagnosis list</td></tr></table>
+<div class="callout"><b>Ideal:</b> <i>Use Type 1 for pattern recognition, <b>switch to Type 2</b> when: uncertain, high stakes, atypical presentation, fatigue, time allows.</i></div>
+<div class="sub-h">Clinical Reasoning Steps (Hypothetico-Deductive)</div>
+<ol><li><b>Cue acquisition</b> (History, Exam, Records)</li><li><b>Hypothesis generation</b> (3-5 differentials within minutes)</li><li><b>Cue interpretation</b> (Selective data gathering for/against each hypothesis)</li><li><b>Hypothesis evaluation</b> (Rank by probability, update with new data)</li><li><b>Diagnostic verification</b> (Test, treat, or refer)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Probabilistic Reasoning & Bayes Theorem</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Key Definitions</div>
+<table class="ctable"><tr><th>Term</th><th>Formula</th><th>Clinical Meaning</th></tr><tr><td>------</td><td>---------</td><td>------------------</td></tr><tr><td>**Pre-test Probability (Prevalence)**</td><td>—</td><td>Probability of disease **before** test</td></tr><tr><td>**Sensitivity**</td><td>TP / (TP + FN)</td><td>**Rule-out** (SnNout): High sens → negative test rules out</td></tr><tr><td>**Specificity**</td><td>TN / (TN + FP)</td><td>**Rule-in** (SpPin): High spec → positive test rules in</td></tr><tr><td>**PPV**</td><td>TP / (TP + FP)</td><td>Probability disease **given** positive test</td></tr><tr><td>**NPV**</td><td>TN / (TN + FN)</td><td>Probability no disease **given** negative test</td></tr><tr><td>**LR+**</td><td>Sens / (1 - Spec)</td><td>How much **positive** test **increases** odds</td></tr><tr><td>**LR-**</td><td>(1 - Sens) / Spec</td><td>How much **negative** test **decreases** odds</td></tr></table>
+<div class="sub-h">Likelihood Ratio Interpretation</div>
+<table class="ctable"><tr><th>LR Value</th><th>Effect on Probability</th><th>Clinical Meaning</th></tr><tr><td>----------</td><td>----------------------</td><td>------------------</td></tr><tr><td>**>10**</td><td>Large increase</td><td>**Strong rule-in** (e.g., CT angio for PE)</td></tr><tr><td>**5–10**</td><td>Moderate increase</td><td>**Moderate rule-in** (e.g., D-dimer for PE — but low spec)</td></tr><tr><td>**2–5**</td><td>Small increase</td><td>Weak rule-in</td></tr><tr><td>**1–2**</td><td>Minimal increase</td><td>Poor discriminatory value</td></tr><tr><td>**1**</td><td>No change</td><td>**Useless test**</td></tr><tr><td>**0.5–1**</td><td>Minimal decrease</td><td>Poor rule-out</td></tr><tr><td>**0.2–0.5**</td><td>Small decrease</td><td>Weak rule-out</td></tr><tr><td>**0.1–0.2**</td><td>Moderate decrease</td><td>**Moderate rule-out**</td></tr><tr><td>**<0.1**</td><td>Large decrease</td><td>**Strong rule-out** (e.g., normal CXR for pneumothorax)</td></tr></table>
+<div class="sub-h">Bayes Theorem (Odds Form)</div>
+<p>``<code> Post-test Odds = Pre-test Odds × Likelihood Ratio Pre-test Odds = Pre-test Probability / (1 - Pre-test Probability) Post-test Probability = Post-test Odds / (1 + Post-test Odds) </code>``</p>
+<div class="sub-h">Fagan Nomogram — Practical Tool</div>
+<ul><li><b>Visual Bayes</b>: Line from Pre-test prob through LR → Post-test prob</li><li><b>Approximations</b> (for quick mental calculation):</li><li>LR 2 → +15% probability</li><li>LR 5 → +30% probability</li><li>LR 10 → +45% probability</li><li>LR 0.5 → -15% probability</li><li>LR 0.2 → -30% probability</li><li>LR 0.1 → -45% probability</li></ul>
+<div class="sub-h">Threshold Model (Pauker &amp; Kassirer)</div>
+<p>``<code>mermaid flowchart LR A[Test Threshold&lt;br/&gt;Below: Don't test, Don't treat] --&gt; B[Testing Zone&lt;br/&gt;Test to refine probability] B --&gt; C[Treatment Threshold&lt;br/&gt;Above: Treat without testing] </code>``</p>
+<table class="ctable"><tr><th>Threshold</th><th>Formula</th><th>Clinical Meaning</th></tr><tr><td>-----------</td><td>---------</td><td>------------------</td></tr><tr><td>**Test Threshold**</td><td>`Harm of test / (Harm of test + Benefit of treatment)`</td><td>Below: Risk of test > Benefit of knowing</td></tr><tr><td>**Treatment Threshold**</td><td>`Harm of treatment / (Harm of treatment + Benefit of treatment)`</td><td>Above: Certainty sufficient to treat</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>Treatment threshold for antibiotics in sepsis = <b>very low</b> (harm of missing sepsis &gt;&gt; harm of antibiotics). Test threshold for CTPEA in low-risk PE = <b>high</b> (radiation risk).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Diagnostic Test Metrics — Calculations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">2×2 Table</div>
+<table class="ctable"><tr><th></th><th>Disease +</th><th>Disease -</th></tr><tr><td>---</td><td>-----------</td><td>-----------</td></tr><tr><td>**Test +**</td><td>TP (a)</td><td>FP (b)</td></tr><tr><td>**Test -**</td><td>FN (c)</td><td>TN (d)</td></tr></table>
+<div class="sub-h">Worked Example: D-dimer for PE</div>
+<ul><li>Prevalence (Pre-test prob) = 10% (Intermediate Wells)</li><li>Sensitivity = 95%, Specificity = 40%</li><li><b>LR+ = 0.95 / 0.60 = 1.58</b> (Weak rule-in)</li><li><b>LR- = 0.05 / 0.40 = 0.125</b> (Moderate rule-out)</li><li><b>Post-test prob if NEGATIVE</b>: Pre-test odds = 0.1/0.9 = 0.111 → Post odds = 0.111 × 0.125 = 0.014 → Post prob = 1.4% → <b>Rules out PE</b></li></ul>
+<div class="sub-h">ROC Curve &amp; AUC</div>
+<ul><li><b>AUC 0.5</b> = Useless (diagonal)</li><li><b>AUC 0.7–0.8</b> = Acceptable</li><li><b>AUC 0.8–0.9</b> = Excellent</li><li><b>AUC &gt;0.9</b> = Outstanding</li><li><b>Youden Index (J)</b> = Max(Sensitivity + Specificity - 1) → Optimal cut-point</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Clinical Decision Rules (CDRs)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Development Phases (TRIPOD)</div>
+<table class="ctable"><tr><th>Phase</th><th>Purpose</th><th>Key Features</th></tr><tr><td>-------</td><td>---------</td><td>--------------</td></tr><tr><td>**Derivation**</td><td>Identify predictors, build model</td><td>Single centre, large sample, multivariate regression</td></tr><tr><td>**Internal Validation**</td><td>Optimism correction</td><td>Bootstrapping, cross-validation</td></tr><tr><td>**External Validation**</td><td>Test in different population</td><td>Different centres, countries, time periods — **essential**</td></tr><tr><td>**Impact Analysis**</td><td>Does use improve outcomes?</td><td>RCT of rule vs usual care (rare)</td></tr></table>
+<div class="sub-h">High-Yield CDRs for Exams</div>
+<table class="ctable"><tr><th>Rule</th><th>Condition</th><th>Components</th><th>Score Interpretation</th></tr><tr><td>------</td><td>-----------</td><td>------------</td><td>---------------------</td></tr><tr><td>**Wells (PE)**</td><td>Pulmonary Embolism</td><td>Clinical signs, HR, Immobility, Surgery, Prior VTE, Haemoptysis, Cancer, Alternative dx</td><td><2 = Low (D-dimer); 2-6 = Mod; >6 = High → Image</td></tr><tr><td>**Wells (DVT)**</td><td>Deep Vein Thrombosis</td><td>Active cancer, Paralysis, Bedridden, Swelling, Pain, Collateral veins</td><td>≤0 = Low (D-dimer); 1-2 = Mod; ≥3 = High → US</td></tr><tr><td>**Centor**</td><td>GABHS Pharyngitis</td><td>Fever, Exudate, Adenopathy, No cough</td><td>0-1 = No test/Abx; 2-3 = RADT/Culture; 4 = Empiric Abx</td></tr><tr><td>**Ottawa Ankle**</td><td>Ankle Fracture</td><td>Bone tenderness (malleoli, navicular, 5th metatarsal) + Weight-bearing</td><td>Any positive → X-ray</td></tr><tr><td>**Ottawa Knee**</td><td>Knee Fracture</td><td>Age>55, Patella tenderness, Fibula head tenderness, Flexion<90°, Weight-bearing</td><td>Any positive → X-ray</td></tr><tr><td>**Canadian CT Head**</td><td>Minor Head Injury</td><td>GCS<15, Vomiting>2, Age>65, Amnesia, Dangerous mechanism</td><td>Any high-risk → CT; Medium-risk → CT if not settling</td></tr><tr><td>**PERC**</td><td>PE Rule-out (Low risk)</td><td>8 criteria (Age<50, HR<100, SaO2>94%, No haemoptysis, No oestrogen, No prior VTE, No surgery/trauma, No unilateral leg swelling)</td><td>**All negative** → PE excluded (no D-dimer)</td></tr><tr><td>**CURB-65**</td><td>CAP Severity</td><td>Confusion, Urea>7, RR≥30, BP<90/60, Age≥65</td><td>0-1 = Low (outpatient); 2 = Mod (admit); 3-5 = High (ICU)</td></tr><tr><td>**qSOFA**</td><td>Sepsis Risk</td><td>GCS<15, RR≥22, SBP≤100</td><td>≥2 = High risk for poor outcome</td></tr><tr><td>**CHADS₂-VASc**</td><td>AF Stroke Risk</td><td>CHF, HTN, Age≥75 (2), DM, Stroke/TIA (2), Vascular, Age 65-74, Sex (F)</td><td>≥2 (M) / ≥3 (F) → Anticoagulate</td></tr></table>
+<div class="sub-h">CDR Validation Metrics</div>
+<table class="ctable"><tr><th>Metric</th><th>Target</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**C-statistic (AUC)**</td><td>>0.8 for strong discrimination</td></tr><tr><td>**Calibration**</td><td>Hosmer-Lemeshow p>0.05; Calibration plot slope ~1</td></tr><tr><td>**Net Benefit**</td><td>Decision curve analysis > Treat-all/Treat-none</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Cognitive Biases in Clinical Reasoning</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Bias</th><th>Definition</th><th>Clinical Example</th><th>Mitigation</th></tr><tr><td>------</td><td>------------</td><td>------------------</td><td>------------</td></tr><tr><td>**Anchoring**</td><td>Over-reliance on first impression</td><td>"First doctor said viral" → miss bacterial pneumonia</td><td>**Consider alternatives**, seek disconfirming evidence</td></tr><tr><td>**Availability**</td><td>Recent/vivid cases over-weighted</td><td>Saw MI yesterday → diagnose MI for indigestion</td><td>**Check base rates**, use checklists</td></tr><tr><td>**Confirmation**</td><td>Seek confirming evidence, ignore disconfirming</td><td>Order tests only supporting working diagnosis</td><td>**"What would disprove my diagnosis?"**</td></tr><tr><td>**Premature Closure**</td><td>Accept diagnosis before fully verified</td><td>"It's COPD exacerbation" → miss PE</td><td>**Force differential**, time-out</td></tr><tr><td>**Search Satisficing**</td><td>Stop searching after finding one explanation</td><td>Find pneumonia → miss concurrent MI</td><td>**Systematic review** of all data</td></tr><tr><td>**Overconfidence**</td><td>Overestimate diagnostic accuracy</td><td>"I'm 100% sure" → error</td><td>**Calibration exercises**, feedback</td></tr><tr><td>**Diagnostic Momentum**</td><td>Previous label sticks</td><td>"Admitted with 'pneumonia'" → never questioned</td><td>**Re-evaluate at handover**</td></tr><tr><td>**Framing Effect**</td><td>Presentation alters decision</td><td>"90% survival" vs "10% mortality"</td><td>**Reframe**, use absolute numbers</td></tr><tr><td>**Hindsight Bias**</td><td>"I knew it all along" after outcome</td><td>Blame self for missed diagnosis</td><td>**Prospective documentation** of uncertainty</td></tr></table>
+<div class="sub-h">Debiasing Strategies (Croskerry)</div>
+<ol><li><b>Metacognition</b> — "How am I thinking?"</li><li><b>Forced consideration</b> of alternatives (differential diagnosis list)</li><li><b>Checklists</b> (diagnostic, cognitive)</li><li><b>Diagnostic time-outs</b> (especially for high-stakes decisions)</li><li><b>Feedback loops</b> — M&amp;M, clinical audit, second opinions</li><li><b>Simulation training</b> for cognitive error recognition</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Diagnostic Error</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Types (Graber et al.)</div>
+<table class="ctable"><tr><th>Type</th><th>Cause</th><th>Example</th></tr><tr><td>------</td><td>-------</td><td>---------</td></tr><tr><td>**No-fault**</td><td>Atypical presentation, silent disease</td><td>Young woman with MI presenting as anxiety</td></tr><tr><td>**System**</td><td>Communication failures, handover errors, resource limits</td><td>Delayed biopsy result, lost referral</td></tr><tr><td>**Cognitive**</td><td>Biases, knowledge gaps, faulty synthesis</td><td>Anchoring on "COPD" → miss PE</td></tr></table>
+<div class="sub-h">Diagnostic Error Taxonomy (NEJM 2015)</div>
+<table class="ctable"><tr><th>Category</th><th>Subtypes</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Missed**</td><td>No diagnosis made despite symptoms</td></tr><tr><td>**Delayed**</td><td>Diagnosis eventually made but after preventable delay</td></tr><tr><td>**Wrong**</td><td>Incorrect diagnosis assigned</td></tr></table>
+<div class="sub-h">Root Cause Analysis Tools</div>
+<table class="ctable"><tr><th>Tool</th><th>Application</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**5 Whys**</td><td>Iterative "Why?" → root cause</td></tr><tr><td>**Fishbone (Ishikawa)**</td><td>Categories: People, Process, Equipment, Environment, Materials, Management</td></tr><tr><td>**Swiss Cheese Model**</td><td>Latent system failures + Active errors → Accident</td></tr><tr><td>**SEIPS Model**</td><td>Systems Engineering Initiative for Patient Safety: Person, Tasks, Tools, Environment, Organization</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Practical Algorithm: Diagnostic Approach</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient Encounter] --&gt; B[Focused History + Exam] B --&gt; C[Generate 3-5 Hypotheses&lt;br/&gt;Rank by Probability] C --&gt; D[Estimate Pre-test Prob&lt;br/&gt;for Leading Hypothesis] D --&gt; E{Pre-test Prob} E --&gt;|Very Low| F[Consider No Testing&lt;br/&gt;Reassurance / Safety-net] E --&gt;|Very High| G[Treat Empirically&lt;br/&gt;Confirm if Needed] E --&gt;|Intermediate| H[Select Test by LR&lt;br/&gt;Rule-out: High Sens/LR-&lt;br/&gt;Rule-in: High Spec/LR+] H --&gt; I[Calculate Post-test Prob&lt;br/&gt;Bayes / Fagan] I --&gt; J{Post-test vs Thresholds} J --&gt;|Below Test| F J --&gt;|Above Treat| G J --&gt;|Between| K[Further Testing / Referral] K --&gt; C[Iterate with Updated Prob] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Dual Process**</td><td>Type 1 = Fast/Intuitive/Pattern; Type 2 = Slow/Analytical. Switch to Type 2 for uncertainty, high stakes, atypical.</td></tr><tr><td>**Diagnostic Process**</td><td>History/Exam → Hypotheses → Pre-test Prob → Test Selection (SnNout/SpPin) → LR → Post-test Prob → Thresholds</td></tr><tr><td>**Likelihood Ratios**</td><td>LR+ = Sens/(1-Spec) [Rule-in]; LR- = (1-Sens)/Spec [Rule-out]; LR>10 / <0.1 = Strong; LR 1 = Useless</td></tr><tr><td>**Bayes/Fagan**</td><td>Post-test Odds = Pre-test Odds × LR; Approx: LR 2→+15%, 5→+30%, 10→+45%</td></tr><tr><td>**Threshold Model**</td><td>Test Threshold → Testing Zone → Treatment Threshold. Low threshold for sepsis antibiotics; High for CTPEA</td></tr><tr><td>**Clinical Decision Rules**</td><td>Derivation → Internal Val → **External Validation** (essential) → Impact Analysis. Wells, Centor, Ottawa, PERC, CURB-65</td></tr><tr><td>**Cognitive Biases**</td><td>Anchoring, Availability, Confirmation, Premature Closure, Overconfidence. Debias: Metacognition, Checklists, Time-outs</td></tr><tr><td>**Diagnostic Error**</td><td>No-fault / System / Cognitive. Missed / Delayed / Wrong. RCA: 5 Whys, Fishbone, Swiss Cheese</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What is the difference between Type 1 and Type 2 clinical reasoning?</td><td>Type 1: Fast, intuitive, pattern recognition (heuristics). Type 2: Slow, analytical, deliberate, rule-based. Use Type 2 for uncertainty, high stakes, atypical.</td></tr><tr><td>2</td><td>Pre-test probability 20%, LR+ 10. Post-test probability?</td><td>**Pre-test odds = 0.2/0.8 = 0.25**. Post-test odds = 0.25 × 10 = 2.5. **Post-test prob = 2.5/3.5 = 71%**. (Approx: +45% → 65%)</td></tr><tr><td>3</td><td>Sensitivity 90%, Specificity 60%. LR+ and LR-?</td><td>**LR+ = 0.9/0.4 = 2.25** (weak rule-in). **LR- = 0.1/0.6 = 0.17** (moderate rule-out).</td></tr><tr><td>4</td><td>What does "SnNout" mean?</td><td>**High Sensitivity → Negative test rules OUT** disease. Example: D-dimer for PE (high sens).</td></tr><tr><td>5</td><td>What does "SpPin" mean?</td><td>**High Specificity → Positive test rules IN** disease. Example: CT angio for PE (high spec).</td></tr><tr><td>6</td><td>Wells score for PE — how does it guide management?</td><td>Score <2 = Low prob → D-dimer if negative = PE excluded. 2-6 = Mod → Image. >6 = High prob → Image directly.</td></tr><tr><td>6</td><td>PERC rule — when is it applied?</td><td>**Only in low pre-test probability patients** (clinician gestalt <15%). If all 8 criteria negative → PE excluded without D-dimer.</td></tr><tr><td>7</td><td>What are the phases of CDR development?</td><td>Derivation → Internal validation → **External validation** (essential) → Impact analysis (RCT)</td></tr><tr><td>8</td><td>Name 3 cognitive biases and their mitigation.</td><td>Anchoring (consider alternatives), Confirmation bias (seek disconfirming evidence), Premature closure (forced differential, time-out)</td></tr><tr><td>9</td><td>What is the threshold model?</td><td>Test threshold → Testing zone → Treatment threshold. Below test threshold = don't test/treat. Above treatment threshold = treat without testing.</td></tr><tr><td>10</td><td>Types of diagnostic error?</td><td>No-fault (atypical), System (communication/handover), Cognitive (biases). Missed / Delayed / Wrong.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"High sensitivity = good rule-in"**</td><td>**NO.** High sensitivity = **good rule-out** (SnNout). High specificity = good rule-in (SpPin).</td></tr><tr><td>**"PPV = Sensitivity"**</td><td>**NO.** PPV depends on **prevalence**. Same test: PPV 90% in high prevalence, 10% in low prevalence.</td></tr><tr><td>**"LR+ and LR- are the same for all populations"**</td><td>**YES, mostly.** LRs are **stable across prevalences** (unlike PPV/NPV). Only change if spectrum bias.</td></tr><tr><td>**"D-dimer rules out PE in everyone"**</td><td>**NO.** Only if **low/intermediate pre-test prob** (Wells <4). High prob → D-dimer useless (high false negative impact).</td></tr><tr><td>**"PERC rule can be used on any patient"**</td><td>**NO.** Only if **clinician gestalt <15%** (low pre-test prob). Using on high prob = dangerous.</td></tr><tr><td>**"External validation = just using it in another hospital"**</td><td>**NO.** Requires **statistical validation** (C-statistic, calibration) in a **different population** (time/place/setting).</td></tr><tr><td>**"Cognitive biases only affect juniors"**</td><td>**NO.** Experts also biased — often **more overconfident**. Debiasing needs **systematic approach** at all levels.</td></tr></table>
+<div class="callout"><b>Mnemonic: DIAGNOSTIC REASONING</b> <b>D</b>ual process: <b>Type 1 (fast/intuitive) vs Type 2 (slow/analytic)</b> — switch for uncertainty <b>I</b>terative process: <b>History → Exam → Hypotheses → Pre-test prob → Test → Post-test → Thresholds</b> <b>A</b>nchoring, Availability, Confirmation, Premature closure = <b>Major cognitive biases</b> <b>G</b>enerate 3-5 differentials early → <b>Rank by probability</b> <b>N</b>NT/LR/Pre-test prob = <b>Numbers matter</b> — quantify uncertainty <b>O</b>ttawa, Wells, Centor, PERC, CURB-65, qSOFA = <b>Validated CDRs</b> (external validation essential) <b>S</b>nNout = <b>High Sens → Rule-out</b>; <b>SpPin = High Spec → Rule-in</b> <b>T</b>hreshold model: <b>Test threshold → Testing zone → Treatment threshold</b> <b>I</b>nterval LR: <b>LR+ = Sens/(1-Spec)</b> [Rule-in]; <b>LR- = (1-Sens)/Spec</b> [Rule-out] <b>C</b>alibration: <b>Feedback loops</b> (M&amp;M, audit) reduce overconfidence <b>R</b>oot cause: <b>5 Whys, Fishbone, Swiss Cheese</b> for diagnostic errors <b>E</b>rror types: <b>No-fault / System / Cognitive</b> → Missed, Delayed, Wrong <b>A</b>ppraise CDRs: <b>Derivation → Internal Val → External Val → Impact</b> (TRIPOD) <b>S</b>earch satisficing &amp; Overconfidence = <b>Checklists, Time-outs, Forced differentials</b> <b>I</b>nformation: <b>Bayes</b> — Post-test odds = Pre-test odds × LR <b>N</b>omogram: <b>Fagan</b> visual Bayes — line from pre-test through LR to post-test <b>G</b>estalt: <b>Clinical intuition</b> calibrated by probabilistic reasoning, not replaced</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Clinical Reasoning)) Dual Process Type 1: Fast, Pattern recognition Type 2: Slow, Analytical Switch for uncertainty Diagnostic Process History/Exam → Hypotheses Pre-test probability Test selection (LR) Post-test probability Thresholds (Test/Treat) Probabilistic Reasoning Bayes / Fagan Normogram LR+ = Sens/(1-Spec) LR- = (1-Sens)/Spec SnNout / SpPin Clinical Decision Rules Derivation → Ext Val → Impact Wells, PERC, Centor, Ottawa CURB-65, qSOFA Cognitive Biases Anchoring, Availability, Confirmation Premature closure, Overconfidence Debiasing: Checklists, Time-outs Diagnostic Error No-fault, System, Cognitive Missed, Delayed, Wrong RCA: 5 Whys, Fishbone </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Dual Process & Diagnostic Steps</td><td>2</td><td></td><td></td></tr><tr><td>Probabilistic Reasoning (Bayes, LR, Thresholds)</td><td>4</td><td></td><td></td></tr><tr><td>Diagnostic Test Metrics</td><td>3</td><td></td><td></td></tr><tr><td>Clinical Decision Rules</td><td>3</td><td></td><td></td></tr><tr><td>Cognitive Biases & Debiasing</td><td>3</td><td></td><td></td></tr><tr><td>Diagnostic Error Types & RCA</td><td>2</td><td></td><td></td></tr><tr><td>Practical Algorithm Application</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the clinical reasoning process including probabilistic reasoning and cognitive biases."</td><td>Dual process, Hypothesis generation, Pre-test prob, LR/Bayes, Threshold model, CDRs, Cognitive biases, Debiasing, Diagnostic error taxonomy</td></tr><tr><td>**Short Note**</td><td>"Fagan nomogram and Bayes theorem in clinical practice."</td><td>Pre-test odds = p/(1-p); Post-test odds = Pre × LR; Post prob = Odds/(1+Odds); Approx: LR2=+15%, LR5=+30%, LR10=+45%</td></tr><tr><td>**Viva**</td><td>"Patient with pleuritic chest pain, Wells 3 (moderate). D-dimer positive. CTPEA negative. What next?"</td><td>Pre-test prob ~20% (Mod Wells). D-dimer LR+ ~1.5 (weak) → Post-test ~30%. CTPEA LR- ~0.1 → Post-test ~3-4%. **Below test threshold** → Consider alternative (musculoskeletal, GERD), safety-net</td></tr><tr><td>**Ward Round**</td><td>"Junior diagnoses 'COPD exacerbation' for dyspnoeic patient with unilateral leg swelling. Your action?"</td><td>**Cognitive bias: Anchoring/Premature closure**. Prompt: "What else could cause dyspnoea + unilateral swelling?" → Consider PE. Order Wells/D-dimer/CTPEA. Teach forced differential.</td></tr><tr><td>**Last-Night**</td><td>"Type 1 fast/intuitive, Type 2 slow/analytic. Pre→LR→Post. SnNout/SpPin. Thresholds: Test/Treat. CDRs: Deriv→Ext Val. Biases: Anchor/Avail/Confirm. Error: No-fault/System/Cog. RCA: 5Whys/Fishbone."</td><td>Full framework in 3 lines.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Diagnostic reasoning</b> = Probabilistic, iterative process (History → Hypotheses → Pre-test prob → Test → Post-test prob → Decision)</li><li><b>Dual process</b>: Type 1 (fast/pattern) + Type 2 (slow/analytic); deliberate switching reduces error</li><li><b>Bayes theorem</b>: Post-test odds = Pre-test odds × LR; LRs stable across prevalences</li><li><b>Key metrics</b>: Sensitivity/Specificity → LR+/LR-; SnNout (high sens rules out); SpPin (high spec rules in)</li><li><b>Threshold model</b>: Test threshold → Testing zone → Treatment threshold</li><li><b>Clinical Decision Rules</b>: Must have <b>external validation</b> (Wells, PERC, Centor, Ottawa, CURB-65, qSOFA)</li><li><b>Cognitive biases</b>: Anchoring, Availability, Confirmation, Premature closure, Overconfidence → Debias with checklists, time-outs, forced differentials, feedback</li><li><b>Diagnostic error</b>: No-fault / System / Cognitive; Missed / Delayed / Wrong; RCA with 5 Whys, Fishbone, Swiss Cheese</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Pre-test probability 30%, LR+ 5. Post-test probability?</b></li></ol>
+<p>A. 45%  B. <b>52%</b>  C. 60%  D. 68% <i>Answer: B. Pre-odds = 0.3/0.7 = 0.43. Post-odds = 0.43 × 5 = 2.14. Post-prob = 2.14/3.14 = 68%. Wait — approx +30% = 60%. Exact = 68%.</i></p>
+<ol><li><b>High sensitivity test — best for:</b></li></ol>
+<p>A. Ruling in  B. <b>Ruling out</b>  C. Both  D. Neither <i>Answer: B. SnNout — Sensitive test Negative rules OUT.</i></p>
+<ol><li><b>Specificity 95%, Sensitivity 40%. LR+?</b></li></ol>
+<p>A. 8  B. <b>8</b>  C. 0.63  D. 1.5 <i>Answer: B. LR+ = 0.4 / 0.05 = 8 (strong rule-in).</i></p>
+<ol><li><b>PERC rule is applied when:</b></li></ol>
+<p>A. High pre-test probability  B. <b>Low pre-test probability (&lt;15%)</b>  C. Moderate probability  D. All patients <i>Answer: B. Only when clinician gestalt &lt;15% (low pre-test prob).</i></p>
+<ol><li><b>Cognitive bias: Diagnosing "COPD" for all smokers with dyspnoea, missing PE.</b></li></ol>
+<p>A. Anchoring  B. <b>Premature closure</b>  C. Availability  D. Confirmation <i>Answer: B. Accepting first diagnosis without considering alternatives.</i></p>
+<ol><li><b>Clinical decision rule development — most critical phase:</b></li></ol>
+<p>A. Derivation  B. <b>External validation</b>  C. Internal validation  D. Impact analysis <i>Answer: B. External validation in different population/setting is essential for generalisability.</i></p>
+<ol><li><b>Test threshold vs Treatment threshold — area between:</b></li></ol>
+<p>A. Don't test, don't treat  B. <b>Test to refine probability</b>  C. Treat without testing  D. Refer <i>Answer: B. Testing zone / Zone of uncertainty.</i></p>
+<ol><li><b>Swiss cheese model applies to:</b></li></ol>
+<p>A. Cognitive biases  B. <b>System errors / Latent failures</b>  C. Individual knowledge gaps  D. Test characteristics <i>Answer: B. Latent system holes align with active error → accident.</i></p>
+<ol><li><b>Diagnostic odds ratio (DOR) formula:</b></li></ol>
+<p>A. LR+ / LR-  B. LR+ × LR-  C. <b>LR+ / LR-</b>  D. (LR+ + LR-)/2 <i>Answer: C. DOR = LR+ / LR- = (Sens×Spec) / ((1-Sens)×(1-Spec)).</i></p>
+<ol><li><b>Missed diagnosis after atypical presentation in young patient:</b></li></ol>
+<p>A. Cognitive error  B. System error  C. <b>No-fault error</b>  D. Communication error <i>Answer: C. No-fault — disease not reasonably detectable (silent/atypical).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>55M, pleuritic chest pain, Wells 4 (moderate), D-dimer 800 (positive). CTPEA negative. Next step?</b></li></ol>
+<p>A. Start anticoagulation  B. <b>Consider alternative diagnosis; safety-net</b>  C. Repeat CTPEA in 24h  D. V/Q scan <i>Answer: B. Pre-test ~20%. D-dimer LR+ ~1.5 → Post ~25%. CTPEA LR- ~0.1 → Post ~3%. Below test threshold.</i></p>
+<ol><li><b>Patient with sore throat, Centor 3. Management?</b></li></ol>
+<p>A. No antibiotics  B. <b>RADT or throat culture; treat if positive</b>  C. Empiric penicillin  D. Refer ENT <i>Answer: B. Centor 2-3 = test (RADT/culture) and treat if positive. Centor 0-1 = no test/abx; 4 = empiric.</i></p>
+<ol><li><b>Junior doctor insists diagnosis is "gastroenteritis" for elderly patient with abdominal pain, ignores subtle rigidity. Bias?</b></li></ol>
+<p>A. Anchoring  B. <b>Premature closure</b>  C. Confirmation  D. Search satisficing <i>Answer: B. Accepts first diagnosis without considering surgical abdomen (peritonitis).</i></p>
+<ol><li><b>New CDR for meningitis derived in single centre, AUC 0.92. Before clinical use?</b></li></ol>
+<p>A. Implement immediately  B. <b>External validation in different population</b>  C. Impact analysis RCT  D. Internal validation only <i>Answer: B. External validation essential before adoption.</i></p>
+<ol><li><b>SNNOUT test with negative result in high prevalence disease. Action?</b></li></ol>
+<p>A. Rule out confidently  B. <b>Cannot rule out (high false negative impact in high prevalence)</b>  C. Treat empirically  D. Repeat test <i>Answer: B. High prevalence → even high sensitivity test has significant false negatives. NPV drops with prevalence.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-C, 10-C</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1.2 Evidence-Based Medicine]] — Study design, Critical appraisal, Statistics for EBM</li><li>[[1.3 Communication Skills]] — History taking, Shared decision-making, Consent</li><li>[[1.4 Ethics &amp; Law]] — Consent law (Montgomery), Capacity (MCA 2005)</li><li>[[1.5 Quality Improvement &amp; Patient Safety]] — Diagnostic error, RCA, Never Events, Duty of candour</li><li>[[1.6 Guidelines &amp; Pathways]] — CDR validation, AGREE II, Implementation</li><li>[../Clinical Therapeutics/Pharmacokinetics] — Drug interactions affecting diagnostic tests</li><li>[../../Cardiology/Clinical Decision-Making] — Chest pain pathways (Wells, TIMI, HEART)</li><li>[../../Respiratory/Clinical Decision-Making] — Pneumonia (CURB-65), PE (Wells, PERC)</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Clinical Reasoning Diagnostic Process · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,505 @@
+# Vitamin D- Metabolism, Deficiency & Osteomalacia
+
+**Related:** [[Nutritional Factors in Disease MOC]], [[Davidson Chapter 22 - Nutritional Factors in Disease Hierarchy]], [[../00_Index/Medicine MOC|Medicine MOC]]
+
+> [!important]
+> **Vitamin D (cholecalciferol D3/ergocalciferol D2) → liver 25-hydroxylase → 25(OH)D (storage) → kidney 1α-hydroxylase → 1,25(OH)2D (active hormone); deficiency = rickets (children) / osteomalacia (adults); optimal 25(OH)D >30 ng/mL.**
+
+## 1. Learning Objectives
+- [ ] Describe vitamin D synthesis (UVB → 7-dehydrocholesterol → pre-D3 → D3) and dietary sources (D2 fungi, D3 animal)
+- [ ] Explain two-step hydroxylation: liver CYP2R1 (25-hydroxylase) → 25(OH)D; kidney CYP27B1 (1α-hydroxylase) → 1,25(OH)2D
+- [ ] List regulators of 1α-hydroxylase: ↑PTH, ↓Ca, ↓PO4, ↑FGF23? (complex), growth factors; inhibitors: ↑Ca, ↑PO4, ↑FGF23, ↓PTH
+- [ ] Define vitamin D status: deficiency <12 ng/mL, insufficiency 12–20, sufficient 20–30, optimal >30 ng/mL (Endocrine Society)
+- [ ] Identify rickets signs: craniotabes, rachitic rosary, Harrison's groove, bowed legs, widened wrists/ankles, delayed dentition
+- [ ] Identify osteomalacia: bone pain (rib/spine/pelvis), proximal myopathy (waddling gait), Looser zones (pseudofractures)
+- [ ] State RDA: 600 IU (15 µg) 1–70y, 800 IU (20 µg) >70y; supplementation strategy: loading 50k IU weekly ×8w then maintenance 800–2000 IU/day
+- [ ] Recognise high-risk groups: dark skin, veiling, elderly, housebound, malabsorption, CKD, anticonvulsants, obesity, gastric bypass
+- [ ] Differentiate nutritional rickets from hypophosphataemic (XLH) and vitamin D-resistant rickets (VDDR type I/II)
+- [ ] Explain vitamin D toxicity: hypercalcaemia → nausea, polyuria, renal stones, metastatic calcification; threshold >10,000 IU/day chronic
+
+## 2. Definitions / Key Concepts
+
+| Term | Definition |
+|------|------------|
+| **Cholecalciferol (D3)** | Vitamin D3; synthesised in skin from 7-dehydrocholesterol by UVB (290–315 nm); also in oily fish, egg yolk, fortified foods |
+| **Ergocalciferol (D2)** | Vitamin D2; plant/fungal source (UV-irradiated ergosterol); less potent, shorter half-life than D3 |
+| **7-Dehydrocholesterol** | Provitamin D3 in epidermal keratinocytes; UVB → pre-vitamin D3 → thermal isomerisation → vitamin D3 |
+| **Pre-vitamin D3** | Unstable intermediate; heat → vitamin D3 (t½ 2.5h at skin temp); excess UV → lumisterol/tachysterol (inactive) |
+| **25(OH)D (Calcidiol)** | Major circulating form; half-life 2–3 weeks; measured to assess status; stored in liver/fat; not biologically active |
+| **1,25(OH)2D (Calcitriol)** | Active hormone; half-life 4–6h; tightly regulated; acts via VDR (nuclear receptor) → gene transcription |
+| **VDR (Vitamin D Receptor)** | Nuclear receptor (RXR heterodimer); binds VDRE on DNA; mediates genomic effects (hours) + non-genomic (minutes) |
+| **CYP2R1** | Hepatic 25-hydroxylase; converts D3/D2 → 25(OH)D; not tightly regulated; genetic variants affect levels |
+| **CYP27B1** | Renal 1α-hydroxylase; converts 25(OH)D → 1,25(OH)2D; **KEY regulated step** |
+| **CYP24A1** | 24-hydroxylase; catabolises 25(OH)D and 1,25(OH)2D → inactive calcitroic acid; induced by 1,25(OH)2D, FGF23 |
+| **PTH** | Parathyroid hormone; ↑renal 1α-hydroxylase (CYP27B1); ↓renal phosphate reabsorption; ↑bone resorption |
+| **FGF23** | Fibroblast growth factor 23 (osteocytes); ↓1α-hydroxylase, ↑24-hydroxylase, ↓renal phosphate reabsorption |
+| **VDR Polymorphisms** | BsmI, FokI, TaqI, ApaI; associated with BMD, fracture risk, autoimmune disease, cancer susceptibility |
+| **Rachitic Rosary** | Costochondral junction enlargement (beading); palpable at anterior chest wall |
+| **Harrison's Groove** | Horizontal depression at lower thoracic margin (diaphragm pull on softened ribs) |
+| **Looser Zones (Pseudofractures)** | Radiolucent lines perpendicular to cortex (medial femur, pubic rami, ribs, scapulae); pathognomonic osteomalacia |
+| **Craniotabes** | Softening of skull bones (parietal/occipital); ping-pong ball feel; normal in preterm, pathological >3m if persistent |
+| **Hypophosphataemic Rickets (XLH)** | PHEX mutation → ↑FGF23 → renal phosphate wasting; normal Ca, normal/↑alk phos, low phosphate; refractory to vit D |
+| **VDDR Type I** | CYP27B1 mutation (1α-hydroxylase deficiency); autosomal recessive; responds to calcitriol |
+| **VDDR Type II** | VDR mutation (end-organ resistance); autosomal recessive; alopecia (vs type I); high-dose calcitriol ± Ca infusion |
+| **Calcitriol Analogues** | Alfacalcidol (1α-OH-D3, rapid hepatic conversion), calcitriol (1,25(OH)2D), paricalcitol (selective VDR activator) |
+
+## 3. Core Content
+
+### Section 1: Synthesis & Sources
+**Cutaneous synthesis (D3):** 7-dehydrocholesterol (epidermis) + UVB (290–315 nm) → pre-vitamin D3 → thermal isomerisation (skin temp) → vitamin D3. **Factors reducing synthesis:** Melanin (SPF 15 = 99% block), sunscreen (SPF 30 = 97% block), latitude (>35° N/S winter), season (winter), time (10am–3pm peak), age (↓7-dehydrocholesterol 70% by 70y), clothing, glass (blocks UVB).
+**Dietary sources:** D3 — oily fish (salmon 100g = 400–600 IU), cod liver oil (1 tsp = 450 IU), egg yolk (40 IU), fortified milk (100 IU/cup), fortified cereals; D2 — UV-irradiated mushrooms, fortified plant milks.
+**Bioavailability:** D3 > D2 (D3 ↑25(OH)D 2–3x more effectively, longer half-life); fat-soluble → require dietary fat for absorption.
+
+### Section 2: Metabolic Pathway & Regulation
+**Step 1 (Liver):** Vitamin D (D2/D3) → **CYP2R1 (25-hydroxylase)** → **25(OH)D (calcidiol)**. Minor CYP27A1 (mitochondrial). Not feedback-regulated. Half-life 15–30 days. Storage in adipose tissue → sequestration in obesity.
+**Step 2 (Kidney - proximal tubule):** 25(OH)D + DBP (vitamin D binding protein) → megalin/cubilin endocytosis → **CYP27B1 (1α-hydroxylase)** → **1,25(OH)2D (calcitriol)**. **Tightly regulated.**
+**Regulators of CYP27B1 (1α-hydroxylase):**
+- **Stimulators (↑1,25(OH)2D):** PTH (major), hypocalcaemia, hypophosphataemia, oestrogen, prolactin, growth hormone, calcitonin
+- **Inhibitors (↓1,25(OH)2D):** Hypercalcaemia, hyperphosphataemia, **FGF23** (osteocyte), 1,25(OH)2D (feedback), ageing, CKD
+**Catabolism:** CYP24A1 (24-hydroxylase) → 24,25(OH)2D → calcitroic acid (bile excretion); induced by 1,25(OH)2D, FGF23.
+
+### Section 3: Mechanism of Action
+**Genomic (VDR-RXR):** 1,25(OH)2D + VDR → conformational change → heterodimer with RXR → binds VDRE (vitamin D response element) on DNA → recruits coactivators → transcription of target genes (hours–days). Targets: TRPV6 (Ca channel), calbindin-D9k (Ca buffer), PMCA1b (Ca pump), osteocalcin, RANKL, cathelicidin (antimicrobial).
+**Non-genomic (membrane VDR/PDIA3):** Rapid (seconds–minutes) → PKC, MAPK, Ca²⁺ influx → intestinal Ca absorption, insulin secretion, muscle contraction.
+
+### Section 4: Calcium & Phosphate Homeostasis
+**Intestine:** 1,25(OH)2D → ↑TRPV6 (apical Ca entry), ↑calbindin-D9k (cytosolic buffer), ↑PMCA1b (basolateral extrusion) → **active transcellular Ca absorption** (10–15% → 30–40%); paracellular (passive, vitamin D-independent). Phosphate: ↑NaPi-IIb (apical Na/P cotransporter).
+**Bone:** 1,25(OH)2D → ↑osteoblast RANKL → osteoclast differentiation → bone resorption (↑Ca, ↑PO4); also osteoid mineralisation (if Ca×PO4 adequate).
+**Kidney:** PTH + 1,25(OH)2D → ↓NaPi-IIa/IIc (proximal tubule) → phosphaturia; PTH → ↑Ca reabsorption (DCT); 1,25(OH)2D → ↑Ca reabsorption (weak).
+**Feedback:** ↑Ca → CaSR (parathyroid) → ↓PTH → ↓1α-hydroxylase; ↑PO4 → ↑FGF23 → ↓1α-hydroxylase; ↑1,25(OH)2D → ↑CYP24A1 (self-limitation).
+
+### Section 5: Vitamin D Status & Definitions (Endocrine Society 2011)
+| 25(OH)D Level | Status | Clinical Correlate |
+|---------------|--------|-------------------|
+| **<12 ng/mL (<30 nmol/L)** | **Deficiency** | Rickets/osteomalacia, secondary HPT, ↑fracture |
+| **12–20 ng/mL (30–50 nmol/L)** | **Insufficiency** | ↑PTH, ↓Ca absorption, ↓BMD |
+| **20–30 ng/mL (50–75 nmol/L)** | **Adequate** | PTH near normal, bone health acceptable |
+| **>30 ng/mL (>75 nmol/L)** | **Optimal** | PTH minimised, maximal Ca absorption, fall prevention |
+| **>100 ng/mL (>250 nmol/L)** | **Potential toxicity** | Hypercalcaemia risk (rare <150 ng/mL) |
+
+**PTH-threshold:** PTH plateaus when 25(OH)D >30–40 ng/mL.
+
+### Section 6: Rickets (Children) — Clinical Features
+**Peak incidence:** 6–24 months (rapid growth, low dietary intake, limited sun).
+**Skeletal:** Craniotabes (soft skull >3m), frontal bossing, rachitic rosary (costochondral beading), Harrison's groove (diaphragmatic pull), widened wrists/ankles (metaphyseal flaring), bowed legs (genu varum ± valgum), kyphoscoliosis. **X-ray:** Cupping, fraying, widening of metaphyses; fraying of growth plate.
+**Non-skeletal:** Hypocalcaemic tetany (carpopedal spasm, stridor, seizures), delayed dentition (enamel hypoplasia), delayed fontanelle closure, hypotonia, delayed milestones, sweating (head), irritability. **Susceptibility to infections** (pneumonia, diarrhoea).
+**Biochemistry:** ↓25(OH)D, ↓1,25(OH)2D (late), ↓Ca (normal/low), ↓PO4, **↑ALP (bone isoform)** (hallmark), ↑PTH (secondary HPT).
+**Radiographic healing:** "Looser zones" appear at metaphyses during healing.
+
+### Section 7: Osteomalacia (Adults) — Clinical Features
+**Bone pain:** Dull, aching, weight-bearing (lower back, pelvis, ribs, thighs); worse at night; often misdiagnosed as fibromyalgia.
+**Proximal myopathy:** Symmetrical weakness (shoulder/hip girdle); waddling gait; difficulty rising from chair/climbing stairs (Gowers' sign); **distinct from neuropathic weakness**.
+**Looser zones (Pseudofractures):** Radiolucent lines perpendicular to cortex; bilateral, symmetrical; sites: medial femoral neck, pubic/ischial rami, ribs (posterior), scapulae, ulna; **pathognomonic**.
+**Biochemistry:** ↓25(OH)D (<12 ng/mL), ↓Ca (normal/low), ↓PO4, **↑ALP**, ↑PTH (secondary HPT), normal/high 1,25(OH)2D (stimulated by PTH).
+**Differential:** Paget's (↑ALP, ↑Ca normal, sclerotic), metastatic bone disease, myeloma, renal osteodystrophy, hypophosphatasia (↓ALP).
+
+### Section 8: High-Risk Groups & Causes
+| Group | Mechanism |
+|-------|-----------|
+| **Dark skin (Fitzpatrick V/VI)** | Melanin = natural sunscreen (SPF 10–15); needs 6–10x sun exposure |
+| **Veiling / covered clothing** | Blocks UVB (e.g., burqa, niqab) |
+| **Elderly / housebound** | ↓skin synthesis (7-dehydrocholesterol ↓70%), ↓sun exposure, ↓renal 1α-hydroxylase |
+| **Malabsorption** | Coeliac, Crohn's, CF, biliary atresia, short bowel, bariatric (RYGB) — ↓fat absorption |
+| **CKD (stage 3+)** | ↓renal 1α-hydroxylase, ↓DBP, ↑FGF23, ↑phosphate; requires active vit D analogue |
+| **Anticonvulsants** | Phenytoin, carbamazepine, phenobarbital, valproate → ↑CYP24A1, ↑CYP3A4 → catabolism |
+| **Obesity (BMI >30)** | Sequestration in adipose tissue ↑volume of distribution; ↓bioavailability |
+| **Gastric bypass (RYGB)** | Bile + fat malabsorption; ↓vitamin D absorption |
+| **Strict vegan / milk allergy** | No fortified dairy, no fish |
+| **Genetic** | CYP2R1 (↓25-hydroxylase), CYP27B1 (VDDR I), VDR (VDDR II), GC (DBP variants) |
+
+### Section 9: Treatment & Supplementation
+**Deficiency treatment (Endocrine Society):**
+- **Children (1–18y):** 2,000 IU/day D2/D3 ×6w OR **50,000 IU weekly ×6w** → then maintenance 600–1,000 IU/day
+- **Adults:** **50,000 IU weekly ×8w** (or 6,000 IU/day) → then **maintenance 1,500–2,000 IU/day**
+- **Target:** 25(OH)D >30 ng/mL (ideally 40–60 ng/mL)
+- **D3 preferred** over D2 (more potent, longer half-life)
+- **Co-administer Ca:** 1,000–1,200 mg/day elemental Ca (diet + supplement)
+- **Monitor:** 25(OH)D at 3–4 months; Ca, PO4, ALP, PTH
+
+**Special populations:**
+- **CKD:** Use active analogues (alfacalcidol 0.25–1 µg/day, calcitriol 0.25–0.5 µg/day); monitor Ca×PO4 product
+- **Malabsorption:** Higher doses (10,000–50,000 IU/day) or IM D3 (300,000 IU q6m); consider UVB therapy
+- **Obesity:** 2–3x standard dose; target 25(OH)D >40 ng/mL
+- **Anticonvulsants:** 400–800 IU/day minimum; monitor 25(OH)D annually
+- **Pregnancy:** 600 IU/day (RDA); screen high-risk; >4,000 IU/day not routinely recommended
+
+### Section 10: Vitamin D-Resistant Rickets
+| Disorder | Gene | Mechanism | Biochem | Treatment |
+|----------|------|-----------|---------|-----------|
+| **Hypophosphataemic Rickets (XLH)** | PHEX | ↑FGF23 → renal phosphate wasting | Normal Ca, ↓PO4, normal/↑ALP, normal 25(OH)D, ↑FGF23 | **Phosphate + calcitriol** (not vit D alone); burosumab (anti-FGF23 mAb) |
+| **VDDR Type I** | CYP27B1 | 1α-hydroxylase deficiency | ↓1,25(OH)2D, normal 25(OH)D | **Calcitriol 0.5–1 µg/day** |
+| **VDDR Type II** | VDR | End-organ resistance | ↑1,25(OH)2D, alopecia | High-dose calcitriol + high Ca infusion; VDR gene therapy |
+| **Hereditary Vit D Resistant Rickets (HVDRR)** | VDR | Same as type II | Same | Same |
+
+### Section 11: Vitamin D Toxicity
+**Threshold:** Chronic >10,000 IU/day (250 µg) in adults; >2,000 IU/day in infants.
+**Mechanism:** 25(OH)D saturates DBP → free 25(OH)D + 1,25(OH)2D enter cells → VDR overstimulation.
+**Features:** **Hypercalcaemia** → nausea, vomiting, anorexia, polyuria, polydipsia, dehydration, renal stones (Ca oxalate), nephrocalcinosis, metastatic calcification (vessels, kidney, heart), pancreatitis, hypertension, confusion, coma.
+**Biochemistry:** ↑25(OH)D (>150 ng/mL), ↑1,25(OH)2D, ↑Ca, ↑PO4, ↓PTH (suppressed), ↑ALP (if bone resorption).
+**Management:** Stop vitamin D; IV saline hydration (3–4 L/day); loop diuretic (furosemide) after rehydration; bisphosphonates (pamidronate/zoledronic acid) for severe hypercalcaemia; corticosteroids (if granulomatous); dialysis if renal failure.
+**Not caused by:** Sun exposure (pre-vitamin D3 → lumisterol/tachysterol inactivation); dietary overdose rare.
+
+## 4. Clinical Correlation
+
+| Scenario | Action | Notes |
+|----------|--------|-------|
+| 18m child, bowed legs, rachitic rosary, ALP 800, 25(OH)D 8 ng/mL | **Vit D3 2000 IU/day ×6w or 50k IU weekly ×6w** + Ca 500 mg/day; orthopaedic review | Nutritional rickets; monitor ALP normalisation (6–12w) |
+| 65F, hijab-wearing, bone pain, waddling gait, Looser zones on pelvis X-ray, 25(OH)D 6 ng/mL | **D3 50k IU weekly ×8w** → maintenance 2000 IU/day; Ca 1000 mg/day; fall prevention | Osteomalacia; rule out malabsorption |
+| 70M, CKD stage 4, PTH 350, 25(OH)D 18, Ca 8.8, PO4 5.2 | **Alfacalcidol 0.25 µg/day** (or calcitriol); avoid cholecalciferol alone; monitor Ca×PO4 | CKD-MBD; active analogue needed; cinacalcet if PTH refractory |
+| 40F, phenytoin for epilepsy, 25(OH)D 14 ng/mL | **D3 4000 IU/day**; monitor 25(OH)D annually; Ca/vit D supplementation | Enzyme induction → catabolism |
+| 30M, BMI 42, gastric bypass 2y ago, 25(OH)D 10 ng/mL | **D3 50k IU weekly ×8w** (or IM 300k IU q6m) + Ca citrate 1500 mg/day | Malabsorption + sequestration; needs 2–3x dose |
+| 80M, nursing home, fall, hip fracture, 25(OH)D 14 ng/mL | **D3 2000 IU/day** + Ca 1000 mg/day; fall prevention programme | Fall/fracture prevention; meta-analysis ↓falls 15–20% |
+| 55F, sarcoidosis, hypercalcaemia, 25(OH)D 20, 1,25(OH)2D 120 | **Treat sarcoidosis (prednisolone)**; avoid vit D supplements; hydration, bisphosphanate | Granulomatous 1α-hydroxylase dysregulation (macrophages) |
+| 10y girl, XLH (PHEX mutation), short stature, bowed legs | **Phosphate 30–50 mg/kg/day q4–6h + calcitriol 20–30 ng/kg/day**; burosumab (anti-FGF23) | XLH: phosphate wasting; **do NOT use high-dose vit D** (worsens nephrocalcinosis) |
+
+## 5. High-Yield FCPS/MRCP Points
+
+> [!important]
+> - **Must know:** Two-step hydroxylation (liver 25-hydroxylase → kidney 1α-hydroxylase); regulators of 1α-hydroxylase (↑PTH, ↓Ca/PO4 stimulate; FGF23 inhibits); rickets signs (rosary, Harrison's, bowed legs); osteomalacia (bone pain, proximal myopathy, Looser zones); 25(OH)D thresholds (def <12, insuff 12–20, optimal >30 ng/mL); treatment loading 50k IU weekly ×8w; D3 > D2; high-risk groups; XLH = phosphate wasting + FGF23; CKD = active analogue
+> - **Common viva:** Why D3 > D2; regulation of 1α-hydroxylase; Looser zones vs rickets metaphyseal changes; XLH vs nutritional rickets biochem; why active vit D in CKD; hypercalcaemia in sarcoidosis (macrophage 1α-hydroxylase)
+> - **Exam trap:** Treating XLH with high-dose vit D (worsens nephrocalcinosis); using cholecalciferol in advanced CKD (no 1α-hydroxylase); missing secondary HPT in rickets; confusing Looser zones with metastatic lesions; vit D toxicity from sun (impossible)
+
+## 6. Common Confusions / Exam Traps
+
+| Trap | Correction |
+|------|------------|
+| D2 = D3 potency | **D3 2–3x more potent** at raising 25(OH)D; longer half-life |
+| Sun exposure → toxicity | **Impossible**; pre-vit D3 → lumisterol/tachysterol (inactive) with excess UV |
+| 1,25(OH)2D best status marker | **NO**; short half-life, tightly regulated; **25(OH)D is storage form** |
+| XLH = vit D deficiency | **XLH = FGF23-mediated phosphate wasting**; normal 25(OH)D; refractory to vit D |
+| CKD → give cholecalciferol | **CKD 3b+ needs active analogue** (alfacalcidol/calcitriol); no renal 1α-hydroxylase |
+| Hypercalcaemia in sarcoidosis = vit D excess | **Macrophage 1α-hydroxylase unregulated**; 1,25(OH)2D ↑, 25(OH)D normal/low |
+| Looser zones = metastatic lytic lesions | **Looser zones: perpendicular to cortex, bilateral, symmetrical** (pubic rami, femoral neck) |
+| VDDR I vs II | **Type I: CYP27B1 defect → low 1,25(OH)2D → responds to calcitriol; Type II: VDR defect → high 1,25(OH)2D, alopecia** |
+| Obesity = just need higher dose | **Sequestration in fat + volumetric dilution**; needs 2–3x dose + target >40 ng/mL |
+| Rickets = only bones | **Also: hypocalcaemic tetany, cardiomyopathy, delayed dentition, myopathy, infections** |
+
+## 7. Mnemonics
+
+- **Synthesis:** **SKIN UVB → 7-DHC → PRE-D3 → HEAT → D3** (melanin/sunscreen/latitude/age ↓)
+- **Two-step hydroxylation:** **LIVER 25-OH → KIDNEY 1α-OH → ACTIVE** (CYP2R1 → CYP27B1)
+- **1α-hydroxylase regulators:** **PTH HYPE** = **P**TH ↑, **H**ypocalcaemia, **Y** (hypo**P**hosphataemia), **P**rolactin, **E**strogen; Inhibit: **FGF23, Ca, PO4, 1,25-D**
+- **Rickets signs:** **CRAB** = **C**raniotabes, **R**achitic rosary, **A** (Harrison's groove → **A**nchoring diaphragm), **B**owed legs
+- **Osteomalacia triad:** **BONE** = **B**one pain, **O**steomalacia (Looser zones), **N**on-traumatic fractures, **E** (proximal myopathy → waddling gait)
+- **Looser zones sites:** **FISH** = **F**emur (medial neck), **I**schial/pubic rami, **S**capula, **H**umerus/ribs
+- **XLH:** **PHEX** mutation → **FGF23** ↑ → **phosphate wasting** (normal Ca, normal vit D) → **burosumab** (anti-FGF23)
+- **VDDR:** **Type I = CYP27B1 (1α-hydroxylase) → low 1,25-D → calcitriol works; Type II = VDR → high 1,25-D + alopecia**
+- **CKD vit D:** **NO 1α-OH in kidney** → give **alfacalcidol/calcitriol** (bypass renal step)
+- **Sarcoidosis hyperCa:** **MACROPHAGE 1α-OH unregulated** → ↑1,25-D → hyperCa; **treat underlying, avoid vit D**
+- **Toxicity:** **HYPERCALCAEMIA** → stones, calcification, polyuria; >10k IU/day chronic
+
+## 8. Mind Map
+
+```mermaid
+mindmap
+  root((Vitamin D))
+    Forms
+      D3 (Cholecalciferol)
+        Skin UVB → 7-DHC → Pre-D3 → D3
+        Animal sources: fish, egg, liver
+      D2 (Ergocalciferol)
+        Fungi/yeast UV → Ergosterol → D2
+    Metabolism
+      Step 1: Liver
+        CYP2R1 (25-hydroxylase)
+        D2/D3 → 25(OH)D (Calcidiol)
+        Half-life 2–3 weeks
+        Storage form
+      Step 2: Kidney
+        CYP27B1 (1α-hydroxylase)
+        25(OH)D → 1,25(OH)2D (Calcitriol)
+        Half-life 4–6h
+        Active hormone
+        TIGHTLY REGULATED
+      Regulators (1α-OH)
+        Stimulate: PTH, ↓Ca, ↓PO4, GH, Prolactin, Estrogen
+        Inhibit: FGF23, ↑Ca, ↑PO4, 1,25-D feedback, Ageing, CKD
+    Mechanism
+      Genomic: VDR + RXR → VDRE → Transcription (TRPV6, Calbindin, Osteocalcin)
+      Non-genomic: Membrane VDR → PKC, MAPK, Rapid Ca influx
+    Calcium/Phosphate
+      Intestine: TRPV6, Calbindin-D9k, PMCA1b (active transcellular)
+      Bone: RANKL → Osteoclast resorption; Osteoid mineralisation
+      Kidney: PTH + 1,25-D → ↓NaPi (phosphaturia); PTH → ↑Ca reabs (DCT)
+    Status (Endocrine Society)
+      Deficiency: <12 ng/mL
+      Insufficiency: 12–20 ng/mL
+      Adequate: 20–30 ng/mL
+      Optimal: >30 ng/mL
+      Toxicity risk: >100 ng/mL
+    Deficiency
+      Children: RICKETS
+        Craniotabes, Rosary, Harrison's, Bowed legs
+        Hypocalcaemic tetany, Delayed dentition, ↑ALP, ↑PTH
+      Adults: OSTEOMALACIA
+        Bone pain, Proximal myopathy (waddling)
+        Looser zones (Pseudofractures)
+        ↑ALP, ↑PTH, Normal/low Ca, ↓PO4
+    Risk Groups
+      Dark skin, Veiling, Elderly, Housebound
+      Malabsorption (Coeliac, CF, Bariatric)
+      CKD, Anticonvulsants, Obesity, Vegan
+      Genetic (CYP2R1, CYP27B1, VDR, GC)
+    Treatment
+      Deficiency: 50k IU weekly ×8w → Maintenance 1500–2000 IU/day
+      D3 preferred (2–3x potency)
+      Target 25(OH)D >30 ng/mL
+      Special: CKD (Alfacalcidol/Calcitriol), Obesity (2–3x), Malabsorption (IM/High dose)
+    Resistant Rickets
+      XLH (PHEX → FGF23 → Phosphate wasting) → Phosphate + Calcitriol / BUROSUMAB
+      VDDR I (CYP27B1) → Calcitriol
+      VDDR II (VDR + Alopecia) → High-dose Calcitriol + Ca
+    Toxicity
+      >10,000 IU/day chronic
+      Hypercalcaemia → Nausea, Stones, Nephrocalcinosis, Metastatic calcification
+      Stop D, Hydration, Furosemide, Bisphosphonate
+```
+
+## 9. -Hour Recall Prompts
+1. Draw 2-step hydroxylation: Liver CYP2R1 → 25(OH)D; Kidney CYP27B1 → 1,25(OH)2D; regulators
+2. List 5 rickets signs (CRAB) + x-ray findings (cupping, fraying, widening)
+3. Osteomalacia triad: bone pain, proximal myopathy, Looser zones (sites: FISH)
+4. 25(OH)D thresholds: deficiency <12, optimal >30 ng/mL; PTH plateaus at 30–40
+5. XLH vs nutritional rickets: PHEX/FGF23 vs vit D deficiency; phosphate wasting vs low Ca
+5. CKD vit D: why active analogue (alfacalcidol/calcitriol)? No renal 1α-hydroxylase
+6. Treatment loading: 50k IU weekly ×8w → maintenance 1500–2000 IU/day; D3 preferred
+7. Sarcoidosis hypercalcaemia mechanism: macrophage 1α-hydroxylase unregulated
+
+## 10. -Day / 15-Day / 30-Day Revision Tracker
+
+| Day | Date | Recall Quality (1-5) | Time Spent | Notes |
+|-----|------|---------------------|------------|-------|
+| 1   |      |                     |            |       |
+| 7   |      |                     |            |       |
+| 15  |      |                     |            |       |
+| 30  |      |                     |            |       |
+
+---
+
+## 11. Must Know / Should Know / Nice to Know
+
+| Priority | Content |
+|----------|---------|
+| **Must Know 🔴** | Two-step hydroxylation (CYP2R1/CYP27B1); regulators of 1α-hydroxylase (PTH, Ca, PO4, FGF23); rickets/osteomalacia features; 25(OH)D thresholds; treatment loading/maintenance; D3 > D2; XLH (PHEX/FGF23); CKD needs active analogue; Looser zones |
+| **Should Know 🟡** | VDR polymorphisms; non-genomic actions; XLH management (burosumab); VDDR I vs II; obesity dosing; anticonvulsant catabolism; granulomatous disease hypercalcaemia |
+| **Nice to Know 🟢** | CYP24A1 catabolism; genetic rickets (hypophosphatasia ↓ALP); vitamin D in immune/autoimmunity/cancer; calcitriol analogues (paricalcitol, doxercalciferol); IM D3 dosing |
+
+## 12. My Weak Points
+- [ ] Exact VDR-RXR-VDRE transcriptional complex
+- [ ] FGF23-Klotho signalling details
+- [ ] Burosumab dosing/monitoring in XLH
+
+## 13. Self-Test Scorecard
+
+| Domain | Score /10 | Target /10 |
+|--------|-----------|------------|
+| Understanding |    | 8+ |
+| Recall |    | 8+ |
+| MCQ Performance |    | 8+ |
+| SBA Performance |    | 8+ |
+| Viva Confidence |    | 8+ |
+| **TOTAL** |    | **40+/50** |
+
+## 14. Exam Answer Modes
+
+### Long Answer / Essay (20 min)
+**Topic:** "Vitamin D metabolism, deficiency states, and management"
+- Synthesis: cutaneous D3 (UVB + 7-DHC), dietary D2/D3
+- Two-step hydroxylation: liver CYP2R1 → 25(OH)D (storage); kidney CYP27B1 → 1,25(OH)2D (active hormone)
+- Regulation: ↑PTH, ↓Ca, ↓PO4 stimulate 1α-hydroxylase; FGF23, ↑Ca, ↑PO4, 1,25-D feedback inhibit
+- Mechanism: genomic (VDR-RXR-VDRE → TRPV6, calbindin, osteocalcin) + non-genomic
+- Deficiency: children = rickets (craniotabes, rosary, Harrison's, bowed legs, tetany); adults = osteomalacia (bone pain, proximal myopathy, Looser zones); biochem: ↓25(OH)D, ↑ALP, ↑PTH
+- Status: def <12, insuff 12–20, optimal >30 ng/mL
+- High-risk: dark skin, veiling, elderly, malabsorption, CKD, anticonvulsants, obesity
+- Treatment: loading 50k IU weekly ×8w → maintenance 1500–2000 IU/day D3; target >30 ng/mL
+- Special: CKD (alfacalcidol/calcitriol), XLH (phosphate + calcitriol/burosumab), VDDR I/II
+- Toxicity: hypercalcaemia >10k IU/day chronic; sun exposure never toxic
+
+### Short Note (7 min)
+**Topic:** "Rickets vs Osteomalacia"
+- **Rickets (children):** Growth plate defect → craniotabes, rosary, Harrison's, bowed legs, widened wrists; hypocalcaemic tetany; X-ray: cupping/fraying/widening metaphyses.
+- **Osteomalacia (adults):** Bone mineralisation defect → bone pain, proximal myopathy (waddling), Looser zones (pseudofractures: femoral neck, pubic rami, ribs); ↑ALP, ↑PTH.
+- **Common:** ↓25(OH)D, ↓Ca/PO4 (late), ↑ALP, ↑PTH.
+- **Biochem:** Rickets = hypocalcaemia prominent; Osteomalacia = hypophosphataemia often more marked.
+
+### Viva Answer (3 min)
+**Q:** "Why is cholecalciferol ineffective in stage 4 CKD?"
+"A: **CKD → loss of renal 1α-hydroxylase (CYP27B1)**. Cholecalciferol requires renal conversion to active 1,25(OH)2D. In CKD, give **active analogue** (alfacalcidol 1α-OH-D3 → hepatic 25-hydroxylase → calcitriol; or calcitriol directly) which bypasses the renal step. Monitor Ca×PO4 product."
+
+### Ward Case Discussion (5 min)
+**Case:** 25M, XLH (PHEX mutation), short stature, genu valgum, phosphatases normal, 25(OH)D 35 ng/mL.
+"Diagnosis: **X-linked hypophosphataemic rickets** (PHEX mutation → ↑FGF23 → renal phosphate wasting). **Do NOT give high-dose vitamin D** (worsens nephrocalcinosis). Treatment: **Phosphate 30–50 mg/kg/day divided q4–6h + calcitriol 20–30 ng/kg/day**. Monitor: Ca, PO4, ALP, renal ultrasound (nephrocalcinosis), PTH. New: **Burosumab** (anti-FGF23 mAb) monthly SC — normalises phosphate, improves rickets."
+
+### Last-Night-Before-Exam Sheet (1 min)
+- **Synthesis:** UVB + 7-DHC → D3; diet D2/D3
+- **Metabolism:** Liver CYP2R1 → 25(OH)D (storage, t½ 2–3w) → Kidney CYP27B1 → 1,25(OH)2D (active, t½ 4–6h)
+- **Regulation:** 1α-OH stimulated by PTH, ↓Ca, ↓PO4; inhibited by FGF23, ↑Ca, ↑PO4
+- **Status:** Def <12, Insuff 12–20, Optimal >30 ng/mL
+- **Rickets (kids):** CRAB (Craniotabes, Rosary, Harrison's, Bowed legs) + tetany + ↑ALP
+- **Osteomalacia (adults):** Bone pain, proximal myopathy, Looser zones (FISH sites), ↑ALP
+- **XLH:** PHEX → FGF23 ↑ → phosphate wasting; normal Ca/25(OH)D; Rx: phosphate + calcitriol / burosumab
+- **CKD:** Alfacalcidol/calcitriol (bypass renal 1α-OH)
+- **Treatment:** 50k IU weekly ×8w → 1500–2000 IU/day D3; target >30 ng/mL
+- **Toxicity:** Hypercalcaemia >10k IU/day; stones, calcification
+
+## 15. MCQs (10)
+
+1. **Rate-limiting step in vitamin D activation:**
+   A. Hepatic 25-hydroxylase (CYP2R1)  
+   B. **Renal 1α-hydroxylase (CYP27B1)**  
+   C. Cutaneous UVB conversion  
+   D. DBP binding  
+
+2. **Active form of vitamin D:**
+   A. Cholecalciferol  
+   B. 25(OH)D  
+   C. **1,25(OH)2D (Calcitriol)**  
+   D. 24,25(OH)2D  
+
+3. **Major stimulator of renal 1α-hydroxylase:**
+   A. FGF23  
+   B. Hypercalcaemia  
+   C. **PTH**  
+   D. Hyperphosphataemia  
+
+4. **Rickets X-ray finding at metaphysis:**
+   A. Sclerosis  
+   B. **Cupping, fraying, widening**  
+   C. Periosteal reaction  
+   D. Osteolytic lesions  
+
+5. **Pathognomonic radiographic sign of osteomalacia:**
+   A. Osteophytes  
+   B. **Looser zones (pseudofractures)**  
+   C. Vertebral compression fractures  
+   D. Cortical thickening  
+
+6. **25(OH)D level defining deficiency (Endocrine Society):**
+   A. <20 ng/mL  
+   B. **<12 ng/mL**  
+   C. <30 ng/mL  
+   D. <5 ng/mL  
+
+7. **XLH (Hypophosphataemic rickets) biochemical profile:**
+   A. Low Ca, low PO4, low 25(OH)D  
+   B. Normal Ca, **low PO4, normal 25(OH)D, ↑FGF23**  
+   C. Low Ca, normal PO4, low 25(OH)D  
+   D. High Ca, low PO4, high 25(OH)D  
+
+8. **Vitamin D preparation for CKD stage 4:**
+   A. Cholecalciferol 50,000 IU weekly  
+   B. **Alfacalcidol (1α-OH-D3) or Calcitriol**  
+   C. Ergocalciferol 50,000 IU weekly  
+   D. Sunlight exposure only  
+
+9. **Vitamin D toxicity threshold (chronic adult):**
+   A. >2,000 IU/day  
+   B. >4,000 IU/day  
+   C. **>10,000 IU/day**  
+   D. >50,000 IU/day  
+
+10. **Sarcoidosis hypercalcaemia mechanism:**
+    A. Excess vitamin D intake  
+    B. **Macrophage 1α-hydroxylase unregulated (↑1,25(OH)2D)**  
+    C. PTH excess  
+    D. Bone metastases  
+
+## 16. SBA Questions (5)
+
+1. **A 2-year-old child presents with bowed legs, rachitic rosary, and ALP 950 U/L. 25(OH)D 9 ng/mL. Best initial treatment?**
+   A. Calcium 1000 mg/day alone  
+   B. **Vitamin D3 2000 IU/day (or 50,000 IU weekly) ×6 weeks + Calcium 500 mg/day**  
+   C. Calcitriol 0.25 µg/day  
+   D. Single dose vitamin D 600,000 IU IM  
+   E. High-phosphorus diet  
+
+2. **A 60-year-old woman with hijab, bone pain, proximal myopathy, Looser zones on pubic rami. 25(OH)D 6 ng/mL. Management?**
+   A. Calcium 1200 mg/day alone  
+   B. Cholecalciferol 1000 IU/day  
+   C. **Cholecalciferol 50,000 IU weekly ×8 weeks → maintenance 2000 IU/day + Calcium 1000 mg/day**  
+   D. Calcitriol 0.5 µg/day lifelong  
+   E. Teriparatide SC daily  
+
+3. **A 10-year-old girl with short stature, genu valgum, normal calcium, low phosphate, normal ALP, 25(OH)D 32 ng/mL. Father affected. Genetic basis?**
+   A. CYP27B1 mutation  
+   B. **PHEX mutation (XLH)**  
+   C. VDR mutation  
+   D. Sodium-phosphate cotransporter mutation  
+   E. FGF23 mutation (AD hypophosphataemic rickets)  
+
+4. **A 65-year-old man with CKD stage 4 (eGFR 22), secondary hyperparathyroidism (PTH 320), 25(OH)D 18 ng/mL. Best vitamin D therapy?**
+   A. Cholecalciferol 50,000 IU weekly  
+   B. **Alfacalcidol 0.25 µg daily (or calcitriol 0.25 µg)**  
+   C. Ergocalciferol 50,000 IU weekly  
+   D. No vitamin D needed (PTH already high)  
+   E. Calcitriol only if Ca low  
+
+5. **A 40-year-old woman with sarcoidosis presents with hypercalcaemia (Ca 12.2 mg/dL), normal PTH, elevated 1,25(OH)2D, normal 25(OH)D. Cause?**
+   A. Exogenous vitamin D toxicity  
+   B. Primary hyperparathyroidism  
+   C. **Granulomatous macrophage 1α-hydroxylase dysregulation**  
+   D. PTHrP secretion  
+   E. Milk-alkali syndrome  
+
+## 17. Flashcards
+
+- Q: Two hydroxylation steps  
+  A: **Liver CYP2R1: D2/D3 → 25(OH)D; Kidney CYP27B1: 25(OH)D → 1,25(OH)2D**
+- Q: 25(OH)D vs 1,25(OH)2D  
+  A: **25(OH)D = storage (t½ 2–3w); 1,25(OH)2D = active hormone (t½ 4–6h)**
+- Q: 1α-hydroxylase stimulators/inhibitors  
+  A: **Stimulate: PTH, ↓Ca, ↓PO4; Inhibit: FGF23, ↑Ca, ↑PO4, 1,25-D feedback**
+- Q: Rickets signs (CRAB)  
+  A: **Craniotabes, Rachitic rosary, Harrison's groove, Bowed legs**
+- Q: Osteomalacia triad  
+  A: **Bone pain, Proximal myopathy, Looser zones (FISH sites)**
+- Q: Looser zones locations  
+  A: **Femur (medial neck), Ischial/pubic rami, Scapula, Humerus/ribs**
+- Q: 25(OH)D thresholds  
+  A: **Deficiency <12, Insufficiency 12–20, Optimal >30 ng/mL**
+- Q: XLH genetics/biochem  
+  A: **PHEX mutation → ↑FGF23 → renal phosphate wasting; normal Ca, normal 25(OH)D, ↑FGF23**
+- Q: XLH treatment  
+  A: **Phosphate + calcitriol; Burosumab (anti-FGF23 mAb); NO high-dose vit D**
+- Q: VDDR I vs II  
+  A: **Type I: CYP27B1 defect → low 1,25-D → calcitriol works; Type II: VDR defect → high 1,25-D + alopecia**
+- Q: CKD vit D  
+  A: **No renal 1α-OH → give active analogue (Alfacalcidol/Calcitriol)**
+- Q: Treatment loading  
+  A: **50k IU weekly ×8w → maintenance 1500–2000 IU/day D3; target 25(OH)D >30 ng/mL**
+- Q: Toxicity threshold  
+  A: **Chronic >10,000 IU/day → hypercalcaemia, stones, calcification**
+- Q: Sarcoidosis hyperCa  
+  A: **Macrophage 1α-OH unregulated → ↑1,25-D; treat sarcoid, avoid vit D**
+- Q: D3 vs D2  
+  A: **D3 2–3x more potent, longer t½; D2 less effective at raising 25(OH)D**
+
+## 18. Answer Key with Explanations
+
+### MCQs
+1. **B** — CYP27B1 (1α-hydroxylase) in kidney is the regulated, rate-limiting step; hepatic CYP2R1 is not feedback-inhibited.
+2. **C** — 1,25(OH)2D (calcitriol) is the biologically active hormone; 25(OH)D is storage form.
+3. **C** — PTH is the major physiological stimulator; FGF23, hypercalcaemia, hyperphosphataemia inhibit.
+4. **B** — Rachitic metaphysis: cupping (concave), fraying (irregular), widening (splayed).
+5. **B** — Looser zones (pseudofractures) are radiolucent lines perpendicular to cortex; pathognomonic for osteomalacia.
+6. **B** — Endocrine Society: deficiency <12 ng/mL (<30 nmol/L); insufficiency 12–20 ng/mL.
+7. **B** — XLH: PHEX mutation → ↑FGF23 → renal phosphate wasting; normal Ca, normal 25(OH)D, ↓PO4, ↑FGF23.
+8. **B** — CKD 3b+: loss of renal 1α-hydroxylase → must give active analogue (alfacalcidol/calcitriol).
+9. **C** — Chronic intake >10,000 IU/day in adults risks hypercalcaemia/toxicity.
+10. **B** — Sarcoid macrophages express unregulated CYP27B1 → ↑1,25(OH)2D → hypercalcaemia; 25(OH)D normal.
+
+### SBAs
+1. **B** — Nutritional rickets: D3 loading (2000 IU/day or 50k IU weekly ×6w) + Ca; calcitriol not first-line.
+2. **C** — Osteomalacia: loading 50k IU weekly ×8w → maintenance 2000 IU/day + Ca; not calcitriol unless CKD.
+3. **B** — XLH: PHEX mutation (X-linked dominant); normal Ca/25(OH)D, low PO4, ↑FGF23; father affected = XLH.
+4. **B** — CKD 4: no renal 1α-hydroxylase; alfacalcidol (1α-OH-D3) hepatic 25-hydroxylation → calcitriol; or direct calcitriol.
+5. **C** — Granulomatous disease: macrophage CYP27B1 unregulated by Ca/PTH → ↑1,25-D → hypercalcaemia.
+
+## 19. Summary
+
+**Vitamin D** is a **Must Know 🔴** topic for FCPS/MRCP.
+**Key takeaway:** Vitamin D (D3 skin UVB, D2 diet) → liver 25-hydroxylase (CYP2R1) → 25(OH)D (storage) → kidney 1α-hydroxylase (CYP27B1) → 1,25(OH)2D (active hormone). Regulation: ↑PTH, ↓Ca, ↓PO4 stimulate; FGF23, ↑Ca, ↑PO4 inhibit. Deficiency: children = rickets (craniotabes, rosary, Harrison's, bowed legs, tetany); adults = osteomalacia (bone pain, proximal myopathy, Looser zones). Status: <12 ng/mL deficiency, >30 ng/mL optimal. High-risk: dark skin, veiling, elderly, malabsorption, CKD, anticonvulsants, obesity. Treatment: D3 50k IU weekly ×8w → 1500–2000 IU/day maintenance. Special: CKD needs active analogue (alfacalcidol/calcitriol); XLH (PHEX/FGF23) = phosphate wasting, treat with phosphate+calcitriol/burosumab. Toxicity: >10k IU/day chronic → hypercalcaemia.
+**Exam focus:** Two-step hydroxylation, regulators, rickets/osteomalacia features, 25(OH)D thresholds, XLH biochem, CKD management.
+**Clinical relevance:** Universal supplementation in at-risk groups; fall/fracture prevention in elderly; XLH novel therapy burosumab.
+
+*Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented*

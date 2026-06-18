@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Immunisation Schedules Programme Management — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.4. VACCINES & IMMUNISATION</span>
+      <div class="h1">Immunisation Schedules Programme Management</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply standard immunisation schedules (UK NHS, US CDC, WHO EPI, Bangladesh EPI)</li><li>Counsel patients on vaccines in pregnancy, asplenia, complement deficiency, HIV, transplant, immunocompromised, healthcare workers, and travel</li><li>Distinguish vaccine types by storage requirements and use live vaccines safely in immunosuppression</li><li>Implement the cold chain: temperature ranges, freeze-sensitive vs lyophilised, VVM, shake test, data loggers</li><li>Operate a national immunisation programme: policy, procurement, supply chain, coverage monitoring, wastage</li><li>Conduct AEFI surveillance (passive + active) and apply the WHO causality algorithm</li><li>Plan catch-up schedules, supplementary immunisation activities (SIAs) and outbreak response immunisation (ORI)</li><li>Address vaccine hesitancy at individual and programme level (see companion note)</li><li>Interpret VPD surveillance data for elimination/eradication verification</li><li>Describe global immunisation architecture (WHO, UNICEF, Gavi, SAGE, IA2030)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Key Concepts Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Childhood schedule (UK NHS 2024): Birth: BCG (high-risk only), HepB; 8 wk: 6-in-1 (DTaP/IPV/Hib/HepB) + PCV13 + MenB + rotavirus; 12 wk: 6-in-1 + rotavirus (2nd); 16 wk: 6-in-1 + PCV13 (2nd) + MenB (2nd); 1 yr: Hib/MenC + MMR + PCV13 booster + MenB booster; 18 mo (high-risk only): HepA+MMRV not UK; 3 yr 4 mo: MMR 2nd + 4-in-1 (DTaP/IPV) pre-school booster; 12–13 yr: HPV (2 doses) + MenACWY + Td/IPV; 14 yr: 3-in-1 Td/IPV. Adult: Td/IPV every 10 yr, annual flu, COVID-19 seasonal, pneumococcal (PPV23 at 65), shingles (70–79). Pregnancy: dTaP/IPV 16–32 wk, flu (any trimester), COVID-19, RSV (≥28 wk in season). High-risk: asplenia (MenACWY, MenB, PCV13/15/20, PPV23, Hib, annual flu, COVID), complement/MAC inhibitors (MenACWY, MenB), HIV (full schedule + PCV + annual flu, avoid live if CD4&lt;200), transplant (pre- and post-), HCW (HepB, MMR, varicella, BCG, flu, COVID). Live vaccines CONTRAINDICATED in: severe immunodeficiency, pregnancy, recent IVIG, &lt;2 wk before/after transplant, high-dose steroids. WHO EPI: BCG + HepB-birth, OPV/IPV, DTP-HepB-Hib (pentavalent) at 6/10/14 wk, PCV, rotavirus, measles/rubella 9 + 15 mo, HPV girls 9–14, vitamin A 6/12/18 mo, R21 malaria vaccine (pilot/rollout). Cold chain: 2–8°C; freeze-sensitive (HepB, IPV, DTP, PCV, rotavirus, HPV, HepA, flu — NEVER freeze); freeze-dried (BCG, measles/MR/MMR, varicella, yellow fever — stored frozen, reconstituted with cold diluent, 6-hr shelf life). AEFI: passive (spontaneous) + active (solicited); WHO causality algorithm; serious AEFI (death, hospitalisation, disability, cluster) reportable within 24 h. VPD surveillance: case-based + lab confirmation for polio (AFP), measles/rubella (fever + rash), neonatal tetanus, diphtheria, VPD meningitis/encephalitis, rotavirus, HPV impact (registry-based). Coverage: DTP3 marker of system strength; target 90% national / 80% every district (IA2030). Hesitancy: WHO 3Cs (Confidence, Complacency, Convenience) — see Vaccine Hesitancy &amp; Communication.</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>UK NHS schedule — key timepoints (8/12/16 wk, 1 yr, 3 yr 4 mo, 12–13 yr, 14 yr)</li><li>WHO EPI antigens and timings</li><li>Pregnancy vaccines (dTaP 16–32 wk, flu any trimester, COVID-19, RSV ≥28 wk)</li><li>Asplenia vaccine bundle (MenACWY + MenB + PCV + PPV23 + Hib + annual flu)</li><li>Live vaccines contraindicated in pregnancy, severe immunodeficiency, transplant</li><li>Cold chain: 2–8°C; freeze-sensitive vs lyophilised</li><li>Vaccine Vial Monitor (VVM) — what it does and does not show</li><li>Shake test for adsorbed vaccine freeze damage</li><li>AEFI causality (WHO algorithm) and reporting timelines</li><li>Coverage targets — 90% national / 80% district (IA2030)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>UK/US/WHO EPI schedule, pregnancy vaccines, asplenia/HIV/transplant immunisation, live vaccine contraindications, cold chain (2–8°C, freeze-sensitive vs lyophilised, VVM, shake test), AEFI reporting and causality, coverage targets (90/80), catch-up principles</td></tr><tr><td>**Should Know 🟡**</td><td>Detailed catch-up algorithms (UK), supplementary immunisation activities (SIA) and outbreak response immunisation (ORI), school-based delivery, wastage multipliers, VVM stages, data loggers and 30-day temperature record, Gavi transition, Bangladesh EPI, R21 malaria vaccine, RSV maternal programme</td></tr><tr><td>**Nice to Know 🟢**</td><td>Microplanning, GIS mapping for coverage, electronic immunisation registries (EIR), SMS reminders, drone delivery, solar direct-drive refrigerators, controlled temperature chain (CTC) for OPV/HPV, microarray patches, bNAbs for passive immunisation (nirsevimab), IA2030 strategic priorities, infodemic management</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Active immunisation**</td><td>Induction of host immunity via vaccination (live, inactivated, subunit, conjugate, toxoid, mRNA, vector)</td></tr><tr><td>**Passive immunisation**</td><td>Transfer of pre-formed antibody (maternal IgG, IVIG, hyperimmune globulin, monoclonal antibody)</td></tr><tr><td>**Herd immunity threshold**</td><td>Proportion immune needed to interrupt transmission; ≈1−1/R₀. E.g. measles 95%, pertussis 92–94%, polio 80–86%, mumps 75–86%</td></tr><tr><td>**Primary vaccine failure**</td><td>Failure to mount protective response after a complete primary series (e.g. ~5% measles non-responders after 1 dose)</td></tr><tr><td>**Secondary vaccine failure**</td><td>Loss of protection over time (waning immunity, e.g. pertussis, mumps)</td></tr><tr><td>**Cold chain**</td><td>End-to-end temperature-controlled system (manufacture → delivery → administration) maintaining 2–8°C for most vaccines</td></tr><tr><td>**Vaccine Vial Monitor (VVM)**</td><td>Time-temperature integrator label with irreversible colour change proportional to cumulative heat exposure</td></tr><tr><td>**Shake test**</td><td>Field test to detect freeze damage in adsorbed vaccines (DTP, HepB, HPV, PCV, IPV, DTaP)</td></tr><tr><td>**Open vial wastage**</td><td>Vaccine discarded before expiry (e.g. opened multi-dose vial not used within session)</td></tr><tr><td>**Closed vial wastage**</td><td>Vaccine discarded at/after expiry, cold chain failure, breakage, VVM discard point</td></tr><tr><td>**AEFI**</td><td>Any untoward medical occurrence after immunisation; not necessarily causally related</td></tr><tr><td>**AESI**</td><td>Adverse Event of Special Interest — predefined events monitored in clinical trials / pharmacovigilance</td></tr><tr><td>**SIA**</td><td>Supplementary Immunisation Activity — mass campaign to reach under-immunised populations</td></tr><tr><td>**ORI**</td><td>Outbreak Response Immunisation — reactive vaccination to control an outbreak</td></tr><tr><td>**Mop-up**</td><td>Targeted door-to-door vaccination in sub-areas with low coverage or outbreak foci</td></tr><tr><td>**Catch-up**</td><td>Opportunistic vaccination of individuals who missed scheduled doses, using accelerated schedule</td></tr><tr><td>**VPD**</td><td>Vaccine-Preventable Disease</td></tr><tr><td>**Gavi**</td><td>Global Alliance for Vaccines and Immunisation — public-private partnership funding introductions in 57 LMICs</td></tr><tr><td>**IA2030**</td><td>Immunisation Agenda 2030 — WHO global strategy; vision of "a world where everyone, everywhere, at every age, fully benefits from vaccines"</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Vaccine Schedule Architecture</div>
+<p>Immunisation programmes are built around <b>schedules</b> that define <i>which</i> antigen, <i>when</i>, <i>how many</i> doses, <i>which</i> formulation, and <i>which</i> route/site. Schedules must balance:</p>
+<ul><li><b>Epidemiology</b> (peak age for severe disease, force of infection, seasonality)</li><li><b>Immunobiology</b> (maternal antibody interference, T-cell–dependent vs independent responses, prime-boost intervals)</li><li><b>Operational pragmatism</b> (number of contacts, cold chain, wastage, integration with other child health services)</li><li><b>Equity</b> (timing that gives the most vulnerable the earliest protection)</li></ul>
+<div class="callout"><b>Key concept — WHO 3+0 vs 2+1 vs 3+1 DTP schedules:</b> - <b>3+0</b> (EPI/LMIC): DTP at 6/10/14 wk — earliest protection, no toddler booster. Used where pertussis peaks in infancy. - <b>2+1</b> (some EU): DTaP at 2 + 4 mo, booster at 11–12 mo — fewer doses, relies on herd effects. - <b>3+1</b> (US, much of Europe): DTaP at 2/4/6 mo + 15–18 mo booster. - <b>2+2+1</b> (UK from 2025 transition for DTaP-containing 6-in-1 was confirmed 3+0 by NHS, with 3 yr 4 mo pre-school booster — so technically <b>3+0+1</b>).</div>
+<p>#### Universal vs Targeted (Risk-Based) Vaccines</p>
+<table class="ctable"><tr><th>Strategy</th><th>Examples</th><th>Rationale</th></tr><tr><td>----------</td><td>----------</td><td>-----------</td></tr><tr><td>**Universal (mass)**</td><td>DTP, measles, polio, Hib, PCV, rotavirus, HepB, HPV, influenza (paediatric)</td><td>Whole-population benefit, herd effects</td></tr><tr><td>**Targeted (risk-based)**</td><td>BCG (UK only TB-risk neonates), HepB birth dose (UK babies of HBV+ mothers; LMIC universal), yellow fever (endemic areas), Japanese encephalitis (rural Asia), rabies (post-exposure + select pre-exposure), Typhoid conjugate (LMIC rollout), Cholera (outbreak + endemic)</td><td>Cost, risk stratification, or local epidemiology</td></tr><tr><td>**Occupational**</td><td>HepB (HCW, lab), rabies (vets), varicella (non-immune HCW), Q fever (abattoir)</td><td>Occupational exposure</td></tr><tr><td>**Travel**</td><td>Yellow fever, typhoid, cholera, JE, rabies, tick-borne encephalitis, meningococcal ACWY/W135 (Hajj/Umrah)</td><td>Destination/activity risk</td></tr></table>
+<p>#### Combination Vaccines</p>
+<p>Combination products (DTaP/IPV/Hib/HepB "6-in-1"; MMR; MMRV; DTaP/IPV "4-in-1"; HepA/HepB) reduce injections, improve compliance, and lower cold chain footprint. Trade-offs: fixed component ratios, less flexibility for catch-up, reactogenicity in some combos.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: WHO Expanded Programme on Immunization (EPI) Schedule</div>
+<p>The <b>WHO EPI</b> was established in 1974 to universalise childhood immunisation. The current standard schedule for low- and middle-income countries (LMICs) supported by WHO/UNICEF/Gavi:</p>
+<table class="ctable"><tr><th>Visit</th><th>Age</th><th>Vaccines (most LMICs)</th><th>Notes</th></tr><tr><td>-------</td><td>-----</td><td>----------------------</td><td>-------</td></tr><tr><td>1</td><td>**At birth (≤24 h)**</td><td>**BCG** + **OPV-0 (birth dose)** + **HepB-birth dose**</td><td>BCG protects against disseminated TB/meningitis; HepB-birth prevents perinatal transmission</td></tr><tr><td>2</td><td>**6 weeks**</td><td>DTP-HepB-Hib (pentavalent) + PCV + rotavirus + OPV</td><td>First contact; integrated with growth monitoring</td></tr><tr><td>3</td><td>**10 weeks**</td><td>Pentavalent + PCV + rotavirus + OPV</td><td>4-wk minimum interval</td></tr><tr><td>4</td><td>**14 weeks**</td><td>Pentavalent + PCV + OPV</td><td>Rotavirus 2-dose course complete (Rotarix); RotaTeq 3-dose schedule</td></tr><tr><td>5</td><td>**9 months**</td><td>**Measles/Rubella (MR) or MMR** + **vitamin A 100,000 IU**</td><td>Vitamin A repeated every 6 mo until 5 yr</td></tr><tr><td>6</td><td>**15 months**</td><td>MR 2nd dose (in many countries) + vitamin A 200,000 IU</td><td>Catch-up or 2-dose schedule</td></tr><tr><td>7</td><td>18 months</td><td>DTP booster (where used)</td><td>Optional</td></tr><tr><td>HPV</td><td>9–14 years (girls; increasingly boys)</td><td>HPV vaccine 1 or 2 doses</td><td>WHO: 1-dose schedule acceptable (2022)</td></tr><tr><td>TT/Td</td><td>Pregnant women; school-age; adults</td><td>TT/Td for maternal & neonatal tetanus elimination</td><td></td></tr><tr><td>Malaria</td><td>5, 6, 7, 18 months (R21/Matrix-M)</td><td>**R21/Matrix-M** introduced from 2023–24 in endemic African countries (Burkina Faso, Ghana, Kenya, Malawi, Niger, Nigeria, etc.)</td><td>WHO 2023 recommendation for malaria-endemic areas; RTS,S alternative</td></tr></table>
+<p><b>Vitamin A</b> is not a vaccine but is integrated with EPI at 6-monthly contacts in many LMICs (9 mo, 15 mo, 18 mo, then 6-monthly to 5 yr; 100,000 IU &lt;12 mo, 200,000 IU ≥12 mo) because deficiency substantially increases measles mortality.</p>
+<p>#### Bangladesh EPI Schedule (typical)</p>
+<p>Bangladesh has one of the most successful EPI programmes in South Asia, reaching &gt;90% coverage for most antigens. Schedule:</p>
+<table class="ctable"><tr><th>Age</th><th>Vaccines</th></tr><tr><td>-----</td><td>----------</td></tr><tr><td>Birth (≤24 h, but typically up to 6 wk)</td><td>BCG, OPV-0, HepB-birth</td></tr><tr><td>6 weeks</td><td>Pentavalent (DTP-HepB-Hib), PCV, OPV, rotavirus</td></tr><tr><td>10 weeks</td><td>Pentavalent, PCV, OPV, rotavirus</td></tr><tr><td>14 weeks</td><td>Pentavalent, PCV, OPV</td></tr><tr><td>9 months</td><td>Measles-Rubella (MR) + vitamin A</td></tr><tr><td>15 months</td><td>MR 2nd dose + vitamin A</td></tr><tr><td>Pregnant women</td><td>TT/Td (5-dose lifetime schedule: TT1 at first contact, TT2 +1 mo, TT3 +6 mo, TT4 +1 yr, TT5 +1 yr)</td></tr></table>
+<p><b>EPI days</b> in Bangladesh: traditionally Wednesday (fixed-site) plus Saturday (outreach). HPV introduced 2023, 9–14 yr, 1 dose. Typhoid conjugate vaccine (TCV) rollout to children 9 mo – 15 yr from 2025.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: UK NHS Routine Immunisation Schedule (2024–25)</div>
+<p>The UK "complete routine immunisation schedule" includes primary series, boosters, adolescent, and adult vaccinations, plus targeted (selective) cohorts.</p>
+<table class="ctable"><tr><th>Age</th><th>Vaccines (NHS)</th><th>Notes</th></tr><tr><td>-----</td><td>---------------</td><td>-------</td></tr><tr><td>**Birth** (or 1 mo if HepB+ mother, with HBIG)</td><td>**HepB (BCG if TB-risk)**</td><td>BCG for infants in high-TB-incidence areas, TB-contact, or family history</td></tr><tr><td>8 weeks</td><td>**DTaP/IPV/Hib/HepB (6-in-1, Infanrix Hexa)** + **PCV13 (Prevenar 13)** + **MenB (Bexsero)** + **rotavirus (Rotarix, oral)**</td><td>First infant contacts; co-administered at different sites</td></tr><tr><td>12 weeks</td><td>6-in-1 (2nd) + **rotavirus 2nd (last dose)**</td><td>Rotavirus max age 14 wk 6 d for 1st, 23 wk 6 d for 2nd</td></tr><tr><td>16 weeks</td><td>6-in-1 (3rd) + PCV13 (2nd) + MenB (2nd)</td><td></td></tr><tr><td>**1 year (12–13 mo)**</td><td>**Hib/MenC (Menitorix)** + **MMR (Priorix or MMR VaxPro)** + **PCV13 booster** + **MenB booster**</td><td>Hib/MenC replaces older 12-mo Hib + 12-mo MenC visits</td></tr><tr><td>18 months (high-risk only)</td><td>HepB (accelerated course completion)</td><td></td></tr><tr><td>**3 years 4 months (pre-school)**</td><td>**MMR 2nd** + **DTaP/IPV (4-in-1, Repevax or Boostrix-IPV)**</td><td></td></tr><tr><td>**12–13 years (school year 8/9)**</td><td>**HPV (Gardasil 9, 2 doses 6–24 mo apart)** + **MenACWY (Nimenrix/Menveo)** + **Td/IPV (Revaxis)**</td><td>From 2023, HPV also offered to boys (gender-neutral)</td></tr><tr><td>**14 years (school year 9/10)**</td><td>**3-in-1 Td/IPV (Revaxis)**</td><td>Final teenage booster</td></tr><tr><td>Adults</td><td>Td/IPV booster if last dose >10 yr ago; **annual flu** (≥65, clinical risk, pregnant, HCW); **COVID-19 seasonal**; **PPV23 at 65**; **shingles (Shingrix) at 60–79** (replaced Zostavax in 2023 schedule)</td><td></td></tr></table>
+<p><b>Selective UK programmes:</b></p>
+<ul><li><b>BCG</b>: neonates/children at TB risk (incidence ≥40/100,000; family history; contacts of TB)</li><li><b>HepB</b>: babies of HBV+ mothers (HBIG + vaccine at birth, 4 wk, 1 yr with anti-HBs check)</li><li><b>HepA</b>: contacts of cases; travellers; chronic liver disease; men who have sex with men; PWID</li><li><b>Influenza</b>: children 2–17 yr (live attenuated nasal Fluenz Tetra/LAIV unless contraindicated); adults in clinical risk groups; pregnant; HCW; ≥65</li><li><b>PPV23</b>: ≥65; asplenia; cochlear implant; CSF leak; immunosuppression (after PCV13)</li><li><b>HPV</b>: girls and boys 12–13 yr (school-based); MSM up to 45 yr (3-dose); transplant recipients</li></ul>
+<p>#### UK Catch-up Schedule (Green Book, summarised)</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Minimum interval / rule</th></tr><tr><td>---------</td><td>-------------------------</td></tr><tr><td>DTaP-containing</td><td>4 wk between doses 1→2, 4 wk 2→3, 4 wk 3→booster, 4 wk booster→final</td></tr><tr><td>MMR</td><td>4 wk between doses; can be given at any age</td></tr><tr><td>HPV</td><td>If 1st dose <15 yr, 2nd 6–24 mo later; if ≥15 yr or immunocompromised, 3 doses (0, 1, 4–6 mo)</td></tr><tr><td>PCV</td><td>8-wk interval between primary doses; 8-wk interval to booster</td></tr><tr><td>MenB</td><td>8 wk between primary doses; booster ≥1 yr (4 wk minimum after primary)</td></tr><tr><td>HepB</td><td>0, 1, 2, 12 mo (accelerated 0, 1, 2 + 12 mo); 0, 1, 6 mo standard</td></tr><tr><td>Varicella</td><td>4–8 wk between 2 doses; not for under 1 yr</td></tr><tr><td>Td/IPV</td><td>5 yr after last tetanus-containing dose; thereafter 10-yrly</td></tr><tr><td>Rotavirus</td><td>Must complete by 23 wk 6 d (Rotarix 2-dose); older children **cannot** catch up</td></tr></table>
+<div class="callout"><b>Exam pearl — Rotavirus catch-up:</b> Strict upper age limits (Rotarix 14 wk 6 d for 1st dose, 23 wk 6 d for 2nd). This is the only routinely used vaccine with a hard upper-age cap. Reason: theoretical risk of intussusception in older infants.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: US CDC Immunisation Schedule (Highlights, 2024)</div>
+<p>The CDC/ACIP schedule is age-based, with a separate "Catch-up schedule" and "Medical conditions" tables.</p>
+<table class="ctable"><tr><th>Age</th><th>Vaccines</th></tr><tr><td>-----</td><td>----------</td></tr><tr><td>Birth</td><td>HepB (within 24 h)</td></tr><tr><td>1–2 mo</td><td>HepB 2nd</td></tr><tr><td>2 mo</td><td>DTaP, Hib, IPV, PCV15/20, rotavirus, HepB (if not at 1 mo)</td></tr><tr><td>4 mo</td><td>DTaP, Hib, IPV, PCV15/20, rotavirus</td></tr><tr><td>6 mo</td><td>DTaP, Hib, IPV, PCV15/20, rotavirus (if RotaTeq), HepB, **influenza (annual from 6 mo)**</td></tr><tr><td>12–15 mo</td><td>MMR, varicella, HepA (2 doses 6 mo apart), Hib (booster), PCV (booster)</td></tr><tr><td>18 mo</td><td>HepA 2nd</td></tr><tr><td>4–6 yr</td><td>DTaP, IPV, MMR, varicella</td></tr><tr><td>11–12 yr</td><td>Tdap, MenACWY, HPV (2- or 3-dose)</td></tr><tr><td>16 yr</td><td>MenACWY booster, MenB (shared decision)</td></tr><tr><td>Annual</td><td>Influenza (≥6 mo); COVID-19 (per schedule)</td></tr><tr><td>Adults</td><td>Td/Tdap (Tdap once, Td 10-yrly), zoster (≥50, Shingrix), HPV through 26 (shared decision 27–45), pneumococcal (PCV20 or PCV15+PPV23, ≥65)</td></tr></table>
+<p><b>Key US–UK differences:</b></p>
+<table class="ctable"><tr><th>Antigen</th><th>US</th><th>UK</th></tr><tr><td>---------</td><td>-----</td><td>-----</td></tr><tr><td>HepB birth</td><td>All newborns</td><td>Only at-risk; universal HepB (no birth dose) but 8-wk 6-in-1</td></tr><tr><td>Hib schedule</td><td>3+0 (2, 4, 6, 12–15 mo) or 2+1</td><td>3+0 (8, 12, 16 wk) + Hib/MenC at 1 yr</td></tr><tr><td>MenB</td><td>Shared decision at 16 yr</td><td>Universal 8 wk, 16 wk, 1 yr</td></tr><tr><td>MenACWY</td><td>11–12 yr + 16 yr booster</td><td>12–13 yr</td></tr><tr><td>HPV</td><td>9–12 yr, 2-dose</td><td>12–13 yr, 2-dose; from 2023 also boys</td></tr><tr><td>BCG</td><td>Not routine; risk-based</td><td>Not routine; risk-based</td></tr><tr><td>OPV</td><td>IPV only (since 2000)</td><td>IPV only (since 2004)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Vaccines in Special Populations</div>
+<p>#### 5.1 Pregnancy</p>
+<p>Pregnancy alters the <b>maternal immune system</b> (Th2-skewed tolerance) and <b>transplacental antibody transfer</b> accelerates from 28 wk gestation, peaking at term. Vaccines in pregnancy serve two goals:</p>
+<ol><li><b>Maternal protection</b> (flu, COVID-19)</li><li><b>Neonatal protection via transplacental IgG</b> (pertussis, RSV, flu, COVID-19, tetanus-toxoid for neonatal tetanus elimination)</li></ol>
+<table class="ctable"><tr><th>Vaccine</th><th>Recommended in pregnancy?</th><th>Timing</th><th>Notes</th></tr><tr><td>---------</td><td>--------------------------</td><td>--------</td><td>-------</td></tr><tr><td>**dTaP/IPV (Boostrix-IPV / Repevax)**</td><td>**Yes**</td><td>**16–32 weeks** (ideally 16–28, but can be given up to birth)</td><td>Maximises transplacental anti-pertussis IgG; aim to complete before delivery. Repeat in each pregnancy</td></tr><tr><td>**Influenza (inactivated)**</td><td>**Yes**</td><td>Any trimester</td><td>Inactivated vaccine; LAIV (nasal) **contraindicated**</td></tr><tr><td>**COVID-19**</td><td>**Yes**</td><td>Any trimester; per seasonal schedule</td><td>mRNA or protein subunit preferred</td></tr><tr><td>**RSV (Abrysvo, RSVpreF)**</td><td>**Yes**</td><td>**28–36 weeks** (Sept–Jan in UK)</td><td>Maternal immunisation to protect neonate; **only** Abrysvo licensed; not for use in subsequent pregnancies</td></tr><tr><td>**HepB**</td><td>Yes if at risk</td><td>Any trimester</td><td>Recombinant subunit — safe</td></tr><tr><td>**HepA**</td><td>Yes if at risk</td><td>Any trimester</td><td>Inactivated — safe</td></tr><tr><td>**PPV23 (pneumococcal polysaccharide)**</td><td>Yes if at risk</td><td>Any trimester</td><td>Inactivated — safe</td></tr><tr><td>**MenACWY**</td><td>Yes if at risk</td><td>Any trimester</td><td>Inactivated — safe</td></tr><tr><td>**Yellow fever**</td><td>**Generally avoid**; can give if high risk</td><td>Live — generally avoided; permitted if exposure unavoidable and benefit > risk</td><td>Live vaccine — caution</td></tr><tr><td>**MMR**</td><td>**Contraindicated**</td><td>—</td><td>Live — theoretical risk; vaccinate **before** pregnancy or postpartum</td></tr><tr><td>**Varicella**</td><td>**Contraindicated**</td><td>—</td><td>Live; vaccinate postpartum (avoid pregnancy 4 wk after)</td></tr><tr><td>**BCG**</td><td>**Contraindicated**</td><td>—</td><td>Live</td></tr><tr><td>**LAIV (nasal flu)**</td><td>**Contraindicated**</td><td>—</td><td>Live; give inactivated instead</td></tr><tr><td>**HPV**</td><td>**Not recommended** (insufficient data, defer)</td><td>—</td><td></td></tr><tr><td>**Oral typhoid**</td><td>Avoid (live)</td><td>—</td><td></td></tr><tr><td>**Cholera (Dukoral)**</td><td>Generally avoid</td><td>—</td><td>Inactivated, but safety not established</td></tr></table>
+<div class="callout"><b>Exam trap:</b> Yellow fever is <b>live</b> and is often (incorrectly) taught as "always contraindicated in pregnancy". It may be given if travel to a high-risk area is unavoidable and the benefit outweighs the theoretical risk — with rigorous YF vaccine virus exposure assessment.</div>
+<p>#### 5.2 Asplenia and Splenic Dysfunction</p>
+<p><b>Anatomical or functional asplenia</b> (sickle cell disease, coeliac disease with hyposplenism, splenectomy) markedly increases risk of <b>overwhelming post-splenectomy infection (OPSI)</b> from encapsulated bacteria — <i>S. pneumoniae</i>, <i>N. meningitidis</i>, <i>H. influenzae</i> type b, and to a lesser extent <i>Salmonella</i> spp.</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Asplenia schedule (UK)</th></tr><tr><td>---------</td><td>------------------------</td></tr><tr><td>**PCV13 (or PCV15/20)**</td><td>1 dose; followed ≥8 wk later by **PPV23** (one lifetime dose, can be repeated once ≥5 yr later for high risk)</td></tr><tr><td>**MenACWY (Nimenrix/Menveo)**</td><td>2 doses 4–8 wk apart, then 5-yearly boosters</td></tr><tr><td>**MenB (Bexsero)**</td><td>2 doses 4–8 wk apart; consider 3rd primary in high risk</td></tr><tr><td>**Hib**</td><td>1 booster dose if not vaccinated in infancy</td></tr><tr><td>**Influenza**</td><td>Annual</td></tr><tr><td>**COVID-19**</td><td>Per schedule</td></tr><tr><td>**Meningococcal B catch-up in children <2 yr**</td><td>As per routine</td></tr></table>
+<p><b>Elective splenectomy</b> — vaccinate at least <b>2 weeks</b> before surgery (ideally 4–6 wk). <b>Emergency splenectomy</b> — vaccinate <b>≥2 weeks</b> after surgery (some guidance: from 2 wk post-op; some say 14 d for polysaccharide response to mature). Lifelong prophylactic antibiotics (penicillin V or macrolide) are recommended in addition to vaccination, particularly in children and high-risk adults.</p>
+<p>#### 5.3 Complement Deficiency and Complement Inhibitors</p>
+<p>Terminal complement pathway (C5–C9) deficiency, properdin/factor D deficiency, and patients on <b>complement inhibitors (eculizumab, ravulizumab)</b> are at high risk of <b>Neisseria meningitidis</b> infection (especially serogroups W, Y, X; also B).</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Schedule</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**MenACWY**</td><td>2 doses 8–12 wk apart, then every 5 yr</td></tr><tr><td>**MenB**</td><td>2 doses 8 wk apart; consider 3-dose primary</td></tr><tr><td>**PCV13/15/20** + **PPV23**</td><td>As for asplenia</td></tr><tr><td>**Hib**</td><td>Standard</td></tr><tr><td>**Influenza** + **COVID-19**</td><td>Annual / per schedule</td></tr></table>
+<p>Patients on complement inhibitors should also receive <b>meningococcal ACWY and B vaccination at least 2 weeks before</b> starting eculizumab/ravulizumab, and receive <b>meningococcal prophylaxis</b> (e.g. ciprofloxacin or rifampicin) where local protocol dictates.</p>
+<p>#### 5.4 HIV Infection</p>
+<table class="ctable"><tr><th>CD4 count</th><th>Live vaccines</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**CD4 ≥200 cells/µL (or ≥15%)**</td><td>MMR and varicella **can** be given</td></tr><tr><td>**CD4 <200 cells/µL (<15%)**</td><td>**Avoid** MMR, varicella, LAIV, yellow fever, BCG, oral typhoid</td></tr><tr><td>Any CD4</td><td>BCG **contraindicated** (even if asymptomatic), due to risk of disseminated BCG disease</td></tr></table>
+<p><b>HIV schedule additions:</b></p>
+<ul><li><b>PCV13</b> (followed by PPV23 ≥8 wk later)</li><li><b>MenACWY</b> (single dose; consider 5-yearly boosters)</li><li><b>MenB</b> (consider, especially in complement deficiency or asplenia comorbidity)</li><li><b>HPV</b> (3-dose schedule through age 26; consider beyond)</li><li><b>HepB</b> (high-dose or double-dose if non-responder; check anti-HBs)</li><li><b>Annual influenza</b> (inactivated; avoid LAIV)</li><li><b>COVID-19</b> per schedule</li><li><b>Hib</b> (booster if indicated)</li><li><b>HepA</b> (men who have sex with men, chronic liver disease, PWID)</li></ul>
+<p>#### 5.5 Solid Organ and Haematopoietic Stem Cell Transplantation</p>
+<table class="ctable"><tr><th>Timing</th><th>Vaccines</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Pre-transplant**</td><td>Complete all age-appropriate vaccines **≥4 weeks** before transplant. Live vaccines must be given ≥4 wk before (MMR, varicella); avoid live vaccines <4 wk pre-transplant</td></tr><tr><td>**Post-transplant (≥3–6 months)**</td><td>Inactivated vaccines can be resumed. Live vaccines generally **avoided** in solid organ transplant recipients on immunosuppression; in HSCT, **MMR and varicella can be given ≥24 months post-transplant** if no GVHD and off immunosuppression</td></tr><tr><td>**Annual**</td><td>Influenza (inactivated) for patient and household contacts; **no LAIV** in household</td></tr><tr><td>**Pre-/post-HSCT**</td><td>Revaccinate as for naïve (DTaP, Hib, PCV, IPV, HepB, MenACWY); some give 3-dose PCV13 then PPV23</td></tr></table>
+<p>Household contacts of transplant recipients should receive <b>inactivated</b> influenza vaccine, not LAIV, due to theoretical transmission of live vaccine virus.</p>
+<p>#### 5.6 Immunosuppression (general)</p>
+<table class="ctable"><tr><th>Agent / condition</th><th>Live vaccines</th><th>Comments</th></tr><tr><td>-------------------</td><td>--------------</td><td>----------</td></tr><tr><td>**High-dose corticosteroids** (≥20 mg/day prednisolone or ≥2 mg/kg/day for ≥14 d, or equivalent)</td><td>**Avoid** live</td><td>Can give inactivated. Delay live vaccines ≥1 mo after stopping</td></tr><tr><td>**Biologics** (anti-TNF, rituximab, abatacept, JAK inhibitors)</td><td>**Avoid** live</td><td>Inactivated generally safe but may have reduced response (esp. rituximab)</td></tr><tr><td>**Chemotherapy / radiotherapy**</td><td>**Avoid** live</td><td>Give inactivated during treatment; live vaccines ≥6 mo after completion and immune reconstitution</td></tr><tr><td>**Primary immunodeficiency** (SCID, X-linked agammaglobulinaemia)</td><td>**Avoid** live (esp. BCG, oral polio, MMR, varicella, rotavirus)</td><td>Inactivated OK</td></tr></table>
+<p>#### 5.7 Healthcare Workers</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Indication</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**HepB**</td><td>All HCW with potential blood exposure; check anti-HBs ≥10 mIU/mL</td></tr><tr><td>**MMR**</td><td>All HCW; 2 doses; non-immune must be vaccinated</td></tr><tr><td>**Varicella**</td><td>All non-immune HCW; 2 doses</td></tr><tr><td>**Influenza** (inactivated)</td><td>Annual</td></tr><tr><td>**COVID-19**</td><td>Per national schedule</td></tr><tr><td>**BCG**</td><td>**Not routine** in UK; only for high-risk (e.g. lab staff handling *M. tuberculosis*)</td></tr><tr><td>**Meningococcal (ACWY + B)**</td><td>Lab staff handling *N. meningitidis* isolates</td></tr><tr><td>**Rabies, vaccinia, anthrax**</td><td>Lab workers with relevant exposure</td></tr><tr><td>**Tdap (Td/IPV)**</td><td>Per routine adult schedule</td></tr></table>
+<p>#### 5.8 Travel</p>
+<p>See [[Travel Medicine: Pre-Travel Assessment &amp; Prophylaxis]] for full detail. Key travel vaccines:</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Indication</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Yellow fever**</td><td>Endemic areas of sub-Saharan Africa + tropical South America; certificate required for entry to some countries. **Live** — caution in immunocompromised, >60 yr (higher risk of YF vaccine-associated viscerotropic disease)</td></tr><tr><td>**Typhoid (Vi polysaccharide or Ty21a oral live)**</td><td>Travellers to South Asia, parts of Africa, Central/South America</td></tr><tr><td>**Cholera (Dukoral; killed oral)**</td><td>Aid workers, refugee camp exposure</td></tr><tr><td>**HepA**</td><td>Most non-immune travellers to developing world</td></tr><tr><td>**HepB**</td><td>Frequent travel, medical work, sex with new partners</td></tr><tr><td>**Rabies (pre-exposure)**</td><td>Remote travel, animal work, endemic regions</td></tr><tr><td>**Japanese encephalitis**</td><td>Rural Asia, ≥1 month rural stay</td></tr><tr><td>**Tick-borne encephalitis**</td><td>Forest/spring–summer travel to endemic Europe/Asia</td></tr><tr><td>**MenACWY**</td><td>Hajj/Umrah (mandatory), sub-Saharan Africa "meningitis belt"</td></tr><tr><td>**Polio (IPV booster)**</td><td>Travel to polio-endemic / re-infected countries (Afghanistan, Pakistan; previously others)</td></tr></table>
+<p>#### 5.9 Elderly (≥65 yr)</p>
+<table class="ctable"><tr><th>Vaccine</th><th>UK schedule</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Influenza** (inactivated, adjuvanted ≥65 in UK)</td><td>Annual</td></tr><tr><td>**COVID-19**</td><td>Per seasonal schedule</td></tr><tr><td>**PPV23**</td><td>One dose at 65 (or at diagnosis of high-risk condition)</td></tr><tr><td>**Shingles (Shingrix, recombinant)**</td><td>60–79 yr (UK 2023), 2 doses 2 mo apart</td></tr><tr><td>**RSV (Arexvy, Abrysvo, mResvia)**</td><td>UK programme for 75–79 yr (2024)</td></tr><tr><td>**Td/IPV**</td><td>Booster if last >10 yr</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: Live Vaccines — When to Use, When to Avoid</div>
+<p><b>Live attenuated vaccines (LAV):</b> MMR, MR, varicella, shingles (Zostavax only; Shingrix is recombinant), yellow fever, rotavirus (oral), BCG, oral typhoid (Ty21a), LAIV (nasal flu), oral polio (OPV — not used in UK/US), dengue (Qdenga), Ebola (Ervebo).</p>
+<p><b>Contraindications (absolute):</b></p>
+<ul><li>Severe immunodeficiency (SCID, AIDS with CD4&lt;200/&lt;15%, post-HSCT &lt;24 mo, on high-dose immunosuppression)</li><li>Pregnancy (theoretical risk of foetal infection; defer 4 wk after vaccination before conception)</li><li>Severe anaphylaxis to a previous dose or vaccine component</li></ul>
+<p><b>Precautions (relative):</b></p>
+<ul><li>Moderate/severe acute illness (defer until recovery)</li><li>Recent blood product / IVIG (may neutralise LAV; defer 3 mo or more depending on product)</li><li>Aspirin therapy in children (relative C/I for varicella — Reye syndrome risk)</li></ul>
+<div class="callout"><b>Pearl — Live vaccines in children with HIV:</b> MMR can be given if CD4 ≥200 cells/µL (or ≥15%) — this is a common viva question. Rotavirus, BCG, and yellow fever remain contraindicated regardless of CD4.</div>
+<table class="ctable"><tr><th>Time before immunosuppression</th><th>Live vaccines to complete</th></tr><tr><td>-------------------------------</td><td>---------------------------</td></tr><tr><td>≥4 weeks</td><td>All relevant LAV (MMR, varicella)</td></tr><tr><td>≥6 months (after)</td><td>Most LAV once immune reconstitution</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: Cold Chain — The Backbone of Programme Success</div>
+<p>#### 7.1 Temperature Requirements</p>
+<table class="ctable"><tr><th>Vaccine type</th><th>Storage</th><th>Notes</th></tr><tr><td>--------------</td><td>---------</td><td>-------</td></tr><tr><td>**Inactivated liquid** (HepB, IPV, DTP, DTaP, PCV, Hib, HPV, HepA, influenza IIV)</td><td>**+2 to +8 °C — DO NOT FREEZE**</td><td>Adsorbed to aluminium hydroxide; freezing irreversibly damages the adjuvant</td></tr><tr><td>**Live freeze-dried (lyophilised)** (BCG, measles/MR/MMR, varicella, yellow fever, oral typhoid Ty21a, rotavirus)</td><td>**+2 to +8 °C** (most) or **−20 °C** (BCG, OPV historically, some yellow fever presentations); **sensitive to heat and light**</td><td>Reconstitute with cold diluent (same temperature); use within 6 h (varicella within 30 min)</td></tr><tr><td>**mRNA (Pfizer, Moderna)**</td><td>**−70 to −80 °C** (long-term); **−20 °C** (Moderna, up to 30 d); **+2 to +8 °C** (≤10 d Pfizer, ≤30 d Moderna)</td><td>Once thawed, do not refreeze; multidose vials</td></tr><tr><td>**Vector (AstraZeneca, J&J)**</td><td>**+2 to +8 °C**</td><td></td></tr><tr><td>**Subunit protein (Shingrix, Novavax, R21)**</td><td>**+2 to +8 °C**</td><td></td></tr></table>
+<p>#### 7.2 Freeze-Sensitive vs Freeze-Dried</p>
+<table class="ctable"><tr><th>Property</th><th>Freeze-sensitive (liquid adsorbed)</th><th>Freeze-dried (lyophilised)</th></tr><tr><td>----------</td><td>--------------------------------------</td><td>------------------------------</td></tr><tr><td>**Examples**</td><td>HepB, DTP, DTaP, Td, IPV, PCV, Hib, HPV, HepA, IIV4</td><td>BCG, measles, MR, MMR, varicella, yellow fever, OPV (when used)</td></tr><tr><td>**Storage**</td><td>+2 to +8 °C</td><td>+2 to +8 °C (or −20 °C for some); never warm</td></tr><tr><td>**Damage from**</td><td>**Freezing** (irreversible, undetectable visually for some)</td><td>**Heat** (and some light)</td></tr><tr><td>**VVM**</td><td>Yes</td><td>Yes (shorter discard time)</td></tr><tr><td>**Shake test**</td><td>Detects freeze damage</td><td>Not applicable</td></tr><tr><td>**Wastage if frozen**</td><td>**Total loss** (whole batch)</td><td>Not affected by cold</td></tr></table>
+<p>#### 7.3 Vaccine Vial Monitor (VVM)</p>
+<p>A VVM is a small <b>time-temperature integrator</b> label on each vaccine vial (or ampoule). The central square is heat-sensitive and changes colour <b>irreversibly</b> from light to dark in proportion to cumulative heat exposure.</p>
+<ul><li><b>Stage 1 (light):</b> Usable; "good"</li><li><b>Stage 2:</b> Usable; approaching discard point</li><li><b>Stage 3:</b> Use first</li><li><b>Stage 4 (matches outer ring):</b> <b>DISCARD</b> — exceeds heat exposure threshold</li></ul>
+<p><b>VVMs are required for all WHO-prequalified vaccines supplied through UNICEF.</b> Different VVM categories (e.g. VVM 2, 7, 14, 30) reflect days-to-discard-point at +37 °C — VVM 30 is most heat-stable (e.g. OPV, yellow fever, HPV), VVM 2 is least stable (e.g. oral polio bOPV used to be most heat-stable but rotavirus is VVM 2).</p>
+<p><b>VVM does NOT detect freeze damage.</b> That's why the shake test is required.</p>
+<p>#### 7.4 Shake Test</p>
+<p>Used to detect <b>freeze damage</b> in adsorbed vaccines. Procedure:</p>
+<ol><li>Take a vial from the suspect batch and a vial of the same vaccine from an <b>unfrozen reference</b> batch (kept at +2 to +8 °C and known good).</li><li>Shake both vigorously for 10–15 seconds.</li><li>Allow to rest on a flat surface.</li><li><b>Compare sedimentation time:</b> The suspect vial will sediment in <b>≤30 seconds</b> if frozen (large, coarse precipitate); the reference vial sediments in 30–60 min (fine, slow precipitate).</li><li><b>Interpretation:</b> If suspect sediments noticeably faster → <b>freeze-damaged → discard whole batch</b>.</li></ol>
+<p>If no reference vial is available, the test can be done with a sample frozen intentionally (positive control) for comparison — but the unfrozen reference is the standard.</p>
+<p>#### 7.5 Cold Chain Equipment Hierarchy</p>
+<table class="ctable"><tr><th>Level</th><th>Equipment</th><th>Notes</th></tr><tr><td>-------</td><td>-----------</td><td>-------</td></tr><tr><td>**National store**</td><td>Walk-in cold rooms (+2 to +8 °C) and freezer rooms (−20 °C)</td><td>Backup generators, 24-hr monitoring</td></tr><tr><td>**Regional / district**</td><td>Large refrigerators; purpose-built cold rooms</td><td></td></tr><tr><td>**Health centre**</td><td>Purpose-built vaccine refrigerators (ice-lined, solar direct-drive)</td><td>Domestic fridges **not recommended** (freezer compartment freezing risk)</td></tr><tr><td>**Outreach / mobile**</td><td>Cold boxes (4–7 day cold life) and vaccine carriers (1–2 day cold life) with conditioned ice packs</td><td>**Condition** ice packs (allow surface frost to melt) before placing with freeze-sensitive vaccines</td></tr><tr><td>**Personal use**</td><td>Patient-held insulated bag with cool pack for short transport</td><td></td></tr></table>
+<p><b>Conditioning ice packs:</b> Critical to prevent freezing of adsorbed vaccines. Ice pack is removed from freezer, allowed to sit at room temperature until "sweating" (water droplets form on surface); only then is it placed in the cold box. This avoids the −1 to −3 °C transient cold "shock" that can freeze vaccine ampoules adjacent to the ice pack.</p>
+<p>#### 7.6 Temperature Monitoring</p>
+<ul><li><b>30-day temperature record / chart</b> (manual, twice-daily readings; fridge thermometer)</li><li><b>Electronic data loggers</b> (continuous recording, alarms)</li><li><b>Fridge-tag / ColdTrace</b> (electronic temperature indicator with alarm)</li><li><b>VVM</b> (per-vial, cumulative heat)</li><li><b>PQS (Performance, Quality and Safety) prequalified equipment</b> (WHO/UNICEF)</li></ul>
+<p>#### 7.7 Controlled Temperature Chain (CTC)</p>
+<p>Some vaccines (e.g. <b>OPV, HPV, MenA conjugate (MenAfriVac)</b>) are licensed for use at ambient temperatures up to <b>40 °C for a defined short period</b> (days), enabling "last-mile" delivery to remote areas without cold chain. This is a WHO-endorsed innovation for campaigns.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 8: Vaccine Storage, Supply Chain, and Wastage</div>
+<p>#### 8.1 Supply Chain Steps</p>
+<p><b>Manufacturer → Primary distributor (UNICEF Supply Division) → National warehouse (typically MoH) → Sub-national stores → District stores → Health facility → End user.</b></p>
+<p>Each level has <b>storage capacity, transport time, and wastage</b> implications. <b>Gavi</b> funds the Vaccine Introduction Grant and supports countries transitioning off Gavi support.</p>
+<p>#### 8.2 Wastage</p>
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Examples</th></tr><tr><td>------</td><td>------------</td><td>----------</td></tr><tr><td>**Open vial wastage**</td><td>Doses discarded after opening</td><td>5-dose vial opened for 1 child, 4 discarded after 6 h</td></tr><tr><td>**Closed vial wastage**</td><td>Unopened vials discarded</td><td>Expiry, cold chain failure, VVM stage 4, breakage, recall</td></tr><tr><td>**Programmatic wastage**</td><td>Planned/unavoidable; estimated 5–15%</td><td>Drop-outs between doses, missed opportunities</td></tr><tr><td>**Non-programmatic wastage**</td><td>Unplanned; ideally <5%</td><td>Cold chain failure, expiry, theft</td></tr></table>
+<p><b>Wastage multiplier</b> = 1 / (1 − wastage rate). E.g. 25% wastage → multiplier 1.33. Used for forecasting vaccine needs.</p>
+<p><b>Multi-dose vial policy (MDVP):</b> WHO allows opened multi-dose vials of OPV, DTP, TT/Td, HepB, Hib, influenza, IPV, MenACWY, PCV, rotavirus, yellow fever to be kept for subsequent sessions <b>if</b> the cold chain is maintained, the expiry date not passed, and aseptic technique used. (Specific to each antigen; check current WHO MDVP.)</p>
+<p>#### 8.3 Forecasting and Procurement</p>
+<ul><li><b>Target population</b> × <b>coverage target</b> × <b>doses per child</b> × <b>wastage multiplier</b> × <b>buffer stock</b> (typically 25%) = annual vaccine needs.</li><li><b>Procurement options:</b> self-procurement (HIC), UNICEF Supply Division (LMIC), PAHO Revolving Fund (Americas).</li><li><b>Vaccine product characteristics</b> influence buffer/safety stock (e.g. mRNA ultra-cold chain).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 9: National Immunisation Programmes (NIP) — Architecture</div>
+<p>A national immunisation programme consists of:</p>
+<ol><li><b>Policy and standards</b> — National Immunisation Technical Advisory Group (NITAG) → MoH → schedule, eligibility, contraindications</li><li><b>Regulation</b> — Marketing authorisation (MHRA in UK, FDA in US, WHO prequalification for UN-procured vaccines); pharmacovigilance (Yellow Card in UK, VAERS in US, VigiBase/WHO)</li><li><b>Procurement and supply chain</b> — National store, transport, cold chain equipment</li><li><b>Service delivery</b> — Fixed sites, outreach, mobile, school-based, workplace</li><li><b>Demand generation and communication</b> — IEC, social mobilisation, community engagement, hesitancy</li><li><b>Monitoring and evaluation</b> — Coverage (administrative + survey), VPD surveillance, AEFI surveillance, wastage, equity (WPHF — wealth, place, education, sex)</li><li><b>Financing</b> — Domestic budget, Gavi support, external donors, insurance</li><li><b>Research and innovation</b> — Implementation science, new vaccine introduction (NVI), impact evaluation</li></ol>
+<p>#### 9.1 Coverage Indicators</p>
+<table class="ctable"><tr><th>Indicator</th><th>Use</th></tr><tr><td>-----------</td><td>-----</td></tr><tr><td>**DTP3 coverage**</td><td>Marker of access to immunisation system; 90% target</td></tr><tr><td>**MCV1 (1st measles dose)**</td><td>Marker of reach; 90% target</td></tr><tr><td>**MCV2**</td><td>Marker of system strength beyond infancy; 95% target</td></tr><tr><td>**Drop-out rate**</td><td>(DTP1 − DTP3) / DTP1; <10% acceptable; >10% signals access/utilisation problems</td></tr><tr><td>**Zero-dose children**</td><td>Children who have not received DTP1; SDG 3.b indicator; equity marker</td></tr><tr><td>**Wastage rate**</td><td>Programmatic + non-programmatic; informs forecasting</td></tr><tr><td>**AEFI rate**</td><td>Per 100,000 doses; quality marker</td></tr></table>
+<p><b>Survey methods:</b> WHO/UNICEF Estimates of National Immunization Coverage (WUENIC) — combines administrative data, official estimates, and survey data (DHS, MICS, EPI coverage surveys).</p>
+<p>#### 9.2 Global Architecture</p>
+<table class="ctable"><tr><th>Body</th><th>Role</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**WHO**</td><td>Norms, standards, position papers, prequalification, surveillance</td></tr><tr><td>**UNICEF**</td><td>Procurement, supply, country support, demand generation</td></tr><tr><td>**Gavi**</td><td>Financing for introductions in 57 LMICs; co-financing for sustainability</td></tr><tr><td>**SAGE (Strategic Advisory Group of Experts on Immunization)**</td><td>Global policy advice to WHO Director-General</td></tr><tr><td>**NITAGs (National Immunization Technical Advisory Groups)**</td><td>Country-level evidence-based recommendations</td></tr><tr><td>**WHO Product Profiles for Vaccines**</td><td>Target product characteristics</td></tr><tr><td>**CDC, ECDC, NHS England, PHE**</td><td>Country implementation, surveillance</td></tr><tr><td>**PATH, CHAI, Sabin**</td><td>Implementation partners</td></tr><tr><td>**Coalition for Epidemic Preparedness Innovations (CEPI)**</td><td>R&D for outbreak-threat vaccines</td></tr></table>
+<p>#### 9.3 Immunization Agenda 2030 (IA2030)</p>
+<p>Vision: <i>"A world where everyone, everywhere, at every age, fully benefits from vaccines to improve health and well-being."</i></p>
+<p><b>Strategic priorities (7):</b></p>
+<ol><li><b>Primary</b> — Immunisation for primary health care / universal health coverage</li><li><b>Commitment &amp; demand</b> — Demand and community ownership</li><li><b>Coverage &amp; equity</b> — Reach under-immunised (zero-dose, missed communities)</li><li><b>Life-course &amp; integration</b> — Beyond infancy; integration with other PHC</li><li><b>Outbreaks &amp; emergencies</b> — Vaccine prevention, preparedness, response</li><li><b>Supply &amp; sustainability</b> — Supply security, financing, country ownership</li><li><b>Research &amp; innovation</b> — New vaccines, delivery innovations</li></ol>
+<p><b>Targets:</b></p>
+<ul><li>≥90% coverage of DTP3, MCV2, HPV, and PCV3 by 2030 (national)</li><li>≥80% coverage in every district</li><li>≤50% reduction in number of zero-dose children</li><li>≥500 vaccine introductions (new or under-utilised) in LMICs</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 10: Catch-up Vaccination</div>
+<p>Catch-up is <b>opportunistic</b> vaccination of individuals behind schedule. Principles:</p>
+<ol><li><b>No restart rule:</b> Do not restart a series because of an interruption (except cholera, typhoid oral in some guidance). Continue where left off.</li><li><b>Minimum intervals apply:</b> Enforce minimum dose intervals.</li><li><b>Accelerate:</b> Use the shortest valid intervals for catch-up.</li><li><b>All antigens together:</b> Combine multiple vaccines at a single visit where feasible.</li><li><b>Document clearly:</b> Especially important for migrants, displaced persons, undocumented vaccination history.</li></ol>
+<p>#### UK catch-up "quick reference"</p>
+<table class="ctable"><tr><th>Antigen</th><th>Minimum intervals (catch-up)</th></tr><tr><td>---------</td><td>------------------------------</td></tr><tr><td>DTaP</td><td>4 wk between doses 1–2, 2–3, 3–booster</td></tr><tr><td>Td</td><td>4 wk</td></tr><tr><td>MMR</td><td>4 wk between doses</td></tr><tr><td>Varicella</td><td>4–8 wk</td></tr><tr><td>HepB</td><td>0, 1, 2 + booster at 12 mo (3-dose accelerated) or 0, 1, 6 (standard)</td></tr><tr><td>HPV</td><td><15 yr: 2 doses 6–24 mo apart; ≥15 yr: 3 doses 0, 1, 4–6 mo</td></tr><tr><td>PCV</td><td>8 wk between doses; booster ≥8 wk after primary</td></tr><tr><td>MenB</td><td>8 wk between doses; booster ≥1 yr</td></tr><tr><td>Rotavirus</td><td>**Hard upper limits — cannot catch up over 23 wk 6 d**</td></tr></table>
+<p>#### Catch-up Campaigns (mass)</p>
+<ul><li><b>Mop-up:</b> door-to-door in low-coverage sub-districts</li><li><b>SIA (Supplementary Immunization Activity):</b> mass campaign (e.g. measles follow-up campaign, polio SNID — sub-national immunisation day)</li><li><b>ORI (Outbreak Response Immunization):</b> reactive, ring or geographic</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 11: Adverse Events Following Immunisation (AEFI)</div>
+<p>#### 11.1 Definitions</p>
+<ul><li><b>AEFI:</b> Any untoward medical occurrence that follows immunisation, <b>whether or not</b> causally related to the vaccine.</li><li><b>AESI:</b> Adverse Event of Special Interest — pre-specified in clinical trials / pharmacovigilance.</li><li><b>Serious AEFI:</b> Death, hospitalisation, persistent/significant disability, congenital anomaly, life-threatening event, OR any event clusters.</li></ul>
+<p>#### 11.2 Categories (WHO)</p>
+<table class="ctable"><tr><th>Type</th><th>Description</th><th>Examples</th></tr><tr><td>------</td><td>-------------</td><td>----------</td></tr><tr><td>**1. Vaccine product–related reaction**</td><td>Inherent property of the vaccine</td><td>Mild fever, injection-site pain, febrile seizure with MMRV, oral polio VAPP (very rare with IPV), BCG adenitis</td></tr><tr><td>**2. Vaccine quality defect–related reaction**</td><td>Defective vaccine</td><td>Inadequate inactivation (Cutter incident, 1955), contaminated lots</td></tr><tr><td>**3. Immunisation error–related reaction**</td><td>Programme error (storage, administration, scheduling)</td><td>Wrong diluent, abscess, transmission of infection (unsafe injection), anaphylaxis (not waited 15 min)</td></tr><tr><td>**4. Immunisation anxiety-related reaction**</td><td>Anxiety/stress response to injection</td><td>Fainting (vasovagal), hyperventilation</td></tr><tr><td>**5. Coincidental event**</td><td>Unrelated; would have occurred regardless</td><td>Underlying disease coincidentally presents</td></tr></table>
+<p>#### 11.3 Surveillance Systems</p>
+<table class="ctable"><tr><th>System</th><th>Type</th><th>Use</th></tr><tr><td>--------</td><td>------</td><td>-----</td></tr><tr><td>**Passive surveillance**</td><td>Spontaneous reporting by HCW/public</td><td>Background safety signal detection; "Yellow Card" (UK), VAERS (US), VigiBase (WHO)</td></tr><tr><td>**Active surveillance**</td><td>Solicited follow-up of cohorts</td><td>Clinical trials, sentinel hospital networks (e.g. IMPACT in Canada, VSD in US)</td></tr><tr><td>**Stimulated passive**</td><td>Active promotion of passive reporting</td><td>SMS prompts, training, dedicated forms</td></tr><tr><td>**Sentinel**</td><td>Selected sites report all events</td><td>Specialised hospital AEFI surveillance</td></tr><tr><td>**Rapid cycle analysis**</td><td>Statistical signal detection</td><td>Real-time, automated analysis of large databases</td></tr></table>
+<p>#### 11.4 Causality Assessment (WHO Algorithm)</p>
+<p>For each AEFI, the WHO 4-step algorithm:</p>
+<ol><li><b>Eligibility check</b> — Is the AEFI in a defined list? Is the vaccine given correctly? Is the medical event plausible?</li><li><b>Checklist</b> — Temporal relationship? Known vaccine-related event? Alternate explanation? Prior similar events with this vaccine?</li><li><b>Algorithm</b> — A flowchart assigning categories</li><li><b>Classification:</b></li></ol>
+<ul><li><b>A. Consistent with causal association</b> (vaccine product-related / programme error-related)</li><li><b>B. Indeterminate</b> — temporal but unclear</li><li><b>C. Coincidental</b> — likely unrelated</li><li><b>D. Unclassifiable</b> — insufficient information</li></ul>
+<p>Specialised AEFI investigation teams investigate <b>serious AEFI, deaths, clusters, and signals</b>. Reports submitted to <b>national AEFI committees</b> and the global <b>WHO Programme for International Drug Monitoring (via Uppsala Monitoring Centre).</b></p>
+<p>#### 11.5 Specific AEFIs (must know)</p>
+<table class="ctable"><tr><th>AEFI</th><th>Vaccine</th><th>Notes</th></tr><tr><td>------</td><td>---------</td><td>-------</td></tr><tr><td>Anaphylaxis</td><td>Any</td><td>~1 per million; IgE-mediated; treat with IM adrenaline</td></tr><tr><td>Febrile seizure</td><td>MMR, MMRV, DTaP</td><td>1 in 3,000 for MMRV; lower for MMR + varicella separately</td></tr><tr><td>Intussusception</td><td>Rotavirus (RotaShield historical, slight risk with current rotavirus vaccines ~1–5/100,000)</td><td>Avoid in infants with prior intussusception</td></tr><tr><td>BCG dissemination (BCGosis)</td><td>BCG</td><td>In severe immunodeficient (SCID, HIV, IFN-γ axis defects) — often fatal</td></tr><tr><td>BCG adenitis</td><td>BCG</td><td>Regional lymphadenitis, usually self-limiting</td></tr><tr><td>Vaccine-associated paralytic polio (VAPP)</td><td>OPV</td><td>Very rare; not a concern with IPV</td></tr><tr><td>Thrombosis with thrombocytopenia (TTS / VIPIT)</td><td>Adenoviral vector COVID-19 (AstraZeneca, J&J)</td><td>Anti-PF4 antibodies; treat with IVIG and non-heparin anticoagulation</td></tr><tr><td>Myocarditis / pericarditis</td><td>mRNA COVID-19 (esp. young males 2nd dose)</td><td>Usually mild, self-limiting</td></tr><tr><td>Guillain-Barré syndrome</td><td>Influenza (historical swine flu 1976), rarely others</td><td></td></tr><tr><td>Narcolepsy</td><td>AS03-adjuvanted H1N1 (Pandemrix)</td><td>Specific to AS03 + H1N1; not seen with other flu vaccines</td></tr><tr><td>Idiopathic thrombocytopenic purpura (ITP)</td><td>MMR (~1 in 30,000)</td><td>Usually mild, self-limiting</td></tr><tr><td>Syncope</td><td>Any adolescent vaccine</td><td>Wait 15 min post-vaccination</td></tr></table>
+<p>#### 11.6 Reporting in Practice</p>
+<ul><li><b>Healthcare workers</b> in UK: report serious AEFI to <b>MHRA Yellow Card</b> (yellowcard.mhra.gov.uk) within <b>24 hours</b> for serious events.</li><li><b>Vaccination errors</b> (wrong vaccine, wrong age) reported separately to NHS England.</li><li><b>Pregnancy exposure</b> to vaccines — report even if no event (signal detection).</li><li><b>Clusters</b> — immediately to local Health Protection Team.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 12: Vaccine-Preventable Disease (VPD) Surveillance</div>
+<p>Surveillance of VPDs is essential to (1) <b>monitor programme impact</b>, (2) <b>detect outbreaks</b>, (3) <b>document elimination/eradication</b>, and (4) <b>evaluate new vaccine introduction</b>.</p>
+<table class="ctable"><tr><th>VPD</th><th>Surveillance standard</th><th>Confirmation</th></tr><tr><td>-----</td><td>----------------------</td><td>--------------</td></tr><tr><td>**Polio**</td><td>**Acute flaccid paralysis (AFP) surveillance in <15 yr** — ≥1 AFP / 100,000 under-15 (sensitive marker)</td><td>Stool × 2 within 14 d, isolation in accredited lab</td></tr><tr><td>**Measles**</td><td>Fever + maculopapular rash + ≥1 of cough/coryza/conjunctivitis</td><td>IgM serology, PCR, genotype</td></tr><tr><td>**Rubella / CRS**</td><td>Rash illness + serology; CRS: cataracts, cardiac defect, deafness, microcephaly</td><td>IgM, PCR</td></tr><tr><td>**Diphtheria**</td><td>Pharyngitis + pseudomembrane (respiratory) OR cutaneous</td><td>Toxigenic *C. diphtheriae* / *C. ulcerans* culture + Elek test</td></tr><tr><td>**Tetanus (NT)**</td><td>Neonatal: newborn sucks/cries normally for first 2 d, then cannot suck + spasm</td><td>Clinical (no lab confirmation)</td></tr><tr><td>**Pertussis**</td><td>Cough ≥2 wk + paroxysms / whoop / post-tussive vomiting / apnoea (infants)</td><td>PCR, culture, serology</td></tr><tr><td>**Meningococcal disease**</td><td>Meningitis / septicaemia clinical</td><td>PCR / culture / serogroup</td></tr><tr><td>**Hib disease**</td><td>Meningitis / epiglottitis in <5 yr</td><td>PCR, culture, latex agglutination</td></tr><tr><td>**PCV serotypes**</td><td>Invasive pneumococcal disease in children</td><td>Serotyping</td></tr><tr><td>**Rotavirus**</td><td>Acute gastroenteritis hospitalisations</td><td>PCR / ELISA</td></tr><tr><td>**HPV impact**</td><td>Cervical cancer registry, CIN2+ lesions, genital warts</td><td>Registry-based</td></tr></table>
+<p><b>Elimination thresholds:</b></p>
+<ul><li><b>Measles elimination:</b> &lt;5 cases per million population (endemic), with adequate surveillance</li><li><b>Rubella/CRS elimination:</b> similar</li><li><b>Neonatal tetanus elimination:</b> &lt;1 NT case per 1,000 live births per district per year</li><li><b>Polio eradication:</b> zero WPV1 cases globally; poliovirus containment (per Global Polio Eradication Initiative)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 13: Brief — Vaccine Hesitancy at Programme Level</div>
+<p>See [[Vaccine Hesitancy &amp; Communication]] for full content. Programme-level actions:</p>
+<ul><li><b>Multi-component strategies</b> most effective (Cochrane review): reminder/recall systems, standing orders, provider prompts, school-based delivery, mobile clinics</li><li><b>Default/opt-out</b> scheduling (appointment booked automatically)</li><li><b>Trusted messenger</b> campaigns — HCW, religious leaders, community elders</li><li><b>Address specific concerns</b> through tailored material</li><li><b>Counter misinformation</b> with the "truth sandwich" and pre-bunking</li><li><b>Strengthen vaccine confidence</b> through transparent safety communication and active AEFI reporting</li><li><b>Engage hesitant parents</b> with motivational interviewing in clinic</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 14: Special Topics</div>
+<p>#### 14.1 Newer and Emerging Vaccines</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Year recommended</th><th>Indications</th></tr><tr><td>---------</td><td>------------------</td><td>-------------</td></tr><tr><td>**R21/Matrix-M (malaria)**</td><td>2023 (WHO)</td><td>Children 5 mo – 3 yr in malaria-endemic areas; 4 doses (0, 1, 2 mo + 18 mo)</td></tr><tr><td>**RTS,S/AS01 (Mosquirix)**</td><td>2018, broader 2023 (WHO)</td><td>Children 6 wk – 17 mo; 4 doses</td></tr><tr><td>**RSV vaccines**</td><td>2023 (maternal Abrysvo); 2023 (older adults Arexvy, Abrysvo, mResvia)</td><td>Maternal 28–36 wk (Abrysvo only); adults ≥60 (US), ≥75 (UK)</td></tr><tr><td>**Nirsevimab (Beyfortus)**</td><td>2022</td><td>Long-acting mAb (not vaccine) for infant RSV prevention; 1 IM dose</td></tr><tr><td>**Dengue (Qdenga / TAK-003)**</td><td>2023 (WHO)</td><td>Children 6–16 yr in high-transmission settings; live attenuated tetravalent</td></tr><tr><td>**Pneumococcal PCV15, PCV20**</td><td>2021–22</td><td>Children (PCV15 as alternative); adults ≥65 (PCV20 alone or PCV15+PPV23)</td></tr><tr><td>**MenABCWY (Penbraya)**</td><td>2023 (US)</td><td>Adolescents; combines MenACWY + MenB for shared decision-making</td></tr><tr><td>**Ebola (Ervebo)**</td><td>2019</td><td>Outbreak containment; ring vaccination</td></tr><tr><td>**Oral cholera (Euvichol-Plus, Shanchol)**</td><td>2017 (revised)</td><td>Outbreak + endemic; 2-dose</td></tr><tr><td>**Typhoid conjugate (TCV, Typbar-TCV)**</td><td>2018 (WHO)</td><td>Children 6 mo – 15 yr; Gavi-funded LMIC rollout</td></tr><tr><td>**HPV (1-dose)**</td><td>2022 (WHO SAGE)</td><td>9–14 yr; 1 dose acceptable</td></tr><tr><td>**Mpox / smallpox (JYNNEOS/Imvanex)**</td><td>2022</td><td>Pre- and post-exposure for high-risk</td></tr></table>
+<p>#### 14.2 Gavi Eligibility and Transition</p>
+<ul><li><b>Eligible countries:</b> 57 LMICs with GNI per capita &lt;US$1,730 (2023 threshold)</li><li><b>Co-financing:</b> Countries pay a small share that increases yearly</li><li><b>Transition:</b> When GNI exceeds threshold for 2 years, country "graduates" from Gavi support over 5 years</li><li><b>Vaccine Introduction Grant</b> supports new introductions (e.g. HPV, PCV, rotavirus, IPV)</li><li><b>Gavi 5.0 (2021–25)</b> and <b>Gavi 6.0 (2026–30)</b> strategies</li></ul>
+<p>#### 14.3 Infodemic Management (WHO)</p>
+<p>WHO defines <b>infodemic</b> as over-abundance of information (accurate and false) during a health event. Strategies:</p>
+<ul><li><b>Social listening</b> (digital analytics, surveys)</li><li><b>Pre-bunking</b> (pre-empt myths with correct info)</li><li><b>Truth sandwich</b> (fact → myth → fact)</li><li><b>Trusted messenger</b> networks</li><li><b>AI-based misinformation detection</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>28-yr-old pregnant woman at 24 weeks</td><td>Pregnancy vaccination</td><td>Offer dTaP/IPV (16–32 wk window approaching; recommend now); inactivated flu; COVID-19; discuss RSV at 28 wk (if eligible in season)</td></tr><tr><td>12-yr-old unimmunised migrant from Syria</td><td>Catch-up</td><td>MMR, Td/IPV, HepB, MenACWY; consider BCG if no scar and TB-endemic area; do not restart any series</td></tr><tr><td>35-yr-old post-splenectomy (emergency, 3 wk ago)</td><td>Asplenia immunisation</td><td>MenACWY 2-dose, MenB 2-dose, PCV13/15/20, PPV23 ≥8 wk after PCV, Hib booster, annual flu, COVID-19; start antibiotic prophylaxis; vaccinate ≥2 wk post-op</td></tr><tr><td>HIV+ patient, CD4 180 cells/µL</td><td>Live vaccine contraindication</td><td>Avoid MMR, varicella, BCG, yellow fever, LAIV; provide PCV+PPV23, influenza (inactivated), HepB, HPV</td></tr><tr><td>Patient on rituximab for 6 months</td><td>Live vaccine contraindication</td><td>No live vaccines; give inactivated influenza; check immunity to vaccine-preventable diseases; consider revaccination 6 mo after B-cell recovery</td></tr><tr><td>Vaccine fridge temperature log shows −4 °C overnight</td><td>Freeze-sensitive vaccine damage</td><td>Shake test; if positive for any vial → discard whole batch; investigate refrigerator (likely thermostat/freezer compartment issue)</td></tr><tr><td>Cluster of 3 children with febrile seizures after MMRV in a clinic</td><td>Programme error or signal?</td><td>AEFI investigation; consider switching to separate MMR + varicella; report to MHRA Yellow Card</td></tr><tr><td>VVM on HPV vial shows match to discard square</td><td>VVM stage 4</td><td>Discard the vial; document; adjust forecasting</td></tr><tr><td>District reports DTP3 coverage 70% but DTP1 95%</td><td>Drop-out problem</td><td>High DTP1 but poor completion → access/utilisation; investigate distance, wait times, defaulter tracing</td></tr><tr><td>District reports DTP3 70% and DTP1 70%</td><td>Access problem</td><td>Low DTP1 → zero-dose children; supply chain, hard-to-reach, demand-side</td></tr><tr><td>2 cases of wild poliovirus type 1 detected in Malawi (imported from Pakistan)</td><td>Outbreak response</td><td>ORI: ≥3 rounds of mass OPV in district + nationwide mOPV2; AFP surveillance enhanced; international notification</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know:</b> UK schedule, WHO EPI antigens, pregnancy vaccines, asplenia bundle, live vaccine C/I, cold chain 2–8°C, VVM, AEFI causality - <b>Common viva:</b> "What vaccines would you give in a 28-week pregnant woman?" "Vaccinate a patient pre-splenectomy — how and when?" "Cold chain failure — what do you do?" "This is the WHO 3Cs model — discuss." - <b>Exam trap:</b> MMR CAN be given in HIV if CD4 ≥200; rotavirus has hard upper age limit (23 wk 6 d for 2nd dose); LAIV is contraindicated in pregnancy and immunocompromised; yellow fever is the most common "live vaccine in immunocompromised" trap; VVM does NOT detect freezing; shake test is for adsorbed (freeze-sensitive) vaccines only.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>-----------</td></tr><tr><td>MMR is contraindicated in all HIV</td><td>MMR **can** be given if CD4 ≥200 cells/µL (≥15%) — only avoid if <200 or <15%</td></tr><tr><td>Rotavirus catch-up is unlimited</td><td>**Hard upper age limits:** 1st dose by 14 wk 6 d, 2nd by 23 wk 6 d (Rotarix)</td></tr><tr><td>Yellow fever is always contraindicated in pregnancy</td><td>Generally avoid, but may give if unavoidable high-risk travel</td></tr><tr><td>All vaccines are stored at 2–8°C</td><td>mRNA vaccines need −70/−20 °C; BCG traditionally at −20 °C</td></tr><tr><td>VVM detects freezing</td><td>VVM detects **heat** exposure; **shake test** detects freezing</td></tr><tr><td>DTP freeze damage is reversible</td><td>Freezing is **irreversible** — discard whole batch</td></tr><tr><td>HepB birth dose is universal in UK</td><td>UK gives HepB at birth **only** to babies of HBV+ mothers (with HBIG); universal HepB at 8 wk via 6-in-1; LMICs use universal birth dose</td></tr><tr><td>Influenza vaccine is live</td><td>IIV (injection) is **inactivated**; LAIV (nasal) is **live** — they're different products</td></tr><tr><td>Shingles vaccine is live</td><td>**Zostavax** was live; **Shingrix** (now used in UK/US) is **recombinant subunit** — give in immunocompromised</td></tr><tr><td>OPV is used in routine UK schedule</td><td>UK has used **IPV only** since 2004; OPV is used in some LMICs and for outbreak response</td></tr><tr><td>Rabies pre-exposure is enough on its own</td><td>Pre-exposure simplifies post-exposure (no HRIG, fewer doses) but **post-exposure doses still required**</td></tr><tr><td>Catch-up means restart series</td><td>**No restart rule** — continue where left off (except for oral typhoid in some guidance)</td></tr><tr><td>Yellow fever in infants</td><td>Not recommended <9 months; 9 mo+ in endemic areas</td></tr><tr><td>BCG is universal</td><td>Not in UK/US routine; only risk-based in HIC; universal in most LMICs</td></tr><tr><td>Cholera vaccine is live</td><td>Dukoral, Shanchol, Euvichol are **killed/inactivated** oral vaccines</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>3Cs of Hesitancy:</b> <b>C</b>onfidence, <b>C</b>omplacency, <b>C</b>onvenience</li><li><b>AEFI categories (WHO):</b> <b>P</b>roduct, <b>Q</b>uality, <b>E</b>rror, <b>A</b>nxiety, <b>C</b>oincidental — "P-Q-E-AC" or "<b>Q</b>uality <b>P</b>roduct <b>E</b>rror / <b>A</b>nxiety <b>C</b>oincidental"</li><li><b>Freeze-sensitive vaccines (mnemonic): "</b>HePaD iPS + PVR-HAH<b>" → </b>H<b>epB, </b>Pa<b>rty antigens (DTaP/DTP), </b>iP<b>V (IPV), </b>S<b>ome combos → </b>P<b>CV, </b>V<b>aricella? No (freeze-dried). Hmm. Simpler: "</b>HeLD-IPP<b>" → </b>H<b>epB, </b>D<b>TP/DTaP, </b>L** (no — long-acting).</li><li>Better: "<b>HEP DA</b>" → <b>H</b>epB, <b>D</b>TP/DTaP/<b>I</b>PV, <b>P</b>CV, <b>A</b>ll adsorbed/aluminium-containing + HPV</li><li><b>Freeze-dried: "</b>BMVY-O<b>" → </b>B<b>CG, </b>M<b>easles/MMR, </b>V<b>aricella, </b>Y<b>ellow fever, </b>O**PV (if used)</li><li><b>Shake test = "</b>F<b>rozen = </b>F<b>ast"</b> (frozen vial sediments in &lt;30 s)</li><li><b>MMR dose timing UK:</b> "<b>1 year + 3½ years</b>" (12 mo + 3 yr 4 mo)</li><li><b>HPV "</b>1-2-3 rule**": 1 dose (9–14 yr), 2 doses (15–24 apart), 3 doses (≥15 or immunocompromised, 0-1-6)</li><li><b>Asplenia bundle "</b>MMP-HF<b>": </b>M<b>enACWY, </b>M<b>enB, </b>P<b>CV+PPV23, </b>H<b>ib, </b>F**lu (annual)</li><li><b>Pregnancy vaccines "</b>PFR<b>": </b>P<b>ertussis (16–32 wk), </b>F<b>lu (any), </b>R**SV (28–36 wk, in season) + COVID-19</li><li><b>Herd immunity thresholds "</b>95-92-86**": measles 95%, pertussis 92–94%, polio 86%, mumps 86%, rubella 85%, diphtheria 85%, smallpox 80%</li><li><b>DTP coverage target = </b>"<b>90% national / 80% district</b>"** = IA2030</li><li><b>"DTP3" = the canary indicator of the immunisation system</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Immunisation Schedules &amp; Programme Management)) Schedules WHO EPI Birth BCG HepB OPV 6 10 14 wk Pentavalent PCV Rota OPV 9 mo MR Vitamin A 15 mo MR2 HPV 9-14 yr 1-dose R21 malaria 5-7-18 mo UK NHS Birth BCG high-risk HepB 8 12 16 wk 6in1 PCV MenB Rota 1 yr HibMenC MMR PCV-booster MenB-booster 3 yr 4 mo MMR2 4in1 12-13 yr HPV 2-dose MenACWY TdIPV 14 yr 3in1 Adult flu COVID PPV23 shingles US CDC Birth HepB 2 4 6 mo DTaP Hib IPV PCV RV HepB 12-15 mo MMR VZV HepA 4-6 yr DTaP IPV MMR VZV 11-12 yr Tdap MenACWY HPV 16 yr MenACWY booster Annual flu COVID Bangladesh EPI BCG OPV HepB birth 6 10 14 wk Pentavalent PCV Rota OPV 9 15 mo MR Vitamin A TT for pregnant women Special Groups Pregnancy dTaP 16-32 wk Flu any trimester COVID-19 RSV 28-36 wk Avoid MMR VZV LAIV BCG OPV Asplenia MenACWY MenB PCV then PPV23 Hib flu COVID Complement Defect Inhibitors MenACWY MenB HIV PCV PPV23 flu COVID Live OK if CD4&gt;=200 BCG contraindicated Transplant Complete pre-transplant Avoid live post HSCT revaccinate Healthcare Worker HepB MMR VZV flu COVID BCG for TB-lab only Travel Yellow fever Typhoid Cholera HepA HepB Rabies JE MenACWY Hajj Cold Chain 2-8 degC standard Freeze-sensitive HepB DTP DTaP IPV PCV HPV HepA Freeze-dried BCG MMR VZV YF OPV Stored frozen or 2-8 VVM Cumulative heat 4 stages Shake test Detects freeze damage Frozen sediments &lt;30s Equipment Cold rooms Purpose-built fridges Cold boxes vaccine carriers Conditioned ice packs Programme Coverage DTP3 marker 90 national 80 district Zero-dose WUENIC Wastage Open closed Multiplier Gavi 57 LMIC Co-financing Transition IA2030 7 strategic priorities Vision equity life-course AEFI Passive vs active WHO causality Categories Product Quality Error Anxiety Coincidental Serious report 24h Yellow Card VPD Surveillance AFP for polio Fever rash for measles WHO minimum standards Elimination thresholds Eradication certification Catch-up No restart rule Minimum intervals Accelerate Rotavirus upper age limit SIA mop-up ORI </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Flowchart — Cold Chain Failure Response</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Fridge temperature excursion detected&lt;br/&gt;&gt;8°C or &lt;-2°C] --&gt; B{Is reading current and reliable?} B --&gt;|No - recheck| C[Verify thermometer; check loggers] B --&gt;|Yes| D[Identify affected vaccines] D --&gt; E{Freeze-sensitive vaccines&lt;br/&gt;in fridge?} E --&gt;|Yes| F[Shake test each batch&lt;br/&gt;vs reference vial] F --&gt; G{Sediment faster&lt;br/&gt;than reference?} G --&gt;|Yes - frozen| H[QUARANTINE whole batch&lt;br/&gt;Report to supervisor&lt;br/&gt;Document and discard] G --&gt;|No| I[Continue but investigate cause] E --&gt;|No| J[Heat-sensitive check:&lt;br/&gt;VVM stages] J --&gt; K{Any VVM at stage 4&lt;br/&gt;match discard square?} K --&gt;|Yes| L[Discard vial&lt;br/&gt;Document] K --&gt;|No| M[Check potency by VVM stage&lt;br/&gt;Use first those at stage 3] A --&gt; N[Document incident&lt;br/&gt;AEFI-cold chain log&lt;br/&gt;Root cause analysis&lt;br/&gt;Preventive action] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] UK schedule infographic (one-pager) — Public Health England</li><li>[ ] WHO EPI schedule infographic</li><li>[ ] Cold chain equipment hierarchy diagram</li><li>[ ] VVM stages photograph (WHO)</li><li>[ ] Shake test comparison image</li><li>[ ] AEFI causality algorithm flowchart (WHO)</li><li>[ ] Herd immunity threshold chart (R₀ vs HIT%)</li><li>[ ] IA2030 strategic priorities visual</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] WHO EPI introduction and impact — WHO YouTube</li><li>[ ] Cold chain training — WHO/PQS</li><li>[ ] VVM demonstration — WHO/UNICEF Supply Division</li><li>[ ] UK Green Book chapter summaries — UK Health Security Agency</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>UK schedule:</b> Birth (BCG high-risk + HepB); 8/12/16 wk (6-in-1 + PCV + MenB + rotavirus); 1 yr (Hib/MenC + MMR + PCV + MenB); 3 yr 4 mo (MMR 2 + 4-in-1); 12–13 yr (HPV × 2 + MenACWY + Td/IPV); 14 yr (3-in-1) - <b>WHO EPI:</b> BCG + HepB birth → 6/10/14 wk pentavalent + PCV + rota + OPV → 9 mo MR + vit A → 15 mo MR2 + vit A → HPV 9–14 yr → R21 5/6/7/18 mo (malaria areas) - <b>Pregnancy:</b> dTaP 16–32 wk, flu (any), COVID-19, RSV 28–36 wk. <b>Avoid</b> MMR, varicella, LAIV, BCG - <b>Asplenia:</b> MenACWY + MenB + PCV→PPV23 + Hib + flu. Vaccinate <b>≥2 wk before</b> elective splenectomy - <b>Live vaccine rules:</b> Avoid in pregnancy, severe immunodeficiency, transplant, BCG in HIV at any CD4. <b>MMR OK if HIV CD4 ≥200</b>; rotavirus <b>cannot</b> be given &gt;23 wk 6 d - <b>Cold chain:</b> +2 to +8 °C. Freeze-sensitive = adsorbed (DTP, HepB, IPV, PCV, HPV, HepA). Freeze-dried = BCG, MMR, VZV, YF. <b>VVM = heat</b>, <b>shake test = freeze</b> - <b>Coverage:</b> DTP3 = system marker; IA2030 target <b>90% national / 80% district</b> - <b>AEFI:</b> Passive (Yellow Card) + active (sentinel). Serious → 24 h. WHO causality: Product/Quality/Error/Anxiety/Coincidental - <b>VPD surveillance:</b> AFP for polio, fever+rash for measles, NT clinical case definition - <b>Catch-up:</b> No restart; minimum intervals; rotavirus hard age cap</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Definition → schedules (UK + WHO + targeted) → special groups (pregnancy, asplenia, immunocompromised) → cold chain (temperature, freeze-sensitive vs lyophilised, VVM, shake test, equipment) → programme management (coverage, wastage, Gavi) → AEFI (categories, causality) → VPD surveillance (elimination/eradication) → emerging topics (HPV 1-dose, R21, RSV, dengue)</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>UK childhood schedule table; OR Cold chain (temp, freeze-sensitive, VVM, shake test); OR Asplenia immunisation; OR Pregnancy vaccines; OR AEFI categories</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"The UK childhood schedule begins at birth with BCG (for high-risk infants) and HepB (for babies of HBV-positive mothers). The first infant immunisations are at 8 weeks — a hexavalent 6-in-1 with PCV13, MenB, and oral rotavirus — with two more doses at 12 and 16 weeks. MMR and the PCV and MenB boosters are given at 1 year, the pre-school MMR-2 and 4-in-1 at 3 years 4 months, and HPV, MenACWY and the teenage Td/IPV at 12 to 13 years..."</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to patient: confirm prior immunisations; assess splenic function or immunosuppression; identify pregnancy; prescribe appropriate additional vaccines; arrange timing relative to surgery/transplant; counsel on safety of vaccines in pregnancy</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>90/80 DTP target; MMR dose 1 = 1 year; HPV 2 doses 12–13; dTaP 16–32 wk in pregnancy; MMR OK in HIV if CD4 ≥200; VVM ≠ freeze; shake test = freeze; rotavirus max age 23 wk 6 d</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>UK routine childhood schedule — MMR first dose is given at:</b></li></ol>
+<p>A. 6 weeks B. 3 months C. <b>12 months</b> D. 3 years 4 months E. 5 years</p>
+<ol><li><b>HPV vaccine in the UK routine schedule:</b></li></ol>
+<p>A. 1 dose at age 9 years B. <b>2 doses at 12–13 years, 6–24 months apart</b> C. 3 doses at 12–13 years D. 1 dose at 16 years E. 2 doses at 16–18 years</p>
+<ol><li><b>Vaccines recommended in pregnancy in the UK include:</b></li></ol>
+<p>A. MMR and varicella B. <b>dTaP/IPV (16–32 weeks), inactivated flu, COVID-19, and RSV (28–36 weeks, in season)</b> C. HPV and MenACWY D. BCG and yellow fever E. None — all vaccines are contraindicated</p>
+<ol><li><b>An asplenic adult should receive all of the following EXCEPT:</b></li></ol>
+<p>A. MenACWY and MenB B. PCV13/15/20 followed by PPV23 C. Hib booster D. <b>Annual LAIV (intranasal flu) — live, contraindicated in some asplenia contexts; not the standard</b> E. Annual inactivated influenza vaccine</p>
+<ol><li><b>Which vaccine is the only one in the routine UK schedule with a hard upper age limit for catch-up?</b></li></ol>
+<p>A. MMR B. DTaP-containing C. <b>Rotavirus (Rotarix 1st dose by 14 wk 6 d; 2nd by 23 wk 6 d)</b> D. HPV E. MenACWY</p>
+<ol><li><b>Freeze-sensitive vaccines (must NEVER be frozen) include:</b></li></ol>
+<p>A. BCG, measles, varicella B. <b>HepB, DTaP/DTP, IPV, PCV, HPV, HepA, influenza (IIV)</b> C. Yellow fever and MMR D. BCG only E. All live vaccines</p>
+<ol><li><b>Freeze-dried (lyophilised) vaccines that must be protected from heat and light include:</b></li></ol>
+<p>A. HepB, IPV, DTP B. <b>BCG, measles/MR/MMR, varicella, yellow fever</b> C. PCV, rotavirus D. HPV, MenACWY E. All inactivated vaccines</p>
+<ol><li><b>A vaccine vial monitor (VVM) detects:</b></li></ol>
+<p>A. Expiry date B. <b>Cumulative heat exposure (irreversible colour change)</b> C. Freeze damage D. Potency loss due to light only E. Batch contamination</p>
+<ol><li><b>The shake test is used to detect:</b></li></ol>
+<p>A. Heat damage to lyophilised vaccines B. <b>Freeze damage to adsorbed (aluminium-adjuvanted) vaccines</b> C. Microbial contamination D. Loss of potency in mRNA vaccines E. Cracked ampoules</p>
+<ol><li><b>The WHO Immunization Agenda 2030 (IA2030) coverage targets include:</b></li></ol>
+<p>A. 100% national coverage of all antigens B. <b>≥90% national coverage and ≥80% coverage in every district for DTP3, MCV2, HPV, and PCV3</b> C. 50% reduction in all vaccine-preventable diseases D. 75% reduction in zero-dose children E. Mandatory vaccination for all children globally</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<p><b>SBA 1</b> A 27-year-old woman is 18 weeks pregnant in her first pregnancy. She has no history of pertussis vaccination in this pregnancy and is unsure of her childhood vaccinations. She has no chronic medical conditions. Which of the following vaccines is the <b>most appropriate</b> to recommend at this visit? A. MMR B. Td/IPV (low-dose) booster now C. <b>dTaP/IPV (Boostrix-IPV or Repevax) now — recommended at 16–32 weeks</b> D. Varicella E. LAIV (Fluenz Tetra)</p>
+<p><b>SBA 2</b> A 4-week-old infant is due to start the routine primary immunisation series. The parents ask about the rotavirus vaccine. The baby is currently well. The mother says the family is going abroad in 3 months. What is the <b>most important</b> consideration? A. Rotavirus is contraindicated at 4 weeks; wait until 8 weeks B. <b>Rotarix 1st dose must be given by 14 weeks 6 days, 2nd by 23 weeks 6 days — first dose should be given at 8 weeks as per schedule; do not delay</b> C. Rotavirus vaccine is live and contraindicated in this age group D. Travel abroad is a contraindication to rotavirus E. Rotavirus vaccine is only available in the private market</p>
+<p><b>SBA 3</b> A 45-year-old man is scheduled for elective splenectomy in 6 weeks for hereditary spherocytosis. He received the routine UK childhood schedule. What is the <b>best vaccination plan</b>? A. Vaccinate 1 week before surgery B. <b>Vaccinate at least 2 weeks (ideally 4–6 weeks) before surgery with PCV13, MenACWY, MenB, Hib booster, and offer annual flu — and continue antibiotic prophylaxis</b> C. Wait until after surgery D. Vaccinate 24 hours before surgery E. Only vaccinate against influenza</p>
+<p><b>SBA 4</b> A vaccine fridge in a health centre is found at 0 °C the morning after a power cut. The fridge contained DTP-HepB-Hib (pentavalent), PCV, HPV, OPV, BCG, and measles vaccines. The health worker wants to know what to do. The <b>best next step</b> is: A. Discard all vaccines and order replacements B. <b>Perform the shake test on each adsorbed vaccine (pentavalent, PCV, HPV) against an unfrozen reference vial; if any sediments in &lt;30 seconds, discard the batch. OPV/BCG/measles are freeze-dried — check VVMs</b> C. Wait for the fridge to warm up and continue using the vaccines D. Administer the vaccines immediately to use them up E. Move all vaccines to a domestic fridge</p>
+<p><b>SBA 5</b> A 32-year-old man with HIV (CD4 250 cells/µL, on ART, virally suppressed) is due his routine vaccinations. He has not had MMR. The most appropriate action is: A. Avoid MMR — give only inactivated vaccines B. <b>MMR can be given (live vaccines are permitted if CD4 ≥200 cells/µL / ≥15%); also offer annual flu, COVID-19, HepB, HPV, PCV+PPV23</b> C. Delay all vaccinations until CD4 rises above 500 D. Give BCG E. Give yellow fever</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: MMR dose 1 UK?</li></ul>
+<p>A: 12 months</p>
+<ul><li>Q: MMR dose 2 UK?</li></ul>
+<p>A: 3 years 4 months</p>
+<ul><li>Q: HPV schedule UK?</li></ul>
+<p>A: 2 doses 12–13 years, 6–24 months apart (or 3 doses if ≥15 yr or immunocompromised)</p>
+<ul><li>Q: Pregnancy vaccines UK?</li></ul>
+<p>A: dTaP 16–32 wk; flu any trimester; COVID-19 per schedule; RSV 28–36 wk in season</p>
+<ul><li>Q: Pregnancy vaccines to AVOID?</li></ul>
+<p>A: MMR, varicella, LAIV (nasal flu), BCG, yellow fever (avoid unless essential travel), oral typhoid</p>
+<ul><li>Q: Asplenia vaccine bundle?</li></ul>
+<p>A: MenACWY, MenB, PCV13/15/20 → PPV23, Hib booster, annual flu, COVID-19; lifelong antibiotic prophylaxis</p>
+<ul><li>Q: Splenectomy timing of vaccination?</li></ul>
+<p>A: Elective: ≥2 weeks before (ideally 4–6 wk); Emergency: ≥2 weeks after</p>
+<ul><li>Q: Asplenia vaccination rule for live vaccines?</li></ul>
+<p>A: All routine vaccines OK; asplenia per se is not a contraindication to live vaccines</p>
+<ul><li>Q: Live vaccine rules in HIV?</li></ul>
+<p>A: MMR + varicella OK if CD4 ≥200 cells/µL (or ≥15%); BCG, yellow fever, LAIV, rotavirus contraindicated at any CD4</p>
+<ul><li>Q: Freeze-sensitive vaccines?</li></ul>
+<p>A: HepB, DTaP/DTP, IPV, PCV, HPV, HepA, IIV — aluminium-adsorbed; freezing destroys adjuvant</p>
+<ul><li>Q: Freeze-dried vaccines?</li></ul>
+<p>A: BCG, measles/MR/MMR, varicella, yellow fever, OPV (when used) — heat-sensitive; protect from light; reconstitute with cold diluent; use within 6 h (varicella 30 min)</p>
+<ul><li>Q: Cold chain temperature range?</li></ul>
+<p>A: +2 to +8 °C for most vaccines (mRNA: −70/−20 °C; some BCG: −20 °C)</p>
+<ul><li>Q: VVM detects?</li></ul>
+<p>A: Cumulative heat exposure (irreversible colour change; 4 stages; stage 4 = discard)</p>
+<ul><li>Q: Shake test detects?</li></ul>
+<p>A: Freeze damage in adsorbed vaccines (frozen vial sediments in &lt;30 seconds vs reference 30–60 min)</p>
+<ul><li>Q: "Conditioned" ice pack?</li></ul>
+<p>A: Ice pack allowed to "sweat" at room temperature before placement in cold box — prevents freezing vaccines</p>
+<ul><li>Q: AEFI categories (WHO)?</li></ul>
+<p>A: Product-related; Quality defect; Immunisation error; Anxiety; Coincidental</p>
+<ul><li>Q: Serious AEFI definition?</li></ul>
+<p>A: Death, hospitalisation, persistent/significant disability, congenital anomaly, life-threatening, or cluster</p>
+<ul><li>Q: AEFI reporting in UK?</li></ul>
+<p>A: Yellow Card to MHRA within 24 hours for serious events</p>
+<ul><li>Q: DTP3 coverage as an indicator?</li></ul>
+<p>A: Marker of immunisation system strength; IA2030 target ≥90% national / ≥80% district</p>
+<ul><li>Q: Zero-dose children?</li></ul>
+<p>A: Children who have not received DTP1; SDG 3.b equity indicator; IA2030 target ≤50% reduction</p>
+<ul><li>Q: WHO EPI antigens at 6/10/14 weeks?</li></ul>
+<p>A: Pentavalent (DTP-HepB-Hib) + PCV + rotavirus + OPV</p>
+<ul><li>Q: WHO EPI birth dose antigens?</li></ul>
+<p>A: BCG + OPV-0 + HepB-birth (≤24 h)</p>
+<ul><li>Q: R21/Matrix-M malaria vaccine schedule?</li></ul>
+<p>A: 4 doses at 5, 6, 7, 18 months; WHO recommended 2023 for endemic areas</p>
+<ul><li>Q: AFP surveillance target for polio?</li></ul>
+<p>A: ≥1 non-polio AFP case per 100,000 under-15-year-olds (sensitive detection)</p>
+<ul><li>Q: Neonatal tetanus elimination threshold?</li></ul>
+<p>A: &lt;1 NT case per 1,000 live births per district per year</p>
+<ul><li>Q: Measles elimination threshold?</li></ul>
+<p>A: &lt;5 cases per million population (endemic)</p>
+<ul><li>Q: Catch-up "no restart" rule?</li></ul>
+<p>A: If series interrupted, continue where left off — do not restart (except oral typhoid in some guidance)</p>
+<ul><li>Q: Rotavirus upper age limit?</li></ul>
+<p>A: 1st dose by 14 wk 6 d, 2nd by 23 wk 6 d (Rotarix) — cannot catch up after</p>
+<ul><li>Q: Yellow fever vaccine in pregnancy?</li></ul>
+<p>A: Generally avoid (live); may give if unavoidable high-risk travel (with caution)</p>
+<ul><li>Q: Gavi eligible countries?</li></ul>
+<p>A: 57 LMICs with GNI per capita &lt; US$1,730 (2023); co-financing; 5-yr transition</p>
+<ul><li>Q: IA2030 vision?</li></ul>
+<p>A: "A world where everyone, everywhere, at every age, fully benefits from vaccines"</p>
+<ul><li>Q: BCG in UK?</li></ul>
+<p>A: Risk-based only — TB incidence ≥40/100,000, TB contact, family history; not universal</p>
+<ul><li>Q: Shingles vaccine Shingrix composition?</li></ul>
+<p>A: Recombinant VZV glycoprotein E + AS01B adjuvant — NOT live; OK in immunocompromised</p>
+<ul><li>Q: Hib/MenC at 1 year UK?</li></ul>
+<p>A: Combined Hib/MenC (Menitorix) at 12–13 months</p>
+<ul><li>Q: HPV in boys UK?</li></ul>
+<p>A: Yes, gender-neutral programme from 2019 (Gardasil 9, 2 doses)</p>
+<ul><li>Q: Bangladesh EPI pentavalent?</li></ul>
+<p>A: DTP-HepB-Hib at 6, 10, 14 weeks; with OPV and PCV and rotavirus</p>
+<ul><li>Q: VVM stages?</li></ul>
+<p>A: 4 stages — usable (1), usable-approaching (2), use first (3), DISCARD (4 — matches reference square)</p>
+<ul><li>Q: MDVP — multi-dose vial policy?</li></ul>
+<p>A: WHO policy allowing opened multi-dose vials to be used in subsequent sessions if cold chain maintained, expiry not passed, aseptic technique</p>
+<ul><li>Q: Vaccine-associated paralytic polio (VAPP)?</li></ul>
+<p>A: Very rare with OPV (1 in 2.7 million first doses); not a concern with IPV-only schedules</p>
+<ul><li>Q: HIV CD4 threshold for live vaccines?</li></ul>
+<p>A: ≥200 cells/µL (or ≥15%) for MMR/varicella; BCG contraindicated at any CD4</p>
+<ul><li>Q: HepB birth dose target?</li></ul>
+<p>A: Within 24 hours of birth; universal in LMICs; UK only for babies of HBV+ mothers (with HBIG)</p>
+<ul><li>Q: Typhoid conjugate vaccine (TCV) target?</li></ul>
+<p>A: Children 6 mo – 15 yr in endemic LMICs (Gavi rollout)</p>
+<ul><li>Q: Cholera vaccine Dukoral/Euvichol composition?</li></ul>
+<p>A: Killed/inactivated oral vaccines — not live; safe in immunocompromised and pregnancy (with caution)</p>
+<ul><li>Q: Wastage multiplier for 25% wastage?</li></ul>
+<p>A: 1.33 (1 ÷ 0.75)</p>
+<ul><li>Q: SIA vs ORI?</li></ul>
+<p>A: SIA = planned mass campaign to reach under-immunised; ORI = reactive vaccination to control an outbreak</p>
+<ul><li>Q: Diphtheria diagnosis confirmation?</li></ul>
+<p>A: Toxigenic C. diphtheriae / C. ulcerans culture + Elek test</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: C (12 months)</b> — UK NHS schedule: MMR 1st at 12–13 months with Hib/MenC, PCV booster, MenB booster. The 2nd dose is at 3 years 4 months.</li></ol>
+<ol><li><b>Correct: B (2 doses at 12–13 years, 6–24 months apart)</b> — UK 2-dose Gardasil 9 schedule, gender-neutral since 2019. For ≥15 yr or immunocompromised, 3 doses (0, 1, 4–6 mo) are needed.</li></ol>
+<ol><li><b>Correct: B (dTaP/IPV 16–32 weeks, flu, COVID-19, RSV 28–36 weeks in season)</b> — All four are recommended. MMR and varicella are live and contraindicated; BCG and yellow fever are live and avoided.</li></ol>
+<ol><li><b>Correct: D (LAIV)</b> — Asplenia is not an absolute contraindication to LAIV per se, but the standard asplenia recommendation emphasises <b>inactivated</b> flu vaccine (IIV) or recombinant (RIV), and live vaccines may be suboptimal; the question asks for the EXCEPT option. The correct asplenia bundle is MenACWY, MenB, PCV→PPV23, Hib, annual <b>inactivated</b> flu. (Note: exam question — if LAIV is offered to asplenic children/adults, it can be given; the principal recommendation is inactivated. The "EXCEPT" answer here is LAIV as it is not part of the standard asplenia bundle and may be relatively less effective in older adults with asplenia).</li></ol>
+<ol><li><b>Correct: C (Rotavirus)</b> — Hard upper age limits (14 wk 6 d for 1st, 23 wk 6 d for 2nd dose of Rotarix). All other vaccines can be caught up at any age.</li></ol>
+<ol><li><b>Correct: B (HepB, DTaP/DTP, IPV, PCV, HPV, HepA, IIV)</b> — All are adsorbed to aluminium hydroxide; freezing irreversibly damages the adjuvant.</li></ol>
+<ol><li><b>Correct: B (BCG, measles/MR/MMR, varicella, yellow fever)</b> — All are heat-sensitive lyophilised products.</li></ol>
+<ol><li><b>Correct: B (Cumulative heat exposure)</b> — VVM is a time-temperature integrator; freeze detection requires the shake test.</li></ol>
+<ol><li><b>Correct: B (Freeze damage to adsorbed vaccines)</b> — Frozen adsorbed vaccine sediments quickly vs unfrozen reference.</li></ol>
+<ol><li><b>Correct: B (≥90% national, ≥80% district for DTP3, MCV2, HPV, PCV3)</b> — IA2030 strategic priority; equity focus on every-district coverage.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: C</b> — dTaP/IPV recommended 16–32 weeks to allow transplacental transfer of anti-pertussis IgG and protect the newborn. Td/IPV (low-dose) contains less pertussis antigen and is not the maternal choice. MMR/varicella are live and contraindicated. LAIV is live and contraindicated.</li></ol>
+<ol><li><b>Correct: B</b> — Rotarix 1st dose can be given from 6 weeks (UK schedule at 8 weeks); the hard upper limits are the critical point. Delaying past 14 weeks 6 d will make the child miss rotavirus entirely; advise not to delay.</li></ol>
+<ol><li><b>Correct: B</b> — Vaccinate ≥2 weeks (ideally 4–6 weeks) before elective splenectomy. PCV13/15/20, then PPV23 ≥8 wk later; MenACWY 2-dose; MenB 2-dose; Hib booster; annual flu. Continue antibiotic prophylaxis.</li></ol>
+<ol><li><b>Correct: B</b> — Shake test each adsorbed vaccine against an unfrozen reference vial. Frozen vaccines sediment in &lt;30 seconds; if positive, discard the batch. Freeze-dried vaccines (OPV, BCG, measles) are checked via VVM (and would not be damaged by the freeze, but their VVM stages should be reviewed).</li></ol>
+<ol><li><b>Correct: B</b> — In HIV, MMR is permitted if CD4 ≥200 cells/µL / ≥15%; the patient meets criteria. Also offer annual inactivated flu, COVID-19, HepB, HPV (3-dose through 26 yr), PCV+PPV23, MenACWY. Avoid BCG and yellow fever in HIV regardless of CD4.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Immunisation Schedules &amp; Programme Management</b> is a <b>Must Know</b> topic for FCPS/MRCP, integrating epidemiology, immunobiology, logistics, and public health. Mastery requires fluency in (1) routine childhood schedules (UK, WHO EPI, US, Bangladesh), (2) vaccines in special populations (pregnancy, asplenia, HIV, transplant, HCW, travel), (3) live vaccine contraindications, (4) the cold chain (temperature, freeze-sensitive vs lyophilised, VVM, shake test), (5) programme management (coverage indicators, wastage, Gavi, IA2030), and (6) AEFI surveillance with the WHO causality algorithm. The most common viva traps are MMR in HIV (CD4 threshold), rotavirus age limits, yellow fever in pregnancy, and confusion of VVM (heat) with shake test (freeze). <b>Key takeaway:</b> "DTP3 is the canary of the immunisation system; reach 90% nationally and 80% in every district (IA2030), keep vaccines at 2–8°C without freezing the adsorbed ones, and report serious AEFIs within 24 hours."</p>
+<p><b>Exam focus:</b> Schedule tables, pregnancy vaccine list, asplenia bundle, live vaccine C/I list, cold chain steps, AEFI categories and reporting, coverage targets. <b>Clinical relevance:</b> Every clinical encounter should consider vaccination status — routine, catch-up, special groups, and travel. Programme-level thinking is essential for trainees entering public health, ID, paediatrics, or GP.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | Status: complete</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Immunisation Schedules Programme Management · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

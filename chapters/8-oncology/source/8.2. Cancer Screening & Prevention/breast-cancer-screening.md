@@ -1,0 +1,388 @@
+# Breast Cancer Screening
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **UK NHS Breast Screening Programme (NHS BSP)**: **Age 50-70, 3-yearly Mammogram**; **Extension to 47-73**; **Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%, NPV >99.9%**; **Mortality Reduction 20-25%**; **Overdiagnosis 10-20%**; **Age Extension 47-73**; **Tomosynthesis (3D Mammography) reduces recall, increases detection**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Describe **UK NHS Breast Screening Programme** (NHS BSP) parameters
+- [ ] Interpret **mammography performance metrics** (Sensitivity, Specificity, PPV, NPV)
+- [ ] Explain **benefits vs harms**: Mortality reduction vs Overdiagnosis
+- [ ] Apply **age extension** and **tomosynthesis** developments
+- [ ] Counsel patients on **screening benefits vs harms**
+
+---
+
+## 2. UK NHS Breast Screening Programme (NHS BSP)
+
+| Parameter | Detail |
+|-----------|--------|
+| **Age Range** | **50-70 years** (Extension to **47-73** in progress) |
+| **Interval** | **Every 3 years** |
+| **Test** | **Digital Mammography** (2-view: CC + MLO) |
+| **Coverage** | **~75%** of eligible women |
+| **Recall Rate** | **~4-5%** |
+| **Cancer Detection Rate** | **~8-9 per 1000 screened** |
+| **PPV** | **~15-20%** (Of recalled) |
+| **Mortality Reduction** | **~20-25%** (RCTs + Observational) |
+| **Overdiagnosis** | **~10-20%** of screen-detected cancers |
+| **Age Extension** | **47-49** (Trial), **71-73** (Self-referral) |
+
+---
+
+## 3. Mammography Technical Aspects
+
+| View | Description |
+|------|-------------|
+| **CC (Cranio-Caudal)** | **Superior-inferior compression**, Visualises medial/lateral breast |
+| **MLO (Medio-Lateral Oblique)** | **Oblique compression**, **Best for axillary tail/upper outer quadrant** |
+
+### Tomosynthesis (3D Mammography)
+| Feature | Detail |
+|---------|--------|
+| **Principle** | **Multiple low-dose projections → Reconstructed slices** |
+| **Advantage** | **Reduces overlap**, **Improves specificity**, **Reduces recall rate** |
+| **Evidence** | **STORM, TOMMY trials**: **Higher cancer detection, Lower recall** |
+
+---
+
+## 4. Performance Metrics
+
+| Metric | Value | Interpretation |
+|--------|-------|----------------|
+| **Sensitivity** | **85-90%** | **Rule Out** (SnNout) |
+| **Specificity** | **95-97%** | **Rule In** (SpPin) |
+| **PPV** | **15-20%** | Of recalled, cancer found |
+| **NPV** | **>99.9%** | Of not recalled, cancer unlikely |
+| **Overdiagnosis** | **10-20%** | Indolent cancers never causing harm |
+
+---
+
+## 5. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **NHS BSP** | **50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis** |
+| **Mammogram Performance** | **Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%** |
+| **Age Extension** | **47-49 (Trial), 71-73 (Self-referral)** |
+| **Tomosynthesis** | **3D Mammography, ↓Recall, ↑Detection** |
+| **Biases** | **Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)** |
+| **Test Metrics** | **Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)** |
+
+---
+
+## 6. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **UK Breast Screening — Age, Interval, Mortality Reduction?** | **50-70 years, Every 3 years, ~20-25% Mortality Reduction**. |
+| **Mammogram Sensitivity/Specificity/PPV?** | **Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%**. |
+| **Overdiagnosis — Definition, Rate?** | **Detection of indolent cancers never causing harm**; **10-20% of screen-detected**. |
+| **Lead Time vs Length Time Bias?** | **Lead Time: Earlier Dx → Survival Time Artificially ↑**; **Length Time: Slow-Growing Tumours More Likely Screen-Detected**. |
+| **Tomosynthesis vs 2D Mammo?** | **3D: Multiple projections → Slices → Less overlap, ↑Specificity, ↓Recall** |
+
+---
+
+## 7. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **NHS BSP** | 50-70, 3yrly Mammo, 20-25% Mortality ↓, 10-20% Overdiagnosis |
+| **Mammogram** | Sens 85-90%, Spec 95-97%, PPV 15-20% |
+| **Age Extension** | 47-49 (Trial), 71-73 (Self-referral) |
+| **Tomosynthesis** | 3D Mammo, ↓Recall, ↑Detection |
+| **Biases** | Lead Time (Artificial Survival ↑), Length Time (Slow Tumours), Overdiagnosis (Indolent) |
+| **Test Metrics** | Sens (Rule Out), Spec (Rule In), PPV (Prob Disease if +ve) |
+
+---
+
+## 8. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 9. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| NHS BSP Parameters | | |
+| Mammogram Performance | | |
+| Age Extension | | |
+| Tomosynthesis | | |
+| Bias Definitions | | |
+| Test Metrics | | |
+
+---
+
+## 10. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Population Screening Programmes]], [[Wilson & Jungner Criteria]], [[Mammography]], [[Breast Cancer Surveillance]], [[Overdiagnosis]], [[Lead Time Bias]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 11. MCQs (10)
+
+
+**1.** Regarding Breast Cancer Screening (NHS BSP), which statement is correct?
+   A. **50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis**
+   B. **50-70, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis**
+
+
+**2.** Regarding Breast Cancer Screening (Mammogram Performance), which statement is correct?
+   A. **Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%**
+   B. **Sensitivity - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%**
+
+
+**3.** Regarding Breast Cancer Screening (Age Extension), which statement is correct?
+   A. **47-49 (Trial), 71-73 (Self-referral)**
+   B. **47-49 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **47-49 (Trial), 71-73 (Self-referral)**
+
+
+**4.** Regarding Breast Cancer Screening (Tomosynthesis), which statement is correct?
+   A. **3D Mammography, ↓Recall, ↑Detection**
+   B. **3D - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **3D Mammography, ↓Recall, ↑Detection**
+
+
+**5.** Regarding Breast Cancer Screening (Biases), which statement is correct?
+   A. **Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Ca
+   B. **Lead - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)**
+
+
+**6.** Regarding Breast Cancer Screening (Test Metrics), which statement is correct?
+   A. **Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)**
+   B. **Sensitivity - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)**
+
+
+**7.** Regarding Breast Cancer Screening (Age Range), which statement is correct?
+   - A. Age Range: 50-70 years (Extension to 47-73 in progress)
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Age Range: 50-70 years (Extension to 47-73 in progress)
+
+
+**8.** Regarding Breast Cancer Screening (Test), which statement is correct?
+   - A. Test: Digital Mammography (2-view: CC + MLO)
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Test: Digital Mammography (2-view: CC + MLO)
+
+
+**9.** Regarding Breast Cancer Screening (Coverage), which statement is correct?
+   - A. Coverage: ~75% of eligible women
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Coverage: ~75% of eligible women
+
+
+**10.** Regarding Breast Cancer Screening (Cancer Detection Rate), which statement is correct?
+   - A. Cancer Detection Rate: ~8-9 per 1000 screened
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Cancer Detection Rate: ~8-9 per 1000 screened
+
+
+## 12. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis**
+   - B. **50-70, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%**
+   - B. **Sensitivity (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **47-49 (Trial), 71-73 (Self-referral)**
+   - B. **47-49 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **47-49 (Trial), 71-73 (Self-referral)**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **3D Mammography, ↓Recall, ↑Detection**
+   - B. **3D (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **3D Mammography, ↓Recall, ↑Detection**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Ca
+   - B. **Lead (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)**
+   - B. **Sensitivity (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)**
+
+
+**7.** A clinician encounters a patient with this presentation. Best approach:
+   - A. Age Range: 50-70 years (Extension to 47-73 in progress)
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Age Range: 50-70 years (Extension to 47-73 in progress)
+
+
+**8.** On further evaluation, the finding is confirmed. Most appropriate next step:
+   - A. Test: Digital Mammography (2-view: CC + MLO)
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Test: Digital Mammography (2-view: CC + MLO)
+
+
+**9.** The patient asks about management options. Best evidence-based response:
+   - A. Coverage: ~75% of eligible women
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Coverage: ~75% of eligible women
+
+
+**10.** Treatment is initiated. Most important monitoring parameter:
+   - A. Cancer Detection Rate: ~8-9 per 1000 screened
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Cancer Detection Rate: ~8-9 per 1000 screened
+
+
+## 13. Flashcards
+
+**Q1:** NHS BSP?
+**A1:** 50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis
+
+**Q2:** Mammogram Performance?
+**A2:** Sensitivity 85-90%, Specificity 95-97%, PPV 15-20%
+
+**Q3:** Age Extension?
+**A3:** 47-49 (Trial), 71-73 (Self-referral)
+
+**Q4:** Tomosynthesis?
+**A4:** 3D Mammography, ↓Recall, ↑Detection
+
+**Q5:** Biases?
+**A5:** Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)
+
+**Q6:** Test Metrics?
+**A6:** Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)
+
+
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 7 | A | Age Range | Age Range: 50-70 years (Extension to 47-73 in progress) |
+| 8 | A | Test | Test: Digital Mammography (2-view: CC + MLO) |
+| 9 | A | Coverage | Coverage: ~75% of eligible women |
+| 10 | A | Cancer Detection Rate | Cancer Detection Rate: ~8-9 per 1000 screened |
+| 11 | A | PPV | PPV: ~15-20% (Of recalled) |
+| 12 | A | Mortality Reduction | Mortality Reduction: ~20-25% (RCTs + Observational) |
+| 13 | A | Overdiagnosis | Overdiagnosis: ~10-20% of screen-detected cancers |
+| 14 | A | Age Extension | Age Extension: 47-49 (Trial), 71-73 (Self-referral) |
+| 15 | A | CC (Cranio-Caudal) | CC (Cranio-Caudal): Superior-inferior compression, Visualises medial/lateral breast |
+| 16 | A | MLO (Medio-Lateral Oblique) | MLO (Medio-Lateral Oblique): Oblique compression, Best for axillary tail/upper outer quadrant |
+| 17 | A | Principle | Principle: Multiple low-dose projections → Reconstructed slices |
+| 18 | A | Advantage | Advantage: Reduces overlap, Improves specificity, Reduces recall rate |
+| 19 | A | Evidence | Evidence: STORM, TOMMY trials: Higher cancer detection, Lower recall |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 7 | A | Age Range | Age Range: 50-70 years (Extension to 47-73 in progress) |
+| 8 | A | Test | Test: Digital Mammography (2-view: CC + MLO) |
+| 9 | A | Coverage | Coverage: ~75% of eligible women |
+| 10 | A | Cancer Detection Rate | Cancer Detection Rate: ~8-9 per 1000 screened |
+| 11 | A | PPV | PPV: ~15-20% (Of recalled) |
+| 12 | A | Mortality Reduction | Mortality Reduction: ~20-25% (RCTs + Observational) |
+| 13 | A | Overdiagnosis | Overdiagnosis: ~10-20% of screen-detected cancers |
+| 14 | A | Age Extension | Age Extension: 47-49 (Trial), 71-73 (Self-referral) |
+| 15 | A | CC (Cranio-Caudal) | CC (Cranio-Caudal): Superior-inferior compression, Visualises medial/lateral breast |
+| 16 | A | MLO (Medio-Lateral Oblique) | MLO (Medio-Lateral Oblique): Oblique compression, Best for axillary tail/upper outer quadrant |
+| 17 | A | Principle | Principle: Multiple low-dose projections → Reconstructed slices |
+| 18 | A | Advantage | Advantage: Reduces overlap, Improves specificity, Reduces recall rate |
+| 19 | A | Evidence | Evidence: STORM, TOMMY trials: Higher cancer detection, Lower recall |## Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | NHS BSP | 50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis |
+| 2 | A | Mammogram Performance | Sensitivity 85-90%, Specificity 95-97%, PPV 15-20% |
+| 3 | A | Age Extension | 47-49 (Trial), 71-73 (Self-referral) |
+| 4 | A | Tomosynthesis | 3D Mammography, ↓Recall, ↑Detection |
+| 5 | A | Biases | Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers) |
+| 6 | A | Test Metrics | Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve) |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | NHS BSP | 50-70, 3yrly Mammogram, 20-25% Mortality Reduction, 10-20% Overdiagnosis |
+| 2 | A | Mammogram Performance | Sensitivity 85-90%, Specificity 95-97%, PPV 15-20% |
+| 3 | A | Age Extension | 47-49 (Trial), 71-73 (Self-referral) |
+| 4 | A | Tomosynthesis | 3D Mammography, ↓Recall, ↑Detection |
+| 5 | A | Biases | Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers) |
+| 6 | A | Test Metrics | Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve) |
+
+
+**Q7:** Age Range?
+**A7:** Age Range: 50-70 years (Extension to 47-73 in progress)
+
+**Q8:** Test?
+**A8:** Test: Digital Mammography (2-view: CC + MLO)
+## 14. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Cancer Screening & Prevention|Cancer Screening & Prevention]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

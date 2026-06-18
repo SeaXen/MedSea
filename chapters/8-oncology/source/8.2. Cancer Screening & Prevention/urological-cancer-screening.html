@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Urological Cancer Screening — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.2. CANCER SCREENING & PREVENTION</span>
+      <div class="h1">Urological Cancer Screening</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Explain why <b>no population screening</b> exists for urological cancers</li><li>[ ] Describe <b>prostate cancer early detection</b> via <b>PSA Informed Choice</b></li><li>[ ] Teach <b>testicular self-examination</b> technique and indications</li><li>[ ] Identify <b>high-risk groups</b> for bladder and renal cancer surveillance</li><li>[ ] Counsel patients on <b>screening vs early detection</b> for urological cancers</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Prostate Cancer — PSA Informed Choice</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Status**</td><td>**Informed Choice Programme** (Not Population Screening)</td></tr><tr><td>**Eligibility**</td><td>**Men >50** can request PSA after informed discussion</td></tr><tr><td>**Test**</td><td>**Serum PSA** (Age-specific cutoffs)</td></tr><tr><td>**Age-Specific Cutoffs**</td><td><50: 2.5, 50-59: 3.0, 60-69: 4.0, 70-79: 5.0, ≥80: 6.5</td></tr><tr><td>**Referral**</td><td>**PSA > Age Cutoff → Urgent Urology Referral** (2-week wait)</td></tr><tr><td>**MRI Pathway**</td><td>**mpMRI (PI-RADS) Before Biopsy** (PSA > Age Cutoff)</td></tr></table>
+<div class="sub-h">Key Trial Evidence</div>
+<table class="ctable"><tr><th>Trial</th><th>Result</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**ERSPC**</td><td>**20% Mortality Reduction** (13yr), NNS 570, NNT 18, Overdiagnosis ~50%</td></tr><tr><td>**PLCO**</td><td>**No Mortality Benefit** (High Contamination 40-50%)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>PSA = Informed Choice Programme</b>, <b>Not Population Screening</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Testicular Cancer — Self-Examination</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Population Programme**</td><td>**None** (No population screening)</td></tr><tr><td>**Self-Examination**</td><td>**Monthly, After Bath/Shower** (Warmth relaxes scrotum)</td></tr><tr><td>**Technique**</td><td>**Roll each testis between thumb and fingers**; **Feel for lump, swelling, hardness, change in size/shape**</td></tr><tr><td>**Target Population**</td><td>**Males 15-45** (Peak incidence)</td></tr><tr><td>**High-Risk Groups**</td><td>**Cryptorchidism**, **Prior Testicular Cancer**, **Family History**, **Klinefelter Syndrome**</td></tr><tr><td>**Red Flags**</td><td>**Painless Lump**, **Heaviness**, **Dull Ache**, **Gynaecomastia**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Bladder Cancer — High-Risk Surveillance</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Surveillance</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Occupational Exposure** (Aromatic amines, dye, rubber, leather, paint)</td><td>**Annual Urinalysis + Cytology** + **Cystoscopy** (Some guidelines)</td></tr><tr><td>**Prior Chemotherapy** (Cyclophosphamide, Ifosfamide)</td><td>**Annual Cystoscopy + Urinalysis**</td></tr><tr><td>**Prior Pelvic RT**</td><td>**Annual Cystoscopy**</td></tr><tr><td>**Schistosomiasis**</td><td>**Annual Cystoscopy + Urinalysis**</td></tr><tr><td>**Prior Bladder Cancer**</td><td>**Cystoscopy q3mo ×2yr, q6mo ×2yr, then Annually**</td></tr></table>
+<div class="callout"><b>No Population Screening</b> (Low incidence, no proven benefit for asymptomatic)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Renal Cancer — High-Risk Surveillance</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Surveillance</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**VHL Syndrome**</td><td>**Annual MRI Abdomen (Renal MRI), Annual CT Chest**</td></tr><tr><td>**Dialysis/ESKD**</td><td>**Annual Renal US** (Acquired Cystic Disease)</td></tr><tr><td>**History of RCC**</td><td>**CT Chest/Abd/Pelvis q6-12mo ×5yr**</td></tr><tr><td>**Tuberous Sclerosis (TSC)**</td><td>**Annual Renal MRI** (AMLs, RCC)</td></tr></table>
+<div class="callout"><b>No Population Screening</b> (Low incidence, no proven benefit)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Testicular Cancer — Self-Examination Technique</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Monthly Self-Exam] --&gt; B[After Warm Bath/Shower] B --&gt; C[Roll Each Testicle Between Thumb &amp; Fingers] C --&gt; D[Feel For: Lump, Swelling, Hardness, Size/Shape Change] D --&gt; E[Check Epididymis (Soft, Tubular, Posterior)] E --&gt; F[Red Flags: Painless Lump, Heaviness, Dull Ache, Gynaecomastia] F --&gt; G[If Any Change → Urgent GP/Urology Referral] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cancer</th><th>Screening Programme</th><th>High-Risk Surveillance</th></tr><tr><td>--------</td><td>---------------------</td><td>------------------------</td></tr><tr><td>**Prostate**</td><td>**PSA Informed Choice** (>50)</td><td>**High-Risk (FH, Black): Earlier PSA**</td></tr><tr><td>**Testicular**</td><td>**Self-Exam Monthly** (No Population Programme)</td><td>**Cryptorchidism, FH, Prior Tx: Annual US**</td></tr><tr><td>**Bladder**</td><td>**No Screening**</td><td>**Occupational/Chemo/RT: Annual Cystoscopy + Urinalysis**</td></tr><tr><td>**Renal**</td><td>**No Screening**</td><td>**VHL, Dialysis, TSC: Annual Imaging**</td></tr><tr><td>**Testicular Self-Exam**</td><td>**Monthly, Post-Bath, Roll Testicle, Feel for Lump**</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Prostate Screening — Programme or Informed Choice?**</td><td>**Informed Choice Programme** (Men >50 Can Request, No Automatic Invitation).</td></tr><tr><td>**Testicular Self-Exam — Technique?**</td><td>**Monthly, After Bath/Shower, Roll Testicle Between Thumb/Fingers**, Feel for Lump/Size Change.</td></tr><tr><td>**Bladder Cancer Screening — High-Risk Groups?**</td><td>**Occupational (Aromatic Amines), Prior Cyclophosphamide, Pelvic RT, Schistosomiasis** → Annual Cystoscopy + Urinalysis.</td></tr><tr><td>**Renal Cancer Screening — High-Risk?**</td><td>**VHL, Dialysis (Cystic Disease), Prior RCC, TSC** → Annual Imaging (MRI/US).</td></tr><tr><td>**Testicular Self-Exam — Red Flags?**</td><td>**Painless Lump, Heaviness, Dull Ache, Gynaecomastia, Size/Shape Change**.</td></tr><tr><td>**PSA vs Testicular Self-Exam — Programme Difference?**</td><td>**PSA: Informed Choice (>50 Can Request)**; **Testicular: Self-Exam Only**, No Population Programme.</td></tr><tr><td>**Testicular Cancer — Peak Age, Risk Factors?**</td><td>**15-45yr**, Cryptorchidism, FH, Prior Testicular Cancer, Klinefelter.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**PSA vs Testicular — Programme Difference**</td><td>**PSA: Informed Choice (>50 Can Request)**; **Testicular: Self-Exam Only**, No Population Programme</td></tr><tr><td>**Testicular Self-Exam — Frequency**</td><td>**Monthly**, **After Bath/Shower** (Scrotum Relaxed)</td></tr><tr><td>**Prostate vs Testicular Screening**</td><td>**Prostate: PSA Informed Choice (>50)**; **Testicular: Self-Exam Teaching**</td></tr><tr><td>**Bladder/Renal — No Population Screening**</td><td>**Low Incidence, No Proven Mortality Benefit**, High-Risk Surveillance Only</td></tr></table>
+<p><b>Mnemonic: URO-SCREEN</b></p>
+<ul><li><b>U</b>rological Cancers: <b>No Population Programmes</b></li><li><b>R</b>enal: <b>VHL/Dialysis/TSC → Annual Imaging</b></li><li><b>O</b>ccupational Bladder: <b>Annual Cystoscopy + Urinalysis</b></li><li><b>S</b>elf-Exam Testicular: <b>Monthly, Post-Bath, Roll Testicle</b></li><li><b>P</b>rostate: <b>Informed Choice &gt;50</b> (PSA Age Cutoffs)</li><li><b>C</b>utoffs PSA: <b>&lt;50: 2.5, 50-59: 3.0, 60-69: 4.0, 70-79: 5.0, ≥80: 6.5</b></li><li><b>R</b>isk Factors: <b>Testicular: Cryptorchidism, FH, Prior Tx, Klinefelter</b></li><li><b>E</b>arly Detection: <b>Testicular Self-Exam Monthly</b></li><li><b>E</b>vidence: <b>No Mortality Benefit for Population Screening</b></li><li><b>N</b>o Population Programme: <b>Prostate, Testicular, Bladder, Renal</b></li><li><b>S</b>creening vs Detection: <b>Screening = Population Programme; Detection = High-Risk/Touch</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cancer</th><th>Screening</th><th>High-Risk Surveillance</th></tr><tr><td>--------</td><td>-----------</td><td>------------------------</td></tr><tr><td>**Prostate**</td><td>**PSA Informed Choice (>50)**</td><td>**FH, Black: Earlier PSA**</td></tr><tr><td>**Testicular**</td><td>**Self-Exam Monthly** (No Programme)</td><td>**Cryptorchidism, FH, Prior Tx**</td></tr><tr><td>**Bladder**</td><td>**No Screening**</td><td>**Occupational/Chemo/RT: Annual Cystoscopy**</td></tr><tr><td>**Renal**</td><td>**No Screening**</td><td>**VHL, Dialysis, TSC: Annual Imaging**</td></tr><tr><td>**Testicular Self-Exam**</td><td>**Monthly, Post-Bath, Roll Testicle**</td><td>**Red Flags: Lump, Heaviness, Gynaecomastia**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Prostate PSA Programme</td><td></td><td></td></tr><tr><td>Testicular Self-Exam Technique</td><td></td><td></td></tr><tr><td>Bladder High-Risk Surveillance</td><td></td><td></td></tr><tr><td>Renal High-Risk Surveillance</td><td></td><td></td></tr><tr><td>PSA vs Testicular Programme Difference</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[PSA Testing]], [[Prostate Cancer]], [[Testicular Cancer]], [[Bladder Cancer]], [[Renal Cell Carcinoma]], [[Testicular Self-Exam]], [[FIT]], [[Colorectal Cancer Screening]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Urological Cancer Screening (Prostate), which statement is correct? A. <b>PSA Informed Choice</b> (&gt;50) B. **PSA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PSA Informed Choice</b> (&gt;50)</li></ul>
+<p><b>2.</b> Regarding Urological Cancer Screening (Testicular), which statement is correct? A. <b>Self-Exam Monthly</b> (No Population Programme) B. **Self-Exam - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Self-Exam Monthly</b> (No Population Programme)</li></ul>
+<p><b>3.</b> Regarding Urological Cancer Screening (Bladder), which statement is correct? A. <b>No Screening</b> B. **No - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>No Screening</b></li></ul>
+<p><b>4.</b> Regarding Urological Cancer Screening (Renal), which statement is correct? A. <b>No Screening</b> B. **No - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>No Screening</b></li></ul>
+<p><b>5.</b> Regarding Urological Cancer Screening (Testicular Self-Exam), which statement is correct? A. <b>Monthly, Post-Bath, Roll Testicle, Feel for Lump</b> B. **Monthly, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Monthly, Post-Bath, Roll Testicle, Feel for Lump</b></li></ul>
+<p><b>6.</b> Regarding Urological Cancer Screening (FCPS/MRCP High Yield - Urologi), which statement is correct?</p>
+<ul><li>A. FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Ren</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular</li></ul>
+<p><b>7.</b> Regarding Urological Cancer Screening (Prostate), which statement is correct?</p>
+<ul><li>A. Prostate: PSA Informed Choice</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Prostate: PSA Informed Choice</li></ul>
+<p><b>8.</b> Regarding Urological Cancer Screening (Testicular), which statement is correct?</p>
+<ul><li>A. Testicular: Self-Exam (No Population Programme)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Testicular: Self-Exam (No Population Programme)</li></ul>
+<p><b>9.</b> Regarding Urological Cancer Screening (Bladder), which statement is correct?</p>
+<ul><li>A. Bladder: No Screening (High-Risk: Occupational, Chemotherapy)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Bladder: No Screening (High-Risk: Occupational, Chemotherapy)</li></ul>
+<p><b>10.</b> Regarding Urological Cancer Screening (Renal), which statement is correct?</p>
+<ul><li>A. Renal: No Screening (High-Risk: VHL, Dialysis)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Renal: No Screening (High-Risk: VHL, Dialysis)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>PSA Informed Choice</b> (&gt;50)</li><li>B. **PSA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>PSA Informed Choice</b> (&gt;50)</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Self-Exam Monthly</b> (No Population Programme)</li><li>B. **Self-Exam (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Self-Exam Monthly</b> (No Population Programme)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>No Screening</b></li><li>B. **No (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>No Screening</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>No Screening</b></li><li>B. **No (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>No Screening</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Monthly, Post-Bath, Roll Testicle, Feel for Lump</b></li><li>B. **Monthly, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Monthly, Post-Bath, Roll Testicle, Feel for Lump</b></li></ul>
+<p><b>6.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Ren</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular</li></ul>
+<p><b>7.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. Prostate: PSA Informed Choice</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Prostate: PSA Informed Choice</li></ul>
+<p><b>8.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. Testicular: Self-Exam (No Population Programme)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Testicular: Self-Exam (No Population Programme)</li></ul>
+<p><b>9.</b> Treatment is initiated. Most important monitoring parameter:</p>
+<ul><li>A. Bladder: No Screening (High-Risk: Occupational, Chemotherapy)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Bladder: No Screening (High-Risk: Occupational, Chemotherapy)</li></ul>
+<p><b>10.</b> Follow-up assessment reveals the following. Best next step:</p>
+<ul><li>A. Renal: No Screening (High-Risk: VHL, Dialysis)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Renal: No Screening (High-Risk: VHL, Dialysis)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Prostate? <b>A1:</b> PSA Informed Choice (&gt;50)</p>
+<p><b>Q2:</b> Testicular? <b>A2:</b> Self-Exam Monthly (No Population Programme)</p>
+<p><b>Q3:</b> Bladder? <b>A3:</b> No Screening</p>
+<p><b>Q4:</b> Renal? <b>A4:</b> No Screening</p>
+<p><b>Q5:</b> Testicular Self-Exam? <b>A5:</b> Monthly, Post-Bath, Roll Testicle, Feel for Lump</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>FCPS/MRCP High Yield - Urological Cancer Screening</td><td>FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular</td></tr><tr><td>7</td><td>A</td><td>Prostate</td><td>Prostate: PSA Informed Choice</td></tr><tr><td>8</td><td>A</td><td>Testicular</td><td>Testicular: Self-Exam (No Population Programme)</td></tr><tr><td>9</td><td>A</td><td>Bladder</td><td>Bladder: No Screening (High-Risk: Occupational, Chemotherapy)</td></tr><tr><td>10</td><td>A</td><td>Renal</td><td>Renal: No Screening (High-Risk: VHL, Dialysis)</td></tr><tr><td>11</td><td>A</td><td>Testicular Self-Exam Teaching</td><td>Testicular Self-Exam Teaching</td></tr><tr><td>12</td><td>A</td><td>Status</td><td>Status: Informed Choice Programme (Not Population Screening)</td></tr><tr><td>13</td><td>A</td><td>Eligibility</td><td>Eligibility: Men >50 can request PSA after informed discussion</td></tr><tr><td>14</td><td>A</td><td>Test</td><td>Test: Serum PSA (Age-specific cutoffs)</td></tr><tr><td>15</td><td>A</td><td>Age-Specific Cutoffs</td><td>Age-Specific Cutoffs: <50: 2.5, 50-59: 3.0, 60-69: 4.0, 70-79: 5.0, ≥80: 6.5</td></tr><tr><td>16</td><td>A</td><td>Referral</td><td>Referral: PSA > Age Cutoff → Urgent Urology Referral (2-week wait)</td></tr><tr><td>17</td><td>A</td><td>MRI Pathway</td><td>MRI Pathway: mpMRI (PI-RADS) Before Biopsy (PSA > Age Cutoff)</td></tr><tr><td>18</td><td>A</td><td>ERSPC</td><td>ERSPC: 20% Mortality Reduction (13yr), NNS 570, NNT 18, Overdiagnosis ~50%</td></tr><tr><td>19</td><td>A</td><td>PLCO</td><td>PLCO: No Mortality Benefit (High Contamination 40-50%)</td></tr><tr><td>20</td><td>A</td><td>Population Programme</td><td>Population Programme: None (No population screening)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>FCPS/MRCP High Yield - Urological Cancer Screening</td><td>FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular</td></tr><tr><td>7</td><td>A</td><td>Prostate</td><td>Prostate: PSA Informed Choice</td></tr><tr><td>8</td><td>A</td><td>Testicular</td><td>Testicular: Self-Exam (No Population Programme)</td></tr><tr><td>9</td><td>A</td><td>Bladder</td><td>Bladder: No Screening (High-Risk: Occupational, Chemotherapy)</td></tr><tr><td>10</td><td>A</td><td>Renal</td><td>Renal: No Screening (High-Risk: VHL, Dialysis)</td></tr><tr><td>11</td><td>A</td><td>Testicular Self-Exam Teaching</td><td>Testicular Self-Exam Teaching</td></tr><tr><td>12</td><td>A</td><td>Status</td><td>Status: Informed Choice Programme (Not Population Screening)</td></tr><tr><td>13</td><td>A</td><td>Eligibility</td><td>Eligibility: Men >50 can request PSA after informed discussion</td></tr><tr><td>14</td><td>A</td><td>Test</td><td>Test: Serum PSA (Age-specific cutoffs)</td></tr><tr><td>15</td><td>A</td><td>Age-Specific Cutoffs</td><td>Age-Specific Cutoffs: <50: 2.5, 50-59: 3.0, 60-69: 4.0, 70-79: 5.0, ≥80: 6.5</td></tr><tr><td>16</td><td>A</td><td>Referral</td><td>Referral: PSA > Age Cutoff → Urgent Urology Referral (2-week wait)</td></tr><tr><td>17</td><td>A</td><td>MRI Pathway</td><td>MRI Pathway: mpMRI (PI-RADS) Before Biopsy (PSA > Age Cutoff)</td></tr><tr><td>18</td><td>A</td><td>ERSPC</td><td>ERSPC: 20% Mortality Reduction (13yr), NNS 570, NNT 18, Overdiagnosis ~50%</td></tr><tr><td>19</td><td>A</td><td>PLCO</td><td>PLCO: No Mortality Benefit (High Contamination 40-50%)</td></tr><tr><td>20</td><td>A</td><td>Population Programme</td><td>Population Programme: None (No population screening)</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Prostate</td><td>PSA Informed Choice (>50)</td></tr><tr><td>2</td><td>A</td><td>Testicular</td><td>Self-Exam Monthly (No Population Programme)</td></tr><tr><td>3</td><td>A</td><td>Bladder</td><td>No Screening</td></tr><tr><td>4</td><td>A</td><td>Renal</td><td>No Screening</td></tr><tr><td>5</td><td>A</td><td>Testicular Self-Exam</td><td>Monthly, Post-Bath, Roll Testicle, Feel for Lump</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Prostate</td><td>PSA Informed Choice (>50)</td></tr><tr><td>2</td><td>A</td><td>Testicular</td><td>Self-Exam Monthly (No Population Programme)</td></tr><tr><td>3</td><td>A</td><td>Bladder</td><td>No Screening</td></tr><tr><td>4</td><td>A</td><td>Renal</td><td>No Screening</td></tr><tr><td>5</td><td>A</td><td>Testicular Self-Exam</td><td>Monthly, Post-Bath, Roll Testicle, Feel for Lump</td></tr></table>
+<p><b>Q6:</b> FCPS/MRCP High Yield - Urological Cancer Screening? <b>A6:</b> FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular</p>
+<p><b>Q7:</b> Prostate? <b>A7:</b> Prostate: PSA Informed Choice</p>
+<p><b>Q8:</b> Testicular? <b>A8:</b> Testicular: Self-Exam (No Population Programme)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer Screening &amp; Prevention|Cancer Screening &amp; Prevention]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Urological Cancer Screening · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

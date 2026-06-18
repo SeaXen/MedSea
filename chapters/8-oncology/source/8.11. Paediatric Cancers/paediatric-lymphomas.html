@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paediatric Lymphomas — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.11. PAEDIATRIC CANCERS</span>
+      <div class="h1">Paediatric Lymphomas</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Distinguish <b>HL vs NHL</b> in Children (Epidemiology, Biology, Treatment)</li><li>[ ] Apply <b>Ann Arbor Staging (Cotswolds)</b> for HL/NHL</li><li>[ ] Risk-Stratify <b>HL</b> using <b>OEPA/German Criteria</b> (Early Favourable vs Advanced)</li><li>[ ] Deliver <b>OEPA Protocol</b> (2x OEPA → PET Adapted RT) for Early Favourable HL</li><li>[ ] Deliver <b>OEPA/OECO</b> for <b>Advanced HL</b> (PET Adapted)</li><li>[ ] Recognise <b>Burkitt Lymphoma (BL)</b>: <b>t(8;14) MYC-IGH</b>, <b>BFM/COG CYVE/COPADM</b></li><li>[ ] Manage <b>DLBCL</b> (R-CHOP/R-EPOCH) and <b>PMBCL</b> (R-CHOP + RT)</li><li>[ ] Identify <b>ALCL</b>: <b>ALK+ (t(2;5) NPM-ALK)</b> vs <b>ALK-</b>; <b>Vincristine/Pred → VPA</b></li><li>[ ] Recognise <b>NLPHL</b> (LP Cells, CD20+, CD15-, CD30-) vs cHL</li><li>[ ] Differentiate <b>Kikuchi Disease</b> (Necrotising Lymphadenitis) from HL</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Hodgkin Lymphoma (HL)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epidemiology &amp; Classification</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>**~15-20% Childhood Cancer**; **Peak 15-19yr** (Adolescent); **Rare <5yr**</td></tr><tr><td>**Male:Female**</td><td>**1:1 (Adolescent)**; **M>F <10yr**</td></tr><tr><td>**WHO Classification**</td><td>**cHL (95%)**: **NS (70%), MC (20-25%), LD (5%), LR (1%)**; **NLPHL (5%)**</td></tr><tr><td>**RS Cells**</td><td>**cHL: CD30+, CD15+, PAX5+, CD20-/+ (Weak), ALK-, EBV+ (40%)**</td></tr><tr><td>**LP Cells**</td><td>**NLPHL: CD20+, CD79a+, BCL6+, CD15-, CD30-, EMA+, EBV-**</td></tr></table>
+<div class="sub-h">Ann Arbor Staging (Cotswolds Modification)</div>
+<table class="ctable"><tr><th>Stage</th><th>Definition</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**I**</td><td>Single Lymph Node Region (I) or Single Extralymphatic Site (IE)</td></tr><tr><td>**II**</td><td>≥2 Lymph Node Regions **Same Side of Diaphragm** (II) or Local Extralymphatic Extension (IIE)</td></tr><tr><td>**III**</td><td>Lymph Node Regions **Both Sides of Diaphragm** (III) ± Splenic (IIIS) ± Extralymphatic (IIIE)</td></tr><tr><td>**IV**</td><td>**Diffuse Extralymphatic Involvement** (Liver, Bone Marrow, Lung, CNS)</td></tr></table>
+<p><b>Bulky Disease</b>: <b>Mediastinal Mass Ratio &gt;0.33</b> (Max Mediastinal Width / Thoracic Width) OR <b>Node ≥6cm</b> (cHL) / <b>≥5cm</b> (NHL)</p>
+<p><b>B Symptoms</b>: <b>Fever &gt;38°C, Drenching Night Sweats, Weight Loss &gt;10% 6mo</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Risk Stratification & Treatment (OEPA / German HL Protocols)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Early Stage (I-II) — Favourable vs Unfavourable</div>
+<table class="ctable"><tr><th>Risk Group</th><th>Criteria (OEPA)</th><th>Treatment</th></tr><tr><td>------------</td><td>-----------------</td><td>-----------</td></tr><tr><td>**Early Favourable**</td><td>**Stage IA-IIA, No B Symptoms, No Bulky, ESR<50**</td><td>**2x OEPA → PET (Deauville) → RT 19.8Gy ONLY if PET+ (Deauville 4-5)**</td></tr><tr><td>**Early Unfavourable**</td><td>**Stage I-II with B Symptoms OR Bulky OR ESR≥50**</td><td>**4x OEPA → PET → RT 30Gy if PET+**</td></tr></table>
+<p><b>OEPA Regimen (1 Cycle = 28 Days):</b></p>
+<ul><li><b>Vincristine 1.5mg/m² (Max 2mg) d1, 8, 15</b></li><li><b>Etoposide 150mg/m² IV d1-3</b></li><li><b>Prednisone 60mg/m² PO d1-14</b></li><li><b>Doxorubicin 30mg/m² IV d1, 15</b></li></ul>
+<div class="sub-h">Advanced Stage (III-IV)</div>
+<table class="ctable"><tr><th>Risk Group</th><th>Treatment</th></tr><tr><td>------------</td><td>-----------</td></tr><tr><td>**Advanced**</td><td>**OEPA (2 cycles) → OECO (2-4 cycles) → PET → RT 30Gy to Initial Bulky/Residual PET+ Sites**</td></tr></table>
+<p><b>OECO Regimen (1 Cycle = 28 Days):</b></p>
+<ul><li><b>Vincristine 1.5mg/m² d1, 8, 15</b></li><li><b>Etoposide 150mg/m² d1-3</b></li><li><b>Cyclophosphamide 600mg/m² d1</b></li><li><b>Prednisone 60mg/m² d1-14</b></li><li><b>Doxorubicin 30mg/m² d1, 15</b> (Same as OEPA)</li></ul>
+<div class="sub-h">PET Response Assessment (Deauville 5-Point Scale)</div>
+<table class="ctable"><tr><th>Score</th><th>Definition</th><th>Action</th></tr><tr><td>-------</td><td>------------</td><td>--------</td></tr><tr><td>**1-2**</td><td>**Complete Metabolic Response** (Uptake ≤Mediastinum/Liver)</td><td>**No RT** (Early Favourable) / **No RT** (Advanced)</td></tr><tr><td>**3**</td><td>**Uptake >Mediastinum ≤Liver**</td><td>**No RT** (Usually)</td></tr><tr><td>**4-5**</td><td>**Uptake >Liver / New Lesions**</td><td>**RT 19.8Gy (Early Fav) / 30Gy (Early Unfav/Advanced)**</td></tr></table>
+<div class="callout"><b>Key: PET-Adapted RT Omission = Standard</b> — <b>Reduces Late Toxicity (Secondary Cancers, Cardiotoxicity, Hypothyroidism)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Nodular Lymphocyte-Predominant HL (NLPHL)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Age**</td><td>**Younger (Median 10-15yr)**, **Male Predominance**</td></tr><tr><td>**Stage**</td><td>**Often Early (I-II)**</td></tr><tr><td>**Cells**</td><td>**LP Cells (Popcorn): CD20+, CD79a+, BCL6+, CD15-, CD30-, EMA+, EBV-**</td></tr><tr><td>**Background**</td><td>**Nodular, B-Cell Rich**</td></tr><tr><td>**Treatment**</td><td>**Stage IA: Excision + Observation** (No Chemo/RT) / **Advanced: ABVD-like / Rituximab + Chemo**</td></tr><tr><td>**Prognosis**</td><td>**Excellent** (But Late Relapse, Transformation to DLBCL ~10%)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Non-Hodgkin Lymphoma (NHL) — Paediatric</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Common Subtypes</div>
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Key Features</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td><td>--------------</td><td>-----------</td></tr><tr><td>**Burkitt Lymphoma (BL)**</td><td>**40-50% NHL**</td><td>**t(8;14) MYC-IGH**, **CD20+, CD10+, BCL6+, Ki-67 ~100%**, **EBV+ (Endemic)**</td><td>**BFM/COG: CYVE/COPADM (Intensive, Short)**</td></tr><tr><td>**DLBCL**</td><td>**20-30% NHL**</td><td>**Germinal Centre / Activated B-Cell**, **CD20+, BCL2+, BCL6+**</td><td>**R-CHOP / R-EPOCH** (Rituximab Added)</td></tr><tr><td>**ALCL (ALK+)**</td><td>**10-15% NHL**</td><td>**t(2;5) NPM-ALK**, **CD30+, ALK+, EMA+**, **CD3-/CD4+**, **Skin/Nodes/Lung**</td><td>**ALCL99: Vincristine/Pred → VPA (Vinblastine, Pred, Adriamycin)**</td></tr><tr><td>**ALCL (ALK-)**</td><td>**5% NHL**</td><td>**DUSP22-IRF4, TP63**, **Poorer Prognosis**</td><td>**ALCL99 + Brentuximab (CD30)**</td></tr><tr><td>**PMBCL**</td><td>**5-10% NHL**</td><td>**Mediastinal, CD20+, CD30+, MAL+, PD-L1+**</td><td>**R-CHOP + RT (DA-EPOCH-R Alternative)**</td></tr><tr><td>**Lymphoblastic Lymphoma (T-LBL)**</td><td>**20-25% NHL**</td><td>**T-Cell Precursors**, **CD3+, TdT+, CD1a+**, **Mediastinal Mass**</td><td>**ALL-Type (BFM/COG): High-Dose MTX, Ara-C, Asparaginase**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Burkitt Lymphoma (BL) — BFM / COG Protocols</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Key Features</div>
+<ul><li><b>t(8;14) MYC-IGH (85%)</b>, <b>t(2;8), t(8;22) Variants</b></li><li><b>CD20+, CD10+, BCL6+, Ki-67 ~100%</b></li><li><b>"Starry Sky" Histology</b> (Tingible Body Macrophages)</li><li><b>Rapid Proliferation (Doubling Time ~24h)</b> — <b>TLS Risk Very High</b></li></ul>
+<div class="sub-h">Risk Stratification (BFM)</div>
+<table class="ctable"><tr><th>Group</th><th>Criteria</th><th>Treatment</th></tr><tr><td>-------</td><td>----------</td><td>-----------</td></tr><tr><td>**R1 (Low)**</td><td>**Resected Stage I/II, No CNS/BM**</td><td>**CYVE (Reduced)**</td></tr><tr><td>**R2 (Standard)**</td><td>**Stage III, No CNS/BM**</td><td>**CYVE (Standard)**</td></tr><tr><td>**R3 (High)**</td><td>**Stage IV, CNS/BM+**</td><td>**COPADM (Intensive CNS-Directed)**</td></tr></table>
+<div class="sub-h">CYVE Regimen (Cyclophosphamide, Vincristine, Etoposide, VP-16, Doxorubicin, Methotrexate, Cytarabine)</div>
+<table class="ctable"><tr><th>Phase</th><th>Key Drugs</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Prophase**</td><td>**Cyclophosphamide, Vincristine, Prednisone, Intrathecal MTX** (Cytoreduction, TLS Prevention)</td></tr><tr><td>**Cytoreduction**</td><td>**Vincristine, Prednisone, IT MTX**</td></tr><tr><td>**Induction**</td><td>**Cyclophosphamide, Doxorubicin, Vincristine, IT MTX**</td></tr><tr><td>**Consolidation**</td><td>**High-Dose MTX (3g/m²) + IT MTX**, **Cytarabine, Etoposide**</td></tr><tr><td>**Re-induction**</td><td>**Similar to Induction**</td></tr><tr><td>**Maintenance**</td><td>**Oral MTX/MP, IT MTX**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">ALCL (Anaplastic Large Cell Lymphoma)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">ALK+ vs ALK-</div>
+<table class="ctable"><tr><th>Feature</th><th>**ALK+ (80%)**</th><th>**ALK- (20%)**</th></tr><tr><td>---------</td><td>----------------</td><td>----------------</td></tr><tr><td>**Genetics**</td><td>**t(2;5) NPM-ALK**</td><td>**DUSP22-IRF4 (30%), TP63 (30%)**</td></tr><tr><td>**Age**</td><td>**Children/Adolescents**</td><td>**Older Adolescents/Young Adults**</td></tr><tr><td>**IHC**</td><td>**CD30+, ALK+, EMA+, CD3-/CD4+**</td><td>**CD30+, ALK-, EMA Variable**</td></tr><tr><td>**Prognosis**</td><td>**Excellent (85-90% OS)**</td><td>**Intermediate**</td></tr><tr><td>**Treatment**</td><td>**ALCL99: Vincristine/Prednisone → VPA**</td><td>**ALCL99 + Brentuximab Vedotin (CD30)**</td></tr></table>
+<div class="sub-h">ALCL99 Protocol</div>
+<table class="ctable"><tr><th>Phase</th><th>Regimen</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Prephase**</td><td>**Vincristine 1.5mg/m² weekly ×2**, **Prednisone 60mg/m² d1-14**</td></tr><tr><td>**VPA**</td><td>**Vinblastine 6mg/m² d1, 8, 15**, **Prednisone 60mg/m² d1-14**, **Doxorubicin 30mg/m² d1, 15** (×3-6 cycles)</td></tr><tr><td>**Maintenance**</td><td>**Vincristine/Prednisone pulses**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Paediatric Lymphoma Staging Workup</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>HL</th><th>NHL</th></tr><tr><td>---------------</td><td>-----</td><td>-----</td></tr><tr><td>**CT Neck/Chest/Abd/Pelvis**</td><td>✅</td><td>✅</td></tr><tr><td>**PET-CT (FDG)**</td><td>✅ **Standard**</td><td>✅ **Standard**</td></tr><tr><td>**Bone Marrow Biopsy**</td><td>Stage III/IV, B Symptoms</td><td>✅ **All** (BL Mandatory)</td></tr><tr><td>**Lumbar Puncture**</td><td>CNS Symptoms</td><td>**BL/DLBCL/ALCL/LL** (CNS Prophylaxis)</td></tr><tr><td>**MRI CNS**</td><td>If CNS Symptoms</td><td>**If CNS Symptoms**</td></tr><tr><td>**Echocardiogram**</td><td>Baseline (Doxorubicin)</td><td>Baseline</td></tr><tr><td>**Pulmonary Function**</td><td>Baseline (Bleomycin)</td><td>Baseline</td></tr><tr><td>**Fertility Assessment**</td><td>Pre-Treatment</td><td>Pre-Treatment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HL vs NHL**</td><td>**HL: RS Cells (CD30+, CD15+), Bimodal Age**; **NHL: Diverse, Burkitt/DLBCL/ALCL**, **No RS Cells**</td></tr><tr><td>**Ann Arbor**</td><td>**I, II (Same Diaphragm), III (Both), IV (Extralymphatic)**; **Bulky: Mediastinal Ratio >0.33**</td></tr><tr><td>**HL Risk (OEPA)**</td><td>**Early Fav: IA-IIA, No B, No Bulky, ESR<50 → 2xOEPA → PET → RT if PET+**</td></tr><tr><td>**OEPA Regimen**</td><td>**Vincristine, Etoposide, Prednisone, Doxorubicin**</td></tr><tr><td>**Advanced HL**</td><td>**OEPA (2) → OECO (2-4) → PET → RT 30Gy to Residual**</td></tr><tr><td>**NLPHL**</td><td>**LP Cells (CD20+, CD15-, CD30-)**, **Early Stage: Excision/Obs**, **Excellent Prognosis**</td></tr><tr><td>**BL**</td><td>**t(8;14) MYC-IGH**, **BFM CYVE/COPADM**, **TLS Risk High**, **CNS Prophylaxis Critical**</td></tr><tr><td>**DLBCL**</td><td>**R-CHOP/R-EPOCH**, **PMBCL: R-CHOP + RT**</td></tr><tr><td>**ALCL ALK+**</td><td>**t(2;5) NPM-ALK**, **ALCL99: Vin/Pred → VPA**, **Excellent Prognosis**</td></tr><tr><td>**PET-Adapted RT**</td><td>**Deauville 1-3 = No RT**, **4-5 = RT**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**14yr, Cervical Lymphadenopathy, B Symptoms, Mediastinal Mass Ratio 0.4. Biopsy: cHL NS. Stage, Risk?**</td><td>**Stage IIB (B Symptoms), Early Unfavourable (Bulky >0.33)** → **4x OEPA → PET → RT 30Gy if PET+**.</td></tr><tr><td>**OEPA Regimen — Drugs, Cycles for Early Favourable?**</td><td>**Vincristine, Etoposide, Prednisone, Doxorubicin**; **2 Cycles ×28 Days** for Early Favourable.</td></tr><tr><td>**PET Deauville 3 after 2x OEPA — RT needed?**</td><td>**No** — **Deauville 1-3 = No RT** (Early Favourable).</td></tr><tr><td>**Burkitt Lymphoma — Translocation, Ki-67, Protocol?**</td><td>**t(8;14) MYC-IGH**, **Ki-67 ~100%**, **BFM CYVE/COPADM (Risk Adapted)**.</td></tr><tr><td>**ALCL ALK+ — Translocation, Treatment?**</td><td>**t(2;5) NPM-ALK** → **ALCL99: Vincristine/Prednisone → VPA (Vinblastine, Prednisone, Doxorubicin)**.</td></tr><tr><td>**DLBCL Paediatric — Rituximab Added?**</td><td>**Yes: R-CHOP / R-EPOCH** (Standard Adult + Rituximab Improves Outcome).</td></tr><tr><td>**PMBCL — Treatment?**</td><td>**R-CHOP + RT (30-36Gy to Mediastinum)**; **DA-EPOCH-R Alternative (No RT if CR)**.</td></tr><tr><td>**T-Lymphoblastic Lymphoma — Treatment Like?**</td><td>**ALL-Type (BFM/COG): High-Dose MTX, Ara-C, Asparaginase, IT MTX** — **Similar to T-ALL**.</td></tr><tr><td>**Kikuchi Disease vs HL — Differentiation?**</td><td>**Kikuchi: Necrotising Lymphadenitis, CD68+ Histiocytes, No RS/LP Cells, Self-Limiting, Young Women**; **HL: RS Cells (CD30+/CD15+), Clonal**.</td></tr><tr><td>**PET-Adapted RT — Deauville 4-5 Action?**</td><td>**RT: 19.8Gy (Early Fav), 30Gy (Early Unfav/Advanced)**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**cHL vs NLPHL**</td><td>**cHL: RS Cells (CD30+, CD15+, PAX5+, CD20-)**; **NLPHL: LP Cells (CD20+, CD79a+, BCL6+, CD15-, CD30-)**</td></tr><tr><td>**OEPA vs OECO**</td><td>**OEPA: Vincristine, Etoposide, Prednisone, Doxorubicin**; **OECO: Vincristine, Etoposide, Cyclophosphamide, Prednisone, Doxorubicin** (Cyclo replaces Vincristine weekly)</td></tr><tr><td>**Early Favourable vs Unfavourable HL**</td><td>**Fav: IA-IIA, No B, No Bulky, ESR<50 → 2xOEPA + PET**; **Unfav: B Symptoms OR Bulky OR ESR≥50 → 4xOEPA + PET + RT**</td></tr><tr><td>**BL vs DLBCL — Ki-67**</td><td>**BL: Ki-67 ~100%**; **DLBCL: Ki-67 Variable (40-90%)**</td></tr><tr><td>**ALCL ALK+ vs ALK-**</td><td>**ALK+: t(2;5) NPM-ALK, Excellent Prognosis, ALCL99 VPA**; **ALK-: DUSP22/TP63, Poorer, Add Brentuximab**</td></tr><tr><td>**PMBCL vs DLBCL**</td><td>**PMBCL: Mediastinal, CD30+, MAL+, PD-L1+, Young Women**; **DLBCL: Nodal, Various Sites**</td></tr><tr><td>**T-LBL vs T-ALL**</td><td>**T-LBL: Lymphadenopathy/Mediastinal Mass, <25% BM Blasts**; **T-ALL: >25% BM Blasts**; **Treatment Identical (ALL-Type)**</td></tr></table>
+<p><b>Mnemonic: PAED-LYMPHOMA</b></p>
+<ul><li><b>P</b>aediatric: <b>HL 40%, NHL 60%</b>, <b>Bimodal HL (Adolescent), Peak NHL (5-10yr)</b></li><li><b>A</b>nn Arbor: <b>I, II (Same Diaphragm), III (Both), IV (Extralymphatic)</b></li><li><b>E</b>arly HL: <b>OEPA 2x (Fav) vs 4x (Unfav)</b> → <b>PET → RT if 4-5</b></li><li><b>D</b>LBCL: <b>R-CHOP/R-EPOCH</b>, <b>PMBCL: R-CHOP + RT</b></li><li><b>L</b>ymphoma NHL: <b>BL (t(8;14) MYC, BFM CYVE), ALCL ALK+ (t(2;5) NPM-ALK, VPA), DLBCL, T-LBL (ALL-Type)</b></li><li><b>Y</b>oung NLPHL: <b>LP Cells (CD20+, CD15-, CD30-)</b>, <b>Excellent, Excision/Obs</b></li><li><b>P</b>ET-Adapted: <b>Deauville 1-3 No RT, 4-5 RT</b> (19.8/30Gy)</li><li><b>M</b>YC Translocation: <b>BL t(8;14) MYC-IGH</b>, <b>Ki-67 100%</b>, <b>TLS Risk</b></li><li><b>A</b>LK+ ALCL: <b>t(2;5) NPM-ALK</b>, <b>VPA (Vinblastine/Pred/Doxo)</b>, <b>Excellent</b></li><li><b>O</b>EPA: <b>Vincristine, Etoposide, Pred, Doxo</b>; <b>OECO: Add Cyclophosphamide</b></li><li><b>N</b>LPHL: <b>LP Cells (Popcorn), CD20+, CD15-, CD30-</b></li><li><b>O</b>missions RT: <b>Deauville 1-3</b>, <b>Reduces Late Toxicity (Cancers, Heart, Thyroid)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Paediatric Lymphoma)) Hodgkin (40%) cHL: NS (70%), MC, LD, LR RS Cells: CD30+, CD15+, PAX5+ NLPHL (5%): LP Cells CD20+, CD15- Staging: Ann Arbor (Cotswolds) Early Fav: 2x OEPA → PET → RT if 4-5 Early Unfav: 4x OEPA → PET → RT Advanced: OEPA/OECO → PET → RT NHL (60%) BL: t(8;14) MYC-IGH, Ki-67 100%, BFM CYVE/COPADM DLBCL: R-CHOP/R-EPOCH, PMBCL: R-CHOP+RT ALCL: ALK+ (t(2;5) NPM-ALK) VPA, ALK-: Brentuximab T-LBL: ALL-Type (High MTX, Ara-C, Asparaginase) PMBCL: Mediastinal, CD30+, MAL+, PD-L1+ Staging Ann Arbor + Cotswolds PET-CT Standard BM Biopsy (HL: III/IV, B; NHL: All) LP (NHL: BL/DLBCL/ALCL/LL) Treatment HL: OEPA/OECO + PET-Adapted RT BL: CYVE/COPADM (Risk Adapted) ALCL: ALCL99 (Prephase → VPA) DLBCL: R-CHOP/R-EPOCH T-LBL: ALL-Type Protocol </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**HL Staging**</td><td>Ann Arbor: I, II (Same Diaphragm), III (Both), IV (Extralymphatic)</td></tr><tr><td>**HL Risk**</td><td>Early Fav: IA-IIA, No B, No Bulky, ESR<50 → 2xOEPA; Unfav: 4xOEPA</td></tr><tr><td>**OEPA**</td><td>Vincristine, Etoposide, Pred, Doxo</td></tr><tr><td>**Advanced HL**</td><td>OEPA (2) → OECO (2-4) → PET → RT 30Gy</td></tr><tr><td>**PET**</td><td>Deauville 1-3 = No RT; 4-5 = RT</td></tr><tr><td>**BL**</td><td>t(8;14) MYC, Ki-67 100%, BFM CYVE/COPADM, TLS Risk</td></tr><tr><td>**ALCL ALK+**</td><td>t(2;5) NPM-ALK, VPA (Vinblastine/Pred/Doxo)</td></tr><tr><td>**NLPHL**</td><td>LP Cells CD20+, CD15-/30-, Excellent</td></tr><tr><td>**DLBCL**</td><td>R-CHOP/R-EPOCH; PMBCL: R-CHOP+RT</td></tr><tr><td>**T-LBL**</td><td>ALL-Type Protocol</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>HL Staging & Risk</td><td></td><td></td></tr><tr><td>OEPA/OECO Protocols</td><td></td><td></td></tr><tr><td>PET-Adapted RT</td><td></td><td></td></tr><tr><td>BL CYVE/COPADM</td><td></td><td></td></tr><tr><td>ALCL ALK+ vs ALK-</td><td></td><td></td></tr><tr><td>NLPHL vs cHL</td><td></td><td></td></tr><tr><td>DLBCL/PMBCL</td><td></td><td></td></tr><tr><td>Staging Workup</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Paediatric ALL]], [[Paediatric AML]], [[Paediatric Solid Tumours]], [[Paediatric CNS Tumours]], [[Ann Arbor Staging]], [[OEPA Protocol]], [[BFM Protocol]], [[ALCL]], [[Burkitt Lymphoma]], [[NLPHL]], [[Kikuchi Disease]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (HL vs NHL), which statement is correct? A. <b>HL: RS Cells (CD30+, CD15+), Bimodal Age</b> B. **HL: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>HL: RS Cells (CD30+, CD15+), Bimodal Age</b>; <b>NHL: Diverse, Burkitt/DLBCL/ALCL</b>, <b>No RS Cells</b></li></ul>
+<p><b>2.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (Ann Arbor), which statement is correct? A. <b>I, II (Same Diaphragm), III (Both), IV (Extralymphatic)</b> B. **I, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>I, II (Same Diaphragm), III (Both), IV (Extralymphatic)</b>; <b>Bulky: Mediastinal Ratio &gt;0.33</b></li></ul>
+<p><b>3.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (HL Risk (OEPA)), which statement is correct? A. <b>Early Fav: IA-IIA, No B, No Bulky, ESR&lt;50 → 2xOEPA → PET → RT if PET+</b> B. **Early - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Early Fav: IA-IIA, No B, No Bulky, ESR&lt;50 → 2xOEPA → PET → RT if PET+</b></li></ul>
+<p><b>4.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (OEPA Regimen), which statement is correct? A. <b>Vincristine, Etoposide, Prednisone, Doxorubicin</b> B. **Vincristine, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Vincristine, Etoposide, Prednisone, Doxorubicin</b></li></ul>
+<p><b>5.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (Advanced HL), which statement is correct? A. <b>OEPA (2) → OECO (2-4) → PET → RT 30Gy to Residual</b> B. **OEPA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>OEPA (2) → OECO (2-4) → PET → RT 30Gy to Residual</b></li></ul>
+<p><b>6.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (NLPHL), which statement is correct? A. <b>LP Cells (CD20+, CD15-, CD30-)</b>, <b>Early Stage: Excision/Obs</b>, <b>Excellent Prognosis</b> B. **LP - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>LP Cells (CD20+, CD15-, CD30-)</b>, <b>Early Stage: Excision/Obs</b>, <b>Excellent Prognosis</b></li></ul>
+<p><b>7.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (BL), which statement is correct? A. <b>t(8 B. </b>t(8 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>t(8;14) MYC-IGH</b>, <b>BFM CYVE/COPADM</b>, <b>TLS Risk High</b>, <b>CNS Prophylaxis Critical</b></li></ul>
+<p><b>8.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (DLBCL), which statement is correct? A. <b>R-CHOP/R-EPOCH</b>, <b>PMBCL: R-CHOP + RT</b> B. <b>R-CHOP/R-EPOCH</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>R-CHOP/R-EPOCH</b>, <b>PMBCL: R-CHOP + RT</b></li></ul>
+<p><b>9.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (ALCL ALK+), which statement is correct? A. <b>t(2 B. </b>t(2 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>t(2;5) NPM-ALK</b>, <b>ALCL99: Vin/Pred → VPA</b>, <b>Excellent Prognosis</b></li></ul>
+<p><b>10.</b> Regarding Paediatric Lymphomas (Hodgkin &amp; NHL) (PET-Adapted RT), which statement is correct? A. <b>Deauville 1-3 = No RT</b>, <b>4-5 = RT</b> B. **Deauville - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Deauville 1-3 = No RT</b>, <b>4-5 = RT</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>HL: RS Cells (CD30+, CD15+), Bimodal Age</b></li><li>B. **HL: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>HL: RS Cells (CD30+, CD15+), Bimodal Age</b>; <b>NHL: Diverse, Burkitt/DLBCL/ALCL</b>, <b>No RS Cells</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>I, II (Same Diaphragm), III (Both), IV (Extralymphatic)</b></li><li>B. **I, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>I, II (Same Diaphragm), III (Both), IV (Extralymphatic)</b>; <b>Bulky: Mediastinal Ratio &gt;0.33</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Early Fav: IA-IIA, No B, No Bulky, ESR&lt;50 → 2xOEPA → PET → RT if PET+</b></li><li>B. **Early (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Early Fav: IA-IIA, No B, No Bulky, ESR&lt;50 → 2xOEPA → PET → RT if PET+</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Vincristine, Etoposide, Prednisone, Doxorubicin</b></li><li>B. **Vincristine, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Vincristine, Etoposide, Prednisone, Doxorubicin</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>OEPA (2) → OECO (2-4) → PET → RT 30Gy to Residual</b></li><li>B. **OEPA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>OEPA (2) → OECO (2-4) → PET → RT 30Gy to Residual</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>LP Cells (CD20+, CD15-, CD30-)</b>, <b>Early Stage: Excision/Obs</b>, <b>Excellent Prognosis</b></li><li>B. **LP (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>LP Cells (CD20+, CD15-, CD30-)</b>, <b>Early Stage: Excision/Obs</b>, <b>Excellent Prognosis</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. **t(8</li><li>B. **t(8 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>t(8;14) MYC-IGH</b>, <b>BFM CYVE/COPADM</b>, <b>TLS Risk High</b>, <b>CNS Prophylaxis Critical</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>R-CHOP/R-EPOCH</b>, <b>PMBCL: R-CHOP + RT</b></li><li>B. <b>R-CHOP/R-EPOCH</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>R-CHOP/R-EPOCH</b>, <b>PMBCL: R-CHOP + RT</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. **t(2</li><li>B. **t(2 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>t(2;5) NPM-ALK</b>, <b>ALCL99: Vin/Pred → VPA</b>, <b>Excellent Prognosis</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Deauville 1-3 = No RT</b>, <b>4-5 = RT</b></li><li>B. **Deauville (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Deauville 1-3 = No RT</b>, <b>4-5 = RT</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> HL vs NHL? <b>A1:</b> HL: RS Cells (CD30+, CD15+), Bimodal Age; NHL: Diverse, Burkitt/DLBCL/ALCL, No RS Cells</p>
+<p><b>Q2:</b> Ann Arbor? <b>A2:</b> I, II (Same Diaphragm), III (Both), IV (Extralymphatic); Bulky: Mediastinal Ratio &gt;0.33</p>
+<p><b>Q3:</b> HL Risk (OEPA)? <b>A3:</b> Early Fav: IA-IIA, No B, No Bulky, ESR&lt;50 → 2xOEPA → PET → RT if PET+</p>
+<p><b>Q4:</b> OEPA Regimen? <b>A4:</b> Vincristine, Etoposide, Prednisone, Doxorubicin</p>
+<p><b>Q5:</b> Advanced HL? <b>A5:</b> OEPA (2) → OECO (2-4) → PET → RT 30Gy to Residual</p>
+<p><b>Q6:</b> NLPHL? <b>A6:</b> LP Cells (CD20+, CD15-, CD30-), Early Stage: Excision/Obs, Excellent Prognosis</p>
+<p><b>Q7:</b> BL? <b>A7:</b> t(8;14) MYC-IGH, BFM CYVE/COPADM, TLS Risk High, CNS Prophylaxis Critical</p>
+<p><b>Q8:</b> DLBCL? <b>A8:</b> R-CHOP/R-EPOCH, PMBCL: R-CHOP + RT</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>HL vs NHL</td><td>HL: RS Cells (CD30+, CD15+), Bimodal Age; NHL: Diverse, Burkitt/DLBCL/ALCL, No RS Cells</td></tr><tr><td>2</td><td>A</td><td>Ann Arbor</td><td>I, II (Same Diaphragm), III (Both), IV (Extralymphatic); Bulky: Mediastinal Ratio >0.33</td></tr><tr><td>3</td><td>A</td><td>HL Risk (OEPA)</td><td>Early Fav: IA-IIA, No B, No Bulky, ESR<50 → 2xOEPA → PET → RT if PET+</td></tr><tr><td>4</td><td>A</td><td>OEPA Regimen</td><td>Vincristine, Etoposide, Prednisone, Doxorubicin</td></tr><tr><td>5</td><td>A</td><td>Advanced HL</td><td>OEPA (2) → OECO (2-4) → PET → RT 30Gy to Residual</td></tr><tr><td>6</td><td>A</td><td>NLPHL</td><td>LP Cells (CD20+, CD15-, CD30-), Early Stage: Excision/Obs, Excellent Prognosis</td></tr><tr><td>7</td><td>A</td><td>BL</td><td>t(8;14) MYC-IGH, BFM CYVE/COPADM, TLS Risk High, CNS Prophylaxis Critical</td></tr><tr><td>8</td><td>A</td><td>DLBCL</td><td>R-CHOP/R-EPOCH, PMBCL: R-CHOP + RT</td></tr><tr><td>9</td><td>A</td><td>ALCL ALK+</td><td>t(2;5) NPM-ALK, ALCL99: Vin/Pred → VPA, Excellent Prognosis</td></tr><tr><td>10</td><td>A</td><td>PET-Adapted RT</td><td>Deauville 1-3 = No RT, 4-5 = RT</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>HL vs NHL</td><td>HL: RS Cells (CD30+, CD15+), Bimodal Age; NHL: Diverse, Burkitt/DLBCL/ALCL, No RS Cells</td></tr><tr><td>2</td><td>A</td><td>Ann Arbor</td><td>I, II (Same Diaphragm), III (Both), IV (Extralymphatic); Bulky: Mediastinal Ratio >0.33</td></tr><tr><td>3</td><td>A</td><td>HL Risk (OEPA)</td><td>Early Fav: IA-IIA, No B, No Bulky, ESR<50 → 2xOEPA → PET → RT if PET+</td></tr><tr><td>4</td><td>A</td><td>OEPA Regimen</td><td>Vincristine, Etoposide, Prednisone, Doxorubicin</td></tr><tr><td>5</td><td>A</td><td>Advanced HL</td><td>OEPA (2) → OECO (2-4) → PET → RT 30Gy to Residual</td></tr><tr><td>6</td><td>A</td><td>NLPHL</td><td>LP Cells (CD20+, CD15-, CD30-), Early Stage: Excision/Obs, Excellent Prognosis</td></tr><tr><td>7</td><td>A</td><td>BL</td><td>t(8;14) MYC-IGH, BFM CYVE/COPADM, TLS Risk High, CNS Prophylaxis Critical</td></tr><tr><td>8</td><td>A</td><td>DLBCL</td><td>R-CHOP/R-EPOCH, PMBCL: R-CHOP + RT</td></tr><tr><td>9</td><td>A</td><td>ALCL ALK+</td><td>t(2;5) NPM-ALK, ALCL99: Vin/Pred → VPA, Excellent Prognosis</td></tr><tr><td>10</td><td>A</td><td>PET-Adapted RT</td><td>Deauville 1-3 = No RT, 4-5 = RT</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Paediatric Cancers|Paediatric Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Paediatric Lymphomas · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

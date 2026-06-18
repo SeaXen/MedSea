@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clinical Significance — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Clinical Significance</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Stratify drug interactions by <b>clinical significance</b> (severe, moderate, mild)</li><li>[ ] Identify <b>patient-related</b> risk factors (age, organ function, polypharmacy, genetics)</li><li>[ ] Identify <b>drug-related</b> risk factors (narrow TI, dose, route, frequency)</li><li>[ ] Use <b>BNF / Stockley</b> interaction checkers effectively</li><li>[ ] Decide between "monitor", "adjust dose", "switch", "avoid"</li><li>[ ] Apply a structured <b>risk-benefit framework</b></li><li>[ ] Document interactions in medical records</li><li>[ ] Counsel patients on common interactions</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Stratification of Clinical Significance</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Severity</th><th>Definition</th><th>Example</th><th>Action</th></tr><tr><td>----------</td><td>------------</td><td>---------</td><td>--------</td></tr><tr><td>**Severe / Contraindicated**</td><td>Life-threatening; possible fatality; combined use should be AVOIDED</td><td>MAOI + SSRI (serotonin syndrome); ergot + strong CYP3A4 inhibitor (ergotism); simvastatin + ciclosporin (rhabdomyolysis)</td><td>**AVOID**</td></tr><tr><td>**Moderate / Significant**</td><td>Clinically important; may need dose adjustment, monitoring, or alternative</td><td>Warfarin + amiodarone; ciclosporin + diltiazem; lithium + NSAID</td><td>**Monitor** or **adjust**</td></tr><tr><td>**Mild / Minor**</td><td>Limited clinical effect; no action usually needed</td><td>Paracetamol + codeine (additive analgesia); amoxicillin + paracetamol</td><td>**No action**; aware</td></tr><tr><td>**Unknown / Theoretical**</td><td>Documented in vitro, unclear in vivo</td><td>Some protein binding displacement</td><td>**Aware**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — Interaction Risk Assessment</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Two drugs co-prescribed] --&gt; B[Check interaction database&lt;br/&gt;BNF, Stockley, Lexicomp] B --&gt; C{Severity?} C --&gt;|Severe| D[AVOID combination&lt;br/&gt;or switch drug] C --&gt;|Moderate| E{Is this patient&lt;br/&gt;at high risk?} C --&gt;|Mild| F[Aware; continue] E --&gt;|Yes| G[Switch or monitor closely&lt;br/&gt;with TDM if available] E --&gt;|No| H[Monitor clinically + biochemically] D --&gt; I[Document rationale + counselling] G --&gt; I H --&gt; I F --&gt; I I --&gt; J[Reassess at follow-up] </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Patient-Related Risk Factors</div>
+<table class="ctable"><tr><th>Factor</th><th>Mechanism</th><th>Example</th></tr><tr><td>--------</td><td>-----------</td><td>---------</td></tr><tr><td>**Age (≥65 yr)**</td><td>↓ Hepatic/renal function; polypharmacy; frailty</td><td>Elderly on warfarin + NSAID → bleed</td></tr><tr><td>**Organ dysfunction**</td><td>↓ Metabolism/excretion</td><td>CKD + lithium; hepatic failure + morphine</td></tr><tr><td>**Polypharmacy (≥5 drugs)**</td><td>Probability of interaction ↑ exponentially</td><td>5 drugs = 50% chance; ≥10 drugs = 100%</td></tr><tr><td>**Genetics (CYP polymorphisms)**</td><td>Poor/ultra-rapid metaboliser</td><td>CYP2C19 PM + clopidogrel → no antiplatelet effect</td></tr><tr><td>**Disease state**</td><td>Altered PK/PD</td><td>Heart failure + β-blocker (↓ clearance)</td></tr><tr><td>**Pregnancy / Lactation**</td><td>Altered PK + fetal exposure</td><td>Warfarin (teratogenic); ACEi (fetal AKI)</td></tr><tr><td>**Critical illness**</td><td>↓ Perfusion, ↓ protein binding, ↓ clearance</td><td>ICU patient on multiple sedatives</td></tr><tr><td>**Adherence**</td><td>Affects steady state and monitoring</td><td>Poor adherence + variable INR</td></tr></table>
+<div class="sub-h">4.2 Drug-Related Risk Factors</div>
+<table class="ctable"><tr><th>Factor</th><th>Drugs at risk</th></tr><tr><td>--------</td><td>--------------</td></tr><tr><td>**Narrow therapeutic index (NTI)**</td><td>Warfarin, digoxin, lithium, phenytoin, theophylline, aminoglycosides, ciclosporin, tacrolimus, methotrexate</td></tr><tr><td>**Steep dose-response curve**</td><td>Heparin, insulin, opioids, phenytoin</td></tr><tr><td>**Saturable metabolism (Michaelis-Menten)**</td><td>Phenytoin, theophylline (zero-order at therapeutic doses)</td></tr><tr><td>**Multiple metabolism pathways**</td><td>Resistant to single CYP inhibition (e.g., codeine via CYP2D6)</td></tr><tr><td>**Single metabolism pathway**</td><td>Vulnerable to inhibition (e.g., tacrolimus via CYP3A4)</td></tr><tr><td>**Active metabolites**</td><td>Morphine → M6G; tramadol → O-desmethyltramadol</td></tr><tr><td>**Long half-life**</td><td>Amiodarone, chloroquine (persistence)</td></tr><tr><td>**High first-pass**</td><td>Ciclosporin, tacrolimus, fentanyl</td></tr></table>
+<div class="sub-h">4.3 Top 10 Highest-Risk Drug Combinations (Mnemonic: "**WWALICCTSM**")</div>
+<table class="ctable"><tr><th>Rank</th><th>Combination</th><th>Risk</th><th>Mechanism</th></tr><tr><td>------</td><td>-------------</td><td>------</td><td>-----------</td></tr><tr><td>1</td><td>**W**arfarin + NSAID / aspirin</td><td>GI bleed</td><td>Additive + ↓ platelet function</td></tr><tr><td>2</td><td>**W**arfarin + macrolide / quinolone / TMP</td><td>↑ INR</td><td>CYP inhibition</td></tr><tr><td>3</td><td>**A**CEi + diuretic + NSAID ("triple whammy")</td><td>AKI</td><td>Renal hypoperfusion</td></tr><tr><td>4</td><td>**L**ithium + NSAID / ACEi / thiazide</td><td>Lithium toxicity</td><td>↓ Renal clearance</td></tr><tr><td>5</td><td>**I**mmunosuppressant (ciclosporin/tacrolimus) + macrolide / azole</td><td>Toxicity</td><td>CYP3A4 inhibition</td></tr><tr><td>6</td><td>**C**YP3A4 substrate + strong inhibitor (e.g., simvastatin + clarithromycin)</td><td>Rhabdomyolysis / toxicity</td><td>↑ Substrate levels</td></tr><tr><td>7</td><td>**C**lozapine + carbamazepine</td><td>Agranulocytosis risk</td><td>Additive bone marrow suppression</td></tr><tr><td>8</td><td>**T**hree QT-prolonging drugs (e.g., sotalol + ondansetron + erythromycin)</td><td>Torsades</td><td>Additive QT prolongation</td></tr><tr><td>9</td><td>**S**erotonergic drugs (MAOI + SSRI, tramadol + SSRI)</td><td>Serotonin syndrome</td><td>Additive 5HT effect</td></tr><tr><td>10</td><td>**M**ethotrexate + trimethoprim / NSAID</td><td>Pancytopenia</td><td>Additive antifolate + ↓ clearance</td></tr></table>
+<div class="sub-h">4.4 Action Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>When</th><th>Example</th></tr><tr><td>----------</td><td>------</td><td>---------</td></tr><tr><td>**Avoid combination**</td><td>Severe, life-threatening</td><td>MAOI + SSRI</td></tr><tr><td>**Switch drug class**</td><td>Moderate with safer alternative</td><td>Simvastatin → pravastatin (if macrolide needed)</td></tr><tr><td>**Dose adjustment**</td><td>Predictable PK change</td><td>Reduce warfarin 30-50% when starting amiodarone</td></tr><tr><td>**Timing separation**</td><td>Absorption interactions</td><td>Levothyroxine + calcium — separate by 4 hr</td></tr><tr><td>**Therapeutic Drug Monitoring (TDM)**</td><td>Narrow TI drugs</td><td>Tacrolimus + diltiazem → check level</td></tr><tr><td>**Clinical + biochemical monitoring**</td><td>Moderate interactions</td><td>INR, U&E, LFT, drug levels</td></tr><tr><td>**Patient education**</td><td>OTC, food, herbal</td><td>Avoid grapefruit, St John's Wort</td></tr><tr><td>**Deprescribing**</td><td>Polypharmacy, >5 drugs</td><td>STOPP/START</td></tr></table>
+<div class="sub-h">4.5 Food / Herbal / OTC Interactions</div>
+<table class="ctable"><tr><th>Substance</th><th>Affected drug</th><th>Effect</th></tr><tr><td>-----------</td><td>--------------</td><td>--------</td></tr><tr><td>**Grapefruit**</td><td>Statins (simva, atorva), ciclosporin, tacrolimus, CCB, sildenafil, apixaban</td><td>↑ Levels (CYP3A4)</td></tr><tr><td>**Dairy / antacids**</td><td>Tetracyclines, quinolones</td><td>↓ Absorption (chelation)</td></tr><tr><td>**Vitamin K-rich foods**</td><td>Warfarin</td><td>↓ INR</td></tr><tr><td>**Cranberry juice**</td><td>Warfarin</td><td>↑ INR (CYP2C9)</td></tr><tr><td>**St John's Wort**</td><td>Ciclosporin, tacrolimus, OCP, simvastatin, apixaban, SSRIs, MAOIs</td><td>↓ Levels (CYP3A4 induction)</td></tr><tr><td>**Alcohol (acute)**</td><td>CNS depressants, paracetamol (chronic)</td><td>↑ Sedation, hepatotoxicity</td></tr><tr><td>**Tobacco**</td><td>Theophylline, insulin, β-blockers, warfarin</td><td>CYP1A2 induction</td></tr><tr><td>**Garlic, ginkgo, ginger**</td><td>Warfarin, antiplatelets</td><td>↑ Bleeding</td></tr><tr><td>**Iron / multivitamins**</td><td>Tetracyclines, quinolones, levothyroxine, bisphosphonates</td><td>↓ Absorption</td></tr><tr><td>**Echinacea**</td><td>Immunosuppressants</td><td>↓ Effect (theoretical)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>Number of drugs threshold for high interaction risk</td><td>≥5 (polypharmacy); ≥10 = near-certain interaction</td></tr><tr><td>Top 3 most common fatal interactions</td><td>Warfarin + NSAID; Methotrexate + NSAID; Opioid + benzo</td></tr><tr><td>2 highest-risk patient groups</td><td>Elderly, polypharmacy, organ dysfunction</td></tr><tr><td>NTI drugs to monitor closely</td><td>Warfarin, digoxin, lithium, phenytoin, theophylline, ciclosporin, tacrolimus, methotrexate, aminoglycosides</td></tr><tr><td>Interaction checkers</td><td>BNF (UK), Stockley, Lexicomp, Micromedex, Drugs.com, Medscape</td></tr><tr><td>Documenting interactions</td><td>In notes, on prescription, in discharge summary, in EPR alerts</td></tr><tr><td>Risk-benefit</td><td>Always weigh interaction risk vs clinical benefit; sometimes no good alternative</td></tr><tr><td>Polypharmacy review</td><td>Use STOPP/START criteria; aim for <5 drugs where possible</td></tr><tr><td>100% rule</td><td>A patient on 10 drugs has 100% chance of at least one interaction (theoretical, not all clinically significant)</td></tr><tr><td>Communication</td><td>Patient, GP, pharmacist, MDT</td></tr><tr><td>Anticholinergic burden scale</td><td>ACB calculator; sum score ≥3 = ↑ cognitive impairment risk</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Stratify drug interactions by clinical significance.</b></li></ol>
+<p><i>Severe (life-threatening; avoid); Moderate (clinically relevant; monitor or adjust); Mild (limited effect; aware); Theoretical (in vitro only).</i></p>
+<ol><li><b>Name 3 patient-related risk factors for interactions.</b></li></ol>
+<p><i>Age (≥65), organ dysfunction (renal/hepatic), polypharmacy (≥5), genetic polymorphisms (CYP), disease state (HF, pregnancy), poor adherence.</i></p>
+<ol><li><b>Name 3 drug-related risk factors.</b></li></ol>
+<p><i>Narrow therapeutic index (warfarin, digoxin, lithium, phenytoin, theophylline); single metabolic pathway (CYP3A4 for tacrolimus); long half-life (amiodarone).</i></p>
+<ol><li><b>What is the most common cause of fatal drug interaction?</b></li></ol>
+<p><i>GI bleeding from NSAID + anticoagulant (warfarin, DOAC, heparin); CNS depression from opioid + benzo; AKI from ACEi + diuretic + NSAID; methotrexate + NSAID; serotonin syndrome from MAOI + SSRI.</i></p>
+<ol><li><b>How do you assess clinical significance of an interaction?</b></li></ol>
+<p><i>Use BNF/Stockley. Consider: severity (life-threatening vs minor), patient factors (age, organ function, polypharmacy), drug factors (NTI, dose, route), availability of alternatives, monitoring options (TDM), documentation.</i></p>
+<ol><li><b>A patient is on warfarin, amiodarone, simvastatin, lisinopril, indapamide. They are prescribed clarithromycin. List the interactions.</b></li></ol>
+<p><i>1) Warfarin + amiodarone (already present) — high INR; 2) Warfarin + clarithromycin — ↑ INR (CYP inhibition); 3) Simvastatin + clarithromycin — rhabdomyolysis (CYP3A4); 4) Lisinopril + indapamide (already) + clarithromycin — no major PK, but renal caution.</i></p>
+<ol><li><b>What is the role of deprescribing in reducing interactions?</b></li></ol>
+<p><i>Removes unnecessary drugs → ↓ interaction risk, ↓ ADR, ↓ cost, ↑ adherence. Use STOPP/START criteria; prioritise drugs with high interaction risk.</i></p>
+<ol><li><b>What is the difference between "avoid" and "monitor" in interaction management?</b></li></ol>
+<p><i>Avoid: combination is life-threatening or has no safe alternative. Monitor: combination has known interaction but is manageable with dose adjustment, TDM, or clinical monitoring.</i></p>
+<ol><li><b>What is the "anticholinergic burden" scale?</b></li></ol>
+<p><i>Quantifies cumulative anticholinergic effect of multiple drugs (e.g., TCA, antihistamine, oxybutynin, antipsychotic). Score ≥3 → ↑ risk of cognitive impairment, falls, delirium in elderly. Useful in polypharmacy review.</i></p>
+<ol><li><b>How do you document an interaction decision?</b></li></ol>
+<p><i>In the medical record: list the interaction, the rationale for use (benefit &gt; risk), the monitoring plan (clinical, biochemical, TDM), patient counselling given, and any dose adjustment. Communicate to GP and pharmacist.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>PK vs PD interaction</td><td>PK = concentration change; PD = effect change at same concentration</td></tr><tr><td>Theoretical vs clinical interaction</td><td>Theoretical = in vitro only; Clinical = observed in patients</td></tr><tr><td>Drug interaction vs drug incompatibility</td><td>Interaction = in vivo (in patient); Incompatibility = in vitro (in syringe/bag)</td></tr><tr><td>BNF severity vs Stockley</td><td>BNF: standard, do not co-administer, etc.; Stockley: more detailed, with management</td></tr><tr><td>Additive vs synergistic</td><td>Additive = 1+1=2; Synergistic = 1+1=3 (supra-additive)</td></tr><tr><td>Antagonistic vs inhibition</td><td>Antagonistic = opposing effect (e.g., naloxone + morphine); Inhibition = blocks enzyme/receptor</td></tr><tr><td>Severe vs moderate interaction</td><td>Severe = life-threatening; Moderate = clinically relevant but manageable</td></tr><tr><td>Polypharmacy threshold</td><td>≥5 drugs; "hyper-polypharmacy" ≥10</td></tr><tr><td>Anticholinergic burden</td><td>Cumulative score of anticholinergic drugs; ≥3 = high risk in elderly</td></tr><tr><td>Adherence to monitoring</td><td>In elderly, polypharmacy, narrow TI drugs</td></tr></table>
+<p><b>Mnemonic — Top 5 highest-risk combinations: "</b>WAIT-S<b>"</b> (Warfarin + Amiodarone/NSAID; ACEi + diuretic + NSAID; Immunosuppressant + azole; Triple QT prolongers; Serotonin syndrome)</p>
+<p><b>Mnemonic — Severe vs Moderate: "</b>S<b>evere = </b>S<b>top </b>S<b>tart (avoid); </b>M<b>oderate = </b>M<b>odify/</b>M<b>onitor"</b></p>
+<p><b>Mnemonic — NTI drugs: "</b>W<b>ide </b>L<b>ist of </b>N<b>arrow </b>T<b>herapeutic: Warfarin, Lithium, Phenytoin, Theophylline, Digoxin, Cyclosporin, Tacrolimus"</b> (WLPTTDC)</p>
+<p><b>Mnemonic — Patient risk factors: "</b>A<b>ge </b>O<b>rgan </b>P<b>olypharmacy </b>G<b>enetic </b>D<b>isease </b>P<b>regnancy"</b> (AOPGDP)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Clinical Significance)) Severity Severe avoid Moderate monitor Mild aware Theoretical Patient Factors Age elderly Organ dysfunction Polypharmacy 5+ Genetics CYP Drug Factors NTI Single pathway Long t1/2 Saturable Top Combos Warfarin + NSAID Triple whammy Lithium + NSAID MAOI + SSRI Statin + macrolide Management Avoid Switch Adjust Monitor TDM Deprescribe Tools BNF Stockley STOPP/START ACB </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>Severity tiers</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Patient risk factors</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Drug risk factors</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Top 5 combos</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>NTI drugs</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>ACB scale</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>Severity stratification</td><td>/5</td></tr><tr><td>Patient risk factors</td><td>/5</td></tr><tr><td>Drug risk factors</td><td>/5</td></tr><tr><td>Top combinations</td><td>/5</td></tr><tr><td>Management strategies</td><td>/5</td></tr><tr><td>Documentation</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/30**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The polypharmacy threshold for "high interaction risk" is:</b></li></ol>
+<p>A. 1 drug B. 3 drugs C. 5 drugs ✓ D. 10 drugs E. 20 drugs</p>
+<ol><li><b>Which is NOT a narrow therapeutic index drug?</b></li></ol>
+<p>A. Warfarin B. Digoxin C. Lithium D. Paracetamol ✓ E. Tacrolimus</p>
+<ol><li><b>The "triple whammy" for AKI is:</b></li></ol>
+<p>A. ACEi + diuretic + NSAID ✓ B. ACEi + β-blocker + CCB C. NSAID + paracetamol + opioid D. ACEi + ARB + spironolactone E. Statin + fibrate + ezetimibe</p>
+<ol><li><b>The most common fatal drug interaction is:</b></li></ol>
+<p>A. Warfarin + NSAID (bleed) ✓ B. ACEi + K-sparing diuretic C. Statin + fibrate (rhabdo) D. SSRI + MAOI E. Methotrexate + NSAID</p>
+<ol><li><b>Anticholinergic burden ≥3 is associated with:</b></li></ol>
+<p>A. Bleeding B. Cognitive impairment, falls ✓ C. Renal failure D. Hepatotoxicity E. QT prolongation</p>
+<ol><li><b>St John's Wort primarily affects:</b></li></ol>
+<p>A. CYP2D6 B. CYP3A4 (induction) ✓ C. CYP2C9 D. P-gp E. Both CYP3A4 and P-gp ✓</p>
+<ol><li><b>Which drug is least likely to have a clinically significant interaction?</b></li></ol>
+<p>A. Warfarin B. Digoxin C. Paracetamol ✓ D. Lithium E. Tacrolimus</p>
+<ol><li><b>A patient on warfarin starts amiodarone. Best action:</b></li></ol>
+<p>A. Continue warfarin, no change B. Reduce warfarin 30-50%, monitor INR ✓ C. Stop warfarin D. Switch to DOAC E. Add vitamin K</p>
+<ol><li><b>The BNF appendix for drug interactions is:</b></li></ol>
+<p>A. Appendix 1 B. Appendix 2 C. Appendix 3 (interactions) ✓ D. Appendix 4 E. Appendix 5</p>
+<ol><li><b>Which tool is most useful for polypharmacy review in elderly?</b></li></ol>
+<p>A. Beers criteria B. STOPP/START ✓ C. Charlson Comorbidity Index D. ACB E. Apgar score</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 75-year-old is on 9 drugs: warfarin, amiodarone, simvastatin, lisinopril, indapamide, metformin, omeprazole, paracetamol, codeine. They are prescribed clarithromycin for pneumonia. The MOST important interaction is:</b></li></ol>
+<ul><li>A) Warfarin + clarithromycin (↑ INR)</li><li>B) Simvastatin + clarithromycin (rhabdomyolysis) ✓</li><li>C) Omeprazole + clarithromycin</li><li>D) Amiodarone + clarithromycin</li><li>E) Lisinopril + clarithromycin</li></ul>
+<ol><li><b>A patient on lithium for bipolar disorder takes ibuprofen for OA. Three days later, lithium level is 1.8 mmol/L (toxic). Mechanism:</b></li></ol>
+<ul><li>A) NSAIDs induce lithium metabolism</li><li>B) NSAIDs inhibit renal prostaglandins → ↓ renal Li clearance ✓</li><li>C) NSAIDs increase Li absorption</li><li>D) Ibuprofen displaces Li</li><li>E. ACEi effect</li></ul>
+<ol><li><b>A transplant patient on tacrolimus takes St John's Wort for depression. Creatinine rises. Mechanism:</b></li></ol>
+<ul><li>A) SJW inhibits CYP3A4</li><li>B) SJW induces CYP3A4 and P-gp → ↓ tacrolimus → rejection ✓</li><li>C) SJW increases tacrolimus</li><li>D) SJW has no effect</li><li>E. Tacrolimus toxicity</li></ul>
+<ol><li><b>A 70-year-old is on 8 drugs. ACB score = 3. The most appropriate action is:</b></li></ol>
+<ul><li>A) Continue all</li><li>B) Deprescribe anticholinergic drugs; switch to safer alternatives ✓</li><li>C) Add memantine</li><li>D) Reduce dose</li><li>E) Stop all</li></ul>
+<ol><li><b>A 60-year-old on simvastatin starts diltiazem. Two weeks later, develops muscle pain, CK 8000. Mechanism:</b></li></ol>
+<ul><li>A) Diltiazem induces CYP3A4</li><li>B) Diltiazem inhibits CYP3A4 → ↑ simvastatin → rhabdomyolysis ✓</li><li>C) Diltiazem displaces simvastatin</li><li>D) Diltiazem is toxic</li><li>E) Additive statin</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>C</b> (5 drugs = polypharmacy)</li><li><b>D</b> (Paracetamol = wide TI)</li><li><b>A</b> (Triple whammy)</li><li><b>A</b> (Warfarin + NSAID = most common fatal)</li><li><b>B</b> (ACB ≥3 = cognitive impairment)</li><li><b>E</b> (SJW = CYP3A4 and P-gp inducer)</li><li><b>C</b> (Paracetamol = few interactions)</li><li><b>B</b> (Reduce warfarin 30-50%, monitor INR)</li><li><b>C</b> (BNF Appendix 3)</li><li><b>B</b> (STOPP/START = polypharmacy)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>B</b> — Simvastatin + clarithromycin = rhabdomyolysis (CYP3A4 inhibition). Highest risk of acute severe outcome.</li><li><b>B</b> — NSAID inhibits renal prostaglandins → ↓ renal Li clearance → toxicity.</li><li><b>B</b> — SJW induces CYP3A4 and P-gp → ↓ tacrolimus → rejection.</li><li><b>B</b> — Deprescribe anticholinergic drugs; switch to safer alternatives.</li><li><b>B</b> — Diltiazem inhibits CYP3A4 → ↑ simvastatin → rhabdomyolysis.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Stratify interactions by severity (severe/moderate/mild) and patient/drug risk factors.</b> Patient factors: age ≥65, organ dysfunction, polypharmacy (≥5), genetics. Drug factors: NTI (warfarin, digoxin, lithium, phenytoin, theophylline, ciclosporin, tacrolimus, methotrexate), single metabolic pathway, long t1/2. Top 5 fatal: Warfarin+NSAID, Triple whammy, Lithium+NSAID, MAOI+SSRI, Statin+macrolide. Management: Avoid / Switch / Adjust / Monitor TDM / Deprescribe (STOPP/START).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../Drug Interactions|Drug Interactions]]</li><li><b>Sibling Topic-Groups</b>: [[Pharmacokinetic interactions]], [[High-risk drug combinations]]</li><li><b>Heading Hub</b>: [[Drug Interactions]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Polypharmacy and Deprescribing]], [[ADRs]], [[CYP450 Drug Interactions]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Clinical Significance · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

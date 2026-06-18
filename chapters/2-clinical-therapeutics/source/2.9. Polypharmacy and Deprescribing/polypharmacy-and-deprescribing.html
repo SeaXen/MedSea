@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Polypharmacy And Deprescribing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.9. POLYPHARMACY AND DEPRESCRIBING</span>
+      <div class="h1">Polypharmacy And Deprescribing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define polypharmacy and distinguish appropriate vs inappropriate</li><li>[ ] Apply <b>STOPP/START v3 criteria</b> for medication review</li><li>[ ] Identify <b>Beers Criteria 2023</b> potentially inappropriate medications</li><li>[ ] Calculate <b>Anticholinergic Burden Scale (ACB)</b> and <b>Drug Burden Index (DBI)</b></li><li>[ ] Execute <b>deprescribing process</b> (Recognise → Assess → Plan → Implement → Monitor)</li><li>[ ] Apply <b>deprescribing algorithms</b> for PPIs, Benzodiazepines, Anticholinergics, Statins, Antihypertensives</li><li>[ ] Address <b>barriers</b> and use <b>shared decision-making</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Polypharmacy**</td><td>Concurrent use of **≥5 regular medications** (some define ≥10 as "excessive")</td></tr><tr><td>**Appropriate Polypharmacy**</td><td>Multiple drugs for complex multimorbidity with **evidence-based indication** for each</td></tr><tr><td>**Inappropriate Polypharmacy**</td><td>Drugs without indication, therapeutic duplication, high-risk combinations, prescribing cascades</td></tr><tr><td>**Prescribing Cascade**</td><td>ADR misinterpreted as new condition → New drug prescribed → Further ADRs</td></tr></table>
+<div class="sub-h">Epidemiology</div>
+<ul><li><b>&gt;50% of adults &gt;65</b> take ≥5 medications</li><li><b>&gt;30% take ≥10</b> medications</li><li><b>Leading cause</b> of avoidable hospital admissions (6-10% admissions drug-related)</li><li><b>Cost:</b> £100M+/year in UK from avoidable ADRs</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Consequences of Polypharmacy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Consequence</th><th>Mechanism</th><th>Impact</th></tr><tr><td>-------------</td><td>-----------</td><td>--------</td></tr><tr><td>**Adverse Drug Events (ADEs)**</td><td>↑ Drug interactions, Altered PK/PD</td><td>10-20% hospital admissions in elderly</td></tr><tr><td>**Falls & Fractures**</td><td>Sedatives, Antihypertensives, Anticholinergics</td><td>Hip fracture mortality 20-30% at 1 year</td></tr><tr><td>**Frailty & Functional Decline**</td><td>Cumulative anticholinergic/sedative burden</td><td>Loss of independence, Care home admission</td></tr><tr><td>**Cognitive Impairment & Delirium**</td><td>Anticholinergics, Benzodiazepines, Opioids</td><td>Accelerated dementia, Hospital-acquired delirium</td></tr><tr><td>**Non-adherence**</td><td>Pill burden, Complexity, Cost</td><td>Treatment failure, Wasted resources</td></tr><tr><td>**Prescribing Cascades**</td><td>ADR → New diagnosis → New drug</td><td>Spiral of inappropriate prescribing</td></tr><tr><td>**Healthcare Costs**</td><td>ADEs, Hospitalisation, Unnecessary drugs</td><td>£Billions annually</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">STOPP/START Criteria Version 3 (2023) — Ireland/EU Standard</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>STOPP</b> = Screening Tool of Older People's Potentially Inappropriate Prescriptions <b>START</b> = Screening Tool to Alert to Right Treatment</div>
+<div class="sub-h">STOPP v3 — Selected High-Yield Criteria (Section Letters)</div>
+<table class="ctable"><tr><th>Section</th><th>Criterion</th><th>Clinical Rationale</th></tr><tr><td>---------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**A**</td><td>**A1**: Any drug without evidence-based clinical indication</td><td>Core principle — Every drug must have indication</td></tr><tr><td>**A**</td><td>**A2**: Drug prescribed beyond recommended duration without review</td><td>Prevents legacy prescribing</td></tr><tr><td>**B**</td><td>**B1**: Benzodiazepines >4 weeks (Falls, Cognitive impairment, Dependence)</td><td>High fall risk, Delirium</td></tr><tr><td>**B**</td><td>**B2**: Z-drugs (Zolpidem, Zopiclone) >4 weeks</td><td>Similar to BZDs</td></tr><tr><td>**B**</td><td>**B3**: First-generation antihistamines (Anticholinergic burden)</td><td>Delirium, Constipation, Urinary retention</td></tr><tr><td>**B**</td><td>**B4**: Antipsychotics for BPSD >12 weeks without review</td><td>↑ Stroke, Mortality in dementia</td></tr><tr><td>**C**</td><td>**C1**: Loop diuretic for ankle oedema without HF/renal/hepatic cause</td><td>Treat cause, not symptom</td></tr><tr><td>**C**</td><td>**C2**: Thiazide diuretic with current significant hyponatraemia (<130)</td><td>Worsens hyponatraemia</td></tr><tr><td>**D**</td><td>**D1**: NSAID + HF (NYHA III/IV)</td><td>↑ Fluid retention, Worsens HF</td></tr><tr><td>**D**</td><td>**D2**: NSAID + CKD (eGFR <30)</td><td>↑ AKI risk</td></tr><tr><td>**D**</td><td>**D3**: NSAID + Anticoagulant (Warfarin/DOAC/LMWH)</td><td>↑↑ GI Bleed risk</td></tr><tr><td>**D**</td><td>**D4**: PPI >8 weeks without indication (↑ Fracture, C. diff, B12↓, Mg↓)</td><td>Review indication regularly</td></tr><tr><td>**E**</td><td>**E1**: Warfarin 1st VTE >6 months (DOAC preferred)</td><td>DOACs safer, No monitoring</td></tr><tr><td>**E**</td><td>**E2**: Aspirin + Warfarin/DOAC without clear indication (↑ Bleed)</td><td>Dual therapy only if clear indication (e.g., recent stent)</td></tr><tr><td>**F**</td><td>**F1**: ACEi/ARB + K-sparing diuretic + K supplement without K monitoring</td><td>Hyperkalaemia risk</td></tr><tr><td>**G**</td><td>**G1**: Aspirin primary prevention >70 years (↑ Bleed, Doubtful benefit)</td><td>ASCEND trial: No net benefit</td></tr><tr><td>**G**</td><td>**G2**: Statin primary prevention >85 years (Limited evidence)</td><td>Consider deprescribing</td></tr><tr><td>**H**</td><td>**H1**: Anticholinergic + Anticholinergic (Cumulative burden)</td><td>Cognitive decline, Falls</td></tr><tr><td>**I**</td><td>**I1**: Duplicate drug class (e.g., Two ACEi, Two NSAIDs)</td><td>No added benefit, ↑ Toxicity</td></tr></table>
+<div class="sub-h">START v3 — Selected High-Yield Criteria</div>
+<table class="ctable"><tr><th>Section</th><th>Criterion</th><th>Indication</th></tr><tr><td>---------</td><td>-----------</td><td>------------</td></tr><tr><td>**A**</td><td>**A1**: Vitamin D + Calcium in osteoporosis/fragility fracture</td><td>Bone health</td></tr><tr><td>**B**</td><td>**B1**: ACEi/ARB in HFrEF (LVEF ≤40%)</td><td>Mortality benefit</td></tr><tr><td>**C**</td><td>**C1**: Beta-blocker in HFrEF post-MI</td><td>Mortality benefit</td></tr><tr><td>**D**</td><td>**D1**: Statin in established CVD (Secondary prevention)</td><td>CVD risk reduction</td></tr><tr><td>**E**</td><td>**E1**: Anticoagulant in AF (CHA₂DS₂-VASc ≥2 men, ≥3 women)</td><td>Stroke prevention</td></tr><tr><td>**F**</td><td>**F1**: Bisphosphonate in osteoporosis (T-score ≤-2.5 or fragility fracture)</td><td>Fracture prevention</td></tr><tr><td>**G**</td><td>**G1**: PPI with NSAID/aspirin in high GI bleed risk</td><td>GI protection</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Beers Criteria 2023 (American Geriatrics Society) — Key "Avoid" Drugs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug Class</th><th>Examples</th><th>Reason to Avoid</th><th>Alternative</th></tr><tr><td>------------</td><td>----------</td><td>-----------------</td><td>-------------</td></tr><tr><td>**Benzodiazepines** (All)</td><td>Diazepam, Lorazepam, Alprazolam, Clonazepam</td><td>Falls, Delirium, Cognitive decline, Dependence</td><td>Non-drug (CBT-i), Melatonin, **Lorazepam/Oxazepam short-term if essential**</td></tr><tr><td>**Non-BZD Hypnotics**</td><td>Zolpidem, Zopiclone, Zaleplon</td><td>Similar to BZDs; ↑ Falls, Fractures</td><td>Sleep hygiene, CBT-i</td></tr><tr><td>**First-gen Antihistamines**</td><td>Diphenhydramine, Chlorphenamine, Hydroxyzine, Promethazine</td><td>Strong anticholinergic → Delirium, Constipation, Urinary retention</td><td>**2nd-gen (Cetirizine, Loratadine, Fexofenadine)**</td></tr><tr><td>**Tricyclic Antidepressants**</td><td>Amitriptyline, Nortriptyline, Imipramine, Doxepin</td><td>Anticholinergic, Orthostatic hypotension, Arrhythmia</td><td>**SSRIs (Sertraline, Citalopram), SNRIs, Mirtazapine**</td></tr><tr><td>**Skeletal Muscle Relaxants**</td><td>Cyclobenzaprine, Methocarbamol, Carisoprodol, Baclofen (chronic)</td><td>Anticholinergic, Sedation, Weak evidence</td><td>Physiotherapy, Topical NSAIDs</td></tr><tr><td>**NSAIDs (Chronic Use)**</td><td>Ibuprofen, Naproxen, Diclofenac, Indomethacin</td><td>GI bleed, AKI, HF exacerbation, ↑ BP</td><td>Paracetamol, Topical NSAIDs, Opioids (short-term)</td></tr><tr><td>**Digoxin >0.125mg/day**</td><td>—</td><td>Narrow TI, Toxicity in renal impairment, No mortality benefit in AF</td><td>**Rate control: Beta-blockers, CCBs, Digoxin ≤0.125mg**</td></tr><tr><td>**Alpha-blockers (HTN)**</td><td>Doxazosin, Prazosin, Terazosin</td><td>Orthostatic hypotension, Falls, Syncope</td><td>ACEi/ARB, CCB, Thiazide</td></tr><tr><td>**Estrogens (Oral Systemic)**</td><td>Conjugated estrogens, Estradiol</td><td>VTE, Stroke, Breast cancer, Dementia</td><td>Transdermal if essential; Non-hormonal</td></tr><tr><td>**Anticholinergics (High ACB)**</td><td>Oxybutynin, Tolterodine, Solifenacin, Benztropine, Trihexyphenidyl</td><td>Cognitive decline, Constipation, Urinary retention</td><td>**Mirabegron, Vibegron (β3 agonists)**, Pelvic floor PT</td></tr><tr><td>**Proton Pump Inhibitors (Long-term >8wk)**</td><td>Omeprazole, Lansoprazole, Esomeprazole</td><td>Fracture, C. diff, B12 deficiency, Hypomagnesaemia</td><td>**Review indication; Step down to H2RA/On-demand**</td></tr><tr><td>**Antipsychotics (BPSD)**</td><td>Risperidone, Olanzapine, Quetiapine, Haloperidol</td><td>↑ Stroke, Mortality in dementia; Use <12 weeks</td><td>Non-drug first; **Quetiapine/Clozapine if essential**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Assessment Tools for Polypharmacy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Anticholinergic Burden Scale (ACB) — Score ≥3 = High Risk</div>
+<table class="ctable"><tr><th>Score 3 (Strong)</th><th>Score 2 (Moderate)</th><th>Score 1 (Mild)</th></tr><tr><td>------------------</td><td>---------------------</td><td>----------------</td></tr><tr><td>Amitriptyline, Chlorpromazine, Clozapine, Diphenhydramine, Oxybutynin, Scopolamine, Atropine, Benztropine, Trihexyphenidyl</td><td>Carbamazepine, Cyclobenzaprine, Disopyramide, Loxapine, Methotrimeprazine, Olanzapine, Paroxetine, Pimozide, Risperidone, Amantadine</td><td>Atenolol, Bupropion, Cimetidine, Codeine, Colchicine, Digoxin, Fentanyl, Furosemide, Haloperidol, Hydralazine, Isosorbide, Metoprolol, Morphine, Nifedipine, Prednisolone, Quetiapine, Ranitidine, Theophylline, Tramadol, Warfarin</td></tr></table>
+<div class="sub-h">Drug Burden Index (DBI)</div>
+<div class="callout"><b>DBI = Σ (Dose / (Dose + δ))</b> for sedative + anticholinergic drugs <b>δ</b> = Dose at 50% maximal effect (Population estimate) <b>DBI ≥1.0</b> = High burden → ↑ Falls, ↓ Function, ↑ Mortality</div>
+<div class="sub-h">Medication Appropriateness Index (MAI)</div>
+<ul><li>10-item implicit criteria (Indication, Effectiveness, Dosage, Directions, Interactions, Duplication, Duration, Cost, Monitoring, Patient preference)</li><li>Used in research; Less practical for clinical use</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Deprescribing Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">5-Step Deprescribing Process</div>
+<p>``<code>mermaid flowchart TD A[1. RECOGNISE — Identify potentially inappropriate meds] --&gt; B[2. ASSESS — Evaluate each drug] B --&gt; C[3. PLAN — Prioritise, Set goals, Discuss with patient] C --&gt; D[4. IMPLEMENT — Taper/Stop, Monitor] D --&gt; E[5. MONITOR — Review outcomes, Reassess] E --&gt; F[Repeat at each encounter] </code>``</p>
+<p>#### Step 1: RECOGNISE</p>
+<ul><li>Apply <b>STOPP/START</b>, <b>Beers</b>, <b>ACB</b>, <b>DBI</b></li><li>Identify: No indication, Duplicate, High-risk, Prescribing cascade, Non-adherence</li></ul>
+<p>#### Step 2: ASSESS (Per Drug) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Question&lt;/th&gt;&lt;th&gt;Action if YES&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;---------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Is there a current indication?&lt;/td&gt;&lt;td&gt;<b>Stop</b> if no&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Is benefit &gt; harm for THIS patient?&lt;/td&gt;&lt;td&gt;<b>Stop/Reduce</b> if harm &gt; benefit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Is there a safer alternative?&lt;/td&gt;&lt;td&gt;<b>Switch</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Is the dose appropriate (Renal/Hepatic/Age)?&lt;/td&gt;&lt;td&gt;<b>Adjust</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Is there a prescribing cascade?&lt;/td&gt;&lt;td&gt;<b>Stop precipitating drug</b>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Step 3: PLAN</p>
+<ul><li><b>Prioritise:</b> Highest harm (Falls, Bleeding, Cognitive, Anticholinergic) first</li><li><b>One drug at a time</b> (Usually)</li><li><b>Taper schedule</b> (BZDs, Steroids, Beta-blockers, Opioids)</li><li><b>Shared decision-making</b> — Patient values, Goals of care, Life expectancy</li></ul>
+<p>#### Step 4: IMPLEMENT</p>
+<ul><li><b>Taper</b> (Not abrupt stop for: BZDs, Steroids, Beta-blockers, Opioids, Antidepressants, Gabapentinoids)</li><li><b>Monitor</b> withdrawal symptoms, Return of symptoms</li><li><b>Document</b> rationale, Plan, Follow-up</li></ul>
+<p>#### Step 5: MONITOR</p>
+<ul><li><b>Reassess</b> at 2-4 weeks, 3 months, 6 months</li><li><b>Restart</b> if symptoms return AND benefit &gt; harm</li><li><b>Update</b> medication list, Communicate to team</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Deprescribing Algorithms — High-Yield Drug Classes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">PPI Deprescribing</div>
+<p>``<code>mermaid flowchart TD A[PPI &gt;8 weeks] --&gt; B{Current Indication?} B --&gt;|Yes (Barrett's, Severe oesophagitis, Chronic NSAID, Zollinger-Ellison)| C[Continue; Annual review] B --&gt;|No / Resolved (H. pylori eradicated, Stress ulcer prophylaxis ended)| D[Step-Down Approach] D --&gt; E[Daily → On-demand (PRN) → Stop] E --&gt; F[Monitor Rebound Symptoms 2-4 weeks] F --&gt; G{Recurrence?} G --&gt;|Yes| H[Restart Lowest Effective Dose] G --&gt;|No| I[Successful Deprescribing] </code>``</p>
+<p><b>Rebound Acid Hypersecretion:</b> Peaks at 1-2 weeks post-cessation → Warn patient, Provide antacid/alginate PRN</p>
+<div class="sub-h">Benzodiazepine/Z-Drug Deprescribing</div>
+<p>``<code>mermaid flowchart TD A[BZD/Z-drug &gt;4 weeks] --&gt; B[Assess: Dependence, Indication, Patient Readiness] B --&gt; C[<b>Switch to Diazepam</b> (Long half-life, Smooth taper) — Equivalent dose] C --&gt; D[<b>Taper: Reduce 10-25% every 1-2 weeks</b>] D --&gt; E[<b>Pause/Slow</b> if Withdrawal Symptoms (Anxiety, Insomnia, Tremor, Seizure risk)] E --&gt; F[<b>CBT-i for Insomnia</b> / Anxiety Management] F --&gt; G[<b>Supportive Care</b> — Sleep hygiene, Relaxation, Non-drug] </code>``</p>
+<p><b>Diazepam Equivalents:</b> Lorazepam 1mg = Diazepam 10mg; Alprazolam 0.5mg = Diazepam 5mg; Zolpidem 10mg ≈ Diazepam 5-10mg</p>
+<div class="sub-h">Anticholinergic Deprescribing</div>
+<p>``<code>mermaid flowchart TD A[ACB Score ≥3] --&gt; B[Identify ALL Anticholinergic Drugs] B --&gt; C{Prioritise by: ACB Score + Indication Strength} C --&gt; D[<b>Stop/Reduce Strongest (Score 3) First</b>] D --&gt; E[<b>Substitute</b>: Oxybutynin → Mirabegron; Amitriptyline → Duloxetine/Sertraline; Diphenhydramine → Cetirizine] E --&gt; F[Monitor Cognitive Function, Bowel/Bladder] </code>``</p>
+<div class="sub-h">Statin Deprescribing (Primary Prevention Elderly)</div>
+<p>``<code>mermaid flowchart TD A[Statin Primary Prevention &gt;75y / Frail / Limited Life Expectancy] --&gt; B{Clinical ASCVD?} B --&gt;|Yes (Secondary Prevention)| C[<b>Continue</b> — Evidence strong] B --&gt;|No (Primary Prevention)| D{Assess: Frailty, Life Expectancy, ADR, Patient Preference} D --&gt;|Frail, Limited LE, ADR (Myalgia), Patient Declines| E[<b>Deprescribe</b> — Stop, Monitor Lipids] D --&gt;|Robust, Long LE, No ADR, Patient Wants| F[<b>Continue</b> — Individualised] </code>``</p>
+<div class="sub-h">Antihypertensive Deprescribing (Frailty/Falls)</div>
+<p>``<code>mermaid flowchart TD A[Falls / Orthostatic Hypotension / Frailty / SBP &lt;120 on Treatment] --&gt; B[Review All Antihypertensives] B --&gt; C{<b>Step-Down Priority</b>: 1. Alpha-blockers 2. Diuretics 3. CCBs 4. ACEi/ARB 5. Beta-blockers} C --&gt; D[<b>Reduce/Stop ONE drug at a time</b>] D --&gt; E[<b>Monitor: BP (Home), Standing BP, Symptoms, Renal Function</b>] E --&gt; F[Target SBP <b>130-150</b> in Frail Elderly (SPRINT, HYVET)] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Barriers to Deprescribing & Solutions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Barrier Domain</th><th>Specific Barrier</th><th>Solution</th></tr><tr><td>----------------</td><td>------------------</td><td>----------</td></tr><tr><td>**Patient**</td><td>Fear of symptom return, "Doctor knows best", Attachment to pill</td><td>**Education**, Shared decision-making, Trial of taper, "We can restart"</td></tr><tr><td>**Clinician**</td><td>Lack of time, Fear of litigation, Uncertainty guidelines, Inertia</td><td>**Structured tools (STOPP/START)**, Multidisciplinary review, Pharmacist-led</td></tr><tr><td>**System**</td><td>Fragmented care, No ownership, Poor communication, Incentives for prescribing</td><td>**Medication reconciliation ATD**, Pharmacist in GP/ward, Electronic deprescribing alerts</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Shared Decision-Making in Deprescribing</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Elicit Patient Priorities</div>
+<ul><li>"What matters most to you?" (Independence, Avoiding falls, Minimising pills, Longevity)</li><li><b>Goals of care:</b> Curative vs Palliative vs Functional</li></ul>
+<div class="sub-h">Explain Benefit-Harm</div>
+<ul><li><b>Absolute terms:</b> "This drug reduces your 5-year stroke risk from 5% to 3% (NNT=50), but increases fall risk from 20% to 30% (NNH=10)"</li><li><b>Visual aids:</b> Icon arrays, Decision aids</li></ul>
+<div class="sub-h">Negotiate Plan</div>
+<ul><li><b>Trial of discontinuation:</b> "Let's try stopping for 4 weeks and see how you feel"</li><li><b>Restart agreement:</b> "If symptoms return and bother you, we'll restart"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Polypharmacy Definition**</td><td>≥5 regular medications; Appropriate vs Inappropriate</td></tr><tr><td>**STOPP/START v3**</td><td>A1 (No indication), B1 (BZD>4wk), D4 (PPI>8wk), E1 (Warfarin>6m VTE), G1 (Aspirin primary prev>70), H1 (Anticholinergic burden)</td></tr><tr><td>**Beers 2023 "Avoid"**</td><td>BZDs, Z-drugs, 1st-gen antihistamines, TCAs, Muscle relaxants, Chronic NSAIDs, Digoxin>0.125mg, Alpha-blockers HTN, Oral estrogens, High ACB drugs</td></tr><tr><td>**ACB Score ≥3** = High Risk</td><td>Amitriptyline, Oxybutynin, Diphenhydramine, Chlorpromazine, Clozapine, Scopolamine = Score 3</td></tr><tr><td>**DBI ≥1.0** = High Burden</td><td>Sedative + Anticholinergic load</td></tr><tr><td>**Deprescribing Process**</td><td>**Recognise → Assess → Plan → Implement → Monitor**</td></tr><tr><td>**PPI Algorithm**</td><td>Step-down: Daily → PRN → Stop; Warn rebound 1-2wk; Restart if recurrence</td></tr><tr><td>**BZD Algorithm**</td><td>Switch to Diazepam → Taper 10-25%/1-2wk → CBT-i → Supportive</td></tr><tr><td>**Anticholinergic**</td><td>Identify all → Substitute (Oxybutynin→Mirabegron, Amitriptyline→Duloxetine)</td></tr><tr><td>**Statin Primary >75/Frail**</td><td>Consider stop if limited LE, ADR, Patient preference; Continue if secondary prevention</td></tr><tr><td>**Antihypertensive Frailty**</td><td>Target SBP 130-150; Step-down: Alpha-blockers → Diuretics → CCBs → ACEi/ARB → Beta-blockers</td></tr><tr><td>**Barriers**</td><td>Patient (Fear), Clinician (Time/Fear), System (Fragmentation)</td></tr><tr><td>**Shared Decision**</td><td>Elicit values, Absolute benefit-harm (NNT/NNH), Trial of stop, Restart agreement</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**85yo woman on 12 meds: Omeprazole 20mg, Diazepam 5mg, Amitriptyline 25mg, Atorvastatin 40mg, Ramipril 10mg, Furosemide 40mg, Bisoprolol 2.5mg, Paracetamol 1g QDS, Codeine 30mg QDS, Lactulose, Calcium/Vit D, Aspirin 75mg. No clear CVD. Review.**</td><td>**STOPP/START Review:** 1. **Omeprazole >8wk no indication** → Step down PRN → Stop (D4). 2. **Diazepam >4wk** → Switch to diazepam (already on), Taper 10-25%/1-2wk, CBT-i (B1). 3. **Amitriptyline (ACB 3)** → Switch to duloxetine/sertraline (H1). 4. **Atorvastatin primary prevention >85y** → Consider deprescribe (G2). 5. **Aspirin primary prevention >70** → Stop (G1). 6. **Codeine** → Avoid (Beers), Switch to paracetamol + topical. 7. **Furosemide** → Check indication (Ankle oedema without HF? C1). **Communicate plan, Trial stops, Monitor.**</td></tr><tr><td>**STOPP vs START — difference?**</td><td>**STOPP** = **Stop** inappropriate drugs (Potentially inappropriate prescriptions); **START** = **Start** omitted indicated drugs (Potential prescribing omissions)</td></tr><tr><td>**Beers Criteria — which antihistamine to avoid?**</td><td>**First-generation:** Diphenhydramine, Chlorphenamine, Hydroxyzine, Promethazine — **Strong anticholinergic**; Use 2nd-gen (Cetirizine, Loratadine, Fexofenadine)</td></tr><tr><td>**PPI deprescribing — rebound management?**</td><td>**Step-down:** Daily → On-demand → Stop; **Rebound peaks 1-2 weeks**; Provide antacid/alginate PRN; Restart if symptomatic recurrence</td></tr><tr><td>**Benzodiazepine taper — key principles?**</td><td>**Switch to diazepam** (Long half-life); **Reduce 10-25% every 1-2 weeks**; **Pause/slow** if withdrawal; **CBT-i for insomnia**; Non-drug support</td></tr><tr><td>**Anticholinergic Burden Scale — score 3 drugs?**</td><td>Amitriptyline, Chlorpromazine, Clozapine, Diphenhydramine, Oxybutynin, Scopolamine, Atropine, Benztropine, Trihexyphenidyl</td></tr><tr><td>**Statin deprescribing in 85yo primary prevention?**</td><td>**Consider stop** if frailty, limited life expectancy, adverse effects (myalgia), patient preference; **Continue if secondary prevention (ASCVD)**; Shared decision-making</td></tr><tr><td>**Prescribing cascade example?**</td><td>**CCB → Ankle oedema → Diuretic prescribed** (Instead of stopping CCB); **NSAID → Hypertension → Antihypertensive added**; **Cholinesterase inhibitor → Urinary incontinence → Anticholinergic added**</td></tr><tr><td>**Shared decision-making — how to explain NNT/NNH?**</td><td>"For every 50 people taking this statin for 5 years, 1 heart attack is prevented. For every 10 people taking this sedative, 1 extra person has a fall. What matters more to you?"</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**STOPP/START — which is which?**</td><td>**STOPP** = **S**top inappropriate; **START** = **S**tart omitted</td></tr><tr><td>**Beers vs STOPP**</td><td>**Beers** = US (AGS), Explicit drug list; **STOPP/START** = EU/Ireland, Criteria-based, Includes START (omissions)</td></tr><tr><td>**ACB vs DBI**</td><td>**ACB** = Anticholinergic-specific (3/2/1 scoring); **DBI** = Sedative + Anticholinergic combined (Dose-weighted formula)</td></tr><tr><td>**PPI rebound vs relapse**</td><td>**Rebound** = Physiological acid hypersecretion 1-2wk post-stop (Self-limiting); **Relapse** = Return of underlying disease (Needs restart)</td></tr><tr><td>**BZD taper — why diazepam?**</td><td>**Long half-life (20-100h + active metabolites)** → Smooth withdrawal, Less interdose withdrawal</td></tr><tr><td>**Deprescribing vs Non-adherence**</td><td>**Deprescribing** = Planned, Supervised, Shared decision; **Non-adherence** = Unintentional/Intentional stopping without plan</td></tr></table>
+<p><b>Mnemonic: STOPP-DEPRESCRIBE</b></p>
+<ul><li><b>S</b>TOP inappropriate (STOPP criteria)</li><li><b>T</b>aper slowly (BZDs, Steroids, Beta-blockers, Opioids)</li><li><b>O</b>ne drug at a time (Usually)</li><li><b>P</b>rioritise high harm (Falls, Bleeds, Cognitive, ACB)</li><li><b>P</b>atient-centered (Shared decision, Values, Goals)</li><li><b>D</b>rug Burden Index / ACB calculated</li><li><b>E</b>vidence-based alternatives (Mirabegron, Duloxetine, CBT-i)</li><li><b>P</b>rescribing cascades identified</li><li><b>R</b>eview at each encounter (Med rec ATD)</li><li><b>E</b>ducate patient (Benefit-harm, NNT/NNH)</li><li><b>S</b>hared decision-making documented</li><li><b>C</b>ommunicate to team (GP, Pharmacy, Carers)</li><li><b>R</b>estart agreement if symptoms return</li><li><b>I</b>mplement with monitoring (2wk, 3mo, 6mo)</li><li><b>B</b>arriers addressed (Time, Fear, System)</li><li><b>E</b>valuate outcomes (Falls, Cognition, Adherence, Satisfaction)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Polypharmacy &amp; Deprescribing)) Definitions ≥5 medications Appropriate vs Inappropriate Prescribing Cascades Consequences ADEs, Falls, Frailty Cognitive Decline, Delirium Non-adherence, Cost Assessment Tools STOPP/START v3 Beers Criteria 2023 ACB (Anticholinergic Burden) DBI (Drug Burden Index) MAI Deprescribing Process Recognise → Assess → Plan → Implement → Monitor Algorithms PPI: Step-down (Daily→PRN→Stop) BZD: Diazepam switch → Taper 10-25%/1-2wk Anticholinergic: Substitute (Mirabegron, Duloxetine) Statin: Primary &gt;75/Frail → Consider stop Antihypertensive: Target SBP 130-150, Step-down Barriers Patient: Fear, Attachment Clinician: Time, Fear, Inertia System: Fragmentation Shared Decision Elicit Values Absolute Benefit-Harm (NNT/NNH) Trial of Stop Restart Agreement </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>STOPP/START v3 Criteria</td><td></td><td></td></tr><tr><td>Beers Criteria 2023</td><td></td><td></td></tr><tr><td>ACB/DBI Calculation</td><td></td><td></td></tr><tr><td>Deprescribing Process</td><td></td><td></td></tr><tr><td>PPI/BZD/Anticholinergic Algorithms</td><td></td><td></td></tr><tr><td>Statin/Antihypertensive Deprescribing</td><td></td><td></td></tr><tr><td>Barriers & Shared Decision</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ol><li>Define polypharmacy, Apply STOPP/START/Beers to case</li><li>Identify inappropriate drugs, Calculate ACB/DBI</li><li>Prioritise deprescribing targets (Harm, Patient goals)</li><li>Outline taper plans for each (PPI, BZD, Anticholinergic, etc.)</li><li>Address barriers, Shared decision-making, Monitoring plan</li></ol>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li><b>Polypharmacy:</b> ≥5 meds; Inappropriate = No indication, Duplication, High-risk</li><li><b>STOPP v3:</b> A1(No indication), B1(BZD&gt;4wk), D4(PPI&gt;8wk), E1(Warf&gt;6m VTE), G1(Aspirin&gt;70 primary), H1(ACB)</li><li><b>START v3:</b> A1(Vit D/Ca), B1(ACEi HFrEF), E1(Anticoag AF), F1(Bisphosphonate)</li><li><b>Beers:</b> BZDs, Z-drugs, 1st-gen antihistamines, TCAs, Muscle relaxants, NSAIDs chronic, Digoxin&gt;0.125, Alpha-blockers, Estrogens, High ACB</li><li><b>ACB≥3:</b> Amitriptyline, Oxybutynin, Diphenhydramine, Chlorpromazine, Clozapine</li><li><b>Deprescribe:</b> Recognise→Assess→Plan→Implement→Monitor</li><li><b>PPI:</b> Daily→PRN→Stop (Rebound 1-2wk)</li><li><b>BZD:</b> Diazepam switch→Taper 10-25%/1-2wk→CBT-i</li><li><b>Anticholinergic:</b> Substitute (Oxybutynin→Mirabegron, Amitriptyline→Duloxetine)</li><li><b>Statin Primary &gt;75:</b> Consider stop (Frailty, LE, ADR, Preference)</li><li><b>Antihypertensive Frailty:</b> SBP 130-150, Step-down Alpha→Diuretic→CCB→ACEi/ARB→BB</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"STOPP = Stop inappropriate; START = Start omitted"</li><li>"Beers = US list; STOPP/START = EU criteria + omissions"</li><li>"ACB ≥3 = High risk cognitive decline/falls"</li><li>"PPI deprescribe: Step-down, Warn rebound 1-2wk"</li><li>"BZD deprescribe: Diazepam switch, Taper 10-25%/1-2wk, CBT-i"</li><li>"Anticholinergic deprescribe: Substitute (Mirabegron, Duloxetine)"</li><li>"Statin primary &gt;75: Consider stop if frail/LE/ADR; Continue secondary"</li><li>"Shared decision: Elicit values, NNT/NNH absolute, Trial stop, Restart agreement"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Every elderly admission: <b>Medication reconciliation ATD</b> → <b>STOPP/START review</b></li><li><b>Identify prescribing cascades</b> (CCB→Oedema→Diuretic; NSAID→HTN→Antihypertensive)</li><li><b>Calculate ACB</b> — If ≥3, prioritise anticholinergic deprescribing</li><li><b>PPI review</b> — "Why started? Duration? Indication current?"</li><li><b>Deprescribing = Process, not event</b> — Document rationale, Plan, Follow-up</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li><b>STOPP:</b> A1(Noind), B1(BZD&gt;4w), D4(PPI&gt;8w), E1(Warf&gt;6mVTE), G1(Asp&gt;70prim), H1(ACB)</li><li><b>START:</b> A1(VitD/Ca), B1(ACEi HFrEF), C1(BB HFrEF), D1(Statin 2nd), E1(Anticoag AF), F1(Bisphos), G1(PPI+NSAID)</li><li><b>Beers:</b> BZD, Z-drug, 1st-gen AH, TCA, Muscle relax, NSAID chron, Dig&gt;0.125, Alpha-block, Estrogen, High ACB</li><li><b>ACB 3:</b> Amitrip, Oxybutynin, Diphenhyd, Chlorprom, Clozapine, Scopolamine</li><li><b>Process:</b> Recognise→Assess→Plan→Implement→Monitor</li><li><b>PPI:</b> Daily→PRN→Stop; Rebound 1-2wk</li><li><b>BZD:</b> Diazepam switch; Taper 10-25%/1-2wk; CBT-i</li><li><b>Antichol:</b> Substitute (Mirabegron, Duloxetine)</li><li><b>Statin 1°&gt;75:</b> Stop if Frail/LE/ADR/Pref; Continue 2°</li><li><b>HTN Frail:</b> SBP 130-150; Step-down Alpha→Diuretic→CCB→ACEi→BB</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Polypharmacy (≥5 medications) drives ADEs, falls, cognitive decline, and non-adherence in elderly. <b>STOPP/START v3</b> provides explicit criteria for inappropriate prescriptions (STOPP: A1, B1, D4, E1, G1, H1) and omissions (START: A1, B1, E1). <b>Beers Criteria 2023</b> lists drugs to avoid (BZDs, Z-drugs, 1st-gen antihistamines, TCAs, chronic NSAIDs, high ACB drugs). <b>ACB ≥3</b> and <b>DBI ≥1</b> indicate high burden. <b>Deprescribing</b> follows 5-step process (Recognise→Assess→Plan→Implement→Monitor) with specific algorithms for PPIs (step-down), BZDs (diazepam switch + taper), anticholinergics (substitution), statins (consider stop primary prevention &gt;75/frail), antihypertensives (SBP 130-150 in frailty). <b>Barriers</b> (patient fear, clinician time, system fragmentation) addressed via <b>shared decision-making</b> using absolute benefit-harm (NNT/NNH), trial of discontinuation, and restart agreements.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>STOPP criteria identify:</b></li></ol>
+<p>A. Drugs to start  B. <b>Potentially inappropriate prescriptions to stop</b>  C. Monitoring parameters  D. Drug interactions</p>
+<ol><li><b>Beers Criteria 2023 — which drug class is NOT "Avoid"?</b></li></ol>
+<p>A. Benzodiazepines  B. <b>SSRIs</b>  C. First-generation antihistamines  D. Tricyclic antidepressants</p>
+<ol><li><b>Anticholinergic Burden Scale — score ≥3 indicates:</b></li></ol>
+<p>A. Low risk  B. Moderate risk  C. <b>High risk (Cognitive decline, Falls)</b>  D. No risk</p>
+<ol><li><b>PPI deprescribing step-down order:</b></li></ol>
+<p>A. Stop → PRN → Daily  B. <b>Daily → PRN → Stop</b>  C. PRN → Daily → Stop  D. Stop immediately</p>
+<ol><li><b>Benzodiazepine taper — preferred switch agent:</b></li></ol>
+<p>A. Lorazepam  B. <b>Diazepam</b>  C. Alprazolam  D. Zolpidem</p>
+<ol><li><b>STOPP criterion for PPI &gt;8 weeks without indication:</b></li></ol>
+<p>A. D1  B. <b>D4</b>  C. D2  D. D3</p>
+<ol><li><b>START criterion for anticoagulation in AF:</b></li></ol>
+<p>A. A1  B. B1  C. <b>E1</b>  D. F1</p>
+<ol><li><b>Deprescribing statin in primary prevention &gt;75 years — key consideration:</b></li></ol>
+<p>A. Always continue  B. <b>Frailty, Life expectancy, ADR, Patient preference</b>  C. LDL level only  D. Never deprescribe</p>
+<ol><li><b>Prescribing cascade example:</b></li></ol>
+<p>A. Drug interaction  B. <b>ADR misinterpreted as new condition → New drug</b>  C. Therapeutic duplication  D. Non-adherence</p>
+<ol><li><b>Shared decision-making in deprescribing — best approach:</b></li></ol>
+<p>A. Doctor decides  B. <b>Elicit patient values, Present absolute NNT/NNH, Trial of stop, Restart agreement</b>  C. Stop all at once  D. Defer to family</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>82M on omeprazole 20mg daily for 2 years for "dyspepsia" (resolved). STOPP criterion?</b></li></ol>
+<p>A. A1  B. B1  C. <b>D4</b>  D. E1</p>
+<ol><li><b>78F on diazepam 5mg nocte for 6 months for insomnia. STOPP criterion?</b></li></ol>
+<p>A. <b>B1</b>  B. B2  C. B3  D. B4</p>
+<ol><li><b>Patient on amitriptyline 25mg, oxybutynin 5mg, diphenhydramine 25mg PRN. ACB score?</b></li></ol>
+<p>A. 2  B. 4  C. <b>9</b> (Amitriptyline 3 + Oxybutynin 3 + Diphenhydramine 3)  D. 6</p>
+<ol><li><b>PPI deprescribing — rebound acid hypersecretion typically peaks at:</b></li></ol>
+<p>A. 24 hours  B. <b>1-2 weeks</b>  C. 4 weeks  D. 8 weeks</p>
+<ol><li><b>Benzodiazepine taper — initial dose reduction per step:</b></li></ol>
+<p>A. 50%  B. <b>10-25%</b>  C. 5-10%  D. 30-50%</p>
+<ol><li><b>85yo frail woman, no CVD, on atorvastatin 20mg for primary prevention. Deprescribe?</b></li></ol>
+<p>A. Always continue  B. <b>Consider stop (Frailty, Limited LE, Shared decision)</b>  C. Increase dose  D. Switch to rosuvastatin</p>
+<ol><li><b>Antihypertensive deprescribing priority in falls/frailty:</b></li></ol>
+<p>A. ACEi first  B. Beta-blocker first  C. <b>Alpha-blocker → Diuretic → CCB → ACEi/ARB → Beta-blocker</b>  D. Diuretic first</p>
+<ol><li><b>Which is a START criterion?</b></li></ol>
+<p>A. Stop PPI &gt;8 weeks  B. <b>Start anticoagulant in AF (CHA₂DS₂-VASc ≥2)</b>  C. Stop BZD &gt;4 weeks  D. Stop NSAID in CKD</p>
+<ol><li><b>Patient on calcium channel blocker develops ankle oedema → Furosemide added. This is:</b></li></ol>
+<p>A. Drug interaction  B. <b>Prescribing cascade</b>  C. Therapeutic duplication  D. Adherence issue</p>
+<ol><li><b>Deprescribing process — correct sequence:</b></li></ol>
+<p>A. Plan → Assess → Recognise → Implement → Monitor  B. <b>Recognise → Assess → Plan → Implement → Monitor</b>  C. Implement → Recognise → Assess → Plan → Monitor  D. Assess → Recognise → Plan → Implement → Monitor</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>STOPP = ?</b></li></ul>
+<p>A: <b>Stop</b> inappropriate prescriptions</p>
+<ul><li>Q: <b>START = ?</b></li></ul>
+<p>A: <b>Start</b> omitted indicated drugs</p>
+<ul><li>Q: <b>STOPP D4 = ?</b></li></ul>
+<p>A: <b>PPI &gt;8 weeks without indication</b></p>
+<ul><li>Q: <b>STOPP B1 = ?</b></li></ul>
+<p>A: <b>Benzodiazepines &gt;4 weeks</b></p>
+<ul><li>Q: <b>Beers "Avoid" top 3?</b></li></ul>
+<p>A: BZDs, 1st-gen antihistamines, TCAs</p>
+<ul><li>Q: <b>ACB Score 3 drugs?</b></li></ul>
+<p>A: Amitriptyline, Oxybutynin, Diphenhydramine, Chlorpromazine, Clozapine</p>
+<ul><li>Q: <b>PPI deprescribe algorithm?</b></li></ul>
+<p>A: Daily → PRN → Stop; Warn rebound 1-2wk</p>
+<ul><li>Q: <b>BZD deprescribe algorithm?</b></li></ul>
+<p>A: Switch to Diazepam → Taper 10-25%/1-2wk → CBT-i</p>
+<ul><li>Q: <b>Anticholinergic deprescribe?</b></li></ul>
+<p>A: Substitute (Oxybutynin→Mirabegron, Amitriptyline→Duloxetine)</p>
+<ul><li>Q: <b>Statin deprescribe primary &gt;75?</b></li></ul>
+<p>A: Consider stop if Frail/LE/ADR/Pref; Continue secondary</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — STOPP = Screening Tool of Older People's Potentially <b>Inappropriate Prescriptions</b></li><li><b>B</b> — SSRIs are preferred in elderly; BZDs, 1st-gen antihistamines, TCAs are "Avoid"</li><li><b>C</b> — ACB ≥3 = High risk for cognitive decline, falls, delirium, mortality</li><li><b>B</b> — Step-down: Daily → On-demand (PRN) → Stop (Rebound peaks 1-2 weeks)</li><li><b>B</b> — Diazepam = Long half-life + Active metabolites = Smooth taper</li><li><b>B</b> — STOPP D4: PPI &gt;8 weeks without appropriate indication</li><li><b>C</b> — START E1: Anticoagulant in AF (CHA₂DS₂-VASc ≥2 men, ≥3 women)</li><li><b>B</b> — Consider deprescribing if frailty, limited life expectancy, ADR, patient preference; Continue if secondary prevention</li><li><b>B</b> — Prescribing cascade = ADR (e.g., CCB oedema) misinterpreted as new condition → New drug (Diuretic)</li><li><b>B</b> — Shared decision: Elicit values, Absolute NNT/NNH, Trial of stop, Restart if needed</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> — D4: PPI &gt;8 weeks without indication (Dyspepsia resolved)</li><li><b>A</b> — B1: Benzodiazepines &gt;4 weeks (Diazepam 6 months)</li><li><b>C</b> — Amitriptyline (3) + Oxybutynin (3) + Diphenhydramine (3) = <b>9</b> (High risk)</li><li><b>B</b> — Rebound acid hypersecretion peaks at <b>1-2 weeks</b> post-cessation</li><li><b>B</b> — Taper <b>10-25% every 1-2 weeks</b> (Slower if withdrawal symptoms)</li><li><b>B</b> — Frail &gt;75 primary prevention: <b>Consider stop</b> (Shared decision); Secondary prevention = Continue</li><li><b>C</b> — Step-down priority: <b>Alpha-blocker → Diuretic → CCB → ACEi/ARB → Beta-blocker</b></li><li><b>B</b> — START E1 = Start anticoagulant in AF; Others are STOPP criteria</li><li><b>B</b> — CCB → Oedema → Diuretic = Classic prescribing cascade (Should stop/reduce CCB instead)</li><li><b>B</b> — <b>Recognise → Assess → Plan → Implement → Monitor</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[Polypharmacy and Deprescribing|Polypharmacy and Deprescribing]]</li><li><b>Chapter Map</b>: [[Davidson Chapter 2 - Clinical Therapeutics Hierarchy|Chapter 2 Hierarchy]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Elderly Prescribing]], [[Frailty]], [[Medication Reconciliation]], [[STOPP/START Criteria v3]], [[Beers Criteria 2023]], [[Deprescribing Algorithms]], [[Anticholinergic Burden]], [[Drug Burden Index]], [[Falls Risk]], [[Cognitive Impairment]], [[Anticholinergic Burden Scale]], [[Prescribing Cascades]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Polypharmacy And Deprescribing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

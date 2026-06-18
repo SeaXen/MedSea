@@ -1,0 +1,565 @@
+# Penile Cancer
+
+> [!tip] **FCPS/MRCP Priority: MEDIUM**
+> **Penile Cancer = Rare (1% male cancers, <0.5% all cancers)**; **SCC 95%**; **HPV 40-50% (HPV16/18)**; **Circumcision in infancy protective**; **Risk: Phimosis, Poor hygiene, Lichen sclerosus, Smoking, HIV, PUVA**; **Staging: TNM 8th (Tis/Ta/T1a/T1b/T2/T3/T4)**; **Primary: Organ-preserving (Tis/Ta/T1a: Laser, Topical 5-FU/Imiquimod, Glansectomy, Mohs; T1b-T2: Partial penectomy) vs Radical (Total penectomy + Perineal urethrostomy)**; **Inguinal Nodes**: **DSNB** (cN0) / **Modified ILND** (cN+); **Pelvic ILND** if inguinal +; **Adjuvant**: ChemoRT (pN2-3, ENE); **Metastatic**: **Cisplatin-based (TPF)**; **HPV+ better prognosis**; **p16 IHC surrogate**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Describe **epidemiology** and **HPV association** (40-50%, HPV16/18; p16 surrogate)
+- [ ] Apply **TNM 8th Edition** staging for penile cancer
+- [ ] Select **organ-preserving surgery** for Tis/Ta/T1a (Laser, Topical, Glansectomy, Mohs)
+- [ ] Indicate **partial vs total penectomy** for T1b-T4
+- [ ] Manage **inguinal lymph nodes**: **DSNB** for cN0; **Modified ILND** for cN+; **Pelvic ILND** if inguinal +
+- [ ] Prescribe **adjuvant ChemoRT** for pN2-3 or extranodal extension (ENE)
+- [ ] Sequence **metastatic therapy**: **Cisplatin-based (TPF: Docetaxel/Cisplatin/5-FU)**
+- [ ] Recognise **HPV+ (p16+) better prognosis**; **HPV- worse**
+- [ ] Differentiate **PeIN** (Penile Intraepithelial Neoplasia) from invasive SCC
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Definition** | Malignant tumour of penile epithelium; **SCC 95%**; Variants: Verrucous, Basaloid, Warty, Sarcomatoid |
+| **Incidence** | **1% of male cancers**; ~650/year UK; **Higher in developing countries**; **Circumcision in infancy ↓ risk 3-5x** |
+| **Prevalence** | 5-year OS: **Stage I ~85%, Stage II ~60%, Stage III ~40%, Stage IV ~10%** |
+| **Peak Age** | 60-70 years |
+| **Sex Ratio** | Male only |
+| **Risk Factors** | **HPV 16/18 (40-50%)** — **p16+** surrogate; **Phimosis** (↑10-20x); **Poor hygiene**; **Lichen sclerosus (BXO)**; **Smoking**; **HIV** (↑5-10x); **PUVA therapy**; **Chronic inflammation** |
+
+---
+
+## 3. Aetiology & Pathophysiology
+
+```mermaid
+flowchart LR
+    A[Risk Factors] --> B[Carcinogenesis]
+    A1[HPV 16/18 Infection] --> B1[E6/E7 Oncoproteins]
+    B1 --> C1[p53 Degradation]
+    B1 --> C2[pRb Inactivation]
+    C1 --> D[Cell Cycle Dysregulation]
+    C2 --> D
+    A2[Phimosis / Poor Hygiene] --> B2[Chronic Inflammation]
+    B2 --> C3[Smegma Carcinogens]
+    C3 --> D
+    A3[Lichen Sclerosus (BXO)] --> B3[Chronic Inflammation / Autoimmune]
+    B3 --> D
+    D --> E[SCC Development]
+    E --> F1[**HPV+ (p16+)**: Basaloid/Warty, **Better prognosis**]
+    E --> F2[**HPV- (p16-)**: Keratinising/Verrucous, **Worse prognosis**]
+```
+
+### Histological Variants
+
+| Variant | Frequency | HPV Association | Prognosis |
+|---------|-----------|-----------------|-----------|
+| **Usual SCC (Keratinising)** | 50-60% | **Negative** | Intermediate |
+| **Basaloid** | 10-15% | **Positive (80%)** | **Better** |
+| **Warty (Condylomatous)** | 10-15% | **Positive (90%)** | **Better** |
+| **Verrucous (Buschke-Löwenstein)** | 5-10% | Negative | **Locally aggressive, rarely metastatic** |
+| **Sarcomatoid** | <5% | Variable | Poor |
+
+---
+
+## 4. Clinical Features
+
+| Feature | Description |
+|---------|-------------|
+| **Penile Lesion** | **Ulcerative (60%)**, Exophytic (30%), Mixed; **Glans (48%), Prepuce (21%), Shaft (15%)** |
+| **Phimosis** | Secondary to tumour; **Prevents inspection** |
+| **Inguinal Lymphadenopathy** | **Palpable nodes (30-50% at dx)**; Fixed/matted = advanced |
+| **Pain** | Late (invasion); **Early usually painless** |
+| **Bleeding/Discharge** | From ulcerative lesion |
+| **Metastatic** | Pelvic nodes → Distant (lung, liver, bone) |
+
+---
+
+## 5. Staging & Classification (TNM 8th Edition)
+
+| T Stage | Description |
+|---------|-------------|
+| **Tis** | **PeIN** (Penile Intraepithelial Neoplasia) — **Erythroplasia of Queyrat (glans), Bowen disease (shaft)** |
+| **Ta** | **Non-invasive verrucous carcinoma** |
+| **T1a** | **Invades subepithelial connective tissue** — **No LVI, No perineural, G1-2** |
+| **T1b** | **Invades subepithelial connective tissue** — **LVI+ OR Perineural+ OR G3** |
+| **T2** | **Invades corpus spongiosum OR cavernosum** |
+| **T3** | **Invades urethra** |
+| **T4** | **Invades other adjacent structures** (pubic bone, scrotum, prostate) |
+
+| N Stage | Description |
+|---------|-------------|
+| **N0** | No regional nodes |
+| **N1** | **Single/multiple inguinal nodes** (unilateral OR bilateral) |
+| **N2** | **Single/multiple pelvic nodes** (unilateral OR bilateral) |
+| **N3** | **Fixed/matted inguinal OR pelvic nodes** |
+
+| M Stage | Description |
+|---------|-------------|
+| M0 | No distant mets |
+| M1 | Distant mets |
+
+---
+
+## 6. Diagnosis & Investigations
+
+| Investigation | Role | Key Details |
+|---------------|------|-------------|
+| **Clinical Exam** | **Primary tumour + Inguinal/Pelvic nodes** | **Measure lesion**, **Palpate inguinal/femoral nodes** (femoral canal), **Assess mobility** |
+| **Biopsy (Incisional/Punch)** | **Diagnosis + Grade + p16** | **p16 IHC** (HPV surrogate); **Grade 1-3**; **Variant** |
+| **MRI Penis** | **Local staging (T)** | **Corpus spongiosum/cavernosum invasion**, **Urethral invasion** — **Gold standard for T** |
+| **CT Chest/Abdomen/Pelvis** | **Nodal (Pelvic) + Distant staging** | **Inguinal nodes better on clinical/US** |
+| **Ultrasound + FNAC** | **Inguinal nodes** | **cN0 vs cN+**; **FNAC if suspicious** |
+| **DSNB (Dynamic Sentinel Node Biopsy)** | **cN0 staging** | **Technetium-99m + Blue dye**; **False -ve rate ~5-10%**; **Standard for cN0** |
+| **PET-CT** | **Advanced disease (cN+, M1)** | Not routine for cN0 |
+| **HPV/p16 Testing** | **Prognostic** | **p16 IHC** (surrogate for HPV-driven); **HPV PCR/ISH** confirmatory |
+
+---
+
+## 7. Differential Diagnosis
+
+| Condition | Distinguishing Features |
+|-----------|-------------------------|
+| **PeIN (Penile Intraepithelial Neoplasia)** | **In-situ**: **Erythroplasia of Queyrat (glans), Bowen disease (shaft)**; **No invasion**; p16+ common |
+| **Condyloma Acuminatum (Genital Warts)** | **HPV 6/11**, **Exophytic, friable**, **Koilocytes**; Benign |
+| **Lichen Sclerosus (BXO)** | **White atrophic plaques**, **Phimosis**, **Histology: Hyperkeratosis, lichenoid infiltrate** |
+| **Zoon's Balanitis** | **Circinate, shiny, red plaques** (glans); Benign |
+| **Verrucous Carcinoma** | **Exophytic, cauliflower**, **Low-grade**, **Rarely metastasises** |
+| **Melanoma** | **Pigmented**, **S100+, HMB45+, Melan-A+** |
+| **Extramammary Paget's** | **Scrotal/perineal**, **CK7+, GCDFP-15+**, **Adenocarcinoma in-situ** |
+
+---
+
+## 8. Management
+
+### Primary Tumour (Organ-Preserving vs Radical)
+
+```mermaid
+flowchart TD
+    A[Primary Penile Tumour] --> B{T Stage}
+    B -->|**Tis (PeIN)**| C[**Topical: 5-FU 5% / Imiquimod 5%**<br/>**Laser (CO2)**<br/>**Circumcision** (if prepuce)<br/>**Glansectomy** (if glans)]
+    B -->|**Ta (Verrucous)**| D[**Wide Local Excision / Laser / Mohs**<br/>**Verrucous: Radical excision** (low metastasis risk)]
+    B -->|**T1a (G1-2, No LVI/PNI)**| E[**Organ-Preserving**<br/>**Glansectomy + Split-skin graft**<br/>**Partial penectomy** (if distal)<br/>**Mohs micrographic** (selected)]
+    B -->|**T1b (LVI+/PNI+/G3) / T2**| F[**Partial Penectomy**<br/>**≥2cm proximal margin**<br/>**Reconstruction: Skin graft / Flap**<br/>**If proximal shaft: Total Penectomy + Perineal Urethrostomy**]
+    B -->|**T3 (Urethral) / T4**| G[**Total Penectomy + Perineal Urethrostomy**<br/>**± Cystoprostatectomy** (if prostate invasion)<br/>**Neoadjuvant Chemo** considered for T4]
+```
+
+### Inguinal Lymph Nodes
+
+```mermaid
+flowchart TD
+    A[Inguinal Nodal Management] --> B{cN Status}
+    B -->|**cN0** (Impalpable)| C[**DSNB (Dynamic Sentinel Node Biopsy)**<br/>**Technetium-99m + Patent Blue Dye**<br/>**If SN+ → Modified ILND**<br/>**If SN- → Surveillance (Ultrasound q3-6mo ×2yr)**<br/>**False -ve ~5-10% → Strict surveillance**]
+    B -->|**cN+** (Palpable, mobile)| D[**Modified Inguinal Lymph Node Dissection (MILND)**<br/>**Saphenous vein preserved**<br/>**Dissection boundaries**: Inguinal ligament (sup), Sartorius (lat), Adductor longus (med), Fascia lata (deep)<br/>**If pN+ → Adjuvant ChemoRT**]
+    B -->|**cN++** (Fixed/matted)| E[**Neoadjuvant Chemo (TPF)** → **Reassess → ILND if resectable**<br/>**OR Definitive ChemoRT**]
+    D --> F{Pathology}
+    F -->|**pN1 (1-2 nodes, no ENE)**| G[**Surveillance** (no adjuvant RT standard)]
+    F -->|**pN2-3 (≥3 nodes OR ENE)**| H[**Adjuvant ChemoRT**<br/>**RT: 50-54Gy/25-30fx to inguinal + pelvic**<br/>**Concurrent Cisplatin 40mg/m² weekly**<br/>**Improves local control, OS debated**]
+```
+
+### Pelvic Lymph Nodes
+
+| Scenario | Management |
+|----------|------------|
+| **Inguinal pN+ (any)** | **Open / Laparoscopic Pelvic ILND** (external iliac, obturator, internal iliac) |
+| **Pelvic pN+** | **Adjuvant ChemoRT** (Inguinal + Pelvic fields) |
+
+### Adjuvant Therapy
+
+| Indication | Regimen |
+|------------|---------|
+| **pN2-3 (inguinal)** | **ChemoRT: RT 50-54Gy + Weekly Cisplatin 40mg/m²** |
+| **ENE (Extranodal Extension)** | **ChemoRT** |
+| **Pelvic pN+** | **ChemoRT (Inguinal + Pelvic)** |
+| **Positive Margins (Primary)** | **Re-excision** if feasible; **Adjuvant RT** to primary site |
+
+### Metastatic / Recurrent
+
+```mermaid
+flowchart TD
+    A[Metastatic/Recurrent Penile Cancer] --> B{Performance Status}
+    B -->|**Fit**| C[**TPF (Docetaxel + Cisplatin + 5-FU)**<br/>**TIP: Docetaxel 75 + Cisplatin 75 + 5-FU 750 d1-5 q3w**<br/>**OR TPF: Docetaxel 75 + Cisplatin 75 + 5-FU 1000 d1-4 q3w**<br/>**OR PC: Paclitaxel + Cisplatin**<br/>**OR GC: Gemcitabine + Cisplatin**]
+    B -->|**Unfit**| D[**Single Agent: Paclitaxel / Docetaxel / Cisplatin / Gemcitabine**<br/>**Best supportive care**]
+    C --> E[**Response → Consolidation Surgery/RT** (selected)]
+    D --> F[**Palliative RT** for symptomatic local disease]
+```
+
+---
+
+## 9. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Penile Cancer** | **Rare (1% male cancers)**; **SCC 95%**; **HPV 40-50% (16/18)**; **Circumcision protective** |
+| **p16 IHC** | **Surrogate for HPV-driven** (HPV+); **Basaloid/Warty = p16+ = Better prognosis** |
+| **TNM 8th** | **Tis=PeIN, Ta=Verrucous, T1a=No LVI/PNI/G1-2, T1b=LVI+/PNI+/G3, T2=Corpus invasion, T3=Urethra, T4=Adjacent** |
+| **Primary Surgery** | **Tis/Ta/T1a: Organ-preserving (Laser, Topical, Glansectomy, Mohs)**; **T1b-T2: Partial penectomy**; **T3-T4: Total penectomy + Perineal urethrostomy** |
+| **Inguinal Nodes** | **cN0: DSNB** (SN+ → MILND); **cN+: MILND**; **cN++: Neoadj Chemo → ILND/RT** |
+| **Pelvic Nodes** | **Inguinal pN+ → Pelvic ILND** (lap/open) |
+| **Adjuvant** | **pN2-3 or ENE → ChemoRT (50-54Gy + Weekly Cisplatin)** |
+| **Metastatic** | **TPF (Doc/Cis/5-FU)** — **Best response**; **Paclitaxel/Cisplatin alternative** |
+| **HPV+ vs HPV-** | **HPV+ (p16+)**: Basaloid/Warty, **Better OS**; **HPV-**: Keratinising, **Worse OS** |
+| **PeIN** | **Tis**: **Erythroplasia of Queyrat (glans), Bowen (shaft)**; **Topical 5-FU/Imiquimod, Laser, Circumcision** |
+
+---
+
+## 10. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **60M, uncircumcised, glans ulcer 2cm, biopsy: SCC G2, p16+, no LVI. MRI: no corpus invasion. cN0. Management?** | **T1a (G2, No LVI, No corpus invasion)** → **Organ-preserving: Glansectomy + Split-skin graft** (or Partial penectomy if patient prefers) **+ DSNB for cN0**. |
+| **Same patient but LVI+ on biopsy. Management?** | **T1b** (LVI+) → **Partial Penectomy** (≥2cm proximal margin) **+ DSNB**. |
+| **What is DSNB? Indications?** | **Dynamic Sentinel Node Biopsy**: **Technetium-99m + Patent Blue Dye** → Identify sentinel node in inguinal basin. **Indication: cN0** (impalpable nodes). If SN+ → MILND. If SN- → Surveillance. |
+| **Modified ILND (MILND) — boundaries?** | **Superior: Inguinal ligament**, **Lateral: Sartorius**, **Medial: Adductor longus**, **Deep: Fascia lata**; **Saphenous vein PRESERVED** (vs radical ILND). |
+| **When is adjuvant ChemoRT indicated for inguinal nodes?** | **pN2-3** (≥3 nodes) **OR ENE (Extranodal Extension)** → **RT 50-54Gy + Weekly Cisplatin 40mg/m²**. |
+| **Pelvic lymph node dissection — when?** | **Inguinal pN+ (any)** → **Pelvic ILND** (External iliac, Obturator, Internal iliac). |
+| **Metastatic penile cancer — 1L chemotherapy?** | **TPF**: **Docetaxel 75 + Cisplatin 75 + 5-FU 750/1000 mg/m² q3w** — **Highest RR (~50%)**; **Alternative: Paclitaxel + Cisplatin, Gemcitabine + Cisplatin**. |
+| **HPV+ penile cancer — histology, prognosis?** | **Basaloid / Warty variants**, **p16+**, **Better prognosis** (↑OS, ↓nodal mets). |
+| **PeIN — types, treatment?** | **Erythroplasia of Queyrat (glans)**, **Bowen disease (shaft)** — **Topical 5-FU/Imiquimod, Laser, Circumcision, Glansectomy**. |
+| **Verrucous carcinoma — behaviour?** | **Ta (non-invasive)**, **Exophytic cauliflower**, **Low-grade**, **Locally aggressive**, **Rarely metastasises** — **Wide excision/Mohs**. |
+
+---
+
+## 11. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **T1a vs T1b** | **T1a**: Subepithelial invasion, **No LVI, No PNI, G1-2**; **T1b**: **LVI+ OR PNI+ OR G3** — **Major prognostic split** |
+| **DSNB vs MILND** | **DSNB**: **cN0** (staging); **MILND**: **cN+** (therapeutic) **OR DSNB+**; **Radical ILND**: Obsolete (preserve saphenous vein) |
+| **p16 vs HPV PCR** | **p16 IHC**: **Surrogate** (overexpression = HPV-driven); **HPV PCR/ISH**: **Confirmatory**; **p16+ ≠ always HPV+** (rare false +ve) |
+| **Organ-preserving criteria** | **Tis, Ta, T1a** (G1-2, no LVI/PNI); **T1b+ = Partial/Total penectomy** |
+| **Adjuvant RT fields** | **Inguinal only** (pN1-2 no ENE); **Inguinal + Pelvic** (pN2-3/ENE OR Pelvic pN+) |
+| **TPF vs PC vs GC** | **TPF (Doc/Cis/5-FU)**: **Highest RR (~50%)**, Most toxic; **PC (Pac/Cis)**: Better tolerability; **GC (Gem/Cis)**: Alternative |
+
+**Mnemonic: PENILE-CA**
+- **P**enile SCC: **HPV 40-50% (16/18)**, **Circumcision protective**
+- **E**roding ulcer (glans/prepuce), **Phimosis** risk
+- **N**odes: **cN0 → DSNB**; **cN+ → MILND**; **Inguinal pN+ → Pelvic ILND**
+- **I**nguinal Adjuvant: **pN2-3 / ENE → ChemoRT (Cis + RT)**
+- **L**ocal T staging: **Tis/PeIN, Ta/Verrucous, T1a (no LVI), T1b (LVI/G3), T2 (Corpus), T3 (Urethra), T4**
+- **E**arly: **Organ-preserving (Tis-T1a)**; **Late: Partial/Total Penectomy**
+- **C**hemo Metastatic: **TPF (Doc/Cis/5-FU)** — Best RR
+- **A**dvanced HPV+: **p16+, Basaloid/Warty, Better prognosis**
+
+---
+
+## 12. Mind Map
+
+```mermaid
+mindmap
+  root((Penile Cancer))
+    Epidemiology
+      Rare (1% male cancers)
+      HPV 40-50% (16/18)
+      p16 surrogate
+      Circumcision protective
+    Histology
+      Usual SCC (Keratinising) HPV-
+      Basaloid/Warty HPV+ (Better)
+      Verrucous (Ta) Low metastatic
+    Staging TNM 8th
+      Tis=PeIN, Ta=Verrucous
+      T1a vs T1b (LVI/G3)
+      T2=Corpus, T3=Urethra, T4=Adjacent
+      N1=Inguinal, N2=Pelvic, N3=Fixed
+    Primary Surgery
+      Tis-Ta-T1a: Organ-preserving (Laser, Glansectomy, Mohs)
+      T1b-T2: Partial Penectomy
+      T3-T4: Total Penectomy + Perineal Urethrostomy
+    Inguinal Nodes
+      cN0: DSNB (SNbiopsy)
+      cN+: MILND (Saphenous preserved)
+      cN++: Neoadj TPF → ILND
+    Adjuvant
+      pN2-3 / ENE: ChemoRT (RT + Weekly Cis)
+      Pelvic pN+: ChemoRT (Inguinal+Pelvic)
+    Metastatic
+      TPF (Doc/Cis/5-FU) — Best RR
+      PC (Pac/Cis) / GC (Gem/Cis)
+```
+
+---
+
+## 13. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Risk** | HPV 16/18 (40-50%), Phimosis, Lichen sclerosus, Circumcision ↓risk |
+| **p16** | HPV surrogate; Basaloid/Warty = p16+ = Better prognosis |
+| **T1a vs T1b** | T1a: No LVI/PNI/G1-2; T1b: LVI+ OR PNI+ OR G3 |
+| **Primary** | Tis-T1a: Organ-preserving; T1b-T2: Partial penectomy; T3-T4: Total + Perineal urethrostomy |
+| **Inguinal Nodes** | cN0: DSNB; cN+: MILND; pN+ → Pelvic ILND |
+| **Adjuvant** | pN2-3 / ENE → ChemoRT (RT 50-54Gy + Cis weekly) |
+| **Metastatic** | TPF (Doc/Cis/5-FU) — Best RR |
+| **PeIN** | Erythroplasia of Queyrat (glans), Bowen (shaft) — Topical/Laser |
+
+---
+
+## 14. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 15. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| TNM 8th staging (T1a vs T1b) | | |
+| DSNB vs MILND indications | | |
+| Organ-preserving criteria | | |
+| Adjuvant ChemoRT indications | | |
+| Metastatic TPF regimen | | |
+| HPV/p16 prognosis | | |
+| PeIN management | | |
+| Pelvic ILND timing | | |
+
+---
+
+## 16. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[HPV-related Cancers]], [[Inguinal Lymph Node Dissection]], [[Dynamic Sentinel Node Biopsy]], [[Organ-Preserving Surgery]], [[Cisplatin TPF]], [[p16 IHC]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 17. MCQs (10)
+
+
+**1.** Regarding Penile Cancer (Penile Cancer), which statement is correct?
+   A. **Rare (1% male cancers)**
+   B. **Rare - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Rare (1% male cancers)**; **SCC 95%**; **HPV 40-50% (16/18)**; **Circumcision protective**
+
+
+**2.** Regarding Penile Cancer (p16 IHC), which statement is correct?
+   A. **Surrogate for HPV-driven** (HPV+)
+   B. **Surrogate - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Surrogate for HPV-driven** (HPV+); **Basaloid/Warty = p16+ = Better prognosis**
+
+
+**3.** Regarding Penile Cancer (TNM 8th), which statement is correct?
+   A. **Tis=PeIN, Ta=Verrucous, T1a=No LVI/PNI/G1-2, T1b=LVI+/PNI+/G3, T2=Corpus invasion, T3=Urethra, T4=
+   B. **Tis=PeIN, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Tis=PeIN, Ta=Verrucous, T1a=No LVI/PNI/G1-2, T1b=LVI+/PNI+/G3, T2=Corpus invasion, T3=Urethra, T4=Adjacent**
+
+
+**4.** Regarding Penile Cancer (Primary Surgery), which statement is correct?
+   A. **Tis/Ta/T1a: Organ-preserving (Laser, Topical, Glansectomy, Mohs)**
+   B. **Tis/Ta/T1a: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Tis/Ta/T1a: Organ-preserving (Laser, Topical, Glansectomy, Mohs)**; **T1b-T2: Partial penectomy**; **T3-T4: Total pene...
+
+
+**5.** Regarding Penile Cancer (Inguinal Nodes), which statement is correct?
+   A. **cN0: DSNB** (SN+ → MILND)
+   B. **cN0: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **cN0: DSNB** (SN+ → MILND); **cN+: MILND**; **cN++: Neoadj Chemo → ILND/RT**
+
+
+**6.** Regarding Penile Cancer (Pelvic Nodes), which statement is correct?
+   A. **Inguinal pN+ → Pelvic ILND** (lap/open)
+   B. **Inguinal - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Inguinal pN+ → Pelvic ILND** (lap/open)
+
+
+**7.** Regarding Penile Cancer (Adjuvant), which statement is correct?
+   A. **pN2-3 or ENE → ChemoRT (50-54Gy + Weekly Cisplatin)**
+   B. **pN2-3 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **pN2-3 or ENE → ChemoRT (50-54Gy + Weekly Cisplatin)**
+
+
+**8.** Regarding Penile Cancer (Metastatic), which statement is correct?
+   A. **TPF (Doc/Cis/5-FU)**
+   B. **TPF - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **TPF (Doc/Cis/5-FU)** — **Best response**; **Paclitaxel/Cisplatin alternative**
+
+
+**9.** Regarding Penile Cancer (HPV+ vs HPV-), which statement is correct?
+   A. **HPV+ (p16+)**: Basaloid/Warty, **Better OS**
+   B. **HPV+ - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **HPV+ (p16+)**: Basaloid/Warty, **Better OS**; **HPV-**: Keratinising, **Worse OS**
+
+
+**10.** Regarding Penile Cancer (PeIN), which statement is correct?
+   A. **Tis**: **Erythroplasia of Queyrat (glans), Bowen (shaft)**
+   B. **Tis**: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Tis**: **Erythroplasia of Queyrat (glans), Bowen (shaft)**; **Topical 5-FU/Imiquimod, Laser, Circumcision**
+
+
+## 18. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **Rare (1% male cancers)**
+   - B. **Rare (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **Rare (1% male cancers)**; **SCC 95%**; **HPV 40-50% (16/18)**; **Circumcision protective**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **Surrogate for HPV-driven** (HPV+)
+   - B. **Surrogate (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **Surrogate for HPV-driven** (HPV+); **Basaloid/Warty = p16+ = Better prognosis**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Tis=PeIN, Ta=Verrucous, T1a=No LVI/PNI/G1-2, T1b=LVI+/PNI+/G3, T2=Corpus invasion, T3=Urethra, T4=
+   - B. **Tis=PeIN, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Tis=PeIN, Ta=Verrucous, T1a=No LVI/PNI/G1-2, T1b=LVI+/PNI+/G3, T2=Corpus invasion, T3=Urethra, T4=Adjacent**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Tis/Ta/T1a: Organ-preserving (Laser, Topical, Glansectomy, Mohs)**
+   - B. **Tis/Ta/T1a: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Tis/Ta/T1a: Organ-preserving (Laser, Topical, Glansectomy, Mohs)**; **T1b-T2: Partial penectomy**; **T3-T4: Total pene...
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **cN0: DSNB** (SN+ → MILND)
+   - B. **cN0: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **cN0: DSNB** (SN+ → MILND); **cN+: MILND**; **cN++: Neoadj Chemo → ILND/RT**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **Inguinal pN+ → Pelvic ILND** (lap/open)
+   - B. **Inguinal (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **Inguinal pN+ → Pelvic ILND** (lap/open)
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **pN2-3 or ENE → ChemoRT (50-54Gy + Weekly Cisplatin)**
+   - B. **pN2-3 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **pN2-3 or ENE → ChemoRT (50-54Gy + Weekly Cisplatin)**
+
+
+**8.** The role of surgery in this case is:
+   - A. **TPF (Doc/Cis/5-FU)**
+   - B. **TPF (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **TPF (Doc/Cis/5-FU)** — **Best response**; **Paclitaxel/Cisplatin alternative**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **HPV+ (p16+)**: Basaloid/Warty, **Better OS**
+   - B. **HPV+ (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **HPV+ (p16+)**: Basaloid/Warty, **Better OS**; **HPV-**: Keratinising, **Worse OS**
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **Tis**: **Erythroplasia of Queyrat (glans), Bowen (shaft)**
+   - B. **Tis**: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **Tis**: **Erythroplasia of Queyrat (glans), Bowen (shaft)**; **Topical 5-FU/Imiquimod, Laser, Circumcision**
+
+
+## 19. Flashcards
+
+**Q1:** Penile Cancer?
+**A1:** Rare (1% male cancers); SCC 95%; HPV 40-50% (16/18); Circumcision protective
+
+**Q2:** p16 IHC?
+**A2:** Surrogate for HPV-driven (HPV+); Basaloid/Warty = p16+ = Better prognosis
+
+**Q3:** TNM 8th?
+**A3:** Tis=PeIN, Ta=Verrucous, T1a=No LVI/PNI/G1-2, T1b=LVI+/PNI+/G3, T2=Corpus invasion, T3=Urethra, T4=Adjacent
+
+**Q4:** Primary Surgery?
+**A4:** Tis/Ta/T1a: Organ-preserving (Laser, Topical, Glansectomy, Mohs); T1b-T2: Partial penectomy; T3-T4: Total penectomy + Perineal urethrostomy
+
+**Q5:** Inguinal Nodes?
+**A5:** cN0: DSNB (SN+ → MILND); cN+: MILND; cN++: Neoadj Chemo → ILND/RT
+
+**Q6:** Pelvic Nodes?
+**A6:** Inguinal pN+ → Pelvic ILND (lap/open)
+
+**Q7:** Adjuvant?
+**A7:** pN2-3 or ENE → ChemoRT (50-54Gy + Weekly Cisplatin)
+
+**Q8:** Metastatic?
+**A8:** TPF (Doc/Cis/5-FU) — Best response; Paclitaxel/Cisplatin alternative
+
+## 20. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Penile Cancer | Rare (1% male cancers); SCC 95%; HPV 40-50% (16/18); Circumcision protective |
+| 2 | A | p16 IHC | Surrogate for HPV-driven (HPV+); Basaloid/Warty = p16+ = Better prognosis |
+| 3 | A | TNM 8th | Tis=PeIN, Ta=Verrucous, T1a=No LVI/PNI/G1-2, T1b=LVI+/PNI+/G3, T2=Corpus invasion, T3=Urethra, T4=Adjacent |
+| 4 | A | Primary Surgery | Tis/Ta/T1a: Organ-preserving (Laser, Topical, Glansectomy, Mohs); T1b-T2: Partial penectomy; T3-T4: Total penectomy + Pe |
+| 5 | A | Inguinal Nodes | cN0: DSNB (SN+ → MILND); cN+: MILND; cN++: Neoadj Chemo → ILND/RT |
+| 6 | A | Pelvic Nodes | Inguinal pN+ → Pelvic ILND (lap/open) |
+| 7 | A | Adjuvant | pN2-3 or ENE → ChemoRT (50-54Gy + Weekly Cisplatin) |
+| 8 | A | Metastatic | TPF (Doc/Cis/5-FU) — Best response; Paclitaxel/Cisplatin alternative |
+| 9 | A | HPV+ vs HPV- | HPV+ (p16+): Basaloid/Warty, Better OS; HPV-: Keratinising, Worse OS |
+| 10 | A | PeIN | Tis: Erythroplasia of Queyrat (glans), Bowen (shaft); Topical 5-FU/Imiquimod, Laser, Circumcision |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Penile Cancer | Rare (1% male cancers); SCC 95%; HPV 40-50% (16/18); Circumcision protective |
+| 2 | A | p16 IHC | Surrogate for HPV-driven (HPV+); Basaloid/Warty = p16+ = Better prognosis |
+| 3 | A | TNM 8th | Tis=PeIN, Ta=Verrucous, T1a=No LVI/PNI/G1-2, T1b=LVI+/PNI+/G3, T2=Corpus invasion, T3=Urethra, T4=Adjacent |
+| 4 | A | Primary Surgery | Tis/Ta/T1a: Organ-preserving (Laser, Topical, Glansectomy, Mohs); T1b-T2: Partial penectomy; T3-T4: Total penectomy + Pe |
+| 5 | A | Inguinal Nodes | cN0: DSNB (SN+ → MILND); cN+: MILND; cN++: Neoadj Chemo → ILND/RT |
+| 6 | A | Pelvic Nodes | Inguinal pN+ → Pelvic ILND (lap/open) |
+| 7 | A | Adjuvant | pN2-3 or ENE → ChemoRT (50-54Gy + Weekly Cisplatin) |
+| 8 | A | Metastatic | TPF (Doc/Cis/5-FU) — Best response; Paclitaxel/Cisplatin alternative |
+| 9 | A | HPV+ vs HPV- | HPV+ (p16+): Basaloid/Warty, Better OS; HPV-: Keratinising, Worse OS |
+| 10 | A | PeIN | Tis: Erythroplasia of Queyrat (glans), Bowen (shaft); Topical 5-FU/Imiquimod, Laser, Circumcision |
+
+## 21. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Urological Cancers|Urological Cancers]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

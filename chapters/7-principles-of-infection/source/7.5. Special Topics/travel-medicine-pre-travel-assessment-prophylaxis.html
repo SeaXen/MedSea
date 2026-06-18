@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Travel Medicine Pre Travel Assessment Prophylaxis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.5. SPECIAL TOPICS</span>
+      <div class="h1">Travel Medicine Pre Travel Assessment Prophylaxis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Conduct a structured pre-travel risk assessment (itinerary, host, activity, time).</li><li>Categorise vaccines into routine / required / recommended and apply by destination.</li><li>Prescribe Yellow Fever vaccine safely (live attenuated, ICVP, contraindications, certificate validity).</li><li>Select and time malaria chemoprophylaxis (CQ, mefloquine, doxycycline, AP, tafenoquine; terminal prophylaxis for <i>P. vivax/ovale</i>).</li><li>Advise on travellers' diarrhoea (food/water hygiene, self-treatment with azithromycin ± loperamide, bismuth, rifaximin prophylaxis).</li><li>Counsel on altitude illness (acetazolamide prophylaxis 125 mg BD, HAPE: nifedipine + descent, HACE: dexamethasone + descent).</li><li>Manage motion sickness, jet lag, and travel-related VTE.</li><li>Identify VFR (visiting friends and relatives) travellers and adjust risk communication.</li><li>Evaluate the returning traveller with fever — malaria FIRST, then dengue, typhoid, rickettsial, viral haemorrhagic, acute HIV, schistosomiasis, leishmaniasis.</li><li>Demonstrate awareness of mass-gathering (Hajj, Umrah) and special-population (pregnancy, paediatric, immunocompromised, elderly, chronic disease) considerations.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Pre-travel consultation**</td><td>Structured assessment 4–6 weeks before departure covering itinerary, host and activity risk, vaccines, chemoprophylaxis, behavioural advice, and documentation.</td></tr><tr><td>**Itinerary risk**</td><td>Composite of country(ies), urban vs rural, elevation, season, vector exposure, sanitation, animal contact, mass gathering.</td></tr><tr><td>**Routine vaccines**</td><td>Standard national schedule vaccines (MMR, DTaP, varicella, polio, influenza, COVID-19) that travellers should be up-to-date on regardless of destination.</td></tr><tr><td>**Required vaccines**</td><td>Mandated by IHR 2005 or destination country for entry (Yellow Fever — ICVP; meningococcal ACWY for Hajj/Umrah; polio for Pakistan/Afghanistan export countries; COVID-19 historically).</td></tr><tr><td>**Recommended vaccines**</td><td>Destination-specific, risk-based: Hep A, Hep B, typhoid, rabies (pre-exposure), Japanese encephalitis, TBE, cholera, meningococcal B, influenza.</td></tr><tr><td>**ICVP**</td><td>International Certificate of Vaccination or Prophylaxis — official Yellow Fever certificate, valid for life from 2016 (previously 10 years), must be signed by approved vaccinator.</td></tr><tr><td>**Malaria chemoprophylaxis**</td><td>Continuous or terminal drug regimen taken to suppress clinical malaria during and after exposure.</td></tr><tr><td>**Standby Emergency Treatment (SBET)**</td><td>Self-administered curative antimalarial given when fever develops >24 h from medical care — used in low-risk, remote itineraries.</td></tr><tr><td>**Terminal prophylaxis**</td><td>Primaquine or tafenoquine given after leaving a *P. vivax / P. ovale* area to eradicate liver hypnozoites (relapse prevention).</td></tr><tr><td>**VFR traveller**</td><td>Visiting Friends and Relatives abroad — usually ethnic traveller returning to country of origin; highest risk of malaria, typhoid, Hep A/B, but lowest pre-travel consultation rate.</td></tr><tr><td>**AMS**</td><td>Acute mountain sickness — headache + nausea/dizziness/fatigue/insomnia at >2,500 m.</td></tr><tr><td>**HAPE**</td><td>High-Altitude Pulmonary Edema — non-cardiogenic pulmonary oedema, the leading cause of altitude-related death.</td></tr><tr><td>**HACE**</td><td>High-Altitude Cerebral Edema — ataxia, confusion, encephalopathy; medical emergency.</td></tr><tr><td>**Travellers' Diarrhoea (TD)**</td><td>≥ 3 loose stools/24 h plus ≥ 1 symptom (cramp, fever, nausea, vomiting) during or within 14 d of return; usually bacterial (ETEC, Campylobacter, Salmonella, Shigella, Vibrio).</td></tr><tr><td>**Jet lag**</td><td>Circadian-rhythm desynchronosis from rapid transmeridian travel (>5 time zones).</td></tr><tr><td>**VTE / DVT**</td><td>Venous thrombo-embolism (deep-vein thrombosis ± PE) — risk ↑ with flight >4 h, dehydration, immobility, oral contraceptives, obesity, prior VTE.</td></tr><tr><td>**Returning traveller with fever**</td><td>Any fever within 12 months of tropical travel; "fever in a recent traveller = malaria until proven otherwise" if from a malarious area.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Pre-Travel Consultation Framework</div>
+<p>#### 1.1 The 4–6-Week Window</p>
+<table class="ctable"><tr><th>Timing</th><th>Rationale</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**≥ 8 weeks**</td><td>Last-minute; only essential vaccines and accelerated schedules (e.g., Hep B 0/1/4 weeks or 0/7/21 day with 12-month booster).</td></tr><tr><td>**4–6 weeks (ideal)**</td><td>Most vaccine series can be completed (Hep A 2 doses 6–12 m apart, JE 2 doses 28 d apart, rabies 3 doses 0/7/21–28 d, TBE 3 doses), YF certificate issued, malaria drug trial and supply.</td></tr><tr><td>**2–4 weeks**</td><td>Acceptable; some series truncated, accelerated schedules.</td></tr><tr><td>**< 2 weeks**</td><td>Single-dose vaccines only (YF, typhoid Vi, Hep A, polio, MMR); consider standby emergency treatment (SBET) for malaria.</td></tr><tr><td>**Day of travel**</td><td>Issues YF/MMR/polio, oral cholera, ITN, education, but immunogenicity incomplete.</td></tr></table>
+<p>#### 1.2 Risk Assessment — "The Five A's"</p>
+<ol><li><b>A — Adventure / Activity</b> (trekking, diving, caving, rafting, hunting, missionary work, medical volunteering, safari).</li><li><b>A — Accommodation</b> (5-star urban vs jungle lodge vs rural homestay vs refugee camp).</li><li><b>A — Area</b> (altitude, jungle, desert, vector density, sanitation level, outbreak zones).</li><li><b>A — Ailments</b> (co-morbidities: diabetes, CKD, HIV, transplant, asplenia, immunosuppression, pregnancy, age extremes).</li><li><b>A — Allergy</b> (egg — YF/MMR/influenza caution; latex; antibiotic; prior vaccine reactions).</li></ol>
+<p>Plus: <b>Departure date, duration, season, vaccinations to date, current medications (warfarin, antiepileptics, OCP, immunosuppressants), pregnancy/breastfeeding, insurance/repatriation cover</b>.</p>
+<p>#### 1.3 Key Resources</p>
+<table class="ctable"><tr><th>Source</th><th>Use</th></tr><tr><td>--------</td><td>-----</td></tr><tr><td>**CDC Travelers' Health** (Yellow Book)</td><td>Destination pages, vaccine tables, malaria maps, outbreak notices.</td></tr><tr><td>**WHO IHR / International Travel and Health**</td><td>Required-vaccine regulations, YF country list, Polio vaccination.</td></tr><tr><td>**NaTHNaC / TRAVAX (UK)**</td><td>Country-specific risk and clinical advice.</td></tr><tr><td>**Fit-for-Travel (UK NHS)**</td><td>Patient-friendly destination guide.</td></tr><tr><td>**ECDC**</td><td>European outbreak surveillance.</td></tr><tr><td>**Travax / Shoreland (US subscription)**</td><td>Clinical decision support.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Vaccination — Routine, Required, Recommended</div>
+<p>#### 2.1 Vaccine Categories at a Glance</p>
+<table class="ctable"><tr><th>Category</th><th>Definition</th><th>Examples</th></tr><tr><td>----------</td><td>------------</td><td>----------</td></tr><tr><td>**Routine**</td><td>Standard schedule, ensure up-to-date</td><td>MMR, DTaP/Td, polio (IPV), varicella, influenza, COVID-19, HPV, pneumococcal (PCV/PPSV), Hep B, Hib, rotavirus (paeds), zoster (≥ 50 y).</td></tr><tr><td>**Required**</td><td>Entry mandated by IHR/destination</td><td>Yellow Fever (ICVP), meningococcal ACWY (Hajj, parts of Africa meningitis belt), polio (export countries — Pakistan, Afghanistan, certain others for residents), COVID-19 (historic).</td></tr><tr><td>**Recommended**</td><td>Risk-based by destination</td><td>Hep A, Hep B (boost), typhoid, rabies (pre-exposure), Japanese encephalitis, TBE, cholera, meningococcal B, influenza, plague, anthrax (rare occupational).</td></tr></table>
+<p>#### 2.2 Routine Update — All Travellers</p>
+<ul><li><b>MMR</b>: ≥ 2 doses ≥ 4 weeks apart; adults born 1957–1989 may need 1 booster. Many countries now have measles outbreaks (Pakistan, India, DRC, Philippines, Madagascar, Samoa, US) — check.</li><li><b>DTaP/Td</b>: 3-dose primary + boosters; Td every 10 y. Travellers to tetanus-prone wounds (rural, agricultural) need 5-y booster if last dose was incomplete.</li><li><b>Polio (IPV)</b>: All travellers should have completed primary series. <b>IPV booster required for residents of infected areas</b> leaving Pakistan/Afghanistan (and any active exporter) — 4 weeks–12 months before departure, recorded in ICVP.</li><li><b>Varicella</b>: Seronegative adults and children; avoid in pregnancy.</li><li><b>Influenza</b>: Year-round in tropical zones; Southern-Hemisphere vaccine (Mar–Sep) for travel Apr–Sep.</li><li><b>COVID-19</b>: Updated booster per national programme.</li><li><b>HPV</b>: Routine catch-up through age 26; shared decision-making 27–45.</li><li><b>Pneumococcal</b>: PCV20 (or PCV15 + PPSV23) for ≥ 65, immunocompromised, asplenia, chronic disease.</li></ul>
+<p>#### 2.3 Required Vaccines</p>
+<p>##### 2.3.1 Yellow Fever (YF) — the prototypical "required" vaccine</p>
+<ul><li><b>Vaccine</b>: <b>Live attenuated 17D strain</b> (Stamaril, YF-Vax). Single 0.5 mL SC dose.</li><li><b>Certificate (ICVP)</b>: Valid for <b>life</b> (since WHO 2016 amendment, previously 10 y). Must be signed by approved YF vaccination centre, stamp applied.</li><li><b>Effective</b>: 10 d after primary dose; immediately for re-vaccination.</li><li><b>Required for entry</b> to YF-endemic countries (sub-Saharan Africa, tropical South America) for travellers ≥ 9 months (some &gt; 1 y) coming from at-risk areas, <b>or</b> for travellers transiting at-risk airports &gt; 12 h.</li><li><b>Endemic map</b>: Sub-Saharan Africa (West Africa, Central Africa, East Africa lowlands) and Amazon basin (Bolivia, Brazil, Colombia, Ecuador, Peru, Venezuela, Guyana, Suriname, French Guiana, Trinidad).</li><li><b>Risk countries</b> (transmission documented): 34 in Africa + 13 in South America. <b>Required countries</b> (certificate demanded) = subset — <b>always check CDC/WHO at consultation</b>.</li><li><b>Contraindications (absolute)</b>: &lt; 6 months old; severe immunocompromise (transplant, chemo, AIDS with CD4 &lt; 200, biologic immunosuppression); thymectomy / thymic disease; symptomatic HIV; severe egg allergy.</li><li><b>Precautions (relative)</b>: 6–9 months (risk vs benefit); ≥ 60 y (↑ YF vaccine-associated neurotropic and viscerotropic disease — YEL-AND / YEL-AVD); pregnancy; breastfeeding &lt; 9 months; asymptomatic HIV with CD4 200–500; mild egg allergy.</li><li><b>Vaccine-associated serious adverse events</b>:</li><li><b>YEL-AND</b> (neurotropic): encephalitis, Guillain-Barré, mostly in &lt; 9 months; 1/8 million.</li><li><b>YEL-AVD</b> (viscerotropic): multi-organ failure mimicking wild YF, mortality 60 %; 1/250 000; ↑ in ≥ 60 y and thymectomy.</li><li><b>Waiver letter</b>: Issued by physician if truly contraindicated; traveller still faces entry/refusal at border — must accept.</li></ul>
+<p>##### 2.3.2 Meningococcal ACWY (Quadrivalent ACWY) — Hajj / Umrah + Africa meningitis belt</p>
+<ul><li><b>Vaccines</b>: MenACWY-CRM (Menveo), MenACWY-TT (Nimenrix), MenACWY-D (Menactra).</li><li><b>Required for</b>: All Hajj / Umrah visa applicants (≥ 1 dose 10 d–5 y before arrival, certificate signed). <b>Hajj seasonal 1446 (2025) also requires current influenza + COVID-19 update.</b></li><li><b>Required for</b>: Saudi Arabia and parts of Africa "meningitis belt" (Burkina Faso, Niger, Nigeria, Chad, Sudan, Ethiopia) for entry during outbreaks.</li><li><b>Single booster</b> for ongoing risk; polysaccharide MPSV4 not preferred (T-cell independent, no memory).</li></ul>
+<p>##### 2.3.3 Polio — Pakistan/Afghanistan Exporters</p>
+<ul><li>Residents of polio-exporting countries (currently Pakistan, Afghanistan, plus any newly active) <b>departing internationally</b> must have IPV or OPV documented 4 weeks–12 months before travel, recorded in ICVP.</li><li>Re-emergent wild polio (type 1) outbreaks also in Malawi, Mozambique, Madagascar, DRC, Yemen.</li></ul>
+<p>#### 2.4 Recommended Vaccines — by Destination / Exposure</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Type</th><th>Indication</th><th>Schedule</th><th>Notes</th></tr><tr><td>---------</td><td>------</td><td>------------</td><td>----------</td><td>-------</td></tr><tr><td>**Hepatitis A**</td><td>Inactivated (whole virus)</td><td>Almost all developing-country travel (Africa, Asia, Central/South America, E. Europe)</td><td>2 doses 0 + 6–12 m (boost at 6–18 m for long-term). Effective 2–4 wks after dose 1.</td><td>Already covered in many national schedules. Post-exposure prophylaxis: vaccine < 14 d. Serology if uncertain prior immunity.</td></tr><tr><td>**Hepatitis B**</td><td>Recombinant HBsAg</td><td>Healthcare workers, VFR, prolonged stays, sexual exposure, tattoos, medical tourism</td><td>0/1/6 m (standard), 0/1/2 + 12 m (accelerated), 0/7/21 d + 12 m (very accelerated).</td><td>Post-exposure: HBIG + vaccine if non-immune.</td></tr><tr><td>**Typhoid (Vi polysaccharide)**</td><td>Vi capsular Ag (injectable)</td><td>Indian subcontinent, parts of SE Asia, Africa, Central/South America, ≥ 2 y old</td><td>Single 0.5 mL IM; boost every 2–3 y.</td><td>Not effective vs paratyphoid. Oral Ty21a (≥ 6 y) — 4 doses 0/2/4/6 d; boost every 5 y.</td></tr><tr><td>**Rabies (pre-exposure)**</td><td>Inactivated cell culture (Vero or chick-embryo)</td><td>Rural, animal contact, trekking, caving, missionary, vets, lab</td><td>0/7/21–28 d IM (or 0/7/21 intradermal)</td><td>Post-exposure management simplified: 2 doses days 0/3; no RIG needed if previously vaccinated.</td></tr><tr><td>**Japanese Encephalitis**</td><td>Inactivated Vero (JE-VC, Ixiaro)</td><td>Rural Asia, ≥ 1 month stay, rice farming, pig contact</td><td>2 doses 0 + 28 d; rapid 0/7 d; boost at 1–2 y</td><td>99% asymptomatic; 0.5% clinical with 20–30% mortality/sequelae.</td></tr><tr><td>**Tick-borne Encephalitis**</td><td>Inactivated (FSME-Immun, Encepur)</td><td>Spring–autumn forested/grassland Europe, Russia, parts of China/Japan</td><td>3 doses 0/1–3 m/5–12 m; accelerated 0/14 d/5–12 m</td><td>TicoVac also licensed ≥ 1 y.</td></tr><tr><td>**Cholera**</td><td>Oral killed (Dukoral — WC-rBS; Euvichol/ORC-Vax — non-WC)</td><td>Disaster relief, refugees, humanitarian workers, < 1 % travellers</td><td>Dukoral 2 doses ≥ 1 wk apart, ≥ 2 y old; boost every 2 y (≥ 6 y) or 6 m (2–6 y)</td><td>Dukoral also gives 3–6 m cross-protection vs ETEC.</td></tr><tr><td>**Meningococcal B**</td><td>Recombinant (Bexsero, Trumenba)</td><td>Asplenia, complement deficiency, Hajj outbreak</td><td>2–3 dose series</td><td>Not yet required for Hajj but check.</td></tr><tr><td>**Influenza**</td><td>Inactivated / LAIV</td><td>All travellers, particularly Hajj, southern hemisphere</td><td>Annual</td><td>Quadrivalent / cell-based / recombinant options.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: Malaria Prophylaxis</div>
+<p>#### 3.1 Risk Assessment</p>
+<ul><li><b>Step 1</b>: Is there malaria risk in destination? (CDC, WHO, NaTHNaC).</li><li><b>Step 2</b>: <i>P. falciparum</i> (chloroquine-resistant) vs <i>P. vivax</i> only vs mixed.</li><li><b>Step 3</b>: Drug resistance (CQ-R widespread except ME, Caribbean, Central America west of Panama Canal).</li><li><b>Step 4</b>: Duration of exposure, season, altitude, urban/rural.</li><li><b>Step 5</b>: Traveller factors — pregnancy, G6PD, age, co-morbidity, drug interactions.</li></ul>
+<p>#### 3.2 Drug Choice Matrix (for chloroquine-resistant <i>P. falciparum</i> — most of SSA, Asia, Amazon)</p>
+<table class="ctable"><tr><th>Drug</th><th>Adult Dose</th><th>Start Before</th><th>Continue After</th><th>Key Contra/Precaution</th><th>Notes</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td><td>----------------</td><td>-----------------------</td><td>-------</td></tr><tr><td>**Atovaquone-Proguanil (AP, Malarone)**</td><td>250/100 mg, 1 tab daily</td><td>**1–2 d**</td><td>**7 d**</td><td>Pregnancy, severe renal impairment, G6PD not required</td><td>Expensive; 3-day pediatric tabs available. Cannot breastfeed infants < 5 kg.</td></tr><tr><td>**Doxycycline**</td><td>100 mg daily</td><td>**1–2 d**</td><td>**4 wk**</td><td>Pregnancy, < 8 y, photosensitivity, oesophagitis</td><td>Take with food + full glass water, upright 30 min. Cheap.</td></tr><tr><td>**Mefloquine (Lariam)**</td><td>250 mg weekly</td><td>**≥ 2 wk** (3 doses: 2–3 wks before → travel)</td><td>**4 wk**</td><td>**Neuropsychiatric** (depression, anxiety, seizures, psychosis — avoid), cardiac conduction defects, epilepsy, severe hepatic disease</td><td>Weekly; useful for pregnancy 2nd/3rd trimester.</td></tr><tr><td>**Tafenoquine (Krintafel / Arakoda)**</td><td>200 mg daily (Arakoda prophyl.) or 300 mg single (relapse, Krintafel)</td><td>3 d loading then weekly; or daily for 3 d before</td><td>1 week (prophyl.); single dose for *P. vivax* relapse</td><td>**G6PD deficiency — screen first**; pregnancy; < 18 y; psychiatric hx</td><td>Effective vs both *P. falciparum* and *P. vivax* (causal + hypnozoite).</td></tr><tr><td>**Chloroquine (CQ)**</td><td>300 mg base (= 500 mg salt) weekly</td><td>**1–2 wk**</td><td>**4 wk**</td><td>Psoriasis, epilepsy (lowers seizure threshold), retinal</td><td>Only for chloroquine-sensitive areas: ME, Caribbean, Central America, parts of China, Sri Lanka, Korea, Egypt.</td></tr><tr><td>**Proguanil** (Paludrine)</td><td>200 mg daily</td><td>1 d</td><td>4 wk</td><td>—</td><td>**Rarely used alone**; add to CQ for CQ-sensitive areas.</td></tr><tr><td>**Primaquine (terminal prophylaxis)**</td><td>30 mg base daily × 14 d</td><td>—</td><td>After leaving *P. vivax/ovale* area</td><td>**G6PD deficiency — MANDATORY screen**; pregnancy; < 4 y by wt</td><td>Eradicates hypnozoites; use for P.vivax exposure, traveller with significant *P. vivax* risk.</td></tr></table>
+<p>#### 3.3 Drug Choice by Scenario</p>
+<table class="ctable"><tr><th>Scenario</th><th>Choice</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>Sub-Saharan Africa (CQ-R, multiday)</td><td>**AP** (preferred short trip), **doxycycline** (cheaper, longer trips), **mefloquine** (weekly), **tafenoquine** (daily loading, weekly — G6PD screen)</td></tr><tr><td>Mekong (Cambodia/Laos/Thailand), artemisinin resistance</td><td>**Doxycycline** or **AP** (mefloquine resistance in some areas)</td></tr><tr><td>SE Asia cities (Bangkok, Singapore, KL)</td><td>No prophylaxis (urban no risk); rural borders require</td></tr><tr><td>South America (Amazon)</td><td>**Doxycycline** or **AP**</td></tr><tr><td>India (urban, no risk; rural, mixed)</td><td>**AP** or **doxycycline**</td></tr><tr><td>Hajj Saudi Arabia (no malaria)</td><td>No prophylaxis required</td></tr><tr><td>**Pregnancy, 2nd/3rd trimester**, CQ-R</td><td>**Mefloquine** (most evidence)</td></tr><tr><td>**Pregnancy, 1st trimester**</td><td>Avoid travel to CQ-R; if essential, **mefloquine** (limited data) or **CQ** for sensitive areas</td></tr><tr><td>**Breastfeeding**</td><td>**CQ**; AP small infant dose may be safe but manufacturer caution; mefloquine safe</td></tr><tr><td>**Children < 8 y**</td><td>**AP pediatric** (≥ 5 kg) or **mefloquine**; **doxycycline** contraindicated</td></tr><tr><td>**Last-minute (< 1 wk)**</td><td>**AP** (1–2 d before) or **doxycycline** + SBET</td></tr><tr><td>**Severe G6PD deficiency**</td><td>Avoid tafenoquine/primaquine; use AP, doxycycline, mefloquine</td></tr><tr><td>**Asplenia / HIV**</td><td>Same options; prioritise AP or doxycycline</td></tr></table>
+<p>#### 3.4 Standby Emergency Treatment (SBET)</p>
+<ul><li><b>Use</b>: For very low-risk, short, remote trips to areas with chloroquine-resistant malaria where daily chemoprophylaxis is impractical, or as adjunct in late presenters.</li><li><b>Common regimens</b>: AP 4 tabs daily × 3 d; artemether-lumefantrine (Riamet, Coartem) 6-dose course; dihydroartemisinin-piperaquine.</li><li><b>Indications</b>: Fever &gt; 24 h after entering endemic area + no medical access within 24 h + no prophylaxis (or prophylaxis failed) + trained in self-administering.</li><li><b>MUST</b> seek care afterwards; not a replacement for prophylaxis in high-risk areas.</li></ul>
+<p>#### 3.5 Terminal Prophylaxis (Relapse Prevention)</p>
+<ul><li><b>Indication</b>: Significant exposure to <i>P. vivax</i> or <i>P. ovale</i> (e.g., Latin America, Asia, Horn of Africa).</li><li><b>Drug</b>: <b>Primaquine</b> 30 mg base daily × 14 d (or 45 mg weekly × 8 wks) OR <b>tafenoquine</b> 300 mg single dose.</li><li><b>G6PD screening mandatory</b> (deficient = haemolysis risk).</li><li><b>Pregnancy</b>: defer until postpartum.</li></ul>
+<p>#### 3.6 Insect-Bite Avoidance (Always)</p>
+<ul><li>DEET 20–50 % (or icaridin/picaridin 20 %, lemon-eucalyptus PMD 30 %).</li><li>Permethrin-treated clothing / nets.</li><li>Long sleeves/trousers dawn–dusk.</li><li>Air-conditioned / screened accommodation.</li><li>Bed net (insecticide-treated).</li><li>Reduces <b>all</b> vector-borne disease (dengue, chikungunya, Zika, JE, leishmaniasis, filaria, yellow fever) — not just malaria.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Travellers' Diarrhoea (TD)</div>
+<p>#### 4.1 Epidemiology</p>
+<ul><li>Affects 30–70 % of travellers to high-risk destinations (Indian subcontinent, N/W Africa, Central America, SE Asia).</li><li><b>Most pathogens</b>: ETEC (30–60 %), EAEC, Campylobacter, Salmonella, Shigella, Vibrio cholerae, norovirus, rotavirus, Giardia, Entamoeba histolytica, Cyclospora, Cryptosporidium.</li><li><b>Risk factors</b>: young adult, backpacking, rainy season, antacid use, H2-blocker/PPIs, immune suppression.</li></ul>
+<p>#### 4.2 Prevention</p>
+<ul><li><b>Food/water hygiene</b>:</li><li>"Boil it, peel it, cook it, or forget it."</li><li>Avoid raw vegetables, unpeeled fruit, ice (not from treated water), salads, shellfish, undercooked meat/fish, unpasteurised dairy.</li><li>Drink sealed/bottled/boiled/filtered water; <b>chlorination alone insufficient for cysts (Giardia, Cyclospora)</b> — add filtering ≤ 1 µm or boiling.</li><li>Hot food hot, cold food cold, raw food = risk.</li><li><b>Bismuth subsalicylate (Pepto-Bismol)</b> 524 mg QID reduces TD incidence by ~ 50 % (binds enterotoxin). Avoid with aspirin, anticoagulants, G6PD deficiency, pregnancy, doxy/mefloquine.</li><li><b>Rifaximin prophylaxis</b> 200 mg BD or 600 mg OD (some regimens) reduces TD by ~ 50 %; expensive, not for invasive pathogens. Used for short-term high-stakes trips.</li><li><b>Probiotics (Saccharomyces boulardii, Lactobacillus rhamnosus GG)</b> may reduce incidence; weak evidence.</li><li><b>AP prophylaxis (Malarone)</b> has a side-effect of reducing TD in Africa.</li><li><b>Antibiotic prophylaxis (fluoroquinolone, doxycycline)</b> — <b>NOT routinely recommended</b> — resistance, side effects, cost, drug interactions.</li></ul>
+<p>#### 4.3 Self-Treatment (Mild / Moderate TD)</p>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>1</td><td>**Oral Rehydration** — ORS sachets, salted rice water, dilute fruit juice. Replace lost sodium, potassium, water.</td></tr><tr><td>2</td><td>**Loperamide** 4 mg initial → 2 mg after each loose stool (max 16 mg/d; ≤ 48 h).</td></tr><tr><td>3</td><td>**Antibiotic** (single drug) — see below.</td></tr></table>
+<p>##### 4.3.1 Antibiotic Choice</p>
+<table class="ctable"><tr><th>Setting</th><th>First Choice</th><th>Alternative</th></tr><tr><td>---------</td><td>--------------</td><td>-------------</td></tr><tr><td>**Most of world** (esp. SE Asia, India) — fluoroquinolone resistance ↑</td><td>**Azithromycin** 1 g single dose OR 500 mg OD × 3 d</td><td>Rifaximin 200 mg TDS × 3 d (non-invasive only)</td></tr><tr><td>**Africa, Latin America**</td><td>Ciprofloxacin 500 mg BD × 1–3 d (single 750 mg dose also OK); levofloxacin 500 mg single</td><td>Azithromycin</td></tr><tr><td>**Children / pregnant**</td><td>Azithromycin (paed 10 mg/kg OD × 3 d, max 500 mg)</td><td>—</td></tr><tr><td>**Bloody diarrhoea / febrile / suspected Shigella / Campylobacter / invasive Salmonella**</td><td>**Azithromycin 1 g × 1 d, then 500 mg × 2 d**</td><td>Fluoroquinolone only if local resistance low</td></tr></table>
+<p>##### 4.3.2 Loperamide Rules</p>
+<ul><li>Safe adjunct: reduces stool frequency by 60 %, shortens illness by 1 day.</li><li><b>DO NOT use</b> if: bloody diarrhoea (dysentery), high fever &gt; 38.5 °C, suspected <i>C. difficile</i>, age &lt; 2 y, toxic megacolon risk.</li><li><b>Use cautiously</b> in pregnancy.</li><li>Loperamide + antibiotic = standard traveller self-treatment kit.</li></ul>
+<p>##### 4.3.3 When to Seek Care</p>
+<ul><li>Fever &gt; 38.5 °C, bloody stool, severe abdominal pain, signs of dehydration, persistent &gt; 3 d despite treatment, recent antibiotic use, immunocompromise, infants, pregnancy, septic features.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Altitude Illness</div>
+<p>#### 5.1 The Three Syndromes</p>
+<table class="ctable"><tr><th>Syndrome</th><th>Onset</th><th>Symptoms</th><th>Mechanism</th><th>At Risk</th></tr><tr><td>----------</td><td>-------</td><td>----------</td><td>-----------</td><td>---------</td></tr><tr><td>**AMS**</td><td>6–24 h after ascent</td><td>Headache, nausea, anorexia, fatigue, dizziness, insomnia</td><td>Mild cerebral oedema + hypoxia-driven hyperventilation/alkalosis</td><td>> 2,500 m (8,200 ft)</td></tr><tr><td>**HACE**</td><td>1–3 d (rare)</td><td>Ataxia (truncal/gait), confusion, encephalopathy, coma</td><td>Cerebral oedema, vasogenic + cytotoxic</td><td>> 4,500 m; untreated AMS</td></tr><tr><td>**HAPE**</td><td>2–4 d (commonest fatal)</td><td>Dyspnoea, cough, frothy pink sputum, cyanosis, tachypnoea, rales</td><td>Hypoxic pulmonary vasoconstriction, ↑ capillary permeability</td><td>> 2,500 m, especially rapid ascent</td></tr></table>
+<p>#### 5.2 Prevention</p>
+<ul><li><b>Gradual ascent</b>: "Climb high, sleep low." Day 1 &lt; 2,500 m; 300–500 m sleeping altitude gain per day above 3,000 m; rest day every 1,000 m or every 3–4 d.</li><li><b>Acetazolamide (Diamox)</b> prophylaxis:</li><li><b>125 mg BD</b> (or 250 mg BD if &gt; 5,000 m) starting <b>24 h before ascent</b>, continue <b>48 h at altitude or until descent</b>.</li><li>Mechanism: carbonic anhydrase inhibitor → ↑ renal HCO₃⁻ loss → metabolic acidosis → respiratory stimulant, ↓ CSF production, ↑ nocturnal O₂ saturation.</li><li>Side effects: paraesthesiae, polyuria, altered taste (carbonated drinks taste flat), sulfa allergy cross-reactivity ~ 1 in 10 000; <b>avoid in severe sulfa allergy</b>.</li><li><b>Ibuprofen</b> 600 mg TDS can help AMS (compared favourably to acetazolamide in some trials).</li><li><b>Pre-acclimatisation</b> by sleeping in hypoxic tents — useful for high-altitude expeditions.</li><li><b>Avoid alcohol, sedatives, heavy exertion</b> first 24 h.</li></ul>
+<p>#### 5.3 Treatment</p>
+<table class="ctable"><tr><th>Condition</th><th>Treatment</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Mild AMS**</td><td>Stop ascent, rest, hydrate, ibuprofen/paracetamol, acetazolamide 250 mg BD.</td></tr><tr><td>**Moderate AMS**</td><td>Descend 500–1000 m, acetazolamide, supportive.</td></tr><tr><td>**HACE**</td><td>**Immediate descent**, oxygen, **dexamethasone** 8 mg loading → 4 mg q6h IV/IM/PO; portable hyperbaric chamber if descent delayed.</td></tr><tr><td>**HAPE**</td><td>**Immediate descent**, oxygen, **nifedipine 30 mg SR BD** (or 20 mg SR q8h) — pulmonary vasodilator; **portable hyperbaric chamber** if descent delayed; PDE-5 inhibitors (sildenafil/tadalafil) as adjunct; CPAP if available.</td></tr><tr><td>**Refractory HAPE**</td><td>Descent + dexamethasone often added; salmeterol 125 µg BD inhaled (β-2) as adjunct (Lancet 2002 — effect additive to nifedipine).</td></tr></table>
+<p>#### 5.4 High-Risk Groups for Altitude</p>
+<ul><li>Prior HAPE/HACE; chronic cardiopulmonary disease (COPD, PH, OSA); severe anaemia; SCD; ≥ 1 month rapid ascent to &gt; 4,000 m.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: Other Pre-Travel Topics</div>
+<p>#### 6.1 Jet Lag</p>
+<ul><li>Affects flights across ≥ 5 time zones.</li><li><b>Pre-flight</b>: Early sleep schedule shift (1–2 h/d for 3 d), well-rested.</li><li><b>In-flight</b>: Hydration, alcohol/caffeine avoidance, sleep mask, melatonin (0.5–5 mg at destination bedtime).</li><li><b>At destination</b>: Daylight exposure timing (key synchroniser), short naps, melatonin 0.5–5 mg at target bedtime × 3–5 d, hypnotics (e.g., zolpidem) for short-term use; avoid alcohol.</li><li><b>Eastward travel</b> (shorter day) — sleep earlier; melatonin earlier.</li><li><b>Westward travel</b> (longer day) — sleep later; melatonin later or none.</li></ul>
+<p>#### 6.2 Motion Sickness</p>
+<ul><li>Sensory mismatch (vestibular vs visual vs proprioceptive).</li><li><b>Prevention</b>: Front of vehicle/seat, fix horizon, fresh air, light meal, no alcohol.</li><li><b>Drugs</b> (start 30–60 min before travel):</li><li><b>Hyoscine (scopolamine) patch</b> 1 mg/72 h — most effective; side effects: dry mouth, blurred vision, urinary retention, confusion in elderly.</li><li><b>Cinnarizine</b> 30 mg 2 h before.</li><li><b>Promethazine</b> 25 mg 30–60 min before.</li><li><b>Meclizine / dimenhydrinate</b> 25–50 mg 1 h before (less sedating).</li></ul>
+<p>#### 6.3 Travel-Related VTE</p>
+<table class="ctable"><tr><th>Risk Category</th><th>Definition</th><th>Recommendation</th></tr><tr><td>---------------</td><td>------------</td><td>----------------</td></tr><tr><td>**Low**</td><td>< 4 h flight or no risk factors</td><td>Ambulate, calf exercises, hydration, avoid alcohol.</td></tr><tr><td>**Moderate**</td><td>> 4 h + age > 60, BMI > 30, pregnancy/postpartum, OCP/HRT, varicose veins, dehydration</td><td>Above + below-knee graduated compression stockings (15–30 mmHg at ankle).</td></tr><tr><td>**High**</td><td>> 4 h + prior VTE, active cancer, recent major surgery (< 4 wk), thrombophilia, severe immobility</td><td>Above + **LMWH** (e.g., enoxaparin 40 mg SC 2–4 h pre-flight) or DOAC (rivaroxaban 10 mg single).</td></tr><tr><td>**Aspirin**</td><td>NOT recommended for VTE prevention in travellers (WARSAW trial 2020).</td></tr></table>
+<p>#### 6.4 VFR (Visiting Friends and Relatives) — Highest-Risk Group</p>
+<ul><li>Often ethnic traveller returning to country of origin (e.g., UK → South Asia, SSA).</li><li>Perceived "immune" to local infections → no pre-travel consultation.</li><li>Risk: <b>malaria</b> (often non-compliant prophylaxis), <b>Hep A/B</b>, <b>typhoid</b>, <b>TB</b>, <b>HIV/STI</b>, <b>travellers' diarrhoea</b>.</li><li>Tailored advice: combination Hep A + B, typhoid, Hep A, MMR update, malaria prophylaxis, food/water hygiene, STI counselling, <b>encourage</b> GP contact, address perception of natural immunity.</li></ul>
+<p>#### 6.5 Hajj / Umrah Special Requirements</p>
+<ul><li><b>Required vaccines</b>: meningococcal ACWY (≥ 10 d, ≤ 5 y), seasonal influenza, COVID-19.</li><li><b>Recommended</b>: Hep A/B, typhoid, polio (boost), pneumococcal for high-risk, pertussis booster.</li><li><b>Health risks</b>: respiratory infections (MERS-CoV historically, influenza, COVID-19), meningococcal outbreaks, heat stroke, dehydration, stampede/mass-casualty, fire, vehicle accidents, meningitis, skin infections, scabies, diarrhoeal illness.</li><li><b>Advice</b>: hand hygiene, mask, avoid camels (MERS), heat precautions, OCP-related VTE (advise stop 4 wks before), drug compliance (refill enough), meningitis close-contact antibiotic.</li></ul>
+<p>#### 6.6 Special Populations</p>
+<table class="ctable"><tr><th>Group</th><th>Considerations</th></tr><tr><td>-------</td><td>----------------</td></tr><tr><td>**Pregnancy**</td><td>Avoid travel to malaria + Zika + high-altitude in 1st trimester; live vaccines contraindicated (YF, MMR, varicella, LAIV, oral typhoid, oral cholera); mefloquine/permethrin safe 2nd/3rd trimester; AP contraindicated; safe: Hep A, Hep B, Td/IPV, TBE (if vectored), pneumococcal.</td></tr><tr><td>**Children**</td><td>AP, mefloquine, doxycycline (age-restricted); pediatric YF 9 m+; BCG rarely for travel; typhoid ≥ 2 y; rabies can be 0/7/21 d; **Cipro** avoided.</td></tr><tr><td>**Elderly**</td><td>↑ YF vaccine risk; ↑ altitude risk; ↓ vaccine response; review drug interactions (warfarin–mefloquine, OCP–AP, rifampin–OCP).</td></tr><tr><td>**Asplenia**</td><td>Meningococcal ACWY + B, pneumococcal, Hib, annual influenza; malaria = high mortality; **dog-bite prophylaxis** (rabies-prone).</td></tr><tr><td>**HIV (CD4 > 200)**</td><td>YF and MMR can be given with caution; live vaccines contraindicated if CD4 < 200.</td></tr><tr><td>**Transplant / Biologics**</td><td>Live vaccines contraindicated post-transplant; complete pre-transplant 4 wks ahead.</td></tr><tr><td>**Chronic disease**</td><td>Diabetes: foot care, food/water, sick-day rules; CKD: drug dose adjustment; COPD: avoid high altitude > 2,500 m without assessment.</td></tr></table>
+<p>#### 6.7 Returning Traveller — Non-Fever Complaints</p>
+<ul><li><b>Diarrhoea</b>: Most post-travel TD self-limits. Persistent &gt; 14 d → stool OCP (3 × fresh) for parasites (Giardia, Cyclospora, Cryptosporidium, <i>E. histolytica</i>, C. difficile if recent antibiotics), bacterial culture.</li><li><b>Skin</b>: Cutaneous larva migrans (creeping eruption — beach, dog/cat hookworm) — albendazole / ivermectin; schistosomiasis cercarial dermatitis ("swimmer's itch") — self-limiting.</li><li><b>Respiratory</b>: TB screening (long stay, healthcare workers, refugees) — IGRA (T-spot) &gt; 8 wk post-return.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: Post-Travel Fever — The Returning Traveller</div>
+<p>#### 7.1 The Cardinal Rule</p>
+<div class="callout"><b>"Any fever in a traveller returning from a malaria-endemic area is falciparum malaria until proven otherwise."</b></div>
+<p>Falciparum can kill within 24–48 h.</p>
+<p>#### 7.2 Initial Approach</p>
+<ol><li><b>History</b>: Destinations (all, including transit), exact dates, exposures (freshwater — schistosomiasis, leptospirosis), sexual contact, animal contact, injections/tattoos, food/water, prophylaxis compliance, vaccines, insect bites.</li><li><b>Examination</b>: Skin (eschar — rickettsial, cutaneous leishmaniasis, myiasis, tick bites), lymphadenopathy, hepatosplenomegaly, jaundice, rash, phlebitis, heart murmurs.</li><li><b>First-pass investigations</b>:</li></ol>
+<ul><li><b>Thick + thin blood films</b> for malaria (repeat q12–24 h × 3 if negative but high suspicion); <b>rapid diagnostic test (HRP2 + pLDH)</b> adjunct.</li><li>FBC (eosinophilia — helminths, schistosomiasis, strongyloides; lymphopenia — viral), U&amp;E, LFT, CRP, blood culture × 2–3.</li><li>Dengue NS1 / serology (if &lt; 5 d → NS1; &gt; 5 d → IgM/IgG).</li><li>HIV Ag/Ab (acute infection possible).</li><li>Hepatitis A, B, C serology.</li><li>Leptospira serology / PCR (early).</li><li>Rickettsial serology / PCR (eschar).</li><li>Schistosoma serology + stool/urine OCP.</li><li>Stool/urine microscopy if diarrhoea.</li><li>Bone marrow / aspirate for Leishmania if prolonged fever + pancytopenia + splenomegaly (visceral leishmaniasis — Mediterranean, Asia, Latin America, Horn of Africa).</li><li><b>TB</b> if chronic (CXR, sputum, IGRA).</li></ul>
+<p>#### 7.3 The Major Differential by Region</p>
+<table class="ctable"><tr><th>Region</th><th>Top Considerations</th></tr><tr><td>--------</td><td>---------------------</td></tr><tr><td>**Sub-Saharan Africa**</td><td>**Malaria** (P. falciparum, P. vivax), typhoid, dengue, viral haemorrhagic (Ebola, Marburg, Lassa, CCHF), meningococcal, TB, schistosomiasis, African trypanosomiasis, visceral leishmaniasis, chikungunya, Zika, rickettsial (tick typhus).</td></tr><tr><td>**South/Southeast Asia**</td><td>**Malaria** (P. vivax common, P. falciparum in rural), dengue, chikungunya, typhoid, hepatitis A/E, JE, scrub typhus, Nipah, Hanta, melioidosis, paragonimiasis, opisthorchiasis, leptospirosis.</td></tr><tr><td>**Latin America**</td><td>**Malaria** (P. vivax Amazon), dengue, chikungunya, Zika, typhoid, hepatitis A, visceral leishmaniasis, HAT (rare), bartonellosis (Oroya fever), rickettsial, Coccidioidomycosis, histoplasmosis, schistosomiasis (Brazil), yellow fever, Mayaro.</td></tr><tr><td>**Middle East / North Africa**</td><td>Typhoid, hepatitis A, brucellosis, hydatid, leishmaniasis (visceral/cutaneous), schistosomiasis, MERS-CoV, dengue, Rift Valley fever, Q fever.</td></tr><tr><td>**Europe / North America**</td><td>Lyme, RMSF, anaplasmosis, babesiosis, tick-borne encephalitis, Q fever, brucellosis.</td></tr><tr><td>**Australia / Pacific**</td><td>Dengue, Ross River, Barmah Forest, melioidosis, Coccidioidomycosis (return travel), Q fever.</td></tr></table>
+<p>#### 7.4 The "Syndromic" Approach</p>
+<table class="ctable"><tr><th>Syndrome</th><th>Pathogens to Consider</th></tr><tr><td>----------</td><td>----------------------</td></tr><tr><td>**Fever + haemolysis/jaundice**</td><td>Malaria, leptospirosis, viral haemorrhagic, hepatitis, babesiosis, severe sepsis.</td></tr><tr><td>**Fever + rash**</td><td>Dengue, chikungunya, Zika, measles, rubella, meningococcal, rickettsial (eschar = scrub typhus, tick typhus), varicella, monkeypox, enteroviral, syphilis (secondary), drug.</td></tr><tr><td>**Fever + hepatosplenomegaly**</td><td>Visceral leishmaniasis, typhoid, malaria, brucellosis, TB, schistosomiasis (acute — Katayama fever), EBV, CMV, histoplasmosis.</td></tr><tr><td>**Fever + lymphadenopathy**</td><td>Plague, tularaemia, TB, LGV, syphilis, HIV (seroconversion), EBV, leishmaniasis, HAT (Winterbottom).</td></tr><tr><td>**Fever + CNS**</td><td>Meningococcal, JE, West Nile, rabies, malaria (cerebral), HAT, Lyme neuroborreliosis, Nipah, viral haemorrhagic, Naegleria, Balamuthia.</td></tr><tr><td>**Fever + respiratory**</td><td>Influenza, COVID-19, MERS, SARS, melioidosis, plague (pneumonic), Q fever, anthrax, TB, hantavirus, Legionella (hotel/spa), paragonimiasis.</td></tr><tr><td>**Fever + diarrhoea**</td><td>TD, typhoid, paratyphoid, *E. histolytica*, schistosomiasis, non-typhoidal Salmonella, viral hepatitis.</td></tr><tr><td>**Fever + renal failure / haemorrhage**</td><td>Hantavirus, leptospirosis, CCHF, Ebola/Marburg, severe malaria, severe sepsis.</td></tr><tr><td>**Fever + eosinophilia**</td><td>Acute schistosomiasis (Katayama fever), Strongyloides, filaria, Loa loa, Toxocara, trichinellosis, Gnathostoma, paragonimiasis, fascioliasis, drug.</td></tr><tr><td>**Fever + chronic (> 2 wk)**</td><td>Typhoid, TB, brucellosis, Q fever, visceral leishmaniasis, malaria, schistosomiasis, HIV, EBV, amoebic liver abscess, histoplasmosis.</td></tr></table>
+<p>#### 7.5 When to Admit / Escalate</p>
+<ul><li>Any malaria, severe dengue, typhoid with complications, viral haemorrhagic fever (VHF), JE, rabies exposure, melioidosis, plague, severe dehydration, sepsis, pregnancy, immunocompromised.</li></ul>
+<p>#### 7.6 Notification / Public Health</p>
+<ul><li>Notifiable: malaria, typhoid, paratyphoid, hepatitis A/B/C, TB, meningococcal, plague, VHF, diphtheria, cholera, rabies, anthrax, SARS, MERS, COVID-19, Zika, chikungunya, monkeypox, leishmaniasis, schistosomiasis, Chagas, food poisoning clusters.</li><li><b>Yellow Card</b> (UK) for adverse drug reactions, vaccines.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>-------------------</td><td>--------------</td></tr><tr><td>30-y-old backpacking 6 wk in rural Uganda, only 2 wk before departure</td><td>Last-minute acceleration; high *P. falciparum* exposure</td><td>AP prophylaxis (start next day, continue 7 d post); YF vaccine if not yet; Hep A + typhoid + rabies pre-exposure; MMR check; ITN; TD self-treatment kit; single-dose YF → certificate issued ≥ 10 d.</td></tr><tr><td>28-y-old pregnant (12 wks) attending family wedding in Delhi</td><td>Avoid live vaccines, 1st-trimester travel discouraged</td><td>Defer travel if possible; if essential: mefloquine (limited data) or AP contraindicated; Hep A inactivated safe; YF vaccine (live) — discuss risk; avoid street food, drink bottled water; LMWH for VTE on long flights.</td></tr><tr><td>65-y-old trekker to Everest Base Camp (5,364 m) in 10 d</td><td>Rapid ascent risk; elderly</td><td>Acetazolamide 125 mg BD start 24 h pre; gradual acclimatisation plan; nifedipine PRN for HAPE-susceptible; dexamethasone PRN for HACE; counsel descent over summit if AMS.</td></tr><tr><td>Hajj pilgrim from Nigeria, 45 y</td><td>Required ACWY + YF + influenza + COVID-19 update</td><td>MenACWY 0.5 mL IM (cert ≥ 10 d), YF if not vaccinated (certificate from YF-endemic Nigeria), influenza northern-hemisphere current, COVID-19 update, Hep A/B, TD kit, hand hygiene, mask, OCP stop 4 wks pre if possible.</td></tr><tr><td>VFR child (6 y) from UK visiting grandparents in Lagos for 6 wks</td><td>Highest-risk group; Hep A exposure; typhoid; malaria; measles; polio</td><td>YF (9 m+ required; consider vaccine), Hep A series, typhoid ≥ 2 y, MMR if missed, polio IPV booster, **AP pediatric** for malaria 6 wks + 7 d post, ITN, food/water, measles awareness.</td></tr><tr><td>Returning traveller, 35 y, fever 7 d post-India, no prophylaxis</td><td>Falciparum is the killer</td><td>Empiric thick/thin films, RDT, admit; treat as falciparum pending speciation if severe.</td></tr><tr><td>Returning traveller, fever + eschar on ankle, 12 d post-Vietnam</td><td>Scrub typhus (*Orientia tsutsugamushi*)</td><td>Doxycycline 100 mg BD × 7 d (often empirical while serology returns).</td></tr><tr><td>Returning traveller, fever + hepatosplenomegaly + pancytopenia 3 m post-Mediterranean</td><td>Visceral leishmaniasis</td><td>Bone marrow aspirate, Leishmania serology (rK39), liposomal amphotericin B.</td></tr><tr><td>Hajj returnee, fever + rash + meningism</td><td>Meningococcal meningitis</td><td>Ceftriaxone 2 g IV stat, contact prophylaxis (cipro/riampin), notify public health.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know:</b> - Pre-travel window <b>4–6 weeks</b>; cover itinerary, host, activity, time, vaccine, proph, behaviour. - YF: <b>live attenuated 17D</b>, single dose, certificate <b>valid for life</b> since 2016, contraindicated &lt; 6 m / severe immuno / thymectomy / pregnant. - Hajj: <b>ACWY mandatory</b> + influenza + COVID-19 update. - Malaria drug choice by drug resistance and host; AP = 1–2 d pre, 7 d post; <b>mefloquine = neuropsychiatric CI; doxycycline = 4 wk post; tafenoquine = G6PD screen + daily loading</b>; primaquine/tafenoquine <b>terminal prophylaxis</b> for P. vivax/ovale. - TD: azithromycin first line (SE Asia, India, FQ-R); loperamide adjunct, NOT in bloody/fever; bismuth + rifaximin prophyl options. - Altitude: <b>acetazolamide 125 mg BD</b> start 24 h pre, 48 h at altitude; HAPE = descent + O₂ + <b>nifedipine 30 mg SR BD</b>; HACE = descent + <b>dexamethasone 8 mg → 4 mg q6h</b>. - VTE: stockings ± <b>LMWH</b> for high-risk; <b>NOT aspirin</b>. - <b>Returning fever = malaria first</b> within 24 h; repeat films × 3. - <b>Common viva:</b> "Traveller to Uganda for 6 weeks, what do you advise?"; "Yellow fever contraindication in elderly?"; "Drug of choice for TD in India?"; "Treatment of HAPE?"; "VFR child to Nigeria — what vaccines?"; "Returning traveller with fever, eschar — what next?" - <b>Exam trap:</b> - Confusing YF certificate validity (10 y vs life) — <b>life since 2016</b>. - Confusing <b>AP</b> (Malarone) duration pre/post with <b>mefloquine/doxycycline</b> (1–2 d pre, 7 d post vs ≥ 2 wk pre, 4 wk post). - Loperamide in <b>bloody</b> diarrhoea. - Aspirin for VTE (NOT recommended). - Tafenoquine/primaquine <b>without G6PD screen</b>. - Routine <b>CI prophylaxis</b> for VFR (no — only high-stakes trips). - BCG for travel (no — not given in most schedules). - YF vaccine in &gt; 60 y without risk-benefit discussion. - "MSK prophylaxis for everyone" (no — only for specific pathogens, e.g., meningococcal, rabies PEP, tetanus).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>AP prophylaxis 4 weeks before travel.</td><td>**1–2 days before, 7 days after** (the shortest post-exposure course).</td></tr><tr><td>Mefloquine 1 dose 24 h before travel.</td><td>**At least 2 doses (3 ideal) before travel** to assess neuropsychiatric side effects; **continue 4 weeks after**.</td></tr><tr><td>Doxycycline stopped at return.</td><td>**Continue 4 weeks after** leaving malaria area.</td></tr><tr><td>Tafenoquine / primaquine given without G6PD screen.</td><td>**G6PD MANDATORY** (haemolysis risk in deficiency).</td></tr><tr><td>Loperamide alone for severe TD.</td><td>Loperamide is **adjunct to antibiotic**, not monotherapy (and contraindicated in bloody/febrile).</td></tr><tr><td>Aspirin for DVT prevention on long flights.</td><td>**No** — graduated stockings ± LMWH; aspirin not recommended (WARSAW 2020).</td></tr><tr><td>YF certificate valid 10 years.</td><td>**Life** since WHO 2016 amendment.</td></tr><tr><td>BCG for travel to high-TB country.</td><td>**Not generally** — only select infants/children in some guidelines.</td></tr><tr><td>Routine antibiotics for all travellers.</td><td>**No** — reserved for high-stakes / high-risk only.</td></tr><tr><td>YF vaccine safe in pregnancy.</td><td>**Relative contraindication** — risk-benefit, prefer to defer.</td></tr><tr><td>Hep A booster needed before every trip.</td><td>Primary 2-dose series → **booster not required for 20–25 years** (probably life).</td></tr><tr><td>Loperamide for children < 2 y.</td><td>**Contraindicated** in < 2 y (ileus, respiratory depression).</td></tr><tr><td>Cipro first line for TD.</td><td>**Azithromycin first** in SE Asia/India; FQ resistance > 50 % in many regions.</td></tr><tr><td>Acetazolamide 250 mg TDS for AMS.</td><td>**125 mg BD** is standard prophyl dose; 250 mg BD for AMS treatment or high altitude.</td></tr><tr><td>HAPE treated with acetazolamide.</td><td>**Nifedipine + descent + O₂**; acetazolamide is for AMS.</td></tr><tr><td>Typhoid vaccine gives 100 % protection.</td><td>~ 50–70 % efficacy; food/water hygiene essential.</td></tr><tr><td>YF 17D is inactivated.</td><td>**Live attenuated**.</td></tr><tr><td>YF vaccine / MMR safe in HIV with CD4 100.</td><td>**Live vaccines contraindicated** if CD4 < 200.</td></tr><tr><td>Rabies pre-exposure = no PEP needed.</td><td>**Simplifies PEP to 2 doses days 0/3; no RIG** required.</td></tr><tr><td>Mefloquine safe in epilepsy.</td><td>**Contraindicated** (lowers seizure threshold).</td></tr><tr><td>VFR child needs no vaccines because "they're used to it".</td><td>**High risk, low protection** — full schedule recommended.</td></tr><tr><td>Chloroquine still effective in SSA.</td><td>**No** — widespread CQ-R falciparum.</td></tr><tr><td>Aspirin = DVT prophylaxis.</td><td>**No**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>5 A's of pre-travel</b>: <b>A</b>dventure, <b>A</b>ccommodation, <b>A</b>rea, <b>A</b>ilments, <b>A</b>llergy.</li><li><b>Vaccine categories 3 R's</b>: <b>R</b>outine (update), <b>R</b>equired (YF, MenACWY, polio), <b>R</b>ecommended (Hep A, typhoid, rabies, JE, TBE, cholera).</li><li><b>Malaria drug timing — "AP 1-7, Meflo 2-4, Doxy 1-4"</b> — AP start 1 d, 7 d post; Meflo 2 wk pre, 4 wk post; Doxy 1 d pre, 4 wk post.</li><li><b>HAPE treatment — "DON"</b>: <b>D</b>escent, <b>O</b>xygen, <b>N</b>ifedipine.</li><li><b>HACE treatment — "D-D"</b>: <b>D</b>escent + <b>D</b>examethasone.</li><li><b>AMS prophylaxis</b>: <b>"AAA 125, 24-48"</b> — <b>A</b>cetazolamide 125 mg <b>BD</b>, <b>24 h pre, 48 h at altitude</b>.</li><li><b>TD self-treatment</b>: <b>"ALOA"</b> — <b>A</b>zithromycin, <b>L</b>operamide adjunct, <b>O</b>RS, <b>A</b>void bloody/fever.</li><li><b>Returning fever priorities</b>: <b>"MATES"</b> — <b>M</b>alaria, <b>A</b>typical (dengue, chikungunya), <b>T</b>yphoid/hepatitis, <b>E</b>schar (rickettsial), <b>S</b>chisto/STI/HIV.</li><li><b>Malaria drug choice (CQ-R)</b>: <b>"MDAT"</b> — <b>M</b>efloquine (weekly), <b>D</b>oxycycline (cheap), <b>A</b>tovaquone-proguanil (short), <b>T</b>afenoquine (G6PD-screen).</li><li><b>YF contraindications</b>: <b>"YEL-STOP"</b> — <b>Y</b>ounger than 6 m, <b>E</b>gg severe allergy, <b>L</b>ess than 9 m Hajj-visiting, immunocompromised (Severe, T-cell-deficient, Transplant, Oncologic, Pregnancy). Memorise relative: <b>6 m–9 m / 60+ / pregnant / HIV CD4 &lt; 200 / thymectomy / mild egg</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Travel Medicine Pre-Travel Assessment &amp; Prophylaxis)) Pre-Travel Consultation Timing 4-6 weeks 5 As Adventure Accommodation Area Ailments Allergy Sources CDC Yellow Book WHO NaTHNaC Vaccines Routine Update MMR DTaP Polio Varicella Influenza COVID Required Yellow Fever ICVP Meningococcal ACWY Polio Recommended Hep A Hep B Typhoid Rabies JE TBE Cholera Yellow Fever 17D live attenuated certificate life since 2016 Contraindications under 6 m severe immunocompromise thymectomy pregnancy relative Malaria Prophylaxis Risk assessment drug resistance P.falciparum P.vivax Drugs Chloroquine Mefloquine weekly Doxycycline daily AP daily Tafenoquine Terminal Prophylaxis Primaquine Tafenoquine for P.vivax P.ovale G6PD screen Insect bite avoidance DEET permethrin nets Travellers Diarrhoea Pathogens ETEC Campylobacter Salmonella Shigella Prevention food water hygiene bismuth rifaximin Treatment Azithromycin first line SE Asia Loperamide adjunct not bloody fever ORS rehydration Altitude Illness AMS Acetazolamide 125 mg BD 24 h pre 48 h altitude HACE Descent Dexamethasone 8 mg 4 mg q6h HAPE Descent Oxygen Nifedipine 30 mg SR BD Other Jet lag melatonin daylight Motion sickness hyoscine cinnarizine VTE stockings LMWH high risk not aspirin VFR highest risk underprotected Hajj ACWY required influenza COVID update Post-Travel Fever Rule malaria first falciparum kills 24 48 h Region SSA India SE Asia differential Workup thick thin films q12 24 h x3 cultures serology Notify malaria typhoid VHFs TB meningococcal </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart — Pre-Travel Decision</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Traveller 4-6 weeks before departure] --&gt; B{Itinerary Risk} B --&gt;|Low risk urban business| C[Routine update + Hep A booster if needed] B --&gt;|Moderate rural| D[Routine + Hep A + typhoid + TD kit + insect avoidance] B --&gt;|High risk rural jungle trekking| E[Routine + Hep A + Hep B + typhoid + rabies + JE + malaria proph + TD kit + insect + altitude? + VTE?] C --&gt; F{YF endemic transit} D --&gt; F E --&gt; F F --&gt;|Yes| G[YF vaccine single dose + ICVP] F --&gt;|No| H{Hajj / Umrah} H --&gt;|Yes| I[MenACWY + influenza + COVID update + Hep A B typhoid TD kit] H --&gt;|No| J[End of pre-travel] G --&gt; K{Special pops} I --&gt; K J --&gt; K K --&gt;|Pregnant child elderly immunocompromised| L[Adjust live vaccines drug choice dose] K --&gt;|Standard| M[Dispense proph + print records + give advice] L --&gt; M M --&gt; N[Document in ICVP + travel letter + emergency contact + insurance + ADT form] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Flowchart — Returning Traveller with Fever</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Fever within 12 m of tropical travel] --&gt; B{Malaria area visited} B --&gt;|Yes| C[Thick and thin blood films NOW + RDT + FBC LFT CRP blood culture] B --&gt;|No| D[Region-specific DDx + FBC LFT CRP + blood culture + dengue NS1 + HIV Ag Ab] C --&gt; E{Malaria positive} E --&gt;|Yes| F[Admit severe Admit non-severe treat per species drug resistance G6PD] E --&gt;|No but high suspicion| G[Repeat films q12 24 h x 3 - send to reference lab - empirical treat if very ill] D --&gt; H{Skin findings} H --&gt;|Eschar| I[Empirical doxycycline scrub typhus or tick typhus] H --&gt;|Rash| J[Dengue chikungunya Zika measles meningococcal - test serology PCR] H --&gt;|No| K[Consider typhoid leptospirosis schistosomiasis hepatitis A E TB brucellosis leishmaniasis] I --&gt; L[Notify public health if notifiable + outpatient review] J --&gt; L K --&gt; L G --&gt; L F --&gt; L </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] WHO/CDC malaria map (global; sub-Saharan Africa detail).</li><li>[ ] Yellow fever country map (endemic vs required certificate).</li><li>[ ] YF vaccine algorithm (indication vs contraindication vs precaution).</li><li>[ ] Pre-travel consultation template / checklist.</li><li>[ ] Hajj vaccination summary infographic.</li><li>[ ] Altitude-illness ascent profile with acetazolamide dosing line.</li><li>[ ] TD self-treatment algorithm (bloody vs non-bloody).</li><li>[ ] VFR communication flow.</li><li>[ ] Returning fever mind map by region.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] CDC Travelers' Health: Yellow Book chapter walk-through.</li><li>[ ] WHO IHR 2005 — YF vaccine requirements.</li><li>[ ] Shoreland Travax: Pre-travel consultation video case.</li><li>[ ] NaTHNaC: Hajj/Umrah preparation.</li><li>[ ] Wilderness Medical Society: High-altitude medicine guidelines video.</li><li>[ ] RCH / Liverpool TREC: Malaria prophylaxis decision tool.</li><li>[ ] CDC: Yellow Fever vaccine — adverse events (YEL-AVD/AND).</li><li>[ ] ProMED / ECDC outbreak update briefings.</li><li>[ ] BMJ Learning: Travel medicine modules.</li><li>[ ] Medmastery: The febrile returning traveller.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Timing</b>: Pre-travel consult 4–6 weeks before departure. - <b>5 A's</b>: Adventure, Accommodation, Area, Ailments, Allergy. - <b>Vaccine 3 R's</b>: Routine (update — MMR, DTaP, polio, varicella, influenza, COVID-19), Required (YF-ICVP life, MenACWY Hajj, polio exporters), Recommended (Hep A, Hep B, typhoid, rabies, JE, TBE, cholera). - <b>Yellow fever</b>: Live attenuated 17D; single dose; ICVP valid for life (since 2016); contraindicated &lt; 6 m, severe immunocompromise, thymectomy, pregnancy (relative); YEL-AVD/AND risk in &gt; 60 y and thymectomy. - <b>Malaria prophylaxis (CQ-R)</b>: - <b>AP (Malarone)</b>: 1–2 d pre → daily → 7 d post; expensive, short trips. - <b>Doxycycline</b>: 1–2 d pre → daily → 4 wk post; cheap; photosensitivity, oesophagitis. - <b>Mefloquine</b>: ≥ 2 doses (3 ideal) pre → weekly → 4 wk post; CI in neuropsych, epilepsy, conduction defects. - <b>Tafenoquine</b>: G6PD screen, daily loading, then weekly; covers vivax/ovale hypnozoites. - <b>Terminal prophylaxis</b> (P. vivax/ovale): primaquine 14 d OR tafenoquine single — <b>G6PD first</b>. - <b>SBET</b>: AP 4 tabs × 3 d, or AL/DHA-PPQ; only low-risk + remote + trained. - <b>Travellers' diarrhoea</b>: Most ETEC, also Campylobacter/Salmonella/Shigella. Azithromycin 1 g single or 500 mg × 3 d first line (SE Asia/India); FQ first line only if local R low. Loperamide adjunct, <b>NOT in bloody/febrile</b>. Bismuth/rifaximin prophyl options. ORS always. - <b>Altitude</b>: - <b>AMS prophylaxis</b>: <b>Acetazolamide 125 mg BD</b> start 24 h pre, 48 h at altitude; gradual ascent. - <b>HAPE</b>: Descent + O₂ + <b>Nifedipine 30 mg SR BD</b> (or tadalafil). - <b>HACE</b>: Descent + <b>Dexamethasone 8 mg → 4 mg q6h</b>. - <b>Other</b>: Jet lag — melatonin + daylight timing. Motion sickness — hyoscine patch. VTE — stockings + LMWH if high risk (NOT aspirin). VFR — high risk, low coverage. Hajj — ACWY + flu + COVID. - <b>Post-travel fever</b>: <b>Malaria FIRST</b> (repeat films q12–24 h × 3). Region-specific DDx: typhoid, dengue, rickettsial (eschar → doxy), leptospirosis, hepatitis A/E, schistosomiasis, HIV, visceral leishmaniasis. Notify public health for notifiable diseases.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What is the ideal timing and structure of pre-travel consultation (4–6 weeks; 5 A's; itinerary, host, activity, time, vaccine, chemoprophylaxis, behaviour, document)?</li><li>Differentiate routine vs required vs recommended vaccines with examples for each.</li><li>Yellow fever vaccine — type, dose, ICVP validity (life), contraindications, YEL-AND/AVD, special populations (pregnancy, elderly, HIV, thymectomy).</li><li>Hajj vaccine requirements (ACWY + influenza + COVID-19 + YF if from endemic country) and other risks.</li><li>Malaria chemoprophylaxis — drug names, doses, start and end timing, contraindications, and choice of agent for CQ-resistant <i>P. falciparum</i>, for children, for pregnancy, for last-minute, and for terminal prophylaxis.</li><li>Tafenoquine and primaquine — mechanism (liver hypnozoite eradication for P. vivax/ovale), G6PD screening requirement, dosing.</li><li>Travellers' diarrhoea — pathogens, prevention, self-treatment antibiotic choice by region, loperamide rules, when to seek care, SBET.</li><li>Altitude illness — three syndromes, prevention (acetazolamide 125 mg BD, 24 h pre, 48 h altitude), HAPE treatment (descent, O₂, nifedipine), HACE treatment (descent, dexamethasone), high-risk groups.</li><li>Jet lag, motion sickness, VTE — mainstays of prevention and treatment; why NOT aspirin for VTE.</li><li>Returning traveller with fever — always exclude malaria first; differential by region; eschar = rickettsial; hepatitis A/E/typhoid/leptospirosis; notifiable diseases; VFR group as highest-risk under-protected.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Pre-travel 4–6 weeks; 5 A's; vaccine categories (3 R's); YF (live, ICVP life, contraindication); Hajj vaccines; malaria drugs (AP, doxy, meflo, tafenoquine, CQ, primaquine terminal) — doses, timing, contraindications, G6PD; TD prevention + self-treatment (azithro + loperamide rules); altitude (acetazolamide 125 mg BD, nifedipine, dexamethasone); VTE stockings + LMWH; jet lag/motion sickness; VFR; returning fever (malaria first).</td></tr><tr><td>**Should Know 🟡**</td><td>Specific destination vaccine schedules (Hep B accelerated 0/7/21, JE 0/28, rabies 0/7/21/28, TBE 0/1–3/5–12); pregnancy/paediatric/elderly/HIV/immunosuppressed adjustments; Saudi MOH Hajj requirements year-by-year; rabies pre-exposure (2 doses PEP); G6PD variants; SBET; food/water purification methods; SBET (Coartem, Eurartesim, AP); Q fever, melioidosis, leishmaniasis.</td></tr><tr><td>**Nice to Know 🟢**</td><td>Telemedicine/teleconsult pre-travel; digital health passports (ICVP electronic); malaria vaccines (R21/Matrix-M, RTS,S); climate-change-driven vector range expansion; mRNA vaccine platform for travel vaccines in development; traveller genomics (pharmacogenomics of malaria drugs); IHR 2005 text; EIOS / ProMED; venture-philanthropy funding for neglected tropical disease vaccines.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing.</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p>"Pre-travel assessment and prophylaxis of an adult traveller to a developing country."</p>
+<ul><li><b>Definition &amp; rationale</b> (1 min): Burden, why consult.</li><li><b>5 A's risk assessment</b> (3 min): Itinerary, host, activity, time, history, exam, drugs, allergies.</li><li><b>Vaccine framework</b> (5 min): Routine update, required, recommended — with examples.</li><li><b>Malaria prophylaxis</b> (5 min): Risk stratify, drug choice by area, dose, start/end timing, contraindications, G6PD, terminal prophylaxis.</li><li><b>Other prophylaxis</b> (3 min): TD, altitude, VTE, VFR.</li><li><b>Behaviour + documentation</b> (2 min): ITN, food/water, insurance, ICVP, letter.</li><li><b>Conclusion</b> (1 min): Tailored, evidence-based, shared decision.</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>4–6-week consult window; 5 A's; YF vaccine; Hajj vaccines; malaria drugs (5); TD self-treatment; altitude prophylaxis + HAPE/HACE; VFR; returning fever.</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p>Q: "A 30-year-old is going trekking in Nepal for 2 weeks. Advise." A: Lead with 4–6-week consult; check routine (MMR, DTaP, polio); recommend Hep A, typhoid, Hep B consider, rabies if rural; <b>altitude prophylaxis</b> with acetazolamide 125 mg BD 24 h pre; gradual ascent to 3,500 m + rest days; TD kit (azithro + loperamide + ORS); VTE advice on flight; ITN + DEET (dengue in lowland); give written advice + travel health kit; insurance with helicopter rescue.</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to patient: pre-travel checklist; destination-specific vaccine (Y/F only if in YF area); malaria drug choice by drug-resistance map; do not forget G6PD screen if tafenoquine/primaquine; consider altitude if trekking; document in GP records; for returning fever — malaria films first.</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>4–6 wk, 5 A's; 3 R's; YF live/ICVP-life; AP-1-7/Meflo-2-4/Doxy-1-4; tafenoquine G6PD; azithro + loperamide; acetazolamide 125 BD; nifedipine/dexa for HAPE/HACE; aspirin NOT for VTE; returning fever = malaria first.</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>YF: life, contra; Hajj: ACWY+flu+COVID; AP 1/7, Meflo 2/4, Doxy 1/4; tafenoquine G6PD; primaquine terminal G6PD; azithro 1g TD; loperamide NOT bloody; acetazolamide 125 BD AMS; nifedipine HAPE; dexamethasone HACE; LMWH VTE; malaria first returning fever.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Pre-travel consultation should ideally occur:</b></li></ol>
+<p>A. 1 week before travel B. <b>4–6 weeks before travel</b> C. 1 month before travel D. Day of travel E. After return</p>
+<ol><li><b>Yellow fever vaccine certificate (ICVP) is valid for:</b></li></ol>
+<p>A. 1 year B. 5 years C. 10 years D. <b>Life (since WHO 2016 amendment)</b> E. Until anti-YF IgG wanes</p>
+<ol><li><b>Yellow fever vaccine — absolute contraindication:</b></li></ol>
+<p>A. Age 65 with no comorbidity B. <b>Infant &lt; 6 months old</b> C. Mild egg allergy D. Single dose of steroid 5 d before E. Asymptomatic HIV with CD4 350</p>
+<ol><li><b>Atovaquone-proguanil (Malarone) malaria prophylaxis timing:</b></li></ol>
+<p>A. Start 2 weeks before, continue 4 weeks after B. <b>Start 1–2 days before, continue 7 days after leaving</b> C. Weekly dosing D. Single dose on departure E. Only after symptoms begin</p>
+<ol><li><b>Mefloquine — absolute contraindication:</b></li></ol>
+<p>A. Renal impairment B. <b>History of depression, psychosis, or seizures</b> C. Hepatic impairment D. G6PD deficiency E. Sulfa allergy</p>
+<ol><li><b>Doxycycline malaria prophylaxis — which statement is FALSE?</b></li></ol>
+<p>A. Continue 4 weeks after leaving malaria area B. Take with food and full glass of water, remain upright 30 min C. Avoid in pregnancy and children &lt; 8 years D. <b>Can be given weekly</b></p>
+<ol><li><b>Tafenoquine — mandatory pre-treatment investigation:</b></li></ol>
+<p>A. Liver function tests B. <b>G6PD level (deficiency → haemolysis)</b> C. ECG D. Chest X-ray E. HIV serology</p>
+<ol><li><b>Travellers' diarrhoea — preferred self-treatment antibiotic in a traveller to India where fluoroquinolone resistance is common:</b></li></ol>
+<p>A. Ciprofloxacin 500 mg BD × 3 d B. <b>Azithromycin 1 g single dose or 500 mg daily × 3 days</b> C. Amoxicillin 500 mg TDS × 5 d D. Metronidazole 400 mg TDS × 5 d E. Doxycycline 100 mg BD × 5 d</p>
+<ol><li><b>Loperamide in travellers' diarrhoea — contraindication:</b></li></ol>
+<p>A. Adults only B. <b>Bloody diarrhoea or high fever (suspected dysentery / invasive pathogen)</b> C. Mild abdominal cramp D. Concurrent azithromycin E. Children &gt; 6 y</p>
+<ol><li><b>HAPE — first-line specific drug treatment (in addition to descent and oxygen):</b></li></ol>
+<p>A. Acetazolamide B. Dexamethasone C. Furosemide D. <b>Nifedipine 30 mg SR BD</b> E. Salbutamol</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 35-year-old man is going trekking in the Annapurna region (4,500 m) for 2 weeks. He has no comorbidity. The most appropriate pharmacological prophylaxis against acute mountain sickness is:</b></li></ol>
+<p>A. Dexamethasone 4 mg BD started day of arrival B. <b>Acetazolamide 125 mg BD started 24 h before ascent and continued 48 h at altitude</b> C. Nifedipine 30 mg SR BD throughout the trip D. Ibuprofen 400 mg TDS PRN E. Oxygen cylinder at 3,000 m</p>
+<ol><li><b>A Hajj pilgrim from Nigeria presents 14 days before departure. He has had no previous meningococcal vaccine. What is the correct vaccine and timing?</b></li></ol>
+<p>A. MPSV4 (polysaccharide) 1 dose 7 days before B. <b>MenACWY conjugate 1 dose ≥ 10 days and ≤ 5 years before arrival</b> C. MenB vaccine 1 dose 14 days before D. Booster of childhood MenC only E. No vaccine needed if from endemic area</p>
+<ol><li><b>A 28-year-old woman returns from 3 weeks in rural Ghana; she took no malaria prophylaxis. She has fever 39 °C, headache, rigors. She is haemodynamically stable. Best immediate management:</b></li></ol>
+<p>A. Empirical ciprofloxacin and send home B. <b>Send urgent thick and thin blood films + RDT, start empirical artemether-lumefantrine pending result, admit for observation</b> C. Await blood culture for 48 h D. Single dose of primaquine and review E. Doxycycline 100 mg BD for 7 days</p>
+<ol><li><b>A 60-year-old man returns from Amazon basin with fever, splenomegaly, and pancytopenia 3 months post-travel. Bone marrow shows amastigotes. Diagnosis:</b></li></ol>
+<p>A. Acute malaria B. <b>Visceral leishmaniasis</b> C. Acute schistosomiasis (Katayama fever) D. Brucellosis E. Histoplasmosis</p>
+<ol><li><b>A backpacker returns from Vietnam with fever, headache, myalgia, and a 1 cm painless black eschar on the right ankle with regional lymphadenopathy. Most likely diagnosis and empirical treatment:</b></li></ol>
+<p>A. Cutaneous anthrax — ciprofloxacin B. Cutaneous leishmaniasis — sodium stibogluconate C. **Scrub typhus (<i>Orientia tsutsugamushi</i>) — doxycycline 100 mg BD** D. Myiasis — ivermectin E. Lyme disease — doxycycline</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Pre-travel consultation timing?</li></ul>
+<p>A: 4–6 weeks before departure.</p>
+<ul><li>Q: 5 A's of pre-travel risk assessment?</li></ul>
+<p>A: Adventure, Accommodation, Area, Ailments, Allergy.</p>
+<ul><li>Q: Vaccine 3 R's?</li></ul>
+<p>A: Routine, Required, Recommended.</p>
+<ul><li>Q: YF vaccine type, dose, certificate validity?</li></ul>
+<p>A: Live attenuated 17D, single 0.5 mL SC dose, ICVP valid for life (since 2016).</p>
+<ul><li>Q: YF vaccine absolute contraindications?</li></ul>
+<p>A: &lt; 6 months old; severe immunocompromise (transplant, AIDS CD4 &lt; 200, biologics); thymectomy/thymic disease; symptomatic HIV; severe egg allergy.</p>
+<ul><li>Q: YF vaccine age-related caution?</li></ul>
+<p>A: &gt; 60 y → ↑ risk of YEL-AVD/AND — discuss risk-benefit; &lt; 9 m → relative CI.</p>
+<ul><li>Q: Hajj mandatory vaccines (2024–2025)?</li></ul>
+<p>A: MenACWY (≥ 10 d, ≤ 5 y), current seasonal influenza, COVID-19 update, YF if from endemic country.</p>
+<ul><li>Q: AP (Malarone) prophylaxis timing?</li></ul>
+<p>A: Start 1–2 d before, daily, continue 7 d after leaving.</p>
+<ul><li>Q: Doxycycline prophylaxis timing?</li></ul>
+<p>A: Start 1–2 d before, daily, continue 4 weeks after leaving.</p>
+<ul><li>Q: Mefloquine prophylaxis timing?</li></ul>
+<p>A: Start ≥ 2 doses (3 ideal) before, weekly, continue 4 weeks after.</p>
+<ul><li>Q: Mefloquine contraindications?</li></ul>
+<p>A: Neuropsychiatric history (depression, anxiety, seizures, psychosis), epilepsy, cardiac conduction defects.</p>
+<ul><li>Q: Tafenoquine — what test before?</li></ul>
+<p>A: G6PD level (deficiency → haemolysis).</p>
+<ul><li>Q: Terminal prophylaxis for P. vivax/ovale?</li></ul>
+<p>A: Primaquine 30 mg base daily × 14 d OR tafenoquine 300 mg single; <b>G6PD screen first</b>.</p>
+<ul><li>Q: TD first-line antibiotic in India/SE Asia?</li></ul>
+<p>A: Azithromycin 1 g single dose (or 500 mg OD × 3 d).</p>
+<ul><li>Q: When NOT to use loperamide in TD?</li></ul>
+<p>A: Bloody diarrhoea, fever &gt; 38.5 °C, suspected dysentery/invasive pathogen, age &lt; 2 y.</p>
+<ul><li>Q: TD self-treatment kit components?</li></ul>
+<p>A: Azithromycin (or FQ in low-R areas), loperamide, ORS sachets, thermometer, hand sanitiser.</p>
+<ul><li>Q: Bismuth subsalicylate TD prophylaxis dose?</li></ul>
+<p>A: 524 mg (2 tabs or 30 mL) QID.</p>
+<ul><li>Q: Acetazolamide AMS prophylaxis dose and timing?</li></ul>
+<p>A: 125 mg BD (250 mg BD &gt; 5,000 m), start 24 h before ascent, continue 48 h at altitude.</p>
+<ul><li>Q: HAPE specific treatment?</li></ul>
+<p>A: Immediate descent + O₂ + nifedipine 30 mg SR BD (or tadalafil) ± portable hyperbaric bag.</p>
+<ul><li>Q: HACE specific treatment?</li></ul>
+<p>A: Immediate descent + dexamethasone 8 mg loading → 4 mg q6h.</p>
+<ul><li>Q: VTE prevention on long flights — what's NOT recommended?</li></ul>
+<p>A: Aspirin (WARSAW 2020); use graduated compression stockings ± LMWH for high-risk.</p>
+<ul><li>Q: Hyoscine motion sickness dose?</li></ul>
+<p>A: 1 mg/72 h patch behind ear, 30–60 min before travel.</p>
+<ul><li>Q: Jet lag — most effective interventions?</li></ul>
+<p>A: Daylight exposure timing + melatonin 0.5–5 mg at destination bedtime; avoid alcohol, hydrate.</p>
+<ul><li>Q: VFR traveller — risk profile?</li></ul>
+<p>A: Highest risk of malaria, typhoid, Hep A/B, TB, STI; lowest pre-travel consultation rate.</p>
+<ul><li>Q: Hajj-specific health advice (3)?</li></ul>
+<p>A: Hand hygiene, mask (MERS), avoid camels, heat precautions, OCP stop 4 wks pre if possible, ensure drug supply.</p>
+<ul><li>Q: Pregnancy + travel to malaria area 2nd trimester — best chemoprophylaxis for CQ-R area?</li></ul>
+<p>A: Mefloquine (limited safety data; AP contraindicated; doxy contraindicated; CQ for sensitive areas).</p>
+<ul><li>Q: Asplenic traveller — what extra vaccines?</li></ul>
+<p>A: MenACWY + MenB, pneumococcal (PCV + PPSV23), Hib (paed), annual influenza.</p>
+<ul><li>Q: Returning fever first test?</li></ul>
+<p>A: Thick and thin blood films for malaria × 3 (q12–24 h) + RDT — within 24 h.</p>
+<ul><li>Q: Fever + eschar returning from Asia?</li></ul>
+<p>A: Scrub typhus (or other rickettsial); empirical doxycycline 100 mg BD × 7 d.</p>
+<ul><li>Q: Hajj returnee with fever + meningism + petechial rash?</li></ul>
+<p>A: Meningococcal meningitis → ceftriaxone 2 g IV stat + close-contact prophylaxis + notify.</p>
+<ul><li>Q: Notifiable travel-acquired infections (5)?</li></ul>
+<p>A: Malaria, typhoid, hepatitis A/B/C, TB, meningococcal, cholera, VHF, rabies, plague, anthrax, COVID-19, Zika, chikungunya, monkeypox, leishmaniasis, schistosomiasis.</p>
+<ul><li>Q: Food/water rules for travellers?</li></ul>
+<p>A: "Boil it, peel it, cook it, or forget it" — sealed/bottled/boiled/filtered water; hot food hot, cold food cold; no ice from unknown water; avoid shellfish and unpasteurised dairy.</p>
+<ul><li>Q: Chloroquine — when still used?</li></ul>
+<p>A: Only for CQ-sensitive areas: Central America west of Panama, Caribbean, ME, Egypt, Sri Lanka, parts of China, Korea.</p>
+<ul><li>Q: BCG for travel?</li></ul>
+<p>A: Not routinely; only select infants/children in some national programmes.</p>
+<ul><li>Q: 4–6-week timing allows what?</li></ul>
+<p>A: Vaccine series completion, YF certificate (10 d), malaria drug trial and supply, G6PD test, behavioural advice, accelerated schedules if needed.</p>
+<ul><li>Q: Special pops — which live vaccines in pregnancy?</li></ul>
+<p>A: YF, MMR, varicella, LAIV, oral typhoid Ty21a, oral cholera, JE-VC are all live attenuated; use with caution or avoid in pregnancy.</p>
+<ul><li>Q: Pre-exposure rabies — when indicated and schedule?</li></ul>
+<p>A: Rural/animal-contact/trekking; 0/7/21–28 d IM (or 0/7/21 ID); simplifies PEP to 2 doses days 0/3, no RIG.</p>
+<ul><li>Q: Japanese encephalitis vaccine — when indicated?</li></ul>
+<p>A: Rural Asia, ≥ 1-month stay, rice farming, pig contact.</p>
+<ul><li>Q: Typhoid Vi (injectable) vs Ty21a (oral) — differences?</li></ul>
+<p>A: Vi = single IM dose ≥ 2 y, boost 2–3 y; Ty21a = 4 oral doses ≥ 6 y, boost 5 y. Ty21a live attenuated (CI immunocompromised, antibiotics). Neither covers paratyphoid.</p>
+<ul><li>Q: Cholera vaccine — when recommended?</li></ul>
+<p>A: Humanitarian workers, refugees, disaster relief — Dukoral 2 doses 1 wk apart.</p>
+<ul><li>Q: Travellers with HIV CD4 250 — can they have YF vaccine?</li></ul>
+<p>A: Yes with caution (precaution, not absolute CI) if asymptomatic and CD4 200–500; contraindicated if CD4 &lt; 200.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — 4–6 weeks allows completion of vaccine series, malaria drug trial, G6PD testing, and issuance of ICVP. Last-minute &lt; 2 weeks is suboptimal.</li></ol>
+<ol><li><b>Correct: D</b> — WHO 2016 amendment made YF ICVP valid for life; previously 10 y.</li></ol>
+<ol><li><b>Correct: B</b> — &lt; 6 months = absolute CI for YF vaccine (risk of YEL-AND, encephalitis). Age &gt; 60 y is precaution (not absolute). Asymptomatic HIV CD4 350 is precaution. Mild egg allergy is precaution. Recent short-course steroids is precaution. Severe egg allergy is absolute.</li></ol>
+<ol><li><b>Correct: B</b> — AP is short-course: 1–2 d pre, daily during, <b>only 7 d post</b> (unlike meflo/doxy 4 wk).</li></ol>
+<ol><li><b>Correct: B</b> — Neuropsychiatric history (depression, anxiety, seizures, psychosis) is the major contraindication for mefloquine; rare but serious.</li></ol>
+<ol><li><b>Correct: D</b> — Doxycycline is daily, not weekly. Mefloquine is weekly. (Doxycycline is daily, continue 4 wks; daily dosing is correct — false is "weekly".)</li></ol>
+<ol><li><b>Correct: B</b> — G6PD deficiency → severe haemolysis with tafenoquine (and primaquine). G6PD screen is mandatory. Tafenoquine is also CI in pregnancy and &lt; 18 y.</li></ol>
+<ol><li><b>Correct: B</b> — Azithromycin is preferred where FQ resistance &gt; 50 % (SE Asia, India) and is also first line in pregnancy, children, and febrile/bloody TD.</li></ol>
+<ol><li><b>Correct: B</b> — Loperamide is contraindicated in bloody diarrhoea, high fever, suspected invasive pathogen (Shigella, EHEC, <i>C. difficile</i>), and &lt; 2 y.</li></ol>
+<ol><li><b>Correct: D</b> — HAPE specific Rx: nifedipine (pulmonary vasodilator) 30 mg SR BD. Acetazolamide is for AMS, dexamethasone for HACE, furosemide not first line.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — Acetazolamide 125 mg BD started 24 h pre, continued 48 h at altitude, is standard AMS prophylaxis for moderate-altitude trekking. Dexamethasone is an alternative if sulfa allergy/intolerance or as treatment. Nifedipine is for HAPE. Ibuprofen is for AMS headache (not prophyl).</li></ol>
+<ol><li><b>Correct: B</b> — Hajj visa requires MenACWY conjugate 1 dose ≥ 10 days and ≤ 5 years before arrival, certificate signed. MPSV4 is no longer acceptable (no memory, no herd effect).</li></ol>
+<ol><li><b>Correct: B</b> — Any fever post-malaria area = falciparum until proven otherwise. Send urgent thick and thin films + RDT; in moderate-high clinical suspicion, start empirical ACT (artemether-lumefantrine) while awaiting result and admit. FQ is wrong (not antimalarial). Primaquine is for vivax terminal, not acute. Doxycycline alone is inadequate.</li></ol>
+<ol><li><b>Correct: B</b> — Visceral leishmaniasis: fever, splenomegaly, pancytopenia, amastigotes in bone marrow. Treatment: liposomal amphotericin B. The Amazon is also a leishmaniasis area (L. infantum/chagasi in Latin America).</li></ol>
+<ol><li><b>Correct: C</b> — Eschar + fever + Asia = scrub typhus (mite-borne <i>Orientia tsutsugamushi</i>). Empirical doxycycline 100 mg BD × 7 d pending serology. Anthrax has malignant pustule but with massive oedema. Leishmaniasis has chronic ulcer, not eschar. Myiasis is larva visible. Lyme has erythema migrans, not eschar.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Travel Medicine: Pre-Travel Assessment &amp; Prophylaxis is a 🔴 Must Know topic for FCPS/MRCP.</b></p>
+<p><b>Key takeaway:</b> A structured pre-travel consultation 4–6 weeks before departure — covering itinerary, host, activity, time (5 A's) — drives destination-specific vaccination, malaria chemoprophylaxis, TD self-treatment, altitude/VTE advice, and VFR communication. <b>Always exclude malaria in any fever returning from a malaria-endemic area within 24 hours.</b> Yellow fever (live attenuated 17D; ICVP life since 2016) and Hajj (MenACWY + flu + COVID-19) define "required" vaccines. Tafenoquine / primaquine require mandatory G6PD screening for terminal prophylaxis of <i>P. vivax/ovale</i>.</p>
+<p><b>Exam focus:</b> Vaccine 3 R's; YF contraindications and certificate; malaria drug choice by area, timing, host; TD first-line antibiotic and loperamide rules; acetazolamide 125 mg BD AMS prophylaxis; nifedipine for HAPE; dexamethasone for HACE; VTE stockings + LMWH (not aspirin); VFR and Hajj-specific issues; returning fever algorithm.</p>
+<p><b>Clinical relevance:</b> Travel medicine bridges infection, public health, occupational, and wilderness medicine. Every GP/ID physician should be able to perform a 4–6-week pre-travel consult, prescribe and time destination-appropriate prophylaxis, and confidently work up a returning traveller — starting with thick and thin blood films, then a region-stratified differential.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Topic version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | Status: complete</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Travel Medicine Pre Travel Assessment Prophylaxis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

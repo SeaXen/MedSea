@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anal Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.5. COLORECTAL CANCER</span>
+      <div class="h1">Anal Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Recognise <b>clinical presentation</b> and <b>HPV association</b> of anal cancer</li><li>[ ] Apply <b>Nigro Protocol</b> (5-FU + MMC + RT) as standard organ-preserving treatment</li><li>[ ] Stage using <b>TNM/FIGO</b> and manage <b>HIV-associated</b> disease</li><li>[ ] Manage <b>localised disease</b> with chemoradiation (Nigro Protocol)</li><li>[ ] Manage <b>metastatic disease</b> with chemotherapy and immunotherapy</li><li>[ ] Perform <b>surveillance</b> including inguinal nodal assessment</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of anal canal/perianal skin</td></tr><tr><td>**Histology**</td><td>**SCC 85%**, Adenocarcinoma, Basaloid, Melanoma, Adenosquamous</td></tr><tr><td>**Incidence**</td><td>**~1,500/year UK**; **Increasing** (HPV, HIV, MSM)</td></tr><tr><td>**Peak Age**</td><td>**60-70 years**</td></tr><tr><td>**Sex Ratio**</td><td>**F > M** (1.5:1)</td></tr><tr><td>**Risk Factors**</td><td>**HPV 16/18 (90%)**, **HIV (10-20%)**, **MSM**, **Immunosuppression**, **Smoking**, **Prior Cervical/Vulvar Cancer**, **Immunosuppressive Therapy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[HPV 16/18 Infection] --&gt; B[E6/E7 Oncoproteins] B --&gt; C1[E6 → p53 Degradation] B --&gt; C2[E7 → pRb Degradation] C1 --&gt; D[Cell Cycle Dysregulation] C2 --&gt; D D --&gt; E[Malignant Transformation] E --&gt; F[SCC Phenotype] A --&gt; G[HIV Co-infection] G --&gt; H[Immune Dysregulation] H --&gt; I[Persistent HPV, Faster Progression] </code>``</p>
+<div class="sub-h">HPV Association</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**HPV Positivity**</td><td>**90%** (Type 16 > 18)</td></tr><tr><td>**Mechanism**</td><td>**E6 → p53 Degradation**, **E7 → pRb Degradation**</td></tr><tr><td>**p16 IHC**</td><td>**Surrogate for HPV** (Strong Diffuse Nuclear + Cytoplasmic)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Symptom</th><th>Frequency</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Rectal Bleeding**</td><td>**40-50%** (Most Common)</td></tr><tr><td>**Pain/Discomfort**</td><td>**30-40%**</td></tr><tr><td>**Anal Lump/Mass**</td><td>**20-30%**</td></tr><tr><td>**Pruritus**</td><td>**20-30%**</td></tr><tr><td>**Change in Bowel Habit**</td><td>**15-20%**</td></tr><tr><td>**Tenesmus**</td><td>**10-15%**</td></tr><tr><td>**Inguinal Lymphadenopathy**</td><td>**15-20%** (Nodal Mets)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging (TNM 8th / FIGO 2018)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">TNM 8th Edition</div>
+<table class="ctable"><tr><th>T Category</th><th>Definition</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Tis**</td><td>Carcinoma in situ (High-Grade AIN)</td></tr><tr><td>**T1**</td><td>**≤2 cm**</td></tr><tr><td>**T2**</td><td>**>2 - ≤5 cm**</td></tr><tr><td>**T3**</td><td>**>5 cm**</td></tr><tr><td>**T4**</td><td>**Invades Adjacent Organs** (Vagina, Urethra, Bladder, Bone)</td></tr></table>
+<table class="ctable"><tr><th>N Category</th><th>Definition</th></tr><tr><td>------------</td><td>------------</td></tr><tr><td>**N1**</td><td>**Mesorectal Nodes**</td></tr><tr><td>**N2**</td><td>**Inguinal/Femoral Nodes**</td></tr><tr><td>**N3**</td><td>**N1 + N2**</td></tr></table>
+<table class="ctable"><tr><th>Stage Group</th><th>TNM</th></tr><tr><td>-------------</td><td>-----</td></tr><tr><td>**Stage 0**</td><td>Tis N0 M0</td></tr><tr><td>**Stage I**</td><td>T1 N0 M0</td></tr><tr><td>**Stage II**</td><td>T2-3 N0 M0</td></tr><tr><td>**Stage IIIA**</td><td>T1-3 N1 M0</td></tr><tr><td>**Stage IIIB**</td><td>T4 N0 M0 / T1-3 N2 M0</td></tr><tr><td>**Stage IIIC**</td><td>T4 N1-2 M0 / Any T N3 M0</td></tr><tr><td>**Stage IV**</td><td>Any M1</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">HIV-Associated Anal Cancer</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>HIV-Negative</th><th>HIV-Positive</th></tr><tr><td>-------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Incidence**</td><td>Baseline</td><td>**10-20x Higher**</td></tr><tr><td>**Age at Diagnosis**</td><td>60-70</td><td>**40-50**</td></tr><tr><td>**Stage at Presentation**</td><td>Earlier</td><td>**More Advanced**</td></tr><tr><td>**CD4 Count**</td><td>N/A</td><td>**<200 = Higher Recurrence**</td></tr><tr><td>**ART**</td><td>N/A</td><td>**Essential (Improves Outcomes)**</td></tr><tr><td>**RT Tolerance**</td><td>Standard</td><td>**Higher Toxicity (Mucositis)**</td></tr><tr><td>**Recurrence**</td><td>Standard</td><td>**Higher**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Standard Treatment: Nigro Protocol (Organ Preservation)</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Gold Standard: Combined Modality Therapy (CMT) — Avoids APR</b></div>
+<div class="sub-h">Nigro Protocol Regimen</div>
+<table class="ctable"><tr><th>Component</th><th>Dose/Schedule</th></tr><tr><td>----------</td><td>---------------</td></tr><tr><td>**Radiotherapy**</td><td>**45-50.4 Gy / 25-28 Fractions** (1.8 Gy/fx)</td></tr><tr><td>**Concurrent Chemo**</td><td>**5-FU 1000mg/m² CI d1-4 & d29-32** + **Mitomycin C 10mg/m² IV d1 & d29**</td></tr><tr><td>**Surgery**</td><td>**Reserved for Residual/Recurrent Disease** (Salvage APR)</td></tr></table>
+<div class="sub-h">Variations</div>
+<table class="ctable"><tr><th>Protocol</th><th>Modification</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**RTOG 87-04**</td><td>**5-FU + MMC** (Standard)</td></tr><tr><td>**RTOG 98-11**</td><td>**5-FU + Cisplatin** (MMC Alternative, Less Myelosuppression)</td></tr><tr><td>**ACT II**</td><td>**5-FU + MMC vs 5-FU + Cisplatin** (Cisplatin Non-Inferior, Less Toxic)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Treatment by Stage</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stage I (T1 N0)</div>
+<table class="ctable"><tr><th>Option</th><th>Indication</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Local Excision**</td><td>**T1, <2cm, Well/Mod Diff, No LVI, No PNI, Mobile** (TEM/TAMIS)</td></tr><tr><td>**Nigro Protocol**</td><td>**T1 >2cm / High-Risk Features / Patient Preference**</td></tr></table>
+<div class="sub-h">Stage II-III (T2-4, N+)</div>
+<table class="ctable"><tr><th>Stage</th><th>Standard Treatment</th></tr><tr><td>-------</td><td>-------------------</td></tr><tr><td>**II (T2-3 N0)**</td><td>**Nigro Protocol (5-FU + MMC + RT 45-50.4Gy)**</td></tr><tr><td>**IIIA (T1-3 N1)**</td><td>**Nigro Protocol**</td></tr><tr><td>**IIIB (T4 N0-1 / T1-3 N2)**</td><td>**Nigro Protocol** (Consider Induction Chemo)</td></tr><tr><td>**IIIC (T4 N1-2 / N3)**</td><td>**Nigro Protocol** (Consider Induction Chemo)</td></tr></table>
+<div class="sub-h">HIV-Positive</div>
+<table class="ctable"><tr><th>Modification</th><th>Detail</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**ART**</td><td>**Continue Throughout**</td></tr><tr><td>**Chemo**</td><td>**Standard Dosing** (Monitor Myelosuppression)</td></tr><tr><td>**RT**</td><td>**Standard Dose** (Monitor Mucositis)</td></tr><tr><td>**ART Interaction**</td><td>**CYP3A4 Inducers (Efavirenz) → Avoid 5-FU/Cisplatin Interaction**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Salvage Surgery (Failed CMT / Recurrence)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Procedure</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**Persistent/Recurrent Primary**</td><td>**APR (Abdominoperineal Resection) + Permanent Colostomy**</td></tr><tr><td>**Inguinal Node Recurrence**</td><td>**Inguinal Lymph Node Dissection (ILND)**</td></tr><tr><td>**Pelvic Recurrence**</td><td>**Pelvic Exenteration** (Anterior/Posterior/Total)</td></tr></table>
+<div class="callout"><b>APR Rate</b>: <b>~10-20%</b> (After Nigro Protocol) vs <b>100%</b> (Pre-Nigro)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Metastatic Disease</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line Chemotherapy</div>
+<table class="ctable"><tr><th>Regimen</th><th>Schedule</th><th>Evidence</th></tr><tr><td>---------</td><td>----------</td><td>----------</td></tr><tr><td>**Cisplatin + 5-FU**</td><td>Cisplatin 60-75mg/m² d1 + 5-FU 1000mg/m² CI d1-4 q3w</td><td>**Standard** (Phase II)</td></tr><tr><td>**Carboplatin + Paclitaxel**</td><td>Carbo AUC5-6 + Paclitaxel 175mg/m² q3w</td><td>**Alternative** (Better Tolerability)</td></tr></table>
+<div class="sub-h">Immunotherapy</div>
+<table class="ctable"><tr><th>Agent</th><th>Indication</th><th>Trial</th></tr><tr><td>-------</td><td>------------</td><td>-------</td></tr><tr><td>**Pembrolizumab**</td><td>**PD-L1 CPS ≥1 / MSI-H / Recurrent/Metastatic**</td><td>**KEYNOTE-158/028**</td></tr><tr><td>**Nivolumab**</td><td>**Recurrent/Metastatic**</td><td>**CheckMate 358**</td></tr></table>
+<div class="callout"><b>PD-L1 CPS ≥1 / MSI-H</b> → <b>ICI Preferred</b> over Chemo</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Inguinal Lymph Node Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**cN0**</td><td>**Surveillance** (DRE, Inguinal US q3-6mo)</td></tr><tr><td>**cN+ (Resectable)**</td><td>**Inguinal Lymph Node Dissection (ILND)** + **Adjuvant RT (45-50Gy)**</td></tr><tr><td>**cN+ (Unresectable/Fixed)**</td><td>**RT 45-50.4Gy ± Chemo**</td></tr><tr><td>**Sentinel Node Biopsy (SNB)**</td><td>**Investigational** (Not Standard)</td></tr></table>
+<div class="sub-h">ILND Technique</div>
+<table class="ctable"><tr><th>Boundary</th><th>Structure</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**Superior**</td><td>**Inguinal Ligament**</td></tr><tr><td>**Lateral**</td><td>**Sartorius Muscle**</td></tr><tr><td>**Medial**</td><td>**Adductor Longus**</td></tr><tr><td>**Deep**</td><td>**Fascia Lata**</td></tr><tr><td>**Saphenous Vein**</td><td>**PRESERVED** (vs Radical ILND)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Surveillance & Follow-Up</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Modality</th><th>Frequency</th><th>Duration</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Clinical Exam (DRE, Inguinal Palpation)**</td><td>**q3mo ×2yr, q6mo ×3yr, Then Annually**</td><td>**5 Years**</td></tr><tr><td>**CEA**</td><td>**q6mo**</td><td>**5 Years**</td></tr><tr><td>**Anoscopy / DRE**</td><td>**q3-6mo ×2yr, q6mo ×3yr**</td><td>**5 Years**</td></tr><tr><td>**CT Chest/Abd/Pelvis**</td><td>**Annual**</td><td>**3-5 Years**</td></tr><tr><td>**MRI Pelvis**</td><td>**Annual / As Needed**</td><td>**3-5 Years**</td></tr><tr><td>**Inguinal US**</td><td>**q6mo ×2yr**</td><td>**3-5 Years**</td></tr><tr><td>**CT Chest**</td><td>**Annual**</td><td>**5 Years**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Epidemiology**</td><td>**SCC 85%**, **HPV 90% (16/18)**, **HIV 10-20%**</td></tr><tr><td>**Gold Standard**</td><td>**Nigro Protocol**: **5-FU + MMC + RT 45-50.4Gy** (Organ Preservation)</td></tr><tr><td>**Alternatives**</td><td>**RTOG 98-11**: 5-FU + Cisplatin; **ACT II**: Cisplatin Non-Inferior to MMC</td></tr><tr><td>**Stage I**</td><td>**Local Excision (TEM/TAMIS)** if T1 Low-Risk; Else Nigro</td></tr><tr><td>**Stage II-III**</td><td>**Nigro Protocol** (5-FU + MMC + RT 45-50.4Gy)</td></tr><tr><td>**HIV+**</td><td>**Earlier, Advanced, Higher Recurrence** — **ART + Standard CMT**</td></tr><tr><td>**Salvage**</td><td>**APR** (Primary Failure), **ILND** (Inguinal Nodes), **Pelvic Exenteration**</td></tr><tr><td>**Metastatic**</td><td>**Cisplatin/5-FU** OR **Carbo + Paclitaxel** / **Pembrolizumab/Nivolumab (PD-L1+)**</td></tr><tr><td>**Inguinal Nodes**</td><td>**cN0: Surveillance**; **cN+: ILND + Adj RT**; **Fixed: RT ± Chemo**</td></tr><tr><td>**Surveillance**</td><td>**DRE/Anoscopy q3-6mo, CEA q6mo, CT/MRI Annual, Inguinal US q6mo**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Anal Cancer — Most Common Histology, HPV Association?**</td><td>**SCC 85%**, **HPV 16/18 (90%)**.</td></tr><tr><td>**Nigro Protocol — Components?**</td><td>**5-FU 1000mg/m² CI d1-4&29-32 + Mitomycin C 10mg/m² d1&29 + RT 45-50.4Gy/25-28fx** (Organ Preservation).</td></tr><tr><td>**RTOG 98-11 — Alternative to MMC?**</td><td>**5-FU + Cisplatin** (Less Myelosuppression, Non-Inferior).</td></tr><tr><td>**ACT II Trial — MMC vs Cisplatin?**</td><td>**Cisplatin Non-Inferior, Less Myelosuppression/Nephrotoxicity**.</td></tr><tr><td>**Stage I Anal Cancer — Local Excision Criteria?**</td><td>**T1, <2cm, Well/Mod Diff, No LVI/PNI, Mobile** (TEM/TAMIS).</td></tr><tr><td>**HIV+ Anal Cancer — Differences?**</td><td>**Earlier Onset (40-50), More Advanced, CD4<200 → Higher Recurrence, ART Essential, Monitor Mucositis**.</td></tr><tr><td>**Salvage APR — Indication?**</td><td>**Persistent/Recurrent Primary after Nigro Protocol**.</td></tr><tr><td>**Inguinal Nodes — cN+ Management?**</td><td>**ILND + Adjuvant RT (45-50Gy)**; **Fixed/Unresectable: RT ± Chemo**.</td></tr><tr><td>**Metastatic Anal Cancer — 1L Chemo?**</td><td>**Cisplatin + 5-FU** OR **Carboplatin + Paclitaxel**; **PD-L1+ → Pembrolizumab/Nivolumab**.</td></tr><tr><td>**Surveillance — Key Components?**</td><td>**DRE/Anoscopy q3-6mo, CEA q6mo, CT/MRI Annual, Inguinal US q6mo, Chest CT Annual**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Anal vs Rectal Cancer**</td><td>**Anal: SCC 85%, HPV+, Perianal, Nigro Protocol**; **Rectal: Adenocarcinoma, RT Neoadjuvant, TME Surgery**</td></tr><tr><td>**Nigro Protocol vs RTOG 98-11**</td><td>**Nigro: 5-FU + MMC**; **RTOG 98-11: 5-FU + Cisplatin (Less Toxic)**</td></tr><tr><td>**Stage I — Excision vs Nigro**</td><td>**T1 <2cm, Low Risk → Local Excision**; **Otherwise Nigro Protocol**</td></tr><tr><td>**HIV+ vs HIV-**</td><td>**HIV+: Younger, Advanced, Higher Recurrence, ART Mandatory, Higher Mucositis**</td></tr><tr><td>**APR vs Local Excision**</td><td>**APR = Salvage (Failed CMT)**; **Excision = Primary T1 Low-Risk**</td></tr><tr><td>**Inguinal Nodes — ILND vs RT**</td><td>**Resectable N+ → ILND + Adj RT**; **Unresectable → Definitive RT**</td></tr></table>
+<p><b>Mnemonic: ANAL-CANCER</b></p>
+<ul><li><b>A</b>nal: <b>SCC 85%</b>, <b>HPV 16/18 (90%)</b></li><li><b>N</b>igro Protocol: <b>5-FU + MMC + RT 45-50Gy</b> (Organ Preservation)</li><li><b>A</b>bdomino-Perineal Resection: <b>Salvage Only</b></li><li><b>L</b>ocal Excision: <b>T1 &lt;2cm Low Risk</b> (TEM/TAMIS)</li><li><b>C</b>ervical/Vulval Link: <b>Prior HPV Cancers ↑ Risk</b></li><li><b>A</b>CT II: <b>Cisplatin Non-Inferior to MMC</b></li><li><b>N</b>odal Inguinal: <b>ILND + RT</b> (cN+)</li><li><b>C</b>hemo Metastatic: <b>Cisplatin/5-FU or Carbo/Pac</b></li><li><b>E</b>GFR/PD-L1: <b>Pembrolizumab (PD-L1+/MSI-H)</b></li><li><b>R</b>CT: <b>45-50.4Gy/25-28fx</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Anal Cancer)) Epidemiology SCC 85%, HPV 90% (16/18) HIV 10-20% (Earlier, Advanced) Staging TNM 8th / FIGO 2018 T1-T4, N1-3 Standard Treatment Nigro Protocol: 5-FU + MMC + RT 45-50Gy Organ Preservation (No APR) HIV+ Earlier, Advanced, Higher Recurrence ART + CMT Stage I T1 Low Risk: Local Excision (TEM) Else: Nigro Protocol Stage II-III Nigro Protocol (5-FU + MMC + RT) Salvage APR (Primary Failure) ILND + RT (Inguinal Nodes) Pelvic Exenteration Metastatic Cisplatin/5-FU, Carbo/Pac Pembro/Nivo (PD-L1+) Inguinal Nodes cN0: Surveillance cN+: ILND + RT Surveillance DRE/Anoscopy q3-6mo CEA q6mo CT/MRI Annual Inguinal US q6mo </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Histology**</td><td>SCC 85%, HPV 16/18 (90%)</td></tr><tr><td>**Risk**</td><td>HIV (10-20%), MSM, Immunosuppression</td></tr><tr><td>**Nigro Protocol**</td><td>5-FU + MMC + RT 45-50.4Gy (Organ Preservation)</td></tr><tr><td>**RTOG 98-11**</td><td>5-FU + Cisplatin (Less Myelosuppression)</td></tr><tr><td>**Stage I T1**</td><td>Local Excision (TEM) if Low Risk</td></tr><tr><td>**Stage II-III**</td><td>Nigro Protocol Standard</td></tr><tr><td>**HIV+**</td><td>ART + Standard CMT</td></tr><tr><td>**Salvage**</td><td>APR (Primary), ILND+RT (Nodes)</td></tr><tr><td>**Metastatic**</td><td>Cis/5-FU, Carbo/Pac, Pembro/Nivo (PD-L1+)</td></tr><tr><td>**Inguinal Nodes**</td><td>cN0: Watch; cN+: ILND+Adj RT</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Nigro Protocol Components</td><td></td><td></td></tr><tr><td>Stage I Management</td><td></td><td></td></tr><tr><td>HIV+ Differences</td><td></td><td></td></tr><tr><td>Salvage Surgery</td><td></td><td></td></tr><tr><td>Inguinal Node Management</td><td></td><td></td></tr><tr><td>Metastatic Treatment</td><td></td><td></td></tr><tr><td>RTOG 98-11 vs ACT II</td><td></td><td></td></tr><tr><td>Surveillance Schedule</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Colorectal Cancer]], [[Nigro Protocol]], [[HPV Vaccination]], [[Inguinal Lymph Node Dissection]], [[Organ Preservation]], [[Immunotherapy Anal Cancer]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Anal Cancer (Epidemiology), which statement is correct? A. <b>SCC 85%</b>, <b>HPV 90% (16/18)</b>, <b>HIV 10-20%</b> B. **SCC - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SCC 85%</b>, <b>HPV 90% (16/18)</b>, <b>HIV 10-20%</b></li></ul>
+<p><b>2.</b> Regarding Anal Cancer (Gold Standard), which statement is correct? A. <b>Nigro Protocol</b>: <b>5-FU + MMC + RT 45-50.4Gy</b> (Organ Preservation) B. **Nigro - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Nigro Protocol</b>: <b>5-FU + MMC + RT 45-50.4Gy</b> (Organ Preservation)</li></ul>
+<p><b>3.</b> Regarding Anal Cancer (Alternatives), which statement is correct? A. <b>RTOG 98-11</b>: 5-FU + Cisplatin B. **RTOG - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RTOG 98-11</b>: 5-FU + Cisplatin; <b>ACT II</b>: Cisplatin Non-Inferior to MMC</li></ul>
+<p><b>4.</b> Regarding Anal Cancer (Stage I), which statement is correct? A. <b>Local Excision (TEM/TAMIS)</b> if T1 Low-Risk B. **Local - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Local Excision (TEM/TAMIS)</b> if T1 Low-Risk; Else Nigro</li></ul>
+<p><b>5.</b> Regarding Anal Cancer (Stage II-III), which statement is correct? A. <b>Nigro Protocol</b> (5-FU + MMC + RT 45-50.4Gy) B. **Nigro - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Nigro Protocol</b> (5-FU + MMC + RT 45-50.4Gy)</li></ul>
+<p><b>6.</b> Regarding Anal Cancer (HIV+), which statement is correct? A. <b>Earlier, Advanced, Higher Recurrence</b> B. **Earlier, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Earlier, Advanced, Higher Recurrence</b> — <b>ART + Standard CMT</b></li></ul>
+<p><b>7.</b> Regarding Anal Cancer (Salvage), which statement is correct? A. <b>APR</b> (Primary Failure), <b>ILND</b> (Inguinal Nodes), <b>Pelvic Exenteration</b> B. <b>APR</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>APR</b> (Primary Failure), <b>ILND</b> (Inguinal Nodes), <b>Pelvic Exenteration</b></li></ul>
+<p><b>8.</b> Regarding Anal Cancer (Metastatic), which statement is correct? A. <b>Cisplatin/5-FU</b> OR <b>Carbo + Paclitaxel</b> / <b>Pembrolizumab/Nivolumab (PD-L1+)</b> B. <b>Cisplatin/5-FU</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Cisplatin/5-FU</b> OR <b>Carbo + Paclitaxel</b> / <b>Pembrolizumab/Nivolumab (PD-L1+)</b></li></ul>
+<p><b>9.</b> Regarding Anal Cancer (Inguinal Nodes), which statement is correct? A. <b>cN0: Surveillance</b> B. **cN0: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>cN0: Surveillance</b>; <b>cN+: ILND + Adj RT</b>; <b>Fixed: RT ± Chemo</b></li></ul>
+<p><b>10.</b> Regarding Anal Cancer (Surveillance), which statement is correct? A. <b>DRE/Anoscopy q3-6mo, CEA q6mo, CT/MRI Annual, Inguinal US q6mo</b> B. **DRE/Anoscopy - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>DRE/Anoscopy q3-6mo, CEA q6mo, CT/MRI Annual, Inguinal US q6mo</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>SCC 85%</b>, <b>HPV 90% (16/18)</b>, <b>HIV 10-20%</b></li><li>B. **SCC (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>SCC 85%</b>, <b>HPV 90% (16/18)</b>, <b>HIV 10-20%</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Nigro Protocol</b>: <b>5-FU + MMC + RT 45-50.4Gy</b> (Organ Preservation)</li><li>B. **Nigro (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Nigro Protocol</b>: <b>5-FU + MMC + RT 45-50.4Gy</b> (Organ Preservation)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>RTOG 98-11</b>: 5-FU + Cisplatin</li><li>B. **RTOG (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>RTOG 98-11</b>: 5-FU + Cisplatin; <b>ACT II</b>: Cisplatin Non-Inferior to MMC</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Local Excision (TEM/TAMIS)</b> if T1 Low-Risk</li><li>B. **Local (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Local Excision (TEM/TAMIS)</b> if T1 Low-Risk; Else Nigro</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Nigro Protocol</b> (5-FU + MMC + RT 45-50.4Gy)</li><li>B. **Nigro (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Nigro Protocol</b> (5-FU + MMC + RT 45-50.4Gy)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Earlier, Advanced, Higher Recurrence</b></li><li>B. **Earlier, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Earlier, Advanced, Higher Recurrence</b> — <b>ART + Standard CMT</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>APR</b> (Primary Failure), <b>ILND</b> (Inguinal Nodes), <b>Pelvic Exenteration</b></li><li>B. <b>APR</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>APR</b> (Primary Failure), <b>ILND</b> (Inguinal Nodes), <b>Pelvic Exenteration</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Cisplatin/5-FU</b> OR <b>Carbo + Paclitaxel</b> / <b>Pembrolizumab/Nivolumab (PD-L1+)</b></li><li>B. <b>Cisplatin/5-FU</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Cisplatin/5-FU</b> OR <b>Carbo + Paclitaxel</b> / <b>Pembrolizumab/Nivolumab (PD-L1+)</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>cN0: Surveillance</b></li><li>B. **cN0: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>cN0: Surveillance</b>; <b>cN+: ILND + Adj RT</b>; <b>Fixed: RT ± Chemo</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>DRE/Anoscopy q3-6mo, CEA q6mo, CT/MRI Annual, Inguinal US q6mo</b></li><li>B. **DRE/Anoscopy (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>DRE/Anoscopy q3-6mo, CEA q6mo, CT/MRI Annual, Inguinal US q6mo</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Epidemiology? <b>A1:</b> SCC 85%, HPV 90% (16/18), HIV 10-20%</p>
+<p><b>Q2:</b> Gold Standard? <b>A2:</b> Nigro Protocol: 5-FU + MMC + RT 45-50.4Gy (Organ Preservation)</p>
+<p><b>Q3:</b> Alternatives? <b>A3:</b> RTOG 98-11: 5-FU + Cisplatin; ACT II: Cisplatin Non-Inferior to MMC</p>
+<p><b>Q4:</b> Stage I? <b>A4:</b> Local Excision (TEM/TAMIS) if T1 Low-Risk; Else Nigro</p>
+<p><b>Q5:</b> Stage II-III? <b>A5:</b> Nigro Protocol (5-FU + MMC + RT 45-50.4Gy)</p>
+<p><b>Q6:</b> HIV+? <b>A6:</b> Earlier, Advanced, Higher Recurrence — ART + Standard CMT</p>
+<p><b>Q7:</b> Salvage? <b>A7:</b> APR (Primary Failure), ILND (Inguinal Nodes), Pelvic Exenteration</p>
+<p><b>Q8:</b> Metastatic? <b>A8:</b> Cisplatin/5-FU OR Carbo + Paclitaxel / Pembrolizumab/Nivolumab (PD-L1+)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Epidemiology</td><td>SCC 85%, HPV 90% (16/18), HIV 10-20%</td></tr><tr><td>2</td><td>A</td><td>Gold Standard</td><td>Nigro Protocol: 5-FU + MMC + RT 45-50.4Gy (Organ Preservation)</td></tr><tr><td>3</td><td>A</td><td>Alternatives</td><td>RTOG 98-11: 5-FU + Cisplatin; ACT II: Cisplatin Non-Inferior to MMC</td></tr><tr><td>4</td><td>A</td><td>Stage I</td><td>Local Excision (TEM/TAMIS) if T1 Low-Risk; Else Nigro</td></tr><tr><td>5</td><td>A</td><td>Stage II-III</td><td>Nigro Protocol (5-FU + MMC + RT 45-50.4Gy)</td></tr><tr><td>6</td><td>A</td><td>HIV+</td><td>Earlier, Advanced, Higher Recurrence — ART + Standard CMT</td></tr><tr><td>7</td><td>A</td><td>Salvage</td><td>APR (Primary Failure), ILND (Inguinal Nodes), Pelvic Exenteration</td></tr><tr><td>8</td><td>A</td><td>Metastatic</td><td>Cisplatin/5-FU OR Carbo + Paclitaxel / Pembrolizumab/Nivolumab (PD-L1+)</td></tr><tr><td>9</td><td>A</td><td>Inguinal Nodes</td><td>cN0: Surveillance; cN+: ILND + Adj RT; Fixed: RT ± Chemo</td></tr><tr><td>10</td><td>A</td><td>Surveillance</td><td>DRE/Anoscopy q3-6mo, CEA q6mo, CT/MRI Annual, Inguinal US q6mo</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Epidemiology</td><td>SCC 85%, HPV 90% (16/18), HIV 10-20%</td></tr><tr><td>2</td><td>A</td><td>Gold Standard</td><td>Nigro Protocol: 5-FU + MMC + RT 45-50.4Gy (Organ Preservation)</td></tr><tr><td>3</td><td>A</td><td>Alternatives</td><td>RTOG 98-11: 5-FU + Cisplatin; ACT II: Cisplatin Non-Inferior to MMC</td></tr><tr><td>4</td><td>A</td><td>Stage I</td><td>Local Excision (TEM/TAMIS) if T1 Low-Risk; Else Nigro</td></tr><tr><td>5</td><td>A</td><td>Stage II-III</td><td>Nigro Protocol (5-FU + MMC + RT 45-50.4Gy)</td></tr><tr><td>6</td><td>A</td><td>HIV+</td><td>Earlier, Advanced, Higher Recurrence — ART + Standard CMT</td></tr><tr><td>7</td><td>A</td><td>Salvage</td><td>APR (Primary Failure), ILND (Inguinal Nodes), Pelvic Exenteration</td></tr><tr><td>8</td><td>A</td><td>Metastatic</td><td>Cisplatin/5-FU OR Carbo + Paclitaxel / Pembrolizumab/Nivolumab (PD-L1+)</td></tr><tr><td>9</td><td>A</td><td>Inguinal Nodes</td><td>cN0: Surveillance; cN+: ILND + Adj RT; Fixed: RT ± Chemo</td></tr><tr><td>10</td><td>A</td><td>Surveillance</td><td>DRE/Anoscopy q3-6mo, CEA q6mo, CT/MRI Annual, Inguinal US q6mo</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Colorectal Cancer|Colorectal Cancer]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Anal Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

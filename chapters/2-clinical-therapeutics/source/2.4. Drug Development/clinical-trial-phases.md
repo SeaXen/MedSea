@@ -1,0 +1,385 @@
+# Drug Development — Clinical Trial Phases
+
+**Status**: `draft` | **Chapter**: 2 — Clinical Therapeutics and Good Prescribing | **Heading**: Drug Development and Regulation | **Exam Priority**: ⭐⭐ **MODERATE** (Governance, evidence-based medicine, FCPS/MRCP)
+
+---
+
+## 1. 🎯 Learning Objectives
+- [ ] Define each clinical trial phase (0–IV) with objectives, design, population
+- [ ] Distinguish adaptive vs traditional designs
+- [ ] Apply ethical principles: informed consent, DSMB, randomization, blinding
+- [ ] Recognise endpoints: primary, secondary, surrogate, composite
+- [ ] Identify regulatory milestones: IND, NDA/BLA, orphan, accelerated approval
+
+---
+
+## 2. 📊 Clinical Trial Phases Overview
+
+| Phase | **Objective** | **Design** | **Population** | **Duration** | **Success Rate** |
+|-------|---------------|------------|----------------|--------------|------------------|
+| **0 (Microdosing)** | **PK/PD in humans** (sub-therapeutic) | Open-label, single/multiple microdose | **10–15 healthy volunteers** | Days–weeks | Exploratory |
+| **I** | **Safety, Tolerability, PK/PD** (First-in-human) | Open-label, dose-escalation (3+3), SAD/MAD | **20–100 healthy volunteers** (or patients for oncology) | Months | ~70% |
+| **II** | **Efficacy + Safety** (Proof-of-concept) | RCT, dose-finding, biomarker-driven | **100–300 patients** (target disease) | 1–2 years | ~33% |
+| **III** | **Confirmatory Efficacy + Safety** (Pivotal) | Large RCT, multi-centre, active/placebo control | **300–3000+ patients** | 2–4 years | ~25–30% (to approval) |
+| **IV (Post-Marketing)** | **Real-world safety/efficacy** (Pharmacovigilance) | Observational, registries, pragmatic RCTs | **General population** | Ongoing | Lifelong |
+
+---
+
+## 3. 🔬 Phase Details
+
+### Phase 0 — Exploratory IND (Microdosing)
+| Feature | Detail |
+|---------|--------|
+| **Dose** | **<1/100th of NOAEL** (No Observed Adverse Effect Level) or **<30 nmol** (microdose) |
+| **Objective** | Human PK, target engagement, biomarker validation (NO therapeutic effect) |
+| **Advantage** | Early go/no-go; reduces animal testing; accelerates development |
+| **Limitation** | No safety/efficacy data; linear PK assumption |
+
+### Phase I — First-in-Human (FIH)
+| Subtype | Design | Objective |
+|---------|--------|-----------|
+| **SAD** (Single Ascending Dose) | Cohorts of 6–8 (placebo + active); ↑ dose until MTD | Safety, PK, MTD (Maximum Tolerated Dose) |
+| **MAD** (Multiple Ascending Dose) | Repeated dosing at steady state | Safety, PK at steady state, accumulation |
+| **Food Effect** | Fed vs fasted | Bioavailability impact |
+| **Drug-Drug Interaction** | With probe substrates/inhibitors | CYP/P-gp interaction potential |
+| **QTc (Thorough QT)** | Supratherapeutic dose + positive control (moxifloxacin) | Cardiac safety (ICH E14) |
+| **Hepatic/Renal Impairment** | Matched cohorts | Dose adjustment rationale |
+| **Mass Balance (ADME)** | Radiolabelled dose | Metabolism, excretion pathways |
+
+> **3+3 Design**: 3 patients at dose; if 0/3 DLT → escalate; if 1/3 DLT → expand to 6; if ≥2/6 DLT → MTD reached
+
+### Phase II — Proof-of-Concept
+| Subtype | Design | Objective |
+|---------|--------|-----------|
+| **IIa** (PoC) | Small RCT, dose-ranging, biomarker endpoint | **Efficacy signal**, dose-response, safety |
+| **IIb** (Dose-Finding) | Larger RCT, multiple doses vs placebo/active | **Optimal dose**, safety margin, sample size for Phase III |
+
+> **Endpoints**: Often **surrogate** (HbA1c, viral load, tumour shrinkage, biomarker) — must be validated
+
+### Phase III — Confirmatory
+| Feature | Detail |
+|---------|--------|
+| **Design** | **Large, multi-centre, randomised, controlled** (double-blind preferred) |
+| **Control** | **Placebo** (if ethical) or **Active comparator** (standard of care) |
+| **Population** | **Broad** (reflects real-world); includes comorbidities, elderly, renal/hepatic impairment |
+| **Primary Endpoint** | **Clinically meaningful** (mortality, morbidity, QOL, composite) — **not surrogate** |
+| **Non-Inferiority / Superiority** | Pre-specified margin; assay sensitivity critical |
+| **Interim Analysis** | DSMB监查; O'Brien-Fleming / Lan-DeMets alpha spending |
+| **Sample Size** | Powered for primary endpoint (80–90% power, α=0.05) |
+
+> **Two pivotal Phase III trials** typically required for approval (or one large + supportive Phase II)
+
+### Phase IV — Post-Marketing Surveillance
+| Type | Purpose |
+|------|---------|
+| **Mandatory (PASS/PAES)** | Regulatory commitment (e.g., long-term safety, pregnancy, paediatrics) |
+| **Spontaneous Reporting** | Yellow Card, FAERS, EudraVigilance, VigiBase |
+| **Observational Studies** | Cohort, case-control, registries (real-world evidence) |
+| **Pragmatic RCTs** | Effectiveness in routine practice |
+| **Risk Minimisation** | Educational materials, controlled access, pregnancy prevention programmes |
+
+---
+
+## 4. 🎯 Endpoints Classification
+
+| Type | Definition | Examples |
+|------|------------|----------|
+| **Primary** | **Main outcome** — trial powered for this | Mortality, MI/stroke, HbA1c change, PFS/OS |
+| **Secondary** | Supportive, hypothesis-generating | Safety, QOL, subgroup, biomarker |
+| **Surrogate** | Substitutes for clinical outcome (must be validated) | **HbA1c** for diabetes complications; **Viral load** for AIDS mortality; **Tumour shrinkage** for OS |
+| **Composite** | Combines multiple endpoints | **MACE** (CV death + MI + stroke); **Time to treatment failure** |
+| **Patient-Reported (PRO)** | Patient perspective | QOL (EQ-5D), symptom scores, adherence |
+| **Safety** | AEs, SAEs, AESIs, lab abnormalities | Discontinuation due to AE, lab shifts |
+
+---
+
+## 5. 🏛️ Regulatory Milestones
+
+| Milestone | Authority | Key Requirement |
+|-----------|-----------|-----------------|
+| **Pre-IND** | FDA/MHRA/EMA | Pre-clinical data, CMC, protocol |
+| **IND / CTA** | FDA (IND) / MHRA (CTA) | Human testing authorisation |
+| **End-of-Phase-II Meeting** | FDA/EMA | Phase III design, endpoints, statistical plan |
+| **NDA / BLA / MAA** | FDA (NDA/BLA) / EMA (MAA) | **Full dossier**: CMC, non-clinical, clinical, labelling |
+| **Priority Review** | FDA | **6 months** (vs 10 standard) — major advance |
+| **Accelerated Approval** | FDA | **Surrogate endpoint** — confirmatory trial required |
+| **Conditional Approval** | EMA | **Incomplete data** — specific obligations |
+| **Orphan Designation** | FDA/EMA | Rare disease (<200k US / <5/10k EU) — incentives |
+| **Breakthrough Therapy** | FDA | Preliminary evidence of substantial improvement |
+
+---
+
+## 6. 🎯 FCPS/MRCP High-Yield Summary
+
+| Pearl | Details |
+|-------|---------|
+| **Phase 0** | Microdosing (<1/100 NOAEL); PK only; no efficacy |
+| **Phase I** | Safety + PK; 20–100 healthy; SAD/MAD; MTD via 3+3 |
+| **Phase II** | Efficacy + safety; 100–300 patients; dose-finding; surrogate endpoints common |
+| **Phase III** | Confirmatory; 300–3000+; RCT; clinically meaningful primary endpoint |
+| **Phase IV** | Post-marketing; real-world; PASS/PAES; registries |
+| **Surrogate vs Clinical endpoint** | Surrogate = biomarker (HbA1c, viral load); Clinical = patient outcome (mortality, MI) |
+| **Accelerated Approval** | Based on surrogate → confirmatory trial required |
+| **IND → NDA** | IND = human testing authorisation; NDA = marketing application |
+
+---
+
+## 7. ❓ Viva Questions (8)
+
+| Q | Answer |
+|---|--------|
+| 1. Phase 0 vs Phase I — key difference? | **Phase 0**: Microdose (<1/100 NOAEL), PK only, no efficacy; **Phase I**: Therapeutic doses, safety + PK, MTD determination |
+| 2. Phase II vs Phase III — primary difference? | **Phase II**: Proof-of-concept, dose-finding, surrogate endpoints, 100–300 pts; **Phase III**: Confirmatory, clinically meaningful endpoint, 300–3000+ pts |
+| 3. What is a surrogate endpoint? Give 3 examples. | **Biomarker substituting for clinical outcome** (must be validated): **HbA1c** (diabetes complications), **Viral load** (AIDS mortality), **Tumour shrinkage** (OS), **LDL-C** (CV events) |
+| 4. Phase I design — what is 3+3 dose escalation? | **3 patients at dose; 0 DLT → escalate; 1 DLT → expand to 6; ≥2 DLT in 6 → MTD reached** |
+| 5. Accelerated Approval vs Conditional Approval? | **FDA Accelerated**: Surrogate endpoint, confirmatory trial required; **EMA Conditional**: Incomplete data, specific obligations, annual review |
+| 6. Orphan Drug Designation — criteria? | **Rare disease**: <200,000 US (FDA) or <5/10,000 EU (EMA); **Incentives**: tax credits, fee waivers, market exclusivity (7y US, 10y EU) |
+| 7. Non-inferiority trial — key concept? | **New drug not worse than active control by pre-specified margin**; requires **assay sensitivity** (active control would beat placebo) |
+| 8. DSMB — role? | **Data Safety Monitoring Board**: Independent; reviews interim safety/efficacy; recommends continue/stop/modify |
+
+---
+
+## 8. 🤯 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Phase II vs III endpoints** | Phase II = often **surrogate**; Phase III = **clinical outcome** |
+| **Phase 0 = Phase I?** | **No** — Phase 0 = microdose, no therapeutic intent |
+| **Accelerated = Full approval?** | **No** — Accelerated = based on surrogate; **confirmatory trial required** post-approval |
+| **Conditional = Accelerated?** | Similar but different regulators: **FDA Accelerated** vs **EMA Conditional** |
+| **IND vs NDA** | **IND** = Investigational New Drug (authorisation to test in humans); **NDA** = New Drug Application (marketing authorisation) |
+
+**Mnemonics:**
+- **"PHASES 0-IV"** = **0**: Microdose PK; **I**: Safety/PK (20-100); **II**: Efficacy (100-300); **III**: Confirm (300-3000); **IV**: Post-market
+- **"SURROGATE = BIOMARKER"** = HbA1c, Viral load, Tumour size, LDL — **MUST be validated**
+- **"3+3 DESIGN"** = 3 pts → 0 DLT escalate; 1 DLT → expand 6; ≥2 DLT = MTD
+- **"IND THEN NDA"** = IND = test in humans; NDA = market approval
+- **"ACCELERATED = SURROGATE + CONFIRMATORY"**
+- **"ORPHAN = RARE + INCENTIVES"** = <200k US, <5/10k EU; 7y/10y exclusivity
+
+---
+
+## 9. 🧠 Mind Map (Mermaid)
+
+```mermaid
+mindmap
+  root((Clinical Trial Phases))
+    Phase 0
+      Microdose (<1/100 NOAEL)
+      PK only, no efficacy
+      10-15 healthy
+    Phase I
+      Safety + PK (FIH)
+      20-100 healthy
+      SAD/MAD, 3+3 design
+      MTD, Food effect, DDI, QT, ADME
+    Phase II
+      Efficacy + Safety (PoC)
+      100-300 patients
+      Dose-finding, surrogate endpoints
+      IIa (PoC), IIb (Dose-finding)
+    Phase III
+      Confirmatory
+      300-3000+ patients
+      RCT, clinically meaningful endpoint
+      Non-inferiority/Superiority
+      DSMB interim analysis
+    Phase IV
+      Post-marketing
+      Real-world evidence
+      PASS/PAES, Registries, Pragmatic RCTs
+    Endpoints
+      Primary: Clinical outcome
+      Surrogate: Biomarker (validated)
+      Composite: MACE, etc.
+      PRO: QOL
+    Regulatory
+      IND → Phase I-III → NDA/BLA/MAA
+      Accelerated/Conditional
+      Orphan/Breakthrough
+      Priority Review
+```
+
+---
+
+## 10. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score | Next |
+|--------|------|-------|------|
+| 1 | | | 1d |
+| 2 | | | 3d |
+| 3 | | | 1w |
+| 4 | | | 2w |
+| 5 | | | 1m |
+| 6 | | | 3m |
+
+---
+
+## 11. 🧪 Self-Test Scorecard
+
+| Section | Max | Score |
+|---------|-----|-------|
+| Phases 0-IV | 10 | |
+| Endpoints | 6 | |
+| Regulatory milestones | 6 | |
+| Phase I design | 6 | |
+| Viva answers | 8 | |
+| **Total** | **36** | |
+
+**Target**: ≥29/36 (80%)
+
+---
+
+## 12. 📝 Exam Answer Modes
+
+### Short Question (5 marks): *"Clinical trial phases 0–IV — objectives and populations."*
+- **Phase 0**: Microdose PK; 10–15 healthy
+- **Phase I**: Safety/PK/MTD; 20–100 healthy (SAD/MAD, 3+3 design)
+- **Phase II**: Efficacy/PoC; 100–300 patients; dose-finding; surrogate endpoints
+- **Phase III**: Confirmatory; 300–3000+ patients; RCT; clinical endpoint
+- **Phase IV**: Post-marketing surveillance; real-world; PASS/PAES; registries
+
+### Viva (1 min): *"Surrogate endpoint — definition, examples, limitation."*
+- **Definition**: Biomarker substituting for clinical outcome; must be validated (predicts clinical benefit)
+- **Examples**: HbA1c (diabetes complications), Viral load (AIDS mortality), Tumour shrinkage (OS), LDL-C (CV events)
+- **Limitation**: **Not always predictive** (e.g., drugs lowering HbA1c but increasing CV mortality; anti-arrhythmics suppressing PVCs but increasing mortality — CAST trial)
+
+### Ward Round (30 sec): *"Patient asks about 'accelerated approval' drug. Explanation?"*
+- **Approved based on surrogate endpoint** (e.g., tumour shrinkage) **predicting clinical benefit**
+- **Confirmatory trial ongoing** — if fails, approval may be withdrawn
+- **Earlier access** for serious conditions with unmet need
+
+### Last-Night Revision (1-liners):
+- Phase 0 = microdose PK; Phase I = safety/PK; Phase II = efficacy (surrogate); Phase III = confirm (clinical); Phase IV = post-market
+- Surrogate = biomarker (HbA1c, viral load, tumour size) — must be validated
+- 3+3 design = MTD finding
+- Accelerated = surrogate + confirmatory trial required
+- Orphan = rare disease + incentives
+- IND = test in humans; NDA = market approval
+
+---
+
+## 13. 📚 Summary Card
+
+> **CLINICAL TRIALS:**
+> **0**: Microdose PK
+> **I**: Safety/PK (20-100 healthy, 3+3)
+> **II**: Efficacy/PoC (100-300, surrogate)
+> **III**: Confirm (300-3000, clinical endpoint)
+> **IV**: Post-market (real-world)
+> **SURROGATE** = Biomarker (HbA1c, Viral load, Tumour size) — validated
+> **ACCELERATED** = Surrogate + Confirmatory trial
+> **IND→NDA** = Test humans → Market approval
+
+---
+
+## 14. ❓ MCQs (10)
+
+1. **Phase 0 clinical trial — primary objective:**
+   A. Efficacy
+   B. **Pharmacokinetics (microdose)** ✓
+   C. Safety
+   D. Dose-finding
+   E. Mortality benefit
+
+2. **Phase I — typical population:**
+   A. 300–3000 patients
+   B. 100–300 patients
+   C. **20–100 healthy volunteers** ✓
+   D. 3000+ patients
+   E. 10–15 patients
+
+3. **Surrogate endpoint — which is NOT a surrogate?**
+   A. HbA1c
+   B. Viral load
+   C. Tumour shrinkage
+   D. **All-cause mortality** ✓
+   E. LDL cholesterol
+
+4. **Phase II — typical endpoint:**
+   A. Mortality
+   B. **Surrogate (biomarker)** ✓
+   C. QALY
+   D. Real-world adherence
+   E. Cost-effectiveness
+
+5. **3+3 dose escalation design — MTD reached when:**
+   A. 0/3 DLT
+   B. 1/3 DLT
+   C. **≥2/6 DLT** ✓
+   D. 3/3 DLT
+   E. 2/3 DLT
+
+6. **FDA Accelerated Approval — based on:**
+   A. Clinical endpoint
+   B. **Surrogate endpoint** ✓
+   C. Real-world evidence
+   C. Cost-effectiveness
+   E. Phase II data only
+
+7. **IND vs NDA — IND is for:**
+   A. Marketing approval
+   B. **Authorisation to test in humans** ✓
+   C. Post-marketing surveillance
+   D. Orphan designation
+   E. Generic approval
+
+8. **Orphan Drug Designation (FDA) — prevalence threshold:**
+   A. <50,000
+   B. <100,000
+   C. **<200,000** ✓
+   D. <500,000
+   E. <1,000,000
+
+9. **Non-inferiority trial — key requirement:**
+   A. New drug better than placebo
+   B. **Assay sensitivity (active control beats placebo)** ✓
+   C. New drug better than active control
+   D. Equivalence margin = 0
+   E. No placebo needed
+
+10. **DSMB — primary role:**
+    A. Recruit patients
+    B. **Independent interim safety/efficacy review** ✓
+    C. Statistical analysis
+    D. Regulatory submission
+    E. Marketing strategy
+
+---
+
+## 15. 🃏 Flashcards (Anki-ready)
+
+| Front | Back |
+|-------|------|
+| Phase 0 | Microdose PK, 10-15 healthy, no efficacy |
+| Phase I | Safety/PK/MTD, 20-100 healthy, SAD/MAD, 3+3 design |
+| Phase II | Efficacy/PoC, 100-300 patients, surrogate endpoints |
+| Phase III | Confirmatory, 300-3000+ patients, clinical endpoint |
+| Phase IV | Post-marketing, real-world, PASS/PAES, registries |
+| Surrogate endpoint | Biomarker (HbA1c, viral load, tumour size, LDL) — validated |
+| 3+3 design | 3pts → 0 DLT escalate; 1 DLT → expand 6; ≥2/6 DLT = MTD |
+| IND vs NDA | IND = test in humans; NDA = market approval |
+| Accelerated approval | Surrogate + confirmatory trial required |
+| Orphan drug | <200k US / <5/10k EU; 7y/10y exclusivity |
+| DSMB | Independent interim safety/efficacy review |
+| Non-inferiority | Assay sensitivity required |
+
+---
+
+## 16. ✅ Answer Keys
+
+### MCQs
+1. **B** — Pharmacokinetics (microdose)
+2. **C** — 20–100 healthy volunteers
+3. **D** — All-cause mortality (clinical endpoint)
+4. **B** — Surrogate (biomarker)
+5. **C** — ≥2/6 DLT
+6. **B** — Surrogate endpoint
+7. **B** — Authorisation to test in humans
+8. **C** — <200,000
+9. **B** — Assay sensitivity
+10. **B** — Independent interim safety/efficacy review
+
+---
+
+*File: `/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Development/Clinical trial phases.md` | Status: `draft` → upgrade after review*

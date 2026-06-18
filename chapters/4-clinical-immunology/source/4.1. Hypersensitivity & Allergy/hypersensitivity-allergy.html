@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hypersensitivity Allergy — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 4 CLINICAL IMMUNOLOGY / 4.1. HYPERSENSITIVITY & ALLERGY</span>
+      <div class="h1">Hypersensitivity Allergy</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>Gell &amp; Coombs Classification</b> — Type I-IV (and V) Hypersensitivity mechanisms, Examples</li><li>[ ] Manage <b>Anaphylaxis</b> — Algorithm (Adrenaline IM, IV Fluids, Oxygen, Adjuncts), Biphasic, Tryptase</li><li>[ ] Diagnose &amp; Manage <b>Asthma</b> — Phenotypes/Endotypes, Stepwise Management (BTS/SIGN), Biologics</li><li>[ ] Manage <b>Allergic Rhinitis/Conjunctivitis</b> — ARIA Guidelines, Immunotherapy (SCIT/SLIT)</li><li>[ ] Diagnose <b>Food Allergy</b> — IgE vs Non-IgE, Component-Resolved Diagnostics, Oral Food Challenge</li><li>[ ] Manage <b>Drug Hypersensitivity</b> — SJS/TEN/DRESS/AGEP, HLA Associations, Cross-Reactivity, Desensitisation</li><li>[ ] Apply <b>Allergy Diagnostics</b> — SPT, sIgE, Component-Resolved Diagnostics, BAT, Patch Testing, Oral Food Challenge</li><li>[ ] Answer viva: "Anaphylaxis Algorithm" and "SJS vs TEN vs DRESS" and "Component-Resolved Diagnostics"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Gell & Coombs Classification</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Hypersensitivity Reactions] --&gt; B[Type I: IgE-Mediated (Immediate)] A --&gt; C[Type II: Antibody-Mediated (Cytotoxic)] A --&gt; D[Type III: Immune Complex-Mediated] A --&gt; E[Type IV: T-Cell Mediated (Delayed)] A --&gt; F[Type V: Stimulatory (Autoantibody)]</p>
+<p>B --&gt; B1[Anaphylaxis, Asthma, Allergic Rhinitis, Food Allergy, Atopic Dermatitis] C --&gt; C1[AIHA, ITP, Goodpasture, Graves, Myasthenia Gravis, Drug-Induced] D --&gt; D1[SLE, Serum Sickness, Vasculitis, Arthus, Farmer's Lung] E --&gt; E1[Contact Dermatitis, TB Test, Drug Hypersensitivity (SJS/TEN/DRESS), TB, Granulomas] F --&gt; F1[Graves (TSHR Stimulating), MG (AChR Block), Pemphigus (AChR Modulating)] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Type I Hypersensitivity (IgE-Mediated / Immediate)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pathophysiology</div>
+<table class="ctable"><tr><th>Phase</th><th>Mechanism</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Sensitisation**</td><td>Allergen → DC → Th2 → IL-4/IL-13 → B cell class switch → **IgE** → Binds **FcεRI** on Mast cells/Basophils</td></tr><tr><td>**Effector**</td><td>Re-exposure → Allergen cross-links **IgE-FcεRI** → **Degranulation** (Histamine, Tryptase, PGD2, LTC4, PAF) + **Cytokines** (IL-4, IL-5, IL-13)</td></tr><tr><td>**Late Phase** (4-12h)</td><td>**Eosinophils, Th2 cells, Basophils** → Tissue damage, Remodelling</td></tr></table>
+<div class="sub-h">Key Mediators</div>
+<table class="ctable"><tr><th>Mediator</th><th>Source</th><th>Effects</th></tr><tr><td>----------</td><td>--------</td><td>---------</td></tr><tr><td>**Histamine**</td><td>Mast cells, Basophils</td><td>Vasodilation, ↑ Vascular permeability, Bronchoconstriction, Pruritus</td></tr><tr><td>**Tryptase**</td><td>Mast cells</td><td>**Biomarker** (Peak 1-2h, Half-life 2h), Fibrosis, Airway remodelling</td></tr><tr><td>**PGD2**</td><td>Mast cells</td><td>Bronchoconstriction, Vasodilation, Flushing</td></tr><tr><td>**LTC4, LTD4, LTE4** (CysLTs)</td><td>Mast cells, Eosinophils</td><td>**Potent bronchoconstriction**, Mucus, Vascular permeability</td></tr><tr><td>**PAF**</td><td>Mast cells, Basophils, Platelets</td><td>Platelet activation, Vascular permeability, Bronchoconstriction</td></tr><tr><td>**IL-4, IL-5, IL-13**</td><td>Th2, ILC2, Mast cells</td><td>**IL-5 → Eosinophilia**, **IL-13 → IgE, Airway remodelling**, **IL-4 → IgE switching**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Anaphylaxis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnostic Criteria (WAO/RS)</div>
+<p><b>Anaphylaxis HIGHLY LIKELY if ANY 1 of 3:</b></p>
+<ol><li><b>Acute onset</b> (mins-hours) <b>+ Skin/Mucosal</b> (Urticaria, Angioedema, Flushing) <b>+ Respiratory</b> (Wheeze, Stridor, Dyspnoea) <b>OR</b> <b>Cardiovascular</b> (Hypotension, Syncope, Tachycardia)</li><li><b>Acute onset</b> <b>+ 2+ Systems</b>: Skin + Respiratory + Cardiovascular + GI</li><li><b>Acute hypotension</b> after known allergen exposure</li></ol>
+<div class="sub-h">Emergency Algorithm (RCUK/WAO/RCUK 2021)</div>
+<p>``<code>mermaid flowchart TD A[Recognise Anaphylaxis] --&gt; B[Call for Help / Code Blue] B --&gt; C[<b>ADRENALINE IM 0.5mg (1:1000) Anterolateral Thigh</b>] C --&gt; D{Response?} D --&gt;|No improvement in 5 min| E[<b>Repeat Adrenaline IM q5min</b>&lt;br/&gt;Max 3 doses] D --&gt;|Improving| F[Position: Supine + Legs Raised&lt;br/&gt;(If Breathless: Semi-recumbent)] F --&gt; G[<b>O2 High Flow</b> (15L/min)] F --&gt; H[<b>IV Fluid Challenge</b>&lt;br/&gt;500-1000ml Crystalloid Bolus] F --&gt; I[<b>Chlorphenamine 10mg IV</b> (Adjunct)] F --&gt; J[<b>Hydrocortisone 200mg IV</b> (Adjunct — Late effect)] F --&gt; K[<b>Salbutamol Neb</b> (If Bronchospasm)] K --&gt; L[Continuous Monitoring&lt;br/&gt;ECG, SpO2, BP, RR, Peak Flow] L --&gt; M[Observe 6-12h&lt;br/&gt;(Biphasic Reaction Risk 20%)] </code>``</p>
+<div class="sub-h">Adrenaline Dosing</div>
+<table class="ctable"><tr><th>Age/Weight</th><th>IM Dose (1:1000)</th></tr><tr><td>------------</td><td>------------------</td></tr><tr><td>**Adult**</td><td>**0.5 mg (0.5 mL)**</td></tr><tr><td>**Child >12y / >50kg**</td><td>0.5 mg (0.5 mL)</td></tr><tr><td>**Child 6-12y / 25-50kg**</td><td>0.3 mg (0.3 mL)</td></tr><tr><td>**Child 6m-6y / 7.5-25kg**</td><td>0.15 mg (0.15 mL)</td></tr><tr><td>**Infant <6m / <7.5kg**</td><td>0.1 mg (0.1 mL)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Adrenaline IM is FIRST-LINE and LIFE-SAVING</b> — No contraindication in anaphylaxis. Repeat q5min if no improvement.</div>
+<div class="sub-h">Biphasic Reaction</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>1-20% (Higher if delayed adrenaline)</td></tr><tr><td>**Timing**</td><td>1-72h after initial resolution (Peak 3-10h)</td></tr><tr><td>**Risk Factors**</td><td>Delayed adrenaline, Severe initial reaction, Inadequate initial dose, No observation</td></tr><tr><td>**Management**</td><td>**Observe 6-12h** post-resolution; **Adrenaline available**</td></tr></table>
+<div class="sub-h">Serum Tryptase</div>
+<table class="ctable"><tr><th>Timing</th><th>Interpretation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Baseline**</td><td>Pre-reaction (if known)</td></tr><tr><td>**Peak (1-2h post-onset)**</td><td>**>11.4 ng/mL OR >2x Baseline + 1.2x** = Supports anaphylaxis</td></tr><tr><td>**24h**</td><td>Returns to baseline (Half-life ~2h)</td></tr><tr><td>**Elevated Baseline**</td><td>**Mastocytosis**, **Clonal mast cell disease**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Bronchial Asthma</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Phenotypes &amp; Endotypes</div>
+<table class="ctable"><tr><th>Phenotype</th><th>Key Features</th><th>Endotype</th><th>Key Biomarkers</th></tr><tr><td>-----------</td><td>--------------</td><td>----------</td><td>----------------</td></tr><tr><td>**Allergic (Early-onset)**</td><td>Atopy, Childhood onset, RH</td><td>**Type 2 High**</td><td>**FeNO >25 ppb**, Eos >150/μL, IgE↑, Periostin</td></tr><tr><td>**Non-Allergic (Late-onset)**</td><td>Non-atopic, Adult onset, Obesity</td><td>**Type 2 Low / Non-Type 2**</td><td>Neutrophilia, Low FeNO, Obesity</td></tr><tr><td>**Eosinophilic**</td><td>Sputum Eos >3%</td><td>**Type 2 High**</td><td>Blood Eos >300/μL, FeNO >50 ppb</td></tr><tr><td>**Neutrophilic**</td><td>Sputum Neut >60%</td><td>**Non-Type 2 / Th17**</td><td>Neutrophilia, IL-17, IL-8</td></tr><tr><td>**Aspirin-Exacerbated Respiratory Disease (AERD)**</td><td>Asthma + Nasal Polyps + NSAID Sensitivity</td><td>**CysLT Overproduction**</td><td>High CysLTs, Eosinophilia</td></tr><tr><td>**Obese Asthma**</td><td>BMI >30, Late-onset, Poor control</td><td>**Mixed / Non-Type 2**</td><td>Low FeNO, Low Eos, Metabolic syndrome</td></tr></table>
+<div class="sub-h">BTS/SIGN 2024 Stepwise Management (Adults)</div>
+<table class="ctable"><tr><th>Step</th><th>Treatment</th><th>Dose/Details</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Step 1**</td><td>**SABA PRN** (Salbutamol 100-200mcg)</td><td>As needed</td></tr><tr><td>**Step 2**</td><td>**Low-dose ICS** (Beclomethasone 200-400mcg/d) + SABA PRN</td><td>**Regular ICS** — Start if symptoms >2/wk or night waking</td></tr><tr><td>**Step 3**</td><td>**Low-dose ICS + LABA** (Fixed combination)</td><td>Add LABA if not controlled on ICS alone</td></tr><tr><td>**Step 4**</td><td>**Medium-dose ICS + LABA**</td><td>Increase ICS to medium dose (Beclo 800mcg/d)</td></tr><tr><td>**Step 5**</td><td>**High-dose ICS + LABA** + **Add-on**</td><td>**LAMA (Tiotropium)**, **LTRA (Montelukast)**, **Theophylline**</td></tr><tr><td>**Step 6**</td><td>**High-dose ICS + LABA + Biologic**</td><td>**Anti-IL5 (Mepolizumab/Reslizumab/Benralizumab)**, **Anti-IL4Rα (Dupilumab)**, **Anti-TSLP (Tezepelumab)**, **Anti-IgE (Omalizumab)**</td></tr></table>
+<div class="callout"><b>Step Down</b>: Review q3m, Step down if controlled 3m <b>SMART/MART</b>: <b>Single Maintenance and Reliever Therapy</b> (Budesonide/Formoterol, Beclo/Formoterol) — Preferred for Steps 3-5</div>
+<div class="sub-h">Severe Asthma Biologics (GINA 2024 / NICE)</div>
+<table class="ctable"><tr><th>Biologic</th><th>Target</th><th>Indication</th><th>Dose</th></tr><tr><td>----------</td><td>--------</td><td>------------</td><td>------</td></tr><tr><td>**Omalizumab**</td><td>Anti-IgE</td><td>**Severe Allergic Asthma** (IgE 30-1500 IU/mL, Sensitisation)</td><td>75-600mg SC q2-4w</td></tr><tr><td>**Mepolizumab / Reslizumab**</td><td>Anti-IL-5</td><td>**Severe Eosinophilic Asthma** (Blood Eos ≥150-300/μL)</td><td>100mg SC q4w / 3mg/kg IV q4w</td></tr><tr><td>**Benralizumab**</td><td>Anti-IL-5Rα</td><td>**Severe Eosinophilic Asthma** (Eos ≥300/μL)</td><td>30mg SC q4w ×3, then q8w</td></tr><tr><td>**Dupilumab**</td><td>Anti-IL-4Rα</td><td>**Severe Type 2 High** (Eos ≥150; FeNO ≥25)</td><td>600mg SC loading → 300mg q2w</td></tr><tr><td>**Tezepelumab**</td><td>Anti-TSLP</td><td>**Severe Asthma** (Broad Type 2)</td><td>210mg SC q4w</td></tr></table>
+<div class="sub-h">Acute Severe Asthma (Life-Threatening)</div>
+<table class="ctable"><tr><th>Feature</th><th>Threshold</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**PEF**</td><td><33% Best/Predicted</td></tr><tr><td>**SpO₂**</td><td><92% on Air</td></tr><tr><td>**PaCO₂**</td><td>Normal/Raised (Normal = Impending Respiratory Failure)</td></tr><tr><td>**Silent Chest**</td><td>—</td></tr><tr><td>**Cyanosis / Exhaustion / Confusion**</td><td>—</td></tr></table>
+<table class="ctable"><tr><th>Treatment</th><th>Dose</th></tr><tr><td>-----------</td><td>------</td></tr><tr><td>**O₂** (Target SpO₂ 94-98%)</td><td>High Flow (15L)</td></tr><tr><td>**Salbutamol Neb**</td><td>5mg q15-30min (Continuous if severe)</td></tr><tr><td>**Ipratropium Neb**</td><td>500mcg q20-30min (Add to Salbutamol)</td></tr><tr><td>**IV Magnesium Sulphate**</td><td>**2g IV over 20min** (Single dose)</td></tr><tr><td>**IV Hydrocortisone**</td><td>100mg (or Pred 40-50mg PO)</td></tr><tr><td>**IV Aminophylline**</td><td>**Only if Life-Threatening** (5mg/kg loading, 0.5-0.7mg/kg/h)</td></tr><tr><td>**Escalation**</td><td>**ICU, IV Salbutamol Infusion, NIV/Intubation, ECMO**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Allergic Rhinitis & Conjunctivitis (ARIA Guidelines)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification</div>
+<table class="ctable"><tr><th>Duration</th><th>Intermittent</th><th>Persistent</th></tr><tr><td>----------</td><td>--------------</td><td>------------</td></tr><tr><td>**Severity**</td><td>**Mild** (Normal sleep, No impairment)</td><td>**Mild**</td></tr><tr><td></td><td>**Moderate-Severe** (≥1: Sleep disturbance, Impairment, Troublesome)</td><td>**Moderate-Severe**</td></tr></table>
+<div class="sub-h">Management (ARIA 2020)</div>
+<table class="ctable"><tr><th>Step</th><th>Intermittent</th><th>Persistent</th></tr><tr><td>------</td><td>--------------</td><td>------------</td></tr><tr><td>**Mild**</td><td>**Oral/Intranasal H1-Antihistamine** PRN</td><td>**Intranasal Corticosteroid (INCS)** + H1-Antihistamine PRN</td></tr><tr><td>**Moderate-Severe**</td><td>**INCS + H1-Antihistamine** (Regular)</td><td>**INCS + H1-Antihistamine** (Regular) + **LTRA (Montelukast)** if ASTHMA</td></tr><tr><td>**Refractory**</td><td>**INCS + H1 + LTRA** OR **Short Oral Steroid**</td><td>**INCS + H1 + LTRA** OR **Immunotherapy**</td></tr></table>
+<div class="sub-h">Allergen Immunotherapy (AIT)</div>
+<table class="ctable"><tr><th>Type</th><th>Indication</th><th>Protocol</th></tr><tr><td>------</td><td>------------</td><td>----------</td></tr><tr><td>**SCIT** (Subcutaneous)</td><td>**Perennial/Seasonal IgE-mediated**</td><td>Build-up (Weekly × 3-6m) → Maintenance (Monthly × 3-5y)</td></tr><tr><td>**SLIT** (Sublingual)</td><td>**Perennial/Seasonal**</td><td>Daily drops/tablet (3-5y)</td></tr><tr><td>**Indications**</td><td>**IgE-mediated**, Mod-Severe, Pharmacotherapy failure, Allergen avoidance impossible</td><td></td></tr><tr><td>**Contraindications**</td><td>**Uncontrolled Asthma**, Severe CVD, Immunodeficiency, β-blockers, Pregnancy (Initiation)</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Food Allergy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Onset</th><th>Examples</th></tr><tr><td>------</td><td>-----------</td><td>--------</td><td>----------</td></tr><tr><td>**IgE-Mediated**</td><td>**Type I**</td><td>Minutes-2h</td><td>Peanut, Egg, Milk, Fish, Shellfish, Tree nuts, Soy, Wheat</td></tr><tr><td>**Non-IgE Mediated**</td><td>**Type IV (T-cell)**</td><td>Hours-Days</td><td>**FPIES** (Food Protein-Induced Enterocolitis), **FPIAP** (Proctocolitis), **EoE** (Eosinophilic Oesophagitis)</td></tr><tr><td>**Mixed**</td><td>IgE + Non-IgE</td><td>Variable</td><td>EoE, Some Atopic Dermatitis</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Utility</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**History**</td><td>**Cornerstone** — Timing, Reproducibility, Co-factors (Exercise, Alcohol, NSAIDs)</td></tr><tr><td>**SPT**</td><td>**Sensitivity 90%**, PPV ~50% (Wheal ≥3mm)</td></tr><tr><td>**sIgE**</td><td>**Sensitivity 90%**, Component-resolved useful</td></tr><tr><td>**Component-Resolved Diagnostics (CRD)**</td><td>**Identifies specific proteins** (Ara h 2 for Peanut, Ara h 8 for Cross-reactivity)</td></tr><tr><td>**Basophil Activation Test (BAT)**</td><td>**Functional**, High specificity, Research/Refractory</td></tr><tr><td>**Oral Food Challenge (OFC)**</td><td>**Gold Standard** — Double-blind, Placebo-controlled (DBPCFC)</td></tr></table>
+<div class="sub-h">Component-Resolved Diagnostics (CRD) — Peanut Example</div>
+<table class="ctable"><tr><th>Component</th><th>Clinical Significance</th></tr><tr><td>-----------</td><td>----------------------</td></tr><tr><td>**Ara h 1, 2, 3**</td><td>**Primary Sensitisers** — High risk systemic reaction</td></tr><tr><td>**Ara h 8**</td><td>**PR-10 (Bet v 1 Homolog)** — **Cross-reactivity** (Birch pollen), Usually mild</td></tr><tr><td>**Ara h 9**</td><td>**LTP** — **Severe reactions**, Heat stable, Mediterranean</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Avoidance**</td><td>Strict allergen avoidance, Label reading, **Adrenaline Auto-Injector (AAI)** — **2 devices at all times**</td></tr><tr><td>**Acute Reaction**</td><td>**Adrenaline IM** (Anaphylaxis) → **Antihistamine** (If mild)</td></tr><tr><td>**Immunotherapy**</td><td>**OIT (Oral Immunotherapy)** — Palforzia (Peanut), **EPIT** (Epicutaneous — Viaskin)</td></tr><tr><td>**Prevention**</td><td>**Early Introduction** (LEAP Study: Peanut 4-11m → ↓ Allergy 80%)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Drug Hypersensitivity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification (Pichler)</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Timing</th><th>Examples</th></tr><tr><td>------</td><td>-----------</td><td>--------</td><td>----------</td></tr><tr><td>**Type I (IgE)**</td><td>Immediate</td><td><1h</td><td>Penicillins, NMBA, Latex</td></tr><tr><td>**Type II (Cytotoxic)**</td><td>Antibody-dependent</td><td>5-10d</td><td>Penicillin-induced AIHA, Heparin-Induced Thrombocytopenia (HIT)</td></tr><tr><td>**Type III**</td><td>Immune Complex</td><td>1-3w</td><td>Serum Sickness, Serum Sickness-Like Reaction (SSR)</td></tr><tr><td>**Type IVa (Th1)**</td><td>Macrophage activation</td><td>2-6w</td><td>**DRESS, AGEP, TB Test**</td></tr><tr><td>**Type IVb (Th2)**</td><td>Eosinophil recruitment</td><td>2-6w</td><td>**DRESS, SJS/TEN, AGEP, Maculopapular Exanthema (MPE)**</td></tr><tr><td>**Type IVc (CTL)**</td><td>Cytotoxic T cells</td><td>2-6w</td><td>**SJS/TEN**, **DRESS**, Fixed Drug Eruption</td></tr><tr><td>**Type IVd (Th17)**</td><td>Neutrophil recruitment</td><td>2-6w</td><td>**AGEP**, Pustular Psoriasis</td></tr></table>
+<div class="sub-h">Severe Cutaneous Adverse Reactions (SCARs)</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Time to Onset</th><th>Key Features</th><th>Mortality</th><th>Management</th></tr><tr><td>----------</td><td>---------------</td><td>--------------</td><td>-----------</td><td>------------</td></tr><tr><td>**SJS** (Stevens-Johnson Syndrome)</td><td>7-21d</td><td>**<10% BSA Detachment**, **Mucosal ≥2 sites**, Target lesions, Fever</td><td>~5%</td><td>**Stop Drug**, **IVIG 2-3g/kg** or **Plasma Exchange**, Supportive</td></tr><tr><td>**TEN** (Toxic Epidermal Necrolysis)</td><td>7-21d</td><td>**>30% BSA Detachment**, **Mucosal ≥2 sites**, Nikolsky+, Sepsis Risk</td><td>25-30%</td><td>**Immediate ICU**, **Supportive**, **IVIG 2-3g/kg** / **PLEX**, Ciclosporin, Etanercept</td></tr><tr><td>**SJS/TEN Overlap**</td><td>7-21d</td><td>**10-30% BSA Detachment**</td><td>10-15%</td><td>Same as TEN</td></tr><tr><td>**DRESS**</td><td>2-8w</td><td>**Fever, Rash, Eosinophilia, Lymphadenopathy, Visceral (Liver > Kidney), HHV-6 Reactivation**</td><td>10%</td><td>**Stop Drug**, **Steroid (Pred 1mg/kg)**, **IVIG** if severe</td></tr><tr><td>**AGEP**</td><td>1-5d</td><td>**Acute Febrile Neutrophilic Pustulosis**, Neutrophilia, Fever, **No Mucosal**</td><td><5%</td><td>**Stop Drug**, **Topical Steroids**, Self-limiting</td></tr></table>
+<div class="sub-h">SCORTEN (TEN Severity Score)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Score 1 Point</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Age >40y</td><td></td></tr><tr><td>Malignancy</td><td></td></tr><tr><td>Heart Rate >120</td><td></td></tr><tr><td>BSA Detached >10%</td><td></td></tr><tr><td>Serum Urea >10mmol/L</td><td></td></tr><tr><td>Serum Bicarbonate <20mmol/L</td><td></td></tr><tr><td>Glucose >14mmol/L</td><td></td></tr></table>
+<table class="ctable"><tr><th>Score</th><th>Mortality</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>0-1</td><td>3.2%</td></tr><tr><td>2</td><td>12.1%</td></tr><tr><td>3</td><td>35.3%</td></tr><tr><td>4</td><td>58.3%</td></tr><tr><td>≥5</td><td>90%</td></tr></table>
+<div class="sub-h">Drug Cross-Reactivity (Key)</div>
+<table class="ctable"><tr><th>Drug Class</th><th>Cross-Reactivity</th></tr><tr><td>------------</td><td>------------------</td></tr><tr><td>**Penicillins**</td><td>**Carbapenems (1%)**, Cephalosporins (1-2% 1st/2nd gen, <1% 3rd/4th gen)</td></tr><tr><td>**Sulfonamides**</td><td>**Sulfonamide cross-reactivity** (Sulfamethoxazole, Sulfasalazine, Dapsone)</td></tr><tr><td>**NSAIDs**</td><td>**Cross-reactivity within class** (Aspirin → Ibuprofen/Naproxen)</td></tr><tr><td>**ARBs/ACEi**</td><td>Low cross-reactivity</td></tr><tr><td>**Statins**</td><td>Low cross-reactivity</td></tr></table>
+<div class="sub-h">Desensitisation</div>
+<table class="ctable"><tr><th>Scenario</th><th>Protocol</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Penicillin (IgE)**</td><td>**Rapid (4-6h)** or **Slow (Days)** — Incremental doses under monitoring</td></tr><tr><td>**Aspirin (AERD)**</td><td>**Incremental Oral Aspirin** (Start 20mg, Double q1-2h → 650mg)</td></tr><tr><td>**Carboplatin/Oxaliplatin**</td><td>**12-step Protocol** (Pre-med: Dexamethasone, Antihistamine, H2-blocker)</td></tr><tr><td>**Allopurinol**</td><td>**Not Recommended** (High failure) — Avoid, Switch to Febuxostat</td></tr></table>
+<div class="sub-h">HLA-Drug Hypersensitivity Associations (High-Yield)</div>
+<table class="ctable"><tr><th>HLA Allele</th><th>Drug</th><th>Reaction</th><th>Population</th><th>Screening</th></tr><tr><td>------------</td><td>------</td><td>----------</td><td>------------</td><td>-----------</td></tr><tr><td>**HLA-B*57:01**</td><td>**Abacavir**</td><td>Hypersensitivity (fever, rash, GI, respiratory)</td><td>All (NPV >98%)</td><td>**Mandatory pre-prescription**</td></tr><tr><td>**HLA-B*15:02**</td><td>**Carbamazepine**</td><td>SJS/TEN</td><td>Han Chinese, Thai, Malaysian, Indian</td><td>**Mandatory pre-prescription** (Asian ancestry)</td></tr><tr><td>**HLA-B*58:01**</td><td>**Allopurinol**</td><td>SJS/TEN/DRESS</td><td>Han Chinese, Korean, Thai, European</td><td>**Strongly recommended** (all ancestries)</td></tr><tr><td>**HLA-A*31:01**</td><td>**Carbamazepine**</td><td>SJS/TEN/DRESS/Maculopapular</td><td>European, Japanese</td><td>Recommended</td></tr><tr><td>**HLA-DRB1*07:01**</td><td>**Flucloxacillin**</td><td>DILI (Drug-induced liver injury)</td><td>European</td><td>Consider</td></tr><tr><td>**HLA-B*57:01**</td><td>**Flucloxacillin**</td><td>DILI</td><td>European</td><td>Consider</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Allergy Testing</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Skin Prick Testing (SPT)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Principle**</td><td>Allergen → Mast cell degranulation → Wheal/Flare</td></tr><tr><td>**Positive**</td><td>**Wheal ≥3mm** (vs Negative Control)</td></tr><tr><td>**Controls**</td><td>**Positive**: Histamine 10mg/mL; **Negative**: Saline/Glycerol</td></tr><tr><td>**Contraindications**</td><td>Severe anaphylaxis risk, Severe uncontrolled asthma, **Antihistamines (Stop 48-72h)**, Tricyclics, **Severe Dermographism**</td></tr><tr><td>**Sensitivity/Specificity**</td><td>**90%/90%** (Aeroallergens), **Food: Sens 90%, PPV 50%**</td></tr></table>
+<div class="sub-h">Intradermal Testing (IDT)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Principle**</td><td>Allergen injected **intradermally** (0.02-0.05 mL) → Wheal/Flare</td></tr><tr><td>**Indications**</td><td>**Drug allergy** (Penicillin, Venom), **Aeroallergens** when SPT negative but high suspicion</td></tr><tr><td>**Positive**</td><td>**Wheal ≥5mm** (erythema) at 15-20 min</td></tr><tr><td>**Sensitivity**</td><td>**Higher than SPT** (esp. drug/venom), but ↓ specificity</td></tr><tr><td>**Risk**</td><td>**Higher anaphylaxis risk** than SPT — Resuscitation equipment required</td></tr><tr><td>**Concentrations**</td><td>1:100 to 1:1000 of SPT concentration</td></tr></table>
+<div class="sub-h">Patch Testing (Type IV)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Sensitivity**</td><td>90% (Aeroallergens)</td></tr><tr><td>**Specificity**</td><td>90% (Depends on allergen)</td></tr><tr><td>**ISAC (ImmunoCAP ISAC)**</td><td>**112 Components** on microarray — Component-resolved</td></tr><tr><td>**Advantages**</td><td>No antihistamine stop, Quantitative, Component-resolved</td></tr></table>
+<div class="sub-h">Component-Resolved Diagnostics (CRD)</div>
+<table class="ctable"><tr><th>Application</th><th>Benefit</th></tr><tr><td>-------------</td><td>---------</td></tr><tr><td>**Peanut (Ara h 1/2/3 vs Ara h 8/9)**</td><td>**Ara h 1/2/3 = Primary = High Risk**; **Ara h 8/9 = Cross-reactivity (Bet v 1, LTP) = Lower Risk**</td></tr><tr><td>**Hazelnut (Cor a 1 vs 9/14)**</td><td>**Cor a 1 = PR-10 (Birch)**, **Cor a 9/14 = Storage (High Risk)**</td></tr><tr><td>**Apple (Mal d 1 vs 3)**</td><td>**Mal d 1 = PR-10 (Birch) = Mild**; **Mal d 3 = LTP = Severe**</td></tr><tr><td>**Wheat (Tri a 19/ω-5 Gliadin)**</td><td>**ω-5 Gliadin = Severe (WDEIA)**</td></tr></table>
+<div class="sub-h">Basophil Activation Test (BAT)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Principle**</td><td>Allergen → Basophil CD63/CD203c upregulation (Flow Cytometry)</td></tr><tr><td>**Sensitivity/Specificity**</td><td>**90-95% / 90-95%** (Superior to sIgE for some foods/drugs)</td></tr><tr><td>**Indications**</td><td>**Food/Drug Allergy** (sIgE/SPT discordant), **Venom**, **CRD Equivocal**</td></tr></table>
+<div class="sub-h">Patch Testing (Type IV)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Allergens**</td><td>**Baseline Series** (Fragrance, Nickel, Cobalt, Potassium Dichromate, Balsam of Peru, Parabens, Formaldehyde, etc.)</td></tr><tr><td>**Reading**</td><td>**Day 2 (48h) + Day 3-4 (72-96h)**</td></tr><tr><td>**Grading (ICDRG)**</td><td>**+** (Erythema), **++** (Papules/Infiltration), **+++** (Vesicles)</td></tr><tr><td>**Irritant vs Allergic**</td><td>Irritant: Fades by Day 3; Allergic: Persists/Increases</td></tr></table>
+<div class="sub-h">Oral Food Challenge (OFC)</div>
+<table class="ctable"><tr><th>Type</th><th>Protocol</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>**Open**</td><td>Knows allergen — Clinical practice</td></tr><tr><td>**Single-Blind**</td><td>Patient blinded</td></tr><tr><td>**Double-Blind, Placebo-Controlled (DBPCFC)**</td><td>**Gold Standard** — Research, Diagnostic uncertainty</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Hypersensitivity Types**</td><td>**Type I**: IgE, Mast cells, Anaphylaxis/Asthma; **Type II**: Antibody-mediated (AIHA, ITP); **Type III**: Immune complexes (SLE, Serum Sickness); **Type IV**: T-cell (Contact, TB, Drug); **Type V**: Stimulatory (Graves)</td></tr><tr><td>**Anaphylaxis**</td><td>**Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh** — Repeat q5min; **Obs 6-12h** (Biphasic); **Tryptase** 1-2h peak</td></tr><tr><td>**Asthma**</td><td>**BTS/SIGN Steps 1-6**; **SMART/MART** (Buda/Form, Beclo/Form); **Biologics**: Anti-IgE, Anti-IL5/5R, Anti-IL4Rα, Anti-TSLP</td></tr><tr><td>**Allergic Rhinitis**</td><td>ARIA: Intermittent/Persistent × Mild/Mod-Severe → **INCS ± H1 ± LTRA**; **AIT (SCIT/SLIT)** 3-5y</td></tr><tr><td>**Food Allergy**</td><td>IgE (Minutes-2h) vs Non-IgE (Hours-Days); **CRD** (Ara h 1/2/3 = Risk, Ara h 8/9 = Cross-reactivity); **OFC = Gold Standard**</td></tr><tr><td>**Drug Hypersensitivity**</td><td>**SJS/TEN/DRESS/AGEP** — **SCORTEN** (TEN); **Stop Drug → ICU/Supportive/IVIG/PLEX**; **Desensitisation** (Penicillin, Aspirin, Carboplatin)</td></tr><tr><td>**Allergy Testing**</td><td>**SPT** (Wheal ≥3mm); **sIgE** (ImmunoCAP); **CRD** (Ara h 1/2/3 = Risk, 8/9 = Cross-reactivity); **BAT** (CD63/CD203c); **Patch** (Type IV); **OFC = Gold Standard**</td></tr><tr><td>**Anaphylaxis**</td><td>**Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh** — q5min; **Observation 6-12h**; **Tryptase 1-2h peak**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Anaphylaxis — first-line treatment?</td><td>**Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh** — Repeat q5min if no improvement; **No contraindication**</td></tr><tr><td>2</td><td>Anaphylaxis — biphasic reaction risk factors?</td><td>Delayed adrenaline, Severe initial reaction, Inadequate initial dose, No observation period</td></tr><tr><td>3.</td><td>Asthma — stepwise management?</td><td>BTS/SIGN 1-6: SABA → Low ICS → Low ICS+LABA → Med ICS+LABA → High ICS+LABA+Add-on → Biologics (Anti-IgE, IL-5, IL-4R, TSLP)</td></tr><tr><td>4.</td><td>SJS vs TEN — difference?</td><td>**SJS: <10% BSA detachment**; **TEN: >30% BSA detachment**; **Overlap 10-30%**; **SCORTEN** for prognosis</td></tr><tr><td>5.</td><td>DRESS vs SJS/TEN — key differences?</td><td>**DRESS: 2-8w onset, Fever, Rash, Eosinophilia, Lymphadenopathy, Visceral (Liver), HHV-6**; **SJS/TEN: 7-21d, Mucosal ≥2 sites, BSA Detachment, Nikolsky+**</td></tr><tr><td>5.</td><td>Anaphylaxis — adrenaline dose?</td><td>**0.5mg IM (1:1000) anterolateral thigh**; Repeat q5min</td></tr><tr><td>6.</td><td>Biphasic anaphylaxis — observation period?</td><td>**6-12 hours** post-resolution</td></tr><tr><td>6.</td><td>Serum tryptase — timing?</td><td>**Peak 1-2h post-onset**; >11.4 ng/mL or >2x baseline + 1.2x supports anaphylaxis</td></tr><tr><td>7.</td><td>Asthma biologics — anti-IL5 indication?</td><td>**Severe Eosinophilic Asthma** (Blood Eos ≥150-300/μL)</td></tr><tr><td>8.</td><td>Food allergy — component-resolved diagnostics?</td><td>**Ara h 1/2/3 = Primary sensitisation (High risk)**; **Ara h 8/9 = Cross-reactivity (Bet v 1/LTP)**</td></tr><tr><td>8.</td><td>SJS vs TEN — BSA detachment?</td><td>**SJS <10%**, **SJS/TEN 10-30%**, **TEN >30%**</td></tr><tr><td>9.</td><td>SJS vs DRESS — key difference?</td><td>**DRESS: 2-8w onset, Fever, Eosinophilia, Visceral (Liver), HHV-6**; **SJS/TEN: 7-21d, Mucosal ≥2, Nikolsky+**</td></tr><tr><td>10.</td><td>Penicillin allergy — desensitisation protocol?</td><td>**Rapid (4-6h) or Slow (Days)** — Incremental doses under monitoring; Not for SJS/TEN history</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Anaphylaxis = Only with hives"**</td><td>**NO.** Can present **WITHOUT Skin** (Cardiovascular/Respiratory only) — Still anaphylaxis!</td></tr><tr><td>**"Adrenaline = Contraindicated in Heart Disease"**</td><td>**NO.** **NO Absolute Contraindication** in Anaphylaxis — Life-saving!</td></tr><tr><td>**"SPT = Diagnostic for Food Allergy"**</td><td>**NO.** **SPT/sIgE = Sensitisation**, Not Allergy; **OFC = Gold Standard** for diagnosis</td></tr><tr><td>**"SJS = Mild, TEN = Severe"**</td><td>**NO.** **Spectrum**: SJS (<10% BSA), SJS/TEN Overlap (10-30%), TEN (>30%); **Mortality**: SJS 5%, SJS/TEN 10%, TEN 25-30%</td></tr><tr><td>**"DRESS = Just Rash"**</td><td>**NO.** **Multisystem**: Fever, Rash, Eosinophilia, Lymphadenopathy, **Hepatitis (ALT↑), Nephritis, HHV-6 Reactivation**</td></tr><tr><td>**"All Drug Rashes = Allergy"**</td><td>**NO.** **Morbilliform (MPE)** = Most common, Benign; **SCARs (SJS/TEN/DRESS/AGEP)** = Severe</td></tr><tr><td>**"AGEP = Pustular Psoriasis"**</td><td>**NO.** **AGEP**: Acute Febrile Neutrophilic Pustulosis, Drug-induced, **Neutrophilia**, Self-limiting</td></tr><tr><td>**"SPT Positive = Allergy"**</td><td>**NO.** **Sensitisation ≠ Clinical Allergy**; Need History + **OFC (Gold Standard)**</td></tr><tr><td>**"All Penicillin Allergic = Avoid All β-lactams"**</td><td>**NO.** **Cross-reactivity Low** (Carbapenems 1%, 3rd/4th Gen Cephalosporins <1%); Assess individually</td></tr><tr><td>**"Adrenaline IV = Better than IM"**</td><td>**NO.** **IM Preferred** (Rapid absorption, Safer); IV only in **Cardiac Arrest** or **Refractory Shock** with monitoring</td></tr></table>
+<div class="callout"><b>Mnemonic: HYPERSENSITIVITY ALLERGY ESSENTIALS</b> <b>H</b>ypersensitivity Types: <b>I (IgE/Immediate), II (Ab-Mediated), III (IC-Mediated), IV (T-Cell), V (Stimulatory)</b> <b>Y</b> (Anaphylaxis): <b>Adrenaline IM 0.5mg 1:1000 → q5min; O2, IV Fluids, Chlorphenamine, Hydrocortisone, Salbutamol; Observe 6-12h (Biphasic)</b> <b>P</b> (Types): <b>I (IgE/Anaphylaxis/Asthma), II (Ab-Med/AIHA/ITP), III (IC/SLE/Serum Sickness), IV (T-Cell/Contact/TB/Drug), V (Stimulatory/Graves)</b> <b>E</b>ndotypes Asthma: <b>T2-High (Eos, FeNO, IgE)</b> vs <b>T2-Low (Neutrophilic, Obese)</b> — <b>Biologics Target T2</b> <b>R</b> (Rhinitis): <b>ARIA: Intermittent/Persistent × Mild/Mod-Sev → INCS ± H1 ± LTRA → AIT (SCIT/SLIT 3-5y)</b> <b>S</b> (Skin Tests): <b>SPT (Wheal ≥3mm, Stop Antihist 48-72h), sIgE (ImmunoCAP), CRD (Ara h 1/2/3=Risk, 8/9=Cross), BAT (CD63/CD203c), Patch (Type IV, Day 48/72h), OFC=Gold Standard</b> <b>H</b>ypersensitivity Types: <b>I (IgE), II (Ab-Med Cytotoxic), III (IC-Med), IV (T-Cell), V (Stimulatory)</b> <b>S</b>CARs: <b>SJS (&lt;10% BSA), SJS/TEN (10-30%), TEN (&gt;30%)</b>; <b>SCORTEN (Age&gt;40, Malig, HR&gt;120, BSA&gt;10%, Urea&gt;10, Bicarb&lt;20, Gluc&gt;14)</b> <b>E</b> DRESS: <b>2-8w, Fever, Rash, Eos, Lymphadeno, Viscera (Liver), HHV-6</b> <b>N</b> AGEP: <b>1-5d, Neutrophilic Pustules, Neutrophilia, Self-Limiting</b> <b>S</b>tudies: <b>OFC=Gold Standard</b>, <b>SPT (Wheal≥3mm, Stop AntiH 48-72h), sIgE (ImmunoCAP), CRD (Ara h 1/2/3=Risk, 8/9=Cross), BAT (CD63/CD203c), Patch (Day 48/72h)</b> <b>I</b>mmune: <b>Type I (IgE), II (Ab), III (IC), IV (T-Cell)</b> <b>T</b>reatment: <b>Anaphylaxis = Adrenaline IM 0.5mg 1:1000</b>, Asthma (BTS/SIGN Steps), Rhinitis (ARIA), Drug Desens (Penicillin, Aspirin) <b>I</b>gE: <b>High Affinity FcεRI on Mast/Baso</b>, Degranulation (Histamine, Tryptase, PGD2, CysLTs) <b>V</b> (Viva): <b>Anaphylaxis=Adrenaline; Asthma=BTS Steps; SJS/TEN=BSA%; DRESS=Liver/HHV-6; CRD=Ara h 2/3 Risk</b> <b>V</b> (Viva): <b>SJS&lt;10%, SJS/TEN 10-30%, TEN&gt;30%; SCORTEN; DRESS=Liver/HHV-6; CRD=Ara h 1/2/3=Risk</b> <b>E</b>xam: <b>Anaphylaxis=Adrenaline IM; Asthma=BTS Steps; SJS/TEN=BSA%; DRESS=Liver; CRD=Ara h 1/2/3</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Hypersensitivity &amp; Allergy)) Gell &amp; Coombs Type I: IgE, Mast Cell, Anaphylaxis, Asthma, Rhinitis, Food Type II: Antibody, AIHA, ITP, Goodpasture, Graves, MG, Drug Type III: IC, SLE, Serum Sickness, Arthus, Vasculitis Type IV: T-Cell, Contact, TB, Drug (SJS/TEN/DRESS), TB Test Type V: Stimulatory, Graves, MG Anaphylaxis Adrenaline IM 0.5mg 1:1000 O2, IV Fluids, Chlorphenamine, Hydrocortisone Biphasic: Observe 6-12h Tryptase Peak 1-2h Asthma BTS/SIGN Steps 1-6 SMART/MART (Buda/Form, Beclo/Form) Biologics: Omalizumab, Mepolizumab, Benralizumab, Dupilumab, Tezepelumab Acute Severe: MgSO4, IV Hydrocortisone, Aminophylline Rhinitis ARIA: Intermittent/Persistent × Mild/Mod-Sev INCS ± H1 ± LTRA AIT: SCIT/SLIT (3-5y) Food Allergy IgE (Min-2h) vs Non-IgE (Hrs-Days) CRD: Ara h 1/2/3=Risk, 8/9=Cross OFC = Gold Standard Drug Hypersensitivity SJS/TEN/DRESS/AGEP SCORTEN (TEN), RegiSCAR Desensitisation: Penicillin, Aspirin, Carboplatin Allergy Testing SPT (Wheal≥3mm, Stop AntiH 48-72h) sIgE (ImmunoCAP), CRD (Ara h 1/2/3=Risk, 8/9=Cross) BAT (CD63/CD203c), Patch (Day 48/72h), OFC=Gold Standard Drug Hypersensitivity SJS/TEN/DRESS/AGEP SCORTEN, RegiSCAR Desensitisation (Penicillin, Aspirin, Carboplatin) Cross-Reactivity (Penicillins, Sulfonamides, NSAIDs) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Gell & Coombs Classification</td><td>2</td><td></td><td></td></tr><tr><td>Anaphylaxis Algorithm</td><td>3</td><td></td><td></td></tr><tr><td>Asthma Management</td><td>3</td><td></td><td></td></tr><tr><td>Allergic Rhinitis/Conjunctivitis</td><td>2</td><td></td><td></td></tr><tr><td>Food Allergy & CRD</td><td>3</td><td></td><td></td></tr><tr><td>Drug Hypersensitivity (SCARs)</td><td>3</td><td></td><td></td></tr><tr><td>Allergy Testing Methods</td><td>2</td><td></td><td></td></tr><tr><td>Anaphylaxis Management</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the classification, clinical features, and management of anaphylaxis."</td><td>Gell & Coombs Type I, WAO Criteria, Adrenaline IM Algorithm, Biphasic, Tryptase, Adjuncts, Observation</td></tr><tr><td>**Short Note**</td><td>"SJS vs TEN vs DRESS — differentiation."</td><td>BSA Detachment thresholds, Onset timing, Mucosal involvement, Systemic features, SCORTEN, Management</td></tr><tr><td>**Viva**</td><td>"Patient on allopurinol develops fever, rash, eosinophilia, hepatitis. Diagnosis and management?"</td><td>**DRESS** (Drug Reaction with Eosinophilia and Systemic Symptoms) — Stop drug, Steroids, IVIG if severe, HHV-6 reactivation, RegiSCAR</td></tr><tr><td>**Ward Round**</td><td>"Patient with peanut allergy given peanut butter. Develops wheeze, lip swelling, hypotension. Immediate management?"</td><td>**Anaphylaxis** — **Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh**, Oxygen, IV Fluids, Chlorphenamine, Hydrocortisone, Observe 6-12h</td></tr><tr><td>**Last-Night**</td><td>"Types: I(IgE/Anaphylaxis), II(Ab/AIHA/ITP), III(IC/SLE/Serum Sickness), IV(T-Cell/Contact/TB/Drug), V(Stimulatory/Graves). Anaphylaxis: Adrenaline IM 0.5mg 1:1000 anterolateral thigh q5min → O2/IV Fluids/Chlorphenamine/Hydrocortisone → Observe 6-12h Biphasic → Tryptase 1-2h peak. Asthma: BTS Steps 1-6 → SMART/MART → Biologics (Anti-IgE/IL5/IL-4R/TSLP). SJS/TEN/DRESS: BSA<10%/10-30%/>30%, DRESS=Liver/HHV-6/2-8w, SCORTEN. Allergy: SPT/sIgE/CRD/BAT/OFC. Desensitisation: Penicillin/Aspirin/Carboplatin."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Gell &amp; Coombs</b>: Type I (IgE/Anaphylaxis), Type II (Ab-mediated), Type III (IC/SLE), Type IV (T-cell/Contact/Drug), Type V (Stimulatory/Graves)</li><li><b>Anaphylaxis</b>: <b>Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh</b> — <b>FIRST-LINE, NO CONTRAINDICATION</b>; Repeat q5min; <b>Observe 6-12h</b> (Biphasic); <b>Tryptase 1-2h peak</b></li><li><b>Asthma</b>: <b>BTS/SIGN Steps 1-6</b>, <b>SMART/MART</b> (Buda/Form, Beclo/Form), <b>Biologics</b> (Anti-IgE, Anti-IL5, Anti-IL4R, Anti-TSLP)</li><li><b>Allergic Rhinitis</b>: <b>ARIA</b> (Intermittent/Persistent × Mild/Mod-Sev); <b>INCS ± H1 ± LTRA</b>; <b>AIT (SCIT/SLIT 3-5y)</b></li><li><b>Food Allergy</b>: <b>IgE (Min-2h) vs Non-IgE (Hrs-Days)</b>; <b>CRD</b> (Ara h 1/2/3 = Risk, 8/9 = Cross); <b>OFC = Gold Standard</b></li><li><b>Drug Hypersensitivity</b>: <b>SCARs</b> — <b>SJS/TEN/DRESS/AGEP</b>; <b>SCORTEN (TEN), RegiSCAR (DRESS)</b>; <b>Desensitisation</b> (Penicillin, Aspirin, Carboplatin)</li><li><b>Allergy Testing</b>: <b>SPT</b> (Wheal ≥3mm, Stop AntiH 48-72h); <b>sIgE (ImmunoCAP)</b>; <b>CRD</b> (Ara h 1/2/3 = Risk, 8/9 = Cross); <b>BAT (CD63/CD203c)</b>; <b>Patch (Day 48/72h)</b>; <b>OFC = Gold Standard</b></li><li><b>Drug Desensitisation</b>: Penicillin (Rapid/Slow), Aspirin (AERD), Carboplatin (12-step), Allopurinol (Avoid)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>First-line treatment for anaphylaxis:</b></li></ol>
+<p>A. IV Hydrocortisone  B. <b>Adrenaline IM 0.5mg (1:1000)</b>  C. Chlorphenamine  D. Salbutamol Nebuliser <i>Answer: B. Adrenaline IM 0.5mg (1:1000) anterolateral thigh — FIRST-LINE, NO contraindication.</i></p>
+<ol><li><b>Biphasic anaphylaxis — observation period?</b></li></ol>
+<p>A. 1 hour  B. <b>6-12 hours</b>  C. 24 hours  D. 48 hours <i>Answer: B. Observe 6-12 hours post-resolution (Biphasic peak 3-10h).</i></p>
+<ol><li><b>Serum tryptase — optimal timing for anaphylaxis confirmation?</b></li></ol>
+<p>A. Immediately  B. <b>1-2 hours post-onset</b>  C. 6 hours  D. 24 hours <i>Answer: B. Peak at 1-2 hours; half-life ~2h; &gt;11.4 ng/mL or &gt;2x baseline supports diagnosis.</i></p>
+<ol><li><b>SJS vs TEN — key differentiator?</b></li></ol>
+<p>A. Mucosal involvement  B. <b>BSA Detachment (&lt;10% SJS, &gt;30% TEN)</b>  C. Fever  D. Drug cause <i>Answer: B. BSA Detachment: SJS &lt;10%, SJS/TEN 10-30%, TEN &gt;30%.</i></p>
+<ol><li><b>DRESS vs SJS/TEN — key distinguishing feature?</b></li></ol>
+<p>A. Mucosal involvement  B. <b>Fever, Eosinophilia, Visceral (Liver), HHV-6 Reactivation</b>  C. Nikolsky sign  D. Drug cause <i>Answer: B. DRESS = Fever, Eosinophilia, Lymphadenopathy, Visceral (Liver), HHV-6 Reactivation (2-8w onset).</i></p>
+<ol><li><b>Asthma biologics — Anti-IL5 (Mepolizumab) indication?</b></li></ol>
+<p>A. All severe asthma  B. <b>Severe Eosinophilic Asthma (Blood Eos ≥150-300/μL)</b>  C. Allergic asthma only  D. Exercise-induced asthma <i>Answer: B. Severe Eosinophilic Asthma (Blood Eos ≥150-300/μL).</i></p>
+<ol><li><b>Food allergy — Component-Resolved Diagnostics for Peanut:</b></li></ol>
+<p>A. Ara h 8 = High risk  B. <b>Ara h 1/2/3 = Primary sensitisers (High Risk); Ara h 8/9 = Cross-reactivity</b>  C. Ara h 9 = Primary  D. All equal <i>Answer: B. Ara h 1/2/3 = Primary sensitisation (High risk); Ara h 8/9 = Cross-reactivity (Bet v 1/LTP).</i></p>
+<ol><li><b>Penicillin allergy — desensitisation approach?</b></li></ol>
+<p>A. Not possible  B. <b>Rapid (4-6h) or Slow (Days) — Incremental doses under monitoring</b>  C. Single dose challenge  D. Only with antihistamine cover <i>Answer: B. Rapid (4-6h) or Slow (Days) — Incremental doses under monitoring.</i></p>
+<ol><li><b>Skin Prick Test — positive criteria?</b></li></ol>
+<p>A. Wheal ≥2mm  B. <b>Wheal ≥3mm (vs Negative Control)</b>  C. Flare ≥10mm  D. Any wheal <i>Answer: B. Wheal ≥3mm larger than negative control.</i></p>
+<ol><li><b>Oral Food Challenge — gold standard for?</b></li></ol>
+<p>A. Aeroallergy  B. <b>Food Allergy Diagnosis</b>  C. Drug Allergy  D. Contact Dermatitis <i>Answer: B. Double-Blind Placebo-Controlled Food Challenge (DBPCFC) = Gold Standard for Food Allergy.</i></p>
+<ol><li><b>Drug desensitisation — when indicated?</b></li></ol>
+<p>A. All drug allergies  B. <b>No Alternative Drug Available (e.g., Penicillin in Syphilis, Aspirin in AERD, Carboplatin in Ovarian Cancer)</b>  C. Only for IgE-mediated  D. Never <i>Answer: B. When no safe alternative exists (Penicillin in Syphilis, Aspirin in AERD, Carboplatin in Ovarian Cancer).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25F with anaphylaxis to peanut. Adrenaline IM 0.5mg given. Still wheezy, BP 80/50 after 5min. Next step?</b></li></ol>
+<p>A. <b>Repeat Adrenaline IM 0.5mg</b>  B. IV Hydrocortisone  C. IV Chlorphenamine  D. Salbutamol Neb <i>Answer: A. Repeat Adrenaline IM 0.5mg q5min if no improvement.</i></p>
+<ol><li><b>Patient on carbamazepine develops fever, rash, eosinophilia 3.5x10⁹/L, ALT 300, HHV-6 PCR+. Diagnosis?</b></li></ol>
+<p>A. SJS  B. TEN  C. <b>DRESS</b>  D. AGEP <i>Answer: C. DRESS (Drug Reaction with Eosinophilia and Systemic Symptoms) — Fever, Rash, Eosinophilia, Hepatitis, HHV-6 reactivation.</i></p>
+<ol><li><b>Asthma patient on Step 4 (Medium-dose ICS/LABA) still uncontrolled. Blood Eos 400/μL, FeNO 45ppb. Add-on?</b></li></ol>
+<p>A. Tiotropium  B. Montelukast  C. <b>Mepolizumab (Anti-IL5)</b>  D. Omalizumab <i>Answer: C. Anti-IL5 (Mepolizumab/Reslizumab/Benralizumab) for Severe Eosinophilic Asthma (Eos ≥150-300/μL).</i></p>
+<ol><li><b>Child with peanut allergy — Ara h 2 positive, Ara h 8 negative. Risk?</b></li></ol>
+<p>A. Low (Cross-reactivity)  B. <b>High (Primary Sensitisation)</b>  C. Moderate  D. None <i>Answer: B. Ara h 2 = Primary Sensitiser = High Risk for Systemic Reaction.</i></p>
+<ol><li><b>Patient on allopurinol develops fever, rash, eosinophilia 2x10⁹/L, pustules. Onset Day 3. Diagnosis?</b></li></ol>
+<p>A. SJS  B. DRESS  C. <b>AGEP</b> (Acute Generalised Exanthematous Pustulosis)  D. TEN <i>Answer: C. AGEP — Acute onset (1-5d), Neutrophilic Pustules, Neutrophilia, Self-limiting.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-C, 3-C, 4-B, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[3.1 Mechanisms of Autoimmunity]] — Type II/III/IV hypersensitivity in autoimmunity</li><li>[[3.2 Systemic Autoimmune Diseases]] — SLE, Vasculitis, Drug-induced autoimmunity</li><li>[[3.3 Organ-Specific Autoimmune Diseases]] — MG, MS, Thyroid, Coeliac hypersensitivity</li><li>[[4.3 X-Linked Disorders]] — G6PD deficiency (Drug-induced haemolysis)</li><li>[[5.1-5.4 Genetic Testing Technologies]] — HLA typing for drug hypersensitivity (HLA-B<i>15:02, HLA-B</i>57:01, HLA-B*58:01)</li><li>[[5.4 Prenatal &amp; Preimplantation Testing]] — Allergy prevention in pregnancy</li><li>[[5.5 Genetic Counselling]] — Allergy risk counselling, Family history</li><li>[[6.1 Hereditary Cancer Syndromes]] — Paraneoplastic syndromes (Autoimmune)</li><li>[[6.2-6.3 Tumour Immunology &amp; Immunotherapy]] — irAEs (Checkpoint inhibitor colitis, thyroiditis, pneumonitis)</li><li>[[7.1-7.6 Immune-Based Therapies]] — Biologics used for allergy/asthma (Omalizumab, Mepolizumab, Dupilumab)</li><li>[[8.1-8.6 Special Situations Immunology]] — Pregnancy (Allergy), Ageing (Immunosenescence)</li><li>[[9. ELSI]] — Genetic discrimination in allergy, DTC testing</li><li>[[10. System-Based Clinical Genetics]] — Allergy genetics (IL4, IL13, FLG, TSLP)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>5.1-5.4 Transplant Immunology.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hypersensitivity Allergy · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

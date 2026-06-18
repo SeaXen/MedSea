@@ -1,0 +1,619 @@
+# Melanoma
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **Melanoma = Most lethal skin cancer**; **UVR (Intermittent High-Dose) Major Risk**; **BRAF V600E (50%)**, **NRAS (25%)**, **NF1 (15%)**, **KIT (Acral/Mucosal)**; **AJCC 8th Staging**: **Breslow Thickness**, **Ulceration**, **Mitoses**, **SLNB**, **Nodes**; **Primary: Wide Local Excision (WLE) Margins by Breslow**; **SLNB for T1b-T4** (T1a <0.8mm no ulceration → No SLNB); **Adjuvant**: **Stage III: BRAF/MEKi (COMBI-AD: Dab/Tram) OR ICI (CheckMate 238: Nivo, KEYNOTE-054: Pembro)**; **Stage IIB/IIC: ICI (KEYNOTE-716: Pembro)**; **Metastatic**: **BRAF V600E → BRAF/MEKi (Dab/Tram, Encobinimetinib) OR ICI (Pembro/Nivo/Ipi+Nivo)**; **Brain Mets: SRS + ICI/BRAF-MEKi**; **Surveillance: Clinical, US, LDH, Imaging**
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Apply **AJCC 8th Staging**: Breslow, Ulceration, Mitoses, SLNB, Nodes
+- [ ] Determine **WLE Margins** by Breslow Thickness
+- [ ] Indicate **SLNB** for T1b-T4 (Not T1a)
+- [ ] Select **Adjuvant Therapy**: Stage III (BRAF/MEKi if V600E, ICI); Stage IIB/IIC (ICI)
+- [ ] Sequence **Metastatic Therapy**: BRAF V600E → BRAF/MEKi OR ICI; BRAF WT → ICI
+- [ ] Manage **Brain Mets**: SRS + ICI/BRAF-MEKi
+- [ ] Perform **Surveillance**: Clinical, US, LDH, Imaging by Stage
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Definition** | Malignant tumour of melanocytes; **Cutaneous (90%)**, **Acral**, **Mucosal**, **Uveal** |
+| **Incidence** | UK: **~16,000/year**; **5th Most Common Cancer**; Rising |
+| **Prevalence** | 5-year OS: Stage I >95%, Stage II 80-90%, Stage III 50-70%, Stage IV ~25% (Improving) |
+| **Peak Age** | 60-70 (Chronic Sun), **Young Adults (15-39) — Intermittent High-Dose UVR** |
+| **Sex Ratio** | M > F (Slight) |
+| **Risk Factors** | **UVR (Intermittent High-Dose = Sunburns)**, **Multiple Nevi (>100)**, **Atypical Nevi**, **Fair Skin (Fitzpatrick I-II)**, **Red Hair**, **Family History**, **CDKN2A (Familial Melanoma)**, **Immunosuppression**, **Xeroderma Pigmentosum** |
+
+---
+
+## 3. Molecular Pathogenesis
+
+```mermaid
+flowchart LR
+    A[UVR / Mutagen] --> B[Driver Mutations]
+    B --> B1[**BRAF V600E (50%)** — **MAPK Pathway**]
+    B --> B2[**NRAS Q61 (25%)** — **MAPK + PI3K**]
+    B --> B3[**NF1 Loss (15%)** — **RAS Activation**]
+    B --> B4[**KIT (Acral/Mucosal/Uveal)** — **SCF/c-KIT**]
+    B --> B5[**TERT Promoter (80%)** — **Telomerase**]
+    B1 --> C[**Constitutive MAPK Signalling**]
+    B2 --> C
+    B3 --> C
+    C --> D[Proliferation, Survival, Invasion]
+```
+
+### Subtype-Specific Mutations
+
+| Subtype | BRAF | NRAS | NF1 | KIT | TERT |
+|---------|------|------|-----|-----|------|
+| **Superficial Spreading (SSM)** | **50-60%** | 20% | 15% | Rare | 70% |
+| **Nodular (NM)** | 40% | **30%** | 20% | Rare | 80% |
+| **Lentigo Maligna (LMM/LMM)** | **<10%** | **20%** | **30%** | Rare | 70% |
+| **Acral Lentiginous (ALM)** | **<10%** | **20%** | **20%** | **15-20%** | 70% |
+| **Mucosal** | Rare | **20%** | **20%** | **20%** | 70% |
+| **Uveal** | Rare | Rare | Rare | Rare | **TERT 80%** |
+
+---
+
+## 4. Clinical Features & Subtypes
+
+| Subtype | Frequency | Site | Features |
+|---------|-----------|------|----------|
+| **Superficial Spreading (SSM)** | **70%** | Trunk (M), Legs (F) | **Radial Growth Phase → Vertical**, Irregular Borders, Variable Colour |
+| **Nodular (NM)** | **15-20%** | Any | **Vertical Growth from Start**, Symmetric, Uniform Colour, **Rapid Growth** |
+| **Lentigo Maligna (LMM/LMM)** | **10-15%** | **Face (Sun-Damaged)** | **Slow Radial Growth**, **Years to Decades**, **In-Situ → Invasive** |
+| **Acral Lentiginous (ALM)** | **5-10%** | **Palms, Soles, Nail Beds** | **Non-Sun-Exposed**, **KIT Mut**, **Late Diagnosis** |
+| **Mucosal** | **<1%** | Oral, Genital, Anorectal | **KIT/NRAS**, **Poor Prognosis** |
+| **Desmoplastic** | **<5%** | Head/Neck | **Neurotropic**, **Low Metastatic Rate**, **High Local Recurrence** |
+| **Spitzoid** | Rare | Children/Young | **Spitz Tumour Spectrum**, **HRAS, MAP3K8** |
+
+---
+
+## 5. Staging (AJCC 8th Edition)
+
+### T Category (Primary Tumour)
+
+| T | Breslow Thickness | Ulceration |
+|---|-------------------|------------|
+| Tis | **In-Situ (Melanoma In Situ)** | - |
+| T1a | **<0.8mm** | No |
+| T1b | **0.8-1.0mm** | No **OR** <0.8mm **With Ulceration** |
+| T2a | **1.01-2.0mm** | No |
+| T2b | **1.01-2.0mm** | **Yes** |
+| T3a | **2.01-4.0mm** | No |
+| T3b | **2.01-4.0mm** | **Yes** |
+| T4a | **>4.0mm** | No |
+| T4b | **>4.0mm** | **Yes** |
+
+**Mitoses:** Not used for T categorisation in 8th Edition (Removed from 7th).
+
+### N Category (Regional Nodes)
+
+| N | Description |
+|---|-------------|
+| N0 | No Regional Mets |
+| N1 | **1 Node** (N1a: SLNB+, N1b: Clinical+) |
+| N2 | **2-3 Nodes** (N2a: SLNB+, N2b: Clinical+, N2c: In-Transit/Satellite + N0-1) |
+| N3 | **≥4 Nodes** (N3a: Clinical, N3b: Clinical + In-Transit, N3c: Clinical Node Cluster) |
+
+### M Category (Distant Mets)
+
+| M | Description |
+|---|-------------|
+| M0 | No Distant Mets |
+| M1a | **Skin, Subcutaneous, Distant LN** |
+| M1b | **Lung** |
+| M1c | **Non-CNS Visceral (Liver, GI, Bone, etc.)** |
+| M1d | **CNS (Brain)** |
+
+### Stage Grouping
+
+| Stage | T | N | M |
+|-------|---|---|---|
+| **0** | Tis | N0 | M0 |
+| **IA** | T1a | N0 | M0 |
+| **IB** | T1b / T2a | N0 | M0 |
+| **IIA** | T2b / T3a | N0 | M0 |
+| **IIB** | T3b / T4a | N0 | M0 |
+| **IIC** | T4b | N0 | M0 |
+| **IIIA** | T1-2a | N1a/N2a | M0 |
+| **IIIB** | T0 | N1b/N2b/N2c | M0 |
+| | T1-2a | N1b/N2b/N2c | M0 |
+| | T3a | N1a/N2a | M0 |
+| **IIIC** | T3b/T4a | N1a/N2a | M0 |
+| | T1-4a | N2b/N2c/N3 | M0 |
+| | T4b | N1a/N2a | M0 |
+| **IIID** | T4b | N1b/N2b/N2c/N3 | M0 |
+| **IV** | Any T | Any N | M1 |
+
+---
+
+## 6. Management
+
+### Primary Surgery (Wide Local Excision)
+
+```mermaid
+flowchart TD
+    A[Primary Melanoma] --> B{Breslow Thickness}
+    B -->|**In-Situ (Tis)**| C[**WLE 0.5-1cm Margin**]
+    B -->|**<1mm (T1a/T1b)**| D[**WLE 1cm Margin**]
+    B -->|**1-2mm (T2)**| E[**WLE 1-2cm Margin**]
+    B -->|**2-4mm (T3)**| F[**WLE 2cm Margin**]
+    B -->|**>4mm (T4)**| G[**WLE 2cm Margin**]
+    C --> H[**Sentinel Lymph Node Biopsy (SLNB)**]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+```
+
+### Sentinel Lymph Node Biopsy (SLNB)
+
+| Indication | Recommendation |
+|------------|----------------|
+| **T1a (<0.8mm, No Ulceration)** | **NOT Recommended** (Low Risk <5%) |
+| **T1b (0.8-1.0mm OR Ulceration)** | **Recommended (Discuss)** |
+| **T2-T4 (≥1mm)** | **Recommended** |
+| **T1b with High Risk Features** (Mitoses, Young Age, Lymphovascular) | **Strongly Consider** |
+
+**SLNB Technique:** **Technetium-99m + Patent Blue** → **Gamma Probe** → **Frozen Section + IHC (S100, HMB45, Melan-A, SOX10)**
+
+---
+
+## 7. Adjuvant Therapy
+
+### Stage III (Node-Positive)
+
+```mermaid
+flowchart TD
+    A[Stage III Melanoma (Post-SLNB/Complete ND)] --> B{BRAF Status}
+    B -->|**BRAF V600E/K Mutant**| C[**Option 1: BRAF + MEK Inhibitor**<br/>**Dabrafenib 150mg BID + Trametinib 2mg OD** (COMBI-AD)<br/>**RFS HR 0.51, OS HR 0.57**<br/>**Duration: 1 Year**]
+    B -->|**BRAF Wild-Type OR Mutant (Patient Choice)**| D[**Option 2: Immune Checkpoint Inhibitor**<br/>**Nivolumab 480mg q4wk** (CheckMate 238) — **RFS HR 0.65**<br/>**Pembrolizumab 200mg q3w** (KEYNOTE-054) — **RFS HR 0.57**<br/>**Duration: 1 Year**]
+    C --> E[**Toxicity Management**]
+    D --> E
+    E --> E1[**BRAF/MEKi**: Pyrexia, Chills, Arthralgia, Cutaneous SCC, Cardiomyopathy, Uveitis]
+    E --> E2[**ICI**: Colitis, Hepatitis, Endocrinopathies, Pneumonitis, Skin]
+```
+
+### Stage IIB/IIC (High-Risk Node-Negative)
+
+| Trial | Regimen | Population | Outcome |
+|-------|---------|------------|---------|
+| **KEYNOTE-716** | **Pembrolizumab 200mg q3w ×1 Year** | **Stage IIB (T3b-4a N0) / IIC (T4b N0)** | **RFS HR 0.62** — **Approved** |
+
+**Note:** No adjuvant BRAF/MEKi approved for Stage II (Only ICI).
+
+---
+
+## 8. Metastatic (Stage IV) Therapy
+
+```mermaid
+flowchart TD
+    A[Stage IV Melanoma] --> B{BRAF Status}
+    B -->|**BRAF V600E/K Mutant**| C{Patient Factors}
+    C -->|**Symptomatic, High Tumour Burden, Brain Mets**| D[**BRAF + MEK Inhibitor (Preferred)**<br/>**Dabrafenib 150mg BID + Trametinib 2mg OD** (COMBI-d/v)<br/>**Encorafenib 450mg + Binimetinib 45mg BID** (COLUMBUS)<br/>**Rapid Response, CNS Activity**<br/>**Sequential ICI if Progress**]
+    C -->|**Asymptomatic, Low Burden, No Brain Mets**| E[**Immune Checkpoint Inhibitor**<br/>**Pembrolizumab 200mg q3w** (KEYNOTE-006) — **OS HR 0.68**<br/>**Nivolumab 480mg q4wk** (CheckMate 067) — **OS HR 0.71**<br/>**Ipilimumab 3mg/kg + Nivolumab 1mg/kg q3w ×4 → Nivo Maint** (CheckMate 067) — **Highest ORR/CR, Most Toxic**<br/>**Durable Responses, Long-Tail OS**]
+    B -->|**BRAF Wild-Type**| F[**Immune Checkpoint Inhibitor (Only Option)**<br/>**Pembrolizumab 200mg q3w** (KEYNOTE-006) — **OS HR 0.68**<br/>**Nivolumab 480mg q4wk** (CheckMate 067) — **OS HR 0.71**<br/>**Ipilimumab 3mg/kg + Nivolumab 1mg/kg q3w ×4 → Nivo Maint** (CheckMate 067) — **Highest ORR/CR, Best Long-Tail OS, Most Toxic**<br/>**Durable Responses, Long-Tail OS**]
+    D --> G[**Progression → Switch to Other Class**]
+    E --> G
+    F --> G
+```
+
+### Brain Metastases
+
+| Setting | Management |
+|---------|------------|
+| **Oligometastatic (1-3)** | **SRS (Stereotactic Radiosurgery) ± Systemic** |
+| **Multiple (>3)** | **WBRT (Whole Brain RT) ± Systemic** (Prefer SRS if possible) |
+| **BRAF Mutant** | **Dabrafenib + Trametinib** — **CNS Activity (COMBI-MB: ORR 58%)** |
+| **BRAF Wild-Type** | **ICI (Pembro/Nivo/Ipi+Nivo)** — **Intracranial Activity (CheckMate 204: ORR 46-57%)** |
+| **SRS + ICI/BRAF-MEKi** | **Synergistic** — **Abscopal Effect** |
+
+---
+
+## 9. Supportive Care
+
+| Issue | Management |
+|-------|------------|
+| **Vasogenic Oedema** | **Dexamethasone 4-16mg/day** (IV/PO) — **Taper Over 1-2 Weeks** once RT Started/Stable |
+| **Seizures** | **Levetiracetam** (Prophylaxis if Supratentorial); **No Routine Prophylaxis for Infratentorial** |
+| **VTE Prophylaxis** | **LMWH (Enoxaparin 40mg daily)** — **High Risk (Cancer + Immobility + Brain)**; **DOACs if No Active Bleeding** |
+| **Anticoagulation (Therapeutic)** | **LMWH Preferred** (DOACs: Intracranial Haemorrhage Risk) |
+
+---
+
+## 10. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Major Risk** | **UVR (Intermittent Sunburns)**, **Multiple Nevi**, **Fair Skin**, **Family CDKN2A** |
+| **Subtypes** | **SSM 70%**, **NM 15-20%**, **LMM 10-15%**, **ALM 5-10%**, **Mucosal <1%** |
+| **Mutations** | **BRAF V600E 50%**, **NRAS 25%**, **NF1 15%**, **KIT (Acral/Mucosal)**, **TERT 80%** |
+| **AJCC 8th** | **Breslow, Ulceration** (Mitoses Removed); **SLNB for N**; **Stage III = N+** |
+| **Primary Surgery** | **WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm** |
+| **SLNB** | **T1b-T4 Recommended**; **T1a Not** |
+| **Adjuvant Stage III** | **BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)**; **BRAF WT: ICI** |
+| **Adjuvant Stage IIB/IIC** | **Pembrolizumab (KEYNOTE-716)** |
+| **Metastatic BRAF Mut** | **BRAF/MEKi (Rapid, CNS) OR ICI (Durable)**; **BRAF WT: ICI Only** |
+| **Brain Mets** | **SRS (Oligo) + Systemic**; **BRAF Mut: Dab/Tram CNS Activity**; **BRAF WT: ICI CNS Activity** |
+| **Surveillance** | **Stage-Dependent**: Clinical, US Nodes, LDH, CT/PET-CT |
+
+---
+
+## 11. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **40F, 1.5mm Melanoma, Ulcerated, Back. Breslow 1.5mm, Ulceration+. WLE Margin? SLNB?** | **WLE 1-2cm Margin** (1-2mm); **SLNB Recommended** (T2b: 1.01-2mm with Ulceration). |
+| **BRAF V600E Stage III Melanoma — Adjuvant Options?** | **1) Dabrafenib 150mg BID + Trametinib 2mg OD ×1yr (COMBI-AD)**; **2) Pembrolizumab 200mg q3w ×1yr (KEYNOTE-054) OR Nivolumab 480mg q4wk ×1yr (CheckMate 238)**. |
+| **BRAF Wild-Type Stage III — Adjuvant?** | **ICI Only**: **Pembrolizumab 200mg q3w ×1yr (KEYNOTE-054) OR Nivolumab 480mg q4wk ×1yr (CheckMate 238)**. |
+| **Stage IIC Melanoma (T4b N0) — Adjuvant?** | **Pembrolizumab 200mg q3w ×1yr (KEYNOTE-716)** — **RFS Benefit**. |
+| **Metastatic BRAF V600E, Asymptomatic, No Brain Mets — 1L?** | **ICI Preferred (Durable)**: **Pembro/Nivo OR Ipi+Nivo**; **OR BRAF/MEKi (Rapid Response)** — **Discuss Patient Preference**. |
+| **Metastatic BRAF V600E, Symptomatic, Brain Mets — 1L?** | **BRAF/MEKi (Dab/Tram) — CNS Activity (COMBI-MB)** + **SRS for Brain Mets**. |
+| **Adjuvant COMBI-AD — Regimen, Duration, Key Toxicity?** | **Dabrafenib 150mg BID + Trametinib 2mg OD ×1 Year**; **Key Tox: Pyrexia (50%), Chills, Arthralgia, Cutaneous SCC, Cardiomyopathy, Uveitis**. |
+| **KEYNOTE-054 vs CheckMate 238 — ICI Adjuvant?** | **KEYNOTE-054: Pembro 200mg q3w ×1yr (RFS HR 0.57)**; **CheckMate 238: Nivo 480mg q4wk ×1yr (RFS HR 0.65)** — **Both Approved, Pembro Slightly Better RFS**. |
+| **Brain Mets Melanoma — SRS vs WBRT?** | **Oligo (1-3): SRS Preferred** (Less Cognitive Decline); **Multiple (>3): WBRT** (or SRS if feasible); **Always + Systemic (ICI/BRAF-MEKi)**. |
+| **Surveillance Stage III — Schedule?** | **Clinical q3mo ×3yr, q4mo ×2yr, q6mo ×2yr, then Annually**; **US Nodes q3-6mo ×3yr**; **CT/PET-CT q6mo ×3yr, then Annually**; **LDH q3mo**. |
+
+---
+
+## 12. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **WLE Margins — 1cm vs 2cm for 1-2mm** | **1-2mm: 1-2cm Margin** (Not 1cm); **<1mm: 1cm**; **>2mm: 2cm** |
+| **SLNB T1a vs T1b** | **T1a (<0.8mm, No Ulceration): NO SLNB**; **T1b (0.8-1.0mm OR Ulceration): YES SLNB** |
+| **Adjuvant Stage II vs III** | **Stage IIB/IIC: ICI Only (Pembro)**; **Stage III: BRAF/MEKi (If V600E) OR ICI** |
+| **BRAF/MEKi vs ICI — 1L Metastatic** | **BRAF/MEKi: Rapid Response, CNS Activity, Finite Duration (Resistance ~1yr)**; **ICI: Slower, Durable (Long-Tail OS), Indefinite, Immune Tox** |
+| **Ipi+Nivo vs Nivo vs Pembro** | **Ipi+Nivo: Highest ORR/CR, Best Long-Tail, Most Toxic (Grade 3-4 55%+)**; **Nivo/Pembro: Better Tolerability, Similar OS** |
+| **Adjuvant Duration** | **1 Year for All (BRAF/MEKi, ICI)** — **Not Indefinite** |
+| **Brain Mets — SRS vs WBRT** | **Oligo (1-3): SRS**; **Multiple (>3): WBRT** (or SRS if feasible); **Always + Systemic (ICI/BRAF-MEKi)** |
+
+**Mnemonic: MELANOMA-AJCC**
+- **M**elanoma: **UVR (Intermittent Sunburns)**, **Nevi**, **Fair Skin**, **CDKN2A**
+- **E**pidemiology: **5th Common**, **Young Adults (15-39) + Elderly**
+- **L**entigo Maligna: **Face, Sun-Damaged**, **Slow Radial Growth**
+- **A**cral Lentiginous: **Palms/Soles/Nails**, **KIT Mut**, **Late Dx**
+- **N**odular: **Vertical Growth**, **Rapid**, **Uniform Colour**
+- **O**cular/Uveal: **Separate Entity**, **TERT, GNAQ/11**
+- **M**utations: **BRAF V600E 50%**, **NRAS 25%**, **NF1 15%**, **KIT (Acral/Mucosal)**, **TERT 80%**
+- **A**JCC 8th: **Breslow + Ulceration** (Mitoses Removed), **SLNB for N**, **Stage III = N+**
+- **S**LNB: **T1b-T4 Yes**, **T1a No**; **WLE: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm**
+- **S**tage III Adjuvant: **BRAF V600E → Dab/Tram OR ICI**; **BRAF WT → ICI**
+- **S**tage IIB/IIC Adjuvant: **Pembro (KEYNOTE-716)**
+- **Metastatic**: **BRAF Mut → Dab/Tram (Rapid/CNS) OR ICI (Durable)**; **BRAF WT → ICI**
+- **Brain Mets**: **SRS (Oligo) + Systemic**; **BRAF Mut: Dab/Tram CNS**; **BRAF WT: ICI CNS**
+- **Surveillance**: **Stage-Dependent (Clinical, US, LDH, CT/PET)**
+
+---
+
+## 13. Mind Map
+
+```mermaid
+mindmap
+  root((Melanoma))
+    Risk Factors
+      UVR (Intermittent Sunburns)
+      Multiple Nevi (>100)
+      Fair Skin, Red Hair
+      Family (CDKN2A)
+      Immunosuppression
+    Subtypes
+      SSM (70%) - Radial→Vertical
+      NM (15-20%) - Vertical
+      LMM (10-15%) - Face, Slow
+      ALM (5-10%) - KIT
+      Mucosal (<1%) - KIT/NRAS
+      Desmoplastic - Neurotropic
+    Mutations
+      BRAF V600E (50%)
+      NRAS (25%)
+      NF1 (15%)
+      KIT (Acral/Mucosal)
+      TERT (80%)
+    Staging AJCC 8th
+      T: Breslow + Ulceration
+      N: SLNB/Clinical Nodes
+      M: M1a-d
+      Stage III = N+
+    Surgery
+      WLE: Breslow-Based Margins
+      SLNB: T1b-T4 (Not T1a)
+    Adjuvant
+      Stage III: BRAF V600E→Dab/Tram OR ICI; WT→ICI
+      Stage IIB/IIC: Pembro
+    Metastatic
+      BRAF Mut: Dab/Tram OR ICI
+      BRAF WT: ICI (Pembro/Nivo/Ipi+Nivo)
+      Brain Mets: SRS + Systemic
+```
+
+---
+
+## 14. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Risk** | UVR Sunburns, Nevi, Fair Skin, CDKN2A |
+| **Mutations** | BRAF V600E 50%, NRAS 25%, NF1 15%, KIT (Acral) |
+| **Staging** | Breslow + Ulceration; SLNB for N; Stage III = N+ |
+| **WLE** | In-Situ 0.5-1cm; <1mm 1cm; 1-2mm 1-2cm; >2mm 2cm |
+| **SLNB** | T1b-T4 Yes; T1a No |
+| **Adjuvant III** | BRAF V600E: Dab/Tram OR ICI; WT: ICI |
+| **Adjuvant IIB/IIC** | Pembro (KEYNOTE-716) |
+| **Metastatic** | BRAF Mut: Dab/Tram OR ICI; WT: ICI |
+| **Brain Mets** | SRS (Oligo) + Systemic; CNS Activity Both |
+| **Surveillance** | Clinical, US Nodes, LDH, CT/PET by Stage |
+
+---
+
+## 15. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 16. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| AJCC 8th Staging | | |
+| WLE Margins | | |
+| SLNB Indications | | |
+| Adjuvant Algorithms | | |
+| Metastatic Sequencing | | |
+| Brain Mets Management | | |
+| Surveillance Schedule | | |
+| Mutation-Guided Therapy | | |
+
+---
+
+## 17. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[AJCC 8th Staging]], [[SLNB]], [[BRAF/MEK Inhibitors]], [[Immune Checkpoint Inhibitors]], [[Adjuvant Melanoma]], [[Brain Mets Melanoma]], [[NRAS]], [[NF1]], [[Adjuvant Pembro/Nivo]], [[KEYNOTE-054]], [[CheckMate 238]], [[COMBI-AD]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 18. MCQs (10)
+
+
+**1.** Regarding Melanoma (Major Risk), which statement is correct?
+   A. **UVR (Intermittent Sunburns)**, **Multiple Nevi**, **Fair Skin**, **Family CDKN2A**
+   B. **UVR - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **UVR (Intermittent Sunburns)**, **Multiple Nevi**, **Fair Skin**, **Family CDKN2A**
+
+
+**2.** Regarding Melanoma (Subtypes), which statement is correct?
+   A. **SSM 70%**, **NM 15-20%**, **LMM 10-15%**, **ALM 5-10%**, **Mucosal <1%**
+   B. **SSM - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **SSM 70%**, **NM 15-20%**, **LMM 10-15%**, **ALM 5-10%**, **Mucosal <1%**
+
+
+**3.** Regarding Melanoma (Mutations), which statement is correct?
+   A. **BRAF V600E 50%**, **NRAS 25%**, **NF1 15%**, **KIT (Acral/Mucosal)**, **TERT 80%**
+   B. **BRAF - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **BRAF V600E 50%**, **NRAS 25%**, **NF1 15%**, **KIT (Acral/Mucosal)**, **TERT 80%**
+
+
+**4.** Regarding Melanoma (AJCC 8th), which statement is correct?
+   A. **Breslow, Ulceration** (Mitoses Removed)
+   B. **Breslow, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Breslow, Ulceration** (Mitoses Removed); **SLNB for N**; **Stage III = N+**
+
+
+**5.** Regarding Melanoma (Primary Surgery), which statement is correct?
+   A. **WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm**
+   B. **WLE - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm**
+
+
+**6.** Regarding Melanoma (SLNB), which statement is correct?
+   A. **T1b-T4 Recommended**
+   B. **T1b-T4 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **T1b-T4 Recommended**; **T1a Not**
+
+
+**7.** Regarding Melanoma (Adjuvant Stage III), which statement is correct?
+   A. **BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)**
+   B. **BRAF - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)**; **BRAF WT: ICI**
+
+
+**8.** Regarding Melanoma (Adjuvant Stage IIB/IIC), which statement is correct?
+   A. **Pembrolizumab (KEYNOTE-716)**
+   B. **Pembrolizumab - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Pembrolizumab (KEYNOTE-716)**
+
+
+**9.** Regarding Melanoma (Metastatic BRAF Mut), which statement is correct?
+   A. **BRAF/MEKi (Rapid, CNS) OR ICI (Durable)**
+   B. **BRAF/MEKi - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **BRAF/MEKi (Rapid, CNS) OR ICI (Durable)**; **BRAF WT: ICI Only**
+
+
+**10.** Regarding Melanoma (Brain Mets), which statement is correct?
+   A. **SRS (Oligo) + Systemic**
+   B. **SRS - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **SRS (Oligo) + Systemic**; **BRAF Mut: Dab/Tram CNS Activity**; **BRAF WT: ICI CNS Activity**
+
+
+## 19. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **UVR (Intermittent Sunburns)**, **Multiple Nevi**, **Fair Skin**, **Family CDKN2A**
+   - B. **UVR (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **UVR (Intermittent Sunburns)**, **Multiple Nevi**, **Fair Skin**, **Family CDKN2A**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **SSM 70%**, **NM 15-20%**, **LMM 10-15%**, **ALM 5-10%**, **Mucosal <1%**
+   - B. **SSM (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **SSM 70%**, **NM 15-20%**, **LMM 10-15%**, **ALM 5-10%**, **Mucosal <1%**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **BRAF V600E 50%**, **NRAS 25%**, **NF1 15%**, **KIT (Acral/Mucosal)**, **TERT 80%**
+   - B. **BRAF (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **BRAF V600E 50%**, **NRAS 25%**, **NF1 15%**, **KIT (Acral/Mucosal)**, **TERT 80%**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Breslow, Ulceration** (Mitoses Removed)
+   - B. **Breslow, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Breslow, Ulceration** (Mitoses Removed); **SLNB for N**; **Stage III = N+**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm**
+   - B. **WLE (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **T1b-T4 Recommended**
+   - B. **T1b-T4 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **T1b-T4 Recommended**; **T1a Not**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)**
+   - B. **BRAF (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo)**; **BRAF WT: ICI**
+
+
+**8.** The role of surgery in this case is:
+   - A. **Pembrolizumab (KEYNOTE-716)**
+   - B. **Pembrolizumab (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **Pembrolizumab (KEYNOTE-716)**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **BRAF/MEKi (Rapid, CNS) OR ICI (Durable)**
+   - B. **BRAF/MEKi (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **BRAF/MEKi (Rapid, CNS) OR ICI (Durable)**; **BRAF WT: ICI Only**
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **SRS (Oligo) + Systemic**
+   - B. **SRS (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **SRS (Oligo) + Systemic**; **BRAF Mut: Dab/Tram CNS Activity**; **BRAF WT: ICI CNS Activity**
+
+
+## 20. Flashcards
+
+**Q1:** Major Risk?
+**A1:** UVR (Intermittent Sunburns), Multiple Nevi, Fair Skin, Family CDKN2A
+
+**Q2:** Subtypes?
+**A2:** SSM 70%, NM 15-20%, LMM 10-15%, ALM 5-10%, Mucosal <1%
+
+**Q3:** Mutations?
+**A3:** BRAF V600E 50%, NRAS 25%, NF1 15%, KIT (Acral/Mucosal), TERT 80%
+
+**Q4:** AJCC 8th?
+**A4:** Breslow, Ulceration (Mitoses Removed); SLNB for N; Stage III = N+
+
+**Q5:** Primary Surgery?
+**A5:** WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm
+
+**Q6:** SLNB?
+**A6:** T1b-T4 Recommended; T1a Not
+
+**Q7:** Adjuvant Stage III?
+**A7:** BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo); BRAF WT: ICI
+
+**Q8:** Adjuvant Stage IIB/IIC?
+**A8:** Pembrolizumab (KEYNOTE-716)
+
+## 21. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Major Risk | UVR (Intermittent Sunburns), Multiple Nevi, Fair Skin, Family CDKN2A |
+| 2 | A | Subtypes | SSM 70%, NM 15-20%, LMM 10-15%, ALM 5-10%, Mucosal <1% |
+| 3 | A | Mutations | BRAF V600E 50%, NRAS 25%, NF1 15%, KIT (Acral/Mucosal), TERT 80% |
+| 4 | A | AJCC 8th | Breslow, Ulceration (Mitoses Removed); SLNB for N; Stage III = N+ |
+| 5 | A | Primary Surgery | WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm |
+| 6 | A | SLNB | T1b-T4 Recommended; T1a Not |
+| 7 | A | Adjuvant Stage III | BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo); BRAF WT: ICI |
+| 8 | A | Adjuvant Stage IIB/IIC | Pembrolizumab (KEYNOTE-716) |
+| 9 | A | Metastatic BRAF Mut | BRAF/MEKi (Rapid, CNS) OR ICI (Durable); BRAF WT: ICI Only |
+| 10 | A | Brain Mets | SRS (Oligo) + Systemic; BRAF Mut: Dab/Tram CNS Activity; BRAF WT: ICI CNS Activity |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Major Risk | UVR (Intermittent Sunburns), Multiple Nevi, Fair Skin, Family CDKN2A |
+| 2 | A | Subtypes | SSM 70%, NM 15-20%, LMM 10-15%, ALM 5-10%, Mucosal <1% |
+| 3 | A | Mutations | BRAF V600E 50%, NRAS 25%, NF1 15%, KIT (Acral/Mucosal), TERT 80% |
+| 4 | A | AJCC 8th | Breslow, Ulceration (Mitoses Removed); SLNB for N; Stage III = N+ |
+| 5 | A | Primary Surgery | WLE Margins: In-Situ 0.5-1cm, <1mm 1cm, 1-2mm 1-2cm, >2mm 2cm |
+| 6 | A | SLNB | T1b-T4 Recommended; T1a Not |
+| 7 | A | Adjuvant Stage III | BRAF V600E: Dab/Tram (COMBI-AD) OR ICI (Pembro/Nivo); BRAF WT: ICI |
+| 8 | A | Adjuvant Stage IIB/IIC | Pembrolizumab (KEYNOTE-716) |
+| 9 | A | Metastatic BRAF Mut | BRAF/MEKi (Rapid, CNS) OR ICI (Durable); BRAF WT: ICI Only |
+| 10 | A | Brain Mets | SRS (Oligo) + Systemic; BRAF Mut: Dab/Tram CNS Activity; BRAF WT: ICI CNS Activity |
+
+## 22. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Skin Cancer|Skin Cancer]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

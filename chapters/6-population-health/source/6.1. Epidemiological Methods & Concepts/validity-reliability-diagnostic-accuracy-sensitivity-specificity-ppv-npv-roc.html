@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Validity Reliability Diagnostic Accuracy Sensitivity Specificity Ppv Npv Roc — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.1. EPIDEMIOLOGICAL METHODS & CONCEPTS</span>
+      <div class="h1">Validity Reliability Diagnostic Accuracy Sensitivity Specificity Ppv Npv Roc</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Calculate and interpret sensitivity, specificity, PPV, NPV, likelihood ratios</li><li>[ ] Apply Bayes theorem: pre-test probability → post-test probability using LRs</li><li>[ ] Interpret ROC curve and AUC; choose optimal cut-point</li><li>[ ] Distinguish validity (accuracy) vs reliability (precision/reproducibility)</li><li>[ ] Apply to screening vs diagnostic test scenarios</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Formula</th><th>Interpretation</th><th>Range</th></tr><tr><td>--------</td><td>---------</td><td>----------------</td><td>-------</td></tr><tr><td>**Sensitivity (Sn)**</td><td>TP / (TP + FN)</td><td>Proportion of TRUE DISEASE correctly identified</td><td>0–1 (100%)</td></tr><tr><td>**Specificity (Sp)**</td><td>TN / (TN + FP)</td><td>Proportion of TRUE NON-DISEASE correctly identified</td><td>0–1 (100%)</td></tr><tr><td>**PPV**</td><td>TP / (TP + FP)</td><td>Probability disease GIVEN positive test</td><td>0–1</td></tr><tr><td>**NPV**</td><td>TN / (TN + FN)</td><td>Probability no disease GIVEN negative test</td><td>0–1</td></tr><tr><td>**LR+**</td><td>Sn / (1 – Sp)</td><td>How much odds of disease increase with +test</td><td>0–∞</td></tr><tr><td>**LR-**</td><td>(1 – Sn) / Sp</td><td>How much odds of disease decrease with -test</td><td>0–∞</td></tr><tr><td>**Accuracy**</td><td>(TP + TN) / Total</td><td>Overall correctness</td><td>0–1</td></tr><tr><td>**Youden Index**</td><td>Sn + Sp – 1</td><td>Overall test performance (max at optimal cut-point)</td><td>-1 to +1</td></tr></table>
+<p><b>2×2 Table:</b> ``<code> Disease+ (Gold Standard) Disease- Test+      TP           FP          TP+FP Test-      FN           TN          FN+TN TP+FN        FP+TN       Total </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological concept - see calculation examples and Bayes application below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Test Characteristics by Purpose</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test Purpose</th><th>Priority</th><th>Key Metric</th><th>Typical Values</th></tr><tr><td>--------------</td><td>----------</td><td>------------</td><td>----------------</td></tr><tr><td>**Screening**</td><td>High Sensitivity</td><td>Sn (rule OUT: SnNout)</td><td>Sn >95%, Sp moderate</td></tr><tr><td>**Confirmatory**</td><td>High Specificity</td><td>Sp (rule IN: SpPin)</td><td>Sp >95%, Sn moderate</td></tr><tr><td>**Diagnostic**</td><td>Balance</td><td>LR+, LR-, AUC</td><td>LR+ >10, LR- <0.1</td></tr><tr><td>**Monitoring**</td><td>Reliability</td><td>ICC, CV, LoA</td><td>ICC >0.8, CV <10%</td></tr></table>
+<p><b>SnNout / SpPin:</b></p>
+<ul><li><b>SnNout</b>: High Sensitivity → Negative test rules OUT disease (few false negatives)</li><li><b>SpPin</b>: High Specificity → Positive test rules IN disease (few false positives)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Calculation & Bayes)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Prevalence Impact on PPV/NPV:</b> ``<code> PPV = (Sn × Prev) / [Sn × Prev + (1-Sp) × (1-Prev)] NPV = (Sp × (1-Prev)) / [(1-Sn) × Prev + Sp × (1-Prev)] </code>``</p>
+<p><b>Example: Sn=90%, Sp=95%, Prev=1%</b> ``<code> PPV = (0.9×0.01) / (0.9×0.01 + 0.05×0.99) = 0.009 / 0.0585 ≈ 15.4% NPV = (0.95×0.99) / (0.1×0.01 + 0.95×0.99) = 0.9405 / 0.9415 ≈ 99.9% </code>``</p>
+<p><b>Bayes via Likelihood Ratios (Fagan's Nomogram):</b> ``<code> Pre-test odds = Pre-test prob / (1 – Pre-test prob) Post-test odds = Pre-test odds × LR Post-test prob = Post-test odds / (1 + Post-test odds) </code>``</p>
+<p><b>Mermaid: Bayes Flow</b> ``<code>mermaid flowchart LR A[Pre-test Probability\n(Prevalence/Clinical Suspicion)] --&gt; B[Likelihood Ratio\nLR+ or LR-] B --&gt; C[Post-test Odds = Pre-test Odds × LR] C --&gt; D[Post-test Probability] style A fill:#bbf,stroke:#333 style D fill:#bfb,stroke:#333 </code>``</p>
+<p><b>ROC Curve &amp; AUC:</b></p>
+<ul><li><b>ROC</b>: Plot Sensitivity (y) vs 1-Specificity (x) across all cut-points</li><li><b>AUC</b>: Area Under Curve; 0.5 = useless, 0.7-0.8 = acceptable, 0.8-0.9 = excellent, &gt;0.9 = outstanding</li><li><b>Optimal Cut-point</b>: Youden Index (Sn+Sp-1) maximum, or closest to (0,1), or cost-based</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Validity vs Reliability)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th><th>Assessment</th></tr><tr><td>---------</td><td>------------</td><td>------------</td></tr><tr><td>**Validity (Accuracy)**</td><td>Does test measure what it claims?</td><td>Sensitivity, Specificity, PPV, NPV, AUC vs gold standard</td></tr><tr><td>**Reliability (Precision)**</td><td>Does test give consistent results?</td><td>ICC, Kappa, Cronbach's α, CV, Bland-Altman LoA</td></tr><tr><td>**Internal Validity**</td><td>Correct for study population</td><td>Bias control, confounding adjustment</td></tr><tr><td>**External Validity**</td><td>Generalisability to other populations</td><td>Representativeness, transportability</td></tr></table>
+<p><b>Reliability Metrics:</b></p>
+<table class="ctable"><tr><th>Type</th><th>Metric</th><th>Interpretation</th></tr><tr><td>------</td><td>--------</td><td>----------------</td></tr><tr><td>**Inter-rater**</td><td>Cohen's κ (categorical), ICC (continuous)</td><td>κ<0.2 poor, 0.2-0.4 fair, 0.4-0.6 moderate, 0.6-0.8 good, >0.8 excellent</td></tr><tr><td>**Intra-rater**</td><td>Same rater, repeat</td><td>Same metrics</td></tr><tr><td>**Test-retest**</td><td>Same subject, time interval</td><td>ICC, CV</td></tr><tr><td>**Internal Consistency**</td><td>Multi-item scale</td><td>Cronbach's α >0.7 acceptable, >0.9 may indicate redundancy</td></tr></table>
+<p><b>Bland-Altman (Continuous Variables):</b></p>
+<ul><li>Plot difference vs mean of two measurements</li><li><b>Bias</b> = mean difference</li><li><b>Limits of Agreement</b> = bias ± 1.96 SD of differences</li><li>95% of differences should lie within LoA</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Test Selection & Interpretation)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Approach</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Rule OUT (screening)**</td><td>High Sn test; negative → disease unlikely (NPV high if prevalence low)</td></tr><tr><td>**Rule IN (confirm)**</td><td>High Sp test; positive → disease likely (PPV high if prevalence moderate-high)</td></tr><tr><td>**Diagnostic pathway**</td><td>High Sn test first (rule out), then high Sp test (rule in)</td></tr><tr><td>**Sequential testing**</td><td>Post-test prob of test 1 = pre-test prob of test 2</td></tr><tr><td>**Parallel testing**</td><td>Either test positive = positive (↑Sn, ↓Sp)</td></tr><tr><td>**Series testing**</td><td>Both tests positive = positive (↑Sp, ↓Sn)</td></tr></table>
+<p><b>Mermaid: Sequential vs Parallel</b> ```mermaid flowchart TD A[Patient] --&gt; B{Test 1 High Sn} B --&gt;|Negative| C[Rule Out\nStop] B --&gt;|Positive| D[Test 2 High Sp] D --&gt;|Positive| E[Rule In] D --&gt;|Negative| F[Consider Alternative]</p>
+<p>G[Patient] --&gt; H{Test A OR Test B} H --&gt;|Either +| I[Positive\nHigh Sn] H --&gt;|Both -| J[Negative]</p>
+<p>K[Patient] --&gt; L{Test A AND Test B} L --&gt;|Both +| M[Positive\nHigh Sp] L --&gt;|Either -| N[Negative] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Sn/Sp fixed**</td><td>Test characteristics; do NOT change with prevalence</td></tr><tr><td>**PPV/NPV vary**</td><td>Depend critically on PREVALENCE (pre-test probability)</td></tr><tr><td>**Low prevalence → Low PPV**</td><td>Even excellent test: 1% prev, Sn95%/Sp95% → PPV=16%</td></tr><tr><td>**High prevalence → High PPV**</td><td>50% prev, same test → PPV=95%</td></tr><tr><td>**LR+ >10**</td><td>Large increase in probability (rule IN)</td></tr><tr><td>**LR- <0.1**</td><td>Large decrease in probability (rule OUT)</td></tr><tr><td>**LR 0.5-2**</td><td>Minimal change; test not useful</td></tr><tr><td>**AUC 0.5**</td><td>No discrimination (diagonal line)</td></tr><tr><td>**AUC 1.0**</td><td>Perfect test</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Test has Sn 90%, Sp 95%. Disease prevalence 1%. What is PPV? NPV?**</td><td>PPV = 15.4%, NPV = 99.9%. Calculation: PPV = (0.9×0.01)/[(0.9×0.01)+(0.05×0.99)].</td></tr><tr><td>**Same test, prevalence 30%. Now PPV?**</td><td>PPV = (0.9×0.3)/[(0.9×0.3)+(0.05×0.7)] = 0.27/0.305 ≈ 88.5%. PPV increases with prevalence.</td></tr><tr><td>**What is LR+? LR-? Interpret.**</td><td>LR+ = 0.9/0.05 = 18 (strong rule IN). LR- = 0.1/0.95 = 0.105 (moderate rule OUT).</td></tr><tr><td>**Pre-test prob 20%, LR+ 18. Post-test prob?**</td><td>Pre-test odds = 0.2/0.8 = 0.25. Post-test odds = 0.25 × 18 = 4.5. Post-test prob = 4.5/5.5 = 81.8%.</td></tr><tr><td>**Difference between validity and reliability?**</td><td>Validity = accuracy (does it measure truth? Sn/Sp). Reliability = precision (consistent? ICC/Kappa).</td></tr><tr><td>**Kappa 0.6 means?**</td><td>Good agreement. <0.2 poor, 0.2-0.4 fair, 0.4-0.6 moderate, 0.6-0.8 good, >0.8 excellent.</td></tr><tr><td>**What is AUC? What does 0.75 mean?**</td><td>Area under ROC curve. 0.75 = acceptable discrimination; 75% chance that random diseased has higher test value than random non-diseased.</td></tr><tr><td>**How choose optimal cut-point on ROC?**</td><td>Youden Index (Sn+Sp-1) max. Or closest to top-left (0,1). Or cost-minimising if FP/FN costs known.</td></tr><tr><td>**Serial vs Parallel testing - which increases Sn? Which increases Sp?**</td><td>Parallel (either +) → ↑Sn, ↓Sp. Series (both +) → ↑Sp, ↓Sn.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**PPV/NPV vs Sn/Sp**</td><td>Sn/Sp are test properties (fixed). PPV/NPV depend on PREVALENCE.</td></tr><tr><td>**LR+ vs LR-**</td><td>LR+ = Sn/(1-Sp) for positive test. LR- = (1-Sn)/Sp for negative test.</td></tr><tr><td>**Pre-test prob ≠ Prevalence**</td><td>Pre-test prob = clinician's estimate for THIS patient. Prevalence = population average. Use pre-test prob for Bayes.</td></tr><tr><td>**Kappa vs % Agreement**</td><td>Kappa corrects for chance agreement. % agreement overestimates reliability.</td></tr><tr><td>**Screening vs Diagnostic**</td><td>Screening: asymptomatic, high Sn. Diagnostic: symptomatic, high Sp.</td></tr></table>
+<p><b>Mnemonic: SENSITIVITY = SnNout</b></p>
+<ul><li><b>S</b>ensitivity</li><li><b>N</b>egative test</li><li><b>N</b>egates (rules) <b>O</b>ut</li></ul>
+<p><b>Mnemonic: SPECIFICITY = SpPin</b></p>
+<ul><li><b>S</b>pecificity</li><li><b>P</b>ositive test</li><li><b>P</b>ositive (rules) <b>I</b>n</li></ul>
+<p><b>Mnemonic: PREVALENCE IMPACT</b></p>
+<ul><li><b>P</b>revalence <b>L</b>ow → <b>P</b>PV <b>L</b>ow</li><li><b>P</b>revalence <b>H</b>igh → <b>P</b>PV <b>H</b>igh</li></ul>
+<p><b>Mnemonic: LIKELIHOOD RATIOS</b></p>
+<ul><li><b>LR+</b> = <b>L</b>arge <b>R</b>ise (rule in) = Sn/(1-Sp)</li><li><b>LR-</b> = <b>L</b>arge <b>R</b>eduction (rule out) = (1-Sn)/Sp</li><li><b>LR 1</b> = <b>U</b>seless</li></ul>
+<p><b>Mnemonic: RELIABILITY TYPES</b></p>
+<ul><li><b>I</b>nter-rater (between people)</li><li><b>I</b>ntra-rater (same person)</li><li><b>T</b>est-retest (over time)</li><li><b>I</b>nternal consistency (items)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Diagnostic Accuracy)) Validity Sensitivity/Specificity SnNout / SpPin Fixed for test PPV/NPV Depend on prevalence Bayes theorem Likelihood Ratios LR+ = Sn/(1-Sp) LR- = (1-Sn)/Sp Fagan nomogram ROC/AUC AUC 0.5-1.0 Youden cut-point Reliability Inter-rater (Kappa/ICC) Intra-rater Test-retest Internal consistency (Cronbach α) Bland-Altman LoA Application Screening (High Sn) Diagnostic (High Sp) Sequential (Sn then Sp) Parallel vs Series </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Sensitivity**</td><td>TP/(TP+FN). Rule OUT if high (SnNout).</td></tr><tr><td>**Specificity**</td><td>TN/(TN+FP). Rule IN if high (SpPin).</td></tr><tr><td>**PPV**</td><td>TP/(TP+FP). Increases with prevalence.</td></tr><tr><td>**NPV**</td><td>TN/(TN+FN). Decreases with prevalence.</td></tr><tr><td>**LR+**</td><td>Sn/(1-Sp). >10 strong rule IN.</td></tr><tr><td>**LR-**</td><td>(1-Sn)/Sp. <0.1 strong rule OUT.</td></tr><tr><td>**Pre-test → Post-test**</td><td>Odds × LR. Prob = Odds/(1+Odds).</td></tr><tr><td>**AUC**</td><td>0.5 useless, 0.7-0.8 acceptable, 0.8-0.9 excellent, >0.9 outstanding.</td></tr><tr><td>**Kappa**</td><td><0.2 poor, 0.4-0.6 moderate, 0.6-0.8 good, >0.8 excellent.</td></tr><tr><td>**Screening**</td><td>High Sn. Diagnostic: High Sp.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Sn/Sp/PPV/NPV Calculations</td><td></td><td></td></tr><tr><td>Bayes Theorem / LR</td><td></td><td></td></tr><tr><td>Prevalence Impact on PPV</td><td></td><td></td></tr><tr><td>ROC/AUC Interpretation</td><td></td><td></td></tr><tr><td>Validity vs Reliability</td><td></td><td></td></tr><tr><td>Kappa/ICC</td><td></td><td></td></tr><tr><td>Sequential/Parallel Testing</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Screening (Wilson-Jungner Criteria, Programs, Ethics).md]], [[Study Designs (Descriptive, Analytical, Experimental).md]], [[Measures of Disease Frequency (Incidence, Prevalence, Rates).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Validity Reliability Diagnostic Accuracy Sensitivity Specificity Ppv Npv Roc · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

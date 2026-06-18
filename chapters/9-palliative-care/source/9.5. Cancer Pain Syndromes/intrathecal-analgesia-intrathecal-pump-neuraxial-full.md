@@ -1,0 +1,207 @@
+# Intrathecal analgesia (intrathecal pump, neuraxial)
+
+Related: [[../../../Pain and Palliative Care MOC]], [[../../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> [!info] Davidson alignment: **Chapter 8: Pain and Palliative Care** (24th Edition, Colvin, Fallon) — Cancer Pain Syndromes
+
+## 1. Definition
+
+Intrathecal (IT) analgesia is delivery of analgesics directly into the cerebrospinal fluid (CSF) via implanted pump, for refractory cancer pain (2-4% of cancer patients), severe spasticity, chronic non-malignant pain. Drugs: morphine, hydromorphone, fentanyl, sufentanil, bupivacaine, clonidine, baclofen (spasticity), ziconotide (non-opioid, severe pain). Indications: cancer pain refractory to systemic opioid (dose-limiting side effects, inadequate analgesia). Advantages: targeted, lower doses (e.g., IT morphine 1/300 of oral dose), fewer systemic side effects, can combine drugs. Complications: spinal haematoma (rare, urgent decompression), infection (meningitis, abscess), CSF leak, catheter migration/breakage, granuloma (high-concentration opioid), overdose, withdrawal (pump failure). Requires specialist team (anaesthesia/pain, neurosurgery, palliative).
+
+## 2. Clinical Features and Presentation
+
+Intrathecal (IT) analgesia is delivery of analgesics directly into the cerebrospinal fluid (CSF) via implanted pump and catheter, for refractory cancer pain (2-4% of cancer patients), severe spasticity, chronic non-malignant pain. Drugs: morphine, hydromorphone, fentanyl, sufentanil, bupivacaine, clonidine, baclofen (spasticity), ziconotide (non-opioid, severe pain, N-type calcium channel blocker). Indications: cancer pain refractory to systemic opioid (dose-limiting side effects, inadequate analgesia). Advantages: targeted, lower doses (e.g., IT morphine 1/300 of oral dose), fewer systemic side effects, can combine drugs (opioid + local anaesthetic + clonidine).
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+Trial: temporary IT catheter for 1-2 weeks; if >50% pain relief, proceed to permanent implant. Imaging: MRI spine (rule out lesion, assess epidural/intrathecal space). Coagulation: stop anticoagulation. Infection screen. Pain assessment, function, side effects, drug history, opioid dose.
+
+### Management
+Trial: temporary IT catheter, 1-2 weeks; >50% pain reduction → proceed. Permanent implant: pump (subcutaneous abdominal wall), catheter (intrathecal, often at L1-L2, tip at appropriate level for pain — cervical, thoracic, lumbar based on pain location). Drug selection: morphine (most common, hydrophilic, long CSF residence), hydromorphone (alternative), fentanyl/sufentanil (lipophilic, less rostral spread), baclofen (spasticity), ziconotide (refractory). Combinations: opioid + bupivacaine, opioid + clonidine. Dose titration: start low, titrate slowly. Refill: every 1-3 months (intervals decrease at low concentrations).
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| Indication | Refractory cancer pain (2-4% of cancer patients), severe spasticity, chronic non-malignant pain |
+| Drugs | Morphine, hydromorphone, fentanyl, sufentanil, bupivacaine, clonidine, baclofen, ziconotide |
+| Dose | IT morphine 1/300 of oral dose (e.g., 1mg IT = 300mg PO) |
+| Advantages | Targeted, lower doses, fewer side effects, can combine |
+| Complications | Spinal haematoma (urgent decompression), infection (meningitis, abscess), CSF leak, catheter migration, granuloma, overdose, withdrawal |
+| Granuloma | High-concentration opioid, usually at catheter tip, may cause progressive weakness, MRI |
+| Pump failure | Withdrawal (severe); missed refills, battery depletion, catheter issues |
+| Trial | Temporary IT catheter for 1-2 weeks; if >50% relief, proceed to permanent |
+| Specialist | Anaesthesia/pain, neurosurgery, palliative |
+| Monitoring | Pain, function, side effects, refill, battery |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Epidural | Less potent, larger volume |
+| SCS | Electrical stimulation, neuropathic |
+| CSCI | Continuous SC, simpler |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: Indications? A: Refractory cancer pain (2-4%), severe spasticity, chronic non-malignant pain.
+
+2. 2. Q: IT morphine vs PO morphine dose? A: IT 1/300 of PO dose (1mg IT = 300mg PO).
+
+3. 3. Q: Complications? A: Spinal haematoma, infection, CSF leak, catheter migration, granuloma, overdose, withdrawal.
+
+4. 4. Q: What is granuloma? A: Mass at catheter tip from high-concentration opioid, may cause progressive weakness, MRI.
+
+5. 5. Q: Why use IT? A: Targeted, lower doses, fewer systemic side effects, can combine drugs.
+
+
+## 7. Confusions and Mnemonics
+
+- See clinical features
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **Intrathecal analgesia (intrathecal pump, neuraxial)** |
+|-----------|-----------|
+| **Definition** | Intrathecal (IT) analgesia is delivery of analgesics directly into the cerebrospinal fluid (CSF) via |
+| **Key Features** | Refractory cancer pain (2-4% of cancer patients), severe spasticity, chronic non-malignant pain |
+| **Investigation** | Clinical ± disease-specific tests + monitoring |
+| **Management** | WHO ladder + indication-specific + monitoring |
+| **Red Flags** | Disease-specific complications |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of Intrathecal analgesia (intrathecal pump, neuraxial)?
+   A. Refractory cancer pain (2-4% of cancer patients), severe spasticity, chronic non-malignant pain
+   B. Always self-limiting
+   C. Caused by bacterial infection only
+   D. Restricted to palms and soles only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line treatment?
+   A. WHO ladder + indication-specific
+   B. Surgical only
+   C. IVIG
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Clinical assessment, organ function, history
+   B. Pregnancy test only
+   C. ECG only
+   D. No screening
+   E. Eye exam only
+   **Answer: A**
+4. **Q:** What is the most important complication?
+   A. IT morphine 1/300 of oral dose (e.g., 1mg IT = 300mg PO)
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key management feature?
+   A. Pain, function, side effects, refill, battery
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient; first-line investigation?
+   A. Clinical + disease-specific tools
+   B. Empirical antibiotics
+   C. CT chest
+   D. No investigation
+   E. Surgery only
+   **Answer: A**
+2. **Scenario:** Failed standard management; next step?
+   A. Step up or interventional
+   B. More conservative
+   C. Observation
+   D. Surgery
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication?
+   A. IT morphine 1/300 of oral dose (e.g., 1mg IT = 300mg PO)
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Pre-treatment assessment?
+   A. Clinical assessment, history, organ function
+   B. Pregnancy
+   C. ECG
+   D. None
+   E. Eye exam
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. Pain, function, side effects, refill, battery
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about Intrathecal analgesia (intrathecal pump, neuraxial)?
+  **A:** Refractory cancer pain (2-4% of cancer patients), severe spasticity, chronic non-malignant pain
+- **Q:** Another key point?
+  **A:** Morphine, hydromorphone, fentanyl, sufentanil, bupivacaine, clonidine, baclofen, ziconotide
+- **Q:** Most important complication?
+  **A:** IT morphine 1/300 of oral dose (e.g., 1mg IT = 300mg PO)
+- **Q:** First-line treatment?
+  **A:** Targeted, lower doses, fewer side effects, can combine
+- **Q:** Key management feature?
+  **A:** Spinal haematoma (urgent decompression), infection (meningitis, abscess), CSF leak, catheter migration, granuloma, overdose, withdrawal
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — Indication: Refractory cancer pain (2-4% of cancer patients), severe spasticity, chronic non-malignant pain
+2. **A** — WHO ladder + indication-specific
+3. **A** — Clinical assessment, organ function, history
+4. **A** — IT morphine 1/300 of oral dose (e.g., 1mg IT = 300mg PO)
+5. **A** — Monitoring: Pain, function, side effects, refill, battery
+
+### SBAs
+1. **A** — Clinical + disease-specific tools
+2. **A** — Step up or interventional
+3. **A** — IT morphine 1/300 of oral dose (e.g., 1mg IT = 300mg PO)
+4. **A** — Clinical assessment, history, organ function
+5. **A** — Pain, function, side effects, refill, battery
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../../Cancer Pain Syndromes Hub]]
+**Chapter Hierarchy:** [[../../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../../Pain and Palliative Care MOC]]
+
+---
+
+> [!tip] **Exam focus:** Know definition, key clinical features, WHO analgesic ladder step, and the most important complication. Always address total pain (physical + psychological + social + spiritual).

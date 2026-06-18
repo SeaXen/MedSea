@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Definition And Classification — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Definition And Classification</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define adverse drug reaction (ADR) vs adverse drug event (ADE)</li><li>[ ] Classify ADRs using the <b>Type A-F</b> system</li><li>[ ] Describe the <b>DoTS</b> classification (Dose, Time, Susceptibility)</li><li>[ ] Differentiate <b>side effect</b>, <b>toxicity</b>, <b>idiosyncrasy</b>, <b>allergy</b>, <b>intolerance</b></li><li>[ ] Recognize common Type A (predictable) vs Type B (bizarre) reactions</li><li>[ ] Provide clinical examples for each type</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**ADR** (Adverse Drug Reaction)</td><td>Harmful, unintended reaction to a drug at doses normally used in humans (WHO, 1972)</td></tr><tr><td>**ADE** (Adverse Drug Event)</td><td>Any undesirable experience with a drug; may or may not be causally related</td></tr><tr><td>**Side effect**</td><td>Unintended effect at therapeutic dose; usually predictable, dose-related, not necessarily harmful</td></tr><tr><td>**Toxicity**</td><td>Direct poisonous effect; usually dose-related, may occur with overdose</td></tr><tr><td>**Idiosyncrasy**</td><td>Unpredictable, often genetically determined reaction (e.g., G6PD deficiency → haemolysis)</td></tr><tr><td>**Allergy / Hypersensitivity**</td><td>Immune-mediated (Type I-IV); not dose-related; requires prior sensitisation</td></tr><tr><td>**Intolerance**</td><td>Exaggerated normal pharmacological effect at low dose (e.g., tinnitus with low-dose aspirin)</td></tr><tr><td>**Tolerance**</td><td>Decreased response with continued use (e.g., opioids, benzodiazepines)</td></tr><tr><td>**Tachyphylaxis**</td><td>Rapid tolerance within hours/days (e.g., nitrates, nicotinic agonists)</td></tr><tr><td>**Withdrawal / Rebound**</td><td>Symptoms on sudden discontinuation (e.g., rebound HTN with β-blocker stop)</td></tr><tr><td>**Cumulative toxicity**</td><td>Drug or metabolite accumulates (e.g., aminoglycoside nephro/ototoxicity)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — ADR Classification Flow</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Adverse drug event] --&gt; B{Is the drug&lt;br/&gt;causally related?} B --&gt;|No| C[Adverse event&lt;br/&gt;NOT ADR] B --&gt;|Yes| D[ADR] D --&gt; E{Is it dose-related&lt;br/&gt;and predictable?} E --&gt;|Yes - Augmented| F[Type A&lt;br/&gt;predictable, common, dose-related] E --&gt;|No - Bizarre| G[Type B&lt;br/&gt;unpredictable, rare, immune/idiosyncratic] F --&gt; F1[Examples: bleed on warfarin, hypoglycaemia on insulin] G --&gt; G1[Examples: anaphylaxis to penicillin, SJS to lamotrigine] F --&gt; F2[Type C&lt;br/&gt;Chronic, cumulative] G --&gt; G2[Type D&lt;br/&gt;Delayed onset] F2 --&gt; F2a[e.g., osteoporosis on steroids] G2 --&gt; G2a[e.g., teratogenicity, carcinogenicity] F --&gt; F3[Type E&lt;br/&gt;End-of-use withdrawal] F3 --&gt; F3a[e.g., rebound HTN, opioid withdrawal] F --&gt; F4[Type F&lt;br/&gt;Failure - unexpected] F4 --&gt; F4a[e.g., antibiotic resistance] </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Type A vs Type B ADR (Mnemonic: "**A**dapted" vs "**B**izarre")</div>
+<table class="ctable"><tr><th>Feature</th><th>Type A (Augmented)</th><th>Type B (Bizarre)</th></tr><tr><td>---------</td><td>--------------------</td><td>------------------</td></tr><tr><td>**Predictability**</td><td>Predictable from pharmacology</td><td>Unpredictable</td></tr><tr><td>**Dose relationship**</td><td>Dose-dependent</td><td>Often not dose-related</td></tr><tr><td>**Frequency**</td><td>Common (1-25%)</td><td>Uncommon (<1%)</td></tr><tr><td>**Severity**</td><td>Usually mild-moderate</td><td>Often severe</td></tr><tr><td>**Mechanism**</td><td>Known pharmacology (on-target / off-target)</td><td>Immune / Idiosyncratic / Genetic</td></tr><tr><td>**Management**</td><td>Dose reduction, switch</td><td>Stop drug; avoid forever</td></tr><tr><td>**Examples**</td><td>Bleeding on warfarin, hypoglycaemia on insulin, ACEi cough</td><td>Anaphylaxis to penicillin, SJS, malignant hyperthermia</td></tr><tr><td>**Detection**</td><td>Pre-marketing (Phase III)</td><td>Often post-marketing</td></tr></table>
+<div class="sub-h">4.2 DoTS Classification (Edwards &amp; Aronson, 2000)</div>
+<table class="ctable"><tr><th>Axis</th><th>Sub-types</th><th>Example</th></tr><tr><td>------</td><td>-----------</td><td>---------</td></tr><tr><td>**Dose**</td><td>Toxic (overdose)</td><td>Paracetamol hepatotoxicity</td></tr><tr><td></td><td>Collateral (side effect)</td><td>Antihistamine sedation</td></tr><tr><td></td><td>Hyper-susceptibility</td><td>Low-dose digoxin toxicity in elderly</td></tr><tr><td>**Time**</td><td>Rapid (minutes-hours)</td><td>Anaphylaxis, red man syndrome</td></tr><tr><td></td><td>Early (days-weeks)</td><td>Maculopapular rash</td></tr><tr><td></td><td>Intermediate (weeks-months)</td><td>Stevens-Johnson syndrome</td></tr><tr><td></td><td>Late (months-years)</td><td>Carcinogenicity, osteoporosis</td></tr><tr><td></td><td>Withdrawal</td><td>Rebound, dependence</td></tr><tr><td>**Susceptibility**</td><td>Age</td><td>Tetracycline teeth in <8 yr</td></tr><tr><td></td><td>Sex</td><td>Drug-induced lupus (F > M)</td></tr><tr><td></td><td>Genetics</td><td>G6PD, HLA, CYP polymorphisms</td></tr><tr><td></td><td>Disease</td><td>NSAID-induced renal failure in CKD</td></tr><tr><td></td><td>Behaviour</td><td>Smoking + oral contraceptive → VTE</td></tr></table>
+<div class="sub-h">4.3 Type C, D, E, F Reactions</div>
+<table class="ctable"><tr><th>Type</th><th>Term</th><th>Description</th><th>Example</th></tr><tr><td>------</td><td>------</td><td>-------------</td><td>---------</td></tr><tr><td>**C**</td><td>**C**hronic</td><td>Cumulative dose, time-related</td><td>Osteoporosis from long-term steroids</td></tr><tr><td>**D**</td><td>**D**elayed</td><td>Months-years after exposure</td><td>Carcinogenesis (cyclophosphamide → bladder Ca), teratogenicity (thalidomide)</td></tr><tr><td>**E**</td><td>**E**nd of use</td><td>Withdrawal / rebound</td><td>Rebound HTN on β-blocker stop, opioid withdrawal</td></tr><tr><td>**F**</td><td>**F**ailure</td><td>Unexpected therapeutic failure</td><td>Antibiotic resistance, oral contraceptive failure (enzyme inducer)</td></tr></table>
+<div class="sub-h">4.4 On-Target vs Off-Target ADRs</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Example</th></tr><tr><td>------</td><td>-----------</td><td>---------</td></tr><tr><td>**On-target**</td><td>Exaggerated primary pharmacology</td><td>Hypoglycaemia on sulfonylurea, bleeding on warfarin</td></tr><tr><td>**Off-target**</td><td>Action on unintended receptor/enzyme</td><td>Antihistamine sedation (H1), opioid constipation (μ)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>Most common ADRs overall</td><td>Type A (predictable) — 80% of all ADRs</td></tr><tr><td>Most common cause of ADR-related admission</td><td>GI bleeding (NSAIDs, anticoagulants)</td></tr><tr><td>Most common fatal ADR in UK</td><td>GI haemorrhage (NSAID + anticoagulant)</td></tr><tr><td>Common Type A examples</td><td>Bleeding (warfarin, DOAC), hypoglycaemia (insulin, SU), bradycardia (β-blocker), AKI (ACEi + diuretic)</td></tr><tr><td>Common Type B examples</td><td>Penicillin anaphylaxis, NSAID asthma, HLA-B*15:02 + carbamazepine → SJS</td></tr><tr><td>Allergic vs idiosyncratic</td><td>Allergic = immune (IgE or T-cell); Idiosyncratic = non-immune (often genetic)</td></tr><tr><td>Type E</td><td>Withdrawal reactions (β-blocker, opioid, benzo, SSRI)</td></tr><tr><td>On-target ADR example</td><td>Bleeding on anticoagulant (exaggerated action)</td></tr><tr><td>Off-target ADR example</td><td>Sedation with 1st-gen antihistamine (H1 cross CNS)</td></tr><tr><td>Detection of rare ADRs</td><td>Post-marketing surveillance (Phase IV, yellow card)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define adverse drug reaction (WHO 1972).</b></li></ol>
+<p><i>A response to a drug which is noxious and unintended, and which occurs at doses normally used in humans for the prophylaxis, diagnosis, or therapy of disease.</i></p>
+<ol><li><b>Differentiate Type A and Type B ADR.</b></li></ol>
+<p><i>Type A = Augmented: predictable, dose-related, common, on-target pharmacology. Type B = Bizarre: unpredictable, not dose-related, rare, immune or idiosyncratic.</i></p>
+<ol><li><b>Give 3 examples of Type A ADRs.</b></li></ol>
+<p><i>1) Bleeding on warfarin/DOAC. 2) Hypoglycaemia on insulin/sulfonylurea. 3) Bradycardia on β-blocker. 4) Cough on ACEi. 5) AKI on ACEi + diuretic (esp. in dehydration).</i></p>
+<ol><li><b>Give 3 examples of Type B ADRs.</b></li></ol>
+<p><i>1) Anaphylaxis on penicillin. 2) Stevens-Johnson syndrome on lamotrigine/carbazepine. 3) Malignant hyperthermia on suxamethonium. 4) Aplastic anaemia on chloramphenicol.</i></p>
+<ol><li><b>What is the DoTS classification?</b></li></ol>
+<p><i>Dose (toxic/collateral/hyper-susceptibility), Time (rapid/early/intermediate/late/withdrawal), Susceptibility (age/sex/genetics/disease/behaviour).</i></p>
+<ol><li><b>Differentiate side effect from toxicity.</b></li></ol>
+<p><i>Side effect = unintended effect at therapeutic dose (usually predictable, dose-related, may be tolerable). Toxicity = direct harmful effect, often overdose, may be dose-cumulative.</i></p>
+<ol><li><b>What is an idiosyncratic reaction? Give an example.</b></li></ol>
+<p><i>Unpredictable, often genetically determined reaction unrelated to pharmacology. Example: primaquine → haemolysis in G6PD deficiency; sulfonamides → SJS in HLA-B</i>15:02.*</p>
+<ol><li><b>What is a Type C ADR?</b></li></ol>
+<p><i>Chronic / cumulative — dose and time-related. Example: osteoporosis with long-term corticosteroids; adrenal suppression with prolonged steroids.</i></p>
+<ol><li><b>What is a Type E ADR? Give an example.</b></li></ol>
+<p><i>End-of-use / withdrawal / rebound. Example: rebound HTN with abrupt β-blocker stop; opioid withdrawal; SSRI discontinuation syndrome.</i></p>
+<ol><li><b>Why are Type B ADRs often detected only post-marketing?</b></li></ol>
+<p><i>Type B reactions are rare (&lt;1 in 10,000) and unpredictable, so pre-marketing trials (Phase I-III, typically &lt;5,000 patients) cannot detect them. Post-marketing surveillance (Phase IV) is needed.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>ADR vs ADE</td><td>ADR = causally related; ADE = any untoward event (causality not yet established)</td></tr><tr><td>Side effect vs ADR</td><td>Side effect = predictable, often tolerable (e.g., dry mouth on TCA); ADR = harmful or noxious</td></tr><tr><td>Allergy vs idiosyncrasy</td><td>Allergy = immune (Type I-IV); Idiosyncrasy = non-immune (e.g., G6PD)</td></tr><tr><td>Type A vs Type B</td><td>A = Augmented (predictable); B = Bizarre (unpredictable)</td></tr><tr><td>On-target vs Off-target</td><td>On-target = exaggerated intended effect; Off-target = unintended receptor</td></tr><tr><td>Type C vs Type D</td><td>C = Chronic (cumulative, on-going exposure); D = Delayed (latent, months-years)</td></tr><tr><td>Tolerance vs Tachyphylaxis</td><td>Tolerance = days-weeks (e.g., opioids); Tachyphylaxis = hours (e.g., nitrates)</td></tr><tr><td>Withdrawal vs Rebound</td><td>Rebound = return of original disease, often worse (HTN on β-blocker stop); Withdrawal = new symptoms (opioid)</td></tr><tr><td>DoTS</td><td>D = Dose; T = Time; S = Susceptibility</td></tr><tr><td>Primary vs Secondary pharmacology</td><td>Primary = intended (analgesic effect of morphine); Secondary = side effects</td></tr></table>
+<p><b>Mnemonic — Type A-F: "</b>A<b>ugmented </b>B<b>izarre </b>C<b>hronic </b>D<b>elayed </b>E<b>nd-of-use </b>F<b>ailure"</b> (ABCDEF)</p>
+<p><b>Mnemonic — DoTS: "</b>D<b>ose, </b>T<b>ime, </b>S<b>usceptibility"</b></p>
+<p><b>Mnemonic — Type A vs B: "</b>A<b>ll ADRs are A; B is for Bizarre"</b> (Type A is common; B is rare and bizarre)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((ADR Classification)) Type A Augmented Predictable Dose-related Common On-target Type B Bizarre Unpredictable Immune Idiosyncratic Rare Type C Chronic Cumulative Long-term Type D Delayed Latency Carcinogenesis Teratogenicity Type E End-of-use Withdrawal Rebound Type F Failure Unexpected Resistance DoTS Dose Time Susceptibility Definitions ADR ADE Side effect Toxicity Idiosyncrasy Allergy </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>Type A definition</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Type B definition</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>DoTS axes</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Type C-F</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>ADR vs ADE</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>On vs off target</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>ADR definition</td><td>/5</td></tr><tr><td>Type A vs B</td><td>/5</td></tr><tr><td>DoTS</td><td>/5</td></tr><tr><td>Type C-F</td><td>/5</td></tr><tr><td>Examples</td><td>/5</td></tr><tr><td>Distinctions (side effect vs toxicity, etc.)</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/30**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The WHO 1972 definition of ADR is:</b></li></ol>
+<p>A. Any untoward event B. A noxious, unintended response at doses normally used in humans ✓ C. A side effect of a drug D. A toxic reaction E. A hypersensitivity reaction</p>
+<ol><li><b>Type A ADRs are:</b></li></ol>
+<p>A. Unpredictable B. Not dose-related C. Augmented, predictable, dose-related ✓ D. Always severe E. Immune-mediated</p>
+<ol><li><b>Which is a Type B (bizarre) ADR?</b></li></ol>
+<p>A. Bleeding on warfarin B. Hypoglycaemia on insulin C. Anaphylaxis on penicillin ✓ D. Bradycardia on β-blocker E. Cough on ACEi</p>
+<ol><li><b>The DoTS classification axes are:</b></li></ol>
+<p>A. Diagnosis, Treatment, Susceptibility B. Dose, Time, Susceptibility ✓ C. Drug, Onset, Type D. Dose, Tolerance, Side effect E. Disease, Outcome, Therapy</p>
+<ol><li><b>A 65-year-old with CKD develops AKI after starting ACEi + diuretic. This is:</b></li></ol>
+<p>A. Type A ADR ✓ B. Type B ADR C. Type C ADR D. Type D ADR E. Type E ADR</p>
+<ol><li><b>Osteoporosis after 2 years of prednisolone is:</b></li></ol>
+<p>A. Type A B. Type B C. Type C ✓ D. Type D E. Type E</p>
+<ol><li><b>Rebound hypertension after abrupt β-blocker stop is:</b></li></ol>
+<p>A. Type A B. Type B C. Type C D. Type D E. Type E ✓</p>
+<ol><li><b>Teratogenicity from thalidomide is:</b></li></ol>
+<p>A. Type A B. Type B C. Type C D. Type D ✓ E. Type E</p>
+<ol><li><b>Antibiotic resistance is:</b></li></ol>
+<p>A. Type A B. Type B C. Type C D. Type D E. Type F ✓</p>
+<ol><li><b>Allergic vs idiosyncratic reaction — which is correct?</b></li></ol>
+<p>A. Allergic = immune; Idiosyncratic = non-immune, often genetic ✓ B. Both are immune C. Both are non-immune D. Idiosyncratic requires prior exposure E. Allergic is always dose-related</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A patient on amiodarone develops pulmonary fibrosis after 18 months. The most likely ADR type is:</b></li></ol>
+<ul><li>A) Type A — predictable, dose-related</li><li>B) Type B — idiosyncratic, immune</li><li>C) Type C — chronic, cumulative ✓</li><li>D) Type D — delayed</li><li>E) Type E — withdrawal</li></ul>
+<ol><li><b>A patient on carbamazepine develops SJS. The MOST likely mechanism is:</b></li></ol>
+<ul><li>A) On-target pharmacology</li><li>B) Dose-related toxicity</li><li>C) HLA-mediated immune response (e.g., HLA-B*15:02 in Asians) ✓</li><li>D) Cumulative dose</li><li>E) Withdrawal</li></ul>
+<ol><li><b>A patient on enalapril develops a persistent dry cough. The classification is:</b></li></ol>
+<ul><li>A) Type A — augmented, on-target bradykinin effect ✓</li><li>B) Type B — idiosyncratic</li><li>C) Type C — chronic</li><li>D) Type E — withdrawal</li><li>E) Type F — failure</li></ul>
+<ol><li><b>A 70-year-old on digoxin 62.5 µg has nausea and yellow vision (xanthopsia). The mechanism is:</b></li></ol>
+<ul><li>A) Type B — idiosyncratic</li><li>B) Type A — dose-related, narrow therapeutic index in elderly ✓</li><li>C) Type C — chronic</li><li>D) Type D — delayed</li><li>E) Type E — withdrawal</li></ul>
+<ol><li><b>A patient on opioid analgesia for chronic pain stops suddenly and has piloerection, mydriasis, lacrimation, and diarrhoea. The classification is:</b></li></ol>
+<ul><li>A) Type A</li><li>B) Type B</li><li>C) Type C</li><li>D) Type D</li><li>E) Type E ✓</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>B</b> (WHO 1972: noxious, unintended, at normal doses)</li><li><b>C</b> (Augmented, predictable, dose-related)</li><li><b>C</b> (Anaphylaxis = Type B)</li><li><b>B</b> (DoTS = Dose, Time, Susceptibility)</li><li><b>A</b> (Predictable, dose-related AKI = Type A)</li><li><b>C</b> (Chronic cumulative = Type C)</li><li><b>E</b> (Withdrawal = Type E)</li><li><b>D</b> (Delayed = Type D)</li><li><b>E</b> (Failure = Type F)</li><li><b>A</b> (Allergic = immune; Idiosyncratic = non-immune)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>C</b> — Amiodarone pulmonary fibrosis is Type C (chronic, cumulative).</li><li><b>C</b> — SJS is HLA-associated, e.g., HLA-B<i>15:02 (Han Chinese), HLA-A</i>31:01 (Europeans).</li><li><b>A</b> — ACEi cough is Type A (predictable, dose-related, on-target bradykinin accumulation).</li><li><b>B</b> — Digoxin toxicity is Type A (narrow TI, dose-related, common in elderly with reduced clearance).</li><li><b>E</b> — Opioid withdrawal = Type E (end-of-use).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>ADRs = Type A (Augmented, common, dose-related, predictable, on-target) vs Type B (Bizarre, rare, unpredictable, immune/idiosyncratic).</b> DoTS adds Dose, Time, Susceptibility. Type C = Chronic; D = Delayed; E = End-of-use; F = Failure. ~80% of ADRs are Type A. Always consider ADR in new clinical presentation, especially GI bleed, AKI, rash, bradycardia, hypoglycaemia.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../ADRs|ADRs]]</li><li><b>Sibling Topic-Groups</b>: [[Causality assessment]], [[Reporting and pharmacovigilance]], [[Common ADR patterns by system]]</li><li><b>Heading Hub</b>: [[ADRs]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Drug Interactions]], [[Polypharmacy and Deprescribing]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Definition And Classification · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

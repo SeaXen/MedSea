@@ -1,0 +1,495 @@
+# Fats & Lipids- Essential Fatty Acids & Lipoprotein Metabolism
+
+**Related:** [[Nutritional Factors in Disease MOC]], [[Davidson Chapter 22 - Nutritional Factors in Disease Hierarchy]], [[../00_Index/Medicine MOC|Medicine MOC]]
+
+> [!important]
+> **Fats provide 9 kcal/g (37.8 kJ/g) — highest energy density; essential fatty acids (linoleic/α-linolenic) are required for membrane fluidity, eicosanoid synthesis, lipoprotein assembly.**
+
+## 1. Learning Objectives
+- [ ] Classify fatty acids by saturation/chain length and describe essential fatty acid deficiency
+- [ ] Explain lipoprotein structure, classification, and metabolism (exogenous, endogenous, reverse cholesterol transport)
+- [ ] Interpret lipid profile components: TC, TG, HDL-C, LDL-C, non-HDL-C, VLDL-C
+- [ ] Apply Friedewald equation and understand its limitations (TG >4.5 mmol/L)
+- [ ] Describe Fredrickson classification of hyperlipidaemias (Types I–V)
+- [ ] Outline dietary management of dyslipidaemias (NCEP Step I/II, Mediterranean diet, portfolio diet)
+- [ ] List indications/contraindications for statins, ezetimibe, PCSK9 inhibitors, fibrates, omega-3, niacin
+
+## 2. Definitions / Key Concepts
+
+| Term | Definition |
+|------|------------|
+| **Fatty Acid (FA)** | Carboxylic acid with long hydrocarbon chain; saturated (no double bonds), MUFA (1), PUFA (≥2) |
+| **Essential FA (EFA)** | Linoleic acid (LA, 18:2 ω-6) & α-linolenic acid (ALA, 18:3 ω-3) — must be dietary; elongation/desaturation to AA, EPA, DHA |
+| **EFA Deficiency** | Triene/tetraene ratio >0.2 (Mead acid 20:3 ω-9 replaces AA); scaly dermatitis, alopecia, thrombocytopenia, growth failure, impaired wound healing |
+| **Lipoprotein** | Spherical particle: core (TG + CE) + surface (PL + FC + apoproteins); transport hydrophobic lipids in plasma |
+| **Apolipoprotein** | Structural/functional proteins: apoB-48 (chylomicron), apoB-100 (VLDL, IDL, LDL), apoA-I (HDL), apoC-II (LPL activator), apoE (receptor ligand) |
+| **Chylomicron** | Dietary TG transport (apoB-48); exogenous pathway; nasojejunal assembly → lymph → thoracic duct → systemic circulation |
+| **VLDL** | Hepatic TG export (apoB-100); endogenous pathway; VLDL → IDL → LDL via LPL/hepatic lipase |
+| **HDL** | Reverse cholesterol transport (apoA-I); nascent disc (liver/intestine) → mature spherical; accepts FC via ABCA1; esterified by LCAT; CETP exchanges CE↔TG; hepatic uptake via SR-B1 |
+| **LCAT** | Lecithin–cholesterol acyltransferase; esterifies FC in HDL; deficiency → corneal opacity, anaemia, proteinuria (fish-eye disease) |
+| **CETP** | Cholesteryl ester transfer protein; moves CE from HDL → VLDL/LDL in exchange for TG; inhibitor (anacetrapib) raises HDL |
+| **Friedewald Equation** | LDL-C = TC – HDL-C – TG/2.2 (mg/dL) or LDL-C = TC – HDL-C – TG/5 (mmol/L); invalid if TG >4.5 mmol/L (400 mg/dL); use direct LDL or Martin/Hopkins |
+| **Non-HDL-C** | TC – HDL-C = VLDL-C + IDL-C + LDL-C; better predictor when TG elevated; target <3.4 mmol/L (130 mg/dL) if TC <5.0 |
+| **Remnant Cholesterol** | Cholesterol in TG-rich lipoproteins (chylomicron remnants, IDL); = TC – HDL-C – LDL-C (if TG <4.5); atherogenic |
+| **Fredrickson Types** | I (chylomicronaemia, LPL/apoC-II def), IIa (↑LDL, FH), IIb (↑LDL+VLDL, combined), III (dysbetalipoproteinaemia, ↑IDL, apoE2/2), IV (↑VLDL, TG), V (↑chylo+VLDL) |
+| **Familial Hypercholesterolaemia (FH)** | Autosomal dominant LDL receptor defect; LDL-C >4.9 mmol/L; tendon xanthomata, corneal arcus <45y, premature CVD; heterozygous 1:250, homozygous 1:1,000,000 |
+| **Familial Combined Hyperlipidaemia** | Commonest genetic dyslipidaemia (1:100); ↑apoB, variable LDL/TG pattern; premature CVD; responds to statin + fibrate |
+| **Statins** | HMG-CoA reductase inhibitors; ↓hepatic cholesterol → ↑LDL-R → ↓LDL-C 30–55%; pleiotropic: ↓inflammation, stabilise plaque, ↑NO |
+| **PCSK9 Inhibitors** | Monoclonal antibodies (evolocumab, alirocumab) or siRNA (inclisiran); prevent LDL-R degradation → ↓LDL-C 50–60% additional |
+| **Omega-3 FAs** | EPA/DHA 2–4 g/day ↓TG 20–30% via ↓VLDL synthesis + ↑LPL; CVD benefit (REDUCE-IT icosapent ethyl); ↑bleeding risk with anticoagulants |
+
+## 3. Core Content
+
+### Section 1: Fatty Acid Classification & Chemistry
+**Saturation:** SFA (palmitic 16:0, stearic 18:0) — solid at RT, ↑LDL-C; MUFA (oleic 18:1 ω-9) — liquid, neutral/↓LDL-C, olive oil; PUFA: ω-6 (LA 18:2 → AA 20:4) pro-inflammatory eicosanoids (PG2, TXA2, LTB4); ω-3 (ALA 18:3 → EPA 20:5 → DHA 22:6) anti-inflammatory (PG3, TXA3, LTB5, resolvins/protectins).
+**Essential:** LA (ω-6) 4–10% energy; ALA (ω-3) 0.6–1.2% energy; ω-6:ω-3 ratio ideal 4:1 (Western 15–20:1); elongation/desaturation (Δ6-desaturase rate-limiting, shared, competitive).
+**Trans fats:** Industrial (partial hydrogenation) ↑LDL-C, ↓HDL-C, ↑TG, ↑CVD; ruminant (vaccenic → CLA) less harmful; WHO <1% energy (<2.2 g/day).
+**Short/medium-chain:** MCT (caprylic 8:0, capric 10:0) — portal absorption, no chylomicron, rapid oxidation; ketogenic, malabsorption syndromes (CF, short bowel).
+
+### Section 2: Lipoprotein Metabolism — Exogenous Pathway
+**Chylomicron assembly:** Intestinal ER → MTP lipidates apoB-48 → TG/CE core, PL/FC/apoB-48/apoA/apoC surface → secreted basolateral → lymph (chyle) → thoracic duct → subclavian vein → systemic.
+**LPL (lipoprotein lipase):** Capillary endothelium (adipose, muscle, heart); activated by apoC-II, inhibited by apoC-III; hydrolyses TG → FA + MAG → tissue uptake (adipose storage, muscle oxidation); hepatic uptake of remnants via apoE-LDLR/LRP1.
+**Chylomicron remnant:** ApoB-48 + apoE (ligand); half-life 10–20 min; hepatic uptake; remnant cholesterol atherogenic if delayed clearance.
+
+### Section 3: Lipoprotein Metabolism — Endogenous Pathway
+**VLDL assembly:** Hepatic ER → MTP lipidates apoB-100 → VLDL1 (large, TG-rich) or VLDL2 (smaller); secretes into plasma.
+**VLDL lipolysis:** LPL + apoC-II → IDL (VLDL remnant); IDL fate: (1) hepatic uptake via apoE-LDLR; (2) further lipolysis by hepatic lipase → LDL (apoB-100 only); LDL circulates 2–3 days, cleared by hepatic LDLR (70%) + extrahepatic.
+**LDL receptor pathway:** Hepatic LDL-R binds apoB-100/E → clathrin-coated pit → endosome → lysosome (CE hydrolysis → FC) → (i) ↓HMG-CoA reductase, (ii) ↓LDL-R synthesis, (iii) ↑ACAT (FC → CE storage). LDL-R recycling requires PCSK9 degradation; PCSK9 binds LDL-R → lysosomal degradation.
+
+### Section 4: Reverse Cholesterol Transport (HDL)
+**Nascent HDL:** ApoA-I (liver/intestine) + PL/FC (ABCA1) → discoidal pre-β HDL.
+**Maturation:** LCAT (on apoA-I) esterifies FC → CE core → spherical α-HDL (HDL2, HDL3).
+**Cholesterol efflux:** ABCA1 (lipid-poor apoA-I), ABCG1 (mature HDL), SR-B1 (selective uptake).
+**CETP:** Transfers CE from HDL → VLDL/LDL (for TG) → LDL-C ↑, HDL-C ↓; hepatic lipase hydrolyses HDL TG → small HDL.
+**Hepatic delivery:** (1) SR-B1 selective CE uptake (no apoA-I uptake); (2) CETP → VLDL/LDL → LDLR; (3) direct HDL endocytosis.
+
+### Section 5: Lipid Profile Interpretation
+**Measured:** Total cholesterol (TC), Triglycerides (TG), HDL-C (direct assay).
+**Calculated:** LDL-C (Friedewald: TC – HDL-C – TG/5 [mmol/L]; invalid TG >4.5), VLDL-C (TG/5 or TG/2.2 [mg/dL]), Non-HDL-C (TC – HDL-C), Remnant-C (Non-HDL-C – LDL-C).
+**Targets (ESC/EAS 2019):** Very high risk (established CVD) LDL-C <1.4 mmol/L (55 mg/dL) & ≥50% ↓; high risk LDL-C <1.8 (70); moderate <2.6 (100); non-HDL-C <2.2 (85) very high, <2.6 (100) high.
+**TG categories:** Normal <1.7; Borderline 1.7–2.2; High 2.3–5.6; Very high ≥5.6 (pancreatitis risk >11.3 mmol/L).
+**ApoB/apoA-I ratio:** Better predictor than LDL-C/HDL-C; apoB = total atherogenic particles; target apoB <0.65 g/L (very high risk).
+
+### Section 6: Dyslipidaemia Classification (Fredrickson/WHO)
+| Type | Elevated | Lipoprotein | Primary Defect | Triglycerides | Cholesterol |
+|------|----------|-------------|----------------|---------------|-------------|
+| I | Chylomicrons | LPL/apoC-II def | ↓LPL, ↓apoC-II | Very high (>20) | Normal/mild ↑ |
+| IIa | LDL-C | FH (LDLR, apoB, PCSK9) | ↓LDLR clearance | Normal | High |
+| IIb | LDL-C + VLDL | Combined hyperlipidaemia | ↑apoB synthesis | High | High |
+| III | IDL (β-VLDL) | Dysbetalipoproteinaemia | ApoE2/2 homozygosity | High | High (TG ≈ Chol) |
+| IV | VLDL | Hypertriglyceridaemia | ↑hepatic TG synthesis | High | Normal/mild ↑ |
+| V | Chylo + VLDL | Mixed | Multiple | Very high | High |
+
+### Section 7: Familial Hypercholesterolaemia (FH)
+**Genetics:** AD (LDLR 85%, APOB 5–10%, PCSK9 <1%); AR (LDLRAP1 rare).
+**Clinical (Simon Broome / Dutch Lipid Clinic):** Tendon xanthomata (Achilles, extensor), corneal arcus <45y, premature CVD (M <55, F <60), family history, LDL-C >4.9 (or >3.3 with FH genetic).
+**Homozygous FH:** LDL-C >13 mmol/L, cutaneous xanthomata in childhood, aortic stenosis, CAD by teens; severe, needs LDL apheresis + PCSK9i + lomitapide (MTP inhibitor) + evinacumab (ANGPTL3 inhibitor).
+**Cascade screening:** Genetic test index case → test 1st-degree relatives (50% chance); statin from childhood (age 8–10); target LDL-C <2.6 or ≥50% ↓.
+
+### Section 8: Drug Therapy for Dyslipidaemia
+| Drug Class | Mechanism | LDL-C ↓ | TG ↓ | HDL-C ↑ | Key Adverse Effects |
+|------------|-----------|---------|------|---------|---------------------|
+| **Statins** | HMG-CoA reductase inhibition | 30–55% | 10–30% | 5–10% | Myopathy (CK >10×ULN), ↑ALT/AST, new-onset DM (high intensity), cognitive |
+| **Ezetimibe** | NPC1L1 inhibitor (gut cholesterol absorption) | 15–20% | – | – | GI, rare hepatotoxicity; add-on to statin |
+| **PCSK9i** (mAb) | Prevent LDL-R degradation | 50–60% | 20–30% | 10–15% | Injection site, rare neurocognitive, hypersensitivity |
+| Inclisiran (siRNA) | PCSK9 synthesis inhibition | 50% | 20–30% | 10% | Injection site, Q6M dosing |
+| **Fibrates** (fenofibrate) | PPAR-α agonism → ↑LPL, ↓apoC-III | 10–15% | 30–50% | 10–20% | Myopathy (with statin), cholelithiasis, ↑creatinine, rhabdo |
+| **Omega-3** (EPA/DHA) | ↓VLDL synthesis, ↑LPL | – | 20–30% (2–4 g) | – | Bleeding, AF (RED), GI |
+| **Nicotinic Acid** | ↓hepatic VLDL, ↑HDL | 10–20% | 20–40% | 15–35% | Flushing (PGD2), hepatotoxicity, ↑glucose/uric acid, GI |
+| **Bile Acid Sequestrants** (cholestyramine) | Bind bile acids → ↑hepatic LDL-R | 15–20% | ↑↑ (contraind TG>5.6) | 3–5% | GI, ↓fat-soluble vitamin absorption, drug binding |
+| **Bempedoic Acid** | ACLY inhibitor (liver-specific) | 20–30% | – | – | ↑uric acid, tendon rupture, GI |
+| **Lomitapide** | MTP inhibitor (homozygous FH only) | 40–50% | – | – | Hepatic steatosis, GI, teratogenic (REMS) |
+| **Evinacumab** | ANGPTL3 inhibitor (homozygous FH) | 45–50% | 50% | – | Infusion reaction, nasopharyngitis |
+
+### Section 9: Dietary Management of Dyslipidaemia
+**NCEP Step I:** SFA <7%, cholesterol <200 mg/day, PUFA ≤10%, MUFA ≤20%, carb 50–60%, fibre 20–30 g/day, plant sterols 2 g/day.
+**Mediterranean Diet:** EVOO (MUFA), nuts, fish (ω-3), legumes, whole grains, fruits/veg, moderate wine; PREDIMED: ↓CVD 30%.
+**Portfolio Diet:** Combines 4 cholesterol-lowering components: (1) plant sterols (2 g), (2) viscous fibre (psyllium/β-glucan 10 g), (3) soy protein (25 g), (4) nuts (45 g almonds) — ↓LDL-C 30% (additive to statin).
+**Specific:** TG <2.3: Mediterranean + ω-3 + weight loss + ↓refined carb/alcohol; TG >5.6: very low fat (<20%), MCT oil, fibrate/omega-3, avoid alcohol/sugar; FH: statin + ezetimibe ± PCSK9i ± lipoprotein apheresis.
+
+## 4. Clinical Correlation
+
+| Scenario | Action | Notes |
+|----------|--------|-------|
+| 45M, LDL-C 4.8, tendon xanthoma, father MI at 48 | Genetic test FH → cascade screen relatives; high-intensity statin + ezetimibe ± PCSK9i; target LDL-C <1.4 | Simon Broome definite FH; 50% relatives affected |
+| 35F, TG 18.2, abdominal pain, ETOH binge | NPO, IV fluids, insulin drip, fibrate/omega-3 after resolution; avoid alcohol/refined sugar | TG >11.3 = pancreatitis risk; LPL deficiency screen |
+| 60M post-STEMI, LDL-C 2.8 on atorvastatin 40 | Add ezetimibe → if LDL-C >1.8 add PCSK9i; target <1.4; dual antiplatelet + ACEi + β-blocker | ESC very high risk target |
+| 50M, TG 6.8, HDL 0.8, BMI 32, T2DM | Lifestyle (↓carbs, ↑ω-3, weight loss) + fibrate or high-dose EPA; statin for CVD risk | Diabetic dyslipidaemia: high TG, low HDL, sdLDL |
+| 22M, corneal arcus, LDL-C 7.2, FH genetic negative | Polygenic hypercholesterolaemia (SNP score) or secondary (hypothyroid, nephrotic) | Check TSH, U&Es, LFT, glucose, UPCR |
+| Pregnant 32wk, known FH on atorvastatin | Stop statin + ezetimibe (teratogenic); bile acid sequestrant only if LDL-C very high; restart postpartum | Statins Category X; PCSK9i/siRNA no data |
+| 65F, CKD stage 4, LDL-C 3.5, TG 1.2 | Atorvastatin 20 mg (dose adjust); avoid fibrate (↑Cr); ezetimibe safe; PCSK9i safe | CKD = high/very high risk; LDL goal <1.8 or <1.4 |
+| 40M, TG 5.2, LDL-C not calculable (TG >4.5) | Direct LDL-C or Martin equation; non-HDL-C target <3.4; fibrate ± omega-3 | Friedewald invalid; apoB/non-HDL-C preferred |
+
+## 5. High-Yield FCPS/MRCP Points
+
+> [!important]
+> - **Must know:** EFA deficiency (triene:tetraene >0.2), lipoprotein pathways (exogenous/endogenous/RCT), Friedewald limitations (TG >4.5), FH diagnosis + cascade screening, statin intensity + adverse effects (myopathy, DM), Fredrickson types I–V, non-HDL-C target, PCSK9i mechanism
+> - **Common viva:** Difference LDL-C vs non-HDL-C vs apoB; when Friedewald fails; homozygous FH management; statin myopathy CK threshold; omega-3 dose for TG lowering
+> - **Exam trap:** Using Friedewald with TG 6.0 → underestimates LDL; treating non-HDL-C/remnant-C as LDL-C; fibrate + statin = rhabdo risk (use fenofibrate safest); ezetimibe monotherapy weak; bile acid sequestrants ↑TG
+
+## 6. Common Confusions / Exam Traps
+
+| Trap | Correction |
+|------|------------|
+| Friedewald works for all TG | **Invalid if TG >4.5 mmol/L** — use direct LDL or Martin/Hopkins |
+| LDL-C = non-HDL-C | non-HDL-C = VLDL + IDL + LDL; better when TG high |
+| All statins same myopathy risk | Rosuvastatin/atorvastatin > simvastatin; dose-dependent; pravastatin lowest (hydrophilic) |
+| Fibrate first-line for high TG | **Lifestyle + omega-3 first** (fibrate if TG >5.6 or pancreatitis risk); fenofibrate preferred with statin |
+| HDL-C always protective | **CEC (cholesterol efflux capacity) matters more**; CETP inhibitors ↑HDL but no CVD benefit (except anacetrapib modest) |
+| ApoB = LDL-C | ApoB = total atherogenic particles (VLDL+IDL+LDL); discordance in DM/obesity (↑apoB for LDL-C) |
+| Plant sterols = statin substitute | **Adjunct only** (2 g/day ↓LDL-C 10%); sitosterolaemia = ABCG5/G8 defect → xanthoma |
+| PCSK9i only for FH | Indicated **very high risk CVD not at goal on max tolerated statin ± ezetimibe** |
+| Coconut oil healthy | **High SFA (92%) → ↑LDL-C**; olive oil (MUFA) evidence-based |
+| Trans fat = SFA | **Trans fat ↑LDL + ↓HDL** (double harm); ruminant trans (vaccenic) less harmful |
+
+## 7. Mnemonics
+
+- **EFA deficiency:** "Triene for Mead" — Triene:Tetraene >0.2 = Mead acid (20:3 ω-9) replaces AA
+- **Lipoprotein density:** **C-H-V-I-L-D** = Chylomicron > HDL > VLDL > IDL > LDL (size order: chylo largest, HDL smallest)
+- **Apo proteins:** **A-B-C-E** = ApoA (HDL), ApoB (LDL/VLDL/chylo), ApoC (LPL activator C-II, inhibitor C-III), ApoE (remnant receptor ligand)
+- **Fredrickson I–V:** **1 Chylo, 2 LDL, 3 IDL, 4 VLDL, 5 Both** (Type IIa=LDL, IIb=LDL+VLDL, III=IDL, IV=VLDL, V=Chylo+VLDL)
+- **FH clinical:** **XAN** = Xanthoma (tendon), Arcus <45, Nepotism (family FH)
+- **Statin myopathy:** **CK >10×ULN** → stop; **CK 5–10×** → reduce dose; **CK <5× + symptoms** → switch
+- **TG pancreatitis risk:** **TG >11.3** (1000 mg/dL) → acute pancreatitis emergency
+- **Omega-3 EPA/DHA:** **REDUCE-IT** = 2 g BID icosapent ethyl ↓CVD events; **STRENGTH** = EPA/DHA combo no benefit
+- **Non-HDL-C:** **TC minus HDL** = remnant-C + LDL-C; target = LDL goal + 0.8 mmol/L
+- **Statin pleiotropy:** **PLEA** = Plaque stabilisation, Lipid lowering, Endothelial function ↑, Anti-inflammatory
+
+## 8. Mind Map
+
+```mermaid
+mindmap
+  root((Fats & Lipids))
+    Fatty Acids
+      Saturated
+        Palmitic 16:0
+        Stearic 18:0
+        ↑LDL-C
+      MUFA
+        Oleic 18:1 ω-9
+        Olive oil
+        Neutral/↓LDL
+      PUFA ω-6
+        LA 18:2 → AA 20:4
+        Pro-inflammatory eicosanoids
+      PUFA ω-3
+        ALA 18:3 → EPA 20:5 → DHA 22:6
+        Anti-inflammatory/resolvins
+      Essential
+        Linoleic (ω-6)
+        α-Linolenic (ω-3)
+        Deficiency: triene/tetraene >0.2
+      Trans
+        Industrial ↑LDL ↓HDL
+        Ruminant (CLA) less harmful
+    Lipoproteins
+      Exogenous Pathway
+        Chylomicron (apoB-48)
+        LPL (apoC-II)
+        Remnants (apoE → LDLR/LRP1)
+      Endogenous Pathway
+        VLDL (apoB-100)
+        VLDL → IDL → LDL
+        LDLR clearance (PCSK9 degrades)
+      Reverse Cholesterol Transport
+        ApoA-I + ABCA1 → discoidal HDL
+        LCAT → CE core → spherical HDL
+        CETP: HDL CE ↔ VLDL TG
+        SR-B1 hepatic selective uptake
+    Lipid Profile
+      Measured: TC, TG, HDL-C
+      Calculated: LDL-C (Friedewald), Non-HDL-C, VLDL-C, Remnant-C
+      Targets: Very high risk LDL <1.4, Non-HDL <2.2
+      TG: Normal<1.7, High 2.3–5.6, >11.3 pancreatitis
+      ApoB/apoA-I ratio better predictor
+    Dyslipidaemia
+      Fredrickson I–V
+        I: LPL/apoC-II def (chylo)
+        IIa: FH (LDLR/apoB/PCSK9)
+        IIb: Combined (↑apoB)
+        III: ApoE2/2 (IDL/β-VLDL)
+        IV: HyperTG (VLDL)
+        V: Mixed chylo+VLDL
+      Familial Hypercholesterolaemia
+        AD: LDLR 85%, APOB 10%, PCSK9i <1%
+        Simon Broome / Dutch criteria
+        Cascade screening
+      Diabetic dyslipidaemia
+        High TG, low HDL, sdLDL
+    Drug Therapy
+      Statins (HMG-CoA reductase)
+        Myopathy CK>10×, new DM
+      Ezetimibe (NPC1L1 gut)
+      PCSK9i (mAb/siRNA)
+      Fibrates (PPAR-α) -> TG
+      Omega-3 (EPA/DHA) -> TG
+      Niacin -> HDL (flushing)
+      Bile acid sequestrants
+      Bempedoic acid (ACLY)
+      Lomitapide/Evinacumab (HoFH)
+    Diet
+      NCEP Step I (<7% SFA)
+      Mediterranean (EVOO, nuts, fish)
+      Portfolio (sterols+fibre+soy+nuts)
+      Plant sterols 2g/day
+      Red yeast rice (lovastatin)
+```
+
+## 9. -Hour Recall Prompts
+1. Draw lipoprotein pathways: exogenous (chylomicron→remnant), endogenous (VLDL→IDL→LDL), RCT (ABCA1→LCAT→CETP→SR-B1)
+2. List 5 Fredrickson types with primary lipid abnormality and genetic defect
+3. State Friedewald formula and when it fails (TG >4.5)
+4. Compare LDL-C vs non-HDL-C vs apoB — which to use in hyperTG?
+5. FH diagnostic criteria (Simon Broome) + cascade screening steps
+6. Statin myopathy: CK thresholds for stop/reduce/switch
+7. Drug: mechanism + LDL-C ↓% + key AE for statin/ezetimibe/PCSK9i/fibrate/omega-3
+8. Dietary pattern for CVD prevention: Mediterranean vs Portfolio vs NCEP
+
+## 10. -Day / 15-Day / 30-Day Revision Tracker
+
+| Day | Date | Recall Quality (1-5) | Time Spent | Notes |
+|-----|------|---------------------|------------|-------|
+| 1   |      |                     |            |       |
+| 7   |      |                     |            |       |
+| 15  |      |                     |            |       |
+| 30  |      |                     |            |       |
+
+---
+
+## 11. Must Know / Should Know / Nice to Know
+
+| Priority | Content |
+|----------|---------|
+| **Must Know 🔴** | EFA deficiency (triene:tetraene >0.2); lipoprotein pathways (exogenous/endogenous/RCT); Friedewald + limitations; FH diagnosis & cascade screening; statin intensity & AEs (myopathy, DM); Fredrickson classification I–V; non-HDL-C target |
+| **Should Know 🟡** | ApoB/apoA-I ratio; PCSK9i mechanism & indications; omega-3 EPA/DHA dose for TG; diabetic dyslipidaemia pattern; dietary patterns (Mediterranean/Portfolio); remnant cholesterol |
+| **Nice to Know 🟢** | CETP inhibitors history; lomitapide/evinacumab for HoFH; sitosterolaemia; red yeast rice; MCT oil in chylous effusion; bile acid sequestrant drug interactions |
+
+## 12. My Weak Points
+- [ ] PCSK9 inhibitor clinical trial data (FOURIER/ODYSSEY)
+- [ ] REDUCE-IT vs STRENGTH trial design differences
+- [ ] Martin/Hopkins LDL-C calculation formula
+
+## 13. Self-Test Scorecard
+
+| Domain | Score /10 | Target /10 |
+|--------|-----------|------------|
+| Understanding |    | 8+ |
+| Recall |    | 8+ |
+| MCQ Performance |    | 8+ |
+| SBA Performance |    | 8+ |
+| Viva Confidence |    | 8+ |
+| **TOTAL** |    | **40+/50** |
+
+## 14. Exam Answer Modes
+
+### Long Answer / Essay (20 min)
+**Topic:** "Classification, pathophysiology, and management of dyslipidaemias"
+- Define lipoproteins, apoproteins, pathways (exogenous/endogenous/RCT)
+- Fredrickson types I–V with genetic defects
+- Lipid profile interpretation, Friedewald limits
+- FH: genetics, diagnosis, cascade screening, management
+- Drug classes: mechanism, LDL-C/TG/HDL effect, AEs, position in therapy
+- Dietary approaches + targets by risk category
+
+### Short Note (7 min)
+**Topic:** "Familial hypercholesterolaemia"
+- AD: LDLR (85%), APOB, PCSK9; heterozygous 1:250
+- Simon Broome: definite (xanthoma/arcus<45 + LDL-C>4.9 + family/genetic) / probable
+- Cascade genetic screening → statin from age 8–10
+- Target LDL-C <1.4 or ≥50% ↓; add ezetimibe/PCSK9i if not at goal
+- Homozygous: LDL-C >13, childhood CAD, apheresis + lomitapide + evinacumab
+
+### Viva Answer (3 min)
+**Q:** "A 50-year-old man has TG 6.8 mmol/L, TC 8.2, HDL 0.7. Calculate his LDL-C." 
+"A: **Cannot use Friedewald** — TG >4.5. Options: (1) Direct LDL assay, (2) Martin/Hopkins equation, (3) Use non-HDL-C = 8.2 – 0.7 = 7.5 mmol/L (target <3.4), (4) Remnant-C = non-HDL-C – LDL-C (if direct LDL available). Prioritise TG-lowering: lifestyle (↓alcohol/sugar, weight loss) + fibrate or high-dose EPA."
+
+### Ward Case Discussion (5 min)
+**Case:** 42M post-STEMI, LDL-C 2.6 on atorvastatin 40 mg, eGFR 45.
+"Add ezetimibe 10 mg → recheck 4–6 weeks. If LDL-C >1.4, add PCSK9i (evolocumab 140 mg Q2W or inclisiran 284 mg Q6M). Avoid high-dose fibrate (↑Cr risk); fenofibrate 145 mg if TG >2.3 needed. CKD = very high risk; LDL goal <1.4. Monitor CK, LFTs, renal function."
+
+### Last-Night-Before-Exam Sheet (1 min)
+- **EFA def:** triene:tetraene >0.2 (Mead acid 20:3 ω-9)
+- **Pathways:** Exogenous (chylo B-48 → LPL → remnant B-48/E), Endogenous (VLDL B-100 → IDL → LDL B-100 → LDLR), RCT (A-I + ABCA1 → LCAT → CETP → SR-B1)
+- **Friedewald:** LDL = TC – HDL – TG/5; fails TG >4.5
+- **FH:** LDLR/APOB/PCSK9; Simon Broome; cascade screen; statin from childhood
+- **Statin:** CK >10×ULN stop; rosuvastatin > atorvastatin > simvastatin potency
+- **TG pancreatitis:** >11.3 mmol/L; fibrate/omega-3 + lifestyle
+- **Targets:** Very high risk LDL <1.4, non-HDL <2.2; apoB <0.65
+
+## 15. MCQs (10)
+
+1. **Which fatty acid is essential and ω-6?**
+   A. Oleic acid (18:1 ω-9)  
+   B. **Linoleic acid (18:2 ω-6)**  
+   C. α-Linolenic acid (18:3 ω-3)  
+   D. Palmitic acid (16:0)  
+   E. Arachidonic acid (20:4 ω-6)  
+
+2. **Biochemical hallmark of essential fatty acid deficiency?**
+   A. ↓Triene:tetraene ratio  
+   B. **↑Triene:tetraene ratio >0.2 (Mead acid 20:3 ω-9)**  
+   C. ↑EPA:DHA ratio  
+   D. ↓Arachidonic acid only  
+   E. ↑Oleic acid  
+
+3. **Friedewald equation is INVALID when triglycerides exceed:**
+   A. 2.3 mmol/L  
+   B. 3.5 mmol/L  
+   C. **4.5 mmol/L**  
+   D. 5.6 mmol/L  
+   E. 11.3 mmol/L  
+
+4. **Which apolipoprotein is the structural protein of LDL?**
+   A. ApoA-I  
+   B. **ApoB-100**  
+   C. ApoC-II  
+   D. ApoE  
+   E. ApoB-48  
+
+5. **Type III dysbetalipoproteinaemia is associated with:**
+   A. ApoE2/E2 homozygosity  
+   B. ApoE4/E4  
+   C. LPL deficiency  
+   D. ApoC-II deficiency  
+   E. LDL receptor mutation  
+
+6. **A 45-year-old man has tendon xanthomata, LDL-C 5.8 mmol/L, and father had MI at 50. Most likely genetic defect?**
+   A. ApoB-100 mutation (FH type B)  
+   B. **LDL receptor mutation (FH type A)**  
+   C. PCSK9 gain-of-function  
+   D. ApoE2 homozygosity  
+   E. LPL mutation  
+
+7. **Target LDL-C for very high-risk patient (post-ACS) per ESC/EAS 2019:**
+   A. <1.8 mmol/L  
+   B. **<1.4 mmol/L**  
+   C. <2.6 mmol/L  
+   D. <3.0 mmol/L  
+   E. <2.0 mmol/L  
+
+8. **Which drug combination carries HIGHEST risk of rhabdomyolysis?**
+   A. Atorvastatin + ezetimibe  
+   B. Rosuvastatin + fenofibrate  
+   C. **Simvastatin + gemfibrozil**  
+   D. Pravastatin + fenofibrate  
+   E. Atorvastatin + omega-3  
+
+9. **Non-HDL cholesterol equals:**
+   A. LDL-C + HDL-C  
+   B. **TC – HDL-C**  
+   C. TC – LDL-C  
+   D. TG/5 + LDL-C  
+   E. VLDL-C – HDL-C  
+
+10. **High-dose icosapent ethyl (2 g BID) reduced cardiovascular events in which trial?**
+    A. STRENGTH  
+    B. **REDUCE-IT**  
+    C. JELIS  
+    D. GISSI-Prevenzione  
+    E. OMEMI  
+
+## 16. SBA Questions (5)
+
+1. **A 52-year-old man presents with eruptive xanthomata on his back and buttocks. Triglycerides 18.2 mmol/L, cholesterol 12.4 mmol/L. He consumes 60 g alcohol daily. Most appropriate immediate management?**
+   A. Start fenofibrate 145 mg daily  
+   B. Start atorvastatin 40 mg daily  
+   C. **NPO, IV fluid resuscitation, insulin infusion, alcohol cessation**  
+   D. Start omega-3 2 g BID  
+   E. Refer for lipoprotein apheresis  
+
+2. **A 30-year-old woman is diagnosed with heterozygous familial hypercholesterolaemia (LDL receptor mutation). Her LDL-C is 5.4 mmol/L on atorvastatin 20 mg. She plans pregnancy. Best next step?**
+   A. Increase atorvastatin to 80 mg  
+   B. Add ezetimibe 10 mg  
+   C. **Stop statin, discuss bile acid sequestrant if needed, restart postpartum**  
+   D. Switch to rosuvastatin 20 mg  
+   E. Start PCSK9 inhibitor  
+
+3. **A 65-year-old man with type 2 diabetes, CKD stage 3b (eGFR 38), and prior NSTEMI 2 years ago. Current LDL-C 2.1 mmol/L on atorvastatin 20 mg. Triglycerides 2.8 mmol/L, HDL 0.9 mmol/L. Lipid target per ESC/EAS?**
+   A. LDL-C <2.6 mmol/L  
+   B. **LDL-C <1.4 mmol/L**  
+   C. Non-HDL-C <3.4 mmol/L only  
+   D. TG <1.7 mmol/L only  
+   E. HDL-C >1.0 mmol/L  
+
+4. **A 40-year-old man has TG 6.5 mmol/L, TC 7.8 mmol/L, HDL 0.7 mmol/L. Friedewald LDL-C cannot be calculated. Best alternative?**
+   A. Assume LDL-C = TC – HDL-C = 7.1 mmol/L  
+   B. Use VLDL-C = TG/5 as LDL-C proxy  
+   C. **Direct LDL-C assay or Martin/Hopkins equation**  
+   D. Use non-HDL-C = 7.1 mmol/L as sole target  
+   E. Calculate remnant-C = TC – LDL-C – HDL-C  
+
+5. **A 28-year-old man with homozygous FH (LDL-C 14 mmol/L) is intolerant to high-intensity statins (myopathy). He is on atorvastatin 10 mg, ezetimibe 10 mg. Next evidence-based addition?**
+   A. Bile acid sequestrant  
+   B. Nicotinic acid extended-release  
+   C. **PCSK9 inhibitor (evolocumab/alirocumab) + consider lomitapide/evinacumab**  
+   D. Gemfibrozil 600 mg BID  
+   E. Red yeast rice 2400 mg daily  
+
+## 17. Flashcards
+
+- Q: EFA deficiency ratio  
+  A: **Triene:tetraene >0.2 = Mead acid (20:3 ω-9) replaces AA (20:4 ω-6)**
+- Q: Caloric value of fat  
+  A: **9 kcal/g (37.8 kJ/g)**
+- Q: EFA daily requirement (ω-6:ω-3 ratio)  
+  A: **LA 4–10% energy, ALA 0.6–1.2%; ideal ω-6:ω-3 4:1 (Western 15–20:1)**
+- Q: Chylomicron structural apo  
+  A: **ApoB-48** (intestine); VLDL/LDL/IDL = ApoB-100 (liver)
+- Q: LPL activator/inhibitor  
+  A: **Activator: apoC-II; Inhibitor: apoC-III**
+- Q: RCT key steps  
+  A: **ApoA-I + ABCA1 → discoidal HDL → LCAT → CE core → CETP exchange → SR-B1 hepatic uptake**
+- Q: Friedewald formula (mmol/L)  
+  A: **LDL-C = TC – HDL-C – TG/5** (invalid if TG >4.5)
+- Q: Fredrickson Type III (dysbeta)  
+  A: **ApoE2/E2 homozygosity; ↑IDL (β-VLDL); TG ≈ Chol; palmar xanthomata, tuberoeruptive xanthomata**
+- Q: Simon Broome definite FH  
+  A: **Tendon xanthoma OR corneal arcus <45y + LDL-C >4.9 + family Hx/genetic**
+- Q: Statin myopathy thresholds  
+  A: **CK >10×ULN: stop; CK 5–10×: ↓dose; CK <5× + symptoms: switch statin**
+- Q: ESC LDL-C targets  
+  A: **Very high risk <1.4 (55 mg/dL) + ≥50% ↓; High <1.8; Moderate <2.6**
+- Q: Non-HDL-C formula  
+  A: **TC – HDL-C = VLDL + IDL + LDL; target = LDL goal + 0.8 mmol/L**
+- Q: Best statin with fibrate  
+  A: **Fenofibrate (no CYP interaction); avoid gemfibrozil + statin (rhabdo)**
+- Q: Omega-3 dose for TG  
+  A: **EPA/DHA 2–4 g/day ↓TG 20–30% (icosapent ethyl 2 g BID CVD benefit per REDUCE-IT)**
+- Q: PCSK9i mechanism  
+  A: **Prevents LDL-R degradation → more hepatic LDL-R → ↓LDL-C 50–60%**
+- Q: Lomitapide/evinacumab indication  
+  A: **Homozygous FH only (REMS for lomitapide — hepatosteatosis, teratogenic)**
+- Q: Portfolio diet 4 components  
+  A: **Plant sterols 2g + viscous fibre 10g + soy protein 25g + nuts 45g = ↓LDL 30%**
+- Q: Trans fat harm  
+  A: **Industrial trans: ↑LDL + ↓HDL = double CVD risk; WHO <1% energy**
+
+## 18. Answer Key with Explanations
+
+### MCQs
+1. **B** — Linoleic acid (LA, 18:2 ω-6) is essential; ALA is ω-3; oleic (ω-9) & palmitic/arachidonic are non-essential/conditionally essential.
+2. **B** — EFA deficiency → ↓AA, ↑Mead acid (20:3 ω-9) → triene:tetraene ratio >0.2; hallmark sign.
+3. **C** — Friedewald assumes VLDL-C = TG/5; fails when TG >4.5 mmol/L (VLDL composition variable).
+4. **B** — ApoB-100 (liver) for VLDL/IDL/LDL; ApoB-48 (intestine) for chylomicrons; ApoA-I for HDL; ApoC-II activates LPL; ApoE remnant ligand.
+5. **A** — Type III = apoE2/E2 homozygosity (↓remnant clearance); ↑IDL/β-VLDL; TG ≈ Chol; palmar/tuberoeruptive xanthomata.
+6. **B** — FH Type A: LDLR mutation (85%); Type B: ApoB-100 mutation (defective binding); Type C: PCSK9 gain-of-function; all AD.
+7. **B** — ESC/EAS 2019: very high risk (established CVD) LDL-C <1.4 mmol/L (55 mg/dL) with ≥50% reduction from baseline.
+8. **C** — Gemfibrozil inhibits statin glucuronidation (CYP2C8/OATP1B1) → ↑statin levels → rhabdo; fenofibrate safer.
+9. **B** — Non-HDL-C = TC – HDL-C = sum of all atherogenic lipoproteins (VLDL+IDL+LDL); better when TG elevated.
+10. **B** — REDUCE-IT: icosapent ethyl 2g BID ↓CVD events (HR 0.75); STRENGTH: EPA/DHA combo no benefit.
+
+### SBAs
+1. **C** — TG >11.3 mmol/L = acute pancreatitis risk; immediate NPO, IV fluids, insulin, alcohol cessation; fibrate/omega-3 after resolution.
+2. **C** — Statins Category X (teratogenic) — stop preconception/pregnancy; bile acid sequestrant only option if LDL-C critically high; ezetimibe/PCSK9i no pregnancy data.
+3. **B** — Very high risk (CVD + DM + CKD) → LDL-C <1.4 mmol/L per ESC/EAS 2019; intensify statin ± ezetimibe ± PCSK9i.
+4. **C** — Friedewald invalid TG >4.5; use direct LDL assay or Martin/Hopkins (stratified TG adjustment); non-HDL-C = 7.1 for monitoring.
+5. **C** — HoFH: LDL apheresis + PCSK9i + lomitapide (MTP inhibitor) + evinacumab (ANGPTL3 inhibitor) per 2019 ESC/EAS.
+
+## 19. Summary
+
+**Fats & Lipids** is a **Must Know 🔴** topic for FCPS/MRCP.
+**Key takeaway:** Lipoprotein metabolism integrates exogenous (chylomicron→remnant), endogenous (VLDL→IDL→LDL), and reverse cholesterol transport (ABCA1→LCAT→CETP→SR-B1) pathways; EFA deficiency = triene:tetraene >0.2; Friedewald fails when TG >4.5; FH = LDLR/APOB/PCSK9 mutation → cascade screen + high-intensity statin ± ezetimibe/PCSK9i; CV risk stratified by LDL-C/non-HDL-C/apoB with ESC targets.
+**Exam focus:** Fredrickson classification, FH diagnostic criteria, Friedewald limitations, statin myopathy thresholds, drug mechanisms (statin/ezetimibe/PCSK9i/fibrate/omega-3), dietary patterns (Mediterranean/Portfolio).
+**Clinical relevance:** Dyslipidaemia management underpins CVD prevention in 80% of medical patients; every ward round involves lipid-lowering decisions.
+
+*Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented*

@@ -1,0 +1,357 @@
+# Licensing & Approval — Regulatory Pathways
+
+**Status**: `draft` | **Chapter**: 2 — Clinical Therapeutics and Good Prescribing | **Heading**: Drug Development and Regulation | **Exam Priority**: ⭐⭐ **MODERATE** (Regulatory affairs, governance, FCPS/MRCP)
+
+---
+
+## 1. 🎯 Learning Objectives
+- [ ] Compare MRAs: MHRA (UK), EMA (EU), FDA (US) — applications, timelines, committees
+- [ ] Define application types: Full, Abbreviated (Generic/Biosimilar), Hybrid, Line Extension
+- [ ] Explain accelerated pathways: Conditional, Accelerated, Priority, Breakthrough, Orphan, Adaptive
+- [ ] Apply paediatric/rare disease/oncology specific pathways
+- [ ] Understand post-approval commitments: PASS, PAES, RMP, PSUR
+
+---
+
+## 2. 📊 Major Regulatory Authorities
+
+| Authority | Region | **Key Committees** | **Standard Timeline** |
+|-----------|--------|-------------------|----------------------|
+| **FDA** (Food and Drug Administration) | **USA** | **CDER** (Drugs), **CBER** (Biologics), **ODAC** (Oncology), **Advisory Committees** | **10 months** (Standard); **6 months** (Priority) |
+| **EMA** (European Medicines Agency) | **EU/EEA** | **CHMP** (Human), **PRAC** (Pharmacovigilance), **CAT** (Advanced Therapies), **PDCO** (Paediatrics), **COMP** (Orphan) | **210 active days** (~12 months); **150 days** (Accelerated) |
+| **MHRA** (Medicines and Healthcare products Regulatory Agency) | **UK** | **CHM** (Commission on Human Medicines), **Pharmacovigilance Expert Advisory Group** | **150–210 days** (National); **Mutual Recognition** for EU |
+
+> **Post-Brexit**: MHRA independent; **UK recognises EU decisions** (EC decision reliance); **Windsor Framework** for NI
+
+---
+
+## 3. 📋 Application Types
+
+| Type | **FDA** | **EMA** | **MHRA** | Description |
+|------|---------|---------|----------|-------------|
+| **Full / Standalone** | **NDA** (New Drug Application) / **BLA** (Biologics License Application) | **Full MAA** (Marketing Authorisation Application) | **Full MA** | New chemical entity / novel biologic; full CMC + non-clinical + clinical |
+| **Abbreviated (Generic)** | **ANDA** (Abbreviated NDA) | **Generic / Hybrid MAA** | **Generic MA** | **Bioequivalence** to reference product; no new clinical data |
+| **Biosimilar** | **BLA** (351(k) pathway) | **Biosimilar MAA** | **Biosimilar MA** | **Comparability** to reference biologic (quality, non-clinical, clinical) |
+| **Hybrid** | **505(b)(2) NDA** | **Hybrid MAA** | **Hybrid MA** | **Partial new data** (new indication, formulation, route, strength) + reference to originator |
+| **Line Extension** | **Supplement** | **Line Extension / Variation** | **Variation** | New strength, formulation, route for **already authorised** product |
+| **Renewal** | — | **5-year renewal** (then unlimited) | **5-year renewal** | Re-assessment of benefit-risk |
+
+---
+
+## 4. ⚡ Accelerated / Special Pathways
+
+| Pathway | **FDA** | **EMA** | **MHRA** | **Criteria / Benefit** |
+|---------|---------|---------|----------|------------------------|
+| **Priority Review** | **Priority Review** (6 mo) | **Accelerated Assessment** (150 days) | **Priority Review** | **Major advance** in treatment/prevention |
+| **Accelerated Approval** | **Accelerated Approval** | **Conditional MA** | **Conditional MA** | **Surrogate endpoint**; confirmatory trial required |
+| **Breakthrough Therapy** | **Breakthrough Therapy Designation** | **PRIME** (PRIority MEdicines) | **Innovative Licensing (ILAP)** | **Preliminary evidence** of substantial improvement; intensive guidance |
+| **Fast Track** | **Fast Track** | — | — | **Serious condition**, unmet need; rolling review |
+| **Orphan Drug** | **Orphan Designation** | **Orphan Designation** | **Orphan Designation** | **Rare disease** (<200k US / <5/10k EU); incentives |
+| **Conditional / Adaptive** | — | **Conditional MA** (yearly renewal) | **Conditional MA** | **Incomplete data**; specific obligations; yearly renewal |
+| **Adaptive Licensing** | **Adaptive Pathways** (pilot) | **Adaptive Pathways** | **ILAP** (Innovation) | **Iterative development**; early access, progressive licensing |
+| **Compassionate Use** | **Expanded Access** | **Compassionate Use** | **Early Access (EAMS)** | **No satisfactory alternative**; life-threatening |
+| **Paediatric** | **PREA / BPCA** (Pediatric Research Equity / Best Pharmaceuticals for Children Acts) | **PIP** (Paediatric Investigation Plan) — **Mandatory** | **PIP** — Mandatory | **Deferral/waiver** possible; rewards (6-month SPC extension) |
+
+---
+
+## 5. 👶 Paediatric Regulation — Key Differences
+
+| Region | **Requirement** | **Incentive** |
+|--------|-----------------|---------------|
+| **EU (EMA)** | **PIP mandatory** (Paediatric Investigation Plan) — agreed **before** adult MAA | **6-month SPC extension** (Supplementary Protection Certificate) |
+| **US (FDA)** | **PREA** (mandatory studies if paediatric use likely) / **BPCA** (voluntary — 6-mo exclusivity) | **6-month exclusivity extension** (paediatric exclusivity) |
+| **UK (MHRA)** | **PIP mandatory** (aligned with EU) | **6-month SPC extension** |
+
+> **PIP / PREA** can be **deferred** (adult data first) or **waived** (disease not in children, unsafe, ineffective)
+
+---
+
+## 6. 📦 Post-Approval Commitments
+
+| Commitment | **FDA** | **EMA** | **MHRA** | **Purpose** |
+|------------|---------|---------|----------|-------------|
+| **Safety Study** | **PMR** (Post-Marketing Requirement) | **PASS** (Post-Authorisation Safety Study) | **PASS** | Mandated safety study (e.g., long-term, pregnancy, paediatrics) |
+| **Efficacy Study** | **PMR** | **PAES** (Post-Authorisation Efficacy Study) | **PAES** | Mandated efficacy study (e.g., confirmatory for accelerated) |
+| **Risk Management** | **REMS** (Risk Evaluation Mitigation Strategy) | **RMP** (Risk Management Plan) — **Mandatory** | **RMP** — Mandatory | **Identify, characterise, minimise risks** (educational, controlled access, pregnancy prevention) |
+| **Periodic Safety Reporting** | **PADER** (Periodic Adverse Drug Experience Report) | **PSUR** (Periodic Safety Update Report) — **Mandatory** | **PSUR** — Mandatory | **Cumulative safety summary** (interval: 6mo → 1yr → 3yr → 5yr) |
+| **Signal Detection** | **FAERS** monitoring | **EudraVigilance** + **PRAC** review | **Yellow Card** + **PRAC** | Identify new safety signals |
+
+---
+
+## 7. 🎯 FCPS/MRCP High-Yield Summary
+
+| Pearl | Details |
+|-------|---------|
+| **FDA Standard** | 10 months; **Priority** = 6 months |
+| **EMA CHMP** | 210 active days (~12 mo); **Accelerated** = 150 days |
+| **MHRA** | 150–210 days; **Mutual Recognition** for EU decisions |
+| **Accelerated/Conditional** | **Surrogate endpoint**; Confirmatory trial required; Yearly renewal (EMA/MHRA) |
+| **Breakthrough/PRIME/ILAP** | **Early intensive guidance** for major unmet need |
+| **Orphan** | **<200k US / <5/10k EU**; 7y/10y exclusivity; tax credits, fee waivers |
+| **Paediatric** | **EU: PIP mandatory (6-mo SPC ext)**; **US: PREA/BPCA (6-mo exclusivity)** |
+| **RMP** | **Mandatory for EMA/MHRA**; REMS for FDA (selected drugs) |
+| **PSUR** | **EMA/MHRA mandatory**; intervals: 6mo → 1yr → 3yr → 5yr; **FDA: PADER** |
+
+---
+
+## 8. ❓ Viva Questions (8)
+
+| Q | Answer |
+|---|--------|
+| 1. FDA standard vs priority review timelines? | **Standard: 10 months**; **Priority: 6 months** |
+| 2. EMA CHMP standard timeline? | **210 active days** (~12 months); **Accelerated: 150 days** |
+| 3. Accelerated Approval (FDA) vs Conditional MA (EMA) — similarity? | **Both based on surrogate endpoint**; **Confirmatory trial required**; **Conditional = yearly renewal** (EMA) |
+| 4. Orphan drug criteria — US vs EU? | **US: <200,000**; **EU: <5 in 10,000**; **US: 7y exclusivity**; **EU: 10y exclusivity** |
+| 5. Paediatric regulation — EU vs US? | **EU: PIP mandatory (6-mo SPC ext)**; **US: PREA mandatory / BPCA voluntary (6-mo exclusivity)** |
+| 4. RMP — when mandatory? | **EMA/MHRA: All MAAs**; **FDA: REMS only for selected high-risk drugs** |
+| 5. PSUR frequency — standard intervals? | **6 months (first 2yr) → 1 year (next 2yr) → 3 years → 5 years**; **FDA: PADER (quarterly first 3yr, then annually)** |
+| 5. Breakthrough Therapy (FDA) vs PRIME (EMA) — similarity? | **Both provide early intensive regulatory guidance** for drugs addressing **major unmet medical need** |
+
+---
+
+## 9. 🤯 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Accelerated (FDA) vs Conditional (EMA)** | **FDA Accelerated** = Surrogate endpoint, confirmatory trial; **EMA Conditional** = Incomplete data, yearly renewal, specific obligations |
+| **Priority Review vs Fast Track** | **Priority Review** = Shorter review clock (6 mo); **Fast Track** = Rolling review, early meetings (serious condition, unmet need) |
+| **Breakthrough vs PRIME vs ILAP** | All similar — **early intensive guidance**; **FDA Breakthrough**, **EMA PRIME**, **MHRA ILAP** |
+| **SPC Extension vs Paediatric Exclusivity** | **EU: 6-mo SPC extension** (patent-like); **US: 6-mo marketing exclusivity** (delay generics) |
+| **RMP vs REMS** | **RMP (EMA/MHRA)** = Mandatory for all; **REMS (FDA)** = Only for specific high-risk drugs |
+
+**Mnemonics:**
+- **"FDA 10/6"** = Standard 10mo, Priority 6mo
+- **"EMA 210/150"** = Standard 210 days, Accelerated 150 days
+- **"ACCELERATED = SURROGATE + CONFIRMATORY"**
+- **"CONDITIONAL = INCOMPLETE DATA + YEARLY RENEWAL"**
+- **"ORPHAN US 200k / EU 5/10k"** = Exclusivity 7y US / 10y EU
+- **"PIP = MANDATORY EU"** = 6-mo SPC extension
+- **"RMP = MANDATORY EMA/MHRA"** = Risk Management Plan
+- **"PSUR INTERVALS"** = 6mo → 1yr → 3yr → 5yr
+
+---
+
+## 10. 🧠 Mind Map (Mermaid)
+
+```mermaid
+mindmap
+  root((Licensing & Approval))
+    Authorities
+      FDA (US): CDER, CBER, ODAC
+      EMA (EU): CHMP, PRAC, CAT, PDCO, COMP
+      MHRA (UK): CHM, PV Expert Group
+    Timelines
+      FDA: Standard 10mo, Priority 6mo
+      EMA: CHMP 210d (~12mo), Accel 150d
+      MHRA: 150-210d, Mutual Recognition
+    Application Types
+      Full: NDA/BLA (FDA), MAA (EMA), MA (MHRA)
+      Generic: ANDA, Generic MAA
+      Biosimilar: BLA 351(k), Biosimilar MAA
+      Hybrid: 505(b)(2), Hybrid MAA
+      Line Extension: Supplement, Variation
+    Accelerated Pathways
+      Priority/Fast Track/Breakthrough (FDA)
+      Conditional/Accel/PRIME (EMA)
+      Priority/ILAP (MHRA)
+      Orphan: <200k US / <5/10k EU
+    Paediatric
+      EU: PIP mandatory (6mo SPC ext)
+      US: PREA/BPCA (6mo exclusivity)
+    Post-Approval
+      RMP (EMA/MHRA mandatory) / REMS (FDA selective)
+      PSUR/PADER: 6mo→1yr→3yr→5yr
+      PASS/PAES (mandated studies)
+      REMS (FDA selective)
+```
+
+---
+
+## 11. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score | Next |
+|--------|------|-------|------|
+| 1 | | | 1d |
+| 2 | | | 3d |
+| 3 | | | 1w |
+| 4 | | | 2w |
+| 5 | | | 1m |
+| 6 | | | 3m |
+
+---
+
+## 12. 🧪 Self-Test Scorecard
+
+| Section | Max | Score |
+|---------|-----|-------|
+| Authority timelines | 6 | |
+| Application types | 6 | |
+| Accelerated pathways | 8 | |
+| Paediatric | 6 | |
+| Post-approval | 8 | |
+| Viva answers | 8 | |
+| **Total** | **42** | |
+
+**Target**: ≥34/42 (80%)
+
+---
+
+## 13. 📝 Exam Answer Modes
+
+### Short Question (5 marks): *"FDA vs EMA approval timelines and accelerated pathways."*
+- **FDA**: Standard 10mo, Priority 6mo; **Accelerated** = surrogate + confirmatory
+- **EMA**: CHMP 210 active days (~12mo), Accelerated 150d; **Conditional** = incomplete data + yearly renewal
+- **MHRA**: 150–210d; Mutual Recognition for EU decisions
+- **Orphan**: US <200k (7y), EU <5/10k (10y)
+- **Paediatric**: EU PIP mandatory (6mo SPC ext); US PREA/BPCA (6mo exclusivity)
+
+### Viva (1 min): *"Conditional MA vs Accelerated Approval — difference?"*
+- **EMA Conditional MA**: **Incomplete data** (missing long-term/clinical outcome); **Specific obligations**; **Yearly renewal**; Can convert to full MA
+- **FDA Accelerated Approval**: **Surrogate endpoint** reasonably likely to predict clinical benefit; **Confirmatory trial required**; Not time-limited but can be withdrawn if confirmatory fails
+
+### Ward Round (30 sec): *"Patient asks why their orphan drug costs so much. Explanation?"*
+- **Orphan drugs** = rare disease (<200k US / <5/10k EU)
+- **Incentives**: 7y US / 10y EU market exclusivity; tax credits; fee waivers; protocol assistance
+- **High cost** = small patient population + high R&D cost per patient + exclusivity prevents generics
+
+### Last-Night Revision (1-liners):
+- FDA: Standard 10mo, Priority 6mo
+- EMA: CHMP 210d, Accel 150d
+- Accelerated = Surrogate + Confirmatory
+- Conditional = Incomplete data + Yearly renewal
+- Orphan: US <200k (7y), EU <5/10k (10y)
+- Paediatric: EU PIP mandatory (6mo SPC); US PREA/BPCA (6mo exclusivity)
+- RMP = Mandatory EMA/MHRA; REMS = FDA selective
+- PSUR intervals = 6mo → 1yr → 3yr → 5yr
+- Breakthrough/PRIME/ILAP = Early guidance for unmet need
+
+---
+
+## 14. 📚 Summary Card
+
+> **LICENSING & APPROVAL:**
+> **FDA**: 10mo Std, 6mo Priority
+> **EMA**: 210d Std, 150d Accel
+> **ACCELERATED** = Surrogate + Confirmatory
+> **CONDITIONAL** = Incomplete + Yearly Renewal
+> **ORPHAN**: US <200k (7y), EU <5/10k (10y)
+> **PAEDIATRIC**: EU PIP (6mo SPC); US PREA/BPCA (6mo excl)
+> **RMP** = Mandatory EMA/MHRA
+> **PSUR** = 6mo→1yr→3yr→5yr
+> **BREAKTHROUGH/PRIME/ILAP** = Early guidance for unmet need
+
+---
+
+## 15. ❓ MCQs (10)
+
+1. **FDA standard review timeline:**
+   A. 6 months
+   B. **10 months** ✓
+   C. 12 months
+   D. 18 months
+   E. 210 days
+
+2. **EMA CHMP standard active review days:**
+   A. 150
+   B. **210** ✓
+   C. 180
+   D. 240
+   E. 365
+
+3. **FDA Accelerated Approval — based on:**
+   A. Clinical endpoint
+   B. **Surrogate endpoint** ✓
+   C. Real-world evidence
+   D. Phase II data only
+   E. Cost-effectiveness
+
+4. **EMA Conditional MA — key feature:**
+   A. Surrogate endpoint
+   B. **Incomplete data + yearly renewal** ✓
+   C. Fast track review
+   D. Orphan only
+   E. Paediatric only
+
+5. **Orphan drug prevalence threshold (FDA):**
+   A. <50,000
+   B. <100,000
+   C. **<200,000** ✓
+   D. <500,000
+   E. <1,000,000
+
+6. **Orphan drug market exclusivity (EMA):**
+   A. 5 years
+   B. 7 years
+   C. **10 years** ✓
+   D. 12 years
+   E. 15 years
+
+7. **Paediatric regulation — EU mandatory requirement:**
+   A. BPCA
+   B. **PIP (Paediatric Investigation Plan)** ✓
+   C. PREA
+   D. Waiver only
+   E. Deferral only
+
+8. **PSUR submission intervals (EMA):**
+   A. Monthly
+   B. Quarterly
+   C. **6mo → 1yr → 3yr → 5yr** ✓
+   D. Annually only
+   E. Every 5 years
+
+9. **RMP (Risk Management Plan) — mandatory for:**
+   A. FDA only
+   B. **EMA and MHRA (all MAAs)** ✓
+   C. High-risk drugs only
+   D. Orphan drugs only
+   E. Conditional MA only
+
+10. **Breakthrough Therapy (FDA) vs PRIME (EMA) — common feature:**
+    A. Surrogate endpoint approval
+    B. **Early intensive guidance for unmet need** ✓
+    C. Conditional approval
+    D. Orphan designation
+    E. Paediatric waiver
+
+---
+
+## 16. 🃏 Flashcards (Anki-ready)
+
+| Front | Back |
+|-------|------|
+| FDA standard review | 10 months |
+| FDA priority review | 6 months |
+| EMA CHMP standard | 210 active days (~12 months) |
+| EMA accelerated | 150 days |
+| FDA Accelerated Approval | Surrogate endpoint + confirmatory trial |
+| EMA Conditional MA | Incomplete data + yearly renewal + obligations |
+| Orphan FDA | <200k prevalence, 7y exclusivity |
+| Orphan EMA | <5/10k prevalence, 10y exclusivity |
+| EU Paediatric | PIP mandatory, 6mo SPC extension |
+| US Paediatric | PREA mandatory, BPCA voluntary (6mo exclusivity) |
+| RMP mandatory | EMA/MHRA |
+| PSUR intervals | 6mo→1yr→3yr→5yr |
+| Breakthrough/PRIME/ILAP | Early intensive guidance for unmet need |
+| Fast Track (FDA) | Rolling review, early meetings (serious condition) |
+| REMS (FDA) | Selected high-risk drugs only |
+
+---
+
+## 17. ✅ Answer Keys
+
+### MCQs
+1. **B** — 10 months
+2. **B** — 210 days
+3. **B** — Surrogate endpoint
+4. **B** — Incomplete data + yearly renewal
+5. **C** — <200,000
+6. **C** — 10 years
+7. **B** — PIP mandatory
+8. **C** — 6mo → 1yr → 3yr → 5yr
+9. **B** — EMA and MHRA (all MAAs)
+10. **B** — Early intensive guidance for unmet need
+
+---
+
+*File: `/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Development/Licensing and approval.md` | Status: `draft` → upgrade after review*

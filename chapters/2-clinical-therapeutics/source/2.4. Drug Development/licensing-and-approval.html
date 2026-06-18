@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Licensing And Approval — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.4. DRUG DEVELOPMENT</span>
+      <div class="h1">Licensing And Approval</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Compare MRAs: MHRA (UK), EMA (EU), FDA (US) — applications, timelines, committees</li><li>[ ] Define application types: Full, Abbreviated (Generic/Biosimilar), Hybrid, Line Extension</li><li>[ ] Explain accelerated pathways: Conditional, Accelerated, Priority, Breakthrough, Orphan, Adaptive</li><li>[ ] Apply paediatric/rare disease/oncology specific pathways</li><li>[ ] Understand post-approval commitments: PASS, PAES, RMP, PSUR</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Major Regulatory Authorities</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Authority</th><th>Region</th><th>**Key Committees**</th><th>**Standard Timeline**</th></tr><tr><td>-----------</td><td>--------</td><td>-------------------</td><td>----------------------</td></tr><tr><td>**FDA** (Food and Drug Administration)</td><td>**USA**</td><td>**CDER** (Drugs), **CBER** (Biologics), **ODAC** (Oncology), **Advisory Committees**</td><td>**10 months** (Standard); **6 months** (Priority)</td></tr><tr><td>**EMA** (European Medicines Agency)</td><td>**EU/EEA**</td><td>**CHMP** (Human), **PRAC** (Pharmacovigilance), **CAT** (Advanced Therapies), **PDCO** (Paediatrics), **COMP** (Orphan)</td><td>**210 active days** (~12 months); **150 days** (Accelerated)</td></tr><tr><td>**MHRA** (Medicines and Healthcare products Regulatory Agency)</td><td>**UK**</td><td>**CHM** (Commission on Human Medicines), **Pharmacovigilance Expert Advisory Group**</td><td>**150–210 days** (National); **Mutual Recognition** for EU</td></tr></table>
+<div class="callout"><b>Post-Brexit</b>: MHRA independent; <b>UK recognises EU decisions</b> (EC decision reliance); <b>Windsor Framework</b> for NI</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📋 Application Types</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>**FDA**</th><th>**EMA**</th><th>**MHRA**</th><th>Description</th></tr><tr><td>------</td><td>---------</td><td>---------</td><td>----------</td><td>-------------</td></tr><tr><td>**Full / Standalone**</td><td>**NDA** (New Drug Application) / **BLA** (Biologics License Application)</td><td>**Full MAA** (Marketing Authorisation Application)</td><td>**Full MA**</td><td>New chemical entity / novel biologic; full CMC + non-clinical + clinical</td></tr><tr><td>**Abbreviated (Generic)**</td><td>**ANDA** (Abbreviated NDA)</td><td>**Generic / Hybrid MAA**</td><td>**Generic MA**</td><td>**Bioequivalence** to reference product; no new clinical data</td></tr><tr><td>**Biosimilar**</td><td>**BLA** (351(k) pathway)</td><td>**Biosimilar MAA**</td><td>**Biosimilar MA**</td><td>**Comparability** to reference biologic (quality, non-clinical, clinical)</td></tr><tr><td>**Hybrid**</td><td>**505(b)(2) NDA**</td><td>**Hybrid MAA**</td><td>**Hybrid MA**</td><td>**Partial new data** (new indication, formulation, route, strength) + reference to originator</td></tr><tr><td>**Line Extension**</td><td>**Supplement**</td><td>**Line Extension / Variation**</td><td>**Variation**</td><td>New strength, formulation, route for **already authorised** product</td></tr><tr><td>**Renewal**</td><td>—</td><td>**5-year renewal** (then unlimited)</td><td>**5-year renewal**</td><td>Re-assessment of benefit-risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">⚡ Accelerated / Special Pathways</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pathway</th><th>**FDA**</th><th>**EMA**</th><th>**MHRA**</th><th>**Criteria / Benefit**</th></tr><tr><td>---------</td><td>---------</td><td>---------</td><td>----------</td><td>------------------------</td></tr><tr><td>**Priority Review**</td><td>**Priority Review** (6 mo)</td><td>**Accelerated Assessment** (150 days)</td><td>**Priority Review**</td><td>**Major advance** in treatment/prevention</td></tr><tr><td>**Accelerated Approval**</td><td>**Accelerated Approval**</td><td>**Conditional MA**</td><td>**Conditional MA**</td><td>**Surrogate endpoint**; confirmatory trial required</td></tr><tr><td>**Breakthrough Therapy**</td><td>**Breakthrough Therapy Designation**</td><td>**PRIME** (PRIority MEdicines)</td><td>**Innovative Licensing (ILAP)**</td><td>**Preliminary evidence** of substantial improvement; intensive guidance</td></tr><tr><td>**Fast Track**</td><td>**Fast Track**</td><td>—</td><td>—</td><td>**Serious condition**, unmet need; rolling review</td></tr><tr><td>**Orphan Drug**</td><td>**Orphan Designation**</td><td>**Orphan Designation**</td><td>**Orphan Designation**</td><td>**Rare disease** (<200k US / <5/10k EU); incentives</td></tr><tr><td>**Conditional / Adaptive**</td><td>—</td><td>**Conditional MA** (yearly renewal)</td><td>**Conditional MA**</td><td>**Incomplete data**; specific obligations; yearly renewal</td></tr><tr><td>**Adaptive Licensing**</td><td>**Adaptive Pathways** (pilot)</td><td>**Adaptive Pathways**</td><td>**ILAP** (Innovation)</td><td>**Iterative development**; early access, progressive licensing</td></tr><tr><td>**Compassionate Use**</td><td>**Expanded Access**</td><td>**Compassionate Use**</td><td>**Early Access (EAMS)**</td><td>**No satisfactory alternative**; life-threatening</td></tr><tr><td>**Paediatric**</td><td>**PREA / BPCA** (Pediatric Research Equity / Best Pharmaceuticals for Children Acts)</td><td>**PIP** (Paediatric Investigation Plan) — **Mandatory**</td><td>**PIP** — Mandatory</td><td>**Deferral/waiver** possible; rewards (6-month SPC extension)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">👶 Paediatric Regulation — Key Differences</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Region</th><th>**Requirement**</th><th>**Incentive**</th></tr><tr><td>--------</td><td>-----------------</td><td>---------------</td></tr><tr><td>**EU (EMA)**</td><td>**PIP mandatory** (Paediatric Investigation Plan) — agreed **before** adult MAA</td><td>**6-month SPC extension** (Supplementary Protection Certificate)</td></tr><tr><td>**US (FDA)**</td><td>**PREA** (mandatory studies if paediatric use likely) / **BPCA** (voluntary — 6-mo exclusivity)</td><td>**6-month exclusivity extension** (paediatric exclusivity)</td></tr><tr><td>**UK (MHRA)**</td><td>**PIP mandatory** (aligned with EU)</td><td>**6-month SPC extension**</td></tr></table>
+<div class="callout"><b>PIP / PREA</b> can be <b>deferred</b> (adult data first) or <b>waived</b> (disease not in children, unsafe, ineffective)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📦 Post-Approval Commitments</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Commitment</th><th>**FDA**</th><th>**EMA**</th><th>**MHRA**</th><th>**Purpose**</th></tr><tr><td>------------</td><td>---------</td><td>---------</td><td>----------</td><td>-------------</td></tr><tr><td>**Safety Study**</td><td>**PMR** (Post-Marketing Requirement)</td><td>**PASS** (Post-Authorisation Safety Study)</td><td>**PASS**</td><td>Mandated safety study (e.g., long-term, pregnancy, paediatrics)</td></tr><tr><td>**Efficacy Study**</td><td>**PMR**</td><td>**PAES** (Post-Authorisation Efficacy Study)</td><td>**PAES**</td><td>Mandated efficacy study (e.g., confirmatory for accelerated)</td></tr><tr><td>**Risk Management**</td><td>**REMS** (Risk Evaluation Mitigation Strategy)</td><td>**RMP** (Risk Management Plan) — **Mandatory**</td><td>**RMP** — Mandatory</td><td>**Identify, characterise, minimise risks** (educational, controlled access, pregnancy prevention)</td></tr><tr><td>**Periodic Safety Reporting**</td><td>**PADER** (Periodic Adverse Drug Experience Report)</td><td>**PSUR** (Periodic Safety Update Report) — **Mandatory**</td><td>**PSUR** — Mandatory</td><td>**Cumulative safety summary** (interval: 6mo → 1yr → 3yr → 5yr)</td></tr><tr><td>**Signal Detection**</td><td>**FAERS** monitoring</td><td>**EudraVigilance** + **PRAC** review</td><td>**Yellow Card** + **PRAC**</td><td>Identify new safety signals</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**FDA Standard**</td><td>10 months; **Priority** = 6 months</td></tr><tr><td>**EMA CHMP**</td><td>210 active days (~12 mo); **Accelerated** = 150 days</td></tr><tr><td>**MHRA**</td><td>150–210 days; **Mutual Recognition** for EU decisions</td></tr><tr><td>**Accelerated/Conditional**</td><td>**Surrogate endpoint**; Confirmatory trial required; Yearly renewal (EMA/MHRA)</td></tr><tr><td>**Breakthrough/PRIME/ILAP**</td><td>**Early intensive guidance** for major unmet need</td></tr><tr><td>**Orphan**</td><td>**<200k US / <5/10k EU**; 7y/10y exclusivity; tax credits, fee waivers</td></tr><tr><td>**Paediatric**</td><td>**EU: PIP mandatory (6-mo SPC ext)**; **US: PREA/BPCA (6-mo exclusivity)**</td></tr><tr><td>**RMP**</td><td>**Mandatory for EMA/MHRA**; REMS for FDA (selected drugs)</td></tr><tr><td>**PSUR**</td><td>**EMA/MHRA mandatory**; intervals: 6mo → 1yr → 3yr → 5yr; **FDA: PADER**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions (8)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. FDA standard vs priority review timelines?</td><td>**Standard: 10 months**; **Priority: 6 months**</td></tr><tr><td>2. EMA CHMP standard timeline?</td><td>**210 active days** (~12 months); **Accelerated: 150 days**</td></tr><tr><td>3. Accelerated Approval (FDA) vs Conditional MA (EMA) — similarity?</td><td>**Both based on surrogate endpoint**; **Confirmatory trial required**; **Conditional = yearly renewal** (EMA)</td></tr><tr><td>4. Orphan drug criteria — US vs EU?</td><td>**US: <200,000**; **EU: <5 in 10,000**; **US: 7y exclusivity**; **EU: 10y exclusivity**</td></tr><tr><td>5. Paediatric regulation — EU vs US?</td><td>**EU: PIP mandatory (6-mo SPC ext)**; **US: PREA mandatory / BPCA voluntary (6-mo exclusivity)**</td></tr><tr><td>4. RMP — when mandatory?</td><td>**EMA/MHRA: All MAAs**; **FDA: REMS only for selected high-risk drugs**</td></tr><tr><td>5. PSUR frequency — standard intervals?</td><td>**6 months (first 2yr) → 1 year (next 2yr) → 3 years → 5 years**; **FDA: PADER (quarterly first 3yr, then annually)**</td></tr><tr><td>5. Breakthrough Therapy (FDA) vs PRIME (EMA) — similarity?</td><td>**Both provide early intensive regulatory guidance** for drugs addressing **major unmet medical need**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Accelerated (FDA) vs Conditional (EMA)**</td><td>**FDA Accelerated** = Surrogate endpoint, confirmatory trial; **EMA Conditional** = Incomplete data, yearly renewal, specific obligations</td></tr><tr><td>**Priority Review vs Fast Track**</td><td>**Priority Review** = Shorter review clock (6 mo); **Fast Track** = Rolling review, early meetings (serious condition, unmet need)</td></tr><tr><td>**Breakthrough vs PRIME vs ILAP**</td><td>All similar — **early intensive guidance**; **FDA Breakthrough**, **EMA PRIME**, **MHRA ILAP**</td></tr><tr><td>**SPC Extension vs Paediatric Exclusivity**</td><td>**EU: 6-mo SPC extension** (patent-like); **US: 6-mo marketing exclusivity** (delay generics)</td></tr><tr><td>**RMP vs REMS**</td><td>**RMP (EMA/MHRA)** = Mandatory for all; **REMS (FDA)** = Only for specific high-risk drugs</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"FDA 10/6"</b> = Standard 10mo, Priority 6mo</li><li><b>"EMA 210/150"</b> = Standard 210 days, Accelerated 150 days</li><li><b>"ACCELERATED = SURROGATE + CONFIRMATORY"</b></li><li><b>"CONDITIONAL = INCOMPLETE DATA + YEARLY RENEWAL"</b></li><li><b>"ORPHAN US 200k / EU 5/10k"</b> = Exclusivity 7y US / 10y EU</li><li><b>"PIP = MANDATORY EU"</b> = 6-mo SPC extension</li><li><b>"RMP = MANDATORY EMA/MHRA"</b> = Risk Management Plan</li><li><b>"PSUR INTERVALS"</b> = 6mo → 1yr → 3yr → 5yr</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Licensing &amp; Approval)) Authorities FDA (US): CDER, CBER, ODAC EMA (EU): CHMP, PRAC, CAT, PDCO, COMP MHRA (UK): CHM, PV Expert Group Timelines FDA: Standard 10mo, Priority 6mo EMA: CHMP 210d (~12mo), Accel 150d MHRA: 150-210d, Mutual Recognition Application Types Full: NDA/BLA (FDA), MAA (EMA), MA (MHRA) Generic: ANDA, Generic MAA Biosimilar: BLA 351(k), Biosimilar MAA Hybrid: 505(b)(2), Hybrid MAA Line Extension: Supplement, Variation Accelerated Pathways Priority/Fast Track/Breakthrough (FDA) Conditional/Accel/PRIME (EMA) Priority/ILAP (MHRA) Orphan: &lt;200k US / &lt;5/10k EU Paediatric EU: PIP mandatory (6mo SPC ext) US: PREA/BPCA (6mo exclusivity) Post-Approval RMP (EMA/MHRA mandatory) / REMS (FDA selective) PSUR/PADER: 6mo→1yr→3yr→5yr PASS/PAES (mandated studies) REMS (FDA selective) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Authority timelines</td><td>6</td><td></td></tr><tr><td>Application types</td><td>6</td><td></td></tr><tr><td>Accelerated pathways</td><td>8</td><td></td></tr><tr><td>Paediatric</td><td>6</td><td></td></tr><tr><td>Post-approval</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>8</td><td></td></tr><tr><td>**Total**</td><td>**42**</td><td></td></tr></table>
+<p><b>Target</b>: ≥34/42 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"FDA vs EMA approval timelines and accelerated pathways."*</div>
+<ul><li><b>FDA</b>: Standard 10mo, Priority 6mo; <b>Accelerated</b> = surrogate + confirmatory</li><li><b>EMA</b>: CHMP 210 active days (~12mo), Accelerated 150d; <b>Conditional</b> = incomplete data + yearly renewal</li><li><b>MHRA</b>: 150–210d; Mutual Recognition for EU decisions</li><li><b>Orphan</b>: US &lt;200k (7y), EU &lt;5/10k (10y)</li><li><b>Paediatric</b>: EU PIP mandatory (6mo SPC ext); US PREA/BPCA (6mo exclusivity)</li></ul>
+<div class="sub-h">Viva (1 min): *"Conditional MA vs Accelerated Approval — difference?"*</div>
+<ul><li><b>EMA Conditional MA</b>: <b>Incomplete data</b> (missing long-term/clinical outcome); <b>Specific obligations</b>; <b>Yearly renewal</b>; Can convert to full MA</li><li><b>FDA Accelerated Approval</b>: <b>Surrogate endpoint</b> reasonably likely to predict clinical benefit; <b>Confirmatory trial required</b>; Not time-limited but can be withdrawn if confirmatory fails</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient asks why their orphan drug costs so much. Explanation?"*</div>
+<ul><li><b>Orphan drugs</b> = rare disease (&lt;200k US / &lt;5/10k EU)</li><li><b>Incentives</b>: 7y US / 10y EU market exclusivity; tax credits; fee waivers; protocol assistance</li><li><b>High cost</b> = small patient population + high R&amp;D cost per patient + exclusivity prevents generics</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>FDA: Standard 10mo, Priority 6mo</li><li>EMA: CHMP 210d, Accel 150d</li><li>Accelerated = Surrogate + Confirmatory</li><li>Conditional = Incomplete data + Yearly renewal</li><li>Orphan: US &lt;200k (7y), EU &lt;5/10k (10y)</li><li>Paediatric: EU PIP mandatory (6mo SPC); US PREA/BPCA (6mo exclusivity)</li><li>RMP = Mandatory EMA/MHRA; REMS = FDA selective</li><li>PSUR intervals = 6mo → 1yr → 3yr → 5yr</li><li>Breakthrough/PRIME/ILAP = Early guidance for unmet need</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>LICENSING &amp; APPROVAL:</b> <b>FDA</b>: 10mo Std, 6mo Priority <b>EMA</b>: 210d Std, 150d Accel <b>ACCELERATED</b> = Surrogate + Confirmatory <b>CONDITIONAL</b> = Incomplete + Yearly Renewal <b>ORPHAN</b>: US &lt;200k (7y), EU &lt;5/10k (10y) <b>PAEDIATRIC</b>: EU PIP (6mo SPC); US PREA/BPCA (6mo excl) <b>RMP</b> = Mandatory EMA/MHRA <b>PSUR</b> = 6mo→1yr→3yr→5yr <b>BREAKTHROUGH/PRIME/ILAP</b> = Early guidance for unmet need</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>FDA standard review timeline:</b></li></ol>
+<p>A. 6 months B. <b>10 months</b> ✓ C. 12 months D. 18 months E. 210 days</p>
+<ol><li><b>EMA CHMP standard active review days:</b></li></ol>
+<p>A. 150 B. <b>210</b> ✓ C. 180 D. 240 E. 365</p>
+<ol><li><b>FDA Accelerated Approval — based on:</b></li></ol>
+<p>A. Clinical endpoint B. <b>Surrogate endpoint</b> ✓ C. Real-world evidence D. Phase II data only E. Cost-effectiveness</p>
+<ol><li><b>EMA Conditional MA — key feature:</b></li></ol>
+<p>A. Surrogate endpoint B. <b>Incomplete data + yearly renewal</b> ✓ C. Fast track review D. Orphan only E. Paediatric only</p>
+<ol><li><b>Orphan drug prevalence threshold (FDA):</b></li></ol>
+<p>A. &lt;50,000 B. &lt;100,000 C. <b>&lt;200,000</b> ✓ D. &lt;500,000 E. &lt;1,000,000</p>
+<ol><li><b>Orphan drug market exclusivity (EMA):</b></li></ol>
+<p>A. 5 years B. 7 years C. <b>10 years</b> ✓ D. 12 years E. 15 years</p>
+<ol><li><b>Paediatric regulation — EU mandatory requirement:</b></li></ol>
+<p>A. BPCA B. <b>PIP (Paediatric Investigation Plan)</b> ✓ C. PREA D. Waiver only E. Deferral only</p>
+<ol><li><b>PSUR submission intervals (EMA):</b></li></ol>
+<p>A. Monthly B. Quarterly C. <b>6mo → 1yr → 3yr → 5yr</b> ✓ D. Annually only E. Every 5 years</p>
+<ol><li><b>RMP (Risk Management Plan) — mandatory for:</b></li></ol>
+<p>A. FDA only B. <b>EMA and MHRA (all MAAs)</b> ✓ C. High-risk drugs only D. Orphan drugs only E. Conditional MA only</p>
+<ol><li><b>Breakthrough Therapy (FDA) vs PRIME (EMA) — common feature:</b></li></ol>
+<p>A. Surrogate endpoint approval B. <b>Early intensive guidance for unmet need</b> ✓ C. Conditional approval D. Orphan designation E. Paediatric waiver</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>FDA standard review</td><td>10 months</td></tr><tr><td>FDA priority review</td><td>6 months</td></tr><tr><td>EMA CHMP standard</td><td>210 active days (~12 months)</td></tr><tr><td>EMA accelerated</td><td>150 days</td></tr><tr><td>FDA Accelerated Approval</td><td>Surrogate endpoint + confirmatory trial</td></tr><tr><td>EMA Conditional MA</td><td>Incomplete data + yearly renewal + obligations</td></tr><tr><td>Orphan FDA</td><td><200k prevalence, 7y exclusivity</td></tr><tr><td>Orphan EMA</td><td><5/10k prevalence, 10y exclusivity</td></tr><tr><td>EU Paediatric</td><td>PIP mandatory, 6mo SPC extension</td></tr><tr><td>US Paediatric</td><td>PREA mandatory, BPCA voluntary (6mo exclusivity)</td></tr><tr><td>RMP mandatory</td><td>EMA/MHRA</td></tr><tr><td>PSUR intervals</td><td>6mo→1yr→3yr→5yr</td></tr><tr><td>Breakthrough/PRIME/ILAP</td><td>Early intensive guidance for unmet need</td></tr><tr><td>Fast Track (FDA)</td><td>Rolling review, early meetings (serious condition)</td></tr><tr><td>REMS (FDA)</td><td>Selected high-risk drugs only</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 10 months</li><li><b>B</b> — 210 days</li><li><b>B</b> — Surrogate endpoint</li><li><b>B</b> — Incomplete data + yearly renewal</li><li><b>C</b> — &lt;200,000</li><li><b>C</b> — 10 years</li><li><b>B</b> — PIP mandatory</li><li><b>C</b> — 6mo → 1yr → 3yr → 5yr</li><li><b>B</b> — EMA and MHRA (all MAAs)</li><li><b>B</b> — Early intensive guidance for unmet need</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Development/Licensing and approval.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Licensing And Approval · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

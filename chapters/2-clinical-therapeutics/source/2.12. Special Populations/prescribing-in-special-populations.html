@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prescribing In Special Populations — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.12. SPECIAL POPULATIONS</span>
+      <div class="h1">Prescribing In Special Populations</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Scope</span>
+  </div>
+  <div class="sec-body">
+<p>Pharmacokinetic and pharmacodynamic alterations in renal impairment, hepatic impairment, elderly, pregnancy/lactation, and paediatrics; dose adjustment principles and contraindicated drugs.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Sub-Topics (Topic-Groups)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">[[Special Populations/Renal impairment|Renal Impairment]]</div>
+<ul><li>[[Special Populations/eGFR and Cockcroft-Gault|eGFR &amp; Cockcroft-Gault Estimation]]</li><li>[[Special Populations/Renal drug dosing principles|Renal Drug Dosing Principles]]</li><li>[[Special Populations/Renal dosing common drugs|Common Drug Dose Adjustments in CKD]]</li><li>[[Special Populations/Dialysis dosing|Drug Dosing in Dialysis]] (HD, PD, CRRT)</li><li>[[Special Populations/Renal contraindicated|Drugs Contraindicated in Renal Impairment]]</li></ul>
+<div class="sub-h">[[Special Populations/Hepatic impairment|Hepatic Impairment]]</div>
+<ul><li>[[Special Populations/Child-Pugh classification|Child-Pugh Classification for Dosing]]</li><li>[[Special Populations/Hepatic drug metabolism|Hepatic Drug Metabolism Principles]]</li><li>[[Special Populations/Hepatic dosing common drugs|Common Drug Dose Adjustments in Liver Disease]]</li><li>[[Special Populations/Hepatic contraindicated|Drugs Contraindicated in Hepatic Impairment]]</li></ul>
+<div class="sub-h">[[Special Populations/Elderly|Elderly Prescribing]]</div>
+<ul><li>[[Special Populations/Age-related PK PD changes|Age-Related PK/PD Changes]]</li><li>[[Special Populations/Frailty|Frailty &amp; Prescribing Decisions]]</li><li>[[Special Populations/High-risk drugs elderly|High-Risk Drugs in Elderly]] (Beers, STOPP)</li><li>[[Special Populations/Deintensification|Deintensification &amp; Deprescribing in Elderly]]</li></ul>
+<div class="sub-h">[[Special Populations/Pregnancy and lactation|Pregnancy &amp; Lactation]]</div>
+<ul><li>[[Special Populations/Pregnancy categories|Pregnancy Categories]] (FDA A/B/C/D/X, UK/EU alternatives)</li><li>[[Special Populations/Teratogenicity|Teratogenicity Principles &amp; Critical Periods]]</li><li>[[Special Populations/Safe drugs pregnancy|Safe Drugs in Pregnancy]]</li><li>[[Special Populations/Contraindicated pregnancy|Drugs Contraindicated in Pregnancy]]</li><li>[[Special Populations/Lactation safety|Drugs in Breastfeeding]] (LactMed, Hale's)</li></ul>
+<div class="sub-h">[[Special Populations/Paediatrics|Paediatric Prescribing]]</div>
+<ul><li>[[Special Populations/Paediatric dosing|Paediatric Dosing Principles]] (Weight, BSA, Age)</li><li>[[Special Populations/Off-label paeds|Off-Label &amp; Unlicensed Prescribing in Children]]</li><li>[[Special Populations/Neonatal dosing|Neonatal &amp; Infant Dosing Considerations]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Renal Dosing Quick Reference (eGFR-based)</div>
+<table class="ctable"><tr><th>eGFR (mL/min)</th><th>Dosing Adjustment Principle</th></tr><tr><td>---------------</td><td>------------------------------</td></tr><tr><td>**≥60**</td><td>Normal dose</td></tr><tr><td>**30-59**</td><td>Reduce dose OR extend interval (check specific drug)</td></tr><tr><td>**15-29**</td><td>Significant dose reduction; extend interval; avoid nephrotoxins</td></tr><tr><td>**<15 (Dialysis)**</td><td>Post-HD dosing for renally cleared drugs; avoid drugs dialysed out</td></tr></table>
+<p><b>Cockcroft-Gault (CrCl) for Drug Dosing:</b></p>
+<div class="callout"><b>CrCl (mL/min) = (140 - Age) × Weight (kg) × (0.85 if female) / (72 × SCr mg/dL)</b> <i>Use actual body weight unless obese (then adjusted body weight)</i></div>
+<div class="sub-h">Common Drug Renal Adjustments (CKD Stages G3-G5)</div>
+<table class="ctable"><tr><th>Drug</th><th>eGFR 30-59</th><th>eGFR 15-29</th><th>eGFR <15 / Dialysis</th></tr><tr><td>------</td><td>------------</td><td>------------</td><td>---------------------</td></tr><tr><td>**Metformin**</td><td>Max 1g BD (caution)</td><td>**Contraindicated** (lactic acidosis)</td><td>Contraindicated</td></tr><tr><td>**ACEi/ARB**</td><td>Standard dose; monitor K, Cr</td><td>Reduce dose; monitor closely</td><td>Start low; monitor; hold if K>5.5</td></tr><tr><td>**DOACs**</td><td>**Rivaroxaban 15mg OD (AF)** / 10mg OD (VTE)</td><td>**Apixaban 2.5mg BD** / **Dabigatran 110mg BD** / **Avoid Rivaroxaban**</td><td>**Avoid DOACs**; Use Warfarin</td></tr><tr><td>**Aminoglycosides**</td><td>Extended interval; monitor levels</td><td>Extended interval; monitor levels</td><td>Post-HD dosing</td></tr><tr><td>**Vancomycin**</td><td>Standard dose; AUC-guided</td><td>Standard dose; AUC-guided</td><td>Post-HD dosing (15-20mg/kg)</td></tr><tr><td>**Gabapentin/Pregabalin**</td><td>Reduce dose</td><td>Significant reduction</td><td>Dose post-HD</td></tr><tr><td>**Allopurinol**</td><td>Reduce dose (100mg/day max if <30)</td><td>100mg/day max</td><td>100mg post-HD</td></tr><tr><td>**Colchicine**</td><td>Reduce dose (0.5mg OD)</td><td>0.5mg alternate days</td><td>Avoid / 0.5mg post-HD</td></tr></table>
+<div class="sub-h">Hepatic Impairment (Child-Pugh)</div>
+<table class="ctable"><tr><th>Class</th><th>Score</th><th>Dosing Approach</th></tr><tr><td>-------</td><td>-------</td><td>-----------------</td></tr><tr><td>**A (Mild)**</td><td>5-6</td><td>Minor reduction for high-extraction drugs; standard for most</td></tr><tr><td>**B (Moderate)**</td><td>7-9</td><td>Reduce dose 50% for high-extraction; 25% for low-extraction; avoid hepatotoxins</td></tr><tr><td>**C (Severe)**</td><td>10-15</td><td>Avoid most hepatically cleared drugs; use alternatives</td></tr></table>
+<p><b>High-Extraction Drugs (Flow-limited):</b> Propranolol, Lidocaine, Morphine, Verapamil, Nitrates <b>Low-Extraction Drugs (Capacity-limited):</b> Warfarin, Phenytoin, Diazepam, Theophylline</p>
+<div class="sub-h">Pregnancy Categories (FDA → Phased Out; Use Narrative Labelling)</div>
+<table class="ctable"><tr><th>Old Category</th><th>Meaning</th><th>Examples</th></tr><tr><td>--------------</td><td>---------</td><td>----------</td></tr><tr><td>**A**</td><td>Controlled studies show no risk</td><td>Levothyroxine, Folic acid, Pyridoxine</td></tr><tr><td>**B**</td><td>Animal studies no risk; no human studies OR animal risk but human studies no risk</td><td>Penicillins, Cephalosporins, Metformin, Insulin, Paracetamol</td></tr><tr><td>**C**</td><td>Animal risk; no human studies OR no animal/human data</td><td>Most antidepressants (SSRIs), Antihypertensives (except ACEi/ARB), Corticosteroids</td></tr><tr><td>**D**</td><td>Positive human risk; benefits may outweigh</td><td>**Lithium**, **Valproate**, **Carbamazepine**, Phenytoin, **Warfarin**, **ACEi/ARB**, **DOACs**, **Statins**</td></tr><tr><td>**X**</td><td>Contraindicated; risk > benefit</td><td>**Isotretinoin**, **Thalidomide**, **Methotrexate**, **Ribavirin**, **Mycophenolate**, **Misoprostol**</td></tr></table>
+<p><b>UK/EU System:</b> No letter categories; use <b>Summary of Product Characteristics (SmPC) Section 4.6</b> — "Contraindicated", "Not recommended", "Use only if clearly needed", "May be used"</p>
+<div class="sub-h">Teratogenic Critical Periods</div>
+<table class="ctable"><tr><th>Organ System</th><th>Critical Period (Post-conception)</th></tr><tr><td>--------------</td><td>-----------------------------------</td></tr><tr><td>**Neural tube**</td><td>Days 18-28 (Week 3-4)</td></tr><tr><td>**Heart**</td><td>Days 20-50 (Week 3-7)</td></tr><tr><td>**Limbs**</td><td>Days 24-46 (Week 4-7)</td></tr><tr><td>**Eyes**</td><td>Days 21-42 (Week 3-6)</td></tr><tr><td>**Palate**</td><td>Days 42-56 (Week 6-8)</td></tr><tr><td>**External genitalia**</td><td>Weeks 7-12</td></tr><tr><td>**Brain (functional)**</td><td>Throughout pregnancy (especially 2nd/3rd trimester)</td></tr></table>
+<div class="sub-h">Key Teratogens (Avoid in Pregnancy)</div>
+<ul><li><b>Valproate</b> — Neural tube defects (1-2%), developmental delay, autism (↑ risk vs other AEDs)</li><li><b>Carbamazepine</b> — Neural tube defects, craniofacial abnormalities</li><li><b>Lithium</b> — Ebstein's anomaly (cardiac), 1st trimester</li><li><b>Warfarin</b> — Warfarin embryopathy (chondrodysplasia punctata, nasal hypoplasia) 1st trimester; CNS bleeding 2nd/3rd</li><li><b>ACEi/ARB</b> — Fetal renal dysplasia, oligohydramnios, pulmonary hypoplasia, skull ossification defects (2nd/3rd trimester)</li><li><b>Isotretinoin</b> — Severe CNS, cardiac, thymic, craniofacial defects</li><li><b>Methotrexate</b> — Fetal death, craniofacial, limb defects</li><li><b>Statins</b> — Animal teratogenicity; theoretical risk to cholesterol synthesis</li></ul>
+<div class="sub-h">Safe in Pregnancy (Common)</div>
+<table class="ctable"><tr><th>Indication</th><th>Preferred Drug(s)</th></tr><tr><td>------------</td><td>-------------------</td></tr><tr><td>**Hypertension**</td><td>Labetalol, Methyldopa, Nifedipine (MR)</td></tr><tr><td>**Anticoagulation**</td><td>**LMWH (Enoxaparin)** — All trimesters; Warfarin 2nd/3rd only if mechanical valve</td></tr><tr><td>**Diabetes**</td><td>**Insulin**; Metformin (2nd line, growing evidence)</td></tr><tr><td>**Epilepsy**</td><td>**Lamotrigine**, **Levetiracetam** (Lowest teratogenicity); Folic acid 5mg daily</td></tr><tr><td>**Depression**</td><td>**Sertraline**, **Fluoxetine**, **Citalopram** (SSRIs preferred)</td></tr><tr><td>**Asthma**</td><td>Continue all inhalers (ICS, LABA, SABA); Montelukast</td></tr><tr><td>**Pain**</td><td>Paracetamol (1st line); Avoid NSAIDs 3rd trimester</td></tr><tr><td>**Nausea**</td><td>Doxylamine + Pyridoxine (1st line); Metoclopramide, Ondansetron (2nd line)</td></tr></table>
+<div class="sub-h">Paediatric Dosing</div>
+<table class="ctable"><tr><th>Method</th><th>Formula</th><th>Use Case</th></tr><tr><td>--------</td><td>---------</td><td>----------</td></tr><tr><td>**Weight-based**</td><td>Dose (mg/kg) × Weight (kg)</td><td>Most drugs</td></tr><tr><td>**BSA-based**</td><td>Dose (mg/m²) × BSA (m²)</td><td>Chemotherapy, some antibiotics</td></tr><tr><td>**Age-based**</td><td>(Age + 4) / 24 × Adult dose (Young's Rule)</td><td>Approximation only</td></tr><tr><td>**BSA (Mosteller)**</td><td>√[Height(cm) × Weight(kg) / 3600]</td><td>Most accurate for chemo</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Chapter</b>: [[Davidson Chapter 2 - Clinical Therapeutics Hierarchy|Chapter 2 Hierarchy]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Template</b>: [[../Templates/Clinical Therapeutics and Good Prescribing Topic Template|Topic Template]]</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Tags</span>
+  </div>
+  <div class="sec-body">
+<p>#medicine #clinical-therapeutics #davidson #hub #special-populations #renal-dosing #hepatic-dosing #pregnancy-prescribing #paediatric-dosing #fcps #mrcp</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Prescribing in special populations is a <b>core FCPS/MRCP prescribing topic</b>. Master <b>renal dosing</b> (eGFR/Cockcroft-Gault), <b>hepatic dosing</b> (Child-Pugh, high vs low extraction), <b>pregnancy/lactation safety</b> (teratogenicity, FDA/UK categories), <b>paediatric dosing</b> (weight/BSA/age), and <b>elderly prescribing</b> (frailty, Beers/STOPP, deprescribing). Accurate dose adjustment prevents toxicity and therapeutic failure in vulnerable patients.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Renal dosing — metformin contraindication threshold?</b></li></ol>
+<p>A. eGFR &lt;60 B. eGFR &lt;45 C. <b>eGFR &lt;30 (contraindicated); eGFR 30-45: max 1g BD</b> D. eGFR &lt;15 only</p>
+<ol><li><b>DOAC dosing in CKD — rivaroxaban for AF at eGFR 30-49?</b></li></ol>
+<p>A. 20mg OD B. <b>15mg OD</b> C. 10mg OD D. Contraindicated</p>
+<ol><li><b>Child-Pugh Class C — dosing principle?</b></li></ol>
+<p>A. Standard doses for all drugs B. <b>Avoid most hepatically cleared drugs; avoid hepatotoxins; use alternatives</b> C. Reduce all drugs by 25% D. No dose adjustment needed</p>
+<ol><li><b>High-extraction drugs (flow-limited) — which is correct?</b></li></ol>
+<p>A. Warfarin, Phenytoin B. <b>Propranolol, Lidocaine, Morphine, Verapamil, Nitrates</b> C. Phenytoin, Theophylline, Diazepam D. Digoxin, Atenolol, Gabapentin</p>
+<ol><li><b>Pregnancy — ACE inhibitor risk in 2nd/3rd trimester?</b></li></ol>
+<p>A. Cardiac malformations B. <b>Fetal renal dysplasia, oligohydramnios, pulmonary hypoplasia, skull defects</b> C. Neural tube defects C. Limb reduction defects</p>
+<ol><li><b>Teratogen — valproate associated with:</b></li></ol>
+<p>A. Cardiac defects only B. <b>Neural tube defects (1-2%), developmental delay, autism</b> C. Cardiac defects + cleft palate only D. Limb reduction defects only</p>
+<ol><li><b>ACE inhibitor in pregnancy — when absolutely contraindicated?</b></li></ol>
+<p>A. 1st trimester only B. <b>2nd and 3rd trimester (fetal renal dysplasia, oligohydramnios, pulmonary hypoplasia)</b> C. All trimesters equally D. Only if woman has hypertension</p>
+<ol><li><b>Paediatric dosing — most accurate method for chemotherapy?</b></li></ol>
+<p>A. Weight-based (mg/kg) B. <b>BSA-based (mg/m²) with Mosteller formula</b> C. Age-based (Young's Rule) D. Flat adult dose</p>
+<ol><li><b>Elderly — STOPP criterion for statin in primary prevention?</b></li></ol>
+<p>A. &gt;65 years B. <b>&gt;85 years</b> C. &gt;75 years D. &gt;70 years</p>
+<ol><li><b>Paediatric dosing — Young's Rule formula?</b></li></ol>
+<p>A. (Age × Weight) / Adult Dose B. <b>(Age + 4) / 24 × Adult Dose</b> C. Weight (kg) × 2 / Adult Dose D. BSA (m²) × Adult Dose</p>
+<ol><li><b>Drug dosing in haemodialysis — when to give renally cleared drug?</b></li></ol>
+<p>A. Pre-dialysis B. <b>Post-dialysis</b> C. Mid-dialysis D. Any time</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>85F, eGFR 28, T2DM on metformin 1g BD. Management?</b></li></ol>
+<p>A. Continue 1g BD B. <b>Reduce to 500mg BD (max 1g/day if eGFR 30-45); contraindicated if &lt;30</b> C. Switch to gliclazide C. Stop metformin <i>Answer: B</i></p>
+<ol><li><b>32F, 12 weeks pregnant, epilepsy on valproate 1g BD. Folic acid 5mg prescribed. Best AED switch?</b></li></ol>
+<p>A. Carbamazepine B. <b>Lamotrigine or Levetiracetam (lowest teratogenicity); Folic acid 5mg daily</b> C. Phenytoin D. Topiramate <i>Answer: B</i></p>
+<ol><li><b>70M, Child-Pugh B cirrhosis, needs analgesia for fracture. Safe opioid?</b></li></ol>
+<p>A. Morphine (standard dose) B. <b>Fentanyl/Alfentanil (low hepatic extraction, safe in liver disease); avoid morphine/codeine</b> C. Codeine 60mg C. Tramadol 100mg <i>Answer: B</i></p>
+<ol><li><b>5-year-old, 18kg, needs amoxicillin for pneumonia. Dose?</b></li></ol>
+<p>A. 125mg TDS B. <b>25mg/kg/dose = 450mg TDS (50mg/kg/day in divided doses)</b> C. 500mg TDS D. 250mg BD <i>Answer: B</i></p>
+<ol><li><b>85F, frail, on 12 medications including lorazepam, digoxin, furosemide. STOPP criterion?</b></li></ol>
+<p>A. Statin primary prevention &gt;85y B. <b>Benzodiazepine &gt;4w (falls, cognitive impairment) — STOPP B2</b> C. PPI &gt;8w D. Warfarin &gt;1y VTE <i>Answer: B</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-C, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Metformin in renal impairment — dosing thresholds?</td><td>**eGFR ≥45: full dose; 30-44: max 1g BD (500mg BD); 15-29: contraindicated (lactic acidosis risk); <15/dialysis: contraindicated.**</td></tr><tr><td>2</td><td>Child-Pugh classification — classes and dosing?</td><td>**A (5-6): mild, minor reduction for high-extraction. B (7-9): moderate, reduce high-extraction 50%, low-extraction 25%, avoid hepatotoxins. C (10-15): severe, avoid most hepatically cleared drugs.**</td></tr><tr><td>3</td><td>High vs low extraction drugs — examples and hepatic dosing impact?</td><td>**High-extraction (flow-limited): Propranolol, Lidocaine, Morphine, Verapamil, Nitrates — dose depends on hepatic blood flow; reduce in liver disease. Low-extraction (capacity-limited): Warfarin, Phenytoin, Diazepam, Theophylline — dose depends on intrinsic clearance/enzyme activity.**</td></tr><tr><td>4</td><td>Teratogenic critical periods — neural tube, heart, limbs?</td><td>**Neural tube: Days 18-28 (Week 3-4). Heart: Days 20-50 (Week 3-7). Limbs: Days 24-46 (Week 4-7).**</td></tr><tr><td>5. Key teratogens — valproate, warfarin, ACEi, lithium?</td><td>**Valproate: NTD 1-2%, developmental delay, autism. Warfarin: Embryopathy (chondrodysplasia, nasal hypoplasia) 1st tri; CNS bleed 2nd/3rd. ACEi: Fetal renal dysplasia, oligohydramnios, pulmonary hypoplasia (2nd/3rd tri). Lithium: Ebstein's anomaly (cardiac) 1st tri. ACEi/ARB Contraindicated 2nd/3rd tri.**</td></tr><tr><td>6. Warfarin in pregnancy — when can it be used?</td><td>**Mechanical heart valve only (with specialist oversight); otherwise contraindicated (teratogenic 1st tri, CNS bleeding 2nd/3rd). LMWH preferred for VTE/AF in pregnancy.**</td></tr><tr><td>7. Paediatric dosing — methods and when to use each?</td><td>**Weight-based (mg/kg) = most drugs; BSA-based (mg/m²) = chemotherapy, some antibiotics (Mosteller formula); Age-based (Young's Rule) = approximation only.**</td></tr><tr><td>7</td><td>STOPP/START in elderly — key criteria?</td><td>**STOPP: Benzos >4w, PPI >8w, NSAID in HF/CKD/ulcer, Warfarin >1y for VTE, Aspirin 1° prev >70, Statin 1° prev >85, Anticholinergic burden. START: Vit D+Ca in OP, ACEi/ARB in HFrEF, BB in HFrEF, Statin in CVD, Anticoag in AF, Bisphosphonate in OP.**</td></tr><tr><td>8</td><td>DOAC in CKD — rivaroxaban for AF dosing by eGFR?</td><td>**≥50: 20mg OD; 15-49: 15mg OD; <15: Avoid (use warfarin/LMWH). CrCl 15-49: 15mg OD.**</td></tr><tr><td>9</td><td>Pregnancy — ACE inhibitor risk in 2nd/3rd trimester?</td><td>**Fetal renal dysplasia, oligohydramnios, pulmonary hypoplasia, skull defects. Contraindicated 2nd/3rd trimester.**</td></tr><tr><td>10. Paediatric dosing — Mosteller formula?</td><td>**BSA (m²) = √[Height(cm) × Weight(kg) / 3600]. Most accurate for chemo dosing.**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**eGFR = CrCl for dosing**</td><td>**NO.** eGFR (MDRD/CKD-EPI) ≠ CrCl (Cockcroft-Gault). Use **CrCl (Cockcroft-Gault)** for drug dosing — it estimates creatinine clearance better for dosing.</td></tr><tr><td>**All drugs need renal dose adjustment**</td><td>**NO.** Only renally cleared drugs (eGFR <60). Check each drug individually.</td></tr><tr><td>**Child-Pugh C = no drugs**</td><td>**NO.** Some drugs still usable with careful titration and monitoring; many require avoidance.</td></tr><tr><td>**All statins safe in liver disease**</td><td>**NO.** Statins metabolised by CYP3A4 (simvastatin, atorvastatin, lovastatin) need caution in liver disease. Pravastatin, rosuvastatin, fluvastatin, pitavastatin preferred.</td></tr><tr><td>**All antibiotics safe in pregnancy**</td><td>**NO.** Tetracyclines, Aminoglycosides, Fluoroquinolones, Sulfonamides, Metronidazole (1st tri) = contraindicated/risk. Penicillins, Cephalosporins, Macrolides, Clindamycin = generally safe.</td></tr><tr><td>**All antiepileptics teratogenic**</td><td>**NO.** Lamotrigine, Levetiracetam = lowest risk. Valproate highest risk. Carbamazepine/Phentoin intermediate.</td></tr><tr><td>**All DOACs contraindicated in CKD**</td><td>**NO.** Apixaban 2.5mg BD (eGFR 15-29), Dabigatran 110mg BD (CrCl 30-49), Rivaroxaban 15mg OD (CrCl 15-49). Warfarin for eGFR <15/dialysis.</td></tr><tr><td>**Elderly = just reduce all doses**</td><td>**NO.** Individualised deprescribing (STOPP/START). Some drugs need full dose (e.g., antibiotic for severe infection).</td></tr><tr><td>**Paediatric dosing = always weight-based**</td><td>**NO.** BSA-based for chemo (Mosteller); Age-based approximation only when weight unavailable.</td></tr><tr><td>**Protein binding displacement = major interaction in elderly**</td><td>**Rarely.** Only for high-extraction, narrow TI drugs (warfarin, phenytoin, valproate).</td></tr></table>
+<div class="callout"><b>Mnemonic: SPECIAL POPULATIONS</b> <b>S</b>pecial Populations: <b>R</b>enal, <b>H</b>epatic, <b>P</b>regnancy, <b>E</b>lderly, <b>P</b>aediatrics <b>R</b>enal: <b>C</b>ockcroft-<b>G</b>ault for dosing; <b>M</b>etformin &lt;30 = NO; <b>D</b>OACs adjust by eGFR; <b>A</b>minoglycosides post-HD <b>H</b>epatic: <b>C</b>hild-Pugh <b>A/B/C</b>; <b>H</b>igh-extraction (Propranolol, Morphine) vs <b>L</b>ow (Warfarin, Phenytoin) <b>P</b>regnancy: <b>T</b>eratogenic <b>C</b>ritical periods (NT 18-28d, Heart 20-50d, Limbs 24-46d); <b>V</b>alproate (NTD, Autism), <b>L</b>ithium (Ebstein), <b>W</b>arfarin (Embryopathy), <b>A</b>CEi (Renal dysplasia) <b>E</b>lderly: <b>S</b>TOPP/<b>S</b>TART; <b>B</b>eers; <b>A</b>CB; <b>D</b>B<b>I</b>; <b>D</b>epresc ribing (PPI, Benzo, Anticholinergic, Statin, HTN) <b>P</b>aediatrics: <b>W</b>eight-based (mg/kg) most; <b>B</b>SA (Mosteller) for chemo; <b>Y</b>oung's Rule (Age+4)/24 × Adult <b>B</b>reastfeeding: <b>L</b>actMed; <b>H</b>ale's; <b>S</b>afe = Short-acting, low milk transfer, poor oral bioavailability</div>
+<div class="callout"><b>Mnemonic: RENAL DOSING — "MADD-AB-VAC"</b> <b>M</b>etformin &lt;30 NO, 30-45 max 1g BD <b>A</b>CEi/ARB: monitor K, Cr; reduce if &lt;30 <b>D</b>OACs: Riva 15mg (30-49), Apx 2.5mg BD (15-29), Dab 110mg BD (30-49); &lt;15 Warfarin <b>D</b>ABIGATRAN: 110mg BD (CrCl 30-49), 75mg BD (15-29), avoid &lt;15 <b>A</b>minoglycosides: Extended interval; post-HD dosing <b>B</b>enzenes (Vancomycin): Standard dose, AUC-guided; post-HD 15-20mg/kg <b>V</b>anc_mycin: AUC-guided; post-HD 15-20mg/kg <b>A</b>llopurinol: 100mg max (&lt;30), post-HD <b>C</b>holchicine: 0.5mg OD (30-59), alt days (15-29), avoid &lt;15</div>
+<div class="callout"><b>Mnemonic: HEPATIC — "CHILD-PUGH"</b> <b>C</b>lass A (5-6): Mild reduction high-extraction <b>H</b>igh-extraction drugs: Propranolol, Lidocaine, Morphine, Verapamil, Nitrates <b>I</b>ntermediate (B: 7-9): 50% high, 25% low extraction reduction <b>L</b>ow-extraction: Warfarin, Phenytoin, Diazepam, Theophylline</div>
+<p>+ <b>D</b>ose reduction severe (C: 10-15): Avoid most hepatically cleared</p>
+<div class="callout"><b>P</b>regnancy: ACEi/ARB Contraindicated 2nd/3rd tri <b>U</b>terine teratogens: Valproate, Warfarin, ACEi, Lithium, Isotretinoin, Methotrexate, Statins <b>G</b>enerally safe: Lamotrigine, Levetiracetam, Labetalol, Methyldopa, Nifedipine, LMWH, Insulin, Sertraline, Paracetamol</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Prescribing in Special Populations)) Renal Cockcroft-Gault eGFR thresholds Metformin &lt;30 NO DOACs eGFR-based Aminoglycosides post-HD Vancomycin AUC-guided Hepatic Child-Pugh A/B/C High-extraction (Propranolol, Morphine) Low-extraction (Warfarin, Phenytoin) Avoid hepatotoxins in C Pregnancy FDA/UK categories Teratogens: Valproate, Warfarin, ACEi, Lithium, Isotretinoin Safe: Labetalol, LMWH, Insulin, Lamotrigine, Sertraline Critical periods: NT 18-28d, Heart 20-50d, Limbs 24-46d Elderly PK/PD changes STOPP/START v3 Beers 2023 ACB/DBI/MAI Deprescribing algorithms Paediatrics Weight-based (mg/kg) BSA (Mosteller) Age (Young's Rule) Off-label/unlicensed </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Renal Dosing</td><td>4</td><td></td><td></td></tr><tr><td>Hepatic Dosing</td><td>3</td><td></td><td></td></tr><tr><td>Pregnancy & Lactation</td><td>4</td><td></td><td></td></tr><tr><td>Elderly Prescribing</td><td>3</td><td></td><td></td></tr><tr><td>Paediatric Dosing</td><td>3</td><td></td><td></td></tr><tr><td>Teratogenicity</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the principles of prescribing in renal impairment, hepatic impairment, and pregnancy."</td><td>Renal: CrCl (C-G), eGFR thresholds, metformin/DOAC/aminoglycoside adjustments. Hepatic: Child-Pugh A/B/C, high vs low extraction drugs. Pregnancy: FDA/UK categories, teratogens (valproate, warfarin, ACEi, lithium), safe drugs, teratogenic critical periods.</td></tr><tr><td>**Short Note**</td><td>"Metformin in renal impairment — dosing and contraindication."</td><td>eGFR ≥45: full dose; 30-44: max 1g BD; 15-29: contraindicated; <15/dialysis: contraindicated. Lactic acidosis risk.</td></tr><tr><td>**Viva**</td><td>"32F, 12 weeks pregnant, epilepsy on valproate. Management?"</td><td>**Switch to lamotrigine/levetiracetam (lowest teratogenicity). Folic acid 5mg daily. Valproate: NTD 1-2%, developmental delay, autism.**</td></tr><tr><td>**Ward Round**</td><td>"85F, eGFR 28, on metformin 1g BD. Management?"</td><td>**Reduce to 500mg BD (max 1g/day if eGFR 30-45). Monitor lactate, renal function. If eGFR drops <30 → stop.**</td></tr><tr><td>**Last-Night**</td><td>"Renal: CG for dosing, Metformin <30 NO, 30-45 max 1g, DOACs eGFR adjust, Amino post-HD. Hepatic: Child-Pugh A/B/C, High-extraction (Propranolol, Morphine) vs Low (Warfarin, Phenytoin). Preg: Valproate/Lithium/Warfarin/ACEi teratogenic; Safe: Labetalol, LMWH, Insulin, Lamotrigine, Sertraline. Teratogenic periods: NT 18-28d, Heart 20-50d, Limbs 24-46d. Elderly: STOPP/START, Beers, ACB≥3=High risk. Paeds: Weight mg/kg, BSA Mosteller chemo. Elderly: STOPP/START, Deprescribing."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Renal Dosing:</b> <b>Cockcroft-Gault (CrCl)</b> for dosing; eGFR thresholds: Metformin &lt;30 contraindicated, 30-44 max 1g BD; DOACs adjust by eGFR; Aminoglycosides post-HD; Vancomycin AUC-guided.</li><li><b>Hepatic Dosing:</b> <b>Child-Pugh A/B/C</b>; High-extraction (Propranolol, Lidocaine, Morphine, Verapamil, Nitrates) — reduce in liver disease; Low-extraction (Warfarin, Phenytoin, Diazepam, Theophylline) — adjust for enzyme capacity.</li><li><b>Pregnancy:</b> <b>Teratogens:</b> Valproate (NTD, autism), Warfarin (embryopathy), ACEi/ARB (renal dysplasia), Lithium (Ebstein), Isotretinoin, Methotrexate, Statins. <b>Safe:</b> Labetalol, Methyldopa, Nifedipine, LMWH, Insulin, Lamotrigine, Levetiracetam, Sertraline, Paracetamol. <b>Critical periods:</b> Neural tube 18-28d, Heart 20-50d, Limbs 24-46d, Palate 42-56d.</li><li><b>Elderly:</b> <b>STOPP/START v3</b>, Beers 2023, ACB/DBI/MAI, Deprescribing (PPI, Benzo, Anticholinergic, Statin, HTN).</li><li><b>Paediatrics:</b> <b>Weight-based (mg/kg) most; BSA (Mosteller) for chemo; Young's Rule (Age+4)/24 × Adult dose</b>.</li><li><b>Contraindicated in Pregnancy (X):</b> Isotretinoin, Thalidomide, Methotrexate, Ribavirin, Mycophenolate.</li><li><b>Lactation:</b> Prefer short-acting, low milk transfer, poor oral bioavailability drugs; Consult LactMed/Hale's.</li><li><b>Renal Replacement:</b> HD — post-HD dosing for renally cleared drugs; PD — similar but less drug removal; CRRT — higher clearance, adjust accordingly.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Metformin contraindicated at which eGFR?</b></li></ol>
+<p>A. &lt;60 B. &lt;45 C. <b>&lt;30</b> D. &lt;45</p>
+<ol><li><b>Rivaroxaban for AF in eGFR 30-49?</b></li></ol>
+<p>A. 20mg OD B. <b>15mg OD</b> C. 10mg OD D. Contraindicated</p>
+<ol><li><b>Child-Pugh B — dosing adjustment for high-extraction drugs?</b></li></ol>
+<p>A. No change B. <b>Reduce 50%</b> C. Reduce 25% D. Avoid</p>
+<ol><li><b>ACE inhibitor teratogenicity — mechanism in 2nd/3rd trimester?</b></li></ol>
+<p>A. Cardiac malformations B. <b>Fetal renal dysplasia, oligohydramnios, pulmonary hypoplasia</b> C. Neural tube defects D. Limb defects</p>
+<ol><li><b>Valproate teratogenicity — key features?</b>\n   A. Cardiac defects only\n   B. <b>Neural tube defects (1-2%), developmental delay, autism</b>\n   C. Cardiac + cleft palate\n   D. Limb defects only</li></ol>
+<ol><li><b>STOPP criterion for statin primary prevention?</b>\n   A. &gt;75 years\n   B. <b>&gt;85 years</b>\n   C. &gt;75 years\n   D. &gt;70 years</li></ol>
+<ol><li><b>Paediatric chemo dosing — most accurate method?</b>\n   A. Weight-based\n   B. <b>BSA (Mosteller)</b>\n   C. Age-based\n   D. Flat adult dose</li></ol>
+<ol><li><b>Lithium in pregnancy — specific cardiac defect?</b>\n   A. VSD\n   B. <b>Ebstein's anomaly</b>\n   C. TOF\n   D. Coarctation</li></ol>
+<ol><li><b>ACEi in pregnancy — when contraindicated?</b>\n   A. 1st trimester only\n   B. <b>2nd and 3rd trimester</b>\n   C. All trimesters\n   D. Safe throughout</li></ol>
+<ol><li><b>Paediatric dosing — Young's Rule?</b>\n    A. (Age × Weight) / Adult Dose\n    B. <b>(Age + 4) / 24 × Adult Dose</b>\n    C. Weight / Adult Dose\n    D. BSA × Adult Dose</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>85F, eGFR 28, T2DM on metformin 1g BD. Management?</b></li></ol>
+<p>A. Continue 1g BD B. <b>Reduce to 500mg BD (max 1g/day if eGFR 30-45); contraindicated if &lt;30</b> C. Switch to gliclazide D. Stop metformin <i>Answer: B</i></p>
+<ol><li><b>32F, 12 weeks pregnant, epilepsy on valproate 1g BD. Folic acid 5mg prescribed. Best AED switch?</b></li></ol>
+<p>A. Carbamazepine B. <b>Lamotrigine or Levetiracetam (lowest teratogenicity); Folic acid 5mg daily</b> C. Phenytoin D. Topiramate <i>Answer: B</i></p>
+<ol><li><b>70M, Child-Pugh B cirrhosis, fractured hip. Safe opioid?</b></li></ol>
+<p>A. Morphine (standard dose) B. <b>Fentanyl/Alfentanil (low hepatic extraction, safe in liver disease); avoid morphine/codeine</b> C. Codeine 60mg D. Tramadol 100mg <i>Answer: B</i></p>
+<ol><li><b>5-year-old, 18kg, amoxicillin for pneumonia. Dose?</b></li></ol>
+<p>A. 125mg TDS B. <b>25mg/kg/dose = 450mg TDS (50mg/kg/day)</b> C. 500mg TDS D. 250mg BD <i>Answer: B</i></p>
+<ol><li><b>85F, frail, 12 medications including lorazepam, digoxin, furosemide. STOPP?</b></li></ol>
+<p>A. Statin primary prevention &gt;85y B. <b>Benzodiazepine &gt;4w (falls, cognitive impairment) — STOPP B2</b> C. PPI &gt;8w D. Warfarin &gt;1y VTE <i>Answer: B</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-C, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Principles of Rational Prescribing]] — WHO 6-step, monitoring</li><li>[[ADRs]] — Special population ADRs</li><li>[[Drug Interactions]] — PK/PD changes in special populations</li><li>[[Polypharmacy and Deprescribing]] — Elderly deprescribing</li><li>[[Therapeutic Drug Monitoring]] — TDM in special populations</li><li>[[CYP450 Drug Interactions]] — PK changes in organ impairment</li><li>[[Drug Development and Regulation]] — Pregnancy categories, paediatric licensing</li><li>[[Clinical Contexts/Antimicrobial Stewardship]] — Renal/hepatic antibiotic dosing</li><li>[[Population &amp; Newborn Screening]] — Neonatal screening, antenatal prescribing</li><li>[[9. ELSI]] — Pregnancy prescribing ethics, paediatric off-label ethics</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Prescribing in Special Populations Hub: COMPLETE with Full Exam Suite (Viva Qs, MCQs, SBAs, Answer Keys, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Prescribing In Special Populations · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

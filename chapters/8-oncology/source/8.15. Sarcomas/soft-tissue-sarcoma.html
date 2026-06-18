@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Soft Tissue Sarcoma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.15. SARCOMAS</span>
+      <div class="h1">Soft Tissue Sarcoma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify <b>Common STS Histologies</b> (UPS, Liposarcoma, Leiomyosarcoma, Synovial, MPNST)</li><li>[ ] Apply <b>FNCLCC Grading</b> (Differentiation, Mitoses, Necrosis → Grade 1-3)</li><li>[ ] Plan <b>Surgical Resection</b> (R0, Compartmental, Margins)</li><li>[ ] Indicate <b>Adjuvant RT</b> (Pre-op 50Gy vs Post-op 60-66Gy) for High-Grade/Deep/&gt;5cm</li><li>[ ] Evaluate <b>Adjuvant Chemo Controversy</b> (EORTC 62931: RFS Benefit, No OS)</li><li>[ ] Sequence <b>Metastatic Therapy</b>: <b>Doxorubicin 1L → Pazopanib 2L → Histology-Directed</b></li><li>[ ] Select <b>Histology-Specific Agents</b>: Trabectedin (Lipo/Leiomyo), Gem/Doc (Leiomyo), Ifosfamide (Synovial)</li><li>[ ] Recognise <b>MPNST in NF1</b> (Lifetime Risk 10%)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant mesenchymal tumours; **>50 Histological Subtypes**</td></tr><tr><td>**Incidence**</td><td>**~1% of Adult Cancers**; ~5,000/year UK; **More Common in Children/Young Adults** (but diverse)</td></tr><tr><td>**Prevalence**</td><td>5-yr OS: **Localised ~65-70%**, **Metastatic ~15-20%**</td></tr><tr><td>**Peak Age**</td><td>**Bimodal**: Young Adults (Rhabdo, Synovial), Older Adults (UPS, Lipo, Leiomyo)</td></tr><tr><td>**Sex Ratio**</td><td>Slight Female Predominance Overall (Leiomyo, Lipo)</td></tr><tr><td>**Risk Factors**</td><td>**Prior RT (Radiation-Induced Sarcoma, Latency 10-20yr)**, **NF1 (MPNST 10% Lifetime)**, **Li-Fraumeni (TP53)**, **RB1 (Hereditary Retinoblastoma → Osteosarcoma/STS)**, **Chemical (Vinyl Chloride → Angiosarcoma)**, **Chronic Lymphoedema (Stewart-Treves → Angiosarcoma)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Common Histologies & Molecular Features</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Soft Tissue Sarcoma] --&gt; B[Histology] B --&gt; B1[<b>UPS (25%)</b> — Undifferentiated Pleomorphic Sarcoma&lt;br/&gt;<b>No Lineage Markers</b>, <b>Complex Karyotype</b>, <b>TP53, RB1, CDKN2A</b>] B --&gt; B2[<b>Liposarcoma (20%)</b>&lt;br/&gt;<b>WDLS/DDLS: MDM2/CDK4 Amp (12q13-15)</b>&lt;br/&gt;<b>MLPS: FUS-DDIT3 / EWSR1-DDIT3</b>&lt;br/&gt;<b>PLS: MYC Amp</b>&lt;br/&gt;<b>DDLS/MLPS/PLS = High Grade</b>] B --&gt; B3[<b>Leiomyosarcoma (15%)</b>&lt;br/&gt;<b>Smooth Muscle Diff (SMA, Desmin, h-Caldesmon)</b>&lt;br/&gt;<b>Complex Karyotype</b>, <b>TP53, RB1, PTEN</b>] B --&gt; B4[<b>Synovial Sarcoma (10%)</b>&lt;br/&gt;<b>SS18-SSX1/2/4 Fusion (t(X;18))</b>&lt;br/&gt;<b>TLE1+, EMA+, CK+, CD99+</b>] B --&gt; B5[<b>MPNST (5%)</b>&lt;br/&gt;<b>NF1-Associated (50%)</b>, <b>NF1 Loss</b>, <b>SUZ12/EED/PRC2 Loss</b>, <b>H3K27me3 Loss (IHC)</b>] B --&gt; B6[<b>Other: Angiosarcoma, Rhabdomyosarcoma, Ewing, GIST, DFSP, Solitary Fibrous</b>] </code>``</p>
+<div class="sub-h">FNCLCC Grading System</div>
+<table class="ctable"><tr><th>Parameter</th><th>Score 1</th><th>Score 2</th><th>Score 3</th></tr><tr><td>-----------</td><td>---------</td><td>---------</td><td>---------</td></tr><tr><td>**Differentiation**</td><td>**Well-Differentiated** (Lipoma-like, WDLS)</td><td>**Certain Type** (Leiomyo, Synovial, MLPS)</td><td>**Poor/Undifferentiated** (UPS, Rhabdo, Embryonal)</td></tr><tr><td>**Mitoses / 10 HPF**</td><td>**0-9**</td><td>**10-19**</td><td>**≥20**</td></tr><tr><td>**Necrosis**</td><td>**None**</td><td>**<50%**</td><td>**≥50%**</td></tr></table>
+<table class="ctable"><tr><th>Total Score</th><th>Grade</th></tr><tr><td>-------------</td><td>-------</td></tr><tr><td>2-3</td><td>**Grade 1 (Low)**</td></tr><tr><td>4-5</td><td>**Grade 2 (Intermediate)**</td></tr><tr><td>6-8</td><td>**Grade 3 (High)**</td></tr></table>
+<div class="callout"><b>Critical:</b> Grade Determines Adjuvant RT/Chemo Decisions</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Painless Mass**</td><td>**Most Common**; Deep, Slow-Growing</td></tr><tr><td>**Pain**</td><td>**Late** (Nerve Compression, Size)</td></tr><tr><td>**Size at Presentation**</td><td>**Often Large (>5-10cm)** — Deep Location Delays Detection</td></tr><tr><td>**Location**</td><td>**Extremities (60%)**, **Trunk/Retroperitoneum (30%)**, **Head/Neck (10%)**</td></tr><tr><td>**Retroperitoneal**</td><td>**Late Symptoms** (Mass Effect, Hydronephrosis, Vascular Compression)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**MRI (Gold Standard)**</td><td>**Local Staging, Surgical Planning**</td><td>**T1: Hypointense**, **T2/STIR: Hyperintense**, **Contrast: Heterogeneous Enhancement**, **Perilesional Oedema**, **Neurovascular Relationship**</td></tr><tr><td>**CT Chest/Abd/Pelvis**</td><td>**Systemic Staging** (Lung Most Common Met Site)</td><td>Lung Mets > Liver/Bone</td></tr><tr><td>**Core Needle Biopsy (Image-Guided)**</td><td>**Diagnosis + Grade + Molecular**</td><td>**Adequate Tissue for IHC + FISH/NGS**</td></tr><tr><td>**IHC Panel**</td><td>**Lineage Assignment**</td><td>**MDM2/CDK4 (WDLS/DDLS)**, **STAT6 (SFT)**, **DOG1 (GIST)**, **S100/SOX10 (MPNST/Schwannoma)**, **TLE1 (Synovial)**, **Desmin/h-Caldesmon/SMA (Leiomyo)**</td></tr><tr><td>**Molecular/FISH**</td><td>**Definitive Subtyping**</td><td>**MDM2 Amp (12q)**, **FUS-DDIT3 (MLPS)**, **SS18-SSX (Synovial)**, **NF1 (MPNST)**</td></tr><tr><td>**PET-CT**</td><td>**Metabolic Activity, Occult Mets**</td><td>Not Routine</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Localised Disease</div>
+<p>``<code>mermaid flowchart TD A[Localised STS] --&gt; B{Grade / Size / Depth} B --&gt;|<b>Grade 1, Superficial, &lt;5cm</b>| C[<b>Surgery Alone (R0 Wide Excision)</b>&lt;br/&gt;<b>Margins: 1-2cm or Fascial Boundary</b>&lt;br/&gt;<b>No RT, No Chemo</b>] B --&gt;|<b>Grade 1, Deep OR &gt;5cm</b>| D[<b>Surgery + Adjuvant RT</b>&lt;br/&gt;<b>Pre-op 50Gy/25fx (Preferred: Less Toxicity)</b>&lt;br/&gt;<b>OR Post-op 60-66Gy/30-33fx</b>] B --&gt;|<b>Grade 2-3, Any Size/Depth</b>| E[<b>Surgery + Adjuvant RT</b>&lt;br/&gt;<b>Pre-op 50Gy/25fx (Standard)</b>&lt;br/&gt;<b>Function Preservation (Limb Salvage)</b>] B --&gt;|<b>High-Grade (2-3), &gt;5cm, Deep</b>| F[<b>Consider Adjuvant Chemo</b>&lt;br/&gt;<b>Doxorubicin + Ifosfamide</b> (EORTC 62931)&lt;br/&gt;<b>RFS Benefit, No OS Benefit</b>&lt;br/&gt;<b>Selected Patients (Young, High Risk)</b>] C --&gt; G[<b>Surveillance: MRI q3-6mo×2yr, q6mo×3yr; CT Chest q6mo×5yr</b>] D --&gt; G E --&gt; G F --&gt; G </code>``</p>
+<div class="sub-h">Radiation Therapy</div>
+<table class="ctable"><tr><th>Setting</th><th>Technique</th><th>Dose</th></tr><tr><td>---------</td><td>-----------</td><td>------</td></tr><tr><td>**Pre-operative**</td><td>**IMRT/VMAT**</td><td>**50Gy/25fx** (RTOG 0630: Less Wound Complications, Better Function)</td></tr><tr><td>**Post-operative**</td><td>**IMRT/VMAT**</td><td>**60-66Gy/30-33fx** (High-Grade, Positive/Close Margins)</td></tr><tr><td>**Brachytherapy**</td><td>**Intraoperative/Post-op**</td><td>**Alternative for Selected**</td></tr></table>
+<div class="callout"><b>Pre-op RT Preferred for Extremity STS</b> (Less Fibrosis, Better Function, Same Local Control)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Systemic Therapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Adjuvant Chemotherapy (Controversial)</div>
+<table class="ctable"><tr><th>Trial</th><th>Regimen</th><th>Population</th><th>Outcome</th></tr><tr><td>-------</td><td>---------</td><td>------------</td><td>---------</td></tr><tr><td>**EORTC 62931**</td><td>**Doxorubicin 50 + Ifosfamide 5g/m² (with Mesna) q3w ×3-5 cycles**</td><td>**High-Grade, >5cm, Deep**</td><td>**RFS HR 0.72 (p=0.007); OS NS (HR 0.90)**</td></tr><tr><td>**Meta-Analyses**</td><td>Doxorubicin-based</td><td>Mixed</td><td>**RFS Benefit ~10-15%; No Consistent OS Benefit**</td></tr><tr><td>**Current Practice**</td><td>**Selected Young, High-Risk, Grade 3**</td><td>Individualised</td><td>**Not Routine Standard**</td></tr></table>
+<div class="sub-h">Metastatic / Unresectable</div>
+<p>#### First-Line</p>
+<table class="ctable"><tr><th>Agent</th><th>Dose/Schedule</th><th>Key Trial</th></tr><tr><td>-------</td><td>---------------</td><td>-----------</td></tr><tr><td>**Doxorubicin**</td><td>**75mg/m² q3w** (Bolus)</td><td>**Standard 1L**; **Response Rate 20-25%**</td></tr><tr><td>**Doxorubicin + Ifosfamide**</td><td>**Dox 50 + Ifos 5-10g/m² (Mesna) q3w**</td><td>**Higher RR (30-40%), More Toxic**; **No OS Benefit**</td></tr><tr><td>**Gemcitabine + Docetaxel**</td><td>**Gem 900 d1,8 + Doc 100 d8 q3w**</td><td>**Leiomyosarcoma Preferred** (GeDDiS)</td></tr></table>
+<p>#### Second-Line &amp; Beyond</p>
+<table class="ctable"><tr><th>Agent</th><th>Indication</th><th>Key Trial</th></tr><tr><td>-------</td><td>------------</td><td>-----------</td></tr><tr><td>**Pazopanib**</td><td>**2L+ (Non-Adipocytic)**</td><td>**PALETTE: PFS 4.6 vs 1.6mo**</td></tr><tr><td>**Trabectedin**</td><td>**Liposarcoma / Leiomyosarcoma (2L+)**</td><td>**Cisplatin-Related DNA Damage**; **Lipo/Leiomyo Benefit**</td></tr><tr><td>**Eribulin**</td><td>**Liposarcoma (2L+)**</td><td>**PFS Benefit**</td></tr><tr><td>**Ifosfamide**</td><td>**Synovial Sarcoma / High-Grade**</td><td>**Single-Agent Activity**</td></tr><tr><td>**Olaratumab + Doxorubicin**</td><td>**Failed (ANNOUNCE: No OS Benefit)**</td><td>**Withdrawn**</td></tr><tr><td>**Immunotherapy (Pembrolizumab)**</td><td>**Selected (UPS, High TMB, MSI-H)**</td><td>**SARC028: Modest Activity**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Histology-Specific Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Histology</th><th>Key Features</th><th>Preferred Systemic</th></tr><tr><td>-----------</td><td>--------------</td><td>-------------------</td></tr><tr><td>**UPS**</td><td>**No Lineage**, Complex Genetics</td><td>**Doxorubicin**, **Pazopanib**, **Immunotherapy (High TMB)**</td></tr><tr><td>**WDLS/DDLS**</td><td>**MDM2/CDK4 Amp (12q13-15)**, **12q Ring Chromosomes**</td><td>**CDK4/6 Inhibitors (Palbociclib/Ribociclib — Trials)**, **Trabectedin**, **Pazopanib**</td></tr><tr><td>**MLPS**</td><td>**FUS-DDIT3 / EWSR1-DDIT3**, **Round Cell = High Grade**</td><td>**Trabectedin (High Activity)**, **Eribulin**, **Doxorubicin**</td></tr><tr><td>**PLS**</td><td>**MYC Amplification**, **Aggressive**</td><td>**Doxorubicin**, **Clinical Trials**</td></tr><tr><td>**Leiomyosarcoma**</td><td>**Smooth Muscle Markers**, **Complex Karyotype**</td><td>**Gemcitabine + Docetaxel (GeDDiS)**, **Trabectedin**, **Doxorubicin**</td></tr><tr><td>**Synovial Sarcoma**</td><td>**SS18-SSX Fusion (t(X;18))**, **TLE1+**</td><td>**Ifosfamide (High Activity)**, **Doxorubicin**, **TEC (Trials)**</td></tr><tr><td>**MPNST**</td><td>**NF1 Loss (50%), SUZ12/EED Loss**, **H3K27me3 Loss**</td><td>**Doxorubicin**, **MEK Inhibitors (Trametinib — Trials)**, **Immunotherapy**</td></tr><tr><td>**Angiosarcoma**</td><td>**Vascular Markers (CD31, ERG, FLI1)**, **MYC Amp (Radiation-Associated)**</td><td>**Paclitaxel (Weekly)**, **Doxorubicin**, **Immunotherapy (High TMB)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**STS Incidence**</td><td>**1% Adult Cancers**; **>50 Histologies**</td></tr><tr><td>**Common Types**</td><td>**UPS (25%)**, **Liposarcoma (20%)**, **Leiomyosarcoma (15%)**, **Synovial (10%)**, **MPNST (5%)**</td></tr><tr><td>**FNCLCC Grade**</td><td>**Diff (1-3) + Mitoses (10-19=2, ≥20=3) + Necrosis (<50%=2, ≥50%=3)** → **Gr1 (2-3), Gr2 (4-5), Gr3 (6-8)**</td></tr><tr><td>**Surgery**</td><td>**R0 Wide Excision (Compartmental)**; **Margins: 1-2cm or Fascial Boundary**; **Limb Salvage**</td></tr><tr><td>**Adjuvant RT**</td><td>**Gr2-3, Deep, >5cm** → **Pre-op 50Gy/25fx (Preferred)**; **Post-op 60-66Gy**</td></tr><tr><td>**Adjuvant Chemo**</td><td>**EORTC 62931: Dox+Ifo → RFS Benefit, No OS** — **Not Routine**</td></tr><tr><td>**Metastatic 1L**</td><td>**Doxorubicin 75mg/m²**</td></tr><tr><td>**Metastatic 2L**</td><td>**Pazopanib (PALETTE)**, **Trabectedin (Lipo/Leiomyo)**, **Gem/Doc (Leiomyo)**, **Ifosfamide (Synovial)**</td></tr><tr><td>**Leiomyosarcoma**</td><td>**Gem/Doc Preferred 1L** (GeDDiS)</td></tr><tr><td>**Liposarcoma**</td><td>**Trabectedin (MLPS), Eribulin, CDK4/6i (WDLS/DDLS)**</td></tr><tr><td>**Synovial Sarcoma**</td><td>**SS18-SSX Fusion**, **Ifosfamide High Activity**</td></tr><tr><td>**MPNST**</td><td>**NF1 (50% Lifetime Risk)**, **H3K27me3 Loss (IHC)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**40M, 8cm Thigh Mass, MRI: Heterogeneous, Deep to Fascia. Biopsy: UPS, FNCLCC Grade 3. Management?**</td><td>**R0 Resection + Pre-operative RT (50Gy/25fx)** — **Adjuvant Chemo Considered (Young, Gr3, >5cm, Deep) — Dox+Ifo**.</td></tr><tr><td>**FNCLCC Grading — 3 Parameters?**</td><td>**1) Differentiation (1-3)**, **2) Mitoses/10 HPF (0-9=1, 10-19=2, ≥20=3)**, **3) Necrosis (None=1, <50%=2, ≥50%=3)**.</td></tr><tr><td>**Pre-op vs Post-op RT — Which Preferred?**</td><td>**Pre-op 50Gy/25fx (RTOG 0630: Less Wound Complications, Better Function, Same Local Control)**.</td></tr><tr><td>**EORTC 62931 — Adjuvant Chemo Result?**</td><td>**Doxorubicin + Ifosfamide → RFS Benefit (HR 0.72), NO OS Benefit** — **Not Standard Routine**.</td></tr><tr><td>**Metastatic STS 1L — Standard?**</td><td>**Doxorubicin 75mg/m² q3w** — **RR 20-25%**.</td></tr><tr><td>**Leiomyosarcoma — Preferred Chemo?**</td><td>**Gemcitabine 900mg/m² d1,8 + Docetaxel 100mg/m² d8 q3w** (GeDDiS Trial).</td></tr><tr><td>**Liposarcoma Subtypes — MDM2 Amp?**</td><td>**WDLS/DDLS: MDM2/CDK4 Amp (12q13-15)**; **MLPS: FUS-DDIT3**; **PLS: MYC Amp**.</td></tr><tr><td>**Synovial Sarcoma — Translocation, Targeted?**</td><td>**t(X;18) SS18-SSX Fusion**; **Ifosfamide High Activity**; **NY-ESO-1 TCR Trials**.</td></tr><tr><td>**MPNST — NF1 Association?**</td><td>**NF1: 50% MPNST**, **Lifetime Risk 10%**; **H3K27me3 Loss (IHC Diagnostic)**.</td></tr><tr><td>**Pazopanib — Indication, Trial?**</td><td>**2L+ Non-Adipocytic STS**; **PALETTE: PFS 4.6 vs 1.6mo (HR 0.31)**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Pre-op vs Post-op RT**</td><td>**Pre-op: 50Gy/25fx (Less Toxicity, Better Function)**; **Post-op: 60-66Gy/30-33fx (If Pre-op Not Done, Close/Positive Margins)**</td></tr><tr><td>**Adjuvant Chemo — Yes or No?**</td><td>**EORTC 62931: RFS Benefit, No OS** — **Not Routine**, **Selected Young/High-Risk**</td></tr><tr><td>**Leiomyosarcoma Chemo**</td><td>**Gem/Doc Superior to Doxorubicin** (GeDDiS: PFS 6.2 vs 3.8mo) — **Preferred 1L**</td></tr><tr><td>**Synovial Sarcoma — Ifosfamide**</td><td>**High Single-Agent Activity** (Response Rates 30-50%) — **Preferred 2L/Neoadjuvant**</td></tr><tr><td>**WDLS vs DDLS vs MLPS vs PLS**</td><td>**WDLS: Benign-Intermediate, MDM2+**; **DDLS: Dedifferentiated, MDM2+**; **MLPS: FUS-DDIT3, Round Cell**; **PLS: MYC Amp, Aggressive**</td></tr><tr><td>**MPNST Diagnosis**</td><td>**NF1 Context**, **H3K27me3 Loss (IHC)** = **Specific for MPNST** (vs Schwannoma/Other)</td></tr><tr><td>**Trabectedin Indication**</td><td>**Liposarcoma (MLPS) & Leiomyosarcoma** — **DNA Minor Groove Binder**</td></tr></table>
+<p><b>Mnemonic: STS-MANAGEMENT</b></p>
+<ul><li><b>S</b>TS: <b>&gt;50 Histologies</b>, <b>UPS 25%, Lipo 20%, Leiomyo 15%, Synovial 10%, MPNST 5%</b></li><li><b>T</b>NM Not Used — <b>FNCLCC Grade</b> (Diff + Mitoses + Necrosis) <b>Gr1/2/3</b></li><li><b>S</b>urgery: <b>R0 Wide Excision</b>, Compartmental, Limb Salvage</li><li><b>M</b>argins: <b>1-2cm or Fascial Boundary</b></li><li><b>A</b>djuvant RT: <b>Gr2-3 / Deep / &gt;5cm</b> → <b>Pre-op 50Gy/25fx (Preferred)</b></li><li><b>N</b>eo/Adjuvant Chemo: <b>EORTC 62931: Dox+Ifo → RFS Benefit, NO OS</b> — <b>Selective</b></li><li><b>A</b>gent 1L Met: <b>Doxorubicin 75mg/m²</b></li><li><b>G</b>em/Doc: <b>Leiomyosarcoma Preferred</b></li><li><b>E</b>ribulin/Trabectedin: <b>Liposarcoma (MLPS)</b> / <b>Leiomyo</b></li><li><b>M</b>PNST: <b>NF1 (10% Lifetime)</b>, <b>H3K27me3 Loss</b></li><li><b>E</b>nvironment: <b>Prior RT (10-20yr Latency)</b>, <b>Chemicals (Vinyl Chloride→Angio)</b></li><li><b>N</b>ext Line: <b>Pazopanib (PALETTE)</b>, <b>Ifosfamide (Synovial)</b>, <b>Clinical Trials</b></li><li><b>T</b>rabectedin: <b>Lipo (MLPS) &amp; Leiomyo</b></li><li><b>S</b>ynovial: <b>SS18-SSX Fusion</b>, <b>Ifosfamide Active</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Soft Tissue Sarcoma)) Histology UPS (25%) - No Lineage Liposarcoma (20%) - WDLS/DDLS/MLPS/PLS Leiomyosarcoma (15%) - Smooth Muscle Synovial (10%) - SS18-SSX MPNST (5%) - NF1, H3K27me3 Loss Grading FNCLCC: Diff + Mitoses + Necrosis Gr1 (2-3), Gr2 (4-5), Gr3 (6-8) Surgery R0 Wide Excision Compartmental Limb Salvage Adjuvant RT Gr2-3, Deep, &gt;5cm Pre-op 50Gy/25fx (Preferred) Post-op 60-66Gy Adjuvant Chemo EORTC 62931: Dox+Ifo RFS Benefit, No OS Metastatic 1L: Doxorubicin 2L: Pazopanib / Trabectedin / GemDoc / Ifosfamide Histology-Specific Leiomyo: Gem/Doc Lipo: Trabectedin, Eribulin, CDK4/6i Synovial: Ifosfamide MPNST: NF1, H3K27me3 Loss </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Common Types**</td><td>UPS 25%, Lipo 20%, Leiomyo 15%, Synovial 10%, MPNST 5%</td></tr><tr><td>**FNCLCC**</td><td>Diff (1-3) + Mitoses (0-9/10-19/≥20) + Necrosis (0/<50/≥50)</td></tr><tr><td>**Surgery**</td><td>R0 Wide Excision, Compartmental, Limb Salvage</td></tr><tr><td>**RT**</td><td>Gr2-3/Deep/>5cm → Pre-op 50Gy/25fx (Preferred)</td></tr><tr><td>**Chemo Adjuvant**</td><td>EORTC 62931: Dox+Ifo → RFS Benefit, NO OS (Selective)</td></tr><tr><td>**1L Met**</td><td>Doxorubicin 75mg/m²</td></tr><tr><td>**2L**</td><td>Pazopanib, Trabectedin (Lipo/Leiomyo), Gem/Doc (Leiomyo), Ifos (Synovial)</td></tr><tr><td>**Lipo Subtypes**</td><td>WDLS/DDLS: MDM2/CDK4; MLPS: FUS-DDIT3; PLS: MYC</td></tr><tr><td>**MPNST**</td><td>NF1 (10% Risk), H3K27me3 Loss</td></tr><tr><td>**Synovial**</td><td>SS18-SSX, Ifosfamide, TLE1+</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>FNCLCC Grading</td><td></td><td></td></tr><tr><td>Surgery Principles</td><td></td><td></td></tr><tr><td>Pre-op vs Post-op RT</td><td></td><td></td></tr><tr><td>Adjuvant Chemo Controversy</td><td></td><td></td></tr><tr><td>Histology-Specific Chemo</td><td></td><td></td></tr><tr><td>Metastatic Sequencing</td><td></td><td></td></tr><tr><td>Lipo Subtypes</td><td></td><td></td></tr><tr><td>MPNST Diagnosis</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Bone Sarcoma]], [[GIST]], [[FNCLCC Grading]], [[Doxorubicin]], [[Ifosfamide]], [[Pazopanib]], [[Trabectedin]], [[Leiomyosarcoma]], [[Synovial Sarcoma]], [[MPNST]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Soft Tissue Sarcoma (STS) (STS Incidence), which statement is correct? A. <b>1% Adult Cancers</b> B. **1% - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>1% Adult Cancers</b>; <b>&gt;50 Histologies</b></li></ul>
+<p><b>2.</b> Regarding Soft Tissue Sarcoma (STS) (Common Types), which statement is correct? A. <b>UPS (25%)</b>, <b>Liposarcoma (20%)</b>, <b>Leiomyosarcoma (15%)</b>, <b>Synovial (10%)</b>, <b>MPNST (5%)</b> B. **UPS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>UPS (25%)</b>, <b>Liposarcoma (20%)</b>, <b>Leiomyosarcoma (15%)</b>, <b>Synovial (10%)</b>, <b>MPNST (5%)</b></li></ul>
+<p><b>3.</b> Regarding Soft Tissue Sarcoma (STS) (FNCLCC Grade), which statement is correct? A. <b>Diff (1-3) + Mitoses (10-19=2, ≥20=3) + Necrosis (&lt;50%=2, ≥50%=3)</b> → <b>Gr1 (2-3), Gr2 (4-5), Gr3 B. </b>Diff - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Diff (1-3) + Mitoses (10-19=2, ≥20=3) + Necrosis (&lt;50%=2, ≥50%=3)</b> → <b>Gr1 (2-3), Gr2 (4-5), Gr3 (6-8)</b></li></ul>
+<p><b>4.</b> Regarding Soft Tissue Sarcoma (STS) (Surgery), which statement is correct? A. <b>R0 Wide Excision (Compartmental)</b> B. **R0 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>R0 Wide Excision (Compartmental)</b>; <b>Margins: 1-2cm or Fascial Boundary</b>; <b>Limb Salvage</b></li></ul>
+<p><b>5.</b> Regarding Soft Tissue Sarcoma (STS) (Adjuvant RT), which statement is correct? A. <b>Gr2-3, Deep, &gt;5cm</b> → <b>Pre-op 50Gy/25fx (Preferred)</b> B. **Gr2-3, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Gr2-3, Deep, &gt;5cm</b> → <b>Pre-op 50Gy/25fx (Preferred)</b>; <b>Post-op 60-66Gy</b></li></ul>
+<p><b>6.</b> Regarding Soft Tissue Sarcoma (STS) (Adjuvant Chemo), which statement is correct? A. <b>EORTC 62931: Dox+Ifo → RFS Benefit, No OS</b> B. **EORTC - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>EORTC 62931: Dox+Ifo → RFS Benefit, No OS</b> — <b>Not Routine</b></li></ul>
+<p><b>7.</b> Regarding Soft Tissue Sarcoma (STS) (Metastatic 1L), which statement is correct? A. <b>Doxorubicin 75mg/m²</b> B. **Doxorubicin - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Doxorubicin 75mg/m²</b></li></ul>
+<p><b>8.</b> Regarding Soft Tissue Sarcoma (STS) (Metastatic 2L), which statement is correct? A. <b>Pazopanib (PALETTE)</b>, <b>Trabectedin (Lipo/Leiomyo)</b>, <b>Gem/Doc (Leiomyo)</b>, <b>Ifosfamide (Synovi B. </b>Pazopanib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Pazopanib (PALETTE)</b>, <b>Trabectedin (Lipo/Leiomyo)</b>, <b>Gem/Doc (Leiomyo)</b>, <b>Ifosfamide (Synovial)</b></li></ul>
+<p><b>9.</b> Regarding Soft Tissue Sarcoma (STS) (Leiomyosarcoma), which statement is correct? A. <b>Gem/Doc Preferred 1L</b> (GeDDiS) B. **Gem/Doc - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Gem/Doc Preferred 1L</b> (GeDDiS)</li></ul>
+<p><b>10.</b> Regarding Soft Tissue Sarcoma (STS) (Liposarcoma), which statement is correct? A. <b>Trabectedin (MLPS), Eribulin, CDK4/6i (WDLS/DDLS)</b> B. **Trabectedin - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Trabectedin (MLPS), Eribulin, CDK4/6i (WDLS/DDLS)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>1% Adult Cancers</b></li><li>B. **1% (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>1% Adult Cancers</b>; <b>&gt;50 Histologies</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>UPS (25%)</b>, <b>Liposarcoma (20%)</b>, <b>Leiomyosarcoma (15%)</b>, <b>Synovial (10%)</b>, <b>MPNST (5%)</b></li><li>B. **UPS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>UPS (25%)</b>, <b>Liposarcoma (20%)</b>, <b>Leiomyosarcoma (15%)</b>, <b>Synovial (10%)</b>, <b>MPNST (5%)</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Diff (1-3) + Mitoses (10-19=2, ≥20=3) + Necrosis (&lt;50%=2, ≥50%=3)</b> → **Gr1 (2-3), Gr2 (4-5), Gr3</li><li>B. **Diff (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Diff (1-3) + Mitoses (10-19=2, ≥20=3) + Necrosis (&lt;50%=2, ≥50%=3)</b> → <b>Gr1 (2-3), Gr2 (4-5), Gr3 (6-8)</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>R0 Wide Excision (Compartmental)</b></li><li>B. **R0 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>R0 Wide Excision (Compartmental)</b>; <b>Margins: 1-2cm or Fascial Boundary</b>; <b>Limb Salvage</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Gr2-3, Deep, &gt;5cm</b> → <b>Pre-op 50Gy/25fx (Preferred)</b></li><li>B. **Gr2-3, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Gr2-3, Deep, &gt;5cm</b> → <b>Pre-op 50Gy/25fx (Preferred)</b>; <b>Post-op 60-66Gy</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>EORTC 62931: Dox+Ifo → RFS Benefit, No OS</b></li><li>B. **EORTC (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>EORTC 62931: Dox+Ifo → RFS Benefit, No OS</b> — <b>Not Routine</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Doxorubicin 75mg/m²</b></li><li>B. **Doxorubicin (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Doxorubicin 75mg/m²</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Pazopanib (PALETTE)</b>, <b>Trabectedin (Lipo/Leiomyo)</b>, <b>Gem/Doc (Leiomyo)</b>, **Ifosfamide (Synovi</li><li>B. **Pazopanib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Pazopanib (PALETTE)</b>, <b>Trabectedin (Lipo/Leiomyo)</b>, <b>Gem/Doc (Leiomyo)</b>, <b>Ifosfamide (Synovial)</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Gem/Doc Preferred 1L</b> (GeDDiS)</li><li>B. **Gem/Doc (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Gem/Doc Preferred 1L</b> (GeDDiS)</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Trabectedin (MLPS), Eribulin, CDK4/6i (WDLS/DDLS)</b></li><li>B. **Trabectedin (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Trabectedin (MLPS), Eribulin, CDK4/6i (WDLS/DDLS)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> STS Incidence? <b>A1:</b> 1% Adult Cancers; &gt;50 Histologies</p>
+<p><b>Q2:</b> Common Types? <b>A2:</b> UPS (25%), Liposarcoma (20%), Leiomyosarcoma (15%), Synovial (10%), MPNST (5%)</p>
+<p><b>Q3:</b> FNCLCC Grade? <b>A3:</b> Diff (1-3) + Mitoses (10-19=2, ≥20=3) + Necrosis (&lt;50%=2, ≥50%=3) → Gr1 (2-3), Gr2 (4-5), Gr3 (6-8)</p>
+<p><b>Q4:</b> Surgery? <b>A4:</b> R0 Wide Excision (Compartmental); Margins: 1-2cm or Fascial Boundary; Limb Salvage</p>
+<p><b>Q5:</b> Adjuvant RT? <b>A5:</b> Gr2-3, Deep, &gt;5cm → Pre-op 50Gy/25fx (Preferred); Post-op 60-66Gy</p>
+<p><b>Q6:</b> Adjuvant Chemo? <b>A6:</b> EORTC 62931: Dox+Ifo → RFS Benefit, No OS — Not Routine</p>
+<p><b>Q7:</b> Metastatic 1L? <b>A7:</b> Doxorubicin 75mg/m²</p>
+<p><b>Q8:</b> Metastatic 2L? <b>A8:</b> Pazopanib (PALETTE), Trabectedin (Lipo/Leiomyo), Gem/Doc (Leiomyo), Ifosfamide (Synovial)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>STS Incidence</td><td>1% Adult Cancers; >50 Histologies</td></tr><tr><td>2</td><td>A</td><td>Common Types</td><td>UPS (25%), Liposarcoma (20%), Leiomyosarcoma (15%), Synovial (10%), MPNST (5%)</td></tr><tr><td>3</td><td>A</td><td>FNCLCC Grade</td><td>Diff (1-3) + Mitoses (10-19=2, ≥20=3) + Necrosis (<50%=2, ≥50%=3) → Gr1 (2-3), Gr2 (4-5), Gr3 (6-8)</td></tr><tr><td>4</td><td>A</td><td>Surgery</td><td>R0 Wide Excision (Compartmental); Margins: 1-2cm or Fascial Boundary; Limb Salvage</td></tr><tr><td>5</td><td>A</td><td>Adjuvant RT</td><td>Gr2-3, Deep, >5cm → Pre-op 50Gy/25fx (Preferred); Post-op 60-66Gy</td></tr><tr><td>6</td><td>A</td><td>Adjuvant Chemo</td><td>EORTC 62931: Dox+Ifo → RFS Benefit, No OS — Not Routine</td></tr><tr><td>7</td><td>A</td><td>Metastatic 1L</td><td>Doxorubicin 75mg/m²</td></tr><tr><td>8</td><td>A</td><td>Metastatic 2L</td><td>Pazopanib (PALETTE), Trabectedin (Lipo/Leiomyo), Gem/Doc (Leiomyo), Ifosfamide (Synovial)</td></tr><tr><td>9</td><td>A</td><td>Leiomyosarcoma</td><td>Gem/Doc Preferred 1L (GeDDiS)</td></tr><tr><td>10</td><td>A</td><td>Liposarcoma</td><td>Trabectedin (MLPS), Eribulin, CDK4/6i (WDLS/DDLS)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>STS Incidence</td><td>1% Adult Cancers; >50 Histologies</td></tr><tr><td>2</td><td>A</td><td>Common Types</td><td>UPS (25%), Liposarcoma (20%), Leiomyosarcoma (15%), Synovial (10%), MPNST (5%)</td></tr><tr><td>3</td><td>A</td><td>FNCLCC Grade</td><td>Diff (1-3) + Mitoses (10-19=2, ≥20=3) + Necrosis (<50%=2, ≥50%=3) → Gr1 (2-3), Gr2 (4-5), Gr3 (6-8)</td></tr><tr><td>4</td><td>A</td><td>Surgery</td><td>R0 Wide Excision (Compartmental); Margins: 1-2cm or Fascial Boundary; Limb Salvage</td></tr><tr><td>5</td><td>A</td><td>Adjuvant RT</td><td>Gr2-3, Deep, >5cm → Pre-op 50Gy/25fx (Preferred); Post-op 60-66Gy</td></tr><tr><td>6</td><td>A</td><td>Adjuvant Chemo</td><td>EORTC 62931: Dox+Ifo → RFS Benefit, No OS — Not Routine</td></tr><tr><td>7</td><td>A</td><td>Metastatic 1L</td><td>Doxorubicin 75mg/m²</td></tr><tr><td>8</td><td>A</td><td>Metastatic 2L</td><td>Pazopanib (PALETTE), Trabectedin (Lipo/Leiomyo), Gem/Doc (Leiomyo), Ifosfamide (Synovial)</td></tr><tr><td>9</td><td>A</td><td>Leiomyosarcoma</td><td>Gem/Doc Preferred 1L (GeDDiS)</td></tr><tr><td>10</td><td>A</td><td>Liposarcoma</td><td>Trabectedin (MLPS), Eribulin, CDK4/6i (WDLS/DDLS)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Sarcomas|Sarcomas]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Soft Tissue Sarcoma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

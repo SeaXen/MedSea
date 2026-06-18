@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pharmacokinetic Interactions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Pharmacokinetic Interactions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define pharmacokinetic (PK) vs pharmacodynamic (PD) drug interactions</li><li>[ ] Describe ADME (Absorption, Distribution, Metabolism, Excretion) and where interactions occur</li><li>[ ] Apply clinical examples at each ADME stage</li><li>[ ] Recognise <b>CYP450 inducers</b> and <b>inhibitors</b></li><li>[ ] Identify high-risk drug combinations</li><li>[ ] Use BNF "Interactions" appendix</li><li>[ ] Counsel patients on common interactions (grapefruit, dairy, warfarin)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">ADME Stages of Pharmacokinetics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Process</th><th>Where interactions occur</th></tr><tr><td>-------</td><td>---------</td><td>--------------------------</td></tr><tr><td>**A**bsorption</td><td>Drug enters systemic circulation</td><td>Gastric pH, chelation, transporters (P-gp), gut motility</td></tr><tr><td>**D**istribution</td><td>Drug disperses to tissues</td><td>Protein binding (albumin, α1-AGP)</td></tr><tr><td>**M**etabolism</td><td>Drug biotransformed (Phase I + II)</td><td>CYP450, UGT, MAO</td></tr><tr><td>**E**xcretion</td><td>Drug eliminated</td><td>Renal (GFR, tubular secretion), biliary, faecal</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — PK Interaction Framework</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Drug A + Drug B administered] --&gt; B{Where is interaction?} B --&gt;|Absorption| C[Chelation, pH, motility, P-gp] B --&gt;|Distribution| D[Protein binding displacement] B --&gt;|Metabolism| E[CYP450 induction/inhibition&lt;br/&gt;UGT, FMO] B --&gt;|Excretion| F[Renal tubular secretion&lt;br/&gt;P-gp, BCRP] C --&gt; G[↑↓ Drug concentration] D --&gt; G E --&gt; G F --&gt; G G --&gt; H{Effect clinically&lt;br/&gt;significant?} H --&gt;|Yes| I[Adjust dose, switch, monitor levels] H --&gt;|No| J[Continue with awareness] </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Absorption Interactions</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Example</th><th>Effect</th></tr><tr><td>-----------</td><td>---------</td><td>--------</td></tr><tr><td>**Chelation** (Ca²⁺, Mg²⁺, Al³⁺, Fe²⁺)</td><td>Tetracycline / quinolone + dairy / antacid / iron</td><td>↓ Absorption 50-90%</td></tr><tr><td>**Gastric pH ↑ (PPIs, H2-blockers, antacids)**</td><td>Ketoconazole/itraconazole + PPI</td><td>↓ Absorption (need acidic pH)</td></tr><tr><td>**Gastric pH ↑ benefit**</td><td>CaCO₃ + levothyroxine</td><td>↓ Levothyroxine absorption (separate by 4h)</td></tr><tr><td>**Gut motility**</td><td>Metoclopramide (↑ motility) + paracetamol</td><td>↑ Paracetamol absorption (faster)</td></tr><tr><td></td><td>Loperamide (↓ motility) + paracetamol</td><td>Delayed but same total absorption</td></tr><tr><td>**P-gp inhibition**</td><td>Quinidine + digoxin</td><td>↑ Digoxin (P-gp efflux blocked)</td></tr><tr><td>**P-gp induction**</td><td>Rifampicin + digoxin</td><td>↓ Digoxin (↑ P-gp efflux)</td></tr><tr><td>**Adsorption**</td><td>Activated charcoal + most drugs</td><td>↓ Absorption (used in overdose)</td></tr><tr><td>**Grapefruit juice**</td><td>Felodipine, simvastatin, ciclosporin</td><td>↑ Bioavailability (CYP3A4 inhibition in gut)</td></tr></table>
+<div class="sub-h">4.2 Distribution Interactions</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Example</th><th>Effect</th></tr><tr><td>-----------</td><td>---------</td><td>--------</td></tr><tr><td>**Protein binding displacement**</td><td>Warfarin + sulfonamides (less relevant with low Ka)</td><td>Theoretical ↑ free warfarin (transient)</td></tr><tr><td></td><td>Phenytoin + valproate</td><td>↑ Free phenytoin (monitor levels)</td></tr><tr><td>**Tissue binding displacement**</td><td>Digoxin + quinidine</td><td>↑ Digoxin (↓ tissue binding + ↓ renal clearance)</td></tr></table>
+<div class="callout"><b>Clinical relevance:</b> Protein binding interactions are less important than once thought. Steady-state free drug concentration is unchanged unless elimination is also affected. Theophylline, warfarin, phenytoin are classic examples.</div>
+<div class="sub-h">4.3 Metabolism Interactions (CYP450)</div>
+<p>#### Major CYP Isoforms &amp; Substrates</p>
+<table class="ctable"><tr><th>CYP</th><th>Substrates (selected)</th><th>% of drugs metabolised</th></tr><tr><td>-----</td><td>----------------------</td><td>------------------------</td></tr><tr><td>**CYP3A4/5**</td><td>Statins (simva, atorva), ciclosporin, tacrolimus, midazolam, fentanyl, amiodarone, protease inhibitors, CCB, sildenafil, apixaban, rivaroxaban, diltiazem</td><td>~50%</td></tr><tr><td>**CYP2D6**</td><td>Codeine, tramadol, metoprolol, tamoxifen, haloperidol, antidepressants (TCA, SSRI-fluoxetine, paroxetine)</td><td>~25%</td></tr><tr><td>**CYP2C9**</td><td>Warfarin-S, phenytoin, NSAIDs (ibuprofen, diclofenac), losartan, glipizide, fluvastatin</td><td>~15%</td></tr><tr><td>**CYP2C19**</td><td>Clopidogrel, PPIs (omeprazole, esomeprazole), diazepam, voriconazole, sertraline</td><td>~10%</td></tr><tr><td>**CYP1A2**</td><td>Theophylline, caffeine, clozapine, olanzapine, warfarin (minor), tizanidine</td><td>~5%</td></tr><tr><td>**CYP2E1**</td><td>Alcohol, paracetamol, anaesthetics</td><td>~5%</td></tr></table>
+<p>#### CYP Inducers (Mnemonic: "<b>CRAP GPS</b>")</p>
+<table class="ctable"><tr><th>Inducer</th><th>CYPs induced</th><th>Clinical effect</th></tr><tr><td>---------</td><td>--------------</td><td>-----------------</td></tr><tr><td>**C**arbamazepine</td><td>1A2, 2C9, 2C19, 3A4</td><td>↓ Warfarin, OCP, simvastatin, ciclosporin</td></tr><tr><td>**R**ifampicin</td><td>1A2, 2C9, 2C19, 3A4 (P-gp)</td><td>↓ Most drugs</td></tr><tr><td>**A**lcohol (chronic)</td><td>2E1, 3A4</td><td>↑ Paracetamol toxicity</td></tr><tr><td>**P**henytoin</td><td>1A2, 2C9, 2C19, 3A4</td><td>↓ Warfarin, OCP, ciclosporin</td></tr><tr><td>**G**riseofulvin</td><td>3A4</td><td>↓ OCP, warfarin</td></tr><tr><td>**P**henobarbital</td><td>1A2, 2C9, 2C19, 3A4</td><td>↓ Many</td></tr><tr><td>**S**t John's Wort</td><td>3A4 (P-gp)</td><td>↓ Ciclosporin, OCP, simvastatin, apixaban</td></tr></table>
+<p>#### CYP Inhibitors (Mnemonic: "<b>SEEK SSICK</b>" or "<b>I LOVE EUG</b>")</p>
+<table class="ctable"><tr><th>Inhibitor</th><th>CYPs inhibited</th><th>Clinical effect</th></tr><tr><td>-----------</td><td>---------------</td><td>-----------------</td></tr><tr><td>**S**imvastatin, **S**ertraline</td><td>2D6 (sertraline)</td><td>↑ Substrate drug</td></tr><tr><td>**E**rythromycin, **E**somicin</td><td>3A4</td><td>↑ Ciclosporin, simvastatin, apixaban</td></tr><tr><td>**E**xenical (orlistat)</td><td>— (no CYP effect)</td><td>—</td></tr><tr><td>**K**etoconazole, **K**etolide</td><td>3A4</td><td>↑ Many</td></tr><tr><td>**SS**RI (fluoxetine, paroxetine)</td><td>2D6 (paroxetine), others</td><td>↑ TCA, metoprolol</td></tr><tr><td>**I**traconazole, **I**soniazid</td><td>3A4 (itra)</td><td>↑ Ciclosporin</td></tr><tr><td>**C**imetidine, **C**iprofloxacin</td><td>1A2 (cipro), 3A4 (cime)</td><td>↑ Theophylline</td></tr><tr><td>**K**ava</td><td>—</td><td>—</td></tr><tr><td>**A**miodarone, **A**prepitant</td><td>3A4</td><td>↑ Many</td></tr><tr><td>**L**ansoprazole, **L**operamide</td><td>3A4 (Lanso mild)</td><td>Modest</td></tr><tr><td>**O**meprazole</td><td>2C19</td><td>↑ Clopidogrel metabolism↓ → ↓ antiplatelet effect</td></tr><tr><td>**V**erapamil, **V**oriconazole</td><td>3A4 (Vori)</td><td>↑ Simvastatin, ciclosporin</td></tr><tr><td>**E**thanol (acute)</td><td>2E1, 3A4</td><td>↑ CNS depressants</td></tr><tr><td>**E**rythromycin (above)</td><td>—</td><td>—</td></tr><tr><td>**G**rapefruit</td><td>3A4 (intestinal)</td><td>↑ Statins, CCB, ciclosporin</td></tr><tr><td>**R**itonavir</td><td>3A4 (very strong)</td><td>↑ Most drugs — careful</td></tr><tr><td>**Q**uinidine</td><td>2D6</td><td>↑ β-blockers, TCAs</td></tr></table>
+<div class="callout"><b>Mnemonic: "I LOVE EUG"</b> — Itraconazole, Lansoprazole, Omeprazole, Voriconazole, Erythromycin, <b>U</b> (Umbrella), Grapefruit</div>
+<div class="callout"><b>Strong 3A4 inhibitors ("</b>I<b> </b>C<b>an't </b>B<b>elieve </b>S<b>ome </b>A<b>sians </b>D<b>on't </b>G<b>row </b>P<b>umpkins"):</b> Itraconazole, Clarithromycin, B<b>I</b>something... Actually mnemonic: <b>"Pot KICKER"</b> — Protease inhibitors, Ketoconazole, Itraconazole, Clarithromycin, Erythromycin, Ritonavir.</div>
+<div class="sub-h">4.4 Excretion Interactions</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Example</th><th>Effect</th></tr><tr><td>-----------</td><td>---------</td><td>--------</td></tr><tr><td>**GFR reduction**</td><td>ACEi + diuretic + NSAID</td><td>↓ Renal drug clearance (esp. lithium, digoxin)</td></tr><tr><td>**Tubular secretion competition**</td><td>Probenecid + penicillins, cephalosporins</td><td>↓ Penicillin excretion → ↑ levels</td></tr><tr><td></td><td>Trimethoprim + methotrexate</td><td>↓ MTX clearance → toxicity</td></tr><tr><td></td><td>NSAIDs + lithium</td><td>↓ Li clearance → toxicity</td></tr><tr><td>**P-gp inhibition (renal)**</td><td>Quinidine, verapamil + digoxin</td><td>↑ Digoxin (renal tubular P-gp)</td></tr><tr><td>**Urine pH change**</td><td>NaHCO₃ + salicylates</td><td>↑ Salicylate excretion (alkaline urine)</td></tr><tr><td></td><td>NH4Cl + amphetamines</td><td>↑ Amphetamine excretion (acid urine)</td></tr><tr><td>**Biliary excretion**</td><td>Rifampicin + bile acid sequestrants</td><td>↓ Rifampicin absorption (give 6h apart)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>Most common PK interaction site</td><td>Metabolism (CYP450)</td></tr><tr><td>Most common CYP involved</td><td>CYP3A4 (50% of drugs)</td></tr><tr><td>Strongest CYP3A4 inducers</td><td>Rifampicin, carbamazepine, phenytoin, St John's Wort</td></tr><tr><td>Strongest CYP3A4 inhibitors</td><td>Ritonavir, ketoconazole, itraconazole, clarithromycin, grapefruit</td></tr><tr><td>Warfarin S-enantiomer</td><td>CYP2C9</td></tr><tr><td>Warfarin R-enantiomer</td><td>CYP1A2, CYP3A4</td></tr><tr><td>Clopidogrel activation</td><td>CYP2C19 — omeprazole inhibits → ↓ active metabolite</td></tr><tr><td>Statin + macrolide</td><td>↑ Myopathy/rhabdomyolysis</td></tr><tr><td>Lithium + NSAID/ACEi/thiazide</td><td>↑ Lithium toxicity (↓ clearance)</td></tr><tr><td>Methotrexate + trimethoprim</td><td>Additive antifolate → pancytopenia</td></tr><tr><td>Digoxin + amiodarone</td><td>↑ Digoxin (P-gp + renal)</td></tr><tr><td>OCP + rifampicin</td><td>↓ OCP efficacy → pregnancy</td></tr><tr><td>Warfarin + amiodarone</td><td>↑ INR (↓ metabolism + ↓ clearance)</td></tr><tr><td>Warfarin + fluconazole</td><td>↑ INR (CYP2C9 inhibition)</td></tr><tr><td>Warfarin + cranberry juice</td><td>↑ INR (CYP2C9 inhibition)</td></tr><tr><td>Theophylline + ciprofloxacin</td><td>↑ Theophylline (CYP1A2 inhibition) → toxicity</td></tr><tr><td>Methotrexate + aspirin</td><td>↑ MTX toxicity (↓ renal clearance, protein binding)</td></tr><tr><td>Ciclosporin + St John's Wort</td><td>↓ Ciclosporin (rejection risk)</td></tr><tr><td>Tacrolimus + diltiazem</td><td>↑ Tacrolimus (CYP3A4 inhibition)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define pharmacokinetic interaction.</b></li></ol>
+<p><i>An interaction in which one drug alters the absorption, distribution, metabolism, or excretion (ADME) of another drug, changing its plasma concentration.</i></p>
+<ol><li><b>What is the most common site of PK interactions?</b></li></ol>
+<p><i>Metabolism (CYP450 enzymes), particularly CYP3A4 which metabolises ~50% of drugs.</i></p>
+<ol><li><b>Name the 4 major CYP isoforms and their key substrates.</b></li></ol>
+<p><i>CYP3A4 (statins, ciclosporin, midazolam, CCB); CYP2D6 (codeine, metoprolol, TCA); CYP2C9 (warfarin, phenytoin, NSAIDs); CYP2C19 (clopidogrel, PPIs).</i></p>
+<ol><li><b>Name 5 strong CYP3A4 inducers.</b></li></ol>
+<p><i>Rifampicin, carbamazepine, phenytoin, phenobarbital, St John's Wort.</i></p>
+<ol><li><b>Name 5 strong CYP3A4 inhibitors.</b></li></ol>
+<p><i>Ritonavir, ketoconazole, itraconazole, clarithromycin, erythromycin, grapefruit juice.</i></p>
+<ol><li><b>Why does warfarin + amiodarone cause bleeding?</b></li></ol>
+<p><i>Amiodarone inhibits CYP2C9 (warfarin-S metabolism) and CYP3A4 (warfarin-R); also displaces warfarin from protein binding. Reduces warfarin requirement by 30-50%. Reduce warfarin dose by 30-50% and monitor INR closely.</i></p>
+<ol><li><b>Why does ciclosporin + St John's Wort cause transplant rejection?</b></li></ol>
+<p><i>St John's Wort induces CYP3A4 and P-gp → ↓ ciclosporin levels (often by 50%) → acute rejection. ALWAYS avoid St John's Wort in transplant patients.</i></p>
+<ol><li><b>What is the "triple whammy" for AKI?</b></li></ol>
+<p><i>ACEi/ARB + diuretic + NSAID — particularly in dehydrated/elderly. All three impair renal autoregulation → AKI.</i></p>
+<ol><li><b>Why does clopidogrel + omeprazole require caution?</b></li></ol>
+<p><i>Omeprazole inhibits CYP2C19, which activates clopidogrel (prodrug). ↓ Active metabolite → ↓ antiplatelet effect → ↑ CV events. FDA warning; use pantoprazole or H2-blocker instead.</i></p>
+<ol><li><b>Why does grapefruit juice + simvastatin cause rhabdomyolysis?</b></li></ol>
+<p><i>Grapefruit inhibits intestinal CYP3A4 → ↑ simvastatin bioavailability → ↑ plasma levels → myopathy/rhabdomyolysis. Avoid or switch to pravastatin/rosuvastatin (not CYP3A4 metabolised).</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>PK vs PD</td><td>PK = concentration change; PD = effect change at same concentration</td></tr><tr><td>CYP3A4 induction vs inhibition</td><td>Induction = ↓ drug levels; Inhibition = ↑ drug levels</td></tr><tr><td>Generic vs brand PK</td><td>Same if bioequivalent (within 80-125%)</td></tr><tr><td>P-gp vs CYP3A4</td><td>P-gp = transporter (efflux); CYP3A4 = metaboliser. Often co-regulated.</td></tr><tr><td>Grapefruit vs orange</td><td>Grapefruit only (furanocoumarins); orange safe</td></tr><tr><td>OCP + antibiotic</td><td>Most antibiotics do NOT affect OCP; only rifampicin + rifabutin reduce efficacy (CYP3A4 induction)</td></tr><tr><td>Warfarin + cranberry</td><td>↑ INR (CYP2C9)</td></tr><tr><td>Digoxin + macrolide</td><td>↑ Digoxin (P-gp inhibition); avoid clarithromycin/erythromycin</td></tr><tr><td>Theophylline + ciprofloxacin</td><td>↑ Theophylline → toxicity (CYP1A2)</td></tr><tr><td>Methotrexate + trimethoprim</td><td>Additive antifolate → pancytopenia (avoid)</td></tr><tr><td>Lithium + NSAID</td><td>↑ Lithium toxicity (↓ clearance)</td></tr></table>
+<p><b>Mnemonic — ADME: "</b>A<b>lways </b>D<b>eal </b>M<b>edications </b>E<b>ffectively"</b></p>
+<p><b>Mnemonic — CYP3A4 inducers: "</b>CRAP GPS<b>"</b> (Carbamazepine, Rifampicin, Alcohol, Phenytoin, Griseofulvin, Phenobarbital, St John's Wort)</p>
+<p><b>Mnemonic — CYP3A4 inhibitors: "</b>SEEK SSICK<b>"</b> (Simvastatin, Erythromycin, Esomeprazole, Ketoconazole, SSRIs, Sodium bicarbonate, Itraconazole, Cimetidine, Ketolides)</p>
+<p><b>Mnemonic — Grapefruit: "</b>A<b>void </b>G<b>rapefruit with </b>S<b>tatins, </b>C<b>CB, </b>C<b>iclosporin, </b>A<b>pIXaban (AG-SCCA)"</b></p>
+<p><b>Mnemonic — Lithium toxicity precipitants: "</b>NAT<b>"</b> — <b>N</b>SAIDs, <b>A</b>CEi, <b>T</b>hiazides</p>
+<p><b>Mnemonic — Triple whammy: "</b>A<b>CEi + </b>D<b>iuretic + </b>N<b>SAID = AKI"</b> (ADN)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((PK Interactions ADME)) Absorption Chelation pH P-gp Motility Distribution Protein binding Tissue binding Metabolism CYP3A4 CYP2D6 CYP2C9 CYP2C19 CYP1A2 Excretion GFR Tubular secretion P-gp renal Urine pH Inducers CRAP GPS Inhibitors Ritonavir Keto Itra Clarithro Erythro Grapefruit </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>ADME definition</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>CYP3A4 substrates</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>CYP3A4 inducers</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>CYP3A4 inhibitors</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Warfarin + amiodarone</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Triple whammy</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Grapefruit drugs</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>ADME framework</td><td>/5</td></tr><tr><td>CYP substrates</td><td>/5</td></tr><tr><td>CYP inducers</td><td>/5</td></tr><tr><td>CYP inhibitors</td><td>/5</td></tr><tr><td>Clinical examples</td><td>/5</td></tr><tr><td>Management strategies</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/30**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The most common site of pharmacokinetic interactions is:</b></li></ol>
+<p>A. Absorption B. Distribution C. Metabolism ✓ D. Excretion E. All equally</p>
+<ol><li><b>CYP3A4 metabolises approximately what percentage of all drugs?</b></li></ol>
+<p>A. 5% B. 15% C. 30% D. 50% ✓ E. 80%</p>
+<ol><li><b>Which of the following is a CYP3A4 INDUCER?</b></li></ol>
+<p>A. Ritonavir B. Ketoconazole C. Rifampicin ✓ D. Grapefruit E. Clarithromycin</p>
+<ol><li><b>Which of the following is a CYP3A4 INHIBITOR?</b></li></ol>
+<p>A. Rifampicin B. Carbamazepine C. Phenytoin D. Grapefruit juice ✓ E. St John's Wort</p>
+<ol><li><b>The "triple whammy" for AKI is:</b></li></ol>
+<p>A. ACEi + β-blocker + diuretic B. ACEi + diuretic + NSAID ✓ C. ARB + statin + aspirin D. ACEi + CCB + statin E. NSAID + paracetamol + opioid</p>
+<ol><li><b>Warfarin + amiodarone results in:</b></li></ol>
+<p>A. ↓ INR B. ↑ INR (bleeding risk) ✓ C. No change D. ↑ Clotting E. ↑ Bleeding only</p>
+<ol><li><b>Ciclosporin + St John's Wort causes:</b></li></ol>
+<p>A. Ciclosporin toxicity B. Ciclosporin level ↓ → rejection ✓ C. No change D. Renal failure E. Hepatotoxicity</p>
+<ol><li><b>Clopidogrel + omeprazole results in:</b></li></ol>
+<p>A. ↑ Clopidogrel effect B. ↓ Clopidogrel activation → ↓ antiplatelet effect ✓ C. ↑ PPI effect D. Bleeding E. No change</p>
+<ol><li><b>Lithium toxicity is most likely precipitated by:</b></li></ol>
+<p>A. Paracetamol B. Amoxicillin C. NSAID ✓ D. Aspirin (low dose) E. Ramipril (decrease)</p>
+<ol><li><b>Methotrexate + trimethoprim causes:</b></li></ol>
+<p>A. No interaction B. Pancytopenia (additive antifolate) ✓ C. Hepatotoxicity D. Bleeding E. Renal failure</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 65-year-old post-MI patient on simvastatin develops myopathy. Recently started clarithromycin for pneumonia. Mechanism:</b></li></ol>
+<ul><li>A) CYP3A4 induction by clarithromycin</li><li>B) CYP3A4 inhibition by clarithromycin → ↑ simvastatin ✓</li><li>C) Renal failure from clarithromycin</li><li>D) P-gp induction</li><li>E) Grapefruit</li></ul>
+<ol><li><b>A transplant patient on ciclosporin takes St John's Wort for depression. Two weeks later, ciclosporin level is low. Mechanism:</b></li></ol>
+<ul><li>A) SJW inhibits CYP3A4</li><li>B) SJW induces CYP3A4 and P-gp → ↓ ciclosporin ✓</li><li>C) SJW displaces ciclosporin</li><li>D) SJW enhances renal clearance</li><li>E) SJW has no effect</li></ul>
+<ol><li><b>A patient on warfarin starts fluconazole for candidiasis. INR rises to 8. Mechanism:</b></li></ol>
+<ul><li>A) Fluconazole induces CYP2C9</li><li>B) Fluconazole inhibits CYP2C9 → ↓ warfarin-S metabolism ✓</li><li>C) Fluconazole displaces warfarin</li><li>D) Fluconazole enhances vitamin K</li><li>E) Warfarin dose too high</li></ul>
+<ol><li><b>A 60-year-old on lisinopril + indapamide takes ibuprofen for back pain and develops AKI. Mechanism:</b></li></ol>
+<ul><li>A) Triple whammy — ACEi + diuretic + NSAID → renal hypoperfusion ✓</li><li>B) NSAID overdose</li><li>C) Lisinopril + ibuprofen only</li><li>D) Diuretic toxicity</li><li>E. Indapamide toxicity</li></ul>
+<ol><li><b>A patient on theophylline for COPD takes ciprofloxacin for UTI. Two days later, develops nausea, tremor, tachycardia. Mechanism:</b></li></ol>
+<ul><li>A) Ciprofloxacin induces CYP1A2</li><li>B) Ciprofloxacin inhibits CYP1A2 → ↑ theophylline (toxicity) ✓</li><li>C) Ciprofloxacin displaces theophylline</li><li>D) Ciprofloxacin + theophylline = bleeding</li><li>E. Additive β-agonism</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>C</b> (Metabolism is the most common site)</li><li><b>D</b> (CYP3A4 metabolises ~50% of drugs)</li><li><b>C</b> (Rifampicin = inducer)</li><li><b>D</b> (Grapefruit = inhibitor)</li><li><b>B</b> (Triple whammy)</li><li><b>B</b> (↑ INR = bleeding risk)</li><li><b>B</b> (SJW ↓ ciclosporin → rejection)</li><li><b>B</b> (Omeprazole ↓ clopidogrel activation)</li><li><b>C</b> (NSAID ↓ Li clearance)</li><li><b>B</b> (Pancytopenia — additive antifolate)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>B</b> — Clarithromycin inhibits CYP3A4 → ↑ simvastatin → myopathy. Hold simvastatin or switch to azithromycin.</li><li><b>B</b> — SJW induces CYP3A4 and P-gp → ↓ ciclosporin → rejection. AVOID SJW in transplant.</li><li><b>B</b> — Fluconazole inhibits CYP2C9 → ↓ warfarin-S metabolism → ↑ INR. Reduce warfarin dose 30-50%.</li><li><b>A</b> — Triple whammy (ACEi + diuretic + NSAID) → AKI. Hold ACEi + diuretic + NSAID, IV fluids.</li><li><b>B</b> — Ciprofloxacin inhibits CYP1A2 → ↑ theophylline → toxicity. Use alternative (e.g., levofloxacin) or ↓ theophylline dose.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>PK interactions occur at ADME stages — most often at metabolism (CYP450).</b> CYP3A4 metabolises ~50% of drugs. Inducers (CRAP GPS): Rifampicin, Carbamazepine, Phenytoin, St John's Wort, Phenobarbital. Inhibitors: Ritonavir, Ketoconazole, Itraconazole, Clarithromycin, Erythromycin, Grapefruit. Key interactions: Warfarin + Amiodarone, OCP + Rifampicin, Ciclosporin + SJW, Simvastatin + Macrolide, Lithium + NSAID, Methotrexate + Trimethoprim, Theophylline + Ciprofloxacin. <b>Always use BNF Interactions appendix.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../Drug Interactions|Drug Interactions]]</li><li><b>Sibling Topic-Groups</b>: [[Clinical significance]], [[High-risk drug combinations]]</li><li><b>Heading Hub</b>: [[Drug Interactions]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[ADRs]], [[CYP450 Drug Interactions]], [[Special Populations/Renal Impairment/Renal Drug Dosing]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Pharmacokinetic Interactions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

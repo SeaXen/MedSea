@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Meningioma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.1. CNS TUMOURS</span>
+      <div class="h1">Meningioma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>WHO CNS5 Grading</b> (Grade 1, 2, 3) based on Mitoses, Brain Invasion, Criteria</li><li>[ ] Perform <b>Simpson Resection Grading</b> and Target <b>Grade I (Complete + Dura/Bone)</b></li><li>[ ] Indicate <b>Adjuvant RT</b> for Grade 2/3, Subtotal Resection, Recurrence</li><li>[ ] Choose <b>SRS vs FSRT</b> for Residual/Recurrent Small Lesions</li><li>[ ] Recognise <b>Molecular Subgroups</b>: NF2 (Merlin), TRAF7, KLF4, AKT1, SMO, PIK3CA</li><li>[ ] Manage <b>Skull Base / Optic Nerve Sheath</b> Meningiomas (Multidisciplinary)</li><li>[ ] Counsel on <b>Surveillance</b> and <b>Recurrence Risk</b> by Grade/Simpson/Extent</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Tumour of **Arachnoid Cap Cells** (Meninges); **Extra-axial**, **Dural-Based**</td></tr><tr><td>**Incidence**</td><td>**Most Common Primary CNS Tumour (30-40%)**: ~8-10/100,000/year</td></tr><tr><td>**Prevalence**</td><td>**Female Predominance (2:1)**; Hormone Receptor Positive (PR+)</td></tr><tr><td>**Peak Age**</td><td>**50-70 years**</td></tr><tr><td>**Risk Factors**</td><td>**Ionising Radiation** (Prior RT, Tinea Capitis), **Neurofibromatosis Type 2 (NF2)**, **Hormonal** (Oral Contraceptives, HRT, Pregnancy Growth), **Obesity**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">WHO CNS5 Classification (Grades 1-3)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Criteria (Any One Sufficient)</th><th>Frequency</th><th>10-yr PFS</th></tr><tr><td>-------</td><td>-------------------------------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Grade 1 (Benign)**</td><td>**<4 Mitoses/10 HPF**, **No Brain Invasion**, **None of Grade 2/3 Criteria**</td><td>**80-85%**</td><td>**>90%**</td></tr><tr><td>**Grade 2 (Atypical)**</td><td>**4-19 Mitoses/10 HPF** **OR** **Brain Invasion** **OR** **≥3 of: High Cellularity, Small Cells, Prominent Nucleoli, Sheeting, Necrosis**</td><td>**15-18%**</td><td>**~60-70%**</td></tr><tr><td>**Grade 3 (Anaplastic/Malignant)**</td><td>**≥20 Mitoses/10 HPF** **OR** **Frank Anaplasia (Carcinoma/Sarcoma/Melanoma-like)**</td><td>**1-3%**</td><td>**~30-40%**</td></tr></table>
+<div class="callout"><b>Note:</b> Brain Invasion = <b>Irregular Infiltration of Brain Parenchyma</b> (Not Just Abutment)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Molecular Subgroups</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Meningioma] --&gt; B{Driver Mutation} B --&gt; B1[<b>NF2 (Merlin) — 50%</b>&lt;br/&gt;<b>Chromosome 22q Loss</b>&lt;br/&gt;<b>Fibrous/Transitional</b>&lt;br/&gt;<b>Spinal/Parasagittal</b>] B --&gt; B2[<b>TRAF7 — 20%</b>&lt;br/&gt;<b>Secretory/Grade 1</b>&lt;br/&gt;<b>KLF4 (TRAF7-KLF4)</b>&lt;br/&gt;<b>AKT1 (TRAF7-AKT1)</b>] B --&gt; B3[<b>SMO — 5%</b>&lt;br/&gt;<b>Non-NF2</b>&lt;br/&gt;<b>Hedgehog Pathway</b>&lt;br/&gt;<b>Basal Cell-like</b>] B --&gt; B4[<b>PIK3CA — 5-10%</b>&lt;br/&gt;<b>PI3K/AKT/mTOR</b>&lt;br/&gt;<b>Grade 2/3</b>] B --&gt; B5[<b>BAP1 — &lt;1%</b>&lt;br/&gt;<b>Rhabdoid/Papillary</b>&lt;br/&gt;<b>Aggressive</b>] </code>``</p>
+<div class="sub-h">Molecular Features by Histology</div>
+<table class="ctable"><tr><th>Subtype</th><th>Key Mutations</th><th>Location</th><th>Grade Tendency</th></tr><tr><td>---------</td><td>---------------</td><td>----------</td><td>----------------</td></tr><tr><td>**Fibrous/Transitional**</td><td>**NF2 (Merlin)**</td><td>Convexity, Parasagittal, Spinal</td><td>Grade 1</td></tr><tr><td>**Secretory**</td><td>**TRAF7 + KLF4**</td><td>Any</td><td>Grade 1</td></tr><tr><td>**Meningothelial**</td><td>**TRAF7 + AKT1**</td><td>Convexity</td><td>Grade 1</td></tr><tr><td>**Angiomatous**</td><td>**TRAF7 + SMO**</td><td>Any</td><td>Grade 1</td></tr><tr><td>**Clear Cell / Chordoid**</td><td>**NF2 + Others**</td><td>Ventricular, Posterior Fossa</td><td>**Grade 2**</td></tr><tr><td>**Atypical/Anaplastic**</td><td>**NF2 + CDKN2A/B Del, TERTp, BAP1**</td><td>Any</td><td>**Grade 2/3**</td></tr><tr><td>**Rhabdoid / Papillary**</td><td>**BAP1 Loss**</td><td>Any</td><td>**Grade 3**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Asymptomatic**</td><td>**Incidental (20-30%)** on Imaging</td></tr><tr><td>**Headache**</td><td>Non-Specific, Progressive</td></tr><tr><td>**Seizures**</td><td>**20-30%** (Convexity Lesions)</td></tr><tr><td>**Focal Deficits**</td><td>Motor, Sensory, Cranial Nerve (Depends on Location)</td></tr><tr><td>**Skull Base Symptoms**</td><td>Cranial Neuropathies (II, III, IV, V, VI, VII), Hearing Loss, Diplopia</td></tr><tr><td>**Spinal Meningioma**</td><td>Myelopathy, Radiculopathy, Sphincter Dysfunction</td></tr><tr><td>**Hormonal Sensitivity**</td><td>**Progesterone Receptor (PR+)**, Growth in Pregnancy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**MRI Brain (Gold Standard)**</td><td>**Diagnosis, Extent, Surgical Planning**</td><td>**T1 Post-Contrast: Homogeneous Enhancement**, **Dural Tail Sign**, **Broad Dural Base**, **Hyperostosis (Bone Invasion)**, **Perilesional Oedema (Vasogenic)**</td></tr><tr><td>**CT Brain**</td><td>Bone Involvement, Hyperostosis, Calcification</td><td>**Calcification (Psammoma Bodies)**, **Hyperostosis**</td></tr><tr><td>**Angiography / MR Angio**</td><td>Vascular Supply (Surgical Planning)</td><td>**External Carotid Supply** (MMA, Accessory Meningeal)</td></tr><tr><td>**PET-CT (DOTATATE / FDG)**</td><td>Recurrence vs Radionecrosis, Grade Assessment</td><td>**DOTATATE: SSTR2A+ (High Uptake)**</td></tr><tr><td>**Biopsy**</td><td>Rarely Needed (Imaging Diagnostic)</td><td>If Atypical Imaging / Non-Operative</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Simpson Resection Grades (Extent of Resection)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Description</th><th>10-yr Recurrence</th></tr><tr><td>-------</td><td>-------------</td><td>------------------</td></tr><tr><td>**Grade I**</td><td>**Complete Removal** of Tumour, **Dura**, **Abnormal Bone**</td><td>**9%**</td></tr><tr><td>**Grade II**</td><td>Complete Tumour Removal + **Coagulation of Dural Attachment**</td><td>**19%**</td></tr><tr><td>**Grade III**</td><td>Complete Tumour Removal **WITHOUT** Dural Coagulation/Resection</td><td>**29%**</td></tr><tr><td>**Grade IV**</td><td>**Subtotal Resection**</td><td>**40%**</td></tr><tr><td>**Grade V**</td><td>**Biopsy Only**</td><td>**~100%**</td></tr></table>
+<div class="callout"><b>Goal: Simpson Grade I (or II) for Grade 1; Grade I Mandatory for Grade 2/3</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management by Grade</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Grade 1 (Benign)</div>
+<p>``<code>mermaid flowchart TD A[Grade 1 Meningioma] --&gt; B{Symptomatic / Growth / Location} B --&gt;|<b>Asymptomatic, Small (&lt;3cm), Non-Critical Location</b>| C[<b>Observation + Serial MRI</b>&lt;br/&gt;<b>q6mo ×1yr, then Annually</b>&lt;br/&gt;<b>Indications for Tx: Growth, Symptoms, Hydrocephalus</b>] B --&gt;|<b>Symptomatic / Growing / Critical Location</b>| D[<b>Surgery: Maximal Safe Resection (Simpson Grade I/II)</b>] D --&gt; E{Extent of Resection} E --&gt;|<b>Simpson I/II (GTR)</b>| F[<b>Surveillance: MRI q6-12mo ×5yr, then q1-2yr</b>] E --&gt;|<b>Simpson III/IV (STR)</b>| G[<b>Adjuvant RT</b>&lt;br/&gt;<b>SRS (12-16Gy Single Fraction)</b>&lt;br/&gt;<b>OR FSRT (50-54Gy/25-30fx)</b>] F --&gt; H[<b>Long-Term Surveillance</b>] G --&gt; H </code>``</p>
+<div class="sub-h">Grade 2 (Atypical)</div>
+<table class="ctable"><tr><th>Scenario</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**GTR (Simpson I/II)**</td><td>**Adjuvant RT (54-60Gy/30fx)** — **Standard** (Reduces Recurrence)</td></tr><tr><td>**STR (Simpson III/IV)**</td><td>**Adjuvant RT (54-60Gy)** — **Mandatory**</td></tr><tr><td>**Recurrent**</td><td>**Re-resection if Feasible** → **Re-RT (SRS/FSRT)**</td></tr></table>
+<div class="sub-h">Grade 3 (Anaplastic)</div>
+<table class="ctable"><tr><th>Scenario</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Any Resection**</td><td>**Adjuvant RT (60Gy/30fx)** — **Mandatory**</td></tr><tr><td>**Recurrent**</td><td>**Re-resection + Re-RT (SRS/FSRT/Re-RT)** → **Systemic Trials**</td></tr></table>
+<div class="sub-h">Radiation Techniques</div>
+<table class="ctable"><tr><th>Technique</th><th>Indication</th><th>Dose</th></tr><tr><td>-----------</td><td>------------</td><td>------</td></tr><tr><td>**SRS (Single Fraction)**</td><td>**Small Residual/Recurrent (<3cm)**, Grade 1/2</td><td>**12-16Gy** (Marginal)</td></tr><tr><td>**FSRT (Hypofractionated)**</td><td>**Larger/Adjacent to Optic Apparatus**, Grade 2</td><td>**25-30Gy/5fx** OR **50-54Gy/25-30fx**</td></tr><tr><td>**Conventional FSRT**</td><td>**Grade 2/3 Adjuvant**, Large Volume</td><td>**54-60Gy/30fx**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Special Locations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Location</th><th>Challenges</th><th>Management</th></tr><tr><td>----------</td><td>------------</td><td>------------</td></tr><tr><td>**Parasagittal/Falx**</td><td>**Superior Sagittal Sinus Invasion**</td><td>**Sinus Reconstruction/Repair if Invaded**; **Venous Outflow Preservation**</td></tr><tr><td>**Sphenoid Wing**</td><td>**En Plaque**, Optic Nerve, Cavernous Sinus</td><td>**Orbital Decompression**, **Cavernous Sinus Dissection**</td></tr><tr><td>**Olfactory Groove**</td><td>**Frontal Lobe, Olfactory Nerve**, CSF Leak Risk</td><td>**Bifrontal Craniotomy**, **CSF Leak Prevention**</td></tr><tr><td>**Tuberculum Sellae / Suprasellar**</td><td>**Optic Chiasm, Pituitary**, Visual Loss</td><td>**Endoscopic Endonasal vs Transcranial**</td></tr><tr><td>**Cavernous Sinus**</td><td>**Cranial Nerves III-VI, ICA**</td><td>**Radical Resection Often Impossible** → **RT Primary/SRS**</td></tr><tr><td>**Optic Nerve Sheath**</td><td>**Vision Loss**, Encasement</td><td>**SRS/FSRT Preferred** (Surgery High Morbidity)</td></tr><tr><td>**Posterior Fossa / Petroclival**</td><td>**Brainstem, Cranial Nerves, Venous Sinuses**</td><td>**Multidisciplinary**, **SRS/FSRT for Residual**</td></tr><tr><td>**Spinal**</td><td>**Thoracic (80%)**, Myelopathy</td><td>**Laminectomy + Resection**, **RT for Grade 2/3/STR**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Systemic Therapy (Limited Evidence)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Agent</th><th>Indication</th><th>Evidence</th></tr><tr><td>-------</td><td>------------</td><td>----------</td></tr><tr><td>**Hydroxyurea**</td><td>Recurrent/Unresectable, Grade 2/3</td><td>Phase 2: Modest Activity</td></tr><tr><td>**Bevacizumab**</td><td>Recurrent, Progressive</td><td>Phase 2: PFS Benefit (Grade 2/3)</td></tr><tr><td>**Somatostatin Analogues (Octreotide)**</td><td>SSTR2A+ (DOTATATE+)</td><td>Limited, Stabilisation</td></tr><tr><td>**mTOR Inhibitors (Everolimus)**</td><td>Recurrent</td><td>Phase 2: Modest PFS</td></tr><tr><td>**VEGFR/EGFR Inhibitors (Sunitinib, Erlotinib)**</td><td>Recurrent</td><td>Minimal Activity</td></tr><tr><td>**Immunotherapy (Pembrolizumab)**</td><td>Hypermutated/MSI-H</td><td>Case Reports</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Surveillance & Recurrence</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Post-GTR Surveillance</th><th>Post-STR/RT Surveillance</th></tr><tr><td>-------</td><td>----------------------</td><td>-------------------------</td></tr><tr><td>**Grade 1**</td><td>**MRI q6-12mo ×5yr**, then **q1-2yr** (Lifelong)</td><td>**MRI q6mo ×3yr**, then q12mo</td></tr><tr><td>**Grade 2**</td><td>**MRI q6mo ×3yr**, then q12mo ×2yr</td><td>**MRI q6mo ×5yr**</td></tr><tr><td>**Grade 3**</td><td>**MRI q3-6mo ×3yr**, then q6mo</td><td>**MRI q3-6mo ×5yr**</td></tr></table>
+<p><b>Recurrence Risk Factors:</b> Higher Grade, Simpson Grade III-V, Younger Age, Male Sex, Progesterone Receptor Negative, <b>TERT Promoter Mutation</b>.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Epidemiology**</td><td>**Most Common Primary CNS Tumour (30-40%)**, Female 2:1, Peak 50-70yr</td></tr><tr><td>**WHO Grades**</td><td>**Gr1 (Benign) 80-85%**: <4 Mitoses, No Invasion; **Gr2 (Atypical) 15-18%**: 4-19 Mitoses OR Brain Invasion OR ≥3/5 Criteria; **Gr3 (Anaplastic) 1-3%**: ≥20 Mitoses OR Anaplasia</td></tr><tr><td>**Simpson Grade**</td><td>**I: Tumour + Dura + Bone (9% Rec)**; **II: Tumour + Coagulated Dura (19%)**; **III: Tumour Only (29%)**; **IV: Subtotal (40%)**; **V: Biopsy**</td></tr><tr><td>**Grade 1**</td><td>**Observation (Small/Asymptomatic)**; **Surgery (Simpson I/II)**; **RT for STR**</td></tr><tr><td>**Grade 2**</td><td>**RT Adjuvant for ALL** (GTR: 54-60Gy; STR: 54-60Gy); **SRS/FSRT**</td></tr><tr><td>**Grade 3**</td><td>**Mandatory RT (60Gy/30fx)**; **Aggressive, Poor Prognosis**</td></tr><tr><td>**Molecular**</td><td>**NF2 (50%)**, TRAF7 (20%), AKT1, KLF4, SMO, PIK3CA, BAP1 (Rhapdoid)</td></tr><tr><td>**SRS/FSRT**</td><td>**SRS: <3cm, Gr1/2** (12-16Gy); **FSRT: Near Optic/Apparatus** (25-30Gy/5fx or 50-54Gy/25-30fx)</td></tr><tr><td>**Surveillance**</td><td>**Gr1: q6-12mo×5yr**; **Gr2: q6mo×3yr**; **Gr3: q3-6mo×3yr**</td></tr><tr><td>**Special Locations**</td><td>**Optic Sheath: SRS**; **Cavernous Sinus: SRS/RT**; **CPA: Hearing Preservation**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**55F, Incidental 2cm Convexity Meningioma, Asymptomatic. Management?**</td><td>**Observation + Serial MRI (q6-12mo)** — **Indications for Treatment: Growth, Symptoms, Hydrocephalus**.</td></tr><tr><td>**Same Patient, Tumour Grows to 3.5cm at 18mo. Surgery — Target Simpson Grade?**</td><td>**Simpson Grade I (Complete Tumour + Dura + Abnormal Bone)** — **10-yr Recurrence 9%**.</td></tr><tr><td>**Simpson Grade I vs II — Difference?**</td><td>**Grade I: Tumour + Dura + Bone**; **Grade II: Tumour + Coagulated Dura (No Bone Resection)**; **Recurrence: 9% vs 19%**.</td></tr><tr><td>**Grade 2 Meningioma, Simpson GTR — Adjuvant?**</td><td>**Adjuvant RT (54-60Gy/30fx)** — **Standard** (Reduces Recurrence from ~40% to ~15%).</td></tr><tr><td>**Grade 2 Meningioma, STR — Management?**</td><td>**Adjuvant RT (54-60Gy) Mandatory** — **SRS/FSRT for Small Residual**.</td></tr><tr><td>**Skull Base Meningioma (Cavernous Sinus) — Primary Treatment?**</td><td>**SRS/FSRT** — **Surgery High Morbidity (Cranial Nerves, ICA)**; **Surgery for Decompression if Mass Effect**.</td></tr><tr><td>**Optic Nerve Sheath Meningioma — Vision Loss, Primary?**</td><td>**SRS/FSRT** — **Surgery = Blindness Risk**, **RT Preserves Vision**.</td></tr><tr><td>**NF2 Mutation — Associated Tumours?**</td><td>**Meningioma (Multiple), Vestibular Schwannoma (Bilateral = NF2), Ependymoma, Cataract**.</td></tr><tr><td>**SRS vs FSRT — Indications?**</td><td>**SRS: Single Fraction, <3cm, Away from Optic Apparatus**; **FSRT: >3cm, Near Optic Nerve/Chiasm, Hypofractionated (5-25fx)**.</td></tr><tr><td>**Recurrence Surveillance Grade 1 vs 2?**</td><td>**Gr1: MRI q6-12mo ×5yr**; **Gr2: MRI q6mo ×3yr, then q12mo ×2yr**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Grade 1 vs 2 — Mitoses Threshold**</td><td>**Grade 1: <4/10 HPF**; **Grade 2: 4-19/10 HPF**; **Grade 3: ≥20/10 HPF**</td></tr><tr><td>**Brain Invasion vs Abutment**</td><td>**Invasion = Irregular Infiltration into Parenchyma (Grade 2)**; **Abutment = Clear Plane (Grade 1)**</td></tr><tr><td>**Simpson Grade 0?**</td><td>**Not in Original Classification**; Some Add **Grade 0 = GTR + Dura + Bone + Venous Sinus Reconstruction**</td></tr><tr><td>**SRS vs FSRT for Optic Apparatus**</td><td>**SRS Contraindicated if Within 2-3mm of Optic Nerve/Chiasm**; **FSRT (5-25fx) Spares Optic Structures**</td></tr><tr><td>**PR Status**</td><td>**PR+ (80%)**, **Hormone Sensitive** (Growth in Pregnancy); **PR- = Worse Prognosis**</td></tr><tr><td>**NF2 vs Non-NF2**</td><td>**NF2: Fibrous/Transitional, Spinal, Parasagittal**; **Non-NF2: Secretory, Meningothelial, Angiomatous, Higher Grade**</td></tr></table>
+<p><b>Mnemonic: MENINGIOMA</b></p>
+<ul><li><b>M</b>ost Common Primary CNS Tumour (30-40%)</li><li><b>E</b>pithelial (Meningothelial), <b>F</b>ibrous, <b>T</b>ransitional, <b>P</b>sammoma Bodies</li><li><b>N</b>F2 Mutation (50%, Merlin, 22q), <b>TRAF7</b> (20%)</li><li><b>I</b>ncidental 20-30%, <b>Female 2:1</b>, <b>PR+ (Hormone Sensitive)</b></li><li><b>N</b>ew WHO Grades: <b>Gr1 (&lt;4 Mitoses), Gr2 (4-19/Brain Invasion), Gr3 (≥20/Anaplasia)</b></li><li><b>G</b>rade 1: Obs/Surgery; <b>Gr2: RT Adjuvant</b>; <b>Gr3: Mandatory RT</b></li><li><b>I</b>nvasion: <b>Brain Invasion = Gr2</b> (NOT Abutment)</li><li><b>O</b>peration: <b>Simpson Grade I (Best)</b>: Tumour + Dura + Bone</li><li><b>M</b>RI: <b>Homogeneous Enhancement, Dural Tail, Broad Base, Hyperostosis</b></li><li><b>O</b>ptic Sheath: <b>SRS/FSRT</b> (Surgery = Blindness)</li><li><b>A</b>ngiomatous/Clear Cell/Chordoid: <b>Higher Grade Potential</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Meningioma)) Epidemiology Most Common CNS Primary (30-40%) Female 2:1, Peak 50-70yr PR+, Hormone Sensitive WHO CNS5 Grades Gr1 (80-85%): &lt;4 Mitoses, No Invasion Gr2 (15-18%): 4-19 Mitoses / Brain Inv / 3 Criteria Gr3 (1-3%): ≥20 Mitoses / Anaplasia Molecular NF2 (50%) - Merlin, 22q TRAF7 (20%) - KLF4, AKT1, SMO PIK3CA, BAP1 (Aggressive) Simpson Resection I: Tumour + Dura + Bone (9% Rec) II: Tumour + Coag Dura (19%) III: Tumour Only (29%) IV: Subtotal (40%) Management Gr1: Obs / Surgery (Simpson I/II) / RT if STR Gr2: Surgery + Adjuvant RT (All) Gr3: Surgery + RT (Mandatory) RT Techniques SRS: &lt;3cm, 12-16Gy FSRT: Near Optic, 25-30Gy/5fx Conventional: 54-60Gy/30fx Special Locations Optic Sheath: SRS/FSRT Cavernous Sinus: SRS/RT CPA: Hearing Preservation Spinal: Laminectomy </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Epidemiology**</td><td>Most Common CNS Primary, Female 2:1, PR+, Peak 50-70</td></tr><tr><td>**WHO Grades**</td><td>Gr1: <4 Mitoses; Gr2: 4-19 OR Brain Inv; Gr3: ≥20 OR Anaplasia</td></tr><tr><td>**Simpson**</td><td>I: Tumour+Dura+Bone (9%); II: Tumour+Coag Dura (19%); III: Tumour Only (29%); IV: Subtotal (40%)</td></tr><tr><td>**Gr1**</td><td>Obs (Small/Asympt) / Surgery (Simpson I/II) / RT if STR</td></tr><tr><td>**Gr2**</td><td>Surgery + **Adjuvant RT** (GTR 54-60Gy, STR 54-60Gy)</td></tr><tr><td>**Gr3**</td><td>Surgery + **Mandatory RT** (60Gy/30fx)</td></tr><tr><td>**SRS/FSRT**</td><td>SRS <3cm (12-16Gy); FSRT Near Optic (25-30Gy/5fx)</td></tr><tr><td>**Molecular**</td><td>NF2 (50%), TRAF7 (20%), AKT1/KLF4/SMO/PIK3CA</td></tr><tr><td>**Surveillance**</td><td>Gr1 q6-12mo×5yr; Gr2 q6mo×3yr; Gr3 q3-6mo×3yr</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>WHO CNS5 Grading Criteria</td><td></td><td></td></tr><tr><td>Simpson Resection Grades</td><td></td><td></td></tr><tr><td>Management by Grade</td><td></td><td></td></tr><tr><td>SRS vs FSRT Indications</td><td></td><td></td></tr><tr><td>Molecular Subgroups</td><td></td><td></td></tr><tr><td>Special Locations</td><td></td><td></td></tr><tr><td>Surveillance Schedule</td><td></td><td></td></tr><tr><td>NF2 vs Non-NF2</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Glioblastoma]], [[IDH-Mutant Astrocytoma &amp; Oligodendroglioma]], [[Brain Metastases]], [[Primary CNS Lymphoma]], [[Simpson Grade]], [[NF2]], [[WHO CNS5 Classification]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Meningioma (Epidemiology), which statement is correct? A. <b>Most Common Primary CNS Tumour (30-40%)</b>, Female 2:1, Peak 50-70yr B. **Most - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Most Common Primary CNS Tumour (30-40%)</b>, Female 2:1, Peak 50-70yr</li></ul>
+<p><b>2.</b> Regarding Meningioma (WHO Grades), which statement is correct? A. <b>Gr1 (Benign) 80-85%</b>: &lt;4 Mitoses, No Invasion B. **Gr1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Gr1 (Benign) 80-85%</b>: &lt;4 Mitoses, No Invasion; <b>Gr2 (Atypical) 15-18%</b>: 4-19 Mitoses OR Brain Invasion OR ≥3/5 Crit...</li></ul>
+<p><b>3.</b> Regarding Meningioma (Simpson Grade), which statement is correct? A. <b>I: Tumour + Dura + Bone (9% Rec)</b> B. **I: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>I: Tumour + Dura + Bone (9% Rec)</b>; <b>II: Tumour + Coagulated Dura (19%)</b>; <b>III: Tumour Only (29%)</b>; **IV: Subtotal...</li></ul>
+<p><b>4.</b> Regarding Meningioma (Grade 1), which statement is correct? A. <b>Observation (Small/Asymptomatic)</b> B. **Observation - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Observation (Small/Asymptomatic)</b>; <b>Surgery (Simpson I/II)</b>; <b>RT for STR</b></li></ul>
+<p><b>5.</b> Regarding Meningioma (Grade 2), which statement is correct? A. <b>RT Adjuvant for ALL</b> (GTR: 54-60Gy B. **RT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RT Adjuvant for ALL</b> (GTR: 54-60Gy; STR: 54-60Gy); <b>SRS/FSRT</b></li></ul>
+<p><b>6.</b> Regarding Meningioma (Grade 3), which statement is correct? A. <b>Mandatory RT (60Gy/30fx)</b> B. **Mandatory - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Mandatory RT (60Gy/30fx)</b>; <b>Aggressive, Poor Prognosis</b></li></ul>
+<p><b>7.</b> Regarding Meningioma (Molecular), which statement is correct? A. <b>NF2 (50%)</b>, TRAF7 (20%), AKT1, KLF4, SMO, PIK3CA, BAP1 (Rhapdoid) B. **NF2 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>NF2 (50%)</b>, TRAF7 (20%), AKT1, KLF4, SMO, PIK3CA, BAP1 (Rhapdoid)</li></ul>
+<p><b>8.</b> Regarding Meningioma (SRS/FSRT), which statement is correct? A. <b>SRS: &lt;3cm, Gr1/2</b> (12-16Gy) B. **SRS: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SRS: &lt;3cm, Gr1/2</b> (12-16Gy); <b>FSRT: Near Optic/Apparatus</b> (25-30Gy/5fx or 50-54Gy/25-30fx)</li></ul>
+<p><b>9.</b> Regarding Meningioma (Surveillance), which statement is correct? A. <b>Gr1: q6-12mo×5yr</b> B. **Gr1: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Gr1: q6-12mo×5yr</b>; <b>Gr2: q6mo×3yr</b>; <b>Gr3: q3-6mo×3yr</b></li></ul>
+<p><b>10.</b> Regarding Meningioma (Special Locations), which statement is correct? A. <b>Optic Sheath: SRS</b> B. **Optic - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Optic Sheath: SRS</b>; <b>Cavernous Sinus: SRS/RT</b>; <b>CPA: Hearing Preservation</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Most Common Primary CNS Tumour (30-40%)</b>, Female 2:1, Peak 50-70yr</li><li>B. **Most (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Most Common Primary CNS Tumour (30-40%)</b>, Female 2:1, Peak 50-70yr</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Gr1 (Benign) 80-85%</b>: &lt;4 Mitoses, No Invasion</li><li>B. **Gr1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Gr1 (Benign) 80-85%</b>: &lt;4 Mitoses, No Invasion; <b>Gr2 (Atypical) 15-18%</b>: 4-19 Mitoses OR Brain Invasion OR ≥3/5 Crit...</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>I: Tumour + Dura + Bone (9% Rec)</b></li><li>B. **I: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>I: Tumour + Dura + Bone (9% Rec)</b>; <b>II: Tumour + Coagulated Dura (19%)</b>; <b>III: Tumour Only (29%)</b>; **IV: Subtotal...</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Observation (Small/Asymptomatic)</b></li><li>B. **Observation (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Observation (Small/Asymptomatic)</b>; <b>Surgery (Simpson I/II)</b>; <b>RT for STR</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>RT Adjuvant for ALL</b> (GTR: 54-60Gy</li><li>B. **RT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>RT Adjuvant for ALL</b> (GTR: 54-60Gy; STR: 54-60Gy); <b>SRS/FSRT</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Mandatory RT (60Gy/30fx)</b></li><li>B. **Mandatory (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Mandatory RT (60Gy/30fx)</b>; <b>Aggressive, Poor Prognosis</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>NF2 (50%)</b>, TRAF7 (20%), AKT1, KLF4, SMO, PIK3CA, BAP1 (Rhapdoid)</li><li>B. **NF2 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>NF2 (50%)</b>, TRAF7 (20%), AKT1, KLF4, SMO, PIK3CA, BAP1 (Rhapdoid)</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>SRS: &lt;3cm, Gr1/2</b> (12-16Gy)</li><li>B. **SRS: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>SRS: &lt;3cm, Gr1/2</b> (12-16Gy); <b>FSRT: Near Optic/Apparatus</b> (25-30Gy/5fx or 50-54Gy/25-30fx)</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Gr1: q6-12mo×5yr</b></li><li>B. **Gr1: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Gr1: q6-12mo×5yr</b>; <b>Gr2: q6mo×3yr</b>; <b>Gr3: q3-6mo×3yr</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Optic Sheath: SRS</b></li><li>B. **Optic (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Optic Sheath: SRS</b>; <b>Cavernous Sinus: SRS/RT</b>; <b>CPA: Hearing Preservation</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Epidemiology? <b>A1:</b> Most Common Primary CNS Tumour (30-40%), Female 2:1, Peak 50-70yr</p>
+<p><b>Q2:</b> WHO Grades? <b>A2:</b> Gr1 (Benign) 80-85%: &lt;4 Mitoses, No Invasion; Gr2 (Atypical) 15-18%: 4-19 Mitoses OR Brain Invasion OR ≥3/5 Criteria; Gr3 (Anaplastic) 1-3%: ≥20 Mitoses OR Anaplasia</p>
+<p><b>Q3:</b> Simpson Grade? <b>A3:</b> I: Tumour + Dura + Bone (9% Rec); II: Tumour + Coagulated Dura (19%); III: Tumour Only (29%); IV: Subtotal (40%); V: Biopsy</p>
+<p><b>Q4:</b> Grade 1? <b>A4:</b> Observation (Small/Asymptomatic); Surgery (Simpson I/II); RT for STR</p>
+<p><b>Q5:</b> Grade 2? <b>A5:</b> RT Adjuvant for ALL (GTR: 54-60Gy; STR: 54-60Gy); SRS/FSRT</p>
+<p><b>Q6:</b> Grade 3? <b>A6:</b> Mandatory RT (60Gy/30fx); Aggressive, Poor Prognosis</p>
+<p><b>Q7:</b> Molecular? <b>A7:</b> NF2 (50%), TRAF7 (20%), AKT1, KLF4, SMO, PIK3CA, BAP1 (Rhapdoid)</p>
+<p><b>Q8:</b> SRS/FSRT? <b>A8:</b> SRS: &lt;3cm, Gr1/2 (12-16Gy); FSRT: Near Optic/Apparatus (25-30Gy/5fx or 50-54Gy/25-30fx)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Epidemiology</td><td>Most Common Primary CNS Tumour (30-40%), Female 2:1, Peak 50-70yr</td></tr><tr><td>2</td><td>A</td><td>WHO Grades</td><td>Gr1 (Benign) 80-85%: <4 Mitoses, No Invasion; Gr2 (Atypical) 15-18%: 4-19 Mitoses OR Brain Invasion OR ≥3/5 Criteria; Gr</td></tr><tr><td>3</td><td>A</td><td>Simpson Grade</td><td>I: Tumour + Dura + Bone (9% Rec); II: Tumour + Coagulated Dura (19%); III: Tumour Only (29%); IV: Subtotal (40%); V: Bio</td></tr><tr><td>4</td><td>A</td><td>Grade 1</td><td>Observation (Small/Asymptomatic); Surgery (Simpson I/II); RT for STR</td></tr><tr><td>5</td><td>A</td><td>Grade 2</td><td>RT Adjuvant for ALL (GTR: 54-60Gy; STR: 54-60Gy); SRS/FSRT</td></tr><tr><td>6</td><td>A</td><td>Grade 3</td><td>Mandatory RT (60Gy/30fx); Aggressive, Poor Prognosis</td></tr><tr><td>7</td><td>A</td><td>Molecular</td><td>NF2 (50%), TRAF7 (20%), AKT1, KLF4, SMO, PIK3CA, BAP1 (Rhapdoid)</td></tr><tr><td>8</td><td>A</td><td>SRS/FSRT</td><td>SRS: <3cm, Gr1/2 (12-16Gy); FSRT: Near Optic/Apparatus (25-30Gy/5fx or 50-54Gy/25-30fx)</td></tr><tr><td>9</td><td>A</td><td>Surveillance</td><td>Gr1: q6-12mo×5yr; Gr2: q6mo×3yr; Gr3: q3-6mo×3yr</td></tr><tr><td>10</td><td>A</td><td>Special Locations</td><td>Optic Sheath: SRS; Cavernous Sinus: SRS/RT; CPA: Hearing Preservation</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Epidemiology</td><td>Most Common Primary CNS Tumour (30-40%), Female 2:1, Peak 50-70yr</td></tr><tr><td>2</td><td>A</td><td>WHO Grades</td><td>Gr1 (Benign) 80-85%: <4 Mitoses, No Invasion; Gr2 (Atypical) 15-18%: 4-19 Mitoses OR Brain Invasion OR ≥3/5 Criteria; Gr</td></tr><tr><td>3</td><td>A</td><td>Simpson Grade</td><td>I: Tumour + Dura + Bone (9% Rec); II: Tumour + Coagulated Dura (19%); III: Tumour Only (29%); IV: Subtotal (40%); V: Bio</td></tr><tr><td>4</td><td>A</td><td>Grade 1</td><td>Observation (Small/Asymptomatic); Surgery (Simpson I/II); RT for STR</td></tr><tr><td>5</td><td>A</td><td>Grade 2</td><td>RT Adjuvant for ALL (GTR: 54-60Gy; STR: 54-60Gy); SRS/FSRT</td></tr><tr><td>6</td><td>A</td><td>Grade 3</td><td>Mandatory RT (60Gy/30fx); Aggressive, Poor Prognosis</td></tr><tr><td>7</td><td>A</td><td>Molecular</td><td>NF2 (50%), TRAF7 (20%), AKT1, KLF4, SMO, PIK3CA, BAP1 (Rhapdoid)</td></tr><tr><td>8</td><td>A</td><td>SRS/FSRT</td><td>SRS: <3cm, Gr1/2 (12-16Gy); FSRT: Near Optic/Apparatus (25-30Gy/5fx or 50-54Gy/25-30fx)</td></tr><tr><td>9</td><td>A</td><td>Surveillance</td><td>Gr1: q6-12mo×5yr; Gr2: q6mo×3yr; Gr3: q3-6mo×3yr</td></tr><tr><td>10</td><td>A</td><td>Special Locations</td><td>Optic Sheath: SRS; Cavernous Sinus: SRS/RT; CPA: Hearing Preservation</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../CNS Tumours|CNS Tumours]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Meningioma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

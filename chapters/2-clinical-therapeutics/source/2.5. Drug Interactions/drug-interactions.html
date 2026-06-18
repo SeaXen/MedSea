@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Drug Interactions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Drug Interactions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Recite <b>CYP450 isoform table</b> (Substrates, Inhibitors, Inducers) for 1A2, 2C9, 2C19, 2D6, 3A4/5</li><li>[ ] Predict <b>direction of interaction</b> (↑ Substrate level → Toxicity; ↓ Substrate level → Therapeutic failure)</li><li>[ ] Apply <b>management algorithms</b> for Warfarin, DOACs, Tacrolimus/Ciclosporin, Statins, Clopidogrel</li><li>[ ] Identify <b>P-gp interactions</b> and dual CYP3A4/P-gp inhibition</li><li>[ ] Distinguish <b>reversible vs mechanism-based (irreversible) inhibition</b></li><li>[ ] Classify interaction <b>severity</b> (Contraindicated, Major, Moderate, Minor)</li><li>[ ] Apply <b>management strategies</b> (Avoid, Adjust Dose, Monitor, Alternative Agent)</li><li>[ ] Recognise <b>high-risk combinations</b> (Warfarin, DOACs, CNIs, ARVs, AEDs, QT-prolonging)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Core Concept: Interaction Mechanisms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">PK Interactions — ADME Framework</div>
+<p>```mermaid flowchart LR subgraph ABS[Absorption] A1[pH changes: PPIs ↓ ketoconazole/itraconazole absorption] A2[Chelation: Ca²⁺/Mg²⁺/Fe²⁺/Zn²⁺ bind quinolones/tetracyclines/bisphosphonates] A3[Motility: Metoclopramide ↑ gastric emptying; anticholinergics ↓] A4[Transporters: P-gp (digoxin), OATP (statins), OCT (metformin)] end</p>
+<p>subgraph DIST[Distribution] D1[Protein binding displacement: Warfarin, Phenytoin, Valproate — transient ↑ free fraction] D2[Clinical significance: ONLY for high extraction, narrow TI drugs (warfarin, phenytoin)] end</p>
+<p>subgraph MET[Metabolism] M1[CYP450 Inhibition → ↑ Substrate levels → TOXICITY] M2[CYP450 Induction → ↓ Substrate levels → THERAPEUTIC FAILURE] M3[UGT Inhibition: Valproate ↑ Lamotrigine; Induction: Carbamazepine ↓ Lamotrigine] M4[Esterases: Remifentanil, aspirin hydrolysis] end</p>
+<p>subgraph EXCR[Excretion] E1[Renal tubular secretion: Probenecid ↓ penicillin excretion; Cimetidine/trimetoprim ↓ creatinine secretion] E2[P-gp: Digoxin, Tacrolimus, DOACs — inhibition ↑ levels] E3[OAT/OCT/MATE: Metformin, Cimetidine, Pyrimethamine] E4[Biliary: Enterohepatic recirculation (oral contraceptives + antibiotics)] end ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">PD Interactions</div>
+<p>```mermaid flowchart LR subgraph ADD[Additive/Synergistic] AD1[Warfarin + NSAID → ↑ Bleeding] AD2[ACEi + K⁺-sparing diuretic → ↑ Hyperkalaemia] AD3[Sedatives + Alcohol → ↑ CNS depression] AD4[Beta-blocker + Verapamil → ↑ Bradycardia/AV block] end</p>
+<p>subgraph ANT[Antagonistic] AN1[Beta-blocker + Beta-agonist (salbutamol) → ↓ Bronchodilation] AN2[NSAID + ACEi/ARB/Diuretic → ↓ Antihypertensive effect + ↑ AKI] AN3[Domperidone/Metoclopramide + PPI → ↓ Acid suppression] end</p>
+<p>subgraph REC[Receptor-Level] R1[Agonist + Antagonist at same receptor] R2[Naloxone reverses opioid; Flumazenil reverses benzo] R3[Atropine reverses organophosphate/carbamate] end</p>
+<p>subgraph SYS[Physiological Systems] S1[Triple Whammy: ACEi/ARB + Diuretic + NSAID → AKI] S2[Serotonin syndrome: SSRI + Tramadol + MAOI] S3[Neuroleptic malignant syndrome: Antipsychotic + Dopamine antagonist withdrawal] end ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">CYP450 Quick Reference Table (EXAM ESSENTIAL)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">CYP450 Isoform Summary Table</div>
+<table class="ctable"><tr><th>Isoform</th><th>% Drugs Metabolised</th><th>Key Substrates (Exam)</th><th>Strong Inhibitors</th><th>Strong Inducers</th><th>Genetic Polymorphism</th></tr><tr><td>---------</td><td>---------------------</td><td>----------------------</td><td>-------------------</td><td>-----------------</td><td>---------------------</td></tr><tr><td>**1A2**</td><td>~5%</td><td>Theophylline, Clozapine, Olanzapine, Duloxetine, Tizanidine</td><td>**Fluvoxamine**, Ciprofloxacin</td><td>**Smoking**, Omeprazole</td><td>*CYP1A2* variants</td></tr><tr><td>**2C9**</td><td>~15%</td><td>**Warfarin (S-)**, Phenytoin, Glipizide, Losartan, NSAIDs</td><td>**Fluconazole**, Amiodarone, Metronidazole, TMP-SMX</td><td>**Rifampicin**, Carbamazepine, Phenytoin</td><td>***CYP2C9*2/*3** → ↓ Warfarin dose</td></tr><tr><td>**2C19**</td><td>~10%</td><td>**Clopidogrel**, PPIs, Citalopram, Diazepam, Voriconazole</td><td>**Omeprazole/Esomeprazole**, Fluoxetine, Fluvoxamine</td><td>**Rifampicin**, Carbamazepine, SJW</td><td>***CYP2C19*2/*3** (PM) → ↓ Clopidogrel activation</td></tr><tr><td>**2D6**</td><td>~20%</td><td>**Codeine**, Tramadol, TCAs, β-blockers, Flecainide, Atomoxetine</td><td>**Paroxetine**, Fluoxetine, Quinidine, Bupropion</td><td>**None**</td><td>***CYP2D6*4/*5** (PM) → No codeine→morphine</td></tr><tr><td>**3A4/5**</td><td>**>50%**</td><td>Statins, CCBs, **Tacrolimus**, **Ciclosporin**, DOACs, Midazolam, Steroids</td><td>**Clarithromycin**, **Erythromycin**, **Azoles**, **Ritonavir**, **Grapefruit**, Verapamil, Diltiazem</td><td>**Rifampicin**, **Carbamazepine**, **Phenytoin**, **Phenobarbital**, **SJW**</td><td>*CYP3A5* expressor vs non-expressor</td></tr></table>
+<div class="callout"><b>Exam Key:</b> CYP3A4 = <b>&gt;50% of all drugs</b>. CYP2D6 = <b>no inducers</b>. CYP2C9 = <b>Warfarin</b>. CYP2C19 = <b>Clopidogrel activation</b>. CYP1A2 = <b>Smoking induces</b>.</div>
+<div class="sub-h">P-glycoprotein (P-gp / ABCB1) — Key Dual Substrate Drugs</div>
+<table class="ctable"><tr><th>Drug</th><th>CYP3A4 Substrate?</th><th>P-gp Substrate?</th><th>Clinical Implication</th></tr><tr><td>------</td><td>-------------------</td><td>-----------------</td><td>---------------------</td></tr><tr><td>**Digoxin**</td><td>No</td><td>**Yes**</td><td>Clarithromycin/Azoles/Verapamil/Amiodarone → ↑ Digoxin (P-gp inhibition)</td></tr><tr><td>**Tacrolimus**</td><td>**Yes**</td><td>**Yes**</td><td>**Dual inhibition** → 5-10x level increase</td></tr><tr><td>**Ciclosporin**</td><td>**Yes**</td><td>**Yes**</td><td>Same as tacrolimus</td></tr><tr><td>**DOACs (Riva/Apix/Dabi)**</td><td>**Yes (3A4)**</td><td>**Yes**</td><td>Dual inhibition → ↑ Bleeding; Dual induction → ↓ Efficacy</td></tr><tr><td>**Simvastatin/Atorvastatin**</td><td>**Yes**</td><td>Partial</td><td>Azoles/Clarithro → ↑ Myopathy risk</td></tr><tr><td>**HIV PIs (Ritonavir)**</td><td>**Yes**</td><td>**Yes**</td><td>**Potent dual inhibitor**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Interaction Mechanisms — Deep Dive</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Reversible Inhibition</div>
+<ul><li><b>Competitive:</b> Inhibitor competes for active site (Most CYP inhibitors)</li><li><b>Non-competitive:</b> Binds allosteric site</li><li><b>Onset:</b> Rapid (hours); <b>Offset:</b> Rapid (hours-days after stopping inhibitor)</li></ul>
+<div class="sub-h">Mechanism-Based / Irreversible Inhibition (Time-Dependent)</div>
+<ul><li><b>Metabolic-intermediate complex</b> formation → Heme destruction</li><li><b>Drugs:</b> <b>Erythromycin, Clarithromycin, Verapamil, Diltiazem, Paroxetine, Fluoxetine, Ritonavir, Azoles</b></li><li><b>Onset:</b> Days (requires new enzyme synthesis); <b>Offset:</b> Days-weeks (enzyme turnover t½ ~72h)</li><li><b>Clinical:</b> More pronounced, longer-lasting interaction</li></ul>
+<div class="sub-h">Induction</div>
+<ul><li><b>Transcriptional activation</b> via <b>PXR (Pregnane X Receptor)</b> / <b>CAR (Constitutive Androstane Receptor)</b></li><li><b>Onset:</b> 3-7 days (max 2-3 weeks); <b>Offset:</b> 1-3 weeks after stopping</li><li><b>Key Inducers:</b> <b>Rifampicin (+++)</b>, Carbamazepine, Phenytoin, Phenobarbital, St John's Wort, Bosentan, Modafinil</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Risk Drug Combinations — Management Algorithms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Warfarin — High-Risk Interactions</div>
+<p>``<code>mermaid flowchart TD A[Patient on Warfarin — New Drug Started] --&gt; B{Interaction Type} B --&gt;|CYP2C9 Inhibitor&lt;br/&gt;Fluconazole, Metronidazole,&lt;br/&gt;Co-trimoxazole, Macrolides,&lt;br/&gt;Amiodarone| C[↑ INR → Bleeding Risk] C --&gt; D[Action: Reduce Warfarin 20-30%&lt;br/&gt;Monitor INR 2-3x/week&lt;br/&gt;Duration: During + 1wk after] B --&gt;|CYP2C9/3A4 Inducer&lt;br/&gt;Rifampicin, Carbamazepine,&lt;br/&gt;Phenytoin, St John's Wort| E[↓ INR → Thrombosis Risk] E --&gt; F[Action: Increase Warfarin 20-50%&lt;br/&gt;Monitor INR 2-3x/week&lt;br/&gt;Duration: During + 2-4wk after] B --&gt;|Vit K Reduction&lt;br/&gt;Broad-spectrum Abx| G[↑ INR → Bleeding Risk] G --&gt; H[Monitor INR; Consider Vit K supplementation&lt;br/&gt;if INR &gt;5] B --&gt;|Protein Binding Displacement&lt;br/&gt;(Transient — rarely clinically significant)| I[Monitor INR 48h] </code>``</p>
+<table class="ctable"><tr><th>Drug Pair</th><th>Mechanism</th><th>Clinical Effect</th><th>Management</th></tr><tr><td>-----------</td><td>-----------</td><td>-----------------</td><td>------------</td></tr><tr><td>**Warfarin + Fluconazole/Metronidazole/Co-trimoxazole/Macrolides**</td><td>CYP2C9 inhibition + Vit K reduction</td><td>↑ INR, Bleeding</td><td>**Reduce warfarin 20-30%; Monitor INR 2-3x/week**</td></tr><tr><td>**Warfarin + Rifampicin/Carbamazepine/Phenytoin/SJW**</td><td>CYP2C9/3A4 induction</td><td>↓ INR, Thrombosis</td><td>**Increase warfarin 20-50%; Monitor INR 2-3x/week**</td></tr><tr><td>**Warfarin + Amiodarone**</td><td>CYP2C9 inhibition (MBI) + displacement</td><td>↑↑ INR (delayed 1-2wk)</td><td>**Reduce warfarin 30-50%; Monitor INR closely**</td></tr><tr><td>**Warfarin + Cranberry/Grapefruit**</td><td>CYP2C9/3A4 inhibition</td><td>↑ INR</td><td>Avoid large amounts; Monitor INR</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">DOACs — High-Risk Interactions</div>
+<table class="ctable"><tr><th>DOAC</th><th>Strong CYP3A4/P-gp Inhibitor<br/>(Azoles, HIV PIs, Clarithro, Verapamil, Diltiazem)</th><th>Strong Inducer<br/>(Rifampicin, Carbamazepine, Phenytoin, SJW)</th><th>P-gp Inhibitor Only<br/>(Verapamil, Diltiazem, Amiodarone, Quinidine)</th></tr><tr><td>------</td><td>--------------------------------------------------------</td><td>------------------------------------------------</td><td>----------------------------------------------------</td></tr><tr><td>**Dabigatran**</td><td>**AVOID** (↑ Bleeding 2-6x)</td><td>**AVOID** (↓ Exposure 50-66%)</td><td>Reduce dose 50% if CrCl 30-50</td></tr><tr><td>**Rivaroxaban**</td><td>**Dose reduce 15mg OD** (CrCl>30); **Avoid** if CrCl<30</td><td>**AVOID**</td><td>**Caution** — monitor for bleeding</td></tr><tr><td>**Apixaban**</td><td>**Dose reduce 2.5mg BD** if 2 criteria met*; Avoid otherwise</td><td>**AVOID**</td><td>**Caution** — monitor for bleeding</td></tr><tr><td>**Edoxaban**</td><td>**Dose reduce 30mg OD**</td><td>**AVOID**</td><td>**Caution**</td></tr></table>
+<div class="callout">*Apixaban dose reduction criteria: Age ≥80 OR Weight ≤60kg OR Cr ≤1.5 mg/dL — <b>2 of 3</b> triggers 2.5mg BD.</div>
+<div class="sub-h">Immunosuppressants (Tacrolimus / Ciclosporin / Sirolimus)</div>
+<p>```mermaid flowchart TD A[Tacrolimus/Ciclosporin + Azole/Macrolide/P-gp Inhibitor] --&gt; B[↑ Levels 5-10x → Nephro/Neurotoxicity] B --&gt; C{Action} C --&gt;|If Alternative Exists| D[<b>STOP Inhibitor</b>&lt;br/&gt;Switch: Clarithro → Azithro&lt;br/&gt;Fluconazole → Caspofungin/Ampho B&lt;br/&gt;Diltiazem → Amlodipine] C --&gt;|If Inhibitor Essential| E[<b>Reduce CNI Dose 66-75%</b>&lt;br/&gt;Monitor Levels q2-3 days&lt;br/&gt;Monitor Renal Function q2-3 days&lt;br/&gt;Monitor Neuro (tremor, seizure, PRES)]</p>
+<p>F[Tacrolimus/Ciclosporin + Rifampicin/Carbamazepine/Phenytoin/SJW] --&gt; G[↓ Levels 50-90% → Rejection Risk] G --&gt; H[<b>Avoid Combination if Possible</b>&lt;br/&gt;If Essential: ↑ CNI Dose 2-4x&lt;br/&gt;Monitor Levels DAILY&lt;br/&gt;Monitor Rejection Markers] ```</p>
+<table class="ctable"><tr><th>Inhibitor</th><th>Tacrolimus Dose Reduction</th><th>Ciclosporin Dose Reduction</th><th>Monitoring</th></tr><tr><td>-----------</td><td>---------------------------</td><td>----------------------------</td><td>------------</td></tr><tr><td>**Ketoconazole/Itraconazole/Voriconazole/Posaconazole**</td><td>**66-75%** (empiric)</td><td>**66-75%**</td><td>q2-3d levels, renal, neuro</td></tr><tr><td>**Clarithromycin/Erythromycin**</td><td>50-66%</td><td>50-66%</td><td>q2-3d levels</td></tr><tr><td>**Fluconazole**</td><td>50%</td><td>50%</td><td>q3-5d levels</td></tr><tr><td>**Ritonavir/Cobicistat**</td><td>**80-90%**</td><td>**80-90%**</td><td>Daily levels initially</td></tr><tr><td>**Grapefruit**</td><td>Avoid</td><td>Avoid</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Statins — CYP3A4 Interactions</div>
+<table class="ctable"><tr><th>Statin</th><th>CYP3A4 Substrate?</th><th>Max Dose with Moderate Inhibitor<br/>(Amiodarone, Verapamil, Diltiazem)</th><th>With Strong Inhibitor<br/>(Clarithro, Azoles, HIV PIs)</th></tr><tr><td>--------</td><td>-------------------</td><td>---------------------------------------------------------------</td><td>-----------------------------------------------</td></tr><tr><td>**Simvastatin**</td><td>**Yes (High)**</td><td>**Max 10mg/day**</td><td>**CONTRAINDICATED**</td></tr><tr><td>**Atorvastatin**</td><td>**Yes (Moderate)**</td><td>Max 20-40mg/day</td><td>Max 20mg/day (avoid if possible)</td></tr><tr><td>**Lovastatin**</td><td>**Yes (High)**</td><td>Max 20mg/day</td><td>**CONTRAINDICATED**</td></tr><tr><td>**Rosuvastatin**</td><td>No (BCRP/OATP)</td><td>No restriction</td><td>No restriction (caution with cyclosporine)</td></tr><tr><td>**Pravastatin**</td><td>No (OATP)</td><td>No restriction</td><td>No restriction</td></tr><tr><td>**Fluvastatin**</td><td>CYP2C9</td><td>No restriction</td><td>No restriction</td></tr></table>
+<div class="callout"><b>Key:</b> <b>Simvastatin + Clarithromycin = Rhabdo risk +++</b> — classic exam trap.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Clopidogrel + PPI Interaction</div>
+<table class="ctable"><tr><th>PPI</th><th>CYP2C19 Inhibition</th><th>Effect on Clopidogrel</th><th>Recommendation</th></tr><tr><td>-----</td><td>-------------------</td><td>----------------------</td><td>----------------</td></tr><tr><td>**Omeprazole/Esomeprazole**</td><td>**Strong (+++)**</td><td>↓ Active metabolite 40-50%; ↑ CV events</td><td>**AVOID** — use pantoprazole/rabeprazole or H2 blocker</td></tr><tr><td>**Lansoprazole**</td><td>Moderate</td><td>↓ Active metabolite ~30%</td><td>Avoid if possible</td></tr><tr><td>**Pantoprazole/Rabeprazole**</td><td>Weak/Minimal</td><td>Negligible</td><td>**Preferred**</td></tr><tr><td>**Famotidine/Ranitidine**</td><td>None</td><td>No effect</td><td>**Safe alternative**</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>Clopidogrel is a PRODRUG requiring CYP2C19 activation. Omeprazole/esomeprazole are strong CYP2C19 inhibitors → ↓ antiplatelet effect.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">QT-Prolonging Combinations — Torsades Risk</div>
+<p>```mermaid flowchart LR subgraph HIGH[High Risk: Avoid/Monitor ECG + K⁺/Mg²⁺] H1[Antiarrhythmics: Amiodarone, Sotalol, Flecainide, Quinidine] H2[Antipsychotics: Haloperidol, Quetiapine, Ziprasidone] H3[Antibiotics: Macrolides, Fluoroquinolones, Azoles] H4[Antiemetics: Ondansetron, Domperidone, Metoclopramide] H5[Others: Methadone, Citalopram/Escitalopram &gt;20/40mg, Chloroquine] end</p>
+<p>subgraph ADDITIVE[Additive Risk = HIGHER] A1[🚫 Any 2 from HIGH → Max Risk] A2[🚫 HIGH + Electrolyte abnormality (K⁺&lt;4, Mg²⁺&lt;0.7)] A3[🚫 HIGH + Bradycardia (&lt;50) / Heart block / LVH] A4[🚫 HIGH + Renal/Hepatic impairment] end ```</p>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**2+ QT-prolonging drugs**</td><td>**Avoid combination**; if essential → Baseline ECG, correct K⁺/Mg²⁺, repeat ECG 24-48h</td></tr><tr><td>**QT >500ms or ΔQT >60ms**</td><td>**Stop offending drug(s)**; Correct electrolytes; Cardiology review</td></tr><tr><td>**Torsades de Pointes**</td><td>**IV Magnesium 2g bolus**; Overdrive pacing; Isoprenaline; Stop all QT drugs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Clinical Significance Assessment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Severity Classification (Stockley's / FDA / MHRA)</div>
+<table class="ctable"><tr><th>Category</th><th>Definition</th><th>Action</th><th>Examples</th></tr><tr><td>----------</td><td>------------</td><td>--------</td><td>----------</td></tr><tr><td>**Contraindicated**</td><td>Life-threatening; no safe management</td><td>**Do not co-prescribe**</td><td>Simvastatin + Clarithro; Dabigatran + Ketoconazole; MAOI + SSRI</td></tr><tr><td>**Major**</td><td>Significant harm likely; requires dose adjustment/close monitoring</td><td>Adjust dose, Monitor closely, Consider alternative</td><td>Warfarin + Fluconazole; Tacrolimus + Clarithro; DOAC + Verapamil</td></tr><tr><td>**Moderate**</td><td>Potential harm; monitor or dose adjust</td><td>Monitor clinical response, Adjust if needed</td><td>ACEi + NSAID; SSRI + NSAID (bleeding); Statin + Fibrate</td></tr><tr><td>**Minor**</td><td>Unlikely to cause harm; awareness only</td><td>Counsel patient, Routine monitoring</td><td>Paracetamol + Warfarin (minimal); Most PPI interactions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Management Strategies — Decision Algorithm</div>
+<p>```mermaid flowchart TD A[Identified Drug Interaction] --&gt; B{Severity} B --&gt;|Contraindicated| C[<b>AVOID</b> — Change drug&lt;br/&gt;Find alternative with no interaction] B --&gt;|Major| D{Can Dose Adjust?} D --&gt;|Yes| E[<b>ADJUST DOSE</b>&lt;br/&gt;Calculate new dose&lt;br/&gt;Set monitoring plan&lt;br/&gt;Review timeline] D --&gt;|No| F[<b>MONITOR CLOSELY</b>&lt;br/&gt;Define parameters&lt;br/&gt;Set frequency&lt;br/&gt;Define action thresholds] B --&gt;|Moderate| G[<b>MONITOR</b>&lt;br/&gt;Clinical + Labs&lt;br/&gt;Patient counselling] B --&gt;|Minor| H[<b>AWARENESS</b>&lt;br/&gt;Document&lt;br/&gt;Patient info leaflet]</p>
+<p>E &amp; F &amp; G &amp; H --&gt; I[<b>Document</b>&lt;br/&gt;Interaction identified&lt;br/&gt;Action taken&lt;br/&gt;Monitoring plan&lt;br/&gt;Review date] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Special Populations — Interaction Amplifiers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>PK/PD Changes</th><th>Interaction Impact</th><th>Key Examples</th></tr><tr><td>------------</td><td>---------------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**Elderly**</td><td>↓ Renal/hepatic clearance, ↑ Vd, polypharmacy</td><td>**2-3x more ADRs**; ↓ Reserve</td><td>Warfarin + antibiotics; ACEi + NSAID + diuretic</td></tr><tr><td>**Renal Impairment**</td><td>↓ Renal excretion (P-gp, OAT, OCT, MATE)</td><td>↑ Levels of renally cleared drugs</td><td>Metformin + contrast; Digoxin + amiodarone; DOACs</td></tr><tr><td>**Hepatic Impairment**</td><td>↓ CYP metabolism, ↓ protein binding</td><td>↑ Free drug + ↓ clearance</td><td>Warfarin + azoles; Benzos + opioids; Statins</td></tr><tr><td>**Pregnancy**</td><td>↑ CYP3A4/2D6/2C9, ↑ UGT, ↑ GFR</td><td>↓ Levels of induced drugs</td><td>Lamotrigine (↑ clearance 2-3x); Levothyroxine dose ↑</td></tr><tr><td>**Critical Illness**</td><td>↑ Vd, ↓ protein binding, organ dysfunction</td><td>Unpredictable levels</td><td>TDM essential: Vancomycin, Aminoglycosides, Tacrolimus</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Approach / Algorithm — Clinical Decision Making</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">When You Suspect an Interaction</div>
+<p>``<code>mermaid flowchart TD A[New Drug Prescribed / Patient Presents with Toxicity/Failure] --&gt; B[Check Interaction Databases&lt;br/&gt;BNF, Stockley's, Medicines Complete,&lt;br/&gt;Liverpool HIV Interactions, Flockhart] B --&gt; C{Interaction Found?} C --&gt;|Yes| D[Assess Severity&lt;br/&gt;Contraindicated / Major / Moderate / Minor] C --&gt;|No| E[Proceed with Caution&lt;br/&gt;Monitor for unexpected effects] D --&gt; F{Contraindicated?} F --&gt;|Yes| G[<b>STOP / SWITCH</b>&lt;br/&gt;Find alternative immediately] F --&gt;|No| H{Major?} H --&gt;|Yes| I[<b>ADJUST DOSE + MONITOR</b>&lt;br/&gt;Define: What? When? Threshold? Action?] H --&gt;|No| J[<b>MONITOR / COUNSEL</b>&lt;br/&gt;Define parameters &amp; frequency] I &amp; J --&gt; K[<b>DOCUMENT</b>&lt;br/&gt;Interaction, Severity, Action, Monitoring, Review Date] K --&gt; L[<b>COMMUNICATE</b>&lt;br/&gt;Patient, Pharmacy, Team, Discharge Summary] L --&gt; M[<b>REVIEW</b>&lt;br/&gt;At defined interval / clinical change] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Investigations — Monitoring Parameters by Drug Class</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug Class</th><th>Monitoring Parameter</th><th>Frequency</th><th>Action Threshold</th></tr><tr><td>------------</td><td>---------------------</td><td>-----------</td><td>------------------</td></tr><tr><td>**Warfarin**</td><td>INR</td><td>2-3x/week during interaction</td><td>INR >4.5: Reduce/hold; >5: Vit K</td></tr><tr><td>**DOACs**</td><td>Renal function, Hb, Signs of bleeding</td><td>Baseline, 1wk, then monthly</td><td>CrCl ↓ >30%: Reassess dose; Hb ↓ >20: Investigate</td></tr><tr><td>**Tacrolimus/Ciclosporin**</td><td>Trough level, Creatinine, eGFR, Mg²⁺, K⁺, Neurological exam</td><td>q2-3d during interaction</td><td>Level >15/300: Reduce dose; Cr ↑ >30%: Reduce dose</td></tr><tr><td>**Digoxin**</td><td>Level (≥6h post-dose), ECG, K⁺, Creatinine</td><td>Baseline, 1wk, then monthly</td><td>Level >1.2: Reduce; >2.0: Hold + antidote</td></tr><tr><td>**Lithium**</td><td>Level (12h post-dose), TSH, Creatinine, Ca²⁺</td><td>Baseline, 1wk, then 3-monthly</td><td>Level >1.0: Reduce; >1.5: Hold</td></tr><tr><td>**Phenytoin**</td><td>Total + **FREE level**, Albumin</td><td>Baseline, 7-10d after change</td><td>Free >2: Reduce; Total >20: Reduce</td></tr><tr><td>**Vancomycin**</td><td>AUC (Bayesian), Trough, Creatinine</td><td>Daily during therapy</td><td>AUC >600: Reduce; Cr ↑ >0.5 or 50%: Reduce</td></tr><tr><td>**Statins**</td><td>CK (if symptomatic), LFTs</td><td>Baseline, 3m, then annually</td><td>CK >10x ULN: Stop; LFT >3x ULN: Stop/reduce</td></tr><tr><td>**ACEi/ARB + Diuretic + NSAID**</td><td>U&Es, Creatinine</td><td>Baseline, 1-2wk after NSAID</td><td>K⁺ >5.5: Hold ACEi/ARB; Cr ↑ >30%: Review</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Tables / Comparison Charts</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Top 20 "Never Miss" Interactions for Exams</div>
+<table class="ctable"><tr><th>#</th><th>Drug 1</th><th>Drug 2</th><th>Mechanism</th><th>Clinical Consequence</th><th>Exam Frequency</th></tr><tr><td>---</td><td>--------</td><td>--------</td><td>-----------</td><td>---------------------</td><td>----------------</td></tr><tr><td>1</td><td>**Warfarin**</td><td>**Fluconazole/Metronidazole**</td><td>CYP2C9 inhibition</td><td>↑ INR, Bleeding</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>2</td><td>**Warfarin**</td><td>**Rifampicin**</td><td>CYP2C9/3A4 induction</td><td>↓ INR, Thrombosis</td><td>⭐⭐⭐⭐</td></tr><tr><td>3</td><td>**Tacrolimus**</td><td>**Clarithromycin/Azoles**</td><td>CYP3A4/P-gp inhibition</td><td>↑↑ Levels, Nephrotoxicity</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>4</td><td>**Simvastatin**</td><td>**Clarithromycin/Azoles**</td><td>CYP3A4 inhibition</td><td>Rhabdomyolysis</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>5</td><td>**Clopidogrel**</td><td>**Omeprazole/Esomeprazole**</td><td>CYP2C19 inhibition</td><td>↓ Antiplatelet effect</td><td>⭐⭐⭐⭐</td></tr><tr><td>6</td><td>**Digoxin**</td><td>**Amiodarone/Verapamil/Clarithro**</td><td>P-gp inhibition</td><td>↑ Digoxin → Toxicity</td><td>⭐⭐⭐⭐</td></tr><tr><td>7</td><td>**DOAC**</td><td>**Ketoconazole/Itraconazole/Ritonavir**</td><td>Dual CYP3A4/P-gp inhibition</td><td>↑ Bleeding</td><td>⭐⭐⭐⭐</td></tr><tr><td>8</td><td>**Lithium**</td><td>**Thiazide/ACEi/NSAID**</td><td>↓ Renal clearance</td><td>↑ Lithium → Toxicity</td><td>⭐⭐⭐⭐</td></tr><tr><td>9</td><td>**Phenytoin**</td><td>**Valproate/Fluconazole**</td><td>CYP2C9 inhibition + displacement</td><td>↑ Free Phenytoin → Toxicity</td><td>⭐⭐⭐</td></tr><tr><td>10</td><td>**Carbamazepine**</td><td>**Macrolides/Azoles/Valproate**</td><td>CYP3A4 inhibition / auto-inhibition</td><td>↑ Carbamazepine → Toxicity</td><td>⭐⭐⭐</td></tr><tr><td>11</td><td>**Theophylline**</td><td>**Ciprofloxacin/Fluvoxamine**</td><td>CYP1A2 inhibition</td><td>↑ Theophylline → Seizures/Arrhythmia</td><td>⭐⭐⭐</td></tr><tr><td>12</td><td>**MAOI**</td><td>**SSRI/SNRI/Tramadol/Pethidine**</td><td>Serotonin syndrome</td><td>Hyperthermia, rigidity, death</td><td>⭐⭐⭐⭐</td></tr><tr><td>13</td><td>**Beta-blocker**</td><td>**Verapamil/Diltiazem**</td><td>Additive AV node blockade</td><td>Severe bradycardia, heart block</td><td>⭐⭐⭐</td></tr><tr><td>14</td><td>**ACEi/ARB**</td><td>**K⁺-sparing diuretic/Supplement**</td><td>Additive K⁺ retention</td><td>Hyperkalaemia</td><td>⭐⭐⭐⭐</td></tr><tr><td>15</td><td>**Triple Whammy**</td><td>ACEi/ARB + Diuretic + NSAID</td><td>Haemodynamic AKI</td><td>Acute Kidney Injury</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>16</td><td>**QT drugs × 2**</td><td>Any 2 QT prolongers</td><td>Additive IKr blockade</td><td>Torsades de Pointes</td><td>⭐⭐⭐⭐</td></tr><tr><td>17</td><td>**Oral Contraceptive**</td><td>**Rifampicin/Griseofulvin/St John's Wort**</td><td>CYP3A4 induction + enterohepatic</td><td>Contraceptive failure</td><td>⭐⭐⭐</td></tr><tr><td>18</td><td>**Metformin**</td><td>**Contrast/Iodinated dye**</td><td>AKI → Lactic acidosis</td><td>Metformin-associated lactic acidosis</td><td>⭐⭐⭐</td></tr><tr><td>19</td><td>**SGLT2i**</td><td>**Surgery/Starvation/Alcohol**</td><td>Euglycaemic DKA</td><td>DKA with normal glucose</td><td>⭐⭐⭐⭐</td></tr><tr><td>20</td><td>**Corticosteroid**</td><td>**NSAID**</td><td>Additive GI toxicity</td><td>Peptic ulcer, GI bleed</td><td>⭐⭐⭐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Management — Prescribing Safety Checklist</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Before Prescribing Any New Drug</div>
+<p>``<code> ☐ 1. Check ALL current medications (including OTC, herbals, supplements) ☐ 2. Run interaction check (BNF / Stockley's / Medicines Complete) ☐ 3. Assess patient factors: Age, Renal/Hepatic function, Pregnancy, Genetics ☐ 4. Classify severity: Contraindicated / Major / Moderate / Minor ☐ 5. Decide action: Avoid / Adjust Dose / Monitor / Alternative ☐ 6. Define monitoring: What? When? Threshold for action? By whom? ☐ 7. Document in notes: Interaction, Severity, Action Plan, Review Date ☐ 8. Communicate to patient: What to watch for, when to seek help ☐ 9. Communicate to pharmacy/team: Especially at transitions of care ☐ 10. Set review date: 1-2 weeks for Major, 4-12 weeks for Moderate </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Drug Interactions / Contraindications / Comorbidity Cautions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Absolute Contraindications (Contraindicated Combinations)</div>
+<table class="ctable"><tr><th>Drug A</th><th>Drug B</th><th>Reason</th></tr><tr><td>--------</td><td>--------</td><td>--------</td></tr><tr><td>**Simvastatin/Lovastatin**</td><td>**Clarithromycin/Erythromycin/Ketoconazole/Itraconazole/Ritonavir**</td><td>Rhabdomyolysis (death reported)</td></tr><tr><td>**Dabigatran**</td><td>**Ketoconazole/Itraconazole/Ciclosporin/Dronedarone**</td><td>↑ Dabigatran 2-6x → Fatal bleed</td></tr><tr><td>**MAOI**</td><td>**SSRI/SNRI/Tramadol/Pethidine/Linezolid/Methylene Blue**</td><td>Serotonin syndrome (fatal)</td></tr><tr><td>**ERGOT derivatives**</td><td>**Macrolides/Azoles/HIV PIs**</td><td>Ergotism (gangrene, MI, stroke)</td></tr><tr><td>**Cisapride/Astemizole/Terfenadine**</td><td>**CYP3A4 inhibitors**</td><td>Torsades (withdrawn but exam relevant)</td></tr></table>
+<div class="sub-h">Relative Contraindications (Use with Extreme Caution)</div>
+<table class="ctable"><tr><th>Drug A</th><th>Drug B</th><th>Monitoring Required</th></tr><tr><td>--------</td><td>--------</td><td>---------------------</td></tr><tr><td>**Warfarin**</td><td>**Fluconazole/Metronidazole/Co-trimoxazole**</td><td>INR 2-3x/week</td></tr><tr><td>**Tacrolimus/Ciclosporin**</td><td>**Clarithromycin/Azoles**</td><td>Levels q2-3d, Renal q2-3d</td></tr><tr><td>**DOAC**</td><td>**Verapamil/Diltiazem/Amiodarone/Quinidine**</td><td>Renal function, Bleeding signs</td></tr><tr><td>**Lithium**</td><td>**Thiazide/ACEi/ARB/NSAID**</td><td>Li level 1wk, then monthly</td></tr><tr><td>**Phenytoin**</td><td>**Valproate/Fluconazole/Co-trimoxazole**</td><td>Free Phenytoin level</td></tr><tr><td>**Carbamazepine**</td><td>**Macrolides/Azoles/Valproate/St Johns Wort**</td><td>Carbamazepine level + LFTs</td></tr><tr><td>**Methotrexate**</td><td>**Co-trimoxazole/NSAID/PPI**</td><td>Methotrexate level, CBC, LFTs, Renal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>"A patient on warfarin for AF develops a chest infection. GP prescribes clarithromycin. What happens and what do you do?"</b></li></ol>
+<ul><li><b>Mechanism:</b> Clarithromycin = CYP3A4 inhibitor (also some CYP2C9) + mechanism-based inhibitor → ↑ Warfarin (R-warfarin via 3A4, S-warfarin via 2C9) + ↓ Vit K from gut flora</li><li><b>Effect:</b> INR rises significantly over 3-7 days → Bleeding risk</li><li><b>Management:</b> <b>Switch antibiotic</b> (Doxycycline/Amoxicillin — no CYP interaction). If clarithromycin essential: Reduce warfarin 30-50%, monitor INR daily until stable.</li></ul>
+<ol><li><b>"Patient on tacrolimus post-renal transplant started on fluconazole for oral thrush. What is your management?"</b></li></ol>
+<ul><li><b>Mechanism:</b> Fluconazole = CYP3A4 inhibitor → ↑ Tacrolimus 2-4x</li><li><b>Action:</b> Reduce tacrolimus dose <b>50% empirically</b>. Monitor tacrolimus trough levels <b>q2-3 days</b>. Monitor renal function q2-3 days. Once fluconazole stopped, tacrolimus dose will need to be increased back over 1-2 weeks.</li></ul>
+<ol><li><b>"Why is simvastatin 40mg contraindicated with clarithromycin but atorvastatin 40mg is not?"</b></li></ol>
+<ul><li>Simvastatin: <b>High CYP3A4 dependence</b> + <b>high first-pass metabolism</b> → Clarithromycin (strong CYP3A4 MBI) ↑ AUC 10-20x → Rhabdo risk +++</li><li>Atorvastatin: <b>Moderate CYP3A4 dependence</b> → Clarithromycin ↑ AUC ~3-4x → Max dose 20mg with strong inhibitors (simvastatin: max 10mg with moderate, contraindicated with strong)</li></ul>
+<ol><li><b>"Patient on clopidogrel post-STEMI develops dyspepsia. GP prescribes omeprazole. Is this appropriate?"</b></li></ol>
+<ul><li><b>NO.</b> Omeprazole/esomeprazole = strong CYP2C19 inhibitors → ↓ Clopidogrel active metabolite formation → ↑ Stent thrombosis/MI risk</li><li><b>Alternative:</b> Pantoprazole/rabeprazole (weak CYP2C19 inhibition) or H2 blocker (famotidine/ranitidine — no CYP2C19 effect)</li></ul>
+<ol><li><b>"Explain the 'Triple Whammy' and its clinical significance."</b></li></ol>
+<ul><li>ACEi/ARB (↓ efferent arteriole tone) + Diuretic (↓ intravascular volume) + NSAID (↓ prostaglandin-mediated afferent dilation) → <b>Profound ↓ GFR → AKI</b></li><li><b>Management:</b> Avoid NSAID in patients on ACEi/ARB + diuretic. If NSAID essential: Monitor U&amp;Es at baseline, 1-2 weeks. Counsel patient.</li></ul>
+<ol><li><b>"A patient on digoxin develops atrial fibrillation with rapid ventricular rate. You add verapamil for rate control. What monitoring is required?"</b></li></ol>
+<ul><li><b>Interaction:</b> Verapamil = P-gp inhibitor → ↑ Digoxin levels 1.5-2x</li><li><b>Action:</b> <b>Halve digoxin dose</b> empirically. Check digoxin level at <b>≥6h post-dose</b> (ideally 8-12h) in 3-5 days. Monitor ECG for PR prolongation/bradycardia. Monitor K⁺.</li></ul>
+<ol><li><b>"Patient on lithium for bipolar disorder started on furosemide for heart failure. What is the risk and management?"</b></li></ol>
+<ul><li><b>Risk:</b> Furosemide → ↓ Na⁺ reabsorption → ↑ Proximal Li⁺ reabsorption → ↑ Lithium levels → Toxicity (tremor, confusion, NMDAR encephalopathy, seizures)</li><li><b>Management:</b> <b>Avoid if possible</b> (use loop diuretic alternative? Not really — all diuretics increase Li). If essential: <b>Monitor Li level weekly × 4, then monthly</b>. Maintain Li 0.4-0.6 mmol/L. Counsel patient on dehydration risk.</li></ul>
+<ol><li><b>"Describe the management of a patient on rivaroxaban 20mg OD (CrCl 45) who needs treatment for invasive aspergillosis with voriconazole."</b></li></ol>
+<ul><li><b>Interaction:</b> Voriconazole = Strong CYP3A4 + P-gp inhibitor → ↑ Rivaroxaban ~2-3x</li><li><b>Action:</b> <b>Switch to alternative anticoagulant</b> (LMWH therapeutic dose — no CYP interaction) OR <b>Reduce rivaroxaban to 10mg OD</b> (if CrCl 15-30 protocol) with close monitoring. LMWH preferred.</li></ul>
+<ol><li><b>"What is the mechanism of the St John's Wort interaction with oral contraceptives?"</b></li></ol>
+<ul><li><b>Mechanism:</b> St John's Wort = <b>Potent CYP3A4 + P-gp inducer</b> (via PXR activation) → ↑ Ethinylestradiol &amp; progestogen metabolism + ↑ gut efflux → ↓ AUC 40-60% → <b>Contraceptive failure</b> (breakthrough bleeding = warning sign)</li><li><b>Management:</b> <b>Additional barrier contraception</b> during + 4 weeks after stopping SJW. Consider alternative herbal or non-enzyme-inducing contraception.</li></ul>
+<ol><li><b>"Patient on phenytoin started on valproate for adjunctive seizure control. What happens to phenytoin levels and why?"</b></li></ol>
+<ul><li><b>Dual mechanism:</b> (1) Valproate inhibits CYP2C9 → ↓ Phenytoin metabolism → ↑ Total phenytoin. (2) Valproate displaces phenytoin from albumin → ↓ Protein binding → ↑ <b>FREE phenytoin</b> disproportionately.</li><li><b>Clinical:</b> <b>Monitor FREE phenytoin level</b> (target 1-2 µg/mL). Total level may appear "therapeutic" but free level is toxic. Reduce phenytoin dose ~25-50%.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**CYP2D6 has inducers**</td><td>**NO major CYP2D6 inducers.** Only inhibition matters.</td></tr><tr><td>**Protein binding displacement = clinically significant**</td><td>**Rarely.** Only for **high extraction, narrow TI** drugs (Warfarin, Phenytoin, Valproate). Transient ↑ free fraction → ↑ clearance → levels normalise in hours.</td></tr><tr><td>**All statins interact with CYP3A4 inhibitors**</td><td>**Rosuvastatin, Pravastatin, Fluvastatin, Pitavastatin** do NOT use CYP3A4. Safe with clarithro/azoles (except rosuvastatin + ciclosporin = OATP).</td></tr><tr><td>**DOACs need INR monitoring**</td><td>**NO.** DOACs do NOT affect INR reliably. Use anti-Xa assay (rivaroxaban/apixaban) or dTT/ECT (dabigatran) if level needed.</td></tr><tr><td>**Warfarin + Cranberry = Major interaction**</td><td>**Weak evidence.** Case reports only. Advise moderation, not avoidance.</td></tr><tr><td>**Rifampicin = only CYP3A4 inducer**</td><td>**Rifampicin induces CYP1A2, 2B6, 2C8, 2C9, 2C19, 3A4, P-gp, UGT, OATP** — **broadest inducer**.</td></tr><tr><td>**Amiodarone = only CYP3A4 inhibitor**</td><td>**Amiodarone inhibits CYP1A2, 2C9, 2C19, 2D6, 3A4, P-gp** — **broad inhibitor + long t½ (50d)**.</td></tr><tr><td>**Clopidogrel + PPI = all PPIs same**</td><td>**Omeprazole/Esomeprazole = strong CYP2C19 inhibition.** Pantoprazole/Rabeprazole/Famotidine = minimal.</td></tr><tr><td>**Grapefruit affects all CYP3A4 drugs equally**</td><td>**Only oral drugs with high first-pass metabolism** (simvastatin, felodipine, tacrolimus). IV drugs / low first-pass = minimal effect.</td></tr><tr><td>**Enzyme induction = immediate**</td><td>**Induction takes 3-7 days (max 2-3 weeks).** Stopping inducer → effect persists 1-3 weeks.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">CYP450 Isoforms — "1, 2, 2, 2, 3"</div>
+<ul><li><b>1A2:</b> <b>1</b> (Theophylline) — <b>Fluvoxamine</b> inhibits, <b>Smoking</b> induces</li><li><b>2C9:</b> <b>2</b> (Warfarin, Phenytoin) — <b>Fluconazole</b> inhibits, <b>Rifampicin</b> induces</li><li><b>2C19:</b> <b>2</b> (Clopidogrel, PPIs) — <b>Omeprazole</b> inhibits, <b>Rifampicin</b> induces</li><li><b>2D6:</b> <b>2</b> (Codeine, Tramadol, TCAs) — <b>Paroxetine/Fluoxetine</b> inhibit, <b>NO inducers</b></li><li><b>3A4:</b> <b>3</b> (Everything else — &gt;50%) — <b>Clarithro/Azoles/Ritonavir</b> inhibit, <b>Rifampicin/Carbamazepine</b> induce</li></ul>
+<div class="sub-h">Strong CYP3A4 Inhibitors — **"CLARITY"**</div>
+<ul><li><b>C</b>larithromycin</li><li><b>L</b> (azole antifungals: Ketoconazole, Itraconazole, Voriconazole, Posaconazole)</li><li><b>A</b>ntiretrovirals (Ritonavir, Cobicistat)</li><li><b>R</b> (Grapefruit — not a drug but potent)</li><li><b>I</b>traconazole (included above)</li><li><b>T</b> (Verapamil, Diltiazem — moderate)</li><li><b>Y</b> (Erythromycin — older macrolide)</li></ul>
+<div class="sub-h">Strong CYP3A4 Inducers — **"RCPPS"**</div>
+<ul><li><b>R</b>ifampicin (strongest)</li><li><b>C</b>arbamazepine</li><li><b>P</b>henytoin</li><li><b>P</b>henobarbital</li><li><b>S</b>t John's Wort</li></ul>
+<div class="sub-h">P-gp Substrates — **"DIG-TAC"**</div>
+<ul><li><b>D</b>igoxin</li><li><b>I</b>mmunosuppressants (Tacrolimus, Ciclosporin, Sirolimus)</li><li><b>G</b> — DOACs (Rivaroxaban, Apixaban, Dabigatran, Edoxaban)</li><li><b>T</b> — HIV PIs (also inhibitors)</li><li><b>A</b> — Anticancer (Paclitaxel, Docetaxel)</li><li><b>C</b> — CCBs (Verapamil — also inhibitor)</li></ul>
+<div class="sub-h">Warfarin Interactions — **"F-MARC"**</div>
+<ul><li><b>F</b>luconazole/Metronidazole/Macrolides/Co-trimoxazole (Inhibitors → ↑ INR)</li><li><b>M</b> — Amiodarone (MBI → delayed ↑ INR)</li><li><b>A</b> — Antibiotics broad-spectrum (↓ Vit K → ↑ INR)</li><li><b>R</b>ifampicin/Carbamazepine/Phenytoin/SJW (Inducers → ↓ INR)</li><li><b>C</b>ranberry (Weak/Case reports)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Drug Interactions)) PK Absorption pH Chelation Motility Transporters Distribution Protein Binding Metabolism CYP450 Inhibition CYP450 Induction UGT Esterases Excretion Renal Secretion P-gp OAT/OCT/MATE Biliary PD Additive/Synergistic Antagonistic Receptor-Level Physiological Systems Assessment Severity: C/M/M/m Strategy: Avoid/Adjust/Monitor High-Risk Warfarin DOACs CNIs Statins Clopidogrel QT Drugs Lithium Digoxin Phenytoin Theophylline Special Pops Elderly Renal Hepatic Pregnancy Critical Care </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flowchart — Interaction Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[New Drug Prescribed] --&gt; B[Check Interactions&lt;br/&gt;BNF/Stockley's/Medicines Complete] B --&gt; C{Interaction?} C --&gt;|No| D[Proceed with Standard Monitoring] C --&gt;|Yes| E[Classify Severity] E --&gt; F{Contraindicated?} F --&gt;|Yes| G[STOP: Find Alternative&lt;br/&gt;Document Reason] F --&gt;|No| H{Major?} H --&gt;|Yes| I[Can Dose Adjust?] I --&gt;|Yes| J[Adjust Dose&lt;br/&gt;Set Monitoring Plan&lt;br/&gt;Review 1-2 weeks] I --&gt;|No| K[Close Monitoring&lt;br/&gt;Define Parameters&lt;br/&gt;Review 1-2 weeks] H --&gt;|No| L[Monitor/Counsel&lt;br/&gt;Review 4-12 weeks] G &amp; J &amp; K &amp; L --&gt; M[Document Everything:&lt;br/&gt;Drugs, Severity, Action,&lt;br/&gt;Monitoring, Review Date] M --&gt; N[Communicate: Patient, Pharmacy, Team] N --&gt; O[Review at Scheduled Interval] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>CYP450 isoform table poster (A4, laminate for ward)</li><li>P-gp substrate/inhibitor/inducer Venn diagram</li><li>Warfarin interaction algorithm (laminated card)</li><li>DOAC interaction traffic light (Red=Avoid, Amber=Reduce/Monitor, Green=Safe)</li><li>Triple Whammy pathophysiology diagram</li><li>Torsades risk stratification chart</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>MedCram:</b> Drug Interactions (CYP450, P-gp) — YouTube</li><li><b>Armstrong Pharmacy:</b> Warfarin Interactions — YouTube</li><li><b>Pharmacy Joe:</b> Tacrolimus Interactions — Critical Care Pharmacy</li><li><b>BNF Interactions Guidance:</b> medicinescomplete.com</li><li><b>Liverpool HIV Drug Interactions:</b> hiv-druginteractions.org (for ARV interactions)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CYP3A4 = &gt;50% drugs</b> — Memorise inhibitors (Clarithro, Azoles, Ritonavir, Grapefruit) and inducers (Rifampicin, Carbamazepine, Phenytoin, SJW)</li><li><b>Warfarin:</b> CYP2C9 inhibitors (Fluconazole, Metronidazole, Amiodarone) ↑ INR; Inducers (Rifampicin) ↓ INR</li><li><b>DOACs:</b> Dual CYP3A4/P-gp inhibition → Avoid (Dabi) or Reduce (Riva/Apix); Induction → Avoid all</li><li><b>CNIs:</b> Azoles/Macrolides → Reduce 50-75%, monitor levels q2-3d; Rifampicin → Avoid or ↑ dose 2-4x with daily levels</li><li><b>Simvastatin:</b> Max 10mg with moderate CYP3A4 inhibitors; CONTRAINDICATED with strong</li><li><b>Clopidogrel + Omeprazole/Esomeprazole = AVOID</b> (use Pantoprazole/Rabeprazole/H2 blocker)</li><li><b>Triple Whammy:</b> ACEi/ARB + Diuretic + NSAID → AKI — Avoid NSAID</li><li><b>QT drugs × 2 = Avoid</b> — Correct K⁺/Mg²⁺, Baseline ECG</li><li><b>Lithium + Diuretic/ACEi/NSAID = Monitor Li level weekly × 4</b></li><li><b>Digoxin + Amiodarone/Verapamil/Clarithro = Halve Digoxin, Check Level ≥6h post-dose</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Explain CYP450 inhibition vs induction mechanism and time course in 2 minutes.</li><li>Write the Warfarin interaction management algorithm from memory.</li><li>List 5 drugs that are contraindicated with clarithromycin and why.</li><li>Compare DOAC interaction management: Dabigatran vs Rivaroxaban vs Apixaban.</li><li>State the Triple Whammy mechanism and clinical consequence.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>CYP450 isoform table (1A2, 2C9, 2C19, 2D6, 3A4) — substrates, inhibitors, inducers</li><li>Warfarin, DOAC, Tacrolimus, Simvastatin, Clopidogrel interaction algorithms</li><li>Interaction severity classification and management strategies</li><li>P-gp key substrates and inhibitors</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>UGT interactions (Valproate-Lamotrigine)</li><li>Protein binding displacement clinical relevance</li><li>QT-prolonging drug combinations and Torsades management</li><li>Special population interaction amplifiers</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Pharmacogenomics (CYP2C9<i>2/</i>3, CYP2C19<i>2/</i>3, CYP2D6 PM/UM)</li><li>Mechanism-based inhibition details</li><li>Enterohepatic recirculation interactions (OCP + antibiotics)</li><li>Herbal interactions (St John's Wort, Ginkgo, Garlic, Ginseng)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ]</li><li>[ ]</li><li>[ ]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<p><b>Question:</b> "Describe the pharmacokinetic and pharmacodynamic mechanisms of drug interactions, with examples of high-risk combinations and their management."</p>
+<p><b>Structure:</b></p>
+<ol><li><b>Introduction:</b> Definition, PK vs PD, clinical importance</li><li><b>PK Interactions (ADME):</b></li></ol>
+<ul><li>Absorption: pH, Chelation, Transporters</li><li>Distribution: Protein binding displacement</li><li>Metabolism: CYP450 inhibition/induction (table), UGT, Mechanism-based inhibition</li><li>Excretion: Renal secretion, P-gp, OAT/OCT/MATE</li></ul>
+<ol><li><b>PD Interactions:</b></li></ol>
+<ul><li>Additive/Synergistic, Antagonistic, Receptor-level, Physiological systems (Triple Whammy)</li></ul>
+<ol><li><b>High-Risk Combinations (Table):</b></li></ol>
+<ul><li>Warfarin, DOACs, CNIs, Statins, Clopidogrel, Digoxin, Lithium, Phenytoin, QT drugs</li></ul>
+<ol><li><b>Clinical Assessment:</b> Severity classification, Management strategies (Avoid/Adjust/Monitor)</li><li><b>Special Populations:</b> Elderly, Renal, Hepatic, Pregnancy</li><li><b>Prescribing Safety:</b> Checklist, Documentation, Communication, Review</li><li><b>Conclusion:</b> Systematic approach saves lives</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Short Note Skeleton</div>
+<p><b>Topic:</b> CYP450 Drug Interactions</p>
+<ul><li><b>CYP3A4:</b> &gt;50% drugs. Inhibitors: Clarithro, Azoles, Ritonavir, Grapefruit. Inducers: Rifampicin, Carbamazepine, Phenytoin, SJW.</li><li><b>CYP2C9:</b> Warfarin, Phenytoin. Inhibitors: Fluconazole, Amiodarone. Inducers: Rifampicin.</li><li><b>CYP2C19:</b> Clopidogrel (prodrug), PPIs. Inhibitors: Omeprazole/Esomeprazole. Inducers: Rifampicin.</li><li><b>CYP2D6:</b> Codeine, Tramadol, TCAs. Inhibitors: Paroxetine, Fluoxetine. <b>NO INDUCERS.</b></li><li><b>CYP1A2:</b> Theophylline, Clozapine. Inhibitors: Fluvoxamine. Inducers: Smoking.</li><li><b>Management:</b> Inhibitor → Reduce substrate dose/Monitor. Inducer → ↑ Substrate dose/Avoid.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"CYP3A4 metabolises &gt;50% of drugs — know its inhibitors and inducers cold."</li><li>"Warfarin + Fluconazole = Reduce warfarin 30%, Check INR daily."</li><li>"Tacrolimus + Clarithromycin = Reduce tac 75%, Monitor levels q2d, Renal q2d."</li><li>"Simvastatin + Clarithromycin = CONTRAINDICATED (Rhabdo). Atorva max 20mg."</li><li>"Clopidogrel + Omeprazole = AVOID (CYP2C19). Use Pantoprazole."</li><li>"Triple Whammy = ACEi/ARB + Diuretic + NSAID → AKI. Avoid NSAID."</li><li>"Digoxin + Amiodarone = Halve Digoxin, Check level at 1 week."</li><li>"Lithium + Thiazide = Monitor Li weekly × 4, Maintain 0.4-0.6."</li><li>"Rifampicin = Universal inducer (CYPs, P-gp, UGT, OATP) — assume interaction."</li><li>"St John's Wort = Inducer → Contraceptive failure, CNI rejection, DOAC thrombosis."</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li><b>Patient on warfarin (INR 2.5) started on co-trimoxazole for UTI:</b> Day 3 INR 5.2. Action: Hold warfarin, Vit K 1-2mg IV/PO, Restart warfarin at lower dose when INR &lt;3, Monitor INR daily.</li><li><b>Renal transplant on tacrolimus (level 8) started on voriconazole:</b> Day 2 level 25, Creatinine rising. Action: Stop voriconazole if possible (switch to caspofungin), Reduce tacrolimus 75%, Daily levels + renal, Restart tac at lower dose when voriconazole stopped.</li><li><b>Elderly on ACEi + Furosemide started on Ibuprofen for OA:</b> Day 5 AKI (Cr 80→180). Action: Stop Ibuprofen, IV fluids, Monitor U&amp;Es daily, Restart ACEi/Furosemide only when euvolaemic and Cr improving.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<p>``` CYP TABLE: 3A4 &gt;50% | Inhib: Clarithro, Azoles, Ritonavir, Grapefruit | Induc: Rifampicin, Carbamazepine, Phenytoin, SJW 2C9 Warfarin/Phenytoin | Inhib: Fluconazole, Amiodarone | Induc: Rifampicin 2C19 Clopidogrel/PPI | Inhib: Omeprazole/Esomeprazole | Induc: Rifampicin 2D6 Codeine/Tramadol/TCAs | Inhib: Paroxetine, Fluoxetine | Induc: NONE 1A2 Theophylline/Clozapine | Inhib: Fluvoxamine | Induc: Smoking</p>
+<p>HIGH-RISK: Warfarin + Inhibitor → ↓ Dose 30%, INR q2-3d Warfarin + Inducer → ↑ Dose 30-50%, INR q2-3d Tacrolimus/Ciclosporin + Azole/Macrolide → ↓ Dose 50-75%, Levels q2-3d Simvastatin + Strong 3A4 Inhib → CONTRAINDICATED Atorvastatin + Strong 3A4 Inhib → Max 20mg DOAC + Strong Dual Inhib → Dabi: AVOID; Riva/Apix: Reduce/Avoid Clopidogrel + Omeprazole/Esomeprazole → AVOID (use Pantoprazole) Triple Whammy → Avoid NSAID QT × 2 → Avoid, Correct K/Mg, ECG Lithium + Diuretic/ACEi/NSAID → Li Level weekly × 4 Digoxin + Amiodarone/Verapamil/Clarithro → Halve Dig, Level @ 1wk ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Drug interactions are the <b>highest-yield prescribing topic</b> for FCPS/MRCP. Master the <b>CYP450 isoform table</b>, <b>P-gp key substrates</b>, and <b>management algorithms for the top 10 high-risk combinations</b>. A systematic approach (Check → Classify → Act → Monitor → Document → Communicate → Review) prevents patient harm and scores top marks in vivas.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which CYP isoform has NO clinically significant inducers?</b></li></ol>
+<p>A. CYP1A2 B. CYP2C9 C. CYP2C19 D. CYP2D6 E. CYP3A4</p>
+<ol><li><b>A patient on warfarin (INR 2.3) is started on fluconazole for oral candidiasis. What is the expected effect on INR and appropriate management?</b></li></ol>
+<p>A. INR decreases; increase warfarin dose B. INR increases; reduce warfarin dose 20-30% and monitor INR 2-3x/week C. INR unchanged; no action needed D. INR increases; stop warfarin immediately E. INR decreases; monitor INR weekly</p>
+<ol><li><b>Which statin is CONTRAINDICATED with clarithromycin?</b></li></ol>
+<p>A. Atorvastatin 20mg B. Rosuvastatin 10mg C. Simvastatin 40mg D. Pravastatin 40mg E. Fluvastatin 80mg</p>
+<ol><li><b>A renal transplant patient on tacrolimus (trough 8 ng/mL) is started on clarithromycin for pneumonia. What is the immediate management?</b></li></ol>
+<p>A. Increase tacrolimus dose 2x; monitor levels weekly B. Reduce tacrolimus dose 66-75%; monitor trough levels q2-3 days and renal function C. Stop tacrolimus; restart after clarithromycin course D. No change needed; clarithromycin does not affect tacrolimus E. Switch tacrolimus to ciclosporin</p>
+<ol><li><b>Clopidogrel + Omeprazole interaction is clinically significant because:</b></li></ol>
+<p>A. Omeprazole increases clopidogrel absorption B. Omeprazole inhibits CYP2C19, reducing clopidogrel activation C. Omeprazole induces CYP3A4, increasing clopidogrel clearance D. Omeprazole displaces clopidogrel from protein binding E. Omeprazole inhibits P-gp, increasing clopidogrel levels</p>
+<ol><li><b>Which of the following is a P-glycoprotein substrate?</b></li></ol>
+<p>A. Metformin B. Digoxin C. Atenolol D. Lisinopril E. Hydrochlorothiazide</p>
+<ol><li><b>The "Triple Whammy" refers to the combination of:</b></li></ol>
+<p>A. Warfarin + Aspirin + Clopidogrel B. ACEi/ARB + Diuretic + NSAID C. Beta-blocker + Verapamil + Digoxin D. SSRI + Tramadol + MAOI E. Statin + Fibrate + Ezetimibe</p>
+<ol><li><b>A patient on rivaroxaban 20mg OD (CrCl 50 mL/min) requires treatment with itraconazole for invasive aspergillosis. What is the appropriate management?</b></li></ol>
+<p>A. Continue rivaroxaban 20mg; monitor for bleeding B. Reduce rivaroxaban to 15mg OD; monitor for bleeding C. Switch to LMWH therapeutic dose; hold rivaroxaban D. Stop anticoagulation; restart after itraconazole course E. Increase rivaroxaban to 30mg OD</p>
+<ol><li><b>Mechanism-based (irreversible) CYP inhibition is characterised by:</b></li></ol>
+<p>A. Rapid onset (hours), rapid offset (hours) B. Onset over days, offset over days-weeks C. Competitive binding at active site D. No effect on enzyme synthesis E. Only seen with CYP2D6 inhibitors</p>
+<ol><li><b>Which drug interaction is correctly paired with its monitoring parameter?</b></li></ol>
+<p>A. Warfarin + Fluconazole → Monitor platelet count B. Tacrolimus + Clarithromycin → Monitor trough level q2-3d and creatinine q2-3d C. Digoxin + Amiodarone → Monitor INR weekly D. Lithium + Furosemide → Monitor TSH monthly E. Phenytoin + Valproate → Monitor total phenytoin level only</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 72-year-old man with atrial fibrillation on warfarin (INR 2.4) develops a lower respiratory tract infection. His GP prescribes clarithromycin 500mg BD. Three days later he presents with epistaxis and an INR of 6.8. He is not bleeding actively. What is the most appropriate immediate management?</b></li></ol>
+<p>A. Stop warfarin; give IV vitamin K 10mg; restart warfarin at same dose when INR &lt;3 B. Stop warfarin; give oral vitamin K 1-2mg; restart warfarin at reduced dose when INR &lt;3 C. Continue warfarin at same dose; repeat INR in 24 hours D. Stop warfarin; give FFP; restart warfarin when INR &lt;2 E. Reduce warfarin dose by 10%; repeat INR in 48 hours</p>
+<ol><li><b>A 45-year-old woman, 6 months post-renal transplant on tacrolimus (trough 7 ng/mL), develops oral candidiasis. She is prescribed fluconazole 200mg daily. What is the expected effect on tacrolimus levels and appropriate dose adjustment?</b></li></ol>
+<p>A. Tacrolimus levels decrease by 50%; double the tacrolimus dose B. Tacrolimus levels increase 2-4 fold; reduce tacrolimus dose by 50% and monitor levels q2-3 days C. No significant interaction; continue current tacrolimus dose D. Tacrolimus levels increase 10-fold; stop tacrolimus until fluconazole completed E. Tacrolimus levels increase 2-4 fold; increase tacrolimus dose and monitor levels weekly</p>
+<ol><li><b>A 60-year-old man with hypercholesterolaemia on simvastatin 40mg nocte is prescribed clarithromycin 500mg BD for a chest infection. What is the most appropriate action regarding the statin?</b></li></ol>
+<p>A. Continue simvastatin 40mg; monitor CK weekly B. Reduce simvastatin to 20mg; monitor CK weekly C. Reduce simvastatin to 10mg; monitor CK weekly D. Stop simvastatin for duration of clarithromycin; restart after course completed E. Switch to rosuvastatin 20mg; continue clarithromycin</p>
+<ol><li><b>A 68-year-old woman with bipolar disorder on lithium carbonate 600mg BD (level 0.7 mmol/L) is started on furosemide 40mg OD for heart failure. What is the most appropriate monitoring plan?</b></li></ol>
+<p>A. Check lithium level in 4 weeks; continue current dose B. Check lithium level in 1 week, then weekly for 4 weeks; reduce lithium dose if level &gt;0.8 mmol/L C. Check lithium level in 2 weeks; increase lithium dose if level &lt;0.6 mmol/L D. No additional monitoring needed; furosemide does not affect lithium E. Stop lithium immediately; switch to valproate</p>
+<ol><li><b>A 28-year-old woman on combined oral contraceptive (ethinylestradiol 30mcg + levonorgestrel 150mcg) is started on rifampicin 600mg OD for tuberculosis. What is the effect on contraceptive efficacy and appropriate advice?</b></li></ol>
+<p>A. No significant interaction; continue OCP as normal B. Rifampicin reduces OCP efficacy; advise additional barrier contraception during and for 4 weeks after stopping rifampicin C. Rifampicin increases OCP efficacy; reduce OCP dose D. Rifampicin causes breakthrough bleeding only; no change in contraceptive efficacy E. Switch to progesterone-only pill; no interaction with rifampicin</p>
+<ol><li><b>A 55-year-old man on digoxin 125mcg OD for atrial fibrillation (level 1.0 ng/mL) is started on amiodarone 200mg OD for paroxysmal AF. What is the expected effect on digoxin levels and management?</b></li></ol>
+<p>A. Digoxin levels decrease by 30%; increase digoxin dose B. Digoxin levels increase 1.5-2 fold; halve digoxin dose and check level at 1 week (≥6h post-dose) C. No significant interaction; continue current digoxin dose D. Digoxin levels increase 5-fold; stop digoxin immediately E. Digoxin levels increase 1.5-2 fold; double digoxin dose and monitor ECG</p>
+<ol><li><b>A 40-year-old man with epilepsy on phenytoin 300mg OD (total level 15 µg/mL, albumin 38 g/L) is started on sodium valproate 500mg BD for adjunctive therapy. Two weeks later he develops nystagmus and ataxia. Total phenytoin level is 16 µg/mL. What is the most likely explanation?</b></li></ol>
+<p>A. Valproate induces phenytoin metabolism causing therapeutic failure B. Valproate inhibits phenytoin metabolism AND displaces from albumin → ↑ FREE phenytoin disproportionately C. Valproate has no effect on phenytoin; toxicity is due to renewed seizures D. Valproate increases phenytoin absorption; reduce phenytoin dose E. Valproate induces CYP2C9; increase phenytoin dose</p>
+<ol><li><b>A 75-year-old woman on ramipril 10mg OD, furosemide 40mg OD, and metformin 1g BD for type 2 diabetes develops osteoarthritis and is started on ibuprofen 400mg TDS by her GP. One week later she presents with confusion and reduced urine output. U&amp;Es: Na 138, K 5.8, Urea 22, Creatinine 280 (baseline 110). What is the primary mechanism of this acute kidney injury?</b></li></ol>
+<p>A. Acute tubular necrosis from ibuprofen B. Triple Whammy — ACEi + Diuretic + NSAID → Profound ↓ GFR C. Metformin-associated lactic acidosis D. ACEi-induced hyperkalaemia causing renal vasoconstriction E. Diuretic-induced volume depletion alone</p>
+<ol><li><b>A 30-year-old man with schizophrenia on quetiapine 300mg BD is prescribed ciprofloxacin 500mg BD for a urinary tract infection. He has a history of borderline prolonged QTc (460ms). What is the most appropriate action?</b></li></ol>
+<p>A. Continue both; monitor ECG in 1 week B. Stop quetiapine; continue ciprofloxacin C. Stop ciprofloxacin; use alternative antibiotic (e.g., nitrofurantoin, trimethoprim) D. Reduce quetiapine dose by 50%; continue ciprofloxacin E. Add magnesium supplementation; continue both</p>
+<ol><li><b>A 50-year-old woman on rivaroxaban 20mg OD (CrCl 45 mL/min) for DVT treatment is diagnosed with invasive pulmonary aspergillosis and started on voriconazole 200mg BD IV. What is the most appropriate anticoagulation management?</b></li></ol>
+<p>A. Continue rivaroxaban 20mg; monitor anti-Xa levels daily B. Reduce rivaroxaban to 15mg OD; monitor for bleeding C. Switch to therapeutic LMWH (enoxaparin 1mg/kg BD); hold rivaroxaban D. Stop anticoagulation; restart rivaroxaban after voriconazole course E. Switch to warfarin; bridge with LMWH; monitor INR</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">30</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>Which CYP isoform metabolises &gt;50% of drugs?</b></li></ul>
+<p>A: <b>CYP3A4/5</b></p>
+<ul><li>Q: <b>What is the effect of rifampicin on CYP enzymes?</b></li></ul>
+<p>A: <b>Broad inducer (1A2, 2B6, 2C8, 2C9, 2C19, 3A4, P-gp, UGT, OATP) — assume interaction with EVERY drug</b></p>
+<ul><li>Q: <b>Mechanism of clarithromycin-warfarin interaction?</b></li></ul>
+<p>A: <b>CYP3A4 inhibition (R-warfarin) + CYP2C9 inhibition (S-warfarin) + Mechanism-based inhibition + ↓ Gut Vit K production</b></p>
+<ul><li>Q: <b>Warfarin + Fluconazole — management?</b></li></ul>
+<p>A: <b>Reduce warfarin 20-30%, Monitor INR 2-3x/week during + 1 week after</b></p>
+<ul><li>Q: <b>Tacrolimus + Clarithromycin — management?</b></li></ul>
+<p>A: <b>Reduce tacrolimus 66-75%, Monitor trough levels q2-3d + Renal function q2-3d</b></p>
+<ul><li>Q: <b>Simvastatin + Clarithromycin — management?</b></li></ul>
+<p>A: <b>CONTRAINDICATED. Switch to Rosuvastatin/Pravastatin or hold simvastatin</b></p>
+<ul><li>Q: <b>Clopidogrel + Omeprazole — why avoid?</b></li></ul>
+<p>A: <b>Omeprazole = Strong CYP2C19 inhibitor → ↓ Clopidogrel active metabolite → ↑ Stent thrombosis/MI risk</b></p>
+<ul><li>Q: <b>P-gp key substrates?</b></li></ul>
+<p>A: <b>Digoxin, Tacrolimus, Ciclosporin, Sirolimus, DOACs, HIV PIs</b></p>
+<ul><li>Q: <b>Triple Whammy drugs?</b></li></ul>
+<p>A: <b>ACEi/ARB + Diuretic + NSAID → AKI</b></p>
+<ul><li>Q: <b>Lithium + Thiazide — monitoring?</b></li></ul>
+<p>A: <b>Li level weekly × 4, then monthly. Target 0.4-0.6 mmol/L. Counsel re: dehydration.</b></p>
+<ul><li>Q: <b>Digoxin + Amiodarone — management?</b></li></ul>
+<p>A: <b>Halve digoxin dose. Check level at 1 week (≥6h post-dose). Monitor K⁺, ECG.</b></p>
+<ul><li>Q: <b>Phenytoin + Valproate — what level to monitor?</b></li></ul>
+<p>A: <b>FREE phenytoin level (target 1-2 µg/mL). Total level misleading due to displacement.</b></p>
+<ul><li>Q: <b>DOAC + Ketoconazole — Dabigatran vs Rivaroxaban vs Apixaban?</b></li></ul>
+<p>A: <b>Dabi: AVOID. Riva: Reduce 15mg OD (CrCl&gt;30). Apix: Reduce 2.5mg BD (if 2/3 criteria).</b></p>
+<ul><li>Q: <b>CYP2D6 — any inducers?</b></li></ul>
+<p>A: <b>NO clinically significant CYP2D6 inducers.</b></p>
+<ul><li>Q: <b>Grapefruit juice — which drugs affected?</b></li></ul>
+<p>A: <b>Oral CYP3A4 substrates with HIGH first-pass metabolism (Simvastatin, Felodipine, Tacrolimus). IV drugs unaffected.</b></p>
+<ul><li>Q: <b>Rifampicin + Oral Contraceptive — management?</b></li></ul>
+<p>A: <b>Additional barrier contraception during + 4 weeks after stopping rifampicin.</b></p>
+<ul><li>Q: <b>Mechanism-based inhibition — onset/offset?</b></li></ul>
+<p>A: <b>Onset: Days (new enzyme synthesis). Offset: Days-weeks (enzyme turnover ~72h).</b></p>
+<ul><li>Q: <b>Protein binding displacement — clinically significant for?</b></li></ul>
+<p>A: <b>High extraction, narrow TI drugs: Warfarin, Phenytoin, Valproate.</b></p>
+<ul><li>Q: <b>QT prolongation — when to act?</b></li></ul>
+<p>A: <b>QTc &gt;500ms or ΔQTc &gt;60ms from baseline → Stop offending drugs, correct K⁺/Mg²⁺, Cardiology review. Torsades → IV Magnesium 2g bolus, overdrive pacing, isoprenaline.</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">31</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Drug interactions are the <b>highest-yield prescribing topic</b> for FCPS/MRCP. Master the <b>CYP450 isoform table</b>, <b>P-gp key substrates</b>, and <b>management algorithms for the top 10 high-risk combinations</b>. A systematic approach (Check → Classify → Act → Monitor → Document → Communicate → Review) prevents patient harm and scores top marks in vivas.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">32</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which CYP isoform has NO clinically significant inducers?</b></li></ol>
+<p>A. CYP1A2 B. CYP2C9 C. CYP2C19 D. CYP2D6 E. CYP3A4</p>
+<ol><li><b>A patient on warfarin (INR 2.4) is started on clarithromycin for chest infection. What is the expected effect on INR and management?</b></li></ol>
+<p>A. INR decreases; increase warfarin dose B. INR increases; reduce warfarin 30-50% + monitor INR 2-3x/week C. INR unchanged; no action D. INR increases; stop warfarin immediately</p>
+<ol><li><b>Which statin is CONTRAINDICATED with clarithromycin?</b></li></ol>
+<p>A. Atorvastatin 20mg B. Rosuvastatin 10mg C. Simvastatin 40mg D. Pravastatin 40mg E. Fluvastatin 80mg</p>
+<ol><li><b>Renal transplant patient on tacrolimus (level 8 ng/mL) started on fluconazole for thrush. Management?</b></li></ol>
+<p>A. Increase tacrolimus dose B. Reduce tacrolimus 50%; monitor levels q2-3d + renal q2-3d C. No action needed D. Switch to ciclosporin</p>
+<ol><li><b>Clopidogrel + Omeprazole interaction — mechanism &amp; significance?</b></li></ol>
+<p>A. Omeprazole induces CYP2C19 → ↑ clopidogrel activation B. Omeprazole inhibits CYP2C19 → ↓ active metabolite → ↑ stent thrombosis risk C. Omeprazole displaces clopidogrel from protein binding D. Omeprazole inhibits P-gp → ↑ clopidogrel levels</p>
+<ol><li><b>Mechanism-based CYP inhibition — onset/offset?</b></li></ol>
+<p>A. Onset hours, offset hours B. Onset days, offset days-weeks C. Immediate onset, immediate offset D. Onset weeks, offset months</p>
+<ol><li><b>Patient on rivaroxaban 20mg OD (CrCl 45) needs itraconazole for aspergillosis. Management?</b></li></ol>
+<p>A. Continue rivaroxaban 20mg B. Reduce rivaroxaban to 15mg OD C. Switch to LMWH therapeutic; hold rivaroxaban D. Stop anticoagulation</p>
+<ol><li><b>P-gp key substrates include:</b></li></ol>
+<p>A. Digoxin, Tacrolimus, DOACs B. Metformin, Lisinopril, Atenolol C. Warfarin, Heparin, Aspirin D. Metoprolol, Amlodipine, Furosemide</p>
+<ol><li><b>Mechanism-based CYP inhibition — key feature?</b></li></ol>
+<p>A. Rapid onset, rapid offset B. Onset days, offset days-weeks; requires new enzyme synthesis C. Competitive binding at active site D. Only affects CYP2D6</p>
+<ol><li><b>Triple Whammy combination:</b></li></ol>
+<p>A. ACEi + Diuretic + Statin B. ACEi/ARB + Diuretic + NSAID C. Beta-blocker + Diuretic + ACEi D. Warfarin + Aspirin + Clopidogrel</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">33</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>72M on warfarin (INR 2.3) started clarithromycin for pneumonia. Day 4 INR 6.2, no bleeding. Management?</b></li></ol>
+<p>A. Stop warfarin; Vit K 10mg IV; restart same dose when INR &lt;3 B. Stop warfarin; Vit K 1-2mg PO; restart reduced dose when INR &lt;3 C. Continue warfarin; repeat INR 24h D. Stop warfarin; FFP; restart when INR &lt;2</p>
+<ol><li><b>Renal transplant on tacrolimus (level 8) + fluconazole for candidiasis. CD4 350. Management?</b></li></ol>
+<p>A. Supportive only B. Reduce tacrolimus 50%; monitor levels q2-3d + renal q2-3d C. Switch to ciclosporin D. Stop tacrolimus</p>
+<ol><li><b>MSM on PrEP diagnosed with Mpox. CD4 350. Management?</b></li></ol>
+<p>A. Tecovirimat 600mg BD × 14d B. Supportive care + isolation (mild, CD4&gt;200) C. MVA-BN vaccine only D. Ceftriaxone</p>
+<ol><li><b>HIV+ on ART 4 weeks develops fever, worsening RPR, new rash. Diagnosis?</b></li></ol>
+<p>A. Drug rash B. Syphilis IRIS C. Acute HIV seroconversion D. Secondary syphilis</p>
+<ol><li><b>HIV+ with HSV-2, 8 recurrences/year. Suppressive therapy?</b></li></ol>
+<p>A. Acyclovir 400mg BD B. Valacyclovir 500mg OD C. No suppression D. Foscarnet</p>
+<ol><li><b>HIV+ on efavirenz needs HCV DAA. Preferred regimen?</b></li></ol>
+<p>A. Glecaprevir/Pibrentasvir B. Sofosbuvir/Velpatasvir C. SOF/VEL/VOX D. Interferon+Ribavirin</p>
+<ol><li><b>ART choice for STI co-treatment — preferred?</b></li></ol>
+<p>A. Boosted PI B. NNRTI C. INSTI (DTG, BIC, RAL) D. Does not matter</p>
+<ol><li><b>PrEP &amp; STI monitoring — frequency for MSM?</b></li></ol>
+<p>A. Annually B. Every 3 months (HIV, Syphilis, 3-site GC/CT, HCV RNA annually) C. Every 6 months D. Only at initiation</p>
+<ol><li><b>Tecovirimat ART interaction — boosted PIs?</b></li></ol>
+<p>A. ↓ Tecovirimat B. ↑ Tecovirimat (CYP3A4 inhibition) D. No interaction D. Contraindicated</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">34</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-D, 2-B, 3-C, 4-B, 5-B, 6-B, 7-A, 8-C, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">35</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Describe CYP3A4 inhibitors and clinical significance.</td><td>Clarithromycin, azoles, ritonavir, grapefruit inhibit CYP3A4 → ↑ levels of substrates (statins, CNIs, DOACs, CCBs). Mechanism-based inhibitors (clarithro, erythromycin, azoles) cause irreversible inhibition with prolonged effect (days-weeks).</td></tr><tr><td>2</td><td>Warfarin + fluconazole interaction mechanism and management.</td><td>Fluconazole inhibits CYP2C9 (S-warfarin) + CYP3A4 (R-warfarin) + ↓ gut Vit K. Management: Reduce warfarin 20-30%, monitor INR 2-3x/week during + 1 wk after.</td></tr><tr><td>3</td><td>Tacrolimus + clarithromycin interaction mechanism & management.</td><td>Clarithro = CYP3A4/P-gp inhibitor → tacrolimus ↑ 5-10x. Reduce tac 66-75%, monitor trough q2-3d + renal q2-3d.</td></tr><tr><td>4</td><td>Simvastatin + clarithromycin — why contraindicated but atorvastatin 20mg OK?</td><td>Simvastatin: high CYP3A4first-pass → clarithro (MBI) ↑ AUC 10-20x → rhabdo risk. Atorvastatin: moderate CYP3A4 dependence → AUC ↑ 3-4x, max 20mg with strong inhibitors.</td></tr><tr><td>5</td><td>Clopidogrel + omeprazole — mechanism & alternative.</td><td>Omeprazole = strong CYP2C19 inhibitor → ↓ clopidogrel active metabolite → ↑ stent thrombosis. Use pantoprazole/rabeprazole (weak CYP2C19 inhibition) or H2 blocker.</td></tr><tr><td>6</td><td>DOAC + ketoconazole — dabigatran vs rivaroxaban vs apixaban management.</td><td>Dabi: avoid (no dose adjustment). Riva: reduce 15mg OD if CrCl>30. Apix: reduce 2.5mg BD if meets criteria.</td></tr><tr><td>7</td><td>Clopidogrel + omeprazole interaction — mechanism & clinical impact.</td><td>Omeprazole = strong CYP2C19 inhibitor → ↓ clopidogrel active metabolite 40-50% → ↑ stent thrombosis/MI risk.</td></tr><tr><td>8</td><td>Warfarin + rifampicin — mechanism & management.</td><td>Rifampicin = potent CYP2C9/3A4 inducer → warfarin ↓ 50%+ → thrombosis risk. Increase warfarin 20-50%, monitor INR 2-3x/week.</td></tr><tr><td>9</td><td>Amiodarone + digoxin interaction — mechanism & monitoring.</td><td>Amiodarone inhibits P-gp → digoxin ↑ 1.5-2x. Halve digoxin dose, check level at 1 week (≥6h post-dose). Monitor K⁺, ECG.</td></tr><tr><td>10</td><td>Clopidogrel + omeprazole — why avoid?</td><td>Omeprazole = strong CYP2C19 inhibitor → ↓ clopidogrel active metabolite → ↑ stent thrombosis/MI risk. Use pantoprazole/rabeprazole for dyspepsia.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">36</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**CYP2D6 has inducers**</td><td>**NO** — No clinically significant CYP2D6 inducers exist</td></tr><tr><td>**Protein binding displacement = always significant**</td><td>**RARELY** — Only for high extraction, narrow TI drugs (warfarin, phenytoin, valproate)</td></tr><tr><td>**All statins interact with CYP3A4 inhibitors**</td><td>**FALSE** — Rosuvastatin, pravastatin, fluvastatin, pitavastatin do NOT use CYP3A4</td></tr><tr><td>**DOACs need INR monitoring**</td><td>**NO** — DOACs don't reliably affect INR; use anti-Xa assay if needed</td></tr><tr><td>**Warfarin + cranberry = major interaction**</td><td>**WEAK evidence** — Case reports only; advise moderation</td></tr><tr><td>**"All statins interact with CYP3A4 inhibitors"**</td><td>**NO** — Rosuvastatin, pravastatin, fluvastatin, pitavastatin are CYP3A4-independent</td></tr><tr><td>**"Protein binding displacement = major interaction"**</td><td>**NO** — Transient, only clinically significant for high-extraction narrow TI drugs</td></tr><tr><td>**"CYP2D6 has inducers"**</td><td>**NO** — No clinically significant CYP2D6 inducers</td></tr><tr><td>**"All DOACs monitored with INR"**</td><td>**NO** — INR unreliable for DOACs; use anti-Xa assay if needed</td></tr><tr><td>**"Rifampicin only induces CYP3A4"**</td><td>**NO** — Rifampicin induces CYP1A2, 2B6, 2C8, 2C9, 2C19, 3A4, P-gp, UGT, OATP</td></tr></table>
+<div class="callout"><b>Mnemonic: CYP450 Isoforms — "1, 2, 2, 2, 3"</b> <b>1A2:</b> Theophylline — Fluvoxamine inhibits, Smoking induces <b>2C9:</b> Warfarin, Phenytoin — Fluconazole inhibits, Rifampicin induces <b>2C19:</b> Clopidogrel, PPIs — Omeprazole inhibits, Rifampicin induces <b>2D6:</b> Codeine, Tramadol, TCAs — Paroxetine/Fluoxetine inhibit, <b>NO inducers</b> <b>3A4:</b> &gt;50% drugs — Clarithro/Azoles/Ritonavir inhibit, Rifampicin/Carbamazepine induce</div>
+<div class="callout"><b>Strong CYP3A4 Inhibitors — "CLARITY"</b> <b>C</b>larithromycin <b>L</b> (azole antifungals: Ketoconazole, Itraconazole, Voriconazole, Posaconazole) <b>A</b>ntiretrovirals (Ritonavir, Cobicistat) <b>R</b> (Grapefruit) <b>I</b>traconazole, <b>T</b> (Verapamil, Diltiazem — moderate), <b>Y</b> (Erythromycin)</div>
+<div class="callout"><b>Strong CYP3A4 Inducers — "RCPPS"</b> <b>R</b>ifampicin (strongest) <b>C</b>arbamazepine <b>P</b>henytoin <b>P</b>henobarbital <b>S</b>t John's Wort</div>
+<div class="callout"><b>P-gp Substrates — "DIG-TAC"</b> <b>D</b>igoxin <b>I</b>mmunosuppressants (Tacrolimus, Ciclosporin, Sirolimus) <b>G</b> — DOACs (Riva, Apix, Dabi, Edoxa) <b>T</b> — HIV PIs (also inhibitors) <b>A</b> — Anticancer (Paclitaxel, Docetaxel) <b>C</b> — CCBs (Verapamil — also inhibitor)</div>
+<div class="callout"><b>Warfarin Interactions — "F-MARC"</b> <b>F</b>luconazole/Metronidazole/Macrolides/Co-trimoxazole (Inhibitors → ↑ INR) <b>M</b> — Amiodarone (MBI → delayed ↑ INR) <b>A</b> — Antibiotics broad-spectrum (↓ Vit K → ↑ INR) <b>R</b>ifampicin/Carbamazepine/Phenytoin/SJW (Inducers → ↓ INR) <b>C</b>ranberry (Weak/Case reports)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">37</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Drug Interactions)) PK Absorption pH Chelation Motility Transporters Distribution Protein Binding Metabolism CYP450 Inhibition CYP450 Induction UGT Esterases Excretion Renal Secretion P-gp OAT/OCT/MATE Biliary PD Additive/Synergistic Antagonistic Receptor-Level Physiological Systems Assessment Severity: C/M/M/m Strategy: Avoid/Adjust/Monitor High-Risk Warfarin DOACs CNIs Statins Clopidogrel QT Drugs Lithium Digoxin Phenytoin Theophylline Special Pops Elderly Renal Hepatic Pregnancy Critical Care </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">38</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">39</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>CYP450 Isoforms & Table</td><td>3</td><td></td><td></td></tr><tr><td>Warfarin/DOAC/CNI Algorithms</td><td>3</td><td></td><td></td></tr><tr><td>P-gp & Transporters</td><td>2</td><td></td><td></td></tr><tr><td>Severity Classification & Management</td><td>3</td><td></td><td></td></tr><tr><td>High-Risk Combinations</td><td>3</td><td></td><td></td></tr><tr><td>Special Populations</td><td>2</td><td></td><td></td></tr><tr><td>Severity Classification</td><td>2</td><td></td><td></td></tr><tr><td>Management Algorithms</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">40</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the pharmacokinetic and pharmacodynamic mechanisms of drug interactions, with examples of high-risk combinations and their management."</td><td>PK: Absorption (pH, chelation), Distribution (protein binding), Metabolism (CYP450 inhibition/induction, UGT), Excretion (renal, P-gp, OAT/OCT). PD: Additive/synergistic, antagonistic, receptor-level, physiological (Triple Whammy). High-risk: Warfarin, DOACs, CNIs, Statins, Clopidogrel, QT drugs, Lithium, Digoxin. Management: Check → Classify → Avoid/Adjust/Monitor → Document → Communicate → Review.</td></tr><tr><td>**Short Note**</td><td>"CYP450 drug interactions — mechanisms and clinical examples."</td><td>CYP3A4 (>50% drugs): Inhibitors (Clarithro, Azoles, Ritonavir, Grapefruit), Inducers (Rifampicin, Carbamazepine, Phenytoin, SJW). CYP2C9 (Warfarin, Phenytoin): Fluconazole inhibits. CYP2C19 (Clopidogrel, PPIs): Omeprazole inhibits. CYP2D6 (Codeine, TCAs): Paroxetine inhibits, NO inducers. Management: Inhibitor → reduce substrate dose/monitor; Inducer → increase dose/avoid.</td></tr><tr><td>**Viva**</td><td>"Patient on warfarin (INR 2.4) started on clarithromycin. Day 3 INR 5.8. Management?"</td><td>**Mechanism:** Clarithromycin = CYP3A4 inhibitor (R-warfarin) + CYP2C9 inhibitor (S-warfarin) + mechanism-based inhibitor + ↓ Vit K. **Effect:** INR rises over 3-7 days → bleeding risk. **Management:** Switch antibiotic (doxycycline/amoxicillin — no CYP interaction). If clarithromycin essential: Reduce warfarin 30-50%, monitor INR daily until stable.</td></tr><tr><td>**Ward Round**</td><td>"Renal transplant on tacrolimus (level 8) + fluconazole for thrush. Management?"</td><td>**Interaction:** Fluconazole = CYP3A4 inhibitor → tacrolimus ↑ 2-4x. **Action:** Reduce tacrolimus 50%, monitor trough levels q2-3d + renal q2-3d. Continue fluconazole. Monitor for nephro/neurotoxicity.</td></tr><tr><td>**Last-Night**</td><td>"CYP3A4 >50%: Inhib: Clarithro, Azoles, Ritonavir, Grapefruit. Induc: Rifampicin, Carbamazepine, Phenytoin, SJW. 2C9 Warfarin: Fluconazole inhibits. 2C19 Clopidogrel: Omeprazole inhibits. 2D6 Codeine: Paroxetine inhibits, NO inducers. Warfarin: Inhib → ↓ dose 30%, INR q2-3d. Tacro+Clarithro: ↓ Tac 75%, levels q2d. Simva+Clarithro: CONTRAINDICATED. Clopid+Omeprazole: AVOID (Panto instead). Triple Whammy: ACEi+Diuretic+NSAID → AKI. Digoxin+Amiodarone: Halve Dig, Level @ 1wk. Lithium+Thiazide: Li weekly ×4. Rifampicin = universal inducer."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">41</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Drug interactions are the <b>highest-yield prescribing topic</b> for FCPS/MRCP. Master the <b>CYP450 isoform table</b>, <b>P-gp key substrates</b>, and <b>management algorithms for the top 10 high-risk combinations</b>. A systematic approach (Check → Classify → Act → Monitor → Document → Communicate → Review) prevents patient harm and scores top marks in vivas.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">42</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which CYP isoform has NO clinically significant inducers?</b></li></ol>
+<p>A. CYP1A2 B. CYP2C9 C. CYP2C19 D. CYP2D6 E. CYP3A4</p>
+<ol><li><b>Patient on warfarin (INR 2.4) started on clarithromycin. Day 3 INR 5.8. Management?</b></li></ol>
+<p>A. Stop warfarin; Vit K 10mg IV; restart same dose when INR &lt;3 B. Stop warfarin; Vit K 1-2mg PO; restart reduced dose when INR &lt;3 C. Continue warfarin; repeat INR 24h D. Stop warfarin; FFP; restart when INR &lt;2</p>
+<ol><li><b>Which statin is CONTRAINDICATED with clarithromycin?</b></li></ol>
+<p>A. Atorvastatin 20mg B. Rosuvastatin 10mg C. Simvastatin 40mg D. Pravastatin 40mg E. Fluvastatin 80mg</p>
+<ol><li><b>Renal transplant on tacrolimus (trough 8) + fluconazole. Management?</b></li></ol>
+<p>A. Increase tacrolimus B. Reduce tacrolimus 50%; monitor levels q2-3d + renal q2-3d C. Switch to ciclosporin D. No action</p>
+<ol><li><b>Clopidogrel + omeprazole mechanism?</b></li></ol>
+<p>A. Omeprazole induces CYP2C19 B. Omeprazole inhibits CYP2C19 → ↓ clopidogrel active metabolite C. Omeprazole displaces clopidogrel from protein binding D. Omeprazole inhibits P-gp</p>
+<ol><li><b>Mechanism-based vs reversible CYP inhibition?</b></li></ol>
+<p>A. Mechanism-based = rapid onset/offset B. Reversible = days-weeks offset C. Mechanism-based = days-weeks onset/offset; requires new enzyme synthesis D. No difference</p>
+<ol><li><b>Rivaroxaban 20mg + itraconazole (CrCl 45). Management?</b></li></ol>
+<p>A. Continue rivaroxaban 20mg B. Reduce to 15mg OD + monitor bleeding C. Switch to LMWH therapeutic D. Stop anticoagulation</p>
+<ol><li><b>Mechanism-based inhibition characteristics?</b></li></ol>
+<p>A. Onset hours, offset hours B. Onset days, offset days-weeks C. Competitive binding only D. Only CYP2D6</p>
+<ol><li><b>Rivaroxaban 20mg (CrCl 50) + itraconazole. Management?</b></li></ol>
+<p>A. Continue 20mg B. Reduce to 15mg OD C. Switch to LMWH therapeutic D. Stop anticoagulation</p>
+<ol><li><b>Triple Whammy drugs?</b></li></ol>
+<p>A. ACEi + Diuretic + Statin B. ACEi/ARB + Diuretic + NSAID C. Beta-blocker + Diuretic + ACEi D. Warfarin + Aspirin + Clopidogrel</p>
+<ol><li><b>Mechanism-based CYP inhibition — onset/offset?</b></li></ol>
+<p>A. Hours/hours B. Days/days-weeks C. Weeks/months D. Immediate/immediate</p>
+<ol><li><b>P-gp key substrates include:</b></li></ol>
+<p>A. Digoxin, Tacrolimus, DOACs B. Metformin, Lisinopril, Atenolol C. Warfarin, Heparin, Aspirin D. Metoprolol, Amlodipine, Furosemide</p>
+<ol><li><b>Clopidogrel + omeprazole — mechanism?</b></li></ol>
+<p>A. Omeprazole induces CYP2C19 B. Omeprazole inhibits CYP2C19 → ↓ active metabolite C. Omeprazole displaces from protein binding D. Omeprazole inhibits P-gp</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">43</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>72M on warfarin (INR 2.4) started clarithromycin. Day 3 INR 6.2, no bleeding. Management?</b></li></ol>
+<p>A. Stop warfarin; Vit K 10mg IV; restart same dose when INR &lt;3 B. Stop warfarin; Vit K 1-2mg PO; restart reduced dose when INR &lt;3 C. Continue warfarin; repeat INR 24h D. Stop warfarin; FFP; restart when INR &lt;2</p>
+<ol><li><b>Renal transplant on tacrolimus (level 8) + fluconazole. Management?</b></li></ol>
+<p>A. Supportive only B. Reduce tacrolimus 50%; monitor levels q2-3d + renal q2-3d C. MVA-BN vaccine only D. Cidofovir</p>
+<ol><li><b>MSM on PrEP diagnosed with Mpox. CD4 350. Management?</b></li></ol>
+<p>A. Tecovirimat 600mg BD × 14d B. Supportive care + isolation (mild, CD4&gt;200) C. MVA-BN vaccine only D. Ceftriaxone</p>
+<ol><li><b>HIV+ on ART 4 weeks develops fever, worsening RPR, new rash. Diagnosis?</b></li></ol>
+<p>A. Drug rash B. Syphilis IRIS C. Acute HIV seroconversion D. Secondary syphilis</p>
+<ol><li><b>HIV+ with HSV-2, 8 recurrences/year. Suppressive therapy?</b></li></ol>
+<p>A. Acyclovir 400mg BD B. Valacyclovir 500mg OD D. Foscarnet</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">44</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-D, 2-B, 3-C, 4-B, 5-B, 6-B, 7-A, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">45</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Principles of Rational Prescribing]] — WHO 6-step, P-drug concept</li><li>[[ADRs]] — Interaction vs ADR differentiation</li><li>[[Polypharmacy and Deprescribing]] — STOPP/START, deprescribing algorithms</li><li>[[Prescribing in Special Populations]] — Renal/hepatic/pregnancy adjustments</li><li>[[Therapeutic Drug Monitoring]] — TDM for high-risk interactions</li><li>[[Medication Safety and Errors]] — Interaction-related errors</li><li>[[CYP450 Drug Interactions.md]] — Detailed CYP450 content</li><li>[[Clinical Contexts/Antimicrobial Stewardship.md]] — Abx interactions</li><li>[[Polypharmacy and Deprescribing/Deprescribing Algorithms.md]] — Interaction-driven deprescribing</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Drug Interactions Topic: COMPLETE with Full Exam Suite (≥20 Viva Qs, 20 MCQs, 20 SBAs, Full Answer Keys)</b> A: <b>QT &gt;500ms or ΔQT &gt;60ms → Stop offending drugs, Correct K⁺/Mg²⁺, Cardiology.</b></p>
+<ul><li>Q: <b>St John's Wort — enzyme effect?</b></li></ul>
+<p>A: <b>Potent CYP3A4 + P-gp INDUCER (via PXR). → Contraceptive failure, CNI rejection, DOAC thrombosis.</b></p>
+<ul><li>Q: <b>Valproate + Lamotrigine — interaction?</b></li></ul>
+<p>A: <b>Valproate inhibits UGT → ↑ Lamotrigine 2x. ↓ Lamotrigine dose 50% with valproate.</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">46</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>D. CYP2D6</b> — No clinically significant inducers exist for CYP2D6.</li><li><b>B. INR increases; reduce warfarin dose 20-30% and monitor INR 2-3x/week</b> — Fluconazole = strong CYP2C9 inhibitor → ↑ S-warfarin → ↑ INR.</li><li><b>C. Simvastatin 40mg</b> — Simvastatin = high CYP3A4 dependence; contraindicated with strong inhibitors (clarithro, azoles, HIV PIs). Atorva max 20mg; Rosuva/Prava/Fluvastatin safe.</li><li><b>B. Reduce tacrolimus dose 66-75%; monitor trough levels q2-3 days and renal function</b> — Clarithro = strong CYP3A4/P-gp inhibitor (MBI) → ↑ Tacrolimus 5-10x.</li><li><b>B. Omeprazole inhibits CYP2C19, reducing clopidogrel activation</b> — Clopidogrel is a prodrug requiring CYP2C19; omeprazole/esomeprazole are strong CYP2C19 inhibitors.</li><li><b>B. Digoxin</b> — Classic P-gp substrate. Others: Metformin (OCT), Atenolol (renal), Lisinopril (renal), HCTZ (renal).</li><li><b>B. ACEi/ARB + Diuretic + NSAID</b> — Classic "Triple Whammy" causing haemodynamic AKI.</li><li><b>C. Switch to therapeutic LMWH; hold rivaroxaban</b> — Itraconazole = strong dual CYP3A4/P-gp inhibitor → ↑ Rivaroxaban 2-3x. LMWH has no CYP interaction.</li><li><b>B. Onset over days, offset over days-weeks</b> — MBI = heme destruction requiring new enzyme synthesis (t½ ~72h).</li><li><b>B. Tacrolimus + Clarithromycin → Monitor trough level q2-3d and creatinine q2-3d</b> — Correct monitoring for CNI + strong inhibitor.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — INR 6.8 without major bleed: Stop warfarin, give oral Vit K 1-2mg (IV only if major bleed), restart at reduced dose when INR &lt;3.</li><li><b>B</b> — Fluconazole = moderate CYP3A4 inhibitor → ↑ Tacrolimus 2-4x. Reduce 50%, monitor levels + renal q2-3d.</li><li><b>D</b> — Simvastatin + Clarithro = CONTRAINDICATED. Best: Hold simvastatin for clarithro course, restart after. (Switching to rosuvastatin also acceptable but holding is simpler for short course).</li><li><b>B</b> — Thiazide → ↑ Proximal Li reabsorption → ↑ Levels. Monitor weekly × 4, reduce if &gt;0.8.</li><li><b>B</b> — Rifampicin = universal inducer → ↓ OCP AUC 40-60% → Contraceptive failure. Barrier contraception during + 4 weeks after.</li><li><b>B</b> — Amiodarone = P-gp inhibitor (also CYP3A4) → ↑ Digoxin 1.5-2x. Halve dose, check level at 1 week (≥6h post-dose).</li><li><b>B</b> — Dual mechanism: CYP2C9 inhibition + Albumin displacement → ↑ Free phenytoin disproportionately. Monitor FREE level.</li><li><b>B</b> — Triple Whammy: ACEi (↓ Efferent tone) + Diuretic (↓ Volume) + NSAID (↓ Afferent prostaglandins) → Profound ↓ GFR.</li><li><b>C</b> — Both quetiapine and ciprofloxacin prolong QT. With baseline QTc 460ms, combination = HIGH Torsades risk. Safer antibiotic alternative (nitrofurantoin/trimethoprim).</li><li><b>C</b> — Voriconazole = strong dual CYP3A4/P-gp inhibitor → ↑ Rivaroxaban 2-3x. LMWH = no CYP interaction, preferred. Warfarin also interacts (CYP2C9 + Vit K).</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">47</span>
+    <span class="sec-title">Cross-References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[CYP450 Drug Interactions]] — Detailed isoform tables</li><li>[[Warfarin Interactions]] — Comprehensive anticoagulant management</li><li>[[DOAC Interactions]] — Direct oral anticoagulant specifics</li><li>[[Immunosuppressant Interactions]] — CNI, mTOR, MMF</li><li>[[QT Prolongation]] — Torsades risk stratification</li><li>[[ADRs]] — Adverse drug reaction classification</li><li>[[Polypharmacy and Deprescribing]] — Interaction-driven deprescribing</li><li>[[Therapeutic Drug Monitoring]] — TDM for interaction-affected drugs</li><li>[[Prescribing in Special Populations]] — Amplifiers in elderly, renal, hepatic, pregnancy</li><li>[[Medication Safety and Errors]] — Interaction-related prescribing errors</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">48</span>
+    <span class="sec-title">Tags</span>
+  </div>
+  <div class="sec-body">
+<p>#medicine #clinical-therapeutics #davidson #drug-interactions #cyp450 #warfarin #doac #tacrolimus #fcps #mrcp #full-fcps-mrcp-note</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Drug Interactions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

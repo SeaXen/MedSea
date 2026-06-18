@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>T Cell Lymphomas — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.7. HAEMATOLOGICAL MALIGNANCIES</span>
+      <div class="h1">T Cell Lymphomas</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify <b>PTCL subtypes</b> per WHO 2022: PTCL-NOS, AITL, ALCL (ALK+/ALK-), ATLL, EATL, NK/T-cell, others</li><li>[ ] Apply <b>IHC immunophenotype</b>: CD3+, CD4/CD8, <b>CD30 (ALCL)</b>, <b>ALK (ALK+ ALCL)</b>, <b>TCRαβ/γδ</b>, <b>CCR4 (ATLL)</b>, <b>EBER (NK/T-cell)</b></li><li>[ ] Calculate <b>prognostic indices</b>: <b>PIT (PTCL-NOS/AITL)</b>, <b>IPI (ALCL)</b>, <b>Galli (ATLL)</b></li><li>[ ] Prescribe <b>1L therapy</b>: <b>CHOEP</b> (PTCL-NOS/AITL), <b>CHOP</b> (ALK+ ALCL), <b>Brentuximab+CHP</b> (ECHELON-2) for <b>CD30+</b> (ALCL, some PTCL-NOS)</li><li>[ ] Indicate <b>Consolidation ASCT</b> in 1L CR/PR (standard for fit patients)</li><li>[ ] Sequence <b>relapsed therapy</b>: <b>Brentuximab</b> (CD30+), <b>Romidepsin/Belinostat</b> (HDACi), <b>Pralatrexate</b> (DHFR inhibitor), <b>Alemtuzumab</b> (CD52), <b>CAR-T (CD30)</b></li><li>[ ] Manage <b>ATLL</b>: <b>Zidovudine + IFN-α</b> (acute/lymphoma), <b>Mogamulizumab (CCR4)</b>, <b>Allo-HSCT</b> (young)</li><li>[ ] Recognise <b>NK/T-cell lymphoma</b>: <b>EBV+</b>, <b>Nasal/Extranasal</b>, <b>Asparaginase-based (SMILE/DeVIC)</b>, <b>RT essential</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Mature **T-cell / NK-cell** neoplasms; **Aggressive**; **10-15% of NHL** (higher in Asia)</td></tr><tr><td>**Incidence**</td><td>~1,500/year UK; **Geographic variation**: NK/T-cell ↑ Asia, ATLL ↑ Japan/Caribbean</td></tr><tr><td>**Prevalence**</td><td>**Median OS 1-3 years** (subtype-dependent); **5-year OS ~30-40%** (improving with Brentuximab/ASCT)</td></tr><tr><td>**Peak Age**</td><td>60-70 years (ATLL younger in endemic)</td></tr><tr><td>**Sex Ratio**</td><td>M > F (1.5:1)</td></tr><tr><td>**Risk Factors**</td><td>**HTLV-1** (ATLL — endemic), **EBV** (NK/T-cell, AITL subset), **Immunosuppression** (post-transplant, HIV), **Coeliac** (EATL), **Genetic** (familial rare)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Normal T/NK Cell] --&gt; B[Oncogenic Hit] B --&gt; B1[PTCL-NOS: Heterogeneous] B1 --&gt; C1[TFH Origin (GATA3, TBX21, BCL6, CXCL13)] B1 --&gt; C2[Epigenetic: TET2, DNMT3A, IDH2, RHOA G17V] B --&gt; B2[AITL: TFH Origin] B2 --&gt; C3[<b>RHOA G17V (70%)</b>, TET2, DNMT3A, IDH2] C3 --&gt; D1[Follicular expansion, Dysimmune] B --&gt; B3[ALK+ ALCL: <b>NPM1-ALK (t(2;5))</b>] B3 --&gt; C4[ALK Kinase → STAT3, PI3K, RAS] B --&gt; B4[ALK- ALCL: <b>DUSP22-IRF4 (30%)</b>, <b>TP63 (30%)</b>] B --&gt; B5[ATLL: <b>HTLV-1 Tax</b> → NF-κB, CREB] B5 --&gt; C5[CD4+CD25+CCR4+] B --&gt; B6[NK/T-cell: <b>EBV Latency II (LMP1, EBNA1)</b>] B6 --&gt; C6[NF-κB, JAK/STAT, LMP1] B6 --&gt; C7[<b>PRDM1/BLIMP1 loss</b>] </code>``</p>
+<div class="sub-h">WHO 2022 / ICC 2022 Classification (Major Subtypes)</div>
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Key Features</th><th>Cell of Origin</th></tr><tr><td>---------</td><td>-----------</td><td>--------------</td><td>----------------</td></tr><tr><td>**PTCL-NOS**</td><td>**30-40%**</td><td>Heterogeneous, **TFH markers (CXCL13, BCL6, ICOS, PD-1, CXCR5, BCL6)**</td><td>TFH (most)</td></tr><tr><td>**AITL**</td><td>**15-20%**</td><td>**TFH**, **RHOA G17V (70%)**, TET2/DNMT3A/IDH2, **CD10+, CXCL13+**, Generalised LAD, B symptoms, Hypergammaglobulinaemia</td><td>TFH</td></tr><tr><td>**ALK+ ALCL**</td><td>**10%**</td><td>**NPM1-ALK t(2;5)**, **CD30+, ALK+**, **EMA+**, Young, **Good prognosis**</td><td>Cytotoxic T</td></tr><tr><td>**ALK- ALCL**</td><td>**10%**</td><td>**CD30+, ALK-**, **DUSP22-IRF4 (30%)**, **TP63 (30%)**, Older, **Worse than ALK+**</td><td>Cytotoxic T</td></tr><tr><td>**ATLL**</td><td>**5%**</td><td>**HTLV-1+**, **CD4+CD25+CCR4+**, **Flower cells**, Acute/Lymphoma/Chronic/Smoldering</td><td>CD4+ Treg</td></tr><tr><td>**EATL**</td><td>**5%**</td><td>**Coeliac disease**, **Type I (TCRαβ, CD3+, CD8+, CD4-, CD56-)**, **Type II (TCRγδ, CD56+)**</td><td>Intraepithelial T</td></tr><tr><td>**NK/T-cell**</td><td>**5-10%**</td><td>**EBV+**, **CD56+, CD3ε+, Cytotoxic (Granzyme B, TIA-1, Perforin)**, **Nasal/Extranasal**, **Asparaginase-based**</td><td>NK / γδ T</td></tr><tr><td>**Hepatosplenic**</td><td><1%</td><td>**γδ TCR**, **CD56+**, **Iso 7q**, **Splenomegaly, Hepatomegaly**, No LAD</td><td>γδ T</td></tr><tr><td>**Subcutaneous Panniculitis-like**</td><td><1%</td><td>**αβ TCR**, **CD8+, CD56-**, **Subcutaneous nodules**, **Hemophagocytic syndrome**</td><td>αβ T</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features (Subtype-Specific)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Subtype</th><th>Key Clinical Features</th></tr><tr><td>---------</td><td>----------------------</td></tr><tr><td>**PTCL-NOS/AITL**</td><td>Generalised LAD, B symptoms, **Skin rash (AITL)**, Hepatosplenomegaly, **Hypergammaglobulinaemia (AITL)**, Autoimmune phenomena (AIHA, ITP)</td></tr><tr><td>**ALK+ ALCL**</td><td>Young (median 30s), **Skin involvement common**, **Systemic symptoms**, LAD, **Good prognosis**</td></tr><tr><td>**ALK- ALCL**</td><td>Older, **Skin or systemic**, **Worse than ALK+**</td></tr><tr><td>**ATLL**</td><td>**HTLV-1 endemic**, **Acute/Lymphoma**: LAD, Skin, Hypercalcaemia (PTHrP), Lytic lesions; **Chronic/Smoldering**: Indolent</td></tr><tr><td>**EATL**</td><td>**Coeliac history**, **Abdominal pain, Weight loss, Diarrhoea**, **Jejunal ulcers/mass**, **Perforation risk**</td></tr><tr><td>**NK/T-cell**</td><td>**Nasal**: Epistaxis, Nasal obstruction, Palate perforation; **Extranasal**: Skin, GI, Testis; **Hemophagocytic syndrome**</td></tr><tr><td>**Hepatosplenic**</td><td>**Splenomegaly, Hepatomegaly**, **Cytopenias**, **No LAD**, Young males</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Prognostic Indices</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Application</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Ann Arbor / Lugano**</td><td>All PTCL (Stage I-IV)</td></tr><tr><td>**PIT (Prognostic Index for T-cell Lymphoma)**</td><td>**PTCL-NOS / AITL** — **4 Factors**: Age >60, LDH >ULN, PS ≥2, BM involvement → **Low (0), Low-Int (1), High-Int (2), High (3-4)**</td></tr><tr><td>**IPI**</td><td>**ALCL** (standard)</td></tr><tr><td>**Galli / ATLL Prognostic Index**</td><td>**ATLL** — Age, LDH, Ca, PS, Organ involvement</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**Lymph Node Biopsy (Excisional)**</td><td>**Gold standard**</td><td>**Architecture + IHC + Molecular**</td></tr><tr><td>**IHC Panel**</td><td>**Subtype classification**</td><td>**CD3+, CD4/CD8, CD30, ALK, TCRβ/F1, CD56, Granzyme B, TIA-1, Perforin, EBER (ISH), CCR4, PD-1, CXCL13, BCL6, CD10, RHOA (mut)**</td></tr><tr><td>**Flow Cytometry**</td><td>Immunophenotype</td><td>**CD3+, TCRαβ/γδ, CD4/CD8, CD56, CD25, CCR4**</td></tr><tr><td>**FISH / PCR**</td><td>**ALK (t(2;5))**, **DUSP22-IRF4**, **TP63**, **HTLV-1 PCR/Serology**, **EBV PCR**, **TCR gene rearrangement**</td></tr><tr><td>**CT/PET-CT**</td><td>Staging</td><td>**PET-CT preferred** (FDG-avid)</td></tr><tr><td>**Bone Marrow Biopsy**</td><td>Staging</td><td>**PIT factor**</td></tr><tr><td>**HTLV-1 Serology/PCR**</td><td>**ATLL diagnosis**</td><td>**Mandatory if ATLL suspected**</td></tr><tr><td>**EBV PCR / EBER ISH**</td><td>**NK/T-cell, AITL subset**</td><td>**EBER+ in tumour cells**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**DLBCL**</td><td>**B-cell**: CD20+, PAX5+, BCL6+, **CD3-**</td></tr><tr><td>**ALCL vs cHL**</td><td>**ALCL**: **CD30+, ALK±, CD3+, CD15-, PAX5-**; **cHL**: CD30+, CD15+, PAX5+, CD3-</td></tr><tr><td>**Mycosis Fungoides/SS**</td><td>**Skin-limited early**, **CD4+, CLA+, CCR4+**, **TCR clonality**, **Blood involvement (SS)**</td></tr><tr><td>**ATLL vs PTCL-NOS**</td><td>**ATLL**: **HTLV-1+, CD25+, CCR4+, Flower cells**, **Hypercalcaemia**</td></tr><tr><td>**NK/T-cell vs PTCL-NOS**</td><td>**NK/T**: **EBV+, CD56+, Cytotoxic, Nasal/extranasal**</td></tr><tr><td>**EATL vs Enteropathy**</td><td>**EATL**: **Coeliac history**, **Type I (CD8+), Type II (CD56+)**, **Jejunal mass**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line Therapy</div>
+<p>``<code>mermaid flowchart TD A[PTCL Diagnosis + Stage] --&gt; B{Subtype} B --&gt;|<b>PTCL-NOS / AITL</b>| C[<b>CHOEP</b> (Cyclophosphamide, Doxorubicin, Vincristine, Etoposide, Prednisone)&lt;br/&gt;<b>Etoposide added to CHOP</b> (CHOEP vs CHOP: GOELAMS, HOVON) — <b>Preferred</b>&lt;br/&gt;<b>6-8 cycles</b>] B --&gt;|<b>ALK+ ALCL</b>| D[<b>CHOP ×6-8 cycles</b> (Standard)&lt;br/&gt;<b>ALK+ excellent prognosis, NO Etoposide needed</b>&lt;br/&gt;<b>cALCL (cutaneous): RT alone if localised</b>] B --&gt;|<b>ALK- ALCL / CD30+ PTCL</b>| E[<b>Brentuximab Vedotin + CHP</b> (ECHELON-2)&lt;br/&gt;<b>Brentuximab 1.8mg/kg d1 + CHP q3w ×6-8 cycles</b>&lt;br/&gt;<b>PFS HR 0.71, OS HR 0.66</b> — <b>Standard for CD30+</b>&lt;br/&gt;<b>Includes ALK- ALCL, CD30+ PTCL-NOS</b>] B --&gt;|<b>ATLL (Acute/Lymphoma)</b>| F[<b>Zidovudine 300mg BD + IFN-α 3-5MU TIW</b>&lt;br/&gt;<b>Anti-HTLV-1</b>, <b>Not cytotoxic</b>&lt;br/&gt;<b>Mogamulizumab (CCR4) 1mg/kg q2w</b> (if available)&lt;br/&gt;<b>CHOP/CHOEP POOR efficacy</b>] B --&gt;|<b>EATL</b>| G[<b>Surgery (Resection) if localised</b>&lt;br/&gt;<b>Chemo: CHOEP / IVE / DOXIL-based</b>&lt;br/&gt;<b>High perforation risk</b>] B --&gt;|<b>NK/T-cell</b>| H[<b>Asparaginase-based (ESSENTIAL)</b>&lt;br/&gt;<b>SMILE</b>: Dex, Methotrexate, Ifosfamide, L-Asparaginase, Etoposide&lt;br/&gt;<b>DeVIC</b>: Dex, Etoposide, Ifosfamide, Carboplatin + L-Asp&lt;br/&gt;<b>Concurrent RT</b> (Nasal: 50-60Gy)&lt;br/&gt;<b>L-Asparaginase PEGylated (Calaspargase) / Native</b>] C --&gt; I[<b>Response Assessment (PET-CT)</b>] D --&gt; I E --&gt; I F --&gt; I G --&gt; I H --&gt; I I --&gt; J{Response} J --&gt;|<b>CR/PR (Fit)</b>| K[<b>Consolidation: High-dose Chemo + ASCT</b>&lt;br/&gt;<b>BEAM / TBI-based</b>&lt;br/&gt;<b>Standard for PTCL-NOS, AITL, ALK- ALCL</b>&lt;br/&gt;<b>ALK+ ALCL: ASCT controversial (excellent CHOP outcome)</b>] J --&gt;|<b>SD/PD or Unfit</b>| L[<b>Relapsed/Refractory Therapy</b>] K --&gt; M[<b>Maintenance: Brentuximab (CD30+) / Observation</b>] </code>``</p>
+<div class="sub-h">Relapsed/Refractory Therapy</div>
+<table class="ctable"><tr><th>Agent</th><th>Indication</th><th>Key Trial</th></tr><tr><td>-------</td><td>------------</td><td>-----------</td></tr><tr><td>**Brentuximab Vedotin**</td><td>**CD30+** (ALCL, PTCL-NOS subset)</td><td>**ALCL: ORR 86%, CR 57%**; **PTCL-NOS: ORR 41%**</td></tr><tr><td>**Romidepsin**</td><td>PTCL (HDAC inhibitor)</td><td>**ORR 25-30%**</td></tr><tr><td>**Belinostat**</td><td>PTCL (HDAC inhibitor)</td><td>**ORR 25-30%**</td></tr><tr><td>**Pralatrexate**</td><td>PTCL (DHFR inhibitor)</td><td>**ORR 27%**</td></tr><tr><td>**Alemtuzumab**</td><td>CD52+ (T-cell)</td><td>**ORR 30-50%**, **Severe infections**</td></tr><tr><td>**CAR-T (CD30/CD5/CD7)**</td><td>CD30+ PTCL/ALCL</td><td>**Emerging, ORR 70-90%**</td></tr><tr><td>**Allo-HSCT**</td><td>Young, fit, chemosensitive relapse</td><td>**Potentially curative**</td></tr></table>
+<div class="sub-h">ATLL Specific</div>
+<table class="ctable"><tr><th>Subtype</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Acute / Lymphoma**</td><td>**Zidovudine + IFN-α** (anti-HTLV-1); **Mogamulizumab (CCR4)**; **Checkpoint inhibitors** (PD-1) — trials; **Allo-HSCT** if remission</td></tr><tr><td>**Chronic / Smoldering**</td><td>**Observation** / **Zidovudine + IFN-α** if symptomatic</td></tr></table>
+<div class="sub-h">NK/T-cell Specific</div>
+<table class="ctable"><tr><th>Component</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Chemo**</td><td>**SMILE / DeVIC / AspaMetDex** — **L-Asparaginase ESSENTIAL** (EBV+ cells depend on asparagine)</td></tr><tr><td>**RT**</td><td>**Nasal: 50-60Gy** (definitive); **Extranasal: Involved-site RT**</td></tr><tr><td>**ASCT**</td><td>**Consolidation in 1L CR/PR** (standard)</td></tr><tr><td>**PD-1 inhibitors**</td><td>**Pembrolizumab/Nivolumab** — **High response in relapsed** (PD-L1↑ by LMP1)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**PTCL Subtypes**</td><td>**PTCL-NOS (30-40%)**, **AITL (15-20%)**, **ALK+ ALCL (10%)**, **ALK- ALCL (10%)**, **ATLL (5%)**, **EATL (5%)**, **NK/T-cell (5-10%)**</td></tr><tr><td>**IHC Key**</td><td>**CD3+**, **CD4/CD8**, **CD30 (ALCL)**, **ALK (ALK+ ALCL)**, **RHOA G17V (AITL)**, **EBER (NK/T-cell, AITL)**, **CCR4 (ATLL)**, **CD56 (NK/T, Hepatosplenic)**</td></tr><tr><td>**AITL**</td><td>**TFH origin**, **RHOA G17V**, **TET2/DNMT3A/IDH2**, **CD10+, CXCL13+**, **Hypergammaglobulinaemia**, **Autoimmune**</td></tr><tr><td>**ALK+ ALCL**</td><td>**NPM1-ALK t(2;5)**, **CD30+, ALK+, EMA+**, **Young, Good prognosis**</td></tr><tr><td>**1L Therapy**</td><td>**PTCL-NOS/AITL: CHOEP**; **ALK+ ALCL: CHOP**; **CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)**</td></tr><tr><td>**Consolidation ASCT**</td><td>**Standard in 1L CR/PR** for PTCL-NOS, AITL, ALK- ALCL; **ALK+ ALCL: Controversial**</td></tr><tr><td>**Relapsed**</td><td>**Brentuximab (CD30+)**, **Romidepsin/Belinostat (HDACi)**, **Pralatrexate**, **Alemtuzumab**, **CAR-T**</td></tr><tr><td>**ATLL**</td><td>**HTLV-1+**, **Zidovudine+IFN-α**, **Mogamulizumab (CCR4)**, **Allo-HSCT**</td></tr><tr><td>**NK/T-cell**</td><td>**EBV+**, **CD56+, Cytotoxic**, **Asparaginase-based (SMILE/DeVIC) + RT**, **PD-1 inhibitors relapsed**</td></tr><tr><td>**EATL**</td><td>**Coeliac**, **Type I (CD8+), Type II (CD56+)**, **Surgery + Chemo**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**55M, generalised LAD, rash, hypergammaglobulinaemia. Biopsy: CD3+, CD4+, CD10+, CXCL13+, RHOA G17V mut. Diagnosis?**</td><td>**AITL (Angioimmunoblastic T-cell Lymphoma)** — **TFH origin**, **RHOA G17V**, **CD10+, CXCL13+**, **Dysimmune features**.</td></tr><tr><td>**30M, LAD, skin nodules, ALK+ by IHC, NPM1-ALK fusion. 1L treatment?**</td><td>**CHOP ×6-8 cycles** — **ALK+ ALCL excellent prognosis with CHOP**; **NO Etoposide, NO Brentuximab 1L, NO ASCT routine**.</td></tr><tr><td>**60M, PTCL-NOS, CD30+ (focal). 1L treatment?**</td><td>**CHOEP** (Standard) **OR Brentuximab+CHP** (ECHELON-2) if CD30+ — **Discuss**; **CHOEP standard for PTCL-NOS/AITL**.</td></tr><tr><td>**PTCL-NOS — CHOEP vs CHOP?**</td><td>**CHOEP (add Etoposide)** — **GOELAMS/HOVON: CHOEP superior to CHOP** for PTCL-NOS/AITL; **Standard regimen**.</td></tr><tr><td>**ECHELON-2 — regimen, population, outcome?**</td><td>**Brentuximab Vedotin 1.8mg/kg + CHP q3w ×6-8 cycles** vs **CHOP** — **CD30+ PTCL (ALK- ALCL, PTCL-NOS subset)** — **PFS HR 0.71, OS HR 0.66** — **Standard for CD30+**.</td></tr><tr><td>**Consolidation ASCT in PTCL — for whom?**</td><td>**1L CR/PR, Fit patients** — **Standard for PTCL-NOS, AITL, ALK- ALCL**; **NOT routine for ALK+ ALCL** (excellent CHOP outcome).</td></tr><tr><td>**ATLL — HTLV-1, treatment acute/lymphoma?**</td><td>**Zidovudine 300mg BD + IFN-α 3-5MU TIW** (anti-HTLV-1); **Mogamulizumab (CCR4)**; **CHOP/CHOEP ineffective**; **Allo-HSCT if remission**.</td></tr><tr><td>**NK/T-cell lymphoma — essential chemo component?**</td><td>**L-Asparaginase (PEGylated / Native)** — **SMILE / DeVIC / AspaMetDex**; **EBV+ cells asparagine-dependent**; **RT mandatory (nasal)**.</td></tr><tr><td>**PIT score — factors?**</td><td>**Age >60, LDH >ULN, PS ≥2, Bone Marrow involvement** — **0=Low, 1=Low-Int, 2=High-Int, 3-4=High**.</td></tr><tr><td>**Relapsed CD30+ PTCL — best single agent?**</td><td>**Brentuximab Vedotin** — **ORR 86% (ALCL), 41% (PTCL-NOS)**, **Durable responses**, **Bridge to ASCT/allo**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**PTCL-NOS vs AITL**</td><td>**AITL**: **TFH markers (CD10, CXCL13, PD-1, BCL6, ICOS)**, **RHOA G17V**, **Hypergammaglobulinaemia**, **Autoimmune**; **PTCL-NOS**: **Heterogeneous, TFH subset common**, **No RHOA**</td></tr><tr><td>**ALK+ vs ALK- ALCL**</td><td>**ALK+**: **NPM1-ALK t(2;5)**, **Young**, **CHOP**, **Good prognosis**; **ALK-**: **DUSP22-IRF4 / TP63**, **Older**, **Brentuximab+CHP (ECHELON-2)**, **Worse prognosis**</td></tr><tr><td>**CHOEP vs CHOP**</td><td>**CHOEP = CHOP + Etoposide**; **GOELAMS: CHOEP superior for PTCL-NOS/AITL**; **NOT for ALK+ ALCL** (CHOP sufficient)</td></tr><tr><td>**Brentuximab in PTCL**</td><td>**ECHELON-2: CD30+ PTCL (ALK- ALCL + CD30+ PTCL-NOS)** — **Brentuximab+CHP standard**; **NOT for ALK+ ALCL 1L**; **Relapsed CD30+: Standard**</td></tr><tr><td>**ASCT in PTCL**</td><td>**1L CR/PR → ASCT standard** (PTCL-NOS, AITL, ALK- ALCL); **ALK+ ALCL → Not routine**; **Relapsed → Allo-HSCT if young/fit**</td></tr><tr><td>**NK/T-cell — Asparaginase**</td><td>**ESSENTIAL** — **EBV+ LMP1 → Asparagine dependency**; **SMILE/DeVIC/AspaMetDex**; **Without Asp = Poor response**</td></tr><tr><td>**ATLL — CHOP ineffective**</td><td>**ATLL: Anti-viral (Zidovudine+IFN-α) + CCR4 (Mogamulizumab)**; **Cytotoxic chemo POOR**; **Hypercalcaemia = PTHrP**</td></tr></table>
+<p><b>Mnemonic: PTCL-SUBTYPES</b></p>
+<ul><li><b>P</b>TCL-NOS: 30-40%, TFH, <b>CHOEP</b></li><li><b>T</b>FH origin: <b>AITL</b> (RHOA G17V, CD10, CXCL13, Hypergammaglobulinaemia)</li><li><b>C</b>D30+: <b>ALCL</b> (ALK+ young CHOP / ALK- older Brenta+CHP)</li><li><b>L</b>ymphoma T/NK: <b>NK/T-cell</b> (EBV+, CD56+, <b>Asparaginase+RT</b>)</li><li><b>T</b>-cell leukaemia: <b>ATLL</b> (HTLV-1, <b>Zid+IFN-α</b>, Mogamulizumab)</li><li><b>L</b>ocalised gut: <b>EATL</b> (Coeliac, Type I CD8+ / Type II CD56+)</li><li><b>Y</b>oung, hepatosplenic: <b>Hepatosplenic</b> (γδ TCR, Iso 7q)</li><li><b>P</b>anniculitis: <b>Subcutaneous Panniculitis-like</b> (αβ TCR, CD8+)</li><li><b>E</b>pitheliotropic: <b>Mycosis Fungoides/SS</b> (Skin, CD4+, CLA+)</li><li><b>S</b>ystemic: <b>ALCL</b> (systemic vs cutaneous)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Peripheral T-cell Lymphoma)) Subtypes PTCL-NOS (30-40%) - CHOEP AITL (15-20%) - RHOA G17V, TFH - CHOEP ALK+ ALCL (10%) - NPM1-ALK, CHOP ALK- ALCL (10%) - DUSP22/TP63 - Brenta+CHP ATLL (5%) - HTLV-1, Zid+IFN-α NK/T-cell (5-10%) - EBV+, Asparaginase+RT EATL (5%) - Coeliac, Surgery+Chemo Hepatosplenic (&lt;1%) - γδ TCR Subcut Panniculitis (&lt;1%) - αβ TCR IHC Markers CD3, CD4/CD8, CD30, ALK, CD56 RHOA (AITL), EBER (NK/T, AITL) CCR4 (ATLL), Granzyme B, TIA-1 1L Treatment PTCL-NOS/AITL: CHOEP ALK+ ALCL: CHOP CD30+ (ALK- ALCL): Brenta+CHP ATLL: Zid+IFN-α NK/T: SMILE/DeVIC + RT EATL: Surgery + Chemo Consolidation 1L CR/PR → ASCT (PTCL-NOS, AITL, ALK- ALCL) ALK+ ALCL: ASCT not routine Relapsed Brenta (CD30+) Romidepsin/Belinostat (HDACi) Pralatrexate Alemtuzumab CAR-T (CD30/CD5) Allo-HSCT </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Subtypes**</td><td>PTCL-NOS, AITL, ALK+ ALCL, ALK- ALCL, ATLL, NK/T, EATL</td></tr><tr><td>**AITL**</td><td>TFH, RHOA G17V, CD10/CXCL13, Hypergammaglobulinaemia</td></tr><tr><td>**ALCL**</td><td>ALK+ (NPM1-ALK, CHOP) vs ALK- (DUSP22/TP63, Brenta+CHP)</td></tr><tr><td>**1L**</td><td>PTCL-NOS/AITL: **CHOEP**; ALK+ ALCL: **CHOP**; CD30+: **Brenta+CHP**</td></tr><tr><td>**ASCT**</td><td>1L CR/PR → ASCT (PTCL-NOS, AITL, ALK- ALCL); ALK+ no</td></tr><tr><td>**ATLL**</td><td>HTLV-1, **Zid+IFN-α**, Mogamulizumab (CCR4)</td></tr><tr><td>**NK/T**</td><td>EBV+, CD56+, **Asparaginase (SMILE/DeVIC) + RT**</td></tr><tr><td>**Relapsed**</td><td>Brenta (CD30+), HDACi, Pralatrexate, Alemtuzumab, CAR-T</td></tr><tr><td>**PIT**</td><td>Age>60, LDH>ULN, PS≥2, BM+ → 4 groups</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Subtype classification</td><td></td><td></td></tr><tr><td>AITL vs PTCL-NOS</td><td></td><td></td></tr><tr><td>ALCL ALK+ vs ALK-</td><td></td><td></td></tr><tr><td>1L regimen selection</td><td></td><td></td></tr><tr><td>Consolidation ASCT criteria</td><td></td><td></td></tr><tr><td>ATLL management</td><td></td><td></td></tr><tr><td>NK/T-cell (Asparaginase)</td><td></td><td></td></tr><tr><td>Relapsed options</td><td></td><td></td></tr><tr><td>PIT score</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[DLBCL]], [[Mycosis Fungoides/Sezary]], [[Brentuximab Vedotin]], [[ALCL]], [[AITL]], [[ATLL]], [[NK/T-cell Lymphoma]], [[ASCT in PTCL]], [[PIT Score]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (PTCL Subtypes), which statement is correct? A. <b>PTCL-NOS (30-40%)</b>, <b>AITL (15-20%)</b>, <b>ALK+ ALCL (10%)</b>, <b>ALK- ALCL (10%)</b>, <b>ATLL (5%)</b>, * B. **PTCL-NOS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PTCL-NOS (30-40%)</b>, <b>AITL (15-20%)</b>, <b>ALK+ ALCL (10%)</b>, <b>ALK- ALCL (10%)</b>, <b>ATLL (5%)</b>, <b>EATL (5%)</b>, **NK/T...</li></ul>
+<p><b>2.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (IHC Key), which statement is correct? A. <b>CD3+</b>, <b>CD4/CD8</b>, <b>CD30 (ALCL)</b>, <b>ALK (ALK+ ALCL)</b>, <b>RHOA G17V (AITL)</b>, <b>EBER (NK/T-cell B. </b>CD3+**, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CD3+</b>, <b>CD4/CD8</b>, <b>CD30 (ALCL)</b>, <b>ALK (ALK+ ALCL)</b>, <b>RHOA G17V (AITL)</b>, <b>EBER (NK/T-cell, AITL)</b>, **CCR4 (A...</li></ul>
+<p><b>3.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (AITL), which statement is correct? A. <b>TFH origin</b>, <b>RHOA G17V</b>, <b>TET2/DNMT3A/IDH2</b>, <b>CD10+, CXCL13+</b>, <b>Hypergammaglobulinaemia</b> B. **TFH - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>TFH origin</b>, <b>RHOA G17V</b>, <b>TET2/DNMT3A/IDH2</b>, <b>CD10+, CXCL13+</b>, <b>Hypergammaglobulinaemia</b>, <b>Autoimmune</b></li></ul>
+<p><b>4.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (ALK+ ALCL), which statement is correct? A. <b>NPM1-ALK t(2 B. </b>NPM1-ALK - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>NPM1-ALK t(2;5)</b>, <b>CD30+, ALK+, EMA+</b>, <b>Young, Good prognosis</b></li></ul>
+<p><b>5.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (1L Therapy), which statement is correct? A. <b>PTCL-NOS/AITL: CHOEP</b> B. **PTCL-NOS/AITL: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PTCL-NOS/AITL: CHOEP</b>; <b>ALK+ ALCL: CHOP</b>; <b>CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)</b></li></ul>
+<p><b>6.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (Consolidation ASCT), which statement is correct? A. <b>Standard in 1L CR/PR</b> for PTCL-NOS, AITL, ALK- ALCL B. **Standard - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Standard in 1L CR/PR</b> for PTCL-NOS, AITL, ALK- ALCL; <b>ALK+ ALCL: Controversial</b></li></ul>
+<p><b>7.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (Relapsed), which statement is correct? A. <b>Brentuximab (CD30+)</b>, <b>Romidepsin/Belinostat (HDACi)</b>, <b>Pralatrexate</b>, <b>Alemtuzumab</b>, <b>CAR B. </b>Brentuximab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Brentuximab (CD30+)</b>, <b>Romidepsin/Belinostat (HDACi)</b>, <b>Pralatrexate</b>, <b>Alemtuzumab</b>, <b>CAR-T</b></li></ul>
+<p><b>8.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (ATLL), which statement is correct? A. <b>HTLV-1+</b>, <b>Zidovudine+IFN-α</b>, <b>Mogamulizumab (CCR4)</b>, <b>Allo-HSCT</b> B. <b>HTLV-1+</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>HTLV-1+</b>, <b>Zidovudine+IFN-α</b>, <b>Mogamulizumab (CCR4)</b>, <b>Allo-HSCT</b></li></ul>
+<p><b>9.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (NK/T-cell), which statement is correct? A. <b>EBV+</b>, <b>CD56+, Cytotoxic</b>, <b>Asparaginase-based (SMILE/DeVIC) + RT</b>, <b>PD-1 inhibitors relapse B. </b>EBV+**, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>EBV+</b>, <b>CD56+, Cytotoxic</b>, <b>Asparaginase-based (SMILE/DeVIC) + RT</b>, <b>PD-1 inhibitors relapsed</b></li></ul>
+<p><b>10.</b> Regarding Peripheral T-Cell Lymphomas (PTCL) (EATL), which statement is correct? A. <b>Coeliac</b>, <b>Type I (CD8+), Type II (CD56+)</b>, <b>Surgery + Chemo</b> B. <b>Coeliac</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Coeliac</b>, <b>Type I (CD8+), Type II (CD56+)</b>, <b>Surgery + Chemo</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>PTCL-NOS (30-40%)</b>, <b>AITL (15-20%)</b>, <b>ALK+ ALCL (10%)</b>, <b>ALK- ALCL (10%)</b>, <b>ATLL (5%)</b>, *</li><li>B. **PTCL-NOS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>PTCL-NOS (30-40%)</b>, <b>AITL (15-20%)</b>, <b>ALK+ ALCL (10%)</b>, <b>ALK- ALCL (10%)</b>, <b>ATLL (5%)</b>, <b>EATL (5%)</b>, **NK/T...</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>CD3+</b>, <b>CD4/CD8</b>, <b>CD30 (ALCL)</b>, <b>ALK (ALK+ ALCL)</b>, <b>RHOA G17V (AITL)</b>, **EBER (NK/T-cell</li><li>B. <b>CD3+</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>CD3+</b>, <b>CD4/CD8</b>, <b>CD30 (ALCL)</b>, <b>ALK (ALK+ ALCL)</b>, <b>RHOA G17V (AITL)</b>, <b>EBER (NK/T-cell, AITL)</b>, **CCR4 (A...</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>TFH origin</b>, <b>RHOA G17V</b>, <b>TET2/DNMT3A/IDH2</b>, <b>CD10+, CXCL13+</b>, <b>Hypergammaglobulinaemia</b></li><li>B. **TFH (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>TFH origin</b>, <b>RHOA G17V</b>, <b>TET2/DNMT3A/IDH2</b>, <b>CD10+, CXCL13+</b>, <b>Hypergammaglobulinaemia</b>, <b>Autoimmune</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. **NPM1-ALK t(2</li><li>B. **NPM1-ALK (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>NPM1-ALK t(2;5)</b>, <b>CD30+, ALK+, EMA+</b>, <b>Young, Good prognosis</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>PTCL-NOS/AITL: CHOEP</b></li><li>B. **PTCL-NOS/AITL: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>PTCL-NOS/AITL: CHOEP</b>; <b>ALK+ ALCL: CHOP</b>; <b>CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Standard in 1L CR/PR</b> for PTCL-NOS, AITL, ALK- ALCL</li><li>B. **Standard (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Standard in 1L CR/PR</b> for PTCL-NOS, AITL, ALK- ALCL; <b>ALK+ ALCL: Controversial</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Brentuximab (CD30+)</b>, <b>Romidepsin/Belinostat (HDACi)</b>, <b>Pralatrexate</b>, <b>Alemtuzumab</b>, **CAR</li><li>B. **Brentuximab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Brentuximab (CD30+)</b>, <b>Romidepsin/Belinostat (HDACi)</b>, <b>Pralatrexate</b>, <b>Alemtuzumab</b>, <b>CAR-T</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>HTLV-1+</b>, <b>Zidovudine+IFN-α</b>, <b>Mogamulizumab (CCR4)</b>, <b>Allo-HSCT</b></li><li>B. <b>HTLV-1+</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>HTLV-1+</b>, <b>Zidovudine+IFN-α</b>, <b>Mogamulizumab (CCR4)</b>, <b>Allo-HSCT</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>EBV+</b>, <b>CD56+, Cytotoxic</b>, <b>Asparaginase-based (SMILE/DeVIC) + RT</b>, **PD-1 inhibitors relapse</li><li>B. <b>EBV+</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>EBV+</b>, <b>CD56+, Cytotoxic</b>, <b>Asparaginase-based (SMILE/DeVIC) + RT</b>, <b>PD-1 inhibitors relapsed</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Coeliac</b>, <b>Type I (CD8+), Type II (CD56+)</b>, <b>Surgery + Chemo</b></li><li>B. <b>Coeliac</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Coeliac</b>, <b>Type I (CD8+), Type II (CD56+)</b>, <b>Surgery + Chemo</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> PTCL Subtypes? <b>A1:</b> PTCL-NOS (30-40%), AITL (15-20%), ALK+ ALCL (10%), ALK- ALCL (10%), ATLL (5%), EATL (5%), NK/T-cell (5-10%)</p>
+<p><b>Q2:</b> IHC Key? <b>A2:</b> CD3+, CD4/CD8, CD30 (ALCL), ALK (ALK+ ALCL), RHOA G17V (AITL), EBER (NK/T-cell, AITL), CCR4 (ATLL), CD56 (NK/T, Hepatosplenic)</p>
+<p><b>Q3:</b> AITL? <b>A3:</b> TFH origin, RHOA G17V, TET2/DNMT3A/IDH2, CD10+, CXCL13+, Hypergammaglobulinaemia, Autoimmune</p>
+<p><b>Q4:</b> ALK+ ALCL? <b>A4:</b> NPM1-ALK t(2;5), CD30+, ALK+, EMA+, Young, Good prognosis</p>
+<p><b>Q5:</b> 1L Therapy? <b>A5:</b> PTCL-NOS/AITL: CHOEP; ALK+ ALCL: CHOP; CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)</p>
+<p><b>Q6:</b> Consolidation ASCT? <b>A6:</b> Standard in 1L CR/PR for PTCL-NOS, AITL, ALK- ALCL; ALK+ ALCL: Controversial</p>
+<p><b>Q7:</b> Relapsed? <b>A7:</b> Brentuximab (CD30+), Romidepsin/Belinostat (HDACi), Pralatrexate, Alemtuzumab, CAR-T</p>
+<p><b>Q8:</b> ATLL? <b>A8:</b> HTLV-1+, Zidovudine+IFN-α, Mogamulizumab (CCR4), Allo-HSCT</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>PTCL Subtypes</td><td>PTCL-NOS (30-40%), AITL (15-20%), ALK+ ALCL (10%), ALK- ALCL (10%), ATLL (5%), EATL (5%), NK/T-cell (5-10%)</td></tr><tr><td>2</td><td>A</td><td>IHC Key</td><td>CD3+, CD4/CD8, CD30 (ALCL), ALK (ALK+ ALCL), RHOA G17V (AITL), EBER (NK/T-cell, AITL), CCR4 (ATLL), CD56 (NK/T, Hepatosp</td></tr><tr><td>3</td><td>A</td><td>AITL</td><td>TFH origin, RHOA G17V, TET2/DNMT3A/IDH2, CD10+, CXCL13+, Hypergammaglobulinaemia, Autoimmune</td></tr><tr><td>4</td><td>A</td><td>ALK+ ALCL</td><td>NPM1-ALK t(2;5), CD30+, ALK+, EMA+, Young, Good prognosis</td></tr><tr><td>5</td><td>A</td><td>1L Therapy</td><td>PTCL-NOS/AITL: CHOEP; ALK+ ALCL: CHOP; CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)</td></tr><tr><td>6</td><td>A</td><td>Consolidation ASCT</td><td>Standard in 1L CR/PR for PTCL-NOS, AITL, ALK- ALCL; ALK+ ALCL: Controversial</td></tr><tr><td>7</td><td>A</td><td>Relapsed</td><td>Brentuximab (CD30+), Romidepsin/Belinostat (HDACi), Pralatrexate, Alemtuzumab, CAR-T</td></tr><tr><td>8</td><td>A</td><td>ATLL</td><td>HTLV-1+, Zidovudine+IFN-α, Mogamulizumab (CCR4), Allo-HSCT</td></tr><tr><td>9</td><td>A</td><td>NK/T-cell</td><td>EBV+, CD56+, Cytotoxic, Asparaginase-based (SMILE/DeVIC) + RT, PD-1 inhibitors relapsed</td></tr><tr><td>10</td><td>A</td><td>EATL</td><td>Coeliac, Type I (CD8+), Type II (CD56+), Surgery + Chemo</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>PTCL Subtypes</td><td>PTCL-NOS (30-40%), AITL (15-20%), ALK+ ALCL (10%), ALK- ALCL (10%), ATLL (5%), EATL (5%), NK/T-cell (5-10%)</td></tr><tr><td>2</td><td>A</td><td>IHC Key</td><td>CD3+, CD4/CD8, CD30 (ALCL), ALK (ALK+ ALCL), RHOA G17V (AITL), EBER (NK/T-cell, AITL), CCR4 (ATLL), CD56 (NK/T, Hepatosp</td></tr><tr><td>3</td><td>A</td><td>AITL</td><td>TFH origin, RHOA G17V, TET2/DNMT3A/IDH2, CD10+, CXCL13+, Hypergammaglobulinaemia, Autoimmune</td></tr><tr><td>4</td><td>A</td><td>ALK+ ALCL</td><td>NPM1-ALK t(2;5), CD30+, ALK+, EMA+, Young, Good prognosis</td></tr><tr><td>5</td><td>A</td><td>1L Therapy</td><td>PTCL-NOS/AITL: CHOEP; ALK+ ALCL: CHOP; CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)</td></tr><tr><td>6</td><td>A</td><td>Consolidation ASCT</td><td>Standard in 1L CR/PR for PTCL-NOS, AITL, ALK- ALCL; ALK+ ALCL: Controversial</td></tr><tr><td>7</td><td>A</td><td>Relapsed</td><td>Brentuximab (CD30+), Romidepsin/Belinostat (HDACi), Pralatrexate, Alemtuzumab, CAR-T</td></tr><tr><td>8</td><td>A</td><td>ATLL</td><td>HTLV-1+, Zidovudine+IFN-α, Mogamulizumab (CCR4), Allo-HSCT</td></tr><tr><td>9</td><td>A</td><td>NK/T-cell</td><td>EBV+, CD56+, Cytotoxic, Asparaginase-based (SMILE/DeVIC) + RT, PD-1 inhibitors relapsed</td></tr><tr><td>10</td><td>A</td><td>EATL</td><td>Coeliac, Type I (CD8+), Type II (CD56+), Surgery + Chemo</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · T Cell Lymphomas · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Obesity Assessment Complications Management — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.7. SPECIAL TOPICS</span>
+      <div class="h1">Obesity Assessment Complications Management</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define obesity: WHO BMI ≥30; Asian BMI ≥25; visceral adiposity by waist (M &gt;102, F &gt;88; Asian M &gt;90, F &gt;80)</li><li>[ ] Recognise complications: T2DM, CVD, NAFLD/NASH, OSA, OA, cancer (endometrial, breast, colon), depression, infertility</li><li>[ ] State assessment: BMI, waist, waist:hip, body composition (BIA), Edmonton/Stunkard classification, eating disorder screen</li><li>[ ] Apply lifestyle interventions: 500-1000 kcal/day deficit; 5-10% weight loss; 150-300 min/week exercise</li><li>[ ] Describe medications: orlistat (Pancreatic lipase inhibitor), semaglutide 2.4 mg (GLP-1 agonist), liraglutide, naltrexone-bupropion (Mysimba), phentermine-topiramate</li><li>[ ] State bariatric surgery indications: BMI ≥40 (or ≥35 with comorbidity), BMI ≥30 with T2DM (some guidelines); Roux-en-Y gastric bypass (RYGB), sleeve gastrectomy (SG), adjustable gastric band (LAGB)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**BMI (Body Mass Index)**</td><td>Weight (kg) / Height² (m²)</td></tr><tr><td>**WHO BMI cut-offs**</td><td><18.5 underweight; 18.5-24.9 normal; 25-29.9 overweight; 30-34.9 class I; 35-39.9 class II; ≥40 class III (morbid)</td></tr><tr><td>**Asian BMI cut-offs**</td><td><18.5 under; 18.5-22.9 normal; 23-27.5 overweight; ≥27.5 obese (lower due to ↑metabolic risk)</td></tr><tr><td>**Waist Circumference**</td><td>M >102 cm (Asian >90); F >88 cm (Asian >80) = visceral obesity</td></tr><tr><td>**Waist:Hip Ratio**</td><td>M >0.9; F >0.85 (abdominal obesity)</td></tr><tr><td>**Adipocyte Biology**</td><td>↑Fat storage → hypertrophy; ↑inflammation (TNF-α, IL-6); adiponectin ↓; leptin resistance</td></tr><tr><td>**NAFLD**</td><td>Non-alcoholic fatty liver disease; steatosis; progression to NASH, fibrosis, cirrhosis, HCC</td></tr><tr><td>**NASH**</td><td>Non-alcoholic steatohepatitis; steatosis + inflammation + hepatocyte injury</td></tr><tr><td>**MHO**</td><td>Metabolically healthy obesity; absence of metabolic complications (controversial)</td></tr><tr><td>**Metabolic Syndrome (IDF 2006)**</td><td>Central obesity (waist) + 2 of: TG ≥1.7, HDL low (M <1.0, F <1.3), BP ≥130/85, FPG ≥5.6, or Rx</td></tr><tr><td>**Bariatric Surgery**</td><td>RYGB (gold standard), SG (most common), LAGB, BPD/DS</td></tr><tr><td>**GLP-1 Receptor Agonist (Semaglutide, Liraglutide)**</td><td>Incretin; ↓glucagon, ↓gastric emptying, ↑satiety; weight loss 5-15% (semaglutide 15-20%)</td></tr><tr><td>**Orlistat**</td><td>Pancreatic lipase inhibitor; ↓fat absorption 30%; modest weight loss; GI side effects (oily stool)</td></tr><tr><td>**Naltrexone-Bupropion (Mysimba)**</td><td>↓food reward; weight loss 5-10%</td></tr><tr><td>**Binge Eating Disorder (BED)**</td><td>Recurrent binge eating without compensatory behaviours; common in obesity</td></tr><tr><td>**Y-Y Gastric Bypass (RYGB)**</td><td>Biliopancreatic + alimentary limb; ~70% EWL; gold standard; resolves T2DM 80%</td></tr><tr><td>**Sleeve Gastrectomy (SG)**</td><td>Gastric volume ↓; ~60% EWL; most common; less malabsorption</td></tr><tr><td>**Adjustable Gastric Band (LAGB)**</td><td>Restrictive; ~50% EWL; less common; adjustable, reversible</td></tr><tr><td>**Excess Weight Loss (%EWL)**</td><td>(Weight lost / excess weight) × 100; success = ≥50% EWL</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Assessment</div>
+<p><b>Anthropometry:</b></p>
+<ul><li><b>BMI</b> (WHO; Asian); weight, height</li><li><b>Waist</b> (visceral adiposity); M &gt;102 (Asian &gt;90); F &gt;88 (Asian &gt;80)</li><li><b>Waist:Hip ratio</b>; M &gt;0.9; F &gt;0.85</li><li><b>Neck circumference</b> (OSA risk); M &gt;40 cm; F &gt;36 cm</li><li><b>Body composition</b> (BIA, DEXA): fat mass, lean mass, body fat %</li><li><b>Skinfold thickness</b> (less accurate in obesity)</li></ul>
+<p><b>Classification:</b></p>
+<ul><li>WHO: &lt;18.5 underweight; 18.5-24.9 normal; 25-29.9 overweight; 30+ obese</li><li>Asian: 18.5-22.9 normal; 23-27.5 overweight; ≥27.5 obese</li><li>Edmonton (severity scale)</li><li>STOP-BANG (OSA screening)</li></ul>
+<p><b>Co-morbidity Screening:</b></p>
+<ul><li>T2DM: HbA1c, fasting glucose, OGTT</li><li>Dyslipidaemia: TC, LDL, HDL, TG</li><li>Hypertension: BP, ABPM</li><li>NAFLD: LFTs, ultrasound, FibroScan</li><li>OSA: STOP-BANG, Epworth Sleepiness Scale</li><li>CVD risk: ASCVD calculator, QRISK3</li><li>Depression/anxiety (PHQ-9, GAD-7)</li><li>Eating disorder screen (SCOFF, EAT-26)</li><li>Infertility, PCOS (women)</li><li>Low testosterone (men)</li><li>Cancer screening (endometrial, breast, colon, prostate)</li></ul>
+<div class="sub-h">Section 2: Complications (Obesity Comorbidities)</div>
+<p><b>Metabolic:</b></p>
+<ul><li><b>T2DM</b> (RR 10-30×); insulin resistance</li><li><b>Dyslipidaemia:</b> ↑TG, ↓HDL, ↑small dense LDL</li><li><b>Hypertension</b> (RR 2-6×)</li><li><b>Metabolic syndrome</b> (30%)</li><li><b>Hyperuricaemia, gout</b></li></ul>
+<p><b>Cardiovascular:</b></p>
+<ul><li><b>Coronary artery disease</b> (RR 2-3×)</li><li><b>Heart failure</b> (preserved EF — HFpEF)</li><li><b>Atrial fibrillation</b></li><li><b>Stroke</b> (ischaemic)</li><li><b>Venous thromboembolism</b> (DVT/PE)</li></ul>
+<p><b>Respiratory:</b></p>
+<ul><li><b>Obstructive sleep apnoea (OSA):</b> 40-70% of morbidly obese</li><li><b>Obesity hypoventilation syndrome (OHS):</b> BMI ≥40, ↑PaCO2, sleep-disordered breathing</li><li><b>Asthma</b> (worse control)</li><li><b>PE</b> (↑risk)</li></ul>
+<p><b>GI/Hepatic:</b></p>
+<ul><li><b>NAFLD</b> (~70%); NASH (20%); cirrhosis, HCC</li><li><b>Gallstones</b> (cholesterol; ↑risk with rapid weight loss)</li><li><b>GERD</b></li><li><b>Pancreatitis</b> (gallstones, hypertriglyceridaemia)</li></ul>
+<p><b>Musculoskeletal:</b></p>
+<ul><li><b>Osteoarthritis</b> (knees, hips)</li><li><b>Gout</b></li><li><b>Back pain</b></li><li><b>Sarcopenic obesity</b> (loss of lean mass in elderly)</li></ul>
+<p><b>Reproductive:</b></p>
+<ul><li><b>Women:</b> PCOS, infertility, gestational DM, pre-eclampsia, miscarriage</li><li><b>Men:</b> Hypogonadism, infertility, ↓testosterone</li></ul>
+<p><b>Cancer:</b></p>
+<ul><li>Endometrial (RR 2-7×), breast (postmenopausal), colon, oesophageal, kidney, liver, pancreas, gallbladder, ovarian</li></ul>
+<p><b>Psychosocial:</b></p>
+<ul><li><b>Depression, anxiety</b> (bidirectional)</li><li><b>Binge eating disorder</b> (BED)</li><li><b>Stigma, discrimination</b></li><li><b>↑Risk suicide</b></li></ul>
+<p><b>Renal:</b></p>
+<ul><li><b>CKD, FSGS, nephrolithiasis</b></li></ul>
+<p><b>Skin:</b></p>
+<ul><li><b>Acanthosis nigricans</b> (insulin resistance)</li><li><b>Striae, intertrigo, lymphoedema</b></li><li><b>Cellulitis, erysipelas</b></li></ul>
+<div class="sub-h">Section 3: Management Algorithm</div>
+<table class="ctable"><tr><th>Step</th><th>Indication</th><th>Action</th></tr><tr><td>------</td><td>-----------</td><td>--------</td></tr><tr><td>**1. Lifestyle**</td><td>All</td><td>Calorie restriction 500-1000 kcal/day; balanced diet (Mediterranean); 150-300 min/wk exercise; behavioural therapy</td></tr><tr><td>**2. Pharmacotherapy**</td><td>BMI ≥30 OR ≥27 with comorbidity</td><td>Orlistat, semaglutide, liraglutide, naltrexone-bupropion, phentermine-topiramate</td></tr><tr><td>**3. Bariatric Surgery**</td><td>BMI ≥40 (Asian ≥37.5), OR ≥35 with comorbidity (Asian ≥32.5), OR ≥30 with T2DM (some)</td><td>RYGB, SG, LAGB, BPD/DS</td></tr><tr><td>**4. Maintenance**</td><td>All post-loss</td><td>Long-term follow-up; diet; exercise; medication; consider surgery</td></tr></table>
+<div class="sub-h">Section 4: Lifestyle Interventions</div>
+<p><b>Diet:</b></p>
+<ul><li><b>Calorie deficit 500-1000 kcal/day</b> → 0.5-1 kg/week loss</li><li><b>Macronutrient distribution:</b> Mediterranean (40% CHO, 30% protein, 30% fat); low-fat; low-CHO; intermittent fasting</li><li><b>Behavioural:</b> Self-monitoring, goal-setting, problem-solving</li><li><b>Very low-calorie diets (VLCD):</b> 800 kcal/day; rapid loss; medical supervision; risk of gallstones</li><li><b>Plate method:</b> 1/2 vegetables, 1/4 protein, 1/4 complex CHO</li><li><b>Avoid:</b> Crash diets, fad diets, restrictive; focus on sustainable change</li></ul>
+<p><b>Physical Activity:</b></p>
+<ul><li><b>Aerobic:</b> 150-300 min/week moderate (walking, cycling, swimming)</li><li><b>Resistance:</b> 2-3 days/week (preserves lean mass)</li><li><b>Behavioural:</b> Pedometer, exercise buddy, scheduled</li><li><b>Start low, build up</b> (avoid injury)</li><li><b>Sitting time:</b> Reduce (≥7 hr/day = ↑mortality)</li></ul>
+<p><b>Behavioural Therapy:</b></p>
+<ul><li><b>CBT (Cognitive Behavioural Therapy):</b> Self-monitoring, stimulus control, problem-solving</li><li><b>Motivational interviewing</b></li><li><b>Group support:</b> Weight Watchers, NHS programmes</li><li><b>Apps, wearables</b></li></ul>
+<div class="sub-h">Section 5: Pharmacotherapy</div>
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>Weight Loss</th><th>Notes</th></tr><tr><td>------</td><td>-----------</td><td>-------------</td><td>-------</td></tr><tr><td>**Orlistat (Xenical, Alli)**</td><td>Pancreatic lipase inhibitor</td><td>3-5 kg (12 wk)</td><td>↓Fat absorption 30%; GI side effects (oily stool, flatulence); multivitamin 2h apart; OTC 60 mg (Alli), Rx 120 mg</td></tr><tr><td>**Liraglutide (Saxenda 3 mg)**</td><td>GLP-1 receptor agonist</td><td>5-8%</td><td>Daily SC; nausea (transient); pancreatitis; thyroid C-cell risk (avoid in MEN2)</td></tr><tr><td>**Semaglutide (Wegovy 2.4 mg)**</td><td>GLP-1 RA (long-acting)</td><td>15-20%</td><td>Weekly SC; cardiovascular benefit (SELECT); T2DM benefit; STEP trials; expensive; shortage</td></tr><tr><td>**Tirzepatide (Mounjaro 15 mg)**</td><td>GIP/GLP-1 dual agonist</td><td>20-25%</td><td>Weekly SC; SURMOUNT trials; T2DM; obesity approval</td></tr><tr><td>**Naltrexone-Bupropion (Mysimba)**</td><td>↓Food reward, ↓appetite</td><td>5-10%</td><td>Naltrexone (μ-opioid antagonist) + bupropion (NDRI); nausea, ↑BP; contraindicated in seizures, ↑ICP</td></tr><tr><td>**Phentermine-Topiramate (Qsymia)**</td><td>Sympathomimetic + anticonvulsant</td><td>10-15%</td><td>Phentermine (anorectic) + topiramate (↓appetite); teratogenic (topiramate); CVD risk</td></tr><tr><td>**Bupropion (Zyban, off-label)**</td><td>NDRI</td><td>3-5%</td><td>Monotherapy; contraindicated seizures, eating disorders</td></tr><tr><td>**Setmelanotide (Imcivree)**</td><td>MC4R agonist</td><td>10-15%</td><td>Specific for POMC, LEPR, PCSK1 deficiency; rare genetic obesity</td></tr></table>
+<div class="sub-h">Section 6: Bariatric Surgery</div>
+<p><b>Indications (NICE):</b></p>
+<ul><li>BMI ≥40 (Asian ≥37.5)</li><li>BMI 35-39.9 (Asian 32.5-37.5) with significant comorbidity (T2DM, HTN, OSA, NAFLD)</li><li>BMI 30-34.9 (Asian 27.5-32.5) with T2DM (some)</li><li>Failed conservative management (≥6 months)</li></ul>
+<p><b>Procedures:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Procedure&lt;/th&gt;&lt;th&gt;%EWL&lt;/th&gt;&lt;th&gt;Mechanism&lt;/th&gt;&lt;th&gt;Comorbidities Resolved&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------------------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Roux-en-Y Gastric Bypass (RYGB)</b>&lt;/td&gt;&lt;td&gt;60-80%&lt;/td&gt;&lt;td&gt;Restrictive + malabsorptive; small gastric pouch + Y-limb&lt;/td&gt;&lt;td&gt;T2DM 80%, HTN, OSA, dyslipidaemia&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Sleeve Gastrectomy (SG)</b>&lt;/td&gt;&lt;td&gt;50-70%&lt;/td&gt;&lt;td&gt;Restrictive; ~75% stomach removed&lt;/td&gt;&lt;td&gt;T2DM 60-70%, HTN, OSA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Adjustable Gastric Band (LAGB)</b>&lt;/td&gt;&lt;td&gt;40-55%&lt;/td&gt;&lt;td&gt;Restrictive; inflatable band&lt;/td&gt;&lt;td&gt;Less comorbidity resolution; reversible&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>BPD-DS (Biliopancreatic Diversion-Duodenal Switch)</b>&lt;/td&gt;&lt;td&gt;70-90%&lt;/td&gt;&lt;td&gt;Malabsorptive&lt;/td&gt;&lt;td&gt;Most weight loss; most malabsorption; protein/vitamin deficiency&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Complications:</b></p>
+<ul><li><b>Early:</b> Anastomotic leak, bleeding, DVT/PE, infection, dumping syndrome (RYGB)</li><li><b>Late:</b> Stomal stenosis, marginal ulcer, gallstones, malnutrition (B12, Fe, Ca, D, protein), dumping</li><li><b>Re-operation:</b> 10-20% lifetime risk</li><li><b>Dumping:</b> Early (15-30 min; osmotic) vs Late (1-3 h; hypoglycaemia)</li><li><b>Wernicke, neuropathy</b> (B1, B12, Cu)</li></ul>
+<p><b>Post-op Management:</b></p>
+<ul><li><b>Lifelong multivitamins, B12, Fe, Ca, vit D</b></li><li><b>B1, B12, B6, folate supplementation</b></li><li><b>Quarterly + annual blood tests</b></li><li><b>Pregnancy: avoid 12-18 months post-op</b> (malabsorption)</li><li><b>Dumping syndrome management:</b> Small meals, low simple carb, protein-rich</li></ul>
+<div class="sub-h">Section 7: Special Considerations</div>
+<ul><li><b>MHO (Metabolically Healthy Obesity):</b> 10-30%; may not be "healthy" long-term; monitor for complications</li><li><b>Sarcopenic Obesity:</b> Loss of lean mass with obesity; resistance training + protein; elderly</li><li><b>Childhood Obesity:</b> Earlier = higher CV risk; family-based intervention; surgery rare (&lt;18y)</li><li><b>PCOS + Obesity:</b> Weight loss improves ovulation, insulin; metformin; liraglutide</li><li><b>OSA + Obesity:</b> CPAP + weight loss; bariatric surgery improves OSA</li><li><b>NAFLD + Obesity:</b> Weight loss ≥10% improves fibrosis; lifestyle + pioglitazone/Vitamin E (NASH)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>45M, BMI 34, T2DM, HTN, OSA</td><td>**Lifestyle + GLP-1 (semaglutide 2.4 mg) or bariatric surgery if BMI ≥35**; screen NAFLD</td><td>Multidisciplinary</td></tr><tr><td>35F, BMI 42, T2DM, infertility</td><td>**Bariatric surgery (RYGB or SG)**; pre-op optimisation; b12, iron</td><td>Morbid obesity; T2DM</td></tr><tr><td>55F, BMI 32, OA knees, NAFLD</td><td>**Lifestyle + orlistat 120 mg TDS**; Mediterranean; exercise</td><td>Moderate obesity</td></tr><tr><td>30F, BMI 28, BED, depression</td><td>**CBT; mirtazapine 15 mg**; lifestyle; avoid bariatric (BED worse)</td><td>Mental health</td></tr><tr><td>65F, BMI 36, post-MI, frailty, sarcopenia</td><td>**Protein 1.2-1.5 g/kg; resistance training; cautious weight loss**</td><td>Sarcopenic obesity</td></tr><tr><td>50M, BMI 41, OSA (CPAP), NASH</td><td>**Bariatric surgery (SG)**; CPAP continues; screen HCC; lifestyle</td><td>Comorbidities</td></tr><tr><td>25F, BMI 38, T2DM, failed lifestyle, medication</td><td>**Bariatric surgery**; post-op lifelong vitamins</td><td>NICE criteria met</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> WHO BMI ≥30 obesity (Asian ≥25); waist M &gt;102 (Asian &gt;90), F &gt;88 (Asian &gt;80); complications (T2DM, CVD, NAFLD, OSA, OA, cancer); lifestyle (500-1000 kcal deficit, 150-300 min/wk); medications (orlistat, semaglutide, naltrexone-bupropion); bariatric indications (BMI ≥40, ≥35 comorbidity); RYGB/SG types - <b>Common viva:</b> BMI cut-offs, waist criteria, complications, lifestyle, orlistat mechanism, GLP-1 RA, bariatric indications, post-op nutrition, dumping syndrome - <b>Exam trap:</b> Using BMI in athletes/muscle; not screening for OSA; missing B12 deficiency post-RYGB; thinking MHO is safe</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>BMI = adiposity</td><td>**BMI doesn't distinguish muscle vs fat**; use waist (visceral), body composition (BIA)</td></tr><tr><td>All obesity same</td><td>**MHO vs metabolically unhealthy**; complications vary</td></tr><tr><td>Orlistat safe</td><td>**GI side effects** (oily stool); vit deficiency (A, D, E, K); multivitamin 2h apart</td></tr><tr><td>Semaglutide for T2DM only</td><td>**Obesity (Wegovy 2.4 mg)** different dose; T2DM (Ozempic 0.5-2 mg)</td></tr><tr><td>Bariatric = cosmetic</td><td>**Medical procedure**; mortality benefit; comorbidity resolution; long-term monitoring</td></tr><tr><td>RYGB = SG</td><td>**RYGB = bypass + malabsorption**; **SG = restrictive only**; RYGB higher weight loss, more complications</td></tr><tr><td>BED = anorexia</td><td>**BED = binge without compensation**; common in obesity; bariatric may worsen</td></tr><tr><td>MHO = benign</td><td>**Not benign long-term**; monitor for metabolic complications</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>BMI cut-offs:</b> <b>25 overweight, 30 obese, 40 morbid</b>; Asian <b>23, 27.5</b></li><li><b>Waist cut-offs:</b> M <b>&gt;102</b> (Asian <b>&gt;90</b>), F <b>&gt;88</b> (Asian <b>&gt;80</b>)</li><li><b>Complications:</b> <b>D</b>iabetes, <b>C</b>VD, <b>NAFLD</b>, <b>OSA</b>, <b>OA</b>, <b>C</b>ancer, <b>PCOS</b>, <b>D</b>epression = <b>DCNA-OCD</b></li><li><b>Lifestyle:</b> <b>500-1000 kcal deficit; 5-10% loss; 150-300 min/wk</b></li><li><b>Orlistat:</b> <b>O</b>ily <b>S</b>tool (lipase inhibition); multivitamin 2h apart</li><li><b>GLP-1:</b> <b>S</b>emaglutide <b>W</b>eekly <b>2.4 mg</b> → <b>15-20% loss</b>; nausea</li><li><b>Bariatric surgery:</b> <b>R</b>YGB <b>G</b>old <b>S</b>tandard; <b>S</b>leeve <b>M</b>ost <b>C</b>ommon</li><li><b>Indications:</b> <b>BMI ≥40 (Asian ≥37.5)</b> or <b>≥35 (≥32.5) + comorbidity</b></li><li><b>Post-op nutrition:</b> <b>Lifelong B12, Fe, Ca, vit D, multivitamin</b></li><li><b>Dumping:</b> <b>E</b>arly 30 min (osmotic); <b>L</b>ate 3h (hypoglycaemia)</li><li><b>MHO:</b> M<b>etabolically </b>H<b>ealthy </b>O**besity (transient, monitor)</li><li><b>Sarcopenic obesity:</b> Loss of lean mass; resistance exercise; protein 1.2-1.5 g/kg</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Obesity)) BMI WHO ≥30 Asian ≥25 Waist M &gt;102 (Asian &gt;90) F &gt;88 (Asian &gt;80) Complications T2DM CVD, HTN NAFLD/NASH OSA OA Cancer Lifestyle 500-1000 kcal deficit 5-10% loss 150-300 min/wk Medications Orlistat GLP-1 (semaglutide) Naltrexone-Bupropion Bariatric RYGB Sleeve gastrectomy LAGB Post-op vitamins </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>BMI: WHO ≥30, Asian ≥25; waist M &gt;102 (Asian &gt;90), F &gt;88 (Asian &gt;80)</li><li>Complications: T2DM, CVD, NAFLD, OSA, OA, cancer</li><li>Lifestyle: 500-1000 kcal deficit, 5-10% loss, 150-300 min/wk</li><li>Orlistat: lipase inhibitor; GI side effects; multivitamin 2h apart</li><li>Semaglutide 2.4 mg: 15-20% weight loss; weekly SC</li><li>Bariatric: BMI ≥40, ≥35 comorbidity; RYGB gold standard</li><li>RYGB vs SG: RYGB = bypass + malabsorption; SG = restrictive</li><li>Post-op nutrition: lifelong B12, Fe, Ca, vit D, multivitamin</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>BMI/WHO, Asian cut-offs; waist criteria; complications; lifestyle (500-1000 kcal, 150-300 min/wk); orlistat, semaglutide, naltrexone-bupropion; bariatric indications; RYGB/SG types; post-op nutrition</td></tr><tr><td>**Should Know 🟡**</td><td>MHO, sarcopenic obesity; NAFLD/NASH; OSA screening (STOP-BANG); phentermine-topiramate; tirzepatide; setmelanotide (genetic); RYGB 80% T2DM resolution; B12/Fe post-op; dumping</td></tr><tr><td>**Nice to Know 🟢**</td><td>GLP-1 mechanism; microbiota in obesity; setmelanotide (POMC deficiency); BPD-DS; preconception delay 12-18 months; SET/SURMOUNT trials; bariatric endoscopy</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] GLP-1 RA mechanism detail</li><li>[ ] Tirzepatide dual GIP/GLP-1 agonist</li><li>[ ] BPD-DS specifics</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Obesity: assessment, complications, and management"</p>
+<ul><li>BMI (WHO ≥30, Asian ≥25); waist criteria (M &gt;102/Asian &gt;90, F &gt;88/Asian &gt;80)</li><li>Complications: T2DM, CVD, NAFLD, OSA, OA, cancer, PCOS, depression</li><li>Lifestyle: 500-1000 kcal deficit, 5-10% loss, 150-300 min/wk; behavioural therapy</li><li>Medications: orlistat (lipase inhibitor, 3-5 kg), semaglutide 2.4 mg (GLP-1, 15-20%), naltrexone-bupropion (5-10%), phentermine-topiramate</li><li>Bariatric surgery: BMI ≥40 or ≥35 comorbidity; RYGB (gold standard, 70% EWL, T2DM 80%) vs SG (most common, 60% EWL)</li><li>Post-op: lifelong multivitamins, B12, Fe, Ca, vit D; quarterly + annual monitoring; dumping syndrome management</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Bariatric Surgery: RYGB vs Sleeve Gastrectomy" &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Feature&lt;/th&gt;&lt;th&gt;RYGB&lt;/th&gt;&lt;th&gt;Sleeve Gastrectomy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-------------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Type</b>&lt;/td&gt;&lt;td&gt;Restrictive + malabsorptive&lt;/td&gt;&lt;td&gt;Restrictive only&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>%EWL</b>&lt;/td&gt;&lt;td&gt;60-80%&lt;/td&gt;&lt;td&gt;50-70%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Anatomy</b>&lt;/td&gt;&lt;td&gt;Small gastric pouch + Y-limb&lt;/td&gt;&lt;td&gt;~75% stomach removed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>T2DM resolution</b>&lt;/td&gt;&lt;td&gt;80%&lt;/td&gt;&lt;td&gt;60-70%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Complications</b>&lt;/td&gt;&lt;td&gt;Anastomotic leak, marginal ulcer, dumping, malnutrition&lt;/td&gt;&lt;td&gt;Leak, reflux (late)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Reversibility</b>&lt;/td&gt;&lt;td&gt;Difficult&lt;/td&gt;&lt;td&gt;Not reversible&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Nutrient def</b>&lt;/td&gt;&lt;td&gt;B12, Fe, Ca, D, protein&lt;/td&gt;&lt;td&gt;Less malabsorption&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "Compare bariatric surgery options." "A: <b>RYGB (Roux-en-Y Gastric Bypass):</b> Restrictive + malabsorptive; small gastric pouch + Y-limb; <b>60-80% EWL</b>; <b>T2DM resolution 80%</b>; more complications (anastomotic leak, marginal ulcer, dumping, malnutrition); more nutrient deficiency. <b>Sleeve Gastrectomy (SG):</b> Restrictive only; ~75% stomach removed; <b>50-70% EWL</b>; <b>T2DM 60-70%</b>; less malabsorption; reflux risk. <b>LAGB:</b> Restrictive, adjustable, reversible; less weight loss, less comorbidity resolution. <b>BPD-DS:</b> Most weight loss; most malabsorption; reserved for super-obesity."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 40F, BMI 41, T2DM (HbA1c 8.5%), HTN, OSA on CPAP, NASH. "Diagnosis: <b>Morbid obesity with multiple comorbidities</b>. <b>Action: 1) Multidisciplinary team</b> (endocrinologist, bariatric surgeon, dietitian, psychologist). 2) <b>Lifestyle:</b> calorie deficit, 5-10% loss target. 3) <b>Medications:</b> GLP-1 (semaglutide 2.4 mg) or consideration for bariatric. 4) <b>Bariatric surgery candidate</b> (BMI ≥40 OR ≥35 with comorbidity): RYGB or SG; <b>RYGB best for T2DM</b> (80% resolution). 5) <b>Pre-op:</b> sleep study optimisation (CPAP), T2DM control, NASH monitoring, vitamin D, B12. 6) <b>Post-op:</b> lifelong multivitamins, B12, Fe, Ca, vit D; quarterly bloods. 7) <b>Screen for BED</b> before surgery (relative contraindication). 8) <b>Pregnancy</b> delay 12-18 months post-op."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min</div>
+<ul><li><b>BMI:</b> WHO ≥30, Asian ≥25; class I 30-34.9, II 35-39.9, III ≥40</li><li><b>Waist:</b> M &gt;102 (Asian &gt;90), F &gt;88 (Asian &gt;80) = visceral obesity</li><li><b>Complications:</b> T2DM, CVD, NAFLD, OSA, OA, cancer</li><li><b>Lifestyle:</b> 500-1000 kcal deficit, 5-10% loss, 150-300 min/wk</li><li><b>Orlistat:</b> Lipase inhibitor; GI side effects; multivitamin 2h apart</li><li><b>Semaglutide 2.4 mg:</b> GLP-1, weekly SC, 15-20% weight loss</li><li><b>Bariatric:</b> BMI ≥40 or ≥35 comorbidity; RYGB (gold standard, 70% EWL) vs SG (most common, 60% EWL)</li><li><b>Post-op:</b> Lifelong B12, Fe, Ca, vit D, multivitamins; dumping syndrome (early osmotic, late hypoglycaemia)</li><li><b>Pregnancy:</b> Delay 12-18 months post-op</li><li><b>MHO:</b> Not benign; monitor</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>WHO obesity classification (BMI):</b></li></ol>
+<p>A. ≥25 B. <b>≥30</b> C. ≥35 D. ≥40 E. ≥45</p>
+<ol><li><b>Asian BMI cut-off for obesity:</b></li></ol>
+<p>A. ≥23 B. ≥25 C. <b>≥27.5</b> D. ≥30 E. ≥35</p>
+<ol><li><b>Waist circumference cut-off for visceral obesity in European men:</b></li></ol>
+<p>A. &gt;88 cm B. &gt;94 cm C. <b>&gt;102 cm</b> D. &gt;110 cm E. &gt;120 cm</p>
+<ol><li><b>Orlistat mechanism of action:</b></li></ol>
+<p>A. Appetite suppressant (serotonergic) B. <b>Pancreatic lipase inhibitor (↓fat absorption 30%)</b> C. GLP-1 receptor agonist D. Norepinephrine reuptake inhibitor E. Endocannabinoid antagonist</p>
+<ol><li><b>Semaglutide 2.4 mg (Wegovy) for obesity achieves:</b></li></ol>
+<p>A. 5-8% weight loss B. 10-12% weight loss C. <b>15-20% weight loss</b> D. 25-30% weight loss E. 30-40% weight loss</p>
+<ol><li><b>Bariatric surgery NICE indication:</b></li></ol>
+<p>A. <b>BMI ≥40 (or ≥35 with significant comorbidity)</b> B. BMI ≥30 alone C. BMI ≥25 with comorbidity D. Any BMI with T2DM E. BMI ≥50 only</p>
+<ol><li><b>T2DM resolution after Roux-en-Y Gastric Bypass (RYGB):</b></li></ol>
+<p>A. 20-30% B. 40-50% C. 60-70% D. <b>~80%</b> E. 95%</p>
+<ol><li><b>Dumping syndrome early (15-30 min after meal) mechanism:</b></li></ol>
+<p>A. Reactive hypoglycaemia B. <b>Osmotic fluid shifts into small bowel (hyperosmolar food)</b> C. Bacterial overgrowth D. Bile acid malabsorption E. Hypergastrinaemia</p>
+<ol><li><b>Post-bariatric surgery pregnancy recommendation:</b></li></ol>
+<p>A. Immediate B. 6 months post-op C. <b>12-18 months post-op</b> (avoid malabsorption) D. 5 years post-op E. Never pregnant</p>
+<ol><li><b>Asian waist circumference cut-off for visceral obesity (women):</b></li></ol>
+<p>A. &gt;70 cm B. <b>&gt;80 cm</b> C. &gt;88 cm D. &gt;94 cm E. &gt;100 cm</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 45-year-old man, BMI 38, T2DM (HbA1c 8.5%), HTN, OSA on CPAP, NASH. Failed lifestyle. Best next step?</b></li></ol>
+<p>A. Orlistat B. Semaglutide 2.4 mg C. <b>Bariatric surgery (RYGB or SG; BMI ≥35 + comorbidity)</b> D. Phentermine E. Continue lifestyle only</p>
+<ol><li><b>A 35-year-old woman, BMI 42, T2DM, infertility, NASH. Best management?</b></li></ol>
+<p>A. Orlistat only B. Semaglutide 2.4 mg C. <b>Bariatric surgery (RYGB preferred for T2DM and fertility)</b> D. Low-fat diet only E. Metformin only</p>
+<ol><li><b>A 55-year-old, BMI 32, knee OA, NAFLD, otherwise well. Best first-line?</b></li></ol>
+<p>A. Bariatric surgery B. <b>Lifestyle + orlistat or GLP-1; bariatric if BMI ≥35 with comorbidity</b> C. TPN D. NG tube feeding E. TPN</p>
+<ol><li><b>A 40-year-old, post-RYGB 3 months ago, presents with fatigue, pallor, MCV 105. Most likely cause?</b></li></ol>
+<p>A. Iron deficiency B. <b>Vitamin B12 deficiency (RYGB malabsorption)</b> C. Folate deficiency D. Hypothyroidism E. Anaemia of chronic disease</p>
+<ol><li><b>A 45-year-old, BMI 35, T2DM, considering bariatric surgery. Best procedure for T2DM?</b></li></ol>
+<p>A. Adjustable gastric band (LAGB) B. <b>Roux-en-Y Gastric Bypass (RYGB) - 80% T2DM resolution</b> C. Sleeve gastrectomy (SG) D. Intragastric balloon E. Endoscopic sleeve</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: BMI cut-offs</li></ul>
+<p>A: <b>WHO: ≥30 obese; Asian: ≥27.5 obese</b>; class III (morbid) ≥40</p>
+<ul><li>Q: Waist criteria</li></ul>
+<p>A: <b>M &gt;102 cm (Asian &gt;90); F &gt;88 cm (Asian &gt;80)</b></p>
+<ul><li>Q: Lifestyle intervention</li></ul>
+<p>A: <b>500-1000 kcal deficit, 5-10% loss, 150-300 min/wk</b></p>
+<ul><li>Q: Orlistat mechanism</li></ul>
+<p>A: <b>Pancreatic lipase inhibitor; ↓fat absorption 30%; oily stool</b></p>
+<ul><li>Q: Semaglutide 2.4 mg</li></ul>
+<p>A: <b>GLP-1 RA; weekly SC; 15-20% weight loss; SELECT trial CV benefit</b></p>
+<ul><li>Q: Bariatric indications</li></ul>
+<p>A: <b>BMI ≥40 OR ≥35 + comorbidity (Asian: 37.5/32.5)</b></p>
+<ul><li>Q: RYGB vs SG</li></ul>
+<p>A: <b>RYGB: 60-80% EWL, T2DM 80%; SG: 50-70% EWL, T2DM 60-70%</b></p>
+<ul><li>Q: Post-op supplements</li></ul>
+<p>A: <b>Lifelong B12, Fe, Ca, vit D, multivitamin; quarterly + annual bloods</b></p>
+<ul><li>Q: Dumping syndrome</li></ul>
+<p>A: <b>Early 30 min (osmotic); Late 3h (hypoglycaemia)</b></p>
+<ul><li>Q: Pregnancy after bariatric</li></ul>
+<p>A: <b>Delay 12-18 months</b> (avoid malabsorption)</p>
+<ul><li>Q: Complications of obesity</li></ul>
+<p>A: <b>T2DM, CVD, NAFLD, OSA, OA, cancer, PCOS, depression</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — WHO obesity: BMI ≥30 (25-29.9 overweight; 30-34.9 class I; 35-39.9 class II; ≥40 class III/morbid).</li><li><b>C</b> — Asian BMI obesity: ≥27.5 (lower cut-offs due to ↑metabolic risk at lower BMI).</li><li><b>C</b> — European waist: M &gt;102 cm; Asian &gt;90 cm; F &gt;88 cm (Asian &gt;80 cm).</li><li><b>B</b> — Orlistat: pancreatic lipase inhibitor; ↓fat absorption 30%; GI side effects (oily stool); multivitamin 2h apart.</li><li><b>C</b> — Semaglutide 2.4 mg (Wegovy) achieves 15-20% weight loss; STEP trials; CV benefit (SELECT).</li><li><b>A</b> — Bariatric surgery NICE: BMI ≥40 OR ≥35 (Asian 37.5/32.5) with significant comorbidity.</li><li><b>D</b> — RYGB achieves ~80% T2DM resolution (vs 60-70% for SG); mechanism: bypass of duodenum, ↓incretin, weight loss.</li><li><b>B</b> — Dumping syndrome early (15-30 min): osmotic fluid shifts into small bowel (hyperosmolar food) → abdominal pain, diarrhoea, tachycardia.</li><li><b>C</b> — Pregnancy after bariatric: delay 12-18 months post-op (avoid nutritional deficiencies, rapid weight loss).</li><li><b>B</b> — Asian waist: F &gt;80 cm (vs &gt;88 European); M &gt;90 cm (vs &gt;102 European).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> — BMI 38 + T2DM + HTN + OSA + NASH: bariatric surgery (RYGB or SG); RYGB best for T2DM.</li><li><b>C</b> — BMI 42 + T2DM + infertility + NASH: bariatric surgery (RYGB preferred for T2DM resolution and fertility).</li><li><b>B</b> — BMI 32 + knee OA + NAFLD: lifestyle + orlistat/GLP-1; bariatric if BMI ≥35 with comorbidity (current is 32, may benefit from lifestyle + medication first).</li><li><b>B</b> — Post-RYGB 3 months, fatigue, pallor, MCV 105: B12 deficiency (RYGB malabsorption; bypass of intrinsic factor binding site in terminal ileum/duodenum).</li><li><b>B</b> — BMI 35, T2DM, considering bariatric: RYGB (Roux-en-Y) preferred for T2DM (~80% resolution) vs SG (60-70%).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Obesity</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> WHO BMI ≥30, Asian ≥25; waist M &gt;102 (Asian &gt;90), F &gt;88 (Asian &gt;80). <b>Complications: T2DM, CVD, NAFLD, OSA, OA, cancer, PCOS, depression.</b> <b>Lifestyle: 500-1000 kcal deficit, 5-10% loss, 150-300 min/wk.</b> Medications: <b>orlistat</b> (lipase inhibitor), <b>semaglutide 2.4 mg</b> (GLP-1, 15-20% loss), <b>naltrexone-bupropion, tirzepatide (20-25%)</b>. <b>Bariatric: BMI ≥40 or ≥35 comorbidity; RYGB (gold standard, 70% EWL, T2DM 80%) vs SG (most common, 60% EWL).</b> Post-op: lifelong B12, Fe, Ca, vit D; pregnancy delay 12-18 months. <b>Exam focus:</b> BMI/waist, complications, lifestyle, medications (orlistat, semaglutide), bariatric indications, RYGB vs SG, post-op nutrition. <b>Clinical relevance:</b> Global epidemic; chronic disease management; pre-op optimisation; long-term follow-up.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Obesity Assessment Complications Management · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

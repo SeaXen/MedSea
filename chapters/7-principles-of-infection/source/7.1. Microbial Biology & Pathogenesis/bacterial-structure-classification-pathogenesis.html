@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bacterial Structure Classification Pathogenesis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.1. MICROBIAL BIOLOGY & PATHOGENESIS</span>
+      <div class="h1">Bacterial Structure Classification Pathogenesis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe bacterial cell structure (cell wall, membrane, organelles) and differences between Gram+ and Gram-</li><li>[ ] Classify bacteria by shape, Gram stain, oxygen requirement, spore formation</li><li>[ ] Explain key virulence factors: adhesins, capsules, toxins (exo/endo), enzymes, intracellular survival mechanisms</li><li>[ ] Apply classification to predict likely pathogens in clinical syndromes (e.g., Gram+ cocci in clusters = Staph)</li><li>[ ] Interpret Gram stain &amp; culture results for empiric therapy decisions</li><li>[ ] Answer viva: "Gram-positive vs Gram-negative cell wall differences and clinical implications" and "Key virulence factors of major pathogens"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Prokaryote**</td><td>Unicellular organism lacking nucleus & membrane-bound organelles; circular DNA in nucleoid</td></tr><tr><td>**Peptidoglycan**</td><td>Polymer of N-acetylglucosamine (NAG) & N-acetylmuramic acid (NAM) cross-linked by peptides; cell wall rigidity</td></tr><tr><td>**Gram-positive**</td><td>Thick peptidoglycan (20-80 nm), teichoic acids, no outer membrane; retains crystal violet</td></tr><tr><td>**Gram-negative**</td><td>Thin peptidoglycan (2-7 nm), outer membrane (LPS, porins), periplasmic space; loses crystal violet, takes safranin</td></tr><tr><td>**LPS (Endotoxin)**</td><td>Lipid A (toxic) + core polysaccharide + O-antigen; triggers septic shock via TLR4 → cytokine storm</td></tr><tr><td>**Teichoic acids**</td><td>Gram+ wall polymers; mediate adhesion, cation binding, immune activation</td></tr><tr><td>**Porins**</td><td>Outer membrane channels for nutrient/antibiotic entry; mutation → resistance (e.g., OmpK36 in Klebsiella)</td></tr><tr><td>**Periplasmic space**</td><td>Gram- compartment between inner/outer membrane; contains β-lactamases, binding proteins</td></tr><tr><td>**S-layer**</td><td>Crystalline protein surface layer; protection, adhesion, immune evasion (Campylobacter, Aeromonas)</td></tr><tr><td>**Capsule**</td><td>Polysaccharide (usually) layer outside cell wall; antiphagocytic, anti-complement (K1 E. coli, Strep pneumoniae, H. influenzae, K. pneumoniae, N. meningitidis, C. neoformans)</td></tr><tr><td>**Adhesins**</td><td>Surface proteins/pili mediating host cell binding; tissue tropism (P fimbriae → pyelonephritis)</td></tr><tr><td>**Exotoxin**</td><td>Secreted protein toxin; specific action (A-B toxins, superantigens, pore-forming); highly antigenic</td></tr><tr><td>**Endotoxin**</td><td>LPS; heat-stable, weak antigen, induces TNF/IL-1/IL-6 via TLR4</td></tr><tr><td>**Intracellular survival**</td><td>Escape phagosome (Listeria), inhibit phagolysosomal fusion (Mycobacterium, Salmonella), replicate in cytoplasm (Rickettsia)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Bacterial Cell Structure — Gram-Positive vs Gram-Negative</div>
+<p>#### Key Structural Differences</p>
+<table class="ctable"><tr><th>Feature</th><th>Gram-Positive</th><th>Gram-Negative</th></tr><tr><td>---------</td><td>---------------</td><td>---------------</td></tr><tr><td>**Peptidoglycan thickness**</td><td>20-80 nm (50-90% of wall)</td><td>2-7 nm (5-10% of wall)</td></tr><tr><td>**Outer membrane**</td><td>Absent</td><td>Present (LPS, phospholipids, proteins)</td></tr><tr><td>**Teichoic acids**</td><td>Present (wall & lipoteichoic)</td><td>Absent</td></tr><tr><td>**Periplasmic space**</td><td>Absent/minimal</td><td>Prominent (enzymes, β-lactamases)</td></tr><tr><td>**Porins**</td><td>Absent</td><td>Present (nutrient/antibiotic channels)</td></tr><tr><td>**LPS (Endotoxin)**</td><td>Absent</td><td>Present (Lipid A = toxic moiety)</td></tr><tr><td>**Gram stain**</td><td>Retains crystal violet → **Purple**</td><td>Decolorises → takes safranin → **Pink/Red**</td></tr><tr><td>**Penicillin susceptibility**</td><td>Generally high (no outer membrane barrier)</td><td>Variable (outer membrane limits entry)</td></tr><tr><td>**Lysozyme sensitivity**</td><td>High (exposed peptidoglycan)</td><td>Low (outer membrane protects)</td></tr><tr><td>**Typical genera**</td><td>Staphylococcus, Streptococcus, Enterococcus, Clostridium, Bacillus, Corynebacterium, Listeria</td><td>Enterobacteriaceae, Pseudomonas, Neisseria, Haemophilus, Legionella, Bacteroides, Helicobacter</td></tr></table>
+<p>#### Clinical Implications of Gram Stain Difference</p>
+<p>``<code>mermaid flowchart TD A[Gram Stain Result] --&gt; B{Gram-Positive?} B --&gt;|Yes| C[Thick peptidoglycan&lt;br/&gt;No outer membrane&lt;br/&gt;No LPS] C --&gt; D[High penicillin susceptibility&lt;br/&gt;β-lactamase main resistance&lt;br/&gt;No endotoxin shock] C --&gt; E[Key pathogens: Staph, Strep, Enterococcus,&lt;br/&gt;Clostridium, Bacillus, Listeria] B --&gt;|No| F[Thin peptidoglycan&lt;br/&gt;Outer membrane + LPS&lt;br/&gt;Porins for entry] F --&gt; G[Intrinsic resistance to many drugs&lt;br/&gt;Endotoxin → septic shock&lt;br/&gt;Efflux pumps, β-lactamases in periplasm] F --&gt; H[Key pathogens: E. coli, Klebsiella,&lt;br/&gt;Pseudomonas, Neisseria, Haemophilus,&lt;br/&gt;Bacteroides, Legionella] </code>``</p>
+<p>#### Cell Wall Synthesis Targets — Antibacterial Action</p>
+<table class="ctable"><tr><th>Target</th><th>Agent Class</th><th>Mechanism</th><th>Spectrum Note</th></tr><tr><td>--------</td><td>-------------</td><td>-----------</td><td>---------------</td></tr><tr><td>**Transpeptidase (PBP)**</td><td>β-lactams (penicillins, cephalosporins, carbapenems)</td><td>Block cross-linking → lysis</td><td>Gram+ > Gram- (outer membrane barrier)</td></tr><tr><td>**D-Ala-D-Ala terminus**</td><td>Glycopeptides (vancomycin, teicoplanin)</td><td>Block transpeptidation</td><td>Gram+ only (too large for porins)</td></tr><tr><td>**Transglycosylase**</td><td>Lipoglycopeptides (dalbavancin, oritavancin)</td><td>Dual binding</td><td>Gram+ only</td></tr><tr><td>**Lipid II**</td><td>Lantibiotics (nisin)</td><td>Sequester substrate</td><td>Narrow (food preservative)</td></tr></table>
+<div class="callout"><b>Viva Pearl:</b> "Why doesn't vancomycin work on Gram-negatives?" → Too large (1449 Da) to cross outer membrane porins (~600 Da cutoff).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Bacterial Classification Systems</div>
+<p>#### A. By Gram Stain &amp; Morphology (Clinical Lab Standard)</p>
+<table class="ctable"><tr><th>Group</th><th>Gram</th><th>Shape</th><th>Key Genera</th><th>Clinical Syndromes</th></tr><tr><td>-------</td><td>------</td><td>-------</td><td>------------</td><td>-------------------</td></tr><tr><td>**Gram-positive cocci**</td><td>+</td><td>Spherical</td><td>Staphylococcus (clusters), Streptococcus (chains), Enterococcus (pairs/chains)</td><td>Skin/soft tissue, pneumonia, endocarditis, meningitis, sepsis</td></tr><tr><td>**Gram-positive bacilli**</td><td>+</td><td>Rods</td><td>Bacillus (aerobic, spore), Clostridium (anaerobic, spore), Corynebacterium, Listeria, Actinomyces</td><td>Food poisoning, anthrax, tetanus, botulism, diphtheria, listeriosis</td></tr><tr><td>**Gram-negative cocci**</td><td>-</td><td>Spherical</td><td>Neisseria (diplococci), Moraxella</td><td>Meningitis, gonorrhoea, CAP</td></tr><tr><td>**Gram-negative coccobacilli**</td><td>-</td><td>Short rods</td><td>Haemophilus, Bordetella, Brucella, Pasteurella</td><td>Meningitis, epiglottitis, whooping cough, zoonoses</td></tr><tr><td>**Gram-negative bacilli**</td><td>-</td><td>Rods</td><td>Enterobacteriaceae (E. coli, Klebsiella, Proteus, Salmonella, Shigella), Pseudomonas, Acinetobacter, Legionella</td><td>UTI, sepsis, pneumonia, GI, HAP/VAP</td></tr><tr><td>**Gram-negative spirals**</td><td>-</td><td>Spiral/curved</td><td>Campylobacter, Helicobacter, Vibrio</td><td>Diarrhoea, gastritis, cholera</td></tr><tr><td>**Acid-fast bacilli**</td><td>Variable</td><td>Rods</td><td>Mycobacterium, Nocardia</td><td>TB, leprosy, NTM, nocardiosis</td></tr><tr><td>**No cell wall**</td><td>None</td><td>Pleomorphic</td><td>Mycoplasma, Ureaplasma, Chlamydia (obligate intracellular)</td><td>Atypical pneumonia, urethritis, trachoma</td></tr></table>
+<p>#### B. By Oxygen Requirement</p>
+<table class="ctable"><tr><th>Category</th><th>Oxygen Need</th><th>Examples</th><th>Clinical Relevance</th></tr><tr><td>----------</td><td>-------------</td><td>----------</td><td>-------------------</td></tr><tr><td>**Obligate aerobes**</td><td>Require O₂</td><td>Pseudomonas, Mycobacterium, Bacillus, Nocardia</td><td>Grow on standard media; surface colonies</td></tr><tr><td>**Facultative anaerobes**</td><td>Grow with/without O₂</td><td>Enterobacteriaceae, Staphylococcus, Streptococcus, Enterococcus</td><td>Most common pathogens; versatile</td></tr><tr><td>**Obligate anaerobes**</td><td>O₂ toxic</td><td>Clostridium, Bacteroides, Prevotella, Fusobacterium, Peptostreptococcus</td><td>Require anaerobic jars; intra-abdominal, skin/soft tissue, aspiration</td></tr><tr><td>**Microaerophiles**</td><td>Low O₂ (5-10%)</td><td>Campylobacter, Helicobacter</td><td>Special incubators; gastric/enteric</td></tr><tr><td>**Capnophiles**</td><td>High CO₂</td><td>Neisseria, Haemophilus</td><td>Candle jar/CO₂ incubator; respiratory/genital</td></tr></table>
+<p>#### C. By Spore Formation</p>
+<table class="ctable"><tr><th>Type</th><th>Genera</th><th>Sporulation Trigger</th><th>Clinical Significance</th></tr><tr><td>------</td><td>--------</td><td>---------------------</td><td>----------------------</td></tr><tr><td>**Aerobic spore-formers**</td><td>Bacillus (B. anthracis, B. cereus)</td><td>Nutrient depletion</td><td>Heat-resistant; food poisoning (B. cereus), anthrax, lab contaminant</td></tr><tr><td>**Anaerobic spore-formers**</td><td>Clostridium (C. tetani, C. botulinum, C. perfringens, C. difficile)</td><td>Anaerobiosis + nutrient depletion</td><td>Toxin-mediated diseases; tetanus, botulism, gas gangrene, CDI</td></tr><tr><td>**Non-sporulating**</td><td>Most others</td><td>N/A</td><td>Standard sterilisation kills vegetative forms</td></tr></table>
+<div class="callout"><b>Exam Trap:</b> <b>Bacillus anthracis</b> spores = bioterrorism agent (inhalational anthrax). <b>Clostridium difficile</b> spores = environment persistence, alcohol-resistant → soap &amp; water hand hygiene.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: Bacterial Virulence Factors — Mechanisms of Pathogenesis</div>
+<p>#### A. Adhesion &amp; Colonisation</p>
+<table class="ctable"><tr><th>Factor</th><th>Structure</th><th>Example Pathogen</th><th>Target Tissue</th><th>Clinical Syndrome</th></tr><tr><td>--------</td><td>-----------</td><td>------------------</td><td>---------------</td><td>-------------------</td></tr><tr><td>**Type 1 fimbriae (P pili)**</td><td>FimH adhesin</td><td>E. coli (UPEC)</td><td>Urothelium (Gal-Gal)</td><td>Cystitis, pyelonephritis</td></tr><tr><td>**Type IV pili**</td><td>PilE</td><td>N. gonorrhoeae, N. meningitidis, P. aeruginosa</td><td>Columnar epithelium</td><td>Gonorrhoea, meningitis, CF lung</td></tr><tr><td>**Curli fimbriae**</td><td>Amyloid fibres</td><td>Salmonella, E. coli</td><td>Intestinal epithelium, abiotic surfaces</td><td>Biofilm, persistent infection</td></tr><tr><td>**Fibronectin-binding proteins**</td><td>FnBPA/B</td><td>S. aureus</td><td>Damaged endothelium, fibrin</td><td>Endocarditis, osteomyelitis</td></tr><tr><td>**M protein**</td><td>Coiled-coil</td><td>S. pyogenes (Group A Strep)</td><td>Pharyngeal epithelium, fibrinogen</td><td>Pharyngitis, rheumatic fever, GN</td></tr><tr><td>**Protein A**</td><td>IgG Fc binder</td><td>S. aureus</td><td>Immunoglobulin</td><td>Immune evasion, endocarditis</td></tr><tr><td>**Internalins (InlA/B)**</td><td>LRR proteins</td><td>L. monocytogenes</td><td>E-cadherin (InlA), Met (InlB)</td><td>Gastroenteritis, meningitis, maternofetal</td></tr></table>
+<p>#### B. Capsules — Antiphagocytic &amp; Anti-Complement</p>
+<table class="ctable"><tr><th>Pathogen</th><th>Capsule Composition</th><th>Serotypes</th><th>Vaccine Target</th></tr><tr><td>----------</td><td>---------------------</td><td>-----------</td><td>----------------</td></tr><tr><td>**S. pneumoniae**</td><td>Polysaccharide (95+ serotypes)</td><td>1, 3, 4, 6B, 7F, 9V, 14, 18C, 19F, 23F</td><td>PCV13, PPSV23</td></tr><tr><td>**H. influenzae type b**</td><td>Polyribosylribitol phosphate (PRP)</td><td>b (most invasive)</td><td>Hib conjugate</td></tr><tr><td>**N. meningitidis**</td><td>Polysaccharide (A, B, C, W, X, Y)</td><td>A, B, C, W, Y</td><td>MenACWY, MenB</td></tr><tr><td>**K. pneumoniae**</td><td>K1, K2 (hypervirulent)</td><td>K1, K2, K5, K20</td><td>None licensed</td></tr><tr><td>**E. coli K1**</td><td>Polysialic acid (NeuNAc α-2,8)</td><td>K1</td><td>Neonatal meningitis</td></tr><tr><td>**C. neoformans**</td><td>Glucuronoxylomannan (GXM)</td><td>A, D, AD</td><td>Cryptococcal meningitis</td></tr></table>
+<div class="callout"><b>Mechanism:</b> Capsule masks PAMPs → inhibits opsonisation (C3b), prevents phagocyte recognition → <b>antiphagocytic</b>. Encapsulated organisms require <b>opsonic antibodies</b> for clearance → neutropenia/humoral defects = susceptibility.</div>
+<p>#### C. Toxins — Exotoxins vs Endotoxin</p>
+<p>##### Exotoxin Classification by Mechanism</p>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Examples</th><th>Clinical Effect</th></tr><tr><td>------</td><td>-----------</td><td>----------</td><td>-----------------</td></tr><tr><td>**A-B toxins**</td><td>A = active (enzymatic), B = binding</td><td></td><td></td></tr><tr><td>• ADP-ribosylating</td><td>Inactivate G-proteins</td><td>**Cholera toxin** (V. cholerae) → ↑cAMP → watery diarrhoea<br>**Pertussis toxin** (B. pertussis) → ↑cAMP → lymphocytosis<br>**Diphtheria toxin** (C. diphtheriae) → inhibits EF-2 → protein synthesis arrest<br>**Pseudomonas exotoxin A** → same as diphtheria</td><td>Diarrhoea, whooping cough, myocarditis/neuropathy, tissue necrosis</td></tr><tr><td>• Proteolytic</td><td>Cleave SNARE proteins</td><td>**Botulinum toxin** (C. botulinum) → blocks ACh release → flaccid paralysis<br>**Tetanus toxin** (C. tetani) → blocks GABA/glycine → spastic paralysis</td><td>Botulism, tetanus</td></tr><tr><td>• Glycosylating</td><td>Inactivate Rho GTPases</td><td>**C. difficile Toxin A/B** → cytoskeleton disruption → colitis</td><td>Pseudomembranous colitis</td></tr><tr><td>**Pore-forming (β-barrel)**</td><td>Insert into membrane → lysis</td><td>**Streptolysin O** (S. pyogenes), **α-hemolysin** (S. aureus), **Pneumolysin** (S. pneumoniae), **Leukocidins** (PVL in CA-MRSA), **Aerolysin** (Aeromonas)</td><td>Tissue destruction, immune evasion</td></tr><tr><td>**Superantigens**</td><td>Cross-link MHC II + TCR Vβ → massive T-cell activation</td><td>**TSST-1** (S. aureus), **SpeA** (S. pyogenes), **SEA-SEE** (Staph enterotoxins)</td><td>Toxic shock syndrome, scarlet fever, food poisoning</td></tr><tr><td>**AB5 subtilase cytotoxin**</td><td>ER stress → apoptosis</td><td>**SubAB** (STEC O113:H21)</td><td>Haemolytic uraemic syndrome (HUS)</td></tr><tr><td>**Effector proteins (T3SS/T4SS)**</td><td>Inject into host cytosol</td><td>**Salmonella** (Sip, Sop), **Shigella** (Ipa), **Yersinia** (Yop), **EPEC/EHEC** (Tir, Esp)</td><td>Invasion, actin rearrangement, immune suppression</td></tr></table>
+<p>##### Endotoxin (LPS) — Gram-Negative Only</p>
+<table class="ctable"><tr><th>Component</th><th>Structure</th><th>Biological Activity</th></tr><tr><td>-----------</td><td>-----------</td><td>---------------------</td></tr><tr><td>**Lipid A**</td><td>Disaccharide + 6-7 acyl chains</td><td>**Toxic moiety**; binds TLR4/MD2 → MyD88/TRIF → NF-κB → TNF, IL-1, IL-6, IL-8, PAF → septic shock</td></tr><tr><td>**Core polysaccharide**</td><td>KDO, heptose</td><td>Stability, complement activation</td></tr><tr><td>**O-antigen**</td><td>Repeating oligosaccharide</td><td>Serotype specificity, anti-complement, immune evasion</td></tr></table>
+<div class="callout"><b>Clinical:</b> Endotoxin = heat-stable, non-antigenic, cannot be toxoided. <b>Limulus amebocyte lysate (LAL) assay</b> detects LPS. <b>Polymyxin B/colistin</b> bind Lipid A (but nephrotoxic).</div>
+<p>#### D. Enzymes — Tissue Invasion &amp; Immune Evasion</p>
+<table class="ctable"><tr><th>Enzyme</th><th>Pathogen</th><th>Function</th><th>Clinical Role</th></tr><tr><td>--------</td><td>----------</td><td>----------</td><td>---------------</td></tr><tr><td>**Coagulase**</td><td>S. aureus</td><td>Converts fibrinogen → fibrin</td><td>Clots plasma → walls off abscess; diagnostic (tube/slide test)</td></tr><tr><td>**Catalase**</td><td>Staph, Enterobacteriaceae, Pseudomonas</td><td>H₂O₂ → H₂O + O₂</td><td>Detoxifies phagocyte oxidative burst; catalase+ vs - differentiates Staph (+) from Strep (-)</td></tr><tr><td>**Hyaluronidase**</td><td>S. pyogenes, S. aureus, Clostridium</td><td>Degrades hyaluronic acid</td><td>"Spreading factor" → tissue invasion</td></tr><tr><td>**Streptokinase / Staphylokinase**</td><td>S. pyogenes / S. aureus</td><td>Activates plasminogen → plasmin</td><td>Clot dissolution, metastatic spread</td></tr><tr><td>**DNase**</td><td>S. pyogenes, S. aureus</td><td>Degrades neutrophil extracellular traps (NETs)</td><td>Immune evasion, necrotising fasciitis</td></tr><tr><td>**IgA protease**</td><td>N. gonorrhoeae, N. meningitidis, H. influenzae, S. pneumoniae</td><td>Cleaves secretory IgA</td><td>Mucosal colonisation</td></tr><tr><td>**Phospholipase C (α-toxin)**</td><td>C. perfringens</td><td>Hydrolyses lecithin → membrane damage</td><td>Gas gangrene, haemolysis</td></tr><tr><td>**Elastase**</td><td>P. aeruginosa</td><td>Degrades elastin, complement, cytokines</td><td>Tissue destruction in CF, bronchiectasis</td></tr><tr><td>**Urease**</td><td>H. pylori, Proteus, Klebsiella, Morganella</td><td>Urea → NH₃ + CO₂</td><td>Gastric survival (H. pylori), alkalinised urine → struvite stones (Proteus)</td></tr></table>
+<p>#### E. Intracellular Survival Strategies</p>
+<table class="ctable"><tr><th>Strategy</th><th>Pathogen</th><th>Mechanism</th><th>Clinical Consequence</th></tr><tr><td>----------</td><td>----------</td><td>-----------</td><td>---------------------</td></tr><tr><td>**Phagosome escape**</td><td>Listeria, Rickettsia</td><td>Listeriolysin O (LLO) + phospholipases → pore in phagosome</td><td>Cytosolic replication, cell-to-cell spread (ActA)</td></tr><tr><td>**Inhibit phagolysosomal fusion**</td><td>Mycobacterium, Salmonella, Legionella</td><td>M. tb: ESX-1 secretion, PI3K inhibition; Salmonella: SPI-2 T3SS; Legionella: Dot/Icm T4SS → ER-derived vacuole</td><td>Granuloma formation (TB), typhoid carrier state, Legionnaires' disease</td></tr><tr><td>**Survive in phagolysosome**</td><td>Coxiella burnetii</td><td>Acidophile; requires low pH for metabolism</td><td>Q fever (acute/chronic endocarditis)</td></tr><tr><td>**Enter via non-phagocytic cells**</td><td>Shigella, EPEC/EHEC, Salmonella</td><td>T3SS injects effectors → actin rearrangement → macropinocytosis</td><td>Dysentery, attaching/effacing lesions, enteric fever</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Key Pathogen Profiles — High-Yield for FCPS/MRCP</div>
+<table class="ctable"><tr><th>Pathogen</th><th>Gram</th><th>Shape</th><th>Oxidase</th><th>Catalase</th><th>Coagulase</th><th>Key Virulence</th><th>Major Syndromes</th></tr><tr><td>----------</td><td>------</td><td>-------</td><td>---------</td><td>----------</td><td>-----------</td><td>---------------</td><td>-----------------</td></tr><tr><td>**S. aureus**</td><td>+</td><td>Cocci clusters</td><td>-</td><td>+</td><td>+</td><td>Protein A, coagulase, TSST-1, PVL, capsules (CP5/8)</td><td>Skin/soft tissue, endocarditis, osteomyelitis, pneumonia, TSS, scalded skin</td></tr><tr><td>**S. epidermidis**</td><td>+</td><td>Cocci clusters</td><td>-</td><td>+</td><td>-</td><td>Biofilm (slime layer/PCA)</td><td>Device infections, IV catheter sepsis</td></tr><tr><td>**S. pyogenes (GAS)**</td><td>+</td><td>Cocci chains</td><td>-</td><td>-</td><td>-</td><td>M protein, streptolysins, SpeA, DNase, hyaluronidase</td><td>Pharyngitis, impetigo, cellulitis, nec fasc, scarlet fever, RF, PSGN, TSS</td></tr><tr><td>**S. agalactiae (GBS)**</td><td>+</td><td>Cocci chains</td><td>-</td><td>-</td><td>-</td><td>Capsule (Ia, Ib, II-V), β-hemolysin/CAMP factor</td><td>Neonatal sepsis/meningitis, maternal chorioamnionitis</td></tr><tr><td>**S. pneumoniae**</td><td>+</td><td>Cocci pairs/chains</td><td>-</td><td>-</td><td>-</td><td>**Capsule** (95+ types), pneumolysin, IgA protease, autolysin</td><td>CAP, meningitis, otitis media, bacteremia</td></tr><tr><td>**Enterococcus**</td><td>+</td><td>Cocci pairs/chains</td><td>-</td><td>-</td><td>-</td><td>ESF (endocarditis), cytolysin, gelatinase, biofilm</td><td>UTI, biliary, endocarditis, intra-abdominal</td></tr><tr><td>**E. coli**</td><td>-</td><td>Bacilli</td><td>-</td><td>+</td><td>-</td><td>Type 1/P pili, K1 capsule, toxins (ST, LT, Shiga), siderophores</td><td>UTI (80%), neonatal meningitis (K1), diarrhoea (ETEC, EHEC, EPEC), sepsis</td></tr><tr><td>**K. pneumoniae**</td><td>-</td><td>Bacilli</td><td>-</td><td>+</td><td>-</td><td>**Hypervirulent capsular serotypes (K1/K2)**, siderophores, ESBL/CPE</td><td>CAP (alcoholics), UTI, liver abscess (K1/K2), CPE sepsis</td></tr><tr><td>**P. aeruginosa**</td><td>-</td><td>Bacilli</td><td>+</td><td>+</td><td>-</td><td>Exotoxin A, elastase, alginate biofilm, T3SS, LPS</td><td>HAP/VAP, CF lung, burn/wound, bacteremia, otitis externa</td></tr><tr><td>**N. meningitidis**</td><td>-</td><td>Diplococci</td><td>+</td><td>+</td><td>-</td><td>**Capsule (A,B,C,W,X,Y)**, pili, IgA protease, LOS (not full LPS)</td><td>Meningitis, meningococcemia (purpura fulminans)</td></tr><tr><td>**N. gonorrhoeae**</td><td>-</td><td>Diplococci</td><td>+</td><td>+</td><td>-</td><td>Phase-variable pili/opa, IgA protease, beta-lactamase</td><td>Gonorrhoea, PID, DGI</td></tr><tr><td>**H. influenzae**</td><td>-</td><td>Coccobacilli</td><td>-</td><td>+</td><td>-</td><td>**Capsule (type b = Hib)**, IgA protease, pili</td><td>CAP, meningitis (Hib), epiglottitis, otitis, COPD exacerbation</td></tr><tr><td>**C. diphtheriae**</td><td>+</td><td>Bacilli (clubbed)</td><td>-</td><td>+</td><td>-</td><td>**Diphtheria toxin** (phage-encoded)</td><td>Pharyngitis + pseudomembrane, myocarditis, neuropathy</td></tr><tr><td>**B. anthracis**</td><td>+</td><td>Bacilli chains</td><td>-</td><td>+</td><td>-</td><td>**Capsule (poly-D-glutamate)**, **PA/LF/EF toxins**</td><td>Cutaneous, inhalational, GI anthrax</td></tr><tr><td>**C. tetani**</td><td>+</td><td>Bacilli (drumstick)</td><td>-</td><td>+</td><td>-</td><td>**Tetanospasmin** (blocks GABA/glycine)</td><td>Generalised tetanus, neonatal tetanus</td></tr><tr><td>**C. botulinum**</td><td>+</td><td>Bacilli</td><td>-</td><td>+</td><td>-</td><td>**Botulinum toxin** (blocks ACh)</td><td>Foodborne, wound, infant botulism</td></tr><tr><td>**C. perfringens**</td><td>+</td><td>Bacilli (boxcar)</td><td>-</td><td>+</td><td>-</td><td>**α-toxin (phospholipase C)**, enterotoxin</td><td>Gas gangrene, food poisoning (enterotoxin)</td></tr><tr><td>**C. difficile**</td><td>+</td><td>Bacilli (spore)</td><td>-</td><td>+</td><td>-</td><td>**Toxin A (enterotoxin), Toxin B (cytotoxin)**</td><td>Antibiotic-associated diarrhoea, pseudomembranous colitis</td></tr><tr><td>**M. tuberculosis**</td><td>Acid-fast</td><td>Bacilli</td><td>-</td><td>-</td><td>-</td><td>Cord factor, ESX-1, mycolic acids, phenolic glycolipid</td><td>Pulmonary TB, miliary, meningeal, Pott's spine</td></tr><tr><td>**L. monocytogenes**</td><td>+</td><td>Bacilli (tumbling)</td><td>-</td><td>+</td><td>-</td><td>**LLO, ActA, InlA/B**</td><td>Meningitis (neonates, elderly, immunocompromised), maternofetal, gastroenteritis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Bacterial Clue</th><th>Likely Pathogen(s)</th><th>Empiric Therapy Principle</th></tr><tr><td>----------</td><td>----------------</td><td>-------------------</td><td>---------------------------</td></tr><tr><td>**CAP in young adult**</td><td>Gram+ diplococci in pairs/chains, optochin sensitive, bile soluble</td><td>S. pneumoniae</td><td>Penicillin/amoxicillin (if susceptible) or macrolide/cephalosporin</td></tr><tr><td>**CAP in alcoholic**</td><td>Gram- encapsulated bacilli, thick mucoid colonies, "currant jelly" sputum</td><td>K. pneumoniae</td><td>Cephalosporin + aminoglycoside or carbapenem (ESBL risk)</td></tr><tr><td>**HAP/VAP**</td><td>Gram- non-fermenter, oxidase+, fruity odour, green pigment</td><td>P. aeruginosa</td><td>Anti-pseudomonal β-lactam (pip-tazo, ceftazidime, cefepime, meropenem) + aminoglycoside</td></tr><tr><td>**Meningitis in neonate**</td><td>Gram+ bacilli, tumbling motility, cold enrichment</td><td>L. monocytogenes</td><td>Ampicillin + gentamicin (adds Listeria cover)</td></tr><tr><td>**Meningitis in adult**</td><td>Gram- diplococci, oxidase+, grows on chocolate agar</td><td>N. meningitidis</td><td>Ceftriaxone/cefotaxime (penicillin resistance)</td></tr><tr><td>**UTI in young woman**</td><td>Gram- bacilli, lactose fermenter, indole+</td><td>E. coli</td><td>Nitrofurantoin, TMP-SMX, fosfomycin (uncomplicated)</td></tr><tr><td>**Diarrhoea + blood + no fever**</td><td>Gram- non-lactose fermenter, non-motile, H₂S+</td><td>Shigella</td><td>Ciprofloxacin/azithromycin (dysentery)</td></tr><tr><td>**Diarrhoea + rice water stool**</td><td>Gram- curved bacilli, motile, oxidase+, alkaline peptone water</td><td>V. cholerae</td><td>Doxycycline/azithromycin + aggressive ORS/IV fluids</td></tr><tr><td>**Gas gangrene**</td><td>Gram+ large bacilli, subterminal spores, double zone hemolysis</td><td>C. perfringens</td><td>High-dose penicillin + clindamycin (toxin suppression) + surgical debridement</td></tr><tr><td>**Pseudomembranous colitis**</td><td>Gram+ spore-forming bacilli, toxin A/B+, PCR for tcdB</td><td>C. difficile</td><td>Vancomycin (oral) or fidaxomicin; metronidazole (mild only)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know:</b> Gram stain algorithm (cocci/bacilli → clusters/chains → catalase/coagulase/optochin/bile), LPS structure &amp; septic shock pathway, capsule = antiphagocytic → need opsonising antibody, exotoxin mechanisms (A-B, pore-forming, superantigen), intracellular survival strategies, key pathogen virulence profiles - <b>Common viva:</b> "Differentiate Staph vs Strep by lab tests", "Mechanism of endotoxin shock", "Why vancomycin fails in Gram-negatives", "Virulence factors of S. aureus/S. pneumoniae/N. meningitidis/E. coli", "C. difficile toxin mechanism" - <b>Exam trap:</b> Coagulase-negative Staph = contaminant vs true pathogen (clinical context + repeat cultures); M. tuberculosis = acid-fast NOT Gram stain; Urease+ organisms → struvite stones (Proteus, Klebsiella, Morganella); S. pneumoniae = optochin sensitive, bile soluble (NOT catalase — it's catalase negative)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**All Gram+ cocci are Staph vs Strep**</td><td>Staph: clusters, catalase+, coagulase (aureus) vs Strep: chains, catalase-, Lancefield grouping</td></tr><tr><td>**All catalase+ are Staph**</td><td>Enterobacteriaceae, Pseudomonas, Listeria, Bacillus also catalase+</td></tr><tr><td>**Gram stain = definitive ID**</td><td>Gram stain guides empiric therapy; culture + MALDI-TOF/PCR = definitive</td></tr><tr><td>**Endotoxin = exotoxin**</td><td>Endotoxin = LPS (Gram-), heat-stable, weak antigen, TLR4; Exotoxin = secreted protein (Gram+ & -), heat-labile, highly antigenic, specific action</td></tr><tr><td>**Vancomycin covers all Gram+**</td><td>Intrinsic resistance: Leuconostoc, Pediococcus, Lactobacillus (vancomycin-resistant Lactobacillus = VRL); also Enterococcus gallinarum/casseliflavus (vanC)</td></tr><tr><td>**Penicillin allergy = avoid all β-lactams**</td><td>Cross-reactivity ~1-2% with cephalosporins (side-chain dependent); carbapenems ~1%; monobactams (aztreonam) = no cross-reactivity</td></tr><tr><td>**C. difficile = only hospital-acquired**</td><td>Community-acquired CDI increasing; risk factors: antibiotics, PPIs, age, IBD, immunocompromise</td></tr><tr><td>**TB = standard Gram stain**</td><td>M. tuberculosis = acid-fast (Ziehl-Neelsen/Kinyoun) or auramine-rhodamine fluorescence; does NOT Gram stain reliably</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Gram+ Cocci Catalase/Coagulase:</b> <b>"Staph Cluster Catalase Coagulase"</b> → Staph = clusters, catalase+, coagulase+ (aureus)</li><li><b>Strep Virulence:</b> <b>"MASH HITS"</b> → M protein, Antiphagocytic capsule, Streptolysins, Hyaluronidase, IgA protease, Toxins (SpeA), Spreading enzymes (DNase, streptokinase)</li><li><b>Gram- Encapsulated Meningitis:</b> <b>"KNEES"</b> → K. pneumoniae, N. meningitidis, E. coli (K1), H. influenzae (type b), S. pneumoniae</li><li><b>Oxidase+ Gram- Bacilli:</b> <b>"PVC"</b> → Pseudomonas, Vibrio, Campylobacter (also Neisseria, Legionella, Helicobacter, Moraxella, Pasteurella)</li><li><b>Intracellular Survival:</b> <b>"LEMONS"</b> → Listeria (escape), Ehrlichia/Anaplasma (inhibit fusion), Mycobacterium (inhibit fusion), Orientia (escape), Nocardia (inhibit fusion), Salmonella (inhibit fusion)</li><li><b>Exotoxin Types:</b> <b>"AB Pore Super"</b> → A-B toxins, Pore-forming, Superantigens</li><li><b>Clostridial Toxins:</b> <b>"Perf Bot Tet"</b> → C. perfringens (α-toxin → gas gangrene), C. botulinum (botulinum → flaccid paralysis), C. tetani (tetanospasmin → spastic paralysis)</li><li><b>Urease+ Organisms (Struvite Stones):</b> <b>"HKMP"</b> → H. pylori, Klebsiella, Morganella, Proteus (also Pseudomonas, Providencia, Serratia)</li><li><b>Catalase+ Cocci:</b> <b>"Staph Micro Nocardia"</b> → Staph, Micrococcus, Nocardia (actually bacilli but catalase+)</li><li><b>Spore Formers:</b> <b>"BAC"</b> → Bacillus (aerobic), Clostridium (anaerobic) — <b>Aerobic Bacillus, Anaerobic Clostridium</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Bacterial Structure, Classification &amp; Pathogenesis)) Cell Structure Gram-Positive Thick peptidoglycan Teichoic acids No outer membrane No LPS Gram-Negative Thin peptidoglycan Outer membrane (LPS, porins) Periplasmic space (β-lactamases) LPS = endotoxin Acid-Fast Mycolic acid wall ZN stain Classification By Gram &amp; Morphology Cocci (Staph, Strep, Enterococcus, Neisseria) Bacilli (Bacillus, Clostridium, Enterobacteriaceae, Pseudomonas) Spirals (Campylobacter, Helicobacter, Vibrio) By Oxygen Aerobes, Facultative, Anaerobes, Microaerophiles, Capnophiles By Spores Aerobic (Bacillus), Anaerobic (Clostridium) Virulence Factors Adhesion Pili, fimbriae, MSCRAMMs, internalins Capsule Antiphagocytic, vaccine targets Toxins Exotoxins (A-B, pore, superantigen) Endotoxin (LPS → TLR4) Enzymes Coagulase, catalase, hyaluronidase, kinases, DNase, IgA protease, urease Intracellular Survival Phagosome escape (Listeria) Inhibit fusion (TB, Salmonella, Legionella) Survive in phagolysosome (Coxiella) Key Pathogens Gram+ Cocci S. aureus, S. pyogenes, S. agalactiae, S. pneumoniae, Enterococcus Gram+ Bacilli C. diphtheriae, Bacillus, Clostridium, Listeria Gram- Cocci/Coccobacilli Neisseria, Haemophilus, Moraxella Gram- Bacilli Enterobacteriaceae, Pseudomonas, Acinetobacter, Legionella Acid-Fast Mycobacterium, Nocardia No Cell Wall Mycoplasma, Chlamydia </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart: Empiric Gram Stain → Pathogen Prediction</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Gram Stain Result] --&gt; B{Morphology} B --&gt;|Gram+ Cocci| C{Clusters or Chains?} C --&gt;|Clusters| D[Catalase Test] D --&gt;|Positive| E[Coagulase Test] E --&gt;|Positive| F[S. aureus] E --&gt;|Negative| G[CoNS: S. epidermidis, S. saprophyticus] D --&gt;|Negative| H[Impossible: all Staph catalase+] C --&gt;|Chains| I[Catalase Test] I --&gt;|Negative| J{Lancefield / Optochin / Bile} J --&gt;|Optochin Sensitive / Bile Soluble| K[S. pneumoniae] J --&gt;|Beta-hemolytic + Lancefield| L[Group A: S. pyogenes&lt;br/&gt;Group B: S. agalactiae&lt;br/&gt;Group D: Enterococcus] J --&gt;|Alpha-hemolytic, Optochin R| M[Viridans Strep] I --&gt;|Positive| N[Not Strep: consider Enterococcus? But Entero catalase-] B --&gt;|Gram- Cocci| O{Oxidase} O --&gt;|Positive| P[Neisseria / Moraxella] P --&gt;|Diplococci, maltose+| Q[Gonococcus vs Meningitidis] B --&gt;|Gram- Coccobacilli| R{Oxidase} R --&gt;|Negative| S[X/V factors?] S --&gt;|Both| T[H. influenzae] S --&gt;|V only| U[H. parainfluenzae] R --&gt;|Positive| V[Moraxella / Acinetobacter] B --&gt;|Gram- Bacilli| W{Lactose on MacConkey?} W --&gt;|Fermenter (Pink)| X[E. coli, Klebsiella, Enterobacter, Citrobacter, Serratia] W --&gt;|Non-fermenter (Pale)| Y{Oxidase} Y --&gt;|Positive| Z[Pseudomonas] Y --&gt;|Negative| AA[Acinetobacter, Stenotrophomonas] B --&gt;|Gram+ Bacilli| AB{Spore Forming?} AB --&gt;|Aerobic| AC[Bacillus] AB --&gt;|Anaerobic| AD[Clostridium] AB --&gt;|Non-spore| AE[Corynebacterium, Listeria, Erysipelothrix] B --&gt;|Acid-Fast Bacilli| AF[ZN Stain Positive] AF --&gt;|Cord factor, niacin+| AG[M. tuberculosis] AF --&gt;|Rapid grower| AH[NTM / Nocardia] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Gram stain morphology atlas (clusters, chains, pairs, diplococci, coccobacilli, bacilli)</li><li>[ ] Cell wall ultrastructure diagrams (Gram+ vs Gram- vs Acid-fast)</li><li>[ ] LPS structure with Lipid A highlight</li><li>[ ] Toxin mechanism cartoons (A-B, pore-forming, T3SS injection)</li><li>[ ] Intracellular survival pathways comparison table</li><li>[ ] MacConkey agar lactose fermenter vs non-fermenter colony morphology</li><li>[ ] Chocolate agar + X/V factor satellite phenomenon (H. influenzae)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] SketchyMicro: Gram+ Cocci (Staph, Strep), Gram- Bacilli (Enterobacteriaceae, Pseudomonas), Atypicals</li><li>[ ] Armando Hasudungan: Bacterial cell wall, Gram stain, Toxins, Intracellular pathogenesis</li><li>[ ] MedCram: Sepsis pathophysiology (endotoxin/TLR4)</li><li>[ ] Khan Academy: Bacterial conjugation, transduction, transformation</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Definitions:</b> Prokaryote, peptidoglycan, LPS (Lipid A = toxic), teichoic acids, porins, periplasm - <b>Classification:</b> Gram+/Gram- by wall structure; Shape (cocci/bacilli/spirals); Oxygen (aerobe/facultative/anaerobe); Spores (Bacillus aerobic, Clostridium anaerobic) - <b>Gram+ vs Gram-:</b> Thick vs thin peptidoglycan; Teichoic acids vs outer membrane/LPS; No porins vs porins; Penicillin sensitive vs variable - <b>Virulence:</b> Adhesins (pili) → Capsule (antiphagocytic) → Toxins (exo: A-B, pore, superantigen; endo: LPS/TLR4) → Enzymes (coagulase, catalase, hyaluronidase, IgA protease, urease) → Intracellular survival (escape, inhibit fusion, survive phagolysosome) - <b>Clinical Application:</b> Gram stain algorithm predicts organism → guides empiric therapy; Capsule = need opsonising antibody (vaccines target capsule); LPS = septic shock; Intracellular bugs need cell-penetrating drugs (macrolides, fluoroquinolones, rifampicin) - <b>Key Numbers/Cut-offs:</b> Peptidoglycan: Gram+ 20-80nm vs Gram- 2-7nm; Porin cutoff ~600 Da (vancomycin 1449 Da excluded); Catalase: Staph+ vs Strep-; Coagulase: S. aureus+ vs CoNS-; Optochin: Pneumococcus sensitive; Bile solubility: Pneumococcus+; Oxidase: Pseudomonas+ vs Enterobacteriaceae-</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Draw Gram+ vs Gram- cell wall; label peptidoglycan, teichoic acids, outer membrane, LPS, porins, periplasm</li><li>List 5 virulence factors of S. aureus and their mechanisms</li><li>Compare A-B toxins (cholera, pertussis, diphtheria, botulinum, tetanus, C. difficile) — mechanism &amp; clinical effect</li><li>Gram stain algorithm: clusters vs chains → catalase → coagulase/optochin/bile/Lancefield</li><li>Why vancomycin fails vs Gram-negatives? Which drugs cross outer membrane?</li><li>Intracellular survival: Listeria (escape), TB (inhibit fusion), Salmonella (inhibit fusion), Coxiella (survive in phagolysosome)</li><li>Urease+ organisms → struvite stones; Catalase+ cocci clusters = Staph; Oxidase+ Gram- bacilli = Pseudomonas/Vibrio/Campylobacter</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Gram+/- wall structure & clinical implications; Gram stain algorithm; Key virulence factors (capsule, toxins, enzymes, intracellular); Major pathogen profiles (Staph, Strep, Enterobacteriaceae, Pseudomonas, Neisseria, Haemophilus, Clostridium, TB); Endotoxin shock pathway</td></tr><tr><td>**Should Know 🟡**</td><td>Detailed toxin mechanisms (A-B subtypes, T3SS effectors); Spore biology & sterilisation; Acid-fast staining & TB wall; Unusual pathogens (Listeria tumbling motility, Actinomyces sulfur granules); Vaccine capsule targets</td></tr><tr><td>**Nice to Know 🟢**</td><td>Molecular typing (MLST, WGS, spa typing); Quorum sensing & biofilm regulation; Phage therapy; CRISPR-Cas in bacteria; Novel virulence mechanisms (Type VI secretion, outer membrane vesicles)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li><li>[ ] Differentiating CoNS contaminants from true pathogens</li><li>[ ] Remembering all Lancefield groups</li><li>[ ] T3SS effector specifics for each pathogen</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Structure: Definition → Cell wall differences → Classification systems → Virulence factors (adhesion, capsule, toxins, enzymes, intracellular survival) → Key pathogen examples → Clinical application (Gram stain algorithm, empiric therapy) → Vaccines targeting capsules</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet: Gram+ vs Gram- table, Classification criteria, Toxin types, Intracellular strategies, Top 10 pathogens with key virulence</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"In your own words..." — Lead with Gram stain differentiator, give 2-3 pathogen examples, mention exam trap (e.g., "Remember catalase distinguishes Staph from Strep, not oxidase")</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to patient: "Gram stain shows Gram+ cocci in clusters, catalase+, coagulase+ → S. aureus → consider endocarditis, osteomyelitis, device infection → treat with flucloxacillin/vancomycin depending on MRSA risk → source control essential"</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>Key numbers: Peptidoglycan thickness, Porin cutoff, Catalase/Coagulase/Optochin/Bile/Oxidase rules, Mnemonics: STAPH CLUSTER, MASH HITS, KNEES, PVC, LEMONS, AB PORE SUPER, PERF BOT TET, HKMP, BAC</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 25-year-old man presents with a painful abscess. Gram stain shows Gram-positive cocci in clusters, catalase-positive, coagulase-positive. Which virulence factor is most important for immune evasion in this organism?</b></li></ol>
+<p>A. M protein B. Protein A C. Capsule (K1) D. IgA protease E. Pili</p>
+<ol><li><b>Which of the following statements about bacterial endotoxin is CORRECT?</b></li></ol>
+<p>A. It is a secreted protein heat-labile at 60°C B. It is produced by both Gram-positive and Gram-negative bacteria C. Its toxic moiety is Lipid A, which signals via TLR4 D. It can be converted to a toxoid for vaccination E. It acts as a superantigen cross-linking MHC II and TCR</p>
+<ol><li><b>A 6-month-old infant presents with meningitis. CSF Gram stain shows Gram-negative coccobacilli requiring both X and V factors for growth on chocolate agar. The most likely pathogen is:</b></li></ol>
+<p>A. Neisseria meningitidis B. Haemophilus influenzae type b C. Escherichia coli K1 D. Streptococcus agalactiae E. Listeria monocytogenes</p>
+<ol><li><b>Which toxin mechanism is correctly paired with its clinical syndrome?</b></li></ol>
+<p>A. Cholera toxin — ADP-ribosylates Gsα → ↑cAMP → watery diarrhoea B. Pertussis toxin — ADP-ribosylates Giα → ↓cAMP → whooping cough C. Diphtheria toxin — Proteolytically cleaves SNARE proteins → flaccid paralysis D. Botulinum toxin — ADP-ribosylates EF-2 → protein synthesis arrest → myocarditis E. Tetanus toxin — Pore-forming → cell lysis → gas gangrene</p>
+<ol><li><b>Vancomycin is ineffective against most Gram-negative bacteria because:</b></li></ol>
+<p>A. They produce β-lactamases that hydrolyse it B. Their outer membrane porins exclude molecules &gt;600 Da C. They have altered penicillin-binding proteins D. They efflux it via AcrAB-TolC pumps E. They modify the D-Ala-D-Ala target to D-Ala-D-Lac</p>
+<ol><li><b>Which organism is a aerobic spore-forming Gram-positive bacillus?</b></li></ol>
+<p>A. Clostridium tetani B. Clostridium botulinum C. Bacillus anthracis D. Corynebacterium diphtheriae E. Listeria monocytogenes</p>
+<ol><li><b>A patient with septic shock has high circulating levels of TNF-α, IL-1, and IL-6. The bacterial component most directly responsible for triggering this cytokine cascade is:</b></li></ol>
+<p>A. Peptidoglycan B. Teichoic acid C. Lipid A (endotoxin) D. Flagellin E. Bacterial DNA (CpG motifs)</p>
+<ol><li><b>Which intracellular survival strategy is used by Mycobacterium tuberculosis?</b></li></ol>
+<p>A. Escape from phagosome into cytoplasm via listeriolysin O B. Inhibit phagolysosomal fusion via ESX-1 secretion system C. Survive and replicate within the acidic phagolysosome D. Enter non-phagocytic cells via T3SS-induced macropinocytosis E. Inhibit apoptosis of host cell via Bcl-2 homologues</p>
+<ol><li><b>Struvite (magnesium ammonium phosphate) renal stones are classically associated with infection by which organism?</b></li></ol>
+<p>A. Escherichia coli B. Proteus mirabilis C. Klebsiella pneumoniae D. Enterococcus faecalis E. Pseudomonas aeruginosa</p>
+<ol><li><b>Which of the following is a superantigen-mediated disease?</b></li></ol>
+<p>A. Diphtheria B. Toxic shock syndrome (TSST-1) C. Cholera D. Botulism E. Gas gangrene</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 70-year-old man with diabetes presents with fever, confusion, and a painful, erythematous leg with crepitus. Gram stain of bullous fluid shows large Gram-positive bacilli with subterminal spores. Double zone of haemolysis on blood agar. He is started on high-dose IV penicillin and clindamycin. What is the rationale for adding clindamycin?</b></li></ol>
+<p>A. Synergy with penicillin for bactericidal activity B. Inhibition of toxin production (α-toxin) C. Coverage for possible Gram-negative co-infection D. Prevention of penicillin resistance emergence E. Better tissue penetration in necrotic areas</p>
+<ol><li><b>A 3-year-old child returns from Bangladesh with profuse watery diarrhoea ("rice water stools") and severe dehydration. Stool culture on TCBS agar shows yellow colonies, oxidase-positive, curved Gram-negative bacilli. The first-line antibiotic for this infection is:</b></li></ol>
+<p>A. Ciprofloxacin B. Doxycycline C. Azithromycin D. Ceftriaxone E. TMP-SMX</p>
+<ol><li><b>A 25-year-old woman presents with 3 days of dysuria, frequency, and suprapubic pain. Urinalysis shows nitrite-positive, leukocyte esterase-positive, &gt;100 WBC/hpf. Urine culture grows &gt;10⁵ CFU/mL lactose-fermenting Gram-negative bacilli, indole-positive. The most appropriate empirical oral antibiotic for uncomplicated cystitis in a region with &lt;20% TMP-SMX resistance is:</b></li></ol>
+<p>A. Nitrofurantoin 100mg BD 5 days B. Ciprofloxacin 500mg BD 3 days C. Amoxicillin 500mg TDS 7 days D. Fosfomycin 3g single dose E. Cefalexin 500mg BD 7 days</p>
+<ol><li><b>A 65-year-old man on broad-spectrum antibiotics for pneumonia develops profuse watery diarrhoea 10 days after admission. Stool PCR is positive for tcdB gene. He has no signs of severe colitis. First-line treatment is:</b></li></ol>
+<p>A. Oral metronidazole 400mg TDS 10 days B. Oral vancomycin 125mg QDS 10 days C. IV metronidazole 500mg TDS 10 days D. Oral fidaxomicin 200mg BD 10 days E. IV vancomycin 1g BD 10 days</p>
+<ol><li><b>A 40-year-old HIV-positive man (CD4 50) presents with subacute meningitis. CSF shows lymphocytic pleocytosis, low glucose, high protein. India ink preparation shows encapsulated yeasts. The encapsulated yeast is:</b></li></ol>
+<p>A. Cryptococcus neoformans B. Candida albicans C. Histoplasma capsulatum D. Coccidioides immitis E. Blastomyces dermatitidis</p>
+<ol><li><b>A neonate develops sepsis at 48 hours of life. Blood culture grows Gram-positive bacilli showing "tumbling motility" at 25°C and growth on Listeria-selective agar. The mother reports eating soft cheese during pregnancy. The recommended antibiotic regimen includes ampicillin PLUS:</b></li></ol>
+<p>A. Gentamicin B. Ceftriaxone C. Vancomycin D. Meropenem E. Linezolid</p>
+<ol><li><b>A 30-year-old man presents with a painless genital ulcer with a clean base and indurated edges. Dark-field microscopy shows motile spirochetes. The causative organism cannot be cultured on artificial media. The diagnostic test of choice for primary infection is:</b></li></ol>
+<p>A. RPR/VDRL B. TPHA/TPPA C. Dark-field microscopy / PCR of lesion D. FTA-ABS E. ELISA for IgM</p>
+<ol><li><b>A cystic fibrosis patient has chronic Pseudomonas aeruginosa lung infection. The mucoid phenotype is due to overproduction of which polysaccharide?</b></li></ol>
+<p>A. Hyaluronic acid B. Alginate C. Poly-N-acetylglucosamine (PNAG) D. Capsular polysaccharide K1 E. Lipopolysaccharide O-antigen</p>
+<ol><li><b>Which of the following statements about the capsule of Streptococcus pneumoniae is FALSE?</b></li></ol>
+<p>A. It is the major virulence factor B. There are &gt;90 serotypes based on capsular polysaccharide structure C. It prevents phagocytosis by masking C3b deposition D. It is the target of both PCV13 and PPSV23 vaccines E. It is a protein antigen that elicits strong T-cell dependent immunity</p>
+<ol><li><b>A 25-year-old veterinary student presents with undulant fever, night sweats, and hepatosplenomegaly after consuming unpasteurised goat milk. Blood culture is negative on standard media but grows on Castaneda's medium. The organism is a Gram-negative coccobacillus, oxidase-positive, urease-positive. The most likely diagnosis is:</b></li></ol>
+<p>A. Brucellosis B. Typhoid fever C. Q fever D. Leptospirosis E. Tularemia</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>Gram stain algorithm for Gram+ cocci?</b></li></ul>
+<p>A: Clusters → catalase+ → coagulase+ = S. aureus; coagulase- = CoNS. Chains → catalase- → optochin sensitive/bile soluble = S. pneumoniae; beta-hemolytic + Lancefield A = S. pyogenes; B = S. agalactiae; D = Enterococcus.</p>
+<ul><li>Q: <b>Why does vancomycin not work on Gram-negatives?</b></li></ul>
+<p>A: Molecular weight 1449 Da &gt; porin cutoff ~600 Da; cannot cross outer membrane.</p>
+<ul><li>Q: <b>Endotoxin structure &amp; receptor?</b></li></ul>
+<p>A: LPS = Lipid A (toxic) + core + O-antigen; Lipid A binds TLR4/MD2 → MyD88/TRIF → NF-κB → cytokines.</p>
+<ul><li>Q: <b>Exotoxin types mnemonic?</b></li></ul>
+<p>A: AB Pore Super = A-B toxins (ADP-ribosylating, proteolytic, glycosylating), Pore-forming (streptolysin, pneumolysin, α-toxin), Superantigens (TSST-1, SpeA).</p>
+<ul><li>Q: <b>Intracellular survival mechanisms?</b></li></ul>
+<p>A: Phagosome escape (Listeria LLO), Inhibit fusion (TB ESX-1, Salmonella SPI-2, Legionella Dot/Icm), Survive in phagolysosome (Coxiella).</p>
+<ul><li>Q: <b>Catalase+ cocci in clusters?</b></li></ul>
+<p>A: Staphylococcus (aureus = coagulase+, epidermidis = coagulase-).</p>
+<ul><li>Q: <b>Oxidase+ Gram- bacilli?</b></li></ul>
+<p>A: PVC = Pseudomonas, Vibrio, Campylobacter (also Neisseria, Legionella, Helicobacter).</p>
+<ul><li>Q: <b>Urease+ organisms → struvite stones?</b></li></ul>
+<p>A: HKMP = H. pylori, Klebsiella, Morganella, Proteus (also Providencia, Pseudomonas, Serratia).</p>
+<ul><li>Q: <b>Spore formers?</b></li></ul>
+<p>A: BAC = Bacillus (aerobic), Clostridium (anaerobic).</p>
+<ul><li>Q: <b>Key encapsulated meningitis pathogens?</b></li></ul>
+<p>A: KNEES = K. pneumoniae, N. meningitidis, E. coli K1, H. influenzae b, S. pneumoniae.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — Protein A binds Fc region of IgG, preventing opsonophagocytosis. M protein = S. pyogenes; K1 capsule = E. coli/N. meningitidis; IgA protease = N. gonorrhoeae/H. influenzae; Pili = adhesion.</li></ol>
+<ol><li><b>Correct: C</b> — Endotoxin = LPS; Lipid A = toxic moiety; TLR4/MD2 receptor; heat-stable; cannot be toxoided; not a superantigen.</li></ol>
+<ol><li><b>Correct: B</b> — H. influenzae requires both X (hemin) and V (NAD) factors; satellite phenomenon around S. aureus. N. meningitidis = oxidase+, maltose+; E. coli = lactose fermenter on MacConkey; S. agalactiae = Gram+; Listeria = Gram+ bacilli, tumbling motility.</li></ol>
+<ol><li><b>Correct: A</b> — Cholera toxin: ADP-ribosylates Gsα → constitutive AC activation → ↑cAMP → CFTR-mediated Cl⁻/water secretion. B is wrong: pertussis toxin ADP-ribosylates Giα → prevents Gi inhibition of AC → ↑cAMP. C: Diphtheria toxin ADP-ribosylates EF-2. D: Botulinum toxin = proteolytic (cleaves SNAREs). E: Tetanus toxin = proteolytic (cleaves synaptobrevin).</li></ol>
+<ol><li><b>Correct: B</b> — Vancomycin 1449 Da &gt; porin exclusion limit ~600 Da; outer membrane blocks entry. Not β-lactamase target (A), PBP alteration (C) not primary, efflux (D) secondary, D-Ala-D-Lac (E) = vancomycin resistance mechanism in VRE (vanA/vanB).</li></ol>
+<ol><li><b>Correct: C</b> — Bacillus anthracis = aerobic spore-former. Clostridium = anaerobic spore-formers. Corynebacterium/Listeria = non-sporulating.</li></ol>
+<ol><li><b>Correct: C</b> — Lipid A (endotoxin) → TLR4 → MyD88/TRIF → NF-κB → TNF/IL-1/IL-6 → septic shock. Peptidoglycan/teichoic acid signal via TLR2/NOD2; flagellin via TLR5; CpG DNA via TLR9.</li></ol>
+<ol><li><b>Correct: B</b> — M. tb ESX-1 secretion system blocks phagosome maturation (inhibits phagolysosomal fusion). Listeria = escape (A). Coxiella = survives in phagolysosome (C). Shigella/Salmonella = T3SS entry non-phagocytic (D). Some viruses = Bcl-2 homologues (E).</li></ol>
+<ol><li><b>Correct: B</b> — Proteus mirabilis → potent urease → urea hydrolysis → NH₃ → alkaline urine → magnesium ammonium phosphate (struvite) stones. Also Klebsiella, Morganella, Providencia.</li></ol>
+<ol><li><b>Correct: B</b> — TSST-1 (Staph) and SpeA (Strep) are superantigens → MHC II × TCR Vβ cross-link → massive T-cell activation → cytokine storm → TSS. Others: diphtheria (A-B toxin), cholera (A-B), botulism (proteolytic), gas gangrene (pore-forming/phospholipase C).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — Clindamycin inhibits protein synthesis → suppresses α-toxin (phospholipase C) production in C. perfringens gas gangrene. Not for synergy (A), Gram-negative cover (C), resistance prevention (D), or penetration (E).</li></ol>
+<ol><li><b>Correct: C</b> — Cholera: doxycycline 300mg single dose OR azithromycin 1g single dose (preferred in pregnancy/children). Doxycycline also first-line but azithromycin preferred for paeds/pregnancy. Ciprofloxacin resistance emerging. Ceftriaxone/TMP-SMX not first-line.</li></ol>
+<ol><li><b>Correct: A</b> — Nitrofurantoin 100mg BD 5 days = first-line uncomplicated cystitis (low resistance, concentrates in urine, no systemic effects). Fosfomycin single dose = alternative. Fluoroquinolones (B) reserved (tendonitis, resistance). Amoxicillin (C) high resistance. Cefalexin (E) 7 days longer than needed.</li></ol>
+<ol><li><b>Correct: B</b> — Mild-moderate CDI: oral vancomycin 125mg QDS 10 days OR fidaxomicin 200mg BD 10 days (vancomycin preferred due to cost). Metronidazole (A) no longer first-line (inferior cure rates). IV metronidazole (C) for severe/complicated with ileus. IV vancomycin (E) poorly enters gut lumen.</li></ol>
+<ol><li><b>Correct: A</b> — India ink shows thick capsule (C. neoformans). HIV/CD4&lt;100 = risk for cryptococcal meningitis. Candida = budding yeasts/pseudohyphae, no thick capsule. Histoplasma = intracellular yeasts in macrophages. Coccidioides = spherules with endospores. Blastomyces = broad-based budding yeasts.</li></ol>
+<ol><li><b>Correct: A</b> — Listeria: ampicillin + gentamicin (synergy). Ceftriaxone (B) NO ACTIVITY vs Listeria. Vancomycin (C) alternative if penicillin allergy. Meropenem (D) also active but not first-line. Linezolid (E) bacteriostatic, not preferred.</li></ol>
+<ol><li><b>Correct: C</b> — Primary syphilis (chancre): dark-field microscopy or PCR of lesion exudate (most sensitive early). Serology (RPR/TPHA/FTA-ABS) may be negative in first 1-2 weeks.</li></ol>
+<ol><li><b>Correct: B</b> — Alginate = mucoid polysaccharide in CF P. aeruginosa biofilms. Hyaluronic acid = Strep capsule. PNAG = Staph epidermidis biofilm. K1 = E. coli/N. meningitidis. O-antigen = LPS.</li></ol>
+<ol><li><b>Correct: E</b> — Capsule is POLYSACCHARIDE (T-independent antigen → poor immunogenicity in &lt;2y, no memory). Conjugate vaccines (PCV) couple to protein carrier → T-dependent response. PPSV23 = plain polysaccharide.</li></ol>
+<ol><li><b>Correct: A</b> — Brucellosis: undulant fever, unpasteurised dairy, Castaneda's medium (biphasic), Gram- coccobacillus, oxidase+, urease+, slow growth. Typhoid = Salmonella Typhi (enteric fever, rose spots, blood culture positive week 1). Q fever = Coxiella (obligate intracellular, no culture routine). Leptospirosis = spirochete, dark-field. Tularemia = Francisella (tiny Gram- coccobacillus, cysteine requirement).</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Bacterial Structure, Classification &amp; Pathogenesis</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Gram stain differentiates cell wall architecture → predicts virulence, antibiotic susceptibility, and clinical syndromes. Capsule = antiphagocytic → opsonising antibodies critical → vaccines target capsules. Endotoxin (LPS/Lipid A/TLR4) drives septic shock. Intracellular pathogens need cell-penetrating antibiotics. <b>Exam focus:</b> Gram stain algorithm, virulence factor mechanisms, toxin classification, key pathogen profiles, CoNS vs S. aureus, catalase/coagulase/optochin/bile/oxidase rules. <b>Clinical relevance:</b> Empiric therapy guided by Gram stain; capsule vaccines (PCV, Hib, MenACWY); endotoxin shock pathophysiology; intracellular pathogen treatment principles.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Bacterial Structure Classification Pathogenesis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

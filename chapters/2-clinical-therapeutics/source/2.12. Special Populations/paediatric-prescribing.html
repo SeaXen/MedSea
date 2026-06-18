@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paediatric Prescribing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.12. SPECIAL POPULATIONS</span>
+      <div class="h1">Paediatric Prescribing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Calculate <b>weight-based doses (mg/kg)</b> and <b>BSA-based doses (mg/m²)</b> accurately</li><li>[ ] Apply <b>age-related physiological changes</b> (neonate → adolescent) to drug selection &amp; dosing</li><li>[ ] Identify <b>contraindicated/avoided drugs</b> in children (aspirin, tetracyclines, fluoroquinolones, codeine)</li><li>[ ] Use <b>age-appropriate formulations</b> (oral liquid, dispersible, rectal, IV)</li><li>[ ] Recognise <b>paediatric-specific ADRs</b> (Grey Baby Syndrome, Reye's, Kernicterus, growth suppression, enamel dysplasia)</li><li>[ ] Perform <b>paediatric medication safety checks</b> (tenfold errors, decimal points, unlicensed/off-label)</li><li>[ ] Counsel <b>parents/carers</b> on administration, storage, adherence</li><li>[ ] Answer viva: "Weight-based calculation" and "Codeine contraindication mechanism" and "Ceftriaxone in jaundiced neonate"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Core Concept: Paediatric Dosing Principles</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Child Presenting for Prescribing] --&gt; B[Obtain ACCURATE Weight (kg) &amp; Height (cm)] B --&gt; C{Calculate Dose} C --&gt; D1[Weight-Based (mg/kg)\nMost drugs] C --&gt; D2[BSA-Based (mg/m²)\nChemo, high TI drugs] C --&gt; D3[Neonatal: PMA/Corrected Age\nCaffeine, gentamicin, phenobarbital] D1 --&gt; E[Select Formulation\nAge-appropriate] D2 --&gt; E D3 --&gt; E E --&gt; F[Safety Check\nTenfold errors, lead zero, trail zero] F --&gt; G[Document: mg/kg, weight, BSA, calculation, formulation, max dose] G --&gt; H[Counsel Parent/Carer\nAdministration, storage, adverse effects]</p>
+<p>style A fill:#e3f2fd style B fill:#fff3e0 style F fill:#fce4ec style H fill:#e8f5e9 ```</p>
+<div class="callout"><b>Golden Rule:</b> <i>Every paediatric prescription MUST have: weight in kg, dose in mg (or mcg), calculation shown, formulation specified, maximum daily dose stated.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Dose Calculation Methods</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">2.1 Weight-Based (mg/kg) — Most Common</div>
+<p>$$Dose (mg) = Weight (kg) \times Dose (mg/kg)$$</p>
+<ul><li><b>Standard</b>: Use <b>actual body weight</b> (not ideal)</li><li><b>Obese (BMI &gt;95th percentile)</b>: Consider <b>ideal body weight</b> for <b>lipophilic drugs</b> (e.g., gentamicin, digoxin, midazolam)</li><li><b>Neonates</b>: Use <b>birth weight</b> until term corrected age; then current weight</li></ul>
+<div class="sub-h">2.2 Body Surface Area (BSA) — Chemo, Some Antibiotics, High TI Drugs</div>
+<p>$$BSA (m^2) = \sqrt{\frac{Height (cm) \times Weight (kg)}{3600}} \quad \text{(Mosteller)}$$</p>
+<p>$$Dose (mg) = BSA (m^2) \times Dose (mg/m^2)$$</p>
+<table class="ctable"><tr><th>Age</th><th>Weight (kg)</th><th>BSA (m²)</th></tr><tr><td>-----</td><td>-------------</td><td>----------</td></tr><tr><td>Preterm 28wk</td><td>1.0</td><td>0.08</td></tr><tr><td>Term neonate</td><td>3.5</td><td>0.20</td></tr><tr><td>6 months</td><td>7.5</td><td>0.35</td></tr><tr><td>1 year</td><td>10</td><td>0.46</td></tr><tr><td>5 years</td><td>18</td><td>0.68</td></tr><tr><td>10 years</td><td>30</td><td>1.00</td></tr><tr><td>Adult</td><td>70</td><td>1.73</td></tr></table>
+<div class="sub-h">2.3 Age-Based (Clark's Rule / Fried's Rule) — Historical/Estimation Only</div>
+<ul><li><b>Fried's Rule</b> (infants &lt;1yr): $$Dose = \frac{Age (months)}{150} \times Adult Dose$$</li><li><b>Clark's Rule</b> (children 1–12yr): $$Dose = \frac{Weight (lb)}{150} \times Adult Dose$$</li></ul>
+<div class="callout"><b>⚠️ Not for precision prescribing</b> — use weight/BSA</div>
+<div class="sub-h">2.4 Neonatal Dosing: Postmenstrual Age (PMA) &amp; Postnatal Age</div>
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Gestational Age (GA)**</td><td>Weeks from LMP to birth</td></tr><tr><td>**Postnatal Age**</td><td>Days/weeks since birth</td></tr><tr><td>**Postmenstrual Age (PMA)**</td><td>GA + Postnatal age</td></tr><tr><td>**Corrected Age**</td><td>Postnatal age - (40 - GA)</td></tr></table>
+<p><b>Neonatal dosing often uses PMA</b> (e.g., caffeine, gentamicin, phenobarbital)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Age-Related Pharmacokinetic Changes</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart LR A[Developmental PK Changes] --&gt; B[Neonate/Preterm] A --&gt; C[Infant 1-12m] A --&gt; D[Child 1-12y] A --&gt; E[Adolescent]</p>
+<p>B --&gt; B1[↑ TBW 80-90%\n↓ Fat 1%\n↓ Albumin\n↓ CYP450 (Phase I)\n↓↓ UGT (Phase II)\n↓↓ GFR 10-20\n↑ BBB permeability] C --&gt; C1[TBW 75%\nFat 15%\nCYP OVERSHOOT 2-5x adult\nUGT maturing\nGFR 100+\nTubular secretion maturing] D --&gt; D1[Adult-like PK\nTBW 60%\nFat 15-20%\nAdult CYP/UGT\nAdult GFR] E --&gt; E1[Adult PK\nPuberty hormonal effects\nBody composition changes] ```</p>
+<table class="ctable"><tr><th>Parameter</th><th>Preterm Neonate</th><th>Term Neonate</th><th>Infant (1–12m)</th><th>Child (1–12y)</th><th>Adolescent</th></tr><tr><td>-----------</td><td>-----------------</td><td>--------------</td><td>----------------</td><td>---------------</td><td>------------</td></tr><tr><td>**Gastric pH**</td><td>High</td><td>High → ↓ by 2wk</td><td>Low (adult-like)</td><td>Adult</td><td>Adult</td></tr><tr><td>**Gastric emptying**</td><td>Slow</td><td>Slow → normal 6m</td><td>Normal</td><td>Normal</td><td>Normal</td></tr><tr><td>**Protein binding**</td><td>↓ Albumin (↑ free drug)</td><td>↓ Albumin</td><td>↑ to adult</td><td>Adult</td><td>Adult</td></tr><tr><td>**Body water (TBW)**</td><td>**↑ 80–90%**</td><td>**↑ 75%**</td><td>65%</td><td>60%</td><td>60%</td></tr><tr><td>**Body fat**</td><td>**↓ 1%**</td><td>**↓ 15%**</td><td>25%</td><td>15–20%</td><td>15–20%</td></tr><tr><td>**CYP450 (Phase I)**</td><td>**↓↓↓ Immature**</td><td>**↓↓ Immature**</td><td>**↑↑ Overshoot** (2–5× adult)</td><td>Adult</td><td>Adult</td></tr><tr><td>**UGT (Phase II)**</td><td>**↓↓↓ Very low**</td><td>**↓↓ Low**</td><td>↑ to adult</td><td>Adult</td><td>Adult</td></tr><tr><td>**Renal: GFR**</td><td>**↓↓ 10–20 mL/min**</td><td>**↓ 20–40**</td><td>↑↑ 100+</td><td>Adult 120</td><td>Adult</td></tr><tr><td>**Renal: Tubular secretion**</td><td>**Absent**</td><td>**Immature**</td><td>Maturing</td><td>Adult</td><td>Adult</td></tr><tr><td>**BBB permeability**</td><td>**Permeable**</td><td>**Permeable**</td><td>Less permeable</td><td>Adult</td><td>Adult</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Key Drug-Specific Implications by Age</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug Class</th><th>Neonatal/Infant Consideration</th></tr><tr><td>------------</td><td>------------------------------</td></tr><tr><td>**Aminoglycosides (Gentamicin)**</td><td>↑ Vd (↑ TBW) → higher mg/kg dose; ↓ clearance (↓ GFR) → extended interval (q24–48h); TDM essential</td></tr><tr><td>**Vancomycin**</td><td>↑ Vd; ↓ clearance → AUC-guided dosing (target 400–600 mg·h/L)</td></tr><tr><td>**Phenytoin / Phenobarbital**</td><td>↓ Protein binding → ↑ free fraction; ↓ metabolism → saturation kinetics; TDM total + free</td></tr><tr><td>**Morphine / Opioids**</td><td>↑ BBB permeability → ↑ respiratory depression risk; ↓ UGT2B7 (morphine-6-glucuronide)</td></tr><tr><td>**Paracetamol**</td><td>↓ Glucuronidation (UGT1A6) → ↑ oxidative pathway (NAPQI) **BUT** ↑ sulphation compensates; standard 15mg/kg safe</td></tr><tr><td>**Chloramphenicol**</td><td>**↓ UGT** → **Grey Baby Syndrome** (cardiovascular collapse, ashen grey) — **AVOID neonates**</td></tr><tr><td>**Sulfonamides**</td><td>Displace bilirubin → **Kernicterus** — avoid <2 months (and G6PD deficiency)</td></tr><tr><td>**Cephalosporins (3rd gen)**</td><td>↑ Vd, ↓ clearance → standard mg/kg but extended interval in preterm</td></tr><tr><td>**Proton Pump Inhibitors**</td><td>CYP2C19 polymorphism matters; omeprazole ↓ clearance in infants</td></tr><tr><td>**Corticosteroids (inhaled/nasal)**</td><td>Growth velocity monitoring; adrenal suppression risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Contraindicated / Avoided Drugs in Children — THE BIG FOUR + MORE</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Contraindicated Drugs in Children] --&gt; B[NEVER: Aspirin &lt;16] A --&gt; C[NEVER: Tetracycline &lt;12] A --&gt; D[NEVER: Fluoroquinolone &lt;18] A --&gt; E[NEVER: Codeine &lt;12] A --&gt; F[Avoid: Chloramphenicol neonate] A --&gt; G[Avoid: Sulfonamide &lt;2mo] A --&gt; H[Caution: Benzodiazepines &lt;6m] A --&gt; I[Caution: 1st gen antihistamines &lt;2-6y] </code>``</p>
+<table class="ctable"><tr><th>Drug</th><th>Age Avoidance</th><th>Reason</th><th>Alternative</th></tr><tr><td>------</td><td>---------------</td><td>--------</td><td>-------------</td></tr><tr><td>**Aspirin**</td><td>**<16 years** (UK) / <19 (US)</td><td>**Reye's Syndrome** (viral illness + aspirin → hepatic encephalopathy)</td><td>Paracetamol, ibuprofen</td></tr><tr><td>**Tetracyclines** (doxycycline, minocycline)</td><td>**<12 years** (some <8)</td><td>**Enamel dysplasia, bone deposition, growth inhibition**</td><td>Macrolides, amoxicillin</td></tr><tr><td>**Fluoroquinolones** (ciprofloxacin)</td><td>**<18 years** (avoid <18 unless no alternative)</td><td>**Arthropathy, tendonitis, cartilage damage**</td><td>3rd gen cephalosporin, TMP-SMX</td></tr><tr><td>**Codeine**</td><td>**<12 years** (UK) / <18 post-tonsillectomy</td><td>**CYP2D6 ultra-rapid metabolizers → morphine toxicity (apnoea, death)**</td><td>Morphine, oxycodone, paracetamol+ibuprofen</td></tr><tr><td>**Tramadol**</td><td>**<12 years**</td><td>Similar CYP2D6 risk; seizures</td><td>As above</td></tr><tr><td>**Chloramphenicol**</td><td>**Neonates <1 month**</td><td>**Grey Baby Syndrome** (↓ UGT)</td><td>Ceftriaxone, meropenem</td></tr><tr><td>**Sulfonamides** (TMP-SMX)</td><td>**<2 months** (and G6PD)</td><td>**Kernicterus** (bilirubin displacement)</td><td>Alternative abx</td></tr><tr><td>**Benzodiazepines** (oral midazolam excepted)</td><td>**<6 months** / cautious <2y</td><td>Respiratory depression, paradoxical agitation</td><td>Age-appropriate sedation</td></tr><tr><td>**Antihistamines 1st gen** (promethazine, diphenhydramine)</td><td>**<2 years** (FDA) / <6y (UK)</td><td>Respiratory depression, sedation, paradoxical excitation</td><td>2nd gen (cetirizine, loratadine)</td></tr><tr><td>**Hyoscine / Antimuscarinics**</td><td>**<2 years**</td><td>Hyperthermia, ileus, CNS effects</td><td>Domperidone (caution), ondansetron</td></tr><tr><td>**Droperidol / Metoclopramide** (high dose/prolonged)</td><td>**<1 year** / <20kg</td><td>Extrapyramidal, NMS risk</td><td>Ondansetron, cyclizine (caution)</td></tr><tr><td>**Topical corticosteroids** (high potency)</td><td>**<1 year** face/flexures</td><td>Skin atrophy, adrenal suppression</td><td>Low potency, short course</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Formulation Selection by Age</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Age</th><th>Preferred Formulations</th><th>Avoid</th></tr><tr><td>-----</td><td>------------------------</td><td>-------</td></tr><tr><td>**Preterm/Term Neonate**</td><td>IV, oral liquid (preservative-free), rectal, buccal</td><td>Tablets, capsules, alcohol-containing liquids</td></tr><tr><td>**Infant (1–12m)**</td><td>Oral liquid, dispersible tablet, rectal, IV</td><td>Tablets, capsules, chewables (choking)</td></tr><tr><td>**Child 1–5y**</td><td>Oral liquid, dispersible/chewable, sprinkle capsules</td><td>Large tablets, sublingual</td></tr><tr><td>**Child 6–12y**</td><td>Tablets (small), chewable, dispersible, liquid</td><td>Large unscored tablets</td></tr><tr><td>**Adolescent**</td><td>Adult formulations usually OK</td><td>—</td></tr></table>
+<p><b>Key excipients to avoid in neonates/infants:</b></p>
+<ul><li><b>Propylene glycol</b> (lorazepam IV, phenytoin IV) — metabolic acidosis, seizures</li><li><b>Benzyl alcohol</b> (preservative) — gasping syndrome (preterm)</li><li><b>Ethanol</b> (oral liquids) — CNS depression</li><li><b>Sorbitol / Mannitol</b> — osmotic diarrhoea</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Paediatric Medication Safety — **TENFOLD ERROR PREVENTION**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">7.1 Common Error Traps</div>
+<table class="ctable"><tr><th>Error Type</th><th>Example</th><th>Prevention</th></tr><tr><td>------------</td><td>---------</td><td>------------</td></tr><tr><td>**Decimal point**</td><td>0.5 mg written as .5 mg → read as 5 mg</td><td>**Always write 0.5 mg (leading zero); never .5 mg**</td></tr><tr><td>**Trailing zero**</td><td>5.0 mg → read as 50 mg</td><td>**Never write trailing zeros (5 mg not 5.0 mg)**</td></tr><tr><td>**Unit confusion**</td><td>mg vs mcg (µg)</td><td>**Write microgram in full or use mcg; avoid µg**</td></tr><tr><td>**Weight error**</td><td>lb vs kg</td><td>**Document weight in kg ONLY**; convert at admission</td></tr><tr><td>**BSA calculation**</td><td>Wrong formula / height error</td><td>**Use Mosteller; verify height**</td></tr><tr><td>**Concentration error**</td><td>100 mg/5mL vs 100 mg/mL</td><td>**State concentration on prescription**; double-check</td></tr><tr><td>**Frequency error**</td><td>"daily" vs "BD" vs "TDS"</td><td>**Write in full: ONCE DAILY, TWICE DAILY**</td></tr><tr><td>**Age-inappropriate formulation**</td><td>Tablet to 2-year-old</td><td>**Specify formulation on Rx**</td></tr></table>
+<div class="sub-h">7.2 Safety Checklist (Every Prescription)</div>
+<p>``<code> ☐ Patient name, DOB, weight (kg), height (cm), BSA (m²), gestational age (if &lt;2y) ☐ Drug name (generic), dose in mg (or mcg), NOT "1 tablet" ☐ Dose calculation shown: mg/kg or mg/m² + weight/BSA used ☐ Route, frequency (in words), duration ☐ Formulation specified (liquid: concentration mg/mL) ☐ Maximum daily dose stated ☐ Renal/hepatic adjustment noted if applicable ☐ Allergy status documented ☐ Unlicensed/off-label status flagged + justification ☐ Prescriber signature, GMC, date </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Common Paediatric Dosing Quick Reference</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">8.1 Analgesia / Antipyretics</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Max</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-----</td><td>-------</td></tr><tr><td>**Paracetamol**</td><td>**15 mg/kg/dose** PO/PR q4–6h</td><td>**60 mg/kg/day** (max 4g/day >50kg)</td><td>120 mg/5mL (24 mg/mL) or 250 mg/5mL</td></tr><tr><td>**Ibuprofen**</td><td>**10 mg/kg/dose** PO q6–8h</td><td>**30–40 mg/kg/day**</td><td>>3 months, >5kg; with food; avoid dehydration</td></tr><tr><td>**Morphine**</td><td>**0.1–0.2 mg/kg/dose** IV q2–4h</td><td>—</td><td>Neonate: 0.05–0.1 mg/kg; PCA >6y; monitor resp</td></tr><tr><td>**Fentanyl**</td><td>**1–2 mcg/kg/dose** IV</td><td>—</td><td>Intranasal 1.5–2 mcg/kg (procedural)</td></tr></table>
+<div class="sub-h">8.2 Antibiotics (Common)</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose (mg/kg)</th><th>Frequency</th><th>Key Notes</th></tr><tr><td>------</td><td>--------------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Amoxicillin**</td><td>25–50</td><td>TDS</td><td>125 mg/5mL, 250 mg/5mL</td></tr><tr><td>**Co-amoxiclav**</td><td>25/6.25–50/12.5</td><td>TDS</td><td>Augmentin ES: 45/3.2 TDS</td></tr><tr><td>**Cefalexin**</td><td>25–50</td><td>QDS</td><td>125 mg/5mL</td></tr><tr><td>**Cefuroxime**</td><td>10–15</td><td>BD</td><td>125 mg/5mL</td></tr><tr><td>**Ceftriaxone**</td><td>50–100</td><td>OD IV/IM</td><td>**Avoid <28 days corrected if hyperbilirubinaemia** (bilirubin displacement)</td></tr><tr><td>**Azithromycin**</td><td>10</td><td>OD x3–5d</td><td>200 mg/5mL</td></tr><tr><td>**Clarithromycin**</td><td>7.5</td><td>BD</td><td>125 mg/5mL</td></tr><tr><td>**Trimethoprim**</td><td>4–8</td><td>BD</td><td>Prophylaxis 2mg/kg nocte</td></tr><tr><td>**Nitrofurantoin**</td><td>3–5</td><td>QDS</td><td>**Avoid <3 months** (haemolysis risk); renal impairment</td></tr><tr><td>**Gentamicin**</td><td>4–5 (extended interval)</td><td>OD (traditional) / q24–48h (Hartford)</td><td>**TDM: peak 14–20, trough <1**; adjust interval</td></tr><tr><td>**Vancomycin**</td><td>15</td><td>q6–8h (neonate q8–12h)</td><td>**AUC-guided 400–600**; trough 10–20 (old)</td></tr></table>
+<div class="sub-h">8.3 Anticonvulsants</div>
+<table class="ctable"><tr><th>Drug</th><th>Load</th><th>Maintenance</th><th>TDM</th></tr><tr><td>------</td><td>------</td><td>-------------</td><td>-----</td></tr><tr><td>**Phenytoin**</td><td>15–20 mg/kg IV</td><td>4–8 mg/kg/day BD</td><td>Total 10–20 µg/mL; free 1–2</td></tr><tr><td>**Phenobarbital**</td><td>15–20 mg/kg IV/IM</td><td>3–5 mg/kg/day OD</td><td>15–40 µg/mL</td></tr><tr><td>**Levetiracetam**</td><td>—</td><td>10–60 mg/kg/day BD</td><td>Not routine</td></tr><tr><td>**Sodium Valproate**</td><td>—</td><td>10–30 mg/kg/day BD</td><td>50–100 µg/mL</td></tr><tr><td>**Carbamazepine**</td><td>—</td><td>10–20 mg/kg/day BD</td><td>4–12 µg/mL</td></tr></table>
+<div class="sub-h">8.4 Respiratory</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Salbutamol (nebuliser)**</td><td>2.5 mg (<5y) / 5 mg (>5y)</td><td>q20min x3 then q1–4h</td></tr><tr><td>**Ipratropium**</td><td>250 mcg neb</td><td>q20min x3 with salbutamol</td></tr><tr><td>**Prednisolone**</td><td>1–2 mg/kg/day OD</td><td>3–5 days acute asthma; max 60mg</td></tr><tr><td>**Dexamethasone**</td><td>0.15–0.6 mg/kg OD</td><td>Croup: 0.15 mg/kg (max 10mg)</td></tr></table>
+<div class="sub-h">8.5 Neonatal Specific</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Indication</th></tr><tr><td>------</td><td>------</td><td>------------</td></tr><tr><td>**Caffeine citrate**</td><td>Load 20 mg/kg → 5–10 mg/kg/day OD</td><td>Apnoea of prematurity</td></tr><tr><td>**Surfactant**</td><td>100 mg/kg (poractant)</td><td>RDS</td></tr><tr><td>**Vitamin K**</td><td>1 mg IM (term) / 0.5 mg IM (preterm)</td><td>Haemorrhagic disease prevention</td></tr><tr><td>**Hepatitis B vaccine**</td><td>10 mcg (0.5 mL) IM</td><td>Birth, 1m, 6m</td></tr><tr><td>**BCG**</td><td>0.05 mL ID (<1yr) / 0.1 mL (>1yr)</td><td>TB endemic areas</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Paediatric-Specific ADRs (Exam Favorites)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>ADR</th><th>Drug</th><th>Population</th><th>Mechanism</th></tr><tr><td>-----</td><td>------</td><td>------------</td><td>-----------</td></tr><tr><td>**Grey Baby Syndrome**</td><td>Chloramphenicol</td><td>Neonates <1 month</td><td>↓ UGT → ↑ free drug → mitochondrial toxicity → CV collapse, ashen skin, hypothermia</td></tr><tr><td>**Reye's Syndrome**</td><td>Aspirin + viral illness</td><td><16 years</td><td>Mitochondrial injury → hepatic encephalopathy, cerebral oedema</td></tr><tr><td>**Kernicterus**</td><td>Sulfonamides (TMP-SMX)</td><td>Neonates <2 months, G6PD</td><td>Bilirubin displacement → bilirubin encephalopathy</td></tr><tr><td>**Enamel dysplasia / Bone growth inhibition**</td><td>Tetracyclines</td><td><12 years</td><td>Calcium chelation in developing teeth/bones</td></tr><tr><td>**Arthropathy / Cartilage damage**</td><td>Fluoroquinolones</td><td><18 years</td><td>Weight-bearing joint cartilage toxicity (animal data)</td></tr><tr><td>**Fatally toxic morphine levels**</td><td>Codeine</td><td><12 years, CYP2D6 UM</td><td>Ultra-rapid metabolism → morphine overdose → respiratory arrest</td></tr><tr><td>**Growth suppression**</td><td>Inhaled corticosteroids (high dose/long-term)</td><td>Children</td><td>Systemic absorption → ↓ growth velocity (reversible catch-up)</td></tr><tr><td>**Adrenal suppression**</td><td>Topical/inhaled/nasal steroids</td><td>Infants/children</td><td>HPA axis suppression</td></tr><tr><td>**Hypertrophic pyloric stenosis**</td><td>Macrolides (erythromycin/azithromycin)</td><td>Neonates <2 weeks</td><td>Gastric outlet obstruction (↑ risk 7–10×)</td></tr><tr><td>**Cataracts / Glaucoma**</td><td>Long-term corticosteroids</td><td>Children</td><td>Posterior subcapsular cataract, ↑ IOP</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Unlicensed / Off-Label Prescribing</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Licensed (On-label)**</td><td>Marketing authorisation for that age, dose, route, indication</td></tr><tr><td>**Off-label**</td><td>Licensed drug used outside licence (age, dose, indication, route)</td></tr><tr><td>**Unlicensed**</td><td>No UK marketing authorisation (imported, specials, clinical trial)</td></tr></table>
+<p><b>Prescriber Responsibilities (GMC):</b></p>
+<ol><li><b>No suitable licensed alternative</b> exists</li><li><b>Evidence base</b> supports use (guidelines, literature)</li><li><b>Informed consent</b> from parent/carer (and child if Gillick competent)</li><li><b>Document</b> justification in notes</li><li><b>Monitor</b> for efficacy and ADRs</li></ol>
+<p><b>Common Off-Label in Paeds:</b></p>
+<ul><li>Most antibiotics in neonates (dose/route)</li><li>Proton pump inhibitors &lt;1 year</li><li>Antidepressants &lt;18 years</li><li>Antipsychotics &lt;18 years</li><li>Melatonin (unlicensed special in UK; licensed in EU)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Paediatric Prescribing</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Key Points</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**4kg neonate, gentamicin dosing**</td><td>Extended interval (Hartford): 4–5 mg/kg q24h; TDM pre-dose (trough <1) at 18h; adjust interval</td></tr><tr><td>**3yo, 15kg, amoxicillin for AOM**</td><td>40 mg/kg/day TDS = 600 mg/day → 200 mg/dose → **4 mL of 250 mg/5mL TDS**</td></tr><tr><td>**6yo, tonsillectomy, codeine prescribed**</td><td>**STOP** — codeine contraindicated <12y (CYP2D6 UM risk death); use morphine/paracetamol/ibuprofen</td></tr><tr><td>**2mo, UTI, ceftriaxone?**</td><td>**Avoid if jaundiced** (bilirubin displacement); use cefotaxime instead</td></tr><tr><td>**10yo, asthma exacerbation, prednisolone**</td><td>1–2 mg/kg OD (max 60mg) x 3–5 days; no taper if <14 days</td></tr><tr><td>**Neonate, apnoea, caffeine citrate**</td><td>Load 20 mg/kg IV → 5–10 mg/kg/day OD; TDM not routine</td></tr><tr><td>**Child on long-term inhaled steroid**</td><td>Monitor **growth velocity** 6-monthly; use lowest effective dose; spacer + rinse</td></tr><tr><td>**Adolescent, acne, doxycycline**</td><td>**Avoid <12y**; if >12y, counsel on photosensitivity, oesophageal ulcer (take with water, upright)</td></tr><tr><td>**Preterm, PDA, ibuprofen IV**</td><td>10 mg/kg dose 1 → 5 mg/kg at 24h & 48h; monitor renal, platelets, GI bleed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. 2-year-old, 12kg, needs paracetamol. What dose? Formulation?</td><td>**15 mg/kg = 180 mg/dose**; 120 mg/5mL → **7.5 mL** q4–6h (max 4 doses/24h)</td></tr><tr><td>2. Why is aspirin contraindicated <16 years?</td><td>**Reye's Syndrome** — mitochondrial dysfunction → hepatic encephalopathy + cerebral oedema after viral illness</td></tr><tr><td>3. 3-week-old, UTI. Can you use ceftriaxone?</td><td>**Avoid** if hyperbilirubinaemia (displaces bilirubin → kernicterus); use **cefotaxime**</td></tr><tr><td>4. 8-year-old post-tonsillectomy. Codeine prescribed. Action?</td><td>**Contraindicated** — CYP2D6 ultra-rapid metabolizers → morphine toxicity → respiratory arrest/death</td></tr><tr><td>5. Neonate on chloramphenicol develops grey skin, hypothermia, CV collapse. Diagnosis?</td><td>**Grey Baby Syndrome** — ↓ UGT glucuronidation → toxic levels</td></tr><tr><td>6. 5kg infant, gentamicin. Standard vs extended interval?</td><td>**Extended interval (Hartford) preferred**: 4–5 mg/kg q24–48h; TDM trough <1 at 18h</td></tr><tr><td>7. Prescription: "Morphine 0.1mg/kg 4-hourly". Child weighs 20kg. What volume of 10mg/mL?</td><td>0.1 × 20 = 2mg/dose → **0.2 mL of 10mg/mL**</td></tr><tr><td>8. What is the Mosteller formula for BSA?</td><td>√(Height cm × Weight kg / 3600)</td></tr><tr><td>9. 12-year-old on high-dose inhaled fluticasone 500mcg BD. Monitoring?</td><td>**Growth velocity 6-monthly**; bone density if >5y; cataract/glaucoma screen</td></tr><tr><td>10. Parent asks: "Is this medicine licensed for my child?" You prescribed omeprazole liquid 5mg to 6-month-old. Answer?</td><td>**Off-label** (licensed >1 year); explain no licensed alternative, evidence supports use, document consent</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**mg/kg vs mg/m²**</td><td>mg/kg = most drugs; mg/m² = chemo, some abx (gentamicin sometimes), high TI drugs</td></tr><tr><td>**Ideal vs actual weight**</td><td>Actual weight for most; **ideal body weight for lipophilic drugs in obesity** (gentamicin, digoxin, midazolam)</td></tr><tr><td>**Ceftriaxone in neonates**</td><td>Avoid <28 days corrected if jaundiced (bilirubin displacement); cefotaxime preferred</td></tr><tr><td>**Codeine vs morphine**</td><td>Codeine **prodrug** → morphine via CYP2D6; UM = toxic morphine levels</td></tr><tr><td>**Off-label vs unlicensed**</td><td>Off-label = licensed drug outside licence; Unlicensed = no UK MA (specials, imports)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>GREY BABY</b> = <b>G</b>rey baby syndrome = <b>Chloramphenicol</b> in neonates</li><li><b>REYE'S</b> = <b>R</b>eason: <b>A</b>spirin + <b>V</b>iral = <b>E</b>ncephalopathy + <b>S</b>yndrome</li><li><b>KERN</b> = <b>K</b>ernicterus = <b>S</b>ulfonamides + <b>N</b>eonates</li><li><b>NO ASPIRIN &lt;16</b>, <b>NO TETRACYCLINE &lt;12</b>, <b>NO QUINOLONE &lt;18</b>, <b>NO CODEINE &lt;12</b></li><li><b>LEAD ZERO, NO TRAIL ZERO</b> = 0.5 mg ✓ ; .5 mg ✗ ; 5 mg ✓ ; 5.0 mg ✗</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Paediatric Prescribing)) Dose Calculation mg/kg (weight-based) mg/m2 (BSA - Mosteller) Neonatal: PMA, corrected age Obesity: IBW for lipophilic PK Changes by Age Neonate: ↑TBW, ↓fat, ↓CYP/UGT, ↓GFR, ↑BBB Infant: CYP overshoot (2-5x) Child: Adult-like Contraindicated Aspirin &lt;16 (Reye's) Tetracycline &lt;12 (enamel) Fluoroquinolone &lt;18 (arthropathy) Codeine &lt;12 (CYP2D6 UM) Chloramphenicol neonate (Grey Baby) Sulfonamide &lt;2mo (Kernicterus) Formulations Neonate: IV, liquid PF, rectal Infant: liquid, dispersible Child: chewable, dispersible Avoid: excipients (propylene glycol, benzyl alcohol, ethanol) Safety Tenfold errors Lead zero (0.5) No trail zero (5) mcg not µg Weight in kg only ADRs Grey Baby, Reye's, Kernicterus Growth suppression (ICS) Adrenal suppression (steroids) HPS (macrolides neonate) Off-Label Most neonates, PPIs &lt;1y, psych &lt;18y GMC: no alternative, evidence, consent, document </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>------</td></tr><tr><td>Day 1</td><td></td><td></td><td>1d</td></tr><tr><td>Day 3</td><td></td><td></td><td>3d</td></tr><tr><td>Day 7</td><td></td><td></td><td>1w</td></tr><tr><td>Day 14</td><td></td><td></td><td>2w</td></tr><tr><td>Day 30</td><td></td><td></td><td>1m</td></tr><tr><td>Day 90</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Dose calculations (mg/kg, BSA)</td><td>10</td><td></td><td></td></tr><tr><td>Age-related PK changes</td><td>8</td><td></td><td></td></tr><tr><td>Contraindicated drugs table</td><td>12</td><td></td><td></td></tr><tr><td>Formulation selection</td><td>6</td><td></td><td></td></tr><tr><td>Safety checks (tenfold)</td><td>8</td><td></td><td></td></tr><tr><td>Common dosing reference</td><td>10</td><td></td><td></td></tr><tr><td>Paediatric ADRs</td><td>8</td><td></td><td></td></tr><tr><td>Off-label principles</td><td>4</td><td></td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td><td></td></tr><tr><td>**Total**</td><td>**76**</td><td></td><td></td></tr></table>
+<p><b>Target: ≥61/76 (80%)</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Calculation Viva (2 min): *"15kg child, ceftriaxone 50mg/kg IV. Vial 1g. Reconstitute to 100mg/mL. Volume?"*</div>
+<ol><li>Dose = 15 × 50 = <b>750 mg</b></li><li>Concentration = <b>100 mg/mL</b></li><li>Volume = 750 / 100 = <b>7.5 mL</b></li></ol>
+<div class="sub-h">Short Question (5 marks): *"Codeine in children — contraindication and mechanism"*</div>
+<ul><li>Contraindicated <b>&lt;12 years</b> (UK); <b>&lt;18 post-tonsillectomy</b></li><li><b>Prodrug</b> → morphine via CYP2D6</li><li><b>Ultra-rapid metabolizers</b> → toxic morphine levels → respiratory depression, death</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"2-month-old, ceftriaxone for meningitis. Any issue?"*</div>
+<ul><li><b>Avoid if jaundiced</b> (bilirubin displacement → kernicterus); use <b>cefotaxime</b>. If not jaundiced, ceftriaxone OK.</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Paracetamol 15mg/kg q4–6h (max 60mg/kg/d)</li><li>Ibuprofen 10mg/kg q6–8h (&gt;3m, &gt;5kg)</li><li>Aspirin &lt;16 = Reye's</li><li>Tetracycline &lt;12 = enamel</li><li>Quinolone &lt;18 = arthropathy</li><li>Codeine &lt;12 = CYP2D6 UM death</li><li>Chloramphenicol neonate = Grey Baby</li><li>Gentamicin extended interval = Hartford 4–5mg/kg q24h</li><li>Ceftriaxone neonate + jaundice = NO (cefotaxime)</li><li>Mosteller BSA = √(Ht×Wt/3600)</li><li>0.5mg ✓ ; .5mg ✗ ; 5mg ✓ ; 5.0mg ✗</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>PAEDIATRIC PRESCRIBING SAFETY TRIAD:</b> 1. <b>WEIGHT in kg</b> — every prescription, every time 2. <b>LEAD ZERO, NO TRAIL ZERO</b> — 0.5 mg not .5 mg; 5 mg not 5.0 mg 3. <b>FORMULATION SPECIFIED</b> — liquid concentration, dispersible, age-appropriate  <b>BIG 4 CONTRAINDICATIONS:</b> - Aspirin &lt;16 (Reye's) - Tetracycline &lt;12 (enamel) - Fluoroquinolone &lt;18 (arthropathy) - Codeine &lt;12 (CYP2D6 UM → death)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Answer</th></tr><tr><td>---</td><td>----------</td><td>--------</td></tr><tr><td>1</td><td>15kg child, ceftriaxone 50mg/kg IV. Vial 1g reconstituted to 100mg/mL. Volume?</td><td>**B. 7.5 mL**</td></tr><tr><td>2</td><td>Drug contraindicated <16 years due to Reye's syndrome?</td><td>**C. Aspirin**</td></tr><tr><td>3</td><td>3-week-old UTI. Avoid which cephalosporin if jaundiced?</td><td>**B. Ceftriaxone**</td></tr><tr><td>4</td><td>Codeine contraindicated <12 years because:</td><td>**B. CYP2D6 UM produce toxic morphine**</td></tr><tr><td>5</td><td>Grey Baby Syndrome caused by:</td><td>**B. Chloramphenicol**</td></tr><tr><td>6</td><td>Mosteller BSA formula:</td><td>**B. √(Ht × Wt / 3600)**</td></tr><tr><td>7</td><td>6mo infant 7.5kg, paracetamol 120mg/5mL. Dose & volume?</td><td>**B. 15mg/kg = 112.5mg → 4.7 mL q4–6h**</td></tr><tr><td>8</td><td>Correct paediatric formulation statement?</td><td>**B. Oral liquids state concentration (mg/mL)**</td></tr><tr><td>9</td><td>Tetracyclines avoided <12 years due to:</td><td>**B. Enamel dysplasia & bone growth inhibition**</td></tr><tr><td>10</td><td>10yo on high-dose fluticasone 500mcg BD x2y. Monitor?</td><td>**B. Growth velocity 6-monthly**</td></tr><tr><td>11</td><td>Correctly written prescription?</td><td>**B. Morphine 0.5 mg IV q4h**</td></tr><tr><td>12</td><td>Gentamicin extended interval (Hartford) neonate dose?</td><td>**C. 4–5 mg/kg q24h**</td></tr><tr><td>13</td><td>Drug causing hypertrophic pyloric stenosis in neonates <2w?</td><td>**A. Erythromycin**</td></tr><tr><td>14</td><td>Ideal body weight used for dosing in obese child for:</td><td>**C. Lipophilic drugs (gentamicin, digoxin, midazolam)**</td></tr><tr><td>15</td><td>Off-label prescribing GMC requirement NOT needed?</td><td>**D. Hospital formulary approval**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBAs (8)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>4kg term neonate (7 days old), suspected sepsis. Gentamicin dosing per Hartford nomogram?</b></li></ol>
+<p>A. 2.5 mg/kg q12h B. 4 mg/kg q24h C. <b>4–5 mg/kg q24h</b> ✓ D. 7.5 mg/kg q24h E. 5 mg/kg q36h <i>Explanation: Extended-interval (Hartford) dosing for neonates: 4–5 mg/kg q24h (q36–48h if preterm/renal impairment). TDM trough &lt;1 mg/L at 18h post-dose.</i></p>
+<ol><li><b>3-year-old (15kg) with acute otitis media. Amoxicillin 40mg/kg/day TDS. Suspension 250mg/5mL. Volume per dose?</b></li></ol>
+<p>A. 2 mL B. 3 mL C. <b>4 mL</b> ✓ D. 5 mL E. 6 mL <i>Explanation: 15kg × 40 = 600mg/day ÷ 3 = 200mg/dose. 250mg/5mL = 50mg/mL. 200/50 = 4mL.</i></p>
+<ol><li><b>6-year-old post-tonsillectomy. Codeine 1mg/kg prescribed. Most appropriate action?</b></li></ol>
+<p>A. Give as prescribed; monitor respiratory rate B. Reduce dose to 0.5mg/kg C. <b>Stop codeine; prescribe morphine or paracetamol+ibuprofen</b> ✓ D. Switch to tramadol E. Check CYP2D6 genotype first <i>Explanation: Codeine contraindicated &lt;12y (UK) and &lt;18y post-tonsillectomy. CYP2D6 ultra-rapid metabolizers → fatal morphine toxicity.</i></p>
+<ol><li><b>2-month-old with UTI, mild jaundice (bilirubin 80 µmol/L). IV antibiotic choice?</b></li></ol>
+<p>A. Ceftriaxone 50mg/kg OD B. <b>Cefotaxime 50mg/kg q8h</b> ✓ C. Cefuroxime 30mg/kg q8h D. Gentamicin 5mg/kg OD E. Amoxicillin 50mg/kg q8h <i>Explanation: Ceftriaxone displaces bilirubin → kernicterus risk. Cefotaxime preferred in jaundiced infants &lt;28 days corrected.</i></p>
+<ol><li><b>12-year-old (40kg) on high-dose inhaled fluticasone 500mcg BD for 3 years. Growth velocity slowed from 5 to 3.5 cm/year. Next step?</b></li></ol>
+<p>A. Stop fluticasone immediately B. <b>Step down to lowest effective dose; spacer; rinse; monitor growth 6-monthly</b> ✓ C. Switch to oral prednisolone D. Add growth hormone E. Continue unchanged; growth catch-up expected <i>Explanation: ICS growth suppression is dose-related and reversible. Step down, ensure technique (spacer), monitor 6-monthly. Catch-up growth occurs after dose reduction.</i></p>
+<ol><li><b>10-year-old with severe asthma exacerbation. Prednisolone dose?</b></li></ol>
+<p>A. 0.5 mg/kg OD B. <b>1–2 mg/kg OD (max 60mg) × 3–5 days</b> ✓ C. 2 mg/kg BD × 7 days D. 0.15 mg/kg OD E. 5 mg/kg OD <i>Explanation: Prednisolone 1–2 mg/kg/day (max 60mg) for 3–5 days. No taper if &lt;14 days. Dexamethasone 0.15 mg/kg single dose alternative for croup.</i></p>
+<ol><li><b>Neonate (28 weeks corrected, 1.2kg) with apnoea of prematurity. Caffeine citrate loading dose?</b></li></ol>
+<p>A. 5 mg/kg IV B. 10 mg/kg IV C. <b>20 mg/kg IV</b> ✓ D. 30 mg/kg IV E. 50 mg/kg IV <i>Explanation: Caffeine citrate load 20 mg/kg (equivalent to 10 mg/kg caffeine base) → maintenance 5–10 mg/kg/day OD. TDM not routine.</i></p>
+<ol><li><b>8-year-old (25kg) needs IV morphine for severe pain. Prescription: "Morphine 0.1 mg/kg IV q4h PRN". Vial 10mg/mL. Volume per dose?</b></li></ol>
+<p>A. 0.1 mL B. <b>0.25 mL</b> ✓ C. 0.5 mL D. 2.5 mL E. 25 mL <i>Explanation: 0.1 × 25 = 2.5mg. 10mg/mL → 2.5/10 = 0.25mL. Safety: lead zero (0.25 not .25), max dose documented.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Paracetamol paediatric dose</td><td>15mg/kg q4–6h PO/PR (max 60mg/kg/day)</td></tr><tr><td>Ibuprofen paediatric dose</td><td>10mg/kg q6–8h PO (>3m, >5kg)</td></tr><tr><td>Aspirin contraindication age</td><td><16 years (Reye's syndrome)</td></tr><tr><td>Tetracycline contraindication age</td><td><12 years (enamel dysplasia, bone growth inhibition)</td></tr><tr><td>Fluoroquinolone contraindication age</td><td><18 years (arthropathy, cartilage damage)</td></tr><tr><td>Codeine contraindication age</td><td><12 years (CYP2D6 UM → morphine toxicity death)</td></tr><tr><td>Chloramphenicol neonate ADR</td><td>Grey Baby Syndrome (↓ UGT → CV collapse)</td></tr><tr><td>Sulfonamide neonate ADR</td><td>Kernicterus (bilirubin displacement)</td></tr><tr><td>Gentamicin neonate dosing</td><td>Extended interval: 4–5mg/kg q24h (Hartford); trough <1 at 18h</td></tr><tr><td>Ceftriaxone neonate + jaundice</td><td>AVOID (bilirubin displacement → kernicterus); use cefotaxime</td></tr><tr><td>Mosteller BSA formula</td><td>√(Height cm × Weight kg / 3600)</td></tr><tr><td>Lead zero / trail zero rule</td><td>0.5mg ✓ ; .5mg ✗ ; 5mg ✓ ; 5.0mg ✗</td></tr><tr><td>kg weight documentation</td><td>Mandatory on every paediatric prescription</td></tr><tr><td>Off-label vs unlicensed</td><td>Off-label = licensed drug outside MA; Unlicensed = no UK MA</td></tr><tr><td>GMC off-label requirements</td><td>No alternative, evidence, consent, document, monitor</td></tr><tr><td>Growth velocity monitoring ICS</td><td>6-monthly if high dose/long-term</td></tr><tr><td>Macroide neonate <2w ADR</td><td>Hypertrophic pyloric stenosis (↑ risk 7-10x)</td></tr><tr><td>Ideal body weight for</td><td>Lipophilic drugs in obesity: gentamicin, digoxin, midazolam</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 15×50=750mg; 750/100=7.5mL</li><li><b>C</b> — Aspirin + viral = Reye's</li><li><b>B</b> — Ceftriaxone displaces bilirubin</li><li><b>B</b> — CYP2D6 UM → toxic morphine</li><li><b>B</b> — Chloramphenicol ↓ UGT in neonates</li><li><b>B</b> — Mosteller = √(Ht×Wt/3600)</li><li><b>B</b> — 7.5×15=112.5mg; 112.5/24=4.69mL</li><li><b>B</b> — Concentration on Rx mandatory</li><li><b>B</b> — Calcium chelation in teeth/bones</li><li><b>B</b> — Growth velocity 6-monthly</li><li><b>B</b> — Lead zero required; no trail zero</li><li><b>C</b> — Hartford 4–5mg/kg q24h</li><li><b>A</b> — Erythromycin/azithromycin &lt;2w</li><li><b>C</b> — Lipophilic drugs in obesity</li><li><b>D</b> — GMC doesn't require formulary approval</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> — Hartford 4–5mg/kg q24h (extend if preterm/renal impairment)</li><li><b>C</b> — 200mg/dose ÷ 50mg/mL = 4mL</li><li><b>C</b> — Codeine contraindicated &lt;12y; CYP2D6 UM risk death</li><li><b>B</b> — Cefotaxime preferred in jaundiced neonate</li><li><b>B</b> — Step down, spacer, rinse, monitor 6-monthly</li><li><b>B</b> — Prednisolone 1–2mg/kg OD max 60mg × 3–5d</li><li><b>C</b> — Caffeine citrate load 20mg/kg (10mg/kg base)</li><li><b>B</b> — 0.1×25=2.5mg; 2.5/10=0.25mL</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Prescribing in Special Populations]] — Renal, hepatic, elderly, pregnancy dosing</li><li>[[Therapeutic Drug Monitoring]] — Gentamicin, vancomycin, phenytoin, phenobarbital in children</li><li>[[Medication Safety and Errors]] — Tenfold errors, PINCH drugs in paediatrics, root cause analysis</li><li>[[Drug Interactions]] — CYP450 ontogeny, drug interactions in children</li><li>[[Clinical Context/Pain Management]] — WHO ladder paediatric, opioid prescribing in children</li><li>[[Clinical Context/Palliative Care]] — Paediatric syringe drivers, end-of-life prescribing</li><li>[[Drug Development and Regulation]] — Paediatric investigation plans (PIPs), paediatric labelling</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Paediatric Prescribing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,510 @@
+# Ampullary & Duodenal Cancer
+
+> [!tip] **FCPS/MRCP Priority: MEDIUM**
+> **Ampullary Cancer** = Periampullary (within 2cm of ampulla of Vater); **Duodenal Cancer** = D1-D4 (D1-D2 often grouped with ampullary for Whipple; D3-D4 segmental resection); **IHC**: **Ampullary**: CK20+, CDX2+, **MUC1+ (50%), MUC2+ (50%)**, **MSI-H 30-50%**; **Duodenal**: CK20+, CDX2+, MUC2+ (intestinal); **Surgery: Whipple (PD/PPPD) for both ampullary & D1-D2**; **D3-D4: Segmental resection + LN**; **Adjuvant**: **ESPAC-3** (Gem vs 5-FU) → **FOLFOX/Gem+Cis (BILCAP)**; **Metastatic**: FOLFOX/GemCis ± Bev; **Biliary vs Pancreatic vs Ampullary vs Duodenal distinction critical**
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Distinguish **Ampullary** (periampullary, within 2cm ampulla) vs **Duodenal** (D1-D4) by anatomy
+- [ ] Classify **Ampullary histology**: **Intestinal-type** (MUC2+, CK20+, CDX2+, better) vs **Pancreatobiliary-type** (MUC1+, CK7+, worse)
+- [ ] Recognise **high MSI-H rate in Ampullary (30-50%)** → **Pembrolizumab eligibility**
+- [ ] Select **surgery**: **Whipple/PPPD** for Ampullary & D1-D2; **Segmental resection + LN** for D3-D4
+- [ ] Apply **adjuvant therapy**: **ESPAC-3** (Gem vs 5-FU — no diff); **BILCAP** (Cap) extrapolated; **Modern: FOLFOX / Gem+Cis**
+- [ ] Sequence **metastatic therapy**: **FOLFOX / GemCis ± Bev**; **MSI-H → Pembrolizumab**
+- [ ] Differentiate from **Pancreatic** (PDAC) and **Distal Cholangiocarcinoma** (all periampullary)
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Ampullary Cancer | Duodenal Cancer |
+|---------|------------------|-----------------|
+| **Definition** | Malignant tumour arising **within 2cm of ampulla of Vater** | Malignant tumour of duodenal mucosa **D1-D4** |
+| **Incidence** | **~0.5/100,000**; Rare | **~0.5/100,000**; Rare |
+| **Peak Age** | 60-70 years | 60-70 years |
+| **Sex Ratio** | M > F (1.5:1) | M > F (1.5:1) |
+| **Risk Factors** | **FAP** (APC) — **Duodenal/Periampullary polyposis**; **Lynch** (MMR); **Peutz-Jeghers**; **Familial Adenomatous Polyposis** | **FAP**, **Lynch**, **Crohn's**, **Peutz-Jeghers**, **Celiac** |
+| **Anatomy** | **Ampulla of Vater**: Confluence of CBD + Main Pancreatic Duct → Duodenum (D2) | **D1** (bulb), **D2** (descending, ampulla), **D3** (horizontal), **D4** (ascending) |
+
+---
+
+## 3. Aetiology & Pathophysiology
+
+```mermaid
+flowchart LR
+    A[Risk Factors] --> B[Molecular Pathways]
+    A1[FAP (APC)] --> B1[Wnt/β-catenin → Duodenal/Periampullary Adenomas → Cancer]
+    A2[Lynch (MMR)] --> B2[MSI-H → Hypermutation → Ampullary (30-50%)]
+    A3[Sporadic] --> B3[KRAS (40-50%), TP53 (50%), SMAD4, GNAS]
+    B1 --> C[Ampullary / Duodenal Adenocarcinoma]
+    B2 --> C
+    B3 --> C
+    C --> D1[**Ampullary: Intestinal-type** (MUC2+, CK20+, CDX2+) — **Better**]
+    C --> D2[**Ampullary: Pancreatobiliary-type** (MUC1+, CK7+, MUC2-) — **Worse**]
+    C --> D3[**Duodenal: Intestinal-type** (MUC2+, CK20+, CDX2+) — Most common]
+```
+
+### Histological Subtypes (Ampullary)
+
+| Subtype | Frequency | IHC Profile | Prognosis | Molecular |
+|---------|-----------|-------------|-----------|-----------|
+| **Intestinal-type** | **50-60%** | **MUC2+, CK20+, CDX2+, MUC1-, CK7-** | **Better** (5-yr OS ~50-60%) | **APC, KRAS, TP53**, **MSI-H 30-50%** |
+| **Pancreatobiliary-type** | **40-50%** | **MUC1+, CK7+, MUC2-, CDX2 variable** | **Worse** (5-yr OS ~20-30%) | **KRAS, TP53, SMAD4, GNAS**, **MSS** |
+
+---
+
+## 4. Clinical Features
+
+| Feature | Ampullary | Duodenal |
+|---------|-----------|----------|
+| **Jaundice** | **Early, painless (90%)** — **Hallmark** | **Late** (D3-D4) or **Early** (D1-D2 ampullary obstruction) |
+| **Abdominal Pain** | 30-40% | 50-60% |
+| **Weight Loss** | 50% | 60% |
+| **GI Bleeding** | Occult (iron deficiency) | Overt (melena) 30% |
+| **Pancreatitis** | Recurrent (ampullary obstruction) | Rare |
+| **Obstruction** | Gastric outlet (late) | Duodenal obstruction (D3-D4) |
+
+---
+
+## 5. Staging & Classification
+
+| System | Detail |
+|--------|--------|
+| **TNM 8th Edition (Ampullary)** | T1: ≤2cm; T2: >2cm or invasion into duodenum/pancreas; T3: Invasion into pancreas/peripancreatic tissue; T4: Intracranial extension (cranial nerves, cavernous sinus, brain) |
+| **TNM 8th (Duodenal)** | Same as Small Bowel (T1: Submucosa; T2: Muscularis; T3: Subserosa; T4: Adjacent organs) |
+| **N Stage** | N1: 1-3 nodes; N2: ≥4 nodes |
+| **M Stage** | M1: Distant mets |
+| **Stage Grouping** | Similar to pancreatic/duodenal |
+
+---
+
+## 6. Diagnosis & Investigations
+
+| Investigation | Role | Key Details |
+|---------------|------|-------------|
+| **CT Abdomen (Pancreas Protocol)** | **Staging, Resectability** | **Triple-phase**: Ampullary mass, CBD/PD dilatation, Vascular contact |
+| **MRI/MRCP** | **Biliary/Pancreatic duct anatomy** | Better duct visualisation; Equivocal CT |
+| **ERCP** | **Diagnosis + Stenting** | **Brush cytology** (sensitivity 40-60%), **Biopsy**, **Stent for jaundice** |
+| **EUS** | **Local staging, FNA** | **T staging, Nodal assessment**, FNA for tissue |
+| **Upper GI Endoscopy** | **Direct visualisation, Biopsy** | **Ampullary mass** (papillary/bulbous), Duodenal lesion |
+| **Biopsy IHC** | **Subtype classification** | **Ampullary**: MUC2 vs MUC1, CK20, CDX2, CK7, **MMR/MSI** |
+| **Molecular** | **MSI/MMR (MANDATORY for Ampullary)**, KRAS, TP53 | **MSI-H 30-50% Ampullary** → Pembrolizumab |
+
+---
+
+## 7. Differential Diagnosis
+
+| Condition | Distinguishing Features |
+|-----------|-------------------------|
+| **PDAC (Pancreatic Head)** | **No ampullary mass**, **Main PD dilatation > CBD**, **Courvoisier's**, **CA19-9↑** |
+| **Distal Cholangiocarcinoma** | **CBD stricture**, **No ampullary mass**, **PD normal**, **CA19-9↑** |
+| **Duodenal Adenocarcinoma (D3-D4)** | **Distal to ampulla**, **No early jaundice**, **Obstruction dominant** |
+| **Adenoma (Villous)** | **Benign**, **High-grade dysplasia**, **No invasion** |
+| **Neuroendocrine Tumour** | **Chromogranin+, Synaptophysin+**, **Slow-growing** |
+| **Pancreatitis (Chronic)** | **Calcifications**, **Irregular duct**, **No discrete mass** |
+| **Metastasis to Ampulla** | Rare; Known primary (RCC, Lung, Breast, Melanoma) |
+
+---
+
+## 8. Management
+
+### Surgery
+
+```mermaid
+flowchart TD
+    A[Ampullary / Duodenal Cancer] --> B{Location}
+    B -->|**Ampullary**| C[**Pancreaticoduodenectomy (Whipple/PPPD)**<br/>**En bloc**: Duodenum, Head of Pancreas, CBD, GB, ± Distal Stomach<br/>**Lymphadenectomy**: Stations 5, 6, 8, 12, 13, 14, 17, 16b1<br/>**R0 resection** critical]
+    B -->|**D1-D2 Duodenal**| D[**Pancreaticoduodenectomy (Whipple/PPPD)**<br/>Same as ampullary<br/>**Duodenum D1-D2 = Periampullary**]
+    B -->|**D3-D4 Duodenal**| E[**Segmental Duodenal Resection + Lymphadenectomy**<br/>**Preserve Pancreas/Bile Duct**<br/>**Anastomosis**: Duodenojejunostomy / Gastrojejunostomy<br/>**Lymphadenectomy**: Along SMA/SMV, Portal vein]
+    C --> F[**Adjuvant Therapy**]
+    D --> F
+    E --> F
+```
+
+### Adjuvant Therapy
+
+```mermaid
+flowchart TD
+    A[Post-Op (R0/R1), Stage II-III] --> B{Histology / Trial Data}
+    B -->|**Ampullary Intestinal-type**| C[**Adjuvant FOLFOX ×6mo** (extrapolated from Colon)<br/>**OR Capecitabine** (BILCAP extrapolated)<br/>**OR Gemcitabine** (ESPAC-3)]
+    B -->|**Ampullary Pancreatobiliary-type**| D[**Adjuvant Gemcitabine + Cisplatin** (BILCAP extrapolated / ABC-02)<br/>**OR FOLFOX**]
+    B -->|**Duodenal**| E[**Adjuvant FOLFOX / CapeOx ×6mo** (BALLAD / Colon extrapolation)<br/>**OR Gem+Cis** (BILCAP)]
+    B -->|**MSI-H / dMMR**| F[**Surveillance vs Adjuvant** — **MSI-H colon: No 5-FU benefit**<br/>**Ampullary: No dedicated data** — Individualise]
+```
+
+**Key Trials:**
+- **ESPAC-3 (Periampullary)**: Adjuvant **Gemcitabine vs 5-FU/FA** — **No significant difference** (median OS ~35-36mo both)
+- **BILCAP (Biliary)**: Adjuvant **Capecitabine** vs Surveillance — **OS benefit** (HR 0.81) — Extrapolated to Ampullary/Duodenal
+- **ABC-02 (Biliary)**: **Gemcitabine + Cisplatin** 1L metastatic — Standard for pancreatobiliary-type
+
+### Metastatic / Unresectable
+
+```mermaid
+flowchart TD
+    A[Metastatic Ampullary / Duodenal] --> B{MSI Status}
+    B -->|**MSI-H / dMMR**<br/>(Ampullary 30-50%)| C[**Pembrolizumab 200mg q3w** (KEYNOTE-158/164)<br/>**Tumour-agnostic**<br/>**High response rate, durable**]
+    B -->|**MSS / pMMR**| D[**1L: FOLFOX / CapeOx ± Bevacizumab**<br/>**OR Gemcitabine + Cisplatin** (if pancreatobiliary-type)<br/>**Extrapolated from Biliary / Colon**]
+    D --> E[**2L: FOLFIRI ± Bevacizumab / GemCis**<br/>**Switch regimen**]
+    C --> F[**Post-IO Progression**: Chemo per MSS algorithm]
+```
+
+---
+
+## 9. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Ampullary vs Duodenal** | **Ampullary**: Within 2cm of ampulla → Early jaundice; **Duodenal D1-D2: Whipple; D3-D4: Segmental** |
+| **Ampullary Subtypes** | **Intestinal (MUC2+, CK20+, better)** vs **Pancreatobiliary (MUC1+, CK7+, worse)** |
+| **MSI-H in Ampullary** | **30-50%** → **Pembrolizumab** (tumour-agnostic) |
+| **Surgery** | **Whipple/PPPD** for Ampullary + D1-D2; **Segmental** for D3-D4 |
+| **Adjuvant** | **ESPAC-3**: Gem vs 5-FU (no diff); **BILCAP**: Cap benefit; **Modern: FOLFOX / Gem+Cis** |
+| **Metastatic** | **MSI-H: Pembrolizumab**; **MSS: FOLFOX / GemCis ± Bev** |
+| **Biliary vs Pancreatic vs Ampullary vs Duodenal** | All **Whipple candidates**; Distinction by origin: Pancreas (PDAC), CBD (Cholangio), Ampulla, Duodenum |
+| **IHC** | **Ampullary Intestinal**: MUC2+, CK20+, CDX2+, MUC1-; **Pancreatobiliary**: MUC1+, CK7+ |
+
+---
+
+## 10. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **65M, painless jaundice, CT: 2cm ampullary mass, no vascular invasion. Biopsy: MUC2+, CK20+, MSI-H. Management?** | **Whipple/PPPD** → **Adjuvant: Surveillance or FOLFOX** (MSI-H colon no 5-FU benefit; Ampullary no data — individualise). **Metastatic: Pembrolizumab**. |
+| **Ampullary intestinal vs pancreatobiliary — IHC difference?** | **Intestinal**: **MUC2+, CK20+, CDX2+, MUC1-**; **Pancreatobiliary**: **MUC1+, CK7+, MUC2-** |
+| **MSI-H rate in Ampullary vs Duodenal?** | **Ampullary: 30-50%**; **Duodenal: ~10-15%** (similar to SBA) |
+| **ESPAC-3 trial — adjuvant for periampullary?** | **Gemcitabine vs 5-FU/FA** — **No significant OS difference** (mOS ~35-36mo both); **Either acceptable historically** |
+| **BILCAP trial — adjuvant capecitabine for biliary?** | **Capecitabine vs Surveillance** — **OS HR 0.81 (p=0.028)** — **Extrapolated to Ampullary/Duodenal** |
+| **Duodenal D3-D4 cancer — surgery?** | **Segmental duodenal resection + lymphadenectomy** — **Preserve pancreas/bile duct** |
+| **Metastatic Ampullary, MSI-H — 1L?** | **Pembrolizumab 200mg q3w** (tumour-agnostic approval) |
+| **Metastatic Ampullary, MSS, pancreatobiliary-type — 1L?** | **Gemcitabine + Cisplatin** (ABC-02) **OR FOLFOX ± Bev** |
+| **Periampullary cancers — name the 4?** | **1) PDAC (Pancreatic Head)**, **2) Distal Cholangiocarcinoma**, **3) Ampullary Cancer**, **4) Duodenal Cancer (D1-D2)** |
+| **Duodenal adenocarcinoma risk factors?** | **FAP**, **Lynch**, **Crohn's**, **Peutz-Jeghers**, **Celiac** |
+
+---
+
+## 11. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Ampullary vs Duodenal D1-D2** | **Anatomically overlapping**: Ampulla **IN** D2; **Both treated with Whipple**; Distinction for **histology/MSI** |
+| **Ampullary subtypes — prognosis** | **Intestinal (MUC2+) = Better**; **Pancreatobiliary (MUC1+) = Worse** (like PDAC) |
+| **ESPAC-3 vs BILCAP** | **ESPAC-3**: Periampullary, **Gem vs 5-FU (no diff)**; **BILCAP**: Biliary, **Cap vs Surveillance (Cap wins)** — Extrapolated |
+| **MSI-H Ampullary — Adjuvant chemo benefit?** | **Unknown** (no trial); **Colon MSI-H: No 5-FU benefit**; **Likely similar** — Individualise |
+| **Periampullary 4 cancers** | All **Whipple candidates**; **Distinction by origin**: Pancreas (PDAC), CBD (Cholangio), Ampulla, Duodenum |
+| **Duodenal D3-D4 vs SBA** | **Duodenal D3-D4 = SBA** (anatomically); **SBA guidelines apply** (Segmental resection, FOLFOX adjuvant) |
+
+**Mnemonic: AMPULLA**
+- **A**mpullary: **Within 2cm of Ampulla** → Early jaundice
+- **M**UC2+ (Intestinal) vs **MUC1+** (Pancreatobiliary) — IHC
+- **P**eriampullary 4: **PDAC, Cholangio, Ampullary, Duodenal** → All Whipple
+- **U**pper GI: **Whipple/PPPD** (Ampullary + D1-D2)
+- **L**ow D3-D4: **Segmental Resection** (SBA-style)
+- **L**ynch/MSI: **Ampullary 30-50% MSI-H** → **Pembrolizumab**
+- **A**djuvant: **ESPAC-3 (Gem=5-FU)**, **BILCAP (Cap wins)**, **Modern FOLFOX**
+
+---
+
+## 12. Mind Map
+
+```mermaid
+mindmap
+  root((Ampullary & Duodenal))
+    Ampullary
+      Anatomy: Within 2cm Ampulla
+      Subtypes: Intestinal (MUC2+) vs Pancreatobiliary (MUC1+)
+      MSI-H: 30-50%
+      Surgery: Whipple/PPPD
+    Duodenal
+      D1-D2: Whipple/PPPD (Periampullary)
+      D3-D4: Segmental + LN (SBA-style)
+      MSI-H: 10-15%
+    Adjuvant
+      ESPAC-3: Gem = 5-FU (no diff)
+      BILCAP: Cap benefit
+      Modern: FOLFOX / Gem+Cis
+    Metastatic
+      MSI-H: Pembrolizumab
+      MSS: FOLFOX / GemCis ± Bev
+    Differential
+      PDAC, Distal Cholangio, Ampullary, Duodenal
+```
+
+---
+
+## 13. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Ampullary** | Within 2cm ampulla; **Early jaundice**; Intestinal (MUC2+) vs PB (MUC1+) |
+| **Duodenal** | D1-D2: Whipple; D3-D4: Segmental + LN |
+| **MSI-H** | Ampullary **30-50%** → Pembrolizumab |
+| **Surgery** | Whipple/PPPD for Ampullary + D1-D2; Segmental for D3-D4 |
+| **Adjuvant** | ESPAC-3 (Gem=5-FU); BILCAP (Cap); Modern FOLFOX/GemCis |
+| **Metastatic** | MSI-H: Pembro; MSS: FOLFOX/GemCis ± Bev |
+| **Periampullary 4** | PDAC, Distal CBD, Ampullary, Duodenal |
+
+---
+
+## 14. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 15. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Ampullary subtypes IHC | | |
+| MSI-H rate / Pembrolizumab | | |
+| Surgery by location | | |
+| ESPAC-3 / BILCAP adjuvant | | |
+| Periampullary 4 distinction | | |
+| Metastatic algorithms | | |
+| Duodenal risk factors | | |
+
+---
+
+## 16. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Pancreatic Cancer]], [[Cholangiocarcinoma]], [[Small Bowel Adenocarcinoma]], [[Whipple Procedure]], [[BILCAP Trial]], [[ESPAC-3]], [[MSI-H Ampullary]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 17. MCQs (10)
+
+
+**1.** Regarding Ampullary & Duodenal Cancer (Ampullary vs Duodenal), which statement is correct?
+   A. **Ampullary**: Within 2cm of ampulla → Early jaundice
+   B. **Ampullary**: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Ampullary**: Within 2cm of ampulla → Early jaundice; **Duodenal D1-D2: Whipple; D3-D4: Segmental**
+
+
+**2.** Regarding Ampullary & Duodenal Cancer (Ampullary Subtypes), which statement is correct?
+   A. **Intestinal (MUC2+, CK20+, better)** vs **Pancreatobiliary (MUC1+, CK7+, worse)**
+   B. **Intestinal - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Intestinal (MUC2+, CK20+, better)** vs **Pancreatobiliary (MUC1+, CK7+, worse)**
+
+
+**3.** Regarding Ampullary & Duodenal Cancer (MSI-H in Ampullary), which statement is correct?
+   A. **30-50%** → **Pembrolizumab** (tumour-agnostic)
+   B. **30-50%** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **30-50%** → **Pembrolizumab** (tumour-agnostic)
+
+
+**4.** Regarding Ampullary & Duodenal Cancer (Surgery), which statement is correct?
+   A. **Whipple/PPPD** for Ampullary + D1-D2
+   B. **Whipple/PPPD** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Whipple/PPPD** for Ampullary + D1-D2; **Segmental** for D3-D4
+
+
+**5.** Regarding Ampullary & Duodenal Cancer (Adjuvant), which statement is correct?
+   A. **ESPAC-3**: Gem vs 5-FU (no diff)
+   B. **ESPAC-3**: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **ESPAC-3**: Gem vs 5-FU (no diff); **BILCAP**: Cap benefit; **Modern: FOLFOX / Gem+Cis**
+
+
+**6.** Regarding Ampullary & Duodenal Cancer (Metastatic), which statement is correct?
+   A. **MSI-H: Pembrolizumab**
+   B. **MSI-H: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **MSI-H: Pembrolizumab**; **MSS: FOLFOX / GemCis ± Bev**
+
+
+**7.** Regarding Ampullary & Duodenal Cancer (Biliary vs Pancreatic vs Ampullary vs Duodenal), which statement is correct?
+   A. All **Whipple candidates**
+   B. All - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — All **Whipple candidates**; Distinction by origin: Pancreas (PDAC), CBD (Cholangio), Ampulla, Duodenum
+
+
+**8.** Regarding Ampullary & Duodenal Cancer (IHC), which statement is correct?
+   A. **Ampullary Intestinal**: MUC2+, CK20+, CDX2+, MUC1-
+   B. **Ampullary - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Ampullary Intestinal**: MUC2+, CK20+, CDX2+, MUC1-; **Pancreatobiliary**: MUC1+, CK7+
+
+
+**9.** Regarding Ampullary & Duodenal Cancer (FCPS/MRCP High Yield - Ampullary Cancer), which statement is correct?
+   - A. FCPS/MRCP High Yield - Ampullary Cancer: Periampullary (within 2cm of ampulla)
+   - B. Empirical approach without specific indication
+   - C. Used only in research protocols
+   - D. Not relevant in current practice
+   - **Answer: A** — FCPS/MRCP High Yield - Ampullary Cancer: Periampullary (within 2cm of ampulla)
+
+**10.** Regarding Ampullary & Duodenal Cancer (IHC), which statement is correct?
+   - A. IHC: CK20+, CDX2+, MUC1+, MUC2+
+   - B. Empirical approach without specific indication
+   - C. Used only in research protocols
+   - D. Not relevant in current practice
+   - **Answer: A** — IHC: CK20+, CDX2+, MUC1+, MUC2+
+
+## 18. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **Ampullary**: Within 2cm of ampulla → Early jaundice
+   - B. **Ampullary**: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **Ampullary**: Within 2cm of ampulla → Early jaundice; **Duodenal D1-D2: Whipple; D3-D4: Segmental**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **Intestinal (MUC2+, CK20+, better)** vs **Pancreatobiliary (MUC1+, CK7+, worse)**
+   - B. **Intestinal (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **Intestinal (MUC2+, CK20+, better)** vs **Pancreatobiliary (MUC1+, CK7+, worse)**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **30-50%** → **Pembrolizumab** (tumour-agnostic)
+   - B. **30-50%** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **30-50%** → **Pembrolizumab** (tumour-agnostic)
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Whipple/PPPD** for Ampullary + D1-D2
+   - B. **Whipple/PPPD** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Whipple/PPPD** for Ampullary + D1-D2; **Segmental** for D3-D4
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **ESPAC-3**: Gem vs 5-FU (no diff)
+   - B. **ESPAC-3**: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **ESPAC-3**: Gem vs 5-FU (no diff); **BILCAP**: Cap benefit; **Modern: FOLFOX / Gem+Cis**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **MSI-H: Pembrolizumab**
+   - B. **MSI-H: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **MSI-H: Pembrolizumab**; **MSS: FOLFOX / GemCis ± Bev**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. All **Whipple candidates**
+   - B. All (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: All **Whipple candidates**; Distinction by origin: Pancreas (PDAC), CBD (Cholangio), Ampulla, Duodenum
+
+
+**8.** The role of surgery in this case is:
+   - A. **Ampullary Intestinal**: MUC2+, CK20+, CDX2+, MUC1-
+   - B. **Ampullary (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **Ampullary Intestinal**: MUC2+, CK20+, CDX2+, MUC1-; **Pancreatobiliary**: MUC1+, CK7+
+
+
+**9.** A clinician encounters this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - Ampullary Cancer: Periampullary (within 2cm of ampulla)
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention required
+   - **Answer: A** — FCPS/MRCP High Yield - Ampullary Cancer: Periampullary (within 2cm of ampulla)
+
+**10.** On evaluation, the finding is confirmed. Most appropriate next step:
+   - A. IHC: CK20+, CDX2+, MUC1+, MUC2+
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention required
+   - **Answer: A** — IHC: CK20+, CDX2+, MUC1+, MUC2+
+
+## 19. Flashcards
+
+**Q1:** Ampullary vs Duodenal?
+**A1:** Ampullary: Within 2cm of ampulla → Early jaundice; Duodenal D1-D2: Whipple; D3-D4: Segmental
+
+**Q2:** Ampullary Subtypes?
+**A2:** Intestinal (MUC2+, CK20+, better) vs Pancreatobiliary (MUC1+, CK7+, worse)
+
+**Q3:** MSI-H in Ampullary?
+**A3:** 30-50% → Pembrolizumab (tumour-agnostic)
+
+**Q4:** Surgery?
+**A4:** Whipple/PPPD for Ampullary + D1-D2; Segmental for D3-D4
+
+**Q5:** Adjuvant?
+**A5:** ESPAC-3: Gem vs 5-FU (no diff); BILCAP: Cap benefit; Modern: FOLFOX / Gem+Cis
+
+**Q6:** Metastatic?
+**A6:** MSI-H: Pembrolizumab; MSS: FOLFOX / GemCis ± Bev
+
+**Q7:** Biliary vs Pancreatic vs Ampullary vs Duodenal?
+**A7:** All Whipple candidates; Distinction by origin: Pancreas (PDAC), CBD (Cholangio), Ampulla, Duodenum
+
+**Q8:** IHC?
+**A8:** Ampullary Intestinal: MUC2+, CK20+, CDX2+, MUC1-; Pancreatobiliary: MUC1+, CK7+
+
+## 20. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Ampullary vs Duodenal | Ampullary: Within 2cm of ampulla → Early jaundice; Duodenal D1-D2: Whipple; D3-D4: Segmental |
+| 2 | A | Ampullary Subtypes | Intestinal (MUC2+, CK20+, better) vs Pancreatobiliary (MUC1+, CK7+, worse) |
+| 3 | A | MSI-H in Ampullary | 30-50% → Pembrolizumab (tumour-agnostic) |
+| 4 | A | Surgery | Whipple/PPPD for Ampullary + D1-D2; Segmental for D3-D4 |
+| 5 | A | Adjuvant | ESPAC-3: Gem vs 5-FU (no diff); BILCAP: Cap benefit; Modern: FOLFOX / Gem+Cis |
+| 6 | A | Metastatic | MSI-H: Pembrolizumab; MSS: FOLFOX / GemCis ± Bev |
+| 7 | A | Biliary vs Pancreatic vs Ampullary vs Duodenal | All Whipple candidates; Distinction by origin: Pancreas (PDAC), CBD (Cholangio), Ampulla, Duodenum |
+| 8 | A | IHC | Ampullary Intestinal: MUC2+, CK20+, CDX2+, MUC1-; Pancreatobiliary: MUC1+, CK7+ |
+| 9 | A | FCPS/MRCP High Yield - Ampullary Cancer | FCPS/MRCP High Yield - Ampullary Cancer: Periampullary (within 2cm of ampulla) |
+| 10 | A | IHC | IHC: CK20+, CDX2+, MUC1+, MUC2+ |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Ampullary vs Duodenal | Ampullary: Within 2cm of ampulla → Early jaundice; Duodenal D1-D2: Whipple; D3-D4: Segmental |
+| 2 | A | Ampullary Subtypes | Intestinal (MUC2+, CK20+, better) vs Pancreatobiliary (MUC1+, CK7+, worse) |
+| 3 | A | MSI-H in Ampullary | 30-50% → Pembrolizumab (tumour-agnostic) |
+| 4 | A | Surgery | Whipple/PPPD for Ampullary + D1-D2; Segmental for D3-D4 |
+| 5 | A | Adjuvant | ESPAC-3: Gem vs 5-FU (no diff); BILCAP: Cap benefit; Modern: FOLFOX / Gem+Cis |
+| 6 | A | Metastatic | MSI-H: Pembrolizumab; MSS: FOLFOX / GemCis ± Bev |
+| 7 | A | Biliary vs Pancreatic vs Ampullary vs Duodenal | All Whipple candidates; Distinction by origin: Pancreas (PDAC), CBD (Cholangio), Ampulla, Duodenum |
+| 8 | A | IHC | Ampullary Intestinal: MUC2+, CK20+, CDX2+, MUC1-; Pancreatobiliary: MUC1+, CK7+ |
+
+| 11 | A | FCPS/MRCP High Yield - Ampullary Cancer | FCPS/MRCP High Yield - Ampullary Cancer: Periampullary (within 2cm of ampulla) |
+| 12 | A | IHC | IHC: CK20+, CDX2+, MUC1+, MUC2+ |
+## 21. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Upper GI Cancers|Upper GI Cancers]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

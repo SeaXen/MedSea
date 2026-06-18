@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anticonvulsants — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.13. TDM</span>
+      <div class="h1">Anticonvulsants</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] State therapeutic ranges for key anticonvulsants (Phenytoin, Carbamazepine, Valproate, Phenobarbital, Lamotrigine, Levetiracetam, Topiramate)</li><li>[ ] Apply FREE phenytoin/valproate monitoring in hypoalbuminaemia/renal failure</li><li>[ ] Recognise toxicity features for each drug</li><li>[ ] Manage key drug interactions (enzyme induction/inhibition)</li><li>[ ] Apply dosing in pregnancy, renal/hepatic impairment</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Therapeutic Ranges & Sampling</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>**Therapeutic Range (µg/mL)**</th><th>**Toxic Threshold**</th><th>**Sampling**</th></tr><tr><td>------</td><td>-------------------------------</td><td>---------------------</td><td>--------------</td></tr><tr><td>**Phenytoin**</td><td>**10–20** (Total) / **1–2** (Free)</td><td>**>20** (Total) / **>2** (Free)</td><td>**Trough (pre-dose)**; steady state 5–10d (t½ 6–24h, dose-dep)</td></tr><tr><td>**Carbamazepine**</td><td>**4–12**</td><td>**>12–15**</td><td>Trough (pre-dose); steady state 2–4wks (auto-induction)</td></tr><tr><td>**Valproate**</td><td>**50–100** (Total) / **5–10** (Free)</td><td>**>100** (Total) / **>10** (Free)</td><td>Trough (pre-dose); steady state 2–4d (t½ 9–16h)</td></tr><tr><td>**Phenobarbital**</td><td>**10–40**</td><td>**>40–50**</td><td>Trough; steady state 2–3wks</td></tr><tr><td>**Lamotrigine**</td><td>**3–15** (no fixed range)</td><td>**>15–20**</td><td>Trough; steady state 5–7d</td></tr><tr><td>**Levetiracetam**</td><td>**Not routinely monitored** (12–46 typical)</td><td>No defined</td><td>Not routine; if needed: trough</td></tr><tr><td>**Topiramate**</td><td>**Not routinely monitored** (5–20 typical)</td><td>No defined</td><td>Not routine</td></tr><tr><td>**Ethosuximide**</td><td>**40–100**</td><td>>100</td><td>Trough</td></tr><tr><td>**Zonisamide**</td><td>**10–40**</td><td>>40</td><td>Trough</td></tr></table>
+<div class="callout"><b>Free drug monitoring ESSENTIAL for</b>: <b>Phenytoin and Valproate</b> in hypoalbuminaemia, renal failure, pregnancy, elderly, displacement interactions</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🧪 Free vs Total Drug — Phenytoin & Valproate</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Phenytoin</div>
+<table class="ctable"><tr><th>Parameter</th><th>**Total**</th><th>**Free**</th></tr><tr><td>-----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Protein Binding**</td><td>**~90% bound to albumin**</td><td>**~10% free**</td></tr><tr><td>**Therapeutic Range**</td><td>10–20 µg/mL</td><td>**1–2 µg/mL**</td></tr><tr><td>**When to Use Free**</td><td>Normal albumin, no displacement</td><td>**Hypoalbuminaemia (<35g/L), Renal failure (uraemia displaces), Pregnancy, Elderly, Valproate co-administration, Nephrotic syndrome, Burns**</td></tr><tr><td>**Estimation (if free not available)**</td><td>**Corrected Total = Measured Total / (0.2 × Albumin + 0.1)**<br>Sheiner-Tozer (renal): **Corrected = Measured / (0.1 × Albumin + 0.1)**</td><td>Direct assay preferred</td></tr></table>
+<div class="sub-h">Valproate</div>
+<table class="ctable"><tr><th>Parameter</th><th>**Total**</th><th>**Free**</th></tr><tr><td>-----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Protein Binding**</td><td>**~90% bound (dose-dependent: ↓ binding at higher levels)**</td><td>**~10% free (increases with dose)**</td></tr><tr><td>**Therapeutic Range**</td><td>50–100 µg/mL</td><td>**5–10 µg/mL**</td></tr><tr><td>**When to Use Free**</td><td>Normal albumin, low dose</td><td>**Hypoalbuminaemia, Renal failure, Pregnancy, High dose (>1000mg/day), Elderly, Displacement (e.g., aspirin)**</td></tr><tr><td>**Estimation**</td><td>Not reliable due to saturable binding</td><td>Direct assay preferred</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">☠️ Toxicity Profiles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>**Acute Toxicity**</th><th>**Chronic Toxicity**</th></tr><tr><td>------</td><td>-------------------</td><td>----------------------</td></tr><tr><td>**Phenytoin**</td><td>Nystagmus, **Ataxia, Dysarthria** (cerebellar), Confusion, Coma, **Bidirectional VT** (rare), **Hypotension** (IV)</td><td>**Gingival hyperplasia**, Hirsutism, Coarsening features, Osteomalacia (↓ Vit D), Neuropathy, **Folate deficiency**, Lymphadenopathy</td></tr><tr><td>**Carbamazepine**</td><td>Dizziness, Ataxia, N/V, Diplopia, Hyponatraemia (SIADH), **Agranulocytosis** (rare)</td><td>**Hyponatraemia (SIADH)**, **Autoinduction** (↓ levels over weeks), **Enzyme induction** (↓ other drugs), **Aplastic anaemia** (rare), Skin reactions (SCARs)</td></tr><tr><td>**Valproate**</td><td>Confusion, **Hyperammonaemic encephalopathy** (normal LFTs!), Somnolence, Cerebral oedema</td><td>**Weight gain**, **Tremor**, Alopecia, **PCOS**, **Thrombocytopenia** (dose-dep), **Hepatotoxicity** (rare, <2y, polytherapy), **Neural tube defects** (teratogen)</td></tr><tr><td>**Phenobarbital**</td><td>Sedation, Respiratory depression, Hypotension, Ataxia</td><td>**Enzyme induction**, Osteomalacia, Cognitive impairment, Dependence</td></tr><tr><td>**Lamotrigine**</td><td>Rash (↑ with rapid titration/valproate), **SJS/TEN**, Aseptic meningitis</td><td>Rash, Headache, Insomnia</td></tr><tr><td>**Levetiracetam**</td><td>Sedation, **Behavioural (aggression, psychosis, irritability)**, Dizziness</td><td>Rare chronic toxicity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🔄 Key Interactions (Enzyme Induction/Inhibition)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>**Induces** (↓ levels of others)</th><th>**Inhibited By** (↑ levels)</th><th>**Inhibits** (↑ levels of others)</th></tr><tr><td>------</td><td>----------------------------------</td><td>----------------------------</td><td>----------------------------------</td></tr><tr><td>**Phenytoin**</td><td>**CYP3A4, 2C9, 2C19, 1A2, UGT**</td><td>**Valproate, Fluconazole, Amiodarone, Cimetidine, Sulfonamides, Chloramphenicol, Disulfiram, Isoniazid, Felbamate**</td><td>Warfarin, DOACs, OCP, Corticosteroids, Theophylline, Ciclosporin, Tacrolimus</td></tr><tr><td>**Carbamazepine**</td><td>**CYP3A4, 2C9, 2C19, 1A2, UGT, P-gp**</td><td>**Valproate, Fluconazole, Erythromycin, Clarithromycin, Verapamil, Diltiazem, Propoxyphene, Fluvoxamine, Nefazodone**</td><td>Warfarin, DOACs, OCP, Ciclosporin, Tacrolimus, Sirolimus</td></tr><tr><td>**Phenobarbital**</td><td>**CYP3A4, 2C9, 2C19, 1A2, UGT, P-gp**</td><td>**Valproate, Felbamate**</td><td>Warfarin, DOACs, OCP, Ciclosporin, Tacrolimus</td></tr><tr><td>**Valproate**</td><td>**UGT (weak)**</td><td>**Carbamazepine (epoxide), Rifampicin**</td><td>**Phenytoin (displace + inhibit), Carbamazepine (epoxide), Lamotrigine (↑ 2x), Phenobarbital, Topiramate**</td></tr><tr><td>**Lamotrigine**</td><td>—</td><td>**Valproate (↑ 2x), OCP (↓ levels)**</td><td>—</td></tr><tr><td>**Levetiracetam**</td><td>**None**</td><td>**None**</td><td>**None** (no CYP interaction)</td></tr><tr><td>**Topiramate**</td><td>**CYP3A4 (weak, high dose)**</td><td>**Valproate**</td><td>**OCP (↓ ethinylestradiol at ≥200mg)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">⚖️ Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pregnancy</div>
+<table class="ctable"><tr><th>Drug</th><th>**Teratogenicity**</th><th>**Dose Adjustment**</th><th>**Folic Acid**</th></tr><tr><td>------</td><td>-------------------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**Valproate**</td><td>**HIGHEST** — Neural tube defects (1–2%), Congenital malformations (10%), Neurodevelopmental delay (ADHD, ASD)</td><td>**AVOID IN PREGNANCY**; if essential: lowest effective dose, monitor free levels q4w</td><td>**5mg/day** pre-conception</td></tr><tr><td>**Carbamazepine**</td><td>Neural tube defects (0.5–1%), Craniofacial, Cardiac</td><td>**Free levels ↓ in pregnancy** — ↑ dose 25–50%, monitor free levels q4w</td><td>5mg/day</td></tr><tr><td>**Phenytoin**</td><td>Fetal hydantoin syndrome (craniofacial, limb, cardiac), NTDs</td><td>**Free levels ↓** — monitor free levels q4w; ↑ dose often needed</td><td>5mg/day</td></tr><tr><td>**Lamotrigine**</td><td>Low risk (NTDs ~2–3% at high dose); **clearance ↑ 2–3x in pregnancy**</td><td>**Levels ↓ dramatically** — ↑ dose 50–100%, monitor free levels q4w</td><td>5mg/day</td></tr><tr><td>**Levetiracetam**</td><td>**Lowest risk** (preferred in pregnancy)</td><td>**Clearance ↑** — ↑ dose often needed</td><td>5mg/day</td></tr><tr><td>**Topiramate**</td><td>Cleft lip/palate, NTDs, Low birth weight, ↓ fetal growth</td><td>Monitor levels</td><td>5mg/day</td></tr></table>
+<div class="sub-h">Renal Impairment</div>
+<table class="ctable"><tr><th>Drug</th><th>**Renal Excretion**</th><th>**Adjustment**</th></tr><tr><td>------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**Levetiracetam**</td><td>**~66% renal (unchanged)**</td><td>**↓ Dose by 50% if CrCl<50**; avoid if CrCl<30 (or specialist)</td></tr><tr><td>**Gabapentin**</td><td>**100% renal**</td><td>**CrCl-based dosing** (e.g., CrCl 30–60: 300mg BD; 15–30: 300mg daily; <15: 300mg alt day)</td></tr><tr><td>**Pregabalin**</td><td>**~98% renal**</td><td>Similar to gabapentin</td></tr><tr><td>**Topiramate**</td><td>~50% renal</td><td>↓ Dose if CrCl<50</td></tr><tr><td>**Zonisamide**</td><td>~35% renal</td><td>↓ Dose if CrCl<50</td></tr><tr><td>**Phenytoin, Carbamazepine, Valproate, Phenobarbital**</td><td>Minimal renal</td><td>**No renal adjustment**; monitor FREE levels in uraemia</td></tr></table>
+<div class="sub-h">Hepatic Impairment</div>
+<table class="ctable"><tr><th>Drug</th><th>**Hepatic Metabolism**</th><th>**Adjustment**</th></tr><tr><td>------</td><td>------------------------</td><td>----------------</td></tr><tr><td>**Phenytoin**</td><td>CYP2C9/2C19</td><td>**Use FREE levels**; ↓ dose if severe</td></tr><tr><td>**Carbamazepine**</td><td>CYP3A4</td><td>**Use FREE levels**; ↓ dose if severe</td></tr><tr><td>**Valproate**</td><td>**UGT, β-oxidation**</td><td>**CONTRAINDICATED in severe hepatic impairment**; avoid in active liver disease</td></tr><tr><td>**Lamotrigine**</td><td>UGT1A4</td><td>↓ Dose if severe</td></tr><tr><td>**Levetiracetam**</td><td>Minimal</td><td>No adjustment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Phenytoin free level**</td><td>**1–2 µg/mL** (total 10–20); use in hypoalbuminaemia, uraemia, pregnancy, valproate co-admin</td></tr><tr><td>**Valproate free level**</td><td>**5–10 µg/mL** (total 50–100); use in hypoalbuminaemia, renal failure, pregnancy, high dose</td></tr><tr><td>**Carbamazepine**</td><td>**Autoinduction** — levels drop over 2–4 weeks; **SIADH** common; **HLA-B*15:02** screen (Asians)</td></tr><tr><td>**Valproate toxicity**</td><td>**Hyperammonaemic encephalopathy** (normal LFTs, ↑ ammonia → L-carnitine 100mg/kg); Hepatotoxicity (<2y, polytherapy)</td></tr><tr><td>**Phenytoin toxicity**</td><td>**Cerebellar: nystagmus, ataxia, dysarthria** (level >20)</td></tr><tr><td>**Levetiracetam**</td><td>**No CYP interactions**; behavioural toxicity (aggression, psychosis); **renal adjustment**</td></tr><tr><td>**Lamotrigine + Valproate**</td><td>**Valproate ↑ Lamotrigine 2x** — ↓ lamotrigine dose, slow titration</td></tr><tr><td>**Pregnancy**</td><td>**Valproate CONTRAINDICATED**; Lamotrigine/Levetiracetam preferred; **Folic acid 5mg/day**; monitor free levels q4w</td></tr><tr><td>**Renal**</td><td>**Levetiracetam, Gabapentin, Pregabalin = renal adjustment**; Phenytoin/Carbamazepine/Valproate = free levels</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Phenytoin free therapeutic range? When to use?</td><td>**1–2 µg/mL**; use in **hypoalbuminaemia, renal failure (uraemia), pregnancy, elderly, valproate co-administration, displacement interactions**</td></tr><tr><td>2. Phenytoin corrected total formula (Sheiner-Tozer for renal)?</td><td>**Corrected = Measured / (0.1 × Albumin + 0.1)**</td></tr><tr><td>3. Valproate free therapeutic range? When to use?</td><td>**5–10 µg/mL**; use in **hypoalbuminaemia, renal failure, pregnancy, high dose, elderly, displacement**</td></tr><tr><td>4. Valproate hyperammonaemic encephalopathy — mechanism, treatment?</td><td>**Inhibits carbamoyl phosphate synthetase I → urea cycle dysfunction → ↑ ammonia**; **L-carnitine 100mg/kg IV**; stop valproate</td></tr><tr><td>5. Carbamazepine autoinduction — clinical implication?</td><td>**Levels drop over 2–4 weeks**; need dose escalation; ↓ levels of other drugs (OCP, warfarin, etc.)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Free vs Total phenytoin**</td><td>Free = **1–2 µg/mL** (10% of total); use free in hypoalbuminaemia, uraemia, pregnancy</td></tr><tr><td>**Valproate protein binding**</td><td>**Saturable** — free fraction ↑ at higher doses (>1000mg/day)</td></tr><tr><td>**Lamotrigine + Valproate**</td><td>Valproate **inhibits lamotrigine glucuronidation → ↑ levels 2x**</td></tr><tr><td>**Levetiracetam interactions**</td><td>**NONE** — no CYP, no protein binding, renal excretion</td></tr><tr><td>**Pregnancy lamotrigine**</td><td>**Clearance ↑ 2–3x** → levels plummet → need 50–100% dose increase</td></tr><tr><td>**Carbamazepine HLA-B*15:02**</td><td>Screen in **Asian ancestry** before starting (SJS/TEN risk)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"FREE PHENYTOIN = 1-2"</b> = use in hypoalbuminaemia, uraemia, pregnancy, valproate</li><li><b>"FREE VALPROATE = 5-10"</b> = use in hypoalbuminaemia, renal failure, pregnancy, high dose</li><li><b>"VALPROATE AMMONIA"</b> = inhibits CPS1 → urea cycle → ↑ ammonia → L-carnitine 100mg/kg</li><li><b>"CARBAMAZEPINE AUTO"</b> = autoinduction → levels drop 2-4wks</li><li><b>"LAMOTRIGINE + VALPROATE"</b> = valproate ↑ lamotrigine 2x → slow titrate, ↓ dose</li><li><b>"LEVETIRACETAM = NO CYP"</b> = clean interaction profile; renal adjust</li><li><b>"PREGNANCY AED"</b> = Valproate NO; Carbamazepine/Phenytoin = monitor free; Lamotrigine/Levetiracetam = preferred; Folate 5mg</li><li><b>"RENAL AED"</b> = Levetiracetam/Gabapentin/Pregabalin = renal adjust; others = free levels</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Anticonvulsants TDM)) Therapeutic Ranges Phenytoin: Total 10-20 / Free 1-2 Carbamazepine: 4-12 Valproate: Total 50-100 / Free 5-10 Phenobarbital: 10-40 Lamotrigine: 3-15 Levetiracetam: Not routine Topiramate: Not routine Free Drug Monitoring Phenytoin: Hypoalbuminaemia, uraemia, pregnancy, valproate Valproate: Hypoalbuminaemia, renal failure, pregnancy, high dose Formulas: Sheiner-Tozer (renal), Standard (albumin) Toxicity Phenytoin: Cerebellar (nystagmus, ataxia, dysarthria) Carbamazepine: SIADH, Autoinduction, SCARs (HLA-B*15:02) Valproate: Hyperammonaemic encephalopathy, Hepatotoxicity, Weight gain, PCOS, Thrombocytopenia Lamotrigine: Rash/SJS (valproate ↑ 2x) Levetiracetam: Behavioural (aggression, psychosis) Interactions Inducers: Phenytoin, Carbamazepine, Phenobarbital Valproate inhibits: Phenytoin, Lamotrigine (2x), Carbamazepine epoxide Levetiracetam: NONE Pregnancy Valproate: CONTRAINDICATED Lamotrigine/Levetiracetam: Preferred Levels drop: Lamotrigine 2-3x, Levetiracetam, Carbamazepine, Phenytoin Folate 5mg/day Renal Levetiracetam, Gabapentin, Pregabalin: Renal adjust Others: Free levels in uraemia </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Ranges & sampling</td><td>8</td><td></td></tr><tr><td>Free drug monitoring</td><td>8</td><td></td></tr><tr><td>Toxicity profiles</td><td>8</td><td></td></tr><tr><td>Interactions</td><td>8</td><td></td></tr><tr><td>Special populations</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td></tr><tr><td>**Total**</td><td>**52**</td><td></td></tr></table>
+<p><b>Target</b>: ≥42/52 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Phenytoin free drug monitoring — when, range, formula."*</div>
+<ul><li><b>Range</b>: <b>Free 1–2 µg/mL</b> (Total 10–20)</li><li><b>When</b>: <b>Hypoalbuminaemia (&lt;35), Renal failure/uraemia, Pregnancy, Elderly, Valproate co-administration, Displacement interactions</b></li><li><b>Formula (Sheiner-Tozer, renal failure)</b>: <b>Corrected Total = Measured Total / (0.1 × Albumin + 0.1)</b></li><li><b>Standard formula</b>: <b>Corrected Total = Measured Total / (0.2 × Albumin + 0.1)</b></li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on valproate 1500mg/day, confused, drowsy. LFTs normal. Ammonia 180. Management?"*</div>
+<ul><li><b>Valproate hyperammonaemic encephalopathy</b></li><li><b>STOP valproate immediately</b></li><li><b>L-carnitine 100mg/kg IV</b></li><li>Switch to alternative AED (levetiracetam, lamotrigine)</li><li>Monitor ammonia, consciousness</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on carbamazepine, started on clarithromycin. 1 week later: dizziness, ataxia. Why?"*</div>
+<ul><li><b>Clarithromycin inhibits CYP3A4 → ↓ carbamazepine metabolism → carbamazepine toxicity</b></li><li><b>STOP clarithromycin</b> (switch to azithromycin if needed)</li><li><b>Monitor carbamazepine level</b>; ↓ carbamazepine dose</li><li>Supportive care</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Phenytoin free = 1–2; Total = 10–20; use free in hypoalbuminaemia, uraemia, pregnancy</li><li>Valproate free = 5–10; Total = 50–100; saturable binding</li><li>Valproate encephalopathy = normal LFTs + ↑ ammonia → L-carnitine 100mg/kg</li><li>Carbamazepine autoinduction = levels drop 2–4wks; SIADH common; HLA-B*15:02 screen</li><li>Lamotrigine + Valproate = valproate ↑ lamotrigine 2x → slow titrate, ↓ dose</li><li>Levetiracetam = NO CYP interactions; renal adjust; behavioural toxicity</li><li>Pregnancy: Valproate NO; Folate 5mg; Lamotrigine/LEV preferred; free levels q4w</li><li>Renal: LEV, Gabapentin, Pregabalin = renal adjust</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>ANTICONVULSANT TDM:</b> <b>PHENYTOIN</b>: Total 10-20, Free 1-2 (hypoalbuminaemia, uraemia, pregnancy) <b>VALPROATE</b>: Total 50-100, Free 5-10 (saturable, hypoalbuminaemia, renal, pregnancy) <b>CARBAMAZEPINE</b>: 4-12, Autoinduction, SIADH, HLA-B*15:02 <b>VALPROATE ENCEPHALOPATHY</b>: Normal LFTs + ↑ Ammonia → L-carnitine 100mg/kg <b>LAMOTRIGINE + VALPROATE</b>: Valproate ↑ LMT 2x → ↓ dose, slow titrate <b>LEVETIRACETAM</b>: No CYP, Renal adjust, Behavioural tox <b>PREGNANCY</b>: Valproate NO; Folate 5mg; LMT/LEV preferred; Free q4w <b>RENAL</b>: LEV/Gabapentin/Pregabalin = adjust; Others = free levels</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Phenytoin free therapeutic range:</b></li></ol>
+<p>A. 0.5–1.0 µg/mL B. <b>1–2 µg/mL</b> ✓ C. 2–4 µg/mL D. 5–10 µg/mL E. 10–20 µg/mL</p>
+<ol><li><b>When is FREE phenytoin monitoring essential?</b></li></ol>
+<p>A. Normal albumin, no other drugs B. <b>Hypoalbuminaemia, renal failure, pregnancy, valproate co-administration</b> ✓ C. Only in overdose D. Only in elderly E. Never needed</p>
+<ol><li><b>Valproate free therapeutic range:</b></li></ol>
+<p>A. 1–2 µg/mL B. <b>5–10 µg/mL</b> ✓ C. 10–20 µg/mL D. 20–40 µg/mL E. 50–100 µg/mL</p>
+<ol><li><b>Valproate hyperammonaemic encephalopathy — key lab finding:</b></li></ol>
+<p>A. ↑ ALT/AST B. <b>↑ Ammonia with NORMAL LFTs</b> ✓ C. ↓ Glucose D. ↑ CK E. ↑ Lactate</p>
+<ol><li><b>Valproate encephalopathy treatment:</b></li></ol>
+<p>A. N-acetylcysteine B. <b>L-carnitine 100mg/kg IV</b> ✓ C. Fluids only D. Haemodialysis E. Pyridoxine</p>
+<ol><li><b>Carbamazepine autoinduction — clinical effect:</b></li></ol>
+<p>A. Levels rise over weeks B. <b>Levels fall over 2–4 weeks</b> ✓ C. No change D. Unpredictable E. Only with valproate</p>
+<ol><li><b>HLA screening before carbamazepine in Asian ancestry:</b></li></ol>
+<p>A. HLA-B*57:01 B. **HLA-B*15:02** ✓ C. HLA-B<i>58:01 D. HLA-DRB1</i>07:01 E. HLA-A*31:01</p>
+<ol><li><b>Lamotrigine + Valproate interaction:</b></li></ol>
+<p>A. Valproate ↓ Lamotrigine B. <b>Valproate ↑ Lamotrigine 2x</b> ✓ C. No interaction D. Lamotrigine ↑ Valproate E. Additive rash risk only</p>
+<ol><li><b>Levetiracetam — key features:</b></li></ol>
+<p>A. CYP3A4 inducer B. <b>No CYP interactions; Renal excretion; Behavioural toxicity</b> ✓ C. Protein binding displacement D. Liver metabolism only E. Requires TDM routinely</p>
+<ol><li><b>Pregnancy — valproate status:</b></li></ol>
+<p>A. Safe first-line B. <b>CONTRAINDICATED (highest teratogenicity)</b> ✓ C. Safe with folate D. Preferred over lamotrigine E. Only contraindicated in 1st trimester</p>
+<ol><li><b>Pregnancy — lamotrigine levels:</b></li></ol>
+<p>A. Unchanged B. <b>Clearance ↑ 2–3x → levels plummet</b> ✓ C. Levels ↑ D. Unpredictable E. Only free levels change</p>
+<ol><li><b>Levetiracetam renal adjustment — CrCl &lt;50:</b></li></ol>
+<p>A. No change B. <b>↓ Dose by 50%</b> ✓ C. ↑ Dose D. Avoid completely E. Monitor only</p>
+<ol><li><b>Phenytoin toxicity — cerebellar signs:</b></li></ol>
+<p>A. <b>Nystagmus, Ataxia, Dysarthria</b> ✓ B. Tremor, Rigidity C. Choreoathetosis D. Myoclonus E. Seizures</p>
+<ol><li><b>Valproate — contraindicated in:</b></li></ol>
+<p>A. Mild renal impairment B. <b>Severe hepatic impairment / active liver disease</b> ✓ C. Pregnancy only D. Elderly E. Children</p>
+<ol><li><b>Sheiner-Tozer corrected phenytoin formula (renal failure):</b></li></ol>
+<p>A. Measured / (0.2 × Alb + 0.1) B. <b>Measured / (0.1 × Alb + 0.1)</b> ✓ C. Measured × (0.1 × Alb + 0.1) D. Measured × (0.2 × Alb + 0.1) E. Measured / (0.3 × Alb + 0.1)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Phenytoin total range</td><td>10–20 µg/mL</td></tr><tr><td>Phenytoin free range</td><td>1–2 µg/mL</td></tr><tr><td>Phenytoin free when</td><td>Hypoalbuminaemia, uraemia, pregnancy, valproate co-admin</td></tr><tr><td>Phenytoin corrected (renal)</td><td>Measured / (0.1 × Alb + 0.1)</td></tr><tr><td>Valproate total range</td><td>50–100 µg/mL</td></tr><tr><td>Valproate free range</td><td>5–10 µg/mL</td></tr><tr><td>Valproate free when</td><td>Hypoalbuminaemia, renal failure, pregnancy, high dose</td></tr><tr><td>Valproate encephalopathy</td><td>Normal LFTs + ↑ Ammonia → L-carnitine 100mg/kg</td></tr><tr><td>Carbamazepine range</td><td>4–12 µg/mL</td></tr><tr><td>Carbamazepine autoinduction</td><td>Levels drop 2-4wks</td></tr><tr><td>Carbamazepine SIADH</td><td>Common</td></tr><tr><td>Carbamazepine HLA</td><td>B*15:02 (Asians)</td></tr><tr><td>Lamotrigine + Valproate</td><td>Valproate ↑ LMT 2x → slow titrate, ↓ dose</td></tr><tr><td>Levetiracetam</td><td>No CYP; Renal adjust; Behavioural toxicity</td></tr><tr><td>Pregnancy AEDs</td><td>Valproate NO; LMT/LEV preferred; Folate 5mg</td></tr><tr><td>Renal AEDs</td><td>LEV, Gabapentin, Pregabalin = adjust; Others = free levels</td></tr><tr><td>Phenytoin toxicity</td><td>Nystagmus, Ataxia, Dysarthria (cerebellar)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 1–2 µg/mL</li><li><b>B</b> — Hypoalbuminaemia, renal failure, pregnancy, valproate co-administration</li><li><b>B</b> — 5–10 µg/mL</li><li><b>B</b> — ↑ Ammonia with NORMAL LFTs</li><li><b>B</b> — L-carnitine 100mg/kg IV</li><li><b>B</b> — Levels fall over 2–4 weeks</li><li><b>B</b> — HLA-B*15:02</li><li><b>B</b> — Valproate ↑ Lamotrigine 2x</li><li><b>B</b> — No CYP interactions; Renal excretion; Behavioural toxicity</li><li><b>B</b> — CONTRAINDICATED (highest teratogenicity)</li><li><b>B</b> — Clearance ↑ 2–3x → levels plummet</li><li><b>B</b> — ↓ Dose by 50%</li><li><b>A</b> — Nystagmus, Ataxia, Dysarthria</li><li><b>B</b> — Severe hepatic impairment / active liver disease</li><li><b>B</b> — Measured / (0.1 × Alb + 0.1)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/TDM/Anticonvulsants.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Anticonvulsants · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

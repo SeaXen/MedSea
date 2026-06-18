@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Haematological Adrs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Haematological Adrs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify drug-induced haematological toxicity by cell line</li><li>[ ] Differentiate immune vs non-immune thrombocytopenia (HIT, DITP, TTP)</li><li>[ ] Recognise agranulocytosis — immediate management</li><li>[ ] Identify drug-induced haemolysis (G6PD, immune, microangiopathic)</li><li>[ ] Apply monitoring protocols (clozapine, carbamazepine, antithyroid drugs)</li><li>[ ] Execute emergency algorithms (HIT 4Ts, agranulocytosis)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Classification by Cell Line</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cell Line</th><th>Reaction</th><th>Mechanism</th><th>Key Drugs</th></tr><tr><td>-----------</td><td>----------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Neutrophils**</td><td>**Agranulocytosis** (<0.5×10⁹/L)</td><td>Immune (hapten/antibody) / Direct toxicity</td><td>**Clozapine, Carbamazepine, Sulfonamides, Antithyroid (carbimazole, PTU), Ticlopidine, Chemotherapy, Valproate**</td></tr><tr><td></td><td>Neutropenia (0.5–1.5×10⁹/L)</td><td>Dose-dependent / Idiosyncratic</td><td>Chemotherapy, G-CSF, Antibiotics, Antivirals</td></tr><tr><td>**Platelets**</td><td>**Thrombocytopenia** (<100×10⁹/L)</td><td>**Immune (DITP)**, **HIT**, TMA, Bone marrow suppression</td><td>**Heparin (HIT), Quinine, GPIIb/IIIa inhibitors, Valproate, Carbamazepine, Sulfonamides, Gold, Heparin, Chemotherapy**</td></tr><tr><td>**Red Cells**</td><td>**Haemolytic Anaemia**</td><td>**Immune (Type II)**, **G6PD deficiency** (oxidative), **Microangiopathic (TMA)**</td><td>**Penicillins (AIHA), Cephalosporins, Methyldopa, NSAIDs, Quinidine, Sulfonamides (G6PD), Dapsone, Methylene blue, Clopidogrel (TMA)**</td></tr><tr><td></td><td>Pure Red Cell Aplasia (PRCA)</td><td>Immune / T-cell mediated</td><td>**Erythropoietin (anti-EPO antibodies), Azathioprine, Phenytoin, Carbamazepine, Isoniazid**</td></tr><tr><td>**All Lines**</td><td>**Aplastic Anaemia**</td><td>Idiosyncratic / Stem cell toxicity</td><td>**Chloramphenicol, Carbamazepine, Phenytoin, Gold, Benzene, Chemotherapy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚠️ Agranulocytosis — **Medical Emergency**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Features</th><th>**Agranulocytosis** (<0.5 × 10⁹/L)</th><th>**Neutropenia** (0.5–1.5 × 10⁹/L)</th></tr><tr><td>----------</td><td>-----------------------------------</td><td>----------------------------------</td></tr><tr><td>**Risk**</td><td>Life-threatening sepsis</td><td>Infection risk ↑</td></tr><tr><td>**Onset**</td><td>Days–weeks (immune); immediate (chemo)</td><td>Variable</td></tr><tr><td>**Presentation**</td><td>Fever, sore throat, sepsis, mouth ulcers</td><td>Often asymptomatic</td></tr><tr><td>**Immediate Action**</td><td>**STOP drug**, **IV antibiotics**, **G-CSF**, **reverse isolation**, **blood cultures**</td><td>Stop drug if severe; monitor; G-CSF if <1.0</td></tr></table>
+<div class="sub-h">High-Risk Drugs for Agranulocytosis</div>
+<table class="ctable"><tr><th>Drug</th><th>Monitoring</th><th>Risk</th></tr><tr><td>------</td><td>------------</td><td>------</td></tr><tr><td>**Clozapine**</td><td>**Mandatory**: Weekly ×18wks → fortnightly ×1yr → monthly</td><td>**~1%** risk; register; restart only if ANC>2.0</td></tr><tr><td>**Carbamazepine**</td><td>Baseline + periodic (no formal mandate)</td><td>~0.1%; HLA-B*15:02 screening (Asians)</td></tr><tr><td>**Antithyroid (Carbimazole/PTU)**</td><td>Patient education (sore throat → urgent FBC)</td><td>~0.1–0.5%; no routine monitoring</td></tr><tr><td>**Sulfonamides**</td><td>Clinical vigilance</td><td>Idiosyncratic</td></tr><tr><td>**Ticlopidine**</td><td>FBC 2-weekly ×3mo</td><td>~1%; largely replaced by clopidogrel</td></tr><tr><td>**Chemotherapy**</td><td>Protocol-driven (nadir day 7–14)</td><td>Expected; G-CSF support</td></tr></table>
+<div class="sub-h">Management Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Patient on high-risk drug presents with FEVER] --&gt; B[<b>URGENT FBC + DIFFERENTIAL</b>] B --&gt; C{ANC &lt;0.5 × 10⁹/L?} C --&gt;|YES| D[<b>AGRANULOCYTOSIS</b>&lt;br/&gt;<b>STOP DRUG IMMEDIATELY</b>&lt;br/&gt;<b>IV Broad-spectrum antibiotics</b> (Piperacillin-tazobactam / Meropenem)&lt;br/&gt;<b>G-CSF</b> (Filgrastim 5mcg/kg/day until ANC&gt;1.0)&lt;br/&gt;<b>Reverse isolation</b>&lt;br/&gt;Blood/urine cultures&lt;br/&gt;No routine antifungals unless persistent fever&gt;4-5d] C --&gt;|ANC 0.5-1.0| E[<b>SEVERE NEUTROPENIA</b>&lt;br/&gt;Stop drug&lt;br/&gt;IV antibiotics if febrile&lt;br/&gt;G-CSF consideration&lt;br/&gt;Close monitoring] C --&gt;|ANC 1.0-1.5| F[<b>MODERATE NEUTROPENIA</b>&lt;br/&gt;Stop drug if possible&lt;br/&gt;Oral antibiotics if febrile&lt;br/&gt;Monitor FBC 2-3x/week] C --&gt;|ANC &gt;1.5| G[<b>NOT NEUTROPENIC</b>&lt;br/&gt;Evaluate other causes of fever&lt;br/&gt;Continue drug if benefit&gt;risk] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🩸 Drug-Induced Thrombocytopenia (DITP) & HIT</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">DITP (Non-HIT Immune Thrombocytopenia)</div>
+<table class="ctable"><tr><th>Feature</th><th>DITP</th></tr><tr><td>---------</td><td>------</td></tr><tr><td>**Mechanism**</td><td>**Drug-dependent antibody** (IgG) binds platelet GPIIb/IIIa or Ib/IX → FcγR-mediated clearance</td></tr><tr><td>**Onset**</td><td>5–14 days (first exposure); hours (re-exposure)</td></tr><tr><td>**Platelet Count**</td><td>Often **<20×10⁹/L** (severe)</td></tr><tr><td>**Key Drugs**</td><td>**Quinine/Quinidine**, Sulfonamides, **GPIIb/IIIa inhibitors (Abciximab, Eptifibatide, Tirofiban)**, Valproate, Carbamazepine, Heparin (non-HIT), Gold, Rifampicin</td></tr><tr><td>**Diagnosis**</td><td>Drug cessation → platelet recovery **within 3–7 days**; drug-dependent antibody assay (specialised)</td></tr><tr><td>**Management**</td><td>**STOP drug** → platelets recover in days; **IVIG** if bleeding/severe; **avoid re-exposure**</td></tr></table>
+<div class="sub-h">Heparin-Induced Thrombocytopenia (HIT) — **Critical**</div>
+<table class="ctable"><tr><th>Feature</th><th>**HIT (Type II)**</th></tr><tr><td>---------</td><td>-------------------</td></tr><tr><td>**Mechanism**</td><td>**IgG antibody** to **PF4-heparin complex** → platelet activation → **prothrombotic state** (NOT bleeding)</td></tr><tr><td>**Onset**</td><td>**5–14 days** (UFH > LMWH > Fondaparinux)</td></tr><tr><td>**Platelet Count**</td><td>**↓ 30–50% from baseline** (rarely <20×10⁹/L); **thrombosis > bleeding**</td></tr><tr><td>**4Ts Score** (Pre-test Probability)</td><td></td></tr><tr><td>**Thrombocytopenia**</td><td>>50% fall & nadir ≥20 = 2; 30–50% or nadir 10–19 = 1; <30% or nadir <10 = 0</td></tr><tr><td>**Timing**</td><td>5–10d = 2; ≤1d (prior exposure) = 1; >10d = 0</td></tr><tr><td>**Thrombosis**</td><td>New thrombosis = 2; progressive/recurrent = 1; none = 0</td></tr><tr><td>**Other causes**</td><td>None = 2; possible = 1; definite = 0</td></tr><tr><td>**Score**</td><td>**4Ts ≥4 = High**; 3–4 = Intermediate; ≤2 = Low</td></tr></table>
+<div class="sub-h">HIT Management Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Suspect HIT: Thrombocytopenia 5-14d post-heparin] --&gt; B[Calculate 4Ts Score] B --&gt; C{4Ts Score} C --&gt;|<b>Low (≤2)</b>| D[<b>HIT UNLIKELY</b>&lt;br/&gt;Continue heparin if needed&lt;br/&gt;Monitor platelets] C --&gt;|<b>Intermediate (3-4)</b>| E[<b>STOP ALL HEPARIN</b> (UFH, LMWH, flushes)&lt;br/&gt;<b>Start non-heparin anticoagulant</b>:&lt;br/&gt;Argatroban (IV, hepatic adj) / Bivalirudin (IV, renal adj) / Fondaparinux (SC, off-label)&lt;br/&gt;Send <b>HIT antibody (PF4 ELISA)</b>&lt;br/&gt;If ELISA +ve → continue anticoagulation] C --&gt;|<b>High (≥5)</b>| F[<b>STOP ALL HEPARIN IMMEDIATELY</b>&lt;br/&gt;<b>Start non-heparin anticoagulant</b> (Argatroban/Bivalirudin/Fondaparinux)&lt;br/&gt;Send HIT antibody&lt;br/&gt;<b>Do NOT wait for result</b>&lt;br/&gt;<b>No platelet transfusion</b> (unless active bleed)&lt;br/&gt;<b>No warfarin alone</b> (risk WISN — wait for platelet recovery &gt;150)] D &amp; E &amp; F --&gt; G[<b>Anticoagulation duration</b>: 3 months if thrombosis; 4–6 weeks if isolated HIT&lt;br/&gt;Transition to DOAC/Warfarin after platelet recovery &gt;150] </code>``</p>
+<div class="sub-h">HIT vs DITP Comparison</div>
+<table class="ctable"><tr><th>Feature</th><th>**HIT**</th><th>**DITP**</th></tr><tr><td>---------</td><td>---------</td><td>----------</td></tr><tr><td>**Mechanism**</td><td>PF4-heparin IgG → platelet activation</td><td>Drug-dependent IgG → platelet clearance</td></tr><tr><td>**Clinical**</td><td>**Thrombosis >> Bleeding**</td><td>**Bleeding >> Thrombosis**</td></tr><tr><td>**Platelet Count**</td><td>↓30–50%, rarely <20</td><td>Often **<20**</td></tr><tr><td>**Timing**</td><td>5–14 days</td><td>5–14 days (first); hours (re-exposure)</td></tr><tr><td>**Anticoagulation**</td><td>**Must continue** (non-heparin)</td><td>Stop drug; no anticoagulation needed</td></tr><tr><td>**Platelet Transfusion**</td><td>**Contraindicated** (unless life-threatening bleed)</td><td>OK if bleeding</td></tr><tr><td>**Warfarin**</td><td>**Delay until platelets >150** (WISN risk)</td><td>N/A</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🔴 Haemolytic Anaemia</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Immune Haemolytic Anaemia (Type II)</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Drugs</th><th>Features</th></tr><tr><td>------</td><td>-----------</td><td>-------</td><td>----------</td></tr><tr><td>**Penicillin-type**</td><td>Drug binds RBC membrane → antibody to **drug-RBC complex**</td><td>**Penicillins, Cephalosporins**</td><td>DAT **IgG + C3d** (drug-dependent); **spherocytes**; ↓ drug = recovery</td></tr><tr><td>**Methyldopa-type**</td><td>**Autoantibody** to RBC (Rh-like) — **true autoimmune**</td><td>**Methyldopa**</td><td>DAT **IgG + C3d** (no drug needed); **warm AIHA**; may persist months after stop</td></tr><tr><td>**Ternary Complex**</td><td>Drug-antibody complex binds RBC weakly</td><td>**Cephalosporins, Rifampicin**</td><td>DAT **C3d only** (IgG weak); high-titre antibody</td></tr></table>
+<div class="sub-h">G6PD Deficiency (Oxidative Haemolysis)</div>
+<table class="ctable"><tr><th>Drug</th><th>Risk</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**Dapsone**</td><td>**High**</td></tr><tr><td>**Sulfonamides** (TMP-SMX, sulfonylureas)</td><td>High</td></tr><tr><td>**Primaquine / Tafenoquine**</td><td>**Contraindicated**</td></tr><tr><td>**Methylene blue**</td><td>High</td></tr><tr><td>**Rasburicase**</td><td>Contraindicated</td></tr><tr><td>**High-dose Vitamin C / Nitrofurantoin**</td><td>Moderate</td></tr></table>
+<div class="sub-h">Microangiopathic Haemolytic Anaemia (MAHA/TMA)</div>
+<table class="ctable"><tr><th>Drug</th><th>Context</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Ciclosporin / Tacrolimus / Sirolimus**</td><td>Transplant (dose-dependent)</td></tr><tr><td>**Clopidogrel / Ticlopidine**</td><td>TTP-like (ADAMTS13 inhibition)</td></tr><tr><td>**Quinine**</td><td>Immune-mediated</td></tr><tr><td>**Gemcitabine / VEGF inhibitors**</td><td>Chemotherapy</td></tr><tr><td>**HIT**</td><td>PF4-heparin → thrombosis + MAHA</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Emergency</th><th>Key Drug</th><th>Immediate Action</th></tr><tr><td>-----------</td><td>----------</td><td>------------------</td></tr><tr><td>**Agranulocytosis + Fever**</td><td>Clozapine, Carbimazole, Carbamazepine</td><td>**STOP drug, IV antibiotics, G-CSF, reverse isolation**</td></tr><tr><td>**HIT (4Ts ≥4) + Thrombosis**</td><td>UFH, LMWH</td><td>**STOP heparin, START argatroban/bivalirudin/fondaparinux, NO warfarin alone, NO platelet transfusion**</td></tr><tr><td>**DITP + Bleeding (Platelets <10)**</td><td>Quinine, GPIIb/IIIa, Valproate</td><td>**STOP drug, IVIG 1g/kg ×2d, platelets if life-threatening bleed**</td></tr><tr><td>**G6PD Haemolysis**</td><td>Dapsone, Sulfonamides, Primaquine</td><td>**STOP drug, transfuse if severe, folic acid, avoid oxidants**</td></tr><tr><td>**Methyldopa AIHA**</td><td>Methyldopa</td><td>**STOP drug, steroids if severe, may take months to resolve**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Define agranulocytosis. Immediate management of febrile patient on clozapine?</td><td>ANC <0.5×10⁹/L; **STOP clozapine, IV broad-spectrum antibiotics, G-CSF 5mcg/kg/day, reverse isolation, cultures**</td></tr><tr><td>2. Clozapine monitoring schedule?</td><td>Weekly ×18wks → fortnightly ×1yr → monthly thereafter; ANC must be >1.5 (green), 1.0–1.5 (amber), <1.0 (red — stop)</td></tr><tr><td>3. HIT vs DITP — key clinical difference?</td><td>**HIT = thrombotic (prothrombotic)**; **DITP = bleeding (thrombocytopenia)**</td></tr><tr><td>4. 4Ts score components? Threshold for high probability?</td><td>Thrombocytopenia, Timing, Thrombosis, Other causes; **≥4 = High**</td></tr><tr><td>5. HIT management — why NO warfarin alone?</td><td>**Warfarin-induced skin necrosis (WISN)** — protein C depletion before factor II/X; must overlap with parenteral anticoagulant until platelets >150</td></tr><tr><td>6. HIT — why NO platelet transfusion?</td><td>Fuels thrombosis (platelets = prothrombotic fuel) — only if life-threatening bleeding</td></tr><tr><td>7. Penicillin-type vs Methyldopa-type immune haemolysis?</td><td>Penicillin: **drug-dependent antibody** (DAT IgG+C3d, recover on stop); Methyldopa: **true autoantibody** (DAT IgG+C3d, warm AIHA, persists after stop)</td></tr><tr><td>8. G6PD deficiency — 3 high-risk drugs contraindicated?</td><td>**Primaquine/tafenoquine, dapsone, rasburicase**; also sulfonamides, methylene blue</td></tr><tr><td>9. TMA — drug causes? Management of tacrolimus TMA?</td><td>CNIs (tacro/ciclo/siro), clopidogrel, quinine, gemcitabine, HIT; **Tacro TMA: ↓ dose or stop, consider sirolimus/mTOR switch**</td></tr><tr><td>10. DITP — platelet recovery time after drug cessation?</td><td>**3–7 days** (if immune); recover quickly once antibody cleared</td></tr><tr><td>11. Carbimazole/PTU agranulocytosis — monitoring?</td><td>**No routine FBC**; **Patient education: sore throat/fever → urgent FBC same day**</td></tr><tr><td>12. Valproate thrombocytopenia — mechanism? Dose relationship?</td><td>**Dose-dependent** bone marrow suppression + platelet dysfunction; **>100 mcg/mL or >50mg/kg/day** ↑ risk; monitor FBC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**HIT = Thrombotic vs Bleeding**</td><td>HIT = **PROTHROMBOTIC** (thrombosis >> bleeding) — "HIT = Hypercoagulable"</td></tr><tr><td>**HIT vs DITP platelet count**</td><td>HIT: ↓30–50% (rarely <20); DITP: often **<20**</td></tr><tr><td>**HIT antibody = PF4-heparin**</td><td>**PF4-heparin complex** → IgG → platelet activation via FcγRIIa</td></tr><tr><td>**Methyldopa AIHA vs Penicillin AIHA**</td><td>Methyldopa = **true autoantibody** (persists); Penicillin = **drug-dependent** (recovers on stop)</td></tr><tr><td>**G6PD drugs**</td><td>**Oxidative** drugs: dapsone, sulfonamides, primaquine, methylene blue, rasburicase</td></tr><tr><td>**Clozapine agranulocytosis**</td><td>**Mandatory monitoring register**; cannot prescribe without</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"4Ts"</b> = <b>T</b>hrombocytopenia, <b>T</b>iming, <b>T</b>hrombosis, <b>T</b> (o)ther causes</li><li><b>"HIT = HYPERCOAGULABLE"</b> = <b>H</b>eparin <b>I</b>nduced <b>T</b>hrombosis (not bleeding)</li><li><b>"ARGATROBAN/BIVALIRUDIN/FONDAPARINUX"</b> = <b>HIT anticoagulants</b> (NO heparin, NO warfarin alone)</li><li><b>"WISN"</b> = <b>Warfarin-Induced Skin Necrosis</b> (start warfarin ONLY after platelets &gt;150 in HIT)</li><li><b>"PLATELET RECOVERY 3-7 DAYS"</b> = DITP platelet recovery after drug stop</li><li><b>"G6PD NO-GO"</b> = <b>P</b>rimaquine, <b>D</b>apsone, <b>S</b>ulfonamides, <b>M</b>ethylene blue, <b>R</b>asburicase</li><li><b>"METHYLDOPA = TRUE AUTO"</b> = <b>Autoantibody</b> (persists after stop)</li><li><b>"PENICILLIN = DRUG-DEPENDENT"</b> = Antibody needs drug on RBC (recovers on stop)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Haematological ADRs)) Neutrophils Agranulocytosis (&lt;0.5) Clozapine (mandatory monitoring) Carbamazepine Antithyroid (carbimazole/PTU) Sulfonamides Ticlopidine Chemotherapy Management: STOP, IV Abx, G-CSF, isolation Platelets DITP (immune) Quinine, GPIIb/IIIa, Valproate, Carbamazepine, Heparin (non-HIT) Recovery 3-7d post stop IVIG if bleeding HIT (Type II) PF4-heparin IgG 5-14d, thrombosis &gt; bleeding 4Ts score Stop heparin → Argatroban/Bivalirudin/Fondaparinux NO warfarin alone until platelets &gt;150 NO platelet transfusion Red Cells Immune Haemolysis (Type II) Penicillin-type: drug-dependent (recovers on stop) Methyldopa-type: true autoantibody (persists) G6PD Deficiency (oxidative) Dapsone, Sulfonamides, Primaquine, Methylene blue, Rasburicase MAHA/TMA CNIs (tacro/ciclo/siro), Clopidogrel, Quinine, Gemcitabine, HIT </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Classification table</td><td>8</td><td></td></tr><tr><td>Agranulocytosis + monitoring</td><td>10</td><td></td></tr><tr><td>HIT (4Ts, management)</td><td>12</td><td></td></tr><tr><td>DITP vs HIT</td><td>8</td><td></td></tr><tr><td>Haemolytic anaemia types</td><td>10</td><td></td></tr><tr><td>G6PD drugs</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td></tr><tr><td>**Total**</td><td>**66**</td><td></td></tr></table>
+<p><b>Target</b>: ≥53/66 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Discuss heparin-induced thrombocytopenia (HIT) — pathophysiology, diagnosis, and management."*</div>
+<ol><li><b>Pathophysiology</b> (2): PF4-heparin complex → IgG antibody → platelet activation via FcγRIIa → thrombin generation, prothrombotic state</li><li><b>Diagnosis</b> (3): 4Ts score (Thrombocytopenia, Timing, Thrombosis, Other causes); High ≥4, Intermediate 3–4, Low ≤2; PF4 ELISA confirmation</li><li><b>Management</b> (4): STOP all heparin immediately; start <b>non-heparin anticoagulant</b> (argatroban/bivalirudin/fondaparinux); <b>NO warfarin alone</b> until platelets &gt;150 (WISN risk); <b>NO platelet transfusion</b> unless life-threatening bleed; anticoagulate 3mo if thrombosis, 4–6wk if isolated HIT</li><li><b>HIT vs DITP</b> (1): HIT = thrombotic; DITP = bleeding; DITP platelet recovery 3–7 days</li></ol>
+<div class="sub-h">Short Question (5 marks): *"HIT 4Ts Score"*</div>
+<table class="ctable"><tr><th>Component</th><th>2 Points</th><th>1 Point</th><th>0 Points</th></tr><tr><td>-----------</td><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**Thrombocytopenia**</td><td>>50% fall, nadir ≥20</td><td>30–50% fall or nadir 10–19</td><td><30% fall or nadir <10</td></tr><tr><td>**Timing**</td><td>5–10 days</td><td>≤1 day (prior exposure) or >10 days</td><td>—</td></tr><tr><td>**Thrombosis**</td><td>New thrombosis</td><td>Progressive/recurrent</td><td>None</td></tr><tr><td>**Other causes**</td><td>None apparent</td><td>Possible</td><td>Definite</td></tr></table>
+<p><b>≥4 = High probability; 3–4 = Intermediate; ≤2 = Low</b></p>
+<div class="sub-h">Viva (2 min): *"Patient on UFH 7 days, platelets 80 (baseline 250), new DVT. 4Ts? Management?"*</div>
+<ul><li><b>4Ts</b>: Thrombocytopenia 2 (&gt;50% fall, nadir ≥20), Timing 2 (5–10d), Thrombosis 2 (new DVT), Other causes 2 (none) = <b>8 = HIGH</b></li><li><b>STOP all heparin immediately</b></li><li><b>Start argatroban (IV, hepatic adjust) or bivalirudin (IV, renal adjust) or fondaparinux (SC)</b></li><li>Send PF4 ELISA</li><li><b>NO warfarin alone</b> — wait for platelets &gt;150</li><li><b>NO platelet transfusion</b></li><li>Anticoagulate 3 months (thrombosis present)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on clozapine 3 months, temp 38.5°C. Immediate steps?"*</div>
+<ul><li><b>Agranulocytosis until proven otherwise</b></li><li><b>URGENT FBC + differential</b></li><li>If ANC &lt;0.5 → <b>STOP clozapine, IV piperacillin-tazobactam/meropenem, G-CSF 5mcg/kg, reverse isolation, cultures</b></li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Agranulocytosis = ANC&lt;0.5 → STOP drug, IV Abx, G-CSF, isolation</li><li>Clozapine: Weekly×18wk → 2wk×1yr → monthly</li><li>Carbimazole: No routine FBC; sore throat = urgent FBC</li><li>HIT = PF4-heparin IgG → thrombotic (not bleeding)</li><li>4Ts: Thrombocytopenia, Timing, Thrombosis, Other causes; ≥4 = High</li><li>HIT management: STOP heparin → Argatroban/Bivalirudin/Fondaparinux; NO warfarin alone; NO platelet transfusion</li><li>DITP = bleeding, platelets often &lt;20, recovery 3–7d, IVIG if bleeding</li><li>Penicillin AIHA = drug-dependent (recovers); Methyldopa AIHA = true auto (persists)</li><li>G6PD: Dapsone, Sulfonamides, Primaquine, Methylene blue, Rasburicase</li><li>TMA: CNIs, Clopidogrel, Quinine, Gemcitabine, HIT</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>HAEMATOLOGICAL EMERGENCY TRIAD:</b> 1. <b>AGRANULOCYTOSIS + FEVER</b> → <b>STOP drug, IV Abx, G-CSF, Isolation</b> (Clozapine, Carbimazole, CZP) 2. <b>HIT (4Ts ≥4)</b> → <b>STOP heparin, Argatroban/Bivalirudin, NO Warfarin alone, NO Platelets</b> (Thrombosis not bleeding!) 3. <b>DITP + BLEEDING</b> → <b>STOP drug, IVIG 1g/kg</b> (Platelets often &lt;20, recovery 3–7d)  <b>G6PD</b>: Avoid Primaquine, Dapsone, Sulfonamides, Methylene blue, Rasburicase <b>Methyldopa AIHA</b> = True autoantibody (persists); <b>Penicillin AIHA</b> = Drug-dependent (recovers)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Agranulocytosis is defined as absolute neutrophil count (ANC):</b></li></ol>
+<p>A. &lt;1.0 × 10⁹/L B. <b>&lt;0.5 × 10⁹/L</b> ✓ C. &lt;1.5 × 10⁹/L D. &lt;0.2 × 10⁹/L E. &lt;0.1 × 10⁹/L</p>
+<ol><li><b>Clozapine monitoring schedule after 1 year of treatment:</b></li></ol>
+<p>A. Weekly B. Fortnightly C. <b>Monthly</b> ✓ D. Every 3 months E. No monitoring needed</p>
+<ol><li><b>Carbimazole-induced agranulocytosis — recommended monitoring:</b></li></ol>
+<p>A. Weekly FBC B. Fortnightly FBC C. <b>No routine FBC; patient education (sore throat → urgent FBC)</b> ✓ D. Monthly FBC E. Only if symptomatic</p>
+<ol><li><b>HIT (Type II) — primary clinical manifestation:</b></li></ol>
+<p>A. Severe bleeding B. <b>Thrombosis (arterial and venous)</b> ✓ C. Asymptomatic thrombocytopenia D. DIC E. Haemolysis</p>
+<ol><li><b>4Ts score — high probability threshold:</b></li></ol>
+<p>A. ≥3 B. <b>≥4</b> ✓ C. ≥5 D. ≥6 E. ≥2</p>
+<ol><li><b>HIT management — which is CONTRAINDICATED?</b></li></ol>
+<p>A. Argatroban B. Bivalirudin C. Fondaparinux D. <b>Warfarin alone (without parenteral overlap)</b> ✓ E. Platelet transfusion (if life-threatening bleed)</p>
+<ol><li><b>HIT — platelet transfusion is:</b></li></ol>
+<p>A. Routinely recommended B. <b>Contraindicated (fuels thrombosis)</b> ✓ C. Required if platelets &lt;20 D. Required if platelets &lt;10 D. Only if bleeding</p>
+<ol><li><b>Penicillin-type vs Methyldopa-type immune haemolysis — key difference:</b></li></ol>
+<p>A. Penicillin causes intravascular haemolysis only B. <b>Methyldopa produces true autoantibody (persists after stop); Penicillin is drug-dependent (recovers on stop)</b> ✓ C. Methyldopa causes Coombs-negative haemolysis D. Penicillin causes warm AIHA only E. No difference</p>
+<ol><li><b>G6PD deficiency — drug CONTRAINDICATED:</b></li></ol>
+<p>A. Dapsone B. <b>Primaquine</b> ✓ C. Sulfonamides D. Methylene blue E. Nitrofurantoin</p>
+<ol><li><b>DITP — platelet recovery after drug cessation:</b></li></ol>
+<p>A. 24–48 hours B. <b>3–7 days</b> ✓ C. 2–3 weeks D. 1–2 months E. Never recovers</p>
+<ol><li><b>Valproate thrombocytopenia — mechanism:</b></li></ol>
+<p>A. Immune-mediated platelet destruction B. <b>Dose-dependent bone marrow suppression + platelet dysfunction</b> ✓ C. Heparin-induced D. TMA E. Dilutional</p>
+<ol><li><b>Tacrolimus/ciclosporin — associated haematological toxicity:</b></li></ol>
+<p>A. Agranulocytosis B. <b>Thrombotic microangiopathy (TMA)</b> ✓ C. Pure red cell aplasia D. Immune haemolytic anaemia E. Aplastic anaemia</p>
+<ol><li><b>Clopidogrel-associated TMA — mechanism:</b></li></ol>
+<p>A. Dose-dependent endothelial injury B. <b>ADAMTS13 inhibition (immune-mediated)</b> ✓ C. Complement activation D. Drug-dependent antibody E. Oxidative stress</p>
+<ol><li><b>Drug-induced pure red cell aplasia (PRCA) — associated with:</b></li></ol>
+<p>A. Heparin B. <b>Erythropoietin (anti-EPO antibodies)</b> ✓ C. Warfarin D. Aspirin E. Clopidogrel</p>
+<ol><li><b>HIT antibody target:</b></li></ol>
+<p>A. Platelet GPIIb/IIIa B. <b>PF4-heparin complex</b> ✓ C. von Willebrand factor D. Fibrinogen E. Protein C</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Agranulocytosis definition</td><td>ANC <0.5 × 10⁹/L</td></tr><tr><td>Clozapine monitoring</td><td>Weekly×18wk → Fortnightly×1yr → Monthly</td></tr><tr><td>Carbimazole agranulocytosis</td><td>No routine FBC; sore throat = urgent FBC</td></tr><tr><td>Ticlopidine monitoring</td><td>FBC 2-weekly ×3mo (largely replaced by clopidogrel)</td></tr><tr><td>HIT mechanism</td><td>PF4-heparin complex → IgG → platelet activation (FcγRIIa) → prothrombotic</td></tr><tr><td>4Ts components</td><td>Thrombocytopenia, Timing, Thrombosis, Other causes</td></tr><tr><td>4Ts high probability</td><td>≥4</td></tr><tr><td>HIT management</td><td>STOP heparin → Argatroban/Bivalirudin/Fondaparinux; NO warfarin alone; NO platelets</td></tr><tr><td>WISN</td><td>Warfarin-induced skin necrosis (protein C depletion)</td></tr><tr><td>DITP</td><td>Drug-dependent IgG → platelet clearance; recovery 3–7d; bleeding > thrombosis</td></tr><tr><td>DITP key drugs</td><td>Quinine, GPIIb/IIIa inhibitors, Valproate, Carbamazepine</td></tr><tr><td>Penicillin AIHA</td><td>Drug-dependent antibody → recovers on stop</td></tr><tr><td>Methyldopa AIHA</td><td>True autoantibody → warm AIHA, persists months</td></tr><tr><td>G6PD drugs to avoid</td><td>Primaquine, Dapsone, Sulfonamides, Methylene blue, Rasburicase</td></tr><tr><td>TMA drugs</td><td>CNIs (tacro/ciclo/siro), Clopidogrel, Quinine, Gemcitabine, HIT</td></tr><tr><td>Valproate thrombocytopenia</td><td>Dose-dependent BM suppression + platelet dysfunction</td></tr><tr><td>PRCA drugs</td><td>EPO (anti-EPO Abs), Azathioprine, Phenytoin, Carbamazepine, INH</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — ANC &lt;0.5 × 10⁹/L</li><li><b>C</b> — Monthly after 1 year</li><li><b>C</b> — No routine FBC; patient education</li><li><b>B</b> — HIT = thrombotic (prothrombotic)</li><li><b>B</b> — 4Ts ≥4 = High</li><li><b>D</b> — Warfarin alone contraindicated (WISN risk)</li><li><b>B</b> — Platelet transfusion contraindicated (fuels thrombosis)</li><li><b>B</b> — Methyldopa = true autoantibody (persists); Penicillin = drug-dependent (recovers)</li><li><b>B</b> — Primaquine contraindicated in G6PD</li><li><b>B</b> — DITP platelet recovery 3–7 days</li><li><b>B</b> — Valproate = dose-dependent BM suppression</li><li><b>B</b> — CNIs → TMA</li><li><b>B</b> — Clopidogrel → ADAMTS13 inhibition</li><li><b>B</b> — EPO → anti-EPO antibodies</li><li><b>B</b> — PF4-heparin complex</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/Haematological ADRs.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Haematological Adrs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

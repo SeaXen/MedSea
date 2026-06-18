@@ -1,0 +1,554 @@
+# Mantle Cell Lymphoma (MCL)
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **MCL = 5-7% of NHL**; **t(11;14)(q13;q32) → CCND1/IgH → Cyclin D1 overexpression** (pathognomonic). **MIPI / MIPI-c** risk stratifies. **Young/Fit**: **Intensive Immunochemotherapy** (Nordic MCL2/3: R-CHOP/R-DHAP alternating → Consolidation ASCT) **± Rituximab maintenance** → **Long-term remission**. **Older/Unfit**: **Non-intensive** (BR, R-CHOP) → Rituximab maintenance. **Relapsed**: **BTKi** (Ibrutinib, Acalabrutinib, Zanubrutinib), **Venetoclax**, **CAR-T (Brexu-cel)**, **PI3Kδi**. **Blastoid/Pleomorphic** = aggressive, TP53 mut, poor prognosis.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Identify **t(11;14)/Cyclin D1** as diagnostic hallmark
+- [ ] Apply **MIPI / MIPI-c** (clinical + biological: Ki-67) for risk stratification
+- [ ] Choose **Intensive** (Nordic: R-CHOP/R-DHAP alt → ASCT) vs **Non-intensive** (BR, R-CHOP) pathway
+- [ ] Sequence **Relapsed/Refractory**: **BTKi** (Ibrutinib 1L/2L), **Venetoclax**, **CAR-T (Brexu-cel)**, **PI3Kδi**
+- [ ] Recognise **Blastoid/Pleomorphic variants** (TP53 mut, Ki-67 high, poor prognosis)
+- [ ] Manage **BTKi toxicities**: AFib, Bleeding, HTN, Diarrhoea, Infections
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Definition** | Mature B-cell NHL; **t(11;14)(q13;q32)** → **CCND1/IgH fusion** → **Cyclin D1 overexpression** (nuclear); **SOX11+** (cyclin D1-negative cases) |
+| **Incidence** | 5-7% of NHL; ~500-600/year UK; M:F = 2:1 |
+| **Prevalence** | Median age 65-70; **Incurable with conventional chemo**; Median OS ~8-10 years (improving with BTKi) |
+| **Peak Age** | 60-75 years |
+| **Sex Ratio** | Male 2:1 |
+| **Risk Factors** | Age, Male sex; **No strong environmental links**; Association with **boron exposure** (weak) |
+
+---
+
+## 3. Aetiology & Pathophysiology
+
+```mermaid
+flowchart LR
+    A[t(11;14) Translocation] --> B[CCND1 / IgH Fusion]
+    B --> C[Cyclin D1 Overexpression]
+    C --> D[Constitutive CDK4/6 Activation]
+    D --> E[RB Phosphorylation → E2F Release → Cell Cycle Progression]
+    E --> F[G1/S Transition Dysregulation]
+    F --> G[Genomic Instability]
+    G --> H1[Classic MCL: Nodal, SOX11+, Ki-67 low-moderate]
+    G --> H2[Leukemic Non-nodal: SOX11-, Ki-67 low, CCND1 high, Indolent]
+    G --> H3[Blastoid/Pleomorphic: TP53 mut, Ki-67 HIGH, Aggressive]
+    F --> I[Secondary Hits: ATM, TP53, BIRC3, WHSC1, NOTCH1/2]
+```
+
+### Histological Variants
+
+| Variant | Frequency | Morphology | Ki-67 | TP53 | Prognosis |
+|---------|-----------|------------|-------|------|-----------|
+| **Classic (Nodal)** | 70% | Small-medium cells, irregular nuclei | Low-Moderate (<30%) | Rare | Standard |
+| **Leukemic Non-nodal** | 10-15% | Small cells, PB involvement, splenomegaly | Low (<10%) | Rare | **Indolent** — Watch & Wait possible |
+| **Blastoid** | 10-15% | Medium-large, high N:C, fine chromatin | **High (>30-50%)** | **Common (30-40%)** | **Poor** |
+| **Pleomorphic** | <5% | Large, pleomorphic, prominent nucleoli | High | Very Common | Very Poor |
+
+---
+
+## 4. Clinical Features
+
+| Feature | Description |
+|---------|-------------|
+| **Lymphadenopathy** | Generalised, often bulky; **Walleye's sign** (facial plethora from SVC obstruction) rare |
+| **Splenomegaly** | Common (50-70%) |
+| **GI Involvement** | **Polyposis (lymphomatous polyposis)** → Abdominal pain, obstruction, bleeding, intussusception |
+| **Bone Marrow** | Involved in 70-90% (paratrabecular pattern) |
+| **Peripheral Blood** | Lymphocytosis (leukemic variant); Cyclin D1+ cells |
+| **B Symptoms** | Fever, night sweats, weight loss (~30%) |
+| **CNS Involvement** | Rare at diagnosis (2-4%); Higher in blastoid |
+
+---
+
+## 5. Staging & Classification
+
+| System | Detail |
+|--------|--------|
+| **Ann Arbor / Lugano** | Stage I-IV (same as DLBCL); Most present Stage III-IV |
+| **MIPI (Mantle Cell Lymphoma International Prognostic Index)** | **4 Factors**: 1) Age, 2) ECOG PS, 3) LDH, 4) WBC count<br/>**Low**: <5.7; **Intermediate**: 5.7-6.2; **High**: >6.2 |
+| **MIPI-c (Clinical + Biological)** | **MIPI + Ki-67** (Ki-67 >30% = adverse); **Better discrimination** |
+| **Ki-67** | **<10%**: Indolent; **10-30%**: Standard; **>30%**: Aggressive (Blastoid-like) |
+
+### MIPI Score Calculation
+
+| Variable | Points |
+|----------|--------|
+| Age (years) | 0.0354 × Age |
+| ECOG PS (0-1 vs 2-4) | 0.6793 if 2-4 |
+| LDH (×ULN) | 0.8362 if >ULN |
+| WBC (×10⁹/L) | 0.0133 × WBC |
+
+---
+
+## 6. Diagnosis & Investigations
+
+| Investigation | Role | Key Findings |
+|---------------|------|--------------|
+| **Lymph Node Biopsy (Excisional)** | **Gold standard** | **Cyclin D1+ (nuclear)**, **SOX11+**, CD5+, CD20+, CD23-, CD10-, BCL2+, **Ki-67** |
+| **FISH / Karyotype** | **Confirm t(11;14)** | **CCND1/IgH fusion**; Complex karyotype = adverse |
+| **Flow Cytometry** | Immunophenotype | **CD5+, CD20+, CD19+, CD22+, FMC7+, CD23-, CD10-, CD200-, Cyclin D1+** |
+| **CT Neck/Chest/Abd/Pelvis** | Staging | Nodal, Splenic, Extranodal (GI polyposis) |
+| **PET-CT** | Limited role (indolent); Baseline for bulky | Not standard for response (Deauville not validated) |
+| **Bone Marrow Biopsy** | Staging | Paratrabecular infiltration; Flow cytometry |
+| **Colonoscopy** | GI screening | Lymphomatous polyposis (multiple polyps) |
+| **CNS Prophylaxis** | Blastoid, high Ki-67, high LDH | Intrathecal MTX/Ara-C + High-dose MTX/Ara-C |
+
+---
+
+## 7. Differential Diagnosis
+
+| Condition | Distinguishing Features |
+|-----------|-------------------------|
+| **CLL/SLL** | CD5+, CD23+, CD200+, CD20 dim, **Cyclin D1-**, **SOX11-** |
+| **Marginal Zone Lymphoma** | CD5-, CD10-, Cyclin D1-; MZL markers |
+| **Follicular Lymphoma** | CD10+, BCL6+, BCL2+, **Cyclin D1-** |
+| **Hairy Cell Leukaemia** | CD11c+, CD25+, CD103+, CD200+, **Cyclin D1-** |
+| **Lymphoplasmacytic Lymphoma** | CD5-, CD10-, CD23-, **IgM paraprotein**, MYD88 L265P |
+| **Blastoid MCL vs DLBCL** | **Cyclin D1+, SOX11+, CD5+** vs Cyclin D1- |
+
+---
+
+## 8. Management
+
+```mermaid
+flowchart TD
+    A[Diagnosis + Staging + MIPI/MIPI-c] --> B{Patient Fitness / Age}
+    B -->|**Fit, <65-70yr**<br/>**MIPI Low/Int**| C[**Intensive Immunochemotherapy**]
+    C --> C1[**Nordic MCL2/3 Protocol**<br/>**R-CHOP / R-DHAP Alternating** ×3-4 cycles<br/>**R-DHAP**: Ritux + Dex + High-dose Ara-C + Cisplatin<br/>**R-CHOP**: Standard]
+    C1 --> C2[**Consolidation: High-dose Chemo + ASCT**<br/>**BEAM** (BCNU, Etoposide, Ara-C, Melphalan) preferred<br/>**OR TBI-based**]
+    C2 --> C3[**Rituximab Maintenance**<br/>375mg/m² q2mo ×3yr (Nordic MCL2/3)<br/>**DFS/OS benefit**]
+    B -->|**Older / Unfit / Frail**<br/>**MIPI High**| D[**Non-Intensive Immunochemotherapy**]
+    D --> D1[**BR (Bendamustine + Rituximab)**<br/>**Preferred** (StiL NHL7, BRIGHT)<br/>Benda 90mg/m² d1,2 + Ritux 375mg/m² d1 q4w ×6 cycles]
+    D --> D2[**R-CHOP**<br/>Standard if Benda contraindicated]
+    D1 --> D3[**Rituximab Maintenance**<br/>q2mo ×2-3yr (ECOG/SAKK)]
+    D3 --> E[Response Assessment: CT + BM + Markers]
+    C3 --> E
+    E --> F{Relapsed / Refractory}
+    F -->|1L Relapse| G[**BTK Inhibitor**]
+    G --> G1[**Ibrutinib** (RAY, SPARK) — **1L Relapse or Intolerant**<br/>420mg daily until progression/toxicity]
+    G --> G2[**Acalabrutinib** (ASPEN) — **2nd Gen, More Selective**<br/>100mg BID; Less AFib, HTN, Diarrhoea]
+    G --> G3[**Zanubrutinib** (ASPEN) — **2nd Gen, Highly Selective**<br/>160mg BID; Best safety profile]
+    F -->|Post-BTKi| H[**Venetoclax** (BCL2 Inhibitor)<br/>Ramp-up (20→400mg) + Rituximab<br/>Tumour Lysis Syndrome risk — Monitor]
+    H --> I[**CAR-T: Brexucabtagene Autoleucel (Brexu-cel)**<br/>(ZUMA-2) — **Anti-CD19**<br/>Post-BTKi + Anti-CD20; ORR ~90%, CR ~60%]
+    I --> J[**PI3Kδ Inhibitors**<br/>Idelalisib / Duvelisib / Parsaclisib<br/>Toxicity: Colitis, Hepatitis, Infections, Pneumonitis]
+    J --> K[**Clinical Trial / Allo-HSCT** (selected young, fit)]
+```
+
+### First-Line Regimens Detail
+
+| Regimen | Schedule | Key Trial | Population |
+|---------|----------|-----------|------------|
+| **Nordic MCL3** | **R-CHOP / R-DHAP alt ×3** → **ASCT (BEAM)** → **Ritux Maint ×3yr** | Nordic MCL3 | Fit, ≤65yr, MIPI Low/Int |
+| **R-CHOP/R-DHAP alt** | R-CHOP d1 + R-DHAP d15 q28d ×6 | Nordic MCL2 | Fit, ≤65yr |
+| **VR-CAP** | Bortezomib + Ritux + Cyclo + Doxo + Pred | LYM-3002 (VR-CAP vs R-CHOP) | Alternative intensive |
+| **BR** | Benda 90 d1,2 + Ritux d1 q4w ×6-8 | StiL NHL7, BRIGHT | **Standard for >65/unfit** |
+| **R-CHOP** | Standard ×6-8 | — | If Benda contraindicated |
+
+### Relapsed/Refractory Sequencing
+
+| Line | Preferred Agents | Key Trials |
+|------|------------------|------------|
+| **1st Relapse** | **BTKi: Ibrutinib / Acalabrutinib / Zanubrutinib** | RAY (Ibrutinib vs Temsirolimus), SPARK (Zanubrutinib), ASPEN (Acalabrutinib vs Ibrutinib) |
+| **Post-BTKi** | **Venetoclax + Rituximab** (Ramp-up) | SYMPATICO, Phase 2 |
+| **Post-BTKi + Anti-CD20** | **CAR-T: Brexu-cel** | ZUMA-2 |
+| **Later Lines** | PI3Kδi (Idelalisib/Duvelisib) — Toxicity limits use | — |
+
+### BTKi Toxicity Management
+
+| Toxicity | Ibrutinib | Acalabrutinib/Zanubrutinib | Management |
+|----------|-----------|---------------------------|------------|
+| **Atrial Fibrillation** | **10-15%** (↑ age, HTN) | **Lower (3-5%)** | Hold → Rate control → Anticoagulate (CHA2DS2-VASc) → Restart at lower dose / Switch |
+| **Bleeding** | **Major 3-5%** (↑ anticoag/antiplatelet) | Lower | Hold if major; Avoid concurrent anticoag if possible |
+| **Hypertension** | **15-20%** (new/worsening) | Lower | ACEi/ARB/CCB; Monitor BP |
+| **Diarrhoea** | **10-20%** | Lower | Loperamide; Hold if Grade 3 |
+| **Infections** | ↑ Pneumonia, HSV, Fungal | Similar | Prophylaxis (PJP, HSV); IVIG if hypogammaglobulinaemia |
+| **Arthralgia/Myalgia** | Common | Common | NSAIDs; Hold if severe |
+
+---
+
+## 9. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Diagnosis** | **t(11;14) → Cyclin D1+ (nuclear)** — Pathognomonic; **SOX11+** (cyclin D1-ve cases) |
+| **Immunophenotype** | **CD5+, CD20+, CD23-, CD10-, Cyclin D1+** — Distinguishes from CLL (CD23+) |
+| **Variants** | Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / **Blastoid/Pleomorphic (TP53, Ki-67 high, poor)** |
+| **MIPI / MIPI-c** | **Age, ECOG, LDH, WBC** + **Ki-67** (c-index) → Low/Int/High risk |
+| **Fit Young (<65-70)** | **Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr** — **Best OS** |
+| **Older/Unfit** | **BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr** — Standard |
+| **Relapsed** | **BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)** |
+| **Post-BTKi** | **Venetoclax + Ritux** (TLS risk) → **CAR-T (Brexu-cel)** |
+| **Blastoid** | TP53 mut, Ki-67 high → **Intensive chemo less effective** → Early BTKi / Trial / Allo-HSCT |
+| **CNS Prophylaxis** | Blastoid, Ki-67>30%, LDH high, Stage IV — **Intrathecal + HD-MTX/Ara-C** |
+| **GI Polyposis** | **Lymphomatous polyposis** — Colonoscopy screening; Treat with systemic therapy |
+
+---
+
+## 10. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **65M, lymphadenopathy, splenomegaly, lymphocytosis. Biopsy: CD5+, CD20+, Cyclin D1+. Diagnosis?** | **Mantle Cell Lymphoma** — **t(11;14) → Cyclin D1 overexpression** pathognomonic. |
+| **MIPI risk factors — what are they?** | **Age, ECOG PS, LDH, WBC count** — MIPI-c adds **Ki-67**. |
+| **Young fit MCL — 1L treatment?** | **Nordic protocol: R-CHOP / R-DHAP alternating ×3-4 cycles → Consolidation ASCT (BEAM) → Rituximab maintenance ×3 years**. |
+| **Elderly unfit MCL — 1L treatment?** | **BR (Bendamustine + Rituximab) ×6-8 cycles → Rituximab maintenance ×2-3 years**. |
+| **Ibrutinib — mechanism, key toxicities?** | **BTK inhibitor (covalent)** — Blocks BCR signalling. **Toxicities: AFib (10-15%), Bleeding, HTN, Diarrhoea, Infections, Arthralgia**. |
+| **Acalabrutinib vs Ibrutinib — differences?** | **2nd generation, more selective** — Less AFib, HTN, Diarrhoea, Arthralgia; **BID dosing**; No CYP3A4 strong inhibition. |
+| **Relapsed MCL post-BTKi — options?** | **Venetoclax + Rituximab** (ramp-up, TLS monitoring) → **CAR-T (Brexu-cel)** → **PI3Kδi** (Idelalisib - toxicity) → **Allo-HSCT** (selected). |
+| **Blastoid variant — features, prognosis?** | **High Ki-67 (>30-50%), TP53 mut common**, aggressive morphology → **Poor prognosis**, intensive chemo less effective. |
+| **CNS prophylaxis in MCL — when?** | **Blastoid variant, Ki-67 >30%, LDH high, Stage IV** — Intrathecal MTX/Ara-C + HD-MTX/Ara-C. |
+| **Leukemic non-nodal MCL — management?** | **Indolent, SOX11-, low Ki-67** — **Watch & Wait** (like CLL) if asymptomatic; Treat if symptomatic/progressive. |
+
+---
+
+## 11. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **MCL vs CLL — CD5+ both** | **Cyclin D1+ / SOX11+ / CD23- / CD200- / FMC7+** = MCL; **CD23+ / CD200+ / CD20 dim / Cyclin D1-** = CLL |
+| **MIPI vs MIPI-c** | **MIPI**: Clinical only (Age, ECOG, LDH, WBC); **MIPI-c**: Adds **Ki-67** (biological) — Better prognostic discrimination |
+| **Nordic vs R-CHOP alone** | Nordic = **R-CHOP/R-DHAP alternating + ASCT + Ritux Maint** — Superior to R-CHOP alone |
+| **BR vs R-CHOP in elderly** | **BR preferred** (StiL NHL7: PFS benefit; BRIGHT: Non-inferior OS, less alopecia, less neuropathy) |
+| **Ibrutinib vs Acalabrutinib/Zanubrutinib** | **2nd gen more selective** — Less off-target (ITK, EGFR, TEC) → **Less AFib, HTN, Diarrhoea**; Zanubrutinib most selective |
+| **Venetoclax TLS risk in MCL** | **High tumour burden (MCL = high BCL2)** → **Mandatory ramp-up + Hydration + Allopurinol/Rasburicase** |
+
+**Mnemonic: MANTLE**
+- **M**IPI / MIPI-c (Age, ECOG, LDH, WBC + Ki-67)
+- **A**lteration: **t(11;14) → Cyclin D1+** (Pathognomonic)
+- **N**odal vs Leukemic vs Blastoid variants
+- **T**reatment: **Young/Fit → Nordic (R-CHOP/R-DHAP → ASCT → Ritux Maint)**; **Old/Unfit → BR → Ritux Maint**
+- **L**ine Relapse: **BTKi (Ibru/Acala/Zanu)** → **Venetoclax** → **CAR-T (Brexu-cel)**
+- **E**xtranodal: **GI Polyposis** (Colonoscopy); **CNS Prophylaxis** (Blastoid/High Ki-67)
+
+---
+
+## 12. Mind Map
+
+```mermaid
+mindmap
+  root((Mantle Cell Lymphoma))
+    Pathogenesis
+      t(11;14) → CCND1/IgH → Cyclin D1↑
+      SOX11+ (cyclin D1-ve cases)
+      Secondary: ATM, TP53, NOTCH, BIRC3
+    Variants
+      Classic Nodal (70%)
+      Leukemic Non-nodal (Indolent)
+      Blastoid / Pleomorphic (TP53, Ki-67↑)
+    Diagnosis
+      Cyclin D1+ (Nuclear)
+      CD5+, CD20+, CD23-, CD10-, SOX11+
+      FISH t(11;14)
+      Ki-67 (%)
+    Risk Stratification
+      MIPI: Age, ECOG, LDH, WBC
+      MIPI-c: + Ki-67
+    1L Treatment
+      Fit <65-70: Nordic R-CHOP/R-DHAP alt → ASCT → Ritux Maint
+      Older/Unfit: BR → Ritux Maint
+      VR-CAP alternative
+    Relapsed
+      BTKi: Ibrutinib / Acalabrutinib / Zanubrutinib
+      Post-BTKi: Venetoclax + Ritux
+      CAR-T: Brexu-cel
+      PI3Kδi
+    Toxicities
+      BTKi: AFib, Bleeding, HTN, Diarrhoea, Infections
+      Venetoclax: TLS (Ramp-up)
+```
+
+---
+
+## 13. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Diagnosis** | **t(11;14) → Cyclin D1+ (nuclear)**; CD5+, CD20+, CD23-, CD10-, SOX11+ |
+| **Variants** | Classic (nodal); Leukemic non-nodal (indolent, watch & wait); **Blastoid/Pleomorphic (TP53, Ki-67↑, poor)** |
+| **Risk** | **MIPI**: Age, ECOG, LDH, WBC; **MIPI-c**: + Ki-67 (>30% adverse) |
+| **1L Fit** | **Nordic: R-CHOP/R-DHAP alt ×3-4 → ASCT (BEAM) → Ritux Maint ×3yr** |
+| **1L Unfit** | **BR (Benda 90 d1,2 + Ritux q4w ×6-8) → Ritux Maint ×2-3yr** |
+| **Relapse 1L** | **BTKi: Ibrutinib / Acalabrutinib / Zanubrutinib** (2nd gen safer) |
+| **Post-BTKi** | **Venetoclax + Ritux** (Ramp-up, TLS) → **CAR-T: Brexu-cel** |
+| **Blastoid** | Ki-67>30%, TP53 mut → Early BTKi / Trial / Allo-HSCT; CNS Prophylaxis |
+| **GI** | Lymphomatous polyposis — Colonoscopy |
+| **Key Tox** | Ibrutinib: AFib, Bleeding, HTN; Acalabrutinib/Zanubrutinib: Safer |
+
+---
+
+## 14. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 15. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| t(11;14) / Cyclin D1 | | |
+| MIPI / MIPI-c calculation | | |
+| Nordic vs BR pathway | | |
+| BTKi toxicities & 2nd gen | | |
+| Relapse sequencing | | |
+| Blastoid variant | | |
+| CNS prophylaxis criteria | | |
+| Leukemic non-nodal management | | |
+
+---
+
+## 16. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map**: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related**: [[CLL]], [[DLBCL]], [[Follicular Lymphoma]], [[BTK Inhibitors]], [[Venetoclax]], [[CAR-T]], [[MIPI Risk Score]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 17. MCQs (10)
+
+
+**1.** Regarding Mantle Cell Lymphoma (MCL) (Diagnosis), which statement is correct?
+   A. **t(11
+   B. **t(11 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **t(11;14) → Cyclin D1+ (nuclear)** — Pathognomonic; **SOX11+** (cyclin D1-ve cases)
+
+
+**2.** Regarding Mantle Cell Lymphoma (MCL) (Immunophenotype), which statement is correct?
+   A. **CD5+, CD20+, CD23-, CD10-, Cyclin D1+**
+   B. **CD5+, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **CD5+, CD20+, CD23-, CD10-, Cyclin D1+** — Distinguishes from CLL (CD23+)
+
+
+**3.** Regarding Mantle Cell Lymphoma (MCL) (Variants), which statement is correct?
+   A. Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / **Blastoid/Pleomorphic (TP53, Ki-67 
+   B. Classic - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / **Blastoid/Pleomorphic (TP53, Ki-67 high, poor)**
+
+
+**4.** Regarding Mantle Cell Lymphoma (MCL) (MIPI / MIPI-c), which statement is correct?
+   A. **Age, ECOG, LDH, WBC** + **Ki-67** (c-index) → Low/Int/High risk
+   B. **Age, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Age, ECOG, LDH, WBC** + **Ki-67** (c-index) → Low/Int/High risk
+
+
+**5.** Regarding Mantle Cell Lymphoma (MCL) (Fit Young (<65-70)), which statement is correct?
+   A. **Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr**
+   B. **Nordic - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr** — **Best OS**
+
+
+**6.** Regarding Mantle Cell Lymphoma (MCL) (Older/Unfit), which statement is correct?
+   A. **BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr**
+   B. **BR - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr** — Standard
+
+
+**7.** Regarding Mantle Cell Lymphoma (MCL) (Relapsed), which statement is correct?
+   A. **BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)**
+   B. **BTKi: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)**
+
+
+**8.** Regarding Mantle Cell Lymphoma (MCL) (Post-BTKi), which statement is correct?
+   A. **Venetoclax + Ritux** (TLS risk) → **CAR-T (Brexu-cel)**
+   B. **Venetoclax - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Venetoclax + Ritux** (TLS risk) → **CAR-T (Brexu-cel)**
+
+
+**9.** Regarding Mantle Cell Lymphoma (MCL) (Blastoid), which statement is correct?
+   A. TP53 mut, Ki-67 high → **Intensive chemo less effective** → Early BTKi / Trial / Allo-HSCT
+   B. TP53 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — TP53 mut, Ki-67 high → **Intensive chemo less effective** → Early BTKi / Trial / Allo-HSCT
+
+
+**10.** Regarding Mantle Cell Lymphoma (MCL) (CNS Prophylaxis), which statement is correct?
+   A. Blastoid, Ki-67>30%, LDH high, Stage IV
+   B. Blastoid, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Blastoid, Ki-67>30%, LDH high, Stage IV — **Intrathecal + HD-MTX/Ara-C**
+
+
+## 18. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **t(11
+   - B. **t(11 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **t(11;14) → Cyclin D1+ (nuclear)** — Pathognomonic; **SOX11+** (cyclin D1-ve cases)
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **CD5+, CD20+, CD23-, CD10-, Cyclin D1+**
+   - B. **CD5+, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **CD5+, CD20+, CD23-, CD10-, Cyclin D1+** — Distinguishes from CLL (CD23+)
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / **Blastoid/Pleomorphic (TP53, Ki-67 
+   - B. Classic (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / **Blastoid/Pleomorphic (TP53, Ki-67 high, poor)**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Age, ECOG, LDH, WBC** + **Ki-67** (c-index) → Low/Int/High risk
+   - B. **Age, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Age, ECOG, LDH, WBC** + **Ki-67** (c-index) → Low/Int/High risk
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr**
+   - B. **Nordic (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr** — **Best OS**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr**
+   - B. **BR (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr** — Standard
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)**
+   - B. **BTKi: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)**
+
+
+**8.** The role of surgery in this case is:
+   - A. **Venetoclax + Ritux** (TLS risk) → **CAR-T (Brexu-cel)**
+   - B. **Venetoclax (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **Venetoclax + Ritux** (TLS risk) → **CAR-T (Brexu-cel)**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. TP53 mut, Ki-67 high → **Intensive chemo less effective** → Early BTKi / Trial / Allo-HSCT
+   - B. TP53 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: TP53 mut, Ki-67 high → **Intensive chemo less effective** → Early BTKi / Trial / Allo-HSCT
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. Blastoid, Ki-67>30%, LDH high, Stage IV
+   - B. Blastoid, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: Blastoid, Ki-67>30%, LDH high, Stage IV — **Intrathecal + HD-MTX/Ara-C**
+
+
+## 19. Flashcards
+
+**Q1:** Diagnosis?
+**A1:** t(11;14) → Cyclin D1+ (nuclear) — Pathognomonic; SOX11+ (cyclin D1-ve cases)
+
+**Q2:** Immunophenotype?
+**A2:** CD5+, CD20+, CD23-, CD10-, Cyclin D1+ — Distinguishes from CLL (CD23+)
+
+**Q3:** Variants?
+**A3:** Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / Blastoid/Pleomorphic (TP53, Ki-67 high, poor)
+
+**Q4:** MIPI / MIPI-c?
+**A4:** Age, ECOG, LDH, WBC + Ki-67 (c-index) → Low/Int/High risk
+
+**Q5:** Fit Young (<65-70)?
+**A5:** Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr — Best OS
+
+**Q6:** Older/Unfit?
+**A6:** BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr — Standard
+
+**Q7:** Relapsed?
+**A7:** BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer)
+
+**Q8:** Post-BTKi?
+**A8:** Venetoclax + Ritux (TLS risk) → CAR-T (Brexu-cel)
+
+## 20. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Diagnosis | t(11;14) → Cyclin D1+ (nuclear) — Pathognomonic; SOX11+ (cyclin D1-ve cases) |
+| 2 | A | Immunophenotype | CD5+, CD20+, CD23-, CD10-, Cyclin D1+ — Distinguishes from CLL (CD23+) |
+| 3 | A | Variants | Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / Blastoid/Pleomorphic (TP53, Ki-67 high, poor) |
+| 4 | A | MIPI / MIPI-c | Age, ECOG, LDH, WBC + Ki-67 (c-index) → Low/Int/High risk |
+| 5 | A | Fit Young (<65-70) | Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr — Best OS |
+| 6 | A | Older/Unfit | BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr — Standard |
+| 7 | A | Relapsed | BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer) |
+| 8 | A | Post-BTKi | Venetoclax + Ritux (TLS risk) → CAR-T (Brexu-cel) |
+| 9 | A | Blastoid | TP53 mut, Ki-67 high → Intensive chemo less effective → Early BTKi / Trial / Allo-HSCT |
+| 10 | A | CNS Prophylaxis | Blastoid, Ki-67>30%, LDH high, Stage IV — Intrathecal + HD-MTX/Ara-C |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Diagnosis | t(11;14) → Cyclin D1+ (nuclear) — Pathognomonic; SOX11+ (cyclin D1-ve cases) |
+| 2 | A | Immunophenotype | CD5+, CD20+, CD23-, CD10-, Cyclin D1+ — Distinguishes from CLL (CD23+) |
+| 3 | A | Variants | Classic (nodal) / Leukemic non-nodal (indolent, watch & wait) / Blastoid/Pleomorphic (TP53, Ki-67 high, poor) |
+| 4 | A | MIPI / MIPI-c | Age, ECOG, LDH, WBC + Ki-67 (c-index) → Low/Int/High risk |
+| 5 | A | Fit Young (<65-70) | Nordic R-CHOP/R-DHAP alt → ASCT (BEAM) → Rituximab Maint ×3yr — Best OS |
+| 6 | A | Older/Unfit | BR (Benda-Ritux) ×6-8 → Rituximab Maint ×2-3yr — Standard |
+| 7 | A | Relapsed | BTKi: Ibrutinib (1L), Acalabrutinib/Zanubrutinib (2nd gen, safer) |
+| 8 | A | Post-BTKi | Venetoclax + Ritux (TLS risk) → CAR-T (Brexu-cel) |
+| 9 | A | Blastoid | TP53 mut, Ki-67 high → Intensive chemo less effective → Early BTKi / Trial / Allo-HSCT |
+| 10 | A | CNS Prophylaxis | Blastoid, Ki-67>30%, LDH high, Stage IV — Intrathecal + HD-MTX/Ara-C |
+
+## 21. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Haematological Malignancies|Haematological Malignancies]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

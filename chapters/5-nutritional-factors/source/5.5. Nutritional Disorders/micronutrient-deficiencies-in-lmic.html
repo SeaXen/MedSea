@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Micronutrient Deficiencies In Lmic — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.5. NUTRITIONAL DISORDERS</span>
+      <div class="h1">Micronutrient Deficiencies In Lmic</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify most common global micronutrient deficiencies: iron, vit A, iodine, vit D, zinc, folate</li><li>[ ] Describe epidemiology by region: iron most common worldwide, vit A in South Asia/Africa, iodine in mountainous areas</li><li>[ ] Distinguish "hidden hunger" (micronutrient deficiency without overt PEM)</li><li>[ ] State public health interventions: fortification (universal salt iodisation, iron-fortified flour, vitamin A in oil), supplementation (high-dose vit A, iron tablets in pregnancy), dietary diversification</li><li>[ ] Recognise clinical features of each deficiency in LMIC populations</li><li>[ ] Explain interactions: vit A + iron; zinc + vit A; iodine + selenium</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Hidden Hunger**</td><td>Micronutrient deficiency without overt clinical signs or classical PEM; affects 2 billion globally</td></tr><tr><td>**Iron Deficiency (ID)**</td><td>Most common globally (~1.6B); IDA most prevalent anaemia; LMIC women, children</td></tr><tr><td>**Vitamin A Deficiency (VAD)**</td><td>190M preschool children; South Asia, sub-Saharan Africa; night blindness, Bitot's, keratomalacia</td></tr><tr><td>**Iodine Deficiency Disorders (IDD)**</td><td>2B at risk; mountainous areas, flood plains; goitre, cretinism, hypothyroidism</td></tr><tr><td>**Vitamin D Deficiency**</td><td>1B globally; South Asia, Middle East, Africa; rickets, osteomalacia</td></tr><tr><td>**Zinc Deficiency**</td><td>17% global population; diarrhoea, pneumonia, growth failure, immune dysfunction</td></tr><tr><td>**Folate Deficiency**</td><td>Pre-conception; NTD; megaloblastic anaemia</td></tr><tr><td>**B12 Deficiency**</td><td>Strict vegan, malabsorption, elderly; megaloblastic, neuro</td></tr><tr><td>**Public Health Interventions**</td><td>Fortification, supplementation, dietary diversification, education, food security</td></tr><tr><td>**Universal Salt Iodisation (USI)**</td><td>20–40 mg I/kg salt; 88% global households</td></tr><tr><td>**Food Fortification**</td><td>Adding micronutrients to staple foods; iron-fortified flour, vitamin A in oil, folic acid in wheat</td></tr><tr><td>**Biofortification**</td><td>Plant breeding for higher micronutrients (orange sweet potato, golden rice, Fe beans)</td></tr><tr><td>**Supplementation Programs**</td><td>High-dose vitamin A (6–59m, 200k IU q6m); iron + folic acid (pregnant women); zinc (diarrhoea)</td></tr><tr><td>**WHO/UNICEF/GAIN**</td><td>Global coordination; Scaling Up Nutrition (SUN) movement</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Iron Deficiency (Most Common)</div>
+<p><b>Epidemiology:</b> ~1.6B affected; IDA 50% in LMIC children, 40% women; common in Africa, South Asia, preschool, pregnant. <b>Consequences:</b> IDA (↓Hb, cognitive ↓, ↓work productivity), pregnancy complications (low birth weight, prematurity, maternal mortality), child development ↓. <b>Populations at risk:</b> Infants &gt;6m, preschool, adolescents (girls), pregnancy, menstruating women, low-income. <b>Public health interventions:</b></p>
+<ul><li><b>Food fortification:</b> Iron-fortified wheat flour, rice, salt (NaFeEDTA), condiments (curry powder, fish sauce)</li><li><b>Supplementation:</b> Iron + folic acid tablets for pregnant women (60 mg elemental Fe + 400 µg folic acid daily, 6 months)</li><li><b>Biofortification:</b> Iron-biofortified rice, beans, pearl millet, sweet potato</li><li><b>Dietary diversification:</b> Animal source foods, vitamin C with non-heme iron</li><li><b>Public health measures:</b> Deworming (hookworm reduces Fe absorption), malaria control, family planning</li></ul>
+<div class="sub-h">Section 2: Vitamin A Deficiency</div>
+<p><b>Epidemiology:</b> 190M preschool children globally; sub-Saharan Africa, South Asia (highest burden); 5M with xerophthalmia, 350,000 blind annually. <b>Consequences:</b> Xerophthalmia, blindness, increased infection mortality (measles, diarrhoea, pneumonia), anaemia, growth failure. <b>Public health interventions:</b></p>
+<ul><li><b>High-dose vitamin A supplementation (HVAS):</b> 200,000 IU q4–6m (6–59m; 100,000 &lt;6m); 90% coverage reduces mortality 24%</li><li><b>Food fortification:</b> Vitamin A in oil, sugar, wheat flour, dairy</li><li><b>Dietary diversification:</b> Orange/red fruits/veg (β-carotene), liver, eggs, dairy</li><li><b>Measles vaccination</b> (separate programme)</li><li><b>Biofortification:</b> Golden rice, orange sweet potato</li></ul>
+<div class="sub-h">Section 3: Iodine Deficiency Disorders (IDD)</div>
+<p><b>Epidemiology:</b> 2B at risk globally; mountainous (Himalayas, Andes, Alps), flood plains, glaciated; China, India, sub-Saharan Africa <b>Consequences:</b> Goitre, hypothyroidism, cretinism (neurological, myxoedematous), cognitive ↓, growth failure, pregnancy complications <b>Public health interventions:</b></p>
+<ul><li><b>Universal Salt Iodisation (USI):</b> 20–40 mg iodine/kg salt; 88% global households; 4 USD/person/year</li><li><b>Other vehicles:</b> Iodised water, milk, bread</li><li><b>Iodised oil (lipiodol):</b> IM/oral; 0.5–1 mL; long-acting (2–5 years); for remote areas</li><li><b>Monitoring:</b> Urinary iodine concentration (UIC) in school children; target &gt;100 µg/L</li></ul>
+<div class="sub-h">Section 4: Vitamin D Deficiency</div>
+<p><b>Epidemiology:</b> 1B globally; South Asia, Middle East, Africa; all ages; exclusive breastfeeding (UVB + low maternal stores) + covered clothing + dark skin <b>Consequences:</b> Rickets (children), osteomalacia (adults), ↑fracture, secondary HPT, possibly immune/CVD <b>Public health interventions:</b></p>
+<ul><li><b>Food fortification:</b> Vitamin D in milk, oil, flour (some countries)</li><li><b>Supplementation:</b> High-risk groups (infants, pregnant women, elderly, veiled)</li><li><b>Sunlight exposure:</b> Safe sun (10–15 min, 2–3 times/week; hands, face, arms)</li><li><b>Fortified infant formula:</b> Standard practice</li></ul>
+<div class="sub-h">Section 5: Zinc Deficiency</div>
+<p><b>Epidemiology:</b> 17% global; sub-Saharan Africa, South Asia; ~450,000 deaths/year (5% of all child deaths) <b>Consequences:</b> Growth failure, immune dysfunction, ↑diarrhoea/pneumonia, dermatitis, delayed wound healing, hypogonadism <b>Public health interventions:</b></p>
+<ul><li><b>Supplementation with ORS in diarrhoea:</b> WHO ORS + zinc 10–20 mg/day ×10–14 days</li><li><b>Fortification:</b> Wheat flour, rice, milk, condiments</li><li><b>Biofortification:</b> Zn-biofortified wheat, rice, beans</li><li><b>Dietary diversification:</b> Animal products, legumes (with phytate reduction)</li></ul>
+<div class="sub-h">Section 6: Folate &amp; B12</div>
+<p><b>Folate:</b> Pre-conception NTD prevention (400 µg/day); megaloblastic anaemia; fortification (wheat flour with folic acid 154 µg/100g in 80+ countries → NTD ↓20–50%) <b>B12:</b> Strict vegan (infants of vegan mothers), elderly, malabsorption, post-bariatric; clinical features; supplementation 1 mg IM loading + maintenance</p>
+<div class="sub-h">Section 7: Other LMIC Deficiencies</div>
+<table class="ctable"><tr><th>Deficiency</th><th>Region</th><th>Public Health Action</th></tr><tr><td>-----------</td><td>--------</td><td>---------------------</td></tr><tr><td>**Selenium**</td><td>Keshan (China), Tibet, Russia</td><td>Supplementation, fortification (salt)</td></tr><tr><td>**Copper**</td><td>Bariatric, infants (cow's milk)</td><td>Multivitamins</td></tr><tr><td>**Calcium**</td><td>Children, pregnant, elderly</td><td>Dairy, fortified foods</td></tr><tr><td>**Magnesium**</td><td>Chronic alcoholism, TPN</td><td>Oral supplementation</td></tr><tr><td>**Fluoride**</td><td>Deficiency in water (caries); excess in water (fluorosis)</td><td>Water fluoridation</td></tr><tr><td>**Thiamine**</td><td>Polished rice diets (beriberi), alcohol</td><td>Fortification (rice, wheat)</td></tr><tr><td>**Niacin**</td><td>Maize/sorghum diets (pellagra)</td><td>Nixtamalisation, fortification</td></tr></table>
+<div class="sub-h">Section 8: Hidden Hunger &amp; Multiple Deficiencies</div>
+<ul><li>Often coexist: Fe + Vit A + I + Zn + Folate in same populations</li><li>"Hidden hunger" — subclinical, no overt PEM</li><li>Worsens with poverty, food insecurity, poor diet diversity</li><li>"Food systems" approach: agriculture, processing, fortification, education</li><li><b>1000 days</b> (pregnancy + 2 years): critical window</li></ul>
+<div class="sub-h">Section 9: Public Health Strategies</div>
+<p><b>1. Food Fortification (Mass):</b></p>
+<ul><li>Universal Salt Iodisation (USI) — 88% global</li><li>Iron-fortified wheat flour (60+ countries)</li><li>Vitamin A-fortified oil, sugar, flour</li><li>Folic acid-fortified wheat flour (mandatory in 80+ countries)</li><li>Vitamin D-fortified milk, oil</li><li>Zinc-fortified flour</li><li><b>Coverage:</b> All population (no compliance needed)</li></ul>
+<p><b>2. Supplementation (Targeted):</b></p>
+<ul><li>Vit A high-dose (6–59m, q4–6m, LMIC)</li><li>Iron + folic acid (pregnant women, daily 6m)</li><li>Zinc (diarrhoea, x10–14 days)</li><li>Calcium (pregnant women, low intake: 1.5–2 g/day, halves pre-eclampsia)</li><li>Multiple micronutrient powders (MNPs, "Sprinkles") for home fortification</li><li>Iodised oil (remote, severe deficiency)</li></ul>
+<p><b>3. Biofortification:</b></p>
+<ul><li>Orange sweet potato (β-carotene)</li><li>Golden rice (β-carotene)</li><li>Fe beans, pearl millet</li><li>Zn wheat, rice, maize</li><li>Cassava (vitamin A, Zn)</li><li>Plant breeding for nutrient density</li></ul>
+<p><b>4. Dietary Diversification:</b></p>
+<ul><li>Animal source foods (Fe, Zn, B12, vit A)</li><li>Pulses, nuts, seeds (Fe, Zn)</li><li>Fruits/veg (vit A, vit C, K, folate)</li><li>Education on balanced diet</li></ul>
+<p><b>5. Public Health Measures:</b></p>
+<ul><li>Deworming (Fe, Zn absorption)</li><li>Malaria control (Fe, anaemia)</li><li>Sanitation (diarrhoea prevention)</li><li>Family planning (maternal nutrition)</li><li>Antenatal care (Fe, folate, Ca)</li><li>Exclusive breastfeeding 0–6m</li><li>Complementary feeding 6–24m</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Public Health Action</th></tr><tr><td>----------</td><td>----------------------</td></tr><tr><td>Rural India, 30F pregnant, Hb 8.5, vegetarian</td><td>Iron + folic acid tablets; deworming; dietary counselling; IV iron if needed</td></tr><tr><td>Sub-Saharan Africa, 3y child, measles</td><td>Vitamin A 200,000 IU day 1, 2, 14; measles vaccination; oral nutrition support</td></tr><tr><td>Himalayan village, 12y girl, neck swelling, mental retardation</td><td>Iodine supplementation; iodised salt programme; treat hypothyroidism</td></tr><tr><td>Bangladesh, 4y child, recurrent diarrhoea, stunting</td><td>Zinc with ORS; deworming; nutrition support; investigate underlying</td></tr><tr><td>South Asia, 40F, multiple micronutrient deficiency</td><td>Multiple micronutrient supplement; dietary diversification; anaemia workup</td></tr><tr><td>LMIC, 6m child, exclusively breastfed (mother vegan)</td><td>B12 supplementation (mother and child); complementary feeding; iron by 6m</td></tr><tr><td>Sahel, 2y child, bitot's spots</td><td>Vitamin A high dose; vit A supplementation; food security, complementary feeding</td></tr><tr><td>Sub-Saharan Africa, 1y child, zinc deficiency, growth faltering</td><td>Zinc supplementation; nutritional support; deworming; complementary feeding</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Most common LMIC deficiencies: Iron (1.6B), Vit A (190M children), Iodine (2B at risk), Vit D (1B), Zinc (17%), Folate; public health: fortification, supplementation, dietary diversification; USI 20–40 mg/kg; vit A high dose 200k IU q4–6m; iron + folic acid in pregnancy - <b>Common viva:</b> Hidden hunger; iron fortification vehicles; vit A mortality benefit; USI programme; ORS+zinc in diarrhoea; iron-folic acid in pregnancy - <b>Exam trap:</b> Confusing individual vs public health interventions; missing USI coverage; low-dose vs high-dose vit A; iodine as supplement in non-deficient areas</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Iron fortification is universal</td><td>**Iron fortification of wheat flour (60+ countries)**, NOT universal</td></tr><tr><td>All LMIC need vit A supplementation</td><td>**Vit A HVAS in 6-59m only in high-risk countries** (>5% night blindness)</td></tr><tr><td>Iodine deficiency = goitre only</td><td>**IDD = spectrum** (goitre, cretinism, hypothyroid, cognitive)</td></tr><tr><td>USI covers 100%</td><td>**USI = 88% global households**; 0.05 USD/person/year</td></tr><tr><td>Biofortification = GM only</td><td>**Biofortification = conventional plant breeding for higher nutrients** (orange sweet potato, golden rice)</td></tr><tr><td>B12 deficiency only in elderly</td><td>**Strict vegan infants** (B12-deficient mother) → infantile B12 deficiency</td></tr><tr><td>NTD = folate only</td><td>**NTD prevented by folate 400 µg/day periconception**; valproate + DM = high risk</td></tr><tr><td>Vit D deficiency only in elderly</td><td>**South Asia veiled women + children**; sub-Saharan Africa; ALL ages</td></tr><tr><td>Calcium only for bone</td><td>**Calcium in pregnancy halves pre-eclampsia** (1.5–2 g/day)</td></tr><tr><td>Multiple micronutrient supplementation always</td><td>**MNPs ("Sprinkles") for home fortification of complementary foods** in 6-24m</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Most common:</b> <b>I-V-D-Z-F</b> = <b>I</b>ron (1.6B), <b>V</b>it A (190M), <b>I</b>odine (2B), <b>D</b> vit (1B), <b>Z</b>inc (17%), <b>F</b>olate</li><li><b>Public health interventions:</b> <b>F-B-S-D</b> = <b>F</b>ortification, <b>B</b>iofortification, <b>S</b>upplementation, <b>D</b>ietary diversification</li><li><b>USI:</b> 20–40 mg I/kg salt; 88% global</li><li><b>Vit A dose:</b> 200k IU &gt;12m; 100k IU 6–12m; q4–6m</li><li><b>Iron + Folic Acid pregnancy:</b> 60 mg elemental Fe + 400 µg folic acid; daily ×6m</li><li><b>Zinc + ORS:</b> 10-20 mg/day ×10–14 days (childhood diarrhoea)</li><li><b>Hidden hunger:</b> subclinical micronutrient deficiency without overt PEM</li><li><b>1000 days:</b> pregnancy + 2 years (critical window)</li><li><b>Biofortification examples:</b> <b>O</b>range sweet potato, <b>G</b>olden rice, <b>F</b>e beans, <b>Z</b>n wheat</li><li><b>Folate for NTD:</b> 400 µg standard; 5 mg high risk (previous NTD, valproate, DM)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((LMIC Micronutrient Deficits)) Iron (1.6B) Anaemia, cognitive Pregnancy, women, children Fe-fortified flour Fe-folic acid in pregnancy Vitamin A (190M) Xerophthalmia, mortality 200k IU q4-6m Fortified oil, sugar Iodine (2B at risk) Goitre, cretinism USI 20-40 mg/kg Iodised oil Vit D (1B) Rickets, osteomalacia Sunlight, fortified milk Zinc (17%) Diarrhoea, growth ORS + Zn 10-20 mg ×10-14d Fortified flour Folate/B12 NTD, megaloblastic Folate 400 µg preconception B12 in vegan/malabsorption Strategies Fortification Biofortification Supplementation Dietary diversification </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Iron (1.6B), Vit A (190M), Iodine (2B), Vit D (1B), Zinc (17%)</li><li>USI 20-40 mg I/kg salt; 88% global households</li><li>Vit A 200k IU q4-6m (&gt;12m); 100k &lt;6m</li><li>Iron-folic acid in pregnancy: 60 mg Fe + 400 µg folic acid ×6m</li><li>Zinc + ORS in childhood diarrhoea: 10-20 mg ×10-14d</li><li>Folate for NTD: 400 µg preconception; 5 mg high risk</li><li>Hidden hunger: subclinical micronutrient deficiency</li><li>1000 days critical window: pregnancy + 2 years</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Iron/Vit A/Iodine/Vit D/Zinc global burden; fortification, supplementation, dietary diversification, biofortification; USI 20-40 mg/kg; vit A 200k IU q4-6m; iron-folic acid in pregnancy 60 mg + 400 µg ×6m; ORS+zinc in diarrhoea; folate 400 µg preconception</td></tr><tr><td>**Should Know 🟡**</td><td>Hidden hunger; 1000 days; biofortification examples (orange sweet potato, golden rice); deworming + Fe; vit A mortality 24%; multiple micronutrient powders (Sprinkles); calcium in pregnancy</td></tr><tr><td>**Nice to Know 🟢**</td><td>SUN movement; GAIN; WHO/UNICEF coordination; biofortification crops; specific country programmes; bariatric Cu/Fe</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] SUN movement history</li><li>[ ] GAIN food fortification</li><li>[ ] Biofortification crop specifics</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Micronutrient deficiencies in LMIC and public health strategies"</p>
+<ul><li>Most common: Iron (1.6B), Vit A (190M), Iodine (2B at risk), Vit D (1B), Zinc (17%), Folate</li><li>Hidden hunger: subclinical micronutrient deficiency without overt PEM; 2B affected</li><li>Public health strategies: fortification (USI, iron-fortified flour, vit A in oil), supplementation (high-dose vit A, iron-folic acid, ORS+zinc), biofortification (orange sweet potato, golden rice), dietary diversification</li><li>USI 20-40 mg I/kg salt; 88% global</li><li>Vit A HVAS 200k IU q4-6m; ↓child mortality 24%</li><li>Iron-folic acid 60 mg + 400 µg daily in pregnancy</li><li>ORS+zinc 10-20 mg ×10-14 days in childhood diarrhoea</li><li>Folate 400 µg preconception (5 mg high risk) for NTD prevention</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Universal Salt Iodisation (USI)"</p>
+<ul><li><b>Target:</b> 20–40 mg iodine per kg salt (15–30 ppm tropical; 30–80 ppm temperate)</li><li><b>Coverage:</b> 88% global households (2020); WHO target ≥90%</li><li><b>IDD spectrum:</b> Goitre, hypothyroidism, cretinism (neurological/myxoedematous), cognitive, growth failure</li><li><b>Cost:</b> 0.05 USD/person/year (most cost-effective intervention)</li><li><b>Monitoring:</b> Urinary iodine concentration (UIC) in school children; target &gt;100 µg/L</li><li><b>Other vehicles:</b> Iodised oil (lipiodol) for remote areas (2–5 years)</li><li><b>Precautions:</b> Wolff-Chaikoff in normal (escape), Jod-Basedow in I-deficient with autonomy</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "What is hidden hunger and how is it addressed?" "A: <b>Hidden hunger = subclinical micronutrient deficiency without overt signs of PEM</b>; 2 billion globally. Most common: Fe, vit A, I, vit D, Zn. <b>Public health approach:</b> 1) <b>Fortification</b> (USI 88%, iron-fortified flour, vit A in oil); 2) <b>Supplementation</b> (vit A 200k IU q4-6m, iron-folic acid in pregnancy, ORS+zinc); 3) <b>Biofortification</b> (orange sweet potato, golden rice, Fe beans); 4) <b>Dietary diversification</b> (animal source foods, fruits/veg, education). 1000 days (pregnancy + 2y) critical window."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 30F, rural India, 28 weeks pregnant, Hb 8.5, vegetarian, no iron supplementation. "Diagnosis: <b>Iron-deficiency anaemia in pregnancy</b> (very common LMIC). <b>Action:</b> 1) <b>Iron + folic acid tablets</b> (60 mg elemental Fe + 400 µg folic acid daily, 6 months or until Hb &gt;11); 2) <b>Deworming</b> (albendazole 400 mg, second/third trimester); 3) <b>Malaria prophylaxis</b> (endemic area); 4) <b>Dietary counselling</b> (Fe-rich foods, vit C for absorption); 5) <b>Severe anaemia (&lt;7)</b> consider IV iron or transfusion; 6) <b>Postpartum</b> iron for 3 months; 7) <b>Public health</b> = fortification of staple foods, sanitation, family planning."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min</div>
+<ul><li><b>Most common:</b> Iron 1.6B, Vit A 190M, Iodine 2B, Vit D 1B, Zinc 17%, Folate</li><li><b>Hidden hunger:</b> subclinical micronutrient deficiency (2B globally)</li><li><b>USI:</b> 20-40 mg I/kg salt; 88% global</li><li><b>Vit A HVAS:</b> 200k IU q4-6m (&gt;12m); 100k &lt;6m</li><li><b>Iron-folic acid pregnancy:</b> 60 mg Fe + 400 µg FA daily ×6m</li><li><b>ORS+zinc:</b> 10-20 mg ×10-14d childhood diarrhoea</li><li><b>Folate for NTD:</b> 400 µg preconception; 5 mg high risk</li><li><b>Biofortification:</b> Orange sweet potato, golden rice, Fe beans, Zn wheat</li><li><b>Strategies:</b> Fortification, Biofortification, Supplementation, Dietary diversification</li><li><b>1000 days window:</b> pregnancy + 2y</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Most common micronutrient deficiency globally:</b></li></ol>
+<p>A. Vitamin A B. <b>Iron</b> C. Iodine D. Vitamin D E. Zinc</p>
+<ol><li><b>Universal Salt Iodisation target iodine content:</b></li></ol>
+<p>A. 5 mg/kg salt B. 10 mg/kg C. <b>20–40 mg/kg</b> D. 100 mg/kg E. 200 mg/kg</p>
+<ol><li><b>Vitamin A high-dose supplementation (HVAS) for 12m+ child:</b></li></ol>
+<p>A. 50,000 IU single dose B. 100,000 IU single dose C. <b>200,000 IU day 1, 2, 14 (q4-6m)</b> D. 500,000 IU weekly E. 1,000,000 IU monthly</p>
+<ol><li><b>WHO oral rehydration + zinc for childhood diarrhoea:</b></li></ol>
+<p>A. ORS only B. <b>ORS + zinc 10-20 mg/day ×10-14 days</b> C. Antibiotics D. IV fluids only E. Loperamide</p>
+<ol><li><b>Iron-folic acid standard dose in pregnancy:</b></li></ol>
+<p>A. 30 mg Fe + 200 µg folic acid B. <b>60 mg Fe + 400 µg folic acid daily ×6 months</b> C. 100 mg Fe + 1 mg folic acid D. 200 mg Fe + 5 mg folic acid E. No routine supplementation</p>
+<ol><li><b>Folic acid dose for NTD prevention (standard):</b></li></ol>
+<p>A. 100 µg/day B. <b>400 µg/day preconception</b> C. 1 mg/day D. 5 mg/day E. 10 mg/day</p>
+<ol><li><b>Biofortification examples include all EXCEPT:</b></li></ol>
+<p>A. <b>Vitamin C pills</b> B. Orange sweet potato (β-carotene) C. Golden rice (β-carotene) D. Iron beans E. Zinc wheat</p>
+<ol><li><b>Most common cause of preventable childhood blindness globally:</b></li></ol>
+<p>A. Glaucoma B. <b>Vitamin A deficiency (xerophthalmia)</b> C. Measles D. Trachoma E. Onchocerciasis</p>
+<ol><li><b>Universal Salt Iodisation (USI) global household coverage:</b></li></ol>
+<p>A. 50% B. 70% C. <b>88%</b> D. 95% E. 100%</p>
+<ol><li><b>"Hidden hunger" refers to:</b></li></ol>
+<p>A. Clinical malnutrition B. <b>Subclinical micronutrient deficiency without overt PEM</b> C. Hunger in developing countries D. Famine E. Anorexia nervosa</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 30-year-old pregnant woman in rural India has Hb 8.5, vegetarian, no iron supplementation. Best public health intervention?</b></li></ol>
+<p>A. Iron IV infusion B. <b>Iron-folic acid tablets (60 mg Fe + 400 µg FA daily) + deworming + dietary counselling</b> C. Blood transfusion D. Vitamin B12 IM E. Folate 5 mg daily</p>
+<ol><li><b>A 3-year-old child in sub-Saharan Africa presents with measles, fever, cough. Most important micronutrient to give?</b></li></ol>
+<p>A. Iron B. <b>Vitamin A 200,000 IU (day 1, 2, 14)</b> C. Iodine D. Vitamin D E. Folate</p>
+<ol><li><b>A 4-year-old child in LMIC has acute watery diarrhoea. WHO-recommended treatment?</b></li></ol>
+<p>A. ORS only B. <b>ORS + zinc 10-20 mg/day ×10-14 days</b> C. Antibiotics D. Loperamide E. IV fluids</p>
+<ol><li><b>A 28-year-old woman is planning pregnancy. What supplement should be given preconception for NTD prevention?</b></li></ol>
+<p>A. Iron only B. <b>Folic acid 400 µg/day (5 mg if high risk)</b> C. Vitamin A D. Iodine E. Vitamin B12</p>
+<ol><li><b>In which population is universal salt iodisation (USI) most cost-effective?</b></li></ol>
+<p>A. North America B. <b>Endemic iodine-deficient regions (mountainous, flood plains)</b> C. Coastal urban areas D. High-income countries E. Polar regions</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Most common deficiency</li></ul>
+<p>A: <b>Iron (1.6B), Vit A (190M children), Iodine (2B at risk), Vit D (1B), Zinc (17%)</b></p>
+<ul><li>Q: USI</li></ul>
+<p>A: <b>20-40 mg I/kg salt; 88% global households; 0.05 USD/person/year</b></p>
+<ul><li>Q: Vit A HVAS</li></ul>
+<p>A: <b>200,000 IU day 1, 2, 14 (&gt;12m); 100,000 &lt;6m; q4-6m</b></p>
+<ul><li>Q: Iron-folic acid in pregnancy</li></ul>
+<p>A: <b>60 mg Fe + 400 µg FA daily ×6 months</b></p>
+<ul><li>Q: ORS + zinc in diarrhoea</li></ul>
+<p>A: <b>Zinc 10-20 mg/day ×10-14 days</b> (WHO/UNICEF)</p>
+<ul><li>Q: Folate for NTD</li></ul>
+<p>A: <b>400 µg preconception (5 mg high risk: previous NTD, valproate, DM)</b></p>
+<ul><li>Q: Hidden hunger</li></ul>
+<p>A: <b>Subclinical micronutrient deficiency (2B globally) without overt PEM</b></p>
+<ul><li>Q: Biofortification examples</li></ul>
+<p>A: <b>O</b>range sweet potato, <b>G</b>olden rice, <b>F</b>e beans, <b>Z</b>n wheat</p>
+<ul><li>Q: 1000 days</li></ul>
+<p>A: <b>Pregnancy + 2 years (critical nutrition window)</b></p>
+<ul><li>Q: WHO targets (in LMIC)</li></ul>
+<p>A: <b>Vit A coverage ≥80% in 6-59m; USI ≥90% global; Fe-folic acid in pregnancy ≥80%</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Iron deficiency is the most common micronutrient deficiency globally (~1.6B); IDA most prevalent anaemia worldwide.</li><li><b>C</b> — USI target: 20-40 mg iodine per kg salt (15-30 ppm tropical; 30-80 ppm temperate).</li><li><b>C</b> — Vit A HVAS: 200,000 IU day 1, 2, 14 (age 12m+); 100,000 IU 6-12m; q4-6m; ↓mortality 24%.</li><li><b>B</b> — WHO: ORS + zinc 10-20 mg/day ×10-14 days in childhood diarrhoea; ↓duration 25%, ↓subsequent episodes.</li><li><b>B</b> — Iron-folic acid in pregnancy: 60 mg elemental Fe + 400 µg FA daily ×6 months (WHO/UNICEF).</li><li><b>B</b> — Folic acid for NTD prevention: 400 µg/day preconception; 5 mg if high risk (previous NTD, valproate, DM).</li><li><b>A</b> — Biofortification examples: orange sweet potato, golden rice, iron beans, zinc wheat; NOT vitamin C pills (supplementation).</li><li><b>B</b> — Most common preventable childhood blindness: vitamin A deficiency (xerophthalmia); 350,000 children blind annually.</li><li><b>C</b> — USI global household coverage: 88% (WHO target ≥90%); 0.05 USD/person/year.</li><li><b>B</b> — Hidden hunger: subclinical micronutrient deficiency without overt PEM; affects 2 billion globally.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Iron-deficiency anaemia in pregnancy (LMIC): iron-folic acid 60 mg Fe + 400 µg FA daily ×6m + deworming + dietary counselling (Fe + vit C).</li><li><b>B</b> — Measles in sub-Saharan Africa: vit A 200,000 IU day 1, 2, 14; ↓measles mortality 50%; cornerstone of management.</li><li><b>B</b> — Childhood acute diarrhoea: ORS + zinc 10-20 mg/day ×10-14 days; WHO/UNICEF protocol; ↓duration, ↓episodes.</li><li><b>B</b> — NTD prevention: folic acid 400 µg/day preconception (1 month before through 12 weeks gestation); 5 mg if high risk.</li><li><b>B</b> — USI most cost-effective in endemic iodine-deficient regions (mountainous, flood plains) where IDD prevalent; prevention programme targeting populations at risk.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Micronutrient Deficiencies in LMIC</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Most common: <b>Iron (1.6B), Vit A (190M), Iodine (2B at risk), Vit D (1B), Zinc (17%), Folate</b>. Hidden hunger (subclinical) affects 2 billion. Public health strategies: <b>F</b>ortification (USI 88% global, iron-fortified flour, vit A in oil), <b>B</b>iofortification (orange sweet potato, golden rice, Fe beans), <b>S</b>upplementation (vit A 200k IU q4-6m, iron-folic acid 60 mg + 400 µg ×6m, ORS+zinc 10-20 mg ×10-14d), <b>D</b>ietary diversification. <b>USI 20-40 mg I/kg salt; 88% global.</b> <b>Folate 400 µg preconception (5 mg high risk) for NTD prevention.</b> 1000 days (pregnancy + 2y) critical window. <b>Exam focus:</b> Burden of deficiencies, USI, vit A HVAS, iron-folic acid, ORS+zinc, folate for NTD, public health strategies. <b>Clinical relevance:</b> Global child/maternal health; antenatal micronutrients; community programmes; refugee/emergency nutrition.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Micronutrient Deficiencies In Lmic · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

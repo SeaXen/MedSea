@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antimicrobial Resistance Mechanisms Epidemiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.2. ANTIMICROBIAL THERAPY</span>
+      <div class="h1">Antimicrobial Resistance Mechanisms Epidemiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define antimicrobial resistance (AMR) and describe the five canonical molecular mechanisms (enzymatic, target, efflux, permeability, bypass).</li><li>Classify β-lactamases: ESBL, AmpC, and carbapenemases (Class A KPC, Class B MBLs, Class D OXA-48).</li><li>Recognise the mechanisms and clinical significance of MRSA (mecA→PBP2a), VRE (vanA/vanB→D-Ala-D-Lac vs D-Ala-D-Ser), CRE, CRAB, CR-PA.</li><li>Describe MDR-TB and XDR-TB definitions (pre-2021 and current WHO 2021 definitions).</li><li>Identify WHO priority pathogens across Critical, High, and Medium tiers.</li><li>Explain the difference between serine and metallo-β-lactamases, and which β-lactamase inhibitors (avibactam, vaborbactam, relebactam) inhibit which enzymes.</li><li>Describe plasmid-mediated resistance (mcr-1, blaCTX-M, blaKPC, blaNDM, blaOXA-48) and horizontal gene transfer (conjugation, transposition, integrons).</li><li>Apply resistance detection methods: phenotypic (Carba NP, mCIM, eCIM, EDTA-disk, DDST, modified Hodge) and genotypic (PCR, WGS, microarray, FilmArray).</li><li>Understand surveillance frameworks: GLASS, EARS-Net, CDDEP, WHO priority pathogens, AWaRe.</li><li>Discuss the One Health approach linking human, animal, and environmental AMR.</li><li>Outline the economic burden of AMR and the global action plan.</li><li>Apply stewardship and IPC principles to limit AMR spread.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**AMR (Antimicrobial Resistance)**</td><td>Inherited or acquired ability of a microorganism to grow in the presence of an antimicrobial at a concentration that normally inhibits/kills it.</td></tr><tr><td>**MDR (Multidrug-Resistant)**</td><td>Non-susceptibility to ≥ 1 agent in ≥ 3 antimicrobial classes (per Magiorakos 2012 / ECDC).</td></tr><tr><td>**XDR (Extensively Drug-Resistant)**</td><td>Non-susceptibility to ≥ 1 agent in all but ≤ 2 antimicrobial classes.</td></tr><tr><td>**PDR (Pandrug-Resistant)**</td><td>Non-susceptibility to all agents in all antimicrobial classes.</td></tr><tr><td>**CRE (Carbapenem-Resistant Enterobacterales)**</td><td>Non-susceptible to ≥ 1 carbapenem (meropenem, imipenem, doripenem) **AND** resistant to all 3rd-generation cephalosporins (or has documented carbapenemase production).</td></tr><tr><td>**CRAB**</td><td>Carbapenem-Resistant *Acinetobacter baumannii* (intrinsic and acquired OXA-type carbapenemases, OXA-23, OXA-40, OXA-58, OXA-51 intrinsic).</td></tr><tr><td>**CR-PA**</td><td>Carbapenem-Resistant *Pseudomonas aeruginosa* (MexAB-OprM efflux, OprD loss, VIM/IMP/GES carbapenemases).</td></tr><tr><td>**ESBL**</td><td>Extended-Spectrum β-Lactamase: Class A serine β-lactamase hydrolysing penicillins, cephalosporins (3rd/4th gen) and aztreonam, **inhibited by clavulanic acid/tazobactam/sulbactam/avibactam**; **NOT** cephamycins or carbapenems.</td></tr><tr><td>**AmpC β-lactamase**</td><td>Class C cephalosporinase; chromosomal (inducible) in Enterobacter, Citrobacter freundii, Serratia, Morganella, Providencia, P. aeruginosa ("SPACE-HM" or "ESCPM"); hydrolyses cephamycins (cefoxitin, cefotetan); **not inhibited by clavulanic acid** but inhibited by avibactam and boronic acid.</td></tr><tr><td>**Carbapenemase**</td><td>β-lactamase hydrolysing carbapenems (imipenem, meropenem, ertapenem, doripenem); 4 Ambler classes include relevant ones in A (KPC, GES, SME, IMI), B (NDM, VIM, IMP, GIM, SPM), D (OXA-48, OXA-23, OXA-40/72, OXA-58).</td></tr><tr><td>**MRSA**</td><td>*S. aureus* with mecA/mecB/mecC → PBP2a/PBP2c (low-affinity PBP); resistant to nearly all β-lactams except ceftaroline/ceftobiprole.</td></tr><tr><td>**VRE**</td><td>*Enterococcus faecium/faecalis* with vanA/vanB/vanC → D-Ala-D-Lac ligase (vanA high-level V+T resistance, vanB variable V only).</td></tr><tr><td>**mcr-1**</td><td>Mobile colistin resistance gene; plasmid-encoded phosphoethanolamine transferase adding pEtN to lipid A.</td></tr><tr><td>**MDR-TB**</td><td>*Mycobacterium tuberculosis* resistant to ≥ **isoniazid (INH) AND rifampicin (RIF)** (the two most potent first-line drugs).</td></tr><tr><td>**XDR-TB (pre-2021)**</td><td>MDR-TB + resistance to any fluoroquinolone + ≥ 1 injectable (amikacin, kanamycin, capreomycin).</td></tr><tr><td>**XDR-TB (WHO 2021)**</td><td>MDR-TB + resistance to any fluoroquinolone + ≥ 1 Group A drug (**bedaquiline, linezolid**).</td></tr><tr><td>**Pre-XDR-TB (WHO 2021)**</td><td>MDR/RR-TB + resistance to any fluoroquinolone.</td></tr><tr><td>**GLASS**</td><td>Global Antimicrobial Resistance and Use Surveillance System (WHO, launched 2015).</td></tr><tr><td>**AWaRe**</td><td>WHO Access, Watch, Reserve antibiotic classification (2017, updated 2021, 2023).</td></tr><tr><td>**One Health**</td><td>Integrated approach linking human, animal, and environmental health for AMR.</td></tr><tr><td>**ESKAPE pathogens**</td><td>***E**nterococcus faecium*, ***S**taphylococcus aureus*, ***K**lebsiella pneumoniae*, ***A**cinetobacter baumannii*, ***P**seudomonas aeruginosa*, ***E**nterobacter* spp. — the leading nosocomial MDR pathogens.</td></tr><tr><td>**HGT**</td><td>Horizontal gene transfer — conjugation (plasmids), transformation (uptake of naked DNA), transduction (phage).</td></tr><tr><td>**Integron**</td><td>Genetic element capturing and expressing mobile gene cassettes (e.g. class 1 integron with *intI1*, common in MDR Gram-negatives).</td></tr><tr><td>**Transposon**</td><td>Mobile DNA element that jumps within/between DNA molecules; carries resistance genes (e.g. Tn1546 carrying vanA).</td></tr><tr><td>**MIC**</td><td>Minimum Inhibitory Concentration — lowest drug concentration preventing visible growth; defines S/I/R.</td></tr><tr><td>**MHK**</td><td>Same as MIC.</td></tr><tr><td>**CRE detection — Carba NP**</td><td>Phenotypic colorimetric test detecting carbapenem hydrolysis (imipenem) by any carbapenemase within hours.</td></tr><tr><td>**mCIM**</td><td>Modified Carbapenem Inactivation Method (CLSI): organism incubated with meropenem disk, then placed on *E. coli* lawn; zone size indicates carbapenemase.</td></tr><tr><td>**eCIM**</td><td>EDTA-Modified Carbapenem Inactivation Method — adds EDTA (MBL inhibitor) to differentiate MBL from serine carbapenemase.</td></tr><tr><td>**DTR-PA**</td><td>Difficult-to-Treat Resistance in *P. aeruginosa*: intermediate/resistant to piperacillin-tazobactam, ceftazidime, cefepime, aztreonam, meropenem, imipenem-cilastatin, ciprofloxacin, levofloxacin.</td></tr><tr><td>**OR**</td><td>Odds Ratio</td></tr><tr><td>**AMR deaths**</td><td>1.27 M directly attributable in 2019; 4.95 M associated (Lancet GBD 2022).</td></tr><tr><td>**DALYs**</td><td>Disability-Adjusted Life Years</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Global Burden of Antimicrobial Resistance (AMR)</div>
+<p>#### 1.1 The Numbers</p>
+<ul><li><b>2019 (Lancet GBD 2022)</b>: 1.27 million deaths directly attributable to bacterial AMR; 4.95 million associated deaths.</li><li><b>Projection (O'Neill 2016)</b>: 10 million deaths/year by 2050; cumulative cost US $100 trillion.</li><li><b>WHO 2019</b>: AMR is one of the <b>top 10 global public-health threats</b> facing humanity.</li><li><b>Top pathogens by AMR death burden (2019)</b>: <i>E. coli</i>, <i>K. pneumoniae</i>, <i>S. aureus</i>, <i>S. pneumoniae</i>, <i>A. baumannii</i>, <i>P. aeruginosa</i>, <i>M. tuberculosis</i>.</li><li><b>Sub-Saharan Africa and South Asia</b> bear the highest AMR death rates.</li></ul>
+<p>#### 1.2 Drivers of AMR</p>
+<ol><li><b>Overuse in humans</b> — 30–50% of antibiotic prescriptions in hospitals are inappropriate (IDSA/SHEA).</li><li><b>Overuse in community</b> — 80–90% of antibiotic use is in primary care; URTI mostly viral.</li><li><b>Overuse in agriculture</b> — 70% of antibiotics by tonnage go to livestock for growth promotion/prophylaxis (banned in EU since 2006; similar in US 2017).</li><li><b>Environmental contamination</b> — wastewater, pharma manufacturing effluent.</li><li><b>Suboptimal dosing/duration</b> — selects for resistance.</li><li><b>Self-medication and over-the-counter (OTC) sales</b> — common in LMIC.</li><li><b>Counterfeit/substandard drugs</b> — subtherapeutic levels.</li><li><b>Poor IPC</b> — transmission of resistant clones (especially in ICUs).</li></ol>
+<p>#### 1.3 Economic Burden</p>
+<ul><li>World Bank: AMR could cause global GDP loss of <b>1.1–3.8% per year by 2050</b>; push 28 million into poverty.</li><li>US costs: &gt; $20 billion/year in excess healthcare costs; 8 million additional hospital days (CDC 2013).</li><li>EU: €1.5 billion/year (ECDC).</li><li>Surgical prophylaxis failure: AMR could jeopardise chemotherapy, transplantation, Caesarean sections, hip replacements.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: The Five Canonical Resistance Mechanisms</div>
+<table class="ctable"><tr><th>#</th><th>Mechanism</th><th>Examples</th><th>Drug Classes Affected</th></tr><tr><td>---</td><td>-----------</td><td>----------</td><td>----------------------</td></tr><tr><td>1</td><td>**Enzymatic inactivation**</td><td>β-lactamases (ESBL, AmpC, KPC, NDM, OXA-48), aminoglycoside-modifying enzymes (AMEs: AAC, APH, ANT), chloramphenicol acetyltransferases (CATs), macrolide esterases (Ere), rifampicin-modifying enzymes (ARR)</td><td>β-lactams, aminoglycosides, chloramphenicol, macrolides, rifampicin</td></tr><tr><td>2</td><td>**Target modification**</td><td>mecA→PBP2a (MRSA); vanA→D-Ala-D-Lac (VRE); gyrA/parC QRDR (FQ-R); rpoB (RIF-R); 23S rRNA methylation by erm (MLS-B); katG/aphC/inhA (INH-R); pncA (PZA-R); 23S rRNA (linezolid-R via cfr/optrA); ERG11 (azole-R); FKS1 (echinocandin-R); PBPs 1, 2, 3 mosaic (pen-R pneumococcus)</td><td>β-lactams, glycopeptides, fluoroquinolones, rifamycins, macrolides, lincosamides, oxazolidinones, INH, PZA, azoles, echinocandins</td></tr><tr><td>3</td><td>**Active efflux**</td><td>MexAB-OprM (P. aeruginosa), AcrAB-TolC (Enterobacterales), NorA/MepA (S. aureus), QacA/B (S. aureus), AdeABC (A. baumannii), MtrCDE (N. gonorrhoeae), PmrA (Streptococcus)</td><td>β-lactams, FQs, tetracyclines, chloramphenicol, biocides, macrolides, lincosamides</td></tr><tr><td>4</td><td>**Reduced permeability**</td><td>OprD loss (imipenem-R P. aeruginosa), porin OmpK35/OmpK36 loss (K. pneumoniae), LPS modification (colistin-R), capsule loss (impermeability)</td><td>β-lactams, polymyxins</td></tr><tr><td>5</td><td>**Bypass / metabolic**</td><td>mcr-1/mcr-2 → pEtN addition to lipid A (colistin-R); sul1/sul2 acquired DHPS (TMP-SMX-R); dfrA dihydrofolate reductase variants (TMP-R); vanA/vanB→D-Ala-D-Lac (VRE — bypasses vancomycin target); 16S rRNA methyltransferases (armA/rmtB → pan-aminoglycoside-R); acquisition of mosaic PBPs (pen-R pneumococcus)</td><td>Polymyxins, folate antagonists, glycopeptides, aminoglycosides, β-lactams</td></tr></table>
+<p>#### Notes on Mechanisms</p>
+<ul><li><b>Plasmid-mediated</b> mechanisms (e.g. mcr-1, blaCTX-M, blaKPC, blaNDM) spread rapidly via HGT.</li><li><b>Chromosomal</b> mechanisms (e.g. mecA in SCCmec, vanA in Tn1546 transposon) can mobilise to plasmids.</li><li><b>Efflux + permeability</b> together confer high-level MDR in <i>P. aeruginosa</i> and <i>A. baumannii</i>.</li><li><b>Target modification + efflux + enzymatic</b> combine in MRSA (mecA + NorA + β-lactamase).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: β-Lactamases — The Most Important Resistance Mechanism</div>
+<p>#### 3.1 Ambler Classification (Molecular)</p>
+<table class="ctable"><tr><th>Class</th><th>Active Site</th><th>Key Enzymes</th><th>Examples</th><th>Inhibitor Profile</th></tr><tr><td>-------</td><td>------------</td><td>------------</td><td>----------</td><td>-------------------</td></tr><tr><td>**A**</td><td>Serine</td><td>TEM, SHV, CTX-M, KPC, GES, SME, IMI, NMC-A, PER, VEB, IBC</td><td>KPC, CTX-M-15, TEM-1, SHV-1</td><td>Clavulanic acid ✓, tazobactam ✓, sulbactam ✓, avibactam ✓ (KPC/GES, some), vaborbactam ✓ (KPC)</td></tr><tr><td>**B**</td><td>**Zinc (metallo)**</td><td>NDM, VIM, IMP, GIM, SPM, SIM, DIM, KHM, FIM</td><td>NDM-1, VIM-1, IMP-1</td><td>**NOT inhibited by clavulanic acid or avibactam**; inhibited by **EDTA, dipicolinic acid, aspergillomarasmine A (AMA), taniborbactam (in development)**</td></tr><tr><td>**C**</td><td>Serine</td><td>AmpC (chromosomal/inducible; plasmid-mediated CMY, DHA, ACT, FOX)</td><td>CMY-2, DHA-1, AmpC in Enterobacter</td><td>Clavulanic acid ✗; avibactam ✓; boronic acid ✓</td></tr><tr><td>**D**</td><td>Serine</td><td>OXA (oxacillinases): OXA-1, OXA-10, OXA-48, OXA-23, OXA-40/72, OXA-58, OXA-51 (intrinsic A. baumannii), OXA-181</td><td>OXA-48 (weak carbapenemase, often missed)</td><td>Variable: clavulanic acid (variable), avibactam ✓ for OXA-48</td></tr></table>
+<p>#### 3.2 Bush-Jacoby-Medeiros Functional Classification</p>
+<table class="ctable"><tr><th>Group</th><th>Function</th><th>Inhibited by Clav</th><th>Examples</th></tr><tr><td>-------</td><td>---------</td><td>--------------------</td><td>----------</td></tr><tr><td>1</td><td>Cephalosporinase (chromosomal AmpC)</td><td>No</td><td>AmpC in Enterobacter</td></tr><tr><td>2a</td><td>Penicillinase</td><td>Yes</td><td>Penicillinase in staphylococci</td></tr><tr><td>2b</td><td>Broad-spectrum penicillinase</td><td>Yes</td><td>TEM-1, SHV-1</td></tr><tr><td>2be</td><td>Extended-spectrum (ESBL)</td><td>Yes</td><td>CTX-M, TEM-3, SHV-2</td></tr><tr><td>2br</td><td>Inhibitor-resistant</td><td>No (variable)</td><td>TEM-30, IRT</td></tr><tr><td>2c</td><td>Carbenicillinase</td><td>Yes</td><td>PSE-1, CARB-3</td></tr><tr><td>2d</td><td>Cloxacillinase (OXA)</td><td>Variable</td><td>OXA-1, OXA-10</td></tr><tr><td>2de</td><td>Extended OXA (ESBL-like)</td><td>Variable</td><td>OXA-11</td></tr><tr><td>2e</td><td>Cephalosporinase</td><td>Yes</td><td>CepA</td></tr><tr><td>2f</td><td>Carbapenemase (serine)</td><td>Variable</td><td>KPC, GES, SME</td></tr><tr><td>3a</td><td>Metallo (MBL)</td><td>**No**</td><td>NDM, VIM, IMP</td></tr><tr><td>3b</td><td>Metallo (specialised)</td><td>**No**</td><td>CphA</td></tr></table>
+<p>#### 3.3 ESBLs (Extended-Spectrum β-Lactamases)</p>
+<p>##### Definition Class A serine β-lactamases (mostly plasmid-encoded) that hydrolyse:</p>
+<ul><li>Penicillins</li><li>1st, 2nd, <b>3rd, 4th-generation cephalosporins</b> (ceftriaxone, cefotaxime, ceftazidime, cefepime)</li><li>Aztreonam (monobactam)</li><li><b>NOT cephamycins</b> (cefoxitin, cefotetan) — distinguishing from AmpC</li><li><b>NOT carbapenems</b> — distinguishing from carbapenemases</li><li><b>Inhibited by clavulanic acid, tazobactam, sulbactam, avibactam</b> — the cornerstone of phenotypic detection (DDST, combined disc).</li></ul>
+<p>##### Major ESBL Families</p>
+<ul><li><b>TEM variants</b>: TEM-1 → TEM-3, TEM-10, TEM-26 (substitutions at positions 104, 164, 238, 240). First detected 1980s in <i>E. coli</i> (Germany).</li><li><b>SHV variants</b>: SHV-1 (chromosomal <i>Klebsiella</i>) → SHV-2, SHV-5, SHV-12.</li><li><b>CTX-M (dominant globally)</b>: Toho-1, CTX-M-1, CTX-M-9, CTX-M-15 (most prevalent worldwide; India, Europe, Africa), CTX-M-14, CTX-M-27, CTX-M-55. Hydrolyse cefotaxime &gt; ceftazidime. CTX-M-15 has Gly238→Ser giving ceftazidime activity. Plasmids with ISEcp1 insertion sequence.</li><li><b>Other</b>: PER, VEB, GES, TLA, BES, SFO, IBC.</li></ul>
+<p>##### Epidemiology</p>
+<ul><li><b>CTX-M-15</b> is the most prevalent ESBL worldwide (pandemic clone).</li><li><b>CTX-M-14</b> is dominant in East Asia.</li><li><b>CTX-M-27</b> is rising in the US/Japan.</li><li><b>BlaCTX-M genes</b> are on plasmids (IncF, IncI1, IncN, IncHI2) often co-harbouring FQ-R (aac(6')-Ib-cr), aminoglycoside R (aac, aph, ant), and sometimes carbapenemase genes (NDM, KPC).</li><li>Often in **ST131 *E. coli*** (pandemic MDR clone).</li><li><b>Risk factors for ESBL carriage/infection</b>: prior antibiotics (especially FQs, cephalosporins), hospitalisation, ICU, LTCF residence, travel to South Asia, ESBL-endemic areas, urinary catheter, recent surgery.</li></ul>
+<p>##### Clinical Impact</p>
+<ul><li>ESBL bacteraemia: <b>meropenem</b> is gold-standard (MERINO trial 2018 showed pip-tazo inferior; Hahn 2019 reanalysis confirmed).</li><li>Alternative: <b>piperacillin-tazobactam</b> non-inferior in low-risk urinary/bacteraemia with source control, <b>if</b> the isolate is susceptible (post-hoc MERINO analysis). Use meropenem for serious infections or pip-tazo-resistant ESBLs.</li><li><b>Carbapenem-sparing</b> strategies: high-dose pip-tazo, BLBLI combinations (meropenem-vaborbactam as backup, ceftazidime-avibactam).</li><li><b>Source control</b> essential.</li><li><b>Cefepime</b> is controversial in ESBL; only if MIC ≤ 2 mg/L (inoculum effect risk).</li></ul>
+<p>#### 3.4 AmpC β-Lactamases</p>
+<p>##### Definition Class C serine cephalosporinases. Hydrolyse:</p>
+<ul><li>Penicillins</li><li>1st, 2nd, <b>3rd-generation cephalosporins</b> (NOT 4th)</li><li><b>Cephamycins</b> (cefoxitin, cefotetan) — distinguishing from ESBL</li><li><b>NOT carbapenems</b> (unless combined with porin loss)</li><li><b>NOT inhibited by clavulanic acid</b> — distinguishing from ESBL</li><li>Induced by β-lactams (cefoxitin, imipenem strong inducers; ceftriaxone, cefotaxime, ampicillin, piperacillin are inducers in some species).</li></ul>
+<p>##### "SPACE-HM" or "ESCPM" Organisms with Chromosomal AmpC</p>
+<ul><li><b>E</b>nterobacter cloacae, <b>E</b>nterobacter aerogenes (now <i>Klebsiella aerogenes</i>)</li><li><b>S</b>erratia marcescens</li><li><b>P</b>seudomonas aeruginosa</li><li><b>C</b>itrobacter freundii</li><li><b>M</b>organella morganii</li><li><b>H</b>afnia alvei (some)</li><li><i>(also: Providencia, Yersinia enterocolitica)</i></li></ul>
+<p>##### "Stable Derepression"</p>
+<ul><li><b>Mutation</b> in ampD (repressor) → constitutive high-level AmpC → "stable derepressed" mutants resistant to all 3rd gen cephalosporins.</li><li>Clinically important: patient on ceftriaxone → <i>Enterobacter</i> develops resistance during therapy.</li><li><b>Avoid 3rd gen cephalosporins as monotherapy</b> for serious Enterobacter, Citrobacter, Serratia, etc.</li></ul>
+<p>##### Plasmid-Mediated AmpC</p>
+<ul><li><b>CMY-1, CMY-2</b> (most common; originated from Citrobacter freundii AmpC)</li><li><b>DHA-1, DHA-2</b> (from Morganella; inducible)</li><li><b>ACT-1, MIR-1, FOX-1, LAT-1</b></li><li>Common in <i>E. coli</i>, <i>K. pneumoniae</i>, <i>Salmonella</i>.</li></ul>
+<p>##### Detection</p>
+<ul><li><b>Cefoxitin</b> (cephemyein) resistance: screening test for AmpC.</li><li>Confirm with <b>boronic acid</b> disc test (inhibits AmpC).</li><li><b>EDTA does NOT inhibit AmpC</b> (only MBLs).</li><li><b>Avibactam</b> inhibits AmpC; <b>clavulanic acid does NOT</b>.</li></ul>
+<p>#### 3.5 Carbapenemases — The "Nightmare" Class</p>
+<p>##### Class A Serine Carbapenemases (inhibited by avibactam/vaborbactam)</p>
+<ul><li><b>KPC (Klebsiella pneumoniae Carbapenemase)</b>:</li><li><b>Most common carbapenemase globally</b>, especially in US, China, Italy, Greece, Israel, Latin America.</li><li><b>blaKPC-2, blaKPC-3</b> most prevalent; KPC-31 (ceftazidime-avibactam resistance emerging).</li><li>Located on <b>Tn4401</b> transposon; plasmids (IncF, IncN, IncX).</li><li>Common in <i>K. pneumoniae</i> (ST258 pandemic clone).</li><li>Hydrolyses all β-lactams including carbapenems; partial aztreonam hydrolysis.</li><li><b>Inhibited by avibactam, vaborbactam, relebactam</b> → ceftazidime-avibactam, meropenem-vaborbactam, imipenem-relebactam active.</li><li>Phenotype: ↑ carbapenem MIC, <b>not</b> reversed by EDTA (distinguishes from MBL).</li><li><b>GES, SME, IMI, NMC-A</b>: less common; mostly chromosomal in <i>Serratia</i>, <i>Enterobacter</i>.</li></ul>
+<p>##### Class B Metallo-β-Lactamases (MBLs; zinc-dependent; NOT inhibited by avibactam)</p>
+<ul><li><b>NDM (New Delhi Metallo-β-Lactamase)</b>:</li><li>First described 2008 in a Swedish patient returning from India (Yong et al.).</li><li><b>blaNDM-1</b> most common; variants 2–35+.</li><li><b>Plasmid-mediated, highly mobile</b>; co-located with other resistance genes (16S rRNA methyltransferases armA/rmtB → pan-aminoglycoside-R; ble for bleomycin; etc.).</li><li>Common in <i>K. pneumoniae</i>, <i>E. coli</i>, <i>Acinetobacter</i>.</li><li><b>Hydrolyses all β-lactams EXCEPT aztreonam</b> (aztreonam stable).</li><li><b>NOT inhibited by avibactam, vaborbactam, relebactam, clavulanic acid</b>.</li><li><b>Inhibited by EDTA, dipicolinic acid, aspergillomarasmine A (AMA), taniborbactam (phase III)</b>.</li><li>Clinical: aztreonam + avibactam (CACTUS trial) effective.</li><li><b>Indian subcontinent reservoir</b> (water, sewage, hospital).</li><li><b>VIM (Verona Integron-encoded Metallo-β-lactamase)</b>:</li><li>Common in <i>P. aeruginosa</i> (Mediterranean, Italy, Greece), Enterobacterales.</li><li><b>Integron-associated</b> (class 1 integrons).</li><li><b>IMP (Imipenemase)</b>:</li><li>First MBL described (Japan, 1991).</li><li>Common in <i>P. aeruginosa</i>, <i>Acinetobacter</i> (Japan, Asia, Australia).</li><li>Many variants (IMP-1 to IMP-80+).</li></ul>
+<p>##### Class D Oxacillinases (OXA-type)</p>
+<ul><li><b>OXA-48 (and variants OXA-181, OXA-232)</b>:</li><li><b>Weak carbapenemase</b> — only modest hydrolysis; often <b>low-level carbapenem MICs (1–2 mg/L)</b> — can be missed by automated systems.</li><li><b>No EDTA inhibition</b> (serine enzyme) but <b>avibactam inhibits OXA-48</b> → ceftazidime-avibactam active.</li><li><b>Common in Turkey, North Africa, Middle East, Europe</b> (spread with Balkan repatriation, refugee movements).</li><li>Plasmid-encoded; often on IncL/M plasmids.</li><li><b>OXA-23, OXA-40/72, OXA-58</b> — major **acquired carbapenemases in *A. baumannii***.</li><li><b>OXA-51</b> — <b>intrinsic</b> to <i>A. baumannii</i>; chromosomal; provides background carbapenemase.</li><li>OXA-type enzymes are not significantly inhibited by classical β-lactamase inhibitors; avibactam inhibits OXA-48 strongly but OXA-23, OXA-40 weakly.</li></ul>
+<p>##### Comparative Table — Serine vs Metallo</p>
+<table class="ctable"><tr><th>Feature</th><th>Class A (KPC)</th><th>Class B (NDM)</th><th>Class D (OXA-48)</th></tr><tr><td>---------</td><td>--------------</td><td>---------------</td><td>-----------------</td></tr><tr><td>Active site</td><td>Serine</td><td>Zn²⁺</td><td>Serine</td></tr><tr><td>Hydrolyses carbapenems</td><td>Yes (potent)</td><td>Yes (potent)</td><td>Yes (weak)</td></tr><tr><td>Hydrolyses aztreonam</td><td>No (stable)</td><td>No (stable!)</td><td>No (stable)</td></tr><tr><td>Inhibited by clavulanic acid</td><td>Yes (partial)</td><td>**No**</td><td>No (variable)</td></tr><tr><td>Inhibited by EDTA</td><td>**No**</td><td>**Yes**</td><td>No</td></tr><tr><td>Inhibited by avibactam</td><td>**Yes**</td><td>**No**</td><td>**Yes**</td></tr><tr><td>Inhibited by vaborbactam</td><td>**Yes**</td><td>**No**</td><td>No</td></tr><tr><td>Inhibited by relebactam</td><td>**Yes**</td><td>**No**</td><td>No</td></tr><tr><td>Inhibited by taniborbactam</td><td>Yes (in dev.)</td><td>**Yes (in dev.)**</td><td>Yes (in dev.)</td></tr><tr><td>Substrate profile</td><td>All β-lactams</td><td>All β-lactams except aztreonam</td><td>All β-lactams (weak carbapenem)</td></tr><tr><td>Geographical hot-spot</td><td>US, China, Italy, Greece, Israel, S America</td><td>India, Pakistan, Bangladesh, Middle East, Balkans</td><td>Turkey, N Africa, Middle East, Europe</td></tr><tr><td>Common in</td><td>*K. pneumoniae* (ST258)</td><td>*K. pneumoniae*, *E. coli*, *Acinetobacter*</td><td>*K. pneumoniae*, *E. coli*</td></tr></table>
+<div class="callout"><b>Key exam fact: Aztreonam is stable to NDM/VIM/IMP. The combination of aztreonam + avibactam (or avibactam-containing BLBLI) is the "rescue" therapy for MBL-producing Enterobacterales.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Gram-Positive Resistance</div>
+<p>#### 4.1 MRSA (Methicillin-Resistant <i>Staphylococcus aureus</i>)</p>
+<p>##### Mechanism</p>
+<ul><li>***mecA* gene<b> on </b>SCCmec** (Staphylococcal Cassette Chromosome mec) mobile genetic element.</li><li>mecA encodes <b>PBP2a</b> (also PBP2'), an alternative PBP with very low affinity for nearly all β-lactams (penicillins, cephalosporins except ceftaroline/ceftobiprole, carbapenems).</li><li>SCCmec types I–XI; <b>types I, II, III</b> (large, with multiple resistance genes) — hospital-associated MRSA (HA-MRSA, e.g. USA100/ST5).</li><li><b>Types IV, V</b> (smaller) — community-associated MRSA (CA-MRSA, e.g. USA300/ST8 with PVL).</li><li>***mecB<i>, </i>mecC*** — rare variants (mecC in livestock, <i>S. aureus</i> CC130).</li><li><b>Regulation</b>: mecA is regulated by <i>mecI</i> (repressor) and <i>mecR1</i> (sensor/inducer).</li><li><b>Other resistance</b>: PBP2a + β-lactamase (blaZ) co-expression common; heterogeneous resistance (only 1 in 10⁶ cells expresses high-level resistance → "inoculum effect" detection issues).</li></ul>
+<p>##### Resistance Profile</p>
+<ul><li>Resistant to nearly all β-lactams (except ceftaroline, ceftobiprole).</li><li>Often co-resistant to: macrolides, lincosamides, fluoroquinolones, tetracyclines, gentamicin.</li><li>May remain susceptible to: vancomycin, teicoplanin, daptomycin, linezolid, tigecycline, ceftaroline, ceftobiprole, dalbavancin, oritavancin, telavancin, TMP-SMX (for non-bacteraemic infections).</li></ul>
+<p>##### Vancomycin-Intermediate <i>S. aureus</i> (VISA) and -Resistant (VRSA)</p>
+<ul><li><b>VISA (MIC 4–8 mg/L)</b>: thickened cell wall, increased D-Ala-D-Ala targets, <i>graRS</i>, <i>vraSR</i>, <i>walKR</i> mutations.</li><li><b>hVISA</b>: heteroresistant VISA (subpopulations).</li><li><b>VRSA (MIC ≥ 16 mg/L)</b>: vanA gene from <i>Enterococcus</i> transferred to <i>S. aureus</i>; very rare.</li><li><i>S. aureus</i> with vancomycin MIC creep: careful TDM, consider alternative (daptomycin, ceftaroline, linezolid).</li></ul>
+<p>#### 4.2 VRE (Vancomycin-Resistant Enterococci)</p>
+<p>##### Mechanism</p>
+<ul><li>Cell wall precursors are modified from <b>D-Ala-D-Ala</b> to <b>D-Ala-D-Lac</b> (lactate) or <b>D-Ala-D-Ser</b> (serine), reducing vancomycin binding ~1000×.</li></ul>
+<p>##### van Operon Types</p>
+<ul><li><b>vanA</b>: high-level V + Teicoplanin resistance; <b>Tn1546</b> transposon; constitutive or inducible; common in <i>E. faecium</i>.</li><li><b>vanB</b>: variable vancomycin resistance (low-high); teicoplanin susceptible; <b>Tn1547/916-like</b> transposon; inducible; common in <i>E. faecium/faecalis</i>.</li><li><b>vanC</b>: low-level intrinsic V resistance; <i>E. gallinarum</i> (vanC1), <i>E. casseliflavus</i> (vanC2) — generally not pathogens.</li><li><b>vanD</b>, <b>vanE</b>, <b>vanG</b>, <b>vanL</b>, <b>vanM</b>, <b>vanN</b> — rare.</li></ul>
+<table class="ctable"><tr><th>Type</th><th>D-Ala-D-X</th><th>Vanco MIC</th><th>Teico MIC</th><th>Inducibility</th><th>Common species</th></tr><tr><td>------</td><td>-----------</td><td>-----------</td><td>-----------</td><td>--------------</td><td>----------------</td></tr><tr><td>**vanA**</td><td>**D-Lac**</td><td>**High (64–>1000)**</td><td>**High (>16)**</td><td>Inducible/constitutive</td><td>*E. faecium*</td></tr><tr><td>**vanB**</td><td>**D-Lac**</td><td>Variable (8–>256)</td><td>Susceptible (≤2)</td><td>Inducible</td><td>*E. faecium, E. faecalis*</td></tr><tr><td>**vanC**</td><td>**D-Ser**</td><td>Low (4–32)</td><td>Susceptible</td><td>Constitutive</td><td>*E. gallinarum, E. casseliflavus*</td></tr><tr><td>**vanD**</td><td>D-Lac</td><td>Moderate</td><td>Resistant</td><td>Constitutive</td><td>*E. faecium*</td></tr><tr><td>**vanE**</td><td>D-Ser</td><td>Low-moderate</td><td>Susceptible</td><td>Inducible</td><td>*E. faecalis*</td></tr><tr><td>**vanM**</td><td>D-Lac</td><td>High</td><td>High</td><td>Inducible</td><td>*E. faecium* (Asia)</td></tr><tr><td>**vanN**</td><td>D-Ser</td><td>Low</td><td>Susceptible</td><td>Inducible</td><td>*E. faecium*</td></tr></table>
+<div class="callout"><b>Key exam fact: vanA = D-Lac + V+Teico resistance. vanB = D-Lac + V only. vanC = D-Ser + low V.</b></div>
+<p>##### Treatment</p>
+<ul><li>Linezolid, daptomycin, tigecycline, oritavancin (off-label), dalbavancin (off-label).</li><li>Quinupristin-dalfopristin for <i>E. faecium</i> (not <i>E. faecalis</i>).</li><li>Daptomycin resistance: <i>liaFSR</i> mutations; high-dose daptomycin (8–10 mg/kg) for severe infections.</li><li><b>Tedizolid</b> — alternative to linezolid.</li></ul>
+<p>#### 4.3 Penicillin-Resistant <i>Streptococcus pneumoniae</i> (PRSP)</p>
+<ul><li>Mosaic <i>pbp1a, pbp2b, pbp2x</i> genes (recombination with oral streptococci).</li><li><b>Macrolide resistance</b>: <i>erm(B)</i> (MLS-B) or <i>mef(A)</i> (M phenotype efflux).</li><li>Multiresistant to penicillins, macrolides, tetracyclines, TMP-SMX; remains susceptible to ceftriaxone, vancomycin, levofloxacin (mostly), linezolid.</li></ul>
+<p>#### 4.4 <i>C. difficile</i></p>
+<ul><li>Resistance to clindamycin (inducible <i>ermB</i>) → CDI outbreaks.</li><li><b>Fidaxomicin</b> preferred over vancomycin for initial and recurrent CDI (less resistance selection).</li><li>Metronidazole resistance emerging.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Gram-Negative Resistance — MDR *P. aeruginosa* and *A. baumannii*</div>
+<p>#### 5.1 Carbapenem-Resistant <i>P. aeruginosa</i> (CR-PA)</p>
+<ul><li><b>Multiple mechanisms</b> (often combined):</li><li><b>OprD porin loss</b> → ↓ imipenem entry (imipenem more affected than meropenem).</li><li><b>Efflux pumps</b>: MexAB-OprM, MexXY-OprM, MexCD-OprJ, MexEF-OprN.</li><li><b>AmpC hyperproduction</b> (inducible; chromosomal).</li><li><b>Carbapenemases</b>: VIM, IMP, GES (rare: KPC, NDM).</li><li><b>PBPs</b>: PBP3 modification.</li><li><b>Treatment</b>: ceftolozane-tazobactam, ceftazidime-avibactam, cefiderocol, imipenem-relebactam (some), aminoglycosides (if susceptible), colistin (last resort).</li><li><b>DTR-PA</b> (Difficult-to-Treat Resistance): as defined above; requires novel β-lactams.</li></ul>
+<p>#### 5.2 Carbapenem-Resistant <i>A. baumannii</i> (CRAB)</p>
+<ul><li><b>Multiple mechanisms</b>:</li><li><b>OXA carbapenemases</b>: OXA-23, OXA-40/72, OXA-58, OXA-51 (intrinsic).</li><li><b>MBLs</b>: NDM, VIM, IMP.</li><li><b>Efflux</b>: AdeABC, AdeFGH, AdeIJK.</li><li><b>Permeability</b>: LPS modification, porin loss (CarO, OmpA).</li><li><b>ISAba1</b> upstream of OXA-51/23 → ↑ expression.</li><li><b>"Persistoresisters"</b> — tolerance, biofilm.</li><li><b>Treatment</b>: ampicillin-sulbactam (high-dose, 9 g/day; sulbactam has activity against <i>A. baumannii</i>), polymyxin B/colistin (high-dose loading, loading dose for colistin 9 MU loading then 4.5 MU q12h), tigecycline (high-dose; <b>avoid in VAP</b> due to poor lung penetration and mortality), minocycline (newer, higher activity), cefiderocol (caution: higher mortality in CREDIBLE-CR), eravacycline. <b>Sulbactam-durlobactam</b> (Xacduro®) — FDA-approved 2023 for CRAB pneumonia/bacteraemia.</li></ul>
+<p>#### 5.3 Carbapenem-Resistant Enterobacterales (CRE)</p>
+<ul><li><b>Definition</b>: Non-susceptible to ≥ 1 carbapenem <b>AND</b> resistant to all 3rd-generation cephalosporins (or documented carbapenemase production; CDC 2015 update includes all Enterobacteriaceae with carbapenemase).</li><li><b>Mechanisms</b>:</li><li><b>Carbapenemase production</b> (most concerning): KPC, NDM, OXA-48, VIM, IMP, IMI, GES, SME.</li><li><b>Porin loss + ESBL/AmpC hyperproduction</b> (e.g. OmpK35/36 loss + CTX-M in <i>K. pneumoniae</i> → carbapenem MIC creeps to resistance).</li><li><b>Treatment depends on mechanism</b>:</li><li><b>KPC</b>: ceftazidime-avibactam, meropenem-vaborbactam, imipenem-cilastatin-relebactam.</li><li><b>NDM/VIM/IMP (MBL)</b>: aztreonam + avibactam (or ceftazidime-avibactam for VIM/IMP, since aztreonam stable to MBLs); cefiderocol; eravacycline.</li><li><b>OXA-48</b>: ceftazidime-avibactam.</li><li><b>Porin + ESBL</b>: meropenem if MIC &lt; 8 mg/L with high-dose prolonged infusion.</li><li>Polymyxin B, tigecycline, fosfomycin as last-line.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: Mycobacterium tuberculosis Resistance</div>
+<p>#### 6.1 Definitions (WHO 2021)</p>
+<ul><li><b>Mono-resistant TB</b>: resistant to 1 first-line drug only.</li><li><b>Poly-resistant TB</b>: resistant to ≥ 2 first-line drugs <b>but not</b> both INH + RIF.</li><li><b>MDR-TB</b>: resistant to ≥ <b>isoniazid AND rifampicin</b> (the "MDR" combo).</li><li><b>Pre-XDR-TB</b> (WHO 2021): MDR/RR-TB + resistance to <b>any fluoroquinolone</b> (FQ).</li><li><b>XDR-TB</b> (WHO 2021): MDR/RR-TB + resistance to <b>any FQ + ≥ 1 Group A drug</b> (bedaquiline, linezolid).</li><li><b>Group A drugs (WHO)</b>: bedaquiline, linezolid, fluoroquinolones (levofloxacin, moxifloxacin).</li><li><b>Group B</b>: clofazimine, cycloserine/terizidone.</li><li><b>Group C</b>: ethambutol, ethionamide/protionamide, delamanid, pyrazinamide, PAS, carbapenems + amoxicillin-clavulanate.</li></ul>
+<p>#### 6.2 Mechanisms</p>
+<ul><li><b>Isoniazid (INH)</b>: <i>katG</i> (catalase-peroxidase, activates INH) mutations; <i>inhA</i> (target enoyl-ACP reductase) promoter mutations; <i>ahpC</i>; <i>fabG1</i>.</li><li><b>Rifampicin (RIF)</b>: <i>rpoB</i> mutations in 81-bp RRDR (rifampicin resistance-determining region) — 95% of RIF-R; Xpert MTB/RIF detects.</li><li><b>Pyrazinamide (PZA)</b>: <i>pncA</i> mutations.</li><li><b>Ethambutol (EMB)</b>: <i>embB</i> mutations.</li><li><b>Fluoroquinolones</b>: <i>gyrA</i> QRDR mutations.</li><li><b>Bedaquiline (BDQ)</b>: <i>atpE</i>, <i>Rv0678</i> (efflux — also affects clofazimine cross-R).</li><li><b>Linezolid</b>: <i>rplC</i>, 23S rRNA mutations; <i>cfr</i> (methyltransferase).</li></ul>
+<p>#### 6.3 Treatment</p>
+<ul><li>MDR-TB: 6 months intensive (BDQ, LZD, LFX/MFX, CFZ, Cs) + 12 months continuation.</li><li>All-oral regimens (BPaL: bedaquiline + pretomanid + linezolid) for XDR/pre-XDR.</li><li><b>Nix-TB</b> trial: BPaL × 6–9 months for XDR-TB → 90% favourable outcome.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: Plasmid-Mediated Resistance and Mobile Genetic Elements</div>
+<p>#### 7.1 Plasmids</p>
+<ul><li>Self-replicating extrachromosomal DNA; often carry multiple resistance genes.</li><li><b>Incompatibility groups</b>: IncF (most common in Enterobacterales), IncI1, IncN, IncH, IncL/M (OXA-48), IncX.</li><li><b>Conjugative</b> plasmids can transfer between species/genera (e.g. <i>E. coli</i> to <i>K. pneumoniae</i> to <i>Enterobacter</i>).</li></ul>
+<p>#### 7.2 Transposons</p>
+<ul><li><b>Tn3, Tn1546 (vanA), Tn4401 (KPC)</b>, Tn916 (tetM), Tn917 (ermB).</li><li>Insertion sequences: <b>ISEcp1</b> upstream of blaCTX-M (provides strong promoter); <b>ISCR1</b>, <b>IS26</b>, <b>IS1999</b>.</li></ul>
+<p>#### 7.3 Integrons</p>
+<ul><li>Class 1 integrons most common; capture gene cassettes (e.g. <i>aac(6')-Ib-cr</i> for FQ, <i>blaVIM</i>, <i>blaIMP</i>, <i>dfrA</i>).</li><li>Common in MDR Gram-negatives.</li></ul>
+<p>#### 7.4 Examples of Plasmid-Mediated Resistance</p>
+<table class="ctable"><tr><th>Gene</th><th>Mechanism</th><th>Drug Affected</th><th>First Detected</th><th>Geography</th></tr><tr><td>------</td><td>-----------</td><td>---------------</td><td>---------------</td><td>-----------</td></tr><tr><td>**blaCTX-M-15**</td><td>Class A ESBL</td><td>Cefotaxime, ceftriaxone, ceftazidime</td><td>1990s; pandemic 2000s</td><td>Worldwide</td></tr><tr><td>**blaKPC**</td><td>Class A carbapenemase</td><td>All β-lactams</td><td>1996 (N. Carolina)</td><td>US, China, Italy, Israel</td></tr><tr><td>**blaNDM-1**</td><td>Class B MBL</td><td>All β-lactams except aztreonam</td><td>2008 (Sweden/India)</td><td>India, Pakistan, Balkans</td></tr><tr><td>**blaOXA-48**</td><td>Class D</td><td>Weak carbapenemase</td><td>2001 (Turkey)</td><td>Turkey, N Africa, Europe</td></tr><tr><td>**blaOXA-23**</td><td>Class D</td><td>Carbapenems</td><td>1985 (Edinburgh)</td><td>*A. baumannii* worldwide</td></tr><tr><td>**mcr-1**</td><td>pEtN transferase</td><td>Colistin</td><td>2015 (China)</td><td>China, Europe, Asia, S America</td></tr><tr><td>**vanA**</td><td>D-Ala-D-Lac ligase</td><td>Vancomycin, teicoplanin</td><td>1988 (UK, France)</td><td>Worldwide</td></tr><tr><td>**mecA**</td><td>PBP2a</td><td>β-lactams</td><td>1961 (UK)</td><td>Worldwide</td></tr><tr><td>**aac(6')-Ib-cr**</td><td>AME variant</td><td>FQs, aminoglycosides</td><td>2006</td><td>Worldwide</td></tr><tr><td>**armA, rmtB**</td><td>16S rRNA methyltransferase</td><td>Pan-aminoglycoside-R</td><td>2003</td><td>Worldwide</td></tr><tr><td>**qnrA, qnrB, qnrS**</td><td>QNR pentapeptide repeat</td><td>Fluoroquinolones (low-level)</td><td>1998</td><td>Worldwide</td></tr><tr><td>**cfr**</td><td>23S rRNA methyltransferase</td><td>Linezolid, phenicols, lincosamides, pleuromutilins, streptogramin A</td><td>2000</td><td>Worldwide</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 8: Other Major MDR Organisms</div>
+<p>#### 8.1 Drug-Resistant <i>Neisseria gonorrhoeae</i></p>
+<ul><li>Penicillin-R (plasmid-mediated <i>blaTEM-1</i>; chromosomal PBP2 mosaic).</li><li>Tetracycline-R (plasmid <i>tetM</i>; chromosomal 16S rRNA).</li><li><b>Fluoroquinolone-R</b> (gyrA/parC mutations).</li><li><b>Macrolide-R</b> (<i>ermB</i>, <i>mefA</i>; 23S rRNA A2059G).</li><li><b>ESBL-R</b> (CTX-M); <b>cephalosporin-R</b> (chromosomal <i>penA</i> mosaic — "high-level").</li><li><b>Treatment</b> (WHO 2024/CDC 2020): ceftriaxone 1 g IM/IV single dose (or 500 mg IM if &lt;150 kg) ± azithromycin 2 g PO (or doxycycline); in Asia, ceftriaxone 1 g + azithromycin 1 g.</li><li>XDR gonorrhoea (cephalosporin + azithro R) reported (UK, France, Japan, Australia, Vietnam, Cambodia).</li></ul>
+<p>#### 8.2 Drug-Resistant <i>Salmonella</i> Typhi</p>
+<ul><li>**XDR <i>S. typhi</i><b> (Pakistan, 2016–): resistant to ampicillin, chloramphenicol, TMP-SMX, FQs, </b>and 3rd gen cephalosporins** (CTX-M-15); only azithro + carbapenems active.</li><li>H58 haplotype (H58-blaCTX-M-15) dominant.</li><li><b>Treatment</b>: azithromycin 1 g PO day 1 then 500 mg OD for 5–7 days, or meropenem, or ceftriaxone (if susceptible).</li></ul>
+<p>#### 8.3 Drug-Resistant HIV, HCV, Malaria</p>
+<ul><li><b>HIV-1</b>: NNRTI resistance (<i>K103N</i>); NRTI resistance (M184V, K65R, Q151M); PI resistance (rare with boosted PIs); INSTI resistance (<i>R263K</i> in integrase — emerging with dolutegravir failure).</li><li><b>HCV</b>: NS3/4A PI resistance (R155, D168); NS5A resistance (Y93, L31); NS5B (S282T for sofosbuvir).</li><li><b>Malaria</b>: <i>Plasmodium falciparum</i>: chloroquine-R (<i>crt</i> K76T), sulfadoxine-pyrimethamine-R (<i>dhfr/dhps</i> mutations), mefloquine-R, artemisinin partial-R (<i>kelch13</i> propeller domain mutations — Mekong, now Africa); partner drug resistance.</li></ul>
+<p>#### 8.4 Drug-Resistant Fungi</p>
+<ul><li>**Azole-R *Candida albicans***: <i>ERG11</i> mutations; <i>CDR1/CDR2</i> efflux.</li><li>**Azole-R *Aspergillus fumigatus***: TR34/L98H (tandem repeat + L98H, environmental, Netherlands), TR46/Y121F/T289A (environmental, India/Colombia); <i>cyp51A</i> mutations.</li><li>**Echinocandin-R <i>Candida</i> spp.**: <i>FKS1</i> (Candida albicans, glabrata) or <i>FKS2</i> (glabrata) mutations — "hot spot" 1 and 2.</li><li>**Multi-azole-R *Candida auris***: emerging global pathogen; ERG11 mutations + efflux.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 9: WHO Priority Pathogens (2017, updated 2024)</div>
+<p>#### Critical Priority (Critical-care- and life-threatening infections)</p>
+<ul><li><b>Acinetobacter baumannii</b> (carbapenem-R)</li><li><b>Pseudomonas aeruginosa</b> (carbapenem-R)</li><li><b>Enterobacterales</b> (carbapenem-R, ESBL-producing, 3rd-gen-ceph-R)</li><li><b>Mycobacterium tuberculosis</b> (RIF-R, MDR)</li></ul>
+<p>#### High Priority</p>
+<ul><li><b>Enterococcus faecium</b> (vancomycin-R)</li><li><b>Staphylococcus aureus</b> (methicillin-R, vancomycin-I/R)</li><li><b>Helicobacter pylori</b> (clarithro-R)</li><li><b>Campylobacter</b> spp. (FQ-R)</li><li><b>Salmonellae</b> (FQ-R)</li><li><b>Neisseria gonorrhoeae</b> (FQ-R, cephalo-R)</li></ul>
+<p>#### Medium Priority</p>
+<ul><li><b>Streptococcus pneumoniae</b> (penicillin-NS)</li><li><b>Haemophilus influenzae</b> (ampicillin-R)</li><li><b>Shigella</b> spp. (FQ-R)</li></ul>
+<p>#### Also Tracked</p>
+<ul><li><b>Candida auris</b> (multi-azole-R)</li><li>Group A <i>Streptococcus</i> (macrolide-R)</li><li><i>Clostridioides difficile</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 10: Detection Methods for Antimicrobial Resistance</div>
+<p>#### 10.1 Phenotypic Methods &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Method&lt;/th&gt;&lt;th&gt;Principle&lt;/th&gt;&lt;th&gt;Time&lt;/th&gt;&lt;th&gt;Use&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Disc diffusion (Kirby-Bauer)</b>&lt;/td&gt;&lt;td&gt;Zone of inhibition around disc on Mueller-Hinton agar&lt;/td&gt;&lt;td&gt;16–18 h&lt;/td&gt;&lt;td&gt;Routine AST&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Broth microdilution (BMD)</b>&lt;/td&gt;&lt;td&gt;MIC determined in 96-well&lt;/td&gt;&lt;td&gt;16–18 h&lt;/td&gt;&lt;td&gt;Gold standard&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Etest (gradient strip)</b>&lt;/td&gt;&lt;td&gt;MIC from gradient&lt;/td&gt;&lt;td&gt;16–18 h&lt;/td&gt;&lt;td&gt;Confirm MIC&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>VITEK 2 / BD Phoenix / MicroScan</b>&lt;/td&gt;&lt;td&gt;Automated AST&lt;/td&gt;&lt;td&gt;8–16 h&lt;/td&gt;&lt;td&gt;High-volume labs&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Carba NP (Nordmann-Poirel)</b>&lt;/td&gt;&lt;td&gt;Hydrolysis of imipenem detected by pH indicator (phenol red) → colour change&lt;/td&gt;&lt;td&gt;<b>2 h</b>&lt;/td&gt;&lt;td&gt;Detects <b>any carbapenemase</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Modified Carba NP</b>&lt;/td&gt;&lt;td&gt;Improved sensitivity&lt;/td&gt;&lt;td&gt;2 h&lt;/td&gt;&lt;td&gt;Detects any carbapenemase&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>mCIM (CLSI)</b>&lt;/td&gt;&lt;td&gt;Meropenem disk + organism + TSB → lawn on <i>E. coli</i> → no zone = carbapenemase&lt;/td&gt;&lt;td&gt;<b>18 h</b>&lt;/td&gt;&lt;td&gt;Detects any carbapenemase&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>eCIM (CLSI)</b>&lt;/td&gt;&lt;td&gt;mCIM + EDTA → distinguishes MBL (inhibited) from serine (not inhibited)&lt;/td&gt;&lt;td&gt;18 h&lt;/td&gt;&lt;td&gt;MBL vs serine&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>EDTA disc synergy</b>&lt;/td&gt;&lt;td&gt;EDTA + imipenem disk → ↑ zone = MBL&lt;/td&gt;&lt;td&gt;18 h&lt;/td&gt;&lt;td&gt;MBL detection&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>DDST (Double Disc Synergy Test)</b>&lt;/td&gt;&lt;td&gt;Amox-clav + cephalosporin/aztreonam disks → synergy (keyhole) = ESBL&lt;/td&gt;&lt;td&gt;18 h&lt;/td&gt;&lt;td&gt;ESBL screening&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Cefepime-clavulanate synergy</b>&lt;/td&gt;&lt;td&gt;For AmpC detection&lt;/td&gt;&lt;td&gt;18 h&lt;/td&gt;&lt;td&gt;AmpC&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Boronic acid disc</b>&lt;/td&gt;&lt;td&gt;Boronic acid + carbapenem disk → ↑ zone = AmpC/KPC&lt;/td&gt;&lt;td&gt;18 h&lt;/td&gt;&lt;td&gt;AmpC, KPC&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Modified Hodge Test (MHT)</b>&lt;/td&gt;&lt;td&gt;Cloverleaf pattern on <i>E. coli</i> lawn&lt;/td&gt;&lt;td&gt;18 h&lt;/td&gt;&lt;td&gt;Carbapenemase (now discouraged)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Cloxacillin inhibition</b>&lt;/td&gt;&lt;td&gt;Cloxacillin inhibits AmpC&lt;/td&gt;&lt;td&gt;18 h&lt;/td&gt;&lt;td&gt;AmpC confirmation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Selective agar</b>&lt;/td&gt;&lt;td&gt;CHROMagar KPC, OXA, VRE, MRSA, ESBL&lt;/td&gt;&lt;td&gt;18–24 h&lt;/td&gt;&lt;td&gt;Screening cultures&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Oxacillin screen (1 µg) / Cefoxitin (30 µg)</b>&lt;/td&gt;&lt;td&gt;For MRSA detection (Cefoxitin preferred)&lt;/td&gt;&lt;td&gt;18 h&lt;/td&gt;&lt;td&gt;MRSA screen&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### 10.2 Genotypic / Molecular Methods &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Method&lt;/th&gt;&lt;th&gt;Target&lt;/th&gt;&lt;th&gt;Time&lt;/th&gt;&lt;th&gt;Examples&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PCR (single)</b>&lt;/td&gt;&lt;td&gt;Single gene (e.g. <i>mecA</i>, <i>vanA</i>, <i>blaKPC</i>)&lt;/td&gt;&lt;td&gt;1–4 h&lt;/td&gt;&lt;td&gt;In-house PCR&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Multiplex PCR</b>&lt;/td&gt;&lt;td&gt;Multiple genes&lt;/td&gt;&lt;td&gt;2–6 h&lt;/td&gt;&lt;td&gt;Check-MDR CT, Xpert Carba-R&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Xpert MTB/RIF, Xpert MTB/XDR (Cepheid)</b>&lt;/td&gt;&lt;td&gt;<i>rpoB</i> + INH, FQ, ethambutol R&lt;/td&gt;&lt;td&gt;&lt; 2 h&lt;/td&gt;&lt;td&gt;TB&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Xpert Carba-R</b>&lt;/td&gt;&lt;td&gt;KPC, NDM, VIM, OXA-48, IMP&lt;/td&gt;&lt;td&gt;&lt; 1 h&lt;/td&gt;&lt;td&gt;CRE screen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>BioFire FilmArray BCID, Pneumonia, ME</b>&lt;/td&gt;&lt;td&gt;Pathogen ID + resistance genes&lt;/td&gt;&lt;td&gt;1–2 h&lt;/td&gt;&lt;td&gt;Rapid syndromic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Verigene (Luminex)</b>&lt;/td&gt;&lt;td&gt;Gram+/− ID + resistance&lt;/td&gt;&lt;td&gt;2–3 h&lt;/td&gt;&lt;td&gt;Bloodstream&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>T2 Magnetic Resonance (T2Bacteria, T2Candida)</b>&lt;/td&gt;&lt;td&gt;Pathogen DNA from blood&lt;/td&gt;&lt;td&gt;3–5 h&lt;/td&gt;&lt;td&gt;Bloodstream&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Microarray (Check-Points, AMR Direct Flow Chip)</b>&lt;/td&gt;&lt;td&gt;Many resistance genes&lt;/td&gt;&lt;td&gt;4–6 h&lt;/td&gt;&lt;td&gt;Surveillance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>MALDI-TOF MS</b>&lt;/td&gt;&lt;td&gt;Species ID; emerging for resistance (MBL detection)&lt;/td&gt;&lt;td&gt;Minutes (ID)&lt;/td&gt;&lt;td&gt;Routine&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>WGS (whole-genome sequencing)</b>&lt;/td&gt;&lt;td&gt;All resistance genes + typing&lt;/td&gt;&lt;td&gt;24–72 h&lt;/td&gt;&lt;td&gt;Surveillance, outbreak&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CRISPR-Cas detection (SHERLOCK, DETECTR)</b>&lt;/td&gt;&lt;td&gt;Cas12/13 + guide RNA + reporter&lt;/td&gt;&lt;td&gt;&lt; 2 h&lt;/td&gt;&lt;td&gt;Emerging&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Rapid AST (Accelerate Pheno, oCelloScope)</b>&lt;/td&gt;&lt;td&gt;Phenotypic AST in hours&lt;/td&gt;&lt;td&gt;7 h&lt;/td&gt;&lt;td&gt;Bloodstream&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### 10.3 Selective Reporting / Cascade Reporting</p>
+<ul><li><b>Cascade reporting</b>: report narrowest-spectrum agent that the isolate is susceptible to; do not report broader agents unless specifically needed (e.g. don't report carbapenem for ESBL if cefepime susceptible; don't report colistin without ID consult).</li><li><b>Principle</b>: drive appropriate antibiotic use; reduce selective pressure.</li></ul>
+<p>#### 10.4 Algorithm for Carbapenemase Detection</p>
+<ol><li><b>Screening</b>: meropenem or ertapenem MIC &gt; 0.125 mg/L (screening cut-off).</li><li><b>Confirm</b> carbapenemase: Carba NP (+ve) or mCIM (+ve).</li><li><b>Differentiate MBL from serine</b>: eCIM with EDTA (inhibited = MBL) or <b>differential inhibitor disc test</b> (boronic acid = KPC; EDTA = MBL; cloxacillin = AmpC).</li><li><b>Type</b>: PCR for <i>blaKPC, blaNDM, blaVIM, blaIMP, blaOXA-48</i> (Xpert Carba-R).</li><li><b>Epidemiology / outbreak</b>: WGS + MLST.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 11: AWaRe Classification (WHO)</div>
+<p>#### Access Group (~ 40 drugs)</p>
+<ul><li>Narrow spectrum, low resistance potential; first-choice for common infections.</li><li>Examples: <b>amoxicillin, amoxicillin-clavulanate, ampicillin, benzylpenicillin, phenoxymethylpenicillin, cefalexin, cefazolin, cefadroxil, chloramphenicol, clindamycin, doxycycline, erythromycin, gentamicin, metronidazole, nitrofurantoin, phenoxymethylpenicillin, spectinomycin, sulfadiazine, sulfamethoxazole + trimethoprim, tetracycline, trimethoprim</b>.</li><li><b>Target: ≥ 60% of total antibiotic consumption should be from Access</b> (WHO 13th General Programme of Work).</li></ul>
+<p>#### Watch Group (~ 30 drugs)</p>
+<ul><li>Higher resistance potential; should be used only for specific indications; AMS priority.</li><li>Examples: <b>azithromycin, ceftriaxone, cefotaxime, ceftazidime, cefepime, ciprofloxacin, levofloxacin, moxifloxacin, ofloxacin, clarithromycin, meropenem, imipenem-cilastatin, ertapenem, vancomycin (IV), teicoplanin, amikacin, tobramycin, kanamycin, linezolid, fidaxomicin</b>.</li></ul>
+<p>#### Reserve Group (~ 20 drugs)</p>
+<ul><li>Last resort for confirmed or suspected MDR infections; tightly controlled.</li><li>Examples: <b>aztreonam-avibactam, ceftazidime-avibactam, ceftolozane-tazobactam, meropenem-vaborbactam, imipenem-cilastatin-relebactam, cefiderocol, sulbactam-durlobactam, polymyxin B, colistin, tigecycline, eravacycline, fosfomycin (IV), daptomycin, dalbavancin, oritavancin, plazomicin, lefamulin, minocycline (IV)</b>.</li></ul>
+<p>#### AWaRe Impact</p>
+<ul><li><b>Target 60% Access</b> by 2023 (now extended to 2030 in many settings).</li><li>Linked to AMS programmes, Essential Medicines Lists, national action plans.</li><li>AWaRe-based interventions ↓ consumption of Watch/Reserve drugs.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 12: GLASS (Global Antimicrobial Resistance and Use Surveillance System)</div>
+<p>#### What is GLASS?</p>
+<ul><li>Launched 2015 (WHO) as a standardised AMR surveillance system.</li><li>Standardised data on AMR and antimicrobial consumption (AMC) in humans.</li><li>Supports the <b>Global Action Plan on AMR (2015)</b>.</li></ul>
+<p>#### Methodology</p>
+<ul><li>4 AMR surveillance approaches: (1) surveillance of BSI, (2) surveillance of UTI, (3) surveillance of GI, (4) sentinel site surveillance.</li><li><b>Specimens</b>: blood, urine, stool, cervical/urethral swabs.</li><li><b>Pathogens tracked</b>: <i>E. coli</i>, <i>K. pneumoniae</i>, <i>A. baumannii</i>, <i>S. aureus</i>, <i>S. pneumoniae</i>, <i>Salmonella</i>, <i>Shigella</i>, <i>N. gonorrhoeae</i>, <i>Mycobacterium tuberculosis</i>, <i>H. pylori</i>, <i>Campylobacter</i>.</li><li><b>AMU</b> (Antimicrobial Use) at national level — DDD/1000 inhabitants/day.</li><li>Standardised protocols: GLASS Manual.</li></ul>
+<p>#### Participation (as of 2023)</p>
+<ul><li>130+ countries enrolled, 70+ submitting data.</li><li>Regional networks: <b>EARS-Net</b> (Europe, ECDC), <b>LACEN</b> (Latin America), <b>AMR Data from Africa</b>, <b>CHINET</b> (China), <b>JANIS</b> (Japan), <b>KONSAR</b> (Korea), <b>NARMS</b> (US — CDC), <b>CIPARS</b> (Canada).</li></ul>
+<p>#### Limitations</p>
+<ul><li>Variable data quality.</li><li>Many LMIC lack microbiology capacity.</li><li>Selective reporting / underreporting.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 13: One Health Approach</div>
+<p>#### Concept</p>
+<ul><li>AMR is a <b>One Health</b> issue — humans, animals, environment are interconnected.</li><li>70% of antibiotics (by tonnage) are used in livestock; growth promotion (banned in EU 2006, US 2017, India still partial).</li><li><b>Reservoirs</b>:</li><li><b>Human</b>: hospital effluent, community wastewater, asymptomatic carriage (gut, skin).</li><li><b>Animal</b>: livestock, aquaculture, pets, wildlife (gulls, wild boar carrying <i>E. coli</i> ST131).</li><li><b>Environment</b>: soil, water (rivers, sewage), pharmaceutical manufacturing effluent (high NDM in Hyderabad, India water), manure, contaminated crops.</li><li><b>Drivers</b>:</li><li>Antibiotic use in humans (overuse, misuse).</li><li>Antibiotic use in animals (growth promotion, prophylaxis, treatment).</li><li>Environmental contamination (pharma, hospital waste, manure).</li><li>International travel and trade.</li><li>Poor IPC in healthcare and farms.</li></ul>
+<p>#### Tripartite</p>
+<ul><li><b>WHO (human), FAO (food/agriculture), WOAH (formerly OIE) (animal health), UNEP (environment)</b>.</li><li><b>Global Action Plan on AMR (2015)</b> — 5 objectives: (1) improve awareness, (2) strengthen knowledge via surveillance, (3) reduce incidence of infection, (4) optimise use of antimicrobials, (5) ensure sustainable investment.</li></ul>
+<p>#### One Health Interventions</p>
+<ul><li><b>Surveillance</b>: integrated AMR/AMU data across sectors.</li><li><b>Antimicrobial stewardship</b> in human + animal sectors.</li><li><b>Ban/phase-out</b> of growth promoters.</li><li><b>IPC</b> in healthcare, farms, abattoirs.</li><li><b>Water sanitation</b> and treatment of effluent.</li><li><b>Vaccines</b> as AMR-reducing strategy.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 14: Vaccines as an AMR-Reducing Strategy</div>
+<ul><li>Vaccines <b>reduce AMR</b> by:</li></ul>
+<ol><li>Preventing infections (less antibiotic use).</li><li>Preventing carriage of resistant strains.</li><li>Reducing viral infections (less inappropriate antibiotics).</li></ol>
+<ul><li><b>Examples</b>:</li><li><b>Pneumococcal conjugate vaccine (PCV)</b> ↓ S. pneumoniae infections (including PRSP); ↓ antibiotic use.</li><li><b>Hib vaccine</b> ↓ <i>H. influenzae</i> type b infections; ↓ ampicillin-R <i>H. influenzae</i>.</li><li><b>Typhoid conjugate vaccine (TCV)</b> ↓ XDR <i>S. typhi</i>.</li><li><b>Influenza vaccine</b> ↓ antibiotic courses for respiratory infections.</li><li><b>COVID-19 vaccination</b> ↓ antibiotic use for viral pneumonia.</li><li><b>RSV vaccines</b> (maternal Abrysvo, nirsevimab) ↓ infant LRTI.</li><li>**Group B Strep, <i>E. coli</i> vaccines** (in development).</li><li>WHO: 11 vaccines in AMR pipeline with potential AMR impact.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 15: Novel Antibiotics and Anti-Resistance Strategies</div>
+<p>#### 15.1 New β-Lactam/β-Lactamase Inhibitor (BLBLI) Combinations</p>
+<ul><li><b>Ceftazidime-avibactam</b> (Avycaz / Zavicefta): KPC, OXA-48, ESBL, AmpC, P. aeruginosa; <b>NOT NDM/VIM/IMP</b> (aztreonam stable, but avibactam not inhibiting MBL).</li><li><b>Ceftolozane-tazobactam</b> (Zerbaxa): ESBL, AmpC, P. aeruginosa (anti-Mex efflux + anti-OprD loss); <b>NOT carbapenemases</b> (except weak GES).</li><li><b>Meropenem-vaborbactam</b> (Vabomere / Orquidea): KPC; <b>NOT NDM/OXA-48</b>.</li><li><b>Imipenem-cilastatin-relebactam</b> (Recarbrio): KPC; <b>NOT NDM/OXA-48</b>.</li><li><b>Aztreonam-avibactam</b> (EMBLAVEO, EMA 2024): for MBL (NDM/VIM/IMP) — aztreonam stable to MBL, avibactam protects from co-existing ESBL/AmpC.</li><li><b>Sulbactam-durlobactam</b> (Xacduro, FDA 2023): for <b>CRAB</b>; sulbactam active against <i>A. baumannii</i>, durlobactam protects from β-lactamases.</li><li><b>Cefepime-taniborbactam</b> (in Phase III): broad, including MBL.</li><li><b>Cefepime-zidebactam</b> (in dev.): broad, including MBL.</li><li><b>Meropenem-xeruborbactam</b> (in dev.).</li></ul>
+<p>#### 15.2 Siderophore Cephalosporins</p>
+<ul><li><b>Cefiderocol</b> (Fetcroja / S-649266): catechol siderophore; enters via iron transporters; stable to all β-lactamases (KPC, NDM, OXA-48, AmpC, ESBL) and active against CR-PA, CR-AB, S. maltophilia. <b>CREDIBLE-CR trial</b>: ↑ mortality in CRAB subgroup (controversy). <b>APEKS-NP</b>: non-inferior to meropenem in nosocomial pneumonia.</li></ul>
+<p>#### 15.3 Tetracycline Derivatives</p>
+<ul><li><b>Tigecycline</b> (already in use): broad Gram+/− (NOT <i>P. aeruginosa</i>, <i>Proteeae</i>, <i>Morganella</i>); high tissue, low serum.</li><li><b>Eravacycline</b> (Xerava): broad Gram+/−; tissue penetration; approved for cIAI.</li><li><b>Omadacycline</b> (Nuzyra): oral + IV; community pneumonia, SSTI.</li></ul>
+<p>#### 15.4 Newer Agents</p>
+<ul><li><b>Plazomicin</b> (Zemdri): aminoglycoside; active against many AME-producing Enterobacterales (KPC, NDM partly); nephrotoxic.</li><li><b>Lefamulin</b> (Xenleta): pleuromutilin; binds 50S; CAP.</li><li><b>Iclaprim</b>: DHFR inhibitor; in development.</li><li><b>Daptomycin</b> (existing): lipopeptide; MRSA, VRE, not for pneumonia.</li><li><b>Dalbavancin, Oritavancin, Telavancin</b>: long-acting lipoglycopeptides; SSTI, off-label endocarditis/bone.</li><li><b>Tedizolid</b>: oxazolidinone; SSTI.</li></ul>
+<p>#### 15.5 Anti-Resistance Strategies Beyond New Drugs</p>
+<ul><li><b>β-lactamase inhibitors</b> (next-generation: boronic acid, phosphonate, diazabicyclooctane).</li><li><b>Efflux pump inhibitors</b> (limited clinical success).</li><li><b>Outer membrane permeabilizers</b> (polymyxin B nonapeptide derivatives).</li><li><b>Phage therapy</b>: lytic phages; case reports in MDR infections; FDA approval for compassionate use.</li><li><b>CRISPR-Cas antimicrobials</b> (targeted DNA cleavage of resistance genes); preclinical.</li><li><b>Monoclonal antibodies</b> (bezlotoxumab for <i>C. difficile</i> toxin B; obiltoxaximab, raxibacumab for <i>B. anthracis</i>; suvratoxumab for <i>S. aureus</i>; preclinical for MDR).</li><li><b>Microbiome restoration</b> (FMT for recurrent CDI; defined consortia — SER-109 VOWST; RBX2660 Rebyota).</li><li><b>Antimicrobial peptides</b> (e.g. nisin, LL-37, defensins).</li><li><b>Vaccines</b> (above).</li><li><b>Rapid diagnostics + AMS</b> to reduce unnecessary use.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 16: Economic Impact and Policy</div>
+<p>#### 16.1 Economic Burden</p>
+<ul><li>World Bank 2017: AMR could cause global GDP loss of <b>1.1–3.8% by 2050</b>.</li><li>28 million people pushed into extreme poverty by 2050 (mostly LMIC).</li><li>US healthcare cost excess: &gt; $20 billion/year (CDC 2013 estimate).</li><li>EU excess cost: ~ €1.5 billion/year.</li><li>Surgical/oncology/transplant: AMR jeopardises these procedures.</li></ul>
+<p>#### 16.2 Global Action Plan on AMR (2015, WHO)</p>
+<ol><li>Improve awareness and understanding.</li><li>Strengthen knowledge through surveillance and research.</li><li>Reduce incidence of infection (IPC, sanitation, vaccines).</li><li>Optimise use of antimicrobials (AMS in human and animal sectors).</li><li>Ensure sustainable investment in new medicines, diagnostics, vaccines.</li></ol>
+<p>#### 16.3 National Action Plans (NAPs)</p>
+<ul><li>175+ countries with NAPs (as of 2023).</li><li>4 pillars: surveillance, AMS, IPC, R&amp;D.</li></ul>
+<p>#### 16.4 Funding</p>
+<ul><li><b>AMR Action Fund</b> (pharma): $1 billion to develop new antibiotics.</li><li><b>CARB-X</b>: Combating Antibiotic-Resistant Bacteria Biopharmaceutical Accelerator; $480M+.</li><li><b>BARDA</b> (US): support for novel antibiotics.</li><li><b>GARDP</b> (Global Antibiotic R&amp;D Partnership): public-private; co-develops new drugs.</li><li><b>Pull incentives</b>: subscription models (UK/NICE "Netflix" model: fixed annual fee for access to new antibiotics regardless of volume; e.g. ceftazidime-avibactam, cefiderocol).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 17: Outbreak and Transmission of MDR Organisms</div>
+<p>#### 17.1 Common MDR Outbreaks</p>
+<ul><li><b>VRE</b>: ICUs, haematology-oncology, transplant, long-term care.</li><li><b>MRSA</b>: ICUs, NICUs, surgical wards, athletes (CA-MRSA), prisons.</li><li><b>CRE</b>: ICUs, long-term care (especially in Chicago, Israel); <i>K. pneumoniae</i> ST258 (KPC) global; ST11 (China KPC).</li><li><b>CRAB</b>: ICUs, war zones (Afghanistan, Iraq, Middle East), natural disaster settings.</li><li><b>CR-PA</b>: ICUs, burn units, cystic fibrosis patients.</li><li><b>MDR-TB</b>: prisons, hospitals, HIV clinics, refugee camps.</li><li><b>XDR typhoid</b>: Hyderabad sewage; Pakistan outbreak.</li><li><b>C. auris</b>: ICUs (long-term colonisation, environmental persistence).</li></ul>
+<p>#### 17.2 Key Concepts</p>
+<ul><li><b>Clonal spread</b> vs <b>horizontal transfer of plasmids</b> — both important.</li><li><b>Environmental reservoir</b>: <i>C. auris</i> persists on surfaces for months; VRE, MRSA on healthcare worker hands.</li><li><b>Asymptomatic carriage</b>: gut (VRE, CRE, ESBL), skin (MRSA), pharynx (N. meningitidis) — source of transmission.</li><li><b>IPC</b>: contact precautions, hand hygiene, screening, decolonisation (MRSA), environmental cleaning.</li></ul>
+<p>#### 17.3 Decolonisation</p>
+<ul><li><b>MRSA decolonisation</b>: mupirocin 2% nasal ointment TDS × 5 days + chlorhexidine 4% body wash OD × 5 days.</li><li><b>VRE</b>: no proven decolonisation; contact precautions.</li><li><b>CRE</b>: contact precautions, no routine decolonisation.</li><li><b>ESBL</b>: no routine decolonisation; contact precautions during outbreaks.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>ICU patient, *K. pneumoniae* resistant to meropenem MIC 4 mg/L, Carba NP positive</td><td>CRE with **KPC**</td><td>Use **ceftazidime-avibactam** or **meropenem-vaborbactam**</td></tr><tr><td>ICU patient, *K. pneumoniae* resistant to all β-lactams EXCEPT aztreonam, eCIM positive (MBL), PCR NDM</td><td>**NDM-producing CRE**</td><td>**Aztreonam-avibactam** (or aztreonam + ceftazidime-avibactam); cefiderocol as alternative</td></tr><tr><td>ICU patient, *A. baumannii* CR, XDR, only colistin susceptible</td><td>**CRAB**</td><td>**High-dose ampicillin-sulbactam (9 g/day)** or **sulbactam-durlobactam**; or polymyxin B (high-dose) ± inhaled</td></tr><tr><td>Diabetic foot, swab grows MRSA, IV vancomycin MIC 2 mg/L</td><td>**MRSA**</td><td>Consider **daptomycin** (high-dose 8–10 mg/kg if bacteraemia) or **flucloxacillin** (if MSSA) or **linezolid** (SSTI)</td></tr><tr><td>*E. faecium* bacteraemia, vancomycin-resistant, daptomycin MIC 4 mg/L</td><td>**VRE, daptomycin non-susceptibility**</td><td>Use **linezolid** or **daptomycin at higher dose (10–12 mg/kg)** ± β-lactam synergy (ampicillin + ceftaroline)</td></tr><tr><td>Patient with TB returns from South Africa; previous TB treatment; sputum AFB positive; DST pending</td><td>**MDR/RR-TB suspected**</td><td>Empiric MDR regimen; **Xpert MTB/XDR**; wait for DST; BDQ + LZD + LFX</td></tr><tr><td>*S. typhi* from Pakistan, resistant to chloramphenicol, amp, TMP-SMX, FQ, ceftriaxone</td><td>**XDR typhoid**</td><td>**Azithromycin** 1 g day 1 then 500 mg OD for 5–7 days OR **meropenem**</td></tr><tr><td>*N. gonorrhoeae* urethral, smear Gram-negative diplococci</td><td>**Gonorrhoea**</td><td>**Ceftriaxone** 1 g IM single dose (or 500 mg IM if < 150 kg); test of cure in 7 days if pharyngeal</td></tr><tr><td>ICU outbreak of VRE, multiple patients colonised, contact precautions instituted</td><td>**Outbreak**</td><td>**Screening cultures** of contacts; cohort; **chlorhexidine bathing**; review antibiotics (especially vancomycin, third-gen cephalosporins, metronidazole)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know</b>: Five mechanisms of resistance (enzymatic, target, efflux, permeability, bypass); β-lactamase Ambler classes (A, B, C, D); ESBL = inhibited by clavulanic acid, hydrolyses 3rd-gen cephalosporins but NOT cephamycins or carbapenems; AmpC = NOT inhibited by clavulanic acid, hydrolyses cephamycins, chromosomal in SPACE-HM; KPC = Class A serine carbapenemase, inhibited by avibactam/vaborbactam/relebactam; NDM = Class B MBL (zinc), NOT inhibited by avibactam, aztreonam stable; OXA-48 = Class D weak carbapenemase, avibactam inhibits; MRSA = mecA→PBP2a; VRE = vanA = D-Ala-D-Lac + V+Teico high-level; vanB = V variable + Teico S; CRE definition; MDR-TB = INH + RIF; XDR-TB (2021) = MDR + FQ + Group A; mcr-1 = plasmid colistin R; AWaRe groups; GLASS; One Health; Carba NP/mCIM/eCIM; WHO priority pathogens. - <b>Common viva</b>: "How do you differentiate ESBL from AmpC from carbapenemase?"; "Why does avibactam inhibit KPC but not NDM?"; "How do you detect carbapenemase?"; "What is the WHO 2021 XDR-TB definition?"; "Outline the One Health approach to AMR". - <b>Exam trap</b>: Confusing ESBL (inhibited by clavulanic acid) with AmpC (NOT inhibited); confusing NDM (NOT inhibited by avibactam) with KPC (inhibited); thinking meropenem is first-line for ALL CRE (depends on mechanism — ceftazidime-avibactam for KPC, aztreonam-avibactam for NDM); thinking VRE = vanA only (vanB also matters — teicoplanin susceptible); confusing old XDR-TB (MDR + FQ + injectable) with WHO 2021 (MDR + FQ + Group A).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>ESBL is inhibited by clavulanic acid</td><td>**Correct** (this is the basis of DDST detection)</td></tr><tr><td>AmpC is inhibited by clavulanic acid</td><td>**Wrong** — not inhibited by clavulanic acid; inhibited by boronic acid and avibactam</td></tr><tr><td>NDM is inhibited by avibactam</td><td>**Wrong** — NDM is a metallo-β-lactamase; **not** inhibited by avibactam; aztreonam is stable to NDM</td></tr><tr><td>Aztreonam hydrolyses NDM</td><td>**Wrong** — NDM **does not** hydrolyse aztreonam; combination with avibactam is used to treat NDM producers</td></tr><tr><td>KPC is not inhibited by vaborbactam</td><td>**Wrong** — vaborbactam **inhibits KPC** (not NDM/OXA-48)</td></tr><tr><td>All CRE are treated with meropenem</td><td>**Wrong** — depends on mechanism; ceftazidime-avibactam, meropenem-vaborbactam for KPC; aztreonam-avibactam for NDM; ceftazidime-avibactam for OXA-48</td></tr><tr><td>OXA-48 is a strong carbapenemase</td><td>**Wrong** — OXA-48 is a **weak** carbapenemase; low-level MICs (1–2 mg/L) often missed</td></tr><tr><td>vanA is chromosomal</td><td>**Wrong** — vanA is on **Tn1546 transposon** (often on plasmids); highly mobile</td></tr><tr><td>VRE vanB is high-level vancomycin + teicoplanin R</td><td>**Wrong** — vanB = **vancomycin R (variable), teicoplanin S**</td></tr><tr><td>VRE vanA is V+Teico S</td><td>**Wrong** — vanA = **V+Teico high-level R**</td></tr><tr><td>*E. coli* with CTX-M-15 is treated with ceftazidime</td><td>**Wrong** — CTX-M-15 has ceftazidime activity; treat serious infections with **meropenem**; for uncomplicated UTIs pivmecillinam, nitrofurantoin, fosfomycin, pivmecillinam may still work</td></tr><tr><td>MRSA is treated with vancomycin for bacteraemia</td><td>**Acceptable** but β-lactams (flucloxacillin) preferred if MSSA; for MRSA bacteraemia, vancomycin AUC 400–600 is standard; alternatives: daptomycin</td></tr><tr><td>Tigecycline is good for VAP</td><td>**Wrong** — poor lung penetration; black-box warning for ↑ mortality in VAP</td></tr><tr><td>PRSP means resistant to ceftriaxone</td><td>**Wrong** — pen-NS; ceftriaxone still works; breakpoint changed (oral pen V replaced by ceftriaxone in meningitis)</td></tr><tr><td>All H. pylori clarithromycin-R are treated with standard triple</td><td>**Wrong** — use bismuth quadruple or levofloxacin-based rescue</td></tr><tr><td>Treating *C. auris* with fluconazole empirically</td><td>**Wrong** — often resistant; need local AST; echinocandins first-line (amphotericin B for resistant)</td></tr><tr><td>Daptomycin is used for pneumonia</td><td>**Wrong** — inactivated by pulmonary surfactant</td></tr><tr><td>Ceftazidime-avibactam is used for NDM</td><td>**Wrong** — avibactam does not inhibit MBLs; use aztreonam-avibactam</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Five Mechanisms of AMR</b>: <b>"EEE-PB"</b> — <b>E</b>nzymatic, <b>E</b>fflux, target modification, <b>P</b>ermeability, <b>B</b>ypass.</li><li><b>β-Lactamase Ambler Classes A, B, C, D</b>: <b>"All Bacteria Can Develop"</b> — A, B, C, D.</li><li><b>Carbapenemase Class B = Metallo, not inhibited by avibactam</b>: <b>"MBL = Metal Based; No Avibactam"</b>.</li><li><b>ESBL inhibited by clavulanic acid</b>: <b>"C</b>lave<b>S</b>E<b>B</b>L<b>"</b> (Clavulanic acid inhibits ESBL).</li><li><b>AmpC NOT inhibited by clavulanic acid</b>: <b>"AmpC A</b>N<b>ti-clavulanate"</b> (AmpC = Anti-clavulanate).</li><li><b>SPACE-HM</b> organisms (chromosomal AmpC): <b>S</b>erratia, <b>P</b>seudomonas, <b>A</b>cinetobacter (some), <b>C</b>itrobacter freundii, <b>E</b>nterobacter, <b>H</b>afnia, <b>M</b>organella.</li><li><b>KPC inhibited by avibactam/vaborbactam/relebactam</b>: <b>"K</b>ing<b>P</b>atrick<b>C</b>arbapenemase — <b>AVR</b>'d"**.</li><li><b>vanA vs vanB</b>: <b>"A</b> for <b>A</b>ll (V+Teico high), <b>B</b> for <b>B</b>ut (V only)"**.</li><li><b>D-Ala-D-Lac vs D-Ala-D-Ser</b>: <b>"Lac</b>quered by <b>vanA/B</b>, <b>Ser</b>endipitous <b>vanC"</b>.</li><li><b>WHO priority Critical pathogens</b>: <b>"PACE-K"</b> — <b>P</b>. aeruginosa, <b>A</b>. baumannii, <b>C</b>arbapenem-R, <b>E</b>nterobacterales, <b>K</b>. pneumoniae.</li><li><b>AWaRe</b>: <b>A</b>ccess (≥60%), <b>W</b>atch, <b>R</b>eserve.</li><li><b>GLASS</b>: <b>GL</b>obal <b>A</b>ntimicrobial <b>S</b>urveillance <b>S</b>ystem.</li><li><b>One Health</b>: <b>H</b>umans + <b>A</b>nimals + <b>E</b>nvironment = "<b>HAE</b>" or <b>"E</b>arth, <b>A</b>ir, <b>W</b>ater, <b>F</b>ire" (broad).</li><li><b>MDR-TB</b>: <b>"M</b>y <b>D</b>rug <b>R</b>esistance is to <b>INH</b> + <b>RIF"</b>.</li><li><b>XDR-TB (2021)</b>: <b>"X</b>treme <b>D</b>rug <b>R</b>esistance: <b>MDR + FQ + Group A</b>".</li><li><b>mcr-1</b>: <b>m</b>obile <b>c</b>olistin <b>r</b>esistance, <b>1</b>st gene.</li><li><b>Carba NP detects any carbapenemase</b>: <b>"Carba = catches all carbapenemases"</b>.</li><li><b>EDTA inhibits MBL</b>: <b>"E</b>DTA <b>E</b>xtracts <b>M</b>etallo (zinc)"**.</li><li><b>Avibactam inhibits KPC, AmpC, OXA-48, NOT NDM</b>: <b>"Avibactam skips MBL"</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Antimicrobial Resistance)) Burden 1.27M deaths 2019 10M projected 2050 Economic loss Drivers Five Mechanisms Enzymatic Beta-lactamases AMEs CATs Target Modification mecA PBP2a vanA vanB D-Ala-D-Lac gyrA parC rpoB Efflux MexAB-OprM AcrAB-TolC NorA AdeABC Permeability OprD loss Porin loss LPS modification Bypass mcr-1 sul1 sul2 dfrA Beta-Lactamases Ambler A serine ESBL CTX-M-15 TEM SHV KPC Ambler B metallo NDM VIM IMP EDTA NOT avibactam Ambler C serine AmpC Chromosomal SPACE-HM Plasmid CMY DHA Ambler D serine OXA-48 weak OXA-23 Acinetobacter Avibactam OXA-48 Gram-Positive Resistance MRSA mecA PBP2a SCCmec CA-MRSA USA300 HA-MRSA ST5 VRE vanA D-Ala-D-Lac V plus Teico vanB V only vanC D-Ala-D-Ser PRSP Mosaic PBPs Gram-Negative ESKAPE CRE KPC NDM OXA-48 Porin loss plus ESBL CRAB OXA-23 40 58 51 ISAba1 Sulbactam CR-PA OprD loss MexAB-OprM VIM IMP GES TB MDR-TB INH plus RIF Pre-XDR plus FQ XDR 2021 plus Group A BDQ LZD Plasmid-Mediated blaCTX-M-15 blaKPC blaNDM-1 blaOXA-48 mcr-1 vanA armA rmtB qnr Integrons Transposons Tn1546 Tn4401 Detection Phenotypic Carba NP mCIM eCIM EDTA disc DDST Boronic acid Cefoxitin Genotypic PCR Xpert Carba-R FilmArray WGS MALDI-TOF CRISPR SHERLOCK WHO Priority Critical CRE CRAB CR-PA MDR-TB High MRSA VRE ESBL FQ-R Medium PRSP Amp-R H. flu AWaRe Access 60 percent target Watch Reserve BLBLI Polymyxins Surveillance GLASS EARS-Net NARMS CHINET One Health WHO FAO WOAH UNEP Economic 1.1 to 3.8 percent GDP loss World Bank 28M poverty NAPs AMR Action Fund AMS Integration 5 Ds 48-72h review DDD DOT TDM De-escalation Vaccines Novel Agents Ceftazidime-avibactam Meropenem-vaborbactam Imipenem-relebactam Aztreonam-avibactam Cefiderocol Cefepime-taniborbactam Sulbactam-durlobactam Plazomicin Eravacycline Phage CRISPR Monoclonals </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart: Detection of Carbapenemase in Enterobacterales</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Enterobacterales isolate - meropenem or ertapenem MIC elevated] --&gt; B[Carba NP or mCIM] B --&gt;|Positive| C[Carbapenemase confirmed] B --&gt;|Negative| D[Suspect porin loss plus ESBL or AmpC - check for non-enzymatic resistance] C --&gt; E[Differentiate serine vs MBL] E --&gt; F[eCIM with EDTA or boronic acid] F --&gt;|MBL - inhibited by EDTA| G[Class B NDM VIM IMP] F --&gt;|Serine - inhibited by boronic acid or unaffected by EDTA| H[Class A KPC GES or Class D OXA-48] G --&gt; I[PCR for NDM VIM IMP - Xpert Carba-R] H --&gt; J[PCR for KPC OXA-48 - Xpert Carba-R] I --&gt; K[Aztreonam plus avibactam or cefiderocol] H --&gt;|KPC| L[Ceftazidime-avibactam or meropenem-vaborbactam or imipenem-relebactam] H --&gt;|OXA-48| M[Ceftazidime-avibactam] D --&gt; N[High-dose meropenem prolonged infusion if MIC less than 8] K --&gt; O[Repeat culture, AMS review, IPC contact precautions] L --&gt; O M --&gt; O N --&gt; O </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Flowchart: Clinical Decision Pathway for a Patient with CRE</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient with CRE isolated] --&gt; B[Review mechanism: KPC, NDM, OXA-48, VIM, IMP, porin-ESBL] B --&gt;|KPC| C[Ceftazidime-avibactam OR meropenem-vaborbactam OR imipenem-relebactam] B --&gt;|NDM VIM IMP| D[Aztreonam-avibactam OR cefiderocol] B --&gt;|OXA-48| E[Ceftazidime-avibactam] B --&gt;|Porin-ESBL - no carbapenemase| F[High-dose prolonged-infusion meropenem if MIC less than 8] C --&gt; G[Source control + AMS review at 48-72h] D --&gt; G E --&gt; G F --&gt; G G --&gt; H[TDM if applicable - voriconazole, etc.] G --&gt; I[IPC contact precautions + screening cultures] I --&gt; J[Outbreak investigation if cluster] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Diagram: β-lactamase Ambler classes with example enzymes and inhibitor profiles</li><li>[ ] Table: ESBL vs AmpC vs carbapenemase (Ambler A, B, C, D)</li><li>[ ] Diagram: vanA/vanB operon and D-Ala-D-Lac vs D-Ala-D-Ser pathway</li><li>[ ] Map: Global distribution of KPC, NDM, OXA-48</li><li>[ ] Algorithm: WHO priority pathogens with empirical and directed options</li><li>[ ] Diagram: mcr-1 mechanism (pEtN addition to lipid A)</li><li>[ ] Picture: Carba NP positive (yellow) vs negative (red)</li><li>[ ] Algorithm: MDR-TB and XDR-TB (2021 definitions) and treatment regimens</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] WHO: "Antimicrobial Resistance" — global threat explanation</li><li>[ ] CDC: "Antibiotic Resistance Threats in the US 2019/2023"</li><li>[ ] CIDRAP AMR Project lectures (University of Minnesota)</li><li>[ ] ESCMID AMR guidelines lectures</li><li>[ ] "The Antibiotic Resistance Crisis" — HopkinsMedicine</li><li>[ ] YouTube: "mcr-1" (explanations)</li><li>[ ] IDSA/SHEA AMS webinar</li><li>[ ] WHO AWaRe classification lectures</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>AMR burden</b>: 1.27 M deaths in 2019 (Lancet GBD); 10 M projected by 2050. - <b>5 mechanisms</b>: Enzymatic (β-lactamases, AMEs), Target modification (mecA, vanA, gyrA, rpoB), Efflux (MexAB, AcrAB, NorA, AdeABC), Reduced permeability (OprD, porins, LPS), Bypass (mcr-1, sul, dfrA). - <b>β-Lactamase Ambler classes</b>: A (ESBL, KPC — serine), B (NDM, VIM, IMP — metallo, NOT avibactam, aztreonam stable), C (AmpC, not clavulanate), D (OXA-48 weak, OXA-23 in <i>A. baumannii</i>). - <b>ESBL</b>: Inhibited by clavulanic acid; hydrolyses 3rd-gen cephalosporins, NOT cephamycins/carbapenems; <b>CTX-M-15</b> most prevalent; treat serious infections with meropenem. - <b>AmpC</b>: NOT inhibited by clavulanic acid; hydrolyses cephamycins; chromosomal in SPACE-HM; plasmid CMY-2, DHA-1; induce by cefoxitin/imipenem → 3rd-gen cephalosporin R. - <b>KPC</b>: Class A serine, plasmid (Tn4401), inhibited by avibactam/vaborbactam/relebactam. - <b>NDM</b>: Class B MBL, zinc, NOT inhibited by avibactam/vaborbactam, <b>aztreonam stable</b>; combo aztreonam + avibactam for treatment. - <b>OXA-48</b>: Class D weak carbapenemase, often missed, avibactam inhibits, ceftazidime-avibactam active. - <b>MRSA</b>: mecA→PBP2a, SCCmec, β-lactams except ceftaroline/ceftobiprole fail. - <b>VRE</b>: vanA = high V+Teico (D-Lac), vanB = V only (D-Lac), vanC = low V (D-Ser). - <b>CRE</b>: ≥ 1 carbapenem R + 3rd-gen ceph R (or carbapenemase). - <b>MDR-TB</b>: INH + RIF. <b>XDR-TB (2021)</b>: MDR + FQ + Group A (BDQ, LZD). - <b>mcr-1</b>: Plasmid colistin R (pEtN transferase). - <b>WHO Critical</b>: CRE, CRAB, CR-PA, MDR-TB. <b>High</b>: MRSA, VRE, ESBL, FQ-R. <b>Medium</b>: PRSP, Amp-R H. flu. - <b>AWaRe</b>: Access ≥ 60%, Watch, Reserve. - <b>GLASS</b>: WHO global AMR + AMC surveillance. - <b>One Health</b>: Human + animal + environment (WHO + FAO + WOAH + UNEP). - <b>Detection</b>: Carba NP, mCIM, eCIM (MBL), DDST, boronic acid; PCR (Xpert Carba-R), WGS, MALDI-TOF. - <b>Newer agents</b>: Ceftazidime-avibactam (KPC, OXA-48, ESBL, AmpC), meropenem-vaborbactam (KPC), imipenem-relebactam (KPC), aztreonam-avibactam (NDM), cefiderocol (broad, including MBL), sulbactam-durlobactam (CRAB), plazomicin, eravacycline, omadacycline, lefamulin. - <b>Novel strategies</b>: Vaccines, phage, CRISPR, monoclonals, FMT, antimicrobial peptides.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What are the five canonical mechanisms of AMR? Give one example for each.</li><li>What is the difference between Ambler class A, B, C, and D β-lactamases? Give one example of each.</li><li>Which β-lactamase inhibitor inhibits KPC but NOT NDM? Why?</li><li>ESBL vs AmpC: which is inhibited by clavulanic acid? Which hydrolyses cephamycins?</li><li>How is NDM different from KPC? What antibiotic is uniquely stable to NDM and useful in combination?</li><li>What is the mechanism of MRSA? What SCCmec types are seen in HA-MRSA vs CA-MRSA?</li><li>vanA vs vanB: which is high-level V + Teico R? Which is V-only R? Which uses D-Ala-D-Ser?</li><li>Define CRE, CRAB, and CR-PA in one sentence each.</li><li>What is the WHO 2021 definition of XDR-TB?</li><li>What is the mechanism of mcr-1 colistin resistance? Why is it clinically important?</li><li>List the WHO Critical priority pathogens.</li><li>What is the WHO AWaRe Access target?</li><li>Name the phenotypic tests for ESBL, AmpC, carbapenemase, and MBL.</li><li>Outline the WHO GLASS approach.</li><li>What is the One Health approach to AMR?</li><li>What new drugs are available for CRE (KPC, NDM, OXA-48) and CRAB?</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>5 resistance mechanisms; β-lactamase Ambler classes (A KPC, B NDM, C AmpC, D OXA-48); ESBL (CTX-M-15, clavulanic acid inhibition); AmpC (SPACE-HM, cephamycin hydrolysis, NOT clavulanic acid); KPC mechanism and inhibitors; NDM mechanism and aztreonam stability; MRSA (mecA→PBP2a); VRE (vanA vs vanB); CRE definition; CRAB/CR-PA mechanism overview; MDR-TB and XDR-TB (WHO 2021); mcr-1 mechanism; WHO priority pathogens (Critical/High/Medium); AWaRe (Access target ≥ 60%); GLASS; One Health; Carba NP/mCIM/eCIM/DDST; phenotypic vs genotypic detection; new BLBLIs (ceftazidime-avibactam, meropenem-vaborbactam, aztreonam-avibactam, sulbactam-durlobactam, cefiderocol)</td></tr><tr><td>**Should Know 🟡**</td><td>Detailed carbapenemase epidemiology (KPC US/Italy, NDM India, OXA-48 Turkey); mcr-1 global spread; vanC/D/E/M/N; AmpC plasmid types (CMY-2, DHA-1); Bush-Jacoby-Medeiros classification; resistant gonorrhoea; XDR typhoid; ERG11/FKS1 azole/echinocandin R; Group A TB drug definitions; WGS; GLASS data; AMR Action Fund; GARDP; BPaL regimen; BSAC/EUCAST vs CLSI breakpoints; rapid diagnostics (FilmArray, T2); DTR-PA; One Health initiatives (Tripartite); vaccines as AMR strategy</td></tr><tr><td>**Nice to Know 🟢**</td><td>Resistance evolution modelling; novel BLBLIs (taniborbactam, xeruborbactam, zidebactam); phage therapy; CRISPR-Cas antimicrobials; monoclonal antibodies (bezlotoxumab, suvratoxumab); microbiome restoration (VOWST, Rebyota); antimicrobial peptides; pull incentives (UK/NICE "Netflix" model); AWaRe-based pricing; CARB-X; agricultural AMR interventions; specific gene cassettes (blaGES, blaSME, blaIMI); cefiderocol mortality data (CREDIBLE-CR); 23S rRNA methyltransferases (cfr, optrA); ILIAD study; WGS epidemiology</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Structure: <b>Definition + global burden</b> → <b>5 mechanisms of resistance</b> (with examples) → <b>β-lactamase classification</b> (Ambler A, B, C, D with examples — ESBL, KPC, NDM, AmpC, OXA-48) → <b>ESBL, AmpC, carbapenemase differentiation</b> (substrate profile, inhibitor profile) → <b>MRSA, VRE mechanisms</b> → <b>CRE, CRAB, CR-PA</b> → <b>MDR-TB and XDR-TB definitions</b> → <b>Plasmid-mediated resistance (mcr-1, NDM, KPC, CTX-M)</b> → <b>WHO priority pathogens, AWaRe, GLASS, One Health</b> → <b>Detection methods (phenotypic and genotypic)</b> → <b>Novel antibiotics and strategies</b> → <b>Conclusion (AMR is a One Health threat requiring stewardship, IPC, surveillance, new drugs, vaccines)</b>.</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet: 5 mechanisms; β-lactamase Ambler classes; ESBL vs AmpC vs carbapenemase; KPC vs NDM vs OXA-48; MRSA (mecA→PBP2a); VRE (vanA vs vanB); CRE definition; MDR/XDR-TB; mcr-1; WHO priority list; AWaRe; GLASS; Carba NP; new BLBLIs.</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"In your own words..." Lead with definition + 5 mechanisms + Ambler classes + examples (ESBL, KPC, NDM, OXA-48) + distinction between serine and metallo + avibactam inhibits KPC but not NDM + aztreonam stable to NDM + WHO priority list + AWaRe + One Health.</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to patient: identify the resistance mechanism (Carba NP, mCIM/eCIM, PCR), choose appropriate antibiotic (mechanism-specific: ceftazidime-avibactam for KPC, aztreonam-avibactam for NDM, etc.), IPC contact precautions, screening cultures, AMS review.</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above.</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>5 mechanisms; Ambler A/B/C/D; ESBL/AmpC/carbapenemase table; MRSA/VRE; CRE; MDR/XDR-TB; mcr-1; AWaRe; WHO priority; new BLBLIs.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1. Which of the following β-lactamase inhibitors inhibits KPC and OXA-48 carbapenemases but NOT NDM-1?</b> A. EDTA B. Clavulanic acid C. Tazobactam D. Avibactam E. Sulbactam</p>
+<p>**2. A blood culture grows <i>Klebsiella pneumoniae</i> resistant to meropenem (MIC 8 mg/L), ertapenem, ceftriaxone, and cefepime. Carba NP is positive. EDTA-disc synergy test shows no zone enhancement with EDTA. The MOST likely mechanism is:** A. Class A KPC carbapenemase B. Class B NDM metallo-β-lactamase C. Class D OXA-48 carbapenemase D. Chromosomal AmpC hyperproduction E. ESBL with porin loss</p>
+<p>**3. <i>Escherichia coli</i> from urine is reported as "ESBL producer". The MOST reliable feature that distinguishes ESBL from AmpC β-lactamase is:** A. Hydrolyses cefepime B. Inhibited by clavulanic acid C. Plasmid-mediated D. Hydrolyses ceftriaxone E. Resistant to aztreonam</p>
+<p>**4. A patient has a wound swab growing <i>Staphylococcus aureus</i> with the following susceptibility: resistant to flucloxacillin and cefoxitin; susceptible to vancomycin, teicoplanin, linezolid, daptomycin, and ceftaroline. The MOST likely mechanism of β-lactam resistance is:** A. Hyperproduction of β-lactamase B. Plasmid-mediated <i>blaZ</i> only C. <i>mecA</i>-mediated PBP2a D. Modification of PBP1 E. Efflux pump NorA</p>
+<p>**5. A patient with <i>Enterococcus faecium</i> bacteraemia is found to have vancomycin-resistant <i>Enterococcus</i> with high-level vancomycin (MIC &gt; 256 mg/L) AND teicoplanin (MIC &gt; 16 mg/L) resistance. The MOST likely gene is:** A. <i>vanB</i> B. <i>vanC</i> C. <i>vanA</i> D. <i>vanD</i> E. <i>vanE</i></p>
+<p><b>6. The WHO 2021 definition of pre-XDR tuberculosis is:</b> A. Resistance to isoniazid only B. Resistance to rifampicin only C. MDR/RR-TB plus resistance to any fluoroquinolone D. MDR-TB plus resistance to bedaquiline and linezolid E. Resistance to all first-line drugs</p>
+<p><b>7. The MOST important mechanism of mcr-1 plasmid-mediated colistin resistance is:</b> A. 16S rRNA methyltransferase B. Phosphoethanolamine transferase modification of lipid A C. Lipid A acylation D. Efflux pump upregulation E. mcr-1 mutations in the ribosomal target</p>
+<p><b>8. Which of the following is a Critical priority pathogen on the WHO Bacterial Priority Pathogens List (2017/2024)?</b> A. Methicillin-resistant <i>Staphylococcus aureus</i> B. Vancomycin-resistant <i>Enterococcus faecium</i> C. Carbapenem-resistant <i>Acinetobacter baumannii</i> D. Penicillin-non-susceptible <i>Streptococcus pneumoniae</i> E. Ampicillin-resistant <i>Haemophilus influenzae</i></p>
+<p>**9. An ICU patient has <i>Klebsiella pneumoniae</i> with confirmed NDM-1 carbapenemase. Of the following, the BEST treatment option is:** A. Ceftazidime-avibactam monotherapy B. Meropenem high-dose prolonged infusion C. Aztreonam-avibactam D. Imipenem-relebactam E. Ertapenem</p>
+<p><b>10. According to the WHO AWaRe classification, the Access group of antibiotics should constitute at least what percentage of total antibiotic consumption?</b> A. 20% B. 40% C. 60% D. 80% E. 95%</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<p>**SBA 1. A 65-year-old man with sepsis has blood cultures growing <i>E. coli</i> resistant to ampicillin, amoxicillin-clavulanate, ceftriaxone, ceftazidime, cefepime, and aztreonam, but susceptible to meropenem, piperacillin-tazobactam, and ciprofloxacin. The DDST (double disc synergy test) is positive. The MOST likely mechanism is:** A. AmpC chromosomal hyperproduction B. KPC carbapenemase C. ESBL (CTX-M type) D. NDM-1 metallo-β-lactamase E. OXA-48 carbapenemase</p>
+<p>**SBA 2. A 28-year-old woman with febrile neutropenia has a blood culture growing <i>Enterococcus faecium</i> with vancomycin MIC &gt; 32 mg/L, teicoplanin MIC 1 mg/L (susceptible), and daptomycin MIC 2 mg/L. The MOST appropriate antibiotic is:** A. Vancomycin B. Teicoplanin C. Linezolid D. Quinupristin-dalfopristin E. Continue daptomycin at standard dose</p>
+<p><b>SBA 3. A 30-year-old man with HIV (CD4 80) presents with a 4-week history of cough, weight loss, and night sweats. Sputum AFB is positive and Xpert MTB/RIF detects MTB with rifampicin resistance. The MOST appropriate initial regimen would include:</b> A. Standard 2HRZE/4HR (isoniazid, rifampicin, pyrazinamide, ethambutol) B. Rifampicin, isoniazid, pyrazinamide, ethambutol plus levofloxacin C. Bedaquiline, linezolid, levofloxacin, clofazimine, cycloserine D. Rifampicin plus isoniazid E. Streptomycin, amikacin, capreomycin, levofloxacin</p>
+<p>**SBA 4. A 55-year-old man returning from India has bacteraemia with <i>Salmonella</i> Typhi. The isolate is resistant to ampicillin, chloramphenicol, trimethoprim-sulfamethoxazole, ciprofloxacin, AND ceftriaxone, but susceptible to azithromycin and meropenem. The MOST appropriate oral therapy is:** A. Ciprofloxacin B. Ceftriaxone C. Azithromycin D. Co-trimoxazole E. Amoxicillin</p>
+<p>**SBA 5. A 70-year-old ICU patient with ventilator-associated pneumonia has a tracheal aspirate growing <i>Acinetobacter baumannii</i> resistant to meropenem, imipenem, amikacin, ciprofloxacin, and susceptible only to colistin and minocycline. The MOST appropriate targeted therapy (assuming normal renal function) is:** A. Colistin monotherapy (IV only) B. Polymyxin B monotherapy C. High-dose ampicillin-sulbactam (9 g/day) ± colistin D. Tigecycline monotherapy E. Cefiderocol monotherapy</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Q: 5 mechanisms of AMR?</b></li></ul>
+<p>A: <b>E</b>nzymatic inactivation, <b>E</b>fflux, target <b>M</b>odification, reduced <b>P</b>ermeability, metabolic <b>B</b>ypass.</p>
+<ul><li><b>Q: Ambler class A β-lactamases?</b></li></ul>
+<p>A: Serine; ESBL (TEM, SHV, CTX-M), KPC, GES, SME, IMI, NMC-A. Inhibited by clavulanic acid, avibactam (mostly), vaborbactam (KPC).</p>
+<ul><li><b>Q: Ambler class B β-lactamases?</b></li></ul>
+<p>A: Metallo (zinc); NDM, VIM, IMP, GIM, SPM. <b>NOT</b> inhibited by clavulanic acid, tazobactam, avibactam, vaborbactam. Inhibited by <b>EDTA, dipicolinic acid, aspergillomarasmine A, taniborbactam</b>. <b>Aztreonam is stable</b> to MBLs.</p>
+<ul><li><b>Q: Ambler class C β-lactamases?</b></li></ul>
+<p>A: Serine; chromosomal AmpC (Enterobacter, Citrobacter, Serratia, Pseudomonas, Morganella, Providencia, Hafnia) and plasmid-mediated (CMY-2, DHA-1). Not inhibited by clavulanic acid; inhibited by boronic acid, cloxacillin, avibactam. Hydrolyse cephamycins.</p>
+<ul><li><b>Q: Ambler class D β-lactamases?</b></li></ul>
+<p>A: Serine; OXA enzymes. OXA-1, OXA-10 (narrow), OXA-48 (weak carbapenemase; Turkey/Europe), OXA-23, OXA-40/72, OXA-58, OXA-51 (intrinsic <i>A. baumannii</i>). Inhibited by avibactam for OXA-48.</p>
+<ul><li><b>Q: What does ESBL hydrolyse?</b></li></ul>
+<p>A: Penicillins, 3rd/4th-gen cephalosporins, aztreonam. <b>NOT</b> cephamycins (cefoxitin, cefotetan). <b>NOT</b> carbapenems. <b>Inhibited by clavulanic acid</b>.</p>
+<ul><li><b>Q: ESBL global epidemiology?</b></li></ul>
+<p>A: <b>CTX-M-15</b> is the pandemic ESBL (since 2000s); ST131 <i>E. coli</i> clone. CTX-M-14 in East Asia.</p>
+<ul><li><b>Q: SPACE-HM organisms?</b></li></ul>
+<p>A: Chromosomal inducible AmpC — <b>S</b>erratia, <b>P</b>seudomonas, <b>A</b>cinetobacter (some), <b>C</b>itrobacter freundii, <b>E</b>nterobacter, <b>H</b>afnia, <b>M</b>organella.</p>
+<ul><li><b>Q: How does KPC cause carbapenem resistance?</b></li></ul>
+<p>A: KPC = Class A serine carbapenemase; binds and hydrolyses the β-lactam ring of carbapenems and other β-lactams. Located on plasmid (Tn4401 transposon). Inhibited by avibactam, vaborbactam, relebactam.</p>
+<ul><li><b>Q: Why doesn't avibactam inhibit NDM?</b></li></ul>
+<p>A: NDM is a <b>metallo-β-lactamase</b> requiring zinc for catalysis. Avibactam forms a reversible covalent bond with the active-site serine of serine β-lactamases; NDM lacks this serine and uses a different mechanism (water/zinc-mediated hydrolysis).</p>
+<ul><li><b>Q: What is aztreonam-avibactam useful for?</b></li></ul>
+<p>A: For MBL (NDM, VIM, IMP)-producing Enterobacterales. Aztreonam is <b>stable to MBLs</b>; avibactam protects aztreonam from co-existing ESBLs, AmpC, OXA-48.</p>
+<ul><li><b>Q: OXA-48 features?</b></li></ul>
+<p>A: Class D serine; <b>weak</b> carbapenemase; low-level MICs (often 1–2 mg/L); missed by some AST systems; common in <b>Turkey, North Africa, Middle East, Europe</b>; IncL/M plasmid; avibactam inhibits.</p>
+<ul><li><b>Q: MRSA mechanism?</b></li></ul>
+<p>A: <b>mecA gene on SCCmec</b> encodes <b>PBP2a</b> (low-affinity PBP); β-lactams (except ceftaroline, ceftobiprole) cannot bind effectively.</p>
+<ul><li><b>Q: HA-MRSA vs CA-MRSA SCCmec types?</b></li></ul>
+<p>A: HA-MRSA: SCCmec <b>I, II, III</b> (large, with multiple resistance genes). CA-MRSA: SCCmec <b>IV, V</b> (smaller, fewer resistance genes; often Panton-Valentine leukocidin [PVL]-positive, e.g. USA300/ST8).</p>
+<ul><li><b>Q: vanA vs vanB VRE?</b></li></ul>
+<p>A: <b>vanA</b> = high-level vancomycin R + teicoplanin R (D-Ala-D-Lac); Tn1546; constitutive/inducible. <b>vanB</b> = variable vancomycin R, teicoplanin <b>S</b> (D-Ala-D-Lac); Tn1547/916-like; inducible.</p>
+<ul><li><b>Q: What is the D-Ala-D-Lac modification in VRE?</b></li></ul>
+<p>A: Replacement of the terminal D-Ala-D-Ala in peptidoglycan precursors with D-Ala-D-Lac, reducing vancomycin binding affinity by ~1000×. Catalysed by VanA, VanB, VanD, VanM ligases.</p>
+<ul><li><b>Q: What is the D-Ala-D-Ser modification?</b></li></ul>
+<p>A: Replacement with D-Ala-D-Ser; reduces vancomycin binding ~7×. Seen in <b>vanC, vanE, vanG, vanL, vanN</b>. Lower-level vancomycin resistance.</p>
+<ul><li><b>Q: CRE definition?</b></li></ul>
+<p>A: <b>Non-susceptible to ≥ 1 carbapenem</b> (meropenem, imipenem, doripenem, ertapenem) <b>AND</b> resistant to all 3rd-generation cephalosporins <b>OR</b> has documented carbapenemase production (CDC 2015).</p>
+<ul><li><b>Q: CRAB mechanism?</b></li></ul>
+<p>A: Acquired <b>OXA-type carbapenemases</b> (OXA-23, OXA-40, OXA-58) often with ISAba1 upstream → high expression; intrinsic OXA-51; efflux (AdeABC); porin loss; LPS modification. <b>Sulbactam</b> has intrinsic activity against <i>A. baumannii</i>.</p>
+<ul><li><b>Q: CR-PA mechanism?</b></li></ul>
+<p>A: <b>OprD porin loss</b> (imipenem), <b>MexAB-OprM efflux</b> (multiple drugs), AmpC hyperproduction, sometimes VIM/IMP/GES carbapenemases.</p>
+<ul><li><b>Q: MDR-TB (WHO 2021)?</b></li></ul>
+<p>A: Resistant to <b>isoniazid (INH) AND rifampicin (RIF)</b> (and possibly others).</p>
+<ul><li><b>Q: Pre-XDR-TB (WHO 2021)?</b></li></ul>
+<p>A: MDR/RR-TB + resistance to <b>any fluoroquinolone</b>.</p>
+<ul><li><b>Q: XDR-TB (WHO 2021)?</b></li></ul>
+<p>A: MDR/RR-TB + resistance to <b>any FQ + ≥ 1 Group A drug</b> (bedaquiline, linezolid).</p>
+<ul><li><b>Q: What is mcr-1?</b></li></ul>
+<p>A: <b>Mobile colistin resistance</b> gene; plasmid-encoded <b>phosphoethanolamine (pEtN) transferase</b> that adds pEtN to lipid A of LPS, reducing negative charge and polymyxin binding. First described 2015 in China; now reported worldwide (human, animal, environment).</p>
+<ul><li><b>Q: mcr-1 vs chromosomal colistin R?</b></li></ul>
+<p>A: <b>mcr-1</b> = plasmid (transferable, alarming). Chromosomal (e.g. <i>pmrA/B</i>, <i>phoP/Q</i>, <i>mgrB</i> mutations in <i>Klebsiella</i>) = not transferable, arises during therapy.</p>
+<ul><li><b>Q: Treatment options for NDM-producing Enterobacterales?</b></li></ul>
+<p>A: <b>Aztreonam-avibactam</b> (aztreonam stable to MBL; avibactam protects from ESBL/AmpC), <b>cefiderocol</b>, eravacycline, tigecycline. NOT ceftazidime-avibactam alone (avibactam doesn't inhibit NDM), NOT meropenem-vaborbactam.</p>
+<ul><li><b>Q: Treatment options for KPC-producing Enterobacterales?</b></li></ul>
+<p>A: <b>Ceftazidime-avibactam</b>, <b>meropenem-vaborbactam</b>, <b>imipenem-relebactam</b>. Meropenem is no longer the only option; these have better outcomes in observational studies.</p>
+<ul><li><b>Q: Treatment options for OXA-48-producing Enterobacterales?</b></li></ul>
+<p>A: <b>Ceftazidime-avibactam</b> (best evidence), meropenem high-dose prolonged infusion (if MIC ≤ 8).</p>
+<ul><li><b>Q: Treatment for DTR-PA?</b></li></ul>
+<p>A: <b>Ceftolozane-tazobactam</b>, <b>ceftazidime-avibactam</b>, <b>cefiderocol</b>, <b>imipenem-relebactam</b>, aminoglycoside (if susceptible), colistin (last-line, low efficacy alone).</p>
+<ul><li><b>Q: Treatment for CRAB?</b></li></ul>
+<p>A: <b>High-dose ampicillin-sulbactam (9 g/day)</b> if sulbactam-susceptible, <b>sulbactam-durlobactam</b> (FDA 2023), polymyxin B (high-dose, loading), minocycline, tigecycline (avoid VAP). Cefiderocol has shown ↑ mortality in CRAB subgroup (CREDIBLE-CR).</p>
+<ul><li><b>Q: WHO Bacterial Priority Pathogens List — Critical tier?</b></li></ul>
+<p>A: **Carbapenem-resistant <i>Acinetobacter baumannii</i>, <i>Pseudomonas aeruginosa</i>, Enterobacterales; MDR *Mycobacterium tuberculosis***.</p>
+<ul><li><b>Q: WHO Bacterial Priority Pathogens List — High tier?</b></li></ul>
+<p>A: Vancomycin-resistant <i>Enterococcus faecium</i>; MRSA; clarithromycin-resistant <i>H. pylori</i>; FQ-resistant <i>Campylobacter</i>, <i>Salmonellae</i>; cephalosporin/FQ-resistant <i>N. gonorrhoeae</i>.</p>
+<ul><li><b>Q: WHO Bacterial Priority Pathogens List — Medium tier?</b></li></ul>
+<p>A: Penicillin-non-susceptible <i>S. pneumoniae</i>; ampicillin-resistant <i>H. influenzae</i>; FQ-resistant <i>Shigella</i> spp.</p>
+<ul><li><b>Q: AWaRe Access group?</b></li></ul>
+<p>A: Narrow-spectrum first-line antibiotics (e.g. amoxicillin, amoxicillin-clavulanate, doxycycline, nitrofurantoin, trimethoprim, cephalexin, phenoxymethylpenicillin). Target ≥ 60% of total antibiotic consumption.</p>
+<ul><li><b>Q: AWaRe Watch group?</b></li></ul>
+<p>A: Higher resistance potential; AMS priority (e.g. ceftriaxone, ciprofloxacin, azithromycin, clarithromycin, meropenem, vancomycin, linezolid).</p>
+<ul><li><b>Q: AWaRe Reserve group?</b></li></ul>
+<p>A: Last-line for MDR infections (e.g. ceftazidime-avibactam, meropenem-vaborbactam, aztreonam-avibactam, cefiderocol, sulbactam-durlobactam, polymyxin B, colistin, tigecycline, daptomycin, dalbavancin, oritavancin, plazomicin, eravacycline).</p>
+<ul><li><b>Q: What is GLASS?</b></li></ul>
+<p>A: <b>Global Antimicrobial Resistance and Use Surveillance System</b> (WHO, 2015). Standardised AMR + AMU surveillance across human clinical specimens and national consumption data.</p>
+<ul><li><b>Q: One Health — what does it mean for AMR?</b></li></ul>
+<p>A: Integrated approach linking <b>human, animal, and environmental</b> health (WHO + FAO + WOAH + UNEP "Tripartite-plus"). 70% of antibiotics by tonnage used in animals; environmental contamination is a major reservoir.</p>
+<ul><li><b>Q: Carba NP test?</b></li></ul>
+<p>A: Phenotypic test: organism + imipenem + indicator (phenol red, pH shift) → <b>yellow</b> = positive (carbapenem hydrolysed) within <b>2 hours</b>. Detects any carbapenemase (KPC, NDM, OXA-48, VIM, IMP).</p>
+<ul><li><b>Q: mCIM (Modified Carbapenem Inactivation Method)?</b></li></ul>
+<p>A: CLSI method — meropenem disk + organism + TSB → place on <i>E. coli</i> lawn → no zone = carbapenemase. Detects any carbapenemase. <b>18 hours</b>.</p>
+<ul><li><b>Q: eCIM?</b></li></ul>
+<p>A: mCIM with <b>EDTA</b> added. If MBL present, EDTA inhibits it, so meropenem is <b>not</b> hydrolysed, zone is restored. Distinguishes MBL from serine carbapenemase.</p>
+<ul><li><b>Q: DDST for ESBL?</b></li></ul>
+<p>A: <b>Double Disc Synergy Test</b> — amoxicillin-clavulanate disc + 3rd-gen cephalosporin disc placed ~25 mm apart → enhanced zone (keyhole/synergy) = ESBL. <b>Inhibited by clavulanic acid</b>.</p>
+<ul><li><b>Q: Cefoxitin resistance as a screening test?</b></li></ul>
+<p>A: Cefoxitin is a cephamycin; resistance suggests <b>AmpC</b> hyperproduction (chromosomal in SPACE-HM or plasmid CMY/DHA).</p>
+<ul><li><b>Q: Boronic acid disc test?</b></li></ul>
+<p>A: Boronic acid (a reversible AmpC inhibitor) + carbapenem disc → enhanced zone = AmpC or KPC. Distinguishes from MBL.</p>
+<ul><li><b>Q: Xpert Carba-R?</b></li></ul>
+<p>A: Cepheid GeneXpert PCR detecting <b>blaKPC, blaNDM, blaVIM, blaOXA-48, blaIMP</b> in &lt; 1 hour from culture or rectal swab.</p>
+<ul><li><b>Q: What is WGS?</b></li></ul>
+<p>A: <b>Whole-genome sequencing</b> — determines complete DNA sequence; identifies all resistance genes, plasmids, MLST, clonal relationships, and virulence. Time: 24–72 h. Used for outbreak investigation and surveillance.</p>
+<ul><li><b>Q: What is selective/cascade reporting?</b></li></ul>
+<p>A: Microbiology lab reports the <b>narrowest</b> agent to which the isolate is susceptible; broader agents (e.g. carbapenems) only reported if specifically needed. Drives appropriate use.</p>
+<ul><li><b>Q: PRSP mechanism?</b></li></ul>
+<p>A: **Mosaic *pbp1a, pbp2b, pbp2x*** genes from recombination with viridans streptococci; reduces penicillin affinity.</p>
+<ul><li>**Q: Drug-resistant <i>N. gonorrhoeae</i> treatment?**</li></ul>
+<p>A: <b>Ceftriaxone 1 g IM</b> (or 500 mg IM if &lt; 150 kg) single dose ± azithromycin 2 g PO (or doxycycline); test of cure in 7–14 days if pharyngeal.</p>
+<ul><li>**Q: XDR typhoid (H58 <i>S. typhi</i>) treatment?**</li></ul>
+<p>A: <b>Azithromycin</b> 1 g PO day 1 then 500 mg OD × 5–7 days, or meropenem, or ceftriaxone (if susceptible).</p>
+<ul><li>**Q: Resistance in <i>Candida auris</i>?**</li></ul>
+<p>A: Often <b>multi-azole resistant</b> (ERG11 mutations, efflux); some <b>echinocandin resistant</b> (FKS1); some <b>amphotericin B resistant</b>. Treatment guided by AST; first-line echinocandins, amphotericin B as backup.</p>
+<ul><li>**Q: Resistance in <i>Aspergillus fumigatus</i>?**</li></ul>
+<p>A: Azole-R via <b>TR34/L98H</b> and <b>TR46/Y121F/T289A</b> <i>cyp51A</i> mutations (environmental origin from fungicide use in agriculture). Voriconazole susceptibility must be tested.</p>
+<ul><li><b>Q: What is the BPaL regimen?</b></li></ul>
+<p>A: <b>B</b>edaquiline + <b>P</b>retomanid + <b>L</b>inezolid for 6–9 months for XDR-TB or treatment-intolerant/non-responsive MDR-TB (Nix-TB trial).</p>
+<ul><li><b>Q: Pull incentives for new antibiotics?</b></li></ul>
+<p>A: <b>Subscription / "Netflix" model</b> (UK/NICE): fixed annual fee paid to manufacturer for access to a new antibiotic, delinked from volume of sales. Example: ceftazidime-avibactam, cefiderocol.</p>
+<ul><li><b>Q: Vaccines that reduce AMR?</b></li></ul>
+<p>A: <b>PCV</b> (pneumococcal), <b>Hib</b>, <b>Typhoid conjugate (TCV)</b>, <b>Influenza</b>, <b>RSV</b> (maternal Abrysvo, nirsevimab), <b>Group B Strep</b> (in dev), <b>E. coli</b> vaccines (in dev). Vaccines prevent infections and reduce antibiotic use.</p>
+<ul><li><b>Q: Phage therapy?</b></li></ul>
+<p>A: Therapeutic use of <b>bacteriophages</b> (viruses infecting bacteria) to kill MDR bacteria. Lytic phages; case reports in MDR <i>P. aeruginosa</i>, <i>S. aureus</i>, <i>A. baumannii</i>; FDA compassionate use pathway.</p>
+<ul><li><b>Q: CRISPR-Cas antimicrobials?</b></li></ul>
+<p>A: Programmable CRISPR-Cas systems (Cas9, Cas12, Cas13) targeted to resistance genes; in development; could selectively kill resistant bacteria.</p>
+<ul><li><b>Q: Monoclonal antibodies in infectious disease?</b></li></ul>
+<p>A: <b>Bezlotoxumab</b> (anti-<i>C. difficile</i> toxin B) — reduces recurrent CDI. <b>Obiltoxaximab, raxibacumab</b> (anti-<i>B. anthracis</i> protective antigen). <b>Suvratoxumab</b> (anti-<i>S. aureus</i> alpha-toxin, in trials).</p>
+<ul><li><b>Q: Differences between CLSI and EUCAST breakpoints?</b></li></ul>
+<p>A: Slight differences in MIC breakpoints (especially for some agents like ciprofloxacin against <i>Salmonella</i>, ceftriaxone for meningitis). EUCAST has no intermediate category for some agents. Labs typically follow one or the other.</p>
+<ul><li><b>Q: Cefepime vs meropenem for ESBL bacteraemia?</b></li></ul>
+<p>A: Cefepime controversial; only if MIC ≤ 2 mg/L. <b>Meropenem</b> is standard for serious ESBL infections (MERINO trial 2018).</p>
+<ul><li><b>Q: Why is meropenem preferred over piperacillin-tazobactam for ESBL?</b></li></ul>
+<p>A: MERINO trial (2018): pip-tazo inferior to meropenem for ESBL bacteraemia (30-day mortality 12.3% vs 3.7%). Inoculum effect makes pip-tazo less reliable; meropenem stable to most ESBLs and stable to AmpC.</p>
+<ul><li><b>Q: BLING-III trial (2024)?</b></li></ul>
+<p>A: <b>Continuous vs intermittent β-lactam infusion</b> in critically ill; continuous <b>reduced 90-day mortality</b> (25% vs 28.7%) and increased ICU-free days.</p>
+<ul><li><b>Q: ISEcp1?</b></li></ul>
+<p>A: Insertion sequence upstream of <b>blaCTX-M</b> providing a strong promoter → high-level expression. Critical for CTX-M mobilisation and global spread.</p>
+<ul><li><b>Q: Examples of resistance from environmental origin?</b></li></ul>
+<p>A: <b>NDM-1</b> (Indian subcontinent water, sewage); <b>CTX-M</b> (water systems); <b>mcr-1</b> (livestock, water); **azole-R *Aspergillus*** (agricultural fungicides).</p>
+<ul><li><b>Q: Examples of AMR economic impact?</b></li></ul>
+<p>A: 1.27M deaths 2019; 10M projected 2050; World Bank GDP loss 1.1–3.8% by 2050; 28M pushed into poverty; US excess healthcare cost $20B+/year.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: D</b> — Avibactam is a diazabicyclooctane (DBO) β-lactamase inhibitor that forms a reversible covalent carbamoyl bond with the active-site serine of <b>serine</b> β-lactamases (Class A KPC, Class C AmpC, Class D OXA-48). It does <b>not</b> inhibit Class B metallo-β-lactamases (NDM, VIM, IMP), which use zinc for catalysis. EDTA (A) inhibits MBLs; clavulanic acid (B), tazobactam (C), sulbactam (E) inhibit some Class A enzymes but not KPC/OXA-48.</li></ol>
+<ol><li><b>Correct: A</b> — A positive Carba NP confirms any carbapenemase. <b>EDTA disc synergy negative</b> (no zone enhancement) rules out MBL (NDM, VIM, IMP) — because EDTA inhibits MBLs, so adding EDTA restores meropenem activity and creates a larger zone. This leaves a <b>serine carbapenemase</b>. KPC is the most common globally (US, China, Italy, Greece). OXA-48 (C) is also a serine carbapenemase but typically has <b>low-level</b> MICs (1–2 mg/L, not 8 mg/L) and is more common in Turkey, North Africa, Europe. The high meropenem MIC (8 mg/L) and ertapenem R are more typical of KPC.</li></ol>
+<ol><li><b>Correct: B</b> — ESBLs are characteristically <b>inhibited by clavulanic acid</b> (a Class A enzyme). This is the basis of the <b>double disc synergy test (DDST)</b> and the <b>combination disc test</b>. AmpC is <b>NOT</b> inhibited by clavulanic acid (but IS inhibited by boronic acid and cloxacillin). Both ESBL and AmpC hydrolyse ceftriaxone (A, D), aztreonam (E), and can be plasmid-mediated (C).</li></ol>
+<ol><li><b>Correct: C</b> — The phenotype of <i>S. aureus</i> resistant to flucloxacillin (and cefoxitin) but susceptible to vancomycin, teicoplanin, daptomycin, linezolid, and ceftaroline is classic <b>MRSA</b>. mecA encodes PBP2a, a low-affinity PBP. β-lactamase hyperproduction (A) would not confer flucloxacillin resistance (it does for penicillin only). NorA (E) is an efflux pump for quinolones/biocides, not β-lactams.</li></ol>
+<ol><li><b>Correct: C</b> — <b>vanA</b> confers <b>high-level vancomycin (MIC &gt; 256 mg/L) AND teicoplanin (MIC &gt; 16 mg/L) resistance</b> via D-Ala-D-Lac modification, on Tn1546 transposon. <b>vanB</b> is vancomycin variable but teicoplanin susceptible. <b>vanC</b> is intrinsic to <i>E. gallinarum/casseliflavus</i> with low-level vancomycin R and D-Ala-D-Ser. vanD and vanE are rare.</li></ol>
+<ol><li><b>Correct: C</b> — <b>Pre-XDR-TB (WHO 2021)</b> is MDR/RR-TB (resistant to at least INH + RIF, or RIF only) plus resistance to any fluoroquinolone. <b>XDR-TB (WHO 2021)</b> is MDR/RR-TB + resistance to any FQ + ≥ 1 Group A drug (bedaquiline, linezolid).</li></ol>
+<ol><li><b>Correct: B</b> — <b>mcr-1</b> encodes a <b>phosphoethanolamine (pEtN) transferase</b> that modifies lipid A of LPS by adding pEtN, reducing its negative charge and decreasing the binding affinity of colistin (a cationic peptide). It is <b>plasmid-mediated</b> (alarming for spread). 16S rRNA methyltransferases (A) confer pan-aminoglycoside resistance. mcr-1 (E) is a gene, not a target.</li></ol>
+<ol><li><b>Correct: C</b> — **Carbapenem-resistant <i>Acinetobacter baumannii</i><b> is in the </b>Critical<b> priority tier. MRSA (A) and VRE (B) are </b>High<b> priority. PRSP (D) and Amp-R H. flu (E) are </b>Medium** priority.</li></ol>
+<ol><li><b>Correct: C</b> — <b>Aztreonam-avibactam</b> is the best treatment for NDM-1 (metallo)-producing Enterobacterales. Aztreonam is <b>stable to NDM</b> (NDM doesn't hydrolyse the monobactam ring); avibactam protects aztreonam from co-existing ESBLs, AmpC, and OXA-48 carbapenemases. Ceftazidime-avibactam (A) does NOT inhibit NDM (MBL). Meropenem (B) is hydrolysed by NDM. Imipenem-relebactam (D) does not inhibit NDM.</li></ol>
+<ol><li><b>Correct: C</b> — WHO AWaRe target is that <b>≥ 60% of total antibiotic consumption</b> should come from the <b>Access</b> group. This is one of the WHO 13th General Programme of Work targets for 2023 and 2030 AMR goals.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: C</b> — The phenotype (resistance to all cephalosporins and aztreonam but susceptibility to meropenem, pip-tazo, and ciprofloxacin) plus a <b>positive DDST</b> (clavulanic acid inhibits the enzyme, producing synergy between co-amoxiclav and cephalosporin disc) is classic for an <b>ESBL</b> (likely CTX-M). AmpC (A) would not be inhibited by clavulanic acid (DDST negative). KPC (B) and NDM (D) would confer carbapenem resistance. OXA-48 (E) gives weak carbapenemase activity with low MICs.</li></ol>
+<ol><li><b>Correct: C</b> — <b>Linezolid</b> is the most appropriate antibiotic. The isolate is VRE (vancomycin R), teicoplanin S (so vanB phenotype, but still VRE; not relevant as teicoplanin monotherapy for bacteraemia is suboptimal), daptomycin MIC 2 (susceptible per CLSI ≤ 4, but in VRE bacteraemia higher dose daptomycin may be considered, and the dose given (E) is standard, not high). For VRE bacteraemia, linezolid 600 mg IV/PO BD is standard, particularly if daptomycin MIC at the upper limit.</li></ol>
+<ol><li><b>Correct: C</b> — Rifampicin-resistant TB on Xpert MTB/RIF = <b>MDR-TB</b> at minimum. Initial MDR-TB regimen should include <b>bedaquiline (Group A), linezolid (Group A), levofloxacin/moxifloxacin (Group A — but resistance must be ruled out), clofazimine (Group B), and cycloserine/terizidone (Group B)</b>. Standard 2HRZE/4HR (A) will fail because of RIF resistance. Adding levofloxacin to a failing RIF/INH regimen (B) is insufficient. Streptomycin/amikacin/capreomycin (E) are not Group A.</li></ol>
+<ol><li><b>Correct: C</b> — This is <b>XDR typhoid</b> (resistant to ampicillin, chloramphenicol, TMP-SMX, ciprofloxacin, <b>AND</b> ceftriaxone) from Pakistan. <b>Azithromycin</b> 1 g PO day 1 then 500 mg OD for 5–7 days is the most appropriate oral therapy. Ciprofloxacin (A) and ceftriaxone (B) are resistant. Co-trimoxazole (D) and amoxicillin (E) are also resistant.</li></ol>
+<ol><li><b>Correct: C</b> — For CRAB VAP, <b>high-dose ampicillin-sulbactam (9 g/day)</b> (sulbactam has intrinsic activity against <i>A. baumannii</i> and survives many of its β-lactamases) <b>plus</b> colistin (or polymyxin B) is recommended. Monotherapy with colistin (A) is associated with high failure; polymyxin B monotherapy (B) similarly. Tigecycline (D) should be <b>avoided in VAP</b> (poor lung penetration, black-box mortality warning). Cefiderocol (E) had increased mortality in CRAB subgroup in CREDIBLE-CR.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Antimicrobial Resistance is a 🔴 Must Know topic for FCPS/MRCP.</b></p>
+<p><b>Key takeaway:</b> AMR is one of the top 10 global public-health threats (1.27M deaths 2019, 10M projected 2050). Five canonical mechanisms — enzymatic inactivation, target modification, efflux, reduced permeability, and bypass. The β-lactamase Ambler classification (A serine/ESBL/KPC, B metallo/NDM/VIM/IMP, C AmpC, D OXA-48) is the cornerstone. Critical distinction: <b>avibactam inhibits KPC, AmpC, OXA-48 but NOT NDM (MBL); aztreonam is uniquely stable to NDM and used in aztreonam-avibactam</b>. MRSA (mecA→PBP2a) and VRE (vanA/vanB→D-Ala-D-Lac) are essential Gram-positive resistance paradigms. CRE/CRAB/CR-PA, MDR/XDR-TB, and plasmid-mediated mcr-1 complete the picture. Detection uses phenotypic (Carba NP, mCIM/eCIM, DDST, boronic acid, EDTA disc) and genotypic (PCR, Xpert Carba-R, WGS) methods. The WHO AWaRe classification (Access ≥ 60%), GLASS surveillance, One Health approach, novel BLBLIs (ceftazidime-avibactam, meropenem-vaborbactam, aztreonam-avibactam, sulbactam-durlobactam, cefiderocol), and vaccines are key global responses.</p>
+<p><b>Exam focus:</b> β-lactamase Ambler classes and inhibitor profiles (especially avibactam inhibits KPC but NOT NDM); ESBL vs AmpC vs carbapenemase; MRSA (mecA→PBP2a); VRE (vanA vs vanB; D-Lac vs D-Ser); CRE definition and mechanism-based treatment; MDR/XDR-TB (WHO 2021); mcr-1; WHO priority pathogens; AWaRe; GLASS; One Health; Carba NP and other detection methods; new BLBLIs and their spectra.</p>
+<p><b>Clinical relevance:</b> Identify resistance mechanisms (Carba NP, mCIM/eCIM, PCR) to guide <b>mechanism-based therapy</b> (KPC → ceftazidime-avibactam or meropenem-vaborbactam; NDM → aztreonam-avibactam or cefiderocol; OXA-48 → ceftazidime-avibactam; CRAB → high-dose ampicillin-sulbactam or sulbactam-durlobactam). Apply <b>IPC contact precautions</b> for all MDR organism carriers/infected patients. Embed <b>stewardship (5 Ds, 48–72 h review, AWaRe)</b> to reduce selection pressure. Support <b>surveillance (GLASS, EARS-Net)</b> and <b>One Health</b> interventions (reduce agricultural use, environmental contamination). Promote <b>vaccines</b> to reduce infections and AMR.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | Antimicrobial Resistance: Mechanisms &amp; Epidemiology</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antimicrobial Resistance Mechanisms Epidemiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

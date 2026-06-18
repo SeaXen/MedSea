@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nutrigenomics Functional Foods — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.7. SPECIAL TOPICS</span>
+      <div class="h1">Nutrigenomics Functional Foods</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define nutrigenomics: gene-nutrient interactions affecting individual response to diet</li><li>[ ] Recognise key nutrigenomic examples: MTHFR C677T (folate), MTHFD1, lactase persistence (LCT), HFE C282Y (haemochromatosis), APOE4 (Alzheimer), CYP1A2 (caffeine)</li><li>[ ] Define functional foods: foods/ingredients with health benefits beyond basic nutrition</li><li>[ ] State functional food categories: probiotics, prebiotics, synbiotics, omega-3 PUFA, plant sterols/stanols, polyphenols, fibre, vitamins/minerals</li><li>[ ] Recognise evidence: probiotics (AAD, C. difficile, IBS); omega-3 (CVD, pregnancy); plant sterols (↓LDL); polyphenols (Mediterranean)</li><li>[ ] State personalised nutrition: genetics + microbiome + phenotype; nutrigenetic testing (limited clinical use)</li><li>[ ] Define nutrigenetics vs nutrigenomics: nutrigenetics = how genes affect nutrient response; nutrigenomics = how nutrients affect gene expression</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Nutrigenomics**</td><td>Study of how nutrients affect gene expression (mRNA, protein, metabolites)</td></tr><tr><td>**Nutrigenetics**</td><td>Study of how genetic variation affects individual response to nutrients</td></tr><tr><td>**Personalised Nutrition**</td><td>Tailored dietary advice based on genetics, microbiome, phenotype, lifestyle</td></tr><tr><td>**Functional Food**</td><td>Food/ingredient providing health benefit beyond basic nutrition (probiotics, omega-3, plant sterols)</td></tr><tr><td>**Nutraceutical**</td><td>Functional food component isolated and sold as supplement (e.g., fish oil capsules)</td></tr><tr><td>**Probiotic**</td><td>Live microorganisms (Lactobacillus, Bifidobacterium) that confer health benefit; adequate amounts</td></tr><tr><td>**Prebiotic**</td><td>Non-digestible food ingredient (FOS, GOS, inulin) that stimulates growth of beneficial gut bacteria</td></tr><tr><td>**Synbiotic**</td><td>Probiotic + prebiotic combination</td></tr><tr><td>**Postbiotic**</td><td>Bioactive compounds produced by probiotics (SCFA, bacteriocins, peptides)</td></tr><tr><td>**Methylenetetrahydrofolate Reductase (MTHFR)**</td><td>Enzyme: 5,10-methylene-THF → 5-methyl-THF; C677T polymorphism (↓activity) → ↑homocysteine; needs folate</td></tr><tr><td>**Lactase Persistence (LCT)**</td><td>C/T-13910 polymorphism; T = lactase persists (Northern European); C = adult hypolactasia</td></tr><tr><td>**HFE (Haemochromatosis)**</td><td>C282Y mutation → ↓hepcidin → Fe overload; avoid iron supplements</td></tr><tr><td>**APOE (Apolipoprotein E)**</td><td>APOE4 = ↑Alzheimer risk, ↑LDL; APOE2 = protective, but ↑type III hyperlipidaemia</td></tr><tr><td>**CYP1A2 (Cytochrome P450)**</td><td>Caffeine metabolism; *1A/*1F = fast; *1A/*1A = slow (CYP1A2 slow metaboliser)</td></tr><tr><td>**MTHFD1 G1958A**</td><td>Folate metabolism; A allele = ↑risk of NTD, CVD</td></tr><tr><td>**FUT2 (Secretor Status)**</td><td>Determines ABO antigens in secretions; B allele = non-secretor; affects gut microbiome, B12</td></tr><tr><td>**APOA2 (Saturated Fat Response)**</td><td>T allele (TT) = ↑BMI with high SFA; CC = no effect</td></tr><tr><td>**TCN2 (Transcobalamin II)**</td><td>B12 transport; some variants affect B12 status</td></tr><tr><td>**Gut Microbiome**</td><td>10¹⁴ bacteria; influences metabolism, immunity, inflammation; diet shapes composition</td></tr><tr><td>**SCFA (Short-Chain Fatty Acids)**</td><td>Acetate, propionate, butyrate; from fibre fermentation; ↓inflammation, gut health</td></tr><tr><td>**Planetary Health Diet (EAT-Lancet)**</td><td>Flexitarian; ↓CVD, ↓environmental impact; red meat <14 g/day</td></tr><tr><td>**Plant Sterols/Stanols**</td><td>↓LDL 7-10% at 2 g/day; competitive inhibition of cholesterol absorption</td></tr><tr><td>**Polyphenols**</td><td>Flavonoids, lignans, stilbenes; antioxidants, anti-inflammatory</td></tr><tr><td>**Resveratrol**</td><td>Red wine, grapes, peanuts; SIRT1 activator; cardioprotective (controversial)</td></tr><tr><td>**Omega-3 PUFA**</td><td>EPA, DHA (fish); ALA (flax, chia); cardiovascular, neuroprotection, anti-inflammatory</td></tr><tr><td>**Lycopene**</td><td>Tomatoes, watermelon; antioxidant; prostate cancer prevention</td></tr><tr><td>**Curcumin**</td><td>Turmeric; anti-inflammatory (NF-κB, COX-2 inhibition); bioavailability issues</td></tr><tr><td>**Sulforaphane**</td><td>Cruciferous vegetables; Nrf2 activator; antioxidant, anti-cancer</td></tr><tr><td>**EGCG (Epigallocatechin Gallate)**</td><td>Green tea; antioxidant; cardioprotective, anti-cancer</td></tr><tr><td>**Vitamin D Receptor (VDR)**</td><td>Genetic variation affects response to vitamin D supplementation</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Nutrigenomics &amp; Nutrigenetics</div>
+<p><b>Definitions:</b></p>
+<ul><li><b>Nutrigenomics:</b> How nutrients affect gene expression</li><li><b>Nutrigenetics:</b> How genes affect nutrient response</li><li><b>Personalised nutrition:</b> Integration of genetic, microbiome, phenotypic data for individualised diet</li></ul>
+<p><b>Key Examples:</b></p>
+<table class="ctable"><tr><th>Gene/Nutrient</th><th>Effect</th><th>Clinical</th></tr><tr><td>----------------</td><td>--------</td><td>----------</td></tr><tr><td>**MTHFR C677T**</td><td>TT genotype: ↓enzyme activity (70%); ↑homocysteine</td><td>Folate supplementation 800 µg-1 mg/day (especially in pregnancy); methylfolate preferred</td></tr><tr><td>**MTHFR A1298C**</td><td>Compound heterozygote C677T/A1298C: severe</td><td>Folate supplementation</td></tr><tr><td>**Lactase Persistence (LCT)**</td><td>T-13910 (C/T): T = lactase persists; C = adult hypolactasia</td><td>Population-specific (Northern European 90% persistent; Asian, African 10-30%)</td></tr><tr><td>**HFE C282Y**</td><td>Homozygous: ↓hepcidin → Fe overload</td><td>Avoid iron supplements; phlebotomy if HH</td></tr><tr><td>**HFE H63D**</td><td>Compound heterozygote C282Y/H63D: mild Fe overload</td><td>Monitor</td></tr><tr><td>**APOE4**</td><td>↑Alzheimer risk (3-15x); ↑LDL; ↓response to statins</td><td>Mediterranean diet; cognitive screening; aggressive CVD prevention</td></tr><tr><td>**CYP1A2 *1F**</td><td>Fast metaboliser; caffeine metabolised quickly</td><td>Tolerates caffeine; less CVD risk with coffee</td></tr><tr><td>**CYP1A2 *1A**</td><td>Slow metaboliser; caffeine slow clearance</td><td>Limit caffeine; may ↑CVD risk with high intake</td></tr><tr><td>**MTHFD1 G1958A**</td><td>Folate metabolism; A = ↑NTD, CVD</td><td>Folate supplementation</td></tr><tr><td>**FUT2 (Secretor)**</td><td>Non-secretor (B): ↑vitamin B12 deficiency, different microbiome</td><td>Monitor B12</td></tr><tr><td>**APOA2**</td><td>T allele (TT): ↑BMI with high SFA</td><td>Limit SFA intake</td></tr><tr><td>**TCN2**</td><td>B12 transport variants</td><td>Monitor B12; supplement if low</td></tr><tr><td>**VDR (Vitamin D Receptor)**</td><td>BsmI, FokI, TaqI, ApaI</td><td>Variable response to vit D; some need more supplementation</td></tr><tr><td>**CYP2R1**</td><td>25-hydroxylase variant</td><td>Lower 25(OH)D; need more vit D</td></tr><tr><td>**CYP24A1**</td><td>24-hydroxylase (catabolism)</td><td>Increased catabolism in some variants</td></tr><tr><td>**APOC3**</td><td>Variant affects TG response to diet; Mediterranean diet</td><td>Personalised diet</td></tr></table>
+<div class="sub-h">Section 2: Functional Foods Categories</div>
+<table class="ctable"><tr><th>Category</th><th>Examples</th><th>Mechanism</th><th>Evidence</th></tr><tr><td>----------</td><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Probiotics**</td><td>Lactobacillus, Bifidobacterium, Saccharomyces</td><td>Restore microbiome; antimicrobial peptides; immune modulation</td><td>AAD, C. difficile, IBS, pouchitis</td></tr><tr><td>**Prebiotics**</td><td>FOS, GOS, inulin, resistant starch</td><td>Stimulate beneficial bacteria; SCFA production</td><td>IBS, colon health, calcium absorption</td></tr><tr><td>**Synbiotics**</td><td>Probiotic + prebiotic</td><td>Synergistic</td><td>IBS, UC, post-antibiotic</td></tr><tr><td>**Omega-3 PUFA**</td><td>Fish oil (EPA, DHA); flax, chia (ALA)</td><td>↓Triglycerides, anti-inflammatory, antiplatelet, membrane fluidity</td><td>CVD (REDUCE-IT), pregnancy, RA, depression</td></tr><tr><td>**Plant sterols/stanols**</td><td>Margarine (Benecol), supplements</td><td>Competitive inhibition of cholesterol absorption</td><td>↓LDL 7-10% (2 g/day)</td></tr><tr><td>**Polyphenols**</td><td>Flavonoids, resveratrol, EGCG, quercetin, anthocyanins</td><td>Antioxidant, anti-inflammatory, NO, microbiome</td><td>CVD, neuroprotection, anti-cancer</td></tr><tr><td>**Dietary fibre**</td><td>Soluble (β-glucan, psyllium, pectin)</td><td>↓LDL, ↓glucose, SCFA, gut health</td><td>CVD, T2DM, IBS, CRC</td></tr><tr><td>**Phytosterols**</td><td>Sitosterol, campesterol, stigmasterol</td><td>↓Cholesterol absorption</td><td>↓LDL</td></tr><tr><td>**Soy protein**</td><td>Isoflavones (genistein, daidzein)</td><td>Phytoestrogen, ↓LDL</td><td>CVD, menopausal symptoms</td></tr><tr><td>**Lycopene**</td><td>Tomatoes, watermelon</td><td>Antioxidant</td><td>Prostate cancer (some evidence)</td></tr><tr><td>**Curcumin**</td><td>Turmeric</td><td>Anti-inflammatory (NF-κB, COX-2); Nrf2</td><td>RA, IBD, cancer (bioavailability issue)</td></tr><tr><td>**Sulforaphane**</td><td>Broccoli sprouts</td><td>Nrf2 activator; anti-cancer</td><td>Cancer prevention</td></tr><tr><td>**EGCG**</td><td>Green tea</td><td>Antioxidant; ↓COX-2; ↑AMPK</td><td>CVD, cancer, metabolic</td></tr></table>
+<div class="sub-h">Section 3: Probiotics — Evidence</div>
+<p><b>Established Indications:</b></p>
+<ul><li><b>Antibiotic-associated diarrhoea (AAD):</b> Saccharomyces boulardii, Lactobacillus rhamnosus GG; ↓risk 50%</li><li><b>Clostridioides difficile:</b> S. boulardii, L. rhamnosus GG; adjunct to vancomycin; ↓recurrence</li><li><b>Acute infectious diarrhoea:</b> L. rhamnosus GG, S. boulardii; ↓duration ~1 day</li><li><b>Pouchitis:</b> VSL#3 (high-dose multi-strain)</li><li><b>Ulcerative colitis (mild-moderate):</b> VSL#3, E. coli Nissle 1917; maintenance</li><li><b>IBS:</b> Bifidobacterium infantis 35624, B. lactis; some symptom benefit</li><li><b>NEC (preterm infants):</b> Probiotics ↓NEC (Bifidobacterium); controversy</li><li><b>Hepatic encephalopathy:</b> Not standard; some benefit</li></ul>
+<p><b>Common Probiotic Strains:</b></p>
+<ul><li><b>Lactobacillus rhamnosus GG (LGG):</b> AAD, acute diarrhoea</li><li><b>Saccharomyces boulardii:</b> AAD, C. difficile</li><li><b>Bifidobacterium infantis 35624:</b> IBS</li><li><b>VSL#3 (multi-strain, high dose):</b> UC, pouchitis</li><li><b>E. coli Nissle 1917 (Mutaflor):</b> UC maintenance</li><li><b>Lactobacillus reuteri DSM 17938:</b> Infant colic, AAD</li><li><b>Bifidobacterium longum 35624:</b> IBS</li><li><b>Saccharomyces boulardii CNCM I-745:</b> AAD, C. difficile</li><li><b>Lactobacillus plantarum 299v:</b> IBS</li></ul>
+<p><b>Safety:</b></p>
+<ul><li>Generally safe</li><li>Caution: immunocompromised, central line, short bowel, critically ill (rare sepsis, fungemia)</li><li>S. boulardii: avoid in central lines (fungemia risk)</li></ul>
+<div class="sub-h">Section 4: Omega-3 PUFA</div>
+<p><b>Sources:</b></p>
+<ul><li><b>EPA, DHA:</b> Oily fish (salmon, mackerel, sardines); fish oil supplements</li><li><b>ALA:</b> Flax, chia, hemp, walnuts; converted to EPA/DHA (~5-10% efficiency)</li></ul>
+<p><b>Evidence:</b></p>
+<ul><li><b>CVD (REDUCE-IT):</b> Icosapent ethyl 4 g/day + statin ↓CVD events 25% (TG &gt;1.5 mmol/L, ASCVD or DM)</li><li><b>Pregnancy:</b> DHA 200-300 mg/day (foetal brain development; ACOG)</li><li><b>RA:</b> ↓pain, ↓NSAID use</li><li><b>Pregnancy (preterm):</b> ↓preterm birth (Cochrane)</li><li><b>Cognition:</b> Mixed; no clear benefit in normal adults; may help in MCI</li><li><b>Dry eye (DREAM trial):</b> ω-3 may not help (or modest benefit)</li><li><b>Depression:</b> Some benefit (adjunct); mixed evidence</li></ul>
+<p><b>Dose:</b></p>
+<ul><li>1 g/day EPA+DHA for general health</li><li>2-4 g/day for hypertriglyceridaemia</li><li>Icosapent ethyl 4 g/day for ASCVD with hypertriglyceridaemia (REDUCE-IT)</li><li>200-300 mg DHA in pregnancy</li></ul>
+<p><b>Cautions:</b></p>
+<ul><li>Antiplatelet effect (high dose with anticoagulants)</li><li>Fishy burp; GI upset</li><li>Heavy metal contamination (mercury, PCBs) — choose quality</li><li>Vitamin A toxicity in polar bear/whale liver</li></ul>
+<div class="sub-h">Section 5: Personalised Nutrition</div>
+<p><b>Layers:</b></p>
+<ol><li><b>Genetic:</b> MTHFR, HFE, APOE, LCT (limited clinical use)</li><li><b>Microbiome:</b> Composition, function (Metagenomics, 16S rRNA)</li><li><b>Phenotype:</b> Metabolomics (lipids, amino acids), proteomics</li><li><b>Lifestyle:</b> Diet diary, exercise, sleep, stress</li><li><b>Clinical:</b> Disease, medications, age, sex</li></ol>
+<p><b>Applications:</b></p>
+<ul><li><b>Direct-to-consumer genetic testing</b> (e.g., 23andMe, Ancestry): APOE, MTHFR, LCT; not always evidence-based</li><li><b>Microbiome testing:</b> Research; not standard clinical</li><li><b>Continuous glucose monitoring (CGM):</b> Personalised nutrition in T2DM/prediabetes</li><li><b>Mediterranean diet</b> (best evidence regardless of genetics)</li><li><b>BANT (British Association for Nutrition and Lifestyle Medicine)</b> registered nutritionists</li></ul>
+<div class="sub-h">Section 6: Clinical Applications</div>
+<p><b>Cardiovascular Disease:</b></p>
+<ul><li><b>Mediterranean diet</b> (best evidence)</li><li><b>Plant sterols</b> ↓LDL 7-10% (2 g/day)</li><li><b>Omega-3 (REDUCE-IT)</b> in ASCVD with hypertriglyceridaemia</li><li><b>Soluble fibre</b> (psyllium, β-glucan) ↓LDL 5-10%</li><li><b>Soy protein</b> ↓LDL 4-5%</li><li><b>Nuts</b> 30 g/day ↓CVD 30%</li></ul>
+<p><b>Diabetes:</b></p>
+<ul><li><b>Low-GI, high-fibre</b> (25-30 g/day)</li><li><b>Mediterranean diet</b> (best evidence for CV outcomes)</li><li><b>Prebiotic fibre</b> (inulin, β-glucan) for glycaemic control</li><li><b>Cinnamon</b> (Ceylon; modest HbA1c effect)</li><li><b>Vinegar</b> (pre-meal; ↓postprandial glucose)</li></ul>
+<p><b>Cancer Prevention:</b></p>
+<ul><li><b>WCRF recommendations</b> (weight, exercise, plant foods)</li><li><b>Cruciferous vegetables</b> (sulforaphane; Nrf2)</li><li><b>Tomatoes/lycopene</b> (prostate)</li><li><b>Green tea</b> (EGCG)</li><li><b>Avoid</b> processed meat, alcohol, aflatoxin</li></ul>
+<p><b>GI Health:</b></p>
+<ul><li><b>Probiotics</b> for AAD, IBS, UC, pouchitis</li><li><b>Prebiotics</b> (FOS, GOS) for IBS, constipation</li><li><b>Synbiotics</b> in UC maintenance</li><li><b>Avoid</b> FODMAPs in IBS</li></ul>
+<p><b>Inflammation/Autoimmune:</b></p>
+<ul><li><b>Mediterranean diet</b> ↓inflammatory markers</li><li><b>Omega-3</b> in RA, IBD</li><li><b>Turmeric (curcumin)</b> (bioavailability)</li><li><b>Pre/probiotics</b> in IBD</li></ul>
+<p><b>Cognitive Function:</b></p>
+<ul><li><b>MIND diet</b> (Mediterranean-DASH Intervention for Neurodegenerative Delay)</li><li><b>Mediterranean</b> ↓cognitive decline</li><li><b>Fish</b> (omega-3) for brain</li><li><b>B vitamins</b> (B12, folate, B6); ↓homocysteine</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>60M, ASCVD, on statin, TG 2.5, LDL 1.8</td><td>**Icosapent ethyl 4 g/day** (REDUCE-IT) + Mediterranean diet</td><td>Hypertriglyceridaemia in ASCVD</td></tr><tr><td>30F, 2-week antibiotic course, develops diarrhoea</td><td>**S. boulardii 250-500 mg/day during antibiotics + 1 week after**</td><td>AAD prevention</td></tr><tr><td>70F, recurrent C. difficile, on vancomycin taper</td><td>**S. boulardii + LGG adjunct**; consider FMT if recurrent</td><td>C. difficile prevention</td></tr><tr><td>50M, MTHFR C677T homozygous, ↑homocysteine, depression</td><td>**Methylfolate 15 mg/day**; check B12, B6, B12</td><td>MTHFR + hyperhomocysteinaemia</td></tr><tr><td>45F, post-RYGB, ↓Hb, microcytic, normal ferritin</td><td>**Consider HFE C282Y testing** if HH risk; family screening</td><td>HH screening</td></tr><tr><td>35F, IBS, bloating, low-FODMAP partial response</td><td>**Probiotic (B. infantis 35624 or VSL#3)**; consider prebiotic</td><td>IBS management</td></tr><tr><td>40F, RR 200, 35 wk pregnant, vegetarian</td><td>**DHA 200-300 mg/day**; B12, iron, folate</td><td>Pregnancy nutrition</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Nutrigenetics (genes affect response) vs nutrigenomics (nutrients affect genes); key examples: MTHFR C677T (folate), LCT (lactose), HFE C282Y (Fe), APOE4 (Alzheimer); functional foods (probiotics, omega-3, plant sterols, polyphenols); probiotics for AAD, C. difficile, IBS; icosapent ethyl 4 g for ASCVD with hypertriglyceridaemia (REDUCE-IT) - <b>Common viva:</b> Probiotic strains and indications; omega-3 evidence; plant sterol mechanism; MTHFR management; functional food categories; personalised nutrition - <b>Exam trap:</b> Probiotic choice (strain matters); confusing nutrigenetics/nutrigenomics; not checking MTHFR in hyperhomocysteinaemia; recommending supplements without evidence</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Probiotics all same</td><td>**Strain matters**: LGG for AAD, S. boulardii for C. diff, B. infantis for IBS</td></tr><tr><td>Omega-3 prevents CVD</td><td>**REDUCE-IT specific (icosapent ethyl 4 g); STRENGTH/VITAL no benefit**</td></tr><tr><td>Plant sterols replace statins</td><td>**Adjunct** ↓LDL 7-10%; not substitute for statin</td></tr><tr><td>MTHFR + depression → L-methylfolate</td><td>**Severe MTHFR + hyperhomocysteinaemia; counsel**</td></tr><tr><td>S. boulardii safe always</td><td>**Avoid in central lines, immunocompromised** (fungemia)</td></tr><tr><td>Mediterranean diet not "functional food"</td><td>**Includes functional food components** (EVOO, fish, nuts, polyphenols)</td></tr><tr><td>Genetics → personalised diet</td><td>**Limited clinical use**; Mediterranean works for all; PREDIMED all subgroups</td></tr><tr><td>Curcumin cures inflammation</td><td>**Bioavailability issue**; modest evidence; piperine enhances absorption</td></tr><tr><td>Resveratrol = red wine = CVD</td><td>**Controversial**; alcohol cancer risk; pure resveratrol benefits unclear</td></tr><tr><td>Vitamin D supplementation universal</td><td>**VDR/CYP2R1/CYP24A1 variants**; tailored</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Nutrigenomics vs Nutrigenetics:</b> <b>N</b>utrients → <b>G</b>enes (nutrigenomics); <b>G</b>enes → <b>N</b>utrients (nutrigenetics)</li><li><b>MTHFR:</b> <b>M</b>ethylenetetrahydrofolate <b>R</b>eductase; C677T TT = severe; needs folate</li><li><b>HFE:</b> <b>H</b>FE <b>C</b>282Y = <b>C</b>irrhosis from <b>Fe</b>; avoid supplements</li><li><b>APOE4:</b> <b>A</b>lzheimer, <b>P</b>ostmenopausal <b>O</b>besity, <b>E</b>levated LDL</li><li><b>Probiotic strain:</b> <b>LGG</b> (AAD), <b>S. boulardii</b> (C. diff), <b>B. infantis</b> (IBS), <b>VSL#3</b> (UC/pouchitis)</li><li><b>Omega-3 (REDUCE-IT):</b> <b>I</b>cosapent <b>4 g/day</b>; ASCVD + hyperTG</li><li><b>Plant sterols:</b> <b>2 g/day ↓LDL 7-10%</b>; competitive cholesterol absorption inhibitor</li><li><b>Functional foods:</b> <b>P</b>re/pro/<b>S</b>ynbiotic, <b>O</b>mega-3, <b>P</b>lant sterols, <b>P</b>olyphenols, <b>F</b>ibre</li><li><b>MIND diet:</b> <b>M</b>editerranean-<b>D</b>ASH <b>I</b>ntervention for <b>N</b>euro<b>D</b>egenerative <b>D</b>elay</li><li><b>Prebiotic:</b> <b>F</b>OS, <b>G</b>OS, <b>I</b>nulin, <b>R</b>esistant starch</li><li><b>Probiotic risk:</b> <b>S</b>epsis (immunocompromised), <b>F</b>ungemia (S. boulardii + central line)</li><li><b>Personalised nutrition layers:</b> <b>G</b>enetics, <b>M</b>icrobiome, <b>P</b>henotype, <b>L</b>ifestyle, <b>C</b>linical</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Nutrigenomics &amp; Functional Foods)) Nutrigenomics Nutrients affect genes MTHFR C677T (folate) HFE C282Y (Fe) LCT (lactose) APOE4 (Alzheimer) Functional Foods Probiotics Prebiotics Omega-3 Plant sterols Polyphenols Probiotics LGG (AAD) S. boulardii (C. diff) B. infantis (IBS) VSL#3 (UC) Omega-3 REDUCE-IT (icosapent) EPA/DHA Pregnancy Personalised Genetics Microbiome Phenotype Lifestyle </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Nutrigenomics: nutrients affect genes; Nutrigenetics: genes affect nutrients</li><li>MTHFR C677T: methylfolate; LCT: lactase persistence; HFE C282Y: Fe overload</li><li>Functional foods: probiotics, prebiotics, omega-3, plant sterols, polyphenols, fibre</li><li>Probiotic strains: LGG (AAD), S. boulardii (C. diff), B. infantis (IBS), VSL#3 (UC)</li><li>REDUCE-IT: icosapent ethyl 4 g/day for ASCVD + hypertriglyceridaemia</li><li>Plant sterols 2 g/day ↓LDL 7-10%</li><li>Mediterranean diet: best evidence for personalised nutrition</li><li>SCFA from fibre: gut health, anti-inflammatory</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Nutrigenetics/nutrigenomics; MTHFR C677T, LCT, HFE, APOE; functional foods categories; probiotic strains and indications (LGG, S. boulardii, B. infantis, VSL#3); omega-3 (REDUCE-IT, pregnancy); plant sterols ↓LDL 7-10%; polyphenols</td></tr><tr><td>**Should Know 🟡**</td><td>CYP1A2 (caffeine); MTHFD1; FUT2 (secretor); APOA2 (saturated fat); VDR variants; prebiotic types; synbiotic; postbiotic; resveratrol controversy; MIND diet; turmeric; sulforaphane</td></tr><tr><td>**Nice to Know 🟢**</td><td>Direct-to-consumer genetic testing limitations; microbiome testing; CGM personalisation; EAT-Lancet planetary health diet; specific carotenoids; polyphenols mechanism</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Probiotic strain specifics</li><li>[ ] REDUCE-IT trial design</li><li>[ ] MTHFR management detail</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Nutrigenomics and functional foods in clinical practice"</p>
+<ul><li>Nutrigenomics: nutrients affect gene expression; Nutrigenetics: genes affect nutrient response</li><li>Examples: MTHFR C677T (folate metabolism, hyperhomocysteinaemia), LCT (lactose persistence), HFE C282Y (Fe overload, HH), APOE4 (Alzheimer risk, lipid response)</li><li>Functional food categories: probiotics, prebiotics, synbiotics, omega-3, plant sterols, polyphenols, fibre</li><li>Probiotic strain matters: LGG (AAD), S. boulardii (C. difficile), B. infantis (IBS), VSL#3 (UC)</li><li>Omega-3: REDUCE-IT icosapent ethyl 4 g/day (ASCVD + hypertriglyceridaemia); pregnancy 200-300 mg DHA</li><li>Plant sterols 2 g/day ↓LDL 7-10% (competitive cholesterol absorption inhibitor)</li><li>Personalised nutrition: genetics + microbiome + phenotype; Mediterranean best evidence regardless of genetics</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Probiotics in Clinical Practice" &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Strain&lt;/th&gt;&lt;th&gt;Indication&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Lactobacillus rhamnosus GG (LGG)</b>&lt;/td&gt;&lt;td&gt;AAD, acute infectious diarrhoea&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Saccharomyces boulardii</b>&lt;/td&gt;&lt;td&gt;AAD, C. difficile prevention (avoid central line)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Bifidobacterium infantis 35624</b>&lt;/td&gt;&lt;td&gt;IBS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>VSL#3</b> (multi-strain, high-dose)&lt;/td&gt;&lt;td&gt;UC, pouchitis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>E. coli Nissle 1917</b>&lt;/td&gt;&lt;td&gt;UC maintenance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Lactobacillus reuteri DSM 17938</b>&lt;/td&gt;&lt;td&gt;Infant colic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Bifidobacterium longum</b>&lt;/td&gt;&lt;td&gt;IBS&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "Differentiate nutrigenomics from nutrigenetics." "A: <b>Nutrigenomics:</b> How nutrients affect gene expression (e.g., fish oil ↑PPAR-α → ↑β-oxidation; vitamin D binds VDR → gene transcription). <b>Nutrigenetics:</b> How genetic variation affects individual response to nutrients (e.g., MTHFR C677T TT → ↑homocysteine → need folate; APOE4 → ↑Alzheimer risk, ↓statin response; LCT C/T-13910 → lactase persistence; HFE C282Y → Fe overload). <b>Personalised nutrition:</b> Integration of genetics, microbiome, phenotype, lifestyle for individualised diet."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 65M, ASCVD, on statin, TG 2.8 mmol/L, LDL 1.6 mmol/L, HbA1c 5.9%, on metformin. "<b>Action: 1) Icosapent ethyl 2 g BD</b> (REDUCE-IT: 4 g/day; ASCVD + hypertriglyceridaemia); 2) <b>Mediterranean diet</b>; 3) <b>Plant sterols 2 g/day</b> (Benecol; ↓LDL adjunct); 4) <b>Soluble fibre</b> (psyllium, oats; ↓LDL); 5) <b>Nuts 30 g/day</b>; 6) <b>Omega-3</b> (already); 7) <b>Diabetes control</b> (HbA1c target &lt;7%); 8) <b>Weight loss</b> if overweight; 9) <b>Exercise</b> 150 min/wk; 10) <b>Monitor</b>: lipid panel q3-6m, TG, LFT, INR (with warfarin)."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min</div>
+<ul><li><b>Nutrigenomics:</b> Nutrients → genes; <b>Nutrigenetics:</b> Genes → nutrients</li><li><b>MTHFR C677T:</b> Folate metabolism; methylfolate supplement</li><li><b>HFE C282Y:</b> Fe overload (HH); avoid supplements</li><li><b>LCT:</b> Lactase persistence (C/T-13910)</li><li><b>APOE4:</b> Alzheimer, ↑LDL</li><li><b>Functional foods:</b> Pro/pre/synbiotic, Omega-3, Plant sterols, Polyphenols, Fibre</li><li><b>Probiotic strains:</b> LGG (AAD), S. boulardii (C. diff), B. infantis (IBS), VSL#3 (UC)</li><li><b>REDUCE-IT:</b> Icosapent ethyl 4 g/day; ASCVD + hypertriglyceridaemia</li><li><b>Plant sterols:</b> 2 g/day ↓LDL 7-10%</li><li><b>Personalised nutrition:</b> Genetics + Microbiome + Phenotype + Lifestyle</li><li><b>Mediterranean diet:</b> Best evidence for all; regardless of genetics</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Nutrigenetics is the study of:</b></li></ol>
+<p>A. How nutrients affect gene expression B. <b>How genetic variation affects individual response to nutrients</b> C. How genes affect metabolism exclusively D. How diet affects the microbiome E. How food affects brain function</p>
+<ol><li><b>MTHFR C677T TT genotype requires:</b></li></ol>
+<p>A. Vitamin B12 supplementation B. <b>Folate (or methylfolate) supplementation</b> C. Iron restriction D. Calcium supplementation E. Vitamin C supplementation</p>
+<ol><li><b>HFE C282Y homozygous causes:</b></li></ol>
+<p>A. Wilson's disease B. <b>Hereditary haemochromatosis (iron overload)</b> C. Cystic fibrosis D. Phenylketonuria E. α1-antitrypsin deficiency</p>
+<ol><li><b>Established probiotic for antibiotic-associated diarrhoea (AAD) prevention:</b></li></ol>
+<p>A. Escherichia coli Nissle B. VSL#3 C. <b>Saccharomyces boulardii OR Lactobacillus rhamnosus GG</b> D. Bifidobacterium infantis 35624 E. Lactobacillus reuteri</p>
+<ol><li><b>REDUCE-IT trial: icosapent ethyl 4 g/day in:</b></li></ol>
+<p>A. Heart failure B. Atrial fibrillation C. <b>ASCVD with hypertriglyceridaemia (already on statin)</b> D. Acute MI E. Hypertension</p>
+<ol><li><b>Plant sterols (2 g/day) reduce LDL by approximately:</b></li></ol>
+<p>A. 1-2% B. <b>7-10%</b> C. 20-30% D. 40-50% E. 50-70%</p>
+<ol><li><b>APOE4 carriers are at increased risk for:</b></li></ol>
+<p>A. Cardiovascular disease only B. <b>Alzheimer's disease and elevated LDL</b> C. Stroke only D. Venous thromboembolism E. Cancer</p>
+<ol><li><b>Prebiotic fibre fermentation produces:</b></li></ol>
+<p>A. Long-chain fatty acids B. <b>Short-chain fatty acids (acetate, propionate, butyrate)</b> C. Ketones D. Triglycerides D. Cholesterol</p>
+<ol><li><b>Functional foods include all EXCEPT:</b></li></ol>
+<p>A. Probiotics B. Prebiotics C. <b>Refined sugar</b> D. Omega-3 PUFA E. Plant sterols</p>
+<ol><li><b>Mediterranean diet is best described as:</b></li></ol>
+<p>A. <b>An evidence-based dietary pattern with health benefits beyond basic nutrition</b> B. Weight loss diet C. Low-fat diet D. Low-CHO diet E. Vegetarian diet</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 50-year-old man with MTHFR C677T TT, hyperhomocysteinaemia, depression. Best management?</b></li></ol>
+<p>A. SSRI only B. <b>Methylfolate 15 mg/day + B12, B6; check homocysteine response; consider antidepressant</b> C. Vitamin C D. Iron restriction E. Folate 1 mg (synthetic)</p>
+<ol><li><b>A 60-year-old man with ASCVD on statin, TG 2.5, LDL 1.6. Best evidence-based omega-3?</b></li></ol>
+<p>A. Fish 2x/week B. <b>Icosapent ethyl 4 g/day (REDUCE-IT)</b> C. Mixed EPA/DHA supplement D. ALA supplementation E. No omega-3</p>
+<ol><li><b>A 30-year-old on broad-spectrum antibiotics develops diarrhoea. Best probiotic?</b></li></ol>
+<p>A. VSL#3 B. Bifidobacterium infantis C. <b>Saccharomyces boulardii 250-500 mg/day during antibiotics + 1 week after (avoid if central line)</b> D. Lactobacillus reuteri E. E. coli Nissle</p>
+<ol><li><b>A 40-year-old with C282Y homozygous, ferritin 800, transferrin saturation 65%. Best management?</b></li></ol>
+<p>A. Iron supplementation B. <b>Therapeutic phlebotomy (1 unit weekly until ferritin &lt;50)</b> C. Avoid phlebotomy D. Vitamin C E. EPO</p>
+<ol><li><b>A 50-year-old with elevated LDL (4.5) prefers dietary approach. Most effective functional food?</b></li></ol>
+<p>A. Probiotics B. <b>Plant sterols 2 g/day (↓LDL 7-10%) + soluble fibre (psyllium, oats)</b> C. Curcumin D. Green tea E. Resveratrol</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Nutrigenetics</li></ul>
+<p>A: <b>Genes affect nutrient response</b> (MTHFR, HFE, APOE, LCT)</p>
+<ul><li>Q: Nutrigenomics</li></ul>
+<p>A: <b>Nutrients affect gene expression</b> (VDR, PPAR-α)</p>
+<ul><li>Q: MTHFR C677T TT</li></ul>
+<p>A: <b>Folate/methylfolate supplementation</b> (↑homocysteine)</p>
+<ul><li>Q: HFE C282Y</li></ul>
+<p>A: <b>Fe overload (HH)</b>; avoid supplements</p>
+<ul><li>Q: APOE4</li></ul>
+<p>A: <b>Alzheimer risk</b> (3-15x); ↑LDL</p>
+<ul><li>Q: LCT (lactase)</li></ul>
+<p>A: <b>C/T-13910</b>; T = persistent (Northern European)</p>
+<ul><li>Q: Probiotic for AAD</li></ul>
+<p>A: <b>S. boulardii OR LGG</b></p>
+<ul><li>Q: Probiotic for C. diff</li></ul>
+<p>A: <b>S. boulardii + LGG adjunct</b> to vancomycin</p>
+<ul><li>Q: Probiotic for UC/pouchitis</li></ul>
+<p>A: <b>VSL#3</b> (multi-strain, high-dose)</p>
+<ul><li>Q: Probiotic for IBS</li></ul>
+<p>A: <b>B. infantis 35624</b></p>
+<ul><li>Q: REDUCE-IT</li></ul>
+<p>A: <b>Icosapent ethyl 4 g/day</b>; ASCVD + hypertriglyceridaemia</p>
+<ul><li>Q: Plant sterols</li></ul>
+<p>A: <b>2 g/day ↓LDL 7-10%</b>; competitive cholesterol absorption</p>
+<ul><li>Q: SCFA</li></ul>
+<p>A: <b>A</b>cetate, <b>P</b>ropionate, <b>B</b>utyrate; from fibre fermentation</p>
+<ul><li>Q: Prebiotic examples</li></ul>
+<p>A: <b>FOS, GOS, inulin, resistant starch</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Nutrigenetics: how genetic variation affects individual response to nutrients (e.g., MTHFR, LCT, HFE).</li><li><b>B</b> — MTHFR C677T TT: ↓enzyme activity (70%); ↑homocysteine; folate/methylfolate supplementation required.</li><li><b>B</b> — HFE C282Y homozygous: ↓hepcidin → Fe overload → hereditary haemochromatosis.</li><li><b>C</b> — AAD prevention: S. boulardii OR LGG; evidence from RCTs.</li><li><b>C</b> — REDUCE-IT: icosapent ethyl 4 g/day in ASCVD with hypertriglyceridaemia (already on statin); ↓CVD events 25%.</li><li><b>B</b> — Plant sterols 2 g/day: ↓LDL 7-10% (competitive cholesterol absorption inhibitor).</li><li><b>B</b> — APOE4: ↑Alzheimer risk (3-15x), ↑LDL, ↓statin response; cognitive screening, aggressive CVD prevention.</li><li><b>B</b> — Prebiotic fibre fermentation produces SCFA: acetate, propionate, butyrate; gut health, anti-inflammatory, energy.</li><li><b>C</b> — Functional foods: probiotics, prebiotics, omega-3, plant sterols, polyphenols, fibre; NOT refined sugar.</li><li><b>A</b> — Mediterranean diet: evidence-based dietary pattern with health benefits beyond basic nutrition; best for personalised nutrition.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — MTHFR C677T TT + hyperhomocysteinaemia + depression: methylfolate 15 mg/day + B12, B6; homocysteine response; consider antidepressant.</li><li><b>B</b> — ASCVD on statin, TG 2.5, LDL 1.6: icosapent ethyl 4 g/day (REDUCE-IT); mixed EPA/DHA no benefit (STRENGTH, VITAL).</li><li><b>C</b> — AAD prevention: S. boulardii 250-500 mg/day during antibiotics + 1 week after; avoid if central line (fungemia risk).</li><li><b>B</b> — HH (C282Y homozygous, ferritin 800, TSAT 65%): therapeutic phlebotomy 1 unit weekly until ferritin &lt;50; iron supplementation CONTRAINDICATED.</li><li><b>B</b> — Elevated LDL dietary approach: plant sterols 2 g/day (↓LDL 7-10%) + soluble fibre (psyllium, oats).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Nutrigenomics &amp; Functional Foods</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> <b>Nutrigenetics = genes affect nutrients; Nutrigenomics = nutrients affect genes.</b> Key examples: <b>MTHFR C677T (folate)</b>, <b>LCT (lactose)</b>, <b>HFE C282Y (Fe overload)</b>, <b>APOE4 (Alzheimer, LDL)</b>. Functional foods: <b>probiotics, prebiotics, omega-3, plant sterols, polyphenols, fibre.</b> Probiotic strain matters: <b>LGG (AAD), S. boulardii (C. diff), B. infantis (IBS), VSL#3 (UC)</b>. <b>REDUCE-IT: icosapent ethyl 4 g/day (ASCVD + hypertriglyceridaemia)</b>. <b>Plant sterols 2 g/day ↓LDL 7-10%</b>. Personalised nutrition: genetics + microbiome + phenotype; <b>Mediterranean best evidence regardless of genetics</b>. <b>Exam focus:</b> Probiotic strain specificity, REDUCE-IT, plant sterols, MTHFR, HFE, APOE, functional food categories, personalised nutrition. <b>Clinical relevance:</b> AAD prevention, hypertriglyceridaemia, HH screening, MTHFR testing, hyperhomocysteinaemia, IBS, UC.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Nutrigenomics Functional Foods · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

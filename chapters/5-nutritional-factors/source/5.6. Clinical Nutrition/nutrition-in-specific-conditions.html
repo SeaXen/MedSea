@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nutrition In Specific Conditions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.6. CLINICAL NUTRITION</span>
+      <div class="h1">Nutrition In Specific Conditions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] State renal disease nutrition: CKD pre-dialysis (0.6-0.8 g protein/kg, low K/PO4/Na), dialysis (1.0-1.2 g/kg)</li><li>[ ] Describe liver disease nutrition: cirrhosis (↑CHO, 1.0-1.5 g protein/kg if no encephalopathy; 0.5-1.0 g acute encephalopathy, BCAA)</li><li>[ ] Recognise IBD nutrition: Crohn's (enteral preferred, low-fibre acute, elemental/semi-elemental); UC; MCT in chylous ascites</li><li>[ ] Identify diabetes nutrition: carb counting, plate method, ↓glycaemic load, fibre, low GI; ONS diabetic</li><li>[ ] State CF nutrition: high calories (110-150% RDA), pancreatic enzymes (lipase/amylase/protease), fat-soluble vitamins (ADEK)</li><li>[ ] Describe cancer cachexia: ↑calories, ONS, mirtazapine (appetite, depression), megestrol acetate, mTOR considerations</li><li>[ ] COPD: ↑calories (hypermetabolic), ↓CHO if CO2 retainers, screen for malnutrition, ONS</li><li>[ ] Burns: hypermetabolic (Curling formula), ↑↑protein (1.5-2 g/kg), fluid resuscitation (Parkland formula), vitamin A/C/E</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**CKD (Chronic Kidney Disease)**</td><td>Stages 1-5 by GFR; Stage 5 (dialysis); nutrition: low protein, low K/PO4/Na pre-dialysis; ↑protein dialysis</td></tr><tr><td>**BCAA (Branched-Chain Amino Acids)**</td><td>Leu, Ile, Val; supplementation in HE - debated</td></tr><tr><td>**MCT (Medium-Chain Triglycerides)**</td><td>C6-C12; portal absorption (no chylomicrons); chylous ascites, fat malabsorption</td></tr><tr><td>**Hepatic Encephalopathy (HE)**</td><td>↓LOC, asterixis, ↑NH3; protein restriction controversial; treat precipitants</td></tr><tr><td>**Crohn's Disease**</td><td>Transmural inflammation; terminal ileum common; B12, Fe, Ca, vit D deficiencies</td></tr><tr><td>**Pancreatic Enzyme Replacement (PERT)**</td><td>Lipase 25,000-75,000 U/meal; amylase/protease; CF, chronic pancreatitis</td></tr><tr><td>**Cancer Cachexia**</td><td>Anorexia, weight loss, muscle wasting, inflammation; inflammatory (IL-6, TNF-α)</td></tr><tr><td>**Megestrol Acetate**</td><td>Appetite stimulant; orexigenic; caution thromboembolism, adrenal suppression</td></tr><tr><td>**Mirtazapine**</td><td>Antidepressant; appetite stimulant (5-HT2/3 antagonism); ↑serotonin; ↓nausea</td></tr><tr><td>**Hypermetabolic State**</td><td>↑BMR, ↑protein catabolism; burns, trauma, sepsis, post-op</td></tr><tr><td>**Curling Formula**</td><td>Energy for burns: 25 kcal/kg + 40 kcal/% burn (TBSA) (daily)</td></tr><tr><td>**Parkland Formula**</td><td>Fluid for burns: 4 mL × kg × % TBSA (Ringer's lactate); 1/2 in first 8h, 1/2 in next 16h</td></tr><tr><td>**Hypercapnic Respiratory Failure**</td><td>CO2 retention (COPD); ↓CHO formula (lower RQ, less CO2 produced)</td></tr><tr><td>**ω-3 Fatty Acids (Fish Oil)**</td><td>Anti-inflammatory; cancer cachexia (with EPA), COPD, IBD</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Renal Disease (CKD)</div>
+<p><b>Pre-dialysis (Stages 3-5 not on dialysis):</b></p>
+<ul><li><b>Energy:</b> 30-35 kcal/kg/day (IBW)</li><li><b>Protein:</b> <b>0.6-0.8 g/kg/day</b> (low protein) — reduces GFR decline; with keto-acid analogues</li><li><b>Sodium:</b> &lt;2.3 g/day (&lt;100 mmol); fluid restriction if oedema</li><li><b>Potassium:</b> &lt;2.4 g/day (&lt;60 mmol); avoid high-K foods (banana, orange, tomato, avocado, potatoes)</li><li><b>Phosphate:</b> 800-1000 mg/day; phosphate binders (calcium carbonate, sevelamer)</li><li><b>Ca, Vit D:</b> monitor; Ca carbonate as PO4 binder; calcitriol/alfacalcidol for SHPT</li><li><b>Iron:</b> CKD anaemia; IV iron (HDU), ESA (epoetin, darbepoetin)</li><li><b>Avoid:</b> Star fruit (neurotoxin in CKD), grapefruit (CYP interaction with statins)</li></ul>
+<p><b>Dialysis (HD/PD):</b></p>
+<ul><li><b>Energy:</b> 30-35 kcal/kg/day</li><li><b>Protein:</b> <b>1.0-1.2 g/kg/day</b> (HD); 1.2-1.5 (PD — protein loss in dialysate)</li><li><b>Sodium:</b> &lt;2.3 g/day; <b>fluid restriction</b> (1-1.5 L/day if anuric)</li><li><b>K, PO4:</b> Restrict; high-flux HD may allow more liberal</li><li><b>Vit D, Ca, PTH:</b> Calcitriol, paricalcitol; parathyroidectomy if refractory</li><li><b>Vitamins:</b> Water-soluble (B-complex, C); <b>avoid high vit A</b> (retention); <b>vitamin D per SHPT</b></li></ul>
+<div class="sub-h">Section 2: Liver Disease</div>
+<p><b>Cirrhosis (compensated):</b></p>
+<ul><li><b>Energy:</b> 35-40 kcal/kg/day (IBW); high if malnourished</li><li><b>Protein:</b> 1.0-1.5 g/kg/day (preserves muscle; avoid over-restriction)</li><li><b>Carbohydrate:</b> 50-60% calories; complex CHOs preferred</li><li><b>Fat:</b> 25-30% calories; MCT supplementation</li><li><b>Sodium:</b> &lt;2 g/day (ascites); fluid restriction if Na &lt;125 mmol/L</li><li><b>Vitamins:</b> B-complex (especially thiamine), K (if cholestasis), D, E</li><li><b>Branched-Chain Amino Acids (BCAA):</b> May help HE; reduce muscle catabolism</li></ul>
+<p><b>Hepatic Encephalopathy (HE):</b></p>
+<ul><li>Acute HE: temporary protein restriction 0.5-1.0 g/kg/day ×48h; then re-increase</li><li>Chronic HE: 1.0-1.5 g/kg/day (NOT chronically restricted)</li><li>Lactulose (acidify colon, ↓NH3 absorption)</li><li>Rifaximin (antibiotic, ↓NH3-producing bacteria)</li><li>Avoid constipation</li><li>Treat precipitants (infection, GI bleed, hypokalaemia, sedatives)</li></ul>
+<p><b>Cholestasis (PBC, PSC):</b></p>
+<ul><li><b>MCT supplementation</b> (portal absorption, no chylomicrons)</li><li>Fat-soluble vitamin supplementation (A, D, E, K — IM if severe cholestasis)</li><li>Ursodeoxycholic acid (UDCA; 13-15 mg/kg/day in PBC)</li></ul>
+<div class="sub-h">Section 3: Inflammatory Bowel Disease (IBD)</div>
+<p><b>Crohn's Disease:</b></p>
+<ul><li>Active flare: low-residue, low-fibre diet; high-protein; <b>elemental or semi-elemental formula</b> (enteral preferred)</li><li>Maintenance: balanced diet; high-protein; identify triggers; B12 if terminal ileal disease</li><li>Elemental: ~10% of acute Crohn's; <b>exclusive enteral nutrition (EEN) can induce remission</b> in adults/children</li><li>Avoid NSAIDs, smoking, triggers</li></ul>
+<p><b>Ulcerative Colitis:</b></p>
+<ul><li>Active: low-residue; avoid spicy, high-fibre, dairy (if intolerant)</li><li>Maintenance: balanced; probiotics (VSL#3, E. coli Nissle 1917)</li></ul>
+<p><b>Malabsorption:</b></p>
+<ul><li>MCT supplementation (chylous ascites, short bowel, chronic pancreatitis)</li><li>B12 (terminal ileum, ileal resection)</li><li>Iron, calcium, vitamin D, zinc, magnesium</li><li>Pancreatic enzymes (CF, chronic pancreatitis, pancreatic resection)</li></ul>
+<div class="sub-h">Section 4: Diabetes Mellitus</div>
+<p><b>Type 1 DM:</b></p>
+<ul><li>Insulin matching; carb counting; 1 unit per 10-15 g CHO</li><li>Basal-bolus regimen; insulin:CHO ratio</li><li>Continuous glucose monitoring (CGM)</li><li>Mixed meals; fat delay absorption</li></ul>
+<p><b>Type 2 DM:</b></p>
+<ul><li>Plate method: 1/2 non-starchy veg, 1/4 protein, 1/4 complex carb</li><li>Carb counting; high fibre (25-30 g/day); low GI foods</li><li>Mediterranean diet (best evidence for CV outcomes)</li><li>ONS diabetic (lower CHO, higher MUFA, fibre); reduces postprandial spike</li><li>Avoid sugary drinks; alcohol with carbs</li></ul>
+<p><b>Diabetic Coma/DKA:</b> D5W added to IV fluids when glucose &lt;14 mmol/L; continue insulin; replace K; phosphate if &lt;0.3</p>
+<div class="sub-h">Section 5: Cystic Fibrosis (CF)</div>
+<ul><li><b>Energy:</b> 110-150% RDA (hypermetabolic; chronic inflammation; work of breathing)</li><li><b>Protein:</b> 1.5-2 g/kg/day</li><li><b>Fat:</b> 35-40% (high); pancreatic enzymes</li><li><b>Pancreatic Enzyme Replacement Therapy (PERT):</b> Lipase 25,000-75,000 U/meal, 10,000-25,000 U/snack; amylase, protease</li><li><b>Fat-soluble vitamins:</b> ADEK daily (water-miscible in pancreatic insufficiency)</li><li><b>Salt:</b> Extra in hot weather/sweat (CF salt loss)</li><li><b>Iron, Ca, Zn:</b> Monitor</li><li><b>CFTR modulators:</b> Improve nutrition, lung function; elexacaftor/tezacaftor/ivacaftor (Trikafta)</li></ul>
+<div class="sub-h">Section 6: Cancer Cachexia</div>
+<ul><li><b>Energy:</b> ↑30-50% above normal; high-protein (1.5-2 g/kg)</li><li><b>ONS:</b> High-energy, high-protein; sip feeds 600-900 kcal/day</li><li><b>Appetite stimulants:</b> <b>Mirtazapine 15-30 mg nocte</b> (antidepressant + appetite); <b>megestrol acetate 160 mg/day</b> (orexigenic; thromboembolism risk)</li><li><b>Anabolic agents:</b> Limited; oxandrolone (caution liver)</li><li><b>ω-3 fatty acids (EPA):</b> 1-2 g/day; may improve lean body mass</li><li><b>Vitamins/minerals:</b> Standard supplementation; no high-dose</li><li><b>Symptom management:</b> Nausea (antiemetics), taste changes, mucositis (soft diet, cold foods), early satiety (small frequent meals)</li><li><b>Enteral/parenteral:</b> If GI works, EN preferred; PN if EN impossible; palliative may use home TPN</li></ul>
+<div class="sub-h">Section 7: COPD / Respiratory Disease</div>
+<ul><li><b>Screening:</b> Malnutrition common (20-50%); exacerbation ↑requirements</li><li><b>Energy:</b> 30-35 kcal/kg/day (hypermetabolic; ↑work of breathing)</li><li><b>Protein:</b> 1.2-1.5 g/kg/day (sarcopenia, ↑catabolism)</li><li><b>CHO:</b> Moderate (high CHO → ↑CO2 production → worsens hypercapnia); use <b>fat-rich formula</b> (high lipid, low CHO; ↓RQ 0.7 vs 1.0)</li><li><b>ONS:</b> High-energy, high-protein, high-fat (PULMOCARE-type); reduce exacerbations, improve QoL</li><li><b>Rehabilitation:</b> Pulmonary rehab; resistance training; combined with nutrition</li></ul>
+<div class="sub-h">Section 8: Burns</div>
+<ul><li><b>Energy:</b> Curling formula: 25 kcal/kg + 40 kcal/% burn TBSA (daily)</li><li>Or Schofield × stress factor 1.5-2.0</li><li><b>Protein:</b> 1.5-2 g/kg/day (↑catabolism; muscle preservation)</li><li><b>Arginine, glutamine:</b> Supplementation debated; immune-modulating</li><li><b>Vitamin A, C, E:</b> Antioxidant support</li><li><b>Trace elements:</b> Zn, Cu, Se (wound healing)</li><li><b>Fluid:</b> Parkland formula: 4 mL × kg × % TBSA (Ringer's lactate); 1/2 first 8h, 1/2 next 16h</li><li><b>Monitoring:</b> Daily weight, fluid balance, electrolytes</li><li><b>Hypermetabolic phase:</b> Days 1-7 (ebb), then 7-21 (flow), then recovery</li><li><b>Anabolic window:</b> Days 7-14 (BB ↑)</li></ul>
+<div class="sub-h">Section 9: Critical Illness / ICU</div>
+<ul><li><b>Early EN (within 24-48h):</b> Preferred if stable; trophic 10-20 mL/h initially</li><li><b>Permissive underfeeding</b> (Trophic): 20-30% calories × 5-7 days; full after stabilisation</li><li><b>Tight glucose control:</b> 6-10 mmol/L; insulin protocol</li><li><b>Protein:</b> 1.2-2.0 g/kg/day (↑catabolism; early high protein may worsen)</li><li><b>Avoid overfeeding:</b> Hyperglycaemia, hypercapnia, lipogenesis</li><li><b>Supplemental PN:</b> After 7-10 days if EN inadequate</li><li><b>Immunonutrition:</b> Arginine, glutamine, ω-3, nucleotides (controversial; mortality benefit in meta-analyses limited)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>60M, CKD stage 4, eGFR 22, ↑K, ↑PO4</td><td>**0.6-0.8 g protein/kg, low K/PO4/Na, PO4 binder, sevelamer**; avoid star fruit</td><td>Pre-dialysis</td></tr><tr><td>55F, dialysis, dialysis protein 1.2 g/kg</td><td>**1.0-1.2 g protein/kg, low K/PO4/Na; vit D analog; EPO**</td><td>Dialysis</td></tr><tr><td>50M, cirrhosis, ascites, no HE</td><td>**35-40 kcal/kg, 1.0-1.5 g protein/kg, Na <2 g/day, fluid restriction**; lactulose if HE</td><td>Liver disease</td></tr><tr><td>30F, Crohn's flare, active disease</td><td>**Low-residue, high-protein, elemental EN (EEN)**; consider NG feeding; add B12 if terminal ileum</td><td>Crohn's</td></tr><tr><td>55M, T2DM, BMI 32, post-MI</td><td>**Mediterranean diet; plate method; ONS diabetic; carb counting**; monitor postprandial</td><td>Diabetes</td></tr><tr><td>25F, CF, BMI 18, recurrent infections</td><td>**110-150% RDA; PERT (lipase); ADEK daily; high-energy ONS; CFTR modulators**</td><td>CF</td></tr><tr><td>65M, lung cancer, weight loss 20%</td><td>**High-energy ONS; mirtazapine 15 mg nocte; megestrol if needed; small frequent meals**</td><td>Cancer cachexia</td></tr><tr><td>50M, COPD, BMI 19, CO2 retainer</td><td>**High-fat ONS (PULMOCARE-type); screen for malnutrition; pulmonary rehab**</td><td>COPD</td></tr><tr><td>30F, 40% TBSA burns, day 2</td><td>**Parkland fluid resuscitation; high-protein; Curling calories; A/C/E vitamins; Zn**</td><td>Burns</td></tr><tr><td>65M, ICU, post-op day 1, ventilated</td><td>**Trophic EN 10-20 mL/h; permissive underfeeding; tight glucose control; head 30-45°**</td><td>ICU</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> CKD pre-dialysis (0.6-0.8 g protein) vs dialysis (1.0-1.2 g); liver disease (35-40 kcal/kg, 1.0-1.5 g protein, Na &lt;2 g); IBD (EEN in Crohn's); diabetes (plate method, Mediterranean); CF (high calories, PERT, ADEK); cancer cachexia (ONS, mirtazapine, megestrol); COPD (high-fat ONS); burns (Curling + Parkland) - <b>Common viva:</b> CKD nutrition by stage; cirrhosis protein/HE; EEN in Crohn's; CF pancreatic enzymes; mirtazapine vs megestrol; Curling formula; Parkland formula - <b>Exam trap:</b> Over-restricting protein in cirrhosis chronic; giving PPN/TPN when GI works; missing K/PO4 in CKD; megesterol thromboembolism; mirtazapine sedation</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>All CKD restrict protein</td><td>**Pre-dialysis 0.6-0.8 g; DIALYSIS 1.0-1.2 g** (higher!)</td></tr><tr><td>HE = chronic protein restriction</td><td>**Acute HE: temp restrict; Chronic HE: 1.0-1.5 g/kg** (NOT chronic restriction)</td></tr><tr><td>Cirrhosis = low protein</td><td>**1.0-1.5 g/kg if no HE; preserves muscle; BCAA controversial**</td></tr><tr><td>EEN in all IBD</td><td>**EEN effective in Crohn's** (especially children); less in UC</td></tr><tr><td>Diabetes = sugar restriction only</td><td>**Carb control + fibre + Mediterranean + plate method**</td></tr><tr><td>CF = just pancreatic enzymes</td><td>**High calories 110-150% RDA; ADEK; salt in heat; CFTR modulators**</td></tr><tr><td>Megestrol safe</td><td>**Thromboembolism risk**; adrenal suppression; oedema</td></tr><tr><td>Burns fluid 4 mL/kg × TBSA = total</td><td>**Parkland: 4 mL × kg × TBSA = total; 1/2 first 8h, 1/2 next 16h**</td></tr><tr><td>COPD need high CHO</td><td>**High fat ONS** (PULMOCARE); ↓CO2 production</td></tr><tr><td>BCAA always in HE</td><td>**Debated**; may help; not first-line</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CKD pre-dialysis:</b> <b>0.6-0.8 protein, low K/PO4/Na; PO4 binders, vit D analogs</b></li><li><b>CKD dialysis:</b> <b>1.0-1.2 protein</b> (higher), fluid restriction</li><li><b>Cirrhosis:</b> <b>35-40 kcal/kg; 1.0-1.5 g protein if no HE; Na &lt;2 g ascites; MCT</b></li><li><b>HE acute:</b> Lactulose, rifaximin, <b>temp protein 0.5-1.0 g/kg</b>; chronic = 1.0-1.5</li><li><b>Crohn's active:</b> Low-residue, high-protein, <b>EEN (elemental/semi-elemental)</b></li><li><b>CF:</b> <b>110-150% RDA; PERT 25-75k U lipase/meal; ADEK</b></li><li><b>Cancer cachexia:</b> <b>ONS + mirtazapine + megestrol</b> (caution VTE)</li><li><b>COPD:</b> <b>High-fat ONS (low CHO)</b>; ↓CO2 production</li><li><b>Burns:</b> <b>Parkland 4 mL/kg × TBSA</b> (1/2 first 8h); <b>Curling 25 + 40 × %TBSA</b></li><li><b>Diabetes:</b> <b>Plate method 1/2-1/4-1/4</b>; Mediterranean; carb counting</li><li><b>Star fruit in CKD = neurotoxic</b>; <b>BCAA in HE = debated</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Disease-Specific Nutrition)) CKD Pre-dialysis: 0.6-0.8 g protein Dialysis: 1.0-1.2 g Low K/PO4/Na PO4 binders Liver Cirrhosis: 1.0-1.5 g protein Ascites: Na &lt;2 g HE: Lactulose, rifaximin IBD Crohn's: EEN active Low-residue flare MCT Diabetes Plate method 1/2-1/4-1/4 Mediterranean Carb counting CF 110-150% RDA PERT ADEK Cancer Cachexia ONS Mirtazapine Megestrol (VTE) COPD High-fat ONS ↓CO2 production Burns Parkland 4 mL/kg×TBSA Curling 25 + 40×%TBSA High protein </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>CKD pre-dialysis: 0.6-0.8 g protein; dialysis 1.0-1.2 g</li><li>Cirrhosis: 35-40 kcal/kg, 1.0-1.5 g protein, Na &lt;2 g ascites</li><li>HE: Lactulose, rifaximin, BCAA debated</li><li>Crohn's active: EEN, low-residue, high-protein</li><li>CF: 110-150% RDA, PERT 25-75k U lipase, ADEK</li><li>Cancer cachexia: ONS, mirtazapine, megestrol (VTE risk)</li><li>COPD: High-fat ONS, ↓CO2 production</li><li>Burns: Parkland 4 mL/kg×TBSA, Curling 25 + 40×%TBSA</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>CKD by stage (pre-dialysis vs dialysis protein); cirrhosis (1.0-1.5 g, Na <2 g); HE (lactulose, rifaximin, BCAA debated); Crohn's (EEN); CF (110-150% RDA, PERT, ADEK); cancer cachexia (ONS, mirtazapine, megestrol); COPD (high-fat ONS); burns (Curling + Parkland)</td></tr><tr><td>**Should Know 🟡**</td><td>Diabetic plate method, Mediterranean; MCT in cholestasis; star fruit neurotoxic; PERT dosing; mirtazapine vs megestrol mechanism; immunonutrition in critical illness; pulmonary formula composition</td></tr><tr><td>**Nice to Know 🟢**</td><td>CFTR modulators; cachexia cytokine profile; eicosapentaenoic acid (EPA) trials; gut microbiome in IBD; specific commercial formulas (PULMOCARE, Peptamen)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] PERT dose calculation</li><li>[ ] Curling formula variants</li><li>[ ] Megestrol mechanism of action</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Disease-specific nutrition: renal, liver, COPD, burns, cancer"</p>
+<ul><li><b>CKD:</b> Pre-dialysis 0.6-0.8 g protein/kg, low K/PO4/Na; dialysis 1.0-1.2 g (higher); PO4 binders, vit D analogs</li><li><b>Liver:</b> Cirrhosis 1.0-1.5 g protein/kg (NOT chronic restriction); Na &lt;2 g ascites; HE: lactulose + rifaximin; BCAA debated</li><li><b>COPD:</b> High-fat ONS (low CHO, ↓RQ, ↓CO2 production); screening for malnutrition; pulmonary rehab</li><li><b>Burns:</b> Parkland fluid 4 mL/kg × TBSA (1/2 first 8h); Curling calories 25 + 40×%TBSA; high protein 1.5-2 g/kg; A/C/E vitamins</li><li><b>Cancer cachexia:</b> ONS 600-900 kcal; mirtazapine 15-30 mg nocte; megestrol 160 mg (VTE risk); ω-3 EPA</li><li><b>CF:</b> 110-150% RDA; PERT 25-75k U lipase/meal; ADEK</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Burns Nutrition and Fluid Resuscitation"</p>
+<ul><li><b>Parkland formula (fluid):</b> 4 mL × body weight (kg) × %TBSA burn (Ringer's lactate); 1/2 in first 8h, 1/2 in next 16h from burn time</li><li><b>Curling formula (calories):</b> Daily = 25 kcal/kg + 40 kcal/%TBSA burn</li><li><b>Protein:</b> 1.5-2 g/kg/day (hypermetabolic, muscle preservation)</li><li><b>Vitamins:</b> A, C, E (antioxidant, wound healing)</li><li><b>Trace elements:</b> Zn, Cu, Se</li><li><b>Hypermetabolic phase:</b> Days 1-7 (ebb), 7-21 (flow), then recovery</li><li><b>Arginine, glutamine:</b> Controversial; immune-modulating</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "Why is protein restriction different in pre-dialysis vs dialysis CKD?" "A: <b>Pre-dialysis CKD (Stages 3-5, not on dialysis):</b> Protein restriction 0.6-0.8 g/kg/day; reduces nitrogenous waste accumulation, slows GFR decline, ↓uraemia. <b>Dialysis (HD/PD):</b> ↑Protein to 1.0-1.2 g/kg/day (HD) or 1.2-1.5 g/kg (PD) because <b>dialysis removes protein</b> (especially PD) and dialysis patients are often catabolic/inflammatory. Restriction on dialysis would cause muscle wasting and malnutrition. <b>Always individualise based on stage, nutritional status, and dialysis modality.</b>"</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 55F, cirrhosis, ascites, BMI 22, no HE. "Diagnosis: Decompensated cirrhosis. <b>Action: 1) Energy 35-40 kcal/kg/day</b> (IBW); 2) <b>Protein 1.0-1.5 g/kg/day</b> (NOT chronic restriction); 3) <b>Sodium &lt;2 g/day</b> (ascites); 4) <b>Fluid restriction</b> if Na &lt;125; 5) <b>Lactulose</b> if HE; 6) <b>MCT supplementation</b> (cholestasis); 7) <b>Vitamins A, D, E, K</b> (fat-soluble); 8) <b>BCAA</b> controversial; 9) <b>Avoid alcohol</b>; 10) <b>Monitor for SBP</b> (paracentesis, prophylactic norfloxacin, albumin); 11) <b>Screen for HCC</b> (US + AFP q6m if cirrhotic)."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min</div>
+<ul><li><b>CKD pre-dialysis:</b> 0.6-0.8 g protein; <b>Dialysis: 1.0-1.2 g</b> (higher)</li><li><b>CKD:</b> low K/PO4/Na; PO4 binders; vit D analogs; EPO</li><li><b>Cirrhosis:</b> 35-40 kcal/kg, 1.0-1.5 g protein (NOT chronic restriction), Na &lt;2 g ascites</li><li><b>HE:</b> Lactulose, rifaximin, BCAA debated</li><li><b>Crohn's:</b> EEN active, low-residue, high-protein</li><li><b>CF:</b> 110-150% RDA, PERT 25-75k U lipase/meal, ADEK</li><li><b>Cancer cachexia:</b> ONS, mirtazapine 15-30 mg nocte, megestrol 160 mg (VTE)</li><li><b>COPD:</b> High-fat ONS (↓CO2), screening</li><li><b>Burns:</b> Parkland 4 mL/kg×TBSA (1/2 first 8h); Curling 25+40×%TBSA</li><li><b>Diabetes:</b> Plate method 1/2-1/4-1/4; Mediterranean</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Protein requirement in CKD pre-dialysis (Stages 3-5):</b></li></ol>
+<p>A. 0.5 g/kg/day B. <b>0.6-0.8 g/kg/day</b> C. 1.0-1.2 g/kg/day D. 1.5 g/kg/day E. 2.0 g/kg/day</p>
+<ol><li><b>Protein requirement in dialysis (HD):</b></li></ol>
+<p>A. 0.5 g/kg/day B. 0.8 g/kg/day C. <b>1.0-1.2 g/kg/day</b> D. 1.5 g/kg/day E. 2.0 g/kg/day</p>
+<ol><li><b>Cirrhosis (compensated, no HE) protein requirement:</b></li></ol>
+<p>A. 0.5 g/kg/day B. 0.8 g/kg/day C. <b>1.0-1.5 g/kg/day</b> D. 2.0 g/kg/day E. 3.0 g/kg/day</p>
+<ol><li><b>Hepatic encephalopathy acute management includes:</b></li></ol>
+<p>A. Chronic protein restriction 0.5 g/kg B. <b>Lactulose, rifaximin; temporary protein restriction then re-increase</b> C. High protein D. TPN E. BCAA only</p>
+<ol><li><b>Cystic Fibrosis nutritional management:</b></li></ol>
+<p>A. Standard calories, low fat B. <b>High calories 110-150% RDA, pancreatic enzymes, fat-soluble vitamins (ADEK)</b> C. Low fat, MCT only D. TPN from infancy E. Low protein</p>
+<ol><li><b>Cancer cachexia treatment:</b></li></ol>
+<p>A. Low protein B. Standard calories C. <b>ONS, mirtazapine 15-30 mg nocte, megestrol 160 mg (VTE risk)</b> D. TPN E. Steroids</p>
+<ol><li><b>COPD high-fat ONS rationale:</b></li></ol>
+<p>A. High energy B. <b>Lower respiratory quotient (RQ 0.7 vs 1.0 for CHO) → less CO2 production → better for CO2 retainers</b> C. Better taste D. Easier absorption E. Vitamin content</p>
+<ol><li><b>Burns Parkland formula:</b></li></ol>
+<p>A. 2 mL × kg × %TBSA B. <b>4 mL × kg × %TBSA (Ringer's lactate; 1/2 first 8h, 1/2 next 16h)</b> C. 6 mL × kg × %TBSA D. 8 mL × kg × %TBSA E. 10 mL × kg × %TBSA</p>
+<ol><li><b>Curling formula (burns calories):</b></li></ol>
+<p>A. 15 kcal/kg + 20 kcal/%TBSA B. 20 kcal/kg + 30 kcal/%TBSA C. <b>25 kcal/kg + 40 kcal/%TBSA</b> D. 35 kcal/kg + 50 kcal/%TBSA E. 50 kcal/kg + 100 kcal/%TBSA</p>
+<ol><li><b>Elemental enteral nutrition (EEN) effective in:</b></li></ol>
+<p>A. Ulcerative colitis B. <b>Crohn's disease (acute, especially children; can induce remission)</b> C. IBS D. Coeliac disease E. Colorectal cancer</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 60-year-old man with CKD stage 4 (eGFR 22) has K 5.5, PO4 2.0. Best dietary advice?</b></li></ol>
+<p>A. High protein B. <b>Low protein (0.6-0.8 g/kg), low K, low PO4, PO4 binder (sevelamer)</b> C. High calorie D. High fibre E. No restriction</p>
+<ol><li><b>A 55-year-old man with cirrhosis, ascites, BMI 22, no HE. Best nutrition?</b></li></ol>
+<p>A. Protein restriction 0.5 g/kg, low fat, free fluids B. <b>35-40 kcal/kg, 1.0-1.5 g protein/kg, Na &lt;2 g/day, fluid restriction</b> C. TPN D. Standard diet E. Low calorie</p>
+<ol><li><b>A 25-year-old with CF, BMI 18, recurrent infections. Best management?</b></li></ol>
+<p>A. Standard diet B. <b>High calories 110-150% RDA, PERT 25,000-75,000 U lipase/meal, ADEK vitamins, CFTR modulators</b> C. Low fat D. TPN E. Vegetarian</p>
+<ol><li><b>A 70-year-old man with lung cancer, weight loss 20%, BMI 19, depression. Best management?</b></li></ol>
+<p>A. Steroids only B. <b>ONS high-energy + mirtazapine 15 mg nocte (appetite, depression) ± megestrol</b> C. TPN only D. Low fat diet E. NG tube</p>
+<ol><li><b>A 30-year-old with 40% TBSA burns, day 2. Best fluid management?</b></li></ol>
+<p>A. NS 100 mL/h B. <b>Parkland: 4 mL × kg × 40% TBSA (Ringer's lactate); 1/2 first 8h, 1/2 next 16h</b> C. D5W D. Dextrose-saline E. Colloid</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: CKD pre-dialysis protein</li></ul>
+<p>A: <b>0.6-0.8 g/kg/day</b> (low protein)</p>
+<ul><li>Q: CKD dialysis protein</li></ul>
+<p>A: <b>1.0-1.2 g/kg/day</b> (HD) / 1.2-1.5 (PD)</p>
+<ul><li>Q: Cirrhosis protein</li></ul>
+<p>A: <b>1.0-1.5 g/kg/day</b> (NOT chronic restriction)</p>
+<ul><li>Q: HE Rx</li></ul>
+<p>A: <b>L</b>actulose, <b>R</b>ifaximin; temp protein restriction in acute</p>
+<ul><li>Q: Crohn's active</li></ul>
+<p>A: <b>EEN</b> (elemental/semi-elemental); low-residue</p>
+<ul><li>Q: CF PERT</li></ul>
+<p>A: <b>25,000-75,000 U lipase/meal, 10,000-25,000 U/snack; ADEK</b></p>
+<ul><li>Q: Cancer cachexia</li></ul>
+<p>A: <b>ONS + mirtazapine 15-30 mg nocte + megestrol 160 mg (VTE risk)</b></p>
+<ul><li>Q: COPD ONS</li></ul>
+<p>A: <b>High-fat, low CHO</b> (↓RQ, ↓CO2 production)</p>
+<ul><li>Q: Burns Parkland</li></ul>
+<p>A: <b>4 mL × kg × %TBSA</b> (Ringer's lactate; 1/2 first 8h, 1/2 next 16h)</p>
+<ul><li>Q: Burns Curling</li></ul>
+<p>A: <b>25 kcal/kg + 40 kcal/%TBSA</b> (daily)</p>
+<ul><li>Q: BCAA in HE</li></ul>
+<p>A: <b>Debated</b>; may help; not first-line</p>
+<ul><li>Q: Megestrol adverse</li></ul>
+<p>A: <b>VTE</b> (thromboembolism), adrenal suppression, oedema, ↓libido</p>
+<ul><li>Q: Mirtazapine benefit</li></ul>
+<p>A: <b>Antidepressant + appetite stimulant + ↓nausea</b> (5-HT2/3 antagonism); sedation; weight gain</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — CKD pre-dialysis (Stages 3-5, not on dialysis): protein restriction 0.6-0.8 g/kg/day; reduces nitrogenous waste, slows GFR decline.</li><li><b>C</b> — Dialysis: ↑protein 1.0-1.2 g/kg/day (HD) or 1.2-1.5 (PD) because dialysis removes protein; restriction would cause malnutrition.</li><li><b>C</b> — Cirrhosis (compensated, no HE): 1.0-1.5 g protein/kg; preserves muscle; not chronically restricted.</li><li><b>B</b> — HE acute: lactulose (acidify colon, ↓NH3 absorption), rifaximin (antibiotic, ↓NH3-producing bacteria); temporary protein restriction 0.5-1.0 g/kg ×48h, then re-increase.</li><li><b>B</b> — CF: high calories 110-150% RDA (hypermetabolic), PERT (lipase 25-75k U/meal), ADEK vitamins (water-miscible).</li><li><b>C</b> — Cancer cachexia: ONS high-energy, mirtazapine 15-30 mg nocte (antidepressant + appetite), megestrol acetate 160 mg (orexigenic, VTE risk).</li><li><b>B</b> — COPD high-fat ONS: lower RQ (0.7 for fat vs 1.0 for CHO) → less CO2 production; beneficial for CO2 retainers (hypercapnic respiratory failure).</li><li><b>B</b> — Parkland formula: 4 mL × kg × %TBSA (Ringer's lactate); 1/2 in first 8h from burn time, 1/2 in next 16h.</li><li><b>C</b> — Curling formula: 25 kcal/kg + 40 kcal/%TBSA (daily energy needs for burns).</li><li><b>B</b> — EEN effective in Crohn's disease (especially children); can induce remission; less evidence in UC.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — CKD stage 4 with hyperkalaemia and hyperphosphataemia: low protein (0.6-0.8 g/kg), low K, low PO4, PO4 binder (sevelamer).</li><li><b>B</b> — Cirrhosis with ascites, no HE: 35-40 kcal/kg, 1.0-1.5 g protein/kg, Na &lt;2 g/day, fluid restriction; NOT chronic protein restriction.</li><li><b>B</b> — CF with malnutrition: high calories 110-150% RDA, PERT 25-75k U lipase/meal, ADEK vitamins, CFTR modulators (Trikafta).</li><li><b>B</b> — Cancer cachexia with depression: ONS high-energy + mirtazapine 15 mg nocte (antidepressant + appetite stimulant) ± megestrol acetate.</li><li><b>B</b> — 40% TBSA burns, day 2: Parkland formula 4 mL × kg × 40% TBSA (Ringer's lactate); 1/2 in first 8h, 1/2 in next 16h from burn time.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Nutrition in Specific Conditions</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> <b>CKD: pre-dialysis 0.6-0.8 g protein; dialysis 1.0-1.2 g; low K/PO4/Na.</b> <b>Cirrhosis: 35-40 kcal/kg, 1.0-1.5 g protein (NOT chronic restriction), Na &lt;2 g ascites, lactulose/rifaximin for HE, BCAA debated.</b> <b>Crohn's: EEN active, low-residue.</b> <b>CF: 110-150% RDA, PERT 25-75k U lipase/meal, ADEK.</b> <b>Cancer cachexia: ONS, mirtazapine 15-30 mg nocte, megestrol 160 mg (VTE risk).</b> <b>COPD: high-fat ONS (↓RQ, ↓CO2).</b> <b>Burns: Parkland 4 mL/kg×TBSA, Curling 25+40×%TBSA, high protein 1.5-2 g/kg.</b> <b>Diabetes: plate method, Mediterranean diet.</b> <b>Exam focus:</b> CKD by stage, cirrhosis protein, HE management, EEN Crohn's, CF PERT, cancer cachexia, COPD ONS, burns formulas. <b>Clinical relevance:</b> Every chronic disease management; pre-op optimisation; ICU nutrition; community programmes.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Nutrition In Specific Conditions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elderly Prescribing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.12. SPECIAL POPULATIONS</span>
+      <div class="h1">Elderly Prescribing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>STOPP/START v3 criteria</b> confidently in ward rounds and SBAs</li><li>[ ] Calculate and interpret <b>Anticholinergic Cognitive Burden (ACB)</b>, <b>Drug Burden Index (DBI)</b>, <b>Fit-for-the-Aged (FORTA)</b> scores</li><li>[ ] Adjust doses for <b>renal/hepatic impairment</b> using <b>Cockcroft-Gault</b> (not eGFR), CKD-EPI, Child-Pugh</li><li>[ ] Recognise and prevent <b>prescribing cascades</b> (10 classic patterns)</li><li>[ ] Select <b>safer alternatives</b> for high-risk drug classes (Beers, STOPP, FORTA-D)</li><li>[ ] Conduct <b>structured medication review</b> (polypharmacy, deprescribing) using 5-step frameworks</li><li>[ ] Communicate <b>risk-benefit</b> in frailty / limited life expectancy (time-to-benefit)</li><li>[ ] Answer viva: "STOPP/START criteria" and "Prescribing cascade examples" and "Apixaban renal dosing"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Core Concept: Age-Related Pharmacokinetic & Pharmacodynamic Changes</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Ageing Physiology] --&gt; B[PK Changes] A --&gt; C[PD Changes] A --&gt; D[Clinical Consequences]</p>
+<p>B --&gt; B1[↓ Total Body Water\n↑ Body Fat\n→ ↑ Vd lipophilic drugs (diazepam, amiodarone)] B --&gt; B2[↓ Renal function ~1 mL/min/yr after 40\n→ ↓ clearance renally excreted drugs\n<b>Use Cockcroft-Gault for dosing</b>] B --&gt; B3[↓ Hepatic Phase I (oxidation)\nPhase II (glucuronidation) preserved\n→ ↓ clearance: warfarin, phenytoin, theophylline, benzos] B --&gt; B4[↓ Protein binding (↓ albumin)\n→ ↑ free fraction acidic drugs (warfarin, phenytoin)]</p>
+<p>C --&gt; C1[↑ BBB permeability\n→ ↑ CNS sensitivity: opioids, anticholinergics, gabapentinoids] C --&gt; C2[Impaired homeostasis\n→ orthostatic hypotension, thermoregulation, hyponatraemia risk] C --&gt; C3[↓ Physiological reserve (frailty)\n→ non-linear dose-response\n→ ↑ ADR susceptibility]</p>
+<p>D --&gt; D1[↑ Falls, delirium, cognitive decline] D --&gt; D2[↑ Hospitalisation, mortality] D --&gt; D3[<b>Time-to-benefit critical</b> (statins 2–3y, bisphosphonates 1–2y)]</p>
+<p>style A fill:#e3f2fd style D fill:#fce4ec ```</p>
+<div class="callout"><b>Key Principle:</b> <i>Prescribing in the elderly is not "adult dosing minus a bit" — it requires explicit tools (STOPP/START, ACB, FORTA), renal dosing via Cockcroft-Gault, and deprescribing mindset.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">STOPP/START Criteria v3 (2023) — HIGH YIELD</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">2.1 STOPP (Screening Tool of Older People's Potentially Inappropriate Prescriptions)</div>
+<p>``<code>mermaid flowchart LR A[STOPP v3 - 113 criteria, 13 sections] --&gt; B[High-Yield Sections for Exams] B --&gt; C1[A: Cardiovascular] B --&gt; C2[B: Coagulation] B --&gt; C3[C: CNS/Psychiatric ★] B --&gt; C4[D: GI] B --&gt; C5[E: Respiratory] B --&gt; C6[F: Musculoskeletal] B --&gt; C7[G: Urogenital] B --&gt; C8[H: Endocrine] B --&gt; C9[I: Falls ★] B --&gt; C10[J: Analgesia] B --&gt; C11[K: Antimicrobial] B --&gt; C12[L: Drugs with anticholinergic effects ★] B --&gt; C13[M: Diagnostic/adverse effects] </code>``</p>
+<table class="ctable"><tr><th>Section</th><th>Key Criteria (Must Know for FCPS/MRCP)</th></tr><tr><td>---------</td><td>----------------------------------------</td></tr><tr><td>**A. Cardiovascular**</td><td>A1: Loop diuretic for ankle oedema only (no HF) — use leg elevation/compression<br>A2: β-blocker + non-dihydropyridine CCB (bradycardia/heart block)<br>A3: Verapamil/diltiazem + HFrEF (↓ contractility)<br>A4: ACEi/ARB + K⁺-sparing diuretic + no K⁺ monitoring (hyperK)</td></tr><tr><td>**B. Coagulation**</td><td>B1: Warfarin + NSAID (↑ bleed) — use PPI if unavoidable<br>B2: DOAC + strong P-gp/CYP3A4 inhibitor (clarithro, azole) — dose adjust/avoid<br>B3: Aspirin + anticoagulant without clear indication (stable CAD + AF)</td></tr><tr><td>**C. CNS/Psych ★**</td><td>**C1: Anticholinergic burden ≥3 (ACB ≥3)** — ↓ cognition, ↑ falls<br>**C2: Benzodiazepine/Z-drug >4 weeks** — falls, fractures, delirium<br>C3: Antipsychotic for BPSD >12 weeks without review<br>C4: SSRI + hyponatraemia risk (SIADH) — monitor Na⁺</td></tr><tr><td>**D. GI**</td><td>D1: PPI >8 weeks uncomplicated GERD — step down/stop<br>D2: NSAID + peptic ulcer history — avoid or PPI co-Rx<br>D3: Antispasmodic (hyoscine) in cognitive impairment</td></tr><tr><td>**E. Respiratory**</td><td>E1: Theophylline (narrow TI, interactions) — prefer LABA/LAMA<br>E2: Systemic steroid >3 months — bone protection, monitor</td></tr><tr><td>**F. Musculoskeletal**</td><td>F1: NSAID + HF/CKD/HTN uncontrolled — avoid<br>F2: Long-term opioid non-cancer pain — review, taper</td></tr><tr><td>**G. Urogenital**</td><td>G1: Antimuscarinic (oxybutynin) in cognitive impairment — use mirabegron/solifenacin</td></tr><tr><td>**H. Endocrine**</td><td>H1: Sulfonylurea (glibenclamide) in elderly — hypoglycaemia; prefer gliclazide/DPP-4/SGLT2<br>H2: Insulin sliding scale alone — use basal-bolus</td></tr><tr><td>**I. Falls ★**</td><td>**I1: ≥2 fall-risk drugs (anticholinergic, sedative, antihypertensive, opioid)** — review</td></tr></table>
+<div class="sub-h">2.2 START (Screening Tool to Alert to Right Treatment)</div>
+<table class="ctable"><tr><th>Category</th><th>Key Omissions to Screen</th></tr><tr><td>----------</td><td>------------------------</td></tr><tr><td>**Cardiovascular**</td><td>Anticoagulant if AF + CHA₂DS₂-VASc ≥2 (male) / ≥3 (female)<br>ACEi/ARB if HFrEF / post-MI / diabetic nephropathy<br>Statin if CVD / diabetes >40 / CKD</td></tr><tr><td>**Respiratory**</td><td>LAMA/LABA if COPD + dyspnoea<br>ICS+LABA if asthma + exacerbations</td></tr><tr><td>**CNS**</td><td>Antidepressant if moderate-severe depression<br>Cholinesterase inhibitor if mild-moderate Alzheimer's<br>Memantine if moderate-severe Alzheimer's</td></tr><tr><td>**Musculoskeletal**</td><td>Vitamin D + calcium if osteoporosis / high fall risk<br>Bisphosphonate if osteoporotic fracture / T-score ≤-2.5</td></tr><tr><td>**Endocrine**</td><td>Metformin if T2DM + eGFR >30<br>SGLT2i if T2DM + CKD/HF</td></tr><tr><td>**Urogenital**</td><td>Mirabegron if OAB + cognitive impairment</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>STOPP = <b>S</b>top <b>P</b>otentially <b>I</b>nappropriate <b>P</b>rescriptions. START = <b>S</b>creening <b>T</b>ool to <b>A</b>lert doctors to <b>R</b>ight <b>T</b>reatment.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Prescribing Burden Quantification Tools</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">3.1 Anticholinergic Cognitive Burden (ACB) Scale</div>
+<table class="ctable"><tr><th>Score</th><th>Drugs (Examples)</th></tr><tr><td>-------</td><td>------------------</td></tr><tr><td>**0**</td><td>Most antibiotics, antihypertensives, statins, PPIs, metformin</td></tr><tr><td>**1**</td><td>Ranitidine, paroxetine, nortriptyline, quetiapine, digoxin, prednisolone, solifenacin, citalopram</td></tr><tr><td>**2**</td><td>Amitriptyline (some scales), doxepin, chlorpheniramine, cyproheptadine</td></tr><tr><td>**3**</td><td>**Amitriptyline, imipramine, doxepin >50mg, chlorpromazine, olanzapine, clozapine, oxybutynin, tolterodine, diphenhydramine, hydroxyzine, cyclizine, promethazine, scopolamine, atropine, benztropine, trihexyphenidyl**</td></tr></table>
+<p><b>Target: ACB &lt;3</b> (each point ↑ falls 1.2×, delirium 1.5×, cognitive decline)</p>
+<div class="sub-h">3.2 Drug Burden Index (DBI)</div>
+<p>$$DBI = \sum \frac{D}{D + \delta}$$</p>
+<ul><li>D = daily dose; δ = dose for 50% max effect</li><li><b>Components</b>: <b>Sedative</b> (BZD, Z-drugs, opioids, gabapentinoids, antihistamines) + <b>Anticholinergic</b></li><li><b>DBI ≥1</b>: ↑ falls, ↓ function, ↑ hospitalisation</li></ul>
+<div class="sub-h">3.3 FORTA (Fit fOR The Aged) Classification</div>
+<table class="ctable"><tr><th>Class</th><th>Meaning</th><th>Action</th><th>Examples</th></tr><tr><td>-------</td><td>---------</td><td>--------</td><td>----------</td></tr><tr><td>**A**</td><td>**Absolutely** indicated, clear benefit</td><td>Continue / start</td><td>ACEi in HFrEF, statin in secondary prevention, metformin in T2DM</td></tr><tr><td>**B**</td><td>**Beneficial** but limited evidence / caution</td><td>Use with monitoring</td><td>Beta-blocker in HTN (less preferred), DOAC in AF (renal dose adjust)</td></tr><tr><td>**C**</td><td>**Careful** — questionable benefit / risk > benefit</td><td>Review, consider alternative</td><td>Digoxin in AF (narrow TI), amiodarone (long-term toxicity)</td></tr><tr><td>**D**</td><td>**Don't** — avoid, safer alternatives exist</td><td>**Deprescribe**</td><td>**Diphenhydramine, amitriptyline, long-acting benzos, glibenclamide, NSAIDs in CKD/HF**</td></tr></table>
+<div class="callout"><b>FORTA = F</b>it <b>f</b>o<b>R</b> <b>T</b>he <b>A</b>ged</div>
+<div class="sub-h">3.4 Beers Criteria (AGS 2023) — Key "Avoid" List</div>
+<table class="ctable"><tr><th>Drug/Class</th><th>Reason</th><th>Alternative</th></tr><tr><td>------------</td><td>--------</td><td>-------------</td></tr><tr><td>**Anticholinergics** (1st gen antihistamines, TCAs, oxybutynin, benztropine)</td><td>Cognitive decline, delirium, falls</td><td>2nd gen antihistamines, SNRIs, mirabegron</td></tr><tr><td>**Benzodiazepines (all) / Z-drugs**</td><td>Falls, fractures, delirium, MVA</td><td>CBT-i, melatonin, trazodone low dose</td></tr><tr><td>**Long-acting sulfonylureas** (glibenclamide, chlorpropamide)</td><td>Prolonged hypoglycaemia</td><td>Gliclazide, DPP-4, SGLT2, GLP-1</td></tr><tr><td>**NSAIDs (chronic) in CKD/HF/HTN**</td><td>Renal decline, HF exacerbation, BP rise</td><td>Paracetamol, topical NSAID, opioid (short)</td></tr><tr><td>**Aspirin primary prevention >70**</td><td>Bleed > benefit</td><td>—</td></tr><tr><td>**Digoxin >0.125mg/day**</td><td>Toxicity (nausea, arrhythmia)</td><td>Rate control: beta-blocker, diltiazem</td></tr><tr><td>**Skeletal muscle relaxants** (cyclobenzaprine, methocarbamol)</td><td>Anticholinergic, sedation</td><td>PT, NSAID short course</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Renal & Hepatic Dose Adjustment in Elderly</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Cockcroft-Gault (CrCl) — **USE FOR DRUG DOSING** (NOT eGFR)</div>
+<p>$$CrCl (mL/min) = \frac{(140 - age) \times weight (kg) \times 0.85^{[female]}}{72 \times SCr (\mu mol/L)} \times 1.23$$</p>
+<ul><li>Use <b>ideal body weight</b> if obese; <b>actual weight</b> if underweight</li><li><b>Do NOT use eGFR (CKD-EPI) for drug dosing</b> — overestimates in elderly (low muscle mass)</li></ul>
+<table class="ctable"><tr><th>CrCl (mL/min)</th><th>Common Adjustments</th></tr><tr><td>---------------</td><td>-------------------</td></tr><tr><td>**>60**</td><td>Standard dose</td></tr><tr><td>**30–60**</td><td>↓ dose / ↑ interval: DOACs, gabapentin, pregabalin, metformin (max 1g BD), nitrofurantoin **avoid**</td></tr><tr><td>**15–30**</td><td>Major reduction: avoid metformin, adjust antibiotics (pip/tazo, meropenem), avoid nitrofurantoin, trimethoprim</td></tr><tr><td>**<15 / dialysis**</td><td>Avoid: metformin, nitrofurantoin, most DOACs (apixaban 2.5mg BD if on HD), gabapentinoids; dose post-HD</td></tr></table>
+<div class="sub-h">4.2 Child-Pugh (Hepatic)</div>
+<table class="ctable"><tr><th>Class</th><th>Score</th><th>Prescribing Implication</th></tr><tr><td>-------</td><td>-------</td><td>------------------------</td></tr><tr><td>**A**</td><td>5–6</td><td>Mild — Minor dose adjustments; most drugs OK with monitoring</td></tr><tr><td>**B**</td><td>7–9</td><td>Moderate — Significant dose reductions; avoid hepatotoxic drugs; TDM essential</td></tr><tr><td>**C**</td><td>10–15</td><td>Severe — Avoid many drugs; major dose reductions; prefer non-hepatic clearance; TDM mandatory</td></tr></table>
+<p><b>Drugs needing adjustment in B/C</b>: Warfarin, phenytoin, theophylline, morphine, midazolam, statins (caution), DOACs (avoid in C)</p>
+<div class="callout"><b>Viva Key:</b> <i>Child-Pugh B = moderate impairment = reduce dose ~50% for hepatically cleared drugs. Child-Pugh C = severe = avoid if possible, use alternatives with renal clearance.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Prescribing Cascades — 10 Classic Exam Patterns</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Prescribing Cascade] --&gt; B[Definition] B --&gt; C[Drug A → ADR → misinterpreted as new condition → Drug B] A --&gt; D[Solution: <b>Stop the PRECIPITATING drug</b>, not the new one] </code>``</p>
+<table class="ctable"><tr><th>#</th><th>Cascade</th><th>Trigger Drug → ADR → New Drug</th><th>Correct Action</th></tr><tr><td>---</td><td>---------</td><td>------------------------------</td><td>----------------</td></tr><tr><td>**1**</td><td>**NSAID → HTN → Antihypertensive**</td><td>NSAID → fluid retention/↑ BP</td><td>**Stop NSAID**; use paracetamol</td></tr><tr><td>**2**</td><td>**CCB (amlodipine) → Ankle oedema → Diuretic**</td><td>Amlodipine → capillary leak</td><td>**Stop/↓ CCB**; not diuretic</td></tr><tr><td>**3**</td><td>**Cholinesterase inhibitor → Urinary incontinence → Antimuscarinic**</td><td>Donepezil → ↑ ACh → detrusor overactivity</td><td>**Reduce/stop donepezil**; not antimuscarinic</td></tr><tr><td>**4**</td><td>**Antipsychotic → Parkinsonism → Levodopa**</td><td>Risperidone → D2 blockade</td><td>**Stop/reduce antipsychotic**</td></tr><tr><td>**5**</td><td>**ACEi → Cough → NSAID for "cough pain"**</td><td>ACEi cough → NSAID → renal risk</td><td>**Switch ACEi → ARB**</td></tr><tr><td>**6**</td><td>**Beta-blocker → Depression → Antidepressant**</td><td>BB (lipophilic) → CNS effects</td><td>Switch to cardioselective BB or alternative</td></tr><tr><td>**7**</td><td>**Statin → Myalgia → NSAID/Opioid**</td><td>Statin myopathy</td><td>Switch statin / coenzyme Q10 / lower dose</td></tr><tr><td>**8**</td><td>**SSRI → Hyponatraemia → Fluid restriction / Demeclocycline**</td><td>SSRI SIADH</td><td>**Switch antidepressant**</td></tr><tr><td>**9**</td><td>**Opioid → Constipation → Laxative → Diarrhoea → Loperamide**</td><td>Opioid → OIC</td><td>Prophylactic laxative; rotate opioid</td></tr><tr><td>**10**</td><td>**Diuretic → Gout → Allopurinol → Rash → Steroid**</td><td>Thiazide → ↑ urate</td><td>Losartan (uricosuric) / stop thiazide</td></tr></table>
+<div class="callout"><b>Mnemonic: CASCADE</b> = <b>C</b>CB → oedema → diuretic; <b>A</b>CEi → cough → NSAID; <b>S</b>SRI → hyponatraemia; <b>C</b>olinesterase → incontinence → antimuscarinic; <b>A</b>ntipsychotic → parkinsonism → levodopa; <b>D</b>iuretic → gout → allopurinol → steroid; <b>E</b>lderly + NSAID → HTN → antihypertensive</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">High-Risk Drug Classes: Safer Alternatives</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Avoid (STOPP/Beers/FORTA-D)</th><th>Indication</th><th>**Preferred Alternative**</th><th>Notes</th></tr><tr><td>----------------------------</td><td>------------</td><td>---------------------------</td><td>-------</td></tr><tr><td>**Amitriptyline / Nortriptyline**</td><td>Neuropathic pain, sleep</td><td>**Duloxetine, gabapentin, pregabalin** (↓ ACB)</td><td>Taper TCA</td></tr><tr><td>**Diazepam / Lorazepam / Zopiclone**</td><td>Insomnia, anxiety</td><td>**CBT-i, melatonin 2mg, trazodone 25–50mg**</td><td>If BZD needed: short-acting, <2wk</td></tr><tr><td>**Oxybutynin / Tolterodine**</td><td>OAB</td><td>**Mirabegron (β3-agonist), solifenacin (ACB 1)**</td><td>Avoid in dementia</td></tr><tr><td>**Glibenclamide / Chlorpropamide**</td><td>T2DM</td><td>**Gliclazide MR, DPP-4, SGLT2, GLP-1**</td><td>Hypoglycaemia risk</td></tr><tr><td>**Ibuprofen / Diclofenac / Naproxen (chronic)**</td><td>OA pain</td><td>**Paracetamol 1g QDS, topical NSAID, capsaicin, duloxetine**</td><td>If NSAID needed: celecoxib + PPI, shortest course</td></tr><tr><td>**Digoxin >125mcg**</td><td>AF rate control</td><td>**Bisoprolol, diltiazem** (if HFrEF avoid)</td><td>Digoxin narrow TI</td></tr><tr><td>**Chlorpromazine / Haloperidol (long-term)**</td><td>BPSD</td><td>**Non-pharm first; quetiapine low dose if essential**</td><td>Review q3mo</td></tr><tr><td>**Promethazine / Cyclizine / Hyoscine**</td><td>Nausea, motion sickness</td><td>**Ondansetron, metoclopramide (short), domperidone**</td><td>Anticholinergic</td></tr><tr><td>**Cyclobenzaprine / Baclofen (chronic)**</td><td>Muscle spasm</td><td>**Physiotherapy, short-course NSAID**</td><td>Sedation, anticholinergic</td></tr><tr><td>**Thyroid hormone (TSH suppressed)**</td><td>Subclinical hypothyroid</td><td>**Monitor TSH; treat only if TSH >10 or symptomatic**</td><td>Avoid overtreatment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Structured Medication Review (SMR) — STEPS Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">7.1 5-Step Process</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th><th>Tools</th></tr><tr><td>------</td><td>--------</td><td>-------</td></tr><tr><td>**S**</td><td>**S**ystematic list: all meds, dose, freq, indication, duration, adherence</td><td>MAR, patient interview, pharmacy</td></tr><tr><td>**T**</td><td>**T**arget PIMs: STOPP v3, Beers, ACB≥3, DBI≥1, FORTA C/D</td><td>Screening tools</td></tr><tr><td>**E**</td><td>**E**valuate each PIM: Benefit vs harm, time-to-benefit, goals of care, withdrawal risk</td><td>Shared decision-making</td></tr><tr><td>**P**</td><td>**P**rioritise: 1 drug at a time; highest harm/lowest benefit first</td><td>PILL mnemonic</td></tr><tr><td>**S**</td><td>**S**top/Taper/Monitor: written plan, patient agreement, follow-up 2–4 weeks</td><td>Deprescribing algorithms</td></tr></table>
+<div class="sub-h">7.2 PILL Prioritisation Mnemonic</div>
+<table class="ctable"><tr><th>Letter</th><th>Priority</th><th>Example</th></tr><tr><td>--------</td><td>----------</td><td>---------</td></tr><tr><td>**P**</td><td>**P**reventable harm</td><td>Anticholinergics (ACB≥3), benzodiazepines, NSAIDs in CKD</td></tr><tr><td>**I**</td><td>**I**ndication lost</td><td>PPI >8w no indication, bisphosphonate post-holiday</td></tr><tr><td>**L**</td><td>**L**imited life expectancy</td><td>Statin primary prevention in metastatic cancer</td></tr><tr><td>**L**</td><td>**L**ow benefit</td><td>4th antihypertensive with SBP 105, digoxin >125mcg</td></tr></table>
+<div class="sub-h">7.3 Deprescribing Algorithms (Key Classes)</div>
+<p>``<code>mermaid flowchart TD A[Deprescribing Decision] --&gt; B{Antidepressant / Antipsychotic?} B --&gt;|Yes| C[Taper slowly 4–12 weeks&lt;br/&gt;Monitor withdrawal/relapse] B --&gt;|No| D{Benzodiazepine / Z-drug?} D --&gt;|Yes| E[Ashton taper 8–12+ weeks&lt;br/&gt;Switch to diazepam equivalent] D --&gt;|No| F{Anticholinergic / PPI / Statin?} F --&gt;|PPI| G[Step-down 4 weeks → stop&lt;br/&gt;Lifestyle + PRN antacid] F --&gt;|Statin (primary prev, life exp &lt;2y)| H[Stop; no taper needed] F --&gt;|Anticholinergic| I[Switch to low-ACB alternative&lt;br/&gt;Taper if high dose/long duration] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Communication: Frailty & Limited Life Expectancy</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Script:</b> <i>"Mrs. Patel, at 88 with advanced dementia, the statin you've taken for 10 years for 'prevention' takes 2–3 years to show benefit. It can cause muscle aches and interacts with your other medicines. Given your current priorities are comfort and quality of life, I'd like to stop it. We can always restart if things change. How does that sound?"</i></div>
+<p><b>Key phrases:</b></p>
+<ul><li>"Time to benefit" vs "Time to harm"</li><li>"Goals of care alignment"</li><li>"Deprescribing = optimising, not giving up"</li><li>"We can restart anytime"</li></ul>
+<p><b>Time-to-Benefit Reference:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Drug/Intervention&lt;/th&gt;&lt;th&gt;Time to Benefit&lt;/th&gt;&lt;th&gt;Deprescribe if Life Expectancy &lt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------------------&lt;/td&gt;&lt;td&gt;-----------------&lt;/td&gt;&lt;td&gt;----------------------------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Statin (primary prevention)&lt;/td&gt;&lt;td&gt;2–3 years&lt;/td&gt;&lt;td&gt;2–3 years&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Bisphosphonate (vertebral)&lt;/td&gt;&lt;td&gt;1–2 years&lt;/td&gt;&lt;td&gt;1–2 years&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Bisphosphonate (hip)&lt;/td&gt;&lt;td&gt;2–3 years&lt;/td&gt;&lt;td&gt;2–3 years&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ACEi/ARB (HFrEF)&lt;/td&gt;&lt;td&gt;3–6 months&lt;/td&gt;&lt;td&gt;&lt;6 months reconsider&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Anticoagulant (AF)&lt;/td&gt;&lt;td&gt;Immediate (stroke prevention)&lt;/td&gt;&lt;td&gt;Individualise (bleed risk)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Essentials</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Correct Action</th></tr><tr><td>----------</td><td>---------------</td></tr><tr><td>80yo, falls ×2, on amitriptyline 50mg, amlodipine, furosemide</td><td>**Stop amitriptyline (ACB 3)** → switch duloxetine/gabapentin; review antihypertensives (SBP<120)</td></tr><tr><td>85yo, AF, CHA₂DS₂-VASc 4, eGFR 25, on warfarin INR labile</td><td>**Switch to apixaban 2.5mg BD** (CrCl 15–29)</td></tr><tr><td>75yo, T2DM, eGFR 35, on glibenclamide</td><td>**Stop glibenclamide** → gliclazide MR or SGLT2i (dapa/empa)</td></tr><tr><td>78yo, PPI 2 years "reflux", now asymptomatic</td><td>**Step-down taper 4 weeks** → stop; lifestyle advice</td></tr><tr><td>82yo, insomnia, on zopiclone 7.5mg 3 years</td><td>**CBT-i + melatonin 2mg**; Ashton taper if dependent</td></tr><tr><td>90yo, metastatic cancer, on atorvastatin 40mg</td><td>**Stop statin** (no primary prevention benefit in <1y life expectancy)</td></tr><tr><td>70yo, COPD, on theophylline 400mg BD</td><td>**Stop theophylline** → LAMA/LABA/ICS per GOLD</td></tr><tr><td>76yo, Parkinson's, on oxybutynin for OAB</td><td>**Stop oxybutynin** (worsens cognition) → mirabegron</td></tr><tr><td>85yo, hyponatraemia 128, on sertraline 100mg</td><td>**Stop/↓ sertraline** → switch to mirtazapine/vortioxetine</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Expected Answer</th></tr><tr><td>---</td><td>-----------------</td></tr><tr><td>1. Why Cockcroft-Gault not eGFR for drug dosing in elderly?</td><td>eGFR (CKD-EPI) standardised to 1.73m² BSA; overestimates in low muscle mass (sarcopenia). CG uses actual weight & age.</td></tr><tr><td>2. Patient on donepezil develops urinary incontinence. Dr starts oxybutynin. What cascade?</td><td>**Cholinesterase inhibitor → ↑ ACh → detrusor overactivity → antimuscarinic** — worsens cognition. **Stop oxybutynin; review donepezil**.</td></tr><tr><td>3. Define FORTA Class D. Give 3 examples.</td><td>**Avoid — safer alternatives exist**. Diphenhydramine, amitriptyline, glibenclamide, long-acting benzos, NSAIDs in CKD.</td></tr><tr><td>4. 80yo on apixaban 5mg BD. eGFR 28. Correct dose?</td><td>**Apixaban 2.5mg BD** (if ≥2 of: age ≥80, weight ≤60kg, CrCl ≤30). Here: age ≥80 + CrCl ≤30 → 2.5mg BD.</td></tr><tr><td>5. STOPP v3: When is PPI inappropriate?</td><td>>8 weeks for uncomplicated GERD/PEptic ulcer healed; no ongoing NSAID/anticoagulant; no Barrett's/Z-E.</td></tr><tr><td>6. How to calculate ACB? Target?</td><td>Sum ACB scores (0–3) of all drugs. **Target <3**.</td></tr><tr><td>7. Why avoid glibenclamide in elderly?</td><td>Long half-life, active metabolites, renal excretion → **prolonged hypoglycaemia** (can be fatal).</td></tr><tr><td>8. Patient on amlodipine 10mg develops ankle oedema. GP adds furosemide 40mg. What cascade?</td><td>**CCB → pedal oedema → diuretic**. Correct: reduce/stop amlodipine; add ACEi/ARB or thiazide-like if needed.</td></tr><tr><td>9. Time-to-benefit for statin primary prevention? Bisphosphonate?</td><td>Statin: **2–3 years**. Bisphosphonate: **1–2 years** (vertebral), 2–3y (hip).</td></tr><tr><td>10. 85yo with advanced dementia (FAST 7c) on donepezil, memantine, atorvastatin, aspirin. Review.</td><td>**Stop donepezil + memantine** (no benefit severe dementia); **stop atorvastatin** (primary prevention, life exp <1y); **review aspirin** (bleed risk vs benefit).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**eGFR vs CrCl for dosing**</td><td>**CrCl (Cockcroft-Gault)** for drug dosing; eGFR for CKD staging</td></tr><tr><td>**STOPP vs START**</td><td>STOPP = **S**top **P**otentially **I**nappropriate **P**rescriptions; START = **S**creening **T**ool to **A**lert to **R**ight **T**reatment</td></tr><tr><td>**Beers vs STOPP**</td><td>Beers = US, age-based lists; STOPP = European, organ-system + clinical context (falls, renal)</td></tr><tr><td>**ACB vs DBI**</td><td>ACB = simple additive (0–3 per drug); DBI = dose-response model (pharmacodynamic)</td></tr><tr><td>**FORTA D vs Beers Avoid**</td><td>Similar concept; FORTA grades A–D for each indication; Beers is binary avoid/caution</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>STOPP</b> = <b>S</b>creening <b>T</b>ool of <b>O</b>lder <b>P</b>eople's <b>P</b>rescriptions</li><li><b>START</b> = <b>S</b>creening <b>T</b>ool to <b>A</b>lert doctors to <b>R</b>ight <b>T</b>reatment</li><li><b>FORTA</b> = <b>F</b>it <b>f</b>o<b>R</b> <b>T</b>he <b>A</b>ged</li><li><b>PILL</b> (deprescribing priority) = <b>P</b>reventable harm, <b>I</b>ndication lost, <b>L</b>imited life expectancy, <b>L</b>ow benefit</li><li><b>CASCADE</b> = <b>C</b>CB → oedema → diuretic; <b>A</b>CEi → cough → NSAID; <b>S</b>SRI → hyponatraemia; <b>C</b>olinesterase → incontinence → antimuscarinic; <b>A</b>ntipsychotic → parkinsonism → levodopa; <b>D</b>iuretic → gout → allopurinol → steroid; <b>E</b>lderly + NSAID → HTN → antihypertensive</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Elderly Prescribing)) Physiology ↓ TBW, ↑ fat, ↓ renal, ↓ hepatic, ↑ BBB permeability ↓ homeostasis, ↓ life expectancy → time-to-benefit Tools STOPP/START v3 Beers 2023 ACB Scale DBI FORTA (A/B/C/D) Cockcroft-Gault dosing Child-Pugh hepatic High-Risk Classes Anticholinergics (ACB 3) → STOP Benzodiazepines/Z-drugs → taper NSAIDs (CKD/HF/HTN) → avoid Sulfonylureas (glibenclamide) → switch Antipsychotics BPSD → review q3mo PPIs &gt;8wk → step down Digoxin &gt;125mcg → reduce Cascades 10 classic cascades Recognise → reverse trigger drug Deprescribing 5-step / CEASE PILL priority Algorithms per class Communication Goals of care Time-to-benefit Shared decision </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>------</td></tr><tr><td>Day 1</td><td></td><td></td><td>1d</td></tr><tr><td>Day 3</td><td></td><td></td><td>3d</td></tr><tr><td>Day 7</td><td></td><td></td><td>1w</td></tr><tr><td>Day 14</td><td></td><td></td><td>2w</td></tr><tr><td>Day 30</td><td></td><td></td><td>1m</td></tr><tr><td>Day 90</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>STOPP/START criteria</td><td>15</td><td></td><td></td></tr><tr><td>ACB/DBI/FORTA calculation</td><td>10</td><td></td><td></td></tr><tr><td>Renal/hepatic dosing</td><td>8</td><td></td><td></td></tr><tr><td>Prescribing cascades</td><td>10</td><td></td><td></td></tr><tr><td>Safer alternatives table</td><td>12</td><td></td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td><td></td></tr><tr><td>**Total**</td><td>**65**</td><td></td><td></td></tr></table>
+<p><b>Target: ≥52/65 (80%)</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Case (10 marks): *"80-year-old woman, frail, 14 medications, recent falls, confusion. Conduct medication review."*</div>
+<ol><li><b>Framework</b> (2): STEPS / CEASE — list all meds with indication</li><li><b>Identify PIMs</b> (3): STOPP v3 — amitriptyline (ACB 3), lorazepam (BZD &gt;4w), omeprazole (&gt;8w no indication), 3 antihypertensives (SBP 105), digoxin 250mcg</li><li><b>Prioritise</b> (2): PILL — Preventable harm (amitriptyline, lorazepam) → Indication lost (PPI) → Limited benefit (statin primary prev) → Low benefit (antihypertensives to low SBP)</li><li><b>Deprescribe plan</b> (2): Amitriptyline→duloxetine 4wk; Lorazepam→Ashton 8wk; Stop PPI step-down 4wk; Stop 1 antihypertensive 2wk; Review statin (life exp)</li><li><b>Monitor &amp; Communicate</b> (1): Follow-up 2wk, EMPOWER, restart criteria</li></ol>
+<div class="sub-h">Short Question (5 marks): *"STOPP v3 criterion for antipsychotics in dementia"*</div>
+<ul><li>Antipsychotic prescribed for BPSD <b>&gt;12 weeks without clinical review</b> (STOPP C3)</li><li>Or: <b>Antipsychotic + cognitive impairment/dementia</b> without documented discussion of risks (mortality ×1.6, stroke ×3)</li></ul>
+<div class="sub-h">Viva (2 min): *"82yo, AF, CrCl 28, on warfarin INR erratic. Plan?"*</div>
+<ul><li>Switch to <b>apixaban 2.5mg BD</b> (CrCl 15–29 + age ≥80 OR weight ≤60kg → 2.5mg BD)</li><li>If CrCl &lt;15 or dialysis → apixaban 2.5mg BD (off-label but evidence) or warfarin with close INR</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"75yo on glibenclamide. Problem?"*</div>
+<ul><li><b>Prolonged hypoglycaemia risk</b> (renal excretion, active metabolites). Switch to <b>gliclazide MR</b> or SGLT2i/DPP-4i.</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>CG for dosing, eGFR for staging</li><li>ACB target &lt;3; DBI ≥1 bad</li><li>FORTA D = avoid (diphenhydramine, amitriptyline, glibenclamide)</li><li>CCB oedema → don't add diuretic, reduce CCB</li><li>Statin primary prev: stop if life exp &lt;2y</li><li>BPSD antipsychotic: review q3mo, stop by 12wk</li><li>Apixaban renal: 2.5mg BD if 2 of (age≥80, wt≤60, CrCl≤30)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>ELDERLY PRESCRIBING TRIAD:</b> 1. <b>STOPP/START v3</b> — explicit criteria 2. <b>ACB &lt;3 / DBI &lt;1 / FORTA A/B</b> — burden scores 3. <b>CrCl (CG) for dosing</b> — not eGFR  <b>CASCADE REVERSAL:</b> Stop the <b>precipitating drug</b>, not the new one  <b>DEPRESCRIBE ORDER (PILL):</b> Preventable harm → Indication lost → Limited life expectancy → Low benefit</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which equation should be used for drug dosing in an 85-year-old frail woman with sarcopenia?</b></li></ol>
+<p>A. CKD-EPI eGFR B. <b>Cockcroft-Gault CrCl</b> ✓ C. MDRD D. Schwartz formula E. Cystatin C eGFR</p>
+<ol><li><b>FORTA classification: Drug that is "Absolutely indicated, clear benefit" = Class:</b></li></ol>
+<p>A. B B. C C. D D. <b>A</b> ✓ E. None</p>
+<ol><li><b>STOPP v3: Anticholinergic burden score ≥3 is criterion under which section?</b></li></ol>
+<p>A. Cardiovascular B. <b>Central Nervous System</b> ✓ C. GI D. Respiratory E. Musculoskeletal</p>
+<ol><li><b>An 80-year-old man with AF (CHA₂DS₂-VASc 4) has CrCl 25 mL/min. Appropriate apixaban dose?</b></li></ol>
+<p>A. 5 mg BD B. <b>2.5 mg BD</b> ✓ C. 5 mg OD D. 2.5 mg OD E. Avoid DOAC; use warfarin</p>
+<ol><li><b>Which drug is FORTA Class D (Avoid) for heart failure?</b></li></ol>
+<p>A. Bisoprolol B. <b>Diclofenac</b> ✓ C. Ramipril D. Spironolactone E. Furosemide</p>
+<ol><li><b>Prescribing cascade: Amlodipine → ankle oedema → furosemide. Correct intervention:</b></li></ol>
+<p>A. Increase furosemide B. <b>Reduce/stop amlodipine</b> ✓ C. Add spironolactone D. Switch to nifedipine E. Continue both</p>
+<ol><li><b>Target ACB score in older adults:</b></li></ol>
+<p>A. 0 B. &lt;1 C. <b>&lt;3</b> ✓ D. &lt;5 E. &lt;10</p>
+<ol><li><b>Drug with ACB score 3:</b></li></ol>
+<p>A. Citalopram B. Nortriptyline C. <b>Amitriptyline</b> ✓ D. Quetiapine E. Solifenacin</p>
+<ol><li><b>Time-to-benefit for statin primary prevention:</b></li></ol>
+<p>A. 6 months B. 1 year C. <b>2–3 years</b> ✓ D. 5 years E. Immediate</p>
+<ol><li><b>Bisphosphonate drug holiday considered after:</b></li></ol>
+<p>A. 1 year oral B. 2 years oral C. <b>3–5 years oral / 3 years IV</b> ✓ D. 5 years oral / 5 years IV E. 10 years oral</p>
+<ol><li><b>STOPP v3: PPI inappropriate if:</b></li></ol>
+<p>A. Used for 4 weeks B. <b>Used &gt;8 weeks for uncomplicated GERD without review</b> ✓ C. Used with aspirin D. Used with warfarin E. Used in Barrett's oesophagus</p>
+<ol><li><b>Which sulfonylurea is SAFEST in elderly?</b></li></ol>
+<p>A. Glibenclamide B. Chlorpropamide C. <b>Gliclazide MR</b> ✓ D. Glimepiride E. Tolbutamide</p>
+<ol><li><b>Patient on donepezil develops urinary incontinence. Doctor starts oxybutynin. This is a prescribing cascade. Correct action:</b></li></ol>
+<p>A. Continue both B. Increase oxybutynin C. <b>Stop oxybutynin; review donepezil</b> ✓ D. Switch to tolterodine E. Add mirabegron</p>
+<ol><li><b>Digoxin dose in elderly with AF — maximum maintenance dose:</b></li></ol>
+<p>A. 62.5 mcg daily B. <b>125 mcg daily</b> ✓ C. 250 mcg daily D. 0.5 mg daily E. 1 mg daily</p>
+<ol><li><b>DBI (Drug Burden Index) incorporates which two domains?</b></li></ol>
+<p>A. Anticholinergic + Cardiovascular B. <b>Sedative + Anticholinergic</b> ✓ C. Renal + Hepatic D. Falls + Cognition E. Bleeding + Thrombosis</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBAs (8)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>78-year-old woman with recurrent falls. Medications: amitriptyline 25mg nocte, amlodipine 10mg, furosemide 40mg, paracetamol 1g QDS. Most appropriate intervention?</b></li></ol>
+<p>A. Increase furosemide to 80mg B. Add bisoprolol 2.5mg for rate control C. <b>Stop amitriptyline; switch to duloxetine 30mg</b> ✓ D. Stop amlodipine; add indapamide 1.5mg E. Add vitamin D 800 IU daily <i>Explanation: Amitriptyline ACB 3 (STOPP C1) — major fall risk. First-line neuropathic: duloxetine/gabapentin/pregabalin (ACB 0–1). Amlodipine oedema managed by reducing amlodipine, not adding diuretic.</i></p>
+<ol><li><b>84-year-old man with AF (CHA₂DS₂-VASc 5), CrCl 22 mL/min, weight 58kg. Current warfarin INR labile (1.8–3.5). Best anticoagulation strategy?</b></li></ol>
+<p>A. Continue warfarin; increase INR monitoring B. <b>Switch to apixaban 2.5mg BD</b> ✓ C. Switch to rivaroxaban 15mg OD D. Switch to dabigatran 110mg BD E. Aspirin 75mg + clopidogrel 75mg <i>Explanation: Apixaban 2.5mg BD if ≥2 of: age ≥80, weight ≤60kg, CrCl ≤30. This patient meets all three. Rivaroxaban 15mg OD if CrCl 15–49; dabigatran avoid if CrCl &lt;30.</i></p>
+<ol><li><b>80-year-old woman with T2DM, eGFR 38 mL/min, on glibenclamide 5mg BD. HbA1c 58 mmol/mol. Frequent hypoglycaemia (2–3/week). Best switch?</b></li></ol>
+<p>A. Increase glibenclamide to 10mg BD B. Switch to gliclazide MR 60mg BD C. <b>Switch to dapagliflozin 10mg OD</b> ✓ D. Switch to sitagliptin 50mg OD E. Stop all; insulin sliding scale <i>Explanation: Glibenclamide Beers/FORTA-D in elderly (prolonged hypoglycaemia). SGLT2i (dapa/empa) safe if eGFR &gt;20, cardio-renal benefit, no hypoglycaemia. Gliclazide MR safer than glibenclamide but still hypoglycaemia risk. DPP-4i safe but no cardio-renal benefit.</i></p>
+<ol><li><b>75-year-old man on omeprazole 20mg OD for 3 years for "dyspepsia". Currently asymptomatic. Upper GI endoscopy 2 years ago: mild gastritis, H. pylori negative. STOPP v3 recommendation?</b></li></ol>
+<p>A. Continue omeprazole indefinitely B. Increase to omeprazole 40mg OD C. <b>Step down over 4 weeks then stop; lifestyle advice</b> ✓ D. Switch to ranitidine 150mg BD E. Refer for repeat endoscopy <i>Explanation: STOPP D1 — PPI &gt;8 weeks for uncomplicated GERD/peptic ulcer healed, no ongoing NSAID/anticoagulant, no Barrett's → step down and stop.</i></p>
+<ol><li><b>82-year-old woman with moderate Alzheimer's (MMSE 18/30), on donepezil 10mg OD. Develops new urinary incontinence. GP starts oxybutynin 5mg BD. After 2 weeks, increased confusion and falls. Most likely cause?</b></li></ol>
+<p>A. Donepezil toxicity B. <b>Antimuscarinic (oxybutynin) worsening cholinergic excess → delirium</b> ✓ C. Urinary tract infection D. Alzheimer's progression E. Oxybutynin underdose <i>Explanation: Cholinesterase inhibitor → ↑ ACh → detrusor overactivity → antimuscarinic prescribed → worsens cognition. Prescribing cascade #3. Correct: stop oxybutynin; review donepezil; consider mirabegron if OAB persists.</i></p>
+<ol><li><b>88-year-old man with metastatic prostate cancer (on androgen deprivation), atrial fibrillation (CHA₂DS₂-VASc 4), osteoporosis. Medications: apixaban 5mg OD, alendronate 70mg weekly, atorvastatin 40mg, calcium/vitamin D, denosumab 6-monthly. Life expectancy ~8 months. Which medication to STOP?</b></li></ol>
+<p>A. Apixaban B. Alendronate C. <b>Atorvastatin</b> ✓ D. Calcium/vitamin D E. Denosumab <i>Explanation: Statin primary prevention time-to-benefit 2–3 years. Life expectancy 8 months → no benefit, only harm (myalgia, interactions). Anticoagulant: stroke prevention immediate benefit. Bisphosphonate/denosumab: fracture prevention relevant in ADT. Calcium/vitamin D: low harm.</i></p>
+<ol><li><b>70-year-old woman with COPD (FEV1 45% predicted), on tiotropium 18mcg OD, salmeterol/fluticasone 50/250 BD. GP adds theophylline 200mg BD for "extra bronchodilation". After 1 week, nausea, tachycardia, insomnia. STOPP v3 criterion violated?</b></li></ol>
+<p>A. Theophylline narrow therapeutic index (STOPP E1) B. LABA + LAMA + theophylline = triple therapy not indicated C. Theophylline + beta-agonist → additive tachycardia D. <b>A + B + C</b> ✓ E. Theophylline contraindicated in COPD <i>Explanation: STOPP E1 — theophylline narrow TI, multiple interactions, prefers LABA/LAMA/ICS per GOLD. Not first-line add-on.</i></p>
+<ol><li><b>76-year-old man with Parkinson's disease, on levodopa/carbidopa 100/25 TID, ropinirole 2mg TID. Develops visual hallucinations. Neurologist starts quetiapine 25mg nocte. After 4 weeks, worsened motor symptoms. Why?</b></li></ol>
+<p>A. Quetiapine dopamine agonist effect B. <b>Quetiapine D2 antagonism → worsens parkinsonism</b> ✓ C. Levodopa dose too high D. Ropinirole dose too high E. Disease progression <i>Explanation: Antipsychotics (even atypical) block D2 → worsen Parkinson's. If essential: quetiapine/clozapine lowest D2 affinity. First: reduce/stop dopamine agonist (ropinirole), then reduce levodopa.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Cockcroft-Gault formula</td><td>(140-age)×wt×0.85♀ / (72×SCr) ×1.23 for mL/min</td></tr><tr><td>eGFR vs CrCl dosing</td><td>**CrCl (CG) for dosing**; eGFR for CKD staging</td></tr><tr><td>STOPP v3 PPI criterion</td><td>>8 weeks uncomplicated GERD/healed ulcer → review/stop</td></tr><tr><td>START anticoagulant AF</td><td>CHA₂DS₂-VASc ≥2♂/≥3♀ → anticoagulate</td></tr><tr><td>FORTA classes</td><td>A=Absolutely, B=Beneficial, C=Careful, D=Don't</td></tr><tr><td>ACB 3 drugs</td><td>Amitriptyline, oxybutynin, diphenhydramine, chlorpromazine, olanzapine, scopolamine</td></tr><tr><td>ACB target</td><td>**<3**</td></tr><tr><td>Glibenclamide avoid</td><td>Prolonged hypoglycaemia (renal excretion, active metabolites)</td></tr><tr><td>CCB oedema cascade</td><td>**Reduce CCB, not add diuretic**</td></tr><tr><td>Apixaban renal dosing</td><td>5mg BD standard; 2.5mg BD if ≥2 of (age≥80, wt≤60, CrCl≤30)</td></tr><tr><td>Statin primary prev T2B</td><td>2–3 years</td></tr><tr><td>Bisphosphonate holiday</td><td>3–5y oral / 3y IV if low fracture risk</td></tr><tr><td>BPSD antipsychotic limit</td><td>12 weeks without review (STOPP)</td></tr><tr><td>Cholinesterase inhibitor cascade</td><td>Donepezil → incontinence → oxybutynin → STOP oxybutynin</td></tr><tr><td>PILL deprescribing priority</td><td>Preventable harm → Indication lost → Limited life exp → Low benefit</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — CG uses actual weight &amp; age; eGFR overestimates in sarcopenia</li><li><b>D</b> — FORTA A = absolutely indicated</li><li><b>B</b> — STOPP C1: ACB ≥3</li><li><b>B</b> — Apixaban 2.5mg BD if 2/3 criteria met (age≥80 + CrCl≤30)</li><li><b>B</b> — NSAIDs FORTA D in HF</li><li><b>B</b> — Reverse the cascade: stop precipitant (amlodipine)</li><li><b>C</b> — ACB &lt;3 target</li><li><b>C</b> — Amitriptyline ACB 3</li><li><b>C</b> — Statin primary prevention 2–3y</li><li><b>C</b> — 3–5y oral / 3y IV</li><li><b>B</b> — STOPP D1</li><li><b>C</b> — Gliclazide MR shortest half-life, no active metabolites</li><li><b>C</b> — Antimuscarinic worsens cholinergic excess; stop it</li><li><b>B</b> — Digoxin max 125mcg (0.125mg) in elderly</li><li><b>B</b> — Sedative + Anticholinergic</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> — Amitriptyline ACB 3; switch to duloxetine/gabapentin</li><li><b>B</b> — Apixaban 2.5mg BD (meets all 3 renal dose criteria)</li><li><b>C</b> — Dapagliflozin (SGLT2i) safe eGFR&gt;20, no hypoglycaemia, cardio-renal benefit</li><li><b>C</b> — STOPP D1: step down and stop</li><li><b>B</b> — Prescribing cascade: cholinergic → antimuscarinic → delirium</li><li><b>C</b> — Statin primary prevention no benefit &lt;2y life expectancy</li><li><b>D</b> — Theophylline STOPP E1 (narrow TI) + not indicated + additive toxicity</li><li><b>B</b> — Antipsychotic D2 blockade worsens parkinsonism</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Polypharmacy and Deprescribing]] — STOPP/START, deprescribing algorithms, CEASE framework</li><li>[[Prescribing in Special Populations]] — Renal, hepatic, pregnancy, paediatrics dosing</li><li>[[Medication Safety and Errors]] — PINCH drugs, error classification, root cause analysis</li><li>[[Drug Interactions]] — CYP450, P-gp, high-risk combinations in elderly</li><li>[[Therapeutic Drug Monitoring]] — Digoxin, lithium, anticonvulsants in elderly</li><li>[[Clinical Context/Pain Management]] — WHO ladder, opioid prescribing in elderly</li><li>[[Clinical Context/Palliative Care]] — Syringe drivers, deprescribing at end of life</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Elderly Prescribing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

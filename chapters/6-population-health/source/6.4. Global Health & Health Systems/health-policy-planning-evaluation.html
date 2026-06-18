@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Policy Planning Evaluation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.4. GLOBAL HEALTH & HEALTH SYSTEMS</span>
+      <div class="h1">Health Policy Planning Evaluation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe health policy cycle: agenda setting, formulation, implementation, evaluation, revision</li><li>[ ] Apply priority setting frameworks: MCDA, PBMA, PBRS, Hanlon</li><li>[ ] Distinguish programme planning: logic models, theory of change, intervention mapping</li><li>[ ] Apply evaluation: process, impact, outcome, economic; RE-AIM, logic models</li><li>[ ] Describe advocacy: media, lobby, coalition building, community mobilisation</li><li>[ ] Apply Health in All Policies (HiAP), policy analysis (Walt-Gilson)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Health Policy**</td><td>Decisions, plans, actions undertaken to achieve specific health goals in society</td></tr><tr><td>**Public Policy**</td><td>Government actions affecting society (incl. health indirectly)</td></tr><tr><td>**Policy Cycle**</td><td>Stages through which policy evolves: agenda, formulation, implementation, evaluation</td></tr><tr><td>**Health in All Policies (HiAP)**</td><td>Approach integrating health considerations into all policy sectors</td></tr><tr><td>**Advocacy**</td><td>Active support for a cause to influence decisions; political, media, community</td></tr><tr><td>**Logic Model**</td><td>Visual depiction of inputs → activities → outputs → outcomes → impact</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological framework - see policy cycle and planning below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Policy Cycle & Frameworks</span>
+  </div>
+  <div class="sec-body">
+<p><b>Policy Cycle (Stages):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Stage&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Tools&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>1. Agenda Setting</b>&lt;/td&gt;&lt;td&gt;Identify issues for action&lt;/td&gt;&lt;td&gt;Kingdon (streams: problem, policy, politics), media, advocacy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2. Policy Formulation</b>&lt;/td&gt;&lt;td&gt;Develop options, consult stakeholders&lt;/td&gt;&lt;td&gt;Evidence review, scenarios, MCDA, EtD frameworks&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3. Decision Making</b>&lt;/td&gt;&lt;td&gt;Choose option&lt;/td&gt;&lt;td&gt;Political negotiation, costing, Cabinet, Parliament&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>4. Implementation</b>&lt;/td&gt;&lt;td&gt;Translate policy to action&lt;/td&gt;&lt;td&gt;Plans, regulations, financing, workforce, IT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>5. Evaluation</b>&lt;/td&gt;&lt;td&gt;Assess impact&lt;/td&gt;&lt;td&gt;Process, outcome, impact, economic evaluation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>6. Revision/Update</b>&lt;/td&gt;&lt;td&gt;Adjust based on evaluation&lt;/td&gt;&lt;td&gt;Lessons learned, new evidence, change of govt&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Policy Triangle (Walt &amp; Gilson 1994):</b> ``<code> Context (Social, Economic, Political) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt; ↓ ┌────────────────┐ │                │ Policy───────Actors─────── Content          (Stakeholders)  Process │                │ └────────────────┘ ↑ Policy Content </code>``</p>
+<p><b>Mermaid: Policy Triangle</b> ``<code>mermaid flowchart TD A[Context] --&gt; P[Process] A --&gt; C[Content] A --&gt; AC[Actors] P --&gt; C P --&gt; AC C --&gt; AC style A fill:#bbf,stroke:#333 style C fill:#bfb,stroke:#333 style P fill:#f96,stroke:#333 style AC fill:#f9f,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Planning & Evaluation)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Priority Setting Frameworks:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Framework&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>MCDA (Multi-Criteria Decision Analysis)</b>&lt;/td&gt;&lt;td&gt;Weighted criteria scoring (health gain, equity, cost, feasibility, acceptability)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PBMA (Programme Budgeting &amp; Marginal Analysis)</b>&lt;/td&gt;&lt;td&gt;Disinvest from low-value to fund high-value; marginal analysis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PBRS (Prioritisation Based on Realistic Scoring)</b>&lt;/td&gt;&lt;td&gt;Multidisciplinary scoring; realistic, evidence-based&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hanlon Method</b>&lt;/td&gt;&lt;td&gt;(Magnitude + Severity) × Effectiveness ÷ Cost&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>MoSCoW</b>&lt;/td&gt;&lt;td&gt;Must / Should / Could / Won't have (IT/software origin)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Accountable/Reasonableness</b>&lt;/td&gt;&lt;td&gt;Daniels &amp; Sabin: fair process, transparent decisions&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Programme Planning:</b></p>
+<p><b>Logic Model (5 Components):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Component&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Example (Diabetes Prevention)&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;td&gt;-------------------------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Inputs</b>&lt;/td&gt;&lt;td&gt;Resources needed&lt;/td&gt;&lt;td&gt;Funding, staff, training, partnerships&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Activities</b>&lt;/td&gt;&lt;td&gt;What is done&lt;/td&gt;&lt;td&gt;Education, screening, lifestyle coaching&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Outputs</b>&lt;/td&gt;&lt;td&gt;Direct products&lt;/td&gt;&lt;td&gt;Sessions delivered, people screened&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Outcomes</b>&lt;/td&gt;&lt;td&gt;Short-medium effects&lt;/td&gt;&lt;td&gt;Knowledge ↑, behaviour change, weight loss&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Impact</b>&lt;/td&gt;&lt;td&gt;Long-term effects&lt;/td&gt;&lt;td&gt;Diabetes incidence ↓, complications ↓&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Theory of Change:</b></p>
+<ul><li>Causal pathway (assumptions + interventions = outcomes)</li><li>Long-term change vision + preconditions</li><li>Indicator-based testing of assumptions</li></ul>
+<p><b>Intervention Mapping (IM):</b></p>
+<ol><li>Needs assessment (proximal/distal)</li><li>Matrices of change objectives (behavioural/environmental)</li><li>Theory-based methods</li><li>Programme design</li><li>Adoption/implementation</li><li>Evaluation planning</li></ol>
+<p><b>Evaluation Types:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Question&lt;/th&gt;&lt;th&gt;Methods&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Process</b>&lt;/td&gt;&lt;td&gt;Was it delivered?&lt;/td&gt;&lt;td&gt;Audit, fidelity, reach, dose&lt;/td&gt;&lt;td&gt;Sessions held, attendance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Impact</b>&lt;/td&gt;&lt;td&gt;Did it work?&lt;/td&gt;&lt;td&gt;RCT, quasi-experimental&lt;/td&gt;&lt;td&gt;HbA1c reduction, weight loss&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Outcome</b>&lt;/td&gt;&lt;td&gt;Long-term effects?&lt;/td&gt;&lt;td&gt;Cohort, time series&lt;/td&gt;&lt;td&gt;Diabetes incidence&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Economic</b>&lt;/td&gt;&lt;td&gt;Value for money?&lt;/td&gt;&lt;td&gt;CEA, CUA, CBA, ROI&lt;/td&gt;&lt;td&gt;£/QALY&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>RE-AIM Framework:</b></p>
+<ul><li><b>R</b>each (proportion participating)</li><li><b>E</b>ffectiveness (outcomes)</li><li><b>A</b>doption (settings adopting)</li><li><b>I</b>mplementation (fidelity)</li><li><b>M</b>aintenance (sustained at individual, setting)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Policy/Planning Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Policy vs Plan**</td><td>Policy = general direction, principles. Plan = specific actions, timelines, resources.</td></tr><tr><td>**Implementation vs Evaluation**</td><td>Implementation = putting into action. Evaluation = assessing effects.</td></tr><tr><td>**Logic Model vs Theory of Change**</td><td>Logic model = sequence (what leads to what). Theory of change = causal mechanisms (why).</td></tr><tr><td>**Process vs Impact Evaluation**</td><td>Process = was it done as planned. Impact = did it work (outcomes).</td></tr><tr><td>**Policy vs Politics**</td><td>Policy = content (decisions). Politics = process (power, values, interests).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Advocacy & HiAP)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Advocacy Strategies:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Level&lt;/th&gt;&lt;th&gt;Strategy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Individual</b>&lt;/td&gt;&lt;td&gt;Patient stories, clinician voice, expert testimony&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Community</b>&lt;/td&gt;&lt;td&gt;Coalition building, grassroots mobilisation, lived experience&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Media</b>&lt;/td&gt;&lt;td&gt;Press releases, op-eds, social media, interviews&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Lobby</b>&lt;/td&gt;&lt;td&gt;Direct contact with policymakers, briefings, parliamentary questions&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Litigation</b>&lt;/td&gt;&lt;td&gt;Legal challenges, judicial review (e.g., air quality, tobacco)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Evidence</b>&lt;/td&gt;&lt;td&gt;Research, data, infographics, policy briefs&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Health in All Policies (HiAP):</b></p>
+<ul><li>Integrates health into all policy sectors (transport, housing, education, fiscal)</li><li>Joint working, HIA, co-benefits framing</li><li>Examples: Sugar tax (fiscal + health), Active travel (transport + health), 20mph limits</li><li>Adelaide Statement (2010), EU HiAP framework</li></ul>
+<p><b>Health Impact Assessment (HIA):</b></p>
+<ul><li>Prospective, predicts health effects of policy/project outside health sector</li><li>5-step: Screening, Scoping, Risk Assessment, Appraisal, Reporting</li><li>Mandatory in some jurisdictions (Wales, Scotland)</li></ul>
+<p><b>Other Approaches:</b></p>
+<ul><li><b>Advocacy Coalition Framework (Sabatier)</b>: Policy change through belief systems</li><li><b>Multiple Streams (Kingdon)</b>: Problem, policy, politics streams converge</li><li><b>Punctuated Equilibrium (Baumgartner/Jones)</b>: Long stability + rapid change</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Policy Cycle**</td><td>Agenda, Formulation, Decision, Implementation, Evaluation, Revision</td></tr><tr><td>**Policy Triangle (Walt-Gilson)**</td><td>Content × Process × Actors × Context</td></tr><tr><td>**Kingdon**</td><td>Streams: Problem, Policy, Politics (window of opportunity)</td></tr><tr><td>**MCDA**</td><td>Weighted criteria scoring</td></tr><tr><td>**PBMA**</td><td>Marginal analysis: disinvest low-value, fund high-value</td></tr><tr><td>**Logic Model**</td><td>Inputs → Activities → Outputs → Outcomes → Impact</td></tr><tr><td>**Theory of Change**</td><td>Causal pathway + assumptions + indicators</td></tr><tr><td>**Evaluation**</td><td>Process, Impact, Outcome, Economic</td></tr><tr><td>**RE-AIM**</td><td>Reach, Effectiveness, Adoption, Implementation, Maintenance</td></tr><tr><td>**HiAP**</td><td>Health in All Policies (Adelaide 2010)</td></tr><tr><td>**Advocacy**</td><td>Individual, Community, Media, Lobby, Litigation, Evidence</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Stages of policy cycle?**</td><td>Agenda setting → Policy formulation → Decision making → Implementation → Evaluation → Revision/update.</td></tr><tr><td>**Walt & Gilson Policy Triangle?**</td><td>4 elements: Content, Process, Actors, Context. Health policy analysis requires considering all four (not just content).</td></tr><tr><td>**Kingdon multiple streams?**</td><td>Three streams: Problem (recognised issue), Policy (feasible solution), Politics (favourable climate). Window of opportunity when all three converge.</td></tr><tr><td>**Logic model components?**</td><td>5: Inputs → Activities → Outputs → Outcomes → Impact.</td></tr><tr><td>**Difference: Logic model vs Theory of Change?**</td><td>Logic model = sequence (what leads to what). Theory of change = causal mechanisms (why) and assumptions to test.</td></tr><tr><td>**MCDA for priority setting?**</td><td>Multi-Criteria Decision Analysis: weighted criteria (health gain, equity, cost, feasibility, acceptability) scored for each option.</td></tr><tr><td>**PBMA approach?**</td><td>Programme Budgeting and Marginal Analysis: reallocate from low-value to high-value interventions using marginal analysis (gain from one option vs opportunity cost).</td></tr><tr><td>**RE-AIM framework?**</td><td>Reach, Effectiveness, Adoption, Implementation, Maintenance. Evaluates translation of interventions to real-world settings.</td></tr><tr><td>**Health in All Policies (HiAP)?**</td><td>Approach integrating health into all policy sectors (transport, housing, education). Co-benefits framing. Adelaide Statement 2010.</td></tr><tr><td>**HIA steps?**</td><td>5: Screening → Scoping → Risk Assessment → Appraisal → Reporting. Prospective, predicts health effects of non-health policies.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Policy vs Plan**</td><td>Policy = direction + principles. Plan = specific actions + timelines + resources.</td></tr><tr><td>**Implementation ≠ Adoption**</td><td>Implementation = how delivered. Adoption = decision to use. RE-AIM: Adoption = settings.</td></tr><tr><td>**Effectiveness vs Efficacy**</td><td>Efficacy = ideal RCT conditions. Effectiveness = real-world (relevant to policy/RE-AIM).</td></tr><tr><td>**Policy Content vs Politics**</td><td>Content = substance. Politics = values, power, interests. Walt-Gilson: integrate all.</td></tr><tr><td>**Logic Model vs Evaluation**</td><td>Logic model = plan/design. Evaluation = assessment of outcomes.</td></tr></table>
+<p><b>Mnemonic: POLICY CYCLE (AFDIE-R)</b></p>
+<ul><li><b>A</b>genda</li><li><b>F</b>ormulation</li><li><b>D</b>ecision</li><li><b>I</b>mplementation</li><li><b>E</b>valuation</li><li><b>R</b>evision</li></ul>
+<p><b>Mnemonic: POLICY TRIANGLE (CPAC)</b></p>
+<ul><li><b>C</b>ontent</li><li><b>P</b>rocess</li><li><b>A</b>ctors</li><li><b>C</b>ontext</li></ul>
+<p><b>Mnemonic: KINGDON STREAMS (3P)</b></p>
+<ul><li><b>P</b>roblem</li><li><b>P</b>olicy</li><li><b>P</b>olitics</li></ul>
+<p><b>Mnemonic: LOGIC MODEL (IAOOI)</b></p>
+<ul><li><b>I</b>nputs</li><li><b>A</b>ctivities</li><li><b>O</b>utputs</li><li><b>O</b>utcomes</li><li><b>I</b>mpact</li></ul>
+<p><b>Mnemonic: RE-AIM (5)</b></p>
+<ul><li><b>R</b>each</li><li><b>E</b>ffectiveness</li><li><b>A</b>doption</li><li><b>I</b>mplementation</li><li><b>M</b>aintenance</li></ul>
+<p><b>Mnemonic: ADVOCACY LEVELS (ICMELI)</b></p>
+<ul><li><b>I</b>ndividual</li><li><b>C</b>ommunity</li><li><b>M</b>edia</li><li><b>E</b>vidence</li><li><b>L</b>obby</li><li><b>I</b>tigation</li></ul>
+<p><b>Mnemonic: HIA STEPS (SS-RAM)</b></p>
+<ul><li><b>S</b>creening</li><li><b>S</b>coping</li><li><b>R</b>isk Assessment</li><li><b>A</b>ppraisal</li><li><b>M</b>onitoring</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Health Policy)) Policy Cycle Agenda, Formulation Decision, Implementation Evaluation, Revision Frameworks Walt-Gilson Triangle Kingdon Multiple Streams Sabatier Advocacy Coalition Priority Setting MCDA, PBMA, PBRS Hanlon, MoSCoW Planning Logic Model (IAOOI) Theory of Change Intervention Mapping Evaluation Process, Impact, Outcome, Economic RE-AIM HiAP Adelaide 2010 Co-benefits Cross-sector Advocacy Individual, Community Media, Lobby Litigation, Evidence </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Policy Cycle**</td><td>Agenda, Formulation, Decision, Implementation, Evaluation, Revision</td></tr><tr><td>**Triangle**</td><td>Content, Process, Actors, Context (Walt-Gilson)</td></tr><tr><td>**Kingdon**</td><td>3 streams: Problem, Policy, Politics (window of opportunity)</td></tr><tr><td>**MCDA**</td><td>Weighted criteria scoring</td></tr><tr><td>**PBMA**</td><td>Marginal analysis (reallocate)</td></tr><tr><td>**Logic Model**</td><td>Inputs → Activities → Outputs → Outcomes → Impact</td></tr><tr><td>**Theory of Change**</td><td>Causal pathway + assumptions</td></tr><tr><td>**Evaluation**</td><td>Process, Impact, Outcome, Economic</td></tr><tr><td>**RE-AIM**</td><td>Reach, Effectiveness, Adoption, Implementation, Maintenance</td></tr><tr><td>**HiAP**</td><td>Health in All Policies</td></tr><tr><td>**Advocacy**</td><td>Individual, Community, Media, Lobby, Litigation, Evidence</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Policy Cycle</td><td></td><td></td></tr><tr><td>Walt-Gilson Triangle</td><td></td><td></td></tr><tr><td>Kingdon Streams</td><td></td><td></td></tr><tr><td>Priority Setting (MCDA/PBMA)</td><td></td><td></td></tr><tr><td>Logic Model</td><td></td><td></td></tr><tr><td>RE-AIM</td><td></td><td></td></tr><tr><td>HiAP / Advocacy</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Health Systems, UHC &amp; Health Economics.md]], [[Health Needs Assessment.md]], [[Evidence-Based Medicine &amp; Clinical Guidelines.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Health Policy Planning Evaluation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Root Causes And Systems Approach — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.7. MEDICATION SAFETY AND ERRORS</span>
+      <div class="h1">Root Causes And Systems Approach</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Explain <b>Reason's Swiss Cheese Model</b> of accident causation</li><li>[ ] Apply <b>Human Factors Engineering (HFE)</b> principles: latent conditions vs active failures</li><li>[ ] Conduct <b>Root Cause Analysis (RCA)</b> using 5 Whys, Fishbone (Ishikawa), Fault Tree</li><li>[ ] Distinguish <b>active errors</b> (sharp end) vs <b>latent conditions</b> (blunt end)</li><li>[ ] Apply <b>Just Culture</b> algorithm: human error → console; at-risk behaviour → coach; reckless → punish</li><li>[ ] Identify <b>system-level interventions</b> (forcing functions, standardisation, simplification, automation)</li><li>[ ] Know <b>Never Events</b> (UK) and <b>Sentinel Events</b> (US) — medication-related</li><li>[ ] Answer viva: "Why do medication errors happen?" and "How to investigate a serious incident?"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Swiss Cheese Model (James Reason)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">The Model</div>
+<p>```mermaid flowchart LR A[Organisational&lt;br&gt;Influences] --&gt; B[Unsafe&lt;br&gt;Supervision] B --&gt; C[Preconditions&lt;br&gt;for Unsafe Acts] C --&gt; D[Active&lt;br&gt;Failures] D --&gt; E[Accident /&lt;br&gt;Harm]</p>
+<p>A1[Management decisions&lt;br&gt;Resource allocation&lt;br&gt;Culture&lt;br&gt;Policies] -.-&gt; A B1[Inadequate oversight&lt;br&gt;Planned inappropriate ops&lt;br&gt;Failed to correct known problems] -.-&gt; B C1[Fatigue/stress&lt;br&gt;Poor communication&lt;br&gt;Inadequate training&lt;br&gt;Time pressure&lt;br&gt;Poor design] -.-&gt; C D1[Slips, lapses, mistakes, violations] -.-&gt; D</p>
+<p>style A fill:#ffcccc style B fill:#ffcccc style C fill:#ffcccc style D fill:#ffcccc style E fill:#ff6666 ```</p>
+<div class="sub-h">Key Principles</div>
+<table class="ctable"><tr><th>Concept</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Layers of defence**</td><td>Multiple barriers (protocols, checks, training, technology) — each has holes</td></tr><tr><td>**Holes = latent conditions**</td><td>System weaknesses that exist before the event (staffing, design, culture)</td></tr><tr><td>**Active failures**</td><td>Unsafe acts by frontline staff (slips, lapses, mistakes, violations) — "sharp end"</td></tr><tr><td>**Trajectory of accident**</td><td>Holes align momentarily → defences breached → harm</td></tr><tr><td>**Holes dynamic**</td><td>Open, close, shift — influenced by workload, fatigue, interruptions</td></tr><tr><td>**No single cause**</td><td>Accidents = combination of active failures + latent conditions</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>"Errors are not caused by bad people, but by bad systems that allow good people to make mistakes. The Swiss Cheese Model shows how latent conditions (holes) align with active failures to cause harm."</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Active Failures vs Latent Conditions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Dimension</th><th>Active Failures (Sharp End)</th><th>Latent Conditions (Blunt End)</th></tr><tr><td>-----------</td><td>----------------------------</td><td>-------------------------------</td></tr><tr><td>**Timing**</td><td>Immediately before accident</td><td>Exist long before (days–years)</td></tr><tr><td>**Who**</td><td>Frontline staff (doctors, nurses, pharmacists)</td><td>Designers, managers, policy-makers, procurement</td></tr><tr><td>**Type**</td><td>Slips, lapses, mistakes, violations</td><td>Poor design, inadequate staffing, bad culture, missing protocols</td></tr><tr><td>**Visibility**</td><td>Obvious at time of event</td><td>Hidden until accident occurs</td></tr><tr><td>**Examples**</td><td>Wrong dose selected, drug omitted, wrong patient</td><td>Look-alike packaging, no barcode scanning, fatigue from 12h shifts, ambiguous protocol</td></tr><tr><td>**Intervention**</td><td>Training, reminders, double-checks</td><td>**System redesign**: forcing functions, standardisation, automation, culture change</td></tr></table>
+<div class="sub-h">Classification of Active Failures</div>
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Example</th><th>Countermeasure</th></tr><tr><td>------</td><td>------------</td><td>---------</td><td>----------------</td></tr><tr><td>**Slip**</td><td>Action not as intended (attentional)</td><td>Intended 5mg, typed 50mg</td><td>Forcing functions, CPOE limits, barcode</td></tr><tr><td>**Lapse**</td><td>Memory failure (omission)</td><td>Forgot to sign VTE prophylaxis</td><td>Checklists, CPOE defaults, prompts</td></tr><tr><td>**Mistake**</td><td>Wrong plan (knowledge/rule)</td><td>Prescribed contraindicated drug</td><td>Decision support, education, protocols</td></tr><tr><td>**Violation**</td><td>Deliberate deviation</td><td>Gave IV push instead of infusion</td><td>Culture change, simplify process, address root cause</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Root Cause Analysis (RCA) Methodology</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">When to Do RCA</div>
+<ul><li><b>Never Events</b> (UK) / <b>Sentinel Events</b> (US) — mandatory</li><li><b>Serious Incidents</b> (moderate/severe harm, death)</li><li><b>Recurring near misses</b> (pattern)</li><li><b>Regulatory requirement</b> (CQC, MHRA, NHS England)</li></ul>
+<div class="sub-h">RCA Steps (NHS PSII Framework)</div>
+<p>``<code>mermaid flowchart TD A[Incident Identified] --&gt; B[Immediate Safety Actions] B --&gt; C[Assemble Multidisciplinary Team] C --&gt; D[Gather Evidence] D --&gt; E[Reconstruct Timeline] E --&gt; F[Identify Causal Factors] F --&gt; G[Root Cause Analysis Tools] G --&gt; H[Develop SMART Recommendations] H --&gt; I[Action Plan &amp; Monitoring] I --&gt; J[Share Learning] </code>``</p>
+<div class="sub-h">RCA Tools</div>
+<table class="ctable"><tr><th>Tool</th><th>Description</th><th>Best For</th></tr><tr><td>------</td><td>-------------</td><td>----------</td></tr><tr><td>**5 Whys**</td><td>Iterative questioning to reach root cause</td><td>Simple, linear causal chains</td></tr><tr><td>**Fishbone (Ishikawa)**</td><td>Categories: People, Process, Equipment, Environment, Management, Materials</td><td>Complex, multi-factorial</td></tr><tr><td>**Fault Tree Analysis**</td><td>Top-down: undesired event → logic gates (AND/OR) → basic events</td><td>Technical/system failures</td></tr><tr><td>**Barrier Analysis**</td><td>Identifies failed/barriers (Swiss cheese holes)</td><td>Aligns with Swiss cheese model</td></tr><tr><td>**Change Analysis**</td><td>Compare "what should happen" vs "what happened"</td><td>Procedural deviations</td></tr></table>
+<div class="sub-h">5 Whys Example: Patient given IV potassium chloride bolus → cardiac arrest</div>
+<table class="ctable"><tr><th>Why?</th><th>Answer</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>1. Why cardiac arrest?</td><td>IV KCl bolus → hyperkalaemia</td></tr><tr><td>2. Why IV KCl bolus given?</td><td>Nurse drew up KCl from vial, pushed IV</td></tr><tr><td>3. Why nurse pushed IV?</td><td>Thought it was flush/normal saline; vial looked similar</td></tr><tr><td>4. Why vial looked similar?</td><td>**Standardised grey cap for all concentrated electrolytes**; no distinct labelling</td></tr><tr><td>5. Why no distinct labelling/forcing function?</td><td>**Procurement decision based on cost; no safety review; no barcode scanning at bedside**</td></tr><tr><td>**Root Cause**</td><td>**System failure: Concentrated KCl available on ward; no forcing function (separate storage, barcode, pre-mixed bags only); procurement without safety assessment**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Human Factors Engineering (HFE) Principles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Core Principles</div>
+<table class="ctable"><tr><th>Principle</th><th>Application in Medication Safety</th></tr><tr><td>-----------</td><td>----------------------------------</td></tr><tr><td>**Design for human limitations**</td><td>Limit memory load (checklists, protocols); reduce cognitive load (standardised order sets)</td></tr><tr><td>**Standardisation**</td><td>Concentrations, labelling, dosing units, protocols, equipment</td></tr><tr><td>**Simplification**</td><td>Reduce steps, eliminate unnecessary complexity, fewer drug strengths</td></tr><tr><td>**Forcing Functions / Constraints**</td><td>Make error impossible: KCl not stocked on wards; IV-only ports; scanfail = stop</td></tr><tr><td>**Automation / Technology**</td><td>CPOE with decision support, barcode medication administration (BCMA), smart pumps</td></tr><tr><td>**Effective Communication**</td><td>SBAR, read-back, closed-loop, structured handover</td></tr><tr><td>**Fatigue Management**</td><td>Duty hours, break schedules, workload monitoring</td></tr><tr><td>**Environment Design**</td><td>Lighting, noise reduction, interruption-free zones (medication safety huddles)</td></tr><tr><td>**Teamwork / Culture**</td><td>Psychological safety, speaking up, briefings/debriefings</td></tr></table>
+<div class="sub-h">Hierarchy of Effectiveness (ISMP)</div>
+<p>```mermaid flowchart TD A[Most Effective&lt;br&gt;System-Level] --&gt; B[Forcing Functions / Constraints&lt;br&gt;Make error impossible] B --&gt; C[Automation / Computerisation&lt;br&gt;CPOE, BCMA, Smart Pumps] C --&gt; D[Standardisation / Protocols&lt;br&gt;Order sets, concentrations, labelling] D --&gt; E[Redundancy / Double-Checks&lt;br&gt;Independent double-check for high-risk] E --&gt; F[Rules / Policies / Guidelines&lt;br&gt;Protocols, algorithms] F --&gt; G[Education / Training&lt;br&gt;Competency, simulation] G --&gt; H[Vigilance / Memory Reliance&lt;br&gt;Least Effective]</p>
+<p>style A fill:#ff6666 style H fill:#ffff99 ```</p>
+<div class="callout"><b>Key Insight:</b> <i>Education and vigilance are necessary but NOT sufficient. System redesign (forcing functions, automation) is most effective.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Just Culture (Sidney Dekker / David Marx)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">The Algorithm</div>
+<p>```mermaid flowchart TD A[Adverse Event / Error] --&gt; B{Deliberate Reckless Choice?} B --&gt;|Yes| C[Reckless Behaviour&lt;br&gt;→ Punitive Action&lt;br&gt;Disciplinary] B --&gt;|No| D{System-Induced&lt;br&gt;At-Risk Behaviour?} D --&gt;|Yes| E[At-Risk Behaviour&lt;br&gt;→ Coaching&lt;br&gt;System Redesign] D --&gt;|No| F[Human Error&lt;br&gt;→ Consolation&lt;br&gt;Support, System Fix]</p>
+<p>style C fill:#ff6666 style E fill:#ffcc66 style F fill:#99ff99 ```</p>
+<div class="sub-h">Three Behaviours</div>
+<table class="ctable"><tr><th>Behaviour</th><th>Definition</th><th>Response</th><th>Example</th></tr><tr><td>-----------</td><td>------------</td><td>----------</td><td>---------</td></tr><tr><td>**Human Error**</td><td>Inadvertent action (slip, lapse, mistake)</td><td>**Console** — support, fix system</td><td>Nurse selects wrong drug from alphabetical list (slip)</td></tr><tr><td>**At-Risk Behaviour**</td><td>Drift from protocol, risk not recognised</td><td>**Coach** — discuss, redesign system</td><td>Nurse regularly skips barcode scan to save time</td></tr><tr><td>**Reckless Behaviour**</td><td>Conscious disregard of substantial risk</td><td>**Punish** — disciplinary</td><td>Nurse diverts opioids for personal use</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>"Just Culture distinguishes between human error (console), at-risk behaviour (coach), and reckless behaviour (punish). Most errors are human error or at-risk behaviour driven by system flaws. Blaming individuals discourages reporting and prevents learning."</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Medication-Related Never Events (UK) / Sentinel Events (US)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">UK Never Events (NHS England) — Medication Related</div>
+<table class="ctable"><tr><th>Never Event</th><th>Description</th></tr><tr><td>-------------</td><td>-------------</td></tr><tr><td>**1. Wrong route administration of chemotherapy**</td><td>Intrathecal instead of IV, or IV instead of intrathecal</td></tr><tr><td>**2. Wrong route administration of oral/enteral medication**</td><td>IV instead of PO/NG; epidural instead of IV</td></tr><tr><td>**3. Intravenous administration of epidural medication**</td><td>Bupivacaine IV → cardiovascular collapse</td></tr><tr><td>**4. Overdose of insulin due to abbreviations/incorrect device**</td><td>"U" for units; wrong insulin pen</td></tr><tr><td>**5. Overdose of methotrexate for non-cancer treatment**</td><td>Daily instead of weekly dosing</td></tr><tr><td>**6. Administration of medication by wrong route**</td><td>General category (e.g., IV KCl bolus)</td></tr><tr><td>**7. Failure to prescribe/administer VTE prophylaxis**</td><td>In high-risk patient (if policy exists)</td></tr><tr><td>**8. Mis-selection of high-strength midazolam**</td><td>10mg/mL instead of 1mg/mL or 2mg/mL</td></tr><tr><td>**9. Retained foreign object post-procedure**</td><td>Guidewire, swab (not strictly medication but related)</td></tr></table>
+<div class="sub-h">US Sentinel Events (Joint Commission) — Medication Related</div>
+<table class="ctable"><tr><th>Sentinel Event</th><th>Description</th></tr><tr><td>----------------</td><td>-------------</td></tr><tr><td>**Patient death/serious injury from medication error**</td><td>Wrong drug, dose, route, patient</td></tr><tr><td>**Heparin overdose/underdose**</td><td>Protamine reversal needed; HIT; thrombosis</td></tr><tr><td>**Insulin overdose**</td><td>Hypoglycaemic coma, death</td></tr><tr><td>**Chemotherapy overdose**</td><td>Wrong protocol, dosing error</td></tr><tr><td>**Opioid overdose**</td><td>Respiratory depression, death</td></tr><tr><td>**Anticoagulant error**</td><td>Warfarin/DOAC — bleed/thrombosis</td></tr><tr><td>**Neuromuscular blocker without ventilation**</td><td>Awareness, anoxia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ System-Level Interventions (High-Impact)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Forcing Functions / Constraints (Most Effective)</div>
+<table class="ctable"><tr><th>Intervention</th><th>Example</th></tr><tr><td>--------------</td><td>---------</td></tr><tr><td>**Remove concentrated electrolytes from wards**</td><td>KCl, K₂HPO₄, MgSO₄, NaCl 20% — only pre-mixed bags or pharmacy-prepared</td></tr><tr><td>**Neuromuscular blockers not on wards**</td><td>Only in theatre/ICU with ventilation</td></tr><tr><td>**Intrathecal chemotherapy only by trained staff**</td><td>Separate yellow-labelled syringes; "FOR INTRATHECAL USE ONLY"</td></tr><tr><td>**Oral syringes incompatible with IV lines**</td><td>ENFit connectors for enteral; Luer-lock for IV</td></tr><tr><td>**Maximum dose limits in CPOE/smart pumps**</td><td>Morphine 30mg max single dose; insulin 50 units max</td></tr><tr><td>**Default dosing in CPOE**</td><td>VTE prophylaxis auto-selected on admission</td></tr><tr><td>**Hard stops for allergies/contraindications**</td><td>Cannot override without consultant authorisation</td></tr></table>
+<div class="sub-h">Automation &amp; Technology</div>
+<table class="ctable"><tr><th>Technology</th><th>Error Prevented</th></tr><tr><td>------------</td><td>-----------------</td></tr><tr><td>**CPOE (Computerised Provider Order Entry)**</td><td>Illegible writing, dose errors, allergy alerts, interaction alerts, dosing guidance</td></tr><tr><td>**BCMA (Barcode Medication Administration)**</td><td>Wrong patient, wrong drug, wrong dose, wrong time, wrong route</td></tr><tr><td>**Smart Infusion Pumps**</td><td>Rate errors, bolus errors, drug library with dose limits</td></tr><tr><td>**Automated Dispensing Cabinets (ADC)**</td><td>Wrong drug selection, inventory control, profile-based dispensing</td></tr><tr><td>**Electronic Medication Reconciliation**</td><td>Omissions, duplications, discrepancies at transitions</td></tr></table>
+<div class="sub-h">Standardisation</div>
+<table class="ctable"><tr><th>Standardisation</th><th>Impact</th></tr><tr><td>-----------------</td><td>--------</td></tr><tr><td>**Standard concentrations**</td><td>e.g., Noradrenaline 4mg/50mL = 80mcg/mL nationally; no calculation needed</td></tr><tr><td>**Tall Man Lettering**</td><td>LASA differentiation on labels, screens, shelves</td></tr><tr><td>**Standard order sets / pathways**</td><td>Sepsis bundle, VTE prophylaxis, insulin sliding scale, NIV protocols</td></tr><tr><td>**Unit-of-use packaging**</td><td>Single-dose vials, pre-filled syringes — no drawing up</td></tr><tr><td>**Weight-based dosing protocols**</td><td>Paediatric/renal/hepatic — embedded in CPOE</td></tr></table>
+<div class="sub-h">Independent Double-Check (Redundancy)</div>
+<table class="ctable"><tr><th>When Required</th><th>Process</th></tr><tr><td>---------------</td><td>---------</td></tr><tr><td>**High-risk drugs (PINCH)**</td><td>Two qualified professionals independently verify drug, dose, patient, calculation</td></tr><tr><td>**Chemotherapy**</td><td>Two nurses verify protocol, dose, patient, BSA, consent</td></tr><tr><td>**Insulin**</td><td>Two nurses verify type, dose, patient, blood glucose</td></tr><tr><td>**Opioids (injectable)**</td><td>Two nurses verify drug, dose, patient</td></tr><tr><td>**Paediatric IV meds**</td><td>Two nurses verify calculation, dilution, rate</td></tr><tr><td>**Limitation**</td><td>**Not a substitute for system redesign** — human-dependent, prone to confirmation bias, workflow disruption</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ High-Risk Situations & Specific Interventions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Transitions of Care (Admission, Transfer, Discharge)</div>
+<table class="ctable"><tr><th>Risk</th><th>Intervention</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Medication discrepancies 30–70%**</td><td>**Medication reconciliation** by pharmacist/technician within 24h admission</td></tr><tr><td>**Omissions**</td><td>Structured med rec form; compare ≥2 sources (patient, GP, pharmacy, summary care record)</td></tr><tr><td>**Duplications**</td><td>Automated comparison in EMR</td></tr><tr><td>**Discharge errors**</td><td>Pharmacist discharge review; patient counselling; GP summary within 24h</td></tr></table>
+<div class="sub-h">High-Alert Medicines (PINCH) — See [PINCH High-Risk Drugs](../Medication%20Safety%20and%20Errors/PINCH%20High-Risk%20Drugs.md)</div>
+<div class="sub-h">Paediatrics / Neonates</div>
+<table class="ctable"><tr><th>Risk</th><th>Intervention</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Weight-based calculation errors**</td><td>CPOE with mandatory weight; BSA calculator; standard concentrations</td></tr><tr><td>**Dilution errors**</td><td>Ready-to-use preparations; pharmacy-prepared IVs</td></tr><tr><td>**Off-label/unlicensed**</td><td>Formulary with age-specific dosing; specialist pharmacy</td></tr><tr><td>**Neonatal renal/hepatic immaturity**</td><td>Age-specific protocols (e.g., gentamicin extended interval)</td></tr></table>
+<div class="sub-h">Look-Alike Sound-Alike (LASA) — See [Error Types &amp; Classification](../Medication%20Safety%20and%20Errors/Error%20Types%20and%20Classification.md)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Safety Culture & Reporting</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Elements of Safety Culture</div>
+<table class="ctable"><tr><th>Element</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Reporting Culture**</td><td>Easy, confidential, non-punitive reporting; feedback to reporters</td></tr><tr><td>**Just Culture**</td><td>Fair distinction: human error (console), at-risk (coach), reckless (punish)</td></tr><tr><td>**Learning Culture**</td><td>Analyse incidents, share lessons, implement changes, measure impact</td></tr><tr><td>**Flexible Culture**</td><td>Flatten hierarchy during crisis; empower frontline to stop unsafe acts</td></tr><tr><td>**Informed Culture**</td><td>Data-driven; safety metrics visible; leadership walkabouts</td></tr></table>
+<div class="sub-h">Reporting Barriers &amp; Enablers</div>
+<table class="ctable"><tr><th>Barrier</th><th>Enabler</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>Fear of blame/punishment</td><td>Just Culture policy; anonymous reporting option</td></tr><tr><td>No feedback on reports</td><td>Closed-loop: reporter informed of outcome/actions</td></tr><tr><td>Reporting too time-consuming</td><td>One-click reporting; voice reporting; integrated in EMR</td></tr><tr><td>"Nothing changes"</td><td>Visible improvement projects; safety huddles share changes</td></tr><tr><td>Hierarchy / fear of seniors</td><td>Psychological safety training; leadership modelling reporting</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Swiss Cheese Model**</td><td>Multiple defence layers with holes (latent conditions); active failures penetrate when holes align; no single cause</td></tr><tr><td>**Active vs Latent**</td><td>Active = frontline slips/lapses/mistakes/violations (sharp end); Latent = system flaws from management/design (blunt end)</td></tr><tr><td>**RCA Tools**</td><td>5 Whys (simple), Fishbone (multifactorial), Fault Tree (technical), Barrier Analysis (Swiss cheese)</td></tr><tr><td>**Just Culture**</td><td>Human error → **console**; At-risk behaviour → **coach**; Reckless → **punish**</td></tr><tr><td>**Hierarchy of Effectiveness**</td><td>Forcing functions > Automation > Standardisation > Double-checks > Rules > Education > Vigilance</td></tr><tr><td>**Forcing Functions (Medication)**</td><td>Remove KCl from wards, NM blockers not on wards, intrathecal chemo separate, oral/IV connectors incompatible, CPOE hard stops</td></tr><tr><td>**Never Events (UK)**</td><td>Wrong route chemo, wrong route oral/enteral, IV epidural med, insulin overdose (abbrev), daily MTX, wrong route general, missed VTE prophylaxis, midazolam strength</td></tr><tr><td>**Transitions of Care**</td><td>Medication reconciliation at admission/transfer/discharge by pharmacist; structured process</td></tr><tr><td>**CPOE/BCMA/Smart Pumps**</td><td>Technology barriers: prescribing, administration, infusion errors</td></tr><tr><td>**Safety Culture**</td><td>Reporting, Just, Learning, Flexible, Informed — psychological safety essential</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Explain the Swiss Cheese Model in medication safety.</td><td>**Multiple layers of defence** (protocols, checks, tech, training) each with **holes (latent conditions)**. Holes open/close/shift. **Active failures** (slips/lapses/mistakes/violations) penetrate when holes align momentarily. **No single root cause** — combination of active failures + latent conditions.</td></tr><tr><td>2</td><td>Difference between active failure and latent condition?</td><td>**Active failure**: Frontline error immediately before event (slip, lapse, mistake, violation) — "sharp end". **Latent condition**: System flaw existing long before (design, staffing, culture, procurement) — "blunt end".</td></tr><tr><td>3</td><td>How to investigate a serious medication incident?</td><td>**RCA**: 1) Immediate safety actions, 2) MDT team, 3) Gather evidence, 4) Timeline, 5) Causal factors, 6) Tools (5 Whys, Fishbone), 7) SMART recommendations, 8) Action plan + monitor, 9) Share learning.</td></tr><tr><td>4</td><td>5 Whys example for IV KCl bolus death.</td><td>1) Why death? Hyperkalaemia. 2) Why hyperK? IV KCl bolus. 3) Why bolus? Nurse pushed vial IV. 4) Why vial on ward? Procurement stored concentrated KCl on ward. 5) Why? Cost-based procurement, no safety review, no forcing function. **Root cause = system failure**.</td></tr><tr><td>5</td><td>Just Culture: Nurse bypasses barcode scanner daily to save time. Response?</td><td>**At-risk behaviour** — drift from protocol, risk not recognised. **Coach** — discuss why, redesign workflow (make scanning faster/easier), address system pressure. NOT punish (not reckless).</td></tr><tr><td>6</td><td>Just Culture: Nurse diverts opioids for personal use. Response?</td><td>**Reckless behaviour** — conscious disregard of substantial risk. **Punish** — disciplinary, regulatory referral.</td></tr><tr><td>7</td><td>What is a forcing function? Give 3 medication examples.</td><td>**Design that makes error impossible**: 1) Concentrated KCl not on wards (only pre-mixed), 2) Neuromuscular blockers only in theatre/ICU, 3) Intrathecal chemo separate yellow syringes, 4) Oral/IV connectors incompatible (ENFit vs Luer), 5) CPOE hard stops for allergies/max dose.</td></tr><tr><td>8</td><td>Hierarchy of intervention effectiveness (ISMP)?</td><td>**Forcing functions/constraints** > Automation/CPOE/BCMA > Standardisation/protocols > Independent double-checks > Rules/policies > Education/training > **Vigilance** (least effective).</td></tr><tr><td>9</td><td>UK Never Events — medication related?</td><td>Wrong route chemo, wrong route oral/enteral, IV epidural med, insulin overdose (abbrev/device), daily MTX (non-cancer), wrong route general, missed VTE prophylaxis (if policy), midazolam strength mis-selection.</td></tr><tr><td>10</td><td>Medication reconciliation at transitions — why critical?</td><td>**30–70% discrepancy rate** at admission/transfer/discharge. Omissions, duplications, dose errors → harm. Pharmacist-led med rec within 24h reduces errors 50–80%.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"RCA is about finding WHO to blame"**</td><td>**NO.** RCA = **system-based** analysis. Identifies **latent conditions** (system flaws). Blame undermines reporting and learning. Just Culture separates behaviour types.</td></tr><tr><td>**"Double-check is the best prevention"**</td><td>**NO.** Double-check is **mid-level** (human-dependent, confirmation bias, workflow disruption). **Forcing functions, automation, standardisation** are more effective.</td></tr><tr><td>**"Education prevents errors"**</td><td>**Education is necessary but NOT sufficient**. Lowest in hierarchy. Errors occur despite knowledge due to fatigue, interruptions, poor design. System redesign > training.</td></tr><tr><td>**"All near misses should have RCA"**</td><td>**NO.** RCA for **serious incidents, never events, recurring patterns**. Near misses analysed via **trend analysis, thematic review** — not full RCA each time.</td></tr><tr><td>**"Just Culture = no accountability"**</td><td>**NO.** Just Culture = **fair accountability**. Reckless = punish. At-risk = coach (system fix). Human error = console (system fix). Distinguishes behaviour, not outcome.</td></tr><tr><td>**"Swiss cheese holes = errors"**</td><td>**Holes = latent conditions (system weaknesses)**. Errors = active failures. Holes exist before the event; errors align with holes.</td></tr></table>
+<div class="callout"><b>Mnemonic: ROOT CAUSE SAFETY</b> <b>R</b>eason's Swiss Cheese: Layers of defence, holes = latent conditions, active failures align → harm <b>O</b>rganisational influences: Management decisions, resources, culture, policies <b>O</b>versight unsafe: Inadequate supervision, failed to correct known problems <b>T</b>ransitions of care: Med rec at admission/transfer/discharge — 30-70% discrepancies <b>C</b>ausal analysis: 5 Whys, Fishbone, Fault Tree, Barrier Analysis — systematic, not blame <b>A</b>ctive vs Latent: Active = frontline (sharp end); Latent = system (blunt end) <b>U</b>nsafe acts: Slips, Lapses, Mistakes, Violations — classify to target intervention <b>S</b>ystem interventions hierarchy: Forcing functions &gt; Automation &gt; Standardisation &gt; Double-checks &gt; Rules &gt; Education &gt; Vigilance <b>E</b>ffective forcing functions: No KCl on wards, NM blockers in theatre only, IT chemo separate, Oral/IV incompatible, CPOE hard stops <b>S</b>entinel/Never Events: Wrong route chemo, IV epidural, insulin abbreviation, daily MTX, missed VTE, midazolam strength <b>J</b>ust Culture: Human error → Console; At-risk → Coach; Reckless → Punish <b>A</b>utomation: CPOE, BCMA, Smart pumps, ADC — technology barriers <b>F</b>atigue management: Duty hours, breaks, workload — latent condition <b>E</b>nvironment: Lighting, noise, interruption-free zones — HFE <b>T</b>eamwork: SBAR, read-back, briefings, psychological safety — culture <b>Y</b>ou report: Reporting culture + feedback + learning = sustainable safety <b>S</b>afety culture 5 elements: Reporting, Just, Learning, Flexible, Informed <b>A</b>lways RCA for: Never Events, Sentinel Events, Serious harm/death, Recurring patterns <b>F</b>eedback loop: Report → Analyse → Action → Monitor → Share → Repeat <b>E</b>ducation last: Necessary but not sufficient — fix the system, not just the person <b>T</b>echnology enabling: Barcode, CPOE, Smart pumps, ADC, EMR reconciliation <b>Y</b>our role: Speak up, report, participate in RCA, champion system fixes</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Root Causes&lt;br&gt;&amp; Systems)) Swiss Cheese Layers of defence Holes = latent conditions Active failures align No single cause Active vs Latent Active: Slips, lapses, mistakes, violations (sharp end) Latent: Design, staffing, culture, procurement (blunt end) RCA Process Immediate safety MDT team Evidence + timeline 5 Whys / Fishbone / Fault Tree SMART recommendations Action plan + monitor Share learning Just Culture Human error → Console At-risk → Coach Reckless → Punish Hierarchy of Effectiveness Forcing functions (best) Automation (CPOE, BCMA, pumps) Standardisation Double-checks Rules/policies Education Vigilance (least) Forcing Functions No KCl on wards NM blockers theatre only IT chemo separate Oral/IV incompatible CPOE hard stops Never Events (UK) Wrong route chemo IV epidural med Insulin abbreviation Daily MTX Midazolam strength Transitions Med rec admission/transfer/discharge Pharmacist-led Safety Culture Reporting, Just, Learning, Flexible, Informed </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Swiss Cheese Model</td><td>3</td><td></td><td></td></tr><tr><td>Active vs Latent</td><td>2</td><td></td><td></td></tr><tr><td>RCA Process & Tools</td><td>3</td><td></td><td></td></tr><tr><td>Just Culture (3 behaviours)</td><td>3</td><td></td><td></td></tr><tr><td>Hierarchy of Effectiveness</td><td>2</td><td></td><td></td></tr><tr><td>Forcing Functions (5+)</td><td>3</td><td></td><td></td></tr><tr><td>Never Events / Sentinel Events</td><td>2</td><td></td><td></td></tr><tr><td>Transitions / Safety Culture</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the systems approach to medication safety and how it differs from a person-centred approach."</td><td>Swiss cheese, latent vs active, RCA, Just Culture, hierarchy of effectiveness, forcing functions, technology, culture</td></tr><tr><td>**Short Note**</td><td>"Just Culture in medication safety."</td><td>Three behaviours: human error (console), at-risk (coach), reckless (punish); fair accountability</td></tr><tr><td>**Viva**</td><td>"Patient died from IV KCl bolus on ward. How would you investigate?"</td><td>RCA: immediate safety, MDT, timeline, 5 Whys (KCl on ward → procurement → no forcing function), root cause = system, recommendations: remove KCl, pre-mixed bags, barcode, smart pumps.</td></tr><tr><td>**Ward Round**</td><td>"Nurse reports near miss: almost gave concentrated KCl IV. System response?"</td><td>**Report → Analyse → System fix**: Remove concentrated KCl from ALL wards immediately; use pre-mixed bags; CPOE hard stop; barcode scanning; staff debrief; share learning. NOT blame nurse.</td></tr><tr><td>**Last-Night**</td><td>"Swiss cheese: 4 layers. Active vs latent. RCA: 5 Whys. Just Culture: 3 responses. Hierarchy: forcing > auto > standard > double > rules > edu > vigilance. Never events: 5."</td><td>Swiss cheese layers. Active=frontline, Latent=system. 5 Whys for KCl. Just: Console/Coach/Punish. Hierarchy. Never: Wrong route chemo, IV epidural, insulin abbrev, daily MTX, midazolam strength.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Swiss Cheese Model</b>: Multiple defence layers with dynamic holes (latent conditions); active failures (slips, lapses, mistakes, violations) penetrate when holes align</li><li><b>Active vs Latent</b>: Active = frontline errors (sharp end); Latent = system flaws from management/design/procurement (blunt end)</li><li><b>RCA</b>: Systematic, multi-disciplinary, uses 5 Whys/Fishbone/Fault Tree; identifies root causes (systemic), produces SMART recommendations</li><li><b>Just Culture</b>: Human error → <b>console</b>; At-risk behaviour → <b>coach</b>; Reckless behaviour → <b>punish</b></li><li><b>Hierarchy of Effectiveness</b>: <b>Forcing functions</b> &gt; Automation/CPOE/BCMA &gt; Standardisation &gt; Independent double-checks &gt; Rules/policies &gt; Education/training &gt; <b>Vigilance</b></li><li><b>Key Forcing Functions</b>: Remove concentrated KCl from wards; NM blockers only in theatre/ICU; Intrathecal chemo separate; Incompatible oral/IV connectors; CPOE hard stops</li><li><b>Never Events (UK)</b>: Wrong route chemo, IV epidural, insulin abbreviation overdose, daily MTX, missed VTE prophylaxis, midazolam strength</li><li><b>Transitions</b>: Medication reconciliation by pharmacist at admission/transfer/discharge — reduces discrepancies 50–80%</li><li><b>Safety Culture</b>: Reporting, Just, Learning, Flexible, Informed — psychological safety essential for reporting</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>In the Swiss Cheese Model, holes in the cheese represent:</b></li></ol>
+<p>A. Active failures  B. <b>Latent conditions</b>  C. Near misses  D. Safety barriers <i>Answer: B. Holes = latent conditions (system weaknesses). Active failures = trajectory through holes.</i></p>
+<ol><li><b>Latent conditions are created by:</b></li></ol>
+<p>A. Frontline nurses  B. <b>Designers, managers, policymakers</b>  C. Patients  D. Pharmacists <i>Answer: B. Latent conditions = blunt end decisions (design, staffing, procurement, culture).</i></p>
+<ol><li><b>Hierarchy of effectiveness (ISMP) — MOST effective intervention:</b></li></ol>
+<p>A. Education  B. Double-checks  C. <b>Forcing functions/constraints</b>  D. Rules/policies <i>Answer: C. Forcing functions make error impossible (e.g., remove KCl from wards).</i></p>
+<ol><li><b>Nurse consistently skips barcode scanning to save time. Just Culture classification?</b></li></ol>
+<p>A. Human error  B. <b>At-risk behaviour</b>  C. Reckless behaviour  D. System failure <i>Answer: B. At-risk = drift from protocol, risk not recognised. Coach + system redesign.</i></p>
+<ol><li><b>Nurse diverts fentanyl for personal use. Just Culture classification?</b></li></ol>
+<p>A. Human error  B. At-risk behaviour  C. <b>Reckless behaviour</b>  D. Latent condition <i>Answer: C. Reckless = conscious disregard of substantial risk. Punish.</i></p>
+<ol><li><b>5 Whys — purpose in RCA?</b></li></ol>
+<p>A. Assign blame  B. <b>Identify root cause by iterative questioning</b>  C. Count errors  D. Train staff <i>Answer: B. Iterative "why" to reach systemic root cause, not proximal cause.</i></p>
+<ol><li><b>Which is a forcing function in medication safety?</b></li></ol>
+<p>A. Double-check policy  B. Education session  C. <b>Concentrated potassium removed from ward stock</b>  D. Poster on wall <i>Answer: C. Makes error impossible (cannot give IV KCl bolus if not on ward).</i></p>
+<ol><li><b>UK Never Event: "Wrong route administration of chemotherapy" refers to:</b></li></ol>
+<p>A. Oral instead of IV  B. <b>Intrathecal instead of IV (or vice versa)</b>  C. Subcutaneous instead of IM  D. Wrong drug selected <i>Answer: B. Intrathecal vincristine instead of IV = fatal Never Event.</i></p>
+<ol><li><b>Medication reconciliation at admission — who should lead?</b></li></ol>
+<p>A. Junior doctor  B. <b>Pharmacist/pharmacy technician</b>  C. Nurse  D. Patient <i>Answer: B. Pharmacist-led med rec most effective (reduces errors 50–80%).</i></p>
+<ol><li><b>Least effective intervention in hierarchy?</b></li></ol>
+<p>A. Standardisation  B. <b>Education/training</b>  C. Automation  D. Forcing functions <i>Answer: B. Education/training is second-least; vigilance is least. Education necessary but not sufficient.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Patient dies after IV potassium chloride bolus on medical ward. RCA using 5 Whys reveals: KCl vials stored on ward for "emergency access." Root cause?</b></li></ol>
+<p>A. Nurse error  B. <b>System failure: concentrated KCl available on ward without forcing function</b>  C. Lack of training  D. Poor labelling <i>Answer: B. Root cause is latent condition: procurement/management decision to stock concentrated KCl on ward. Solution = forcing function (remove from wards).</i></p>
+<ol><li><b>Anaesthetist accidentally administers epidural bupivacaine IV instead of rocuronium. Patient has cardiovascular collapse. Never Event category?</b></li></ol>
+<p>A. Wrong route chemo  B. <b>IV administration of epidural medication</b>  C. Wrong route oral  D. Insulin overdose <i>Answer: B. "Intravenous administration of epidural medication" is a specific UK Never Event.</i></p>
+<ol><li><b>CPOE alerts for drug allergy but allows override with free-text reason. This is:</b></li></ol>
+<p>A. Forcing function  B. <b>Soft stop (not forcing function)</b>  C. Hard stop  D. Automation failure <i>Answer: B. Soft stop = can override. Hard stop/forcing function = cannot proceed without authorisation.</i></p>
+<ol><li><b>Independent double-check for high-risk medicines — major limitation?</b></li></ol>
+<p>A. Time-consuming  B. <b>Confirmation bias; not independent; workflow disruption</b>  C. Requires two doctors  D. Not evidence-based <i>Answer: B. Humans prone to confirmation bias; often not truly independent; disrupts workflow. Not substitute for system redesign.</i></p>
+<ol><li><b>Just Culture: Junior doctor prescribes 10x dose due to decimal error (5.0mg → 50mg). No patient harm. Response?</b></li></ol>
+<p>A. Punish  B. Coach  C. <b>Console (human error)</b>  D. Ignore <i>Answer: C. Inadvertent slip (decimal error) = human error. Console + system fix (remove trailing zeros in CPOE).</i></p>
+<ol><li><b>What is the PRIMARY purpose of medication reconciliation at discharge?</b></li></ol>
+<p>A. Reduce readmissions  B. <b>Ensure accurate medication communication to GP/community</b>  C. Save money  D. Audit compliance <i>Answer: B. Accurate transfer of medication info to next care provider prevents omissions/duplications/errors post-discharge.</i></p>
+<ol><li><b>Swiss Cheese Model: "Holes" are dynamic because:</b></li></ol>
+<p>A. They move randomly  B. <b>They open/close/shift with workload, fatigue, interruptions, staffing</b>  C. They are managed by AI  D. They only open during errors <i>Answer: B. Latent conditions fluctuate – e.g., understaffing opens holes; good supervision closes them.</i></p>
+<ol><li><b>Standardised noradrenaline concentration (4mg/50mL = 80mcg/mL) nationally — what level of intervention?</b></li></ol>
+<p>A. Forcing function  B. Automation  C. <b>Standardisation</b>  D. Double-check <i>Answer: C. Standardisation of concentrations = eliminates calculation errors, mid-level effectiveness.</i></p>
+<ol><li><b>Reporting culture enabler — most important?</b></li></ol>
+<p>A. Mandatory reporting  B. <b>Psychological safety + feedback to reporter</b>  C. Financial incentives  D. Public league tables <i>Answer: B. Psychological safety (no fear of blame) + closed-loop feedback = sustainable reporting.</i></p>
+<ol><li><b>Fault Tree Analysis uses which logic gates?</b></li></ol>
+<p>A. IF/THEN  B. <b>AND / OR</b>  C. TRUE/FALSE  D. YES/NO <i>Answer: B. Fault Tree: top event → AND/OR gates → basic events. AND = all required; OR = any one sufficient.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-C, 4-B, 5-C, 6-B, 7-C, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-C, 6-B, 7-B, 8-C, 9-B, 10-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Medication Safety and Errors/Error Types and Classification]] — Error taxonomy, NCC MERP, LASA</li><li>[[Medication Safety and Errors/PINCH High-Risk Drugs]] — High-alert medicines requiring forcing functions</li><li>[[Polypharmacy and Deprescribing/Barriers to Deprescribing]] — System barriers to safe deprescribing</li><li>[[Special Populations/Paediatric Prescribing]] — Paediatric-specific system vulnerabilities</li><li>[[Clinical Context/Perioperative Prescribing]] — Perioperative safety (VTE, antibiotics, anticoagulation)</li><li>[[Therapeutic Drug Monitoring]] — Monitoring as safety net (missed TDM = monitoring error)</li><li>[[Drug Interactions/High-risk drug combinations]] — Interaction alerts in CPOE (automation)</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Root Causes And Systems Approach · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

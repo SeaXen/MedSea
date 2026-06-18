@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paraneoplastic Syndromes — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.13. PARANEOPLASTIC SYNDROMES</span>
+      <div class="h1">Paraneoplastic Syndromes</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify <b>Paraneoplastic Syndromes</b> by System (Endocrine, Neurological, Dermatological, Haematological, Rheumatological, Renal)</li><li>[ ] Recognise <b>Endocrine Syndromes</b>: <b>SIADH (SCLC)</b>, <b>Ectopic ACTH (SCLC, Carcinoid)</b>, <b>Hypercalcaemia/PTHrP (SCC, Breast)</b>, <b>Hypoglycaemia/IGF-2 (Mesenchymal)</b>, <b>Carcinoid/Serotonin (NET)</b></li><li>[ ] Identify <b>Neurological Syndromes</b> and their <b>Onconeural Antibodies</b>: <b>Lambert-Eaton/VGCC (SCLC)</b>, <b>PCD/CDR2 (Gynae)</b>, <b>Anti-Hu (SCLC)</b>, <b>Anti-Yo (Gynae)</b>, <b>Anti-Ri (Breast)</b>, <b>Anti-Ma2 (Testicular)</b>, <b>Anti-CV2/CRMP5 (SCLC)</b>, <b>Anti-NMDA (Ovarian Teratoma)</b></li><li>[ ] Recognise <b>Dermatological Signs</b>: <b>Acanthosis Nigricans, Dermatomyositis, Sweet's Syndrome, Bazex, Leser-Trélat</b></li><li>[ ] Identify <b>Haematological Syndromes</b>: <b>TTP, DIC, Erythrocytosis, Trousseau's</b></li><li>[ ] Link <b>Specific Antibodies</b> to <b>Associated Cancers</b> for Targeted Investigation</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Endocrine Paraneoplastic Syndromes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Mechanism</th><th>Associated Cancers</th><th>Key Features</th></tr><tr><td>----------</td><td>-----------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**SIADH**</td><td>**Ectopic ADH (AVP)**</td><td>**SCLC (Most Common), NSCLC, HL, CNS Tumours, Drugs**</td><td>**Hyponatraemia, Euvolemia, Urine Osm >100, Urine Na >40**</td></tr><tr><td>**Ectopic ACTH / Cushing's**</td><td>**Ectopic ACTH (PRO-ACTH/POMC)**</td><td>**SCLC (Most Common), Carcinoid, NET, Thymic, Medullary Thyroid**</td><td>**Hypokalaemia, Metabolic Alkalosis, Hyperglycaemia, Hypertension, Skin Changes**</td></tr><tr><td>**Hypercalcaemia**</td><td>**PTHrP (Humoral), Osteolytic Mets, Vit D (Lymphoma)**</td><td>**SCC (Lung, H&N, Cervix), Breast, Myeloma, RCC, Lymphoma**</td><td>**Polyuria, Nausea, Confusion, Renal Stones, Short QT**</td></tr><tr><td>**Hypoglycaemia**</td><td>**IGF-2 (Big IGF-2), Insulinoma, Glycogenolysis**</td><td>**Mesenchymal (Solitary Fibrous, Sarcoma), HCC, Adrenal, Insulinoma**</td><td>**Whipple's Triad, Low Glucose, High Insulin/IGF-2, Suppressed C-Peptide**</td></tr><tr><td>**Carcinoid Syndrome**</td><td>**Serotonin, Kallikrein, Bradykinin, Prostaglandins**</td><td>**Midgut NET (Ileum, Appendix), Bronchial NET**</td><td>**Flushing, Diarrhoea, Valvular Heart Disease (Right Sided), Bronchospasm**</td></tr><tr><td>**Hyponatraemia (CSW)**</td><td>**Cerebral Salt Wasting (Brain Natriuretic Peptide)**</td><td>**CNS Tumours, SAH, TBI**</td><td>**Hypovolaemia, High Urine Na, High Urine Output, Hyponatraemia**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Neurological Paraneoplastic Syndromes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classic Onconeural Antibodies &amp; Associated Cancers</div>
+<table class="ctable"><tr><th>Antibody</th><th>Target</th><th>Syndrome</th><th>Strongest Cancer Association</th></tr><tr><td>----------</td><td>--------</td><td>----------</td><td>------------------------------</td></tr><tr><td>**Anti-Hu (ANNA-1)**</td><td>**HuD (RNA-Binding)**</td><td>**Encephalomyelitis, Sensory Neuropathy, GI Dysmotility**</td><td>**SCLC (Most Common)**</td></tr><tr><td>**Anti-Yo (PCA-1)**</td><td>**CDR2 (Purkinje Cell)**</td><td>**Paraneoplastic Cerebellar Degeneration (PCD)**</td><td>**Gynaecological (Ovarian, Uterine), Breast**</td></tr><tr><td>**Anti-Ri (ANNA-2)**</td><td>**NOVA-1/2 (RNA-Binding)**</td><td>**Opsoclonus-Myoclonus Syndrome, Brainstem Encephalitis**</td><td>**Breast, Gynaecological, SCLC**</td></tr><tr><td>**Anti-Ma2**</td><td>**Ma2 (Neuronal)**</td><td>**Limbic Encephalitis, Brainstem Encephalitis, Hypersomnia**</td><td>**Testicular Germ Cell (Most Common), Lung**</td></tr><tr><td>**Anti-CV2 / CRMP-5**</td><td>**CRMP-5 (Collapsin Response Mediator)**</td><td>**Encephalomyelitis, Optic Neuritis, Chorea, Neuropathy**</td><td>**SCLC, Thymoma**</td></tr><tr><td>**Anti-NMDA**</td><td>**NR1/NR2 (NMDA Receptor)**</td><td>**Anti-NMDA Receptor Encephalitis**</td><td>**Ovarian Teratoma (50%), SCLC, Other**</td></tr><tr><td>**Anti-LGI1**</td><td>**LGI1 (Synaptic)**</td><td>**Limbic Encephalitis, Faciobrachial Seizures**</td><td>**Thymoma, SCLC (Rare)**</td></tr><tr><td>**Anti-CASPR2**</td><td>**CASPR2 (VGKC Complex)**</td><td>**Morvan's, Limbic Encephalitis, Neuromyotonia**</td><td>**Thymoma, SCLC**</td></tr><tr><td>**Anti-Amphiphysin**</td><td>**Amphiphysin (Synaptic Vesicle)**</td><td>**Stiff Person Syndrome, Encephalomyelitis**</td><td>**Breast, SCLC**</td></tr><tr><td>**Anti-GAD65**</td><td>**GAD65 (GABA Synthesis)**</td><td>**Stiff Person Syndrome, Cerebellar Ataxia, Epilepsy**</td><td>**Thymoma, SCLC, T1DM**</td></tr><tr><td>**VGCC (P/Q-Type)**</td><td>**VGCC (P/Q-Type Calcium Channel)**</td><td>**Lambert-Eaton Myasthenic Syndrome (LEMS)**</td><td>**SCLC (60% LEMS)**</td></tr></table>
+<div class="sub-h">Lambert-Eaton Myasthenic Syndrome (LEMS)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Antibody**</td><td>**VGCC (P/Q-Type) Antibody** (Calcium Channel)</td></tr><tr><td>**Cancer Association**</td><td>**SCLC (60%)**, **Autonomous (40%)**</td></tr><tr><td>**Clinical**</td><td>**Proximal Weakness (Hip Girdle), Dry Mouth, Impotence, Areflexia**</td></tr><tr><td>**Key Sign**</td><td>**Facilitation on Repetitive Nerve Stimulation (Increase CMAP >100%)**</td></tr><tr><td>**EMG/NCS**</td><td>**Low Baseline CMAP, Facilitation Post-Exercise/High-Freq RNS**</td></tr><tr><td>**Autonomic**</td><td>**Dry Mouth, Constipation, Impotence, Orthostatic Hypotension**</td></tr><tr><td>**Treatment**</td><td>**3,4-DAP (Amifampridine) — K Channel Blocker**, **IVIG/Plasma Exchange**, **Treat SCLC**</td></tr></table>
+<div class="sub-h">Paraneoplastic Cerebellar Degeneration (PCD)</div>
+<table class="ctable"><tr><th>Antibody</th><th>Cancer</th><th>Features</th></tr><tr><td>----------</td><td>--------</td><td>----------</td></tr><tr><td>**Anti-Yo (PCA-1)**</td><td>**Ovarian, Uterine, Breast**</td><td>**Subacute Cerebellar Ataxia, Dysarthria, Nystagmus**</td></tr><tr><td>**Anti-Hu**</td><td>**SCLC**</td><td>**Cerebellar + Brainstem + Spinal + Neuropathy**</td></tr><tr><td>**Anti-Tr (Delta/Notch-Like)**</td><td>**Hodgkin Lymphoma**</td><td>**Cerebellar Ataxia**</td></tr><tr><td>**Anti-mGluR1**</td><td>**Hodgkin Lymphoma**</td><td>**Cerebellar Ataxia**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Dermatological Paraneoplastic Syndromes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Features</th><th>Associated Cancers</th></tr><tr><td>----------</td><td>----------</td><td>-------------------</td></tr><tr><td>**Acanthosis Nigricans**</td><td>**Velvety Hyperpigmentation (Axilla, Neck, Groin), Skin Tags**</td><td>**Gastric (Most Common), Lung, Uterine, Ovarian, Pancreatic**</td></tr><tr><td>**Dermatomyositis**</td><td>**Heliotrope Rash, Gottron's Papules, Proximal Weakness, Photosensitivity**</td><td>**Ovarian (Strongest), Lung, Pancreatic, Gastric, Breast**</td></tr><tr><td>**Sweet's Syndrome**</td><td>**Fever, Neutrophilia, Tender Erythematous Plaques (Pseudo-Abscess)**</td><td>**AML (Most Common), MDS, Solid Tumours (Breast, GI, GU)**</td></tr><tr><td>**Bazex Syndrome (Acrokeratosis Paraneoplastica)**</td><td>**Psoriasiform Eruption (Hands, Feet, Ears, Nose), Nail Dystrophy**</td><td>**H&N SCC (Most Common), Lung, Oesophageal**</td></tr><tr><td>**Leser-Trélat Sign**</td><td>**Sudden Eruption of Multiple Seborrhoeic Keratoses**</td><td>**Gastric (Most Common), Lung, Uterine, Breast, Lymphoma**</td></tr><tr><td>**Erythema Gyratum Repens**</td><td>**Concentric Erythematous Rings (Wood Grain)**</td><td>**Lung (Most Common), GI, Breast**</td></tr><tr><td>**Necrolytic Migratory Erythema**</td><td>**Annular Erythema, Crusting, Perioral/Genital, Glucagonoma**</td><td>**Glucagonoma (Pancreatic NET)**</td></tr><tr><td>**Pyoderma Gangrenosum**</td><td>**Painful Ulcers (Violaceous Borders), Pathergy**</td><td>**AML, MDS, CML, Lymphoma, Solid Tumours**</td></tr><tr><td>**Paraneoplastic Pemphigus**</td><td>**Severe Mucocutaneous Erosions, Polymorphic, Bronchiolitis Obliterans**</td><td>**CLL, NHL, Castleman Disease, Thymoma**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Haematological Paraneoplastic Syndromes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Mechanism</th><th>Associated Cancers</th><th>Key Features</th></tr><tr><td>----------</td><td>-----------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**TTP (Thrombotic Thrombocytopenic Purpura)**</td><td>**ADAMTS13 Deficiency (Autoantibody)**</td><td>**Cancer-Related (Secondary), Drugs (Gemcitabine, Ticlopidine)**</td><td>**MAHA, Thrombocytopenia, Fever, Neuro, Renal (Pentad)**</td></tr><tr><td>**DIC**</td><td>**Tissue Factor Release, Protease Activation**</td><td>**APL (Most Common), Adenocarcinoma (Pancreas, Lung, Gastric), Sepsis**</td><td>**Bleeding/Thrombosis, ↑PT/APTT, ↓Fibrinogen, ↑D-Dimer, Schistocytes**</td></tr><tr><td>**Erythrocytosis**</td><td>**EPO Production (Renal), Autonomous**</td><td>**RCC (Most Common), HCC, Cerebellar Haemangioblastoma, Pheochromocytoma**</td><td>**Hb >18.5 (M) / >16.5 (F), Thrombosis Risk**</td></tr><tr><td>**Trousseau's Syndrome**</td><td>**Mucin-Induced Hypercoagulability, TF Release**</td><td>**Mucinous Adenocarcinoma (Pancreas, Lung, Gastric, Ovarian, Colon)**</td><td>**Migratory Thrombophlebitis, DVT/PE, Arterial Thrombosis**</td></tr><tr><td>**Paraneoplastic Neutrophilia**</td><td>**G-CSF, IL-6, GM-CSF**</td><td>**Various**</td><td>**Leukemoid Reaction (>50×10⁹/L)**</td></tr><tr><td>**Microangiopathic Haemolytic Anaemia (MAHA)**</td><td>**Fibrin Strands, Mechanical RBC Fragmentation**</td><td>**DIC, TTP, HUS, Cancer (Mucinous Adeno, Metastatic)**</td><td>**Schistocytes, ↑LDH, ↓Haptoglobin, ↑Bilirubin**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Rheumatological Paraneoplastic Syndromes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Features</th><th>Associated Cancers</th></tr><tr><td>----------</td><td>----------</td><td>-------------------</td></tr><tr><td>**HPOA (Hypertrophic Pulmonary Osteoarthropathy)**</td><td>**Clubbing, Periostitis (Tibia, Radius, Ulna), Arthralgia, Vascular Proliferation**</td><td>**Lung (SCC, Adenocarcinoma), Mesothelioma, Pleural Mets**</td></tr><tr><td>**RS3PE (Remitting Seronegative Symmetrical Synovitis with Pitting Oedema)**</td><td>**Pitting Oedema (Hands/Feet), Synovitis, Negative RF/CCP**</td><td>**Solid Tumours (Prostate, Lung, GI), Lymphoma**</td></tr><tr><td>**Paraneoplastic Polyarthritis**</td><td>**Migratory, Seronegative**</td><td>**Lung, Breast, Pancreatic**</td></tr><tr><td>**Polymyalgia Rheumatica-Like**</td><td>**Proximal Stiffness/Pain, Elevated ESR/CRP**</td><td>**Lymphoma, Solid Tumours**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Renal Paraneoplastic Syndromes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Mechanism</th><th>Associated Cancers</th></tr><tr><td>----------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Nephrotic Syndrome (Membranous > Minimal Change)**</td><td>**Immune Complex Deposition (Tumour Antigens)**</td><td>**Lung, Gastric, Colon, Breast, Lymphoma, CLL**</td></tr><tr><td>**AA Amyloidosis**</td><td>**Chronic Inflammation → SAA → Amyloid A**</td><td>**Renal Cell Carcinoma, HCC, Lymphoma, Castleman, Chronic Infections**</td></tr><tr><td>**Tumour Lysis Nephropathy**</td><td>**Uric Acid/Phosphate Crystals**</td><td>**High-Grade Lymphoma, ALL, AML, Burkitt**</td></tr><tr><td>**Obstructive Uropathy**</td><td>**Retroperitoneal Mets, Direct Invasion**</td><td>**Lymphoma, Testicular, Gynaecological, Prostate, Colorectal**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Clinical Approach to Paraneoplastic Syndrome</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient with Unexplained Syndrome] --&gt; B[<b>Recognise Paraneoplastic Pattern</b>] B --&gt; C{System Involved} C --&gt;|<b>Endocrine</b>| D[<b>SIADH, Ectopic ACTH, HyperCa, Hypoglycaemia, Carcinoid</b>] C --&gt;|<b>Neurological</b>| E[<b>LEMS, PCD, Encephalitis, Neuropathy, Stiff Person</b>] C --&gt;|<b>Dermatological</b>| F[<b>Acanthosis, Dermatomyositis, Sweet's, Bazex, Leser-Trélat</b>] C --&gt;|<b>Haematological</b>| G[<b>TTP, DIC, Erythrocytosis, Trousseau's</b>] C --&gt;|<b>Rheumatological</b>| H[<b>HPOA, RS3PE</b>] C --&gt;|<b>Renal</b>| I[<b>Nephrotic, AA Amyloid, Obstructive</b>] D --&gt; J[<b>Targeted Cancer Search</b>] E --&gt; J F --&gt; J G --&gt; J H --&gt; J I --&gt; J J --&gt; K[<b>Imaging: CT Chest/Abd/Pelvis, PET-CT</b>] J --&gt; L[<b>Serology: Onconeural Antibody Panel (Hu, Yo, Ri, Ma2, CV2, NMDA, VGCC, Amphiphysin, GAD, LGI1, CASPR2)</b>] J --&gt; M[<b>Tumour Markers (CEA, CA19-9, CA125, AFP, PSA, NSE, Chromogranin, 5-HIAA)</b>] L --&gt; N[<b>If Cancer Found: Treat Cancer + Symptomatic Paraneoplastic Management</b>] M --&gt; N N --&gt; O[<b>Immunotherapy (IVIG, PLEX, Rituximab, Steroids) for Immune-Mediated</b>] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Treatment Principles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome Category</th><th>Primary Treatment</th><th>Symptomatic/Immunotherapy</th></tr><tr><td>-------------------</td><td>-------------------</td><td>---------------------------</td></tr><tr><td>**Endocrine**</td><td>**Treat Underlying Cancer**</td><td>**SIADH: Fluid Restrict, Tolvaptan**; **Ectopic ACTH: Ketoconazole, Metyrapone**; **HyperCa: Bisphosphonates, Denosumab**</td></tr><tr><td>**Neurological (Immune-Mediated)**</td><td>**Treat Cancer + Immunotherapy**</td><td>**IVIG (2g/kg), Plasma Exchange, Rituximab, Corticosteroids, Cyclophosphamide**</td></tr><tr><td>**LEMS**</td><td>**Treat SCLC**</td><td>**3,4-DAP (Amifampridine), Pyridostigmine, IVIG, PLEX**</td></tr><tr><td>**Dermatological**</td><td>**Treat Cancer**</td><td>**Topical Steroids, Systemic Steroids, Rituximab (Pemphigus)**</td></tr><tr><td>**Haematological (TTP)**</td><td>**Plasma Exchange (Daily) + Corticosteroids**</td><td>**Rituximab, Caplacizumab (Anti-vWF)**</td></tr><tr><td>**DIC**</td><td>**Treat Underlying Cause (APL: ATRA), Replace Factors**</td><td>**Heparin (Controversial), Antithrombin III**</td></tr><tr><td>**Rheumatological**</td><td>**Treat Cancer**</td><td>**NSAIDs, Corticosteroids, Bisphosphonates (HPOA)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Syndrome</th><th>Cancer</th><th>Key Antibody / Feature</th></tr><tr><td>----------</td><td>----------</td><td>--------</td><td>------------------------</td></tr><tr><td>**Endocrine**</td><td>**SIADH**</td><td>**SCLC**</td><td>**Hyponatraemia, Euvolaemic**</td></tr><tr><td></td><td>**Ectopic ACTH**</td><td>**SCLC, NET**</td><td>**Hypokalaemia, Alkalaemia**</td></tr><tr><td></td><td>**Hypercalcaemia**</td><td>**SCC (Lung, H&N, Cervix), Breast**</td><td>**PTHrP, Osteolytic Mets**</td></tr><tr><td></td><td>**Carcinoid**</td><td>**NET**</td><td>**Flushing, Diarrhoea, Valves**</td></tr><tr><td>**Neurological**</td><td>**LEMS**</td><td>**SCLC**</td><td>**VGCC Ab, Facilitation on RNS**</td></tr><tr><td></td><td>**PCD (Anti-Yo)**</td><td>**Gynae**</td><td>**Cerebellar Ataxia**</td></tr><tr><td></td><td>**Anti-Hu**</td><td>**SCLC**</td><td>**Encephalomyelitis, Neuropathy**</td></tr><tr><td></td><td>**Anti-Ri**</td><td>**Breast, Gynae**</td><td>**Opsoclonus-Myoclonus**</td></tr><tr><td></td><td>**Anti-Ma2**</td><td>**Testicular**</td><td>**Limbic Encephalitis**</td></tr><tr><td></td><td>**Anti-NMDA**</td><td>**Ovarian Teratoma**</td><td>**Psychiatric, Seizures, Autonomic**</td></tr><tr><td></td><td>**Anti-CV2**</td><td>**SCLC, Thymoma**</td><td>**Encephalomyelitis, Chorea, Neuropathy**</td></tr><tr><td>**Dermatological**</td><td>**Acanthosis Nigricans**</td><td>**Gastric, Lung**</td><td>**Velvety Hyperpigmentation**</td></tr><tr><td></td><td>**Dermatomyositis**</td><td>**Ovarian, Lung**</td><td>**Heliotrope, Gottron's, Proximal Weakness**</td></tr><tr><td></td><td>**Sweet's**</td><td>**AML, MDS**</td><td>**Fever, Neutrophilia, Plaques**</td></tr><tr><td></td><td>**Bazex**</td><td>**H&N SCC, Lung**</td><td>**Acral Psoriasiform**</td></tr><tr><td></td><td>**Leser-Trélat**</td><td>**Gastric, Lung**</td><td>**Seborrhoeic Keratoses**</td></tr><tr><td>**Haematological**</td><td>**TTP**</td><td>**Cancer, Drugs**</td><td>**ADAMTS13, MAHA, PLEX**</td></tr><tr><td></td><td>**DIC**</td><td>**APL, Adeno**</td><td>**↑PT/APTT, ↓Fibrinogen**</td></tr><tr><td></td><td>**Trousseau's**</td><td>**Mucinous Adeno**</td><td>**Migratory Thrombophlebitis**</td></tr><tr><td>**Rheumatological**</td><td>**HPOA**</td><td>**Lung, Mesothelioma**</td><td>**Clubbing, Periostitis**</td></tr><tr><td></td><td>**RS3PE**</td><td>**Prostate, Lung, Lymphoma**</td><td>**Pitting Oedema, Synovitis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**SCLC Patient with Proximal Weakness, Dry Mouth, Facilitation on RNS. Diagnosis, Antibody?**</td><td>**Lambert-Eaton Myasthenic Syndrome (LEMS)**, **VGCC (P/Q-Type) Antibody**.</td></tr><tr><td>**50F, Ovarian Cancer, Subacute Cerebellar Ataxia. Antibody?**</td><td>**Anti-Yo (PCA-1) — CDR2**, **Paraneoplastic Cerebellar Degeneration**.</td></tr><tr><td>**60M, SCLC, Encephalomyelitis, Sensory Neuropathy. Antibody?**</td><td>**Anti-Hu (ANNA-1)**.</td></tr><tr><td>**30M, Testicular Mass, Limbic Encephalitis, Hypersomnia. Antibody?**</td><td>**Anti-Ma2**.</td></tr><tr><td>**20F, Ovarian Teratoma, Psychiatric, Seizures, Autonomic Instability. Antibody?**</td><td>**Anti-NMDA Receptor Encephalitis**.</td></tr><tr><td>**Patient with Velvety Hyperpigmentation in Axilla. Cancer?**</td><td>**Gastric Adenocarcinoma (Most Common), Also Lung, Uterine, Ovarian, Pancreatic**.</td></tr><tr><td>**Heliotrope Rash, Gottron's Papules, Proximal Weakness. Cancer Association?**</td><td>**Dermatomyositis — Ovarian (Strongest), Lung, Pancreatic, Gastric, Breast**.</td></tr><tr><td>**Sweet's Syndrome — Fever, Neutrophilia, Tender Plaques. Most Common Cancer?**</td><td>**AML (Most Common), Also MDS, Breast, GI, GU**.</td></tr><tr><td>**Migratory Thrombophlebitis (Trousseau's). Cancer Type?**</td><td>**Mucinous Adenocarcinoma (Pancreas, Lung, Gastric, Ovarian, Colon)**.</td></tr><tr><td>**Clubbing, Periostitis, Arthralgia. Syndrome, Cancer?**</td><td>**HPOA (Hypertrophic Pulmonary Osteoarthropathy) — Lung (SCC, Adeno), Mesothelioma**.</td></tr><tr><td>**Nephrotic Syndrome in Cancer — Histology?**</td><td>**Membranous Nephropathy (Most Common), Also Minimal Change**.</td></tr><tr><td>**Anti-CV2/CRMP-5 — Syndrome, Cancer?**</td><td>**Encephalomyelitis, Optic Neuritis, Chorea, Neuropathy — SCLC, Thymoma**.</td></tr><tr><td>**Anti-NMDA — Cancer, Presentation?**</td><td>**Ovarian Teratoma (50%), SCLC** — **Psychiatric, Seizures, Autonomic, Movement Disorder**.</td></tr><tr><td>**Anti-Hu — Syndrome, Cancer?**</td><td>**Encephalomyelitis, Sensory Neuropathy, GI Dysmotility — SCLC (Most Common)**.</td></tr><tr><td>**LEMS vs Myasthenia Gravis — Differences?**</td><td>**LEMS: VGCC Ab, Facilitation on RNS, Proximal Weakness, Autonomic, SCLC**; **MG: AChR Ab, Decrement on RNS, Ocular/Bulbar, Thymoma**.</td></tr><tr><td>**SIADH vs CSW**</td><td>**SIADH: Euvolemic, Urine Na>40, Urine Osm>100**; **CSW: Hypovolemic, High Urine Output, High Urine Na**</td></tr><tr><td>**TTP vs DIC**</td><td>**TTP: MAHA + Thrombocytopenia, Normal PT/APTT, ADAMTS13 Def**; **DIC: ↑PT/APTT, ↓Fibrinogen, ↑D-Dimer, Consumptive**</td></tr><tr><td>**Acanthosis Nigricans vs Melanoma**</td><td>**Acanthosis: Velvety, Symmetric, Axilla/Neck**; **Melanoma: Asymmetric, Irregular Borders, Colour Variegation**</td></tr><tr><td>**Sweet's vs Erythema Nodosum**</td><td>**Sweet's: Neutrophilia, Fever, Plaques (Neutrophils), AML/MDS**; **EN: Tender Nodules (Septal Panniculitis), TB, Sarcoid, Strep, Drugs**</td></tr><tr><td>**HPOA vs Clubbing Alone**</td><td>**HPOA: Clubbing + Periostitis (Bone) + Arthralgia + Vascular**; **Clubbing Alone: Cyanotic Heart, Lung Fibrosis, GI, Liver**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**LEMS vs Myasthenia Gravis**</td><td>**LEMS: VGCC Ab, Facilitation on RNS, Proximal Weakness, Autonomic, SCLC**; **MG: AChR Ab, Decrement on RNS, Ocular/Bulbar, Thymoma**</td></tr><tr><td>**Anti-Hu vs Anti-Yo**</td><td>**Anti-Hu: SCLC, Encephalomyelitis + Neuropathy**; **Anti-Yo: Gynae, Pure Cerebellar Degeneration**</td></tr><tr><td>**Anti-Ri vs Anti-Ma2**</td><td>**Anti-Ri: Breast/Gynae, Opsoclonus-Myoclonus**; **Anti-Ma2: Testicular, Limbic Encephalitis**</td></tr><tr><td>**SIADH vs CSW**</td><td>**SIADH: Euvolemic, Urine Na>40, Urine Osm>100**; **CSW: Hypovolemic, High Urine Output, High Urine Na**</td></tr><tr><td>**TTP vs DIC**</td><td>**TTP: MAHA + Thrombocytopenia, Normal PT/APTT, ADAMTS13 Def**; **DIC: ↑PT/APTT, ↓Fibrinogen, ↑D-Dimer, Consumptive**</td></tr><tr><td>**Acanthosis Nigricans vs Melanoma**</td><td>**Acanthosis: Velvety, Symmetric, Axilla/Neck**; **Melanoma: Asymmetric, Irregular Borders, Colour Variegation**</td></tr><tr><td>**Sweet's vs Erythema Nodosum**</td><td>**Sweet's: Neutrophilia, Fever, Plaques (Neutrophils), AML/MDS**; **EN: Tender Nodules (Septal Panniculitis), TB, Sarcoid, Strep, Drugs**</td></tr><tr><td>**HPOA vs Clubbing Alone**</td><td>**HPOA: Clubbing + Periostitis (Bone) + Arthralgia + Vascular**; **Clubbing Alone: Cyanotic Heart, Lung Fibrosis, GI, Liver**</td></tr></table>
+<p><b>Mnemonic: PARANEOPLASTIC</b></p>
+<ul><li><b>P</b>araneoplastic: <b>Remote Effects, Not Direct Invasion</b></li><li><b>A</b>nibody-Mediated: <b>Onconeural (Hu, Yo, Ri, Ma2, CV2, NMDA, VGCC, Amphiphysin, GAD, LGI1, CASPR2)</b></li><li><b>R</b>emote <b>E</b>ffects: <b>Hormonal (SIADH, ACTH, PTHrP, IGF-2, Serotonin)</b></li><li><b>A</b>nibody-Neurological: <b>Hu (SCLC, Encephalomyelitis), Yo (Gynae, PCD), Ri (Breast, Opsoclonus), Ma2 (Testicular, Limbic), CV2 (SCLC), NMDA (Ovarian Teratoma)</b></li><li><b>N</b>euro <b>L</b>ambert-Eaton: <b>VGCC Ab, SCLC, Facilitation, 3,4-DAP</b></li><li><b>E</b>ndocrine: <b>SIADH (SCLC), ACTH (SCLC/Carcinoid), PTHrP (SCC/Breast), IGF-2 (Mesenchymal), Carcinoid (NET)</b></li><li><b>O</b>nconeural <b>P</b>araneoplastic: <b>PCD (Anti-Yo), LEMS (VGCC), Encephalitis (Hu, Ma2, NMDA), Neuropathy (Hu, CV2)</b></li><li><b>L</b>ambert-Eaton: <b>VGCC, Facilitation, SCLC, 3,4-DAP</b></li><li><b>A</b>canthosis <b>N</b>igricans: <b>Gastric, Lung, Velvety Hyperpigmentation</b></li><li><b>A</b>utoimmune <b>S</b>kin: <b>Dermatomyositis (Ovarian/Lung), Sweet's (AML), Bazex (H&amp;N), Leser-Trélat (Gastric)</b></li><li><b>A</b>utoimmune <b>S</b>yndromes: <b>TTP (ADAMTS13, PLEX), DIC (APL, Adeno), Trousseau's (Mucinous Adeno)</b></li><li><b>T</b>TP: <b>ADAMTS13 Def, MAHA, Thrombocytopenia, PLEX + Steroids</b></li><li><b>I</b>mmunotherapy: <b>IVIG, PLEX, Rituximab, Steroids, Cyclophosphamide</b></li><li><b>C</b>ancer Search: <b>CT/PET-CT, Tumour Markers, Onconeural Panel</b></li><li><b>T</b>argeted Treatment: <b>Treat Cancer = Best for Paraneoplastic</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Paraneoplastic Syndromes)) Endocrine SIADH (SCLC) - ADH Ectopic ACTH (SCLC, NET) Hypercalcaemia (SCC, Breast) - PTHrP Hypoglycaemia (Mesenchymal) - IGF-2 Carcinoid (NET) - Serotonin Neurological LEMS: VGCC Ab, SCLC, 3,4-DAP PCD: Anti-Yo (Gynae), CDR2 Anti-Hu (SCLC) - Encephalomyelitis Anti-Ri (Breast) - Opsoclonus Anti-Ma2 (Testicular) - Limbic Anti-CV2/CRMP5 (SCLC, Thymoma) Anti-NMDA (Ovarian Teratoma) - Encephalitis Anti-LGI1/CASPR2 (Thymoma) - Limbic Dermatological Acanthosis Nigricans (Gastric, Lung) Dermatomyositis (Ovarian, Lung) Sweet's (AML, MDS) Bazex (H&amp;N SCC, Lung) Leser-Trélat (Gastric, Lung) Paraneoplastic Pemphigus (CLL, NHL) Haematological TTP (ADAMTS13, PLEX) DIC (APL, Adeno) Erythrocytosis (RCC, HCC) Trousseau's (Mucinous Adeno) Rheumatological HPOA (Lung, Mesothelioma) - Clubbing, Periostitis RS3PE (Prostate, Lung) - Pitting Oedema Renal Nephrotic (Membranous) - Lung, Gastric AA Amyloid (RCC, HCC, CML) Obstructive (Retroperitoneal Mets) Treatment Treat Cancer = Best for Paraneoplastic Immunotherapy: IVIG, PLEX, Rituximab, Steroids LEMS: 3,4-DAP TTP: PLEX + Steroids </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Syndrome</th><th>Cancer</th><th>Key Feature</th></tr><tr><td>----------</td><td>----------</td><td>--------</td><td>-------------</td></tr><tr><td>**Endocrine**</td><td>SIADH</td><td>SCLC</td><td>Hyponatraemia, Euvolaemic</td></tr><tr><td></td><td>Ectopic ACTH</td><td>SCLC, NET</td><td>Hypokalaemia, Alkalaemia</td></tr><tr><td></td><td>HyperCa</td><td>SCC, Breast</td><td>PTHrP, Osteolytic</td></tr><tr><td></td><td>Carcinoid</td><td>NET</td><td>Flushing, Diarrhoea, Valves</td></tr><tr><td>**Neurological**</td><td>LEMS</td><td>SCLC</td><td>VGCC Ab, Facilitation on RNS</td></tr><tr><td></td><td>PCD (Anti-Yo)</td><td>Gynae</td><td>Cerebellar Ataxia</td></tr><tr><td></td><td>Anti-Hu</td><td>SCLC</td><td>Encephalomyelitis, Neuropathy</td></tr><tr><td></td><td>Anti-Ri</td><td>Breast, Gynae</td><td>Opsoclonus-Myoclonus</td></tr><tr><td></td><td>Anti-Ma2</td><td>Testicular</td><td>Limbic Encephalitis</td></tr><tr><td></td><td>Anti-NMDA</td><td>Ovarian Teratoma</td><td>Psychiatric, Seizures</td></tr><tr><td></td><td>Anti-CV2</td><td>SCLC, Thymoma</td><td>Encephalomyelitis, Chorea</td></tr><tr><td>**Dermatological**</td><td>Acanthosis Nigricans</td><td>Gastric, Lung</td><td>Velvety Hyperpigmentation</td></tr><tr><td></td><td>Dermatomyositis</td><td>Ovarian, Lung</td><td>Heliotrope, Gottron's</td></tr><tr><td></td><td>Sweet's</td><td>AML, MDS</td><td>Fever, Neutrophilia, Plaques</td></tr><tr><td></td><td>Bazex</td><td>H&N, Lung</td><td>Acral Psoriasiform</td></tr><tr><td></td><td>Leser-Trélat</td><td>Gastric, Lung</td><td>Seborrhoeic Keratoses</td></tr><tr><td>**Haematological**</td><td>TTP</td><td>Cancer, Drugs</td><td>ADAMTS13, MAHA, PLEX</td></tr><tr><td></td><td>DIC</td><td>APL, Adeno</td><td>↑PT/APTT, ↓Fibrinogen</td></tr><tr><td></td><td>Trousseau's</td><td>Mucinous Adeno</td><td>Migratory Thrombophlebitis</td></tr><tr><td>**Rheumatological**</td><td>HPOA</td><td>Lung, Mesothelioma</td><td>Clubbing, Periostitis</td></tr><tr><td></td><td>RS3PE</td><td>Prostate, Lung, Lymphoma</td><td>Pitting Oedema, Synovitis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Endocrine Syndromes</td><td></td><td></td></tr><tr><td>Neurological Antibodies</td><td></td><td></td></tr><tr><td>LEMS vs MG</td><td></td><td></td></tr><tr><td>Dermatological Signs</td><td></td><td></td></tr><tr><td>Haematological Syndromes</td><td></td><td></td></tr><tr><td>Cancer-Antibody Associations</td><td></td><td></td></tr><tr><td>Treatment Principles</td><td></td><td></td></tr><tr><td>Differential Diagnosis</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[SIADH]], [[Lambert-Eaton]], [[Anti-Hu]], [[Anti-Yo]], [[Anti-Ri]], [[Anti-Ma2]], [[Anti-NMDA]], [[Dermatomyositis]], [[Acanthosis Nigricans]], [[HPOA]], [[TTP]], [[DIC]], [[Trousseau's]], [[Carcinoid Syndrome]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Paraneoplastic Syndromes (Endocrine), which statement is correct? A. <b>SIADH</b> B. <b>SIADH</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SIADH</b></li></ul>
+<p><b>2.</b> Regarding Paraneoplastic Syndromes (Neurological), which statement is correct? A. <b>LEMS</b> B. <b>LEMS</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>LEMS</b></li></ul>
+<p><b>3.</b> Regarding Paraneoplastic Syndromes (Dermatological), which statement is correct? A. <b>Acanthosis Nigricans</b> B. **Acanthosis - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Acanthosis Nigricans</b></li></ul>
+<p><b>4.</b> Regarding Paraneoplastic Syndromes (Haematological), which statement is correct? A. <b>TTP</b> B. <b>TTP</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>TTP</b></li></ul>
+<p><b>5.</b> Regarding Paraneoplastic Syndromes (Rheumatological), which statement is correct? A. <b>HPOA</b> B. <b>HPOA</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>HPOA</b></li></ul>
+<p><b>6.</b> Regarding Paraneoplastic Syndromes (Ectopic ACTH / Cushing's), which statement is correct?</p>
+<ul><li>A. Ectopic ACTH / Cushing's: Ectopic ACTH (PRO-ACTH/POMC)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Ectopic ACTH / Cushing's: Ectopic ACTH (PRO-ACTH/POMC)</li></ul>
+<p><b>7.</b> Regarding Paraneoplastic Syndromes (Hypercalcaemia), which statement is correct?</p>
+<ul><li>A. Hypercalcaemia: PTHrP (Humoral), Osteolytic Mets, Vit D (Lymphoma)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Hypercalcaemia: PTHrP (Humoral), Osteolytic Mets, Vit D (Lymphoma)</li></ul>
+<p><b>8.</b> Regarding Paraneoplastic Syndromes (Hypoglycaemia), which statement is correct?</p>
+<ul><li>A. Hypoglycaemia: IGF-2 (Big IGF-2), Insulinoma, Glycogenolysis</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Hypoglycaemia: IGF-2 (Big IGF-2), Insulinoma, Glycogenolysis</li></ul>
+<p><b>9.</b> Regarding Paraneoplastic Syndromes (Carcinoid Syndrome), which statement is correct?</p>
+<ul><li>A. Carcinoid Syndrome: Serotonin, Kallikrein, Bradykinin, Prostaglandins</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Carcinoid Syndrome: Serotonin, Kallikrein, Bradykinin, Prostaglandins</li></ul>
+<p><b>10.</b> Regarding Paraneoplastic Syndromes (Hyponatraemia (CSW)), which statement is correct?</p>
+<ul><li>A. Hyponatraemia (CSW): Cerebral Salt Wasting (Brain Natriuretic Peptide)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Hyponatraemia (CSW): Cerebral Salt Wasting (Brain Natriuretic Peptide)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>SIADH</b></li><li>B. <b>SIADH</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>SIADH</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>LEMS</b></li><li>B. <b>LEMS</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>LEMS</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Acanthosis Nigricans</b></li><li>B. **Acanthosis (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Acanthosis Nigricans</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>TTP</b></li><li>B. <b>TTP</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>TTP</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>HPOA</b></li><li>B. <b>HPOA</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>HPOA</b></li></ul>
+<p><b>6.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. Ectopic ACTH / Cushing's: Ectopic ACTH (PRO-ACTH/POMC)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Ectopic ACTH / Cushing's: Ectopic ACTH (PRO-ACTH/POMC)</li></ul>
+<p><b>7.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. Hypercalcaemia: PTHrP (Humoral), Osteolytic Mets, Vit D (Lymphoma)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Hypercalcaemia: PTHrP (Humoral), Osteolytic Mets, Vit D (Lymphoma)</li></ul>
+<p><b>8.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. Hypoglycaemia: IGF-2 (Big IGF-2), Insulinoma, Glycogenolysis</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Hypoglycaemia: IGF-2 (Big IGF-2), Insulinoma, Glycogenolysis</li></ul>
+<p><b>9.</b> Treatment is initiated. Most important monitoring parameter:</p>
+<ul><li>A. Carcinoid Syndrome: Serotonin, Kallikrein, Bradykinin, Prostaglandins</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Carcinoid Syndrome: Serotonin, Kallikrein, Bradykinin, Prostaglandins</li></ul>
+<p><b>10.</b> Follow-up assessment reveals the following. Best next step:</p>
+<ul><li>A. Hyponatraemia (CSW): Cerebral Salt Wasting (Brain Natriuretic Peptide)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Hyponatraemia (CSW): Cerebral Salt Wasting (Brain Natriuretic Peptide)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Endocrine? <b>A1:</b> SIADH</p>
+<p><b>Q2:</b> Neurological? <b>A2:</b> LEMS</p>
+<p><b>Q3:</b> Dermatological? <b>A3:</b> Acanthosis Nigricans</p>
+<p><b>Q4:</b> Haematological? <b>A4:</b> TTP</p>
+<p><b>Q5:</b> Rheumatological? <b>A5:</b> HPOA</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>Ectopic ACTH / Cushing's</td><td>Ectopic ACTH / Cushing's: Ectopic ACTH (PRO-ACTH/POMC)</td></tr><tr><td>7</td><td>A</td><td>Hypercalcaemia</td><td>Hypercalcaemia: PTHrP (Humoral), Osteolytic Mets, Vit D (Lymphoma)</td></tr><tr><td>8</td><td>A</td><td>Hypoglycaemia</td><td>Hypoglycaemia: IGF-2 (Big IGF-2), Insulinoma, Glycogenolysis</td></tr><tr><td>9</td><td>A</td><td>Carcinoid Syndrome</td><td>Carcinoid Syndrome: Serotonin, Kallikrein, Bradykinin, Prostaglandins</td></tr><tr><td>10</td><td>A</td><td>Hyponatraemia (CSW)</td><td>Hyponatraemia (CSW): Cerebral Salt Wasting (Brain Natriuretic Peptide)</td></tr><tr><td>11</td><td>A</td><td>Anti-Hu (ANNA-1)</td><td>Anti-Hu (ANNA-1): HuD (RNA-Binding)</td></tr><tr><td>12</td><td>A</td><td>Anti-Yo (PCA-1)</td><td>Anti-Yo (PCA-1): CDR2 (Purkinje Cell)</td></tr><tr><td>13</td><td>A</td><td>Anti-Ri (ANNA-2)</td><td>Anti-Ri (ANNA-2): NOVA-1/2 (RNA-Binding)</td></tr><tr><td>14</td><td>A</td><td>Anti-CV2 / CRMP-5</td><td>Anti-CV2 / CRMP-5: CRMP-5 (Collapsin Response Mediator)</td></tr><tr><td>15</td><td>A</td><td>Anti-NMDA</td><td>Anti-NMDA: NR1/NR2 (NMDA Receptor)</td></tr><tr><td>16</td><td>A</td><td>Anti-LGI1</td><td>Anti-LGI1: LGI1 (Synaptic)</td></tr><tr><td>17</td><td>A</td><td>Anti-CASPR2</td><td>Anti-CASPR2: CASPR2 (VGKC Complex)</td></tr><tr><td>18</td><td>A</td><td>Anti-Amphiphysin</td><td>Anti-Amphiphysin: Amphiphysin (Synaptic Vesicle)</td></tr><tr><td>19</td><td>A</td><td>Anti-GAD65</td><td>Anti-GAD65: GAD65 (GABA Synthesis)</td></tr><tr><td>20</td><td>A</td><td>VGCC (P/Q-Type)</td><td>VGCC (P/Q-Type): VGCC (P/Q-Type Calcium Channel)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>6</td><td>A</td><td>Ectopic ACTH / Cushing's</td><td>Ectopic ACTH / Cushing's: Ectopic ACTH (PRO-ACTH/POMC)</td></tr><tr><td>7</td><td>A</td><td>Hypercalcaemia</td><td>Hypercalcaemia: PTHrP (Humoral), Osteolytic Mets, Vit D (Lymphoma)</td></tr><tr><td>8</td><td>A</td><td>Hypoglycaemia</td><td>Hypoglycaemia: IGF-2 (Big IGF-2), Insulinoma, Glycogenolysis</td></tr><tr><td>9</td><td>A</td><td>Carcinoid Syndrome</td><td>Carcinoid Syndrome: Serotonin, Kallikrein, Bradykinin, Prostaglandins</td></tr><tr><td>10</td><td>A</td><td>Hyponatraemia (CSW)</td><td>Hyponatraemia (CSW): Cerebral Salt Wasting (Brain Natriuretic Peptide)</td></tr><tr><td>11</td><td>A</td><td>Anti-Hu (ANNA-1)</td><td>Anti-Hu (ANNA-1): HuD (RNA-Binding)</td></tr><tr><td>12</td><td>A</td><td>Anti-Yo (PCA-1)</td><td>Anti-Yo (PCA-1): CDR2 (Purkinje Cell)</td></tr><tr><td>13</td><td>A</td><td>Anti-Ri (ANNA-2)</td><td>Anti-Ri (ANNA-2): NOVA-1/2 (RNA-Binding)</td></tr><tr><td>14</td><td>A</td><td>Anti-CV2 / CRMP-5</td><td>Anti-CV2 / CRMP-5: CRMP-5 (Collapsin Response Mediator)</td></tr><tr><td>15</td><td>A</td><td>Anti-NMDA</td><td>Anti-NMDA: NR1/NR2 (NMDA Receptor)</td></tr><tr><td>16</td><td>A</td><td>Anti-LGI1</td><td>Anti-LGI1: LGI1 (Synaptic)</td></tr><tr><td>17</td><td>A</td><td>Anti-CASPR2</td><td>Anti-CASPR2: CASPR2 (VGKC Complex)</td></tr><tr><td>18</td><td>A</td><td>Anti-Amphiphysin</td><td>Anti-Amphiphysin: Amphiphysin (Synaptic Vesicle)</td></tr><tr><td>19</td><td>A</td><td>Anti-GAD65</td><td>Anti-GAD65: GAD65 (GABA Synthesis)</td></tr><tr><td>20</td><td>A</td><td>VGCC (P/Q-Type)</td><td>VGCC (P/Q-Type): VGCC (P/Q-Type Calcium Channel)</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Endocrine</td><td>SIADH</td></tr><tr><td>2</td><td>A</td><td>Neurological</td><td>LEMS</td></tr><tr><td>3</td><td>A</td><td>Dermatological</td><td>Acanthosis Nigricans</td></tr><tr><td>4</td><td>A</td><td>Haematological</td><td>TTP</td></tr><tr><td>5</td><td>A</td><td>Rheumatological</td><td>HPOA</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Endocrine</td><td>SIADH</td></tr><tr><td>2</td><td>A</td><td>Neurological</td><td>LEMS</td></tr><tr><td>3</td><td>A</td><td>Dermatological</td><td>Acanthosis Nigricans</td></tr><tr><td>4</td><td>A</td><td>Haematological</td><td>TTP</td></tr><tr><td>5</td><td>A</td><td>Rheumatological</td><td>HPOA</td></tr></table>
+<p><b>Q6:</b> Ectopic ACTH / Cushing's? <b>A6:</b> Ectopic ACTH / Cushing's: Ectopic ACTH (PRO-ACTH/POMC)</p>
+<p><b>Q7:</b> Hypercalcaemia? <b>A7:</b> Hypercalcaemia: PTHrP (Humoral), Osteolytic Mets, Vit D (Lymphoma)</p>
+<p><b>Q8:</b> Hypoglycaemia? <b>A8:</b> Hypoglycaemia: IGF-2 (Big IGF-2), Insulinoma, Glycogenolysis</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Paraneoplastic Syndromes|Paraneoplastic Syndromes]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Paraneoplastic Syndromes · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Colorectal Cancer Overview — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.5. COLORECTAL CANCER</span>
+      <div class="h1">Colorectal Cancer Overview</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>TNM 8th Edition staging</b> for colon and rectal cancer</li><li>[ ] Classify by <b>Molecular subtypes</b> (CMS, MSI/MMR) and apply treatment algorithms</li><li>[ ] Apply <b>adjuvant/neoadjuvant treatment algorithms</b> based on stage and molecular profile</li><li>[ ] Manage <b>metastatic colorectal cancer</b> (mCRC) by <b>RAS/BRAF/MSI status</b> and <b>sidedness</b></li><li>[ ] Apply <b>screening principles</b> and <b>hereditary syndrome management</b> (Lynch, FAP)</li><li>[ ] Differentiate <b>colon vs rectal cancer</b> management (neoadjuvant CRT for rectal)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Epidemiology & Risk Factors</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>**~1.9M new cases/year** (3rd commonest)</td></tr><tr><td>**Mortality**</td><td>**~930,000 deaths/year** (2nd commonest cancer death)</td></tr><tr><td>**Peak Age**</td><td>**>50 years** (increasing <50y)</td></tr><tr><td>**Sex Ratio**</td><td>Slight M > F</td></tr><tr><td>**Risk Factors**</td><td>Age, **Family history**, IBD (UC > Crohn), **High red/processed meat**, Low fibre, Obesity, Smoking, Alcohol, T2DM</td></tr><tr><td>**Hereditary**</td><td>**5-10%** — **Lynch (MMR), FAP (APC), MAP (MUTYH), Peutz-Jeghers (STK11), Juvenile Polyposis (SMAD4/BMPR1A)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Molecular Classification — **High-Yield FOR EXAMS**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Consensus Molecular Subtypes (CMS)</div>
+<table class="ctable"><tr><th>CMS</th><th>Frequency</th><th>Key Features</th><th>Prognosis</th><th>Treatment Implication</th></tr><tr><td>-----</td><td>-----------</td><td>--------------</td><td>-----------</td><td>----------------------</td></tr><tr><td>**CMS1 (Immune)**</td><td>**14%**</td><td>**MSI-H, dMMR, BRAF mut, CIMP-H, Immune infiltration**</td><td>Better if early stage</td><td>**ICI responsive** (if MSI-H)</td></tr><tr><td>**CMS2 (Canonical)**</td><td>**37%**</td><td>**WNT/MYC activation, CIN, KRAS/TP53/APC mut**</td><td>Best (if early)</td><td>Chemo-sensitive</td></tr><tr><td>**CMS3 (Metabolic)**</td><td>**13%**</td><td>**KRAS mut, Metabolic dysregulation, Mixed MSI/CIN**</td><td>Intermediate</td><td>Standard chemo</td></tr><tr><td>**CMS4 (Mesenchymal)**</td><td>**23%**</td><td>**TGF-β, Stromal invasion, EMT, Angiogenesis, Worse**</td><td>**Worst**</td><td>Poor chemo response; TGF-β targets</td></tr></table>
+<div class="sub-h">MSI/MMR Status — **Critical for Treatment**</div>
+<table class="ctable"><tr><th>Status</th><th>Frequency</th><th>Key Features</th><th>Treatment Impact</th></tr><tr><td>--------</td><td>-----------</td><td>--------------</td><td>------------------</td></tr><tr><td>**MSI-H / dMMR**</td><td>**15%** (Stage II-III: ~20%; Metastatic: ~4-5%)</td><td>**MLH1/PMS2 loss (sporadic MLH1 methylation); MSH2/MSH6 loss (Lynch); MSI-H, TMB-H**</td><td>**ICI 1L metastatic (Pembrolizumab); Stage II: No adjuvant chemo; Stage III: Controversial**</td></tr><tr><td>**MSS / pMMR**</td><td>**85%**</td><td>MSS, CIN, KRAS/NRAS/BRAF mut</td><td>Standard chemo; ICI not effective</td></tr></table>
+<div class="callout">[!critical] <b>MSI Testing = MANDATORY for ALL CRC</b> (Stage II-IV) — <b>Guides adjuvant &amp; metastatic therapy</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Staging & Treatment — **Stage-Based Algorithms**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Colon Cancer</div>
+<p>``<code>mermaid flowchart TD A[Colon Cancer] --&gt; B{Stage} B --&gt;|Stage I (T1-2 N0)| C[<b>Surgery alone</b>\n(Right: Right hemicolectomy; Left: Left hemicolectomy/ anterior resection)\n<b>No adjuvant chemo</b>] B --&gt;|Stage II (T3-4 N0)| D{MMR/MSI} D --&gt;|dMMR/MSI-H| E[<b>No adjuvant chemo</b>\n(Excellent prognosis, chemo no benefit)] D --&gt;|pMMR/MSS| F{High Risk Features} F --&gt;|T4, LVI, PNI, T4b, &lt;12 nodes, Obstruction/Perforation| G[<b>Adjuvant Chemo</b>\nCAPOX 3m / FOLFOX 6m] F --&gt;|None| H[Surveillance or Consider Chemo] B --&gt;|Stage III (Any T N1-2)| I[<b>Adjuvant Chemo</b>\n<b>CAPOX 3m</b> (IDEA) / <b>FOLFOX 6m</b>\nOxaliplatin ± based on risk/neuropathy] B --&gt;|Stage IV| J[Metastatic Algorithm\nSee Below] </code>``</p>
+<div class="sub-h">Rectal Cancer — **Neoadjuvant CRT Key Differentiator**</div>
+<p>``<code>mermaid flowchart TD A[Rectal Cancer] --&gt; B{Stage} B --&gt;|T1-2 N0 (Early)| C[<b>Local Excision (TEM/TAMIS)</b>\nif T1, G1-2, &lt;3cm, no LVI\nelse <b>TME + Neoadj CRT</b>] B --&gt;|T3-4 or N+ (Locally Advanced)| D[<b>Neoadjuvant CRT</b>\n<b>Long-course: 45-50.4Gy/25-28fr + Capecitabine</b>\nor <b>Short-course: 25Gy/5fr + Consolidation Chemo</b>\n(RAPIDO, STOCKHOLM III)] D --&gt; E[<b>TME Surgery</b>\n6-8 weeks post-CRT\n12 weeks post-SC] E --&gt; F{ypCR} F --&gt;|ypCR| G[<b>Watch &amp; Wait</b> (Habra) OR Adj Chemo] F --&gt;|No pCR| H[<b>Adjuvant Chemo</b>\nFOLFOX/CAPOX 4-6 cycles] </code>``</p>
+<div class="callout">[!critical] <b>Rectal vs Colon Key Difference</b> - <b>Rectal: Neoadjuvant CRT standard for T3-4/N+</b> → surgery → adjuvant - <b>Colon: No neoadjuvant</b> (except clinical trials); Adjuvant based on stage</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Molecular Testing — **Mandatory for ALL Stages**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>When</th><th>Action</th></tr><tr><td>------</td><td>------</td><td>--------</td></tr><tr><td>**MMR/MSI**</td><td>**All stages**</td><td>Stage II: dMMR → No chemo; Stage III: dMMR → Consider no oxaliplatin; Metastatic: ICI 1L</td></tr><tr><td>**RAS (KRAS/NRAS)**</td><td>**Metastatic**</td><td>WT → Anti-EGFR (Cetuximab/Panitumumab) eligible</td></tr><tr><td>**BRAF V600E**</td><td>Metastatic</td><td>**BRAF mut = Poor prognosis**; Triplet (Encorafenib + Cetuximab + Binimetinib)</td></tr><tr><td>**HER2**</td><td>Metastatic</td><td>HER2+ → Trastuzumab + Pertuzumab + Chemo (HERACLES, MOUNTAINEER)</td></tr><tr><td>**CMS**</td><td>Research/Prognostic</td><td>Prognostic stratification</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Metastatic Colorectal Cancer (mCRC) — **Treatment Algorithm**</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[mCRC] --&gt; B{Resectable Mets?} B --&gt;|Potentially Resectable| C[<b>Conversion Therapy</b>\nFOLFOXIRI + Bev or FOLFOX/CAPOX + Bev\nRe-assess for Resection → Perioperative Chemo] B --&gt;|Unresectable| D{Molecular Profile} D --&gt;|RAS WT, Left-sided| E[<b>FOLFOX/CAPOX + Anti-EGFR</b>\n(Cetuximab/Panitumumab)\n(Fire-3, CALGB/SWOG 80405)] D --&gt;|RAS WT, Right-sided| F[<b>FOLFOXIRI + Bev</b>\nOR <b>FOLFOX + Bev</b>\n(TRIBE2)] D --&gt;|RAS Mut / BRAF WT| G[<b>FOLFOXIRI + Bev</b>\nOR <b>FOLFOX/CAPOX + Bev</b>] D --&gt;|BRAF V600E Mut| H[<b>Triplet: Encorafenib + Cetuximab + Binimetinib</b>\n(BEACON) + Chemo if fit] D --&gt;|MSI-H / dMMR| I[<b>Pembrolizumab 1L</b>\n(KEYNOTE-177) — <b>Preferred over Chemo</b>] D --&gt;|HER2+| J[<b>Trastuzumab + Pertuzumab + Chemo</b>\n(HERACLES, MOUNTAINEER)] </code>``</p>
+<div class="sub-h">1L Treatment by Molecular Profile</div>
+<table class="ctable"><tr><th>Molecular Profile</th><th>1L Preferred Regimen</th><th>Key Evidence</th></tr><tr><td>-------------------</td><td>---------------------</td><td>--------------</td></tr><tr><td>**MSI-H/dMMR**</td><td>**Pembrolizumab**</td><td>KEYNOTE-177 (OS benefit)</td></tr><tr><td>**RAS WT, Left**</td><td>**FOLFOX + Cetuximab**</td><td>FIRE-3, CALGB 80405</td></tr><tr><td>**RAS WT, Right**</td><td>**FOLFOX + Bevacizumab**</td><td>TRIBE2, PEAK</td></tr><tr><td>**RAS Mut / BRAF WT**</td><td>**FOLFOXIRI + Bev**</td><td>TRIBE2</td></tr><tr><td>**BRAF V600E**</td><td>**Encorafenib + Cetuximab + Binimetinib**</td><td>BEACON</td></tr><tr><td>**HER2+**</td><td>**Trastuzumab + Pertuzumab + Chemo**</td><td>HERACLES, MOUNTAINEER</td></tr></table>
+<div class="callout">[!critical] <b>Left vs Right Sidedness</b> — <b>Left-sided RAS WT = Anti-EGFR benefit</b>; <b>Right-sided = Bevacizumab preferred</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Adjuvant Therapy — **Key Trials**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trial</th><th>Population</th><th>Regimen</th><th>Key Finding</th></tr><tr><td>-------</td><td>------------</td><td>---------</td><td>-------------</td></tr><tr><td>**IDEA**</td><td>Stage III Colon</td><td>**CAPOX 3m vs FOLFOX 6m**</td><td>**CAPOX 3m non-inferior (low risk); FOLFOX 6m for high risk (T4, N2)**</td></tr><tr><td>**MOSAIC**</td><td>Stage II/III</td><td>FOLFOX 6m</td><td>DFS benefit Stage III</td></tr><tr><td>**QUASAR**</td><td>Stage II</td><td>5FU/LV</td><td>Small absolute benefit</td></tr><tr><td>**SCOT**</td><td>Stage III</td><td>CAPOX 3m vs 6m</td><td>3m non-inferior</td></tr><tr><td>**NSABP C-08**</td><td>Stage II/III</td><td>FOLFOX + Bev</td><td>**No benefit** for Bev in adjuvant</td></tr><tr><td>**AVANT**</td><td>Stage III</td><td>FOLFOX + Bev</td><td>**No benefit**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Screening & Hereditary Syndromes — **High-Yield**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Screening (UK/US Guidelines)</div>
+<table class="ctable"><tr><th>Modality</th><th>Interval</th><th>Age Range</th></tr><tr><td>----------</td><td>----------</td><td>-----------</td></tr><tr><td>**FIT (Faecal Immunochemical Test)**</td><td>**Annual / Biennial**</td><td>**50-74y** (UK: 60-74y)</td></tr><tr><td>**Colonoscopy**</td><td>**10-yearly**</td><td>**50-75y** (US); High-risk: earlier/more frequent</td></tr><tr><td>**Flexible Sigmoidoscopy**</td><td>**5-yearly**</td><td>55-64y</td></tr></table>
+<div class="sub-h">Hereditary Syndromes — **High-Yield**</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene</th><th>Features</th><th>Cancer Risk</th><th>Surveillance</th></tr><tr><td>--------</td><td>------</td><td>----------</td><td>-------------</td><td>--------------</td></tr><tr><td>**Lynch Syndrome**</td><td>**MLH1, MSH2, MSH6, PMS2, EPCAM**</td><td>**MSI-H, dMMR**, Early onset, **CRC, Endometrial, Ovarian, Gastric, Urinary**</td><td>CRC **40-80%**, Endometrial **40-60%**</td><td>**Colonoscopy q1-2y from 25y**; Gynae surveillance; **Aspirin 600mg** (CAPP2)</td></tr><tr><td>**FAP**</td><td>**APC**</td><td>**100s-1000s adenomas**, Desmoids, CHRPE, Osteomas</td><td>CRC **~100%** if untreated</td><td>**Sigmoidoscopy/Colonoscopy q1-2y from 10-15y**; **Prophylactic colectomy**</td></tr><tr><td>**MUTYH (MAP)**</td><td>**MUTYH** (biallelic)</td><td>**10-100s adenomas**, Duodenal polyps</td><td>CRC **80%**</td><td>Colonoscopy q1-2y from 18-20y</td></tr><tr><td>**Peutz-Jeghers**</td><td>**STK11**</td><td>**Hamartomatous polyps**, Mucocutaneous pigmentation</td><td>CRC, Breast, Pancreas, GI</td><td>Endoscopy q2-3y from 8y</td></tr><tr><td>**Juvenile Polyposis**</td><td>**SMAD4, BMPR1A**</td><td>Juvenile polyps, GI bleeding</td><td>CRC, Gastric</td><td>Colonoscopy/Gastroscopy q1-2y</td></tr></table>
+<div class="callout">[!critical] <b>Lynch = MSI-H/dMMR + Germline MMR mutation</b> — <b>Aspirin 600mg daily reduces CRC risk (CAPP2)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Epidemiology**</td><td>3rd commonest, 2nd mortality; **Age >50**, Red/processed meat, Obesity, Smoking, IBD</td></tr><tr><td>**Molecular**</td><td>**CMS1-4**; **MSI-H/dMMR = 15%** — **ICI 1L metastatic; No adjuvant chemo Stage II**</td></tr><tr><td>**MSI-H/dMMR**</td><td>**Stage II: No adjuvant chemo**; **Stage III: Controversial (no oxali)**; **Metastatic: Pembrolizumab 1L**</td></tr><tr><td>**RAS/BRAF**</td><td>**RAS WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab)**; **RAS mut = Anti-EGFR contraindicated**</td></tr><tr><td>**BRAF V600E**</td><td>**Poor prognosis**; **Encorafenib + Cetuximab + Binimetinib** (BEACON)</td></tr><tr><td>**Stage II**</td><td>**High risk (T4, LVI, PNI, <12 nodes, obstruction/perforation) → CAPOX 3m/FOLFOX 6m**</td></tr><tr><td>**Stage III**</td><td>**CAPOX 3m (IDEA) non-inferior to FOLFOX 6m** (low risk); High risk → FOLFOX 6m</td></tr><tr><td>**Rectal Cancer**</td><td>**T3-4/N+ → Neoadjuvant CRT (Long-course 45-50.4Gy or SC 25Gy/5fr)** → TME → Adjuvant</td></tr><tr><td>**mCRC 1L**</td><td>**MSI-H: Pembrolizumab**; **RAS WT Left: FOLFOX + Cetuximab**; **RAS WT Right: FOLFOX + Bev**; **RAS mut: FOLFOXIRI+Bev or FOLFOX+Bev**; **BRAF V600E: Encorafenib+Cetuximab+Binimetinib**</td></tr><tr><td>**Screening**</td><td>**FIT q1-2y (50-74y)**; **Colonoscopy q10y**; **Lynch/FAP surveillance**</td></tr><tr><td>**Lynch**</td><td>**MLH1, MSH2, MSH6, PMS2, EPCAM**; **CRC 40-80%, Endometrial 40-60%**; **Colonoscopy q1-2y from 25y; Aspirin 600mg**</td></tr><tr><td>**FAP**</td><td>**APC**; 100s polyps; **Prophylactic colectomy**; **Surveillance from 10-15y**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>"What are the CMS subtypes of colorectal cancer and their clinical significance?"</td><td>**CMS1 (Immune, MSI-H, BRAF, best prognosis if early, ICI responsive); CMS2 (Canonical, CIN, WNT/MYC, best overall); CMS3 (Metabolic, KRAS, intermediate); CMS4 (Mesenchymal, TGF-β, worst prognosis, TGF-β targets).**</td></tr><tr><td>"A 65yo man with Stage II colon cancer, MSI-H. Adjuvant chemo?"</td><td>**NO adjuvant chemotherapy** — MSI-H Stage II has excellent prognosis, chemo provides no benefit (QUASAR, PETACC-3).</td></tr><tr><td>"A 50yo woman with metastatic CRC, MSI-H. First-line treatment?"</td><td>**Pembrolizumab 200mg IV q3wk** (KEYNOTE-177) — superior OS vs chemo.</td></tr><tr><td>"What is the role of anti-EGFR therapy in metastatic CRC?"</td><td>**Only in RAS WT (KRAS/NRAS WT)**. **Left-sided primary: Cetuximab/Panitumumab + Chemo (FOLFOX/FOLFIRI)**. **Right-sided: No benefit; use Bevacizumab + Chemo.**</td></tr><tr><td>"What is the standard adjuvant chemotherapy for Stage III colon cancer?"</td><td>**CAPOX 3 months** (preferred per IDEA) or **FOLFOX 6 months** (high-risk: T4, N2). **CAPOX 3m non-inferior** (IDEA).</td></tr><tr><td>"What is the difference in management between colon and rectal cancer?"</td><td>**Rectal: Neoadjuvant CRT (long-course 45-50.4Gy or short-course 25Gy/5fr) → TME → Adjuvant chemo**. **Colon: Surgery first → Adjuvant based on stage.**</td></tr><tr><td>"What is the IDEA collaboration conclusion for Stage III colon cancer?"</td><td>**CAPOX 3 months non-inferior to FOLFOX 6 months** (especially low-risk: T1-3, N1). High-risk (T4/N2): FOLFOX 6 months preferred.</td></tr><tr><td>"A metastatic CRC patient has BRAF V600E mutation. Treatment?"</td><td>**Encorafenib + Cetuximab + Binimetinib** (BEACON trial) — triplet targeted therapy.</td></tr><tr><td>"What is Lynch syndrome and its surveillance?"</td><td>**Germline MMR mutation (MLH1, MSH2, MSH6, PMS2, EPCAM)**. **Colonoscopy q1-2y from 25y**, Gynae surveillance, **Aspirin 600mg daily** (CAPP2).</td></tr><tr><td>"When do you use anti-EGFR therapy in mCRC?"</td><td>**RAS (KRAS/NRAS) WT, Left-sided primary** → **Cetuximab or Panitumumab + Chemo**. **Avoid if RAS mut or Right-sided.**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Stage II vs III Adjuvant**</td><td>**Stage II**: Only if high-risk features (T4, LVI, PNI, <12 nodes, obstruction/perforation). **Stage III**: Always adjuvant (CAPOX 3m / FOLFOX 6m).</td></tr><tr><td>**Left vs Right Sided**</td><td>**Left-sided (Splenic flexure to rectum)**: Embryologically hindgut; **Anti-EGFR benefit if RAS WT**. **Right-sided (Caecum to transverse)**: Midgut; **No anti-EGFR benefit**, worse prognosis.</td></tr><tr><td>**RAS WT vs Mut**</td><td>**RAS WT = KRAS/NRAS WT (exons 2,3,4)**. Only RAS WT benefit from anti-EGFR. **BRAF mut = separate poor prognosis group.**</td></tr><tr><td>**Stage II High Risk**</td><td>**T4, LVI, PNI, <12 nodes, obstruction, perforation** — these get adjuvant chemo.</td></tr><tr><td>**Neo vs Adj Rectal**</td><td>**Neoadj CRT standard for T3-4/N+**; Adjuvant chemo post-TME. **No neoadj for colon** (except trials).</td></tr></table>
+<p><b>Mnemonic: CMS = "1-Immune, 2-Canonical, 3-Metabolic, 4-Mesenchymal"</b></p>
+<ul><li><b>1</b> = <b>Immune</b> (MSI-H, best early, ICI)</li><li><b>2</b> = <b>Canonical</b> (CIN, WNT/MYC, best overall)</li><li><b>3</b> = <b>Metabolic</b> (KRAS, metabolic rewiring)</li><li><b>4</b> = <b>Mesenchymal</b> (TGF-β, EMT, worst)</li></ul>
+<p><b>Mnemonic: MSI-H = "NO ADJUVANT STAGE II"</b></p>
+<ul><li><b>M</b>SI-H = <b>N</b>o <b>A</b>djuvant <b>C</b>hemo <b>S</b>tage <b>I</b>I</li></ul>
+<p><b>Mnemonic: RAS WT = "LEFT SIDED = ANTI-EGFR"</b></p>
+<ul><li><b>RAS WT + LEFT</b> = <b>Anti-EGFR benefit</b></li><li><b>RAS WT + RIGHT</b> = <b>NO Anti-EGFR benefit</b> (Bev preferred)</li></ul>
+<p><b>Mnemonic: IDEA = "3 MONTHS CAPOX = 6 MONTHS FOLFOX"</b></p>
+<ul><li><b>I</b>DEA: <b>CAPOX 3m</b> non-inferior to <b>FOLFOX 6m</b></li><li><b>Low risk</b>: CAPOX 3m; <b>High risk</b>: FOLFOX 6m</li></ul>
+<p><b>Mnemonic: Lynch = "MMR MUTATION + MSH2/MLH1 + ASPIRIN"</b></p>
+<ul><li><b>MMR</b> genes: MLH1, MSH2, MSH6, PMS2, EPCAM</li><li><b>Aspirin 600mg</b> reduces CRC risk (CAPP2)</li></ul>
+<p><b>Mnemonic: FAP = "APC = 100s POLYPS = COLECTOMY"</b></p>
+<ul><li><b>A</b>PC mutation</li><li><b>P</b>olyps 100s</li><li><b>C</b>olectomy prophylactic</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Colorectal Cancer)) Molecular CMS1_Immune CMS2_Canonical CMS3_Metabolic CMS4_Mesenchymal MSIMMR_dMMR RAS_KRAS_NRAS BRAF_V600E Staging Colon Stage_I_Surg Stage_II_HighRisk Stage_III_Adj Stage_IV_Mets Rectal T1_T2_LocalExcision T3_Nplus_Neoadj_CRT TME_Surgery Adjuvant_Chemo Molecular_Testing MSI_MMR RAS_KRAS_NRAS BRAF_V600E HER2 CMS Treatment Stage_I_Surg Stage_II_Risk Stage_III_CAPOX_FOLFOX Rectal_Neoadj_CRT Metastatic_Molecular Screening FIT Colonoscopy Lynch_FAP Hereditary Lynch_MSH_MLH_PMS FAP_APC MAP_MUTYH Peutz_Jeghers_STK11 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Molecular**</td><td>**CMS1 (Immune/MSI-H), CMS2 (Canonical), CMS3 (Metabolic), CMS4 (Mesenchymal)**</td></tr><tr><td>**MSI-H/dMMR**</td><td>**Stage II: NO adjuvant chemo**; **Metastatic: Pembrolizumab 1L**; **Stage III: No oxaliplatin benefit?**</td></tr><tr><td>**RAS**</td><td>**WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab)**; **WT + Right = Bev**; **Mut = No anti-EGFR**</td></tr><tr><td>**BRAF V600E**</td><td>**Poor prognosis**; **Encorafenib + Cetuximab + Binimetinib** (BEACON)</td></tr><tr><td>**Stage II**</td><td>**High risk (T4, LVI, PNI, <12 nodes, obstruction/perf) → CAPOX 3m / FOLFOX 6m**</td></tr><tr><td>**Stage III**</td><td>**CAPOX 3m (IDEA) non-inferior to FOLFOX 6m** (low risk); High risk → FOLFOX 6m</td></tr><tr><td>**Rectal**</td><td>**Neoadj CRT (Long 45-50.4Gy or SC 25Gy/5fr) → TME → Adj Chemo**</td></tr><tr><td>**mCRC 1L**</td><td>**MSI-H: Pembro**; **RAS WT Left: FOLFOX+Cetux**; **RAS WT Right: FOLFOX+Bev**; **RAS mut: FOLFOXIRI+Bev**; **BRAF: Enco+Cetu+Bini**</td></tr><tr><td>**Screening**</td><td>FIT q1-2y (50-74y); Colonoscopy q10y; Lynch q1-2y; FAP q1-2y from 10-15y</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>--------</td><td>----------</td><td>--------------</td></tr><tr><td>Molecular Subtypes (CMS/MSI)</td><td></td><td></td></tr><tr><td>RAS/BRAF & Sidedness</td><td></td><td></td></tr><tr><td>Stage-Based Adjuvant Decisions</td><td></td><td></td></tr><tr><td>Rectal vs Colon Management</td><td></td><td></td></tr><tr><td>mCRC 1L Molecular Algorithms</td><td></td><td></td></tr><tr><td>Hereditary Syndromes</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Colorectal Cancer|Colorectal Cancer]]</li><li><b>Parent Topic Group</b>: [[Colon Cancer]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[TNM Staging &amp; Prognostication]] · [[Cancer Screening &amp; Prevention]] · [[Cancer Biology &amp; Hallmarks of Cancer]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Colorectal Cancer Overview (Epidemiology), which statement is correct? A. 3rd commonest, 2nd mortality B. 3rd - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 3rd commonest, 2nd mortality; <b>Age &gt;50</b>, Red/processed meat, Obesity, Smoking, IBD</li></ul>
+<p><b>2.</b> Regarding Colorectal Cancer Overview (Molecular), which statement is correct? A. <b>CMS1-4</b> B. <b>CMS1-4</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CMS1-4</b>; <b>MSI-H/dMMR = 15%</b> — <b>ICI 1L metastatic; No adjuvant chemo Stage II</b></li></ul>
+<p><b>3.</b> Regarding Colorectal Cancer Overview (MSI-H/dMMR), which statement is correct? A. <b>Stage II: No adjuvant chemo</b> B. **Stage - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Stage II: No adjuvant chemo</b>; <b>Stage III: Controversial (no oxali)</b>; <b>Metastatic: Pembrolizumab 1L</b></li></ul>
+<p><b>4.</b> Regarding Colorectal Cancer Overview (RAS/BRAF), which statement is correct? A. <b>RAS WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab)</b> B. **RAS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RAS WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab)</b>; <b>RAS mut = Anti-EGFR contraindicated</b></li></ul>
+<p><b>5.</b> Regarding Colorectal Cancer Overview (BRAF V600E), which statement is correct? A. <b>Poor prognosis</b> B. **Poor - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Poor prognosis</b>; <b>Encorafenib + Cetuximab + Binimetinib</b> (BEACON)</li></ul>
+<p><b>6.</b> Regarding Colorectal Cancer Overview (Stage II), which statement is correct? A. <b>High risk (T4, LVI, PNI, &lt;12 nodes, obstruction/perforation) → CAPOX 3m/FOLFOX 6m</b> B. **High - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>High risk (T4, LVI, PNI, &lt;12 nodes, obstruction/perforation) → CAPOX 3m/FOLFOX 6m</b></li></ul>
+<p><b>7.</b> Regarding Colorectal Cancer Overview (Stage III), which statement is correct? A. <b>CAPOX 3m (IDEA) non-inferior to FOLFOX 6m</b> (low risk) B. **CAPOX - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CAPOX 3m (IDEA) non-inferior to FOLFOX 6m</b> (low risk); High risk → FOLFOX 6m</li></ul>
+<p><b>8.</b> Regarding Colorectal Cancer Overview (Rectal Cancer), which statement is correct? A. <b>T3-4/N+ → Neoadjuvant CRT (Long-course 45-50.4Gy or SC 25Gy/5fr)</b> → TME → Adjuvant B. **T3-4/N+ - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>T3-4/N+ → Neoadjuvant CRT (Long-course 45-50.4Gy or SC 25Gy/5fr)</b> → TME → Adjuvant</li></ul>
+<p><b>9.</b> Regarding Colorectal Cancer Overview (mCRC 1L), which statement is correct? A. <b>MSI-H: Pembrolizumab</b> B. **MSI-H: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>MSI-H: Pembrolizumab</b>; <b>RAS WT Left: FOLFOX + Cetuximab</b>; <b>RAS WT Right: FOLFOX + Bev</b>; **RAS mut: FOLFOXIRI+Bev ...</li></ul>
+<p><b>10.</b> Regarding Colorectal Cancer Overview (Screening), which statement is correct? A. <b>FIT q1-2y (50-74y)</b> B. **FIT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>FIT q1-2y (50-74y)</b>; <b>Colonoscopy q10y</b>; <b>Lynch/FAP surveillance</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. 3rd commonest, 2nd mortality</li><li>B. 3rd (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: 3rd commonest, 2nd mortality; <b>Age &gt;50</b>, Red/processed meat, Obesity, Smoking, IBD</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>CMS1-4</b></li><li>B. <b>CMS1-4</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>CMS1-4</b>; <b>MSI-H/dMMR = 15%</b> — <b>ICI 1L metastatic; No adjuvant chemo Stage II</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Stage II: No adjuvant chemo</b></li><li>B. **Stage (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Stage II: No adjuvant chemo</b>; <b>Stage III: Controversial (no oxali)</b>; <b>Metastatic: Pembrolizumab 1L</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>RAS WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab)</b></li><li>B. **RAS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>RAS WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab)</b>; <b>RAS mut = Anti-EGFR contraindicated</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Poor prognosis</b></li><li>B. **Poor (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Poor prognosis</b>; <b>Encorafenib + Cetuximab + Binimetinib</b> (BEACON)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>High risk (T4, LVI, PNI, &lt;12 nodes, obstruction/perforation) → CAPOX 3m/FOLFOX 6m</b></li><li>B. **High (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>High risk (T4, LVI, PNI, &lt;12 nodes, obstruction/perforation) → CAPOX 3m/FOLFOX 6m</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>CAPOX 3m (IDEA) non-inferior to FOLFOX 6m</b> (low risk)</li><li>B. **CAPOX (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>CAPOX 3m (IDEA) non-inferior to FOLFOX 6m</b> (low risk); High risk → FOLFOX 6m</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>T3-4/N+ → Neoadjuvant CRT (Long-course 45-50.4Gy or SC 25Gy/5fr)</b> → TME → Adjuvant</li><li>B. **T3-4/N+ (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>T3-4/N+ → Neoadjuvant CRT (Long-course 45-50.4Gy or SC 25Gy/5fr)</b> → TME → Adjuvant</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>MSI-H: Pembrolizumab</b></li><li>B. **MSI-H: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>MSI-H: Pembrolizumab</b>; <b>RAS WT Left: FOLFOX + Cetuximab</b>; <b>RAS WT Right: FOLFOX + Bev</b>; **RAS mut: FOLFOXIRI+Bev ...</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>FIT q1-2y (50-74y)</b></li><li>B. **FIT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>FIT q1-2y (50-74y)</b>; <b>Colonoscopy q10y</b>; <b>Lynch/FAP surveillance</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Epidemiology? <b>A1:</b> 3rd commonest, 2nd mortality; Age &gt;50, Red/processed meat, Obesity, Smoking, IBD</p>
+<p><b>Q2:</b> Molecular? <b>A2:</b> CMS1-4; MSI-H/dMMR = 15% — ICI 1L metastatic; No adjuvant chemo Stage II</p>
+<p><b>Q3:</b> MSI-H/dMMR? <b>A3:</b> Stage II: No adjuvant chemo; Stage III: Controversial (no oxali); Metastatic: Pembrolizumab 1L</p>
+<p><b>Q4:</b> RAS/BRAF? <b>A4:</b> RAS WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab); RAS mut = Anti-EGFR contraindicated</p>
+<p><b>Q5:</b> BRAF V600E? <b>A5:</b> Poor prognosis; Encorafenib + Cetuximab + Binimetinib (BEACON)</p>
+<p><b>Q6:</b> Stage II? <b>A6:</b> High risk (T4, LVI, PNI, &lt;12 nodes, obstruction/perforation) → CAPOX 3m/FOLFOX 6m</p>
+<p><b>Q7:</b> Stage III? <b>A7:</b> CAPOX 3m (IDEA) non-inferior to FOLFOX 6m (low risk); High risk → FOLFOX 6m</p>
+<p><b>Q8:</b> Rectal Cancer? <b>A8:</b> T3-4/N+ → Neoadjuvant CRT (Long-course 45-50.4Gy or SC 25Gy/5fr) → TME → Adjuvant</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Epidemiology</td><td>3rd commonest, 2nd mortality; Age >50, Red/processed meat, Obesity, Smoking, IBD</td></tr><tr><td>2</td><td>A</td><td>Molecular</td><td>CMS1-4; MSI-H/dMMR = 15% — ICI 1L metastatic; No adjuvant chemo Stage II</td></tr><tr><td>3</td><td>A</td><td>MSI-H/dMMR</td><td>Stage II: No adjuvant chemo; Stage III: Controversial (no oxali); Metastatic: Pembrolizumab 1L</td></tr><tr><td>4</td><td>A</td><td>RAS/BRAF</td><td>RAS WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab); RAS mut = Anti-EGFR contraindicated</td></tr><tr><td>5</td><td>A</td><td>BRAF V600E</td><td>Poor prognosis; Encorafenib + Cetuximab + Binimetinib (BEACON)</td></tr><tr><td>6</td><td>A</td><td>Stage II</td><td>High risk (T4, LVI, PNI, <12 nodes, obstruction/perforation) → CAPOX 3m/FOLFOX 6m</td></tr><tr><td>7</td><td>A</td><td>Stage III</td><td>CAPOX 3m (IDEA) non-inferior to FOLFOX 6m (low risk); High risk → FOLFOX 6m</td></tr><tr><td>8</td><td>A</td><td>Rectal Cancer</td><td>T3-4/N+ → Neoadjuvant CRT (Long-course 45-50.4Gy or SC 25Gy/5fr) → TME → Adjuvant</td></tr><tr><td>9</td><td>A</td><td>mCRC 1L</td><td>MSI-H: Pembrolizumab; RAS WT Left: FOLFOX + Cetuximab; RAS WT Right: FOLFOX + Bev; RAS mut: FOLFOXIRI+Bev or FOLFOX+Bev;</td></tr><tr><td>10</td><td>A</td><td>Screening</td><td>FIT q1-2y (50-74y); Colonoscopy q10y; Lynch/FAP surveillance</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Epidemiology</td><td>3rd commonest, 2nd mortality; Age >50, Red/processed meat, Obesity, Smoking, IBD</td></tr><tr><td>2</td><td>A</td><td>Molecular</td><td>CMS1-4; MSI-H/dMMR = 15% — ICI 1L metastatic; No adjuvant chemo Stage II</td></tr><tr><td>3</td><td>A</td><td>MSI-H/dMMR</td><td>Stage II: No adjuvant chemo; Stage III: Controversial (no oxali); Metastatic: Pembrolizumab 1L</td></tr><tr><td>4</td><td>A</td><td>RAS/BRAF</td><td>RAS WT + Left-sided = Anti-EGFR (Cetuximab/Panitumumab); RAS mut = Anti-EGFR contraindicated</td></tr><tr><td>5</td><td>A</td><td>BRAF V600E</td><td>Poor prognosis; Encorafenib + Cetuximab + Binimetinib (BEACON)</td></tr><tr><td>6</td><td>A</td><td>Stage II</td><td>High risk (T4, LVI, PNI, <12 nodes, obstruction/perforation) → CAPOX 3m/FOLFOX 6m</td></tr><tr><td>7</td><td>A</td><td>Stage III</td><td>CAPOX 3m (IDEA) non-inferior to FOLFOX 6m (low risk); High risk → FOLFOX 6m</td></tr><tr><td>8</td><td>A</td><td>Rectal Cancer</td><td>T3-4/N+ → Neoadjuvant CRT (Long-course 45-50.4Gy or SC 25Gy/5fr) → TME → Adjuvant</td></tr><tr><td>9</td><td>A</td><td>mCRC 1L</td><td>MSI-H: Pembrolizumab; RAS WT Left: FOLFOX + Cetuximab; RAS WT Right: FOLFOX + Bev; RAS mut: FOLFOXIRI+Bev or FOLFOX+Bev;</td></tr><tr><td>10</td><td>A</td><td>Screening</td><td>FIT q1-2y (50-74y); Colonoscopy q10y; Lynch/FAP surveillance</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Colorectal Cancer|Colorectal Cancer]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Colorectal Cancer Overview · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,443 @@
+# Urological Cancer Screening
+
+> [!tip] **FCPS/MRCP Priority: MEDIUM**
+> **Urological Cancers: No Population Screening Programmes**; **Prostate**: PSA Informed Choice (>50); **Testicular**: Self-Exam (No Population Programme); **Bladder**: No Screening (High-Risk: Occupational, Chemotherapy); **Renal**: No Screening (High-Risk: VHL, Dialysis); **Testicular Self-Exam Teaching**: Monthly, After Bath/Shower.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Explain why **no population screening** exists for urological cancers
+- [ ] Describe **prostate cancer early detection** via **PSA Informed Choice**
+- [ ] Teach **testicular self-examination** technique and indications
+- [ ] Identify **high-risk groups** for bladder and renal cancer surveillance
+- [ ] Counsel patients on **screening vs early detection** for urological cancers
+
+---
+
+## 2. Prostate Cancer — PSA Informed Choice
+
+| Aspect | Detail |
+|--------|--------|
+| **Status** | **Informed Choice Programme** (Not Population Screening) |
+| **Eligibility** | **Men >50** can request PSA after informed discussion |
+| **Test** | **Serum PSA** (Age-specific cutoffs) |
+| **Age-Specific Cutoffs** | <50: 2.5, 50-59: 3.0, 60-69: 4.0, 70-79: 5.0, ≥80: 6.5 |
+| **Referral** | **PSA > Age Cutoff → Urgent Urology Referral** (2-week wait) |
+| **MRI Pathway** | **mpMRI (PI-RADS) Before Biopsy** (PSA > Age Cutoff) |
+
+### Key Trial Evidence
+| Trial | Result |
+|-------|--------|
+| **ERSPC** | **20% Mortality Reduction** (13yr), NNS 570, NNT 18, Overdiagnosis ~50% |
+| **PLCO** | **No Mortality Benefit** (High Contamination 40-50%) |
+
+> **Key**: **PSA = Informed Choice Programme**, **Not Population Screening**
+
+---
+
+## 3. Testicular Cancer — Self-Examination
+
+| Aspect | Detail |
+|--------|--------|
+| **Population Programme** | **None** (No population screening) |
+| **Self-Examination** | **Monthly, After Bath/Shower** (Warmth relaxes scrotum) |
+| **Technique** | **Roll each testis between thumb and fingers**; **Feel for lump, swelling, hardness, change in size/shape** |
+| **Target Population** | **Males 15-45** (Peak incidence) |
+| **High-Risk Groups** | **Cryptorchidism**, **Prior Testicular Cancer**, **Family History**, **Klinefelter Syndrome** |
+| **Red Flags** | **Painless Lump**, **Heaviness**, **Dull Ache**, **Gynaecomastia** |
+
+---
+
+## 4. Bladder Cancer — High-Risk Surveillance
+
+| Population | Surveillance |
+|--------|-------------|
+| **Occupational Exposure** (Aromatic amines, dye, rubber, leather, paint) | **Annual Urinalysis + Cytology** + **Cystoscopy** (Some guidelines) |
+| **Prior Chemotherapy** (Cyclophosphamide, Ifosfamide) | **Annual Cystoscopy + Urinalysis** |
+| **Prior Pelvic RT** | **Annual Cystoscopy** |
+| **Schistosomiasis** | **Annual Cystoscopy + Urinalysis** |
+| **Prior Bladder Cancer** | **Cystoscopy q3mo ×2yr, q6mo ×2yr, then Annually** |
+
+> **No Population Screening** (Low incidence, no proven benefit for asymptomatic)
+
+---
+
+## 5. Renal Cancer — High-Risk Surveillance
+
+| Population | Surveillance |
+|--------|-------------|
+| **VHL Syndrome** | **Annual MRI Abdomen (Renal MRI), Annual CT Chest** |
+| **Dialysis/ESKD** | **Annual Renal US** (Acquired Cystic Disease) |
+| **History of RCC** | **CT Chest/Abd/Pelvis q6-12mo ×5yr** |
+| **Tuberous Sclerosis (TSC)** | **Annual Renal MRI** (AMLs, RCC) |
+
+> **No Population Screening** (Low incidence, no proven benefit)
+
+---
+
+## 6. Testicular Cancer — Self-Examination Technique
+
+```mermaid
+flowchart TD
+    A[Monthly Self-Exam] --> B[After Warm Bath/Shower]
+    B --> C[Roll Each Testicle Between Thumb & Fingers]
+    C --> D[Feel For: Lump, Swelling, Hardness, Size/Shape Change]
+    D --> E[Check Epididymis (Soft, Tubular, Posterior)]
+    E --> F[Red Flags: Painless Lump, Heaviness, Dull Ache, Gynaecomastia]
+    F --> G[If Any Change → Urgent GP/Urology Referral]
+```
+
+---
+
+## 7. FCPS/MRCP High-Yield Summary
+
+| Cancer | Screening Programme | High-Risk Surveillance |
+|--------|---------------------|------------------------|
+| **Prostate** | **PSA Informed Choice** (>50) | **High-Risk (FH, Black): Earlier PSA** |
+| **Testicular** | **Self-Exam Monthly** (No Population Programme) | **Cryptorchidism, FH, Prior Tx: Annual US** |
+| **Bladder** | **No Screening** | **Occupational/Chemo/RT: Annual Cystoscopy + Urinalysis** |
+| **Renal** | **No Screening** | **VHL, Dialysis, TSC: Annual Imaging** |
+| **Testicular Self-Exam** | **Monthly, Post-Bath, Roll Testicle, Feel for Lump** | |
+
+---
+
+## 8. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **Prostate Screening — Programme or Informed Choice?** | **Informed Choice Programme** (Men >50 Can Request, No Automatic Invitation). |
+| **Testicular Self-Exam — Technique?** | **Monthly, After Bath/Shower, Roll Testicle Between Thumb/Fingers**, Feel for Lump/Size Change. |
+| **Bladder Cancer Screening — High-Risk Groups?** | **Occupational (Aromatic Amines), Prior Cyclophosphamide, Pelvic RT, Schistosomiasis** → Annual Cystoscopy + Urinalysis. |
+| **Renal Cancer Screening — High-Risk?** | **VHL, Dialysis (Cystic Disease), Prior RCC, TSC** → Annual Imaging (MRI/US). |
+| **Testicular Self-Exam — Red Flags?** | **Painless Lump, Heaviness, Dull Ache, Gynaecomastia, Size/Shape Change**. |
+| **PSA vs Testicular Self-Exam — Programme Difference?** | **PSA: Informed Choice (>50 Can Request)**; **Testicular: Self-Exam Only**, No Population Programme. |
+| **Testicular Cancer — Peak Age, Risk Factors?** | **15-45yr**, Cryptorchidism, FH, Prior Testicular Cancer, Klinefelter. |
+
+---
+
+## 9. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **PSA vs Testicular — Programme Difference** | **PSA: Informed Choice (>50 Can Request)**; **Testicular: Self-Exam Only**, No Population Programme |
+| **Testicular Self-Exam — Frequency** | **Monthly**, **After Bath/Shower** (Scrotum Relaxed) |
+| **Prostate vs Testicular Screening** | **Prostate: PSA Informed Choice (>50)**; **Testicular: Self-Exam Teaching** |
+| **Bladder/Renal — No Population Screening** | **Low Incidence, No Proven Mortality Benefit**, High-Risk Surveillance Only |
+
+**Mnemonic: URO-SCREEN**
+- **U**rological Cancers: **No Population Programmes**
+- **R**enal: **VHL/Dialysis/TSC → Annual Imaging**
+- **O**ccupational Bladder: **Annual Cystoscopy + Urinalysis**
+- **S**elf-Exam Testicular: **Monthly, Post-Bath, Roll Testicle**
+- **P**rostate: **Informed Choice >50** (PSA Age Cutoffs)
+- **C**utoffs PSA: **<50: 2.5, 50-59: 3.0, 60-69: 4.0, 70-79: 5.0, ≥80: 6.5**
+- **R**isk Factors: **Testicular: Cryptorchidism, FH, Prior Tx, Klinefelter**
+- **E**arly Detection: **Testicular Self-Exam Monthly**
+- **E**vidence: **No Mortality Benefit for Population Screening**
+- **N**o Population Programme: **Prostate, Testicular, Bladder, Renal**
+- **S**creening vs Detection: **Screening = Population Programme; Detection = High-Risk/Touch**
+
+---
+
+## 10. One-Page Revision Card
+
+| Cancer | Screening | High-Risk Surveillance |
+|--------|-----------|------------------------|
+| **Prostate** | **PSA Informed Choice (>50)** | **FH, Black: Earlier PSA** |
+| **Testicular** | **Self-Exam Monthly** (No Programme) | **Cryptorchidism, FH, Prior Tx** |
+| **Bladder** | **No Screening** | **Occupational/Chemo/RT: Annual Cystoscopy** |
+| **Renal** | **No Screening** | **VHL, Dialysis, TSC: Annual Imaging** |
+| **Testicular Self-Exam** | **Monthly, Post-Bath, Roll Testicle** | **Red Flags: Lump, Heaviness, Gynaecomastia** |
+
+---
+
+## 11. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 12. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Prostate PSA Programme | | |
+| Testicular Self-Exam Technique | | |
+| Bladder High-Risk Surveillance | | |
+| Renal High-Risk Surveillance | | |
+| PSA vs Testicular Programme Difference | | |
+
+---
+
+## 13. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[PSA Testing]], [[Prostate Cancer]], [[Testicular Cancer]], [[Bladder Cancer]], [[Renal Cell Carcinoma]], [[Testicular Self-Exam]], [[FIT]], [[Colorectal Cancer Screening]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 14. MCQs (10)
+
+
+**1.** Regarding Urological Cancer Screening (Prostate), which statement is correct?
+   A. **PSA Informed Choice** (>50)
+   B. **PSA - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **PSA Informed Choice** (>50)
+
+
+**2.** Regarding Urological Cancer Screening (Testicular), which statement is correct?
+   A. **Self-Exam Monthly** (No Population Programme)
+   B. **Self-Exam - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Self-Exam Monthly** (No Population Programme)
+
+
+**3.** Regarding Urological Cancer Screening (Bladder), which statement is correct?
+   A. **No Screening**
+   B. **No - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **No Screening**
+
+
+**4.** Regarding Urological Cancer Screening (Renal), which statement is correct?
+   A. **No Screening**
+   B. **No - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **No Screening**
+
+
+**5.** Regarding Urological Cancer Screening (Testicular Self-Exam), which statement is correct?
+   A. **Monthly, Post-Bath, Roll Testicle, Feel for Lump**
+   B. **Monthly, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Monthly, Post-Bath, Roll Testicle, Feel for Lump**
+
+
+**6.** Regarding Urological Cancer Screening (FCPS/MRCP High Yield - Urologi), which statement is correct?
+   - A. FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Ren
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular
+
+
+**7.** Regarding Urological Cancer Screening (Prostate), which statement is correct?
+   - A. Prostate: PSA Informed Choice
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Prostate: PSA Informed Choice
+
+
+**8.** Regarding Urological Cancer Screening (Testicular), which statement is correct?
+   - A. Testicular: Self-Exam (No Population Programme)
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Testicular: Self-Exam (No Population Programme)
+
+
+**9.** Regarding Urological Cancer Screening (Bladder), which statement is correct?
+   - A. Bladder: No Screening (High-Risk: Occupational, Chemotherapy)
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Bladder: No Screening (High-Risk: Occupational, Chemotherapy)
+
+
+**10.** Regarding Urological Cancer Screening (Renal), which statement is correct?
+   - A. Renal: No Screening (High-Risk: VHL, Dialysis)
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Renal: No Screening (High-Risk: VHL, Dialysis)
+
+
+## 15. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **PSA Informed Choice** (>50)
+   - B. **PSA (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **PSA Informed Choice** (>50)
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **Self-Exam Monthly** (No Population Programme)
+   - B. **Self-Exam (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **Self-Exam Monthly** (No Population Programme)
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **No Screening**
+   - B. **No (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **No Screening**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **No Screening**
+   - B. **No (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **No Screening**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Monthly, Post-Bath, Roll Testicle, Feel for Lump**
+   - B. **Monthly, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Monthly, Post-Bath, Roll Testicle, Feel for Lump**
+
+
+**6.** A clinician encounters a patient with this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Ren
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular
+
+
+**7.** On further evaluation, the finding is confirmed. Most appropriate next step:
+   - A. Prostate: PSA Informed Choice
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Prostate: PSA Informed Choice
+
+
+**8.** The patient asks about management options. Best evidence-based response:
+   - A. Testicular: Self-Exam (No Population Programme)
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Testicular: Self-Exam (No Population Programme)
+
+
+**9.** Treatment is initiated. Most important monitoring parameter:
+   - A. Bladder: No Screening (High-Risk: Occupational, Chemotherapy)
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Bladder: No Screening (High-Risk: Occupational, Chemotherapy)
+
+
+**10.** Follow-up assessment reveals the following. Best next step:
+   - A. Renal: No Screening (High-Risk: VHL, Dialysis)
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Renal: No Screening (High-Risk: VHL, Dialysis)
+
+
+## 16. Flashcards
+
+**Q1:** Prostate?
+**A1:** PSA Informed Choice (>50)
+
+**Q2:** Testicular?
+**A2:** Self-Exam Monthly (No Population Programme)
+
+**Q3:** Bladder?
+**A3:** No Screening
+
+**Q4:** Renal?
+**A4:** No Screening
+
+**Q5:** Testicular Self-Exam?
+**A5:** Monthly, Post-Bath, Roll Testicle, Feel for Lump
+
+
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 6 | A | FCPS/MRCP High Yield - Urological Cancer Screening | FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular |
+| 7 | A | Prostate | Prostate: PSA Informed Choice |
+| 8 | A | Testicular | Testicular: Self-Exam (No Population Programme) |
+| 9 | A | Bladder | Bladder: No Screening (High-Risk: Occupational, Chemotherapy) |
+| 10 | A | Renal | Renal: No Screening (High-Risk: VHL, Dialysis) |
+| 11 | A | Testicular Self-Exam Teaching | Testicular Self-Exam Teaching |
+| 12 | A | Status | Status: Informed Choice Programme (Not Population Screening) |
+| 13 | A | Eligibility | Eligibility: Men >50 can request PSA after informed discussion |
+| 14 | A | Test | Test: Serum PSA (Age-specific cutoffs) |
+| 15 | A | Age-Specific Cutoffs | Age-Specific Cutoffs: <50: 2.5, 50-59: 3.0, 60-69: 4.0, 70-79: 5.0, ≥80: 6.5 |
+| 16 | A | Referral | Referral: PSA > Age Cutoff → Urgent Urology Referral (2-week wait) |
+| 17 | A | MRI Pathway | MRI Pathway: mpMRI (PI-RADS) Before Biopsy (PSA > Age Cutoff) |
+| 18 | A | ERSPC | ERSPC: 20% Mortality Reduction (13yr), NNS 570, NNT 18, Overdiagnosis ~50% |
+| 19 | A | PLCO | PLCO: No Mortality Benefit (High Contamination 40-50%) |
+| 20 | A | Population Programme | Population Programme: None (No population screening) |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 6 | A | FCPS/MRCP High Yield - Urological Cancer Screening | FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular |
+| 7 | A | Prostate | Prostate: PSA Informed Choice |
+| 8 | A | Testicular | Testicular: Self-Exam (No Population Programme) |
+| 9 | A | Bladder | Bladder: No Screening (High-Risk: Occupational, Chemotherapy) |
+| 10 | A | Renal | Renal: No Screening (High-Risk: VHL, Dialysis) |
+| 11 | A | Testicular Self-Exam Teaching | Testicular Self-Exam Teaching |
+| 12 | A | Status | Status: Informed Choice Programme (Not Population Screening) |
+| 13 | A | Eligibility | Eligibility: Men >50 can request PSA after informed discussion |
+| 14 | A | Test | Test: Serum PSA (Age-specific cutoffs) |
+| 15 | A | Age-Specific Cutoffs | Age-Specific Cutoffs: <50: 2.5, 50-59: 3.0, 60-69: 4.0, 70-79: 5.0, ≥80: 6.5 |
+| 16 | A | Referral | Referral: PSA > Age Cutoff → Urgent Urology Referral (2-week wait) |
+| 17 | A | MRI Pathway | MRI Pathway: mpMRI (PI-RADS) Before Biopsy (PSA > Age Cutoff) |
+| 18 | A | ERSPC | ERSPC: 20% Mortality Reduction (13yr), NNS 570, NNT 18, Overdiagnosis ~50% |
+| 19 | A | PLCO | PLCO: No Mortality Benefit (High Contamination 40-50%) |
+| 20 | A | Population Programme | Population Programme: None (No population screening) |## Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Prostate | PSA Informed Choice (>50) |
+| 2 | A | Testicular | Self-Exam Monthly (No Population Programme) |
+| 3 | A | Bladder | No Screening |
+| 4 | A | Renal | No Screening |
+| 5 | A | Testicular Self-Exam | Monthly, Post-Bath, Roll Testicle, Feel for Lump |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Prostate | PSA Informed Choice (>50) |
+| 2 | A | Testicular | Self-Exam Monthly (No Population Programme) |
+| 3 | A | Bladder | No Screening |
+| 4 | A | Renal | No Screening |
+| 5 | A | Testicular Self-Exam | Monthly, Post-Bath, Roll Testicle, Feel for Lump |
+
+
+**Q6:** FCPS/MRCP High Yield - Urological Cancer Screening?
+**A6:** FCPS/MRCP High Yield - Urological Cancer Screening: No Population Programme for Prostate/Bladder/Renal/Testicular
+
+**Q7:** Prostate?
+**A7:** Prostate: PSA Informed Choice
+
+**Q8:** Testicular?
+**A8:** Testicular: Self-Exam (No Population Programme)
+## 17. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Cancer Screening & Prevention|Cancer Screening & Prevention]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

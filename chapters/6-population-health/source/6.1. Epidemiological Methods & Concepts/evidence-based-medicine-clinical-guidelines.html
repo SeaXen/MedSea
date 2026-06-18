@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Evidence Based Medicine Clinical Guidelines — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.1. EPIDEMIOLOGICAL METHODS & CONCEPTS</span>
+      <div class="h1">Evidence Based Medicine Clinical Guidelines</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Formulate clinical questions using PICO/PICO(T)</li><li>[ ] Navigate evidence hierarchy: SR/MA &gt; RCT &gt; Cohort &gt; Case-Control &gt; XS &gt; Expert opinion</li><li>[ ] Apply critical appraisal tools: CASP, JBI, CEBM checklists</li><li>[ ] Understand guideline development: NICE, WHO, SIGN, GRADE methodology</li><li>[ ] Distinguish strong vs conditional recommendations</li><li>[ ] Apply implementation science: barriers, facilitators, KT frameworks</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Evidence-Based Medicine (EBM)**</td><td>Integration of best research evidence with clinical expertise and patient values</td></tr><tr><td>**PICO**</td><td>Population, Intervention, Comparison, Outcome (T = Time/Type of study)</td></tr><tr><td>**Evidence Hierarchy**</td><td>Ranking of study designs by susceptibility to bias</td></tr><tr><td>**Clinical Guideline**</td><td>Systematically developed statements to assist practitioner/patient decisions</td></tr><tr><td>**Recommendation Strength**</td><td>Strong (do it) vs Conditional/Conditional (consider context)</td></tr><tr><td>**Knowledge Translation (KT)**</td><td>Process of moving evidence into practice</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological framework - see PICO examples and appraisal below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Evidence Hierarchy (Therapy/Harm)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Design</th><th>Certainty</th></tr><tr><td>-------</td><td>--------</td><td>-----------</td></tr><tr><td>**1a**</td><td>SR/MA of RCTs</td><td>Highest</td></tr><tr><td>**1b**</td><td>Individual RCT (large, low RoB)</td><td>High</td></tr><tr><td>**2a**</td><td>SR/MA of Cohort Studies</td><td>Moderate-High</td></tr><tr><td>**2b**</td><td>Individual Cohort Study</td><td>Moderate</td></tr><tr><td>**3a**</td><td>SR/MA of Case-Control Studies</td><td>Low-Moderate</td></tr><tr><td>**3b**</td><td>Individual Case-Control Study</td><td>Low</td></tr><tr><td>**4**</td><td>Cross-Sectional Studies</td><td>Low</td></tr><tr><td>**5**</td><td>Case Series / Reports</td><td>Very Low</td></tr><tr><td>**6**</td><td>Expert Opinion / Mechanism</td><td>Lowest</td></tr></table>
+<p><b>Diagnosis/Prognosis Hierarchies differ slightly:</b></p>
+<ul><li>Diagnosis: Cross-sectional (diagnostic accuracy) &gt; Case-Control &gt; Cohort</li><li>Prognosis: Cohort &gt; Case-Control &gt; Case Series</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (PICO & Appraisal)</span>
+  </div>
+  <div class="sec-body">
+<p><b>PICO Formulation:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Element&lt;/th&gt;&lt;th&gt;Therapy&lt;/th&gt;&lt;th&gt;Diagnosis&lt;/th&gt;&lt;th&gt;Prognosis&lt;/th&gt;&lt;th&gt;Harm/Etiology&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;---------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>P</b>&lt;/td&gt;&lt;td&gt;Patient/problem&lt;/td&gt;&lt;td&gt;Patient/problem&lt;/td&gt;&lt;td&gt;Patient/problem&lt;/td&gt;&lt;td&gt;Exposed population&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>I</b>&lt;/td&gt;&lt;td&gt;Intervention&lt;/td&gt;&lt;td&gt;Index test&lt;/td&gt;&lt;td&gt;Prognostic factor&lt;/td&gt;&lt;td&gt;Exposure&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>C</b>&lt;/td&gt;&lt;td&gt;Comparison (placebo/active)&lt;/td&gt;&lt;td&gt;Reference standard&lt;/td&gt;&lt;td&gt;Comparison group&lt;/td&gt;&lt;td&gt;Unexposed/comparator&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>O</b>&lt;/td&gt;&lt;td&gt;Outcome&lt;/td&gt;&lt;td&gt;Accuracy (Sn/Sp)&lt;/td&gt;&lt;td&gt;Outcome occurrence&lt;/td&gt;&lt;td&gt;Outcome occurrence&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>T</b>&lt;/td&gt;&lt;td&gt;RCT/SR&lt;/td&gt;&lt;td&gt;Cross-sectional&lt;/td&gt;&lt;td&gt;Cohort&lt;/td&gt;&lt;td&gt;Cohort/Case-Control&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Example PICO:</b></p>
+<div class="callout">"In adults with Type 2 diabetes (P), does SGLT2 inhibitor (I) vs placebo/standard care (C) reduce major adverse cardiovascular events (O)? (T: RCT)"</div>
+<p><b>Mermaid: EBM 5 Steps</b> ``<code>mermaid flowchart LR A[1. ASK\nPICO Question] --&gt; B[2. ACQUIRE\nSearch Evidence] B --&gt; C[3. APPRAISE\nCritical Appraisal] C --&gt; D[4. APPLY\nEvidence + Expertise + Patient Values] D --&gt; E[5. ASSESS\nEvaluate Outcome] style A fill:#bbf,stroke:#333 style E fill:#bfb,stroke:#333 </code>``</p>
+<p><b>Critical Appraisal Tools:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Tool&lt;/th&gt;&lt;th&gt;For&lt;/th&gt;&lt;th&gt;Key Domains&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CASP</b>&lt;/td&gt;&lt;td&gt;All designs&lt;/td&gt;&lt;td&gt;Validity, Results, Applicability&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>JBI</b>&lt;/td&gt;&lt;td&gt;All designs&lt;/td&gt;&lt;td&gt;Detailed checklists per design&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CEBM</b>&lt;/td&gt;&lt;td&gt;Rapid appraisal&lt;/td&gt;&lt;td&gt;Level of evidence + quality&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>RoB-2</b>&lt;/td&gt;&lt;td&gt;RCT&lt;/td&gt;&lt;td&gt;Randomisation, deviations, missing, measurement, reporting&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>ROBINS-I</b>&lt;/td&gt;&lt;td&gt;Non-randomised&lt;/td&gt;&lt;td&gt;Confounding, selection, classification, deviations, missing, measurement, reporting&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>AGREE-II</b>&lt;/td&gt;&lt;td&gt;Guidelines&lt;/td&gt;&lt;td&gt;Scope, stakeholder, rigour, clarity, applicability, editorial&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (EBM Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**EBM ≠ Guidelines**</td><td>EBM = process (ask, acquire, appraise, apply). Guidelines = product (recommendations). Guidelines should be EBM-based.</td></tr><tr><td>**Strong vs Conditional Rec**</td><td>Strong: "We recommend" - most patients should receive. Conditional: "We suggest" - different choices for different patients; shared decision-making.</td></tr><tr><td>**Evidence vs Recommendation**</td><td>High certainty evidence → can be strong OR conditional. Low certainty → usually conditional. Depends on benefit-harm balance, values, resources.</td></tr><tr><td>**Appraisal vs Synthesis**</td><td>Appraisal = assess individual study quality. Synthesis = combine across studies (MA, narrative).</td></tr><tr><td>**Statistical vs Clinical Significance**</td><td>p<0.05 ≠ clinically important. Need MIDE/MCID, NNT, absolute effects.</td></tr><tr><td>**Applicability (External Validity)**</td><td>Study population ≠ your patient? Intervention feasible? Outcomes relevant?</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Guideline Development & Implementation)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Guideline Development Process (NICE/WHO/GRADE):</b></p>
+<ol><li><b>Scope &amp; Topic Selection</b> - burden, variability, new evidence</li><li><b>Guideline Group</b> - multidisciplinary, patient reps, no COI</li><li><b>PICO Questions</b> - prioritised</li><li><b>Evidence Review</b> - SR/MA per question (GRADE)</li><li><b>Evidence-to-Decision (EtD) Frameworks</b> - balance benefits/harms, values, resources, equity, acceptability, feasibility</li><li><b>Draft Recommendations</b> - strong/conditional, direction</li><li><b>Consultation &amp; Peer Review</b></li><li><b>Publication &amp; Dissemination</b></li><li><b>Implementation &amp; Evaluation</b></li><li><b>Update Schedule</b> - surveillance, formal review</li></ol>
+<p><b>Mermaid: Evidence to Decision</b> ``<code>mermaid flowchart TD A[Evidence\n(GRADE Certainty)] --&gt; B[EtD Framework] C[Benefits vs Harms] --&gt; B D[Values &amp; Preferences] --&gt; B E[Resources/Cost] --&gt; B F[Equity] --&gt; B G[Acceptability] --&gt; B H[Feasibility] --&gt; B B --&gt; I{Recommendation} I --&gt;|Strong For| J["We recommend..."] I --&gt;|Conditional For| K["We suggest..."] I --&gt;|Conditional Against| L["We suggest against..."] I --&gt;|Strong Against| M["We recommend against..."] style J fill:#bfb,stroke:#333 style M fill:#fbb,stroke:#333 </code>``</p>
+<p><b>Implementation Science Frameworks:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Framework&lt;/th&gt;&lt;th&gt;Focus&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>COM-B</b>&lt;/td&gt;&lt;td&gt;Capability, Opportunity, Motivation → Behaviour&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>TDF</b>&lt;/td&gt;&lt;td&gt;Theoretical Domains Framework (14 domains)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CFIR</b>&lt;/td&gt;&lt;td&gt;Consolidated Framework for Implementation Research&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>RE-AIM</b>&lt;/td&gt;&lt;td&gt;Reach, Effectiveness, Adoption, Implementation, Maintenance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>EPIS</b>&lt;/td&gt;&lt;td&gt;Exploration, Preparation, Implementation, Sustainment&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**EBM = 3 Circles**</td><td>Best Evidence + Clinical Expertise + Patient Values/Circumstances</td></tr><tr><td>**PICO**</td><td>Mandatory for focused question; drives search strategy</td></tr><tr><td>**Hierarchy**</td><td>SR/MA RCT > RCT > Cohort > Case-Control > XS > Expert</td></tr><tr><td>**GRADE**</td><td>Certainty: High/Mod/Low/VLow. Starts: RCT=High, Obs=Low</td></tr><tr><td>**Recommendation**</td><td>Strong (⊕⊕) vs Conditional (⊕◯). Based on EtD framework.</td></tr><tr><td>**NICE Process**</td><td>Topic → Scope → Evidence Review → Committee → Consultation → Publish</td></tr><tr><td>**AGREE-II**</td><td>6 domains, 23 items; assesses guideline quality</td></tr><tr><td>**Implementation Gap**</td><td>"Know-do gap" - evidence not translated. Frameworks: COM-B, CFIR, RE-AIM</td></tr><tr><td>**MIDE/MCID**</td><td>Minimal Important Difference - smallest change patient perceives as beneficial</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Define EBM. What are its three components?**</td><td>Integration of best research evidence, clinical expertise, and patient values/circumstances. (Sackett 1996).</td></tr><tr><td>**Formulate a PICO for: "Does melatonin help insomnia in elderly?**</td><td>P: Elderly (>65) with insomnia. I: Melatonin. C: Placebo/benzodiazepine. O: Sleep onset latency, total sleep time, quality. T: RCT.</td></tr><tr><td>**Evidence hierarchy for therapy?**</td><td>SR/MA of RCTs > RCT > Cohort > Case-Control > Cross-sectional > Case series > Expert opinion.</td></tr><tr><td>**GRADE: What are the 5 downgrade domains?**</td><td>Risk of Bias, Inconsistency, Indirectness, Imprecision, Publication Bias.</td></tr><tr><td>**GRADE: RCT starts High. When upgrade?**</td><td>Large effect (RR>2/+1, RR>5/+2), Dose-response, Confounding would reduce effect.</td></tr><tr><td>**Strong vs Conditional recommendation - difference?**</td><td>Strong: "We recommend" - most informed patients would want it; can be policy. Conditional: "We suggest" - majority but not all; shared decision-making needed; context-dependent.</td></tr><tr><td>**How is NICE guideline developed?**</td><td>Topic selection → Scope → Evidence review (SR/MA, GRADE) → Committee (multidisciplinary) → EtD frameworks → Draft → Consultation → Publication → Implementation tools → Surveillance/Update.</td></tr><tr><td>**What is AGREE-II? What does it assess?**</td><td>Appraisal of Guidelines for REsearch & Evaluation. 6 domains: Scope & Purpose, Stakeholder Involvement, Rigour of Development, Clarity of Presentation, Applicability, Editorial Independence.</td></tr><tr><td>**Implementation frameworks - name 3.**</td><td>COM-B (Capability, Opportunity, Motivation), CFIR (Consolidated Framework), RE-AIM (Reach, Effectiveness, Adoption, Implementation, Maintenance), TDF, EPIS.</td></tr><tr><td>**Statistical vs Clinical significance?**</td><td>Statistical: p-value, CI. Clinical: MCID/MIDE, NNT, absolute risk reduction. Large trial can show statistically significant but clinically trivial effect.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Level of Evidence vs Grade of Recommendation**</td><td>Old systems conflated them. GRADE separates: certainty of evidence (High/Mod/Low/VLow) from strength of recommendation (Strong/Conditional).</td></tr><tr><td>**Conditional ≠ Weak**</td><td>"Conditional" replaced "Weak" (GRADE 2.0). Conditional = contextual; requires shared decision-making.</td></tr><tr><td>**EtD Framework**</td><td>Evidence-to-Decision: structured table for each recommendation transparent about judgements.</td></tr><tr><td>**Living Guidelines**</td><td>Continuously updated as new evidence emerges (e.g., COVID-19). Surveillance triggers.</td></tr><tr><td>**Conflict of Interest**</td><td>Intellectual + financial. Thresholds for exclusion from voting on specific recs.</td></tr></table>
+<p><b>Mnemonic: EBM 5 A'S</b></p>
+<ul><li><b>A</b>SK (PICO)</li><li><b>A</b>CQUIRE (Search)</li><li><b>A</b>PPRAISE (CASP, RoB-2)</li><li><b>A</b>PPLY (Expertise + Patient Values)</li><li><b>A</b>SSESS (Audit outcome)</li></ul>
+<p><b>Mnemonic: PICO</b></p>
+<ul><li><b>P</b>atient / Population / Problem</li><li><b>I</b>ntervention / Index test / Exposure</li><li><b>C</b>omparison / Control / Reference</li><li><b>O</b>utcome</li><li><b>T</b>ype of study / Time</li></ul>
+<p><b>Mnemonic: GRADE REC STRENGTH</b></p>
+<ul><li><b>S</b>trong = <b>S</b>hould do (most patients)</li><li><b>C</b>onditional = <b>C</b>ontext matters (shared decision)</li></ul>
+<p><b>Mnemonic: ET DECISION FRAMEWORK</b></p>
+<ul><li><b>E</b>vidence (certainty)</li><li><b>T</b>rade-offs (benefits vs harms)</li><li><b>V</b>alues (patient preferences)</li><li><b>R</b>esources (cost)</li><li><b>E</b>quity</li><li><b>A</b>cceptability</li><li><b>F</b>easibility</li></ul>
+<p><b>Mnemonic: IMPLEMENTATION COM-B</b></p>
+<ul><li><b>C</b>apability (physical, psychological)</li><li><b>O</b>pportunity (social, physical environment)</li><li><b>M</b>otivation (reflective, automatic)</li><li><b>B</b>ehaviour</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((EBM &amp; Guidelines)) EBM Process ASK: PICO ACQUIRE: Search APPRAISE: CASP, RoB-2 APPLY: 3 Circles ASSESS: Audit Evidence Hierarchy 1a SR/MA RCT 1b RCT 2a SR/MA Cohort 2b Cohort 3a SR/MA CC 3b Case-Control 4 Cross-Sectional 5 Case Series 6 Expert Opinion GRADE Certainty: H/M/L/VL Downgrade: RBI² Upgrade: Large/Dose/Conf Rec: Strong/Conditional Guideline Development Scope → Evidence → EtD → Rec NICE / WHO / SIGN AGREE-II Appraisal Implementation COM-B / CFIR / RE-AIM Knowledge Translation Living Guidelines </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**EBM**</td><td>Best Evidence + Expertise + Patient Values</td></tr><tr><td>**PICO**</td><td>Population, Intervention, Comparison, Outcome</td></tr><tr><td>**Hierarchy**</td><td>SR/MA > RCT > Cohort > CC > XS > Expert</td></tr><tr><td>**GRADE Certainty**</td><td>RCT=High, Obs=Low → ± adjust</td></tr><tr><td>**Downgrade**</td><td>RoB, Inconsistency, Indirectness, Imprecision, Pub Bias</td></tr><tr><td>**Upgrade**</td><td>Large effect, Dose-response, Plausible confounding</td></tr><tr><td>**Recommendation**</td><td>Strong (most should) vs Conditional (context/shared DM)</td></tr><tr><td>**EtD Framework**</td><td>Evidence, Trade-offs, Values, Resources, Equity, Acceptability, Feasibility</td></tr><tr><td>**NICE Process**</td><td>Topic → Scope → Evidence → Committee → Consultation → Publish → Implement</td></tr><tr><td>**Implementation**</td><td>COM-B, CFIR, RE-AIM, TDF, EPIS</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>PICO Formulation</td><td></td><td></td></tr><tr><td>Evidence Hierarchy</td><td></td><td></td></tr><tr><td>GRADE Framework</td><td></td><td></td></tr><tr><td>Strong vs Conditional Rec</td><td></td><td></td></tr><tr><td>Guideline Process (NICE)</td><td></td><td></td></tr><tr><td>AGREE-II</td><td></td><td></td></tr><tr><td>Implementation Frameworks</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Systematic Reviews, Meta-analysis, GRADE.md]], [[Study Designs (Descriptive, Analytical, Experimental).md]], [[Validity, Reliability &amp; Diagnostic Accuracy (Sensitivity, Specificity, PPV, NPV, ROC).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Evidence Based Medicine Clinical Guidelines · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antimicrobial Stewardship — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.2. CLINICAL CONTEXT</span>
+      <div class="h1">Antimicrobial Stewardship</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>Start Smart Then Focus</b> framework (empirical → review → targeted)</li><li>[ ] Select <b>empirical antibiotics</b> by syndrome (sepsis, pneumonia, UTI, SSTI, IAIs)</li><li>[ ] Implement <b>IV to Oral Switch (IVOST)</b> criteria</li><li>[ ] Define <b>duration</b> of therapy for common infections</li><li>[ ] Perform <b>de-escalation</b> based on culture/sensitivity</li><li>[ ] Prevent <b>C. difficile infection</b> (antibiotic stewardship)</li><li>[ ] Understand <b>carbapenem-sparing</b> and <b>last-resort</b> agent preservation</li><li>[ ] Apply <b>penicillin allergy delabeling</b> principles</li><li>[ ] Answer viva: "Start Smart Then Focus" and "IVOST criteria"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Start Smart Then Focus (UK AMS Framework)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient with Suspected Infection] --&gt; B[Start Smart&lt;br/&gt;&lt;b&gt;T = 0&lt;/b&gt;] B --&gt; C1[Take Cultures&lt;br/&gt;Blood x2, Urine, Sputum,&lt;br/&gt;Wound, CSF, Other] B --&gt; C2[Assess Severity&lt;br/&gt;Sepsis 6, NEWS2, qSOFA] B --&gt; C3[Choose Empirical Abx&lt;br/&gt;Local formulary + guidelines&lt;br/&gt;Allergy history&lt;br/&gt;Severity-adjusted] B --&gt; C4[Document Indication&lt;br/&gt;Dose, Route, Duration,&lt;br/&gt;Review Date] C1 &amp; C2 &amp; C3 &amp; C4 --&gt; D[Focus&lt;br/&gt;&lt;b&gt;T = 24-72h&lt;/b&gt;] D --&gt; E{Review: Culture Results&lt;br/&gt;Clinical Response&lt;br/&gt;Biomarkers (CRP, PCT)} E --&gt;|Pathogen ID + Sens| F[De-escalate&lt;br/&gt;Narrowest Spectrum&lt;br/&gt;Targeted Therapy] E --&gt;|No Growth / Improving| G[Stop or Switch to Oral&lt;br/&gt;(IVOST) / Short Course] E --&gt;|Deteriorating / Resistant| H[Escalate / Broaden&lt;br/&gt;Specialist ID/Micro Advice] F &amp; G &amp; H --&gt; I[Define Duration&lt;br/&gt;Stop Date Documented] I --&gt; J[Discharge / OPAT&lt;br/&gt;Clear Communication] </code>``</p>
+<div class="callout"><b>Key Principle:</b> <i>Empirical therapy = <b>best guess</b> based on likely pathogens, local epidemiology, severity. <b>Targeted therapy</b> = <b>narrowest effective spectrum</b> once pathogen known. <b>Review at 24–72h</b> is mandatory.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Empirical Antibiotic Selection — Common Syndromes (UK Guidelines)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Sepsis (Unknown Source) — NICE NG51 / Surviving Sepsis</div>
+<table class="ctable"><tr><th>Population</th><th>Empirical Regimen</th><th>Alternatives</th></tr><tr><td>------------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**Community-acquired**</td><td>**Piperacillin-tazobactam 4.5g IV Q6H**</td><td>Meropenem 1g IV Q8H (if allergy/severe)</td></tr><tr><td>**Healthcare-associated**</td><td>**Meropenem 1g IV Q8H** (+/- vancomycin if MRSA risk)</td><td>Piperacillin-tazobactam + vancomycin</td></tr><tr><td>**Neutropenic Sepsis**</td><td>**Piperacillin-tazobactam 4.5g IV Q6H** (+/- gentamicin)</td><td>Meropenem (if unstable/penicillin allergy)</td></tr></table>
+<div class="sub-h">Community-Acquired Pneumonia (CAP) — NICE NG138 / BTS</div>
+<table class="ctable"><tr><th>Severity (CURB-65)</th><th>Empirical Regimen</th></tr><tr><td>--------------------</td><td>-------------------</td></tr><tr><td>**Low (0–1)**</td><td>**Amoxicillin 500mg TDS PO** (5 days)</td></tr><tr><td>**Moderate (2)**</td><td>**Amoxicillin 1g TDS IV + Clarithromycin 500mg BD PO/IV** (5 days)</td></tr><tr><td>**High (3–5)**</td><td>**Co-amoxiclav 1.2g IV TDS + Clarithromycin 500mg BD IV** OR **Ceftriaxone 2g IV OD + Clarithromycin**</td></tr></table>
+<div class="sub-h">Hospital-Acquired Pneumonia (HAP) / VAP</div>
+<table class="ctable"><tr><th>Risk</th><th>Empirical Regimen</th></tr><tr><td>------</td><td>-------------------</td></tr><tr><td>**Early (<5 days), no MDR risk**</td><td>Piperacillin-tazobactam 4.5g IV Q6H</td></tr><tr><td>**Late (>5 days) / MDR risk**</td><td>Meropenem 1g IV Q8H (+/- vancomycin/linezolid for MRSA)</td></tr></table>
+<div class="sub-h">Urinary Tract Infection</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Empirical Regimen</th></tr><tr><td>----------</td><td>-------------------</td></tr><tr><td>**Lower UTI (Cystitis)**</td><td>**Nitrofurantoin 100mg BD PO** (3d women, 7d men) OR **Trimethoprim 200mg BD PO** (if susceptible)</td></tr><tr><td>**Upper UTI (Pyelonephritis)**</td><td>**Cefalexin 500mg QDS PO** OR **Co-amoxiclav 625mg TDS PO** (7–10d)</td></tr><tr><td>**Complicated / Catheter-associated**</td><td>**Gentamicin 5–7mg/kg IV OD** (if susceptible) OR **Piperacillin-tazobactam**</td></tr></table>
+<div class="sub-h">Skin &amp; Soft Tissue Infection (SSTI)</div>
+<table class="ctable"><tr><th>Type</th><th>Empirical Regimen</th></tr><tr><td>------</td><td>-------------------</td></tr><tr><td>**Cellulitis (non-purulent)**</td><td>**Flucloxacillin 1g QDS IV/PO** (5–7d) + **Penicillin V 500mg QDS** (if strep suspected)</td></tr><tr><td>**Purulent / Abscess**</td><td>**Flucloxacillin 1g QDS IV/PO** + **Incision & drainage**</td></tr><tr><td>**Necrotising Fasciitis**</td><td>**Urgent surgery** + **Piperacillin-tazobactam 4.5g Q6H + Clindamycin 600mg Q6H IV**</td></tr></table>
+<div class="sub-h">Intra-Abdominal Infection (IAI)</div>
+<table class="ctable"><tr><th>Type</th><th>Empirical Regimen</th></tr><tr><td>------</td><td>-------------------</td></tr><tr><td>**Community-acquired (appendicitis, cholecystitis)**</td><td>**Co-amoxiclav 1.2g IV TDS** OR **Ceftriaxone 2g OD + Metronidazole 500mg TDS**</td></tr><tr><td>**Healthcare-associated / Post-op**</td><td>**Piperacillin-tazobactam 4.5g IV Q6H** OR **Meropenem 1g IV Q8H**</td></tr></table>
+<div class="sub-h">Meningitis (Adult) — NICE CG102</div>
+<table class="ctable"><tr><th>Age / Risk</th><th>Empirical Regimen</th></tr><tr><td>------------</td><td>-------------------</td></tr><tr><td>**18–50y**</td><td>**Ceftriaxone 2g IV Q12H** (+/- **Dexamethasone 10mg IV Q6H × 4d**)</td></tr><tr><td>**>50y / Immunocompromised**</td><td>**Ceftriaxone 2g IV Q12H + Amoxicillin 2g IV Q4H** (Listeria cover) + Dexamethasone</td></tr><tr><td>**Penicillin allergy**</td><td>**Chloramphenicol 50mg/kg IV Q6H** (or Meropenem 2g IV Q8H)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ IV to Oral Switch (IVOST) — Criteria</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mandatory Criteria (ALL must be met)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Clinical improvement**</td><td>Afebrile >24h (or trend ↓), improving sepsis markers (NEWS2, CRP ↓)</td></tr><tr><td>**Oral route viable**</td><td>Able to swallow/absorb, no vomiting, no ileus, no malabsorption</td></tr><tr><td>**Oral antibiotic available**</td><td>Bioavailability >80%, same spectrum as IV</td></tr><tr><td>**No ongoing need for IV**</td><td>No other IV drugs, no PICC/central line solely for antibiotics</td></tr></table>
+<div class="sub-h">High Bioavailability Oral Agents (IVOST Candidates)</div>
+<table class="ctable"><tr><th>IV Antibiotic</th><th>Oral Switch</th><th>Bioavailability</th></tr><tr><td>---------------</td><td>-------------</td><td>-----------------</td></tr><tr><td>**Ceftriaxone**</td><td>**Cefalexin** (or Co-amoxiclav)</td><td>~90%</td></tr><tr><td>**Piperacillin-tazobactam**</td><td>**Co-amoxiclav**</td><td>~90%</td></tr><tr><td>**Meropenem**</td><td>**None reliable** (consider ertapenem OPAT)</td><td>—</td></tr><tr><td>**Flucloxacillin**</td><td>**Flucloxacillin**</td><td>~50% (high dose)</td></tr><tr><td>**Metronidazole**</td><td>**Metronidazole**</td><td>100%</td></tr><tr><td>**Ciprofloxacin**</td><td>**Ciprofloxacin**</td><td>~70–80%</td></tr><tr><td>**Clindamycin**</td><td>**Clindamycin**</td><td>~90%</td></tr><tr><td>**Linezolid**</td><td>**Linezolid**</td><td>100%</td></tr><tr><td>**Doxycycline**</td><td>**Doxycycline**</td><td>~90%</td></tr></table>
+<div class="callout"><b>Key:</b> <i>IVOST <b>reduces LOS, line complications, cost, C. difficile risk</b>. <b>Default to oral</b> unless criteria not met. <b>Review daily</b>.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Duration of Therapy — Evidence-Based Short Courses</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Infection</th><th>Recommended Duration</th><th>Evidence</th></tr><tr><td>-----------</td><td>---------------------</td><td>----------</td></tr><tr><td>**CAP**</td><td>**5 days** (all severities)</td><td>Multiple RCTs (non-inferior)</td></tr><tr><td>**HAP/VAP**</td><td>**7 days** (non-fermenters may need longer)</td><td>IDSA/ATS</td></tr><tr><td>**UTI (Cystitis)**</td><td>**3 days (women), 7 days (men)**</td><td>Cochrane</td></tr><tr><td>**UTI (Pyelonephritis)**</td><td>**7 days** (10–14 if complicated)</td><td>RCT</td></tr><tr><td>**SSTI (Cellulitis)**</td><td>**5–7 days**</td><td>RCT</td></tr><tr><td>**IAI (Source control achieved)**</td><td>**4 days** (STOP-IT trial)</td><td>RCT</td></tr><tr><td>**Bacteremia (Gram-negative, source controlled)**</td><td>**7 days**</td><td>RCT (BALANCE)</td></tr><tr><td>**Bacteremia (Gram-positive, e.g., S. aureus)**</td><td>**14 days** (2w minimum)</td><td>Guidelines</td></tr><tr><td>**Infective Endocarditis**</td><td>**4–6 weeks** (per organism)</td><td>ESC</td></tr><tr><td>**Osteomyelitis**</td><td>**6 weeks** (2w IV + 4w PO if good response)</td><td>IDSA</td></tr><tr><td>**Septic Arthritis**</td><td>**2–4 weeks** (2w IV + 2w PO)</td><td>BSR</td></tr></table>
+<div class="callout"><b>Principle:</b> <i>Shortest effective duration. <b>Stop date documented at prescription</b>. Review at 48–72h.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ De-escalation — From Empirical to Targeted</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">De-escalation Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Example</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Spectrum narrowing**</td><td>Pip-taz → Co-amoxiclav (if MSSA/E. coli susceptible)</td></tr><tr><td>**Carbapenem-sparing**</td><td>Meropenem → Pip-taz/Co-amoxiclav (if ESBL-negative)</td></tr><tr><td>**MRSA coverage removal**</td><td>Vancomycin → Flucloxacillin (if MSSA)</td></tr><tr><td>**Double cover → Single**</td><td>Pip-taz + Gentamicin → Pip-taz alone (if susceptible)</td></tr><tr><td>**IV → Oral**</td><td>IVOST criteria met</td></tr><tr><td>**Stop**</td><td>No growth at 48–72h + clinical improvement</td></tr></table>
+<div class="sub-h">De-escalation Decision Tree</div>
+<p>``<code>mermaid flowchart TD A[Culture Result at 24-72h] --&gt; B{Organism Identified?} B --&gt;|Yes| C[Check Susceptibilities] C --&gt; D{Narrower Agent Available?} D --&gt;|Yes| E[Switch to Narrowest Effective&lt;br/&gt;IVOST if criteria met&lt;br/&gt;Document new stop date] D --&gt;|No| F[Continue Current / Optimise Dose] B --&gt;|No (Sterile)| G[Clinical Response?] G --&gt;|Improving| H[Stop Antibiotics&lt;br/&gt;(or IVOST if short course needed)] G --&gt;|Not Improving| I[Reassess Source / Imaging&lt;br/&gt;Specialist Advice] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ C. difficile Infection (CDI) Prevention — Antibiotic Stewardship</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">High-Risk Antibiotics for CDI (Relative Risk)</div>
+<table class="ctable"><tr><th>Highest Risk</th><th>Moderate Risk</th><th>Lower Risk</th></tr><tr><td>--------------</td><td>---------------</td><td>------------</td></tr><tr><td>**Clindamycin** (RR 16–20)</td><td>**Cephalosporins** (2nd/3rd gen) (RR 5–8)</td><td>**Penicillins** (RR 2–3)</td></tr><tr><td>**Fluoroquinolones** (RR 5–10)</td><td>**Co-amoxiclav** (RR 3–5)</td><td>**Tetracyclines** (RR 1–2)</td></tr><tr><td>**Carbapenems** (RR 5–10)</td><td>**Piperacillin-tazobactam** (RR 3–5)</td><td>**Trimethoprim** (RR 1–2)</td></tr></table>
+<div class="sub-h">CDI Prevention Bundle</div>
+<table class="ctable"><tr><th>Intervention</th><th>Detail</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Antibiotic restriction**</td><td>Avoid clindamycin, fluoroquinolones, cephalosporins unless essential</td></tr><tr><td>**Review at 48–72h**</td><td>Stop/de-escalate → ↓ exposure</td></tr><tr><td>**IVOST**</td><td>Oral = ↓ CDI risk vs IV</td></tr><tr><td>**Shortest duration**</td><td>Evidence-based courses</td></tr><tr><td>**PPI review**</td><td>PPIs ↑ CDI risk — stop if not indicated</td></tr><tr><td>**Isolation / Contact precautions**</td><td>Immediate on suspicion</td></tr><tr><td>**Environmental cleaning**</td><td>Chlorine-based (1000ppm)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Penicillin Allergy De-labelling</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Problem</div>
+<ul><li><b>~10% labelled penicillin allergic</b> → true allergy <b>&lt;1%</b> (most are intolerance/childhood rash)</li><li><b>Consequences</b>: Broader antibiotics (quinolones, clindamycin, vancomycin) → ↑ resistance, CDI, cost, worse outcomes</li></ul>
+<div class="sub-h">De-labelling Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Patient Labelled Penicillin Allergic] --&gt; B[Assess Reaction History] B --&gt; C{Type of Reaction} C --&gt;|Type I (IgE)&lt;br/&gt;Anaphylaxis, Urticaria,&lt;br/&gt;Angioedema, Bronchospasm&lt;br/&gt;&amp;lt;1h| D[High Risk&lt;br/&gt;Avoid Penicillins&lt;br/&gt;Refer Allergy Clinic&lt;br/&gt;Skin Test / Challenge] C --&gt;|Type IV (T-cell)&lt;br/&gt;Morbilliform rash,&lt;br/&gt;SJS/TEN, DRESS, AGEP&lt;br/&gt;&gt;1h to days| E[Delay = Lower Risk&lt;br/&gt;If mild rash &gt;10y ago&lt;br/&gt;→ Direct Oral Challenge&lt;br/&gt;(Supervised)] C --&gt;|Non-immune&lt;br/&gt;GI upset, Headache,&lt;br/&gt;Family history only| F[<b>NOT Allergy</b>&lt;br/&gt;Remove Label&lt;br/&gt;Use Penicillin Safely] C --&gt;|Unknown / Vague| G[<b>Default: De-label</b>&lt;br/&gt;Unless clear IgE history&lt;br/&gt;Supervised Challenge if needed] </code>``</p>
+<div class="sub-h">Cross-Reactivity (True)</div>
+<table class="ctable"><tr><th>Drug</th><th>Cross-Reactivity with Penicillin</th></tr><tr><td>------</td><td>----------------------------------</td></tr><tr><td>**Cephalosporins**</td><td>**~1–2%** (mostly 1st gen; side-chain specific; 3rd/4th gen very low)</td></tr><tr><td>**Carbapenems**</td><td>**<1%** (meropenem/ertapenem safe in most penicillin-allergic)</td></tr><tr><td>**Monobactams (Aztreonam)**</td><td>**Negligible** (safe)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Carbapenem-Sparing & Last-Resort Agents</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Carbapenem-Sparing Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Application</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**Piperacillin-tazobactam**</td><td>First-line for many HAI/IAI (if ESBL prevalence low)</td></tr><tr><td>**Cefepime**</td><td>Alternative for Pseudomonas (if pip-taz not suitable)</td></tr><tr><td>**Fosfomycin (IV)**</td><td>MDR UTI (ESBL, CRE) — oral/IV</td></tr><tr><td>**Temocillin**</td><td>ESBL UTI/IAI (stable, narrow Gram-negative)</td></tr><tr><td>**Aminoglycoside (short course)**</td><td>Synergy, step-down</td></tr><tr><td>**Colistin-sparing**</td><td>Ceftazidime-avibactam, meropenem-vaborbactam, cefiderocol for CRE</td></tr></table>
+<div class="sub-h">Last-Resort Agents — Reserve for MDR/XDR</div>
+<table class="ctable"><tr><th>Agent</th><th>Indication</th><th>Stewardship</th></tr><tr><td>-------</td><td>------------</td><td>-------------</td></tr><tr><td>**Colistin**</td><td>CRE, MDR Pseudomonas/Acinetobacter</td><td>**ID/Micro approval**; nephro/neurotoxicity; TDM</td></tr><tr><td>**Tigecycline**</td><td>MDR Gram-positive/negative (not bacteraemia)</td><td>**FDA warning: mortality**; low serum levels</td></tr><tr><td>**Fosfomycin IV**</td><td>MDR UTI, CRE</td><td>Resistance emerges rapidly — **combination**</td></tr><tr><td>**Ceftazidime-avibactam**</td><td>CRE (KPC, OXA-48), MDR Pseudomonas</td><td>**Reserve**; monitor susceptibility</td></tr><tr><td>**Meropenem-vaborbactam**</td><td>CRE (KPC)</td><td>**Reserve**</td></tr><tr><td>**Cefiderocol**</td><td>CRE, MDR Gram-negative (incl. MBL)</td><td>**Reserve**; siderophore</td></tr><tr><td>**Eravacycline**</td><td>Complicated IAI (MDR)</td><td>Tetracycline class</td></tr><tr><td>**Lefamulin**</td><td>CAP (incl. MDR)</td><td>Pleuromutilin</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Biomarkers to Guide Duration</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Biomarker</th><th>Use</th><th>Evidence</th></tr><tr><td>-----------</td><td>-----</td><td>----------</td></tr><tr><td>**CRP (C-Reactive Protein)**</td><td>Trend ↓ = response; stop when <50% peak or <10–20mg/L</td><td>Widely available; non-specific</td></tr><tr><td>**Procalcitonin (PCT)**</td><td>**Guided discontinuation** in sepsis, LRTI, VAP</td><td>**PCT-guided ↓ duration 20–25%**; avoid in post-op, trauma, some viral</td></tr><tr><td>**PCT Algorithm (Sepsis)**</td><td>Start abx → PCT Day 0, 1, 2, 3... → Stop when **PCT <0.25 or ↓80–90% from peak** + clinical improvement</td><td>Cochrane meta-analysis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">️⃣ Outpatient Parenteral Antimicrobial Therapy (OPAT)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>Examples</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Long-course IV**</td><td>Osteomyelitis (6w), Endocarditis (4–6w), Complex IAI</td></tr><tr><td>**No oral alternative**</td><td>MDR organisms (CRE, Pseudomonas), CNS infections</td></tr><tr><td>**Patient stable**</td><td>Clinically improved, oral route not viable, home support</td></tr><tr><td>**Common OPAT Drugs**</td><td>Ceftriaxone (OD), Ertapenem (OD), Teicoplanin (OD), Daptomycin (OD), Linezolid (PO/IV), Colistin</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🔟 Practical AMS Checklist (Prescriber)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Before Prescribing] --&gt; B[1. Is it Infection?&lt;br/&gt;Sepsis 6 / Clinical Criteria] B --&gt; C[2. Cultures BEFORE Antibiotics&lt;br/&gt;(Blood x2, Source)] C --&gt; D[3. Local Guideline + Allergy&lt;br/&gt;Severity-adjusted Empirical] D --&gt; E[4. Document: Indication, Dose, Route,&lt;br/&gt;Duration, Review Date (48-72h)] E --&gt; F[At 48-72h Review] F --&gt; G[5. Culture Results?&lt;br/&gt;De-escalate / Stop / IVOST] G --&gt; H[6. Clinical Improvement?&lt;br/&gt;Stop / Short Course / IVOST] H --&gt; I[7. Biomarkers (CRP/PCT)&lt;br/&gt;Trend ↓ = Stop] I --&gt; J[8. Discharge: Clear Stop Date,&lt;br/&gt;OPAT Plan, GP Communication] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Start Smart Then Focus**</td><td>**T=0**: Cultures, severity, empirical per guideline, document. **T=24–72h**: Review cultures, de-escalate/stop/IVOST, define stop date.</td></tr><tr><td>**Empirical Sepsis**</td><td>Community: Pip-taz. Healthcare/Neutropenic: Meropenem.</td></tr><tr><td>**CAP**</td><td>Low: Amoxicillin. Mod: Amox + Clarithro. High: Co-amoxiclav + Clarithro / Ceftriaxone + Clarithro.</td></tr><tr><td>**IVOST Criteria**</td><td>Afebrile 24h, oral viable, oral agent available (high bioavailability), no other IV need.</td></tr><tr><td>**Duration**</td><td>CAP 5d, HAP 7d, Cystitis 3/7d, Pyelo 7d, Cellulitis 5–7d, IAI 4d, GN bacteremia 7d, GP bacteremia 14d, IE 4–6w.</td></tr><tr><td>**De-escalation**</td><td>Narrow spectrum, remove MRSA cover if MSSA, carbapenem-sparing, IVOST, stop if sterile + improving.</td></tr><tr><td>**CDI Prevention**</td><td>Avoid clindamycin, quinolones, cephalosporins; review 48h; IVOST; short course; PPI review.</td></tr><tr><td>**Penicillin Allergy**</td><td>**~10% label, <1% true**. De-label unless clear IgE (anaphylaxis/urticaria <1h). Ceph cross-reactivity ~1–2%.</td></tr><tr><td>**Carbapenem-Sparing**</td><td>Pip-taz first-line; temocillin/fosfomycin for ESBL; reserve carbapenems for documented ESBL/CRE.</td></tr><tr><td>**Last-Resort**</td><td>Colistin, tigecycline, ceftazidime-avibactam, meropenem-vaborbactam, cefiderocol — ID/Micro approval.</td></tr><tr><td>**PCT Guidance**</td><td>Stop when PCT <0.25 or ↓80–90% from peak + clinical improvement (sepsis, LRTI, VAP).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What is "Start Smart Then Focus"?</td><td>**T=0**: Cultures first, assess severity, empirical antibiotics per local guideline, document indication/dose/route/duration/review date. **T=24–72h**: Review cultures, clinical response, biomarkers → de-escalate to narrowest spectrum, IVOST, stop, or escalate. Define stop date.</td></tr><tr><td>2</td><td>IVOST criteria?</td><td>**Clinical improvement** (afebrile >24h, CRP ↓), **Oral route viable** (swallow, absorb, no vomiting), **Oral agent available** with high bioavailability (>80%) covering same spectrum, **No other IV need**.</td></tr><tr><td>3</td><td>Empirical antibiotic for community-acquired sepsis?</td><td>**Piperacillin-tazobactam 4.5g IV Q6H**.</td></tr><tr><td>4</td><td>Empirical antibiotic for neutropenic sepsis?</td><td>**Piperacillin-tazobactam 4.5g IV Q6H** (+/- gentamicin). Meropenem if unstable/penicillin allergy.</td></tr><tr><td>5</td><td>Duration of CAP treatment?</td><td>**5 days** (all severities).</td></tr><tr><td>6</td><td>Duration of Gram-negative bacteremia (source controlled)?</td><td>**7 days**.</td></tr><tr><td>7</td><td>Highest risk antibiotic for C. difficile?</td><td>**Clindamycin** (RR 16–20), then fluoroquinolones, cephalosporins.</td></tr><tr><td>8</td><td>Penicillin allergy cross-reactivity with cephalosporins?</td><td>**~1–2%** (mostly 1st gen; side-chain specific; 3rd/4th gen very low).</td></tr><tr><td>9</td><td>Carbapenem-sparing for ESBL UTI?</td><td>**Temocillin** or **Fosfomycin** (oral/IV) or **Aminoglycoside** (short course).</td></tr><tr><td>10</td><td>Procalcitonin-guided stopping rule in sepsis?</td><td>Stop when **PCT <0.25 μg/L** OR **↓80–90% from peak** + clinical improvement.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"IVOST = switch to any oral antibiotic"**</td><td>**NO.** Must be **same spectrum**, **high bioavailability** (>80%), **equivalent coverage** (e.g., ceftriaxone → cefalexin; pip-taz → co-amoxiclav; meropenem → NO reliable oral).</td></tr><tr><td>**"All penicillin allergies = avoid cephalosporins"**</td><td>**NO.** True IgE allergy = ~1–2% cross-reactivity (mostly 1st gen). **Most labels are not true allergy** — de-label if mild rash >10y ago or GI upset.</td></tr><tr><td>**"Longer antibiotics = better"**</td><td>**NO.** **Shortest effective duration** reduces resistance, CDI, toxicity. Evidence: CAP 5d, IAI 4d, GN bacteremia 7d.</td></tr><tr><td>**"MRSA cover always needed in HAP"**</td><td>**Only if MRSA risk factors** (prior MRSA, recent hospitalisation, colonisation). If MSSA on culture → switch to flucloxacillin.</td></tr><tr><td>**"Procalcitonin replaces clinical judgement"**</td><td>**NO.** PCT **adjunct** to clinical assessment. Not validated in post-op, trauma, some viral, immunocompromised.</td></tr><tr><td>**"Switch to oral = step down = weaker"**</td><td>**NO.** **High bioavailability oral = equivalent exposure** (cefalexin, flucloxacillin, metronidazole, ciprofloxacin, linezolid, clindamycin).</td></tr><tr><td>**"All MR antibiotics need ID approval"**</td><td>**Ideally yes**, especially last-resort (colistin, tigecycline, CAV, cefiderocol). Local formulary may define restricted agents.</td></tr><tr><td>**"De-escalation = stopping antibiotics"**</td><td>**De-escalation = narrowing spectrum** (pip-taz → co-amoxiclav; meropenem → pip-taz; vancomycin → flucloxacillin). **Stopping = separate decision** if no infection.</td></tr></table>
+<div class="callout"><b>Mnemonic: AMS START SMART FOCUS</b> <b>S</b>tart Smart: <b>Cultures first</b> (blood x2, source), <b>Severity</b> (Sepsis 6, NEWS2), <b>Empirical</b> per <b>local guideline</b>, <b>Document</b> (indication, dose, route, duration, review 48-72h) <b>T</b>hen <b>F</b>ocus (24-72h): <b>Review cultures</b>, <b>De-escalate</b> (narrow spectrum), <b>IVOST</b> (criteria met?), <b>Stop</b> (if no infection/improving), <b>Duration</b> (evidence-based short course) <b>A</b>ntibiotic choices: <b>Sepsis comm = Pip-taz; Healthcare/neutropenic = Meropenem; CAP low = Amox; Mod/High = Amox+Clari/Co-amox+Clari</b> <b>R</b>enal/hepatic adjust: <b>Gentamicin (Hartford), Vancomycin (AUC), Teicoplanin, Colistin</b> <b>T</b>ime-out: <b>Default stop date</b> on every prescription <b>S</b>pectrum: <b>Narrowest effective</b> (MSSA → Fluclox; E. coli → Co-amoxiclav; ESBL → Temocillin/Fosfo) <b>M</b>RSA cover: <b>Only if risk factors</b> (prior MRSA, colonisation); remove if MSSA <b>A</b>ntibiotic CDI risk: <b>Clindamycin &gt; Fluoroquinolones &gt; Cephalosporins &gt; Co-amoxiclav &gt; Pip-taz &gt; Penicillins</b> <b>R</b>eserve agents: <b>Carbapenems for ESBL/CRE; Colistin/Tigecycline/CAV/Mer-Vab/Cefiderocol = ID approval</b> <b>T</b>herapy duration: <b>CAP 5d, HAP 7d, Cystitis 3/7d, Pyelo 7d, Cellulitis 5-7d, IAI 4d, GN Bacteremia 7d, GP Bacteremia 14d</b> <b>P</b>enicillin allergy: <b>10% label, &lt;1% true; De-label unless clear IgE (anaphylaxis/urticaria &lt;1h)</b> <b>C</b>ross-reactivity: <b>Cephalosporins ~1-2% (side-chain); Carbapenems &lt;1%; Aztreonam negligible</b> <b>T</b>argeted therapy: <b>Bug + Drug = Narrow spectrum</b> <b>O</b>PAT: <b>Ceftriaxone/Ertapenem/Teicoplanin/Daptomycin</b> for long-course IV at home <b>U</b>rine: <b>Nitrofurantoin 1st line cystitis; Trimethoprim if susceptible</b> <b>S</b>top date: <b>Mandatory on every Rx; Review 48-72h; Biomarkers (CRP↓, PCT&lt;0.25 or ↓80%)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Antimicrobial Stewardship)) Start Smart (T=0) Cultures First Severity Assessment Empirical per Guideline Document Everything Focus (T=24-72h) Review Cultures De-escalate IVOST Stop Define Duration Empirical Regimens Sepsis Comm: Pip-taz Sepsis HCA/Neutropenic: Mero CAP: Amox / Amox+Clari / Co-amox+Clari UTI: Nitrofurantoin / Cefalexin SSTI: Flucloxacillin IAI: Co-amoxiclav / Pip-taz IVOST Criteria: Afebrile, Oral viable, High bioavail, No IV need Agents: Cefalexin, Co-amoxiclav, Fluclox, Metronidazole Duration CAP 5d, HAP 7d, Cystitis 3/7d, Pyelo 7d Cellulitis 5-7d, IAI 4d GN Bact 7d, GP Bact 14d De-escalation Narrow spectrum Remove MRSA cover Carbapenem-sparing IVOST CDI Prevention Avoid Clinda/Quinolone/Ceph Review 48h, IVOST, Short course Penicillin Allergy 10% label, &lt;1% true De-label unless IgE Ceph cross-reactivity ~1-2% Reserve Agents Carbapenems for ESBL/CRE Colistin/CAV/Cefiderocol = ID approval Biomarkers PCT: &lt;0.25 or ↓80% = stop CRP: Trend ↓ </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Start Smart Then Focus</td><td>3</td><td></td><td></td></tr><tr><td>Empirical Regimens</td><td>4</td><td></td><td></td></tr><tr><td>IVOST Criteria</td><td>3</td><td></td><td></td></tr><tr><td>Duration of Therapy</td><td>3</td><td></td><td></td></tr><tr><td>De-escalation Principles</td><td>2</td><td></td><td></td></tr><tr><td>CDI Prevention</td><td>2</td><td></td><td></td></tr><tr><td>Penicillin Allergy De-labelling</td><td>2</td><td></td><td></td></tr><tr><td>Carbapenem-Sparing / Reserve Agents</td><td>2</td><td></td><td></td></tr><tr><td>Biomarkers (PCT/CRP)</td><td>2</td><td></td><td></td></tr><tr><td>OPAT</td><td>1</td><td></td><td></td></tr><tr><td>**Total**</td><td>**24**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the antimicrobial stewardship framework 'Start Smart Then Focus' and its application in clinical practice."</td><td>T=0: cultures, severity, empirical guideline-based, document. T=24-72h: review, de-escalate, IVOST, stop, duration. Empirical regimens by syndrome. IVOST criteria. CDI prevention. Penicillin de-labelling. Reserve agents.</td></tr><tr><td>**Short Note**</td><td>"IV to Oral Switch (IVOST) criteria and suitable agents."</td><td>Afebrile 24h, oral viable, high bioavailability oral equivalent, no other IV need. Agents: cefalexin, co-amoxiclav, flucloxacillin, metronidazole, ciprofloxacin, linezolid, clindamycin.</td></tr><tr><td>**Viva**</td><td>"Patient with community-acquired sepsis, penicillin allergy (childhood rash). Empirical antibiotic?"</td><td>**Childhood rash = likely not true IgE allergy**. De-label if possible. If must avoid: **Meropenem 1g IV Q8H** (or ciprofloxacin + metronidazole if mild).</td></tr><tr><td>**Ward Round**</td><td>"Patient on piperacillin-tazobactam 4.5g Q6H for 48h. Blood cultures: E. coli susceptible to co-amoxiclav. CRP 45 (was 180). Afebrile 24h. Taking oral fluids. Action?"</td><td>**De-escalate to co-amoxiclav 625mg TDS PO** (IVOST criteria met). Stop IV. Define stop date (e.g., 7 days total).</td></tr><tr><td>**Last-Night**</td><td>"Start Smart: cultures, severity, empirical, document. Focus 48h: de-escalate, IVOST, stop, duration. Sepsis comm pip-taz, neutropenic mero. CAP 5d. IVOST: afebrile, oral viable, high bioavail. CDI: avoid clinda/quinolone/ceph. Pen allergy: de-label unless IgE. Carbapenem-sparing: pip-taz, temocillin, fosfo. Reserve: colistin/CAV. PCT<0.25 stop."</td><td>Start Smart/Then Focus. Key empirical. IVOST. Durations. CDI. Penicillin. Reserve. PCT.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Start Smart Then Focus</b>: <b>T=0</b> — cultures, severity, empirical per guideline, document indication/dose/route/duration/review. <b>T=24–72h</b> — review cultures/clinical/biomarkers → de-escalate (narrowest spectrum), IVOST, stop, define stop date.</li><li><b>Empirical Regimens</b>: Sepsis community = pip-taz; Healthcare/neutropenic = meropenem; CAP low = amoxicillin, mod/high = amox+clarithro/co-amox+clarithro; UTI = nitrofurantoin/cefalexin; SSTI = flucloxacillin; IAI = co-amoxiclav/pip-taz.</li><li><b>IVOST Criteria</b>: Clinical improvement (afebrile 24h), oral route viable, high bioavailability oral equivalent available, no other IV need. Agents: cefalexin, co-amoxiclav, flucloxacillin, metronidazole, ciprofloxacin, linezolid, clindamycin.</li><li><b>Duration</b>: CAP 5d, HAP 7d, Cystitis 3d (women)/7d (men), Pyelo 7d, Cellulitis 5–7d, IAI 4d, GN bacteremia 7d, GP bacteremia 14d, IE 4–6w.</li><li><b>De-escalation</b>: Spectrum narrowing (pip-taz → co-amoxiclav), remove MRSA cover if MSSA, carbapenem-sparing, IVOST, stop if sterile+improving.</li><li><b>CDI Prevention</b>: Avoid clindamycin (RR 16–20), fluoroquinolones, cephalosporins; 48h review; IVOST; short courses; PPI review.</li><li><b>Penicillin Allergy</b>: <b>10% labelled, &lt;1% true IgE</b>. De-label unless clear anaphylaxis/urticaria &lt;1h. Cephalosporin cross-reactivity ~1–2% (side-chain).</li><li><b>Carbapenem-Sparing</b>: Pip-taz first-line; temocillin/fosfomycin/aminoglycoside for ESBL; reserve carbapenems for confirmed ESBL/CRE.</li><li><b>Reserve Agents</b>: Colistin, tigecycline, ceftazidime-avibactam, meropenem-vaborbactam, cefiderocol — ID/Micro approval only.</li><li><b>PCT Guidance</b>: Stop when <b>PCT &lt;0.25</b> or <b>↓80–90% from peak</b> + clinical improvement (sepsis, LRTI, VAP).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>"Start Smart Then Focus" — Focus phase timing:</b></li></ol>
+<p>A. Immediately  B. 6–12h  C. <b>24–72h</b>  D. 7 days <i>Answer: C. Review at 24–72h when culture results available.</i></p>
+<ol><li><b>IVOST — which is NOT a criterion?</b></li></ol>
+<p>A. Clinical improvement  B. Oral route viable  C. <b>Oral agent cheaper than IV</b>  D. High bioavailability oral equivalent <i>Answer: C. Cost not a criterion; clinical criteria are improvement, oral viable, bioavailable equivalent, no other IV need.</i></p>
+<ol><li><b>Empirical antibiotic for neutropenic sepsis:</b></li></ol>
+<p>A. Ceftriaxone  B. <b>Piperacillin-tazobactam</b>  C. Co-amoxiclav  D. Ciprofloxacin <i>Answer: B. Piperacillin-tazobactam 4.5g Q6H (± gentamicin). Meropenem if unstable/penicillin allergy.</i></p>
+<ol><li><b>Duration of treatment for Gram-negative bacteremia (source controlled):</b></li></ol>
+<p>A. 14 days  B. <b>7 days</b>  C. 5 days  D. 4 days <i>Answer: B. 7 days (BALANCE trial).</i></p>
+<ol><li><b>Highest risk antibiotic for C. difficile infection:</b></li></ol>
+<p>A. Co-amoxiclav  B. <b>Clindamycin</b>  C. Piperacillin-tazobactam  D. Ceftriaxone <i>Answer: B. Clindamycin RR 16–20. Then fluoroquinolones, cephalosporins.</i></p>
+<ol><li><b>Penicillin allergy — true IgE-mediated crossover with cephalosporins:</b></li></ol>
+<p>A. 10%  B. 50%  C. <b>~1–2%</b>  D. 0% <i>Answer: C. ~1–2% (mostly 1st gen; side-chain specific; 3rd/4th gen very low).</i></p>
+<ol><li><b>Carbapenem-sparing agent for ESBL UTI:</b></li></ol>
+<p>A. Ceftriaxone  B. <b>Temocillin</b>  C. Cefepime  D. Ertapenem <i>Answer: B. Temocillin (stable to ESBL, narrow Gram-negative). Also fosfomycin (oral/IV).</i></p>
+<ol><li><b>Procalcitonin-guided antibiotic discontinuation in sepsis:</b></li></ol>
+<p>A. PCT &lt;0.5  B. <b>PCT &lt;0.25 or ↓80–90% from peak</b>  C. PCT &lt;1.0  D. PCT &lt;2.0 <i>Answer: B. Stop when PCT &lt;0.25 μg/L OR ↓80–90% from peak + clinical improvement.</i></p>
+<ol><li><b>Empirical CAP moderate severity (CURB-65 = 2):</b></li></ol>
+<p>A. Amoxicillin PO  B. <b>Amoxicillin IV + Clarithromycin</b>  C. Ceftriaxone IV  D. Pip-taz IV <i>Answer: B. Amoxicillin 1g IV TDS + Clarithromycin 500mg BD PO/IV (5 days).</i></p>
+<ol><li><b>OPAT — commonly used once-daily IV antibiotic:</b></li></ol>
+<p>A. Piperacillin-tazobactam  B. <b>Ceftriaxone</b>  C. Meropenem  D. Vancomycin <i>Answer: B. Ceftriaxone (OD), also ertapenem, teicoplanin, daptomycin, linezolid.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>65M, community-acquired sepsis, penicillin allergy (anaphylaxis 5y ago). Blood cultures pending. Empirical antibiotic?</b></li></ol>
+<p>A. Piperacillin-tazobactam  B. <b>Meropenem 1g IV Q8H</b>  C. Ceftriaxone 2g OD  D. Co-amoxiclav 1.2g TDS <i>Answer: B. True IgE allergy (anaphylaxis) → avoid all beta-lactams (including carbapenems if possible, but meropenem cross-reactivity &lt;1% — use with caution or use ciprofloxacin + metronidazole). Meropenem is standard alternative.</i></p>
+<ol><li><b>Patient on IV piperacillin-tazobactam 48h for pyelonephritis. E. coli grown, susceptible to co-amoxiclav. Afebrile 36h, taking oral fluids. CRP 30 (peak 150). Action?</b></li></ol>
+<p>A. Continue IV 7 days  B. <b>Switch to co-amoxiclav 625mg TDS PO</b>  C. Switch to ciprofloxacin PO  D. Stop antibiotics <i>Answer: B. IVOST criteria met → de-escalate to oral co-amoxiclav (narrower, high bioavailability). Define stop date (7d total).</i></p>
+<ol><li><b>72F, cystitis, nitrofurantoin 100mg BD prescribed. eGFR 25. Appropriate?</b></li></ol>
+<p>A. Yes  B. <b>No (contraindicated eGFR&lt;30)</b>  C. Reduce dose  D. Use trimethoprim instead <i>Answer: B. Nitrofurantoin contraindicated if eGFR&lt;30 (ineffective + toxicity). Use trimethoprim or cefalexin.</i></p>
+<ol><li><b>Patient labelled "penicillin allergy" (morbilliform rash age 7, now 65). Needs flucloxacillin for cellulitis. Action?</b></li></ol>
+<p>A. Avoid all penicillins  B. <b>De-label; give flucloxacillin (mild rash &gt;10y ago = low risk)</b>  C. Refer allergy clinic  D. Use clarithromycin <i>Answer: B. Delayed rash &gt;10y ago = likely non-IgE. De-label after assessment. Flucloxacillin safe.</i></p>
+<ol><li><b>Meropenem started for ESBL E. coli bacteremia. 72h: blood cultures negative, CRP 15 (peak 200), afebrile 36h. Total duration planned 14d. AMS action?</b></li></ol>
+<p>A. Continue 14d  B. <b>Stop at 7d (GN bacteremia, source controlled)</b>  C. Switch to pip-taz  D. Continue 10d <i>Answer: B. GN bacteremia with source control = 7 days total. Stop at 7d (evidence-based short course).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-C, 2-C, 3-B, 4-B, 5-B, 6-C, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Drug Interactions/Pharmacokinetic interactions/Excretion interactions]] — Renal adjustment of antibiotics (gentamicin, vancomycin, teicoplanin)</li><li>[[Therapeutic Drug Monitoring]] — TDM for aminoglycosides, vancomycin, teicoplanin in stewardship</li><li>[[Special Populations/Renal Prescribing]] — Antibiotic dosing in CKD/AKI/HD</li><li>[[Special Populations/Pregnancy and Lactation]] — Antibiotics in pregnancy (avoid quinolones, tetracyclines, aminoglycosides)</li><li>[[Medication Safety and Errors/PINCH High-Risk Drugs]] — Aminoglycosides, vancomycin, pip-taz as high-alert</li><li>[[Clinical Context/Palliative Care]] — Antibiotics in palliative care (symptom control vs burden)</li><li>[[Polypharmacy and Deprescribing/Assessment Tools]] — STOPP criteria for antibiotics in elderly</li><li>[[Drug Development and Regulation]] — Antibiotic development pipeline, regulatory incentives (GAIN Act, REVIVE)</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antimicrobial Stewardship · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

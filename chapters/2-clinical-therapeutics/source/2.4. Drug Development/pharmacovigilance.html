@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pharmacovigilance — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.4. DRUG DEVELOPMENT</span>
+      <div class="h1">Pharmacovigilance</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define pharmacovigilance scope: detection, assessment, understanding, prevention of ADRs</li><li>[ ] Apply signal detection: qualitative (case series) + quantitative (disproportionality)</li><li>[ ] Execute case processing: ICSR, MedDRA, seriousness criteria, expedited reporting</li><li>[ ] Apply risk management: RMP, risk minimisation (educational, controlled access, PPTP)</li><li>[ ] Understand regulatory reporting: PSUR/PADER, DSUR, 15-day/90-day rules</li><li>[ ] Recognise benefit-risk balance: regulatory actions (label change, restriction, withdrawal)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Pharmacovigilance Framework</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Description</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Scope**</td><td>**Detection, Assessment, Understanding, Prevention** of ADRs and drug-related problems</td></tr><tr><td>**Legislation**</td><td>**EU**: Pharmacovigilance Directive 2010/84/EU, Regulation 726/2004; **UK**: Human Medicines Regulations 2012; **US**: FD&C Act, FDAAA 2007</td></tr><tr><td>**Key Databases**</td><td>**EudraVigilance** (EU), **FAERS** (FDA), **VigiBase** (WHO/Uppsala), **Yellow Card** (UK MHRA)</td></tr><tr><td>**Stakeholders**</td><td>**MAH** (Marketing Authorisation Holder), **Regulators** (EMA/PRAC, FDA, MHRA), **HCPs**, **Patients**, **WHO**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📝 Individual Case Safety Reports (ICSRs)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Seriousness Criteria (CIOMS/ICH E2D)</div>
+<p>An AE is <b>SERIOUS</b> if it results in: &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Criterion&lt;/th&gt;&lt;th&gt;Definition&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Death</b>&lt;/td&gt;&lt;td&gt;Fatal outcome&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Life-threatening</b>&lt;/td&gt;&lt;td&gt;Immediate risk of death&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hospitalisation</b>&lt;/td&gt;&lt;td&gt;Inpatient admission or prolongation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Disability</b>&lt;/td&gt;&lt;td&gt;Persistent/significant incapacity&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Congenital anomaly</b>&lt;/td&gt;&lt;td&gt;Birth defect&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Medically significant</b>&lt;/td&gt;&lt;td&gt;Requires intervention to prevent above (e.g., overdose, cancer)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="callout"><b>Non-serious</b> = all other AEs; <b>Expedited reporting</b> required for <b>serious</b> (15 days) and <b>non-serious unexpected</b> (90 days)</div>
+<div class="sub-h">Expedited Reporting Timelines</div>
+<table class="ctable"><tr><th>Report Type</th><th>**Timeline**</th><th>**To Whom**</th></tr><tr><td>-------------</td><td>--------------</td><td>-------------</td></tr><tr><td>**Serious Unexpected** (15-day)</td><td>**15 calendar days** from MAH awareness</td><td>**Regulator** (EMA/EudraVigilance, FDA/FAERS, MHRA)</td></tr><tr><td>**Serious Expected** (15-day)</td><td>**15 calendar days**</td><td>**Regulator** (if new info on severity/frequency)</td></tr><tr><td>**Non-serious Unexpected**</td><td>**90 calendar days**</td><td>**Regulator** (periodic aggregate)</td></tr><tr><td>**SUSARs** (Clinical Trials)</td><td>**7 days** (fatal/life-threatening) / **15 days** (other serious)</td><td>**Regulator + Ethics Committee**</td></tr></table>
+<div class="callout"><b>SUSAR</b> = Suspected Unexpected Serious Adverse Reaction (in clinical trials)</div>
+<div class="sub-h">Case Processing Workflow</div>
+<p>``<code>mermaid flowchart TD A[AE Reported] --&gt; B{Serious?} B --&gt;|Yes| C[Expedited: 15 days] B --&gt;|No| D{Expected?} D --&gt;|No| E[90-day aggregate] D --&gt;|Yes| F[Routine PSUR] C --&gt; G[Regulator Database: EudraVigilance/FAERS/Yellow Card] E --&gt; G F --&gt; G </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📈 Signal Detection</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Qualitative (Clinical Review)</div>
+<table class="ctable"><tr><th>Method</th><th>Description</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Case Series Review**</td><td>Multiple similar ICSRs suggesting causal association</td></tr><tr><td>**Literature Monitoring**</td><td>Systematic review of publications, conference abstracts</td></tr><tr><td>**Regulatory Communications**</td><td>DHPC (Direct Healthcare Professional Communication), RMP updates</td></tr><tr><td>**Social Media / Patient Forums**</td><td>Emerging safety concerns from patient reports</td></tr></table>
+<div class="sub-h">Quantitative (Disproportionality Analysis)</div>
+<table class="ctable"><tr><th>Metric</th><th>Formula</th><th>Interpretation</th></tr><tr><td>--------</td><td>---------</td><td>----------------</td></tr><tr><td>**PRR** (Proportional Reporting Ratio)</td><td>**(a/(a+b)) / (c/(c+d))**</td><td>**PRR ≥2** + **Chi-square ≥4** + **≥3 cases** = Signal</td></tr><tr><td>**ROR** (Reporting Odds Ratio)</td><td>**(a×d) / (b×c)**</td><td>**Lower 95% CI >1** = Signal</td></tr><tr><td>**IC** (Information Component)</td><td>**Bayesian** (log2 of observed/expected)</td><td>**IC025 >0** (Bayanian) = Signal</td></tr><tr><td>**EBGM** (Empirical Bayes Geometric Mean)</td><td>**FDA** (shrinkage estimator)</td><td>**EB05 ≥2** = Signal</td></tr></table>
+<p><b>2×2 Table:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;<b>Drug of Interest</b>&lt;/th&gt;&lt;th&gt;<b>All Other Drugs</b>&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---&lt;/td&gt;&lt;td&gt;---&lt;/td&gt;&lt;td&gt;---&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Event of Interest</b>&lt;/td&gt;&lt;td&gt;a&lt;/td&gt;&lt;td&gt;b&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>All Other Events</b>&lt;/td&gt;&lt;td&gt;c&lt;/td&gt;&lt;td&gt;d&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="callout"><b>Disproportionality ≠ Causation</b> — <b>Signal = Hypothesis</b> requiring clinical evaluation</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🛡️ Risk Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Risk Management Plan (RMP) — **Mandatory for EMA/MHRA**</div>
+<table class="ctable"><tr><th>Module</th><th>Content</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**SI** (Safety Specification)</td><td>Identified risks, potential risks, missing info (pregnancy, paediatrics, elderly, long-term)</td></tr><tr><td>**SVII** (Pharmacovigilance Plan)</td><td>Routine PV + Additional PASS/PAES; signal detection plan</td></tr><tr><td>**SVIII** (Risk Minimisation)</td><td>**Routine** (SmPC, PIL, labelling) + **Additional** (educational, controlled access, PPTP)</td></tr></table>
+<div class="sub-h">Risk Minimisation Measures</div>
+<table class="ctable"><tr><th>Type</th><th>Examples</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>**Routine**</td><td>**SmPC** (Summary of Product Characteristics), **PIL** (Patient Information Leaflet), **Labelling**, **Pack size**, **Legal status** (POM, P, GSL)</td></tr><tr><td>**Additional — Educational**</td><td>**DHPC** (Dear Healthcare Professional Communication), **Teaching materials**, **Webinars**, **Prescriber guides**</td></tr><tr><td>**Additional — Controlled Access**</td><td>**Pregnancy Prevention Programme (PPP)** (e.g., Valproate, Isotretinoin, Thalidomide, Lenalidomide), **Controlled distribution** (e.g., Clozapine monitoring), **Specialist-only prescribing**</td></tr><tr><td>**Additional — Monitoring**</td><td>**DSMB** for trials, **Registry** (e.g., pregnancy, long-term), **TDM requirements**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📊 Periodic Safety Reports</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Report</th><th>**EMA/MHRA**</th><th>**FDA**</th><th>**Interval**</th></tr><tr><td>--------</td><td>--------------</td><td>---------</td><td>--------------</td></tr><tr><td>**PSUR** (Periodic Safety Update Report)</td><td>**Mandatory**</td><td>**PADER** (Periodic Adverse Drug Experience Report)</td><td>**6 mo (first 2yr) → 1yr (next 2yr) → 3yr → 5yr**</td></tr><tr><td>**PSUR Content**</td><td>Cumulative safety data, signal evaluation, benefit-risk, RMP update</td><td>Similar</td><td>Same intervals</td></tr><tr><td>**PSUR Submission**</td><td>**EU: Single PSUR for all MAHs** (via PSUR Repository); **US: Per MAH**</td><td>**Per MAH**</td><td>**Within 60 days** of data lock point</td></tr><tr><td>**DSUR** (Development Safety Update Report)</td><td>**Annual** for clinical trials</td><td>**Annual** (IND Annual Report)</td><td>**Annual** (clinical trial safety summary)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">⚖️ Benefit-Risk Assessment & Regulatory Actions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Benefit-Risk Framework (EMA PRAC / FDA)</div>
+<table class="ctable"><tr><th>Dimension</th><th>Considerations</th></tr><tr><td>-----------</td><td>----------------</td></tr><tr><td>**Benefits**</td><td>Efficacy (magnitude, duration), unmet need, patient preference, public health impact</td></tr><tr><td>**Risks**</td><td>Severity, frequency, preventability, reversibility, vulnerable populations</td></tr><tr><td>**Uncertainty**</td><td>Missing data (pregnancy, paediatrics, long-term), study limitations</td></tr><tr><td>**Context**</td><td>Disease severity, alternatives, patient population, public health</td></tr></table>
+<div class="sub-h">Regulatory Actions (Escalating)</div>
+<table class="ctable"><tr><th>Action</th><th>Trigger</th><th>Example</th></tr><tr><td>--------</td><td>---------</td><td>---------</td></tr><tr><td>**Label Update (SmPC/PIL)**</td><td>New safety info (ADR, interaction, contraindication)</td><td>**Section 4.8 update**, **Section 4.4 warning**</td></tr><tr><td>**DHPC** (Direct Healthcare Professional Communication)</td><td>**Urgent safety issue** requiring immediate action</td><td>**Valproate pregnancy contraindication**, **Clozapine myocarditis**</td></tr><tr><td>**RMP Update**</td><td>New risk identified / risk minimisation change</td><td>**Add PASS**, **Add PPP**</td></tr><tr><td>**Restriction**</td><td>Risk outweighs benefit in subgroups</td><td>**Valproate: contraindicated pregnancy**, **Codeine <12y**</td></tr><tr><td>**Suspension / Withdrawal**</td><td>**Risk > Benefit** (overall or in population)</td><td>**Rofecoxib (Vioxx)**, **Thalidomide (initially)**, **Ranitidine (NDMA)**</td></tr><tr><td>**Referral** (EU)</td><td>**MS disagreement** or **Union interest**</td><td>**Article 31 (Pharmacovigilance), Article 20 (Community interest)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Serious AE criteria**</td><td>Death, Life-threatening, Hospitalisation, Disability, Congenital anomaly, Medically significant</td></tr><tr><td>**Expedited reporting**</td><td>**Serious Unexpected: 15 days**; **SUSAR fatal: 7 days**</td></tr><tr><td>**Signal detection**</td><td>**Qualitative** (case series, literature) + **Quantitative** (PRR≥2, ROR, IC, EBGM)</td></tr><tr><td>**RMP**</td><td>**Mandatory EMA/MHRA**; SI (risks), SVII (PV plan), SVIII (minimisation)</td></tr><tr><td>**Risk minimisation**</td><td>**Routine** (SmPC, PIL); **Additional** (DHPC, PPP, controlled access, registry)</td></tr><tr><td>**PPP** (Pregnancy Prevention Programme)</td><td>**Valproate, Isotretinoin, Thalidomide, Lenalidomide, Mycophenolate**</td></tr><tr><td>**PSUR intervals**</td><td>**6mo → 1yr → 3yr → 5yr** (EMA); **PADER** (FDA)</td></tr><tr><td>**Regulatory actions**</td><td>Label update → DHPC → RMP update → Restriction → Suspension/Withdrawal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Serious AE criteria (CIOMS)?</td><td>**Death, Life-threatening, Hospitalisation, Disability, Congenital anomaly, Medically significant**</td></tr><tr><td>2. Expedited reporting timeline for serious unexpected ADR?</td><td>**15 calendar days** from MAH awareness to regulator</td></tr><tr><td>3. SUSAR reporting in clinical trials — fatal/life-threatening?</td><td>**7 days** to regulator + ethics committee</td></tr><tr><td>4. Signal detection — quantitative vs qualitative?</td><td>**Quantitative**: PRR≥2, ROR, IC, EBGM (disproportionality); **Qualitative**: Case series, literature, patient reports</td></tr><tr><td>5. RMP — three modules?</td><td>**SI** (Safety Spec), **SVII** (PV Plan), **SVIII** (Risk Minimisation)</td></tr><tr><td>6. Risk minimisation — routine vs additional?</td><td>**Routine**: SmPC, PIL, labelling; **Additional**: DHPC, PPP, controlled access, registry</td></tr><tr><td>7. Pregnancy Prevention Programme (PPP) — which drugs?</td><td>**Valproate, Isotretinoin, Thalidomide, Lenalidomide, Mycophenolate**</td></tr><tr><td>8. PSUR submission intervals (EMA)?</td><td>**6mo (first 2yr) → 1yr (next 2yr) → 3yr → 5yr**</td></tr><tr><td>9. PRR formula for signal detection?</td><td>**(a/(a+b)) / (c/(c+d))** — **PRR≥2 + Chi-sq≥4 + ≥3 cases** = signal</td></tr><tr><td>10. Regulatory action escalation — order?</td><td>**Label update → DHPC → RMP update → Restriction → Suspension/Withdrawal**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Signal = Causation?**</td><td>**No** — Signal = statistical association/hypothesis; **Causation requires clinical evaluation**</td></tr><tr><td>**PRR ≥2 = Signal?**</td><td>**PRR≥2 + Chi-sq≥4 + ≥3 cases** = signal (all three needed)</td></tr><tr><td>**RMP vs REMS**</td><td>**RMP (EMA/MHRA)** = Mandatory for all; **REMS (FDA)** = Selected high-risk drugs only</td></tr><tr><td>**PSUR vs DSUR**</td><td>**PSUR** = Post-marketing; **DSUR** = Clinical trials (annual)</td></tr><tr><td>**DHPC vs Label Update**</td><td>**DHPC** = Urgent communication to HCPs; **Label Update** = Formal SmPC/PIL change</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"SERIOUS = DEATH, LIFE-THREATENING, HOSPITAL, DISABILITY, CONGENITAL, MEDICALLY SIGNIFICANT"</b></li><li><b>"15 DAYS = SERIOUS UNEXPECTED"</b></li><li><b>"7 DAYS = SUSAR FATAL"</b></li><li><b>"PRR ≥2 + CHI-SQ ≥4 + ≥3 CASES = SIGNAL"</b></li><li><b>"RMP = SI + SVII + SVIII"</b> = Safety Spec, PV Plan, Risk Minimisation</li><li><b>"PPP DRUGS"</b> = <b>Valproate, Isotretinoin, Thalidomide, Lenalidomide, Mycophenolate</b></li><li><b>"PSUR INTERVALS"</b> = <b>6mo → 1yr → 3yr → 5yr</b></li><li><b>"RISK MIN" = ROUTINE (SmPC/PIL) + ADDITIONAL (DHPC/PPP/REGISTRY)</b></li><li><b>"BENEFIT-RISK"</b> = Benefits vs Risks + Uncertainty + Context</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Pharmacovigilance)) ICSR Processing Serious Criteria (Death, Life-threat, Hospital, Disability, Congenital, Medically significant) Expedited: 15 days (serious unexpected) SUSAR: 7 days (fatal/life-threat) Expected/Non-serious: 90 days / PSUR Signal Detection Qualitative: Case series, Literature, Social media Quantitative: PRR, ROR, IC, EBGM PRR≥2 + Chi-sq≥4 + ≥3 cases Risk Management (RMP) SI: Safety Spec (Identified, Potential, Missing) SVII: PV Plan (Routine + PASS/PAES) SVIII: Risk Minimisation Routine: SmPC, PIL, Labelling Additional: DHPC, PPP, Controlled access, Registry Pregnancy Prevention (PPP) Valproate, Isotretinoin, Thalidomide, Lenalidomide, Mycophenolate Periodic Reports PSUR: 6mo→1yr→3yr→5yr (EMA) PADER: Quarterly→Annual (FDA) DSUR: Annual (Trials) Benefit-Risk Benefits, Risks, Uncertainty, Context Regulatory Actions Label Update → DHPC → RMP Update → Restriction → Suspension/Withdrawal </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>----</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>ICSR & seriousness</td><td>8</td><td></td></tr><tr><td>Signal detection</td><td>8</td><td></td></tr><tr><td>RMP & risk minimisation</td><td>8</td><td></td></tr><tr><td>PPP drugs</td><td>4</td><td></td></tr><tr><td>PSUR/DSUR</td><td>4</td><td></td></tr><tr><td>Regulatory actions</td><td>4</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**46**</td><td></td></tr></table>
+<p><b>Target</b>: ≥37/46 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Pharmacovigilance — signal detection methods and RMP components."*</div>
+<ul><li><b>Signal Detection</b>: <b>Qualitative</b> (case series, literature); <b>Quantitative</b> (PRR≥2+Chi-sq≥4+≥3 cases, ROR, IC, EBGM)</li><li><b>RMP Modules</b>: <b>SI</b> (Safety Spec: identified/potential/missing risks); <b>SVII</b> (PV Plan: routine + PASS/PAES); <b>SVIII</b> (Risk Minimisation: Routine SmPC/PIL + Additional DHPC/PPP/Registry)</li><li><b>PPP Drugs</b>: Valproate, Isotretinoin, Thalidomide, Lenalidomide, Mycophenolate</li></ul>
+<div class="sub-h">Viva (1 min): *"New safety signal detected for Drug X. Process?"*</div>
+<ul><li><b>Signal confirmed</b> (quantitative → clinical evaluation)</li><li><b>RMP updated</b> (SI: add to identified risks; SVIII: additional risk minimisation)</li><li><b>DHPC issued</b> (urgent HCP communication)</li><li><b>Label updated</b> (SmPC Section 4.4/4.8)</li><li><b>PASS considered</b> (if needed)</li><li><b>Regulator informed</b> (PRAC assessment)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on valproate, pregnant. What's the system failure?"*</div>
+<ul><li><b>Pregnancy Prevention Programme (PPP) breached</b></li><li><b>Valproate contraindicated in pregnancy</b> (NTDs 1–2%, malformations 10%, neurodevelopmental delay)</li><li><b>PPP requirements</b>: Annual specialist review, risk acknowledgement form, effective contraception, pregnancy test before initiation</li><li><b>Action</b>: Urgent specialist review; switch to safe AED (LEV/LTG); folic acid 5mg; antenatal monitoring</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Serious AE = Death, Life-threat, Hospital, Disability, Congenital, Medically significant</li><li>15 days = Serious unexpected; 7 days = SUSAR fatal</li><li>Signal = PRR≥2 + Chi-sq≥4 + ≥3 cases (Quantitative) + Case series (Qualitative)</li><li>RMP = SI + SVII + SVIII</li><li>PPP = Valproate, Isotretinoin, Thalidomide, Lenalidomide, Mycophenolate</li><li>PSUR = 6mo→1yr→3yr→5yr</li><li>Actions = Label → DHPC → RMP → Restriction → Withdrawal</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>PHARMACOVIGILANCE:</b> <b>SERIOUS AE</b> = Death, Life-threat, Hospital, Disability, Congenital, Medically significant <b>15 DAYS</b> = Serious unexpected; <b>7 DAYS</b> = SUSAR fatal <b>SIGNAL</b> = PRR≥2 + Chi-sq≥4 + ≥3 cases (Quant) + Case series (Qual) <b>RMP</b> = SI (risks) + SVII (PV plan) + SVIII (minimisation) <b>PPP</b> = Valproate, Isotretinoin, Thalidomide, Lenalidomide, Mycophenolate <b>PSUR</b> = 6mo→1yr→3yr→5yr <b>ACTIONS</b> = Label → DHPC → RMP → Restriction → Withdrawal</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Serious AE criteria — which is NOT included?</b></li></ol>
+<p>A. Death B. Life-threatening C. Hospitalisation D. <b>Mild nausea</b> ✓ E. Congenital anomaly</p>
+<ol><li><b>Expedited reporting timeline for serious unexpected ADR:</b></li></ol>
+<p>A. 7 days B. <b>15 calendar days</b> ✓ C. 30 days D. 90 days E. Next PSUR</p>
+<ol><li><b>SUSAR (fatal/life-threatening) — reporting timeline:</b></li></ol>
+<p>A. <b>7 days</b> ✓ B. 15 days C. 30 days D. 90 days E. Next DSUR</p>
+<ol><li><b>PRR signal threshold — all required:</b></li></ol>
+<p>A. PRR ≥2 only B. <b>PRR ≥2 + Chi-square ≥4 + ≥3 cases</b> ✓ C. PRR ≥2 + ≥3 cases D. Chi-square ≥4 only E. ≥3 cases only</p>
+<ol><li><b>RMP modules — which is NOT a module?</b></li></ol>
+<p>A. SI (Safety Specification) B. SVII (Pharmacovigilance Plan) C. SVIII (Risk Minimisation) D. <b>SIX (Signal Investigation)</b> ✓ E. All are modules</p>
+<ol><li><b>Pregnancy Prevention Programme (PPP) — which drug is NOT included?</b></li></ol>
+<p>A. Valproate B. <b>Lamotrigine</b> ✓ C. Isotretinoin D. Thalidomide E. Mycophenolate</p>
+<ol><li><b>Risk minimisation — routine measure:</b></li></ol>
+<p>A. DHPC B. <b>SmPC / PIL / Labelling</b> ✓ C. Pregnancy Prevention Programme D. Controlled access E. Registry</p>
+<ol><li><b>PSUR submission intervals (EMA):</b></li></ol>
+<p>A. Monthly → Quarterly B. <b>6mo → 1yr → 3yr → 5yr</b> ✓ C. Quarterly → Annually D. Annually only E. Every 5 years only</p>
+<ol><li><b>Regulatory action escalation order:</b></li></ol>
+<p>A. Withdrawal → Restriction → DHPC → Label B. <b>Label → DHPC → RMP Update → Restriction → Withdrawal</b> ✓ C. DHPC → Label → Restriction → Withdrawal D. Restriction → Label → DHPC → Withdrawal E. RMP Update → Label → DHPC → Withdrawal</p>
+<ol><li><b>RMP mandatory for:</b></li></ol>
+<p>A. FDA only B. <b>EMA and MHRA (all MAAs)</b> ✓ C. High-risk drugs only D. Orphan drugs only E. Conditional MA only</p>
+<ol><li><b>Signal detection — quantitative methods:</b></li></ol>
+<p>A. Case series review only B. <b>PRR, ROR, IC, EBGM</b> ✓ C. Literature review only C. Social media only E. Expert opinion only</p>
+<ol><li><b>PSUR vs DSUR:</b></li></ol>
+<p>A. Same B. <b>PSUR = Post-marketing; DSUR = Clinical trials</b> ✓ C. PSUR = Trials; DSUR = Post-marketing D. Both for trials E. Both for post-marketing</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Serious AE criteria</td><td>Death, Life-threat, Hospital, Disability, Congenital, Medically significant</td></tr><tr><td>Expedited serious unexpected</td><td>15 calendar days</td></tr><tr><td>SUSAR fatal</td><td>7 days</td></tr><tr><td>PRR signal</td><td>PRR≥2 + Chi-sq≥4 + ≥3 cases</td></tr><tr><td>RMP modules</td><td>SI, SVII, SVIII</td></tr><tr><td>PPP drugs</td><td>Valproate, Isotretinoin, Thalidomide, Lenalidomide, Mycophenolate</td></tr><tr><td>Risk minimisation routine</td><td>SmPC, PIL, Labelling</td></tr><tr><td>Risk minimisation additional</td><td>DHPC, PPP, Controlled access, Registry</td></tr><tr><td>PSUR intervals</td><td>6mo→1yr→3yr→5yr</td></tr><tr><td>Regulatory escalation</td><td>Label → DHPC → RMP → Restriction → Withdrawal</td></tr><tr><td>PSUR vs DSUR</td><td>PSUR = Post-market; DSUR = Trials</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>D</b> — Mild nausea (not serious)</li><li><b>B</b> — 15 calendar days</li><li><b>A</b> — 7 days</li><li><b>B</b> — PRR≥2 + Chi-sq≥4 + ≥3 cases</li><li><b>D</b> — SIX not a module</li><li><b>B</b> — Lamotrigine (not in PPP)</li><li><b>B</b> — SmPC/PIL/Labelling</li><li><b>B</b> — 6mo→1yr→3yr→5yr</li><li><b>B</b> — Label → DHPC → RMP → Restriction → Withdrawal</li><li><b>B</b> — EMA and MHRA (all MAAs)</li><li><b>B</b> — PRR, ROR, IC, EBGM</li><li><b>B</b> — PSUR = Post-market; DSUR = Trials</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Development/Pharmacovigilance.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Pharmacovigilance · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

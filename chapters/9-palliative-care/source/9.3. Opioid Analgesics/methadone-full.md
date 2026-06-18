@@ -1,0 +1,204 @@
+# Methadone
+
+Related: [[../../Pain and Palliative Care MOC]], [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Opioid Analgesics**
+
+## 1. Definition
+
+Methadone is a synthetic opioid (μ-agonist) with additional NMDA-receptor antagonist and serotonin/NA reuptake inhibition. Useful for neuropathic cancer pain, opioid rotation, methadone maintenance (addiction). Dose: 2.5-5mg q8-12h PO. Equianalgesia variable — depends on prior opioid dose. Long half-life (15-60h); complex pharmacokinetics; risk of QT prolongation, serotonin syndrome. Multiple drug interactions via CYP3A4, CYP2B6. Prescribe only by specialists (palliative care, pain, addiction).
+
+## 2. Clinical Features and Presentation
+
+Methadone is a strong synthetic opioid (WHO step 3) for severe cancer pain, particularly useful in neuropathic pain and renal failure. μ-agonist + NMDA antagonist + serotonin/NA reuptake inhibition. Long, variable half-life (8-80h, average 24h), slow onset, complex pharmacokinetics. Equianalgesic ratio variable, conversion complex. No active metabolites, safe in renal failure, low cost. Issues: QT prolongation, drug interactions (CYP3A4, CYP2B6, CYP2D6), accumulates in hepatic impairment.
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+ECG (QTc) before and during treatment (withhold if QTc >500ms), drug interactions (CYP3A4 inhibitors — azoles, macrolides, SSRIs, grapefruit), renal function, liver function, pain assessment, sedation, bowel function. Specialist supervision recommended for initiation.
+
+### Management
+Specialist use. Conversion from another opioid: complex, requires specialist guidance, consider overlap with reduced dose of previous opioid. Titrate slowly (long half-life, accumulation). QT monitoring. Drug interactions common. Useful in neuropathic pain (NMDA antagonist), renal failure. Available: oral (Methadose, Physeptone), injection.
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| Class | Synthetic opioid (μ) + NMDA antagonist + SNRI |
+| Use | Neuropathic pain, opioid rotation, addiction |
+| Half-life | 15-60h (long) |
+| QTc | Prolongation; ECG monitoring |
+| Drug interactions | CYP3A4, CYP2B6 (multiple) |
+| Equianalgesia | Variable (specialist prescribing) |
+| Serotonin | Risk of serotonin syndrome |
+| Specialist | Palliative care, pain, addiction only |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Morphine | Shorter half-life, easier titration |
+| Fentanyl | Renally safe, simpler conversion |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: Why use methadone in neuropathic pain? A: NMDA antagonist + μ-agonist; multiple mechanisms.
+
+2. 2. Q: Half-life? A: Variable 8-80h (average 24h); accumulation risk.
+
+3. 3. Q: Why ECG before? A: QT prolongation (dose-dependent, >500ms withhold).
+
+4. 4. Q: Equianalgesia vs morphine? A: Variable (3:1 to 20:1 depending on dose and patient), not straightforward.
+
+5. 5. Q: Drug interactions? A: CYP3A4 inhibitors (azoles, macrolides, grapefruit), CYP2B6 (efavirenz, rifampicin), increase or decrease levels.
+
+
+## 7. Confusions and Mnemonics
+
+- See clinical features
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **Methadone** |
+|-----------|-----------|
+| **Definition** | Methadone is a synthetic opioid (μ-agonist) with additional NMDA-receptor antagonist and serotonin/N |
+| **Key Features** | Synthetic opioid (μ) + NMDA antagonist + SNRI |
+| **Investigation** | Clinical assessment + disease-specific tests |
+| **Management** | WHO ladder + adjuvant + non-pharmacological |
+| **Red Flags** | Severe pain, opioid side effects, total pain dimensions |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of Methadone?
+   A. Synthetic opioid (μ) + NMDA antagonist + SNRI
+   B. Always self-limiting
+   C. Caused by infection only
+   D. Restricted to severe pain only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line management?
+   A. WHO analgesic ladder step 1
+   B. Immediate strong opioid
+   C. Surgery only
+   D. No treatment
+   E. Antidepressants only
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Pain assessment, total pain, comorbidities
+   B. None
+   C. ECG only
+   D. Eye exam only
+   E. Blood pressure only
+   **Answer: A**
+4. **Q:** What is the most important complication to monitor?
+   A. Disease-specific complications and treatment side effects
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key pharmacological/clinical feature?
+   A. Palliative care, pain, addiction only
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient with Methadone; first-line management?
+   A. WHO ladder + adjuvant + non-pharmacological
+   B. Strong opioid
+   C. Surgery
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+2. **Scenario:** Failed first-line; next step?
+   A. Step up WHO ladder
+   B. Stop all treatment
+   C. Surgery
+   D. Observation
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of treatment?
+   A. Side effects, opioid complications
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Holistic assessment?
+   A. Physical + emotional + social + spiritual
+   B. Physical only
+   C. Emotional only
+   D. None
+   E. Blood tests only
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. Palliative care, pain, addiction only
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about Methadone?
+  **A:** Synthetic opioid (μ) + NMDA antagonist + SNRI
+- **Q:** Another key point?
+  **A:** Neuropathic pain, opioid rotation, addiction
+- **Q:** Most important complication?
+  **A:** 15-60h (long)
+- **Q:** First-line treatment?
+  **A:** Prolongation; ECG monitoring
+- **Q:** Key pharmacological/clinical feature?
+  **A:** CYP3A4, CYP2B6 (multiple)
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — Class: Synthetic opioid (μ) + NMDA antagonist + SNRI
+2. **A** — WHO ladder first-line
+3. **A** — Pain assessment essential
+4. **A** — Disease-specific complications
+5. **A** — Specialist: Palliative care, pain, addiction only
+
+### SBAs
+1. **A** — WHO ladder + adjuvant + non-pharmacological
+2. **A** — Step up WHO ladder
+3. **A** — Side effects, opioid complications
+4. **A** — Total pain assessment
+5. **A** — Palliative care, pain, addiction only
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../Opioid_Analgesics_Hub]]
+**Chapter Hierarchy:** [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../Pain and Palliative Care MOC]]
+
+---
+
+> **Exam focus:** Know definition, key clinical features, first-line management (WHO ladder), and the most important complication. Always consider total pain (physical, emotional, social, spiritual).

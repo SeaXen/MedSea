@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Thyroid Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.8. HEAD, NECK & THYROID</span>
+      <div class="h1">Thyroid Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify <b>Thyroid Cancer Histology</b>: PTC, FTC, MTC, ATC, NIFTP</li><li>[ ] Apply <b>ATA Risk Stratification (Low/Intermediate/High)</b> for DTC</li><li>[ ] Select <b>Surgery Extent</b>: Hemithyroidectomy vs Total Thyroidectomy ± Neck Dissection</li><li>[ ] Indicate <b>RAI Therapy</b>: Remnant Ablation, Adjuvant, Metastatic</li><li>[ ] Prescribe <b>TSH Suppression</b> targets by Risk</li><li>[ ] Manage <b>Medullary Thyroid Cancer</b>: <b>RET Germline Testing</b>, Prophylactic Surgery, TKIs</li><li>[ ] Treat <b>Anaplastic Thyroid Cancer</b>: CCRT, BRAF/MEK Inhibitors</li><li>[ ] Perform <b>Surveillance</b>: Tg, TgAb, US, Stimulated Tg</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Histological Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Frequency</th><th>Key Features</th><th>Genetics</th><th>Prognosis</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td><td>----------</td><td>-----------</td></tr><tr><td>**Papillary (PTC)**</td><td>**80%**</td><td>**Nuclear Features (Grooves, Inclusions, Orphan Annie Eyes)**, Psammoma bodies</td><td>**BRAF V600E (60%)**, RAS, RET/PTC, NTRK fusions</td><td>**Excellent**</td></tr><tr><td>**Follicular (FTC)**</td><td>**10-15%**</td><td>**Capsular/Vascular Invasion** (No nuclear features)</td><td>**RAS (40-50%)**, PAX8-PPARG</td><td>**Excellent** (if minimally invasive)</td></tr><tr><td>**Medullary (MTC)**</td><td>**5-10%**</td><td>**C-Cell Origin**, **Calcitonin+**, **CEA+**, Amyloid</td><td>**RET Germline (25%) / Somatic (75%)**</td><td>**Intermediate**</td></tr><tr><td>**Anaplastic (ATC)**</td><td>**1-2%**</td><td>**Undifferentiated**, Spindle/Giant cells, Rapid</td><td>**TP53, TERT, BRAF, PI3K**</td><td>**Very Poor** (Months)</td></tr><tr><td>**NIFTP**</td><td>Reclassified</td><td>**Encapsulated, Papillary Nuclear Features, No Invasion**</td><td>**RAS, PPARG**</td><td>**Indolent (No Cancer Suffix)**</td></tr><tr><td>**Poorly Differentiated**</td><td><5%</td><td>**High Mitoses, Necrosis, Trabecular/Insular**</td><td>TP53, TERT</td><td>Poor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">ATA Risk Stratification (Differentiated Thyroid Cancer)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Risk Group</th><th>Criteria (Post-Surgery)</th><th>Recurrence Risk</th></tr><tr><td>------------</td><td>-------------------------</td><td>-----------------</td></tr><tr><td>**Low**</td><td>**No** local/regional/distant metastases; **No** aggressive histology; **No** vascular invasion; **Clinical N0**; **T1-2** (if intrathyroidal); **RAI-avid** if done</td><td><5%</td></tr><tr><td>**Intermediate**</td><td>**Microscopic Invasion** (Perithyroidal, Lymphovascular); **Aggressive Histology** (Tall cell, Columnar cell, Hobnail); **N1** (Micromets ≤0.2cm / ENE-); **T3** (Gross extrathyroidal)</td><td>5-20%</td></tr><tr><td>**High**</td><td>**Macroscopic Invasion** (T4); **Gross N1** (Macromets >0.2cm / ENE+); **Distant Mets (M1)**; **Incomplete Resection (R1/R2)**</td><td>>20%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Staging (AJCC 8th Edition — Age 55 Cutoff)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Age <55</th><th>Age ≥55</th></tr><tr><td>-------</td><td>---------</td><td>---------</td></tr><tr><td>**I**</td><td>Any T, Any N, M0</td><td>T1-2a N0 M0</td></tr><tr><td>**II**</td><td>Any T, Any N, M1</td><td>T1-2a N1 M0 / T2b-3a N0 M0</td></tr><tr><td>**III**</td><td>—</td><td>T1-3a N1 M0 / T3b M0</td></tr><tr><td>**IVA**</td><td>—</td><td>T4a N0-1 M0</td></tr><tr><td>**IVB**</td><td>—</td><td>T4b Any N M0</td></tr><tr><td>**IVC**</td><td>M1</td><td>Any T Any N M1</td></tr></table>
+<p><b>Key:</b> <b>Age 55 is Major Prognostic Factor</b> — Young patients staged lower.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management — Differentiated (PTC/FTC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Surgery</div>
+<p>``<code>mermaid flowchart TD A[DTC Diagnosis] --&gt; B{Tumour Size / Risk} B --&gt;|<b>Low Risk: ≤1cm, Unifocal, No ETE, cN0</b>| C[<b>Hemithyroidectomy ± Isthmusectomy</b>&lt;br/&gt;<b>ATA: Acceptable for Low Risk</b>&lt;br/&gt;<b>No Routine RAI</b>] B --&gt;|<b>&gt;1cm OR Multifocal OR ETE OR cN+ OR High Risk Features</b>| D[<b>Total Thyroidectomy</b>] D --&gt; E{Neck Dissection} E --&gt;|<b>cN0 (Central Compartment)</b>| F[<b>Prophylactic Central ND (Level VI)</b>&lt;br/&gt;<b>ATA: Recommended for T3-4, cN+, High Risk</b>; <b>Optional for T1-2 N0</b>] E --&gt;|<b>cN+ (Lateral)</b>| G[<b>Therapeutic Lateral ND (Levels II-V)</b>&lt;br/&gt;<b>Compartment-Oriented</b>] F --&gt; H[<b>RAI Decision</b>] G --&gt; H </code>``</p>
+<div class="sub-h">Radioactive Iodine (RAI) Therapy</div>
+<table class="ctable"><tr><th>Indication</th><th>Activity</th><th>Preparation</th></tr><tr><td>------------</td><td>----------</td><td>-------------</td></tr><tr><td>**Remnant Ablation** (Low Risk)</td><td>**30-50 mCi** (Deferred per ATA 2015 for Low Risk)</td><td>**TSH >30 mU/L** (Thyroid Hormone Withdrawal) **OR rhTSH (Thyrogen) 0.9mg IM d-1, d0**</td></tr><tr><td>**Adjuvant** (Intermediate/High Risk)</td><td>**100-150 mCi**</td><td>**TSH >30** or **rhTSH**</td></tr><tr><td>**Metastatic Disease**</td><td>**150-200 mCi** (Repeated q6-12mo if avid)</td><td>**TSH >30**; **Dosimetry if High Activity**</td></tr></table>
+<p><b>RAI Contraindications:</b> Pregnancy, Breastfeeding, Severe Uncontrolled Thyrotoxicosis.</p>
+<div class="sub-h">TSH Suppression Targets</div>
+<table class="ctable"><tr><th>ATA Risk</th><th>TSH Target (mU/L)</th><th>Duration</th></tr><tr><td>----------</td><td>-------------------</td><td>----------</td></tr><tr><td>**Low**</td><td>**0.5 - 2.0** (Low-normal)</td><td>Long-term</td></tr><tr><td>**Intermediate**</td><td>**0.1 - 0.5**</td><td>5-10 years, then reassess</td></tr><tr><td>**High**</td><td>**<0.1** (Undetectable)</td><td>Long-term (≥10 years)</td></tr></table>
+<div class="sub-h">Surveillance</div>
+<table class="ctable"><tr><th>Modality</th><th>Schedule</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Serum Tg + TgAb**</td><td>**Every 6-12 months** (Low), **Every 3-6 months** (Int/High)</td></tr><tr><td>**Neck US**</td><td>**Annually** (Low), **Every 6-12 months** (Int/High)</td></tr><tr><td>**Stimulated Tg (rhTSH/Withdrawal)**</td><td>**If TgAb+, or Suspicion, or Post-RAI Remission Confirmation**</td></tr><tr><td>**Chest CT**</td><td>If Tg Rising / Structural Disease Suspected</td></tr><tr><td>**PET-CT**</td><td>**Tg+, RAI-Negative** (Dedifferentiated)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Medullary Thyroid Cancer (MTC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">RET Mutation &amp; Prophylactic Surgery</div>
+<table class="ctable"><tr><th>RET Mutation (ATA Risk Level)</th><th>Prophylactic Thyroidectomy Age</th><th>Associated Syndrome</th></tr><tr><td>-------------------------------</td><td>--------------------------------</td><td>---------------------</td></tr><tr><td>**Highest (MEN2B: M918T)**</td><td>**<1 Year** (6-12 months)</td><td>MEN2B (Mucosal Neuromas, Marfanoid)</td></tr><tr><td>**High (MEN2A: C634)**</td><td>**<5 Years** (3-5 years)</td><td>MEN2A (Pheo, Parathyroid Hyperplasia)</td></tr><tr><td>**Moderate (FMTC: Other Cysteine)**</td><td>**5-10 Years**</td><td>FMTC (Familial MTC Only)</td></tr><tr><td>**Lower (Non-Cysteine)**</td><td>**Individualised**</td><td>Variable</td></tr></table>
+<div class="sub-h">Systemic Therapy (Metastatic/Unresectable MTC)</div>
+<table class="ctable"><tr><th>TKI</th><th>Target</th><th>Key Trial</th></tr><tr><td>-----</td><td>--------</td><td>-----------</td></tr><tr><td>**Vandetanib**</td><td>VEGFR, EGFR, RET</td><td>**ZETA** — PFS benefit</td></tr><tr><td>**Cabozantinib**</td><td>VEGFR2, MET, RET</td><td>**EXAM** — PFS benefit</td></tr><tr><td>**Selpercatinib**</td><td>**RET Selective** (A883F, V804M, M918T)</td><td>**LIBRETTO-001** — **ORR 70-80%, CNS Activity**</td></tr><tr><td>**Pralsetinib**</td><td>**RET Selective**</td><td>**ARROW** — **ORR ~70%**</td></tr></table>
+<p><b>Selpercatinib/Pralsetinib Preferred for RET-mutant MTC (RET-specific, Better Tolerability).</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Anaplastic Thyroid Cancer (ATC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Setting</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Localised (Resectable)**</td><td>**Surgery (Total Thyroidectomy ± Tracheostomy) + CCRT (Doxorubicin-based)**</td></tr><tr><td>**Locally Advanced**</td><td>**CCRT: Doxorubicin 20-25mg/m² weekly + RT 60-66Gy**</td></tr><tr><td>**Metastatic / Unresectable**</td><td>**Dabrafenib 150mg BID + Trametinib 2mg OD** (if **BRAF V600E** — ~50% ATC) — **ROAR/Phase 2: ORR ~70%**</td></tr><tr><td>**Palliative**</td><td>**Tracheostomy**, **RT for Airway**, **Best Supportive Care**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**PTC**</td><td>**80%**, **Nuclear Features**, **BRAF V600E (60%)**, **Excellent Prognosis**</td></tr><tr><td>**FTC**</td><td>**10-15%**, **Capsular/Vascular Invasion**, **RAS/PAX8-PPARG**</td></tr><tr><td>**NIFTP**</td><td>**Encapsulated FVPTC → Reclassified**, **Indolent**, **Surgery Only (Lobectomy)**</td></tr><tr><td>**ATA Risk**</td><td>**Low/Int/High** → Guides **RAI, TSH Suppression, Surveillance**</td></tr><tr><td>**Surgery**</td><td>**≤1cm Low Risk: Hemithyroidectomy**; **>1cm/ETE/N+: Total + Central ND**</td></tr><tr><td>**RAI**</td><td>**Low: Deferred**; **Int/High: 100-150 mCi Adjuvant**; **Metastatic: 150-200 mCi**</td></tr><tr><td>**TSH Suppression**</td><td>**Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1**</td></tr><tr><td>**MTC**</td><td>**RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr)**; **TKIs: Selpercatinib/Pralsetinib (RET-Selective)**</td></tr><tr><td>**ATC**</td><td>**1-2%**, **TP53/TERT/BRAF**, **CCRT (Doxo)**, **Dabrafenib+Trametinib (BRAF V600E)**</td></tr><tr><td>**Surveillance**</td><td>**Tg + TgAb + US**; **Stim Tg if TgAb+ or Suspicion**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**35F, 1.5cm PTC, No ETE, cN0. ATA Risk? Surgery?**</td><td>**Intermediate Risk** (T2 >1cm, No ETE, cN0) → **Total Thyroidectomy + Central ND** (Prophylactic for T3-4/cN+/High Risk; Optional for T1-2 N0).</td></tr><tr><td>**Same patient post-Total Thyroidectomy, Pathology: 2cm, Minimal ETE, 1/6 Central LN Micromet (0.1cm). ATA Risk? RAI?**</td><td>**Intermediate Risk** (Microscopic ETE, N1 Micromet) → **RAI 100-150 mCi Adjuvant** (TSH>30 or rhTSH).</td></tr><tr><td>**ATA TSH Suppression Targets by Risk?**</td><td>**Low: 0.5-2.0 mU/L; Intermediate: 0.1-0.5; High: <0.1**</td></tr><tr><td>**MTC — RET Mutation Testing — When Prophylactic Thyroidectomy?**</td><td>**Germline RET Positive** → **MEN2B (M918T): <1yr; MEN2A (C634): <5yr; FMTC: 5-10yr**.</td></tr><tr><td>**MTC Metastatic — TKI of Choice for RET-mutant?**</td><td>**Selpercatinib / Pralsetinib** (RET-Selective, CNS Activity, Better Tolerability) — **Preferred over Vandetanib/Cabozantinib**.</td></tr><tr><td>**Anaplastic Thyroid Cancer — BRAF V600E — Targeted Therapy?**</td><td>**Dabrafenib 150mg BID + Trametinib 2mg OD** (ROAR Trial: ORR ~70%, Median PFS ~6mo).</td></tr><tr><td>**Total Thyroidectomy — Complications?**</td><td>**RLN Injury (Hoarseness)**, **Hypoparathyroidism (Transient > Permanent)**, **Bleeding**, **Infection**, **Scar**</td></tr><tr><td>**RAI Preparation — Thyrogen vs Withdrawal?**</td><td>**rhTSH (Thyrogen) 0.9mg IM d-1, d0** — **Avoids Hypothyroid Symptoms**; **Equivalent Ablation**; **Preferred for Quality of Life**</td></tr><tr><td>**NIFTP — What, Management?**</td><td>**Non-invasive Follicular Thyroid Neoplasm with Papillary-like Nuclear Features** — **Encapsulated FVPTC, No Invasion** → **Lobectomy Only, NO RAI, NO TSH Suppression**</td></tr><tr><td>**Follicular Cancer — Diagnosis Requires?**</td><td>**Capsular AND/OR Vascular Invasion** — **Cannot Diagnose on FNA** (Requires Surgical Specimen); **Minimally vs Widely Invasive**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Hemithyroidectomy vs Total for PTC**</td><td>**≤1cm, Unifocal, No ETE, cN0, No High-Risk Features → Hemithyroidectomy Acceptable**; **Otherwise → Total**</td></tr><tr><td>**RAI Ablation vs Adjuvant**</td><td>**Ablation**: Destroy Normal Remnant (Low Risk, Deferred); **Adjuvant**: Treat Microscopic Disease (Int/High Risk)</td></tr><tr><td>**TSH Suppression — Why Not Always <0.1?**</td><td>**Risks**: Osteoporosis (Post-menopausal), Atrial Fibrillation, Cardiovascular; **Balanced by Recurrence Risk**</td></tr><tr><td>**NIFTP — Not Cancer?**</td><td>**Reclassified from Encapsulated FVPTC**; **Indolent, No Invasion** → **Surgery Only (Lobectomy), NO RAI, NO TSH Suppression**</td></tr><tr><td>**MTC — Sporadic vs Hereditary**</td><td>**Sporadic: RET Somatic (75%)**; **Hereditary: RET Germline (25%) → MEN2A/2A/FMTC**</td></tr><tr><td>**ATC — BRAF V600E Targeted**</td><td>**Dabrafenib + Trametinib** — **Only if BRAF V600E+ (~50% ATC)**; **Standard CCRT Doxorubicin-Based if WT**</td></tr></table>
+<p><b>Mnemonic: THYROID-CA</b></p>
+<ul><li><b>T</b>hyroid: <b>PTC 80% (BRAF V600E)</b>, <b>FTC 10-15% (RAS)</b>, <b>MTC 5-10% (RET)</b>, <b>ATC 1-2% (TP53/TERT)</b></li><li><b>H</b>istology: <b>Nuclear Features (PTC)</b>, <b>Capsular Invasion (FTC)</b>, <b>Calcitonin/CEA (MTC)</b></li><li><b>Y</b>oung: <b>Age &lt;55 Stages Lower</b> (AJCC 8th)</li><li><b>R</b>isk Stratification: <b>ATA Low/Int/High</b> → <b>RAI, TSH, Surveillance</b></li><li><b>O</b>peration: <b>≤1cm Hemithyroidectomy</b>; <b>&gt;1cm Total + Central ND</b></li><li><b>I</b>odine (RAI): <b>Low: Deferred</b>; <b>Int/High: 100-150 mCi</b>; <b>Mets: 150-200 mCi</b></li><li><b>D</b>ose TSH: <b>Low 0.5-2.0; Int 0.1-0.5; High &lt;0.1</b></li><li><b>C</b>alcitonin/CEA: <b>MTC Markers</b>; <b>RET Germline → Prophylactic Thyroidectomy</b></li><li><b>A</b>naplastic: <b>CCRT Doxo</b>; <b>BRAF V600E → Dabrafenib+Trametinib</b></li><li><b>N</b>IFTP: <b>Encapsulated FVPTC → Lobectomy Only, NO RAI</b></li><li><b>C</b>ontraindications RAI: <b>Pregnancy, Breastfeeding</b></li><li><b>A</b>TA Guidelines: <b>Surveillance Tg + TgAb + US</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Thyroid Cancer)) Differentiated (90%) PTC (80%) - BRAF V600E - Nuclear Features FTC (10-15%) - RAS - Capsular/Vascular Invasion NIFTP - Encapsulated FVPTC - Lobectomy Only ATA Risk: Low/Int/High Surgery: Hemi (≤1cm Low) / Total (+Central ND) RAI: Low Deferred / Int-High Adjuvant / Mets 150-200mCi TSH Suppression: Low 0.5-2 / Int 0.1-0.5 / High &lt;0.1 Surveillance: Tg, TgAb, US, Stim Tg Medullary (5-10%) RET Germline (25%) - MEN2A/2B/FMTC Prophylactic Thyroidectomy: MEN2B &lt;1yr, MEN2A &lt;5yr TKIs: Selpercatinib/Pralsetinib (RET-Selective) Anaplastic (1-2%) TP53, TERT, BRAF CCRT Doxorubicin BRAF V600E → Dabrafenib+Trametinib Staging Age &lt;55 vs ≥55 (AJCC 8th) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**PTC**</td><td>80%, Nuclear Features, BRAF V600E 60%</td></tr><tr><td>**FTC**</td><td>10-15%, Capsular/Vascular Invasion, RAS</td></tr><tr><td>**NIFTP**</td><td>Encapsulated FVPTC → Lobectomy Only, NO RAI</td></tr><tr><td>**ATA Risk**</td><td>Low/Int/High → RAI, TSH, Surveillance</td></tr><tr><td>**Surgery**</td><td>≤1cm Low → Hemi; >1cm/ETE/N+ → Total + Central ND</td></tr><tr><td>**RAI**</td><td>Low: Deferred; Int/High: 100-150mCi; Mets: 150-200mCi</td></tr><tr><td>**TSH**</td><td>Low 0.5-2.0; Int 0.1-0.5; High <0.1</td></tr><tr><td>**MTC**</td><td>RET Germline → Prophylactic (MEN2B <1yr, MEN2A <5yr); TKIs: Selpercatinib/Pralsetinib</td></tr><tr><td>**ATC**</td><td>CCRT Doxo; BRAF V600E → Dabrafenib+Trametinib</td></tr><tr><td>**Surveillance**</td><td>Tg + TgAb + US; Stim Tg if TgAb+</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Histology Classification</td><td></td><td></td></tr><tr><td>ATA Risk Stratification</td><td></td><td></td></tr><tr><td>Surgery Indications</td><td></td><td></td></tr><tr><td>RAI Indications/Activities</td><td></td><td></td></tr><tr><td>TSH Suppression Targets</td><td></td><td></td></tr><tr><td>MTC RET/Prophylactic Surgery</td><td></td><td></td></tr><tr><td>TKI Selection (Selpercatinib)</td><td></td><td></td></tr><tr><td>ATC Management</td><td></td><td></td></tr><tr><td>NIFTP Management</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[ATA Risk Stratification]], [[RAI Therapy]], [[TSH Suppression]], [[MEN2/RET]], [[Medullary Thyroid Cancer TKIs]], [[Anaplastic Thyroid Cancer]], [[BRAF V600E]], [[NIFTP]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Thyroid Cancer (PTC), which statement is correct? A. <b>80%</b>, <b>Nuclear Features</b>, <b>BRAF V600E (60%)</b>, <b>Excellent Prognosis</b> B. <b>80%</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>80%</b>, <b>Nuclear Features</b>, <b>BRAF V600E (60%)</b>, <b>Excellent Prognosis</b></li></ul>
+<p><b>2.</b> Regarding Thyroid Cancer (FTC), which statement is correct? A. <b>10-15%</b>, <b>Capsular/Vascular Invasion</b>, <b>RAS/PAX8-PPARG</b> B. <b>10-15%</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>10-15%</b>, <b>Capsular/Vascular Invasion</b>, <b>RAS/PAX8-PPARG</b></li></ul>
+<p><b>3.</b> Regarding Thyroid Cancer (NIFTP), which statement is correct? A. <b>Encapsulated FVPTC → Reclassified</b>, <b>Indolent</b>, <b>Surgery Only (Lobectomy)</b> B. **Encapsulated - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Encapsulated FVPTC → Reclassified</b>, <b>Indolent</b>, <b>Surgery Only (Lobectomy)</b></li></ul>
+<p><b>4.</b> Regarding Thyroid Cancer (ATA Risk), which statement is correct? A. <b>Low/Int/High</b> → Guides <b>RAI, TSH Suppression, Surveillance</b> B. <b>Low/Int/High</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Low/Int/High</b> → Guides <b>RAI, TSH Suppression, Surveillance</b></li></ul>
+<p><b>5.</b> Regarding Thyroid Cancer (Surgery), which statement is correct? A. <b>≤1cm Low Risk: Hemithyroidectomy</b> B. **≤1cm - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>≤1cm Low Risk: Hemithyroidectomy</b>; <b>&gt;1cm/ETE/N+: Total + Central ND</b></li></ul>
+<p><b>6.</b> Regarding Thyroid Cancer (RAI), which statement is correct? A. <b>Low: Deferred</b> B. **Low: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Low: Deferred</b>; <b>Int/High: 100-150 mCi Adjuvant</b>; <b>Metastatic: 150-200 mCi</b></li></ul>
+<p><b>7.</b> Regarding Thyroid Cancer (TSH Suppression), which statement is correct? A. <b>Low: 0.5-2.0 B. </b>Low: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Low: 0.5-2.0; Int: 0.1-0.5; High: &lt;0.1</b></li></ul>
+<p><b>8.</b> Regarding Thyroid Cancer (MTC), which statement is correct? A. <b>RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A &lt;5yr, MEN2B &lt;1yr)</b> B. **RET - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A &lt;5yr, MEN2B &lt;1yr)</b>; **TKIs: Selpercatinib/Pralsetinib (RET-Sel...</li></ul>
+<p><b>9.</b> Regarding Thyroid Cancer (ATC), which statement is correct? A. <b>1-2%</b>, <b>TP53/TERT/BRAF</b>, <b>CCRT (Doxo)</b>, <b>Dabrafenib+Trametinib (BRAF V600E)</b> B. <b>1-2%</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>1-2%</b>, <b>TP53/TERT/BRAF</b>, <b>CCRT (Doxo)</b>, <b>Dabrafenib+Trametinib (BRAF V600E)</b></li></ul>
+<p><b>10.</b> Regarding Thyroid Cancer (Surveillance), which statement is correct? A. <b>Tg + TgAb + US</b> B. **Tg - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Tg + TgAb + US</b>; <b>Stim Tg if TgAb+ or Suspicion</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>80%</b>, <b>Nuclear Features</b>, <b>BRAF V600E (60%)</b>, <b>Excellent Prognosis</b></li><li>B. <b>80%</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>80%</b>, <b>Nuclear Features</b>, <b>BRAF V600E (60%)</b>, <b>Excellent Prognosis</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>10-15%</b>, <b>Capsular/Vascular Invasion</b>, <b>RAS/PAX8-PPARG</b></li><li>B. <b>10-15%</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>10-15%</b>, <b>Capsular/Vascular Invasion</b>, <b>RAS/PAX8-PPARG</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Encapsulated FVPTC → Reclassified</b>, <b>Indolent</b>, <b>Surgery Only (Lobectomy)</b></li><li>B. **Encapsulated (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Encapsulated FVPTC → Reclassified</b>, <b>Indolent</b>, <b>Surgery Only (Lobectomy)</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Low/Int/High</b> → Guides <b>RAI, TSH Suppression, Surveillance</b></li><li>B. <b>Low/Int/High</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Low/Int/High</b> → Guides <b>RAI, TSH Suppression, Surveillance</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>≤1cm Low Risk: Hemithyroidectomy</b></li><li>B. **≤1cm (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>≤1cm Low Risk: Hemithyroidectomy</b>; <b>&gt;1cm/ETE/N+: Total + Central ND</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Low: Deferred</b></li><li>B. **Low: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Low: Deferred</b>; <b>Int/High: 100-150 mCi Adjuvant</b>; <b>Metastatic: 150-200 mCi</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. **Low: 0.5-2.0</li><li>B. **Low: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Low: 0.5-2.0; Int: 0.1-0.5; High: &lt;0.1</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A &lt;5yr, MEN2B &lt;1yr)</b></li><li>B. **RET (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A &lt;5yr, MEN2B &lt;1yr)</b>; **TKIs: Selpercatinib/Pralsetinib (RET-Sel...</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>1-2%</b>, <b>TP53/TERT/BRAF</b>, <b>CCRT (Doxo)</b>, <b>Dabrafenib+Trametinib (BRAF V600E)</b></li><li>B. <b>1-2%</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>1-2%</b>, <b>TP53/TERT/BRAF</b>, <b>CCRT (Doxo)</b>, <b>Dabrafenib+Trametinib (BRAF V600E)</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Tg + TgAb + US</b></li><li>B. **Tg (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Tg + TgAb + US</b>; <b>Stim Tg if TgAb+ or Suspicion</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> PTC? <b>A1:</b> 80%, Nuclear Features, BRAF V600E (60%), Excellent Prognosis</p>
+<p><b>Q2:</b> FTC? <b>A2:</b> 10-15%, Capsular/Vascular Invasion, RAS/PAX8-PPARG</p>
+<p><b>Q3:</b> NIFTP? <b>A3:</b> Encapsulated FVPTC → Reclassified, Indolent, Surgery Only (Lobectomy)</p>
+<p><b>Q4:</b> ATA Risk? <b>A4:</b> Low/Int/High → Guides RAI, TSH Suppression, Surveillance</p>
+<p><b>Q5:</b> Surgery? <b>A5:</b> ≤1cm Low Risk: Hemithyroidectomy; &gt;1cm/ETE/N+: Total + Central ND</p>
+<p><b>Q6:</b> RAI? <b>A6:</b> Low: Deferred; Int/High: 100-150 mCi Adjuvant; Metastatic: 150-200 mCi</p>
+<p><b>Q7:</b> TSH Suppression? <b>A7:</b> Low: 0.5-2.0; Int: 0.1-0.5; High: &lt;0.1</p>
+<p><b>Q8:</b> MTC? <b>A8:</b> RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A &lt;5yr, MEN2B &lt;1yr); TKIs: Selpercatinib/Pralsetinib (RET-Selective)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>PTC</td><td>80%, Nuclear Features, BRAF V600E (60%), Excellent Prognosis</td></tr><tr><td>2</td><td>A</td><td>FTC</td><td>10-15%, Capsular/Vascular Invasion, RAS/PAX8-PPARG</td></tr><tr><td>3</td><td>A</td><td>NIFTP</td><td>Encapsulated FVPTC → Reclassified, Indolent, Surgery Only (Lobectomy)</td></tr><tr><td>4</td><td>A</td><td>ATA Risk</td><td>Low/Int/High → Guides RAI, TSH Suppression, Surveillance</td></tr><tr><td>5</td><td>A</td><td>Surgery</td><td>≤1cm Low Risk: Hemithyroidectomy; >1cm/ETE/N+: Total + Central ND</td></tr><tr><td>6</td><td>A</td><td>RAI</td><td>Low: Deferred; Int/High: 100-150 mCi Adjuvant; Metastatic: 150-200 mCi</td></tr><tr><td>7</td><td>A</td><td>TSH Suppression</td><td>Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1</td></tr><tr><td>8</td><td>A</td><td>MTC</td><td>RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr); TKIs: Selpercatinib/Pralsetinib (RET-Selective</td></tr><tr><td>9</td><td>A</td><td>ATC</td><td>1-2%, TP53/TERT/BRAF, CCRT (Doxo), Dabrafenib+Trametinib (BRAF V600E)</td></tr><tr><td>10</td><td>A</td><td>Surveillance</td><td>Tg + TgAb + US; Stim Tg if TgAb+ or Suspicion</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>PTC</td><td>80%, Nuclear Features, BRAF V600E (60%), Excellent Prognosis</td></tr><tr><td>2</td><td>A</td><td>FTC</td><td>10-15%, Capsular/Vascular Invasion, RAS/PAX8-PPARG</td></tr><tr><td>3</td><td>A</td><td>NIFTP</td><td>Encapsulated FVPTC → Reclassified, Indolent, Surgery Only (Lobectomy)</td></tr><tr><td>4</td><td>A</td><td>ATA Risk</td><td>Low/Int/High → Guides RAI, TSH Suppression, Surveillance</td></tr><tr><td>5</td><td>A</td><td>Surgery</td><td>≤1cm Low Risk: Hemithyroidectomy; >1cm/ETE/N+: Total + Central ND</td></tr><tr><td>6</td><td>A</td><td>RAI</td><td>Low: Deferred; Int/High: 100-150 mCi Adjuvant; Metastatic: 150-200 mCi</td></tr><tr><td>7</td><td>A</td><td>TSH Suppression</td><td>Low: 0.5-2.0; Int: 0.1-0.5; High: <0.1</td></tr><tr><td>8</td><td>A</td><td>MTC</td><td>RET Germline (25%) → Prophylactic Thyroidectomy (MEN2A <5yr, MEN2B <1yr); TKIs: Selpercatinib/Pralsetinib (RET-Selective</td></tr><tr><td>9</td><td>A</td><td>ATC</td><td>1-2%, TP53/TERT/BRAF, CCRT (Doxo), Dabrafenib+Trametinib (BRAF V600E)</td></tr><tr><td>10</td><td>A</td><td>Surveillance</td><td>Tg + TgAb + US; Stim Tg if TgAb+ or Suspicion</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Head, Neck &amp; Thyroid|Head, Neck &amp; Thyroid]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Thyroid Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

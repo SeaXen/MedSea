@@ -1,0 +1,549 @@
+# Second Malignancies in Cancer Survivors
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **Second Malignancies = Major Late Effect**; **Therapy-Related AML/MDS (t-AML/t-MDS)**: **Alkylators** (5-10yr Latency, Complex Karyotype, -5/-7), **Topo II Inhibitors** (2-3yr Latency, BALANCED Translocations t(11q23), t(15;17), t(8;21)); **Radiation-Induced Solid Tumours**: **Latency 10-30yr**, **Dose-Dependent**, **In/Near Radiation Field** (Breast, Lung, Thyroid, Sarcoma, Meningioma); **ICI-Related**: Immune-Related Adverse Events → **Inflammatory/Malignancy Risk**; **Screening**: Paediatric (COG Long-Term Follow-Up Guidelines), Adult (Risk-Adapted); **Genetic**: Li-Fraumeni (TP53), BRCA1/2, Lynch Syndrome.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Classify **therapy-related myeloid neoplasms** (t-AML/t-MDS) by aetiology
+- [ ] Identify **radiation-induced solid tumours** and their latency
+- [ ] Apply **survivorship screening guidelines** (COG, NCCN, ICC)
+- [ ] Recognise **genetic predisposition syndromes** (Li-Fraumeni, BRCA, Lynch)
+- [ ] Counsel patients on **second cancer risk** and surveillance
+
+---
+
+## 2. Therapy-Related Myeloid Neoplasms (t-MN)
+
+### Classification by Aetiology
+
+| Type | Aetiology | Latency | Cytogenetics | Prognosis |
+|------|-----------|---------|--------------|-----------|
+| **t-MDS/t-AML (Alkylator-Related)** | **Cyclophosphamide, Melphalan, Busulfan, Chlorambucil, Procarbazine, Temozolomide** | **5-10 Years** (Peak 5-7yr) | **Complex Karyotype**, **-5/del(5q), -7/del(7q), -17/del(17p)**, **TP53 Mut** | **Very Poor** (Refractory, Median OS 6-12mo) |
+| **t-AML (Topo II Inhibitor-Related)** | **Etoposide, Teniposide, Doxorubicin, Mitoxantrone, Anthracyclines** | **2-3 Years** (Peak 2-3yr) | **BALANCED TRANSLOCATIONS**: **t(11q23) KMT2A**, **t(15;17) PML-RARA**, **t(8;21) RUNX1-RUNX1T1**, **inv(16) CBFB-MYH11** | **Better** (Responsive to Induction, But High Relapse) |
+| **t-MN (Radiation-Related)** | **Radiotherapy** (Often + Alkylators) | **Variable** | **Complex, -5/-7, TP53** | **Poor** |
+
+### Risk Factors
+| Factor | Effect |
+|--------|--------|
+| **Cumulative Alkylator Dose** | **Linear Increase** |
+| **Topo II Inhibitor Dose** | **Dose-Dependent** |
+| **Radiation Dose/Volume** | **Additive/Synergistic** |
+| **Age at Treatment** | **Children <10yr: Higher Risk** |
+| **Genetic Susceptibility** | **TP53, BRCA1/2, Fanconi Anaemia, Bloom, Werner, Ataxia-Telangiectasia** |
+
+---
+
+## 3. Radiation-Induced Solid Tumours
+
+### Key Features
+
+| Feature | Detail |
+|---------|--------|
+| **Latency** | **Minimum 10 Years**, **Peak 15-30 Years** |
+| **Dose-Response** | **Linear-Quadratic** (↑ Dose = ↑ Risk), **Threshold ~1-5 Gy** |
+| **Location** | **In or Adjacent to Radiation Field** |
+| **Dose-Response** | **Volume-Dependent** (Larger Volume = Higher Risk) |
+
+### Common Radiation-Induced Cancers
+
+| Primary Cancer + RT | Induced Cancer | Typical Latency |
+|---------------------|----------------|-----------------|
+| **Hodgkin Lymphoma (Mediastinal RT)** | **Breast Cancer** (Women <30 at RT) | **15-25 Years** |
+| | **Lung Cancer** | **15-25 Years** |
+| | **Thyroid Cancer** | **10-20 Years** |
+| | **Oesophageal/Stomach** | **20-30 Years** |
+| **Breast Cancer (Chest Wall RT)** | **Lung Cancer** | **10-20 Years** |
+| | **Sarcoma (Chest Wall)** | **10-20 Years** |
+| **Childhood Cancer (Cranial/Spinal RT)** | **Meningioma** | **20-30 Years** |
+| | **Glioma** | **10-20 Years** |
+| **Retinoblastoma (Orbital RT)** | **Sarcoma (Orbital/Bone)** | **10-20 Years** |
+| **Prostate/Pelvic RT** | **Bladder, Rectal, Sarcoma** | **10-20 Years** |
+| **Cervical/Endometrial RT** | **Bladder, Rectal, Sarcoma** | **10-20 Years" |
+| **Testicular Cancer (Para-aortic RT)** | **GI, Renal, Sarcoma** | **15-25 Years" |
+
+### Risk Factors
+| Factor | Effect |
+|--------|--------|
+| **Younger Age at RT** | **Exponential Increase** (<10yr: 10-20x Risk) |
+| **Radiation Dose** | **>30 Gy: Significant**, **>40 Gy: High** |
+| **Volume** | **Mediastinal/Chest > Abdominal/Pelvic** |
+| **Chemotherapy + RT** | **Synergistic** (Alkylators + RT) |
+| **Genetic** | **TP53 (Li-Fraumeni), NF1, RB1, BRCA1/2, ATM** |
+
+---
+
+## 4. Immune Checkpoint Inhibitor (ICI) Related Malignancies
+
+| Mechanism | Detail |
+|-----------|--------|
+| **Immune Dysregulation** | **PD-1/PD-L1/CTLA-4 Blockade → Loss of Immune Surveillance** |
+| **Inflammatory Milieu** | **Chronic Inflammation → Genomic Instability** |
+| **Reported Cases** | **Melanoma (New Primary), SCC, MCC, Lymphoma, Sarcoma** |
+| **Latency** | **Variable (Months to Years)** |
+| **Risk** | **Combination ICI > Single ICI**, **Prior Cancer, Immunosuppression** |
+
+---
+
+## 5. Paediatric Survivorship Screening (COG Long-Term Follow-Up Guidelines)
+
+### COG Risk-Based Surveillance
+
+| Exposure | Screening Recommendation |
+|----------|--------------------------|
+| **Anthracycline ≥300mg/m²** | **Echo q1-2yr Lifelong** |
+| **Anthracycline <300mg/m²** | **Echo q2-5yr** |
+| **Chest RT ≥30 Gy** | **Echo q1-2yr + Stress Test q3-5yr (IHD)**, **Breast MRI/Mammo q1-2yr (Females ≥8yr at RT or ≥25yr)** |
+| **Abdominal/Pelvic RT** | **Renal US q1-2yr**, **Colonoscopy q5yr (if ≥30Gy)** |
+| **Cranial RT** | **Neurocognitive Testing q1-2yr**, **Endocrine q6-12mo**, **MRI Brain q1-2yr (if >30Gy)** |
+| **Alkylators** | **CBC q1yr (t-MN Risk)**, **Fertility Assessment** |
+| **Topo II Inhibitors** | **CBC q1yr (t-AML Risk, 2-3yr Peak)** |
+| **Bleomycin/Busulfan** | **PFT q1-2yr** |
+| **Cisplatin/Carboplatin** | **Audiometry q1-2yr, Renal Function q1yr** |
+| **Vincristine** | **Neuropathy Assessment q1yr** |
+
+### COG Survivorship Care Plan Components
+1. **Treatment Summary** (Drugs, Doses, RT Fields/Doses, Surgeries)
+2. **Risk-Based Surveillance Plan** (Tailored to Exposures)
+3. **Psychosocial/Vocational Assessment**
+4. **Transition to Adult Care Plan** (If Paediatric)
+5. **Healthy Lifestyle Counseling**
+
+---
+
+## 6. Adult Survivorship Screening (NCCN / ASCO / ESMO)
+
+### Breast Cancer Survivors
+| Surveillance | Frequency |
+|--------------|-----------|
+| **History/Physical** | **q6mo ×5yr, Then Annually** |
+| **Mammogram** | **Annually** (Tomosynthesis Preferred) |
+| **Pelvic Exam** | **Annually** (If Tamoxifen) |
+| **Bone Density** | **q2yr (If AI/Tamoxifen + Risk Factors)** |
+| **Cardiac (If Anthracycline/Trastuzumab/RT)** | **Echo q1-2yr (Anthracycline >300mg/m² or RT)** |
+| **Second Primary** | **Colonoscopy q10yr (50+), Lung LDCT (If Smoker)**, **Skin Exam** |
+
+### Lymphoma Survivors
+| Exposure | Surveillance |
+|----------|--------------|
+| **Chest RT** | **Breast MRI/Mammo q1-2yr (Females <30 at RT)** |
+| | **Echo q1-2yr + Stress Test (IHD)** |
+| | **Thyroid US q1-2yr (Thyroid CA)** |
+| | **Lung LDCT (If Smoker/RT)** |
+| **Bleomycin** | **PFT q1-2yr" |
+| **Anthracycline** | **Echo q1-2yr (If ≥300mg/m²)** |
+
+### Testicular Cancer Survivors
+| Surveillance | Frequency |
+|--------------|-----------|
+| **Markers (AFP, hCG, LDH)** | **q3mo ×2yr, q6mo ×3yr, Annually** |
+| **Imaging** | **CT Chest/Abd/Pelvis q3-6mo ×2yr, q6mo ×3yr, Annually** |
+| **Cardiovascular (Bleomycin/Cisplatin)** | **Echo q2-3yr, Stress Test q3-5yr** |
+| **Renal (Cisplatin)** | **eGFR q1yr, Mg/K** |
+| **Secondary Malignancy (Leukaemia, GI, Lung)** | **CBC q1yr, Colonoscopy q5-10yr (If RT), Lung LDCT (Smoker)** |
+
+### Childhood Cancer Survivors (Transition to Adult Care)
+| Domain | Action |
+|--------|--------|
+| **Survivorship Care Plan** | **Treatment Summary + Risk-Based Surveillance Plan** |
+| **Transition Age** | **18-21 Years** (Specialised Survivorship Clinic) |
+| **Psychosocial** | **Neurocognitive, Vocational, Insurance, Fertility** |
+| **Genetic Counselling** | **If Hereditary Syndrome Suspected** |
+
+---
+
+## 7. Genetic Predisposition Syndromes
+
+| Syndrome | Gene | Cancers | Surveillance |
+|----------|------|---------|--------------|
+| **Li-Fraumeni** | **TP53** | **Sarcoma, Breast, Brain, Adrenocortical, Leukaemia** | **Whole-Body MRI Annually**, **Breast MRI q6-12mo (F)**, **Colonoscopy q1-2yr**, **Brain MRI q1yr**, **Whole-Body MRI Annually** |
+| **Hereditary Breast/Ovarian** | **BRCA1/2, PALB2, CHEK2, ATM** | **Breast, Ovarian, Prostate, Pancreatic, Melanoma** | **Breast MRI/Mammo q6-12mo (25-30+), Ovarian US/CA125, Prostate PSA/MRI, Pancreatic MRI/EUS** |
+| **Lynch Syndrome** | **MLH1, MSH2, MSH6, PMS2, EPCAM** | **Colorectal, Endometrial, Ovarian, Gastric, Urothelial, Small Bowel, Pancreatic** | **Colonoscopy q1-2yr (20-25+), Endometrial Biopsy/US, OGD q2-3yr, Urine Cytology** |
+| **FAP** | **APC** | **Colorectal (100%), Duodenal, Desmoid, Thyroid, CNS** | **Sigmoidoscopy/Colonoscopy q1-2yr (Teens), Upper GI Endo q1-3yr** |
+| **MUTYH (MAP)** | **MUTYH** | **Colorectal (Polyposis), Duodenal** | **Colonoscopy q2-3yr, OGD q3-5yr** |
+| **VHL** | **VHL** | **RCC, Haemangioblastoma, Pheochromocytoma, Pancreatic Cysts/NET** | **Annual MRI Brain/Spine, Annual US Abdomen, Annual Eye Exam** |
+| **MEN1** | **MEN1** | **Parathyroid, Pituitary, Pancreatic NET** | **Annual Ca/PTH, Prolactin, MRI Pituitary, CT/MRI Pancreas** |
+| **MEN2** | **RET** | **MTC, Pheo, Parathyroid** | **Annual Calcitonin, Ca, Catecholamines, US Neck** |
+
+---
+
+## 8. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **t-AML/t-MDS (Alkylator)** | **Latency 5-10yr**, **Complex Karyotype (-5/-7)**, **TP53 Mut**, **Poor Prognosis** |
+| **t-AML (Topo II Inhibitor)** | **Latency 2-3yr**, **Balanced Translocations (11q23, 15;17, 8;21)**, **Better Prognosis** |
+| **Radiation Solid Tumours** | **Latency 10-30yr**, **In/Adjacent to Field**, **Breast, Lung, Thyroid, Sarcoma, Meningioma** |
+| **Li-Fraumeni (TP53)** | **Sarcoma, Breast, Brain, Adrenal, Leukaemia**, **WBMRI Annually** |
+| **BRCA1/2** | **Breast, Ovarian, Prostate, Pancreas**, **MRI q6-12mo, RRSO 35-45** |
+| **Lynch** | **CRC, Endometrial, Ovarian, Gastric**, **Colonoscopy q1-2yr** |
+| **Paediatric Screening (COG)** | **Anthra≥300 → Echo q1-2yr**, **Chest RT → Breast MRI, Echo, Thyroid** |
+| **Adult Survivors** | **Risk-Adapted (Breast: Mammo, Echo, BMD; Lymphoma: Echo, Thyroid, Breast)** |
+| **ICI Malignancy** | **Immune Surveillance Loss**, **New Primaries Reported** |
+
+---
+
+## 9. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **t-AML vs t-MDS — Alkylator vs Topo II Inhibitor?** | **Alkylator: 5-10yr Latency, Complex Karyotype (-5/-7), TP53, Poor**; **Topo II: 2-3yr, Balanced Translocations (11q23, 15;17), Better Prognosis**. |
+| **Radiation-Induced Breast Cancer — Risk Factors?** | **Chest RT <30yr (Hodgkin), Dose >20-30Gy, Young Age, No Oophorectomy, No Chest Shielding**. |
+| **Li-Fraumeni Syndrome — Gene, Cancers, Surveillance?** | **TP53**, **Sarcoma, Breast, Brain, Adrenal, Leukaemia** → **WBMRI Annual, Breast MRI q6-12mo, Brain MRI Annual, Colonoscopy q1-2yr**. |
+| **Lynch Syndrome — Genes, Cancer Spectrum, Surveillance?** | **MLH1/MSH2/MSH6/PMS2/EPCAM** → **CRC, Endometrial, Ovarian, Gastric, Urothelial, Small Bowel, Pancreatic** → **Colonoscopy q1-2yr (20-25+), OGD q2-3yr, Gynae Surveillance**. |
+| **Paediatric Survivors — Anthracycline Cardiotoxicity Surveillance?** | **≥300mg/m² Anthracycline → Echo q1-2yr Lifelong**; **<300mg/m² → q2-5yr**; **Chest RT ≥30Gy → Echo + Stress Test q1-2yr, Breast MRI q1-2yr (F)**. |
+| **Radiation-Induced Sarcoma — Latency, Location?** | **Latency 10-30yr**, **In Radiation Field**, **Osteosarcoma, Fibrosarcoma, MFH, Angiosarcoma**. |
+| **Cisplatin Ototoxicity — Surveillance?** | **Audiometry q1-2yr (High Frequencies First)**; **Renal Function (Mg, K, Cr) q1yr**. |
+| **Bleomycin Pulmonary Toxicity — Surveillance?** | **PFT (DLCO, FVC) q1-2yr**; **CT if Symptomatic**. |
+| **Second Malignancy Risk — Lung Cancer after Breast RT?** | **Latency 10-20yr**, **Dose-Dependent**, **Smoking Synergistic**. |
+| **Genetic Counselling — When to Refer?** | **Early Onset (<50), Multiple Primaries, Strong FH, Rare Cancer (Male Breast, Adrenal), Known Syndrome**. |
+
+---
+
+## 10. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **t-AML Alkylator vs Topo II** | **Alkylator: Latency 5-10yr, Complex Karyotype (-5/-7), TP53, Poor**; **Topo II: 2-3yr, Balanced Translocations (11q23, 15;17, 8;21), Better** |
+| **Radiation-Induced vs Therapy-Related** | **Radiation-Induced**: Solid Tumours in Field, Latency 10-30yr; **Therapy-Related**: t-MN (t-AML/t-MDS) from Chemo |
+| **Li-Fraumeni vs Lynch** | **Li-Fraumeni: TP53, Sarcoma/Brain/Adrenal/Leukaemia, WBMRI**; **Lynch: MMR Genes, CRC/Endometrial/Ovarian/Gastric, Colonoscopy** |
+| **BRCA1 vs BRCA2** | **BRCA1: Breast (TNBC), Ovarian, Higher Penetrance**; **BRCA2: Breast, Ovarian, Prostate, Pancreatic, Male Breast** |
+| **FAP vs MAP** | **FAP: APC, Autosomal Dominant, 100s Polyps**; **MAP: MUTYH, Autosomal Recessive, 10-100 Polyps** |
+| **Paediatric vs Adult Screening** | **Paediatric (COG): Risk-Based, Lifetime, Transition at 18-21**; **Adult: Disease-Specific, Age-Based, NCCN/ASCO** |
+
+**Mnemonic: SECOND-MALIGNANCY**
+- **S**econd Malignancies: **t-MN (t-AML/t-MDS), Solid Tumours**
+- **E**toposide/Topo II: **t-AML 2-3yr, Balanced Translocations (11q23)**
+- **C**yclophosphamide/Alkylators: **t-MDS/AML 5-10yr, -5/-7, TP53**
+- **O**steosarcoma/Sarcoma: **Radiation-Induced (10-30yr Latency)**
+- **N**ew Primaries: **Breast, Lung, Thyroid, Sarcoma, Meningioma** (Radiation)
+- **D**ose-Dependent: **Radiation Solid Tumours**
+- **M**utatons: **TP53 (Li-Fraumeni), BRCA1/2, Lynch, FAP**
+- **A**ML/t-MDS: **Topo II (2-3yr) vs Alkylator (5-10yr)**
+- **L**atency: **Radiation 10-30yr, Topo II 2-3yr, Alkylator 5-10yr**
+- **I**CI-Related: **Immune Surveillance Loss, New Primaries**
+- **G**enetic Syndromes: **Li-Fraumeni (TP53), BRCA1/2, Lynch, FAP, VHL**
+- **N**eoplasm Surveillance: **COG (Paed), NCCN (Adult), Risk-Adapted**
+- **C**OPE: **COG Long-Term Follow-Up Guidelines (Paed Survivors)**
+- **Y**our Survivorship Care Plan: **Treatment Summary + Risk-Based Plan**
+
+---
+
+## 11. Mind Map
+
+```mermaid
+mindmap
+  root((Second Malignancies))
+    t-MN (Therapy-Related Myeloid Neoplasms)
+      Alkylator-Related: 5-10yr, -5/-7, TP53, Poor
+      Topo II Inhibitor: 2-3yr, 11q23/15;17/8;21, Better
+      Radiation-Related: Complex, -5/-7
+    Radiation Solid Tumours
+      Latency 10-30yr
+      In Field: Breast, Lung, Thyroid, Sarcoma, Meningioma
+      Dose/Volume Dependent
+      Younger Age = Higher Risk
+    ICI-Related
+      Immune Surveillance Loss
+      Combination ICI Higher Risk
+    Genetic Syndromes
+      Li-Fraumeni (TP53): Sarcoma, Breast, Brain, Adrenal
+      BRCA1/2: Breast, Ovarian, Prostate, Pancreatic
+      Lynch (MMR): CRC, Endometrial, Ovarian, Gastric
+      FAP/APC: Colorectal, Duodenal
+      VHL: RCC, Haemangioblastoma, Pheo
+      MEN1/2: Pituitary/Parathyroid/Pancreas/Adrenal
+    Paediatric Screening (COG)
+      Anthra ≥300: Echo q1-2yr
+      Chest RT: Breast MRI, Echo, Thyroid
+      Cisplatin: Audiometry, Renal
+      Bleomycin: PFT
+    Adult Screening (NCCN)
+      Breast: Mammo, Echo, BMD
+      Lymphoma: Echo, Thyroid, Breast (if RT)
+      Testicular: Markers, CT, CV, Renal
+```
+
+---
+
+## 12. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **t-MN Alkylator** | 5-10yr, -5/-7, TP53, Complex Karyotype, Poor |
+| **t-MN Topo II** | 2-3yr, 11q23/15;17/8;21, Balanced Translocations, Better |
+| **Radiation Solid** | Latency 10-30yr, In Field, Breast/Lung/Thyroid/Sarcoma |
+| **Li-Fraumeni** | TP53, Sarcoma/Brain/Adrenal/Leukaemia, WBMRI Annual |
+| **BRCA1/2** | Breast/Ovary/Prostate/Pancreas, MRI, RRSO |
+| **Lynch** | MMR Genes, CRC/Endo/Ovary/Gastric, Colonoscopy q1-2yr |
+| **Paediatric (COG)** | Anthra≥300 → Echo q1-2yr; Chest RT → Breast MRI+Echo+Thyroid |
+| **Adult Survivors** | Risk-Adapted: Breast (Mammo, Echo, BMD), Lymphoma (Echo, Thyroid) |
+
+---
+
+## 13. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 14. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| t-MN Alkylator vs Topo II | | |
+| Radiation Solid Tumours | | |
+| Li-Fraumeni / BRCA / Lynch / FAP | | |
+| COG Paediatric Screening | | |
+| Adult Survivor Screening | | |
+| Genetic Syndromes | | |
+| ICI-Related Malignancy | | |
+| Radiation Latency/Sites | | |
+
+---
+
+## 15. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Cardiotoxicity]], [[Radiation Cardiotoxicity]], [[Li-Fraumeni Syndrome]], [[BRCA1/2]], [[Lynch Syndrome]], [[FAP]], [[COG Guidelines]], [[Second Cancers & Screening]], [[Psychosocial QOL]], [[Fertility Preservation]], [[Long-term Follow-up Models]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 16. MCQs (10)
+
+
+**1.** Regarding Second Malignancies in Cancer Survivors (t-AML/t-MDS (Alkylator)), which statement is correct?
+   A. **Latency 5-10yr**, **Complex Karyotype (-5/-7)**, **TP53 Mut**, **Poor Prognosis**
+   B. **Latency - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Latency 5-10yr**, **Complex Karyotype (-5/-7)**, **TP53 Mut**, **Poor Prognosis**
+
+
+**2.** Regarding Second Malignancies in Cancer Survivors (t-AML (Topo II Inhibitor)), which statement is correct?
+   A. **Latency 2-3yr**, **Balanced Translocations (11q23, 15
+   B. **Latency - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Latency 2-3yr**, **Balanced Translocations (11q23, 15;17, 8;21)**, **Better Prognosis**
+
+
+**3.** Regarding Second Malignancies in Cancer Survivors (Radiation Solid Tumours), which statement is correct?
+   A. **Latency 10-30yr**, **In/Adjacent to Field**, **Breast, Lung, Thyroid, Sarcoma, Meningioma**
+   B. **Latency - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Latency 10-30yr**, **In/Adjacent to Field**, **Breast, Lung, Thyroid, Sarcoma, Meningioma**
+
+
+**4.** Regarding Second Malignancies in Cancer Survivors (Li-Fraumeni (TP53)), which statement is correct?
+   A. **Sarcoma, Breast, Brain, Adrenal, Leukaemia**, **WBMRI Annually**
+   B. **Sarcoma, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Sarcoma, Breast, Brain, Adrenal, Leukaemia**, **WBMRI Annually**
+
+
+**5.** Regarding Second Malignancies in Cancer Survivors (BRCA1/2), which statement is correct?
+   A. **Breast, Ovarian, Prostate, Pancreas**, **MRI q6-12mo, RRSO 35-45**
+   B. **Breast, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Breast, Ovarian, Prostate, Pancreas**, **MRI q6-12mo, RRSO 35-45**
+
+
+**6.** Regarding Second Malignancies in Cancer Survivors (Lynch), which statement is correct?
+   A. **CRC, Endometrial, Ovarian, Gastric**, **Colonoscopy q1-2yr**
+   B. **CRC, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **CRC, Endometrial, Ovarian, Gastric**, **Colonoscopy q1-2yr**
+
+
+**7.** Regarding Second Malignancies in Cancer Survivors (Paediatric Screening (COG)), which statement is correct?
+   A. **Anthra≥300 → Echo q1-2yr**, **Chest RT → Breast MRI, Echo, Thyroid**
+   B. **Anthra≥300 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Anthra≥300 → Echo q1-2yr**, **Chest RT → Breast MRI, Echo, Thyroid**
+
+
+**8.** Regarding Second Malignancies in Cancer Survivors (Adult Survivors), which statement is correct?
+   A. **Risk-Adapted (Breast: Mammo, Echo, BMD
+   B. **Risk-Adapted - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Risk-Adapted (Breast: Mammo, Echo, BMD; Lymphoma: Echo, Thyroid, Breast)**
+
+
+**9.** Regarding Second Malignancies in Cancer Survivors (ICI Malignancy), which statement is correct?
+   A. **Immune Surveillance Loss**, **New Primaries Reported**
+   B. **Immune - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Immune Surveillance Loss**, **New Primaries Reported**
+
+
+**10.** Regarding Second Malignancies in Cancer Survivors (FCPS/MRCP High Yield - Second Malignanci), which statement is correct?
+   - A. FCPS/MRCP High Yield - Second Malignancies: Therapy-Related AML/MDS (t-AML/t-MDS), Solid Tumours
+   - B. Empirical approach without specific indication
+   - C. Used only in research protocols
+   - D. Not relevant in current practice
+   - **Answer: A** — FCPS/MRCP High Yield - Second Malignancies: Therapy-Related AML/MDS (t-AML/t-MDS), Solid Tumours
+
+## 17. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **Latency 5-10yr**, **Complex Karyotype (-5/-7)**, **TP53 Mut**, **Poor Prognosis**
+   - B. **Latency (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **Latency 5-10yr**, **Complex Karyotype (-5/-7)**, **TP53 Mut**, **Poor Prognosis**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **Latency 2-3yr**, **Balanced Translocations (11q23, 15
+   - B. **Latency (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **Latency 2-3yr**, **Balanced Translocations (11q23, 15;17, 8;21)**, **Better Prognosis**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Latency 10-30yr**, **In/Adjacent to Field**, **Breast, Lung, Thyroid, Sarcoma, Meningioma**
+   - B. **Latency (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Latency 10-30yr**, **In/Adjacent to Field**, **Breast, Lung, Thyroid, Sarcoma, Meningioma**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Sarcoma, Breast, Brain, Adrenal, Leukaemia**, **WBMRI Annually**
+   - B. **Sarcoma, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Sarcoma, Breast, Brain, Adrenal, Leukaemia**, **WBMRI Annually**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Breast, Ovarian, Prostate, Pancreas**, **MRI q6-12mo, RRSO 35-45**
+   - B. **Breast, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Breast, Ovarian, Prostate, Pancreas**, **MRI q6-12mo, RRSO 35-45**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **CRC, Endometrial, Ovarian, Gastric**, **Colonoscopy q1-2yr**
+   - B. **CRC, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **CRC, Endometrial, Ovarian, Gastric**, **Colonoscopy q1-2yr**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **Anthra≥300 → Echo q1-2yr**, **Chest RT → Breast MRI, Echo, Thyroid**
+   - B. **Anthra≥300 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **Anthra≥300 → Echo q1-2yr**, **Chest RT → Breast MRI, Echo, Thyroid**
+
+
+**8.** The role of surgery in this case is:
+   - A. **Risk-Adapted (Breast: Mammo, Echo, BMD
+   - B. **Risk-Adapted (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **Risk-Adapted (Breast: Mammo, Echo, BMD; Lymphoma: Echo, Thyroid, Breast)**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **Immune Surveillance Loss**, **New Primaries Reported**
+   - B. **Immune (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **Immune Surveillance Loss**, **New Primaries Reported**
+
+
+**10.** A clinician encounters this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - Second Malignancies: Therapy-Related AML/MDS (t-AML/t-MDS), Solid Tumours
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention required
+   - **Answer: A** — FCPS/MRCP High Yield - Second Malignancies: Therapy-Related AML/MDS (t-AML/t-MDS), Solid Tumours
+
+## 18. Flashcards
+
+**Q1:** t-AML/t-MDS (Alkylator)?
+**A1:** Latency 5-10yr, Complex Karyotype (-5/-7), TP53 Mut, Poor Prognosis
+
+**Q2:** t-AML (Topo II Inhibitor)?
+**A2:** Latency 2-3yr, Balanced Translocations (11q23, 15;17, 8;21), Better Prognosis
+
+**Q3:** Radiation Solid Tumours?
+**A3:** Latency 10-30yr, In/Adjacent to Field, Breast, Lung, Thyroid, Sarcoma, Meningioma
+
+**Q4:** Li-Fraumeni (TP53)?
+**A4:** Sarcoma, Breast, Brain, Adrenal, Leukaemia, WBMRI Annually
+
+**Q5:** BRCA1/2?
+**A5:** Breast, Ovarian, Prostate, Pancreas, MRI q6-12mo, RRSO 35-45
+
+**Q6:** Lynch?
+**A6:** CRC, Endometrial, Ovarian, Gastric, Colonoscopy q1-2yr
+
+**Q7:** Paediatric Screening (COG)?
+**A7:** Anthra≥300 → Echo q1-2yr, Chest RT → Breast MRI, Echo, Thyroid
+
+**Q8:** Adult Survivors?
+**A8:** Risk-Adapted (Breast: Mammo, Echo, BMD; Lymphoma: Echo, Thyroid, Breast)
+
+## 19. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | t-AML/t-MDS (Alkylator) | Latency 5-10yr, Complex Karyotype (-5/-7), TP53 Mut, Poor Prognosis |
+| 2 | A | t-AML (Topo II Inhibitor) | Latency 2-3yr, Balanced Translocations (11q23, 15;17, 8;21), Better Prognosis |
+| 3 | A | Radiation Solid Tumours | Latency 10-30yr, In/Adjacent to Field, Breast, Lung, Thyroid, Sarcoma, Meningioma |
+| 4 | A | Li-Fraumeni (TP53) | Sarcoma, Breast, Brain, Adrenal, Leukaemia, WBMRI Annually |
+| 5 | A | BRCA1/2 | Breast, Ovarian, Prostate, Pancreas, MRI q6-12mo, RRSO 35-45 |
+| 6 | A | Lynch | CRC, Endometrial, Ovarian, Gastric, Colonoscopy q1-2yr |
+| 7 | A | Paediatric Screening (COG) | Anthra≥300 → Echo q1-2yr, Chest RT → Breast MRI, Echo, Thyroid |
+| 8 | A | Adult Survivors | Risk-Adapted (Breast: Mammo, Echo, BMD; Lymphoma: Echo, Thyroid, Breast) |
+| 9 | A | ICI Malignancy | Immune Surveillance Loss, New Primaries Reported |
+| 10 | A | FCPS/MRCP High Yield - Second Malignancies | FCPS/MRCP High Yield - Second Malignancies: Therapy-Related AML/MDS (t-AML/t-MDS), Solid Tumours |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | t-AML/t-MDS (Alkylator) | Latency 5-10yr, Complex Karyotype (-5/-7), TP53 Mut, Poor Prognosis |
+| 2 | A | t-AML (Topo II Inhibitor) | Latency 2-3yr, Balanced Translocations (11q23, 15;17, 8;21), Better Prognosis |
+| 3 | A | Radiation Solid Tumours | Latency 10-30yr, In/Adjacent to Field, Breast, Lung, Thyroid, Sarcoma, Meningioma |
+| 4 | A | Li-Fraumeni (TP53) | Sarcoma, Breast, Brain, Adrenal, Leukaemia, WBMRI Annually |
+| 5 | A | BRCA1/2 | Breast, Ovarian, Prostate, Pancreas, MRI q6-12mo, RRSO 35-45 |
+| 6 | A | Lynch | CRC, Endometrial, Ovarian, Gastric, Colonoscopy q1-2yr |
+| 7 | A | Paediatric Screening (COG) | Anthra≥300 → Echo q1-2yr, Chest RT → Breast MRI, Echo, Thyroid |
+| 8 | A | Adult Survivors | Risk-Adapted (Breast: Mammo, Echo, BMD; Lymphoma: Echo, Thyroid, Breast) |
+| 9 | A | ICI Malignancy | Immune Surveillance Loss, New Primaries Reported |
+
+| 11 | A | FCPS/MRCP High Yield - Second Malignancies | FCPS/MRCP High Yield - Second Malignancies: Therapy-Related AML/MDS (t-AML/t-MDS), Solid Tumours |
+## 20. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Survivorship & Late Effects|Survivorship & Late Effects]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

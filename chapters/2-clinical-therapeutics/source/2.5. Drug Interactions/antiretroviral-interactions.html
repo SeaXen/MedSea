@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antiretroviral Interactions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Antiretroviral Interactions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify ARV drug classes by interaction potential (PIs, NNRTIs, INSTIs, Boosted regimens)</li><li>[ ] Identify contraindicated combinations (CYP3A4/UGT/P-gp)</li><li>[ ] Apply boosting principles (Ritonavir/Cobicistat) and interaction management</li><li>[ ] Recognise key interactions: TB drugs, anticonvulsants, antifungals, statins, contraceptives, PPIs</li><li>[ ] Execute management: dose adjust, substitute, monitor</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 ARV Classes & Interaction Profiles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Class</th><th>Drugs</th><th>**Key Enzymes/Transporters**</th><th>**Interaction Risk**</th></tr><tr><td>-------</td><td>-------</td><td>------------------------------</td><td>----------------------</td></tr><tr><td>**Protease Inhibitors (PIs)**</td><td>**Atazanavir (ATV), Darunavir (DRV), Lopinavir (LPV), Ritonavir (RTV)**</td><td>**CYP3A4 SUBSTRATE + STRONG INHIBITOR** (esp. RTV); P-gp substrate + inhibitor</td><td>**HIGHEST** — Inhibit CYP3A4, CYP2D6, P-gp, UGT1A1; ↑ levels of co-meds</td></tr><tr><td>**Pharmacokinetic Boosters**</td><td>**Ritonavir (RTV) 100mg, Cobicistat (COBI) 150mg**</td><td>**RTV: CYP3A4 STRONG INHIBITOR + INDUCER (CYP1A2, 2B6, 2C9, 2C19, UGT)**<br>**COBI: CYP3A4 STRONG INHIBITOR (no induction)**</td><td>**CRITICAL** — Boost PI/INSTI levels; inhibit CYP3A4/P-gp of co-meds</td></tr><tr><td>**NNRTIs**</td><td>**Efavirenz (EFV), Nevirapine (NVP), Rilpivirine (RPV), Doravirine (DOR), Etravirine (ETR)**</td><td>**EFV/NVP: CYP3A4 INDUCER + INHIBITOR (mixed)**<br>**RPV/DOR: CYP3A4 SUBSTRATE (no induction)**<br>**ETR: CYP3A4 INHIBITOR, CYP2B6/2C9/2C19 INDUCER**</td><td>**HIGH** — EFV/NVP induce CYP3A4 (↓ co-med levels); RPV/DOR need acid</td></tr><tr><td>**INSTIs**</td><td>**Raltegravir (RAL), Dolutegravir (DTG), Bictegravir (BIC), Cabotegravir (CAB)**</td><td>**RAL: UGT1A1 substrate (no CYP)**<br>**DTG/BIC: CYP3A4 + UGT1A1 substrate**<br>**CAB: UGT1A1 substrate**</td><td>**LOW–MODERATE** — RAL fewest CYP interactions; DTG/BIC need CYP3A4/UGT1A1 consideration</td></tr><tr><td>**NRTIs**</td><td>**Tenofovir (TDF/TAF), Abacavir (ABC), Lamivudine (3TC), Emtricitabine (FTC), Zidovudine (AZT)**</td><td>**Renal transporters (TDF/TAF: OAT1/3, P-gp; ABC: UGT); No CYP**</td><td>**LOW** — Mainly renal (TDF); ABC hypersensitivity (HLA-B*57:01)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ Critical Interaction Categories</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. **TB Drugs (Rifamycins) — CONTRAINDICATED with most ARVs**</div>
+<table class="ctable"><tr><th>Rifamycin</th><th>Effect on ARVs</th><th>Management</th></tr><tr><td>-----------</td><td>----------------</td><td>------------</td></tr><tr><td>**Rifampicin**</td><td>**↓ PI/INSTI/NNRTI levels 80–95% (CYP3A4/P-gp induction)**</td><td>**CONTRAINDICATED with most PIs, INSTIs (DTG/BIC), RPV/DOR**</td></tr><tr><td></td><td>**EFV: ↓ levels ~25% → ↑ EFV dose to 800mg (if weight>50kg)**</td><td>EFV: ↑ to 800mg (with TDM)</td></tr><tr><td></td><td>**DTG: ↓ levels ~50% → ↑ DTG to 50mg BD**</td><td>DTG: 50mg BD with rifampicin</td></tr><tr><td></td><td>**RAL: ↓ levels ~40% → ↑ RAL to 800mg BD**</td><td>RAL: 800mg BD</td></tr><tr><td>**Rifabutin**</td><td>**Weaker inducer (~50% effect)**</td><td>**Preferred over rifampicin**; ↓ PI dose (e.g., ATV/r 300/100mg daily); monitor</td></tr><tr><td></td><td>**DTG: standard dose**</td><td>DTG 50mg OD</td></tr></table>
+<div class="callout"><b>Rifampicin + ARV = MAJOR interaction</b> — <b>Avoid if possible; use rifabutin or adjust ARV per guidelines</b></div>
+<div class="sub-h">2. **Anticonvulsants (Enzyme Inducers) — MAJOR**</div>
+<table class="ctable"><tr><th>Anticonvulsant</th><th>Effect on ARVs</th><th>Management</th></tr><tr><td>----------------</td><td>----------------</td><td>------------</td></tr><tr><td>**Carbamazepine, Phenytoin, Phenobarbital**</td><td>**↓ PI/INSTI/NNRTI levels (CYP3A4/UGT induction)**</td><td>**AVOID if possible**; use non-inducing AEDs (Levetiracetam, Lamotrigine, Lacosamide, Valproate)</td></tr><tr><td></td><td>**EFV: ↓ levels ~25%**</td><td>TDM if EFV used</td></tr><tr><td></td><td>**DTG: ↓ levels ~50% → DTG 50mg BD**</td><td>DTG 50mg BD</td></tr><tr><td></td><td>**RAL: ↓ levels ~40% → RAL 800mg BD**</td><td>RAL 800mg BD</td></tr><tr><td></td><td>**RPV/DOR: CONTRAINDICATED**</td><td>**AVOID**</td></tr><tr><td>**Valproate, Levetiracetam, Lamotrigine, Lacosamide, Gabapentin, Pregabalin**</td><td>**No significant CYP induction**</td><td>**Preferred AEDs for HIV patients**</td></tr></table>
+<div class="sub-h">3. **Antifungals (Azoles) — MAJOR (CYP3A4 Inhibition)**</div>
+<table class="ctable"><tr><th>Azole</th><th>Effect on ARVs</th><th>Management</th></tr><tr><td>-------</td><td>----------------</td><td>------------</td></tr><tr><td>**Ketoconazole, Itraconazole, Posaconazole, Voriconazole**</td><td>**↑ PI/INSTI levels (CYP3A4 inhibition)**</td><td>**Monitor for toxicity**; dose adjust PI; avoid with some NNRTIs</td></tr><tr><td></td><td>**DTG/BIC: ↑ levels ~20–30%**</td><td>Usually no dose change; monitor</td></tr><tr><td></td><td>**RAL: No significant interaction**</td><td>Safe</td></tr><tr><td>**Fluconazole**</td><td>**Moderate CYP3A4 inhibition; ↑ PI levels**</td><td>Monitor; ↓ PI dose if needed</td></tr><tr><td></td><td>**DTG/BIC: Minimal**</td><td>Usually no dose change</td></tr></table>
+<div class="sub-h">4. **Statins — HIGH RISK (Myopathy/Rhabdo)**</div>
+<table class="ctable"><tr><th>Statin</th><th>**Preferred with ARVs**</th><th>**Avoid / Dose Limit**</th></tr><tr><td>--------</td><td>------------------------</td><td>------------------------</td></tr><tr><td>**Atorvastatin**</td><td>**Start LOW (10mg), max 20–40mg**</td><td>Avoid >40mg with boosted PI</td></tr><tr><td>**Rosuvastatin**</td><td>**Start LOW (5–10mg), max 20mg**</td><td>Avoid >20mg with boosted PI</td></tr><tr><td>**Pravastatin**</td><td>**Preferred (minimal CYP3A4)**</td><td>**SAFEST** with boosted PI</td></tr><tr><td>**Simvastatin / Lovastatin**</td><td>—</td><td>**CONTRAINDICATED with boosted PI/Cobi** (↑ AUC 10–20x)</td></tr><tr><td>**Fluvastatin / Pitavastatin**</td><td>**Low interaction**</td><td>Generally safe</td></tr></table>
+<div class="sub-h">5. **Hormonal Contraception — COMPLEX**</div>
+<table class="ctable"><tr><th>Contraceptive</th><th>Interaction</th><th>Management</th></tr><tr><td>---------------</td><td>-------------</td><td>------------</td></tr><tr><td>**Combined OCP (Estrogen + Progestin)**</td><td>**EFV/NVP/ETR/Rifampicin: ↓ Ethinylestradiol (↑ failure risk)**</td><td>**Add barrier method**; consider alternative ARV</td></tr><tr><td></td><td>**Boosted PI: ↑ Progestin (↑ side effects); ↓ Ethinylestradiol**</td><td>**Add barrier method**</td></tr><tr><td></td><td>**DTG/RAL/BIC: No significant interaction**</td><td>OK</td></tr><tr><td>**Progestin-only Pill / Implant / Injection**</td><td>**EFV/NVP: ↓ Progestin (↑ failure)**</td><td>**Add barrier method**; avoid implant with EFV</td></tr><tr><td></td><td>**Boosted PI: ↑ Progestin**</td><td>Usually OK</td></tr><tr><td>**IUD (Cu/IUS)**</td><td>**No interaction**</td><td>**PREFERRED** (no enzyme interaction)</td></tr></table>
+<div class="sub-h">6. **PPIs / Acid-Reducing Agents — RPV/DOR/ATV/LEDIPASVIR**</div>
+<table class="ctable"><tr><th>Acid Reducer</th><th>Affected ARV</th><th>Management</th></tr><tr><td>--------------</td><td>--------------</td><td>------------</td></tr><tr><td>**PPI**</td><td>**Rilpivirine (RPV) — CONTRAINDICATED** (↓ absorption)</td><td>Use H2RA (famotidine) 12h before or 4h after RPV</td></tr><tr><td></td><td>**Atazanavir (ATV) — CONTRAINDICATED** (↓ absorption)</td><td>Avoid PPI; use H2RA 10h before/2h after</td></tr><tr><td></td><td>**Ledipasvir (in Harvoni) — ↓ absorption**</td><td>Separate 4h</td></tr><tr><td>**H2RA**</td><td>**RPV — Take 12h before or 4h after**</td><td>OK with timing</td></tr><tr><td></td><td>**ATV — Take 10h before or 2h after**</td><td>OK with timing</td></tr><tr><td>**Antacids**</td><td>**General separation 2h**</td><td>Standard</td></tr></table>
+<div class="sub-h">7. **Other Key Interactions**</div>
+<table class="ctable"><tr><th>Drug</th><th>ARV Interaction</th><th>Management</th></tr><tr><td>------</td><td>-----------------</td><td>------------</td></tr><tr><td>**Colchicine**</td><td>**Boosted PI: ↑ Colchicine → Toxicity (myopathy, neuropathy)**</td><td>**CONTRAINDICATED** with boosted PI; avoid</td></tr><tr><td>**Sildenafil/Tadalafil (PAH)**</td><td>**Boosted PI: ↑ Levels → Hypotension, Priapism**</td><td>**CONTRAINDICATED** for PAH; reduce dose for ED (Sildenafil max 25mg/48h)</td></tr><tr><td>**Midazolam/Triazolam (Oral)**</td><td>**Boosted PI: ↑ Levels → Excessive sedation**</td><td>**CONTRAINDICATED** (IV midazolam OK with monitoring)</td></tr><tr><td>**Rifampicin**</td><td>See #1</td><td>See #1</td></tr><tr><td>**St John's Wort**</td><td>**Induces CYP3A4/P-gp → ↓ ARV levels**</td><td>**CONTRAINDICATED**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Boosted PI (RTV/COBI)**</td><td>**Strong CYP3A4 inhibitor** — ↑ levels of co-meds (statins, azoles, CCBs, oral midazolam, colchicine, sildenafil PAH)</td></tr><tr><td>**EFV/NVP/Rifampicin**</td><td>**CYP3A4 inducers** — ↓ levels of PIs, INSTIs, NNRTIs, OCP</td></tr><tr><td>**Rifampicin + ARV**</td><td>**Contraindicated with most** — use rifabutin or adjust (DTG 50mg BD, RAL 800mg BD, EFV 800mg)</td></tr><tr><td>**Enzyme-inducing AEDs**</td><td>**Carbamazepine/Phenytoin/Phenobarbital** — avoid; use Levetiracetam/Lamotrigine</td></tr><tr><td>**Statins + Boosted PI**</td><td>**Pravastatin safest**; Atorva/Rosuva low dose; Simva/Lova CONTRAINDICATED</td></tr><tr><td>**OCP + EFV/Boosted PI**</td><td>**Add barrier method** — ↓ ethinylestradiol</td></tr><tr><td>**RPV/DOR + PPI**</td><td>**CONTRAINDICATED** — use H2RA with timing</td></tr><tr><td>**ATV + PPI**</td><td>**CONTRAINDICATED**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Ritonavir/Cobicistat boosting — effect on CYP3A4?</td><td>**Strong CYP3A4 inhibition** → ↑ levels of substrate drugs (statins, CCBs, azoles, midazolam, colchicine, OCP, DOACs)</td></tr><tr><td>2. Rifampicin + Dolutegravir — management?</td><td>**Rifampicin induces CYP3A4/UGT1A1 → ↓ DTG ~50%** → **DTG 50mg BD** (instead of 50mg OD)</td></tr><tr><td>3. Enzyme-inducing anticonvulsant + DTG — dose?</td><td>**Carbamazepine/Phenytoin/Phenobarbital → DTG 50mg BD** (instead of OD)</td></tr><tr><td>4. Simvastatin + Darunavir/Ritonavir — safe?</td><td>**NO** — **CONTRAINDICATED** (↑ simvastatin AUC 10–20x → rhabdo); use **Pravastatin**</td></tr><tr><td>5. Rilpivirine + PPI — why contraindicated?</td><td>**RPV requires acidic pH for absorption**; PPI ↓ absorption → virological failure</td></tr><tr><td>6. EFV + Combined OCP — management?</td><td>**EFV induces CYP3A4 → ↓ ethinylestradiol** → **Add barrier method**; consider alternative ARV</td></tr><tr><td>7. Carbamazepine + Atazanavir/Ritonavir — management?</td><td>**Carbamazepine induces CYP3A4 → ↓ ATV/RTV levels** → **AVOID**; switch to non-inducing AED (Levetiracetam)</td></tr><tr><td>8. Colchicine + Lopinavir/Ritonavir — safe?</td><td>**NO** — **CONTRAINDICATED** (↑ colchicine → fatal myopathy/neuropathy)</td></tr><tr><td>9. Hormonal implant + Efavirenz — failure risk?</td><td>**YES** — EFV induces metabolism → ↓ progestin → **Add barrier method**; avoid implant with EFV</td></tr><tr><td>10. St John's Wort + ARVs — effect?</td><td>**Induces CYP3A4/P-gp → ↓ ARV levels** → **CONTRAINDICATED**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Ritonavir vs Cobicistat**</td><td>**RTV: CYP3A4 inhibitor + INDUCER (CYP1A2, 2B6, 2C9, 2C19, UGT)**; **COBI: Pure CYP3A4 inhibitor** (no induction)</td></tr><tr><td>**DTG with Rifampicin vs Carbamazepine**</td><td>Both induce → **DTG 50mg BD** for both</td></tr><tr><td>**RAL vs DTG with Rifampicin**</td><td>**RAL: 800mg BD**; **DTG: 50mg BD**</td></tr><tr><td>**Pravastatin vs Simvastatin**</td><td>**Pravastatin = minimal CYP3A4 (safe)**; **Simvastatin = CYP3A4 substrate (CONTRAINDICATED with boosted PI)**</td></tr><tr><td>**RPV + PPI = CONTRAINDICATED**</td><td>RPV needs acid; **ATV also CONTRAINDICATED with PPI**</td></tr><tr><td>**EFV + OCP**</td><td>EFV ↓ ethinylestradiol → **barrier method**</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"RTV = BOOSTER = CYP3A4 INHIBITOR"</b> = ↑ statins, CCBs, azoles, midazolam, colchicine, OCP, DOACs</li><li><b>"RIFAMPICIN = INDUCER = KILLS ARV LEVELS"</b> = Use rifabutin or adjust (DTG BD, RAL BD, EFV 800mg)</li><li><b>"EIAED = NO WITH ARV"</b> = Carbamazepine, Phenytoin, Phenobarbital → use Levetiracetam, Lamotrigine</li><li><b>"STATINS + BOOSTED PI"</b> = <b>Pravastatin SAFE</b>; Atorva/Rosuva LOW DOSE; Simva/Lova NO</li><li><b>"RPV = ACID LOVER"</b> = NO PPI; H2RA with timing</li><li><b>"EFV + OCP = BARRIER METHOD"</b></li><li><b>"COLCHICINE + BOOSTED PI = NO"</b></li><li><b>"ST JOHN'S WORT = INDUCER = KILLS ARV"</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Antiretroviral Interactions)) Boosted PI (RTV/COBI) CYP3A4 STRONG INHIBITOR ↑ Statins, CCBs, Azoles, Midazolam, Colchicine, OCP, DOACs RTV: also INDUCES CYP1A2/2B6/2C9/2C19/UGT Inducers (↓ ARV Levels) Rifampicin (STRONGEST) DTG 50mg BD, RAL 800mg BD, EFV 800mg Rifabutin preferred (weaker) Carbamazepine/Phenytoin/Phenobarbital AVOID; DTG 50mg BD, RAL 800mg BD efavirenz/nevirapine (moderate) Azoles (Inhibitors) Ketoconazole/Itra/Posa/Vori: ↑ PI/INSTI Fluconazole: moderate Statins Pravastatin: SAFEST Atorva/Rosuva: Low dose, max 20-40mg Simva/Lova: CONTRAINDICATED Contraception EFV/NVP: ↓ Ethinylestradiol → Barrier Boosted PI: ↑ Progestin, ↓ Estrogen → Barrier DTG/RAL/BIC: No interaction IUD: PREFERRED Acid Reducers RPV: CONTRAINDICATED with PPI; H2RA timing ATV: CONTRAINDICATED with PPI; H2RA timing Contraindicated Simva/Lova + Boosted PI Colchicine + Boosted PI Sildenafil PAH + Boosted PI Oral Midazolam/Triazolam + Boosted PI Rifampicin + most ARVs St John's Wort </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>ARV classes & enzymes</td><td>8</td><td></td></tr><tr><td>Rifampicin interactions</td><td>8</td><td></td></tr><tr><td>AED interactions</td><td>8</td><td></td></tr><tr><td>Statin safety</td><td>6</td><td></td></tr><tr><td>Contraception</td><td>6</td><td></td></tr><tr><td>Acid reducers</td><td>6</td><td></td></tr><tr><td>Contraindicated combos</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**56**</td><td></td></tr></table>
+<p><b>Target</b>: ≥45/56 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Rifampicin interactions with ARVs and management."*</div>
+<ul><li><b>Rifampicin = Strong CYP3A4/P-gp/UGT inducer</b> → ↓ PI/INSTI/NNRTI levels 80–95%</li><li><b>Contraindicated with most PIs, INSTIs (DTG/BIC), RPV/DOR</b></li><li><b>Management</b>: <b>Use Rifabutin (weaker inducer)</b> OR adjust ARV:</li><li><b>DTG: 50mg BD</b> (instead of OD)</li><li><b>RAL: 800mg BD</b> (instead of 400mg BD)</li><li><b>EFV: 800mg OD</b> (if &gt;50kg, with TDM)</li><li><b>Avoid St John's Wort</b> (also induces)</li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on Darunavir/Ritonavir needs simvastatin for hyperlipidaemia. Safe?"*</div>
+<ul><li><b>NO</b> — <b>Ritonavir strongly inhibits CYP3A4 → ↑ Simvastatin AUC 10–20x → Rhabdomyolysis risk</b></li><li><b>Contraindicated</b></li><li><b>Use Pravastatin</b> (minimal CYP3A4 metabolism) — <b>SAFEST</b></li><li>Alternative: Atorvastatin 10–20mg max or Rosuvastatin 5–20mg max with monitoring</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"HIV patient on Efavirenz, started on Carbamazepine for seizures. Viral load rising. Why?"*</div>
+<ul><li><b>Carbamazepine induces CYP3A4 → ↑ Efavirenz metabolism → ↓ Efavirenz levels → Virological failure</b></li><li><b>AVOID Carbamazepine</b> with EFV</li><li><b>Switch to Levetiracetam/Lamotrigine/Lacosamide</b> (non-inducing)</li><li>Monitor viral load, EFV level if available</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>RTV/COBI = CYP3A4 inhibitor → ↑ co-med levels</li><li>Rifampicin = inducer → DTG BD, RAL BD, EFV 800mg; use Rifabutin</li><li>EIAEDs (Carba/Phenytoin/Phenobarb) = avoid with ARV; use LEV/LTG/LCM</li><li>Statins + boosted PI: Pravastatin safest; Simva/Lova NO</li><li>OCP + EFV/Boosted PI = barrier method</li><li>RPV/DOR + PPI = CONTRAINDICATED</li><li>ATV + PPI = CONTRAINDICATED</li><li>Colchicine + Boosted PI = NO</li><li>St John's Wort = inducer = NO</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>ARV INTERACTIONS:</b> <b>BOOSTED PI (RTV/COBI)</b> = CYP3A4 INHIBITOR → ↑ Statins, CCBs, Azoles, Midazolam, Colchicine, OCP, DOACs <b>RIFAMPICIN</b> = INDUCER → DTG BD, RAL BD, EFV 800mg; <b>USE RIFABUTIN</b> <b>EIAEDs (Carba/PHT/PB)</b> = INDUCERS → AVOID; Use LEV/LTG/LCM <b>STATINS + BOOSTED PI</b> = PRAVASTATIN SAFE; Simva/Lova NO <b>RPV/ATV + PPI</b> = CONTRAINDICATED <b>EFV + OCP</b> = BARRIER METHOD <b>COLCHICINE + BOOSTED PI</b> = NO <b>ST JOHN'S WORT</b> = INDUCER = NO</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Ritonavir/Cobicistat boosting — primary mechanism:</b></li></ol>
+<p>A. CYP3A4 induction B. <b>CYP3A4 inhibition</b> ✓ C. P-gp induction D. UGT inhibition E. No CYP effect</p>
+<ol><li><b>Rifampicin + Dolutegravir — correct DTG dose:</b></li></ol>
+<p>A. 50mg OD B. <b>50mg BD</b> ✓ C. 50mg TDS D. 100mg OD E. Contraindicated</p>
+<ol><li><b>Simvastatin + Darunavir/Ritonavir — management:</b></li></ol>
+<p>A. Safe at standard dose B. Reduce simvastatin to 10mg C. <b>Contraindicated; use Pravastatin</b> ✓ D. Monitor CK only E. Switch to rosuvastatin 40mg</p>
+<ol><li><b>Rilpivirine + PPI — contraindicated because:</b></li></ol>
+<p>A. ↑ RPV levels B. <b>↓ RPV absorption (requires acidic pH)</b> ✓ C. ↑ PPI levels D. QT prolongation E. Hepatotoxicity</p>
+<ol><li><b>Enzyme-inducing AED + DTG — DTG dose:</b></li></ol>
+<p>A. 50mg OD B. <b>50mg BD</b> ✓ C. 50mg TDS D. 100mg OD E. Contraindicated</p>
+<ol><li><b>EFV + Combined OCP — management:</b></li></ol>
+<p>A. No action needed B. <b>Add barrier method</b> ✓ C. Increase OCP dose D. Stop EFV E. Switch to progestin-only</p>
+<ol><li><b>Pravastatin + Boosted PI — safe because:</b></li></ol>
+<p>A. CYP3A4 inducer B. <b>Minimal CYP3A4 metabolism</b> ✓ C. P-gp inhibitor D. UGT substrate E. No interaction</p>
+<ol><li><b>Carbamazepine + Atazanavir/Ritonavir — management:</b></li></ol>
+<p>A. Increase ATV dose B. <b>AVOID; switch to non-inducing AED</b> ✓ C. Monitor ATV level only D. Reduce RTV dose E. No interaction</p>
+<ol><li><b>Colchicine + Lopinavir/Ritonavir:</b></li></ol>
+<p>A. Safe B. Reduce colchicine dose C. <b>Contraindicated</b> ✓ D. Monitor renal function E. Use alternative PI</p>
+<ol><li><b>St John's Wort + ARVs:</b></li></ol>
+<p>A. Safe B. <b>Induces CYP3A4/P-gp → ↓ ARV levels; Contraindicated</b> ✓ C. Inhibits CYP3A4 D. No interaction E. Only affects NNRTIs</p>
+<ol><li><b>Atazanavir + PPI:</b></li></ol>
+<p>A. Safe B. <b>Contraindicated</b> ✓ C. Dose adjust PPI D. Separate by 2h E. Use H2RA instead</p>
+<ol><li><b>Raltegravir + Rifampicin — RAL dose:</b></li></ol>
+<p>A. 400mg BD B. <b>800mg BD</b> ✓ C. 400mg TDS D. 1200mg BD E. Contraindicated</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>RTV/COBI mechanism</td><td>CYP3A4 inhibition → ↑ co-med levels</td></tr><tr><td>Rifampicin + DTG</td><td>DTG 50mg BD</td></tr><tr><td>Rifampicin + RAL</td><td>RAL 800mg BD</td></tr><tr><td>Rifampicin + EFV</td><td>EFV 800mg (with TDM)</td></tr><tr><td>EIAEDs + ARV</td><td>Avoid; use LEV/LTG/LCM/VPA</td></tr><tr><td>Statins + Boosted PI</td><td>Pravastatin SAFE; Atorva/Rosuva low dose; Simva/Lova NO</td></tr><tr><td>RPV + PPI</td><td>CONTRAINDICATED (needs acid)</td></tr><tr><td>ATV + PPI</td><td>CONTRAINDICATED</td></tr><tr><td>EFV + OCP</td><td>Barrier method</td></tr><tr><td>Colchicine + Boosted PI</td><td>Contraindicated</td></tr><tr><td>St John's Wort</td><td>Inducer → ↓ ARV levels</td></tr><tr><td>ATV + H2RA</td><td>Separate 10h before/2h after</td></tr><tr><td>RPV + H2RA</td><td>12h before or 4h after</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — CYP3A4 inhibition</li><li><b>B</b> — 50mg BD</li><li><b>C</b> — Contraindicated; use Pravastatin</li><li><b>B</b> — ↓ RPV absorption (requires acidic pH)</li><li><b>B</b> — 50mg BD</li><li><b>B</b> — Add barrier method</li><li><b>B</b> — Minimal CYP3A4 metabolism</li><li><b>B</b> — AVOID; switch to non-inducing AED</li><li><b>C</b> — Contraindicated</li><li><b>B</b> — Induces CYP3A4/P-gp → ↓ ARV levels; Contraindicated</li><li><b>B</b> — Contraindicated</li><li><b>B</b> — 800mg BD</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Interactions/Antiretroviral interactions.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antiretroviral Interactions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

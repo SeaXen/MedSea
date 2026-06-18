@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bladder Cancer Urothelial Carcinoma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.19. UROLOGICAL CANCERS</span>
+      <div class="h1">Bladder Cancer Urothelial Carcinoma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Distinguish <b>NMIBC (Ta/Tis/T1)</b> vs <b>MIBC (T2-4)</b> management pathways</li><li>[ ] Apply <b>EAU/EORTC risk tables</b> for NMIBC recurrence/progression</li><li>[ ] Define <b>BCG regimen</b>: Induction (6 weekly) + <b>Maintenance (SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo)</b></li><li>[ ] Recognise <b>BCG-unresponsive</b> definition and treatment options (ICI, Enfortumab, Cystectomy)</li><li>[ ] Sequence <b>MIBC</b>: Neoadjuvant chemo (GC preferred) → Radical Cystectomy + Extended PLND → Adjuvant Nivolumab (CheckMate 274)</li><li>[ ] Apply <b>Galsky/Bellmunt criteria</b> for cisplatin eligibility</li><li>[ ] Sequence <b>Metastatic</b>: 1L GC/DD-MVAC → Maintenance Avelumab; Cisplatin-ineligible: ICI/GemCarbo → 2L Enfortumab vedotin / Erdafitinib (FGFR3)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of urothelium; **Urothelial carcinoma (UC) = 90%**; Variants: Squamous, Glandular, Micropapillary, Nested, Plasmacytoid, Sarcomatoid</td></tr><tr><td>**Incidence**</td><td>UK: ~10,300/year; 4th most common (M), 11th (F); M:F = 3-4:1</td></tr><tr><td>**Prevalence**</td><td>5-year OS: NMIBC ~80-90%, MIBC ~50%, Metastatic ~10%</td></tr><tr><td>**Peak Age**</td><td>70-80 years</td></tr><tr><td>**Sex Ratio**</td><td>Male 3-4:1</td></tr><tr><td>**Risk Factors**</td><td>**Smoking** (↑3-4x, 50% attributable), **Occupational**: Aromatic amines (dyes, rubber, leather), **Aristolochic acid** (Chinese herbs), **Chronic inflammation**: Schistosoma haematobium (squamous), Indwelling catheters, Stones; **Prior Cyclophosphamide** (acrolein), **Pelvic RT**; **Lynch Syndrome** (MSH2/MSH6)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Risk Factors] --&gt; B[Urothelial Injury] B --&gt; C[Mutational Pathways] C --&gt; D1[Papillary Pathway (NMIBC)] D1 --&gt; E1[FGFR3 mut (70%), PIK3CA, HRAS, KRAS] E1 --&gt; F1[Low-grade, non-invasive (Ta), Recurrence &gt; Progression] C --&gt; D2[Invasive Pathway (MIBC)] D2 --&gt; E2[TP53 mut (70%), RB1, CDKN2A, ERBB2, ERCC2] E2 --&gt; F2[High-grade, invasive (T1-T4), Progression &gt; Recurrence] </code>``</p>
+<div class="sub-h">Molecular Subtypes (TCGA / Lund Taxonomy)</div>
+<table class="ctable"><tr><th>Subtype</th><th>Features</th><th>Clinical Behaviour</th></tr><tr><td>---------</td><td>----------</td><td>-------------------</td></tr><tr><td>**Luminal Papillary**</td><td>FGFR3 mut, RTK/RAS, Low immune</td><td>Better, NMIBC-like</td></tr><tr><td>**Luminal Infiltrated**</td><td>Immune-infiltrated, PD-L1↑</td><td>ICI responsive</td></tr><tr><td>**Luminal**</td><td>Differentiated, KRT20+, GATA3+</td><td>Intermediate</td></tr><tr><td>**Basal/Squamous**</td><td>TP53/RB1 loss, EMT, Squamous diff</td><td>Aggressive, Cisplatin-sensitive</td></tr><tr><td>**Neuronal**</td><td>NE markers, Poor prognosis</td><td>Aggressive</td></tr><tr><td>**Mesenchymal**</td><td>Stromal, Immune-cold</td><td>Poor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Painless Haematuria**</td><td>**Most common (80-90%)**; Macroscopic or Microscopic; **Never ignore** — 2-week rule</td></tr><tr><td>**Irritative Voiding**</td><td>Dysuria, frequency, urgency (CIS, trigone tumours)</td></tr><tr><td>**Obstructive Symptoms**</td><td>Advanced: Flank pain (ureteric obstruction), renal failure</td></tr><tr><td>**Metastatic**</td><td>Bone pain, lymphadenopathy, weight loss, cough (lung mets)</td></tr><tr><td>**Palpable Mass**</td><td>Advanced MIBC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**TNM 8th Edition**</td><td>**Ta**: Non-invasive papillary; **Tis**: CIS (flat high-grade); **T1**: Lamina propria; **T2**: Muscularis propria (T2a inner half, T2b outer half); **T3**: Perivesical fat (T3a micro, T3b macro); **T4**: Adjacent organs (prostate, uterus, vagina, pelvic wall)</td></tr><tr><td>**N Stage**</td><td>N1: Single regional node; N2: Multiple regional; N3: Common iliac nodes</td></tr><tr><td>**M Stage**</td><td>M1a: Non-regional nodes; M1b: Distant mets</td></tr><tr><td>**Grade (WHO 2016/2022)**</td><td>**Low-grade** (PUNLMP → LGUC); **High-grade** (HGUC) — **Replaces 1973 Grade 1/2/3**</td></tr><tr><td>**Risk Stratification (EAU/EORTC)**</td><td>**Low**: Single, primary, Ta, LG, <3cm, no CIS<br/>**Intermediate**: Not low, not high (multiple, recurrent, >3cm, Ta LG, T1 LG)<br/>**High**: **Any T1 HG, Any CIS, Any Ta HG, Multiple/large/recurrent HG**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Findings</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td></tr><tr><td>**Cystoscopy**</td><td>**Gold standard** — Visualisation, TURBT</td><td>White light + **Narrow Band Imaging (NBI) / Blue Light (Cysview)** for CIS detection</td></tr><tr><td>**TURBT**</td><td>**Diagnosis + Staging + Treatment**</td><td>**Must include detrusor muscle** (except Ta LG); Re-TURBT if T1 or incomplete</td></tr><tr><td>**Urine Cytology**</td><td>Adjunct for CIS/High-grade</td><td>Sensitivity: CIS 80%, HG 50%, LG <10%</td></tr><tr><td>**Urine Biomarkers**</td><td>NMP22, UroVysion FISH, Cxbladder</td><td>Not standard; Adjunct for surveillance</td></tr><tr><td>**CT Urogram / MRI**</td><td>Staging (MIBC/Metastatic), Upper tract</td><td>**CTU**: Excretory phase for urothelial enhancement; **MRI**: Local staging if CT equivocal</td></tr><tr><td>**Chest CT**</td><td>Pulmonary mets</td><td>Standard for MIBC/Metastatic</td></tr><tr><td>**Bone Scan / PET-CT**</td><td>Symptomatic bone; PET for equivocal</td><td>Not routine for NMIBC</td></tr><tr><td>**Biomarkers (Metastatic)**</td><td>**FGFR3 mut/fusion**, **PD-L1**, **TMB**, **MSI**, **HER2**</td><td>Guide targeted/ICI therapy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**UTI**</td><td>Dysuria, frequency, pyuria, culture +ve; Haematuria resolves with antibiotics</td></tr><tr><td>**Bladder Stone**</td><td>Irritative symptoms, haematuria; CT: Calculus</td></tr><tr><td>**Benign Prostatic Hyperplasia**</td><td>Obstructive symptoms, microscopic haematuria; No mass on cystoscopy</td></tr><tr><td>**Prostate Cancer**</td><td>Elevated PSA, prostate nodules on DRE; Cystoscopy may show prostatic urethral invasion</td></tr><tr><td>**Upper Tract Urothelial Carcinoma (UTUC)**</td><td>Flank pain, haematuria; CTU shows ureteric/renal pelvis mass; **Same biology as bladder UC**</td></tr><tr><td>**Schistosomiasis**</td><td>Endemic areas; Squamous differentiation; Calcified bladder wall</td></tr><tr><td>**Radiation Cystitis**</td><td>Prior pelvic RT; Telangiectasia on cystoscopy; No mass</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">NMIBC (Ta/Tis/T1)</div>
+<p>``<code>mermaid flowchart TD A[TURBT + Re-TURBT if T1/Incomplete] --&gt; B{Risk Group (EAU/EORTC)} B --&gt;|Low Risk| C[<b>Single Post-op Chemo Instillation</b>&lt;br/&gt;(Mitomycin C / Epirubicin / Gemcitabine)&lt;br/&gt;within 24h → Surveillance: Cystoscopy 3mo, then q6-12mo] B --&gt;|Intermediate Risk| D[<b>Induction Chemo Instillation</b>&lt;br/&gt;Weekly ×6 (MMC/Epirubicin/Gem) →&lt;br/&gt;Maintenance Chemo (optional) → Surveillance q3mo×2yr] B --&gt;|High Risk| E[<b>BCG Induction</b>&lt;br/&gt;<b>6 weekly instillations</b> (81mg Tokyo/Connaught strain)&lt;br/&gt;→ <b>BCG Maintenance (SWOG 8507)</b>&lt;br/&gt;<b>3 weekly at 3,6,12,18,24,30,36mo</b>&lt;br/&gt;Total 27 instillations] E --&gt; F{Response} F --&gt;|Complete Response| G[Surveillance: Cystoscopy + Cytology q3mo×2yr, q6mo×3yr, then annually] F --&gt;|BCG-Unresponsive| H[<b>Radical Cystectomy</b> (Gold Standard)&lt;br/&gt;OR <b>ICI: Pembrolizumab</b> (KEYNOTE-057) / <b>Nivolumab</b> (CheckMate 274)&lt;br/&gt;OR <b>Enfortumab Vedotin</b> (EV-103)&lt;br/&gt;OR <b>Clinical Trial</b>] </code>``</p>
+<p><b>BCG-Unresponsive Definition (FDA/EAU):</b></p>
+<ul><li><b>CIS</b>: Persistent/recurrent CIS at 6mo (after adequate BCG: ≥5 induction + ≥2 maintenance OR ≥2 induction + ≥1 maintenance)</li><li><b>Ta/T1 HG</b>: Recurrence at 6mo (after adequate BCG)</li><li><b>T1 HG</b>: Any recurrence at 3mo</li></ul>
+<div class="sub-h">MIBC (T2-4a N0 M0)</div>
+<p>``<code>mermaid flowchart TD A[Clinical T2-4a N0 M0] --&gt; B[<b>Neoadjuvant Cisplatin Chemo</b>] B --&gt; B1[<b>Gemcitabine + Cisplatin (GC)</b>&lt;br/&gt;Gem 1000 d1,8 + Cis 70 d1 q3w ×3-4 cycles&lt;br/&gt;<b>Preferred</b> (less toxicity, equivalent)] B --&gt; B2[<b>DD-MVAC</b>&lt;br/&gt;Dose-dense MVAC + G-CSF q2w ×4 cycles&lt;br/&gt;Higher pCR, more toxicity] B1 --&gt; C[<b>Restaging CT</b>] B2 --&gt; C C --&gt; D[<b>Radical Cystectomy + Extended PLND</b>&lt;br/&gt;<b>Template</b>: Obturator, Internal/External Iliac, Common Iliac, Presacral&lt;br/&gt;<b>Diversion</b>: Ileal Conduit / Continent (Neobladder / Indiana Pouch)] D --&gt; E{Pathology} E --&gt;|ypT0N0 (pCR)| F[Surveillance] E --&gt;|ypT1-4 or ypN+| G[<b>Adjuvant Nivolumab</b> (CheckMate 274)&lt;br/&gt;240mg q2w ×1 year&lt;br/&gt;Regardless of PD-L1] G --&gt; F F --&gt; H[Surveillance: CT q6mo×2yr, then annually; Urine cytology not needed post-cystectomy] </code>``</p>
+<div class="sub-h">Metastatic / Unresectable</div>
+<p>``<code>mermaid flowchart TD A[Metastatic UC] --&gt; B{Cisplatin Eligible?&lt;br/&gt;(Galsky/Bellmunt Criteria)} B --&gt;|Yes| C[<b>1L: GC or DD-MVAC</b>&lt;br/&gt;GC: Gem 1000 d1,8 + Cis 70 d1 q3w ×4-6 cycles&lt;br/&gt;DD-MVAC: q2w ×4 cycles + G-CSF] C --&gt; D[<b>Maintenance Avelumab</b> (JAVELIN Bladder 100)&lt;br/&gt;<b>If no progression after 4-6 cycles 1L chemo</b>&lt;br/&gt;Avelumab 10mg/kg q2w until progression&lt;br/&gt;<b>OS benefit HR 0.69</b>] B --&gt;|No| E[<b>1L Options</b>] E --&gt; E1[<b>Pembrolizumab</b> (KEYNOTE-052) / <b>Atezolizumab</b> (IMvigor210)&lt;br/&gt;If PD-L1 CPS≥10 or IC2/3] E --&gt; E2[<b>Gemcitabine + Carboplatin</b>&lt;br/&gt;Gem 1000 d1,8 + Carbo AUC2 d1 q3w&lt;br/&gt;If PD-L1 low/unfit for ICI] D --&gt; F[2L+] E1 --&gt; F E2 --&gt; F F --&gt; F1[<b>Enfortumab Vedotin (EV-301)</b>&lt;br/&gt;<b>Anti-Nectin-4 ADC</b>&lt;br/&gt;1.25mg/kg d1,8,15 q4w&lt;br/&gt;<b>Post-PD-1 + Platinum</b> → <b>OS HR 0.70</b>] F --&gt; F2[<b>Erdafitinib</b> (BLC2001)&lt;br/&gt;<b>FGFR3 mut/fusion</b>&lt;br/&gt;8mg/d (↑ to 9mg if phosphate &lt;5.5)&lt;br/&gt;<b>Post-Platinum</b>] F --&gt; F3[<b>Sacituzumab Govitecan</b> (TROPiCS-04)&lt;br/&gt;<b>TROP-2 ADC</b>&lt;br/&gt;10mg/kg d1,8 q3w&lt;br/&gt;<b>Post-Platinum + PD-1</b>] F --&gt; F4[<b>Clinical Trial / Docetaxel / Paclitaxel / Vinflunine</b>] </code>``</p>
+<div class="sub-h">Cisplatin Eligibility (Galsky Criteria — **Any 1 = Ineligible**)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Renal Function**</td><td>GFR <60 mL/min (Cockcroft-Gault)</td></tr><tr><td>**Performance Status**</td><td>ECOG ≥2</td></tr><tr><td>**Neuropathy**</td><td>Grade ≥2 peripheral neuropathy</td></tr><tr><td>**Hearing Loss**</td><td>Grade ≥2 (audiometry)</td></tr><tr><td>**Heart Failure**</td><td>NYHA Class III/IV</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Haematuria**</td><td>**Painless macroscopic haematuria = 2-week rule cystoscopy**</td></tr><tr><td>**NMIBC Risk**</td><td>**EAU/EORTC**: Low / Intermediate / High (based on grade, stage, size, number, recurrence, CIS)</td></tr><tr><td>**BCG Regimen**</td><td>**Induction 6 weekly** → **Maintenance SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo** (Total 27)</td></tr><tr><td>**BCG-Unresponsive**</td><td>CIS recurrence at 6mo / Ta/T1 HG at 6mo / T1 HG at 3mo after adequate BCG → **Cystectomy or ICI/Enfortumab**</td></tr><tr><td>**Re-TURBT**</td><td>**Mandatory for T1** (10-30% upstaging to T2) and incomplete resection</td></tr><tr><td>**MIBC**</td><td>**Neoadjuvant Cisplatin (GC preferred)** → Radical Cystectomy + Extended PLND → **Adjuvant Nivo** if ypT1-4/ypN+</td></tr><tr><td>**Cisplatin Eligibility**</td><td>**Galsky: GFR<60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF Class III/IV**</td></tr><tr><td>**Metastatic 1L**</td><td>**Cisplatin-eligible: GC/DD-MVAC → Maintenance Avelumab (JAVELIN Bladder 100)**</td></tr><tr><td>**Metastatic 1L**</td><td>**Cisplatin-ineligible: ICI (Pembro/Atezo if PD-L1+) or Gem/Carbo**</td></tr><tr><td>**2L Metastatic**</td><td>**Enfortumab Vedotin** (anti-Nectin-4 ADC), **Erdafitinib** (FGFR3 mut), **Sacituzumab Govitecan** (TROP-2 ADC)</td></tr><tr><td>**Upper Tract UC (UTUC)**</td><td>Same biology; **Nephroureterectomy** with bladder cuff; **Adjuvant chemo** if high risk; **Surveillance for bladder recurrence**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**65M, painless macroscopic haematuria. Cystoscopy: solitary 2cm papillary tumour. TURBT: Ta Low-grade. Management?**</td><td>**Low-risk NMIBC** → **Single post-TURBT chemo instillation** (MMC/Epirubicin/Gem) within 24h → **Surveillance**: Cystoscopy 3mo, then q6-12mo.</td></tr><tr><td>**Same patient but T1 High-grade. Management?**</td><td>**High-risk NMIBC** → **Re-TURBT** (mandatory) → If residual T1 → **Radical Cystectomy**; If Ta/Tis → **BCG Induction + Maintenance (SWOG 8507)**.</td></tr><tr><td>**What is BCG maintenance schedule (SWOG 8507)?**</td><td>**3 weekly instillations at 3, 6, 12, 18, 24, 30, 36 months** (Total 21 maintenance + 6 induction = 27 instillations).</td></tr><tr><td>**Define BCG-unresponsive NMIBC.**</td><td>**CIS**: Persistent/recurrent at 6mo after adequate BCG (≥5 ind + ≥2 maint OR ≥2 ind + ≥1 maint).<br/>**Ta/T1 HG**: Recurrence at 6mo after adequate BCG.<br/>**T1 HG**: Any recurrence at 3mo.</td></tr><tr><td>**MIBC — neoadjuvant regimen of choice?**</td><td>**Gemcitabine + Cisplatin (GC)** ×3-4 cycles (preferred over DD-MVAC for tolerability).</td></tr><tr><td>**Adjuvant nivolumab for MIBC — who? Trial?**</td><td>**CheckMate 274**: **ypT1-4 or ypN+** after neoadjuvant chemo + radical cystectomy → **Nivolumab 240mg q2w ×1 year** (DFS benefit HR 0.70).</td></tr><tr><td>**Cisplatin-ineligible metastatic — 1L options?**</td><td>**Pembrolizumab** (KEYNOTE-052) / **Atezolizumab** (IMvigor210) if **PD-L1 CPS≥10 or IC2/3**; **Gemcitabine + Carboplatin** if PD-L1 low/unfit for ICI.</td></tr><tr><td>**JAVELIN Bladder 100 — maintenance what?**</td><td>**Avelumab 10mg/kg q2w** after **4-6 cycles 1L platinum chemo without progression** → **OS HR 0.69**.</td></tr><tr><td>**Enfortumab vedotin — target, indication, trial?**</td><td>**Anti-Nectin-4 ADC**; **EV-301**: Post-PD-1 + Platinum → **OS HR 0.70**; Dose 1.25mg/kg d1,8,15 q4w.</td></tr><tr><td>**Erdafitinib — target, indication, monitoring?**</td><td>**FGFR3 mut/fusion**; **BLC2001**: Post-Platinum; **Dose 8mg/d** (↑ to 9mg if serum phosphate <5.5 mg/dL); **Monitor phosphate, ocular toxicity (CSR)**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**NMIBC vs MIBC — T1 is NMIBC**</td><td>**T1 = Lamina propria** (NMIBC); **T2 = Muscularis propria** (MIBC) — Critical distinction</td></tr><tr><td>**BCG Induction vs Maintenance**</td><td>**Induction**: 6 weekly; **Maintenance**: 3 weekly at 3,6,12,18,24,30,36mo (SWOG 8507) — **Total 27**</td></tr><tr><td>**BCG-Unresponsive vs BCG-Relapsing**</td><td>**Unresponsive** = High-risk recurrence after **adequate** BCG → Cystectomy/ICI; **Relapsing** = Recurrence after **inadequate** BCG → Can retry BCG</td></tr><tr><td>**GC vs DD-MVAC**</td><td>**GC**: q3w, less toxic, **preferred**; **DD-MVAC**: q2w + G-CSF, higher pCR, more toxic</td></tr><tr><td>**Adjuvant Nivo vs ICI in Metastatic**</td><td>**Adjuvant Nivo**: Post-cystectomy for **ypT1-4/ypN+** (CheckMate 274); **Metastatic ICI**: 1L cisplatin-ineligible or Maintenance Avelumab</td></tr><tr><td>**FGFR3 mut vs FGFR3 fusion**</td><td>Both sensitive to **Erdafitinib**; Fusion more common in upper tract</td></tr></table>
+<p><b>Mnemonic: BLADDER</b></p>
+<ul><li><b>B</b>CG: Induction 6wk → <b>Maintenance 3wk at 3,6,12,18,24,30,36mo</b></li><li><b>L</b>ow/Int/High: EAU/EORTC risk tables</li><li><b>A</b>dequate BCG: ≥5 ind + ≥2 maint (or ≥2 ind + ≥1 maint)</li><li><b>D</b>etrusor muscle in TURBT (mandatory for T1)</li><li><b>D</b>D-MVAC vs GC: <b>GC preferred</b> neoadjuvant</li><li><b>E</b>nfortumab: <b>Nectin-4 ADC</b> (2L post-PD-1+Plat)</li><li><b>R</b>adical Cystectomy: Extended PLND + Diversion</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Bladder Cancer - UC)) Classification NMIBC (75%) Ta, Tis (CIS), T1 Low / Int / High Risk (EAU/EORTC) MIBC (25%) T2-4a N0 M0 Metastatic M1 NMIBC Management Low: Post-TURBT Chemo ×1 Intermediate: Induction Chemo ×6 ± Maint High: BCG Induction 6wk + Maint (SWOG 8507) BCG-Unresponsive: Cystectomy / ICI / Enfortumab Re-TURBT: Mandatory T1 MIBC Management Neoadjuvant: GC (preferred) / DD-MVAC Surgery: Radical Cystectomy + Ext PLND Diversion: Ileal Conduit / Neobladder Adjuvant: Nivolumab if ypT1-4/ypN+ Metastatic Management Cisplatin-Eligible 1L: GC / DD-MVAC Maint: Avelumab (JAVELIN Bladder 100) Cisplatin-Ineligible 1L: Pembro/Atezo (PD-L1+) / GemCarbo 2L+: Enfortumab / Erdafitinib (FGFR3) / Sacituzumab Biomarkers FGFR3 mut/fusion PD-L1 (CPS/IC) TMB, MSI HER2 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Presentation**</td><td>Painless haematuria = 2-week rule cystoscopy</td></tr><tr><td>**NMIBC Risk**</td><td>EAU/EORTC: Low (Single Ta LG <3cm) / Int / High (Any T1 HG, CIS, Ta HG)</td></tr><tr><td>**Low Risk**</td><td>Single post-TURBT chemo instillation → Surveillance</td></tr><tr><td>**High Risk**</td><td>**BCG Induction 6wk** → **Maint 3wk at 3,6,12,18,24,30,36mo** (SWOG 8507)</td></tr><tr><td>**BCG-Unresponsive**</td><td>CIS/TaHG at 6mo / T1HG at 3mo after adequate BCG → Cystectomy / ICI / Enfortumab</td></tr><tr><td>**Re-TURBT**</td><td>Mandatory for T1 (upstages 10-30%)</td></tr><tr><td>**MIBC**</td><td>**Neoadjuvant GC ×3-4** → **Radical Cystectomy + Ext PLND** → **Adj Nivo** if ypT1-4/ypN+</td></tr><tr><td>**Cisplatin Eligibility**</td><td>Galsky: GFR<60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF III/IV</td></tr><tr><td>**Met 1L Cis-Eligible**</td><td>GC → **Maintenance Avelumab** (JAVELIN Bladder 100)</td></tr><tr><td>**Met 1L Cis-Ineligible**</td><td>ICI (Pembro/Atezo if PD-L1+) / GemCarbo</td></tr><tr><td>**2L+**</td><td>**Enfortumab (Nectin-4)**, **Erdafitinib (FGFR3)**, **Sacituzumab (TROP-2)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>NMIBC risk stratification</td><td></td><td></td></tr><tr><td>BCG regimen (Induction + Maint)</td><td></td><td></td></tr><tr><td>BCG-unresponsive definition</td><td></td><td></td></tr><tr><td>MIBC neoadjuvant / adjuvant</td><td></td><td></td></tr><tr><td>Cisplatin eligibility (Galsky)</td><td></td><td></td></tr><tr><td>Metastatic 1L algorithms</td><td></td><td></td></tr><tr><td>Enfortumab / Erdafitinib / Sacituzumab</td><td></td><td></td></tr><tr><td>Upper tract UC</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Prostate Cancer]], [[Renal Cell Carcinoma (RCC)]], [[Testicular Cancer]], [[BCG Therapy]], [[Enfortumab Vedotin]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (Haematuria), which statement is correct? A. <b>Painless macroscopic haematuria = 2-week rule cystoscopy</b> B. **Painless - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Painless macroscopic haematuria = 2-week rule cystoscopy</b></li></ul>
+<p><b>2.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (NMIBC Risk), which statement is correct? A. <b>EAU/EORTC</b>: Low / Intermediate / High (based on grade, stage, size, number, recurrence, CIS) B. <b>EAU/EORTC</b>: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>EAU/EORTC</b>: Low / Intermediate / High (based on grade, stage, size, number, recurrence, CIS)</li></ul>
+<p><b>3.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (BCG Regimen), which statement is correct? A. <b>Induction 6 weekly</b> → <b>Maintenance SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo</b> (Total 27) B. **Induction - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Induction 6 weekly</b> → <b>Maintenance SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo</b> (Total 27)</li></ul>
+<p><b>4.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (BCG-Unresponsive), which statement is correct? A. CIS recurrence at 6mo / Ta/T1 HG at 6mo / T1 HG at 3mo after adequate BCG → **Cystectomy or ICI/Enfo B. CIS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — CIS recurrence at 6mo / Ta/T1 HG at 6mo / T1 HG at 3mo after adequate BCG → <b>Cystectomy or ICI/Enfortumab</b></li></ul>
+<p><b>5.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (Re-TURBT), which statement is correct? A. <b>Mandatory for T1</b> (10-30% upstaging to T2) and incomplete resection B. **Mandatory - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Mandatory for T1</b> (10-30% upstaging to T2) and incomplete resection</li></ul>
+<p><b>6.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (MIBC), which statement is correct? A. <b>Neoadjuvant Cisplatin (GC preferred)</b> → Radical Cystectomy + Extended PLND → <b>Adjuvant Nivo</b> if B. **Neoadjuvant - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Neoadjuvant Cisplatin (GC preferred)</b> → Radical Cystectomy + Extended PLND → <b>Adjuvant Nivo</b> if ypT1-4/ypN+</li></ul>
+<p><b>7.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (Cisplatin Eligibility), which statement is correct? A. <b>Galsky: GFR&lt;60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF Class III/IV</b> B. **Galsky: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Galsky: GFR&lt;60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF Class III/IV</b></li></ul>
+<p><b>8.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (Metastatic 1L), which statement is correct? A. <b>Cisplatin-eligible: GC/DD-MVAC → Maintenance Avelumab (JAVELIN Bladder 100)</b> B. **Cisplatin-eligible: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Cisplatin-eligible: GC/DD-MVAC → Maintenance Avelumab (JAVELIN Bladder 100)</b></li></ul>
+<p><b>9.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (Metastatic 1L), which statement is correct? A. <b>Cisplatin-ineligible: ICI (Pembro/Atezo if PD-L1+) or Gem/Carbo</b> B. **Cisplatin-ineligible: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Cisplatin-ineligible: ICI (Pembro/Atezo if PD-L1+) or Gem/Carbo</b></li></ul>
+<p><b>10.</b> Regarding Bladder Cancer (Urothelial Carcinoma) (2L Metastatic), which statement is correct? A. <b>Enfortumab Vedotin</b> (anti-Nectin-4 ADC), <b>Erdafitinib</b> (FGFR3 mut), <b>Sacituzumab Govitecan</b> ( B. **Enfortumab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Enfortumab Vedotin</b> (anti-Nectin-4 ADC), <b>Erdafitinib</b> (FGFR3 mut), <b>Sacituzumab Govitecan</b> (TROP-2 ADC)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Painless macroscopic haematuria = 2-week rule cystoscopy</b></li><li>B. **Painless (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Painless macroscopic haematuria = 2-week rule cystoscopy</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>EAU/EORTC</b>: Low / Intermediate / High (based on grade, stage, size, number, recurrence, CIS)</li><li>B. <b>EAU/EORTC</b>: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>EAU/EORTC</b>: Low / Intermediate / High (based on grade, stage, size, number, recurrence, CIS)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Induction 6 weekly</b> → <b>Maintenance SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo</b> (Total 27)</li><li>B. **Induction (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Induction 6 weekly</b> → <b>Maintenance SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo</b> (Total 27)</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. CIS recurrence at 6mo / Ta/T1 HG at 6mo / T1 HG at 3mo after adequate BCG → **Cystectomy or ICI/Enfo</li><li>B. CIS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: CIS recurrence at 6mo / Ta/T1 HG at 6mo / T1 HG at 3mo after adequate BCG → <b>Cystectomy or ICI/Enfortumab</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Mandatory for T1</b> (10-30% upstaging to T2) and incomplete resection</li><li>B. **Mandatory (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Mandatory for T1</b> (10-30% upstaging to T2) and incomplete resection</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Neoadjuvant Cisplatin (GC preferred)</b> → Radical Cystectomy + Extended PLND → <b>Adjuvant Nivo</b> if</li><li>B. **Neoadjuvant (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Neoadjuvant Cisplatin (GC preferred)</b> → Radical Cystectomy + Extended PLND → <b>Adjuvant Nivo</b> if ypT1-4/ypN+</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Galsky: GFR&lt;60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF Class III/IV</b></li><li>B. **Galsky: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Galsky: GFR&lt;60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF Class III/IV</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Cisplatin-eligible: GC/DD-MVAC → Maintenance Avelumab (JAVELIN Bladder 100)</b></li><li>B. **Cisplatin-eligible: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Cisplatin-eligible: GC/DD-MVAC → Maintenance Avelumab (JAVELIN Bladder 100)</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Cisplatin-ineligible: ICI (Pembro/Atezo if PD-L1+) or Gem/Carbo</b></li><li>B. **Cisplatin-ineligible: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Cisplatin-ineligible: ICI (Pembro/Atezo if PD-L1+) or Gem/Carbo</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Enfortumab Vedotin</b> (anti-Nectin-4 ADC), <b>Erdafitinib</b> (FGFR3 mut), <b>Sacituzumab Govitecan</b> (</li><li>B. **Enfortumab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Enfortumab Vedotin</b> (anti-Nectin-4 ADC), <b>Erdafitinib</b> (FGFR3 mut), <b>Sacituzumab Govitecan</b> (TROP-2 ADC)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Haematuria? <b>A1:</b> Painless macroscopic haematuria = 2-week rule cystoscopy</p>
+<p><b>Q2:</b> NMIBC Risk? <b>A2:</b> EAU/EORTC: Low / Intermediate / High (based on grade, stage, size, number, recurrence, CIS)</p>
+<p><b>Q3:</b> BCG Regimen? <b>A3:</b> Induction 6 weekly → Maintenance SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo (Total 27)</p>
+<p><b>Q4:</b> BCG-Unresponsive? <b>A4:</b> CIS recurrence at 6mo / Ta/T1 HG at 6mo / T1 HG at 3mo after adequate BCG → Cystectomy or ICI/Enfortumab</p>
+<p><b>Q5:</b> Re-TURBT? <b>A5:</b> Mandatory for T1 (10-30% upstaging to T2) and incomplete resection</p>
+<p><b>Q6:</b> MIBC? <b>A6:</b> Neoadjuvant Cisplatin (GC preferred) → Radical Cystectomy + Extended PLND → Adjuvant Nivo if ypT1-4/ypN+</p>
+<p><b>Q7:</b> Cisplatin Eligibility? <b>A7:</b> Galsky: GFR&lt;60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF Class III/IV</p>
+<p><b>Q8:</b> Metastatic 1L? <b>A8:</b> Cisplatin-eligible: GC/DD-MVAC → Maintenance Avelumab (JAVELIN Bladder 100)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Haematuria</td><td>Painless macroscopic haematuria = 2-week rule cystoscopy</td></tr><tr><td>2</td><td>A</td><td>NMIBC Risk</td><td>EAU/EORTC: Low / Intermediate / High (based on grade, stage, size, number, recurrence, CIS)</td></tr><tr><td>3</td><td>A</td><td>BCG Regimen</td><td>Induction 6 weekly → Maintenance SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo (Total 27)</td></tr><tr><td>4</td><td>A</td><td>BCG-Unresponsive</td><td>CIS recurrence at 6mo / Ta/T1 HG at 6mo / T1 HG at 3mo after adequate BCG → Cystectomy or ICI/Enfortumab</td></tr><tr><td>5</td><td>A</td><td>Re-TURBT</td><td>Mandatory for T1 (10-30% upstaging to T2) and incomplete resection</td></tr><tr><td>6</td><td>A</td><td>MIBC</td><td>Neoadjuvant Cisplatin (GC preferred) → Radical Cystectomy + Extended PLND → Adjuvant Nivo if ypT1-4/ypN+</td></tr><tr><td>7</td><td>A</td><td>Cisplatin Eligibility</td><td>Galsky: GFR<60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF Class III/IV</td></tr><tr><td>8</td><td>A</td><td>Metastatic 1L</td><td>Cisplatin-eligible: GC/DD-MVAC → Maintenance Avelumab (JAVELIN Bladder 100)</td></tr><tr><td>9</td><td>A</td><td>Metastatic 1L</td><td>Cisplatin-ineligible: ICI (Pembro/Atezo if PD-L1+) or Gem/Carbo</td></tr><tr><td>10</td><td>A</td><td>2L Metastatic</td><td>Enfortumab Vedotin (anti-Nectin-4 ADC), Erdafitinib (FGFR3 mut), Sacituzumab Govitecan (TROP-2 ADC)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Haematuria</td><td>Painless macroscopic haematuria = 2-week rule cystoscopy</td></tr><tr><td>2</td><td>A</td><td>NMIBC Risk</td><td>EAU/EORTC: Low / Intermediate / High (based on grade, stage, size, number, recurrence, CIS)</td></tr><tr><td>3</td><td>A</td><td>BCG Regimen</td><td>Induction 6 weekly → Maintenance SWOG 8507: 3 weekly at 3,6,12,18,24,30,36mo (Total 27)</td></tr><tr><td>4</td><td>A</td><td>BCG-Unresponsive</td><td>CIS recurrence at 6mo / Ta/T1 HG at 6mo / T1 HG at 3mo after adequate BCG → Cystectomy or ICI/Enfortumab</td></tr><tr><td>5</td><td>A</td><td>Re-TURBT</td><td>Mandatory for T1 (10-30% upstaging to T2) and incomplete resection</td></tr><tr><td>6</td><td>A</td><td>MIBC</td><td>Neoadjuvant Cisplatin (GC preferred) → Radical Cystectomy + Extended PLND → Adjuvant Nivo if ypT1-4/ypN+</td></tr><tr><td>7</td><td>A</td><td>Cisplatin Eligibility</td><td>Galsky: GFR<60, ECOG≥2, Neuropathy≥2, Hearing≥2, HF Class III/IV</td></tr><tr><td>8</td><td>A</td><td>Metastatic 1L</td><td>Cisplatin-eligible: GC/DD-MVAC → Maintenance Avelumab (JAVELIN Bladder 100)</td></tr><tr><td>9</td><td>A</td><td>Metastatic 1L</td><td>Cisplatin-ineligible: ICI (Pembro/Atezo if PD-L1+) or Gem/Carbo</td></tr><tr><td>10</td><td>A</td><td>2L Metastatic</td><td>Enfortumab Vedotin (anti-Nectin-4 ADC), Erdafitinib (FGFR3 mut), Sacituzumab Govitecan (TROP-2 ADC)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Urological Cancers|Urological Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Bladder Cancer Urothelial Carcinoma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

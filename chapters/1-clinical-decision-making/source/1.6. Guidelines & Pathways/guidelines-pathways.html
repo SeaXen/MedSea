@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Guidelines Pathways — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 1 CLINICAL DECISION-MAKING / 1.6. GUIDELINES & PATHWAYS</span>
+      <div class="h1">Guidelines Pathways</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Appraise <b>clinical guidelines</b> using <b>AGREE II</b> (6 domains, 23 items)</li><li>[ ] Understand <b>guideline development process</b>: WHO, NICE, SIGN, ESC, GRADE methodology</li><li>[ ] Distinguish <b>guidelines, pathways, protocols, bundles</b> — definitions and uses</li><li>[ ] Design <b>clinical pathways</b>: Integrated care, Variance tracking, Discharge planning</li><li>[ ] Develop <b>clinical protocols</b>: Standardisation, Local adaptation, Version control</li><li>[ ] Apply <b>implementation science</b>: CFIR, RE-AIM, Normalisation Process Theory, BARRIERS</li><li>[ ] Evaluate <b>guideline impact</b>: QI methods, Audit, Feedback, Sustainability</li><li>[ ] Answer viva: "AGREE II domains" and "Guideline development steps" and "CFIR domains"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: From Evidence to Practice</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Evidence&lt;br/&gt;SR/MA, RCT] --&gt; B[Guideline Development&lt;br/&gt;GRADE, AGREE II] B --&gt; C[Clinical Guideline&lt;br/&gt;Recommendations] C --&gt; D[Clinical Pathway&lt;br/&gt;Integrated Care Map] D --&gt; E[Clinical Protocol&lt;br/&gt;Standardised Procedure] E --&gt; F[Implementation&lt;br/&gt;CFIR, RE-AIM, Barriers] F --&gt; G[Clinical Practice&lt;br/&gt;Audit, Feedback, QI] G --&gt; H[Outcomes&lt;br/&gt;Patient, System, Cost] H --&gt; A[New Evidence] </code>``</p>
+<div class="callout"><b>Hierarchy:</b> <i>Guideline (What) → Pathway (When/Who/Where) → Protocol (How) → Implementation (Fidelity) → Audit (Compliance) → Outcomes</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Guideline Appraisal — AGREE II (Gold Standard)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">AGREE II Instrument — 23 Items, 6 Domains</div>
+<table class="ctable"><tr><th>Domain</th><th>Items</th><th>Key Content</th></tr><tr><td>--------</td><td>-------</td><td>-------------</td></tr><tr><td>**1. Scope & Purpose** (3)</td><td>1-3</td><td>Objectives, Health questions, Target population</td></tr><tr><td>**2. Stakeholder Involvement** (4)</td><td>4-7</td><td>Professional groups, Patient/public, Target users</td></tr><tr><td>**3. Rigour of Development** (8)</td><td>8-15</td><td>Search strategy, Evidence selection, Criteria, Methods, Evidence→Rec link, External review, Update plan</td></tr><tr><td>**4. Clarity of Presentation** (3)</td><td>16-18</td><td>Specific recommendations, Options, Key recs identifiable</td></tr><tr><td>**5. Applicability** (4)</td><td>19-22</td><td>Barriers/Facilitators, Implementation tools, Resource implications, Monitoring/Audit criteria</td></tr><tr><td>**6. Editorial Independence** (2)</td><td>22-23</td><td>Funding body influence, Competing interests recorded</td></tr></table>
+<div class="sub-h">AGREE II Scoring</div>
+<ul><li>Each item scored 1 (Strongly Disagree) to 7 (Strongly Agree)</li><li><b>Domain Score</b> = (Sum of item scores - Minimum possible) / (Maximum possible - Minimum) × 100%</li><li><b>Overall Assessment</b>: "Would you recommend this guideline?" (Yes/No with modifications)</li></ul>
+<div class="sub-h">Critical Appraisal Questions (Rapid AGREE)</div>
+<ul><li>[ ] Are the <b>recommendations clear, specific, actionable</b>?</li><li>[ ] Was there a <b>systematic evidence search</b>?</li><li>[ ] Are <b>evidence-to-recommendation links explicit</b>?</li><li>[ ] Were <b>patients/public involved</b>?</li><li>[ ] Are <b>conflicts of interest declared</b>?</li><li>[ ] Is there an <b>update plan</b>?</li><li>[ ] Are <b>barriers to implementation addressed</b>?</li><li>[ ] Is it <b>independent of funding bias</b>?</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Guideline Development Process</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">WHO Guideline Development (WHO Handbook)</div>
+<p>``<code>mermaid flowchart TD A[1. Scope &amp; Prioritisation] --&gt; B[2. Group Composition&lt;br/&gt;GDG, Methodologists, Stakeholders] B --&gt; C[3. PICO Questions&lt;br/&gt;Population, Intervention, Comparator, Outcomes] C --&gt; D[4. Evidence Retrieval&lt;br/&gt;Systematic Reviews, GRADE] D --&gt; E[5. Evidence Appraisal&lt;br/&gt;Risk of Bias, Certainty] E --&gt; F[6. Evidence-to-Decision&lt;br/&gt;EtD Frameworks: Benefits, Harms, Values, Resources, Equity, Acceptability, Feasibility] F --&gt; G[7. Recommendation Formulation&lt;br/&gt;Strong vs Conditional] G --&gt; H[8. Drafting Guideline&lt;br/&gt;Peer Review, Public Consultation] H --&gt; I[9. Dissemination &amp; Implementation&lt;br/&gt;Tools, Training, Adaptation] I --&gt; J[10. Evaluation &amp; Update&lt;br/&gt;Surveillance, Living Guidelines] </code>``</p>
+<div class="sub-h">NICE Guideline Process (UK)</div>
+<ol><li><b>Topic Selection</b> (DHSC referral, Stakeholder nomination)</li><li><b>Scope Development</b> (Stakeholder workshop, Define inclusion/exclusion)</li><li><b>Evidence Review</b> (Systematic reviews, Economic modelling if cost-effective)</li><li><b>Committee Deliberation</b> (Evidence review + Expert testimony + Patient testimony)</li><li><b>Draft Guidance</b> → <b>Consultation</b> (4 weeks, Stakeholder comments)</li><li><b>Final Guidance</b> → <b>Publication</b> (NICE website, Pathways, Tools)</li><li><b>Implementation Support</b> (Baseline assessment, Costing, Audit standards, E-learning)</li><li><b>Surveillance &amp; Update</b> (Scheduled / Exceptional)</li></ol>
+<div class="sub-h">GRADE in Guidelines</div>
+<ul><li><b>Evidence Certainty</b> → Recommendation Strength</li><li><b>Evidence-to-Decision (EtD) Frameworks</b> — Structured transparent process</li><li>Problem, Benefits/Harms, Certainty, Values, Resources, Equity, Acceptability, Feasibility</li><li>Judgements → Recommendation (Strong/Conditional) + Direction (For/Against)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Guideline vs Pathway vs Protocol vs Bundle</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Tool</th><th>Definition</th><th>Scope</th><th>Flexibility</th><th>Example</th></tr><tr><td>------</td><td>------------</td><td>-------</td><td>-------------</td><td>---------</td></tr><tr><td>**Clinical Guideline**</td><td>Evidence-based recommendations</td><td>Broad (condition, population)</td><td>High (Clinical judgement)</td><td>NICE NG138 (Pneumonia), ESC HF</td></tr><tr><td>**Clinical Pathway**</td><td>Structured multidisciplinary care plan</td><td>Episode of care (Admission→Discharge)</td><td>Medium (Variance tracking)</td><td>Hip fracture pathway, Stroke pathway</td></tr><tr><td>**Clinical Protocol**</td><td>Detailed step-by-step procedure</td><td>Specific intervention</td><td>Low (Standardised)</td><td>Sepsis 6 Protocol, Central Line Insertion</td></tr><tr><td>**Care Bundle**</td><td>Small set (3-5) evidence-based practices</td><td>Specific high-risk situation</td><td>Low (All-or-none)</td><td>Central Line Bundle, Ventilator Bundle, Sepsis 6</td></tr></table>
+<div class="sub-h">Clinical Pathway — Components</div>
+<table class="ctable"><tr><th>Component</th><th>Description</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Timeline**</td><td>Phases (Pre-op, Day 0, Day 1, Discharge)</td></tr><tr><td>**Multidisciplinary Actions**</td><td>Medical, Nursing, Allied Health, Pharmacy per phase</td></tr><tr><td>**Investigations/Interventions**</td><td>Scheduled per day</td></tr><tr><td>**Goals/Milestones**</td><td>Criteria for progression (e.g., "Mobilise Day 1")</td></tr><tr><td>**Variance Tracking**</td><td>Planned vs Actual (Positive/Negative variance → Analyse)</td></tr><tr><td>**Discharge Criteria**</td><td>Explicit, Measurable</td></tr></table>
+<div class="sub-h">Variance Analysis</div>
+<table class="ctable"><tr><th>Variance Type</th><th>Definition</th><th>Action</th></tr><tr><td>---------------</td><td>------------</td><td>--------</td></tr><tr><td>**Positive**</td><td>Better than planned (e.g., earlier mobilisation)</td><td>Capture learning, Spread</td></tr><tr><td>**Negative**</td><td>Delayed/Omitted (e.g., missed VTE prophylaxis)</td><td>RCA → System fix, Education</td></tr><tr><td>**System**</td><td>Recurrent, process-related</td><td>Process redesign</td></tr><tr><td>**Patient**</td><td>Patient-specific (refusal, comorbidity)</td><td>Document, Adapt plan</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Implementation Science — Bridging the Gap</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">The "Know-Do" Gap</div>
+<ul><li><b>Evidence-based practice takes ~17 years</b> to reach routine care (Balas &amp; Boren)</li><li><b>Implementation Science</b> = Scientific study of methods to promote uptake of evidence</li></ul>
+<div class="sub-h">Key Frameworks</div>
+<table class="ctable"><tr><th>Framework</th><th>Purpose</th><th>Key Components</th></tr><tr><td>-----------</td><td>---------</td><td>----------------</td></tr><tr><td>**CFIR** (Damschroder)</td><td>Determinants of implementation</td><td>**5 Domains**: Intervention Characteristics, Outer Setting, Inner Setting, Characteristics of Individuals, Process</td></tr><tr><td>**RE-AIM** (Glasgow)</td><td>Evaluation</td><td>**Reach, Effectiveness, Adoption, Implementation, Maintenance**</td></tr><tr><td>**NPT** (May et al.)</td><td>Normalisation</td><td>**4 Constructs**: Coherence, Cognitive Participation, Collective Action, Reflexive Monitoring</td></tr><tr><td>**TDF** (Michie)</td><td>Behaviour change</td><td>**14 Domains**: Knowledge, Skills, Beliefs, Intentions, Goals, Memory, Environment, Social, Emotion, Behavioural Regulation</td></tr><tr><td>**EPOC Taxonomy**</td><td>Implementation strategies</td><td>**7 Categories**: Professional, Financial, Organisational, Regulatory, Recipient, Structural, Digital</td></tr></table>
+<div class="sub-h">CFIR — 5 Domains (Determinants of Implementation)</div>
+<table class="ctable"><tr><th>Domain</th><th>Constructs</th><th>Example</th></tr><tr><td>--------</td><td>------------</td><td>---------</td></tr><tr><td>**Intervention Characteristics**</td><td>Evidence strength, Adaptability, Trialability, Complexity, Cost</td><td>"Guideline is complex (50 pages) → Low adoption"</td></tr><tr><td>**Outer Setting**</td><td>Patient needs, Cosmopolitanism, Peer pressure, External policy</td><td>"NICE mandate → Outer pressure"</td></tr><tr><td>**Inner Setting**</td><td>Structural characteristics, Networks, Culture, Readiness, Leadership</td><td>"Ward culture resists change → Low readiness"</td></tr><tr><td>**Characteristics of Individuals**</td><td>Knowledge, Beliefs, Self-efficacy, Stage of change</td><td>"Senior consultant sceptical → Low self-efficacy"</td></tr><tr><td>**Process**</td><td>Planning, Engaging, Executing, Reflecting/Evaluating</td><td>"No formal plan → Poor execution"</td></tr></table>
+<div class="sub-h">RE-AIM — Evaluation Framework</div>
+<table class="ctable"><tr><th>Dimension</th><th>Question</th><th>Metric</th></tr><tr><td>-----------</td><td>----------</td><td>--------</td></tr><tr><td>**Reach**</td><td>Who participates?</td><td>% eligible patients/clinicians reached</td></tr><tr><td>**Effectiveness**</td><td>Does it work?</td><td>Outcomes (RCT/QI), Heterogeneity of effect</td></tr><tr><td>**Adoption**</td><td>Who adopts?</td><td>% settings/clinicians adopting</td></tr><tr><td>**Implementation**</td><td>Fidelity/Cost</td><td>Fidelity score, Cost per unit</td></tr><tr><td>**Maintenance**</td><td>Sustained?</td><td>Duration, Institutionalisation</td></tr></table>
+<div class="sub-h">Barriers &amp; Facilitators (BARRIERS Framework)</div>
+<table class="ctable"><tr><th>Level</th><th>Barriers</th><th>Facilitators</th></tr><tr><td>-------</td><td>----------</td><td>--------------</td></tr><tr><td>**Guideline**</td><td>Complexity, Length, Rigidity, Lack of evidence clarity</td><td>Clear recommendations, Format, Tools (algorithms, apps)</td></tr><tr><td>**Professional**</td><td>Knowledge, Attitudes, Skills, Habits, Autonomy threat</td><td>Education, Opinion leaders, Audit/feedback, Incentives</td></tr><tr><td>**Patient**</td><td>Health literacy, Preferences, Adherence</td><td>Shared decision-making, Decision aids, Easy-read</td></tr><tr><td>**Organisational**</td><td>Culture, Resources, Leadership, IT, Competing priorities</td><td>Leadership support, Resources, QI infrastructure, Champions</td></tr><tr><td>**System**</td><td>Policy, Funding, Regulation, Interoperability</td><td>National mandates, Payment reform, Integrated IT</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Implementation Strategies (EPOC Taxonomy)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Strategies</th><th>Example</th></tr><tr><td>----------</td><td>------------</td><td>---------</td></tr><tr><td>**Professional**</td><td>Education, Audit & Feedback, Reminders, Opinion Leaders, Academic Detailing</td><td>"Sepsis 6 audit + feedback to consultants"</td></tr><tr><td>**Financial**</td><td>Incentives (Pay-for-Performance), Penalties, Budget allocation</td><td>"CQUIN for Sepsis 6 compliance"</td></tr><tr><td>**Organisational**</td><td>Care pathways, Multidisciplinary teams, Skill mix, Case management</td><td>"Hip fracture pathway with orthogeriatrician"</td></tr><tr><td>**Regulatory**</td><td>Licensing, Accreditation, Mandates, Standards</td><td>"CQC requiring sepsis protocol"</td></tr><tr><td>**Recipient**</td><td>Patient education, Decision aids, Self-management support</td><td>"Patient sepsis leaflet, Decision aid"</td></tr><tr><td>**Structural**</td><td>Equipment, Facilities, Staffing, IT systems</td><td>"EHR sepsis alert, Smart pumps"</td></tr><tr><td>**Digital**</td><td>CDSS, EHR integration, Apps, Telehealth</td><td>"EHR order set for Sepsis 6, Mobile app for guideline"</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ NICE — UK Guideline Ecosystem</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">NICE Product Types</div>
+<table class="ctable"><tr><th>Product</th><th>Code</th><th>Purpose</th></tr><tr><td>---------</td><td>------</td><td>---------</td></tr><tr><td>**Guideline**</td><td>NG / CG</td><td>Clinical/Public health recommendations</td></tr><tr><td>**Technology Appraisal**</td><td>TA</td><td>New drugs/devices (Clinical + Cost-effectiveness)</td></tr><tr><td>**Interventional Procedures**</td><td>IPG</td><td>Surgical/diagnostic procedures</td></tr><tr><td>**Diagnostics Guidance**</td><td>DG</td><td>Diagnostic technologies</td></tr><tr><td>**Medical Technologies**</td><td>MTG</td><td>Devices (earlier than TA)</td></tr><tr><td>**Quality Standard**</td><td>QS</td><td>Concise prioritised statements for quality improvement</td></tr><tr><td>**Pathway**</td><td>—</td><td>Interactive visual care pathway (NICE Pathways)</td></tr></table>
+<div class="sub-h">NICE Technology Appraisal Process</div>
+<ol><li><b>Topic Selection</b> → 2. <b>Scoping</b> → 3. <b>Evidence Submission</b> (Company + Independent ERG) → 4. <b>Appraisal Committee</b> (Clinical + Economic) → 5. <b>Draft Guidance</b> → 6. <b>Consultation</b> → 7. <b>Final Guidance</b> → 8. <b>Mandatory NHS Funding (90 days)</b></li></ol>
+<div class="sub-h">NICE Cost-Effectiveness Threshold</div>
+<ul><li><b>ICER ≤ £20,000–£30,000/QALY</b> (Standard)</li><li><b>End of Life</b> (Life expectancy &lt;24mo, treatment extends ≥3mo): up to <b>£50,000/QALY</b></li><li><b>Severity Modifier</b> (New 2022): Higher weight for severe diseases</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Protocol Development & Standardisation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Protocol vs Guideline</div>
+<table class="ctable"><tr><th>Feature</th><th>Guideline</th><th>Protocol</th></tr><tr><td>---------</td><td>-----------</td><td>----------</td></tr><tr><td>**Purpose**</td><td>Evidence-based recommendations</td><td>Step-by-step operational procedure</td></tr><tr><td>**Flexibility**</td><td>High (Judgement allowed)</td><td>Low (Standardised)</td></tr><tr><td>**Scope**</td><td>Condition/Population</td><td>Specific intervention</td></tr><tr><td>**Authorship**</td><td>Multidisciplinary panel</td><td>Local clinical team + Governance</td></tr><tr><td>**Version Control**</td><td>Major updates (years)</td><td>Frequent (Real-time changes)</td></tr></table>
+<div class="sub-h">Protocol Development Checklist</div>
+<ul><li>[ ] <b>Clinical Need</b> identified (Incident, Audit, New Evidence)</li><li>[ ] <b>Multidisciplinary Team</b> (Doctors, Nurses, Pharmacy, Governance)</li><li>[ ] <b>Evidence Base</b> referenced (Guideline, RCT, Local data)</li><li>[ ] <b>Step-by-Step Instructions</b> (Who, What, When, Where, How)</li><li>[ ] <b>Safety Checks</b> (Allergies, Contraindications, Monitoring)</li><li>[ ] <b>Equipment/Materials</b> specified</li><li>[ ] <b>Documentation Requirements</b> (What, Where, By Whom)</li><li>[ ] <b>Escalation Criteria</b> (When to call senior, Red flags)</li><li>[ ] <b>Version Control</b> (Number, Date, Author, Approval, Review Date)</li><li>[ ] <b>Dissemination</b> (Training, Intranet, Pocket cards, EHR integration)</li><li>[ ] <b>Audit Plan</b> (Compliance metrics, Review date)</li></ul>
+<div class="sub-h">Standardisation vs Individualisation</div>
+<ul><li><b>Standardise</b>: High-volume, High-risk, Evidence-strong (e.g., Sepsis 6, Central Line Bundle)</li><li><b>Individualise</b>: Complex comorbidities, Preference-sensitive, Evidence-weak (e.g., Frail elderly, Palliative)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Evaluating Guideline Impact</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Evaluation Type</th><th>Methods</th></tr><tr><td>-----------------</td><td>---------</td></tr><tr><td>**Process Evaluation**</td><td>Fidelity (adherence to protocol), Reach, Dose, Adaptations</td></tr><tr><td>**Outcome Evaluation**</td><td>Clinical outcomes, Patient-reported outcomes, Safety events</td></tr><tr><td>**Economic Evaluation**</td><td>Cost-effectiveness, Budget impact, ROI</td></tr><tr><td>**Implementation Evaluation**</td><td>CFIR/RE-AIM, Barriers/Facilitators, Sustainability</td></tr></table>
+<div class="sub-h">Sustainability Factors</div>
+<table class="ctable"><tr><th>Factor</th><th>Evidence</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Leadership Support**</td><td>Visible, Consistent, Resource allocation</td></tr><tr><td>**Embedded in Systems**</td><td>EHR integration, Standard work, Job descriptions</td></tr><tr><td>**Continuous Measurement**</td><td>Run charts, Dashboards, Feedback loops</td></tr><tr><td>**Champions/Opinion Leaders**</td><td>Credible, Enthusiastic, Protected time</td></tr><tr><td>**Adaptability**</td><td>Local context fit, Ongoing refinement</td></tr><tr><td>**Staff Engagement**</td><td>Co-design, Ownership, Psychological safety</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**AGREE II**</td><td>6 Domains: Scope, Stakeholders, **Rigour (Key)**, Clarity, Applicability, Independence. 23 items, 7-point scale.</td></tr><tr><td>**Guideline Development**</td><td>WHO (10 steps) / NICE (Scope→Evidence→Committee→Consult→Publish). GRADE for certainty. EtD Frameworks.</td></tr><tr><td>**Guideline vs Pathway vs Protocol**</td><td>Guideline = Recommendations (broad). Pathway = Multidisciplinary timeline with variance tracking. Protocol = Step-by-step SOP. Bundle = 3-5 practices all-or-none.</td></tr><tr><td>**Implementation Science**</td><td>**CFIR** (5 domains: Intervention, Outer/Inner Setting, Individuals, Process). **RE-AIM** (Reach, Effectiveness, Adoption, Implementation, Maintenance). **TDF** (14 behaviour domains).</td></tr><tr><td>**Barriers**</td><td>Guideline (Complexity), Professional (Knowledge/Attitude), Organisational (Culture/Resources), Patient, System</td></tr><tr><td>**Strategies**</td><td>Education, Audit/Feedback, Opinion Leaders, Reminders, CDSS, Pathways, Incentives, Patient Decision Aids</td></tr><tr><td>**NICE**</td><td>TA (Drugs/Devices, ICER £20-30k/QALY), CG (Clinical), QS (Quality statements), Pathways (Visual). Mandatory funding 90 days.</td></tr><tr><td>**Protocol Development**</td><td>MDT, Evidence-based, Step-by-step, Safety checks, Version control, Dissemination, Audit plan</td></tr><tr><td>**Evaluation**</td><td>Process (Fidelity), Outcome (Clinical/Patient), Economic, Implementation (CFIR/RE-AIM)</td></tr><tr><td>**Sustainability**</td><td>Leadership, Embedded in systems (EHR), Continuous measurement, Champions, Adaptability</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What are the 6 domains of AGREE II?</td><td>1. Scope & Purpose, 2. Stakeholder Involvement, 3. **Rigour of Development** (most critical), 4. Clarity of Presentation, 5. Applicability, 6. Editorial Independence.</td></tr><tr><td>2</td><td>What is the difference between a guideline and a clinical pathway?</td><td>Guideline = Evidence-based recommendations (broad, flexible). Pathway = Structured multidisciplinary timeline for episode of care with variance tracking.</td></tr><tr><td>3</td><td>What is a care bundle?</td><td>Small set (3-5) evidence-based practices for high-risk situation, applied **all-or-none** (e.g., Central Line Bundle, Sepsis 6).</td></tr><tr><td>4</td><td>CFIR — 5 domains?</td><td>**Intervention Characteristics, Outer Setting, Inner Setting, Characteristics of Individuals, Process**.</td></tr><tr><td>5</td><td>RE-AIM framework?</td><td>**Reach, Effectiveness, Adoption, Implementation, Maintenance** — Evaluation framework for implementation.</td></tr><tr><td>6</td><td>TDF — what is it?</td><td>Theoretical Domains Framework — 14 behavioural domains (Knowledge, Skills, Beliefs, Intentions, Goals, etc.) for behaviour change analysis.</td></tr><tr><td>7</td><td>Barriers to guideline implementation — categorise.</td><td>Guideline (Complexity), Professional (Knowledge/Attitudes), Organisational (Culture/Resources), Patient, System</td></tr><tr><td>8</td><td>NICE Technology Appraisal — cost-effectiveness threshold?</td><td>**ICER £20,000–£30,000/QALY** (End of life up to £50,000). Mandatory NHS funding within 90 days.</td></tr><tr><td>9</td><td>Clinical protocol — essential components?</td><td>Step-by-step instructions, Safety checks, Equipment, Documentation, Escalation criteria, Version control, Dissemination, Audit plan.</td></tr><tr><td>10</td><td>Sustainability of QI implementation — key factors?</td><td>Leadership support, Embedded in systems (EHR), Continuous measurement, Champions, Adaptability, Staff engagement.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Guideline = Protocol"**</td><td>**NO.** Guideline = Recommendations (clinical judgement). Protocol = SOP (Standardised, low flexibility).</td></tr><tr><td>**"AGREE II score = Quality"**</td><td>**NO.** AGREE II assesses **process of development**, not clinical content quality. A guideline can score high but have outdated evidence.</td></tr><tr><td>**"All NICE guidelines are mandatory"**</td><td>**Only Technology Appraisals (TA)** are mandatory (NHS must fund in 90 days). **Clinical Guidelines (CG/NG)** are "best practice" — expected but not legally mandated.</td></tr><tr><td>**"Implementation = Dissemination"**</td><td>**NO.** Dissemination = Spreading info. Implementation = **Active process** to change behaviour/systems (CFIR, RE-AIM).</td></tr><tr><td>**"Audit/Feedback always works"**</td><td>**NO.** Effectiveness varies. Works best with: Baseline non-compliance, Actionable feedback, Credible source, Repeated, Combined with other strategies.</td></tr><tr><td>**"Guideline = Mandatory cookbook"**</td><td>**NO.** Guidelines = **Recommendations** (Strong/Conditional). Clinical judgement required. "Guideline, not tramlines."</td></tr><tr><td>**"Implementation = One-off event"**</td><td>**NO.** Implementation is **ongoing process** (Planning → Engaging → Executing → Reflecting/Evaluating). Sustainability requires continuous effort.</td></tr><tr><td>**"Guideline = Law"**</td><td>**NO.** Guidelines = Best practice. **Deviation not negligence per se** if clinically justified and documented. NICE TA = Mandatory funding only.</td></tr><tr><td>**"All stakeholders = Patients only"**</td><td>**NO.** Stakeholders = **Patients, Public, Clinicians (all disciplines), Managers, Commissioners, Researchers, Industry (declared)**.</td></tr><tr><td>**"Protocol deviation = Negligence"**</td><td>**NO.** Documented, justified deviation with patient-specific reasoning = Good care. Protocol = Default, not absolute.</td></tr></table>
+<div class="callout"><b>Mnemonic: GUIDELINES PATHWAYS PROTOCOLS</b> <b>G</b>uideline Appraisal: <b>AGREE II</b> — <b>6 Domains</b> (Scope, Stakeholders, <b>Rigour #1</b>, Clarity, Applicability, Independence) <b>U</b>pdate Cycle: <b>Living Guidelines</b> (Surveillance, New Evidence → Rapid Update) <b>I</b>mplementation Science: <b>CFIR</b> (5 Domains: Intervention, Outer/Inner Setting, Individuals, Process) <b>D</b>evelopment: <b>WHO 10 Steps / NICE Process</b> → <b>GRADE → EtD → Recommendations (Strong/Conditional)</b> <b>E</b>vidence to Decision: <b>EtD Frameworks</b> (Problem, Benefits/Harms, Certainty, Values, Resources, Equity, Acceptability, Feasibility) <b>L</b>iving Guidelines: <b>Continuous Surveillance</b> → Rapid Update (vs 3-5 year cycles) <b>I</b>mplementation Science: <b>CFIR (5 Domains), RE-AIM (Evaluation), TDF (14 Domains), NPT (Normalisation)</b> <b>N</b>ICE: <b>TA (Mandatory, ICER £20-30k/QALY), CG (Best Practice), QS (Quality Statements), Pathways (Visual)</b> <b>E</b>valuation: <b>RE-AIM</b> (Reach, Effectiveness, Adoption, Implementation, Maintenance) <b>S</b>trategies: <b>Education, Audit/Feedback, Opinion Leaders, Reminders, CDSS, Pathways, Incentives</b> <b>P</b>athway vs Protocol: <b>Pathway = Multidisciplinary Timeline + Variance Tracking; Protocol = Step-by-Step SOP; Bundle = 3-5 All-or-None</b> <b>A</b>daptation: <b>Local Context</b> (Resources, Culture, Patient Population) → <b>ADAPTE Framework</b> <b>T</b>heory: <b>TDF (14 Domains), NPT (4 Constructs), CFIR (5 Domains), RE-AIM (5 Dimensions)</b> <b>H</b>ierarchy: <b>Guideline (What) → Pathway (When/Who/Where) → Protocol (How) → Bundle (All-or-None)</b> <b>W</b>ebsite: <b>NICE Pathways</b> — Interactive Visual Care Pathways (Guideline + Pathway + QS + TA) <b>A</b>ppraisal: <b>AGREE II 23 Items, 6 Domains</b> — <b>Rigour of Development = Most Critical</b> <b>Y</b> (Why Guidelines Fail): <b>Complexity, No Buy-in, No Resources, No Measurement, No Leadership, No Sustainability Plan</b> <b>S</b>ustainability: <b>Leadership, Embedded (EHR), Measurement, Champions, Adaptability, Engagement</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Guidelines, Pathways &amp; Protocols)) Appraisal AGREE II (6 Domains) Rigour = Key Development WHO 10 Steps NICE Process GRADE + EtD Living Guidelines Types Guideline: Recommendations Pathway: Timeline + Variance Protocol: Step-by-Step SOP Bundle: 3-5 All-or-None Implementation Science CFIR (5 Domains) RE-AIM (Evaluation) TDF (14 Domains) NPT / EPOC Taxonomy Barriers &amp; Strategies Guideline / Professional / Organisational Education / Audit-Feedback / CDSS / Pathways NICE Ecosystem TA (Mandatory, ICER) CG / QS / Pathways / IPG / DG Protocol Development MDT, Evidence, Steps, Safety, Version Control Evaluation Process (Fidelity) / Outcome / Economic RE-AIM / CFIR Sustainability Leadership, EHR, Champions, Measurement NICE Products TA (Mandatory), CG, QS, IPG, DG, MTG </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>AGREE II</td><td>3</td><td></td><td></td></tr><tr><td>Guideline Development (WHO, NICE, GRADE)</td><td>3</td><td></td><td></td></tr><tr><td>Guideline vs Pathway vs Protocol vs Bundle</td><td>3</td><td></td><td></td></tr><tr><td>Implementation Science (CFIR, RE-AIM, TDF)</td><td>3</td><td></td><td></td></tr><tr><td>Barriers & Strategies</td><td>2</td><td></td><td></td></tr><tr><td>NICE Products & Thresholds</td><td>2</td><td></td><td></td></tr><tr><td>Protocol Development</td><td>2</td><td></td><td></td></tr><tr><td>Evaluation & Sustainability</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the process of developing a clinical guideline and its implementation in practice."</td><td>AGREE II, WHO/NICE steps, GRADE/EtD, Recommendation formulation, Implementation (CFIR/RE-AIM), Barriers/Strategies, Evaluation (Process/Outcome), Sustainability</td></tr><tr><td>**Short Note**</td><td>"AGREE II instrument for guideline appraisal."</td><td>6 Domains (Scope, Stakeholders, Rigour, Clarity, Applicability, Independence), 23 items, 7-point scale, Domain scores, Overall assessment.</td></tr><tr><td>**Viva**</td><td>"You want to implement NICE sepsis guideline in your trust. How?"</td><td>1. Baseline audit (current compliance). 2. Identify barriers (CFIR). 3. Multidisciplinary team. 4. Select strategies (Education, Audit/Feedback, CDSS/EHR order sets, Opinion leaders). 5. PDSA cycles. 6. Measure (Run charts). 7. Embed (EHR order sets, pathways). 8. Sustain (Champions, Dashboard).</td></tr><tr><td>**Ward Round**</td><td>"Junior doctor deviates from local sepsis protocol. Is this negligence?"</td><td>**No — if clinically justified and documented.** Guidelines = recommendations, not tramlines. Deviation with reasoning = Good practice. Document: "Protocol deviated due to [reason], discussed with senior, patient-specific factors: X."</td></tr><tr><td>**Last-Night**</td><td>"AGREE: Scope/Stake/Rigour/Clarity/Applic/Indep. NICE: TA mandatory £20-30k. CFIR: 5 domains. RE-AIM: Reach/Eff/Adopt/Impl/Maint. Bundle=3-5 all/none. Pathway=Timeline+Variance. Protocol=SOP. Barriers: Guide/Pro/Org/Pat/Sys. Strat: Edu/Audit/CDSS/Champion. Sustain: Leadership/EHR/Champions."</td><td>Compressed frameworks.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>AGREE II</b>: 6 Domains (Scope, Stakeholders, <b>Rigour=Key</b>, Clarity, Applicability, Independence). 23 items, Domain scores 0-100%.</li><li><b>Guideline Development</b>: WHO 10 steps / NICE process → Systematic reviews → GRADE → EtD Frameworks → Strong/Conditional recommendations.</li><li><b>Hierarchy</b>: <b>Guideline</b> (Recommendations) → <b>Pathway</b> (Multidisciplinary timeline + Variance) → <b>Protocol</b> (Step-by-step SOP) → <b>Bundle</b> (3-5 practices All-or-None).</li><li><b>Implementation Science</b>: <b>CFIR</b> (5 domains: Intervention, Outer/Inner Setting, Individuals, Process), <b>RE-AIM</b> (Reach, Effectiveness, Adoption, Implementation, Maintenance), <b>TDF</b> (14 behaviour domains).</li><li><b>Barriers</b>: Guideline (Complexity), Professional (Knowledge/Attitude), Organisational (Culture/Resources), Patient, System.</li><li><b>Strategies</b>: Education, Audit/Feedback, Opinion Leaders, Reminders, CDSS, Pathways, Incentives, Patient Decision Aids.</li><li><b>NICE</b>: TA = Mandatory (ICER £20-30k/QALY); CG/NG = Best practice; QS = Quality statements; Pathways = Visual interactive.</li><li><b>Protocol Development</b>: MDT, Evidence, Step-by-step, Safety checks, Version control, Dissemination, Audit plan.</li><li><b>Evaluation</b>: Process (Fidelity), Outcome (Clinical/Patient), Economic, Implementation (CFIR/RE-AIM).</li><li><b>Sustainability</b>: Leadership, EHR embedding, Continuous measurement, Champions, Adaptability, Staff engagement.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>AGREE II — most critical domain for guideline quality:</b></li></ol>
+<p>A. Scope &amp; Purpose  B. <b>Rigour of Development</b>  C. Editorial Independence  D. Applicability <i>Answer: B. Rigour of Development (Systematic search, Evidence selection, Evidence→Rec linkage, External review, Update plan).</i></p>
+<ol><li><b>NICE Technology Appraisal — mandatory funding threshold:</b></li></ol>
+<p>A. ICER £10,000/QALY  B. <b>ICER £20,000–£30,000/QALY</b>  C. ICER £50,000/QALY  D. No threshold <i>Answer: B. Standard threshold £20–30k/QALY; End-of-life up to £50,000.</i></p>
+<ol><li><b>Clinical pathway — key feature distinguishing from guideline:</b></li></ol>
+<p>A. Evidence-based recommendations  B. <b>Multidisciplinary timeline with variance tracking</b>  C. Step-by-step procedure  D. All-or-none practices <i>Answer: B. Pathway = Structured timeline + variance tracking (Planned vs Actual).</i></p>
+<ol><li><b>Care bundle — defining characteristic:</b></li></ol>
+<p>A. 10+ practices  B. <b>3-5 practices, all-or-none application</b>  C. Optional components  D. Single discipline <i>Answer: B. Small set (3-5) evidence-based practices applied ALL-OR-NONE (e.g., Central Line Bundle).</i></p>
+<ol><li><b>CFIR — "Inner Setting" domain includes:</b></li></ol>
+<p>A. Patient needs  B. <b>Structural characteristics, Culture, Leadership, Readiness</b>  C. Intervention complexity  D. External policy <i>Answer: B. Inner Setting = Organisational context (Structure, Networks, Culture, Readiness, Leadership).</i></p>
+<ol><li><b>RE-AIM "Adoption" assesses:</b></li></ol>
+<p>A. Patient outcomes  B. <b>% settings/clinicians adopting the intervention</b>  C. Cost-effectiveness  D. Fidelity <i>Answer: B. Adoption = Proportion of eligible settings/providers who take up the intervention.</i></p>
+<ol><li><b>EPOC Taxonomy — "Organisational" strategy example:</b></li></ol>
+<p>A. Educational outreach  B. <b>Multidisciplinary team / Care pathway</b>  C. Patient decision aid  D. Reminder system <i>Answer: B. Organisational = Care pathways, MDT, Skill mix, Case management.</i></p>
+<ol><li><b>Protocol deviation — when is it acceptable?</b></li></ol>
+<p>A. Never  B. <b>When clinically justified, documented, patient-specific reasoning</b>  C. Only with consultant approval  D. Only in emergency <i>Answer: B. Guidelines ≠ Mandates. Documented, reasoned deviation = Good practice.</i></p>
+<ol><li><b>Sustainability of implementation — most critical factor:</b></li></ol>
+<p>A. Initial training  B. <b>Leadership support + Embedded in systems (EHR)</b>  C. One-time audit  D. Patient satisfaction <i>Answer: B. Leadership visibility + Embedded in systems (EHR, Standard work) + Continuous measurement + Champions.</i></p>
+<ol><li><b>NICE Clinical Guideline vs Technology Appraisal — legal status:</b></li></ol>
+<p>A. Both mandatory  B. <b>TA Mandatory (NHS must fund); CG Best Practice (Expected but not legally mandated)</b>  C. CG Mandatory; TA Optional  D. Neither mandatory <i>Answer: B. TA = Statutory funding obligation (90 days). CG = Expected but not legally mandated.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Trust wants to implement NICE heart failure guideline. First step?</b></li></ol>
+<p>A. Educate all staff  B. <b>Baseline audit (current practice vs guideline)</b>  C. Buy new software  D. Hire pharmacist <i>Answer: B. Baseline audit identifies gaps, informs driver diagram, measures improvement.</i></p>
+<ol><li><b>Guideline developed without patient involvement. AGREE II domain failing?</b></li></ol>
+<p>A. Scope &amp; Purpose  B. <b>Stakeholder Involvement</b>  C. Rigour of Development  D. Clarity of Presentation <i>Answer: B. Domain 2 = Stakeholder Involvement (Patient/public representation).</i></p>
+<ol><li><b>Hospital mandates "Sepsis 6" protocol for all septic patients. After 6 months, compliance 45%. Best next step?</b></li></ol>
+<p>A. Punish non-compliant  B. <b>Barrier analysis (CFIR) → Targeted strategies (Audit/Feedback + CDSS)</b>  C. Abandon protocol  D. More education <i>Answer: B. Identify barriers (CFIR) → Multifaceted strategies (Audit/Feedback + CDSS + Opinion Leaders) &gt; Education alone.</i></p>
+<ol><li><b>NICE Quality Standard — purpose?</b></li></ol>
+<p>A. Replace guidelines  B. <b>Concise prioritised statements for quality improvement / audit</b>  C. Mandatory funding  D. Drug pricing <i>Answer: B. QS = Prioritised, measurable statements for QI, audit, commissioning.</i></p>
+<ol><li><b>Protocol for "IV Heparin Infusion" — essential safety check?</b></li></ol>
+<p>A. Patient name  B. <b>Weight-based dosing, APTT monitoring protocol, Reversal agent availability</b>  C. Consultant signature  D. Pharmacy approval <i>Answer: B. High-alert drug protocol must include: Weight-based dosing, Monitoring (APTT), Escalation, Reversal, Contraindications.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1.1 Clinical Reasoning &amp; Diagnostic Process]] — Clinical decision rules (CDRs) as guideline derivatives, Implementation</li><li>[[1.2 Evidence-Based Medicine]] — GRADE, Systematic reviews, Critical appraisal for guideline development</li><li>[[1.3 Communication Skills]] — Shared decision-making (Guideline → Patient conversation), Consent for pathway deviations</li><li>[[1.4 Ethics &amp; Law]] — Consent for protocol deviations, Duty of candour for guideline non-compliance, Resource allocation (Justice)</li><li>[[1.5 Quality Improvement &amp; Patient Safety]] — Audit cycle for guideline compliance, PDSA for implementation, Run charts for monitoring</li><li>[[1.5 Quality Improvement &amp; Patient Safety]] — Never Events as protocol failures, Duty of candour for deviations</li><li>[../../Clinical Therapeutics/Guidelines] — Specific therapeutic guidelines (BP, Lipids, Diabetes, HF)</li><li>[../../Clinical Context/Antimicrobial Stewardship] — Antibiotic guidelines, stewardship bundles, prescribing pathways</li><li>[../../Perioperative/Pathways] — Enhanced recovery pathways (ERAS), Surgical safety checklists</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Guidelines Pathways · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

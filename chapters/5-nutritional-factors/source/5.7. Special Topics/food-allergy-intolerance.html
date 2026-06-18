@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Food Allergy Intolerance — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.7. SPECIAL TOPICS</span>
+      <div class="h1">Food Allergy Intolerance</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define food allergy: IgE-mediated (immediate, Type I hypersensitivity, anaphylaxis) vs non-IgE/cell-mediated (delayed, FPIES, EoE)</li><li>[ ] State 8 most common food allergens (90%): milk, egg, peanut, tree nut, soy, wheat, fish, shellfish; plus sesame</li><li>[ ] Recognise IgE-mediated allergy: urticaria, angioedema, anaphylaxis, oral allergy syndrome; skin prick test, specific IgE</li><li>[ ] Describe food intolerance: lactose (lactase deficiency), FODMAP (IBS), histamine, gluten (coeliac), food additives</li><li>[ ] Diagnose: detailed history, food diary, elimination diet, skin prick test, specific IgE, component-resolved diagnostics, oral food challenge (gold standard)</li><li>[ ] Treat: avoidance, epinephrine auto-injector (anaphylaxis), oral immunotherapy (peanut, OIT), antihistamines (mild), dietary management (lactose, FODMAP)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Food Allergy**</td><td>Adverse immune response to food; IgE, non-IgE, or mixed</td></tr><tr><td>**IgE-Mediated Allergy (Type I)**</td><td>Immediate (<2 h); urticaria, angioedema, anaphylaxis; SPT, sIgE positive</td></tr><tr><td>**Non-IgE / Cell-Mediated (Type IV)**</td><td>Delayed (4-72 h); FPIES, EoE, proctocolitis; patch test</td></tr><tr><td>**Mixed (IgE + Non-IgE)**</td><td>Atopic dermatitis, EoE</td></tr><tr><td>**Food Anaphylaxis**</td><td>Acute, severe, multi-system; hypotension, bronchospasm, urticaria; emergency</td></tr><tr><td>**Oral Allergy Syndrome (OAS)**</td><td>Pollen-food cross-reactivity; raw fruit/veg; mild oropharyngeal itching</td></tr><tr><td>**Food-Dependent Exercise-Induced Anaphylaxis (FDEIA)**</td><td>Anaphylaxis only with exercise + food (wheat, shellfish)</td></tr><tr><td>**α-Gal Syndrome (Mammalian Meat Allergy)**</td><td>Tick bite (lone star) → IgE to galactose-α-1,3-galactose → delayed anaphylaxis to red meat (3-6 h)</td></tr><tr><td>**Latex-Food Syndrome**</td><td>Latex (Hevea) cross-reactivity with banana, avocado, kiwi, chestnut</td></tr><tr><td>**Food Protein-Induced Enterocolitis Syndrome (FPIES)**</td><td>Non-IgE; infants; severe vomiting, lethargy, hypotension (shock); milk, soy, rice, oats</td></tr><tr><td>**Eosinophilic Oesophagitis (EoE)**</td><td>Mixed IgE/non-IgE; chronic dysphagia, food impaction, oesophageal eosinophils ≥15/hpf</td></tr><tr><td>**Coeliac Disease**</td><td>Gluten (gliadin) → autoimmune enteropathy; villous atrophy; IgA anti-tTG, EMA</td></tr><tr><td>**Lactose Intolerance**</td><td>↓Lactase; fermentation; bloating, flatulence, diarrhoea; primary (Asian, African), secondary (GI disease)</td></tr><tr><td>**FODMAPs**</td><td>Fermentable Oligo-, Di-, Monosaccharides and Polyols; trigger IBS; low-FODMAP diet</td></tr><tr><td>**Histamine Intolerance**</td><td>DAO deficiency; fermented foods, aged cheese, wine; flushing, headache, GI</td></tr><tr><td>**Gluten Sensitivity (NCGS)**</td><td>Non-coeliac; wheat/rye/barley; symptoms without coeliac; overlap with IBS</td></tr><tr><td>**Salicylate Sensitivity**</td><td>NSAIDs, fruits, vegetables; asthma, urticaria, GI</td></tr><tr><td>**Elimination Diet**</td><td>Remove suspected foods; reintroduce sequentially; gold standard for food intolerance</td></tr><tr><td>**Oral Immunotherapy (OIT)**</td><td>Gradual ↑exposure to allergen; ↑threshold; desensitisation; peanut OIT (Palforzia)</td></tr><tr><td>**Skin Prick Test (SPT)**</td><td>Wheal ≥3 mm = positive; commercial extracts + fresh (OAS)</td></tr><tr><td>**Specific IgE (sIgE)**</td><td>Serum IgE to allergen; CAP-FEIA; quantitative</td></tr><tr><td>**Component-Resolved Diagnostics (CRD)**</td><td>Individual allergen proteins; Ara h 1/2/3 (peanut severe); cross-reactivity prediction</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Food Allergy (Immunological)</div>
+<p><b>Mechanism (IgE-Mediated, Type I):</b></p>
+<ul><li>Sensitisation: First exposure → Th2 → IgE to allergen epitopes</li><li>IgE binds mast cell FcεRI receptors</li><li>Re-exposure → cross-linking → mast cell degranulation</li><li>Mediators: histamine, tryptase, leukotrienes, prostaglandins, cytokines</li><li><b>Onset: &lt;2 hours</b> (often &lt;30 min); can be minutes</li></ul>
+<p><b>Common Allergens (8 major = 90%):</b></p>
+<ol><li><b>Cow's milk</b> (most common in children)</li><li><b>Egg</b> (esp. egg white; ovomucoid resistant)</li><li><b>Peanut</b> (severe; lifelong; Ara h 1/2/3)</li><li><b>Tree nut</b> (almond, walnut, hazelnut, cashew, pistachio; severe)</li><li><b>Soy</b></li><li><b>Wheat</b> (omega-5 gliadin; lipid transfer protein; coeliac = gluten)</li><li><b>Fish</b> (parvalbumin; cross-reactive)</li><li><b>Shellfish</b> (crustaceans: shrimp, crab, lobster; tropomyosin)</li></ol>
+<p>Plus <b>sesame</b> (new major allergen; US 2023 FDA labelling).</p>
+<p><b>Conditions:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Condition&lt;/th&gt;&lt;th&gt;Mechanism&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;Triggers&lt;/th&gt;&lt;th&gt;Features&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-----&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>IgE-mediated allergy</b>&lt;/td&gt;&lt;td&gt;IgE Type I&lt;/td&gt;&lt;td&gt;All&lt;/td&gt;&lt;td&gt;8 allergens&lt;/td&gt;&lt;td&gt;Urticaria, angioedema, anaphylaxis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>OAS (Pollen-food)</b>&lt;/td&gt;&lt;td&gt;Cross-reactivity&lt;/td&gt;&lt;td&gt;Adults&lt;/td&gt;&lt;td&gt;Raw fruit/veg (apple, peach, celery)&lt;/td&gt;&lt;td&gt;Oropharyngeal itching; mild&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>FPIES</b>&lt;/td&gt;&lt;td&gt;Non-IgE (T cell)&lt;/td&gt;&lt;td&gt;Infants 2-7m&lt;/td&gt;&lt;td&gt;Milk, soy, rice, oats&lt;/td&gt;&lt;td&gt;Severe vomiting, lethargy, shock; delayed (1-4h)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>EoE</b>&lt;/td&gt;&lt;td&gt;Mixed&lt;/td&gt;&lt;td&gt;Children/adults&lt;/td&gt;&lt;td&gt;Milk, wheat, egg, soy, peanut, fish&lt;/td&gt;&lt;td&gt;Chronic dysphagia, food impaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Food-induced proctocolitis</b>&lt;/td&gt;&lt;td&gt;Non-IgE&lt;/td&gt;&lt;td&gt;Infants&lt;/td&gt;&lt;td&gt;Milk&lt;/td&gt;&lt;td&gt;Blood in stool; benign&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Food-induced enteropathy</b>&lt;/td&gt;&lt;td&gt;Non-IgE&lt;/td&gt;&lt;td&gt;Infants&lt;/td&gt;&lt;td&gt;Milk, soy, wheat, egg&lt;/td&gt;&lt;td&gt;Diarrhoea, villous atrophy (transient)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Heiner syndrome</b>&lt;/td&gt;&lt;td&gt;Non-IgE (immune complex)&lt;/td&gt;&lt;td&gt;Infants&lt;/td&gt;&lt;td&gt;Cow's milk&lt;/td&gt;&lt;td&gt;Pulmonary haemosiderosis, IDA, recurrent pneumonia&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>FDEIA</b>&lt;/td&gt;&lt;td&gt;IgE + exercise&lt;/td&gt;&lt;td&gt;All&lt;/td&gt;&lt;td&gt;Wheat, shellfish, celery&lt;/td&gt;&lt;td&gt;Anaphylaxis only with exercise&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>α-Gal syndrome</b>&lt;/td&gt;&lt;td&gt;IgE to galactose-α-1,3-gal&lt;/td&gt;&lt;td&gt;Adult&lt;/td&gt;&lt;td&gt;Red meat, gelatin&lt;/td&gt;&lt;td&gt;Delayed (3-6 h) anaphylaxis; tick bite (lone star)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="sub-h">Section 2: Anaphylaxis Management</div>
+<p><b>Recognition (WAO 2020):</b></p>
+<ul><li><b>Acute onset</b> (minutes to hours)</li><li><b>Skin/mucosal</b> (urticaria, angioedema, flushing)</li><li><b>PLUS ≥1 of:</b></li><li><b>Respiratory:</b> dyspnoea, wheeze, stridor, hypoxia</li><li><b>Cardiovascular:</b> ↓BP, syncope, incontinence</li><li><b>Severe GI:</b> crampy abdominal pain, vomiting</li><li><b>Post-exposure</b> to known/likely allergen</li></ul>
+<p><b>Treatment:</b></p>
+<ul><li><b>IM Adrenaline (Epinephrine) 0.5 mg (1:1000) into anterolateral thigh</b> (adult); repeat every 5-15 min if needed</li><li><b>IV access, supine, leg elevation</b> (NOT sitting up; risk of empty ventricle)</li><li><b>High-flow O₂</b>, airway management</li><li><b>IV fluid bolus</b> (crystalloid 1-2 L; 20 mL/kg in paediatrics)</li><li><b>Nebulised salbutamol</b> (bronchospasm)</li><li><b>IV hydrocortisone</b> 200 mg (delayed, ↓biphasic)</li><li><b>IV chlorpheniramine</b> 10 mg (supportive)</li><li><b>Adrenaline infusion</b> if refractory</li><li><b>Cardiac arrest:</b> standard ALS; IV adrenaline 1 mg q3-5 min</li><li><b>Glucagon</b> if β-blocker (refractory hypotension)</li><li><b>Observe 4-6h</b> (biphasic 1-72 h)</li><li><b>Discharge:</b> Adrenaline auto-injector (EpiPen, Jext); allergy referral; action plan</li></ul>
+<div class="sub-h">Section 3: Food Intolerance (Non-Immunological)</div>
+<table class="ctable"><tr><th>Type</th><th>Cause</th><th>Symptoms</th><th>Management</th></tr><tr><td>------</td><td>-------</td><td>----------</td><td>------------</td></tr><tr><td>**Lactose**</td><td>↓Lactase (primary Asian, African; secondary GI disease)</td><td>Bloating, flatulence, diarrhoea, cramps; 30 min-2h</td><td>↓Lactose; lactose-free milk; lactase supplements</td></tr><tr><td>**Fructose**</td><td>↓Fructose transporter; malabsorption</td><td>Bloating, diarrhoea</td><td>↓Fructose, sorbitol; limit fruit juices, HFCS</td></tr><tr><td>**FODMAP**</td><td>Fermentable carbs; IBS overlap</td><td>Bloating, gas, altered bowels</td><td>Low-FODMAP diet (elimination 4-6w, reintroduction)</td></tr><tr><td>**Histamine**</td><td>↓DAO; histamine-rich foods</td><td>Flushing, headache, GI, rhinitis, urticaria</td><td>↓Histamine-rich foods; DAO supplements (controversial)</td></tr><tr><td>**Salicylate**</td><td>Aspirin, fruit, vegetables</td><td>Asthma, urticaria, GI, anaphylactoid</td><td>↓Salicylate; aspirin avoidance</td></tr><tr><td>**Gluten (NCGS)**</td><td>Wheat, rye, barley; non-coeliac</td><td>IBS-like; fatigue; foggy brain</td><td>↓Gluten; not coeliac, not allergy</td></tr><tr><td>**Food additives**</td><td>Sulphites, MSG, benzoates, colours</td><td>Asthma, urticaria, behaviour</td><td>Avoidance; controversial</td></tr><tr><td>**Amines (Tyramine)**</td><td>Aged cheese, wine, fermented</td><td>Migraine, BP changes</td><td>↓Tyramine (MAOI users especially)</td></tr></table>
+<p><b>FODMAPs:</b></p>
+<ul><li><b>Fermentable:</b> reach colon undigested, gas, water secretion</li><li><b>High-FODMAP foods:</b> apple, pear, mango, watermelon, honey, onion, garlic, wheat, legumes, milk, soft cheese, artificial sweeteners (sorbitol, mannitol)</li><li><b>Low-FODMAP:</b> banana, blueberry, orange, carrots, cucumber, lettuce, rice, oats, lactose-free dairy, hard cheese</li></ul>
+<p><b>Low-FODMAP Diet:</b></p>
+<ul><li><b>Phase 1 (elimination):</b> 4-6 weeks strict</li><li><b>Phase 2 (reintroduction):</b> Sequential; one FODMAP group at a time; 3 days</li><li><b>Phase 3 (personalisation):</b> Long-term; tolerate well-tolerated groups</li></ul>
+<div class="sub-h">Section 4: Diagnosis of Food Allergy</div>
+<p><b>History:</b> Reaction timing, type, severity, triggers, associated factors (exercise, alcohol), reproduction with re-exposure, atopy history <b>Skin Prick Test (SPT):</b></p>
+<ul><li>Commercial extracts + fresh food (OAS)</li><li><b>Wheal ≥3 mm = positive</b></li><li>Negative predictive value 95%; positive predictive value ~50%</li><li>Stop antihistamines 5-7 days before</li><li>Fresh food (prick-prick) more sensitive</li></ul>
+<p><b>Specific IgE (sIgE):</b></p>
+<ul><li>Quantitative (CAP-FEIA); not affected by antihistamines</li><li>Decision points (95% PPV):</li><li>Egg 7 kU/L, Milk 15 kU/L, Peanut 14 kU/L, Fish 20 kU/L</li></ul>
+<p><b>Component-Resolved Diagnostics (CRD):</b></p>
+<ul><li>Individual allergen proteins</li><li><b>Ara h 1/2/3 (peanut severe)</b> vs <b>Ara h 8 (cross-reactive, mild)</b></li><li>Predicts severity and tolerance</li><li>Helps risk stratify</li></ul>
+<p><b>Oral Food Challenge (OFC):</b></p>
+<ul><li><b>Gold standard</b> for diagnosis</li><li>Supervised, double-blind, placebo-controlled</li><li>Graded doses; emergency preparedness</li><li>Distinguishes true allergy from sensitisation (positive SPT/sIgE)</li></ul>
+<p><b>Elimination Diet (Intolerance):</b></p>
+<ul><li>2-6 weeks strict elimination</li><li>Reintroduce one food at a time ×3 days</li><li>Symptom diary; identify triggers</li><li>For food intolerance (not allergy)</li></ul>
+<div class="sub-h">Section 5: Management of Food Allergy</div>
+<p><b>Avoidance:</b></p>
+<ul><li>Read labels (EU/FDA allergen labelling)</li><li>Cross-contact prevention (separate cooking, utensils)</li><li>Restaurant awareness</li><li>School/employer notification</li><li>Travel planning (EpiPen, translations)</li></ul>
+<p><b>Emergency:</b></p>
+<ul><li><b>Adrenaline auto-injector (EpiPen, Jext, Emerade)</b></li><li><b>2 devices</b> (one in date, one backup)</li><li>Action plan</li><li>Wear medical alert jewellery</li></ul>
+<p><b>Pharmacotherapy:</b></p>
+<ul><li><b>Antihistamines</b> (cetirizine, loratadine; H1 blockers; mild)</li><li><b>Adrenaline</b> (anaphylaxis; IM; auto-injector)</li><li><b>Corticosteroids</b> (delayed; ↓biphasic; severe)</li><li><b>Leukotriene receptor antagonists</b> (montelukast; adjunct)</li><li><b>Omalizumab</b> (anti-IgE; chronic urticaria; food allergy desensitisation adjunct)</li><li><b>Dupilumab</b> (EoE; anti-IL-4/13)</li></ul>
+<p><b>Oral Immunotherapy (OIT):</b></p>
+<ul><li><b>Palforzia (peanut OIT)</b> (FDA 2020, EMA 2021); children 4-17</li><li>Gradual ↑doses; daily; ↑threshold</li><li>Risk: anaphylaxis, eosinophilic oesophagitis</li><li>Not cure; ongoing dosing</li><li><b>Sublingual (SLIT), Epicutaneous (EPIT, Viaskin)</b> in trials</li><li>Milk, egg, wheat OIT in trials</li></ul>
+<p><b>Prevention:</b></p>
+<ul><li><b>LEAP study (2015):</b> Early peanut introduction (4-6 months) ↓peanut allergy 80% in high-risk infants</li><li><b>EAT trial (2016):</b> Early allergenic food introduction (4-6 months) supported</li><li>Guidelines: introduce allergenic foods at 4-6 months (after weaning); high-risk (eczema) early supervised</li><li>Avoid unnecessary maternal diet restriction in pregnancy/lactation</li><li>Breastfeeding benefits (controversial for allergy prevention)</li></ul>
+<p><b>Natural History:</b></p>
+<ul><li>Milk, egg, soy, wheat: 80% tolerance by 5-6y</li><li>Peanut, tree nut, fish, shellfish: 10-20% tolerance; often lifelong</li><li>Sesame: 20-30% tolerance</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>5y child, peanut exposure, urticaria, wheeze</td><td>**IM adrenaline 0.5 mg STAT**; high-flow O2; IV access; IV fluids; IV hydrocortisone 200 mg; observe 4-6h; EpiPen; allergy referral</td><td>Anaphylaxis</td></tr><tr><td>25F, milk ingestion, bloating, diarrhoea, no anaphylaxis</td><td>**Suspect lactose intolerance**; trial of lactose-free milk; lactase supplements; hydrogen breath test</td><td>Lactose intolerance</td></tr><tr><td>30F, peanut SPT positive, never had reaction; sIgE 5 kU/L</td><td>**Component-resolved diagnostics (Ara h 1/2/3)**; OFC if equivocal; counsel re: avoidance</td><td>Sensitisation vs allergy</td></tr><tr><td>18m infant, milk exposure, severe vomiting 2h later, lethargy</td><td>**FPIES**; hospital admission; IV fluids; ondansetron; future strict avoidance; resolves by 3-5y</td><td>FPIES</td></tr><tr><td>35M, abdominal pain, bloating, alternating bowels, no red flags</td><td>**Low-FODMAP diet (4-6w elimination, then reintroduction)**; dietitian; consider food diary</td><td>IBS / FODMAP</td></tr><tr><td>4y child, severe eczema, egg SPT positive, never ingested</td><td>**Allergy referral; supervised food challenge (OFC); OIT if persistent**</td><td>Egg allergy, possible OIT</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> 8 allergens (90%): milk, egg, peanut, tree nut, soy, wheat, fish, shellfish; IgE (immediate, anaphylaxis) vs non-IgE (FPIES, EoE); anaphylaxis Rx (IM adrenaline 0.5 mg); EpiPen; SPT wheal ≥3 mm; OFC gold standard; OIT peanut; FODMAP; lactose intolerance; LEAP (early peanut) - <b>Common viva:</b> Anaphylaxis management; SPT vs sIgE; FPIES vs IgE; FODMAP; OIT; LEAP; CRD (Ara h); mast cell tryptase - <b>Exam trap:</b> Treating anaphylaxis with antihistamines only; missing biphasic reaction; delayed onset of FPIES; restricting diet without diagnosis</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Antihistamines for anaphylaxis</td><td>**IM Adrenaline FIRST**; antihistamines supportive only</td></tr><tr><td>SPT false positive = allergy</td><td>**SPT 50% PPV; OFC gold standard**; sensitisation common</td></tr><tr><td>FPIES = IgE allergy</td><td>**FPIES = non-IgE; delayed (1-4h); severe vomiting, shock**</td></tr><tr><td>Lactose intolerance = milk allergy</td><td>**Intolerance (no IgE); abdominal symptoms; anaphylaxis absent**</td></tr><tr><td>Coeliac = wheat allergy</td><td>**Coeliac = autoimmune (anti-tTG); gluten; different mechanism**</td></tr><tr><td>EpiPen single dose enough</td><td>**2 EpiPens**; biphasic 1-72h; observe 4-6h</td></tr><tr><td>Avoid allergenic foods in pregnancy</td><td>**LEAP: EARLY introduction** ↓allergy; avoid unnecessary restriction</td></tr><tr><td>Lactose-free milk adequate</td><td>**Lactose-free**; Ca, vit D supplement if avoiding dairy</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>8 allergens (90%):</b> <b>M</b>ilk, <b>E</b>gg, <b>P</b>eanut, <b>T</b>ree nut, <b>S</b>oy, <b>W</b>heat, <b>F</b>ish, <b>S</b>hellfish = <b>MEPT-SWFS</b>; + Sesame</li><li><b>Anaphylaxis Rx:</b> <b>A</b>drenaline IM <b>0.5 mg</b> (1:1000) anterolateral thigh; <b>A</b>irway; <b>F</b>luids IV; <b>H</b>ydrocortisone 200 mg; <b>C</b>hlorpheniramine 10 mg</li><li><b>SPT wheal ≥3 mm = positive</b></li><li><b>IgE immediate &lt;2 h; non-IgE delayed 4-72 h</b></li><li><b>FPIES:</b> <b>F</b>ood <b>P</b>rotein <b>I</b>nduced <b>E</b>ntero<b>C</b>olitis <b>S</b>yndrome; non-IgE; <b>2 h</b>; severe vomiting</li><li><b>OAS:</b> Pollen-food; raw fruit/veg; oropharyngeal itching</li><li><b>α-Gal:</b> <b>T</b>ick bite → delayed red meat (3-6 h)</li><li><b>FODMAPs:</b> <b>F</b>ructans, <b>O</b>ligosaccharides, <b>D</b>isaccharides (lactose), <b>M</b>onosaccharides (fructose), <b>A</b>nd <b>P</b>olyols</li><li><b>OIT:</b> <b>P</b>alforzia peanut; ↑threshold; daily</li><li><b>LEAP study (2015):</b> <b>E</b>arly peanut at <b>4-6 m</b>onths <b>↓80% allergy</b> in high-risk</li><li><b>Lactose intolerance:</b> <b>A</b>sian, <b>A</b>frican, <b>S</b>outh American; <b>D</b>airy <b>A</b>void; Ca supplement</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Food Allergy &amp; Intolerance)) Allergy IgE (immediate) Non-IgE (delayed) 8 allergens (90%) Anaphylaxis IM adrenaline 0.5 mg EpiPen 2 devices Observe 4-6h Intolerance Lactose FODMAP Histamine Gluten (NCGS) Salicylate Diagnosis SPT wheal ≥3 mm sIgE CRD (Ara h) OFC (gold standard) Management Avoidance Adrenaline auto-injector OIT (peanut) Antihistamines Prevention (LEAP) Early introduction 4-6m ↓Allergy 80% FPIES Non-IgE Milk/soy/rice Severe vomiting EoE Mixed Dysphagia ≥15 eos/hpf </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>8 allergens (90%): milk, egg, peanut, tree nut, soy, wheat, fish, shellfish + sesame</li><li>Anaphylaxis Rx: IM adrenaline 0.5 mg; EpiPen 2 devices; observe 4-6h</li><li>SPT wheal ≥3 mm; sIgE; OFC gold standard</li><li>IgE immediate &lt;2h; non-IgE delayed (FPIES 2h, EoE chronic)</li><li>FODMAP diet: 4-6w elimination, then reintroduction</li><li>Lactose intolerance: Asian/African; dairy avoid; Ca supplement</li><li>OIT (Palforzia peanut); ↑threshold; daily dosing</li><li>LEAP (2015): early peanut 4-6m ↓80% allergy in high-risk infants</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>8 allergens; IgE vs non-IgE; anaphylaxis (IM adrenaline); EpiPen; SPT ≥3 mm; OFC gold standard; FPIES; FODMAP; lactose intolerance; LEAP (early peanut); OIT</td></tr><tr><td>**Should Know 🟡**</td><td>OAS, FDEIA, α-Gal; EoE; CRD (Ara h); EAT trial; natural history; antihistamines; omalizumab; dupilumab; salbutamol/aminophylline; biphasic</td></tr><tr><td>**Nice to Know 🟢**</td><td>SLIT, EPIT (Viaskin); specific allergen immunotherapy; co-factor anaphylaxis; NSAID-exacerbated respiratory disease (NERD); allergen component Ara h 8 (Bet v 1 cross-reactivity)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] FPIES specifics</li><li>[ ] EoE diagnostic criteria</li><li>[ ] α-Gal mechanism</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Food allergy: types, diagnosis, and management"</p>
+<ul><li>8 allergens (90%): milk, egg, peanut, tree nut, soy, wheat, fish, shellfish + sesame</li><li>IgE (immediate, Type I): urticaria, angioedema, anaphylaxis (&lt;2h); SPT, sIgE</li><li>Non-IgE (delayed): FPIES (infants, severe vomiting 2h, shock), EoE (chronic dysphagia, food impaction)</li><li>Anaphylaxis Rx: IM adrenaline 0.5 mg (1:1000) anterolateral thigh; high-flow O₂; IV fluids; IV hydrocortisone 200 mg; IV chlorpheniramine 10 mg; observe 4-6h; 2 EpiPens</li><li>Diagnosis: history, SPT (wheal ≥3 mm), sIgE, component-resolved diagnostics (Ara h 1/2/3 = severe peanut), OFC (gold standard)</li><li>Management: avoidance, 2 EpiPens, action plan, OIT (Palforzia peanut)</li><li>Prevention: LEAP study (2015) — early peanut introduction at 4-6m ↓80% peanut allergy in high-risk infants</li><li>EoE diagnosis: ≥15 eos/hpf; food allergens; PPIs, swallowed steroids</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "Anaphylaxis Management"</p>
+<ul><li><b>IM Adrenaline (Epinephrine) 0.5 mg (1:1000)</b> into anterolateral thigh; repeat every 5-15 min if needed</li><li><b>IV access, supine, leg elevation</b> (NOT sitting up; risk of empty ventricle)</li><li><b>High-flow O₂</b>, airway management</li><li><b>IV fluid bolus</b> (1-2 L; 20 mL/kg paediatrics)</li><li><b>Nebulised salbutamol</b> (bronchospasm)</li><li><b>IV hydrocortisone 200 mg</b> (delayed; ↓biphasic)</li><li><b>IV chlorpheniramine 10 mg</b> (supportive)</li><li><b>Adrenaline infusion</b> if refractory</li><li><b>Glucagon</b> if β-blocker (refractory hypotension)</li><li><b>Observe 4-6h</b> (biphasic 1-72h)</li><li><b>Discharge:</b> 2 EpiPens; action plan; allergy referral</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "How do you differentiate IgE from non-IgE food allergy?" "A: <b>IgE-mediated (Type I, immediate):</b> onset &lt;2h (often &lt;30 min); urticaria, angioedema, anaphylaxis, oral allergy syndrome, vomiting; SPT positive, specific IgE elevated; can progress to anaphylaxis. <b>Non-IgE / cell-mediated (Type IV, delayed):</b> onset 4-72h; FPIES (severe vomiting, shock 1-4h after food), EoE (chronic dysphagia, food impaction), proctocolitis (blood in stool), enteropathy (villous atrophy); SPT negative, patch test may help; no anaphylaxis typically. <b>Mixed:</b> atopic dermatitis, EoE. Diagnosis: history + SPT/sIgE; OFC gold standard."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 30F, peanut ingestion, generalised urticaria, facial swelling, wheeze, SBP 90 mmHg. "Diagnosis: <b>Anaphylaxis to peanut</b>. <b>Action: 1) IM Adrenaline 0.5 mg (1:1000) STAT into anterolateral thigh</b> (repeat every 5-15 min). 2) <b>High-flow O₂</b>, supine, leg elevation. 3) <b>IV access, IV NS bolus 1-2 L</b> (20 mL/kg if needed). 4) <b>Nebulised salbutamol</b> (bronchospasm). 5) <b>IV hydrocortisone 200 mg</b> (delayed; ↓biphasic). 6) <b>IV chlorpheniramine 10 mg</b> (supportive). 7) <b>Observe 4-6h</b> (biphasic 1-72h). 8) <b>Discharge:</b> 2 EpiPens; action plan; allergy referral; CRD (Ara h 1/2/3); consider OIT (Palforzia). 9) <b>Strict peanut avoidance; food labelling; cross-contact; school/workplace notification.</b>"</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min</div>
+<ul><li><b>8 allergens (90%):</b> Milk, Egg, Peanut, Tree nut, Soy, Wheat, Fish, Shellfish + Sesame = <b>MEPT-SWFS</b></li><li><b>Anaphylaxis Rx:</b> IM Adrenaline 0.5 mg (1:1000) anterolateral thigh; IV fluids; hydrocortisone 200 mg; observe 4-6h; <b>2 EpiPens</b></li><li><b>SPT wheal ≥3 mm = positive</b>; OFC gold standard</li><li><b>IgE immediate &lt;2h; non-IgE delayed</b></li><li><b>FPIES:</b> Non-IgE; infants; 2h; severe vomiting</li><li><b>FODMAPs:</b> Fructans, Oligo, Di, Mono, A+P</li><li><b>LEAP (2015):</b> Early peanut 4-6m ↓80% allergy</li><li><b>OIT:</b> Palforzia peanut; ↑threshold; daily</li><li><b>CRD:</b> Ara h 1/2/3 = severe peanut</li><li><b>Lactose:</b> Asian/African; dairy avoid; Ca supplement</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>8 common food allergens (90%) include all EXCEPT:</b></li></ol>
+<p>A. Milk B. Egg C. <b>Strawberry</b> D. Peanut E. Wheat</p>
+<ol><li><b>First-line treatment for anaphylaxis:</b></li></ol>
+<p>A. IV hydrocortisone B. IV chlorpheniramine C. <b>IM adrenaline (epinephrine) 0.5 mg (1:1000) anterolateral thigh</b> D. IV fluids E. Nebulised salbutamol</p>
+<ol><li><b>SPT wheal diameter considered positive:</b></li></ol>
+<p>A. ≥1 mm B. ≥2 mm C. <b>≥3 mm</b> D. ≥5 mm E. ≥10 mm</p>
+<ol><li><b>Gold standard for food allergy diagnosis:</b></li></ol>
+<p>A. Skin prick test B. Specific IgE C. Component-resolved diagnostics D. <b>Oral food challenge (OFC)</b> E. Elimination diet</p>
+<ol><li><b>FPIES is:</b></li></ol>
+<p>A. IgE-mediated allergy B. <b>Non-IgE-mediated cell-mediated (delayed severe vomiting in infants)</b> C. Eosinophilic oesophagitis D. Lactose intolerance E. Coeliac disease</p>
+<ol><li><b>LEAP study 2015 found early peanut introduction at 4-6 months reduced peanut allergy by:</b></li></ol>
+<p>A. 20% B. 50% C. <b>80%</b> D. 95% E. 0% (no effect)</p>
+<ol><li><b>Lactose intolerance is most common in:</b></li></ol>
+<p>A. Northern Europeans B. <b>Asian, African, South American populations</b> C. Mediterranean D. North American E. Australian</p>
+<ol><li><b>EoE (Eosinophilic Oesophagitis) diagnostic criterion:</b></li></ol>
+<p>A. ≥5 eos/hpf B. <b>≥15 eos/hpf</b> C. ≥30 eos/hpf D. ≥50 eos/hpf E. ≥100 eos/hpf</p>
+<ol><li><b>α-Gal syndrome (mammalian meat allergy) caused by:</b></li></ol>
+<p>A. Cat bite B. <b>Tick bite (lone star tick, Amblyomma americanum)</b> C. Mosquito bite D. Bee sting E. Shellfish exposure</p>
+<ol><li><b>FODMAPs include:</b></li></ol>
+<p>A. Fibre, oils, dairy, alcohol, milk, apples, pears B. <b>Fermentable Oligo-, Di-, Monosaccharides and Polyols</b> C. Fats, Oils, Dairy, Alcohol, Milk, Apples, Pears D. Fast Oxidative Digestion And Metabolism of Plant foods E. Fish, Oils, Dairy, Alcohol, Milk, Apples, Pears</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 5-year-old child with peanut ingestion, generalised urticaria, wheeze, hypotension 80/50 mmHg. Most appropriate immediate management?</b></li></ol>
+<p>A. IV hydrocortisone B. <b>IM adrenaline 0.5 mg (1:1000) anterolateral thigh STAT; then IV fluids, O2, hydrocortisone</b> C. Oral antihistamine D. Wait and observe E. IV fluids only</p>
+<ol><li><b>A 25-year-old woman with milk ingestion, bloating, flatulence, diarrhoea, no anaphylaxis. Most likely diagnosis?</b></li></ol>
+<p>A. Cow's milk allergy B. <b>Lactose intolerance (primary, Asian descent, no IgE, abdominal symptoms)</b> C. Coeliac disease D. IBD E. Eosinophilic oesophagitis</p>
+<ol><li><b>An 18-month-old infant with severe vomiting 2 hours after milk ingestion, lethargy, hypotension. Diagnosis?</b></li></ol>
+<p>A. IgE-mediated milk allergy B. <b>Food protein-induced enterocolitis syndrome (FPIES, non-IgE, milk)</b> C. Lactose intolerance D. Coeliac E. Rotavirus gastroenteritis</p>
+<ol><li><b>A 4-month-old high-risk infant (severe eczema) - peanut introduction recommendation?</b></li></ol>
+<p>A. Avoid peanut for 3 years B. <b>Early peanut introduction at 4-6 months (LEAP study, ↓80% allergy)</b> C. Wait until 5 years D. SPT before introduction E. Maternal avoidance</p>
+<ol><li><b>A 30-year-old with abdominal pain, bloating, alternating bowels, no red flags, 6 weeks low-FODMAP diet improves symptoms. Next step?</b></li></ol>
+<p>A. Lifelong low-FODMAP B. <b>Reintroduction phase: systematically reintroduce FODMAP groups to identify triggers; personalise long-term diet</b> C. No further intervention D. Gluten-free diet E. Lactose-free diet only</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: 8 allergens (90%)</li></ul>
+<p>A: <b>MEPT-SWFS</b> = Milk, Egg, Peanut, Tree nut, Soy, Wheat, Fish, Shellfish (+Sesame)</p>
+<ul><li>Q: Anaphylaxis Rx</li></ul>
+<p>A: <b>IM Adrenaline 0.5 mg (1:1000) anterolateral thigh</b>; IV fluids; hydrocortisone 200 mg; observe 4-6h</p>
+<ul><li>Q: SPT positive</li></ul>
+<p>A: <b>Wheal ≥3 mm</b> at 15 min</p>
+<ul><li>Q: OFC</li></ul>
+<p>A: <b>Oral Food Challenge</b> (gold standard); double-blind placebo-controlled</p>
+<ul><li>Q: FPIES</li></ul>
+<p>A: <b>Non-IgE</b>; infants 2-7m; severe vomiting 1-4h; shock; milk/soy/rice</p>
+<ul><li>Q: LEAP</li></ul>
+<p>A: <b>L</b>earning <b>E</b>arly <b>A</b>bout <b>P</b>eanut (2015); early 4-6m ↓80% allergy high-risk</p>
+<ul><li>Q: FODMAPs</li></ul>
+<p>A: <b>F</b>ermentable <b>O</b>ligo-, <b>D</b>i-, <b>M</b>onosaccharides <b>A</b>nd <b>P</b>olyols</p>
+<ul><li>Q: EoE diagnosis</li></ul>
+<p>A: <b>≥15 eos/hpf</b> oesophageal biopsy</p>
+<ul><li>Q: α-Gal</li></ul>
+<p>A: <b>Tick bite</b> (lone star); delayed red meat (3-6h)</p>
+<ul><li>Q: OIT (peanut)</li></ul>
+<p>A: <b>Palforzia</b>; ↑threshold; daily dosing; not cure</p>
+<ul><li>Q: FODMAP low</li></ul>
+<p>A: <b>Banana, blueberry, orange, carrots, cucumber, lettuce, rice, oats, lactose-free dairy, hard cheese</b></p>
+<ul><li>Q: Lactose intolerance</li></ul>
+<p>A: <b>Asian, African, South American</b>; ↓lactase; Ca supplement</p>
+<ul><li>Q: OAS</li></ul>
+<p>A: <b>Pollen-food cross-reactivity</b>; raw fruit/veg; oropharyngeal itching</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — Strawberry is not in the 8 most common allergens; 8 allergens = milk, egg, peanut, tree nut, soy, wheat, fish, shellfish (+ sesame).</li><li><b>C</b> — Anaphylaxis first-line: IM adrenaline 0.5 mg (1:1000) anterolateral thigh; repeat every 5-15 min if needed.</li><li><b>C</b> — SPT wheal ≥3 mm at 15 min = positive; compared to negative control.</li><li><b>D</b> — OFC (Oral Food Challenge) is gold standard for food allergy diagnosis; double-blind, placebo-controlled; supervised.</li><li><b>B</b> — FPIES: non-IgE, cell-mediated, delayed severe vomiting (1-4h), shock in infants; milk, soy, rice, oats.</li><li><b>C</b> — LEAP study (2015): early peanut introduction at 4-6 months in high-risk infants ↓80% peanut allergy.</li><li><b>B</b> — Lactose intolerance most common in Asian, African, South American populations (primary adult lactase deficiency).</li><li><b>B</b> — EoE diagnostic criterion: ≥15 eosinophils per high-power field (eos/hpf) in oesophageal biopsy.</li><li><b>B</b> — α-Gal syndrome: tick bite (lone star tick, Amblyomma americanum) → IgE to galactose-α-1,3-galactose → delayed anaphylaxis to red meat.</li><li><b>B</b> — FODMAPs: Fermentable Oligo-, Di-, Monosaccharides And Polyols.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Peanut anaphylaxis (urticaria, wheeze, hypotension): IM adrenaline 0.5 mg (1:1000) STAT anterolateral thigh; IV fluids, O2, hydrocortisone 200 mg.</li><li><b>B</b> — Milk with bloating, flatulence, diarrhoea, no anaphylaxis: lactose intolerance (Asian, ↓lactase, no IgE); hydrogen breath test.</li><li><b>B</b> — 18m infant + severe vomiting 2h after milk + lethargy + hypotension: FPIES (non-IgE, milk, severe vomiting, shock).</li><li><b>B</b> — 4m high-risk infant (severe eczema): early peanut introduction 4-6m per LEAP study ↓80% peanut allergy.</li><li><b>B</b> — IBS/FODMAP, 6w elimination improved symptoms: reintroduction phase — systematically reintroduce FODMAP groups to identify triggers; personalise long-term diet.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Food Allergy &amp; Intolerance</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> 8 allergens (90%): <b>MEPT-SWFS</b> + Sesame. <b>Anaphylaxis Rx: IM Adrenaline 0.5 mg (1:1000) anterolateral thigh</b>; observe 4-6h; 2 EpiPens. <b>SPT wheal ≥3 mm; OFC gold standard.</b> IgE (immediate &lt;2h) vs non-IgE (delayed; FPIES 2h, EoE chronic). <b>LEAP (2015): early peanut 4-6m ↓80% allergy in high-risk.</b> <b>OIT (Palforzia peanut)</b> ↑threshold. <b>FODMAP</b> 4-6w elimination then reintroduction. <b>Lactose intolerance</b> common in Asian/African; dairy avoid + Ca. <b>Exam focus:</b> Anaphylaxis Rx, 8 allergens, SPT/OFC, FPIES, FODMAP, LEAP, OIT, EpiPen, EoE. <b>Clinical relevance:</b> Emergency departments, allergy clinics, paediatric, food labelling, schools, restaurants.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Food Allergy Intolerance · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

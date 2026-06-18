@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wilson Jungner Criteria — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.2. CANCER SCREENING & PREVENTION</span>
+      <div class="h1">Wilson Jungner Criteria</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] List and explain the <b>10 Wilson &amp; Jungner criteria</b> for screening programmes</li><li>[ ] Apply criteria to <b>UK cancer screening programmes</b></li><li>[ ] Distinguish <b>lead time bias</b>, <b>length time bias</b>, and <b>overdiagnosis</b></li><li>[ ] Calculate <b>PPV, NPV, sensitivity, specificity</b> for screening tests</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Wilson & Jungner 10 Criteria (1968)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Criterion</th><th>Description</th></tr><tr><td>---</td><td>-----------</td><td>-------------</td></tr><tr><td>**1**</td><td>**Important Health Problem**</td><td>High incidence/mortality, significant morbidity</td></tr><tr><td>**2**</td><td>**Accepted Treatment**</td><td>Effective treatment available for early-stage disease</td></tr><tr><td>**3**</td><td>**Facilities for Diagnosis/Treatment**</td><td>Adequate infrastructure for follow-up</td></tr><tr><td>**4**</td><td>**Recognisable Latent/Early Stage**</td><td>Detectable preclinical phase</td></tr><tr><td>**5**</td><td>**Suitable Test**</td><td>Sensitive, Specific, Acceptable, Safe, Cost-Effective</td></tr><tr><td>**6**</td><td>**Test Acceptable to Population**</td><td>High uptake, minimal harm</td></tr><tr><td>**7**</td><td>**Natural History Understood**</td><td>Progression from latent to clinical disease known</td></tr><tr><td>**8**</td><td>**Agreed Policy on Whom to Treat**</td><td>Clear referral/treatment pathways</td></tr><tr><td>**9**</td><td>**Cost-Effective**</td><td>Balanced against overall healthcare expenditure</td></tr><tr><td>**10**</td><td>**Continuous Process**</td><td>Ongoing, not once-off</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Application to UK Cancer Screening Programmes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Programme</th><th>Criteria Met</th><th>Gaps/Challenges</th></tr><tr><td>-----------</td><td>--------------</td><td>-----------------</td></tr><tr><td>**Breast (50-70, Mammogram)**</td><td>✅ 1-10</td><td>Overdiagnosis (10-20%), Interval Cancers</td></tr><tr><td>**Cervical (25-64, HPV Primary)**</td><td>✅ 1-10</td><td>HPV Vaccination Impact, Non-Attendance</td></tr><tr><td>**Colorectal (60-74, FIT)**</td><td>✅ 1-10</td><td>FIT Threshold Calibration, Uptake ~65%</td></tr><tr><td>**Lung (55-74, LDCT)**</td><td>✅ 1-10 (Pilot)</td><td>False Positives (~20-25%), Overdiagnosis ~10-20%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Key Biases in Cancer Screening</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Bias</th><th>Definition</th><th>Example</th></tr><tr><td>------</td><td>------------</td><td>---------</td></tr><tr><td>**Lead Time Bias**</td><td>Earlier diagnosis artificially inflates survival time without changing time of death</td><td>Screen-detected cancer appears to have longer survival</td></tr><tr><td>**Length Time Bias**</td><td>Slow-growing tumours more likely to be screen-detected → Better prognosis in screened group</td><td>Indolent cancers over-represented in screened population</td></tr><tr><td>**Overdiagnosis**</td><td>Detection of cancers that would never become clinically apparent in patient's lifetime</td><td>10-20% of screen-detected breast cancers; Indolent prostate cancer</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Test Performance Metrics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Formula</th><th>Interpretation</th></tr><tr><td>--------</td><td>---------</td><td>----------------</td></tr><tr><td>**Sensitivity**</td><td>TP / (TP + FN)</td><td>**Rule Out** (SnNout) - High sensitivity = Few false negatives</td></tr><tr><td>**Specificity**</td><td>TN / (TN + FP)</td><td>**Rule In** (SpPin) - High specificity = Few false positives</td></tr><tr><td>**PPV**</td><td>TP / (TP + FP)</td><td>Probability disease if test +ve</td></tr><tr><td>**NPV**</td><td>TN / (TN + FN)</td><td>Probability no disease if test -ve</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**10 Criteria**</td><td>Health Problem, Treatment, Facilities, Latent Stage, Suitable Test, Acceptable, Natural History, Policy, Cost-Effective, Continuous</td></tr><tr><td>**Breast Screening**</td><td>50-70, Mammogram 3yr, 20-25% Mortality Reduction, 10-20% Overdiagnosis</td></tr><tr><td>**Cervical Screening**</td><td>25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</td></tr><tr><td>**Colorectal Screening**</td><td>60-74, FIT q2yr, ≥120µg/g, PPV 10-15%</td></tr><tr><td>**Lung Screening**</td><td>55-74, 20+ Pack-Years, Annual LDCT, 20% Mortality Reduction</td></tr><tr><td>**Key Biases**</td><td>Lead Time (Artificially ↑ Survival), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</td></tr><tr><td>**Test Metrics**</td><td>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Wilson & Jungner Criteria — Name 5?**</td><td>1) Important Health Problem, 2) Accepted Treatment, 3) Suitable Test, 4) Acceptable to Population, 5) Cost-Effective. (Also: Latent Stage, Natural History, Facilities, Policy, Continuous)</td></tr><tr><td>**Lead Time Bias vs Length Time Bias?**</td><td>**Lead Time**: Earlier Dx → Survival Time Artificially ↑; **Length Time**: Slow-Growing Tumours More Likely Screen-Detected.</td></tr><tr><td>**Overdiagnosis — Definition, Rate in Breast Screening?**</td><td>**Detection of Indolent Cancers Never Causing Harm**; **10-20% of Screen-Detected Breast Cancers**.</td></tr><tr><td>**Cervical Screening — Primary Test, Triage?**</td><td>**Primary: HPV PCR**; **Triage: Cytology (LBC) if HPV+**; **Interval: 3yr (25-49), 5yr (50-64)**.</td></tr><tr><td>**UK Lung Screening — Eligibility, Evidence?**</td><td>**55-74, ≥20 Pack-Years, Current/Former <15yr**; **NLST 20% Mortality Reduction, NELSON 24-26%**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Sensitivity vs Specificity**</td><td>**Sensitivity**: Rule Out (SnNout); **Specificity**: Rule In (SpPin)</td></tr><tr><td>**FIT vs FOBT**</td><td>**FIT**: Quantitative, Antibody-Based, Specific for Human Hb, Single Sample; **FOBT**: Guaiac, Qualitative, Non-Specific, 3 Samples</td></tr><tr><td>**Overdiagnosis vs False Positive**</td><td>**Overdiagnosis**: True Cancer, But Indolent (Would Never Harm); **False Positive**: No Cancer, Test Wrongly +ve</td></tr><tr><td>**Lead Time vs Length Time Bias**</td><td>**Lead Time**: Earlier Dx → Survival Time Artificially ↑; **Length Time**: Slow-Growing Tumours More Likely Screen-Detected</td></tr><tr><td>**FIT Threshold**</td><td>**Lower Threshold** = More Sensitivity, More Colonoscopies; **Higher** = More Specificity, Missed Cancers</td></tr></table>
+<p><b>Mnemonic: WILSON-JUNGNER</b></p>
+<ul><li><b>W</b>ilson &amp; Jungner: <b>10 Criteria (1968)</b></li><li><b>I</b>mportant Health Problem</li><li><b>L</b>atent Stage Recognisable</li><li><b>S</b>uitable Test (Sens, Spec, Acceptable, Safe, Cost-Effective)</li><li><b>O</b>ngoing Process (Continuous, Not Once-Off)</li><li><b>N</b>atural History Understood</li><li><b>J</b>udged: Accepted Treatment Available</li><li><b>U</b>nderstood: Natural History</li><li><b>N</b>eeded: Facilities for Dx/Tx</li><li><b>G</b>uidelines: Agreed Policy on Whom to Treat</li><li><b>E</b>conomic: Cost-Effective</li><li><b>R</b>esult: Test Acceptable to Population</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Wilson &amp; Jungner Criteria)) 10 Criteria Health Problem Accepted Treatment Facilities Latent Stage Suitable Test Acceptable to Population Natural History Agreed Policy Cost-Effective Continuous Process Application to UK Screening Breast: 50-70, Mammo, 3yr Cervical: 25-64, HPV Primary Colorectal: 60-74, FIT q2yr Lung: 55-74, LDCT, 20pk-yr Biases Lead Time Bias Length Time Bias Overdiagnosis Metrics Sensitivity (SnNout) Specificity (SpPin) PPV, NPV </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**10 Criteria**</td><td>Health Problem, Treatment, Facilities, Latent Stage, Test, Acceptable, History, Policy, Cost, Continuous</td></tr><tr><td>**Screening Biases**</td><td>Lead Time (Artificial Survival ↑), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</td></tr><tr><td>**UK Programmes**</td><td>Breast (50-70, Mammo 3yr), Cervical (25-64, HPV 3/5yr), Colorectal (60-74, FIT 2yr), Lung (55-74, LDCT)</td></tr><tr><td>**Test Metrics**</td><td>Sens (Rule Out), Spec (Rule In), PPV (Prob Disease if +ve)</td></tr><tr><td>**Lead Time vs Length Time**</td><td>Lead: Earlier Dx → Survival ↑; Length: Slow Tumours Detected More</td></tr><tr><td>**Overdiagnosis**</td><td>True Cancer, Indolent, Would Never Harm; 10-20% Breast Screen-Detected</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>10 Criteria Recall</td><td></td><td></td></tr><tr><td>UK Screening Programs</td><td></td><td></td></tr><tr><td>Bias Definitions</td><td></td><td></td></tr><tr><td>Test Metrics</td><td></td><td></td></tr><tr><td>Bias Distinctions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Breast Cancer Screening]], [[Cervical Cancer Screening]], [[Colorectal Cancer Screening]], [[Lung Cancer Screening]], [[PSA Testing]], [[Overdiagnosis]], [[Lead Time Bias]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (10 Criteria), which statement is correct? A. Health Problem, Treatment, Facilities, Latent Stage, Suitable Test, Acceptable, Natural History, Pol B. Health - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Health Problem, Treatment, Facilities, Latent Stage, Suitable Test, Acceptable, Natural History, Policy, Cost-Effective,...</li></ul>
+<p><b>2.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (Breast Screening), which statement is correct? A. 50-70, Mammogram 3yr, 20-25% Mortality Reduction, 10-20% Overdiagnosis B. 50-70, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 50-70, Mammogram 3yr, 20-25% Mortality Reduction, 10-20% Overdiagnosis</li></ul>
+<p><b>3.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (Cervical Screening), which statement is correct? A. 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64) B. 25-64, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</li></ul>
+<p><b>4.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (Colorectal Screening), which statement is correct? A. 60-74, FIT q2yr, ≥120µg/g, PPV 10-15% B. 60-74, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 60-74, FIT q2yr, ≥120µg/g, PPV 10-15%</li></ul>
+<p><b>5.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (Lung Screening), which statement is correct? A. 55-74, 20+ Pack-Years, Annual LDCT, 20% Mortality Reduction B. 55-74, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 55-74, 20+ Pack-Years, Annual LDCT, 20% Mortality Reduction</li></ul>
+<p><b>6.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (Key Biases), which statement is correct? A. Lead Time (Artificially ↑ Survival), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Ca B. Lead - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Lead Time (Artificially ↑ Survival), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</li></ul>
+<p><b>7.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (Test Metrics), which statement is correct? A. Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve) B. Sensitivity - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</li></ul>
+<p><b>8.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (FCPS/MRCP High Yield - Wilson ), which statement is correct?</p>
+<ul><li>A. FCPS/MRCP High Yield - Wilson &amp; Jungner Criteria: 10 Principles for Screening Programmes</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - Wilson &amp; Jungner Criteria: 10 Principles for Screening Programmes</li></ul>
+<p><b>9.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (Applied to UK Cancer Screening), which statement is correct?</p>
+<ul><li>A. Applied to UK Cancer Screening (Breast, Cervical, Colorectal, Lung)</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Applied to UK Cancer Screening (Breast, Cervical, Colorectal, Lung)</li></ul>
+<p><b>10.</b> Regarding Wilson &amp; Jungner Criteria for Cancer Screening (Key Concepts), which statement is correct?</p>
+<ul><li>A. Key Concepts: Lead Time Bias, Length Time Bias, Overdiagnosis, PPV, Sensitivity, Specificity</li><li>B. None of the above</li><li>C. Not applicable in clinical practice</li><li>D. Used only in research settings</li><li><b>Answer: A</b> — Key Concepts: Lead Time Bias, Length Time Bias, Overdiagnosis, PPV, Sensitivity, Specificity</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. Health Problem, Treatment, Facilities, Latent Stage, Suitable Test, Acceptable, Natural History, Pol</li><li>B. Health (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: Health Problem, Treatment, Facilities, Latent Stage, Suitable Test, Acceptable, Natural History, Policy, Cost-Effective,...</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. 50-70, Mammogram 3yr, 20-25% Mortality Reduction, 10-20% Overdiagnosis</li><li>B. 50-70, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: 50-70, Mammogram 3yr, 20-25% Mortality Reduction, 10-20% Overdiagnosis</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</li><li>B. 25-64, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. 60-74, FIT q2yr, ≥120µg/g, PPV 10-15%</li><li>B. 60-74, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: 60-74, FIT q2yr, ≥120µg/g, PPV 10-15%</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. 55-74, 20+ Pack-Years, Annual LDCT, 20% Mortality Reduction</li><li>B. 55-74, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: 55-74, 20+ Pack-Years, Annual LDCT, 20% Mortality Reduction</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. Lead Time (Artificially ↑ Survival), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Ca</li><li>B. Lead (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: Lead Time (Artificially ↑ Survival), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</li><li>B. Sensitivity (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</li></ul>
+<p><b>8.</b> A clinician encounters a patient with this presentation. Best approach:</p>
+<ul><li>A. FCPS/MRCP High Yield - Wilson &amp; Jungner Criteria: 10 Principles for Screening Programmes</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — FCPS/MRCP High Yield - Wilson &amp; Jungner Criteria: 10 Principles for Screening Programmes</li></ul>
+<p><b>9.</b> On further evaluation, the finding is confirmed. Most appropriate next step:</p>
+<ul><li>A. Applied to UK Cancer Screening (Breast, Cervical, Colorectal, Lung)</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Applied to UK Cancer Screening (Breast, Cervical, Colorectal, Lung)</li></ul>
+<p><b>10.</b> The patient asks about management options. Best evidence-based response:</p>
+<ul><li>A. Key Concepts: Lead Time Bias, Length Time Bias, Overdiagnosis, PPV, Sensitivity, Specificity</li><li>B. Watch and wait approach</li><li>C. Empirical broad treatment</li><li>D. No intervention</li><li><b>Answer: A</b> — Key Concepts: Lead Time Bias, Length Time Bias, Overdiagnosis, PPV, Sensitivity, Specificity</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> 10 Criteria? <b>A1:</b> Health Problem, Treatment, Facilities, Latent Stage, Suitable Test, Acceptable, Natural History, Policy, Cost-Effective, Continuous</p>
+<p><b>Q2:</b> Breast Screening? <b>A2:</b> 50-70, Mammogram 3yr, 20-25% Mortality Reduction, 10-20% Overdiagnosis</p>
+<p><b>Q3:</b> Cervical Screening? <b>A3:</b> 25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</p>
+<p><b>Q4:</b> Colorectal Screening? <b>A4:</b> 60-74, FIT q2yr, ≥120µg/g, PPV 10-15%</p>
+<p><b>Q5:</b> Lung Screening? <b>A5:</b> 55-74, 20+ Pack-Years, Annual LDCT, 20% Mortality Reduction</p>
+<p><b>Q6:</b> Key Biases? <b>A6:</b> Lead Time (Artificially ↑ Survival), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</p>
+<p><b>Q7:</b> Test Metrics? <b>A7:</b> Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</p>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>8</td><td>A</td><td>FCPS/MRCP High Yield - Wilson & Jungner Criteria</td><td>FCPS/MRCP High Yield - Wilson & Jungner Criteria: 10 Principles for Screening Programmes</td></tr><tr><td>9</td><td>A</td><td>Applied to UK Cancer Screening (Breast, Cervical,</td><td>Applied to UK Cancer Screening (Breast, Cervical, Colorectal, Lung)</td></tr><tr><td>10</td><td>A</td><td>Key Concepts</td><td>Key Concepts: Lead Time Bias, Length Time Bias, Overdiagnosis, PPV, Sensitivity, Specificity</td></tr><tr><td>11</td><td>A</td><td>1</td><td>1: Important Health Problem</td></tr><tr><td>12</td><td>A</td><td>3</td><td>3: Facilities for Diagnosis/Treatment</td></tr><tr><td>13</td><td>A</td><td>4</td><td>4: Recognisable Latent/Early Stage</td></tr><tr><td>14</td><td>A</td><td>6</td><td>6: Test Acceptable to Population</td></tr><tr><td>15</td><td>A</td><td>7</td><td>7: Natural History Understood</td></tr><tr><td>16</td><td>A</td><td>8</td><td>8: Agreed Policy on Whom to Treat</td></tr><tr><td>17</td><td>A</td><td>Breast (50-70, Mammogram)</td><td>Breast (50-70, Mammogram): ✅ 1-10</td></tr><tr><td>18</td><td>A</td><td>Cervical (25-64, HPV Primary)</td><td>Cervical (25-64, HPV Primary): ✅ 1-10</td></tr><tr><td>19</td><td>A</td><td>Colorectal (60-74, FIT)</td><td>Colorectal (60-74, FIT): ✅ 1-10</td></tr><tr><td>20</td><td>A</td><td>Lung (55-74, LDCT)</td><td>Lung (55-74, LDCT): ✅ 1-10 (Pilot)</td></tr><tr><td>21</td><td>A</td><td>Lead Time Bias</td><td>Lead Time Bias: Earlier diagnosis artificially inflates survival time without changing time of death</td></tr><tr><td>22</td><td>A</td><td>Length Time Bias</td><td>Length Time Bias: Slow-growing tumours more likely to be screen-detected → Better prognosis in screened group</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>8</td><td>A</td><td>FCPS/MRCP High Yield - Wilson & Jungner Criteria</td><td>FCPS/MRCP High Yield - Wilson & Jungner Criteria: 10 Principles for Screening Programmes</td></tr><tr><td>9</td><td>A</td><td>Applied to UK Cancer Screening (Breast, Cervical,</td><td>Applied to UK Cancer Screening (Breast, Cervical, Colorectal, Lung)</td></tr><tr><td>10</td><td>A</td><td>Key Concepts</td><td>Key Concepts: Lead Time Bias, Length Time Bias, Overdiagnosis, PPV, Sensitivity, Specificity</td></tr><tr><td>11</td><td>A</td><td>1</td><td>1: Important Health Problem</td></tr><tr><td>12</td><td>A</td><td>3</td><td>3: Facilities for Diagnosis/Treatment</td></tr><tr><td>13</td><td>A</td><td>4</td><td>4: Recognisable Latent/Early Stage</td></tr><tr><td>14</td><td>A</td><td>6</td><td>6: Test Acceptable to Population</td></tr><tr><td>15</td><td>A</td><td>7</td><td>7: Natural History Understood</td></tr><tr><td>16</td><td>A</td><td>8</td><td>8: Agreed Policy on Whom to Treat</td></tr><tr><td>17</td><td>A</td><td>Breast (50-70, Mammogram)</td><td>Breast (50-70, Mammogram): ✅ 1-10</td></tr><tr><td>18</td><td>A</td><td>Cervical (25-64, HPV Primary)</td><td>Cervical (25-64, HPV Primary): ✅ 1-10</td></tr><tr><td>19</td><td>A</td><td>Colorectal (60-74, FIT)</td><td>Colorectal (60-74, FIT): ✅ 1-10</td></tr><tr><td>20</td><td>A</td><td>Lung (55-74, LDCT)</td><td>Lung (55-74, LDCT): ✅ 1-10 (Pilot)</td></tr><tr><td>21</td><td>A</td><td>Lead Time Bias</td><td>Lead Time Bias: Earlier diagnosis artificially inflates survival time without changing time of death</td></tr><tr><td>22</td><td>A</td><td>Length Time Bias</td><td>Length Time Bias: Slow-growing tumours more likely to be screen-detected → Better prognosis in screened group</td><td>## Answer Key with Explanations</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>10 Criteria</td><td>Health Problem, Treatment, Facilities, Latent Stage, Suitable Test, Acceptable, Natural History, Policy, Cost-Effective,</td></tr><tr><td>2</td><td>A</td><td>Breast Screening</td><td>50-70, Mammogram 3yr, 20-25% Mortality Reduction, 10-20% Overdiagnosis</td></tr><tr><td>3</td><td>A</td><td>Cervical Screening</td><td>25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</td></tr><tr><td>4</td><td>A</td><td>Colorectal Screening</td><td>60-74, FIT q2yr, ≥120µg/g, PPV 10-15%</td></tr><tr><td>5</td><td>A</td><td>Lung Screening</td><td>55-74, 20+ Pack-Years, Annual LDCT, 20% Mortality Reduction</td></tr><tr><td>6</td><td>A</td><td>Key Biases</td><td>Lead Time (Artificially ↑ Survival), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</td></tr><tr><td>7</td><td>A</td><td>Test Metrics</td><td>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>10 Criteria</td><td>Health Problem, Treatment, Facilities, Latent Stage, Suitable Test, Acceptable, Natural History, Policy, Cost-Effective,</td></tr><tr><td>2</td><td>A</td><td>Breast Screening</td><td>50-70, Mammogram 3yr, 20-25% Mortality Reduction, 10-20% Overdiagnosis</td></tr><tr><td>3</td><td>A</td><td>Cervical Screening</td><td>25-64, HPV Primary, 3yr (25-49) / 5yr (50-64)</td></tr><tr><td>4</td><td>A</td><td>Colorectal Screening</td><td>60-74, FIT q2yr, ≥120µg/g, PPV 10-15%</td></tr><tr><td>5</td><td>A</td><td>Lung Screening</td><td>55-74, 20+ Pack-Years, Annual LDCT, 20% Mortality Reduction</td></tr><tr><td>6</td><td>A</td><td>Key Biases</td><td>Lead Time (Artificially ↑ Survival), Length Time (Slow Tumours Detected), Overdiagnosis (Indolent Cancers)</td></tr><tr><td>7</td><td>A</td><td>Test Metrics</td><td>Sensitivity (Rule Out), Specificity (Rule In), PPV (Probability Disease if +ve)</td></tr></table>
+<p><b>Q8:</b> FCPS/MRCP High Yield - Wilson &amp; Jungner Criteria? <b>A8:</b> FCPS/MRCP High Yield - Wilson &amp; Jungner Criteria: 10 Principles for Screening Programmes</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer Screening &amp; Prevention|Cancer Screening &amp; Prevention]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Wilson Jungner Criteria · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

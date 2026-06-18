@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tumour Microenvironment — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.14. PRINCIPLES OF CANCER MANAGEMENT</span>
+      <div class="h1">Tumour Microenvironment</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe the <b>cellular composition of TME</b>: CAFs, TAMs, MDSCs, Tregs, TILs, Endothelial cells</li><li>[ ] Explain the <b>role of CAFs</b> in ECM remodelling, immune suppression, therapy resistance</li><li>[ ] Distinguish <b>M1 vs M2 TAMs</b> and their polarisation signals</li><li>[ ] Describe <b>MDSC subsets</b> (PMN-MDSC, M-MDSC) and their immunosuppressive mechanisms</li><li>[ ] Explain <b>Treg function</b> in TME (FoxP3, CTLA-4, IL-10, TGF-β)</li><li>[ ] Characterise <b>TILs</b> and their prognostic significance (CD8+ TILs = Good)</li><li>[ ] Describe <b>angiogenic switch</b> and tumour vasculature abnormalities</li><li>[ ] List <b>immune checkpoints</b> beyond PD-1/PD-L1 (CTLA-4, LAG-3, TIM-3, TIGIT)</li><li>[ ] Describe <b>metastatic niche</b> formation and <b>tertiary lymphoid structures (TLS)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Cellular Components of TME</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cancer-Associated Fibroblasts (CAFs)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Markers**</td><td>**FAP (Fibroblast Activation Protein)**, **α-SMA**, **PDGFRα/β**, **FSP1/S100A4**, **Vimentin**</td></tr><tr><td>**Origins**</td><td>**Resident Fibroblasts**, **Bone Marrow MSCs**, **Endothelial-Mesenchymal Transition (EndMT)**, **Epithelial-Mesenchymal Transition (EMT)**, **Pericytes**</td></tr><tr><td>**Functions**</td><td>**ECM Production/Remodelling** (Collagen I/III, Fibronectin, Hyaluronan), **LOX/LOXL2** (Collagen Cross-linking), **Growth Factors** (HGF, FGF, IGF, SDF-1/CXCL12), **Cytokines** (TGF-β, IL-6, SDF-1), **Immune Exclusion** (FAP+ CAFs → CXCL12 → T-cell Exclusion), **Therapy Resistance** (Chemoprotection, Anti-angiogenic Resistance)</td></tr><tr><td>**Subtypes**</td><td>**Inflammatory CAFs (iCAFs)**: IL-6, CXCL1, LIF; **Myofibroblastic CAFs (myCAFs)**: α-SMA, Contractility; **Antigen-Presenting CAFs (apCAFs)**: MHC-II, CD74</td></tr></table>
+<div class="sub-h">Tumour-Associated Macrophages (TAMs)</div>
+<table class="ctable"><tr><th>Polarisation</th><th>Markers</th><th>Cytokines</th><th>Function</th></tr><tr><td>--------------</td><td>---------</td><td>-----------</td><td>----------</td></tr><tr><td>**M1 (Classical/Pro-inflammatory)**</td><td>**CD80, CD86, MHC-II, iNOS**</td><td>**IL-12, TNF-α, IL-1β, IL-23, CXCL9/10/11**</td><td>**Anti-tumour**: Phagocytosis, ADCC, Th1 Activation, Tumour Cell Killing</td></tr><tr><td>**M2 (Alternative/Pro-tumour)**</td><td>**CD163, CD206, CD204, Arg1, Ym1**</td><td>**IL-10, TGF-β, VEGF, EGF, CCL17/22**</td><td>**Pro-tumour**: Angiogenesis, Matrix Remodelling, Immune Suppression (Treg Recruitment), Tissue Repair</td></tr></table>
+<div class="callout"><b>TAM Polarisation</b>: <b>M1 → M2 Shift</b> driven by <b>Tumour-Derived Factors</b> (IL-4, IL-10, IL-13, M-CSF, TGF-β, PGE2, Lactate, Hypoxia/HIF-1α) <b>Prognosis</b>: <b>High M2/M1 Ratio = Poor Prognosis</b></div>
+<div class="sub-h">Myeloid-Derived Suppressor Cells (MDSCs)</div>
+<table class="ctable"><tr><th>Subset</th><th>Markers (Human)</th><th>Mechanism of Suppression</th></tr><tr><td>--------</td><td>-----------------</td><td>--------------------------</td></tr><tr><td>**PMN-MDSC (Polymorphonuclear)**</td><td>**CD11b+ CD14- CD15+ CD66b+ LOX-1+**</td><td>**ARG1, ROS, Peroxynitrite, PGE2**</td></tr><tr><td>**M-MDSC (Monocytic)**</td><td>**CD11b+ CD14+ HLA-DRlow/- CD15-**</td><td>**ARG1, iNOS, NO, IL-10, TGF-β, PD-L1**</td></tr><tr><td>**eMDSC (Early)**</td><td>**CD11b+ CD14- CD15- HLA-DR-**</td><td>**Less Characterised**</td></tr></table>
+<div class="callout"><b>Recruitment</b>: <b>GM-CSF, G-CSF, IL-6, VEGF, CXCL1/2/5/8, CCL2, S100A8/A9, Stem Cell Factor (SCF)</b> <b>Clinical</b>: High MDSC = Poor Prognosis, Resistance to ICIs</div>
+<div class="sub-h">Regulatory T Cells (Tregs)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**CD4+ CD25high FoxP3+** (Lineage: Thymic tTreg vs Peripheral pTreg)</td></tr><tr><td>**Suppressive Mechanisms**</td><td>**CTLA-4** (Trans-endocytosis of CD80/86 on DCs), **IL-10, TGF-β, IL-35**, **cAMP**, **CD39/CD73 → Adenosine**, **Metabolic Disruption (IL-2 Consumption)**</td></tr><tr><td>**Recruitment/Expansion**</td><td>**CCL22/CCR4**, **TGF-β, IL-2, Retinoic Acid**, **IDO** (Kynurenine/AhR)</td></tr><tr><td>**Prognosis**</td><td>**High Intratumoural Tregs = Poor Prognosis** (Most cancers); **Exception**: Follicular Lymphoma, Hodgkin (Good)</td></tr></table>
+<div class="sub-h">Tumour-Infiltrating Lymphocytes (TILs)</div>
+<table class="ctable"><tr><th>Population</th><th>Significance</th></tr><tr><td>------------</td><td>--------------</td></tr><tr><td>**CD8+ Cytotoxic T Cells**</td><td>**Primary Anti-tumour Effectors**; **High CD8+ TILs = Good Prognosis** (Most solid tumours); **Exhaustion** (PD-1, TIM-3, LAG-3, TIGIT, TOX)</td></tr><tr><td>**CD4+ Helper T Cells**</td><td>**Th1 (IFN-γ, Good)**, **Th17 (IL-17, Context-Dependent)**, **Tfh (B Cell Help, TLS)**</td></tr><tr><td>**γδ T Cells**</td><td>**Vδ1 (Tissue-Resident, Cytotoxic)**, **Vδ2 (Circulating, Phosphoantigen-Responsive)**</td></tr><tr><td>**NK Cells**</td><td>**CD56bright (Cytokine)**, **CD56dim (Cytotoxic)**; **Missing-Self Recognition (MHC-I Loss)**</td></tr><tr><td>**B Cells / Plasma Cells**</td><td>**Tertiary Lymphoid Structures (TLS)**; **Antibody Production, Antigen Presentation**; **TLS = Good Prognosis, ICI Response**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Extracellular Matrix (ECM) & Remodelling</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Function in TME</th></tr><tr><td>-----------</td><td>-----------------</td></tr><tr><td>**Collagen I/III**</td><td>**Structural Scaffold**, **Stiffness** → Mechanotransduction (YAP/TAZ, Integrin/FAK), **Fibrosis**</td></tr><tr><td>**Hyaluronan (HA)**</td><td>**Hydration, Volume**, **CD44/RHAMM Binding** → PI3K/AKT, EMT, Chemoresistance; **PEGPH20** (PEGylated Hyaluronidase) Trials</td></tr><tr><td>**MMPs (Matrix Metalloproteinases)**</td><td>**ECM Degradation** → Invasion, Angiogenesis (VEGF Release), Growth Factor Activation; **MMP2/9 (Gelatinases)**, **MMP14 (MT1-MMP)**</td></tr><tr><td>**TIMPs**</td><td>**MMP Inhibitors**; **TIMP1-4**; **Imbalance MMP/TIMP = Invasion**</td></tr><tr><td>**LOX/LOXL2**</td><td>**Collagen Cross-linking** → Stiffness, Pre-metastatic Niche, Chemoresistance; **LOX Inhibitors** (Simtuzumab - Failed)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Tumour Vasculature & Angiogenesis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Angiogenic Switch</div>
+<table class="ctable"><tr><th>Phase</th><th>Description</th></tr><tr><td>-------</td><td>-------------</td></tr><tr><td>**Pre-switch**</td><td>**Pro-angiogenic ≈ Anti-angiogenic**; Tumour ≤1-2mm, Dormant</td></tr><tr><td>**Switch ON**</td><td>**Pro-angiogenic > Anti-angiogenic**; **Hypoxia/HIF-1α**, **Oncogenes (RAS, MYC)**, **Loss of TSGs (TP53, VHL)**</td></tr><tr><td>**Result**</td><td>**Sprouting Angiogenesis**, **Vessel Co-option**, **Vasculogenic Mimicry**, **Vasculogenesis (BM-Derived EPCs)**</td></tr></table>
+<div class="sub-h">Tumour Vasculature Abnormalities</div>
+<table class="ctable"><tr><th>Feature</th><th>Consequence</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Chaotic Architecture**</td><td>**Heterogeneous Perfusion**, **Hypoxic Regions**, **Drug Delivery Impairment**</td></tr><tr><td>**Leaky Vessels**</td><td>**High Interstitial Pressure**, **Oedema**, **Metastatic Intravasation**</td></tr><tr><td>**Poor Pericyte Coverage**</td><td>**Vessel Instability**, **Increased Permeability**</td></tr><tr><td>**Abnormal Basement Membrane**</td><td>**Impaired T-cell Extravasation**</td></tr></table>
+<div class="sub-h">Anti-Angiogenic Therapy</div>
+<table class="ctable"><tr><th>Agent</th><th>Target</th><th>Resistance Mechanisms</th></tr><tr><td>-------</td><td>--------</td><td>----------------------</td></tr><tr><td>**Bevacizumab**</td><td>**VEGF-A**</td><td>**Alternative Pro-angiogenic Factors** (FGF, PDGF, Ang2), **Vessel Co-option**, **Invasive Switch**, **Myeloid Cell Recruitment**</td></tr><tr><td>**Aflibercept**</td><td>**VEGF-A, VEGF-B, PlGF**</td><td>Similar</td></tr><tr><td>**Ramucirumab**</td><td>**VEGFR2**</td><td>Similar</td></tr><tr><td>**TKIs (Sunitinib, Pazopanib, Axitinib, Lenvatinib)**</td><td>**VEGFR1-3, PDGFR, FGFR, c-KIT**</td><td>**Off-target Effects**, **Alternative Pathways**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Immune Checkpoints in TME</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Checkpoint</th><th>Ligand/Receptor</th><th>Expression</th><th>Mechanism</th><th>Clinical</th></tr><tr><td>------------</td><td>----------------</td><td>------------</td><td>-----------</td><td>----------</td></tr><tr><td>**PD-1 / PD-L1**</td><td>**PD-1 (T cells) ↔ PD-L1/PD-L2 (Tumour, APCs, Macrophages)**</td><td>T cell exhaustion</td><td>**Inhibits TCR/CD28 Signalling** (SHP-2 → PI3K/AKT, RAS/ERK)</td><td>**Pembrolizumab, Nivolumab, Atezolizumab, Durvalumab, Cemiplimab**</td></tr><tr><td>**CTLA-4**</td><td>**CTLA-4 (Tregs, Activated T) ↔ CD80/CD86 (APCs)**</td><td>Early activation</td><td>**Outcompetes CD28** (Higher Affinity), **Trans-endocytosis of CD80/86**</td><td>**Ipilimumab, Tremelimumab**</td></tr><tr><td>**LAG-3**</td><td>**LAG-3 (Exhausted T) ↔ MHC-II (APCs)**</td><td>Exhaustion</td><td>**Inhibits TCR Signalling**, **Treg Function**</td><td>**Relatlimab (Fixed-Dose with Nivolumab)**</td></tr><tr><td>**TIM-3**</td><td>**TIM-3 (Exhausted T, Tregs, DCs) ↔ Galectin-9, CEACAM1, HMGB1**</td><td>Exhaustion</td><td>**Inhibits TCR Signalling**, **DC Dysfunction**</td><td>**Sabatalimab, TSR-022**</td></tr><tr><td>**TIGIT**</td><td>**TIGIT (T, NK) ↔ CD155/PVR (Tumour, APCs)**</td><td>Exhaustion</td><td>**Competes with CD226 (DNAM-1)**, **Inhibits NK/T Cytotoxicity**</td><td>**Tiragolumab, Domvanalimab**</td></tr><tr><td>**VISTA**</td><td>**VISTA (Myeloid, T) ↔ VSIG3, PSGL-1**</td><td>Myeloid/T cell suppression</td><td>**pH-Dependent**, **Maintains Peripheral Tolerance**</td><td>**CA-170, HMBD-002**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Metastatic Niche & Tertiary Lymphoid Structures</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pre-Metastatic Niche Formation</div>
+<table class="ctable"><tr><th>Step</th><th>Mechanism</th></tr><tr><td>------</td><td>-----------</td></tr><tr><td>**1. Primary Tumour Secretion**</td><td>**Exosomes** (Integrins, miRNAs, Proteins), **VEGF, TGF-β, LOX, S100A8/A9**, **MMPs**</td></tr><tr><td>**2. Bone Marrow Mobilisation**</td><td>**VEGFR1+ HPCs, MDSCs, Fibrocytes** → Circulation</td></tr><tr><td>**3. Target Organ Remodelling**</td><td>**Fibronectin Deposition** (by Fibrocytes), **Integrin Binding** (Exosome Integrins → Organotropism), **Inflammatory Cytokines** (TNF-α, IL-1β, IL-6)</td></tr><tr><td>**4. Immune Suppression**</td><td>**MDSC Recruitment**, **Treg Expansion**, **NK Cell Inhibition**</td></tr><tr><td>**5. Metastatic Cell Arrival**</td><td>**Adhesion, Extravasation, Colonisation**</td></tr></table>
+<div class="callout"><b>Organotropism</b>: <b>Exosome Integrins</b> (α6β4/α6β1 → Lung; αvβ5 → Liver; αvβ3 → Brain; α2β1 → Bone)</div>
+<div class="sub-h">Tertiary Lymphoid Structures (TLS)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Structure**</td><td>**Ectopic Lymphoid Organs** in TME: **T cell Zone**, **B cell Follicles (GCs)**, **HEVs, FDCs, DCs**</td></tr><tr><td>**Formation**</td><td>**LTα1β2, TNF, CXCL13, CCL19/21, IL-7, IL-22**; **Stromal Cell Differentiation**</td></tr><tr><td>**Function**</td><td>**Local Immune Priming**, **T/B Cell Activation**, **Antibody Production**, **Tfh/GC Reaction**</td></tr><tr><td>**Prognosis**</td><td>**TLS Presence = Good Prognosis**, **Predicts ICI Response** (Melanoma, Sarcoma, NSCLC, Breast, CRC)</td></tr><tr><td>**Clinical**</td><td>**TLS Signature** → Biomarker for ICI Benefit</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Key Points</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**CAFs**</td><td>**FAP+, α-SMA+**, ECM Remodelling, Immune Exclusion (FAP+ → CXCL12), Therapy Resistance</td></tr><tr><td>**TAMs**</td><td>**M1 (Anti-tumour: iNOS, IL-12)** vs **M2 (Pro-tumour: CD163, CD206, Arg1, VEGF, IL-10)**; **High M2 = Poor Prognosis**</td></tr><tr><td>**MDSCs**</td><td>**PMN-MDSC (CD15+, ARG1, ROS)**; **M-MDSC (CD14+, HLA-DRlow, iNOS, IL-10)**; **High MDSC = Poor Prognosis, ICI Resistance**</td></tr><tr><td>**Tregs**</td><td>**CD4+CD25hiFoxP3+**, **CTLA-4, IL-10, TGF-β, Adenosine**; **High Tregs = Poor Prognosis**</td></tr><tr><td>**TILs**</td><td>**CD8+ TILs = Good Prognosis**; **Exhaustion Markers**: PD-1, TIM-3, LAG-3, TIGIT; **TLS = Good Prognosis, ICI Response**</td></tr><tr><td>**ECM**</td><td>**Collagen/HA Stiffness**, **MMPs/TIMPs Imbalance**, **LOX Cross-linking**, **HA/PEGH20**</td></tr><tr><td>**Angiogenesis**</td><td>**Switch: HIF-1α/VEGF**; **Abnormal Vasculature → Poor Drug Delivery**; **Bevacizumab, TKIs**</td></tr><tr><td>**Immune Checkpoints**</td><td>**PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA**</td></tr><tr><td>**Metastatic Niche**</td><td>**Exosome Integrins → Organotropism**, **Fibronectin, MDSC/Treg Recruitment**</td></tr><tr><td>**TLS**</td><td>**Ectopic Lymphoid Organs**, **Good Prognosis**, **ICI Response Predictor**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**CAFs — Key Markers, Functions?**</td><td>**Markers**: FAP, α-SMA, PDGFRα/β, FSP1; **Functions**: ECM Production (Collagen, HA), LOX Cross-linking, Growth Factors (HGF, FGF, SDF-1), Immune Exclusion (FAP+ → CXCL12), Therapy Resistance.</td></tr><tr><td>**TAM Polarisation — M1 vs M2?**</td><td>**M1**: CD80/86, MHC-II, iNOS, IL-12, TNF-α → Anti-tumour; **M2**: CD163, CD206, Arg1, IL-10, TGF-β, VEGF → Pro-tumour (Angiogenesis, Immune Suppression).</td></tr><tr><td>**MDSC Subsets — Human Markers?**</td><td>**PMN-MDSC**: CD11b+ CD14- CD15+ CD66b+ LOX-1+; **M-MDSC**: CD11b+ CD14+ HLA-DRlow/-; **eMDSC**: CD11b+ CD14- CD15- HLA-DR-.</td></tr><tr><td>**Treg Markers & Suppressive Mechanisms?**</td><td>**CD4+ CD25hi FoxP3+**; **Mechanisms**: CTLA-4 (CD80/86 Trans-endocytosis), IL-10/TGF-β/IL-35, cAMP, CD39/CD73 (Adenosine), IL-2 Consumption.</td></tr><tr><td>**TILs — Prognostic Significance?**</td><td>**CD8+ TILs High = Good Prognosis** (Most solid tumours); **Exhaustion**: PD-1, TIM-3, LAG-3, TIGIT, TOX; **TLS Presence = Good Prognosis, ICI Response Predictor**.</td></tr><tr><td>**Angiogenic Switch — What Triggers It?**</td><td>**Hypoxia/HIF-1α, Oncogenes (RAS, MYC), TSG Loss (TP53, VHL)** → Pro-angiogenic > Anti-angiogenic (VEGF Switch).</td></tr><tr><td>**Immune Checkpoints Beyond PD-1/PD-L1?**</td><td>**CTLA-4** (Early Activation, Ipilimumab), **LAG-3** (Exhaustion, Relatlimab), **TIM-3** (Exhaustion, Sabatalimab), **TIGIT** (NK/T Inhibition, Tiragolumab), **VISTA** (Myeloid Suppression).</td></tr><tr><td>**Pre-Metastatic Niche — Exosome Integrins & Organotropism?**</td><td>**α6β4/α6β1 → Lung**, **αvβ5 → Liver**, **αvβ3 → Brain**, **α2β1 → Bone**; **Fibronectin by Fibrocytes, MDSC/Treg Recruitment**.</td></tr><tr><td>**TLS — Structure, Prognosis?**</td><td>**Ectopic Lymphoid Organs (T/B Zones, FDCs, HEVs)**; **Formation: LTα1β2, CXCL13, CCL19/21**; **TLS = Good Prognosis, ICI Response Predictor**.</td></tr><tr><td>**CAF-Mediated Immune Exclusion — Mechanism?**</td><td>**FAP+ CAFs → CXCL12 Secretion** → **Excludes CD8+ T Cells** from Tumour Nests; **FAP Inhibitors / CXCL12 Blockade** under investigation.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**CAFs vs Normal Fibroblasts**</td><td>**CAFs**: Activated (FAP+, α-SMA+), Tumour-Promoting; **Normal**: Quiescent, Homeostatic</td></tr><tr><td>**M1 vs M2 Macrophages**</td><td>**M1**: Pro-inflammatory (IL-12, TNF-α, iNOS); **M2**: Pro-tumour (CD163, Arg1, IL-10, VEGF); **TAMs = M2 Dominant in TME**</td></tr><tr><td>**MDSCs vs Neutrophils/Monocytes**</td><td>**MDSCs**: Immature, Immunosuppressive (ARG1, iNOS, ROS); **Normal Neutrophils/Monocytes**: Mature, Anti-microbial</td></tr><tr><td>**Tregs vs Exhausted T Cells**</td><td>**Tregs**: FoxP3+, Suppressive by Design; **Exhausted T Cells**: PD-1+, TIM-3+, LAG-3+, Dysfunctional Effectors</td></tr><tr><td>**TLS vs Lymph Node**</td><td>**TLS**: Ectopic, No Capsule, In TME, Inducible; **Lymph Node**: Anatomy, Capsule, Constitutional</td></tr><tr><td>**Pre-Metastatic vs Metastatic Niche**</td><td>**Pre-Metastatic**: Primary Tumour Prepares Distant Organ BEFORE Arrival; **Metastatic**: After Tumour Cell Arrival</td></tr></table>
+<p><b>Mnemonic: TME-COMPONENTS</b></p>
+<ul><li><b>C</b>AFs: <b>FAP+, α-SMA</b>, <b>ECM, Immune Exclusion (CXCL12)</b></li><li><b>O</b>rigin of CAFs: <b>Resident Fibroblasts, MSCs, EndMT, EMT, Pericytes</b></li><li><b>M</b>acrophages: <b>M1 (Anti) vs M2 (Pro)</b> — <b>CD163/CD206 = M2</b></li><li><b>P</b>olarisation: <b>Tumour Factors (IL-4, IL-10, TGF-β) → M2 Shift</b></li><li><b>O</b>ther Myeloid: <b>MDSCs (PMN/M-MDSC), ARG1, iNOS, ROS</b></li><li><b>N</b>eutrophils: <b>PMN-MDSC (CD15+, LOX-1)</b>, <b>NETs</b></li><li><b>E</b>ndothelial: <b>Abnormal Vasculature, Leaky, Hypoxic</b></li><li><b>N</b>K Cells: <b>Missing-Self (MHC-I Loss)</b></li><li><b>N</b>ew Checkpoints: <b>CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</b></li><li><b>N</b>K/T Exhaustion: <b>PD-1, TIM-3, LAG-3, TIGIT, TOX</b></li><li><b>T</b>regs: <b>FoxP3+, CTLA-4, IL-10, Adenosine</b></li><li><b>S</b>ubject TILs: <b>CD8+ = Good Prognosis</b>, <b>TLS = Good Prognosis</b></li><li><b>E</b>CM: <b>Collagen, HA, MMPs, LOX, Stiffness, HA/PEGH20</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Tumour Microenvironment)) Cellular CAFs: FAP+, α-SMA, ECM, Immune Exclusion TAMs: M1 vs M2 (CD163, CD206) MDSCs: PMN (CD15+) / M (CD14+ HLA-DRlow) Tregs: FoxP3+, CTLA-4, IL-10 TILs: CD8+ (Good), Exhaustion (PD-1, TIM-3) NK: Missing-Self TLS: Ectopic Lymphoid, Good Prognosis ECM Collagen, HA, Stiffness MMPs/TIMPs, LOX Cross-linking Vasculature Angiogenic Switch (HIF/VEGF) Abnormal: Leaky, Chaotic, High IFP Anti-angiogenics: Bevacizumab, TKIs Immune Checkpoints PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT Metastasis Pre-Metastatic Niche (Exosomes, Integrins) TLS: Good Prognosis, ICI Response </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Key Points</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**CAFs**</td><td>FAP+, α-SMA; ECM, Immune Exclusion (CXCL12), Resistance</td></tr><tr><td>**TAMs**</td><td>M1 (Anti) vs M2 (Pro: CD163/CD206/Arg1); High M2 = Poor</td></tr><tr><td>**MDSCs**</td><td>PMN (CD15+), M (CD14+ HLA-DRlow); ARG1, iNOS, ROS</td></tr><tr><td>**Tregs**</td><td>FoxP3+, CTLA-4, IL-10, Adenosine; High = Poor</td></tr><tr><td>**TILs**</td><td>CD8+ = Good; Exhaustion: PD-1, TIM-3, LAG-3, TIGIT</td></tr><tr><td>**TLS**</td><td>Ectopic Lymphoid; Good Prognosis, ICI Predictor</td></tr><tr><td>**ECM**</td><td>Collagen/HA/Stiffness; MMP/TIMP, LOX; HA → CD44</td></tr><tr><td>**Angiogenesis**</td><td>HIF/VEGF Switch; Abnormal Vessels; Bevacizumab, TKIs</td></tr><tr><td>**Checkpoints**</td><td>PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</td></tr><tr><td>**Pre-Metastatic**</td><td>Exosome Integrins (Organotropism); Fibronectin, MDSC, Treg</td></tr><tr><td>**TLS**</td><td>Ectopic Lymphoid; Good Prognosis, ICI Response</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>CAF Markers/Functions</td><td></td><td></td></tr><tr><td>TAM M1 vs M2</td><td></td><td></td></tr><tr><td>MDSC Subsets</td><td></td><td></td></tr><tr><td>Treg Mechanisms</td><td></td><td></td></tr><tr><td>TILs/TLS Prognosis</td><td></td><td></td></tr><tr><td>ECM Remodelling</td><td></td><td></td></tr><tr><td>Angiogenic Switch</td><td></td><td></td></tr><tr><td>Immune Checkpoints</td><td></td><td></td></tr><tr><td>Pre-Metastatic Niche</td><td></td><td></td></tr><tr><td>TLS Significance</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[CAFs]], [[TAMs]], [[MDSCs]], [[Tregs]], [[TILs]], [[Immune Checkpoints]], [[PD-1/PD-L1]], [[CTLA-4]], [[TLS]], [[Pre-Metastatic Niche]], [[Angiogenesis]], [[ECM Remodelling]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Tumour Microenvironment (TME) (CAFs), which statement is correct? A. <b>FAP+, α-SMA+</b>, ECM Remodelling, Immune Exclusion (FAP+ → CXCL12), Therapy Resistance B. **FAP+, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>FAP+, α-SMA+</b>, ECM Remodelling, Immune Exclusion (FAP+ → CXCL12), Therapy Resistance</li></ul>
+<p><b>2.</b> Regarding Tumour Microenvironment (TME) (TAMs), which statement is correct? A. <b>M1 (Anti-tumour: iNOS, IL-12)</b> vs <b>M2 (Pro-tumour: CD163, CD206, Arg1, VEGF, IL-10)</b> B. **M1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>M1 (Anti-tumour: iNOS, IL-12)</b> vs <b>M2 (Pro-tumour: CD163, CD206, Arg1, VEGF, IL-10)</b>; <b>High M2 = Poor Prognosis</b></li></ul>
+<p><b>3.</b> Regarding Tumour Microenvironment (TME) (MDSCs), which statement is correct? A. <b>PMN-MDSC (CD15+, ARG1, ROS)</b> B. **PMN-MDSC - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PMN-MDSC (CD15+, ARG1, ROS)</b>; <b>M-MDSC (CD14+, HLA-DRlow, iNOS, IL-10)</b>; **High MDSC = Poor Prognosis, ICI Resistanc...</li></ul>
+<p><b>4.</b> Regarding Tumour Microenvironment (TME) (Tregs), which statement is correct? A. <b>CD4+CD25hiFoxP3+</b>, <b>CTLA-4, IL-10, TGF-β, Adenosine</b> B. <b>CD4+CD25hiFoxP3+</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CD4+CD25hiFoxP3+</b>, <b>CTLA-4, IL-10, TGF-β, Adenosine</b>; <b>High Tregs = Poor Prognosis</b></li></ul>
+<p><b>5.</b> Regarding Tumour Microenvironment (TME) (TILs), which statement is correct? A. <b>CD8+ TILs = Good Prognosis</b> B. **CD8+ - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CD8+ TILs = Good Prognosis</b>; <b>Exhaustion Markers</b>: PD-1, TIM-3, LAG-3, TIGIT; **TLS = Good Prognosis, ICI Response*...</li></ul>
+<p><b>6.</b> Regarding Tumour Microenvironment (TME) (ECM), which statement is correct? A. <b>Collagen/HA Stiffness</b>, <b>MMPs/TIMPs Imbalance</b>, <b>LOX Cross-linking</b>, <b>HA/PEGH20</b> B. **Collagen/HA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Collagen/HA Stiffness</b>, <b>MMPs/TIMPs Imbalance</b>, <b>LOX Cross-linking</b>, <b>HA/PEGH20</b></li></ul>
+<p><b>7.</b> Regarding Tumour Microenvironment (TME) (Angiogenesis), which statement is correct? A. <b>Switch: HIF-1α/VEGF</b> B. **Switch: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Switch: HIF-1α/VEGF</b>; <b>Abnormal Vasculature → Poor Drug Delivery</b>; <b>Bevacizumab, TKIs</b></li></ul>
+<p><b>8.</b> Regarding Tumour Microenvironment (TME) (Immune Checkpoints), which statement is correct? A. <b>PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</b> B. **PD-1/PD-L1, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</b></li></ul>
+<p><b>9.</b> Regarding Tumour Microenvironment (TME) (Metastatic Niche), which statement is correct? A. <b>Exosome Integrins → Organotropism</b>, <b>Fibronectin, MDSC/Treg Recruitment</b> B. **Exosome - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Exosome Integrins → Organotropism</b>, <b>Fibronectin, MDSC/Treg Recruitment</b></li></ul>
+<p><b>10.</b> Regarding Tumour Microenvironment (TME) (TLS), which statement is correct? A. <b>Ectopic Lymphoid Organs</b>, <b>Good Prognosis</b>, <b>ICI Response Predictor</b> B. **Ectopic - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Ectopic Lymphoid Organs</b>, <b>Good Prognosis</b>, <b>ICI Response Predictor</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>FAP+, α-SMA+</b>, ECM Remodelling, Immune Exclusion (FAP+ → CXCL12), Therapy Resistance</li><li>B. **FAP+, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>FAP+, α-SMA+</b>, ECM Remodelling, Immune Exclusion (FAP+ → CXCL12), Therapy Resistance</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>M1 (Anti-tumour: iNOS, IL-12)</b> vs <b>M2 (Pro-tumour: CD163, CD206, Arg1, VEGF, IL-10)</b></li><li>B. **M1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>M1 (Anti-tumour: iNOS, IL-12)</b> vs <b>M2 (Pro-tumour: CD163, CD206, Arg1, VEGF, IL-10)</b>; <b>High M2 = Poor Prognosis</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>PMN-MDSC (CD15+, ARG1, ROS)</b></li><li>B. **PMN-MDSC (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>PMN-MDSC (CD15+, ARG1, ROS)</b>; <b>M-MDSC (CD14+, HLA-DRlow, iNOS, IL-10)</b>; **High MDSC = Poor Prognosis, ICI Resistanc...</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>CD4+CD25hiFoxP3+</b>, <b>CTLA-4, IL-10, TGF-β, Adenosine</b></li><li>B. <b>CD4+CD25hiFoxP3+</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>CD4+CD25hiFoxP3+</b>, <b>CTLA-4, IL-10, TGF-β, Adenosine</b>; <b>High Tregs = Poor Prognosis</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>CD8+ TILs = Good Prognosis</b></li><li>B. **CD8+ (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>CD8+ TILs = Good Prognosis</b>; <b>Exhaustion Markers</b>: PD-1, TIM-3, LAG-3, TIGIT; **TLS = Good Prognosis, ICI Response*...</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Collagen/HA Stiffness</b>, <b>MMPs/TIMPs Imbalance</b>, <b>LOX Cross-linking</b>, <b>HA/PEGH20</b></li><li>B. **Collagen/HA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Collagen/HA Stiffness</b>, <b>MMPs/TIMPs Imbalance</b>, <b>LOX Cross-linking</b>, <b>HA/PEGH20</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Switch: HIF-1α/VEGF</b></li><li>B. **Switch: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Switch: HIF-1α/VEGF</b>; <b>Abnormal Vasculature → Poor Drug Delivery</b>; <b>Bevacizumab, TKIs</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</b></li><li>B. **PD-1/PD-L1, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Exosome Integrins → Organotropism</b>, <b>Fibronectin, MDSC/Treg Recruitment</b></li><li>B. **Exosome (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Exosome Integrins → Organotropism</b>, <b>Fibronectin, MDSC/Treg Recruitment</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Ectopic Lymphoid Organs</b>, <b>Good Prognosis</b>, <b>ICI Response Predictor</b></li><li>B. **Ectopic (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Ectopic Lymphoid Organs</b>, <b>Good Prognosis</b>, <b>ICI Response Predictor</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> CAFs? <b>A1:</b> FAP+, α-SMA+, ECM Remodelling, Immune Exclusion (FAP+ → CXCL12), Therapy Resistance</p>
+<p><b>Q2:</b> TAMs? <b>A2:</b> M1 (Anti-tumour: iNOS, IL-12) vs M2 (Pro-tumour: CD163, CD206, Arg1, VEGF, IL-10); High M2 = Poor Prognosis</p>
+<p><b>Q3:</b> MDSCs? <b>A3:</b> PMN-MDSC (CD15+, ARG1, ROS); M-MDSC (CD14+, HLA-DRlow, iNOS, IL-10); High MDSC = Poor Prognosis, ICI Resistance</p>
+<p><b>Q4:</b> Tregs? <b>A4:</b> CD4+CD25hiFoxP3+, CTLA-4, IL-10, TGF-β, Adenosine; High Tregs = Poor Prognosis</p>
+<p><b>Q5:</b> TILs? <b>A5:</b> CD8+ TILs = Good Prognosis; Exhaustion Markers: PD-1, TIM-3, LAG-3, TIGIT; TLS = Good Prognosis, ICI Response</p>
+<p><b>Q6:</b> ECM? <b>A6:</b> Collagen/HA Stiffness, MMPs/TIMPs Imbalance, LOX Cross-linking, HA/PEGH20</p>
+<p><b>Q7:</b> Angiogenesis? <b>A7:</b> Switch: HIF-1α/VEGF; Abnormal Vasculature → Poor Drug Delivery; Bevacizumab, TKIs</p>
+<p><b>Q8:</b> Immune Checkpoints? <b>A8:</b> PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>CAFs</td><td>FAP+, α-SMA+, ECM Remodelling, Immune Exclusion (FAP+ → CXCL12), Therapy Resistance</td></tr><tr><td>2</td><td>A</td><td>TAMs</td><td>M1 (Anti-tumour: iNOS, IL-12) vs M2 (Pro-tumour: CD163, CD206, Arg1, VEGF, IL-10); High M2 = Poor Prognosis</td></tr><tr><td>3</td><td>A</td><td>MDSCs</td><td>PMN-MDSC (CD15+, ARG1, ROS); M-MDSC (CD14+, HLA-DRlow, iNOS, IL-10); High MDSC = Poor Prognosis, ICI Resistance</td></tr><tr><td>4</td><td>A</td><td>Tregs</td><td>CD4+CD25hiFoxP3+, CTLA-4, IL-10, TGF-β, Adenosine; High Tregs = Poor Prognosis</td></tr><tr><td>5</td><td>A</td><td>TILs</td><td>CD8+ TILs = Good Prognosis; Exhaustion Markers: PD-1, TIM-3, LAG-3, TIGIT; TLS = Good Prognosis, ICI Response</td></tr><tr><td>6</td><td>A</td><td>ECM</td><td>Collagen/HA Stiffness, MMPs/TIMPs Imbalance, LOX Cross-linking, HA/PEGH20</td></tr><tr><td>7</td><td>A</td><td>Angiogenesis</td><td>Switch: HIF-1α/VEGF; Abnormal Vasculature → Poor Drug Delivery; Bevacizumab, TKIs</td></tr><tr><td>8</td><td>A</td><td>Immune Checkpoints</td><td>PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</td></tr><tr><td>9</td><td>A</td><td>Metastatic Niche</td><td>Exosome Integrins → Organotropism, Fibronectin, MDSC/Treg Recruitment</td></tr><tr><td>10</td><td>A</td><td>TLS</td><td>Ectopic Lymphoid Organs, Good Prognosis, ICI Response Predictor</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>CAFs</td><td>FAP+, α-SMA+, ECM Remodelling, Immune Exclusion (FAP+ → CXCL12), Therapy Resistance</td></tr><tr><td>2</td><td>A</td><td>TAMs</td><td>M1 (Anti-tumour: iNOS, IL-12) vs M2 (Pro-tumour: CD163, CD206, Arg1, VEGF, IL-10); High M2 = Poor Prognosis</td></tr><tr><td>3</td><td>A</td><td>MDSCs</td><td>PMN-MDSC (CD15+, ARG1, ROS); M-MDSC (CD14+, HLA-DRlow, iNOS, IL-10); High MDSC = Poor Prognosis, ICI Resistance</td></tr><tr><td>4</td><td>A</td><td>Tregs</td><td>CD4+CD25hiFoxP3+, CTLA-4, IL-10, TGF-β, Adenosine; High Tregs = Poor Prognosis</td></tr><tr><td>5</td><td>A</td><td>TILs</td><td>CD8+ TILs = Good Prognosis; Exhaustion Markers: PD-1, TIM-3, LAG-3, TIGIT; TLS = Good Prognosis, ICI Response</td></tr><tr><td>6</td><td>A</td><td>ECM</td><td>Collagen/HA Stiffness, MMPs/TIMPs Imbalance, LOX Cross-linking, HA/PEGH20</td></tr><tr><td>7</td><td>A</td><td>Angiogenesis</td><td>Switch: HIF-1α/VEGF; Abnormal Vasculature → Poor Drug Delivery; Bevacizumab, TKIs</td></tr><tr><td>8</td><td>A</td><td>Immune Checkpoints</td><td>PD-1/PD-L1, CTLA-4, LAG-3, TIM-3, TIGIT, VISTA</td></tr><tr><td>9</td><td>A</td><td>Metastatic Niche</td><td>Exosome Integrins → Organotropism, Fibronectin, MDSC/Treg Recruitment</td></tr><tr><td>10</td><td>A</td><td>TLS</td><td>Ectopic Lymphoid Organs, Good Prognosis, ICI Response Predictor</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Principles of Cancer Management|Principles of Cancer Management]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Tumour Microenvironment · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Infection Prevention Control Standard Transmission Based Precautions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.3. INFECTION PREVENTION & CONTROL</span>
+      <div class="h1">Infection Prevention Control Standard Transmission Based Precautions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply the <b>hierarchy of IPC controls</b> (engineering → administrative → PPE) and the chain of infection to break transmission.</li><li>Implement <b>Standard Precautions</b> (hand hygiene, PPE, respiratory hygiene, safe injection, sharps, environment, waste, linen, equipment) for <b>every</b> patient encounter.</li><li>Perform <b>hand hygiene</b> at all 5 WHO Moments using alcohol-based hand rub (ABHR) or soap and water (when hands visibly soiled, after C. difficile, norovirus).</li><li><b>Select and sequence PPE</b> (donning and doffing) appropriate to the anticipated exposure and transmission route.</li><li>Apply <b>Contact, Droplet, Airborne, and combination (Enhanced/Empiric)</b> precautions based on pathogen and clinical syndrome.</li><li>Specify <b>isolation room requirements</b>: single room, negative pressure + ≥ 12 ACH + exhaust to outside (or HEPA) for airborne; single room ± own bathroom for contact/droplet; <b>protective (positive-pressure) isolation</b> for neutropenia / transplant.</li><li>Recognise the <b>pathogen-specific precautions table</b> (MRSA, VRE, C. difficile, ESBL/CRE, TB, measles, varicella, influenza, COVID-19, VHF, scabies, lice).</li><li>Implement <b>MDRO bundles</b> (screening, contact precautions, cohorting, decolonisation, AMS, antimicrobial bathing, environmental cleaning).</li><li>Counsel on <b>respiratory hygiene / cough etiquette</b> for patients, visitors, and staff.</li><li>Apply <b>safe injection practices</b> (one syringe/one needle/one patient, single-dose vials, never re-cap, sharps container within arm's reach).</li><li>Manage <b>needlestick injury / mucosal exposure</b> with HBV/HCV/HIV post-exposure prophylaxis (PEP) per current national guidelines.</li><li>Coordinate <b>outbreak control</b>: case definition, line list, cohort, enhanced cleaning, screening, communication.</li><li>Apply <b>HCW immunisation, screening, and exclusion from work</b> policies (BCG, MMR, VZV, HepB, influenza, COVID-19, pertussis).</li><li>Restrict <b>visitors and source isolation</b> in high-risk units (ICU, NICU, haematology-oncology, transplant).</li><li>Discuss <b>resource-limited setting adaptations</b> and emerging pathogen preparedness (Ebola, MERS, SARS-CoV-2, novel influenza).</li><li>Appreciate <b>behavioural science, digital monitoring (electronic hand-hygiene compliance), and antimicrobial surfaces</b> as the future of IPC.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Chain of Infection**</td><td>Six linked components: infectious agent → reservoir → portal of exit → mode of transmission → portal of entry → susceptible host. IPC breaks ≥ 1 link.</td></tr><tr><td>**Standard Precautions**</td><td>Minimum set of IPC practices applied to **all** patients regardless of diagnosis — assumes every body fluid potentially infectious (CDC/HICPAC 1996, updated 2007; WHO 2007).</td></tr><tr><td>**Transmission-Based Precautions**</td><td>Additional precautions (Contact, Droplet, Airborne) added on top of Standard for known/suspected pathogens.</td></tr><tr><td>**Hand Hygiene (HH)**</td><td>Any action of cleaning hands (WHO 2009): ABHR (≥ 60% ethanol/isopropanol) for 20–30 s, or soap + water for 40–60 s. Single most effective IPC measure.</td></tr><tr><td>**WHO 5 Moments**</td><td>5 indications for hand hygiene: (1) Before touching a patient, (2) Before clean/aseptic procedure, (3) After body fluid exposure risk, (4) After touching a patient, (5) After touching patient surroundings.</td></tr><tr><td>**ABHR**</td><td>Alcohol-Based Hand Rub — preferred for non-soiled hands; faster, more effective at killing most pathogens, better skin tolerance than soap.</td></tr><tr><td>**PPE**</td><td>Personal Protective Equipment: gloves, gown/plastic apron, surgical mask / N95/FFP2/FFP3 respirator, eye protection (goggles/visor/face shield).</td></tr><tr><td>**Donning**</td><td>Putting on PPE — gown → mask/respirator → eye protection → gloves (sequence: anticipate exposure; gloved last to keep hands free).</td></tr><tr><td>**Doffing**</td><td>Removing PPE — gloves (most contaminated) → gown → eye protection → mask/respirator; hand hygiene at multiple points. Sequence minimises self-contamination.</td></tr><tr><td>**Contact Precautions**</td><td>Gloves + gown for ALL room entry; single room or cohort; dedicated equipment; minimise patient movement.</td></tr><tr><td>**Droplet Precautions**</td><td>Surgical mask for HCW + patient (if transported); single room (or cohort if same pathogen) ± spatial separation ≥ 1 m from other patients.</td></tr><tr><td>**Airborne Precautions**</td><td>N95/FFP2 (FFP3 for high-risk AGPs); **negative pressure isolation room (AIIR)**, ≥ 12 ACH, exhaust outdoors or HEPA; door closed; patient wears surgical mask if transported.</td></tr><tr><td>**AIIR**</td><td>Airborne Infection Isolation Room — negative pressure ≥ –2.5 Pa, ≥ 12 air changes/hour (ACH) for new builds (≥ 6 ACH for renovated), exhaust to outside or HEPA-filtered, sealed.</td></tr><tr><td>**N95 (US NIOSH)**</td><td>Filters ≥ 95% of 0.3 µm particles; requires fit-testing.</td></tr><tr><td>**FFP2 (EN 149)**</td><td>European equivalent, filters ≥ 94% of 0.3 µm. **FFP3** filters ≥ 99% (used for SARS-CoV-2, VHF, MDR-TB, AGPs).</td></tr><tr><td>**AGP**</td><td>Aerosol-Generating Procedure — intubation, extubation, open suction, bronchoscopy, NIV/BiPAP, CPR, manual ventilation, nebulisation, sputum induction, HFNO, tracheostomy care, ENT/aerosol-generating surgery.</td></tr><tr><td>**Cohorting**</td><td>Placing patients with the same confirmed pathogen/MDRO in the same room/area with dedicated staff.</td></tr><tr><td>**Protective Isolation**</td><td>**Positive-pressure** single room (or laminar flow) for severely immunocompromised patients (HSCT, ANC < 0.5, severe combined immunodeficiency, severe GVHD).</td></tr><tr><td>**Source Isolation**</td><td>Isolating the **infectious** patient to prevent spread to others.</td></tr><tr><td>**MDRO**</td><td>Multi-Drug Resistant Organism — MRSA, VRE, ESBL, CRE/CPE, MDR-*Pseudomonas/Acinetobacter*, MDR-TB, azole-resistant *Candida auris*.</td></tr><tr><td>**Decolonisation**</td><td>Topical suppression of carriage: MRSA — mupirocin (nares) + chlorhexidine body wash for 5 days; ESBL/CRE — selective oral/decontamination not standard.</td></tr><tr><td>**Respiratory Hygiene / Cough Etiquette**</td><td>Cover mouth/nose when coughing/sneezing (tissue or elbow), dispose, perform hand hygiene, wear mask, spatial separation ≥ 1 m. Applies to patients with symptoms.</td></tr><tr><td>**Safe Injection**</td><td>One syringe + one needle + one patient; single-dose vials when possible; never re-cap; sharps container within arm's reach.</td></tr><tr><td>**Sharps Injury**</td><td>Percutaneous exposure to needle, scalpel, glass, or other sharp; immediate first aid + risk assessment + PEP as indicated.</td></tr><tr><td>**PEP (Post-Exposure Prophylaxis)**</td><td>HBV (vaccine ± HBIG), HCV (monitoring; DAA if seroconvert), HIV (3-drug ART within 72 h, ideally ≤ 2 h, 4-week course).</td></tr><tr><td>**HICPAC**</td><td>Healthcare Infection Control Practices Advisory Committee (CDC, US) — author of Standard and Transmission-Based Precautions.</td></tr><tr><td>**WHO Multimodal Strategy**</td><td>5 elements: system change, training/education, monitoring/feedback, reminders/communications, culture of safety.</td></tr><tr><td>**Bundle**</td><td>A small set of evidence-based interventions (3–5) applied together to improve outcome (e.g., CLABSI bundle).</td></tr><tr><td>**Clean → Dirty Workflow**</td><td>Movement from clean to dirty areas to avoid cross-contamination; terminal cleaning on patient discharge.</td></tr><tr><td>**Terminal Cleaning**</td><td>Comprehensive cleaning/disinfection of room after patient discharge/transfer, including high-touch surfaces and equipment.</td></tr><tr><td>**Cohort Nursing**</td><td>Same nursing/medical staff assigned to a cohort of patients with the same infection — reduces cross-transmission.</td></tr><tr><td>**Visitor Restriction**</td><td>Limiting hospital visitors during outbreaks (influenza, COVID-19, norovirus, VHF) or in high-risk units (NICU, BMT).</td></tr><tr><td>**HCW Screening**</td><td>Pre-employment and ongoing: HepB, MMR, VZV, TB (IGRA/ TST ± CXR); outbreak screening during exposures.</td></tr><tr><td>**Exclusion from Work**</td><td>HCW exclusion periods: e.g., norovirus 48 h after last symptoms; influenza 5 days from symptom onset (or until afebrile 24 h); varicella until all lesions crusted; GAS pharyngitis 24 h of antibiotics.</td></tr><tr><td>**Spaulding Classification**</td><td>Critical (sterile body contact — sterilise), Semi-critical (mucous membrane — high-level disinfect), Non-critical (intact skin — low-level disinfect).</td></tr><tr><td>**Environmental Cleaning**</td><td>Disinfection of high-touch surfaces (bedrails, call bells, door handles, over-bed tables) with hospital-grade disinfectant (sodium hypochlorite 1000 ppm, hydrogen peroxide, or quaternary ammonium).</td></tr><tr><td>**Outbreak**</td><td>Cases in excess of expected for time/place/population. Trigger: single case of rare disease (VHF, diphtheria) or unusual resistance pattern.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: The Chain of Infection &amp; Hierarchy of Controls</div>
+<p>#### The Chain of Infection The six components that must remain linked for infection to occur:</p>
+<ol><li><b>Infectious agent</b> (bacteria, virus, fungus, parasite, prion).</li><li><b>Reservoir</b> (human, animal, environment, equipment, water, food).</li><li><b>Portal of exit</b> (respiratory tract, GI, GU, blood, skin, placenta).</li><li><b>Mode of transmission</b> (contact, droplet, airborne, vector, common vehicle).</li><li><b>Portal of entry</b> (mucous membranes, broken skin, respiratory tract, invasive devices).</li><li><b>Susceptible host</b> (age, immunocompromise, comorbidities, devices, breaches in skin).</li></ol>
+<div class="callout"><b>IPC goal: break at least one link in the chain</b> for every patient interaction.</div>
+<p>#### Hierarchy of Controls (most → least effective)</p>
+<table class="ctable"><tr><th>Rank</th><th>Control</th><th>Example</th></tr><tr><td>------</td><td>---------</td><td>---------</td></tr><tr><td>1 (most)</td><td>**Elimination / Substitution**</td><td>Remove hazard; use needleless systems, blunt suture needles, single-dose vials.</td></tr><tr><td>2</td><td>**Engineering controls**</td><td>Negative-pressure rooms, ventilation, point-of-use sharps containers, HEPA filtration, automated hand-hygiene sinks, ABHR dispensers at point of care, UV-C disinfection, copper-impregnated surfaces.</td></tr><tr><td>3</td><td>**Administrative controls**</td><td>Policies, training, screening, isolation, cohorting, visitor restriction, workload, signage, antimicrobial stewardship.</td></tr><tr><td>4</td><td>**PPE**</td><td>Gloves, gowns, masks/respirators, eye protection — the visible "last line" but depends on correct use.</td></tr></table>
+<div class="callout"><b>PPE is the least reliable</b> because it depends on user behaviour, fit, doffing errors. Engineering and administrative controls reduce the need for PPE.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Standard Precautions — For Every Patient, Every Time</div>
+<p>Standard Precautions combine <b>Universal Precautions</b> (blood/body fluids) and <b>Body Substance Isolation</b>. Apply to <b>ALL patients</b> regardless of diagnosis, presumed infection status, or setting.</p>
+<p>#### The 9 Core Components</p>
+<ol><li><b>Hand hygiene</b> (see Section 3) — single most important measure.</li><li><b>Personal protective equipment (PPE)</b> — based on anticipated exposure:</li></ol>
+<ul><li><b>Gloves</b> for anticipated contact with blood, body fluids, mucous membranes, non-intact skin, contaminated items. Change between patients and between dirty/clean sites on same patient.</li><li><b>Gown / plastic apron</b> for anticipated splash or soiling of clothing/skin.</li><li><b>Surgical mask + eye protection (goggles or face shield)</b> for anticipated splash to face (suctioning, intubation, surgery, wound irrigation, endoscopy).</li></ul>
+<ol><li><b>Respiratory hygiene / cough etiquette</b> (see Section 9).</li><li><b>Safe injection practices</b> (see Section 10).</li><li><b>Sharps safety</b> (see Section 11).</li><li><b>Environmental cleaning and disinfection</b> (see Section 12).</li><li><b>Linen handling</b> — handle soiled linen with minimum agitation; do not sort/rinse in patient areas; contain at point of use; launder at high temperature (≥ 65 °C for 10 min, or 71 °C for 3 min) per WHO.</li><li><b>Waste management</b> — segregate clinical (infectious), sharps, pharmaceutical, cytotoxic, radioactive, general. Per WHO/HTM-07-01 (UK): orange bag for clinical waste; yellow with black band for cytotoxic; purple for cytogenetic.</li><li><b>Patient-care equipment</b> — clean, disinfect, or sterilise between patients per Spaulding classification; dedicated equipment for isolation rooms.</li></ol>
+<p>#### Risk Assessment for PPE Selection</p>
+<div class="callout"><b>"What is the anticipated exposure?"</b> drives PPE choice — not the patient's known diagnosis.</div>
+<table class="ctable"><tr><th>Anticipated Exposure</th><th>Hand Hygiene</th><th>Gloves</th><th>Gown</th><th>Mask</th><th>Eye Protection</th></tr><tr><td>----------------------</td><td>:-----------:</td><td>:------:</td><td>:----:</td><td>:----:</td><td>:--------------:</td></tr><tr><td>No contact with patient or environment (entering room only)</td><td>✓</td><td>× (unless contact likely)</td><td>×</td><td>×</td><td>×</td></tr><tr><td>Touching intact skin / non-invasive assessment (BP, temperature)</td><td>✓</td><td>×</td><td>×</td><td>×</td><td>×</td></tr><tr><td>Contact with body fluids, mucous membranes, non-intact skin, devices, contaminated items</td><td>✓</td><td>✓</td><td>✓ if splash likely</td><td>✓ if splash likely</td><td>✓ if splash likely</td></tr><tr><td>Splash to face (suctioning, intubation, bronchoscopy, surgery, irrigation)</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Aerosol-generating procedures</td><td>✓</td><td>✓</td><td>✓</td><td>N95/FFP2/3</td><td>✓</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: Hand Hygiene — The Cornerstone of IPC</div>
+<p>#### WHO 5 Moments of Hand Hygiene</p>
+<table class="ctable"><tr><th>#</th><th>Moment</th><th>Examples</th></tr><tr><td>---</td><td>--------</td><td>----------</td></tr><tr><td>**1**</td><td>**Before touching a patient**</td><td>Shaking hands, helping patient move, taking pulse.</td></tr><tr><td>**2**</td><td>**Before clean/aseptic procedure**</td><td>IV insertion, catheter care, wound dressing, eye drop instillation, oral care, drawing blood, preparing food/medications.</td></tr><tr><td>**3**</td><td>**After body fluid exposure risk**</td><td>Handling urine drainage, wound care, suctioning, cleaning spill, removing PPE after contact with body fluids.</td></tr><tr><td>**4**</td><td>**After touching a patient**</td><td>End of clinical assessment, helping patient toilet.</td></tr><tr><td>**5**</td><td>**After touching patient surroundings**</td><td>Changing bed linen, adjusting IV pole, holding bedrail, touching monitor — even if no patient contact.</td></tr></table>
+<div class="callout"><b>Rule:</b> "5 Moments" applies to all patient interactions, regardless of whether gloves are worn (gloves do NOT replace HH).</div>
+<p>#### Hand-Hygiene Methods</p>
+<table class="ctable"><tr><th>Method</th><th>Duration</th><th>Indications</th><th>Notes</th></tr><tr><td>--------</td><td>----------</td><td>-------------</td><td>-------</td></tr><tr><td>**Alcohol-based hand rub (ABHR)**</td><td>20–30 s; let dry</td><td>All routine moments when hands not visibly soiled</td><td>Preferred method; ≥ 60% ethanol/isopropanol; skin-friendly with emollients</td></tr><tr><td>**Soap + water**</td><td>40–60 s (WHO 11-step technique)</td><td>Hands visibly soiled, after known/suspected **C. difficile**, **norovirus**, *B. anthracis*, non-enveloped viruses, before eating, after toilet</td><td>Mechanical removal of spores; alcohol does not kill spores</td></tr><tr><td>**Antiseptic wash** (chlorhexidine 4% / povidone-iodine)</td><td>40–60 s</td><td>Surgical scrub, central-line insertion, high-risk procedures</td><td>Persistent activity</td></tr><tr><td>**Surgical hand antisepsis**</td><td>2–5 min with antiseptic</td><td>Surgical procedures</td><td>Use brush only for nails; no aggressive scrubbing</td></tr></table>
+<p>#### WHO 11-Step Hand-Rub Technique</p>
+<ol><li>Apply palmful of ABHR; rub palm-to-palm.</li><li>Right palm over left dorsum with interlaced fingers; vice versa.</li><li>Palm-to-palm with fingers interlaced.</li><li>Back of fingers to opposing palms with fingers interlocked.</li><li>Rotational rubbing of left thumb clasped in right palm; vice versa.</li><li>Rotational rubbing, fingers of right hand clasped in left palm and vice versa.</li><li>(After drying of product)</li></ol>
+<ul><li>Continue until dry (≥ 20 s). Cover all surfaces.</li></ul>
+<p>#### Hand-Hygiene Compliance</p>
+<ul><li>Average baseline compliance: <b>~ 40%</b> in most hospitals.</li><li>WHO multimodal strategy improves compliance: <b>system change</b> (ABHR at bedside), <b>training</b>, <b>monitoring + feedback</b>, <b>reminders in workplace</b>, <b>safety climate</b>.</li><li>Targets: ≥ 80% in most settings; &gt; 90% in high-risk units (ICU, NICU, oncology).</li><li>Direct observation is the gold standard; electronic hand-hygiene monitoring (EHHM) is emerging.</li></ul>
+<p>#### Hand-Care</p>
+<ul><li>Keep nails <b>short, clean, unpolished</b>; <b>no artificial nails</b> in clinical areas (CHX accumulates under; outbreak association with <i>Serratia</i>, <i>Pseudomonas</i>, <i>Candida</i>).</li><li>Cover cuts/abrasions with waterproof dressing.</li><li>Moisturise to maintain skin integrity (use hospital-supplied emollient — not personal).</li><li>Report dermatitis (occupational health) — may require reassignment from hand-hygiene-critical areas.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Personal Protective Equipment (PPE)</div>
+<p>#### Types of PPE</p>
+<table class="ctable"><tr><th>PPE Type</th><th>Function</th><th>Key Specifications</th></tr><tr><td>----------</td><td>----------</td><td>---------------------</td></tr><tr><td>**Gloves**</td><td>Barrier to micro-organisms on hands; reduce contamination during contact</td><td>Non-sterile (examination) for routine contact; sterile for surgical/aseptic; nitrile/latex; powder-free; right size.</td></tr><tr><td>**Gown**</td><td>Protect skin/clothing from contamination</td><td>Long-sleeved, cuffed, fluid-resistant for splash; impermeable if extensive fluid exposure.</td></tr><tr><td>**Plastic apron**</td><td>Front-only protection from light splash</td><td>Wear over gown if large-volume fluid expected; cheap and disposable.</td></tr><tr><td>**Surgical mask (Type IIR/II)**</td><td>Protect wearer from droplets/splashes; protect patient from wearer (source control)</td><td>Fluid-resistant; ≥ 98% bacterial filtration; ≥ 120 mmHg splash resistance (Type IIR).</td></tr><tr><td>**N95 / FFP2 / FFP3 respirator**</td><td>Protect wearer from aerosols</td><td>NIOSH-certified (N95 ≥ 95% filtration of 0.3 µm); EN 149 (FFP2 ≥ 94%, FFP3 ≥ 99%); **fit-tested**; user-seal check each don.</td></tr><tr><td>**Eye protection** (goggles, visor, face shield)</td><td>Protect conjunctival mucosa from splash/aerosol</td><td>Anti-fog preferred; prescription glasses inadequate (use over-glasses goggles).</td></tr><tr><td>**Head cover**</td><td>Prevent contamination of hair/scalp in AGPs / sterile fields</td><td>Use during surgical / VHF scenarios.</td></tr><tr><td>**Footwear / overshoes**</td><td>Prevent contamination of floor (limited evidence of benefit for IPC)</td><td>Closed-toe impermeable; overshoes not routinely recommended.</td></tr></table>
+<p>#### PPE Selection by Transmission Route</p>
+<table class="ctable"><tr><th>Transmission</th><th>Gloves</th><th>Gown</th><th>Mask</th><th>Eye Protection</th></tr><tr><td>--------------</td><td>:------:</td><td>:----:</td><td>:----:</td><td>:--------------:</td></tr><tr><td>Standard (no anticipated exposure)</td><td>×</td><td>×</td><td>×</td><td>×</td></tr><tr><td>Standard (anticipated splash)</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Contact</td><td>✓</td><td>✓</td><td>Standard</td><td>Standard</td></tr><tr><td>Droplet</td><td>Standard</td><td>Standard</td><td>**Surgical mask**</td><td>Standard</td></tr><tr><td>Airborne (non-AGP)</td><td>Standard</td><td>Standard</td><td>**N95/FFP2**</td><td>Standard</td></tr><tr><td>Airborne AGP / SARS-CoV-2 / VHF</td><td>✓</td><td>✓</td><td>**N95/FFP3**</td><td>✓</td></tr><tr><td>Varicella (immune HCW: Standard only)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Varicella (non-immune HCW)</td><td>✓</td><td>✓</td><td>**N95/FFP3**</td><td>✓</td></tr></table>
+<p>#### Donning (Putting On) Sequence</p>
+<div class="callout"><b>Principle: don from cleanest → dirtiest, gloved last.</b></div>
+<p>```</p>
+<ol><li>Hand hygiene (ABHR or wash)</li><li>GOWN — fasten at neck, then waist</li><li>MASK or RESPIRATOR — place over nose/mouth, secure ties/straps,</li></ol>
+<p>mould nosepiece, perform USER-SEAL CHECK (FFP2/3)</p>
+<ol><li>EYE PROTECTION — adjust goggles/visor to fit</li><li>GLOVES — pull over cuff of gown</li></ol>
+<p>(If double gloving for high risk — e.g., Ebola — wear second pair last) ```</p>
+<div class="callout"><b>Note for COVID-19 / VHF:</b> Some authorities recommend <b>donning mask first, then gown</b> (fit mask cleanly before covering face with visor). Either order is acceptable if seal is confirmed.</div>
+<p>#### Doffing (Removing) Sequence</p>
+<div class="callout"><b>Principle: doff from dirtiest → cleanest; HAND HYGIENE between steps; AVOID self-contamination.</b></div>
+<p>```</p>
+<ol><li>GLOVES — peel off (outside-in, ball and discard)</li></ol>
+<p>[Optional inner glove layer for VHF]</p>
+<ol><li>GOWN — unfasten ties, pull off shoulders, roll inside-out, discard</li><li>HAND HYGIENE</li><li>EYE PROTECTION — handle by headband/earpieces (do NOT touch front);</li></ol>
+<p>if reusable, place in disinfectant; if single-use, discard</p>
+<ol><li>MASK / RESPIRATOR — handle by ties/straps (do NOT touch front); discard</li><li>HAND HYGIENE</li><li>Hand hygiene again if contact with respiratory secretions possible</li></ol>
+<p>```</p>
+<div class="callout"><b>Most common doffing errors:</b> touching mask front; doffing gown over head; not performing HH between steps; removing gloves and gown together as one "bundle" (spreads contamination).</div>
+<p>#### When to Change PPE</p>
+<ul><li><b>Gloves:</b> between patients; between dirty/clean sites on same patient; immediately if torn/punctured; do NOT wash or re-use.</li><li><b>Gown/apron:</b> between patients; immediately if heavily soiled.</li><li><b>Mask/respirator:</b> change if wet, soiled, damaged, or after extended use (≥ 4–6 h, or per local policy); do NOT dangle around neck or reuse.</li><li><b>Eye protection:</b> clean between patients if reusable; replace if damaged.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Transmission-Based Precautions</div>
+<p>#### Quick Reference: Contact vs Droplet vs Airborne</p>
+<table class="ctable"><tr><th>Feature</th><th>Contact</th><th>Droplet</th><th>Airborne</th></tr><tr><td>---------</td><td>---------</td><td>---------</td><td>----------</td></tr><tr><td>**Particle size**</td><td>Direct/indirect contact (no aerosol/droplet)</td><td>> 5 µm ("respiratory droplets")</td><td>< 5 µm ("droplet nuclei" / aerosols)</td></tr><tr><td>**Distance travelled**</td><td>Touch</td><td>≤ 1 m (settles quickly)</td><td>Long-range (suspended in air)</td></tr><tr><td>**Room**</td><td>Single (or cohort same pathogen)</td><td>Single (or cohort); ≥ 1 m separation</td><td>**Negative-pressure AIIR** (≥ 12 ACH)</td></tr><tr><td>**HCW mask**</td><td>Standard; surgical if splash</td><td>**Surgical mask** within 1 m</td><td>**N95/FFP2/3**</td></tr><tr><td>**Patient mask (transport)**</td><td>If tolerated</td><td>Yes (surgical)</td><td>**Yes (surgical)** — patient wears mask</td></tr><tr><td>**Gown + gloves**</td><td>**Yes — for ALL room entry**</td><td>Standard</td><td>Standard unless soiling likely</td></tr><tr><td>**Eye protection**</td><td>Standard</td><td>Standard</td><td>Standard for AGPs</td></tr><tr><td>**Equipment**</td><td>**Dedicated or single-use**</td><td>Standard cleaning</td><td>Standard cleaning</td></tr><tr><td>**Patient transport**</td><td>Minimise; cover affected areas</td><td>Minimise; patient wears mask</td><td>Minimise; patient wears surgical mask</td></tr><tr><td>**Visitors**</td><td>PPE as HCW; restrict young children</td><td>Surgical mask; PPE as HCW</td><td>N95; PPE as HCW; restrict</td></tr></table>
+<p>#### Contact Precautions — Detailed</p>
+<p><b>Indications:</b></p>
+<ul><li><b>MDROs:</b> MRSA, VRE, ESBL, CRE/CPE, MDR-<i>Pseudomonas</i>, MDR-<i>Acinetobacter</i>, azole-resistant <i>Candida auris</i>.</li><li><b>Enteric:</b> <i>C. difficile</i>, norovirus, rotavirus, <i>Shigella</i>, hepatitis A/E, typhoid (until 3 negative stools).</li><li><b>Skin / ectoparasites:</b> scabies, lice, impetigo (group A <i>Streptococcus</i>), RSV, parainfluenza.</li><li><b>Other:</b> wound infections with resistant organisms, draining abscesses not contained by dressings.</li></ul>
+<p><b>PPE:</b> <b>Gloves + gown for ALL entry</b> (even if no patient contact). Mask/eye protection per Standard for splash. <b>Room:</b> Single preferred; cohort with same pathogen/MDRO if single not available. Dedicated or single-use equipment (stethoscope, BP cuff, thermometer). Daily cleaning with hospital-grade disinfectant (or sporicidal for <i>C. difficile</i> — see below). <b>Transport:</b> Minimise; cover affected areas; clean equipment after use. <b>Duration:</b> Until culture-negative × 3 (or per local policy) for most MDROs; until 48 h after effective therapy for <i>C. difficile</i>; until lesions crusted for varicella (also airborne).</p>
+<p>#### Droplet Precautions — Detailed</p>
+<p><b>Indications:</b> influenza, pertussis, meningococcal disease (<i>N. meningitidis</i>) (until 24 h of effective therapy), mumps, rubella, <i>H. influenzae</i> type b (until 24 h of therapy), rhinovirus, adenovirus, group A streptococcal pharyngitis in infants/young, plague (pneumonic), SARS (early) — historically. <b>Note:</b> droplet vs airborne is a <b>spectrum</b>; some pathogens (e.g., SARS-CoV-2) transmit by both — see combination precautions.</p>
+<p><b>PPE:</b> <b>Surgical mask</b> (Type IIR) for HCW within 1 m; patient wears surgical mask during transport. <b>Room:</b> Single preferred; cohort with same pathogen; if not available, maintain <b>spatial separation ≥ 1 m</b> and curtain between beds. Door can be open. <b>Ventilation:</b> Standard room ventilation acceptable; AIIR not required. <b>Transport:</b> Patient wears surgical mask; HCW wears surgical mask if within 1 m.</p>
+<p>#### Airborne Precautions — Detailed</p>
+<p><b>Indications:</b> Pulmonary/laryngeal TB (suspected/confirmed MDR-TB, XDR-TB, or smear-positive until negative), measles (rubeola), varicella (chickenpox), disseminated zoster in immunocompromised, <i>B. anthracis</i> (inhalational), viral haemorrhagic fevers (often combination), smallpox, monkeypox (some guidelines recommend contact + airborne for HCW).</p>
+<p><b>PPE:</b> <b>N95/FFP2</b> (FFP3 for high-risk AGPs and TB MDR) respirator — must be <b>fit-tested</b> and user-seal check performed each don. <b>Room:</b> <b>Airborne Infection Isolation Room (AIIR):</b></p>
+<ul><li><b>Single-patient room</b> with <b>negative pressure</b> (≥ –2.5 Pa relative to corridor).</li><li><b>≥ 12 air changes per hour (ACH)</b> for new builds; ≥ 6 ACH for renovated.</li><li><b>Exhaust to outside</b> or through <b>HEPA filter</b> before recirculation.</li><li><b>Door closed</b> at all times.</li><li>For measles/varicella: immune HCW can enter AIIR without respirator; non-immune staff should not enter.</li><li>If AIIR unavailable: place patient in single room with door closed, mask patient, no other susceptible patients/HCW in room; transfer to facility with AIIR as soon as possible.</li></ul>
+<p><b>Transport:</b> Patient wears <b>surgical mask</b>; HCW wears N95/FFP2 if accompanying; minimal routes; schedule at end of day if possible.</p>
+<p>#### Combination / Enhanced Precautions</p>
+<table class="ctable"><tr><th>Pathogen</th><th>Precautions</th><th>Special Notes</th></tr><tr><td>----------</td><td>-------------</td><td>---------------</td></tr><tr><td>**COVID-19**</td><td>**Airborne + Contact + Eye protection** (or Droplet + Contact if AGPs not performed; current WHO/CDC advise airborne for AGPs and FFP3)</td><td>AIIR for AGPs; FFP3 or PAPR for intubation/extubation; patient wears surgical mask during transport.</td></tr><tr><td>**C. difficile**</td><td>**Contact**</td><td>**Soap + water** for HH (alcohol does not kill spores); **sporicidal cleaning** (1000 ppm sodium hypochlorite or hydrogen peroxide vapour); private room with own toilet.</td></tr><tr><td>**VHF (Ebola, Marburg, Lassa)**</td><td>**Airborne + Contact + Eye protection**</td><td>AIIR preferred; **FFP3 + face shield + double gloves + impermeable gown + leg covers** (full-body suit for some protocols); dedicated equipment; trained HCW; safe burials.</td></tr><tr><td>**Extensively drug-resistant TB (XDR-TB)**</td><td>**Airborne**</td><td>AIIR mandatory; FFP3; minimise HCW; consider PAPR for AGPs.</td></tr><tr><td>**Measles/Varicella**</td><td>**Airborne** (+ Contact if disseminated or immunocompromised)</td><td>Susceptible HCW excluded; post-exposure prophylaxis (measles: MMR within 72 h; varicella: VZIG within 10 d for non-immune).</td></tr><tr><td>**Pneumonic plague**</td><td>**Droplet** (until 48 h therapy + clinical improvement)</td><td>+ antimicrobial therapy.</td></tr><tr><td>**Meningococcal disease**</td><td>**Droplet** (until 24 h of effective therapy)</td><td>Chemoprophylaxis for close contacts; rifampicin / ciprofloxacin / ceftriaxone.</td></tr><tr><td>**Pertussis**</td><td>**Droplet** (until 5 d of effective therapy)</td><td>Macrolide chemoprophylaxis for close contacts.</td></tr><tr><td>**MDR-GNB (CRE, ESBL, MDR-PA/ACI)**</td><td>**Contact**</td><td>Active screening in high-risk units; cohort; dedicated staff; AMS.</td></tr><tr><td>**Scabies / lice**</td><td>**Contact** (until 24 h of effective therapy)</td><td>Treat patient and close contacts; environmental cleaning.</td></tr><tr><td>**RSV / parainfluenza** (infants/young children)</td><td>**Contact + Droplet**</td><td>Mask + eye protection within 1 m; gown + gloves for contact.</td></tr><tr><td>**Monkeypox** (clade-dependent)</td><td>**Contact + Droplet + Airborne** for HCW</td><td>AIIR if available; variola vaccine/tecovirimat for contacts.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: Isolation Room Specifications</div>
+<p>#### AIIR (Airborne Infection Isolation Room)</p>
+<table class="ctable"><tr><th>Specification</th><th>New Build</th><th>Renovated</th></tr><tr><td>---------------</td><td>-----------</td><td>-----------</td></tr><tr><td>Pressure differential</td><td>**–2.5 Pa** (relative to corridor)</td><td>–2.5 Pa</td></tr><tr><td>Air changes/hour (ACH)</td><td>**≥ 12** (WHO); CDC 6–12 (≥ 12 preferred)</td><td>≥ 6</td></tr><tr><td>Exhaust</td><td>**Outside** (away from intake, public areas) or **HEPA** before recirculation</td><td>Same</td></tr><tr><td>Humidity</td><td>40–60%</td><td>40–60%</td></tr><tr><td>Temperature</td><td>21–24 °C</td><td>21–24 °C</td></tr><tr><td>Sealed room</td><td>Yes (no recirculation, sealed gaps, self-closing door)</td><td>Yes</td></tr><tr><td>Anteroom</td><td>Preferred (for PPE storage, doffing buffer)</td><td>Optional but recommended</td></tr><tr><td>Monitoring</td><td>Continuous pressure monitor with visual + audible alarm</td><td>Same</td></tr></table>
+<p>#### Single Room (Standard, Non-AIIR) for Contact/Droplet</p>
+<ul><li>Door may remain open (droplet) or should be closed (contact).</li><li>Hand-hygiene sink or ABHR dispenser at point of care.</li><li>Dedicated equipment; PPE storage at entrance.</li><li>Self-contained bathroom preferred for enteric infections.</li></ul>
+<p>#### Protective (Positive-Pressure) Isolation Room</p>
+<table class="ctable"><tr><th>Feature</th><th>Specification</th></tr><tr><td>---------</td><td>---------------</td></tr><tr><td>Pressure</td><td>**+12.5 Pa** (positive to corridor)</td></tr><tr><td>ACH</td><td>≥ 12</td></tr><tr><td>HEPA-filtered supply air</td><td>Yes</td></tr><tr><td>Use</td><td>Severely immunocompromised (HSCT, ANC < 0.5 × 10⁹/L, GVHD, primary immunodeficiency, transplant early phase).</td></tr><tr><td>Room design</td><td>May have **laminar airflow (LAF)** over bed (controversial — no mortality benefit; HSCT guidelines no longer require LAF).</td></tr><tr><td>Note</td><td>**DO NOT use positive pressure for infectious patients** — would push pathogens out.</td></tr></table>
+<p>#### Cohort Rooms / Bay Isolation</p>
+<ul><li>Same pathogen/MDRO in same area; dedicated staff; shared equipment cleaned between patients.</li><li>Used when single rooms are insufficient (e.g., norovirus outbreaks, influenza season).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: Multi-Drug Resistant Organisms (MDRO) — Bundles and Decolonisation</div>
+<p>#### Common MDROs in Healthcare</p>
+<table class="ctable"><tr><th>Organism</th><th>Common Sites of Carriage</th><th>Key Precautions</th></tr><tr><td>----------</td><td>--------------------------</td><td>-----------------</td></tr><tr><td>**MRSA** (*mecA*+)</td><td>Anterior nares, skin, wounds, catheter sites</td><td>Contact</td></tr><tr><td>**VRE** (*vanA/vanB*)</td><td>GI tract, urine, wounds</td><td>Contact</td></tr><tr><td>**ESBL-producing Enterobacterales**</td><td>GI tract, urine, blood</td><td>Contact</td></tr><tr><td>**CRE / CPE** (*bla* KPC, NDM, OXA-48, VIM, IMP)</td><td>GI tract, urine, blood, wounds</td><td>**Contact — active screening, cohorting, AMS critical**</td></tr><tr><td>**MDR-*Pseudomonas aeruginosa***</td><td>Respiratory, wounds, blood</td><td>Contact</td></tr><tr><td>**MDR-*Acinetobacter baumannii***</td><td>Skin, respiratory, wounds — survives long in environment</td><td>Contact + enhanced environmental cleaning</td></tr><tr><td>***Candida auris***</td><td>Skin, axilla, groin, nares, urine; environmental reservoir</td><td>Contact + chlorhexidine bathing; terminal cleaning with sporicidal</td></tr><tr><td>**Azole-resistant *Aspergillus***</td><td>Respiratory</td><td>Standard + air handling</td></tr></table>
+<p>#### MDRO Bundle Components (5–7 Elements)</p>
+<ol><li><b>Active screening / surveillance cultures</b> at admission and periodically (e.g., weekly) in high-risk units (ICU, NICU, transplant, dialysis) — site-specific swabs (nares, axilla, groin, perineum, wound).</li><li><b>Contact precautions</b> for carriers/infected (single room or cohort; PPE for all entry).</li><li><b>Cohorting</b> of patients, staff, and equipment.</li><li><b>Hand hygiene</b> (ABHR for MRSA/VRE/ESBL; **soap + water for *C. difficile***).</li><li><b>Antimicrobial stewardship</b> — central to preventing emergence.</li><li><b>Decolonisation</b> where applicable (MRSA — see below).</li><li><b>Environmental cleaning</b> + terminal cleaning on discharge; attention to high-touch surfaces; dedicated or thoroughly cleaned equipment.</li><li><b>Antimicrobial/antiseptic bathing</b> — daily <b>chlorhexidine 2% (or 4%)</b> wash for ICU patients reduces CLABSI, MRSA, VRE acquisition (evidence strong for ICU; less so for general wards).</li><li><b>Audit &amp; feedback</b> — compliance with bundle, transmission rates.</li></ol>
+<p>#### MRSA Decolonisation</p>
+<p><b>Indication:</b> known MRSA carriage prior to high-risk procedure (cardiothoracic, orthopaedic implant, vascular graft); recurrent infection; outbreak control.</p>
+<p><b>5-day regimen (UK / IDSA):</b></p>
+<ul><li><b>Mupirocin 2% nasal ointment</b> — apply to both anterior nares TDS × 5 days.</li><li><b>Chlorhexidine 4% body wash</b> (or 2% cloths) — daily × 5 days (avoid face, mucous membranes).</li><li><b>Consider</b>: rifampicin + doxycycline (if mupirocin-resistant or extensive; check susceptibilities).</li></ul>
+<p><b>Caveats:</b></p>
+<ul><li>Re-screen at 48 h and 1–3 months post-treatment.</li><li>Mupirocin resistance emerging (3–5%); use mupirocin sensitivity testing after failed decolonisation.</li><li>Chlorhexidine resistance rare but reported (qac genes).</li></ul>
+<p>#### VRE / ESBL / CRE</p>
+<ul><li><b>Routine decolonisation not recommended.</b></li><li>Bundle-based prevention; AMS; contact precautions until clearance (typically 3 negative screens ≥ 1 week apart) — local policy.</li><li>For <b>CRE</b>: active screening of contacts; cohort; consider <b>faecal microbiota transplant (FMT)</b> for recurrent CRE decolonisation (emerging evidence).</li><li><b>Chlorhexidine bathing</b> reduces VRE transmission in ICU.</li><li><b>Selective oral decontamination (SOD)/selective digestive decontamination (SDD)</b> — used in some ICUs to reduce VAP/Gram-negative bacteraemia (controversial — risk of resistance).</li></ul>
+<p>#### <i>C. difficile</i> Specifics</p>
+<ul><li><b>Contact precautions</b> in single room with own toilet.</li><li><b>Hand hygiene: SOAP + WATER</b> (alcohol does not kill spores).</li><li><b>Sporicidal cleaning:</b> <b>1:10 sodium hypochlorite (5,000–10,000 ppm)</b> for environmental surfaces; or <b>hydrogen peroxide vapour</b> for terminal cleaning.</li><li><b>Avoid</b> unnecessary fluoroquinolones, clindamycin, cephalosporins, carbapenems (high CDI risk).</li><li><b>Bundle components:</b> AMS, prompt isolation, testing (PCR/NAAT + GDH + toxin EIA), contact precautions, daily chlorhexidine bathing (controversial for <i>C. diff</i> — may reduce shedding), sporicidal cleaning, antimicrobial stewardship.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 8: Protective (Reverse) Isolation for Immunocompromised Patients</div>
+<p>#### Indications</p>
+<ul><li><b>Haematopoietic stem cell transplant (HSCT)</b> — especially allogeneic, until engraftment.</li><li><b>Neutropenia</b> ANC &lt; 0.5 × 10⁹/L (or &lt; 1.0 with expected decline).</li><li><b>Severe combined immunodeficiency (SCID)</b>.</li><li><b>Acute leukaemia induction</b> chemotherapy.</li><li><b>Solid organ transplant</b> early (lung transplant highest risk).</li><li><b>Severe GVHD</b> post-HSCT.</li><li><b>Extensive burns</b> (&gt; 20% BSA).</li></ul>
+<p>#### Components</p>
+<ul><li><b>Single positive-pressure room</b> (≥ +12.5 Pa); HEPA-filtered air; ≥ 12 ACH.</li><li><b>Strict hand hygiene</b> for all entering.</li><li><b>Mask/respirator</b> for symptomatic visitors/HCW.</li><li><b>No fresh flowers / plants</b> (Aspergillus in soil).</li><li><b>No fresh fruit / uncooked food</b> (neutropenic diet — controversial; some centres allow low-bacterial diet).</li><li><b>No construction dust</b> exposure; sealed rooms during building work; HEPA at entrance.</li><li><b>Daily chlorhexidine bathing</b> to reduce CLABSI.</li><li><b>Prophylactic antifungals</b> (posaconazole, fluconazole per protocol), antivirals (aciclovir), antibacterials (levofloxacin) per protocol.</li><li><b>Visitor screening</b> — no recent infection, no symptoms, no sick contacts.</li><li><b>Avoidance of live vaccines</b> in family/close contacts (oral polio historically; now mostly inactivated).</li><li><b>Pet restriction</b> (no reptiles — <i>Salmonella</i>; no birds — <i>Chlamydia psittaci</i>, <i>Cryptococcus</i>).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 9: Respiratory Hygiene / Cough Etiquette</div>
+<p>#### Measures (CDC/WHO 2007; SARS-CoV-2 reinforced)</p>
+<ul><li><b>Cover mouth and nose</b> with tissue when coughing/sneezing; if no tissue, use inner elbow (NOT hands).</li><li><b>Dispose</b> of tissue immediately in waste bin.</li><li><b>Perform hand hygiene</b> after contact with respiratory secretions.</li><li><b>Wear a surgical mask</b> if coughing/sneezing (source control) — esp. in waiting areas.</li><li><b>Spatial separation</b> ≥ 1 m (preferably 2 m) between symptomatic patients and others in waiting rooms.</li><li><b>Provide</b> tissues, ABHR, masks at entrances/triage.</li><li><b>Triage</b> symptomatic patients rapidly; place in separate waiting area or single room.</li><li>Applies to <b>patients, visitors, and HCW</b> with respiratory symptoms.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 10: Safe Injection Practices</div>
+<p>#### Key Principles (CDC, WHO, NICE)</p>
+<ul><li><b>Use a new sterile syringe and needle</b> for each injection; one patient — one syringe — one needle.</li><li><b>Single-dose vials</b> (SDV) preferred; if multi-dose vials (MDV) used:</li><li><b>One patient only</b> per MDV session.</li><li><b>Opened in clean medication area</b>; date and time of opening; discard per manufacturer (typically 28 d, or per local policy).</li><li>Never leave a needle inserted into the vial; use a new needle and syringe each access.</li><li><b>Never re-cap, bend, or break</b> needles by hand; use one-handed scoop technique only if essential; ideally use devices with safety features.</li><li><b>Sharps container</b> within arm's reach, at point of use; never overfill (≥ ¾ full = seal and replace).</li><li><b>Aseptic technique</b> — clean the vial diaphragm with 70% alcohol, allow to dry; clean the injection site; use sterile needle/syringe; do not touch key parts.</li><li><b>IV fluids/blood</b> — use sterile giving sets, change per policy (typically 96 h; 24 h for blood, 4 h for lipid-containing).</li><li><b>Multi-patient devices</b> (e.g., glucometers, INR devices, injection ports) — clean between patients per manufacturer.</li><li><b>Single-use devices</b> — never re-process.</li><li><b>PPE</b> — wear gloves if blood/body fluid exposure likely; perform hand hygiene before/after.</li><li><b>Outbreaks</b> from unsafe injections: hepatitis B/C, <i>Malassezia furfur</i>, <i>Pseudomonas</i>, <i>Serratia</i>, <i>Staphylococcus</i>, environmental mycobacteria, <i>Klebsiella</i> (hepatitis B outbreaks in US endoscopy, oncology, podiatry clinics 2000s).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 11: Sharps Safety &amp; Needlestick Injury Management</div>
+<p>#### Sharps Injury Prevention</p>
+<ul><li><b>Safety-engineered devices</b> (retractable needles, shielded scalpels, blunt suture needles) — mandated in many jurisdictions (US Needlestick Safety and Prevention Act 2000; EU 2010/32/EU).</li><li><b>Double-gloving</b> in surgery reduces inner-glove perforation (orthopaedic).</li><li><b>Neutral zone ("hands-free")</b> for passing sharps in theatre.</li><li><b>Sharps container</b> at point of use; puncture-resistant, leak-proof, biohazard-labelled.</li><li><b>No recapping, no disassembly</b> of needles by hand.</li><li><b>Immediate disposal</b> — do not leave sharps on trays/beds.</li></ul>
+<p>#### Needlestick Injury (NSI) / Mucocutaneous Exposure — Immediate Management</p>
+<p><b>First aid (within seconds):</b></p>
+<ol><li><b>Skin</b>: wash wound with soap and water; do NOT squeeze, suck, or scrub. Allow to bleed briefly.</li><li><b>Mucous membrane</b> (eye/mouth): irrigate copiously with saline or water for 15–20 minutes.</li><li>Report to supervisor/occupational health <b>immediately</b> (within hours).</li><li>Document time, mechanism, device, procedure, PPE worn, source status.</li></ol>
+<p><b>Risk assessment (within hours):</b></p>
+<ul><li><b>Source testing</b> (with consent): HBsAg, anti-HCV, HIV Ag/Ab (4th generation). If source unknown, assess epidemiologically.</li><li><b>Recipient baseline</b>: HBsAb (immunity), anti-HBs titre, anti-HCV, HIV Ag/Ab, ALT, vaccination history.</li><li><b>Type of exposure</b>: percutaneous (depth, hollow-bore &gt; solid needle), mucosal, non-intact skin, bite.</li></ul>
+<p>#### HBV Post-Exposure Prophylaxis (UK / CDC)</p>
+<table class="ctable"><tr><th>Recipient Status</th><th>Source HBsAg Positive / Unknown</th><th>Source HBsAg Negative</th></tr><tr><td>------------------</td><td>--------------------------------</td><td>----------------------</td></tr><tr><td>**Unvaccinated**</td><td>**HBV vaccine series** ± **HBIG** (single dose within 7 d, ideally 48 h)</td><td>Start vaccine series</td></tr><tr><td>**Vaccinated, known responder (anti-HBs ≥ 10 mIU/mL)**</td><td>No PEP; test source</td><td>No PEP</td></tr><tr><td>**Vaccinated, known non-responder**</td><td>HBIG × 2 (1 month apart) + vaccine booster (or 2nd vaccine series)</td><td>No PEP</td></tr><tr><td>**Vaccinated, response unknown**</td><td>Test anti-HBs; if < 10, give HBIG + vaccine booster</td><td>Test anti-HBs; if < 10, give vaccine booster</td></tr></table>
+<ul><li><b>Vaccine response: anti-HBs ≥ 10 mIU/mL</b> 1–2 months after completion = protected.</li></ul>
+<p>#### HCV Post-Exposure Management</p>
+<ul><li><b>No effective PEP</b>; monitor seroconversion.</li><li><b>Baseline</b> anti-HCV + HCV RNA (PCR).</li><li><b>Repeat anti-HCV + RNA at 6 weeks and 6 months</b> (earlier with RNA at 4–6 weeks if available).</li><li>If seroconvert: <b>direct-acting antiviral (DAA)</b> therapy (e.g., sofosbuvir/velpatasvir) — highly curative, treat during acute infection.</li></ul>
+<p>#### HIV Post-Exposure Prophylaxis (PEP)</p>
+<table class="ctable"><tr><th>Exposure</th><th>Source HIV+ (or high risk)</th><th>Source HIV Negative / Unknown Low Risk</th></tr><tr><td>----------</td><td>--------------------------</td><td>----------------------------------------</td></tr><tr><td>**Percutaneous (hollow-bore, blood, deep)**</td><td>**3-drug PEP recommended** (start ASAP, within 72 h)</td><td>Generally no PEP — confirm source status</td></tr><tr><td>**Percutaneous (solid needle, superficial)**</td><td>Consider 2-drug PEP; 3-drug if high viral load</td><td>Generally no PEP</td></tr><tr><td>**Mucous membrane / non-intact skin**</td><td>Consider PEP (2 or 3 drug)</td><td>Generally no PEP</td></tr></table>
+<ul><li><b>Standard 3-drug PEP</b> (UK BHIVA 2021; US DHHS 2024): e.g., <b>tenofovir disoproxil fumarate/emtricitabine 300/200 mg OD + raltegravir 400 mg BD</b> × <b>28 days</b>, or TDF/FTC + dolutegravir 50 mg OD.</li><li><b>Start within 2 hours</b> (ideally), and <b>within 72 hours</b> of exposure. Do not delay while awaiting source result if risk high.</li><li><b>Baseline tests</b>: HIV Ag/Ab, FBC, U&amp;E, LFT, pregnancy (if relevant), STI screen.</li><li><b>Follow-up</b>: HIV Ag/Ab at 4–6 weeks, 3 months, 6 months.</li><li><b>PEP failure</b> rare if started promptly; counsel on adherence, side effects (renal/GI with TDF; neuropsychiatric with dolutegravir/raltegravir).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 12: Environmental Cleaning &amp; Disinfection</div>
+<p>#### Cleaning Principles</p>
+<ul><li><b>Clean → dirty workflow</b>: from least soiled to most soiled, and from clean to dirty rooms (terminal cleaning last).</li><li><b>High-touch surfaces</b> (bedrails, call bells, over-bed tables, door handles, light switches, IV pumps, monitors, bathroom fixtures) cleaned at least <b>daily</b> and on discharge.</li><li><b>Low-touch surfaces</b> (floors, walls) cleaned on a schedule; visibly soiled surfaces cleaned immediately.</li><li><b>Terminal cleaning</b> on patient discharge/transfer — full room clean + change of curtain + allow air exchange.</li><li><b>Dedicated or thoroughly cleaned equipment</b> between patients.</li></ul>
+<p>#### Disinfectants (per Spaulding)</p>
+<table class="ctable"><tr><th>Level</th><th>Agent</th><th>Use</th><th>Examples</th></tr><tr><td>-------</td><td>-------</td><td>-----</td><td>----------</td></tr><tr><td>**High-level**</td><td>Glutaraldehyde, ortho-phthalaldehyde (OPA), peracetic acid, hydrogen peroxide 6%</td><td>Semi-critical devices (endoscopes, laryngoscopes) — 20–45 min soak</td><td>Endoscopy reprocessing</td></tr><tr><td>**Intermediate**</td><td>Sodium hypochlorite 1,000–5,000 ppm, 70% alcohol</td><td>Non-critical + surfaces with blood spill</td><td>Surfaces, BP cuffs, stethoscopes</td></tr><tr><td>**Low-level**</td><td>Quaternary ammonium compounds, dilute hypochlorite</td><td>Non-critical surfaces, routine cleaning</td><td>Floors, furniture</td></tr><tr><td>**Sporicidal**</td><td>1:10 sodium hypochlorite (5,000 ppm), hydrogen peroxide vapour, peracetic acid</td><td>*C. difficile*, *C. auris*</td><td>Terminal cleaning; outbreak</td></tr></table>
+<p>#### Specific Pathogens</p>
+<ul><li>**Norovirus / <i>C. difficile</i><b>: hypochlorite </b>1,000–5,000 ppm**; hydrogen peroxide vapour for terminal cleaning.</li><li>**CRE / *C. auris***: hypochlorite + daily + terminal; consider H₂O₂ vapour; some centres use 1:10 bleach twice daily.</li><li><b>Blood spill</b>: hypochlorite 10,000 ppm (1%) for 5 min before cleaning.</li><li><b>MRSA / VRE / ESBL</b>: standard disinfectants adequate with proper cleaning.</li></ul>
+<p>#### Novel Technologies (Should/Nice to Know)</p>
+<ul><li><b>Hydrogen peroxide vapour (HPV)</b> — superior for terminal cleaning of isolation rooms.</li><li><b>UV-C light</b> (e.g., pulsed-xenon) — adjunct to manual cleaning; reduces C. difficile, VRE, MRSA.</li><li><b>Copper-impregnated surfaces</b> (bedrails, IV poles) — reduce bioburden; mixed clinical outcomes.</li><li><b>Self-disinfecting surfaces</b> (quaternary ammonium, light-activated).</li><li><b>Microfibre cloths/mops</b> — superior cleaning vs. cotton.</li><li><b>Steam cleaning</b> — non-critical items.</li></ul>
+<p>#### Linen, Waste, Crockery, Books</p>
+<ul><li><b>Linen</b>: bag at bedside; do not sort in patient area; treat all used linen as potentially infectious.</li><li><b>Waste</b>: segregate per HTM-07-01 / WHO; black = general; yellow/orange = clinical infectious; purple = cytotoxic; red = anatomical; sharps in yellow rigid containers.</li><li><b>Crockery/cutlery</b>: standard dishwasher (high temperature) adequate; no special precautions for most pathogens.</li><li><b>Books/papers</b>: no special handling; some pathogens (e.g., <i>C. difficile</i> spores) can persist; consider single-use.</li><li><b>Bodies of deceased</b>: standard PPE; no special precautions for most; <b>VHF — special handling</b> (leak-proof body bag, no washing, cremation preferred).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 13: Healthcare Worker Health, Screening &amp; Immunisation</div>
+<p>#### Pre-Employment Screening</p>
+<ul><li><b>Hepatitis B</b>: HBsAg, anti-HBs, anti-HBc. Non-immune → vaccinate; document response.</li><li><b>Measles, Mumps, Rubella (MMR)</b>: evidence of immunity (vaccination × 2 or serology).</li><li><b>Varicella</b>: serology (or vaccination); non-immune → vaccinate (avoid pregnancy for 1 month).</li><li><b>Tuberculosis</b>: IGRA (interferon-γ release assay) or TST (TST less specific in BCG-vaccinated); CXR if positive.</li><li><b>HIV / HCV</b> — not routinely screened (confidential; per local policy).</li><li><b>Other</b>: COVID-19 (vaccination or documented infection); pertussis (Tdap booster).</li></ul>
+<p>#### Recommended HCW Immunisations</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Schedule</th><th>Notes</th></tr><tr><td>---------</td><td>----------</td><td>-------</td></tr><tr><td>**Hep B**</td><td>3 doses (0, 1, 6 m); check anti-HBs 1–2 m post</td><td>Non-responder: revaccinate or accept non-responder status</td></tr><tr><td>**MMR**</td><td>2 doses ≥ 4 w apart</td><td>Live; avoid pregnancy 1 m</td></tr><tr><td>**Varicella**</td><td>2 doses 4–8 w apart</td><td>Live; avoid pregnancy 1 m</td></tr><tr><td>**Tdap (Tetanus, diphtheria, pertussis)**</td><td>1 dose, then Td booster 10-y</td><td>Pertussis especially for paeds / maternity / neonatal HCW</td></tr><tr><td>**Influenza**</td><td>Annual</td><td>Egg-free options available</td></tr><tr><td>**COVID-19**</td><td>Per national programme</td><td></td></tr><tr><td>**BCG**</td><td>High-risk HCW (TB, microbiology, lab) — variable policy</td><td>UK: not routine; assess by IGRA</td></tr><tr><td>**Meningococcal**</td><td>Lab workers handling *N. meningitidis* isolates</td><td></td></tr><tr><td>**Rabies / VZV / Hep A**</td><td>Lab/exposure-risk workers</td><td></td></tr><tr><td>**Smallpox / MVA-BN (Modified Vaccinia Ankara)**</td><td>Specific labs / orthopox exposure</td><td></td></tr></table>
+<p>#### HCW Exclusion from Work</p>
+<table class="ctable"><tr><th>Infection</th><th>Exclusion</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>Influenza</td><td>5 d from symptom onset; or until afebrile 24 h</td></tr><tr><td>COVID-19</td><td>Per current guidance (e.g., 5 d + afebrile 24 h)</td></tr><tr><td>Norovirus / viral GE</td><td>48 h after last symptoms</td></tr><tr><td>GAS pharyngitis</td><td>24 h of antibiotics</td></tr><tr><td>Pertussis</td><td>5 d of effective antibiotics</td></tr><tr><td>Varicella</td><td>Until all lesions crusted</td></tr><tr><td>Measles</td><td>4 d after rash onset</td></tr><tr><td>Hepatitis B (HBeAg+ HCW performing exposure-prone procedures)</td><td>EPP restriction per policy; viral load monitoring</td></tr><tr><td>HIV (HCW)</td><td>May need EPP restriction; viral load < 200 copies/mL</td></tr><tr><td>HCV (HCW)</td><td>EPP restricted until SVR / cure documented</td></tr><tr><td>*S. aureus* (lesions, paronychia)</td><td>Cover; restrict from patient contact if uncovered</td></tr><tr><td>Active TB</td><td>Until 2 weeks effective therapy + culture negative (per local)</td></tr></table>
+<p>#### Exposure-prone Procedures (EPP)</p>
+<ul><li>Procedures where injury to HCW could expose patient's open tissues to HCW blood (e.g., surgery, dentistry, obstetrics, interventional procedures). HCW with blood-borne virus may have EPP restrictions.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 14: Visitor Management</div>
+<p>#### General</p>
+<ul><li>Visitors must perform <b>hand hygiene</b> on entry/exit; PPE per transmission-based precautions.</li><li><b>Restrict</b> if symptomatic (fever, cough, vomiting, diarrhoea, rash).</li><li><b>Children</b> — restrict from high-risk units; supervised; up-to-date immunisations.</li></ul>
+<p>#### Specific Restrictions</p>
+<ul><li><b>NICU/SCBU</b>: parents only; no children &lt; 12; no symptomatic visitors.</li><li><b>Oncology / BMT</b>: no live vaccine contacts; no plants/flowers; no fresh fruit (per local policy).</li><li><b>ICU</b>: limited visiting hours; visitors wear PPE per patient precautions.</li><li><b>Outbreak (influenza, norovirus, COVID-19, VHF)</b>: restrict visitors; screen at entrance; no children; no symptomatic.</li></ul>
+<p>#### Visitor Education</p>
+<ul><li>Signage: hand hygiene, PPE, no visits if unwell, isolation precautions.</li><li>"Cover your cough" reminders; provide masks and ABHR.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 15: Outbreak Control in Healthcare Settings</div>
+<p>(See [[Outbreak Investigation in Healthcare Settings]] for full 10-step framework.)</p>
+<p>#### Key IPC Elements</p>
+<ol><li><b>Recognise trigger</b> (↑ cases of same organism, unusual resistance, single case of rare/notifiable disease).</li><li><b>Activate outbreak team</b> (IPCT, microbiology, ID, public health, hospital management).</li><li><b>Case definition + line list</b> + epidemic curve.</li><li><b>Active case finding</b> (retrospective and prospective).</li><li><b>Enhanced control measures:</b></li></ol>
+<ul><li><b>Isolation / cohort</b> of cases.</li><li><b>Contact precautions</b> (or stricter).</li><li><b>Closure of ward</b> (last resort).</li><li><b>Dedicated staff</b> (cohort nursing).</li><li><b>Enhanced cleaning</b> (sporicidal for <i>C. difficile</i>, norovirus).</li><li><b>Hand hygiene</b> audit + promotion.</li><li><b>Screening</b> of asymptomatic carriers/contacts.</li><li><b>Antimicrobial stewardship</b> review.</li><li><b>Visitor restriction</b>.</li><li><b>Vaccination / chemoprophylaxis</b> (e.g., influenza vaccine during outbreaks; oseltamivir for contacts; VZIG for varicella; rifampicin for meningococcus).</li></ul>
+<ol><li><b>Molecular typing</b> (WGS, PFGE, spa, MLVA) to confirm clonal transmission.</li><li><b>Environmental sampling</b> if persistent source suspected (water, sinks, endoscopes, disinfectants).</li><li><b>Communication</b> — clinical staff, hospital, public health, patients, media (if relevant).</li><li><b>After-action review</b> — lessons learned, sustainable changes.</li></ol>
+<p>#### Common Healthcare Outbreaks</p>
+<table class="ctable"><tr><th>Pathogen</th><th>Source</th><th>Key Control</th></tr><tr><td>----------</td><td>--------</td><td>-------------</td></tr><tr><td>**Norovirus**</td><td>Person-to-person, food, environment</td><td>Contact + cohort; ABHR + soap/water; bleach cleaning; restrict staff/visitors; 48 h exclusion</td></tr><tr><td>**Influenza**</td><td>Droplet + contact</td><td>Vaccination; antiviral (oseltamivir) for cases + prophylaxis; mask; cohort</td></tr><tr><td>**COVID-19**</td><td>Droplet + airborne + contact</td><td>Mask; ventilation; testing; isolation; vaccination</td></tr><tr><td>**MRSA / VRE**</td><td>Cross-transmission, hands, environment</td><td>Contact; screening; cohort; chlorhexidine bathing; AMS; decolonisation</td></tr><tr><td>***C. difficile***</td><td>Spores, environment, hands</td><td>Soap + water; bleach; cohort; AMS (restrict FQs, clindamycin)</td></tr><tr><td>**CRE / *C. auris***</td><td>Cross-transmission, environment</td><td>Contact; cohort; screening; chlorhexidine; sporicidal; AMS</td></tr><tr><td>**TB**</td><td>Airborne, delayed recognition</td><td>AIIR; contact tracing; IGRA; LTBI treatment</td></tr><tr><td>**Hep B / C / HIV**</td><td>Unsafe injection, blood exposure, dialysis</td><td>Single-use devices; screening; AMS; PEP</td></tr><tr><td>**Legionella**</td><td>Water systems (cooling towers, showers)</td><td>Water treatment; temperature; hyperchlorination; point-of-use filters</td></tr><tr><td>**Aspergillus**</td><td>Construction dust, ventilation</td><td>HEPA; sealed rooms; no plants; prophylaxis in high-risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 16: Special Settings &amp; Populations</div>
+<p>#### Resource-Limited Settings (RLS) / LMIC</p>
+<ul><li><b>Hand hygiene:</b> ABHR may be unavailable → soap + water essential; consider <b>WHO formulation</b> for local ABHR production.</li><li><b>PPE:</b> re-use of respirators (UV / H₂O₂ vapour decontamination in crisis only); extended use; cloth masks less effective.</li><li><b>Engineering:</b> natural ventilation (open windows, ≥ 60 L/s/patient airflow) can substitute for negative pressure (WHO 2009).</li><li><b>Cohorting</b> in open wards with spatial separation; use of <b>bamboo screens</b> or curtains.</li><li><b>Environmental cleaning</b> with locally available chlorine / bleach.</li><li><b>Reuse of single-use devices</b> — reprocess with high-level disinfection; strict governance.</li><li><b>Outbreaks</b> of cholera, measles, VHF common — IPC at community interface critical.</li><li><b>WHO IPC core components</b> 2018 — minimum standards applicable to all settings.</li></ul>
+<p>#### Paediatric / Obstetric</p>
+<ul><li><b>Visitors:</b> restrict young children in high-risk units (NICU, oncology).</li><li><b>Maternal infections:</b> GBS screening, varicella, rubella immunity.</li><li><b>Live vaccines</b> contraindicated in pregnancy (MMR, varicella, LAIV, BCG); Tdap and inactivated flu recommended.</li><li><b>Perinatal infections</b> — vertical transmission precautions.</li></ul>
+<p>#### COVID-19 Lessons (transferable)</p>
+<ul><li>Universal masking during surges; source control.</li><li>Ventilation upgrade (CO₂ monitoring; ≥ 6–12 ACH).</li><li>Routine admission testing.</li><li>Visitor restriction policies.</li><li>Rapid shift to telehealth for non-acute visits.</li></ul>
+<p>#### Ebola / VHF Preparedness</p>
+<ul><li><b>Tiered PPE</b> — depending on pathogen and procedure.</li><li><b>Trained HCW only</b>; donning/doffing buddy; <b>trained observer</b>.</li><li><b>AIIR preferred</b>; if not, single room with restricted access.</li><li><b>Dedicated equipment</b>; safe injection; double-bagging of waste; incineration.</li><li><b>Safe and dignified burials</b>; community engagement.</li></ul>
+<p>#### Construction / Renovation</p>
+<ul><li><b>IPC risk assessment (PCRA)</b> — pre-construction.</li><li><b>Containment barriers</b>; negative pressure enclosures; HEPA-filtered exhaust.</li><li><b>Dust suppression</b> (wet cutting, sealed chutes).</li><li><b>Suspend high-risk procedures</b> (e.g., implant surgery) in adjacent areas if needed.</li><li><b>Air sampling</b> for <i>Aspergillus</i> during high-risk work.</li><li><b>Re-commissioning ventilation</b> before re-opening area.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 17: Behavioural Science, Digital Tools &amp; Future of IPC</div>
+<ul><li><b>COM-B model:</b> Capability + Opportunity + Motivation → Behaviour. Address all three.</li><li><b>Nudges:</b> EMR default durations; best-practice advisories; peer-comparison feedback.</li><li><b>Audit &amp; feedback:</b> ward-level dashboards; HCW-level hand-hygiene compliance.</li><li><b>Positive deviance:</b> learn from high-performing units.</li><li><b>Safety culture:</b> Just Culture; non-punitive reporting; leadership engagement.</li><li><b>Digital / Electronic Hand-Hygiene Monitoring (EHHM):</b> sensors on dispensers / HCW badges; real-time feedback; ↑ compliance.</li><li><b>Automated outbreak detection:</b> machine learning on microbiology + EMR data.</li><li><b>Whole-genome sequencing (WGS):</b> gold standard for transmission analysis.</li><li><b>Antimicrobial surfaces:</b> copper, silver, light-activated.</li><li><b>Real-time location systems (RTLS):</b> track HCW-patient contacts for outbreak analysis.</li><li><b>AI-driven IPC:</b> predictive modelling of HAI risk; automated surveillance.</li><li><b>Patient engagement:</b> HCW and patient hand-hygiene partnerships; "It's OK to Ask" campaigns.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>70-year-old with C. difficile colitis in 4-bed bay</td><td>Standard + Contact (single room if possible, own toilet)</td><td>**Soap + water** HH; bleach cleaning; AMS review; contact precautions; stop unnecessary antibiotics</td></tr><tr><td>Suspected pulmonary TB in ED</td><td>**Airborne precautions immediately** (before confirmatory tests)</td><td>Place in AIIR (or single room with door closed); N95/FFP2 for HCW; sputum AFB; notify public health; delay AGPs</td></tr><tr><td>Neonate with RSV bronchiolitis</td><td>Contact + Droplet</td><td>Gown + gloves; surgical mask within 1 m; eye protection if splash; cohort; restrict visitors</td></tr><tr><td>ICU patient with carbapenemase-producing *Klebsiella* (KPC)</td><td>Contact + cohort + active screening</td><td>Single room; dedicated staff/equipment; rectal screen; chlorhexidine bathing; AMS; notify on transfer</td></tr><tr><td>Allogeneic HSCT recipient, day +5, neutropenic</td><td>**Protective (positive pressure) isolation**</td><td>HEPA room; mask for symptomatic; no plants/flowers; low-bacterial diet (per policy); prophylactic antifungals</td></tr><tr><td>HCW sustains needlestick from HIV+ source</td><td>Immediate first aid; risk assessment; start **3-drug PEP within 2 h (max 72 h)**</td><td>TDF/FTC + raltegravir × 28 d; HIV Ag/Ab at baseline, 6 w, 3 m, 6 m</td></tr><tr><td>Non-immune HCW exposed to varicella in NICU</td><td>**VZIG within 10 d**; exclude from work d 8–21 (or 28 if VZIG)</td><td>Cohort infected/incubating patients; AIIR for cases; verify immune status of all NICU staff</td></tr><tr><td>COVID-19 patient requiring intubation</td><td>**Airborne + Contact + Eye protection**; AIIR</td><td>FFP3 + visor + gown + gloves; minimise staff present; closed suction; rapid sequence intubation; 30 min air clearance if possible</td></tr><tr><td>Outbreak of norovirus on care-of-elderly ward</td><td>Source isolation + cohort; soap + water HH; bleach cleaning; staff exclusion 48 h</td><td>Restrict admissions; restrict visitors; enhance environmental cleaning; review hand-hygiene compliance</td></tr><tr><td>Renal dialysis patient with HCV conversion</td><td>**No PEP**; investigate source (machine, staff, shared vials)</td><td>Single-use dialysers; dedicated machines for HCV+; root cause analysis; outbreak screening</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know:</b> Standard Precautions apply to ALL patients; WHO 5 Moments; PPE donning (gown → mask → eye → gloves) and doffing (gloves → gown → eye → mask → HH); AIIR requires negative pressure + ≥ 12 ACH + N95/FFP2; C. difficile = soap + water + sporicidal; MDRO bundle (screening, contact, cohort, AMS, cleaning, decolonisation); HBV/HCV/HIV PEP algorithms. - <b>Common viva:</b> "What precautions for a patient with suspected TB?" "Doffing sequence for COVID-19?" "How do you manage a needlestick from a source of unknown status?" - <b>Exam trap:</b> Alcohol-based hand rub does NOT kill <i>C. difficile</i> spores; hepatitis B vaccination requires confirmed anti-HBs ≥ 10 mIU/mL; PEP for HIV is 28 d, not 5 d; <i>protective</i> isolation is positive pressure (for neutropenic); <i>source</i> isolation is negative pressure (for infectious).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Thinking alcohol-based hand rub kills C. difficile</td><td>**No** — alcohol does not kill spores. Use **soap + water** for 40–60 s.</td></tr><tr><td>Equating surgical mask with N95</td><td>**Surgical mask = droplet barrier (large particles). N95/FFP2 = aerosol barrier (small particles).** For TB, varicella, measles, AGPs → N95/FFP2.</td></tr><tr><td>Protective isolation = negative pressure</td><td>**Wrong.** Protective (for neutropenic patients) = **positive pressure** (push clean air out of room). Source isolation (for infectious patients) = negative pressure (pull contaminated air into room).</td></tr><tr><td>HIV PEP for 5 days</td><td>**Wrong.** PEP = **28 days** of 3-drug ART. Start within 72 h, ideally ≤ 2 h.</td></tr><tr><td>HBV PEP for vaccinated HCW with anti-HBs > 100</td><td>**No PEP needed** for known responder. Non-responder needs HBIG + vaccine booster.</td></tr><tr><td>Routine antibiotic prophylaxis after all needlesticks</td><td>**No** — only for high-risk (HIV+, HBsAg+, viral load).</td></tr><tr><td>Single dose of MMR for measles PEP</td><td>**Within 72 h of exposure**, 1 dose is enough; 2 doses for catch-up.</td></tr><tr><td>Stopping contact precautions for MRSA after first negative screen</td><td>**Generally 3 consecutive negative screens ≥ 1 week apart**, then discontinue per local policy.</td></tr><tr><td>Equating droplet with airborne</td><td>Droplet = large particles, > 5 µm, settle within 1 m → surgical mask. Airborne = small particles, < 5 µm, remain suspended → N95 + AIIR.</td></tr><tr><td>Re-using single-dose vials for multiple patients</td><td>**Never.** Each single-dose vial for one patient, one use.</td></tr><tr><td>Forgetting to perform hand hygiene after doffing PPE</td><td>**Most common error** — HH is the critical final step.</td></tr><tr><td>Cloth mask sufficient for TB</td><td>**No** — TB requires fit-tested N95/FFP2 minimum.</td></tr><tr><td>Negative C. difficile toxin = not infectious</td><td>PCR may remain positive for weeks; continue contact precautions if symptomatic or high suspicion.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>WHO 5 Moments — "Before-After" pairs:</b> <b>B</b>efore patient (Moment 1) ↔ <b>A</b>fter patient (Moment 4); <b>B</b>efore aseptic (2) ↔ <b>A</b>fter body fluid (3); then <b>A</b>fter surroundings (5) — the "5th moment" (after touching environment).</li><li><b>PPE Donning — "Gown-Mask-Eye-Glove" = "Grand-Mother-Eats-Greens"</b> (cleanest → dirtiest, gloves last).</li><li><b>PPE Doffing — "Gloves-Gown-Eye-Mask-HH" = "Gooey Gloves Go; Mask at the End"</b> (dirtiest → cleanest, HH between steps).</li><li><b>AIIR — "Negative, Exhaust, ACH 12":</b> <b>N</b>egative pressure, <b>E</b>xhaust outside (or HEPA), <b>A</b>ir changes ≥ 12/hour.</li><li><b>MDRO bundle — "SCAM-CD":</b> <b>S</b>creening, <b>C</b>ontact precautions, <b>A</b>MS, <b>M</b>asking; <b>C</b>ohorting, <b>C</b>hlorhexidine bathing, <b>D</b>ecolonisation.</li><li><b>PEP for HIV — "Within 2h ideal, 72h max; 28 days; 3 drugs":</b> <b>"2-72-28-3"</b> for prompt initiation, time window, duration, drug count.</li><li><b>HBV PEP — "Test the source; test the recipient":</b> If recipient anti-HBs ≥ 10 → immune; &lt; 10 + source HBsAg+ → HBIG + vaccine.</li><li><b>For C. difficile — "Sporicidal Soap":</b> <b>Soap + water</b> (not ABHR); sporicidal cleaning (hypochlorite / H₂O₂ vapour).</li><li><b>HCW exclusion — "48-5-24-5-4":</b> Norovirus 48 h, influenza 5 d, GAS 24 h antibiotics, pertussis 5 d antibiotics, measles 4 d post rash.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid mindmap root((Infection Prevention &amp; Control)) Chain of Infection Agent Reservoir Portal of Exit Mode of Transmission Portal of Entry Susceptible Host Hierarchy of Controls Elimination Engineering Administrative PPE Standard Precautions Hand Hygiene PPE risk-assessment Respiratory Hygiene Safe Injection Sharps Safety Environmental Cleaning Linen Waste Equipment Transmission-Based Precautions Contact Gloves + Gown Single room or cohort Dedicated equipment MDROs C.diff Scabies Droplet Surgical mask</p>
+<div class="callout">=1m separation</div>
+<p>Single room or cohort Influenza Pertussis Meningococcus Mumps Airborne N95 FFP2 Negative pressure AIIR &gt;=12 ACH TB Measles Varicella Combination COVID-19 VHF Ebola C.diff Hand Hygiene WHO 5 Moments ABHR 20-30s Soap 40-60s for C.diff Norovirus No artificial nails PPE Donning gown-mask-eye-glove Doffing gloves-gown-eye-mask-HH Fit testing for N95 MDRO Bundle SCAM-CD MRSA decolonisation mupirocin + chlorhexidine Chlorhexidine bathing AMS Protective Isolation Positive pressure HEPA &gt;=12 ACH Neutropenia HSCT Transplant Needlestick PEP HBV HBIG vaccine HCV monitor DAA HIV 3-drug 28d within 72h Outbreak Control Recognise Isolate cohort Enhanced cleaning Screening Communication HCW Health Pre-employment screening Immunisations HBV MMR VZV Tdap Exclusion periods Special Settings Resource-limited Paediatric Obstetric Construction VHF preparedness ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart — Precaution Selection</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Patient with known/suspected infection] --&gt; B{Transmission route?} B --&gt;|Unknown / many pathogens| C[Standard + Empiric Transmission-Based] B --&gt;|Contact| D[Contact Precautions&lt;br/&gt;Gloves + Gown + Single room/Cohort] B --&gt;|Droplet &gt;5µm| E[Droplet Precautions&lt;br/&gt;Surgical mask + Single room or ≥1m] B --&gt;|Airborne &lt;5µm| F[Airborne Precautions&lt;br/&gt;N95/FFP2/3 + AIIR ≥12 ACH] B --&gt;|AGP e.g. intubation| G[Airborne + Contact + Eye protection&lt;br/&gt;FFP3 + AIIR] B --&gt;|VHF EVD| H[Full barrier PPE&lt;br/&gt;FFP3 + Visor + Double gloves + Impermeable gown]</p>
+<p>C --&gt; I[Modify when pathogen identified]</p>
+<p>D --&gt; J{Pathogen?} J --&gt;|C. difficile| K[+ Soap &amp; water + Sporicidal cleaning] J --&gt;|MRSA VRE ESBL| L[MDRO bundle: screening, cohort, CHX bath, AMS]</p>
+<p>E --&gt; M{Pathogen?} M --&gt;|Influenza| N[Antiviral Rx + Oseltamivir prophylaxis for contacts] M --&gt;|Pertussis| O[Macrolide + Prophylaxis for contacts] M --&gt;|Meningococcus| P[Ceftriaxone + Rifampicin/FQ prophylaxis]</p>
+<p>F --&gt; Q{Pathogen?} Q --&gt;|TB| R[Smear, NAAT, CXR; MDR-TB FFP3; LTBI screening contacts] Q --&gt;|Measles| S[Avoid non-immune HCW; MMR within 72h; VZIG for varicella] Q --&gt;|Varicella| T[Avoid non-immune HCW; VZIG within 10d] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Flowchart — Needlestick Injury Management</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Needlestick / Mucosal Exposure] --&gt; B[Immediate first aid:&lt;br/&gt;Wash + irrigate 15-20 min] B --&gt; C[Report to OH/IPCT within hours] C --&gt; D{Type of exposure?} D --&gt;|Percutaneous hollow-bore + blood| E[High risk] D --&gt;|Solid needle, superficial| F[Lower risk] D --&gt;|Mucous membrane| G[Assess source] E --&gt; H{Source HIV status?} F --&gt; H G --&gt; H H --&gt;|Positive / high risk| I[3-drug PEP within 2h, max 72h&lt;br/&gt;TDF/FTC + RAL/DTG x 28d] H --&gt;|Negative| J[No PEP — counsel + baseline tests] H --&gt;|Unknown| K[Start PEP pending source result; reassess 24-72h]</p>
+<p>I --&gt; L[Baseline: HIV Ag/Ab, FBC, U&amp;E, LFT, pregnancy] L --&gt; M[Follow-up HIV at 6w, 3m, 6m]</p>
+<p>E --&gt; N{Source HBV status?} N --&gt;|HBsAg+| O[Recipient anti-HBs?&lt;br/&gt;≥10: immune, no PEP&lt;br/&gt;&lt;10: HBIG + vaccine] N --&gt;|Negative| P[No PEP — confirm vaccination status]</p>
+<p>E --&gt; Q{Source HCV status?} Q --&gt;|Positive| R[No PEP — monitor HCV RNA at 4-6w, anti-HCV at 6m&lt;br/&gt;Treat with DAA if seroconvert] Q --&gt;|Negative| S[No further action] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Diagram: WHO 5 Moments of Hand Hygiene (WHO poster).</li><li>[ ] Diagram: PPE Donning and Doffing sequence (CDC posters for Standard, Airborne, VHF).</li><li>[ ] Diagram: AIIR airflow (negative pressure, exhaust outside, anteroom).</li><li>[ ] Table: Pathogen-specific precautions (organism → droplet/contact/airborne → special features).</li><li>[ ] Diagram: Chain of Infection with IPC interventions.</li><li>[ ] Algorithm: PEP for HIV/HBV/HCV (BHIVA 2021 / DHHS 2024).</li><li>[ ] Flowchart: Outbreak response in hospital.</li><li>[ ] Image: Hand-rub technique (WHO 11 steps).</li><li>[ ] Image: Mupirocin nasal application technique.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] WHO "Hand Hygiene: Why, How &amp; When?" (WHO YouTube)</li><li>[ ] CDC PPE donning and doffing videos (Standard, Ebola, COVID-19)</li><li>[ ] Public Health England "Standard infection control precautions" videos</li><li>[ ] WHO "How to put on and take off PPE" (Ebola, COVID-19, Mpox)</li><li>[ ] NHSE IPC e-learning modules</li><li>[ ] APIC (Association for Professionals in Infection Control) webinars</li><li>[ ] SHEA/IDSA lectures on MDRO, C. difficile</li><li>[ ] NEJM Procedure Videos: Bronchoscopy / Intubation IPC</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Hierarchy of Controls:</b> Elimination &gt; Engineering &gt; Administrative &gt; PPE (PPE is the last line). - <b>Standard Precautions</b> apply to <b>all patients, all settings</b> — assume every body fluid infectious. - <b>Hand hygiene</b> = single most important IPC measure. <b>5 Moments</b>. <b>ABHR 20–30 s</b> (preferred); <b>soap 40–60 s</b> for C. difficile, norovirus, visibly soiled. - <b>PPE Donning:</b> Gown → Mask → Eye → Gloves. <b>Doffing:</b> Gloves → Gown → Eye → Mask → HH between steps. Avoid self-contamination. - <b>Contact</b> = Gloves + Gown for room entry; single or cohort; dedicated equipment. <b>Droplet</b> = Surgical mask; ≥ 1 m separation. <b>Airborne</b> = N95/FFP2/3 + <b>AIIR</b> (negative pressure, ≥ 12 ACH, exhaust outside/HEPA). - <b>C. difficile:</b> Contact + <b>soap &amp; water</b> (alcohol doesn't kill spores) + <b>1:10 hypochlorite (5,000 ppm)</b> or H₂O₂ vapour. - <b>COVID-19 AGPs / VHF:</b> Airborne + Contact + Eye protection; <b>FFP3 + visor</b>; AIIR. - <b>Protective isolation</b> (neutropenia, HSCT) = <b>positive pressure</b>; do NOT use for infectious patients. - <b>MDRO Bundle (SCAM-CD):</b> Screening, Contact precautions, AMS, Mask/dedicated staff; Cohort, Chlorhexidine bath, Decolonisation. - <b>MRSA decolonisation:</b> Mupirocin nasal 2% TDS + chlorhexidine 4% body wash × 5 days. - <b>Safe injection:</b> 1 syringe + 1 needle + 1 patient; single-dose vials; never re-cap; sharps within arm's reach. - <b>Needlestick:</b> wash + irrigate immediately; <b>HBV</b> PEP per immunity; <b>HIV PEP 3-drug × 28 d</b> within 72 h (ideally ≤ 2 h); <b>HCV</b> monitor + DAA if seroconvert. - <b>Outbreak:</b> Recognise → Activate team → Isolate/Cohort → Enhanced cleaning (bleach for C. diff/norovirus) → Screening → AMS → Communication → After-action review. - <b>HCW screening:</b> HBV, MMR, VZV, TB (IGRA); annual flu; COVID-19. - <b>Key numbers:</b> <b>AIIR ≥ 12 ACH</b>; <b>FFP2 ≥ 94%, FFP3 ≥ 99%</b> filtration; <b>HIV PEP 28 d</b>; <b>anti-HBs ≥ 10 mIU/mL</b> = immune; <b>HCW exclusion</b> 48 h (GE), 5 d (flu, pertussis), 24 h (GAS), 4 d (measles post rash).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Standard Precautions components (9) and application to all patients.</li><li>WHO 5 Moments of Hand Hygiene.</li><li>ABHR vs soap &amp; water — when to use which.</li><li>PPE donning sequence (cleanest → dirtiest).</li><li>PPE doffing sequence (dirtiest → cleanest) + HH between steps.</li><li>Contact Precautions: PPE, room, equipment, key pathogens.</li><li>Droplet Precautions: PPE, distance, key pathogens, droplet size &gt; 5 µm.</li><li>Airborne Precautions: PPE, AIIR specs (negative pressure, ≥ 12 ACH, exhaust), key pathogens, particle size &lt; 5 µm.</li><li>AIIR engineering specs (pressure, ACH, exhaust, anteroom).</li><li>C. difficile special precautions (soap + water, sporicidal cleaning).</li><li>MDRO bundle (SCAM-CD) and MRSA decolonisation regimen.</li><li>Protective vs source isolation (positive vs negative pressure).</li><li>Combination precautions for COVID-19, VHF, RSV, C. difficile.</li><li>Safe injection practices (single-dose vials, one needle/one syringe/one patient, sharps).</li><li>Needlestick immediate first aid + PEP (HBV, HCV, HIV) — when to start each.</li><li>HIV PEP: 3 drugs × 28 d, within 72 h, ideal ≤ 2 h.</li><li>HCW immunisation schedule (HBV, MMR, VZV, Tdap, flu, COVID-19).</li><li>HCW exclusion from work — common infections and durations.</li><li>Outbreak control steps (recognise, isolate, cohort, clean, screen, communicate).</li><li>Respiratory hygiene / cough etiquette (tissue, mask, hand hygiene, ≥ 1 m).</li><li>Visitor restriction in outbreak / high-risk units.</li><li>Resource-limited setting IPC adaptations (natural ventilation, local ABHR).</li><li>Behavioural science in IPC (COM-B, nudges, audit &amp; feedback).</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Standard Precautions, Transmission-Based (Contact/Droplet/Airborne), WHO 5 Moments, hand hygiene method choice (ABHR vs soap), PPE donning/doffing, AIIR specs (negative pressure, ≥ 12 ACH, N95/FFP2), C. difficile specifics (soap + water + sporicidal), MDRO bundle, MRSA decolonisation, safe injection, sharps, needlestick PEP (HBV/HCV/HIV), HCW immunisation & exclusion, outbreak control, respiratory hygiene, protective vs source isolation</td></tr><tr><td>**Should Know 🟡**</td><td>MDRO screening/decolonisation details, COVID-19 IPC evolution, SARS-CoV-2 aerosol evidence, monkeypox/orthopox IPC, Mpox, VHF preparedness, Ebola PPE, AGP list, antimicrobial bathing (CHX), WHO multimodal strategy, COM-B behavioural model, OPAT IPC, environmental cleaning agents, Spaulding classification, hand-hygiene compliance monitoring</td></tr><tr><td>**Nice to Know 🟢**</td><td>Advanced PPE (PAPR), UV-C / H₂O₂ vapour disinfection, copper surfaces, antimicrobial surfaces, IPC cost-effectiveness, electronic hand-hygiene monitoring (EHHM), AI/ML outbreak detection, WGS for IPC, FMT for CRE decolonisation, climate change and IPC, IPC in conflict zones, behavioural economics in IPC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt; 35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li><b>Define</b> chain of infection + hierarchy of controls.</li><li><b>Standard Precautions</b> — 9 components, applied to all.</li><li><b>Transmission-Based Precautions</b> — Contact, Droplet, Airborne, with PPE, room, pathogens, particle size.</li><li><b>Hand hygiene</b> — WHO 5 Moments, ABHR vs soap/water.</li><li><b>AIIR specs</b> — negative pressure, ≥ 12 ACH, exhaust, anteroom.</li><li><b>MDRO bundle</b> — SCAM-CD.</li><li><b>Needlestick PEP</b> — HBV, HCV, HIV.</li><li><b>Outbreak control</b> — recognise, isolate, clean, screen, communicate.</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Hand hygiene: WHO 5 Moments + method choice.</li><li>AIIR specifications.</li><li>C. difficile precautions.</li><li>MDRO bundle.</li><li>Needlestick PEP.</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p>"Standard Precautions are the minimum IPC practices applied to ALL patients, regardless of diagnosis, treating every body fluid as potentially infectious. They include 9 components, the most important being hand hygiene at the WHO 5 Moments. Transmission-Based Precautions are added for specific pathogens — Contact (MRSA, C. diff), Droplet (influenza, meningococcus), and Airborne (TB, measles, varicella, COVID-19 during AGPs) — with corresponding PPE and isolation requirements. A common exam trap is the difference between ABHR and soap/water for C. difficile, and between source (negative) and protective (positive) pressure isolation."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to patient: Standard + Transmission-Based per pathogen.</li><li>Specify PPE, room, equipment, transport, visitors, cleaning.</li><li>Bundle for MDROs.</li><li>PEP algorithms for needlestick.</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>See "One-Page Revision Summary" above.</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>AIIR</b>: Negative, ≥ 12 ACH, N95/FFP2.</li><li><b>Donning:</b> Gown-Mask-Eye-Glove.</li><li><b>Doffing:</b> Gloves-Gown-Eye-Mask-HH.</li><li><b>C. diff:</b> Soap &amp; water + bleach.</li><li><b>HIV PEP:</b> 3 drugs, 28 d, ≤ 72 h.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1. Standard Precautions apply to:</b> A. Only patients with known infections B. <b>ALL patients, regardless of diagnosis</b> C. Only ICU patients D. Only patients with MDROs E. Only surgical patients</p>
+<p><b>2. WHO 5 Moments for Hand Hygiene — which is NOT a moment?</b> A. Before touching a patient B. Before clean/aseptic procedure C. After body fluid exposure risk D. After touching a patient E. <b>Before administering oral medications (this is a Moment 2 task but is not itself a separate Moment)</b> <i>Best answer: E — administering oral medications triggers Moment 2 (before aseptic/clean task).</i></p>
+<p><b>3. Contact Precautions — required PPE for room entry:</b> A. Surgical mask + gloves B. <b>Gloves + gown</b> C. N95 + goggles D. Gloves only E. Gown only</p>
+<p><b>4. Airborne Precautions — room requirement:</b> A. Positive pressure B. <b>Negative pressure (≥ 12 air changes/hour)</b> C. Neutral pressure, 6 ACH D. Any single room E. Open ward acceptable</p>
+<p><b>5. Droplet Precautions — appropriate mask for HCW within 1 m of patient:</b> A. N95/FFP2/FFP3 B. <b>Surgical mask (Type IIR)</b> C. Cloth mask D. No mask needed if &gt; 2 m E. Powered air-purifying respirator (PAPR)</p>
+<p><b>6. Pathogen requiring Airborne Precautions:</b> A. MRSA B. C. difficile C. Influenza D. <b>Mycobacterium tuberculosis (pulmonary/laryngeal)</b> E. Norovirus</p>
+<p><b>7. C. difficile — appropriate hand-hygiene method:</b> A. Alcohol-based hand rub only B. <b>Soap and water for 40–60 s (alcohol does not kill spores)</b> C. No hand hygiene needed D. Chlorhexidine only E. Double gloving only</p>
+<p><b>8. Measles — required precautions for non-immune HCW:</b> A. Contact only B. Droplet only C. <b>Airborne (+ Contact if disseminated or immunocompromised)</b> D. Standard only E. Contact + Droplet</p>
+<p><b>9. COVID-19 during an aerosol-generating procedure (e.g. intubation) — precautions:</b> A. Standard only B. Contact + Droplet C. <b>Airborne + Contact + Eye protection (FFP3 + visor)</b> D. Droplet + Eye protection E. Standard + Droplet</p>
+<p><b>10. PPE doffing sequence (most correct order):</b> A. Gloves → Gown → Hand hygiene → Mask → Eye protection → Hand hygiene B. <b>Gloves → Gown → Hand hygiene → Eye protection → Mask/Respirator → Hand hygiene</b> C. Mask → Gloves → Gown → Eye protection → Hand hygiene D. Gown → Gloves → Mask → Eye protection → Hand hygiene E. Eye protection → Mask → Gown → Gloves → Hand hygiene</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<p><b>SBA 1.</b> A 65-year-old man is admitted with a 4-week history of cough, weight loss, and night sweats. CXR shows cavitating upper lobe lesion. Sputum AFB smear is positive. He is being transferred to the isolation ward. What is the MOST appropriate isolation room for this patient? A. Single room, door open, standard ventilation. B. Single room with positive pressure, ≥ 12 ACH. C. <b>Airborne Infection Isolation Room (AIIR) — negative pressure, ≥ 12 ACH, exhaust to outside or HEPA, door closed.</b> D. Cohort bay with other respiratory patients. E. Outpatient clinic room.</p>
+<div class="callout">Answer: <b>C</b>. Pulmonary TB requires AIIR with negative pressure (≥ –2.5 Pa), ≥ 12 ACH (new build) or ≥ 6 ACH (renovated), exhaust to outside or HEPA-filtered recirculation, door closed. HCW must wear fit-tested N95/FFP2 minimum (FFP3 for MDR-TB).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>SBA 2.</b> A junior doctor sustains a needlestick injury while taking blood from a patient known to be HIV-positive. She has washed the wound with soap and water. What is the next BEST step in management? A. Reassure and discharge — risk is low. B. Order HIV Ag/Ab in 6 months. C. <b>Start 3-drug HIV post-exposure prophylaxis (e.g. TDF/FTC + raltegravir) within 2 hours; baseline HIV Ag/Ab, FBC, U&amp;E, LFT, pregnancy test; arrange follow-up at 4–6 weeks, 3 months, 6 months.</b> D. Give single dose of zidovudine. E. Test source for CD4 count and viral load; start PEP only if VL &gt; 1000.</p>
+<div class="callout">Answer: <b>C</b>. PEP should start as soon as possible — ideally within 2 hours and definitely within 72 hours of exposure. Standard regimen is 3 drugs (e.g. TDF/FTC + raltegravir or dolutegravir) for 28 days. Baseline bloods and follow-up serology are essential. Option A is wrong because the risk is significant; option B misses the PEP window; option D is incomplete; option E delays therapy.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>SBA 3.</b> An 80-year-old woman with recent clindamycin use develops diarrhoea (5 unformed stools/24 h) and a positive C. difficile PCR. Which of the following is the MOST appropriate IPC measure? A. Place in cohort with other diarrhoeal patients; use ABHR for hand hygiene. B. <b>Place in single room with own toilet; use soap and water for hand hygiene; use sporicidal cleaning (1:10 sodium hypochlorite); discontinue clindamycin if possible.</b> C. Isolate in negative-pressure AIIR; N95 for HCW. D. No isolation needed — treat with oral vancomycin only. E. Use contact precautions; ABHR acceptable for hand hygiene.</p>
+<div class="callout">Answer: <b>B</b>. C. difficile requires contact precautions, single room with own toilet, <b>soap and water</b> for hand hygiene (ABHR does not kill spores), and sporicidal cleaning (1:10 hypochlorite 5,000 ppm or hydrogen peroxide vapour). Clindamycin (and other high-risk antibiotics — fluoroquinolones, cephalosporins, carbapenems) should be discontinued where possible. AIIR is not required (no airborne transmission); no airborne PPE needed.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>SBA 4.</b> A 25-year-old nurse who is <b>non-immune to varicella</b> (no vaccine, VZV IgG negative) is exposed to a patient with disseminated zoster in the haematology ward. What is the MOST appropriate action? A. Reassure; she is not at risk from zoster. B. Give oral aciclovir for 7 days. C. <b>Administer VZIG within 10 days of exposure (ideally within 96 h); exclude from work from day 8 to day 28 (or 21 if no VZIG) post-exposure; do NOT enter the room of any patient with VZV.</b> D. Give varicella vaccine; allow to work normally. E. Give IV aciclovir; admit for monitoring.</p>
+<div class="callout">Answer: <b>C</b>. Non-immune HCW exposed to varicella (or disseminated zoster in immunocompromised — which behaves like primary varicella) requires VZIG within 10 days (ideally 96 h), exclusion from work 8–21 days post-exposure (or 8–28 if VZIG given), and must not care for other susceptible patients. The live vaccine cannot be given concurrently with VZIG (wait ≥ 1 month). Option D is wrong because vaccine takes 5–7 days to develop immunity and is contraindicated after VZIG.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>SBA 5.</b> A 50-year-old man with AML is admitted for induction chemotherapy. His neutrophil count is 0.2 × 10⁹/L. What is the MOST appropriate IPC measure? A. Place in negative-pressure single room; N95 for HCW. B. Source isolation; contact precautions. C. <b>Place in positive-pressure single room with HEPA filtration (≥ 12 ACH); enforce strict hand hygiene; mask for symptomatic visitors; no fresh flowers/plants/fruit; daily chlorhexidine bathing; antifungal prophylaxis per protocol.</b> D. Open bay with reverse barrier nursing only. E. Strict isolation in laminar flow tent; N95 for all.</p>
+<div class="callout">Answer: <b>C</b>. Severely neutropenic patients (ANC &lt; 0.5 × 10⁹/L) require <b>protective (positive-pressure) isolation</b> with HEPA filtration (≥ 12 ACH), strict hand hygiene, mask for symptomatic contacts, avoidance of fresh flowers/plants (Aspergillus) and high-risk food, and daily chlorhexidine bathing. Antifungal prophylaxis (e.g. posaconazole) per protocol. Note: <b>positive pressure for the patient</b>, not negative — opposite of TB. Laminar airflow and N95 for all are no longer standard. Open bay is inadequate.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards (15)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Q: Standard Precautions apply to?</b></li></ul>
+<p>A: <b>All patients, regardless of diagnosis or infection status.</b></p>
+<ul><li><b>Q: WHO 5 Moments of Hand Hygiene (list)?</b></li></ul>
+<p>A: <b>(1) Before touching a patient, (2) Before clean/aseptic procedure, (3) After body fluid exposure risk, (4) After touching a patient, (5) After touching patient surroundings.</b></p>
+<ul><li><b>Q: Preferred hand-hygiene method?</b></li></ul>
+<p>A: <b>ABHR (alcohol-based hand rub) 20–30 s for non-soiled hands.</b> Soap + water for visibly soiled, C. difficile, norovirus.</p>
+<ul><li><b>Q: Hand-hygiene method for C. difficile?</b></li></ul>
+<p>A: <b>Soap and water for 40–60 s (alcohol does not kill spores).</b></p>
+<ul><li><b>Q: Contact Precautions PPE?</b></li></ul>
+<p>A: <b>Gloves + gown for all room entry.</b> Single room or cohort; dedicated equipment.</p>
+<ul><li><b>Q: Droplet Precautions mask?</b></li></ul>
+<p>A: <b>Surgical mask (Type IIR) for HCW within 1 m.</b> Patient wears surgical mask during transport. Particle size &gt; 5 µm.</p>
+<ul><li><b>Q: Airborne Precautions mask?</b></li></ul>
+<p>A: <b>N95/FFP2 minimum (FFP3 for high-risk AGPs/MDR-TB).</b> Must be fit-tested; user-seal check each don.</p>
+<ul><li><b>Q: Airborne Precautions room requirements (AIIR)?</b></li></ul>
+<p>A: <b>Single room, negative pressure (≥ –2.5 Pa), ≥ 12 ACH (new build) or ≥ 6 ACH (renovated), exhaust to outside or HEPA, door closed, anteroom preferred.</b></p>
+<ul><li><b>Q: PPE Donning sequence?</b></li></ul>
+<p>A: <b>Gown → Mask/Respirator → Eye protection → Gloves.</b> (Hand hygiene first.)</p>
+<ul><li><b>Q: PPE Doffing sequence?</b></li></ul>
+<p>A: <b>Gloves → Gown → Hand hygiene → Eye protection → Mask/Respirator → Hand hygiene.</b> (Dirtiest first; HH between key steps.)</p>
+<ul><li><b>Q: C. difficile cleaning agent?</b></li></ul>
+<p>A: <b>Sporicidal: 1:10 sodium hypochlorite (5,000 ppm) or hydrogen peroxide vapour.</b></p>
+<ul><li><b>Q: MRSA decolonisation regimen?</b></li></ul>
+<p>A: <b>Mupirocin 2% nasal ointment TDS + chlorhexidine 4% body wash — both × 5 days.</b></p>
+<ul><li><b>Q: MDRO bundle elements?</b></li></ul>
+<p>A: <b>SCAM-CD: Screening, Contact precautions, AMS, Mask/dedicated staff; Cohort, Chlorhexidine bathing, Decolonisation.</b></p>
+<ul><li><b>Q: HIV PEP regimen?</b></li></ul>
+<p>A: <b>3 drugs (e.g. TDF/FTC + raltegravir or dolutegravir) × 28 days, start within 72 h (ideally ≤ 2 h).</b></p>
+<ul><li><b>Q: Protective (reverse) isolation — pressure?</b></li></ul>
+<p>A: <b>Positive pressure</b> (push clean air out; for neutropenic, HSCT, transplant).</p>
+<ul><li><b>Q: Source isolation — pressure?</b></li></ul>
+<p>A: <b>Negative pressure</b> (pull contaminated air in; for TB, measles, varicella, COVID-19 AGPs).</p>
+<ul><li><b>Q: Safe injection principle?</b></li></ul>
+<p>A: <b>1 syringe + 1 needle + 1 patient; single-dose vials when possible; never re-cap; sharps container within arm's reach.</b></p>
+<ul><li><b>Q: Examples of Contact pathogens?</b></li></ul>
+<p>A: **MRSA, VRE, ESBL, CRE, <i>C. difficile</i>, norovirus, scabies, lice, RSV (with droplet).**</p>
+<ul><li><b>Q: Examples of Droplet pathogens?</b></li></ul>
+<p>A: **Influenza, pertussis, meningococcus, mumps, rubella, <i>H. influenzae</i> type b.**</p>
+<ul><li><b>Q: Examples of Airborne pathogens?</b></li></ul>
+<p>A: **TB, measles (rubeola), varicella, disseminated zoster in immunocompromised, <i>B. anthracis</i> (inhalational), COVID-19 (AGPs), VHF.**</p>
+<ul><li><b>Q: HBV PEP for non-immune HCW after HBsAg+ needlestick?</b></li></ul>
+<p>A: <b>HBV vaccine series ± HBIG within 7 days (ideally 48 h).</b></p>
+<ul><li><b>Q: HCW exclusion — influenza?</b></li></ul>
+<p>A: <b>5 days from symptom onset (or until afebrile 24 h and clinically improved).</b></p>
+<ul><li><b>Q: HCW exclusion — norovirus?</b></li></ul>
+<p>A: <b>48 hours after last symptoms.</b></p>
+<ul><li><b>Q: HCW exclusion — GAS pharyngitis?</b></li></ul>
+<p>A: <b>24 hours of effective antibiotic therapy.</b></p>
+<ul><li><b>Q: Hierarchy of IPC controls (most → least effective)?</b></li></ul>
+<p>A: <b>Elimination &gt; Engineering &gt; Administrative &gt; PPE (PPE is the last line).</b></p>
+<ul><li><b>Q: Alcohol-based hand rub does NOT kill?</b></li></ul>
+<p>A: <b>Bacterial spores (C. difficile), non-enveloped viruses (norovirus), and is less effective on visibly soiled hands.</b></p>
+<ul><li><b>Q: Indications for AIIR?</b></li></ul>
+<p>A: <b>Pulmonary/laryngeal TB, measles, varicella, disseminated zoster, MDR-TB, COVID-19 AGPs, VHF (if available).</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — Standard Precautions apply to ALL patients in all settings, regardless of diagnosis or presumed infection status. They assume that every body fluid is potentially infectious.</li></ol>
+<ol><li><b>Correct: E</b> — Administering oral medications is not a separate Moment; it falls under <b>Moment 2 (before clean/aseptic procedure)</b>. The 5 Moments are: (1) before patient contact, (2) before clean/aseptic procedure, (3) after body fluid exposure, (4) after patient contact, (5) after patient surroundings. <b>Note:</b> Some versions of this MCQ in the scaffold listed option C as correct, but the <b>5 Moments do include after body fluid exposure</b> — Moment 3. Reviewing: the question is "which is NOT a moment" — options A, B, C, D, E should be examined. A is Moment 1, B is Moment 2, C is Moment 3 (after body fluid exposure), D is Moment 4, E is a task covered by Moment 2, not a Moment itself. Answer E is the most defensible.</li></ol>
+<ol><li><b>Correct: B</b> — Contact Precautions require gloves + gown for all room entry. Mask/eye protection only per Standard for splash.</li></ol>
+<ol><li><b>Correct: B</b> — Airborne Precautions require a single room with <b>negative pressure</b> and <b>≥ 12 ACH</b> (new build; ≥ 6 ACH renovated) with exhaust to outside or HEPA. Door closed at all times.</li></ol>
+<ol><li><b>Correct: B</b> — Droplet Precautions require a <b>surgical mask</b> for HCW within 1 m. N95/FFP2 are for airborne; cloth masks are inadequate.</li></ol>
+<ol><li><b>Correct: D</b> — Pulmonary/laryngeal TB requires Airborne Precautions. MRSA/C. difficile = Contact; influenza = Droplet; norovirus = Contact.</li></ol>
+<ol><li><b>Correct: B</b> — Soap and water for 40–60 s is required for C. difficile because alcohol does not kill spores. ABHR may be used additionally but is not sufficient alone.</li></ol>
+<ol><li><b>Correct: C</b> — Measles is airborne. Add Contact if disseminated or immunocompromised. Susceptible HCW should not enter the room.</li></ol>
+<ol><li><b>Correct: C</b> — COVID-19 during AGPs (intubation, extubation, bronchoscopy, suctioning, NIV, CPR) requires Airborne + Contact + Eye protection, with FFP3 (or PAPR) for HCW performing or in the room. Outside AGPs, Droplet + Contact may be acceptable per some guidelines, but current best practice and exam answer favours Airborne + Contact + Eye protection during AGPs.</li></ol>
+<ol><li><b>Correct: B</b> — Doffing from dirtiest to cleanest with HH between: <b>Gloves → Gown → HH → Eye protection → Mask/Respirator → HH</b>. The most common error is to remove the mask first (touches face) or to doff gown and gloves together (spreads contamination).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: C</b> — Pulmonary TB (smear-positive) requires AIIR with negative pressure, ≥ 12 ACH, exhaust to outside or HEPA, door closed. N95/FFP2 minimum; FFP3 for MDR-TB. Single room with door open is inadequate; positive pressure would push contaminated air out (wrong direction); cohort with other respiratory patients is dangerous; outpatient clinic inappropriate.</li></ol>
+<ol><li><b>Correct: C</b> — High-risk percutaneous exposure from HIV+ source → 3-drug PEP within 2 h (max 72 h), 28-day course. TDF/FTC + raltegravir is the standard regimen. Baseline bloods (HIV Ag/Ab, FBC, U&amp;E, LFT, pregnancy) and follow-up at 4–6 weeks, 3 months, 6 months. Option A is dangerously wrong; option B misses the PEP window; option D is subtherapeutic; option E delays therapy.</li></ol>
+<ol><li><b>Correct: B</b> — C. difficile requires contact precautions, single room with own toilet, <b>soap and water</b> for hand hygiene (alcohol doesn't kill spores), and sporicidal cleaning (1:10 hypochlorite or H₂O₂ vapour). Discontinue clindamycin (and other high-risk antibiotics) where possible. AIIR and N95 not required (no airborne transmission). ABHR alone is inadequate for C. diff.</li></ol>
+<ol><li><b>Correct: C</b> — Non-immune HCW exposed to varicella/disseminated zoster in immunocompromised patient → VZIG within 10 d (ideally 96 h), exclusion from work day 8–28 (or 8–21 if no VZIG), cannot care for other susceptible patients. Varicella vaccine is live; cannot be given with VZIG (wait ≥ 1 month). Reassurance is wrong (chickenpox is dangerous in adults; cross-infection risk to other susceptible patients is high). Oral aciclovir is not standard PEP for varicella exposure (used for treatment, not prevention).</li></ol>
+<ol><li><b>Correct: C</b> — Severely neutropenic patient (AML induction, ANC 0.2) needs <b>protective (positive-pressure) isolation</b> with HEPA filtration (≥ 12 ACH). Strict HH, mask for symptomatic visitors, no fresh flowers/plants (Aspergillus), low-bacterial diet, daily CHX bathing, antifungal prophylaxis (posaconazole) per protocol. Negative pressure is wrong (used for infectious patients — would pull pathogens INTO the room). Open bay and reverse barrier nursing are inadequate. Laminar airflow tents are no longer standard. N95 for all is excessive for neutropenic.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Infection Prevention &amp; Control: Standard &amp; Transmission-Based Precautions is a <b>Must Know</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Apply Standard Precautions to <b>every</b> patient; layer Transmission-Based Precautions (Contact, Droplet, Airborne, Combination) for specific pathogens; perform hand hygiene at the WHO 5 Moments; use PPE correctly (don cleanest → dirtiest, doff dirtiest → cleanest with HH between steps); protect HCW and patients with screening, immunisation, and PEP algorithms; and respond to outbreaks systematically.</p>
+<p><b>Exam focus:</b> Pathogen-specific precaution tables; AIIR engineering specifications; C. difficile / COVID-19 / TB / VHF precautions; MDRO bundle components; needlestick PEP algorithms; HCW exclusion periods; difference between source and protective isolation; WHO 5 Moments; donning/doffing sequences.</p>
+<p><b>Clinical relevance:</b> IPC prevents HAI, protects HCW from occupational exposure, controls MDRO transmission and outbreaks, and is the foundation of safe healthcare delivery. Every clinical encounter begins with hand hygiene, risk-assessment-driven PPE, and isolation decisions.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Complete version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | Last reviewed: June 2026 | Hand hygiene, PPE, isolation, MDRO, outbreak, PEP, HCW health, special settings all covered.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Infection Prevention Control Standard Transmission Based Precautions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

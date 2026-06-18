@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Systematic Reviews Meta Analysis Grade — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.1. EPIDEMIOLOGICAL METHODS & CONCEPTS</span>
+      <div class="h1">Systematic Reviews Meta Analysis Grade</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Distinguish systematic review vs narrative review vs meta-analysis</li><li>[ ] Interpret forest plots: effect sizes, CIs, weights, pooled estimate</li><li>[ ] Assess heterogeneity: I², Q-test, τ²; random vs fixed effects</li><li>[ ] Apply GRADE: rate certainty of evidence (High/Moderate/Low/Very Low)</li><li>[ ] Identify publication bias: funnel plot, Egger's test, trim-and-fill</li><li>[ ] Appraise SR/MA using PRISMA, AMSTAR-2, ROB-2/ROBINS-I</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Systematic Review (SR)**</td><td>Explicit question, comprehensive search, explicit inclusion criteria, critical appraisal, synthesis (qualitative or quantitative)</td></tr><tr><td>**Meta-Analysis (MA)**</td><td>Statistical synthesis of effect estimates from multiple studies (quantitative SR)</td></tr><tr><td>**Forest Plot**</td><td>Graphical display of individual study effects + pooled estimate with CI</td></tr><tr><td>**Heterogeneity**</td><td>Variation in true effects across studies beyond chance</td></tr><tr><td>**GRADE**</td><td>Grading of Recommendations Assessment, Development and Evaluation - rates certainty of evidence</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological concept - see forest plot interpretation and GRADE tables below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Meta-Analysis Models</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Model</th><th>Assumption</th><th>When Used</th><th>Weighting</th></tr><tr><td>-------</td><td>-----------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Fixed Effect**</td><td>Single true effect; differences = sampling error</td><td>Low heterogeneity (I² < 25-30%)</td><td>Inverse variance (1/SE²)</td></tr><tr><td>**Random Effects**</td><td>True effects vary (distribution); estimates exchangeable</td><td>Moderate/high heterogeneity (I² > 30%)</td><td>Inverse variance + τ² (between-study variance)</td></tr></table>
+<p><b>Heterogeneity Metrics:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Metric&lt;/th&gt;&lt;th&gt;Interpretation&lt;/th&gt;&lt;th&gt;Thresholds&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;----------------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Cochran's Q</b>&lt;/td&gt;&lt;td&gt;χ² test of homogeneity&lt;/td&gt;&lt;td&gt;p&lt;0.10 = significant heterogeneity&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>I²</b>&lt;/td&gt;&lt;td&gt;% total variation due to heterogeneity&lt;/td&gt;&lt;td&gt;0-25% low, 25-50% moderate, 50-75% substantial, &gt;75% considerable&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>τ² (tau²)</b>&lt;/td&gt;&lt;td&gt;Between-study variance&lt;/td&gt;&lt;td&gt;Estimate of true effect variance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>τ (tau)</b>&lt;/td&gt;&lt;td&gt;SD of true effects&lt;/td&gt;&lt;td&gt;√τ²&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Forest Plot & GRADE)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Forest Plot Elements:</b> ``<code> Study A    ●—————●     Weight 20%   OR 1.2 [0.8, 1.8] Study B    ●——————●    Weight 35%   OR 0.9 [0.6, 1.3] Study C    ●——●       Weight 15%   OR 1.5 [1.1, 2.0] Study D    ●—————●     Weight 30%   OR 1.1 [0.7, 1.6] Pooled:   OR 1.1 [0.9, 1.3]   I²=35% </code>``</p>
+<ul><li><b>Square</b> = point estimate (size ∝ weight)</li><li><b>Horizontal line</b> = 95% CI</li><li><b>Diamond</b> = pooled estimate (center = estimate, width = CI)</li><li><b>Vertical line</b> = null (OR=1, RR=1, MD=0)</li></ul>
+<p><b>Mermaid: SR/MA Process</b> ``<code>mermaid flowchart TD A[PICO Question] --&gt; B[Protocol Registration\nPROSPERO] B --&gt; C[Comprehensive Search\nMultiple Databases] C --&gt; D[Screening\nTitle/Abstract → Full Text] D --&gt; E[Data Extraction\nRisk of Bias] E --&gt; F{Quantitative\nSynthesis?} F --&gt;|Yes| G[Meta-Analysis\nFixed/Random Effects] F --&gt;|No| H[Narrative Synthesis] G --&gt; I[Heterogeneity\nI², τ², Subgroup] I --&gt; J[Publication Bias\nFunnel, Egger] J --&gt; K[GRADE Certainty\nHigh/Mod/Low/VLow] K --&gt; L[Conclusions\nImplications] style G fill:#bbf,stroke:#333 style K fill:#f96,stroke:#333 </code>``</p>
+<p><b>GRADE Domains (Downgrade Factors):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Domain&lt;/th&gt;&lt;th&gt;Downgrade If&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Risk of Bias</b>&lt;/td&gt;&lt;td&gt;Serious (1 level) or Very Serious (2 levels) limitations per RoB-2/ROBINS-I&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Inconsistency</b>&lt;/td&gt;&lt;td&gt;Unexplained heterogeneity (I² &gt;50%, varying directions)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Indirectness</b>&lt;/td&gt;&lt;td&gt;Population/Intervention/Comparator/Outcome differs from question&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Imprecision</b>&lt;/td&gt;&lt;td&gt;Wide CI crossing decision threshold; optimal information size not met&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Publication Bias</b>&lt;/td&gt;&lt;td&gt;Funnel plot asymmetry; small-study effects&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>GRADE Domains (Upgrade Factors):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Domain&lt;/th&gt;&lt;th&gt;Upgrade If&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Large Effect</b>&lt;/td&gt;&lt;td&gt;RR &gt;2 or &lt;0.5 (1 level); &gt;5 or &lt;0.2 (2 levels)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Dose-Response</b>&lt;/td&gt;&lt;td&gt;Gradient of effect across exposure levels&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Plausible Confounding</b>&lt;/td&gt;&lt;td&gt;Would reduce effect (bias toward null)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>GRADE Output:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Certainty&lt;/th&gt;&lt;th&gt;Meaning&lt;/th&gt;&lt;th&gt;Symbol&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>High</b>&lt;/td&gt;&lt;td&gt;True effect likely close to estimate&lt;/td&gt;&lt;td&gt;⊕⊕⊕⊕&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Moderate</b>&lt;/td&gt;&lt;td&gt;True effect probably close&lt;/td&gt;&lt;td&gt;⊕⊕⊕◯&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Low</b>&lt;/td&gt;&lt;td&gt;True effect may be substantially different&lt;/td&gt;&lt;td&gt;⊕⊕◯◯&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Very Low</b>&lt;/td&gt;&lt;td&gt;True effect likely substantially different&lt;/td&gt;&lt;td&gt;⊕◯◯◯&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (SR/MA Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**SR vs MA**</td><td>SR = process; MA = statistical technique. SR can exist without MA (qualitative synthesis).</td></tr><tr><td>**Fixed vs Random Effects**</td><td>Fixed: assumes one true effect. Random: assumes distribution of true effects. Random gives wider CI, more weight to smaller studies.</td></tr><tr><td>**I² vs Q-test**</td><td>Q-test: p-value (sensitive to number of studies). I²: magnitude (preferred). Low power of Q with few studies.</td></tr><tr><td>**Heterogeneity vs Diversity**</td><td>I² = proportion of observed variance that is real. With high precision studies, I² can be high even if clinical diversity low.</td></tr><tr><td>**Subgroup vs Meta-regression**</td><td>Subgroup: categorical. Meta-regression: continuous/multiple covariates. Both observational (ecological fallacy risk).</td></tr><tr><td>**Publication Bias vs Small-Study Effects**</td><td>Small studies show larger effects → funnel asymmetry. Causes: publication bias, poor quality, heterogeneity, chance.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Critical Appraisal Checklist)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Tool</th><th>Purpose</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**PRISMA**</td><td>Reporting guideline (27 items) for SR/MA</td></tr><tr><td>**AMSTAR-2**</td><td>Critical appraisal of SR methods (16 items)</td></tr><tr><td>**ROB-2**</td><td>Risk of bias for RCTs (5 domains)</td></tr><tr><td>**ROBINS-I**</td><td>Risk of bias for non-randomised studies (7 domains)</td></tr><tr><td>**GRADE**</td><td>Certainty of evidence for outcomes</td></tr><tr><td>**Funnel Plot / Egger**</td><td>Publication bias / small-study effects</td></tr></table>
+<p><b>Key Appraisal Questions:</b></p>
+<ol><li>Is PICO clear? Was protocol registered (PROSPERO)?</li><li>Search comprehensive? Grey literature? Multiple databases?</li><li>Selection &amp; extraction independent/duplicate?</li><li>Risk of bias assessed per study (RoB-2/ROBINS-I)?</li><li>Heterogeneity explored (I², subgroups, meta-regression)?</li><li>Publication bias assessed (funnel, Egger, trim-and-fill)?</li><li>GRADE applied per outcome? Summary of findings table?</li><li>Conclusions match evidence certainty?</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Hierarchy Top**</td><td>SR/MA of RCTs = highest evidence level</td></tr><tr><td>**Fixed Effect**</td><td>I² <30%; assumes single truth; weight = 1/SE²</td></tr><tr><td>**Random Effects**</td><td>I² >30%; assumes effect distribution; weight = 1/(SE²+τ²); wider CI</td></tr><tr><td>**I² Interpretation**</td><td>0-25% low, 25-50% moderate, 50-75% substantial, >75% considerable</td></tr><tr><td>**Forest Plot**</td><td>Square=estimate, line=CI, diamond=pooled, vertical=null</td></tr><tr><td>**GRADE Starts**</td><td>RCTs = High; Observational = Low (then up/down)</td></tr><tr><td>**Downgrade**</td><td>RoB, Inconsistency, Indirectness, Imprecision, Pub Bias</td></tr><tr><td>**Upgrade**</td><td>Large effect, Dose-response, Confounding would reduce effect</td></tr><tr><td>**Funnel Plot**</td><td>Asymmetry = publication bias / small-study effects</td></tr><tr><td>**Trim-and-fill**</td><td>Imputes missing studies; adjusts pooled estimate</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Difference between systematic review and meta-analysis?**</td><td>SR = systematic process (question, search, selection, appraisal, synthesis). MA = statistical pooling of effect estimates. SR can be qualitative (no MA).</td></tr><tr><td>**When to use fixed vs random effects?**</td><td>Fixed: I² <30%, assumes single true effect. Random: I² >30%, assumes true effects vary. Random gives wider CI and more weight to smaller studies.</td></tr><tr><td>**What is I²? Interpret 60%.**</td><td>I² = % of total variation due to heterogeneity (not chance). 60% = substantial heterogeneity; explore sources (subgroups, meta-regression); use random effects.</td></tr><tr><td>**Describe a forest plot.**</td><td>Each study: square (point estimate, size=weight), horizontal line (95% CI). Diamond: pooled estimate (center), width (pooled CI). Vertical line: null (OR=1).</td></tr><tr><td>**GRADE: RCT starts at High. When downgrade?**</td><td>Risk of bias (serious/very serious), Inconsistency (unexplained heterogeneity), Indirectness (PICO mismatch), Imprecision (wide CI, OIS not met), Publication bias (funnel asymmetry).</td></tr><tr><td>**GRADE: Observational starts at Low. When upgrade?**</td><td>Large effect (RR>2 or <0.5: +1; RR>5 or <0.2: +2), Dose-response gradient, Confounding would reduce observed effect.</td></tr><tr><td>**Funnel plot asymmetry - causes?**</td><td>Publication bias (negative studies unpublished), small-study effects (poor quality), heterogeneity, chance, true effect differs by study size.</td></tr><tr><td>**What is trim-and-fill?**</td><td>Iterative method: identifies asymmetry, imputes missing studies to restore symmetry, recalculates pooled estimate.</td></tr><tr><td>**Subgroup analysis vs meta-regression?**</td><td>Subgroup: categorical moderator (e.g., drug class). Meta-regression: continuous/multiple covariates. Both ecological (study-level) associations.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Weight in RE model**</td><td>RE weights = 1/(SE² + τ²). Smaller studies get relatively MORE weight vs FE.</td></tr><tr><td>**Prediction Interval**</td><td>Random effects: 95% PI = pooled ± 1.96τ. Range where true effect of NEW study would lie. Wider than CI.</td></tr><tr><td>**Hartung-Knapp**</td><td>Adjustment for SE of pooled estimate in RE; more conservative CI; recommended.</td></tr><tr><td>**Network MA**</td><td>Compares multiple treatments simultaneously (A vs B, B vs C → A vs C indirect). Requires transitivity/consistency.</td></tr></table>
+<p><b>Mnemonic: SR/MA STEPS (PICO to GRADE)</b></p>
+<ul><li><b>P</b>ROSPERO protocol</li><li><b>I</b>nprehensive search</li><li><b>C</b>ritical appraisal (RoB-2/ROBINS-I)</li><li><b>O</b>utcome synthesis (FE/RE)</li><li><b>H</b>eterogeneity (I², subgroups)</li><li><b>P</b>ublication bias (funnel, Egger)</li><li><b>G</b>RADE certainty</li><li><b>R</b>eporting (PRISMA, SoF table)</li></ul>
+<p><b>Mnemonic: GRADE DOWNGRADE (RISK OFF)</b></p>
+<ul><li><b>R</b>isk of <b>B</b>ias</li><li><b>I</b>nconsistency</li><li><b>I</b>ndirectness</li><li><b>I</b>mprecision</li><li><b>P</b>ublication <b>B</b>ias</li></ul>
+<p><b>Mnemonic: GRADE UPGRADE (LARGE)</b></p>
+<ul><li><b>L</b>arge <b>E</b>ffect</li><li><b>D</b>ose-<b>R</b>esponse</li><li><b>P</b>lausible confounding (<b>A</b>gainst observed effect)</li></ul>
+<p><b>Mnemonic: HETEROGENEITY I²</b></p>
+<ul><li><b>I</b>² <b>L</b>ow &lt;25%</li><li><b>I</b>² <b>M</b>oderate 25-50%</li><li><b>I</b>² <b>S</b>ubstantial 50-75%</li><li><b>I</b>² <b>C</b>onsiderable &gt;75%</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Systematic Review &amp; MA)) Process PICO + Protocol Search (Multi-db, Grey) Screening (2 reviewers) Extraction + RoB Synthesis Qualitative Quantitative (MA) Meta-Analysis Fixed Effect (I²&lt;30%) Random Effects (I²&gt;30%) Forest Plot Heterogeneity: I², Q, τ² Subgroup / Meta-reg Publication Bias GRADE Start: RCT=High, Obs=Low Downgrade: RBI² Upgrade: Large, Dose, Conf Output: ⊕⊕⊕⊕ to ⊕◯◯◯ Appraisal Tools PRISMA (reporting) AMSTAR-2 (methods) RoB-2 / ROBINS-I GRADEpro </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**SR vs MA**</td><td>SR = process; MA = statistical pooling</td></tr><tr><td>**Fixed Effect**</td><td>I²<30%, single truth, weight=1/SE²</td></tr><tr><td>**Random Effects**</td><td>I²>30%, effect distribution, weight=1/(SE²+τ²)</td></tr><tr><td>**Forest Plot**</td><td>Square=estimate, line=CI, diamond=pooled</td></tr><tr><td>**I²**</td><td>0-25% low, 25-50% mod, 50-75% subst, >75% considerable</td></tr><tr><td>**GRADE Start**</td><td>RCT=High, Observational=Low</td></tr><tr><td>**Downgrade**</td><td>RoB, Inconsistency, Indirectness, Imprecision, Pub Bias</td></tr><tr><td>**Upgrade**</td><td>Large effect (RR>2), Dose-response, Plausible confounding</td></tr><tr><td>**Publication Bias**</td><td>Funnel asymmetry, Egger's test, trim-and-fill</td></tr><tr><td>**Prediction Interval**</td><td>Pooled ± 1.96τ (random effects)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>SR/MA Definitions</td><td></td><td></td></tr><tr><td>Fixed vs Random Effects</td><td></td><td></td></tr><tr><td>Forest Plot Interpretation</td><td></td><td></td></tr><tr><td>Heterogeneity (I², Q, τ²)</td><td></td><td></td></tr><tr><td>GRADE Framework</td><td></td><td></td></tr><tr><td>Publication Bias</td><td></td><td></td></tr><tr><td>Appraisal Tools (PRISMA, AMSTAR)</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Evidence-Based Medicine &amp; Clinical Guidelines.md]], [[Study Designs (Descriptive, Analytical, Experimental).md]], [[Bias, Confounding, Effect Modification.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Systematic Reviews Meta Analysis Grade · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

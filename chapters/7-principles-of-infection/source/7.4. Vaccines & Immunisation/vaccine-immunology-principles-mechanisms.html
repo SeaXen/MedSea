@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vaccine Immunology Principles Mechanisms — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.4. VACCINES & IMMUNISATION</span>
+      <div class="h1">Vaccine Immunology Principles Mechanisms</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Explain the cellular and molecular pathway of vaccine-induced immunity (PRR → DC → LN → T/B)</li><li>[ ] Distinguish humoral vs cellular immunity in vaccine protection</li><li>[ ] Understand CD4+ Th subsets (Th1, Th2, Th17, Tfh, Treg) and their roles</li><li>[ ] Describe primary vs secondary response (class switching, affinity maturation, memory)</li><li>[ ] Apply correlates of protection for major vaccines (Hib, Hep B, Influenza, etc.)</li><li>[ ] Calculate and apply herd immunity threshold (1 - 1/R₀)</li><li>[ ] List factors affecting immunogenicity (age, immunocompromise, genetics, microbiome)</li><li>[ ] Recognise AEFI (VITT, myocarditis, GBS, narcolepsy) and mechanisms</li><li>[ ] Answer viva: "Correlate of protection", "Herd immunity calculation", "Adjuvant mechanism", "Cross-presentation"</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Active immunity**</td><td>Host produces own antibodies/cells in response to antigen (vaccination or infection) — long-lasting (years to lifelong)</td></tr><tr><td>**Passive immunity**</td><td>Pre-formed antibodies given to host (maternal IgG transplacental, IVIG, HBIG, VZIG, RIG) — short-term (weeks to months)</td></tr><tr><td>**Innate immunity**</td><td>Non-specific first line (barriers, complement, macrophages, NK, DCs, PRR-PAMP interaction); 0-96 hours</td></tr><tr><td>**Adaptive immunity**</td><td>Specific, memory-forming (T cells, B cells, antibodies); 4-7 days primary; 1-3 days secondary</td></tr><tr><td>**Antigen (Ag)**</td><td>Molecule that induces immune response (typically protein, polysaccharide, or lipid)</td></tr><tr><td>**Epitope (antigenic determinant)**</td><td>Specific portion of antigen bound by Ab or TCR (linear or conformational)</td></tr><tr><td>**Hapten**</td><td>Small molecule that is antigenic only when coupled to a carrier protein (e.g., penicillin)</td></tr><tr><td>**Adjuvant**</td><td>Substance that enhances immunogenicity of co-administered antigen (Latin "adjuvare" = to help)</td></tr><tr><td>**PAMP**</td><td>Pathogen-Associated Molecular Pattern (LPS, flagellin, dsRNA, CpG DNA)</td></tr><tr><td>**PRR**</td><td>Pattern Recognition Receptor on innate cells (TLR, NLR, RLR, CLR, cGAS-STING)</td></tr><tr><td>**TLR**</td><td>Toll-Like Receptor (TLR1-10 in humans) — membrane-bound, recognises extracellular/endosomal PAMPs</td></tr><tr><td>**MHC I**</td><td>HLA-A/B/C — present endogenous peptides (8-10 aa) to CD8+ T cells (all nucleated cells)</td></tr><tr><td>**MHC II**</td><td>HLA-DR/DP/DQ — present exogenous peptides to CD4+ T cells (APCs only: DCs, macrophages, B cells)</td></tr><tr><td>**Cross-presentation**</td><td>Exogenous antigen presented on MHC I to CD8+ T cells (specialised DCs, esp. CD141+ in humans)</td></tr><tr><td>**Th cell subset**</td><td>CD4+ T helper: Th1 (cellular), Th2 (humoral/parasites/allergy), Th17 (mucosal/autoimmune), Tfh (GC/B cell), Treg (regulatory)</td></tr><tr><td>**Tfh**</td><td>T follicular helper — provides help to B cells in germinal centre (CXCR5+, Bcl-6+)</td></tr><tr><td>**CD8+ CTL**</td><td>Cytotoxic T Lymphocyte — kills infected cells via perforin/granzyme/FasL</td></tr><tr><td>**Plasma cell**</td><td>Terminally differentiated B cell producing large quantities of antibody</td></tr><tr><td>**Memory B cell**</td><td>Long-lived B cell ready for rapid re-activation on re-exposure</td></tr><tr><td>**Affinity maturation**</td><td>Somatic hypermutation in germinal centre → selection of high-affinity BCR clones</td></tr><tr><td>**Class switching (CSR)**</td><td>Isotype switching from IgM → IgG (1-4), IgA, IgE via AID enzyme in GC</td></tr><tr><td>**Primary response**</td><td>First exposure → IgM dominant, slow (7-14d), low affinity, no memory (early phase)</td></tr><tr><td>**Secondary (anamnestic) response**</td><td>Re-exposure → IgG/IgA/IgE, fast (1-3d), high affinity (memory B cells)</td></tr><tr><td>**Correlate of protection (CoP)**</td><td>Immune marker that predicts protection (e.g., anti-HBs ≥10 mIU/mL)</td></tr><tr><td>**Surrogate of protection**</td><td>Marker that correlates with protection but not the actual mechanism (e.g., anti-Spike Ab for COVID)</td></tr><tr><td>**Herd immunity (community immunity)**</td><td>Indirect protection of unvaccinated when sufficient proportion immune (HIT = 1 - 1/R₀)</td></tr><tr><td>**Herd immunity threshold (HIT)**</td><td>Proportion needed to interrupt transmission; depends on R₀ (highly contagious = higher HIT)</td></tr><tr><td>**Basic reproduction number (R₀)**</td><td>Average secondary cases from one index in fully susceptible population</td></tr><tr><td>**Effective reproduction number (Rt)**</td><td>R₀ adjusted for current immunity/intervention (Rt<1 = epidemic declining)</td></tr><tr><td>**AEFI**</td><td>Adverse Event Following Immunisation — any untoward medical occurrence post-vaccine (not necessarily causal)</td></tr><tr><td>**VITT**</td><td>Vaccine-Induced Immune Thrombotic Thrombocytopenia — anti-PF4 antibodies → thrombosis + thrombocytopenia (ChAdOx1, Ad26)</td></tr><tr><td>**VAED**</td><td>Vaccine-Associated Enhanced Disease — sub-optimal immunity → more severe disease on exposure (theoretical, e.g., RSV formalin-inactivated in 1960s)</td></tr><tr><td>**Original antigenic sin (OAS)**</td><td>Immune memory biased to first-encountered strain → less optimal response to drifted variants</td></tr><tr><td>**Trained immunity**</td><td>Innate immune memory (epigenetic reprogramming) — BCG → enhanced response to unrelated pathogens</td></tr><tr><td>**Adjuvanticity**</td><td>Ability to enhance immune response (TLR agonism, depot effect, cellular recruitment)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Vaccine Immune Response Pathway</div>
+<p>#### Step 1: Antigen Encounter &amp; Innate Activation</p>
+<ol><li><b>Antigen + adjuvant</b> injected (IM, SC, ID, oral, intranasal)</li><li><b>Adjuvant activates PRRs</b> on innate cells (TLRs 2/4/7/8/9, NLRs, cGAS-STING, CLR)</li><li><b>Damage-associated molecular patterns (DAMPs)</b> released from local tissue injury</li><li><b>Resident DCs, macrophages, neutrophils</b> capture antigen at injection site</li><li><b>Inflammatory cytokines</b> (TNF, IL-1, IL-6, type I IFN) released → cell recruitment, DC maturation</li></ol>
+<table class="ctable"><tr><th>PRR</th><th>Ligand (PAMP)</th><th>Source</th><th>Adjuvant Use</th></tr><tr><td>-----</td><td>---------------</td><td>--------</td><td>--------------</td></tr><tr><td>**TLR1/2/6**</td><td>Lipoproteins, lipoteichoic acid</td><td>Gram+ bacteria</td><td>—</td></tr><tr><td>**TLR3**</td><td>dsRNA</td><td>Viruses</td><td>Poly I:C</td></tr><tr><td>**TLR4**</td><td>LPS</td><td>Gram- bacteria</td><td>MPL, AS04, GLA, 3D-MPL</td></tr><tr><td>**TLR5**</td><td>Flagellin</td><td>Flagellated bacteria</td><td>STF2, flagellin fusion</td></tr><tr><td>**TLR7/8**</td><td>ssRNA</td><td>Viruses</td><td>Imiquimod, R848</td></tr><tr><td>**TLR9**</td><td>CpG DNA (unmethylated)</td><td>Bacteria, DNA viruses</td><td>**CpG 1018 (Heplisav)**, CpG 7907</td></tr><tr><td>**NLRP3 (inflammasome)**</td><td>Alum crystals, RNA, ATP</td><td>Multiple</td><td>Alum, AS01</td></tr><tr><td>**cGAS-STING**</td><td>Cytosolic DNA</td><td>Viruses, intracellular bacteria</td><td>cGAMP, ADU-S100</td></tr><tr><td>**RLR (RIG-I, MDA5)**</td><td>dsRNA</td><td>Viruses</td><td>5'pppRNA</td></tr></table>
+<p>#### Step 2: Antigen Processing &amp; Presentation</p>
+<p><b>MHC I pathway (endogenous):</b></p>
+<ul><li>Cytosolic proteins → proteasome → 8-10 aa peptides → TAP transporter → ER → MHC I loading → cell surface</li><li>For <b>intracellular pathogens</b> (viruses, intracellular bacteria, cancer)</li><li>For <b>mRNA / viral vector / live attenuated vaccines</b> (antigen synthesised inside cell)</li><li>Cross-presentation (specialised DCs): exogenous antigen on MHC I → CD8+ CTL</li></ul>
+<p><b>MHC II pathway (exogenous):</b></p>
+<ul><li>Extracellular proteins → endosome/lysosome → 13-25 aa peptides → MHC II (invariant chain removed) → cell surface</li><li>For <b>extracellular pathogens</b> (most bacteria, toxins)</li><li>For <b>inactivated, subunit, polysaccharide, conjugate</b> vaccines</li><li>Professional APCs: <b>DCs (most potent), macrophages, B cells</b></li></ul>
+<p><b>MHC II alleles (HLA-DR, DP, DQ)</b> determine which epitopes presented → variable population response (HLA polymorphism = individual vaccine response variation)</p>
+<p>#### Step 3: Lymph Node Migration &amp; T Cell Priming</p>
+<ol><li><b>DCs upregulate CCR7</b> → migrate via lymphatics to draining LN</li><li><b>DC maturation markers</b>: CD80/CD86 (B7-1/2), CD40, CCR7</li><li><b>TCR recognition</b> of MHC-peptide + <b>CD28:B7 costimulation</b> + cytokine signal</li><li><b>Naive CD4+ T cell</b> → polarisation (Th1/Th2/Th17/Tfh/Treg)</li><li><b>Naive CD8+ T cell</b> priming (CD4+ T cell help via IL-2, CD40L-CD40, IL-12)</li></ol>
+<p>#### Step 4: CD4+ T Helper Cell Subsets</p>
+<table class="ctable"><tr><th>Subset</th><th>Master TF</th><th>Signature Cytokines</th><th>Function</th><th>Vaccine Examples</th></tr><tr><td>--------</td><td>-----------</td><td>---------------------</td><td>----------</td><td>------------------</td></tr><tr><td>**Th1**</td><td>T-bet</td><td>IFN-γ, IL-2, TNF</td><td>Cellular immunity; activates macrophages; IgG2a in mice; intracellular pathogens</td><td>mRNA COVID, viral vector, BCG, LAIV</td></tr><tr><td>**Th2**</td><td>GATA-3</td><td>IL-4, IL-5, IL-13, IL-10</td><td>Humoral immunity; B cell help; IgE (allergy); parasites</td><td>**Alum-adjuvanted** (Hep B, HPV, DTaP), toxoid</td></tr><tr><td>**Th17**</td><td>RORγt</td><td>IL-17, IL-22, IL-6</td><td>Mucosal immunity; recruits neutrophils; barrier integrity</td><td>Mucosal vaccines (LAIV, oral), adjuvanted with curdlan</td></tr><tr><td>**Tfh**</td><td>Bcl-6</td><td>IL-21, IL-4</td><td>Germinal centre; B cell help; class switch + affinity maturation</td><td>Required for all T-dependent Ab responses</td></tr><tr><td>**Treg**</td><td>FoxP3</td><td>IL-10, TGF-β, CTLA-4</td><td>Immune tolerance; suppression; limits over-activation</td><td>Self-tolerance; limits inflammation</td></tr><tr><td>**Tr1**</td><td>—</td><td>IL-10</td><td>Regulatory; suppresses Th1/Th2</td><td>Mucosal tolerance</td></tr><tr><td>**CD8+ CTL**</td><td>Eomes, T-bet</td><td>IFN-γ, perforin, granzyme</td><td>Kills infected/cancer cells; key for intracellular pathogens</td><td>mRNA, viral vector, live attenuated</td></tr></table>
+<p>#### Step 5: B Cell Activation &amp; Antibody Production</p>
+<p><b>T-dependent (protein antigens):</b></p>
+<ol><li><b>B cell</b> binds Ag via BCR (membrane Ig)</li><li><b>Internalises, processes, presents</b> on MHC II to <b>Tfh cell</b> at T-B border</li><li><b>CD40L-CD40 + cytokines</b> (IL-4, IL-21) → B cell activation</li><li><b>Germinal centre reaction</b> (dark zone: somatic hypermutation by AID; light zone: selection by FDCs + Tfh)</li><li><b>Affinity maturation</b> (high-affinity clones selected)</li><li><b>Class switch recombination (CSR)</b> — IgM → IgG1, IgG2, IgG3, IgG4, IgA, IgE</li><li><b>Differentiation</b>: <b>plasma cells</b> (Ab production) + <b>memory B cells</b> (long-lived, lymphoid organs)</li><li><b>Long-lived plasma cells</b> migrate to bone marrow → decades of Ab</li></ol>
+<p><b>T-independent (polysaccharide, lipid):</b></p>
+<ol><li><b>Polysaccharide cross-links BCRs</b> (repetitive epitopes)</li><li>Marginal zone B cells + B1 cells respond</li><li><b>No germinal centre, no CSR, no affinity maturation, no memory</b></li><li><b>IgM dominant</b>, weak IgG2</li><li><b>Fails in &lt;2 years</b> (immature marginal zone B cells, low complement)</li><li><b>No booster response</b> (boost = repeat primary)</li><li>Conjugation to protein converts to T-dependent (key advance)</li></ol>
+<p>#### Step 6: Antibody Effector Functions</p>
+<table class="ctable"><tr><th>Ab Class</th><th>Function</th><th>Vaccine</th></tr><tr><td>----------</td><td>----------</td><td>---------</td></tr><tr><td>**IgG1, IgG3**</td><td>Opsonisation, complement, ADCC, neutralisation</td><td>Most protein vaccines (Th1)</td></tr><tr><td>**IgG2**</td><td>Polysaccharide responses</td><td>Pneumococcal PS, Hib PS</td></tr><tr><td>**IgG4**</td><td>Non-inflammatory, tolerance</td><td>High allergen exposure, food</td></tr><tr><td>**IgA (dimeric)**</td><td>Mucosal immunity (secretory)</td><td>Mucosal (LAIV, oral polio, rotavirus, cholera)</td></tr><tr><td>**IgE**</td><td>Allergy, parasites</td><td>Not protective vaccines</td></tr><tr><td>**IgM (pentamer)**</td><td>Primary response, complement, agglutination</td><td>First response</td></tr></table>
+<p><b>Neutralising antibodies:</b> Block pathogen entry (receptor binding, fusion, uncoating) — <b>gold standard correlate</b> for many vaccines (measles, polio, Hep B, COVID-19, RSV nirsevimab)</p>
+<p><b>Effector functions:</b> Opsonisation (FcγR on phagocytes), complement activation (C1q, MAC), ADCC (FcγR on NK cells)</p>
+<div class="sub-h">Section 2: Primary vs Secondary Response</div>
+<table class="ctable"><tr><th>Feature</th><th>Primary Response</th><th>Secondary (Anamnestic) Response</th></tr><tr><td>---------</td><td>------------------</td><td>-------------------------------</td></tr><tr><td>**Lag phase**</td><td>7-14 days</td><td>1-3 days</td></tr><tr><td>**Peak Ab titre**</td><td>Lower (10-100x lower)</td><td>Higher (100-1000x higher)</td></tr><tr><td>**Dominant isotype**</td><td>**IgM first**, then IgG</td><td>**IgG** (and IgA/IgE if class-switched)</td></tr><tr><td>**Affinity**</td><td>Low (no affinity maturation yet)</td><td>High (affinity matured)</td></tr><tr><td>**Duration**</td><td>Transient (weeks-months)</td><td>Long-lived (years-decades)</td></tr><tr><td>**Memory**</td><td>Generated during primary</td><td>**Rapid re-activation by memory B/T cells**</td></tr><tr><td>**Dose required**</td><td>Higher (to prime)</td><td>Lower (memory pool sufficient)</td></tr></table>
+<p><b>Why multiple doses?</b> Primary dose primes; subsequent doses boost memory (booster = anamnestic).</p>
+<p><b>Why some vaccines need boosters lifelong?</b> Ab titres wane (half-life of Ab ~3-4 weeks for IgG, but plasma cells in BM persist for decades). Tetanus boosters every 10 years maintain protective anti-toxin IgG.</p>
+<div class="sub-h">Section 3: Correlates of Protection (CoP)</div>
+<p><b>CoP = quantitative immune marker that predicts clinical protection</b> (most are Ab titres).</p>
+<table class="ctable"><tr><th>Vaccine</th><th>Correlate of Protection</th><th>Threshold</th><th>Notes</th></tr><tr><td>---------</td><td>------------------------</td><td>-----------</td><td>-------</td></tr><tr><td>**Hib**</td><td>Anti-PRP IgG</td><td>≥0.15 μg/mL (short-term); ≥1.0 μg/mL (long-term)</td><td>Conjugate</td></tr><tr><td>**Hep B**</td><td>Anti-HBs (against HBsAg)</td><td>**≥10 mIU/mL**</td><td>Standard post-vaccination; <10 = non-responder; booster 1 dose may suffice</td></tr><tr><td>**Hepatitis A**</td><td>Anti-HAV</td><td>≥20 mIU/mL (or 33 mIU/mL in some assays)</td><td>Long-lasting</td></tr><tr><td>**Measles**</td><td>Neutralising Ab (plaque reduction)</td><td>≥120 mIU/mL (some use 200); HAI ≥1:120</td><td>Cellular also critical</td></tr><tr><td>**Rubella**</td><td>Anti-rubella IgG</td><td>≥10-15 IU/mL</td><td>Prevent CRS</td></tr><tr><td>**Mumps**</td><td>ELISA IgG</td><td>Less clear; T cell important</td><td>Less effective; waning</td></tr><tr><td>**Tetanus**</td><td>Anti-tetanus IgG</td><td>≥0.1 IU/mL (short-term); ≥1.0 IU/mL (long-term)</td><td>Toxin neutralisation</td></tr><tr><td>**Diphtheria**</td><td>Anti-DT IgG</td><td>≥0.1 IU/mL</td><td>Toxin neutralisation</td></tr><tr><td>**Influenza**</td><td>HAI titre (haemagglutination inhibition)</td><td>**≥1:40** (≈50% protection); 1:80 = 70-80%</td><td>Strain-specific; T cell cross-reactive</td></tr><tr><td>**Pneumococcal**</td><td>OPA (opsonophagocytic activity), serotype-specific IgG</td><td>≥0.35 μg/mL IgG (child); ≥1:8 OPA</td><td>Serotype-specific</td></tr><tr><td>**Meningococcal ACWY**</td><td>Serum bactericidal Ab (SBA)</td><td>≥1:4 hSBA or rSBA</td><td>Serogroup-specific</td></tr><tr><td>**HPV**</td><td>Neutralising Ab (cLIA or PBNA)</td><td>No formal threshold; seroconversion = protected</td><td>VLP; high efficacy</td></tr><tr><td>**Yellow Fever**</td><td>Neutralising Ab</td><td>≥1:10 PRNT50</td><td>Lifelong (1 dose sufficient)</td></tr><tr><td>**Rabies**</td><td>Neutralising Ab (RFFIT)</td><td>≥0.5 IU/mL</td><td>WHO threshold</td></tr><tr><td>**Varicella**</td><td>gpELISA, FAMA</td><td>≥5 U/mL gpELISA; 4-fold rise</td><td>Cell-mediated critical</td></tr><tr><td>**Rotavirus**</td><td>Serum IgA (surrogate)</td><td>3-fold rise = correlate</td><td>Mucosal</td></tr><tr><td>**COVID-19 (mRNA)**</td><td>Anti-Spike IgG, pseudovirus neutralisation</td><td>No established threshold; correlates with efficacy</td><td>T cell also important</td></tr><tr><td>**BCG (TB)**</td><td>NO established CoP; IGRA conversion ≠ protection</td><td>—</td><td>Cellular immunity</td></tr></table>
+<p><b>No CoP for:</b> TB (BCG), malaria (RTS,S — anti-CSP correlates with partial), HIV (no licensed), RSV, many others — <b>T cell assays and polyfunctionality being developed</b></p>
+<div class="sub-h">Section 4: Herd Immunity</div>
+<p><b>Basic concept:</b> When sufficient proportion of population is immune (vaccine or infection), pathogen transmission is interrupted → indirect protection of unvaccinated (herd effect).</p>
+<p><b>Herd Immunity Threshold (HIT):</b></p>
+<p>$$\text{HIT} = 1 - \frac{1}{R_0}$$</p>
+<p><b>R₀</b> = average secondary cases from one index in fully susceptible population</p>
+<table class="ctable"><tr><th>Disease</th><th>R₀</th><th>HIT</th><th>Notes</th></tr><tr><td>---------</td><td>-----</td><td>-----</td><td>-------</td></tr><tr><td>**Measles**</td><td>12-18</td><td>**92-95%**</td><td>Most contagious; 2-dose MMR essential</td></tr><tr><td>**Pertussis**</td><td>12-17</td><td>92-94%</td><td>Waning immunity → boosters</td></tr><tr><td>**Diphtheria**</td><td>6-7</td><td>85%</td><td></td></tr><tr><td>**Rubella**</td><td>6-7</td><td>85%</td><td>Prevent CRS</td></tr><tr><td>**Mumps**</td><td>4-7</td><td>75-86%</td><td></td></tr><tr><td>**Polio**</td><td>5-7</td><td>80-86%</td><td>OPV better intestinal immunity</td></tr><tr><td>**Smallpox**</td><td>3-6</td><td>80%</td><td>Eradicated 1980</td></tr><tr><td>**SARS-CoV-2 (Wuhan)**</td><td>2-3</td><td>50-67%</td><td>Variants more (Delta ~5-6)</td></tr><tr><td>**Ebola**</td><td>1.5-2.5</td><td>33-60%</td><td>Ring vaccination</td></tr><tr><td>**Influenza**</td><td>1.3-2.0</td><td>23-50%</td><td>Annual; strain variation</td></tr></table>
+<p><b>Limitations of HIT:</b></p>
+<ul><li><b>Heterogeneity</b> in mixing (some super-spreaders, age groups, occupations) — real HIT may be lower</li><li><b>Vaccine effectiveness</b> &lt;100% (e.g., pertussis ~85% after 5y) — need higher coverage</li><li><b>Waning immunity</b> — boosts needed</li><li><b>Differential vaccine efficacy</b> for transmission vs disease (e.g., COVID-19 mRNA — better at preventing disease than transmission)</li><li><b>Pathogen evolution</b> (variants, drift) — R₀ changes</li><li><b>Spatial heterogeneity</b> (clusters of unvaccinated = outbreaks)</li></ul>
+<p><b>Eradication criteria (Fenner 1983):</b></p>
+<ol><li>No clinical cases (humans only or zoonosis interrupted)</li><li>No carrier state</li><li>No animal reservoir (or controllable)</li><li>Effective intervention available</li><li>Political/economic will</li><li>Surveillance adequate</li></ol>
+<p><b>Eradicated:</b> Smallpox (1980), Rinderpest (2011 — cattle) <b>Eliminated (regional):</b> Polio (most countries, ongoing transmission in 2 countries), Measles (Americas, UK until 2019), Rubella (Americas, EU)</p>
+<div class="sub-h">Section 5: Adjuvants — Mechanisms</div>
+<table class="ctable"><tr><th>Adjuvant</th><th>Composition</th><th>Mechanism</th><th>Vaccines</th><th>Notes</th></tr><tr><td>----------</td><td>-------------</td><td>-----------</td><td>----------</td><td>-------</td></tr><tr><td>**Alum (Aluminium salts)**</td><td>Al(OH)₃, AlPO₄</td><td>**NLRP3 inflammasome** activation, **depot effect** (slow release), DC recruitment</td><td>DTaP, Hep B, HPV, Td, most childhood</td><td>Th2 bias; safe (decades of data); local reactions</td></tr><tr><td>**MF59**</td><td>Squalene oil-in-water emulsion</td><td>Recruits immune cells (neutrophils, monocytes, DCs); enhances Ag uptake; **Th1/Th2 balanced**</td><td>Fluad (adjuvanted flu)</td><td>Used in elderly</td></tr><tr><td>**AS03**</td><td>Squalene + α-tocopherol + polysorbate 80</td><td>Similar to MF59 + transient NF-κB activation; broad cytokine response</td><td>Pandemrix (H1N1 2009), Arepanrix</td><td>**Narcolepsy link** (Pandemrix 2009)</td></tr><tr><td>**AS01B (liposome + MPL + QS-21)**</td><td>Liposome + MPL (TLR4) + QS-21 (saponin)</td><td>**TLR4 + inflammasome + DC activation**; strong Th1 + Ab</td><td>Shingrix, RTS,S/Mosquirix, Cervarix (AS04)</td><td>Very immunogenic in elderly</td></tr><tr><td>**AS04**</td><td>MPL (TLR4) + alum</td><td>TLR4 + alum; Th1 + Th2</td><td>Cervarix, Fendrix (Hep B)</td><td>First TLR-based adjuvant</td></tr><tr><td>**CpG ODN (1018, 7907)**</td><td>Unmethylated CpG dinucleotides</td><td>**TLR9 agonism**; Th1, IgG2, CD8</td><td>Heplisav-B, dynavax</td><td>2-dose Hep B possible</td></tr><tr><td>**Matrix-M (saponin-based nanoparticle)**</td><td>Saponin + cholesterol + phospholipid</td><td>Multimeric saponin nanoparticle; DC/APC recruitment; broad Th</td><td>Novavax (COVID), R21 (malaria)</td><td>Saponin-based, less reactogenicity than QS-21 alone</td></tr><tr><td>**Poly I:C (TLR3) + poly-ICLC**</td><td>Synthetic dsRNA</td><td>TLR3 + RLR; type I IFN; Th1 CD8</td><td>Hiltonol (cancer, HIV)</td><td>Experimental</td></tr><tr><td>**Imidazoquinolines (imiquimod, R848)**</td><td>TLR7/8 agonists</td><td>ssRNA mimic; type I IFN; Th1</td><td>Topical (warts, melanoma); experimental</td><td></td></tr></table>
+<p><b>Future adjuvants:</b> STING agonists (cGAMP, ADU-S100), saponin nanoparticles (Matrix-M, ISCOMATRIX), interleukin-adjuvant fusions (IL-12, GM-CSF), invariant natural killer T cell agonists (α-GalCer), AI-designed.</p>
+<div class="sub-h">Section 6: Factors Affecting Vaccine Immunogenicity</div>
+<table class="ctable"><tr><th>Factor</th><th>Effect</th><th>Mechanism</th></tr><tr><td>--------</td><td>--------</td><td>-----------</td></tr><tr><td>**Age (infants)**</td><td>Reduced response (T-independent, immature APCs)</td><td>Maternal Ab interference; immature marginal zone B cells</td></tr><tr><td>**Age (elderly)**</td><td>Reduced response (immunosenescence)</td><td>↓ naive T cells, ↓ T cell diversity, ↓ B cell function, inflammaging</td></tr><tr><td>**Pregnancy**</td><td>Th2 bias; safe with inactivated</td><td>Hormonal modulation</td></tr><tr><td>**Immunocompromise**</td><td>Reduced Ab + cellular response</td><td>HIV CD4<200, transplant, biologics, chemotherapy</td></tr><tr><td>**Malnutrition**</td><td>Reduced (esp. protein, zinc, vitamin D, A)</td><td>Impaired T/B cell development</td></tr><tr><td>**Genetics (HLA)**</td><td>Allele-dependent epitope presentation</td><td>Variable population response</td></tr><tr><td>**Microbiome**</td><td>Affects response (oral, intranasal especially)</td><td>Mucosal immunity; SCFA → Treg</td></tr><tr><td>**Concurrent infection**</td><td>Reduced (esp. HIV, malaria, TB)</td><td>Immune activation, dysregulation</td></tr><tr><td>**Route of administration**</td><td>IM/SC = systemic; oral/intranasal = mucosal</td><td>Local IgA, draining LN</td></tr><tr><td>**Site of injection**</td><td>Deltoid > gluteal (better immune response)</td><td>Better vascularity, less fat</td></tr><tr><td>**Dose timing**</td><td>Adequate interval for affinity maturation</td><td><2 weeks = poor</td></tr><tr><td>**Concurrent Ig**</td><td>Blocks response (e.g., maternal Ab, HBIG, RIG)</td><td>Neutralises vaccine Ag</td></tr><tr><td>**Smoking, alcohol, drugs**</td><td>Reduced response</td><td>T cell dysfunction</td></tr><tr><td>**Chronic disease**</td><td>CKD, DM, cirrhosis → reduced</td><td>Multifactorial</td></tr><tr><td>**Stress, sleep**</td><td>Acute stress ↑; chronic ↓</td><td>Cortisol effects</td></tr><tr><td>**Sex**</td><td>Females often higher Ab (Th2 bias); males more severe disease</td><td>Hormonal modulation</td></tr></table>
+<p><b>Strategies to boost response in poor responders:</b></p>
+<ul><li><b>Higher dose</b> (HD influenza in &gt;65)</li><li><b>Adjuvant</b> (MF59/AS01 in elderly)</li><li><b>Additional doses</b> (3-dose Hep B in CKD, dialysis)</li><li><b>Different route</b> (intradermal flu, rabies)</li><li><b>Heterologous prime-boost</b> (AZ + mRNA COVID)</li></ul>
+<div class="sub-h">Section 7: AEFI (Adverse Events Following Immunisation)</div>
+<p><b>Classification (WHO):</b></p>
+<ul><li><b>Vaccine product-related reaction</b> (e.g., anaphylaxis to gelatin, BCG adenitis)</li><li><b>Vaccine quality defect-related reaction</b> (rare, manufacturing)</li><li><b>Immunisation error-related reaction</b> (wrong dose, wrong route, needle injury)</li><li><b>Immunisation anxiety-related reaction</b> (vasovagal, hyperventilation)</li><li><b>Coincidental event</b> (not causally related)</li></ul>
+<p><b>Common mild AEFI:</b></p>
+<ul><li>Local: pain (50-80%), swelling, erythema (10-30%)</li><li>Systemic: low-grade fever (5-15%), malaise, myalgia, headache</li><li>Self-limited 1-3 days</li></ul>
+<p><b>Serious AEFI (rare):</b></p>
+<table class="ctable"><tr><th>AEFI</th><th>Vaccine</th><th>Mechanism</th><th>Incidence</th><th>Onset</th><th>Management</th></tr><tr><td>------</td><td>---------</td><td>-----------</td><td>-----------</td><td>-------</td><td>-----------</td></tr><tr><td>**Anaphylaxis**</td><td>Any (gelatin, egg, latex)</td><td>Type I IgE hypersensitivity</td><td>1-10/million</td><td><1h</td><td>IM adrenaline, supportive</td></tr><tr><td>**VITT / TTS**</td><td>ChAdOx1 (AstraZeneca), Ad26 (J&J)</td><td>Anti-PF4 antibodies → platelet activation + thrombosis</td><td>1-10/100,000 (1st dose)</td><td>4-30 days</td><td>**IVIG + non-heparin anticoagulation**; avoid heparin</td></tr><tr><td>**Myocarditis / Pericarditis**</td><td>mRNA COVID (Pfizer, Moderna) esp. young males 2nd dose</td><td>Unknown (molecular mimicry, spike cardiotropism)</td><td>1-13/100,000 (young males 2nd dose)</td><td>2-7 days</td><td>Supportive; NSAIDs; avoid strenuous exercise; usually mild</td></tr><tr><td>**GBS (Guillain-Barré)**</td><td>Influenza (1976 swine flu, modest increase 1-2/100,000); J&J COVID</td><td>Molecular mimicry, autoimmune demyelination</td><td>1-2/100,000</td><td>1-6 weeks</td><td>IVIG, plasmapheresis</td></tr><tr><td>**Narcolepsy**</td><td>**Pandemrix (AS03-adjuvanted H1N1 2009)** in Europe</td><td>Autoimmune destruction of hypocretin neurons; H1N1 nucleoprotein cross-reactivity with hypocretin receptor 2</td><td>1-3/100,000 (children/adolescents)</td><td>2-6 months</td><td>Modafinil, sodium oxybate, supportive</td></tr><tr><td>**VAED (theoretical)**</td><td>None confirmed; RSV formalin-inactivated (1960s)</td><td>Sub-neutralising Ab + immune complex → enhanced disease</td><td>—</td><td>—</td><td>—</td></tr><tr><td>**Thrombocytopenia (ITP)**</td><td>MMR (1-3/100,000)</td><td>Autoantibody to platelets</td><td>1-3/100,000</td><td>1-6 weeks</td><td>Usually self-limited; IVIG if severe</td></tr><tr><td>**Intussusception**</td><td>Rotavirus (1st gen RotaShield 1999, withdrawn)</td><td>Wild-type rotavirus in adults had intussusception; vaccine possible link</td><td>Old RotaShield 1/10,000; RotaTeq 1-5/100,000; Rotarix similar</td><td>1-7 days</td><td>Air enema, surgery</td></tr><tr><td>**BCG dissemination (BCGosis)**</td><td>BCG (live)</td><td>Disseminated disease in SCID, HIV, IFN-γ defects</td><td>Rare</td><td>1-12 months</td><td>Anti-TB + IFN-γ</td></tr><tr><td>**Shoulder Injury Related to Vaccine Administration (SIRVA)**</td><td>Any IM</td><td>Inadvertent SC/intra-articular → bursitis, tendinitis</td><td>Underreported</td><td>Days-weeks</td><td>NSAIDs, physiotherapy, steroid injection</td></tr><tr><td>**Bell's palsy**</td><td>Intranasal influenza (historical), COVID (rare)</td><td>Unknown</td><td>Rare</td><td>Days-weeks</td><td>Oral steroids; usually self-limited</td></tr><tr><td>**Transverse myelitis, ADEM**</td><td>Many (rare)</td><td>Autoimmune</td><td>Very rare</td><td>1-6 weeks</td><td>Steroids, IVIG</td></tr><tr><td>**Menstrual changes**</td><td>COVID mRNA (subjective reports)</td><td>Unclear; transient</td><td>Variable</td><td>Days-months</td><td>Self-limited; reassuring</td></tr><tr><td>**Lymphadenopathy**</td><td>mRNA COVID (axillary)</td><td>Local immune response</td><td>0.3-1%</td><td>1-7 days</td><td>Self-limited</td></tr><tr><td>**Delayed localised rash**</td><td>Moderna, Shingrix</td><td>Type IV hypersensitivity</td><td>1-10%</td><td>5-14 days</td><td>Self-limited</td></tr></table>
+<p><b>Causality assessment (WHO algorithm):</b></p>
+<ol><li>Eligibility (AEFI)</li><li>Checklist (timing, prior knowledge, alternative explanations)</li><li>Algorithm (temporal + biological + statistical)</li><li>Classification: <b>Consistent / Inconsistent / Indeterminate</b> causal association</li></ol>
+<p><b>VITT criteria (UK case definition):</b></p>
+<ul><li>Onset 5-30 days post-ChAdOx1/Ad26</li><li>Thrombocytopenia (&lt;150 × 10⁹/L)</li><li>Thrombosis (unusual sites: cerebral venous sinus, splanchnic, portal, adrenal)</li><li>Positive anti-PF4 antibody ELISA</li><li>D-dimer markedly elevated</li><li>DO NOT give heparin (heparin-PF4 cross-reactivity)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Immune Principle</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>**2-month-old, Hib vaccination**</td><td>Conjugate = T-dependent response in infant (T-independent fails <2y)</td><td>Conjugate vaccine essential</td></tr><tr><td>**65-year-old, flu vaccine**</td><td>Immunosenescence; reduced naive T cell</td><td>High-dose or adjuvanted (Fluad HD/MF59)</td></tr><tr><td>**HIV CD4 180, MMR exposure**</td><td>Live vaccine contraindicated in severe immunocompromise</td><td>Avoid LAIV/MMR/varicella; check CD4</td></tr><tr><td>**Pregnant 28 weeks, whooping cough outbreak**</td><td>Maternal IgG transfer to foetus (peaks 3rd trimester)</td><td>Tdap 16-32 weeks</td></tr><tr><td>**Hep B non-responder (anti-HBs <10 after 3 doses)**</td><td>HLA-restricted response (~5-10% non-responders)</td><td>Repeat 3-dose series; check anti-HBc; consider Heplisav (CpG)</td></tr><tr><td>**Asplenia after splenectomy**</td><td>Loss of marginal zone B cells; encapsulated organism risk</td><td>PCV + MenACWY + MenB + Hib + annual flu</td></tr><tr><td>**Stem cell transplant, post-engraftment**</td><td>Loss of vaccine immunity from pre-transplant</td><td>Re-immunise 6-24m post-HSCT (inactivated first, live last)</td></tr><tr><td>**Patient on rituximab**</td><td>B cell depletion; poor Ab response</td><td>Delay vaccination 6m post-rituximab</td></tr><tr><td>**BCG in newborn, family history SCID**</td><td>Live vaccine in SCID = disseminated BCGosis</td><td>SCID screening at birth (US); avoid BCG in at-risk</td></tr><tr><td>**Allergy to egg, MMR needed**</td><td>MMR grown in chick fibroblast (negligible egg protein)</td><td>MMR safe even in egg allergy; observe 15-30 min</td></tr><tr><td>**Patient on TNF inhibitor, Zostavax**</td><td>Live vaccine in immunosuppression → VZV dissemination</td><td>Use Shingrix (RZV) instead; hold TNF</td></tr><tr><td>**Measles outbreak, school unvaccinated**</td><td>HIT 92-95% → outbreak in <90% coverage; ring vaccination</td><td>Mass catch-up; ring vaccinate contacts</td></tr><tr><td>**COVID-19 booster in transplant**</td><td>Poor Ab response to 2 doses in transplant</td><td>3rd then 4th dose (extended primary); 5th booster</td></tr><tr><td>**Varicella exposure, immunocompromised**</td><td>Passive immunisation (VZIG) within 96h</td><td>VZIG; IVIG if VZIG unavailable</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Vaccine immune response pathway (PRR → DC → LN → T/B), Th subsets (Th1/Th2/Th17/Tfh), primary vs secondary, class switching + affinity maturation in GC, conjugate principle, correlates of protection, herd immunity (HIT = 1-1/R₀), adjuvant mechanisms, factors affecting response, AEFI - <b>Common viva:</b> "Correlate of protection for Hep B/Hib/influenza", "Calculate HIT for R₀=4", "Why conjugate works in &lt;2y", "Adjuvant mechanism", "VITT vs DVT", "Original antigenic sin", "Difference between primary and secondary response" - <b>Exam trap:</b> mRNA vaccine + 2nd dose in &lt;3 weeks = poor booster; PPSV23 alone in asplenia insufficient (need PCV first); Hep B "non-responder" = check anti-HBc; MMR safe in egg allergy; live vaccines need 4-week interval between each other; immunocompromise can still respond to vaccines (just less)</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>"Correlate of protection = anti-HBs ≥100"</td><td>Anti-HBs **≥10 mIU/mL** is the standard; <10 = non-responder (booster 1 dose may suffice)</td></tr><tr><td>"Live vaccines in immunocompromised"</td><td>Varies: CD4>200, low-dose steroids (<20mg pred), biologics, transplant — **consult specialist**; general rule: **avoid live**</td></tr><tr><td>"MMR contraindicated in egg allergy"</td><td>**FALSE** — MMR grown in chick fibroblasts, negligible egg protein; safe in egg allergy (observe only)</td></tr><tr><td>"Yellow fever is required for life"</td><td>**Single dose 17D = lifelong** (WHO 2016); travel certificate valid for life</td></tr><tr><td>"Herd immunity means I'm safe without vaccine"</td><td>Only when ≥HIT proportion of population is immune; unvaccinated rely on others' immunity (free-rider problem)</td></tr><tr><td>"BCG prevents TB transmission"</td><td>BCG = protection from disseminated/meningeal TB in children; not pulmonary in adults; not transmission</td></tr><tr><td>"PPSV23 works in <2y"</td><td>**FALSE** — T-independent, fails in <2y; give **PCV** (conjugate) for <2y</td></tr><tr><td>"VITT = treat with heparin"</td><td>VITT = anti-PF4 Abs; **heparin binds PF4** → worsening thrombosis; **avoid heparin**; use argatroban/fondaparinux + IVIG</td></tr><tr><td>"All vaccines work in pregnancy"</td><td>**Live CONTRAINDICATED** (MMR, varicella, LAIV, BCG, YF); Tdap, flu, COVID-19 SAFE</td></tr><tr><td>"mRNA COVID causes myocarditis at 1%"</td><td>~1-13/100,000 young males 2nd dose (much less than COVID myocarditis); usually mild</td></tr><tr><td>"Polysaccharide + conjugate"</td><td>Conjugate = covalently linked; can give simultaneously but at different sites</td></tr><tr><td>"Maternal Ab blocks vaccine"</td><td>Yes, especially <6 months; maternal IgG wanes; some vaccines (rotavirus, BCG) given at birth before maternal Ab matters</td></tr><tr><td>"Booster = same dose"</td><td>Yes; boosts memory B cells (anamnestic); half-life of Ab short, but plasma cells in BM persist</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Th1 cytokine signature:</b> <b>"Th1 = IFN-γ &amp; IL-2 (One-Two)"</b> = cellular</li><li><b>Th2 cytokine signature:</b> <b>"Th2 = IL-4, 5, 13 (FOUR-five-THIRteen)"</b> = humoral/parasites</li><li><b>Th17 cytokine signature:</b> <b>"Th17 = IL-17, 22 (Seventeen-Twenty-two)"</b> = mucosal</li><li><b>Tfh function:</b> <b>"Tfh = Follicular helper → GCB cell"</b> = germinal centre B cell help</li><li><b>HIT formula:</b> <b>"HIT = 1 - 1/R₀"</b> → higher R₀ = higher HIT (measles 95% vs flu 50%)</li><li><b>Adjuvants (4 main):</b> <b>"AMC M"</b> = <b>A</b>lum, <b>M</b>F59, <b>C</b>pG, <b>M</b>atrix-M / AS01</li><li><b>Correlate of protection (Hep B):</b> <b>"≥10 mIU/mL"</b></li><li><b>Correlate of protection (Hib):</b> <b>"Anti-PRP ≥0.15"</b></li><li><b>Correlate of protection (Influenza):</b> <b>"HAI 1:40"</b></li><li><b>Tetanus CoP:</b> <b>"0.1 IU/mL short, 1.0 long"</b></li><li><b>VITT:</b> <b>"Anti-PF4 + thrombo + thrombo-cytopenia = avoid heparin"</b></li><li><b>Live vaccine timing:</b> <b>"4-Week Wait"</b> between live vaccines</li><li><b>Conjugate principle:</b> <b>"Protein carrier provides T help → T-dependent"</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Vaccine_Immunology)) Innate_Activation PRR_PAMP TLR_1to10 NLRP3 cGAS_STING RLR DC_Maturation Cytokines_TNF_IL6_type1_IFN Antigen_Presentation MHC_I_CD8 MHC_II_CD4 Cross_presentation_DC T_Cell_Response Th1_cellular_IFNg Th2_humoral_IL4 Th17_mucosal_IL17 Tfh_germinal_centre Treg_FoxP3 CD8_CTL B_Cell_Response T_dependent Germinal_centre Affinity_maturation_AID Class_switching Plasma_cells_BM Memory_B_cells T_independent Polysaccharide IgM_only No_memory Fails_2y Primary_vs_Secondary Primary_slow_IgM Secondary_fast_IgG Anamnestic Correlates_of_Protection Ab_titre_HAI_OPA_SBA Functional_neutralisation T_cell_ELISpot Herd_Immunity HIT_1_minus_1_R0 R0_measles_12_18 R0_flu_1.3_2 Adjuvants Alum_Th2 MF59_oil_water AS01_TLR4_QS21 CpG_TLR9 Matrix_M_saponin AEFI VITT_anti_PF4 Myocarditis_mRNA GBS_flu_rare Narcolepsy_Pandemrix Anaphylaxis_rare Intussusception_rota Factors_Affecting Age Immunocompromise HLA Microbiome Nutrition </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart — Vaccine Immune Response Pathway</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Vaccine injected IM/SC/ID/Oral/IN] --&gt; B[Antigen + Adjuvant at site] B --&gt; C[Adjuvant activates PRR on DCs/Macrophages] C --&gt; D[DC maturation + Ag uptake] D --&gt; E[CCR7 upregulation] E --&gt; F[Draining lymph node migration] F --&gt; G{MHC presentation} G --&gt;|MHC I + II| H[CD4+ and CD8+ T cell priming] G --&gt;|MHC II to Tfh| I[B cell activation in GC] H --&gt; J[Th1/Th2/Th17/Tfh polarisation] J --&gt; K[CD8+ CTL effectors + memory] I --&gt; L[Affinity maturation AID + CSR] L --&gt; M[Plasma cells Ab] L --&gt; N[Memory B cells in BM/LN] M --&gt; O[Neutralising Ab + effector functions] O --&gt; P[Long-term protection] </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Germinal centre diagram (dark zone / light zone)</li><li>[ ] MHC I vs MHC II processing pathway diagram</li><li>[ ] Th subset differentiation tree</li><li>[ ] Adjuvant mechanism comparison</li><li>[ ] VITT pathology slide</li><li>[ ] HIT bar chart by R₀</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Osmosis — Vaccine immunology</li><li>[ ] AAI / BSI — Vaccine-induced immunity</li><li>[ ] Nature Video — How vaccines work</li><li>[ ] Khan Academy — Adaptive immunity</li><li>[ ] CrashCourse — Vaccines and herd immunity</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Pathway:</b> Ag + adjuvant → PRR (TLR) on DC → maturation → LN → MHC I/II → Th1/Th2/Th17/Tfh + CD8 + B cell → memory - <b>Th subsets:</b> Th1 (IFN-γ, cellular), Th2 (IL-4/5/13, humoral), Th17 (IL-17/22, mucosal), Tfh (GC help), Treg (FoxP3) - <b>Primary vs Secondary:</b> Primary = IgM, slow, low affinity. Secondary = IgG, fast, high affinity, anamnestic - <b>GC reactions:</b> AID enzyme → somatic hypermutation (affinity maturation) + class switch (IgM→IgG/A/E) - <b>Conjugate:</b> Polysaccharide + protein → T-dependent → memory, &lt;2y works - <b>Adjuvants:</b> Alum (Th2), MF59 (recruit cells), AS01 (TLR4 + QS-21), CpG (TLR9), Matrix-M (saponin) - <b>CoP:</b> Anti-HBs ≥10 mIU/mL, anti-PRP ≥0.15, HAI ≥1:40, anti-tetanus ≥0.1 IU/mL - <b>HIT = 1 - 1/R₀</b> (measles R₀=12-18 → HIT 92-95%) - <b>AEFI:</b> VITT (anti-PF4, no heparin, IVIG), Myocarditis (mRNA, young males 2nd dose), Narcolepsy (Pandemrix 2009)</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Vaccine immune response pathway (PRR → DC → LN → T/B)</li><li>Th1 vs Th2 vs Th17 vs Tfh functions and cytokines</li><li>Primary vs secondary response (lag, isotype, affinity, memory)</li><li>AID enzyme role in germinal centre (CSR + SHM)</li><li>Correlate of protection for Hep B, Hib, Influenza, Tetanus</li><li>HIT calculation (measles R₀=12 → 92%)</li><li>Adjuvant mechanisms (alum, MF59, AS01, CpG)</li><li>Conjugate principle (polysaccharide + protein → T-dependent)</li><li>VITT mechanism and treatment (no heparin!)</li><li>Factors reducing vaccine response (age, immunocompromise, malnutrition, HLA, microbiome)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Vaccine immune response pathway, Th subsets, primary/secondary, CoP for major vaccines, HIT calculation, adjuvant mechanisms, AEFI (VITT, myocarditis), factors affecting response</td></tr><tr><td>**Should Know 🟡**</td><td>GC reaction details, class switching, somatic hypermutation, original antigenic sin, trained immunity, AEFI causality, mucosal immunity, adjuvanted vaccines in elderly</td></tr><tr><td>**Nice to Know 🟢**</td><td>Systems vaccinology, single-cell immune profiling, AI antigen design, trained immunity, epigenetic memory, universal vaccines</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Structure: Definition/overview → Antigen processing (MHC I/II + cross-presentation) → DC maturation + LN migration → T cell polarisation (Th1/Th2/Th17/Tfh) → B cell activation (T-dep GC + T-ind) → Class switching + affinity maturation → Plasma cells + memory → Primary vs secondary → Adjuvants (mechanism, examples) → Herd immunity (formula, examples) → Correlates of protection (table) → AEFI → Clinical application</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet: Vaccine immune response pathway; Th1 vs Th2; Primary vs secondary; Conjugate principle; Adjuvants (alum, AS01, CpG); HIT formula; CoP for Hep B/Hib/Influenza; VITT</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"In your own words..." — lead with definition (vaccines = train adaptive immunity, generate memory), give pathway (PRR → DC → LN → T/B), mention correlates of protection, highlight exam trap (live contraindicated in pregnancy/immunocompromised; mRNA doesn't alter DNA; VITT no heparin)</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to patient: "Hep B non-responder → repeat 3-dose series; check anti-HBc"; "Asplenia → PCV + MenACWY + MenB + Hib + annual flu"; "Pregnant → Tdap 16-32 wk + flu + COVID-19, avoid live"; "Transplant → re-immunise 6-24m post, live last"</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>See One-Page Revision Summary above</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>Pathway: Ag + adj → PRR → DC → LN → MHC I/II → Th1/Th2/Th17/Tfh + CD8 + B → GC → memory</li><li>Th1 = cellular (IFN-γ); Th2 = humoral (IL-4); Tfh = GC help</li><li>Primary = IgM slow; Secondary = IgG fast high affinity</li><li>Conjugate = protein carrier → T-dep → &lt;2y</li><li>HIT = 1 - 1/R₀ (measles 95%, flu 50%)</li><li>Hep B CoP = ≥10 mIU/mL</li><li>VITT = anti-PF4, NO heparin, IVIG</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Vaccine-induced protective immunity against extracellular bacteria is primarily mediated by:</b></li></ol>
+<p>A. CD8+ cytotoxic T cells B. Neutralising antibodies (opsonisation, complement activation, neutralisation) C. NK cells D. Macrophages only E. CD4+ Th1 cells only</p>
+<ol><li><b>Herd Immunity Threshold (HIT) for a disease with R₀ = 4:</b></li></ol>
+<p>A. 50% B. 75% C. 60% D. 80% E. 90%</p>
+<ol><li><b>Alum (aluminium hydroxide) adjuvant primarily promotes:</b></li></ol>
+<p>A. Th2 response (humoral, IgE, IL-4) B. Th1 response C. Th17 response D. Treg response E. CTL response</p>
+<ol><li><b>Correlate of protection for Haemophilus influenzae type b (Hib) vaccine:</b></li></ol>
+<p>A. Anti-PRP IgG ≥0.15 μg/mL (≥1.0 μg/mL for long-term) B. Neutralising antibody titre (Hep B) C. CD4+ T cell count D. IFN-γ ELISpot E. Memory B cell frequency</p>
+<ol><li><b>Cross-presentation is required for vaccine induction of:</b></li></ol>
+<p>A. CD4+ Th2 cells B. CD8+ cytotoxic T cells (via MHC I from exogenous Ag) C. Antibody production directly D. Th17 differentiation E. Treg induction</p>
+<ol><li><b>Which of the following does NOT reduce vaccine immunogenicity?</b></li></ol>
+<p>A. Advanced age (immunosenescence) B. Immunocompromise C. Malnutrition D. Previous natural infection with the same pathogen (generally enhances, not reduces) E. Concurrent immunosuppressive therapy</p>
+<ol><li><b>T follicular helper (Tfh) cells are critical for:</b></li></ol>
+<p>A. Direct cytotoxicity B. Germinal centre formation, B cell affinity maturation, class switching C. Macrophage activation D. NK cell activation E. Mucosal IgA induction only</p>
+<ol><li><b>Memory B cell longevity after vaccination can be:</b></li></ol>
+<p>A. Weeks B. Months C. Years to decades (measles, smallpox = lifelong) D. Days E. Only during active infection</p>
+<ol><li><b>MF59 adjuvant (oil-in-water emulsion) mechanism of action:</b></li></ol>
+<p>A. TLR4 agonist B. Recruits immune cells, enhances antigen uptake, promotes balanced Th1/Th2 C. TLR9 agonist D. STING agonist E. Aluminium salt equivalent</p>
+<ol><li><b>Original antigenic sin refers to:</b></li></ol>
+<p>A. First infection prevents all future infections B. Immune response biased towards original strain, suboptimal response to new variants C. Vaccine failure in elderly D. Antibody-dependent enhancement E. Cross-protection</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 30-year-old healthcare worker receives 2 doses of mRNA COVID-19 vaccine 4 weeks apart. 2 weeks after 2nd dose, anti-spike IgG is undetectable and T cell responses are also low. CD4 count is 180 cells/μL (HIV). Best next step:</b></li></ol>
+<p>A. Repeat full 2-dose series B. Add a 3rd dose (extended primary) + check HIV viral load + start ART C. Switch to viral vector vaccine D. Give IVIG E. Reassure only</p>
+<ol><li><b>A 2-year-old child with sickle cell disease and functional asplenia. Routine vaccines were given per UK schedule. Additional vaccines required include:</b></li></ol>
+<p>A. Only annual flu B. MenACWY, MenB, PCV20 then PPSV23 ≥8 weeks later, Hib booster if needed C. Hep B booster D. BCG E. Yellow fever</p>
+<ol><li><b>A 28-year-old pregnant woman at 24 weeks gestation. Which vaccine is CONTRAINDICATED?</b></li></ol>
+<p>A. Tdap (Boostrix) B. Injectable influenza C. mRNA COVID-19 D. MMR E. All are safe in pregnancy</p>
+<ol><li><b>A 50-year-old man presents 12 days after AstraZeneca COVID-19 vaccine with severe headache, abdominal pain, thrombocytopenia 35 × 10⁹/L, elevated D-dimer, and CT showing portal vein thrombosis. Best management:</b></li></ol>
+<p>A. Aspirin + therapeutic heparin B. IVIG + non-heparin anticoagulation (argatroban/fondaparinux) — VITT protocol; avoid heparin C. Platelet transfusion D. Aspirin + warfarin E. Reassure and discharge</p>
+<ol><li><b>A 25-year-old woman is found to be anti-HBs negative (0 mIU/mL) after completing 3-dose Hep B vaccine series. Best next step:</b></li></ol>
+<p>A. Declare non-responder; offer HBIG if exposure B. Repeat 3-dose series (often gives response in initial non-responders); check anti-HBc to rule out chronic infection C. Switch to oral Hep B D. Give IVIG E. Booster only</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>Vaccine immunity pathway?</b></li></ul>
+<p>A: Ag + adjuvant → PRR (TLR) on DC → DC maturation → LN migration → MHC I/II → T cell + B cell activation → memory</p>
+<ul><li>Q: <b>Th1 signature cytokines &amp; function?</b></li></ul>
+<p>A: IFN-γ, IL-2, TNF; cellular immunity, intracellular pathogens, macrophage activation</p>
+<ul><li>Q: <b>Th2 signature cytokines &amp; function?</b></li></ul>
+<p>A: IL-4, IL-5, IL-13, IL-10; humoral immunity, B cell help, IgE, parasites, allergy</p>
+<ul><li>Q: <b>Th17 function?</b></li></ul>
+<p>A: IL-17, IL-22; mucosal immunity, neutrophil recruitment, barrier integrity</p>
+<ul><li>Q: <b>Tfh function?</b></li></ul>
+<p>A: Germinal centre B cell help; CXCR5+ Bcl-6+; class switching + affinity maturation</p>
+<ul><li>Q: <b>Herd immunity formula?</b></li></ul>
+<p>A: HIT = 1 - 1/R₀</p>
+<ul><li>Q: <b>R₀ = 4 → HIT?</b></li></ul>
+<p>A: 1 - 1/4 = 75%</p>
+<ul><li>Q: <b>R₀ = 12 (measles) → HIT?</b></li></ul>
+<p>A: 1 - 1/12 ≈ 92%</p>
+<ul><li>Q: <b>Alum adjuvant mechanism?</b></li></ul>
+<p>A: NLRP3 inflammasome, depot effect, Th2 promotion</p>
+<ul><li>Q: <b>AS01 mechanism?</b></li></ul>
+<p>A: Liposome + MPL (TLR4) + QS-21 (saponin); strong Th1 + Ab</p>
+<ul><li>Q: <b>CpG mechanism?</b></li></ul>
+<p>A: TLR9 agonist; Th1, IgG2</p>
+<ul><li>Q: <b>MF59 mechanism?</b></li></ul>
+<p>A: Squalene oil-in-water; recruits immune cells, balanced Th1/Th2</p>
+<ul><li>Q: <b>Correlate of protection for Hib?</b></li></ul>
+<p>A: Anti-PRP IgG ≥0.15 μg/mL (≥1.0 for long-term)</p>
+<ul><li>Q: <b>Correlate of protection for Hep B?</b></li></ul>
+<p>A: Anti-HBs ≥10 mIU/mL</p>
+<ul><li>Q: <b>Correlate of protection for Influenza?</b></li></ul>
+<p>A: HAI titre ≥1:40</p>
+<ul><li>Q: <b>Correlate of protection for Tetanus?</b></li></ul>
+<p>A: Anti-tetanus IgG ≥0.1 IU/mL (short-term); ≥1.0 IU/mL (long-term)</p>
+<ul><li>Q: <b>Cross-presentation?</b></li></ul>
+<p>A: Exogenous antigen → MHC I → CD8+ T cells (specialised DCs)</p>
+<ul><li>Q: <b>Primary vs secondary response?</b></li></ul>
+<p>A: Primary = slow, IgM, low affinity, no memory. Secondary = fast, IgG, high affinity, anamnestic</p>
+<ul><li>Q: <b>Class switching (CSR) enzyme?</b></li></ul>
+<p>A: AID (Activation-Induced Cytidine Deaminase) in germinal centre</p>
+<ul><li>Q: <b>Conjugate vaccine converts?</b></li></ul>
+<p>A: T-independent polysaccharide → T-dependent (via carrier protein)</p>
+<ul><li>Q: <b>VITT mechanism?</b></li></ul>
+<p>A: Anti-PF4 antibodies → platelet activation + thrombosis + thrombocytopenia</p>
+<ul><li>Q: <b>VITT treatment?</b></li></ul>
+<p>A: IVIG + non-heparin anticoagulation (argatroban, fondaparinux); avoid heparin</p>
+<ul><li>Q: <b>mRNA COVID myocarditis risk group?</b></li></ul>
+<p>A: Young males, 2nd dose; usually mild; ~1-13/100,000</p>
+<ul><li>Q: <b>Narcolepsy-associated vaccine?</b></li></ul>
+<p>A: Pandemrix (AS03-adjuvanted H1N1, 2009, Europe)</p>
+<ul><li>Q: <b>Memory B cell duration?</b></li></ul>
+<p>A: Years to decades (measles, smallpox lifelong)</p>
+<ul><li>Q: <b>Factors reducing vaccine response?</b></li></ul>
+<p>A: Age (infant + elderly), immunocompromise, malnutrition, genetics/HLA, microbiome, smoking, alcohol</p>
+<ul><li>Q: <b>Live vaccine interval between two live vaccines?</b></li></ul>
+<p>A: Same day OR ≥4 weeks apart</p>
+<ul><li>Q: <b>Original antigenic sin?</b></li></ul>
+<p>A: Bias to original strain, suboptimal response to variants</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Extracellular bacteria = Ab-mediated (opsonisation, complement, neutralisation). CD8+ CTL for intracellular.</li><li><b>B</b> — HIT = 1 - 1/4 = 0.75 = 75%.</li><li><b>A</b> — Alum = Th2 (humoral, IgE); NOT Th1 (no strong CTL). Newer adjuvants (AS01, CpG) for Th1.</li><li><b>A</b> — Hib CoP = anti-PRP IgG ≥0.15 μg/mL (short-term); ≥1.0 μg/mL (long-term). Hep B CoP is anti-HBs (different question).</li><li><b>B</b> — Cross-presentation = exogenous Ag on MHC I → CD8+ T cell priming (for subunit/inactivated vaccines that don't replicate inside cells).</li><li><b>D</b> — Previous natural infection with SAME pathogen <b>enhances</b> response (memory pool exists). Other options reduce response.</li><li><b>B</b> — Tfh = germinal centre help (Bcl-6+, CXCR5+); class switching + affinity maturation + memory. NOT direct cytotoxicity.</li><li><b>C</b> — Memory B cells: years to decades (measles, smallpox = lifelong). Plasma cells in BM produce Ab for decades.</li><li><b>B</b> — MF59 = squalene oil-in-water emulsion; recruits immune cells, enhances Ag uptake, balanced Th1/Th2 (NOT TLR4, NOT TLR9).</li><li><b>B</b> — Original antigenic sin = first-encountered strain biases subsequent response; new variants elicit less optimal Ab.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — HIV with CD4&lt;200: poor vaccine response; 3rd dose (extended primary) + ART + check viral load. Repeat 2-dose may not work; viral vector (C) less effective in HIV due to Ad26 baseline immunity risk; IVIG not indicated.</li><li><b>B</b> — Asplenia/sickle cell: PCV20 (conjugate = T-dep) + PPSV23 ≥8 weeks later + MenACWY + MenB + Hib + annual flu. Annual flu alone insufficient.</li><li><b>D</b> — MMR = live attenuated; <b>contraindicated in pregnancy</b> (theoretical teratogenicity; avoid 1 month before and during). Tdap, IIV, mRNA all SAFE and recommended.</li><li><b>B</b> — VITT: 5-30 days post-ChAdOx1, thrombocytopenia + thrombosis + high D-dimer + anti-PF4 ELISA positive. <b>Heparin contraindicated</b> (PF4 cross-reactivity). Treat with <b>IVIG + non-heparin anticoagulation</b> (argatroban, fondaparinux, DOAC).</li><li><b>B</b> — Initial Hep B non-responder: repeat 3-dose series (50% become responders); check anti-HBc to rule out chronic infection (carrier state = false negative anti-HBs but positive anti-HBc). Don't declare non-responder until 2 complete series.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Vaccine Immunology: Principles &amp; Mechanisms</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Vaccines train adaptive immunity via PRR-mediated DC activation → Th polarisation + B cell help → germinal centre (affinity maturation + class switching) → memory. Conjugate vaccines solve infant immunogenicity. Correlates of protection (anti-HBs ≥10, anti-PRP ≥0.15, HAI ≥1:40) are exam-favoured. HIT = 1-1/R₀. Adjuvants (alum, MF59, AS01, CpG) shape response. AEFI (VITT, myocarditis, GBS, narcolepsy) have specific mechanisms and management. <b>Exam focus:</b> Immune response pathway, Th subsets, primary vs secondary, CoP, HIT formula, conjugate principle, adjuvant mechanisms, VITT, factors affecting response. <b>Clinical relevance:</b> Vaccine selection in immunocompromised, pregnancy, elderly, asplenia; interpreting AEFI; outbreak management; chronic disease vaccinations.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Vaccine Immunology Principles Mechanisms · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

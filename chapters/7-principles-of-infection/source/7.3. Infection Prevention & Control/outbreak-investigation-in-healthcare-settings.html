@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Outbreak Investigation In Healthcare Settings — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.3. INFECTION PREVENTION & CONTROL</span>
+      <div class="h1">Outbreak Investigation In Healthcare Settings</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define <b>healthcare outbreak</b>, recognise <b>trigger thresholds</b>, and distinguish true outbreaks from pseudo-outbreaks.</li><li>Apply the <b>10-step framework</b> of outbreak investigation (WHO/CDC/UKHSA) in a healthcare setting.</li><li>Construct a valid <b>case definition</b> (confirmed/probable/possible) using person, place, time, and clinical/microbiological criteria.</li><li>Build a <b>line list</b> and perform active case finding (laboratory, clinical, administrative, screening).</li><li>Interpret the <b>epidemic curve</b> (point source, continuous common source, propagated) and infer likely mode of transmission.</li><li>Calculate and interpret <b>attack rates, attack rate ratios (RR), and odds ratios (OR)</b>, including dose–response analysis.</li><li>Choose between <b>cohort</b> and <b>case-control</b> analytical study designs based on outbreak size, denominator availability, and likely transmission pattern.</li><li>Apply <b>molecular typing methods</b> (WGS, PFGE, MLST, spa typing, MIRU-VNTR) to confirm transmission chains and interpret SNP thresholds and phylogenetic trees.</li><li>Design and implement <b>control measures</b> targeting source, transmission, and host (hierarchy of controls).</li><li>Conduct <b>environmental assessments, screening of HCW/patients, and product/device testing</b>.</li><li>Communicate findings (internal reports, SITREPs, regulatory notifications, media handling) and write the <b>final outbreak report</b>.</li><li>Conduct a <b>post-outbreak review</b> (after-action review) and translate lessons into policy and IPC bundle updates.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Outbreak**</td><td>An observed number of cases of a specific infection/disease **in excess of the expected baseline** for that time, place, and population. Two cases of a rare condition may be sufficient; ten cases of a common condition may not be.</td></tr><tr><td>**Pseudo-outbreak**</td><td>A perceived increase in cases due to enhanced surveillance, change in diagnostic test/case definition, contamination of specimens/tests, or a single contaminated source with no actual transmission. Must be excluded early.</td></tr><tr><td>**Trigger threshold**</td><td>Pre-defined alert criteria that prompt formal investigation (e.g., 1 case of measles/VRSA/CJD/VHF in a hospital; ≥ 2 epidemiologically linked cases of MDRO; cluster of SSI/CLABSI above SIR; ≥ 3 cases of gastroenteritis on one ward in 48 h; 2 or more cases of TB with epidemiological link).</td></tr><tr><td>**Outbreak Management Team (OMT)**</td><td>Multi-disciplinary team convened to lead the investigation: IPC lead (chair), infectious diseases/microbiology, public health, hospital epidemiologist, communications, estates/facilities, cleaning services, occupational health, clinical leads of affected units, pharmacy (AMS), executive representative.</td></tr><tr><td>**Case definition**</td><td>A standardised set of **clinical, laboratory, and epidemiologic (person + place + time) criteria** that determines whether an individual should be counted as a case. Stratified into **confirmed / probable / possible**. Must be applied **consistently** and **inclusively** at the start (sensitivity) and refined later (specificity).</td></tr><tr><td>**Confirmed case**</td><td>Meets the case definition with definitive laboratory confirmation (culture, PCR, WGS, serology, histopathology).</td></tr><tr><td>**Probable case**</td><td>Meets the clinical + epi criteria with supportive but not confirmatory laboratory evidence (e.g., single high-titre antibody, epi-linked to a confirmed case).</td></tr><tr><td>**Possible / Suspected case**</td><td>Meets some but not all criteria — typically the clinical syndrome with an epi link but lacking laboratory confirmation. Retained for descriptive epidemiology.</td></tr><tr><td>**Index case**</td><td>The **first** case identified in the outbreak. Not necessarily the **primary** (source) case.</td></tr><tr><td>**Primary case**</td><td>The case that **introduced** the infection into the population (the original source case).</td></tr><tr><td>**Secondary case**</td><td>A case that acquired infection from the primary case (person-to-person transmission).</td></tr><tr><td>**Line list**</td><td>A spreadsheet (one row per case) with key variables: ID, demographics, admission date, location/ward, onset date, symptoms, underlying disease, device/procedure exposures, lab results (incl. typing), treatment, outcome, HCW/visitor link.</td></tr><tr><td>**Epidemic curve (epi curve)**</td><td>A histogram of case **onset dates** (or dates of first positive specimen) plotted against time. The shape indicates the **mode of transmission** (point source, continuous common source, propagated, mixed).</td></tr><tr><td>**Point source outbreak**</td><td>All cases exposed to a **single, brief, common source** within one incubation period (food, product, single contaminated device). Epi curve = sharp peak, rapid rise and fall within 1 incubation period.</td></tr><tr><td>**Continuous common-source outbreak**</td><td>Exposure to a **prolonged or ongoing** source (contaminated water supply, defective ventilation, repeatedly used contaminated product). Epi curve = **plateau** (sustained excess) rather than sharp peak.</td></tr><tr><td>**Propagated outbreak**</td><td>Person-to-person spread with successive waves of cases (generation-to-generation). Epi curve = **successive peaks** at intervals of ~ 1 serial interval. May be halted by control measures.</td></tr><tr><td>**Mixed outbreak**</td><td>Features of more than one pattern (e.g., common-source + propagated secondary wave).</td></tr><tr><td>**Serial interval**</td><td>Time between onset in a primary case and onset in a secondary case (used to interpret propagated curves).</td></tr><tr><td>**Attack rate (AR)**</td><td>Number of new cases ÷ population at risk **over a defined period**. Expressed as % or per 1000.</td></tr><tr><td>**Secondary attack rate (SAR)**</td><td>Number of cases among contacts of a primary case ÷ total susceptible contacts. Measures transmissibility.</td></tr><tr><td>**Relative risk (RR) / Risk ratio**</td><td>Risk in exposed ÷ risk in unexposed. Calculated in a **cohort** design. RR = 1 = no association; > 1 = exposure increases risk; < 1 = protective.</td></tr><tr><td>**Odds ratio (OR)**</td><td>Odds of exposure in cases ÷ odds of exposure in controls. Approximates RR when disease is rare. Calculated in **case-control** design.</td></tr><tr><td>**Dose–response (Attack Rate by Level, ARL)**</td><td>Attack rates stratified by **intensity of exposure** (e.g., number of food items eaten, hours of contact, dose of medication). Rising ARL across levels of exposure strengthens causal inference.</td></tr><tr><td>**Cohort study (retrospective)**</td><td>All individuals in a defined exposed population (e.g., all patients on a ward, all attendees of a banquet) are classified by exposure status and followed for disease outcome. Yields attack rates and **RRs**.</td></tr><tr><td>**Case-control study**</td><td>Cases (with the infection) and controls (without) are compared on past exposures. Yields **ORs**. Used when population is large or denominator unknown.</td></tr><tr><td>**2 × 2 table**</td><td>Standard layout: a = exposed cases, b = exposed non-cases, c = unexposed cases, d = unexposed non-cases. RR (cohort) = [a/(a+b)] / [c/(c+d)]; OR (case-control) = ad/bc.</td></tr><tr><td>**Molecular typing**</td><td>Laboratory methods to determine genetic relatedness of isolates. Used to confirm or refute transmission.</td></tr><tr><td>**PFGE (Pulsed-Field Gel Electrophoresis)**</td><td>Older gold standard for many organisms; ≥ 80–90 % similarity = possibly related.</td></tr><tr><td>**MLST (Multi-Locus Sequence Typing)**</td><td>Sequence-based, slower-changing; good for long-term epidemiology and global clones (e.g., ST131 E. coli, ST239 MRSA).</td></tr><tr><td>**spa typing**</td><td>Sequence-based typing of the *spa* (Protein A) gene in *S. aureus*; portable, fast, good for short-term outbreaks.</td></tr><tr><td>**MIRU-VNTR**</td><td>Mycobacterial Interspersed Repetitive Units – Variable Number Tandem Repeats; standard typing for *M. tuberculosis*.</td></tr><tr><td>**WGS (Whole Genome Sequencing)**</td><td>Current **gold standard** for transmission investigation. Compares SNPs between isolates. Organism-specific thresholds define "related."</td></tr><tr><td>**SNP threshold**</td><td>Maximum number of single-nucleotide polymorphism differences between isolates considered part of the same transmission cluster. Varies by organism (e.g., MRSA ≤ 5 SNPs; TB ≤ 5–12 SNPs; *C. difficile* ≤ 2–10 SNPs; *K. pneumoniae* ≤ 25 SNPs; *A. baumannii* ≤ 5 SNPs; *Salmonella* Typhi ≤ 5).</td></tr><tr><td>**Phylogenetic tree**</td><td>Visual representation of genetic relatedness among isolates; clusters of closely related isolates suggest recent transmission.</td></tr><tr><td>**Control measures**</td><td>Actions to interrupt transmission: targeting **source** (isolation, removal of contaminated product, debridement, drainage), **transmission** (hand hygiene, PPE, cohorting, environmental cleaning, ward closure), and **host** (vaccination, prophylaxis, screening, decolonisation, treatment).</td></tr><tr><td>**Hierarchy of controls**</td><td>Most → least effective: **Elimination → Substitution → Engineering → Administrative → PPE**.</td></tr><tr><td>**HCW screening**</td><td>Microbiological testing of healthcare workers (skin, nasal, perineal, throat, faecal) to identify carriers implicated in transmission.</td></tr><tr><td>**Environmental sampling**</td><td>Swabs/cultures of surfaces, water, air, devices, solutions, food, medications to identify the environmental reservoir. Not routine; targeted based on hypothesis.</td></tr><tr><td>**Outbreak report**</td><td>Formal IMRaD document (Background → Methods → Results → Discussion → Recommendations) with action plan, shared with Trust board, IPC committee, public health authorities, and (if appropriate) published.</td></tr><tr><td>**SITREP (Situation Report)**</td><td>Daily/regular brief update on outbreak status during the active phase (case count, admissions, deaths, control status, key actions).</td></tr><tr><td>**Post-outbreak review (After-Action Review, AAR)**</td><td>Structured debrief after outbreak closure to identify system gaps, successes, lessons, and update IPC policies, training, and bundles.</td></tr><tr><td>**NOTIFY** (ICD)</td><td>IHR (International Health Regulations, WHO 2005) require notification of certain events (SARS, smallpox, VHF, novel influenza, polio, SARS-CoV-2 variants of concern) to WHO within 24 h.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Overview, Definition, Triggers, and Outbreak Types</div>
+<p>#### What Constitutes an Outbreak?</p>
+<p>An <b>outbreak</b> exists when the <b>observed number of cases</b> of a particular infection, linked by time, place, and person, <b>exceeds the expected (baseline) number</b> in that population.</p>
+<ul><li><b>"Expected"</b> is derived from the facility's own historical surveillance (incidence, prevalence, SIR), national benchmark data (NHSN, ECDC PPS), or seasonal pattern.</li><li>A single case of a <b>rare, severe, or notifiable disease</b> (e.g., measles, invasive GAS, VHF, CJD, VRSA, diphtheria, botulism) in a healthcare facility constitutes an outbreak until proven otherwise.</li><li>Conversely, an apparent increase in cases may be a <b>pseudo-outbreak</b> due to:</li><li><b>Enhanced surveillance</b> (more cases simply being found).</li><li><b>Change in diagnostic test</b> (e.g., new PCR, change in breakpoint → more positives).</li><li><b>Change in case definition</b> (broader criteria).</li><li><b>Specimen contamination</b> at the lab or bedside.</li><li><b>Clustering of susceptible patients</b> (e.g., a transplant unit).</li></ul>
+<p>#### Outbreak Triggers (Examples)</p>
+<table class="ctable"><tr><th>Trigger</th><th>Examples</th><th>Action</th></tr><tr><td>---------</td><td>----------</td><td>--------</td></tr><tr><td>**Single rare/serious case**</td><td>Measles, VHF, CJD, diphtheria, VRSA, invasive GAS, MDR-TB</td><td>Immediate escalation, OMT</td></tr><tr><td>**Unusual AMR pattern**</td><td>Pan-resistance (e.g., XDR *Acinetobacter*, MCR-1, CZA-R)</td><td>OMT, screening</td></tr><tr><td>**≥ 2 epi-linked cases**</td><td>Two surgical site infections with the same organism on same theatre list</td><td>OMT</td></tr><tr><td>**Threshold breach in surveillance**</td><td>MRSA BSI rate > 95th percentile; CDI SIR > 1; SSI rate doubling</td><td>OMT</td></tr><tr><td>**Point-source contamination**</td><td>Single contaminated product, batch, or device implicated in ≥ 2 institutions</td><td>Multi-facility OMT + regulator</td></tr><tr><td>**Symptom cluster**</td><td>≥ 3 vomiting/diarrhoea cases on a ward in 48 h</td><td>Ward-level OMT</td></tr><tr><td>**HCW cluster**</td><td>≥ 2 HCWs with the same occupationally acquired infection</td><td>OH + IPC</td></tr></table>
+<p>#### Types of Healthcare Outbreaks</p>
+<table class="ctable"><tr><th>Type</th><th>Common Examples</th><th>Source</th></tr><tr><td>------</td><td>----------------</td><td>--------</td></tr><tr><td>**Point source (single, brief)**</td><td>Foodborne outbreak from a contaminated meal; single contaminated medication vial; one procedure with a contaminated instrument</td><td>Catering, pharmacy, theatre</td></tr><tr><td>**Continuous common source**</td><td>Contaminated water supply (Legionella, Pseudomonas); contaminated sink/drain; defective ventilation; repeated use of contaminated multi-dose vial</td><td>Estates, water safety, pharmacy</td></tr><tr><td>**Propagated (person-to-person)**</td><td>Norovirus, influenza, RSV, measles, varicella, MRSA, VRE, *C. difficile*, TB</td><td>Inadequate IPC, crowding, low vaccination</td></tr><tr><td>**Mixed**</td><td>Point source → secondary person-to-person spread (e.g., foodborne outbreak then kitchen → ward spread)</td><td>Multiple</td></tr><tr><td>**Pseudo-outbreak**</td><td>Laboratory contamination; surveillance artefact</td><td>Lab, surveillance system</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: The 10 Steps of Outbreak Investigation</div>
+<p>The classic 10-step framework (CDC/WHO/UKHSA) is a <b>logical sequence</b>, but in practice is <b>iterative</b> — control measures and hypothesis testing may begin in parallel with descriptive epidemiology. Always start by confirming the diagnosis and the existence of an outbreak <b>before</b> mounting a large investigation.</p>
+<table class="ctable"><tr><th>Step</th><th>Action</th><th>Output / Tool</th></tr><tr><td>------</td><td>--------</td><td>---------------</td></tr><tr><td>**1. Prepare for field work**</td><td>Assemble OMT, confirm authority (DIPC/CEO), secure resources (lab capacity, IT, data, PPE, communications).</td><td>Terms of reference; OMT membership; data protection impact assessment (DPIA).</td></tr><tr><td>**2. Verify the existence of an outbreak / confirm diagnosis**</td><td>Compare current case numbers to baseline. Review diagnostic methods (was there a change in test?). Confirm at least 1 case by lab + clinical.</td><td>Baseline incidence report; verified diagnosis.</td></tr><tr><td>**3. Define a case and identify cases**</td><td>Construct a case definition (person + place + time + clinical + lab). Apply retro- and prospectively.</td><td>Case definition; line list begins.</td></tr><tr><td>**4. Find cases (active case finding)**</td><td>Lab-based, ward-based, screening (HCW, patients), lookback, microbiology alerts, IT searches.</td><td>Expanded line list.</td></tr><tr><td>**5. Describe by person, place, time**</td><td>Demographics, clinical features, ward locations, onset dates → **epidemic curve** (epi curve).</td><td>Descriptive summary; epidemic curve.</td></tr><tr><td>**6. Develop hypotheses**</td><td>Consider exposure / source / mode from descriptive data, prior literature, biologic plausibility.</td><td>Ranked hypothesis list.</td></tr><tr><td>**7. Test hypotheses (analytical epi)**</td><td>**Cohort** for defined population (point source); **case-control** when large/unknown denominator (propagated). Calculate RR or OR + 95 % CI; consider dose–response (ARL).</td><td>2×2 tables, RR/OR, ARL, stratified analysis.</td></tr><tr><td>**8. Refine hypotheses / additional studies**</td><td>Environmental sampling, HCW screening, molecular typing (WGS, PFGE, spa, MLVA, MIRU-VNTR), lookback, product recall.</td><td>Confirmed/refuted hypothesis; source identified.</td></tr><tr><td>**9. Implement control & prevention measures**</td><td>Source, transmission, host. Continuous re-evaluation.</td><td>Bundles, screening, isolation, recall, ward closure, communications.</td></tr><tr><td>**10. Communicate findings**</td><td>Internal SITREPs, OMT minutes, IPC committee, exec board, regulator (UKHSA/CDC/PHE/Public Health), front-line staff, patients/visitors, media statement if needed. **Write final outbreak report** (IMRaD).</td><td>Final report; published lessons; AAR.</td></tr></table>
+<div class="callout"><b>Exam pearl:</b> Steps 1–4 are about <b>case ascertainment</b>; steps 5–6 are <b>descriptive</b>; step 7 is <b>analytical</b>; steps 8–9 are <b>intervention</b>; step 10 is <b>communication</b>. <b>Do not skip</b> step 2: a pseudo-outbreak wastes resources and damages morale.</div>
+<p>#### Step 3: Constructing a Case Definition</p>
+<p>A good case definition has <b>four components</b>:</p>
+<ol><li><b>Person:</b> Age, sex, occupation, underlying conditions, ward/location.</li><li><b>Place:</b> Hospital, unit, ward, service line, geography.</li><li><b>Time:</b> Onset window (often back 1 maximum incubation period from the index case to the present).</li><li><b>Clinical and laboratory:</b> Specific symptoms/signs, organ system, and confirmatory test.</li></ol>
+<p><b>Levels of case definition:</b></p>
+<ul><li><b>Confirmed</b> — laboratory-confirmed with species + typing.</li><li><b>Probable</b> — clinically compatible + epi-linked to confirmed case OR supportive lab.</li><li><b>Possible / suspect</b> — clinical syndrome + exposure, awaiting lab confirmation.</li></ul>
+<p><b>Tensions:</b></p>
+<ul><li>A <b>highly specific</b> definition will miss true cases and underestimate AR but will identify a real signal.</li><li>A <b>highly sensitive</b> definition captures more cases (and possibly more false positives) but gives larger numbers and broader exposure opportunities to study.</li><li><b>Start broad, refine later</b> as the investigation matures.</li></ul>
+<p><b>Example:</b> "A patient admitted to Ward 4B between 1 June and 30 June who develops ≥ 3 loose stools/24 h and yields <i>C. difficile</i> toxin-positive stool on PCR; OR a patient with pseudomembranous colitis on endoscopy and an epi link to a confirmed case."</p>
+<p>#### Step 4: Active Case Finding &amp; the Line List</p>
+<p><b>Sources to interrogate:</b></p>
+<ul><li>Microbiology / virology / molecular lab alerts (real-time, automated, mandatory).</li><li>Ward rounds, bedside review, nursing reports.</li><li>Outpatient clinics, ED, OPAT.</li><li>Occupational health (HCW illness).</li><li>Pharmacy (antimicrobial prescriptions, laxative use).</li><li>Radiology (e.g., cluster of CXR opacities).</li><li>ICD-coded discharge data.</li><li>Reporting from other hospitals/regions (cross-facility lookback).</li><li>Visitor / patient complaints.</li><li>Death certificates / mortality review.</li><li>Screening of asymptomatic contacts (HCW nasal, perineal, faecal).</li></ul>
+<p><b>Line list columns (one row per case):</b></p>
+<table class="ctable"><tr><th>ID</th><th>Name/MRN</th><th>Age</th><th>Sex</th><th>Admit date</th><th>Ward</th><th>Onset</th><th>Symptoms</th><th>Underlying Dx</th><th>Devices</th><th>Procedures</th><th>Specimen</th><th>Organism</th><th>Typing</th><th>AMC</th><th>HCW link</th><th>Visitor link</th><th>Outcome</th></tr><tr><td>----</td><td>----------</td><td>-----</td><td>-----</td><td>-----------</td><td>------</td><td>-------</td><td>----------</td><td>---------------</td><td>---------</td><td>------------</td><td>----------</td><td>----------</td><td>--------</td><td>-----</td><td>----------</td><td>--------------</td><td>---------</td></tr></table>
+<div class="callout"><b>Exam pearl:</b> A "good" line list is one that allows the investigator to <b>stratify by exposure</b> (ward, device, procedure, time) at a glance. Time-to-onset (relative to admit or procedure) is a critical field.</div>
+<p>#### Step 5: Descriptive Epidemiology — Person, Place, Time</p>
+<p><b>Person:</b> Age, sex, ethnicity, comorbidity (Charlson, immunosuppression), prior ABx, prior hospitalisation, vaccination status, occupation, ward of admission, length of stay.</p>
+<p><b>Place:</b> Hospital, ward, bay, room, bed space, day hospital, dialysis unit, clinic, OR, procedure room, ICU, communal areas (café, lifts), residential home link.</p>
+<p><b>Time:</b> Onset of symptoms, date of first positive specimen, time from admission to onset, time from procedure to onset. Plot as an <b>epidemic curve</b> (histogram of onset dates).</p>
+<p><b>Epidemic Curve Patterns</b></p>
+<p>``<code>mermaid flowchart LR A[Epidemic Curve] --&gt; B[Point Source&lt;br/&gt;Sharp single peak&lt;br/&gt;1 incubation period] A --&gt; C[Continuous Common Source&lt;br/&gt;Plateau / sustained excess] A --&gt; D[Propagated&lt;br/&gt;Serial peaks&lt;br/&gt;~1 serial interval apart] A --&gt; E[Mixed / Pseudo] B --&gt; B1[Examples:&lt;br/&gt;Food poisoning, single contaminated vial] C --&gt; C1[Examples:&lt;br/&gt;Legionella water, contaminated product in use] D --&gt; D1[Examples:&lt;br/&gt;Norovirus, influenza, MRSA, VRE, CDI, measles] </code>``</p>
+<p><b>ASCII / conceptual epi curves:</b></p>
+<p>``` Point source:                Continuous common source:    Propagated:</p>
+<table class="ctable"><tr><th>#                                       # # #               #       #</th></tr><tr><td>###                                     ## ##                #      ##</td></tr><tr><td>#####                                   ##  ##                 ##   ##</td></tr><tr><td>#######                                ###   ###                 # ##</td></tr><tr><td>#########                             ###     ###                  ##</td></tr><tr><td>__________time__                      ___________time__           ____time___</td></tr><tr><td><---1 incubation period---></td></tr></table>
+<p>```</p>
+<p><b>Interpretation of epi curve:</b></p>
+<ul><li><b>Point source:</b> Median onset = 1 incubation period from exposure; rise and fall over 1–2 incubation periods; implies single brief shared exposure.</li><li><b>Continuous:</b> Plateau, may be flat or irregular; implies ongoing exposure (water, ventilation, contaminated product in use).</li><li><b>Propagated:</b> Successive peaks 1 serial interval apart; implies person-to-person spread. Initially single peak (primary cases) → second wave (secondary cases) → third wave (tertiary).</li><li><b>Mixed:</b> First a point source peak, then propagated second wave.</li></ul>
+<p><b>Estimate the incubation period:</b> For a point source, the median (or peak) onset interval from the suspected exposure gives a reasonable estimate of the incubation period. Then compare this with the known incubation period of the suspected organism to test the hypothesis.</p>
+<p>#### Step 6: Hypothesis Generation</p>
+<p>Sources of hypothesis:</p>
+<ul><li>Descriptive data (who, where, when).</li><li>Known biology of the organism.</li><li>Literature (prior outbreaks, systematic reviews).</li><li>Site visit / observational walk-through.</li><li>Conversations with frontline staff.</li><li>Common exposures (shared ward, theatre list, food, water, devices, multi-dose vials, HCW, parenteral nutrition, ice, ultrasound gel, heater-cooler units).</li></ul>
+<p>A hypothesis must specify: <b>the source, the mode of transmission, and the exposure(s) being measured</b>.</p>
+<p>#### Step 7: Analytical Epidemiology — Testing the Hypothesis</p>
+<p>##### Choice of Design</p>
+<table class="ctable"><tr><th>Design</th><th>When to Use</th><th>What It Calculates</th></tr><tr><td>--------</td><td>-------------</td><td>---------------------</td></tr><tr><td>**Retrospective cohort**</td><td>Defined, finite exposed population (e.g., all patients on a ward, all attendees at a banquet, all patients receiving a specific medication batch). Denominator known. **Best for point-source/continuous common-source outbreaks.**</td><td>Attack rates, **RR** (a/(a+b) ÷ c/(c+d)) with 95 % CI.</td></tr><tr><td>**Case-control**</td><td>Large or ill-defined population (community outbreak, propagated spread, hospital-wide clusters). Denominator unknown or impractically large. **Best for propagated outbreaks.**</td><td>**OR** (ad/bc) with 95 % CI.</td></tr><tr><td>**Cross-sectional**</td><td>Snapshot; rarely used in outbreak investigation (sampling limitations).</td><td>Prevalence, prevalence OR.</td></tr><tr><td>**Ecological**</td><td>Population-level associations; **weak for outbreak** (ecological fallacy).</td><td>–</td></tr></table>
+<p>##### The 2 × 2 Table</p>
+<table class="ctable"><tr><th></th><th>Cases</th><th>Non-cases</th><th>Total</th></tr><tr><td>---</td><td>-------</td><td>-----------</td><td>-------</td></tr><tr><td>**Exposed**</td><td>a</td><td>b</td><td>a+b</td></tr><tr><td>**Not exposed**</td><td>c</td><td>d</td><td>c+d</td></tr><tr><td>**Total**</td><td>a+c</td><td>b+d</td><td>N</td></tr></table>
+<ul><li><b>Cohort study → Relative Risk (RR):</b> RR = [a / (a + b)] ÷ [c / (c + d)]</li><li><b>Case-control study → Odds Ratio (OR):</b> OR = (a × d) / (b × c)</li></ul>
+<p><b>Interpretation:</b></p>
+<ul><li>RR = 1 / OR = 1: No association.</li><li>RR &gt; 1 / OR &gt; 1: Exposure increases risk.</li><li>RR &lt; 1 / OR &lt; 1: Exposure protective.</li><li>95 % CI that <b>excludes 1</b> = statistically significant (p &lt; 0.05).</li></ul>
+<p><b>Worked example (cohort):</b> Banquet with 200 attendees. 80 ate the suspected dish; 40 of these became ill. 120 did not eat it; 10 of these became ill.</p>
+<table class="ctable"><tr><th></th><th>Ill</th><th>Well</th><th>Total</th><th>AR</th></tr><tr><td>---</td><td>-----</td><td>------</td><td>-------</td><td>----</td></tr><tr><td>Ate dish</td><td>40 (a)</td><td>40 (b)</td><td>80</td><td>50 %</td></tr><tr><td>Did not</td><td>10 (c)</td><td>110 (d)</td><td>120</td><td>8.3 %</td></tr></table>
+<ul><li>RR = 0.50 / 0.083 ≈ <b>6.0</b> → eating the dish associated with 6× risk.</li><li>Attributable Risk (AR) = 50 % − 8.3 % = <b>41.7 %</b> (excess risk in exposed).</li><li>Attributable Fraction (in exposed) = (RR − 1)/RR = 5/6 ≈ <b>83 %</b> of cases in exposed attributable to dish.</li><li>Population Attributable Fraction = [Pe (RR − 1)] / [1 + Pe (RR − 1)] (Pe = proportion exposed in total population = 80/200 = 0.40) = (0.40 × 5)/(1 + 0.40 × 5) = 2/3 = <b>66.7 %</b>.</li></ul>
+<p><b>Worked example (case-control):</b> Hospital MRSA outbreak, 30 cases and 60 controls. Among cases, 18 had been on Ward A; among controls, 20.</p>
+<table class="ctable"><tr><th></th><th>Cases</th><th>Controls</th></tr><tr><td>---</td><td>-------</td><td>----------</td></tr><tr><td>Ward A</td><td>18 (a)</td><td>20 (b)</td></tr><tr><td>Not Ward A</td><td>12 (c)</td><td>40 (d)</td></tr></table>
+<p>OR = (18 × 40) / (20 × 12) = 720 / 240 = <b>3.0</b> (95 % CI ≈ 1.2–7.5; excludes 1, significant).</p>
+<p><b>Dose–Response (Attack Rate by Level, ARL):</b> Stratify attack rate by intensity of exposure (e.g., 0, 1, 2, ≥ 3 antibiotic courses; 0, 1, 2, ≥ 3 endoscopy sessions; low, medium, high consumption of suspect food).</p>
+<table class="ctable"><tr><th>Exposure level</th><th>Cases / Total</th><th>AR (%)</th></tr><tr><td>----------------</td><td>----------------</td><td>--------</td></tr><tr><td>0</td><td>2 / 50</td><td>4 %</td></tr><tr><td>1</td><td>6 / 50</td><td>12 %</td></tr><tr><td>2</td><td>15 / 50</td><td>30 %</td></tr><tr><td>≥ 3</td><td>24 / 50</td><td>48 %</td></tr></table>
+<p>A <b>monotonically rising ARL</b> strengthens causal inference (Hill's biological gradient criterion).</p>
+<p>#### Step 8: Refining Hypotheses — Environmental, Microbiological, Molecular</p>
+<ul><li><b>Environmental sampling:</b> Targeted to hypothesis. Surfaces, water, ice, drains, taps, sinks, splash zones, ultrasound gel, multi-dose vials, devices, heater-cooler units, ventilation filters, food samples.</li><li><b>HCW screening:</b> Nasal, throat, perineal, faecal, skin, hair — based on organism. Only after ethical approval and clear protocol.</li><li><b>Patient screening:</b> Rectal/faecal swabs, nasal, axilla, groin, throat.</li><li><b>Product/device testing:</b> Sterility, endotoxin, culture, batch recall.</li><li><b>Molecular typing:</b></li></ul>
+<table class="ctable"><tr><th>Method</th><th>Use</th><th>Resolution</th></tr><tr><td>--------</td><td>-----</td><td>------------</td></tr><tr><td>**WGS**</td><td>Gold standard for most bacteria, including MRSA, VRE, *C. difficile*, *Klebsiella*, *Acinetobacter*, *Salmonella*, *Pseudomonas*, *Neisseria*</td><td>Highest; SNP-level</td></tr><tr><td>**PFGE**</td><td>Older standard for *Salmonella*, *Listeria*, *E. coli* O157:H7; still used in some reference labs</td><td>High but less reproducible than WGS</td></tr><tr><td>**MLST**</td><td>Long-term epidemiology; clonal lineages (ST131, ST258)</td><td>Lower; slow clock</td></tr><tr><td>**spa typing**</td><td>*S. aureus* — fast, portable</td><td>High for short-term MRSA</td></tr><tr><td>**MIRU-VNTR / spoligotyping**</td><td>*M. tuberculosis*</td><td>High for TB</td></tr><tr><td>**PCR-ribotyping**</td><td>*C. difficile*</td><td>Good for CDI typing (e.g., 027)</td></tr><tr><td>**Capsular serotyping / MLVA**</td><td>*Streptococcus pneumoniae*, *Neisseria meningitidis*</td><td>Variable</td></tr></table>
+<p><b>WGS interpretation:</b></p>
+<ul><li><b>SNP threshold</b> = maximum number of SNPs between isolates still considered part of the same transmission chain.</li><li><b>Organism-dependent</b> (genome size, mutation rate, mobile elements matter).</li><li>Common thresholds:</li><li>MRSA / <i>S. aureus</i>: ≤ 5 SNPs (some say 10–25 if separated by ≤ 6 months).</li><li><i>C. difficile</i>: ≤ 2–10 SNPs; same ribotype.</li><li><i>K. pneumoniae</i>: ≤ 25 SNPs.</li><li>TB: ≤ 5–12 SNPs (some say 0–12 over ≤ 5 years); confirmed by epidemiological link.</li><li><i>Salmonella</i> Typhi: ≤ 5 SNPs.</li><li><i>A. baumannii</i>: ≤ 5 SNPs.</li><li><b>Phylogenetic tree:</b> isolates cluster in clades; <b>tight clusters</b> with short branch lengths = recent transmission; long branches = diverse, likely unrelated.</li><li>WGS should be <b>combined with epi data</b> — genomic relatedness alone does not prove transmission (e.g., background prevalence of a strain).</li></ul>
+<p>#### Step 9: Control Measures</p>
+<p>Apply the <b>hierarchy of controls</b>: Elimination &gt; Substitution &gt; Engineering &gt; Administrative &gt; PPE.</p>
+<p><b>Source-focused:</b></p>
+<ul><li>Identify and remove the source (contaminated product/device/food recall, debridement/drainage of infected focus, decolonisation of carriers, exclusion of infected HCW).</li><li>Isolate and treat cases (and carriers).</li></ul>
+<p><b>Transmission-focused:</b></p>
+<ul><li><b>Hand hygiene</b> (WHO 5 Moments, audit compliance).</li><li><b>Isolation / cohorting</b> of cases; dedicated staff.</li><li><b>Contact / Droplet / Airborne precautions</b> as pathogen dictates.</li><li><b>Enhanced environmental cleaning</b> (sporicidal for <i>C. difficile</i>; HPV for terminal clean after discharge of VRE/CRE patient).</li><li><b>Closure of ward</b> only when all other measures exhausted (last resort); consider service impact.</li><li><b>Restriction of transfers</b> in/out of affected area.</li><li><b>Visitor restrictions.</b></li><li><b>Engineering:</b> Negative pressure rooms, point-of-use filters on taps, HEPA ventilation.</li></ul>
+<p><b>Host-focused:</b></p>
+<ul><li><b>Vaccination</b> of susceptible contacts (measles, varicella, hepatitis A, COVID-19, influenza).</li><li><b>Chemoprophylaxis</b> (TB isoniazid, meningococcal ciprofloxacin/ceftriaxone/rifampicin, influenza oseltamivir, pertussis macrolide, GAS penicillin).</li><li><b>Screening &amp; cohorting</b> of contacts.</li><li><b>Decolonisation</b> (MRSA: mupirocin nasal + chlorhexidine body wash × 5 d; VRE: limited; S. aureus: as above).</li><li><b>Exclusion of infected HCW</b> from work per pathogen-specific rules (see IPC note).</li></ul>
+<div class="callout"><b>Exam pearl:</b> Apply <b>multiple control measures simultaneously</b> — never wait for analytical results if risk is high. Outbreak control and analytical investigation run <b>in parallel</b>.</div>
+<p>#### Step 10: Communication</p>
+<ul><li><b>Internal:</b> Daily SITREPs; OMT minutes; executive briefings; staff emails; intranet; IPC committee; board.</li><li><b>External:</b> Notification to <b>public health authorities</b> (UKHSA/PHE/CDC/regional health authority) — legally required for notifiable diseases and outbreaks. WHO for IHR-relevant events.</li><li><b>Patients, families, visitors:</b> Information leaflets, FAQs, dedicated helpline.</li><li><b>Media:</b> Spokesperson identified (e.g., Director of Communications); holding statement prepared; press conference if needed; transparency + reassurance.</li><li><b>Documentation:</b> Final <b>outbreak report</b> (IMRaD with recommendations and action plan); lessons-learned seminar; trust board paper.</li></ul>
+<p><b>Final Outbreak Report — Typical Structure:</b></p>
+<ol><li><b>Cover page / title</b> (Title, authors, OMT, date, distribution).</li><li><b>Executive summary</b> (≤ 1 page).</li><li><b>Background</b> (why this matters, prior context, prior outbreaks).</li><li><b>Methods</b> (case definition, case finding, descriptive, analytical methods, lab methods including WGS, environmental, statistical software).</li><li><b>Results</b> (case count, epi curve, descriptive tables, 2×2 tables, RR/OR, ARL, WGS tree, environmental results).</li><li><b>Discussion</b> (interpretation, comparison with literature, limitations, biases).</li><li><b>Conclusions.</b></li><li><b>Recommendations</b> (numbered, with responsible person + deadline + KPI).</li><li><b>Action plan</b> (with timeline).</li><li><b>Appendices</b> (line list [anonymised], epi curve, phylogenetic tree, SITREPs, communications, costs).</li></ol>
+<p><b>Post-outbreak review (AAR):</b></p>
+<ul><li>Convene within 4–6 weeks of outbreak closure.</li><li>Identify: what went well, what didn't, why, what to change.</li><li>Update IPC policies, bundles, training, surveillance, audit schedule.</li><li>Share with regional/national networks (e.g., UKHSA outbreak database).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: Outbreak Calculations — Quick Reference</div>
+<table class="ctable"><tr><th>Metric</th><th>Formula</th><th>Notes</th></tr><tr><td>--------</td><td>---------</td><td>-------</td></tr><tr><td>**Attack rate (AR)**</td><td>Cases / population at risk over defined period × 100</td><td>% or per 1000</td></tr><tr><td>**Secondary attack rate (SAR)**</td><td>Cases among contacts of primary case / total susceptible contacts × 100</td><td>Measures transmissibility</td></tr><tr><td>**Case fatality rate (CFR)**</td><td>Deaths / cases × 100</td><td>%</td></tr><tr><td>**Relative Risk (RR)**</td><td>[a/(a+b)] / [c/(c+d)]</td><td>Cohort</td></tr><tr><td>**Risk Difference (AR, attributable risk)**</td><td>AR(exposed) − AR(unexposed)</td><td>Absolute effect</td></tr><tr><td>**Attributable Fraction (exposed)**</td><td>(RR−1)/RR × 100</td><td>Proportion of disease in exposed attributable to exposure</td></tr><tr><td>**Population Attributable Fraction**</td><td>[Pe(RR−1)] / [1 + Pe(RR−1)] × 100</td><td>Pe = prevalence of exposure in total pop</td></tr><tr><td>**Odds Ratio (OR)**</td><td>(a×d) / (b×c)</td><td>Case-control</td></tr><tr><td>**95 % CI for RR**</td><td>exp(ln(RR) ± 1.96 × √(1/a − 1/(a+b) + 1/c − 1/(c+d)))</td><td>Excludes 1 = significant</td></tr><tr><td>**95 % CI for OR (Woolf)**</td><td>exp(ln(OR) ± 1.96 × √(1/a + 1/b + 1/c + 1/d))</td><td>Excludes 1 = significant</td></tr><tr><td>**Chi-squared (2×2)**</td><td>Σ (O−E)²/E</td><td>df=1; > 3.84 = p<0.05</td></tr><tr><td>**Fisher's exact**</td><td>–</td><td>Use for small n (<5 in any cell)</td></tr><tr><td>**Sensitivity**</td><td>TP / (TP + FN)</td><td>Detection</td></tr><tr><td>**Specificity**</td><td>TN / (TN + FP)</td><td>Identification</td></tr><tr><td>**PPV**</td><td>TP / (TP + FP)</td><td>Probability of disease given +ve test</td></tr></table>
+<p><b>Pearl:</b> For rare diseases, OR ≈ RR. For common outcomes, OR overestimates RR (rare disease assumption fails).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Common Healthcare Outbreaks — Clinical Features, Source, Control</div>
+<table class="ctable"><tr><th>Organism</th><th>Typical Setting</th><th>Source / Mode</th><th>Key Clinical</th><th>Key Control</th></tr><tr><td>----------</td><td>-----------------</td><td>---------------</td><td>--------------</td><td>-------------</td></tr><tr><td>**Norovirus**</td><td>Wards, cruise ships, care homes</td><td>Faecal-oral, vomitus droplets, food/water, contaminated surfaces; very low infectious dose (~18 viral particles)</td><td>24–48 h incubation; vomiting + watery diarrhoea 12–72 h; self-limiting 1–3 d; dehydration in elderly/infants</td><td>Cohort bays, isolation, **soap+water HH** (ABHR insufficient), sporicidal cleaning (hypochlorite 1000 ppm), **48 h exclusion post-symptoms** for staff, restrict transfers, close to new admissions 48 h after last case. **Most common GI outbreak in hospitals.**</td></tr><tr><td>**Influenza**</td><td>Winter, mixed specialty wards</td><td>Respiratory droplets, aerosol (limited)</td><td>1–4 d incubation; fever, myalgia, dry cough, coryza, sudden onset</td><td>Droplet + Contact precautions, mask for patients on transport, **oseltamivir prophylaxis** for close contacts (75 mg OD × 10 d), exclude staff until 5 d after symptom onset, **vaccinate HCW & patients**.</td></tr><tr><td>**RSV**</td><td>Neonates, paediatrics, transplant, elderly</td><td>Droplet + contact; fomites</td><td>Runny nose → cough, wheeze, apnoea in preterms, bronchiolitis in infants</td><td>Contact + Droplet precautions, cohort, screen staff/visitors, hand hygiene, restrict young visitors, consider **palivizumab** for high-risk infants in community.</td></tr><tr><td>**MRSA**</td><td>ICU, surgery, dialysis, burns, neonatal</td><td>HCW hands, contaminated equipment, prior colonised patients</td><td>Surgical site, bloodstream, pneumonia, SSTI, line infections</td><td>Screening on admission + weekly, contact precautions, **decolonisation (mupirocin 2 % nasal + chlorhexidine 4 % body wash × 5 d)**, dedicated equipment, cohort, environmental cleaning, **AMS**, WGS to confirm transmission.</td></tr><tr><td>**VRE**</td><td>ICU, haem-onc, transplant, renal</td><td>Gut colonised patients, contaminated environment (persists months), HCW hands</td><td>BSI, UTI, endocarditis; colonisation common</td><td>Contact precautions, cohort, dedicated equipment, terminal clean with sporicidal, **restrict vancomycin/ceftazidime use**, screening of contacts.</td></tr><tr><td>***C. difficile***</td><td>Antibiotic-exposed, elderly, PPI</td><td>Spores on hands, environment (toilet, commode); **alcohol does not kill spores**</td><td>Pseudomembranous colitis; 3+ unformed stools/24 h; toxic megacolon risk</td><td>**Soap+water HH** (mandatory); contact precautions; **sporicidal cleaning (1:10 hypochlorite or HPV)**; isolate in single room with own toilet; **discontinue inciting antibiotic** (clindamycin, FQ, cephalosporins); oral vancomycin/fidaxomicin; FMT/VOWST/REBYOTA for recurrence. **MDRO bundle + AMS.**</td></tr><tr><td>**ESBL / CRE**</td><td>ICU, haem-onc, transplant, long-term care</td><td>Cross-transmission via HCW hands and environment; contaminated equipment (endoscopes, ultrasound probes); sink drains</td><td>BSI, UTI, SSTI; high mortality</td><td>**Screening high-risk admissions** (CRE: rectal swab, selective media); contact precautions; cohort; **carbapenem-sparing regimens**; restrict FQ/cephalosporin use; sink drain management; **dedicated equipment**; WGS to confirm transmission.</td></tr><tr><td>**C. auris**</td><td>ICU, ventilated, cannulated, long hospital stay, broad-spectrum ABx, antifungals</td><td>Skin coloniser, environment (persists months), HCW hands; misidentified by commercial systems</td><td>BSI, wound, otitis, line infection; high mortality; often MDR</td><td>**Single room, contact precautions, cohort, dedicated staff, daily + terminal chlorhexidine bathing, sporicidal cleaning (chlorhexidine alone inadequate; hypochlorite needed)**, screening of contacts, daily communication with receiving facilities, **regional + national notification**.</td></tr><tr><td>**Mycobacterium tuberculosis**</td><td>Hospital with smear+ve pulmonary/laryngeal TB patient; HIV wards, prisons, hostels</td><td>Airborne (droplet nuclei < 5 µm, remain suspended)</td><td>Cough, weight loss, night sweats, haemoptysis, cavitating CXR</td><td>**AIIR** (negative pressure, ≥ 12 ACH), N95/FFP2 (FFP3 for MDR-TB), **contact tracing**, TST/IGRA at 8–10 weeks, isoniazid/rifampicin prophylaxis for susceptible contacts, MDR-TB regimen.</td></tr><tr><td>**Measles**</td><td>Paediatric, ED, unvaccinated populations</td><td>Airborne (highly contagious, R₀ 12–18)</td><td>Cough, coryza, conjunctivitis, Koplik spots, then maculopapular rash (cephalocaudal)</td><td>AIIR for cases, FFP3 for HCW, **MMR within 72 h** of exposure for susceptibles or **HNIG within 6 d**, exclude susceptible HCW from day 5 to day 21 post-exposure, notify public health.</td></tr><tr><td>**Varicella / Zoster**</td><td>Paediatric, haem-onc, transplant, maternity</td><td>Airborne + contact (varicella); contact for localised zoster; disseminated zoster = airborne</td><td>Vesicular rash in centripetal distribution (varicella); dermatomal (zoster)</td><td>AIIR for varicella, FFP3 for HCW, **VZIG within 10 d** for non-immune pregnant/neonate/immunocompromised, **exclude susceptible HCW 8–28 d post-exposure**, consider aciclovir.</td></tr><tr><td>**Pertussis**</td><td>Paediatric, maternity, ED</td><td>Droplet</td><td>Paroxysmal cough, post-tussive vomiting, inspiratory whoop</td><td>Droplet precautions, **macrolide prophylaxis** (azithromycin) for close contacts and pregnant women in third trimester (prevention of neonatal pertussis), exclude HCW until 5 d of effective ABx.</td></tr><tr><td>**Scabies**</td><td>Care homes, long-stay wards, immunosuppressed</td><td>Prolonged skin-to-skin contact; bedding (crusted/"Norwegian" scabies highly contagious)</td><td>Burrows in finger webs, wrists, axillae, genitals; pruritus worse at night; **crusted scabies in immunocompromised**</td><td>**2 applications of permethrin 5 % (or malathion 0.5 %)** 1 week apart, treat **all household / ward contacts simultaneously**, launder bedding/clothing at ≥ 50 °C or isolate for 72 h, isolate index case until treated, IP&C single room for crusted scabies.</td></tr><tr><td>**Aspergillus**</td><td>Haematology, transplant, ICU, neutropenic patients, building/renovation work</td><td>Inhalation of airborne spores; contaminated air, dust, water</td><td>Invasive pulmonary aspergillosis (IPA); sinusitis, CNS, cutaneous; halo sign on CT</td><td>**HEPA filtration + positive-pressure rooms**; seal off construction areas; avoid flowers, plants, soil; **antifungal prophylaxis** (posaconazole, voriconazole) for high-risk; monitor air sampling.</td></tr><tr><td>**Legionella**</td><td>Hospital water system (showers, taps, cooling towers), transplant, ICU, immunocompromised</td><td>Aerosolised water</td><td>Pontiac fever (mild) or Legionnaires' disease (severe pneumonia ± GI, confusion, hyponatraemia)</td><td>**Water safety plan**; temperature control (≥ 60 °C at outlet; cold < 20 °C); hyperchlorination or copper-silver ionisation; point-of-use filters; shut unused outlets; **prophylactic azithromycin** for highest-risk units during incidents.</td></tr><tr><td>**Pseudomonas (water)**</td><td>ICU, NICU, haem-onc, burns</td><td>Water taps, sinks, drains, endoscopes, contaminated solutions</td><td>BSI, VAP, UTI, wound</td><td>Water safety, point-of-use filters, **avoid handwashing with contaminated water at ICU sinks** (use ABHR for HH; sterile water for patient contact), dedicated equipment, screening.</td></tr><tr><td>**Hepatitis B / C / HIV**</td><td>Needlestick, dialysis, transfusion, multi-dose vials</td><td>Blood, body fluids</td><td>Variable</td><td>Standard precautions, **needlestick PEP** (HBV vaccine ± HBIG; HCV: monitor; HIV: 3-drug PEP ≤ 72 h), single-use vials, dedicated dialysis machines, audit.</td></tr><tr><td>**Group A Streptococcus (GAS)**</td><td>Maternity, surgical, burn, care home</td><td>HCW carriage, droplet, contact</td><td>Postpartum sepsis, wound infection, invasive disease (NF, STSS)</td><td>**24 h exclusion for HCW with pharyngitis**; GAS screening of HCW if cluster; macrolide/penicillin prophylaxis for close contacts; refactor infection control in unit.</td></tr><tr><td>**Listeria**</td><td>Neonatal, obstetric, immunocompromised, food (sandwiches, salads, soft cheese)</td><td>Foodborne, vertical</td><td>Sepsis, meningitis, granulomatosis infantiseptica, miscarriage</td><td>Food safety; **avoid high-risk foods** in pregnancy and immunocompromised; outbreak strain typing (WGS).</td></tr><tr><td>***Salmonella***</td><td>Catering, neonatal, immunocompromised</td><td>Food (poultry, eggs), person-to-person</td><td>Enterocolitis, BSI</td><td>Food safety, hand hygiene, cohort, exclude infected HCW, public health notification.</td></tr><tr><td>**Klebsiella / Acinetobacter (XDR/Carbapenem-R)**</td><td>ICU, burns, long-term ventilated</td><td>Environment (survives weeks on dry surfaces), HCW hands, sink drains, contaminated ventilators</td><td>VAP, BSI, UTI, wound</td><td>Active screening, contact precautions, cohort, **dedicated staff**, **sink drain disinfection** (bleach, acetic acid), daily chlorhexidine bathing, AMS, **WGS for transmission**; closure as last resort.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Outbreak Decision Flow</div>
+<p>``<code>mermaid flowchart TD A[Signal: ≥ expected cases] --&gt; B{Verify diagnosis &amp; existence} B --&gt;|Pseudo| Z[Stop, audit surveillance] B --&gt;|Confirmed| C[Convene OMT] C --&gt; D[Case definition&lt;br/&gt;Confirmed/Probable/Possible] D --&gt; E[Active case finding&lt;br/&gt;Build line list] E --&gt; F[Descriptive epi&lt;br/&gt;Epi curve] F --&gt; G{Curve shape} G --&gt;|Point source| H[Retrospective cohort&lt;br/&gt;RR + ARL] G --&gt;|Continuous| H2[Retrospective cohort&lt;br/&gt;Identify ongoing source] G --&gt;|Propagated| I[Case-control&lt;br/&gt;OR] H --&gt; J[WGS / typing&lt;br/&gt;Environmental sampling&lt;br/&gt;HCW screening] H2 --&gt; J I --&gt; J J --&gt; K[Implement control&lt;br/&gt;Source, transmission, host] K --&gt; L[Monitor epi curve&lt;br/&gt;Re-test hypothesis] L --&gt; M[Communicate&lt;br/&gt;SITREPs + report] M --&gt; N[Post-outbreak AAR&lt;br/&gt;Update policy] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: Molecular Typing — Practical Guide</div>
+<table class="ctable"><tr><th>Scenario</th><th>Method of Choice</th><th>Why</th></tr><tr><td>----------</td><td>------------------</td><td>-----</td></tr><tr><td>MRSA ward cluster</td><td>**WGS** (gold standard); spa typing acceptable; PFGE older</td><td>WGS gives SNP-level resolution; spa faster but less granular</td></tr><tr><td>VRE ICU cluster</td><td>WGS or PFGE</td><td>Long environmental survival; WGS best</td></tr><tr><td>*C. difficile* ward cluster</td><td>WGS (replacing PCR-ribotyping) or PCR-ribotyping</td><td>Identify hypervirulent ribotypes (027, 078, 244)</td></tr><tr><td>*K. pneumoniae* carbapenem-R outbreak</td><td>WGS</td><td>Distinguish imported vs. transmission</td></tr><tr><td>TB contact tracing</td><td>MIRU-VNTR + spoligotyping (WGS emerging)</td><td>Identify cluster; SNP threshold for recent transmission</td></tr><tr><td>*Salmonella* outbreak (multi-state)</td><td>WGS (replaced PFGE in US since 2019)</td><td>Highest resolution for foodborne</td></tr><tr><td>*Pseudomonas* in ICU</td><td>WGS or PFGE</td><td>Confirm water vs. patient-to-patient</td></tr><tr><td>*Listeria* multi-state</td><td>WGS (standard since 2013 in US)</td><td>Track single-source contamination</td></tr><tr><td>Fungal (Aspergillus, Candida auris)</td><td>WGS or MLST/AFLP</td><td>A. auris — distinguish strains</td></tr><tr><td>Norovirus</td><td>Sequencing of capsid (genogroup II)</td><td>Genotype clusters; confirm common source</td></tr></table>
+<p><b>WGS pipeline (overview):</b></p>
+<ol><li>DNA extraction from pure culture.</li><li>Library preparation (Illumina short-read, Nanopore long-read, or hybrid).</li><li>Sequencing.</li><li>Quality control (FastQC).</li><li>Assembly (SPAdes) <b>or</b> variant calling (mapping to reference; e.g., Snippy, BWA-MEM).</li><li>SNP filtering (remove repeats, mobile elements, recombinogenic regions).</li><li>Phylogenetic tree construction (maximum-likelihood: RAxML, IQ-TREE; or Bayesian: BEAST for dated trees).</li><li>Interpretation with <b>epi data</b> (timing, location, contact).</li></ol>
+<p><b>Common SNP thresholds (illustrative):</b></p>
+<table class="ctable"><tr><th>Organism</th><th>SNP threshold for "related"</th><th>Caveat</th></tr><tr><td>----------</td><td>----------------------------</td><td>--------</td></tr><tr><td>*S. aureus* (MRSA)</td><td>≤ 5 (≤ 12–25 over months)</td><td>Higher if long time gap</td></tr><tr><td>*C. difficile*</td><td>≤ 2 (≤ 10 within outbreak)</td><td>Same ribotype expected</td></tr><tr><td>*K. pneumoniae*</td><td>≤ 25 (CG258 ≤ 10)</td><td>Background diversity varies</td></tr><tr><td>*E. coli* ST131</td><td>≤ 10</td><td></td></tr><tr><td>*M. tuberculosis*</td><td>≤ 5–12 (≤ 5 years)</td><td></td></tr><tr><td>*Salmonella* Typhi</td><td>≤ 5</td><td></td></tr><tr><td>*Acinetobacter baumannii*</td><td>≤ 5</td><td></td></tr><tr><td>*Pseudomonas aeruginosa*</td><td>≤ 25</td><td>High diversity</td></tr><tr><td>*Candida auris*</td><td>≤ 5–10</td><td></td></tr><tr><td>SARS-CoV-2</td><td>< 5 SNPs (early), < 10 (over months)</td><td>Evolving definitions</td></tr></table>
+<div class="callout"><b>Pearl:</b> A WGS result alone is not sufficient — two isolates may be genetically similar by chance (high prevalence of a successful clone) but not epidemiologically linked. <b>Genomic relatedness must be supported by epi evidence</b> (temporal, spatial, and contact links).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>Three patients on ICU develop *Klebsiella pneumoniae* with identical carbapenem-resistance, all within 2 weeks</td><td>Outbreak = cluster of CRE.</td><td>Convene OMT; rectal screening of all ICU patients; contact precautions; cohort; WGS of all isolates; review shared equipment (ventilators, ultrasound); AMS review; consider ward closure.</td></tr><tr><td>30 attendees of a hospital banquet develop vomiting/diarrhoea 12–36 h later</td><td>Point-source foodborne outbreak.</td><td>Retrospective cohort of all attendees with food-specific questionnaire; compute attack rates by dish; identify culprit (highest RR + dose-response). Calculate AR, RR, ARL. Food samples, kitchen inspection, HCW illness screening.</td></tr><tr><td>Six MRSA BSI in 2 months in vascular surgery ward, all with same spa type</td><td>HAI cluster.</td><td>Cohort design not feasible (large denominator); case-control: cases = MRSA BSI, controls = ward patients without BSI; exposures = device, theatre, prior ABx, length of stay. WGS of isolates. Implement MDRO bundle; screening + decolonisation; theatre deep clean.</td></tr><tr><td>Two renal unit patients develop TB within 3 months; same MIRU-VNTR pattern</td><td>TB outbreak.</td><td>Contact tracing of patients + HCW; AIIR; IGRA baseline + 8–10 weeks; CXR; LTBI treatment for positives; HCW screening; review ventilation; notify public health.</td></tr><tr><td>Increased *C. difficile* SIR on geriatric ward (3 cases/week)</td><td>CDI cluster.</td><td>OMT; line list; review prior antibiotics (clindamycin, FQ, ceftriaxone); **sporicidal cleaning**; **soap+water HH**; cohort; isolate; treat with fidaxomicin or vancomycin; AMS. WGS/PCR-ribotyping.</td></tr><tr><td>Neonates in NICU with invasive *Candida parapsilosis* BSI over 4 weeks</td><td>Fungal outbreak; often linked to central line care, hand hygiene.</td><td>OMT; line list; cohort; review CLABSI bundle; environmental sampling; HCW hand sampling; WGS of isolates; consider antifungal prophylaxis in highest risk; antifungal stewardship.</td></tr><tr><td>Post-operative endophthalmitis cluster after cataract surgery (same surgeon)</td><td>Point source / operator-related.</td><td>Retrospective cohort of all patients on the affected list; case-control if denominator large; review theatre practice; environmental sampling (intraocular solutions, instruments, povidone-iodine, phacoemulsification fluid); report to regulator + Royal College.</td></tr><tr><td>Hospital construction adjacent to transplant unit; rise in invasive aspergillosis</td><td>Environmental source.</td><td>Stop construction work or seal from unit; HEPA filter check; air sampling; relocate patients if possible; antifungal prophylaxis; engineering review.</td></tr><tr><td>Two HCWs develop measles; both non-immune</td><td>Vaccine-preventable outbreak among staff.</td><td>Immediate OMT; identify all exposed patients/staff; MMR for susceptibles within 72 h or HNIG within 6 d; HCW exclusion day 5–21 post-exposure; FFP3 for HCW entering case's room; **AIIR** for cases.</td></tr><tr><td>Increased *Legionella* detection in hospital water</td><td>Environmental risk.</td><td>Water Safety Plan review; point-of-use filters on taps/showers in high-risk units; **azithromycin prophylaxis** for highest-risk patients (transplant, ICU); restrict water use in vulnerable units; engineering decontamination (heat + flush or hyperchlorination).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know:</b> Outbreak definition; the 10 steps; case definition levels; epi curve shapes and what they mean; 2×2 table (RR for cohort, OR for case-control); dose–response (ARL); WGS as gold standard; hierarchy of controls; common healthcare outbreak organisms and IPC for each; outbreak report structure. - <b>Common viva:</b> "You are the IPC registrar; three patients on Ward 5 develop VRE BSI in a week — what do you do next?" (verify diagnosis → convene OMT → case definition → line list → active case finding → epi curve → analytical study → control → communicate). "How do you choose between cohort and case-control study?" - <b>Exam trap:</b> Confusing point source with propagated (and therefore the wrong study design). Confusing OR with RR (and the rare-disease assumption). Forgetting to <b>start with descriptive epi</b> before analytical. Forgetting to <b>screen</b> asymptomatic contacts in propagated outbreaks. Forgetting that **ABHR does not kill <i>C. difficile</i> spores<b> (use soap + water). Forgetting that </b>ward closure is a last resort**.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>-----------</td></tr><tr><td>Outbreak vs. pseudo-outbreak</td><td>Always verify the diagnosis and the baseline before declaring outbreak.</td></tr><tr><td>Cohort vs. case-control</td><td>Cohort for defined/finite populations (point source, continuous common source). Case-control for large/unknown denominator (propagated).</td></tr><tr><td>OR ≈ RR only for rare diseases</td><td>For common outcomes (e.g., hospital-acquired colonisation), OR overestimates RR — use RR if you can.</td></tr><tr><td>Confounding</td><td>Even with a strong RR/OR, check for confounders (age, comorbidity, ABx); use stratified analysis or multivariable regression.</td></tr><tr><td>Confusing incubation period with serial interval</td><td>Incubation = exposure to onset in **one** case. Serial interval = onset in primary to onset in secondary.</td></tr><tr><td>WGS SNP threshold is universal</td><td>Threshold is **organism- and time-dependent**; consult organism-specific guidance and combine with epi data.</td></tr><tr><td>Alcohol kills *C. difficile*</td><td>**No** — alcohol does not kill spores. Use **soap and water**.</td></tr><tr><td>TB requires N95 only</td><td>TB requires **AIIR (negative pressure, ≥ 12 ACH)** + N95/FFP2 minimum (FFP3 for MDR-TB).</td></tr><tr><td>Closing a ward is the first step</td><td>**No** — last resort. Use cohorting, isolation, enhanced cleaning first.</td></tr><tr><td>Outbreak is "over" when last case is identified</td><td>Outbreak declared over only after **two maximum incubation periods** with no new cases (and control measures sustainably in place).</td></tr><tr><td>Hand hygiene is the "answer" to every outbreak</td><td>Critical but only one intervention in the bundle (hand hygiene + isolation + cleaning + screening + AMS + vaccination).</td></tr><tr><td>One case is never an outbreak</td><td>One case of measles, VHF, CJD, diphtheria, VRSA, botulism in a hospital **is** an outbreak until proven otherwise.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>10 Steps:</b> <b>P</b>repare → <b>V</b>erify → <b>C</b>onfirm → <b>D</b>efine → <b>F</b>ind → <b>D</b>escribe → <b>H</b>ypothesise → <b>T</b>est → <b>C</b>ontrol → <b>C</b>ommunicate. → "<b>PVC-DFD-HTCC</b>" or "<b>Pee-Vee-Cee-Def-Find-Des-Hypo-Test-Con-Com</b>" or "<b>Mr. Vee's Big Outbreak Hunt</b>": <b>M</b>ake team, <b>R</b>eview, <b>V</b>erify, <b>C</b>onfirm, <b>D</b>efine, <b>F</b>ind, <b>D</b>escribe, <b>H</b>ypothesise, <b>T</b>est, <b>C</b>ontrol, <b>C</b>ommunicate.</li><li><b>2×2 Cells:</b> "<b>A</b>d (top-left) × <b>B</b>c (bottom-right)" — OR = (a×d)/(b×c). Cohort RR = (a/(a+b)) ÷ (c/(c+d)).</li><li><b>Study choice:</b> <b>C</b>ohort for <b>C</b>ommon source (point/continuous) where denominator is <b>C</b>lear; <b>C</b>ase-<b>C</b>ontrol for <b>C</b>rowd (propagated, big, unknown denominator).</li><li><b>Hierarchy of controls:</b> <b>E</b>limination, <b>S</b>ubstitution, <b>E</b>ngineering, <b>A</b>dministrative, <b>P</b>PE → "<b>ESEA-P</b>" (most to least effective).</li><li><b>Control categories:</b> <b>S</b>ource, <b>T</b>ransmission, <b>H</b>ost → "<b>S-T-H</b>".</li><li><b>Outbreak report sections (IMRaD + extras):</b> Abstract, Intro, Methods, Results, Discussion, <b>C</b>onclusions, <b>R</b>ecommendations, <b>A</b>ction plan → "<b>AIMR-D + CRA</b>".</li><li><b>WGS thresholds rough guide:</b> "<b>5, 5, 10, 25</b>" — MRSA 5, TB 5–12, <i>C. diff</i> 5–10, <i>Kleb</i> 25.</li><li><b>Outbreak closure:</b> "<b>Two incubation periods</b> without new cases" → mnemonic "<b>TIC</b>" (Two Incubation = Closed).</li><li><b>Common healthcare outbreaks (10):</b> "<b>No Flu RSV MRSA CDI ESBL TB Scab Asp</b>" — "<b>No Flu RR's C.diff ESBL TB Scabies Aspergillus</b>".</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Outbreak Investigation in Healthcare Settings)) Definition Cases exceed expected baseline Pseudo-outbreak rule-out Triggers Single rare/serious case Epi-linked cluster Threshold breach 10 Steps Prepare Verify Confirm diagnosis Define case Find cases Active case finding Line list Describe Person Place Time Epidemic curve Hypothesise Test analytically Cohort for point source Case-control for propagated Refine WGS Environmental sampling HCW screening Control Source Transmission Host Hierarchy of controls Communicate SITREPs Outbreak report IMRaD Post-outbreak AAR Calculations AR SAR RR OR ARL dose-response Epi Curves Point source Sharp peak Continuous common source Plateau Propagated Serial peaks Common Outbreaks Norovirus Influenza RSV MRSA VRE C. difficile ESBL CRE C. auris TB Measles Varicella Scabies Aspergillus Legionella Pseudomonas Molecular Typing WGS gold standard PFGE MLST spa MIRU-VNTR PCR-ribotyping SNP thresholds Phylogenetic tree Hierarchy of Controls Elimination Substitution Engineering Administrative PPE </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart: Outbreak Investigation (Detailed)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Signal: alert from lab, ward, OH, surveillance] --&gt; B[Verify baseline &amp; diagnosis] B --&gt;|Pseudo| Z[Audit; close] B --&gt;|Real| C[Convene OMT] C --&gt; D[Case Definition&lt;br/&gt;P-P-T-Clin-Lab&lt;br/&gt;Confirmed/Probable/Possible] D --&gt; E[Active case finding&lt;br/&gt;Lab, ward, OH, screening] E --&gt; F[Line List] F --&gt; G[Descriptive epi&lt;br/&gt;Person/Place/Time&lt;br/&gt;Epidemic curve] G --&gt; H{Type?} H --&gt;|Point source| I1[Retrospective cohort] H --&gt;|Continuous| I2[Retrospective cohort + Env] H --&gt;|Propagated| I3[Case-control] I1 --&gt; J[2x2 tables; RR; ARL] I2 --&gt; J I3 --&gt; J2[OR + 95% CI] J --&gt; K[Refine: WGS, env sampling, HCW screening] J2 --&gt; K K --&gt; L[Control: Source, Transmission, Host] L --&gt; M[Monitor epi curve daily] M --&gt; N[Two incubation periods without cases = Closed] L --&gt; O[SITREPs + Final report IMRaD + Recommendations] O --&gt; P[Post-outbreak AAR&lt;br/&gt;Update policies &amp; bundles] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <b>Epidemic curve shapes</b> (point source vs continuous vs propagated) — three-panel line/histogram</li><li>[ ] <b>Sample line list screenshot</b> (de-identified)</li><li>[ ] <b>2×2 table anatomy</b> with RR and OR formulas overlaid</li><li>[ ] <b>Phylogenetic tree</b> example (WGS) showing tight cluster vs unrelated</li><li>[ ] <b>Hierarchy of controls</b> pyramid (inverted)</li><li>[ ] <b>AIIR schematic</b> with negative pressure, ACH, HEPA, exhaust to outside</li><li>[ ] <b>WHO 5 Moments</b> of hand hygiene</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] UKHSA / PHE "Outbreak Investigation" training videos</li><li>[ ] CDC "10 Steps of Outbreak Investigation" series</li><li>[ ] WHO IPC core components</li><li>[ ] WGS for HAI outbreak — talk by Profs. Sheppard / Aanensen / Peacock / Köser</li><li>[ ] Genomic Epidemiology course — Wellcome Connecting Science</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Definition:</b> Outbreak = observed &gt; expected cases in time, place, person. <b>Pseudo-outbreak</b> = lab artefact/surveillance artefact (rule out first). - <b>Triggers:</b> single rare/serious case (measles, VHF, CJD, diphtheria, VRSA), ≥ 2 epi-linked cases, surveillance threshold breach. - <b>10 Steps:</b> <b>P</b>repare → <b>V</b>erify → <b>C</b>onfirm → <b>D</b>efine → <b>F</b>ind → <b>D</b>escribe → <b>H</b>ypothesise → <b>T</b>est → <b>C</b>ontrol → <b>C</b>ommunicate. - <b>Case definition:</b> Person, Place, Time, Clinical, Lab. Levels: <b>Confirmed / Probable / Possible</b>. - <b>Line list:</b> demographics, location, onset, exposures, lab, typing, outcome. - <b>Epi curve:</b> point source (sharp peak), continuous (plateau), propagated (serial peaks). - <b>Calculations:</b> AR = cases / pop at risk. <b>RR (cohort)</b> = [a/(a+b)] / [c/(c+d)]. <b>OR (case-control)</b> = ad/bc. Dose–response (ARL) by intensity of exposure. - <b>Study design:</b> <b>Cohort</b> for defined pop / point source; <b>Case-control</b> for propagated / large unknown denominator. - <b>WGS:</b> gold standard. SNP threshold organism-specific (e.g., MRSA ≤ 5, TB ≤ 5–12, <i>C. diff</i> ≤ 5–10, <i>Kleb</i> ≤ 25). Combine with epi data. - <b>Control:</b> Source, Transmission, Host. <b>Hierarchy:</b> Elimination &gt; Substitution &gt; Engineering &gt; Administrative &gt; PPE. - <b>Common outbreaks:</b> Norovirus (soaps+water; 48 h exclusion), Influenza (oseltamivir, vaccinate), RSV (cohort, palivizumab), MRSA (mupirocin + CHG × 5 d), VRE, <i>C. diff</i> (sporicidal; <b>soap+water</b>; AMS), ESBL/CRE, <i>C. auris</i> (sporicidal; dedicated), TB (AIIR; LTBI Rx), Measles/Varicella (AIIR; VZIG/HNIG), Scabies (permethrin ×2; treat all contacts), Aspergillus (HEPA, seal construction), Legionella (water safety; azithro). - <b>Report:</b> IMRaD + Recommendations + Action plan. SITREPs during. AAR after. - <b>Closure:</b> 2 × maximum incubation period without new cases.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Outbreak definition and how to rule out a pseudo-outbreak.</li><li>The 10 steps of outbreak investigation (in order).</li><li>Three levels of case definition and the four components of a good case definition.</li><li>Line list — minimum variables.</li><li>Three epidemic curve patterns and which transmission mode each suggests.</li><li>2×2 table: formulas for RR and OR.</li><li>When to use cohort vs case-control study.</li><li>What is ARL and how does it strengthen causal inference?</li><li>WGS SNP thresholds for MRSA, TB, <i>C. difficile</i> (and the caveat).</li><li>Hierarchy of controls and the three categories of control measures.</li><li>Why soap+water and not ABHR for <i>C. difficile</i> / norovirus.</li><li>Common healthcare outbreak organisms — 5 examples with control.</li><li>Structure of a final outbreak report.</li><li>Definition of "outbreak closed" (2 incubation periods).</li><li>Post-outbreak AAR purpose.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Outbreak definition & triggers; 10 steps; case definition (3 levels); line list; epidemic curve shapes; 2×2 table (RR, OR, AR, ARL); cohort vs case-control; WGS as gold standard; control categories (Source, Transmission, Host); hierarchy of controls; common healthcare outbreaks (Norovirus, influenza, MRSA, *C. difficile*, ESBL/CRE, TB, scabies, aspergillus) and their specific control measures; outbreak report structure (IMRaD + recommendations); outbreak closure criteria.</td></tr><tr><td>**Should Know 🟡**</td><td>Organism-specific WGS SNP thresholds; phylogenetic tree interpretation; environmental sampling protocols; HCW screening protocols; cohort vs case-control selection bias and confounding control (stratification, multivariable regression); attributable risk, attributable fraction, population attributable fraction; SITREP format; legal/ethical considerations (DPIA, consent for screening, exclusion from work); post-outbreak AAR framework; SAR, CFR; notifiable disease list and IHR (2005) reporting.</td></tr><tr><td>**Nice to Know 🟢**</td><td>Real-time genomic surveillance (cgMLST, Nanopore); automated outbreak detection (statistical process control, WHONET, SeqSphere); AI-assisted investigation; cross-border and international outbreak co-ordination (ECDC, WHO, GOARN); IPC cost-effectiveness analysis; tabletop and field simulation exercises; behavioural science in outbreak response; integrated One Health frameworks.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Definition (with pseudo-outbreak caveat) → Triggers → 10 steps in order → Case definition (4 components, 3 levels) → Line list → Descriptive epi + epi curve patterns → Calculations (AR, RR, OR, ARL) with 2×2 → Cohort vs case-control → WGS / molecular typing → Control (Source/Transmission/Host, hierarchy) → Common healthcare outbreaks (Norovirus, influenza, CDI, MRSA, CRE, TB) → Outbreak report (IMRaD + recommendations) → Closure &amp; AAR.</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Outbreak definition; 10 steps (bullet); case definition levels; 2×2 (RR + OR); epi curve shapes; WGS in one line; control categories; example (e.g., Norovirus, CDI).</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"Healthcare outbreak investigation follows 10 steps: prepare, verify, confirm, define, find, describe, hypothesise, test, control, communicate. Key early steps are verifying the diagnosis and applying a clear case definition, then building a line list. The shape of the epidemic curve points to a point source (cohort study) or propagated spread (case-control). WGS is now the gold standard to confirm transmission, but epi data must support the genomic link. Control targets source, transmission and host. Outbreak is closed after two maximum incubation periods with no new cases, followed by a post-outbreak AAR."</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply: the signal (e.g., 3 ICU patients with CRE BSI in a week) → OMT → case definition → line list → active screening (rectal swabs of all ICU patients + new admissions) → WGS → analytical study (case-control) → MDRO bundle (contact, cohort, dedicated staff, daily CHX bathing, sink drain management, AMS) → monitor epi curve → SITREPs to exec/UKHSA → close after 2× incubation, then AAR + update IPC policy.</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above.</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>10 steps; epi curve → study design; WGS thresholds (5-5-10-25); control categories; closure rule; soap+water for spores.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1. A hospital reports 4 cases of MRSA bloodstream infection in a vascular surgery ward in 3 weeks. The first action of the IPC team is to:</b> A. Implement ward closure B. Start mupirocin prophylaxis for all ward patients C. <b>Convene the Outbreak Management Team (OMT) and verify the diagnosis against the baseline</b> D. Order whole-genome sequencing of all MRSA isolates E. Decolonise all healthcare workers</p>
+<p><b>2. In a point-source foodborne outbreak at a hospital banquet with 150 attendees, the BEST analytical study to identify the causative food is:</b> A. Case-control B. Cross-sectional C. <b>Retrospective cohort</b> D. RCT E. Case series</p>
+<p><b>3. An epidemic curve shows a sharp single peak that rises and falls within one incubation period. This pattern is most consistent with:</b> A. Continuous common-source outbreak B. Propagated person-to-person spread C. <b>Point-source outbreak</b> D. Endemic transmission E. Pseudo-outbreak</p>
+<p><b>4. A series of successive peaks in the epidemic curve, separated by approximately one serial interval, is characteristic of:</b> A. Point-source outbreak B. Continuous common-source outbreak C. <b>Propagated person-to-person outbreak</b> D. Endemic disease E. Seasonal variation</p>
+<p><b>5. The standard molecular typing method considered the gold standard for confirming transmission chains in modern healthcare outbreak investigation is:</b> A. Pulsed-field gel electrophoresis (PFGE) B. spa typing C. Multi-locus sequence typing (MLST) D. <b>Whole-genome sequencing (WGS)</b> E. Random amplified polymorphic DNA (RAPD)</p>
+<p><b>6. In a case-control study of an MRSA ward outbreak, the odds ratio for prior occupancy of bed 4 was 4.5 (95% CI 1.8–11.2). The MOST appropriate interpretation is:</b> A. There is no association between bed 4 and MRSA B. The association is not statistically significant C. <b>Occupancy of bed 4 is significantly associated with MRSA acquisition; odds of prior bed 4 exposure are 4.5× higher in cases than controls</b> D. The relative risk of MRSA after bed 4 exposure is 4.5 E. The result is consistent with a rare-disease assumption being violated</p>
+<p>**7. Which control measure targets the SOURCE of infection in a <i>C. difficile</i> outbreak?<b> A. Hand hygiene with alcohol-based hand rub B. Contact precautions and single-room isolation C. </b>Discontinuation of the inciting antibiotic (e.g., clindamycin) and isolation of symptomatic cases** D. Use of N95 respirators E. Cohort nursing</p>
+<p><b>8. In an outbreak of norovirus gastroenteritis on a geriatric ward, the MOST appropriate hand-hygiene method for healthcare workers is:</b> A. Alcohol-based hand rub only B. <b>Soap and water (alcohol does not reliably inactivate non-enveloped viruses and spores)</b> C. Alcohol-based hand rub followed by glove use D. Chlorhexidine-only hand wash E. No hand hygiene is required if gloves are worn</p>
+<p><b>9. A TB contact-tracing investigation identifies a HCW with a positive IGRA who has no symptoms and a normal chest radiograph. The MOST appropriate management is:</b> A. Isolate the HCW in an AIIR for 2 weeks B. <b>Treat for latent TB infection (e.g., 3 months of isoniazid + rifampicin, or 6 months of isoniazid) after active disease is excluded</b> C. Repeat IGRA in 1 year and treat if positive D. Give BCG vaccination E. Start four-drug anti-tubercular therapy for 6 months</p>
+<p><b>10. An outbreak is considered closed when:</b> A. The last identified case is discharged from hospital B. The OMT formally votes to close C. <b>Two maximum incubation periods have passed since the last case with no new cases, and control measures are sustained</b> D. WGS confirms no further related isolates E. Public health authority declares the outbreak over</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<p><b>SBA 1.</b> Over a 10-day period, 7 of 25 patients on a haematology ward develop fever, neutropenia, and <i>Pseudomonas aeruginosa</i> bloodstream infection. All had indwelling central lines. A previous cohort of 250 patients on the same ward had a <i>Pseudomonas</i> BSI rate of 0.4 % (1 case) per 10 days. The OMT is convened.</p>
+<p>Which is the MOST appropriate IMMEDIATE priority? A. Close the ward to new admissions B. Cohort all current patients and start contact precautions; conduct active screening (rectal + throat swabs); review central-line care bundle; sample water, taps, sinks, drains and shared equipment C. Start empirical meropenem in all remaining patients D. Recalibrate the hospital water system E. Order WGS on the index case only</p>
+<div class="callout">Answer: <b>B</b>. A point-source (likely water or environmental) or line-care–related outbreak of an environmental organism requires simultaneous control (cohort, contact precautions, screening, device review) <b>and</b> environmental investigation. Meropenem prophylaxis (C) is not standard and risks resistance. WGS on a single isolate is insufficient; all isolates + environmental isolates should be sequenced. Ward closure is a last resort. Water system recalibration may follow, not lead, investigation.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>SBA 2.</b> A 12-year-old unvaccinated child is admitted with a 4-day history of fever, cough, coryza, conjunctivitis, and a maculopapular rash starting behind the ears and spreading downwards. The IPC team must decide on isolation and contact management.</p>
+<p>Which of the following combinations of measures is MOST appropriate? A. Single room with negative pressure (AIIR); FFP3 respirator for HCW; identify and offer MMR within 72 h (or HNIG within 6 days) to susceptible contacts; exclude non-immune HCW from day 5 to day 21 post-exposure B. Single room with door open; surgical mask for HCW; no further action C. Cohort bay with other respiratory patients; standard precautions D. Single room with positive pressure; N95 only during AGPs E. Outpatient management with home isolation; HCW to wear gloves only</p>
+<div class="callout">Answer: <b>A</b>. Clinical picture is measles (highly contagious, R₀ 12–18, airborne transmission). Requires AIIR, FFP3 for HCW, post-exposure prophylaxis (MMR within 72 h for ≥ 6-month-old susceptibles; HNIG within 6 d for infants &lt; 6 months, pregnant women, immunocompromised), exclusion of non-immune HCW from day 5 to day 21 post-exposure, and notification to public health.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>SBA 3.</b> You are designing a case-control study of a hospital-wide <i>Candida auris</i> outbreak with 30 cases and a denominator of several thousand at-risk patients. The proposed exposures include prior carbapenem use, prior fluconazole use, prolonged ICU stay, indwelling devices, and prior colonisation. You have isolates from cases, contacts, and the environment.</p>
+<p>Which analytical approach is MOST appropriate? A. Retrospective cohort of all at-risk patients B. Randomised controlled trial of antifungal prophylaxis C. **Case-control study (cases vs matched controls without <i>C. auris</i>); multivariable logistic regression for confounders; WGS on all case and environmental isolates to confirm transmission cluster** D. Cross-sectional survey E. Ecological study of antifungal consumption over time</p>
+<div class="callout">Answer: <b>C</b>. The denominator is too large for a cohort study; case-control with matching (e.g., on ward, date, duration of stay) is the correct design. WGS confirms transmission. Multivariable analysis handles confounding by prior antibiotic use, devices, and length of stay. RCT of prophylaxis is not feasible during an active outbreak; cross-sectional and ecological designs cannot establish individual-level associations or transmission chains.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>SBA 4.</b> Six patients on a renal unit develop <i>Mycobacterium tuberculosis</i> over 4 months. Index case is smear-positive pulmonary TB diagnosed retrospectively. MIRU-VNTR shows the same cluster pattern in all 6.</p>
+<p>Which combination of actions is MOST appropriate? A. Discharge all patients immediately, no further follow-up B. Single-room isolation for all current patients, N95 masks, contact tracing, IGRA (or TST) of patients and HCW at baseline and 8–10 weeks, CXR for those positive, treat latent TB infection or active disease as indicated, review ventilation, notify public health C. BCG vaccination of all renal patients now D. Treat all renal patients with 4-drug anti-TB therapy empirically E. Place patients on negative-pressure dialysis only; no screening</p>
+<div class="callout">Answer: <b>B</b>. Renal-unit TB cluster requires: AIIR for current infectious case (if any), FFP2/3 for HCW, contact tracing of patients and HCW, IGRA baseline + 8–10 weeks, CXR, treatment of LTBI (3HR or 6H or 3HP) or active TB, ventilation review (≥ 12 ACH, negative pressure), and notification to UKHSA/CDC. BCG is for unvaccinated children and is not used for outbreak control in adults. Empirical 4-drug therapy is excessive and toxic; not all are infected.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>SBA 5.</b> Three of 10 patients in a burns unit develop multidrug-resistant <i>Acinetobacter baumannii</i> wound infection in 2 weeks. Screening of the other 7 patients shows 2 are colonised. Environmental samples grow the same organism from sink drains and a shared shower trolley. WGS confirms ≤ 5 SNPs between all clinical and environmental isolates.</p>
+<p>Which set of measures is MOST appropriate to control the outbreak? A. Discharge all burns patients; close the unit permanently B. <b>Cohort colonised and infected patients with dedicated staff; daily chlorhexidine bathing; contact precautions; environmental decontamination of sinks/drains (bleach, acetic acid, hydrogen peroxide); dedicated equipment; WGS-confirmed outbreak meeting; sink drain management plan; review of antibiotic use; serial screening of contacts</b> C. Switch all patients to oral amoxicillin-clavulanate D. Treat all patients with IV colistin E. Routine terminal cleaning only; no further action</p>
+<div class="callout">Answer: <b>B</b>. <i>A. baumannii</i> outbreaks require aggressive multi-modal control: cohorting with dedicated staff (often the cornerstone), contact precautions, daily CHG bathing, dedicated equipment, environmental decontamination of sinks and drains (the principal reservoir in burns/ICU), and AMS. WGS confirmation supports the epi link between patients and the environment. Empirical colistin (D) drives resistance. Routine terminal cleaning alone is insufficient. Unit closure is the last resort, not first, and is rarely permanent.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Q: Outbreak definition?</b></li></ul>
+<p>A: Observed &gt; expected cases for that time, place, and population.</p>
+<ul><li><b>Q: Pseudo-outbreak?</b></li></ul>
+<p>A: Apparent increase from enhanced surveillance, change in test/definition, specimen contamination — must be excluded before declaring real outbreak.</p>
+<ul><li><b>Q: Triggers for formal investigation?</b></li></ul>
+<p>A: Single case of rare/serious disease (measles, VHF, CJD, VRSA), ≥ 2 epi-linked cases, breach of surveillance threshold, suspected point-source product/device.</p>
+<ul><li><b>Q: 10 Steps?</b></li></ul>
+<p>A: <b>P</b>repare, <b>V</b>erify, <b>C</b>onfirm, <b>D</b>efine, <b>F</b>ind, <b>D</b>escribe, <b>H</b>ypothesise, <b>T</b>est, <b>C</b>ontrol, <b>C</b>ommunicate.</p>
+<ul><li><b>Q: Case definition components?</b></li></ul>
+<p>A: Person, Place, Time, Clinical, Laboratory.</p>
+<ul><li><b>Q: Case definition levels?</b></li></ul>
+<p>A: Confirmed (lab-confirmed), Probable (clinical + epi link/supportive lab), Possible/Suspected (clinical syndrome + exposure).</p>
+<ul><li><b>Q: Line list key variables?</b></li></ul>
+<p>A: ID, demographics, location, admission/onset dates, symptoms, underlying disease, devices, procedures, specimens, typing, treatment, outcome, HCW/visitor link.</p>
+<ul><li><b>Q: Three epidemic curve patterns?</b></li></ul>
+<p>A: Point source (sharp single peak), Continuous common source (plateau), Propagated (serial peaks ~1 serial interval apart).</p>
+<ul><li><b>Q: Incubation vs serial interval?</b></li></ul>
+<p>A: Incubation = exposure to onset in same case. Serial interval = onset in primary to onset in secondary case.</p>
+<ul><li><b>Q: Attack rate (AR)?</b></li></ul>
+<p>A: Cases / population at risk over a defined period.</p>
+<ul><li><b>Q: Secondary attack rate (SAR)?</b></li></ul>
+<p>A: Cases among contacts of primary case / total susceptible contacts.</p>
+<ul><li><b>Q: RR (cohort) formula?</b></li></ul>
+<p>A: RR = [a/(a+b)] / [c/(c+d)].</p>
+<ul><li><b>Q: OR (case-control) formula?</b></li></ul>
+<p>A: OR = (a × d) / (b × c).</p>
+<ul><li><b>Q: When does OR ≈ RR?</b></li></ul>
+<p>A: When disease is rare (rare-disease assumption). For common outcomes, OR overestimates RR.</p>
+<ul><li><b>Q: ARL (dose–response)?</b></li></ul>
+<p>A: Attack Rate by Level of exposure; rising ARL across increasing intensity supports causation.</p>
+<ul><li><b>Q: Cohort vs case-control — which for which outbreak?</b></li></ul>
+<p>A: <b>Cohort</b> for defined population / point source / continuous common source (denominator known). <b>Case-control</b> for propagated outbreaks / large or unknown denominator.</p>
+<ul><li><b>Q: WGS SNP thresholds (examples)?</b></li></ul>
+<p>A: MRSA ≤ 5; TB ≤ 5–12 over ≤ 5 years; <i>C. difficile</i> ≤ 2–10 (same ribotype); <i>K. pneumoniae</i> ≤ 25; <i>Salmonella</i> Typhi ≤ 5; <i>A. baumannii</i> ≤ 5. Combine with epi data.</p>
+<ul><li><b>Q: Three categories of control measures?</b></li></ul>
+<p>A: Source, Transmission, Host (S-T-H).</p>
+<ul><li><b>Q: Hierarchy of controls (most → least effective)?</b></li></ul>
+<p>A: Elimination &gt; Substitution &gt; Engineering &gt; Administrative &gt; PPE.</p>
+<ul><li>**Q: Hand-hygiene method for <i>C. difficile</i> / norovirus?**</li></ul>
+<p>A: <b>Soap and water</b> for 40–60 s (alcohol does not kill spores / non-enveloped viruses).</p>
+<ul><li><b>Q: Hand-hygiene method for most other organisms?</b></li></ul>
+<p>A: ABHR (alcohol-based hand rub) for 20–30 s if hands not visibly soiled.</p>
+<ul><li><b>Q: Outbreak report structure?</b></li></ul>
+<p>A: IMRaD + Recommendations + Action plan; with abstract, executive summary, appendices (line list, epi curve, tree, SITREPs).</p>
+<ul><li><b>Q: When is an outbreak considered closed?</b></li></ul>
+<p>A: <b>Two maximum incubation periods</b> since the last case without new cases, with sustained controls.</p>
+<ul><li><b>Q: Post-outbreak AAR?</b></li></ul>
+<p>A: After-Action Review — structured debrief to identify what worked, what didn't, why, and update policies/training.</p>
+<ul><li><b>Q: Outbreak notification (IHR 2005)?</b></li></ul>
+<p>A: WHO notification within 24 h for events that may constitute a public health emergency of international concern (PHEIC) — e.g., SARS, smallpox, VHF, novel influenza, polio, SARS-CoV-2 variants of concern.</p>
+<ul><li><b>Q: MRSA decolonisation regimen?</b></li></ul>
+<p>A: Mupirocin 2 % nasal ointment TDS + chlorhexidine 4 % body wash × 5 days.</p>
+<ul><li><b>Q: CDI first-line treatment?</b></li></ul>
+<p>A: Fidaxomicin 200 mg BD × 10 d (preferred) <b>or</b> oral vancomycin 125 mg QDS × 10 d. Metronidazole only if neither available. Bezlotoxumab for recurrence prevention in high-risk. FMT/VOWST/REBYOTA for recurrent CDI.</p>
+<ul><li><b>Q: TB contact prophylaxis?</b></li></ul>
+<p>A: Isoniazid + rifampicin × 3 months (3HR) or isoniazid × 6 months (6H) or rifapentine + isoniazid weekly × 12 weeks (3HP) for LTBI after active disease excluded.</p>
+<ul><li><b>Q: Scabies treatment (classic)?</b></li></ul>
+<p>A: Permethrin 5 % (or malathion 0.5 %); two applications 1 week apart; treat all household/ward contacts simultaneously; launder bedding/clothing ≥ 50 °C or isolate 72 h.</p>
+<ul><li><b>Q: Norovirus HCW exclusion?</b></li></ul>
+<p>A: 48 hours after last symptoms (some guidelines 72 h after resolution of symptoms and formed stools).</p>
+<ul><li><b>Q: Influenza HCW exclusion?</b></li></ul>
+<p>A: 5 days from symptom onset (or until afebrile 24 h and clinically improved).</p>
+<ul><li><b>Q: GAS pharyngitis HCW exclusion?</b></li></ul>
+<p>A: 24 hours of effective antibiotic therapy.</p>
+<ul><li><b>Q: Legionella source?</b></li></ul>
+<p>A: Aerosolised contaminated water (cooling towers, showers, taps, decorative fountains); water safety plan; hyperchlorination; copper-silver ionisation; point-of-use filters for high-risk units.</p>
+<ul><li><b>Q: Aspergillus source?</b></li></ul>
+<p>A: Inhalation of airborne spores from soil, dust, construction/demolition, contaminated air; HEPA filtration; positive-pressure protective isolation; antifungal prophylaxis in high-risk.</p>
+<ul><li>**Q: <i>C. auris</i> control essentials?**</li></ul>
+<p>A: Contact precautions, single room, cohort, dedicated staff, daily chlorhexidine bathing, sporicidal cleaning (hypochlorite, <b>not chlorhexidine alone</b>), screening of contacts, daily communication with receiving facilities, regional/national notification.</p>
+<ul><li><b>Q: HEPA filter efficiency?</b></li></ul>
+<p>A: ≥ 99.97 % at 0.3 µm (H13/14 standard for healthcare).</p>
+<ul><li><b>Q: Negative pressure room specification?</b></li></ul>
+<p>A: ≥ –2.5 Pa, ≥ 12 ACH (≥ 6 ACH renovated), exhaust to outside or HEPA, door closed; for TB, measles, varicella, COVID-19 AGPs, VHF.</p>
+<ul><li><b>Q: Positive pressure room specification?</b></li></ul>
+<p>A: ≥ +2.5 Pa, HEPA filtration, ≥ 12 ACH; for neutropenia, HSCT, solid-organ transplant (protective isolation).</p>
+<ul><li><b>Q: PFGE resolution?</b></li></ul>
+<p>A: ≥ 80–90 % similarity = possibly related; older gold standard, less reproducible than WGS.</p>
+<ul><li><b>Q: spa typing for?</b></li></ul>
+<p>A: <i>S. aureus</i> — fast, portable, useful for short-term MRSA cluster investigation.</p>
+<ul><li><b>Q: MIRU-VNTR for?</b></li></ul>
+<p>A: <i>M. tuberculosis</i> typing.</p>
+<ul><li><b>Q: PCR-ribotyping for?</b></li></ul>
+<p>A: <i>C. difficile</i> ribotype identification (e.g., 027/NAP1).</p>
+<ul><li><b>Q: Phylogenetic tree — tight cluster with short branches suggests?</b></li></ul>
+<p>A: Recent transmission; isolates are closely related.</p>
+<ul><li><b>Q: Chi-squared significance (2×2, df=1)?</b></li></ul>
+<p>A: &gt; 3.84 = p &lt; 0.05; if any cell &lt; 5, use Fisher's exact.</p>
+<ul><li><b>Q: Sample size in cohort vs case-control for outbreak?</b></li></ul>
+<p>A: Cohort needs entire exposed population or random sample. Case-control typically 1:1 to 1:4 case-to-control ratio with 25–50+ of each to detect OR ≥ 2.</p>
+<ul><li><b>Q: Ward closure is...?</b></li></ul>
+<p>A: Last resort — after cohort, isolation, enhanced cleaning, screening, and engineering controls have been tried.</p>
+<ul><li><b>Q: What to communicate first in active outbreak?</b></li></ul>
+<p>A: Internal SITREPs (frequency set by OMT), IPC committee, executive lead, frontline staff; then regulator (UKHSA/CDC), and media (if public interest) through the Trust communications team.</p>
+<ul><li><b>Q: Why combine WGS with epi?</b></li></ul>
+<p>A: Genetically similar isolates can be unrelated; epi link (time, place, person, contact) is required to confirm transmission.</p>
+<ul><li><b>Q: Outbreak closure triggers?</b></li></ul>
+<p>A: 2× maximum incubation period of the pathogen with no new cases (e.g., 2 × 8 d = 16 d for norovirus; 2 × 21 d = 42 d for measles) <b>and</b> control measures sustainable.</p>
+<ul><li><b>Q: SITREP = ?</b></li></ul>
+<p>A: Situation Report — regular brief summary of outbreak status (cases, deaths, control status, key actions, escalations).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: C</b> — The first action is to convene the OMT and verify the diagnosis (rule out pseudo-outbreak, confirm organism, compare to baseline). WGS, ward closure, prophylaxis, and HCW decolonisation all come later and depend on the OMT's analysis. <b>Exam lesson:</b> Step 1 = prepare/verify; resist the urge to act without first confirming the signal.</li></ol>
+<ol><li><b>Correct: C</b> — A defined finite exposed population (150 attendees) with known denominator → retrospective cohort → attack rates and RR. A case-control is the alternative for large, ill-defined populations.</li></ol>
+<ol><li><b>Correct: C</b> — Sharp single peak within one incubation period = point source. Plateau = continuous common source. Serial peaks = propagated.</li></ol>
+<ol><li><b>Correct: C</b> — Successive peaks at ~1 serial interval = propagated person-to-person spread.</li></ol>
+<ol><li><b>Correct: D</b> — WGS is the modern gold standard for typing in outbreak investigation. PFGE is older; MLST has lower resolution; spa is organism-specific (S. aureus); RAPD is non-reproducible.</li></ol>
+<ol><li><b>Correct: C</b> — OR = 4.5, 95 % CI 1.8–11.2 excludes 1, so statistically significant. Interpret as odds of bed-4 exposure 4.5× higher in cases vs controls. RR cannot be calculated from a case-control (denominator is cases + controls, not population at risk). The rare-disease assumption is implicit in using OR.</li></ol>
+<ol><li><b>Correct: C</b> — Discontinuing the inciting antibiotic (e.g., clindamycin, FQ, cephalosporins) and isolating symptomatic cases target the <b>source</b> (reservoir) of CDI. ABHR and PPE target transmission; N95 is not needed (no airborne spread); cohorting is a transmission measure.</li></ol>
+<ol><li><b>Correct: B</b> — Norovirus is a non-enveloped virus; alcohol-based hand rub is less effective. Soap and water for 40–60 s is required. Gloves do not replace hand hygiene.</li></ol>
+<ol><li><b>Correct: B</b> — Asymptomatic HCW with positive IGRA and normal CXR = latent TB infection → treat for LTBI (3HR, 6H, or 3HP). AIIR isolation is for active disease. BCG is not used for outbreak control in adults. 4-drug therapy is for active TB.</li></ol>
+<ol><li><b>Correct: C</b> — Two maximum incubation periods without new cases (and control measures in place) is the standard closure criterion. Last case discharge is not closure (could still incubate). OMT vote, WGS, or external declaration are insufficient alone.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — A 7-of-25 cluster (28 % attack rate) vs expected 0.4 % is a 70× excess → real outbreak. <i>Pseudomonas</i> in haematology suggests an environmental source (water, drains, taps) or line-care failure. The immediate priority is multimodal control (cohort, contact, screening, environmental, device review) <b>in parallel with</b> WGS of all isolates. Ward closure is a last resort. Meropenem prophylaxis is not standard and drives resistance. Single-isolate WGS is insufficient.</li></ol>
+<ol><li><b>Correct: A</b> — Classic measles = airborne, R₀ 12–18. Requires AIIR (negative pressure, ≥ 12 ACH, exhaust/HEPA), FFP3 for HCW, post-exposure prophylaxis (MMR within 72 h for ≥ 6 mo; HNIG within 6 d for &lt; 6 mo / pregnant / immunocompromised), HCW exclusion 5–21 d post-exposure, public health notification. Positive pressure is wrong (would push contaminated air out); cohort with other respiratory patients is dangerous; N95 is for airborne, not negative-pressure rooms per se.</li></ol>
+<ol><li><b>Correct: C</b> — Hospital-wide outbreak with denominator of several thousand → case-control with matching is the correct design. WGS confirms the transmission cluster (clade); environmental isolates help identify the reservoir. Multivariable regression handles confounding by antibiotics, devices, ICU stay. Cohort and RCT are infeasible; cross-sectional and ecological designs cannot establish individual-level associations.</li></ol>
+<ol><li><b>Correct: B</b> — TB cluster on a renal unit requires AIIR for any current infectious case, FFP2/3 for HCW, contact tracing of patients and HCW, IGRA at baseline and 8–10 weeks, CXR for positives, treatment of LTBI (3HR, 6H, 3HP) or active TB (4-drug RIPE), ventilation review, public health notification. Discharge of all patients is unsafe; BCG not used in adult outbreak control; 4-drug empirical therapy is toxic and unnecessary for uninfected contacts; dialysis-only negative pressure is insufficient.</li></ol>
+<ol><li><b>Correct: B</b> — <i>A. baumannii</i> in burns requires multimodal control: cohort with dedicated staff, contact precautions, daily CHG bathing, dedicated equipment, sink/drain decontamination (the principal reservoir in burns/ICU), AMS, serial screening. WGS confirms the cluster between patients and the environment. Unit closure is the last resort (not first), and discharge of all patients is unsafe. Empirical colistin drives resistance. Routine terminal cleaning is inadequate.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Outbreak Investigation in Healthcare Settings is a <b>Must Know</b> topic for FCPS/MRCP. <b>Key takeaway:</b> A healthcare outbreak exists when observed cases exceed the expected baseline for that time, place, and population. Investigation follows 10 logical steps (Prepare → Verify → Confirm → Define → Find → Describe → Hypothesise → Test → Control → Communicate). The shape of the epidemic curve identifies transmission mode (point source → cohort study; continuous common source → cohort with environmental focus; propagated → case-control). The 2×2 table yields RR (cohort) or OR (case-control), and dose–response (ARL) strengthens causal inference. WGS is the modern gold standard for typing, with organism-specific SNP thresholds interpreted alongside epidemiological data. Control measures target the source, transmission, and host, following the hierarchy Elimination &gt; Engineering &gt; Administrative &gt; PPE. Final outbreak reports use IMRaD + recommendations and feed into post-outbreak AAR and policy updates. Outbreak closure requires two maximum incubation periods with no new cases.</p>
+<p><b>Exam focus:</b> The 10 steps; case definition levels; 2×2 formulas (RR, OR, AR, ARL); cohort vs case-control selection; epi curve interpretation; WGS thresholds; control categories; common healthcare outbreak organisms and their specific measures (Norovirus = soap+water; <i>C. diff</i> = sporicidal; TB = AIIR; CRE/<i>A. baumannii</i> = cohort + dedicated staff + environmental decontamination); outbreak report and post-outbreak AAR.</p>
+<p><b>Clinical relevance:</b> Every IPC and ID physician will participate in outbreak investigation. The framework turns chaos into a structured, defensible response — protecting patients, healthcare workers, and the institution while producing lessons that update local and national IPC policy.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | WGS/typing references current to 2024–2026 guidance (UKHSA, ECDC, CDC, WHO).</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Outbreak Investigation In Healthcare Settings · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

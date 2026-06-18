@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oesophageal Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.18. UPPER GI CANCERS</span>
+      <div class="h1">Oesophageal Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Distinguish adenocarcinoma vs squamous cell carcinoma: epidemiology, risk factors, location, management</li><li>[ ] Describe staging (TNM 8th ed) and its impact on treatment algorithm</li><li>[ ] Compare neoadjuvant strategies: CROSS (neoCRT) vs FLOT (perioperative chemo) vs MAGIC/ECF</li><li>[ ] Know definitive chemoradiation for squamous cell carcinoma</li><li>[ ] Recognise and manage complications: anastomotic leak, chylothorax, recurrent laryngeal nerve palsy</li><li>[ ] Identify SVCO and MSCC as oncologic emergencies in oesophageal cancer</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of oesophageal mucosa; two main histological types: **adenocarcinoma** (distal oesophagus/GEJ) and **squamous cell carcinoma** (proximal/mid oesophagus)</td></tr><tr><td>**Incidence**</td><td>UK: ~9,300 new cases/year; M:F = 3:2; Adenocarcinoma now > Squamous in Western countries</td></tr><tr><td>**Prevalence**</td><td>6th most common cause of cancer death globally; 5-year OS ~15-25% overall</td></tr><tr><td>**Peak Age**</td><td>60-80 years (median 70); rare <40</td></tr><tr><td>**Sex Ratio**</td><td>Male predominance (3:1 for adenocarcinoma, 2:1 for squamous)</td></tr><tr><td>**Risk Factors**</td><td>**Adenocarcinoma**: Barrett's oesophagus (↑40-125x), GERD, obesity, smoking, male sex<br>**Squamous**: Smoking, alcohol (synergistic), achalasia, tylosis, caustic injury, hot beverages, HPV (some regions), nutritional deficiencies</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Risk Factors] --&gt; B[Molecular Pathogenesis] B --&gt; C1[Adenocarcinoma Pathway] B --&gt; C2[Squamous Pathway] C1 --&gt; D1[Barrett's Metaplasia → Dysplasia → Cancer] C2 --&gt; D2[Chronic Irritation → TP53/CDKN2A Mutations] D1 --&gt; E[Invasion → Lymphatic/Haematogenous Spread] D2 --&gt; E E --&gt; F[Clinical Presentation: Dysphagia, Weight Loss] </code>``</p>
+<div class="sub-h">Key Pathogenic Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Adenocarcinoma</th><th>Squamous Cell Carcinoma</th></tr><tr><td>---------</td><td>----------------</td><td>-------------------------</td></tr><tr><td>**Precursor Lesion**</td><td>Barrett's oesophagus (intestinal metaplasia)</td><td>Dysplasia (no defined metaplasia)</td></tr><tr><td>**Key Mutations**</td><td>TP53 (90%), CDKN2A, ARID1A, PIK3CA, SMAD4</td><td>TP53 (95%), CDKN2A, NOTCH1, PIK3CA, FBXW7</td></tr><tr><td>**Chromosomal Instability**</td><td>High (aneuploidy)</td><td>High</td></tr><tr><td>**Molecular Subtypes**</td><td>TCGA: Chromosomal, MSI, EMT-like</td><td>TCGA: Basal, Classical, Mesenchymal</td></tr><tr><td>**HER2 Amplification**</td><td>15-30% (distal/GEJ)</td><td>Rare (<5%)</td></tr><tr><td>**PD-L1 Expression**</td><td>Variable (CPS used for ICI)</td><td>Variable</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Presenting Symptom**</td><td>**Progressive dysphagia** (solids → liquids) = hallmark; Odynophagia</td></tr><tr><td>**Weight Loss**</td><td>>10% body weight = poor prognostic sign</td></tr><tr><td>**Reflux/Heartburn**</td><td>Pre-existing GERD (adenocarcinoma)</td></tr><tr><td>**Hoarseness**</td><td>Recurrent laryngeal nerve palsy (mediastinal invasion) → **unresectable**</td></tr><tr><td>**Cough/Regurgitation**</td><td>Tracheo-oesophageal fistula, aspiration</td></tr><tr><td>**SVCO**</td><td>Mediastinal nodal compression of SVC (emergency)</td></tr><tr><td>**Metastatic Symptoms**</td><td>Liver (RUQ pain), Lung (dyspnoea), Bone (pain), Brain (neuro)</td></tr><tr><td>**Paraneoplastic**</td><td>Hypercalcaemia (PTHrP), Dermatomyositis, Acanthosis nigricans (Tripe palms)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**TNM 8th Edition**</td><td>Separate staging for **Adenocarcinoma** vs **Squamous** vs **GEJ** (Siewert I/II/III)</td></tr><tr><td>**T Stage**</td><td>T1a: Lamina propria/Submucosa → T1b: Muscularis propria → T2: Adventitia → T3: Adjacent structures → T4: Unresectable</td></tr><tr><td>**N Stage**</td><td>N0-N3 by number of regional nodes (N1: 1-2, N2: 3-6, N3: ≥7)</td></tr><tr><td>**M Stage**</td><td>M0 vs M1 (distant mets); M1a vs M1b for cervical/celiac nodes (histology-dependent)</td></tr><tr><td>**Stage Grouping**</td><td>**Adenocarcinoma**: IA (T1N0), IB (T2N0/T1N1), IIA (T3N0), IIB (T1-2N1/T3N1), III (T4aN0-1/T1-3N2), IV (T4b/Any N/M1)<br>**Squamous**: Similar but N-stage cutoff differs; Location (upper/mid/lower) matters for stage grouping</td></tr></table>
+<div class="sub-h">Siewert Classification (GEJ Tumours)</div>
+<table class="ctable"><tr><th>Type</th><th>Epicentre</th><th>Approach</th></tr><tr><td>------</td><td>-----------</td><td>----------</td></tr><tr><td>**Siewert I**</td><td>1-5 cm **above** GEJ</td><td>Oesophagectomy (thoraco-abdominal)</td></tr><tr><td>**Siewert II**</td><td>1 cm above to 2 cm **below** GEJ</td><td>Transhiatal or transthoracic</td></tr><tr><td>**Siewert III**</td><td>2-5 cm **below** GEJ</td><td>Gastrectomy (transabdominal)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Findings</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td></tr><tr><td>**Upper GI Endoscopy + Biopsy**</td><td>**Gold standard** diagnosis</td><td>Histology (adeno vs squamous), HER2, PD-L1 (CPS), MSI/MMR</td></tr><tr><td>**Endoscopic Ultrasound (EUS)**</td><td>Local T/N staging + nodal sampling</td><td>Most accurate for T-stage; FNA of suspicious nodes</td></tr><tr><td>**CT Chest/Abdomen/Pelvis**</td><td>Distant mets, resectability</td><td>Liver mets, lung nodules, celiac nodes, ascites</td></tr><tr><td>**PET-CT**</td><td>Staging (metabolic activity), occult mets</td><td>Superior to CT for distant mets; not for T-stage</td></tr><tr><td>**Diagnostic Laparoscopy**</td><td>Occult peritoneal mets (especially Siewert II/III)</td><td>Upstages 10-20%</td></tr><tr><td>**Bronchoscopy**</td><td>Mid/upper tumours (tracheal invasion)</td><td>Mandatory if tumour >25 cm from incisors</td></tr><tr><td>**Biomarkers**</td><td>HER2 IHC/FISH (adeno), PD-L1 CPS, MSI/MMR, EBV (rare)</td><td>Guide targeted/immunotherapy</td></tr><tr><td>**Nutritional Assessment**</td><td>Pre-op optimisation</td><td>Albumin, weight loss, MUST score</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Benign Stricture**</td><td>Gradual onset, long history GERD, smooth on endoscopy, biopsies negative</td></tr><tr><td>**Achalasia**</td><td>Dysphagia to solids & liquids, regurgitation, bird's beak on barium, aperistalsis on manometry</td></tr><tr><td>**Oesophageal Web/Ring**</td><td>Intermittent dysphagia, proximal, thin membrane</td></tr><tr><td>**Eosinophilic Oesophagitis**</td><td>Young, atopy, food impaction, rings/furrows, eosinophils on biopsy</td></tr><tr><td>**Extrinsic Compression**</td><td>Vascular (double aortic arch), mediastinal mass, thyroid</td></tr><tr><td>**Infectious Oesophagitis**</td><td>Immunocompromised, odynophagia > dysphagia, CMV/HSV/Candida on biopsy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Diagnosis &amp; Staging] --&gt; B{Resectable?} B --&gt;|T1a N0| C[Endoscopic Resection: EMR/ESD] B --&gt;|Locally Advanced&lt;br/&gt;T1b-T4a N0-2 M0| D{Histology} D --&gt;|Adenocarcinoma / GEJ| E[Perioperative Chemo&lt;br/&gt;FLOT x4 cycles pre + post&lt;br/&gt;OR&lt;br/&gt;Neoadjuvant CRT&lt;br/&gt;CROSS: Carboplatin/Paclitaxel + 41.4 Gy] D --&gt;|Squamous Cell| F[Definitive Chemoradiation&lt;br/&gt;50-50.4 Gy + Concurrent Chemo&lt;br/&gt;Cisplatin/5-FU or Carboplatin/Paclitaxel&lt;br/&gt;Surgery only if residual] B --&gt;|Metastatic / Unresectable| G[Palliative Systemic Therapy] G --&gt; H1[1st Line: FOLFOX/CAPOX + Nivolumab&lt;br/&gt;(CheckMate 648/649) if PD-L1 CPS ≥5] G --&gt; H2[HER2+: Add Trastuzumab&lt;br/&gt;(ToGA trial)] G --&gt; H3[2nd Line: Paclitaxel ± Ramucirumab&lt;br/&gt;(RAINBOW); Docetaxel; Irinotecan] E --&gt; I[Surgery: Ivor Lewis / McKeown / Transhiatal] F --&gt; J[Response Assessment: PET-CT + Endoscopy at 3-6 mo] I --&gt; K[Adjuvant: Nivolumab if residual&lt;br/&gt;(CheckMate 577)] K --&gt; L[Surveillance] J --&gt; L L --&gt; M[Endoscopy q3-6mo x2yr, then annually&lt;br/&gt;CT Chest/Abd/Pelvis annually x5yr] </code>``</p>
+<div class="sub-h">Treatment by Stage</div>
+<table class="ctable"><tr><th>Stage</th><th>Adenocarcinoma / GEJ</th><th>Squamous Cell Carcinoma</th></tr><tr><td>-------</td><td>---------------------</td><td>-------------------------</td></tr><tr><td>**T1a N0**</td><td>Endoscopic resection (EMR/ESD) if well-diff, no LVI, <2cm</td><td>Endoscopic resection (rare)</td></tr><tr><td>**T1b N0**</td><td>Surgery ± perioperative chemo (FLOT)</td><td>Surgery OR Definitive CRT</td></tr><tr><td>**T2-3 / N+ (Resectable)**</td><td>**FLOT x4 pre + post** (FLOT4-AIO) **OR**<br/>**CROSS: NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery**</td><td>**Definitive CRT** (50.4 Gy + Cisplatin/5-FU)<br/>Surgery only for residual disease</td></tr><tr><td>**T4a / N2-3 (Borderline)**</td><td>Neoadjuvant CRT (CROSS) preferred</td><td>Definitive CRT</td></tr><tr><td>**Cervical Nodes (Squamous)**</td><td>M1a → Palliative</td><td>Definitive CRT (include neck)</td></tr><tr><td>**Celiac Nodes (Adeno)**</td><td>M1a → Palliative</td><td>N/A</td></tr><tr><td>**Metastatic (M1)**</td><td>**1L: FOLFOX/CAPOX + Nivolumab** (CPS ≥5, CheckMate 649)<br/>HER2+: + Trastuzumab (ToGA)<br/>**2L: Paclitaxel ± Ramucirumab** (RAINBOW)<br/>**3L: Docetaxel / Irinotecan / Trifluridine-tipiracil**</td><td>**1L: Cisplatin/5-FU + Nivolumab** (CheckMate 648)<br/>**2L: Paclitaxel / Docetaxel / Irinotecan**</td></tr></table>
+<div class="sub-h">Surgical Approaches</div>
+<table class="ctable"><tr><th>Approach</th><th>Indication</th><th>Key Points</th></tr><tr><td>----------</td><td>------------</td><td>------------</td></tr><tr><td>**Ivor Lewis** (Laparotomy + Right Thoracotomy)</td><td>Mid/distal, Siewert I/II</td><td>2-field lymphadenectomy; lower anastomotic leak rate</td></tr><tr><td>**McKeown** (3-field: Neck + Chest + Abdomen)</td><td>Proximal/mid, Squamous</td><td>3-field lymphadenectomy; higher RLN palsy risk</td></tr><tr><td>**Transhiatal**</td><td>Distal, Siewert III, Frail</td><td>No thoracotomy; limited lymphadenectomy; higher leak rate</td></tr><tr><td>**Minimally Invasive (MIE)**</td><td>Increasingly standard</td><td>Equivalent oncologic outcomes; less pulmonary morbidity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Two Diseases**</td><td>Adeno (distal, Barrett's, obesity) vs Squamous (proximal/mid, smoking/alcohol)</td></tr><tr><td>**Red Flag**</td><td>**Progressive dysphagia + weight loss in >55yr = urgent endoscopy (2-week wait)**</td></tr><tr><td>**Staging**</td><td>EUS for T/N, PET-CT for M, Laparoscopy for occult mets (GEJ)</td></tr><tr><td>**HER2 Testing**</td><td>Mandatory in metastatic adenocarcinoma (ToGA: trastuzumab + chemo ↑OS)</td></tr><tr><td>**CROSS Trial**</td><td>NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery improved OS vs Surgery alone (HR 0.65) — **Adeno benefit > Squamous**</td></tr><tr><td>**FLOT Trial**</td><td>Perioperative FLOT (docetaxel/oxaliplatin/5-FU/leucovorin) ↑OS vs ECF/ECX — **Standard for resectable adeno/GEJ**</td></tr><tr><td>**CheckMate 577**</td><td>Adjuvant **Nivolumab** post neoCRT+Surgery with **residual disease** → ↑DFS (HR 0.69)</td></tr><tr><td>**CheckMate 648/649**</td><td>1L Metastatic: **Nivolumab + Chemo** (CPS ≥5) → ↑OS</td></tr><tr><td>**Definitive CRT**</td><td>Standard for **Squamous** (organ preservation); 50.4 Gy + Cisplatin/5-FU</td></tr><tr><td>**SVCO/MSCC**</td><td>Oncologic emergencies — dexamethasone + urgent RT ± stenting/surgery</td></tr><tr><td>**Nutrition**</td><td>Pre-op nutritional optimisation critical; jejunostomy at surgery</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**A 65M with progressive dysphagia, weight loss. Endoscopy shows ulcerated mid-oesophageal mass. Biopsy: squamous cell. CT: T3N1M0. Management?**</td><td>**Definitive chemoradiation** (50.4 Gy + concurrent cisplatin/5-FU). Surgery reserved for residual disease at 3-6 months (PET-CT + endoscopy).</td></tr><tr><td>**Same patient but distal adenocarcinoma, T3N1M0?**</td><td>**Perioperative FLOT** (4 cycles pre + 4 post) **OR** Neoadjuvant CRT (CROSS regimen) → Surgery. FLOT preferred if fit.</td></tr><tr><td>**What is the CROSS regimen?**</td><td>Carboplatin AUC2 + Paclitaxel 50mg/m² weekly ×5 weeks + **41.4 Gy in 23 fractions** concurrent radiation.</td></tr><tr><td>**What is FLOT regimen?**</td><td>Docetaxel 50 + Oxaliplatin 85 + Leucovorin 200 + 5-FU 2600 mg/m² (24h infusion) q2weeks ×4 cycles pre-op + 4 post-op.</td></tr><tr><td>**HER2+ metastatic oesophageal adenocarcinoma — 1st line?**</td><td>**FOLFOX/CAPOX + Trastuzumab** (ToGA trial). Add Nivolumab if PD-L1 CPS ≥5 (CheckMate 649).</td></tr><tr><td>**CheckMate 577 — who gets adjuvant nivolumab?**</td><td>Patients with **residual disease** (ypT+ or ypN+) after **neoadjuvant CRT + surgery** (adeno or squamous).</td></tr><tr><td>**Siewert type II tumour — surgical approach?**</td><td>Transhiatal or transthoracic (Ivor Lewis) — both acceptable. 2-field lymphadenectomy.</td></tr><tr><td>**Oesophageal cancer with hoarseness — significance?**</td><td>**Recurrent laryngeal nerve palsy = T4/unresectable**. Mediastinal invasion.</td></tr><tr><td>**Surveillance post-curative treatment?**</td><td>Endoscopy q3-6mo ×2yr, then annually. CT CAP annually ×5yr. Monitor for second primaries (H&N, lung).</td></tr><tr><td>**Paraneoplastic: dermatomyositis + oesophageal cancer — association?**</td><td>**Acanthosis nigricans / Tripe palms** strongly associated with gastric/oesophageal adenocarcinoma.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**CROSS vs FLOT**</td><td>CROSS = **Neoadjuvant CRT** (radiation + chemo); FLOT = **Perioperative Chemo only** (no radiation). CROSS for adeno/squamous; FLOT mainly adeno/GEJ.</td></tr><tr><td>**Definitive CRT vs NeoCRT**</td><td>Definitive = **No planned surgery** (organ preservation); NeoCRT = **Planned surgery** after RT. Squamous → Definitive; Adeno → NeoCRT (CROSS) or Perioperative Chemo (FLOT).</td></tr><tr><td>**GEJ staging**</td><td>Siewert I/II = Oesophageal staging; Siewert III = Gastric staging. Celiac nodes = M1a for Adeno (not for Squamous).</td></tr><tr><td>**HER2 testing**</td><td>Only in **adenocarcinoma** (not squamous). IHC 3+ = positive; IHC 2+ → FISH.</td></tr><tr><td>**Adjuvant Nivo**</td><td>Only after **neoCRT + surgery** with **residual disease** (ypT+/ypN+). NOT after upfront surgery or FLOT alone.</td></tr></table>
+<p><b>Mnemonic: OESOPHAGEAL</b></p>
+<ul><li><b>O</b>rgan preservation (Squamous → Definitive CRT)</li><li><b>E</b>ndoscopy first (Dysphagia = 2-week wait)</li><li><b>S</b>iewert classification (GEJ types I/II/III)</li><li><b>O</b>besity/Barrett's → Adenocarcinoma</li><li><b>P</b>erioperative FLOT (Adeno standard)</li><li><b>H</b>ER2 testing (Metastatic adeno)</li><li><b>A</b>dv Nivo post-CROSS (Residual disease)</li><li><b>G</b>EO: Celiac nodes = M1a (Adeno only)</li><li><b>E</b>mergencies: SVCO, MSCC, Fistula</li><li><b>A</b>lcohol/Smoking → Squamous</li><li><b>L</b>ymphadenectomy: 2-field (Ivor Lewis) vs 3-field (McKeown)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Oesophageal Cancer)) Histology Adenocarcinoma Distal/GEJ Barrett's precursor HER2+, Obesity FLOT / CROSS Squamous Cell Proximal/Mid Smoking/Alcohol Definitive CRT Staging EUS (T/N) PET-CT (M) Laparoscopy (GEJ) Bronchoscopy (Mid/Upper) Treatment Early (T1a) EMR/ESD Locally Advanced Adeno: FLOT or CROSS Squamous: Definitive CRT Metastatic FOLFOX + Nivo (CPS≥5) HER2+: +Trastuzumab 2L: Pacli + Ramucirumab Surgery Ivor Lewis (2-field) McKeown (3-field) Transhiatal MIE Complications Anastomotic leak Chylothorax RLN palsy Stricture Surveillance Endoscopy q3-6mo CT annually </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Definition**</td><td>Adeno (distal, Barrett's) vs Squamous (proximal, smoking/EtOH)</td></tr><tr><td>**Red Flag**</td><td>Progressive dysphagia + weight loss >55yr = 2-week wait endoscopy</td></tr><tr><td>**Staging**</td><td>EUS (local), PET-CT (distal), Laparoscopy (occult peritoneal), Bronchoscopy (tracheal invasion)</td></tr><tr><td>**Biomarkers**</td><td>HER2 (adeno only), PD-L1 CPS, MSI/MMR</td></tr><tr><td>**T1a N0**</td><td>EMR/ESD</td></tr><tr><td>**Resectable Adeno**</td><td>FLOT (perioperative) **or** CROSS (neoCRT) → Surgery</td></tr><tr><td>**Resectable Squamous**</td><td>Definitive CRT (50.4Gy + Cis/5-FU) — surgery only if residual</td></tr><tr><td>**Metastatic**</td><td>1L: FOLFOX/CAPOX + Nivo (CPS≥5); HER2+ → +Trastuzumab; 2L: Pacli ± Ramu</td></tr><tr><td>**Adjuvant Nivo**</td><td>Post neoCRT+Surgery if **ypT+ or ypN+** (CheckMate 577)</td></tr><tr><td>**Surgery**</td><td>Ivor Lewis (distal), McKeown (proximal), Transhiatal (frail)</td></tr><tr><td>**Emergencies**</td><td>SVCO, MSCC, Tracheo-oesophageal fistula</td></tr><tr><td>**Surveillance**</td><td>Endoscopy q3-6mo×2yr→annual; CT CAP annual×5yr</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Histology differences</td><td></td><td></td></tr><tr><td>Staging investigations</td><td></td><td></td></tr><tr><td>CROSS vs FLOT</td><td></td><td></td></tr><tr><td>Definitive CRT indications</td><td></td><td></td></tr><tr><td>Metastatic 1L/2L regimens</td><td></td><td></td></tr><tr><td>HER2/PD-L1 testing</td><td></td><td></td></tr><tr><td>Adjuvant Nivo criteria</td><td></td><td></td></tr><tr><td>Surgical approaches</td><td></td><td></td></tr><tr><td>Complications</td><td></td><td></td></tr><tr><td>Surveillance</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Gastric Cancer]], [[Neoadjuvant Therapy Principles]], [[SVCO]], [[MSCC]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Oesophageal Cancer (Two Diseases), which statement is correct? A. Adeno (distal, Barrett's, obesity) vs Squamous (proximal/mid, smoking/alcohol) B. Adeno - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Adeno (distal, Barrett's, obesity) vs Squamous (proximal/mid, smoking/alcohol)</li></ul>
+<p><b>2.</b> Regarding Oesophageal Cancer (Red Flag), which statement is correct? A. <b>Progressive dysphagia + weight loss in &gt;55yr = urgent endoscopy (2-week wait)</b> B. **Progressive - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Progressive dysphagia + weight loss in &gt;55yr = urgent endoscopy (2-week wait)</b></li></ul>
+<p><b>3.</b> Regarding Oesophageal Cancer (Staging), which statement is correct? A. EUS for T/N, PET-CT for M, Laparoscopy for occult mets (GEJ) B. EUS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — EUS for T/N, PET-CT for M, Laparoscopy for occult mets (GEJ)</li></ul>
+<p><b>4.</b> Regarding Oesophageal Cancer (HER2 Testing), which statement is correct? A. Mandatory in metastatic adenocarcinoma (ToGA: trastuzumab + chemo ↑OS) B. Mandatory - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Mandatory in metastatic adenocarcinoma (ToGA: trastuzumab + chemo ↑OS)</li></ul>
+<p><b>5.</b> Regarding Oesophageal Cancer (CROSS Trial), which statement is correct? A. NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery improved OS vs Surgery alone (HR 0.65) B. NeoCRT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery improved OS vs Surgery alone (HR 0.65) — <b>Adeno benefit &gt; Squamous</b></li></ul>
+<p><b>6.</b> Regarding Oesophageal Cancer (FLOT Trial), which statement is correct? A. Perioperative FLOT (docetaxel/oxaliplatin/5-FU/leucovorin) ↑OS vs ECF/ECX B. Perioperative - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Perioperative FLOT (docetaxel/oxaliplatin/5-FU/leucovorin) ↑OS vs ECF/ECX — <b>Standard for resectable adeno/GEJ</b></li></ul>
+<p><b>7.</b> Regarding Oesophageal Cancer (CheckMate 577), which statement is correct? A. Adjuvant <b>Nivolumab</b> post neoCRT+Surgery with <b>residual disease</b> → ↑DFS (HR 0.69) B. Adjuvant - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Adjuvant <b>Nivolumab</b> post neoCRT+Surgery with <b>residual disease</b> → ↑DFS (HR 0.69)</li></ul>
+<p><b>8.</b> Regarding Oesophageal Cancer (CheckMate 648/649), which statement is correct? A. 1L Metastatic: <b>Nivolumab + Chemo</b> (CPS ≥5) → ↑OS B. 1L - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 1L Metastatic: <b>Nivolumab + Chemo</b> (CPS ≥5) → ↑OS</li></ul>
+<p><b>9.</b> Regarding Oesophageal Cancer (Definitive CRT), which statement is correct? A. Standard for <b>Squamous</b> (organ preservation) B. Standard - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Standard for <b>Squamous</b> (organ preservation); 50.4 Gy + Cisplatin/5-FU</li></ul>
+<p><b>10.</b> Regarding Oesophageal Cancer (SVCO/MSCC), which statement is correct? A. Oncologic emergencies B. Oncologic - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Oncologic emergencies — dexamethasone + urgent RT ± stenting/surgery</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. Adeno (distal, Barrett's, obesity) vs Squamous (proximal/mid, smoking/alcohol)</li><li>B. Adeno (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: Adeno (distal, Barrett's, obesity) vs Squamous (proximal/mid, smoking/alcohol)</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Progressive dysphagia + weight loss in &gt;55yr = urgent endoscopy (2-week wait)</b></li><li>B. **Progressive (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Progressive dysphagia + weight loss in &gt;55yr = urgent endoscopy (2-week wait)</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. EUS for T/N, PET-CT for M, Laparoscopy for occult mets (GEJ)</li><li>B. EUS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: EUS for T/N, PET-CT for M, Laparoscopy for occult mets (GEJ)</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. Mandatory in metastatic adenocarcinoma (ToGA: trastuzumab + chemo ↑OS)</li><li>B. Mandatory (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: Mandatory in metastatic adenocarcinoma (ToGA: trastuzumab + chemo ↑OS)</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery improved OS vs Surgery alone (HR 0.65)</li><li>B. NeoCRT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery improved OS vs Surgery alone (HR 0.65) — <b>Adeno benefit &gt; Squamous</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. Perioperative FLOT (docetaxel/oxaliplatin/5-FU/leucovorin) ↑OS vs ECF/ECX</li><li>B. Perioperative (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: Perioperative FLOT (docetaxel/oxaliplatin/5-FU/leucovorin) ↑OS vs ECF/ECX — <b>Standard for resectable adeno/GEJ</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. Adjuvant <b>Nivolumab</b> post neoCRT+Surgery with <b>residual disease</b> → ↑DFS (HR 0.69)</li><li>B. Adjuvant (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: Adjuvant <b>Nivolumab</b> post neoCRT+Surgery with <b>residual disease</b> → ↑DFS (HR 0.69)</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. 1L Metastatic: <b>Nivolumab + Chemo</b> (CPS ≥5) → ↑OS</li><li>B. 1L (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: 1L Metastatic: <b>Nivolumab + Chemo</b> (CPS ≥5) → ↑OS</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. Standard for <b>Squamous</b> (organ preservation)</li><li>B. Standard (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: Standard for <b>Squamous</b> (organ preservation); 50.4 Gy + Cisplatin/5-FU</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. Oncologic emergencies</li><li>B. Oncologic (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: Oncologic emergencies — dexamethasone + urgent RT ± stenting/surgery</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Two Diseases? <b>A1:</b> Adeno (distal, Barrett's, obesity) vs Squamous (proximal/mid, smoking/alcohol)</p>
+<p><b>Q2:</b> Red Flag? <b>A2:</b> Progressive dysphagia + weight loss in &gt;55yr = urgent endoscopy (2-week wait)</p>
+<p><b>Q3:</b> Staging? <b>A3:</b> EUS for T/N, PET-CT for M, Laparoscopy for occult mets (GEJ)</p>
+<p><b>Q4:</b> HER2 Testing? <b>A4:</b> Mandatory in metastatic adenocarcinoma (ToGA: trastuzumab + chemo ↑OS)</p>
+<p><b>Q5:</b> CROSS Trial? <b>A5:</b> NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery improved OS vs Surgery alone (HR 0.65) — Adeno benefit &gt; Squamous</p>
+<p><b>Q6:</b> FLOT Trial? <b>A6:</b> Perioperative FLOT (docetaxel/oxaliplatin/5-FU/leucovorin) ↑OS vs ECF/ECX — Standard for resectable adeno/GEJ</p>
+<p><b>Q7:</b> CheckMate 577? <b>A7:</b> Adjuvant Nivolumab post neoCRT+Surgery with residual disease → ↑DFS (HR 0.69)</p>
+<p><b>Q8:</b> CheckMate 648/649? <b>A8:</b> 1L Metastatic: Nivolumab + Chemo (CPS ≥5) → ↑OS</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Two Diseases</td><td>Adeno (distal, Barrett's, obesity) vs Squamous (proximal/mid, smoking/alcohol)</td></tr><tr><td>2</td><td>A</td><td>Red Flag</td><td>Progressive dysphagia + weight loss in >55yr = urgent endoscopy (2-week wait)</td></tr><tr><td>3</td><td>A</td><td>Staging</td><td>EUS for T/N, PET-CT for M, Laparoscopy for occult mets (GEJ)</td></tr><tr><td>4</td><td>A</td><td>HER2 Testing</td><td>Mandatory in metastatic adenocarcinoma (ToGA: trastuzumab + chemo ↑OS)</td></tr><tr><td>5</td><td>A</td><td>CROSS Trial</td><td>NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery improved OS vs Surgery alone (HR 0.65) — Adeno benefit > Squamous</td></tr><tr><td>6</td><td>A</td><td>FLOT Trial</td><td>Perioperative FLOT (docetaxel/oxaliplatin/5-FU/leucovorin) ↑OS vs ECF/ECX — Standard for resectable adeno/GEJ</td></tr><tr><td>7</td><td>A</td><td>CheckMate 577</td><td>Adjuvant Nivolumab post neoCRT+Surgery with residual disease → ↑DFS (HR 0.69)</td></tr><tr><td>8</td><td>A</td><td>CheckMate 648/649</td><td>1L Metastatic: Nivolumab + Chemo (CPS ≥5) → ↑OS</td></tr><tr><td>9</td><td>A</td><td>Definitive CRT</td><td>Standard for Squamous (organ preservation); 50.4 Gy + Cisplatin/5-FU</td></tr><tr><td>10</td><td>A</td><td>SVCO/MSCC</td><td>Oncologic emergencies — dexamethasone + urgent RT ± stenting/surgery</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Two Diseases</td><td>Adeno (distal, Barrett's, obesity) vs Squamous (proximal/mid, smoking/alcohol)</td></tr><tr><td>2</td><td>A</td><td>Red Flag</td><td>Progressive dysphagia + weight loss in >55yr = urgent endoscopy (2-week wait)</td></tr><tr><td>3</td><td>A</td><td>Staging</td><td>EUS for T/N, PET-CT for M, Laparoscopy for occult mets (GEJ)</td></tr><tr><td>4</td><td>A</td><td>HER2 Testing</td><td>Mandatory in metastatic adenocarcinoma (ToGA: trastuzumab + chemo ↑OS)</td></tr><tr><td>5</td><td>A</td><td>CROSS Trial</td><td>NeoCRT (Carbo/Taxol + 41.4Gy) → Surgery improved OS vs Surgery alone (HR 0.65) — Adeno benefit > Squamous</td></tr><tr><td>6</td><td>A</td><td>FLOT Trial</td><td>Perioperative FLOT (docetaxel/oxaliplatin/5-FU/leucovorin) ↑OS vs ECF/ECX — Standard for resectable adeno/GEJ</td></tr><tr><td>7</td><td>A</td><td>CheckMate 577</td><td>Adjuvant Nivolumab post neoCRT+Surgery with residual disease → ↑DFS (HR 0.69)</td></tr><tr><td>8</td><td>A</td><td>CheckMate 648/649</td><td>1L Metastatic: Nivolumab + Chemo (CPS ≥5) → ↑OS</td></tr><tr><td>9</td><td>A</td><td>Definitive CRT</td><td>Standard for Squamous (organ preservation); 50.4 Gy + Cisplatin/5-FU</td></tr><tr><td>10</td><td>A</td><td>SVCO/MSCC</td><td>Oncologic emergencies — dexamethasone + urgent RT ± stenting/surgery</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Upper GI Cancers|Upper GI Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Oesophageal Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Testicular Germ Cell Tumours — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.19. UROLOGICAL CANCERS</span>
+      <div class="h1">Testicular Germ Cell Tumours</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Distinguish <b>Seminoma</b> vs <b>Non-seminoma (NSGCT)</b> histology, markers, spread, treatment</li><li>[ ] Apply <b>IGCCCG risk classification</b> for metastatic disease</li><li>[ ] Manage <b>Stage I</b>: Surveillance vs Adjuvant (Carboplatin/RT for Seminoma; RPLND/BEP×1 for NSGCT)</li><li>[ ] Prescribe <b>BEP chemotherapy</b> (Bleomycin, Etoposide, Cisplatin) with dose adjustments for bleomycin lung toxicity</li><li>[ ] Know <b>RPLND</b> indications: Primary (NSGCT Stage I/IIA), Post-chemo residual mass</li><li>[ ] Manage <b>Salvage therapy</b>: High-dose chemo + ASCT (standard) vs Conventional chemo</li><li>[ ] Screen for <b>Late effects</b>: CVD, Second malignancies, Hypogonadism, Fertility, Neuropathy, Raynaud's</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant germ cell tumour of testis; **Seminoma (50-55%)** vs **Non-seminoma/NSGCT (45-50%)**; Mixed = treated as NSGCT</td></tr><tr><td>**Incidence**</td><td>UK: ~2,400/year; **Most common solid cancer in men 15-45**; Rising incidence</td></tr><tr><td>**Prevalence**</td><td>**>95% cure rate** overall; 5-year OS: Stage I >99%, Metastatic Good risk >90%</td></tr><tr><td>**Peak Age**</td><td>**Seminoma**: 35-45; **NSGCT**: 20-35; **Bimodal** (infants: yolk sac; 15-45: GCT; >60: spermatocytic)</td></tr><tr><td>**Sex Ratio**</td><td>Male only</td></tr><tr><td>**Risk Factors**</td><td>**Cryptorchidism** (↑3-5x, even after orchidopexy), **Prior GCT** (contralateral 2-5%), **Family history**, **GWAS loci** (KITLG, SPRY4, BAK1, DMRT1), **HIV**, **Hypospadias**, **Testicular microlithiasis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Primordial Germ Cell] --&gt; B[GCNIS (Germ Cell Neoplasia In Situ)] B --&gt; C1[Seminoma] B --&gt; C2[Non-Seminoma (NSGCT)] C1 --&gt; D1[Uniform cells, clear cytoplasm, central nuclei, LCD117+, PLAP+, OCT3/4+] C2 --&gt; D2[Embryonal Carcinoma (EC) — Stem cell&lt;br/&gt;Yolk Sac Tumour (YST) — AFP+&lt;br/&gt;Choriocarcinoma — hCG+ (syncytiotrophoblasts)&lt;br/&gt;Teratoma — Somatic differentiation (mature/immature)&lt;br/&gt;Spermatocytic Tumour — Benign, older men] C2 --&gt; E[Trophoblastic differentiation → hCG] C2 --&gt; F[YST differentiation → AFP] D1 --&gt; G[Lymphatic Spread (Predictable: Para-aortic → Iliac → Mediastinal → Supraclavicular)] C2 --&gt; H[Lymphatic + Haematogenous (Lung, Liver, Brain, Bone)] </code>``</p>
+<div class="sub-h">Tumour Markers</div>
+<table class="ctable"><tr><th>Marker</th><th>Seminoma</th><th>NSGCT</th><th>Half-life</th><th>Clinical Use</th></tr><tr><td>--------</td><td>----------</td><td>-------</td><td>-----------</td><td>--------------</td></tr><tr><td>**AFP**</td><td>**Never elevated** (if ↑ = NSGCT component)</td><td>↑ in **YST** (70%)</td><td>5-7 days</td><td>Diagnosis, Staging, Monitoring, Prognosis (IGCCCG)</td></tr><tr><td>**hCG**</td><td>↑ in 10-15% (syncytiotrophoblasts)</td><td>↑ in **Choriocarcinoma** & **EC**</td><td>24-36 hours</td><td>Diagnosis, Staging, Monitoring, Prognosis</td></tr><tr><td>**LDH**</td><td>↑ in bulky/advanced</td><td>↑ in advanced</td><td>—</td><td>**IGCCCG Prognostic Factor** (surrogate for tumour burden)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Painless Testicular Lump**</td><td>**Most common (90%)**; Firm, non-tender, intra-testicular</td></tr><tr><td>**Pain/Discomfort**</td><td>10-20% (haemorrhage, infarction, epididymo-orchitis)</td></tr><tr><td>**Gynaecomastia**</td><td>hCG → ↑ oestrogen (NSGCT with choriocarcinoma)</td></tr><tr><td>**Back Pain**</td><td>Retroperitoneal nodes (ureteric obstruction, IVC compression)</td></tr><tr><td>**Respiratory Symptoms**</td><td>Lung mets (cough, dyspnoea, haemoptysis)</td></tr><tr><td>**Neurological**</td><td>Brain mets (NSGCT, choriocarcinoma)</td></tr><tr><td>**Acute Scrotum**</td><td>Torsion, infection — **Always rule out tumour**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**TNM 8th Edition**</td><td>pT1: No LVI, tunica albuginea intact; pT2: LVI or tunica vaginalis; pT3: Spermatic cord; pT4: Scrotum</td></tr><tr><td>**S Stage (Serum Markers)**</td><td>S0: Normal; S1: AFP<1000, hCG<5000, LDH<1.5xULN; S2: AFP 1000-10000, hCG 5000-50000, LDH 1.5-10xULN; S3: >S2</td></tr><tr><td>**Stage Grouping**</td><td>**Stage I**: pT1-4, N0, M0, S0<br/>**Stage II**: Any pT, N1-3, M0, S0-1<br/>**Stage III**: Any pT, Any N, M1, Any S</td></tr></table>
+<div class="sub-h">IGCCCG Risk Groups (Metastatic — Post-Orchidectomy Markers)</div>
+<table class="ctable"><tr><th>Risk Group</th><th>Seminoma</th><th>Non-Seminoma</th></tr><tr><td>------------</td><td>----------</td><td>--------------</td></tr><tr><td>**Good**</td><td>**Any primary, No non-pulmonary visceral mets**, Normal AFP, Any hCG, Any LDH</td><td>**Testicular/Retroperitoneal primary, No non-pulmonary visceral mets**, **AFP <1000, hCG <5000, LDH <1.5xULN**</td></tr><tr><td>**Intermediate**</td><td>**Non-pulmonary visceral mets present**</td><td>**Testicular/Retroperitoneal primary, No non-pulmonary visceral mets**, **AFP 1000-10000 OR hCG 5000-50000 OR LDH 1.5-10xULN**</td></tr><tr><td>**Poor**</td><td>**Does not exist for Seminoma**</td><td>**Mediastinal primary OR Non-pulmonary visceral mets OR AFP >10000 OR hCG >50000 OR LDH >10xULN**</td></tr></table>
+<p><b>Key: Seminoma = ONLY Good or Intermediate (no Poor risk)</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Findings</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td></tr><tr><td>**Scrotal Ultrasound**</td><td>**First-line** — Confirm intra-testicular mass</td><td>Heterogeneous, hypoechoic, vascular; Rule out epididymal cyst</td></tr><tr><td>**Serum Markers (Pre-Orchidectomy)**</td><td>**AFP, hCG (β-hCG), LDH** — **Mandatory before orchidectomy**</td><td>Baseline for staging, prognosis (IGCCCG), monitoring</td></tr><tr><td>**Radical Inguinal Orchidectomy**</td><td>**Diagnostic + Therapeutic** — Never transscrotal</td><td>**Gold standard**; Histology (Seminoma vs NSGCT), LVI, Rete testis invasion</td></tr><tr><td>**CT Chest/Abdomen/Pelvis**</td><td>**Staging** — Nodal, Pulmonary, Visceral mets</td><td>**Lymph nodes >1cm short axis = suspicious**</td></tr><tr><td>**MRI**</td><td>Equivocal CT; Brain mets (NSGCT symptom)</td><td>Better soft tissue</td></tr><tr><td>**PET-CT**</td><td>**Not standard**; Residual mass post-chemo (Seminoma: >3cm residual → PET at 6-8wks)</td><td>FDG-avid = viable tumour</td></tr><tr><td>**Chest X-ray**</td><td>Baseline if CT not available</td><td>Less sensitive</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Epididymal Cyst / Spermatocele**</td><td>Cystic, transilluminates, separate from testis, asymptomatic</td></tr><tr><td>**Hydrocele**</td><td>Fluid collection, transilluminates, fluctuant; May obscure testis</td></tr><tr><td>**Epididymo-orchitis**</td><td>Acute pain, fever, tender, swollen epididymis; **Urinalysis + culture +ve**</td></tr><tr><td>**Testicular Torsion**</td><td>**Acute severe pain**, absent cremasteric reflex, high-riding testis; **Surgical emergency**</td></tr><tr><td>**Varicocele**</td><td>"Bag of worms", left-sided, increases with Valsalva</td></tr><tr><td>**Leydig / Sertoli Cell Tumour**</td><td>Rare, sex cord-stromal; May produce androgens/oestrogens; **AFP/hCG negative**</td></tr><tr><td>**Metastasis to Testis**</td><td>Older men; Known primary (Lung, Prostate, Melanoma, RCC); Bilateral common</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stage I Seminoma (pT1-4, N0, M0, S0)</div>
+<p>``<code>mermaid flowchart TD A[Stage I Seminoma post-Orchidectomy] --&gt; B{Risk Factors for Relapse} B --&gt;|<b>No risk factors</b>&lt;br/&gt;(pT1-2, no LVI, Tumour &lt;4cm)| C[<b>Surveillance (Preferred)</b>&lt;br/&gt;CT Abd/Pelvis q3-6mo×2yr, then q6-12mo×3yr&lt;br/&gt;Chest X-ray annually ×5yr&lt;br/&gt;Markers q3-6mo ×5yr&lt;br/&gt;<b>Relapse rate ~15-20%</b>] B --&gt;|<b>Risk factors</b>&lt;br/&gt;(pT3-4, LVI, Tumour ≥4cm)| D[<b>Adjuvant Options</b>] D --&gt; D1[<b>Carboplatin AUC7 ×1 cycle</b>&lt;br/&gt;(NEAT/SAKK 9401) — <b>Preferred</b>&lt;br/&gt;Less toxicity, equivalent to RT] D --&gt; D2[<b>Radiotherapy</b>&lt;br/&gt;Para-aortic ± Ipsilateral iliac (Dog-leg)&lt;br/&gt;20-30 Gy in 10-15 fractions&lt;br/&gt;<b>More late toxicity</b> (CVD, 2nd cancers)] D --&gt; D3[<b>Surveillance</b> (Patient choice, compliance)] </code>``</p>
+<div class="sub-h">Stage I Non-Seminoma (pT1-4, N0, M0, S0)</div>
+<p>``<code>mermaid flowchart TD A[Stage I NSGCT post-Orchidectomy] --&gt; B{Risk Factors} B --&gt;|<b>No LVI (pT1)</b>&lt;br/&gt;Relapse rate ~15%| C[<b>Surveillance (Preferred)</b>&lt;br/&gt;CT q2mo×1yr, q3mo×2yr, q6mo×2yr&lt;br/&gt;Markers q2mo×1yr, then q3mo&lt;br/&gt;Chest X-ray q6mo×5yr&lt;br/&gt;<b>High compliance required</b>] B --&gt;|<b>LVI+ (pT2) or High-risk</b>&lt;br/&gt;Relapse rate ~50%| D[<b>Adjuvant Options</b>] D --&gt; D1[<b>Primary RPLND</b>&lt;br/&gt;Nerve-sparing (preserve ejaculation)&lt;br/&gt;Pathological staging → guides chemo&lt;br/&gt;<b>Preferred if expertise available</b>] D --&gt; D2[<b>BEP ×1 cycle</b>&lt;br/&gt;(SWENOTECA) — <b>Non-inferior to RPLND</b>&lt;br/&gt;Less morbidity, easier logistics] D --&gt; D3[<b>Surveillance</b> (Selected, compliant)] </code>``</p>
+<div class="sub-h">Stage II (Nodal Mets)</div>
+<p>``<code>mermaid flowchart TD A[Stage II] --&gt; B{Histology} B --&gt;|Seminoma| C[IIA/IIB (&lt;3-5cm nodes): <b>Radiotherapy</b> (Para-aortic + Iliac) OR <b>Chemo (BEP×3/EP×4)</b>&lt;br/&gt;IIC (&gt;5cm): <b>Chemo (BEP×3/EP×4)</b>] B --&gt;|Non-Seminoma| D[IIA/IIB: <b>Primary RPLND</b> (if markers normalised) OR <b>BEP×3</b>&lt;br/&gt;IIC: <b>BEP×3</b> (or EP×4)] </code>``</p>
+<div class="sub-h">Metastatic (Stage III) — IGCCCG Risk-Adapted</div>
+<p>``<code>mermaid flowchart TD A[Metastatic GCT] --&gt; B{Risk Group (IGCCCG)} B --&gt;|<b>Good Risk</b>&lt;br/&gt;Seminoma: Any primary, no non-pulm visceral, any markers&lt;br/&gt;NSGCT: Testicular/Retrop primary, no non-pulm visceral, S1 markers| C[<b>BEP ×3 cycles</b> (Standard)&lt;br/&gt;Bleomycin 30U d1,8,15 + Etoposide 100 d1-5 + Cisplatin 20 d1-5 q3w&lt;br/&gt;<b>OR EP ×4 cycles</b> (omit Bleomycin if &gt;40yr/lung disease)&lt;br/&gt;<b>Cure rate &gt;90%</b>] B --&gt;|<b>Intermediate Risk</b>&lt;br/&gt;Seminoma: Non-pulmonary visceral mets&lt;br/&gt;NSGCT: Testicular/Retrop primary, S2 markers| D[<b>BEP ×4 cycles</b>&lt;br/&gt;<b>OR EP ×4 cycles</b> (if Bleomycin contraindicated)&lt;br/&gt;Cure rate ~80%] B --&gt;|<b>Poor Risk</b>&lt;br/&gt;(NSGCT only): Mediastinal primary OR Non-pulm visceral OR S3 markers| E[<b>BEP ×4 cycles</b> (Standard)&lt;br/&gt;<b>Consider Clinical Trial / High-dose 1L</b>&lt;br/&gt;Cure rate ~50%] </code>``</p>
+<div class="sub-h">Post-Chemotherapy Residual Mass</div>
+<table class="ctable"><tr><th>Histology</th><th>Size</th><th>Management</th></tr><tr><td>-----------</td><td>------</td><td>------------</td></tr><tr><td>**Seminoma**</td><td>**<3cm**</td><td>Surveillance (PET at 6-8wks if >3cm)</td></tr><tr><td>**Seminoma**</td><td>**>3cm**</td><td>**PET-CT at 6-8wks**: FDG+ → **Residual viable tumour** → **Salvage** (Surgery/High-dose chemo); FDG- → **Fibrosis/Necrosis** → Surveillance</td></tr><tr><td>**NSGCT**</td><td>**Any size**</td><td>**RPLND** (Post-chemo RPLND — technically difficult) → Pathology: **Necrosis** (80%) → Surveillance; **Teratoma** (10-15%) → Surveillance (chemo-resistant); **Viable NSGCT** (5-10%) → **Adjuvant Chemo** (2 cycles EP or VeIP)</td></tr></table>
+<div class="sub-h">Salvage Therapy (Relapsed/Refractory)</div>
+<table class="ctable"><tr><th>Setting</th><th>Standard</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**1st Relapse (Good/Int risk)**</td><td>**High-dose Chemo + ASCT** (TIP/GEP conditioning) — **Standard** (Superior to conventional)</td></tr><tr><td>**1st Relapse (Poor risk)**</td><td>**High-dose Chemo + ASCT**</td></tr><tr><td>**Late Relapse (>2yrs)**</td><td>**Surgery** (RPLND/Metastasectomy) if resectable; Teratoma common</td></tr><tr><td>**Refractory / 2nd+ Relapse**</td><td>**Conventional Salvage**: VeIP (Vinblastine/Ifosfamide/Cisplatin), VIP (Etoposide/Ifosfamide/Cisplatin), TIP (Paclitaxel/Ifosfamide/Cisplatin), GEMOX</td></tr><tr><td>**Brain Mets**</td><td>Surgery + RT ± Chemo (poor prognosis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Peak Age**</td><td>15-45 years; **Most common solid tumour in young men**</td></tr><tr><td>**Seminoma vs NSGCT**</td><td>Seminoma: **AFP never ↑**; Radiosensitive; Lymphatic spread; **Carboplatin AUC7 adjuvant**<br/>NSGCT: **AFP ↑ (YST), hCG ↑ (Chorio)**; Haematogenous spread; **RPLND / BEP×1 adjuvant**</td></tr><tr><td>**Markers**</td><td>**AFP (YST, t½ 5-7d)**, **hCG (Chorio/EC, t½ 24-36h)**, **LDH (tumour burden)** — **Must check pre-orchidectomy**</td></tr><tr><td>**IGCCCG**</td><td>**Seminoma: Good or Intermediate only** (No Poor); **NSGCT: Good/Intermediate/Poor**</td></tr><tr><td>**Stage I Seminoma**</td><td>**Surveillance** (preferred); **Carboplatin AUC7×1** if risk factors; RT obsolete</td></tr><tr><td>**Stage I NSGCT**</td><td>**Surveillance** (pT1); **RPLND** or **BEP×1** (pT2/LVI+)</td></tr><tr><td>**Metastatic**</td><td>**Good/Int: BEP×3 (EP×4)**: **Poor: BEP×4**</td></tr><tr><td>**Residual Mass**</td><td>Seminoma >3cm → **PET at 6-8wks**; NSGCT any size → **Post-chemo RPLND**</td></tr><tr><td>**Salvage**</td><td>**High-dose chemo + ASCT** (TIP/GEP) — Standard 1st relapse</td></tr><tr><td>**Late Effects**</td><td>**CVD** (Cisplatin, RT), **Second cancers** (RT, Alkylators), **Hypogonadism** (Cisplatin), **Neuropathy** (Cisplatin), **Raynaud's** (Bleomycin), **Infertility** (Cisplatin), **Ototoxicity** (Cisplatin)</td></tr><tr><td>**Fertility**</td><td>**Sperm banking pre-orchidectomy**; **Cisplatin** = main gonadotoxin</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**25M, painless testicular lump. Ultrasound: solid intratesticular mass. Markers: AFP 500, hCG normal, LDH normal. Orchidectomy: Mixed GCT (Seminoma + YST). Stage I. Management?**</td><td>**Mixed GCT = Treat as NSGCT**. **Stage I NSGCT** → pT stage depends on LVI. If **pT1 (no LVI)**: **Surveillance** (preferred). If **pT2 (LVI+)**: **Primary RPLND** (nerve-sparing) **OR** **BEP ×1 cycle** (SWENOTECA).</td></tr><tr><td>**35M, pure Seminoma, Stage I, pT2, LVI+, tumour 5cm. Management?**</td><td>**Stage I Seminoma with risk factors** → **Carboplatin AUC7 ×1 cycle** (preferred over RT). Surveillance also option if compliant.</td></tr><tr><td>**IGCCCG Good Risk NSGCT — criteria?**</td><td>**Testicular/Retroperitoneal primary** + **No non-pulmonary visceral mets** + **S1 markers (AFP<1000, hCG<5000, LDH<1.5xULN)**</td></tr><tr><td>**IGCCCG Poor Risk NSGCT — criteria?**</td><td>**Mediastinal primary** OR **Non-pulmonary visceral mets** OR **S3 markers (AFP>10000, hCG>50000, LDH>10xULN)**</td></tr><tr><td>**Metastatic Good Risk Seminoma — chemotherapy?**</td><td>**BEP ×3 cycles** (Standard) **OR** **EP ×4 cycles** (if Bleomycin contraindicated)</td></tr><tr><td>**Post-chemo residual mass 4cm in Seminoma — next?**</td><td>**PET-CT at 6-8 weeks**: FDG+ → Salvage (Surgery/High-dose chemo); FDG- → Surveillance</td></tr><tr><td>**Post-chemo residual mass 2cm in NSGCT — next?**</td><td>**Post-chemo RPLND** (any size) → Pathology: Necrosis (surveillance) / Teratoma (surveillance) / Viable NSGCT (Adjuvant chemo 2 cycles EP/VeIP)</td></tr><tr><td>**Salvage therapy for relapsed GCT — standard?**</td><td>**High-dose Chemo (TIP/GEP) + Autologous Stem Cell Transplant** (ASCT) — Superior to conventional chemo</td></tr><tr><td>**Late effects of cisplatin-based chemo?**</td><td>**Neuropathy (peripheral), Ototoxicity (high-freq hearing loss), Nephrotoxicity, Hypogonadism (Leydig cell), Infertility, Raynaud's (Bleomycin), CVD (accelerated atherosclerosis), Second malignancies (Leukaemia - alkylators/etoposide, Solid - RT)**</td></tr><tr><td>**Fertility preservation — when and how?**</td><td>**Sperm banking BEFORE orchidectomy** (and before chemo); **Cisplatin** = main gonadotoxin; Testosterone replacement if hypogonadal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Seminoma AFP**</td><td>**AFP NEVER elevated in pure seminoma** — If AFP ↑ = **NSGCT component** (YST) — Treat as NSGCT</td></tr><tr><td>**Mixed GCT**</td><td>**Always treat as NSGCT** (most aggressive component dictates)</td></tr><tr><td>**IGCCCG Seminoma Poor Risk**</td><td>**Does not exist** — Seminoma = Good or Intermediate only</td></tr><tr><td>**Carboplatin AUC7 vs RT for Stage I Seminoma**</td><td>**Carboplatin preferred**: Single day, less late toxicity (CVD, 2nd cancers), equivalent DFS</td></tr><tr><td>**RPLND vs BEP×1 for Stage I NSGCT (LVI+)**</td><td>**RPLND** = Pathological staging, nerve-sparing; **BEP×1** = Less morbidity, equivalent outcomes (SWENOTECA)</td></tr><tr><td>**PET-CT in Seminoma residual mass**</td><td>**Only for >3cm** at 6-8wks; <3cm = Surveillance; **False +ve if done early** (inflammation)</td></tr><tr><td>**Bleomycin lung toxicity**</td><td>**Cumulative dose >400U** ↑ risk; **Age >40**, **Prior RT**, **Renal impairment** ↑ risk; **Omit if risk factors** (EP×4)</td></tr></table>
+<p><b>Mnemonic: TESTIS</b></p>
+<ul><li><b>T</b>umour markers: <b>AFP (YST)</b>, <b>hCG (Chorio)</b>, <b>LDH</b> — Pre-orchidectomy mandatory</li><li><b>E</b>pidemiology: <b>15-45yr</b>, Cryptorchidism, FH</li><li><b>S</b>eminoma vs NSGCT: <b>AFP never ↑ in Seminoma</b>; Mixed = NSGCT</li><li><b>T</b>reatment Stage I: Seminoma → Surveil/Carbo AUC7; NSGCT → Surveil/RPLND/BEP×1</li><li><b>I</b>GCCCG: Seminoma (Good/Int only); NSGCT (Good/Int/Poor)</li><li><b>S</b>alvage: <b>High-dose + ASCT</b> (TIP/GEP) — Standard</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Testicular GCT)) Histology Seminoma (50-55%) AFP never elevated Radiosensitive Lymphatic spread Non-Seminoma (45-50%) Embryonal Carcinoma Yolk Sac (AFP+) Choriocarcinoma (hCG+) Teratoma (Chemo-resistant) Mixed = NSGCT Markers AFP (t½ 5-7d) — YST hCG (t½ 24-36h) — Chorio/EC LDH — Tumour burden Staging TNM + S (Markers) Stage I: N0M0S0 Stage II: N1-3 Stage III: M1 IGCCCG Risk Seminoma: Good / Intermediate NSGCT: Good / Intermediate / Poor Treatment Stage I Sem Surveillance / Carbo AUC7 Stage I NSGCT pT1: Surveillance pT2/LVI+: RPLND / BEP×1 Metastatic Good/Int: BEP×3 / EP×4 Poor: BEP×4 Residual Mass Sem &gt;3cm: PET at 6-8wk NSGCT any: Post-chemo RPLND Salvage High-dose + ASCT Late Effects CVD, 2nd Cancers, Hypogonadism Neuropathy, Ototoxicity, Raynaud's Fertility: Sperm banking pre-tx </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Presentation**</td><td>Painless testicular lump (90%); Age 15-45; Cryptorchidism risk</td></tr><tr><td>**Markers**</td><td>**AFP** (YST, t½ 5-7d), **hCG** (Chorio/EC, t½ 24-36h), **LDH** (burden) — **Pre-orchidectomy**</td></tr><tr><td>**Histology**</td><td>Seminoma (AFP never ↑); NSGCT (AFP/hCG ↑); Mixed = NSGCT</td></tr><tr><td>**IGCCCG**</td><td>Seminoma: Good/Int only; NSGCT: Good/Int/Poor (Mediastinal primary = Poor)</td></tr><tr><td>**Stage I Seminoma**</td><td>Surveil (pT1-2, no LVI, <4cm); **Carboplatin AUC7×1** if risk factors</td></tr><tr><td>**Stage I NSGCT**</td><td>pT1: Surveil; pT2/LVI+: **RPLND** or **BEP×1**</td></tr><tr><td>**Metastatic Good/Int**</td><td>**BEP×3** (or EP×4); Poor: **BEP×4**</td></tr><tr><td>**Residual Mass**</td><td>Sem >3cm → PET 6-8wk; NSGCT any → Post-chemo RPLND</td></tr><tr><td>**Salvage**</td><td>High-dose chemo (TIP/GEP) + ASCT</td></tr><tr><td>**Late Effects**</td><td>CVD, 2nd cancers, Hypogonadism, Neuropathy, Ototoxicity, Raynaud's, Infertility</td></tr><tr><td>**Fertility**</td><td>**Sperm banking pre-orchidectomy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Seminoma vs NSGCT markers</td><td></td><td></td></tr><tr><td>IGCCCG risk groups</td><td></td><td></td></tr><tr><td>Stage I management (Sem vs NSGCT)</td><td></td><td></td></tr><tr><td>BEP regimen & cycles</td><td></td><td></td></tr><tr><td>Residual mass management</td><td></td><td></td></tr><tr><td>Salvage therapy</td><td></td><td></td></tr><tr><td>Late effects & fertility</td><td></td><td></td></tr><tr><td>RPLND indications</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Prostate Cancer]], [[Bladder Cancer]], [[Renal Cell Carcinoma (RCC)]], [[IGCCCG Risk Groups]], [[BEP Chemotherapy]], [[Late Effects Survivorship]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Testicular Germ Cell Tumours (GCT) (Peak Age), which statement is correct? A. 15-45 years B. 15-45 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — 15-45 years; <b>Most common solid tumour in young men</b></li></ul>
+<p><b>2.</b> Regarding Testicular Germ Cell Tumours (GCT) (Seminoma vs NSGCT), which statement is correct? A. Seminoma: <b>AFP never ↑</b> B. Seminoma: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Seminoma: <b>AFP never ↑</b>; Radiosensitive; Lymphatic spread; <b>Carboplatin AUC7 adjuvant</b>&lt;br/&gt;NSGCT: **AFP ↑ (YST), hCG...</li></ul>
+<p><b>3.</b> Regarding Testicular Germ Cell Tumours (GCT) (Markers), which statement is correct? A. <b>AFP (YST, t½ 5-7d)</b>, <b>hCG (Chorio/EC, t½ 24-36h)</b>, <b>LDH (tumour burden)</b> B. **AFP - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>AFP (YST, t½ 5-7d)</b>, <b>hCG (Chorio/EC, t½ 24-36h)</b>, <b>LDH (tumour burden)</b> — <b>Must check pre-orchidectomy</b></li></ul>
+<p><b>4.</b> Regarding Testicular Germ Cell Tumours (GCT) (IGCCCG), which statement is correct? A. <b>Seminoma: Good or Intermediate only</b> (No Poor) B. **Seminoma: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Seminoma: Good or Intermediate only</b> (No Poor); <b>NSGCT: Good/Intermediate/Poor</b></li></ul>
+<p><b>5.</b> Regarding Testicular Germ Cell Tumours (GCT) (Stage I Seminoma), which statement is correct? A. <b>Surveillance</b> (preferred) B. <b>Surveillance</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Surveillance</b> (preferred); <b>Carboplatin AUC7×1</b> if risk factors; RT obsolete</li></ul>
+<p><b>6.</b> Regarding Testicular Germ Cell Tumours (GCT) (Stage I NSGCT), which statement is correct? A. <b>Surveillance</b> (pT1) B. <b>Surveillance</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Surveillance</b> (pT1); <b>RPLND</b> or <b>BEP×1</b> (pT2/LVI+)</li></ul>
+<p><b>7.</b> Regarding Testicular Germ Cell Tumours (GCT) (Metastatic), which statement is correct? A. <b>Good/Int: BEP×3 (EP×4)</b>: <b>Poor: BEP×4</b> B. **Good/Int: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Good/Int: BEP×3 (EP×4)</b>: <b>Poor: BEP×4</b></li></ul>
+<p><b>8.</b> Regarding Testicular Germ Cell Tumours (GCT) (Residual Mass), which statement is correct? A. Seminoma &gt;3cm → <b>PET at 6-8wks</b> B. Seminoma - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Seminoma &gt;3cm → <b>PET at 6-8wks</b>; NSGCT any size → <b>Post-chemo RPLND</b></li></ul>
+<p><b>9.</b> Regarding Testicular Germ Cell Tumours (GCT) (Salvage), which statement is correct? A. <b>High-dose chemo + ASCT</b> (TIP/GEP) B. **High-dose - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>High-dose chemo + ASCT</b> (TIP/GEP) — Standard 1st relapse</li></ul>
+<p><b>10.</b> Regarding Testicular Germ Cell Tumours (GCT) (Late Effects), which statement is correct? A. <b>CVD</b> (Cisplatin, RT), <b>Second cancers</b> (RT, Alkylators), <b>Hypogonadism</b> (Cisplatin), <b>Neurop B. </b>CVD** - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CVD</b> (Cisplatin, RT), <b>Second cancers</b> (RT, Alkylators), <b>Hypogonadism</b> (Cisplatin), <b>Neuropathy</b> (Cisplatin), ...</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. 15-45 years</li><li>B. 15-45 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: 15-45 years; <b>Most common solid tumour in young men</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. Seminoma: <b>AFP never ↑</b></li><li>B. Seminoma: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: Seminoma: <b>AFP never ↑</b>; Radiosensitive; Lymphatic spread; <b>Carboplatin AUC7 adjuvant</b>&lt;br/&gt;NSGCT: **AFP ↑ (YST), hCG...</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>AFP (YST, t½ 5-7d)</b>, <b>hCG (Chorio/EC, t½ 24-36h)</b>, <b>LDH (tumour burden)</b></li><li>B. **AFP (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>AFP (YST, t½ 5-7d)</b>, <b>hCG (Chorio/EC, t½ 24-36h)</b>, <b>LDH (tumour burden)</b> — <b>Must check pre-orchidectomy</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Seminoma: Good or Intermediate only</b> (No Poor)</li><li>B. **Seminoma: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Seminoma: Good or Intermediate only</b> (No Poor); <b>NSGCT: Good/Intermediate/Poor</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Surveillance</b> (preferred)</li><li>B. <b>Surveillance</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Surveillance</b> (preferred); <b>Carboplatin AUC7×1</b> if risk factors; RT obsolete</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Surveillance</b> (pT1)</li><li>B. <b>Surveillance</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Surveillance</b> (pT1); <b>RPLND</b> or <b>BEP×1</b> (pT2/LVI+)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Good/Int: BEP×3 (EP×4)</b>: <b>Poor: BEP×4</b></li><li>B. **Good/Int: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Good/Int: BEP×3 (EP×4)</b>: <b>Poor: BEP×4</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. Seminoma &gt;3cm → <b>PET at 6-8wks</b></li><li>B. Seminoma (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: Seminoma &gt;3cm → <b>PET at 6-8wks</b>; NSGCT any size → <b>Post-chemo RPLND</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>High-dose chemo + ASCT</b> (TIP/GEP)</li><li>B. **High-dose (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>High-dose chemo + ASCT</b> (TIP/GEP) — Standard 1st relapse</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>CVD</b> (Cisplatin, RT), <b>Second cancers</b> (RT, Alkylators), <b>Hypogonadism</b> (Cisplatin), **Neurop</li><li>B. <b>CVD</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>CVD</b> (Cisplatin, RT), <b>Second cancers</b> (RT, Alkylators), <b>Hypogonadism</b> (Cisplatin), <b>Neuropathy</b> (Cisplatin), ...</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Peak Age? <b>A1:</b> 15-45 years; Most common solid tumour in young men</p>
+<p><b>Q2:</b> Seminoma vs NSGCT? <b>A2:</b> Seminoma: AFP never ↑; Radiosensitive; Lymphatic spread; Carboplatin AUC7 adjuvant&lt;br/&gt;NSGCT: AFP ↑ (YST), hCG ↑ (Chorio); Haematogenous spread; RPLND / BEP×1 adjuvant</p>
+<p><b>Q3:</b> Markers? <b>A3:</b> AFP (YST, t½ 5-7d), hCG (Chorio/EC, t½ 24-36h), LDH (tumour burden) — Must check pre-orchidectomy</p>
+<p><b>Q4:</b> IGCCCG? <b>A4:</b> Seminoma: Good or Intermediate only (No Poor); NSGCT: Good/Intermediate/Poor</p>
+<p><b>Q5:</b> Stage I Seminoma? <b>A5:</b> Surveillance (preferred); Carboplatin AUC7×1 if risk factors; RT obsolete</p>
+<p><b>Q6:</b> Stage I NSGCT? <b>A6:</b> Surveillance (pT1); RPLND or BEP×1 (pT2/LVI+)</p>
+<p><b>Q7:</b> Metastatic? <b>A7:</b> Good/Int: BEP×3 (EP×4): Poor: BEP×4</p>
+<p><b>Q8:</b> Residual Mass? <b>A8:</b> Seminoma &gt;3cm → PET at 6-8wks; NSGCT any size → Post-chemo RPLND</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Peak Age</td><td>15-45 years; Most common solid tumour in young men</td></tr><tr><td>2</td><td>A</td><td>Seminoma vs NSGCT</td><td>Seminoma: AFP never ↑; Radiosensitive; Lymphatic spread; Carboplatin AUC7 adjuvant<br/>NSGCT: AFP ↑ (YST), hCG ↑ (Chorio</td></tr><tr><td>3</td><td>A</td><td>Markers</td><td>AFP (YST, t½ 5-7d), hCG (Chorio/EC, t½ 24-36h), LDH (tumour burden) — Must check pre-orchidectomy</td></tr><tr><td>4</td><td>A</td><td>IGCCCG</td><td>Seminoma: Good or Intermediate only (No Poor); NSGCT: Good/Intermediate/Poor</td></tr><tr><td>5</td><td>A</td><td>Stage I Seminoma</td><td>Surveillance (preferred); Carboplatin AUC7×1 if risk factors; RT obsolete</td></tr><tr><td>6</td><td>A</td><td>Stage I NSGCT</td><td>Surveillance (pT1); RPLND or BEP×1 (pT2/LVI+)</td></tr><tr><td>7</td><td>A</td><td>Metastatic</td><td>Good/Int: BEP×3 (EP×4): Poor: BEP×4</td></tr><tr><td>8</td><td>A</td><td>Residual Mass</td><td>Seminoma >3cm → PET at 6-8wks; NSGCT any size → Post-chemo RPLND</td></tr><tr><td>9</td><td>A</td><td>Salvage</td><td>High-dose chemo + ASCT (TIP/GEP) — Standard 1st relapse</td></tr><tr><td>10</td><td>A</td><td>Late Effects</td><td>CVD (Cisplatin, RT), Second cancers (RT, Alkylators), Hypogonadism (Cisplatin), Neuropathy (Cisplatin), Raynaud's (Bleom</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Peak Age</td><td>15-45 years; Most common solid tumour in young men</td></tr><tr><td>2</td><td>A</td><td>Seminoma vs NSGCT</td><td>Seminoma: AFP never ↑; Radiosensitive; Lymphatic spread; Carboplatin AUC7 adjuvant<br/>NSGCT: AFP ↑ (YST), hCG ↑ (Chorio</td></tr><tr><td>3</td><td>A</td><td>Markers</td><td>AFP (YST, t½ 5-7d), hCG (Chorio/EC, t½ 24-36h), LDH (tumour burden) — Must check pre-orchidectomy</td></tr><tr><td>4</td><td>A</td><td>IGCCCG</td><td>Seminoma: Good or Intermediate only (No Poor); NSGCT: Good/Intermediate/Poor</td></tr><tr><td>5</td><td>A</td><td>Stage I Seminoma</td><td>Surveillance (preferred); Carboplatin AUC7×1 if risk factors; RT obsolete</td></tr><tr><td>6</td><td>A</td><td>Stage I NSGCT</td><td>Surveillance (pT1); RPLND or BEP×1 (pT2/LVI+)</td></tr><tr><td>7</td><td>A</td><td>Metastatic</td><td>Good/Int: BEP×3 (EP×4): Poor: BEP×4</td></tr><tr><td>8</td><td>A</td><td>Residual Mass</td><td>Seminoma >3cm → PET at 6-8wks; NSGCT any size → Post-chemo RPLND</td></tr><tr><td>9</td><td>A</td><td>Salvage</td><td>High-dose chemo + ASCT (TIP/GEP) — Standard 1st relapse</td></tr><tr><td>10</td><td>A</td><td>Late Effects</td><td>CVD (Cisplatin, RT), Second cancers (RT, Alkylators), Hypogonadism (Cisplatin), Neuropathy (Cisplatin), Raynaud's (Bleom</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Urological Cancers|Urological Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Testicular Germ Cell Tumours · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

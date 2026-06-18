@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Perioperative Prescribing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.2. CLINICAL CONTEXT</span>
+      <div class="h1">Perioperative Prescribing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Perform <b>preoperative medication review</b> (hold, continue, adjust)</li><li>[ ] Apply <b>VTE prophylaxis</b> guidelines (risk assessment, drug choice, timing, duration)</li><li>[ ] Select <b>surgical antibiotic prophylaxis</b> (timing, agent, redosing, allergy)</li><li>[ ] Manage <b>specific drug classes</b> perioperatively: Anticoagulants, Antiplatelets, Steroids, Diabetes meds, ACEi/ARB, Beta-blockers, MAOIs</li><li>[ ] Handle <b>emergency surgery</b> medication optimisation</li><li>[ ] Address <b>postoperative</b> prescribing: Analgesia, N&amp;V, Fluids, VTE, Antibiotics</li><li>[ ] Answer viva: "Metformin perioperative management" and "DOAC hold for surgery"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Preoperative Medication Review</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stop / Hold / Continue Framework</div>
+<p>``<code>mermaid flowchart TD A[Patient on Chronic Medication] --&gt; B{Drug Class} B --&gt;|Anticoagulants/ Antiplatelets| C[Assess Bleeding vs Thrombosis Risk&lt;br/&gt;Procedure-specific&lt;br/&gt;Hold/Restart per Protocol] B --&gt;|Diabetes Meds| D[Type of Surgery / Starvation&lt;br/&gt;Metformin / SGLT2i / Insulin&lt;br/&gt;Variable Rate Infusion] B --&gt;|Steroids| E[Chronic &gt;3w or High Dose&lt;br/&gt;Stress Dose Hydrocortisone] B --&gt;|ACEi/ARB / Diuretics| F[Elective Major Surgery&lt;br/&gt;Hold 24h Pre-op&lt;br/&gt;Restart Post-op when Euvolaemic] B --&gt;|Beta-blockers| G[Continue (unless bradycardia/hypotension)&lt;br/&gt;Avoid Initiation Day of Surgery] B --&gt;|MAOIs| H[Elective: Stop 2w (irreversible)&lt;br/&gt;Emergency: Avoid Pethidine/Indirect Sympathomimetics] B --&gt;|Herbals/Supplements| I[Stop 2w (Garlic, Ginkgo, Ginseng, St John's Wort)&lt;br/&gt;Bleeding/Interaction Risk] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Anticoagulant & Antiplatelet Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">VTE Risk Assessment (All Surgical Patients) — NICE NG180</div>
+<table class="ctable"><tr><th>Tool</th><th>Score → Risk</th><th>Prophylaxis</th></tr><tr><td>------</td><td>--------------</td><td>-------------</td></tr><tr><td>**VTE Risk Assessment** (Admission)</td><td>**Medical**: Any risk factor → Prophylaxis</td><td>**LMWH / UFH / Fondaparinux**</td></tr><tr><td>**Surgical** (Procedure-specific)</td><td>**High VTE risk** (ortho, pelvic, major cancer, >90min) → **Mechanical + Pharmacological**</td><td>**LMWH standard**; Fondaparinux (ortho)</td></tr></table>
+<div class="sub-h">Elective Surgery — Hold/Restart Protocols</div>
+<table class="ctable"><tr><th>Drug</th><th>Hold Pre-op</th><th>Restart Post-op</th><th>Bridging</th></tr><tr><td>------</td><td>-------------</td><td>-----------------</td><td>----------</td></tr><tr><td>**Warfarin**</td><td>**5 days** (INR <1.5)</td><td>**24h** post-op (if haemostasis)</td><td>**Therapeutic LMWH** if high thrombotic risk (Mechanical valve, AF+CHA₂DS₂-VASc≥4, VTE<3m) — **Stop LMWH 24h pre-op**</td></tr><tr><td>**Apixaban / Rivaroxaban**</td><td>**48h** (CrCl>30); **72h** (CrCl<30)</td><td>**24-48h** (low bleed); **48-72h** (high bleed)</td><td>**No routine bridging**</td></tr><tr><td>**Dabigatran**</td><td>**48h** (CrCl>50); **72-96h** (CrCl<50)</td><td>**24-48h** (low bleed); **48-72h** (high bleed)</td><td>No bridging</td></tr><tr><td>**Edoxaban**</td><td>**48h** (CrCl>30); **72h** (CrCl<30)</td><td>Same as apixaban/rivaroxaban</td><td>No bridging</td></tr><tr><td>**LMWH (Prophylactic)**</td><td>**12h** (once daily)</td><td>**6-12h** post-op</td><td>—</td></tr><tr><td>**LMWH (Therapeutic)**</td><td>**24h** (twice daily)</td><td>**24h** post-op</td><td>—</td></tr><tr><td>**Aspirin (Secondary Prevention)**</td><td>**Continue** (most surgery)</td><td>—</td><td>—</td></tr><tr><td>**Aspirin (Primary Prevention)**</td><td>**7-10 days**</td><td>Post-op</td><td>—</td></tr><tr><td>**Clopidogrel / Ticagrelor / Prasugrel**</td><td>**5-7 days** (7d clopidogrel, 5d ticagrelor/prasugrel)</td><td>**24h** post-op</td><td>**Avoid stopping if recent stent (<6m BMS, <12m DES)** — cardiology discussion</td></tr></table>
+<div class="callout"><b>Key:</b> <i>DOACs — <b>no bridging</b>, hold by renal function. Warfarin — <b>bridge if high thrombotic risk</b>. Antiplatelets — <b>continue aspirin for secondary prevention</b>; <b>P2Y12 inhibitors: cardiology input if recent stent</b>.</i></div>
+<div class="sub-h">Neuraxial Block / Spinal Anaesthesia — Timing (AAGBI)</div>
+<table class="ctable"><tr><th>Anticoagulant</th><th>Stop Pre-op</th><th>Restart Post-op</th></tr><tr><td>---------------</td><td>-------------</td><td>-----------------</td></tr><tr><td>**LMWH Prophylactic (OD)**</td><td>**12h**</td><td>**4h** (if no bloody tap)</td></tr><tr><td>**LMWH Therapeutic (BD)**</td><td>**24h**</td><td>**24h**</td></tr><tr><td>**Warfarin**</td><td>**INR <1.5** (5 days)</td><td>**24h** (if INR therapeutic)</td></tr><tr><td>**Apixaban / Rivaroxaban / Edoxaban**</td><td>**48h** (CrCl>30); **72h** (CrCl<30)</td><td>**24h** (if haemostasis)</td></tr><tr><td>**Dabigatran**</td><td>**72h** (CrCl>50); **96h** (CrCl<50)</td><td>**24h**</td></tr><tr><td>**Fondaparinux**</td><td>**36-42h**</td><td>**24h**</td></tr><tr><td>**Aspirin / Clopidogrel**</td><td>**No need to stop** (relative safety)</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Diabetes Medications — Perioperative Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Metformin</div>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Elective Surgery (General Anaesthesia)**</td><td>**Hold on day of surgery** (omit morning dose)</td></tr><tr><td>**Contrast / Renal Impairment Risk**</td><td>**Hold 48h pre & post** if eGFR<60 or IV contrast</td></tr><tr><td>**Lactic Acidosis Risk**</td><td>Avoid if: AKI, sepsis, hypoxia, contrast, major hepatic resection</td></tr><tr><td>**Restart**</td><td>**Post-op Day 1** if eating/drinking, renal function stable</td></tr></table>
+<div class="sub-h">SGLT2 Inhibitors (Empagliflozin, Dapagliflozin, Canagliflozin)</div>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**ALL Surgery**</td><td>**Stop 3 days pre-op** (risk of **euglycaemic DKA** with starvation/stress)</td></tr><tr><td>**Emergency Surgery**</td><td>**Stop immediately**; check ketones; treat if DKA</td></tr><tr><td>**Restart**</td><td>**Post-op Day 2-3** when eating normally, no ketosis</td></tr></table>
+<div class="sub-h">Insulin — Variable Rate IV Insulin Infusion (VRIII)</div>
+<table class="ctable"><tr><th>Indication</th><th>Protocol</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Type 1 DM**</td><td>**Always VRIII** for starvation >1 meal</td></tr><tr><td>**Type 2 DM on Insulin**</td><td>VRIII if: starvation >1 meal, major surgery, poor control</td></tr><tr><td>**Type 2 DM on Oral Only**</td><td>VRIII if: HbA1c>69mmol/mol, major surgery, starvation >2 meals</td></tr></table>
+<p>#### VRIII Standard Protocol (NHS/Diabetes UK) ``<code> Potassium Chloride 20mmol in 500mL NaCl 0.9% + Glucose 5% or 10% + Insulin (Actrapid/Humulin S) 50 units in 50mL NaCl 0.9% → Insulin rate guided by BG (target 6-10 mmol/L) → K+ replacement guided by serum K+ → Hourly BG monitoring → Continue basal insulin (glargine/detemir) at 80% dose SC </code>``</p>
+<div class="sub-h">Sulfonylureas / DPP-4 Inhibitors / GLP-1 Agonists</div>
+<table class="ctable"><tr><th>Drug Class</th><th>Action</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**Sulfonylureas** (Gliclazide, Glimepiride)</td><td>**Omit day of surgery** (hypoglycaemia risk with starvation)</td></tr><tr><td>**DPP-4 Inhibitors** (Sitagliptin, Linagliptin)</td><td>**Continue** (low hypoglycaemia risk)</td></tr><tr><td>**GLP-1 Agonists** (Liraglutide, Semaglutide)</td><td>**Omit day of surgery** (delayed gastric emptying → aspiration risk)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Steroid Cover — Surgical Stress Dose</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Who Needs Stress Dose Hydrocortisone?</div>
+<table class="ctable"><tr><th>Criteria</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Current oral steroid** >5mg prednisolone/day for >3 weeks</td><td>**Stress dose**</td></tr><tr><td>**Recent steroid** (stopped <4 weeks) after >3 weeks</td><td>**Stress dose**</td></tr><tr><td>**High-dose inhaled steroid** (>1000mcg beclometasone/day) + major stress</td><td>Consider</td></tr><tr><td>**Known adrenal insufficiency**</td><td>**Stress dose**</td></tr></table>
+<div class="sub-h">Stress Dose Regimen (Major Surgery / Trauma / Sepsis)</div>
+<table class="ctable"><tr><th>Timing</th><th>Hydrocortisone IV</th></tr><tr><td>--------</td><td>-------------------</td></tr><tr><td>**Induction**</td><td>**100mg** IV bolus</td></tr><tr><td>**Intra-op**</td><td>**50mg** Q6H (or 200mg/24h infusion)</td></tr><tr><td>**Post-op 24h**</td><td>**50mg** Q6H</td></tr><tr><td>**Post-op 48h**</td><td>**25mg** Q6H</td></tr><tr><td>**Then**</td><td>Taper to usual oral dose over 2-3 days</td></tr></table>
+<div class="sub-h">Minor Surgery / Local Anaesthesia</div>
+<table class="ctable"><tr><th>Regimen</th><th>Hydrocortisone</th></tr><tr><td>---------</td><td>----------------</td></tr><tr><td>**Single dose**</td><td>**25-50mg** IV at induction</td></tr><tr><td>**If usual dose ≤5mg**</td><td>Usual oral dose sufficient</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Dexamethasone 6.6mg ≈ Prednisolone 40mg ≈ Hydrocortisone 160mg. <b>Hydrocortisone preferred</b> (mineralocorticoid activity).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ ACE Inhibitors / ARBs / Diuretics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Elective Major Surgery (General Anaesthesia)</div>
+<table class="ctable"><tr><th>Drug</th><th>Pre-op</th><th>Post-op Restart</th></tr><tr><td>------</td><td>--------</td><td>-----------------</td></tr><tr><td>**ACEi / ARB**</td><td>**Hold 24h** (omit morning dose)</td><td>**When euvolaemic, normotensive, renal stable** (usually Day 1-2)</td></tr><tr><td>**Diuretics** (Loop/Thiazide)</td><td>**Hold 24h**</td><td>**When euvolaemic**</td></tr><tr><td>**Mineralocorticoid Antagonists** (Spironolactone/Eplerenone)</td><td>**Hold 24-48h**</td><td>**When K+ normal, renal stable**</td></tr></table>
+<div class="sub-h">Rationale</div>
+<ul><li><b>ACEi/ARB + GA</b> → refractory hypotension (vasoplegia) due to loss of angiotensin II</li><li><b>Diuretics</b> → hypovolaemia, electrolyte disturbance</li><li><b>Post-op AKI risk</b> ↑ if restarted early in hypovolaemic state</li></ul>
+<div class="sub-h">Emergency Surgery</div>
+<ul><li><b>Continue if already taken</b>; manage hypotension intra-op with vasopressors</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Beta-Blockers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Chronic Beta-Blocker**</td><td>**CONTINUE** perioperatively (omission → rebound tachycardia/ischaemia)</td></tr><tr><td>**New Initiation**</td><td>**Do NOT start on day of surgery** (POISE trial: ↑ stroke, hypotension, bradycardia)</td></tr><tr><td>**Contraindicated**</td><td>Bradycardia (<50), Hypotension (SBP<100), Decompensated HF, High-degree AV block</td></tr><tr><td>**Cardiac Surgery**</td><td>Continue (cardiologist preference)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ MAO Inhibitors (MAOIs)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Examples</th><th>Perioperative Management</th></tr><tr><td>------</td><td>----------</td><td>--------------------------</td></tr><tr><td>**Irreversible (Non-selective)**</td><td>Phenelzine, Tranylcypromine, Isocarboxazid</td><td>**Elective: Stop 2 WEEKS** before surgery<br/>**Emergency: Avoid Pethidine, Tramadol, Indirect Sympathomimetics (Ephedrine, Metaraminol)**<br/>**Safe**: Morphine, Fentanyl, Alfentanil, Propofol, Volatile agents, Vecuronium, Rocuronium</td></tr><tr><td>**Reversible (RIMA)**</td><td>Moclobemide</td><td>**Stop 24-48h**; less dietary restriction</td></tr></table>
+<div class="sub-h">Drug Interactions with MAOIs — AVOID</div>
+<table class="ctable"><tr><th>Drug</th><th>Interaction</th><th>Consequence</th></tr><tr><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>**Pethidine**</td><td>Serotonin syndrome</td><td>Hyperthermia, rigidity, rhabdomyolysis, death</td></tr><tr><td>**Tramadol**</td><td>Serotonin syndrome</td><td>As above</td></tr><tr><td>**Dextromethorphan**</td><td>Serotonin syndrome</td><td>As above</td></tr><tr><td>**SSRIs / SNRIs / TCAs**</td><td>Serotonin syndrome</td><td>As above</td></tr><tr><td>**Indirect Sympathomimetics** (Ephedrine, Metaraminol, Phenylephrine)</td><td>Hypertensive crisis</td><td>Uncontrolled HTN, stroke</td></tr><tr><td>**Vasopressin**</td><td>Hypertensive crisis</td><td>As above</td></tr></table>
+<div class="callout"><b>Safe Vasopressors with MAOIs</b>: <b>Noradrenaline, Adrenaline, Metaraminol (direct), Vasopressin (direct)</b> — NO, vasopressin also risky. <b>Noradrenaline/Adrenaline = safe direct acting</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Surgical Antibiotic Prophylaxis — NICE NG125</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Principles</div>
+<table class="ctable"><tr><th>Principle</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Timing**</td><td>**IV within 60 min before incision** (Fluoroquinolones/Vancomycin/Teicoplanin: 120 min)</td></tr><tr><td>**Redosing**</td><td>**If surgery > half-life** (e.g., Cephalosporins q2-3h; Vancomycin q6h) OR **blood loss >1500mL**</td></tr><tr><td>**Duration**</td><td>**Single dose** (or 24h max for cardiac/orthopaedic implants) — **NO prolonged courses**</td></tr><tr><td>**Allergy**</td><td>Penicillin allergy → **Clindamycin** or **Vancomycin** (if MRSA risk)</td></tr></table>
+<div class="sub-h">Common Procedures — First-Line Prophylaxis</div>
+<table class="ctable"><tr><th>Surgery</th><th>Agent</th><th>Dose</th><th>Redosing</th></tr><tr><td>---------</td><td>-------</td><td>------</td><td>----------</td></tr><tr><td>**Clean (Breast, Thyroid, Hernia)**</td><td>**None** (unless implant/valve)</td><td>—</td><td>—</td></tr><tr><td>**Clean-Contaminated (Colorectal, Biliary, Appendicectomy, Gynae)**</td><td>**Cefuroxime 1.5g IV** + **Metronidazole 500mg IV**</td><td>Single</td><td>Cefuroxime q3h</td></tr><tr><td>**Contaminated / Dirty (Peritonitis, Trauma, Open Fracture)**</td><td>**Therapeutic Antibiotics** (not prophylaxis)</td><td>Per culture</td><td>Therapeutic course</td></tr><tr><td>**Cardiac / Vascular (Prosthetic)**</td><td>**Cefuroxime 1.5g IV** (or Flucloxacillin 2g + Gentamicin)</td><td>24h post-op</td><td>Cefuroxime q3h</td></tr><tr><td>**Orthopaedic (Joint Replacement)**</td><td>**Cefuroxime 1.5g IV** (or Teicoplanin 400mg if MRSA+)</td><td>24h</td><td>Cefuroxime q3h</td></tr><tr><td>**Neurosurgery / Spinal**</td><td>**Cefuroxime 1.5g IV**</td><td>Single</td><td>—</td></tr><tr><td>**Caesarean Section**</td><td>**Cefuroxime 1.5g IV** (after cord clamp)</td><td>Single</td><td>—</td></tr><tr><td>**Urological (Prostate, Bladder)**</td><td>**Gentamicin 120mg IV** + **Amoxicillin 1g IV** (or Cefuroxime)</td><td>Single</td><td>—</td></tr></table>
+<div class="sub-h">Penicillin Allergy — Alternatives</div>
+<table class="ctable"><tr><th>Allergy Type</th><th>Alternative</th></tr><tr><td>--------------</td><td>-------------</td></tr><tr><td>**Non-severe (Rash >10y ago)**</td><td>**Cefuroxime** (low cross-reactivity)</td></tr><tr><td>**Severe (Anaphylaxis, Angioedema, SJS)**</td><td>**Clindamycin 600mg IV** + **Gentamicin 120mg IV** (or **Vancomycin 1g IV** if MRSA risk)</td></tr><tr><td>**MRSA Carrier / High Prevalence**</td><td>Add **Vancomycin 1g IV** (or Teicoplanin 400mg)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Postoperative Prescribing — Common Issues</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Analgesia — Multimodal</div>
+<table class="ctable"><tr><th>Component</th><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td>-----------</td><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Paracetamol**</td><td>IV/PO 1g QDS</td><td>4g/24h max</td><td>First-line</td></tr><tr><td>**NSAID**</td><td>Ibuprofen 400mg TDS PO / Parecoxib IV</td><td>Avoid if CKD, bleeding risk</td><td>COX-2 preferred if bleeding risk</td></tr><tr><td>**Opioid**</td><td>Morphine PCA / Oxycodone PRN</td><td>Per protocol</td><td>See [Pain Management](../Pain%20Management.md)</td></tr><tr><td>**Gabapentinoid**</td><td>Pregabalin 150mg PO pre-op + 75mg BD post-op</td><td>Reduce if CKD</td><td>Opioid-sparing</td></tr><tr><td>**Local Anaesthetic**</td><td>Wound infiltration / Block</td><td>Ropivacaine 0.2%</td><td>Reduces opioid need</td></tr></table>
+<div class="sub-h">Postoperative Nausea &amp; Vomiting (PONV) — Risk-Based</div>
+<table class="ctable"><tr><th>Risk (Apfel Score)</th><th>Prophylaxis</th></tr><tr><td>--------------------</td><td>-------------</td></tr><tr><td>**0-1** (Low)</td><td>None routine</td></tr><tr><td>**2** (Moderate)</td><td>**Single agent**: Ondansetron 4mg IV / Dexamethasone 4-8mg IV</td></tr><tr><td>**3-4** (High)</td><td>**Combination**: Ondansetron 4mg + Dexamethasone 8mg (+/- Cyclizine)</td></tr></table>
+<div class="sub-h">Fluid Prescribing — Post-op</div>
+<table class="ctable"><tr><th>Principle</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Euvolaemia**</td><td>Balance input/output; avoid overload</td></tr><tr><td>**Maintenance**</td><td>25-30 mL/kg/day NaCl 0.9% + Glucose 5% (or balanced crystalloid)</td></tr><tr><td>**Replacement**</td><td>Match losses (drains, NG, stoma) mL for mL with appropriate fluid</td></tr><tr><td>**KCl**</td><td>Add 20-40mmol/L if K+ normal; monitor U&Es 6-12h</td></tr></table>
+<div class="sub-h">VTE Prophylaxis — Post-op (NICE NG180)</div>
+<table class="ctable"><tr><th>Surgery Type</th><th>Pharmacological</th><th>Mechanical</th></tr><tr><td>--------------</td><td>-----------------</td><td>------------</td></tr><tr><td>**General / Abdominal / Thoracic**</td><td>LMWH (Enoxaparin 40mg OD)</td><td>TED stockings + IPC</td></tr><tr><td>**Orthopaedic (Hip/Knee Replacement)**</td><td>**Rivaroxaban 10mg OD** OR **Apixaban 2.5mg BD** OR **LMWH**</td><td>IPC</td></tr><tr><td>**Neurosurgery / Spinal**</td><td>**LMWH 12-24h post-op** (if haemostasis)</td><td>IPC (no stockings cranial)</td></tr><tr><td>**Duration**</td><td>**7-14 days** (abdominal/pelvic); **28-35 days** (hip/knee replacement); **7-10 days** (other major)</td><td>Until mobile</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">️⃣ Emergency Surgery — Medication Optimisation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**1. Anticoagulants**</td><td>Reverse if possible (Vit K, PCC, Idarucizumab, Andexanet); hold DOACs</td></tr><tr><td>**2. Antiplatelets**</td><td>Aspirin continue; P2Y12 — discuss with cardiology (stent risk)</td></tr><tr><td>**3. Steroids**</td><td>Stress dose hydrocortisone 100mg IV if on chronic steroids</td></tr><tr><td>**4. Diabetes**</td><td>Stop SGLT2i; VRIII if Type 1 or starvation; hold metformin</td></tr><tr><td>**5. ACEi/ARB**</td><td>Continue (manage hypotension with vasopressors)</td></tr><tr><td>**6. MAOIs**</td><td>Avoid pethidine/tramadol/indirect sympathomimetics</td></tr><tr><td>**7. Antibiotic Prophylaxis**</td><td>Give ASAP (within 60 min incision)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🔟 Practical Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient Listed for Surgery] --&gt; B[Pre-op Medication Review&lt;br/&gt;Reconcile All Meds] B --&gt; C{Urgency} C --&gt;|Elective| D[Standard Hold/Restart&lt;br/&gt;Anticoag/Antiplt/DM/Steroids/ACEi] C --&gt;|Emergency| E[Rapid Optimisation&lt;br/&gt;Reverse Anticoag&lt;br/&gt;Stress Steroids&lt;br/&gt;VRIII if DM&lt;br/&gt;Avoid MAOI Interactions] D &amp; E --&gt; F[Pre-op VTE Risk Assessment&lt;br/&gt;Mechanical + Pharmacological] F --&gt; G[Antibiotic Prophylaxis&lt;br/&gt;Timing &lt;60min Incision&lt;br/&gt;Agent per Procedure&lt;br/&gt;Allergy Alternative] G --&gt; H[Perioperative Fluids&lt;br/&gt;Balanced Crystalloid&lt;br/&gt;K+ Replacement] H --&gt; I[Intra-op: Continue Beta-Blockers&lt;br/&gt;Hold ACEi/ARB/Diuretics] I --&gt; J[Post-op Prescribing] J --&gt; J1[Analgesia: Multimodal&lt;br/&gt;Paracetamol + NSAID + Opioid PCA] J --&gt; J2[PONV: Apfel Score → Prophylaxis] J --&gt; J3[VTE: LMWH/DOAC per Surgery Type&lt;br/&gt;Duration 7-35d] J --&gt; J4[Restart Chronic Meds&lt;br/&gt;ACEi/ARB when Euvolaemic&lt;br/&gt;Anticoag per Protocol&lt;br/&gt;Metformin Day 1 if Eating&lt;br/&gt;SGLT2i Day 2-3] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Warfarin**</td><td>Hold 5 days (INR<1.5); Bridge with therapeutic LMWH if high thrombotic risk (mechanical valve, recent VTE, AF high CHA₂DS₂-VASc); Stop LMWH 24h pre-op</td></tr><tr><td>**DOACs**</td><td>**No bridging**; Hold 48h (CrCl>30) / 72h (CrCl<30); Rivaroxaban/Apixaban/Edoxaban; Dabigatran 48h/72-96h</td></tr><tr><td>**Aspirin**</td><td>**Continue** for secondary prevention; Stop 7-10d for primary prevention</td></tr><tr><td>**P2Y12 Inhibitors**</td><td>Clopidogrel 7d, Ticagrelor/Prasugrel 5d; **Cardiology if recent stent** (<6m BMS, <12m DES)</td></tr><tr><td>**Neuraxial Block**</td><td>LMWH OD 12h, BD 24h; Warfarin INR<1.5; DOACs 48-72h</td></tr><tr><td>**Metformin**</td><td>Hold day of surgery; Hold 48h if contrast/eGFR<60; Restart Day 1 if eating, renal OK</td></tr><tr><td>**SGLT2 Inhibitors**</td><td>**STOP 3 DAYS PRE-OP** (euglycaemic DKA risk); Restart Day 2-3 eating normally</td></tr><tr><td>**Insulin**</td><td>VRIII for Type 1 / starvation >1 meal; Continue basal at 80%</td></tr><tr><td>**Steroids**</td><td>>5mg pred >3w → Stress dose: 100mg IV induction, 50mg Q6H × 24-48h</td></tr><tr><td>**ACEi/ARB**</td><td>Hold 24h pre-op (major elective); Restart when euvolaemic</td></tr><tr><td>**Beta-Blockers**</td><td>**CONTINUE**; Do NOT initiate day of surgery</td></tr><tr><td>**MAOIs**</td><td>Irreversible: Stop 2w; Avoid Pethidine, Tramadol, Indirect Sympathomimetics</td></tr><tr><td>**Antibiotic Prophylaxis**</td><td><60min incision; Single dose (24h cardiac/ortho); Cefuroxime+Metro for colorectal; Clindamycin+Gentamicin if severe penicillin allergy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Warfarin patient for elective hip replacement. CHA₂DS₂-VASc 4. Hold/Restart protocol?</td><td>**Hold 5 days** (INR<1.5). **Bridge with therapeutic LMWH** (high thrombotic risk). **Stop LMWH 24h pre-op**. Restart warfarin + LMWH 24h post-op when haemostasis. Continue LMWH until INR therapeutic.</td></tr><tr><td>2</td><td>Apixaban patient (CrCl 45) for elective colectomy. Hold/Restart?</td><td>**Hold 48h** (CrCl>30). **No bridging**. Restart **24-48h** post-op (low bleed risk colectomy → 24h; high bleed → 48h).</td></tr><tr><td>3</td><td>Patient on clopidogrel for coronary stent 3 months ago. Needs emergency laparotomy. Management?</td><td>**Cardiology discussion URGENT**. **Do NOT stop clopidogrel** if <6 months BMS / <12 months DES (stent thrombosis risk). If must stop → bridge with glycoprotein IIb/IIIa inhibitor or continue aspirin.</td></tr><tr><td>4</td><td>Metformin patient for elective surgery with IV contrast. Management?</td><td>**Hold metformin 48h pre-op and 48h post-op** (contrast + surgery AKI risk). Check renal function before restarting.</td></tr><tr><td>5</td><td>Patient on empagliflozin (SGLT2i) for elective surgery. Management?</td><td>**STOP 3 DAYS PRE-OP** (euglycaemic DKA risk with starvation). Check ketones pre-op. Restart Day 2-3 when eating normally.</td></tr><tr><td>6</td><td>Patient on prednisolone 10mg daily for 2 years. Major abdominal surgery. Steroid cover?</td><td>**Stress dose hydrocortisone**: 100mg IV at induction, 50mg Q6H for 24-48h, then taper to usual oral dose.</td></tr><tr><td>7</td><td>ACE inhibitor patient for major elective surgery. Hold/Restart?</td><td>**Hold 24h pre-op** (omit morning dose). **Restart when euvolaemic, normotensive, renal stable** (usually Day 1-2).</td></tr><tr><td>8</td><td>Antibiotic prophylaxis for elective colorectal surgery. Penicillin allergy (anaphylaxis). Agent?</td><td>**Clindamycin 600mg IV + Gentamicin 120mg IV** (or Vancomycin 1g IV + Gentamicin). Cefuroxime contraindicated in severe allergy.</td></tr><tr><td>9</td><td>MAOI (phenelzine) patient for emergency surgery. Which analgesic AVOID?</td><td>**Pethidine** (serotonin syndrome). Also avoid tramadol, indirect sympathomimetics (ephedrine). Safe: Morphine, Fentanyl, Alfentanil.</td></tr><tr><td>10</td><td>Post-op VTE prophylaxis for total hip replacement. Agent and Duration?</td><td>**Rivaroxaban 10mg OD** (start 6-10h post-op) OR **Apixaban 2.5mg BD** OR **LMWH 40mg OD**. **Duration 28-35 days**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Bridge all anticoagulants"**</td><td>**NO.** **DOACs = NO BRIDGING** (rapid on/off). **Warfarin = bridge ONLY if high thrombotic risk**.</td></tr><tr><td>**"Stop aspirin for all surgery"**</td><td>**NO.** **Secondary prevention = CONTINUE**. Primary prevention = stop 7-10d.</td></tr><tr><td>**"Metformin hold only day of surgery"**</td><td>**NO.** **Contrast/eGFR<60 → hold 48h pre/post**. Day of surgery only if normal renal, no contrast.</td></tr><tr><td>**"SGLT2i hold day of surgery"**</td><td>**NO.** **STOP 3 DAYS PRE-OP** (euglycaemic DKA risk with starvation).</td></tr><tr><td>**"ACEi/ARB continue for all surgery"**</td><td>**NO.** **Major elective = HOLD 24h** (refractory hypotension with GA). Emergency = continue.</td></tr><tr><td>**"Beta-blocker start day of surgery if tachycardia"**</td><td>**NO.** **POISE trial: ↑ stroke, death**. Continue if chronic; **do NOT initiate**.</td></tr><tr><td>**"Pethidine safe with MAOIs"**</td><td>**NO.** **CONTRAINDICATED** — serotonin syndrome (death reported).</td></tr><tr><td>**"Antibiotic prophylaxis = 5 days post-op"**</td><td>**NO.** **SINGLE DOSE** (24h max for cardiac/orthopaedic implants). Prolonged → resistance.</td></tr><tr><td>**"LMWH therapeutic = 12h hold for neuraxial"**</td><td>**NO.** **Therapeutic BD = 24h hold**. Prophylactic OD = 12h hold.</td></tr><tr><td>**"DOAC restart = 24h for all surgery"**</td><td>**NO.** **Low bleed = 24h; High bleed = 48-72h** (spinal, neurosurgery, major cancer).</td></tr></table>
+<div class="callout"><b>Mnemonic: PERIOPERATIVE DRUGS</b> <b>P</b>re-op Review: <b>Reconcile ALL meds</b> (incl. herbals, OTC) <b>E</b>lective vs <b>Emergency</b>: Elective = protocol; Emergency = rapid optimise <b>R</b>isk Assessment: <b>VTE (All), Bleeding (Anticoag/Antiplt), AKI (Metformin/ACEi/NSAID)</b> <b>I</b>nternational Normalised Ratio: <b>Warfarin 5d hold (INR&lt;1.5); Bridge if High Risk</b> <b>O</b>ral Anticoagulants (DOACs): <b>NO BRIDGE; 48h hold (CrCl&gt;30); 72h (CrCl&lt;30)</b> <b>P</b>2Y12 Inhibitors: <b>Clopid 7d, Ticag/Prasu 5d; Cardiology if Recent Stent</b> <b>E</b>nteral Feeding/Starvation: <b>VRIII for T1DM / Starvation &gt;1 meal</b> <b>R</b>enal Protection: <b>Metformin Hold (Day Surgery / 48h Contrast)</b>; <b>SGLT2i STOP 3 DAYS</b> <b>A</b>drenal Insufficiency: <b>Steroids &gt;5mg &gt;3w → Hydrocortisone 100mg/50mg Q6H</b> <b>T</b>iming Antibiotics: <b>&lt;60min Incision; Single Dose; Cefuroxime+Metro Colorectal</b> <b>O</b>perative Fluids: <b>Balanced Crystalloid; K+ Replace; Avoid Overload</b> <b>P</b>ost-op VTE: <b>LMWH/DOAC per Surgery; Duration 7-35d</b> <b>E</b>uvolaemic Restart: <b>ACEi/ARB when Euvolaemic; Metformin Day 1 Eating; SGLT2i Day 2-3</b> <b>R</b>estart Anticoag: <b>Warfarin+LMWH 24h; DOAC 24-72h per Bleed Risk</b> <b>A</b>ntiplt: <b>Aspirin Continue 2° Prevention; P2Y12 Cardiology if Stent</b> <b>T</b>achycardia: <b>Beta-Blocker CONTINUE; NEVER Initiate Day of Surgery</b> <b>I</b>rreversible MAOI: <b>Stop 2w; Avoid Pethidine/Tramadol/Indirect Sympathomimetics</b> <b>V</b>asopressors MAOI: <b>Noradrenaline/Adrenaline SAFE; Avoid Ephedrine/Metaraminol</b> <b>E</b>mergency: <b>Reverse Anticoag (VitK/PCC/Idarucizumab/Andexanet); Stress Steroids</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid mindmap root((Perioperative Prescribing)) Pre-op Review Reconcile All Meds VTE Risk Assessment Anticoag/Antiplt Warfarin: 5d hold, Bridge if high risk DOACs: No bridge, 48-72h hold Aspirin: Continue 2° prevention P2Y12: Cardiology if recent stent Neuraxial: LMWH OD 12h, BD 24h Diabetes Metformin: Hold day surgery / 48h contrast SGLT2i: STOP 3 DAYS PRE-OP Insulin: VRIII if T1DM/starvation Steroids</p>
+<div class="callout">5mg &gt;3w → Stress dose Hydrocortisone</div>
+<p>100mg induction, 50mg Q6H × 24-48h ACEi/ARB/Diuretics Hold 24h major elective Restart when euvolaemic Beta-Blockers CONTINUE chronic NEVER initiate day of surgery MAOIs Irreversible: Stop 2w Avoid Pethidine/Tramadol/Indirect Sympath Antibiotic Prophylaxis &lt;60min incision Single dose (24h cardiac/ortho) Colorectal: Cefuroxime+Metro Pen allergy: Clinda+Genta Post-op Analgesia: Multimodal PONV: Apfel score VTE: LMWH/DOAC 7-35d Restart: Euvolaemic ACEi, Day 1 Metformin ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Anticoagulant / Antiplatelet</td><td>4</td><td></td><td></td></tr><tr><td>Diabetes Medications</td><td>4</td><td></td><td></td></tr><tr><td>Steroid Cover</td><td>2</td><td></td><td></td></tr><tr><td>ACEi/ARB / Beta-Blockers</td><td>3</td><td></td><td></td></tr><tr><td>MAOIs</td><td>2</td><td></td><td></td></tr><tr><td>Antibiotic Prophylaxis</td><td>3</td><td></td><td></td></tr><tr><td>Post-op Prescribing</td><td>3</td><td></td><td></td></tr><tr><td>Emergency Surgery</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**23**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the perioperative management of a patient on warfarin, metformin, and prednisolone for elective colorectal surgery."</td><td>Warfarin: 5d hold, bridge LMWH (high risk). Metformin: hold day of surgery (no contrast). Prednisolone: stress dose hydrocortisone. Antibiotic prophylaxis: cefuroxime+metronidazole. VTE: LMWH post-op. Restart warfarin+LMWH post-op.</td></tr><tr><td>**Short Note**</td><td>"DOAC perioperative management."</td><td>No bridging. Hold 48h (CrCl>30) / 72h (CrCl<30). Restart 24-72h post-op per bleed risk. Neuraxial: 48-72h hold.</td></tr><tr><td>**Viva**</td><td>"Patient on dabigatran (CrCl 40) for emergency laparotomy. Last dose 12h ago. Management?"</td><td>**Dabigatran hold 72-96h if CrCl<50**. **Emergency → reverse with Idarucizumab 5g IV** (2x2.5g). Monitor coagulation (dTT/ECT). Proceed to surgery. Restart 48-72h post-op.</td></tr><tr><td>**Ward Round**</td><td>"Post-op Day 1 post colorectal surgery. Patient on enoxaparin 40mg OD, ACEi, metformin. BP 110/70, eating, U&Es normal. Restart meds?"</td><td>**Restart ACEi** (euvolaemic). **Restart metformin** (eating, renal OK). **Continue enoxaparin** (7-14d post colorectal).</td></tr><tr><td>**Last-Night**</td><td>"Warfarin: 5d hold, bridge high risk. DOAC: no bridge, 48/72h hold. Aspirin continue 2°. Clopidogrel cardio if stent. Metformin hold day/48h contrast. SGLT2i STOP 3d. Steroid >5mg>3w: 100/50mg HC. ACEi hold 24h. Beta-block CONTINUE. MAOI 2w stop, avoid pethidine. Abx <60min, single dose. VTE LMWH/DOAC 7-35d."</td><td>Warfarin/DOAC/Antiplt. Diabetes. Steroids. ACEi/Beta-block. MAOI. Abx. VTE. Restart.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Warfarin</b>: Hold 5 days (INR&lt;1.5); <b>Bridge with therapeutic LMWH</b> if high thrombotic risk (mechanical mitral valve, recent VTE&lt;3m, AF CHA₂DS₂-VASc≥4); Stop LMWH 24h pre-op</li><li><b>DOACs</b>: <b>No bridging</b>; Hold <b>48h (CrCl&gt;30) / 72h (CrCl&lt;30)</b>; Restart <b>24h (low bleed) / 48-72h (high bleed)</b>; Neuraxial: 48-72h hold</li><li><b>Antiplatelets</b>: <b>Aspirin continue</b> for secondary prevention; <b>P2Y12 inhibitors</b>: Clopidogrel 7d, Ticagrelor/Prasugrel 5d; <b>Cardiology if recent stent</b> (&lt;6m BMS, &lt;12m DES)</li><li><b>Neuraxial</b>: LMWH OD 12h, BD 24h; Warfarin INR&lt;1.5; DOACs 48-72h</li><li><b>Metformin</b>: Hold day of surgery; <b>Hold 48h pre/post if IV contrast or eGFR&lt;60</b></li><li><b>SGLT2 Inhibitors</b>: <b>STOP 3 DAYS PRE-OP</b> (euglycaemic DKA risk); Restart Day 2-3 eating normally</li><li><b>Insulin</b>: VRIII for Type 1 / starvation &gt;1 meal; Continue basal 80%</li><li><b>Steroids</b>: &gt;5mg pred &gt;3w → <b>Hydrocortisone 100mg IV induction, 50mg Q6H × 24-48h</b>, then taper</li><li><b>ACEi/ARB</b>: <b>Hold 24h</b> major elective; Restart when euvolaemic</li><li><b>Beta-Blockers</b>: <b>CONTINUE</b> chronic; <b>Do NOT initiate</b> day of surgery</li><li><b>MAOIs</b>: Irreversible → <b>Stop 2 weeks</b>; Avoid <b>Pethidine, Tramadol, Indirect Sympathomimetics</b></li><li><b>Antibiotic Prophylaxis</b>: <b>&lt;60 min incision</b>; <b>Single dose</b> (24h cardiac/ortho); Colorectal: <b>Cefuroxime + Metronidazole</b>; Severe penicillin allergy: <b>Clindamycin + Gentamicin</b></li><li><b>Post-op VTE</b>: LMWH/DOAC per surgery type; Duration <b>7-14d</b> (abdominal), <b>28-35d</b> (hip/knee)</li><li><b>Post-op Restart</b>: ACEi/ARB when euvolaemic; Metformin Day 1 if eating; SGLT2i Day 2-3; Anticoag per protocol</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Warfarin bridging indication for elective surgery:</b></li></ol>
+<p>A. All patients  B. <b>Mechanical mitral valve</b>  C. CHA₂DS₂-VASc 2  D. VTE &gt;12 months ago <i>Answer: B. High thrombotic risk = mechanical mitral valve, recent VTE&lt;3m, AF CHA₂DS₂-VASc≥4.</i></p>
+<ol><li><b>Apixaban hold for elective surgery (CrCl 50):</b></li></ol>
+<p>A. 24h  B. <b>48h</b>  C. 72h  D. 96h <i>Answer: B. 48h if CrCl&gt;30; 72h if CrCl&lt;30.</i></p>
+<ol><li><b>SGLT2 inhibitor perioperative instruction:</b></li></ol>
+<p>A. Hold day of surgery  B. <b>Stop 3 days pre-op</b>  C. Continue throughout  D. Double dose <i>Answer: B. Stop 3 days pre-op (euglycaemic DKA risk with starvation).</i></p>
+<ol><li><b>Metformin + IV contrast for CT — hold duration:</b></li></ol>
+<p>A. Day of scan only  B. <b>48h pre and post</b>  C. 24h post only  D. No hold needed <i>Answer: B. Hold 48h pre and post if eGFR&lt;60 or IV contrast (AKI → lactic acidosis risk).</i></p>
+<ol><li><b>ACE inhibitor for major elective surgery:</b></li></ol>
+<p>A. Continue  B. <b>Hold 24h pre-op</b>  C. Double dose  D. Stop 1 week <i>Answer: B. Hold 24h (omit morning dose) to avoid refractory hypotension with GA.</i></p>
+<ol><li><b>Beta-blocker initiation day of surgery:</b></li></ol>
+<p>A. Recommended  B. <b>Contraindicated (POISE trial)</b>  C. If HR&gt;90  D. If HTN <i>Answer: B. POISE trial: ↑ stroke, hypotension, bradycardia, death. Continue chronic; never initiate.</i></p>
+<ol><li><b>Pethidine + MAOI interaction:</b></li></ol>
+<p>A. Hypertensive crisis  B. <b>Serotonin syndrome</b>  C. Respiratory depression  D. Seizures <i>Answer: B. Serotonin syndrome (hyperthermia, rigidity, rhabdomyolysis, death).</i></p>
+<ol><li><b>Antibiotic prophylaxis timing:</b></li></ol>
+<p>A. At induction  B. <b>Within 60 min before incision</b>  C. Post-op  D. Pre-op clinic <i>Answer: B. IV within 60 min before incision (fluoroquinolones/vancomycin/teicoplanin: 120 min).</i></p>
+<ol><li><b>Post-op VTE prophylaxis duration for total hip replacement:</b></li></ol>
+<p>A. 7-10 days  B. 14 days  C. <b>28-35 days</b>  D. 3 months <i>Answer: C. 28-35 days for hip/knee replacement (NICE NG180).</i></p>
+<ol><li><b>Clopidogrel hold for elective surgery (no recent stent):</b></li></ol>
+<p>A. 3 days  B. 5 days  C. <b>7 days</b>  D. 10 days <i>Answer: C. Clopidogrel 7 days; Ticagrelor/Prasugrel 5 days.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>70M, mechanical aortic valve, warfarin, INR 2.5, for elective inguinal hernia repair. Bridging?</b></li></ol>
+<p>A. No bridging  B. <b>Therapeutic LMWH bridge</b>  C. Prophylactic LMWH only  D. Switch to DOAC <i>Answer: B. Mechanical valve = high thrombotic risk → therapeutic LMWH bridge.</i></p>
+<ol><li><b>65F, apixaban for AF (CrCl 40), elective total knee replacement. Hold/Restart?</b></li></ol>
+<p>A. Hold 48h, restart 24h post-op  B. <b>Hold 72h, restart 48-72h post-op</b>  C. Hold 24h, restart 24h  D. No hold <i>Answer: B. CrCl&lt;30 → hold 72h; High bleed risk surgery (joint replacement) → restart 48-72h.</i></p>
+<ol><li><b>Type 2 DM on empagliflozin, elective cholecystectomy. Pre-op instruction?</b></li></ol>
+<p>A. Take as normal  B. <b>Stop 3 days before surgery</b>  C. Hold morning dose only  D. Switch to gliclazide <i>Answer: B. SGLT2i stop 3 days pre-op (euglycaemic DKA risk).</i></p>
+<ol><li><b>Patient on phenelzine (MAOI) for depression, emergency appendicectomy. Analgesic to AVOID?</b></li></ol>
+<p>A. Morphine  B. <b>Pethidine</b>  C. Fentanyl  D. Paracetamol <i>Answer: B. Pethidine → serotonin syndrome with MAOIs.</i></p>
+<ol><li><b>Post-op Day 1 after open colectomy. Patient on enoxaparin 40mg OD, ACEi, metformin. Eating, BP 115/75, Cr 90. Restart?</b></li></ol>
+<p>A. All three  B. <b>ACEi + Metformin</b>  C. Enoxaparin + Metformin  D. Enoxaparin + ACEi <i>Answer: B. ACEi (euvolaemic), Metformin (eating, renal OK). Enoxaparin continues (7-14d post colorectal).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-C, 10-C</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Medication Safety and Errors/PINCH High-Risk Drugs]] — Anticoagulants (H in PINCH), Insulin (I in PINCH)</li><li>[[Special Populations/Renal Prescribing]] — Drug dosing in perioperative AKI/CKD</li><li>[[Drug Interactions/Pharmacokinetic interactions/Metabolism interactions]] — CYP interactions (MAOIs, antibiotics)</li><li>[[Clinical Context/Pain Management]] — Post-op multimodal analgesia, opioid PCA</li><li>[[Clinical Context/Palliative Care]] — Perioperative palliative care, opioid management</li><li>[[Clinical Context/Antimicrobial Stewardship]] — Surgical antibiotic prophylaxis, stewardship</li><li>[[Therapeutic Drug Monitoring]] — TDM for aminoglycosides (surgical prophylaxis), vancomycin</li><li>[[Polypharmacy and Deprescribing/Assessment Tools]] — Medication review preoperative</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Perioperative Prescribing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

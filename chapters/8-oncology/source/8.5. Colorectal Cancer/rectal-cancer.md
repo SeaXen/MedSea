@@ -1,0 +1,624 @@
+# Rectal Cancer
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **Rectal Cancer = Distinct from Colon** (Anatomy, TME Surgery, Neoadjuvant RT); **TME Surgery** (Gold Standard): Sharp Dissection in Holy Plane, Autonomic Nerve Preservation; **Neoadjuvant**: **Short-Course RT 5x5Gy** (Stockholm) vs **Long-Course CRT 45-50.4Gy + 5-FU/Capecitabine**; **TNT** (Total Neoadjuvant Therapy): RAPIDO (SCRT + Chemo), PRODIGE 23 (Chemo → CRT); **Organ Preservation**: cCR → **Watch & Wait** (OPRA, Habr-GAMA); **Surgery**: LAR vs APR, TME, Nerve Sparing; **Adjuvant**: FOLFOX/CAPOX 6mo; **Local Excision**: T1 (TEM); **Recurrence**: Pelvic Exenteration.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Apply **TME Surgery principles**: Sharp dissection, Autonomic nerve preservation, D3 Lymphadenectomy
+- [ ] Select **neoadjuvant approach**: Short-Course RT (5x5Gy) vs Long-Course CRT vs TNT
+- [ ] Apply **Organ Preservation (Watch & Wait)** criteria for clinical Complete Response (cCR)
+- [ ] Perform **TME Surgery**: LAR vs APR, Nerve Sparing, D3 Lymphadenectomy
+- [ ] Apply **Adjuvant Chemotherapy**: FOLFOX/CAPOX 6mo
+- [ ] Manage **Local Recurrence**: Pelvic Exenteration, Re-irradiation
+- [ ] Implement **Surveillance**: CEA, MRI, Endoscopy, CT
+
+---
+
+## 2. Anatomy & Staging
+
+### Rectal Anatomy
+| Segment | Distance from Anal Verge | Lymphatic Drainage |
+|---------|--------------------------|-------------------|
+| **Upper Rectum** | **12-16 cm** | **IMA → Para-aortic** |
+| **Middle Rectum** | **7-11 cm** | **IMA + Internal Iliac** |
+| **Lower Rectum** | **0-6 cm** | **Internal Iliac → Inguinal** |
+
+### TNM Staging (AJCC 8th - Specific for Rectal)
+| Stage | Criteria |
+|-------|----------|
+| **T1** | Submucosa |
+| **T2** | Muscularis Propria |
+| **T3** | Mesorectal Fat (Through Muscularis) |
+| **T4a** | Visceral Peritoneum |
+| **T4b** | Adjacent Organs |
+| **N1** | 1-3 Regional Nodes |
+| **N2** | ≥4 Regional Nodes |
+| **Stage I** | T1-2 N0 M0 |
+| **Stage II** | T3-4 N0 M0 |
+| **Stage III** | Any T N1-2 M0 |
+| **Stage IV** | Any M1 |
+
+---
+
+## 3. Total Mesorectal Excision (TME) - Gold Standard Surgery
+
+### Principles
+| Principle | Detail |
+|---------|--------|
+| **Sharp Dissection** | **In Holy Plane** (Between Mesorectal Fascia & Parietal Fascia) |
+| **Autonomic Nerve Preservation** | **Hypogastric Nerves, Pelvic Plexus, Pelvic Splanchnic Nerves** → **Sexual/Bladder Function** |
+| **D3 Lymphadenectomy** | **High Ligation of IMA** (To Origin) + **Lateral Lymph Nodes** (Japanese Approach, Optional in West) |
+| **Distal Margin** | **≥2cm** (Ideally), **≥1cm** (Acceptable for Low Rectal) |
+| **Circumferential Resection Margin (CRM)** | **>1mm** (CRM ≤1mm = Involved → ↑Local Recurrence) |
+
+### Types of Resection
+| Procedure | Indication | Key Feature |
+|-----------|------------|-------------|
+| **LAR (Low Anterior Resection)** | **Mid/Upper Rectum** | **Sphincter Preservation**, Colorectal/Coloanal Anastomosis |
+| **Ultra-LAR (uLAR) / ISR** | **Very Low Rectum** | **Intersphincteric Resection**, Coloanal Anastomosis + J-Pouch |
+| **APR** (Abdominoperineal Resection) | **Lower Rectum, Sphincter Invasion** | **Permanent End Colostomy**, No Anastomosis |
+| **Hartmann's** | **Emergency/Obstruction** | **End Colostomy + Rectal Stump** |
+
+### Nerve Preservation Techniques
+| Nerve | Function | Preservation Technique |
+|-------|----------|------------------------|
+| **Hypogastric Nerves** | **Ejaculation/Bladder Neck** | **Identify at Promontory, Dissect Laterally** |
+| **Pelvic Plexus** | **Erection, Bladder/Rectal Tone** | **Posterolateral Dissection** |
+| **Pelvic Splanchnic (S2-4)** | **Erection, Parasympathetic** | **Posterolateral, Near Rectum** |
+
+---
+
+## 4. Neoadjuvant Therapy
+
+### Indications for Neoadjuvant
+| Stage | Recommendation |
+|-------|----------------|
+| **T1-2 N0** (Stage I) | **Surgery Alone** (No Neoadjuvant) |
+| **T3 N0** (Stage II) | **Short-Course RT 5x5Gy** (Preferred) |
+| **T3-4 / N+** (Stage II-III) | **Long-Course CRT 45-50.4Gy + 5-FU/Capecitabine** OR **Short-Course RT + Consolidation Chemo (TNT)** |
+
+### Short-Course RT (5x5Gy) - Stockholm Protocol
+| Feature | Detail |
+|-------|--------|
+| **Dose** | **5 Gy ×5 Fractions** (25 Gy Total) |
+| **Timing** | **Immediate Surgery** (Within 1-2 weeks) OR **Delayed Surgery** (4-8 weeks) |
+| **Indication** | **T3-4 N0-1, cT2-3 N0-1** (Stage II-III) |
+| **Key Trial** | **Stockholm Trial, Polish Trial, TROG 01.04** |
+
+### Long-Course Chemoradiation (CRT)
+| Feature | Detail |
+|-------|--------|
+| **RT Dose** | **45-50.4 Gy / 25-28 Fractions** (1.8 Gy/fx) |
+| **Concurrent Chemo** | **Capecitabine 825mg/m² bid d1-5 q1w** OR **5-FU 225mg/m² CI** |
+| **Surgery Timing** | **6-8 Weeks Post-CRT** (Allow Downstaging) |
+| **Key Trial** | **CAO/ARO/AIO-94, German CAO/ARO/AIO-04** |
+
+### Total Neoadjuvant Therapy (TNT) - Emerging Standard
+| Protocol | Regimen | Key Trial |
+|----------|---------|-----------|
+| **RAPIDO** | **SCRT 5x5Gy → CAPOX ×6 → TME** | **RAPIDO Trial: pCR 28% vs 14%, 3-yr DFS HR 0.74** |
+| **PRODIGE 23** | **FOLFOX ×6 → CRT 50Gy/Cape → TME** | **PRODIGE 23: pCR 24% vs 12%** |
+| **OPRA / Habr-GAMA** | **Organ Preservation (Watch & Wait)** | **cCR → Observe** |
+
+---
+
+## 5. Organ Preservation (Watch & Wait)
+
+### Criteria for Clinical Complete Response (cCR)
+| Modality | Criteria |
+|---------|----------|
+| **Endoscopy** | **No Residual Tumour, White Scar, Telangiectasia** |
+| **MRI** | **No Residual Mass, Fibrosis Only, T2 Hypointense** |
+| **DRE** | **No Palpable Mass** |
+| **CEA** | **Normal** |
+
+### Watch & Wait Protocol (OPRA / Habr-GAMA)
+| Step | Action |
+|------|--------|
+| **1. cCR Confirmed** | **Endoscopy + MRI + CEA + DRE** |
+| **2. Surveillance** | **Rigid Proctoscopy + MRI q3mo ×2yr, q6mo ×3yr** |
+| **3. Regrowth** | **Salvage Surgery (TME)** — **Similar Survival to Primary Surgery** |
+| **Selection** | **cCR after Long-Course CRT or TNT** |
+
+> **Key**: **Watch & Wait = Organ Preservation** (Avoids Permanent Stoma, Preserves Function)
+
+---
+
+## 6. Surgery: LAR vs APR vs Lateral Pelvic Nodes
+
+### Sphincter Preservation Criteria
+| Factor | Sphincter Preservation (LAR/ISR) | APR Indicated |
+|--------|----------------------------------|---------------|
+| **Tumour Height** | **>5-6 cm from Anal Verge** | **<5 cm** (Intersphincteric not feasible) |
+| **Sphincter Involvement** | **None** | **Direct Invasion** |
+| **Pre-op Continence** | **Good** | **Poor** |
+| **Patient Preference** | **Wants Sphincter** | **Accepts Stoma** |
+
+### Lateral Pelvic Lymph Nodes (LPN)
+| Approach | Indication |
+|----------|------------|
+| **Western** | **Routine LPN Dissection NOT Standard** (CPP, PROCARE) |
+| **Japanese** | **Routine LPN Dissection** (If cN+ LPN on MRI) |
+| **Indication (West)** | **cN+ LPN on MRI, Large Low Rectal Tumours** |
+
+---
+
+## 7. Adjuvant Chemotherapy
+
+### Indications
+| Scenario | Recommendation |
+|----------|----------------|
+| **Stage II (T3-4 N0)** | **High Risk Only** (LVI, PNI, T4, Grade 3, <12 LNs, Perineural, <1mm CRM) |
+| **Stage III** | **Standard** (FOLFOX/CAPOX ×6mo) |
+| **Post-Neoadjuvant** | **Complete 6mo Total** (Neoadj + Adj = 6mo) |
+
+### Regimens
+| Regimen | Schedule | Duration |
+|---------|----------|----------|
+| **FOLFOX** | Oxaliplatin 85 + Leucovorin 400 + 5-FU 400 bolus + 2400 infusional q2w | **6mo (12 cycles)** |
+| **CAPOX** | Oxaliplatin 130 d1 + Capecitabine 1000 bid d1-14 q3w | **6mo (8 cycles)** |
+
+> **IDEA**: **3mo CAPOX non-inferior for Low-Risk Stage III** (T1-3, N1, No LVI/PNI)
+
+---
+
+## 8. Local Excision (T1 Tumours)
+
+| Technique | Indication |
+|-----------|------------|
+| **TEM (Transanal Endoscopic Microsurgery)** | **T1, Well/Moderately Differentiated, <3cm, No LVI, No PNI, Mobile** |
+| **TAMIS** (Transanal Minimally Invasive Surgery) | **Same as TEM** |
+| **Traditional Transanal Excision** | **Small, Distal, Well-Differentiated** |
+
+> **Adjuvant RT** if **High-Risk Features**: Poor Differentiation, LVI, PNI, Positive Margins, Smucosal Invasion >1000μm
+
+---
+
+## 9. Neoadjuvant Regimens Comparison
+
+| Approach | Regimen | Surgery Timing | Key Trial |
+|----------|---------|----------------|-----------|
+| **Short-Course RT** | **5x5Gy** | **Immediate (1-2wk) OR Delayed (4-8wk)** | **Stockholm, Polish, TROG** |
+| **Long-Course CRT** | **45-50.4Gy + Cape/5-FU** | **6-8 Weeks Post-CRT** | **CAO/ARO/AIO-94** |
+| **TNT (RAPIDO)** | **5x5Gy → CAPOX ×6 → TME** | **After Chemo** | **RAPIDO: pCR 28% vs 14%** |
+| **TNT (PRODIGE 23)** | **FOLFOX ×6 → CRT → TME** | **After CRT** | **PRODIGE 23: pCR 24% vs 12%** |
+
+---
+
+## 10. Organ Preservation - Watch & Wait (Detailed)
+
+### cCR Definition (Habra-Gama / OPRA)
+| Modality | cCR Criteria |
+|----------|--------------|
+| **Endoscopy** | **Normal Mucosa / White Scar / Telangiectasia** (No Tumour) |
+| **MRI** | **No Residual Mass, Fibrosis Only, T2 Dark** |
+| **DRE** | **Normal** |
+| **CEA** | **Normal** |
+
+### Surveillance Protocol (OPRA)
+| Timeframe | Endoscopy | MRI | CEA |
+|-----------|-----------|-----|-----|
+| **0-2 years** | **q3mo** | **q3mo** | **q3mo** |
+| **2-5 years** | **q6mo** | **q6mo** | **q6mo** |
+| **>5 years** | **Annual** | **Annual** | **Annual** |
+
+> **Regrowth Rate**: **~25-30%** (Most >2yr); **Salvage TME = Similar Survival to Primary Surgery**
+
+---
+
+## 11. Pelvic Exenteration (Locally Advanced/Recurrent)
+
+| Type | Organs Removed |
+|------|----------------|
+| **Anterior** | **Rectum, Bladder, Prostate/Uterus/Vagina** → **Ileal Conduit + Vaginal Reconstruction** |
+| **Posterior** | **Rectum, Sacrum, Coccyx** |
+| **Total** | **Rectum, Bladder, Prostate/Uterus/Vagina, Sacrum** → **Ileal Conduit + Colostomy** |
+
+> **Indication**: **T4b (Fixed), Locally Recurrent, Pelvic Sidewall Involvement**
+
+---
+
+## 12. Surveillance & Follow-Up
+
+| Modality | Frequency | Duration |
+|----------|-----------|----------|
+| **CEA** | **q3-6mo ×5yr** | **5 Years** |
+| **CT Chest/Abd/Pelvis** | **Annual ×5yr** | **5 Years** |
+| **MRI Pelvis** | **q6-12mo ×3yr** | **3-5 Years** |
+| **Endoscopy (Rigid Proctoscopy)** | **q6-12mo ×5yr** | **5 Years** |
+| **CT Chest** | **Annual** | **5 Years** (Lung Mets) |
+
+---
+
+## 13. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **TME Surgery** | **Sharp Dissection in Holy Plane**, **Autonomic Nerve Preservation**, **D3 Lymphadenectomy**, **CRM >1mm** |
+| **Neoadjuvant Options** | **Short-Course RT 5x5Gy** (Immediate Surg) **vs** **Long-Course CRT 45-50.4Gy + Cape/5-FU** (6-8wk Delay) **vs** **TNT (RAPIDO/PRODIGE 23)** |
+| **RAPIOD/PRODIGE 23** | **TNT Superior pCR** (RAPIDO 28%, PRODIGE 24%) |
+| **Organ Preservation** | **cCR (Endo + MRI + DRE + CEA) → Watch & Wait** (OPRA/Habr-GAMA) |
+| **TME Surgery** | **Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm** |
+| **LAR vs APR** | **>5-6cm → LAR/ISR**; **<5cm / Sphincter Invasion → APR** |
+| **Lateral Nodes** | **West: Selective (cN+ LPN on MRI)**; **Japan: Routine** |
+| **Adjuvant Chemo** | **Stage III: FOLFOX/CAPOX 6mo**; **IDEA: 3mo CAPOX Low-Risk Stage III** |
+| **Local Excision** | **T1: TEM/TAMIS** (Well/Mod Diff, <3cm, No LVI/PNI) |
+| **TNT** | **RAPIDO (SCRT → CAPOX)** / **PRODIGE 23 (FOLFOX → CRT)** |
+| **Watch & Wait** | **cCR (Endo + MRI + DRE + CEA) → Surveillance q3mo×2yr** |
+| **Pelvic Exenteration** | **Anterior/Posterior/Total** (T4b, Recurrent) |
+
+---
+
+## 14. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **Rectal Cancer — TME Principles?** | **Sharp Dissection in Holy Plane, Autonomic Nerve Preservation, D3 Lymphadenectomy, CRM >1mm**. |
+| **Short-Course vs Long-Course RT?** | **SCRT: 5x5Gy, Immediate Surg**; **LCRT: 45-50.4Gy + Cape/5-FU, 6-8wk Delay, Surgery 6-8wk Post**. |
+| **TNT — RAPIDO vs PRODIGE 23?** | **RAPIDO: SCRT 5x5Gy → CAPOX ×6 → TME**; **PRODIGE 23: FOLFOX ×6 → CRT 50Gy → TME**. |
+| **cCR Definition for Watch & Wait?** | **Endoscopy: White Scar/Telangiectasia; MRI: Fibrosis Only; DRE Normal; CEA Normal**. |
+| **Watch & Wait — Surveillance Schedule?** | **Proctoscopy/MRI/CEA q3mo ×2yr, q6mo ×3yr, Then Annually** (OPRA). |
+| **TME — Key Principles?** | **Sharp Dissection, Holy Plane, Autonomic Nerve Preservation, D3 LND, CRM >1mm**. |
+| **LAR vs APR — Indications?** | **LAR: >5-6cm from Anal Verge, Sphincter Spared**; **APR: <5cm, Sphincter Invasion**. |
+| **Lateral Lymph Nodes — Western vs Japanese?** | **West: Selective (cN+ LPN on MRI)**; **Japan: Routine Dissection**. |
+| **Adjuvant Chemo — Rectal Stage III?** | **FOLFOX/CAPOX ×6mo** (IDEA: 3mo CAPOX Non-Inferior Low-Risk Stage III). |
+| **Local Excision — Indications?** | **T1, Well/Mod Diff, <3cm, No LVI/PNI, Mobile** (TEM/TAMIS). |
+| **TNT — RAPIDO vs PRODIGE 23 Regimen?** | **RAPIDO: SCRT 5x5Gy → CAPOX ×6 → TME**; **PRODIGE 23: FOLFOX ×6 → CRT 50Gy/Cape → TME**. |
+| **Pelvic Exenteration — Indications?** | **T4b Fixed, Recurrent, Pelvic Sidewall Involvement**. |
+
+---
+
+## 15. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **SCRT vs LCRT** | **SCRT: 5x5Gy, Immediate Surgery**; **LCRT: 45-50.4Gy + Chemo, 6-8wk Delay** |
+| **TNT vs Standard Neoadjuvant** | **TNT = Chemo + RT (Any Order) Before Surgery**; **Standard = RT Alone (SCRT/LCRT)** |
+| **TAD vs SLNB** | **TAD is for Rectal (Clip + SLNB)**; **SLNB for Breast/Melanoma** |
+| **LAR vs ISR** | **LAR: Colorectal/Coloanal Anastomosis**; **ISR: Intersphincteric, Coloanal Anastomosis + J-Pouch** |
+| **Lateral Nodes West vs Japan** | **West: Selective (cN+ on MRI)**; **Japan: Routine D3 LPN Dissection** |
+| **TEM vs TAMIS** | **TEM: Rigid Scope**; **TAMIS: Flexible/Laparoscopic Platform** |
+| **TNT RAPIDO vs PRODIGE 23** | **RAPIDO: SCRT First**; **PRODIGE 23: Chemo First (FOLFOX)** |
+| **Watch & Wait Failure** | **Regrowth → Salvage TME** (Similar Survival to Primary Surgery) |
+
+**Mnemonic: RECTAL-CANCER-TME**
+- **R**ectal: **Distinct from Colon** (TME, Neoadjuvant RT)
+- **E**xclusion: **T1 → TEM/TAMIS** (Local Excision)
+- **C**RT Neoadjuvant: **SCRT 5x5Gy vs LCRT 45-50Gy+Cape**
+- **T**NT: **RAPIDO (SCRT→Chemo) vs PRODIGE 23 (Chemo→CRT)**
+- **A**utonomic Nerves: **Hypogastric, Pelvic Plexus, Splanchnic** (Preserve)
+- **L**AR vs APR: **>5-6cm LAR/ISR; <5cm APR**
+- **C**RM: **>1mm = Clear** (≤1mm = Involved → ↑Recurrence)
+- **A**nadjuvant: **Stage III FOLFOX/CAPOX ×6mo** (IDEA 3mo CAPOX Low-Risk)
+- **N**eoadjuvant Options: **SCRT, LCRT, TNT (RAPIDO/PRODIGE)**
+- **C**ircumferential Margin: **CRM ≤1mm = Involved**
+- **A**nterior/Posterior/Total Exenteration: **T4b/Recurrent**
+- **N**erve Sparing: **Hypogastric (Ejaculation), Plexus (Erection), Splanchnic (Bladder)**
+- **E**ndoscopy cCR: **White Scar, Telangiectasia, No Mass**
+- **R**egrowth Watch & Wait: **~25% → Salvage TME**
+- **R**APIDO: **SCRT 5x5Gy → CAPOX ×6 → TME** (pCR 28%)
+
+---
+
+## 16. Mind Map
+
+```mermaid
+mindmap
+  root((Rectal Cancer))
+    Anatomy
+      Upper (12-16cm), Middle (7-11cm), Lower (0-6cm)
+      Lymphatics: IMA, Iliac, Inguinal
+    Staging AJCC 8th
+      T1-T4, N0-2, M0/M1
+    TME Surgery
+      Holy Plane, Autonomic Nerves, D3 LND, CRM >1mm
+      LAR/ISR vs APR
+    Neoadjuvant
+      SCRT 5x5Gy (Immediate Surg)
+      LCRT 45-50.4Gy + Cape/5-FU (6-8wk Delay)
+      TNT: RAPIDO/ PRODIGE 23
+    Organ Preservation
+      cCR (Endo+MRI+DRE+CEA) → Watch & Wait
+      Surveillance: Proctoscopy/MRI q3mo
+    Surgery Options
+      LAR/ISR (>5-6cm), APR (<5cm)
+      Lateral Nodes: West Selective / Japan Routine
+    Adjuvant
+      Stage III: FOLFOX/CAPOX 6mo
+      IDEA: 3mo CAPOX Low-Risk
+    Local Excision
+      T1: TEM/TAMIS
+    Recurrence
+      Pelvic Exenteration
+      Re-irradiation
+```
+
+---
+
+## 17. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Staging** | T1-4, N0-2, M0/M1 |
+| **TME** | Holy Plane, Nerves, D3 LND, CRM >1mm |
+| **Neoadj Options** | SCRT 5x5Gy / LCRT 45-50Gy+Cape / TNT (RAPIDO/PRODIGE) |
+| **cCR** | Endo: White Scar; MRI: Fibrosis; DRE Normal; CEA Normal |
+| **Watch & Wait** | cCR → Surveillance q3mo×2yr |
+| **LAR vs APR** | >5-6cm LAR; <5cm APR |
+| **Lateral Nodes** | West: cN+ MRI → Dissect; Japan: Routine |
+| **Adjuvant** | Stage III FOLFOX/CAPOX 6mo; IDEA 3mo CAPOX Low-Risk |
+| **Local Excision** | T1: TEM/TAMIS (Well/Mod, <3cm, No LVI/PNI) |
+| **Pelvic Exenteration** | T4b/Recurrent: Ant/Post/Total |
+| **Surveillance** | CEA q3-6mo, CT/MRI Annual, Proctoscopy q6-12mo |
+
+---
+
+## 18. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 19. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| TME Principles | | |
+| SCRT vs LCRT vs TNT | | |
+| cCR Definition | | |
+| Watch & Wait Protocol | | |
+| LAR vs APR Indications | | |
+| Lateral Node Management | | |
+| Adjuvant Chemo | | |
+| Local Excision Criteria | | |
+
+---
+
+## 20. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Colon Cancer]], [[TME Surgery]], [[Short-Course RT]], [[Total Neoadjuvant Therapy]], [[Watch & Wait]], [[TNT]], [[LAR vs APR]], [[Pelvic Exenteration]], [[Rectal Cancer Surveillance]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 21. MCQs (10)
+
+
+**1.** Regarding Rectal Cancer (TME Surgery), which statement is correct?
+   A. **Sharp Dissection in Holy Plane**, **Autonomic Nerve Preservation**, **D3 Lymphadenectomy**, **CRM 
+   B. **Sharp - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Sharp Dissection in Holy Plane**, **Autonomic Nerve Preservation**, **D3 Lymphadenectomy**, **CRM >1mm**
+
+
+**2.** Regarding Rectal Cancer (Neoadjuvant Options), which statement is correct?
+   A. **Short-Course RT 5x5Gy** (Immediate Surg) **vs** **Long-Course CRT 45-50.4Gy + Cape/5-FU** (6-8wk D
+   B. **Short-Course - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Short-Course RT 5x5Gy** (Immediate Surg) **vs** **Long-Course CRT 45-50.4Gy + Cape/5-FU** (6-8wk Delay) **vs** **TNT (...
+
+
+**3.** Regarding Rectal Cancer (RAPIOD/PRODIGE 23), which statement is correct?
+   A. **TNT Superior pCR** (RAPIDO 28%, PRODIGE 24%)
+   B. **TNT - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **TNT Superior pCR** (RAPIDO 28%, PRODIGE 24%)
+
+
+**4.** Regarding Rectal Cancer (Organ Preservation), which statement is correct?
+   A. **cCR (Endo + MRI + DRE + CEA) → Watch & Wait** (OPRA/Habr-GAMA)
+   B. **cCR - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **cCR (Endo + MRI + DRE + CEA) → Watch & Wait** (OPRA/Habr-GAMA)
+
+
+**5.** Regarding Rectal Cancer (TME Surgery), which statement is correct?
+   A. **Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm**
+   B. **Sharp - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm**
+
+
+**6.** Regarding Rectal Cancer (LAR vs APR), which statement is correct?
+   A. **>5-6cm → LAR/ISR**
+   B. **>5-6cm - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **>5-6cm → LAR/ISR**; **<5cm / Sphincter Invasion → APR**
+
+
+**7.** Regarding Rectal Cancer (Lateral Nodes), which statement is correct?
+   A. **West: Selective (cN+ LPN on MRI)**
+   B. **West: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **West: Selective (cN+ LPN on MRI)**; **Japan: Routine**
+
+
+**8.** Regarding Rectal Cancer (Adjuvant Chemo), which statement is correct?
+   A. **Stage III: FOLFOX/CAPOX 6mo**
+   B. **Stage - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Stage III: FOLFOX/CAPOX 6mo**; **IDEA: 3mo CAPOX Low-Risk Stage III**
+
+
+**9.** Regarding Rectal Cancer (Local Excision), which statement is correct?
+   A. **T1: TEM/TAMIS** (Well/Mod Diff, <3cm, No LVI/PNI)
+   B. **T1: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **T1: TEM/TAMIS** (Well/Mod Diff, <3cm, No LVI/PNI)
+
+
+**10.** Regarding Rectal Cancer (TNT), which statement is correct?
+   A. **RAPIDO (SCRT → CAPOX)** / **PRODIGE 23 (FOLFOX → CRT)**
+   B. **RAPIDO - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **RAPIDO (SCRT → CAPOX)** / **PRODIGE 23 (FOLFOX → CRT)**
+
+
+## 22. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **Sharp Dissection in Holy Plane**, **Autonomic Nerve Preservation**, **D3 Lymphadenectomy**, **CRM 
+   - B. **Sharp (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **Sharp Dissection in Holy Plane**, **Autonomic Nerve Preservation**, **D3 Lymphadenectomy**, **CRM >1mm**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **Short-Course RT 5x5Gy** (Immediate Surg) **vs** **Long-Course CRT 45-50.4Gy + Cape/5-FU** (6-8wk D
+   - B. **Short-Course (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **Short-Course RT 5x5Gy** (Immediate Surg) **vs** **Long-Course CRT 45-50.4Gy + Cape/5-FU** (6-8wk Delay) **vs** **TNT (...
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **TNT Superior pCR** (RAPIDO 28%, PRODIGE 24%)
+   - B. **TNT (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **TNT Superior pCR** (RAPIDO 28%, PRODIGE 24%)
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **cCR (Endo + MRI + DRE + CEA) → Watch & Wait** (OPRA/Habr-GAMA)
+   - B. **cCR (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **cCR (Endo + MRI + DRE + CEA) → Watch & Wait** (OPRA/Habr-GAMA)
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm**
+   - B. **Sharp (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **>5-6cm → LAR/ISR**
+   - B. **>5-6cm (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **>5-6cm → LAR/ISR**; **<5cm / Sphincter Invasion → APR**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **West: Selective (cN+ LPN on MRI)**
+   - B. **West: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **West: Selective (cN+ LPN on MRI)**; **Japan: Routine**
+
+
+**8.** The role of surgery in this case is:
+   - A. **Stage III: FOLFOX/CAPOX 6mo**
+   - B. **Stage (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **Stage III: FOLFOX/CAPOX 6mo**; **IDEA: 3mo CAPOX Low-Risk Stage III**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **T1: TEM/TAMIS** (Well/Mod Diff, <3cm, No LVI/PNI)
+   - B. **T1: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **T1: TEM/TAMIS** (Well/Mod Diff, <3cm, No LVI/PNI)
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **RAPIDO (SCRT → CAPOX)** / **PRODIGE 23 (FOLFOX → CRT)**
+   - B. **RAPIDO (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **RAPIDO (SCRT → CAPOX)** / **PRODIGE 23 (FOLFOX → CRT)**
+
+
+## 23. Flashcards
+
+**Q1:** TME Surgery?
+**A1:** Sharp Dissection in Holy Plane, Autonomic Nerve Preservation, D3 Lymphadenectomy, CRM >1mm
+
+**Q2:** Neoadjuvant Options?
+**A2:** Short-Course RT 5x5Gy (Immediate Surg) vs Long-Course CRT 45-50.4Gy + Cape/5-FU (6-8wk Delay) vs TNT (RAPIDO/PRODIGE 23)
+
+**Q3:** RAPIOD/PRODIGE 23?
+**A3:** TNT Superior pCR (RAPIDO 28%, PRODIGE 24%)
+
+**Q4:** Organ Preservation?
+**A4:** cCR (Endo + MRI + DRE + CEA) → Watch & Wait (OPRA/Habr-GAMA)
+
+**Q5:** TME Surgery?
+**A5:** Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm
+
+**Q6:** LAR vs APR?
+**A6:** >5-6cm → LAR/ISR; <5cm / Sphincter Invasion → APR
+
+**Q7:** Lateral Nodes?
+**A7:** West: Selective (cN+ LPN on MRI); Japan: Routine
+
+**Q8:** Adjuvant Chemo?
+**A8:** Stage III: FOLFOX/CAPOX 6mo; IDEA: 3mo CAPOX Low-Risk Stage III
+
+## 24. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | TME Surgery | Sharp Dissection in Holy Plane, Autonomic Nerve Preservation, D3 Lymphadenectomy, CRM >1mm |
+| 2 | A | Neoadjuvant Options | Short-Course RT 5x5Gy (Immediate Surg) vs Long-Course CRT 45-50.4Gy + Cape/5-FU (6-8wk Delay) vs TNT (RAPIDO/PRODIGE 23) |
+| 3 | A | RAPIOD/PRODIGE 23 | TNT Superior pCR (RAPIDO 28%, PRODIGE 24%) |
+| 4 | A | Organ Preservation | cCR (Endo + MRI + DRE + CEA) → Watch & Wait (OPRA/Habr-GAMA) |
+| 5 | A | TME Surgery | Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm |
+| 6 | A | LAR vs APR | >5-6cm → LAR/ISR; <5cm / Sphincter Invasion → APR |
+| 7 | A | Lateral Nodes | West: Selective (cN+ LPN on MRI); Japan: Routine |
+| 8 | A | Adjuvant Chemo | Stage III: FOLFOX/CAPOX 6mo; IDEA: 3mo CAPOX Low-Risk Stage III |
+| 9 | A | Local Excision | T1: TEM/TAMIS (Well/Mod Diff, <3cm, No LVI/PNI) |
+| 10 | A | TNT | RAPIDO (SCRT → CAPOX) / PRODIGE 23 (FOLFOX → CRT) |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | TME Surgery | Sharp Dissection in Holy Plane, Autonomic Nerve Preservation, D3 Lymphadenectomy, CRM >1mm |
+| 2 | A | Neoadjuvant Options | Short-Course RT 5x5Gy (Immediate Surg) vs Long-Course CRT 45-50.4Gy + Cape/5-FU (6-8wk Delay) vs TNT (RAPIDO/PRODIGE 23) |
+| 3 | A | RAPIOD/PRODIGE 23 | TNT Superior pCR (RAPIDO 28%, PRODIGE 24%) |
+| 4 | A | Organ Preservation | cCR (Endo + MRI + DRE + CEA) → Watch & Wait (OPRA/Habr-GAMA) |
+| 5 | A | TME Surgery | Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm |
+| 6 | A | LAR vs APR | >5-6cm → LAR/ISR; <5cm / Sphincter Invasion → APR |
+| 7 | A | Lateral Nodes | West: Selective (cN+ LPN on MRI); Japan: Routine |
+| 8 | A | Adjuvant Chemo | Stage III: FOLFOX/CAPOX 6mo; IDEA: 3mo CAPOX Low-Risk Stage III |
+| 9 | A | Local Excision | T1: TEM/TAMIS (Well/Mod Diff, <3cm, No LVI/PNI) |
+| 10 | A | TNT | RAPIDO (SCRT → CAPOX) / PRODIGE 23 (FOLFOX → CRT) |
+
+## 25. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Colorectal Cancer|Colorectal Cancer]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prognostic Indices Biomarkers — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.14. PRINCIPLES OF CANCER MANAGEMENT</span>
+      <div class="h1">Prognostic Indices Biomarkers</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>major prognostic indices</b> (NPI, IPI, DIPSS, IMDC, IGCCCG, R-ISS, Child-Pugh/BCLC)</li><li>[ ] Interpret <b>biomarker types</b>: Predictive vs Prognostic vs Monitoring</li><li>[ ] Apply <b>molecular biomarkers</b> for treatment selection (ER/PR/HER2, KRAS, EGFR, ALK, BRAF, MSI, TMB, PD-L1)</li><li>[ ] Understand <b>clinical utility</b> in treatment selection, prognostication, and trial eligibility</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Major Prognostic Indices</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Breast: Nottingham Prognostic Index (NPI)</div>
+<table class="ctable"><tr><th>Component</th><th>Score</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**Tumour Size (cm)**</td><td><2 (1), 2-5 (2), >5 (3)</td></tr><tr><td>**Grade**</td><td>1 (1), 2 (2), 3 (3)</td></tr><tr><td>**Lymph Nodes**</td><td>None (1), 1-3 (2), >3 (3)</td></tr></table>
+<p><b>NPI = Size + Grade + Nodes</b></p>
+<ul><li><b>Excellent (&lt;3.4)</b>: 5-yr OS &gt;90%</li><li><b>Good (3.4-4.4)</b>: 5-yr OS 80-90%</li><li><b>Moderate (4.4-5.4)</b>: 5-yr OS 60-80%</li><li><b>Poor (&gt;5.4)</b>: 5-yr OS &lt;50%</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Lymphoma: International Prognostic Index (IPI) / FLIPI</div>
+<p>#### IPI (Aggressive NHL) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Factor&lt;/th&gt;&lt;th&gt;Adverse if&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Age</b>&lt;/td&gt;&lt;td&gt;&gt;60 years&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Stage</b>&lt;/td&gt;&lt;td&gt;III/IV&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>LDH</b>&lt;/td&gt;&lt;td&gt;&gt;ULN&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Performance Status</b>&lt;/td&gt;&lt;td&gt;ECOG ≥2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Extranodal Sites</b>&lt;/td&gt;&lt;td&gt;&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<table class="ctable"><tr><th>Risk Group</th><th>Score</th><th>5-yr OS</th></tr><tr><td>------------</td><td>-------</td><td>---------</td></tr><tr><td>**Low**</td><td>0-1</td><td>>80%</td></tr><tr><td>**Low-Intermediate**</td><td>2</td><td>~70%</td></tr><tr><td>**High-Intermediate**</td><td>3</td><td>~50%</td></tr><tr><td>**High**</td><td>4-5</td><td><40%</td></tr></table>
+<p>#### FLIPI (Follicular Lymphoma) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Factor&lt;/th&gt;&lt;th&gt;Adverse if&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Age</b>&lt;/td&gt;&lt;td&gt;&gt;60 years&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Stage</b>&lt;/td&gt;&lt;td&gt;III/IV&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hb</b>&lt;/td&gt;&lt;td&gt;&lt;12 g/dL&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>LDH</b>&lt;/td&gt;&lt;td&gt;&gt;ULN&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Nodal Sites</b>&lt;/td&gt;&lt;td&gt;&gt;4&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Myeloproliferative Neoplasms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">DIPSS / DIPSS-plus (Primary Myelofibrosis)</div>
+<table class="ctable"><tr><th>DIPSS Factor</th><th>Points</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>Age >65</td><td>1</td></tr><tr><td>Hb <10 g/dL</td><td>1</td></tr><tr><td>WBC >25 ×10⁹/L</td><td>1</td></tr><tr><td>Circulating Blasts ≥1%</td><td>1</td></tr><tr><td>Constitutional Symptoms</td><td>1</td></tr></table>
+<p><b>DIPSS-plus adds:</b> Platelets &lt;100, Transfusion Dependence, Unfavourable Karyotype</p>
+<table class="ctable"><tr><th>Risk Group</th><th>DIPSS Score</th><th>Median OS</th></tr><tr><td>------------</td><td>-------------</td><td>-----------</td></tr><tr><td>**Low**</td><td>0</td><td>Not reached</td></tr><tr><td>**Int-1**</td><td>1</td><td>~7-8 yr</td></tr><tr><td>**Int-2**</td><td>2</td><td>~3-4 yr</td></tr><tr><td>**High**</td><td>≥3</td><td>~1.5-2 yr</td></tr></table>
+<p><b>DIPSS-plus adds:</b> Platelets &lt;100, Transfusion Dependence, Unfavourable Karyotype</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Renal Cell Carcinoma</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">IMDC Risk Model (Metastatic)</div>
+<table class="ctable"><tr><th>Factor</th><th>Adverse if</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>KPS <80%</td><td>Yes</td></tr><tr><td>Time Dx → Tx <1 year</td><td>Yes</td></tr><tr><td>Hb <LLN</td><td>Yes</td></tr><tr><td>Ca >ULN</td><td>Yes</td></tr><tr><td>NLR >3 (or Neutrophils >ULN)</td><td>Yes</td></tr><tr><td>Platelets >ULN</td><td>Yes</td></tr></table>
+<table class="ctable"><tr><th>Group</th><th>Factors</th><th>Median OS</th></tr><tr><td>-------</td><td>---------</td><td>-----------</td></tr><tr><td>**Favourable**</td><td>0</td><td>~40 months</td></tr><tr><td>**Intermediate**</td><td>1-2</td><td>~20 months</td></tr><tr><td>**Poor**</td><td>≥3</td><td>~8 months</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Germ Cell Tumours</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">IGCCCG Risk Groups (Metastatic)</div>
+<table class="ctable"><tr><th>Group</th><th>Seminoma</th><th>Non-Seminoma</th></tr><tr><td>-------</td><td>----------</td><td>--------------</td></tr><tr><td>**Good**</td><td>Any primary, No non-pulm visceral mets</td><td>Testicular/Retrop primary, No non-pulm visceral, S1 markers</td></tr><tr><td>**Intermediate**</td><td>Non-pulmonary visceral mets</td><td>Testicular/Retrop primary, No non-pulm visceral, S2 markers</td></tr><tr><td>**Poor**</td><td>**Does not exist**</td><td>Mediastinal primary OR Non-pulm visceral OR S3 markers</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Multiple Myeloma</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Revised ISS (R-ISS)</div>
+<table class="ctable"><tr><th>Factor</th><th>Definition</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**ISS Stage**</td><td>β2-Microglobulin, Albumin</td></tr><tr><td>**Cytogenetics**</td><td>**High-Risk**: del(17p), t(4;14), t(14;16)</td></tr><tr><td>**LDH**</td><td>>ULN</td></tr></table>
+<table class="ctable"><tr><th>R-ISS Stage</th><th>Criteria</th></tr><tr><td>-------------</td><td>----------</td></tr><tr><td>**I**</td><td>ISS I, No High-Risk Cytogenetics, Normal LDH</td></tr><tr><td>**II**</td><td>Not I or III</td></tr><tr><td>**III**</td><td>ISS III, High-Risk Cytogenetics OR High LDH</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Hepatocellular Carcinoma</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">BCLC / Child-Pugh</div>
+<table class="ctable"><tr><th>Stage</th><th>Child-Pugh</th><th>Treatment</th></tr><tr><td>-------</td><td>------------</td><td>-----------</td></tr><tr><td>**0**</td><td>A</td><td>Ablation/Resection</td></tr><tr><td>**A**</td><td>A</td><td>Resection/Ablation/Transplant</td></tr><tr><td>**B**</td><td>A/B</td><td>TACE</td></tr><tr><td>**C**</td><td>A/B</td><td>Sorafenib/Lenvatinib</td></tr><tr><td>**D**</td><td>C/D</td><td>Best Supportive Care</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Biomarkers</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification</div>
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Clinical Use</th></tr><tr><td>------</td><td>------------</td><td>--------------</td></tr><tr><td>**Predictive**</td><td>Predicts response to **specific therapy**</td><td>Treatment Selection</td></tr><tr><td>**Prognostic**</td><td>Predicts **natural history/outcome** independent of therapy</td><td>Prognostication</td></tr><tr><td>**Monitoring**</td><td>Tracks **disease burden/response**</td><td>Response Assessment</td></tr></table>
+<div class="sub-h">Key Biomarkers by Cancer</div>
+<table class="ctable"><tr><th>Cancer</th><th>Predictive</th><th>Prognostic</th><th>Monitoring</th></tr><tr><td>--------</td><td>------------</td><td>------------</td><td>------------</td></tr><tr><td>**Breast**</td><td>**ER/PR/HER2**, **PIK3CA**, **BRCA1/2**</td><td>**Grade, Ki-67, Oncotype DX, MammaPrint**</td><td>**CA15-3, CEA, ctDNA**</td></tr><tr><td>**Lung (NSCLC)**</td><td>**EGFR, ALK, ROS1, BRAF, MET, RET, NTRK, KRAS**</td><td>**Stage, PS, Histology, PD-L1, TMB**</td><td>**CEA, CYFRA, ctDNA**</td></tr><tr><td>**Colorectal**</td><td>**KRAS/NRAS/BRAF, MSI/MMR, HER2**</td><td>**Stage, LVI, PNI, CEA, CMS**</td><td>**CEA, ctDNA, MSI**</td></tr><tr><td>**Lung (SCLC)**</td><td>—</td><td>**Stage, PS, LDH**</td><td>**LDH, NSE**</td></tr><tr><td>**Melanoma**</td><td>**BRAF V600E, NRAS, KIT**</td><td>**Breslow, Ulceration, SLN, LDH, TMB**</td><td>**LDH, S100, ctDNA**</td></tr><tr><td>**Ovarian**</td><td>**BRCA1/2, HRD, MMR**</td><td>**Stage, Residual Disease, Grade**</td><td>**CA125, HE4, ctDNA**</td></tr><tr><td>**Prostate**</td><td>**BRCA1/2, MSI, HRD**</td><td>**PSA, Gleason, Stage, PSADT, Decipher**</td><td>**PSA, ctDNA**</td></tr><tr><td>**Haematological**</td><td>**BCR-ABL1 (CML), FLT3 (AML), MYD88 (WM)**</td><td>**Cytogenetics, MRD**</td><td>**MRD (Flow/PCR), ctDNA**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Key Molecular Biomarkers</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">ESCAT Classification (Actionability)</div>
+<table class="ctable"><tr><th>Tier</th><th>Definition</th><th>Examples</th></tr><tr><td>------</td><td>------------</td><td>----------</td></tr><tr><td>**I**</td><td>**Ready for Routine Use** (Approved drug, improves outcome)</td><td>EGFRm → EGFR TKI, ALK+ → ALK TKI, BRAF V600E → BRAF/MEKi, HER2+ → Anti-HER2, BRCA → PARPi, NTRK → TRKi, MSI-H → ICI</td></tr><tr><td>**II**</td><td>**Clinical Trial Recommended** (Strong evidence, investigational)</td><td>KRAS G12C → Sotorasib/Adagrasib, RET → Selpercatinib, METex14 → Capmatinib, FGFR → Erdafitinib</td></tr><tr><td>**III**</td><td>**Preclinical/Weak Evidence**</td><td>TP53 mut, MYC amp, CCND1 amp, CCNE1 amp</td></tr><tr><td>**IV**</td><td>**No Evidence / Benign**</td><td>Passenger mutations, VUS</td></tr></table>
+<div class="sub-h">Key Biomarker Details</div>
+<table class="ctable"><tr><th>Biomarker</th><th>Cancer</th><th>Actionability</th><th>Test Method</th></tr><tr><td>-----------</td><td>--------</td><td>---------------</td><td>-------------</td></tr><tr><td>**ER/PR**</td><td>Breast</td><td>Endocrine Therapy</td><td>IHC</td></tr><tr><td>**HER2**</td><td>Breast, Gastric</td><td>Trastuzumab, T-DM1, T-DXd</td><td>IHC/FISH</td></tr><tr><td>**EGFR**</td><td>Lung (NSCLC)</td><td>EGFR TKIs (Osimertinib, etc.)</td><td>PCR/NGS</td></tr><tr><td>**ALK**</td><td>Lung (NSCLC)</td><td>ALK TKIs (Alectinib, Lorlatinib)</td><td>IHC/FISH/NGS</td></tr><tr><td>**ROS1**</td><td>Lung (NSCLC)</td><td>ROS1 TKIs (Entrectinib, Lorlatinib)</td><td>FISH/NGS</td></tr><tr><td>**BRAF V600E**</td><td>Melanoma, CRC, NSCLC</td><td>BRAF/MEK Inhibitors</td><td>IHC/PCR/NGS</td></tr><tr><td>**KRAS**</td><td>CRC, Lung, Pancreas</td><td>**KRAS G12C → Sotorasib/Adagrasib** (ESCAT II)</td><td>PCR/NGS</td></tr><tr><td>**BRAF (non-V600E)**</td><td>CRC</td><td>No approved targeted therapy</td><td>NGS</td></tr><tr><td>**MSI-H/dMMR**</td><td>All Solid Tumours</td><td>**Pembrolizumab** (Tumour-agnostic)</td><td>IHC (MMR) / PCR (MSI)</td></tr><tr><td>**TMB-H**</td><td>All Solid Tumours</td><td>**Pembrolizumab** (≥10 mut/Mb)</td><td>NGS Panel</td></tr><tr><td>**NTRK Fusion**</td><td>All Solid Tumours</td><td>**Larotrectinib/Entrectinib**</td><td>RNA-seq/NGS</td></tr><tr><td>**RET Fusion**</td><td>Lung, Thyroid</td><td>**Selpercatinib, Pralsetinib**</td><td>NGS/FISH</td></tr><tr><td>**METex14**</td><td>Lung</td><td>**Capmatinib, Tepotinib**</td><td>NGS/RNA-seq</td></tr><tr><td>**FGFR**</td><td>Bladder, Cholangiocarcinoma</td><td>**Erdafitinib, Futibatinib**</td><td>NGS/FISH</td></tr><tr><td>**BRCA1/2**</td><td>Breast, Ovarian, Prostate, Pancreatic</td><td>**PARP Inhibitors** (Olaparib, Talazoparib)</td><td>NGS</td></tr><tr><td>**HRD**</td><td>Ovarian, Breast</td><td>**PARP Inhibitors**</td><td>Genomic Scarring Score</td></tr><tr><td>**PD-L1**</td><td>Lung, Urothelial, TNBC, HNSCC</td><td>**ICI (Pembro, Nivo, Atezo)**</td><td>IHC (22C3, SP263, SP142)</td></tr><tr><td>**TMB**</td><td>All Solid Tumours</td><td>**Pembrolizumab** (≥10 mut/Mb)</td><td>NGS Panel</td></tr><tr><td>**ESR1**</td><td>Breast (HR+)</td><td>**Elacestrant, Fulvestrant+CDK4/6i**</td><td>ctDNA/NGS</td></tr><tr><td>**PIK3CA**</td><td>Breast (HR+)</td><td>**Alpelisib + Fulvestrant**</td><td>NGS</td></tr><tr><td>**BRCA1/2**</td><td>Breast, Ovarian, Prostate, Pancreatic</td><td>**PARP Inhibitors** (Olaparib, Talazoparib)</td><td>NGS</td></tr><tr><td>**HRD**</td><td>Ovarian, Breast</td><td>**PARP Inhibitors**</td><td>Genomic Scarring Score</td></tr><tr><td>**PD-L1**</td><td>Lung, Urothelial, TNBC, HNSCC</td><td>**ICI (Pembro, Nivo, Atezo)**</td><td>IHC (22C3, SP263, SP142)</td></tr><tr><td>**TMB**</td><td>All Solid Tumours</td><td>**Pembrolizumab** (≥10 mut/Mb)</td><td>NGS Panel</td></tr><tr><td>**ESR1**</td><td>Breast (HR+)</td><td>**Elacestrant**, Fulvestrant+CDK4/6i</td><td>ctDNA/NGS</td></tr><tr><td>**PIK3CA**</td><td>Breast (HR+)</td><td>**Alpelisib + Fulvestrant**</td><td>NGS</td></tr><tr><td>**BRCA1/2**</td><td>Breast, Ovarian, Prostate, Pancreatic</td><td>**PARP Inhibitors**</td><td>NGS</td></tr><tr><td>**HRD**</td><td>Ovarian, Breast</td><td>**PARP Inhibitors**</td><td>Genomic Scarring Score</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Clinical Utility</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Application</th><th>Biomarkers Used</th></tr><tr><td>-------------</td><td>-----------------</td></tr><tr><td>**Treatment Selection**</td><td>ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, BRCA, MSI, PD-L1, TMB</td></tr><tr><td>**Prognostication**</td><td>Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, Gene Signatures (Oncotype DX, MammaPrint)</td></tr><tr><td>**Monitoring**</td><td>CEA, CA125, AFP, PSA, CA19-9, CA15-3, LDH, ctDNA, MRD</td></tr><tr><td>**Trial Eligibility**</td><td>Molecular Alterations (ESCAT I/II), TMB-H, MSI-H, Specific Mutations</td></tr><tr><td>**Early Detection/Screening**</td><td>PSA, CA125, AFP, LDCT, FIT, Methylation, MCED (Galleri, CancerSEEK)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Prognostic Indices**</td><td>**NPI (Breast)**, **IPI/FLIPI (Lymphoma)**, **DIPSS (MPN)**, **IMDC (RCC)**, **IGCCCG (GCT)**, **R-ISS (Myeloma)**, **Child-Pugh/BCLC (HCC)**</td></tr><tr><td>**Biomarker Types**</td><td>**Predictive** (Treatment Selection), **Prognostic** (Outcome), **Monitoring** (Response)</td></tr><tr><td>**ESCAT I**</td><td>EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H → **Standard of Care**</td></tr><tr><td>**ESCAT II**</td><td>KRAS G12C, RET, METex14, FGFR → **Clinical Trial**</td></tr><tr><td>**TMB-H**</td><td>≥10 mut/Mb → **Pembrolizumab** (ICI)</td></tr><tr><td>**MSI-H/dMMR**</td><td>**Pembrolizumab** (Tumour-agnostic)</td></tr><tr><td>**Key Predictive Biomarkers**</td><td>ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB</td></tr><tr><td>**Key Prognostic**</td><td>Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD</td></tr><tr><td>**Liquid Biopsy**</td><td>MRD, Resistance (EGFR T790M, ESR1), TMB, MSI</td></tr><tr><td>**Key Trial Biomarkers**</td><td>Oncotype DX, MammaPrint, Oncotype DX (Breast), Decipher (Prostate), Decipher (Bladder)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**NPI Components & Score Interpretation?**</td><td>**Size + Grade + Nodes**; **<3.4 Excellent, 3.4-4.4 Good, 4.4-5.4 Moderate, >5.4 Poor**</td></tr><tr><td>**IPI — 5 Factors, High Risk Score?**</td><td>**Age>60, Stage III/IV, LDH>ULN, PS≥2, Extranodal>1** → **Score 4-5 = High Risk**</td></tr><tr><td>**R-ISS Stage III — Criteria?**</td><td>**ISS Stage III (β2M>5.5, Alb<35) + High-Risk Cytogenetics (del17p, t4;14, t14;16) OR LDH>ULN**</td></tr><tr><td>**IMDC Risk — 6 Factors?**</td><td>**KPS<80%, <1yr Dx-Tx, Hb<LLN, Ca>ULN, NLR>3/Plt>ULN** → Fav(0), Int(1-2), Poor(≥3)</td></tr><tr><td>**IGCCCG Poor Risk NSGCT — Criteria?**</td><td>**Mediastinal Primary OR Non-pulmonary Visceral Mets OR S3 Markers (AFP>10000, hCG>50000, LDH>10xULN)**</td></tr><tr><td>**ESCAT Tier I — Examples?**</td><td>**EGFR, ALK, ROS1, BRAF V600E, HER2, BRCA, NTRK, MSI-H**</td></tr><tr><td>**ESCAT Tier II — Examples?**</td><td>**KRAS G12C, RET, METex14, FGFR**</td></tr><tr><td>**TMB-H Definition?**</td><td>**≥10 mutations/Mb (coding)** → **Pembrolizumab Approved**</td></tr><tr><td>**MSI-H vs TMB-H**</td><td>**MSI-H: dMMR → Pembrolizumab**; **TMB-H: ≥10 mut/Mb → Pembrolizumab** (Overlap but distinct)</td></tr><tr><td>**PIK3CA Mutation — Targeted Therapy?**</td><td>**Alpelisib + Fulvestrant** (SOLAR-1) for HR+/HER2- Breast Cancer.</td></tr><tr><td>**ESR1 Mutation — Clinical Significance?**</td><td>**AI Resistance** → **Elacestrant (SERD) or Fulvestrant + CDK4/6i** (EMERALD).</td></tr><tr><td>**BRCA1/2 — PARP Inhibitor Indication?**</td><td>**Olaparib/Talazoparib** for Breast, Ovarian, Prostate, Pancreatic (BRCA1/2 mut).</td></tr><tr><td>**PD-L1 Testing — Assays, Cutoffs?**</td><td>**22C3 (Dako): Pembro**; **SP263 (Ventana): Atezo/Durva**; **SP142 (Ventana): Atezo IC**; **CPS vs TPS**.</td></tr><tr><td>**TMB-H vs MSI-H Overlap**</td><td>**MSI-H usually TMB-H**; **TMB-H can be MSS**; **Both → ICI Benefit** but mechanisms differ.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Predictive vs Prognostic**</td><td>**Predictive**: Predicts **response to specific therapy**; **Prognostic**: Predicts **natural history/outcome** independent of therapy</td></tr><tr><td>**ESCAT I vs II**</td><td>**I**: Approved/Routine; **II**: Strong evidence, Trial recommended</td></tr><tr><td>**TMB vs MSI**</td><td>**TMB**: Total mutational load; **MSI**: MMR deficiency subset; **Overlap but distinct**</td></tr><tr><td>**CHIP vs Tumour ctDNA**</td><td>**CHIP**: Age-related haematopoietic mutations (DNMT3A, TET2, ASXL1) — **Not tumour**</td></tr><tr><td>**ESCAT I vs II for KRAS**</td><td>**KRAS G12C = Tier II (Sotorasib/Adagrasib)**; **Other KRAS = Not actionable**</td></tr><tr><td>**TMB vs TNB**</td><td>**TMB**: Tumour Mutational Burden; **TNB**: Not standard term</td></tr><tr><td>**MSI-H vs dMMR**</td><td>**Synonymous**; **MSI-H = High Microsatellite Instability = dMMR**</td></tr><tr><td>**R-ISS vs ISS**</td><td>**R-ISS = ISS + Cytogenetics (del17p, t4;14, t14;16) + LDH**</td></tr></table>
+<p><b>Mnemonic: PROGNOSTIC-BIOMARKERS</b></p>
+<ul><li><b>P</b>rognostic Models: <b>NPI (Breast), IPI (Lymphoma), DIPSS (MPM), IMDC (RCC), IGCCCG (GCT)</b></li><li><b>R</b>evised ISS: <b>ISS + Cytogenetics + LDH</b> (R-ISS)</li><li><b>O</b>ncotype DX: <b>Breast 21-gene, Chemo Benefit</b></li><li><b>G</b>rading: <b>FNCLCC (Sarcoma), WHO (CNS), ISUP (Prostate)</b></li><li><b>N</b>OTTINGHAM PI: <b>Size + Grade + Nodes</b></li><li><b>O</b>nco-type DX: <b>Breast 21-gene, Chemo Benefit</b></li><li><b>S</b>TL/PI: <b>Size, Grade, Nodes</b></li><li><b>T</b>CGAsubtypes: <b>Intrinsic Subtypes (Luminal A/B, HER2+, TNBC)</b></li><li><b>I</b>PI: <b>Age, Stage, LDH, PS, Extranodal</b></li><li><b>C</b>linical Utility: <b>Predictive &gt; Prognostic &gt; Monitoring</b></li><li><b>B</b>iomarker Types: <b>Predictive (Tx Selection), Prognostic (Outcome), Monitoring (Response)</b></li><li><b>I</b>mmunotherapy Biomarkers: <b>TMB-H (≥10), MSI-H, PD-L1, TILs</b></li><li><b>M</b>olecular Testing: <b>NGS Panel (ESCAT I/II), IHC (PD-L1, HER2), FISH (ALK, ROS1)</b></li><li><b>A</b>ctionability: <b>ESCAT I (Routine), II (Trial), III (Preclinical), IV (Benign)</b></li><li><b>R</b>esistance: <b>EGFR T790M, ESR1, KRAS, AR-V7</b></li><li><b>K</b>ey Predictive: <b>ER/PR/HER2, EGFR/ALK/ROS1, BRAF, KRAS, BRCA, MSI, PD-L1, TMB</b></li><li><b>E</b>SCAT: <b>I Routine, II Trial, III Preclinical, IV Benign</b></li><li><b>R</b>IPI/FLIPI: <b>Lymphoma Prognostic</b></li><li><b>S</b>creening: <b>PSA, CA125, AFP, LDCT, FIT</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Prognostic Indices &amp; Biomarkers)) Prognostic Indices Breast: NPI (Size + Grade + Nodes) Lymphoma: IPI / FLIPI Myeloma: R-ISS (ISS + Cytogenetics + LDH) MPN: DIPSS / DIPSS-plus RCC: IMDC GCT: IGCCCG HCC: BCLC / Child-Pugh Biomarker Types Predictive (Tx Selection) Prognostic (Outcome) Monitoring (Response) ESCAT I: Routine (EGFR, ALK, BRAF, HER2, BRCA, NTRK, MSI-H) II: Trial (KRAS G12C, RET, METex14, FGFR) III: Preclinical IV: Benign Key Biomarkers ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK BRCA1/2, MSI-H/dMMR, PD-L1, TMB ESR1, PIK3CA, FGFR, RET, MET Liquid Biopsy ctDNA: MRD, Resistance, TMB, MSI CTCs: Prognosis, Heterogeneity CHIP Confounder Applications Treatment Selection Prognostication Trial Eligibility Early Detection </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Prognostic Indices**</td><td>NPI (Breast), IPI/FLIPI (Lymphoma), R-ISS (Myeloma), DIPSS (MPN), IMDC (RCC), IGCCCG (GCT), BCLC (HCC)</td></tr><tr><td>**Biomarker Types**</td><td>Predictive (Tx Selection), Prognostic (Outcome), Monitoring (Response)</td></tr><tr><td>**ESCAT I**</td><td>EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H — Standard of Care</td></tr><tr><td>**ESCAT II**</td><td>KRAS G12C, RET, METex14, FGFR — Trial Recommended</td></tr><tr><td>**TMB-H**</td><td>≥10 mut/Mb → Pembrolizumab</td></tr><tr><td>**MSI-H**</td><td>dMMR → Pembrolizumab (Tumour-agnostic)</td></tr><tr><td>**Key Predictive**</td><td>ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB</td></tr><tr><td>**Key Prognostic**</td><td>Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD</td></tr><tr><td>**Liquid Biopsy**</td><td>ctDNA: MRD, Resistance, TMB, MSI; CTCs: Prognosis; CHIP Confounder</td></tr><tr><td>**Resistance**</td><td>EGFR T790M, ESR1, KRAS, ALK, MET, BRAF</td></tr><tr><td>**CHIP**</td><td>DNMT3A, TET2, ASXL1, JAK2, TP53 → False Positive ctDNA</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Prognostic Indices (NPI, IPI, R-ISS, DIPSS, IMDC, IGCCCG)</td><td></td><td></td></tr><tr><td>Biomarker Classification</td><td></td><td></td></tr><tr><td>ESCAT Classification</td><td></td><td></td></tr><tr><td>Key Molecular Biomarkers</td><td></td><td></td></tr><tr><td>Liquid Biopsy/ctDNA</td><td></td><td></td></tr><tr><td>Clinical Utility</td><td></td><td></td></tr><tr><td>Resistance Mechanisms</td><td></td><td></td></tr><tr><td>CHIP Confounder</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[TNM Staging &amp; Prognostication]], [[Biomarkers]], [[Oncotype DX]], [[MammaPrint]], [[ESCAT]], [[TMB]], [[MSI]], [[Liquid Biopsy]], [[ctDNA]], [[MRD Monitoring]], [[CHIP]], [[ESCAT]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Prognostic Indices &amp; Biomarkers (Prognostic Indices), which statement is correct? A. <b>NPI (Breast)</b>, <b>IPI/FLIPI (Lymphoma)</b>, <b>DIPSS (MPN)</b>, <b>IMDC (RCC)</b>, <b>IGCCCG (GCT)</b>, <b>R-I B. </b>NPI - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>NPI (Breast)</b>, <b>IPI/FLIPI (Lymphoma)</b>, <b>DIPSS (MPN)</b>, <b>IMDC (RCC)</b>, <b>IGCCCG (GCT)</b>, <b>R-ISS (Myeloma)</b>, **Ch...</li></ul>
+<p><b>2.</b> Regarding Prognostic Indices &amp; Biomarkers (Biomarker Types), which statement is correct? A. <b>Predictive</b> (Treatment Selection), <b>Prognostic</b> (Outcome), <b>Monitoring</b> (Response) B. <b>Predictive</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Predictive</b> (Treatment Selection), <b>Prognostic</b> (Outcome), <b>Monitoring</b> (Response)</li></ul>
+<p><b>3.</b> Regarding Prognostic Indices &amp; Biomarkers (ESCAT I), which statement is correct? A. EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H → <b>Standard of Care</b> B. EGFR, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H → <b>Standard of Care</b></li></ul>
+<p><b>4.</b> Regarding Prognostic Indices &amp; Biomarkers (ESCAT II), which statement is correct? A. KRAS G12C, RET, METex14, FGFR → <b>Clinical Trial</b> B. KRAS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — KRAS G12C, RET, METex14, FGFR → <b>Clinical Trial</b></li></ul>
+<p><b>5.</b> Regarding Prognostic Indices &amp; Biomarkers (TMB-H), which statement is correct? A. ≥10 mut/Mb → <b>Pembrolizumab</b> (ICI) B. ≥10 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — ≥10 mut/Mb → <b>Pembrolizumab</b> (ICI)</li></ul>
+<p><b>6.</b> Regarding Prognostic Indices &amp; Biomarkers (MSI-H/dMMR), which statement is correct? A. <b>Pembrolizumab</b> (Tumour-agnostic) B. <b>Pembrolizumab</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Pembrolizumab</b> (Tumour-agnostic)</li></ul>
+<p><b>7.</b> Regarding Prognostic Indices &amp; Biomarkers (Key Predictive Biomarkers), which statement is correct? A. ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB B. ER/PR/HER2, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB</li></ul>
+<p><b>8.</b> Regarding Prognostic Indices &amp; Biomarkers (Key Prognostic), which statement is correct? A. Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD B. Stage, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD</li></ul>
+<p><b>9.</b> Regarding Prognostic Indices &amp; Biomarkers (Liquid Biopsy), which statement is correct? A. MRD, Resistance (EGFR T790M, ESR1), TMB, MSI B. MRD, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — MRD, Resistance (EGFR T790M, ESR1), TMB, MSI</li></ul>
+<p><b>10.</b> Regarding Prognostic Indices &amp; Biomarkers (Key Trial Biomarkers), which statement is correct? A. Oncotype DX, MammaPrint, Oncotype DX (Breast), Decipher (Prostate), Decipher (Bladder) B. Oncotype - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Oncotype DX, MammaPrint, Oncotype DX (Breast), Decipher (Prostate), Decipher (Bladder)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>NPI (Breast)</b>, <b>IPI/FLIPI (Lymphoma)</b>, <b>DIPSS (MPN)</b>, <b>IMDC (RCC)</b>, <b>IGCCCG (GCT)</b>, **R-I</li><li>B. **NPI (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>NPI (Breast)</b>, <b>IPI/FLIPI (Lymphoma)</b>, <b>DIPSS (MPN)</b>, <b>IMDC (RCC)</b>, <b>IGCCCG (GCT)</b>, <b>R-ISS (Myeloma)</b>, **Ch...</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Predictive</b> (Treatment Selection), <b>Prognostic</b> (Outcome), <b>Monitoring</b> (Response)</li><li>B. <b>Predictive</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Predictive</b> (Treatment Selection), <b>Prognostic</b> (Outcome), <b>Monitoring</b> (Response)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H → <b>Standard of Care</b></li><li>B. EGFR, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H → <b>Standard of Care</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. KRAS G12C, RET, METex14, FGFR → <b>Clinical Trial</b></li><li>B. KRAS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: KRAS G12C, RET, METex14, FGFR → <b>Clinical Trial</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. ≥10 mut/Mb → <b>Pembrolizumab</b> (ICI)</li><li>B. ≥10 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: ≥10 mut/Mb → <b>Pembrolizumab</b> (ICI)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Pembrolizumab</b> (Tumour-agnostic)</li><li>B. <b>Pembrolizumab</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Pembrolizumab</b> (Tumour-agnostic)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB</li><li>B. ER/PR/HER2, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD</li><li>B. Stage, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. MRD, Resistance (EGFR T790M, ESR1), TMB, MSI</li><li>B. MRD, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: MRD, Resistance (EGFR T790M, ESR1), TMB, MSI</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. Oncotype DX, MammaPrint, Oncotype DX (Breast), Decipher (Prostate), Decipher (Bladder)</li><li>B. Oncotype (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: Oncotype DX, MammaPrint, Oncotype DX (Breast), Decipher (Prostate), Decipher (Bladder)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Prognostic Indices? <b>A1:</b> NPI (Breast), IPI/FLIPI (Lymphoma), DIPSS (MPN), IMDC (RCC), IGCCCG (GCT), R-ISS (Myeloma), Child-Pugh/BCLC (HCC)</p>
+<p><b>Q2:</b> Biomarker Types? <b>A2:</b> Predictive (Treatment Selection), Prognostic (Outcome), Monitoring (Response)</p>
+<p><b>Q3:</b> ESCAT I? <b>A3:</b> EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H → Standard of Care</p>
+<p><b>Q4:</b> ESCAT II? <b>A4:</b> KRAS G12C, RET, METex14, FGFR → Clinical Trial</p>
+<p><b>Q5:</b> TMB-H? <b>A5:</b> ≥10 mut/Mb → Pembrolizumab (ICI)</p>
+<p><b>Q6:</b> MSI-H/dMMR? <b>A6:</b> Pembrolizumab (Tumour-agnostic)</p>
+<p><b>Q7:</b> Key Predictive Biomarkers? <b>A7:</b> ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB</p>
+<p><b>Q8:</b> Key Prognostic? <b>A8:</b> Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Prognostic Indices</td><td>NPI (Breast), IPI/FLIPI (Lymphoma), DIPSS (MPN), IMDC (RCC), IGCCCG (GCT), R-ISS (Myeloma), Child-Pugh/BCLC (HCC)</td></tr><tr><td>2</td><td>A</td><td>Biomarker Types</td><td>Predictive (Treatment Selection), Prognostic (Outcome), Monitoring (Response)</td></tr><tr><td>3</td><td>A</td><td>ESCAT I</td><td>EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H → Standard of Care</td></tr><tr><td>4</td><td>A</td><td>ESCAT II</td><td>KRAS G12C, RET, METex14, FGFR → Clinical Trial</td></tr><tr><td>5</td><td>A</td><td>TMB-H</td><td>≥10 mut/Mb → Pembrolizumab (ICI)</td></tr><tr><td>6</td><td>A</td><td>MSI-H/dMMR</td><td>Pembrolizumab (Tumour-agnostic)</td></tr><tr><td>7</td><td>A</td><td>Key Predictive Biomarkers</td><td>ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB</td></tr><tr><td>8</td><td>A</td><td>Key Prognostic</td><td>Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD</td></tr><tr><td>9</td><td>A</td><td>Liquid Biopsy</td><td>MRD, Resistance (EGFR T790M, ESR1), TMB, MSI</td></tr><tr><td>10</td><td>A</td><td>Key Trial Biomarkers</td><td>Oncotype DX, MammaPrint, Oncotype DX (Breast), Decipher (Prostate), Decipher (Bladder)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Prognostic Indices</td><td>NPI (Breast), IPI/FLIPI (Lymphoma), DIPSS (MPN), IMDC (RCC), IGCCCG (GCT), R-ISS (Myeloma), Child-Pugh/BCLC (HCC)</td></tr><tr><td>2</td><td>A</td><td>Biomarker Types</td><td>Predictive (Treatment Selection), Prognostic (Outcome), Monitoring (Response)</td></tr><tr><td>3</td><td>A</td><td>ESCAT I</td><td>EGFR, ALK, ROS1, BRAF, HER2, BRCA, NTRK, MSI-H → Standard of Care</td></tr><tr><td>4</td><td>A</td><td>ESCAT II</td><td>KRAS G12C, RET, METex14, FGFR → Clinical Trial</td></tr><tr><td>5</td><td>A</td><td>TMB-H</td><td>≥10 mut/Mb → Pembrolizumab (ICI)</td></tr><tr><td>6</td><td>A</td><td>MSI-H/dMMR</td><td>Pembrolizumab (Tumour-agnostic)</td></tr><tr><td>7</td><td>A</td><td>Key Predictive Biomarkers</td><td>ER/PR/HER2, EGFR, ALK, ROS1, BRAF, KRAS, NTRK, BRCA, MSI, PD-L1, TMB</td></tr><tr><td>8</td><td>A</td><td>Key Prognostic</td><td>Stage, Grade, NPI, IPI, R-ISS, IMDC, Cytogenetics, MRD</td></tr><tr><td>9</td><td>A</td><td>Liquid Biopsy</td><td>MRD, Resistance (EGFR T790M, ESR1), TMB, MSI</td></tr><tr><td>10</td><td>A</td><td>Key Trial Biomarkers</td><td>Oncotype DX, MammaPrint, Oncotype DX (Breast), Decipher (Prostate), Decipher (Bladder)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Principles of Cancer Management|Principles of Cancer Management]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Prognostic Indices Biomarkers · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

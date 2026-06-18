@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatic Impairment — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.12. SPECIAL POPULATIONS</span>
+      <div class="h1">Hepatic Impairment</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Calculate Child-Pugh Score (A/B/C)</li><li>[ ] Apply drug dosing adjustments by Child-Pugh class</li><li>[ ] Identify contraindicated drugs in hepatic impairment</li><li>[ ] Recognise drugs requiring monitoring (LFTs, INR, albumin)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Child-Pugh Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>**1 Point**</th><th>**2 Points**</th><th>**3 Points**</th></tr><tr><td>-----------</td><td>-------------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Total Bilirubin (μmol/L)**</td><td>**<34**</td><td>**34–50**</td><td>**>50**</td></tr><tr><td>**Serum Albumin (g/L)**</td><td>**>35**</td><td>**28–35**</td><td>**<28**</td></tr><tr><td>**INR**</td><td>**<1.7**</td><td>**1.7–2.3**</td><td>**>2.3**</td></tr><tr><td>**Ascites**</td><td>**None**</td><td>**Mild / Controlled**</td><td>**Moderate–Severe / Refractory**</td></tr><tr><td>**Encephalopathy**</td><td>**None**</td><td>**Grade 1–2**</td><td>**Grade 3–4**</td></tr></table>
+<table class="ctable"><tr><th>**Class**</th><th>**Score**</th><th>**Survival (1yr)**</th><th>**Survival (2yr)**</th><th>**Clinical**</th></tr><tr><td>-----------</td><td>-----------</td><td>---------------------</td><td>---------------------</td><td>--------------</td></tr><tr><td>**A (Mild)**</td><td>**5–6**</td><td>**100%**</td><td>**85%**</td><td>Compensated</td></tr><tr><td>**B (Moderate)**</td><td>**7–9**</td><td>**80%**</td><td>**60%**</td><td>Decompensated</td></tr><tr><td>**C (Severe)**</td><td>**10–15**</td><td>**45%**</td><td>**35%**</td><td>Decompensated</td></tr></table>
+<div class="callout"><b>MELD Score</b> now preferred for transplant listing; <b>Child-Pugh</b> still used for drug dosing decisions</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚖️ Drug Dosing Principles in Hepatic Impairment</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Principle</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**↓ First-pass metabolism** → ↑ Bioavailability (oral)</td><td>**Propranolol, Morphine, Nitrates, Labetalol, Verapamil, TCAs** — **↓ Oral dose**</td></tr><tr><td>**↓ CYP metabolism** → ↓ Clearance</td><td>**CYP3A4/2C9/2C19/1A2 substrates** — ↓ Dose / ↑ Interval</td></tr><tr><td>**↓ Albumin** → ↑ Free drug (acidic)</td><td>**Warfarin, Phenytoin, Valproate, NSAIDs** — Use **FREE levels**, ↓ dose</td></tr><tr><td>**↓ Clotting factors** → ↑ Bleeding risk</td><td>**Anticoagulants, Antiplatelets, NSAIDs** — Avoid/Monitor closely</td></tr><tr><td>**↓ Ammonia clearance**</td><td>**Valproate** — **CONTRAINDICATED** in active liver disease</td></tr><tr><td>**Portosystemic shunting**</td><td>↑ Bioavailability of high-extraction drugs</td></tr></table>
+<div class="sub-h">Dosing Adjustment by Child-Pugh</div>
+<table class="ctable"><tr><th>Drug Class</th><th>**Child-Pugh A**</th><th>**Child-Pugh B**</th><th>**Child-Pugh C**</th></tr><tr><td>------------</td><td>------------------</td><td>------------------</td><td>------------------</td></tr><tr><td>**CYP3A4 substrates** (Most statins, CCBs, Immunosuppressants, Benzodiazepines)</td><td>Standard dose; monitor</td><td>**↓ 25–50%**</td><td>**↓ 50–75% or AVOID**</td></tr><tr><td>**CYP2C9 substrates** (Warfarin, Phenytoin, NSAIDs, Sulfonylureas)</td><td>Standard; monitor INR/level</td><td>**↓ 25–50%**; monitor free</td><td>**AVOID if possible**</td></tr><tr><td>**CYP1A2 substrates** (Theophylline, Clozapine, Duloxetine)</td><td>Standard</td><td>**↓ 25–50%**</td><td>**AVOID**</td></tr><tr><td>**Low extraction drugs** (Valproate, Phenytoin, Warfarin)</td><td>**Monitor FREE levels**</td><td>**Monitor FREE levels**</td><td>**AVOID**</td></tr><tr><td>**High extraction drugs** (Propranolol, Morphine, Verapamil, Lidocaine)</td><td>**↓ Oral dose** (↑ bioavailability)</td><td>**↓ 50%**</td><td>**↓ 75% or IV preferred**</td></tr><tr><td>**Renal + Hepatic** (Metformin, Metformin contraindicated if both)</td><td>Caution</td><td>**CONTRAINDICATED**</td><td>**CONTRAINDICATED**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🚫 Contraindicated / Avoid in Hepatic Impairment</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Reason</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Valproate**</td><td>**Inhibits urea cycle → hyperammonaemia; hepatotoxic** — **CONTRAINDICATED in active liver disease**</td></tr><tr><td>**Methotrexate**</td><td>Hepatotoxicity (fibrosis/cirrhosis) — **AVOID**</td></tr><tr><td>**Isoniazid**</td><td>Hepatotoxicity — **AVOID if active liver disease**</td></tr><tr><td>**Ketoconazole**</td><td>Hepatotoxicity — **AVOID**</td></tr><tr><td>**Halothane**</td><td>Hepatitis — historical</td></tr><tr><td>**Niacin (high dose)**</td><td>Hepatotoxicity</td></tr><tr><td>**Amiodarone**</td><td>Hepatotoxicity (steatohepatitis) — **Use with extreme caution**</td></tr><tr><td>**Statins (Simvastatin, Atorvastatin high dose)**</td><td>↑ Risk myopathy/rhabdomyolysis — **Use low dose, monitor CK**</td></tr><tr><td>**Oral Contraceptives (Estrogen)**</td><td>↑ Thrombosis, cholestasis — **AVOID**</td></tr><tr><td>**Danazol**</td><td>Peliosis hepatis, adenomas</td></tr><tr><td>**Methyldopa**</td><td>Hepatitis — rare but serious</td></tr><tr><td>**Carbamazepine**</td><td>Hepatitis, enzyme induction — caution</td></tr><tr><td>**Sulfonamides**</td><td>Hypersensitivity hepatitis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📋 Drugs Requiring Enhanced Monitoring</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Monitoring</th><th>Adjustment</th></tr><tr><td>------</td><td>------------</td><td>------------</td></tr><tr><td>**Warfarin**</td><td>**INR q1–3d** (↓ synthesis of factors, ↓ albumin)</td><td>**↓ Dose**; use lowest effective</td></tr><tr><td>**Phenytoin**</td><td>**FREE level** (↓ albumin, ↑ free fraction)</td><td>**Use FREE level**; ↓ dose</td></tr><tr><td>**Valproate**</td><td>**Ammonia, LFTs** (hepatotoxicity)</td><td>**AVOID in active liver disease**</td></tr><tr><td>**Carbamazepine**</td><td>**LFTs, CBC** (hepatitis, aplastic anaemia)</td><td>Caution; monitor</td></tr><tr><td>**Statins**</td><td>**LFTs baseline, 12wks, then q6mo; CK if symptomatic**</td><td>Low dose; avoid simvastatin 80mg</td></tr><tr><td>**Anticoagulants (DOACs)**</td><td>**Renal + Hepatic function**</td><td>**Apixaban safest** (↓ hepatic metab); avoid rivaroxaban if severe</td></tr><tr><td>**Benzodiazepines**</td><td>Sedation risk</td><td>**Lorazepam/Oxazepam preferred** (no CYP, glucuronidation)</td></tr><tr><td>**Opioids**</td><td>**Morphine, Codeine, Tramadol** — ↑ Bioavailability, ↓ clearance</td><td>**↓ Dose 50%**, avoid codeine/tramadol (active metabolites)</td></tr><tr><td>**Paracetamol**</td><td>**Standard dose safe** (therapeutic); **Overdose = hepatotoxic**</td><td>**Max 2–3g/day** in severe impairment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Child-Pugh A**</td><td>Score 5–6; Compensated; Standard dosing with monitoring</td></tr><tr><td>**Child-Pugh B**</td><td>Score 7–9; Decompensated; **↓ Dose 25–50%** for CYP substrates</td></tr><tr><td>**Child-Pugh C**</td><td>Score 10–15; Severe; **AVOID most CYP-metabolised drugs**</td></tr><tr><td>**Valproate**</td><td>**CONTRAINDICATED in active liver disease** (hyperammonaemia, hepatotoxicity)</td></tr><tr><td>**Warfarin**</td><td>**INR monitoring q1–3d**; ↓ dose; ↓ albumin → ↑ free</td></tr><tr><td>**Phenytoin**</td><td>**Use FREE level** (↓ albumin → ↑ free fraction)</td></tr><tr><td>**Benzodiazepines**</td><td>**Lorazepam/Oxazepam preferred** (glucuronidation, no CYP)</td></tr><tr><td>**Opioids**</td><td>**Morphine/Codeine/Tramadol** — ↓ dose 50%; ↑ bioavailability</td></tr><tr><td>**Statins**</td><td>**LFTs baseline, 12wks, q6mo**; Low dose; Avoid simva 80mg</td></tr><tr><td>**Paracetamol**</td><td>**Safe at therapeutic dose**; Max 2–3g/day in severe</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (8)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Child-Pugh scoring — 5 parameters?</td><td>**Bilirubin, Albumin, INR, Ascites, Encephalopathy** (each 1–3 points)</td></tr><tr><td>2. Class A/B/C score ranges?</td><td>**A: 5–6, B: 7–9, C: 10–15**</td></tr><tr><td>3. Valproate in hepatic impairment — why contraindicated?</td><td>**Inhibits carbamoyl phosphate synthetase → hyperammonaemia; Direct hepatotoxicity**</td></tr><tr><td>4. Warfarin dosing in cirrhosis?</td><td>**↓ Dose**; **INR monitoring q1–3d** (↓ synthesis of factors II, VII, IX, X; ↓ albumin → ↑ free warfarin)</td></tr><tr><td>5. Phenytoin monitoring in hypoalbuminaemia?</td><td>**Use FREE phenytoin level** (total unreliable; ↓ albumin → ↑ free fraction)</td></tr><tr><td>6. Benzodiazepine choice in liver disease?</td><td>**Lorazepam or Oxazepam** (glucuronidation only, no CYP metabolism, no active metabolites)</td></tr><tr><td>7. Opioid adjustment in liver disease?</td><td>**↓ Dose 50%** (morphine, codeine, tramadol — ↑ bioavailability, ↓ clearance); **Avoid codeine/tramadol** (unpredictable active metabolite formation)</td></tr><tr><td>8. Paracetamol in severe hepatic impairment?</td><td>**Safe at therapeutic dose**; Max **2–3g/day** (avoid >4g); **Antidote for overdose = N-acetylcysteine**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Child-Pugh vs MELD**</td><td>**Child-Pugh for drug dosing**; **MELD for transplant listing**</td></tr><tr><td>**Valproate = contraindicated**</td><td>**Active liver disease** — not just elevated LFTs; valproate ↑ ammonia + direct hepatotoxicity</td></tr><tr><td>**Total vs Free phenytoin**</td><td>**Hypoalbuminaemia → use FREE level** (total underestimates active drug)</td></tr><tr><td>**Lorazepam/Oxazepam safe**</td><td>**Glucuronidation** (preserved in liver disease); **No CYP**; **No active metabolites**</td></tr><tr><td>**Paracetamol safe**</td><td>**Therapeutic dose = safe**; **Overdose = hepatotoxic** (GSH depletion)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"CHILD-PUGH ABC"</b> = <b>B</b>ilirubin, <b>A</b>lbumin, <b>I</b>NR, <b>L</b>iver (Ascites), <b>D</b>ementia (Encephalopathy); <b>Score: A=5-6, B=7-9, C=10-15</b></li><li><b>"VALPROATE = NO IN LIVER"</b> = Hyperammonaemia + Hepatotoxicity</li><li><b>"WARFARIN LIVER"</b> = <b>INR q1-3d, ↓ dose, monitor free</b></li><li><b>"PHENYTOIN = FREE LEVEL"</b> = Hypoalbuminaemia → free fraction ↑</li><li><b>"BENZO LIVER = LORAZEPAM/OXAZEPAM"</b> = Glucuronidation, no CYP</li><li><b>"OPIOID LIVER = HALF DOSE"</b> = Morphine/Codeine/Tramadol ↓ 50%</li><li><b>"PARACETAMOL = SAFE THERAPEUTIC, TOXIC OVERDOSE"</b> = Max 2-3g/day in severe</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Hepatic Impairment)) Child-Pugh Bilirubin, Albumin, INR, Ascites, Encephalopathy A: 5-6 (Compensated) B: 7-9 (Decompensated) C: 10-15 (Severe) Dosing Principles ↓ First-pass → ↑ Bioavailability (oral high-extraction) ↓ CYP → ↓ Clearance ↓ Albumin → ↑ Free drug (acidic) ↓ Clotting factors → ↑ Bleed risk Contraindicated Valproate (ammonia + hepatotox) Methotrexate, INH, Ketoconazole, High-dose Niacin Danazol, OCP (estrogen) Monitoring Warfarin: INR q1-3d Phenytoin: FREE level Valproate: Ammonia, LFTs Statins: LFTs baseline, 12wk, q6mo Preferred Choices Benzo: Lorazepam, Oxazepam (glucuronidation) Opioid: ↓ 50% dose, avoid codeine/tramadol Anticoag: Apixaban (safest DOAC) Paracetamol: Safe therapeutic (max 2-3g/day severe) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Child-Pugh scoring</td><td>8</td><td></td></tr><tr><td>Dosing principles</td><td>6</td><td></td></tr><tr><td>Contraindicated drugs</td><td>6</td><td></td></tr><tr><td>Monitoring</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>8</td><td></td></tr><tr><td>**Total**</td><td>**34**</td><td></td></tr></table>
+<p><b>Target</b>: ≥27/34 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Child-Pugh classification and drug dosing principles in hepatic impairment."*</div>
+<ul><li><b>Parameters</b>: Bilirubin, Albumin, INR, Ascites, Encephalopathy (each 1–3 pts)</li><li><b>Classes</b>: A=5–6 (Compensated), B=7–9 (Decompensated), C=10–15 (Severe)</li><li><b>Principles</b>: ↓ First-pass → ↑ bioavailability (oral high-extraction); ↓ CYP → ↓ clearance; ↓ Albumin → ↑ free acid drugs; ↓ Clotting factors → ↑ bleed risk</li><li><b>Adjustments</b>: Child-Pugh B: ↓ CYP substrates 25–50%; Child-Pugh C: Avoid most</li></ul>
+<div class="sub-h">Viva (1 min): *"Patient with Child-Pugh B cirrhosis needs anticoagulation for AF. Options?"*</div>
+<ul><li><b>DOAC preferred over warfarin</b> (no INR monitoring, ↓ bleed risk)</li><li><b>Apixaban safest</b> (↓ hepatic metabolism ~25%, renal ~25%); Dose 2.5mg BD if ≥2 of: age≥80, weight≤60kg, Cr≥133</li><li><b>Avoid rivaroxaban</b> (significant hepatic metabolism)</li><li><b>If warfarin</b>: INR q1–3d, ↓ dose, monitor free warfarin</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient with cirrhosis on valproate for epilepsy. LFTs rising. Action?"*</div>
+<ul><li><b>Valproate CONTRAINDICATED in active liver disease</b> (hepatotoxicity + hyperammonaemia)</li><li><b>STOP valproate immediately</b></li><li>Switch to <b>levetiracetam or lamotrigine</b> (no hepatic metabolism)</li><li>Monitor ammonia, LFTs</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Child-Pugh: Bilirubin, Albumin, INR, Ascites, Encephalopathy; A=5-6, B=7-9, C=10-15</li><li>Valproate = CONTRAINDICATED in active liver disease</li><li>Warfarin = INR q1-3d, ↓ dose</li><li>Phenytoin = FREE level in hypoalbuminaemia</li><li>Benzo choice = Lorazepam/Oxazepam (glucuronidation)</li><li>Opioids = ↓ 50% dose, avoid codeine/tramadol</li><li>Paracetamol = Safe therapeutic, max 2-3g/day severe</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>HEPATIC IMPAIRMENT:</b> <b>CHILD-PUGH</b>: Bilirubin, Albumin, INR, Ascites, Encephalopathy <b>A=5-6, B=7-9, C=10-15</b> <b>VALPROATE = CONTRAINDICATED</b> (ammonia + hepatotox) <b>WARFARIN</b>: INR q1-3d, ↓ dose <b>PHENYTOIN</b>: FREE level <b>BENZO</b>: Lorazepam/Oxazepam (glucuronidation) <b>OPIOIDS</b>: ↓ 50%, avoid codeine/tramadol <b>PARACETAMOL</b>: Safe therapeutic (max 2-3g/day severe) <b>STATINS</b>: LFTs baseline, 12wk, q6mo; low dose <b>DOAC</b>: Apixaban safest (25% hepatic metab)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Child-Pugh Class B score range:</b></li></ol>
+<p>A. 5–6 B. <b>7–9</b> ✓ C. 10–15 D. 1–4 E. 16–18</p>
+<ol><li><b>Valproate in active liver disease:</b></li></ol>
+<p>A. Safe with monitoring B. <b>Contraindicated</b> ✓ C. Reduce dose 50% C. Monitor ammonia only E. Safe if albumin normal</p>
+<ol><li><b>Warfarin monitoring in cirrhosis:</b></li></ol>
+<p>A. INR weekly B. <b>INR q1–3d</b> ✓ C. INR monthly D. No INR needed E. Use anti-Xa level</p>
+<ol><li><b>Phenytoin in hypoalbuminaemia — which level to use?</b></li></ol>
+<p>A. Total phenytoin B. <b>Free phenytoin</b> ✓ C. Both total and free D. Corrected total only E. Saliva level</p>
+<ol><li><b>Benzodiazepine of choice in hepatic impairment:</b></li></ol>
+<p>A. Diazepam B. <b>Lorazepam</b> ✓ C. Midazolam D. Alprazolam E. Clonazepam</p>
+<ol><li><b>Opioid dose adjustment in cirrhosis:</b></li></ol>
+<p>A. No change B. <b>↓ 50%</b> ✓ C. ↑ 50% D. ↑ 100% E. Avoid all opioids</p>
+<ol><li><b>Paracetamol in severe hepatic impairment — max daily dose:</b></li></ol>
+<p>A. 4g B. <b>2–3g</b> ✓ C. 1g D. 500mg E. Contraindicated</p>
+<ol><li><b>DOAC safest in hepatic impairment:</b></li></ol>
+<p>A. Dabigatran B. Rivaroxaban C. <b>Apixaban</b> ✓ D. Edoxaban E. All equal</p>
+<ol><li><b>Statins monitoring in liver disease:</b></li></ol>
+<p>A. No monitoring needed B. <b>LFTs baseline, 12 weeks, then q6mo</b> ✓ C. LFTs monthly D. CK only E. LFTs only if symptomatic</p>
+<ol><li><b>Valproate hepatotoxicity mechanism:</b></li></ol>
+<p>A. Immune-mediated B. <b>Mitochondrial toxicity (β-oxidation inhibition) + Hyperammonaemia (CPS1 inhibition)</b> ✓ C. Bile duct injury D. Hypersensitivity E. Steatosis only</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Child-Pugh parameters</td><td>Bilirubin, Albumin, INR, Ascites, Encephalopathy</td></tr><tr><td>Child-Pugh A</td><td>5–6 (Compensated)</td></tr><tr><td>Child-Pugh B</td><td>7–9 (Decompensated)</td></tr><tr><td>Child-Pugh C</td><td>10–15 (Severe)</td></tr><tr><td>Valproate in liver disease</td><td>CONTRAINDICATED (hyperammonaemia + hepatotoxicity)</td></tr><tr><td>Warfarin in cirrhosis</td><td>INR q1-3d, ↓ dose</td></tr><tr><td>Phenytoin in hypoalbuminaemia</td><td>FREE level</td></tr><tr><td>Benzo in liver disease</td><td>Lorazepam, Oxazepam (glucuronidation)</td></tr><tr><td>Opioid in cirrhosis</td><td>↓ 50% dose, avoid codeine/tramadol</td></tr><tr><td>Paracetamol in severe liver</td><td>Safe therapeutic, max 2-3g/day</td></tr><tr><td>DOAC in liver disease</td><td>Apixaban safest (25% hepatic metab)</td></tr><tr><td>Statin monitoring</td><td>LFTs baseline, 12wk, q6mo; low dose</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 7–9</li><li><b>B</b> — Contraindicated</li><li><b>B</b> — INR q1–3d</li><li><b>B</b> — Free phenytoin</li><li><b>B</b> — Lorazepam</li><li><b>B</b> — ↓ 50%</li><li><b>B</b> — 2–3g</li><li><b>C</b> — Apixaban</li><li><b>B</b> — LFTs baseline, 12wk, q6mo</li><li><b>B</b> — Mitochondrial toxicity + hyperammonaemia</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Special Populations/Hepatic impairment.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatic Impairment · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Pain Physiology & Assessment Hub
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Pain Physiology & Assessment**
+
+## 1. Overview
+
+Pain physiology, nociception, types (nociceptive, neuropathic, visceral), total pain, pain history, examination, assessment tools (VAS, NRS, VRS), pain in non-communicating patients and dementia.
+
+## 2. Topics in this Section
+
+- [[Pain physiology and pathways_full|Pain physiology and pathways]]
+- [[Nociceptive pain (somatic, visceral)_full|Nociceptive pain (somatic, visceral)]]
+- [[Neuropathic pain overview_full|Neuropathic pain overview]]
+- [[Total pain concept_full|Total pain concept]]
+- [[Pain assessment history and examination_full|Pain assessment history and examination]]
+- [[Pain assessment tools and scales_full|Pain assessment tools and scales]]
+- [[Pain in non-communicating and dementia patients_full|Pain in non-communicating and dementia patients]]
+
+## 3. Key Concepts
+
+This section covers the foundation of pain physiology & assessment for FCPS/MRCP exam preparation. The topics are arranged in a clinically logical sequence — from basic principles to clinical application.
+
+## 4. Cross-References
+
+- [[../.._Hub|Next Section]]
+- [[../../Pain and Palliative Care MOC|Chapter MOC]]
+- [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy|Chapter Hierarchy]]
+
+## 5. Related Davidson Chapters
+
+- [[../../Oncology Ch 7/Oncology MOC|Oncology Ch 7]] (cancer pain, oncological emergencies)
+- [[../../Neurology/Neurology MOC|Neurology]] (neuropathic pain, trigeminal neuralgia)
+- [[../../Renal/Renal MOC|Renal]] (renal failure and pain management)
+
+## 6. Tags
+#medicine #davidson #pain #palliative #painphysiology&assessment #fcps #mrcp

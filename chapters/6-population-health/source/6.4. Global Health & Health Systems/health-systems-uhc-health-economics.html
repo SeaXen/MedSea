@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Systems Uhc Health Economics — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.4. GLOBAL HEALTH & HEALTH SYSTEMS</span>
+      <div class="h1">Health Systems Uhc Health Economics</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe WHO health systems building blocks (6) and goals</li><li>[ ] Define UHC: coverage, financial protection, service package</li><li>[ ] Compare health financing models: tax, social insurance, private, mixed</li><li>[ ] Apply health economics: CEA, CUA, ICER, QALY, DALY averted, threshold</li><li>[ ] Distinguish efficiency (technical, allocative) vs equity (horizontal, vertical)</li><li>[ ] Explain NHS structure: ICBs, providers, commissioning, regulation</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Health System**</td><td>All organisations, people, actions whose primary intent is to promote, restore, maintain health (WHO)</td></tr><tr><td>**UHC (Universal Health Coverage)**</td><td>All people access quality health services without financial hardship (SDG 3.8)</td></tr><tr><td>**Financial Protection**</td><td>No catastrophic (>10-25% household income) or impoverishing health expenditure</td></tr><tr><td>**Service Coverage**</td><td>Tracer interventions coverage (promotion, prevention, treatment, rehabilitation, palliation)</td></tr><tr><td>**Catastrophic Expenditure**</td><td>OOP >10-25% household total consumption/income</td></tr><tr><td>**Impoverishing Expenditure**</td><td>OOP pushes household below poverty line</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>System frameworks - see building blocks and financing below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / WHO Building Blocks & UHC</span>
+  </div>
+  <div class="sec-body">
+<p><b>WHO 6 Building Blocks:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Block&lt;/th&gt;&lt;th&gt;Components&lt;/th&gt;&lt;th&gt;Goal Contribution&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;-------------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>1. Service Delivery</b>&lt;/td&gt;&lt;td&gt;Primary, secondary, tertiary; public/private; quality, safety, integration&lt;/td&gt;&lt;td&gt;Access, quality, people-centred&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2. Health Workforce</b>&lt;/td&gt;&lt;td&gt;Numbers, distribution, skill mix, training, regulation, motivation&lt;/td&gt;&lt;td&gt;Availability, responsiveness&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3. Health Information</b>&lt;/td&gt;&lt;td&gt;HIS, surveillance, surveys, vital registration, research, digital health&lt;/td&gt;&lt;td&gt;Evidence, accountability&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>4. Medical Products</b>&lt;/td&gt;&lt;td&gt;Essential medicines, vaccines, devices; availability, affordability, quality, rational use&lt;/td&gt;&lt;td&gt;Access, safety&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>5. Financing</b>&lt;/td&gt;&lt;td&gt;Revenue collection, pooling, purchasing; equity, efficiency, financial protection&lt;/td&gt;&lt;td&gt;Financial protection, efficiency&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>6. Leadership/Governance</b>&lt;/td&gt;&lt;td&gt;Strategy, regulation, accountability, transparency, participation, rule of law&lt;/td&gt;&lt;td&gt;Stewardship, equity&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>WHO System Goals (3):</b></p>
+<ol><li><b>Health</b> (improve level and distribution)</li><li><b>Responsiveness</b> (to patient expectations: dignity, autonomy, confidentiality, promptness, access, quality)</li><li><b>Financial Fairness</b> (protection from catastrophic/impoverishing expenditure)</li></ol>
+<p><b>UHC Cube (3 Dimensions):</b> ``<code> Population Coverage ↑ &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;***** Target: 100%&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<i>   </i>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<i>   </i>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<i>   </i>        Financial Protection&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<i>   </i>           ↑&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<i>   </i>            0% OOP&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*****------------+------------→ Service Coverage&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;(Tracer interventions)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Financing & Economics)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Health Financing Functions:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Function&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Mechanisms&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Revenue Collection</b>&lt;/td&gt;&lt;td&gt;How funds raised&lt;/td&gt;&lt;td&gt;Taxes (income, VAT, sin), Contributions (payroll), Premiums, OOP, Donor aid&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Pooling</b>&lt;/td&gt;&lt;td&gt;Risk sharing across population&lt;/td&gt;&lt;td&gt;Single pool (tax), Multiple (SHI), Fragmented (private), No pooling (OOP)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Purchasing</b>&lt;/td&gt;&lt;td&gt;Paying providers&lt;/td&gt;&lt;td&gt;Passive (line-item), Strategic (capitation, DRG, P4P, bundled)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Financing Models:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Model&lt;/th&gt;&lt;th&gt;Countries&lt;/th&gt;&lt;th&gt;Revenue&lt;/th&gt;&lt;th&gt;Pooling&lt;/th&gt;&lt;th&gt;Purchasing&lt;/th&gt;&lt;th&gt;Equity&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Beveridge (Tax-funded)</b>&lt;/td&gt;&lt;td&gt;UK, Spain, Nordics&lt;/td&gt;&lt;td&gt;General taxation&lt;/td&gt;&lt;td&gt;Single national pool&lt;/td&gt;&lt;td&gt;Public providers, capitation/block&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Bismarck (Social Insurance)</b>&lt;/td&gt;&lt;td&gt;Germany, France, Japan, Korea&lt;/td&gt;&lt;td&gt;Payroll contributions (employer+employee)&lt;/td&gt;&lt;td&gt;Multiple sickness funds&lt;/td&gt;&lt;td&gt;Contracted providers, fee-for-service/DRG&lt;/td&gt;&lt;td&gt;High (mandatory)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Private Insurance</b>&lt;/td&gt;&lt;td&gt;USA (pre-ACA), Switzerland&lt;/td&gt;&lt;td&gt;Premiums (risk-rated or community-rated)&lt;/td&gt;&lt;td&gt;Multiple private pools&lt;/td&gt;&lt;td&gt;Negotiated fees&lt;/td&gt;&lt;td&gt;Low (cream-skimming)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mixed</b>&lt;/td&gt;&lt;td&gt;Most LMICs&lt;/td&gt;&lt;td&gt;Tax + OOP + Insurance + Donor&lt;/td&gt;&lt;td&gt;Fragmented&lt;/td&gt;&lt;td&gt;Mixed&lt;/td&gt;&lt;td&gt;Low (high OOP)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>National Health Insurance</b>&lt;/td&gt;&lt;td&gt;Canada, Taiwan, Thailand&lt;/td&gt;&lt;td&gt;Tax + contributions&lt;/td&gt;&lt;td&gt;Single national pool&lt;/td&gt;&lt;td&gt;Private/public providers, global budget&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Economic Evaluation:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Outcome Measure&lt;/th&gt;&lt;th&gt;Use&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------------&lt;/td&gt;&lt;td&gt;-----&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CEA</b> (Cost-Effectiveness)&lt;/td&gt;&lt;td&gt;Natural units (life years, cases averted)&lt;/td&gt;&lt;td&gt;Compare similar interventions&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CUA</b> (Cost-Utility)&lt;/td&gt;&lt;td&gt;QALYs / DALYs averted&lt;/td&gt;&lt;td&gt;Compare across diseases; NICE uses QALY&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CBA</b> (Cost-Benefit)&lt;/td&gt;&lt;td&gt;Monetary (£)&lt;/td&gt;&lt;td&gt;Broad societal perspective&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CMA</b> (Cost-Minimisation)&lt;/td&gt;&lt;td&gt;Equivalent outcomes assumed&lt;/td&gt;&lt;td&gt;Cheapest option&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>ICER (Incremental Cost-Effectiveness Ratio):</b> ``<code> ICER = (Cost_B - Cost_A) / (Effect_B - Effect_A) </code>``</p>
+<ul><li><b>Decision Rule</b>: ICER &lt; Threshold → Cost-effective</li><li><b>NICE Threshold</b>: £20,000-30,000/QALY (end-of-life modifier up to £50K)</li><li><b>WHO "Very Cost-Effective"</b>: &lt;1x GDP per capita/DALY averted</li><li><b>WHO "Cost-Effective"</b>: 1-3x GDP per capita/DALY averted</li></ul>
+<p><b>Mermaid: ICER Interpretation</b> ``<code>mermaid flowchart LR A[New Intervention] --&gt; B{ICER vs Threshold} B --&gt;|Below £20K| C[Cost-Effective] B --&gt;|£20-30K| D[Uncertain\nConsider End-of-Life] B --&gt;|Above £30K| E[Not Cost-Effective] style C fill:#bfb,stroke:#333 style E fill:#fbb,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Systems Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**UHC ≠ Free Healthcare**</td><td>UHC = financial protection + service coverage. May include co-payments (if not catastrophic).</td></tr><tr><td>**Pooling vs Purchasing**</td><td>Pooling = risk sharing (fund accumulation). Purchasing = provider payment (fund allocation).</td></tr><tr><td>**Technical vs Allocative Efficiency**</td><td>Technical: max output for given input. Allocative: resource mix maximises welfare.</td></tr><tr><td>**Horizontal vs Vertical Equity**</td><td>Horizontal: equal treatment for equal need. Vertical: unequal for unequal need (proportional universalism).</td></tr><tr><td>**OOP ≠ Co-payment**</td><td>OOP = any direct payment at point of service. Co-payment = fixed fee. Both can be catastrophic if high/unbounded.</td></tr><tr><td>**NHS = Beveridge Model**</td><td>Tax-funded, public provision predominant, free at point of use. ICBs commission, NHS Trusts provide.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (NHS Structure & Reforms)</span>
+  </div>
+  <div class="sec-body">
+<p><b>NHS England Structure (Post-2022 Health &amp; Care Act):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Level&lt;/th&gt;&lt;th&gt;Entity&lt;/th&gt;&lt;th&gt;Role&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>National</b>&lt;/td&gt;&lt;td&gt;NHS England&lt;/td&gt;&lt;td&gt;Strategy, national commissioning (specialised), oversight, regulation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>System (ICS)</b>&lt;/td&gt;&lt;td&gt;Integrated Care Systems (42)&lt;/td&gt;&lt;td&gt;Partnership: ICB + ICP + Local Authorities + Providers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Place</b>&lt;/td&gt;&lt;td&gt;Place-based Partnerships (neighbourhoods)&lt;/td&gt;&lt;td&gt;Population ~250-500K; integrated teams, primary care networks&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Neighbourhood</b>&lt;/td&gt;&lt;td&gt;Primary Care Networks (PCNs)&lt;/td&gt;&lt;td&gt;~30-50K population; GP practices + community + social care&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Key Bodies:</b></p>
+<ul><li><b>ICB (Integrated Care Board)</b>: Statutory NHS body; allocates budget, commissions services</li><li><b>ICP (Integrated Care Partnership)</b>: Joint committee (ICB + LA); develops strategy (JHWS)</li><li><b>CQC</b>: Regulates quality (inspection, ratings)</li><li><b>NICE</b>: Guidance, quality standards, technology appraisal</li><li><b>MHRA</b>: Medicines/devices regulation</li></ul>
+<p><b>Health &amp; Care Act 2022 Changes:</b></p>
+<ul><li>Statutory ICSs (replaced CCGs)</li><li>Duty to collaborate (NHS + LA)</li><li>Provider selection regime (competition law changes)</li><li>Data sharing powers</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**WHO Building Blocks**</td><td>Service Delivery, Workforce, Information, Medicines, Financing, Governance</td></tr><tr><td>**System Goals**</td><td>Health, Responsiveness, Financial Fairness</td></tr><tr><td>**UHC Cube**</td><td>Population coverage, Service coverage, Financial protection (3 dimensions)</td></tr><tr><td>**Financing Functions**</td><td>Revenue collection, Pooling, Purchasing</td></tr><tr><td>**Beveridge (UK)**</td><td>Tax-funded, single pool, public provision, free at point of use</td></tr><tr><td>**Bismarck**</td><td>Payroll contributions, multiple funds, contracted providers</td></tr><tr><td>**ICER**</td><td>ΔCost/ΔEffect. NICE: £20-30K/QALY. WHO: <1x GDP/DALY very cost-effective</td></tr><tr><td>**Efficiency**</td><td>Technical (max output/input), Allocative (max welfare)</td></tr><tr><td>**Equity**</td><td>Horizontal (equal need = equal treatment), Vertical (unequal need = different)</td></tr><tr><td>**NHS Structure**</td><td>ICBs (42), PCNs, CQC, NICE, NHSE, DHSC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**WHO 6 building blocks of health system?**</td><td>1) Service Delivery, 2) Health Workforce, 3) Health Information, 4) Medical Products, 5) Financing, 6) Leadership/Governance.</td></tr><tr><td>**WHO 3 system goals?**</td><td>Health (improve level and distribution), Responsiveness (dignity, autonomy, etc.), Financial Fairness (protection from catastrophic expenditure).</td></tr><tr><td>**Define UHC. What are its 3 dimensions (UHC Cube)?**</td><td>Universal Health Coverage: all people access quality services without financial hardship. Dimensions: Population coverage (% population), Service coverage (tracer interventions), Financial protection (no catastrophic/impoverishing expenditure).</td></tr><tr><td>**Difference between Beveridge and Bismarck models?**</td><td>Beveridge: Tax-funded, single national pool, public provision (UK, Spain). Bismarck: Payroll contributions, multiple sickness funds, contracted providers (Germany, France).</td></tr><tr><td>**What is ICER? NICE threshold?**</td><td>Incremental Cost-Effectiveness Ratio = ΔCost/ΔQALY. NICE: £20-30K/QALY (end-of-life modifier up to £50K). WHO: <1x GDP/DALY very cost-effective.</td></tr><tr><td>**Types of efficiency in health economics?**</td><td>Technical: maximum output for given input. Allocative: resource allocation maximises population welfare.</td></tr><tr><td>**Horizontal vs vertical equity?**</td><td>Horizontal: equal treatment for equal need. Vertical: different treatment for different need (proportional universalism - Marmot).</td></tr><tr><td>**NHS structure post-2022 Act?**</td><td>42 ICBs (statutory, commissioning), ICPs (strategy), PCNs (neighbourhood ~30-50K), CQC (regulation), NICE (guidance), NHSE (oversight).</td></tr><tr><td>**Catastrophic vs impoverishing health expenditure?**</td><td>Catastrophic: OOP >10-25% household income/consumption. Impoverishing: OOP pushes household below poverty line.</td></tr><tr><td>**Passive vs strategic purchasing?**</td><td>Passive: line-item budgets, fee-for-service. Strategic: capitation, DRG, P4P, bundled payments, selective contracting based on quality/value.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**CEA vs CUA**</td><td>CEA: natural units (life years). CUA: utility-weighted (QALYs). NICE requires CUA for cross-disease comparison.</td></tr><tr><td>**Threshold Variation**</td><td>NICE £20-30K/QALY. WHO 1-3x GDP/DALY. Country-specific. End-of-life: higher threshold for life-extending.</td></tr><tr><td>**Financial Protection ≠ Free**</td><td>UHC allows co-payments if not causing hardship. Key: prepayment + pooling.</td></tr><tr><td>**ICB vs ICP**</td><td>ICB = statutory NHS body (money, commissioning). ICP = partnership committee (ICB + LA, strategy).</td></tr></table>
+<p><b>Mnemonic: WHO BUILDING BLOCKS (SWIM-GF)</b></p>
+<ul><li><b>S</b>ervice Delivery</li><li><b>W</b>orkforce</li><li><b>I</b>nformation</li><li><b>M</b>edical Products</li><li><b>G</b>overnance</li><li><b>F</b>inancing</li></ul>
+<p><b>Mnemonic: UHC CUBE (PSF)</b></p>
+<ul><li><b>P</b>opulation Coverage</li><li><b>S</b>ervice Coverage</li><li><b>F</b>inancial Protection</li></ul>
+<p><b>Mnemonic: FINANCING FUNCTIONS (RPP)</b></p>
+<ul><li><b>R</b>evenue Collection</li><li><b>P</b>ooling</li><li><b>P</b>urchasing</li></ul>
+<p><b>Mnemonic: BEVERIDGE vs BISMARCK</b></p>
+<ul><li><b>B</b>everidge = <b>B</b>ritish (Tax-funded, Public provision)</li><li><b>B</b>ismarck = <b>B</b>ismarck (Payroll, Insurance funds)</li></ul>
+<p><b>Mnemonic: ECONOMIC EVAL (CCCB)</b></p>
+<ul><li><b>C</b>EA (Cost-Effectiveness)</li><li><b>C</b>UA (Cost-Utility)</li><li><b>C</b>BA (Cost-Benefit)</li><li><b>C</b>MA (Cost-Minimisation)</li></ul>
+<p><b>Mnemonic: ICER DECISION</b></p>
+<ul><li><b>I</b>CER &lt; Threshold → <b>C</b>ost-Effective</li><li><b>I</b>CER &gt; Threshold → <b>N</b>ot Cost-Effective</li></ul>
+<p><b>Mnemonic: EQUITY TYPES (HV)</b></p>
+<ul><li><b>H</b>orizontal = Equal Need → Equal Treatment</li><li><b>V</b>ertical = Unequal Need → Unequal Treatment (Proportional)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Health Systems &amp; UHC)) WHO Building Blocks Service Delivery Workforce Information Medical Products Financing Governance WHO Goals Health Responsiveness Financial Fairness UHC Cube: Pop Coverage, Service Coverage, Financial Protection SDG 3.8 Financing Functions: Revenue, Pooling, Purchasing Models: Beveridge, Bismarck, Private, Mixed Economics CEA, CUA, CBA ICER = ΔC/ΔE NICE £20-30K/QALY Efficiency vs Equity NHS Structure ICBs (42), ICPs, PCNs CQC, NICE, NHSE </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**6 Building Blocks**</td><td>Service, Workforce, Info, Medicines, Financing, Governance</td></tr><tr><td>**3 Goals**</td><td>Health, Responsiveness, Financial Fairness</td></tr><tr><td>**UHC Cube**</td><td>Population, Service, Financial Protection</td></tr><tr><td>**Financing**</td><td>Revenue → Pooling → Purchasing</td></tr><tr><td>**Beveridge**</td><td>Tax, Single pool, Public provision (UK)</td></tr><tr><td>**Bismarck**</td><td>Payroll, Multiple funds, Contracted (Germany)</td></tr><tr><td>**ICER**</td><td>ΔCost/ΔQALY; NICE £20-30K</td></tr><tr><td>**Efficiency**</td><td>Technical (output/input), Allocative (welfare max)</td></tr><tr><td>**Equity**</td><td>Horizontal (equal), Vertical (proportional)</td></tr><tr><td>**NHS**</td><td>42 ICBs, PCNs, CQC, NICE</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>WHO Building Blocks</td><td></td><td></td></tr><tr><td>UHC Definition & Cube</td><td></td><td></td></tr><tr><td>Financing Models</td><td></td><td></td></tr><tr><td>Economic Evaluation</td><td></td><td></td></tr><tr><td>Efficiency vs Equity</td><td></td><td></td></tr><tr><td>NHS Structure</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Global Burden of Disease (GBD Study, Risk Factors).md]], [[Health Needs Assessment.md]], [[Health Promotion &amp; Disease Prevention (Primary, Secondary, Tertiary).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Health Systems Uhc Health Economics · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

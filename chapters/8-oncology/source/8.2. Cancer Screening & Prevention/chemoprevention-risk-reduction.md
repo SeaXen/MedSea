@@ -1,0 +1,420 @@
+# Chemoprevention & Risk Reduction
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **Chemoprevention**: **Aspirin** (CRC, Lynch CAPP2 63% Reduction), **Tamoxifen/Raloxifene** (Breast, IBIS-I/STAR), **Aromatase Inhibitors** (Anastrozole/Exemestane, IBIS-II/MAP.3); **Lifestyle**: Tobacco, Alcohol, Obesity, Diet, Exercise, UV; **Aspirin**: General Population Modest Benefit, Lynch 600mg×2yr 63% Reduction (CAPP2).
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Apply **chemoprevention agents** for breast and colorectal cancer
+- [ ] Understand **evidence base** (CAPP2, IBIS-I, IBIS-II, STAR, MAP.3)
+- [ ] Apply **lifestyle modification** for cancer risk reduction
+- [ ] Understand **Aspirin** in Lynch syndrome vs general population
+
+---
+
+## 2. Breast Cancer Chemoprevention
+
+| Agent | Indication | Dose/Duration | Key Trial | Risk Reduction |
+|-------|------------|---------------|-----------|----------------|
+| **Tamoxifen** | High-risk women (Pre/Postmeno) | 20mg OD ×5yr | **IBIS-I, NSABP P-1** | **30-40% (ER+)** |
+| **Raloxifene** | Postmenopausal, Osteoporosis | 60mg OD ×5yr | **STAR** | **Non-inferior to Tamoxifen**, Fewer Endometrial/Thrombotic Events |
+| **Anastrozole** | Postmenopausal High-Risk | 1mg OD ×5yr | **IBIS-II** | **53% RR Reduction** |
+| **Exemestane** | Postmenopausal High-Risk | 25mg OD ×5yr | **MAP.3** | **65% RR Reduction** |
+
+---
+
+## 3. Colorectal Cancer Chemoprevention
+
+### Aspirin
+| Population | Dose/Duration | Key Trial | Outcome |
+|------------|---------------|-----------|---------|
+| **Lynch Syndrome** | **Aspirin 600mg OD ×2yr** | **CAPP2** | **63% CRC Reduction** (10yr FU) |
+| **General Population** | **75-300mg OD ≥5yr** | **RCTs/Observational** | **Modest CRC Reduction** (10-20%) |
+
+### Other Agents
+| Agent | Evidence |
+|-------|----------|
+| **Calcium** | Modest Adenoma Reduction (1200mg/d) |
+| **Vitamin D** | Observational Benefit (RCTs Inconclusive) |
+| **NSAIDs (Non-Aspirin)** | Reduced Adenoma/CRC (But CV/GI Risk) |
+| **Statins** | Observational Association (RCTs Negative) |
+
+---
+
+## 4. Lifestyle Modification for Cancer Prevention
+
+| Risk Factor | Cancer Sites | Recommendation |
+|-------------|--------------|----------------|
+| **Tobacco** | Lung, H&N, Oesophagus, Bladder, Pancreas, Kidney, Cervix, AML, Stomach, Liver | **Complete Cessation** (NRT, Varenicline, Bupropion) |
+| **Alcohol** | Oesophagus, Liver, Breast, Colorectal, H&N, Stomach | **<14 Units/Week**, **Abstinence Best** |
+| **Obesity** | Endometrial, Oesophageal (Adeno), Breast (Postmeno), Colorectal, Kidney, Pancreas, Liver, Gallbladder, Thyroid, Myeloma | **BMI 18.5-24.9**, **Waist <94cm (M) / <80cm (F)** |
+| **Physical Inactivity** | Colorectal, Breast, Endometrial | **≥150min Moderate / 75min Vigorous/Week** |
+| **Diet** | Colorectal (Red/Processed Meat), Stomach (Salt), Oesophagus (Hot Drinks) | **WHO: <500g Red/Week, <5g Salt/Day, 5+ Fruit/Veg, Wholegrains** |
+| **UV Radiation** | Melanoma, BCC, SCC | **Sun Protection (SPF30+, Clothing, Shade), Avoid Tanning Beds** |
+| **Occupational** | Mesothelioma (Asbestos), Bladder (Aromatic Amines), Lung (Silica, Diesel), Nasal (Wood Dust), Leukaemia (Benzene) | **PPE, Substitution, Exposure Limits, Health Surveillance** |
+| **Infections** | Cervical (HPV), Liver (HBV/HCV), Stomach (H. pylori), Burkitt (EBV), Kaposi (KSHV), MCC (MCPyV) | **Vaccination (HPV, HBV)**, **H. pylori Eradication**, **Safe Practices** |
+
+---
+
+## 5. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Breast Chemoprevention** | **Tamoxifen 20mg ×5yr** (IBIS-I, NSABP P-1); **Raloxifene 60mg ×5yr** (STAR: Non-inferior, Less Endometrial/Thrombotic); **Anastrozole 1mg ×5yr** (IBIS-II: 53% RR ↓); **Exemestane 25mg ×5yr** (MAP.3: 65% RR ↓) |
+| **Aspirin Lynch** | **600mg OD ×2yr** (CAPP2): **63% CRC Reduction** (10yr FU) |
+| **Aspirin General** | **75-300mg OD ≥5yr** → Modest CRC Reduction (10-20%) |
+| **Tamoxifen vs Raloxifene** | Raloxifene: Fewer Endometrial/Thrombotic Events; Similar Breast CA Reduction |
+| **Aromatase Inhibitors** | Anastrozole (IBIS-II: 53% RR ↓), Exemestane (MAP.3: 65% RR ↓) |
+| **Lifestyle** | Tobacco #1, Alcohol <14u/wk, BMI 18.5-25, Exercise 150min/wk, Diet (WHO) |
+| **Aspirin General** | Modest Benefit, CV/GI Bleeding Risk, ≥5yr Duration |
+
+---
+
+## 6. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **Tamoxifen vs Raloxifene — Difference?** | **Raloxifene: Fewer Endometrial/Thrombotic Events**, Similar Breast CA Reduction; **Tamoxifen: Pre/Postmeno, Raloxifene: Postmeno Only**. |
+| **Aspirin in Lynch — Dose, Duration, Evidence?** | **600mg OD ×2yr** (CAPP2): **63% CRC Reduction at 10yr FU**. |
+| **Aspirin General Population — Benefit?** | **Modest CRC Reduction (~10-20%)** with **≥5yr Use**; **CV/GI Bleeding Risk Limits Use**. |
+| **Tamoxifen vs Raloxifene — When Each?** | **Tamoxifen: Pre/Postmeno**; **Raloxifene: Postmeno Only, Osteoporosis Indication**. |
+| **Aromatase Inhibitors — IBIS-II vs MAP.3?** | **Anastrozole (IBIS-II): 53% RR Reduction**; **Exemestane (MAP.3): 65% RR Reduction**. |
+| **Lifestyle — Top 3 Modifiable Risks?** | **Tobacco, Alcohol, Obesity** (WHO: <500g Red/Week, <5g Salt/Day, 5+ Fruit/Veg, 150min Exercise). |
+
+---
+
+## 7. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Tamoxifen vs Raloxifene** | **Raloxifene: Fewer Endometrial/Thrombotic Events**, Similar Breast CA Reduction; **Raloxifene: Postmeno Only** |
+| **Aspirin Dose for Lynch** | **600mg OD ×2yr** (CAPP2); **Not Standard 75-100mg** |
+| **Aspirin General Population** | **Not Recommended Routinely** (Modest Benefit vs Bleeding Risk); **Individualised Decision** |
+| **Aromatase Inhibitors in Prevention** | **Only Postmenopausal**; **Anastrozole 1mg, Exemestane 25mg** |
+| **Aspirin Dose General** | **No Consensus**: **75-100mg (CV)**, **300mg (CAPP2 Lynch)**, **600mg (Some CRC Trials)**; **≥5yr Duration** |
+
+**Mnemonic: CHEMO-PREVENT**
+- **C**hemoprevention: **Tamoxifen, Raloxifene, AI, Aspirin**
+- **H**igh Risk: **BRCA, Lynch, FH, Prior Cancer**
+- **E**ndocrine: **Tamoxifen (Pre/Post), Raloxifene (Post), AI (Post)**
+- **M**olecular: **Aspirin → COX Inhibition → ↓PGE2, Platelet Inhibition**
+- **O**varian: **RRSO (BRCA/Lynch), OCP (↓50% Ovarian CA)**
+- **P**revention Lifestyle: **Tobacco, Alcohol, Obesity, Diet, Exercise, UV**
+- **R**isk Reduction Surgery: **RRSO, RRM, Colectomy**
+- **E**vidence: **CAPP2 (Aspirin Lynch), IBIS-I/II, STAR, MAP.3**
+- **V**accination: **HPV (9-valent), HBV**
+- **E**xposure: **Tobacco, Alcohol, UV, Occupational**
+- **N**utrition: **WHO Diet (Salt, Meat, Fibre, Fruit/Veg)**
+- **T**obacco: **#1 Preventable Cause (22% Cancer Deaths)**
+
+---
+
+## 8. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Tamoxifen** | 20mg OD ×5yr, Pre/Postmeno, IBIS-I/NSABP P-1 (30-40% ↓) |
+| **Raloxifene** | 60mg ×5yr, Postmeno Only, STAR (Non-inferior, Less SE) |
+| **Aromatase Inhibitors** | Anastrozole 1mg (IBIS-II 53% ↓), Exemestane 25mg (MAP.3 65% ↓) |
+| **Aspirin Lynch** | 600mg OD ×2yr (CAPP2): 63% CRC ↓ |
+| **Aspirin General** | 75-300mg OD ≥5yr, Modest Benefit, Bleeding Risk |
+| **Lifestyle** | Tobacco, Alcohol <14u, BMI 18.5-25, Exercise 150min/wk, Diet (WHO) |
+
+---
+
+## 9. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Breast Chemoprevention | | |
+| Aspirin in Lynch | | |
+| Aspirin General Population | | |
+| Tamoxifen vs Raloxifene | | |
+| Aromatase Inhibitors | | |
+| Lifestyle Modification | | |
+
+---
+
+## 11. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[CAPP2 Trial]], [[IBIS-I]], [[IBIS-II]], [[STAR Trial]], [[MAP.3 Trial]], [[Aspirin]], [[Tamoxifen]], [[Raloxifene]], [[Aromatase Inhibitors]], [[Lifestyle Modification]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 12. MCQs (10)
+
+
+**1.** Regarding Chemoprevention & Risk Reduction (Breast Chemoprevention), which statement is correct?
+   A. **Tamoxifen 20mg ×5yr** (IBIS-I, NSABP P-1)
+   B. **Tamoxifen - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Tamoxifen 20mg ×5yr** (IBIS-I, NSABP P-1); **Raloxifene 60mg ×5yr** (STAR: Non-inferior, Less Endometrial/Thrombotic);...
+
+
+**2.** Regarding Chemoprevention & Risk Reduction (Aspirin Lynch), which statement is correct?
+   A. **600mg OD ×2yr** (CAPP2): **63% CRC Reduction** (10yr FU)
+   B. **600mg - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **600mg OD ×2yr** (CAPP2): **63% CRC Reduction** (10yr FU)
+
+
+**3.** Regarding Chemoprevention & Risk Reduction (Aspirin General), which statement is correct?
+   A. **75-300mg OD ≥5yr** → Modest CRC Reduction (10-20%)
+   B. **75-300mg - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **75-300mg OD ≥5yr** → Modest CRC Reduction (10-20%)
+
+
+**4.** Regarding Chemoprevention & Risk Reduction (Tamoxifen vs Raloxifene), which statement is correct?
+   A. Raloxifene: Fewer Endometrial/Thrombotic Events
+   B. Raloxifene: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Raloxifene: Fewer Endometrial/Thrombotic Events; Similar Breast CA Reduction
+
+
+**5.** Regarding Chemoprevention & Risk Reduction (Aromatase Inhibitors), which statement is correct?
+   A. Anastrozole (IBIS-II: 53% RR ↓), Exemestane (MAP.3: 65% RR ↓)
+   B. Anastrozole - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Anastrozole (IBIS-II: 53% RR ↓), Exemestane (MAP.3: 65% RR ↓)
+
+
+**6.** Regarding Chemoprevention & Risk Reduction (Lifestyle), which statement is correct?
+   A. Tobacco #1, Alcohol <14u/wk, BMI 18.5-25, Exercise 150min/wk, Diet (WHO)
+   B. Tobacco - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Tobacco #1, Alcohol <14u/wk, BMI 18.5-25, Exercise 150min/wk, Diet (WHO)
+
+
+**7.** Regarding Chemoprevention & Risk Reduction (Aspirin General), which statement is correct?
+   A. Modest Benefit, CV/GI Bleeding Risk, ≥5yr Duration
+   B. Modest - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Modest Benefit, CV/GI Bleeding Risk, ≥5yr Duration
+
+
+**8.** Regarding Chemoprevention & Risk Reduction (FCPS/MRCP High Yield - Chemopr), which statement is correct?
+   - A. FCPS/MRCP High Yield - Chemoprevention: Aspirin (CRC, Lynch CAPP2 63% Reduction), Tamoxifen/Raloxife
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — FCPS/MRCP High Yield - Chemoprevention: Aspirin (CRC, Lynch CAPP2 63% Reduction), Tamoxifen/Raloxifene (Breast, IBIS-I/S...
+
+
+**9.** Regarding Chemoprevention & Risk Reduction (Lifestyle), which statement is correct?
+   - A. Lifestyle: Tobacco, Alcohol, Obesity, Diet, Exercise, UV
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Lifestyle: Tobacco, Alcohol, Obesity, Diet, Exercise, UV
+
+
+**10.** Regarding Chemoprevention & Risk Reduction (Aspirin), which statement is correct?
+   - A. Aspirin: General Population Modest Benefit, Lynch 600mg×2yr 63% Reduction (CAPP2)
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Aspirin: General Population Modest Benefit, Lynch 600mg×2yr 63% Reduction (CAPP2)
+
+
+## 13. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **Tamoxifen 20mg ×5yr** (IBIS-I, NSABP P-1)
+   - B. **Tamoxifen (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **Tamoxifen 20mg ×5yr** (IBIS-I, NSABP P-1); **Raloxifene 60mg ×5yr** (STAR: Non-inferior, Less Endometrial/Thrombotic);...
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **600mg OD ×2yr** (CAPP2): **63% CRC Reduction** (10yr FU)
+   - B. **600mg (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **600mg OD ×2yr** (CAPP2): **63% CRC Reduction** (10yr FU)
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **75-300mg OD ≥5yr** → Modest CRC Reduction (10-20%)
+   - B. **75-300mg (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **75-300mg OD ≥5yr** → Modest CRC Reduction (10-20%)
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. Raloxifene: Fewer Endometrial/Thrombotic Events
+   - B. Raloxifene: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: Raloxifene: Fewer Endometrial/Thrombotic Events; Similar Breast CA Reduction
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. Anastrozole (IBIS-II: 53% RR ↓), Exemestane (MAP.3: 65% RR ↓)
+   - B. Anastrozole (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: Anastrozole (IBIS-II: 53% RR ↓), Exemestane (MAP.3: 65% RR ↓)
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. Tobacco #1, Alcohol <14u/wk, BMI 18.5-25, Exercise 150min/wk, Diet (WHO)
+   - B. Tobacco (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: Tobacco #1, Alcohol <14u/wk, BMI 18.5-25, Exercise 150min/wk, Diet (WHO)
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. Modest Benefit, CV/GI Bleeding Risk, ≥5yr Duration
+   - B. Modest (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: Modest Benefit, CV/GI Bleeding Risk, ≥5yr Duration
+
+
+**8.** A clinician encounters a patient with this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - Chemoprevention: Aspirin (CRC, Lynch CAPP2 63% Reduction), Tamoxifen/Raloxife
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — FCPS/MRCP High Yield - Chemoprevention: Aspirin (CRC, Lynch CAPP2 63% Reduction), Tamoxifen/Raloxifene (Breast, IBIS-I/S...
+
+
+**9.** On further evaluation, the finding is confirmed. Most appropriate next step:
+   - A. Lifestyle: Tobacco, Alcohol, Obesity, Diet, Exercise, UV
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Lifestyle: Tobacco, Alcohol, Obesity, Diet, Exercise, UV
+
+
+**10.** The patient asks about management options. Best evidence-based response:
+   - A. Aspirin: General Population Modest Benefit, Lynch 600mg×2yr 63% Reduction (CAPP2)
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Aspirin: General Population Modest Benefit, Lynch 600mg×2yr 63% Reduction (CAPP2)
+
+
+## 14. Flashcards
+
+**Q1:** Breast Chemoprevention?
+**A1:** Tamoxifen 20mg ×5yr (IBIS-I, NSABP P-1); Raloxifene 60mg ×5yr (STAR: Non-inferior, Less Endometrial/Thrombotic); Anastrozole 1mg ×5yr (IBIS-II: 53% RR ↓); Exemestane 25mg ×5yr (MAP.3: 65% RR ↓)
+
+**Q2:** Aspirin Lynch?
+**A2:** 600mg OD ×2yr (CAPP2): 63% CRC Reduction (10yr FU)
+
+**Q3:** Aspirin General?
+**A3:** 75-300mg OD ≥5yr → Modest CRC Reduction (10-20%)
+
+**Q4:** Tamoxifen vs Raloxifene?
+**A4:** Raloxifene: Fewer Endometrial/Thrombotic Events; Similar Breast CA Reduction
+
+**Q5:** Aromatase Inhibitors?
+**A5:** Anastrozole (IBIS-II: 53% RR ↓), Exemestane (MAP.3: 65% RR ↓)
+
+**Q6:** Lifestyle?
+**A6:** Tobacco #1, Alcohol <14u/wk, BMI 18.5-25, Exercise 150min/wk, Diet (WHO)
+
+**Q7:** Aspirin General?
+**A7:** Modest Benefit, CV/GI Bleeding Risk, ≥5yr Duration
+
+
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 8 | A | FCPS/MRCP High Yield - Chemoprevention | FCPS/MRCP High Yield - Chemoprevention: Aspirin (CRC, Lynch CAPP2 63% Reduction), Tamoxifen/Raloxifene (Breast, IBIS-I/S |
+| 9 | A | Lifestyle | Lifestyle: Tobacco, Alcohol, Obesity, Diet, Exercise, UV |
+| 10 | A | Aspirin | Aspirin: General Population Modest Benefit, Lynch 600mg×2yr 63% Reduction (CAPP2) |
+| 11 | A | Tamoxifen | Tamoxifen: High-risk women (Pre/Postmeno) |
+| 12 | A | Raloxifene | Raloxifene: Postmenopausal, Osteoporosis |
+| 13 | A | Anastrozole | Anastrozole: Postmenopausal High-Risk |
+| 14 | A | Exemestane | Exemestane: Postmenopausal High-Risk |
+| 15 | A | Lynch Syndrome | Lynch Syndrome: Aspirin 600mg OD ×2yr |
+| 16 | A | General Population | General Population: 75-300mg OD ≥5yr |
+| 17 | A | Calcium | Calcium: Modest Adenoma Reduction (1200mg/d) |
+| 18 | A | Vitamin D | Vitamin D: Observational Benefit (RCTs Inconclusive) |
+| 19 | A | NSAIDs (Non-Aspirin) | NSAIDs (Non-Aspirin): Reduced Adenoma/CRC (But CV/GI Risk) |
+| 20 | A | Statins | Statins: Observational Association (RCTs Negative) |
+| 21 | A | Tobacco | Tobacco: Lung, H&N, Oesophagus, Bladder, Pancreas, Kidney, Cervix, AML, Stomach, Liver |
+| 22 | A | Alcohol | Alcohol: Oesophagus, Liver, Breast, Colorectal, H&N, Stomach |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 8 | A | FCPS/MRCP High Yield - Chemoprevention | FCPS/MRCP High Yield - Chemoprevention: Aspirin (CRC, Lynch CAPP2 63% Reduction), Tamoxifen/Raloxifene (Breast, IBIS-I/S |
+| 9 | A | Lifestyle | Lifestyle: Tobacco, Alcohol, Obesity, Diet, Exercise, UV |
+| 10 | A | Aspirin | Aspirin: General Population Modest Benefit, Lynch 600mg×2yr 63% Reduction (CAPP2) |
+| 11 | A | Tamoxifen | Tamoxifen: High-risk women (Pre/Postmeno) |
+| 12 | A | Raloxifene | Raloxifene: Postmenopausal, Osteoporosis |
+| 13 | A | Anastrozole | Anastrozole: Postmenopausal High-Risk |
+| 14 | A | Exemestane | Exemestane: Postmenopausal High-Risk |
+| 15 | A | Lynch Syndrome | Lynch Syndrome: Aspirin 600mg OD ×2yr |
+| 16 | A | General Population | General Population: 75-300mg OD ≥5yr |
+| 17 | A | Calcium | Calcium: Modest Adenoma Reduction (1200mg/d) |
+| 18 | A | Vitamin D | Vitamin D: Observational Benefit (RCTs Inconclusive) |
+| 19 | A | NSAIDs (Non-Aspirin) | NSAIDs (Non-Aspirin): Reduced Adenoma/CRC (But CV/GI Risk) |
+| 20 | A | Statins | Statins: Observational Association (RCTs Negative) |
+| 21 | A | Tobacco | Tobacco: Lung, H&N, Oesophagus, Bladder, Pancreas, Kidney, Cervix, AML, Stomach, Liver |
+| 22 | A | Alcohol | Alcohol: Oesophagus, Liver, Breast, Colorectal, H&N, Stomach |## Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Breast Chemoprevention | Tamoxifen 20mg ×5yr (IBIS-I, NSABP P-1); Raloxifene 60mg ×5yr (STAR: Non-inferior, Less Endometrial/Thrombotic); Anastro |
+| 2 | A | Aspirin Lynch | 600mg OD ×2yr (CAPP2): 63% CRC Reduction (10yr FU) |
+| 3 | A | Aspirin General | 75-300mg OD ≥5yr → Modest CRC Reduction (10-20%) |
+| 4 | A | Tamoxifen vs Raloxifene | Raloxifene: Fewer Endometrial/Thrombotic Events; Similar Breast CA Reduction |
+| 5 | A | Aromatase Inhibitors | Anastrozole (IBIS-II: 53% RR ↓), Exemestane (MAP.3: 65% RR ↓) |
+| 6 | A | Lifestyle | Tobacco #1, Alcohol <14u/wk, BMI 18.5-25, Exercise 150min/wk, Diet (WHO) |
+| 7 | A | Aspirin General | Modest Benefit, CV/GI Bleeding Risk, ≥5yr Duration |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Breast Chemoprevention | Tamoxifen 20mg ×5yr (IBIS-I, NSABP P-1); Raloxifene 60mg ×5yr (STAR: Non-inferior, Less Endometrial/Thrombotic); Anastro |
+| 2 | A | Aspirin Lynch | 600mg OD ×2yr (CAPP2): 63% CRC Reduction (10yr FU) |
+| 3 | A | Aspirin General | 75-300mg OD ≥5yr → Modest CRC Reduction (10-20%) |
+| 4 | A | Tamoxifen vs Raloxifene | Raloxifene: Fewer Endometrial/Thrombotic Events; Similar Breast CA Reduction |
+| 5 | A | Aromatase Inhibitors | Anastrozole (IBIS-II: 53% RR ↓), Exemestane (MAP.3: 65% RR ↓) |
+| 6 | A | Lifestyle | Tobacco #1, Alcohol <14u/wk, BMI 18.5-25, Exercise 150min/wk, Diet (WHO) |
+| 7 | A | Aspirin General | Modest Benefit, CV/GI Bleeding Risk, ≥5yr Duration |
+
+
+**Q8:** FCPS/MRCP High Yield - Chemoprevention?
+**A8:** FCPS/MRCP High Yield - Chemoprevention: Aspirin (CRC, Lynch CAPP2 63% Reduction), Tamoxifen/Raloxifene (Breast, IBIS-I/STAR), Aromatase Inhibitors (Anastrozole/Exemestane, IBIS-II/MAP
+## 15. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Cancer Screening & Prevention|Cancer Screening & Prevention]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

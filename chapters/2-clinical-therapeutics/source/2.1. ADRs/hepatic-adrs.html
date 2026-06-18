@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatic Adrs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Hepatic Adrs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify DILI by biochemical pattern (Hepatocellular, Cholestatic, Mixed)</li><li>[ ] Apply Hy's Law for prognosis</li><li>[ ] Use RUCAM for causality assessment</li><li>[ ] Identify high-risk drugs for each pattern</li><li>[ ] Differentiate intrinsic vs idiosyncratic DILI</li><li>[ ] Execute monitoring and management algorithms</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 DILI Classification by Biochemical Pattern</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pattern</th><th>Definition (R-value)</th><th>Typical Drugs</th><th>Prognosis</th></tr><tr><td>---------</td><td>---------------------</td><td>---------------</td><td>-----------</td></tr><tr><td>**Hepatocellular**</td><td>**R = ALT/ULN ÷ ALP/ULN ≥ 5**</td><td>**Paracetamol (OD), Isoniazid, Valproate, Nevirapine, Flucloxacillin (some), Methotrexate, Halothane**</td><td>**Worse** — higher mortality, transplant</td></tr><tr><td>**Cholestatic**</td><td>**R ≤ 2**</td><td>**Flucloxacillin, Amoxicillin-Clavulanate, Azathioprine, Chlorpromazine, Anabolic steroids, OCP, Sulfonamides, Allopurinol**</td><td>Better — prolonged but lower mortality</td></tr><tr><td>**Mixed**</td><td>**2 < R < 5**</td><td>**Diclofenac, Sulfonamides, Allopurinol, Phenytoin, Carbamazepine, Tuberculosis drugs**</td><td>Intermediate</td></tr></table>
+<div class="callout"><b>R-value</b> = (ALT ÷ ULN) ÷ (ALP ÷ ULN)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚠️ Hy's Law — **Prognostic Rule (Exam Essential)**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Criteria</th><th>Significance</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**1. Hepatocellular injury** (ALT >3× ULN)</td><td></td></tr><tr><td>**2. Jaundice** (Total Bilirubin >2× ULN)</td><td></td></tr><tr><td>**3. No obstruction** (imaging negative)</td><td></td></tr><tr><td>**4. No other cause** (viral, autoimmune, etc.)</td><td></td></tr></table>
+<p><b>If ALL 4 met → 10–50% mortality or transplant</b> <b>Hy's Law = "The law of mortality"</b> — stop drug immediately, transplant evaluation</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🧬 Intrinsic vs Idiosyncratic DILI</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**Intrinsic (Type A)**</th><th>**Idiosyncratic (Type B)**</th></tr><tr><td>---------</td><td>------------------------</td><td>----------------------------</td></tr><tr><td>**Dose-dependence**</td><td>**Yes** — predictable</td><td>**No** — unpredictable</td></tr><tr><td>**Incidence**</td><td>Common</td><td>Rare</td></tr><tr><td>**Latency**</td><td>Short (hours–days)</td><td>Variable (weeks–months)</td></tr><tr><td>**Mechanism**</td><td>Direct toxicity / metabolite</td><td>Immune / metabolic idiosyncrasy</td></tr><tr><td>**Examples**</td><td>**Paracetamol overdose**, Methotrexate (high-dose), Niacin, Valproate (microvesicular steatosis)</td><td>**Isoniazid, Flucloxacillin, Augmentin, Diclofenac, Allopurinol, Carbamazepine, Nevirapine**</td></tr><tr><td>**Rechallenge**</td><td>Toxic at same dose</td><td>**Absolutely contraindicated**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💊 High-Risk Drugs by Pattern</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Hepatocellular (R ≥ 5)</div>
+<table class="ctable"><tr><th>Drug</th><th>Key Features</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Paracetamol** (overdose)</td><td>**NAPQI toxicity** → centrilobular necrosis; **NAC antidote**; Rumack-Matthew nomogram</td></tr><tr><td>**Isoniazid**</td><td>**Hepatocellular**, 1–3 months; ↑ risk age>35, alcohol, rifampicin; monitor LFTs monthly</td></tr><tr><td>**Valproate**</td><td>**Microvesicular steatosis** → hyperammonaemia; risk <3y, polytherapy, metabolic disorders</td></tr><tr><td>**Nevirapine**</td><td>**Hypersensitivity syndrome** (CD4>250 ♀, >400 ♂); rash + hepatitis; HLA-DRB1*01:01</td></tr><tr><td>**Methotrexate** (high-dose)</td><td>**Folic acid rescue**; monitor levels at 24h/48h; leucovorin rescue</td></tr><tr><td>**Halothane**</td><td>**Immune-mediated** (trifluoroacetyl hapten); ↓ use now</td></tr></table>
+<div class="sub-h">Cholestatic (R ≤ 2)</div>
+<table class="ctable"><tr><th>Drug</th><th>Key Features</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Flucloxacillin**</td><td>**Cholestatic**, 2–4 weeks; **HLA-DRB1*07:01/DQA1*02:01**; prolonged jaundice; elderly >50</td></tr><tr><td>**Amoxicillin-Clavulanate**</td><td>**Cholestatic/mixed**, 1–6 weeks; ↑ risk >60y, male; **avoid re-exposure**</td></tr><tr><td>**Azathioprine**</td><td>**Cholestatic**, nodular regenerative hyperplasia; TPMT testing</td></tr><tr><td>**Chlorpromazine**</td><td>**Cholestatic**, 2–4 weeks; fever, eosinophilia</td></tr><tr><td>**OCP (estrogen)**</td><td>**Cholestatic**, benign; benign hepatic adenoma risk long-term</td></tr><tr><td>**Sulfonamides**</td><td>**Mixed/cholestatic**, hypersensitivity context</td></tr></table>
+<div class="sub-h">Mixed (2 &lt; R &lt; 5)</div>
+<table class="ctable"><tr><th>Drug</th><th>Key Features</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Diclofenac**</td><td>**Mixed**, 1–3 months; ↑ risk elderly, alcohol; **avoid in chronic liver disease**</td></tr><tr><td>**Allopurinol**</td><td>**DRESS context**, mixed pattern; HLA-B*58:01</td></tr><tr><td>**Phenytoin/Carbamazepine**</td><td>**AHS/DRESS**, mixed; HLA associations</td></tr><tr><td>**Anti-TB drugs (INH/RIF/PZA)**</td><td>**Combined hepatotoxicity**; RIF induces INH metabolism → toxic metabolite</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🔬 RUCAM (Roussel Uclaf Causality Assessment Method) — *DILI Gold Standard*</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Max Score</th><th>Key Points</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>**1. Time to onset** (5–90d = +2)</td><td>+2</td><td><5d or >90d = -1</td></tr><tr><td>**2. Course after cessation** (↓50% in 8d = +3)</td><td>+3</td><td>≥50% in 30d = +2; no info = 0</td></tr><tr><td>**3. Risk factors** (Age≥55, Alcohol, Pregnancy = +1 each)</td><td>+2</td><td>Max +2</td></tr><tr><td>**4. Concomitant drugs** (Compatible hepatotoxin = -2)</td><td>0 to -3</td><td>None = 0</td></tr><tr><td>**5. Exclusion of alternatives** (All ruled out = +2)</td><td>+2 to -3</td><td><3 ruled out = -2; non-hepatic probable = -3</td></tr><tr><td>**6. Previous hepatotoxicity** (In label = +2)</td><td>+2</td><td>Published = +1; none = 0</td></tr><tr><td>**7. Rechallenge** (Positive = +3)</td><td>+3 to -2</td><td>Negative = -2; not done = 0</td></tr></table>
+<p><b>Total: -8 to +14</b></p>
+<table class="ctable"><tr><th>Score</th><th>Category</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>>8</td><td>**Highly probable**</td></tr><tr><td>6–8</td><td>**Probable**</td></tr><tr><td>3–5</td><td>**Possible**</td></tr><tr><td>1–2</td><td>**Unlikely**</td></tr><tr><td>≤0</td><td>**Excluded**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📋 Monitoring & Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Suspected DILI] --&gt; B[<b>STOP SUSPECT DRUG IMMEDIATELY</b>] B --&gt; C{Pattern?} C --&gt;|Hepatocellular| D[<b>Hy's Law Check</b>: ALT&gt;3xULN + Bil&gt;2xULN?] D --&gt;|YES| E[<b>URGENT TRANSPLANT REFERRAL</b>&lt;br/&gt;ICU if encephalopathy/coagulopathy&lt;br/&gt;NAC if paracetamol/early ALF&lt;br/&gt;Monitor: LFTs daily, INR, glucose, renal, lactate] D --&gt;|NO| F[Monitor LFTs q48–72h&lt;br/&gt;Resolution: ALT halves in 1–2wk&lt;br/&gt;Refer if: ALF criteria, no improvement 2wk] C --&gt;|Cholestatic/Mixed| G[Monitor LFTs weekly&lt;br/&gt;Cholestatic: may take months to resolve&lt;br/&gt;Ursodeoxycholic acid 15mg/kg for pruritus&lt;br/&gt;Exclude obstruction (US/MRCP)] E &amp; F &amp; G --&gt; H[<b>RUCAM Assessment</b> for causality&lt;br/&gt;Document: drug, timeline, pattern, exclusions&lt;br/&gt;Report: Yellow Card / FDA MedWatch&lt;br/&gt;<b>NEVER RECHALLENGE</b>] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Pattern</th><th>Key Drug</th><th>Management</th></tr><tr><td>----------</td><td>---------</td><td>----------</td><td>------------</td></tr><tr><td>40yo, paracetamol 15g OD, 6h ago</td><td>Hepatocellular</td><td>**Paracetamol**</td><td>**NAC IV** (Rumack-Matthew), monitor INR, transplant if ALF</td></tr><tr><td>60yo, flucloxacillin 3wk, jaundice, ALP 4×ULN, ALT 2×ULN</td><td>**Cholestatic**</td><td>**Flucloxacillin**</td><td>Stop drug; monitor; may persist months; avoid re-exposure</td></tr><tr><td>30yo, INH 2mo, ALT 10×ULN, Bil 3×ULN</td><td>**Hepatocellular + Hy's Law**</td><td>**Isoniazid**</td><td>**Stop INH; transplant eval; NAC considered**</td></tr><tr><td>45yo, diclofenac 3mo, ALT 5×ULN, ALP 2×ULN</td><td>**Mixed**</td><td>**Diclofenac**</td><td>Stop NSAID; switch analgesia; monitor</td></tr><tr><td>70yo, Augmentin 10d, jaundice, ALP 3×ULN</td><td>Cholestatic</td><td>**Co-amoxiclav**</td><td>Stop; avoid re-exposure; monitor</td></tr><tr><td>25yo valproate, confused, ammonia 200</td><td>Microvesicular steatosis</td><td>**Valproate**</td><td>Stop valproate; L-carnitine; switch AED</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Define Hy's Law. What is its prognostic significance?</td><td>**ALT>3×ULN + Bil>2×ULN (no obstruction, no other cause) → 10–50% mortality/transplant**; immediate drug cessation</td></tr><tr><td>2. Classify DILI patterns by R-value.</td><td>Hepatocellular R≥5; Cholestatic R≤2; Mixed 2<R<5</td></tr><tr><td>3. Paracetamol overdose — mechanism, antidote, monitoring?</td><td>**NAPQI** (CYP2E1) depletes glutathione → necrosis; **NAC** (glutathione precursor); **Rumack-Matthew nomogram** (4–24h); monitor INR, creatinine, glucose, lactate</td></tr><tr><td>4. Flucloxacillin DILI — pattern, HLA, time course?</td><td>**Cholestatic**; **HLA-DRB1*07:01/DQA1*02:01**; 2–4 weeks; prolonged jaundice; elderly</td></tr><tr><td>5. Isoniazid hepatotoxicity — risk factors, monitoring?</td><td>Age>35, alcohol, rifampicin co-administration; **monthly LFTs**; symptomatic hepatitis = stop</td></tr><tr><td>6. Valproate hepatotoxicity — mechanism, high-risk group, monitoring?</td><td>**Microvesicular steatosis** (mitochondrial β-oxidation inhibition); **<3y, polytherapy, metabolic disorders**; monitor LFTs, ammonia</td></tr><tr><td>7. RUCAM domains and scoring?</td><td>7 domains (Time, Course, Risk factors, Concomitant drugs, Exclusion, Previous toxicity, Rechallenge); -8 to +14; >8 = highly probable</td></tr><tr><td>8. Amoxicillin-clavulanate DILI — pattern, risk factors?</td><td>Cholestatic/mixed; **>60y, male**; avoid re-exposure</td></tr><tr><td>9. Microvesicular vs macrovesicular steatosis?</td><td>**Microvesicular**: small droplets, mitochondrial toxicity (valproate, tetracycline, Reye's), **hyperammonaemia**; **Macrovesicular**: large droplets, metabolic (NAFLD, alcohol)</td></tr><tr><td>10. Anti-TB drug hepatotoxicity — which drug is main culprit? Mechanism?</td><td>**Isoniazid** (hydrazine metabolite); **Rifampicin induces CYP2E1** → ↑ toxic INH metabolite; PZA adds risk</td></tr><tr><td>11. Methotrexate high-dose — rescue, monitoring?</td><td>**Leucovorin (folinic acid) rescue** based on 24h/48h MTX levels; monitor LFTs, renal, CBC</td></tr><tr><td>12. DILI mimics — what must be excluded (RUCAM Domain 5)?</td><td>Hepatitis A/B/C/E, CMV, EBV, HSV, **autoimmune hepatitis** (ANA, ASMA, IgG), **Wilson's** (ceruloplasmin), **α1-antitrypsin**, **biliary obstruction** (US/MRCP), **ischaemic hepatitis**, **alcohol**, **NAFLD**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Hepatocellular vs Cholestatic**</td><td>R-value = (ALT/ULN) ÷ (ALP/ULN); Hepatocellular = ALT predominant; Cholestatic = ALP predominant</td></tr><tr><td>**Hy's Law = diagnosis?**</td><td>No — **prognostic rule**; indicates high mortality, not causality</td></tr><tr><td>**Intrinsic vs Idiosyncratic**</td><td>Intrinsic = dose-dependent, predictable (paracetamol OD); Idiosyncratic = unpredictable, immune/metabolic (flucloxacillin)</td></tr><tr><td>**Valproate = steatosis type?**</td><td>**Microvesicular** (mitochondrial β-oxidation inhibition) → hyperammonaemia</td></tr><tr><td>**RUCAM vs Naranjo**</td><td>RUCAM = **DILI-specific**, liver-focused domains; Naranjo = general ADR</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"HY'S LAW"</b> = <b>H</b>epatocellular (ALT&gt;3×) + <b>Y</b>ellow (Bil&gt;2×) = <b>High mortality</b></li><li><b>"R-VALUE"</b> = <b>R</b>atio = <b>ALT/ULN ÷ ALP/ULN</b>; <b>≥5 = Hepatocellular</b>, <b>≤2 = Cholestatic</b>, <b>2–5 = Mixed</b></li><li><b>"INH RISK"</b> = <b>I</b>NH hepatotoxicity: <b>A</b>ge&gt;35, <b>L</b>cohol, <b>R</b>ifampicin co-Rx</li><li><b>"VALPROATE"</b> = <b>V</b>alproate → <b>Microvesicular steatosis</b> → <b>Hyperammonaemia</b> (not ALT-driven)</li><li><b>"FLUCLOX"</b> = <b>F</b>lucloxacillin → <b>Cholestatic</b> → **HLA-DRB1*07:01** → Elderly &gt;50</li><li><b>"NAC"</b> = <b>N</b>-acetylcysteine for <b>P</b>aracetamol <b>O</b>verdose (and early ALF)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid mindmap root((DILI)) Patterns (R-value) Hepatocellular (R&gt;=5) --&gt; Paracetamol, INH, Valproate, Nevirapine Cholestatic (R&lt;=2) --&gt; Flucloxacillin, Augmentin, Azathioprine, Chlorpromazine, OCP Mixed (2&lt;R&lt;5) --&gt; Diclofenac, Allopurinol, AEDs, Anti-TB Hy's Law ALT&gt;3xULN + Bil&gt;2xULN No obstruction + No other cause = 10-50% mortality/transplant Intrinsic vs Idiosyncratic Intrinsic: Dose-dependent (Paracetamol, MTX) Idiosyncratic: Unpredictable (Flucloxacillin, INH, Diclofenac) RUCAM 7 domains, -8 to +14</p>
+<div class="callout">8 Highly probable</div>
+<p>Monitoring INH: Monthly LFTs Valproate: LFTs + Ammonia MTX HD: Levels 24/48h + Leucovorin Key Drugs Paracetamol -&gt; NAC, Rumack-Matthew Flucloxacillin -&gt; Cholestatic, HLA, Elderly INH -&gt; Hepatocellular, Hy's Law risk Valproate -&gt; Microvesicular steatosis, Ammonia Diclofenac -&gt; Mixed, avoid in liver disease ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Pattern classification</td><td>8</td><td></td></tr><tr><td>Hy's Law</td><td>6</td><td></td></tr><tr><td>Intrinsic vs Idiosyncratic</td><td>6</td><td></td></tr><tr><td>High-risk drugs table</td><td>12</td><td></td></tr><tr><td>RUCAM scoring</td><td>10</td><td></td></tr><tr><td>Monitoring algorithms</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td></tr><tr><td>**Total**</td><td>**62**</td><td></td></tr></table>
+<p><b>Target</b>: ≥50/62 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Discuss drug-induced liver injury (DILI) — classification, Hy's Law, and management."*</div>
+<ol><li><b>Classification</b> (2): R-value patterns (Hepatocellular R≥5, Cholestatic R≤2, Mixed 2&lt;R&lt;5) with examples</li><li><b>Hy's Law</b> (2): ALT&gt;3×ULN + Bil&gt;2×ULN, no obstruction/other cause → 10–50% mortality; prognostic not diagnostic</li><li><b>Intrinsic vs Idiosyncratic</b> (2): Dose-dependent vs unpredictable; examples</li><li><b>Key drugs</b> (2): Paracetamol (NAPQI, NAC), INH (monthly LFTs), Flucloxacillin (cholestatic, HLA), Valproate (microvesicular), Anti-TB</li><li><b>Management</b> (2): Stop drug, Hy's Law = transplant referral, RUCAM causality, never rechallenge</li></ol>
+<div class="sub-h">Short Question (5 marks): *"Hy's Law and RUCAM"*</div>
+<ul><li><b>Hy's Law</b>: ALT&gt;3×ULN + Bil&gt;2×ULN (no obstruction, no other cause) = 10–50% mortality; stop drug immediately</li><li><b>RUCAM</b>: 7 domains (-8 to +14); Time, Course, Risk factors, Concomitant drugs, Exclusion of alternatives, Previous hepatotoxicity, Rechallenge; &gt;8 = highly probable</li></ul>
+<div class="sub-h">Viva (2 min): *"60M on flucloxacillin 3 weeks, jaundice, ALP 400, ALT 100, Bil 80. Pattern? Causality? Management?"*</div>
+<ul><li><b>Pattern</b>: Cholestatic (R = 2.5/3 = 0.8 &lt; 2)</li><li><b>Causality</b>: Flucloxacillin classic; <b>RUCAM</b>: Time +2 (3wk), Course +2 (↓), Risk +1 (age), Concomitant 0, Exclusion +2 (viral/autoimmune/biliary ruled out), Previous +2 (in label), Rechallenge 0 = <b>9 = Highly probable</b></li><li><b>Management</b>: Stop flucloxacillin; monitor LFTs weekly; may persist months; <b>avoid re-exposure</b>; UDCA for pruritus</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on isoniazid 2 months, ALT 500 (ULN 40), Bil 50 (ULN 20). Action?"*</div>
+<ul><li><b>Hy's Law criteria MET</b> (ALT&gt;3×, Bil&gt;2×) → <b>STOP INH immediately</b>, transplant referral, NAC considered, monitor INR/encephalopathy</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>R = ALT/ULN ÷ ALP/ULN; ≥5 Hepatocellular, ≤2 Cholestatic, 2–5 Mixed</li><li>Hy's Law = ALT&gt;3× + Bil&gt;2× = 10–50% mortality</li><li>Paracetamol = NAPQI → NAC (Rumack-Matthew)</li><li>INH = Hepatocellular, monthly LFTs, Hy's Law risk</li><li>Flucloxacillin = Cholestatic, HLA-DRB1*07:01, elderly</li><li>Valproate = Microvesicular steatosis → hyperammonaemia</li><li>Augmentin = Cholestatic, &gt;60y male</li><li>RUCAM = DILI gold standard; 7 domains, &gt;8 highly probable</li><li>NEVER rechallenge idiosyncratic DILI</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>DILI TRIAD FOR EXAMS:</b> 1. <b>PATTERN</b>: R-value → Hepatocellular (INH, Paracetamol) / Cholestatic (Flucloxacillin, Augmentin) / Mixed (Diclofenac) 2. <b>HY'S LAW</b>: ALT&gt;3× + Bil&gt;2× = <b>STOP DRUG, TRANSPLANT REFERRAL</b> 3. <b>KEY DRUGS</b>: Paracetamol (NAC), INH (monthly LFTs), Flucloxacillin (HLA, elderly), Valproate (ammonia), Anti-TB (INH+RIF interaction)  <b>RUCAM</b> = DILI causality gold standard; <b>&gt;8 = highly probable</b> <b>NEVER RECHALLENGE</b> idiosyncratic DILI</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>R-value in DILI is calculated as:</b></li></ol>
+<p>A. ALP/ULN ÷ ALT/ULN B. <b>ALT/ULN ÷ ALP/ULN</b> ✓ C. ALT × ALP / ULN² D. (ALT + ALP) / 2×ULN E. ALT/ULN - ALP/ULN</p>
+<ol><li><b>Hepatocellular pattern DILI corresponds to R-value:</b></li></ol>
+<p>A. ≤2 B. 2–5 C. <b>≥5</b> ✓ D. &lt;1 E. Any value</p>
+<ol><li><b>Hy's Law criteria include all EXCEPT:</b></li></ol>
+<p>A. ALT &gt;3×ULN B. Bilirubin &gt;2×ULN C. <b>No alkaline phosphatase elevation</b> ✓ D. No biliary obstruction E. No other identifiable cause</p>
+<ol><li><b>Paracetamol hepatotoxicity mechanism:</b></li></ol>
+<p>A. Direct mitochondrial toxicity B. <b>NAPQI formation via CYP2E1 depleting glutathione</b> ✓ C. Immune-mediated hypersensitivity D. Biliary obstruction E. Microvesicular steatosis</p>
+<ol><li><b>Flucloxacillin DILI is typically:</b></li></ol>
+<p>A. Hepatocellular B. <b>Cholestatic</b> ✓ C. Mixed D. Microvesicular steatosis E. Acute liver failure</p>
+<ol><li><b>Valproate-induced hepatotoxicity is characterised by:</b></li></ol>
+<p>A. Macrovesicular steatosis B. <b>Microvesicular steatosis with hyperammonaemia</b> ✓ C. Cholestatic picture D. Hy's Law criteria E. Eosinophilia</p>
+<ol><li><b>Isoniazid hepatotoxicity risk factors:</b></li></ol>
+<p>A. Age &lt;35, no alcohol B. <b>Age &gt;35, alcohol, rifampicin co-administration</b> ✓ C. Paediatric age only D. Renal impairment D. Pregnancy</p>
+<ol><li><b>RUCAM total score range:</b></li></ol>
+<p>A. 0–10 B. -5 to +10 C. <b>-8 to +14</b> ✓ D. 1–20 E. -10 to +10</p>
+<ol><li><b>RUCAM category for score of 9:</b></li></ol>
+<p>A. Probable B. <b>Highly probable</b> ✓ C. Possible D. Unlikely E. Excluded</p>
+<ol><li><b>Amoxicillin-clavulanate DILI typical pattern and risk group:</b></li></ol>
+<p>A. Hepatocellular, young females B. <b>Cholestatic/mixed, elderly males &gt;60</b> ✓ C. Mixed, children D. Hepatocellular, alcoholics E. Cholestatic, pregnant women</p>
+<ol><li><b>Microvesicular vs macrovesicular steatosis — valproate causes:</b></li></ol>
+<p>A. <b>Microvesicular</b> ✓ B. Macrovesicular C. Both equally D. Neither E. Cholestasis</p>
+<ol><li><b>Anti-TB regimen — rifampicin increases isoniazid hepatotoxicity by:</b></li></ol>
+<p>A. Inhibiting INH metabolism B. <b>Inducing CYP2E1 → ↑ toxic hydrazine metabolite</b> ✓ C. Protein binding displacement D. Reducing INH clearance E. No interaction</p>
+<ol><li><b>Methotrexate high-dose rescue:</b></li></ol>
+<p>A. N-acetylcysteine B. <b>Leucovorin (folinic acid)</b> ✓ C. Vitamin B12 D. Thymidine E. Glutathione</p>
+<ol><li><b>DILI management — first step always:</b></li></ol>
+<p>A. Start steroids B. <b>STOP SUSPECT DRUG</b> ✓ C. IV NAC D. Liver biopsy E. Transplant listing</p>
+<ol><li><b>Never rechallenge applies to which DILI type?</b></li></ol>
+<p>A. Intrinsic (dose-dependent) B. <b>Idiosyncratic</b> ✓ C. Both D. Neither E. Only Hy's Law cases</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>R-value formula</td><td>(ALT/ULN) ÷ (ALP/ULN)</td></tr><tr><td>Hepatocellular R</td><td>≥5</td></tr><tr><td>Cholestatic R</td><td>≤2</td></tr><tr><td>Mixed R</td><td>2–5</td></tr><tr><td>Hy's Law</td><td>ALT>3×ULN + Bil>2×ULN (no obstruction, no other cause) = 10–50% mortality</td></tr><tr><td>Intrinsic DILI</td><td>Dose-dependent, predictable (Paracetamol OD, MTX HD)</td></tr><tr><td>Idiosyncratic DILI</td><td>Unpredictable, rare (Flucloxacillin, INH, Diclofenac)</td></tr><tr><td>Paracetamol tox mechanism</td><td>NAPQI via CYP2E1 depletes glutathione → centrilobular necrosis</td></tr><tr><td>Paracetamol antidote</td><td>NAC (Rumack-Matthew nomogram 4–24h)</td></tr><tr><td>Flucloxacillin DILI</td><td>Cholestatic, HLA-DRB1*07:01/DQA1*02:01, elderly >50, 2–4wk</td></tr><tr><td>INH hepatotoxicity</td><td>Hepatocellular, risk: age>35, alcohol, RIF co-Rx; monthly LFTs</td></tr><tr><td>Valproate hepatotoxicity</td><td>Microvesicular steatosis → hyperammonaemia (mito β-oxidation inhibition)</td></tr><tr><td>Augmentin DILI</td><td>Cholestatic/mixed, >60y male, avoid re-exposure</td></tr><tr><td>Diclofenac DILI</td><td>Mixed, avoid in chronic liver disease</td></tr><tr><td>Anti-TB hepatotox</td><td>INH (hydrazine) + RIF (induces CYP2E1) → ↑ toxic metabolite</td></tr><tr><td>MTX HD rescue</td><td>Leucovorin based on 24h/48h levels</td></tr><tr><td>RUCAM domains</td><td>Time, Course, Risk factors, Concomitant, Exclusion, Previous, Rechallenge</td></tr><tr><td>RUCAM score >8</td><td>Highly probable</td></tr><tr><td>Never rechallenge</td><td>Idiosyncratic DILI</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — R = ALT/ULN ÷ ALP/ULN</li><li><b>C</b> — Hepatocellular R ≥5</li><li><b>C</b> — Hy's Law doesn't require ALP normal; it requires no obstruction</li><li><b>B</b> — NAPQI via CYP2E1</li><li><b>B</b> — Flucloxacillin = cholestatic</li><li><b>B</b> — Valproate = microvesicular steatosis + hyperammonaemia</li><li><b>B</b> — INH risk: age&gt;35, alcohol, rifampicin</li><li><b>C</b> — RUCAM -8 to +14</li><li><b>B</b> — &gt;8 = highly probable</li><li><b>B</b> — Augmentin: cholestatic/mixed, elderly males</li><li><b>A</b> — Valproate = microvesicular</li><li><b>B</b> — RIF induces CYP2E1 → ↑ toxic INH metabolite</li><li><b>B</b> — Leucovorin (folinic acid)</li><li><b>B</b> — STOP suspect drug</li><li><b>B</b> — Idiosyncratic DILI never rechallenge</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/Hepatic ADRs.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatic Adrs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

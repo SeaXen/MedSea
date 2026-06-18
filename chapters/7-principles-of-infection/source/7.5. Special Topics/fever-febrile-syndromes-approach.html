@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fever Febrile Syndromes Approach — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.5. SPECIAL TOPICS</span>
+      <div class="h1">Fever Febrile Syndromes Approach</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define fever, hyperthermia, and the major febrile syndromes</li><li>Differentiate the four categories of FUO (classic, nosocomial, immunocompromised, HIV-associated) and apply the modified criteria for each</li><li>Recognise fever patterns (continuous, remittent, intermittent, relapsing, hectic, Pel-Ebstein) and their differential diagnoses</li><li>Construct a structured diagnostic algorithm: history → examination → first-line investigations → second-line/imaging → targeted/biopsy</li><li>Identify red flags in special populations (returned traveller, neutropenic, post-operative, geriatric, paediatric)</li><li>Manage hyperthermia syndromes (cooling, dantrolene, cyproheptadine, bromocriptine)</li><li>Justify <b>why empirical therapy is NOT recommended</b> in classical FUO without a working diagnosis</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Normal core T**</td><td>36.0–37.5 °C; lowest at 06:00, highest at 16:00–18:00</td></tr><tr><td>**Fever**</td><td>Core T >37.8 °C in the morning OR >38.0 °C in the evening (Wunderlich/Mackowiak)</td></tr><tr><td>**Hyperthermia**</td><td>Core T >38 °C due to **failed thermoregulation** (heat production exceeds heat loss); hypothalamic set-point is unchanged. Antipyretics (paracetamol/NSAIDs) do NOT work</td></tr><tr><td>**Fever of unknown origin (FUO) – classic (Petersdorf-Beeson, 1961)**</td><td>Core T **>38.3 °C (101 °F) on several occasions**, duration **≥3 weeks**, no diagnosis after **1 week of intelligent inpatient investigation**</td></tr><tr><td>**Nosocomial FUO**</td><td>FUO developing in a patient hospitalised ≥48 h, where the cause was not present/incubating on admission</td></tr><tr><td>**Immunocompromised FUO**</td><td>FUO in a patient with **neutropenia, haematologic malignancy, HIV, transplant, or immunosuppressive therapy** — opportunistic pathogens dominate</td></tr><tr><td>**HIV-associated FUO**</td><td>FUO in confirmed HIV (CD4-guided differential)</td></tr><tr><td>**Neutropenic fever**</td><td>Single oral T ≥38.3 °C **OR** ≥38.0 °C sustained ≥1 h, in a patient with **ANC <0.5 × 10⁹/L or expected to fall <0.5**</td></tr><tr><td>**Post-operative fever**</td><td>Any new fever after surgery; cause is strongly time-dependent (see 5 W's)</td></tr><tr><td>**Drug fever**</td><td>Fever temporally related to a drug, unrelated to the underlying disease, resolving on withdrawal (± rechallenge)</td></tr><tr><td>**Factitious fever**</td><td>Self-induced (Munchausen) — typically absent in AM, no sweating with the spike, temperature-record discrepancy with simultaneous electronic measurement</td></tr><tr><td>**Hectic (septic) fever**</td><td>Wide daily swings >2 °C, often with rigors — abscess, sepsis, TB, lymphoma</td></tr><tr><td>**Pel-Ebstein fever**</td><td>Days–weeks of fever alternating with afebrile periods — classically **Hodgkin lymphoma** (only ~15% of cases)</td></tr><tr><td>**Relative bradycardia (Faget sign)**</td><td>HR <110/min with T ≥40 °C (or pulse-T deficit >1 °C/10 bpm) — typhoid, Legionella, Brucella, drug fever, CNS lesions, yellow fever, psittacosis, leishmaniasis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Pathophysiology of Fever vs Hyperthermia</div>
+<p>#### Key Points</p>
+<table class="ctable"><tr><th>Aspect</th><th>Fever</th><th>Hyperthermia</th></tr><tr><td>--------</td><td>-------</td><td>--------------</td></tr><tr><td>Set-point</td><td>Raised by pyrogens (PGE₂)</td><td>Unchanged</td></tr><tr><td>Mechanism</td><td>IL-1β, IL-6, TNF-α → COX-2 → PGE₂ in pre-optic area</td><td>Heat gain > heat loss</td></tr><tr><td>Sweating</td><td>Yes (once set-point raised)</td><td>Impaired or overwhelmed</td></tr><tr><td>Response to antipyretics</td><td>Yes — paracetamol, NSAIDs (downregulate COX/PGE₂)</td><td>**No** — only physical cooling</td></tr><tr><td>Response to cooling</td><td>Patient defends new set-point (shivers)</td><td>Patient does not defend set-point</td></tr><tr><td>Examples</td><td>Infection, inflammation, malignancy, drug</td><td>Heat stroke, MH, NMS, SS, thyrotoxicosis, ecstasy, phaeo</td></tr></table>
+<p>#### Thermoregulatory Pathways</p>
+<table class="ctable"><tr><th>Step</th><th>Mediator</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>1</td><td>Exogenous (LPS) or endogenous (IL-1, IL-6, TNF-α, IFN-γ) pyrogen</td></tr><tr><td>2</td><td>Pyrogen acts on hypothalamic endothelium/perivascular cells</td></tr><tr><td>3</td><td>Induces **COX-2** → **PGE₂** in median pre-optic nucleus</td></tr><tr><td>4</td><td>PGE₂ raises set-point via cAMP</td></tr><tr><td>5</td><td>Effector: vasoconstriction, shivering, behavioural response</td></tr><tr><td>6</td><td>Heat conservation/ generation produces fever</td></tr></table>
+<div class="callout"><b>Antipyretics work by inhibiting COX → less PGE₂ → set-point returns to normal</b> (this is why they do <b>not</b> work in hyperthermia — the set-point is already normal).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Fever Patterns and Their Differential</div>
+<table class="ctable"><tr><th>Pattern</th><th>Description</th><th>Classic Causes</th></tr><tr><td>---------</td><td>-------------</td><td>----------------</td></tr><tr><td>**Continuous**</td><td>Diurnal variation <1 °C, no afebrile periods</td><td>Typhoid ("step-ladder"), drug fever, Brucella (concatenated)</td></tr><tr><td>**Remittent**</td><td>Daily variation >1 °C, baseline above normal</td><td>Most bacterial infections, IE, TB, lymphoma, SLE</td></tr><tr><td>**Intermittent (quotidian/tertian/quartan)**</td><td>Fever spikes with afebrile intervals</td><td>Malaria (P.falciparum = quotidian/irregular; P.vivax/ovale = tertian; P.malariae = quartan), abscess, pyelonephritis</td></tr><tr><td>**Hectic (septic)**</td><td>Wide swings >2 °C with rigors</td><td>Abscess, sepsis, TB, lymphoma, malaria</td></tr><tr><td>**Relapsing**</td><td>Febrile episodes separated by days of apyrexia</td><td>Borrelia (relapsing fever), Brucella, rat-bite fever, malaria, yellow fever, lymphomas (Pel-Ebstein)</td></tr><tr><td>**Pel-Ebstein**</td><td>3–10 days fever, 3–10 days afebrile, cycling</td><td>**Hodgkin lymphoma** (15–20% of HL only)</td></tr><tr><td>**Double-quotidian**</td><td>Two spikes / 24 h</td><td>Still's disease, leishmaniasis, malaria, IE, gonococcal endocarditis</td></tr><tr><td>**Saddleback / Camelback**</td><td>Biphasic curve</td><td>Dengue, West Nile, Colorado tick, Lassa, EBV, HIV seroconversion, poliomyelitis</td></tr><tr><td>**Inverse (typhus inversus)**</td><td>T highest in AM</td><td>**Typhus** (epidemic/murine), brucellosis</td></tr></table>
+<div class="callout"><b>Clinical pearl:</b> Pattern is rarely diagnostic in isolation — always integrate with geography, exposures, immune status. Asking patients to chart T 6-hourly for 1–2 weeks can unmask Pel-Ebstein or relapsing fever.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: Fever of Unknown Origin (FUO) — Classic (Petersdorf-Beeson)</div>
+<p>#### Modified Criteria (Durack &amp; Street, 1991)</p>
+<table class="ctable"><tr><th>Element</th><th>Classic</th><th>Nosocomial</th><th>Immunocompromised</th><th>HIV-associated</th></tr><tr><td>---------</td><td>---------</td><td>------------</td><td>-------------------</td><td>----------------</td></tr><tr><td>Temperature</td><td>>38.3 °C</td><td>>38.3 °C</td><td>>38.3 °C</td><td>>38.3 °C</td></tr><tr><td>Duration</td><td>≥3 weeks</td><td>≥3 days (excluded baseline)</td><td>≥3 days</td><td>≥3 days (outpatient) / ≥1 day inpatient</td></tr><tr><td>Required investigation</td><td>≥3 outpatient visits **or** ≥3 days inpatient</td><td>≥3 days inpatient</td><td>≥3 days inpatient</td><td>≥3 days outpatient / inpatient</td></tr><tr><td>Disease onset</td><td>Outside hospital OR not incubating at admission</td><td>During hospitalisation</td><td>When immune deficit is present</td><td>After HIV confirmed</td></tr></table>
+<p>#### Aetiology of Classic FUO</p>
+<table class="ctable"><tr><th>Group</th><th>Approx. %</th><th>Common Conditions</th></tr><tr><td>-------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Infection**</td><td>**~30 %**</td><td>TB (esp. miliary & extrapulmonary), deep abscess (intra-abdominal, pelvic, psoas, dental), subacute bacterial endocarditis (SBE), osteomyelitis, brucellosis, Q fever (*Coxiella burnetii*), typhoid/enteric fever, malaria, visceral leishmaniasis (kala-azar), HIV (acute seroconversion), EBV, CMV, toxoplasmosis, Whipple disease, cat-scratch disease, rat-bite fever</td></tr><tr><td>**Neoplasm**</td><td>**~20 %**</td><td>**Lymphoma** (HL, NHL), CLL, **renal cell carcinoma** (Stauffer syndrome), hepatocellular carcinoma, atrial myxoma, AML, Castleman disease, mixed cryoglobulinaemia-associated</td></tr><tr><td>**Non-infectious inflammatory**</td><td>**~15 %**</td><td>**SLE**, **Still's disease (adult/adult-onset)**, **giant-cell arteritis (GCA)**, **polymyalgia rheumatica (PMR)**, sarcoidosis, IBD (Crohn's > UC), vasculitides (Takayasu, Behçet, PAN), rheumatoid arthritis, relapsing polychondritis, Sweet's syndrome, Kikuchi disease</td></tr><tr><td>**Miscellaneous**</td><td>**~10 %**</td><td>**DVT/PE**, **drug fever**, factitious, habitual hyperthermia, familial Mediterranean fever (FMF), TRAPS, hyper-IgD syndrome, cyclic neutropenia, subacute thyroiditis (de Quervain), adrenal insufficiency, post-cardiac injury (Dressler), haematoma resorption, G-CSF therapy</td></tr><tr><td>**Undiagnosed**</td><td>**~25 %**</td><td>Most self-resolve; mortality lower than resolved cases</td></tr></table>
+<div class="callout"><b>Worked differential by "system-based" search:</b> Always scan <b>S</b>kin (rash, eschar, splinter), <b>L</b>ymph nodes, <b>H</b>eart (murmur, regurg), <b>A</b>bdomen (hepatosplenomegaly, mass), <b>B</b>ones (spine tenderness), <b>J</b>oints, <b>E</b>yes (uveitis, Roth spots, choroid lesions), <b>N</b>eurological.</div>
+<p>#### "Hidden Hot Spots" of Classic FUO</p>
+<ul><li><b>Miliary TB</b> (CXR may be normal early; look for choroidal tubercles on fundoscopy)</li><li><b>Subacute IE</b> in culture-negative (HACEK, <i>Coxiella</i>, <i>Bartonella</i>, <i>Tropheryma whipplei</i>)</li><li><b>Abscess:</b> subphrenic, psoas, perinephric, tubo-ovarian, dental, prostatic</li><li><b>Atrial myxoma</b> (constitutional + emboli + mid-diastolic plop)</li><li><b>GCA/PMR</b> (over age 50, headache, jaw claudication, vision, ESR/CRP)</li><li><b>Still's disease</b> (quotidian spikes, evanescent salmon rash, arthralgia, ferritin &gt;3000)</li><li><b>Castleman disease / lymphoma</b> (Pel-Ebstein, lymphadenopathy, ferritin)</li><li><b>Drug fever</b> (temporal, relative bradycardia, eosinophilia, rash, resolves on stop)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Nosocomial FUO</div>
+<p>Fever arising <b>≥48 h after admission</b>, unrelated to admission diagnosis. Causes (the "3 W's" + extras):</p>
+<table class="ctable"><tr><th>Category</th><th>Common Causes</th></tr><tr><td>----------</td><td>---------------</td></tr><tr><td>**Wound**</td><td>Surgical site infection, deep wound dehiscence, cellulitis</td></tr><tr><td>**Water (urine/IV)**</td><td>Catheter-associated UTI (CAUTI), line infection (CLABSI — *S. epidermidis*, *S. aureus*, *Candida*, Gram-negatives), IV fluid contamination, contaminated blood products</td></tr><tr><td>**Wind (pulmonary)**</td><td>Hospital-acquired pneumonia (HAP), ventilator-associated pneumonia (VAP), aspiration</td></tr><tr><td>**Walking (DVT/PE)**</td><td>Post-op immobility, central lines, hypercoagulable malignancy</td></tr><tr><td>**Wonder drugs**</td><td>Drug fever (anticonvulsants, antibiotics — β-lactams, sulphonamides, allopurinol, heparin, antipsychotics)</td></tr><tr><td>**Devices**</td><td>Endocarditis on prosthetic valve/pace wire, CSF shunt infection, prosthetic joint</td></tr><tr><td>**C. difficile**</td><td>Antibiotic-associated colitis (check stool toxin/PCR)</td></tr><tr><td>**Transfusion reaction**</td><td>Febrile non-haemolytic (anti-HLA, anti-leukocyte antibodies)</td></tr><tr><td>**Acalculous cholecystitis**</td><td>ICU, TPN, severe burns, trauma, vasopressors — high mortality</td></tr><tr><td>**Sinusitis (nasogastric tubes)**</td><td>Critically ill, NG/OG tubes obstructing ostia</td></tr><tr><td>**Decubitus ulcer**</td><td>Polymicrobial, often with bacteraemia</td></tr><tr><td>**Parotitis (sialadenitis)**</td><td>Dehydrated/post-op/elderly</td></tr></table>
+<div class="callout"><b>Diagnostic focus:</b> Two-step — review all devices/lines/drains (and consider removal), review all drugs (stop non-essential), targeted imaging (CT abdo/pelvis, CXR, US Doppler for DVT).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Immunocompromised FUO (Non-HIV)</div>
+<p>Predominant causes shift dramatically with the type of immune deficit:</p>
+<table class="ctable"><tr><th>Host Type</th><th>Key Pathogens</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Neutropenic (ANC <0.5)**</td><td>Gram-negatives (*E. coli*, *Klebsiella*, *Pseudomonas*), *S. aureus*, viridans streptococci, *Candida* (esp. *C. tropicalis*), *Aspergillus*, *Mucorales*; reactivation TB/HSV/VZV less commonly in early neutropenia</td></tr><tr><td>**Haematologic malignancy / BMT**</td><td>Above + **CMV**, **EBV (PTLD)**, **PCP** (post-engraftment), **disseminated fungi** (*Aspergillus*, *Mucor*, *Histoplasma*, *Pneumocystis*), **Toxoplasma**, **Nocardia**, *Strongyloides* hyperinfection, *Mycobacterium* (rapid & slow growers), HHV-6</td></tr><tr><td>**Solid organ transplant**</td><td>Early (<1 mo): bacterial wound/catheter; 1–6 mo: CMV, EBV-PTLD, *Pneumocystis*, *Listeria*, *Nocardia*, *Toxoplasma*, fungi; >6 mo: community-acquired + chronic viral</td></tr><tr><td>**Corticosteroids / biologics (anti-TNF, rituximab)**</td><td>Reactivation TB, HBV, *Strongyloides*, fungi, NTM, PML (JC virus)</td></tr><tr><td>**General IDU / asplenia**</td><td>Encapsulated organisms (*S. pneumoniae*, *H. influenzae*, *N. meningitidis*), *Capnocytophaga*, babesiosis</td></tr></table>
+<p>#### Approach</p>
+<ul><li>Bloods: FBC + differential, LFT, LDH, ferritin, β-D-glucan, galactomannan, <i>Cryptococcus</i> Ag, CMV/EBV PCR, <i>Toxoplasma</i> serology/PCR, HIV, <i>Strongyloides</i> serology</li><li>Imaging: <b>CT chest/abdomen/pelvis ± brain</b> (low threshold), HRCT for invasive aspergillosis</li><li>Special: BAL if pulmonary, biopsy of any accessible node/liver/skin, bone marrow aspirate + trephine (with culture, AFB, fungal, PCR), consider <b>FDG-PET/CT</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: HIV-Associated FUO</div>
+<table class="ctable"><tr><th>CD4 Stratum (×10⁶/L)</th><th>Likely Pathogens</th></tr><tr><td>------------------------</td><td>------------------</td></tr><tr><td>**>200**</td><td>TB, MAC (early), bacterial pneumonia, sinusitis, viral (CMV mononucleosis, HBV, HCV), lymphoma, KS, drug fever</td></tr><tr><td>**<200**</td><td>Above + **PCP**, *Toxoplasma*, *Cryptococcus*, HSV/VZV disseminated, cryptococcal fungaemia</td></tr><tr><td>**<100**</td><td>Above + **disseminated MAC**, **CMV** (retinitis, colitis, pneumonitis), *Histoplasma*, *Coccidioides*, *Penicillium marneffei* (SE Asia), PML, *Bartonella* (bacillary angiomatosis)</td></tr><tr><td>**<50**</td><td>Above + visceral leishmaniasis, *Aspergillus*, *Alternaria*, TBM, PML</td></tr></table>
+<div class="callout"><b>Always consider</b> IRIS (immune reconstitution inflammatory syndrome) within weeks of ART initiation — paradoxical worsening on therapy. <b>Re-activation TB</b>, disseminated MAC, cryptococcal IRIS, CMV uveitis, KS-IRIS.</div>
+<p>#### Specific Tests to Send</p>
+<ul><li>Three sputum AFB + TB culture + GeneXpert</li><li>Serum/urine <i>Cryptococcus</i> Ag</li><li>Blood CMV/EBV PCR, β-D-glucan, galactomannan</li><li><i>Histoplasma</i>/galactomannan Ag (urine/serum)</li><li>Bone marrow aspirate + biopsy (incl. AFB, fungal, leishmania amastigotes)</li><li>CT brain ± LP (opening pressure, CrAg, TB PCR)</li><li>Lymph node/extranodal biopsy</li><li>FDG-PET/CT (huge diagnostic yield in HIV-FUO)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: Paediatric FUO</div>
+<p>Definition adapted: <b>T ≥38.0 °C (rectal) or ≥37.5 °C (axillary) for ≥2 weeks</b>, with no diagnosis despite basic work-up.</p>
+<table class="ctable"><tr><th>Group</th><th>Common Causes</th></tr><tr><td>-------</td><td>---------------</td></tr><tr><td>**<3 years**</td><td>UTI, viral exanthemata, occult bacteraemia (*S. pneumoniae*, *H. influenzae*, *N. meningitidis*), roseola, otitis, Kawasaki (esp. <2 yrs), EBV, CMV, TB, salmonella</td></tr><tr><td>**3–12 years**</td><td>EBV, CMV, toxoplasmosis, cat-scratch (*B. henselae*), Lyme, rheumatic fever, post-strep, Still's disease (systemic JIA), IBD, lymphoma (HL)</td></tr><tr><td>**>12 years**</td><td>EBV, TB, endocarditis, lymphoma, Still's, SLE, drug, factitious, IBD, periodic fever syndromes</td></tr></table>
+<p>#### Red Flags in Children</p>
+<ul><li>Age &lt;3 months with fever ≥38 °C → "amber/red" → full sepsis work-up</li><li>Persistent fever ≥5 days + rash + lymphadenopathy → Kawasaki (irreversible coronary aneurysms)</li><li>Daily spikes ≥39 °C ≥2 weeks → Still's, JIA</li><li>Travel, animal exposure, pica (Toxocara), tick exposure</li><li><b>Periodic fever syndromes:</b> FMF (MEFV), TRAPS (TNFRSF1A), HIDS/MKD (MVK), CAPS (NLRP3), PFAPA (aphthous, pharyngitis, adenitis)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 8: Diagnostic Approach — Stepwise</div>
+<p>#### Step 1: Comprehensive History (&gt;50% of diagnoses)</p>
+<table class="ctable"><tr><th>Domain</th><th>Specific Clues</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Timeline**</td><td>Date of onset, pattern, periodicity, prodrome, response to abx/NSAIDs</td></tr><tr><td>**Fever curve**</td><td>4-hourly chart × 2 weeks</td></tr><tr><td>**Exposures**</td><td>Farm/wet hay (Q fever, brucellosis), rodents (leptospira, rat-bite, plague, tularaemia), birds (psittacosis, *Histo*/crypto), sheep/cattle (brucella, Q, anthrax), unpasteurised dairy (listeria, brucella, TB), undercooked meat (Toxoplasma, *Yersinia*, trichinella), raw fish (clonorchis, anisakis)</td></tr><tr><td>**Animal bites/scratches**</td><td>Cat = *Bartonella*; dog = rabies, *Capnocytophaga*, pasteurella; rat = rat-bite fever; tick = RMSF, ehrlichia, anaplasma, lyme, babesia, tularaemia</td></tr><tr><td>**Travel**</td><td>Malaria, typhoid, viral haemorrhagic, typhus, leishmania, melioidosis, scrub typhus, schistosomiasis, histo, coccidioidomycosis</td></tr><tr><td>**Sexual**</td><td>HIV, syphilis, gonococcal DGI, HBV, CMV, HSV</td></tr><tr><td>**Drugs**</td><td>All prescribed, OTC, herbal, recreational (cocaine, ecstasy → hyperthermia), recent antibiotics (drug fever, *C. difficile*)</td></tr><tr><td>**Surgical / device**</td><td>Prosthetic valves, joints, pacemakers, lines, stents, foreign bodies</td></tr><tr><td>**Vaccinations**</td><td>Live vaccine infection in immunocompromised</td></tr><tr><td>**Family**</td><td>FMF, familial Hibernian fever, malignancy, autoimmune</td></tr><tr><td>**Occupation**</td><td>Veterinarian, abattoir, lab, healthcare, plumber (leptospira), outdoors (lyme, RMSF)</td></tr><tr><td>**Pets / plants**</td><td>Cats, reptiles (*Salmonella*), aquarium (*Mycobacterium marinum*), prickly plants (sporotrichosis)</td></tr><tr><td>**Diet**</td><td>Raw seafood, wild game, unpasteurised, well water</td></tr></table>
+<div class="callout"><b>Viva tip:</b> The history must be repeated on <b>at least three separate occasions</b> — patients recall new exposures each time. Family/partners often supply the missing data.</div>
+<p>#### Step 2: Examination (head-to-toe, repeated daily)</p>
+<table class="ctable"><tr><th>Region</th><th>What to look for</th></tr><tr><td>--------</td><td>------------------</td></tr><tr><td>**General**</td><td>Cachexia, sweating pattern, rigors</td></tr><tr><td>**Skin**</td><td>Rash (evanescent salmon = Still's; malar = SLE; rose spots = typhoid; petechiae = meningococcaemia, RMSF; erythema migrans = lyme; erythema nodosum = TB, sarcoid, IBD; eschar = rickettsial, *B. anthracis*; palpable purpura = vasculitis)</td></tr><tr><td>**Eyes**</td><td>Conjunctival suffusion (leptospira), uveitis (sarcoid, Behçet, JIA), Roth spots, choroidal tubercles (miliary TB), CMV retinitis, Kayser-Fleischer</td></tr><tr><td>**Lymph nodes**</td><td>Tender regional (TB, *Bartonella*), rubbery (lymphoma), matted (TB, sarcoid), generalised (HIV, lymphoma, SLE)</td></tr><tr><td>**Cardiac**</td><td>New/ changing murmur (IE, myxoma), pericardial rub (TB, uraemia, autoimmune), mid-diastolic plop (myxoma)</td></tr><tr><td>**Abdomen**</td><td>Hepatomegaly, splenomegaly (IE, typhoid, leishmania, lymphoma, malaria), masses, renal angle tenderness, suprapubic, costovertebral angle</td></tr><tr><td>**Joints**</td><td>Synovitis, sacroiliac, enthesitis</td></tr><tr><td>**Spine**</td><td>Vertebral tenderness (osteomyelitis, discitis, TB spine)</td></tr><tr><td>**Prostate / pelvis**</td><td>Prostatic abscess, PID, tubo-ovarian</td></tr><tr><td>**Veins / calf**</td><td>DVT signs</td></tr><tr><td>**Fundi**</td><td>Roth spots, choroidal tubercles, cytomegalovirus, "candle-wax drippings" (Candidiasis)</td></tr><tr><td>**Lifestyle clues**</td><td>Injection sites (IDU), travel tattoos, "track marks"</td></tr></table>
+<p>#### Step 3: First-line Investigations</p>
+<table class="ctable"><tr><th>Test</th><th>Rationale</th></tr><tr><td>------</td><td>-----------</td></tr><tr><td>**FBC + film**</td><td>Atypical lymphocytes (EBV/CMV, leishmania), pancytopenia (lymphoma, miliary TB, leishmania, SLE), eosinophilia (parasites, drug, lymphoma, Churg-Strauss, adrenal), monocytosis (TB, lymphoma, IE), leukopenia (typhoid, brucella, leishmania, SLE)</td></tr><tr><td>**ESR / CRP**</td><td>Markedly raised (>100) → GCA, abscess, myeloma, Still's, TB, IE; normal CRP argues against significant inflammation</td></tr><tr><td>**LFT + LDH**</td><td>Hepatitis pattern (viral, drugs), cholestatic (PBC, lymphoma), LDH ↑ in lymphoma, ATLL</td></tr><tr><td>**U&E, Ca²⁺, alb, glob, ferritin**</td><td>Hypercalcaemia (TB, sarcoid, myeloma), ferritin >3000 (Still's, HLH, malignancy)</td></tr><tr><td>**Blood cultures ×3 (aerobic + anaerobic, from separate sites, ± fungal)**</td><td>Subacute IE, typhoid, brucella, *Bartonella*, HACEK; hold for ≥7 days; consider lysis-centrifugation for fungi/mycobacteria</td></tr><tr><td>**Urinalysis + culture**</td><td>UTI, sterile pyuria (TB, lymphoma, SLE, analgesic nephropathy)</td></tr><tr><td>**Stool MCS / ova/cyst/parasites / *C. difficile* toxin**</td><td>If diarrhoea; *C. difficile* in antibiotic-exposed</td></tr><tr><td>**CXR (PA + lateral)**</td><td>TB, sarcoid, abscess, lymphoma, IE with septic emboli</td></tr><tr><td>**HIV serology (4th gen Ag/Ab)**</td><td>Mandatory in every FUO</td></tr><tr><td>**EBV VCA IgM/IgG + EBNA; CMV IgM/IgG ± PCR**</td><td>Mononucleosis syndromes</td></tr><tr><td>**RF, ANA, anti-dsDNA, ENA panel, ANCA, complement**</td><td>Autoimmune screen</td></tr><tr><td>**Mantoux / IGRA (QuantiFERON/T-SPOT)**</td><td>TB (caveat: may be negative in miliary/sarcoid)</td></tr><tr><td>**Hepatitis B & C serology**</td><td>Viral hepatitis, cryoglobulinaemia</td></tr><tr><td>**Lactate, procalcitonin (PCT), ferritin, triglycerides**</td><td>SIRS/sepsis, HLH, Still's</td></tr><tr><td>**Malaria rapid antigen + thick & thin smears ×3 (q12–24 h)**</td><td>In any traveller / endemic area exposure</td></tr><tr><td>**Blood films for parasites**</td><td>Babesia, trypanosomes, microfilaria</td></tr><tr><td>**Serology:** *Brucella, Coxiella (Q), Bartonella, Leptospira, Histoplasma, Coccidioides, Toxoplasma, HIV, EBV, CMV, syphilis, Lyme, Rickettsia, Toxocara*</td><td>Geography/ exposure-driven</td></tr><tr><td>**Stool for occult blood**</td><td>IBD, malignancy</td></tr><tr><td>**Procalcitonin**</td><td>Bacterial > viral (helps rule in bacterial aetiology; PCT-guided antibiotic stewardship reduces abx use)</td></tr></table>
+<p>#### Step 4: Second-line / Targeted Imaging</p>
+<table class="ctable"><tr><th>Modality</th><th>Indication</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Abdominal/pelvic CT (with contrast)**</td><td>Most useful single test; intra-abdominal abscess, lymphadenopathy (TB, lymphoma, sarcoid, Whipple), organomegaly, renal masses</td></tr><tr><td>**Chest CT (HRCT)**</td><td>Granulomas, miliary, fungal, vasculitis, sarcoid, septic emboli</td></tr><tr><td>**TTE → TEE**</td><td>Any suspicion of IE, myxoma, pericardial disease</td></tr><tr><td>**FDG-PET/CT**</td><td>"Second revolution" of FUO work-up — high diagnostic yield (~50–60 %); identifies occult malignancy, vasculitis, infection, lymphoma; also guides biopsy</td></tr><tr><td>**Gallium-67 scan / labelled-WBC scan**</td><td>Alternative if PET unavailable</td></tr><tr><td>**MRI brain ± spine**</td><td>CNS abscess, toxoplasmosis, lymphoma, demyelination, osteomyelitis, discitis</td></tr><tr><td>**Doppler US / CTPA**</td><td>Suspected DVT/PE</td></tr><tr><td>**Endoscopy (OGD/colonoscopy) + biopsy**</td><td>IBD, Whipple, malignancy, enteric TB</td></tr><tr><td>**ERCP / MRCP**</td><td>Cholangitis, pancreatic</td></tr></table>
+<p>#### Step 5: Invasive / Histology</p>
+<ul><li><b>Bone marrow aspirate + trephine</b> (with AFB, fungal, <i>Leishmania</i> amastigotes, cytogenetics, flow, culture) — invaluable in HIV, leishmania, miliary TB, lymphoma, HLH</li><li><b>Lymph node biopsy</b> (excisional &gt; FNA): lymphoma, TB, sarcoid, Kikuchi, Castleman, metastatic</li><li><b>Liver biopsy</b> (TB, sarcoid, lymphoma, granulomatous hepatitis)</li><li><b>Temporal artery biopsy</b> (GCA, age &gt;50, vision symptoms, very high ESR)</li><li><b>Skin / muscle biopsy</b> (vasculitis, panniculitis, dermatomyositis)</li><li><b>Lumbar puncture</b> (CNS signs/ returned traveller): cell count, protein, glucose, MCS, TB PCR, CrAg, viral PCR, VDRL</li><li><b>Bronchoscopy + BAL ± transbronchial biopsy</b> (PCP, fungi, TB, lymphoma, sarcoid)</li><li><b>Tooth / tonsillar / sinus / wound / aspirate culture</b> as indicated</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 9: Special Populations</div>
+<table class="ctable"><tr><th>Population</th><th>Key Considerations</th></tr><tr><td>------------</td><td>--------------------</td></tr><tr><td>**Returned traveller**</td><td>Malaria (always exclude first), typhoid, dengue, viral haemorrhagic, hepatitis, typhus, leptospirosis, melioidosis, schistosomiasis, leishmaniasis, *Histoplasma*, *Penicillium*, strongyloides, *Entamoeba histolytica* (liver abscess)</td></tr><tr><td>**Elderly**</td><td>Often **afebrile or hypothermic** for the same infection; non-specific decline ("off legs", confusion, falls); think of UTI, pneumonia, abdominal catastrophe, IE, GCA/PMR, malignancy, drug</td></tr><tr><td>**Pregnant**</td><td>Listeria, CMV, parvovirus B19, malaria (severe), UTI, septic abortion, DVT, chorioamnionitis</td></tr><tr><td>**ICU**</td><td>VAP, CLABSI, acalculous cholecystitis, sinusitis (NG), decubitus ulcers, drug fever, transfusion reaction, central line-related thrombosis, HIT, drug-induced hyperthermia</td></tr><tr><td>**Injection drug use**</td><td>IE (tricuspid, *S. aureus*, *Candida*), epidural abscess, tetanus, botulism, HIV, HBV/HCV, *Aspergillus* (contaminated heroin)</td></tr><tr><td>**Asplenia**</td><td>Overwhelming post-splenectomy sepsis (OPSI) — encapsulated organisms; babesiosis, *Capnocytophaga*</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 10: Hyperthermia Syndromes — Recognition and Management</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Trigger</th><th>Features</th><th>Treatment</th></tr><tr><td>----------</td><td>---------</td><td>----------</td><td>-----------</td></tr><tr><td>**Heat stroke (classic)**</td><td>Hot environment, elderly, comorbidities</td><td>T ≥40 °C, AMS, anhidrosis (hot dry skin)</td><td>**Aggressive cooling** (cold-water/ice immersion for exertional; evaporative for classic), supportive care, no antipyretics</td></tr><tr><td>**Heat stroke (exertional)**</td><td>Young, exercise, hot humid</td><td>T ≥40 °C, **diaphoresis**, DIC, rhabdomyolysis, AKI</td><td>Rapid ice-water immersion is the gold standard</td></tr><tr><td>**Malignant hyperthermia (MH)**</td><td>Volatile anaesthetics, succinylcholine</td><td>T ↑↑ (often late), muscle rigidity, masseter spasm, hypercapnia, hyperkalaemia, acidosis</td><td>**Dantrolene 2.5 mg/kg IV bolus**, repeat q5–10 min; cool, treat hyperkalaemia, arrhythmias</td></tr><tr><td>**Neuroleptic malignant syndrome (NMS)**</td><td>Dopamine antagonists (antipsychotics, antiemetics)</td><td>T ↑↑, "lead-pipe" rigidity, autonomic instability, AMS, **CK very high**, days–weeks onset</td><td>Stop drug, supportive, **dantrolene / bromocriptine / amantadine**, benzodiazepines</td></tr><tr><td>**Serotonin syndrome**</td><td>SSRIs, MAOIs, tramadol, linezolid, MDMA, St John's Wort</td><td>T ↑, neuromuscular hyperactivity (clonus, hyperreflexia), agitation, diaphoresis, dilated pupils, GI hypermotility, **hours onset**</td><td>Stop drug, **cyproheptadine** 12 mg then 2 mg q2 h, supportive, active cooling</td></tr><tr><td>**Anticholinergic toxicity**</td><td>TCAs, antihistamines, jimsonweed</td><td>"Hot as a hare, dry as a bone, red as a beet, blind as a bat, mad as a hatter"</td><td>Physostigmine (TCA-excluded), cooling</td></tr><tr><td>**Sympathomimetic (cocaine/ecstasy)**</td><td>Stimulant drugs</td><td>T ↑, agitation, seizures, rhabdomyolysis, hyponatraemia (ecstasy)</td><td>Benzodiazepines, cooling, supportive</td></tr><tr><td>**Thyrotoxicosis (storm)**</td><td>Precipitant (surgery, infection, iodinated contrast)</td><td>T ↑, tachy, AF, agitation, CHF</td><td>Propranolol, PTU, iodine, hydrocortisone, cooling</td></tr><tr><td>**Phaeochromocytoma**</td><td>Spontaneous / drugs</td><td>Paroxysmal HTN, tachy, sweating, pallor, headache</td><td>Phentolamine, SNP, α-blockade first</td></tr></table>
+<div class="callout"><b>Cooling methods:</b> Evaporative (spray + fan), ice-water immersion (best for exertional), ice packs to groin/axillae/neck, cooling blankets, gastric/rectal lavage (rarely used), IV cold fluids, ECMO in refractory cases. <b>NB: antipyretics DO NOT work in hyperthermia</b> — patient does not defend an elevated set-point because there is none.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 11: Empiric Therapy — The FUO Rule</div>
+<div class="callout">[!warning] <b>In classical FUO, empirical therapy is NOT recommended unless the patient deteriorates or a specific treatable cause is strongly suspected.</b></div>
+<table class="ctable"><tr><th>Rationale</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>Hides diagnosis</td><td>Steroids mask lymphoma, Still's, GCA, TB</td></tr><tr><td>Drug fever</td><td>Empirical antibiotics cause another fever</td></tr><tr><td>Antimicrobial resistance</td><td>Indiscriminate broad-spectrum abx breed MDR organisms</td></tr><tr><td>Toxicity</td><td>Empirical ATT, anti-malarials, antifungals all have adverse effects</td></tr><tr><td>**Exceptions (where it is acceptable)**</td><td>Culture-negative IE with sepsis, miliary TB with positive IGRA/PPD + clinical, typhoid with positive Widal in endemic area, PCP in HIV, cryptococcal meningitis, suspected temporal arteritis with vision loss (start pred + tocilizumab immediately), haemodynamic instability (sepsis protocol)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>-------------------</td><td>--------------</td></tr><tr><td>45-y farmer, 4 wks fever, weight loss, mild hepatomegaly, normal CXR</td><td>Miliary TB can present with normal CXR; check fundi (choroidal tubercles), HRCT, blood & urine AFB, bone marrow</td><td>Empirical ATT if strongly suspected + deteriorating</td></tr><tr><td>60-y woman, jaw claudication, ESR 110, headache</td><td>GCA — start **prednisolone 40–60 mg** (or IV methylpred 500–1000 mg if visual symptoms) **before biopsy**</td><td>Biopsy within 2 weeks of starting steroids still informative</td></tr><tr><td>30-y IVDU, daily fevers 6 wks, septic emboli, TTE shows tricuspid vegetation</td><td>IE in IDU — *S. aureus* most likely; do TEE, blood cultures ×3, screen for metastatic abscesses (lung, brain)</td><td>Empirical fluclox + gent (or vancomycin if MRSA risk) after cultures</td></tr><tr><td>25-y returned from Kenya, daily spikes 4 wks, splenomegaly, platelets 80</td><td>Exclude malaria **first** (3 smears + RDT), then visceral leishmaniasis, typhoid, schisto</td><td>Empirical anti-malarial only if smears repeatedly positive; otherwise specific</td></tr><tr><td>HIV patient, CD4 35, T 39 °C 3 wks, weight loss, lymphadenopathy, mild transaminitis</td><td>Disseminated MAC, TB, histo, cryptococcus, lymphoma, IRIS</td><td>Send CrAg, blood/urine AFB + TB culture, BM biopsy, CT chest/abdomen, FDG-PET</td></tr><tr><td>55-y with 5 wks fever, evanescent salmon rash, arthralgia, ferritin 12 000</td><td>Adult Still's disease — daily/quotidian spikes, salmon rash, sore throat, ferritin >3000, leukocytosis</td><td>Trial of **NSAIDs → corticosteroids → methotrexate / IL-1 (anakinra)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know:</b> FUO = &gt;38.3 °C × ≥3 weeks + no diagnosis after 1 week of inpatient work-up. Categories: classic, nosocomial, immunocompromised, HIV. - <b>Pattern recognition:</b> Pel-Ebstein = Hodgkin; continuous = typhoid; relapsing = borrelia/malaria/brucella; hectic (septic) = abscess; saddleback = dengue; inverse = typhus. - <b>Investigation ladder:</b> History × 3 → exam (incl. fundi, skin, nodes) → 1st-line labs (incl. HIV, BC×3, malaria smears) → CT chest/abdomen/pelvis → FDG-PET/CT → targeted biopsy. - <b>Empirical therapy is NOT recommended</b> in classical FUO — exception is GCA with visual symptoms. - <b>Hyperthermia ≠ fever</b> — antipyretics do not work; use cooling ± dantrolene/cyproheptadine/bromocriptine. - <b>Common viva:</b> 4 categories of FUO, post-op fever timeline (5 W's), drug fever clues, "always rule out malaria in a returned traveller first", neutropenic fever = empirical tazocin ± gent within 1 h.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>"FUO = 2 weeks"</td><td>≥3 weeks in classic; ≥3 days for nosocomial/immunocompromised/HIV</td></tr><tr><td>"Pel-Ebstein = pathognomonic of HL"</td><td>Only ~15 % of HL; not specific</td></tr><tr><td>"Antipyretics work in heat stroke"</td><td>**No** — they are useless in hyperthermia (set-point is normal)</td></tr><tr><td>"Dantrolene for serotonin syndrome"</td><td>Dantrolene = MH/NMS; **cyproheptadine** = serotonin syndrome</td></tr><tr><td>"Post-op day 1 fever = wound infection"</td><td>Day 0–1 = atelectasis (or transfusion, malignant hyperthermia); wound infection 5–7 days</td></tr><tr><td>"Eosinophilia = parasites"</td><td>Also: drug, lymphoma, Churg-Strauss, sarcoid, Addison, vasculitis</td></tr><tr><td>"Malaria smear is single test"</td><td>Need **3 thick/thin smears 12–24 h apart** + RDT — parasitaemia may fluctuate</td></tr><tr><td>"FUO = antibiotics while investigating"</td><td>Empirical abx rarely help; can mask & harm; only for specific syndromes</td></tr><tr><td>"Drug fever always has rash"</td><td>Often "fever only"; 50 % no rash; relative bradycardia, eosinophilia, temporal relationship</td></tr><tr><td>"Steroids OK for any FUO"</td><td>Steroids mask lymphoma, TB, Still's, GCA — avoid unless indication</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>"3 W's + 2 D's"</b> of post-op fever: <b>W</b>ound, <b>W</b>ater (UTI/IV), <b>W</b>ind (lung), <b>D</b>evice, <b>D</b>rug</li><li><b>"FUO categories" — CNIH</b>: <b>C</b>lassic, <b>N</b>osocomial, <b>I</b>mmunocompromised, <b>H</b>IV</li><li><b>"5 F's of culture-negative endocarditis"</b>: <b>F</b>astidious (HACEK), <b>F</b>ungi, <b>F</b>rancisella, <b>F</b>ive others: <i>Coxiella</i>, <i>Bartonella</i>, <i>Tropheryma</i>, <i>Legionella</i>, <i>Brucella</i></li><li><b>"Hyperthermia heat-stamp" — "D-C-B"</b>: MH = <b>D</b>antrolene; NMS = <b>D</b>antrolene / <b>B</b>romocriptine; Serotonin = <b>C</b>yproheptadine</li><li><b>"Drug fever clue — T REE"</b>: <b>T</b>emporal, <b>R</b>elative bradycardia, <b>E</b>osinophilia, <b>E</b>xclude others (resolution on stop)</li><li><b>"Post-op day causes — 'AWaRD'":</b> Day 0–1 = <b>A</b>telectasis; Day 1–3 = <b>W</b>ound/<b>U</b>TI; Day 3–5 = <b>R</b>esp (Pneumonia/<b>D</b>VT); Day 5–7 = <b>D</b>eep abscess/<b>C. diff</b>; &gt;7 = <b>D</b>VT/PE/<b>D</b>rug</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid mindmap root((Fever &amp; Febrile Syndromes)) Definitions Fever: core T &gt;37.8 AM / &gt;38.0 PM Hyperthermia: set-point normal FUO classic: &gt;38.3 °C x ≥3 wks, no Dx after 1 wk Neutropenic: ANC &lt;0.5 or falling Drug fever: temporal, RB, eosinophilia FUO Categories Classic Petersdorf-Beeson Infection 30% (TB, abscess, IE, SBE, Brucella, Q, typhoid, malaria, HIV, EBV-CMV) Neoplasm 20% (lymphoma, CLL, RCC, HCC, AML, myxoma) Autoimmune 15% (SLE, Still's, GCA, PMR, sarcoid, IBD, vasculitis) Misc 10% (DVT/PE, drug, factitious, FMF) Undiagnosed ~25% Nosocomial HAI C. difficile Line / Wound Drug fever DVT/PE Transfusion Acalculous cholecystitis Immunocompromised Neutropenic (GNB, S. aureus, Candida, Aspergillus) BMT/SOT (CMV, EBV-PTLD, PCP, fungi, Toxo, Strongyloides) Biologics (TB, HBV, Strongyloides) HIV-associated TB, MAC Crypto, Histo, Penicillium Leishmania, Bartonella CMV, lymphoma IRIS Paediatric FUO &lt;3 y: UTI, viral, occult bacteraemia, Kawasaki 3-12 y: EBV, Bartonella, Lyme, Still's</p>
+<div class="callout">12 y: EBV, TB, IE, lymphoma, SLE, periodic fever</div>
+<p>Approach History Timeline pattern Exposures animals travel Sexual drugs surgical Family occupation pets plants Examination Skin rash eschar Lymph nodes Organomegaly Murmur joints Eyes fundi Prosthetic devices Labs CBC film LFT LDH Blood cultures x3 UA UC CXR HIV EBV CMV RF ANA ANCA PPD IGRA Hepatitis serology Lactate ferritin PCT Imaging CT chest abdo pelvis TTE TEE FDG PET CT MRI brain spine Specific Malaria smear x3 Bone marrow biopsy Liver LN biopsy BAL biopsy LP if neuro Hyperthermia vs Fever Heat stroke: cooling, ice water immersion Malignant hyperthermia: dantrolene NMS: dantrolene bromocriptine Serotonin syndrome: cyproheptadine Empiric Therapy NOT recommended in classic FUO Exception GCA with vision loss Exception haemodynamic instability Exception strongly suspected miliary TB ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart — FUO Diagnostic Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Fever &gt;38.3 °C ≥3 weeks] --&gt; B{Confirm true fever} B --&gt;|Factitious/habitual| C[Stop - reassure] B --&gt;|True fever ≥3 wks| D[Re-take history × 3] D --&gt; E[Full examination incl. fundi, skin, nodes] E --&gt; F[First-line labs: CBC, ESR, CRP, LFT, BC×3, UC, CXR, HIV, EBV/CMV, RF/ANA, IGRA, malarial smears, ferritin, PCT] F --&gt; G{Diagnosis reached?} G --&gt;|Yes| H[Treat specific cause] G --&gt;|No| I[CT chest/abdomen/pelvis ± TTE] I --&gt; J{Diagnosis reached?} J --&gt;|Yes| H J --&gt;|No| K[FDG-PET/CT ± targeted biopsy] K --&gt; L{Diagnosis reached?} L --&gt;|Yes| H L --&gt;|No| M{Still deteriorating?} M --&gt;|No| N[Observe - likely self-resolving] M --&gt;|Yes| O[Consider empirical trial: ATT / NSAIDs / steroids per suspected entity] O --&gt; P[Reassess weekly; do NOT blanket antibiotics] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Definitions:</b> Fever = core T &gt;37.8 °C AM / &gt;38.0 °C PM; <b>Hyperthermia</b> = set-point normal (heat stroke, MH, NMS, SS); <b>FUO classic</b> = &gt;38.3 °C × ≥3 wks + no Dx after 1 wk inpatient. - <b>FUO categories:</b> <b>C</b>lassic, <b>N</b>osocomial, <b>I</b>mmunocompromised, <b>H</b>IV. - <b>Classic FUO aetiology:</b> <b>I</b>nfection 30 % (TB, abscess, SBE, Brucella, Q, typhoid, malaria, EBV/CMV, HIV), <b>N</b>eoplasm 20 % (lymphoma, RCC, CLL, HCC, AML, myxoma), <b>A</b>utoimmune 15 % (Still's, SLE, GCA, PMR, sarcoid, IBD), <b>M</b>isc 10 % (drug, DVT/PE, factitious, FMF). - <b>Nosocomial HAI causes:</b> C. difficile, line, wound, drug, DVT/PE, transfusion, acalculous cholecystitis. - <b>Immunocompromised FUO:</b> PCP, fungi (<i>Aspergillus</i>, <i>Candida</i>, <i>Pneumocystis</i>), mycobacteria, CMV, EBV-PTLD, <i>Strongyloides</i>. - <b>HIV FUO:</b> TB, MAC, <i>Cryptococcus</i>, <i>Histoplasma</i>, <i>Penicillium marneffei</i>, leishmania, CMV, <i>Bartonella</i>, lymphoma, IRIS. - <b>Post-op timeline (5 W's):</b> 0–1 d = atelectasis; 1–3 d = UTI/wound; 3–5 d = pneumonia/DVT/PE; 5–7 d = abscess/<i>C. diff</i>; &gt;7 d = DVT/PE/drug. - <b>Neutropenic fever:</b> ANC &lt;0.5 or expected → empirical tazocin ± gent within <b>1 h</b>. - <b>Drug fever clues:</b> <b>T REE</b> — Temporal, Relative bradycardia, Eosinophilia, Exclusion. - <b>Empirical therapy:</b> <b>Not</b> recommended in classic FUO; exception GCA with vision loss. - <b>Hyperthermia treatment:</b> Heat stroke = cooling (ice-water immersion for exertional); MH/NMS = <b>dantrolene</b>; serotonin = <b>cyproheptadine</b>; NMS also = <b>bromocriptine</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define fever, hyperthermia, and FUO with all numerical cut-offs</li><li>Name the 4 categories of FUO and the 4 main aetiological groups of classic FUO with percentages</li><li>What are the 5 W's (and 2 D's) of post-operative fever and their timing?</li><li>Name the top 5 infection, neoplasm, and autoimmune causes of classic FUO</li><li>Differential diagnosis of nosocomial, immunocompromised, and HIV-associated FUO</li><li>First-line investigations in FUO — what MUST be sent in every patient?</li><li>Role of FDG-PET/CT in FUO</li><li>Empirical therapy in FUO — when, when not, and what are the exceptions?</li><li>Management of heat stroke, MH, NMS, serotonin syndrome</li><li>Paediatric red flags — Kawasaki, periodic fever syndromes, occult bacteraemia</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Fever vs hyperthermia; FUO definition & 4 categories; classic FUO aetiology (Infection/Neoplasm/Autoimmune/Misc + %); nosocomial, immunocompromised, HIV FUO; post-op fever 5 W's timeline; neutropenic fever definition & empiric Rx; drug fever clues; empirical therapy rule & exceptions; hyperthermia management (heat stroke, MH, NMS, SS); first-line investigations; malaria smear × 3; FDG-PET/CT role</td></tr><tr><td>**Should Know 🟡**</td><td>Specific FUO aetiologies (Q fever, Brucella, Whipple, *Bartonella*, leishmaniasis, RCC, Still's, GCA, PMR, sarcoid, IBD, Castleman, Kikuchi, myxoma, FMF); paediatrics-specific; elderly non-specific; IRIS; factitious fever; procalcitonin-guided therapy; relative bradycardia; periodic fever syndromes; HIV CD4-stratified differential; PET in FUO; bone marrow biopsy yield</td></tr><tr><td>**Nice to Know 🟢**</td><td>Autoinflammatory genetics (MEFV, TNFRSF1A, MVK, NLRP3); cytokine profile (IL-1, IL-6, TNF) of fever vs hyperthermia; AI-assisted FUO diagnosis; novel biomarkers (presepsin, IL-6 kinetics); *Tropheryma whipplei*; *Coxiella* phase variation; *Bartonella* serology vs PCR; HLA-B27 periodic fevers</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li><b>Definition</b> (fever, hyperthermia, FUO with numbers) → <b>Pathophysiology</b> (pyrogens → PGE₂ → set-point) → <b>Classification</b> (4 categories of FUO) → <b>Aetiology</b> (Infection/Neoplasm/Autoimmune/Misc with %) → <b>Diagnostic approach</b> (history × 3 → exam → first-line → second-line → targeted) → <b>Empiric therapy rule</b> → <b>Hyperthermia management</b></li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet definitions, 4 FUO categories with %s, post-op 5 W's timeline, drug fever clues, empirical therapy rule, FDG-PET role</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>Lead with definition + numbers, give 2–3 examples per category, mention empirical therapy rule, finish with hyperthermia treatments</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to patient: rule out factitious, repeat history × 3, examine (incl. fundi, nodes, skin, murmur), first-line labs (BC×3, HIV, malaria smears × 3, IGRA, CXR), targeted imaging, avoid empirical abx unless deteriorating</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>Numbers: 37.8 AM / 38.0 PM, 38.3 FUO, 3 wks, 1 wk, ANC 0.5, 5 W's, 4 categories, infection 30 %/neoplasm 20 %/autoimmune 15 %/misc 10 %</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1. A 55-year-old farmer presents with 5 weeks of low-grade fever, weight loss, and night sweats. Examination shows mild hepatomegaly; CXR is unremarkable; ESR is 90 mm/h. The MOST appropriate next step is:</b> A. Empirical anti-tubercular therapy B. Fundus examination (look for choroidal tubercles) and HRCT chest C. Bone marrow transplant D. Steroid trial E. Reassure and review in 2 weeks</p>
+<p>**2. A 22-year-old IV drug user is admitted with daily spikes of fever, myalgias, and a new tricuspid regurgitation murmur. Three blood cultures grow <i>Staphylococcus aureus</i>. The most likely diagnosis is:** A. Miliary TB B. Right-sided infective endocarditis C. Brucellosis D. Atrial myxoma E. Still's disease</p>
+<p><b>3. Which fever pattern is most characteristically associated with Hodgkin lymphoma?</b> A. Continuous B. Quotidian C. Pel-Ebstein D. Saddleback E. Inverse</p>
+<p><b>4. The drug of choice for malignant hyperthermia is:</b> A. Cyproheptadine B. Bromocriptine C. Dantrolene D. Propranolol E. Physostigmine</p>
+<p><b>5. A 60-year-old presents with 6 weeks of fever, headache, jaw claudication, scalp tenderness, and ESR of 110 mm/h. The MOST appropriate immediate management is:</b> A. Wait for temporal artery biopsy B. Start high-dose prednisolone immediately C. Empirical anti-tubercular therapy D. Bone marrow biopsy E. Lumbar puncture</p>
+<p><b>6. A neutropenic patient (ANC 0.3 × 10⁹/L) develops a temperature of 38.5 °C. The most appropriate next step is:</b> A. Wait for culture results B. Start empirical broad-spectrum antibiotics (e.g. piperacillin-tazobactam ± gentamicin) within 1 hour C. Start empirical anti-fungal therapy only D. Start oral amoxicillin E. Reassure</p>
+<p><b>7. Drug fever characteristically demonstrates all of the following EXCEPT:</b> A. Temporal relationship with drug initiation B. Relative bradycardia C. Eosinophilia D. Resolution on drug withdrawal E. Positive Mantoux test</p>
+<p><b>8. The commonest cause of post-operative fever on day 0–1 is:</b> A. Wound infection B. Atelectasis C. Urinary tract infection D. Deep vein thrombosis E. <i>C. difficile</i> colitis</p>
+<p><b>9. A returned traveller from Kenya has daily spikes of fever for 4 weeks with splenomegaly and thrombocytopenia. The MOST important first investigation is:</b> A. Widal test B. Bone marrow biopsy C. Three thick and thin malaria smears ± rapid diagnostic test D. Liver biopsy E. FDG-PET/CT</p>
+<p><b>10. In classical FUO, empirical therapy is:</b> A. Always started after 1 week of work-up B. Recommended only if the patient is deteriorating or a specific treatable entity is strongly suspected C. Routine broad-spectrum antibiotics for 2 weeks D. Empirical anti-tubercular therapy in every case E. Empirical steroids in every case</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<p><b>SBA 1.</b> A 35-year-old woman presents with 4 weeks of low-grade fever, weight loss, and a new diastolic murmur. Three separate blood cultures are sterile after 5 days. She owns a cat and works in an abattoir. Examination shows mild splenomegaly. <b>Which is the SINGLE MOST LIKELY causative organism?</b> A. <i>Staphylococcus aureus</i> B. <i>Coxiella burnetii</i> (Q fever) C. <i>Bartonella henselae</i> D. <i>Streptococcus bovis</i> E. <i>E. coli</i></p>
+<p><b>SBA 2.</b> A 70-year-old man is 5 days post-elective abdominal aortic aneurysm repair. He develops fever 38.8 °C, abdominal pain, and a new right upper quadrant mass with Murphy's sign. He is on TPN and has been in ICU for 4 days. <b>What is the most likely diagnosis?</b> A. Acute calculous cholecystitis B. Acalculous cholecystitis C. Hepatic abscess D. Mesenteric ischaemia E. <i>C. difficile</i> colitis</p>
+<p><b>SBA 3.</b> A 25-year-old woman with SLE on prednisolone 15 mg presents with 3 weeks of fever, cough, and progressive dyspnoea. CXR shows bilateral diffuse ground-glass opacities. HIV is negative. <b>The most likely diagnosis is:</b> A. Pulmonary tuberculosis B. <i>Pneumocystis jirovecii</i> pneumonia C. Bacterial pneumonia D. Cytomegalovirus pneumonia E. Cryptococcal pneumonia</p>
+<p><b>SBA 4.</b> A patient with HIV (CD4 30 × 10⁶/L) and FUO develops fever, tender hepatosplenomegaly, and pancytopenia 2 months after starting ART. Bone marrow shows numerous amastigotes within macrophages. <b>The most likely diagnosis is:</b> A. Tuberculosis B. Disseminated <i>Mycobacterium avium</i> complex C. Visceral leishmaniasis D. IRIS secondary to cryptococcus E. Lymphoma</p>
+<p><b>SBA 5.</b> A 28-year-old marathon runner collapses at the end of a hot race with a temperature of 41.5 °C, altered mental status, and diaphoresis. <b>The MOST appropriate first management is:</b> A. Intravenous dantrolene B. Ice-water immersion C. Cyproheptadine D. Paracetamol E. Bromocriptine</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Q: Fever definition (core temperature)?</b></li></ul>
+<p>A: &gt;37.8 °C in the morning OR &gt;38.0 °C in the evening.</p>
+<ul><li><b>Q: Hyperthermia — what is it and is it responsive to antipyretics?</b></li></ul>
+<p>A: Core T &gt;38 °C due to failure of thermoregulation (set-point unchanged). NOT responsive to antipyretics — treat with physical cooling.</p>
+<ul><li><b>Q: FUO classic definition?</b></li></ul>
+<p>A: Core T &gt;38.3 °C (101 °F) on several occasions, lasting <b>≥3 weeks</b>, with no diagnosis after <b>1 week of intelligent inpatient investigation</b> (Petersdorf-Beeson).</p>
+<ul><li><b>Q: Name the 4 categories of FUO.</b></li></ul>
+<p>A: Classic, Nosocomial, Immunocompromised, HIV-associated.</p>
+<ul><li><b>Q: Classic FUO aetiology breakdown (with approximate %)?</b></li></ul>
+<p>A: Infection 30 %, Neoplasm 20 %, Non-infectious inflammatory (autoimmune) 15 %, Miscellaneous 10 %, Undiagnosed ~25 %.</p>
+<ul><li><b>Q: Top 3 infectious causes of classic FUO.</b></li></ul>
+<p>A: TB (especially miliary &amp; extrapulmonary), deep abscess, subacute bacterial endocarditis.</p>
+<ul><li><b>Q: Top 3 malignancy causes of classic FUO.</b></li></ul>
+<p>A: Lymphoma (Hodgkin &amp; non-Hodgkin), renal cell carcinoma, leukaemia (CLL/AML); also hepatic cancers &amp; atrial myxoma.</p>
+<ul><li><b>Q: Top 3 autoimmune causes of classic FUO.</b></li></ul>
+<p>A: Still's disease, SLE, giant-cell arteritis / polymyalgia rheumatica (GCA, PMR).</p>
+<ul><li><b>Q: Common nosocomial FUO causes?</b></li></ul>
+<p>A: HAI — <i>C. difficile</i>, line/catheter infection, wound infection, drug fever, DVT/PE, transfusion reaction, acalculous cholecystitis, sinusitis (NG tubes).</p>
+<ul><li><b>Q: Immunocompromised (non-HIV) FUO — top pathogens.</b></li></ul>
+<p>A: <i>Pneumocystis</i> (PCP), fungi (<i>Aspergillus</i>, <i>Candida</i>, <i>Cryptococcus</i>, <i>Histoplasma</i>), mycobacteria (TB + NTM), CMV, EBV-PTLD, <i>Strongyloides</i> (hyperinfection), <i>Toxoplasma</i>, <i>Nocardia</i>.</p>
+<ul><li><b>Q: HIV-associated FUO — top pathogens (CD4-stratified).</b></li></ul>
+<p>A: TB, MAC, <i>Cryptococcus</i>, <i>Histoplasma</i>, <i>Penicillium marneffei</i> (SE Asia), leishmania, CMV, <i>Bartonella</i>, lymphoma, IRIS.</p>
+<ul><li><b>Q: Post-op fever 5 W's (with timing)?</b></li></ul>
+<p>A: Day 0–1: <b>W</b>ind (atelectasis), MH, transfusion. 1–3 d: <b>W</b>ater (UTI), <b>W</b>ound. 3–5 d: Pneumonia, <b>D</b>VT/PE. 5–7 d: <b>D</b>eep abscess, <i>C. diff</i>. &gt;7 d: DVT/PE, drug.</p>
+<ul><li><b>Q: Neutropenic fever definition?</b></li></ul>
+<p>A: T ≥38.3 °C single OR ≥38.0 °C ≥1 h, with ANC &lt;0.5 × 10⁹/L or expected to fall &lt;0.5. <b>Empirical tazocin ± gentamicin within 1 h</b> is mandatory.</p>
+<ul><li><b>Q: Drug fever clues (mnemonic T REE)?</b></li></ul>
+<p>A: <b>T</b>emporal relationship, <b>R</b>elative bradycardia, <b>E</b>osinophilia, <b>E</b>xclusion (resolves on drug withdrawal, rechallenge reproduces).</p>
+<ul><li><b>Q: Why is empirical therapy NOT recommended in classic FUO?</b></li></ul>
+<p>A: It can mask diagnosis (steroids hide lymphoma/Still's/TB), cause drug fever, breed resistance, and empirical antibiotics rarely help without a specific suspected aetiology.</p>
+<ul><li><b>Q: Exceptions to "no empirical therapy" in FUO?</b></li></ul>
+<p>A: GCA with visual symptoms (start pred immediately), suspected miliary TB in deteriorating patient, culture-negative IE with sepsis, HIV with suspected PCP/CNS crypto (empirical Rx after specific tests), haemodynamic instability (sepsis protocol).</p>
+<ul><li><b>Q: Pel-Ebstein fever pattern — associated with?</b></li></ul>
+<p>A: Hodgkin lymphoma (only ~15 % of HL).</p>
+<ul><li><b>Q: Continuous fever — causes?</b></li></ul>
+<p>A: Typhoid (step-ladder), drug fever, brucellosis (concatenated).</p>
+<ul><li><b>Q: Relapsing fever — causes?</b></li></ul>
+<p>A: Borrelia (relapsing fever), brucellosis, malaria, yellow fever, rat-bite fever, Hodgkin (Pel-Ebstein).</p>
+<ul><li><b>Q: Saddleback (biphasic) fever — causes?</b></li></ul>
+<p>A: Dengue, West Nile, Colorado tick fever, Lassa, EBV, HIV seroconversion, poliomyelitis.</p>
+<ul><li><b>Q: Inverse (typhus inversus) — cause?</b></li></ul>
+<p>A: Typhus (epidemic/murine), brucellosis.</p>
+<ul><li><b>Q: First-line investigations in EVERY FUO?</b></li></ul>
+<p>A: FBC + film, ESR/CRP, LFT/LDH, U&amp;E/Ca/albumin, blood cultures × 3, urine MCS, CXR, HIV (4th gen Ag/Ab), EBV/CMV serology, RF/ANA, IGRA, malaria smears × 3, ferritin, PCT, hepatitis serology.</p>
+<ul><li><b>Q: What is the role of FDG-PET/CT in FUO?</b></li></ul>
+<p>A: High diagnostic yield (~50–60 %); identifies occult infection, malignancy (lymphoma), vasculitis (GCA, large-vessel), and helps direct targeted biopsy.</p>
+<ul><li><b>Q: What is the best single imaging test in FUO?</b></li></ul>
+<p>A: CT chest + abdomen + pelvis with contrast.</p>
+<ul><li><b>Q: Heat stroke — first-line cooling methods?</b></li></ul>
+<p>A: Evaporative cooling (spray + fan) for classic (elderly); <b>ice-water immersion</b> for exertional heat stroke (gold standard). Antipyretics DO NOT work.</p>
+<ul><li><b>Q: Malignant hyperthermia — treatment?</b></li></ul>
+<p>A: Stop anaesthetic, <b>dantrolene 2.5 mg/kg IV</b>, active cooling, treat hyperkalaemia and acidosis.</p>
+<ul><li><b>Q: Neuroleptic malignant syndrome (NMS) — treatment?</b></li></ul>
+<p>A: Stop dopamine antagonist, supportive, <b>dantrolene / bromocriptine / amantadine</b>, benzodiazepines.</p>
+<ul><li><b>Q: Serotonin syndrome — treatment?</b></li></ul>
+<p>A: Stop serotonergic drug, <b>cyproheptadine 12 mg loading then 2 mg q2 h</b>, benzodiazepines, active cooling, supportive.</p>
+<ul><li><b>Q: What is relative bradycardia (Faget sign) and what does it suggest?</b></li></ul>
+<p>A: Pulse–temperature dissociation — HR inappropriately low for fever. Suggests: typhoid, Legionella, brucellosis, drug fever, CNS lesions, yellow fever, psittacosis, leishmaniasis.</p>
+<ul><li><b>Q: Always rule out _______ first in a returned traveller with fever.</b></li></ul>
+<p>A: <b>Malaria</b> (3 thick/thin smears 12–24 h apart ± RDT) — even with prophylaxis.</p>
+<ul><li><b>Q: Paediatric red flag: fever ≥5 days + rash + lymphadenopathy + strawberry tongue + extremity changes.</b></li></ul>
+<p>A: Kawasaki disease — risk of coronary aneurysms → IVIG + high-dose aspirin.</p>
+<ul><li><b>Q: Top 3 most useful specific second-line tests in FUO?</b></li></ul>
+<p>A: FDG-PET/CT, bone marrow aspirate + trephine, temporal artery biopsy (if age &gt;50 with GCA features).</p>
+<ul><li><b>Q: How often should history be repeated in FUO?</b></li></ul>
+<p>A: At least <b>3 times</b> — patients often recall new exposures (animals, travel, drugs) on subsequent visits.</p>
+<ul><li><b>Q: What is the most common cause of death in FUO?</b></li></ul>
+<p>A: The underlying disease (especially malignancy &amp; infection), not the diagnostic delay itself; most undiagnosed cases self-resolve.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — Choroidal tubercles are pathognomonic of miliary TB and visible on fundoscopy before CXR changes. HRCT chest detects miliary pattern when CXR is normal. Empirical ATT (A) is not yet indicated; bone marrow transplant (C) and steroids (D) without a diagnosis are contraindicated; the patient is too ill to simply reassure (E).</li><li><b>Correct: B</b> — Right-sided (tricuspid) IE with <i>S. aureus</i> in an IVDU is the classic combination. Miliary TB, brucellosis, myxoma, and Still's do not fit.</li><li><b>Correct: C</b> — Pel-Ebstein (cyclical days-fever/days-apyrexia) is classically described in Hodgkin lymphoma, though it is not sensitive.</li><li><b>Correct: C</b> — Dantrolene blocks ryanodine receptor Ca²⁺ release from the sarcoplasmic reticulum. Cyproheptadine is for serotonin syndrome; bromocriptine for NMS; propranolol for thyrotoxicosis; physostigmine for anticholinergic toxicity (TCA-excluded).</li><li><b>Correct: B</b> — GCA with vision-threatening features requires <b>immediate high-dose steroids</b> to prevent irreversible blindness — biopsy is still valid up to 2 weeks later.</li><li><b>Correct: B</b> — Empirical broad-spectrum β-lactam ± aminoglycoside (e.g. piperacillin-tazobactam ± gentamicin) within 1 hour per IDSA/NICE/ESMO guidance. Wait (A), antifungal alone (C), oral amoxicillin (D) and reassurance (E) are wrong.</li><li><b>Correct: E</b> — Mantoux is for TB, not drug fever. The other four (temporal, relative bradycardia, eosinophilia, resolution on withdrawal) are classic features.</li><li><b>Correct: B</b> — Atelectasis is the commonest cause of fever in the first 24 h post-op. Wound infections take 5–7 days, UTI 1–3 days, DVT &gt;5–7 days, <i>C. difficile</i> 5–7 days.</li><li><b>Correct: C</b> — Exclude malaria first (3 smears + RDT) in any returned traveller; Widal (A) is unreliable; bone marrow (B), liver biopsy (D) and PET (E) are later tests.</li><li><b>Correct: B</b> — Empirical therapy in classical FUO is reserved for deterioration or strong suspicion of a specific treatable condition (e.g. GCA, miliary TB, culture-negative IE, haemodynamic instability).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — <i>Coxiella burnetii</i> (Q fever) is the most likely cause of culture-negative endocarditis with abattoir exposure. <i>Bartonella</i> (cat scratch) usually causes lymphadenitis/BA, not culture-negative IE; <i>S. aureus</i> (A) would have grown in BC; <i>S. bovis</i> (D) is associated with colon cancer not abattoir exposure; <i>E. coli</i> (E) rarely causes culture-negative IE.</li><li><b>Correct: B</b> — ICU patient on TPN with RUQ mass and Murphy's sign is classic for acalculous cholecystitis. Risk factors: ICU stay, TPN, severe illness, vasopressors.</li><li><b>Correct: B</b> — Prednisolone + bilateral ground-glass opacities → PCP. Although classically HIV-associated, PCP can occur with corticosteroids, biologics, and other immunosuppression.</li><li><b>Correct: C</b> — Amastigotes within bone-marrow macrophages in an HIV patient (CD4 30) is the textbook finding of visceral leishmaniasis (kala-azar). MAC shows AFB-positive macrophages; TB shows granulomas; IRIS-crypto would show yeasts.</li><li><b>Correct: B</b> — Exertional heat stroke in a young athlete — gold-standard cooling is rapid ice-water immersion. Antipyretics, dantrolene, cyproheptadine and bromocriptine are not indicated.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Fever &amp; Febrile Syndromes</b> is a <b>Must Know</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Fever is a regulated set-point shift (pyrogens → PGE₂); hyperthermia is failed thermoregulation. FUO is defined (&gt;38.3 °C × ≥3 wks + no Dx after 1 wk) and classified (classic, nosocomial, immunocompromised, HIV). Always repeat the history three times, examine thoroughly (incl. fundi, skin, nodes, joints, devices), run first-line labs (BC×3, HIV, malaria smears, CXR), then targeted imaging (CT C/A/P → FDG-PET/CT → biopsy). <b>Empirical therapy is NOT recommended</b> in classical FUO — only for specific deteriorating syndromes (GCA, miliary TB, sepsis, suspected PCP). Hyperthermia syndromes need physical cooling ± dantrolene/cyproheptadine/bromocriptine, not antipyretics. <b>Exam focus:</b> Definitions, 4 categories of FUO, post-op 5 W's, neutropenic fever, drug fever clues, hyperthermia treatment algorithm, first-line investigations, why empirical therapy is not routine. <b>Clinical relevance:</b> Applies to every inpatient and outpatient with fever — risk-stratify, target investigation, avoid blind antibiotic use, recognise and treat hyperthermia syndromes urgently.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fever Febrile Syndromes Approach · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

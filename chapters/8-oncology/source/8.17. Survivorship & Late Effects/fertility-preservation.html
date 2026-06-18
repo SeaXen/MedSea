@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fertility Preservation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.17. SURVIVORSHIP & LATE EFFECTS</span>
+      <div class="h1">Fertility Preservation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Assess <b>gonadotoxicity risk</b> of cancer treatments</li><li>[ ] Counsel patients on <b>fertility preservation options</b> by sex and age</li><li>[ ] Select <b>appropriate preservation method</b> (Sperm, Oocyte/Embryo, Ovarian Tissue, Transposition, GnRHa)</li><li>[ ] Understand <b>timing constraints</b> (Before Treatment Initiation)</li><li>[ ] Provide <b>comprehensive counselling</b> (Genetic, Legal, Financial, Psychosocial)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Gonadotoxicity Risk Assessment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Chemotherapy Agents</div>
+<table class="ctable"><tr><th>Risk Level</th><th>Agents</th><th>Mechanism</th><th>Recovery</th></tr><tr><td>------------</td><td>--------</td><td>-----------</td><td>----------</td></tr><tr><td>**High**</td><td>**Cyclophosphamide, Busulfan, Melphalan, Chlorambucil, Ifosfamide, Procarbazine, Temozolomide, Dacarbazine**</td><td>**Alkylating Agents** → **DNA Crosslinking → Primordial Follicle/Spermatogonia Depletion**</td><td>**Permanent Amenorrhea / Azoospermia Likely**</td></tr><tr><td>**Moderate**</td><td>**Cisplatin, Carboplatin, Oxaliplatin, Etoposide, Teniposide, Bleomycin, Vincristine, Vinblastine, Taxanes (Paclitaxel, Docetaxel)**</td><td>**DNA Damage / Microtubule Disruption**</td><td>**Variable (Age-Dependent)**, **Often Reversible**</td></tr><tr><td>**Low / Uncertain**</td><td>**Anthracyclines (Doxorubicin, Epirubicin, Daunorubicin)**, **Antimetabolites (Methotrexate, 5-FU, Cytarabine, Gemcitabine, Fludarabine, Cladribine)**, **Targeted Therapies (Trastuzumab, TKIs, ICIs)**</td><td>**Non-Alkylating / Non-Platins**</td><td>**Generally Preserved** (But Caution with Combinations)</td></tr></table>
+<div class="sub-h">Radiotherapy</div>
+<table class="ctable"><tr><th>Site</th><th>Dose for Gonadal Failure</th><th>Risk</th></tr><tr><td>------</td><td>-------------------------</td><td>------</td></tr><tr><td>**Pelvic RT**</td><td>**Ovary: >4-6 Gy (Adults), >2 Gy (<10yr)**</td><td>**High** (Premature Ovarian Insufficiency)</td></tr><tr><td></td><td>**Testis: >1.2 Gy (Leydig), >0.1 Gy (Spermatogenesis)**</td><td>**High**</td></tr><tr><td>**Cranial RT**</td><td>**Hypothalamic-Pituitary Axis (>30-40 Gy)**</td><td>**High (Central Hypogonadism)**</td></tr><tr><td>**Total Body Irradiation (TBI)**</td><td>**>10-12 Gy**</td><td>**Very High** (Near Universal)</td></tr></table>
+<div class="sub-h">Age-Related Risk</div>
+<table class="ctable"><tr><th>Age Group</th><th>Female (Ovarian Reserve)</th><th>Male (Spermatogenesis)</th></tr><tr><td>-----------</td><td>--------------------------</td><td>------------------------</td></tr><tr><td>**Prepubertal**</td><td>**Higher Reserve but More Vulnerable**</td><td>**No Sperm Production Yet**</td></tr><tr><td>**Young Adult (20-35)**</td><td>**Best Preservation Outcomes**</td><td>**Active Spermatogenesis**</td></tr><tr><td>**>35-40 (Female)**</td><td>**Declining Reserve, Urgency**</td><td>**Declining Quality**</td></tr><tr><td>**>40 (Female)**</td><td>**Markedly Reduced Reserve**</td><td>**Declining Quality**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Male Fertility Preservation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Sperm Cryopreservation (Gold Standard)</div>
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Indication**</td><td>**Post-Pubertal Males (≥12-13yr)** with **Spermatogenesis**</td></tr><tr><td>**Collection**</td><td>**Masturbation** (Preferred), **Vibratory Stimulation**, **Electroejaculation** (If Anorgasmic)</td></tr><tr><td>**Parameters**</td><td>**Volume, Concentration, Motility, Morphology (WHO 2021)**</td></tr><tr><td>**Freezing**</td><td>**Slow Freezing (Controlled Rate) OR Vitrification**; **Cryoprotectant (Glycerol/EG)**</td></tr><tr><td>**Storage**</td><td>**Liquid Nitrogen (-196°C)**, **Indefinite Viability**</td></tr><tr><td>**Thawing & Use**</td><td>**IUI, IVF, ICSI** (ICSI for Low Count/Motility)</td></tr><tr><td>**Success Rates**</td><td>**Depends on Female Age/Quality**, **Live Birth ~20-50% per Cycle**</td></tr></table>
+<div class="sub-h">Testicular Sperm Extraction (TESE / Micro-TESE)</div>
+<table class="ctable"><tr><th>Indication</th><th>Detail</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**Azoospermia** (Obstructive / Non-Obstructive)</td><td>**Micro-TESE** (Operating Microscope, Higher Yield)</td></tr><tr><td>**Failed Ejaculation**</td><td>**Penile Vibratory Stimulation → Electroejaculation → TESE**</td></tr><tr><td>**Prepubertal / No Sperm in Ejaculate**</td><td>**Testicular Tissue Cryopreservation (Experimental)**</td></tr></table>
+<div class="sub-h">Testicular Tissue Cryopreservation (Prepubertal / Experimental)</div>
+<table class="ctable"><tr><th>Status</th><th>**Experimental (No Live Births Yet)**</th></tr><tr><td>--------</td><td>--------------------------------------</td></tr><tr><td>**Method**</td><td>**Testicular Biopsy → Tissue Fragments / Cell Suspension → Slow Freeze/Vitrification**</td></tr><tr><td>**Future Use**</td><td>**Spermatogonial Stem Cell Transplantation (SSCT)**, **In Vitro Spermatogenesis**, **Xenografting** (All Experimental)</td></tr><tr><td>**Ethics**</td><td>**Parental Consent**, **Assent (If Able)**, **Ethics Committee Approval**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Female Fertility Preservation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Embryo Cryopreservation (Gold Standard, Requires Partner/Donor Sperm)</div>
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Indication**</td><td>**Post-Pubertal Female, Partner/Donor Sperm Available, Time for Stimulation (2-3 Weeks)**</td></tr><tr><td>**Ovarian Stimulation**</td><td>**GnRH Antagonist Protocol (Preferred — Shorter, Lower OHSS Risk)** or **GnRH Agonist Long Protocol**</td></tr><tr><td>**Monitoring**</td><td>**US + Estradiol q2-3d**</td></tr><tr><td>**Trigger**</td><td>**hCG (Classic) OR GnRH Agonist (If Antagonist Protocol, Reduces OHSS)**</td></tr><tr><td>**Retrieval**</td><td>**Transvaginal US-Guided Aspiration** (GA/Sedation)</td></tr><tr><td>**Fertilisation**</td><td>**IVF or ICSI**</td></tr><tr><td>**Embryo Culture**</td><td>**Day 3 (Cleavage) OR Day 5/6 (Blastocyst)**</td></tr><tr><td>**Freezing**</td><td>**Vitrification (Standard — Superior Survival)**</td></tr><tr><td>**Thaw & Transfer**</td><td>**FET (Frozen Embryo Transfer) — Natural/Artificial Cycle**</td></tr></table>
+<div class="sub-h">Oocyte Cryopreservation (Single Female / No Partner / Ethical Objection to Embryo Freezing)</div>
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Indication**</td><td>**Single Female, No Partner, No Donor Sperm, Ethical/Religious Objection to Embryo Freezing**</td></tr><tr><td>**Stimulation & Retrieval**</td><td>**Same as Embryo Cryopreservation**</td></tr><tr><td>**Freezing**</td><td>**Vitrification (MII Oocytes)** — **Standard**</td></tr><tr><td>**Thaw & Fertilisation**</td><td>**ICSI Required** (Zona Hardening Post-Vitrification)</td></tr><tr><td>**Live Birth Rates**</td><td>**Slightly Lower than Embryo Freezing** (Age-Dependent)</td></tr></table>
+<div class="sub-h">Ovarian Tissue Cryopreservation (OTC)</div>
+<table class="ctable"><tr><th>Indication</th><th>**Prepubertal Girls**, **No Time for Stimulation (Urgent Chemo)**, **No Partner/Donor**, **Oestrogen-Sensitive Cancer (If Suitable)**</th></tr><tr><td>------------</td><td>------------------------------------------------------------------------------------------------------------------</td></tr><tr><td>**Procedure**</td><td>**Laparoscopic Oophorectomy (Unilateral/Cortical Strips)** → **Cortical Strips (1x5mm) → Slow Freeze/Vitrification**</td></tr><tr><td>**Transplantation**</td><td>**Orthotopic (Ovarian Fossa)** OR **Heterotopic (Abdominal Wall/Ram)**</td></tr><tr><td>**Outcomes**</td><td>**>200 Live Births Worldwide (ASRM: No Longer Experimental)**; **Endocrine Function Restoration (90%+)**, **Fertility Restoration (~30-40% Pregnancy Rate)**</td></tr><tr><td>**Risks**</td><td>**Reintroduction of Malignant Cells (Screen Tissue: Histology, Molecular Markers)**; **Surgical Complications**</td></tr></table>
+<div class="sub-h">Ovarian Transposition (Oophoropexy)</div>
+<table class="ctable"><tr><th>Indication</th><th>**Pelvic Radiotherapy Planned** (Cervical, Rectal, Anal, Vaginal, Bladder)</th></tr><tr><td>------------</td><td>--------------------------------------------------------------------------</td></tr><tr><td>**Procedure**</td><td>**Laparoscopic** → **Move Ovaries Laterally/Superiorly** (Outside Radiation Field) → **Fix to Abdominal Wall/Peritoneum** → **Clip/Suture Markers for Future Localisation**</td></tr><tr><td>**Timing**</td><td>**Before RT** (Ideally >4-6 Weeks Before for Vascular Recovery)</td></tr><tr><td>**Success**</td><td>**Ovarian Function Preserved in 60-90%** (Dose-Dependent)</td></tr><tr><td>**Limitations**</td><td>**Does Not Protect from Chemotherapy**; **Risk of Vascular Compromise, Cyst Formation, Metastatic Spread**</td></tr></table>
+<div class="sub-h">GnRH Agonist (GnRHa) Coadministration</div>
+<table class="ctable"><tr><th>Mechanism</th><th>**Pituitary Downregulation → Suppressed FSH/LH → Reduced Follicular Recruitment → Theoretical Protection**</th></tr><tr><td>-----------</td><td>----------------------------------------------------------------------------------------------------------</td></tr><tr><td>**Evidence**</td><td>**Controversial**: **Meta-Analyses Show Modest Benefit (RR ~0.5 for POI)**, **Greater Benefit in Breast Cancer**, **Less in Lymphoma/Gynae**</td></tr><tr><td>**Protocol**</td><td>**GnRHa (Goserelin 3.6mg SC Monthly / Leuprorelin) Start 1-2 Weeks Before Chemo, Continue Throughout**</td></tr><tr><td>**Contraindications**</td><td>**Osteoporosis Risk (Bone Loss), Hot Flashes, Mood Changes**</td></tr><tr><td>**Guideline Position**</td><td>**ASCO/ESMO: Optional Adjunct (Not Substitute for Established Methods)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Genetic Counselling & Testing</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications</div>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Known Hereditary Syndrome**</td><td>**BRCA1/2, Lynch, Li-Fraumeni, FAP, VHL, MEN, etc.** → **Preimplantation Genetic Testing (PGT-M)**</td></tr><tr><td>**New Diagnosis**</td><td>**Young Age, Family History, Triple-Negative Breast, Ovarian, Pancreatic, Prostate, Colorectal <50** → **Genetic Testing Before/During Fertility Preservation**</td></tr><tr><td>**Carrier Screening**</td><td>**Reproductive Partner** → **Expanded Carrier Panel**</td></tr></table>
+<div class="sub-h">Preimplantation Genetic Testing (PGT)</div>
+<table class="ctable"><tr><th>Type</th><th>Purpose</th><th>Indication</th></tr><tr><td>------</td><td>---------</td><td>------------</td></tr><tr><td>**PGT-M**</td><td>**Monogenic/Single Gene Disorder**</td><td>**Known Pathogenic Variant (BRCA1/2, Lynch, CF, etc.)**</td></tr><tr><td>**PGT-A**</td><td>**Aneuploidy Screening**</td><td>**Advanced Maternal Age, Recurrent Loss, RIF**</td></tr><tr><td>**PGT-SR**</td><td>**Structural Rearrangement**</td><td>**Balanced Translocation/Inversion Carrier**</td></tr></table>
+<div class="sub-h">Procedure</div>
+<ol><li><b>IVF/ICSI → Embryo Culture to Blastocyst (Day 5/6)</b></li><li><b>Trophectoderm Biopsy (5-10 Cells)</b></li><li><b>NGS / PCR / FISH Analysis</b></li><li><b>Euploid/Unaffected Embryo Transfer (FET)</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Counselling Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Essential Components</div>
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Medical**</td><td>**Gonadotoxicity Risk**, **Options, Success Rates, Risks, Timing, Cost**</td></tr><tr><td>**Genetic**</td><td>**Hereditary Cancer Risk**, **PGT-M/A/SR**, **Carrier Screening**</td></tr><tr><td>**Legal**</td><td>**Consent (Storage, Use, Disposal, Posthumous Use)**, **Ownership, Access, Withdrawal**, **Regulatory (HFEA UK, FDA/ASRM US)**</td></tr><tr><td>**Financial**</td><td>**Costs (Stimulation, Retrieval, Freezing, Storage Annual Fees, Thaw/ICSI/Transfer)**, **Insurance/NHS Coverage**, **Charity Grants**</td></tr><tr><td>**Psychosocial**</td><td>**Decision-Making Support**, **Distress Screening**, **Partner/Family Involvement**, **Cultural/Religious Considerations**</td></tr><tr><td>**Oncofertility Team**</td><td>**Oncologist, Reproductive Endocrinologist, Genetic Counsellor, Psychologist, Nurse Navigator, Ethicist, Financial Counsellor**</td></tr></table>
+<div class="sub-h">Decision-Making Framework (RCOG/ASCO/ESMO)</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Risk Assessment**</td><td>**Age, Treatment Plan, Baseline Fertility Markers (AMH, AFC, FSH, Semen Analysis)**</td></tr><tr><td>**2. Information Provision**</td><td>**Written + Verbal**, **Decision Aids**, **Time for Questions**</td></tr><tr><td>**3. Values Clarification**</td><td>**Future Family Goals**, **Values, Priorities**</td></tr><tr><td>**4. Decision**</td><td>**Shared Decision-Making**, **Document Consent**</td></tr><tr><td>**5. Referral**</td><td>**Urgent Referral to Oncofertility Service** (Same Day/Next Day)</td></tr><tr><td>**6. Follow-Up**</td><td>**Post-Treatment Fertility Assessment**, **Thaw/Transfer Counselling**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Paediatric / Adolescent</div>
+<table class="ctable"><tr><th>Challenge</th><th>Approach</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Assent vs Consent**</td><td>**Parental Consent + Patient Assent (Age-Appropriate)**</td></tr><tr><td>**Prepubertal**</td><td>**No Sperm/Oocytes** → **Testicular/Ovarian Tissue Cryopreservation (Experimental)**</td></tr><tr><td>**Ethics**</td><td>**Best Interests**, **Future Autonomy**, **Parental Decision-Making**</td></tr><tr><td>**Long-Term**</td><td>**Transition to Adult Care**, **Fertility Assessment at Puberty/Adulthood**</td></tr></table>
+<div class="sub-h">Breast Cancer (Oestrogen-Sensitive)</div>
+<table class="ctable"><tr><th>Concern</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Ovarian Stimulation & Oestrogen**</td><td>**Letrozole/Aromatase Inhibitor Co-Stimulation** (Lowers E2, Similar Oocyte Yield)</td></tr><tr><td>**Tamoxifen During Pregnancy**</td><td>**Contraindicated (Teratogenic)** → **Stop Before Conception**</td></tr><tr><td>**Pregnancy After Breast Cancer**</td><td>**Safe (No Increased Recurrence)** — **Wait 2-5 Years (Individualised)**</td></tr></table>
+<div class="sub-h">Haematopoietic Stem Cell Transplant (HSCT)</div>
+<table class="ctable"><tr><th>Risk</th><th>**Very High (TBI + High-Dose Chemo)**</th></tr><tr><td>------</td><td>----------------------------------------</td></tr><tr><td>**Options**</td><td>**Sperm/Oocyte/Embryo Cryopreservation BEFORE Conditioning**</td></tr><tr><td>**Post-HSCT**</td><td>**Gonadal Function Often Permanently Impaired**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Gonadotoxicity**</td><td>**Alkylators (High), Platinums (Moderate), Anthracyclines (Low), RT Pelvic/Cranial (High)**</td></tr><tr><td>**Male: Sperm Cryo**</td><td>**Gold Standard (Post-Pubertal)**, **TESE if Azoospermic**, **Testicular Tissue (Prepubertal/Exp)**</td></tr><tr><td>**Female: Embryo Cryo**</td><td>**Gold Standard (Partner/Donor Sperm)**, **Oocyte Cryo (Single/No Partner)**</td></tr><tr><td>**Ovarian Tissue Cryo**</td><td>**Prepubertal, Urgent, No Partner** → **>200 Live Births, ASRM: Not Experimental**</td></tr><tr><td>**Ovarian Transposition**</td><td>**Before Pelvic RT**, **Laparoscopic, Lateral Fixation**</td></tr><tr><td>**GnRHa**</td><td>**Adjunct Only (Controversial)**, **Goserelin 3.6mg Monthly**, **ASCO/ESMO: Optional**</td></tr><tr><td>**Genetic**</td><td>**PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)**</td></tr><tr><td>**Counselling**</td><td>**Medical, Genetic, Legal, Financial, Psychosocial**</td></tr><tr><td>**Breast Cancer**</td><td>**Letrozole Co-Stimulation (Low E2)**, **Pregnancy Safe After Tx**</td></tr><tr><td>**Paediatric**</td><td>**Assent + Consent**, **Tissue Cryo (Prepubertal)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Male fertility preservation — Gold Standard, Timing?**</td><td>**Sperm Cryopreservation (Post-Pubertal)**, **Before Chemo/RT Initiation**.</td></tr><tr><td>**Female — Embryo vs Oocyte Cryopreservation?**</td><td>**Embryo: Requires Sperm, Higher Success**; **Oocyte: No Partner/Donor, Ethical Objection, Slightly Lower Success**.</td></tr><tr><td>**Ovarian Tissue Cryopreservation — Indications, Status?**</td><td>**Prepubertal, Urgent Chemo, No Partner** → **ASRM: No Longer Experimental (2019)**, **>200 Live Births**.</td></tr><tr><td>**Ovarian Transposition — Indication, Procedure?**</td><td>**Pelvic RT Planned** → **Laparoscopic Lateral Transposition, Clip Markers**, **Before RT**.</td></tr><tr><td>**GnRHa — Role, Evidence?**</td><td>**Adjunct Only (Controversial)**, **Meta-Analyses: Modest Benefit (RR ~0.5 POI)**, **ASCO/ESMO: Optional Adjunct**.</td></tr><tr><td>**Chemo Gonadotoxicity — Alkylators vs Anthracyclines?**</td><td>**Alkylators (Cyclophosphamide, Busulfan, Melphalan): High Risk (Azoospermia/Amenorrhea)**; **Anthracyclines: Low Risk**.</td></tr><tr><td>**Radiotherapy Gonadotoxicity — Pelvic RT Dose?**</td><td>**Ovary: >4-6 Gy (Adult)**: **Testis: >0.1 Gy (Spermatogenesis), >1.2 Gy (Leydig)**.</td></tr><tr><td>**Genetic Testing — PGT-M vs PGT-A vs PGT-SR?**</td><td>**PGT-M: Monogenic (BRCA, Lynch)**; **PGT-A: Aneuploidy**; **PGT-SR: Structural Rearrangement**.</td></tr><tr><td>**Breast Cancer — Ovarian Stimulation Safety?**</td><td>**Letrozole Co-Stimulation (Low E2, Similar Yield)**; **Pregnancy Safe After Treatment (Wait 2-5yr)**.</td></tr><tr><td>**Paediatric — Fertility Preservation Options?**</td><td>**Prepubertal: Testicular/Ovarian Tissue Cryopreservation (Experimental)**; **Assent + Parental Consent**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Embryo vs Oocyte Cryo**</td><td>**Embryo: Requires Sperm, Higher Survival/Pregnancy Rates**; **Oocyte: No Sperm Needed, Slightly Lower Success, Ethical Flexibility**</td></tr><tr><td>**GnRHa as Monotherapy**</td><td>**NOT Standard** — **Adjunct Only**, **ASCO/ESMO: Optional Adjunct**, **Not Substitute for Cryopreservation**</td></tr><tr><td>**Ovarian Tissue vs Transposition**</td><td>**OTC: Cryopreserve Cortex, Later Transplant**; **Transposition: Move Ovaries Out of RT Field, No Cryopreservation**</td></tr><tr><td>**Male Prepubertal**</td><td>**No Sperm** → **Testicular Tissue Cryopreservation (Experimental)**, **TESE Not Possible**</td></tr><tr><td>**GnRHa vs OCP for Suppression**</td><td>**GnRHa: Pituitary Downregulation (GnRH Agonist)**; **OCP: Oestrogen/Progestin (Not Gonadoprotective)**</td></tr><tr><td>**PGT-M vs PGT-A**</td><td>**PGT-M: Known Mutation (BRCA, Lynch)**; **PGT-A: Age/RIF, Screen for Aneuploidy**</td></tr><tr><td>**Breast Cancer Stimulation**</td><td>**Letrozole (AI) Co-Stimulation → Low E2, Similar Oocyte Yield/Maturity**</td></tr><tr><td>**Fertility Assessment Post-Chemo**</td><td>**AMH, AFC, FSH (Female); Semen Analysis (Male)** — **Wait 6-12mo Post-Chemo for Recovery**</td></tr></table>
+<p><b>Mnemonic: FERTILITY-PRESERVE</b></p>
+<ul><li><b>F</b>ertility: <b>Assess Risk (Alkylators High, Platinums Mod, Anthracyclines Low)</b></li><li><b>E</b>mbryo Cryo: <b>Gold Standard (Partner/Donor Sperm)</b></li><li><b>R</b>eservation: <b>Oocyte Cryo (Single, No Partner)</b></li><li><b>T</b>issue Cryopreservation: <b>Ovarian/Testicular (Prepubertal/Urgent)</b></li><li><b>I</b>n Vitro: <b>STIM → RETRIEVAL → FREEZE (Vitrification Standard)</b></li><li><b>L</b>aparoscopic Transposition: <b>Pre-Pelvic RT, Lateral Fixation</b></li><li><b>I</b>njection: <b>Sperm Cryo (Gold Std Male), TESE (Azoospermia)</b></li><li><b>T</b>ransposition: <b>Oophoropexy Pre-RT</b></li><li><b>Y</b>oung Age: <b>Better Outcomes, Higher Reserve</b></li><li><b>P</b>GT-M/A/SR: <b>Monogenic, Aneuploidy, Structural</b></li><li><b>R</b>isk Stratification: <b>Alkylators &gt; Platinum &gt; Anthracyclines</b></li><li><b>E</b>arly Referral: <b>Before Treatment!</b></li><li><b>S</b>perm Cryo: <b>Gold Std Male, Masturbation/TESE</b></li><li><b>E</b>gg Freezing: <b>Oocyte Vitrification (MII)</b></li><li><b>R</b>adiation Risk: <b>Pelvic RT = High Gonadotoxicity</b></li><li><b>V</b>itrification: <b>Standard Freezing (Oocyte/Embryo/Tissue)</b></li><li><b>E</b>thics/Legal: <b>Consent, Storage, Posthumous, HFEA/ASRM</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Fertility Preservation)) Gonadotoxicity Alkylators: High (Cyclo, Busulfan, Melphalan) Platinums: Moderate (Cisplatin, Carboplatin) Anthracyclines: Low RT: Pelvic/Cranial = High Male Sperm Cryo (Gold Std) TESE (Azoospermia) Testicular Tissue (Prepubertal/Exp) Female Embryo Cryo (Gold Std, Partner/Donor) Oocyte Cryo (Single, No Partner) Ovarian Tissue Cryo (Prepubertal/Urgent) Ovarian Transposition (Pre-Pelvic RT) GnRHa (Adjunct, Controversial) Genetic PGT-M (Monogenic: BRCA, Lynch) PGT-A (Aneuploidy) PGT-SR (Structural Rearrangement) Counselling Medical, Genetic, Legal, Financial, Psychosocial Oncofertility Team Special Breast: Letrozole Co-Stim Paediatric: Assent + Tissue Cryo HSCT: Very High Risk </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Risk**</td><td>Alkylators (High), Platinums (Mod), Anthracyclines (Low), Pelvic/Cranial RT (High)</td></tr><tr><td>**Male**</td><td>Sperm Cryo (Gold Std), TESE (Azoospermia), Tissue Cryo (Prepubertal)</td></tr><tr><td>**Female**</td><td>Embryo Cryo (Gold Std), Oocyte Cryo (Single), Ovarian Tissue Cryo (Prepubertal/Urgent)</td></tr><tr><td>**Transposition**</td><td>Laparoscopic Lateral Pre-Pelvic RT</td></tr><tr><td>**GnRHa**</td><td>Adjunct Only (Optional), Controversial</td></tr><tr><td>**Genetic**</td><td>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Rearrangement)</td></tr><tr><td>**Breast**</td><td>Letrozole Co-Stim (Low E2), Pregnancy Safe Post-Tx</td></tr><tr><td>**Paediatric**</td><td>Assent + Consent, Tissue Cryo (Experimental)</td></tr><tr><td>**Counselling**</td><td>Medical, Genetic, Legal, Financial, Psychosocial</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Gonadotoxicity Risk</td><td></td><td></td></tr><tr><td>Male Options</td><td></td><td></td></tr><tr><td>Female Options</td><td></td><td></td></tr><tr><td>Ovarian Tissue Cryo/Transposition</td><td></td><td></td></tr><tr><td>GnRHa Role</td><td></td><td></td></tr><tr><td>Genetic Testing/PGT</td><td></td><td></td></tr><tr><td>Counselling Framework</td><td></td><td></td></tr><tr><td>Special Populations</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Oncofertility]], [[Sperm Cryopreservation]], [[Oocyte Cryopreservation]], [[Ovarian Tissue Cryopreservation]], [[Ovarian Transposition]], [[GnRHa]], [[Gonadotoxicity]], [[Chemotherapy Gonadotoxicity]], [[Radiotherapy Gonadotoxicity]], [[Genetic Counselling]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Fertility Preservation in Cancer Patients (Gonadotoxicity), which statement is correct? A. <b>Alkylators (High), Platinums (Moderate), Anthracyclines (Low), RT Pelvic/Cranial (High)</b> B. **Alkylators - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Alkylators (High), Platinums (Moderate), Anthracyclines (Low), RT Pelvic/Cranial (High)</b></li></ul>
+<p><b>2.</b> Regarding Fertility Preservation in Cancer Patients (Male: Sperm Cryo), which statement is correct? A. <b>Gold Standard (Post-Pubertal)</b>, <b>TESE if Azoospermic</b>, <b>Testicular Tissue (Prepubertal/Exp)</b> B. **Gold - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Gold Standard (Post-Pubertal)</b>, <b>TESE if Azoospermic</b>, <b>Testicular Tissue (Prepubertal/Exp)</b></li></ul>
+<p><b>3.</b> Regarding Fertility Preservation in Cancer Patients (Female: Embryo Cryo), which statement is correct? A. <b>Gold Standard (Partner/Donor Sperm)</b>, <b>Oocyte Cryo (Single/No Partner)</b> B. **Gold - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Gold Standard (Partner/Donor Sperm)</b>, <b>Oocyte Cryo (Single/No Partner)</b></li></ul>
+<p><b>4.</b> Regarding Fertility Preservation in Cancer Patients (Ovarian Tissue Cryo), which statement is correct? A. <b>Prepubertal, Urgent, No Partner</b> → <b>&gt;200 Live Births, ASRM: Not Experimental</b> B. **Prepubertal, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Prepubertal, Urgent, No Partner</b> → <b>&gt;200 Live Births, ASRM: Not Experimental</b></li></ul>
+<p><b>5.</b> Regarding Fertility Preservation in Cancer Patients (Ovarian Transposition), which statement is correct? A. <b>Before Pelvic RT</b>, <b>Laparoscopic, Lateral Fixation</b> B. **Before - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Before Pelvic RT</b>, <b>Laparoscopic, Lateral Fixation</b></li></ul>
+<p><b>6.</b> Regarding Fertility Preservation in Cancer Patients (GnRHa), which statement is correct? A. <b>Adjunct Only (Controversial)</b>, <b>Goserelin 3.6mg Monthly</b>, <b>ASCO/ESMO: Optional</b> B. **Adjunct - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Adjunct Only (Controversial)</b>, <b>Goserelin 3.6mg Monthly</b>, <b>ASCO/ESMO: Optional</b></li></ul>
+<p><b>7.</b> Regarding Fertility Preservation in Cancer Patients (Genetic), which statement is correct? A. <b>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</b> B. **PGT-M - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</b></li></ul>
+<p><b>8.</b> Regarding Fertility Preservation in Cancer Patients (Counselling), which statement is correct? A. <b>Medical, Genetic, Legal, Financial, Psychosocial</b> B. **Medical, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Medical, Genetic, Legal, Financial, Psychosocial</b></li></ul>
+<p><b>9.</b> Regarding Fertility Preservation in Cancer Patients (Breast Cancer), which statement is correct? A. <b>Letrozole Co-Stimulation (Low E2)</b>, <b>Pregnancy Safe After Tx</b> B. **Letrozole - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Letrozole Co-Stimulation (Low E2)</b>, <b>Pregnancy Safe After Tx</b></li></ul>
+<p><b>10.</b> Regarding Fertility Preservation in Cancer Patients (Paediatric), which statement is correct? A. <b>Assent + Consent</b>, <b>Tissue Cryo (Prepubertal)</b> B. **Assent - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Assent + Consent</b>, <b>Tissue Cryo (Prepubertal)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Alkylators (High), Platinums (Moderate), Anthracyclines (Low), RT Pelvic/Cranial (High)</b></li><li>B. **Alkylators (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Alkylators (High), Platinums (Moderate), Anthracyclines (Low), RT Pelvic/Cranial (High)</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Gold Standard (Post-Pubertal)</b>, <b>TESE if Azoospermic</b>, <b>Testicular Tissue (Prepubertal/Exp)</b></li><li>B. **Gold (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Gold Standard (Post-Pubertal)</b>, <b>TESE if Azoospermic</b>, <b>Testicular Tissue (Prepubertal/Exp)</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Gold Standard (Partner/Donor Sperm)</b>, <b>Oocyte Cryo (Single/No Partner)</b></li><li>B. **Gold (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Gold Standard (Partner/Donor Sperm)</b>, <b>Oocyte Cryo (Single/No Partner)</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Prepubertal, Urgent, No Partner</b> → <b>&gt;200 Live Births, ASRM: Not Experimental</b></li><li>B. **Prepubertal, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Prepubertal, Urgent, No Partner</b> → <b>&gt;200 Live Births, ASRM: Not Experimental</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Before Pelvic RT</b>, <b>Laparoscopic, Lateral Fixation</b></li><li>B. **Before (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Before Pelvic RT</b>, <b>Laparoscopic, Lateral Fixation</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Adjunct Only (Controversial)</b>, <b>Goserelin 3.6mg Monthly</b>, <b>ASCO/ESMO: Optional</b></li><li>B. **Adjunct (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Adjunct Only (Controversial)</b>, <b>Goserelin 3.6mg Monthly</b>, <b>ASCO/ESMO: Optional</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</b></li><li>B. **PGT-M (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Medical, Genetic, Legal, Financial, Psychosocial</b></li><li>B. **Medical, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Medical, Genetic, Legal, Financial, Psychosocial</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Letrozole Co-Stimulation (Low E2)</b>, <b>Pregnancy Safe After Tx</b></li><li>B. **Letrozole (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Letrozole Co-Stimulation (Low E2)</b>, <b>Pregnancy Safe After Tx</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Assent + Consent</b>, <b>Tissue Cryo (Prepubertal)</b></li><li>B. **Assent (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Assent + Consent</b>, <b>Tissue Cryo (Prepubertal)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Gonadotoxicity? <b>A1:</b> Alkylators (High), Platinums (Moderate), Anthracyclines (Low), RT Pelvic/Cranial (High)</p>
+<p><b>Q2:</b> Male: Sperm Cryo? <b>A2:</b> Gold Standard (Post-Pubertal), TESE if Azoospermic, Testicular Tissue (Prepubertal/Exp)</p>
+<p><b>Q3:</b> Female: Embryo Cryo? <b>A3:</b> Gold Standard (Partner/Donor Sperm), Oocyte Cryo (Single/No Partner)</p>
+<p><b>Q4:</b> Ovarian Tissue Cryo? <b>A4:</b> Prepubertal, Urgent, No Partner → &gt;200 Live Births, ASRM: Not Experimental</p>
+<p><b>Q5:</b> Ovarian Transposition? <b>A5:</b> Before Pelvic RT, Laparoscopic, Lateral Fixation</p>
+<p><b>Q6:</b> GnRHa? <b>A6:</b> Adjunct Only (Controversial), Goserelin 3.6mg Monthly, ASCO/ESMO: Optional</p>
+<p><b>Q7:</b> Genetic? <b>A7:</b> PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</p>
+<p><b>Q8:</b> Counselling? <b>A8:</b> Medical, Genetic, Legal, Financial, Psychosocial</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Gonadotoxicity</td><td>Alkylators (High), Platinums (Moderate), Anthracyclines (Low), RT Pelvic/Cranial (High)</td></tr><tr><td>2</td><td>A</td><td>Male: Sperm Cryo</td><td>Gold Standard (Post-Pubertal), TESE if Azoospermic, Testicular Tissue (Prepubertal/Exp)</td></tr><tr><td>3</td><td>A</td><td>Female: Embryo Cryo</td><td>Gold Standard (Partner/Donor Sperm), Oocyte Cryo (Single/No Partner)</td></tr><tr><td>4</td><td>A</td><td>Ovarian Tissue Cryo</td><td>Prepubertal, Urgent, No Partner → >200 Live Births, ASRM: Not Experimental</td></tr><tr><td>5</td><td>A</td><td>Ovarian Transposition</td><td>Before Pelvic RT, Laparoscopic, Lateral Fixation</td></tr><tr><td>6</td><td>A</td><td>GnRHa</td><td>Adjunct Only (Controversial), Goserelin 3.6mg Monthly, ASCO/ESMO: Optional</td></tr><tr><td>7</td><td>A</td><td>Genetic</td><td>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</td></tr><tr><td>8</td><td>A</td><td>Counselling</td><td>Medical, Genetic, Legal, Financial, Psychosocial</td></tr><tr><td>9</td><td>A</td><td>Breast Cancer</td><td>Letrozole Co-Stimulation (Low E2), Pregnancy Safe After Tx</td></tr><tr><td>10</td><td>A</td><td>Paediatric</td><td>Assent + Consent, Tissue Cryo (Prepubertal)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Gonadotoxicity</td><td>Alkylators (High), Platinums (Moderate), Anthracyclines (Low), RT Pelvic/Cranial (High)</td></tr><tr><td>2</td><td>A</td><td>Male: Sperm Cryo</td><td>Gold Standard (Post-Pubertal), TESE if Azoospermic, Testicular Tissue (Prepubertal/Exp)</td></tr><tr><td>3</td><td>A</td><td>Female: Embryo Cryo</td><td>Gold Standard (Partner/Donor Sperm), Oocyte Cryo (Single/No Partner)</td></tr><tr><td>4</td><td>A</td><td>Ovarian Tissue Cryo</td><td>Prepubertal, Urgent, No Partner → >200 Live Births, ASRM: Not Experimental</td></tr><tr><td>5</td><td>A</td><td>Ovarian Transposition</td><td>Before Pelvic RT, Laparoscopic, Lateral Fixation</td></tr><tr><td>6</td><td>A</td><td>GnRHa</td><td>Adjunct Only (Controversial), Goserelin 3.6mg Monthly, ASCO/ESMO: Optional</td></tr><tr><td>7</td><td>A</td><td>Genetic</td><td>PGT-M (Monogenic), PGT-A (Aneuploidy), PGT-SR (Structural)</td></tr><tr><td>8</td><td>A</td><td>Counselling</td><td>Medical, Genetic, Legal, Financial, Psychosocial</td></tr><tr><td>9</td><td>A</td><td>Breast Cancer</td><td>Letrozole Co-Stimulation (Low E2), Pregnancy Safe After Tx</td></tr><tr><td>10</td><td>A</td><td>Paediatric</td><td>Assent + Consent, Tissue Cryo (Prepubertal)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Survivorship &amp; Late Effects|Survivorship &amp; Late Effects]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fertility Preservation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

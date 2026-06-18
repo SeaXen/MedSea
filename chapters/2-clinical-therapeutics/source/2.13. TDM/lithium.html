@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lithium — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.13. TDM</span>
+      <div class="h1">Lithium</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] State therapeutic and toxic ranges</li><li>[ ] Apply sampling timing (12h post-dose standard)</li><li>[ ] Execute renal/thyroid monitoring protocol</li><li>[ ] Identify toxicity features: neurological, renal, endocrine</li><li>[ ] Manage toxicity: fluid resuscitation, dialysis indications</li><li>[ ] Recognise drug interactions (NSAIDs, ACEi, Thiazides, etc.)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Therapeutic Range & Sampling</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>**Therapeutic Range (mmol/L)**</th><th>**Toxic Threshold**</th></tr><tr><td>------------</td><td>-------------------------------</td><td>---------------------</td></tr><tr><td>**Acute Mania**</td><td>**0.8–1.2**</td><td>**>1.5**</td></tr><tr><td>**Maintenance / Prophylaxis**</td><td>**0.6–1.0** (some 0.4–0.8)</td><td>**>1.2**</td></tr><tr><td>**Toxicity**</td><td>—</td><td>**>1.5 = moderate**, **>2.5 = severe / dialysis**</td></tr></table>
+<div class="sub-h">Sampling Timing — **CRITICAL**</div>
+<table class="ctable"><tr><th>Sample</th><th>Timing</th><th>Rationale</th></tr><tr><td>--------</td><td>--------</td><td>-----------</td></tr><tr><td>**Standard trough**</td><td>**12h post-dose** (±30 min)</td><td>**Steady-state** trough; lithium t½ ~18–24h</td></tr><tr><td>**If once daily (evening)**</td><td>**Morning (12h post)**</td><td>Standard practice</td></tr><tr><td>**If twice daily**</td><td>**12h post-evening dose** (pre-morning)</td><td>Most reliable</td></tr><tr><td>**Random**</td><td>Not recommended</td><td>Use nomogram if unavoidable</td></tr></table>
+<div class="callout"><b>Steady state</b>: <b>5–7 days</b> (5 half-lives); <b>check level at 5–7 days</b> after initiation or dose change</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚖️ Renal Adjustment & Monitoring</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Dose Adjustment by eGFR/CrCl</div>
+<table class="ctable"><tr><th>eGFR/CrCl (mL/min)</th><th>Dose Adjustment</th><th>Monitoring</th></tr><tr><td>-------------------</td><td>-----------------</td><td>------------</td></tr><tr><td>**>60**</td><td>Standard</td><td>Level q3mo; eGFR q6mo; TSH q6–12mo</td></tr><tr><td>**45–60**</td><td>**↓ 25%**</td><td>Level q3mo; eGFR q6mo; TSH q6–12mo</td></tr><tr><td>**30–45**</td><td>**↓ 50%**</td><td>Level q2–3mo; eGFR q3–6mo; TSH q6–12mo</td></tr><tr><td>**15–30**</td><td>**↓ 75%** (or avoid/)</td><td>Level q1–2mo; eGFR q3mo; TSH q6–12mo</td></tr><tr><td>**<15**</td><td>**Avoid if possible**; if essential: **specialist only, ↓ >75%**</td><td>Level q1mo; eGFR q1–3mo; TSH q6mo</td></tr></table>
+<div class="callout"><b>Maintenance dose typically 400–1200mg/day</b> (lithium carbonate 200–600mg 1–2× daily)</div>
+<div class="sub-h">Mandatory Monitoring Protocol (NICE / BAP)</div>
+<table class="ctable"><tr><th>Test</th><th>Baseline</th><th>Frequency (Stable)</th><th>Frequency (Unstable/Tox)</th></tr><tr><td>------</td><td>----------</td><td>-------------------</td><td>--------------------------</td></tr><tr><td>**Lithium Level**</td><td>Day 5–7</td><td>**Every 3 months**</td><td>Weekly until stable</td></tr><tr><td>**eGFR / Creatinine**</td><td>Baseline</td><td>**Every 6 months**</td><td>Every 1–3 months</td></tr><tr><td>**TSH / Thyroid Function**</td><td>Baseline</td><td>**Every 6–12 months**</td><td>Every 6 months</td></tr><tr><td>**Calcium**</td><td>Baseline</td><td>Annually</td><td>Every 6 months</td></tr><tr><td>**Weight / BMI**</td><td>Baseline</td><td>Every 6 months</td><td>Every 3 months</td></tr><tr><td>**U&Es**</td><td>Baseline</td><td>Every 6 months</td><td>Every 1–3 months</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">☠️ Lithium Toxicity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute vs Chronic</div>
+<table class="ctable"><tr><th>Feature</th><th>**Acute Toxicity** (Overdose)</th><th>**Chronic Toxicity** (Accumulation)</th></tr><tr><td>---------</td><td>-------------------------------</td><td>--------------------------------------</td></tr><tr><td>**Context**</td><td>Intentional / accidental overdose</td><td>Renal impairment, dehydration, drug interaction, dose increase</td></tr><tr><td>**Level Correlation**</td><td>Poor — **symptoms lag behind level**</td><td>**Better correlation** — level reflects tissue concentration</td></tr><tr><td>**Renal Elimination**</td><td>Normal (initially)</td><td>**Impaired** — ↓ clearance</td></tr><tr><td>**Neurological**</td><td>Less prominent early</td><td>**Prominent** (tremor, confusion, ataxia, seizures)</td></tr><tr><td>**GI**</td><td>Prominent (N/V, diarrhoea)</td><td>Less prominent</td></tr><tr><td>**Outcome**</td><td>Better if treated early</td><td>**Higher morbidity/mortality**; risk of SILENT neurological damage</td></tr></table>
+<div class="sub-h">Clinical Features by Severity</div>
+<table class="ctable"><tr><th>Severity</th><th>Level</th><th>Features</th></tr><tr><td>----------</td><td>-------</td><td>----------</td></tr><tr><td>**Mild**</td><td>**1.5–2.0**</td><td>Fine tremor, N/V, diarrhoea, polyuria, polydipsia, mild cognitive impairment</td></tr><tr><td>**Moderate**</td><td>**2.0–2.5**</td><td>**Coarse tremor**, hyperreflexia, ataxia, dysarthria, confusion, agitation, muscle weakness, ECG changes</td></tr><tr><td>**Severe**</td><td>**>2.5**</td><td>**Seizures**, coma, hyperthermia, rigidity, **permanent neurotoxicity** (SILENT: cerebellar atrophy, cognitive decline), cardiovascular collapse</td></tr></table>
+<div class="callout"><b>SILENT = Syndrome of Irreversible Lithium-Effectuated Neurotoxicity</b> — cerebellar dysfunction persists after level normalises</div>
+<div class="sub-h">ECG Changes</div>
+<table class="ctable"><tr><th>Change</th><th>Significance</th></tr><tr><td>--------</td><td>--------------</td></tr><tr><td>**T-wave flattening / inversion**</td><td>Common, non-specific</td></tr><tr><td>**QT prolongation**</td><td>Risk of Torsades</td></tr><tr><td>**Sinus node dysfunction / AV block**</td><td>Severe toxicity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💊 Management of Toxicity</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Severity</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Mild (1.5–2.0, asymptomatic/minimal)**</td><td>**HOLD lithium**; **IV 0.9% NaCl 1–2L** (hydration); correct K⁺/Mg²⁺; monitor level q12–24h; restart at ↓ dose when <1.0</td></tr><tr><td>**Moderate (2.0–2.5, symptomatic)**</td><td>**HOLD lithium**; **IV 0.9% NaCl 2–3L** (aggressive hydration); **Furosemide 20–40mg** (only if euvolaemic) to ↑ Li⁺ clearance; correct K⁺/Mg²⁺; consider **haemodialysis** if neuro symptoms; monitor level q6–12h</td></tr><tr><td>**Severe (>2.5, seizures/coma/neuro)**</td><td>**HAEMODIALYSIS** (preferred) or **CRRT**; **HD is most effective** (high clearance, short duration); Continue dialysis until level <1.0 and clinical improvement; **Rebound common** — need repeated HD</td></tr></table>
+<div class="sub-h">Dialysis Indications (EXACT Criteria)</div>
+<table class="ctable"><tr><th>Indication</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Level**</td><td>**>2.5 mmol/L** (acute) OR **>4.0 mmol/L** (acute overdose)</td></tr><tr><td>**Neurological**</td><td>**Seizures, Coma, Severe confusion, Focal deficits**</td></tr><tr><td>**Renal**</td><td>**AKI / Oliguria / eGFR <15**</td></tr><tr><td>**Cardiac**</td><td>**Life-threatening arrhythmia**</td></tr><tr><td>**Failure of conservative**</td><td>Level not ↓ with hydration + diuresis</td></tr></table>
+<div class="callout"><b>HD removes ~50% of lithium per 4h session</b>; <b>Rebound ↑ 30–50% post-HD</b> (redistribution from tissues) — often need <b>repeated HD</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🔄 Key Drug Interactions (↑ Lithium Levels)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>**Level Increase**</th><th>Management</th></tr><tr><td>------</td><td>-----------</td><td>-------------------</td><td>------------</td></tr><tr><td>**NSAIDs** (incl. COX-2)</td><td>↓ Renal PG → ↓ GFR + ↑ proximal Li⁺ reabsorption</td><td>**25–100%**</td><td>**AVOID**; use paracetamol; if essential: ↓ Li⁺ dose 25–50%, monitor weekly</td></tr><tr><td>**ACE Inhibitors**</td><td>↓ Afferent tone → ↓ GFR; ↓ Na⁺ delivery → ↑ Li⁺ reabsorption</td><td>**20–50%**</td><td>Monitor Li⁺ at 1wk, 2wk, 4wk; ↓ Li⁺ dose if needed</td></tr><tr><td>**ARBs**</td><td>Similar to ACEi</td><td>**20–50%**</td><td>Same as ACEi</td></tr><tr><td>**Thiazides**</td><td>Volume depletion → ↑ proximal Na⁺/Li⁺ reabsorption</td><td>**25–100%**</td><td>**AVOID if possible**; if essential: ↓ Li⁺ dose 25–50%, monitor weekly</td></tr><tr><td>**Loop Diuretics**</td><td>Less effect than thiazides; volume depletion</td><td>**10–25%**</td><td>Monitor Li⁺</td></tr><tr><td>**Potassium-Sparing** (Amiloride, Triamterene)</td><td>↑ Li⁺ reabsorption in collecting duct</td><td>**10–25%**</td><td>Avoid; **Amiloride used for Li⁺-induced NDI** (paradoxical)</td></tr><tr><td>**Tetracyclines** (Demeclocycline)</td><td>?</td><td>Variable</td><td>Monitor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Therapeutic range**</td><td>**Acute mania: 0.8–1.2; Maintenance: 0.6–1.0** (some 0.4–0.8)</td></tr><tr><td>**Sampling**</td><td>**12h post-dose (trough)**; steady state at **5–7 days**</td></tr><tr><td>**Monitoring**</td><td>**Level q3mo, eGFR q6mo, TSH q6–12mo** (stable)</td></tr><tr><td>**Toxicity thresholds**</td><td>**>1.5 moderate; >2.5 severe/dialysis**</td></tr><tr><td>**Acute vs Chronic**</td><td>Acute = poor level correlation, GI dominant; Chronic = better correlation, neuro dominant, higher mortality</td></tr><tr><td>**SILENT syndrome**</td><td>**Irreversible cerebellar neurotoxicity** post-toxicity</td></tr><tr><td>**HD indications**</td><td>**Level >2.5 + neuro symptoms; >4.0 acute; AKI; seizures; failure conservative**</td></tr><tr><td>**Top interactions**</td><td>**NSAIDs, ACEi/ARB, Thiazides → ↑ Li⁺ 25–100% (monitor weekly)**</td></tr><tr><td>**NDI management**</td><td>**Amiloride 5–10mg BD** (paradoxically reduces Li⁺ reabsorption)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Lithium therapeutic range for acute mania vs maintenance?</td><td>**Acute mania: 0.8–1.2 mmol/L; Maintenance: 0.6–1.0 mmol/L**</td></tr><tr><td>2. When to sample lithium level?</td><td>**12h post-dose (trough)**; steady state at **5–7 days** after initiation/dose change</td></tr><tr><td>3. Monitoring protocol in stable patient?</td><td>**Level q3mo, eGFR q6mo, TSH q6–12mo, Ca annually, Weight q6mo**</td></tr><tr><td>4. Acute vs chronic lithium toxicity — key differences?</td><td>**Acute: GI dominant (N/V), poor level correlation; Chronic: Neuro dominant (tremor, ataxia, confusion), better correlation, higher mortality, SILENT risk**</td></tr><tr><td>5. SILENT syndrome?</td><td>**Syndrome of Irreversible Lithium-Effectuated Neurotoxicity** — persistent cerebellar dysfunction (ataxia, dysarthria) after level normalisation</td></tr><tr><td>6. Dialysis indications for lithium toxicity?</td><td>**Level >2.5 + neuro symptoms; >4.0 acute; AKI; seizures; life-threatening arrhythmia; failure of conservative management**</td></tr><tr><td>7. NSAIDs + lithium — effect and management?</td><td>**↑ Li⁺ 25–100% (↓ PG → ↓ GFR + ↑ reabsorption)**; **AVOID NSAIDs**; use paracetamol; if essential: ↓ Li⁺ dose 25–50%, monitor weekly</td></tr><tr><td>8. Thiazide + lithium — effect?</td><td>**↑ Li⁺ 25–100% (volume depletion → ↑ proximal reabsorption)**; avoid if possible; ↓ Li⁺ dose, monitor</td></tr><tr><td>9. Lithium-induced NDI — management?</td><td>**Amiloride 5–10mg BD** (blocks ENaC in collecting duct); ensure water access; consider switching mood stabiliser</td></tr><tr><td>10. Lithium level 2.8 mmol/L, confused, coarse tremor. Management?</td><td>**Moderate-severe chronic toxicity**; **HOLD lithium**; **IV saline 2–3L + furosemide**; **Consider HD** (level >2.5 + neuro); correct K⁺/Mg²⁺; monitor q6–12h</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Acute toxicity = GI symptoms first**</td><td>**Acute = GI (N/V); Chronic = Neuro (tremor, ataxia, confusion)**</td></tr><tr><td>**Level correlates with severity**</td><td>**Acute: poor correlation**; **Chronic: better correlation**</td></tr><tr><td>**Dialysis removes lithium**</td><td>**HD removes ~50% per session**; **Rebound 30–50% post-HD** → repeated HD often needed</td></tr><tr><td>**Amiloride for NDI**</td><td>**Paradoxical** — amiloride ↑ Li⁺ excretion by blocking ENaC in collecting duct (used therapeutically)</td></tr><tr><td>**Lithium + Thiazide**</td><td>**Both cause NDI but for different reasons** — thiazide ↑ Li⁺ → toxicity risk</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"LITHIUM RANGE"</b> = <b>Mania 0.8–1.2; Maintenance 0.6–1.0; Toxic &gt;1.5; Dialysis &gt;2.5</b></li><li><b>"SAMPLE 12H"</b> = <b>12h post-dose trough</b>; steady state 5-7 days</li><li><b>"MONITOR q3/q6/q12"</b> = <b>Level q3mo, eGFR q6mo, TSH q12mo</b></li><li><b>"ACUTE = GI; CHRONIC = NEURO"</b> = different presentations</li><li><b>"SILENT = IRREVERSIBLE CEREBELLAR"</b> = ataxia persists after level normal</li><li><b>"DIALYSIS &gt;2.5 + NEURO / &gt;4.0 ACUTE / AKI / SEIZURES"</b></li><li><b>"NSAID/ACEi/ARB/THIAZIDE = ↑ Li⁺ 25-100%"</b> = monitor weekly, avoid if possible</li><li><b>"NDI = AMILOLIDE 5-10mg BD"</b> = blocks ENaC</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid mindmap root((Lithium TDM)) Range Mania: 0.8-1.2 Maintenance: 0.6-1.0 Toxic: &gt;1.5 moderate, &gt;2.5 severe Sampling 12h post-dose (trough) Steady state: 5-7 days Monitoring (Stable) Level q3mo eGFR q6mo TSH q6-12mo Ca annually Toxicity Acute (OD): GI dominant, poor level correlation Chronic (accumulation): Neuro dominant, better correlation, SILENT risk Mild (1.5-2.0): Fine tremor, GI Moderate (2.0-2.5): Coarse tremor, ataxia, confusion Severe (&gt;2.5): Seizures, coma, SILENT, death SILENT Irreversible cerebellar neurotoxicity Persists after level normalises Dialysis Indications</p>
+<div class="callout">2.5 + neuro symptoms 4.0 acute</div>
+<p>AKI / Oliguria Seizures / Coma Failure conservative Interactions (↑ Li) NSAIDs (AVOID) - 25-100% ACEi/ARB - 20-50% Thiazides (AVOID) - 25-100% Loops - 10-25% NDI Management Amiloride 5-10mg BD Water access Consider switch mood stabiliser ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Range & sampling</td><td>6</td><td></td></tr><tr><td>Monitoring protocol</td><td>6</td><td></td></tr><tr><td>Toxicity (acute vs chronic)</td><td>8</td><td></td></tr><tr><td>SILENT & dialysis</td><td>8</td><td></td></tr><tr><td>Interactions</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**46**</td><td></td></tr></table>
+<p><b>Target</b>: ≥37/46 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Lithium monitoring protocol and toxicity thresholds."*</div>
+<ul><li><b>Therapeutic</b>: Mania 0.8–1.2; Maintenance 0.6–1.0; Toxic &gt;1.5; Dialysis &gt;2.5</li><li><b>Sampling</b>: 12h post-dose trough; steady state 5–7 days</li><li><b>Monitoring</b>: Level q3mo, eGFR q6mo, TSH q6–12mo, Ca annually</li><li><b>Toxicity</b>: Acute = GI (N/V), poor level correlation; Chronic = Neuro (tremor, ataxia, confusion), better correlation, SILENT risk</li><li><b>Dialysis</b>: &gt;2.5 + neuro; &gt;4.0 acute; AKI; seizures</li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on lithium 800mg, started ibuprofen for back pain. 1 week later: coarse tremor, confusion, Li⁺ 2.8. Management?"*</div>
+<ul><li><b>NSAID-induced lithium toxicity</b> (NSAIDs ↓ PG → ↓ GFR + ↑ proximal reabsorption → ↑ Li⁺ 25–100%)</li><li><b>STOP ibuprofen immediately</b>; switch to paracetamol</li><li><b>HOLD lithium</b>; <b>IV saline 2–3L + furosemide</b></li><li><b>Consider HD</b> (level &gt;2.5 + neuro symptoms)</li><li>Monitor Li⁺ q6–12h; restart at ↓ dose when &lt;1.0</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on lithium, polyuria 4L/day, hypernatremia. Diagnosis? Treatment?"*</div>
+<ul><li><b>Lithium-induced NDI</b> (nephrogenic diabetes insipidus)</li><li><b>Amiloride 5–10mg BD</b> (blocks ENaC in collecting duct)</li><li>Ensure free water access</li><li>Consider switching mood stabiliser if persistent</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Lithium range: Mania 0.8–1.2, Maintenance 0.6–1.0, Toxic &gt;1.5</li><li>Sample: 12h post-dose; steady state 5–7 days</li><li>Monitor: Level q3mo, eGFR q6mo, TSH q12mo</li><li>Acute toxicity = GI, poor correlation; Chronic = Neuro, better correlation, SILENT</li><li>SILENT = irreversible cerebellar damage</li><li>HD: &gt;2.5+neuro, &gt;4.0 acute, AKI, seizures</li><li>NSAIDs/ACEi/ARB/Thiazides = ↑ Li⁺ 25–100% (monitor weekly)</li><li>NDI = Amiloride 5–10mg BD</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>LITHIUM TDM:</b> <b>RANGE</b>: Mania 0.8-1.2, Maintenance 0.6-1.0, Toxic &gt;1.5, Dialysis &gt;2.5 <b>SAMPLE</b>: 12h post-dose trough; SS 5-7d <b>MONITOR</b>: Level q3mo, eGFR q6mo, TSH q12mo <b>TOXICITY</b>: Acute=GI, Chronic=Neuro (SILENT=irreversible cerebellar) <b>DIALYSIS</b>: &gt;2.5+neuro; &gt;4.0 acute; AKI; seizures <b>INTERACTIONS</b>: NSAIDs/ACEi/ARB/Thiazides = ↑ Li⁺ 25-100% (AVOID) <b>NDI</b>: Amiloride 5-10mg BD</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Lithium therapeutic range for maintenance/prophylaxis:</b></li></ol>
+<p>A. 0.4–0.6 mmol/L B. <b>0.6–1.0 mmol/L</b> ✓ C. 1.0–1.2 mmol/L D. 1.2–1.5 mmol/L E. 0.8–1.2 mmol/L</p>
+<ol><li><b>Standard trough sampling time for lithium:</b></li></ol>
+<p>A. 6h post-dose B. <b>12h post-dose</b> ✓ C. 8h post-dose D. 24h post-dose E. Pre-dose only</p>
+<ol><li><b>Steady state for lithium (t½ ~24h):</b></li></ol>
+<p>A. 2–3 days B. <b>5–7 days</b> ✓ C. 10–14 days D. 21 days E. 1 month</p>
+<ol><li><b>Acute vs chronic lithium toxicity — chronic is characterised by:</b></li></ol>
+<p>A. Prominent GI symptoms B. <b>Prominent neurological symptoms (tremor, ataxia, confusion)</b> ✓ C. Good level correlation in both D. Lower mortality E. No SILENT risk</p>
+<ol><li><b>SILENT syndrome — what does it stand for?</b></li></ol>
+<p>A. Syndrome of Irreversible Lithium Toxicity B. <b>Syndrome of Irreversible Lithium-Effectuated Neurotoxicity</b> ✓ C. Severe Intoxication Leading to Enduring Neurological Trauma D. Subclinical Intoxication Leading to Enduring Neurotoxicity E. Syndrome of Iatrogenic Lithium Encephalopathy</p>
+<ol><li><b>Dialysis indication for lithium toxicity:</b></li></ol>
+<p>A. Level &gt;1.5 B. <b>Level &gt;2.5 + neurological symptoms</b> ✓ C. Level &gt;2.0 D. Any level with tremor E. Only if level &gt;5.0</p>
+<ol><li><b>NSAIDs + lithium — effect on lithium level:</b></li></ol>
+<p>A. No change B. ↓ 25% C. <b>↑ 25–100%</b> ✓ D. ↓ 50% E. Unpredictable</p>
+<ol><li><b>Lithium-induced NDI — first-line treatment:</b></li></ol>
+<p>A. Desmopressin B. <b>Amiloride 5–10mg BD</b> ✓ C. Thiazide diuretic D. Fluid restriction E. NSAID</p>
+<ol><li><b>Thiazide + lithium interaction — mechanism:</b></li></ol>
+<p>A. ↓ GFR only B. <b>Volume depletion → ↑ proximal Na⁺/Li⁺ reabsorption</b> ✓ C. CYP inhibition D. Displacement from protein E. No interaction</p>
+<ol><li><b>Lithium monitoring in stable patient — frequency:</b></li></ol>
+<p>A. Level monthly, eGFR monthly, TSH monthly B. <b>Level q3mo, eGFR q6mo, TSH q6–12mo</b> ✓ C. Level q6mo, eGFR q12mo, TSH q12mo D. Level yearly, eGFR yearly, TSH yearly E. Only if symptomatic</p>
+<ol><li><b>Haemodialysis for lithium — expected clearance per session:</b></li></ol>
+<p>A. 10–20% B. 25–35% C. <b>~50%</b> ✓ D. 75–85% E. &gt;95%</p>
+<ol><li><b>Lithium level post-HD rebound:</b></li></ol>
+<p>A. Level continues to fall B. <b>Rebound ↑ 30–50% (redistribution from tissues)</b> ✓ C. No change D. ↓ 50% again E. Unpredictable</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Lithium range (maintenance)</td><td>0.6–1.0 mmol/L</td></tr><tr><td>Lithium range (mania)</td><td>0.8–1.2 mmol/L</td></tr><tr><td>Lithium toxic</td><td>>1.5 mmol/L</td></tr><tr><td>Lithium dialysis</td><td>>2.5 + neuro; >4.0 acute; AKI; seizures</td></tr><tr><td>Sampling time</td><td>12h post-dose trough</td></tr><tr><td>Steady state</td><td>5–7 days</td></tr><tr><td>Monitoring stable</td><td>Level q3mo, eGFR q6mo, TSH q12mo</td></tr><tr><td>Acute toxicity</td><td>GI dominant (N/V), poor level correlation</td></tr><tr><td>Chronic toxicity</td><td>Neuro dominant (tremor, ataxia), better correlation, SILENT</td></tr><tr><td>SILENT</td><td>Irreversible cerebellar neurotoxicity</td></tr><tr><td>HD lithium clearance</td><td>~50% per 4h session; rebound 30-50%</td></tr><tr><td>NSAIDs + Li</td><td>↑ Li 25-100% (AVOID)</td></tr><tr><td>ACEi/ARB + Li</td><td>↑ Li 20-50%</td></tr><tr><td>Thiazide + Li</td><td>↑ Li 25-100% (AVOID)</td></tr><tr><td>NDI treatment</td><td>Amiloride 5-10mg BD</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — 0.6–1.0 mmol/L</li><li><b>B</b> — 12h post-dose</li><li><b>B</b> — 5–7 days</li><li><b>B</b> — Prominent neuro symptoms</li><li><b>B</b> — Syndrome of Irreversible Lithium-Effectuated Neurotoxicity</li><li><b>B</b> — Level &gt;2.5 + neurological symptoms</li><li><b>C</b> — ↑ 25–100%</li><li><b>B</b> — Amiloride 5–10mg BD</li><li><b>B</b> — Volume depletion → ↑ proximal reabsorption</li><li><b>B</b> — Level q3mo, eGFR q6mo, TSH q6–12mo</li><li><b>C</b> — ~50% per HD session</li><li><b>B</b> — Rebound ↑ 30–50%</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/TDM/Lithium.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Lithium · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,561 @@
+# Peripheral T-Cell Lymphomas (PTCL)
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **PTCL = Heterogeneous group of mature T/NK-cell neoplasms**; **10-15% of NHL**; **Aggressive**; **WHO 2022/ICC 2022**: **PTCL-NOS (30-40%)**, **AITL (15-20%)**, **ALCL (ALK+ 10%, ALK- 10%)**, **ATLL (5%)**, **EATL (5%)**, **NK/T-cell (5-10%)**, **Enteropathy-associated**, **Hepatosplenic**, **Subcutaneous panniculitis-like**; **1L: CHOEP (PTCL-NOS/AITL) vs CHOP (ALK+ ALCL) vs Brentuximab+CHP (ECHELON-2) for CD30+**; **Consolidation ASCT in 1L remission**; **Relapsed: Brentuximab (CD30+), Romidepsin, Belinostat, Pralatrexate, Alemtuzumab, CAR-T (CD30)**; **ATLL: Zidovudine+IFN-α, Mogamulizumab (CCR4)**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Classify **PTCL subtypes** per WHO 2022: PTCL-NOS, AITL, ALCL (ALK+/ALK-), ATLL, EATL, NK/T-cell, others
+- [ ] Apply **IHC immunophenotype**: CD3+, CD4/CD8, **CD30 (ALCL)**, **ALK (ALK+ ALCL)**, **TCRαβ/γδ**, **CCR4 (ATLL)**, **EBER (NK/T-cell)**
+- [ ] Calculate **prognostic indices**: **PIT (PTCL-NOS/AITL)**, **IPI (ALCL)**, **Galli (ATLL)**
+- [ ] Prescribe **1L therapy**: **CHOEP** (PTCL-NOS/AITL), **CHOP** (ALK+ ALCL), **Brentuximab+CHP** (ECHELON-2) for **CD30+** (ALCL, some PTCL-NOS)
+- [ ] Indicate **Consolidation ASCT** in 1L CR/PR (standard for fit patients)
+- [ ] Sequence **relapsed therapy**: **Brentuximab** (CD30+), **Romidepsin/Belinostat** (HDACi), **Pralatrexate** (DHFR inhibitor), **Alemtuzumab** (CD52), **CAR-T (CD30)**
+- [ ] Manage **ATLL**: **Zidovudine + IFN-α** (acute/lymphoma), **Mogamulizumab (CCR4)**, **Allo-HSCT** (young)
+- [ ] Recognise **NK/T-cell lymphoma**: **EBV+**, **Nasal/Extranasal**, **Asparaginase-based (SMILE/DeVIC)**, **RT essential**
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Definition** | Mature **T-cell / NK-cell** neoplasms; **Aggressive**; **10-15% of NHL** (higher in Asia) |
+| **Incidence** | ~1,500/year UK; **Geographic variation**: NK/T-cell ↑ Asia, ATLL ↑ Japan/Caribbean |
+| **Prevalence** | **Median OS 1-3 years** (subtype-dependent); **5-year OS ~30-40%** (improving with Brentuximab/ASCT) |
+| **Peak Age** | 60-70 years (ATLL younger in endemic) |
+| **Sex Ratio** | M > F (1.5:1) |
+| **Risk Factors** | **HTLV-1** (ATLL — endemic), **EBV** (NK/T-cell, AITL subset), **Immunosuppression** (post-transplant, HIV), **Coeliac** (EATL), **Genetic** (familial rare) |
+
+---
+
+## 3. Aetiology & Pathophysiology
+
+```mermaid
+flowchart LR
+    A[Normal T/NK Cell] --> B[Oncogenic Hit]
+    B --> B1[PTCL-NOS: Heterogeneous]
+    B1 --> C1[TFH Origin (GATA3, TBX21, BCL6, CXCL13)]
+    B1 --> C2[Epigenetic: TET2, DNMT3A, IDH2, RHOA G17V]
+    B --> B2[AITL: TFH Origin]
+    B2 --> C3[**RHOA G17V (70%)**, TET2, DNMT3A, IDH2]
+    C3 --> D1[Follicular expansion, Dysimmune]
+    B --> B3[ALK+ ALCL: **NPM1-ALK (t(2;5))**]
+    B3 --> C4[ALK Kinase → STAT3, PI3K, RAS]
+    B --> B4[ALK- ALCL: **DUSP22-IRF4 (30%)**, **TP63 (30%)**]
+    B --> B5[ATLL: **HTLV-1 Tax** → NF-κB, CREB]
+    B5 --> C5[CD4+CD25+CCR4+]
+    B --> B6[NK/T-cell: **EBV Latency II (LMP1, EBNA1)**]
+    B6 --> C6[NF-κB, JAK/STAT, LMP1]
+    B6 --> C7[**PRDM1/BLIMP1 loss**]
+```
+
+### WHO 2022 / ICC 2022 Classification (Major Subtypes)
+
+| Subtype | Frequency | Key Features | Cell of Origin |
+|---------|-----------|--------------|----------------|
+| **PTCL-NOS** | **30-40%** | Heterogeneous, **TFH markers (CXCL13, BCL6, ICOS, PD-1, CXCR5, BCL6)** | TFH (most) |
+| **AITL** | **15-20%** | **TFH**, **RHOA G17V (70%)**, TET2/DNMT3A/IDH2, **CD10+, CXCL13+**, Generalised LAD, B symptoms, Hypergammaglobulinaemia | TFH |
+| **ALK+ ALCL** | **10%** | **NPM1-ALK t(2;5)**, **CD30+, ALK+**, **EMA+**, Young, **Good prognosis** | Cytotoxic T |
+| **ALK- ALCL** | **10%** | **CD30+, ALK-**, **DUSP22-IRF4 (30%)**, **TP63 (30%)**, Older, **Worse than ALK+** | Cytotoxic T |
+| **ATLL** | **5%** | **HTLV-1+**, **CD4+CD25+CCR4+**, **Flower cells**, Acute/Lymphoma/Chronic/Smoldering | CD4+ Treg |
+| **EATL** | **5%** | **Coeliac disease**, **Type I (TCRαβ, CD3+, CD8+, CD4-, CD56-)**, **Type II (TCRγδ, CD56+)** | Intraepithelial T |
+| **NK/T-cell** | **5-10%** | **EBV+**, **CD56+, CD3ε+, Cytotoxic (Granzyme B, TIA-1, Perforin)**, **Nasal/Extranasal**, **Asparaginase-based** | NK / γδ T |
+| **Hepatosplenic** | <1% | **γδ TCR**, **CD56+**, **Iso 7q**, **Splenomegaly, Hepatomegaly**, No LAD | γδ T |
+| **Subcutaneous Panniculitis-like** | <1% | **αβ TCR**, **CD8+, CD56-**, **Subcutaneous nodules**, **Hemophagocytic syndrome** | αβ T |
+
+---
+
+## 4. Clinical Features (Subtype-Specific)
+
+| Subtype | Key Clinical Features |
+|---------|----------------------|
+| **PTCL-NOS/AITL** | Generalised LAD, B symptoms, **Skin rash (AITL)**, Hepatosplenomegaly, **Hypergammaglobulinaemia (AITL)**, Autoimmune phenomena (AIHA, ITP) |
+| **ALK+ ALCL** | Young (median 30s), **Skin involvement common**, **Systemic symptoms**, LAD, **Good prognosis** |
+| **ALK- ALCL** | Older, **Skin or systemic**, **Worse than ALK+** |
+| **ATLL** | **HTLV-1 endemic**, **Acute/Lymphoma**: LAD, Skin, Hypercalcaemia (PTHrP), Lytic lesions; **Chronic/Smoldering**: Indolent |
+| **EATL** | **Coeliac history**, **Abdominal pain, Weight loss, Diarrhoea**, **Jejunal ulcers/mass**, **Perforation risk** |
+| **NK/T-cell** | **Nasal**: Epistaxis, Nasal obstruction, Palate perforation; **Extranasal**: Skin, GI, Testis; **Hemophagocytic syndrome** |
+| **Hepatosplenic** | **Splenomegaly, Hepatomegaly**, **Cytopenias**, **No LAD**, Young males |
+
+---
+
+## 5. Staging & Prognostic Indices
+
+| System | Application |
+|--------|-------------|
+| **Ann Arbor / Lugano** | All PTCL (Stage I-IV) |
+| **PIT (Prognostic Index for T-cell Lymphoma)** | **PTCL-NOS / AITL** — **4 Factors**: Age >60, LDH >ULN, PS ≥2, BM involvement → **Low (0), Low-Int (1), High-Int (2), High (3-4)** |
+| **IPI** | **ALCL** (standard) |
+| **Galli / ATLL Prognostic Index** | **ATLL** — Age, LDH, Ca, PS, Organ involvement |
+
+---
+
+## 6. Diagnosis & Investigations
+
+| Investigation | Role | Key Details |
+|---------------|------|-------------|
+| **Lymph Node Biopsy (Excisional)** | **Gold standard** | **Architecture + IHC + Molecular** |
+| **IHC Panel** | **Subtype classification** | **CD3+, CD4/CD8, CD30, ALK, TCRβ/F1, CD56, Granzyme B, TIA-1, Perforin, EBER (ISH), CCR4, PD-1, CXCL13, BCL6, CD10, RHOA (mut)** |
+| **Flow Cytometry** | Immunophenotype | **CD3+, TCRαβ/γδ, CD4/CD8, CD56, CD25, CCR4** |
+| **FISH / PCR** | **ALK (t(2;5))**, **DUSP22-IRF4**, **TP63**, **HTLV-1 PCR/Serology**, **EBV PCR**, **TCR gene rearrangement** |
+| **CT/PET-CT** | Staging | **PET-CT preferred** (FDG-avid) |
+| **Bone Marrow Biopsy** | Staging | **PIT factor** |
+| **HTLV-1 Serology/PCR** | **ATLL diagnosis** | **Mandatory if ATLL suspected** |
+| **EBV PCR / EBER ISH** | **NK/T-cell, AITL subset** | **EBER+ in tumour cells** |
+
+---
+
+## 7. Differential Diagnosis
+
+| Condition | Distinguishing Features |
+|-----------|-------------------------|
+| **DLBCL** | **B-cell**: CD20+, PAX5+, BCL6+, **CD3-** |
+| **ALCL vs cHL** | **ALCL**: **CD30+, ALK±, CD3+, CD15-, PAX5-**; **cHL**: CD30+, CD15+, PAX5+, CD3- |
+| **Mycosis Fungoides/SS** | **Skin-limited early**, **CD4+, CLA+, CCR4+**, **TCR clonality**, **Blood involvement (SS)** |
+| **ATLL vs PTCL-NOS** | **ATLL**: **HTLV-1+, CD25+, CCR4+, Flower cells**, **Hypercalcaemia** |
+| **NK/T-cell vs PTCL-NOS** | **NK/T**: **EBV+, CD56+, Cytotoxic, Nasal/extranasal** |
+| **EATL vs Enteropathy** | **EATL**: **Coeliac history**, **Type I (CD8+), Type II (CD56+)**, **Jejunal mass** |
+
+---
+
+## 8. Management
+
+### First-Line Therapy
+
+```mermaid
+flowchart TD
+    A[PTCL Diagnosis + Stage] --> B{Subtype}
+    B -->|**PTCL-NOS / AITL**| C[**CHOEP** (Cyclophosphamide, Doxorubicin, Vincristine, Etoposide, Prednisone)<br/>**Etoposide added to CHOP** (CHOEP vs CHOP: GOELAMS, HOVON) — **Preferred**<br/>**6-8 cycles**]
+    B -->|**ALK+ ALCL**| D[**CHOP ×6-8 cycles** (Standard)<br/>**ALK+ excellent prognosis, NO Etoposide needed**<br/>**cALCL (cutaneous): RT alone if localised**]
+    B -->|**ALK- ALCL / CD30+ PTCL**| E[**Brentuximab Vedotin + CHP** (ECHELON-2)<br/>**Brentuximab 1.8mg/kg d1 + CHP q3w ×6-8 cycles**<br/>**PFS HR 0.71, OS HR 0.66** — **Standard for CD30+**<br/>**Includes ALK- ALCL, CD30+ PTCL-NOS**]
+    B -->|**ATLL (Acute/Lymphoma)**| F[**Zidovudine 300mg BD + IFN-α 3-5MU TIW**<br/>**Anti-HTLV-1**, **Not cytotoxic**<br/>**Mogamulizumab (CCR4) 1mg/kg q2w** (if available)<br/>**CHOP/CHOEP POOR efficacy**]
+    B -->|**EATL**| G[**Surgery (Resection) if localised**<br/>**Chemo: CHOEP / IVE / DOXIL-based**<br/>**High perforation risk**]
+    B -->|**NK/T-cell**| H[**Asparaginase-based (ESSENTIAL)**<br/>**SMILE**: Dex, Methotrexate, Ifosfamide, L-Asparaginase, Etoposide<br/>**DeVIC**: Dex, Etoposide, Ifosfamide, Carboplatin + L-Asp<br/>**Concurrent RT** (Nasal: 50-60Gy)<br/>**L-Asparaginase PEGylated (Calaspargase) / Native**]
+    C --> I[**Response Assessment (PET-CT)**]
+    D --> I
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+    I --> J{Response}
+    J -->|**CR/PR (Fit)**| K[**Consolidation: High-dose Chemo + ASCT**<br/>**BEAM / TBI-based**<br/>**Standard for PTCL-NOS, AITL, ALK- ALCL**<br/>**ALK+ ALCL: ASCT controversial (excellent CHOP outcome)**]
+    J -->|**SD/PD or Unfit**| L[**Relapsed/Refractory Therapy**]
+    K --> M[**Maintenance: Brentuximab (CD30+) / Observation**]
+```
+
+### Relapsed/Refractory Therapy
+
+| Agent | Indication | Key Trial |
+|-------|------------|-----------|
+| **Brentuximab Vedotin** | **CD30+** (ALCL, PTCL-NOS subset) | **ALCL: ORR 86%, CR 57%**; **PTCL-NOS: ORR 41%** |
+| **Romidepsin** | PTCL (HDAC inhibitor) | **ORR 25-30%** |
+| **Belinostat** | PTCL (HDAC inhibitor) | **ORR 25-30%** |
+| **Pralatrexate** | PTCL (DHFR inhibitor) | **ORR 27%** |
+| **Alemtuzumab** | CD52+ (T-cell) | **ORR 30-50%**, **Severe infections** |
+| **CAR-T (CD30/CD5/CD7)** | CD30+ PTCL/ALCL | **Emerging, ORR 70-90%** |
+| **Allo-HSCT** | Young, fit, chemosensitive relapse | **Potentially curative** |
+
+### ATLL Specific
+
+| Subtype | Treatment |
+|---------|-----------|
+| **Acute / Lymphoma** | **Zidovudine + IFN-α** (anti-HTLV-1); **Mogamulizumab (CCR4)**; **Checkpoint inhibitors** (PD-1) — trials; **Allo-HSCT** if remission |
+| **Chronic / Smoldering** | **Observation** / **Zidovudine + IFN-α** if symptomatic |
+
+### NK/T-cell Specific
+
+| Component | Detail |
+|-----------|--------|
+| **Chemo** | **SMILE / DeVIC / AspaMetDex** — **L-Asparaginase ESSENTIAL** (EBV+ cells depend on asparagine) |
+| **RT** | **Nasal: 50-60Gy** (definitive); **Extranasal: Involved-site RT** |
+| **ASCT** | **Consolidation in 1L CR/PR** (standard) |
+| **PD-1 inhibitors** | **Pembrolizumab/Nivolumab** — **High response in relapsed** (PD-L1↑ by LMP1) |
+
+---
+
+## 9. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **PTCL Subtypes** | **PTCL-NOS (30-40%)**, **AITL (15-20%)**, **ALK+ ALCL (10%)**, **ALK- ALCL (10%)**, **ATLL (5%)**, **EATL (5%)**, **NK/T-cell (5-10%)** |
+| **IHC Key** | **CD3+**, **CD4/CD8**, **CD30 (ALCL)**, **ALK (ALK+ ALCL)**, **RHOA G17V (AITL)**, **EBER (NK/T-cell, AITL)**, **CCR4 (ATLL)**, **CD56 (NK/T, Hepatosplenic)** |
+| **AITL** | **TFH origin**, **RHOA G17V**, **TET2/DNMT3A/IDH2**, **CD10+, CXCL13+**, **Hypergammaglobulinaemia**, **Autoimmune** |
+| **ALK+ ALCL** | **NPM1-ALK t(2;5)**, **CD30+, ALK+, EMA+**, **Young, Good prognosis** |
+| **1L Therapy** | **PTCL-NOS/AITL: CHOEP**; **ALK+ ALCL: CHOP**; **CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)** |
+| **Consolidation ASCT** | **Standard in 1L CR/PR** for PTCL-NOS, AITL, ALK- ALCL; **ALK+ ALCL: Controversial** |
+| **Relapsed** | **Brentuximab (CD30+)**, **Romidepsin/Belinostat (HDACi)**, **Pralatrexate**, **Alemtuzumab**, **CAR-T** |
+| **ATLL** | **HTLV-1+**, **Zidovudine+IFN-α**, **Mogamulizumab (CCR4)**, **Allo-HSCT** |
+| **NK/T-cell** | **EBV+**, **CD56+, Cytotoxic**, **Asparaginase-based (SMILE/DeVIC) + RT**, **PD-1 inhibitors relapsed** |
+| **EATL** | **Coeliac**, **Type I (CD8+), Type II (CD56+)**, **Surgery + Chemo** |
+
+---
+
+## 10. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **55M, generalised LAD, rash, hypergammaglobulinaemia. Biopsy: CD3+, CD4+, CD10+, CXCL13+, RHOA G17V mut. Diagnosis?** | **AITL (Angioimmunoblastic T-cell Lymphoma)** — **TFH origin**, **RHOA G17V**, **CD10+, CXCL13+**, **Dysimmune features**. |
+| **30M, LAD, skin nodules, ALK+ by IHC, NPM1-ALK fusion. 1L treatment?** | **CHOP ×6-8 cycles** — **ALK+ ALCL excellent prognosis with CHOP**; **NO Etoposide, NO Brentuximab 1L, NO ASCT routine**. |
+| **60M, PTCL-NOS, CD30+ (focal). 1L treatment?** | **CHOEP** (Standard) **OR Brentuximab+CHP** (ECHELON-2) if CD30+ — **Discuss**; **CHOEP standard for PTCL-NOS/AITL**. |
+| **PTCL-NOS — CHOEP vs CHOP?** | **CHOEP (add Etoposide)** — **GOELAMS/HOVON: CHOEP superior to CHOP** for PTCL-NOS/AITL; **Standard regimen**. |
+| **ECHELON-2 — regimen, population, outcome?** | **Brentuximab Vedotin 1.8mg/kg + CHP q3w ×6-8 cycles** vs **CHOP** — **CD30+ PTCL (ALK- ALCL, PTCL-NOS subset)** — **PFS HR 0.71, OS HR 0.66** — **Standard for CD30+**. |
+| **Consolidation ASCT in PTCL — for whom?** | **1L CR/PR, Fit patients** — **Standard for PTCL-NOS, AITL, ALK- ALCL**; **NOT routine for ALK+ ALCL** (excellent CHOP outcome). |
+| **ATLL — HTLV-1, treatment acute/lymphoma?** | **Zidovudine 300mg BD + IFN-α 3-5MU TIW** (anti-HTLV-1); **Mogamulizumab (CCR4)**; **CHOP/CHOEP ineffective**; **Allo-HSCT if remission**. |
+| **NK/T-cell lymphoma — essential chemo component?** | **L-Asparaginase (PEGylated / Native)** — **SMILE / DeVIC / AspaMetDex**; **EBV+ cells asparagine-dependent**; **RT mandatory (nasal)**. |
+| **PIT score — factors?** | **Age >60, LDH >ULN, PS ≥2, Bone Marrow involvement** — **0=Low, 1=Low-Int, 2=High-Int, 3-4=High**. |
+| **Relapsed CD30+ PTCL — best single agent?** | **Brentuximab Vedotin** — **ORR 86% (ALCL), 41% (PTCL-NOS)**, **Durable responses**, **Bridge to ASCT/allo**. |
+
+---
+
+## 11. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **PTCL-NOS vs AITL** | **AITL**: **TFH markers (CD10, CXCL13, PD-1, BCL6, ICOS)**, **RHOA G17V**, **Hypergammaglobulinaemia**, **Autoimmune**; **PTCL-NOS**: **Heterogeneous, TFH subset common**, **No RHOA** |
+| **ALK+ vs ALK- ALCL** | **ALK+**: **NPM1-ALK t(2;5)**, **Young**, **CHOP**, **Good prognosis**; **ALK-**: **DUSP22-IRF4 / TP63**, **Older**, **Brentuximab+CHP (ECHELON-2)**, **Worse prognosis** |
+| **CHOEP vs CHOP** | **CHOEP = CHOP + Etoposide**; **GOELAMS: CHOEP superior for PTCL-NOS/AITL**; **NOT for ALK+ ALCL** (CHOP sufficient) |
+| **Brentuximab in PTCL** | **ECHELON-2: CD30+ PTCL (ALK- ALCL + CD30+ PTCL-NOS)** — **Brentuximab+CHP standard**; **NOT for ALK+ ALCL 1L**; **Relapsed CD30+: Standard** |
+| **ASCT in PTCL** | **1L CR/PR → ASCT standard** (PTCL-NOS, AITL, ALK- ALCL); **ALK+ ALCL → Not routine**; **Relapsed → Allo-HSCT if young/fit** |
+| **NK/T-cell — Asparaginase** | **ESSENTIAL** — **EBV+ LMP1 → Asparagine dependency**; **SMILE/DeVIC/AspaMetDex**; **Without Asp = Poor response** |
+| **ATLL — CHOP ineffective** | **ATLL: Anti-viral (Zidovudine+IFN-α) + CCR4 (Mogamulizumab)**; **Cytotoxic chemo POOR**; **Hypercalcaemia = PTHrP** |
+
+**Mnemonic: PTCL-SUBTYPES**
+- **P**TCL-NOS: 30-40%, TFH, **CHOEP**
+- **T**FH origin: **AITL** (RHOA G17V, CD10, CXCL13, Hypergammaglobulinaemia)
+- **C**D30+: **ALCL** (ALK+ young CHOP / ALK- older Brenta+CHP)
+- **L**ymphoma T/NK: **NK/T-cell** (EBV+, CD56+, **Asparaginase+RT**)
+- **T**-cell leukaemia: **ATLL** (HTLV-1, **Zid+IFN-α**, Mogamulizumab)
+- **L**ocalised gut: **EATL** (Coeliac, Type I CD8+ / Type II CD56+)
+- **Y**oung, hepatosplenic: **Hepatosplenic** (γδ TCR, Iso 7q)
+- **P**anniculitis: **Subcutaneous Panniculitis-like** (αβ TCR, CD8+)
+- **E**pitheliotropic: **Mycosis Fungoides/SS** (Skin, CD4+, CLA+)
+- **S**ystemic: **ALCL** (systemic vs cutaneous)
+
+---
+
+## 12. Mind Map
+
+```mermaid
+mindmap
+  root((Peripheral T-cell Lymphoma))
+    Subtypes
+      PTCL-NOS (30-40%) - CHOEP
+      AITL (15-20%) - RHOA G17V, TFH - CHOEP
+      ALK+ ALCL (10%) - NPM1-ALK, CHOP
+      ALK- ALCL (10%) - DUSP22/TP63 - Brenta+CHP
+      ATLL (5%) - HTLV-1, Zid+IFN-α
+      NK/T-cell (5-10%) - EBV+, Asparaginase+RT
+      EATL (5%) - Coeliac, Surgery+Chemo
+      Hepatosplenic (<1%) - γδ TCR
+      Subcut Panniculitis (<1%) - αβ TCR
+    IHC Markers
+      CD3, CD4/CD8, CD30, ALK, CD56
+      RHOA (AITL), EBER (NK/T, AITL)
+      CCR4 (ATLL), Granzyme B, TIA-1
+    1L Treatment
+      PTCL-NOS/AITL: CHOEP
+      ALK+ ALCL: CHOP
+      CD30+ (ALK- ALCL): Brenta+CHP
+      ATLL: Zid+IFN-α
+      NK/T: SMILE/DeVIC + RT
+      EATL: Surgery + Chemo
+    Consolidation
+      1L CR/PR → ASCT (PTCL-NOS, AITL, ALK- ALCL)
+      ALK+ ALCL: ASCT not routine
+    Relapsed
+      Brenta (CD30+)
+      Romidepsin/Belinostat (HDACi)
+      Pralatrexate
+      Alemtuzumab
+      CAR-T (CD30/CD5)
+      Allo-HSCT
+```
+
+---
+
+## 13. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Subtypes** | PTCL-NOS, AITL, ALK+ ALCL, ALK- ALCL, ATLL, NK/T, EATL |
+| **AITL** | TFH, RHOA G17V, CD10/CXCL13, Hypergammaglobulinaemia |
+| **ALCL** | ALK+ (NPM1-ALK, CHOP) vs ALK- (DUSP22/TP63, Brenta+CHP) |
+| **1L** | PTCL-NOS/AITL: **CHOEP**; ALK+ ALCL: **CHOP**; CD30+: **Brenta+CHP** |
+| **ASCT** | 1L CR/PR → ASCT (PTCL-NOS, AITL, ALK- ALCL); ALK+ no |
+| **ATLL** | HTLV-1, **Zid+IFN-α**, Mogamulizumab (CCR4) |
+| **NK/T** | EBV+, CD56+, **Asparaginase (SMILE/DeVIC) + RT** |
+| **Relapsed** | Brenta (CD30+), HDACi, Pralatrexate, Alemtuzumab, CAR-T |
+| **PIT** | Age>60, LDH>ULN, PS≥2, BM+ → 4 groups |
+
+---
+
+## 14. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 15. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Subtype classification | | |
+| AITL vs PTCL-NOS | | |
+| ALCL ALK+ vs ALK- | | |
+| 1L regimen selection | | |
+| Consolidation ASCT criteria | | |
+| ATLL management | | |
+| NK/T-cell (Asparaginase) | | |
+| Relapsed options | | |
+| PIT score | | |
+
+---
+
+## 16. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[DLBCL]], [[Mycosis Fungoides/Sezary]], [[Brentuximab Vedotin]], [[ALCL]], [[AITL]], [[ATLL]], [[NK/T-cell Lymphoma]], [[ASCT in PTCL]], [[PIT Score]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 17. MCQs (10)
+
+
+**1.** Regarding Peripheral T-Cell Lymphomas (PTCL) (PTCL Subtypes), which statement is correct?
+   A. **PTCL-NOS (30-40%)**, **AITL (15-20%)**, **ALK+ ALCL (10%)**, **ALK- ALCL (10%)**, **ATLL (5%)**, *
+   B. **PTCL-NOS - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **PTCL-NOS (30-40%)**, **AITL (15-20%)**, **ALK+ ALCL (10%)**, **ALK- ALCL (10%)**, **ATLL (5%)**, **EATL (5%)**, **NK/T...
+
+
+**2.** Regarding Peripheral T-Cell Lymphomas (PTCL) (IHC Key), which statement is correct?
+   A. **CD3+**, **CD4/CD8**, **CD30 (ALCL)**, **ALK (ALK+ ALCL)**, **RHOA G17V (AITL)**, **EBER (NK/T-cell
+   B. **CD3+**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **CD3+**, **CD4/CD8**, **CD30 (ALCL)**, **ALK (ALK+ ALCL)**, **RHOA G17V (AITL)**, **EBER (NK/T-cell, AITL)**, **CCR4 (A...
+
+
+**3.** Regarding Peripheral T-Cell Lymphomas (PTCL) (AITL), which statement is correct?
+   A. **TFH origin**, **RHOA G17V**, **TET2/DNMT3A/IDH2**, **CD10+, CXCL13+**, **Hypergammaglobulinaemia**
+   B. **TFH - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **TFH origin**, **RHOA G17V**, **TET2/DNMT3A/IDH2**, **CD10+, CXCL13+**, **Hypergammaglobulinaemia**, **Autoimmune**
+
+
+**4.** Regarding Peripheral T-Cell Lymphomas (PTCL) (ALK+ ALCL), which statement is correct?
+   A. **NPM1-ALK t(2
+   B. **NPM1-ALK - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **NPM1-ALK t(2;5)**, **CD30+, ALK+, EMA+**, **Young, Good prognosis**
+
+
+**5.** Regarding Peripheral T-Cell Lymphomas (PTCL) (1L Therapy), which statement is correct?
+   A. **PTCL-NOS/AITL: CHOEP**
+   B. **PTCL-NOS/AITL: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **PTCL-NOS/AITL: CHOEP**; **ALK+ ALCL: CHOP**; **CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)**
+
+
+**6.** Regarding Peripheral T-Cell Lymphomas (PTCL) (Consolidation ASCT), which statement is correct?
+   A. **Standard in 1L CR/PR** for PTCL-NOS, AITL, ALK- ALCL
+   B. **Standard - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Standard in 1L CR/PR** for PTCL-NOS, AITL, ALK- ALCL; **ALK+ ALCL: Controversial**
+
+
+**7.** Regarding Peripheral T-Cell Lymphomas (PTCL) (Relapsed), which statement is correct?
+   A. **Brentuximab (CD30+)**, **Romidepsin/Belinostat (HDACi)**, **Pralatrexate**, **Alemtuzumab**, **CAR
+   B. **Brentuximab - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Brentuximab (CD30+)**, **Romidepsin/Belinostat (HDACi)**, **Pralatrexate**, **Alemtuzumab**, **CAR-T**
+
+
+**8.** Regarding Peripheral T-Cell Lymphomas (PTCL) (ATLL), which statement is correct?
+   A. **HTLV-1+**, **Zidovudine+IFN-α**, **Mogamulizumab (CCR4)**, **Allo-HSCT**
+   B. **HTLV-1+**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **HTLV-1+**, **Zidovudine+IFN-α**, **Mogamulizumab (CCR4)**, **Allo-HSCT**
+
+
+**9.** Regarding Peripheral T-Cell Lymphomas (PTCL) (NK/T-cell), which statement is correct?
+   A. **EBV+**, **CD56+, Cytotoxic**, **Asparaginase-based (SMILE/DeVIC) + RT**, **PD-1 inhibitors relapse
+   B. **EBV+**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **EBV+**, **CD56+, Cytotoxic**, **Asparaginase-based (SMILE/DeVIC) + RT**, **PD-1 inhibitors relapsed**
+
+
+**10.** Regarding Peripheral T-Cell Lymphomas (PTCL) (EATL), which statement is correct?
+   A. **Coeliac**, **Type I (CD8+), Type II (CD56+)**, **Surgery + Chemo**
+   B. **Coeliac**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Coeliac**, **Type I (CD8+), Type II (CD56+)**, **Surgery + Chemo**
+
+
+## 18. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **PTCL-NOS (30-40%)**, **AITL (15-20%)**, **ALK+ ALCL (10%)**, **ALK- ALCL (10%)**, **ATLL (5%)**, *
+   - B. **PTCL-NOS (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **PTCL-NOS (30-40%)**, **AITL (15-20%)**, **ALK+ ALCL (10%)**, **ALK- ALCL (10%)**, **ATLL (5%)**, **EATL (5%)**, **NK/T...
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **CD3+**, **CD4/CD8**, **CD30 (ALCL)**, **ALK (ALK+ ALCL)**, **RHOA G17V (AITL)**, **EBER (NK/T-cell
+   - B. **CD3+**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **CD3+**, **CD4/CD8**, **CD30 (ALCL)**, **ALK (ALK+ ALCL)**, **RHOA G17V (AITL)**, **EBER (NK/T-cell, AITL)**, **CCR4 (A...
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **TFH origin**, **RHOA G17V**, **TET2/DNMT3A/IDH2**, **CD10+, CXCL13+**, **Hypergammaglobulinaemia**
+   - B. **TFH (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **TFH origin**, **RHOA G17V**, **TET2/DNMT3A/IDH2**, **CD10+, CXCL13+**, **Hypergammaglobulinaemia**, **Autoimmune**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **NPM1-ALK t(2
+   - B. **NPM1-ALK (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **NPM1-ALK t(2;5)**, **CD30+, ALK+, EMA+**, **Young, Good prognosis**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **PTCL-NOS/AITL: CHOEP**
+   - B. **PTCL-NOS/AITL: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **PTCL-NOS/AITL: CHOEP**; **ALK+ ALCL: CHOP**; **CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **Standard in 1L CR/PR** for PTCL-NOS, AITL, ALK- ALCL
+   - B. **Standard (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **Standard in 1L CR/PR** for PTCL-NOS, AITL, ALK- ALCL; **ALK+ ALCL: Controversial**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **Brentuximab (CD30+)**, **Romidepsin/Belinostat (HDACi)**, **Pralatrexate**, **Alemtuzumab**, **CAR
+   - B. **Brentuximab (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **Brentuximab (CD30+)**, **Romidepsin/Belinostat (HDACi)**, **Pralatrexate**, **Alemtuzumab**, **CAR-T**
+
+
+**8.** The role of surgery in this case is:
+   - A. **HTLV-1+**, **Zidovudine+IFN-α**, **Mogamulizumab (CCR4)**, **Allo-HSCT**
+   - B. **HTLV-1+**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **HTLV-1+**, **Zidovudine+IFN-α**, **Mogamulizumab (CCR4)**, **Allo-HSCT**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **EBV+**, **CD56+, Cytotoxic**, **Asparaginase-based (SMILE/DeVIC) + RT**, **PD-1 inhibitors relapse
+   - B. **EBV+**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **EBV+**, **CD56+, Cytotoxic**, **Asparaginase-based (SMILE/DeVIC) + RT**, **PD-1 inhibitors relapsed**
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **Coeliac**, **Type I (CD8+), Type II (CD56+)**, **Surgery + Chemo**
+   - B. **Coeliac**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **Coeliac**, **Type I (CD8+), Type II (CD56+)**, **Surgery + Chemo**
+
+
+## 19. Flashcards
+
+**Q1:** PTCL Subtypes?
+**A1:** PTCL-NOS (30-40%), AITL (15-20%), ALK+ ALCL (10%), ALK- ALCL (10%), ATLL (5%), EATL (5%), NK/T-cell (5-10%)
+
+**Q2:** IHC Key?
+**A2:** CD3+, CD4/CD8, CD30 (ALCL), ALK (ALK+ ALCL), RHOA G17V (AITL), EBER (NK/T-cell, AITL), CCR4 (ATLL), CD56 (NK/T, Hepatosplenic)
+
+**Q3:** AITL?
+**A3:** TFH origin, RHOA G17V, TET2/DNMT3A/IDH2, CD10+, CXCL13+, Hypergammaglobulinaemia, Autoimmune
+
+**Q4:** ALK+ ALCL?
+**A4:** NPM1-ALK t(2;5), CD30+, ALK+, EMA+, Young, Good prognosis
+
+**Q5:** 1L Therapy?
+**A5:** PTCL-NOS/AITL: CHOEP; ALK+ ALCL: CHOP; CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2)
+
+**Q6:** Consolidation ASCT?
+**A6:** Standard in 1L CR/PR for PTCL-NOS, AITL, ALK- ALCL; ALK+ ALCL: Controversial
+
+**Q7:** Relapsed?
+**A7:** Brentuximab (CD30+), Romidepsin/Belinostat (HDACi), Pralatrexate, Alemtuzumab, CAR-T
+
+**Q8:** ATLL?
+**A8:** HTLV-1+, Zidovudine+IFN-α, Mogamulizumab (CCR4), Allo-HSCT
+
+## 20. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | PTCL Subtypes | PTCL-NOS (30-40%), AITL (15-20%), ALK+ ALCL (10%), ALK- ALCL (10%), ATLL (5%), EATL (5%), NK/T-cell (5-10%) |
+| 2 | A | IHC Key | CD3+, CD4/CD8, CD30 (ALCL), ALK (ALK+ ALCL), RHOA G17V (AITL), EBER (NK/T-cell, AITL), CCR4 (ATLL), CD56 (NK/T, Hepatosp |
+| 3 | A | AITL | TFH origin, RHOA G17V, TET2/DNMT3A/IDH2, CD10+, CXCL13+, Hypergammaglobulinaemia, Autoimmune |
+| 4 | A | ALK+ ALCL | NPM1-ALK t(2;5), CD30+, ALK+, EMA+, Young, Good prognosis |
+| 5 | A | 1L Therapy | PTCL-NOS/AITL: CHOEP; ALK+ ALCL: CHOP; CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2) |
+| 6 | A | Consolidation ASCT | Standard in 1L CR/PR for PTCL-NOS, AITL, ALK- ALCL; ALK+ ALCL: Controversial |
+| 7 | A | Relapsed | Brentuximab (CD30+), Romidepsin/Belinostat (HDACi), Pralatrexate, Alemtuzumab, CAR-T |
+| 8 | A | ATLL | HTLV-1+, Zidovudine+IFN-α, Mogamulizumab (CCR4), Allo-HSCT |
+| 9 | A | NK/T-cell | EBV+, CD56+, Cytotoxic, Asparaginase-based (SMILE/DeVIC) + RT, PD-1 inhibitors relapsed |
+| 10 | A | EATL | Coeliac, Type I (CD8+), Type II (CD56+), Surgery + Chemo |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | PTCL Subtypes | PTCL-NOS (30-40%), AITL (15-20%), ALK+ ALCL (10%), ALK- ALCL (10%), ATLL (5%), EATL (5%), NK/T-cell (5-10%) |
+| 2 | A | IHC Key | CD3+, CD4/CD8, CD30 (ALCL), ALK (ALK+ ALCL), RHOA G17V (AITL), EBER (NK/T-cell, AITL), CCR4 (ATLL), CD56 (NK/T, Hepatosp |
+| 3 | A | AITL | TFH origin, RHOA G17V, TET2/DNMT3A/IDH2, CD10+, CXCL13+, Hypergammaglobulinaemia, Autoimmune |
+| 4 | A | ALK+ ALCL | NPM1-ALK t(2;5), CD30+, ALK+, EMA+, Young, Good prognosis |
+| 5 | A | 1L Therapy | PTCL-NOS/AITL: CHOEP; ALK+ ALCL: CHOP; CD30+ (ALK- ALCL): Brentuximab+CHP (ECHELON-2) |
+| 6 | A | Consolidation ASCT | Standard in 1L CR/PR for PTCL-NOS, AITL, ALK- ALCL; ALK+ ALCL: Controversial |
+| 7 | A | Relapsed | Brentuximab (CD30+), Romidepsin/Belinostat (HDACi), Pralatrexate, Alemtuzumab, CAR-T |
+| 8 | A | ATLL | HTLV-1+, Zidovudine+IFN-α, Mogamulizumab (CCR4), Allo-HSCT |
+| 9 | A | NK/T-cell | EBV+, CD56+, Cytotoxic, Asparaginase-based (SMILE/DeVIC) + RT, PD-1 inhibitors relapsed |
+| 10 | A | EATL | Coeliac, Type I (CD8+), Type II (CD56+), Surgery + Chemo |
+
+## 21. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Haematological Malignancies|Haematological Malignancies]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

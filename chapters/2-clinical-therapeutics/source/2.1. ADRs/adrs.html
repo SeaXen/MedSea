@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adrs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Adrs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify ADRs using <b>Type A-F (Rawlins/Thompson)</b> and <b>DoTS (Dose, Time, Susceptibility)</b></li><li>[ ] Apply <b>causality assessment</b>: Naranjo (general), WHO-UMC (standardised), RUCAM (hepatotoxicity)</li><li>[ ] Report ADRs via <b>Yellow Card (UK)</b>, understand EudraVigilance, FAERS, VigiBase</li><li>[ ] Recognise <b>system-specific ADR patterns</b>: Cutaneous (SJS/TEN/DRESS/AGEP), Hepatic (DILI), Renal (AIN/crystal/ATN), Haematological (HIT/agranulocytosis/thrombocytopenia)</li><li>[ ] Distinguish <b>ADR vs medication error vs ADE</b></li><li>[ ] Answer viva: "Type A vs B", "Naranjo scoring", "SJS vs TEN vs DRESS", "DILI patterns", "HIT 4Ts"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Core Concept: ADR Definitions & Taxonomy</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Adverse Drug Reaction] --&gt; B[Type A: Augmented&lt;br/&gt;Dose-dependent, Predictable] A --&gt; C[Type B: Bizarre&lt;br/&gt;Idiosyncratic, Non-dose-dependent] A --&gt; D[Type C: Chronic&lt;br/&gt;Long-term use] A --&gt; E[Type D: Delayed&lt;br/&gt;Carcinogenesis, Teratogenesis] A --&gt; F[Type E: End of use&lt;br/&gt;Withdrawal syndromes] A --&gt; G[Type F: Failure&lt;br/&gt;Ineffectiveness, Resistance]</p>
+<p>style A fill:#e1f5fe style B fill:#fff3e0 style C fill:#ffebee ```</p>
+<div class="callout"><b>ADR (WHO):</b> <i>A response to a drug which is noxious and unintended, occurring at doses normally used in man for prophylaxis, diagnosis, or therapy.</i></div>
+<div class="sub-h">ADR vs ADE vs Medication Error</div>
+<table class="ctable"><tr><th>Term</th><th>Definition</th><th>Key Distinction</th></tr><tr><td>------</td><td>------------</td><td>-----------------</td></tr><tr><td>**ADR**</td><td>Noxious, unintended response at normal doses</td><td>**Not preventable** (inherent to drug)</td></tr><tr><td>**ADE** (Adverse Drug Event)</td><td>Any injury from drug use (includes ADRs + errors)</td><td>Broader — includes preventable harm</td></tr><tr><td>**Medication Error**</td><td>Preventable event causing inappropriate use</td><td>**Preventable** — system/human failure</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">ADR Classification Systems</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">2.1 Rawlins &amp; Thompson (Type A-F) — Exam Standard</div>
+<table class="ctable"><tr><th>Type</th><th>Name</th><th>Characteristics</th><th>Examples</th><th>Management</th></tr><tr><td>------</td><td>------</td><td>-----------------</td><td>----------</td><td>------------</td></tr><tr><td>**A**</td><td>**Augmented**</td><td>Dose-dependent, Predictable, Common, Related to pharmacological action</td><td>Hypoglycaemia (insulin), Bleeding (warfarin), Bradycardia (beta-blockers), Constipation (opioids)</td><td>**Dose reduction**, monitoring, drug substitution</td></tr><tr><td>**B**</td><td>**Bizarre**</td><td>Non-dose-dependent, Unpredictable, Rare, Idiosyncratic/Allergic</td><td>Anaphylaxis (penicillin), SJS/TEN (allopurinol), DILI (isoniazid), Agranulocytosis (clozapine)</td><td>**Drug withdrawal**, avoidance, cross-reactivity awareness</td></tr><tr><td>**C**</td><td>**Chronic**</td><td>Long-term therapy, Dose/time related</td><td>Osteoporosis (steroids), Tardive dyskinesia (antipsychotics), Nephropathy (analgesics), Cataracts (steroids)</td><td>**Prophylaxis**, monitoring, lowest effective dose</td></tr><tr><td>**D**</td><td>**Delayed**</td><td>Latent period, Carcinogenesis/Teratogenesis</td><td>Vaginal adenocarcinoma (DES), Leukaemia (alkylators), Phocomelia (thalidomide)</td><td>**Risk-benefit**, counselling, contraception, surveillance</td></tr><tr><td>**E**</td><td>**End of use**</td><td>Withdrawal/Rebound syndromes</td><td>Adrenal crisis (steroids), Rebound hypertension (clonidine), Seizures (benzos), SSRI discontinuation</td><td>**Gradual taper**, patient education</td></tr><tr><td>**F**</td><td>**Failure**</td><td>Unexpected loss of efficacy</td><td>Antibiotic resistance, Insulin antibody resistance, Paradoxical reactions</td><td>**Suspected resistance**, switch class, check adherence</td></tr></table>
+<div class="callout"><b>Exam Pearl:</b> <i>Type A = "Augmented" = dose-related = predictable. Type B = "Bizarre" = idiosyncratic = unpredictable. Together = 80-90% of ADRs.</i></div>
+<div class="sub-h">2.2 DoTS Classification (Dose, Time, Susceptibility) — Mechanistic</div>
+<table class="ctable"><tr><th>Dimension</th><th>Categories</th><th>Example</th></tr><tr><td>-----------</td><td>------------</td><td>---------</td></tr><tr><td>**Dose**</td><td>**Toxic** (supratherapeutic) — Paracetamol overdose<br/>**Collateral** (therapeutic dose, off-target) — Opioid constipation<br/>**Hypersusceptibility** (normal dose, exaggerated) — G6PD haemolysis with dapsone</td><td>Mechanistic insight for prevention</td></tr><tr><td>**Time**</td><td>**Rapid** (minutes-hours) — Anaphylaxis<br/>**First-dose** — ACEi hypotension<br/>**Early** (days-weeks) — SJS/TEN<br/>**Intermediate** (weeks-months) — DILI<br/>**Late** (months-years) — Tardive dyskinesia, carcinogenesis</td><td>Guides monitoring timeline</td></tr><tr><td>**Susceptibility**</td><td>**Genetic** — HLA-B*58:01 (allopurinol SJS), TPMT (azathioprine myelosuppression), CYP2C9*3 (warfarin)<br/>**Physiological** — Renal/hepatic impairment, pregnancy, age<br/>**Disease** — HIV (↑ cutaneous ADRs), EBV (ampicillin rash)<br/>**Drug interactions** — CYP inhibition → toxicity</td><td>Personalised prescribing</td></tr></table>
+<div class="callout"><b>DoTS Advantage:</b> <i>Mechanistic — guides prevention (dose adjustment, genotyping, avoidance in susceptible).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Causality Assessment Tools</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">3.1 Naranjo Algorithm — General ADR Causality (Exam Favourite)</div>
+<table class="ctable"><tr><th>Question</th><th>Yes</th><th>No</th><th>Do Not Know</th></tr><tr><td>----------</td><td>-----</td><td>----</td><td>-------------</td></tr><tr><td>1. Previous conclusive reports?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>2. Event after drug given?</td><td>+2</td><td>-1</td><td>0</td></tr><tr><td>3. Improved on dechallenge?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>4. Reappeared on rechallenge?</td><td>+2</td><td>-1</td><td>0</td></tr><tr><td>5. Alternative causes?</td><td>-1</td><td>+2</td><td>0</td></tr><tr><td>6. Reaction on placebo?</td><td>-1</td><td>+1</td><td>0</td></tr><tr><td>7. Drug in body fluids toxic range?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>8. Reaction dose-related?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>9. Similar reaction to similar drugs?</td><td>+1</td><td>0</td><td>0</td></tr><tr><td>10. Objective evidence?</td><td>+1</td><td>0</td><td>0</td></tr></table>
+<p>#### Score Interpretation</p>
+<table class="ctable"><tr><th>Score</th><th>Category</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**≥9**</td><td>**Definite**</td></tr><tr><td>**5–8**</td><td>**Probable**</td></tr><tr><td>**1–4**</td><td>**Possible**</td></tr><tr><td>**≤0**</td><td>**Doubtful**</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>"Naranjo is a structured 10-question tool. ≥9 = Definite, 5-8 = Probable, 1-4 = Possible, ≤0 = Doubtful. Used for general ADRs. For hepatotoxicity, use RUCAM."</i></div>
+<div class="sub-h">3.2 WHO-UMC Standardised Case Causality Assessment</div>
+<table class="ctable"><tr><th>Category</th><th>Criteria</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Certain**</td><td>Plausible time, +dechallenge, +rechallenge, no alternative cause</td></tr><tr><td>**Probable/Likely**</td><td>Plausible time, +dechallenge, unlikely alternative cause</td></tr><tr><td>**Possible**</td><td>Plausible time, dechallenge unclear, alternative cause possible</td></tr><tr><td>**Unlikely**</td><td>Implausible time, alternative cause more likely</td></tr><tr><td>**Conditional/Unclassified**</td><td>More data needed</td></tr><tr><td>**Unassessable**</td><td>Insufficient information</td></tr></table>
+<div class="sub-h">3.3 RUCAM (Roussel Uclaf Causality Assessment Method) — Hepatotoxicity Specific</div>
+<table class="ctable"><tr><th>Domain</th><th>Scoring</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Time to onset** (from drug start)</td><td>5-90 days = +2; <5 or >90 = +1; <1 or >180 = 0</td></tr><tr><td>**Course after cessation**</td><td>Decrease ≥50% in 8d = +3; Decrease ≥50% in 30d = +2; No info = 0; Persistent = -2</td></tr><tr><td>**Risk factors**</td><td>Alcohol = +1; Age ≥55 = +1</td></tr><tr><td>**Concomitant drugs**</td><td>None = 0; Possible hepatotoxin = -1; Known hepatotoxin = -2; +dechallenge for concomitant = -3</td></tr><tr><td>**Exclusion of other causes**</td><td>All ruled out = +2; 5-6 ruled out = +1; <5 ruled out = 0; Non-drug cause highly probable = -3</td></tr><tr><td>**Previous info on drug**</td><td>Reaction in label = +2; Reaction published = +1; Unknown = 0</td></tr><tr><td>**Response to rechallenge**</td><td>Positive = +3; Compatible = +1; Negative = -2; Not done = 0</td></tr></table>
+<p>#### RUCAM Score Interpretation</p>
+<table class="ctable"><tr><th>Score</th><th>Causality</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**>8**</td><td>**Highly probable**</td></tr><tr><td>**6–8**</td><td>**Probable**</td></tr><tr><td>**3–5**</td><td>**Possible**</td></tr><tr><td>**1–2**</td><td>**Unlikely**</td></tr><tr><td>**≤0**</td><td>**Excluded**</td></tr></table>
+<div class="callout"><b>Exam Key:</b> <i>RUCAM is the gold standard for DILI causality. Know the domains: Time, Course, Risk factors, Concomitant drugs, Exclusion, Previous info, Rechallenge.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Pharmacovigilance & Reporting Systems</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 UK Yellow Card Scheme (MHRA)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Who can report**</td><td>Healthcare professionals, patients, carers</td></tr><tr><td>**What to report**</td><td>**All ADRs for ▼ (Black Triangle) drugs** (intensive monitoring, typically 5 years post-launch); **Serious ADRs for all drugs**; Medication errors; Defective products; Counterfeit medicines</td></tr><tr><td>**Serious criteria**</td><td>Death, Life-threatening, Hospitalisation/prolongation, Disability, Congenital anomaly, Medically significant</td></tr><tr><td>**How**</td><td>Online (yellowcard.mhra.gov.uk), App, Paper form, Phone</td></tr><tr><td>**Key data**</td><td>Patient (age, sex, initials), Drug (name, dose, route, dates), Reaction (description, onset, outcome), Medical history, Concomitant drugs, Reporter details</td></tr></table>
+<div class="callout"><b>Black Triangle (▼):</b> <i>New drugs, biosimilars, new indications. Report <b>ALL</b> suspected ADRs (even minor) for 5 years.</i></div>
+<div class="sub-h">4.2 International Systems</div>
+<table class="ctable"><tr><th>System</th><th>Region</th><th>Key Features</th></tr><tr><td>--------</td><td>--------</td><td>--------------</td></tr><tr><td>**EudraVigilance**</td><td>EU/EEA</td><td>Centralised EU database; EV Gateway for electronic reporting; Signal detection by EMA</td></tr><tr><td>**FAERS**</td><td>USA (FDA)</td><td>FDA Adverse Event Reporting System; Quarterly data extracts public; FAERS dashboard</td></tr><tr><td>**VigiBase**</td><td>Global (WHO)</td><td>>30M reports from 150+ countries; WHO Drug Dictionary (WHO-Drug), WHO-ART/ MedDRA coding; Signal detection (IC/Bayesian)</td></tr><tr><td>**ISMP**</td><td>Global</td><td>Medication error-specific reporting; Focus on system improvements</td></tr></table>
+<div class="sub-h">4.3 Signal Detection Methods</div>
+<table class="ctable"><tr><th>Method</th><th>Principle</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**PRR** (Proportional Reporting Ratio)</td><td>Reports of drug-event / Total drug reports vs Event reports / Total reports</td></tr><tr><td>**ROR** (Reporting Odds Ratio)</td><td>Case-control within database; Odds of drug in cases vs controls</td></tr><tr><td>**IC** (Information Component)</td><td>Bayesian; IC025 > 0 = signal</td></tr><tr><td>**MGPS** (Multi-item Gamma Poisson Shrinker)</td><td>FDA; Empirical Bayes shrinkage</td></tr><tr><td>**Egger test / Funnel plot**</td><td>Publication bias in signal assessment</td></tr></table>
+<div class="callout"><b>Signal Definition (CIOMS):</b> <i>Information arising from one or multiple sources suggesting a new potentially causal association between a drug and an event, judged to be of sufficient likelihood to warrant verificatory action.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">System-Specific ADR Patterns — High-Yield for Exams</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">5.1 Cutaneous ADRs — Spectrum of Severity</div>
+<p>``<code>mermaid flowchart LR A[Drug Rash] --&gt; B[Morbilliform&lt;br/&gt;Measles-like&lt;br/&gt;7-14 days&lt;br/&gt;Benign, self-limiting] A --&gt; C[FDE&lt;br/&gt;Fixed Drug Eruption&lt;br/&gt;Recurring at same site&lt;br/&gt;Hyperpigmentation] A --&gt; D[Urticaria/Angioedema&lt;br/&gt;IgE-mediated&lt;br/&gt;Hours&lt;br/&gt;Anaphylaxis risk] A --&gt; E[SJS/TEN&lt;br/&gt;Epidermal necrosis&lt;br/&gt;&lt;10% BSA = SJS&lt;br/&gt;10-30% = Overlap&lt;br/&gt;&gt;30% = TEN&lt;br/&gt;Mortality: SJS 5%, TEN 30%] A --&gt; F[DRESS&lt;br/&gt;Drug Reaction with&lt;br/&gt;Eosinophilia &amp; Systemic Symptoms&lt;br/&gt;2-6 weeks&lt;br/&gt;Fever, rash, eosinophilia, hepatitis, lymphadenopathy&lt;br/&gt;HHV-6 reactivation] A --&gt; G[AGEP&lt;br/&gt;Acute Generalised&lt;br/&gt;Exanthematous Pustulosis&lt;br/&gt;&lt;5 days&lt;br/&gt;Fever, sterile pustules, neutrophilia&lt;br/&gt;Self-limiting ~2 weeks] </code>``</p>
+<p>#### Key Culprits by Syndrome</p>
+<table class="ctable"><tr><th>Syndrome</th><th>Top Culprits</th><th>Key Features</th></tr><tr><td>----------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Morbilliform**</td><td>Antibiotics (penicillins, sulfonamides), Allopurinol, Anticonvulsants</td><td>Pruritic maculopapular, 7-14d, no mucosal involvement</td></tr><tr><td>**SJS/TEN**</td><td>**Allopurinol, Sulfonamides, Anticonvulsants (lamotrigine, carbamazepine, phenytoin), NSAIDs (oxicams), Nevirapine**</td><td>**Mucosal involvement (98%), Nikolsky+, SCORTEN for prognosis**</td></tr><tr><td>**DRESS**</td><td>**Allopurinol, Anticonvulsants (phenytoin, carbamazepine), Sulfonamides, Abacavir, Minocycline**</td><td>**Eosinophilia >1.5k OR >10%, Atypical lymphs, Hepatitis, HHV-6, Long latency (2-6w)**</td></tr><tr><td>**AGEP**</td><td>**Beta-lactams, Macrolides, Calcium channel blockers, Hydroxychloroquine, Mercury**</td><td>**Sterile pustules on oedematous erythema, Neutrophilia, Rapid onset (<5d), EuroSCAR criteria**</td></tr><tr><td>**FDE**</td><td>NSAIDs, Tetracyclines, Barbiturates, Sulfonamides, Paracetamol</td><td>Round/oval plaques, same site recurrence, post-inflammatory hyperpigmentation</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>SJS/TEN = medical emergency → stop ALL non-essential drugs, admit to burns/ICU, SCORTEN, IVIG/ciclosporin/etanercept debated. DRESS = eosinophilia + hepatitis + HHV-6. AGEP = pustules + neutrophilia, self-limiting. HLA-B</i>58:01 for allopurinol SJS/TEN in Han Chinese/Thai.*</div>
+<div class="sub-h">5.2 Drug-Induced Liver Injury (DILI)</div>
+<p>#### Patterns of Liver Injury</p>
+<table class="ctable"><tr><th>Pattern</th><th>ALT/ALP Ratio (R)</th><th>Examples</th><th>Prognosis</th></tr><tr><td>---------</td><td>-------------------</td><td>----------</td><td>-----------</td></tr><tr><td>**Hepatocellular**</td><td>R ≥ 5</td><td>Paracetamol, Isoniazid, Methyldopa, Nitrofurantoin, Halothane, Phenytoin, Valproate</td><td>**Hy's Law: ALT >3x ULN + Bilirubin >2x ULN → 10-50% mortality/transplant**</td></tr><tr><td>**Cholestatic**</td><td>R ≤ 2</td><td>Amoxicillin-clavulanate, Flucloxacillin, Chlorpromazine, Azathioprine, OCP, Anabolic steroids</td><td>Prolonged but usually reversible</td></tr><tr><td>**Mixed**</td><td>2 < R < 5</td><td>Co-trimoxazole, Phenytoin, Carbamazepine, Terbinafine</td><td>Intermediate</td></tr></table>
+<p>#### Hy's Law — Critical for Exams</p>
+<div class="callout"><b>Criteria:</b> <i>ALT/AST &gt;3× ULN + Total Bilirubin &gt;2× ULN + No other cause (viral, biliary, ischaemic)</i> <b>Implication:</b> <i>10-50% risk of death or liver transplant. Drug MUST be stopped. Regulatory red flag.</i></div>
+<p>#### RUCAM for DILI Causality (see Section 3.3)</p>
+<p>#### High-Risk DILI Drugs by Pattern</p>
+<table class="ctable"><tr><th>Pattern</th><th>Drugs</th></tr><tr><td>---------</td><td>-------</td></tr><tr><td>**Hepatocellular**</td><td>Paracetamol (dose-dependent), Isoniazid (↑ with age/alcohol), Methyldopa, Nitrofurantoin, Halothane, Phenytoin, Valproate (↑ <3y, metabolic disorders), Rifampicin (cholestatic too)</td></tr><tr><td>**Cholestatic**</td><td>**Amoxicillin-clavulanate (most common)**, Flucloxacillin, Chlorpromazine, Sulindac, OCP, Anabolic steroids, Azathioprine, Terbinafine</td></tr><tr><td>**Mixed**</td><td>Co-trimoxazole, Phenytoin, Carbamazepine, Terbinafine, Mefenamic acid</td></tr></table>
+<p>#### Management of DILI</p>
+<ol><li><b>STOP the drug</b> immediately (and all non-essential drugs)</li><li><b>Exclude alternatives</b> (viral ABCHE, autoimmune, biliary US, Wilson, alcohol)</li><li><b>Assess severity</b> (Hy's Law criteria, INR, encephalopathy)</li><li><b>Refer</b> if: INR &gt;1.5, encephalopathy, bilirubin rising, Hy's Law met</li><li><b>Monitor</b> LFTs weekly until trend down</li><li><b>Report</b> Yellow Card</li><li><b>Avoid rechallenge</b> (except essential drugs with no alternative under specialist)</li></ol>
+<div class="sub-h">5.3 Drug-Induced Renal Injury</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Mechanism</th><th>Key Drugs</th><th>Features</th></tr><tr><td>----------</td><td>-----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Acute Interstitial Nephritis (AIN)**</td><td>T-cell mediated hypersensitivity</td><td>**NSAIDs, PPIs, Antibiotics (beta-lactams, sulfonamides, rifampicin), Diuretics (thiazides, loop), Allopurinol, ICIs**</td><td>**Fever, rash, eosinophilia (30%), eosinophiluria, sterile pyuria, AKI; Biopsy: interstitial infiltrate + eosinophils; Rx: Stop drug, steroids if severe**</td></tr><tr><td>**Acute Tubular Necrosis (ATN)**</td><td>Direct tubular toxicity</td><td>Aminoglycosides, Amphotericin, Contrast, Cisplatin, Tenofovir, Vancomycin (with pip-tazo)</td><td>**Muddy brown casts, FENa >1%, non-oliguric usually; Rx: Supportive, avoid nephrotoxins**</td></tr><tr><td>**Crystal Nephropathy**</td><td>Intraluminal precipitation</td><td>Acyclovir (high dose), Indinavir, Sulfonamides, Methotrexate, Foscarnet, Ciprofloxacin</td><td>**Crystalluria, flank pain, AKI; Rx: Hydration, alkalinisation (methotrexate), stop drug**</td></tr><tr><td>**Glomerular Disease**</td><td>Immune complex / anti-GBM</td><td>NSAIDs (minimal change), Penicillamine (membranous), Gold, Hydralazine (ANCA+), IFN-alpha (FSGS), Heroin (FSGS)</td><td>**Proteinuria (nephrotic), haematuria; Rx: Stop drug, immunosuppression if needed**</td></tr><tr><td>**Thrombotic Microangiopathy (TMA)**</td><td>Endothelial injury</td><td>Quinidine, Ticlopidine/Clopidogrel, Cyclosporine/Tacrolimus, Gemcitabine, Bevacizumab, Quinine</td><td>**MAHA (schistocytes), thrombocytopenia, AKI; Rx: STOP drug, plasma exchange if severe**</td></tr><tr><td>**Rhabdomyolysis**</td><td>Muscle necrosis → myoglobinuria</td><td>Statins (↑ with fibrates, CYP3A4 inhibitors), Colchicine (renal impairment)</td><td>**CK >5000, myoglobinuria, AKI; Rx: Hydration, alkalinisation, stop drug**</td></tr></table>
+<div class="callout"><b>AIN Classic Triad:</b> <i>Fever, Rash, Eosinophilia</i> (only 10-30% have all three). <b>PPIs = increasingly recognised cause.</b> Biopsy = gold standard. <b>Steroids (pred 1mg/kg) if no improvement after 1w off drug.</b></div>
+<div class="sub-h">5.4 Drug-Induced Haematological Toxicity</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Key Drugs</th><th>Mechanism</th><th>Monitoring/Management</th></tr><tr><td>----------</td><td>-----------</td><td>-----------</td><td>----------------------</td></tr><tr><td>**HIT** (Heparin-Induced Thrombocytopenia)</td><td>**UFH > LMWH > Fondaparinux (rare)**</td><td>IgG anti-PF4/heparin → platelet activation → thrombosis</td><td>**4Ts score** (Thrombocytopenia, Timing, Thrombosis, Other causes). If intermediate/high → **STOP heparin, START non-heparin anticoagulant (argatroban, danaparoid, fondaparinux, DOAC)**, HIT antibody (ELISA/PF4-SRA). Platelets nadir day 5-10. **Do NOT wait for antibody result.**</td></tr><tr><td>**Agranulocytosis** (ANC <500)</td><td>Clozapine, Carbimazole, Methimazole, PTU, Sulfonamides, Dapsone, Antithyroid, Chemotherapy</td><td>Immune destruction / direct toxicity</td><td>**Clozapine: weekly FBC × 18w → fortnightly × 1y → monthly. Stop if ANC <1500 (neutropenia) or <500 (agranulocytosis). G-CSF if severe.**</td></tr><tr><td>**Thrombocytopenia** (non-HIT)</td><td>Heparin (HIT), Quinine (immune), Valproate (dose-dependent), Alcohol, Chemo, GPIIb/IIIa inhibitors</td><td>Immune / direct marrow suppression / dilution</td><td>**Valproate: dose-related, check platelets pre-op. Quinine: acute severe, stop immediately.**</td></tr><tr><td>**Neutropenia**</td><td>Chemo, Clozapine, Carbimazole, Methimazole, Sulfonamides, Dapsone, Antivirals (ganciclovir)</td><td>Marrow suppression / immune</td><td>**Monitor FBC. G-CSF if febrile neutropenia.**</td></tr><tr><td>**Haemolytic Anaemia**</td><td>**Cephalosporins (immune), Penicillins, Methyldopa (AIHA), Dapsone (G6PD), Primaquine (G6PD), Sulfonamides (G6PD), Quinine**</td><td>Immune (Coombs+) / Oxidative (G6PD)</td><td>**DAT (Coombs) positive for immune. G6PD screen before oxidative drugs. Stop offending drug.**</td></tr><tr><td>**Megaloblastic Anaemia**</td><td>Methotrexate, Trimethoprim, Pyrimethamine, Phenytoin, Sulfasalazine, Metformin (B12)</td><td>Folate/B12 antagonism</td><td>**Folate supplementation with methotrexate. B12 monitoring with long-term metformin.**</td></tr></table>
+<p>#### 4Ts Score for HIT (Exam Essential)</p>
+<table class="ctable"><tr><th>Category</th><th>2 Points</th><th>1 Point</th><th>0 Points</th></tr><tr><td>----------</td><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**Thrombocytopenia**</td><td>Platelets <10k or >50% fall</td><td>Platelets 10-19k or 30-50% fall</td><td>Platelets ≥20k and <30% fall</td></tr><tr><td>**Timing**</td><td>Day 5-10 or ≤1 day (prior exposure)</td><td>Day 10+ or ≤1 day (no prior)</td><td>Day <4 (no prior exposure)</td></tr><tr><td>**Thrombosis**</td><td>New thrombosis (venous/arterial)</td><td>Progressive/recurrent thrombosis</td><td>None</td></tr><tr><td>**Other causes**</td><td>None apparent</td><td>Possible</td><td>Definite</td></tr></table>
+<table class="ctable"><tr><th>4Ts Score</th><th>Probability</th><th>Action</th></tr><tr><td>-----------</td><td>-------------</td><td>--------</td></tr><tr><td>**≥4** (High)</td><td>~64%</td><td>**STOP heparin, START alternative anticoagulant, send HIT Ab**</td></tr><tr><td>**2-3** (Intermediate)</td><td>~22%</td><td>**STOP heparin, START alternative, send HIT Ab**</td></tr><tr><td>**≤1** (Low)</td><td>~3%</td><td>Continue heparin, monitor platelets, low threshold to test</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>HIT = clinical diagnosis (4Ts). Do NOT wait for antibody. Stop ALL heparin (including flushes). Start argatroban/danaparoid/fondaparoid/DOAC. Platelet transfusions contraindicated (↑ thrombosis).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Practical Algorithms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Algorithm: ADR Encounter — Clinical Approach</div>
+<p>``<code>mermaid flowchart TD A[Patient with Suspected ADR] --&gt; B[Assess Severity&lt;br/&gt;ABCDE, Anaphylaxis?] B --&gt;|Anaphylaxis| C[ADRENALINE IM 0.5mg 1:1000&lt;br/&gt;Stop drug, O2, Fluids, Antihistamine, Steroid] B --&gt;|Non-acute| D[Document: Drug, Dose, Timing, Reaction, Dechallenge, Rechallenge] D --&gt; E[Classify: Type A-F, DoTS] E --&gt; F[Causality Assessment&lt;br/&gt;Naranjo / WHO-UMC / RUCAM] F --&gt; G{Serious?} G --&gt;|Yes| H[Yellow Card + Clinical Review] G --&gt;|No| I[Yellow Card if ▼ drug or serious] H --&gt; J[Management:&lt;br/&gt;Stop/Reduce/Switch/Monitor&lt;br/&gt;Treat symptoms] I --&gt; J J --&gt; K[Follow-up: Resolution, Re-exposure risk, Documentation] </code>``</p>
+<div class="sub-h">Algorithm: Cutaneous ADR Triage</div>
+<p>``<code>mermaid flowchart TD A[Drug Rash] --&gt; B{Mucosal involvement?} B --&gt;|Yes| C{Blisters/Target lesions?} B --&gt;|No| D[Morbilliform / Urticaria / FDE&lt;br/&gt;Stop drug if possible&lt;br/&gt;Antihistamines, topical steroids&lt;br/&gt;Monitor] C --&gt;|Yes + Nikolsky+| E[SJS/TEN&lt;br/&gt;SCORTEN&lt;br/&gt;ICU/Burns referral&lt;br/&gt;STOP ALL non-essential drugs&lt;br/&gt;IVIG / Ciclosporin / Etanercept debate] C --&gt;|No| F{Eosinophilia + Systemic?} F --&gt;|Yes| G[DRESS&lt;br/&gt;Stop drug&lt;br/&gt;Systemic steroids&lt;br/&gt;Monitor LFTs, renal, HHV-6] F --&gt;|No| H[AGEP if pustules + neutrophilia&lt;br/&gt;Supportive, self-limiting] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Type A**</td><td>Augmented, dose-dependent, predictable (hypoglycaemia, bleeding) — dose reduce</td></tr><tr><td>**Type B**</td><td>Bizarre, idiosyncratic, unpredictable (anaphylaxis, SJS/TEN, DILI) — stop drug</td></tr><tr><td>**Type C/D/E/F**</td><td>Chronic (steroids), Delayed (teratogenesis), End of use (withdrawal), Failure (resistance)</td></tr><tr><td>**DoTS**</td><td>Dose (toxic/collateral/hypersusceptibility), Time (rapid→late), Susceptibility (genetic/physiological/disease)</td></tr><tr><td>**Naranjo**</td><td>10 questions; ≥9 Definite, 5-8 Probable, 1-4 Possible, ≤0 Doubtful</td></tr><tr><td>**WHO-UMC**</td><td>Certain/Probable/Possible/Unlikely/Conditional/Unassessable</td></tr><tr><td>**RUCAM**</td><td>Hepatotoxicity specific; Time, Course, Risk factors, Concomitants, Exclusion, Previous, Rechallenge; >8 Highly probable</td></tr><tr><td>**Yellow Card**</td><td>All ADRs for ▼ drugs (5y); Serious ADRs for all drugs; Online/app/phone</td></tr><tr><td>**SJS/TEN**</td><td>Allopurinol, Sulfonamides, Anticonvulsants; Mucosal + Nikolsky+; SCORTEN; ICU</td></tr><tr><td>**DRESS**</td><td>Allopurinol, Anticonvulsants; Eosinophilia + Hepatitis + HHV-6; 2-6w latency</td></tr><tr><td>**AGEP**</td><td>Beta-lactams; Pustules + Neutrophilia; <5d; Self-limiting</td></tr><tr><td>**DILI Patterns**</td><td>Hepatocellular (R≥5), Cholestatic (R≤2), Mixed (2<R<5); **Hy's Law = ALT>3x + Bili>2x = 10-50% mortality**</td></tr><tr><td>**AIN**</td><td>NSAIDs, PPIs, Antibiotics; Fever/Rash/Eosinophilia triad; Steroids if no improvement</td></tr><tr><td>**HIT**</td><td>UFH>LMWH; 4Ts score; **STOP heparin, START non-heparin anticoagulant immediately**; No platelet transfusion</td></tr><tr><td>**Agranulocytosis**</td><td>Clozapine, Carbimazole, Methimazole; FBC monitoring mandatory</td></tr><tr><td>**G6PD Haemolysis**</td><td>Dapsone, Primaquine, Sulfonamides, Quinine; Screen before prescribing</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Classify ADRs — Type A vs B with examples.</td><td>Type A: Augmented, dose-dependent, predictable (e.g., warfarin bleed, insulin hypo). Type B: Bizarre, idiosyncratic, unpredictable (e.g., penicillin anaphylaxis, allopurinol SJS). Type C: Chronic (steroid osteoporosis). Type D: Delayed (carcinogenesis). Type E: End of use (steroid withdrawal). Type F: Failure (antibiotic resistance).</td></tr><tr><td>2</td><td>Naranjo algorithm — how many questions? Score for probable?</td><td>10 questions. **5-8 = Probable**, ≥9 = Definite, 1-4 = Possible, ≤0 = Doubtful. Key items: previous reports, temporal relationship, dechallenge, rechallenge, alternative causes, placebo, drug levels, dose relationship, similar drugs, objective evidence.</td></tr><tr><td>3</td><td>Patient on allopurinol 2 weeks — fever, rash, eosinophilia 3.0, ALT 300. Diagnosis? Classification?</td><td>**DRESS** (Drug Reaction with Eosinophilia and Systemic Symptoms). **Type B** (Bizarre/idiosyncratic). Latency 2-6w, eosinophilia >1.5k or >10%, systemic involvement (hepatitis). Culprits: allopurinol, anticonvulsants, sulfonamides. HHV-6 reactivation common.</td></tr><tr><td>4</td><td>SJS vs TEN vs DRESS — distinguishing features.</td><td>**SJS**: <10% BSA detachment, mucosal involvement (98%). **TEN**: >30% BSA detachment, mucosal involvement. **Overlap**: 10-30%. **DRESS**: Eosinophilia + systemic symptoms (hepatitis, lymphadenopathy), NO/limited epidermal detachment, HHV-6, longer latency. SCORTEN for SJS/TEN prognosis.</td></tr><tr><td>5</td><td>Hy's Law — criteria and significance.</td><td>**ALT/AST >3× ULN + Total Bilirubin >2× ULN + no other cause**. Significance: **10-50% risk of death or liver transplant**. Regulatory red flag — drug likely to be withdrawn/restricted.</td></tr><tr><td>6</td><td>AIN — typical drugs, presentation, management.</td><td>**Drugs**: NSAIDs, PPIs, antibiotics (beta-lactams, sulfonamides), diuretics, allopurinol, ICIs. **Presentation**: AKI, fever, rash, eosinophilia (30%), eosinophiluria, sterile pyuria. **Management**: Stop drug, biopsy if uncertain, prednisolone 1mg/kg if no improvement after 1w off drug.</td></tr><tr><td>7</td><td>HIT — 4Ts score components and management.</td><td>**4Ts**: Thrombocytopenia (magnitude/timing), Timing (day 5-10 or ≤1d if prior exposure), Thrombosis (new), Other causes (excluded). **Management**: If intermediate/high 4Ts → **STOP ALL heparin, START non-heparin anticoagulant (argatroban, danaparoid, fondaparinux, DOAC) immediately, send HIT antibody**. Do NOT wait for antibody. Platelet transfusion contraindicated.</td></tr><tr><td>8</td><td>DILI patterns — hepatocellular vs cholestatic vs mixed; R ratio.</td><td>**R = ALT/ALP (both ×ULN)**. Hepatocellular R≥5 (paracetamol, isoniazid, valproate). Cholestatic R≤2 (amoxicillin-clavulanate, flucloxacillin). Mixed 2<R<5 (co-trimoxazole, carbamazepine). Hy's Law applies to hepatocellular/mixed.</td></tr><tr><td>9</td><td>Clozapine monitoring — FBC schedule and action thresholds.</td><td>**Weekly × 18w → Fortnightly × 1y → Monthly**. **ANC <1500 (neutropenia): interrupt, monitor 2-3x/week, restart if >2000**. **ANC <500 (agranulocytosis): STOP permanently, G-CSF, infection precautions, NO rechallenge**.</td></tr><tr><td>10</td><td>Yellow Card reporting — when mandatory, what to include.</td><td>**Mandatory**: All ADRs for ▼ drugs (5 years); All serious ADRs (death, life-threatening, hospitalisation, disability, congenital anomaly, medically significant). **Include**: Patient (age, sex, initials), Drug (name, dose, route, dates), Reaction (description, onset, outcome), Medical history, Concomitant drugs, Reporter details.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Type A = Allergic"**</td><td>**NO.** Type A = **Augmented** (dose-dependent, predictable). Type B = **Bizarre** (includes allergic/idiosyncratic).</td></tr><tr><td>**"Naranjo = only tool for causality"**</td><td>NO. Naranjo = general. **RUCAM for DILI**. WHO-UMC = standardised case assessment.</td></tr><tr><td>**"HIT = only with UFH"**</td><td>**NO.** LMWH also causes HIT (lower risk ~10x less). Fondaparinux very low cross-reactivity (can be used for treatment).</td></tr><tr><td>**"Platelet transfusion helps HIT"**</td><td>**CONTRAINDICATED** — ↑ thrombosis risk (fuels the prothrombotic state).</td></tr><tr><td>**"Eosinophilia = always DRESS"**</td><td>NO. Also in AIN, EGPA, parasitic infections, lymphoma, eosinophilic pneumonia. DRESS = eosinophilia + systemic symptoms + rash + latency.</td></tr><tr><td>**"SJS/TEN = same thing, just severity"**</td><td>They are a **spectrum** but distinct by BSA detachment: SJS <10%, Overlap 10-30%, TEN >30%. Mortality differs (5% vs 30%).</td></tr><tr><td>**"Hy's Law = any ALT>3x + Bili>2x"**</td><td>Must **exclude other causes** (viral, biliary, ischaemic, autoimmune). It's a **signal for regulatory action**, not just a lab finding.</td></tr></table>
+<div class="callout"><b>Mnemonic: ADR CLASSIFICATION</b> <b>A</b>ugmented = <b>Type A</b> = <b>Dose-dependent, Predictable</b> (warfarin bleed, insulin hypo) <b>B</b>izarre = <b>Type B</b> = <b>Idiosyncratic, Unpredictable</b> (anaphylaxis, SJS, DILI) <b>C</b>hronic = <b>Type C</b> = <b>Long-term</b> (steroid osteoporosis, tardive dyskinesia) <b>D</b>elayed = <b>Type D</b> = <b>Carcinogenesis/Teratogenesis</b> (DES, thalidomide, alkylators) <b>E</b>nd of use = <b>Type E</b> = <b>Withdrawal</b> (steroid crisis, benzo seizures, clonidine rebound) <b>F</b>ailure = <b>Type F</b> = <b>Ineffective/Resistance</b> (antibiotic resistance, insulin antibodies)</div>
+<div class="callout"><b>Mnemonic: NARANJO</b> <b>N</b>ew event after drug? (+2/-1) <b>A</b>lternative causes? (-1/+2) <b>R</b>eappeared on rechallenge? (+2/-1) <b>A</b>ppeared before in reports? (+1/0) <b>N</b>eutralised on dechallenge? (+1/0) <b>J</b>udgement — placebo? (-1/+1) <b>O</b>bjective evidence? (+1/0) <i>(Plus: dose-related, similar drugs, toxic levels)</i></div>
+<div class="callout"><b>Mnemonic: HIT 4Ts</b> <b>T</b>hrombocytopenia (fall &gt;50% or &lt;10k) <b>T</b>iming (day 5-10 or ≤1d if prior) <b>T</b>hrombosis (new venous/arterial) <b>T</b>ruth (other causes excluded) <b>Score ≥4 = High → ACT NOW</b></div>
+<div class="callout"><b>Mnemonic: RUCAM LIVER</b> <b>L</b>atency (5-90d = +2) <b>I</b>mprovement on dechallenge (≥50% in 8d = +3) <b>V</b>ariables (alcohol +1, age≥55 +1) <b>E</b>xclusion of other causes (all ruled out = +2) <b>R</b>echallenge (positive = +3) <b>+(Concomitant drugs, Previous info) = Score</b> <b>&gt;8 = Highly probable</b></div>
+<div class="callout"><b>Mnemonic: SCORTEN (SJS/TEN Prognosis)</b> <b>S</b>SCORTEN: <b>S</b>ite (&gt;10% BSA), <b>C</b>reatinine &gt;282, <b>O</b>lder &gt;40, <b>R</b>ate (pulse &gt;120), <b>T</b>umor (malignancy), <b>E</b>piderlysis &gt;30%, <b>N</b>eutrophilia (actually <b>B</b>icarbonate &lt;20) <b>Score 0-1 = 3% mortality, 2 = 12%, 3 = 35%, 4 = 58%, ≥5 = 90%</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((ADRs)) Classification Type A: Augmented (Dose-dependent) Type B: Bizarre (Idiosyncratic) Type C: Chronic Type D: Delayed Type E: End of use Type F: Failure DoTS: Dose/Time/Susceptibility Causality Naranjo (General) WHO-UMC (Standardised) RUCAM (Hepatotoxicity) Reporting Yellow Card (UK) EudraVigilance (EU) FAERS (USA) VigiBase (WHO) Signal Detection (PRR, ROR, IC) Cutaneous Morbilliform SJS/TEN (SCORTEN) DRESS (Eosinophilia, HHV-6) AGEP (Pustules, Neutrophilia) FDE Hepatic (DILI) Hepatocellular (R≥5, Hy's Law) Cholestatic (R≤2) Mixed (2&lt;R&lt;5) RUCAM Causality Renal AIN (NSAIDs, PPIs, Abx) ATN (Aminoglycosides, Contrast) Crystal (Acyclovir, Indinavir) Glomerular (NSAIDs, Penicillamine) TMA (Quinine, CNIs, TKIs) Rhabdo (Statins + Fibrates) Haematological HIT (4Ts, Stop Heparin, Non-heparin AC) Agranulocytosis (Clozapine, Carbimazole) Thrombocytopenia (Valproate, Quinine) Haemolytic (G6PD, Immune) Megaloblastic (Methotrexate, TMP) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Type A-F Classification</td><td>6</td><td></td><td></td></tr><tr><td>DoTS Classification</td><td>3</td><td></td><td></td></tr><tr><td>Naranjo / WHO-UMC / RUCAM</td><td>5</td><td></td><td></td></tr><tr><td>Yellow Card / Pharmacovigilance</td><td>3</td><td></td><td></td></tr><tr><td>Cutaneous ADRs (SJS/TEN/DRESS/AGEP)</td><td>5</td><td></td><td></td></tr><tr><td>DILI Patterns & Hy's Law</td><td>4</td><td></td><td></td></tr><tr><td>Renal ADRs (AIN, ATN, Crystal)</td><td>4</td><td></td><td></td></tr><tr><td>Haematological (HIT, Agranulocytosis)</td><td>4</td><td></td><td></td></tr><tr><td>**Total**</td><td>**34**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Classify ADRs and describe the clinical features, causality assessment, and management of severe cutaneous adverse reactions."</td><td>Type A-F + DoTS; SJS/TEN/DRESS/AGEP distinction; SCORTEN; RUCAM/Naranjo; Management algorithms; Reporting</td></tr><tr><td>**Short Note**</td><td>"Hy's Law in drug-induced liver injury."</td><td>Criteria: ALT>3x ULN + Bili>2x ULN + no other cause. Significance: 10-50% mortality/transplant. Regulatory implication. Hepatocellular pattern.</td></tr><tr><td>**Viva**</td><td>"Patient on allopurinol for gout develops fever, rash, eosinophilia, hepatitis at 3 weeks. Diagnosis? Classification?Management?"</td><td>**DRESS** (Drug Reaction with Eosinophilia and Systemic Symptoms). **Type B (Bizarre)**. Stop allopurinol. Systemic steroids (pred 1mg/kg). Monitor LFTs, renal, HHV-6. Avoid allopurinol + cross-reactivity (Febuxostat OK). HLA-B*58:01 screening in high-risk populations.</td></tr><tr><td>**Ward Round**</td><td>"Post-op patient on prophylactic LMWH day 7 — platelets dropped from 250 to 85. No bleeding. Action?"</td><td>**Calculate 4Ts**: Thrombocytopenia 66% fall (2pts), Timing day 7 (2pts), No thrombosis (0pts), No other cause (1pt) = **5 (High)**. **STOP LMWH immediately. START argatroban/danaparoid/fondaparinux/DOAC. Send HIT antibody (PF4 ELISA + SRA). DO NOT wait for result. NO platelet transfusion.**</td></tr><tr><td>**Last-Night**</td><td>"Type A=Augmented/dose-dep, Type B=Bizarre/idiosyncratic, C=Chronic, D=Delayed, E=End-use, F=Failure. DoTS: Dose/Time/Suscept. Naranjo: ≥9 Def, 5-8 Prob, 1-4 Poss. Yellow Card: ▼ drugs all, all serious. SJS<10%, TEN>30%, DRESS=eos+hep+HHV6. Hy's Law: ALT>3x+Bili>2x=10-50% death. AIN: NSAID/PPI/Abx, fever/rash/eos, steroids. HIT: 4Ts≥4→stop heparin+non-heparin AC. Clozapine: weekly FBC, ANC<1.5k hold, <0.5k stop forever."</td><td>Full framework in 3 lines.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-A, 2-C, 3-B, 4-D, 5-C, 6-A, 7-D, 8-B, 9-C, 10-A</td><td>1-C, 2-A, 3-B, 4-D, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Principles of Rational Prescribing]] — WHO 6-step, P-drug, monitoring</li><li>[[Drug Interactions]] — CYP450, PK/PD interactions increasing ADR risk</li><li>[[Medication Safety and Errors]] — Error classification, PINCH, root cause analysis</li><li>[[Therapeutic Drug Monitoring]] — TDM to prevent Type A ADRs (toxicity)</li><li>[[Drug Development and Regulation]] — Pharmacovigilance, signal detection, PSUR/RMP</li><li>[[Prescribing in Special Populations]] — ADR susceptibility in renal/hepatic/elderly/pregnancy</li><li>[[Polypharmacy and Deprescribing]] — ADRs as driver for deprescribing</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Rawlins &amp; Thompson classification — Type B ADR is:</b></li></ol>
+<p>A. Dose-dependent and predictable B. Chronic, long-term use related C. <b>Idiosyncratic, non-dose-dependent, unpredictable</b> D. Delayed carcinogenesis</p>
+<ol><li><b>DoTS classification — "Hypersusceptibility" refers to:</b></li></ol>
+<p>A. Supratherapeutic dose causing toxicity B. <b>Normal dose, exaggerated response in susceptible individual (e.g., G6PD)</b> C. Therapeutic dose, off-target effect D. Delayed reaction after long-term use</p>
+<ol><li><b>Naranjo score 6 — causality category?</b></li></ol>
+<p>A. Definite B. <b>Probable</b> C. Possible D. Doubtful</p>
+<ol><li><b>RUCAM is specifically designed for:</b></li></ol>
+<p>A. General ADR causality B. Cutaneous ADRs C. <b>Drug-induced liver injury (DILI)</b> D. Haematological ADRs</p>
+<ol><li><b>Yellow Card — mandatory reporting for:</b></li></ol>
+<p>A. All ADRs for all drugs B. Only serious ADRs for all drugs C. <b>All ADRs for ▼ (Black Triangle) drugs AND serious ADRs for all drugs</b> D. Only fatal ADRs</p>
+<ol><li><b>SJS vs TEN — distinguishing feature by BSA detachment:</b></li></ol>
+<p>A. SJS &gt;30%, TEN &lt;10% B. <b>SJS &lt;10%, TEN &gt;30%</b> C. SJS 10-30%, TEN &lt;10% D. Both &lt;10% but TEN has mucosal involvement</p>
+<ol><li><b>Hy's Law criteria:</b></li></ol>
+<p>A. ALT &gt;2x ULN + Bilirubin &gt;3x ULN B. <b>ALT &gt;3x ULN + Total Bilirubin &gt;2x ULN + no other cause</b> C. ALP &gt;3x ULN + Bilirubin &gt;2x ULN D. ALT &gt;5x ULN alone</p>
+<ol><li><b>AIN — classic drug culprits:</b></li></ol>
+<p>A. ACEi, ARB, Diuretics B. <b>NSAIDs, PPIs, Antibiotics (beta-lactams, sulfonamides)</b> C. Statins, Fibrates, Ezetimibe D. Beta-blockers, CCBs, Digoxin</p>
+<ol><li><b>HIT 4Ts score — High probability = ≥4. Immediate action:</b></li></ol>
+<p>A. Continue heparin, send antibody, wait for result B. <b>Stop ALL heparin, start non-heparin anticoagulant, send antibody</b> C. Reduce heparin dose, monitor platelets D. Platelet transfusion, continue heparin</p>
+<ol><li><b>Clozapine agranulocytosis monitoring — ANC threshold for permanent discontinuation:</b></li></ol>
+<p>A. &lt;1000 B. &lt;1500 C. <b>&lt;500</b> D. &lt;100</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>45M on allopurinol 300mg for gout × 3 weeks. Fever 39°C, diffuse maculopapular rash, face oedema, eosinophils 3.5×10⁹/L, ALT 280, creatinine 110. Diagnosis?</b></li></ol>
+<p>A. SJS B. AGEP C. <b>DRESS</b> D. Morbilliform rash E. Serum sickness</p>
+<ol><li><b>28F post-C-section on prophylactic enoxaparin 40mg OD. Day 8: platelets 65 (baseline 280). No thrombosis. 4Ts score?</b></li></ol>
+<p>A. 3 (Intermediate) B. 4 (High) C. <b>5 (High)</b> D. 2 (Intermediate) E. 1 (Low)</p>
+<ol><li><b>62M on amoxicillin-clavulanate for CAP × 10 days. Presents with jaundice, pruritus. ALT 180, ALP 480, Bilirubin 85. R ratio = 1.1. Pattern?</b></li></ol>
+<p>A. Hepatocellular B. <b>Cholestatic</b> C. Mixed D. Infiltrative E. Indeterminate</p>
+<ol><li><b>70F on omeprazole 20mg OD × 6 months for GERD. AKI, fever, rash, eosinophilia 1.2. Urine: sterile pyuria, eosinophiluria+. Biopsy: interstitial lymphocytic infiltrate with eosinophils. Likely drug?</b></li></ol>
+<p>A. NSAID B. <b>PPI (omeprazole)</b> C. ACEi D. Diuretic E. Statin</p>
+<ol><li><b>55M on clozapine 300mg OD × 1 year. Routine FBC: WBC 2.1, ANC 0.4. Febrile 38.5°C. Immediate action?</b></li></ol>
+<p>A. Reduce clozapine dose, repeat FBC in 48h B. <b>STOP clozapine permanently, G-CSF, broad-spectrum IV antibiotics, infection precautions</b> C. Hold clozapine, repeat FBC daily, restart if ANC &gt;1.5 D. Switch to olanzapine, continue clozapine at lower dose E. Continue clozapine, add G-CSF</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Adrs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

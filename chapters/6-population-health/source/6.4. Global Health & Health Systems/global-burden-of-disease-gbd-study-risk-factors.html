@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global Burden Of Disease Gbd Study Risk Factors — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.4. GLOBAL HEALTH & HEALTH SYSTEMS</span>
+      <div class="h1">Global Burden Of Disease Gbd Study Risk Factors</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe GBD study: history, collaboration (IARC, WHO, IHME), methodology, updates</li><li>[ ] Interpret GBD metrics: DALYs, YLL, YLD, HALE, prevalence, incidence, mortality</li><li>[ ] Apply risk factor attribution: PAF, comparative risk assessment, metabolic, behavioural, environmental</li><li>[ ] Distinguish leading risks by level: Level 1 (behavioural), Level 2 (metabolic), Level 3 (environmental)</li><li>[ ] Track SDG 3 progress using GBD: 3.4 (NCD mortality), 3.3 (communicable), 3.6 (RTA)</li><li>[ ] Use GBD Compare / Viz tools for country/region analysis</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>GBD Component</th><th>Description</th></tr><tr><td>---------------</td><td>-------------</td></tr><tr><td>**GBD Study**</td><td>Global Burden of Diseases, Injuries, Risk Factors Study - comprehensive, comparable health metrics</td></tr><tr><td>**Lead Institution**</td><td>Institute for Health Metrics and Evaluation (IHME), University of Washington</td></tr><tr><td>**Collaborators**</td><td>>9000 researchers, >160 countries, WHO, World Bank, UN agencies</td></tr><tr><td>**Frequency**</td><td>Annual updates (since 2015); major cycles 2010, 2013, 2015, 2017, 2019, 2021</td></tr><tr><td>**Scope**</td><td>370+ diseases/injuries, 87 risk factors, 204 countries/territories, subnational for some</td></tr><tr><td>**Time Series**</td><td>1990-present (annual)</td></tr></table>
+<p><b>GBD 2019 Key Findings:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Metric&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;th&gt;Trend&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Global DALYs</b>&lt;/td&gt;&lt;td&gt;2.54 billion&lt;/td&gt;&lt;td&gt;↓ age-standardised since 2010&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Top 3 DALYs</b>&lt;/td&gt;&lt;td&gt;Neonatal disorders, IHD, Stroke&lt;/td&gt;&lt;td&gt;NCDs rising&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Top 3 YLL</b>&lt;/td&gt;&lt;td&gt;IHD, Stroke, LRI&lt;/td&gt;&lt;td&gt;IHD #1 since 1990&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Top 3 YLD</b>&lt;/td&gt;&lt;td&gt;Low back pain, Depression, Headache&lt;/td&gt;&lt;td&gt;Musculoskeletal/mental dominate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>HALE at Birth</b>&lt;/td&gt;&lt;td&gt;63.5 years (M), 67.1 years (F)&lt;/td&gt;&lt;td&gt;Gap 3.6y F&gt;M&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Life Expectancy</b>&lt;/td&gt;&lt;td&gt;73.3 (M), 77.6 (F)&lt;/td&gt;&lt;td&gt;Gap 4.3y F&gt;M&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological framework - see risk factor hierarchy and attribution below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Risk Factor Hierarchy (GBD)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Level 1: Behavioural Risks (Modifiable):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Risk&lt;/th&gt;&lt;th&gt;Global DALYs Attributable&lt;/th&gt;&lt;th&gt;Key Diseases&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;---------------------------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Tobacco</b>&lt;/td&gt;&lt;td&gt;~200M&lt;/td&gt;&lt;td&gt;IHD, Stroke, Lung CA, COPD, TB&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Dietary Risks</b>&lt;/td&gt;&lt;td&gt;~190M&lt;/td&gt;&lt;td&gt;IHD, Stroke, T2DM, Colorectal CA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>High SBP</b>&lt;/td&gt;&lt;td&gt;~190M&lt;/td&gt;&lt;td&gt;IHD, Stroke, CKD, Heart Failure&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>High FPG</b>&lt;/td&gt;&lt;td&gt;~170M&lt;/td&gt;&lt;td&gt;T2DM, IHD, Stroke, CKD&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>High BMI</b>&lt;/td&gt;&lt;td&gt;~160M&lt;/td&gt;&lt;td&gt;IHD, Stroke, T2DM, CA (endo, breast, colon)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Alcohol</b>&lt;/td&gt;&lt;td&gt;~100M&lt;/td&gt;&lt;td&gt;Liver cirrhosis, TB, RTA, Violence, CA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Physical Inactivity</b>&lt;/td&gt;&lt;td&gt;~50M&lt;/td&gt;&lt;td&gt;IHD, Stroke, T2DM, Breast/Colon CA&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Level 2: Metabolic Risks (Intermediate):</b></p>
+<ul><li>High systolic blood pressure (SBP)</li><li>High fasting plasma glucose (FPG)</li><li>High body mass index (BMI)</li><li>High LDL cholesterol</li><li>Kidney dysfunction (low eGFR, albuminuria)</li></ul>
+<p><b>Level 3: Environmental/Occupational Risks:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Risk&lt;/th&gt;&lt;th&gt;DALYs&lt;/th&gt;&lt;th&gt;Key Diseases&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Air Pollution (PM2.5)</b>&lt;/td&gt;&lt;td&gt;~120M&lt;/td&gt;&lt;td&gt;IHD, Stroke, LRI, COPD, Lung CA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Household Air Pollution</b>&lt;/td&gt;&lt;td&gt;~70M&lt;/td&gt;&lt;td&gt;LRI, COPD, IHD, Stroke, Cataract&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Unsafe WASH</b>&lt;/td&gt;&lt;td&gt;~60M&lt;/td&gt;&lt;td&gt;Diarrhoea, Typhoid, Hepatitis A, NTDs&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Occupational Risks</b>&lt;/td&gt;&lt;td&gt;~40M&lt;/td&gt;&lt;td&gt;Back pain, hearing loss, COPD, injuries, CA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Lead Exposure</b>&lt;/td&gt;&lt;td&gt;~20M&lt;/td&gt;&lt;td&gt;CVD, CKD, IDA, developmental&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Level 4: Child/Maternal Risks (Historical, declining):</b></p>
+<ul><li>Child wasting, stunting, underweight</li><li>Non-exclusive breastfeeding</li><li>Low birth weight/short gestation</li><li>Iron deficiency</li><li>Vitamin A deficiency</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Attribution Methods)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Population Attributable Fraction (PAF):</b> ``<code> PAF = Pₑ × (RR - 1) / [1 + Pₑ × (RR - 1)] </code>`` Where Pₑ = prevalence of exposure, RR = relative risk.</p>
+<p><b>Comparative Risk Assessment (CRA) Steps:</b></p>
+<ol><li>Identify risk-outcome pairs (evidence review)</li><li>Estimate exposure distribution (population-level)</li><li>Estimate relative risks (meta-analyses)</li><li>Calculate theoretical minimum risk exposure level (TMREL)</li><li>Compute PAF and attributable burden (DALYs, deaths)</li><li>Account for mediation (e.g., BMI → SBP → CVD)</li></ol>
+<p><b>Mermaid: Risk Attribution Pathway</b> ``<code>mermaid flowchart LR A[Risk Factor\nExposure] --&gt; B[Relative Risk\nfrom Meta-Analysis] C[Exposure\nDistribution] --&gt; D[Population Attributable\nFraction (PAF)] B --&gt; D D --&gt; E[Attributable\nDALYs/Deaths] E --&gt; F[Policy Priority\nSetting] style F fill:#bfb,stroke:#333 </code>``</p>
+<p><b>Theoretical Minimum Risk Exposure Level (TMREL):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Risk&lt;/th&gt;&lt;th&gt;TMREL&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Tobacco</b>&lt;/td&gt;&lt;td&gt;Zero&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Alcohol</b>&lt;/td&gt;&lt;td&gt;Zero (GBD 2020); previously 0-1 drink/day&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>SBP</b>&lt;/td&gt;&lt;td&gt;110-115 mmHg&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>LDL-C</b>&lt;/td&gt;&lt;td&gt;0.7-1.3 mmol/L&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>BMI</b>&lt;/td&gt;&lt;td&gt;20-25 kg/m²&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>FPG</b>&lt;/td&gt;&lt;td&gt;4.8-5.4 mmol/L&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PM2.5</b>&lt;/td&gt;&lt;td&gt;2.4-5.9 μg/m³&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (GBD Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**YLL vs YLD**</td><td>YLL = fatal burden (mortality). YLD = non-fatal burden (morbidity). NCDs = both; Injuries = mostly YLL; Mental/MSK = mostly YLD.</td></tr><tr><td>**Attributable vs Joint PAF**</td><td>Attributable = single risk factor. Joint PAF < sum of individual PAFs (risks overlap/mediation). GBD reports joint for risk clusters.</td></tr><tr><td>**TMREL Changes**</td><td>TMREL evolves with evidence (e.g., alcohol → zero; SBP lower). Affects trend comparability.</td></tr><tr><td>**Age-Standardised vs All-Age**</td><td>Age-standardised removes demographic effects (aging/pop growth). All-age = actual burden for planning.</td></tr><tr><td>**GBD vs National Estimates**</td><td>GBD uses standard methods for comparability. National estimates may use local data, different methods.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Policy Application & SDGs)</span>
+  </div>
+  <div class="sec-body">
+<p><b>GBD for Policy:</b></p>
+<ul><li><b>Priority Setting</b>: Rank risks by attributable DALYs → "Best Buys"</li><li><b>Resource Allocation</b>: Cost-effectiveness of targeting top risks</li><li><b>Progress Tracking</b>: SDG 3.4 (NCD mortality 1/3 reduction), 3.3 (end epidemics), 3.6 (RTA 1/2)</li><li><b>Equity Analysis</b>: Subnational, socioeconomic disparities (concentration index)</li><li><b>Forecasting</b>: Alternative scenarios (SDG pace, compounding risks)</li></ul>
+<p><b>SDG 3 Targets Tracked by GBD:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Target&lt;/th&gt;&lt;th&gt;Indicator&lt;/th&gt;&lt;th&gt;GBD Metric&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.1 Maternal Mortality</b>&lt;/td&gt;&lt;td&gt;MMR&lt;/td&gt;&lt;td&gt;Maternal deaths/100K live births&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.2 Child Mortality</b>&lt;/td&gt;&lt;td&gt;U5MR, NMR&lt;/td&gt;&lt;td&gt;Deaths &lt;5y, &lt;28d per 1000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.3 Communicable</b>&lt;/td&gt;&lt;td&gt;HIV, TB, Malaria, NTDs, Hepatitis&lt;/td&gt;&lt;td&gt;Incidence, mortality, DALYs&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.4 NCD Mortality</b>&lt;/td&gt;&lt;td&gt;Premature NCD mortality (30-70y)&lt;/td&gt;&lt;td&gt;Probability of dying 30-70 from NCD&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.4 Mental Health</b>&lt;/td&gt;&lt;td&gt;Suicide mortality&lt;/td&gt;&lt;td&gt;Suicide rate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.5 Substance</b>&lt;/td&gt;&lt;td&gt;Alcohol, treatment coverage&lt;/td&gt;&lt;td&gt;Alcohol per capita, AUD treatment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.6 RTA</b>&lt;/td&gt;&lt;td&gt;RTA deaths&lt;/td&gt;&lt;td&gt;RTA deaths/100K&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.7 Sexual/Reproductive</b>&lt;/td&gt;&lt;td&gt;Coverage, adolescent birth&lt;/td&gt;&lt;td&gt;Contraceptive prevalence, ABR&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.8 UHC</b>&lt;/td&gt;&lt;td&gt;Service coverage index&lt;/td&gt;&lt;td&gt;UHC SCI (tracer interventions)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3.9 Environment</b>&lt;/td&gt;&lt;td&gt;Air pollution, WASH mortality&lt;/td&gt;&lt;td&gt;PM2.5 attributable, unsafe WASH&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**GBD = Gold Standard**</td><td>IHME-led, 370+ diseases, 87 risks, 204 countries, 1990-present</td></tr><tr><td>**Top DALYs 2019**</td><td>Neonatal, IHD, Stroke, LRI, Diarrhoea, COPD, Low back pain</td></tr><tr><td>**Top YLL**</td><td>IHD, Stroke, LRI, Neonatal, Diarrhoea, RTA, TB</td></tr><tr><td>**Top YLD**</td><td>Low back pain, Depression, Headache, Anxiety, Neck pain</td></tr><tr><td>**Top Risk (DALYs)**</td><td>High SBP, Tobacco, High FPG, High BMI, Air pollution (PM2.5), Alcohol</td></tr><tr><td>**Behavioural > Metabolic > Environmental**</td><td>Hierarchy of risk levels</td></tr><tr><td>**PAF Formula**</td><td>Pₑ(RR-1)/[1+Pₑ(RR-1)]</td></tr><tr><td>**TMREL**</td><td>Theoretical minimum risk exposure level (varies by risk)</td></tr><tr><td>**SDG 3 Tracking**</td><td>GBD official data source for SDG 3 health indicators</td></tr><tr><td>**Joint PAF < Sum**</td><td>Risks overlap; mediation (BMI→SBP)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**What is the GBD study? Who leads it?**</td><td>Global Burden of Diseases, Injuries, Risk Factors Study. Led by IHME (University of Washington) with >9000 collaborators.</td></tr><tr><td>**What are the two main burden metrics?**</td><td>YLL (Years of Life Lost - mortality) and YLD (Years Lived with Disability - morbidity). DALY = YLL + YLD.</td></tr><tr><td>**Top 3 global risk factors for DALYs (GBD 2019)?**</td><td>High systolic blood pressure, Tobacco, High fasting plasma glucose (FPG).</td></tr><tr><td>**What is the risk factor hierarchy in GBD?**</td><td>Level 1: Behavioural (tobacco, diet, alcohol). Level 2: Metabolic (SBP, BMI, FPG, LDL). Level 3: Environmental/Occupational (air pollution, WASH, occupational). Level 4: Child/Maternal.</td></tr><tr><td>**What is PAF? How calculated?**</td><td>Population Attributable Fraction = proportion of disease burden due to a risk factor. PAF = Pₑ(RR-1)/[1+Pₑ(RR-1)].</td></tr><tr><td>**What is TMREL? Give examples.**</td><td>Theoretical Minimum Risk Exposure Level. Tobacco=zero, SBP=110-115, BMI=20-25, Alcohol=zero (2020), PM2.5=2.4-5.9 μg/m³.</td></tr><tr><td>**How does GBD track SDG 3.4 (NCD mortality)?**</td><td>Probability of dying between 30-70 from cardiovascular, cancer, diabetes, chronic respiratory. Target: reduce by 1/3 by 2030.</td></tr><tr><td>**Why is joint PAF less than sum of individual PAFs?**</td><td>Risk factors overlap (e.g., high BMI causes high SBP and high FPG). Mediation and correlation mean effects are not independent.</td></tr><tr><td>**Difference between age-standardised and all-age rates?**</td><td>Age-standardised removes demographic change (aging, population growth) for trend comparison. All-age = actual burden for health service planning.</td></tr><tr><td>**GBD 2019: Top cause of YLD?**</td><td>Low back pain. Depression #2, Headache #3, Anxiety #4, Neck pain #5.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**GBD vs WHO Estimates**</td><td>GBD = standardised, comparable, annual. WHO = official stats for member states, may differ in methods.</td></tr><tr><td>**Risk-Outcome Pairs**</td><td>GBD only includes pairs with "convincing" or "probable" evidence (WCRF/IARC criteria).</td></tr><tr><td>**Counterfactual**</td><td>TMREL = counterfactual exposure distribution (what if everyone at minimum risk?).</td></tr><tr><td>**Disability Weights**</td><td>Derived from population surveys (paired comparison). 235 health states in GBD 2019.</td></tr></table>
+<p><b>Mnemonic: GBD METRICS (DYH)</b></p>
+<ul><li><b>D</b>ALY = <b>Y</b>LL + <b>Y</b>LD</li><li><b>H</b>ALE = Healthy Life Expectancy</li></ul>
+<p><b>Mnemonic: TOP RISKS 2019 (SBF-BAP)</b></p>
+<ul><li><b>S</b>BP (High systolic BP)</li><li><b>B</b>MI (High BMI)</li><li><b>F</b>PG (High fasting glucose)</li><li><b>B</b>acco (Tobacco)</li><li><b>A</b>lcohol</li><li><b>P</b>M2.5 (Air pollution)</li></ul>
+<p><b>Mnemonic: RISK HIERARCHY (BMEC)</b></p>
+<ul><li><b>B</b>ehavioural (Level 1)</li><li><b>M</b>etabolic (Level 2)</li><li><b>E</b>nvironmental/Occupational (Level 3)</li><li><b>C</b>hild/Maternal (Level 4)</li></ul>
+<p><b>Mnemonic: SDG 3 TARGETS (3.1-3.9)</b></p>
+<ul><li><b>3.1</b> Maternal</li><li><b>3.2</b> Child</li><li><b>3.3</b> Communicable</li><li><b>3.4</b> NCD + Mental</li><li><b>3.5</b> Substance</li><li><b>3.6</b> RTA</li><li><b>3.7</b> Sexual/Reproductive</li><li><b>3.8</b> UHC</li><li><b>3.9</b> Environment</li></ul>
+<p><b>Mnemonic: PAF FORMULA</b></p>
+<ul><li><b>P</b>revalence × <b>(RR - 1)</b></li><li><b>D</b>ivided by <b>[1 + P(RR-1)]</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((GBD &amp; Risk Factors)) GBD Study IHME, 204 countries 370+ diseases, 87 risks 1990-present, annual DALY = YLL + YLD Metrics YLL: Fatal burden YLD: Non-fatal burden HALE: Healthy LE Age-standardised vs All-age Risk Hierarchy L1 Behavioural: Tobacco, Diet, Alcohol L2 Metabolic: SBP, FPG, BMI, LDL L3 Environmental: PM2.5, WASH, Occupational L4 Child/Maternal: Wasting, Stunting Attribution PAF = P(RR-1)/[1+P(RR-1)] TMREL: Counterfactual Joint PAF &lt; Sum Policy Priority setting SDG 3 tracking Best Buys Equity analysis </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**GBD**</td><td>IHME, 204 countries, 370 diseases, 87 risks</td></tr><tr><td>**DALY**</td><td>YLL + YLD</td></tr><tr><td>**Top YLD**</td><td>Low back pain, Depression, Headache</td></tr><tr><td>**Top YLL**</td><td>IHD, Stroke, LRI, Neonatal</td></tr><tr><td>**Top Risks**</td><td>SBP, Tobacco, FPG, BMI, PM2.5, Alcohol</td></tr><tr><td>**Hierarchy**</td><td>Behavioural → Metabolic → Environmental → Child/Maternal</td></tr><tr><td>**PAF**</td><td>Pₑ(RR-1)/[1+Pₑ(RR-1)]</td></tr><tr><td>**TMREL**</td><td>Zero tobacco/alcohol, SBP 110-115, BMI 20-25</td></tr><tr><td>**SDG 3**</td><td>3.4 NCD premature mort, 3.3 Communicable, 3.6 RTA</td></tr><tr><td>**Joint PAF**</td><td>Less than sum (overlap/mediation)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>GBD Structure</td><td></td><td></td></tr><tr><td>YLL/YLD/DALY</td><td></td><td></td></tr><tr><td>Risk Hierarchy</td><td></td><td></td></tr><tr><td>PAF Calculation</td><td></td><td></td></tr><tr><td>TMREL Values</td><td></td><td></td></tr><tr><td>SDG 3 Tracking</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Measures of Disease Burden (DALY, QALY, HALE, YLL, YLD).md]], [[Cardiovascular Disease Epidemiology.md]], [[Cancer Epidemiology.md]], [[Health Systems, UHC &amp; Health Economics.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Global Burden Of Disease Gbd Study Risk Factors · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

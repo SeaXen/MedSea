@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Psychosocial Quality Of Life — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.17. SURVIVORSHIP & LATE EFFECTS</span>
+      <div class="h1">Psychosocial Quality Of Life</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Screen for <b>distress, depression, anxiety</b> using validated tools</li><li>[ ] Assess <b>fear of recurrence</b> and its impact on QOL</li><li>[ ] Evaluate <b>body image, sexual function, cognitive function</b> in survivors</li><li>[ ] Screen for <b>financial toxicity</b> and <b>return-to-work barriers</b></li><li>[ ] Apply <b>evidence-based interventions</b>: CBT, ACT, Mindfulness, Exercise, Support Groups</li><li>[ ] Prescribe <b>pharmacotherapy</b> for depression/anxiety when indicated</li><li>[ ] Address <b>return-to-work, financial toxicity, social isolation</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Distress Screening</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">NCCN Distress Thermometer (DT)</div>
+<table class="ctable"><tr><th>Tool</th><th>Format</th><th>Cutoff</th><th>Action</th></tr><tr><td>------</td><td>--------</td><td>--------</td><td>--------</td></tr><tr><td>**Distress Thermometer (DT)**</td><td>**0-10 Visual Analogue Scale** + **Problem List** (Practical, Family, Emotional, Spiritual, Physical)</td><td>**≥4** = **Significant Distress** → **Referral to Psychosocial Services**</td><td>**Screen at Diagnosis, Key Transitions, Routine Intervals**</td></tr></table>
+<div class="sub-h">Problem List Domains</div>
+<table class="ctable"><tr><th>Domain</th><th>Examples</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Practical**</td><td>Housing, Insurance, Transportation, Work/School, Childcare</td></tr><tr><td>**Family**</td><td>Partner, Children, Caregiver Strain, Communication</td></tr><tr><td>**Emotional**</td><td>Depression, Anxiety, Fear, Anger, Guilt, Loss of Control</td></tr><tr><td>**Spiritual/Religious**</td><td>Meaning, Faith, Existential Distress</td></tr><tr><td>**Physical**</td><td>Pain, Fatigue, Sleep, Appetite, Nausea, Constipation, Neuropathy, Sexual, Concentration/Memory</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Depression & Anxiety Screening</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Validated Tools</div>
+<table class="ctable"><tr><th>Tool</th><th>Items</th><th>Cutoff</th><th>Population</th></tr><tr><td>------</td><td>-------</td><td>--------</td><td>------------</td></tr><tr><td>**HADS (Hospital Anxiety and Depression Scale)**</td><td>**14 Items (7 Anxiety, 7 Depression)**</td><td>**≥8** (Subthreshold), **≥11** (Probable)</td><td>**Validated in Cancer**, **No Somatic Items**</td></tr><tr><td>**PHQ-9 (Patient Health Questionnaire-9)**</td><td>**9 Items (DSM-5 Criteria)**</td><td>**≥10** (Moderate), **≥15** (Moderately Severe), **≥20** (Severe)</td><td>**Widely Used**, **Tracks Severity**</td></tr><tr><td>**GAD-7 (Generalised Anxiety Disorder-7)**</td><td>**7 Items**</td><td>**≥10** (Moderate), **≥15** (Severe)</td><td>**Specific for Anxiety**</td></tr><tr><td>**PHQ-2 / GAD-2**</td><td>**2 Items Each**</td><td>**≥3** (Screen Positive)</td><td>**Ultra-Brief**, **Rule-In**</td></tr></table>
+<div class="sub-h">Clinical Approach</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Screen**</td><td>**DT ≥4 OR PHQ-2 ≥3 OR GAD-2 ≥3** → **Full Assessment**</td></tr><tr><td>**2. Assess Severity**</td><td>**PHQ-9, GAD-7, HADS**</td></tr><tr><td>**3. Risk Assessment**</td><td>**Suicidality (PHQ-9 Item 9), Self-Harm, Psychosis**</td></tr><tr><td>**4. Treat/Refer**</td><td>**Mild: Watchful Waiting + Psychoeducation**; **Moderate: CBT/SSRIs**; **Severe: Psychiatry Referral + Pharmacotherapy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Fear of Cancer Recurrence (FCR)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition &amp; Prevalence</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Fear, Worry, Concern** about Cancer Returning/Progressing</td></tr><tr><td>**Prevalence**</td><td>**30-70%** of Survivors (Highest in First 2-3 Years)</td></tr><tr><td>**Impact**</td><td>**Reduced QOL**, **Avoidance of Follow-Up**, **Excessive Body Checking**, **Healthcare Overutilisation**</td></tr></table>
+<div class="sub-h">Assessment Tools</div>
+<table class="ctable"><tr><th>Tool</th><th>Items</th><th>Cutoff</th></tr><tr><td>------</td><td>-------</td><td>--------</td></tr><tr><td>**FCRI (Fear of Cancer Recurrence Inventory)**</td><td>**42 Items (7 Subscales)**</td><td>**≥13 (Short Form)** / **≥34 (Full)** = Clinical FCR</td></tr><tr><td>**CARS (Cancer Recurrence Worry Scale)**</td><td>**4 Items**</td><td>**≥8** = High FCR</td></tr><tr><td>**Single Item**</td><td>**"How fearful are you of recurrence?"** (0-10)</td><td>**≥4** = Clinically Significant</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Approach</th><th>Intervention</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**Psychoeducation**</td><td>**Normalise Fear**, **Provide Accurate Recurrence Statistics**, **Differentiate Awareness from Fear**</td></tr><tr><td>**CBT/Metacognitive Therapy**</td><td>**Identify/Challenge Catastrophic Thoughts**, **Behavioural Experiments** (Reduce Checking)</td></tr><tr><td>**Mindfulness/ACT**</td><td>**Acceptance of Uncertainty**, **Values-Based Action**</td></tr><tr><td>**Exposure Therapy**</td><td>**Gradual Exposure to Avoided Stimuli** (Follow-Up Visits, Body Scans)</td></tr><tr><td>**Psychoeducation + CBT**</td><td>**Most Evidence-Based**, **Reduces FCR Severity**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Body Image & Sexual Dysfunction</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Body Image</div>
+<table class="ctable"><tr><th>Issue</th><th>Common Causes</th><th>Assessment</th></tr><tr><td>-------</td><td>---------------</td><td>------------</td></tr><tr><td>**Surgical Changes**</td><td>**Mastectomy, Lumpectomy, Stoma, Amputation, Head & Neck Resection**</td><td>**Body Image Scale (BIS)**, **BSQ (Body Shape Questionnaire)**</td></tr><tr><td>**Radiation Changes**</td><td>**Fibrosis, Pigmentation, Telangiectasia, Breast Shrinkage**</td><td>**Patient-Reported Outcome Measures (PROMs)**</td></tr><tr><td>**Alopecia**</td><td>**Chemotherapy, Cranial RT**</td><td>**Distress Thermometer**</td></tr><tr><td>**Weight Changes**</td><td>**Steroids, Hormonal Therapy, Inactivity, Cachexia/Obesity**</td><td>**BMI, Patient Concern**</td></tr></table>
+<div class="sub-h">Sexual Dysfunction</div>
+<table class="ctable"><tr><th>Population</th><th>Common Issues</th><th>Assessment</th></tr><tr><td>------------</td><td>---------------</td><td>------------</td></tr><tr><td>**Women**</td><td>**Vaginal Dryness, Dyspareunia, Low Libido, Premature Menopause (Chemo/Hormonal), Body Image**</td><td>**FSFI (Female Sexual Function Index)**, **SVQ (Sexual Vaginal Changes Questionnaire)**</td></tr><tr><td>**Men**</td><td>**Erectile Dysfunction (Prostate Surgery/RT/ADT), Low Libido, Ejaculatory Changes, Body Image**</td><td>**IIEF (International Index of Erectile Function)**, **SHIM**</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Issue</th><th>Intervention</th></tr><tr><td>-------</td><td>--------------</td></tr><tr><td>**Vaginal Dryness/Dyspareunia**</td><td>**Vaginal Moisturisers (Regular), Lubricants (During), Topical Oestrogen (If Safe)**, **Dilators, Pelvic Floor PT**</td></tr><tr><td>**Erectile Dysfunction**</td><td>**PDE5 Inhibitors (Sildenafil, Tadalafil)**, **Vacuum Device, Penile Injections, Implant**, **Penile Rehab (Early Post-Prostatectomy)**</td></tr><tr><td>**Low Libido**</td><td>**Testosterone (If Hypogonadal, M/F)**, **Psychosexual Counselling**, **Mindfulness, Sensate Focus**</td></tr><tr><td>**Body Image**</td><td>**CBT, Mirror Exposure, Compassion-Focused Therapy, Support Groups**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Cognitive Impairment ("Chemo Brain")</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition &amp; Prevalence</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Subjective/Objective Cognitive Decline** (Memory, Attention, Executive Function, Processing Speed)</td></tr><tr><td>**Prevalence**</td><td>**15-75%** (Varies by Assessment, Timing, Population)</td></tr><tr><td>**Risk Factors**</td><td>**Chemotherapy (Anthracyclines, Alkylators, Taxanes, Platinum), Cranial RT, Hormonal Therapy, Age, Pre-Existing Cognitive Impairment, APOE ε4, Fatigue, Depression, Anxiety**</td></tr></table>
+<div class="sub-h">Affected Domains</div>
+<table class="ctable"><tr><th>Domain</th><th>Examples</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Executive Function**</td><td>**Planning, Organising, Multitasking, Decision-Making**</td></tr><tr><td>**Memory**</td><td>**Working Memory, Verbal/Visual Recall**</td></tr><tr><td>**Attention/Processing Speed**</td><td>**Sustained Attention, Reaction Time, Mental Flexibility**</td></tr><tr><td>**Language**</td><td>**Word-Finding, Verbal Fluency**</td></tr></table>
+<div class="sub-h">Assessment</div>
+<table class="ctable"><tr><th>Tool</th><th>Domain</th><th>Format</th></tr><tr><td>------</td><td>--------</td><td>--------</td></tr><tr><td>**FACT-Cog**</td><td>**Self-Report**</td><td>**PROM**</td></tr><tr><td>**EORTC QLQ-C30 + QLQ-CIPN20**</td><td>**Self-Report + Neuropathy**</td><td>**PROM**</td></tr><tr><td>**MoCA (Montreal Cognitive Assessment)**</td><td>**Objective Screening**</td><td>**30-Point, 10-Min**</td></tr><tr><td>**Formal Neuropsychological Battery**</td><td>**Comprehensive**</td><td>**Gold Standard** (Time-Intensive)</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Approach</th><th>Intervention</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**Cognitive Rehabilitation**</td><td>**Computerised Training (Cogmed, Lumosity)**, **Strategy Training (Compensatory Strategies)**</td></tr><tr><td>**Physical Exercise**</td><td>**Aerobic + Resistance (3x/week, 150min/week)** — **Strongest Evidence**</td></tr><tr><td>**Pharmacological**</td><td>**Methylphenidate 5-20mg/d** (Psychostimulant), **Modafinil 100-200mg** (Limited Evidence), **Donepezil** (No Benefit in RCTs)</td></tr><tr><td>**Compensatory Strategies**</td><td>**Planners, Reminders, Chunking, Prioritisation, Environmental Modification**</td></tr><tr><td>**Treat Reversible Causes**</td><td>**Anaemia, Thyroid, B12/Folate, Depression, Anxiety, Sleep Apnoea, Medication Review**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Fatigue (Cancer-Related Fatigue - CRF)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Assessment</div>
+<table class="ctable"><tr><th>Tool</th><th>Format</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Brief Fatigue Inventory (BFI)**</td><td>**9 Items (Severity, Interference)**</td></tr><tr><td>**FACIT-F (Functional Assessment of Chronic Illness Therapy-Fatigue)**</td><td>**13 Items, PROM**</td></tr><tr><td>**EORTC QLQ-FA12**</td><td>**12 Items, Fatigue Module**</td></tr><tr><td>**Piper Fatigue Scale**</td><td>**22 Items, Multidimensional**</td></tr></table>
+<div class="sub-h">Management (NCCN/ASCO/ESMO)</div>
+<table class="ctable"><tr><th>Modality</th><th>Intervention</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**Exercise**</td><td>**Aerobic + Resistance (150min Moderate/Week)** — **Strongest Evidence**</td></tr><tr><td>**CBT**</td><td>**Energy Conservation, Activity Pacing, Sleep Hygiene, Cognitive Restructuring**</td></tr><tr><td>**Pharmacological**</td><td>**Methylphenidate 5-20mg BD** (Psychostimulant, Short-Term), **Modafinil 200mg OD**</td></tr><tr><td>**Treat Reversible Causes**</td><td>**Anaemia (Transfusion/EPO)**, **Depression/Anxiety**, **Thyroid, B12/Folate**, **Sleep Apnoea**, **Pain, Medication Review**</td></tr><tr><td>**Mindfulness/Relaxation**</td><td>**MBSR (Mindfulness-Based Stress Reduction)**, **Yoga, Tai Chi, Qigong**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Sleep Disturbance</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Common Issues</div>
+<table class="ctable"><tr><th>Issue</th><th>Prevalence</th><th>Causes</th></tr><tr><td>-------</td><td>------------</td><td>--------</td></tr><tr><td>**Insomnia**</td><td>**30-50%**</td><td>**Pain, Anxiety, Depression, Steroids, Hormonal Therapy, Night Sweats, Nocturia**</td></tr><tr><td>**Circadian Disruption**</td><td>**Common**</td><td>**Hospitalisation, Chemo Cycles, Reduced Light Exposure**</td></tr><tr><td>**Sleep Apnoea**</td><td>**Higher in Cancer**</td><td>**Obesity, Opioids, Steroids, Head/Neck RT**</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Approach</th><th>Intervention</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**CBT-I (Gold Standard)**</td><td>**Sleep Restriction, Stimulus Control, Sleep Hygiene, Cognitive Restructuring**</td></tr><tr><td>**Pharmacological**</td><td>**Short-Term Hypnotics (Zolpidem 5-10mg, Zopiclone 3.75-7.5mg)**, **Melatonin 2-5mg**, **Trazodone 25-50mg ON**, **Mirtazapine 15-30mg ON**</td></tr><tr><td>**Non-Pharmacological**</td><td>**Sleep Hygiene**, **Relaxation, PMR, Guided Imagery**, **Bright Light Therapy (Morning)**</td></tr><tr><td>**Treat Underlying**</td><td>**Pain, Anxiety, Depression, Sleep Apnoea (CPAP), Steroids (Minimise/Taper)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Financial Toxicity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition &amp; Impact</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Patient-Level Financial Hardship** from Cancer Care Costs</td></tr><tr><td>**Components**</td><td>**Out-of-Pocket (OOP) Costs, Lost Income, Insurance Gaps, Asset Depletion**</td></tr><tr><td>**Risk Factors**</td><td>**Young Age, Low Income, Uninsured/Underinsured, Advanced Stage, Intensive Treatment, Long Duration**</td></tr><tr><td>**Consequences**</td><td>**Treatment Non-Adherence, Delayed Care, Bankruptcy, Reduced QOL, Mortality ↑**</td></tr></table>
+<div class="sub-h">Screening &amp; Management</div>
+<table class="ctable"><tr><th>Tool</th><th>Description</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**COST (Comprehensive Score for Financial Toxicity)**</td><td>**11-Item PROM, Validated**</td></tr><tr><td>**NCCN Distress Thermometer**</td><td>**Financial Problem List Item**</td></tr></table>
+<table class="ctable"><tr><th>Management</th><th>Action</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**Financial Navigation**</td><td>**Social Worker, Financial Counsellor, Patient Navigator**</td></tr><tr><td>**Insurance Optimisation**</td><td>**Appeal Denials, Co-Pay Assistance, Foundation Grants, Pharma Patient Assistance**</td></tr><tr><td>**Income Support**</td><td>**Disability Benefits, Sick Pay, Charity Grants**</td></tr><tr><td>**Employment Rights**</td><td>**Flexible Working, Phased Return, Legal Protections (Equality Act 2010/ADA)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Return to Work (RTW)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Barriers</div>
+<table class="ctable"><tr><th>Barrier</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Physical**</td><td>**Fatigue, Pain, Neuropathy, Lymphoedema, Cognitive Impairment**</td></tr><tr><td>**Psychological**</td><td>**Anxiety, Depression, Fear of Recurrence, Loss of Confidence**</td></tr><tr><td>**Workplace**</td><td>**Lack of Flexibility, Stigma, Lack of Accommodations, Job Insecurity**</td></tr><tr><td>**Financial**</td><td>**Need for Income, Loss of Benefits, Pension Impact**</td></tr></table>
+<div class="sub-h">Facilitators &amp; Interventions</div>
+<table class="ctable"><tr><th>Intervention</th><th>Evidence</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Phased Return**</td><td>**Graduated Hours/Duties** (4-12 Weeks)</td></tr><tr><td>**Workplace Accommodations**</td><td>**Flexible Hours, Remote Work, Reduced Hours, Ergonomic Adjustments, Rest Breaks**</td></tr><tr><td>**Vocational Rehabilitation**</td><td>**Occupational Health, Vocational Counselling, Job Coaching**</td></tr><tr><td>**Legal Rights**</td><td>**Equality Act 2010 (UK) / ADA (US)** — **Reasonable Adjustments**, **Protection from Discrimination**</td></tr><tr><td>**Oncology-Vocational Integration**</td><td>**Oncology-Led RTW Programs** (Multidisciplinary)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Social Isolation & Caregiver Burden</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Social Isolation</div>
+<table class="ctable"><tr><th>Risk Factor</th><th>Consequence</th></tr><tr><td>-------------</td><td>-------------</td></tr><tr><td>**Living Alone**</td><td>**Reduced Support, Delayed Help-Seeking**</td></tr><tr><td>**Treatment Toxicity**</td><td>**Inability to Socialise (Fatigue, Neutropenia, Stoma, Body Image)**</td></tr><tr><td>**Stigma**</td><td>**Cancer Stigma, Withdrawal from Social Networks**</td></tr><tr><td>**Digital Divide**</td><td>**Older Adults, Rural, Low Income — Limited Virtual Access**</td></tr></table>
+<div class="sub-h">Caregiver Burden</div>
+<table class="ctable"><tr><th>Domain</th><th>Impact</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Physical**</td><td>**Fatigue, Sleep Disturbance, Musculoskeletal Pain**</td></tr><tr><td>**Psychological**</td><td>**Anxiety, Depression, Guilt, Anticipatory Grief, Burnout**</td></tr><tr><td>**Financial**</td><td>**Lost Income, OOP Costs, Career Impact**</td></tr><tr><td>**Social**</td><td>**Relationship Strain, Isolation, Role Strain**</td></tr></table>
+<div class="sub-h">Support</div>
+<table class="ctable"><tr><th>Intervention</th><th>Target</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Caregiver Assessment**</td><td>**Zarit Burden Interview, COPE Index**</td></tr><tr><td>**Respite Care**</td><td>**Day Centres, Residential Respite, Home Care**</td></tr><tr><td>**Psychosocial Support**</td><td>**Counselling, Support Groups, Psychoeducation**</td></tr><tr><td>**Financial/Employment**</td><td>**Carer's Allowance, Flexible Working, Pension Protection**</td></tr><tr><td>**End-of-Life Preparation**</td><td>**Advance Care Planning, Palliative Care Referral**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Distress Screening**</td><td>**NCCN DT ≥4 → Referral**, **HADS/PHQ-9/GAD-7** for Depression/Anxiety</td></tr><tr><td>**Fear of Recurrence**</td><td>**30-70% Prevalence**, **FCRI/CARS**, **CBT/Mindfulness/ACT**</td></tr><tr><td>**Body Image**</td><td>**Surgery/RT/Stoma/Alopecia**, **BIS/BSQ**, **CBT, Mirror Exposure**</td></tr><tr><td>**Sexual Dysfunction**</td><td>**Women: Dryness/Dyspareunia (Moisturisers, Oestrogen, Dilators)**; **Men: ED (PDE5i, Vacuum, Implant)**</td></tr><tr><td>**"Chemo Brain"**</td><td>**Executive/Memory/Speed**, **FACT-Cog/MoCA**, **Exercise (Best), Methylphenidate, Compensatory Strategies**</td></tr><tr><td>**CRF**</td><td>**Exercise (Aerobic+Resistance) = Best**, **CBT, Methylphenidate, Treat Reversible**</td></tr><tr><td>**Sleep**</td><td>**CBT-I (Gold Standard)**, **Short-Term Hypnotics, Melatonin**</td></tr><tr><td>**Financial Toxicity**</td><td>**COST Tool**, **Navigation, Assistance, Employment Rights**</td></tr><tr><td>**Return to Work**</td><td>**Phased Return, Accommodations, Vocational Rehab, Legal Rights**</td></tr><tr><td>**Caregiver Burden**</td><td>**Zarit Interview, Respite, Counselling, Financial Support**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Distress Screening — NCCN DT Cutoff?**</td><td>**≥4 = Significant Distress → Referral to Psychosocial Services**.</td></tr><tr><td>**FCR — Prevalence, Assessment, Management?**</td><td>**30-70%**, **FCRI/CARS**, **CBT, Mindfulness, ACT, Psychoeducation**.</td></tr><tr><td>**Chemo Brain — Domains Affected, Best Intervention?**</td><td>**Executive Function, Memory, Attention, Processing Speed**; **Exercise (Aerobic+Resistance) = Strongest Evidence**.</td></tr><tr><td>**CRF — First-Line Non-Pharm?**</td><td>**Exercise (Aerobic + Resistance) 150min/week** — **Strongest Evidence**.</td></tr><tr><td>**Sexual Dysfunction in Women — Vaginal Dryness Management?**</td><td>**Vaginal Moisturisers (Regular), Lubricants (Coital), Topical Oestrogen (If Safe), Dilators, Pelvic Floor PT**.</td></tr><tr><td>**Financial Toxicity — Screening Tool?**</td><td>**COST (Comprehensive Score for Financial Toxicity) — 11-Item PROM**.</td></tr><tr><td>**RTW — Legal Rights in UK?**</td><td>**Equality Act 2010** — **Reasonable Adjustments, Phased Return, Protection from Discrimination**.</td></tr><tr><td>**Caregiver Burden — Assessment Tool?**</td><td>**Zarit Burden Interview (22 Items)**, **COPE Index**.</td></tr><tr><td>**Depression Screening — PHQ-9 Cutoff?**</td><td>**≥10 Moderate, ≥15 Moderately Severe, ≥20 Severe**.</td></tr><tr><td>**Body Image — Assessment Tool?**</td><td>**Body Image Scale (BIS), Body Shape Questionnaire (BSQ)**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**HADS vs PHQ-9 vs GAD-7**</td><td>**HADS**: No Somatic Items (Valid in Cancer), **Anxiety + Depression**; **PHQ-9**: Depression Only, DSM-5; **GAD-7**: Anxiety Only</td></tr><tr><td>**FCR vs Normal Concern**</td><td>**FCR**: **Disproportionate, Persistent, Impairs Function**, **Avoidance/Checking Behaviours**; **Normal: Transient, Proportional**</td></tr><tr><td>**Chemo Brain vs Dementia**</td><td>**Chemo Brain**: Subtle, Often Improves, Functional; **Dementia**: Progressive, Impairs ADLs, Structural Brain Changes</td></tr><tr><td>**CRF vs Normal Fatigue**</td><td>**CRF**: **Disproportionate to Activity**, **Not Relieved by Rest**, **Persistent (>6mo)**</td></tr><tr><td>**Insomnia vs Sleep Deprivation**</td><td>**Insomnia**: **Opportunity to Sleep but Can't**; **Deprivation: No Opportunity**</td></tr><tr><td>**Financial Toxicity vs Cost**</td><td>**Toxicity**: **Patient Harm (Non-Adherence, Bankruptcy, Distress)**; **Cost: Dollar Amount**</td></tr><tr><td>**RTW Phased vs Gradual**</td><td>**Phased**: Structured Plan (Hours/Duties); **Gradual: Informal**</td></tr></table>
+<p><b>Mnemonic: PSYCHOSOCIAL-QOL</b></p>
+<ul><li><b>P</b>sychosocial: <b>Core of Survivorship</b></li><li><b>S</b>creening: <b>DT ≥4, HADS, PHQ-9, GAD-7, FCRI</b></li><li><b>Y</b> fear: <b>Fear of Recurrence (30-70%)</b>, <b>CBT, Mindfulness, ACT</b></li><li><b>C</b>ognitive: <b>"Chemo Brain" (Executive, Memory, Speed)</b>, <b>Exercise Best</b></li><li><b>H</b>eart: <b>Body Image (Surgery/RT/Stoma/Alopecia)</b>, <b>BIS/BSQ</b></li><li><b>O</b>pportunity: <b>Sexual Health (Women: Moisturise/Dilators, Men: PDE5i)</b></li><li><b>S</b>leep: <b>CBT-I (Gold Standard), Short-Term Hypnotics</b></li><li><b>O</b>nly Fatigue: <b>CRF (Disproportionate, Persistent)</b>, <b>Exercise Best</b></li><li><b>C</b>ognitive: <b>Compensatory Strategies (Planners, Chunking)</b></li><li><b>I</b>nsomnia: <b>CBT-I (Gold Std), Melatonin, Short-Term Hypnotics</b></li><li><b>A</b>nxiety/Depression: <b>HADS/PHQ-9/GAD-7, CBT, SSRIs/SNRIs</b></li><li><b>L</b>egal/Work: <b>RTW (Phased, Accommodations, Equality Act/ADA)</b></li><li><b>Q</b>uality of Life: <b>FACT-G, EORTC QLQ-C30, WHOQOL</b></li><li><b>O</b>ut-of-Pocket: <b>Financial Toxicity (COST Tool, Navigation)</b></li><li><b>L</b>oneliness/Isolation: <b>Support Groups, Caregiver Support (Zarit)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Psychosocial &amp; QOL)) Distress DT ≥4 → Referral HADS, PHQ-9, GAD-7 Problem List (Practical, Family, Emotional, Spiritual, Physical) Fear of Recurrence 30-70% Prevalence FCRI/CARS CBT, Mindfulness, ACT Body Image Surgery/RT/Stoma/Alopecia BIS/BSQ CBT, Mirror Exposure Sexual Dysfunction Women: Vaginal Dryness, Dyspareunia, Menopause Men: ED, Low Libido Moisturisers, Oestrogen, Dilators, PDE5i Cognitive Chemo Brain: Exec, Memory, Speed FACT-Cog, MoCA Exercise, Methylphenidate, Compensatory Fatigue CRF: Disproportionate, Persistent Exercise (Best), CBT, Methylphenidate Sleep Insomnia: CBT-I (Gold Std) CBT-I &gt; Hypnotics Long-Term Financial COST Tool Navigation, Assistance, Employment Rights Return to Work Phased, Accommodations Equality Act 2010 / ADA Social/Caregiver Isolation, Stigma Caregiver Burden (Zarit) Respite, Counselling, Financial </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Distress**</td><td>**DT ≥4 = Referral**, **HADS/PHQ-9/GAD-7** for Depression/Anxiety</td></tr><tr><td>**FCR**</td><td>**30-70%**, **FCRI/CARS**, **CBT/Mindfulness/ACT**</td></tr><tr><td>**Body Image**</td><td>**Surgery/RT/Stoma/Alopecia**, **BIS/BSQ**, **CBT/Mirror Exposure**</td></tr><tr><td>**Sexual**</td><td>**Women: Moisturise/Oestrogen/Dilators**; **Men: PDE5i/Vacuum/Implant**</td></tr><tr><td>**Chemo Brain**</td><td>**Exec/Memory/Speed**, **Exercise Best**, Methylphenidate, Compensatory</td></tr><tr><td>**CRF**</td><td>**Exercise (Aerobic+Resistance) = Best**, CBT, Methylphenidate</td></tr><tr><td>**Sleep**</td><td>**CBT-I Gold Standard**, Short-Term Hypnotics</td></tr><tr><td>**Financial**</td><td>**COST Tool**, Navigation, Employment Rights</td></tr><tr><td>**RTW**</td><td>**Phased Return, Accommodations, Equality Act**</td></tr><tr><td>**Caregiver**</td><td>**Zarit Burden**, Respite, Counselling, Financial Support</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Distress Screening Tools</td><td></td><td></td></tr><tr><td>FCR Assessment/Management</td><td></td><td></td></tr><tr><td>Body Image/Sexual Dysfunction</td><td></td><td></td></tr><tr><td>Chemo Brain Management</td><td></td><td></td></tr><tr><td>CRF Exercise Evidence</td><td></td><td></td></tr><tr><td>Sleep/CBT-I</td><td></td><td></td></tr><tr><td>Financial Toxicity/RTW</td><td></td><td></td></tr><tr><td>Caregiver Burden</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Distress Screening]], [[Fear of Recurrence]], [[Chemo Brain]], [[Financial Toxicity]], [[Return to Work]], [[Body Image]], [[Sexual Dysfunction]], [[Fatigue]], [[Sleep Disturbance]], [[CBT]], [[Mindfulness]], [[Support Groups]], [[Cancer Pain Management]], [[Symptom Control]], [[End of Life Care]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (Distress Screening), which statement is correct? A. <b>NCCN DT ≥4 → Referral</b>, <b>HADS/PHQ-9/GAD-7</b> for Depression/Anxiety B. **NCCN - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>NCCN DT ≥4 → Referral</b>, <b>HADS/PHQ-9/GAD-7</b> for Depression/Anxiety</li></ul>
+<p><b>2.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (Fear of Recurrence), which statement is correct? A. <b>30-70% Prevalence</b>, <b>FCRI/CARS</b>, <b>CBT/Mindfulness/ACT</b> B. **30-70% - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>30-70% Prevalence</b>, <b>FCRI/CARS</b>, <b>CBT/Mindfulness/ACT</b></li></ul>
+<p><b>3.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (Body Image), which statement is correct? A. <b>Surgery/RT/Stoma/Alopecia</b>, <b>BIS/BSQ</b>, <b>CBT, Mirror Exposure</b> B. <b>Surgery/RT/Stoma/Alopecia</b>, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Surgery/RT/Stoma/Alopecia</b>, <b>BIS/BSQ</b>, <b>CBT, Mirror Exposure</b></li></ul>
+<p><b>4.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (Sexual Dysfunction), which statement is correct? A. <b>Women: Dryness/Dyspareunia (Moisturisers, Oestrogen, Dilators)</b> B. **Women: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Women: Dryness/Dyspareunia (Moisturisers, Oestrogen, Dilators)</b>; <b>Men: ED (PDE5i, Vacuum, Implant)</b></li></ul>
+<p><b>5.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors ("Chemo Brain"), which statement is correct? A. <b>Executive/Memory/Speed</b>, <b>FACT-Cog/MoCA</b>, <b>Exercise (Best), Methylphenidate, Compensatory Stra B. </b>Executive/Memory/Speed**, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Executive/Memory/Speed</b>, <b>FACT-Cog/MoCA</b>, <b>Exercise (Best), Methylphenidate, Compensatory Strategies</b></li></ul>
+<p><b>6.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (CRF), which statement is correct? A. <b>Exercise (Aerobic+Resistance) = Best</b>, <b>CBT, Methylphenidate, Treat Reversible</b> B. **Exercise - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Exercise (Aerobic+Resistance) = Best</b>, <b>CBT, Methylphenidate, Treat Reversible</b></li></ul>
+<p><b>7.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (Sleep), which statement is correct? A. <b>CBT-I (Gold Standard)</b>, <b>Short-Term Hypnotics, Melatonin</b> B. **CBT-I - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CBT-I (Gold Standard)</b>, <b>Short-Term Hypnotics, Melatonin</b></li></ul>
+<p><b>8.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (Financial Toxicity), which statement is correct? A. <b>COST Tool</b>, <b>Navigation, Assistance, Employment Rights</b> B. **COST - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>COST Tool</b>, <b>Navigation, Assistance, Employment Rights</b></li></ul>
+<p><b>9.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (Return to Work), which statement is correct? A. <b>Phased Return, Accommodations, Vocational Rehab, Legal Rights</b> B. **Phased - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Phased Return, Accommodations, Vocational Rehab, Legal Rights</b></li></ul>
+<p><b>10.</b> Regarding Psychosocial &amp; Quality of Life in Cancer Survivors (Caregiver Burden), which statement is correct? A. <b>Zarit Interview, Respite, Counselling, Financial Support</b> B. **Zarit - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Zarit Interview, Respite, Counselling, Financial Support</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>NCCN DT ≥4 → Referral</b>, <b>HADS/PHQ-9/GAD-7</b> for Depression/Anxiety</li><li>B. **NCCN (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>NCCN DT ≥4 → Referral</b>, <b>HADS/PHQ-9/GAD-7</b> for Depression/Anxiety</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>30-70% Prevalence</b>, <b>FCRI/CARS</b>, <b>CBT/Mindfulness/ACT</b></li><li>B. **30-70% (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>30-70% Prevalence</b>, <b>FCRI/CARS</b>, <b>CBT/Mindfulness/ACT</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Surgery/RT/Stoma/Alopecia</b>, <b>BIS/BSQ</b>, <b>CBT, Mirror Exposure</b></li><li>B. <b>Surgery/RT/Stoma/Alopecia</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Surgery/RT/Stoma/Alopecia</b>, <b>BIS/BSQ</b>, <b>CBT, Mirror Exposure</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Women: Dryness/Dyspareunia (Moisturisers, Oestrogen, Dilators)</b></li><li>B. **Women: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Women: Dryness/Dyspareunia (Moisturisers, Oestrogen, Dilators)</b>; <b>Men: ED (PDE5i, Vacuum, Implant)</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Executive/Memory/Speed</b>, <b>FACT-Cog/MoCA</b>, **Exercise (Best), Methylphenidate, Compensatory Stra</li><li>B. <b>Executive/Memory/Speed</b>, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Executive/Memory/Speed</b>, <b>FACT-Cog/MoCA</b>, <b>Exercise (Best), Methylphenidate, Compensatory Strategies</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Exercise (Aerobic+Resistance) = Best</b>, <b>CBT, Methylphenidate, Treat Reversible</b></li><li>B. **Exercise (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Exercise (Aerobic+Resistance) = Best</b>, <b>CBT, Methylphenidate, Treat Reversible</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>CBT-I (Gold Standard)</b>, <b>Short-Term Hypnotics, Melatonin</b></li><li>B. **CBT-I (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>CBT-I (Gold Standard)</b>, <b>Short-Term Hypnotics, Melatonin</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>COST Tool</b>, <b>Navigation, Assistance, Employment Rights</b></li><li>B. **COST (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>COST Tool</b>, <b>Navigation, Assistance, Employment Rights</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Phased Return, Accommodations, Vocational Rehab, Legal Rights</b></li><li>B. **Phased (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Phased Return, Accommodations, Vocational Rehab, Legal Rights</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Zarit Interview, Respite, Counselling, Financial Support</b></li><li>B. **Zarit (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Zarit Interview, Respite, Counselling, Financial Support</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Distress Screening? <b>A1:</b> NCCN DT ≥4 → Referral, HADS/PHQ-9/GAD-7 for Depression/Anxiety</p>
+<p><b>Q2:</b> Fear of Recurrence? <b>A2:</b> 30-70% Prevalence, FCRI/CARS, CBT/Mindfulness/ACT</p>
+<p><b>Q3:</b> Body Image? <b>A3:</b> Surgery/RT/Stoma/Alopecia, BIS/BSQ, CBT, Mirror Exposure</p>
+<p><b>Q4:</b> Sexual Dysfunction? <b>A4:</b> Women: Dryness/Dyspareunia (Moisturisers, Oestrogen, Dilators); Men: ED (PDE5i, Vacuum, Implant)</p>
+<p><b>Q5:</b> "Chemo Brain"? <b>A5:</b> Executive/Memory/Speed, FACT-Cog/MoCA, Exercise (Best), Methylphenidate, Compensatory Strategies</p>
+<p><b>Q6:</b> CRF? <b>A6:</b> Exercise (Aerobic+Resistance) = Best, CBT, Methylphenidate, Treat Reversible</p>
+<p><b>Q7:</b> Sleep? <b>A7:</b> CBT-I (Gold Standard), Short-Term Hypnotics, Melatonin</p>
+<p><b>Q8:</b> Financial Toxicity? <b>A8:</b> COST Tool, Navigation, Assistance, Employment Rights</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Distress Screening</td><td>NCCN DT ≥4 → Referral, HADS/PHQ-9/GAD-7 for Depression/Anxiety</td></tr><tr><td>2</td><td>A</td><td>Fear of Recurrence</td><td>30-70% Prevalence, FCRI/CARS, CBT/Mindfulness/ACT</td></tr><tr><td>3</td><td>A</td><td>Body Image</td><td>Surgery/RT/Stoma/Alopecia, BIS/BSQ, CBT, Mirror Exposure</td></tr><tr><td>4</td><td>A</td><td>Sexual Dysfunction</td><td>Women: Dryness/Dyspareunia (Moisturisers, Oestrogen, Dilators); Men: ED (PDE5i, Vacuum, Implant)</td></tr><tr><td>5</td><td>A</td><td>"Chemo Brain"</td><td>Executive/Memory/Speed, FACT-Cog/MoCA, Exercise (Best), Methylphenidate, Compensatory Strategies</td></tr><tr><td>6</td><td>A</td><td>CRF</td><td>Exercise (Aerobic+Resistance) = Best, CBT, Methylphenidate, Treat Reversible</td></tr><tr><td>7</td><td>A</td><td>Sleep</td><td>CBT-I (Gold Standard), Short-Term Hypnotics, Melatonin</td></tr><tr><td>8</td><td>A</td><td>Financial Toxicity</td><td>COST Tool, Navigation, Assistance, Employment Rights</td></tr><tr><td>9</td><td>A</td><td>Return to Work</td><td>Phased Return, Accommodations, Vocational Rehab, Legal Rights</td></tr><tr><td>10</td><td>A</td><td>Caregiver Burden</td><td>Zarit Interview, Respite, Counselling, Financial Support</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Distress Screening</td><td>NCCN DT ≥4 → Referral, HADS/PHQ-9/GAD-7 for Depression/Anxiety</td></tr><tr><td>2</td><td>A</td><td>Fear of Recurrence</td><td>30-70% Prevalence, FCRI/CARS, CBT/Mindfulness/ACT</td></tr><tr><td>3</td><td>A</td><td>Body Image</td><td>Surgery/RT/Stoma/Alopecia, BIS/BSQ, CBT, Mirror Exposure</td></tr><tr><td>4</td><td>A</td><td>Sexual Dysfunction</td><td>Women: Dryness/Dyspareunia (Moisturisers, Oestrogen, Dilators); Men: ED (PDE5i, Vacuum, Implant)</td></tr><tr><td>5</td><td>A</td><td>"Chemo Brain"</td><td>Executive/Memory/Speed, FACT-Cog/MoCA, Exercise (Best), Methylphenidate, Compensatory Strategies</td></tr><tr><td>6</td><td>A</td><td>CRF</td><td>Exercise (Aerobic+Resistance) = Best, CBT, Methylphenidate, Treat Reversible</td></tr><tr><td>7</td><td>A</td><td>Sleep</td><td>CBT-I (Gold Standard), Short-Term Hypnotics, Melatonin</td></tr><tr><td>8</td><td>A</td><td>Financial Toxicity</td><td>COST Tool, Navigation, Assistance, Employment Rights</td></tr><tr><td>9</td><td>A</td><td>Return to Work</td><td>Phased Return, Accommodations, Vocational Rehab, Legal Rights</td></tr><tr><td>10</td><td>A</td><td>Caregiver Burden</td><td>Zarit Interview, Respite, Counselling, Financial Support</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Survivorship &amp; Late Effects|Survivorship &amp; Late Effects]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Psychosocial Quality Of Life · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

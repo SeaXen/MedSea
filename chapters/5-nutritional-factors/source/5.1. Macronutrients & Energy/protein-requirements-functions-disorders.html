@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Protein Requirements Functions Disorders — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.1. MACRONUTRIENTS & ENERGY</span>
+      <div class="h1">Protein Requirements Functions Disorders</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] List the 9 essential and 6 conditionally essential amino acids and their key metabolic roles</li><li>[ ] Define biological value, PDCAAS, DIAAS, and reference protein; rank common food proteins</li><li>[ ] Perform a nitrogen balance calculation using the 6.25 g protein : 1 g N factor</li><li>[ ] State protein RDA for healthy adults, elderly, athletes, and critically ill patients</li><li>[ ] Differentiate kwashiorkor, marasmus, and intermediate forms of PEM</li><li>[ ] Apply the principles of vegan protein complementation to a practical diet plan</li><li>[ ] Describe the clinical features and dietary management of PKU, MSUD, homocystinuria, and urea cycle disorders</li><li>[ ] Prescribe appropriate protein intake in chronic kidney disease, dialysis, and hepatic encephalopathy</li><li>[ ] Explain why severe trauma, burns, and sepsis produce a negative nitrogen balance</li><li>[ ] Recognise branched-chain amino acid (BCAA) metabolism and its relevance to hepatic encephalopathy and MSUD</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Amino acid**</td><td>Organic molecule with an amino (–NH₂) and carboxyl (–COOH) group joined to a side chain (R); the building block of proteins</td></tr><tr><td>**Essential amino acid (EAA)**</td><td>Cannot be synthesised de novo by humans in adequate amounts and must be obtained from diet (9 in adults)</td></tr><tr><td>**Conditionally essential AA**</td><td>Synthesised normally, but become essential under specific physiological or pathological conditions (prematurity, illness, critical illness)</td></tr><tr><td>**Non-essential AA**</td><td>Synthesised endogenously from keto-acids and a source of amino nitrogen (12)</td></tr><tr><td>**Limiting amino acid**</td><td>The essential AA in a food protein present in lowest proportion relative to human requirement, restricting its net utilisation</td></tr><tr><td>**Biological value (BV)**</td><td>Proportion of absorbed protein retained (utilised) for growth/maintenance; egg white = 100 (reference)</td></tr><tr><td>**Net Protein Utilisation (NPU)**</td><td>Proportion of ingested protein retained = digestibility × BV</td></tr><tr><td>**PDCAAS**</td><td>Protein Digestibility-Corrected Amino Acid Score; based on human AA requirements (2–5 y); capped at 1.00; replaced by DIAAS</td></tr><tr><td>**DIAAS**</td><td>Digestible Indispensable Amino Acid Score; uses ileal digestibility in pigs; no upper cap; current FAO standard</td></tr><tr><td>**Reference protein**</td><td>A protein with AA profile meeting 100% of human requirements at every age (egg, cow's milk, beef)</td></tr><tr><td>**Nitrogen balance (N₂ bal)**</td><td>N intake − N output (urine + faeces + skin + miscellaneous); zero = equilibrium, +ve = anabolism, −ve = catabolism</td></tr><tr><td>**Lean Body Mass (LBM)**</td><td>Body mass minus fat mass; rich in protein; ~12–15% of LBM is protein</td></tr><tr><td>**Sarcopenia**</td><td>Age-related loss of muscle mass, strength, and function; associated with inadequate protein intake</td></tr><tr><td>**BCAA**</td><td>Branched-chain amino acids: leucine, isoleucine, valine; metabolised primarily in muscle</td></tr><tr><td>**Aminoacidopathy**</td><td>Inborn error of amino acid metabolism (e.g., PKU, MSUD, homocystinuria, tyrosinaemia)</td></tr><tr><td>**Hyperammonaemia**</td><td>Elevated blood ammonia, often from urea cycle defects or hepatic failure; neurotoxic</td></tr><tr><td>**Reference protein intake (RPI)**</td><td>The amount of dietary protein needed to meet the requirement of 97.5% of the population</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Structure, Composition &amp; Functions of Protein</div>
+<p><b>Elemental composition</b> — C 50–55%, H 6–7%, O 22%, N ~16% (range 13–19%). The nitrogen content is exploited for Kjeldahl analysis. <b>Conversion factor: 1 g N ≡ 6.25 g protein</b> (used for mixed diets; 5.4 for plant proteins, 6.38 for milk, 5.93 for wheat, 5.7 for rice).</p>
+<p><b>Energy yield:</b> 4 kcal/g (17 kJ/g) by Atwater factor, but metabolically less efficient than CHO/lipid because of urea synthesis cost (~1 kcal/g of energy lost in urea excretion).</p>
+<p><b>Functional roles of body protein (~10–12 kg in a 70 kg adult):</b></p>
+<ol><li><b>Structural</b> — collagen, elastin, keratin, muscle (actin, myosin)</li><li><b>Enzymatic</b> — all enzymes are proteins</li><li><b>Hormonal</b> — insulin, GH, glucagon</li><li><b>Transport</b> — albumin (drugs, bilirubin, Ca²⁺, free fatty acids), transferrin, ceruloplasmin, lipoproteins</li><li><b>Defence</b> — immunoglobulins, complement, cytokines, acute-phase reactants</li><li><b>Contraction</b> — actin/myosin</li><li><b>Buffer</b> — plasma and intracellular proteins</li><li><b>Storage</b> — ferritin (Fe), caeruloplasmin (Cu), vitellogenin</li><li><b>Coagulation &amp; fibrinolysis</b> — fibrinogen, all clotting factors (except factor IV = Ca²⁺, factor VIII = vWF)</li><li><b>Receptors &amp; signalling</b> — membrane receptors, G-proteins</li><li><b>Oxygen transport</b> — haemoglobin, myoglobin</li><li><b>Fluid &amp; electrolyte balance</b> — oncotic pressure of albumin (colloid osmotic pressure)</li></ol>
+<div class="sub-h">Section 2: Amino Acid Classification</div>
+<p><b>Total 20 proteinogenic AAs</b> (some classifications count 21 with selenocysteine).</p>
+<p>#### 2.1 Essential Amino Acids (9 in adults)</p>
+<p>The 9 indispensable AAs that <b>must be supplied by the diet</b> because they cannot be synthesised at all, or not in adequate amounts:</p>
+<table class="ctable"><tr><th>AA</th><th>One-letter</th><th>Special notes</th></tr><tr><td>------</td><td>----</td><td>------</td></tr><tr><td>**H**istidine</td><td>H</td><td>Essential in infants; semi-essential in adults (deficiency causes anaemia in uraemia)</td></tr><tr><td>**I**soleucine</td><td>I</td><td>BCAA, ketogenic + glucogenic</td></tr><tr><td>**L**eucine</td><td>L</td><td>BCAA, purely ketogenic; key mTORC1 activator (anabolic signalling)</td></tr><tr><td>**L**ysine</td><td>L</td><td>Purely ketogenic; first limiting AA in wheat</td></tr><tr><td>**M**ethionine</td><td>M</td><td>Contains sulphur; methyl donor (→ SAM); precursor of cysteine</td></tr><tr><td>**P**henylalanine</td><td>P</td><td>Purely ketogenic; precursor of tyrosine (and melanin, dopamine, NE, epi, T3/T4)</td></tr><tr><td>**T**hreonine</td><td>T</td><td>Both hydroxyl and methyl group; mucin synthesis</td></tr><tr><td>**T**ryptophan</td><td>T</td><td>Precursor of serotonin, melatonin, niacin (B3); 60 mg Trp → 1 mg niacin</td></tr><tr><td>**V**aline</td><td>V</td><td>BCAA, glucogenic</td></tr></table>
+<p><b>Easy mnemonic:</b> "<b>HILL MP TTV</b>" or "<b>PVT TIM HALL</b>" — <b>P</b>he, <b>V</b>al, <b>T</b>hr, <b>T</b>rp, <b>I</b>le, <b>M</b>et, <b>H</b>is, <b>A</b>rg<i>, <b>L</b>eu, <b>L</b>ys (</i>Arg is conditionally essential).</p>
+<p>#### 2.2 Conditionally Essential Amino Acids (6, sometimes listed as 6–9)</p>
+<p>Become essential when endogenous synthesis is insufficient:</p>
+<table class="ctable"><tr><th>AA</th><th>Condition making it essential</th></tr><tr><td>------</td><td>-------------------------------</td></tr><tr><td>**Arginine**</td><td>Prematurity, sepsis, trauma, burns, urea cycle disorders</td></tr><tr><td>**Cysteine**</td><td>Prematurity (lacks cystathionase), liver disease, homocystinuria</td></tr><tr><td>**Glutamine**</td><td>Critical illness, mucositis, post-op, bone-marrow transplant; major fuel for enterocytes & immune cells</td></tr><tr><td>**Glycine**</td><td>Prematurity, rapid growth, severe trauma</td></tr><tr><td>**Proline**</td><td>Prematurity, severe catabolic states, burns</td></tr><tr><td>**Tyrosine**</td><td>PKU (cannot convert Phe → Tyr), prematurity, liver/renal failure</td></tr></table>
+<p>#### 2.3 Non-Essential (Dispensable) Amino Acids — 12</p>
+<p>Alanine, Asparagine, Aspartate, Glutamate, Serine, Selenocysteine, Pyrrolysine (rare). Plus the 6 conditionally essential AAs above are also considered "non-essential" in the healthy adult.</p>
+<p><b>Glucogenic vs Ketogenic vs Mixed:</b></p>
+<ul><li><b>Purely glucogenic (8):</b> Ala, Arg, Asn, Asp, Cys, Gln, Gly, His, Pro, Ser, Trp, Val (note Val is glucogenic BCAA)</li><li><b>Purely ketogenic (2):</b> Leu, Lys</li><li><b>Both (mixed) (5):</b> Ile, Phe, Trp, Tyr, Thr (Trp &amp; Tyr largely ketogenic)</li></ul>
+<div class="sub-h">Section 3: Protein Quality — Biological Value, PDCAAS, DIAAS</div>
+<p>#### 3.1 Biological Value (BV)</p>
+<p><b>Definition:</b> % of <b>absorbed</b> protein retained (utilised) by the body.</p>
+<p><b>BV = (N retained / N absorbed) × 100</b></p>
+<p>Higher BV = better complement of EAAs relative to human need and better digestibility.</p>
+<table class="ctable"><tr><th>Source</th><th>Biological Value (BV)</th></tr><tr><td>--------</td><td>----------------------</td></tr><tr><td>Whey protein</td><td>**104** (highest practical)</td></tr><tr><td>Egg (whole)</td><td>**100** (classical reference)</td></tr><tr><td>Cow's milk</td><td>91</td></tr><tr><td>Casein</td><td>91</td></tr><tr><td>Soybean</td><td>91</td></tr><tr><td>Beef / fish</td><td>80</td></tr><tr><td>Rice</td><td>83</td></tr><tr><td>Wheat</td><td>54–65</td></tr><tr><td>Beans (legumes)</td><td>58–74</td></tr><tr><td>Gelatin</td><td>0 (lacks Trp, low in many EAAs)</td></tr></table>
+<p><b>Key concept:</b> Egg = 100, Whey &gt; 100, Plant proteins generally lower (limiting in Lys or Met or Thr).</p>
+<p>#### 3.2 Net Protein Utilisation (NPU)</p>
+<p><b>NPU = (N retained / N intake) × 100</b> (combines digestibility + BV)</p>
+<p>#### 3.3 Protein Efficiency Ratio (PER)</p>
+<p><b>Weight gain of growing rat ÷ weight of protein consumed</b> — older method, less physiological, still on some food labels.</p>
+<p>#### 3.4 PDCAAS (Protein Digestibility-Corrected Amino Acid Score)</p>
+<p><b>Used by US FDA / FAO/WHO 1991.</b></p>
+<ul><li>Score based on the <b>most limiting indispensable AA</b> vs. the 2–5 y human AA requirement pattern</li><li>Multiplied by faecal (true) digestibility</li><li><b>Capped at 1.00</b> (100%) — problem: doesn't differentiate superior proteins</li><li>Example values (older data): whey 1.00, casein 1.00, soy 1.00, wheat 0.42, pea 0.89</li></ul>
+<p>#### 3.5 DIAAS (Digestible Indispensable Amino Acid Score) — <b>current gold standard</b></p>
+<p><b>Introduced by FAO 2013.</b></p>
+<ul><li>Uses <b>ileal</b> (not faecal) digestibility in growing pig or human</li><li>Score reflects digestibility up to terminal ileum</li><li><b>No upper cap</b> — superior proteins can score &gt; 1.0</li><li>Three reference patterns (infant, child 0.5–3 y, older child/adult)</li><li>Example DIAAS values: whey ~1.09, milk 1.18, egg 1.13, soy ~0.90, pea 0.82, wheat 0.40–0.77</li></ul>
+<p><b>Comparison: PDCAAS vs DIAAS</b></p>
+<table class="ctable"><tr><th>Feature</th><th>PDCAAS</th><th>DIAAS</th></tr><tr><td>---------</td><td>--------</td><td>-------</td></tr><tr><td>Digestibility used</td><td>Faecal</td><td>Ileal (more accurate)</td></tr><tr><td>Upper cap</td><td>Yes (1.0)</td><td>No</td></tr><tr><td>Reference AA pattern</td><td>2–5 y child</td><td>Infant / child / adult</td></tr><tr><td>Preferred by</td><td>FDA</td><td>FAO</td></tr></table>
+<p>#### 3.6 Reference Protein</p>
+<p>A protein whose digestibility is high and whose amino acid profile meets 100% of human requirements with no deficiency or excess. <b>Egg, cow's milk, beef, fish, whey</b> are reference proteins.</p>
+<p>#### 3.7 Limiting Amino Acid in Plant Proteins (Vegan Complementation)</p>
+<table class="ctable"><tr><th>Plant protein</th><th>Limiting EAA</th></tr><tr><td>---------------</td><td>--------------</td></tr><tr><td>**Cereals (wheat, rice, corn)**</td><td>**Lysine** (1st limiting); also Thr (rice)</td></tr><tr><td>**Legumes (beans, lentils, peas)**</td><td>**Methionine** (1st limiting); Cys (soya)</td></tr><tr><td>**Nuts & seeds**</td><td>Lysine</td></tr><tr><td>**Soya**</td><td>Methionine (but better than most legumes)</td></tr><tr><td>**Quinoa, amaranth, buckwheat**</td><td>Complete! Excellent vegan sources</td></tr></table>
+<p><b>Complementation principle:</b> Combining cereals (Lys-low) + legumes (Met-low) gives a complete protein. Examples: rice + dal (Indian), beans + tortilla (Latin American), hummus (chickpea + wheat), tofu + rice.</p>
+<div class="sub-h">Section 4: Nitrogen Balance</div>
+<p><b>Nitrogen Balance (N₂ bal) = N intake − N output</b></p>
+<ul><li><b>N output</b> = urinary N (mostly urea) + faecal N + skin N (sweat, hair, nails) + miscellaneous (menstrual, seminal)</li><li>Urinary urea N is the largest component (~80–90% of urinary N)</li></ul>
+<p><b>Conversion: 1 g dietary protein ≈ 16% N → 1 g protein contains 0.16 g N</b></p>
+<ul><li><b>∴ 1 g N ≡ 6.25 g protein (mixed diet)</b></li><li>Specific factors: milk 6.38, egg 6.25, meat 5.93, wheat 5.83, rice 5.95, soy 5.71</li></ul>
+<p><b>Clinical states of N balance:</b></p>
+<table class="ctable"><tr><th>State</th><th>Intake vs Output</th><th>Implication</th></tr><tr><td>-------</td><td>------------------</td><td>-------------</td></tr><tr><td>**Zero N balance**</td><td>Intake = output</td><td>Healthy adult at maintenance</td></tr><tr><td>**Positive N balance**</td><td>Intake > output</td><td>Growth, pregnancy, recovery, anabolic states, post-exercise</td></tr><tr><td>**Negative N balance**</td><td>Intake < output</td><td>Catabolism: trauma, burns, sepsis, fasting, hyperthyroid, PEM</td></tr></table>
+<p><b>Typical urinary urea N excretion:</b> ~10–15 g N/day on a normal diet (≈ 60–95 g protein catabolism/day if no intake).</p>
+<p><b>Worked example:</b></p>
+<ul><li>Patient consumes 80 g protein/day → N intake = 80/6.25 = 12.8 g N</li><li>24-h urinary urea = 240 mmol, urinary N from urea = 240 × 0.028 ≈ 6.7 g</li><li>Faecal N ≈ 1.0 g; skin/misc ≈ 0.5 g</li><li>N output = 6.7 + 1.0 + 0.5 = 8.2 g</li><li>N balance = 12.8 − 8.2 = <b>+4.6 g (positive, anabolic)</b></li></ul>
+<div class="sub-h">Section 5: Protein Requirements (RDA &amp; Beyond)</div>
+<p><b>Recommended Daily Allowance (RDA) for protein in healthy adults (FAO/WHO/UNU 2007; IOM 2005):</b></p>
+<ul><li><b>0.83 g/kg/day</b> (FAO) = <b>0.8 g/kg/day</b> (rounded, IOM)</li><li>Assumes high-quality (complete) protein and normal energy intake</li><li>Expressed as <b>RDA + 2 SD</b> to cover 97.5% of population</li></ul>
+<p><b>AMDR (Acceptable Macronutrient Distribution Range):</b> 10–35% of total energy from protein.</p>
+<p><b>Special groups — protein needs vary substantially:</b></p>
+<table class="ctable"><tr><th>Group</th><th>Recommended g/kg/day</th><th>Notes</th></tr><tr><td>-------</td><td>----------------------</td><td>-------</td></tr><tr><td>**Healthy adult (19–50 y)**</td><td>**0.8**</td><td>Maintenance</td></tr><tr><td>**Pregnancy (2nd/3rd trimester)**</td><td>1.1 (IOM) / +25 g/day</td><td>Foetal growth</td></tr><tr><td>**Lactation**</td><td>1.3 / +19 g/day</td><td>Milk synthesis</td></tr><tr><td>**Infants 0–6 m**</td><td>1.52 (AI)</td><td>Breast milk (1.0–1.5 g/kg/d typical intake)</td></tr><tr><td>**Infants 7–12 m**</td><td>1.2</td><td></td></tr><tr><td>**Children 1–3 y**</td><td>1.05</td><td></td></tr><tr><td>**Adolescents 14–18 y**</td><td>0.85</td><td>Growth</td></tr><tr><td>**Elderly (>65 y)**</td><td>**1.0–1.5**</td><td>Sarcopenia prevention; 25–30 g/meal of high-quality</td></tr><tr><td>**Endurance athletes**</td><td>**1.2–1.4**</td><td></td></tr><tr><td>**Strength / resistance athletes**</td><td>**1.6–2.0** (up to 2.2 in hypocaloric)</td><td>Muscle protein synthesis</td></tr><tr><td>**Critical illness (ICU)**</td><td>**1.2–2.0** (ASPEN/ESPEN 1.3–2.0)</td><td>Hypercatabolism; ESPEN 1.3 g/kg/d general; 1.5–2.0 in severe burns</td></tr><tr><td>**Major burns**</td><td>**1.5–2.0** (some 2.0–2.5)</td><td>Highest catabolism</td></tr><tr><td>**Severe trauma / sepsis**</td><td>**1.5–2.0**</td><td></td></tr><tr><td>**Pre-dialysis CKD (3–5, not on RRT)**</td><td>**0.6–0.8** (or 0.55–0.6 with keto-acid analogues)</td><td>Slow progression</td></tr><tr><td>**Haemodialysis**</td><td>**1.0–1.2**</td><td>Replace dialysate losses</td></tr><tr><td>**CAPD / APD (peritoneal)**</td><td>**1.0–1.2**</td><td></td></tr><tr><td>**CRRT / SLED**</td><td>up to 1.5–1.7</td><td></td></tr><tr><td>**Hepatic encephalopathy**</td><td>0.5–1.5 (individualise)</td><td>Often 0.5–1.0; **BCAA-enriched** formulas</td></tr><tr><td>**Acute renal failure, non-catabolic**</td><td>0.6–0.8</td><td></td></tr><tr><td>**Pancreatitis (mild)**</td><td>1.0–1.5</td><td></td></tr><tr><td>**Short-bowel / malabsorption**</td><td>1.5</td><td></td></tr></table>
+<p><b>Clinical rules of thumb:</b></p>
+<ul><li>A 70 kg adult → <b>56 g/day</b> (0.8 g/kg)</li><li>80 kg bodybuilder → <b>128–160 g/day</b> (1.6–2.0 g/kg)</li><li>Bed-ridden elderly 60 kg → <b>60–90 g/day</b> (1.0–1.5 g/kg)</li><li>ICU patient 80 kg → <b>104–160 g/day</b> (1.3–2.0 g/kg)</li></ul>
+<div class="sub-h">Section 6: Protein-Energy Malnutrition (PEM)</div>
+<p>PEM spectrum — see [[Protein-Energy Malnutrition (Marasmus &amp; Kwashiorkor)]] for full detail. Quick reference:</p>
+<table class="ctable"><tr><th>Feature</th><th>Marasmus</th><th>Kwashiorkor</th><th>Marasmic-kwashiorkor</th></tr><tr><td>---------</td><td>----------</td><td>-------------</td><td>----------------------</td></tr><tr><td>**Deficiency**</td><td>Total energy + protein</td><td>Protein predominant (relative)</td><td>Both</td></tr><tr><td>**Age**</td><td>< 18 m (weanling)</td><td>1–4 y (post-weaning)</td><td>Mixed</td></tr><tr><td>**Wasting**</td><td>Severe (↓ muscle + fat)</td><td>Present</td><td>Severe wasting + oedema</td></tr><tr><td>**Oedema**</td><td>Absent</td><td>**Present** (pitting, often pedal → face)</td><td>Present</td></tr><tr><td>**Hepatomegaly**</td><td>Absent</td><td>**Fatty liver** (apoprotein ↓ → VLDL export ↓)</td><td>Variable</td></tr><tr><td>**Skin/hair**</td><td>Normal</td><td>Flaky paint dermatosis, sparse hypopigmented hair, flag sign</td><td>Mixed</td></tr><tr><td>**Subcutaneous fat**</td><td>Absent</td><td>May be preserved</td><td>Absent</td></tr><tr><td>**Serum albumin**</td><td>Low-normal</td><td>**Very low** (< 25 g/L)</td><td>Low</td></tr><tr><td>**Mood**</td><td>Alert, voracious</td><td>Miserable, apathetic, anorexic</td><td>Apathetic</td></tr><tr><td>**Mortality**</td><td>Lower (chronic adaptation)</td><td>**Higher** (acute metabolic decompensation)</td><td>Highest</td></tr><tr><td>**Management**</td><td>Slow refeed, F-75 → F-100</td><td>F-75 → F-100; treat infection, **do not** give high-protein acutely</td><td>Combined</td></tr></table>
+<p><b>WHO classification (Z-scores, weight-for-height):</b></p>
+<ul><li><b>Mild malnutrition:</b> -1 to -2 SD</li><li><b>Moderate acute malnutrition (MAM):</b> -2 to -3 SD (also mid-upper arm circumference MUAC 11.5–12.5 cm)</li><li><b>Severe acute malnutrition (SAM):</b> &lt; -3 SD OR MUAC &lt; 11.5 cm OR bilateral pitting oedema</li><li><b>Gomez classification</b> (weight-for-age): mild 75–90%, moderate 60–74%, severe &lt; 60%</li><li><b>Waterlow classification</b> (chronic): wasting (low weight-for-height) vs. stunting (low height-for-age)</li></ul>
+<p><b>Why kwashiorkor has a fatty liver:</b> Deficient apoB synthesis (lack of apoprotein B-100) → failure of VLDL assembly/secretion from liver → triglycerides accumulate. Oedema is partly from hypoalbuminaemia but additionally from oxidative damage ("free radical" theory) and aflatoxin hypotheses.</p>
+<div class="sub-h">Section 7: Vegan Protein Complementation</div>
+<p>Because individual plant proteins are "incomplete" (low in one or more EAAs), combining two or more plant sources <b>at the same meal or within 24 h</b> gives a complete protein with all EAAs at adequate levels.</p>
+<table class="ctable"><tr><th>Complementary pair</th><th>Limiting AAs covered</th><th>Example dishes</th></tr><tr><td>--------------------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**Legumes + cereals**</td><td>Legume adds Lys, cereal adds Met</td><td>Rice + dal; beans + tortilla; lentil soup + bread; tofu + rice</td></tr><tr><td>**Legumes + nuts/seeds**</td><td>Nut adds Met; legume adds Lys</td><td>Hummus + sesame; bean + walnut salad</td></tr><tr><td>**Legumes + dairy** (for lacto-ovo)</td><td>Lys + Met</td><td>Lentils + milk/yogurt/cheese</td></tr><tr><td>**Soya + rice**</td><td>Near-perfect match</td><td>Tofu stir-fry with rice</td></tr><tr><td>**Soya + wheat**</td><td>Lys + Met</td><td>Soya chunks in chapatti</td></tr><tr><td>**Soya + corn**</td><td>Lys + Trp</td><td>Tofu tacos</td></tr><tr><td>**Peanut + wheat**</td><td>Lys + Met</td><td>Peanut butter sandwich</td></tr><tr><td>**Soya alone**</td><td>Adequate, but not "complete" for infants (Met)</td><td>Tofu, tempeh, edamame</td></tr><tr><td>**Quinoa, amaranth, buckwheat, hempseed**</td><td>**Complete**</td><td>No need to complement</td></tr><tr><td>**Spirulina, chlorella**</td><td>Complete, high in Lys</td><td>Single-source supplement</td></tr></table>
+<p><b>Old myth busted:</b> It is <b>not</b> necessary to combine complementary proteins at the same meal — daily intake is sufficient (concept of mutual supplementation over the day), but same-meal combining is more efficient and prudent in vulnerable groups (infants, pregnancy, athletes).</p>
+<div class="sub-h">Section 8: Branched-Chain Amino Acids (BCAAs)</div>
+<p>The three BCAAs are <b>leucine, isoleucine, valine</b> — so named because of a branched aliphatic side chain.</p>
+<p><b>Distinctive metabolism:</b></p>
+<ul><li>Transaminated primarily in <b>skeletal muscle</b> (not liver) by <b>branched-chain amino-acid transaminase (BCAT)</b>.</li><li>Decarboxylated by the <b>branched-chain α-keto acid dehydrogenase (BCKDH) complex</b> in muscle, adipose, kidney, brain.</li><li>Genetic deficiency of BCKDH = <b>Maple Syrup Urine Disease (MSUD)</b>.</li></ul>
+<p><b>Leucine is the major anabolic signal:</b></p>
+<ul><li>Stimulates <b>mTORC1</b> (mechanistic target of rapamycin complex 1)</li><li>Promotes muscle protein synthesis (MPS) and inhibits proteolysis</li><li>Adequate leucine per meal: ~2.5–3.0 g to maximally stimulate MPS in older adults</li><li>Whey protein (≈ 11–14% Leu) is rich in leucine</li></ul>
+<p><b>Clinical uses / controversies:</b></p>
+<ul><li><b>Hepatic encephalopathy:</b> BCAA-enriched formulae (high Leu, low aromatic AAs Phe, Tyr, Trp) — rationale: the failing liver cannot clear aromatic AAs that compete with BCAAs for transport across the blood–brain barrier. Reducing aromatic AAs and supplementing BCAAs may improve encephalopathy. <b>Evidence: mixed, may reduce recurrence; not a primary therapy.</b></li><li><b>Sports nutrition:</b> BCAA supplementation modestly reduces muscle soreness and may attenuate central fatigue (Trp → serotonin); however, <b>whole protein (whey) &gt; free BCAA</b> because whey supplies all EAAs.</li><li><b>Cirrhosis / sarcopenia:</b> BCAA supplementation (oral 12–14 g/day) may improve muscle mass and event-free survival in decompensated cirrhosis (Yoshida, Muto 2011; ESPEN guidelines 2019 weak-positive).</li><li><b>MSUD</b> — see below: BCAAs (especially Leu) are neurotoxic and must be restricted.</li></ul>
+<div class="sub-h">Section 9: Inborn Errors of Amino Acid Metabolism</div>
+<p>#### 9.1 Phenylketonuria (PKU)</p>
+<ul><li><b>Defect:</b> Phenylalanine hydroxylase (PAH) deficiency; rarely BH₄ cofactor deficiency</li><li><b>Gene:</b> PAH (chr 12); AR; incidence ~1:10,000–15,000 live births</li><li><b>Pathology:</b> Phe accumulates → neurotoxic; Tyr becomes conditionally essential (cannot be made from Phe)</li><li><b>Clinical:</b> Intellectual disability, microcephaly, seizures, eczema, fair skin/hair (↓ melanin), musty/mousy body odour</li><li><b>Screening:</b> Newborn heel-prick (Guthrie) at day 3–5</li><li><b>Treatment:</b></li><li><b>Low-Phe diet</b> (restrict high-Phe foods: meat, fish, eggs, cheese, nuts, aspartame)</li><li><b>Phe-free, Tyr-supplemented</b> AA formulas (e.g., XPhe products)</li><li><b>BH₄ (sapropterin) responsive</b> in ~25–50% (mild)</li><li>Large neutral amino acids (LNAAs) supplementation in adolescents</li><li>Goal: plasma Phe 120–360 µmol/L (children), 120–600 µmol/L (adults)</li><li><b>Maternal PKU syndrome:</b> Uncontrolled maternal Phe → foetal microcephaly, cardiac defects, IUGR; preconception control is critical.</li></ul>
+<p>#### 9.2 Maple Syrup Urine Disease (MSUD)</p>
+<ul><li><b>Defect:</b> Branched-chain α-keto acid dehydrogenase (BCKDH) complex deficiency</li><li><b>Substrate accumulation:</b> Leu, Ile, Val, α-ketoisocaproate, α-keto-β-methylvalerate, α-ketoisovalerate</li><li><b>Clinical:</b> Poor feeding, vomiting, lethargy, hypertonia, opisthotonus, seizures, <b>characteristic sweet/maple-syrup odour of urine</b> (from sotolone), coma; untreated → death in 1st weeks</li><li><b>Forms:</b> Classic (severe, neonatal), intermediate, intermittent, thiamine-responsive</li><li><b>Treatment:</b> <b>Restrict BCAAs</b> (especially Leu — most neurotoxic), provide BCAA-free formula, aggressive management of acute decompensation (IV glucose + insulin, BCAA-free TPN, haemodialysis), liver transplantation for classic form</li><li><b>Monitoring:</b> Plasma Leu, Ile, Val; keep Leu &lt; 1000 µmol/L</li></ul>
+<p>#### 9.3 Homocystinuria (Classical)</p>
+<ul><li><b>Defect:</b> Cystathionine β-synthase (CBS) deficiency (most common); also methionine synthase, MTHFR</li><li><b>Accumulation:</b> Homocysteine, methionine</li><li><b>Clinical:</b> Marfanoid habitus (tall, long limbs, arachnodactyly), <b>lens subluxation downward</b> (vs Marfan upward!), intellectual disability, thrombosis (DVT, stroke, MI), osteoporosis, fair complexion</li><li><b>Treatment:</b></li><li><b>Pyridoxine (B6) trial</b> — ~50% of CBS-deficient patients are B6-responsive</li><li><b>Low-Met, Cys-supplemented</b> diet</li><li>Betaine (trimethylglycine) — remethylates Hcy → Met</li><li>Folate, B12, B6 supplementation</li><li>Aspirin/anticoagulation for thrombosis</li></ul>
+<p>#### 9.4 Urea Cycle Disorders (UCDs)</p>
+<ul><li><b>Defect:</b> Any of the 6 enzymes of the urea cycle — <b>CPS1, OTC, ASS (citrullinaemia), ASL (argininosuccinic aciduria), arginase, N-acetylglutamate synthase</b></li><li>Most common: <b>OTC deficiency</b> (X-linked) — ~1:14,000</li><li><b>Pathology:</b> Failure to convert NH₃ → urea → <b>hyperammonaemia</b> → cerebral oedema, neurotoxicity</li><li><b>Clinical:</b> Neonatal lethargy, vomiting, tachypnoea (respiratory alkalosis!), seizures, coma; later-onset forms triggered by catabolism, high-protein meal, infection</li><li><b>Treatment:</b></li><li><b>Dietary protein restriction</b> (0.5–1.0 g/kg/day acutely; build up gradually)</li><li><b>Arginine supplementation</b> (essential in most UCDs except arginase deficiency)</li><li><b>Sodium benzoate + sodium phenylbutyrate/phenylacetate</b> — nitrogen scavengers (divert N to alternative excretion pathways: hippurate + phenylacetyl-glutamine)</li><li><b>Acute hyperammonaemia:</b> stop protein intake, IV glucose + lipids, sodium benzoate/phenylbutyrate, <b>haemodialysis</b> (NH₃ &gt; 500 µmol/L or rapidly rising)</li><li><b>L-carnitine</b> if secondary deficiency</li><li>Liver transplantation for severe forms</li><li><b>Avoid valproate</b> (inhibits CPS)</li></ul>
+<div class="sub-h">Section 10: Protein in Special Clinical States</div>
+<p>#### 10.1 Negative Nitrogen Balance in Trauma / Burns / Sepsis</p>
+<ul><li><b>Stress response:</b> Counter-regulatory hormones (cortisol, catecholamines, glucagon) + cytokines (TNF-α, IL-1, IL-6) → increased proteolysis, gluconeogenesis, acute-phase protein synthesis, insulin resistance</li><li>Net result: <b>catabolism of skeletal muscle → negative N balance</b> despite adequate intake</li><li><b>Magnitude (g N lost/day):</b> Simple surgery 12–24 g; severe trauma 20–30 g; major burns 30–50 g; sepsis 20–40 g</li><li><b>Burns-specific:</b> Curling's ulcer risk; <b>hypermetabolism up to 2× BMR</b>; protein needs <b>1.5–2.0 g/kg</b> (up to 2.5 in massive burns)</li><li><b>Goals of nutrition support:</b> Limit catabolism, support wound healing, immune function, preserve LBM</li><li>Continuous feeding &gt; bolus (better N balance)</li></ul>
+<p>#### 10.2 Protein in Chronic Kidney Disease (CKD)</p>
+<table class="ctable"><tr><th>Stage</th><th>eGFR</th><th>Protein intake (g/kg/day)</th></tr><tr><td>-------</td><td>------</td><td>--------------------------</td></tr><tr><td>CKD 1–2 (no nephrotic syndrome)</td><td>> 60</td><td>0.8–1.0</td></tr><tr><td>CKD 3–5 (pre-dialysis)</td><td>< 60</td><td>**0.6–0.8** (or 0.55–0.6 with keto-analogues)</td></tr><tr><td>Haemodialysis</td><td>< 15 (on HD)</td><td>**1.0–1.2** (replaces dialytic losses + catabolism)</td></tr><tr><td>CAPD/APD</td><td>on PD</td><td>**1.0–1.2** (replaces peritoneal losses)</td></tr><tr><td>CRRT</td><td>ICU</td><td>1.5–1.7 (max)</td></tr><tr><td>Nephrotic syndrome</td><td>—</td><td>0.8 + 1 g per g urinary protein (some guidelines 0.8–1.0)</td></tr></table>
+<ul><li><b>Rationale for low-protein pre-dialysis diet:</b> reduces uraemic toxin generation, slows progression (esp. with keto-analogues), reduces hyperphosphataemia</li><li><b>Caution:</b> Avoid malnutrition; must monitor nPCR (normalised protein catabolic rate) and dietary review</li><li><b>Keto-analogues (ketoacids):</b> Nitrogen-free analogues of EAAs; provide carbon skeleton but recycle N → urea → ammonia, reducing urea generation</li></ul>
+<p>#### 10.3 Protein in Hepatic Disease</p>
+<ul><li>Mild liver disease: 1.0–1.2 g/kg</li><li>Compensated cirrhosis: 1.0–1.5 g/kg (do not over-restrict; worsen sarcopenia)</li><li><b>Hepatic encephalopathy (HE):</b> restrict to <b>0.5–1.0 g/kg/day</b>; <b>plant-based / dairy protein preferred</b> (more BCAA, less aromatic AA; higher fibre → ↓ NH₃ absorption); BCAA-enriched formulae (HE/HE-FP) may help in chronic HE</li><li>Acute liver failure: 0.5–1.0 g/kg, with adequate calories (35–40 kcal/kg)</li></ul>
+<p>#### 10.4 Protein in Other States</p>
+<ul><li><b>Diabetes mellitus:</b> 0.8–1.0 g/kg; avoid excess (renal protection incipient CKD)</li><li><b>Obesity (bariatric):</b> 1.0–1.5 g/kg ideal body weight; <b>60–80 g/day minimum</b> after sleeve gastrectomy/RYGB to preserve LBM</li><li><b>Pregnancy:</b> 1.1 g/kg + 25 g/day (esp. 2nd–3rd trimester)</li><li><b>Lactation:</b> 1.3 g/kg + 19 g/day</li><li><b>Wound healing / pressure ulcers:</b> 1.2–1.5 g/kg; arginine (17–24 g/day) and glutamine may aid</li><li><b>Haemodialysis (older adult):</b> 1.2 g/kg to compensate catabolism</li></ul>
+<div class="sub-h">Section 11: Assessment of Protein Status</div>
+<table class="ctable"><tr><th>Method</th><th>What it measures</th><th>Caveats</th></tr><tr><td>--------</td><td>------------------</td><td>---------</td></tr><tr><td>**Serum albumin**</td><td>Slow-turnover (t₂ ~ 20 d); falls in chronic PEM, inflammation, liver disease, nephrotic syndrome</td><td>Half-life too long to detect acute changes; **negative acute-phase reactant**</td></tr><tr><td>**Prealbumin (transthyretin)**</td><td>Faster turnover (t₂ ~ 2 d)</td><td>Also negative acute-phase reactant; better for tracking recent changes</td></tr><tr><td>**Retinol-binding protein (RBP)**</td><td>t₂ ~ 12 h</td><td>Urinary losses in renal failure, ↑ in renal disease</td></tr><tr><td>**24-h urinary urea N**</td><td>Reflects catabolism</td><td>Used in N balance studies</td></tr><tr><td>**3-methylhistidine**</td><td>Specific myofibrillar protein breakdown marker</td><td>Research use</td></tr><tr><td>**Anthropometry** — triceps skinfold, mid-arm circumference, hand-grip strength</td><td>Lean & fat mass</td><td>Operator-dependent</td></tr><tr><td>**DEXA**</td><td>Body composition (lean/fat/bone)</td><td>Gold standard non-invasive</td></tr><tr><td>**Bioelectrical impedance (BIA)**</td><td>Lean mass, total body water</td><td>Hydration-dependent</td></tr><tr><td>**Subjective Global Assessment (SGA)**</td><td>Bedside, integrated</td><td>Operator-dependent</td></tr><tr><td>**nPCR** (Kt/V in HD patients)</td><td>Dialysis-related catabolism</td><td>Renal-specific</td></tr></table>
+<div class="sub-h">Section 12: Excess Protein — Is It Harmful?</div>
+<ul><li><b>Healthy kidneys:</b> No evidence that high protein (2–3 g/kg/d) causes CKD in healthy people; renal hyperfiltration reversible</li><li><b>Pre-existing CKD:</b> May accelerate progression → protein restriction as above</li><li><b>Calcium balance:</b> High animal protein increases calciuria (acid load) → potential bone loss if chronic; not conclusive</li><li><b>Cancer risk:</b> Some data for colorectal cancer with very high red/processed meat intake (IARC 2A), not pure protein</li><li><b>Ketogenic diets:</b> Safe short term; long-term data limited</li><li><b>Maximum tolerated:</b> ~2.5 g/kg/d in healthy adult (beyond this → no benefit, GI upset)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>70 kg adult with stable CKD-3 (eGFR 45)</td><td>0.6–0.8 g/kg protein/day = 42–56 g; consider keto-analogue supplementation</td><td>Monitor eGFR, bicarbonate, nPCR, nutritional status</td></tr><tr><td>60 kg elderly with sarcopenia and recent fall</td><td>1.2–1.5 g/kg/day, 25–30 g protein/meal, resistance exercise</td><td>Leucine 2.5–3 g/meal (whey)</td></tr><tr><td>80 kg ICU patient, septic shock, on noradrenaline, day 5</td><td>Start enteral feeding within 24–48 h, 1.2–2.0 g/kg/day (1.3 ESPEN); reach 80% target by 7–10 days</td><td>Add fish oil/arginine if surgical</td></tr><tr><td>24-year-old vegan, weight 55 kg, pregnant 20 w</td><td>1.1 g/kg + 25 g/day; advise legumes + cereals complementation; check B12, Fe, Zn, vitamin D</td><td>Use soya, quinoa; supplement B12</td></tr><tr><td>5-day-old neonate, Guthrie test positive (Phe 1200 µmol/L)</td><td>Urgent referral, start Phe-restricted Tyr-supplemented formula, breast milk in measured amounts, monitor plasma Phe weekly</td><td>Prevent neurotoxicity</td></tr><tr><td>4-day-old neonate, lethargic, refusing feeds, sweet-smelling urine</td><td>Send plasma AA, urine organic acids; stop protein intake, IV 10% dextrose, BCAA-free TPN, prepare for dialysis</td><td>MSUD acute decompensation</td></tr><tr><td>70-year-old cirrhotic with ascites and grade 2 HE</td><td>0.8–1.0 g/kg/day of plant-dairy protein; BCAA-enriched formula; lactulose + rifaximin</td><td>Avoid prolonged severe restriction (sarcopenia)</td></tr><tr><td>25-year-old athlete, 90 kg, resistance training, off-season</td><td>1.6–2.2 g/kg/day, evenly distributed (4 × 0.4 g/kg), 0.4 g/kg/dose post-training</td><td>Whey or milk-based; high leucine</td></tr><tr><td>70 kg patient, 40% burns, day 2 post-admission</td><td>1.5–2.0 g/kg/day (some 2.0–2.5), high-energy 35–40 kcal/kg; nasoenteric feeding started early; monitor glucose, electrolytes</td><td>Glutamine 0.3–0.5 g/kg/day IV (controversial but ESPEN 2009)</td></tr><tr><td>3-month-old, breast-fed, but mother has PKU poorly controlled</td><td>Counsel on maternal PKU, ensure Phe 120–360 μmol/L throughout pregnancy</td><td>Preconception control critical</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> - The 9 essential AAs (HILL, MP, TTV) and the 6 conditionally essential AAs - 1 g N ≡ 6.25 g protein (mixed diet) — used for every N-balance calculation - RDA 0.8 g/kg/day adult; 1.0–1.5 elderly; 1.2–2.0 athletes; 1.2–2.0 critical illness; 0.6–0.8 pre-dialysis CKD - Egg BV 100, whey 104, casein 91, soy 91 - PDCAAS capped at 1.0 (FDA); DIAAS uses ileal digestibility, no cap (FAO 2013) - Kwashiorkor = protein deficiency with oedema, fatty liver, dermatosis; Marasmus = total energy deficiency with wasting - Marasmus preserves alertness; kwashiorkor presents with apathy and anorexia - Vegan complementation: legume + cereal (or nut/seed) - PKU: low Phe, supplement Tyr; maternal PKU → foetal abnormalities - MSUD: BCAA restriction; sweet-smelling urine (sotolone) - Homocystinuria: lens subluxation <b>downward</b> (Marfan upward); low-Met diet, B6 trial, betaine - UCDs: low-protein, arginine, sodium benzoate/phenylbutyrate, haemodialysis - <b>BCAA</b> (Leu, Ile, Val) — metabolised in muscle; Leu activates mTORC1 → MPS - <b>Common viva:</b> - "Explain nitrogen balance" — define, give equation, examples - "Differences between PDCAAS and DIAAS" - "How would you feed a critically ill burns patient?" - "Plan a vegan diet that meets all amino acid needs" - "Differentiate kwashiorkor and marasmus clinically" - "Newborn screening positive for PKU — what next?" - <b>Exam trap:</b> - PDCAAS vs DIAAS — DIAAS has no upper cap, uses ileal digestibility - Lens subluxation in homocystinuria is <b>downward</b> (Marfan = upward) - Lysine is the limiting AA in wheat; methionine in legumes - Kwashiorkor can occur in <b>marasmic</b> children if given CHO without protein - Negative N balance is normal in early feeding of malnutrition → re-feed gradually</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>All 20 AAs are essential</td><td>Only 9 essential in adults (HILL, MP, TTV); 12 are non-essential (or conditionally essential)</td></tr><tr><td>Whey BV is 100, the highest</td><td>Whey 104 > egg 100; casein 91</td></tr><tr><td>PDCAAS can exceed 1.0</td><td>No — capped at 1.0; DIAAS can exceed 1.0</td></tr><tr><td>DIAAS uses faecal digestibility</td><td>No — uses **ileal** digestibility</td></tr><tr><td>Plant proteins are inferior</td><td>With **complementation**, plant proteins can meet all AA needs; quinoa/some others are complete</td></tr><tr><td>Kwashiorkor is just protein deficiency</td><td>It is more than that — oxidative stress, antioxidant depletion, free radical injury are implicated; oedema is multifactorial, not only hypoalbuminaemia</td></tr><tr><td>Marasmic children need immediate high-protein feeding</td><td>Start with F-75 (low-protein, low-fat) and feed gradually; high protein in F-100 only after stabilisation — risk of refeeding syndrome and "overshoot" deaths</td></tr><tr><td>BCAA supplementation builds muscle</td><td>**Whole protein > free BCAA** because all EAAs are required; BCAA alone does not maximally stimulate MPS</td></tr><tr><td>BCAA helpful in all liver disease</td><td>BCAA may help chronic HE; not routinely recommended in all cirrhotics</td></tr><tr><td>All uraemic patients need low-protein diet</td><td>Only **pre-dialysis**; once on haemodialysis/CAPD, increase to 1.0–1.2 g/kg</td></tr><tr><td>All PEM patients need micronutrients first</td><td>All severe malnutrition (SAM) gets **broad-spectrum** micronutrient + empiric antibiotics; vitamin A, folic acid, zinc, copper, iron (only after infection cleared)</td></tr><tr><td>Urea cycle disorder — give more protein to build muscle</td><td>No — restrict protein acutely, give nitrogen scavengers, supplement arginine</td></tr><tr><td>High protein damages normal kidneys</td><td>No strong evidence in healthy people</td></tr><tr><td>Phenylalanine is not an essential AA in PKU</td><td>It is **always** essential; in PKU it must be supplied in **strictly limited** amounts (e.g., 200–500 mg/day)</td></tr><tr><td>Energy from protein is 4 kcal/g and 100% used</td><td>~1 kcal/g lost in urea synthesis; net usable ≈ 3 kcal/g</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Essential AAs — "PVT TIM HALL"</b> (Phenylalanine, Valine, Threonine, Tryptophan, Isoleucine, Methionine, Histidine, <b>A</b>rg, Leucine, Lysine) or <b>"HILL MP TTV"</b> or <b>"LIMA TANK"</b> (Lys, Ile, Met, Arg, Thr, Asp... — variant)</li><li><b>BCAAs — "LIV"</b> (Leucine, Isoleucine, Valine) — "LIVe muscle"</li><li><b>Limiting AA in cereals = Lysine; in legumes = Methionine</b> — "Cereals cry Lys, legumes lack Met"</li><li><b>PDCAAS vs DIAAS</b> — <b>P</b>DCAAS = <b>P</b>oop (faecal); <b>D</b>IAAS = <b>D</b>own to <b>i</b>leum</li><li><b>Conversion 1 g N ≡ 6.25 g protein</b> — "<b>6</b>-point-<b>25</b>" (and the protein calorie is <b>4</b> kcal/g)</li><li><b>Urea cycle 6 enzymes:</b> <b>"C-O-A-A-A-N"</b> — <b>C</b>PS1, <b>O</b>TC, <b>A</b>SS, <b>A</b>SL, <b>A</b>rginase, <b>N</b>-acetylglutamate synthase</li><li><b>Kwashiorkor vs Marasmus</b> — "<b>K</b>wash = <b>K</b>idney/oedema (protein loss), Marasmus = Muscles (wasted)"</li><li><b>MSUD</b> — "<b>M</b>aple <b>S</b>yrup <b>U</b>rine <b>D</b>isease = decrease BCKDH = increase BCAA"</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Protein- Requirements, Functions &amp; Disorders)) Composition &amp; Functions Structure Muscle Collagen Enzymes Hormones Transport Albumin Immune Defence Coagulation Buffer Fluid balance Amino Acids 9 Essential HILL MP TTV His Ile Leu Lys Met Phe Thr Trp Val 6 Conditionally Essential Arg Cys Gln Gly Pro Tyr 12 Non-essential Ala Asn Asp Glu Ser etc BCAAs Leu Ile Val Muscle mTORC1 Protein Quality Biological Value Whey 104 Egg 100 Casein 91 Soy 91 Wheat 54 PDCAAS Faecal digestibility Capped 1.0 DIAAS Ileal digestibility No cap FAO 2013 Reference Protein Egg Milk Limiting AAs Cereals Lys Legumes Met Nitrogen Balance N intake minus N output 1 g N equals 6.25 g protein Zero Equilibrium Positive Anabolism Negative Catabolism Requirements RDA Adult 0.8 g per kg Elderly 1.0 to 1.5 Athletes 1.2 to 2.0 ICU 1.2 to 2.0 Pre-dialysis CKD 0.6 to 0.8 Dialysis 1.0 to 1.2 Burns 1.5 to 2.0 PEM Marasmus Wasting No oedema Kwashiorkor Oedema Fatty liver Marasmic-kwashiorkor WHO Z-scores Gomez Waterlow Vegan Complementation Legume plus Cereal Soya Rice Quinoa Complete Inborn Errors PKU low Phe plus Tyr MSUD low BCAA Homocystinuria low Met B6 UCDs low protein Arginine scavengers Special States Trauma Burns Sepsis Negative N balance CKD Pre-dialysis restrict Dialysis increase Hepatic encephalopathy BCAA enriched Plant-dairy protein </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>List the 9 essential amino acids and indicate which are BCAAs.</li><li>What is the conversion factor between protein and nitrogen? Give two exceptions.</li><li>Define biological value, PDCAAS, and DIAAS. Why was DIAAS introduced?</li><li>What is the RDA of protein for (a) a healthy adult, (b) an elderly person, (c) an athlete, (d) a pre-dialysis CKD patient, (e) a burns patient?</li><li>Differentiate kwashiorkor and marasmus in 5 lines.</li><li>Name the limiting amino acid in wheat and in legumes. Give a complementary combination.</li><li>Outline the management of a child with classic PKU.</li><li>What is the acute treatment of hyperammonaemia in a urea cycle disorder?</li><li>How do BCAAs (especially leucine) signal anabolism?</li><li>List 4 clinical states producing negative nitrogen balance and the protein needs in each.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>9 essential AAs + 6 conditionally essential; 6.25 g protein per g N; RDA 0.8 g/kg/d; BV/PDCAAS/DIAAS basics; kwashiorkor vs marasmus; PKU/MSUD/homocystinuria/UCD principles; protein in CKD and HE; BCAA (LIV) and leucine mTORC1</td></tr><tr><td>**Should Know 🟡**</td><td>Vegan complementation; limiting AAs in cereals/legumes; specific protein intakes in athletes/elderly/ICU/burns; apoB → fatty liver; nPCR/albumin/prealbumin markers; refeeding risk in PEM; F-75/F-100; SAM WHO criteria; BH4 in PKU; sapropterin; betaine in homocystinuria; sodium benzoate/phenylbutyrate in UCD</td></tr><tr><td>**Nice to Know 🟢**</td><td>DIAAS ileal pig model details; anabolic resistance in elderly; leucine threshold per meal; ASMS, MSUD thiamine-responsive; large-neutral amino acids (LNAA); maternal PKU syndrome specifics; keto-analogues in CKD; Yoshida BCAA cirrhosis trials; Curling's ulcer in burns</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ]</li><li>[ ]</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Discuss the classification, biological value, and assessment of protein quality. Add a note on the protein requirements of vulnerable groups (elderly, athletes, critically ill, CKD, hepatic disease).</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Nitrogen balance: definition, equation, calculation, clinical states.</li><li>Differentiate kwashiorkor and marasmus.</li><li>Protein requirements in chronic kidney disease.</li><li>Essential vs non-essential amino acids.</li><li>BCAA metabolism and clinical relevance.</li><li>Management of PKU.</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"What is the conversion factor between dietary protein and nitrogen, and how is it used in clinical practice?"</li><li>"What are the BCAAs and what is their special role?"</li><li>"Why does kwashiorkor cause a fatty liver?"</li><li>"How would you manage a neonate with maple syrup urine disease?"</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>65-year-old man, decompensated cirrhosis, BMI 19, ascites, grade 2 HE → diet plan: 1.0–1.2 g/kg plant-dairy protein, BCAA-enriched formula, lactulose, rifaximin, daily weights, electrolytes.</li><li>30-year-old with PKU, planning pregnancy → preconception Phe control 120–360 µmol/L, Tyr-supplemented AA formula, low-Phe diet, MDT follow-up.</li><li>80 kg bodybuilder, vegan → 1.6 g/kg protein, legumes + soya + rice + quinoa, B12 supplement, monitor Fe and Zn.</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>9 EAAs (HILL MP TTV) | 6 Conditionally essential (Arg, Cys, Gln, Gly, Pro, Tyr)</li><li>BCAA = LIV → muscle, mTORC1, Leu = anabolic signal</li><li>1 g N = 6.25 g protein</li><li>BV: Whey 104 &gt; Egg 100 &gt; Casein 91 &gt; Soy 91 &gt; Wheat ~60</li><li>PDCAAS = faecal, cap 1.0; DIAAS = ileal, no cap (FAO 2013)</li><li>RDA: 0.8 adult; 1.0–1.5 elderly; 1.2–2.0 athlete; 1.2–2.0 ICU/burns; 0.6–0.8 pre-dialysis; 1.0–1.2 dialysis</li><li>Kwashiorkor: oedema + fatty liver; Marasmus: wasting, no oedema</li><li>PEM: F-75 → F-100; empiric antibiotics; do not high-protein acutely</li><li>Vegan complement: legume + cereal (Lys + Met)</li><li>PKU: low-Phe, +Tyr, BH4 trial; maternal PKU</li><li>MSUD: low BCAA, sweet urine (sotolone), BCKDH deficiency</li><li>Homocystinuria: ↓ lens subluxation, ↓ Met, B6, betaine</li><li>UCD: low protein, arginine, Na-benzoate + Na-phenylbutyrate, dialysis</li><li>CKD: pre-dialysis 0.6–0.8; on dialysis 1.0–1.2</li><li>HE: BCAA-enriched, plant-dairy protein</li><li>Trauma/burns/sepsis: ↑↑ catabolism, need 1.5–2.0 g/kg</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Q:</b> Which of the following is the nitrogen-to-protein conversion factor used for a mixed diet?</li></ol>
+<p>A. 5.7 B. 6.0 C. 6.25 D. 6.38 E. 5.83</p>
+<ol><li><b>Q:</b> A 70-kg healthy adult should consume a minimum of how much protein per day to meet the RDA?</li></ol>
+<p>A. 40 g B. 50 g C. 56 g D. 70 g E. 80 g</p>
+<ol><li><b>Q:</b> Which of the following proteins has the highest biological value (BV)?</li></ol>
+<p>A. Egg white B. Wheat gluten C. Whey D. Casein E. Soya</p>
+<ol><li><b>Q:</b> The protein digestibility-corrected amino acid score (PDCAAS) differs from the digestible indispensable amino acid score (DIAAS) in that:</li></ol>
+<p>A. DIAAS uses faecal digestibility; PDCAAS uses ileal digestibility B. DIAAS has no upper cap; PDCAAS is capped at 1.0 C. DIAAS is the older method D. PDCAAS is preferred by FAO E. DIAAS is for adults only</p>
+<ol><li><b>Q:</b> A 6-month-old child presents with bilateral pitting oedema, sparse hypopigmented hair, fatty liver, and serum albumin of 18 g/L. The most likely diagnosis is:</li></ol>
+<p>A. Marasmus B. Kwashiorkor C. Rickets D. Scurvy E. Pellagra</p>
+<ol><li><b>Q:</b> In which of the following conditions is dietary protein restriction NOT appropriate?</li></ol>
+<p>A. Pre-dialysis chronic kidney disease B. Patient on chronic haemodialysis C. Acute hepatic encephalopathy D. Decompensated urea cycle disorder E. Maple syrup urine disease</p>
+<ol><li><b>Q:</b> A 25-year-old vegan with iron-deficiency anaemia reports his typical meal. Which complementary protein combination is most appropriate?</li></ol>
+<p>A. Wheat + milk B. Lentils + rice C. Egg + bread D. Fish + rice E. Chicken + potato</p>
+<ol><li><b>Q:</b> The branched-chain amino acids include:</li></ol>
+<p>A. Lysine, methionine, threonine B. Leucine, isoleucine, valine C. Tyrosine, tryptophan, phenylalanine D. Histidine, arginine, lysine E. Glycine, proline, alanine</p>
+<ol><li><b>Q:</b> Which amino acid becomes conditionally essential in phenylketonuria (PKU)?</li></ol>
+<p>A. Leucine B. Tryptophan C. Tyrosine D. Cysteine E. Glutamine</p>
+<ol><li><b>Q:</b> In a patient with 60% total body surface area burns, the most appropriate daily protein intake is:</li></ol>
+<p>A. 0.8 g/kg B. 1.0 g/kg C. 1.2 g/kg D. 1.5–2.0 g/kg E. 2.5–3.0 g/kg</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 4-day-old neonate develops poor feeding, lethargy, and a sweet/maple-syrup odour of the urine. Plasma amino acid chromatography is most likely to show markedly elevated:</b></li></ol>
+<p>A. Phenylalanine and tyrosine B. Leucine, isoleucine, and valine C. Methionine and homocysteine D. Citrulline and arginine E. Ornithine and glutamine</p>
+<ol><li><b>A 23-year-old woman with classical homocystinuria (cystathionine β-synthase deficiency) presents with marfanoid habitus and downward lens subluxation. The first-line dietary and pharmacologic regimen is:</b></li></ol>
+<p>A. Low-phenylalanine, tyrosine-supplemented diet B. Low-methionine, cysteine-supplemented diet + pyridoxine trial + betaine C. BCAA-restricted diet D. Low-protein diet with arginine E. Low-tyrosine, phenylalanine-supplemented diet</p>
+<ol><li><b>A 70-kg patient with stage 4 chronic kidney disease (eGFR 22) but not yet on dialysis asks about protein intake. The most appropriate recommendation is:</b></li></ol>
+<p>A. 1.2–1.4 g/kg/day B. 0.6–0.8 g/kg/day C. 0.3 g/kg/day D. 1.5 g/kg/day E. 2.0 g/kg/day</p>
+<ol><li><b>A patient with decompensated liver cirrhosis and recurrent grade 2–3 hepatic encephalopathy is on lactulose and rifaximin. The most appropriate dietary protein prescription is:</b></li></ol>
+<p>A. 0 g/kg (zero protein) B. 0.5 g/kg (severe restriction) C. 0.8–1.0 g/kg of plant-dairy/BCAA-enriched protein D. 1.6 g/kg E. 2.0 g/kg</p>
+<ol><li><b>A 60-kg malnourished elderly patient with a recent fall and reduced muscle mass is being planned for rehabilitation. In addition to resistance exercise, the recommended daily protein intake is:</b></li></ol>
+<p>A. 0.6 g/kg B. 0.8 g/kg C. 1.0–1.5 g/kg, distributed across meals (25–30 g/meal with 2.5–3 g leucine) D. 2.5 g/kg E. 3.0 g/kg</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: What is the conversion factor of dietary protein to nitrogen for a mixed diet?</li></ul>
+<p>A: 1 g N ≡ 6.25 g protein (used in Kjeldahl analysis and N balance). Milk 6.38; wheat 5.83; rice 5.95; soy 5.71; egg 6.25.</p>
+<ul><li>Q: How many essential amino acids are there in adults? List them.</li></ul>
+<p>A: 9. Histidine, Isoleucine, Leucine, Lysine, Methionine, Phenylalanine, Threonine, Tryptophan, Valine.</p>
+<ul><li>Q: List the 6 conditionally essential amino acids.</li></ul>
+<p>A: Arginine, Cysteine, Glutamine, Glycine, Proline, Tyrosine.</p>
+<ul><li>Q: What are the BCAAs and where are they primarily metabolised?</li></ul>
+<p>A: Leucine, Isoleucine, Valine — metabolised mainly in skeletal muscle by BCAT.</p>
+<ul><li>Q: What is the role of leucine in muscle?</li></ul>
+<p>A: Activates mTORC1 → ↑ muscle protein synthesis, ↓ proteolysis.</p>
+<ul><li>Q: What is biological value (BV) and the reference standard?</li></ul>
+<p>A: % of absorbed protein retained. Reference = 100. Egg 100, Whey 104, Casein 91, Soy 91, Wheat 54.</p>
+<ul><li>Q: Difference between PDCAAS and DIAAS?</li></ul>
+<p>A: PDCAAS uses faecal digestibility, capped at 1.0 (FDA). DIAAS uses ileal digestibility, no cap, can exceed 1.0 (FAO 2013).</p>
+<ul><li>Q: Limiting amino acid in wheat? In legumes?</li></ul>
+<p>A: Wheat → Lysine. Legumes → Methionine.</p>
+<ul><li>Q: What does the F-75 formula provide vs F-100 in SAM management?</li></ul>
+<p>A: F-75 = 75 kcal/100 mL, 0.9 g protein/100 mL (stabilisation). F-100 = 100 kcal/100 mL, 2.9 g protein/100 mL (rehabilitation).</p>
+<ul><li>Q: Why does kwashiorkor cause a fatty liver?</li></ul>
+<p>A: ApoB-100 deficiency (↓ apoprotein synthesis) → failure of VLDL assembly/secretion → triglycerides accumulate.</p>
+<ul><li>Q: Name 4 clinical states producing negative nitrogen balance.</li></ul>
+<p>A: Trauma, burns, sepsis, prolonged fasting/hyperthyroidism/advanced cancer.</p>
+<ul><li>Q: What is the daily protein RDA in (a) healthy adult, (b) elderly (&gt;65 y), (c) athlete, (d) pre-dialysis CKD, (e) maintenance haemodialysis?</li></ul>
+<p>A: 0.8; 1.0–1.5; 1.2–2.0; 0.6–0.8; 1.0–1.2 g/kg/day.</p>
+<ul><li>Q: What is the goal plasma Phe level in classical PKU (children)?</li></ul>
+<p>A: 120–360 µmol/L (2–6 mg/dL).</p>
+<ul><li>Q: What is the enzyme defect in classic MSUD?</li></ul>
+<p>A: Branched-chain α-keto acid dehydrogenase (BCKDH) complex.</p>
+<ul><li>Q: What is the direction of lens subluxation in homocystinuria?</li></ul>
+<p>A: <b>Downward</b> (Marfan = upward).</p>
+<ul><li>Q: Name the 6 enzymes of the urea cycle.</li></ul>
+<p>A: CPS1, OTC, ASS, ASL, Arginase, N-acetylglutamate synthase.</p>
+<ul><li>Q: What are the two nitrogen-scavenger drugs used in acute hyperammonaemia?</li></ul>
+<p>A: Sodium benzoate (→ hippurate) and sodium phenylbutyrate/phenylacetate (→ phenylacetyl-glutamine).</p>
+<ul><li>Q: Why are BCAA-enriched formulae used in hepatic encephalopathy?</li></ul>
+<p>A: They reduce aromatic AA (Phe, Tyr, Trp) competition at the blood–brain barrier; decrease brain false neurotransmitters; may improve mental status and reduce recurrence.</p>
+<ul><li>Q: What is the energy yield of protein per gram?</li></ul>
+<p>A: 4 kcal/g (17 kJ/g) gross, but ~3 kcal/g net (≈ 1 kcal lost in urea synthesis).</p>
+<ul><li>Q: What is the limiting AA in egg compared with human requirement?</li></ul>
+<p>A: None — egg is the classical reference (no limiting AA); slightly low in tryptophan by modern standards but otherwise complete.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — Mixed-diet Kjeldahl factor is 6.25 (based on 16% N content). Specific food factors differ.</li><li><b>C</b> — 0.8 × 70 = 56 g. Easy arithmetic exam question.</li><li><b>C</b> — Whey 104; egg 100; casein 91; soy 91; wheat 54. Whey has the highest BV in practice.</li><li><b>B</b> — DIAAS uses ileal (not faecal) digestibility, has no upper cap, and is the current FAO standard. (A is reversed; C and D are wrong; E is wrong.)</li><li><b>B</b> — Oedema, fatty liver, sparse hair, hypoalbuminaemia = kwashiorkor. Marasmus has no oedema.</li><li><b>B</b> — Once on chronic haemodialysis, protein INCREASES to 1.0–1.2 g/kg to replace dialytic losses.</li><li><b>B</b> — Lentils (legume — limiting Met) + rice (cereal — limiting Lys) are mutually complementary.</li><li><b>B</b> — LIV = Leucine, Isoleucine, Valine.</li><li><b>C</b> — Tyrosine cannot be made from Phe in PKU → becomes conditionally essential.</li><li><b>D</b> — Major burns need 1.5–2.0 g/kg (some protocols 2.0–2.5). Higher than 2.5 g/kg has no added benefit and is not routinely recommended.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — MSUD with BCKDH deficiency → accumulation of Leu, Ile, Val. Sweet odour is from sotolone (from α-ketoacids).</li><li><b>B</b> — CBS deficiency → low-methionine, high-cysteine, B6 trial (50% responsive), betaine to remethylate Hcy.</li><li><b>B</b> — Pre-dialysis CKD: 0.6–0.8 g/kg/day. Once on dialysis, increase to 1.0–1.2 g/kg.</li><li><b>C</b> — HE management: 0.8–1.0 g/kg of plant-dairy/BCAA-enriched protein; not zero protein (worsens sarcopenia).</li><li><b>C</b> — Elderly with sarcopenia: 1.0–1.5 g/kg, 25–30 g protein/meal with 2.5–3 g leucine, plus resistance exercise.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Protein — Requirements, Functions &amp; Disorders</b> is a <b>high-priority 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Know the 9 essential AAs, the 6.25 g protein per g N conversion, protein quality scores (BV, PDCAAS, DIAAS), the RDA across populations, the difference between kwashiorkor and marasmus, and the dietary management of PKU, MSUD, homocystinuria, urea cycle disorders, CKD, and hepatic encephalopathy. <b>Exam focus:</b> N balance calculations, BV/PDCAAS/DIAAS comparisons, complementary plant proteins, BCAA metabolism, inborn errors, protein needs in CKD/dialysis/burns/ICU/elderly. <b>Clinical relevance:</b> Every hospital day — surgical, ICU, medical, paediatric, obstetric, geriatric — has a protein prescription decision. Mastery prevents refeeding syndrome, optimises recovery, and avoids PEM in vulnerable groups.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented | Status: complete</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Protein Requirements Functions Disorders · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

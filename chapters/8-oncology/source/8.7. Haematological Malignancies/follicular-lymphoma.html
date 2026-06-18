@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Follicular Lymphoma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.7. HAEMATOLOGICAL MALIGNANCIES</span>
+      <div class="h1">Follicular Lymphoma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>FLIPI / FLIPI-2 / POD24</b> for risk stratification</li><li>[ ] Select management strategy: <b>Watch &amp; Wait</b> vs <b>Rituximab +/- Chemo</b> based on GELF criteria</li><li>[ ] Apply <b>POD24</b> as key prognostic marker for survival</li><li>[ ] Manage <b>transformation to DLBCL</b> (biopsy confirmation, R-CHOP + ASCT)</li><li>[ ] Apply <b>maintenance Rituximab</b> (2-year) / <b>Obinutuzumab maintenance</b> (GALLIUM)</li><li>[ ] Recognise <b>transformation to DLBCL</b> and manage appropriately</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Indolent B-cell lymphoma** — **Follicular growth pattern**, **BCL2::IGH t(14;18)** translocation</td></tr><tr><td>**Incidence**</td><td>**~3-4/100,000/year** — **Most common indolent NHL (20-30%)**</td></tr><tr><td>**Peak Age**</td><td>**60-65 years**</td></tr><tr><td>**Sex Ratio**</td><td>**F > M** (slight)</td></tr><tr><td>**Aetiology**</td><td>**BCL2::IGH t(14;18)** (85-90%), **BCL6, EZH2, CREBBP, KMT2D, TNFRSF14 mutations**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Histology & Grading (WHO)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Centroblasts per HPF (×400)</th><th>Clinical Behaviour</th></tr><tr><td>-------</td><td>----------------------------</td><td>-------------------</td></tr><tr><td>**Grade 1**</td><td>**0-5**</td><td>**Indolent**, pure follicular pattern</td></tr><tr><td>**Grade 2**</td><td>**6-15**</td><td>**Indolent**, mixed follicular/diffuse</td></tr><tr><td>**Grade 3A**</td><td>**16-50**</td><td>**Intermediate**, may behave aggressively</td></tr><tr><td>**Grade 3B**</td><td>**>50**</td><td>**Aggressive** — **Treat as DLBCL** (R-CHOP)</td></tr></table>
+<div class="callout">[!critical] <b>Grade 3A = Indolent-like (Rituximab + Chemo)</b>; <b>Grade 3B = DLBCL (R-CHOP)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Prognostication — **FLIPI / FLIPI-2 / POD24**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">FLIPI (Follicular Lymphoma International Prognostic Index)</div>
+<table class="ctable"><tr><th>Factor</th><th>Points</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Age >60y**</td><td>1</td></tr><tr><td>**Stage III/IV**</td><td>1</td></tr><tr><td>**Hb <12 g/dL**</td><td>1</td></tr><tr><td>**LDH >ULN**</td><td>1</td></tr><tr><td>**>4 Nodal Sites**</td><td>1</td></tr></table>
+<table class="ctable"><tr><th>FLIPI Score</th><th>Risk Group</th><th>5-yr OS</th></tr><tr><td>-------------</td><td>------------</td><td>---------</td></tr><tr><td>**0-1**</td><td>Low</td><td>**~90%**</td></tr><tr><td>**2**</td><td>Intermediate</td><td>**~75%**</td></tr><tr><td>**3-5**</td><td>High</td><td>**~50%**</td></tr></table>
+<div class="sub-h">FLIPI-2 (Improved)</div>
+<table class="ctable"><tr><th>Factor</th><th>Points</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Age >60y**</td><td>1</td></tr><tr><td>**Hb <12 g/dL**</td><td>1</td></tr><tr><td>**BM Involvement**</td><td>1</td></tr><tr><td>**Longest Diameter >6cm**</td><td>1</td></tr><tr><td>**Elevated β2-Microglobulin**</td><td>1</td></tr></table>
+<div class="sub-h">POD24 (Progression of Disease within 24 months) — **Strongest Prognostic Marker**</div>
+<table class="ctable"><tr><th>Definition</th><th>**Progression within 24 months of 1L Rituximab-containing chemoimmunotherapy**</th></tr><tr><td>------------</td><td>---------------------------------------------------------------</td></tr><tr><td>**Incidence**</td><td>**~20%**</td></tr><tr><td>**5-yr OS**</td><td>**POD24: ~50%** vs **No POD24: ~90%**</td></tr><tr><td>**Management**</td><td>**POD24 = High-risk** → Consider clinical trial / Early Allo-HSCT in CR2</td></tr></table>
+<div class="callout">[!critical] <b>POD24 = Most Powerful Prognostic Factor</b> — <b>Guides early therapeutic decisions</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management — **Watch & Wait vs Treatment**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications for Treatment (GELF / Groupe d'Etude des Lymphomes Folliculaires)</div>
+<table class="ctable"><tr><th>Criteria</th><th>Description</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**G**</td><td>**B-symptoms** (Fever, Night sweats, Weight loss >10%)</td></tr><tr><td>**E**</td><td>**Evidence of progression** (Bulk >7cm, Rapid growth, B-symptoms)</td></tr><tr><td>**L**</td><td>**Lymphadenopathy** affecting organ function (Ureteric obstruction, Hydronephrosis, SVC syndrome)</td></tr><tr><td>**F**</td><td>**Cytopenias** (Hb <10, Plt <100, Neutrophils <1.0) OR **Splenomegaly**</td></tr></table>
+<div class="callout">[!critical] <b>Asymptomatic, Low Tumour Burden = Watch &amp; Wait</b> (No OS difference vs Immediate Rx)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Treatment Algorithms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line Treatment</div>
+<table class="ctable"><tr><th>Scenario</th><th>Preferred Regimen</th></tr><tr><td>----------</td><td>-------------------</td></tr><tr><td>**Asymptomatic, Low Burden**</td><td>**Watch & Wait** (Active surveillance q3-6mo)</td></tr><tr><td>**Symptomatic / GELF Criteria**</td><td>**R-Bendamustine (BR) ×6 cycles** (STiL, NHL13) — **Preferred**</td></tr><tr><td>**Bulky / High Bulk**</td><td>**R-CHOP ×6** or **R-CVP ×6** (if unfit for Benda)</td></tr><tr><td>**Young / Fit / High-Risk FLIPI**</td><td>**R-CHOP ×6** (consider if high bulk/rapid progression)</td></tr><tr><td>**Maintenance**</td><td>**Rituximab 375mg/m² q2mo ×2 years** (PRIMA, ECOG1496) — **PFS Benefit, No OS Benefit**</td></tr><tr><td>**Obinutuzumab Maintenance**</td><td>**GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint** — **Superior PFS vs Rituximab**</td></tr></table>
+<div class="callout">[!critical] <b>Maintenance Rituximab 2 years = Standard</b> after R-Benda / R-CHOP / R-CVP — <b>PFS benefit, No OS benefit</b> (PRIMA, ECOG1496)</div>
+<div class="sub-h">Relapsed/Refractory FL</div>
+<table class="ctable"><tr><th>Line</th><th>Regimen</th><th>Key Trials</th></tr><tr><td>------</td><td>---------</td><td>------------</td></tr><tr><td>**1st Relapse**</td><td>**Rituximab + Lenalidomide (R2)** (AUGMENT)</td><td>**AUGMENT** (R2 > R-Chemo)</td></tr><tr><td></td><td>**Rituximab + Lenalidomide**</td><td>**RELEVANCE** (R2 vs R-Chemo)</td></tr><tr><td></td><td>**PI3K Inhibitor** (Idelalisib, Copanlisib, Duvelisib)</td><td>**Idelalisib (Feel**3), **Copanlisib (CHRONOS-1)**</td></tr><tr><td></td><td>**BTK Inhibitor** (Zanubrutinib, Ibrutinib)</td><td>**Zanubrutinib (ROSEWOOD)**</td></tr><tr><td>**2nd+ Relapse**</td><td>**CAR-T (CD19: Tisagenlecleucel, Axicabtagene)**</td><td>**ZUMA-5, ELARA**</td></tr><tr><td></td><td>**Bispecifics (Epcoritamab, Mosunetuzumab)**</td><td>**EPCOR, GO29781**</td></tr><tr><td></td><td>**EZH2 Inhibitor** (Tazemetostat)</td><td>**EZH2mut** (Tazemetostat)</td></tr></table>
+<div class="callout">[!critical] <b>POD24 = Consider Clinical Trial / Early Allo-HSCT in CR2</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Transformation to DLBCL — **Critical Complication**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>**15-30%** over 10-15 years</td></tr><tr><td>**Clinical**</td><td>**Rapidly growing nodes, B-symptoms, LDH↑↑, Extranodal**</td></tr><tr><td>**Diagnosis**</td><td>**Excisional Biopsy** — **DLBCL morphology, Clonally related (IGH rearrangement)**</td></tr><tr><td>**Treatment**</td><td>**R-CHOP ×6** → **Auto-HSCT if Chemosensitive**</td></tr><tr><td>**Prognosis**</td><td>**Poor** (Median OS ~1-2 years)</td></tr></table>
+<div class="callout">[!critical] <b>Transformation to DLBCL = Poor Prognosis</b> — <b>R-CHOP ×6 → Auto-HSCT if Chemosensitive</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Diagnosis**</td><td>**BCL2::IGH t(14;18)** (85-90%), **Grade 1-3A (Indolent), 3B (Aggressive = DLBCL)**</td></tr><tr><td>**FLIPI / FLIPI-2**</td><td>**Age >60, Stage III/IV, Hb<12, Nodal>6cm, β2M↑** → Risk stratification</td></tr><tr><td>**POD24**</td><td>**Progression <24mo post-1L R-chemo** → **20% incidence, 5-yr OS ~50%**</td></tr><tr><td>**GELF Criteria**</td><td>**G** (B-symptoms), **E** (Progression/Bulk), **L** (Organ compromise), **F** (Cytopenias/Splenomegaly)</td></tr><tr><td>**Watch & Wait**</td><td>**Asymptomatic, Low Bulk** — **No OS difference vs Early Rx**</td></tr><tr><td>**1L Treatment**</td><td>**R-Bendamustine ×6 (STiL)** — **Preferred**; **R-CHOP** if bulky/high-risk</td></tr><tr><td>**Maintenance**</td><td>**Rituximab q2mo x2yr** (PRIMA): **PFS benefit, No OS benefit**</td></tr><tr><td>**Obinutuzumab**</td><td>**GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint > Rituximab**</td></tr><tr><td>**POD24**</td><td>**Progression <24mo post-1L** → **20% incidence, 5-yr OS ~50%**</td></tr><tr><td>**Transformation**</td><td>**15-30% → DLBCL** → **R-CHOP + Auto-HSCT if Chemosensitive**</td></tr><tr><td>**Relapsed**</td><td>**R2 (Rituximab + Lenalidomide)**, **PI3Ki (Idelalisib, Copanlisib)**, **BTKi (Zanubrutinib)**, **CAR-T, Bispecifics**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>"What is the hallmark genetic abnormality in Follicular Lymphoma?"</td><td>**t(14;18) BCL2::IGH translocation** (85-90%) — anti-apoptotic BCL2 overexpression</td></tr><tr><td>"What is FLIPI and how is it calculated?"</td><td>**5 factors**: Age>60, Stage III/IV, Hb<12, LDH>ULN, >4 Nodal sites — **0-1 Low, 2 Intermediate, 3-5 High**</td></tr><tr><td>"What is FLIPI-2 and how does it differ?"</td><td>**Age>60, Hb<12, BM involvement, Diameter>6cm, β2M↑** — More accurate than FLIPI</td></tr><tr><td>"What are the GELF criteria for treatment initiation in FL?"</td><td>**G** = B-symptoms; **E** = Evidence of progression; **L** = Lymphadenopathy causing organ compromise; **F** = Cytopenias/Splenomegaly</td></tr><tr><td>"What is POD24 and why is it important?"</td><td>**Progression within 24 months of 1L R-chemo** — **20% incidence, 5-yr OS ~50%** (vs 90% if no POD24) — strongest prognostic factor</td></tr><tr><td>"How do you manage asymptomatic FL with low tumour burden?"</td><td>**Watch & Wait** — Active surveillance q3-6mo; **No OS difference vs Early Rx**</td></tr><tr><td>"What is the standard first-line treatment for symptomatic FL?"</td><td>**Rituximab + Bendamustine ×6 cycles** (STiL trial) — Preferred over R-CHOP</td></tr><tr><td>"What is the role of maintenance rituximab?"</td><td>**Rituximab 375mg/m2 q2mo ×2 years** → **PFS benefit (PRIMA, ECOG1496), No OS benefit**</td></tr><tr><td>"What is the management of transformed FL to DLBCL?"</td><td>**R-CHOP ×6** → **Auto-HSCT if chemosensitive** — Poor prognosis (Median OS ~1-2yr)</td></tr><tr><td>"What are the PI3K inhibitors used in relapsed FL?"</td><td>**Idelalisib, Copanlisib, Duvelisib** — Toxicity: Colitis, Hepatitis, Pneumonitis, Infections</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**FL vs DLBCL**</td><td>**FL = Indolent, follicular pattern, BCL2::IGH+, Watch & Wait option**; **DLBCL = Aggressive, diffuse, R-CHOP standard**</td></tr><tr><td>**Grade 3A vs 3B**</td><td>**Grade 3A**: 16-50 centroblasts/HPF, **Indolent-like** (Rituximab + Chemo); **Grade 3B**: >50 centroblasts, **Aggressive, Treat as DLBCL (R-CHOP)**</td></tr><tr><td>**Watch & Wait vs Early Rx**</td><td>**Watch & Wait = No OS difference**, for asymptomatic low-burden; **Arterial Rx** only if GELF criteria met</td></tr><tr><td>**FLIPI vs FLIPI-2**</td><td>**FLIPI**: Age, Stage, Hb, LDH, Nodal sites; **FLIPI-2**: Age, Hb, BM involvement, Diameter>6cm, β2M — **More accurate**</td></tr><tr><td>**POD24 vs Early Relapse**</td><td>**POD24** = Relapse <24mo post-1L R-chemo; **Early Relapse** = <12mo — Both adverse but POD24 more validated</td></tr><tr><td>**Rituximab Maintenance**</td><td>**2 years q2mo** — **PFS benefit only, No OS benefit** (PRIMA, ECOG1496); **Obi Maint (GALLIUM) > Ritux Maint**</td></tr></table>
+<p><b>Mnemonic: FLIPI = "AGE STAGE HB LDH NODES"</b></p>
+<ul><li><b>A</b>ge &gt;60</li><li><b>S</b>tage III/IV</li><li><b>H</b>b &lt;12</li><li><b>L</b>DH &gt;ULN</li><li><b>N</b>odes &gt;4</li></ul>
+<p><b>Mnemonic: FLIPI-2 = "AGE HB BM SIZE B2M"</b></p>
+<ul><li><b>A</b>ge &gt;60</li><li><b>H</b>b &lt;12</li><li><b>B</b>M involvement</li><li><b>S</b>ize &gt;6cm</li><li><b>B</b>2M elevated</li></ul>
+<p><b>Mnemonic: GELF = "G-E-L-F"</b></p>
+<ul><li><b>G</b> = <b>B-symptoms</b></li><li><b>E</b> = Progression/Bulk</li><li><b>L</b> = Lymphadenopathy (organ compromise)</li><li><b>F</b> = Cytopenias/Splenomegaly</li></ul>
+<p><b>Mnemonic: POD24 = "PROGRESSION IN 24 MONTHS = BAD"</b></p>
+<ul><li><b>P</b>rogression</li><li><b>O</b>f</li><li><b>D</b>isease in</li><li><b>2</b>4 months = <b>Poor prognosis</b></li></ul>
+<p><b>Mnemonic: FL Grade = "1-2 INDOLENT, 3A INTERMEDIATE, 3B = DLBCL"</b></p>
+<ul><li><b>1-2</b> = Indolent</li><li><b>3A</b> = Intermediate (Rituximab + Chemo)</li><li><b>3B</b> = <b>DLBCL</b> (R-CHOP)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Follicular Lymphoma)) Genetics BCL2_IGH_t14_18 EZH2_CREBBP_KMT2D TNFRSF14 Grading Grade_1_2_Indolent 3A_Intermediate 3B_DLBCL Prognostication FLIPI FLIPI_2 POD24 GELF_Criteria G_B_Symptoms E_Progression L_Organ_Compromise F_Cytopenias Management Watch_Wait R_Bendamustine R_CHOP Maintenance_Rituximab Obinutuzumab_GALLIUM Relapse R2_Rituximab_Lenalidomide PI3Ki_Idelalisib_Copanlisib BTKi_Zanubrutinib CAR_T Bispecifics Transformation DLBCL R_CHOP Auto_HSCT Poor_Prognosis </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Genetics**</td><td>**t(14;18) BCL2::IGH** (85-90%) — Anti-apoptotic</td></tr><tr><td>**Grading**</td><td>**1-2**: Indolent; **3A**: Intermediate; **3B** = **DLBCL** (R-CHOP)</td></tr><tr><td>**FLIPI**</td><td>**Age>60, Stage III/IV, Hb<12, LDH↑, Nodes>4** — 0-1 Low, 2 Int, 3-5 High</td></tr><tr><td>**FLIPI-2**</td><td>**Age>60, Hb<12, BM+, Size>6cm, β2M↑**</td></tr><tr><td>**POD24**</td><td>**Progression <24mo post-1L** — **20% incidence, 5-yr OS ~50%**</td></tr><tr><td>**GELF Criteria**</td><td>**G**: B-symptoms; **E**: Progression; **L**: Organ compromise; **F**: Cytopenias/Splenomegaly</td></tr><tr><td>**Watch & Wait**</td><td>**Asymptomatic, Low Burden** — No OS difference vs Early Rx</td></tr><tr><td>**1L Treatment**</td><td>**R-Bendamustine ×6 (STiL)** — Preferred; **R-CHOP** if bulky/high-risk</td></tr><tr><td>**Maintenance**</td><td>**Rituximab q2mo ×2yr** (PFS benefit, No OS benefit); **Obi-GALLIUM > Ritux**</td></tr><tr><td>**POD24**</td><td>**Progression <24mo** → **20% incidence, OS ~50%**</td></tr><tr><td>**Transformation**</td><td>**15-30% → DLBCL** → **R-CHOP + Auto-HSCT**</td></tr><tr><td>**Relapsed**</td><td>**R2 (R-Len), PI3Ki, BTKi, CAR-T, Bispecifics**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>FLIPI/FLIPI-2 Application</td><td></td><td></td></tr><tr><td>POD24 Recognition</td><td></td><td></td></tr><tr><td>GELF Criteria Application</td><td></td><td></td></tr><tr><td>Watch & Wait vs Treatment</td><td></td><td></td></tr><tr><td>Maintenance Strategy</td><td></td><td></td></tr><tr><td>Transformation Management</td><td></td><td></td></tr><tr><td>Relapsed FL Management</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Parent Topic Group</b>: [[Lymphomas]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Diffuse Large B-Cell Lymphoma (DLBCL)]] · [[Hodgkin Lymphoma]] · [[PET-CT in Lymphoma]] · [[Oncologic Emergencies Overview]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Follicular Lymphoma (FL) (Diagnosis), which statement is correct? A. <b>BCL2::IGH t(14 B. </b>BCL2::IGH - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>BCL2::IGH t(14;18)</b> (85-90%), <b>Grade 1-3A (Indolent), 3B (Aggressive = DLBCL)</b></li></ul>
+<p><b>2.</b> Regarding Follicular Lymphoma (FL) (FLIPI / FLIPI-2), which statement is correct? A. <b>Age &gt;60, Stage III/IV, Hb&lt;12, Nodal&gt;6cm, β2M↑</b> → Risk stratification B. **Age - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Age &gt;60, Stage III/IV, Hb&lt;12, Nodal&gt;6cm, β2M↑</b> → Risk stratification</li></ul>
+<p><b>3.</b> Regarding Follicular Lymphoma (FL) (POD24), which statement is correct? A. <b>Progression &lt;24mo post-1L R-chemo</b> → <b>20% incidence, 5-yr OS ~50%</b> B. **Progression - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Progression &lt;24mo post-1L R-chemo</b> → <b>20% incidence, 5-yr OS ~50%</b></li></ul>
+<p><b>4.</b> Regarding Follicular Lymphoma (FL) (GELF Criteria), which statement is correct? A. <b>G</b> (B-symptoms), <b>E</b> (Progression/Bulk), <b>L</b> (Organ compromise), <b>F</b> (Cytopenias/Splenomega B. <b>G</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>G</b> (B-symptoms), <b>E</b> (Progression/Bulk), <b>L</b> (Organ compromise), <b>F</b> (Cytopenias/Splenomegaly)</li></ul>
+<p><b>5.</b> Regarding Follicular Lymphoma (FL) (Watch &amp; Wait), which statement is correct? A. <b>Asymptomatic, Low Bulk</b> B. **Asymptomatic, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Asymptomatic, Low Bulk</b> — <b>No OS difference vs Early Rx</b></li></ul>
+<p><b>6.</b> Regarding Follicular Lymphoma (FL) (1L Treatment), which statement is correct? A. <b>R-Bendamustine ×6 (STiL)</b> B. **R-Bendamustine - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>R-Bendamustine ×6 (STiL)</b> — <b>Preferred</b>; <b>R-CHOP</b> if bulky/high-risk</li></ul>
+<p><b>7.</b> Regarding Follicular Lymphoma (FL) (Maintenance), which statement is correct? A. <b>Rituximab q2mo x2yr</b> (PRIMA): <b>PFS benefit, No OS benefit</b> B. **Rituximab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Rituximab q2mo x2yr</b> (PRIMA): <b>PFS benefit, No OS benefit</b></li></ul>
+<p><b>8.</b> Regarding Follicular Lymphoma (FL) (Obinutuzumab), which statement is correct? A. <b>GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint &gt; Rituximab</b> B. **GALLIUM: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint &gt; Rituximab</b></li></ul>
+<p><b>9.</b> Regarding Follicular Lymphoma (FL) (POD24), which statement is correct? A. <b>Progression &lt;24mo post-1L</b> → <b>20% incidence, 5-yr OS ~50%</b> B. **Progression - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Progression &lt;24mo post-1L</b> → <b>20% incidence, 5-yr OS ~50%</b></li></ul>
+<p><b>10.</b> Regarding Follicular Lymphoma (FL) (Transformation), which statement is correct? A. <b>15-30% → DLBCL</b> → <b>R-CHOP + Auto-HSCT if Chemosensitive</b> B. **15-30% - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>15-30% → DLBCL</b> → <b>R-CHOP + Auto-HSCT if Chemosensitive</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. **BCL2::IGH t(14</li><li>B. **BCL2::IGH (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>BCL2::IGH t(14;18)</b> (85-90%), <b>Grade 1-3A (Indolent), 3B (Aggressive = DLBCL)</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Age &gt;60, Stage III/IV, Hb&lt;12, Nodal&gt;6cm, β2M↑</b> → Risk stratification</li><li>B. **Age (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Age &gt;60, Stage III/IV, Hb&lt;12, Nodal&gt;6cm, β2M↑</b> → Risk stratification</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Progression &lt;24mo post-1L R-chemo</b> → <b>20% incidence, 5-yr OS ~50%</b></li><li>B. **Progression (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Progression &lt;24mo post-1L R-chemo</b> → <b>20% incidence, 5-yr OS ~50%</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>G</b> (B-symptoms), <b>E</b> (Progression/Bulk), <b>L</b> (Organ compromise), <b>F</b> (Cytopenias/Splenomega</li><li>B. <b>G</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>G</b> (B-symptoms), <b>E</b> (Progression/Bulk), <b>L</b> (Organ compromise), <b>F</b> (Cytopenias/Splenomegaly)</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Asymptomatic, Low Bulk</b></li><li>B. **Asymptomatic, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Asymptomatic, Low Bulk</b> — <b>No OS difference vs Early Rx</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>R-Bendamustine ×6 (STiL)</b></li><li>B. **R-Bendamustine (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>R-Bendamustine ×6 (STiL)</b> — <b>Preferred</b>; <b>R-CHOP</b> if bulky/high-risk</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Rituximab q2mo x2yr</b> (PRIMA): <b>PFS benefit, No OS benefit</b></li><li>B. **Rituximab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Rituximab q2mo x2yr</b> (PRIMA): <b>PFS benefit, No OS benefit</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint &gt; Rituximab</b></li><li>B. **GALLIUM: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint &gt; Rituximab</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Progression &lt;24mo post-1L</b> → <b>20% incidence, 5-yr OS ~50%</b></li><li>B. **Progression (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Progression &lt;24mo post-1L</b> → <b>20% incidence, 5-yr OS ~50%</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>15-30% → DLBCL</b> → <b>R-CHOP + Auto-HSCT if Chemosensitive</b></li><li>B. **15-30% (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>15-30% → DLBCL</b> → <b>R-CHOP + Auto-HSCT if Chemosensitive</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Diagnosis? <b>A1:</b> BCL2::IGH t(14;18) (85-90%), Grade 1-3A (Indolent), 3B (Aggressive = DLBCL)</p>
+<p><b>Q2:</b> FLIPI / FLIPI-2? <b>A2:</b> Age &gt;60, Stage III/IV, Hb&lt;12, Nodal&gt;6cm, β2M↑ → Risk stratification</p>
+<p><b>Q3:</b> POD24? <b>A3:</b> Progression &lt;24mo post-1L R-chemo → 20% incidence, 5-yr OS ~50%</p>
+<p><b>Q4:</b> GELF Criteria? <b>A4:</b> G (B-symptoms), E (Progression/Bulk), L (Organ compromise), F (Cytopenias/Splenomegaly)</p>
+<p><b>Q5:</b> Watch &amp; Wait? <b>A5:</b> Asymptomatic, Low Bulk — No OS difference vs Early Rx</p>
+<p><b>Q6:</b> 1L Treatment? <b>A6:</b> R-Bendamustine ×6 (STiL) — Preferred; R-CHOP if bulky/high-risk</p>
+<p><b>Q7:</b> Maintenance? <b>A7:</b> Rituximab q2mo x2yr (PRIMA): PFS benefit, No OS benefit</p>
+<p><b>Q8:</b> Obinutuzumab? <b>A8:</b> GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint &gt; Rituximab</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Diagnosis</td><td>BCL2::IGH t(14;18) (85-90%), Grade 1-3A (Indolent), 3B (Aggressive = DLBCL)</td></tr><tr><td>2</td><td>A</td><td>FLIPI / FLIPI-2</td><td>Age >60, Stage III/IV, Hb<12, Nodal>6cm, β2M↑ → Risk stratification</td></tr><tr><td>3</td><td>A</td><td>POD24</td><td>Progression <24mo post-1L R-chemo → 20% incidence, 5-yr OS ~50%</td></tr><tr><td>4</td><td>A</td><td>GELF Criteria</td><td>G (B-symptoms), E (Progression/Bulk), L (Organ compromise), F (Cytopenias/Splenomegaly)</td></tr><tr><td>5</td><td>A</td><td>Watch & Wait</td><td>Asymptomatic, Low Bulk — No OS difference vs Early Rx</td></tr><tr><td>6</td><td>A</td><td>1L Treatment</td><td>R-Bendamustine ×6 (STiL) — Preferred; R-CHOP if bulky/high-risk</td></tr><tr><td>7</td><td>A</td><td>Maintenance</td><td>Rituximab q2mo x2yr (PRIMA): PFS benefit, No OS benefit</td></tr><tr><td>8</td><td>A</td><td>Obinutuzumab</td><td>GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint > Rituximab</td></tr><tr><td>9</td><td>A</td><td>POD24</td><td>Progression <24mo post-1L → 20% incidence, 5-yr OS ~50%</td></tr><tr><td>10</td><td>A</td><td>Transformation</td><td>15-30% → DLBCL → R-CHOP + Auto-HSCT if Chemosensitive</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Diagnosis</td><td>BCL2::IGH t(14;18) (85-90%), Grade 1-3A (Indolent), 3B (Aggressive = DLBCL)</td></tr><tr><td>2</td><td>A</td><td>FLIPI / FLIPI-2</td><td>Age >60, Stage III/IV, Hb<12, Nodal>6cm, β2M↑ → Risk stratification</td></tr><tr><td>3</td><td>A</td><td>POD24</td><td>Progression <24mo post-1L R-chemo → 20% incidence, 5-yr OS ~50%</td></tr><tr><td>4</td><td>A</td><td>GELF Criteria</td><td>G (B-symptoms), E (Progression/Bulk), L (Organ compromise), F (Cytopenias/Splenomegaly)</td></tr><tr><td>5</td><td>A</td><td>Watch & Wait</td><td>Asymptomatic, Low Bulk — No OS difference vs Early Rx</td></tr><tr><td>6</td><td>A</td><td>1L Treatment</td><td>R-Bendamustine ×6 (STiL) — Preferred; R-CHOP if bulky/high-risk</td></tr><tr><td>7</td><td>A</td><td>Maintenance</td><td>Rituximab q2mo x2yr (PRIMA): PFS benefit, No OS benefit</td></tr><tr><td>8</td><td>A</td><td>Obinutuzumab</td><td>GALLIUM: Obinutuzumab + Bendamustine → Obinutuzumab Maint > Rituximab</td></tr><tr><td>9</td><td>A</td><td>POD24</td><td>Progression <24mo post-1L → 20% incidence, 5-yr OS ~50%</td></tr><tr><td>10</td><td>A</td><td>Transformation</td><td>15-30% → DLBCL → R-CHOP + Auto-HSCT if Chemosensitive</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Follicular Lymphoma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

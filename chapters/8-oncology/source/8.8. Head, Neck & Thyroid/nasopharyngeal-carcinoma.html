@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nasopharyngeal Carcinoma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.8. HEAD, NECK & THYROID</span>
+      <div class="h1">Nasopharyngeal Carcinoma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe <b>EBV association</b> and <b>WHO Histological Types</b> (I, II, III)</li><li>[ ] Apply <b>AJCC 8th Staging</b> for NPC</li><li>[ ] Prescribe <b>RT (IMRT) for Stage I</b>; <b>CCRT (Cisplatin) for Stage II-IVA</b></li><li>[ ] Evaluate <b>Induction Chemotherapy (TPF/GemCis)</b> for Locally Advanced</li><li>[ ] Understand <b>Adjuvant Chemo Controversy</b> (Intergroup 0099 vs Modern RT)</li><li>[ ] Sequence <b>Metastatic Therapy</b>: <b>Gem/Cis 1L</b> → <b>ICI (PD-1) 2L</b></li><li>[ ] Use <b>Plasma EBV DNA</b> for Diagnosis, Staging, Response Assessment, Surveillance</li><li>[ ] Manage <b>RT Toxicities</b>: Xerostomia, Trismus, Cranial Neuropathies, Hearing Loss, Hypothyroidism</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant tumour of nasopharyngeal epithelium; **Strong EBV Association** (Type II/III)</td></tr><tr><td>**Incidence**</td><td>**Endemic**: SE Asia (Southern China, Hong Kong), North Africa, Arctic; **UK: ~250/year** (Rare, migrant populations)</td></tr><tr><td>**Prevalence**</td><td>5-year OS: Stage I ~90%, Stage II ~80%, Stage III ~70%, Stage IV ~50%</td></tr><tr><td>**Peak Age**</td><td>**Bimodal**: 15-25 (EBV-driven), 50-60 (Environmental)</td></tr><tr><td>**Sex Ratio**</td><td>**M:F = 2-3:1**</td></tr><tr><td>**Risk Factors**</td><td>**EBV Infection** (Necessary but not sufficient), **Genetic** (HLA-A*0207, GWAS loci), **Diet** (Salted fish, Nitrosamines), **Smoking**, **Occupational** (Formaldehyde, Wood dust)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[EBV Infection (Latency II)] --&gt; B[EBV Proteins Expressed] B --&gt; B1[<b>LMP1</b> (Latent Membrane Protein 1) — <b>Constitutive CD40 Signaling</b> → NF-κB, JAK/STAT, PI3K/AKT] B --&gt; B2[<b>LMP2A</b> — <b>BCR Mimic</b> → PI3K/AKT, Survival] B --&gt; B3[<b>EBNA1</b> — <b>Episome Maintenance</b>, Immune Evasion] B1 --&gt; C[<b>Oncogenic Pathways</b>] B2 --&gt; C B3 --&gt; C C --&gt; D1[Cell Proliferation, Anti-Apoptosis] C --&gt; D2[Angiogenesis (VEGF)] C --&gt; D3[Invasion, Metastasis (MMPs)] C --&gt; D4[Immune Evasion (PD-L1↑, HLA↓)] </code>``</p>
+<div class="sub-h">WHO Histological Classification</div>
+<table class="ctable"><tr><th>Type</th><th>Description</th><th>EBV</th><th>Frequency (Endemic)</th><th>Prognosis</th></tr><tr><td>------</td><td>-------------</td><td>-----</td><td>---------------------</td><td>-----------</td></tr><tr><td>**Type I: Keratinising SCC**</td><td>Well-differentiated, Keratin pearls, Intercellular bridges</td><td>**Negative**</td><td>**<5%**</td><td>Worse (Radioresistant)</td></tr><tr><td>**Type II: Non-keratinising**</td><td>Differentiated, No keratin, Syncytial</td><td>**Positive**</td><td>**~15-20%**</td><td>Good</td></tr><tr><td>**Type III: Undifferentiated**</td><td>**Lymphoepithelioma**, Sheets of cells, Dense lymphoid stroma</td><td>**Positive**</td><td>**~75-80%**</td><td>**Best (Most Radiosensitive)**</td></tr></table>
+<p><b>Key: Type II/III = "WHO Type II/III" = Non-keratinising = EBV+ = Radiosensitive</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Staging (AJCC 8th Edition)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>T Stage</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>T1</td><td>**Tumour confined to Nasopharynx** (Mucosa, Soft Palate)</td></tr><tr><td>T2</td><td>**Parapharyngeal Space** Extension</td></tr><tr><td>T3</td><td>**Bony Invasion** (Clivus, Pterygoid Plates, Sphenoid, Cervical Vertebrae)</td></tr><tr><td>T4</td><td>**Intracranial Extension** (Cranial Nerves, Cavernous Sinus, Brain) / **Infratemporal Fossa** / **Hypopharynx** / **Orbit**</td></tr></table>
+<table class="ctable"><tr><th>N Stage</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>N1</td><td>**Unilateral** Cervical LN ≤6cm (Level II, III, Retropharyngeal)</td></tr><tr><td>N2</td><td>**Bilateral** Cervical LN ≤6cm</td></tr><tr><td>N3</td><td>**LN >6cm** OR **Supraclavicular Fossa** (Level IV, V)</td></tr></table>
+<table class="ctable"><tr><th>Stage Grouping</th><th></th></tr><tr><td>----------------</td><td>---</td></tr><tr><td>**I**</td><td>T1 N0 M0</td></tr><tr><td>**II**</td><td>T1 N1 M0 / T2 N0-1 M0</td></tr><tr><td>**III**</td><td>T1-2 N2 M0 / T3 N0-2 M0</td></tr><tr><td>**IVA**</td><td>T4 N0-2 M0 / T1-4 N3 M0</td></tr><tr><td>**IVB**</td><td>Any T Any N M1</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**Nasopharyngoscopy + Biopsy**</td><td>**Diagnosis**</td><td>**WHO Type, EBV (EBER ISH)**</td></tr><tr><td>**MRI Head & Neck**</td><td>**Gold Standard Local Staging**</td><td>T Stage (Bony, Intracranial, Parapharyngeal), N Stage (Retropharyngeal Nodes Critical)</td></tr><tr><td>**PET-CT**</td><td>**Distant Staging, Nodal Metabolic Activity**</td><td>**Superior to CT for Occult Mets**</td></tr><tr><td>**CT Chest/Abd/Pelvis**</td><td>Alternative if PET unavailable</td><td></td></tr><tr><td>**Plasma EBV DNA**</td><td>**Tumour Marker** — Quantitative PCR</td><td>**Diagnosis, Staging, Response, Surveillance** — **Correlates with Tumour Burden**</td></tr><tr><td>**EBER ISH (Biopsy)**</td><td>**Confirm EBV Association**</td><td>**Positive in Type II/III**</td></tr><tr><td>**Audiometry**</td><td>Baseline (Cisplatin Ototoxicity)</td><td>Pre-treatment</td></tr><tr><td>**Dental Assessment**</td><td>Pre-RT (Osteoradionecrosis Risk)</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stage I (T1 N0)</div>
+<p>``<code>mermaid flowchart TD A[Stage I NPC (T1 N0)] --&gt; B[<b>Primary RT Alone (IMRT)</b>] B --&gt; B1[<b>IMRT: 66-70Gy/33-35fx to Primary</b>] B --&gt; B2[<b>Elective Neck RT: 50-54Gy (Level II-III, Retropharyngeal)</b>] B --&gt; B3[<b>Parotid Sparing</b> (Mean Dose &lt;26Gy) — <b>Critical for Xerostomia</b>] B1 --&gt; C[<b>Surveillance: EBV DNA q3mo ×2yr, q6mo ×3yr</b>] </code>``</p>
+<div class="sub-h">Stage II-IVA (Locally Advanced)</div>
+<p>``<code>mermaid flowchart TD A[Stage II-IVA NPC] --&gt; B{Induction Chemo?} B --&gt;|<b>High Volume / N3 / T4</b>| C[<b>Induction Chemotherapy</b>] C --&gt; C1[<b>TPF (Docetaxel 75 + Cisplatin 75 + 5-FU 750 d1-5 q3w ×2-3 cycles)</b>&lt;br/&gt;<b>OR Gemcitabine + Cisplatin (GemCis ×3 cycles)</b>&lt;br/&gt;<b>NARCTEC / ZHONGSHAN Trials: Induction + CCRT &gt; CCRT Alone</b>] C --&gt; D B --&gt;|<b>Standard</b>| D[<b>CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT</b>] D --&gt; D1[<b>IMRT: 70Gy/35fx to Primary Gross / 63Gy to CTV / 54Gy to Elective Neck</b>] D --&gt; D2[<b>Concurrent Cisplatin: Day 1, 22, 43 (q3w ×3)</b>] D --&gt; E[<b>Adjuvant Chemo: Cisplatin + 5-FU ×3 cycles</b>&lt;br/&gt;<b>Controversial: Intergroup 0099 Benefit, Modern IMRT Diminishes</b>&lt;br/&gt;<b>RTOG 0225 / NPC-9902: No OS Benefit with Modern RT</b>] D1 --&gt; F[<b>Response Assessment: EBV DNA at 3mo, MRI/PET-CT at 3-6mo</b>] D2 --&gt; F </code>``</p>
+<div class="sub-h">Metastatic / Recurrent</div>
+<p>``<code>mermaid flowchart TD A[Metastatic/Recurrent NPC] --&gt; B[<b>1L: Gemcitabine + Cisplatin</b> (Standard)] B --&gt; B1[<b>Gemcitabine 1000mg/m² d1,8 + Cisplatin 80mg/m² d1 q3w</b>&lt;br/&gt;<b>OR Cisplatin 80 + 5-FU</b> (Older)] B1 --&gt; C[<b>2L: Immune Checkpoint Inhibitors</b>] C --&gt; C1[<b>Pembrolizumab</b> (KEYNOTE-028/055) — <b>PD-L1+ OR EBV+</b>] C --&gt; C2[<b>Nivolumab</b> (CheckMate 331) — <b>All-comers</b>] C --&gt; C3[<b>Tislelizumab</b> (JUPITER-02) — <b>PD-1, Chinese Approval</b>] C --&gt; C4[<b>Toripalimab</b> (POLARIS-02) — <b>PD-1</b>] C1 --&gt; D[<b>Later Lines: Clinical Trial / Paclitaxel / Capecitabine / Bevacizumab</b>] </code>``</p>
+<div class="sub-h">EBV DNA Monitoring</div>
+<table class="ctable"><tr><th>Timepoint</th><th>Clinical Utility</th></tr><tr><td>-----------</td><td>-----------------</td></tr><tr><td>**Pre-treatment**</td><td>**Prognostic**: High EBV DNA → Worse OS; **Staging**: Detects Occult Mets</td></tr><tr><td>**Mid-RT**</td><td>**Early Response**: ↓EBV DNA predicts CR</td></tr><tr><td>**Post-RT (3mo)**</td><td>**Remission Confirmation**: Undetectable = CR</td></tr><tr><td>**Surveillance**</td><td>**q3mo ×2yr, q6mo ×3yr**; **Rise → Early Relapse Detection**</td></tr><tr><td>**Post-Salvage**</td><td>**Monitor Response**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**EBV Association**</td><td>**Latency II**: LMP1, LMP2A, EBNA1 → NF-κB, PI3K/AKT, Immune Evasion</td></tr><tr><td>**WHO Types**</td><td>**Type I: Keratinising (EBV-)**, **Type II: Non-keratinising (EBV+)**, **Type III: Undifferentiated (EBV+)** — **II/III = 90% Endemic**</td></tr><tr><td>**Staging**</td><td>**T1: Nasopharynx**, **T2: Parapharyngeal**, **T3: Bony**, **T4: Intracranial**; **N1: Unilateral**, **N2: Bilateral**, **N3: >6cm/SCF**</td></tr><tr><td>**Stage I**</td><td>**RT Alone (IMRT)** — **66-70Gy**; **Parotid Sparing**</td></tr><tr><td>**Stage II-IVA**</td><td>**CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy** — **Standard**</td></tr><tr><td>**Induction Chemo**</td><td>**TPF / GemCis** for **High Volume / N3 / T4** — **NARCTEC/ZHONGSHAN: Benefit**</td></tr><tr><td>**Adjuvant Chemo**</td><td>**Cisplatin + 5-FU ×3 cycles** — **Intergroup 0099 Benefit** BUT **Modern RT (IMRT) Diminishes Benefit** (RTOG 0225, NPC-9902)</td></tr><tr><td>**Metastatic 1L**</td><td>**Gemcitabine + Cisplatin** — **Standard**</td></tr><tr><td>**Metastatic 2L**</td><td>**PD-1 Inhibitors** (Pembro, Nivo, Tislelizumab, Toripalimab) — **EBV+ High PD-L1**</td></tr><tr><td>**EBV DNA**</td><td>**Plasma EBV DNA = Tumour Marker** — **Dx, Staging, Response, Surveillance**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**40M, Nasopharyngeal mass, Type III Undifferentiated, EBV+. T2 N1. Stage?**</td><td>**Stage II** (T2 N1 M0).</td></tr><tr><td>**Stage I NPC — Treatment?**</td><td>**RT Alone (IMRT) 66-70Gy to Primary + 50-54Gy Elective Neck** — **No Chemo**.</td></tr><tr><td>**Locally Advanced NPC — Standard CCRT?**</td><td>**Cisplatin 100mg/m² q3w ×3 (D1, 22, 43) + IMRT 70Gy/35fx** — **RTOG 0225 / Standard**.</td></tr><tr><td>**Induction Chemo — When, Regimens?**</td><td>**High Volume / N3 / T4**; **TPF (Doc/Cis/5-FU) ×2-3 cycles** OR **GemCis ×3 cycles** — **NARCTEC, ZHONGSHAN: Induction+CCRT > CCRT Alone**.</td></tr><tr><td>**Adjuvant Chemo — Intergroup 0099 vs Modern RT?**</td><td>**Intergroup 0099 (2D/3D RT): CCRT + Adj Cis/5-FU → OS Benefit**; **RTOG 0225 / NPC-9902 (IMRT): Adj Chemo NO OS Benefit** — **Controversial, Often Omitted**.</td></tr><tr><td>**Metastatic NPC 1L?**</td><td>**Gemcitabine 1000mg/m² d1,8 + Cisplatin 80mg/m² d1 q3w** — **Standard**.</td></tr><tr><td>**2L Metastatic NPC — ICI Options?**</td><td>**Pembrolizumab, Nivolumab, Tislelizumab, Toripalimab** — **PD-1 Inhibitors, EBV+ High Response**.</td></tr><tr><td>**EBV DNA Monitoring — When, Utility?**</td><td>**Pre: Prognostic/Staging; Mid-RT: Early Response; Post-RT 3mo: Remission; Surveillance: q3mo×2yr, q6mo×3yr — Rise = Relapse**.</td></tr><tr><td>**RT Toxicities NPC — Major?**</td><td>**Xerostomia (Parotid Sparing IMRT)**, **Trismus**, **Cranial Neuropathies (CN IX-XII)**, **Hearing Loss (Cisplatin + RT)**, **Hypothyroidism**, **Osteoradionecrosis** (Dental).</td></tr><tr><td>**WHO Type I vs II/III — Prognosis?**</td><td>**Type I (Keratinising, EBV-): Radioresistant, Worse**; **Type II/III (Non-keratinising, EBV+): Radiosensitive, Better**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Adjuvant Chemo — Give or Not?**</td><td>**Intergroup 0099 (Old RT): YES**; **Modern IMRT Trials (RTOG 0225, NPC-9902): NO clear benefit**; **Current Practice: Often Omitted or Individualised**</td></tr><tr><td>**Induction Chemo — TPF vs GemCis**</td><td>**TPF: More Toxic (Neutropenia, Diarrhoea)**; **GemCis: Better Tolerated, Similar Efficacy** — **GemCis Preferred in Many Centres**</td></tr><tr><td>**EBV DNA vs Clinical Staging**</td><td>**EBV DNA Detects Occult Mets** (Upstages ~10-15%); **Used for Prognosis, Not Formal Staging (AJCC)**</td></tr><tr><td>**Type I vs II/III RT Sensitivity**</td><td>**Type I: Keratinising, EBV-, Radioresistant, Higher Dose/Boost Needed**; **Type II/III: Non-keratinising, EBV+, Highly Radiosensitive**</td></tr><tr><td>**Cisplatin Schedule in CCRT**</td><td>**100mg/m² q3w ×3 (Days 1, 22, 43)** — **Standard**; **Weekly Cisplatin 40mg/m²** used in some protocols (less nephrotoxicity)</td></tr><tr><td>**Parotid Sparing IMRT**</td><td>**Mean Dose <26Gy** → **Significantly Reduces Xerostomia** — **Critical Quality Metric**</td></tr></table>
+<p><b>Mnemonic: NPC-EBV</b></p>
+<ul><li><b>N</b>asopharyngeal: <b>EBV-Associated</b> (Latency II: LMP1/2A, EBNA1)</li><li><b>P</b>athology: <b>WHO I (Keratinising, EBV-)</b>, <b>II (Non-keratinising, EBV+)</b>, <b>III (Undifferentiated, EBV+)</b></li><li><b>C</b>CRT: <b>Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy</b> (Stage II-IVA)</li><li><b>E</b>arly Stage I: <b>RT Alone (IMRT)</b> — No Chemo</li><li><b>B</b>iopsy: <b>EBER ISH Confirms EBV</b> (Type II/III)</li><li><b>V</b>iral DNA: <b>Plasma EBV DNA</b> — Dx, Staging, Response, Surveillance</li><li><b>I</b>nduction: <b>TPF / GemCis</b> for High Volume/N3/T4 (NARCTEC)</li><li><b>D</b>istrict: <b>Endemic SE Asia, N Africa</b></li><li><b>A</b>djuvant Chemo: <b>Controversial</b> (Intergroup 0099 YES, IMRT NO)</li><li><b>M</b>etastatic: <b>Gem/Cis 1L</b> → <b>PD-1 Inhibitors 2L</b></li><li><b>R</b>T Technique: <b>IMRT Parotid Sparing (&lt;26Gy Mean)</b></li><li><b>T</b>oxicities: <b>Xerostomia, Trismus, Cranial Neuropathies, Hearing, Hypothyroidism</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Nasopharyngeal Carcinoma)) Aetiology EBV Latency II (LMP1, LMP2A, EBNA1) Genetic (HLA), Diet (Salted Fish) Histology Type I: Keratinising (EBV-) - Worse Type II: Non-keratinising (EBV+) Type III: Undifferentiated (EBV+) - Best Staging AJCC 8th T1-4 (Nasopharynx → Parapharyngeal → Bone → Intracranial) N1 (Unilateral) / N2 (Bilateral) / N3 (&gt;6cm/SCF) Stage I RT Alone (IMRT) 66-70Gy Stage II-IVA CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy Induction: TPF / GemCis (High Volume/N3/T4) Adjuvant Chemo Controversial: Intergroup 0099 YES / IMRT NO Metastatic 1L: Gem/Cis 2L: PD-1 Inhibitors (Pembro, Nivo, Tislelizumab) Monitoring Plasma EBV DNA (Prognostic, Response, Surveillance) RT Toxicities Xerostomia (Parotid Sparing), Trismus, CN, Hearing, Hypothyroid </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**EBV**</td><td>Latency II: LMP1(LMP2A) → NF-κB/PI3K; EBNA1</td></tr><tr><td>**WHO**</td><td>I: Keratinising (EBV-); II/III: Non-kerat/Undiff (EBV+)</td></tr><tr><td>**Staging**</td><td>T1-4, N1-3; Stage I (T1N0), II (T1N1/T2N0-1), III (T3/N2), IVA (T4/N3), IVB (M1)</td></tr><tr><td>**Stage I**</td><td>RT Alone (IMRT) 66-70Gy</td></tr><tr><td>**LA**</td><td>CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy</td></tr><tr><td>**Induction**</td><td>TPF / GemCis for High Volume/N3/T4</td></tr><tr><td>**Adjuvant**</td><td>Controversial (IMRT diminishes benefit)</td></tr><tr><td>**Metastatic**</td><td>Gem/Cis 1L → PD-1 Inhibitors 2L</td></tr><tr><td>**EBV DNA**</td><td>Dx, Staging, Response, Surveillance</td></tr><tr><td>**IMRT**</td><td>Parotid Sparing <26Gy Mean</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>WHO Histology Types</td><td></td><td></td></tr><tr><td>AJCC 8th Staging</td><td></td><td></td></tr><tr><td>CCRT Regimen</td><td></td><td></td></tr><tr><td>Induction Chemo Indications</td><td></td><td></td></tr><tr><td>Adjuvant Chemo Controversy</td><td></td><td></td></tr><tr><td>EBV DNA Monitoring Schedule</td><td></td><td></td></tr><tr><td>Metastatic Sequencing</td><td></td><td></td></tr><tr><td>RT Toxicities</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Oral Cavity &amp; Oropharyngeal]], [[Laryngeal &amp; Hypopharyngeal]], [[EBV-associated Cancers]], [[IMRT]], [[Gemcitabine+Cisplatin]], [[PD-1 Inhibitors NPC]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Nasopharyngeal Carcinoma (NPC) (EBV Association), which statement is correct? A. <b>Latency II</b>: LMP1, LMP2A, EBNA1 → NF-κB, PI3K/AKT, Immune Evasion B. **Latency - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Latency II</b>: LMP1, LMP2A, EBNA1 → NF-κB, PI3K/AKT, Immune Evasion</li></ul>
+<p><b>2.</b> Regarding Nasopharyngeal Carcinoma (NPC) (WHO Types), which statement is correct? A. <b>Type I: Keratinising (EBV-)</b>, <b>Type II: Non-keratinising (EBV+)</b>, <b>Type III: Undifferentiated B. </b>Type - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Type I: Keratinising (EBV-)</b>, <b>Type II: Non-keratinising (EBV+)</b>, <b>Type III: Undifferentiated (EBV+)</b> — **II/III ...</li></ul>
+<p><b>3.</b> Regarding Nasopharyngeal Carcinoma (NPC) (Staging), which statement is correct? A. <b>T1: Nasopharynx</b>, <b>T2: Parapharyngeal</b>, <b>T3: Bony</b>, <b>T4: Intracranial</b> B. **T1: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>T1: Nasopharynx</b>, <b>T2: Parapharyngeal</b>, <b>T3: Bony</b>, <b>T4: Intracranial</b>; <b>N1: Unilateral</b>, <b>N2: Bilateral</b>, ...</li></ul>
+<p><b>4.</b> Regarding Nasopharyngeal Carcinoma (NPC) (Stage I), which statement is correct? A. <b>RT Alone (IMRT)</b> B. **RT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RT Alone (IMRT)</b> — <b>66-70Gy</b>; <b>Parotid Sparing</b></li></ul>
+<p><b>5.</b> Regarding Nasopharyngeal Carcinoma (NPC) (Stage II-IVA), which statement is correct? A. <b>CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy</b> B. **CCRT: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy</b> — <b>Standard</b></li></ul>
+<p><b>6.</b> Regarding Nasopharyngeal Carcinoma (NPC) (Induction Chemo), which statement is correct? A. <b>TPF / GemCis</b> for <b>High Volume / N3 / T4</b> B. **TPF - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>TPF / GemCis</b> for <b>High Volume / N3 / T4</b> — <b>NARCTEC/ZHONGSHAN: Benefit</b></li></ul>
+<p><b>7.</b> Regarding Nasopharyngeal Carcinoma (NPC) (Adjuvant Chemo), which statement is correct? A. <b>Cisplatin + 5-FU ×3 cycles</b> B. **Cisplatin - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Cisplatin + 5-FU ×3 cycles</b> — <b>Intergroup 0099 Benefit</b> BUT <b>Modern RT (IMRT) Diminishes Benefit</b> (RTOG 0225, NPC...</li></ul>
+<p><b>8.</b> Regarding Nasopharyngeal Carcinoma (NPC) (Metastatic 1L), which statement is correct? A. <b>Gemcitabine + Cisplatin</b> B. **Gemcitabine - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Gemcitabine + Cisplatin</b> — <b>Standard</b></li></ul>
+<p><b>9.</b> Regarding Nasopharyngeal Carcinoma (NPC) (Metastatic 2L), which statement is correct? A. <b>PD-1 Inhibitors</b> (Pembro, Nivo, Tislelizumab, Toripalimab) B. **PD-1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PD-1 Inhibitors</b> (Pembro, Nivo, Tislelizumab, Toripalimab) — <b>EBV+ High PD-L1</b></li></ul>
+<p><b>10.</b> Regarding Nasopharyngeal Carcinoma (NPC) (EBV DNA), which statement is correct? A. <b>Plasma EBV DNA = Tumour Marker</b> B. **Plasma - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Plasma EBV DNA = Tumour Marker</b> — <b>Dx, Staging, Response, Surveillance</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Latency II</b>: LMP1, LMP2A, EBNA1 → NF-κB, PI3K/AKT, Immune Evasion</li><li>B. **Latency (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Latency II</b>: LMP1, LMP2A, EBNA1 → NF-κB, PI3K/AKT, Immune Evasion</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Type I: Keratinising (EBV-)</b>, <b>Type II: Non-keratinising (EBV+)</b>, **Type III: Undifferentiated</li><li>B. **Type (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Type I: Keratinising (EBV-)</b>, <b>Type II: Non-keratinising (EBV+)</b>, <b>Type III: Undifferentiated (EBV+)</b> — **II/III ...</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>T1: Nasopharynx</b>, <b>T2: Parapharyngeal</b>, <b>T3: Bony</b>, <b>T4: Intracranial</b></li><li>B. **T1: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>T1: Nasopharynx</b>, <b>T2: Parapharyngeal</b>, <b>T3: Bony</b>, <b>T4: Intracranial</b>; <b>N1: Unilateral</b>, <b>N2: Bilateral</b>, ...</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>RT Alone (IMRT)</b></li><li>B. **RT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>RT Alone (IMRT)</b> — <b>66-70Gy</b>; <b>Parotid Sparing</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy</b></li><li>B. **CCRT: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy</b> — <b>Standard</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>TPF / GemCis</b> for <b>High Volume / N3 / T4</b></li><li>B. **TPF (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>TPF / GemCis</b> for <b>High Volume / N3 / T4</b> — <b>NARCTEC/ZHONGSHAN: Benefit</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Cisplatin + 5-FU ×3 cycles</b></li><li>B. **Cisplatin (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Cisplatin + 5-FU ×3 cycles</b> — <b>Intergroup 0099 Benefit</b> BUT <b>Modern RT (IMRT) Diminishes Benefit</b> (RTOG 0225, NPC...</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Gemcitabine + Cisplatin</b></li><li>B. **Gemcitabine (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Gemcitabine + Cisplatin</b> — <b>Standard</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>PD-1 Inhibitors</b> (Pembro, Nivo, Tislelizumab, Toripalimab)</li><li>B. **PD-1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>PD-1 Inhibitors</b> (Pembro, Nivo, Tislelizumab, Toripalimab) — <b>EBV+ High PD-L1</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Plasma EBV DNA = Tumour Marker</b></li><li>B. **Plasma (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Plasma EBV DNA = Tumour Marker</b> — <b>Dx, Staging, Response, Surveillance</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> EBV Association? <b>A1:</b> Latency II: LMP1, LMP2A, EBNA1 → NF-κB, PI3K/AKT, Immune Evasion</p>
+<p><b>Q2:</b> WHO Types? <b>A2:</b> Type I: Keratinising (EBV-), Type II: Non-keratinising (EBV+), Type III: Undifferentiated (EBV+) — II/III = 90% Endemic</p>
+<p><b>Q3:</b> Staging? <b>A3:</b> T1: Nasopharynx, T2: Parapharyngeal, T3: Bony, T4: Intracranial; N1: Unilateral, N2: Bilateral, N3: &gt;6cm/SCF</p>
+<p><b>Q4:</b> Stage I? <b>A4:</b> RT Alone (IMRT) — 66-70Gy; Parotid Sparing</p>
+<p><b>Q5:</b> Stage II-IVA? <b>A5:</b> CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy — Standard</p>
+<p><b>Q6:</b> Induction Chemo? <b>A6:</b> TPF / GemCis for High Volume / N3 / T4 — NARCTEC/ZHONGSHAN: Benefit</p>
+<p><b>Q7:</b> Adjuvant Chemo? <b>A7:</b> Cisplatin + 5-FU ×3 cycles — Intergroup 0099 Benefit BUT Modern RT (IMRT) Diminishes Benefit (RTOG 0225, NPC-9902)</p>
+<p><b>Q8:</b> Metastatic 1L? <b>A8:</b> Gemcitabine + Cisplatin — Standard</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>EBV Association</td><td>Latency II: LMP1, LMP2A, EBNA1 → NF-κB, PI3K/AKT, Immune Evasion</td></tr><tr><td>2</td><td>A</td><td>WHO Types</td><td>Type I: Keratinising (EBV-), Type II: Non-keratinising (EBV+), Type III: Undifferentiated (EBV+) — II/III = 90% Endemic</td></tr><tr><td>3</td><td>A</td><td>Staging</td><td>T1: Nasopharynx, T2: Parapharyngeal, T3: Bony, T4: Intracranial; N1: Unilateral, N2: Bilateral, N3: >6cm/SCF</td></tr><tr><td>4</td><td>A</td><td>Stage I</td><td>RT Alone (IMRT) — 66-70Gy; Parotid Sparing</td></tr><tr><td>5</td><td>A</td><td>Stage II-IVA</td><td>CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy — Standard</td></tr><tr><td>6</td><td>A</td><td>Induction Chemo</td><td>TPF / GemCis for High Volume / N3 / T4 — NARCTEC/ZHONGSHAN: Benefit</td></tr><tr><td>7</td><td>A</td><td>Adjuvant Chemo</td><td>Cisplatin + 5-FU ×3 cycles — Intergroup 0099 Benefit BUT Modern RT (IMRT) Diminishes Benefit (RTOG 0225, NPC-9902)</td></tr><tr><td>8</td><td>A</td><td>Metastatic 1L</td><td>Gemcitabine + Cisplatin — Standard</td></tr><tr><td>9</td><td>A</td><td>Metastatic 2L</td><td>PD-1 Inhibitors (Pembro, Nivo, Tislelizumab, Toripalimab) — EBV+ High PD-L1</td></tr><tr><td>10</td><td>A</td><td>EBV DNA</td><td>Plasma EBV DNA = Tumour Marker — Dx, Staging, Response, Surveillance</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>EBV Association</td><td>Latency II: LMP1, LMP2A, EBNA1 → NF-κB, PI3K/AKT, Immune Evasion</td></tr><tr><td>2</td><td>A</td><td>WHO Types</td><td>Type I: Keratinising (EBV-), Type II: Non-keratinising (EBV+), Type III: Undifferentiated (EBV+) — II/III = 90% Endemic</td></tr><tr><td>3</td><td>A</td><td>Staging</td><td>T1: Nasopharynx, T2: Parapharyngeal, T3: Bony, T4: Intracranial; N1: Unilateral, N2: Bilateral, N3: >6cm/SCF</td></tr><tr><td>4</td><td>A</td><td>Stage I</td><td>RT Alone (IMRT) — 66-70Gy; Parotid Sparing</td></tr><tr><td>5</td><td>A</td><td>Stage II-IVA</td><td>CCRT: Cisplatin 100mg/m² q3w ×3 + IMRT 70Gy — Standard</td></tr><tr><td>6</td><td>A</td><td>Induction Chemo</td><td>TPF / GemCis for High Volume / N3 / T4 — NARCTEC/ZHONGSHAN: Benefit</td></tr><tr><td>7</td><td>A</td><td>Adjuvant Chemo</td><td>Cisplatin + 5-FU ×3 cycles — Intergroup 0099 Benefit BUT Modern RT (IMRT) Diminishes Benefit (RTOG 0225, NPC-9902)</td></tr><tr><td>8</td><td>A</td><td>Metastatic 1L</td><td>Gemcitabine + Cisplatin — Standard</td></tr><tr><td>9</td><td>A</td><td>Metastatic 2L</td><td>PD-1 Inhibitors (Pembro, Nivo, Tislelizumab, Toripalimab) — EBV+ High PD-L1</td></tr><tr><td>10</td><td>A</td><td>EBV DNA</td><td>Plasma EBV DNA = Tumour Marker — Dx, Staging, Response, Surveillance</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Head, Neck &amp; Thyroid|Head, Neck &amp; Thyroid]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Nasopharyngeal Carcinoma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

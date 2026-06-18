@@ -1,0 +1,597 @@
+# Myeloproliferative Neoplasms (MPN): PV, ET, PMF
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **MPN = Clonal haematopoietic stem cell disorders**; **PV, ET, PMF**; **Driver mutations**: **JAK2 V617F (95% PV, 50-60% ET/PMF)**, **CALR (25-30% ET/PMF)**, **MPL (3-5% ET/PMF)**, **Triple-negative (10-15%)**; **PV**: **Erythrocytosis** (Hb>16.5/16 g/dL M/F), **Phlebotomy + Aspirin + Hydroxyurea**; **ET**: **Thrombocytosis** (Plt>450), **Aspirin + Hydroxyurea** (high-risk); **PMF**: **Fibrosis, Splenomegaly, Cytopenias**, **DIPSS/DIPSS-plus** for prognosis, **Ruxolitinib** (symptomatic splenomegaly, constitutional); **JAK Inhibitors**: Ruxolitinib (1L), Fedratinib (2L), Pacritinib (thrombocytopenia), Momelotinib (anaemia); **Transformation to AML** risk.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Identify **driver mutations**: **JAK2 V617F**, **CALR** (Type 1/2), **MPL**, **Triple-negative**
+- [ ] Apply **WHO 2022 diagnostic criteria** for PV, ET, PMF
+- [ ] Stratify **thrombosis risk**: **PV** (Age>60, Hx thrombosis), **ET** (IPSET-thrombosis: Age>60, Hx thrombosis, CV risk factors, JAK2 V617F)
+- [ ] Manage **PV**: **Phlebotomy (Hct<0.45)**, **Low-dose Aspirin**, **Cytoreduction (Hydroxyurea)** if high-risk
+- [ ] Manage **ET**: **Aspirin** (all), **Hydroxyurea** (high-risk per IPSET), **Anagrelide** (2L)
+- [ ] Apply **PMF prognostic scores**: **DIPSS** (clinical), **DIPSS-plus** (+ karyotype, platelets, transfusion)
+- [ ] Prescribe **JAK inhibitors**: **Ruxolitinib** (symptomatic splenomegaly/constitutional), **Fedratinib** (2L), **Pacritinib** (Plt<50), **Momelotinib** (anaemia)
+- [ ] Monitor **transformation to AML** (blasts ≥20% blood/BM)
+- [ ] Manage **complications**: Thrombosis, Bleeding (acquired von Willebrand in ET), Gout, Peptic ulcer
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | PV | ET | PMF |
+|---------|-----|-----|-----|
+| **Definition** | **Panmyelosis** — Erythrocytosis ± Leukocytosis ± Thrombocytosis | **Isolated Thrombocytosis** (Plt>450) | **Bone Marrow Fibrosis** + Splenomegaly + Leukoerythroblastosis |
+| **Incidence** | ~2-3/100,000 | ~1-2/100,000 | ~0.5-1/100,000 |
+| **Peak Age** | 60-70 | 50-60 | 60-70 |
+| **Sex Ratio** | M > F (1.5:1) | F > M (1.5:1) | M = F |
+| **Driver Mutations** | **JAK2 V617F 95%**, JAK2 Exon 12 3-5% | **JAK2 V617F 50-60%**, **CALR 25-30%**, **MPL 3-5%**, Triple-neg 10-15% | **JAK2 V617F 50-60%**, **CALR 25-30%**, **MPL 3-5%**, Triple-neg 10-15% |
+
+---
+
+## 3. Aetiology & Pathophysiology
+
+```mermaid
+flowchart LR
+    A[HSC Mutation] --> B[Constitutive JAK-STAT Activation]
+    B --> C1[JAK2 V617F (Pseudokinase domain)]
+    B --> C2[CALR Type 1 (52bp del) / Type 2 (5bp ins)]
+    B --> C3[MPL W515L/K (Thrombopoietin Receptor)]
+    C1 --> D[JAK2/STAT5, PI3K/AKT, RAS/ERK]
+    C2 --> D
+    C3 --> D
+    D --> E1[PV: Erythropoietin-independent Erythropoiesis]
+    D --> E2[ET: Thrombopoietin-independent Thrombopoiesis]
+    D --> E3[PMF: Megakaryocyte Dysplasia → Cytokines (TGF-β, PDGF) → Fibrosis]
+    E3 --> F[Osteosclerosis, Angiogenesis, Extramedullary Haematopoiesis]
+```
+
+### Molecular Profile
+
+| Mutation | PV | ET | PMF | Mechanism |
+|----------|-----|-----|-----|-----------|
+| **JAK2 V617F** | **95%** | **50-60%** | **50-60%** | Pseudokinase domain → Constitutive activation |
+| **JAK2 Exon 12** | **3-5%** | Rare | Rare | Similar to V617F |
+| **CALR Type 1 (52bp del)** | — | **~15%** | **~15%** | Loss of C-terminal KDEL → CALR mislocalisation → MPL activation |
+| **CALR Type 2 (5bp ins)** | — | **~10%** | **~10%** | Similar |
+| **MPL W515L/K** | — | **3-5%** | **3-5%** | TPO receptor → Constitutive dimerisation |
+| **Triple-negative** | <2% | **10-15%** | **10-15%** | Other: **CALR Type 1-like, JAK2 other, MPL other, CBL, LNK, SH2B3, TET2, ASXL1, EZH2, SRSF2, IDH1/2, U2AF1** |
+
+---
+
+## 4. Clinical Features
+
+| Feature | PV | ET | PMF |
+|---------|-----|-----|-----|
+| **Presentation** | Incidental (high Hb), **Headache**, **Dizziness**, **Pruritus (aquagenic)**, **Erythromelalgia** (burning hands/feet), **Gout**, **Peptic ulcer**, **Thrombosis** (arterial/venous) | Incidental (high Plt), **Thrombosis** (arterial/venous), **Bleeding** (acquired vWF defect if Plt>1000), **Headache**, **Microvascular** (erythromelalgia) | **Splenomegaly** (90%), **Constitutional** (night sweats, weight loss, fever), **Cytopenias** (Anaemia, Thrombocytopenia), **Leukoerythroblastosis** (teardrops, nucleated RBCs), **Bone pain**, **Gout**, **Portal hypertension** |
+| **Exam** | **Plethora**, **Splenomegaly** (70%) | **Splenomegaly** (20-30%) | **Massive Splenomegaly**, **Hepatomegaly**, **Pallor**, **Cachexia** |
+| **Complications** | **Thrombosis** (arterial: MI, CVA; venous: DVT, PE, Budd-Chiari), **Bleeding** (rare), **AML transformation** (2-5% at 10yr), **MF transformation** (10-15%) | **Thrombosis** (arterial > venous), **Bleeding** (acquired vWS if Plt>1000), **AML transformation** (1-3%), **MF transformation** (5-10%) | **AML transformation** (10-20%), **Portal HTN**, **Extramedullary haem** (spinal cord compression), **Infections** |
+
+---
+
+## 5. Diagnostic Criteria (WHO 2022)
+
+### Polycythemia Vera (PV)
+**Major Criteria:**
+1. **Hb >16.5 g/dL (M) / >16.0 g/dL (F)** OR **Hct >0.49 (M) / >0.48 (F)** OR **RCM >25% above mean**
+2. **BM: Hypercellular, Panmyelosis (Erythroid, Granulocytic, Megakaryocytic)**
+3. **JAK2 V617F or Exon 12 mutation**
+
+**Minor Criterion:**
+- Subnormal serum EPO
+
+**Diagnosis:** **All 3 Major** OR **Major 1+2 + Minor**
+
+### Essential Thrombocythemia (ET)
+**Major Criteria:**
+1. **Plt ≥450 ×10⁹/L**
+2. **BM: Megakaryocyte proliferation (large, mature, hyperlobated) — No significant erythroid/granulocytic**
+3. **Not meeting criteria for PV, PMF, CML, MDS, other myeloid neoplasm**
+4. **JAK2 / CALR / MPL mutation** (or **Triple-negative** + **No reactive thrombocytosis**)
+
+**Diagnosis:** **All 4 Major**
+
+### Primary Myelofibrosis (PMF)
+**Major Criteria:**
+1. **BM: Megakaryocyte proliferation + Atypia (hyperchromatic, bulbous) + Reticulin/Collagen Fibrosis (Grade 2-3)**
+2. **Not meeting criteria for PV, ET, CML, MDS, other myeloid neoplasm**
+3. **JAK2 / CALR / MPL mutation** (or **Triple-negative** + **No reactive fibrosis**)
+4. **≥1 Minor Criterion:** Anaemia, Leukoerythroblastosis, Splenomegaly, LDH↑, **Gene mutation panel**
+
+**Diagnosis:** **Major 1+2+3 + ≥1 Minor**
+
+**Prefibrotic PMF (Pre-PMF):** Major 1 (no/minimal fibrosis, Grade 0-1) + Major 2+3 + Minor
+
+---
+
+## 6. Risk Stratification & Prognosis
+
+### PV — Thrombosis Risk
+| Risk Group | Criteria | Management |
+|------------|----------|------------|
+| **Low** | Age ≤60, **No thrombosis history** | **Phlebotomy (Hct<0.45) + Aspirin 75-100mg** |
+| **High** | Age >60 **OR** Prior thrombosis | **Phlebotomy + Aspirin + Cytoreduction (Hydroxyurea)** |
+
+### ET — IPSET-thrombosis (Revised)
+| Risk Factor | Points |
+|-------------|--------|
+| Age >60 | 1 |
+| Prior thrombosis | 2 |
+| CV risk factors (HTN, DM, Smoking, Lipids) | 1 |
+| **JAK2 V617F mutation** | 1 |
+
+| Risk Group | Score | Annual Thrombosis Rate | Management |
+|------------|-------|------------------------|------------|
+| **Very Low** | 0 | ~0.7% | **Aspirin only** (if no CV risk) |
+| **Low** | 1 | ~1.5% | **Aspirin** |
+| **Intermediate** | 2 | ~3.5% | **Aspirin + Consider Cytoreduction** |
+| **High** | ≥3 | ~6.5% | **Aspirin + Cytoreduction (Hydroxyurea)** |
+
+### PMF — DIPSS / DIPSS-plus
+
+**DIPSS (Clinical)**
+| Factor | Points |
+|--------|--------|
+| Age >65 | 1 |
+| Hb <10 g/dL | 1 |
+| WBC >25 ×10⁹/L | 1 |
+| Circulating Blasts ≥1% | 1 |
+| Constitutional symptoms | 1 |
+
+**DIPSS-plus (Adds)**
+| Factor | Points |
+|--------|--------|
+| Platelets <100 | 1 |
+| Transfusion dependence | 1 |
+| Unfavourable karyotype (complex, -7, -5, i(17q), inv(3), 11q23, 12p-) | 1 |
+
+| Risk Group | Points (DIPSS) | Median OS |
+|------------|----------------|-----------|
+| **Low** | 0 | Not reached |
+| **Int-1** | 1 | ~7-8 yr |
+| **Int-2** | 2 | ~3-4 yr |
+| **High** | ≥3 | ~1.5-2 yr |
+
+---
+
+## 7. Management
+
+### PV
+
+```mermaid
+flowchart TD
+    A[PV Diagnosis] --> B[**Phlebotomy: Target Hct <0.45** (M) / <0.42 (F)<br/>**Weekly until target**, then maintenance]
+    B --> C[**Low-dose Aspirin 75-100mg daily**<br/>**All patients** (unless contraindicated)]
+    C --> D{Risk Group}
+    D -->|**Low Risk** (Age≤60, No thrombosis)| E[**Phlebotomy + Aspirin only**<br/>**No Cytoreduction**]
+    D -->|**High Risk** (Age>60 OR Thrombosis)| F[**Cytoreduction: Hydroxyurea 15-30mg/kg daily**<br/>**Target: Hct<0.45, Plt<400, WBC<10**<br/>**Alternative: Interferon-α (Peg-IFN) — Young, Pregnancy, HU intolerant**<br/>**Ruxolitinib** (if HU intolerant/resistant, symptomatic)]
+    E --> G[Surveillance: CBC q3mo, Hct, Ferritin, Uric acid]
+    F --> G
+```
+
+### ET
+
+```mermaid
+flowchart TD
+    A[ET Diagnosis] --> B[**Low-dose Aspirin 75-100mg daily**<br/>**All patients** (unless bleeding contraindication)]
+    B --> C{IPSET-thrombosis Risk}
+    C -->|**Very Low / Low** (Score 0-1)| D[**Aspirin only**<br/>**No Cytoreduction**]
+    C -->|**Intermediate** (Score 2)| E[**Aspirin + Consider Hydroxyurea**<br/>**If CV risk factors, JAK2+, Age>60**]
+    C -->|**High** (Score ≥3)| F[**Aspirin + Hydroxyurea** (Standard)<br/>**Dose: 15-30mg/kg daily**<br/>**Target: Plt<400, WBC<10**]
+    E --> G[**Anagrelide** (2L if HU intolerant)<br/>**PDE3 inhibitor** — **No leukaemogenicity**, **↑Headache, Palpitations, Fluid retention**<br/>**Avoid in CV disease**]
+    F --> G
+    G --> H[Surveillance: CBC q3mo, Cardiac monitoring if Anagrelide]
+```
+
+### PMF
+
+```mermaid
+flowchart TD
+    A[PMF Diagnosis] --> B{DIPSS-plus Risk}
+    B -->|**Low / Int-1**| C[**Observation / Watch & Wait**<br/>**Symptom-directed**: Folic acid, Allopurinol, Transfusions<br/>**Consider Clinical Trial**]
+    B -->|**Int-2 / High**| D[**Allo-HSCT Evaluation** (Age, HCT-CI, Donor, Disease risk)<br/>**Young (<65-70), Fit, Matched Donor → Allo-HSCT**<br/>**Only potentially curative**]
+    D --> E[**Symptomatic Splenomegaly / Constitutional Symptoms**]
+    E --> F[**Ruxolitinib 15-20mg BID** (COMFORT-I/II)<br/>**JAK1/2 inhibitor**<br/>**Spleen volume reduction ≥35% ~40-45%**<br/>**Symptom improvement (TSS) ~50%**<br/>**Dose adjust for Plt: 50-100→10mg BID, <50→Hold**]
+    F --> G[**Anaemia Management**]
+    G --> G1[**Transfusion support**]
+    G --> G2[**Erythropoietin** (if EPO low)]
+    G --> G3[**Luspatercept** (emerging, PACE-MF)]
+    G --> G4[**Momelotinib** (MOMENTUM) — **JAK2/ACVR1/ALK2 inhibitor** — **Improves Hb + Spleen**]
+    F --> H[**Thrombocytopenia Management**]
+    H --> H1[**Pacritinib** (PERSIST-1/2) — **JAK2/IRAK1 inhibitor** — **Safe if Plt<50**]
+    H --> H2[**Ruxolitinib dose reduce/hold**]
+```
+
+### JAK Inhibitors Comparison
+
+| Agent | Target | Indication | Key Feature |
+|-------|--------|------------|-------------|
+| **Ruxolitinib** | JAK1/2 | **1L PMF (Int-2/High), PV (HU-intolerant)** | **Standard**; Dose by Plt; **Anaemia/Thrombocytopenia** common |
+| **Fedratinib** | JAK2/FLT3 | **2L PMF (post-Ruxolitinib)** | **FREEDOM trial**; **GI toxicity, Wernicke risk (Thiamine)** |
+| **Pacritinib** | JAK2/IRAK1 | **PMF with Plt<50** | **PERSIST-1/2**; **No dose reduction for Plt** |
+| **Momelotinib** | JAK2/ACVR1/ALK2 | **PMF with Anaemia** | **MOMENTUM**; **Improves Hb + Spleen + Symptoms** |
+
+---
+
+## 8. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Driver Mutations** | **JAK2 V617F 95% PV, 50-60% ET/PMF**; **CALR 25-30% ET/PMF**; **MPL 3-5% ET/PMF**; **Triple-neg 10-15%** |
+| **PV Diagnosis** | **Hb/Hct↑ + BM Panmyelosis + JAK2**; **Minor: Low EPO** |
+| **ET Diagnosis** | **Plt≥450 + BM Megakaryocyte hyperplasia + JAK2/CALR/MPL (or triple-neg) + Exclude reactive** |
+| **PMF Diagnosis** | **BM Fibrosis (Grade 2-3) + Megakaryocyte atypia + JAK2/CALR/MPL + Minor criteria** |
+| **PV Risk** | **Low: Age≤60, No thrombosis** → Phleb + Aspirin; **High: Age>60 OR Thrombosis** → + Hydroxyurea |
+| **ET IPSET-thrombosis** | **Age>60, Prior thrombosis, CV risk, JAK2 V617F** → Score 0-4 → Risk groups |
+| **PMF Prognosis** | **DIPSS** (Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms); **DIPSS-plus** (+ Plt<100, Transfusion, Karyotype) |
+| **PV/ET Cytoreduction** | **Hydroxyurea 15-30mg/kg** — **Standard**; **Peg-IFN-α** (Young, Pregnancy); **Anagrelide** (ET 2L) |
+| **PMF JAK Inhibitors** | **Ruxolitinib** (1L symptomatic Int-2/High); **Fedratinib** (2L); **Pacritinib** (Plt<50); **Momelotinib** (Anaemia) |
+| **Allo-HSCT in PMF** | **Int-2/High, Young, Fit, Donor** — **Only curative** |
+| **Transformation** | **AML (Blasts≥20%)**: PV 2-5%, ET 1-3%, PMF 10-20% at 10yr; **MF transformation**: PV 10-15%, ET 5-10% |
+| **Acquired vWD in ET** | **Plt>1000** → **vWF cleavage by ADAMTS13** → **Bleeding** (mucosal); **Treat: Plt reduction** |
+
+---
+
+## 9. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **65M, Hb 190, Hct 0.58, WBC 15, Plt 500. JAK2 V617F+. BM: Panmyelosis. Diagnosis?** | **Polycythemia Vera** — **Major criteria: Hb↑, BM panmyelosis, JAK2 V617F+**. |
+| **PV, Age 65, no thrombosis — risk group, management?** | **High risk (Age>60)** → **Phlebotomy (Hct<0.45) + Aspirin + Hydroxyurea**. |
+| **ET, Age 55, Plt 800, JAK2 V617F+, no CV risk, no thrombosis — IPSET score?** | **Age≤60 (0) + No thrombosis (0) + No CV risk (0) + JAK2+ (1) = Score 1 (Low Risk)** → **Aspirin only**. |
+| **ET, Plt 1200, epistaxis — diagnosis, management?** | **Acquired von Willebrand Syndrome** (ADAMTS13 cleaves vWF at high Plt) → **Cytoreduction (Hydroxyurea) to lower Plt**; **Plateletpheresis** if acute bleed. |
+| **PMF, Age 70, Hb 85, WBC 30, Blasts 3%, Constitutional symptoms — DIPSS score?** | **Age>65 (1) + Hb<10 (1) + WBC>25 (1) + Blasts≥1% (1) + Symptoms (1) = 5 (High Risk)**. |
+| **PMF Int-2/High, symptomatic splenomegaly — 1L?** | **Ruxolitinib 15-20mg BID** (dose by Plt) — **Spleen reduction, Symptom improvement**. |
+| **PMF on Ruxolitinib, Plt drops to 30 — next JAK inhibitor?** | **Pacritinib** (JAK2/IRAK1) — **Safe at Plt<50** (PERSIST-1/2). |
+| **PMF with anaemia (Hb 80), symptomatic — JAK inhibitor?** | **Momelotinib** (JAK2/ACVR1/ALK2) — **MOMENTUM: Improves Hb + Spleen + Symptoms** (MOMENTUM). |
+| **Allo-HSCT in PMF — indication?** | **DIPSS Int-2/High**, **Age <65-70**, **HCT-CI ≤3**, **Matched Donor**, **Chemosensitive** — **Only curative**. |
+| **Transformation to AML — blast threshold?** | **Blasts ≥20% in PB or BM** — **PV 2-5%, ET 1-3%, PMF 10-20% at 10yr**. |
+
+---
+
+## 10. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **PV vs ET vs PMF — JAK2 frequency** | **PV: JAK2 V617F 95%** (Exon 12 3-5%); **ET/PMF: JAK2 50-60%, CALR 25-30%, MPL 3-5%, Triple-neg 10-15%** |
+| **PV Phlebotomy Target** | **Hct <0.45 (M)**, **<0.42 (F)** — **Not Hb**; **Ferritin monitoring** (iron deficiency limits erythropoiesis) |
+| **ET IPSET-thrombosis vs Old IPSET** | **Revised IPSET-thrombosis**: **Added CV risk factors + JAK2 V617F as separate point**; **Old IPSET**: Age>60, Thrombosis, JAK2 only |
+| **CALR Type 1 vs Type 2** | **Type 1 (52bp del)**: Better prognosis; **Type 2 (5bp ins)**: Similar; **Both → MPL activation via CALR mislocalisation** |
+| **Ruxolitinib vs Fedratinib vs Pacritinib vs Momelotinib** | **Ruxolitinib**: JAK1/2, 1L; **Fedratinib**: JAK2/FLT3, 2L (Wernicke risk); **Pacritinib**: JAK2/IRAK1, **Plt<50**; **Momelotinib**: JAK2/ACVR1/ALK2, **Anaemia** |
+| **PMF Allo-HSCT Timing** | **Int-2/High risk, Young (<65-70), Fit, Donor available** — **Do not wait for blast transformation**; **Bridge with Ruxolitinib** |
+| **Triple-negative MPN** | **No JAK2/CALR/MPL** → **Other mutations (CBL, LNK, SH2B3, TET2, ASXL1, EZH2, SRSF2, IDH, U2AF1)** — **Research** |
+| **Acquired vWD in ET** | **Plt>1000** → **ADAMTS13 cleaves vWF multimers** → **Type 2A vWD** → **Mucosal bleeding**; **Plt reduction curative** |
+
+**Mnemonic: MPN-JAK2**
+- **M**utations: **JAK2 V617F** (PV 95%, ET/PMF 50-60%), **CALR** (ET/PMF 25-30%), **MPL** (3-5%)
+- **P**V: **Hct↑**, **Phlebotomy <0.45**, **Aspirin**, **HU if High risk (Age>60/Thrombosis)**
+- **N**ET: **Plt≥450**, **Aspirin all**, **IPSET-thrombosis** (Age>60, Thrombosis, CV risk, JAK2) → **HU if High**
+- **J**AK Inhibitors: **Ruxolitinib** (1L PMF), **Fedratinib** (2L), **Pacritinib** (Plt<50), **Momelotinib** (Anaemia)
+- **A**llo-HSCT: **PMF Int-2/High, Young, Fit, Donor** — **Only Cure**
+- **K**aryotype: **DIPSS-plus** (Unfav karyotype = adverse)
+- **2**° AML: **Blasts≥20%** — PV 2-5%, ET 1-3%, PMF 10-20%
+- **A**cquired vWD: **ET Plt>1000** → **Bleeding** → **Plt reduction**
+
+---
+
+## 11. Mind Map
+
+```mermaid
+mindmap
+  root((Myeloproliferative Neoplasms))
+    Drivers
+      JAK2 V617F (PV 95%, ET/PMF 50-60%)
+      JAK2 Exon 12 (PV 3-5%)
+      CALR Type 1/2 (ET/PMF 25-30%)
+      MPL W515 (ET/PMF 3-5%)
+      Triple-negative (ET/PMF 10-15%)
+    PV
+      Diagnosis: Hb/Hct↑ + BM Panmyelosis + JAK2
+      Risk: Low (Age≤60, No Thromb) vs High (Age>60/Thromb)
+      Rx: Phleb Hct<0.45 + Aspirin ± HU
+    ET
+      Diagnosis: Plt≥450 + BM Mega hyperplasia + JAK2/CALR/MPL
+      IPSET-thrombosis: Age>60, Thromb, CV risk, JAK2
+      Rx: Aspirin all ± HU (High risk)
+    PMF
+      Diagnosis: BM Fibrosis G2-3 + Mega Atypia + JAK2/CALR/MPL
+      DIPSS: Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms
+      DIPSS-plus: + Plt<100, Transfusion, Karyotype
+      Rx: Ruxolitinib (Symptomatic Int-2/High), Allo-HSCT (Curative)
+    JAK Inhibitors
+      Ruxolitinib (JAK1/2, 1L)
+      Fedratinib (JAK2/FLT3, 2L)
+      Pacritinib (JAK2/IRAK1, Plt<50)
+      Momelotinib (JAK2/ACVR1/ALK2, Anaemia)
+    Complications
+      Thrombosis (PV/ET)
+      Bleeding (ET Plt>1000 → vWD)
+      AML Transformation (Blasts≥20%)
+      MF Transformation (PV/ET → PMF)
+```
+
+---
+
+## 12. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Drivers** | JAK2 V617F (PV 95%, ET/PMF 50-60%), CALR 25-30%, MPL 3-5% |
+| **PV** | Hct↑ + BM Panmyelosis + JAK2 → Phleb Hct<0.45 + Aspirin ± HU (Age>60/Thromb) |
+| **ET** | Plt≥450 + BM Mega + JAK2/CALR/MPL → Aspirin ± HU (IPSET-thrombosis) |
+| **PMF** | Fibrosis + Mega Atypia + JAK2/CALR/MPL → DIPSS/DIPSS-plus → Ruxolitinib (Sympt Int-2/High) |
+| **IPSET-thrombosis** | Age>60, Prior Thromb, CV risk, JAK2 V617F |
+| **JAK Inhibitors** | Ruxo (1L), Fedra (2L), Pacri (Plt<50), Momelo (Anaemia) |
+| **Allo-HSCT** | PMF Int-2/High, Young, Fit, Donor — Only Cure |
+| **Complications** | Thrombosis, Bleeding (ET vWD), AML (Blasts≥20%), MF Transform |
+
+---
+
+## 13. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 14. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Driver mutations & frequencies | | |
+| PV diagnostic criteria | | |
+| ET IPSET-thrombosis scoring | | |
+| PMF DIPSS/DIPSS-plus | | |
+| Cytoreduction criteria (PV/ET) | | |
+| JAK inhibitor selection | | |
+| Allo-HSCT indications | | |
+| Transformation risks | | |
+
+---
+
+## 15. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[JAK2 V617F]], [[CALR]], [[MPL]], [[Ruxolitinib]], [[Fedratinib]], [[Pacritinib]], [[Momelotinib]], [[DIPSS]], [[IPSET-thrombosis]], [[Hydroxyurea]], [[Phlebotomy]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 16. MCQs (10)
+
+
+**1.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (Driver Mutations), which statement is correct?
+   A. **JAK2 V617F 95% PV, 50-60% ET/PMF**
+   B. **JAK2 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **JAK2 V617F 95% PV, 50-60% ET/PMF**; **CALR 25-30% ET/PMF**; **MPL 3-5% ET/PMF**; **Triple-neg 10-15%**
+
+
+**2.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (PV Diagnosis), which statement is correct?
+   A. **Hb/Hct↑ + BM Panmyelosis + JAK2**
+   B. **Hb/Hct↑ - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Hb/Hct↑ + BM Panmyelosis + JAK2**; **Minor: Low EPO**
+
+
+**3.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (ET Diagnosis), which statement is correct?
+   A. **Plt≥450 + BM Megakaryocyte hyperplasia + JAK2/CALR/MPL (or triple-neg) + Exclude reactive**
+   B. **Plt≥450 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Plt≥450 + BM Megakaryocyte hyperplasia + JAK2/CALR/MPL (or triple-neg) + Exclude reactive**
+
+
+**4.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (PMF Diagnosis), which statement is correct?
+   A. **BM Fibrosis (Grade 2-3) + Megakaryocyte atypia + JAK2/CALR/MPL + Minor criteria**
+   B. **BM - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **BM Fibrosis (Grade 2-3) + Megakaryocyte atypia + JAK2/CALR/MPL + Minor criteria**
+
+
+**5.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (PV Risk), which statement is correct?
+   A. **Low: Age≤60, No thrombosis** → Phleb + Aspirin
+   B. **Low: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Low: Age≤60, No thrombosis** → Phleb + Aspirin; **High: Age>60 OR Thrombosis** → + Hydroxyurea
+
+
+**6.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (ET IPSET-thrombosis), which statement is correct?
+   A. **Age>60, Prior thrombosis, CV risk, JAK2 V617F** → Score 0-4 → Risk groups
+   B. **Age>60, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Age>60, Prior thrombosis, CV risk, JAK2 V617F** → Score 0-4 → Risk groups
+
+
+**7.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (PMF Prognosis), which statement is correct?
+   A. **DIPSS** (Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms)
+   B. **DIPSS** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **DIPSS** (Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms); **DIPSS-plus** (+ Plt<100, Transfusion, Karyotype)
+
+
+**8.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (PV/ET Cytoreduction), which statement is correct?
+   A. **Hydroxyurea 15-30mg/kg**
+   B. **Hydroxyurea - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Hydroxyurea 15-30mg/kg** — **Standard**; **Peg-IFN-α** (Young, Pregnancy); **Anagrelide** (ET 2L)
+
+
+**9.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (PMF JAK Inhibitors), which statement is correct?
+   A. **Ruxolitinib** (1L symptomatic Int-2/High)
+   B. **Ruxolitinib** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Ruxolitinib** (1L symptomatic Int-2/High); **Fedratinib** (2L); **Pacritinib** (Plt<50); **Momelotinib** (Anaemia)
+
+
+**10.** Regarding Myeloproliferative Neoplasms (MPN): PV, ET, PMF (Allo-HSCT in PMF), which statement is correct?
+   A. **Int-2/High, Young, Fit, Donor**
+   B. **Int-2/High, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Int-2/High, Young, Fit, Donor** — **Only curative**
+
+
+## 17. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **JAK2 V617F 95% PV, 50-60% ET/PMF**
+   - B. **JAK2 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **JAK2 V617F 95% PV, 50-60% ET/PMF**; **CALR 25-30% ET/PMF**; **MPL 3-5% ET/PMF**; **Triple-neg 10-15%**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **Hb/Hct↑ + BM Panmyelosis + JAK2**
+   - B. **Hb/Hct↑ (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **Hb/Hct↑ + BM Panmyelosis + JAK2**; **Minor: Low EPO**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Plt≥450 + BM Megakaryocyte hyperplasia + JAK2/CALR/MPL (or triple-neg) + Exclude reactive**
+   - B. **Plt≥450 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Plt≥450 + BM Megakaryocyte hyperplasia + JAK2/CALR/MPL (or triple-neg) + Exclude reactive**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **BM Fibrosis (Grade 2-3) + Megakaryocyte atypia + JAK2/CALR/MPL + Minor criteria**
+   - B. **BM (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **BM Fibrosis (Grade 2-3) + Megakaryocyte atypia + JAK2/CALR/MPL + Minor criteria**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Low: Age≤60, No thrombosis** → Phleb + Aspirin
+   - B. **Low: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Low: Age≤60, No thrombosis** → Phleb + Aspirin; **High: Age>60 OR Thrombosis** → + Hydroxyurea
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **Age>60, Prior thrombosis, CV risk, JAK2 V617F** → Score 0-4 → Risk groups
+   - B. **Age>60, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **Age>60, Prior thrombosis, CV risk, JAK2 V617F** → Score 0-4 → Risk groups
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **DIPSS** (Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms)
+   - B. **DIPSS** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **DIPSS** (Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms); **DIPSS-plus** (+ Plt<100, Transfusion, Karyotype)
+
+
+**8.** The role of surgery in this case is:
+   - A. **Hydroxyurea 15-30mg/kg**
+   - B. **Hydroxyurea (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **Hydroxyurea 15-30mg/kg** — **Standard**; **Peg-IFN-α** (Young, Pregnancy); **Anagrelide** (ET 2L)
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **Ruxolitinib** (1L symptomatic Int-2/High)
+   - B. **Ruxolitinib** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **Ruxolitinib** (1L symptomatic Int-2/High); **Fedratinib** (2L); **Pacritinib** (Plt<50); **Momelotinib** (Anaemia)
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **Int-2/High, Young, Fit, Donor**
+   - B. **Int-2/High, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **Int-2/High, Young, Fit, Donor** — **Only curative**
+
+
+## 18. Flashcards
+
+**Q1:** Driver Mutations?
+**A1:** JAK2 V617F 95% PV, 50-60% ET/PMF; CALR 25-30% ET/PMF; MPL 3-5% ET/PMF; Triple-neg 10-15%
+
+**Q2:** PV Diagnosis?
+**A2:** Hb/Hct↑ + BM Panmyelosis + JAK2; Minor: Low EPO
+
+**Q3:** ET Diagnosis?
+**A3:** Plt≥450 + BM Megakaryocyte hyperplasia + JAK2/CALR/MPL (or triple-neg) + Exclude reactive
+
+**Q4:** PMF Diagnosis?
+**A4:** BM Fibrosis (Grade 2-3) + Megakaryocyte atypia + JAK2/CALR/MPL + Minor criteria
+
+**Q5:** PV Risk?
+**A5:** Low: Age≤60, No thrombosis → Phleb + Aspirin; High: Age>60 OR Thrombosis → + Hydroxyurea
+
+**Q6:** ET IPSET-thrombosis?
+**A6:** Age>60, Prior thrombosis, CV risk, JAK2 V617F → Score 0-4 → Risk groups
+
+**Q7:** PMF Prognosis?
+**A7:** DIPSS (Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms); DIPSS-plus (+ Plt<100, Transfusion, Karyotype)
+
+**Q8:** PV/ET Cytoreduction?
+**A8:** Hydroxyurea 15-30mg/kg — Standard; Peg-IFN-α (Young, Pregnancy); Anagrelide (ET 2L)
+
+## 19. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Driver Mutations | JAK2 V617F 95% PV, 50-60% ET/PMF; CALR 25-30% ET/PMF; MPL 3-5% ET/PMF; Triple-neg 10-15% |
+| 2 | A | PV Diagnosis | Hb/Hct↑ + BM Panmyelosis + JAK2; Minor: Low EPO |
+| 3 | A | ET Diagnosis | Plt≥450 + BM Megakaryocyte hyperplasia + JAK2/CALR/MPL (or triple-neg) + Exclude reactive |
+| 4 | A | PMF Diagnosis | BM Fibrosis (Grade 2-3) + Megakaryocyte atypia + JAK2/CALR/MPL + Minor criteria |
+| 5 | A | PV Risk | Low: Age≤60, No thrombosis → Phleb + Aspirin; High: Age>60 OR Thrombosis → + Hydroxyurea |
+| 6 | A | ET IPSET-thrombosis | Age>60, Prior thrombosis, CV risk, JAK2 V617F → Score 0-4 → Risk groups |
+| 7 | A | PMF Prognosis | DIPSS (Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms); DIPSS-plus (+ Plt<100, Transfusion, Karyotype) |
+| 8 | A | PV/ET Cytoreduction | Hydroxyurea 15-30mg/kg — Standard; Peg-IFN-α (Young, Pregnancy); Anagrelide (ET 2L) |
+| 9 | A | PMF JAK Inhibitors | Ruxolitinib (1L symptomatic Int-2/High); Fedratinib (2L); Pacritinib (Plt<50); Momelotinib (Anaemia) |
+| 10 | A | Allo-HSCT in PMF | Int-2/High, Young, Fit, Donor — Only curative |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Driver Mutations | JAK2 V617F 95% PV, 50-60% ET/PMF; CALR 25-30% ET/PMF; MPL 3-5% ET/PMF; Triple-neg 10-15% |
+| 2 | A | PV Diagnosis | Hb/Hct↑ + BM Panmyelosis + JAK2; Minor: Low EPO |
+| 3 | A | ET Diagnosis | Plt≥450 + BM Megakaryocyte hyperplasia + JAK2/CALR/MPL (or triple-neg) + Exclude reactive |
+| 4 | A | PMF Diagnosis | BM Fibrosis (Grade 2-3) + Megakaryocyte atypia + JAK2/CALR/MPL + Minor criteria |
+| 5 | A | PV Risk | Low: Age≤60, No thrombosis → Phleb + Aspirin; High: Age>60 OR Thrombosis → + Hydroxyurea |
+| 6 | A | ET IPSET-thrombosis | Age>60, Prior thrombosis, CV risk, JAK2 V617F → Score 0-4 → Risk groups |
+| 7 | A | PMF Prognosis | DIPSS (Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms); DIPSS-plus (+ Plt<100, Transfusion, Karyotype) |
+| 8 | A | PV/ET Cytoreduction | Hydroxyurea 15-30mg/kg — Standard; Peg-IFN-α (Young, Pregnancy); Anagrelide (ET 2L) |
+| 9 | A | PMF JAK Inhibitors | Ruxolitinib (1L symptomatic Int-2/High); Fedratinib (2L); Pacritinib (Plt<50); Momelotinib (Anaemia) |
+| 10 | A | Allo-HSCT in PMF | Int-2/High, Young, Fit, Donor — Only curative |
+
+## 20. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Haematological Malignancies|Haematological Malignancies]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

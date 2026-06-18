@@ -1,0 +1,431 @@
+# Lithium TDM
+
+**Status**: `full-fcps-mrcp-note` | **Chapter**: 2 — Clinical Therapeutics and Good Prescribing | **Heading**: Therapeutic Drug Monitoring → Drug-Specific TDM | **Exam Priority**: ⭐⭐⭐ **HIGH** (Bipolar, narrow TI, renal monitoring, toxicity classic)
+
+---
+
+## 1. 🎯 Learning Objectives
+- [ ] State therapeutic and toxic ranges
+- [ ] Apply sampling timing (12h post-dose standard)
+- [ ] Execute renal/thyroid monitoring protocol
+- [ ] Identify toxicity features: neurological, renal, endocrine
+- [ ] Manage toxicity: fluid resuscitation, dialysis indications
+- [ ] Recognise drug interactions (NSAIDs, ACEi, Thiazides, etc.)
+
+---
+
+## 2. 📊 Therapeutic Range & Sampling
+
+| Indication | **Therapeutic Range (mmol/L)** | **Toxic Threshold** |
+|------------|-------------------------------|---------------------|
+| **Acute Mania** | **0.8–1.2** | **>1.5** |
+| **Maintenance / Prophylaxis** | **0.6–1.0** (some 0.4–0.8) | **>1.2** |
+| **Toxicity** | — | **>1.5 = moderate**, **>2.5 = severe / dialysis** |
+
+### Sampling Timing — **CRITICAL**
+| Sample | Timing | Rationale |
+|--------|--------|-----------|
+| **Standard trough** | **12h post-dose** (±30 min) | **Steady-state** trough; lithium t½ ~18–24h |
+| **If once daily (evening)** | **Morning (12h post)** | Standard practice |
+| **If twice daily** | **12h post-evening dose** (pre-morning) | Most reliable |
+| **Random** | Not recommended | Use nomogram if unavoidable |
+
+> **Steady state**: **5–7 days** (5 half-lives); **check level at 5–7 days** after initiation or dose change
+
+---
+
+## 3. ⚖️ Renal Adjustment & Monitoring
+
+### Dose Adjustment by eGFR/CrCl
+| eGFR/CrCl (mL/min) | Dose Adjustment | Monitoring |
+|-------------------|-----------------|------------|
+| **>60** | Standard | Level q3mo; eGFR q6mo; TSH q6–12mo |
+| **45–60** | **↓ 25%** | Level q3mo; eGFR q6mo; TSH q6–12mo |
+| **30–45** | **↓ 50%** | Level q2–3mo; eGFR q3–6mo; TSH q6–12mo |
+| **15–30** | **↓ 75%** (or avoid/) | Level q1–2mo; eGFR q3mo; TSH q6–12mo |
+| **<15** | **Avoid if possible**; if essential: **specialist only, ↓ >75%** | Level q1mo; eGFR q1–3mo; TSH q6mo |
+
+> **Maintenance dose typically 400–1200mg/day** (lithium carbonate 200–600mg 1–2× daily)
+
+### Mandatory Monitoring Protocol (NICE / BAP)
+| Test | Baseline | Frequency (Stable) | Frequency (Unstable/Tox) |
+|------|----------|-------------------|--------------------------|
+| **Lithium Level** | Day 5–7 | **Every 3 months** | Weekly until stable |
+| **eGFR / Creatinine** | Baseline | **Every 6 months** | Every 1–3 months |
+| **TSH / Thyroid Function** | Baseline | **Every 6–12 months** | Every 6 months |
+| **Calcium** | Baseline | Annually | Every 6 months |
+| **Weight / BMI** | Baseline | Every 6 months | Every 3 months |
+| **U&Es** | Baseline | Every 6 months | Every 1–3 months |
+
+---
+
+## 4. ☠️ Lithium Toxicity
+
+### Acute vs Chronic
+| Feature | **Acute Toxicity** (Overdose) | **Chronic Toxicity** (Accumulation) |
+|---------|-------------------------------|--------------------------------------|
+| **Context** | Intentional / accidental overdose | Renal impairment, dehydration, drug interaction, dose increase |
+| **Level Correlation** | Poor — **symptoms lag behind level** | **Better correlation** — level reflects tissue concentration |
+| **Renal Elimination** | Normal (initially) | **Impaired** — ↓ clearance |
+| **Neurological** | Less prominent early | **Prominent** (tremor, confusion, ataxia, seizures) |
+| **GI** | Prominent (N/V, diarrhoea) | Less prominent |
+| **Outcome** | Better if treated early | **Higher morbidity/mortality**; risk of SILENT neurological damage |
+
+### Clinical Features by Severity
+| Severity | Level | Features |
+|----------|-------|----------|
+| **Mild** | **1.5–2.0** | Fine tremor, N/V, diarrhoea, polyuria, polydipsia, mild cognitive impairment |
+| **Moderate** | **2.0–2.5** | **Coarse tremor**, hyperreflexia, ataxia, dysarthria, confusion, agitation, muscle weakness, ECG changes |
+| **Severe** | **>2.5** | **Seizures**, coma, hyperthermia, rigidity, **permanent neurotoxicity** (SILENT: cerebellar atrophy, cognitive decline), cardiovascular collapse |
+
+> **SILENT = Syndrome of Irreversible Lithium-Effectuated Neurotoxicity** — cerebellar dysfunction persists after level normalises
+
+### ECG Changes
+| Change | Significance |
+|--------|--------------|
+| **T-wave flattening / inversion** | Common, non-specific |
+| **QT prolongation** | Risk of Torsades |
+| **Sinus node dysfunction / AV block** | Severe toxicity |
+
+---
+
+## 5. 💊 Management of Toxicity
+
+| Severity | Action |
+|----------|--------|
+| **Mild (1.5–2.0, asymptomatic/minimal)** | **HOLD lithium**; **IV 0.9% NaCl 1–2L** (hydration); correct K⁺/Mg²⁺; monitor level q12–24h; restart at ↓ dose when <1.0 |
+| **Moderate (2.0–2.5, symptomatic)** | **HOLD lithium**; **IV 0.9% NaCl 2–3L** (aggressive hydration); **Furosemide 20–40mg** (only if euvolaemic) to ↑ Li⁺ clearance; correct K⁺/Mg²⁺; consider **haemodialysis** if neuro symptoms; monitor level q6–12h |
+| **Severe (>2.5, seizures/coma/neuro)** | **HAEMODIALYSIS** (preferred) or **CRRT**; **HD is most effective** (high clearance, short duration); Continue dialysis until level <1.0 and clinical improvement; **Rebound common** — need repeated HD |
+
+### Dialysis Indications (EXACT Criteria)
+| Indication | Threshold |
+|-----------|-----------|
+| **Level** | **>2.5 mmol/L** (acute) OR **>4.0 mmol/L** (acute overdose) |
+| **Neurological** | **Seizures, Coma, Severe confusion, Focal deficits** |
+| **Renal** | **AKI / Oliguria / eGFR <15** |
+| **Cardiac** | **Life-threatening arrhythmia** |
+| **Failure of conservative** | Level not ↓ with hydration + diuresis |
+
+> **HD removes ~50% of lithium per 4h session**; **Rebound ↑ 30–50% post-HD** (redistribution from tissues) — often need **repeated HD**
+
+---
+
+## 6. 🔄 Key Drug Interactions (↑ Lithium Levels)
+
+| Drug | Mechanism | **Level Increase** | Management |
+|------|-----------|-------------------|------------|
+| **NSAIDs** (incl. COX-2) | ↓ Renal PG → ↓ GFR + ↑ proximal Li⁺ reabsorption | **25–100%** | **AVOID**; use paracetamol; if essential: ↓ Li⁺ dose 25–50%, monitor weekly |
+| **ACE Inhibitors** | ↓ Afferent tone → ↓ GFR; ↓ Na⁺ delivery → ↑ Li⁺ reabsorption | **20–50%** | Monitor Li⁺ at 1wk, 2wk, 4wk; ↓ Li⁺ dose if needed |
+| **ARBs** | Similar to ACEi | **20–50%** | Same as ACEi |
+| **Thiazides** | Volume depletion → ↑ proximal Na⁺/Li⁺ reabsorption | **25–100%** | **AVOID if possible**; if essential: ↓ Li⁺ dose 25–50%, monitor weekly |
+| **Loop Diuretics** | Less effect than thiazides; volume depletion | **10–25%** | Monitor Li⁺ |
+| **Potassium-Sparing** (Amiloride, Triamterene) | ↑ Li⁺ reabsorption in collecting duct | **10–25%** | Avoid; **Amiloride used for Li⁺-induced NDI** (paradoxical) |
+| **Tetracyclines** (Demeclocycline) | ? | Variable | Monitor |
+
+---
+
+## 7. 🎯 FCPS/MRCP High-Yield Summary
+
+| Pearl | Details |
+|-------|---------|
+| **Therapeutic range** | **Acute mania: 0.8–1.2; Maintenance: 0.6–1.0** (some 0.4–0.8) |
+| **Sampling** | **12h post-dose (trough)**; steady state at **5–7 days** |
+| **Monitoring** | **Level q3mo, eGFR q6mo, TSH q6–12mo** (stable) |
+| **Toxicity thresholds** | **>1.5 moderate; >2.5 severe/dialysis** |
+| **Acute vs Chronic** | Acute = poor level correlation, GI dominant; Chronic = better correlation, neuro dominant, higher mortality |
+| **SILENT syndrome** | **Irreversible cerebellar neurotoxicity** post-toxicity |
+| **HD indications** | **Level >2.5 + neuro symptoms; >4.0 acute; AKI; seizures; failure conservative** |
+| **Top interactions** | **NSAIDs, ACEi/ARB, Thiazides → ↑ Li⁺ 25–100% (monitor weekly)** |
+| **NDI management** | **Amiloride 5–10mg BD** (paradoxically reduces Li⁺ reabsorption) |
+
+---
+
+## 8. ❓ Viva Questions (10)
+
+| Q | Answer |
+|---|--------|
+| 1. Lithium therapeutic range for acute mania vs maintenance? | **Acute mania: 0.8–1.2 mmol/L; Maintenance: 0.6–1.0 mmol/L** |
+| 2. When to sample lithium level? | **12h post-dose (trough)**; steady state at **5–7 days** after initiation/dose change |
+| 3. Monitoring protocol in stable patient? | **Level q3mo, eGFR q6mo, TSH q6–12mo, Ca annually, Weight q6mo** |
+| 4. Acute vs chronic lithium toxicity — key differences? | **Acute: GI dominant (N/V), poor level correlation; Chronic: Neuro dominant (tremor, ataxia, confusion), better correlation, higher mortality, SILENT risk** |
+| 5. SILENT syndrome? | **Syndrome of Irreversible Lithium-Effectuated Neurotoxicity** — persistent cerebellar dysfunction (ataxia, dysarthria) after level normalisation |
+| 6. Dialysis indications for lithium toxicity? | **Level >2.5 + neuro symptoms; >4.0 acute; AKI; seizures; life-threatening arrhythmia; failure of conservative management** |
+| 7. NSAIDs + lithium — effect and management? | **↑ Li⁺ 25–100% (↓ PG → ↓ GFR + ↑ reabsorption)**; **AVOID NSAIDs**; use paracetamol; if essential: ↓ Li⁺ dose 25–50%, monitor weekly |
+| 8. Thiazide + lithium — effect? | **↑ Li⁺ 25–100% (volume depletion → ↑ proximal reabsorption)**; avoid if possible; ↓ Li⁺ dose, monitor |
+| 9. Lithium-induced NDI — management? | **Amiloride 5–10mg BD** (blocks ENaC in collecting duct); ensure water access; consider switching mood stabiliser |
+| 10. Lithium level 2.8 mmol/L, confused, coarse tremor. Management? | **Moderate-severe chronic toxicity**; **HOLD lithium**; **IV saline 2–3L + furosemide**; **Consider HD** (level >2.5 + neuro); correct K⁺/Mg²⁺; monitor q6–12h |
+
+---
+
+## 9. 🤯 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Acute toxicity = GI symptoms first** | **Acute = GI (N/V); Chronic = Neuro (tremor, ataxia, confusion)** |
+| **Level correlates with severity** | **Acute: poor correlation**; **Chronic: better correlation** |
+| **Dialysis removes lithium** | **HD removes ~50% per session**; **Rebound 30–50% post-HD** → repeated HD often needed |
+| **Amiloride for NDI** | **Paradoxical** — amiloride ↑ Li⁺ excretion by blocking ENaC in collecting duct (used therapeutically) |
+| **Lithium + Thiazide** | **Both cause NDI but for different reasons** — thiazide ↑ Li⁺ → toxicity risk |
+
+**Mnemonics:**
+- **"LITHIUM RANGE"** = **Mania 0.8–1.2; Maintenance 0.6–1.0; Toxic >1.5; Dialysis >2.5**
+- **"SAMPLE 12H"** = **12h post-dose trough**; steady state 5-7 days
+- **"MONITOR q3/q6/q12"** = **Level q3mo, eGFR q6mo, TSH q12mo**
+- **"ACUTE = GI; CHRONIC = NEURO"** = different presentations
+- **"SILENT = IRREVERSIBLE CEREBELLAR"** = ataxia persists after level normal
+- **"DIALYSIS >2.5 + NEURO / >4.0 ACUTE / AKI / SEIZURES"**
+- **"NSAID/ACEi/ARB/THIAZIDE = ↑ Li⁺ 25-100%"** = monitor weekly, avoid if possible
+- **"NDI = AMILOLIDE 5-10mg BD"** = blocks ENaC
+
+---
+
+## 10. 🧠 Mind Map (Mermaid)
+
+```mermaid
+mindmap
+  root((Lithium TDM))
+    Range
+      Mania: 0.8-1.2
+      Maintenance: 0.6-1.0
+      Toxic: >1.5 moderate, >2.5 severe
+    Sampling
+      12h post-dose (trough)
+      Steady state: 5-7 days
+    Monitoring (Stable)
+      Level q3mo
+      eGFR q6mo
+      TSH q6-12mo
+      Ca annually
+    Toxicity
+      Acute (OD): GI dominant, poor level correlation
+      Chronic (accumulation): Neuro dominant, better correlation, SILENT risk
+      Mild (1.5-2.0): Fine tremor, GI
+      Moderate (2.0-2.5): Coarse tremor, ataxia, confusion
+      Severe (>2.5): Seizures, coma, SILENT, death
+    SILENT
+      Irreversible cerebellar neurotoxicity
+      Persists after level normalises
+    Dialysis Indications
+      >2.5 + neuro symptoms
+      >4.0 acute
+      AKI / Oliguria
+      Seizures / Coma
+      Failure conservative
+    Interactions (↑ Li)
+      NSAIDs (AVOID) - 25-100%
+      ACEi/ARB - 20-50%
+      Thiazides (AVOID) - 25-100%
+      Loops - 10-25%
+    NDI Management
+      Amiloride 5-10mg BD
+      Water access
+      Consider switch mood stabiliser
+```
+
+---
+
+## 11. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score | Next |
+|--------|------|-------|------|
+| 1 | | | 1d |
+| 2 | | | 3d |
+| 3 | | | 1w |
+| 4 | | | 2w |
+| 5 | | | 1m |
+| 6 | | | 3m |
+
+---
+
+## 12. 🧪 Self-Test Scorecard
+
+| Section | Max | Score |
+|---------|-----|-------|
+| Range & sampling | 6 | |
+| Monitoring protocol | 6 | |
+| Toxicity (acute vs chronic) | 8 | |
+| SILENT & dialysis | 8 | |
+| Interactions | 8 | |
+| Viva answers | 10 | |
+| **Total** | **46** | |
+
+**Target**: ≥37/46 (80%)
+
+---
+
+## 13. 📝 Exam Answer Modes
+
+### Short Question (5 marks): *"Lithium monitoring protocol and toxicity thresholds."*
+- **Therapeutic**: Mania 0.8–1.2; Maintenance 0.6–1.0; Toxic >1.5; Dialysis >2.5
+- **Sampling**: 12h post-dose trough; steady state 5–7 days
+- **Monitoring**: Level q3mo, eGFR q6mo, TSH q6–12mo, Ca annually
+- **Toxicity**: Acute = GI (N/V), poor level correlation; Chronic = Neuro (tremor, ataxia, confusion), better correlation, SILENT risk
+- **Dialysis**: >2.5 + neuro; >4.0 acute; AKI; seizures
+
+### Viva (1 min): *"Patient on lithium 800mg, started ibuprofen for back pain. 1 week later: coarse tremor, confusion, Li⁺ 2.8. Management?"*
+- **NSAID-induced lithium toxicity** (NSAIDs ↓ PG → ↓ GFR + ↑ proximal reabsorption → ↑ Li⁺ 25–100%)
+- **STOP ibuprofen immediately**; switch to paracetamol
+- **HOLD lithium**; **IV saline 2–3L + furosemide**
+- **Consider HD** (level >2.5 + neuro symptoms)
+- Monitor Li⁺ q6–12h; restart at ↓ dose when <1.0
+
+### Ward Round (30 sec): *"Patient on lithium, polyuria 4L/day, hypernatremia. Diagnosis? Treatment?"*
+- **Lithium-induced NDI** (nephrogenic diabetes insipidus)
+- **Amiloride 5–10mg BD** (blocks ENaC in collecting duct)
+- Ensure free water access
+- Consider switching mood stabiliser if persistent
+
+### Last-Night Revision (1-liners):
+- Lithium range: Mania 0.8–1.2, Maintenance 0.6–1.0, Toxic >1.5
+- Sample: 12h post-dose; steady state 5–7 days
+- Monitor: Level q3mo, eGFR q6mo, TSH q12mo
+- Acute toxicity = GI, poor correlation; Chronic = Neuro, better correlation, SILENT
+- SILENT = irreversible cerebellar damage
+- HD: >2.5+neuro, >4.0 acute, AKI, seizures
+- NSAIDs/ACEi/ARB/Thiazides = ↑ Li⁺ 25–100% (monitor weekly)
+- NDI = Amiloride 5–10mg BD
+
+---
+
+## 14. 📚 Summary Card
+
+> **LITHIUM TDM:**
+> **RANGE**: Mania 0.8-1.2, Maintenance 0.6-1.0, Toxic >1.5, Dialysis >2.5
+> **SAMPLE**: 12h post-dose trough; SS 5-7d
+> **MONITOR**: Level q3mo, eGFR q6mo, TSH q12mo
+> **TOXICITY**: Acute=GI, Chronic=Neuro (SILENT=irreversible cerebellar)
+> **DIALYSIS**: >2.5+neuro; >4.0 acute; AKI; seizures
+> **INTERACTIONS**: NSAIDs/ACEi/ARB/Thiazides = ↑ Li⁺ 25-100% (AVOID)
+> **NDI**: Amiloride 5-10mg BD
+
+---
+
+## 15. ❓ MCQs (12)
+
+1. **Lithium therapeutic range for maintenance/prophylaxis:**
+   A. 0.4–0.6 mmol/L
+   B. **0.6–1.0 mmol/L** ✓
+   C. 1.0–1.2 mmol/L
+   D. 1.2–1.5 mmol/L
+   E. 0.8–1.2 mmol/L
+
+2. **Standard trough sampling time for lithium:**
+   A. 6h post-dose
+   B. **12h post-dose** ✓
+   C. 8h post-dose
+   D. 24h post-dose
+   E. Pre-dose only
+
+3. **Steady state for lithium (t½ ~24h):**
+   A. 2–3 days
+   B. **5–7 days** ✓
+   C. 10–14 days
+   D. 21 days
+   E. 1 month
+
+4. **Acute vs chronic lithium toxicity — chronic is characterised by:**
+   A. Prominent GI symptoms
+   B. **Prominent neurological symptoms (tremor, ataxia, confusion)** ✓
+   C. Good level correlation in both
+   D. Lower mortality
+   E. No SILENT risk
+
+5. **SILENT syndrome — what does it stand for?**
+   A. Syndrome of Irreversible Lithium Toxicity
+   B. **Syndrome of Irreversible Lithium-Effectuated Neurotoxicity** ✓
+   C. Severe Intoxication Leading to Enduring Neurological Trauma
+   D. Subclinical Intoxication Leading to Enduring Neurotoxicity
+   E. Syndrome of Iatrogenic Lithium Encephalopathy
+
+6. **Dialysis indication for lithium toxicity:**
+   A. Level >1.5
+   B. **Level >2.5 + neurological symptoms** ✓
+   C. Level >2.0
+   D. Any level with tremor
+   E. Only if level >5.0
+
+7. **NSAIDs + lithium — effect on lithium level:**
+   A. No change
+   B. ↓ 25%
+   C. **↑ 25–100%** ✓
+   D. ↓ 50%
+   E. Unpredictable
+
+8. **Lithium-induced NDI — first-line treatment:**
+   A. Desmopressin
+   B. **Amiloride 5–10mg BD** ✓
+   C. Thiazide diuretic
+   D. Fluid restriction
+   E. NSAID
+
+9. **Thiazide + lithium interaction — mechanism:**
+   A. ↓ GFR only
+   B. **Volume depletion → ↑ proximal Na⁺/Li⁺ reabsorption** ✓
+   C. CYP inhibition
+   D. Displacement from protein
+   E. No interaction
+
+10. **Lithium monitoring in stable patient — frequency:**
+    A. Level monthly, eGFR monthly, TSH monthly
+    B. **Level q3mo, eGFR q6mo, TSH q6–12mo** ✓
+    C. Level q6mo, eGFR q12mo, TSH q12mo
+    D. Level yearly, eGFR yearly, TSH yearly
+    E. Only if symptomatic
+
+11. **Haemodialysis for lithium — expected clearance per session:**
+    A. 10–20%
+    B. 25–35%
+    C. **~50%** ✓
+    D. 75–85%
+    E. >95%
+
+12. **Lithium level post-HD rebound:**
+    A. Level continues to fall
+    B. **Rebound ↑ 30–50% (redistribution from tissues)** ✓
+    C. No change
+    D. ↓ 50% again
+    E. Unpredictable
+
+---
+
+## 16. 🃏 Flashcards (Anki-ready)
+
+| Front | Back |
+|-------|------|
+| Lithium range (maintenance) | 0.6–1.0 mmol/L |
+| Lithium range (mania) | 0.8–1.2 mmol/L |
+| Lithium toxic | >1.5 mmol/L |
+| Lithium dialysis | >2.5 + neuro; >4.0 acute; AKI; seizures |
+| Sampling time | 12h post-dose trough |
+| Steady state | 5–7 days |
+| Monitoring stable | Level q3mo, eGFR q6mo, TSH q12mo |
+| Acute toxicity | GI dominant (N/V), poor level correlation |
+| Chronic toxicity | Neuro dominant (tremor, ataxia), better correlation, SILENT |
+| SILENT | Irreversible cerebellar neurotoxicity |
+| HD lithium clearance | ~50% per 4h session; rebound 30-50% |
+| NSAIDs + Li | ↑ Li 25-100% (AVOID) |
+| ACEi/ARB + Li | ↑ Li 20-50% |
+| Thiazide + Li | ↑ Li 25-100% (AVOID) |
+| NDI treatment | Amiloride 5-10mg BD |
+
+---
+
+## 17. ✅ Answer Keys
+
+### MCQs
+1. **B** — 0.6–1.0 mmol/L
+2. **B** — 12h post-dose
+3. **B** — 5–7 days
+4. **B** — Prominent neuro symptoms
+5. **B** — Syndrome of Irreversible Lithium-Effectuated Neurotoxicity
+6. **B** — Level >2.5 + neurological symptoms
+7. **C** — ↑ 25–100%
+8. **B** — Amiloride 5–10mg BD
+9. **B** — Volume depletion → ↑ proximal reabsorption
+10. **B** — Level q3mo, eGFR q6mo, TSH q6–12mo
+11. **C** — ~50% per HD session
+12. **B** — Rebound ↑ 30–50%
+
+---
+
+*File: `/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/TDM/Lithium.md` | Status: `full-fcps-mrcp-note`*

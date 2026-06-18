@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Study Designs Descriptive Analytical Experimental — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.101. STUDY DESIGNS (DESCRIPTIVE, ANALYTICAL, EXPERIMENTAL)</span>
+      <div class="h1">Study Designs Descriptive Analytical Experimental</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify study designs: descriptive vs analytical vs experimental</li><li>[ ] Compare cohort, case-control, cross-sectional, RCT, ecological designs</li><li>[ ] Identify appropriate design for incidence, prevalence, RR, OR, HR</li><li>[ ] Explain hierarchy of evidence (RCT &gt; cohort &gt; case-control &gt; cross-sectional &gt; ecological)</li><li>[ ] Apply design choice to exam scenarios (rare disease, rare exposure, latency, ethics)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Design Category</th><th>Designs</th><th>Key Feature</th><th>Measures</th></tr><tr><td>-----------------</td><td>---------</td><td>-------------</td><td>----------</td></tr><tr><td>**Descriptive**</td><td>Case report, case series, cross-sectional (prevalence), ecological</td><td>Describe distribution (person, place, time)</td><td>Prevalence, rates, patterns</td></tr><tr><td>**Analytical (Observational)**</td><td>Cohort, case-control, cross-sectional (analytical), nested case-control</td><td>Observe exposure → outcome; compare groups</td><td>RR, OR, HR, AR</td></tr><tr><td>**Experimental**</td><td>RCT, cluster RCT, crossover, N-of-1, factorial</td><td>Investigator assigns exposure</td><td>RR, RD, HR, NNT</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological concept - see design comparison table below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Study Design Comparison</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**RCT**</th><th>**Cohort**</th><th>**Case-Control**</th><th>**Cross-Sectional**</th><th>**Ecological**</th></tr><tr><td>---------</td><td>---------</td><td>------------</td><td>------------------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**Assignment**</td><td>Randomised</td><td>Observed</td><td>Observed</td><td>Observed</td><td>Group-level</td></tr><tr><td>**Direction**</td><td>Exposure → Outcome</td><td>Exposure → Outcome</td><td>Outcome → Exposure</td><td>Simultaneous</td><td>Group-level assoc</td></tr><tr><td>**Timing**</td><td>Prospective</td><td>Prospective/Retrospective</td><td>Retrospective</td><td>Cross-sectional</td><td>Cross-sectional</td></tr><tr><td>**Incidence**</td><td>✓</td><td>✓</td><td>✗</td><td>✗</td><td>✗ (group rates)</td></tr><tr><td>**Prevalence**</td><td>✓</td><td>✓</td><td>✗</td><td>✓</td><td>✓</td></tr><tr><td>**RR**</td><td>✓</td><td>✓</td><td>✗</td><td>(PR)</td><td>✗</td></tr><tr><td>**OR**</td><td>✓</td><td>✓</td><td>✓</td><td>(POR)</td><td>✓</td></tr><tr><td>**HR**</td><td>✓</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td></tr><tr><td>**Rare Disease**</td><td>Good</td><td>Poor (large N, long FU)</td><td>**Best**</td><td>Poor</td><td>Possible</td></tr><tr><td>**Rare Exposure**</td><td>Good</td><td>**Best**</td><td>Poor</td><td>Poor</td><td>Possible</td></tr><tr><td>**Latency**</td><td>Good</td><td>Good</td><td>Recall bias</td><td>Poor</td><td>Possible</td></tr><tr><td>**Confounding**</td><td>Minimised by randomisation</td><td>Adjust in analysis</td><td>Matching, adjustment</td><td>Adjustment</td><td>**Ecological fallacy**</td></tr><tr><td>**Cost/Time**</td><td>High/High</td><td>High/High</td><td>Low/Medium</td><td>Low/Low</td><td>Low/Low</td></tr><tr><td>**Ethics**</td><td>Equipoise required</td><td>Usually ethical</td><td>Usually ethical</td><td>Usually ethical</td><td>Usually ethical</td></tr></table>
+<p><b>Hierarchy of Evidence (Therapy/Harm):</b> ```</p>
+<ol><li>Systematic Review/Meta-analysis of RCTs</li><li>Individual RCT (large, well-designed)</li><li>Systematic Review of Cohort Studies</li><li>Individual Cohort Study</li><li>Case-Control Study</li><li>Cross-Sectional Study</li><li>Ecological Study</li><li>Case Series/Reports</li><li>Expert Opinion</li></ol>
+<p>```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Design Selection Algorithm)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Mermaid: Study Design Decision Flow</b> ``<code>mermaid flowchart TD A[Research Question] --&gt; B{Therapy/Prevention?} B --&gt;|Yes| C[RCT if ethical/feasible] B --&gt;|No (Etiology/Harm)| D{Outcome Rare?} D --&gt;|Yes| E[Case-Control] D --&gt;|No| F{Exposure Rare?} F --&gt;|Yes| G[Cohort] F --&gt;|No| H[Cohort or Cross-Sectional] C --&gt; I[If RCT not possible → Cohort] E --&gt; J[If exposure rare → Cohort] G --&gt; K[Retrospective cohort if data exist] H --&gt; L[Cross-sectional for prevalence] style C fill:#bbf,stroke:#333 style E fill:#fbf,stroke:#333 style G fill:#bfb,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Design Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Cohort vs Case-Control**</td><td>Cohort: start with exposure, follow for outcome. Case-control: start with outcome, look back at exposure.</td></tr><tr><td>**Cross-Sectional Analytical vs Descriptive**</td><td>Descriptive: prevalence only. Analytical: compares exposed vs unexposed for association (PR/POR).</td></tr><tr><td>**Nested Case-Control**</td><td>Case-control WITHIN a cohort: efficient for rare outcomes in cohort; uses cohort's exposure data (no recall bias).</td></tr><tr><td>**Ecological Fallacy**</td><td>Group-level association ≠ individual-level association. E.g., countries with high fat intake have high CHD, but within country, fat intake may not predict CHD.</td></tr><tr><td>**Case Series vs Cohort**</td><td>Case series: no comparison group. Cohort: has unexposed comparison group.</td></tr><tr><td>**RCT vs Cluster RCT**</td><td>Individual randomisation vs group (cluster) randomisation. Cluster RCT needs ICC adjustment, larger sample.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Design Application)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Best Design</th><th>Reasoning</th></tr><tr><td>----------</td><td>-------------</td><td>-----------</td></tr><tr><td>**New drug efficacy**</td><td>RCT</td><td>Gold standard; randomisation balances confounders</td></tr><tr><td>**Rare disease etiology**</td><td>Case-control</td><td>Efficient; starts with cases</td></tr><tr><td>**Rare exposure etiology**</td><td>Cohort</td><td>Starts with exposed group</td></tr><tr><td>**Long latency (asbestos→mesothelioma)**</td><td>Cohort (retrospective)</td><td>Follow-up already happened in records</td></tr><tr><td>**Disease burden (prevalence)**</td><td>Cross-sectional</td><td>Snapshot; efficient</td></tr><tr><td>**Outbreak investigation**</td><td>Case-control (retrospective cohort if small)</td><td>Rapid; compares exposures</td></tr><tr><td>**Risk factor trends**</td><td>Ecological</td><td>Group-level data available</td></tr><tr><td>**Diagnostic test accuracy**</td><td>Cross-sectional (cases+controls)</td><td>Sensitivity/specificity need known disease status</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**RCT = Gold Standard**</td><td>Randomisation → exchangeability → causal inference. CONSORT reporting.</td></tr><tr><td>**Cohort for incidence**</td><td>Only design giving direct incidence rates & RR (except RCT).</td></tr><tr><td>**Case-Control for rare outcome**</td><td>Efficient; OR estimates RR if rare. Matching controls confounding.</td></tr><tr><td>**Cross-Sectional = Prevalence**</td><td>Cannot establish temporality (exposure↔outcome simultaneous).</td></tr><tr><td>**Ecological = Hypothesis-generating**</td><td>Ecological fallacy risk; cannot infer individual risk.</td></tr><tr><td>**Nested Case-Control**</td><td>Best of both: cohort exposure data + case-control efficiency.</td></tr><tr><td>**Retrospective Cohort**</td><td>Uses existing records; faster/cheaper; same measures as prospective.</td></tr><tr><td>**Crossover RCT**</td><td>Each subject = own control; washout critical; only chronic stable conditions.</td></tr><tr><td>**Cluster RCT**</td><td>ICC inflates sample size; contamination avoided; analysis at cluster level.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Hierarchy of evidence for therapy?**</td><td>SR of RCTs > RCT > SR of cohorts > Cohort > Case-control > Cross-sectional > Ecological > Case series > Expert opinion</td></tr><tr><td>**Study on rare disease (incidence 1/100,000) and common exposure. Best design?**</td><td>Case-control. Cohort would need huge N and long follow-up.</td></tr><tr><td>**Study on rare exposure (prevalence 0.1%) and common outcome. Best design?**</td><td>Cohort. Start with the rare exposed group.</td></tr><tr><td>**Why can't cross-sectional establish causality?**</td><td>Exposure and outcome measured simultaneously → temporality unclear (reverse causation possible).</td></tr><tr><td>**What is a nested case-control study?**</td><td>Case-control within an existing cohort. Uses cohort's baseline exposure data → no recall bias. Efficient for rare outcomes.</td></tr><tr><td>**What is ecological fallacy? Example.**</td><td>Group-level association ≠ individual-level. E.g., high alcohol-consuming countries have low CHD, but within country, heavy drinkers have higher CHD.</td></tr><tr><td>**Difference between retrospective cohort and case-control?**</td><td>Retrospective cohort: defined by exposure at baseline, follow records forward to outcome. Case-control: defined by outcome, look back at exposure.</td></tr><tr><td>**When is crossover RCT appropriate?**</td><td>Chronic stable condition (asthma, hypertension), reversible treatment effect, adequate washout, no carryover.</td></tr><tr><td>**What is intention-to-treat (ITT) analysis?**</td><td>Analyse all randomised participants in assigned groups regardless of adherence. Preserves randomisation benefits.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Case-control gives OR only**</td><td>Cannot calculate incidence → no RR. OR ≈ RR if outcome rare in source population.</td></tr><tr><td>**Matching in case-control**</td><td>Controls matched to cases on confounders (age, sex). Must use conditional logistic regression. Overmatching = matching on exposure-related factor → bias.</td></tr><tr><td>**Retrospective ≠ Case-Control**</td><td>Retrospective COHORT uses past exposure records, follows forward. Case-control starts with outcome.</td></tr><tr><td>**Cross-sectional PR vs RR**</td><td>Prevalence Ratio ≠ Risk Ratio. PR overestimates RR if duration differs between exposed/unexposed.</td></tr></table>
+<p><b>Mnemonic: CHORUS (Design Hierarchy)</b></p>
+<ul><li><b>C</b>ochrane SR of RCTs</li><li><b>H</b>igh-quality RCT</li><li><b>O</b>bservational Cohort</li><li><b>R</b>etrospective Cohort</li><li><b>U</b>nmatched Case-Control</li><li><b>S</b>urvey Cross-Sectional</li></ul>
+<p><b>Mnemonic: COHORT vs CASE-CONTROL</b></p>
+<ul><li><b>C</b>ohort: <b>C</b>ause → <b>E</b>ffect (Exposure → Outcome)</li><li><b>C</b>ase-Control: <b>E</b>ffect → <b>C</b>ause (Outcome → Exposure)</li></ul>
+<p><b>Mnemonic: ECOLOGICAL FALLACY</b></p>
+<ul><li><b>E</b>cological = <b>G</b>roup <b>L</b>evel</li><li><b>O</b>bserved <b>L</b>ink</li><li><b>O</b>ften <b>G</b>oes</li><li><b>A</b>gainst <b>L</b>ogic</li><li><b>I</b>ndividual</li><li><b>C</b>annot <b>A</b>ssume</li><li><b>L</b>ink holds at individual level!</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Study Designs)) Descriptive Case Report/Series Cross-Sectional Prevalence Ecological Analytical Observational Cohort Prospective Retrospective Nested Case-Control Case-Control Matched Unmatched Population-based Cross-Sectional Analytical Experimental RCT Parallel Crossover Cluster Factorial Hierarchy SR RCT &gt; RCT &gt; Cohort &gt; Case-Control &gt; XS &gt; Eco </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**RCT**</td><td>Randomised, prospective, RR/HR, gold standard, ITT</td></tr><tr><td>**Cohort**</td><td>Exposure→Outcome, incidence, RR/HR, rare exposure</td></tr><tr><td>**Case-Control**</td><td>Outcome→Exposure, OR, rare outcome, matching</td></tr><tr><td>**Cross-Sectional**</td><td>Snapshot, prevalence, PR/POR, no temporality</td></tr><tr><td>**Ecological**</td><td>Group-level, hypothesis only, ecological fallacy</td></tr><tr><td>**Nested CC**</td><td>CC inside cohort, no recall bias, efficient</td></tr><tr><td>**Hierarchy**</td><td>SR RCT > RCT > Cohort > CC > XS > Eco</td></tr><tr><td>**Rare Disease**</td><td>→ Case-Control</td></tr><tr><td>**Rare Exposure**</td><td>→ Cohort</td></tr><tr><td>**ITT**</td><td>Analyse as randomised</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Design Classification</td><td></td><td></td></tr><tr><td>Cohort vs Case-Control</td><td></td><td></td></tr><tr><td>Cross-Sectional Limits</td><td></td><td></td></tr><tr><td>Ecological Fallacy</td><td></td><td></td></tr><tr><td>Nested Case-Control</td><td></td><td></td></tr><tr><td>Hierarchy of Evidence</td><td></td><td></td></tr><tr><td>Design Selection</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Measures of Disease Frequency (Incidence, Prevalence, Rates).md]], [[Measures of Association (RR, OR, HR, AR, PAR).md]], [[Bias, Confounding, Effect Modification.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Study Designs Descriptive Analytical Experimental · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

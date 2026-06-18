@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Medication Safety And Errors — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.7. MEDICATION SAFETY AND ERRORS</span>
+      <div class="h1">Medication Safety And Errors</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Scope</span>
+  </div>
+  <div class="sec-body">
+<p>Types of medication errors, root causes, prevention strategies (reconciliation, CPOE, Tall Man, double-check), and high-risk drug categories (PINCH/PINCHER).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Sub-Topics (Topic-Groups)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">[[Medication Safety/Types of medication errors|Types of Medication Errors]]</div>
+<ul><li>[[Medication Safety/Prescribing errors|Prescribing Errors]] — Wrong drug, dose, frequency, route, patient, allergy, interaction missed</li><li>[[Medication Safety/Dispensing errors|Dispensing Errors]] — Wrong drug, strength, quantity, labelling, patient</li><li>[[Medication Safety/Administration errors|Administration Errors]] — Wrong time, rate, route, technique, patient, omission</li><li>[[Medication Safety/Monitoring errors|Monitoring Errors]] — Failure to monitor labs, TDM, clinical response, ADR surveillance</li></ul>
+<div class="sub-h">[[Medication Safety/Root causes|Root Causes &amp; Contributing Factors]]</div>
+<ul><li>[[Medication Safety/Human factors|Human Factors &amp; System Failures]] — Fatigue, distraction, knowledge gaps, communication breakdown</li><li>[[Medication Safety/High-risk situations|High-Risk Situations]] — Transitions of care, Look-alike/sound-alike (LASA), High-alert drugs</li></ul>
+<div class="sub-h">[[Medication Safety/Prevention strategies|Prevention Strategies]]</div>
+<ul><li>[[Medication Safety/Medication reconciliation|Medication Reconciliation]] — Admission, Transfer, Discharge (ATD); Best Possible Medication History (BPMH)</li><li>[[Medication Safety/Computerised prescribing|CPOE &amp; Clinical Decision Support]] — Dose checking, Allergy alerts, Interaction alerts, Duplicate therapy alerts</li><li>[[Medication Safety/Tall Man lettering|Tall Man Lettering &amp; Labelling]] — e.g., dopaMINE vs dobutAMINE, HYDRALAZINE vs HYDROXYZINE</li><li>[[Medication Safety/Independent double check|Independent Double-Check]] — For high-alert drugs; Two-person verification</li></ul>
+<div class="sub-h">[[Medication Safety/High-risk drugs|High-Risk Drugs (PINCH/PINCHER)]]</div>
+<ul><li>[[Medication Safety/Anticoagulants|Anticoagulants &amp; Antiplatelets]] — Warfarin, DOACs, Heparins, Clopidogrel, Ticagrelor</li><li>[[Medication Safety/Insulin|Insulin]] — Concentration errors, U-100 vs U-500, Sliding scale vs Basal-bolus</li><li>[[Medication Safety/Opioids|Opioids &amp; Sedatives]] — Respiratory depression, PCA errors, Conversion errors</li><li>[[Medication Safety/Chemotherapy|Chemotherapy]] — BSA dosing, Protocol verification, Two-nurse check, Extravasation</li><li>[[Medication Safety/Electrolytes|Concentrated Electrolytes]] — KCl, KPhos, NaCl 3%, MgSO₄ — Restricted access, Pre-mixed bags</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">PINCH / PINCHER High-Alert Drug Classes</div>
+<table class="ctable"><tr><th>Acronym</th><th>Drug Class</th><th>Key Risks</th></tr><tr><td>---------</td><td>------------</td><td>-----------</td></tr><tr><td>**P**</td><td>**Potassium & other electrolytes** (Concentrated KCl, KPhos, NaCl 3%, MgSO₄)</td><td>Cardiac arrest (K), Osmotic demyelination (Na), Respiratory arrest (Mg)</td></tr><tr><td>**I**</td><td>**Insulin** (U-100, U-500, U-200, U-300)</td><td>Hypoglycaemia, Dose confusion, Concentration errors</td></tr><tr><td>**N**</td><td>**Narcotics/Opioids** (Morphine, Oxycodone, Fentanyl, Alfentanil, Remifentanil)</td><td>Respiratory depression, Sedation, Conversion errors (oral:parenteral)</td></tr><tr><td>**C**</td><td>**Chemotherapy** (All cytotoxic agents)</td><td>Narrow TI, BSA dosing, Protocol deviation, Extravasation</td></tr><tr><td>**H**</td><td>**Heparins/Anticoagulants** (UFH, LMWH, Warfarin, DOACs, Fondaparinux)</td><td>Bleeding, Thrombosis (HIT), Monitoring failure</td></tr><tr><td>**E**</td><td>**Epidurals** (Local anaesthetics, Opioids via epidural)</td><td>Motor block, Hypotension, Epidural haematoma/abscess</td></tr><tr><td>**R**</td><td>**Respiratory depressants** (Benzodiazepines, GABAergics, Clonidine, Anaesthetics)</td><td>Apnoea, Sedation, Synergy with opioids</td></tr></table>
+<div class="sub-h">Medication Reconciliation (ATD)</div>
+<table class="ctable"><tr><th>Transition</th><th>Action</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**Admission**</td><td>Obtain BPMH (Patient, Carer, GP, Pharmacy, Previous discharge summary) → Compare with admission orders → Document discrepancies → Resolve</td></tr><tr><td>**Transfer** (Ward/ICU/Step-down)</td><td>Review all meds → Stop unnecessary → Adjust for organ function → Communicate changes</td></tr><tr><td>**Discharge**</td><td>Reconcile discharge meds with pre-admission list → Explain changes to patient/carer → Send to GP/Pharmacy within 24h → Follow-up plan</td></tr></table>
+<div class="sub-h">Common LASA Pairs (Tall Man Lettering)</div>
+<table class="ctable"><tr><th>Confused Pair</th><th>Tall Man Differentiation</th></tr><tr><td>---------------</td><td>--------------------------</td></tr><tr><td>Dopamine / Dobutamine</td><td>dopaMINE / dobutAMINE</td></tr><tr><td>Hydralazine / Hydroxyzine</td><td>HYDRALAZINE / HYDROXYZINE</td></tr><tr><td>Propranolol / Propofol</td><td>propranOLOL / proPOFOL</td></tr><tr><td>Carbamazepine / Carmustine</td><td>carBAMAZEPINE / carMUSTINE</td></tr><tr><td>Ceftriaxone / Cefotaxime</td><td>cefTRIAXone / cefoTAXime</td></tr><tr><td>Glipizide / Glyburide</td><td>glipiZIDE / glyBURIDE</td></tr><tr><td>Lamotrigine / Lamivudine</td><td>lamotrIJINE / lamiVUDINE</td></tr><tr><td>Metformin / Metronidazole</td><td>metFORMIN / metRONIDAZOLE</td></tr><tr><td>Prednisolone / Prednisone</td><td>prednisoLONE / predniSONE</td></tr><tr><td>Zolpidem / Zopiclone</td><td>zolpiDEM / zopiCLONE</td></tr></table>
+<div class="sub-h">Independent Double-Check Requirements</div>
+<ul><li><b>Insulin</b> (all subcutaneous and IV)</li><li><b>Heparins</b> (UFH IV bolus/infusion, LMWH treatment dose)</li><li><b>Warfarin</b> (loading doses, dose changes)</li><li><b>DOACs</b> (first dose, renal impairment)</li><li><b>Chemotherapy</b> (All — Protocol, BSA, Dose, Drug, Patient, Route, Time)</li><li><b>Opioids IV/PCA</b> (Concentration, Rate, Patient)</li><li><b>Potassium IV</b> (Concentration, Rate, Dilution)</li><li><b>Epidural medications</b> (Drug, Concentration, Rate, Site)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Chapter</b>: [[Davidson Chapter 2 - Clinical Therapeutics Hierarchy|Chapter 2 Hierarchy]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Template</b>: [[../Templates/Clinical Therapeutics and Good Prescribing Topic Template|Topic Template]]</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Tags</span>
+  </div>
+  <div class="sec-body">
+<p>#medicine #clinical-therapeutics #davidson #hub #medication-safety #pinch #pincher #lasa #reconciliation #cpoe #fcps #mrcp</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Medication safety is a <b>core FCPS/MRCP prescribing topic</b>. Master the <b>error classification</b> (prescribing/dispensing/administration/monitoring), <b>root causes</b> (human factors, system failures, LASA), <b>high-alert drugs (PINCH/PINCHER)</b>, and <b>prevention strategies</b> (reconciliation ATD, CPOE, Tall Man, double-check, independent verification). Medication errors are a leading cause of preventable harm — systematic approach saves lives and scores top marks in vivas.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Medication error classification — which is a PRESCRIBING error?</b></li></ol>
+<p>A. Wrong patient given drug B. <b>Wrong dose prescribed</b> C. Wrong drug dispensed D. Drug given at wrong time</p>
+<ol><li><b>High-alert drug classes in PINCHER acronym?</b></li></ol>
+<p>A. P=Penicillins, I=Insulin, N=NSAIDs, C=Corticosteroids, H=Hypnotics, E=Electrolytes, R=Rifampicin B. <b>P=Potassium/electrolytes, I=Insulin, N=Narcotics/opioids, C=Chemotherapy, H=Heparins/anticoagulants, E=Epidurals, R=Respiratory depressants</b> C. P=Penicillins, I=Iron, N=Nitrates, C=Calcium channel blockers, H=Heparins, E=Erythropoietin, R=Rifampicin D. P=Proton pump inhibitors, I=Insulin, N=NSAIDs, C=Calcium, H=Heparins, E=Erythropoietin, R=Rifampicin</p>
+<ol><li><b>Medication reconciliation — when is it performed?</b></li></ol>
+<p>A. Only at discharge B. <b>Admission, Transfer, Discharge (ATD)</b> C. Only on ICU admission D. Only for controlled drugs</p>
+<ol><li><b>Tall Man lettering — which pair is correctly differentiated?</b></li></ol>
+<p>A. Metformin / Metronidazole = metFORMin / metRONIdazole B. <b>Hydralazine / Hydroxyzine = HYDRALAZINE / HYDROXYZINE</b> C. Propranolol / Propofol = propranOLOL / proPOFOL D. Glipizide / Glyburide = glipiZIDE / glyBURIDE</p>
+<ol><li><b>Independent double-check required for:</b></li></ol>
+<p>A. All oral antibiotics B. <b>IV heparin bolus/infusion</b> C. Oral paracetamol D. Oral vitamin D</p>
+<ol><li><b>Medication reconciliation — "Best Possible Medication History" (BPMH) sources:</b></li></ol>
+<p>A. Patient only B. <b>Patient + Carer + GP + Pharmacy + Previous discharge summary</b> C. GP records only D. Hospital notes only</p>
+<ol><li><b>High-alert drug — which PINCHER category includes epidurals?</b></li></ol>
+<p>A. P B. I C. N C. <b>E</b> D. R</p>
+<ol><li><b>Medication error type — "Drug given at wrong time" is:</b></li></ol>
+<p>A. Prescribing error B. Dispensing error C. <b>Administration error</b> D. Monitoring error</p>
+<ol><li><b>CPOE (Computerised Prescriber Order Entry) — key alert functions:</b></li></ol>
+<p>A. Patient demographics only B. <b>Dose checking, Allergy alerts, Interaction alerts, Duplicate therapy alerts</b> C. Signature capture only C. Cost checking only</p>
+<ol><li><b>Independent double-check — when is it REQUIRED?</b></li></ol>
+<p>A. All oral medications B. <b>IV heparin bolus/infusion</b> C. Oral vitamin supplements D. Topical creams</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>72F admitted with confusion. Medications: warfarin, furosemide, ramipril, metoprolol, lorazepam. BPMH reveals she takes rivaroxaban, not warfarin. Error type?</b></li></ol>
+<p>A. Prescribing error B. Dispensing error C. Administration error D. <b>Monitoring error (failure to identify discrepancy on admission reconciliation)</b> <i>Answer: D</i></p>
+<ol><li><b>Pharmacist dispenses dobutamine instead of dopamine. Error type?</b></li></ol>
+<p>A. Prescribing error B. <b>Dispensing error</b> C. Administration error D. Monitoring error <i>Answer: B</i></p>
+<ol><li><b>IV morphine 10mg prescribed; nurse administers 10mg IV over 1 min instead of over 5 min. Patient develops respiratory depression. Error type?</b></li></ol>
+<p>A. Prescribing error B. Dispensing error C. <b>Administration error (wrong rate)</b> D. Monitoring error <i>Answer: C</i></p>
+<ol><li><b>Patient on warfarin, INR not checked for 6 weeks. INR 8.5. Error type?</b></li></ol>
+<p>A. Prescribing error B. Dispensing error C. Administration error D. <b>Monitoring error (failure to monitor INR per protocol)</b> <i>Answer: D</i></p>
+<ol><li><b>Pharmacist assembles IV potassium 40mmol in 100ml bag. Nurse administers over 30 min instead of 4 hours. Patient develops cardiac arrest. Error type?</b></li></ol>
+<p>A. Prescribing error B. Dispensing error (wrong concentration) C. <b>Administration error (wrong rate — K⁺ IV rate violated)</b> D. Monitoring error <i>Answer: C</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 6-B, 7-C, 8-C, 9-B, 10-B</td><td>1-D, 2-B, 3-C, 4-D, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Classify medication errors — give examples of each type.</td><td>**Prescribing:** Wrong drug/dose/frequency/route/patient/allergy/interaction missed. **Dispensing:** Wrong drug/strength/quantity/labelling/patient. **Administration:** Wrong time/rate/route/technique/patient/omission. **Monitoring:** Failure to monitor labs/TDM/clinical response/ADR surveillance.</td></tr><tr><td>2</td><td>PINCHER acronym — what does each letter stand for?</td><td>**P**=Potassium/electrolytes, **I**=Insulin, **N**=Narcotics/opioids, **C**=Chemotherapy, **H**=Heparins/anticoagulants, **E**=Epidurals, **R**=Respiratory depressants.</td></tr><tr><td>3</td><td>Medication reconciliation — when and how?</td><td>**At Admission, Transfer, Discharge (ATD).** Obtain BPMH (Patient, Carer, GP, Pharmacy, Previous discharge summary) → Compare with orders → Document discrepancies → Resolve.</td></tr><tr><td>4</td><td>Tall Man lettering — purpose and examples?</td><td>**Differentiate look-alike/sound-alike (LASA) drug names.** Examples: dopaMINE/dobutAMINE, HYDRALAZINE/HYDROXYZINE, propranOLOL/proPOFOL, carBAMAZEPINE/carMUSTINE, cefTRIAXone/cefoTAXime.</td></tr><tr><td>5. Independent double-check — when required?</td><td>**High-alert drugs:** Insulin (all SC/IV), Heparins (UFH IV, LMWH treatment dose), Warfarin (loading/dose changes), DOACs (first dose, renal impairment), Chemotherapy (protocol/BSA/dose/drug/patient/route/time), Opioids IV/PCA, Potassium IV, Epidural meds.</td></tr><tr><td>6. Medication reconciliation at discharge — key steps?</td><td>Reconcile discharge meds with pre-admission list → Explain changes to patient/carer → Send to GP/Pharmacy within 24h → Follow-up plan.</td></tr><tr><td>7. Common LASA pairs — list 5 with Tall Man differentiation.</td><td>dopaMINE/dobutAMINE; HYDRALAZINE/HYDROXYZINE; propranOLOL/proPOFOL; carBAMAZEPINE/carMUSTINE; cefTRIAXone/cefoTAXime.</td></tr><tr><td>8. High-alert drugs — independent double-check required for?</td><td>**Insulin (all SC/IV), Heparins (UFH IV/LMWH treatment), Warfarin (loading/dose changes), DOACs (first dose/renal impairment), Chemotherapy (all), Opioids IV/PCA, K⁺ IV, Epidural meds.**</td></tr><tr><td>9. Medication error at transitions of care — common causes?</td><td>**Incomplete reconciliation, poor communication, inaccurate BPMH, unintentional changes, failure to resolve discrepancies.**</td></tr><tr><td>10. CPOE — key safety features?</td><td>**Dose checking (max/min/renal), Allergy alerts, Drug interaction alerts, Duplicate therapy alerts, Formulary guidance, Renal dose adjustment.**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Prescribing error = dispensing error**</td><td>**NO.** Prescribing = wrong decision by prescriber. Dispensing = wrong product/quantity/label supplied by pharmacy.</td></tr><tr><td>**Administration error = dispensing error**</td><td>**NO.** Administration = wrong act of giving drug to patient (time, rate, route, technique, patient).</td></tr><tr><td>**Monitoring error = not a real error**</td><td>**NO.** Failure to monitor = failure to detect harm from other errors or disease progression.</td></tr><tr><td>**Tall Man lettering = fixes all LASA**</td><td>**Helps but not foolproof.** Still need barcode scanning, independent double-check.</td></tr><tr><td>**Double-check = always needed**</td><td>**NO.** Only for HIGH-ALERT drugs (PINCHER). Routine double-check for all drugs = fatigue, false security.</td></tr><tr><td>**Medication reconciliation = just listing meds**</td><td>**NO.** Reconciliation = COMPARE lists + RESOLVE discrepancies + DOCUMENT + COMMUNICATE.</td></tr><tr><td>**"Do not use" abbreviations = optional**</td><td>**MANDATORY.** "U" for units, "QD/QOD", trailing zeros, lack of leading zeros — ALL cause errors.</td></tr><tr><td>**CPOE eliminates all errors**</td><td>**NO.** CPOE reduces but introduces new errors (alert fatigue, wrong menu selection, free-text overrides).</td></tr><tr><td>**Double-check = any two people**</td><td>**INDEPENDENT double-check** = two QUALIFIED people independently verify drug, dose, patient, route.</td></tr><tr><td>**PINCHER = all high-alert drugs**</td><td>**Standardised list.** Local formulary may have additional high-alert drugs.</td></tr></table>
+<div class="callout"><b>Mnemonic: PINCHER High-Alert Drugs</b> <b>P</b>otassium &amp; electrolytes (KCl, MgSO₄, NaCl 3%) <b>I</b>nsulin (U-100, U-500, U-200, U-300) <b>N</b>arcotics/opioids (Morphine, Fentanyl, Oxycodone, Alfentanil) <b>C</b>hemotherapy (All cytotoxics — BSA, protocol, 2-nurse check) <b>H</b>eparins/Anticoagulants (UFH, LMWH, Warfarin, DOACs) <b>E</b>pidurals (LAs, opioids via epidural — motor block, haematoma) <b>R</b>espiratory depressants (BZDs, GABAergics, Clonidine, Anaesthetics)</div>
+<div class="callout"><b>ERROR TYPES — "PRESCRIBE ADMIN MONITOR"</b> <b>P</b>rescribing: Drug, dose, frequency, route, patient, allergy, interaction <b>R</b>econciling: Admission, Transfer, Discharge (ATD) <b>E</b>rror: Prescribing, Dispensing, Administration, Monitoring <b>S</b>ystem: Human factors, LASA, High-alert, Transitions <b>C</b>heck: Independent double-check (PINCHER) <b>R</b>econciliation: BPMH, Admission, Transfer, Discharge <b>I</b>nterventions: CPOE, Tall Man, Barcodes, Double-check <b>P</b>revention: LASA, PINCHER, Reconciliation, CPOE, Education <b>E</b>rror reporting: Learning culture, Root cause analysis <b>S</b>afety: Culture, Systems, Technology, People</div>
+<div class="callout"><b>LASA PAIRS — TALL MAN:</b> <b>D</b>opaMINE / <b>D</b>obutAMINE <b>H</b>YDRALAZINE / <b>H</b>YDROXYZINE <b>P</b>ropranOLOL / <b>P</b>roPOFOL <b>C</b>arBAMAZEPINE / <b>C</b>arMUSTINE <b>C</b>efTRIAXone / <b>C</b>efoTAXime <b>G</b>lipiZIDE / <b>G</b>lyBURIDE <b>L</b>amotrIJINE / <b>L</b>amiVUDINE <b>M</b>etFORMIN / <b>M</b>etRONIDAZOLE <b>P</b>rednisoLONE / <b>P</b>redniSONE <b>Z</b>olpiDEM / <b>Z</b>opiCLONE</div>
+<div class="callout"><b>ATD RECONCILIATION:</b> <b>A</b>dmission: BPMH + Compare + Resolve <b>T</b>ransfer: Review + Stop unnecessary + Adjust renal/hepatic + Communicate <b>D</b>ischarge: Reconcile + Explain changes + Send to GP/Pharmacy (24h) + Follow-up</div>
+<div class="callout"><b>DOUBLE-CHECK (PINCHER):</b> <b>I</b>nsulin (all SC/IV) <b>H</b>eparins (UFH IV, LMWH treatment) <b>W</b>arfarin (loading, dose changes) <b>D</b>OACs (1st dose, renal impairment) <b>C</b>hemotherapy (All — 2-nurse) <b>O</b>pioids (IV/PCA) <b>P</b>otassium IV <b>E</b>pidural meds</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Medication Safety)) Error Types Prescribing (Drug, Dose, Freq, Route, Patient, Allergy, Interaction) Dispensing (Wrong Drug, Strength, Qty, Label, Patient) Administration (Time, Rate, Route, Technique, Patient, Omission) Monitoring (Labs, TDM, Clinical Response, ADR Surveillance) Root Causes Human Factors (Fatigue, Distraction, Knowledge, Communication) System (LASA, High-Alert, Transitions, Workload) High-Alert (PINCHER) P: Potassium/Electrolytes I: Insulin N: Narcotics/Opioids C: Chemotherapy H: Heparins/Anticoagulants E: Epidurals R: Respiratory Depressants Prevention Reconciliation (ATD, BPMH) CPOE (Dose, Allergy, Interaction, Duplicate Alerts) Tall Man (LASA) Double-Check (PINCHER) Education/Culture Transitions Admission (BPMH) Transfer (Review/Adjust) Discharge (Reconcile + Communicate) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Error Classification & Types</td><td>3</td><td></td><td></td></tr><tr><td>PINCHER High-Alert Drugs</td><td>3</td><td></td><td></td></tr><tr><td>Medication Reconciliation (ATD)</td><td>3</td><td></td><td></td></tr><tr><td>LASA & Tall Man Lettering</td><td>3</td><td></td><td></td></tr><tr><td>Prevention Strategies (CPOE, Double-Check)</td><td>3</td><td></td><td></td></tr><tr><td>Root Cause Analysis & Reporting</td><td>2</td><td></td><td></td></tr><tr><td>Special Populations & Transitions</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the classification of medication errors, high-alert drug classes (PINCHER), and prevention strategies."</td><td>Error types (prescribing/dispensing/administration/monitoring); PINCHER (P=K⁺/electrolytes, I=Insulin, N=Narcotics, C=Chemo, H=Heparins, E=Epidurals, R=Respiratory depressants); Prevention: Reconciliation (ATD), CPOE, Tall Man (LASA), Independent double-check (PINCHER), Culture & Education.</td></tr><tr><td>**Short Note**</td><td>"Medication reconciliation — steps and importance."</td><td>ATD (Admission/Transfer/Discharge); BPMH sources; Compare orders; Resolve discrepancies; Document; Communicate. Reduces errors at transitions by 50-80%.</td></tr><tr><td>**Viva**</td><td>"Patient on warfarin, INR 8.5 at admission. GP list shows rivaroxaban. GP not contacted. Error type and prevention?"</td><td>**Monitoring error** (failure to detect discrepancy) + **Reconciliation failure** at admission. Prevention: BPMH from multiple sources (patient, GP records, pharmacy, summary care record) → compare with admission orders → resolve discrepancy → document.</td></tr><tr><td>**Ward Round**</td><td>"Patient on IV morphine PCA, nurse programs 5mg bolus instead of 1mg. Prevention?"</td><td>**Independent double-check** for opioid PCA (concentration, rate, patient, drug). **CPOE/PCA with hard limits.** **Tall Man lettering** on syringes.</td></tr><tr><td>**Last-Night**</td><td>"Errors: Prescribe/Dispense/Admin/Monitor. PINCHER: P=K⁺/electrolytes, I=Insulin, N=Narcotics, C=Chemo, H=Heparins, E=Epidurals, R=Resp depressants. LASA: TALL MAN (DopaMINE/DobutAMINE, HYDRALAZINE/HYDROXYZINE, PropranOLOL/proPOFOL). Reconciliation: ATD (Admission/Transfer/Discharge) + BPMH. CPOE: Dose/Allergy/Interaction/Duplicate alerts. Double-check: PINCHER drugs. ATD: Admission (BPMH+compare), Transfer (review/adjust), Discharge (reconcile+explain+communicate)."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Error Types:</b> Prescribing (drug/dose/freq/route/patient/allergy/interaction), Dispensing (wrong drug/strength/qty/label/patient), Administration (time/rate/route/technique/patient/omission), Monitoring (labs/TDM/clinical response/ADR).</li><li><b>PINCHER High-Alert:</b> <b>P</b>=K⁺/electrolytes, <b>I</b>=Insulin, <b>N</b>=Narcotics/opioids, <b>C</b>=Chemotherapy, <b>H</b>=Heparins/anticoagulants, <b>E</b>=Epidurals, <b>R</b>=Respiratory depressants.</li><li><b>LASA:</b> Tall Man lettering (dopaMINE/dobutAMINE, HYDRALAZINE/HYDROXYZINE, propranOLOL/proPOFOL).</li><li><b>Reconciliation (ATD):</b> Admission (BPMH), Transfer (review/adjust), Discharge (reconcile+communicate 24h).</li><li><b>Prevention:</b> CPOE (dose/allergy/interaction/duplicate alerts), Tall Man (LASA), Independent double-check (PINCHER drugs), Barcode scanning, Culture of safety.</li><li><b>Transitions:</b> Admission (BPMH+compare), Transfer (review/adjust/communicate), Discharge (reconcile+explain+GP/pharmacy 24h).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Medication error — "Wrong dose prescribed" is:</b></li></ol>
+<p>A. Dispensing error B. <b>Prescribing error</b> C. Administration error D. Monitoring error</p>
+<ol><li><b>PINCHER — "N" stands for:</b></li></ol>
+<p>A. NSAIDs B. <b>Narcotics/Opioids</b> C. Nitrates D. Nicotine</p>
+<ol><li><b>Medication reconciliation — when performed?</b></li></ol>
+<p>A. At discharge only B. <b>Admission, Transfer, Discharge (ATD)</b> C. Only on ICU admission D. Only for controlled drugs</p>
+<ol><li><b>Tall Man lettering — correct pair?</b></li></ol>
+<p>A. Metformin / Metronidazole = metFORMin / metRONIdazole B. <b>Hydralazine / Hydroxyzine = HYDRALAZINE / HYDROXYZINE</b> C. Propranolol / Propofol = propranOLOL / proPOFOL D. Glipizide / Glyburide = glipiZIDE / glyBURIDE</p>
+<ol><li><b>Independent double-check required for:</b></li></ol>
+<p>A. All oral antibiotics B. <b>IV heparin bolus/infusion</b> C. Oral paracetamol D. Oral vitamin D</p>
+<ol><li><b>Medication reconciliation — BPMH sources:</b></li></ol>
+<p>A. Patient only B. <b>Patient + Carer + GP + Pharmacy + Previous discharge summary</b> C. GP records only D. Hospital notes only</p>
+<ol><li><b>PINCHER — "E" stands for:</b></li></ol>
+<p>A. Electrolytes B. <b>Epidurals</b> C. Epinephrine D. Enzyme inhibitors</p>
+<ol><li><b>Error — "Drug given at wrong time" is:</b></li></ol>
+<p>A. Prescribing error B. Dispensing error C. <b>Administration error</b> D. Monitoring error</p>
+<ol><li><b>CPOE key alerts?</b></li></ol>
+<p>A. Patient demographics only B. <b>Dose checking, Allergy alerts, Interaction alerts, Duplicate therapy alerts</b> C. Signature capture D. Cost checking</p>
+<ol><li><b>Independent double-check required for:</b></li></ol>
+<p>A. All oral antibiotics B. <b>IV heparin bolus/infusion</b> C. Oral paracetamol D. Oral vitamin D</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>72F admitted with confusion. BPMH reveals rivaroxaban; admission orders warfarin. Error type?</b></li></ol>
+<p>A. Prescribing error B. Dispensing error C. Administration error D. <b>Monitoring error (failure to identify discrepancy on admission reconciliation)</b> <i>Answer: D</i></p>
+<ol><li><b>Pharmacist dispenses dobutamine instead of dopamine. Error type?</b></li></ol>
+<p>A. Prescribing error B. <b>Dispensing error</b> C. Administration error D. Monitoring error <i>Answer: B</i></p>
+<ol><li><b>IV morphine 10mg prescribed; nurse gives 10mg IV over 1 min (should be 5 min). Respiratory depression. Error type?</b></li></ol>
+<p>A. Prescribing error B. Dispensing error C. <b>Administration error (wrong rate)</b> D. Monitoring error <i>Answer: C</i></p>
+<ol><li><b>Patient on warfarin, INR not checked 6 weeks, INR 8.5. Error type?</b></li></ol>
+<p>A. Prescribing error B. Dispensing error C. Administration error D. <b>Monitoring error (failure to monitor INR per protocol)</b> <i>Answer: D</i></p>
+<ol><li><b>IV KCl 40mmol/100ml over 30 min (should be 4h). Cardiac arrest. Error type?</b></li></ol>
+<p>A. Prescribing error B. Dispensing error (wrong concentration) C. <b>Administration error (wrong rate — K⁺ IV rate violated)</b> D. Monitoring error <i>Answer: C</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 6-B, 7-C, 8-C, 9-B, 10-B</td><td>1-D, 2-B, 3-C, 4-D, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Principles of Rational Prescribing]] — Safe prescribing, monitoring</li><li>[[ADRs]] — Errors vs ADRs differentiation</li><li>[[Drug Interactions]] — Interaction-induced errors</li><li>[[Polypharmacy and Deprescribing]] — Polypharmacy-related errors</li><li>[[Prescribing in Special Populations]] — Elderly/renal/paediatric safety</li><li>[[Therapeutic Drug Monitoring]] — TDM errors</li><li>[[ADRs]] — Medication error vs ADR reporting</li><li>[[Clinical Contexts/Antimicrobial Stewardship]] — Antimicrobial prescribing safety</li><li>[[Population &amp; Newborn Screening]] — Neonatal medication safety</li><li>[[9. ELSI]] — Error reporting ethics, just culture, blame-free reporting</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Medication Safety &amp; Errors Hub: COMPLETE with Full Exam Suite</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Medication Safety And Errors · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

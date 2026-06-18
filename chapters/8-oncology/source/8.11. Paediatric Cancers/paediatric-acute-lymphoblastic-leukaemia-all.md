@@ -1,0 +1,567 @@
+# Paediatric Acute Lymphoblastic Leukaemia (ALL)
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **Paediatric ALL = Most Common Childhood Cancer (25-30%)**; **B-ALL 85%, T-ALL 15%**; **Peak 2-5 years**; **Risk Stratification (NCI/Rome)**: **Standard (Age 1-9.99, WBC<50)**: **Age 1-9.99, WBC<50x10⁹/L**, **Favourable Cytogenetics (ETV6-RUNX1, High Hyperdiploidy)**, **MRD Negative**; **High Risk**: Age≥10, WBC≥50, Unfavourable Cytogenetics (Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21), **MRD Positive**; **Ph+ (BCR-ABL1) → Add TKI (Imatinib/Dasatinib)**; **Ph-like (CRLF2/JAK/ABL) → TKI**; **Infant KMT2A-r → Intensive (Interfant)**; **CNS Prophylaxis: Intrathecal MTX/AraC + HD-MTX**; **CAR-T (Tisagenlecleucel) for R/R**; **Cure >90% Standard Risk**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Apply **NCI/Rome Risk Stratification** (Age, WBC, Cytogenetics, MRD)
+- [ ] Identify **Favourable (ETV6-RUNX1, High Hyperdiploidy)** vs **Unfavourable (Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21)** Genetics
+- [ ] Manage **Ph+ ALL** with **TKI (Imatinib/Dasatinib) + Chemotherapy**
+- [ ] Recognise **Ph-like ALL** (CRLF2, JAK/STAT, ABL-class) → **TKI Targeted**
+- [ ] Treat **Infant KMT2A-r ALL** with **Interfant/Intensive Protocols**
+- [ ] Implement **CNS Prophylaxis**: **Intrathecal MTX/AraC + Systemic HD-MTX** (No Routine Cranial RT)
+- [ ] Use **MRD (Flow/PCR)** for Risk Adaptation
+- [ ] Indicate **CAR-T (Tisagenlecleucel)** for Relapsed/Refractory B-ALL
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Definition** | Malignant proliferation of **Lymphoid Precursors** (Lymphoblasts) in BM, Blood, Extramedullary Sites |
+| **Incidence** | **Most Common Childhood Cancer (25-30%)**; ~400-500/year UK |
+| **Prevalence** | **5-yr OS >90% (Standard Risk)**, **70-80% (High Risk)**; **Cure ~90% Overall** |
+| **Peak Age** | **2-5 years** (B-ALL); **T-ALL: Older (10-15)** |
+| **Sex Ratio** | **M:F = 1.2:1** (B-ALL); **T-ALL: 3:1** |
+| **Subtypes** | **B-ALL 85%** (Pro-B, Pre-B, Pre-pre-B); **T-ALL 15%** (Cortical, Mature) |
+
+---
+
+## 3. Risk Stratification (NCI / Rome / COG / UKALL)
+
+### NCI/Rome Standard Criteria (Initial)
+
+| Group | Age | WBC (×10⁹/L) |
+|-------|-----|--------------|
+| **Standard Risk (SR)** | **1-9.99 years** | **<50** |
+| **High Risk (HR)** | **≥10 years** | **≥50** |
+
+### Integrated Risk (Adding Cytogenetics + MRD) — UKALL 2011 / COG
+
+| Risk Group | Criteria |
+|------------|----------|
+| **Low Risk (LR)** | **SR Clinical + Favourable Genetics (ETV6-RUNX1, High Hyperdiploidy 51-65)** + **MRD Negative (Day 29/78)** |
+| **Standard Risk (SR)** | **SR Clinical + Non-Favourable/Non-Unfavourable Genetics** + **MRD Negative/Intermediate** |
+| **High Risk (HR)** | **HR Clinical OR Unfavourable Genetics (Ph+, Ph-like, KMT2A-r, Hypodiploidy <44, iAMP21, T-ALL)** OR **MRD Positive (Day 29 ≥0.01% or Day 78 >0%)** |
+| **Very High Risk (VHR)** | **Induction Failure (M3 Day 29)**, **MRD ≥1% Day 78**, **Ph+ (Historical)**, **Hypodiploidy <44**, **iAMP21** |
+
+> **MRD (Minimal Residual Disease)** by **Flow Cytometry (LAIP)** or **PCR (IgH/TCR)** — **Critical for Risk Adaptation**
+
+---
+
+## 4. Key Cytogenetic Subgroups
+
+| Subgroup | Frequency | Prognosis | Targeted Therapy |
+|----------|-----------|-----------|------------------|
+| **ETV6-RUNX1 (TEL-AML1)** | **25% (B-ALL)** | **Favourable** | — |
+| **High Hyperdiploidy (51-65 chr)** | **25-30%** | **Favourable** | — |
+| **BCR-ABL1 (Ph+)** | **3-5%** | **Historically Poor** | **TKI (Imatinib/Dasatinib) + Chemo** |
+| **Ph-like (BCR-ABL1-like)** | **10-15%** | **Poor** | **TKI (Dasatinib/Ruxolitinib) + Chemo** |
+| **KMT2A-r (11q23)** | **70% Infant, 5-10% Older** | **Poor (Infants)** | **Intensive (Interfant)** |
+| **Hypodiploidy (<44 chr)** | **<1%** | **Very Poor** | **Allo-HSCT CR1** |
+| **iAMP21** | **2%** | **Poor** | **Intensive + Allo-HSCT** |
+| **TCF3-PBX1 (E2A-PBX1)** | **5%** | **Intermediate** | — |
+| **Near Haploidy / Low Hypodiploidy** | Rare | **Very Poor** | **Allo-HSCT** |
+
+---
+
+## 5. Treatment Protocols (UKALL 2011 / COG AALL 0932 / Interfant)
+
+### Induction (4-6 Weeks) — Goal: Morphological CR + MRD Assessment
+
+| Component | Standard Risk | High Risk |
+|-----------|---------------|-----------|
+| **Vincristine** | Weekly ×4 | Weekly ×4 |
+| **Dexamethasone** | 6mg/m²/d ×28d | 10mg/m²/d ×28d |
+| **Asparaginase (PEG/Pegaspargase)** | Day 4, 18, 32 | Day 4, 18, 32 (Higher Dose) |
+| **Daunorubicin** | Day 1, 8, 15, 22 | Day 1, 8, 15, 22 (Higher Dose) |
+| **Intrathecal MTX** | Day 1, 8, 15, 22 | Day 1, 8, 15, 22 (x4-6) |
+| **Cyclophosphamide** | — | Day 15, 29 (HR) |
+
+**Day 15/29 Marrow → M1/M2/M3 → MRD Flow/PCR**
+
+### Consolidation / Interim Maintenance / Delayed Intensification
+
+| Phase | Key Components |
+|-------|----------------|
+| **Consolidation** | Cyclophosphamide, Cytarabine, Mercaptopurine, MTX |
+| **Interim Maintenance** | Vincristine, Asparaginase, MTX, Mercaptopurine |
+| **Delayed Intensification (DI)** | **Re-induction style**: Vincristine, Dex, Doxo, Asparaginase, Cyclo, Cytarabine, 6-TG, IT MTX |
+| **Maintenance** | **Daily 6-MP + Weekly MTX + Monthly Vincristine/Pred ×2-3 Years** |
+
+---
+
+## 6. Special Subtype Management
+
+### Ph+ ALL (BCR-ABL1)
+
+| Component | Detail |
+|-----------|--------|
+| **TKI** | **Imatinib** (Historical) / **Dasatinib** (Preferred, CNS Penetration) / **Nilotinib** |
+| **Schedule** | **TKI from Day 15/29 + Throughout All Phases** |
+| **Allo-HSCT** | **CR1 if MRD Positive / Poor Response**; **Dasatinib Era: Chemo+TKI Alone May Suffice** (EsPhALL, COG AALL0031) |
+| **TKI Duration** | **Throughout Therapy + 1-2 Years Post** |
+
+### Ph-like ALL (CRLF2-r, JAK/STAT, ABL-class)
+
+| Subtype | Target | TKI |
+|---------|--------|-----|
+| **CRLF2-r + JAK Mut** | **JAK/STAT** | **Ruxolitinib** |
+| **ABL-class (ABL1/2, PDGFR, CSF1R Fusions)** | **ABL Kinase** | **Dasatinib** (Imatinib Less Effective) |
+| **Other** | **Various** | **Dasatinib/Ruxolitinib Trial** |
+
+### Infant ALL (KMT2A-r / 11q23) — Interfant Protocol
+
+| Feature | Detail |
+|---------|--------|
+| **Age** | **<1 year** (Peak 3-6 months) |
+| **KMT2A-r** | **70-80%** (AFF1, MLLT1, MLLT3, ELL) |
+| **Protocol** | **Interfant-06/99**: **Intensive (Cytarabine, Daunorubicin, Etoposide, High-Dose MTX, Asparaginase)** |
+| **CNS Prophylaxis** | **Intrathecal ×6-8 + HD-MTX** (No Cranial RT) |
+| **Allo-HSCT** | **CR1 for High-Risk (KMT2A-r + Age<6mo / WBC>300 / Poor Response)** |
+| **Outcome** | **5-yr OS ~50-60%** (Improving) |
+
+---
+
+## 7. CNS Prophylaxis
+
+| Modality | Dose/Schedule | Role |
+|----------|---------------|------|
+| **Intrathecal MTX** | **Age-Adjusted**: <1yr 8mg, 1-1.99yr 10mg, 2-2.99yr 12mg, ≥3yr 15mg | **Direct CNS Delivery** (Weeks 1, 2, 4, 8, 12, 16...) |
+| **Intrathecal Cytarabine** | 30mg (1-2yr), 50mg (2-3yr), 70mg (≥3yr) | **Alternative/Additive** |
+| **Systemic HD-MTX** | **5g/m² (Capizzi) / 3-8g/m²** | **CNS Penetration** (Capizzi/Escalating) |
+| **Cranial RT** | **12-18Gy** | **NOT ROUTINE** (Neurocognitive Toxicity); **Reserved: CNS3 at Diagnosis, Traumatic LP with Blasts, Relapse** |
+
+**CNS Status at Diagnosis:**
+- **CNS1**: No Blasts in CSF
+- **CNS2**: <5 WBC/µL with Blasts
+- **CNS3**: ≥5 WBC/µL with Blasts OR Cranial Nerve Palsy / Ocular Involvement
+
+---
+
+## 8. MRD-Guided Therapy (UKALL 2011 / COG)
+
+| Timepoint | MRD Threshold | Action |
+|-----------|---------------|--------|
+| **Day 15/29 (End Induction)** | **≥0.01% (Flow) / ≥10⁻⁴ (PCR)** | **Upstage to HR** |
+| **Day 78 (End Consolidation)** | **>0% (Flow) / Detectable (PCR)** | **Upstage to HR/VHR** |
+| **Week 12/15** | **Persistent Positive** | **Consider Allo-HSCT** |
+
+**MRD Negative = <0.01% (Flow) / Undetectable (PCR) — Critical for De-escalation**
+
+---
+
+## 9. Relapsed/Refractory ALL
+
+| Setting | Treatment |
+|---------|-----------|
+| **Early BM Relapse (<18mo CR1)** | **Allo-HSCT CR2** (After Re-induction) |
+| **Late BM Relapse (>18mo)** | **Re-induction Chemo ± Allo-HSCT** |
+| **Isolated CNS/Testicular Relapse** | **Local RT + Intensive Chemo** (No Allo-HSCT if Isolated) |
+| **R/R B-ALL (CD19+)** | **CAR-T: Tisagenlecleucel (Kymriah)** — **ORR 80-90%, CR 60-80%** |
+| **R/R T-ALL** | **Nelarabine**, **CAR-T (CD7/CD5)**, **Allo-HSCT** |
+| **Post-CAR-T Relapse** | **Allo-HSCT**, **Second CAR-T**, **BiTE (Blinatumomab)** |
+
+### Blinatumomab (BiTE CD19xCD3)
+
+| Indication | Schedule |
+|------------|----------|
+| **R/R B-ALL** | **Cycle 1: 9µg/d ×14d → 28µg/d ×14d**; **Cycle 2+: 28µg/d ×28d** q6wk |
+| **MRD+ (Post-Chemo)** | **1 Cycle (28µg/d ×28d)** — **MRD Clearance ~80%** |
+
+---
+
+## 10. Supportive Care & Toxicity
+
+| Toxicity | Management |
+|----------|------------|
+| **Febrile Neutropenia** | **Piperacillin-Tazobactam / Meropenem**; **G-CSF (Secondary Prophylaxis)** |
+| **TLS** | **Hydration, Allopurinol/Rasburicase**, **Monitor K, P, Urate, Ca** |
+| **Asparaginase Toxicity** | **Pancreatitis (Stop), Thrombosis (Anticoag), Hypersensitivity (Switch Erwinia/Pegaspargase)** |
+| **Osteonecrosis (AVN)** | **Bisphosphonates, Surgical Core Decompression** (Adolescents, Dex) |
+| **Neurotoxicity (Vinca)** | **Dose Reduce/Hold**, **Physiotherapy** |
+| **Infection Prophylaxis** | **Co-trimoxazole (PJP)**, **Acyclovir (HSV)**, **Posaconazole (Prolonged Neutropenia)** |
+
+---
+
+## 11. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Paediatric ALL** | **Most Common Childhood Cancer**, **B-ALL 85%, T-ALL 15%**, **Peak 2-5yr** |
+| **NCI Risk** | **SR: Age 1-9.99, WBC<50**; **HR: Age≥10, WBC≥50** |
+| **Genetics** | **Favourable: ETV6-RUNX1, High Hyperdiploidy**; **Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21** |
+| **MRD** | **Critical for Risk Adaptation**; **Day 29/78 Thresholds** |
+| **Ph+ ALL** | **TKI (Dasatinib) + Chemo**; **Allo-HSCT CR1 if MRD+** |
+| **Ph-like** | **CRLF2/JAK/ABL** → **TKI (Ruxolitinib/Dasatinib)** |
+| **Infant KMT2A-r** | **Interfant Intensive**; **Allo-HSCT CR1 High-Risk** |
+| **CNS Prophylaxis** | **IT MTX/AraC + HD-MTX**; **NO Routine Cranial RT** |
+| **CAR-T** | **Tisagenlecleucel (CD19)** — **R/R B-ALL, ORR 80-90%** |
+| **Blinatumomab** | **BiTE CD19xCD3**; **R/R, MRD+** |
+
+---
+
+## 12. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **4yr, WBC 12, B-ALL, ETV6-RUNX1+, Day 29 MRD Negative. Risk Group?** | **Low Risk (SR Clinical + Favourable Genetics + MRD Negative)** → **De-escalated Therapy**. |
+| **12yr, WBC 100, B-ALL, BCR-ABL1+. Management?** | **High Risk (Age≥10, WBC≥50, Ph+)** → **TKI (Dasatinib) + Intensive Chemo** → **Allo-HSCT CR1 if MRD+**. |
+| **6mo Infant, B-ALL, KMT2A-r. Protocol?** | **Interfant-06/99**: **Intensive (High-Dose Cytarabine, Daunorubicin, Etoposide, HD-MTX, Asparaginase)** + **IT MTX ×6-8** + **HD-MTX**. |
+| **Ph-like ALL — Genetic Features, Targeted Therapy?** | **CRLF2-r + JAK Mut → Ruxolitinib**; **ABL-class Fusion → Dasatinib**; **Identified by RNA-Seq/Transcriptome**. |
+| **CNS Prophylaxis — Standard, Cranial RT?** | **Intrathecal MTX/AraC + HD-MTX**; **Cranial RT NOT Routine** (Neurocognitive Toxicity); **Only CNS3/Traumatic LP/Relapse**. |
+| **Day 29 MRD 0.05% — Risk Implication?** | **MRD Positive (≥0.01%)** → **Upstage to High Risk**, **Intensified Therapy**. |
+| **Relapsed B-ALL at 10mo — Management?** | **Early Relapse (<18mo)** → **Re-induction → Allo-HSCT CR2**. |
+| **CAR-T for ALL — Product, Indication, Outcome?** | **Tisagenlecleucel (CD19 CAR-T)** — **R/R B-ALL** — **ORR 80-90%, CR 60-80%**; **Cytokine Release Syndrome (CRS), Neurotoxicity (ICANS)**. |
+| **Blinatumomab — Indication, Schedule?** | **R/R B-ALL, MRD+**; **Cycle 1: 9→28µg/d ×28d**, **Cycles 2+: 28µg/d ×28d q6wk**. |
+| **Asparaginase Hypersensitivity — Alternative?** | **Erwinia Asparaginase (Erwinase)** or **Pegaspargase (If Native E. coli)** — **Different Immunogenicity**. |
+
+---
+
+## 13. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **NCI vs Integrated Risk** | **NCI = Initial (Age + WBC Only)**; **Integrated = NCI + Cytogenetics + MRD** (Final) |
+| **Ph+ vs Ph-like** | **Ph+ = BCR-ABL1 Fusion (TKI: Imatinib/Dasatinib)**; **Ph-like = BCR-ABL1-like Transcriptome, NO BCR-ABL1 (TKI: Dasatinib/Ruxolitinib)** |
+| **MRD Thresholds** | **Flow: ≥0.01% = Positive**; **PCR: ≥10⁻⁴ = Positive**; **Day 29 & Day 78 Key Timepoints** |
+| **Cranial RT Indications** | **CNS3 at Dx, Traumatic LP with Blasts, CNS Relapse** — **NOT Routine Prophylaxis** |
+| **Infant vs Older KMT2A-r** | **Infant (<1yr): 70-80% KMT2A-r, Intensive Interfant**; **Older: 5-10%, HR but Standard Intensive** |
+| **Allo-HSCT Timing** | **Ph+ MRD+ / VHR / Early Relapse → CR1/CR2**; **Modern TKI Era: Ph+ CR1 HSCT Decreasing** |
+
+**Mnemonic: PAED-ALL**
+- **P**aediatric: **Most Common Childhood Cancer (25-30%)**
+- **A**LL: **B-ALL 85%, T-ALL 15%**, Peak 2-5yr
+- **E**TV6-RUNX1, **High Hyperdiploidy** = **Favourable**
+- **D**asatinib: **Ph+ / Ph-like (ABL-class)**, **Ruxolitinib: Ph-like (JAK)**
+- **A**ge/WBC: **NCI SR (1-9.99yr, <50)**, **HR (≥10yr, ≥50)**
+- **L**ow Risk: **SR + Favourable Genetics + MRD-**
+- **L**MRD: **Day 29/78, ≥0.01% = HR**, **Critical for Adaptation**
+- **C**NS Prophylaxis: **IT MTX/AraC + HD-MTX**, **No Cranial RT Routine**
+- **A**LL Subtypes: **Ph+ (TKI), Ph-like (TKI), KMT2A-r (Infant Intensive), iAMP21/hypodiploidy (VHR)**
+- **R**elapse: **Early (<18mo) → Allo-HSCT**, **Late → Re-induction**
+- **C**AR-T: **Tisagenlecleucel (CD19)** — **R/R B-ALL**
+- **B**linatumomab: **BiTE CD19xCD3**, **MRD+, R/R**
+
+---
+
+## 14. Mind Map
+
+```mermaid
+mindmap
+  root((Paediatric ALL))
+    Subtypes
+      B-ALL (85%) - Peak 2-5yr
+      T-ALL (15%) - Older (10-15yr)
+    Risk Stratification
+      NCI: SR (1-9.99yr, WBC<50) vs HR (≥10yr, WBC≥50)
+      Genetics: Favourable (ETV6-RUNX1, Hyperdiploid) vs Unfavourable (Ph+, Ph-like, KMT2A-r, Hypodiploid, iAMP21)
+      MRD (Day 29/78): Negative vs Positive
+    Special Subtypes
+      Ph+ (BCR-ABL1): TKI (Dasatinib) + Chemo
+      Ph-like (CRLF2/JAK/ABL): TKI (Ruxolitinib/Dasatinib)
+      Infant KMT2A-r (<1yr): Interfant Intensive
+      iAMP21/Hypodiploid: VHR
+    Treatment
+      Induction: Vincristine, Dex, Asparaginase, Daunorubicin, IT MTX
+      Consolidation/DI/Maintenance (2-3yr)
+      CNS Prophylaxis: IT MTX/AraC + HD-MTX (NO Cranial RT)
+    MRD
+      Day 29/78: ≥0.01% = HR
+      Guides Intensification/De-escalation
+    Relapse
+      Early (<18mo): Allo-HSCT CR2
+      Late: Re-induction ± HSCT
+      CAR-T: Tisagenlecleucel (CD19)
+      Blinatumomab (BiTE)
+```
+
+---
+
+## 15. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Subtypes** | B-ALL 85%, T-ALL 15% |
+| **NCI Risk** | SR: 1-9.99yr, WBC<50; HR: ≥10yr, WBC≥50 |
+| **Favourable Genetics** | ETV6-RUNX1, High Hyperdiploidy (51-65) |
+| **Unfavourable** | Ph+, Ph-like, KMT2A-r, Hypodiploidy <44, iAMP21 |
+| **MRD** | Day 29/78 ≥0.01% = HR; Guides Therapy |
+| **Ph+** | TKI (Dasatinib) + Chemo |
+| **Ph-like** | CRLF2/JAK → Ruxolitinib; ABL-class → Dasatinib |
+| **Infant KMT2A-r** | Interfant Intensive |
+| **CNS Prophylaxis** | IT MTX/AraC + HD-MTX; NO Cranial RT Routine |
+| **CAR-T** | Tisagenlecleucel (CD19) for R/R B-ALL |
+
+---
+
+## 16. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 17. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| NCI Risk Stratification | | |
+| Genetic Subgroups | | |
+| MRD Interpretation | | |
+| Ph+ / Ph-like Management | | |
+| Infant ALL Protocol | | |
+| CNS Prophylaxis | | |
+| CAR-T / Blinatumomab | | |
+| Relapse Management | | |
+
+---
+
+## 18. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Paediatric AML]], [[Paediatric Lymphomas]], [[Paediatric Solid Tumours]], [[Paediatric CNS Tumours]], [[CAR-T]], [[Blinatumomab]], [[MRD Monitoring]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 19. MCQs (10)
+
+
+**1.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Paediatric ALL), which statement is correct?
+   A. **Most Common Childhood Cancer**, **B-ALL 85%, T-ALL 15%**, **Peak 2-5yr**
+   B. **Most - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Most Common Childhood Cancer**, **B-ALL 85%, T-ALL 15%**, **Peak 2-5yr**
+
+
+**2.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (NCI Risk), which statement is correct?
+   A. **SR: Age 1-9.99, WBC<50**
+   B. **SR: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **SR: Age 1-9.99, WBC<50**; **HR: Age≥10, WBC≥50**
+
+
+**3.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Genetics), which statement is correct?
+   A. **Favourable: ETV6-RUNX1, High Hyperdiploidy**
+   B. **Favourable: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Favourable: ETV6-RUNX1, High Hyperdiploidy**; **Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21**
+
+
+**4.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (MRD), which statement is correct?
+   A. **Critical for Risk Adaptation**
+   B. **Critical - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Critical for Risk Adaptation**; **Day 29/78 Thresholds**
+
+
+**5.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Ph+ ALL), which statement is correct?
+   A. **TKI (Dasatinib) + Chemo**
+   B. **TKI - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **TKI (Dasatinib) + Chemo**; **Allo-HSCT CR1 if MRD+**
+
+
+**6.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Ph-like), which statement is correct?
+   A. **CRLF2/JAK/ABL** → **TKI (Ruxolitinib/Dasatinib)**
+   B. **CRLF2/JAK/ABL** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **CRLF2/JAK/ABL** → **TKI (Ruxolitinib/Dasatinib)**
+
+
+**7.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Infant KMT2A-r), which statement is correct?
+   A. **Interfant Intensive**
+   B. **Interfant - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Interfant Intensive**; **Allo-HSCT CR1 High-Risk**
+
+
+**8.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (CNS Prophylaxis), which statement is correct?
+   A. **IT MTX/AraC + HD-MTX**
+   B. **IT - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **IT MTX/AraC + HD-MTX**; **NO Routine Cranial RT**
+
+
+**9.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (CAR-T), which statement is correct?
+   A. **Tisagenlecleucel (CD19)**
+   B. **Tisagenlecleucel - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Tisagenlecleucel (CD19)** — **R/R B-ALL, ORR 80-90%**
+
+
+**10.** Regarding Paediatric Acute Lymphoblastic Leukaemia (ALL) (Blinatumomab), which statement is correct?
+   A. **BiTE CD19xCD3**
+   B. **BiTE - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **BiTE CD19xCD3**; **R/R, MRD+**
+
+
+## 20. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **Most Common Childhood Cancer**, **B-ALL 85%, T-ALL 15%**, **Peak 2-5yr**
+   - B. **Most (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **Most Common Childhood Cancer**, **B-ALL 85%, T-ALL 15%**, **Peak 2-5yr**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **SR: Age 1-9.99, WBC<50**
+   - B. **SR: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **SR: Age 1-9.99, WBC<50**; **HR: Age≥10, WBC≥50**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Favourable: ETV6-RUNX1, High Hyperdiploidy**
+   - B. **Favourable: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Favourable: ETV6-RUNX1, High Hyperdiploidy**; **Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Critical for Risk Adaptation**
+   - B. **Critical (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Critical for Risk Adaptation**; **Day 29/78 Thresholds**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **TKI (Dasatinib) + Chemo**
+   - B. **TKI (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **TKI (Dasatinib) + Chemo**; **Allo-HSCT CR1 if MRD+**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **CRLF2/JAK/ABL** → **TKI (Ruxolitinib/Dasatinib)**
+   - B. **CRLF2/JAK/ABL** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **CRLF2/JAK/ABL** → **TKI (Ruxolitinib/Dasatinib)**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **Interfant Intensive**
+   - B. **Interfant (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **Interfant Intensive**; **Allo-HSCT CR1 High-Risk**
+
+
+**8.** The role of surgery in this case is:
+   - A. **IT MTX/AraC + HD-MTX**
+   - B. **IT (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **IT MTX/AraC + HD-MTX**; **NO Routine Cranial RT**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **Tisagenlecleucel (CD19)**
+   - B. **Tisagenlecleucel (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **Tisagenlecleucel (CD19)** — **R/R B-ALL, ORR 80-90%**
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **BiTE CD19xCD3**
+   - B. **BiTE (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **BiTE CD19xCD3**; **R/R, MRD+**
+
+
+## 21. Flashcards
+
+**Q1:** Paediatric ALL?
+**A1:** Most Common Childhood Cancer, B-ALL 85%, T-ALL 15%, Peak 2-5yr
+
+**Q2:** NCI Risk?
+**A2:** SR: Age 1-9.99, WBC<50; HR: Age≥10, WBC≥50
+
+**Q3:** Genetics?
+**A3:** Favourable: ETV6-RUNX1, High Hyperdiploidy; Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21
+
+**Q4:** MRD?
+**A4:** Critical for Risk Adaptation; Day 29/78 Thresholds
+
+**Q5:** Ph+ ALL?
+**A5:** TKI (Dasatinib) + Chemo; Allo-HSCT CR1 if MRD+
+
+**Q6:** Ph-like?
+**A6:** CRLF2/JAK/ABL → TKI (Ruxolitinib/Dasatinib)
+
+**Q7:** Infant KMT2A-r?
+**A7:** Interfant Intensive; Allo-HSCT CR1 High-Risk
+
+**Q8:** CNS Prophylaxis?
+**A8:** IT MTX/AraC + HD-MTX; NO Routine Cranial RT
+
+## 22. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Paediatric ALL | Most Common Childhood Cancer, B-ALL 85%, T-ALL 15%, Peak 2-5yr |
+| 2 | A | NCI Risk | SR: Age 1-9.99, WBC<50; HR: Age≥10, WBC≥50 |
+| 3 | A | Genetics | Favourable: ETV6-RUNX1, High Hyperdiploidy; Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21 |
+| 4 | A | MRD | Critical for Risk Adaptation; Day 29/78 Thresholds |
+| 5 | A | Ph+ ALL | TKI (Dasatinib) + Chemo; Allo-HSCT CR1 if MRD+ |
+| 6 | A | Ph-like | CRLF2/JAK/ABL → TKI (Ruxolitinib/Dasatinib) |
+| 7 | A | Infant KMT2A-r | Interfant Intensive; Allo-HSCT CR1 High-Risk |
+| 8 | A | CNS Prophylaxis | IT MTX/AraC + HD-MTX; NO Routine Cranial RT |
+| 9 | A | CAR-T | Tisagenlecleucel (CD19) — R/R B-ALL, ORR 80-90% |
+| 10 | A | Blinatumomab | BiTE CD19xCD3; R/R, MRD+ |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Paediatric ALL | Most Common Childhood Cancer, B-ALL 85%, T-ALL 15%, Peak 2-5yr |
+| 2 | A | NCI Risk | SR: Age 1-9.99, WBC<50; HR: Age≥10, WBC≥50 |
+| 3 | A | Genetics | Favourable: ETV6-RUNX1, High Hyperdiploidy; Unfavourable: Ph+, Ph-like, KMT2A-r, Hypodiploidy, iAMP21 |
+| 4 | A | MRD | Critical for Risk Adaptation; Day 29/78 Thresholds |
+| 5 | A | Ph+ ALL | TKI (Dasatinib) + Chemo; Allo-HSCT CR1 if MRD+ |
+| 6 | A | Ph-like | CRLF2/JAK/ABL → TKI (Ruxolitinib/Dasatinib) |
+| 7 | A | Infant KMT2A-r | Interfant Intensive; Allo-HSCT CR1 High-Risk |
+| 8 | A | CNS Prophylaxis | IT MTX/AraC + HD-MTX; NO Routine Cranial RT |
+| 9 | A | CAR-T | Tisagenlecleucel (CD19) — R/R B-ALL, ORR 80-90% |
+| 10 | A | Blinatumomab | BiTE CD19xCD3; R/R, MRD+ |
+
+## 23. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Paediatric Cancers|Paediatric Cancers]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

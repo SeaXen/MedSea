@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatocellular Carcinoma Hcc — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.9. HEPATOBILIARY & PANCREATIC</span>
+      <div class="h1">Hepatocellular Carcinoma Hcc</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Identify risk factors: Cirrhosis (HBV, HCV, Alcohol, NAFLD/NASH, Hemochromatosis)</li><li>[ ] Apply BCLC staging and treatment algorithm</li><li>[ ] Define Milan / UCSF / Up-to-7 criteria for liver transplant</li><li>[ ] Compare locoregional therapies: TACE vs TARE vs RFA/MWA</li><li>[ ] Sequence systemic therapy: 1L Atezo/Bev, Sorafenib, Lenvatinib; 2L Rego, Cabozanti, Ramu</li><li>[ ] Diagnose HCC non-invasively (LI-RADS) vs biopsy</li><li>[ ] Manage complications: variceal bleed, hepatic encephalopathy, hepatorenal syndrome</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Primary malignant tumour of hepatocytes; **>90% arise in cirrhosis**</td></tr><tr><td>**Incidence**</td><td>6th most common cancer globally; 3rd leading cause of cancer death; UK: ~6,200/year; M:F = 2-3:1</td></tr><tr><td>**Prevalence**</td><td>High in East Asia, Sub-Saharan Africa (HBV endemic); Rising in West (NASH/Alcohol)</td></tr><tr><td>**Peak Age**</td><td>60-70 years; HBV: younger (30-50)</td></tr><tr><td>**Sex Ratio**</td><td>Male 2-3:1 (androgen effect, behavioural)</td></tr><tr><td>**Risk Factors**</td><td>**Cirrhosis** (any aetiology): **HBV** (integrates DNA, ↓ need cirrhosis), **HCV**, **Alcohol**, **NAFLD/NASH** (fastest rising), **Hemochromatosis**, **A1AT deficiency**, **PBC**, **Autoimmune hepatitis**, Aflatoxin (synergy with HBV), Diabetes, Obesity, Smoking</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Risk Factors] --&gt; B[Chronic Liver Injury] B --&gt; C[Inflammation → Fibrosis → Cirrhosis] C --&gt; D[Hepatocyte Regeneration + Genomic Instability] D --&gt; E[Driver Mutations] E --&gt; F1[TP53 (30%)] E --&gt; F2[CTNNB1 (β-catenin, 25%)] E --&gt; F3[TERT Promoter (60%)] E --&gt; F4[AXIN1, ARID1A, RPS6KA3] F1 --&gt; G[HCC Development] F2 --&gt; G F3 --&gt; G F4 --&gt; G G --&gt; H[Angiogenesis (VEGF/FGF)] --&gt; I[Invasion/Metastasis] </code>``</p>
+<div class="sub-h">Molecular Pathways</div>
+<table class="ctable"><tr><th>Pathway</th><th>Frequency</th><th>Significance</th></tr><tr><td>---------</td><td>-----------</td><td>--------------</td></tr><tr><td>**TERT Promoter**</td><td>60%</td><td>Telomerase reactivation — earliest event</td></tr><tr><td>**TP53**</td><td>30% (↑ HBV, aflatoxin)</td><td>Genomic instability; R249S hotspot (aflatoxin)</td></tr><tr><td>**CTNNB1 (β-catenin)**</td><td>25%</td><td>Wnt activation; immune-cold tumours; ↓ ICI response</td></tr><tr><td>**AXIN1**</td><td>10%</td><td>Wnt pathway</td></tr><tr><td>**Chromosome 8q gain (MYC)**</td><td>30%</td><td>Proliferation</td></tr><tr><td>**VEGF/FGFR**</td><td>High expression</td><td>Angiogenesis — target for TKIs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Surveillance-Detected**</td><td>Asymptomatic; US lesion <2cm; AFP elevated</td></tr><tr><td>**Symptomatic**</td><td>RUQ pain, weight loss, early satiety, palpable mass</td></tr><tr><td>**Decompensation**</td><td>Ascites, variceal bleed, encephalopathy, jaundice (tumour-induced)</td></tr><tr><td>**Paraneoplastic**</td><td>**Hypoglycaemia** (IGF-II), **Erythrocytosis** (EPO), **Hypercholesterolaemia**, **Hypercalcaemia** (PTHrP), **Porphyria cutanea tarda**, **Carcinoid syndrome** (rare)</td></tr><tr><td>**Rupture**</td><td>Acute abdomen, haemoperitoneum, shock — **emergency** (TACE/embolisation)</td></tr><tr><td>**Extrahepatic Spread**</td><td>Lung (most common), lymph nodes, bone, adrenal, brain</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**BCLC (Barcelona Clinic Liver Cancer)**</td><td>**Gold standard** — integrates tumour burden, liver function (Child-Pugh), performance status (ECOG) → links to treatment</td></tr><tr><td>**Child-Pugh**</td><td>Liver synthetic function: A (5-6), B (7-9), C (10-15)</td></tr><tr><td>**ALBI Grade**</td><td>Albumin-Bilirubin grade (objective)</td></tr><tr><td>**TNM 8th / AJCC**</td><td>Anatomical staging (less used for treatment decisions)</td></tr></table>
+<div class="sub-h">BCLC Staging &amp; Treatment Algorithm</div>
+<table class="ctable"><tr><th>Stage</th><th>Tumour Burden</th><th>Liver Function</th><th>PS</th><th>Treatment</th><th>Median OS</th></tr><tr><td>-------</td><td>---------------</td><td>----------------</td><td>-----</td><td>-----------</td><td>-----------</td></tr><tr><td>**0 (Very Early)**</td><td>Single <2cm, no vascular invasion</td><td>Child-Pugh A</td><td>0</td><td>**Ablation (RFA/MWA)** or **Resection**</td><td>>5 years</td></tr><tr><td>**A (Early)**</td><td>Single or ≤3 nodules ≤3cm</td><td>Child-Pugh A-B</td><td>0</td><td>**Curative: Resection / Ablation / Transplant** (Milan)</td><td>>5 years</td></tr><tr><td>**B (Intermediate)**</td><td>Multinodular, no vascular invasion, no mets</td><td>Child-Pugh A-B</td><td>0</td><td>**TACE** (standard), TARE, RFA combination</td><td>~2.5 years</td></tr><tr><td>**C (Advanced)**</td><td>Vascular invasion **OR** Extrahepatic mets</td><td>Child-Pugh A-B</td><td>1-2</td><td>**Systemic Therapy** (1L: Atezo/Bev)</td><td>~1-1.5 years</td></tr><tr><td>**D (Terminal)**</td><td>Any tumour burden</td><td>Child-Pugh C</td><td>>2</td><td>**Best Supportive Care**</td><td><3 months</td></tr></table>
+<div class="sub-h">Liver Transplant Criteria</div>
+<table class="ctable"><tr><th>Criteria</th><th>Definition</th><th>5-yr Recurrence</th></tr><tr><td>----------</td><td>------------</td><td>-----------------</td></tr><tr><td>**Milan**</td><td>Single ≤5cm **OR** ≤3 nodules all ≤3cm, **no vascular invasion**</td><td><10%</td></tr><tr><td>**UCSF**</td><td>Single ≤6.5cm **OR** ≤3 nodules ≤4.5cm, total ≤8cm</td><td>~15%</td></tr><tr><td>**Up-to-7**</td><td>(Largest size in cm) + (Number of nodules) ≤7, no vascular invasion</td><td>~15%</td></tr><tr><td>**Metroticket 2.0**</td><td>Continuous model based on AFP, size, number</td><td>Variable</td></tr></table>
+<div class="sub-h">LI-RADS (Liver Imaging Reporting and Data System)</div>
+<table class="ctable"><tr><th>Category</th><th>Probability of HCC</th><th>Management</th></tr><tr><td>----------</td><td>-------------------</td><td>------------</td></tr><tr><td>**LR-1**</td><td>Definitely benign</td><td>Routine surveillance</td></tr><tr><td>**LR-2**</td><td>Probably benign</td><td>Short-interval follow-up</td></tr><tr><td>**LR-3**</td><td>Intermediate</td><td>Multiphasic MRI/CT or biopsy</td></tr><tr><td>**LR-4**</td><td>Probably HCC</td><td>Diagnostic (non-invasive if cirrhosis)</td></tr><tr><td>**LR-5**</td><td>Definitely HCC</td><td>**Diagnostic — no biopsy needed**</td></tr><tr><td>**LR-M**</td><td>Probably malignant, not HCC-specific (cholangiocarcinoma, mets)</td><td>Biopsy</td></tr><tr><td>**LR-TIV**</td><td>Tumour in vein</td><td>Advanced stage</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Findings</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td></tr><tr><td>**Surveillance US ± AFP q6mo**</td><td>**Early detection** in cirrhosis (Child A/B)</td><td>Sensitivity US 84%, US+AFP 92%</td></tr><tr><td>**Multiphasic CT / MRI (Liver Protocol)**</td><td>**Diagnosis (LI-RADS)** — Arterial hyperenhancement + Washout + Capsule</td><td>**LR-5 = Diagnostic** (no biopsy needed if cirrhosis)</td></tr><tr><td>**AFP**</td><td>Tumour marker; ↑ in 60-70%</td><td>>200 ng/mL = diagnostic with imaging; Prognostic; Monitor response</td></tr><tr><td>**Biopsy**</td><td>If non-invasive criteria not met (LR-3, LR-4, LR-M, non-cirrhotic)</td><td>Hepatocyte markers: **HepPar-1, Arginase-1, Glypican-3**; CD34+ sinusoidal</td></tr><tr><td>**Child-Pugh / ALBI**</td><td>Liver function for treatment allocation</td><td>Determines BCLC stage eligibility</td></tr><tr><td>**Viral Serology**</td><td>HBsAg, anti-HCV, HBV DNA, HCV RNA</td><td>Guide antiviral therapy</td></tr><tr><td>**Chest CT**</td><td>Staging for extrahepatic mets</td><td>Lung mets most common</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Regenerative Nodule**</td><td>No arterial hyperenhancement; isointense on all phases; T2 hypointense</td></tr><tr><td>**Dysplastic Nodule**</td><td>Low-grade: no washout; High-grade: may show arterial hyperenhancement but no washout/capsule</td></tr><tr><td>**Haemangioma**</td><td>Peripheral nodular enhancement → centripetal fill-in; T2 very bright</td></tr><tr><td>**FNH**</td><td>Central scar, homogeneous arterial enhancement, isointense portal/delayed</td></tr><tr><td>**Hepatic Adenoma**</td><td>Young women, OCP use; T1/T2 hyperintense (fat/haemorrhage); HNF1A/β-catenin mut</td></tr><tr><td>**Cholangiocarcinoma (LR-M)**</td><td>Peripheral washout, delayed enhancement, capsule retraction; CA19-9↑</td></tr><tr><td>**Metastases**</td><td>Multiple, rim enhancement, known primary; LR-M</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Diagnosis + BCLC Stage] --&gt; B{BCLC Stage} B --&gt;|0 / A (Early)| C[Curative Intent] C --&gt; C1[<b>Resection</b>&lt;br/&gt;Child-Pugh A, preserved portal flow,&lt;br/&gt;future liver remnant &gt;40% (30% if healthy)] C --&gt; C2[<b>Ablation: RFA/MWA</b>&lt;br/&gt;≤3cm, ≤3 nodules,&lt;br/&gt;peripheral, no major vessels] C --&gt; C3[<b>Liver Transplant</b>&lt;br/&gt;Milan criteria, Child-Pugh B/C,&lt;br/&gt;not resectable] B --&gt;|B (Intermediate)| D[<b>Locoregional</b>] D --&gt; D1[<b>TACE (cTACE/DEB-TACE)</b>&lt;br/&gt;Child-Pugh A/B7, bilobar, preserved portal vein] D --&gt; D2[<b>TARE (Y-90)</b>&lt;br/&gt;PVT (segmental), TACE-refractory,&lt;br/&gt;bridging to transplant] D --&gt; D3[<b>RFA + TACE</b>&lt;br/&gt;&gt;3cm or difficult location] B --&gt;|C (Advanced)| E[<b>Systemic Therapy</b>] E --&gt; E1[<b>1L: Atezolizumab + Bevacizumab</b>&lt;br/&gt;(IMbrave150) — <b>Standard</b>&lt;br/&gt;Child-Pugh A, no high-risk varices] E --&gt; E2[<b>1L: Sorafenib</b> (SHARP) / <b>Lenvatinib</b> (REFLECT)&lt;br/&gt;If ICI contraindicated] E --&gt; E3[<b>2L: Regorafenib</b> (RESORCE) — post-Sorafenib&lt;br/&gt;<b>Cabozantinib</b> (CELESTIAL)&lt;br/&gt;<b>Ramucirumab</b> (REACH-2) if AFP≥400] E --&gt; E4[<b>3L+: Clinical Trial / Best Supportive</b>] B --&gt;|D (Terminal)| F[<b>Best Supportive Care</b>&lt;br/&gt;Paracentesis, lactulose,&lt;br/&gt;analgesia, hospice] C1 --&gt; G[Surveillance: US/AFP q3-6mo&lt;br/&gt;CT/MRI q6-12mo] C2 --&gt; G C3 --&gt; G D1 --&gt; G D2 --&gt; G </code>``</p>
+<div class="sub-h">Locoregional Therapy Details</div>
+<table class="ctable"><tr><th>Therapy</th><th>Indication</th><th>Technique</th><th>Complications</th></tr><tr><td>---------</td><td>------------</td><td>-----------</td><td>---------------</td></tr><tr><td>**RFA / MWA**</td><td>BCLC 0/A, ≤3cm, ≤3 nodules</td><td>Percutaneous/Laparoscopic/Open</td><td>Bile duct injury, haemorrhage, liver abscess, seeding</td></tr><tr><td>**TACE (cTACE)**</td><td>BCLC B, preserved PV flow</td><td>Lipiodol + Chemo (Doxorubicin/Cisplatin) + Embolic (Gelfoam)</td><td>**Post-embolisation syndrome** (fever, pain, nausea, LFT rise); Liver failure if Child B/C</td></tr><tr><td>**DEB-TACE**</td><td>BCLC B</td><td>Drug-eluting beads (Doxorubicin)</td><td>Less systemic chemo exposure; Similar efficacy</td></tr><tr><td>**TARE (Y-90)**</td><td>PVT (segmental), TACE-refractory, Bridging</td><td>Yttrium-90 microspheres (glass/resin)</td><td>Radiation-induced liver disease (RILD); GI ulceration (shunting)</td></tr></table>
+<div class="sub-h">Systemic Therapy Sequencing</div>
+<table class="ctable"><tr><th>Line</th><th>Regimen</th><th>Trial</th><th>Key Eligibility</th></tr><tr><td>------</td><td>---------</td><td>-------</td><td>-----------------</td></tr><tr><td>**1L**</td><td>**Atezolizumab + Bevacizumab**</td><td>**IMbrave150** (OS HR 0.58)</td><td>Child-Pugh A, ECOG 0-1, No untreated high-risk varices, No recent bleed</td></tr><tr><td>**1L (ICI contraindicated)**</td><td>Sorafenib / Lenvatinib</td><td>SHARP / REFLECT</td><td>Child-Pugh A</td></tr><tr><td>**2L (post-Sorafenib)**</td><td>Regorafenib</td><td>RESORCE</td><td>Child-Pugh A, **Tolerated Sorafenib ≥400mg/day ×20 days**</td></tr><tr><td>**2L (post-Sorafenib/Lenvatinib)**</td><td>Cabozantinib</td><td>CELESTIAL</td><td>Child-Pugh A</td></tr><tr><td>**2L (AFP ≥400)**</td><td>Ramucirumab</td><td>REACH-2</td><td>Child-Pugh A, AFP ≥400 ng/mL</td></tr><tr><td>**ICI-naive post-TKI**</td><td>Nivolumab ± Ipilimumab / Pembrolizumab</td><td>CheckMate 040 / KEYNOTE-224</td><td>Child-Pugh A/B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Risk Factors**</td><td>Cirrhosis (HBV, HCV, Alcohol, **NAFLD/NASH** rising); HBV → HCC without cirrhosis</td></tr><tr><td>**Surveillance**</td><td>**US ± AFP q6mo** in cirrhosis (Child A/B); Cost-effective</td></tr><tr><td>**Diagnosis**</td><td>**LI-RADS LR-5 = Non-invasive diagnosis** (arterial hyperenhancement + washout + capsule); Biopsy if LR-3/4/M</td></tr><tr><td>**BCLC**</td><td>**Treatment algorithm based on stage + liver function + PS** — only staging that links to treatment</td></tr><tr><td>**Milan Criteria**</td><td>Single ≤5cm **OR** ≤3 nodules ≤3cm, no vascular invasion → Transplant (5-yr recurrence <10%)</td></tr><tr><td>**Curative**</td><td>Resection (Child A, good remnant), RFA/MWA (≤3cm), Transplant (Milan, Child B/C)</td></tr><tr><td>**TACE**</td><td>Standard for **BCLC B** (multinodular); cTACE vs DEB-TACE; Contraindicated: Main PVT, Child C</td></tr><tr><td>**TARE (Y-90)**</td><td>Segmental **PVT**, TACE-refractory, Bridging to transplant</td></tr><tr><td>**1L Systemic**</td><td>**Atezolizumab + Bevacizumab** (IMbrave150) — **New Standard**; Requires variceal screening/banding</td></tr><tr><td>**2L Systemic**</td><td>Regorafenib (post-Sorafenib tolerant), Cabozantinib, Ramucirumab (AFP≥400)</td></tr><tr><td>**Child-Pugh**</td><td>A: All options; B: Selected (TACE, Sorafenib); C: BSC only</td></tr><tr><td>**Complications**</td><td>Variceal bleed (prophylactic banding), HE, HRS, Tumour rupture (emergency TACE)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**55M with cirrhosis (Child-Pugh A), 2.5cm lesion on US, AFP 350. Next step?**</td><td>**Multiphasic CT/MRI** for LI-RADS categorisation. If **LR-5** → **Diagnose HCC**; BCLC Stage A → Curative options: Resection vs RFA vs Transplant (if Milan).</td></tr><tr><td>**What is BCLC staging? Why is it unique?**</td><td>Integrates **tumour burden + Child-Pugh liver function + ECOG PS** → **Directly links to treatment**. Unlike TNM which is anatomical only.</td></tr><tr><td>**Milan criteria for liver transplant?**</td><td>**Single ≤5cm OR ≤3 nodules all ≤3cm**, no vascular invasion, no extrahepatic spread. 5-yr recurrence <10%.</td></tr><tr><td>**Patient with BCLC B (multinodular, no PVT, Child-Pugh A). Treatment?**</td><td>**TACE** (cTACE or DEB-TACE) — standard of care. TARE alternative.</td></tr><tr><td>**Patient with HCC + main portal vein thrombosis (PVT). Treatment?**</td><td>**BCLC C** (vascular invasion) → **Systemic therapy** (1L Atezo/Bev). TARE (Y-90) if segmental PVT only. TACE contraindicated in main PVT.</td></tr><tr><td>**IMbrave150 regimen — drugs, key eligibility?**</td><td>**Atezolizumab 1200mg + Bevacizumab 15mg/kg q3weeks**. Eligibility: Child-Pugh A, ECOG 0-1, **No untreated high-risk varices** (screen + banding), No recent bleed.</td></tr><tr><td>**Sorafenib → progressed. 2L options?**</td><td>**Regorafenib** (if tolerated Sorafenib ≥400mg/day ×20 days), **Cabozantinib**, **Ramucirumab** (if AFP ≥400).</td></tr><tr><td>**HCC rupture — management?**</td><td>**Emergency**: Resuscitation → **TACE/TAE** (transarterial embolisation) for haemostasis. Surgery rarely.</td></tr><tr><td>**Non-invasive diagnosis of HCC — LI-RADS LR-5 criteria?**</td><td>**Arterial phase hyperenhancement (APHE) + Washout (portal/delayed) + Enhancing capsule** in cirrhosis. No biopsy needed.</td></tr><tr><td>**Surveillance interval for cirrhosis?**</td><td>**US ± AFP every 6 months**. Cost-effective; Detects early stage amenable to cure.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**BCLC vs TNM**</td><td>BCLC = **Treatment-guiding** (tumour + liver function + PS); TNM = **Anatomical** (prognostic only)</td></tr><tr><td>**TACE vs TARE**</td><td>TACE = **Chemoembolisation** (chemo + embolic); TARE = **Radioembolisation** (Y-90 microspheres). TACE for BCLC B; TARE for PVT/bridge.</td></tr><tr><td>**Main PVT vs Segmental PVT**</td><td>**Main PVT = BCLC C** → Systemic therapy; **Segmental PVT = BCLC B** → TARE or TACE (selected)</td></tr><tr><td>**Regorafenib eligibility**</td><td>**Must have tolerated Sorafenib ≥400mg/day for ≥20 days** before progression</td></tr><tr><td>**Atezo/Bev contraindications**</td><td>**High-risk varices** (untreated), **Recent variceal bleed** (<6 months), **Child-Pugh B/C**, **Autoimmune disease requiring immunosuppression**</td></tr><tr><td>**AFP cutoff for Ramucirumab**</td><td>**AFP ≥400 ng/mL** (REACH-2 trial)</td></tr></table>
+<p><b>Mnemonic: HCC-BCLC</b></p>
+<ul><li><b>H</b>BV/HCV/Alcohol/NASH → Cirrhosis → HCC</li><li><b>C</b>hild-Pugh A/B/C determines treatment access</li><li><b>C</b>- <b>B</b>CLC: 0/A=Curative (Resection/RFA/Transplant), B=TACE, C=Systemic, D=BSC</li><li><b>L</b>I-RADS LR-5 = Non-invasive Dx (APHE + Washout + Capsule)</li><li><b>C</b>riteria for Transplant: <b>Milan</b> (Single ≤5cm or ≤3 ≤3cm)</li><li><b>B</b>evacizumab + Atezolizumab = <b>1L Systemic</b> (IMbrave150)</li><li><b>L</b>envatinib/Sorafenib = 1L if ICI contraindicated</li><li><b>C</b>abozantinib/Regorafenib/Ramucirumab = <b>2L</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((HCC)) Risk Factors Cirrhosis HBV (no cirrhosis needed) HCV Alcohol NAFLD/NASH Hemochromatosis A1AT, PBC, AIH Diagnosis Surveillance: US+AFP q6mo LI-RADS: LR-5 = Non-invasive Dx AFP &gt;200 + imaging = Dx Biopsy if LR-3/4/M Staging BCLC (Tumour + Child-Pugh + PS) Child-Pugh / ALBI Milan / UCSF / Up-to-7 Treatment BCLC 0/A: Curative Resection RFA/MWA Transplant (Milan) BCLC B: Locoregional TACE (cTACE/DEB) TARE (Y-90) BCLC C: Systemic 1L: Atezo + Bev 1L: Sorafenib / Lenvatinib 2L: Regorafenib / Cabozantinib / Ramu BCLC D: BSC Complications Variceal bleed Hepatic encephalopathy Hepatorenal syndrome Tumour rupture </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Definition**</td><td>Primary hepatocyte cancer; >90% in cirrhosis</td></tr><tr><td>**Risk Factors**</td><td>HBV, HCV, Alcohol, NAFLD/NASH, Hemochromatosis, Aflatoxin</td></tr><tr><td>**Surveillance**</td><td>US ± AFP q6mo in cirrhosis (Child A/B)</td></tr><tr><td>**Diagnosis**</td><td>**LI-RADS LR-5**: APHE + Washout + Capsule = **Non-invasive Dx**; AFP >200 supportive</td></tr><tr><td>**Staging**</td><td>**BCLC** (Tumour + Child-Pugh + PS) → Treatment algorithm</td></tr><tr><td>**BCLC 0/A**</td><td>Curative: Resection (Child A, good remnant), **RFA/MWA** (≤3cm), **Transplant** (Milan)</td></tr><tr><td>**Milan**</td><td>Single ≤5cm or ≤3 nodules ≤3cm, no vascular invasion</td></tr><tr><td>**BCLC B**</td><td>**TACE** (cTACE/DEB-TACE) standard; TARE alternative</td></tr><tr><td>**BCLC C**</td><td>**1L: Atezo + Bev** (IMbrave150); Sorafenib/Lenvatinib if ICI contraindicated</td></tr><tr><td>**BCLC C 2L**</td><td>Regorafenib (post-Sora tol), Cabozantinib, Ramucirumab (AFP≥400)</td></tr><tr><td>**Child-Pugh**</td><td>A: All options; B7: Selected; C: BSC only</td></tr><tr><td>**Complications**</td><td>Variceal bleed (screen/band pre-Atezo/Bev), HE, HRS, Rupture → Emergency TAE</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Risk factors & cirrhosis</td><td></td><td></td></tr><tr><td>LI-RADS / non-invasive Dx</td><td></td><td></td></tr><tr><td>BCLC staging algorithm</td><td></td><td></td></tr><tr><td>Milan / transplant criteria</td><td></td><td></td></tr><tr><td>Curative options (Resection/RFA/Transplant)</td><td></td><td></td></tr><tr><td>TACE vs TARE indications</td><td></td><td></td></tr><tr><td>Systemic 1L (Atezo/Bev)</td><td></td><td></td></tr><tr><td>Systemic 2L sequencing</td><td></td><td></td></tr><tr><td>Child-Pugh treatment access</td><td></td><td></td></tr><tr><td>Complications management</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Cholangiocarcinoma]], [[Pancreatic Cancer]], [[Liver Transplant]], [[TACE/TARE/RFA]], [[Immunotherapy in HCC]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Hepatocellular Carcinoma (HCC) (Risk Factors), which statement is correct? A. Cirrhosis (HBV, HCV, Alcohol, <b>NAFLD/NASH</b> rising) B. Cirrhosis - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Cirrhosis (HBV, HCV, Alcohol, <b>NAFLD/NASH</b> rising); HBV → HCC without cirrhosis</li></ul>
+<p><b>2.</b> Regarding Hepatocellular Carcinoma (HCC) (Surveillance), which statement is correct? A. <b>US ± AFP q6mo</b> in cirrhosis (Child A/B) B. **US - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>US ± AFP q6mo</b> in cirrhosis (Child A/B); Cost-effective</li></ul>
+<p><b>3.</b> Regarding Hepatocellular Carcinoma (HCC) (Diagnosis), which statement is correct? A. <b>LI-RADS LR-5 = Non-invasive diagnosis</b> (arterial hyperenhancement + washout + capsule) B. **LI-RADS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>LI-RADS LR-5 = Non-invasive diagnosis</b> (arterial hyperenhancement + washout + capsule); Biopsy if LR-3/4/M</li></ul>
+<p><b>4.</b> Regarding Hepatocellular Carcinoma (HCC) (BCLC), which statement is correct? A. <b>Treatment algorithm based on stage + liver function + PS</b> B. **Treatment - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Treatment algorithm based on stage + liver function + PS</b> — only staging that links to treatment</li></ul>
+<p><b>5.</b> Regarding Hepatocellular Carcinoma (HCC) (Milan Criteria), which statement is correct? A. Single ≤5cm <b>OR</b> ≤3 nodules ≤3cm, no vascular invasion → Transplant (5-yr recurrence &lt;10%) B. Single - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Single ≤5cm <b>OR</b> ≤3 nodules ≤3cm, no vascular invasion → Transplant (5-yr recurrence &lt;10%)</li></ul>
+<p><b>6.</b> Regarding Hepatocellular Carcinoma (HCC) (Curative), which statement is correct? A. Resection (Child A, good remnant), RFA/MWA (≤3cm), Transplant (Milan, Child B/C) B. Resection - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Resection (Child A, good remnant), RFA/MWA (≤3cm), Transplant (Milan, Child B/C)</li></ul>
+<p><b>7.</b> Regarding Hepatocellular Carcinoma (HCC) (TACE), which statement is correct? A. Standard for <b>BCLC B</b> (multinodular) B. Standard - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Standard for <b>BCLC B</b> (multinodular); cTACE vs DEB-TACE; Contraindicated: Main PVT, Child C</li></ul>
+<p><b>8.</b> Regarding Hepatocellular Carcinoma (HCC) (TARE (Y-90)), which statement is correct? A. Segmental <b>PVT</b>, TACE-refractory, Bridging to transplant B. Segmental - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Segmental <b>PVT</b>, TACE-refractory, Bridging to transplant</li></ul>
+<p><b>9.</b> Regarding Hepatocellular Carcinoma (HCC) (1L Systemic), which statement is correct? A. <b>Atezolizumab + Bevacizumab</b> (IMbrave150) B. **Atezolizumab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Atezolizumab + Bevacizumab</b> (IMbrave150) — <b>New Standard</b>; Requires variceal screening/banding</li></ul>
+<p><b>10.</b> Regarding Hepatocellular Carcinoma (HCC) (2L Systemic), which statement is correct? A. Regorafenib (post-Sorafenib tolerant), Cabozantinib, Ramucirumab (AFP≥400) B. Regorafenib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Regorafenib (post-Sorafenib tolerant), Cabozantinib, Ramucirumab (AFP≥400)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. Cirrhosis (HBV, HCV, Alcohol, <b>NAFLD/NASH</b> rising)</li><li>B. Cirrhosis (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: Cirrhosis (HBV, HCV, Alcohol, <b>NAFLD/NASH</b> rising); HBV → HCC without cirrhosis</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>US ± AFP q6mo</b> in cirrhosis (Child A/B)</li><li>B. **US (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>US ± AFP q6mo</b> in cirrhosis (Child A/B); Cost-effective</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>LI-RADS LR-5 = Non-invasive diagnosis</b> (arterial hyperenhancement + washout + capsule)</li><li>B. **LI-RADS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>LI-RADS LR-5 = Non-invasive diagnosis</b> (arterial hyperenhancement + washout + capsule); Biopsy if LR-3/4/M</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Treatment algorithm based on stage + liver function + PS</b></li><li>B. **Treatment (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Treatment algorithm based on stage + liver function + PS</b> — only staging that links to treatment</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. Single ≤5cm <b>OR</b> ≤3 nodules ≤3cm, no vascular invasion → Transplant (5-yr recurrence &lt;10%)</li><li>B. Single (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: Single ≤5cm <b>OR</b> ≤3 nodules ≤3cm, no vascular invasion → Transplant (5-yr recurrence &lt;10%)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. Resection (Child A, good remnant), RFA/MWA (≤3cm), Transplant (Milan, Child B/C)</li><li>B. Resection (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: Resection (Child A, good remnant), RFA/MWA (≤3cm), Transplant (Milan, Child B/C)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. Standard for <b>BCLC B</b> (multinodular)</li><li>B. Standard (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: Standard for <b>BCLC B</b> (multinodular); cTACE vs DEB-TACE; Contraindicated: Main PVT, Child C</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. Segmental <b>PVT</b>, TACE-refractory, Bridging to transplant</li><li>B. Segmental (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: Segmental <b>PVT</b>, TACE-refractory, Bridging to transplant</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Atezolizumab + Bevacizumab</b> (IMbrave150)</li><li>B. **Atezolizumab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Atezolizumab + Bevacizumab</b> (IMbrave150) — <b>New Standard</b>; Requires variceal screening/banding</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. Regorafenib (post-Sorafenib tolerant), Cabozantinib, Ramucirumab (AFP≥400)</li><li>B. Regorafenib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: Regorafenib (post-Sorafenib tolerant), Cabozantinib, Ramucirumab (AFP≥400)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Risk Factors? <b>A1:</b> Cirrhosis (HBV, HCV, Alcohol, NAFLD/NASH rising); HBV → HCC without cirrhosis</p>
+<p><b>Q2:</b> Surveillance? <b>A2:</b> US ± AFP q6mo in cirrhosis (Child A/B); Cost-effective</p>
+<p><b>Q3:</b> Diagnosis? <b>A3:</b> LI-RADS LR-5 = Non-invasive diagnosis (arterial hyperenhancement + washout + capsule); Biopsy if LR-3/4/M</p>
+<p><b>Q4:</b> BCLC? <b>A4:</b> Treatment algorithm based on stage + liver function + PS — only staging that links to treatment</p>
+<p><b>Q5:</b> Milan Criteria? <b>A5:</b> Single ≤5cm OR ≤3 nodules ≤3cm, no vascular invasion → Transplant (5-yr recurrence &lt;10%)</p>
+<p><b>Q6:</b> Curative? <b>A6:</b> Resection (Child A, good remnant), RFA/MWA (≤3cm), Transplant (Milan, Child B/C)</p>
+<p><b>Q7:</b> TACE? <b>A7:</b> Standard for BCLC B (multinodular); cTACE vs DEB-TACE; Contraindicated: Main PVT, Child C</p>
+<p><b>Q8:</b> TARE (Y-90)? <b>A8:</b> Segmental PVT, TACE-refractory, Bridging to transplant</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Risk Factors</td><td>Cirrhosis (HBV, HCV, Alcohol, NAFLD/NASH rising); HBV → HCC without cirrhosis</td></tr><tr><td>2</td><td>A</td><td>Surveillance</td><td>US ± AFP q6mo in cirrhosis (Child A/B); Cost-effective</td></tr><tr><td>3</td><td>A</td><td>Diagnosis</td><td>LI-RADS LR-5 = Non-invasive diagnosis (arterial hyperenhancement + washout + capsule); Biopsy if LR-3/4/M</td></tr><tr><td>4</td><td>A</td><td>BCLC</td><td>Treatment algorithm based on stage + liver function + PS — only staging that links to treatment</td></tr><tr><td>5</td><td>A</td><td>Milan Criteria</td><td>Single ≤5cm OR ≤3 nodules ≤3cm, no vascular invasion → Transplant (5-yr recurrence <10%)</td></tr><tr><td>6</td><td>A</td><td>Curative</td><td>Resection (Child A, good remnant), RFA/MWA (≤3cm), Transplant (Milan, Child B/C)</td></tr><tr><td>7</td><td>A</td><td>TACE</td><td>Standard for BCLC B (multinodular); cTACE vs DEB-TACE; Contraindicated: Main PVT, Child C</td></tr><tr><td>8</td><td>A</td><td>TARE (Y-90)</td><td>Segmental PVT, TACE-refractory, Bridging to transplant</td></tr><tr><td>9</td><td>A</td><td>1L Systemic</td><td>Atezolizumab + Bevacizumab (IMbrave150) — New Standard; Requires variceal screening/banding</td></tr><tr><td>10</td><td>A</td><td>2L Systemic</td><td>Regorafenib (post-Sorafenib tolerant), Cabozantinib, Ramucirumab (AFP≥400)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Risk Factors</td><td>Cirrhosis (HBV, HCV, Alcohol, NAFLD/NASH rising); HBV → HCC without cirrhosis</td></tr><tr><td>2</td><td>A</td><td>Surveillance</td><td>US ± AFP q6mo in cirrhosis (Child A/B); Cost-effective</td></tr><tr><td>3</td><td>A</td><td>Diagnosis</td><td>LI-RADS LR-5 = Non-invasive diagnosis (arterial hyperenhancement + washout + capsule); Biopsy if LR-3/4/M</td></tr><tr><td>4</td><td>A</td><td>BCLC</td><td>Treatment algorithm based on stage + liver function + PS — only staging that links to treatment</td></tr><tr><td>5</td><td>A</td><td>Milan Criteria</td><td>Single ≤5cm OR ≤3 nodules ≤3cm, no vascular invasion → Transplant (5-yr recurrence <10%)</td></tr><tr><td>6</td><td>A</td><td>Curative</td><td>Resection (Child A, good remnant), RFA/MWA (≤3cm), Transplant (Milan, Child B/C)</td></tr><tr><td>7</td><td>A</td><td>TACE</td><td>Standard for BCLC B (multinodular); cTACE vs DEB-TACE; Contraindicated: Main PVT, Child C</td></tr><tr><td>8</td><td>A</td><td>TARE (Y-90)</td><td>Segmental PVT, TACE-refractory, Bridging to transplant</td></tr><tr><td>9</td><td>A</td><td>1L Systemic</td><td>Atezolizumab + Bevacizumab (IMbrave150) — New Standard; Requires variceal screening/banding</td></tr><tr><td>10</td><td>A</td><td>2L Systemic</td><td>Regorafenib (post-Sorafenib tolerant), Cabozantinib, Ramucirumab (AFP≥400)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Hepatobiliary &amp; Pancreatic|Hepatobiliary &amp; Pancreatic]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatocellular Carcinoma Hcc · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

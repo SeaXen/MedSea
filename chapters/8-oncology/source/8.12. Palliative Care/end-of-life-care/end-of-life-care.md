@@ -1,0 +1,594 @@
+# End of Life Care
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **End of Life Care = Core Palliative Skill**; **Advance Care Planning (ACP)**: Discuss Preferences, DNACPR, ReSPECT; **Recognising Dying**: Last Days/Hours Signs (Bedbound, Semi-Comatose, Reduced Intake, Changed Breathing); **Anticipatory Prescribing** (Syringe Driver): Pain (Morphine/Oxycodone), Agitation (Midazolam/Levomepromazine), Secretions (Glycopyrronium/Hyoscine), Dyspnoea (Morphine/Midazolam); **Withdrawal**: Futility, Best Interests; **Organ Donation**: Discuss if Appropriate; **Bereavement Support**: Pre/Post-Death.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Conduct **Advance Care Planning (ACP)** conversations
+- [ ] Complete **DNACPR** and **ReSPECT** forms appropriately
+- [ ] **Recognise the dying patient** (last days/hours)
+- [ ] Initiate **anticipatory prescribing** via **syringe driver**
+- [ ] Manage **common symptoms in the last days**: pain, agitation, secretions, dyspnoea
+- [ ] Apply **ethical framework** for withdrawal of treatment
+- [ ] Discuss **organ donation** where appropriate
+- [ ] Provide **bereavement support** for families
+
+---
+
+## 2. Advance Care Planning (ACP)
+
+### Key Components
+
+| Component | Description |
+|-----------|-------------|
+| **Goals of Care Discussion** | **Explore Values, Preferences, Priorities** — **What Matters Most?** |
+| **Treatment Escalation Plan** | **DNACPR**, **ReSPECT**, **Ceiling of Care** |
+| **Preferred Place of Care/Death** | **Home, Hospice, Hospital, Care Home** |
+| **Nominated Decision-Maker** | **Lasting Power of Attorney (LPA) for Health & Welfare** |
+| **Advance Decision to Refuse Treatment (ADRT)** | **Legally Binding** (If Valid & Applicable) |
+| **Documentation** | **ACP Record**, **ReSPECT Form**, **DNACPR Form**, **ADRT** |
+
+### Triggers for ACP Conversation
+
+| Clinical Trigger | Example |
+|------------------|---------|
+| **New Diagnosis** | **Metastatic Cancer, Poor Prognosis** |
+| **Deterioration** | **Functional Decline, Repeated Admissions** |
+| **Treatment Decision** | **Chemo/Radio/Surgery Decision** |
+| **Patient/Carer Request** | **Patient Asks "How Long?"** |
+| **Routine Review** | **Annual for Frail/Long-Term Conditions** |
+
+---
+
+## 3. DNACPR & ReSPECT
+
+| Aspect | **DNACPR** | **ReSPECT (Recommended Summary Plan for Emergency Care and Treatment)** |
+|--------|------------|------------------------------------------------------------------------|
+| **Purpose** | **Do Not Attempt CPR** | **Holistic Emergency Plan** (Including CPR Decision) |
+| **Legal Status** | **Clinical Decision** (Not Legally Binding Alone) | **Clinical Recommendation** (Guiding, Not Binding) |
+| **Scope** | **CPR Only** | **All Emergency Treatments** (CPR, ICU, Ventilation, Antibiotics, Fluids) |
+| **Patient Involvement** | **Should Involve Patient/Family** | **Mandatory Shared Decision-Making** |
+| **Review** | **Regular (Per Policy)** | **Regular (Per Policy)** |
+| **Portability** | **Organisation-Specific** | **Cross-Organisational (NHS-Wide)** |
+
+### DNACPR Decision-Making Framework
+
+| Step | Action |
+|------|--------|
+| **1. Assess** | **Is CPR Likely to Succeed?** (Medical Futility) |
+| **2. Discuss** | **With Patient (If Capacity) / Family (Best Interests if No Capacity)** |
+| **3. Document** | **Form + Clinical Notes** (Reasoning, Discussion, Decision) |
+| **4. Communicate** | **Handover, Electronic Record, Alert Systems** |
+| **5. Review** | **Regular (Per Local Policy)**, **On Deterioration/Transfer** |
+
+---
+
+## 4. Recognising the Dying Patient
+
+### Last Days of Life (Hours to Days)
+
+| Domain | Signs |
+|--------|-------|
+| **Consciousness** | **Drowsy → Semi-Comatose → Unresponsive**, **Reduced Response to Stimuli** |
+| **Functional** | **Bedbound**, **Unable to Swallow**, **Minimal/Oral Intake** |
+| **Respiratory** | **Cheyne-Stokes**, **Apnoeic Pauses**, **Rattling Secretions (Death Rattle)**, **Agonal Gasps** |
+| **Circulatory** | **Cool Peripheries**, **Mottling (Livedo Reticularis)**, **Weak/Thready Pulse**, **Hypotension** |
+| **Renal** | **Oliguria/Anuria**, **Concentrated Urine** |
+| **Skin** | **Pressure Areas**, **Dry Mouth** |
+
+> **Key Principle**: **Diagnose Dying → Shift Focus to Comfort** — **Stop Non-Essential Interventions** (Bloods, Obs, Non-Essential Meds)
+
+---
+
+## 5. Anticipatory Prescribing (Syringe Driver)
+
+### Standard Regimen (CSCI - Continuous Subcutaneous Infusion)
+
+| Symptom | Drug | Typical Dose Range (24h) | Diluent |
+|---------|------|--------------------------|---------|
+| **Pain** | **Morphine** (or **Oxycodone** if Renal) | **Initial: 10-20mg/24h** (Titrate) | **Water for Injection** |
+| | **Alternative: Alfentanil** (Renal Failure) | **500-2000mcg/24h** | **Water/Saline** |
+| **Agitation / Distress** | **Midazolam** | **10-30mg/24h** (Titrate) | **Water** |
+| | **Alternative: Levomepromazine** | **12.5-50mg/24h** | **Water** |
+| **Respiratory Secretions** | **Glycopyrronium** | **0.6-1.2mg/24h** | **Water** |
+| | **Alternative: Hyoscine Hydrobromide** | **0.4-1.2mg/24h** | **Water** |
+| **Dyspnoea** | **Morphine** (If Not Already for Pain) | **5-10mg/24h** (Add to Pain Dose) | **Water** |
+| | **Midazolam** (If Anxious) | **5-10mg/24h** (Add to Agitation Dose) | **Water** |
+| **Nausea** | **Levomepromazine** | **12.5-25mg/24h** | **Water** |
+| | **Alternative: Haloperidol** | **1-5mg/24h** | **Water** |
+
+### Syringe Driver Setup
+
+| Step | Action |
+|------|--------|
+| **1. Assess** | **Symptoms, Current Meds, Renal/Hepatic Function** |
+| **2. Calculate** | **24h Dose = Current 24h Oral/SC Dose × Conversion Factor** |
+| **3. Prescribe** | **Drug, Dose, Diluent (WFI), Rate (mL/h), Duration (24h)** |
+| **4. Dilute** | **Total Volume 20-30mL (WFI)**, **Check Compatibility** |
+| **5. Site** | **Subcutaneous (Abdomen, Thigh, Upper Arm)** — **Rotate Sites** |
+| **6. Monitor** | **q4h** (Pain, Sedation, Respiration, Site, Pump) |
+
+### Drug Compatibility (Common Combinations)
+
+| Combination | Compatible? |
+|-------------|-------------|
+| **Morphine + Midazolam + Glycopyrronium** | **Yes** |
+| **Morphine + Levomepromazine + Glycopyrronium** | **Yes** |
+| **Oxycodone + Midazolam + Hyoscine** | **Yes** |
+| **Alfentanil + Midazolam + Glycopyrronium** | **Yes** |
+| **Check** | **Local Formulary / Palliative Care Formulary** |
+
+---
+
+## 6. Symptom Management in the Last Days
+
+| Symptom | First-Line (SC) | Dose Range (24h) |
+|---------|-----------------|------------------|
+| **Pain** | **Morphine** (or Oxycodone/Alfentanil if Renal) | **10-20mg/24h** (Titrate) |
+| **Agitation / Terminal Restlessness** | **Midazolam** | **10-30mg/24h** |
+| | **Levomepromazine** (2nd Line) | **12.5-50mg/24h** |
+| **Respiratory Secretions (Death Rattle)** | **Glycopyrronium** | **0.6-1.2mg/24h** |
+| | **Hyoscine Hydrobromide** (Alternative) | **0.4-1.2mg/24h** |
+| **Dyspnoea** | **Morphine** (Add to Pain Dose) | **5-10mg/24h** |
+| | **Midazolam** (If Anxious) | **5-10mg/24h** |
+| **Nausea** | **Levomepromazine** | **12.5-25mg** |
+| | **Haloperidol** (Alternative) | **1-5mg** |
+
+### Key Principles
+
+| Principle | Application |
+|-----------|-------------|
+| **Proactive** | **Prescribe Anticipatorily** — **Before Symptoms Escalate** |
+| **Titrate** | **Review q4h**, **Increase Dose by 25-50%** if Symptom Persists |
+| **Compatible** | **Check Drug Compatibility** (Local Formulary) |
+| **Site** | **Subcutaneous (Abdomen/Thigh)** — **Rotate q24-48h** |
+| **Monitor** | **q4h** (Pain, Sedation, Resp Rate, Secretions, Site, Pump) |
+| **Stop Non-Essential** | **Oral Meds, Statins, Antihypertensives, Bloods, Obs** |
+
+---
+
+## 7. Withdrawal of Treatment
+
+### Ethical Framework
+
+| Principle | Application |
+|-----------|-------------|
+| **Beneficence** | **Act in Best Interests** |
+| **Non-Maleficence** | **Avoid Harm** (Futile Treatment = Harm) |
+| **Autonomy** | **Respect Patient Wishes** (Advance Directives, ReSPECT) |
+| **Justice** | **Fair Resource Allocation** |
+
+### Withholding vs Withdrawing
+
+| | **Withholding** | **Withdrawing** |
+|---|-----------------|-----------------|
+| **Definition** | **Not Starting** a Treatment | **Stopping** an Ongoing Treatment |
+| **Ethical Equivalence** | **Equivalent** — **No Moral Difference** | |
+| **Examples** | **Not Starting Dialysis**, **Not Intubating** | **Stopping Ventilation**, **Stopping Vasopressors**, **Stopping Dialysis** |
+
+### Decision-Making Process
+
+| Step | Action |
+|------|--------|
+| **1. Assess Futility** | **No Realistic Chance of Meaningful Recovery** |
+| **2. Best Interests Meeting** | **MDT + Family + Patient (If Possible)** |
+| **3. Legal** | **Mental Capacity Act (If No Capacity)** — **Best Interests Decision** |
+| **4. Document** | **ReSPECT, DNACPR, Clinical Notes, Meeting Minutes** |
+| **5. Communicate** | **Clear, Compassionate, Allow Time for Questions** |
+| **6. Implement** | **Phased Withdrawal** (Symptom Control Throughout) |
+
+---
+
+## 8. Organ Donation
+
+| Aspect | Detail |
+|--------|--------|
+| **Eligibility** | **Brainstem Death (DBD)** OR **Circulatory Death (DCD)** after Planned Withdrawal |
+| **Cancer** | **Most Active Cancers Exclude** (Except Some Primary Brain Tumours, Certain Skin Cancers) |
+| **Corneas/Tissues** | **Often Possible** Even with Cancer |
+| **Process** | **Specialist Nurse (SNOD) Referral** → **Assessment → Consent → Retrieval** |
+| **Timing** | **DCD: Withdrawal in OT → 60-90min Observation → Retrieval** |
+
+---
+
+## 9. Bereavement Support
+
+| Phase | Intervention |
+|-------|--------------|
+| **Pre-Death** | **Prepare Family** (What to Expect), **Support Children**, **Spiritual/Cultural Needs** |
+| **At Death** | **Confirm Death**, **Allow Time**, **Privacy**, **Rituals** |
+| **Immediate Post-Death** | **Verify Death**, **Issue MCCD (Medical Certificate of Cause of Death)**, **Refer to Coroner if Required** |
+| **Early Bereavement (0-6 weeks)** | **Contact (Phone/Visit)**, **Practical Support (Funeral, Benefits)**, **Signpost to Services** |
+| **Ongoing (6 weeks - 2 years)** | **Bereavement Counselling** (If Needed), **Anniversary Support**, **GP Review** |
+
+---
+
+## 10. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **ACP** | **Goals of Care, DNACPR, ReSPECT, ADRT, LPA, Place of Care** |
+| **DNACPR vs ReSPECT** | **DNACPR: CPR Only**; **ReSPECT: Holistic Emergency Plan** |
+| **Recognising Dying** | **Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing, Cool/Mottled** |
+| **Syringe Driver** | **Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea)** |
+| **Doses (24h)** | **Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg** |
+| **Anticipatory Prescribing** | **Proactive, Before Crisis** |
+| **Withdrawal** | **Futile Treatment = Harm**, **Withholding = Withdrawing**, **Best Interests Meeting** |
+| **Organ Donation** | **DBD/DCD**, **SNOD Referral**, **Cancer Often Excludes Solid Organs** |
+| **Bereavement** | **Pre/At/Post-Death**, **Signpost to Services**, **GP Review** |
+
+---
+
+## 11. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **DNACPR vs ReSPECT — Difference?** | **DNACPR: CPR Decision Only**; **ReSPECT: Holistic Emergency Plan (CPR + ICU + Ventilation + Antibiotics + Fluids)**. |
+| **Recognising Dying — 5 Key Signs?** | **1) Bedbound, 2) Semi-Comatose/Unresponsive, 3) Unable to Swallow, 4) Changed Breathing (Cheyne-Stokes/Rattle), 5) Cool Peripheries/Mottling**. |
+| **Syringe Driver — Standard 4-Drug Regimen?** | **Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea)**. |
+| **Syringe Driver Doses — Typical 24h Ranges?** | **Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg**. |
+| **Anticipatory Prescribing — Why Important?** | **Proactive Symptom Control**, **Avoids Crisis**, **Allows Home/Hospice Death**. |
+| **Withholding vs Withdrawing Treatment — Ethical Difference?** | **No Moral Difference** — **Both Based on Futility/Best Interests**. |
+| **Best Interests Decision — Process?** | **Assess Capacity → If No Capacity: Best Interests Meeting (MDT+Family) → Consider Past Wishes, Beliefs, Values → Document → Implement**. |
+| **Organ Donation — DCD vs DBD?** | **DCD: Donation After Circulatory Death (Planned Withdrawal → 60-90min Observation → Retrieval)**; **DBD: Donation After Brainstem Death**. |
+| **Cancer & Organ Donation — Eligibility?** | **Active Solid Tumour Excludes Organ Donation**; **Primary Brain Tumours, Some Skin Cancers May Allow**; **Corneas/Tissues Often Possible**. |
+| **Bereavement Support — GP Role?** | **Post-Death Contact, MCCD, Coroner Referral, Practical Support, Signpost to Counselling, Review at 6 Weeks & 1 Year**. |
+
+---
+
+## 12. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **DNACPR vs Allow Natural Death (AND)** | **Same Concept** — **AND is Preferred Terminology** (Positive Framing) |
+| **Syringe Driver vs IV Infusion** | **SC Route**: Less Invasive, Home/Hospice Friendly, Lower Infection Risk |
+| **Midazolam vs Morphine for Dyspnoea** | **Morphine: Reduces Respiratory Drive Sensitivity**; **Midazolam: Anxiolytic, Adjunct if Anxious** |
+| **Glycopyrronium vs Hyoscine** | **Glycopyrronium**: Less CNS Penetration (Less Sedation), Preferred; **Hyoscine**: More Central, Crosses BBB |
+| **Levomepromazine vs Midazolam for Agitation** | **Levomepromazine**: Broad Antipsychotic/Antiemetic, More Sedating; **Midazolam**: Fast Onset, Anxiolytic |
+| **Withdrawing vs Withholding** | **Ethically Equivalent** — **Same Moral Weight** |
+| **Best Interests vs Substituted Judgement** | **Best Interests**: What Benefits Patient; **Substituted Judgement**: What Patient Would Choose |
+| **MCCD vs Cremation Forms** | **MCCD: Cause of Death**; **Cremation Forms: Separate, Require 2 Doctors** |
+
+**Mnemonic: END-OF-LIFE-CARE**
+- **E**nd of Life: **Recognise Dying** (Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing)
+- **N**ear Death: **Anticipatory Prescribing** (Syringe Driver — Proactive)
+- **D**rugs: **Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea)**
+- **O**bservations: **q4h Monitoring** (Pain, Sedation, Resp, Site, Pump)
+- **F**utility: **Withhold/Withdraw = Equivalent** — **Best Interests Meeting**
+- **L**egal: **Mental Capacity Act, Best Interests, ReSPECT, DNACPR, ADRT**
+- **I**nvolvement: **Patient/Family in Decisions** (ACP, ReSPECT)
+- **F**inal Days: **Recognise Dying → Stop Non-Essential → Comfort Focus**
+- **E**nd of Life: **Bereavement Support** (Pre/At/Post-Death, GP Review)
+- **C**ommunication: **Honest, Compassionate, Allow Time**
+- **A**dvance Care Planning: **Goals, DNACPR, ReSPECT, ADRT, LPA**
+- **R**espect: **ReSPECT Form (Holistic Emergency Plan)**
+- **E**thics: **Beneficence, Non-Maleficence, Autonomy, Justice**
+
+---
+
+## 13. Mind Map
+
+```mermaid
+mindmap
+  root((End of Life Care))
+    Advance Care Planning
+      Goals of Care
+      DNACPR
+      ReSPECT
+      ADRT
+      LPA
+    Recognising Dying
+      Bedbound, Semi-Comatose
+      Unable to Swallow
+      Changed Breathing
+      Cool/Mottled
+    Syringe Driver
+      Morphine (Pain)
+      Midazolam (Agitation)
+      Glycopyrronium (Secretions)
+      Morphine/Midazolam (Dyspnoea)
+      Doses 24h
+      q4h Monitoring
+    Anticipatory Prescribing
+      Proactive
+      Compatibility Check
+      SC Site Rotation
+    Withdrawal
+      Withholding = Withdrawing
+      Best Interests Meeting
+      Mental Capacity Act
+    Organ Donation
+      DBD / DCD
+      SNOD Referral
+      Cancer Exclusions
+    Bereavement
+      Pre/At/Post Death
+      MCCD / Coroner
+      Support Services
+      GP Review
+```
+
+---
+
+## 14. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **ACP** | Goals, DNACPR, ReSPECT, ADRT, LPA |
+| **Recognise Dying** | Bedbound, Semi-Comatose, No Swallow, Changed Breath, Cool/Mottled |
+| **Syringe Driver** | Morphine, Midazolam, Glycopyrronium, Levomepromazine |
+| **Doses (24h)** | Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg |
+| **Anticipatory** | Proactive, Before Crisis |
+| **Withdrawal** | Futility = Best Interests, Withholding=Withdrawing |
+| **Organ Donation** | DCD/DBD, SNOD, Cancer Excludes Solid Organs |
+| **Bereavement** | Pre/At/Post, MCCD, Coroner, Support, GP Review |
+
+---
+
+## 15. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 16. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| ACP Components | | |
+| DNACPR vs ReSPECT | | |
+| Recognising Dying Signs | | |
+| Syringe Driver Drugs/Doses | | |
+| Anticipatory Prescribing | | |
+| Withdrawal Ethics/Legal | | |
+| Organ Donation Eligibility | | |
+| Bereavement Timeline | | |
+
+---
+
+## 17. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Advance Care Planning]], [[DNACPR]], [[ReSPECT]], [[Syringe Driver]], [[Anticipatory Prescribing]], [[Terminal Agitation]], [[Respiratory Secretions]], [[Bereavement Support]], [[Cancer Pain Management]], [[Symptom Control]], [[Mental Capacity Act]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 18. MCQs (10)
+
+
+**1.** Regarding End of Life Care (ACP), which statement is correct?
+   A. **Goals of Care, DNACPR, ReSPECT, ADRT, LPA, Place of Care**
+   B. **Goals - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Goals of Care, DNACPR, ReSPECT, ADRT, LPA, Place of Care**
+
+
+**2.** Regarding End of Life Care (DNACPR vs ReSPECT), which statement is correct?
+   A. **DNACPR: CPR Only**
+   B. **DNACPR: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **DNACPR: CPR Only**; **ReSPECT: Holistic Emergency Plan**
+
+
+**3.** Regarding End of Life Care (Recognising Dying), which statement is correct?
+   A. **Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing, Cool/Mottled**
+   B. **Bedbound, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing, Cool/Mottled**
+
+
+**4.** Regarding End of Life Care (Syringe Driver), which statement is correct?
+   A. **Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea)
+   B. **Morphine - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea)**
+
+
+**5.** Regarding End of Life Care (Doses (24h)), which statement is correct?
+   A. **Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg**
+   B. **Morphine - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg**
+
+
+**6.** Regarding End of Life Care (Anticipatory Prescribing), which statement is correct?
+   A. **Proactive, Before Crisis**
+   B. **Proactive, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Proactive, Before Crisis**
+
+
+**7.** Regarding End of Life Care (Withdrawal), which statement is correct?
+   A. **Futile Treatment = Harm**, **Withholding = Withdrawing**, **Best Interests Meeting**
+   B. **Futile - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Futile Treatment = Harm**, **Withholding = Withdrawing**, **Best Interests Meeting**
+
+
+**8.** Regarding End of Life Care (Organ Donation), which statement is correct?
+   A. **DBD/DCD**, **SNOD Referral**, **Cancer Often Excludes Solid Organs**
+   B. **DBD/DCD**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **DBD/DCD**, **SNOD Referral**, **Cancer Often Excludes Solid Organs**
+
+
+**9.** Regarding End of Life Care (Bereavement), which statement is correct?
+   A. **Pre/At/Post-Death**, **Signpost to Services**, **GP Review**
+   B. **Pre/At/Post-Death**, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Pre/At/Post-Death**, **Signpost to Services**, **GP Review**
+
+
+**10.** Regarding End of Life Care (FCPS/MRCP High Yield - End of Life Care), which statement is correct?
+   - A. FCPS/MRCP High Yield - End of Life Care: Advance Care Planning (ACP), DNACPR, ReSPECT
+   - B. Empirical approach without specific indication
+   - C. Used only in research protocols
+   - D. Not relevant in current practice
+   - **Answer: A** — FCPS/MRCP High Yield - End of Life Care: Advance Care Planning (ACP), DNACPR, ReSPECT
+
+## 19. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **Goals of Care, DNACPR, ReSPECT, ADRT, LPA, Place of Care**
+   - B. **Goals (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **Goals of Care, DNACPR, ReSPECT, ADRT, LPA, Place of Care**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **DNACPR: CPR Only**
+   - B. **DNACPR: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **DNACPR: CPR Only**; **ReSPECT: Holistic Emergency Plan**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing, Cool/Mottled**
+   - B. **Bedbound, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing, Cool/Mottled**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea)
+   - B. **Morphine (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea)**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg**
+   - B. **Morphine (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **Proactive, Before Crisis**
+   - B. **Proactive, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **Proactive, Before Crisis**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **Futile Treatment = Harm**, **Withholding = Withdrawing**, **Best Interests Meeting**
+   - B. **Futile (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **Futile Treatment = Harm**, **Withholding = Withdrawing**, **Best Interests Meeting**
+
+
+**8.** The role of surgery in this case is:
+   - A. **DBD/DCD**, **SNOD Referral**, **Cancer Often Excludes Solid Organs**
+   - B. **DBD/DCD**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **DBD/DCD**, **SNOD Referral**, **Cancer Often Excludes Solid Organs**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **Pre/At/Post-Death**, **Signpost to Services**, **GP Review**
+   - B. **Pre/At/Post-Death**, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **Pre/At/Post-Death**, **Signpost to Services**, **GP Review**
+
+
+**10.** A clinician encounters this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - End of Life Care: Advance Care Planning (ACP), DNACPR, ReSPECT
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention required
+   - **Answer: A** — FCPS/MRCP High Yield - End of Life Care: Advance Care Planning (ACP), DNACPR, ReSPECT
+
+## 20. Flashcards
+
+**Q1:** ACP?
+**A1:** Goals of Care, DNACPR, ReSPECT, ADRT, LPA, Place of Care
+
+**Q2:** DNACPR vs ReSPECT?
+**A2:** DNACPR: CPR Only; ReSPECT: Holistic Emergency Plan
+
+**Q3:** Recognising Dying?
+**A3:** Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing, Cool/Mottled
+
+**Q4:** Syringe Driver?
+**A4:** Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea)
+
+**Q5:** Doses (24h)?
+**A5:** Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg
+
+**Q6:** Anticipatory Prescribing?
+**A6:** Proactive, Before Crisis
+
+**Q7:** Withdrawal?
+**A7:** Futile Treatment = Harm, Withholding = Withdrawing, Best Interests Meeting
+
+**Q8:** Organ Donation?
+**A8:** DBD/DCD, SNOD Referral, Cancer Often Excludes Solid Organs
+
+## 21. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | ACP | Goals of Care, DNACPR, ReSPECT, ADRT, LPA, Place of Care |
+| 2 | A | DNACPR vs ReSPECT | DNACPR: CPR Only; ReSPECT: Holistic Emergency Plan |
+| 3 | A | Recognising Dying | Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing, Cool/Mottled |
+| 4 | A | Syringe Driver | Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea) |
+| 5 | A | Doses (24h) | Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg |
+| 6 | A | Anticipatory Prescribing | Proactive, Before Crisis |
+| 7 | A | Withdrawal | Futile Treatment = Harm, Withholding = Withdrawing, Best Interests Meeting |
+| 8 | A | Organ Donation | DBD/DCD, SNOD Referral, Cancer Often Excludes Solid Organs |
+| 9 | A | Bereavement | Pre/At/Post-Death, Signpost to Services, GP Review |
+| 10 | A | FCPS/MRCP High Yield - End of Life Care | FCPS/MRCP High Yield - End of Life Care: Advance Care Planning (ACP), DNACPR, ReSPECT |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | ACP | Goals of Care, DNACPR, ReSPECT, ADRT, LPA, Place of Care |
+| 2 | A | DNACPR vs ReSPECT | DNACPR: CPR Only; ReSPECT: Holistic Emergency Plan |
+| 3 | A | Recognising Dying | Bedbound, Semi-Comatose, Unable to Swallow, Changed Breathing, Cool/Mottled |
+| 4 | A | Syringe Driver | Morphine (Pain), Midazolam (Agitation), Glycopyrronium (Secretions), Morphine/Midazolam (Dyspnoea) |
+| 5 | A | Doses (24h) | Morphine 10-20mg, Midazolam 10-30mg, Glycopyrronium 0.6-1.2mg, Levomepromazine 12.5-25mg |
+| 6 | A | Anticipatory Prescribing | Proactive, Before Crisis |
+| 7 | A | Withdrawal | Futile Treatment = Harm, Withholding = Withdrawing, Best Interests Meeting |
+| 8 | A | Organ Donation | DBD/DCD, SNOD Referral, Cancer Often Excludes Solid Organs |
+| 9 | A | Bereavement | Pre/At/Post-Death, Signpost to Services, GP Review |
+
+| 11 | A | FCPS/MRCP High Yield - End of Life Care | FCPS/MRCP High Yield - End of Life Care: Advance Care Planning (ACP), DNACPR, ReSPECT |
+## 22. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Palliative Care|Palliative Care]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

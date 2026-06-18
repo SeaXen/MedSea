@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Absorption Interactions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Absorption Interactions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify mechanisms of absorption interactions: pH, chelation, gastric emptying/motility, transporters, binding resins</li><li>[ ] Apply spacing rules for common combinations</li><li>[ ] Recognise clinical significance — when to separate, when to avoid</li><li>[ ] Execute counselling points for patients</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Mechanisms of Absorption Interactions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mechanism</th><th>Description</th><th>Examples</th></tr><tr><td>-----------</td><td>-------------</td><td>----------</td></tr><tr><td>**pH-Dependent Solubility**</td><td>Gastric pH alters dissolution/ionisation of weak acids/bases</td><td>PPI/H2RA + Ketoconazole/Itraconazole/Atazanavir/Ledipasvir (↓ absorption)</td></tr><tr><td>**Chelation / Complexation**</td><td>Multivalent cations (Al³⁺, Mg²⁺, Ca²⁺, Fe²⁺/³⁺, Zn²⁺) bind drugs → insoluble complexes</td><td>**Fluoroquinolones, Tetracyclines, Bisphosphonates, Thyroid hormones** + Antacids, Iron, Calcium, Sucralfate, Multivitamins</td></tr><tr><td>**Gastric Emptying / Motility**</td><td>Drugs altering GI transit affect absorption of others</td><td>**Metoclopramide/Domperidone (↑ emptying) + Paracetamol (↑ absorption)**; **Anticholinergics/Opioids (↓ emptying) + Levodopa (↓ absorption)**</td></tr><tr><td>**Transporter-Mediated**</td><td>Influx (OATP, OCT, PEPT1) / Efflux (P-gp, BCRP, MRP2) at enterocyte</td><td>**P-gp inhibitors (Clarithromycin, Verapamil) + Digoxin (↑ absorption)**; **OATP inhibitors (Rifampicin, Ciclosporin) + Statins (↑ absorption)**</td></tr><tr><td>**Binding Resins / Adsorbents**</td><td>Non-specific binding in lumen</td><td>**Cholestyramine/Colestipol/Colesevelam** + Warfarin, Digoxin, Thyroid hormones, Thiazides, Statins, Fat-soluble vitamins</td></tr><tr><td>**Food Effects**</td><td>High-fat / high-calcium / grapefruit juice</td><td>**Grapefruit juice (CYP3A4/P-gp inhibition) + Felodipine/Simvastatin/Ciclosporin**; **High-fat meal + Griseofulvin (↑)**: **Calcium + Tetracyclines/Bisphosphonates (↓)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ High-Yield Clinical Combinations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Acid-Reducing Agents + pH-Dependent Drugs</div>
+<table class="ctable"><tr><th>Acid Reducer</th><th>Affected Drug</th><th>Effect</th><th>Management</th></tr><tr><td>--------------</td><td>---------------</td><td>--------</td><td>------------</td></tr><tr><td>**PPI** (Omeprazole, Esomeprazole, Pantoprazole)</td><td>**Ketoconazole, Itraconazole, Posaconazole**</td><td>↓ Absorption (need acidic pH)</td><td>**Avoid** if possible; if essential: give antifungal **with acidic drink (cola)** 2h before PPI</td></tr><tr><td>**PPI**</td><td>**Atazanavir, Ledipasvir, Rilpivirine**</td><td>↓ Absorption</td><td>**Contraindicated** (atazanavir) / **Avoid** (ledipasvir) / **Separate** (rilpivirine: PPI 12h before)</td></tr><tr><td>**PPI**</td><td>**Erlotinib, Gefitinib, Dasatinib, Nilotinib**</td><td>↓ Absorption</td><td>Avoid PPI; use H2RA (separate 10h) or antacid (separate 2h)</td></tr><tr><td>**H2RA** (Ranitidine, Famotidine)</td><td>**Ketoconazole, Itraconazole**</td><td>↓ Absorption (less than PPI)</td><td>Separate by **≥2h**; give antifungal with acidic drink</td></tr><tr><td>**Antacids** (Al/Mg hydroxide)</td><td>**Ketoconazole, Itraconazole**</td><td>↓ Absorption</td><td>Separate by **≥2h**</td></tr></table>
+<div class="sub-h">2. Chelation — **Must Separate**</div>
+<table class="ctable"><tr><th>Drug</th><th>Chelating Agent</th><th>Separation</th><th>Clinical Pearl</th></tr><tr><td>------</td><td>-----------------</td><td>------------</td><td>----------------</td></tr><tr><td>**Fluoroquinolones** (Ciprofloxacin, Levofloxacin, Moxifloxacin, Ofloxacin)</td><td>Antacids (Al/Mg/Ca), **Iron, Zinc, Calcium, Sucralfate, Multivitamins, Dairy**</td><td>**2h before or 4–6h after**</td><td>**Ciprofloxacin + Ca²⁺ = ↓ 90% absorption**</td></tr><tr><td>**Tetracyclines** (Doxycycline, Minocycline, Tetracycline)</td><td>Antacids, Iron, Calcium, Magnesium, Dairy, Multivitamins</td><td>**2h before or 4h after**</td><td>**Doxycycline less affected** (can take with food if GI upset)</td></tr><tr><td>**Bisphosphonates** (Alendronate, Risedronate, Ibandronate)</td><td>**Calcium, Iron, Magnesium, Antacids, Food, Beverages (except water)**</td><td>**Take 30–60 min BEFORE** food/drinks/meds with **plain water only**; remain upright</td><td>**Absolute requirement** for absorption</td></tr><tr><td>**Thyroid Hormones** (Levothyroxine)</td><td>**Calcium, Iron, Sucralfate, Cholestyramine, Colestipol, PPIs, Soy, Walnuts, Fibre**</td><td>**Take 30–60 min BEFORE breakfast**; separate other meds by **≥4h**</td><td>**Lifelong separation**</td></tr><tr><td>**Digoxin**</td><td>**Cholestyramine, Colestipol, Colesevelam, Sucralfate, Antacids (Al/Mg), Kaolin, Pectin**</td><td>Separate by **≥2h**</td><td>Digoxin narrow TI</td></tr><tr><td>**Warfarin**</td><td>**Cholestyramine, Colestipol, Colesevelam, Orlistat**</td><td>Separate by **≥2h**</td><td>INR monitoring</td></tr></table>
+<div class="sub-h">3. Motility / Gastric Emptying</div>
+<table class="ctable"><tr><th>Drug Affecting Motility</th><th>Affected Drug</th><th>Effect</th><th>Significance</th></tr><tr><td>-------------------------</td><td>---------------</td><td>--------</td><td>--------------</td></tr><tr><td>**Metoclopramide / Domperidone** (↑ emptying)</td><td>**Paracetamol**</td><td>↑ Rate & extent of absorption</td><td>Earlier analgesia</td></tr><tr><td>**Metoclopramide / Domperidone**</td><td>**Levodopa**</td><td>↑ Absorption (paradoxical — metoclopramide D2 antagonist worsens Parkinson's)</td><td>**AVOID** metoclopramide in Parkinson's</td></tr><tr><td>**Anticholinergics / Opioids / L-Dopa** (↓ emptying)</td><td>**Paracetamol**</td><td>↓ Rate of absorption</td><td>Delayed analgesia</td></tr><tr><td>**Anticholinergics / Opioids**</td><td>**Levodopa**</td><td>↓ Absorption</td><td>Worsened motor control</td></tr><tr><td>**Erythromycin** (motilin agonist, ↑ emptying)</td><td>**Paracetamol**</td><td>↑ Absorption</td><td>Minor</td></tr></table>
+<div class="sub-h">4. Transporter Interactions (Intestinal)</div>
+<table class="ctable"><tr><th>Transporter</th><th>Inhibitor (↑ Absorption of Substrate)</th><th>Inducer (↓ Absorption)</th><th>Clinically Relevant Substrates</th></tr><tr><td>-------------</td><td>---------------------------------------</td><td>------------------------</td><td>--------------------------------</td></tr><tr><td>**P-gp (ABCB1)**</td><td>Clarithromycin, Verapamil, Quinidine, Ciclosporin, Amiodarone, Dronedarone, Ritonavir</td><td>Rifampicin, St John's Wort, Carbamazepine, Phenytoin</td><td>**Digoxin, Dabigatran, Rivaroxaban, Apixaban, Tacrolimus, Ciclosporin, Fexofenadine**</td></tr><tr><td>**OATP1A2/2B1**</td><td>Rifampicin (single dose), Ciclosporin, Gemfibrozil, Ritonavir</td><td>Rifampicin (chronic)</td><td>**Statins (Rosuvastatin, Atorvastatin), Fexofenadine, Methotrexate**</td></tr><tr><td>**OCT1**</td><td>Verapamil, Quinidine, Cimetidine, Propranolol</td><td>—</td><td>**Metformin, Imatinib**</td></tr><tr><td>**PEPT1**</td><td>—</td><td>—</td><td>**Beta-lactams (cephalexin), ACE inhibitors, Di/tripeptides**</td></tr></table>
+<div class="sub-h">5. Binding Resins (Cholestyramine, Colestipol, Colesevelam)</div>
+<table class="ctable"><tr><th>Affected Drug</th><th>Separation</th><th>Notes</th></tr><tr><td>---------------</td><td>------------</td><td>-------</td></tr><tr><td>**Warfarin**</td><td>≥2h</td><td>INR monitoring</td></tr><tr><td>**Digoxin**</td><td>≥2h</td><td>Narrow TI</td></tr><tr><td>**Thyroid Hormones**</td><td>≥4h</td><td>Critical</td></tr><tr><td>**Thiazide Diuretics**</td><td>≥1h</td><td></td></tr><tr><td>**Statins**</td><td>≥1h</td><td></td></tr><tr><td>**Fat-Soluble Vitamins (A, D, E, K)**</td><td>≥2h</td><td>Give vitamins at bedtime</td></tr><tr><td>**Folic Acid**</td><td>≥2h</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📋 Patient Counselling Quick Reference</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Key Counselling Point</th></tr><tr><td>------</td><td>----------------------</td></tr><tr><td>**Bisphosphonates**</td><td>"Take first thing in morning with **full glass of plain water**, **wait 30–60 min before ANY food, drink, or other meds**, stay **upright**"</td></tr><tr><td>**Levothyroxine**</td><td>"Take **on empty stomach 30–60 min before breakfast**; **separate calcium, iron, antacids, PPIs by 4h**"</td></tr><tr><td>**Fluoroquinolones**</td><td>"Avoid dairy, antacids, iron, zinc, multivitamins **2h before or 4–6h after**"</td></tr><tr><td>**Tetracyclines**</td><td>"Avoid dairy, antacids, iron, calcium **2h before or 4h after**"; **doxycycline can take with food** if nausea</td></tr><tr><td>**Itraconazole / Ketoconazole**</td><td>"Take **with food and acidic drink (cola)**; **avoid PPIs/H2RAs/antacids** or separate **2h**"</td></tr><tr><td>**Digoxin**</td><td>"Separate from **cholestyramine, antacids, kaolin, pectin by 2h**"</td></tr><tr><td>**Warfarin**</td><td>"Separate from **cholestyramine, orlistat by 2h**; **consistent vitamin K intake**"</td></tr><tr><td>**Statins**</td><td>"Separate from **cholestyramine by ≥1h**; **avoid grapefruit juice**" (esp. simvastatin, lovastatin, atorvastatin)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Combination</th><th>Effect</th><th>Action</th></tr><tr><td>-------------</td><td>--------</td><td>--------</td></tr><tr><td>PPI + Ketoconazole/Itraconazole</td><td>↓ Absorption</td><td>Avoid / give with cola 2h before PPI</td></tr><tr><td>PPI + Atazanavir</td><td>↓ Absorption</td><td>**Contraindicated**</td></tr><tr><td>Antacids + Ciprofloxacin</td><td>↓ 90% absorption</td><td>Separate 2h before / 4–6h after</td></tr><tr><td>Calcium + Levothyroxine</td><td>↓ Absorption</td><td>Levothyroxine 30–60 min before breakfast; Ca 4h later</td></tr><tr><td>Cholestyramine + Warfarin/Digoxin/Thyroxine</td><td>↓ Absorption</td><td>Separate ≥2h (thyroxine ≥4h)</td></tr><tr><td>Metoclopramide + Levodopa</td><td>↑ Absorption but **worsens Parkinson's** (D2 antagonist)</td><td>**AVOID metoclopramide in Parkinson's**</td></tr><tr><td>Grapefruit juice + Felodipine/Simvastatin/Ciclosporin</td><td>↑ Bioavailability (CYP3A4/P-gp inhibition)</td><td>**Avoid grapefruit juice**</td></tr><tr><td>Rifampicin (chronic) + OATP substrates (Statins)</td><td>↓ Absorption (induction)</td><td>Dose adjust / monitor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">❓ Viva Questions (8)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Why should PPIs be avoided with ketoconazole/itraconazole?</td><td>Azoles require **acidic gastric pH for dissolution/absorption**; PPIs raise pH → ↓ bioavailability</td></tr><tr><td>2. Ciprofloxacin + antacid containing calcium — separation required?</td><td>**2h before or 4–6h after** — chelation forms insoluble complex</td></tr><tr><td>3. Levothyroxine + calcium carbonate — how to separate?</td><td>**Levothyroxine 30–60 min before breakfast; calcium ≥4h later**</td></tr><tr><td>4. Bisphosphonate administration rules?</td><td>**First thing AM, full glass plain water, wait 30–60 min before food/drink/meds, remain upright**</td></tr><tr><td>5. Metoclopramide in Parkinson's patient — why avoid?</td><td>**D2 antagonist** → worsens motor symptoms; **domperidone preferred** (peripheral D2 only)</td></tr><tr><td>6. Grapefruit juice interaction — mechanism, affected drugs?</td><td>**Intestinal CYP3A4 + P-gp inhibition** → ↑ bioavailability of felodipine, simvastatin, ciclosporin, tacrolimus, rivaroxaban</td></tr><tr><td>5. Cholestyramine + warfarin — separation?</td><td>**≥2h** (warfarin narrow TI, INR monitoring)</td></tr><tr><td>6. Rifampicin + oral contraceptive / statin — effect on absorption?</td><td>**Chronic rifampicin induces OATP/P-gp** → ↓ absorption of statins, OCP; **acute rifampicin inhibits**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Doxycycline vs other tetracyclines + food**</td><td>Doxycycline **can** be taken with food (less chelation); other tetracyclines must be on empty stomach</td></tr><tr><td>**Acute vs chronic rifampicin on transporters**</td><td>**Acute**: inhibits OATP/P-gp → ↑ absorption; **Chronic**: induces → ↓ absorption</td></tr><tr><td>**PPI + atazanavir**</td><td>**Contraindicated** — cannot overcome with separation; use alternative ARV</td></tr><tr><td>**Bisphosphonate + water only**</td><td>**Plain water only** — coffee, juice, mineral water all ↓ absorption</td></tr><tr><td>**Levothyroxine + PPI**</td><td>PPI ↓ gastric acidity → ↓ levothyroxine dissolution; **separate by ≥4h**</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"BISPHOSPHONATE RULES"</b> = <b>B</b>efore breakfast, <b>I</b>mmediately on waking, <b>S</b>tay upright, <b>P</b>lain water only, <b>H</b>alf-hour wait, <b>O</b>ther meds later, <b>S</b>eparate calcium/iron, <b>P</b>PIs separate, <b>H</b>2RAs separate, <b>A</b>ntacids separate, <b>T</b>ake weekly/monthly, <b>E</b>very dose same way</li><li><b>"LEVO RULES"</b> = <b>L</b>evothyroxine: <b>E</b>mpty stomach, <b>V</b>ery early (30–60 min before food), <b>O</b>nly water; separate <b>C</b>alcium, <b>I</b>ron, <b>P</b>PI, <b>A</b>ntacids, <b>S</b>ucralfate</li><li><b>"QUINOLONE CHELATION"</b> = <b>Q</b>uinolones + <b>C</b>alcium/<b>I</b>ron/<b>M</b>g/<b>A</b>l/<b>Z</b>n = <b>Separate 2h before / 4–6h after</b></li><li><b>"GRAPEFRUIT = CYP3A4/P-gp INHIBITOR"</b> = affects <b>F</b>elodipine, <b>S</b>imvastatin, <b>C</b>iclosporin, <b>T</b>acrolimus, <b>R</b>ivaroxaban</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Absorption Interactions)) pH-Dependent PPI/H2RA + Azoles (Ketoconazole, Itraconazole) → ↓ absorption PPI + Atazanavir/Ledipasvir → ↓ absorption (AVOID Atazanavir) PPI + TKIs (Erlotinib, Dasatinib) → ↓ absorption Chelation Fluoroquinolones + Ca/Mg/Al/Fe/Zn → Separate 2h/4-6h Tetracyclines + Ca/Mg/Fe → Separate 2h/4h (Doxycycline with food OK) Bisphosphonates + Food/Ca/Fe → 30-60min BEFORE, water only, upright Levothyroxine + Ca/Fe/Sucralfate/PPI → 30-60min BEFORE breakfast, separate 4h Digoxin/Warfarin + Cholestyramine → Separate 2h Motility Metoclopramide/Domperidone → ↑ Paracetamol absorption Metoclopramide + Levodopa → AVOID (D2 antagonist worsens Parkinson's) Anticholinergics/Opioids → ↓ Levodopa/Paracetamol absorption Transporters (Intestinal) P-gp: Clarithro/Verapamil/Quinidine inhibit → ↑ Digoxin/Dabigatran/Rivaroxaban OATP: Rifampicin chronic induces → ↓ Statins/Fexofenadine OCT1: Verapamil/Cimetidine inhibit → ↑ Metformin Binding Resins Cholestyramine/Colestipol/Colesevelam → Bind Warfarin, Digoxin, Thyroxine, Thiazides, Statins, Vit A/D/E/K Separate ≥2h (Thyroxine ≥4h) Food Grapefruit juice → CYP3A4/P-gp inhibition → ↑ Felodipine/Simvastatin/Ciclosporin High-fat → ↑ Griseofulvin Calcium → ↓ Tetracyclines/Bisphosphonates </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>pH-dependent table</td><td>8</td><td></td></tr><tr><td>Chelation table</td><td>12</td><td></td></tr><tr><td>Motility effects</td><td>6</td><td></td></tr><tr><td>Transporter table</td><td>8</td><td></td></tr><tr><td>Binding resins</td><td>6</td><td></td></tr><tr><td>Counselling points</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>8</td><td></td></tr><tr><td>**Total**</td><td>**56**</td><td></td></tr></table>
+<p><b>Target</b>: ≥45/56 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Bisphosphonate administration rules"*</div>
+<ul><li>First thing in morning on waking</li><li>Full glass <b>plain water only</b></li><li>Remain <b>upright</b> (sit/stand) for <b>30–60 min</b></li><li><b>No food, drink, or other medications</b> for 30–60 min</li><li>Separate calcium, iron, antacids, PPIs by ≥30–60 min</li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on ciprofloxacin 500mg BD prescribed calcium carbonate for osteoporosis. Counselling?"*</div>
+<ul><li><b>Chelation</b> → ↓ ciprofloxacin absorption up to 90%</li><li><b>Separate by 2h before or 4–6h after</b> calcium dose</li><li>Advise take ciprofloxacin 2h before breakfast, calcium with dinner</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on levothyroxine 100mcg, started omeprazole 20mg for dyspepsia. TSH rising. Why?"*</div>
+<ul><li><b>PPI ↓ gastric acidity → ↓ levothyroxine dissolution/absorption</b></li><li><b>Separate by ≥4h</b> (levothyroxine 30–60 min before breakfast, omeprazole 30 min before dinner)</li><li>Monitor TSH in 6–8 weeks</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>PPI + ketoconazole/itraconazole = ↓ absorption (need acid) → give with cola, separate from PPI</li><li>PPI + atazanavir = CONTRAINDICATED</li><li>Ciprofloxacin + calcium/antacids = separate 2h/4-6h</li><li>Doxycycline = can take with food</li><li>Bisphosphonate = plain water, upright, 30-60min wait</li><li>Levothyroxine = empty stomach 30-60min before breakfast, separate Ca/Fe/PPI/antacids 4h</li><li>Cholestyramine = binds warfarin/digoxin/thyroxine → separate 2h (thyroxine 4h)</li><li>Metoclopramide + levodopa = AVOID (D2 antagonist)</li><li>Grapefruit = CYP3A4/P-gp inhibition → felodipine, simvastatin, ciclosporin</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>ABSORPTION INTERACTION TRIAD:</b> 1. <b>CHELATION</b> = Fluoroquinolones/Tetracyclines/Bisphosphonates/Levothyroxine + Cations → <b>SEPARATE</b> 2. <b>pH</b> = PPI/H2RA + Azoles/Atazanavir/TKIs → <b>AVOID / SEPARATE / ACIDIC DRINK</b> 3. <b>TRANSPORTERS</b> = P-gp/OATP inhibitors/inducers → <b>DIGOXIN/DOAC/STATIN</b> dose adjust</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Ketoconazole absorption requires:</b></li></ol>
+<p>A. Alkaline pH B. <b>Acidic pH</b> ✓ C. Neutral pH D. Food only E. No specific pH</p>
+<ol><li><b>Ciprofloxacin + calcium carbonate — recommended separation:</b></li></ol>
+<p>A. Take together B. <b>2h before or 4–6h after</b> ✓ C. 1h before or 2h after D. 30 min before E. No separation needed</p>
+<ol><li><b>Levothyroxine administration — correct instruction:</b></li></ol>
+<p>A. With breakfast B. <b>30–60 min before breakfast, empty stomach, water only</b> ✓ C. At bedtime D. With calcium supplement E. With PPI</p>
+<ol><li><b>Bisphosphonate (alendronate) — correct administration:</b></li></ol>
+<p>A. With breakfast and orange juice B. <b>First thing AM, plain water, upright 30–60 min, no food/meds</b> ✓ C. At bedtime with milk C. With calcium supplement E. Any time with food</p>
+<ol><li><b>PPI + Atazanavir — correct statement:</b></li></ol>
+<p>A. Safe with 2h separation B. <b>Contraindicated</b> ✓ C. Increase atazanavir dose D. Use H2RA instead E. No interaction</p>
+<ol><li><b>Grapefruit juice inhibits intestinal:</b></li></ol>
+<p>A. CYP2C9 B. <b>CYP3A4 and P-gp</b> ✓ C. CYP2D6 D. CYP1A2 E. UGT1A1</p>
+<ol><li><b>Cholestyramine binds which drug requiring ≥4h separation?</b></li></ol>
+<p>A. Digoxin B. Warfarin C. <b>Levothyroxine</b> ✓ D. Furosemide E. Atorvastatin</p>
+<ol><li><b>Metoclopramide in Parkinson's disease — why avoid?</b></li></ol>
+<p>A. Causes hypotension B. <b>D2 antagonist → worsens motor symptoms</b> ✓ C. Increases levodopa toxicity D. Causes seizures E. No interaction</p>
+<ol><li><b>Rifampicin chronic effect on OATP substrates (statins):</b></li></ol>
+<p>A. ↑ Absorption B. <b>↓ Absorption (induction)</b> ✓ C. No effect D. Unpredictable E. Only acute effect</p>
+<ol><li><b>Doxycycline vs Tetracycline — food interaction difference:</b></li></ol>
+<p>A. Both must be fasting B. <b>Doxycycline can be taken with food; Tetracycline cannot</b> ✓ C. Tetracycline can be taken with food; Doxycycline cannot D. Both can be taken with food E. Neither affected by food</p>
+<ol><li><b>Acute rifampicin effect on transporters:</b></li></ol>
+<p>A. Induces P-gp B. <b>Inhibits OATP/P-gp → ↑ absorption</b> ✓ C. No effect D. Induces CYP3A4 only E. Inhibits CYP2C9</p>
+<ol><li><b>Warfarin + cholestyramine separation:</b></li></ol>
+<p>A. No separation needed B. <b>≥2h</b> ✓ C. ≥4h D. ≥6h E. 30 min</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Ketoconazole pH requirement</td><td>Acidic gastric pH for absorption</td></tr><tr><td>PPI + Azoles</td><td>↓ Absorption → give with cola, separate from PPI</td></tr><tr><td>PPI + Atazanavir</td><td>CONTRAINDICATED</td></tr><tr><td>Ciprofloxacin + Ca/Mg/Al/Fe/Zn</td><td>Separate 2h before / 4–6h after</td></tr><tr><td>Tetracycline + Ca/Mg/Fe</td><td>Separate 2h before / 4h after (Doxycycline with food OK)</td></tr><tr><td>Bisphosphonate rules</td><td>AM, plain water, upright 30-60min, no food/meds</td></tr><tr><td>Levothyroxine rules</td><td>30-60min before breakfast, separate Ca/Fe/PPI/antacid 4h</td></tr><tr><td>Cholestyramine binds</td><td>Warfarin, Digoxin, Thyroxine, Thiazides, Statins, Vit A/D/E/K</td></tr><tr><td>Cholestyramine + Thyroxine</td><td>Separate ≥4h</td></tr><tr><td>Metoclopramide + Parkinson's</td><td>AVOID (D2 antagonist)</td></tr><tr><td>Grapefruit juice</td><td>Intestinal CYP3A4 + P-gp inhibition</td></tr><tr><td>Grapefruit affects</td><td>Felodipine, Simvastatin, Ciclosporin, Tacrolimus, Rivaroxaban</td></tr><tr><td>Rifampicin acute</td><td>Inhibits OATP/P-gp → ↑ absorption</td></tr><tr><td>Rifampicin chronic</td><td>Induces OATP/P-gp → ↓ absorption</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Acidic pH</li><li><b>B</b> — 2h before or 4–6h after</li><li><b>B</b> — 30–60 min before breakfast, empty stomach</li><li><b>B</b> — First thing AM, plain water, upright, wait</li><li><b>B</b> — Contraindicated</li><li><b>B</b> — CYP3A4 and P-gp</li><li><b>C</b> — Levothyroxine (≥4h)</li><li><b>B</b> — D2 antagonist worsens motor symptoms</li><li><b>B</b> — Chronic rifampicin induces → ↓ statin absorption</li><li><b>B</b> — Doxycycline with food OK</li><li><b>B</b> — Acute rifampicin inhibits OATP/P-gp</li><li><b>B</b> — ≥2h separation</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Interactions/Absorption interactions.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Absorption Interactions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

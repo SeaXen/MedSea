@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Refeeding Syndrome — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 5 NUTRITIONAL FACTORS IN DISEASE / 5.5. NUTRITIONAL DISORDERS</span>
+      <div class="h1">Refeeding Syndrome</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define refeeding syndrome: severe electrolyte/fluid shifts when malnourished patient refed</li><li>[ ] Identify risk factors: BMI &lt;16, unintentional weight loss &gt;15% in 3m, &lt;50% intake &gt;5d, refeeding history, alcoholism</li><li>[ ] Explain pathophysiology: chronic malnutrition → insulin↓, glucagon/cortisol↑, depletion of intracellular PO4/K/Mg; refeeding (carbs) → insulin surge → cellular uptake of PO4/K/Mg → ↓serum levels</li><li>[ ] State clinical features: hypophosphataemia (cardiac, respiratory, rhabdomyolysis, ↓ATP); hypokalaemia (arrhythmias); hypomagnesaemia; fluid overload (CCF); Wernicke's</li><li>[ ] State prevention: NICE guidelines, start low (10 kcal/kg/day), increase slowly, prophylactic thiamine/PO4/K/Mg, daily monitoring, cardiac monitor</li><li>[ ] Identify "at risk" and "high risk" NICE criteria; consider NG/PN if unable to feed orally</li><li>[ ] Recognise cardiac complications: ↓contractility, arrhythmias, sudden death; respiratory: ↓diaphragm, hypoventilation, ventilator weaning failure</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Refeeding Syndrome**</td><td>Life-threatening fluid/electrolyte shifts and metabolic disturbances when malnourished refed</td></tr><tr><td>**Risk Factor (NICE)**</td><td>BMI <18.5, unintentional weight loss >10%/3m, <50% intake >5d, history of refeeding issues</td></tr><tr><td>**High Risk (NICE)**</td><td>BMI <16, >15% weight loss/3m, <50% intake >10d, before/after major surgery, critical illness, alcoholism, refeeding history</td></tr><tr><td>**Hypophosphataemia**</td><td>Most characteristic; <0.3 severe; ↓ATP, ↓2,3-BPG, ↓cardiac, ↓respiratory, rhabdomyolysis, ↑CK</td></tr><tr><td>**Hypokalaemia**</td><td>Intracellular shift; arrhythmias, muscle weakness; U waves</td></tr><tr><td>**Hypomagnesaemia**</td><td>Refractory hypoK, hypoCa; neuromuscular, cardiac, seizures</td></tr><tr><td>**Thiamine Deficiency**</td><td>↓Intake + refeeding demands; Wernicke's, lactic acidosis</td></tr><tr><td>**Fluid Overload**</td><td>Refeeding → insulin → Na retention (sodium shift to cells); CCF, peripheral oedema, pulmonary oedema</td></tr><tr><td>**Cardiac Complications**</td><td>↓Myocardial contractility (↓ATP), arrhythmias, sudden death</td></tr><tr><td>**Respiratory Failure**</td><td>↓Diaphragm function, hypoventilation, respiratory muscle fatigue</td></tr><tr><td>**Insulin Surge**</td><td>Refeeding → carbohydrate intake → insulin release → cellular uptake of PO4, K, Mg, glucose, water</td></tr><tr><td>**Preload Refeeding**</td><td>Na + fluid retention in malnourished (↓albumin, ↓cardiac reserve)</td></tr><tr><td>**NICE Refeeding Protocol**</td><td>Start 10 kcal/kg/day (high risk) or 20 kcal/kg/day (at risk); increase over 4–7 days</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Pathophysiology</div>
+<p><b>Starvation Phase (Chronic Malnutrition):</b></p>
+<ul><li>↓Insulin, ↑glucagon, ↑cortisol (catabolic)</li><li>Glycogen depletion (12–24h) → gluconeogenesis from muscle proteolysis</li><li>Switch to <b>ketosis</b> (fatty acids + ketones for brain)</li><li>Depletion of <b>intracellular PO4, K, Mg</b> (despite normal serum initially)</li><li>↓Total body electrolytes; serum maintained at expense of intracellular</li><li>↓Cardiac mass, ↓renal function, ↓GI motility</li></ul>
+<p><b>Refeeding Phase (Carbohydrate Intake):</b></p>
+<ul><li>Sudden carbohydrate → <b>insulin surge</b></li><li>Insulin drives cellular uptake:</li><li><b>PO4</b> (most depleted; first to drop; <b>hallmark</b>)</li><li><b>K</b> (hypokalaemia)</li><li><b>Mg</b> (hypomagnesaemia)</li><li><b>Glucose</b> (utilisation)</li><li><b>Amino acids</b> (protein synthesis)</li><li><b>Water</b> (with Na; fluid retention)</li><li><b>Na shift</b> into cells (refeeding oedema)</li><li><b>↓Thiamine demands</b> (carbohydrate metabolism): lactic acidosis, Wernicke's</li><li><b>Cardiac stress</b> (↑metabolic demands, ↓cardiac reserve)</li></ul>
+<p><b>Consequences of PO4 Depletion:</b></p>
+<ul><li>↓ATP synthesis (mitochondrial oxidative phosphorylation)</li><li>↓2,3-BPG → ↓O₂ delivery</li><li><b>Cardiac:</b> ↓contractility, arrhythmias, sudden death, CCF</li><li><b>Respiratory:</b> ↓diaphragm, hypoventilation, respiratory failure, ventilator weaning</li><li><b>Muscle:</b> Weakness, rhabdomyolysis, ↑CK</li><li><b>Haematological:</b> Haemolysis, leucocyte dysfunction, thrombocytopenia</li><li><b>Neuro:</b> Confusion, seizures, coma, Wernicke's</li><li><b>Renal:</b> ↓GFR, ATN</li></ul>
+<p><b>Thiamine Demands:</b></p>
+<ul><li>Cofactor for <b>pyruvate dehydrogenase, α-ketoglutarate dehydrogenase, transketolase</b></li><li>Thiamine demand ↑ with carbohydrate metabolism</li><li>Stored thiamine depleted in 2–3 weeks</li><li><b>Wernicke's encephalopathy:</b> Triad (ophthalmoplegia, ataxia, confusion) — IRREVERSIBLE if untreated</li><li><b>Beriberi:</b> Wet (CCF) / Dry (peripheral neuropathy)</li></ul>
+<div class="sub-h">Section 2: Risk Stratification (NICE CG32)</div>
+<p><b>At Risk (1+ criterion):</b></p>
+<ul><li>BMI &lt;18.5</li><li>Unintentional weight loss &gt;10% in 3–6m</li><li>&lt;50% intake &gt;5 days</li><li>History of poor nutrition + ↑severity of acute illness</li></ul>
+<p><b>High Risk (1+ criterion):</b></p>
+<ul><li>BMI &lt;16</li><li>Unintentional weight loss &gt;15% in 3–6m</li><li>&lt;50% intake &gt;10 days</li><li>Refeeding history (previous severe electrolyte shifts)</li><li>Critical illness, post-major surgery</li><li>Chronic alcoholism, drug abuse</li><li>Eating disorders, prolonged vomiting/diarrhoea</li><li>Antacid/proton pump (Mg loss), chemotherapy, diuretics, insulin</li><li>Dysphagia</li><li><b>High risk children:</b> ↓growth, ↓BMI centiles</li></ul>
+<div class="sub-h">Section 3: Clinical Features (Onset Typically Days 2–5)</div>
+<p><b>Cardiovascular:</b></p>
+<ul><li>↓Myocardial contractility, hypotension, ↓cardiac output</li><li>Arrhythmias (VT, AF, torsades)</li><li>Sudden cardiac death</li><li>Peripheral oedema (Na/fluid retention)</li><li>Pulmonary oedema, CCF</li></ul>
+<p><b>Respiratory:</b></p>
+<ul><li>↓Diaphragm function</li><li>Hypoventilation, hypercapnia</li><li>Respiratory failure</li><li>Ventilator weaning failure</li><li>↑Respiratory infections</li></ul>
+<p><b>Neuromuscular:</b></p>
+<ul><li>Weakness, myalgia</li><li>Rhabdomyolysis (↑CK)</li><li>Paraesthesia, tetany (hypoCa from hypoMg)</li><li>Seizures (hypoNa, hypoPO4, hypoMg)</li><li>Confusion, delirium, coma</li><li><b>Wernicke's:</b> ophthalmoplegia, ataxia, confusion (thiamine)</li></ul>
+<p><b>Haematological:</b></p>
+<ul><li>Haemolysis (↓ATP in RBCs)</li><li>Thrombocytopenia, leucopenia</li><li>↓O₂ delivery (↓2,3-BPG)</li></ul>
+<p><b>Renal:</b></p>
+<ul><li>↓GFR, ATN</li><li>↑Risk in critical illness</li></ul>
+<div class="sub-h">Section 4: Prevention Protocol (NICE)</div>
+<p><b>High Risk:</b></p>
+<ul><li>Start feeding at <b>10 kcal/kg/day</b> (current weight)</li><li>Increase gradually: 5–10 kcal/kg/day increments to <b>20–30 kcal/kg/day</b> by day 4–7</li><li>Protein: 5–10 g/kg/day (start lower; not too aggressive)</li><li><b>Prophylactic IV thiamine 200–300 mg</b> before feeding (and for 10 days)</li><li>Oral/IV vitamin B complex (Strong) 1 tablet BD</li><li><b>Prophylactic PO4, K, Mg</b> supplements:</li><li>PO4 (sodium or potassium phosphate) 0.3–0.6 mmol/kg/day</li><li>K 2–4 mmol/kg/day</li><li>Mg 0.3–0.6 mmol/kg/day</li><li>Monitor <b>PO4, K, Mg daily ×10 days</b></li><li>Daily fluid balance, weight, BP</li><li>Cardiac monitor (telemetry)</li><li>If unable to feed orally: consider NG, then PN (with caution)</li></ul>
+<p><b>At Risk:</b></p>
+<ul><li>Start 20 kcal/kg/day; increase to full 25–35 kcal/kg/day over 2–3 days</li><li>Prophylactic thiamine, PO4, K, Mg if intake poor</li><li>Monitor daily</li></ul>
+<div class="sub-h">Section 5: Treatment of Established Refeeding Complications</div>
+<table class="ctable"><tr><th>Complication</th><th>Treatment</th></tr><tr><td>--------------</td><td>-----------</td></tr><tr><td>**Severe hypophosphataemia (<0.3)**</td><td>IV sodium/potassium phosphate 15–30 mmol over 6–12h; cardiac monitor; **do NOT give IV Ca concurrently** (precipitation)</td></tr><tr><td>**Hypokalaemia (<3.0)**</td><td>IV/oral KCl; cardiac monitor; correct Mg first</td></tr><tr><td>**Hypomagnesaemia (<0.5)**</td><td>IV Mg sulphate 2 g over 20 min, then 5 g/24h; oral Mg glycerophosphate</td></tr><tr><td>**Wernicke's**</td><td>**Thiamine 500 mg IV TDS ×3–5 days** (Pabrinex 2 pairs TDS) before glucose</td></tr><tr><td>**Fluid overload / CCF**</td><td>Fluid restriction 800–1000 mL/day; furosemide; consider withholding feed temporarily</td></tr><tr><td>**Cardiac arrhythmia**</td><td>Treat per ACLS; correct electrolytes; **avoid inotropes if Mg/PO4 low** (worsen)</td></tr><tr><td>**Refeeding hypoventilation**</td><td>Respiratory support; consider temporary cessation of feeding; daily arterial blood gas</td></tr></table>
+<div class="sub-h">Section 6: Practical Prescribing</div>
+<p><b>Sample Refeeding Prescription (High Risk, 60 kg):</b></p>
+<ul><li>Day 1–2: 600 kcal/day (= 10 kcal/kg) — start small</li><li>Day 3–4: 800 kcal/day</li><li>Day 5–7: 1000–1200 kcal/day</li><li>Day 7–10: Target 1500–1800 kcal/day</li><li>Thiamine 200 mg IV × 3 days, then 100 mg PO daily</li><li>Vitamin B compound 1 tab BD</li><li>Sodium phosphate 20 mmol IV over 8h daily ×5 days</li><li>KCl 40 mmol/L IV fluids</li><li>Mg glycerophosphate 20 mmol PO daily</li><li>Daily U&amp;Es, Ca, Mg, PO4</li><li>Cardiac monitor</li></ul>
+<p><b>Total PN in Refeeding:</b></p>
+<ul><li>Start 10–15 kcal/kg/day (low); increase slowly</li><li>Consider cyclical PN (24h → 12h overnight) to avoid overfeeding</li><li>Standard PN solutions have PO4, K, Mg</li><li>Monitor as enteral</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th><th>Notes</th></tr><tr><td>----------</td><td>--------</td><td>-------</td></tr><tr><td>65M, BMI 16, alcohol, pneumonia, nil by mouth 5 days</td><td>**Refeeding risk high**; start 10 kcal/kg/day; thiamine 200 mg IV; monitor PO4, K, Mg daily</td><td>Most common inpatient scenario</td></tr><tr><td>30F, anorexia nervosa, BMI 13, ↓PO4 day 4 refeeding</td><td>**Severe refeeding**; thiamine IV; IV PO4; cardiac monitor; temporarily slow feeding</td><td>Anorexia = highest risk</td></tr><tr><td>70F, post-stroke, dysphagia, BMI 19, weight loss 12% in 3m</td><td>**At risk**; NG feeding start 20 kcal/kg/day; thiamine; daily monitoring</td><td>Stroke + dysphagia common</td></tr><tr><td>80M, post-AAA repair, ICU, BMI 22, nil 7 days, TPN start</td><td>**Refeeding risk**; start TPN 10–15 kcal/kg/day; monitor electrolytes</td><td>Post-op high risk</td></tr><tr><td>25M, Crohn's flare, BMI 17, weight loss 15% in 4m</td><td>**At risk**; oral sip feeds start 20 kcal/kg; thiamine; weekly review</td><td>IBD malnutrition common</td></tr><tr><td>60F, chemotherapy, severe mucositis, BMI 18, on PN</td><td>**Refeeding risk**; standard PN start; monitor daily; consider prophylactic thiamine</td><td>Cancer cachexia + PN</td></tr><tr><td>50M, alcohol, Wernicke's 2 days into refeeding</td><td>**Thiamine 500 mg IV TDS ×3–5 days**; restart feeding only after thiamine</td><td>GIVE THIAMINE BEFORE GLUCOSE</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> Refeeding syndrome = insulin-driven intracellular shift of PO4/K/Mg; high-risk: BMI &lt;16, &gt;15% loss/3m, &lt;50% intake &gt;10d; start 10 kcal/kg/day; thiamine 200–300 mg IV before feeding; daily PO4/K/Mg; <b>thiamine BEFORE glucose</b>; cardiac monitor - <b>Common viva:</b> Refeeding pathophysiology (insulin shift); risk factors; prevention protocol; thiamine timing; severe hypophosphataemia treatment; Wernicke's Rx; cardiac complications - <b>Exam trap:</b> Refeeding too fast (refeeding syndrome); forgetting thiamine (Wernicke's); missing Mg; giving IV Ca + PO4 (precipitation); using NS bolus (volume overload)</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Refeeding = refeed fast</td><td>**Refeeding syndrome = refeed slowly (10 kcal/kg/day)**; increase over 4–7 days</td></tr><tr><td>Thiamine with feed</td><td>**Thiamine BEFORE feed (200–300 mg IV)**; carbohydrate demands thiamine</td></tr><tr><td>Replace electrolytes without monitoring</td><td>**Daily PO4, K, Mg ×10 days**; cardiac monitor in severe</td></tr><tr><td>NS for dehydration in malnourished</td><td>**NS for hypovolaemia OK; for maintenance avoid excess** (volume overload)</td></tr><tr><td>Anorexia = BMI threshold</td><td>**Anorexia = high risk regardless of BMI**; refeeding syndrome historical (1970s Minnesota)</td></tr><tr><td>Total PN safe from refeeding</td><td>**TPN also causes refeeding**; start at 10–15 kcal/kg/day</td></tr><tr><td>Mg not important</td><td>**HypoMg causes refractory hypoK and hypoCa**; replace first</td></tr><tr><td>IV Ca + IV PO4 OK</td><td>**PRECIPITATION** in line; never co-administer IV Ca + IV PO4</td></tr><tr><td>Cardiac monitor unnecessary</td><td>**High risk = cardiac monitor (telemetry)**; arrhythmias common</td></tr><tr><td>Refeeding = only malnourished</td><td>**Any prolonged NPO >5 days** = at risk</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Refeeding syndrome pathophysiology:</b> <b>INTRACELLULAR SHIFT</b> = Insulin → PO4, K, Mg, glucose, water → cells</li><li><b>Risk factors (NICE):</b> <b>BMI &lt;16, weight loss &gt;15%, intake &lt;50% × 10d</b></li><li><b>Prevention:</b> <b>10 kcal/kg/day</b> start; increase slowly; thiamine 200 mg IV; daily electrolytes</li><li><b>First electrolyte to drop:</b> <b>PO4 (phosphate)</b> = most depleted</li><li><b>Wernicke's Rx:</b> <b>Thiamine 500 mg IV TDS ×3–5d</b> BEFORE glucose</li><li><b>Severe hypoPO4 Rx:</b> <b>IV PO4 15–30 mmol over 6-12h</b>; cardiac monitor; <b>NOT with IV Ca</b></li><li><b>Refeeding 4 Ts:</b> <b>T</b>hiamine, <b>T</b>elemetry, <b>T</b>racker (daily electrolytes), <b>T</b>rifle (10 kcal/kg start)</li><li><b>Cardiac complications:</b> <b>↓ATP, ↓contractility, arrhythmias, sudden death</b></li><li><b>Respiratory:</b> <b>↓diaphragm, hypoventilation, ventilator weaning failure</b></li><li><b>Fluid overload:</b> <b>Na retention, CCF, pulmonary oedema</b>; fluid restrict, furosemide</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Refeeding Syndrome)) Pathophysiology Chronic starvation Refeeding (carbs) → Insulin surge Intracellular shift PO4, K, Mg ↓ATP, ↓2,3-BPG Risk Factors (NICE) BMI &lt;16 Weight loss &gt;15%/3m Intake &lt;50% &gt;10d Critical illness Alcoholism Clinical Features Cardiac: ↓contractility, arrhythmias, sudden death Respiratory: ↓diaphragm, hypoventilation Neuromuscular: weakness, rhabdo, seizures Wernicke's: thiamine deficiency Fluid overload: oedema, CCF Prevention Start 10 kcal/kg/day (high risk) Thiamine 200-300 mg IV BEFORE feeding Vitamin B compound Daily PO4, K, Mg Cardiac monitor Slow increase over 4-7 days Treatment Severe hypoPO4: IV PO4 HypoK: IV/oral K HypoMg: IV Mg Wernicke's: Thiamine 500 mg IV TDS CCF: fluid restrict, furosemide Arrest: standard ACLS + electrolyte correction Special Populations Anorexia nervosa Elderly ICU/critical illness Post-op Cancer cachexia </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Pathophysiology: Insulin surge → intracellular shift of PO4, K, Mg</li><li>Risk factors: BMI &lt;16, weight loss &gt;15%/3m, intake &lt;50% &gt;10d</li><li>Start feeding 10 kcal/kg/day; increase over 4-7 days</li><li>Thiamine 200-300 mg IV BEFORE feeding</li><li>Daily PO4, K, Mg monitoring</li><li>Severe hypoPO4: IV PO4 15-30 mmol over 6-12h</li><li>Wernicke's: Thiamine 500 mg IV TDS ×3-5d BEFORE glucose</li><li>Cardiac monitor; avoid inotropes if electrolytes low</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Pathophysiology (insulin-driven PO4/K/Mg shift); risk factors (NICE); clinical features (cardiac, respiratory, neuro, Wernicke's); prevention (10 kcal/kg start, thiamine 200 mg IV); severe hypoPO4 treatment; **thiamine BEFORE glucose**; cardiac monitor</td></tr><tr><td>**Should Know 🟡**</td><td>Anorexia nervosa high risk; Mg replacement; fluid overload management; Wernicke's triad; refeeding in ICU; TPN and refeeding; sample prescription; NICE CG32 protocol</td></tr><tr><td>**Nice to Know 🟢**</td><td>Minnesota experiment (1944–45); history of refeeding (concentration camps); PHOENIX trial; thiamine dose; cardiac monitor telemetry vs ward; probiotic consideration</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] NICE CG32 specific protocols</li><li>[ ] Mg replacement formulation</li><li>[ ] Anorexia nervosa refeeding protocol details (MARSIPAN, NICE)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Topic:</b> "Refeeding syndrome: pathophysiology, risk factors, and prevention"</p>
+<ul><li>Chronic starvation: ↓insulin, ↑glucagon, ↑cortisol; depletion of intracellular PO4/K/Mg</li><li>Refeeding: carbohydrate → insulin surge → intracellular shift of PO4/K/Mg/glucose/water; Na retention</li><li>Clinical: hypophosphataemia (cardiac, respiratory, rhabdomyolysis), hypokalaemia, hypomagnesaemia, Wernicke's, fluid overload, sudden death</li><li>Risk factors (NICE high risk): BMI &lt;16, weight loss &gt;15%/3m, intake &lt;50% &gt;10d, alcoholism</li><li>Prevention: start 10 kcal/kg/day; thiamine 200–300 mg IV before feeding; PO4/K/Mg supplementation; daily electrolytes; cardiac monitor; increase over 4–7 days</li><li>Treatment: severe hypoPO4 → IV PO4; Wernicke's → thiamine 500 mg IV TDS</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>Topic:</b> "NICE Refeeding Prevention Protocol"</p>
+<ul><li><b>Risk assessment (at risk / high risk)</b></li><li><b>High risk start:</b> 10 kcal/kg/day current weight</li><li><b>Increase:</b> 5–10 kcal/kg/day increments to 20–30 kcal/kg/day by day 4–7</li><li><b>Thiamine:</b> 200–300 mg IV/PO before feeding ×10 days</li><li><b>Vitamin B compound:</b> 1 tablet BD</li><li><b>PO4:</b> 0.3–0.6 mmol/kg/day (sodium/potassium phosphate)</li><li><b>K:</b> 2–4 mmol/kg/day</li><li><b>Mg:</b> 0.3–0.6 mmol/kg/day</li><li><b>Monitor:</b> PO4, K, Mg daily ×10 days; daily weight, fluid balance</li><li><b>Cardiac monitor</b> (telemetry)</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>Q:</b> "Why does thiamine need to be given before refeeding?" "A: <b>Carbohydrate metabolism increases thiamine demand</b> (PDH, α-KGDH, transketolase). In chronic malnutrition, thiamine stores are depleted. Refeeding (carbohydrate) can precipitate <b>Wernicke's encephalopathy</b> (ophthalmoplegia, ataxia, confusion) — <b>irreversible</b> if untreated. <b>Always give thiamine 200–300 mg IV BEFORE feeding</b> in at-risk patients (alcoholism, malnutrition, anorexia)."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>Case:</b> 65M, alcohol, BMI 16, pneumonia, NPO 5d, started on nasogastric feeding. "Refeeding risk: <b>HIGH</b>. Action: 1) <b>STOP feeding temporarily</b>. 2) <b>Thiamine 200 mg IV</b> before any glucose. 3) <b>IV PO4 20 mmol + K 20 mmol + Mg 20 mmol</b> in fluids. 4) <b>Restart feeding at 10 kcal/kg/day</b> (~600 kcal/day), increase slowly over 4–7 days. 5) Daily electrolytes (PO4, K, Mg, Ca) for 10 days. 6) Cardiac monitor. 7) Treat pneumonia. 8) Encourage oral intake when possible."</p>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>Pathophysiology:</b> Insulin → intracellular shift of PO4, K, Mg, glucose, water</li><li><b>Risk factors (NICE high):</b> BMI &lt;16, weight loss &gt;15%/3m, intake &lt;50% &gt;10d, alcoholism</li><li><b>Prevention start:</b> <b>10 kcal/kg/day</b>; thiamine 200–300 mg IV BEFORE feeding</li><li><b>Supplements:</b> PO4 0.3–0.6, K 2–4, Mg 0.3–0.6 mmol/kg/day</li><li><b>Monitor:</b> Daily PO4, K, Mg ×10 days; cardiac monitor</li><li><b>Severe hypoPO4:</b> IV PO4 15–30 mmol over 6–12h; <b>NOT with IV Ca</b></li><li><b>Wernicke's:</b> Thiamine 500 mg IV TDS ×3–5d BEFORE glucose</li><li><b>First electrolyte to drop:</b> <b>PO4</b> (most depleted)</li><li><b>Anorexia, alcoholism, post-op, ICU, chemo</b> = high risk</li><li><b>Cardiac:</b> ↓contractility, arrhythmias, sudden death</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Refeeding syndrome pathophysiology:</b></li></ol>
+<p>A. Catecholamine surge B. <b>Insulin surge → intracellular shift of PO4, K, Mg, glucose, water</b> C. ADH release D. Cortisol release E. Glucagon release</p>
+<ol><li><b>High-risk criteria (NICE) for refeeding syndrome:</b></li></ol>
+<p>A. BMI &lt;18.5 B. Weight loss &gt;10%/3m C. <b>BMI &lt;16 OR weight loss &gt;15%/3m OR intake &lt;50% &gt;10 days</b> D. Age &gt;70 E. Diabetes</p>
+<ol><li><b>First electrolyte to drop in refeeding syndrome:</b></li></ol>
+<p>A. Sodium B. <b>Phosphate (most depleted intracellular)</b> C. Calcium D. Chloride E. Bicarbonate</p>
+<ol><li><b>Starting energy provision in high-risk refeeding:</b></li></ol>
+<p>A. 30 kcal/kg/day B. 25 kcal/kg/day C. <b>10 kcal/kg/day (current weight), increase slowly</b> D. 40 kcal/kg/day E. 50 kcal/kg/day</p>
+<ol><li><b>Thiamine timing in refeeding:</b></li></ol>
+<p>A. After feeding established B. With first feed C. <b>BEFORE feeding (200–300 mg IV)</b> D. Only if Wernicke's develops E. With vitamin B compound only</p>
+<ol><li><b>Wernicke's encephalopathy features:</b></li></ol>
+<p>A. Dementia, spastic diplegia, MR B. <b>Ophthalmoplegia, ataxia, confusion (triad)</b> C. Tremor, rigidity, bradykinesia D. Seizures, coma, decerebrate posturing E. Hemiplegia, aphasia, hemianopia</p>
+<ol><li><b>Wernicke's encephalopathy treatment:</b></li></ol>
+<p>A. Glucose first, then thiamine B. <b>Thiamine 500 mg IV TDS ×3–5 days BEFORE glucose</b> C. Oral thiamine 100 mg daily D. Steroids E. Anticonvulsants</p>
+<ol><li><b>Severe refeeding hypophosphataemia treatment:</b></li></ol>
+<p>A. Oral phosphate B. <b>IV sodium or potassium phosphate 15–30 mmol over 6–12h; cardiac monitor</b> C. IV calcium phosphate D. Vitamin D E. Bisphosphonates</p>
+<ol><li><b>Refeeding syndrome cardiovascular complication:</b></li></ol>
+<p>A. Hypertension B. <b>↓Myocardial contractility, arrhythmias, sudden cardiac death</b> C. Coronary artery disease D. Mitral regurgitation E. Bradycardia only</p>
+<ol><li><b>TPN in high-risk refeeding patient should start at:</b></li></ol>
+<p>A. 25–30 kcal/kg/day B. <b>10–15 kcal/kg/day (similar to enteral)</b> C. 40 kcal/kg/day D. 20 kcal/kg/day E. Full requirement immediately</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 30-year-old woman with anorexia nervosa (BMI 13) is admitted for refeeding. On day 4 of nasogastric feeding, she develops weakness, hypoventilation, PO4 0.18 mmol/L. Most appropriate next step?</b></li></ol>
+<p>A. Stop feeding immediately B. <b>IV phosphate replacement 15–30 mmol; slow feeding; thiamine IV; cardiac monitor</b> C. Increase feeding rate D. Oral phosphate replacement E. Sedation and intubation</p>
+<ol><li><b>A 65-year-old malnourished alcoholic is admitted with pneumonia. On day 2 of refeeding, he develops confusion, ophthalmoplegia, and ataxic gait. Diagnosis?</b></li></ol>
+<p>A. Hepatic encephalopathy B. <b>Wernicke's encephalopathy (thiamine deficiency precipitated by refeeding)</b> C. Alcohol withdrawal D. Stroke E. Hypoglycaemia</p>
+<ol><li><b>In refeeding syndrome, the most appropriate prophylactic thiamine regimen is:</b></li></ol>
+<p>A. 50 mg PO daily B. <b>200–300 mg IV/PO BEFORE feeding, then daily for 10 days</b> C. 100 mg IM weekly D. 500 mg IV single dose E. No prophylaxis needed</p>
+<ol><li><b>A 70-year-old woman with post-stroke dysphagia, BMI 19, weight loss 12% in 4 months, is started on NG feeding. Refeeding prevention should include:</b></li></ol>
+<p>A. High-calorie feeding (30 kcal/kg/day) from day 1 B. <b>Start 20 kcal/kg/day, thiamine prophylaxis, daily electrolyte monitoring, increase over 4–7 days</b> C. No monitoring required D. Iron supplementation immediately E. TPN 25 kcal/kg/day</p>
+<ol><li><b>A malnourished patient on day 3 of refeeding develops hypophosphataemia (0.2 mmol/L), hypokalaemia (2.5), hypomagnesaemia (0.4). Best initial management?</b></li></ol>
+<p>A. Stop all feeding immediately B. <b>IV replacement of PO4, K, Mg; continue feeding at low rate; cardiac monitor; thiamine IV</b> C. Increase feeding rate to compensate D. Oral replacement only E. Withhold all electrolytes until stable</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Refeeding pathophysiology</li></ul>
+<p>A: <b>Insulin surge → intracellular shift of PO4, K, Mg, glucose, water</b> (from carbs)</p>
+<ul><li>Q: First electrolyte to drop</li></ul>
+<p>A: <b>PO4</b> (most depleted intracellular)</p>
+<ul><li>Q: High-risk (NICE) criteria</li></ul>
+<p>A: <b>BMI &lt;16, weight loss &gt;15%/3m, intake &lt;50% &gt;10d, alcoholism, refeeding history</b></p>
+<ul><li>Q: Starting calories (high risk)</li></ul>
+<p>A: <b>10 kcal/kg/day</b>, increase over 4–7 days</p>
+<ul><li>Q: Thiamine timing</li></ul>
+<p>A: <b>200–300 mg IV BEFORE feeding</b> (not with feed, not after)</p>
+<ul><li>Q: Wernicke's treatment</li></ul>
+<p>A: <b>Thiamine 500 mg IV TDS ×3–5 days BEFORE glucose</b></p>
+<ul><li>Q: Severe hypoPO4 Rx</li></ul>
+<p>A: <b>IV sodium/potassium phosphate 15–30 mmol over 6–12h; cardiac monitor; NOT with IV Ca</b></p>
+<ul><li>Q: Cardiac complications</li></ul>
+<p>A: <b>↓Myocardial contractility, arrhythmias (VT, AF, torsades), sudden death</b></p>
+<ul><li>Q: Respiratory complications</li></ul>
+<p>A: <b>↓Diaphragm, hypoventilation, hypercapnia, ventilator weaning failure</b></p>
+<ul><li>Q: Anorexia nervosa</li></ul>
+<p>A: <b>High risk regardless of BMI; MARSIPAN guidelines; thiamine, electrolytes, cardiac monitor</b></p>
+<ul><li>Q: TPN refeeding</li></ul>
+<p>A: <b>TPN also causes refeeding; start 10–15 kcal/kg/day; thiamine; monitor daily</b></p>
+<ul><li>Q: PHOENIX trial</li></ul>
+<p>A: <b>ICU energy provision; permissive underfeeding in early phase</b></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Refeeding: insulin surge (from carbs) → intracellular shift of PO4, K, Mg, glucose, water; not catecholamine/ADH/cortisol/glucagon.</li><li><b>C</b> — NICE high risk: BMI &lt;16 OR weight loss &gt;15%/3m OR intake &lt;50% &gt;10 days OR alcoholism OR refeeding history.</li><li><b>B</b> — Phosphate first to drop; most depleted intracellular; severe complications (cardiac, respiratory, rhabdomyolysis).</li><li><b>C</b> — High-risk refeeding: start 10 kcal/kg/day current weight; increase 5–10 kcal/kg/day over 4–7 days.</li><li><b>C</b> — Thiamine BEFORE feeding (carbohydrate metabolism demands thiamine); 200–300 mg IV.</li><li><b>B</b> — Wernicke's triad: ophthalmoplegia (nystagmus, gaze palsy), ataxia, confusion; classic, but only 1/3 have all three.</li><li><b>B</b> — Wernicke's: thiamine 500 mg IV TDS ×3–5 days BEFORE glucose; Pabrinex 2 pairs TDS.</li><li><b>B</b> — Severe hypoPO4: IV sodium or potassium phosphate 15–30 mmol over 6–12h; cardiac monitor; do NOT co-administer with IV Ca.</li><li><b>B</b> — Refeeding cardiac: ↓myocardial contractility, arrhythmias (VT, AF, torsades), sudden death; requires cardiac monitor.</li><li><b>B</b> — TPN in high-risk: start 10–15 kcal/kg/day (similar to enteral); thiamine, monitor electrolytes.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Anorexia nervosa + refeeding day 4: severe hypoPO4 (0.18) + hypoventilation; IV PO4 15–30 mmol; slow feeding; thiamine IV; cardiac monitor.</li><li><b>B</b> — Alcoholic + refeeding + confusion + ophthalmoplegia + ataxia: Wernicke's encephalopathy; thiamine deficiency precipitated by carbohydrate load.</li><li><b>B</b> — Refeeding prophylaxis: 200–300 mg IV/PO BEFORE feeding, then daily for 10 days; high-risk (alcoholism, malnutrition, anorexia).</li><li><b>B</b> — Post-stroke dysphagia + weight loss 12%/4m: at risk; start 20 kcal/kg/day, thiamine prophylaxis, daily monitoring, increase over 4–7 days.</li><li><b>B</b> — Refeeding electrolyte derangement day 3: IV replacement of PO4, K, Mg; continue feeding at low rate; thiamine IV; cardiac monitor.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Refeeding Syndrome</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Insulin surge → intracellular shift of <b>PO4, K, Mg, glucose, water</b>. Risk factors (NICE high): BMI &lt;16, weight loss &gt;15%/3m, intake &lt;50% &gt;10d, alcoholism. <b>Prevention: start 10 kcal/kg/day; thiamine 200–300 mg IV BEFORE feeding; daily electrolytes; cardiac monitor; increase over 4–7 days.</b> Clinical: hypophosphataemia (cardiac, respiratory, rhabdomyolysis), Wernicke's, arrhythmias, sudden death, fluid overload. Severe hypoPO4: IV PO4 15–30 mmol/6–12h. Wernicke's: thiamine 500 mg IV TDS ×3–5d BEFORE glucose. <b>Exam focus:</b> Pathophysiology, NICE high-risk criteria, thiamine timing, starting calories, severe hypoPO4 Rx, Wernicke's, cardiac complications. <b>Clinical relevance:</b> Every malnourished admission; alcoholism; anorexia nervosa; ICU/post-op; stroke; oncology; elder care.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 22 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Refeeding Syndrome · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

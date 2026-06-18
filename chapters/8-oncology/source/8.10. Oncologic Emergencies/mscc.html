@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mscc — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.10. ONCOLOGIC EMERGENCIES</span>
+      <div class="h1">Mscc</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Recognise <b>clinical presentation</b> of MSCC (Back Pain, Motor/Sensory Deficits, Sphincter Dysfunction)</li><li>[ ] Identify <b>common primary tumours</b> causing MSCC</li><li>[ ] Initiate <b>immediate dexamethasone</b> therapy</li><li>[ ] Perform <b>urgent MRI whole spine</b> for diagnosis and planning</li><li>[ ] Apply <b>Bilsky/Modified Bilsky grading</b> for epidural compression severity</li><li>[ ] Determine <b>RT vs Surgery</b> based on ambulatory status, prognosis, radiosensitivity</li><li>[ ] Apply <b>RT fractionation</b> (20Gy/5fx for ambulatory, 30Gy/10fx for post-op)</li><li>[ ] Implement <b>supportive care</b> (Neuro checks q4h, DVT prophylaxis, Bladder care)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Aetiology & Common Primaries</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Primary Tumour</th><th>Frequency</th></tr><tr><td>----------------</td><td>-----------</td></tr><tr><td>**Prostate**</td><td>**15-20%**</td></tr><tr><td>**Breast**</td><td>**15-20%**</td></tr><tr><td>**Lung**</td><td>**15-20%**</td></tr><tr><td>**Multiple Myeloma**</td><td>**10-15%**</td></tr><tr><td>**Lymphoma (NHL, HL)**</td><td>**5-10%**</td></tr><tr><td>**Renal Cell Carcinoma**</td><td>**5-10%**</td></tr><tr><td>**Other**</td><td>**Thyroid, Gastrointestinal, Melanoma, Sarcoma, Unknown Primary**</td></tr></table>
+<div class="callout"><b>Route</b>: Haematogenous Spread → Vertebral Body → Epidural Space → Cord Compression</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Frequency</th><th>Significance</th></tr><tr><td>---------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Back Pain** (Local, Nocturnal, Worse Lying Down)</td><td>**90-95%**</td><td>**Most Common**, Often Precedes Motor Deficits by Weeks</td></tr><tr><td>**Motor Weakness**</td><td>60-80%</td><td>Progressive, Ascending</td></tr><tr><td>**Sensory Loss** (Level-Specific)</td><td>50-70%</td><td></td></tr><tr><td>**Sphincter Dysfunction** (Urinary Retention, Constipation)</td><td>40-60%</td><td>Late Sign</td></tr><tr><td>**Lhermitte's Sign** (Neck Flexion → Electric Shock Down Spine)</td><td>Classic</td><td>Suggests Cervical Cord Involvement</td></tr><tr><td>**Autonomic Dysfunction**</td><td></td><td>Orthostatic Hypotension, Ileus</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**MRI Whole Spine (Gold Standard)**</td><td>**Diagnosis, Level, Extent, Number of Levels**</td><td>**T2: Cord Compression/Edema**, **T1 Post-Gad: Enhancing Epidural Mass**, **STIR: Marrow Replacement**</td></tr><tr><td>**CT Spine**</td><td>If MRI Contraindicated</td><td>Bony Destruction, Stability Assessment</td></tr><tr><td>**Plain X-ray**</td><td>Limited Sensitivity</td><td>Vertebral Collapse, Sclerosis</td></tr><tr><td>**Bone Scan / PET-CT**</td><td>Occult Metastases, Systemic Staging</td><td></td></tr><tr><td>**CSF Analysis**</td><td>If Leptomeningeal Suspected</td><td>Cytology, Flow, Protein, Glucose</td></tr><tr><td>**Bone Marrow Biopsy**</td><td>If Myeloma/Lymphoma Suspected</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Bilsky / Modified Bilsky Grading (Epidural Compression Severity)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Description</th></tr><tr><td>-------</td><td>-------------</td></tr><tr><td>**Grade 0**</td><td>**No Epidural Impingement**</td></tr><tr><td>**Grade 1**</td><td>**Epidural Impingement** (Deforms Thecal Sac, No Cord Compression)</td></tr><tr><td>**Grade 2**</td><td>**Cord Abutment/Compression** (No CSF Visible Around Cord)</td></tr><tr><td>**Grade 3**</td><td>**Cord Displacement/Deformation** (CSF Space Obliterated)</td></tr></table>
+<div class="callout"><b>Clinical Correlation</b>: <b>Grade 1-2</b> = Ambulatory (Often); <b>Grade 3</b> = Non-Ambulatory (Often)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Suspected MSCC] --&gt; B[<b>Dexamethasone 16mg IV Stat, Then 4mg q6h</b> (Reduce Oedema, Preserve Function)] B --&gt; C[<b>Urgent MRI Whole Spine (Within 24h, Ideally 4-6h)</b> — <b>Confirm Level, Extent, Number</b>] C --&gt; D{Neurological Status} D --&gt;|<b>Ambulatory (Grade 1-2)</b>| E[<b>Urgent RT: 20Gy/5fx (Within 24h)</b>] D --&gt;|<b>Non-Ambulatory &lt;48h (Grade 3)</b>| F[<b>Decompressive Surgery + RT (If: Single Level, Good Prognosis, Life Expectancy &gt;3mo)</b>] D --&gt;|<b>Non-Ambulatory &gt;48h / Complete Paraplegia</b>| G[<b>RT Alone (Surgery Futile)</b>] E --&gt; H[<b>Monitor: Neuro Checks q4h, DVT Prophylaxis, Bladder Care</b>] F --&gt; H G --&gt; H </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Surgery vs Radiotherapy Decision</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Preferred Approach</th></tr><tr><td>----------</td><td>-------------------</td></tr><tr><td>**Ambulatory (Walking)**</td><td>**RT Alone (20Gy/5fx)** — Standard, Preserves Function</td></tr><tr><td>**Non-Ambulatory <48h, Single Level, Good PS, Life Exp >3mo**</td><td>**Surgery (Decompression + Stabilisation) + Post-op RT (30Gy/10fx)**</td></tr><tr><td>**Non-Ambulatory >48h / Complete Paraplegia**</td><td>**RT Alone (Surgery Futile)**</td></tr><tr><td>**Radioresistant Tumour** (RCC, Melanoma, Sarcoma, Thyroid)</td><td>**Surgery Preferred (If Resectable)**</td></tr><tr><td>**Multiple Levels / Extensive Disease**</td><td>**RT (Surgery Morbidity High)**</td></tr><tr><td>**Chemosensitive** (Lymphoma, SCLC, Germ Cell)</td><td>**Chemo + RT** (Surgery Rarely Needed)</td></tr><tr><td>**Pathological Fracture / Instability**</td><td>**Surgery (Stabilisation) + RT**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Radiotherapy Details</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Dose/Fractionation</th></tr><tr><td>---------</td><td>-------------------</td></tr><tr><td>**Ambulatory (Definitive RT)**</td><td>**20Gy in 5 Fractions** (4Gy ×5) — **Within 24h**</td></tr><tr><td>**Post-Operative RT**</td><td>**30Gy in 10 Fractions** (3Gy ×10)</td></tr><tr><td>**Poor Prognosis / Palliative**</td><td>**8Gy ×1** OR **20Gy/5fx**</td></tr><tr><td>**Re-Irradiation**</td><td>**Hypofractionated (e.g., 20Gy/5fx)** — Cumulative Dose Limits</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Supportive Care & Monitoring</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Intervention</th><th>Details</th></tr><tr><td>------------</td><td>---------</td></tr><tr><td>**Dexamethasone**</td><td>**16mg IV Stat → 4mg q6h** (Reduce Oedema, Preserve Function); Taper Over 1-2 Weeks Post-RT</td></tr><tr><td>**Neurological Monitoring**</td><td>**q4h** (Motor Power, Sensory Level, Reflexes, Sphincter Function)</td></tr><tr><td>**DVT Prophylaxis**</td><td>**LMWH (Enoxaparin 40mg OD)** — High Risk (Immobility + Cancer)</td></tr><tr><td>**Bladder Care**</td><td>**Intermittent Catheterization** (If Retention); **Suprapubic Catheter** if Long-Term</td></tr><tr><td>**Bowel Care**</td><td>**Laxatives, Enemas** (Constipation Common)</td></tr><tr><td>**Pressure Area Care**</td><td>**2-Hourly Turning**, **Pressure-Relieving Mattress**</td></tr><tr><td>**Physiotherapy**</td><td>**Early Mobilisation** (If Ambulatory), **Passive ROM** (If Paraplegic)</td></tr><tr><td>**Pain Management**</td><td>**WHO Ladder**, **Neuropathic Agents** (Gabapentin/Pregabalin)</td></tr><tr><td>**Catheter/Stoma Care**</td><td>**If Surgical**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**MSCC Definition**</td><td>Vertebral Mets → Epidural Compression → Cord Dysfunction</td></tr><tr><td>**Common Primaries**</td><td>**Prostate, Breast, Lung, Myeloma, Lymphoma, RCC**</td></tr><tr><td>**Key Symptom**</td><td>**Back Pain (90%)** — Nocturnal, Worse Lying Down, Precedes Motor Deficits</td></tr><tr><td>**Dexamethasone**</td><td>**16mg IV Stat → 4mg q6h** — **First-Line, Reduces Oedema**</td></tr><tr><td>**Imaging**</td><td>**Urgent MRI Whole Spine** (Within 24h, Ideally 4-6h)</td></tr><tr><td>**Bilsky Grading**</td><td>**1: Impingement**, **2: Abutment**, **3: Compression/Displacement**</td></tr><tr><td>**Ambulatory**</td><td>**RT 20Gy/5fx (Within 24h)** — Standard</td></tr><tr><td>**Non-Ambulatory <48h**</td><td>**Surgery + RT** (Single Level, Good PS, Life Exp >3mo)</td></tr><tr><td>**Non-Ambulatory >48h**</td><td>**RT Alone** (Surgery Futile)</td></tr><tr><td>**Radioresistant** (RCC, Melanoma, Sarcoma)</td><td>**Surgery Preferred**</td></tr><tr><td>**Post-Op RT**</td><td>**30Gy/10fx**</td></tr><tr><td>**Supportive**</td><td>**Neuro q4h, DVT Prophylaxis (LMWH), Bladder/Bowel Care, Pressure Relief**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**MSCC — Most Common Primary Tumours?**</td><td>**Prostate, Breast, Lung, Myeloma, Lymphoma, RCC** (Haematogenous Spread to Vertebrae).</td></tr><tr><td>**MSCC — Key Presenting Symptom?**</td><td>**Back Pain (90%)** — Nocturnal, Worse Lying Down, Often Precedes Motor Deficits by Weeks.</td></tr><tr><td>**MSCC — Dexamethasone Dose?**</td><td>**16mg IV Stat → 4mg q6h** (High Dose for Vasogenic Oedema Reduction).</td></tr><tr><td>**MSCC — First Investigation?**</td><td>**Urgent MRI Whole Spine** (Within 24h, Ideally 4-6h) — **Gold Standard**.</td></tr><tr><td>**Bilsky Grade 2 vs 3 — Clinical Significance?**</td><td>**Grade 2**: Cord Abutment, CSF Space Present; **Grade 3**: Cord Compression/Displacement, CSF Obliterated — **Grade 3 Often Non-Ambulatory**.</td></tr><tr><td>**Ambulatory MSCC — Standard Treatment?**</td><td>**RT 20Gy/5fx** (Within 24h of Diagnosis).</td></tr><tr><td>**Non-Ambulatory MSCC <48h — When Surgery?**</td><td>**Single Level, Good PS, Life Expectancy >3mo, Radioresistant Tumour (RCC, Melanoma, Sarcoma)**.</td></tr><tr><td>**Paraplegia >48h — Management?**</td><td>**RT Alone** (Surgery Futile, No Functional Recovery).</td></tr><tr><td>**Radioresistant Tumours (RCC, Melanoma, Sarcoma) — MSCC Management?**</td><td>**Surgery (Decompression + Stabilisation) + Post-op RT** (RT Alone Ineffective).</td></tr><tr><td>**Post-Op RT Dose for MSCC?**</td><td>**30Gy/10fx** (Standard).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**MSCC vs SVCO**</td><td>**MSCC**: Back Pain, Motor/Sensory Deficit, Sphincter Dysfunction; **SVCO**: Facial/Arm Swelling, Distended Veins, Dyspnoea, No Motor Deficit</td></tr><tr><td>**RT vs Surgery for Non-Ambulatory**</td><td>**<48h, Single Level, Good Prognosis → Surgery + RT**; **>48h / Complete Paraplegia → RT Alone**</td></tr><tr><td>**Dexamethasone Dose**</td><td>**16mg IV Stat → 4mg q6h** (Not 8mg or 2mg); **Taper Over 1-2 Weeks Post-RT**</td></tr><tr><td>**Bilsky Grade 1-3**</td><td>**1: Impingement Only**; **2: Abutment (CSF Visible)**; **3: Compression (No CSF)**</td></tr><tr><td>**RT Fractionation**</td><td>**20Gy/5fx (Ambulatory Definitive)**; **30Gy/10fx (Post-Op)**; **8Gy×1 (Palliative)**</td></tr><tr><td>**Surgery Timing**</td><td>**Ideally <24h from Diagnosis** for Non-Ambulatory; **<48h Onset** for Best Outcomes</td></tr><tr><td>**RT Alone for Radiosensitive**</td><td>**Lymphoma, SCLC, Germ Cell, Myeloma** — Highly Radiosensitive, Surgery Rarely Needed</td></tr><tr><td>**Spinal Instability**</td><td>**Pathological Fracture, Kyphosis, SINS Score >12** → **Surgery + RT**</td></tr></table>
+<p><b>Mnemonic: MSCC-BACK-PAIN</b></p>
+<ul><li><b>M</b>alignant <b>S</b>pinal <b>C</b>ord <b>C</b>ompression</li><li><b>B</b>ack Pain (90%) — <b>Nocturnal, Worse Lying Down</b></li><li><b>A</b>mbulatory: <b>RT 20Gy/5fx</b> (Standard)</li><li><b>C</b>orticosteroids: <b>Dex 16mg IV → 4mg q6h</b></li><li><b>K</b>ey Imaging: <b>MRI Whole Spine (Gold Std, Within 24h)</b></li><li><b>B</b>ilsky Grading: <b>1 Impingement, 2 Abutment, 3 Compression</b></li><li><b>A</b>utonomic: <b>Bladder/Bowel Dysfunction (Late)</b></li><li><b>C</b>omplete Paraplegia &gt;48h: <b>RT Alone</b> (Surgery Futile)</li><li><b>K</b>ey Decision: <b>Surgery &lt;48h Non-Ambulatory</b> (Single Level, Good Prognosis)</li><li><b>P</b>ost-Op RT: <b>30Gy/10fx</b></li><li><b>A</b>utonomic Dysreflexia: <b>Cervical/Thoracic Lesions</b></li><li><b>I</b>mmediate Dex: <b>Preserve Function</b></li><li><b>N</b>eurological Monitoring: <b>q4h (Power, Sensory, Reflexes, Sphincter)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Malignant Spinal Cord Compression)) Causes Prostate, Breast, Lung, Myeloma, Lymphoma, RCC Haematogenous → Vertebral Body → Epidural Presentation Back Pain (90%) — Nocturnal Motor Weakness (60-80%) Sensory Loss Sphincter Dysfunction (40-60%) Lhermitte's Sign Diagnosis MRI Whole Spine (Gold Standard) Bilsky Grading (1-3) Dexamethasone 16mg IV Stat → 4mg q6h Management Ambulatory: RT 20Gy/5fx Non-Ambul &lt;48h: Surgery + RT Non-Ambul &gt;48h: RT Alone Radioresistant: Surgery + RT RT 20Gy/5fx (Definitive) 30Gy/10fx (Post-Op) 8Gy×1 (Palliative) Supportive Neuro Checks q4h LMWH (VTE) Bladder/Bowel Care </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Presentation**</td><td>Back Pain (90%, Nocturnal), Motor/Sensory Deficits, Sphincter Dysfunction</td></tr><tr><td>**Primaries**</td><td>Prostate, Breast, Lung, Myeloma, Lymphoma, RCC</td></tr><tr><td>**First-Line**</td><td>**Dexamethasone 16mg IV → 4mg q6h**</td></tr><tr><td>**Imaging**</td><td>**Urgent MRI Whole Spine** (Gold Standard)</td></tr><tr><td>**Bilsky Grade**</td><td>1: Impingement; 2: Abutment; 3: Compression/Displacement</td></tr><tr><td>**Ambulatory**</td><td>**RT 20Gy/5fx** (Within 24h)</td></tr><tr><td>**Non-Ambulatory <48h**</td><td>**Surgery + RT** (Single Level, Good Prognosis)</td></tr><tr><td>**Non-Ambulatory >48h**</td><td>**RT Alone**</td></tr><tr><td>**Radioresistant**</td><td>Surgery + RT (RCC, Melanoma, Sarcoma)</td></tr><tr><td>**Post-Op RT**</td><td>30Gy/10fx</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Clinical Presentation</td><td></td><td></td></tr><tr><td>Bilsky Grading</td><td></td><td></td></tr><tr><td>Dexamethasone Dosing</td><td></td><td></td></tr><tr><td>RT vs Surgery Decision</td><td></td><td></td></tr><tr><td>RT Fractionation</td><td></td><td></td></tr><tr><td>Supportive Care</td><td></td><td></td></tr><tr><td>Radioresistant Tumours</td><td></td><td></td></tr><tr><td>Neurological Monitoring</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[SVCO]], [[Neutropenic Sepsis]], [[Hypercalcaemia]], [[TLS]], [[SIADH]], [[Airway Obstruction]], [[Oncologic Emergencies]], [[Dexamethasone]], [[Bilsky Grading]], [[Spinal Surgery]], [[Radiotherapy]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Malignant Spinal Cord Compression (MSCC) (MSCC Definition), which statement is correct? A. Vertebral Mets → Epidural Compression → Cord Dysfunction B. Vertebral - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — Vertebral Mets → Epidural Compression → Cord Dysfunction</li></ul>
+<p><b>2.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Common Primaries), which statement is correct? A. <b>Prostate, Breast, Lung, Myeloma, Lymphoma, RCC</b> B. **Prostate, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Prostate, Breast, Lung, Myeloma, Lymphoma, RCC</b></li></ul>
+<p><b>3.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Key Symptom), which statement is correct? A. <b>Back Pain (90%)</b> B. **Back - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Back Pain (90%)</b> — Nocturnal, Worse Lying Down, Precedes Motor Deficits</li></ul>
+<p><b>4.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Dexamethasone), which statement is correct? A. <b>16mg IV Stat → 4mg q6h</b> B. **16mg - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>16mg IV Stat → 4mg q6h</b> — <b>First-Line, Reduces Oedema</b></li></ul>
+<p><b>5.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Imaging), which statement is correct? A. <b>Urgent MRI Whole Spine</b> (Within 24h, Ideally 4-6h) B. **Urgent - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Urgent MRI Whole Spine</b> (Within 24h, Ideally 4-6h)</li></ul>
+<p><b>6.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Bilsky Grading), which statement is correct? A. <b>1: Impingement</b>, <b>2: Abutment</b>, <b>3: Compression/Displacement</b> B. **1: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>1: Impingement</b>, <b>2: Abutment</b>, <b>3: Compression/Displacement</b></li></ul>
+<p><b>7.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Ambulatory), which statement is correct? A. <b>RT 20Gy/5fx (Within 24h)</b> B. **RT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RT 20Gy/5fx (Within 24h)</b> — Standard</li></ul>
+<p><b>8.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Non-Ambulatory &lt;48h), which statement is correct? A. <b>Surgery + RT</b> (Single Level, Good PS, Life Exp &gt;3mo) B. **Surgery - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Surgery + RT</b> (Single Level, Good PS, Life Exp &gt;3mo)</li></ul>
+<p><b>9.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Non-Ambulatory &gt;48h), which statement is correct? A. <b>RT Alone</b> (Surgery Futile) B. **RT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RT Alone</b> (Surgery Futile)</li></ul>
+<p><b>10.</b> Regarding Malignant Spinal Cord Compression (MSCC) (Post-Op RT), which statement is correct? A. <b>30Gy/10fx</b> B. <b>30Gy/10fx</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>30Gy/10fx</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. Vertebral Mets → Epidural Compression → Cord Dysfunction</li><li>B. Vertebral (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: Vertebral Mets → Epidural Compression → Cord Dysfunction</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Prostate, Breast, Lung, Myeloma, Lymphoma, RCC</b></li><li>B. **Prostate, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Prostate, Breast, Lung, Myeloma, Lymphoma, RCC</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Back Pain (90%)</b></li><li>B. **Back (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Back Pain (90%)</b> — Nocturnal, Worse Lying Down, Precedes Motor Deficits</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>16mg IV Stat → 4mg q6h</b></li><li>B. **16mg (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>16mg IV Stat → 4mg q6h</b> — <b>First-Line, Reduces Oedema</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Urgent MRI Whole Spine</b> (Within 24h, Ideally 4-6h)</li><li>B. **Urgent (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Urgent MRI Whole Spine</b> (Within 24h, Ideally 4-6h)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>1: Impingement</b>, <b>2: Abutment</b>, <b>3: Compression/Displacement</b></li><li>B. **1: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>1: Impingement</b>, <b>2: Abutment</b>, <b>3: Compression/Displacement</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>RT 20Gy/5fx (Within 24h)</b></li><li>B. **RT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>RT 20Gy/5fx (Within 24h)</b> — Standard</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Surgery + RT</b> (Single Level, Good PS, Life Exp &gt;3mo)</li><li>B. **Surgery (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Surgery + RT</b> (Single Level, Good PS, Life Exp &gt;3mo)</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>RT Alone</b> (Surgery Futile)</li><li>B. **RT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>RT Alone</b> (Surgery Futile)</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>30Gy/10fx</b></li><li>B. <b>30Gy/10fx</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>30Gy/10fx</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> MSCC Definition? <b>A1:</b> Vertebral Mets → Epidural Compression → Cord Dysfunction</p>
+<p><b>Q2:</b> Common Primaries? <b>A2:</b> Prostate, Breast, Lung, Myeloma, Lymphoma, RCC</p>
+<p><b>Q3:</b> Key Symptom? <b>A3:</b> Back Pain (90%) — Nocturnal, Worse Lying Down, Precedes Motor Deficits</p>
+<p><b>Q4:</b> Dexamethasone? <b>A4:</b> 16mg IV Stat → 4mg q6h — First-Line, Reduces Oedema</p>
+<p><b>Q5:</b> Imaging? <b>A5:</b> Urgent MRI Whole Spine (Within 24h, Ideally 4-6h)</p>
+<p><b>Q6:</b> Bilsky Grading? <b>A6:</b> 1: Impingement, 2: Abutment, 3: Compression/Displacement</p>
+<p><b>Q7:</b> Ambulatory? <b>A7:</b> RT 20Gy/5fx (Within 24h) — Standard</p>
+<p><b>Q8:</b> Non-Ambulatory &lt;48h? <b>A8:</b> Surgery + RT (Single Level, Good PS, Life Exp &gt;3mo)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>MSCC Definition</td><td>Vertebral Mets → Epidural Compression → Cord Dysfunction</td></tr><tr><td>2</td><td>A</td><td>Common Primaries</td><td>Prostate, Breast, Lung, Myeloma, Lymphoma, RCC</td></tr><tr><td>3</td><td>A</td><td>Key Symptom</td><td>Back Pain (90%) — Nocturnal, Worse Lying Down, Precedes Motor Deficits</td></tr><tr><td>4</td><td>A</td><td>Dexamethasone</td><td>16mg IV Stat → 4mg q6h — First-Line, Reduces Oedema</td></tr><tr><td>5</td><td>A</td><td>Imaging</td><td>Urgent MRI Whole Spine (Within 24h, Ideally 4-6h)</td></tr><tr><td>6</td><td>A</td><td>Bilsky Grading</td><td>1: Impingement, 2: Abutment, 3: Compression/Displacement</td></tr><tr><td>7</td><td>A</td><td>Ambulatory</td><td>RT 20Gy/5fx (Within 24h) — Standard</td></tr><tr><td>8</td><td>A</td><td>Non-Ambulatory <48h</td><td>Surgery + RT (Single Level, Good PS, Life Exp >3mo)</td></tr><tr><td>9</td><td>A</td><td>Non-Ambulatory >48h</td><td>RT Alone (Surgery Futile)</td></tr><tr><td>10</td><td>A</td><td>Post-Op RT</td><td>30Gy/10fx</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>MSCC Definition</td><td>Vertebral Mets → Epidural Compression → Cord Dysfunction</td></tr><tr><td>2</td><td>A</td><td>Common Primaries</td><td>Prostate, Breast, Lung, Myeloma, Lymphoma, RCC</td></tr><tr><td>3</td><td>A</td><td>Key Symptom</td><td>Back Pain (90%) — Nocturnal, Worse Lying Down, Precedes Motor Deficits</td></tr><tr><td>4</td><td>A</td><td>Dexamethasone</td><td>16mg IV Stat → 4mg q6h — First-Line, Reduces Oedema</td></tr><tr><td>5</td><td>A</td><td>Imaging</td><td>Urgent MRI Whole Spine (Within 24h, Ideally 4-6h)</td></tr><tr><td>6</td><td>A</td><td>Bilsky Grading</td><td>1: Impingement, 2: Abutment, 3: Compression/Displacement</td></tr><tr><td>7</td><td>A</td><td>Ambulatory</td><td>RT 20Gy/5fx (Within 24h) — Standard</td></tr><tr><td>8</td><td>A</td><td>Non-Ambulatory <48h</td><td>Surgery + RT (Single Level, Good PS, Life Exp >3mo)</td></tr><tr><td>9</td><td>A</td><td>Non-Ambulatory >48h</td><td>RT Alone (Surgery Futile)</td></tr><tr><td>10</td><td>A</td><td>Post-Op RT</td><td>30Gy/10fx</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Oncologic Emergencies|Oncologic Emergencies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Mscc · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

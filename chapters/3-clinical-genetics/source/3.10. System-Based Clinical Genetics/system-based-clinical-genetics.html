@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>System Based Clinical Genetics — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 3 CLINICAL GENETICS / 3.10. SYSTEM-BASED CLINICAL GENETICS</span>
+      <div class="h1">System Based Clinical Genetics</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Recognise <b>genetic disorders by organ system</b> (Cardiology, Neurology, Nephrology, Respiratory, Endocrine, Haematology, Dermatology, Ophthalmology, Gastroenterology, Immunology)</li><li>[ ] Apply <b>genotype-phenotype correlations</b> for major syndromes</li><li>[ ] Navigate <b>specialty-specific genetic testing pathways</b> (When to refer, What to test, When to refer to Clinical Genetics)</li><li>[ ] Integrate <b>genetics into clinical practice</b> (Screening, Surveillance, Family communication)</li><li>[ ] Answer viva: "Genetic cardiomyopathy pathway" and "Epilepsy gene panel" and "Renal cystic disease workup"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Genetics Across Specialties</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Clinical Genetics by System] --&gt; B[Cardiology&lt;br/&gt;Cardiomyopathies, Channelopathies, FH, Aortopathies] A --&gt; C[Neurology&lt;br/&gt;Epilepsy, Neuromuscular, Neurodegenerative, Stroke] A --&gt; D[Nephrology&lt;br/&gt;Cystic diseases, Tubulopathies, FSGS, Alport] A --&gt; E[Respiratory&lt;br/&gt;CF, PCD, Surfactant disorders, Alpha-1] A --&gt; F[Endocrine&lt;br/&gt;MEN, MODY, Thyroid cancer, CAH, Hypopituitarism] A --&gt; G[Haematology&lt;br/&gt;Haemoglobinopathies, Coagulopathies, BMF, Lymphoid] A --&gt; H[Dermatology&lt;br/&gt;Genodermatoses, Vascular anomalies, Ectodermal dysplasias] A --&gt; I[Ophthalmology&lt;br/&gt;Retinal dystrophies, Glaucoma, Cataract, Aniridia] A --&gt; J[Gastroenterology&lt;br/&gt;Polyposis, IBD, Liver metabolic, Pancreatic] A --&gt; K[Immunology&lt;br/&gt;PID, Autoimmune, Autoinflammatory, HLH] A --&gt; L[Obstetrics/Paediatrics&lt;br/&gt;Prenatal, Dysmorphology, DD/ID, Congenital anomalies]</p>
+<p>B &amp; C &amp; D &amp; E &amp; F &amp; G &amp; H &amp; I &amp; J &amp; K --&gt; M[Genetics MDT&lt;br/&gt;Genetic Counselling&lt;br/&gt;Family Communication] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Cardiology — Hereditary Cardiovascular Disorders</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cardiomyopathies</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th><th>Testing Indication</th><th>Surveillance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**HCM**</td><td>MYH7, MYBPC3, TNNT2, TNNI3, TPM1, ACTC1, MYL2, MYL3</td><td>AD</td><td>LVH (asymmetric septal), HCM, SCD risk</td><td>Unexplained LVH, Family hx SCD, Abnormal ECG</td><td>Annual Echo + Holter; Cascade genetic testing; ICD if high risk</td></tr><tr><td>**DCM**</td><td>TTN (20%), LMNA, FLNC, MYH7, BAG3, RBM20, DSP, SCN5A</td><td>AD/AR</td><td>LV dilation, Systolic dysfunction, Arrhythmia</td><td>Idiopathic DCM, Family hx DCM/SCD, Conduction disease</td><td>Annual Echo + Holter; LMNA → Early ICD; TTN truncating = high penetrance</td></tr><tr><td>**ARVC**</td><td>PKP2, DSP, DSG2, DSC2, JUP, TMEM43</td><td>AD</td><td>RV fibrofatty replacement, Ventricular arrhythmia, SCD</td><td>Task Force Criteria; Family hx ARVC/SCD</td><td>Annual Echo + Holter + MRI; Exercise restriction; ICD if high risk</td></tr><tr><td>**LVNC**</td><td>MYH7, MYBPC3, TTN, TAZ (X-linked)</td><td>AD/XL</td><td>Trabeculated LV, Heart failure, Arrhythmia, Embolism</td><td>Echo/MRI criteria; Family hx</td><td>Echo + MRI; Anticoag if EF<40%; ICD if high risk</td></tr><tr><td>**RCM**</td><td>TNNI3, TNNT2, MYH7, TPM1, ACTC1, DES, FLNC</td><td>AD</td><td>Restrictive filling, Bi-atrial enlargement, Diastolic dysfunction</td><td>Echocardiography; Family hx</td><td>Diuretic, Anticoag, ICD if high risk; Transplant eval</td></tr></table>
+<div class="sub-h">Channelopathies (Primary Electrical Diseases)</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th><th>Testing</th><th>Management</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td><td>---------</td><td>------------</td></tr><tr><td>**LQTS**</td><td>KCNQ1 (LQT1), KCNH2 (LQT2), SCN5A (LQT3), KCNE1, KCNE2</td><td>AD</td><td>QT prolongation, Syncope, SCD, TdP</td><td>Schwartz score; Genetic panel</td><td>Beta-blockers (Nadolol/Propranolol); ICD if high risk; Avoid QT-prolonging drugs</td></tr><tr><td>**BrS**</td><td>SCN5A (75-80%)</td><td>AD</td><td>J-wave (Type 1), VF risk, Fever-induced</td><td>Ajmaline/flecainide challenge</td><td>ICD if symptomatic/aborted SCD; Quinine for electrical storms</td></tr><tr><td>**CPVT**</td><td>RYR2 (AD), CASQ2 (AR)</td><td>AD/AR</td><td>Exercise-induced VT, Syncope, SCD in children</td><td>Exercise stress test; RYR2/CASQ2</td><td>Beta-blockers (Nadolol); Flecainide add-on; ICD if breakthrough</td></tr><tr><td>**Short QT**</td><td>KCNH2, KCNQ1, KCNJ2</td><td>AD</td><td>Short QT (<340ms), AF, SCD</td><td>ECG; Genetic panel</td><td>ICD; Quinidine</td></tr><tr><td>**SQTS**</td><td>KCNH2, KCNQ1, KCNJ2</td><td>AD</td><td>Very short QT, AF, SCD</td><td>ECG; Genetic panel</td><td>ICD; Quinidine</td></tr></table>
+<div class="sub-h">Familial Hypercholesterolaemia (FH)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Genes**</td><td>LDLR (85-90%), APOB (5-10%), PCSK9 (<1%), LDLRAP1 (AR, rare)</td></tr><tr><td>**Diagnosis**</td><td>DLCN Criteria (LDL-C, Personal/Family CVD, Tendon xanthomas, Arcus cornealis)</td></tr><tr><td>**Genetic Testing**</td><td>NGS Panel (LDLR, APOB, PCSK9) + MLPA (CNV in LDLR)</td></tr><tr><td>**Cascade Testing**</td><td>Index case → 1st-degree relatives (50% risk) → **~8 new cases per index**</td></tr><tr><td>**Management**</td><td>**High-intensity statin** (Atorva 80mg/Rosuv 40mg) + **Ezetimibe**; **PCSK9i** (Evolocumab, Alirocumab) if LDL-C > target; **Lipoprotein apheresis** (HoFH)</td></tr></table>
+<div class="sub-h">Hereditary Aortopathies</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene(s)</th><th>Features</th><th>Surveillance</th></tr><tr><td>----------</td><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>**Marfan**</td><td>FBN1</td><td>Aortic root dilation, Ectopia lentis, Dural ectasia, Skeletal</td><td>Annual Echo + Ophthalmology; Beta-blocker + ARB</td></tr><tr><td>**Loeys-Dietz**</td><td>TGFBR1/2, TGFB2/3, SMAD3</td><td>Widespread arterial aneurysms, Hypertelorism, Bifid uvula, Cervical instability</td><td>Aggressive vascular surveillance (CT/MRI q6-12m); Early surgical threshold</td></tr><tr><td>**Vascular EDS**</td><td>COL3A1</td><td>Arterial rupture, Bowel rupture, Thin skin, Bruising</td><td>Vascular surveillance (MRI); Avoid invasive procedures</td></tr><tr><td>**Familial Thoracic Aortic Aneurysm**</td><td>ACTA2, MYH11, MYLK, PRKG1</td><td>TAAD, PDA, Bicuspid AV, Livedo reticularis</td><td>Annual CT/MRI aorta; Surgical threshold based on gene</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Neurology — Neurogenetics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epilepsy Genetics</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th><th>Testing</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td><td>---------</td></tr><tr><td>**Dravet Syndrome**</td><td>SCN1A (>85%)</td><td>AD (De novo)</td><td>Fever-sensitive seizures <1y, Developmental regression, SCN1A spectrum</td><td>SCN1A sequencing + MLPA (CNV)</td></tr><tr><td>**SCN1A Spectrum**</td><td>SCN1A</td><td>AD</td><td>GEFS+, Dravet, EMFS, ICEGTC</td><td>SCN1A panel</td></tr><tr><td>**KCNQ2/3**</td><td>KCNQ2, KCNQ3</td><td>AD</td><td>BFNS (Benign), EE (KCNQ2), Epileptic encephalopathy</td><td>KCNQ2/3 panel</td></tr><tr><td>**Early Infantile Epileptic Encephalopathy (EIEE)**</td><td>STXBP1, CDKL5, ARX, SLC25A22, etc.</td><td>AD/XL/AR</td><td>Infantile spasms, Developmental arrest, Specific EEG patterns</td><td>Epilepsy gene panel (>100 genes) / WES</td></tr><tr><td>**Lennox-Gastaut**</td><td>Multiple (STXBP1, SCN1A, etc.)</td><td>Mixed</td><td>Multiple seizure types, Slow spike-wave, ID</td><td>Epilepsy panel / WES</td></tr><tr><td>**Progressive Myoclonus Epilepsy**</td><td>CSTB (EPM1), PRNP, CERS1, etc.</td><td>AR/AD</td><td>Myoclonus, Ataxia, Seizures, Dementia</td><td>Targeted panel / WES</td></tr><tr><td>**Genetic Generalised Epilepsy (GGE)**</td><td>Multiple (GABRA1, CACNA1H, etc.)</td><td>Complex</td><td>CAE, JAE, JME, EGE</td><td>Targeted panel / WES</td></tr></table>
+<div class="sub-h">Neuromuscular Disorders</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td></tr><tr><td>**DMD/BMD**</td><td>DMD</td><td>XLR</td><td>Progressive weakness, Gower's sign, Cardiomyopathy</td></tr><tr><td>**SMA**</td><td>SMN1</td><td>AR</td><td>SMN2 copies modify severity; Types 1-4</td></tr><tr><td>**LGMD**</td><td>Multiple (CAPN3, DYSF, FKRP, SGCA-D, TCAP, etc.)</td><td>AR/AD</td><td>Proximal weakness, Variable onset, Cardiac/respiratory involvement</td></tr><tr><td>**CMT**</td><td>PMP22 (CMT1A dup), MPZ, GJB1 (X-linked), MFN2, GDAP1, etc.</td><td>AD/AR/XL</td><td>Peripheral neuropathy, Foot deformities, Pes cavus</td></tr><tr><td>**SMA**</td><td>SMN1</td><td>AR</td><td>Exon 7 deletion (95%); SMN2 copies modify</td></tr><tr><td>**FSHD**</td><td>DUX4 (D4Z4 contraction)</td><td>AD</td><td>Facial, Scapular, Humeral weakness; D4Z4 repeat array</td></tr><tr><td>**DM1/DM2**</td><td>DMPK (CTG), CNBP (CCTG)</td><td>AD</td><td>Myotonia, Multisystem (Cataract, Cardiac, Endocrine, GI)</td></tr><tr><td>**FA**</td><td>FXN (GAA)</td><td>AR</td><td>Ataxia, Cardiomyopathy, Diabetes, Scoliosis</td></tr></table>
+<div class="sub-h">Neurodegenerative Disorders</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td></tr><tr><td>**Huntington Disease**</td><td>HTT (CAG)</td><td>AD</td><td>Chorea, Cognitive, Psychiatric; Anticipation (paternal)</td></tr><tr><td>**SCAs**</td><td>ATXN1, ATXN2, ATXN3, CACNA1A, ATXN7, ATXN8, ATXN10, etc.</td><td>AD</td><td>Ataxia, Variable features (Neuropathy, Pyramidal, Ocular)</td></tr><tr><td>**FRDA**</td><td>FXN (GAA)</td><td>AR</td><td>Ataxia, Cardiomyopathy, Diabetes, Scoliosis</td></tr><tr><td>**HD-like**</td><td>PRNP, JPH3, HTT-like</td><td>AD/AR</td><td>HD phenocopies</td></tr><tr><td>**FTD/ALS**</td><td>C9orf72 (GGGGCC), MAPT, GRN, SOD1, FUS, TARDBP</td><td>AD</td><td>FTD, ALS, FTD-ALS; C9orf72 = Most common</td></tr><tr><td>**Prion Disease**</td><td>PRNP</td><td>AD/Sp</td><td>Rapid dementia, Myoclonus, Ataxia; Iatrogenic/Genetic/Sporadic</td></tr></table>
+<div class="sub-h">Stroke Genetics</div>
+<table class="ctable"><tr><th>Condition</th><th>Gene(s)</th><th>Features</th></tr><tr><td>-----------</td><td>---------</td><td>----------</td></tr><tr><td>**CADASIL**</td><td>NOTCH3</td><td>Migraine, Recurrent strokes, Mood disturbance, Dementia; MRI: WMH, Lacunes, Microbleeds</td></tr><tr><td>**CARASIL**</td><td>HTRA1</td><td>AR; Early onset, Alopecia, Spondylosis</td></tr><tr><td>**RETINAL VASCULOPATHY**</td><td>TREX1</td><td>RVCL (Retinal vasculopathy, Cerebral leukodystrophy)</td></tr><tr><td>**FAMILIAL CAVERNOMA**</td><td>KRIT1, CCM2, PDCD10</td><td>Multiple cavernomas, Seizures, Haemorrhage</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Nephrology — Renal Genetics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cystic Kidney Diseases</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td></tr><tr><td>**ADPKD**</td><td>PKD1 (85%), PKD2</td><td>AD</td><td>Bilateral renal cysts, HTN, Hepatic cysts, Intracranial aneurysms</td></tr><tr><td>**ARPKD**</td><td>PKHD1</td><td>AR</td><td>Neonatal/Childhood; Enlarged echogenic kidneys, Hepatic fibrosis, Pulmonary hypoplasia</td></tr><tr><td>**NPHP**</td><td>NPHP1-20</td><td>AR</td><td>Childhood; Corticomedullary cysts, Tubulointerstitial nephritis, ESRD <30</td></tr><tr><td>**Medullary Cystic**</td><td>MUC1 (MCKD1), UMOD (MCKD2)</td><td>AD</td><td>Adult-onset; Tubulointerstitial fibrosis, Gout (UMOD)</td></tr><tr><td>**BBS**</td><td>BBS1-21</td><td>AR</td><td>Obesity, Polydactyly, Retinal dystrophy, Renal cysts, ID, Hypogonadism</td></tr><tr><td>**Joubert**</td><td>AHI1, CEP290, etc.</td><td>AR</td><td>Molar tooth sign, Ataxia, Renal cysts, ID</td></tr></table>
+<div class="sub-h">Tubulopathies &amp; Electrolyte Disorders</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td></tr><tr><td>**Bartter Syndrome**</td><td>SLC12A1 (Type 1), KCNJ1 (Type 2), CLCNKB (Type 3), BSND (Type 4), MAGED2 (Type 5, XL)</td><td>AR/XL</td><td>Salt wasting, Hypokalaemia, Metabolic alkalosis, Hypercalciuria, Polyuria</td></tr><tr><td>**Gitelman Syndrome**</td><td>SLC12A3 (NCCT)</td><td>AR</td><td>Hypokalaemia, Hypomagnesaemia, Hypocalciuria, Metabolic alkalosis; Asymptomatic often</td></tr><tr><td>**Liddle Syndrome**</td><td>SCNN1B, SCNN1G</td><td>AD</td><td>Hypertension, Hypokalaemia, Low renin/aldosterone; Amiloride responsive</td></tr><tr><td>**Pseudohypoaldosteronism**</td><td>SCNN1A/B/G (PHA1), NR3C2 (PHA2)</td><td>AR/AD</td><td>Salt wasting, Hyperkalaemia, Acidosis (PHA1); HTN, Hyperkalaemia (PHA2)</td></tr><tr><td>**Dent Disease**</td><td>CLCN5 (Type 1), OCRL (Type 2, XL)</td><td>XLR</td><td>Low MW proteinuria, Hypercalciuria, Nephrolithiasis, Nephrocalcinosis, CKD</td></tr><tr><td>**Cystinosis**</td><td>CTNS</td><td>AR</td><td>Renal Fanconi, Photophobia, Corneal crystals, Hypothyroidism; Cysteamine</td></tr><tr><td>**X-linked Hypophosphataemia (XLH)**</td><td>PHEX</td><td>XLD</td><td>Phosphate wasting, Rickets, Osteomalacia; Burosumab (Anti-FGF23)</td></tr></table>
+<div class="sub-h">Glomerular Diseases</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Features</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>----------</td></tr><tr><td>**Alport Syndrome**</td><td>COL4A5 (XL), COL4A3/A4 (AR/AD)</td><td>XL/AR/AD</td><td>Haematuria, Sensorineural deafness, Anterior lenticonus, ESRD</td></tr><tr><td>**Thin Basement Membrane**</td><td>COL4A3/A4</td><td>AD</td><td>Benign familial haematuria; Thin GBM; Benign course</td></tr><tr><td>**FSGS**</td><td>NPHS1, NPHS2, WT1, ACTN4, INF2, TRPC6, APOL1</td><td>AR/AD</td><td>Nephrotic syndrome, Steroid resistance, ESRD; APOL1 risk alleles (African ancestry)</td></tr><tr><td>**Congenital Nephrotic Syndrome**</td><td>NPHS1 (Finnish type), NPHS2, WT1, LAMB2</td><td>AR</td><td>Massive proteinuria, Early onset; NPHS2 = Steroid-resistant</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Respiratory — Pulmonary Genetics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td></tr><tr><td>**Cystic Fibrosis**</td><td>CFTR</td><td>AR</td><td>Pancreatic insufficiency, Lung disease, CBAVD, CFRD; CFTR modulators</td></tr><tr><td>**Primary Ciliary Dyskinesia (PCD)**</td><td>DNAH5, DNAI1, CCDC39/40, RPGR, etc.</td><td>AR</td><td>Chronic sinusitis, Bronchiectasis, Situs inversus (50% Kartagener), Male infertility</td></tr><tr><td>**Surfactant Disorders**</td><td>SFTPB, SFTPC, ABCA3, NKX2-1</td><td>AR/AD</td><td>Neonatal respiratory distress, ILD, Pulmonary alveolar proteinosis</td></tr><tr><td>**Alpha-1 Antitrypsin Deficiency**</td><td>SERPINA1</td><td>AR (Codominant)</td><td>Panacinar emphysema (basal), Liver cirrhosis; ZZ genotype; Augmentation therapy</td></tr><tr><td>**Familial Pulmonary Fibrosis**</td><td>TERT, TERC, RTEL1, PARN, SFTPA2, MUC5B</td><td>AD</td><td>ILD, Telomere shortening; Risk of BM failure, HCC</td></tr><tr><td>**Hermansky-Pudlak**</td><td>HPS1-10</td><td>AR</td><td>Albinism, Bleeding diathesis, Pulmonary fibrosis, Granulomatous colitis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Endocrine — Endocrine Genetics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Multiple Endocrine Neoplasia</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene</th><th>Tumours</th><th>Surveillance</th></tr><tr><td>----------</td><td>-------</td><td>---------</td><td>--------------</td></tr><tr><td>**MEN1**</td><td>MEN1 (11q13)</td><td>**3 Ps**: Parathyroid (>90%), Pancreatic NET (>50%), Pituitary (~30%)</td><td>Annual Ca/PTH, Fasting Gut Hormones, MRI Pituitary, CT Pancreas</td></tr><tr><td>**MEN2A**</td><td>RET (Cys634)</td><td>MTC (100%), Phaeo (50%), Hyperparathyroidism (20-30%)</td><td>Annual Calcitonin, Metanephrines, Ca/PTH; **Prophylactic Thyroidectomy by 5y**</td></tr><tr><td>**MEN2B**</td><td>RET (M918T)</td><td>MTC (100%), Phaeo (50%), Marfanoid, Mucosal neuromas</td><td>**Prophylactic Thyroidectomy <1y**</td></tr><tr><td>**FMTC**</td><td>RET</td><td>MTC only (≥4 families)</td><td>Prophylactic thyroidectomy by 5-10y</td></tr></table>
+<div class="sub-h">Diabetes Genetics</div>
+<table class="ctable"><tr><th>Type</th><th>Genetic Basis</th><th>Key Genes</th></tr><tr><td>------</td><td>---------------</td><td>-----------</td></tr><tr><td>**MODY**</td><td>AD (Monogenic)</td><td>HNF1A (MODY3), GCK (MODY2), HNF4A (MODY1), HNF1B (MODY5), KCNJ11, ABCC8</td></tr><tr><td>**Neonatal Diabetes**</td><td>KCNJ11, ABCC8 (Transient/Permanent), INS, GCK</td><td>Sulfonylurea responsive (KCNJ11/ABCC8)</td></tr><tr><td>**Type 1 Diabetes**</td><td>Complex (HLA-DR/DQ 50%, INS, PTPN22, CTLA4, IL2RA)</td><td>Complex (Polygenic + Environmental)</td></tr><tr><td>**Type 2 Diabetes**</td><td>Polygenic (TCF7L2, PPARG, KCNJ11, FTO, >400 loci)</td><td>Lifestyle + Genetics</td></tr></table>
+<div class="sub-h">Thyroid Cancer Genetics</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene</th><th>Features</th></tr><tr><td>----------</td><td>------</td><td>----------</td></tr><tr><td>**Familial Non-Medullary Thyroid Cancer**</td><td>Multiple (FOXE1, NKX2-1, etc.)</td><td>Papillary thyroid Ca; AD, Low penetrance</td></tr><tr><td>**MEN2A/2B**</td><td>RET</td><td>MTC + Phaeo ± Hyperparathyroidism (2A) / Marfanoid (2B)</td></tr><tr><td>**Familial Medullary Thyroid Cancer (FMTC)**</td><td>RET</td><td>MTC only (≥4 families); Prophylactic thyroidectomy 5-10y</td></tr></table>
+<div class="sub-h">Other Endocrine Genetics</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**Familial Isolated Hyperparathyroidism**</td><td>MEN1, CDC73, CASR</td><td>AD</td></tr><tr><td>**Familial Phaeochromocytoma**</td><td>VHL, RET, SDHB/SDHC/SDHD/SDHAF2, MAX, TMEM127</td><td>AD</td></tr><tr><td>**Congenital Adrenal Hyperplasia**</td><td>CYP21A2 (21-OH def), CYP11B1 (11β-OH def), CYP17A1, STAR, HSD3B2</td><td>AR</td></tr><tr><td>**Familial Glucocorticoid Deficiency**</td><td>MC2R, MRAP</td><td>AR</td></tr><tr><td>**Hypopituitarism**</td><td>PROP1, POU1F1, LHX3, LHX4, HESX1, OTX2</td><td>AR/AD</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Haematology — Haematogenetics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Haemoglobinopathies</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>--------------</td></tr><tr><td>**Sickle Cell Disease**</td><td>HBB (Glu6Val)</td><td>HbSS, HbSC, HbSβ-thal; VOC, ACS, Stroke, Priapism</td></tr><tr><td>**β-Thalassaemia**</td><td>HBB</td><td>TDT (Transfusion + Chelation), NTDT; Luspatercept</td></tr><tr><td>**α-Thalassaemia**</td><td>HBA1/HBA2</td><td>Silent/Trait/HbH/Hydrops fetalis; --/αα, -/αα, --/-α, --/--</td></tr><tr><td>**Hereditary Persistence of Fetal Hb (HPFH)**</td><td>HBB/HBD cluster</td><td>Asymptomatic; Modifies SCD/Thal severity</td></tr></table>
+<div class="sub-h">Coagulation Disorders</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**Haemophilia A**</td><td>F8</td><td>XLR</td></tr><tr><td>**Haemophilia B**</td><td>F9</td><td>XLR</td></tr><tr><td>**von Willebrand Disease**</td><td>VWF</td><td>AD/AR</td></tr><tr><td>**Factor XI Deficiency**</td><td>F11</td><td>AR</td></tr><tr><td>**Factor XIII Deficiency**</td><td>F13A1/F13B</td><td>AR</td></tr><tr><td>**AFibrinogenaemia/Dysfibrinogenaemia**</td><td>FGA/FGB/FGG</td><td>AR/AD</td></tr><tr><td>**Protein C/S Deficiency**</td><td>PROC/PROS1</td><td>AD</td></tr><tr><td>**Antithrombin Deficiency**</td><td>SERPINC1</td><td>AD</td></tr><tr><td>**Factor V Leiden**</td><td>F5 (R506Q)</td><td>AD (Thrombophilia)</td></tr><tr><td>**Prothrombin G20210A**</td><td>F2</td><td>AD (Thrombophilia)</td></tr></table>
+<div class="sub-h">Bone Marrow Failure &amp; Predisposition</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene(s)</th><th>Inheritance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**Fanconi Anaemia**</td><td>FANCA-W (22 genes)</td><td>AR</td></tr><tr><td>**Diamond-Blackfan Anaemia**</td><td>RPL5, RPL11, RPS19, RPS24, RPS26, etc.</td><td>AD</td></tr><tr><td>**Shwachman-Diamond**</td><td>SBDS</td><td>AR</td></tr><tr><td>**Dyskeratosis Congenita**</td><td>DKC1 (X-linked), TERC, TERT, TINF2, RTEL1</td><td>XLR/AD/AR</td></tr><tr><td>**Severn Congenital Neutropenia**</td><td>ELANE, HAX1, G6PC3, JAGN1</td><td>AD/AR</td></tr></table>
+<div class="sub-h">Haemoglobinopathy Screening</div>
+<table class="ctable"><tr><th>Programme</th><th>Method</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Antenatal**</td><td>HPLC/IEF at booking (Sickle, Thalassaemia)</td></tr><tr><td>**Newborn**</td><td>HPLC/IEF on dried blood spot (HbS, HbC, HbD, HbE, HbF)</td></tr><tr><td>**Pre-conception**</td><td>Carrier screening in high-prevalence populations</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Dermatology — Genodermatoses</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epidermolysis Bullosa (EB)</div>
+<table class="ctable"><tr><th>Type</th><th>Gene(s)</th><th>Level of Cleavage</th></tr><tr><td>------</td><td>---------</td><td>-------------------</td></tr><tr><td>**EBS** (Simplex)</td><td>KRT5, KRT14, PLEC</td><td>Intraepidermal</td></tr><tr><td>**JEB** (Junctional)</td><td>LAMB3, LAMC2, LAMA3, COL17A1</td><td>Lamina lucida</td></tr><tr><td>**DEB** (Dystrophic)</td><td>COL7A1</td><td>Sublamina densa (Anchoring fibrils)</td></tr><tr><td>**Kindler**</td><td>FERMT1</td><td>Mixed</td></tr></table>
+<div class="sub-h">Ichthyoses</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene</th><th>Type</th></tr><tr><td>----------</td><td>------</td><td>------</td></tr><tr><td>**Ichthyosis Vulgaris**</td><td>FLG</td><td>AD (Semi-dominant)</td></tr><tr><td>**X-linked Ichthyosis**</td><td>STS</td><td>XLR</td></tr><tr><td>**Lamellar Ichthyosis**</td><td>TGM1, ABCA12, NIPAL4, CYP4F22</td><td>AR</td></tr><tr><td>**Congenital Ichthyosiform Erythroderma**</td><td>ALOX12B, ALOXE3, NIPAL4</td><td>AR</td></tr><tr><td>**Harlequin Ichthyosis**</td><td>ABCA12</td><td>AR</td></tr><tr><td>**Netherton Syndrome**</td><td>SPINK5</td><td>AR</td></tr></table>
+<div class="sub-h">Vascular Anomalies</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene</th><th>Features</th></tr><tr><td>----------</td><td>------</td><td>----------</td></tr><tr><td>**Sturge-Weber**</td><td>GNAQ (Somatic)</td><td>Port-wine stain, Leptomeningeal angioma, Glaucoma</td></tr><tr><td>**Klippel-Trenaunay**</td><td>PIK3CA (Somatic)</td><td>Capillary malformation, Venous malformation, Limb overgrowth</td></tr><tr><td>**Parkes Weber**</td><td>RASA1</td><td>AVM, Limb overgrowth</td></tr><tr><td>**Hereditary Haemorrhagic Telangiectasia (HHT)**</td><td>ENG (Type 1), ACVRL1 (Type 2), SMAD4</td><td>Epistaxis, Telangiectasia, AVM (Lung, Liver, Brain)</td></tr></table>
+<div class="sub-h">Other Genodermatoses</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene</th><th>Key Features</th></tr><tr><td>----------</td><td>------</td><td>--------------</td></tr><tr><td>**Neurofibromatosis 1**</td><td>NF1</td><td>Café-au-lait, Neurofibromas, Optic glioma, Lisch nodules</td></tr><tr><td>**Tuberous Sclerosis**</td><td>TSC1/TSC2</td><td>Tubers, SEGA, AML, LAM, Facial angiofibromas</td></tr><tr><td>**Incontinentia Pigmenti**</td><td>IKBKG</td><td>XLD, Male lethal; Skin stages (Ves→Ver→Hyper→Atrophic)</td></tr><tr><td>**Xeroderma Pigmentosum**</td><td>XPA-G, XPV</td><td>AR; UV sensitivity, Skin cancer, Neurological</td></tr><tr><td>**Ectodermal Dysplasia**</td><td>EDA (XLR), EDAR, EDARADD, WNT10A</td><td>Hypohidrosis, Hypodontia, Sparse hair</td></tr><tr><td>**Pachyonychia Congenita**</td><td>KRT6A/B, KRT16, KRT17</td><td>AD; Nail dystrophy, Palmoplantar keratoderma, Oral leukokeratosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Ophthalmology — Ophthalmic Genetics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Retinal Dystrophies</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td><td>--------------</td></tr><tr><td>**Retinitis Pigmentosa (RP)**</td><td>>100 genes (RHO, RPGR, USH2A, RP1, etc.)</td><td>AD/AR/XL</td><td>Night blindness, Tunnel vision, Bone spicules</td></tr><tr><td>**Leber Congenital Amaurosis (LCA)**</td><td>RPE65, CEP290, GUCY2D, AIPL1, etc.</td><td>AR</td><td>Severe visual impairment from infancy, Nystagmus, Amaurotic pupils</td></tr><tr><td>**Stargardt Disease**</td><td>ABCA4 (AR), ELOVL4 (AD)</td><td>AR/AD</td><td>Macular dystrophy, Flecks, Central vision loss</td></tr><tr><td>**Best Disease**</td><td>BEST1</td><td>AD</td><td>Vitelliform macular dystrophy, Normal vision initially</td></tr><tr><td>**Choroideremia**</td><td>CHM (REP1)</td><td>XLR</td><td>Night blindness, Choroidal atrophy, Progressive</td></tr><tr><td>**Cone-Rod Dystrophy**</td><td>ABCA4, GUCY2D, CRX, etc.</td><td>AR/AD</td><td>Central vision loss, Photophobia, Colour vision defect</td></tr></table>
+<div class="sub-h">Congenital Eye Disorders</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Features</th></tr><tr><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**Aniridia**</td><td>PAX6</td><td>AD; Iris hypoplasia, Nystagmus, Glaucoma, Cataract, Corneal pannus</td></tr><tr><td>**Congenital Cataract**</td><td>CRYAA, CRYBB2, CRYGC, GJA8, MAF, FYCO1</td><td>AD/AR; Lens opacity at birth</td></tr><tr><td>**Congenital Glaucoma**</td><td>CYP1B1 (AR), LTBP2 (AR), MYOC (AD)</td><td>AR/AD; Buphthalmos, Corneal oedema, Raised IOP</td></tr><tr><td>**Axenfeld-Rieger**</td><td>PITX2, FOXC1</td><td>AD; Iridocorneal adhesions, Glaucoma, Dental, Umbilical anomalies</td></tr></table>
+<div class="sub-h">Anterior Segment Dysgenesis</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene</th><th>Features</th></tr><tr><td>----------</td><td>------</td><td>----------</td></tr><tr><td>**Axenfeld-Rieger**</td><td>PITX2, FOXC1</td><td>Iridocorneal adhesions, Posterior embryotoxon, Glaucoma (50%), Dental, Umbilical</td></tr><tr><td>**Peters Anomaly**</td><td>PAX6, FOXC1, CYP1B1</td><td>Central corneal opacity, Iridocorneal/lenticular adhesions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">️⃣ Gastroenterology — GI Genetics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Polyposis Syndromes</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene</th><th>Features</th></tr><tr><td>----------</td><td>------</td><td>----------</td></tr><tr><td>**FAP**</td><td>APC (5q22)</td><td>100-1000s adenomas, CHRPE, Desmoids, Duodenal adenomas, Thyroid Ca</td></tr><tr><td>**AFAP**</td><td>APC (5'/3')</td><td><100 polyps, Later onset, Extracolonic features similar</td></tr><tr><td>**MUTYH-Associated Polyposis (MAP)**</td><td>MUTYH (AR)</td><td>10-100 polyps, Duodenal polyps, Gastric polyps</td></tr><tr><td>**Peutz-Jeghers**</td><td>STK11</td><td>Hamartomatous polyps, Mucocutaneous pigmentation, Cancer risk (GI, Breast, Ovarian, Pancreatic, Testicular)</td></tr><tr><td>**Juvenile Polyposis**</td><td>SMAD4, BMPR1A</td><td>Juvenile polyps, GI bleeding, SMAD4 = HHT overlap</td></tr><tr><td>**Cowden Syndrome**</td><td>PTEN</td><td>Hamartomas (Skin, Thyroid, Breast, Endometrium), Macrocephaly, Trichilemmomas</td></tr><tr><td>**Hereditary Mixed Polyposis**</td><td>BMPR1A, GREM1</td><td>Mixed polyps (Adenomas, Hyperplastic, Juvenile)</td></tr></table>
+<div class="sub-h">Inflammatory Bowel Disease (IBD)</div>
+<table class="ctable"><tr><th>Type</th><th>Genetic Architecture</th></tr><tr><td>------</td><td>----------------------</td></tr><tr><td>**Crohn's Disease**</td><td>NOD2 (CARD15), ATG16L1, IL23R, IRGM, LRRK2, >200 loci</td></tr><tr><td>**Ulcerative Colitis**</td><td>HLA-DRB1, IL10, IL23R, RORC, >200 loci</td></tr><tr><td>**Very Early Onset IBD (VEO-IBD)**</td><td>Monogenic (IL10/IL10R, XIAP, CYBB, NCF1, LRBA, etc.)</td></tr></table>
+<div class="sub-h">Liver &amp; Pancreas</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Features</th></tr><tr><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**Hereditary Haemochromatosis**</td><td>HFE (C282Y/H63D)</td><td>Iron overload, Cirrhosis, Diabetes, Arthritis; Phlebotomy</td></tr><tr><td>**Wilson Disease**</td><td>ATP7B</td><td>Copper accumulation, Liver/Neuro, K-F rings, Penicillamine</td></tr><tr><td>**Alpha-1 Antitrypsin Deficiency**</td><td>SERPINA1 (ZZ)</td><td>Emphysema, Liver cirrhosis; Augmentation therapy</td></tr><tr><td>**Gilbert Syndrome**</td><td>UGT1A1 (TA7TAA)</td><td>Benign unconjugated hyperbilirubinaemia</td></tr><tr><td>**Crigler-Najjar**</td><td>UGT1A1</td><td>Type 1 (Severe, Kernicterus); Type 2 (Milder, Phenobarbital responsive)</td></tr><tr><td>**Dubin-Johnson / Rotor**</td><td>ABCC2 / SLCO1B1/SLCO1B3</td><td>Conjugated hyperbilirubinaemia</td></tr><tr><td>**Familial Pancreatitis**</td><td>PRSS1 (AD), SPINK1 (AR), CFTR (AR), CTRC, CPA1</td><td>Recurrent acute pancreatitis → Chronic pancreatitis</td></tr><tr><td>**Cystic Fibrosis**</td><td>CFTR</td><td>Pancreatic insufficiency, Lung disease, CBAVD</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🔟 Immunology — Primary Immunodeficiencies (PID)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Antibody Deficiencies</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**X-linked Agammaglobulinaemia (XLA)**</td><td>BTK</td><td>XLR</td></tr><tr><td>**Common Variable Immunodeficiency (CVID)**</td><td>Multiple (TNFRSF13B, NFKB1, NFKB2, CTLA4, LRBA, etc.)</td><td>AD/AR</td></tr><tr><td>**IgA Deficiency**</td><td>Complex</td><td>Mostly sporadic</td></tr><tr><td>**Hyper-IgM Syndrome**</td><td>CD40LG (XLR), AICDA, UNG (AR)</td><td>XLR/AR</td></tr></table>
+<div class="sub-h">Combined Immunodeficiencies</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**SCID**</td><td>IL2RG (XLR), ADA, RAG1/2, IL7R, JAK3, DCLRE1C (AR)</td><td>XLR/AR</td></tr><tr><td>**OMENN Syndrome**</td><td>RAG1/2, DCLRE1C</td><td>AR</td></tr><tr><td>**Ataxia-Telangiectasia**</td><td>ATM</td><td>AR</td></tr><tr><td>**Nijmegen Breakage Syndrome**</td><td>NBN</td><td>AR</td></tr></table>
+<div class="sub-h">Phagocyte Defects</div>
+<table class="ctable"><tr><th>Disorder</th><th>Gene(s)</th><th>Inheritance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**Chronic Granulomatous Disease**</td><td>CYBB (XLR), CYBA, NCF1, NCF2, NCF4 (AR)</td><td>XLR/AR</td></tr><tr><td>**Leukocyte Adhesion Deficiency**</td><td>ITGB2 (LAD1), SLC35C1 (LAD2), FERMT3 (LAD3)</td><td>AR</td></tr><tr><td>**Neutrophil-Specific Granule Deficiency**</td><td>CEBPE</td><td>AR</td></tr></table>
+<div class="sub-h">Autoinflammatory Syndromes</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene</th><th>Inheritance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**FMF**</td><td>MEFV</td><td>AR</td></tr><tr><td>**TRAPS**</td><td>TNFRSF1A</td><td>AD</td></tr><tr><td>**CAPS (FCAS/MWS/NOMID)**</td><td>NLRP3</td><td>AD</td></tr><tr><td>**MKD/HIDS**</td><td>MVK</td><td>AR</td></tr><tr><td>**DIRA**</td><td>IL1RN</td><td>AR</td></tr><tr><td>**SAVI**</td><td>STING1</td><td>AD</td></tr></table>
+<div class="sub-h">HLH &amp; Immune Dysregulation</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene(s)</th><th>Inheritance</th></tr><tr><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**Familial HLH**</td><td>PRF1, UNC13D, STX11, STXBP2, RAB27A</td><td>AR</td></tr><tr><td>**XLP1**</td><td>SH2D1A</td><td>XLR</td></tr><tr><td>**XLP2**</td><td>XIAP/BIRC4</td><td>XLR</td></tr><tr><td>**ALPS**</td><td>FAS, FASLG, CASP10</td><td>AD/AR</td></tr><tr><td>**AIFEC**</td><td>NLRC4</td><td>AD</td></tr><tr><td>**CTLA4 Haploinsufficiency**</td><td>CTLA4</td><td>AD</td></tr><tr><td>**LRBA Deficiency**</td><td>LRBA</td><td>AR</td></tr><tr><td>**STAT3 GOF**</td><td>STAT3</td><td>AD</td></tr><tr><td>**STAT1 GOF/LOF**</td><td>STAT1</td><td>AD/AR</td></tr><tr><td>**RAG1/2 Deficiency**</td><td>RAG1/RAG2</td><td>AR (SCID/Omenn)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔟 Paediatrics & Obstetrics — Developmental Genetics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Dysmorphology &amp; Congenital Anomalies</div>
+<table class="ctable"><tr><th>Approach</th><th>Key Steps</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**Dysmorphology Assessment**</td><td>Major/Minor anomalies, Growth parameters, Developmental milestones, Family history (3-gen pedigree)</td></tr><tr><td>**Syndrome Recognition**</td><td>Pattern recognition (FACE, GESTALT); Databases (OMIM, POSSUM, Face2Gene)</td></tr><tr><td>**Genetic Testing**</td><td>**Microarray (1st-tier)** → CNV/LOH/UPD; **Exome/Genome** if array negative; **Targeted panel** for specific phenotypes</td></tr></table>
+<div class="sub-h">Common Syndromes with Dysmorphology</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Gene(s)</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>--------------</td></tr><tr><td>**Down Syndrome**</td><td>Trisomy 21</td><td>Intellectual disability, Flat facies, Epicanthic folds, Single palmar crease, AVSD, Duodenal atresia</td></tr><tr><td>**Noonan Syndrome**</td><td>PTPN11, SOS1, RAF1, RIT1</td><td>Short stature, Webb neck, PS, Hypertelorism, Pectus, Coagulopathy</td></tr><tr><td>**Williams Syndrome**</td><td>7q11.23 del</td><td>Elfin facies, SVAS, Hypercalcaemia, Outgoing personality, ID</td></tr><tr><td>**Prader-Willi**</td><td>15q11-13 (Pat del/UPDmat)</td><td>Hypotonia → Hyperphagia/Obesity, Hypogonadism, ID</td></tr><tr><td>**Angelman**</td><td>15q11-13 (Mat del/UPDpat/UBE3A)</td><td>Severe ID, Ataxia, Happy demeanour, Seizures</td></tr><tr><td>**22q11 Deletion (DiGeorge/VCFS)**</td><td>22q11.2 del</td><td>CATCH-22: Cardiac, Abnormal facies, Thymic hypoplasia, Cleft, Hypocalcaemia</td></tr><tr><td>**Smith-Magenis**</td><td>RAI1 (17p11.2 del)</td><td>Self-hug, Sleep disturbance, Hoarse voice, Behavioural, ID</td></tr><tr><td>**Cornelia de Lange**</td><td>NIPBL, SMC1A, SMC3, HDAC8, RAD21</td><td>AR/AD/XL; Synophrys, Long lashes, Microcephaly, Limb defects, ID</td></tr><tr><td>**Rubinstein-Taybi**</td><td>CREBBP, EP300</td><td>Broad thumbs/hallux, Microcephaly, ID, Characteristic face</td></tr><tr><td>**Kabuki**</td><td>KMT2D (AD), KDM6A (XLD)</td><td>Arched brows, Long palpebral fissures, Persistent fetal fingertip pads, ID</td></tr><tr><td>**CHARGE**</td><td>CHD7</td><td>Coloboma, Heart, Atresia choanae, Retarded growth, Genital, Ear</td></tr></table>
+<div class="sub-h">Neurodevelopmental Disorders</div>
+<table class="ctable"><tr><th>Disorder</th><th>Genetic Basis</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**Autism Spectrum Disorder (ASD)**</td><td>Highly heterogeneous; >100 genes (SHANK3, NLGN3/4, NRXN1, CNTNAP2, CHD8, SYNGAP1, ADNP, etc.); CNV (16p11.2, 15q11-13, 22q11, 1q21.1)</td></tr><tr><td>**Intellectual Disability (ID)**</td><td>>1000 genes; Syndromic + Non-syndromic; CNV (Microarray 1st-tier) → WES/WGS</td></tr><tr><td>**Developmental & Epileptic Encephalopathies (DEE)**</td><td>SCN1A, STXBP1, KCNQ2, CDKL5, ARX, SLC25A22, etc.</td></tr></table>
+<div class="sub-h">Congenital Anomalies — Genetic Basis</div>
+<table class="ctable"><tr><th>Anomaly</th><th>Genetic Aetiology</th></tr><tr><td>---------</td><td>------------------</td></tr><tr><td>**Neural Tube Defects**</td><td>MTHFR, MTRR, SHMT1 (Folate pathway); Multifactorial</td></tr><tr><td>**Congenital Heart Disease**</td><td>NKX2-5, TBX5, GATA4, NOTCH1, JAG1, ZIC3, etc.; CNV (22q11, 1p36, 8p23)</td></tr><tr><td>**Cleft Lip/Palate**</td><td>IRF6 (Van der Woude), MSX1, TP63, BMP4, FGFR1; Multifactorial</td></tr><tr><td>**Renal/Urinary Tract Anomalies (CAKUT)**</td><td>PAX2, SIX2, EYA1, HNF1B, GDNF/RET, SALL1, etc.</td></tr><tr><td>**Skeletal Dysplasias**</td><td>FGFR3 (Achondroplasia), COL2A1 (Type II Collagenopathies), COL1A1/2 (OI), COMP (Pseudoachondroplasia)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔟 Genetic Testing in Clinical Practice — By Specialty</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Specialty</th><th>First-Line Test</th><th>When to Refer to Clinical Genetics</th></tr><tr><td>-----------</td><td>----------------</td><td>-----------------------------------</td></tr><tr><td>**Cardiology**</td><td>Cardiomyopathy/Channelopathy panels; FH panel</td><td>Unexplained cardiomyopathy, SCD family history, Aortopathy</td></tr><tr><td>**Neurology**</td><td>Epilepsy panel (>100 genes) / WES; Neuromuscular panel</td><td>Epileptic encephalopathy, Neuromuscular, Neurodegenerative, Ataxia</td></tr><tr><td>**Nephrology**</td><td>Cystic kidney panel; Tubulopathy panel; Alport panel</td><td>Cystic kidney disease, Tubulopathy, Early ESRD, Family history</td></tr><tr><td>**Respiratory**</td><td>CFTR (CF); PCD panel; Surfactant panel; SERPINA1</td><td>CF, PCD, Surfactant disorders, Alpha-1, Familial IPF</td></tr><tr><td>**Endocrine**</td><td>MEN panels; MODY panel; Thyroid cancer panel; CAH panel</td><td>MEN, MODY, Medullary thyroid Ca, Phaeo, CAH</td></tr><tr><td>**Haematology**</td><td>Haemoglobinopathy screen; Coagulation panel; BMF panel</td><td>Haemoglobinopathy, Coagulopathy, BMF, PID</td></tr><tr><td>**Dermatology**</td><td>EB panel; Ichthyosis panel; Vascular anomaly panel; EB panel</td><td>Genodermatoses, Vascular anomalies, EB, Ichthyosis</td></tr><tr><td>**Ophthalmology**</td><td>Retinal dystrophy panel; LCA panel; Anterior segment panel</td><td>Retinal dystrophy, Congenital cataract/glaucoma, Aniridia</td></tr><tr><td>**Gastroenterology**</td><td>Polyposis panels (APC, MUTYH, STK11); IBD panel (VEO-IBD)</td><td>Polyposis, VEO-IBD, Hereditary pancreatitis</td></tr><tr><td>**Immunology**</td><td>PID panels (SCID, CID, CGD, ALPS, HLH); NGS panel</td><td>PID, HLH, Autoinflammatory, Unexplained cytopenias</td></tr><tr><td>**Paediatrics/Obs**</td><td>Microarray (1st-tier DD/ID/CA); WES/WGS; Prenatal panels</td><td>DD/ID, Congenital anomalies, Dysmorphism, Recurrent miscarriage</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Specialty</th><th>Key Genetic Disorders</th><th>First-Line Test</th><th>Key Surveillance</th></tr><tr><td>-----------</td><td>----------------------</td><td>-----------------</td><td>------------------</td></tr><tr><td>**Cardiology**</td><td>HCM (MYH7/MYBPC3), DCM (TTN/LMNA), ARVC (PKP2), Channelopathies (LQTS/BrS/CPVT), FH, Marfan, Loeys-Dietz</td><td>Cardiomyopathy/Channelopathy panels; FH panel; Aortopathy panel</td><td>Annual Echo + Holter (Cardiomyopathies); Annual MRI aorta (Aortopathies); Cascade testing</td></tr><tr><td>**Neurology**</td><td>Epilepsy (SCN1A, KCNQ2, STXBP1); Neuromuscular (DMD, SMA, CMT, LGMD); Neurodegenerative (HD, SCA, FRDA, FTD/ALS)</td><td>Epilepsy panel / WES; Neuromuscular panel; HD predictive protocol</td><td>Annual neuro review; Cardiac surveillance (DMD, SMA); Predictive protocol (HD)</td></tr><tr><td>**Nephrology**</td><td>ADPKD (PKD1/2), ARPKD, Alport (COL4A5), Tubulopathies (Bartter, Gitelman, Liddle), Nephronophthisis</td><td>Cystic kidney panel; Tubulopathy panel; Alport panel</td><td>Annual eGFR/BP (ADPKD); Electrolyte monitoring (Tubulopathies); Hearing/eye (Alport)</td></tr><tr><td>**Respiratory**</td><td>CF (CFTR), PCD (DNAH5, etc.), Surfactant (SFTPB/C), Alpha-1 (SERPINA1), Familial IPF</td><td>CFTR (CF); PCD panel; SFTPC/B; SERPINA1; Telomere genes</td><td>CFTR modulators; Airway clearance; Augmentation (A1AT); Lung transplant eval</td></tr><tr><td>**Endocrine**</td><td>MEN1/2, MODY (HNF1A/GCK/HNF4A), CAH (CYP21A2), Thyroid Ca (RET), Familial Phaeo</td><td>MEN panels; MODY panel; Thyroid cancer panel; CAH panel</td><td>Annual surveillance (MEN); Glucose monitoring (MODY); Prophylactic surgery (MEN2)</td></tr><tr><td>**Haematology**</td><td>Haemoglobinopathies (CFTR, HBB), Coagulopathies (F8, F9, VWF), BMF (FA, DBA), PID</td><td>Haemoglobinopathy screen; Coagulation panel; BMF panel; PID panel</td><td>Transfusion/chelation (Thal); Factor replacement (Haemophilia); HSCT (BMF/PID)</td></tr><tr><td>**Dermatology**</td><td>EB (KRT5/14, COL7A1), Ichthyosis (FLG, STS, TGM1), Vascular anomalies (GNAQ, PIK3CA, RASA1)</td><td>EB panel; Ichthyosis panel; Vascular panel</td><td>Wound care (EB); Skin surveillance (Ichthyosis); AVM screening (HHT)</td></tr><tr><td>**Ophthalmology**</td><td>RP (RPGR, RHO), LCA (RPE65, CEP290), Stargardt (ABCA4), Aniridia (PAX6)</td><td>Retinal dystrophy panel; LCA panel; Anterior segment panel</td><td>Annual ophthalmology; Low vision aids; Gene therapy (RPE65)</td></tr><tr><td>**Gastroenterology**</td><td>Polyposis (APC, MUTYH, STK11, SMAD4, BMPR1A); IBD (VEO-IBD); Hereditary pancreatitis (PRSS1, SPINK1)</td><td>Polyposis panels; VEO-IBD panel; Pancreatitis panel</td><td>Colonoscopy (Polyposis); Duodenal surveillance (FAP); Endoscopic surveillance</td></tr><tr><td>**Immunology**</td><td>PID (BTK, IL2RG, ADA, CYBB, STAT1/3, CTLA4, LRBA); HLH (PRF1, UNC13D); Autoinflammatory</td><td>PID panels (SCID, CID, CGD, HLH, ALPS); Autoinflammatory panel</td><td>IVIG (Antibody deficiency); HSCT (SCID, HLH); Biologics (Autoinflammatory)</td></tr><tr><td>**Paediatrics/Obs**</td><td>DD/ID (Microarray 1st-tier → WES/WGS); Dysmorphism syndromes; Prenatal (CVS/Amnio/NIPT/PGT)</td><td>Microarray (1st-tier DD/ID); WES/WGS; Prenatal panels</td><td>Developmental surveillance; Syndrome-specific management; Prenatal counselling</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Cardiomyopathy genetic testing — which genes for HCM?</td><td>MYH7, MYBPC3 (80%), TNNT2, TNNI3, TPM1, ACTC1, MYL2, MYL3</td></tr><tr><td>2</td><td>Channelopathy — Brugada syndrome gene?</td><td>**SCN5A** (75-80%); Sodium channel loss-of-function</td></tr><tr><td>3</td><td>FH — cascade testing yield?</td><td>**~8 new cases per index case** (1st-degree relatives, 50% risk)</td></tr><tr><td>4</td><td>Epilepsy — SCN1A spectrum disorders?</td><td>Dravet, GEFS+, EMFS, ICEGTC; De novo >85%</td></tr><tr><td>5</td><td>Neuromuscular — DMD vs BMD genetic difference?</td><td>**Reading frame**: Out-of-frame = DMD; In-frame = BMD (Same DMD gene)</td></tr><tr><td>5</td><td>Cystic kidney — ADPKD vs ARPKD genes?</td><td>ADPKD: PKD1 (85%), PKD2; ARPKD: PKHD1</td></tr><tr><td>6</td><td>Tubulopathy — Gitelman vs Bartter?</td><td>Gitelman: SLC12A3 (NCCT), Hypomagnesaemia, Hypocalciuria; Bartter: SLC12A1/KCNJ1/CLCNKB/BSND, Hypercalciuria</td></tr><tr><td>7</td><td>CF — CFTR modulator therapy?</td><td>**Triple therapy (Elexacaftor/Tezacaftor/Ivacaftor)** for ≥1 F508del allele (90% patients)</td></tr><tr><td>8</td><td>Endocrine — MEN2B prophylactic thyroidectomy age?</td><td>**<1 year** (MTC 100% penetrant, aggressive)</td></tr><tr><td>9</td><td>Haematology — Hereditary spherocytosis genes?</td><td>ANK1, SPTB, SLC4A1, EPB42 (AD/AR)</td></tr><tr><td>10</td><td>Immunology — SCID newborn screening?</td><td>**TREC assay** (T-cell receptor excision circles) on dried blood spot</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"All cardiomyopathy = Genetic"**</td><td>**NO.** Many acquired (Ischaemic, Hypertensive, Viral, Alcohol, Amyloid); Genetic testing if unexplained + family history</td></tr><tr><td>**"All epilepsy = Genetic"**</td><td>**NO.** Many acquired (Stroke, Tumour, Trauma, Infection); Genetic testing for epileptic encephalopathy, early onset, family history</td></tr><tr><td>**"All kidney cysts = ADPKD"**</td><td>**NO.** ARPKD, Simple cysts, Medullary cystic, NPHP, BBS, Acquired cysts (Dialysis)</td></tr><tr><td>**"All nephrotic syndrome = Genetic"**</td><td>**NO.** Primary (FSGS genetic) vs Secondary (Diabetes, Amyloid, SLE, Drugs); Genetic if steroid-resistant, early onset, family history</td></tr><tr><td>**"All interstitial lung disease = Genetic"**</td><td>**NO.** Most acquired (IPF, CTD, Hypersensitivity, Drug, Sarcoid); Genetic if familial, young onset, syndromic (Surfactant, Telomeres)</td></tr><tr><td>**"All heart disease = Genetic"**</td><td>**NO.** Most acquired (Ischaemic, Hypertensive, Valvular); Genetic if young onset, family history, syndromic features</td></tr><tr><td>**"All epilepsy = SCN1A"**</td><td>**NO.** Many genes (KCNQ2, STXBP1, CDKL5, SCN2A, etc.); SCN1A = Dravet/GEFS+ spectrum</td></tr><tr><td>**"All arrhythmia = Channelopathy"**</td><td>**NO.** Many structural (Ischaemic, Cardiomyopathy, Valvular); Channelopathy if structurally normal heart</td></tr><tr><td>**"All high cholesterol = FH"**</td><td>**NO.** Most polygenic/lifestyle; FH if LDL-C very high, tendon xanthomas, family history, genetic confirmation</td></tr><tr><td>**"All anaemia = Genetic"**</td><td>**NO.** Most acquired (Iron deficiency, Chronic disease, B12/folate, Renal, Haemolysis); Genetic if congenital, family history, specific features</td></tr></table>
+<div class="callout"><b>Mnemonic: SYSTEM-BY-SYSTEM GENETICS</b> <b>C</b>ardiology: <b>HCM (MYH7/MYBPC3), DCM (TTN/LMNA), Channelopathies (SCN5A, KCNQ1, RYR2), FH (LDLR/APOB/PCSK9), Aortopathies (FBN1, TGFBR, ACTA2)</b> <b>Y</b> Neurology: <b>Epilepsy (SCN1A, KCNQ2, STXBP1), Neuromuscular (DMD/SMA/CMT/LGMD), Neurodegenerative (HD/SCA/FRDA/FTD-ALS)</b> <b>S</b> Nephrology: <b>ADPKD (PKD1/2), ARPKD (PKHD1), Alport (COL4A5), Tubulopathies (Bartter/Gitelman/Liddle), NPHP</b> <b>T</b> Respiratory: <b>CF (CFTR), PCD (DNAH5), Surfactant (SFTPB/C), Alpha-1 (SERPINA1), Familial IPF (TERT/TERC)</b> <b>E</b>ndocrine: <b>MEN1/2A/2B (MEN1/RET), MODY (HNF1A/GCK/HNF4A), CAH (CYP21A2), Thyroid (RET), Phaeo (VHL/SDH)</b> <b>M</b> Haematology: <b>Haemoglobinopathies (HBB), Coagulation (F8/F9/VWF), BMF (FA/DBA), PID (BTK/IL2RG/CYBB)</b> <b>E</b> Dermatology: <b>EB (KRT5/14/COL7A1), Ichthyosis (FLG/STS/TGM1), Vascular (GNAQ/PIK3CA/RASA1/ENG/ACVRL1)</b> <b>O</b>phthalmology: <b>RP (RHO/RPGR/USH2A), LCA (RPE65/CEP290), Stargardt (ABCA4), Aniridia (PAX6)</b> <b>G</b>astroenterology: <b>Polyposis (APC/MUTYH/STK11/SMAD4), IBD (NOD2/ATG16L1), Pancreatitis (PRSS1/SPINK1)</b> <b>I</b>mmunology: <b>PID (BTK/IL2RG/ADA/CYBB/STAT1/3), HLH (PRF1/UNC13D), Autoinflammatory (NLRP3/MEFV/TNFRSF1A)</b> <b>P</b>aediatrics/Obs: <b>DD/ID (Microarray→WES), Dysmorphism syndromes (Down/Noonan/Williams/22q11), Prenatal (NIPT/CVS/Amnio/PGT)</b> <b>Y</b>ield: <b>Refer to Clinical Genetics if: Unexplained phenotype, Family history, Reproductive planning, Surveillance planning</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((System-Based Genetics)) Cardiology Cardiomyopathies: HCM, DCM, ARVC, LVNC, RCM Channelopathies: LQTS, BrS, CPVT, SQTS FH: LDLR/APOB/PCSK9 Aortopathies: Marfan, Loeys-Dietz, Vascular EDS, FTAA Neurology Epilepsy: SCN1A, KCNQ2, STXBP1, etc. Neuromuscular: DMD/BMD, SMA, CMT, LGMD, FSHD Neurodegenerative: HD, SCA, FRDA, FTD/ALS, Prion Stroke: CADASIL, CARASIL, RVCL Nephrology Cystic: ADPKD, ARPKD, NPHP, MCKD Tubulopathies: Bartter, Gitelman, Liddle, Dent Glomerular: Alport, Thin GBM, FSGS Respiratory CF, PCD, Surfactant, Alpha-1, Familial IPF Endocrine MEN1/2A/2B, MODY, CAH, Thyroid Ca, Phaeo Haematology Haemoglobinopathies, Coagulation, BMF, PID Dermatology EB, Ichthyosis, Vascular anomalies, Genodermatoses Ophthalmology RP, LCA, Stargardt, Best, Aniridia, Congenital glaucoma Gastroenterology Polyposis (FAP/AFAP/MAP/PJS/JPS), IBD, Pancreatitis, Liver Immunology PID (SCID, CGD, HLH), Autoinflammatory, ALPS, CTLA4/LRBA Paediatrics/Obs DD/ID (Microarray→WES), Dysmorphism syndromes, Prenatal (NIPT/CVS/PGT) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Cardiology</td><td>3</td><td></td><td></td></tr><tr><td>Neurology</td><td>3</td><td></td><td></td></tr><tr><td>Nephrology</td><td>3</td><td></td><td></td></tr><tr><td>Respiratory</td><td>2</td><td></td><td></td></tr><tr><td>Endocrine</td><td>2</td><td></td><td></td></tr><tr><td>Haematology</td><td>2</td><td></td><td></td></tr><tr><td>Dermatology</td><td>2</td><td></td><td></td></tr><tr><td>Ophthalmology</td><td>1</td><td></td><td></td></tr><tr><td>Gastroenterology</td><td>2</td><td></td><td></td></tr><tr><td>Immunology</td><td>2</td><td></td><td></td></tr><tr><td>Paediatrics/Obs</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the genetic basis, clinical features, and management of hypertrophic cardiomyopathy."</td><td>MYH7/MYBPC3 (80%), AD, LVH, SCD risk, Genetic testing, Cascade screening, Beta-blockers, ICD, Family screening</td></tr><tr><td>**Short Note**</td><td>"Genetic testing in developmental delay."</td><td>Microarray 1st-tier (CNV/LOH/UPD) → WES/WGS if negative → Parental trio for segregation → Genetic counselling</td></tr><tr><td>**Viva**</td><td>"Child with steroid-resistant nephrotic syndrome. Genetic workup?"</td><td>**FSGS panel** (NPHS1, NPHS2, WT1, ACTN4, TRPC6, INF2); **APOL1** risk alleles (African ancestry); Consider COL4A5 (Alport) if haematuria/deafness</td></tr><tr><td>**Ward Round**</td><td>"25M with syncope, ECG shows Type 1 Brugada pattern. Brother died suddenly at 30. Genetic test?"</td><td>**SCN5A sequencing** (75-80% BrS); If positive → Cascade testing family; ICD if symptomatic/aborted SCD; Ajmaline challenge for relatives</td></tr><tr><td>**Last-Night**</td><td>"Cardio: HCM/DCM/Channel/FH/Aortopathies. Neuro: Epilepsy/Neuromuscular/Neurodeg. Nephro: ADPKD/ARPKD/Alport/Tubulopathies. Resp: CF/PCD/Surfactant/A1AT. Endo: MEN/MODY/CAH. Haeme: Hbpathy/Coag/BMF/PID. Derm: EB/Ichthyosis/Vascular. Eye: RP/LCA/Stargardt/Aniridia. GI: Polyposis/IBD/Pancreatitis. Immune: PID/HLH/Autoinf. Paeds: DD/ID microarray→WES."</td><td>Compressed system-by-system.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cardiology</b>: HCM (MYH7/MYBPC3), DCM (TTN/LMNA), Channelopathies (SCN5A, KCNQ1, RYR2), FH (LDLR/APOB/PCSK9), Aortopathies (FBN1, TGFBR, ACTA2)</li><li><b>Neurology</b>: Epilepsy (SCN1A, KCNQ2, STXBP1), Neuromuscular (DMD/BMD, SMA, CMT, LGMD), Neurodegenerative (HD, SCA, FRDA, FTD/ALS), Stroke (CADASIL)</li><li><b>Nephrology</b>: ADPKD (PKD1/2), ARPKD (PKHD1), Alport (COL4A5), Tubulopathies (Bartter, Gitelman, Liddle), FSGS (NPHS1/2, APOL1)</li><li><b>Respiratory</b>: CF (CFTR), PCD (DNAH5), Surfactant (SFTPB/C), Alpha-1 (SERPINA1), Familial IPF (TERT/TERC)</li><li><b>Endocrine</b>: MEN1/2A/2B (MEN1/RET), MODY (HNF1A/GCK/HNF4A), CAH (CYP21A2), Thyroid Ca (RET), Phaeo (VHL/SDHx)</li><li><b>Haematology</b>: Haemoglobinopathies (HBB), Coagulopathies (F8/F9/VWF), BMF (FA/DBA), PID (BTK/IL2RG/CYBB/STAT3)</li><li><b>Dermatology</b>: EB (KRT5/14, COL7A1), Ichthyosis (FLG/STS/TGM1), Vascular (GNAQ/PIK3CA/RASA1/ENG/ACVRL1)</li><li><b>Ophthalmology</b>: RP (RPGR/RHO), LCA (RPE65/CEP290), Stargardt (ABCA4), Aniridia (PAX6)</li><li><b>Gastroenterology</b>: Polyposis (APC, MUTYH, STK11, SMAD4), IBD (NOD2, IL23R), Pancreatitis (PRSS1, SPINK1)</li><li><b>Immunology</b>: PID (BTK, IL2RG, ADA, CYBB, STAT1/3, CTLA4, LRBA), HLH (PRF1, UNC13D), Autoinflammatory (NLRP3, MEFV)</li><li><b>Paediatrics/Obs</b>: DD/ID (Microarray 1st-tier → WES/WGS), Dysmorphism syndromes, Prenatal (NIPT, CVS, Amnio, PGT-M)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>HCM — most commonly mutated genes?</b></li></ol>
+<p>A. TTN, LMNA  B. <b>MYH7, MYBPC3 (80%)</b>  C. SCN5A, RYR2  D. PKP2, DSP <i>Answer: B. MYH7 and MYBPC3 account for ~80% of HCM cases.</i></p>
+<ol><li><b>Brugada syndrome — primary gene?</b></li></ol>
+<p>A. KCNQ1  B. KCNH2  C. <b>SCN5A</b>  D. RYR2 <i>Answer: C. SCN5A (loss-of-function) in 75-80% of BrS cases.</i></p>
+<ol><li><b>Cystic fibrosis — CFTR modulator for F508del homozygotes?</b></li></ol>
+<p>A. Ivacaftor alone  B. Lumacaftor/Ivacaftor  C. <b>Elexacaftor/Tezacaftor/Ivacaftor (Triple therapy)</b>  D. Tezacaftor/Ivacaftor <i>Answer: C. Triple therapy (Elexacaftor/Tezacaftor/Ivacaftor) for ≥1 F508del allele (covers 90% patients).</i></p>
+<ol><li><b>Alport syndrome — inheritance &amp; key gene?</b></li></ol>
+<p>A. AD, COL4A5  B. <b>XL, COL4A5 (85%)</b>  C. AR, COL4A3  D. AD, COL4A4 <i>Answer: B. X-linked (COL4A5) in 85%; AR (COL4A3/A4) in 15%.</i></p>
+<ol><li><b>Familial hypercholesterolaemia — cascade testing yield?</b></li></ol>
+<p>A. 2 new cases/index  B. 4  C. <b>~8 new cases per index</b>  D. 16 <i>Answer: C. 1st-degree relatives 50% risk → typically identifies ~8 new cases per index.</i></p>
+<ol><li><b>Duchenne vs Becker — genetic difference?</b></li></ol>
+<p>A. Different genes  B. <b>Reading frame (Out-of-frame vs In-frame)</b>  C. Different chromosomes  D. Different proteins <i>Answer: B. Same DMD gene; DMD = Out-of-frame (no dystrophin); BMD = In-frame (truncated dystrophin).</i></p>
+<ol><li><b>Long QT syndrome — most common gene?</b></li></ol>
+<p>A. SCN5A  B. <b>KCNQ1 (LQT1)</b>  C. KCNH2  D. KCNE1 <i>Answer: B. KCNQ1 (LQT1) ~35-40%; KCNH2 (LQT2) ~30%; SCN5A (LQT3) ~10%.</i></p>
+<ol><li><b>Spinal muscular atrophy — SMN2 copy number correlates with:</b></li></ol>
+<p>A. Age of onset  B. <b>Phenotype severity</b>  C. Treatment response  D. Carrier risk <i>Answer: B. More SMN2 copies = Milder phenotype (Type 1: 1-2, Type 2: 3, Type 3: 3-4, Type 4: 4+).</i></p>
+<ol><li><b>Tuberous sclerosis — gene and pathway?</b></li></ol>
+<p>A. TSC1, mTOR  B. <b>TSC1/TSC2, mTOR (loss of inhibition)</b>  C. TSC2, PI3K  D. TSC1, RAS <i>Answer: B. TSC1 (hamartin) + TSC2 (tuberin) complex inhibits mTORC1.</i></p>
+<ol><li><b>Hereditary haemorrhagic telangiectasia — genes?</b></li></ol>
+<p>A. ENG (Type 1), ACVRL1 (Type 2), SMAD4 B. PIK3CA, RASA1, GNAQ C. COL7A1, KRT5, KRT14 D. FLG, STS, TGM1 <i>Answer: A. ENG (HHT1), ACVRL1 (HHT2), SMAD4 (JPHT).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25M with syncope, ECG shows coved ST elevation V1-V3 (Type 1 BrS). Brother died suddenly at 28. Genetic test?</b></li></ol>
+<p>A. KCNQ1  B. <b>SCN5A</b>  C. RYR2  D. KCNJ2 <i>Answer: B. SCN5A (75-80% of BrS); Loss-of-function sodium channel mutation.</i></p>
+<ol><li><b>4-year-old with steroid-resistant nephrotic syndrome. Genetic testing indicated?</b></li></ol>
+<p>A. NPHS1, NPHS2, WT1, ACTN4, TRPC6, INF2 B. PKD1, PKD2 C. COL4A5 D. SLC12A3 <i>Answer: A. FSGS panel: NPHS1, NPHS2, WT1, ACTN4, TRPC6, INF2; Also consider APOL1 risk alleles.</i></p>
+<ol><li><b>20M with recurrent syncope, exercise-induced. ECG: bidirectional VT. Gene?</b></li></ol>
+<p>A. KCNQ1  B. <b>RYR2</b>  C. SCN5A  D. KCNH2 <i>Answer: B. CPVT: RYR2 (AD) or CASQ2 (AR); Exercise-induced bidirectional VT.</i></p>
+<ol><li><b>Child with developmental delay, congenital heart disease, hypocalcaemia. Microarray: 22q11.2 deletion. Syndrome?</b></li></ol>
+<p>A. Williams  B. <b>DiGeorge/VCFS</b>  C. Prader-Willi  D. Noonan <i>Answer: B. 22q11.2 deletion = DiGeorge/Velo-cardio-facial syndrome (CATCH-22).</i></p>
+<ol><li><b>Neonate with ambiguous genitalia (46,XX), vomiting, hyponatraemia, hyperkalaemia. 17-OHP elevated. Gene?</b></li></ol>
+<p>A. CYP21A2  B. CYP11B1  C. CYP17A1  D. STAR <i>Answer: A. 21-hydroxylase deficiency (CYP21A2) = Salt-wasting CAH.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-C, 3-C, 4-B, 5-C, 6-B, 6-B, 7-C, 8-B, 9-B, 10-A</td><td>1-B, 2-A, 3-B, 4-B, 5-A</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1. Fundamentals of Medical Genetics]] — Core genetics principles applied across systems</li><li>[[2.1 Mendelian Inheritance]] — Inheritance patterns in system-based disorders</li><li>[[2.2 Non-Mendelian Inheritance]] — Mitochondrial, Imprinting, Mosaicism in system disorders</li><li>[[3. Chromosomal Disorders]] — Chromosomal basis of syndromic presentations</li><li>[[4.1 Autosomal Dominant Disorders]] — AD disorders by system (Marfan, HCM, FH, ADPKD, TSC, etc.)</li><li>[[4.2 Autosomal Recessive Disorders]] — AR disorders by system (CF, Sickle, Thalassaemia, PKU, Wilson, etc.)</li><li>[[4.3 X-Linked Disorders]] — XL disorders by system (DMD, Haemophilia, G6PD, Fabry, ALD, Fragile X)</li><li>[[4.4 Mitochondrial Disorders]] — Mitochondrial disorders by system (MELAS, MERRF, LHON, KSS)</li><li>[[4.5 Imprinting &amp; UPD]] — Imprinting disorders by system (PWS, AS, BWS, SRS)</li><li>[[5.1-5.4 Genetic Testing Technologies]] — Testing methodologies by specialty</li><li>[[5.5 Genetic Counselling]] — Counselling pathways by specialty</li><li>[[6.1 Hereditary Cancer Syndromes]] — Cancer genetics by organ system</li><li>[[6.2-6.3 Tumour Genetics &amp; Testing]] — Somatic tumour genetics by organ</li><li>[[7. Pharmacogenetics]] — PGx by therapeutic area</li><li>[[8. Population &amp; Newborn Screening]] — Screening programmes by specialty</li><li>[[9. ELSI]] — Ethical issues by clinical context</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-14 <b>All 20 topic files for Chapter 3 (Clinical Genetics) now complete!</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · System Based Clinical Genetics · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

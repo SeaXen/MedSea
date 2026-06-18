@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Evidence Based Prescribing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.11. PRINCIPLES OF RATIONAL PRESCRIBING</span>
+      <div class="h1">Evidence Based Prescribing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define evidence-based medicine (EBM) and its 3 pillars</li><li>[ ] Formulate a clinical question using <b>PICO</b></li><li>[ ] Critically appraise a randomised trial (RCT) for internal validity</li><li>[ ] Calculate and interpret <b>NNT</b> and <b>NNH</b></li><li>[ ] Apply Number Needed to Treat in shared decision-making</li><li>[ ] Locate high-quality prescribing information (BNF, NICE, Cochrane, UpToDate)</li><li>[ ] Recognise limitations of evidence (surrogate endpoints, industry bias)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & 3 Pillars of EBM</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pillar</th><th>Source</th><th>Example</th></tr><tr><td>--------</td><td>--------</td><td>---------</td></tr><tr><td>**Best current evidence**</td><td>RCTs, systematic reviews, guidelines</td><td>ALLHAT, NICE HTN guideline</td></tr><tr><td>**Clinical expertise**</td><td>Doctor's experience, judgement</td><td>Recognising atypical presentation</td></tr><tr><td>**Patient values & preferences**</td><td>Patient's goals, culture, cost</td><td>"I cannot afford a daily pill"</td></tr></table>
+<div class="callout"><b>Sackett DL, 1996</b>: "Evidence-based medicine is the conscientious, explicit, and judicious use of current best evidence in making decisions about the care of individual patients."</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — EBM in Prescribing</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Clinical encounter: need to prescribe] --&gt; B[Formulate PICO question] B --&gt; C[Search literature&lt;br/&gt;Cochrane / PubMed / NICE / BNF] C --&gt; D[Appraise evidence&lt;br/&gt;Hierarchy of evidence] D --&gt; E[Apply to patient&lt;br/&gt;Efficacy, Safety, Suitability, Cost] E --&gt; F{Does evidence&lt;br/&gt;fit this patient?} F --&gt;|Yes| G[Prescribe per evidence] F --&gt;|No| H[Adapt or choose alternative] G --&gt; I[Monitor outcome] H --&gt; I I --&gt; J{Outcome&lt;br/&gt;achieved?} J --&gt;|Yes| K[Continue / audit] J --&gt;|No| A </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Hierarchy of Evidence</div>
+<table class="ctable"><tr><th>Level</th><th>Study Type</th><th>Use in Prescribing</th></tr><tr><td>-------</td><td>-----------</td><td>-------------------</td></tr><tr><td>1a</td><td>Systematic review of RCTs</td><td>Strongest — basis of NICE</td></tr><tr><td>1b</td><td>Individual RCT</td><td>Direct evidence</td></tr><tr><td>2a</td><td>Systematic review of cohort</td><td>Supportive</td></tr><tr><td>2b</td><td>Individual cohort</td><td>Hypothesis-generating</td></tr><tr><td>3</td><td>Case-control</td><td>ADR signals</td></tr><tr><td>4</td><td>Case series</td><td>Rare ADR</td></tr><tr><td>5</td><td>Expert opinion</td><td>Last resort</td></tr></table>
+<div class="sub-h">4.2 NNT vs NNH</div>
+<table class="ctable"><tr><th>Measure</th><th>Definition</th><th>Example</th></tr><tr><td>---------</td><td>-----------</td><td>---------</td></tr><tr><td>**NNT**</td><td>Number needed to treat for one additional patient to benefit</td><td>Statin for 5 yrs prevents 1 MI per ~100 treated → NNT=100</td></tr><tr><td>**NNH**</td><td>Number needed to harm — for one additional patient to experience ADR</td><td>Statin → 1 myopathy per ~10,000 → NNH=10,000</td></tr><tr><td>**NNT/NNH ratio**</td><td>Safety margin</td><td>100/10,000 = 1:100 (very safe)</td></tr></table>
+<p><b>Calculation:</b></p>
+<ul><li>NNT = 1 / ARR (absolute risk reduction)</li><li>ARR = Control event rate (CER) − Experimental event rate (EER)</li><li>Example: CER 10%, EER 7% → ARR 3% → NNT = 1/0.03 = <b>34</b></li></ul>
+<div class="sub-h">4.3 PICO Framework</div>
+<table class="ctable"><tr><th>Letter</th><th>Question</th><th>Example (HTN in elderly)</th></tr><tr><td>--------</td><td>----------</td><td>--------------------------</td></tr><tr><td>**P**</td><td>Patient / Population</td><td>Adults >80 yr with isolated systolic HTN</td></tr><tr><td>**I**</td><td>Intervention</td><td>Indapamide ± perindopril</td></tr><tr><td>**C**</td><td>Comparison</td><td>Placebo</td></tr><tr><td>**O**</td><td>Outcome</td><td>Stroke reduction, mortality</td></tr><tr><td>**T**</td><td>Time</td><td>5-year follow-up (HYVET 2008)</td></tr></table>
+<div class="sub-h">4.4 Common Surrogate vs Hard Endpoints</div>
+<table class="ctable"><tr><th>Endpoint</th><th>Example drug</th><th>Why problematic</th></tr><tr><td>----------</td><td>--------------</td><td>-----------------</td></tr><tr><td>BP reduction</td><td>Antihypertensives</td><td>Many lower BP; fewer reduce mortality (ALLHAT, ASCOT)</td></tr><tr><td>HbA1c reduction</td><td>Intensive glucose-lowering</td><td>ACCORD, ADVANCE — intensive control ↑ mortality in T2DM</td></tr><tr><td>LDL reduction</td><td>Ezetimibe</td><td>IMPROVE-IT: ↓CV events with simvastatin+ezetimibe; pure LDL-lowering agents vary</td></tr><tr><td>Bone density</td><td>Bisphosphonates</td><td>Improvement in BMD does not always equal fracture reduction</td></tr><tr><td>PSA reduction</td><td>Antiandrogens</td><td>No consistent mortality benefit in localised prostate cancer</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>First-line evidence in prescribing</td><td>Cochrane systematic review of RCTs</td></tr><tr><td>Strongest single study design</td><td>RCT with concealed allocation, double-blinding, ITT analysis</td></tr><tr><td>NNT for statin in secondary prevention (5 yr)</td><td>~20-30 to prevent 1 MI</td></tr><tr><td>NNT for statin in primary prevention (low risk)</td><td>~100-200 to prevent 1 MI</td></tr><tr><td>NNH for statin myopathy</td><td>~10,000 per year</td></tr><tr><td>HYVET trial (2008)</td><td>Indapamide ± perindopril in >80 yr → ↓stroke 30%, ↓mortality 21%</td></tr><tr><td>ALLHAT trial (2002)</td><td>Chlortalidone = amlodipine = lisinopril for primary outcome</td></tr><tr><td>Surrogate endpoint pitfall</td><td>Rosiglitazone ↓HbA1c but ↑MI (Nissen 2007 meta-analysis)</td></tr><tr><td>Common prescribing errors due to poor EBM</td><td>Newer ≠ better; celebrity endorsement; over-reliance on surrogates</td></tr><tr><td>Trial to know: PARADIGM-HF</td><td>Sacubitril-valsartan vs enalapril in HFrEF → ↓CV death 20%</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define evidence-based medicine.</b></li></ol>
+<p><i>Sackett 1996: integration of best current research evidence with clinical expertise and patient values.</i></p>
+<ol><li><b>What are the 3 pillars of EBM?</b></li></ol>
+<p><i>Best evidence, clinical expertise, patient values &amp; preferences.</i></p>
+<ol><li><b>What is the hierarchy of evidence?</b></li></ol>
+<p><i>Systematic review of RCTs &gt; RCT &gt; Cohort &gt; Case-control &gt; Case series &gt; Expert opinion.</i></p>
+<ol><li><b>Define NNT. How is it calculated?</b></li></ol>
+<p><i>Number Needed to Treat = 1 / ARR. ARR = CER − EER. Example: CER 10%, EER 7% → ARR 3% → NNT = 34.</i></p>
+<ol><li><b>NNT for statin in secondary prevention over 5 years?</b></li></ol>
+<p><i>~20-30 to prevent one MI.</i></p>
+<ol><li><b>Why are surrogate endpoints unreliable?</b></li></ol>
+<p><i>Improvement in a biomarker (BP, HbA1c) does not always translate into clinical benefit (mortality, MI). Examples: rosiglitazone, intensive glycaemic control in T2DM (ACCORD).</i></p>
+<ol><li><b>How do you appraise an RCT?</b></li></ol>
+<p><i>PICO question; randomisation with concealment; blinding (patient, clinician, assessor); ITT analysis; power calculation; follow-up complete; baseline balance; intention-to-treat vs per-protocol.</i></p>
+<ol><li><b>What is the limitation of "NNT = 1"?</b></li></ol>
+<p><i>NNT depends on baseline risk, duration, and outcome. A statin NNT=20 in a high-risk post-MI patient is very different from NNT=200 in a low-risk primary prevention patient.</i></p>
+<ol><li><b>Why is industry-sponsored trial evidence a concern?</b></li></ol>
+<p><i>Publication bias (negative trials not published), outcome switching, ghost-writing, comparator choice. Mitigations: trial registration, Cochrane reviews, NICE methodology.</i></p>
+<ol><li><b>A drug is licensed based on a single RCT. How does this inform prescribing?</b></li></ol>
+<p><i>Licensing is not the same as NICE approval. Single RCT may be small, short, or use surrogate endpoints. Check NICE/SIGN, Cochrane review, local formulary, and post-marketing surveillance data.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>EBM vs "cookbook medicine"</td><td>EBM = evidence + clinical expertise + patient values. Not protocol-only.</td></tr><tr><td>NNT vs ARR</td><td>NNT = 1/ARR. ARR is %; NNT is whole person.</td></tr><tr><td>RCT vs meta-analysis</td><td>RCT = single trial; meta-analysis = pooled trials. SR = systematic review (with/without MA).</td></tr><tr><td>Surrogate vs hard endpoint</td><td>Surrogate = lab/biomarker (BP, HbA1c); Hard = clinical event (MI, death).</td></tr><tr><td>Relative vs absolute risk</td><td>RRR exaggerates benefit (e.g., "50% reduction"). ARR is what matters for NNT.</td></tr><tr><td>Intention-to-treat (ITT) vs per-protocol</td><td>ITT includes dropouts in original group; conservative estimate of efficacy.</td></tr><tr><td>PICO vs PICOT</td><td>T = Time. Sometimes optional but useful in chronic disease.</td></tr><tr><td>Cochrane vs NICE</td><td>Cochrane = systematic reviews; NICE = guidelines incorporating evidence + cost.</td></tr></table>
+<p><b>Mnemonic — Hierarchy: "</b>S<b>ystematic review of </b>R<b>CTs is </b>S<b>uperior"</b> (1a &gt; 1b &gt; 2a &gt; 2b &gt; 3 &gt; 4 &gt; 5)</p>
+<p><b>Mnemonic — PICO: "</b>P<b>atient, </b>I<b>ntervention, </b>C<b>omparison, </b>O<b>utcome, </b>T<b>ime"</b></p>
+<p><b>Mnemonic — EBM pillars: "</b>E<b>vidence, </b>E<b>xpertise, </b>E<b>mpathy"</b> (3 Es)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Evidence-Based Prescribing)) 3 Pillars Best evidence Clinical expertise Patient values PICO Patient Intervention Comparison Outcome Time Hierarchy Systematic review RCT Cohort Case-control Case series Expert opinion Measures NNT NNH ARR RRR Surrogate Endpoints BP HbA1c LDL BMD Pitfalls Industry bias Single RCT Surrogate Selective outcome Resources Cochrane NICE BNF PubMed </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>3 pillars</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>PICO</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Hierarchy</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>NNT calculation</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Surrogate endpoint</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>HYVET/ALLHAT</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>EBM definition & 3 pillars</td><td>/5</td></tr><tr><td>PICO construction</td><td>/5</td></tr><tr><td>Hierarchy of evidence</td><td>/5</td></tr><tr><td>NNT/NNH calculation</td><td>/5</td></tr><tr><td>Surrogate endpoints</td><td>/5</td></tr><tr><td>Landmark trials</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/30**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>EBM was formally defined by:</b></li></ol>
+<p>A. Cochrane B. Sackett (1996) ✓ C. Guyatt D. NICE E. WHO</p>
+<ol><li><b>The 3 pillars of EBM are:</b></li></ol>
+<p>A. Evidence, Expertise, Empathy B. Best evidence, Clinical expertise, Patient values ✓ C. RCT, Meta-analysis, Cohort D. PICO, NNT, NNH E. Efficacy, Safety, Cost</p>
+<ol><li><b>PICO stands for:</b></li></ol>
+<p>A. Patient, Intervention, Comparison, Outcome ✓ B. Population, Indicator, Control, Outcome C. Patient, Indication, Comparator, Observation D. Population, Intervention, Cohort, Outcome E. Person, Intervention, Comparison, Overtime</p>
+<ol><li><b>NNT is calculated as:</b></li></ol>
+<p>A. 1 × ARR B. 1 / ARR ✓ C. ARR / RRR D. CER − EER E. CER + EER</p>
+<ol><li><b>Strongest level of evidence is:</b></li></ol>
+<p>A. Expert opinion B. Case series C. Cohort study D. Systematic review of RCTs ✓ E. Single RCT</p>
+<ol><li><b>A "surrogate endpoint" is:</b></li></ol>
+<p>A. A clinical event B. A biomarker used in place of clinical outcome ✓ C. Mortality D. Quality of life E. Hospital readmission</p>
+<ol><li><b>Which drug's surrogate endpoint (HbA1c) failed to predict mortality benefit?</b></li></ol>
+<p>A. Metformin B. Rosiglitazone ✓ C. Sulfonylurea D. Insulin E. Empagliflozin</p>
+<ol><li><b>NNT for statin in secondary prevention (5 yr) is approximately:</b></li></ol>
+<p>A. 5 B. 20-30 ✓ C. 100 D. 500 E. 1000</p>
+<ol><li><b>HYVET trial demonstrated benefit of antihypertensives in:</b></li></ol>
+<p>A. Children B. Adults &lt;60 yr C. Adults &gt;80 yr ✓ D. Pregnancy E. CKD</p>
+<ol><li><b>A single industry-sponsored RCT showing benefit should:</b></li></ol>
+<p>A. Be accepted without question B. Lead to immediate formulary inclusion C. Be appraised critically, ideally with Cochrane review and NICE approval before adoption ✓ D. Replace all existing evidence E. Be ignored</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A trial reports: placebo event rate 12%, treatment event rate 8% over 5 years. NNT is:</b></li></ol>
+<ul><li>A) 4</li><li>B) 12</li><li>C) 25 ✓</li><li>D) 50</li><li>E) 100</li></ul>
+<ol><li><b>A drug reduces CV mortality from 4% to 3% over 5 years. The NNT is:</b></li></ol>
+<ul><li>A) 25</li><li>B) 50</li><li>C) 100 ✓</li><li>D) 200</li><li>E) 1000</li></ul>
+<ol><li><b>A patient asks: "Statin NNT is 100 — should I take it?" The BEST response is:</b></li></ol>
+<ul><li>A) "No, NNT&gt;50 is not worth it"</li><li>B) "Yes, NNT&lt;100 is always worth it"</li><li>C) "It depends on your baseline risk, side effects, and personal values" ✓</li><li>D) "Statins cause diabetes"</li><li>E) "I cannot prescribe"</li></ul>
+<ol><li><b>A new diabetes drug is licensed based on HbA1c reduction of 1%. The best conclusion is:</b></li></ol>
+<ul><li>A) It will reduce mortality</li><li>B) It will reduce MI</li><li>C) HbA1c reduction is a surrogate; mortality/MI benefit must be demonstrated in outcome trials ✓</li><li>D) It should be first-line</li><li>E) It is safer than metformin</li></ul>
+<ol><li><b>A Cochrane review concludes "RR 0.85 (95% CI 0.75-0.95) for primary outcome." The interpretation is:</b></li></ol>
+<ul><li>A) Statistically significant and clinically meaningful ✓</li><li>B) Not statistically significant</li><li>C) CI crosses 1.0</li><li>D) No benefit</li><li>E) Cannot interpret</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>B</b> (Sackett 1996, BMJ)</li><li><b>B</b> (Best evidence + clinical expertise + patient values)</li><li><b>A</b> (Patient/Population, Intervention, Comparison, Outcome)</li><li><b>B</b> (1/ARR)</li><li><b>D</b> (SR of RCTs = 1a)</li><li><b>B</b> (Surrogate = biomarker)</li><li><b>B</b> (Rosiglitazone → ↑MI, Nissen 2007 NEJM)</li><li><b>B</b> (NNT ~20-30 in 2° prevention)</li><li><b>C</b> (HYVET &gt;80 yr)</li><li><b>C</b> (Critical appraisal + Cochrane + NICE)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>C</b> — ARR = 12−8 = 4% → NNT = 1/0.04 = 25.</li><li><b>C</b> — ARR = 4−3 = 1% → NNT = 1/0.01 = 100.</li><li><b>C</b> — EBM shared decision-making: depends on baseline risk, AE, patient values.</li><li><b>C</b> — HbA1c is surrogate; need outcome trial for mortality/MI benefit.</li><li><b>A</b> — RR 0.85, CI 0.75-0.95 excludes 1.0 → statistically significant; clinical significance depends on absolute benefit and context.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>EBM = Best evidence + Clinical expertise + Patient values (Sackett 1996).</b> Use PICO to formulate questions; hierarchy of evidence to appraise; NNT/NNH to communicate benefit/harm. Beware surrogate endpoints (HbA1c, BP, BMD), industry bias, and "newer ≠ better." Always consult NICE, Cochrane, and BNF.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../Principles of Rational Prescribing|Principles of Rational Prescribing]]</li><li><b>Sibling Topic-Groups</b>: [[Definition and aims]], [[Steps of rational prescribing]], [[Prescription writing]]</li><li><b>Heading Hub</b>: [[Principles of Rational Prescribing]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Clinical Decision-Making/1.2 Evidence-Based Medicine]], [[ADRs]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Evidence Based Prescribing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

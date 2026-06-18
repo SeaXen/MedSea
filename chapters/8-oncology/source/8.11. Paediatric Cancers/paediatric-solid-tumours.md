@@ -1,0 +1,639 @@
+# Paediatric Solid Tumours
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **Paediatric Solid Tumours**: **Neuroblastoma (NB) 8-10%**, **Wilms Tumour 5-6%**, **Rhabdomyosarcoma (RMS) 3-4%**, **Retinoblastoma 2-3%**, **Hepatoblastoma 1%**; **Neuroblastoma**: **N-MYC Amp (40%)**, **INSS/INRG Staging**, **Risk: Low (L1/L2), Intermediate (MS), High (M) → COG/HR-NBL1/SIOPEN**; **Wilms**: **WT1/WTX Mut**, **SIOP (Pre-op Chemo) vs COG (Upfront Surgery)**, **Anaplastic = Poor**; **RMS**: **Embryonal (PAX3/7-FOXO1-) vs Alveolar (PAX3/7-FOXO1+)**, **IRSG/COG Risk**, **ARST Protocol**; **Retinoblastoma**: **RB1 Germline/Somatic**, **IIRC Staging**, **Enucleation vs Eye Salvage (Chemo-Reductive + Local)**; **Hepatoblastoma**: **AFP**, **PRETEXT**, **SIOPEL Cisplatin-Based**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Apply **INSS/INRG Staging** and **Risk Stratification** for Neuroblastoma
+- [ ] Distinguish **SIOP (Pre-op Chemo)** vs **COG (Upfront Surgery)** for Wilms Tumour
+- [ ] Risk-Stratify **Rhabdomyosarcoma** using **IRSG/COG** (Fusion Status, Site, Stage, Nodal)
+- [ ] Apply **IIRC Staging** for Retinoblastoma and Select **Eye Salvage** vs **Enucleation**
+- [ ] Use **PRETEXT Staging** for Hepatoblastoma and **SIOPEL Cisplatin Protocols**
+- [ ] Identify **Genetic Markers**: **N-MYC (NB)**, **WT1/WTX (Wilms)**, **PAX3/7-FOXO1 (RMS)**, **RB1 (Retinoblastoma)**, **CTNNB1/APC (Hepatoblastoma)**
+
+---
+
+## 2. Neuroblastoma (NB)
+
+### Epidemiology & Biology
+
+| Feature | Detail |
+|---------|--------|
+| **Incidence** | **8-10% Childhood Cancer**; **Most Common Extracranial Solid Tumour** |
+| **Peak Age** | **<5 years** (Median 18-24 months); **Rare >10yr** |
+| **Origin** | **Sympathetic Nervous System** (Adrenal 40%, Paraspinal 30%, Neck/Chest/Pelvis) |
+| **Key Markers** | **N-MYC Amplification (40%)** = **High Risk**; **ALK Mut (10-15%)**; **1p Deletion, 11q Deletion, 17q Gain** |
+| **Urine Catecholamines** | **VMA (Vanillylmandelic Acid), HVA (Homovanillic Acid)** — **Elevated 90%** |
+
+### INSS Staging (Surgical) & INRG Staging (Pre-Treatment Imaging)
+
+| INSS Stage | Definition |
+|------------|------------|
+| **1** | **Localised, Resected,Negative Margins**, No Nodes |
+| **2A/2B** | **Localised, Unresectable** (2A: No Nodes; 2B: Ipsilateral Nodes+) |
+| **3** | **Unresectable, Crosses Midline** OR **Ipsilateral Tumour + Contralateral Nodes** |
+| **4** | **Distant Mets** (Bone, BM, Liver, Skin, Distant Nodes) — **Age <18mo = 4S** |
+| **4S** | **<18mo, Localised Primary (1/2/3) + Liver/Skin/BM Mets (<10% BM)** — **Spontaneous Regression** |
+
+**INRG Staging (Pre-Treatment, Imaging-Based):**
+- **L1**: Localised, No Image-Defined Risk Factors (IDRFs)
+- **L2**: Localised, **IDRFs Present** (Vascular Encasement, Organ Infiltration, etc.)
+- **M**: Metastatic
+- **MS**: Metastatic Special (<18mo, Skin/Liver/BM <10%)
+
+### Risk Stratification & Treatment (COG / SIOPEN / HR-NBL1)
+
+| Risk Group | INSS/INRG | N-MYC | Ploidy | Treatment |
+|------------|-----------|-------|--------|-----------|
+| **Low (L1/L2, No Amp)** | **L1/L2, N-MYC Normal** | **Normal** | **Any** | **Surgery ± Observation** (L1) / **Surgery + Moderate Chemo** (L2) |
+| **Intermediate (MS)** | **MS (4S), N-MYC Normal** | **Normal** | **Hyperdiploid** | **Moderate Chemo (COG ANBL0531)** / **Observation (Selected MS)** |
+| **High (M, N-MYC Amp)** | **M (Stage 3/4), N-MYC Amp** | **Amplified** | **Any** | **Intensive: Induction (COG/HR-NBL1/SIOPEN) → Surgery → HD-Chemo + ASCT → RT → Anti-GD2 (Dinutuximab) + Isotretinoin** |
+
+### COG / SIOPEN High-Risk Protocol (HR-NBL1 / SIOPEN)
+
+| Phase | Regimen |
+|-------|---------|
+| **Induction (5-6 Cycles)** | **Rapid COJEC (Cisplatin, Vincristine, Carboplatin, Etoposide, Cyclophosphamide)** ± **Topotecan** |
+| **Surgery** | **Maximal Safe Resection** (Post-Induction) |
+| **Consolidation** | **BuMel (Busulfan 12mg/kg + Melphalan 140mg/m²) + ASCT** |
+| **Radiation** | **Primary Site + Residual Mets (21.6Gy)** |
+| **Immunotherapy** | **Anti-GD2 (Dinutuximab/Ch14.18) + IL-2 + GM-CSF + Isotretinoin** (5 Cycles) |
+
+---
+
+## 3. Wilms Tumour (Nephroblastoma)
+
+### Epidemiology & Genetics
+
+| Feature | Detail |
+|---------|--------|
+| **Incidence** | **5-6% Childhood Cancer** (~80/year UK) |
+| **Peak Age** | **2-5 years** (Median 3-4yr) |
+| **Genetics** | **WT1 (10-15%)**, **WTX (15-20%)**, **CTNNB1 (15%)**, **TP53 (Anaplastic)** |
+| **Syndromes** | **WAGR (WT1 Del), Denys-Drash (WT1 Mut), Beckwith-Wiedemann (11p15 LOI)** |
+| **Bilateral** | **5-10%** (Synchronous) |
+
+### Histology & Anaplasia
+
+| Type | Features | Prognosis |
+|------|----------|-----------|
+| **Favourable** | **Triphasic (Blastemal, Stromal, Epithelial)**, No Anaplasia | **Excellent (>90%)** |
+| **Anaplastic** | **Large Hyperchromatic Nuclei, Multipolar Mitoses** | **Diffuse = Poor**; **Focal = Intermediate** |
+
+### SIOP vs COG Approach
+
+| Aspect | **SIOP (Europe/International)** | **COG (North America)** |
+|--------|--------------------------------|--------------------------|
+| **Initial Step** | **Pre-operative Chemo (4-6 Weeks)** → **Surgery** → **Adjuvant Chemo ± RT** | **Upfront Surgery (Nephrectomy)** → **Adjuvant Chemo ± RT** |
+| **Pre-op Chemo** | **Vincristine + Dactinomycin ×4-6 Weeks** (Downstages, Reduces Rupture) | **Not Standard** |
+| **Staging** | **Post-Chemo (SIOP Staging)** | **Pre-Chemo (COG Staging — Surgical)** |
+| **Advantage** | **Less Rupture, Better Renal Preservation (Bilateral)** | **Accurate Pre-Tx Staging, Immediate Histology** |
+| **Bilateral Wilms** | **Pre-op Chemo Mandatory** → **Nephron-Sparing Surgery** | **Biopsy → Chemo → Nephron-Sparing Surgery** |
+
+### Staging (SIOP / COG — Similar Principles)
+
+| Stage | Definition |
+|-------|------------|
+| **I** | **Tumour Limited to Kidney, Completely Resected**, No Rupture |
+| **II** | **Extension Beyond Kidney (Renal Sinus, Vessels, Perinephric Fat)**, Completely Resected |
+| **III** | **Residual Non-Haematogenous Tumour** (Positive Margins, Nodes+, Rupture, Biopsy, Peritoneal Implants) |
+| **IV** | **Haematogenous Mets** (Lung, Liver, Bone, Brain) |
+| **V** | **Bilateral** |
+
+### Treatment by Stage (SIOP / COG)
+
+| Stage | Histology | Chemo | RT |
+|-------|-----------|-------|----|
+| **I** | Favourable | **Vincristine + Dactinomycin ×4-6 Mo** | **No** |
+| **II** | Favourable | **Vincristine + Dactinomycin + Doxorubicin ×6-9 Mo** | **No** |
+| **III** | Favourable | **Vincristine + Dactinomycin + Doxorubicin (+ Cyclophosphamide/Etoposide)** | **Yes (Flank/Abdominal)** |
+| **IV** | Favourable | **Intensive (DD-4A / REG)** | **Lung RT if Mets Persist** |
+| **Any** | **Anaplastic** | **Regimen UH-1 (Cyclophosphamide, Etoposide, Carboplatin)** | **Yes** |
+
+---
+
+## 4. Rhabdomyosarcoma (RMS)
+
+### Histology & Genetics
+
+| Subtype | Frequency | Genetics | Prognosis |
+|---------|-----------|----------|-----------|
+| **Embryonal (ERMS)** | **60-70%** | **No PAX-FOXO1** (PAX3/7-FOXO1 Negative) | **Better** |
+| **Alveolar (ARMS)** | **20-30%** | **t(2;13) PAX3-FOXO1, t(1;13) PAX7-FOXO1** | **Worse** |
+| **Pleomorphic/Sclerosing** | Rare | Variable | Variable |
+
+### Staging (TNM / IRSG / COG)
+
+| IRSG Group | Definition |
+|------------|------------|
+| **I** | **Localised, Resected (R0), No Nodes** |
+| **II** | **Localised, Gross Residual (R1/R2), No Nodes** OR **Resected, Nodes+** |
+| **III** | **Localised, Unresected (R2), No Nodes** |
+| **IV** | **Distant Mets** (Lung, Bone, BM, Brain) |
+
+**Risk Stratification (COG ARST):**
+
+| Risk Group | Criteria | Treatment |
+|------------|----------|-----------|
+| **Low** | **Embryonal, Stage I/II, Favourable Site (Orbit, GU Non-Bladder/Prostate, Biliary)** | **VA (Vincristine, Dactinomycin) ×22 Weeks** |
+| **Intermediate** | **Embryonal, Stage III / Unfavourable Site**; **Alveolar, Stage I/II** | **VAC (Vincristine, Dactinomycin, Cyclophosphamide) ± RT** |
+| **High** | **Alveolar, Stage III/IV**; **Embryonal, Stage IV** | **VAC + RT + Irinotecan/Vincristine (IRS-IV/ARST)** |
+
+### IRSG Favourable vs Unfavourable Sites
+
+| Favourable | Unfavourable |
+|------------|--------------|
+| **Orbit**, **Head/Neck (Non-Parameningeal)**, **GU (Non-Bladder/Prostate: Paratesticular, Vagina/Uterus)**, **Biliary** | **Bladder/Prostate**, **Parameningeal (H&N)**, **Extremity**, **Trunk**, **Retroperitoneum**, **Pelvis** |
+
+### Treatment (COG ARST Protocols)
+
+| Risk | Regimen |
+|------|---------|
+| **Low** | **VA (Vincristine + Dactinomycin) ×22 Weeks** |
+| **Intermediate** | **VAC (Vincristine, Dactinomycin, Cyclophosphamide) ×43 Weeks + RT (36-50.4Gy)** |
+| **High** | **VAC + Irinotecan/Vincristine (IVA) + RT** |
+
+---
+
+## 5. Retinoblastoma
+
+### Genetics & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Incidence** | **2-3% Childhood Cancer** (~50/year UK) |
+| **Peak Age** | **<3 years** (Median 18-24 months) |
+| **Genetics** | **RB1 Germline (40%) = Heritable, Bilateral/Multifocal, Second Cancer Risk** |
+| | **RB1 Somatic (60%) = Sporadic, Unilateral, Unifocal** |
+| **Screening** | **Genetic Testing + Counselling**; **Siblings/Offspring Surveillance** |
+
+### IIRC Staging (International Intraocular Retinoblastoma Classification)
+
+| Group | Definition |
+|-------|------------|
+| **A** | **Small Tumours (<3mm), Confined to Retina, Away from Fovea/Optic Disc** |
+| **B** | **Larger Tumours (>3mm), No Vitreous/Subretinal Seeds** |
+| **C** | **Local Vitreous/Subretinal Seeds** |
+| **D** | **Diffuse Vitreous/Subretinal Seeds** |
+| **E** | **Advanced: Tumour Touching Lens, Anterior Segment Invasion, Neovascular Glaucoma, Phthisis** |
+
+### Management
+
+| IIRC Group | Treatment |
+|------------|-----------|
+| **A-B** | **Focal Therapy (Laser, Cryotherapy, Thermotherapy) ± Systemic Chemo (VEC ×6 Cycles)** |
+| **C-D** | **Systemic Chemo (VEC ×6-9 Cycles: Vincristine, Etoposide, Carboplatin) + Local Therapy** |
+| **E** | **Primary Enucleation** (If No Visual Potential) |
+| **Extraocular (II/III/IV)** | **High-Dose Chemo + RT ± Enucleation** |
+
+### Extraocular Staging (IIRC)
+
+| Stage | Definition |
+|-------|------------|
+| **II** | **Optic Nerve Invasion (Post-Lamina)** |
+| **III** | **Orbital/Regional Extension (IIIA: Orbit; IIIB: Regional Nodes)** |
+| **IV** | **Distant Mets (IVA: Bone Marrow/BM; IVB: CNS/Brain)** |
+
+---
+
+## 6. Hepatoblastoma
+
+### Epidemiology & Markers
+
+| Feature | Detail |
+|---------|--------|
+| **Incidence** | **1% Childhood Cancer** (~20/year UK) |
+| **Peak Age** | **<3 years** (Median 18-24 months) |
+| **Tumour Marker** | **AFP (Alpha-Fetoprotein) ↑ 90%** (Diagnosis, Monitoring) |
+| **Genetics** | **CTNNB1 (β-Catenin) Mut (80%)**, **APC, NFE2L2, TERT** |
+
+### PRETEXT Staging (Pre-Treatment Imaging — CT/MRI)
+
+| PRETEXT Group | Definition |
+|---------------|------------|
+| **I** | **1 Sector Involved** (3 Free Sectors) |
+| **II** | **2 Sectors Involved** (2 Free Sectors) |
+| **III** | **3 Sectors Involved** (1 Free Sector) |
+| **IV** | **4 Sectors Involved** (No Free Sectors) |
+
+**Annotation Factors (A-F):**
+- **V** (Vascular: HV/PV Involvement)
+- **P** (Portal Vein)
+- **H** (Hepatic Veins)
+- **C** (Caval/IVC)
+- **E** (Extrahepatic: Mets, Rupture)
+- **F** (Multifocal)
+
+### Treatment (SIOPEL Protocols)
+
+| PRETEXT | Chemo | Surgery | Outcome |
+|---------|-------|---------|---------|
+| **I-II** | **Cisplatin (PLADO: Cisplatin + Doxorubicin) ×4-6 Cycles** | **Resection** | **>90% OS** |
+| **III** | **Cisplatin-Based (SIOPEL-3/4: Cisplatin + Doxorubicin ± Carboplatin)** | **Resection (Often Post-Chemo)** | **80-85% OS** |
+| **IV** | **Intensive Cisplatin + Doxorubicin + Carboplatin (± Etoposide)** | **Resection if Resectable / Transplant if Unresectable** | **60-70% OS** |
+
+**Cisplatin Dose:** **Cisplatin 80mg/m² (Single Agent) / 60-80mg/m² (Combination)** — **Ototoxicity Risk (Audiometry Monitoring)**
+
+---
+
+## 7. FCPS/MRCP High-Yield Summary
+
+| Tumour | Key Points |
+|--------|------------|
+| **Neuroblastoma** | **N-MYC Amp (40%) = High Risk**; **INSS/INRG Staging**; **Low: Surgery/Obs; High: Intensive (COG/HR-NBL1) → ASCT → Anti-GD2 (Dinutuximab)** |
+| **Wilms Tumour** | **WT1/WTX Mut**; **SIOP (Pre-op Chemo) vs COG (Upfront Surgery)**; **Favourable Histology >90% OS**; **Anaplastic = Poor** |
+| **Rhabdomyosarcoma** | **Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+)**; **IRSG Risk (Site, Stage, Nodes)**; **Low: VA; Int: VAC+RT; High: VAC+Irinotecan+RT** |
+| **Retinoblastoma** | **RB1 Germline (40%) = Heritable/Bilateral**; **IIRC Groups A-E**; **A-B: Focal/Eye Salvage; E: Enucleation** |
+| **Hepatoblastoma** | **AFP Marker**; **PRETEXT I-IV**; **SIOPEL Cisplatin-Based**; **Transplant if Unresectable** |
+
+---
+
+## 8. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **18mo, Abdominal Mass, Urine VMA/HVA Elevated, N-MYC Amplified. Stage 4. Risk, Treatment?** | **High Risk (N-MYC Amp, Stage 4)** → **COG/HR-NBL1/SIOPEN: Induction (Rapid COJEC) → Surgery → BuMel ASCT → RT → Anti-GD2 (Dinutuximab) + Isotretinoin**. |
+| **Wilms Tumour — SIOP vs COG Approach Difference?** | **SIOP: Pre-op Chemo (Vincristine + Dactinomycin ×4-6 Wk) → Surgery → Adjuvant**; **COG: Upfront Surgery (Nephrectomy) → Adjuvant Chemo**. |
+| **Wilms Tumour Anaplasia — Types, Prognosis?** | **Focal Anaplasia: Intermediate**; **Diffuse Anaplasia: Poor** → **Regimen UH-1 (Cyclo, Etoposide, Carboplatin)**. |
+| **Rhabdomyosarcoma — Embryonal vs Alveolar Genetics?** | **Embryonal: PAX-FOXO1 Negative**; **Alveolar: t(2;13) PAX3-FOXO1 (60%), t(1;13) PAX7-FOXO1 (20%)** — **Alveolar Worse Prognosis**. |
+| **RMS Risk Groups — Favourable Sites?** | **Orbit, Head/Neck (Non-Parameningeal), GU (Non-Bladder/Prostate), Biliary** — **Low Risk if Stage I/II**. |
+| **Retinoblastoma IIRC Group C — Treatment?** | **Systemic Chemo (VEC: Vincristine, Etoposide, Carboplatin ×6-9 Cycles) + Local Therapy (Laser/Cryo/Thermotherapy)**. |
+| **Retinoblastoma RB1 Germline — Implications?** | **Heritable (40%)**, **Bilateral/Multifocal**, **Second Cancer Risk (Osteosarcoma, Soft Tissue Sarcoma)** — **Genetic Counselling, Lifelong Surveillance**. |
+| **Hepatoblastoma PRETEXT III — Chemo, Surgery?** | **SIOPEL: Cisplatin + Doxorubicin (± Carboplatin) ×6 Cycles → Resection** → **80-85% OS**. |
+| **Neuroblastoma Anti-GD2 — Drug, Schedule?** | **Dinutuximab (Ch14.18) 17.5mg/m²/d ×4 Days + IL-2 + GM-CSF + Isotretinoin** ×5 Cycles (Post-ASCT). |
+| **Wilms Tumour Bilateral — Approach?** | **Biopsy → Pre-op Chemo → Nephron-Sparing Surgery (Partial Nephrectomy) → Adjuvant Chemo ± RT**. |
+
+---
+
+## 9. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **INSS vs INRG Staging** | **INSS = Post-Surgical (Pathological)**; **INRG = Pre-Treatment Imaging (IDRFs)** — **INRG Used for Risk Stratification Now** |
+| **SIOP vs COG Wilms** | **SIOP: Pre-op Chemo First**; **COG: Upfront Surgery First** — **Both Give Similar Outcomes** |
+| **N-MYC Amplification** | **40% NB**, **Defines High Risk**, **Poor Prognosis** — **Target for Therapy?** |
+| **MS (4S) Neuroblastoma** | **<18mo, Liver/Skin/BM Mets (<10% BM)** — **Can Regress Spontaneously** — **Observation or Minimal Chemo** |
+| **Embryonal vs Alveolar RMS** | **Embryonal: PAX-FOXO1 Negative, Better**; **Alveolar: PAX3/7-FOXO1 Fusion, Worse** |
+| **IRSG Grouping** | **I: Resected; II: Residual/Nodes; III: Unresected; IV: Mets** — **Not TNM** |
+| **PRETEXT vs TNM** | **PRETEXT = Pre-Tx Imaging (CT/MRI), 4 Sectors**; **TNM = Post-Surgical** |
+| **Cisplatin Ototoxicity** | **Cumulative Dose >400mg/m²** → **High-Frequency Hearing Loss** — **Audiometry Pre/Post Each Cycle** |
+| **AFP in Hepatoblastoma** | **Diagnostic & Monitoring**; **Normal AFP = Rare (Small Cell Undifferentiated)** |
+
+**Mnemonic: PAED-SOLID**
+- **P**aediatric Solids: **NB, Wilms, RMS, Retino, Hepato**
+- **N**euroblastoma: **N-MYC Amp (40%) = High Risk**, **INSS/INRG**, **Anti-GD2 (Dinutuximab)**
+- **W**ilms: **WT1/WTX**, **SIOP (Pre-op Chemo) vs COG (Upfront Surgery)**
+- **R**habdomyosarcoma: **Embryonal (PAX-FOXO1-) vs Alveolar (PAX-FOXO1+)**
+- **D**inutuximab: **Anti-GD2**, Post-ASCT + Isotretinoin
+- **S**ite Favourable RMS: **Orbit, H&N (Non-Parameningeal), GU Non-Bladder, Biliary**
+- **O**cular Retinoblastoma: **RB1 Germline (40%) = Bilateral/Heritable**, **IIRC A-E Groups**
+- **L**iver Hepatoblastoma: **AFP**, **PRETEXT I-IV**, **SIOPEL Cisplatin**
+- **I**RC Retinoblastoma: **A (Small), B (Large), C (Local Seeds), D (Diffuse Seeds), E (Advanced/Enucleate)**
+- **I**mmunotherapy NB: **Anti-GD2 (Dinutuximab) + IL-2 + GM-CSF + Isotretinoin**
+- **D**ose Cisplatin: **Ototoxicity (Audiometry), Nephrotoxicity (Hydration)**
+- **A**naplastic Wilms: **Diffuse = Poor**, **Regimen UH-1**
+
+---
+
+## 10. Mind Map
+
+```mermaid
+mindmap
+  root((Paediatric Solid Tumours))
+    Neuroblastoma
+      N-MYC Amp (40%) = High Risk
+      INSS/INRG Staging
+      Urine VMA/HVA
+      Low/Int: Surgery/Obs
+      High: COG/HR-NBL1/SIOPEN → ASCT → Anti-GD2
+    Wilms Tumour
+      WT1/WTX Mut
+      SIOP (Pre-op Chemo) vs COG (Upfront Surgery)
+      Favourable Histology >90% OS
+      Anaplastic: Diffuse = Poor
+    Rhabdomyosarcoma
+      Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+)
+      IRSG: I, II, III, IV
+      Favourable Sites: Orbit, H&N, GU Non-Bladder, Biliary
+      Low: VA; Int: VAC+RT; High: VAC+Irinotecan+RT
+    Retinoblastoma
+      RB1 Germline (40%) = Heritable/Bilateral
+      IIRC A (Small) to E (Enucleate)
+      VEC Chemo + Local Therapy
+      Extraocular: Enucleation + Chemo + RT
+    Hepatoblastoma
+      AFP Marker
+      PRETEXT I-IV (Sectors)
+      SIOPEL Cisplatin-Based
+      Transplant if Unresectable
+```
+
+---
+
+## 11. One-Page Revision Card
+
+| Tumour | Key Points |
+|--------|------------|
+| **Neuroblastoma** | N-MYC Amp = High Risk; INSS/INRG; Anti-GD2 (Dinutuximab) Post-ASCT |
+| **Wilms** | WT1/WTX; SIOP (Pre-op Chemo) vs COG (Upfront Surgery); Anaplastic Diffuse = Poor |
+| **RMS** | Embryonal (PAX-FOXO1-) > Alveolar (PAX-FOXO1+); Favourable Sites; VA/VAC/IVA |
+| **Retinoblastoma** | RB1 Germline 40%; IIRC A-E; VEC Chemo + Focal; E=Enucleate |
+| **Hepatoblastoma** | AFP; PRETEXT I-IV; SIOPEL Cisplatin; Transplant if Unresectable |
+
+---
+
+## 12. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 13. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| NB Staging/Risk | | |
+| Wilms SIOP vs COG | | |
+| RMS Genetics/Sites/Risk | | |
+| Retinoblastoma IIRC | | |
+| Hepatoblastoma PRETEXT | | |
+| NB High-Risk Protocol | | |
+| Bilateral Wilms | | |
+| RMS Favourable Sites | | |
+
+---
+
+## 14. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Paediatric ALL]], [[Paediatric AML]], [[Paediatric Lymphomas]], [[Paediatric CNS Tumours]], [[COG Neuroblastoma]], [[SIOP Wilms]], [[IRSG RMS]], [[IIRC Retinoblastoma]], [[SIOPEL Hepatoblastoma]], [[Anti-GD2 Dinutuximab]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 15. MCQs (10)
+
+
+**1.** Regarding Paediatric Solid Tumours (Neuroblastoma), which statement is correct?
+   A. **N-MYC Amp (40%) = High Risk**
+   B. **N-MYC - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **N-MYC Amp (40%) = High Risk**; **INSS/INRG Staging**; **Low: Surgery/Obs; High: Intensive (COG/HR-NBL1) → ASCT → Anti-...
+
+
+**2.** Regarding Paediatric Solid Tumours (Wilms Tumour), which statement is correct?
+   A. **WT1/WTX Mut**
+   B. **WT1/WTX - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **WT1/WTX Mut**; **SIOP (Pre-op Chemo) vs COG (Upfront Surgery)**; **Favourable Histology >90% OS**; **Anaplastic = Poor...
+
+
+**3.** Regarding Paediatric Solid Tumours (Rhabdomyosarcoma), which statement is correct?
+   A. **Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+)**
+   B. **Embryonal - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+)**; **IRSG Risk (Site, Stage, Nodes)**; **Low: VA; Int: VAC+RT; High...
+
+
+**4.** Regarding Paediatric Solid Tumours (Retinoblastoma), which statement is correct?
+   A. **RB1 Germline (40%) = Heritable/Bilateral**
+   B. **RB1 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **RB1 Germline (40%) = Heritable/Bilateral**; **IIRC Groups A-E**; **A-B: Focal/Eye Salvage; E: Enucleation**
+
+
+**5.** Regarding Paediatric Solid Tumours (Hepatoblastoma), which statement is correct?
+   A. **AFP Marker**
+   B. **AFP - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **AFP Marker**; **PRETEXT I-IV**; **SIOPEL Cisplatin-Based**; **Transplant if Unresectable**
+
+
+**6.** Regarding Paediatric Solid Tumours (FCPS/MRCP High Yield - Paediat), which statement is correct?
+   - A. FCPS/MRCP High Yield - Paediatric Solid Tumours: Neuroblastoma (NB) N-MYC, INSS/INRG, Risk (L1/L2/MS
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — FCPS/MRCP High Yield - Paediatric Solid Tumours: Neuroblastoma (NB) N-MYC, INSS/INRG, Risk (L1/L2/MS/M), COG/HR-NBL1/SIO...
+
+
+**7.** Regarding Paediatric Solid Tumours (Wilms (Nephroblastoma) WT1/WTX), which statement is correct?
+   - A. Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-op Chemo vs Upfront Surgery), Anaplastic
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-op Chemo vs Upfront Surgery), Anaplastic
+
+
+**8.** Regarding Paediatric Solid Tumours (Rhabdomyosarcoma (RMS) Embryon), which statement is correct?
+   - A. Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7-FOXO1, IRSG/COG Risk, ARST
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7-FOXO1, IRSG/COG Risk, ARST
+
+
+**9.** Regarding Paediatric Solid Tumours (Retinoblastoma RB1, IIRC, Enuc), which statement is correct?
+   - A. Retinoblastoma RB1, IIRC, Enucleation, Eye Salvage
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Retinoblastoma RB1, IIRC, Enucleation, Eye Salvage
+
+
+**10.** Regarding Paediatric Solid Tumours (Hepatoblastoma AFP, PRETEXT, S), which statement is correct?
+   - A. Hepatoblastoma AFP, PRETEXT, SIOPEL, Cisplatin Dose
+   - B. None of the above
+   - C. Not applicable in clinical practice
+   - D. Used only in research settings
+   - **Answer: A** — Hepatoblastoma AFP, PRETEXT, SIOPEL, Cisplatin Dose
+
+
+## 16. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **N-MYC Amp (40%) = High Risk**
+   - B. **N-MYC (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **N-MYC Amp (40%) = High Risk**; **INSS/INRG Staging**; **Low: Surgery/Obs; High: Intensive (COG/HR-NBL1) → ASCT → Anti-...
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **WT1/WTX Mut**
+   - B. **WT1/WTX (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **WT1/WTX Mut**; **SIOP (Pre-op Chemo) vs COG (Upfront Surgery)**; **Favourable Histology >90% OS**; **Anaplastic = Poor...
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+)**
+   - B. **Embryonal (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+)**; **IRSG Risk (Site, Stage, Nodes)**; **Low: VA; Int: VAC+RT; High...
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **RB1 Germline (40%) = Heritable/Bilateral**
+   - B. **RB1 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **RB1 Germline (40%) = Heritable/Bilateral**; **IIRC Groups A-E**; **A-B: Focal/Eye Salvage; E: Enucleation**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **AFP Marker**
+   - B. **AFP (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **AFP Marker**; **PRETEXT I-IV**; **SIOPEL Cisplatin-Based**; **Transplant if Unresectable**
+
+
+**6.** A clinician encounters a patient with this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - Paediatric Solid Tumours: Neuroblastoma (NB) N-MYC, INSS/INRG, Risk (L1/L2/MS
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — FCPS/MRCP High Yield - Paediatric Solid Tumours: Neuroblastoma (NB) N-MYC, INSS/INRG, Risk (L1/L2/MS/M), COG/HR-NBL1/SIO...
+
+
+**7.** On further evaluation, the finding is confirmed. Most appropriate next step:
+   - A. Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-op Chemo vs Upfront Surgery), Anaplastic
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-op Chemo vs Upfront Surgery), Anaplastic
+
+
+**8.** The patient asks about management options. Best evidence-based response:
+   - A. Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7-FOXO1, IRSG/COG Risk, ARST
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7-FOXO1, IRSG/COG Risk, ARST
+
+
+**9.** Treatment is initiated. Most important monitoring parameter:
+   - A. Retinoblastoma RB1, IIRC, Enucleation, Eye Salvage
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Retinoblastoma RB1, IIRC, Enucleation, Eye Salvage
+
+
+**10.** Follow-up assessment reveals the following. Best next step:
+   - A. Hepatoblastoma AFP, PRETEXT, SIOPEL, Cisplatin Dose
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention
+   - **Answer: A** — Hepatoblastoma AFP, PRETEXT, SIOPEL, Cisplatin Dose
+
+
+## 17. Flashcards
+
+**Q1:** Neuroblastoma?
+**A1:** N-MYC Amp (40%) = High Risk; INSS/INRG Staging; Low: Surgery/Obs; High: Intensive (COG/HR-NBL1) → ASCT → Anti-GD2 (Dinutuximab)
+
+**Q2:** Wilms Tumour?
+**A2:** WT1/WTX Mut; SIOP (Pre-op Chemo) vs COG (Upfront Surgery); Favourable Histology >90% OS; Anaplastic = Poor
+
+**Q3:** Rhabdomyosarcoma?
+**A3:** Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+); IRSG Risk (Site, Stage, Nodes); Low: VA; Int: VAC+RT; High: VAC+Irinotecan+RT
+
+**Q4:** Retinoblastoma?
+**A4:** RB1 Germline (40%) = Heritable/Bilateral; IIRC Groups A-E; A-B: Focal/Eye Salvage; E: Enucleation
+
+**Q5:** Hepatoblastoma?
+**A5:** AFP Marker; PRETEXT I-IV; SIOPEL Cisplatin-Based; Transplant if Unresectable
+
+
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 6 | A | FCPS/MRCP High Yield - Paediatric Solid Tumours | FCPS/MRCP High Yield - Paediatric Solid Tumours: Neuroblastoma (NB) N-MYC, INSS/INRG, Risk (L1/L2/MS/M), COG/HR-NBL1/SIO |
+| 7 | A | Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-o | Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-op Chemo vs Upfront Surgery), Anaplastic |
+| 8 | A | Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7- | Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7-FOXO1, IRSG/COG Risk, ARST |
+| 9 | A | Retinoblastoma RB1, IIRC, Enucleation, Eye Salvage | Retinoblastoma RB1, IIRC, Enucleation, Eye Salvage |
+| 10 | A | Hepatoblastoma AFP, PRETEXT, SIOPEL, Cisplatin Dos | Hepatoblastoma AFP, PRETEXT, SIOPEL, Cisplatin Dose |
+| 11 | A | Incidence | Incidence: 8-10% Childhood Cancer; Most Common Extracranial Solid Tumour |
+| 12 | A | Peak Age | Peak Age: <5 years (Median 18-24 months); Rare >10yr |
+| 13 | A | Origin | Origin: Sympathetic Nervous System (Adrenal 40%, Paraspinal 30%, Neck/Chest/Pelvis) |
+| 14 | A | Key Markers | Key Markers: N-MYC Amplification (40%) = High Risk; ALK Mut (10-15%); 1p Deletion, 11q Deletion, 17q Gain |
+| 15 | A | Urine Catecholamines | Urine Catecholamines: VMA (Vanillylmandelic Acid), HVA (Homovanillic Acid) — Elevated 90% |
+| 16 | A | 1 | 1: Localised, Resected,Negative Margins, No Nodes |
+| 17 | A | 2A/2B | 2A/2B: Localised, Unresectable (2A: No Nodes; 2B: Ipsilateral Nodes+) |
+| 18 | A | 3 | 3: Unresectable, Crosses Midline OR Ipsilateral Tumour + Contralateral Nodes |
+| 19 | A | 4 | 4: Distant Mets (Bone, BM, Liver, Skin, Distant Nodes) — Age <18mo = 4S |
+| 20 | A | 4S | 4S: <18mo, Localised Primary (1/2/3) + Liver/Skin/BM Mets (<10% BM) — Spontaneous Regression |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 6 | A | FCPS/MRCP High Yield - Paediatric Solid Tumours | FCPS/MRCP High Yield - Paediatric Solid Tumours: Neuroblastoma (NB) N-MYC, INSS/INRG, Risk (L1/L2/MS/M), COG/HR-NBL1/SIO |
+| 7 | A | Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-o | Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-op Chemo vs Upfront Surgery), Anaplastic |
+| 8 | A | Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7- | Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7-FOXO1, IRSG/COG Risk, ARST |
+| 9 | A | Retinoblastoma RB1, IIRC, Enucleation, Eye Salvage | Retinoblastoma RB1, IIRC, Enucleation, Eye Salvage |
+| 10 | A | Hepatoblastoma AFP, PRETEXT, SIOPEL, Cisplatin Dos | Hepatoblastoma AFP, PRETEXT, SIOPEL, Cisplatin Dose |
+| 11 | A | Incidence | Incidence: 8-10% Childhood Cancer; Most Common Extracranial Solid Tumour |
+| 12 | A | Peak Age | Peak Age: <5 years (Median 18-24 months); Rare >10yr |
+| 13 | A | Origin | Origin: Sympathetic Nervous System (Adrenal 40%, Paraspinal 30%, Neck/Chest/Pelvis) |
+| 14 | A | Key Markers | Key Markers: N-MYC Amplification (40%) = High Risk; ALK Mut (10-15%); 1p Deletion, 11q Deletion, 17q Gain |
+| 15 | A | Urine Catecholamines | Urine Catecholamines: VMA (Vanillylmandelic Acid), HVA (Homovanillic Acid) — Elevated 90% |
+| 16 | A | 1 | 1: Localised, Resected,Negative Margins, No Nodes |
+| 17 | A | 2A/2B | 2A/2B: Localised, Unresectable (2A: No Nodes; 2B: Ipsilateral Nodes+) |
+| 18 | A | 3 | 3: Unresectable, Crosses Midline OR Ipsilateral Tumour + Contralateral Nodes |
+| 19 | A | 4 | 4: Distant Mets (Bone, BM, Liver, Skin, Distant Nodes) — Age <18mo = 4S |
+| 20 | A | 4S | 4S: <18mo, Localised Primary (1/2/3) + Liver/Skin/BM Mets (<10% BM) — Spontaneous Regression |## Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Neuroblastoma | N-MYC Amp (40%) = High Risk; INSS/INRG Staging; Low: Surgery/Obs; High: Intensive (COG/HR-NBL1) → ASCT → Anti-GD2 (Dinut |
+| 2 | A | Wilms Tumour | WT1/WTX Mut; SIOP (Pre-op Chemo) vs COG (Upfront Surgery); Favourable Histology >90% OS; Anaplastic = Poor |
+| 3 | A | Rhabdomyosarcoma | Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+); IRSG Risk (Site, Stage, Nodes); Low: VA; Int: VAC+RT; High: VAC+Irin |
+| 4 | A | Retinoblastoma | RB1 Germline (40%) = Heritable/Bilateral; IIRC Groups A-E; A-B: Focal/Eye Salvage; E: Enucleation |
+| 5 | A | Hepatoblastoma | AFP Marker; PRETEXT I-IV; SIOPEL Cisplatin-Based; Transplant if Unresectable |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Neuroblastoma | N-MYC Amp (40%) = High Risk; INSS/INRG Staging; Low: Surgery/Obs; High: Intensive (COG/HR-NBL1) → ASCT → Anti-GD2 (Dinut |
+| 2 | A | Wilms Tumour | WT1/WTX Mut; SIOP (Pre-op Chemo) vs COG (Upfront Surgery); Favourable Histology >90% OS; Anaplastic = Poor |
+| 3 | A | Rhabdomyosarcoma | Embryonal (PAX-FOXO1-) vs Alveolar (PAX3/7-FOXO1+); IRSG Risk (Site, Stage, Nodes); Low: VA; Int: VAC+RT; High: VAC+Irin |
+| 4 | A | Retinoblastoma | RB1 Germline (40%) = Heritable/Bilateral; IIRC Groups A-E; A-B: Focal/Eye Salvage; E: Enucleation |
+| 5 | A | Hepatoblastoma | AFP Marker; PRETEXT I-IV; SIOPEL Cisplatin-Based; Transplant if Unresectable |
+
+
+**Q6:** FCPS/MRCP High Yield - Paediatric Solid Tumours?
+**A6:** FCPS/MRCP High Yield - Paediatric Solid Tumours: Neuroblastoma (NB) N-MYC, INSS/INRG, Risk (L1/L2/MS/M), COG/HR-NBL1/SIOPEN
+
+**Q7:** Key Point?
+**A7:** Wilms (Nephroblastoma) WT1/WTX, SIOP vs COG (Pre-op Chemo vs Upfront Surgery), Anaplastic
+
+**Q8:** Key Point?
+**A8:** Rhabdomyosarcoma (RMS) Embryonal/Alveolar, PAX3/7-FOXO1, IRSG/COG Risk, ARST
+## 18. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Paediatric Cancers|Paediatric Cancers]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prescription Writing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.11. PRINCIPLES OF RATIONAL PRESCRIBING</span>
+      <div class="h1">Prescription Writing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Write a valid prescription meeting UK Misuse of Drugs / BNF standards</li><li>[ ] Recall the <b>7 mandatory elements</b> of a legal prescription</li><li>[ ] Differentiate between <b>generic</b> and <b>trade</b> (brand) names</li><li>[ ] Identify controlled drug (CD) prescription requirements (Schedules 1-5)</li><li>[ ] Recognise common prescribing errors (sound-alike, look-alike — LASA)</li><li>[ ] Apply correct dose, route, frequency, and duration conventions</li><li>[ ] Use appropriate abbreviations safely</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Legal Requirements of a UK Prescription (BNF / GPhC)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Element</th><th>Example</th><th>Mandatory?</th></tr><tr><td>---------</td><td>---------</td><td>-----------</td></tr><tr><td>Patient's full name</td><td>"Mr John A SMITH"</td><td>✓</td></tr><tr><td>Patient's address</td><td>"12 High Street, London"</td><td>✓</td></tr><tr><td>Patient's date of birth / age</td><td>"DOB 01/01/1960 (66 yr)"</td><td>✓</td></tr><tr><td>Drug name (generic preferred)</td><td>"Amlodipine 5 mg tablets"</td><td>✓</td></tr><tr><td>Dose</td><td>"5 mg"</td><td>✓</td></tr><tr><td>Route</td><td>"Oral" (PO)</td><td>✓</td></tr><tr><td>Frequency</td><td>"Once daily" (OD)</td><td>✓</td></tr><tr><td>Quantity to dispense</td><td>"28 tablets"</td><td>✓ (CDs)</td></tr><tr><td>Duration / course length</td><td>"For 28 days"</td><td>✓</td></tr><tr><td>Prescriber's signature</td><td>(handwritten, indelible)</td><td>✓</td></tr><tr><td>Prescriber's registration number</td><td>GMC No. 1234567</td><td>✓</td></tr><tr><td>Date of issue</td><td>"15/06/2026"</td><td>✓</td></tr><tr><td>Practice / hospital address</td><td>"Royal London Hospital"</td><td>✓</td></tr></table>
+<p><b>Controlled drugs additionally require:</b></p>
+<ul><li>Dose in words AND figures (e.g., "50 mg — fifty mg")</li><li>Total quantity in words AND figures</li><li>Prescriber's address (NHS or private)</li><li>Handwritten signature (no electronic)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — Safe Prescription Writing</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient encounter] --&gt; B[Confirm identity&lt;br/&gt;Name, DOB, address] B --&gt; C[Confirm allergy status] C --&gt; D[Check drug + dose + route + frequency] D --&gt; E{Is this a&lt;br/&gt;controlled drug?} E --&gt;|Yes| F[CD requirements:&lt;br/&gt;words + figures, handwritten] E --&gt;|No| G[Standard Rx] F --&gt; H[Write drug name in full&lt;br/&gt;generic unless narrow TI] G --&gt; H H --&gt; I[Use accepted abbreviations only&lt;br/&gt;OD, BD, TDS, QDS, PRN, PO, IV, IM, SC] I --&gt; J[Add duration and quantity] J --&gt; K[Sign + date + GMC number] K --&gt; L{Is this a&lt;br/&gt;high-risk drug?&lt;br/&gt;warfarin, methotrexate, insulin, opioids} L --&gt;|Yes| M[Double-check dose, add monitoring plan] L --&gt;|No| N[Issue Rx] M --&gt; N </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Common Abbreviations (Safe vs Unsafe)</div>
+<table class="ctable"><tr><th>Abbreviation</th><th>Meaning</th><th>Safe?</th></tr><tr><td>--------------</td><td>---------</td><td>-------</td></tr><tr><td>**OD**</td><td>Once daily</td><td>✓</td></tr><tr><td>**BD**</td><td>Twice daily</td><td>✓</td></tr><tr><td>**TDS**</td><td>Three times daily</td><td>✓</td></tr><tr><td>**QDS**</td><td>Four times daily</td><td>✓</td></tr><tr><td>**PRN**</td><td>When required</td><td>✓</td></tr><tr><td>**PO / NG / PR**</td><td>Oral / Nasogastric / Rectal</td><td>✓</td></tr><tr><td>**IV / IM / SC**</td><td>Intravenous / Intramuscular / Subcutaneous</td><td>✓</td></tr><tr><td>**mane / nocte**</td><td>Morning / Night</td><td>✓</td></tr><tr><td>**stat**</td><td>Immediately</td><td>✓</td></tr><tr><td>**µg**</td><td>Microgram</td><td>✓ (never write "mcg")</td></tr><tr><td>**U or u**</td><td>Unit</td><td>✗ — write "units" (insulin)</td></tr><tr><td>**.X mg** (trailing zero)</td><td>E.g., "5.0 mg"</td><td>✗ — never trailing zeros</td></tr><tr><td>**X.0 mg** (no leading zero)</td><td>E.g., ".5 mg"</td><td>✗ — always use leading zero</td></tr><tr><td>**q.d / q.o.d**</td><td>Daily / every other day</td><td>✗ — avoid (qd confused with qid)</td></tr><tr><td>**SC / SQ**</td><td>Subcutaneous</td><td>Avoid SQ; use SC</td></tr><tr><td>**MS / MSO4**</td><td>Morphine sulfate</td><td>✗ — write in full</td></tr></table>
+<div class="sub-h">4.2 Generic vs Trade Naming</div>
+<table class="ctable"><tr><th>Feature</th><th>Generic (INN)</th><th>Trade (Brand)</th></tr><tr><td>---------</td><td>--------------</td><td>---------------</td></tr><tr><td>**Definition**</td><td>International Non-proprietary Name</td><td>Manufacturer's brand name</td></tr><tr><td>**Example**</td><td>Amlodipine</td><td>Istin®, Amlostin®</td></tr><tr><td>**Cost**</td><td>Cheaper (no brand premium)</td><td>More expensive</td></tr><tr><td>**Bioequivalence**</td><td>Standard (within 80-125% of brand)</td><td>Reference</td></tr><tr><td>**Narrow TI drugs**</td><td>Use BRAND (e.g., theophylline, ciclosporin)</td><td>Brand consistency critical</td></tr><tr><td>**Recommended**</td><td>Yes (NHS, cost-effective prescribing)</td><td>Selective</td></tr></table>
+<p><b>Narrow therapeutic index drugs — always prescribe by brand:</b></p>
+<ul><li>Ciclosporin, tacrolimus (transplant)</li><li>Theophylline (some brands)</li><li>Carbamazepine (epilepsy, neuropathic pain)</li><li>Phenytoin (epilepsy)</li><li>Digoxin (in some trusts)</li><li>Levothyroxine (consistency)</li></ul>
+<div class="sub-h">4.3 UK Misuse of Drugs Act — Schedule Categories</div>
+<table class="ctable"><tr><th>Schedule</th><th>Examples</th><th>Rx requirements</th></tr><tr><td>----------</td><td>----------</td><td>-----------------</td></tr><tr><td>**1**</td><td>Cannabis, LSD, MDMA (ecstasy)</td><td>None (no medicinal use)</td></tr><tr><td>**2**</td><td>Diamorphine (heroin), morphine, methadone, fentanyl, cocaine</td><td>Full CD Rx — handwritten, dose + quantity in words & figures, 28-day validity</td></tr><tr><td>**3**</td><td>Buprenorphine, temazepam, tramadol, gabapentin, pregabalin</td><td>Standard Rx (no CD form needed; some prescription-writing requirements)</td></tr><tr><td>**4**</td><td>Most benzodiazepines (diazepam, lorazepam)</td><td>Standard Rx</td></tr><tr><td>**5**</td><td>Codeine (<2.5 mg/mL), weak opioids</td><td>Standard Rx</td></tr></table>
+<p><b>Note:</b> 2019 re-classification: gabapentin and pregabalin became Schedule 3 CDs.</p>
+<div class="sub-h">4.4 Common LASA Drugs (Look-Alike, Sound-Alike)</div>
+<table class="ctable"><tr><th>Drug 1</th><th>Drug 2</th><th>Risk</th></tr><tr><td>--------</td><td>--------</td><td>------</td></tr><tr><td>**Clozapine**</td><td>Clonidine</td><td>Antipsychotic vs antihypertensive</td></tr><tr><td>**Metformin**</td><td>Metronidazole</td><td>Diabetes vs anaerobes</td></tr><tr><td>**Amlodipine**</td><td>Amiloride</td><td>CCB vs K-sparing diuretic</td></tr><tr><td>**Prednisolone**</td><td>Prednisone</td><td>Dosing differs (prednisone requires liver conversion)</td></tr><tr><td>**Hydroxyzine**</td><td>Hydralazine</td><td>Antihistamine vs antihypertensive</td></tr><tr><td>**Sulfasalazine**</td><td>Sulfadiazine</td><td>DMARD vs antimicrobial</td></tr><tr><td>**Dalteparin**</td><td>Danaparoid</td><td>LMWH vs LMWH-like</td></tr><tr><td>**Rifampicin**</td><td>Rifaximin</td><td>TB vs gut-selective</td></tr></table>
+<p><b>Mitigation:</b> Tall man lettering (CLOZAPine, cloNIDine), computer alerts, double-check.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>7 mandatory Rx elements</td><td>Name, address, DOB, drug, dose, route, frequency</td></tr><tr><td>8th for CD</td><td>Quantity in words and figures</td></tr><tr><td>Generic name recommended</td><td>Yes (cost-effective) — except narrow TI drugs</td></tr><tr><td>Always write "microgram" not "mcg" or "µg" (BNF)</td><td>Avoid confusion with "mg"</td></tr><tr><td>Never write trailing zero ("5.0")</td><td>Risk of 10× overdose</td></tr><tr><td>Always use leading zero (".5" → "0.5")</td><td>Avoid 5× overdose</td></tr><tr><td>Methotrexate</td><td>Always weekly in RA, never daily (fatal pancytopenia)</td></tr><tr><td>Warfarin</td><td>Write dose in mg (not units)</td></tr><tr><td>Insulin</td><td>Write "units" not "U" — "10 U" → "100 units" error</td></tr><tr><td>High-risk drugs (PINCH)</td><td>Potassium, Insulin, Narcotics, Chemo, Heparin (and anticoagulants)</td></tr><tr><td>Prescription validity (UK)</td><td>6 months NHS; 28 days for Schedule 2/3 CDs</td></tr><tr><td>Repeat prescriptions</td><td>Limited to 6 months supply without review</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>List the 7 mandatory elements of a UK prescription.</b></li></ol>
+<p><i>Patient name, address, DOB, drug, dose, route, frequency (plus prescriber signature, date, registration, duration, quantity).</i></p>
+<ol><li><b>What additional requirement applies to a controlled drug (Schedule 2) prescription?</b></li></ol>
+<p><i>Dose and quantity in WORDS AND FIGURES; prescriber's address; handwritten signature; 28-day validity.</i></p>
+<ol><li><b>Why is "U" banned as an abbreviation for "units"?</b></li></ol>
+<p><i>It is misread as "0" — 10U insulin → 100 units (10× overdose). Always write "units."</i></p>
+<ol><li><b>What is the difference between "5 mg" and "5.0 mg"?</b></li></ol>
+<p><i>5 mg is correct. 5.0 mg has a TRAILING zero, which can be misread as 50 mg (10× overdose). NEVER use trailing zeros.</i></p>
+<ol><li><b>Which drugs should always be prescribed by BRAND name?</b></li></ol>
+<p><i>Narrow therapeutic index drugs: ciclosporin, tacrolimus, theophylline, carbamazepine, phenytoin (per local policy).</i></p>
+<ol><li><b>A junior doctor writes "methotrexate 2.5 mg TDS." What is the error?</b></li></ol>
+<p><i>Methotrexate in RA is WEEKLY, not three times daily. Daily dosing is fatal. The Rx should read "methotrexate 2.5 mg ONCE WEEKLY."</i></p>
+<ol><li><b>What does "PRN" mean? When should it be used?</b></li></ol>
+<p><i>Pro Re Nata — "when required." Used for symptom relief (analgesia, antiemetics) with explicit indication, dose, and minimum interval (e.g., "PRN pain, max 4 doses/24 hr").</i></p>
+<ol><li><b>What is "tall man" lettering? Give an example.</b></li></ol>
+<p><i>Mixed-case lettering for LASA drugs to highlight differences: CLOZAPine vs cloNIDine; prednisoLONE vs predniSONE; DOBUTamine vs DOPamine.</i></p>
+<ol><li><b>Why is "µg" or "mcg" problematic?</b></li></ol>
+<p><i>µg can be misread as "mg" (1000× overdose). "mcg" can be misread as "mg" or "mEq." BNF recommends "microgram" in full.</i></p>
+<ol><li><b>What is the validity of an NHS prescription? A Schedule 2 CD?</b></li></ol>
+<p><i>NHS Rx: 6 months. Schedule 2/3 CD Rx: 28 days.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>Generic vs Trade</td><td>Generic = INN (amlodipine); Trade = brand (Istin®). Default to generic unless narrow TI.</td></tr><tr><td>mg vs mcg</td><td>1 mg = 1000 microgram. Never abbreviate microgram; always write in full.</td></tr><tr><td>BD vs BID (US)</td><td>Both = twice daily. UK uses BD.</td></tr><tr><td>"Once daily" vs "mane"</td><td>Both morning. Use "OD" or "mane" consistently.</td></tr><tr><td>"As directed"</td><td>AVOID — ambiguous. Always specify dose, frequency, duration.</td></tr><tr><td>CD Schedules 1 vs 5</td><td>Schedule 1 = no medicinal use; Schedule 5 = weakest Rx requirements.</td></tr><tr><td>Schedule 2 vs Schedule 3</td><td>Both Rx-only, but Schedule 2 needs full CD Rx (words & figures).</td></tr><tr><td>Repeat Rx vs Acute Rx</td><td>Repeat Rx = ongoing medication (review 6-monthly); Acute Rx = one-off course.</td></tr><tr><td>Warfarin dose</td><td>Always mg, never units or fraction. INR-guided.</td></tr><tr><td>Insulin prescription</td><td>"X units" + brand (NovoRapid, Humalog) + device (pen, vial)</td></tr></table>
+<p><b>Mnemonic — 7 Rx essentials: "</b>N<b>ame </b>A<b>ddress </b>D<b>rug </b>D<b>ose </b>R<b>oute </b>F<b>requency </b>S<b>ignature"</b> (NADDRFS)</p>
+<p><b>Mnemonic — LASA mitigation: "</b>T<b>all </b>M<b>an </b>L<b>etters"</b> (T-M-L) + computer alerts + double-check</p>
+<p><b>Mnemonic — High-risk drugs: "</b>PINCH<b>"</b> (Potassium, Insulin, Narcotics, Chemo, Heparin) + <b>C</b> (anticoagulants) + <b>E</b> (Epoprostenol)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Prescription Writing)) Legal Elements Name Address DOB Drug Dose Route Frequency Signature CD Schedule Schedule 1 Schedule 2 Schedule 3 Schedule 4 Schedule 5 Naming Generic preferred Brand for narrow TI INN Abbreviations Safe OD BD TDS Avoid U mcg qd Trailing zero Leading zero LASA Tall man letters Double-check Computer alerts High-Risk Drugs Methotrexate weekly Insulin units Warfarin mg Digoxin mcg PINCH </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>7 Rx elements</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>CD Schedules</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Generic vs brand</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Safe abbreviations</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>LASA examples</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Methotrexate weekly</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>7 Rx elements</td><td>/5</td></tr><tr><td>CD requirements</td><td>/5</td></tr><tr><td>Generic vs brand</td><td>/5</td></tr><tr><td>Safe abbreviations</td><td>/5</td></tr><tr><td>LASA drugs</td><td>/5</td></tr><tr><td>High-risk drug errors</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/30**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which of the following is NOT a mandatory element of a UK NHS prescription?</b></li></ol>
+<p>A. Patient name B. Patient address C. Patient's blood group ✓ D. Drug name E. Prescriber signature</p>
+<ol><li><b>Schedule 2 controlled drug prescription requires:</b></li></ol>
+<p>A. Generic name only B. Dose in words AND figures ✓ C. No prescriber address D. Electronic signature E. 6-month validity</p>
+<ol><li><b>The abbreviation "U" for "units" is unsafe because:</b></li></ol>
+<p>A. It is too long B. It can be misread as "0" → 10× dose error ✓ C. It is not in BNF D. It is only US usage E. It is too informal</p>
+<ol><li><b>Trailing zeros are dangerous because:</b></li></ol>
+<p>A. They slow writing B. "5.0" can be misread as "50" → 10× overdose ✓ C. They are illegal D. They are not in BNF E. They cause decimal error</p>
+<ol><li><b>Methotrexate in RA is given:</b></li></ol>
+<p>A. Daily B. Twice daily C. Once weekly ✓ D. Monthly E. Continuous infusion</p>
+<ol><li><b>Which drug should always be prescribed by BRAND?</b></li></ol>
+<p>A. Paracetamol B. Amoxicillin C. Tacrolimus ✓ D. Ramipril E. Omeprazole</p>
+<ol><li><b>"PRN" means:</b></li></ol>
+<p>A. Per rectum B. When required ✓ C. By mouth D. Per nasal E. Per nebuliser</p>
+<ol><li><b>Gabapentin and pregabalin are:</b></li></ol>
+<p>A. Schedule 1 CDs B. Schedule 2 CDs C. Schedule 3 CDs ✓ D. Schedule 4 CDs E. Schedule 5 CDs</p>
+<ol><li><b>Tall man lettering is used to:</b></li></ol>
+<p>A. Make drugs sound bigger B. Highlight LASA differences (e.g., CLOZAPine vs cloNIDine) ✓ C. Confuse prescribers D. Mark high-risk drugs E. Indicate CDs</p>
+<ol><li><b>Insulin should be prescribed as:</b></li></ol>
+<p>A. 10 U B. 10 units ✓ C. 10 u D. 10 IU E. 10 cc</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A doctor writes "Methotrexate 2.5 mg — take 1 tablet three times a day." This Rx is:</b></li></ol>
+<ul><li>A) Correct for RA</li><li>B) Dangerous — should be ONCE WEEKLY for RA, not TDS ✓</li><li>C) Correct for cancer</li><li>D) Acceptable if monitored</li><li>E) Safe if FBC done weekly</li></ul>
+<ol><li><b>A patient with epilepsy is on carbamazepine. The best prescription is:</b></li></ol>
+<ul><li>A) Carbamazepine generic — for cost saving</li><li>B) Carbamazepine BRAND — Tegretol® — for consistency ✓</li><li>C) Carbamazepine trade — variable brand</li><li>D) Oxcarbazepine substitution</li><li>E) Any formulation</li></ul>
+<ol><li><b>A junior doctor writes "5.0 mg warfarin." The pharmacist should:</b></li></ol>
+<ul><li>A) Dispense as written</li><li>B) Query the trailing zero — should be "5 mg" ✓</li><li>C) Refuse</li><li>D) Change to "5 mg" without consulting</li><li>E) Double the dose</li></ul>
+<ol><li><b>A controlled drug Rx (morphine) is missing the dose in words. The pharmacist should:</b></li></ol>
+<ul><li>A) Dispense anyway</li><li>B) Add the words</li><li>C) Refuse to dispense; request corrected Rx ✓</li><li>D) Phone GP</li><li>E) Substitute</li></ul>
+<ol><li><b>A patient is on "warfarin — take as directed." This is unsafe because:</b></li></ol>
+<ul><li>A) Warfarin is a CD</li><li>B) The dose is variable — must specify today's dose in mg ✓</li><li>C) Warfarin should be sublingual</li><li>D) Warfarin is given IV</li><li>E) No monitoring needed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>C</b> (Blood group not required; mandatory = Name, Address, DOB, Drug, Dose, Route, Frequency, Signature)</li><li><b>B</b> (CD Sched 2: dose + quantity in words and figures)</li><li><b>B</b> (U → 0 confusion → 10× dose)</li><li><b>B</b> (5.0 → 50, 10× overdose)</li><li><b>C</b> (Weekly — daily is fatal)</li><li><b>C</b> (Tacrolimus = narrow TI)</li><li><b>B</b> (Pro Re Nata = when required)</li><li><b>C</b> (Schedule 3 since 2019)</li><li><b>B</b> (Tall man = LASA mitigation)</li><li><b>B</b> (10 units; never "U" or "u")</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>B</b> — Methotrexate in RA is weekly; daily is fatal pancytopenia.</li><li><b>B</b> — Carbamazepine (narrow TI) prescribed by brand.</li><li><b>B</b> — Trailing zero dangerous; "5 mg" correct.</li><li><b>C</b> — CD Rx must have dose in words and figures; cannot dispense.</li><li><b>B</b> — Warfarin dose varies; "as directed" ambiguous. Specify today's mg dose.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Prescription essentials: Name, Address, DOB, Drug, Dose, Route, Frequency, Duration, Quantity, Signature, Date, GMC.</b> Use generic INN (except narrow TI drugs: ciclosporin, tacrolimus, carbamazepine, phenytoin). For CDs (Sched 2): dose in words AND figures, 28-day validity. <b>NEVER</b> use trailing zeros, leading decimal points, or "U" for units. <b>Methotrexate = WEEKLY</b> in RA. <b>Tall man</b> letters mitigate LASA risk.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../Principles of Rational Prescribing|Principles of Rational Prescribing]]</li><li><b>Sibling Topic-Groups</b>: [[Definition and aims]], [[Steps of rational prescribing]], [[Evidence-based prescribing]]</li><li><b>Heading Hub</b>: [[Principles of Rational Prescribing]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Medication Safety and Errors]], [[Polypharmacy and Deprescribing]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Prescription Writing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

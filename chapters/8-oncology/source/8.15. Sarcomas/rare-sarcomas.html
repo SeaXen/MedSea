@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rare Sarcomas — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.15. SARCOMAS</span>
+      <div class="h1">Rare Sarcomas</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Identify <b>key molecular drivers</b> for each rare sarcoma subtype</li><li>[ ] Select <b>appropriate systemic therapy</b> based on molecular profile</li><li>[ ] Apply <b>surgical principles</b>: R0 resection, organ preservation</li><li>[ ] Use <b>targeted therapies</b>: Imatinib (DFSP), Pazopanib (SFT), Tazemetostat (Epithelioid), Pazopanib/Bevacizumab (Angiosarcoma), Pomaldomide (KS)</li><li>[ ] Know <b>adjuvant/neoadjuvant</b> strategies per subtype</li><li>[ ] Apply <b>metastatic sequencing</b> per sarcoma type</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Synovial Sarcoma</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Molecular &amp; Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Translocation**</td><td>**t(X;18)(p11;q11): SS18-SSX1/2/4** (Pathognomonic)</td></tr><tr><td>**Age**</td><td>**Young Adults** (15-40)</td></tr><tr><td>**Site**</td><td>**Extremities** (Peri-articular), Trunk, Head & Neck</td></tr><tr><td>**Histology**</td><td>**Biphasic** (Epithelial + Spindle) or **Monophasic** (Spindle)</td></tr><tr><td>**IHC**</td><td>**TLE1+**, **EMA+, CK+, CD99+**, CD34-, S100-</td></tr><tr><td>**Molecular**</td><td>**SS18-SSX1/2/4** (SSX1 = Worse Prognosis)</td></tr></table>
+<div class="sub-h">Treatment</div>
+<table class="ctable"><tr><th>Setting</th><th>Regimen</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Localised**</td><td>**Surgery (R0) ± RT** (Pre-op 50Gy/25fx or Post-op 60-66Gy)</td></tr><tr><td>**Adjuvant Chemo**</td><td>**Ifosfamide-based** (VAC/IE or AI) — **Ifosfamide High Activity**</td></tr><tr><td>**Metastatic**</td><td>**Ifosfamide + Doxorubicin (AI)** → **Pazopanib 2L** / **Trabectedin** / **Immunotherapy** (Trials)</td></tr><tr><td>**Targeted**</td><td>**NY-ESO-1 TCR Therapy** (Clinical Trials), **Cediranib** (VEGFR)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Alveolar Soft Part Sarcoma (ASPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Translocation**</td><td>**t(X;17)(p11;q25): ASPSCR1-TFE3**</td></tr><tr><td>**Age**</td><td>**Adolescents/Young Adults** (15-40)</td></tr><tr><td>**Site**</td><td>**Lower Extremity** (Thigh, Buttock)</td></tr><tr><td>**IHC**</td><td>**TFE3+ (Nuclear)**, **CD68+**, **S100-**, **Desmin-**</td></tr><tr><td>**Behaviour**</td><td>**Indolent but Relentless**, **Late Lung Mets** (Years-Decades)</td></tr><tr><td>**Treatment**</td><td>**Surgery R0** (If Resectable) ± **Adjuvant RT**</td></tr><tr><td>**Metastatic**</td><td>**Sunitinib** (VEGFR) — **Best Response**, **Axelitinib**, **Pazopanib**, **Cediranib**; **Immunotherapy** (Pembro/Nivo - Trials)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>ASPSCR1-TFE3</b> → <b>TFE3 Nuclear IHC</b> = Diagnostic</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clear Cell Sarcoma (CCS) / Melanoma of Soft Parts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Translocation**</td><td>**t(12;22)(q13;q12): EWSR1-ATF1**</td></tr><tr><td>**Age**</td><td>**Young Adults** (20-40)</td></tr><tr><td>**Site**</td><td>**Tendons/Aponeuroses** (Lower Extremity, Foot/Ankle)</td></tr><tr><td>**IHC**</td><td>**S100+, HMB45+, Melan-A+, MITF+** (Melanocytic)</td></tr><tr><td>**Molecular**</td><td>**EWSR1-ATF1 Fusion**</td></tr><tr><td>**Behaviour**</td><td>**Aggressive**, **Lung/Lymph Node Mets**</td></tr><tr><td>**Treatment**</td><td>**Surgery R0 ± RT** (Adjuvant)</td></tr><tr><td>**Metastatic**</td><td>**Immunotherapy (Pembro/Nivo)** — **High Response**, **Clinical Trials** (Targeted)</td></tr></table>
+<div class="callout"><b>Distinction from Melanoma</b>: <b>EWSR1-ATF1 Fusion</b>, <b>Deep Soft Tissue</b>, <b>Younger Age</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Desmoplastic Small Round Cell Tumour (DSRCT)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Translocation**</td><td>**t(11;22)(p13;q12): EWSR1-WT1**</td></tr><tr><td>**Age**</td><td>**Adolescents/Young Adults** (Male Predominance)</td></tr><tr><td>**Site**</td><td>**Peritoneal/Multifocal Abdominal**</td></tr><tr><td>**IHC**</td><td>**WT1+ (Nuclear), Desmin+ (Dot-like), EMA+, CYCLIN D1+**</td></tr><tr><td>**Molecular**</td><td>**EWSR1-WT1 Fusion**</td></tr><tr><td>**Behaviour**</td><td>**Aggressive**, **Peritoneal Carcinomatosis**, **Liver/Lung Mets**</td></tr><tr><td>**Treatment**</td><td>**Neoadj Ewing-like (VAC/IE) → CRS + HIPEC** (If Resectable) ± **Adjuvant Chemo/RT**</td></tr><tr><td>**Systemic**</td><td>**Ewing-type Chemo (VAC/IE)** ± **Targeted (TKIs Trials)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Extraskeletal Myxoid Chondrosarcoma (EMC)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Translocation**</td><td>**t(9;22)(q22;q12): EWSR1-NR4A3** (90%)</td></tr><tr><td>**Age**</td><td>**Adults** (40-60)</td></tr><tr><td>**Site**</td><td>**Thigh, Buttock, Limb Girdle**</td></tr><tr><td>**IHC**</td><td>**S100+ (Focal), EMA+, Vimentin+**, **CD34+**</td></tr><tr><td>**Molecular**</td><td>**EWSR1-NR4A3 Fusion**</td></tr><tr><td>**Behaviour**</td><td>**Slow-Growing**, **Late Lung Mets** (Decades)</td></tr><tr><td>**Treatment**</td><td>**Surgery R0 ± RT** (Adjuvant)</td></tr><tr><td>**Metastatic**</td><td>**Chemo Limited**, **Targeted (TKIs Trials: Sunitinib, Pazopanib, Lenvatinib)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Epithelioid Sarcoma</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Molecular**</td><td>**SMARCB1/INI1 Loss** (>90%)</td></tr><tr><td>**Age**</td><td>**Young Adults** (20-40)</td></tr><tr><td>**Site**</td><td>**Distal Extremities** (Hand, Forearm, Foot)</td></tr><tr><td>**IHC**</td><td>**INI1 (SMARCB1) Loss**, **Cytokeratin+, EMA+, CD34+, Vimentin+**, **CD34+**</td></tr><tr><td>**Molecular**</td><td>**SMARCB1/INI1 Loss (Deletion/Mutation)**</td></tr><tr><td>**Behaviour**</td><td>**Aggressive**, **Lymph Node Mets Common (20-40%)**, **Lung Mets**</td></tr><tr><td>**Surgery**</td><td>**Wide Excision ± RT** (Adjuvant)</td></tr><tr><td>**Metastatic**</td><td>**Tazemetostat (EZH2 Inhibitor)** — **FDA Approved** (ORR ~15%), **Chemo (Doxorubicin/Ifosfamide)**, **Immunotherapy (Trials)**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>INI1 Loss</b> = Pathognomonic, <b>Distinguish from Epithelioid MPNST, Carcinoma</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Angiosarcoma</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Subtypes**</td><td>**Primary (Cutaneous/Soft Tissue)**, **Secondary (Radiation-Associated, Post-Mastectomy, Chronic Lymphoedema)**</td></tr><tr><td>**Molecular**</td><td>**MYC Amplification** (Radiation-Associated, >90%), **KDR/VEGFR2 Mut**, **PTPRB, PLCG1**</td></tr><tr><td>**IHC**</td><td>**CD31+, ERG+, FLI1+, CD34+**, **Factor VIII+**</td></tr><tr><td>**Behaviour**</td><td>**Aggressive**, **Multifocal**, **Early Haematogenous Spread (Liver, Lung)**</td></tr><tr><td>**Primary Treatment**</td><td>**Surgery R0 ± RT** (Adjuvant)</td></tr><tr><td>**Metastatic**</td><td>**Paclitaxel (Weekly) + Bevacizumab** — **Best Response**, **Doxorubicin-based**, **Pembrolizumab** (Immunotherapy), **Sorafenib/Pazopanib** (VEGFR TKI)</td></tr></table>
+<div class="callout"><b>Radiation-Associated</b>: <b>Latency 10-20yr</b>, <b>MYC Amp</b>, <b>Poor Prognosis</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Kaposi Sarcoma (KS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Aetiology**</td><td>**HHV-8 (KSHV)**</td></tr><tr><td>**Clinical Forms**</td><td>**Classic (Mediterranean Elderly)**, **Endemic (African)**, **Iatrogenic (Post-Transplant)**, **Epidemic (HIV/AIDS)**</td></tr><tr><td>**IHC**</td><td>**HHV-8 LANA+**, **CD31+, ERG+, D2-40+**</td></tr><tr><td>**Staging (AIDS Clinical Trials Group)**</td><td>**T0 (Localised Cutaneous)**, **T1 (Extensive/Visceral)**, **I0 (CD4≥200)**, **I1 (CD4<200)**</td></tr><tr><td>**Treatment**</td><td>**ART (HIV) → Regression**, **Local RT (Localised)**, **Paclitaxel (Systemic)**, **Liposomal Doxorubicin**, **Pomalidomide (Relapsed)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Dermatofibrosarcoma Protuberans (DFSP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Translocation**</td><td>**t(17;22)(q22;q13): COL1A1-PDGFB**</td></tr><tr><td>**Age**</td><td>**Young Adults** (20-50)</td></tr><tr><td>**Site**</td><td>**Trunk, Proximal Extremities**</td></tr><tr><td>**IHC**</td><td>**CD34+ (Diffuse Strong), CD117-, S100-, Factor XIIIa+**</td></tr><tr><td>**Molecular**</td><td>**COL1A1-PDGFB Fusion** → **PDGFRB Autocrine Activation**</td></tr><tr><td>**Behaviour**</td><td>**Locally Aggressive**, **Rare Mets (<5%)**, **High Local Recurrence**</td></tr><tr><td>**Surgery**</td><td>**Wide Excision (2-3cm Margins) / Mohs Micrographic Surgery**</td></tr><tr><td>**Adjuvant**</td><td>**RT (Close/Positive Margins)**</td></tr><tr><td>**Metastatic/Unresectable**</td><td>**Imatinib 400mg Daily** (PDGFRB Inhibition) — **High Response Rate**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>CD34+ Diffuse</b>, <b>COL1A1-PDGFB</b>, <b>Imatinib Responsive</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Solitary Fibrous Tumour (SFT)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Translocation**</td><td>**NAB2-STAT6 Fusion (Inversion 12q13)**</td></tr><tr><td>**Age**</td><td>**Adults** (40-60)</td></tr><tr><td>**Site**</td><td>**Pleura (50%), Soft Tissue (Meninges, Paranasal, Orbit, Deep)**</td></tr><tr><td>**IHC**</td><td>**STAT6 (Nuclear)+**, **CD34+, BCL2+**, **CD117-, S100-, Desmin-**</td></tr><tr><td>**Molecular**</td><td>**NAB2-STAT6 Fusion (Inversion 12q13)**</td></tr><tr><td>**Grading**</td><td>**WHO Grade 1-3** (Mitotic Count, Necrosis, Cellularity)</td></tr><tr><td>**Risk Stratification**</td><td>**Demetri Criteria**: Size >10cm, Mitoses >4/10 HPF, Necrosis, Age >55</td></tr><tr><td>**Surgery**</td><td>**R0 Resection** (En Bloc)</td></tr><tr><td>**Adjuvant RT**</td><td>**Close/Positive Margins, High Grade, Size >10cm**</td></tr><tr><td>**Metastatic**</td><td>**Pazopanib** (Preferred), **Bevacizumab + Chemo**, **Sunitinib**, **Temozolomide/Bevacizumab**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Sarcoma</th><th>Molecular Driver</th><th>Key IHC</th><th>Targeted Therapy</th></tr><tr><td>---------</td><td>-----------------</td><td>---------</td><td>------------------</td></tr><tr><td>**Synovial**</td><td>**SS18-SSX (t(X;18))**</td><td>**TLE1+, EMA+, CD99+**</td><td>**Ifosfamide (Adjuvant), Pazopanib, Trabectedin**</td></tr><tr><td>**ASPS**</td><td>**ASPSCR1-TFE3**</td><td>**TFE3 Nuclear+**</td><td>**Sunitinib, Axelitinib** (VEGFR)</td></tr><tr><td>**Clear Cell**</td><td>**EWSR1-ATF1**</td><td>**S100+, HMB45+, Melan-A+**</td><td>**Immunotherapy (Pembro/Nivo)**</td></tr><tr><td>**DSRCT**</td><td>**EWSR1-WT1**</td><td>**WT1+, Desmin Dot-like+**</td><td>**Ewing-like Chemo (VAC/IE), CRS+HIPEC**</td></tr><tr><td>**EMC**</td><td>**EWSR1-NR4A3**</td><td>**S100+ (Focal), EMA+**</td><td>**TKIs (Pazopanib, Sunitinib, Lenvatinib) Trials**</td></tr><tr><td>**Synovial**</td><td>**SS18-SSX**</td><td>**TLE1+, EMA+, CD99+**</td><td>**Ifosfamide (Adjuvant), Pazopanib**</td></tr><tr><td>**Epithelioid**</td><td>**SMARCB1/INI1 Loss**</td><td>**INI1 Loss, CK+, CD34+**</td><td>**Tazemetostat (EZH2i)**</td></tr><tr><td>**Angiosarcoma**</td><td>**MYC Amp (Rad-Assoc)**</td><td>**CD31+, ERG+, FLI1+**</td><td>**Taxane + Bev, Pembro, Sorafenib**</td></tr><tr><td>**Kaposi**</td><td>**HHV-8**</td><td>**LANA+, CD31+, ERG+**</td><td>**ART, Paclitaxel, Lenalidomide/Pomalidomide**</td></tr><tr><td>**DFSP**</td><td>**COL1A1-PDGFB**</td><td>**CD34+ Diffuse**</td><td>**Imatinib 400mg**</td></tr><tr><td>**SFT**</td><td>**NAB2-STAT6**</td><td>**STAT6 Nuclear+, CD34+**</td><td>**Pazopanib, Bevacizumab**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Sarcoma</th><th>Molecular Driver</th><th>Key Treatment</th></tr><tr><td>---------</td><td>-----------------</td><td>---------------</td></tr><tr><td>**Synovial**</td><td>**SS18-SSX**</td><td>**Ifosfamide (Adj), Pazopanib, Trabectedin**</td></tr><tr><td>**ASPS**</td><td>**ASPSCR1-TFE3**</td><td>**Sunitinib (VEGFR)**</td></tr><tr><td>**Clear Cell**</td><td>**EWSR1-ATF1**</td><td>**Immunotherapy (Pembro/Nivo)**</td></tr><tr><td>**DSRCT**</td><td>**EWSR1-WT1**</td><td>**Ewing Chemo (VAC/IE) + CRS/HIPEC**</td></tr><tr><td>**EMC**</td><td>**EWSR1-NR4A3**</td><td>**TKIs (Pazopanib, Sunitinib)**</td></tr><tr><td>**Synovial**</td><td>**SS18-SSX**</td><td>**Ifosfamide, Pazopanib, Trabectedin**</td></tr><tr><td>**Epithelioid**</td><td>**SMARCB1/INI1 Loss**</td><td>**Tazemetostat (EZH2i), Imatinib**</td></tr><tr><td>**Angiosarcoma**</td><td>**MYC Amp (Rad)**</td><td>**Paclitaxel + Bev, Pembro**</td></tr><tr><td>**Kaposi**</td><td>**HHV-8**</td><td>**ART, Paclitaxel, Pomalidomide**</td></tr><tr><td>**DFSP**</td><td>**COL1A1-PDGFB**</td><td>**Imatinib 400mg**</td></tr><tr><td>**SFT**</td><td>**NAB2-STAT6**</td><td>**Pazopanib, Bev + Chemo**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Synovial Sarcoma — Translocation, IHC, Adjuvant?**</td><td>**t(X;18) SS18-SSX**, **TLE1+, EMA+, CD99+**, **Ifosfamide-based Adjuvant (AI/VAC)**.</td></tr><tr><td>**ASPS — Translocation, Targeted Therapy?**</td><td>**t(X;17) ASPSCR1-TFE3**, **TFE3 IHC+**, **Sunitinib / Axelitinib (VEGFR)**.</td></tr><tr><td>**Clear Cell Sarcoma — Translocation, IHC, Metastatic Tx?**</td><td>**t(12;22) EWSR1-ATF1**, **S100+/HMB45+/Melan-A+**, **Immunotherapy (Pembro/Nivo)**.</td></tr><tr><td>**DSRCT — Translocation, Site, Treatment?**</td><td>**t(11;22) EWSR1-WT1**, **Peritoneal/Multifocal**, **Ewing-like VAC/IE + CRS+HIPEC**.</td></tr><tr><td>**Epithelioid Sarcoma — Molecular, Targeted?**</td><td>**SMARCB1/INI1 Loss**, **Tazemetostat (EZH2 Inhibitor)**.</td></tr><tr><td>**Angiosarcoma — Radiation-Associated, MYC Amp, Tx?**</td><td>**MYC Amp (Rad-Assoc), Paclitaxel + Bevacizumab, Pembrolizumab**.</td></tr><tr><td>**Kaposi Sarcoma — HHV-8, Staging, Treatment?**</td><td>**HHV-8 LANA+**, **AIDS Clinical Trials Group Staging (T0-T1, I0-I1)**, **ART, Paclitaxel, Pomalidomide**.</td></tr><tr><td>**DFSP — Translocation, IHC, Targeted Tx?**</td><td>**t(17;22) COL1A1-PDGFB**, **CD34+ Diffuse**, **Imatinib 400mg Daily**.</td></tr><tr><td>**SFT — Translocation, IHC, Metastatic Tx?**</td><td>**NAB2-STAT6**, **STAT6 Nuclear+, CD34+**, **Pazopanib, Bev+Chemo**.</td></tr><tr><td>**ASPS vs Clear Cell — TFE3 vs EWSR1-ATF1?**</td><td>**ASPS: ASPSCR1-TFE3, TFE3+**; **Clear Cell: EWSR1-ATF1, S100/HMB45/Melan-A+**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**ASPS vs Clear Cell Sarcoma**</td><td>**ASPS: ASPSCR1-TFE3, TFE3 IHC+, Young, Thigh**; **CCS: EWSR1-ATF1, S100/HMB45/Melan-A+, Tendon/Aponeurosis**</td></tr><tr><td>**DSRCT vs Ewing**</td><td>**DSRCT: EWSR1-WT1, Peritoneal, WT1+, Desmin Dot+**; **Ewing: EWSR1-FLI1/ERG, Bone/Soft Tissue, CD99+, FLI1+**</td></tr><tr><td>**Epithelioid Sarcoma vs Carcinoma**</td><td>**Epithelioid Sarcoma: INI1 Loss, CK+/Vim+, CD34+**; **Carcinoma: INI1 Retained, CK+, Vimentin-**</td></tr><tr><td>**Angiosarcoma Primary vs Radiation-Associated**</td><td>**Primary: Cutaneous/Soft Tissue, MYC WT**; **Rad-Assoc: Post-RT (10-20yr), MYC Amp, Poorer Prognosis**</td></tr><tr><td>**DFSP vs SFT**</td><td>**DFSP: COL1A1-PDGFB, CD34+ Diffuse, Imatinib Responsive**; **SFT: NAB2-STAT6, STAT6 Nuclear+, Pazopanib/Bev**</td></tr><tr><td>**SFT Benign vs Malignant**</td><td>**Grading: Size >10cm, Mitoses >4/10 HPF, Necrosis, Cellularity** → **Malignant**</td></tr><tr><td>**Synovial Sarcoma Subtypes**</td><td>**SS18-SSX1 (Worse)** vs **SS18-SSX2/4 (Better)**</td></tr></table>
+<p><b>Mnemonic: RARE-SARCOMA</b></p>
+<ul><li><b>R</b>are: <b>Synovial, ASPS, Clear Cell, DSRCT, EMC, Epithelioid, Angio, Kaposi, DFSP, SFT</b></li><li><b>A</b>PSPS: <b>ASPSCR1-TFE3</b>, <b>Sunitinib</b></li><li><b>R</b>habdo? No, <b>Clear Cell: EWSR1-ATF1</b>, <b>Pembro/Nivo</b></li><li><b>E</b>wing-like: <b>DSRCT (EWSR1-WT1)</b>, <b>VAC/IE + CRS+HIPEC</b></li><li><b>D</b>etailed Molecular: <b>SYT-SSX (Synovial), ASPSCR1-TFE3 (ASPS), EWSR1-ATF1 (CCS), WT1 (DSRCT), EWSR1-NR4A3 (EMC), INI1 Loss (Epithelioid), MYC Amp (Angio), HHV-8 (KS), COL1A1-PDGFB (DFSP), NAB2-STAT6 (SFT)</b></li><li><b>S</b>ynovial: <b>t(X;18) SYT-SSX, TLE1+, Ifosfamide Active</b></li><li><b>A</b>ngiosarcoma: <b>MYC Amp (Rad), Paclitaxel+Bev, Pembro</b></li><li><b>R</b>habdomyosarcoma: <b>NOT IN THIS LIST</b> (Paediatric, Separate)</li><li><b>C</b>apitosarcoma: <b>KS = HHV-8, ART + Paclitaxel + Pomalidomide</b></li><li><b>O</b>steosarcoma: <b>Separate (Bone Sarcoma)</b></li><li><b>M</b>etastatic Sequencing: <b>Surgery → Targeted (Imatinib DFSP, Sunitinib ASPS, Tazemetostat Epithelioid, Pazopanib SFT) → Immunotherapy → Chemo</b></li><li><b>A</b>djuvant: <b>Ifosfamide (Synovial), RT (Local Control)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Rare Sarcomas)) Synovial t(X;18) SYT-SSX TLE1+, EMA+, CD99+ Ifosfamide Adjuvant ASPS t(X;17) ASPSCR1-TFE3 TFE3 Nuclear+ Sunitinib/Axelitinib Clear Cell t(12;22) EWSR1-ATF1 S100+, HMB45+, Melan-A+ ICI (Pembro/Nivo) DSRCT t(11;22) EWSR1-WT1 WT1+, Desmin Dot+ VAC/IE + CRS+HIPEC EMC t(9;22) EWSR1-NR4A3 S100+ (Focal) TKIs (Pazopanib) Epithelioid INI1 Loss Tazemetostat (EZH2i) Angiosarcoma MYC Amp (Rad-Assoc) Paclitaxel+Bev, Pembro Kaposi HHV-8, LANA+ ART + Paclitaxel + Pomalidomide DFSP COL1A1-PDGFB CD34+ Diffuse Imatinib 400mg SFT NAB2-STAT6 STAT6 Nuclear+ Pazopanib/Bev </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Sarcoma</th><th>Translocation</th><th>IHC Key</th><th>Targeted Therapy</th></tr><tr><td>--------</td><td>--------------</td><td>---------</td><td>------------------</td></tr><tr><td>**Synovial**</td><td>t(X;18) SS18-SSX</td><td>TLE1+, EMA+, CD99+</td><td>Ifosfamide (Adj), Pazopanib</td></tr><tr><td>**ASPS**</td><td>t(X;17) ASPSCR1-TFE3</td><td>TFE3 Nuclear+</td><td>Sunitinib, Axelitinib</td></tr><tr><td>**Clear Cell**</td><td>t(12;22) EWSR1-ATF1</td><td>S100+, HMB45+, Melan-A+</td><td>ICI (Pembro/Nivo)</td></tr><tr><td>**DSRCT**</td><td>t(11;22) EWSR1-WT1</td><td>WT1+, Desmin Dot+</td><td>Ewing Chemo (VAC/IE) + CRS+HIPEC</td></tr><tr><td>**Epithelioid**</td><td>INI1 Loss</td><td>INI1-, CK+, CD34+</td><td>Tazemetostat (EZH2i)</td></tr><tr><td>**Angiosarcoma**</td><td>MYC Amp (Rad)</td><td>CD31+, ERG+, FLI1+</td><td>Paclitaxel+Bev, Pembro</td></tr><tr><td>**Kaposi**</td><td>HHV-8</td><td>LANA+, CD31+, ERG+</td><td>ART, Paclitaxel, Pomalidomide</td></tr><tr><td>**DFSP**</td><td>COL1A1-PDGFB</td><td>CD34+ Diffuse</td><td>Imatinib 400mg</td></tr><tr><td>**SFT**</td><td>NAB2-STAT6</td><td>STAT6 Nuclear+, CD34+</td><td>Pazopanib, Bev+Chemo</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Synovial Sarcoma</td><td></td><td></td></tr><tr><td>ASPS</td><td></td><td></td></tr><tr><td>Clear Cell Sarcoma</td><td></td><td></td></tr><tr><td>DSRCT</td><td></td><td></td></tr><tr><td>Epithelioid Sarcoma</td><td></td><td></td></tr><tr><td>Angiosarcoma</td><td></td><td></td></tr><tr><td>Kaposi Sarcoma</td><td></td><td></td></tr><tr><td>DFSP / SFT</td><td></td><td></td></tr><tr><td>Molecular Drivers</td><td></td><td></td></tr><tr><td>Targeted Therapy Selection</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[GIST]], [[Soft Tissue Sarcoma]], [[Bone Sarcomas]], [[Ewing Sarcoma]], [[Synovial Sarcoma]], [[Alveolar Soft Part Sarcoma]], [[Clear Cell Sarcoma]], [[Desmoplastic Small Round Cell Tumour]], [[Epithelioid Sarcoma]], [[Angiosarcoma]], [[Kaposi Sarcoma]], [[DFSP]], [[Solitary Fibrous Tumour]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Rare Sarcomas (Synovial), which statement is correct? A. <b>SS18-SSX (t(X B. </b>SS18-SSX - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SS18-SSX (t(X;18))</b></li></ul>
+<p><b>2.</b> Regarding Rare Sarcomas (ASPS), which statement is correct? A. <b>ASPSCR1-TFE3</b> B. <b>ASPSCR1-TFE3</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ASPSCR1-TFE3</b></li></ul>
+<p><b>3.</b> Regarding Rare Sarcomas (Clear Cell), which statement is correct? A. <b>EWSR1-ATF1</b> B. <b>EWSR1-ATF1</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>EWSR1-ATF1</b></li></ul>
+<p><b>4.</b> Regarding Rare Sarcomas (DSRCT), which statement is correct? A. <b>EWSR1-WT1</b> B. <b>EWSR1-WT1</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>EWSR1-WT1</b></li></ul>
+<p><b>5.</b> Regarding Rare Sarcomas (EMC), which statement is correct? A. <b>EWSR1-NR4A3</b> B. <b>EWSR1-NR4A3</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>EWSR1-NR4A3</b></li></ul>
+<p><b>6.</b> Regarding Rare Sarcomas (Synovial), which statement is correct? A. <b>SS18-SSX</b> B. <b>SS18-SSX</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SS18-SSX</b></li></ul>
+<p><b>7.</b> Regarding Rare Sarcomas (Epithelioid), which statement is correct? A. <b>SMARCB1/INI1 Loss</b> B. **SMARCB1/INI1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SMARCB1/INI1 Loss</b></li></ul>
+<p><b>8.</b> Regarding Rare Sarcomas (Angiosarcoma), which statement is correct? A. <b>MYC Amp (Rad-Assoc)</b> B. **MYC - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>MYC Amp (Rad-Assoc)</b></li></ul>
+<p><b>9.</b> Regarding Rare Sarcomas (Kaposi), which statement is correct? A. <b>HHV-8</b> B. <b>HHV-8</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>HHV-8</b></li></ul>
+<p><b>10.</b> Regarding Rare Sarcomas (DFSP), which statement is correct? A. <b>COL1A1-PDGFB</b> B. <b>COL1A1-PDGFB</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>COL1A1-PDGFB</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. **SS18-SSX (t(X</li><li>B. **SS18-SSX (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>SS18-SSX (t(X;18))</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>ASPSCR1-TFE3</b></li><li>B. <b>ASPSCR1-TFE3</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>ASPSCR1-TFE3</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>EWSR1-ATF1</b></li><li>B. <b>EWSR1-ATF1</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>EWSR1-ATF1</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>EWSR1-WT1</b></li><li>B. <b>EWSR1-WT1</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>EWSR1-WT1</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>EWSR1-NR4A3</b></li><li>B. <b>EWSR1-NR4A3</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>EWSR1-NR4A3</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>SS18-SSX</b></li><li>B. <b>SS18-SSX</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>SS18-SSX</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>SMARCB1/INI1 Loss</b></li><li>B. **SMARCB1/INI1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>SMARCB1/INI1 Loss</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>MYC Amp (Rad-Assoc)</b></li><li>B. **MYC (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>MYC Amp (Rad-Assoc)</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>HHV-8</b></li><li>B. <b>HHV-8</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>HHV-8</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>COL1A1-PDGFB</b></li><li>B. <b>COL1A1-PDGFB</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>COL1A1-PDGFB</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Synovial? <b>A1:</b> SS18-SSX (t(X;18))</p>
+<p><b>Q2:</b> ASPS? <b>A2:</b> ASPSCR1-TFE3</p>
+<p><b>Q3:</b> Clear Cell? <b>A3:</b> EWSR1-ATF1</p>
+<p><b>Q4:</b> DSRCT? <b>A4:</b> EWSR1-WT1</p>
+<p><b>Q5:</b> EMC? <b>A5:</b> EWSR1-NR4A3</p>
+<p><b>Q6:</b> Synovial? <b>A6:</b> SS18-SSX</p>
+<p><b>Q7:</b> Epithelioid? <b>A7:</b> SMARCB1/INI1 Loss</p>
+<p><b>Q8:</b> Angiosarcoma? <b>A8:</b> MYC Amp (Rad-Assoc)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Synovial</td><td>SS18-SSX (t(X;18))</td></tr><tr><td>2</td><td>A</td><td>ASPS</td><td>ASPSCR1-TFE3</td></tr><tr><td>3</td><td>A</td><td>Clear Cell</td><td>EWSR1-ATF1</td></tr><tr><td>4</td><td>A</td><td>DSRCT</td><td>EWSR1-WT1</td></tr><tr><td>5</td><td>A</td><td>EMC</td><td>EWSR1-NR4A3</td></tr><tr><td>6</td><td>A</td><td>Synovial</td><td>SS18-SSX</td></tr><tr><td>7</td><td>A</td><td>Epithelioid</td><td>SMARCB1/INI1 Loss</td></tr><tr><td>8</td><td>A</td><td>Angiosarcoma</td><td>MYC Amp (Rad-Assoc)</td></tr><tr><td>9</td><td>A</td><td>Kaposi</td><td>HHV-8</td></tr><tr><td>10</td><td>A</td><td>DFSP</td><td>COL1A1-PDGFB</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Synovial</td><td>SS18-SSX (t(X;18))</td></tr><tr><td>2</td><td>A</td><td>ASPS</td><td>ASPSCR1-TFE3</td></tr><tr><td>3</td><td>A</td><td>Clear Cell</td><td>EWSR1-ATF1</td></tr><tr><td>4</td><td>A</td><td>DSRCT</td><td>EWSR1-WT1</td></tr><tr><td>5</td><td>A</td><td>EMC</td><td>EWSR1-NR4A3</td></tr><tr><td>6</td><td>A</td><td>Synovial</td><td>SS18-SSX</td></tr><tr><td>7</td><td>A</td><td>Epithelioid</td><td>SMARCB1/INI1 Loss</td></tr><tr><td>8</td><td>A</td><td>Angiosarcoma</td><td>MYC Amp (Rad-Assoc)</td></tr><tr><td>9</td><td>A</td><td>Kaposi</td><td>HHV-8</td></tr><tr><td>10</td><td>A</td><td>DFSP</td><td>COL1A1-PDGFB</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Sarcomas|Sarcomas]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Rare Sarcomas · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

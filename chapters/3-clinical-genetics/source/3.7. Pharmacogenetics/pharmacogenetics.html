@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pharmacogenetics — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 3 CLINICAL GENETICS / 3.7. PHARMACOGENETICS</span>
+      <div class="h1">Pharmacogenetics</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>key drug-gene pairs</b> (CYP2D6, CYP2C19, CYP2C9, TPMT, DPYD, HLA, UGT1A1, NUDT15, G6PD, SLCO1B1)</li><li>[ ] Apply <b>CPIC/DPWG dosing guidelines</b> for high-evidence drug-gene pairs</li><li>[ ] Interpret <b>pharmacogenomic test results</b> (Phenotype prediction, Diplotype → Activity Score)</li><li>[ ] Understand <b>NHS England Genomic Medicine Service</b> commissioned tests</li><li>[ ] Apply <b>pre-emptive vs reactive</b> testing strategies</li><li>[ ] Answer viva: "CYP2C19 clopidogrel" and "TPMT azathioprine" and "HLA-B*57:01 abacavir"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Pharmacogenetics</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Pharmacogenetics] --&gt; B[Drug Metabolism Genes&lt;br/&gt;CYPs, UGTs, TPMT, DPYD, NUDT15] A --&gt; C[Drug Transport Genes&lt;br/&gt;SLCO1B1, ABCB1, ABCG2] A --&gt; D[Drug Target Genes&lt;br/&gt;VKORC1, HLA, G6PD] A --&gt; E[Drug Response Genes&lt;br/&gt;IFNL3, IL28B, MTHFR]</p>
+<p>B &amp; C &amp; D &amp; E --&gt; F[Phenotype Prediction&lt;br/&gt;Diplotype → Activity Score → Metaboliser Status] F --&gt; G[Dosing Guidelines&lt;br/&gt;CPIC / DPWG / NHS GMS] G --&gt; H[Clinical Implementation&lt;br/&gt;Pre-emptive / Reactive / CDSS] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Core Pharmacogenes — Drug-Gene Pairs</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cytochrome P450 (CYP) Enzymes</div>
+<table class="ctable"><tr><th>Gene</th><th>Substrates (Key Drugs)</th><th>Phenotypes</th><th>Key Dosing Guidance</th></tr><tr><td>------</td><td>------------------------</td><td>------------</td><td>---------------------</td></tr><tr><td>**CYP2D6**</td><td>Codeine, Tramadol, Tamoxifen, Antidepressants (SSRIs, TCAs), Beta-blockers (Metoprolol), Atomoxetine, Ondansetron</td><td>**UM** (>2 copies), **NM** (1-2), **IM** (1 reduced), **PM** (0 active)</td><td>**Codeine/Tramadol**: PM = No analgesia; UM = Toxicity (Morphine) → Avoid; **Tamoxifen**: PM/IM → Consider AI switch</td></tr><tr><td>**CYP2C19**</td><td>Clopidogrel, PPIs (Omeprazole), SSRIs (Citalopram), Voriconazole, Phenytoin</td><td>**UM** (2x *17), **NM**, **IM**, **PM**</td><td>**Clopidogrel**: PM/IM → Reduced active metabolite → **Alternative (Prasugrel/Ticagrelor)**; **PPIs**: PM → ↑ Exposure → Dose reduce</td></tr><tr><td>**CYP2C9**</td><td>Warfarin, Phenytoin, NSAIDs (Ibuprofen), Sulfonylureas, Losartan</td><td>**NM**, **IM**, **PM**</td><td>**Warfarin**: IM/PM → ↓ Dose (Algorithm); **Phenytoin**: PM → ↓ Dose (Therapeutic window narrow)</td></tr><tr><td>**CYP3A4/5**</td><td>Statins (Simva, Atorva), Tacrolimus, Cyclosporine, Midazolam, Chemo (Docetaxel), DOACs</td><td>**CYP3A5 Expressor (NM)** vs **Non-expressor (PM)**</td><td>**Tacrolimus**: CYP3A5 Expressor → Higher dose needed; CYP3A5*3/*3 → Standard dose</td></tr><tr><td>**CYP1A2**</td><td>Clozapine, Olanzapine, Theophylline, Caffeine, Tizanidine</td><td>**Inducible** (Smoking, Cruciferous veg), **Inhibitable** (Fluvoxamine, Ciprofloxacin)</td><td>**Smoking**: ↑ Clearance → Higher dose; **Fluvoxamine** → Strong inhibitor → Avoid/Reduce</td></tr></table>
+<div class="sub-h">Non-CYP Metabolism Genes</div>
+<table class="ctable"><tr><th>Gene</th><th>Substrates</th><th>Key Variants</th><th>Dosing Guidance</th></tr><tr><td>------</td><td>------------</td><td>--------------</td><td>-----------------</td></tr><tr><td>**TPMT**</td><td>Azathioprine, 6-MP, 6-TG</td><td>*2, *3A, *3C (LoF)</td><td>**PM (0% activity)**: **Avoid** (Severe myelosuppression); **IM (30-60%)**: ↓ Dose 30-70%; **NM**: Standard</td></tr><tr><td>**NUDT15**</td><td>6-MP, Azathioprine</td><td>*2, *3 (LoF)</td><td>Asian populations; **PM**: ↓ Dose 90% (Severe leucopenia risk); **IM**: ↓ Dose 50%</td></tr><tr><td>**DPYD**</td><td>5-FU, Capecitabine</td><td>*2A, *13, *28 (LoF)</td><td>**PM (biallelic)**: **Avoid** (Fatal toxicity); **IM (heterozygous)**: ↓ Dose 50%; **CPIC**: Pre-emptive testing recommended</td></tr><tr><td>**UGT1A1**</td><td>Irinotecan, Atazanavir, Bilirubin</td><td>*28 (TA7TAA)</td><td>**Homozygous *28/*28**: ↓ Irinotecan dose (Neutropenia risk); Heterozygous: Consider ↓ dose</td></tr><tr><td>**G6PD**</td><td>Primaquine, Dapsone, Sulfonamides, Rasburicase</td><td>Mediterranean C563T, African A-</td><td>**Deficiency**: Avoid oxidative drugs; Screen before primaquine/rasburicase</td></tr><tr><td>**HLA-B*15:02**</td><td>Carbamazepine, Phenytoin, Oxcarbazepine, Lamotrigine</td><td>*15:02</td><td>**Screen in at-risk populations** (Han Chinese, Thai, Malaysian) → **Avoid carbamazepine** if positive</td></tr><tr><td>**HLA-B*57:01**</td><td>Abacavir</td><td>*57:01</td><td>**Screen before abacavir** → **Contraindicated if positive** (Hypersensitivity)</td></tr><tr><td>**HLA-B*58:01**</td><td>Allopurinol</td><td>*58:01</td><td>Screen in at-risk (Han Chinese, Korean, Thai) → **Avoid allopurinol** if positive</td></tr><tr><td>**VKORC1**</td><td>Warfarin</td><td>-1639G>A, 1173C>T</td><td>Dose algorithm (CYP2C9 + VKORC1 + Clinical factors)</td></tr><tr><td>**SLCO1B1**</td><td>Statins (Simvastatin > Atorva > Rosuva), Methotrexate</td><td>*5 (rs4149056)</td><td>**TT (PM)**: Avoid Simvastatin 80mg; ↓ Dose or Switch to Rosuvastatin/Pravastatin</td></tr><tr><td>**IFNL3 (IL28B)**</td><td>PegIFN-α + RBV (HCV)</td><td>rs12979860 (CC/CT/TT)</td><td>CC = Better SVR; Guides treatment duration (Historical, DAAs now standard)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Phenotype Prediction — From Genotype to Phenotype</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">CYP2D6 Activity Score (AS) System</div>
+<table class="ctable"><tr><th>Diplotype</th><th>Activity Score</th><th>Phenotype</th></tr><tr><td>-----------</td><td>----------------</td><td>-----------</td></tr><tr><td>*1/*1, *1/*2, *2/*2</td><td>2.0</td><td>**Normal Metaboliser (NM)**</td></tr><tr><td>*1/*4, *1/*5, *2/*4</td><td>1.0</td><td>**Intermediate Metaboliser (IM)**</td></tr><tr><td>*4/*4, *5/*5</td><td>0</td><td>**Poor Metaboliser (PM)**</td></tr><tr><td>*1/*1xN, *2/*2xN</td><td>>2.0</td><td>**Ultrarapid Metaboliser (UM)**</td></tr></table>
+<div class="callout"><b>Alleles:</b> <i>1 = Normal; </i>2 = Reduced; <i>3, </i>4, <i>5, </i>6 = Non-functional; <i>10 = Decreased; </i>17, <i>29, </i>41 = Decreased; xN = Gene duplication.</div>
+<div class="sub-h">TPMT/NUDT15 Phenotype Assignment</div>
+<table class="ctable"><tr><th>Gene</th><th>Genotype</th><th>Phenotype</th><th>Frequency (EU)</th><th>Frequency (East Asian)</th></tr><tr><td>------</td><td>----------</td><td>-----------</td><td>----------------</td><td>------------------------</td></tr><tr><td>**TPMT**</td><td>*1/*1</td><td>Normal</td><td>~89%</td><td>~99%</td></tr><tr><td></td><td>*1/*3A, *1/*3C</td><td>Intermediate</td><td>~11%</td><td>~1%</td></tr><tr><td></td><td>*3A/*3A, *3C/*3C</td><td>Poor</td><td>~0.3%</td><td>Rare</td></tr><tr><td>**NUDT15**</td><td>*1/*1</td><td>Normal</td><td>Rare</td><td>~70%</td></tr><tr><td></td><td>*1/*3</td><td>Intermediate</td><td>Rare</td><td>~25%</td></tr><tr><td></td><td>*3/*3</td><td>Poor</td><td>Rare</td><td>~5%</td></tr></table>
+<div class="sub-h">DPYD Phenotype</div>
+<table class="ctable"><tr><th>Genotype</th><th>Phenotype</th><th>5-FU Dosing (CPIC)</th></tr><tr><td>----------</td><td>-----------</td><td>---------------------</td></tr><tr><td>Normal (*1/*1)</td><td>Normal</td><td>100%</td></tr><tr><td>Heterozygous *2A/*1</td><td>Intermediate</td><td>**50% dose reduction**</td></tr><tr><td>Homozygous *2A/*2A</td><td>Poor</td><td>**Avoid 5-FU/capecitabine** (Alternative: S-1, Oxaliplatin-based)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ CPIC / DPWG / NHS GMS Guidelines</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">CPIC (Clinical Pharmacogenetics Implementation Consortium) — Levels</div>
+<table class="ctable"><tr><th>Level</th><th>Evidence</th><th>Action</th></tr><tr><td>-------</td><td>----------</td><td>--------</td></tr><tr><td>**A**</td><td>Strong (RCTs, Meta-analyses)</td><td>**Prescribe per genotype**</td></tr><tr><td>**B**</td><td>Moderate (Observational, PK studies)</td><td>**Consider per genotype**</td></tr><tr><td>**C**</td><td>Weak (Case reports, Expert opinion)</td><td>**No recommendation**</td></tr><tr><td>**D**</td><td>Insufficient</td><td>No guideline</td></tr></table>
+<div class="sub-h">Key CPIC Level A Guidelines (2024)</div>
+<table class="ctable"><tr><th>Drug-Gene Pair</th><th>Level</th><th>Key Recommendation</th></tr><tr><td>----------------</td><td>-------</td><td>---------------------</td></tr><tr><td>**Clopidogrel / CYP2C19**</td><td>A</td><td>PM/IM → **Alternative (Prasugrel/Ticagrelor)**</td></tr><tr><td>**Azathioprine/6-MP / TPMT**</td><td>A</td><td>PM: **Avoid**; IM: ↓ 30-70% dose; Test before starting</td></tr><tr><td>**Azathioprine/6-MP / NUDT15**</td><td>A</td><td>PM: **Avoid**; IM: 50% dose; Test in East Asian</td></tr><tr><td>**5-FU/Capecitabine / DPYD**</td><td>A</td><td>PM: **Avoid**; IM: 50% dose; **Pre-emptive testing**</td></tr><tr><td>**Irinotecan / UGT1A1**</td><td>A</td><td>*28/*28 → ↓ Dose</td></tr><tr><td>**Codeine/Tramadol / CYP2D6**</td><td>A</td><td>PM: No analgesia; UM: Toxicity → **Avoid**</td></tr><tr><td>**SSRIs (Citalopram/Escitalopram) / CYP2C19**</td><td>A</td><td>PM → ↓ Dose (QTc risk)</td></tr><tr><td>**Carbamazepine / HLA-B*15:02**</td><td>A</td><td>Screen at-risk populations → **Avoid if positive**</td></tr><tr><td>**Abacavir / HLA-B*57:01**</td><td>A</td><td>**Screen all** → **Contraindicated if positive**</td></tr><tr><td>**Allopurinol / HLA-B*58:01**</td><td>A</td><td>Screen at-risk → **Avoid if positive**</td></tr></table>
+<div class="sub-h">DPWG (Dutch Pharmacogenetics Working Group) — Notable Differences</div>
+<table class="ctable"><tr><th>Drug-Gene</th><th>DPWG vs CPIC</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**CYP2D6 / Tamoxifen**</td><td>DPWG: PM/IM → Switch to AI; CPIC: Optional (Level B)</td></tr><tr><td>**CYP2C19 / Clopidogrel**</td><td>Similar (PM/IM → Alternative)</td></tr><tr><td>**DPYD / 5-FU**</td><td>DPWG: Test all; CPIC: Test all (Level A)</td></tr></table>
+<div class="sub-h">NHS England Genomic Medicine Service (GMS) — Commissioned Tests (2024/25)</div>
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Turnaround</th></tr><tr><td>------</td><td>------------</td><td>------------</td></tr><tr><td>**DPYD** (DPYD*2A, *13, *28, *29)</td><td>All patients before 5-FU/capecitabine</td><td>3-5 days</td></tr><tr><td>**TPMT**</td><td>Before azathioprine/6-MP</td><td>3-5 days</td></tr><tr><td>**CYP2C19**</td><td>Before clopidogrel (ACS/PCI)</td><td>3-5 days</td></tr><tr><td>**CYP2D6**</td><td>Before codeine/tramadol/tamoxifen</td><td>5-10 days</td></tr><tr><td>**HLA-B*57:01**</td><td>Before abacavir</td><td>3-5 days</td></tr><tr><td>**HLA-B*57:01**</td><td>Before allopurinol (at-risk populations)</td><td>5-10 days</td></tr><tr><td>**HLA-B*15:02**</td><td>Before carbamazepine (at-risk)</td><td>5-10 days</td></tr><tr><td>**NUDT15**</td><td>Before azathioprine/6-MP (East Asian)</td><td>5-10 days</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Implementation Strategies</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pre-emptive vs Reactive Testing</div>
+<table class="ctable"><tr><th>Strategy</th><th>Description</th><th>Pros</th><th>Cons</th></tr><tr><td>----------</td><td>-------------</td><td>------</td><td>------</td></tr><tr><td>**Pre-emptive**</td><td>Panel testing (PGx panel) before drug needed; Results stored in EHR</td><td>**Available at prescribing**; Avoids delays; Cost-effective long-term</td><td>Upfront cost; Variant re-classification; Data management</td></tr><tr><td>**Reactive**</td><td>Test ordered when drug prescribed</td><td>Lower upfront cost; Targeted</td><td>**Delay** (3-10 days); Missed opportunities; Repeated testing</td></tr></table>
+<div class="sub-h">Clinical Decision Support (CDSS) Integration</div>
+<table class="ctable"><tr><th>Component</th><th>Implementation</th></tr><tr><td>-----------</td><td>----------------</td></tr><tr><td>**EHR Integration**</td><td>PGx results in structured data → Real-time alerts at prescribing</td></tr><tr><td>**Alert Types**</td><td>Hard stop (DPYD PM → Avoid 5-FU), Soft alert (CYP2C19 IM → Consider alternative)</td></tr><tr><td>**Knowledge Base**</td><td>CPIC/DPWG guidelines integrated; Updated quarterly</td></tr><tr><td>**Patient Portal**</td><td>Access to own PGx results; Medication safety card</td></tr></table>
+<div class="sub-h">Clinical Workflow Example: Clopidogrel + CYP2C19</div>
+<p>``<code>mermaid flowchart TD A[Patient with ACS/PCI] --&gt; B[CYP2C19 Genotype Available?] B --&gt;|Yes| C[Check Phenotype] B --&gt;|No| D[Order CYP2C19 Test (Rapid if urgent)] C --&gt; E{Phenotype} E --&gt;|PM/IM| F[Prescribe Alternative&lt;br/&gt;Prasugrel / Ticagrelor] E --&gt;|NM/UM| G[Standard Clopidogrel] D --&gt; H[Result in 24-48h] H --&gt; E </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Drug-Specific Clinical Scenarios</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clopidogrel + CYP2C19</div>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**ACS/PCI, CYP2C19 PM/IM**</td><td>**Switch to Prasugrel (if no stroke hx) or Ticagrelor**; Do not increase clopidogrel dose</td></tr><tr><td>**CYP2C19 UM**</td><td>Standard clopidogrel (May have ↑ bleeding risk)</td></tr><tr><td>**CYP2C19 Unknown**</td><td>**Test if time permits**; If urgent PCI → Use Prasugrel/Ticagrelor empirically</td></tr></table>
+<div class="sub-h">Azathioprine/6-MP + TPMT/NUDT15</div>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**TPMT PM**</td><td>**Avoid azathioprine/6-MP** (Severe myelosuppression); Alternative: Mycophenolate, Tacrolimus</td></tr><tr><td>**TPMT IM**</td><td>↓ Dose 30-70% (Start 50%); Monitor CBC weekly × 4w, then monthly</td></tr><tr><td>**NUDT15 PM (East Asian)**</td><td>**Avoid** or ↓ 90% dose; High myelosuppression risk</td></tr><tr><td>**NUDT15 IM**</td><td>↓ Dose 50%</td></tr></table>
+<div class="sub-h">Clopidogrel + PPI (CYP2C19)</div>
+<table class="ctable"><tr><th>Interaction</th><th>Management</th></tr><tr><td>-------------</td><td>------------</td></tr><tr><td>**Omeprazole/Esomeprazole**</td><td>Strong CYP2C19 inhibitor → ↑ Clopidogrel non-response risk</td></tr><tr><td>**Management**</td><td>Use **Pantoprazole** (Weak CYP2C19 inhibition) or **H2 blocker** (Famotidine)</td></tr></table>
+<div class="sub-h">Warfarin + CYP2C9 + VKORC1</div>
+<table class="ctable"><tr><th>Genotype</th><th>Dose Adjustment (Approx)</th></tr><tr><td>----------</td><td>--------------------------</td></tr><tr><td>CYP2C9 *1/*1 + VKORC1 GG</td><td>Standard (5mg)</td></tr><tr><td>CYP2C9 *2/*3 + VKORC1 AA</td><td>↓ 30-50% (2-3mg)</td></tr><tr><td>Algorithm</td><td>**IWPC Algorithm** (CYP2C9 + VKORC1 + Age + Weight + Amiodarone + Enzyme inducers)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Implementation Challenges & Ethics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Challenges</div>
+<table class="ctable"><tr><th>Challenge</th><th>Mitigation</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Variant Re-classification**</td><td>VUS → P/LP over time; Re-contact policy; Regular re-analysis</td></tr><tr><td>**Ancestry Bias**</td><td>PGx databases Eurocentric; Validate in diverse populations; Use ancestry-informative markers</td></tr><tr><td>**Cost-Effectiveness**</td><td>Pre-emptive panels cost-effective long-term; Single-gene reactive costly per test</td></tr><tr><td>**EHR Integration**</td><td>Standardised data formats (VCF, HL7 FHIR); CDS hooks; Patient-facing apps</td></tr><tr><td>**Education**</td><td>Clinician training (CME, PharmGKB, CPIC); Patient education materials</td></tr></table>
+<div class="sub-h">Ethical Issues</div>
+<table class="ctable"><tr><th>Issue</th><th>Guidance</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Incidental Findings**</td><td>ACMG SF v3.1 (59 genes): Opt-out option for secondary findings (PGx not typically included)</td></tr><tr><td>**Paediatric Testing**</td><td>Test only if **actionable in childhood** (e.g., TPMT before azathioprine); Defer predictive</td></tr><tr><td>**Direct-to-Consumer (DTC)**</td><td>PGx in DTC (23andMe, etc.) — **Not clinical grade**; Confirm in CLIA lab</td></tr><tr><td>**Insurance Discrimination**</td><td>UK: Equality Act 2010 (Genetic discrimination illegal); ABI Code on Genetic Testing</td></tr><tr><td>**Equity**</td><td>Ensure diverse representation in PGx databases; Equitable access to testing</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug-Gene Pair</th><th>Key Action</th></tr><tr><td>----------------</td><td>------------</td></tr><tr><td>**Clopidogrel / CYP2C19**</td><td>PM/IM → **Prasugrel/Ticagrelor**; UM → Standard; *Pantoprazole* preferred PPI</td></tr><tr><td>**Azathioprine/6-MP / TPMT**</td><td>PM → **Avoid**; IM → ↓ 30-70% dose; **Test before start**</td></tr><tr><td>**Azathioprine/6-MP / NUDT15**</td><td>East Asian; PM → **Avoid/90% ↓**; IM → 50% dose</td></tr><tr><td>**5-FU/Capecitabine / DPYD**</td><td>PM → **Avoid**; IM → 50% dose; **Pre-emptive testing** (NHS GMS)</td></tr><tr><td>**Irinotecan / UGT1A1**</td><td>*28/*28 → ↓ Dose (Neutropenia risk)</td></tr><tr><td>**Codeine/Tramadol / CYP2D6**</td><td>PM → No analgesia; UM → Toxicity → **Avoid**</td></tr><tr><td>**Clopidogrel / PPI**</td><td>**Pantoprazole** (Weak CYP2C19 inhibitor) preferred over Omeprazole</td></tr><tr><td>**Carbamazepine / HLA-B*15:02**</td><td>**Screen at-risk (Asian)** → Avoid if positive</td></tr><tr><td>**Abacavir / HLA-B*57:01**</td><td>**Screen all** → Contraindicated if positive</td></tr><tr><td>**Allopurinol / HLA-B*58:01**</td><td>Screen at-risk (Asian) → Avoid if positive</td></tr><tr><td>**Warfarin / CYP2C9 + VKORC1**</td><td>IWPC Algorithm (CYP2C9 + VKORC1 + Clinical)</td></tr><tr><td>**Statins / SLCO1B1**</td><td>PM (TT) → Avoid Simvastatin 80mg; Use Rosuvastatin/Pravastatin</td></tr><tr><td>**Tamoxifen / CYP2D6**</td><td>PM/IM → Consider AI switch (Controversial, CPIC Level B)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>CYP2C19 PM on clopidogrel — management?</td><td>**Switch to Prasugrel (if no stroke) or Ticagrelor**; Do not increase clopidogrel dose.</td></tr><tr><td>2</td><td>TPMT poor metaboliser on azathioprine?</td><td>**Stop azathioprine immediately** (Severe myelosuppression risk); Use alternative (Mycophenolate, Tacrolimus).</td></tr><tr><td>3</td><td>DPYD poor metaboliser prescribed 5-FU?</td><td>**Stop 5-FU/capecitabine**; Use alternative regimen (e.g., S-1, Oxaliplatin-based).</td></tr><tr><td>4</td><td>CYP2D6 UM on codeine — risk?</td><td>**Morphine toxicity** (Respiratory depression, CNS depression) — **Avoid codeine/tramadol**.</td></tr><tr><td>5</td><td>HLA-B*15:02 screening — which population?</td><td>**Han Chinese, Thai, Malaysian, Singaporean** (Carrier freq 5-15%); **Screen before carbamazepine**.</td></tr><tr><td>6</td><td>HLA-B*57:01 — test before which drug?</td><td>**Abacavir** — **Contraindicated if positive** (Hypersensitivity reaction).</td></tr><tr><td>6</td><td>DPYD testing — when?</td><td>**Before 5-FU/capecitabine** (NHS GMS commissioned; Pre-emptive testing recommended).</td></tr><tr><td>7</td><td>CYP2D6 poor metaboliser on tamoxifen — controversial?</td><td>CPIC Level B — **Consider switch to AI** (Loss of endoxifen); Evidence mixed, shared decision.</td></tr><tr><td>8</td><td>HLA-B*58:01 — which drug, which population?</td><td>**Allopurinol**; Screen **Han Chinese, Korean, Thai** (High freq) → Avoid if positive (SJS/TEN risk).</td></tr><tr><td>9</td><td>SLCO1B1 rs4149056 TT — statin choice?</td><td>Simvastatin 80mg contraindicated; Use **Rosuvastatin or Pravastatin** (Less SLCO1B1 dependent).</td></tr><tr><td>10</td><td>Warfarin dosing — key genes + clinical factors?</td><td>**CYP2C9** (*2, *3), **VKORC1** (-1639G>A), **Age, Weight, Amiodarone, Interacting drugs** → IWPC Algorithm.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"CYP2D6 PM = No effect from tamoxifen"**</td><td>**Controversial.** CPIC Level B: Consider AI switch; Evidence mixed; Shared decision-making.</td></tr><tr><td>**"All Asians need NUDT15 testing"**</td><td>**High frequency in East Asian** (Korean, Japanese, Chinese); Not all Asian populations.</td></tr><tr><td>**"DPYD testing only for 5-FU"**</td><td>**Also for Capecitabine** (Prodrug → 5-FU); Same DPYD guidelines.</td></tr><tr><td>**"HLA-B*15:02 = Only carbamazepine"**</td><td>**Also phenytoin, lamotrigine, oxcarbazepine** (aromatic AEDs).</td></tr><tr><td>**"HLA-B*57:01 = Only abacavir"**</td><td>**Also abacavir-containing regimens** (Triumeq, Trizivir, etc.).</td></tr><tr><td>**"CYP2C19 UM = Clopidogrel better"**</td><td>May have **↑ bleeding risk**; Standard dose, monitor.</td></tr><tr><td>**"TPMT IM = 50% dose"**</td><td>**30-70% reduction** (Start 50%, titrate based on CBC).</td></tr><tr><td>**"NUDT15 only East Asian"**</td><td>**High frequency in East Asian**; Also in Hispanic/Latino (~5-10%).</td></tr><tr><td>**"SLCO1B1 only for simvastatin"**</td><td>Also for **atorvastatin, rosuvastatin (less), methotrexate, statins in general**.</td></tr><tr><td>**"CYP2C19 *17 = UM"**</td><td>**Yes, *17 = Increased function**; UM = *1/*17 or *17/*17 (or *1/*2xN etc.).</td></tr></table>
+<div class="callout"><b>Mnemonic: PHARMACOGENETICS KEY PAIRS</b> <b>P</b>harmacogenetics: <b>Gene → Protein → Drug Response</b> <b>H</b>igh-Value Pairs: <b>CYP2C19/Clopidogrel, CYP2D6/Codeine/Tamoxifen, CYP2C9/Warfarin</b> <b>A</b>zathioprine: <b>TPMT + NUDT15</b> — PM = Avoid, IM = Reduce dose <b>R</b>efractory: <b>DPYD/5-FU</b> — PM = Avoid, IM = 50% dose; <b>Pre-emptive Testing (NHS)</b> <b>M</b>etabolism: <b>CYP2D6 (Codeine, Tamoxifen, Antidepressants)</b> — PM = No effect/Toxic; UM = Toxic <b>A</b>bacavir: **HLA-B<i>57:01<b> — Screen All, Contraindicated if Positive </b>C<b>arbamazepine: </b>HLA-B</i>15:02<b> — Screen Asian, Avoid if Positive </b>O<b>meprazole: </b>CYP2C19 Inhibitor<b> → Clopidogrel Interaction → </b>Use Pantoprazole<b> </b>G<b>6PD: </b>Favism<b> — Avoid Primaquine, Sulfa, Rasburicase, Dapsone </b>E<b>noxacin/Ciprofloxacin: </b>G6PD Caution<b> (Fluoroquinolones oxidative) </b>N<b>UDT15: </b>East Asian<b> (Korean, Japanese, Chinese) — Azathioprine/6-MP </b>E<b>thics: </b>Pre-emptive vs Reactive<b>, Equity, Re-classification, DTC Dangers </b>T<b>esting Strategy: </b>Pre-emptive Panel vs Reactive Single<b> — EHR Integration Key </b>I<b>rnin/Warfarin: </b>CYP2C9 + VKORC1 + Clinical<b> = IWPC Algorithm </b>C<b>lorpromazine: </b>CYP2D6<b> (But less critical) </b>S<b>LCO1B1: </b>Statins<b> (Simva &gt; Ator &gt; Rosuva) — PM = Avoid Simva 80mg </b>V<b>KORC1: </b>Warfarin<b> — -1639G&gt;A + CYP2C9 → IWPC Algorithm </b>G<b>uidelines: </b>CPIC (Level A), DPWG, NHS GMS<b> — Commissioned Tests </b>E<b>vidence Levels: </b>CPIC A (Strong) → Prescribe; B → Consider; C → No Rec; D → None<b> </b>N<b>UDT15: </b>East Asian<b> (Korean, Japanese, Chinese) — Azathioprine/6-MP PM = Avoid </b>E<b>xamples: </b>Clopidogrel/CYP2C19 (PM→Prasu/Tica), Codeine/CYP2D6 (PM=No effect), 5-FU/DPYD (PM=Avoid)<b> </b>T<b>amoxifen/CYP2D6: </b>Controversial (Level B)<b> — PM/IM consider AI switch </b>I<b>CPIC Levels: </b>A = Prescribe, B = Consider, C = No Rec, D = None<b> </b>C<b>linical Decision Support: </b>EHR Integration → Hard Stop (DPYD PM), Soft Alert (CYP2C19 IM)<b> </b>S<b>equencing: </b>Pre-emptive Panel (Cost-effective long-term)** vs Reactive Single</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Pharmacogenetics)) CYP Enzymes CYP2D6: Codeine/Tamoxifen/Antidepressants CYP2C19: Clopidogrel/PPIs CYP2C9: Warfarin/Phenytoin CYP3A4/5: Tacrolimus/Statins CYP1A2: Clozapine/Theophylline Non-CYP TPMT/NUDT15: Azathioprine/6-MP DPYD: 5-FU/Capecitabine UGT1A1: Irinotecan G6PD: Primaquine/Dapsone HLA: B<i>57:01(Abacavir), B</i>15:02(Carbamazepine), B<i>58:01(Allopurinol) VKORC1: Warfarin SLCO1B1: Statins NUDT15: Azathioprine (Asian) TPMT: Azathioprine/6-MP Guidelines CPIC Levels A-D DPWG NHS GMS Commissioned Implementation Pre-emptive vs Reactive CDSS/EHR Integration Re-classification Ancestry Bias Drug-Specific Clopidogrel/CYP2C19 Azathioprine/TPMT/NUDT15 5-FU/DPYD Codeine/CYP2D6 Warfarin/CYP2C9+VKORC1 Allopurinol/HLA-B</i>58:01 Carbamazepine/HLA-B<i>15:02 Abacavir/HLA-B</i>57:01 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Core Gene-Drug Pairs</td><td>4</td><td></td><td></td></tr><tr><td>Phenotype Prediction</td><td>2</td><td></td><td></td></tr><tr><td>CPIC/DPWG/NHS Guidelines</td><td>3</td><td></td><td></td></tr><tr><td>Implementation Strategies</td><td>2</td><td></td><td></td></tr><tr><td>Drug-Specific Scenarios</td><td>3</td><td></td><td></td></tr><tr><td>Implementation Challenges</td><td>2</td><td></td><td></td></tr><tr><td>Ethics & Equity</td><td>2</td><td></td><td></td></tr><tr><td>Key Clinical Scenarios</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the clinical implementation of pharmacogenetics for clopidogrel, azathioprine, and 5-FU."</td><td>CYP2C19/Clopidogrel (PM/IM→Prasu/Tica), TPMT/NUDT15/Azathioprine (PM avoid, IM reduce), DPYD/5-FU (PM avoid, IM 50%), NHS GMS commissioned, CDSS integration</td></tr><tr><td>**Short Note**</td><td>"CYP2C19 and clopidogrel — pharmacogenetics and management."</td><td>CYP2C19 PM/IM → ↓ Active metabolite → Prasugrel/Ticagrelor; CYP2C19 UM → Standard; PPI interaction (Omeprazole); NHS GMS commissioned</td></tr><tr><td>**Viva**</td><td>"Patient on azathioprine develops severe neutropenia. TPMT testing ordered. Result: PM. Management?"</td><td>**Stop azathioprine immediately**; Switch to Mycophenolate/Tacrolimus; CBC monitoring; Genetic counselling for family.</td></tr><tr><td>**Ward Round**</td><td>"Patient on simvastatin 80mg develops myopathy. SLCO1B1 TT genotype. Action?"</td><td>**Stop simvastatin**; Switch to **Rosuvastatin or Pravastatin** (Less SLCO1B1 dependent); Avoid high-dose simvastatin in PM.</td></tr><tr><td>**Last-Night**</td><td>"Clopidogrel: CYP2C19 PM/IM→Prasugrel/Ticagrelor. Azathioprine: TPMT/NUDT15 PM=Avoid, IM=Reduce. 5-FU: DPYD PM=Avoid, IM=50%. Codeine: CYP2D6 PM=No effect, UM=Toxic. Warfarin: CYP2C9+VKORC1=IWPC. HLA: B*57:01 Abacavir, B*15:02 Carbamazepine, B*58:01 Allopurinol. DPYD pre-emptive NHS. CPIC A=Prescribe."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Key Drug-Gene Pairs</b>: CYP2C19/Clopidogrel, CYP2D6/Codeine/Tamoxifen, CYP2C9/Warfarin, TPMT-NUDT15/Azathioprine, DPYD/5-FU, CYP2D6/Codeine, HLA-B<i>57:01/Abacavir, HLA-B</i>15:02/Carbamazepine, HLA-B*58:01/Allopurinol, SLCO1B1/Statins, VKORC1/Warfarin, CYP2C19/PPIs.</li><li><b>Phenotype Prediction</b>: Activity Score (CYP2D6), Diplotype→Phenotype (TPMT, NUDT15, DPYD, CYP2C19, CYP2C9).</li><li><b>CPIC Guidelines</b>: Level A (Prescribe), B (Consider), C (No rec), D (None). Key Level A: Clopidogrel/CYP2C19, Azathioprine/TPMT/NUDT15, 5-FU/DPYD, Codeine/CYP2D6, Carbamazepine/HLA-B<i>15:02, Abacavir/HLA-B</i>57:01, Allopurinol/HLA-B*58:01.</li><li><b>NHS GMS Commissioned</b>: DPYD, TPMT, CYP2C19, CYP2D6, HLA-B<i>57:01, HLA-B</i>58:01, HLA-B*15:02, NUDT15.</li><li><b>Key Clinical Actions</b>: Clopidogrel PM/IM→Prasugrel/Ticagrelor; Azathioprine PM→Avoid, IM→Reduce; 5-FU PM→Avoid, IM→50%; Codeine PM→Avoid; Simvastatin SLCO1B1 PM→Avoid 80mg.</li><li><b>Implementation</b>: Pre-emptive panels (Cost-effective long-term), CDSS Integration (Hard stops/Soft alerts), Re-classification policy, Ancestry bias awareness.</li><li><b>Ethics</b>: Equity, DTC testing limits, Paediatric testing deferral, Insurance (Equality Act 2010/ABI Code), Incidental findings.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>CYP2C19 poor metaboliser on clopidogrel — best alternative?</b></li></ol>
+<p>A. Increase clopidogrel dose  B. <b>Prasugrel or Ticagrelor</b>  C. Add omeprazole  D. Switch to warfarin <i>Answer: B. CYP2C19 PM/IM → ↓ Active metabolite → Prasugrel/Ticagrelor preferred.</i></p>
+<ol><li><b>TPMT poor metaboliser — azathioprine management?</b></li></ol>
+<p>A. Reduce dose 50%  B. <b>Avoid completely</b>  C. Increase dose  D. Monitor only <i>Answer: B. TPMT PM → Severe myelosuppression risk → Avoid azathioprine/6-MP.</i></p>
+<ol><li><b>DPYD poor metaboliser — 5-FU prescription?</b></li></ol>
+<p>A. Standard dose  B. <b>Avoid 5-FU/capecitabine</b>  C. 50% dose  D. Monitor only <i>Answer: B. DPYD PM → Severe/fatal toxicity → Avoid 5-FU/capecitabine.</i></p>
+<ol><li>**HLA-B*57:01 positive — which drug contraindicated?**</li></ol>
+<p>A. Carbamazepine  B. <b>Abacavir</b>  C. Allopurinol  D. Phenytoin <i>Answer: B. HLA-B</i>57:01 → Abacavir hypersensitivity → Contraindicated.*</p>
+<ol><li><b>CYP2D6 ultra-rapid metaboliser — codeine risk?</b></li></ol>
+<p>A. No analgesia  B. <b>Morphine toxicity (Respiratory depression)</b>  C. No effect  D. Seizures <i>Answer: B. UM → Rapid conversion to morphine → Respiratory depression, CNS toxicity.</i></p>
+<ol><li>**HLA-B*15:02 screening — which population?**</li></ol>
+<p>A. European  B. <b>Han Chinese, Thai, Malaysian</b>  C. African  D. Latin American <i>Answer: B. High frequency in East/Southeast Asian populations (5-15%).</i></p>
+<ol><li><b>DPYD testing — when indicated?</b></li></ol>
+<p>A. After 5-FU toxicity  B. <b>Before 5-FU/capecitabine</b>  C. After 1 cycle  D. Never <i>Answer: B. Pre-emptive testing before 5-FU/capecitabine (NHS GMS commissioned).</i></p>
+<ol><li>**Allopurinol + HLA-B*58:01 positive — action?**</li></ol>
+<p>A. Reduce dose  B. <b>Avoid allopurinol</b>  C. Monitor only  D. Use febuxostat instead <i>Answer: B. HLA-B</i>58:01 → Allopurinol hypersensitivity (SJS/TEN) → Contraindicated.*</p>
+<ol><li><b>SLCO1B1 rs4149056 TT (PM) — simvastatin 80mg?</b></li></ol>
+<p>A. Safe  B. <b>Contraindicated (High myopathy risk)</b>  C. Reduce dose  D. Monitor CK <i>Answer: B. SLCO1B1 TT → ↑ Simvastatin exposure → High myopathy risk → Avoid 80mg.</i></p>
+<ol><li><b>Warfarin dosing — key genetic factors?</b></li></ol>
+<p>A. CYP2C9 only  B. VKORC1 only  C. <b>CYP2C9 + VKORC1 + Clinical factors</b>  D. CYP2D6 + VKORC1 <i>Answer: C. CYP2C9 (</i>2/<i>3), VKORC1 (-1639G&gt;A), Age, Weight, Amiodarone, Enzyme inducers → IWPC Algorithm.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>**Patient on clopidogrel 75mg post-PCI. CYP2C19 <i>2/</i>2 (PM). Best action?**</li></ol>
+<p>A. Increase to 150mg  B. <b>Switch to ticagrelor 90mg BD</b>  C. Add omeprazole  D. Continue same <i>Answer: B. CYP2C19 PM → Switch to ticagrelor/prasugrel.</i></p>
+<ol><li>**Patient starting azathioprine. TPMT genotype <i>1/</i>3A (IM). Starting dose?**</li></ol>
+<p>A. Standard (2.5mg/kg)  B. <b>50% dose (1.25mg/kg)</b>  C. 25% dose  D. Avoid <i>Answer: B. IM → Start 30-70% dose (typically 50%); Monitor CBC weekly.</i></p>
+<ol><li>**Asian patient starting 6-MP. NUDT15 <i>3/</i>3 (PM). Action?**</li></ol>
+<p>A. Standard dose  B. <b>Avoid or 10% dose (90% reduction)</b>  C. 50% dose  D. Monitor only <i>Answer: B. NUDT15 PM → Severe myelosuppression risk; Avoid or 90% dose reduction.</i></p>
+<ol><li><b>Patient on simvastatin 80mg develops myopathy. SLCO1B1 rs4149056 TT. Next step?</b></li></ol>
+<p>A. Reduce to 40mg  B. <b>Switch to rosuvastatin 20mg</b>  C. Stop statin  D. Add ezetimibe <i>Answer: B. Switch to rosuvastatin/pravastatin (Less SLCO1B1 dependent).</i></p>
+<ol><li><b>Carbamazepine planned for Han Chinese patient. Pre-prescription test?</b></li></ol>
+<p>A. CYP2C9  B. TPMT  C. **HLA-B*15:02**  D. DPYD <i>Answer: C. HLA-B</i>15:02 screening mandatory in at-risk populations before carbamazepine.*</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-C</td><td>1-B, 2-B, 3-B, 4-B, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1. Fundamentals of Medical Genetics]] — Genetic variation, Allele frequencies, HWE</li><li>[[2.1 Mendelian Inheritance]] — Autosomal inheritance of pharmacogenes</li><li>[[3. Chromosomal Disorders]] — Gene dosage effects (e.g., CYP2D6 CNV)</li><li>[[4.3 X-Linked Disorders]] — G6PD deficiency (X-linked)</li><li>[[5.1-5.4 Genetic Testing Technologies]] — NGS panels for PGx, MLPA for CNV (CYP2D6), qPCR</li><li>[[5.4 Prenatal &amp; Preimplantation Testing]] — PGx in reproductive decisions</li><li>[[5.5 Genetic Counselling]] — PGx results communication, Family implications</li><li>[[6.1 Hereditary Cancer Syndromes]] — DPYD (5-FU), TPMT (Azathioprine) in cancer therapy</li><li>[[6.2-6.3 Tumour Genetics &amp; Testing]] — Germline PGx vs Somatic tumour testing</li><li>[[7. Pharmacogenetics]] — CPIC/DPWG/NHS GMS guidelines</li><li>[[9. ELSI]] — PGx equity, DTC testing, Insurance discrimination</li><li>[[10. System-Based Clinical Genetics]] — PGx by specialty (Cardiology, Psychiatry, Oncology, Rheumatology)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-14 <b>Next:</b> Build <code>8. Population &amp; Newborn Screening.md</code>, <code>9. ELSI.md</code>, <code>10. System-Based Clinical Genetics.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Pharmacogenetics · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rectal Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.5. COLORECTAL CANCER</span>
+      <div class="h1">Rectal Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>TME Surgery principles</b>: Sharp dissection, Autonomic nerve preservation, D3 Lymphadenectomy</li><li>[ ] Select <b>neoadjuvant approach</b>: Short-Course RT (5x5Gy) vs Long-Course CRT vs TNT</li><li>[ ] Apply <b>Organ Preservation (Watch &amp; Wait)</b> criteria for clinical Complete Response (cCR)</li><li>[ ] Perform <b>TME Surgery</b>: LAR vs APR, Nerve Sparing, D3 Lymphadenectomy</li><li>[ ] Apply <b>Adjuvant Chemotherapy</b>: FOLFOX/CAPOX 6mo</li><li>[ ] Manage <b>Local Recurrence</b>: Pelvic Exenteration, Re-irradiation</li><li>[ ] Implement <b>Surveillance</b>: CEA, MRI, Endoscopy, CT</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Anatomy & Staging</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Rectal Anatomy</div>
+<table class="ctable"><tr><th>Segment</th><th>Distance from Anal Verge</th><th>Lymphatic Drainage</th></tr><tr><td>---------</td><td>--------------------------</td><td>-------------------</td></tr><tr><td>**Upper Rectum**</td><td>**12-16 cm**</td><td>**IMA → Para-aortic**</td></tr><tr><td>**Middle Rectum**</td><td>**7-11 cm**</td><td>**IMA + Internal Iliac**</td></tr><tr><td>**Lower Rectum**</td><td>**0-6 cm**</td><td>**Internal Iliac → Inguinal**</td></tr></table>
+<div class="sub-h">TNM Staging (AJCC 8th - Specific for Rectal)</div>
+<table class="ctable"><tr><th>Stage</th><th>Criteria</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**T1**</td><td>Submucosa</td></tr><tr><td>**T2**</td><td>Muscularis Propria</td></tr><tr><td>**T3**</td><td>Mesorectal Fat (Through Muscularis)</td></tr><tr><td>**T4a**</td><td>Visceral Peritoneum</td></tr><tr><td>**T4b**</td><td>Adjacent Organs</td></tr><tr><td>**N1**</td><td>1-3 Regional Nodes</td></tr><tr><td>**N2**</td><td>≥4 Regional Nodes</td></tr><tr><td>**Stage I**</td><td>T1-2 N0 M0</td></tr><tr><td>**Stage II**</td><td>T3-4 N0 M0</td></tr><tr><td>**Stage III**</td><td>Any T N1-2 M0</td></tr><tr><td>**Stage IV**</td><td>Any M1</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Total Mesorectal Excision (TME) - Gold Standard Surgery</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Principles</div>
+<table class="ctable"><tr><th>Principle</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Sharp Dissection**</td><td>**In Holy Plane** (Between Mesorectal Fascia & Parietal Fascia)</td></tr><tr><td>**Autonomic Nerve Preservation**</td><td>**Hypogastric Nerves, Pelvic Plexus, Pelvic Splanchnic Nerves** → **Sexual/Bladder Function**</td></tr><tr><td>**D3 Lymphadenectomy**</td><td>**High Ligation of IMA** (To Origin) + **Lateral Lymph Nodes** (Japanese Approach, Optional in West)</td></tr><tr><td>**Distal Margin**</td><td>**≥2cm** (Ideally), **≥1cm** (Acceptable for Low Rectal)</td></tr><tr><td>**Circumferential Resection Margin (CRM)**</td><td>**>1mm** (CRM ≤1mm = Involved → ↑Local Recurrence)</td></tr></table>
+<div class="sub-h">Types of Resection</div>
+<table class="ctable"><tr><th>Procedure</th><th>Indication</th><th>Key Feature</th></tr><tr><td>-----------</td><td>------------</td><td>-------------</td></tr><tr><td>**LAR (Low Anterior Resection)**</td><td>**Mid/Upper Rectum**</td><td>**Sphincter Preservation**, Colorectal/Coloanal Anastomosis</td></tr><tr><td>**Ultra-LAR (uLAR) / ISR**</td><td>**Very Low Rectum**</td><td>**Intersphincteric Resection**, Coloanal Anastomosis + J-Pouch</td></tr><tr><td>**APR** (Abdominoperineal Resection)</td><td>**Lower Rectum, Sphincter Invasion**</td><td>**Permanent End Colostomy**, No Anastomosis</td></tr><tr><td>**Hartmann's**</td><td>**Emergency/Obstruction**</td><td>**End Colostomy + Rectal Stump**</td></tr></table>
+<div class="sub-h">Nerve Preservation Techniques</div>
+<table class="ctable"><tr><th>Nerve</th><th>Function</th><th>Preservation Technique</th></tr><tr><td>-------</td><td>----------</td><td>------------------------</td></tr><tr><td>**Hypogastric Nerves**</td><td>**Ejaculation/Bladder Neck**</td><td>**Identify at Promontory, Dissect Laterally**</td></tr><tr><td>**Pelvic Plexus**</td><td>**Erection, Bladder/Rectal Tone**</td><td>**Posterolateral Dissection**</td></tr><tr><td>**Pelvic Splanchnic (S2-4)**</td><td>**Erection, Parasympathetic**</td><td>**Posterolateral, Near Rectum**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Neoadjuvant Therapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications for Neoadjuvant</div>
+<table class="ctable"><tr><th>Stage</th><th>Recommendation</th></tr><tr><td>-------</td><td>----------------</td></tr><tr><td>**T1-2 N0** (Stage I)</td><td>**Surgery Alone** (No Neoadjuvant)</td></tr><tr><td>**T3 N0** (Stage II)</td><td>**Short-Course RT 5x5Gy** (Preferred)</td></tr><tr><td>**T3-4 / N+** (Stage II-III)</td><td>**Long-Course CRT 45-50.4Gy + 5-FU/Capecitabine** OR **Short-Course RT + Consolidation Chemo (TNT)**</td></tr></table>
+<div class="sub-h">Short-Course RT (5x5Gy) - Stockholm Protocol</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**Dose**</td><td>**5 Gy ×5 Fractions** (25 Gy Total)</td></tr><tr><td>**Timing**</td><td>**Immediate Surgery** (Within 1-2 weeks) OR **Delayed Surgery** (4-8 weeks)</td></tr><tr><td>**Indication**</td><td>**T3-4 N0-1, cT2-3 N0-1** (Stage II-III)</td></tr><tr><td>**Key Trial**</td><td>**Stockholm Trial, Polish Trial, TROG 01.04**</td></tr></table>
+<div class="sub-h">Long-Course Chemoradiation (CRT)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**RT Dose**</td><td>**45-50.4 Gy / 25-28 Fractions** (1.8 Gy/fx)</td></tr><tr><td>**Concurrent Chemo**</td><td>**Capecitabine 825mg/m² bid d1-5 q1w** OR **5-FU 225mg/m² CI**</td></tr><tr><td>**Surgery Timing**</td><td>**6-8 Weeks Post-CRT** (Allow Downstaging)</td></tr><tr><td>**Key Trial**</td><td>**CAO/ARO/AIO-94, German CAO/ARO/AIO-04**</td></tr></table>
+<div class="sub-h">Total Neoadjuvant Therapy (TNT) - Emerging Standard</div>
+<table class="ctable"><tr><th>Protocol</th><th>Regimen</th><th>Key Trial</th></tr><tr><td>----------</td><td>---------</td><td>-----------</td></tr><tr><td>**RAPIDO**</td><td>**SCRT 5x5Gy → CAPOX ×6 → TME**</td><td>**RAPIDO Trial: pCR 28% vs 14%, 3-yr DFS HR 0.74**</td></tr><tr><td>**PRODIGE 23**</td><td>**FOLFOX ×6 → CRT 50Gy/Cape → TME**</td><td>**PRODIGE 23: pCR 24% vs 12%**</td></tr><tr><td>**OPRA / Habr-GAMA**</td><td>**Organ Preservation (Watch & Wait)**</td><td>**cCR → Observe**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Organ Preservation (Watch & Wait)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Criteria for Clinical Complete Response (cCR)</div>
+<table class="ctable"><tr><th>Modality</th><th>Criteria</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Endoscopy**</td><td>**No Residual Tumour, White Scar, Telangiectasia**</td></tr><tr><td>**MRI**</td><td>**No Residual Mass, Fibrosis Only, T2 Hypointense**</td></tr><tr><td>**DRE**</td><td>**No Palpable Mass**</td></tr><tr><td>**CEA**</td><td>**Normal**</td></tr></table>
+<div class="sub-h">Watch &amp; Wait Protocol (OPRA / Habr-GAMA)</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. cCR Confirmed**</td><td>**Endoscopy + MRI + CEA + DRE**</td></tr><tr><td>**2. Surveillance**</td><td>**Rigid Proctoscopy + MRI q3mo ×2yr, q6mo ×3yr**</td></tr><tr><td>**3. Regrowth**</td><td>**Salvage Surgery (TME)** — **Similar Survival to Primary Surgery**</td></tr><tr><td>**Selection**</td><td>**cCR after Long-Course CRT or TNT**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Watch &amp; Wait = Organ Preservation</b> (Avoids Permanent Stoma, Preserves Function)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Surgery: LAR vs APR vs Lateral Pelvic Nodes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Sphincter Preservation Criteria</div>
+<table class="ctable"><tr><th>Factor</th><th>Sphincter Preservation (LAR/ISR)</th><th>APR Indicated</th></tr><tr><td>--------</td><td>----------------------------------</td><td>---------------</td></tr><tr><td>**Tumour Height**</td><td>**>5-6 cm from Anal Verge**</td><td>**<5 cm** (Intersphincteric not feasible)</td></tr><tr><td>**Sphincter Involvement**</td><td>**None**</td><td>**Direct Invasion**</td></tr><tr><td>**Pre-op Continence**</td><td>**Good**</td><td>**Poor**</td></tr><tr><td>**Patient Preference**</td><td>**Wants Sphincter**</td><td>**Accepts Stoma**</td></tr></table>
+<div class="sub-h">Lateral Pelvic Lymph Nodes (LPN)</div>
+<table class="ctable"><tr><th>Approach</th><th>Indication</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Western**</td><td>**Routine LPN Dissection NOT Standard** (CPP, PROCARE)</td></tr><tr><td>**Japanese**</td><td>**Routine LPN Dissection** (If cN+ LPN on MRI)</td></tr><tr><td>**Indication (West)**</td><td>**cN+ LPN on MRI, Large Low Rectal Tumours**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Adjuvant Chemotherapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications</div>
+<table class="ctable"><tr><th>Scenario</th><th>Recommendation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Stage II (T3-4 N0)**</td><td>**High Risk Only** (LVI, PNI, T4, Grade 3, <12 LNs, Perineural, <1mm CRM)</td></tr><tr><td>**Stage III**</td><td>**Standard** (FOLFOX/CAPOX ×6mo)</td></tr><tr><td>**Post-Neoadjuvant**</td><td>**Complete 6mo Total** (Neoadj + Adj = 6mo)</td></tr></table>
+<div class="sub-h">Regimens</div>
+<table class="ctable"><tr><th>Regimen</th><th>Schedule</th><th>Duration</th></tr><tr><td>---------</td><td>----------</td><td>----------</td></tr><tr><td>**FOLFOX**</td><td>Oxaliplatin 85 + Leucovorin 400 + 5-FU 400 bolus + 2400 infusional q2w</td><td>**6mo (12 cycles)**</td></tr><tr><td>**CAPOX**</td><td>Oxaliplatin 130 d1 + Capecitabine 1000 bid d1-14 q3w</td><td>**6mo (8 cycles)**</td></tr></table>
+<div class="callout"><b>IDEA</b>: <b>3mo CAPOX non-inferior for Low-Risk Stage III</b> (T1-3, N1, No LVI/PNI)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Local Excision (T1 Tumours)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Technique</th><th>Indication</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**TEM (Transanal Endoscopic Microsurgery)**</td><td>**T1, Well/Moderately Differentiated, <3cm, No LVI, No PNI, Mobile**</td></tr><tr><td>**TAMIS** (Transanal Minimally Invasive Surgery)</td><td>**Same as TEM**</td></tr><tr><td>**Traditional Transanal Excision**</td><td>**Small, Distal, Well-Differentiated**</td></tr></table>
+<div class="callout"><b>Adjuvant RT</b> if <b>High-Risk Features</b>: Poor Differentiation, LVI, PNI, Positive Margins, Smucosal Invasion &gt;1000μm</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Neoadjuvant Regimens Comparison</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Approach</th><th>Regimen</th><th>Surgery Timing</th><th>Key Trial</th></tr><tr><td>----------</td><td>---------</td><td>----------------</td><td>-----------</td></tr><tr><td>**Short-Course RT**</td><td>**5x5Gy**</td><td>**Immediate (1-2wk) OR Delayed (4-8wk)**</td><td>**Stockholm, Polish, TROG**</td></tr><tr><td>**Long-Course CRT**</td><td>**45-50.4Gy + Cape/5-FU**</td><td>**6-8 Weeks Post-CRT**</td><td>**CAO/ARO/AIO-94**</td></tr><tr><td>**TNT (RAPIDO)**</td><td>**5x5Gy → CAPOX ×6 → TME**</td><td>**After Chemo**</td><td>**RAPIDO: pCR 28% vs 14%**</td></tr><tr><td>**TNT (PRODIGE 23)**</td><td>**FOLFOX ×6 → CRT → TME**</td><td>**After CRT**</td><td>**PRODIGE 23: pCR 24% vs 12%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Organ Preservation - Watch & Wait (Detailed)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">cCR Definition (Habra-Gama / OPRA)</div>
+<table class="ctable"><tr><th>Modality</th><th>cCR Criteria</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**Endoscopy**</td><td>**Normal Mucosa / White Scar / Telangiectasia** (No Tumour)</td></tr><tr><td>**MRI**</td><td>**No Residual Mass, Fibrosis Only, T2 Dark**</td></tr><tr><td>**DRE**</td><td>**Normal**</td></tr><tr><td>**CEA**</td><td>**Normal**</td></tr></table>
+<div class="sub-h">Surveillance Protocol (OPRA)</div>
+<table class="ctable"><tr><th>Timeframe</th><th>Endoscopy</th><th>MRI</th><th>CEA</th></tr><tr><td>-----------</td><td>-----------</td><td>-----</td><td>-----</td></tr><tr><td>**0-2 years**</td><td>**q3mo**</td><td>**q3mo**</td><td>**q3mo**</td></tr><tr><td>**2-5 years**</td><td>**q6mo**</td><td>**q6mo**</td><td>**q6mo**</td></tr><tr><td>**>5 years**</td><td>**Annual**</td><td>**Annual**</td><td>**Annual**</td></tr></table>
+<div class="callout"><b>Regrowth Rate</b>: <b>~25-30%</b> (Most &gt;2yr); <b>Salvage TME = Similar Survival to Primary Surgery</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Pelvic Exenteration (Locally Advanced/Recurrent)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Organs Removed</th></tr><tr><td>------</td><td>----------------</td></tr><tr><td>**Anterior**</td><td>**Rectum, Bladder, Prostate/Uterus/Vagina** → **Ileal Conduit + Vaginal Reconstruction**</td></tr><tr><td>**Posterior**</td><td>**Rectum, Sacrum, Coccyx**</td></tr><tr><td>**Total**</td><td>**Rectum, Bladder, Prostate/Uterus/Vagina, Sacrum** → **Ileal Conduit + Colostomy**</td></tr></table>
+<div class="callout"><b>Indication</b>: <b>T4b (Fixed), Locally Recurrent, Pelvic Sidewall Involvement</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Surveillance & Follow-Up</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Modality</th><th>Frequency</th><th>Duration</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>**CEA**</td><td>**q3-6mo ×5yr**</td><td>**5 Years**</td></tr><tr><td>**CT Chest/Abd/Pelvis**</td><td>**Annual ×5yr**</td><td>**5 Years**</td></tr><tr><td>**MRI Pelvis**</td><td>**q6-12mo ×3yr**</td><td>**3-5 Years**</td></tr><tr><td>**Endoscopy (Rigid Proctoscopy)**</td><td>**q6-12mo ×5yr**</td><td>**5 Years**</td></tr><tr><td>**CT Chest**</td><td>**Annual**</td><td>**5 Years** (Lung Mets)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**TME Surgery**</td><td>**Sharp Dissection in Holy Plane**, **Autonomic Nerve Preservation**, **D3 Lymphadenectomy**, **CRM >1mm**</td></tr><tr><td>**Neoadjuvant Options**</td><td>**Short-Course RT 5x5Gy** (Immediate Surg) **vs** **Long-Course CRT 45-50.4Gy + Cape/5-FU** (6-8wk Delay) **vs** **TNT (RAPIDO/PRODIGE 23)**</td></tr><tr><td>**RAPIOD/PRODIGE 23**</td><td>**TNT Superior pCR** (RAPIDO 28%, PRODIGE 24%)</td></tr><tr><td>**Organ Preservation**</td><td>**cCR (Endo + MRI + DRE + CEA) → Watch & Wait** (OPRA/Habr-GAMA)</td></tr><tr><td>**TME Surgery**</td><td>**Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm**</td></tr><tr><td>**LAR vs APR**</td><td>**>5-6cm → LAR/ISR**; **<5cm / Sphincter Invasion → APR**</td></tr><tr><td>**Lateral Nodes**</td><td>**West: Selective (cN+ LPN on MRI)**; **Japan: Routine**</td></tr><tr><td>**Adjuvant Chemo**</td><td>**Stage III: FOLFOX/CAPOX 6mo**; **IDEA: 3mo CAPOX Low-Risk Stage III**</td></tr><tr><td>**Local Excision**</td><td>**T1: TEM/TAMIS** (Well/Mod Diff, <3cm, No LVI/PNI)</td></tr><tr><td>**TNT**</td><td>**RAPIDO (SCRT → CAPOX)** / **PRODIGE 23 (FOLFOX → CRT)**</td></tr><tr><td>**Watch & Wait**</td><td>**cCR (Endo + MRI + DRE + CEA) → Surveillance q3mo×2yr**</td></tr><tr><td>**Pelvic Exenteration**</td><td>**Anterior/Posterior/Total** (T4b, Recurrent)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Rectal Cancer — TME Principles?**</td><td>**Sharp Dissection in Holy Plane, Autonomic Nerve Preservation, D3 Lymphadenectomy, CRM >1mm**.</td></tr><tr><td>**Short-Course vs Long-Course RT?**</td><td>**SCRT: 5x5Gy, Immediate Surg**; **LCRT: 45-50.4Gy + Cape/5-FU, 6-8wk Delay, Surgery 6-8wk Post**.</td></tr><tr><td>**TNT — RAPIDO vs PRODIGE 23?**</td><td>**RAPIDO: SCRT 5x5Gy → CAPOX ×6 → TME**; **PRODIGE 23: FOLFOX ×6 → CRT 50Gy → TME**.</td></tr><tr><td>**cCR Definition for Watch & Wait?**</td><td>**Endoscopy: White Scar/Telangiectasia; MRI: Fibrosis Only; DRE Normal; CEA Normal**.</td></tr><tr><td>**Watch & Wait — Surveillance Schedule?**</td><td>**Proctoscopy/MRI/CEA q3mo ×2yr, q6mo ×3yr, Then Annually** (OPRA).</td></tr><tr><td>**TME — Key Principles?**</td><td>**Sharp Dissection, Holy Plane, Autonomic Nerve Preservation, D3 LND, CRM >1mm**.</td></tr><tr><td>**LAR vs APR — Indications?**</td><td>**LAR: >5-6cm from Anal Verge, Sphincter Spared**; **APR: <5cm, Sphincter Invasion**.</td></tr><tr><td>**Lateral Lymph Nodes — Western vs Japanese?**</td><td>**West: Selective (cN+ LPN on MRI)**; **Japan: Routine Dissection**.</td></tr><tr><td>**Adjuvant Chemo — Rectal Stage III?**</td><td>**FOLFOX/CAPOX ×6mo** (IDEA: 3mo CAPOX Non-Inferior Low-Risk Stage III).</td></tr><tr><td>**Local Excision — Indications?**</td><td>**T1, Well/Mod Diff, <3cm, No LVI/PNI, Mobile** (TEM/TAMIS).</td></tr><tr><td>**TNT — RAPIDO vs PRODIGE 23 Regimen?**</td><td>**RAPIDO: SCRT 5x5Gy → CAPOX ×6 → TME**; **PRODIGE 23: FOLFOX ×6 → CRT 50Gy/Cape → TME**.</td></tr><tr><td>**Pelvic Exenteration — Indications?**</td><td>**T4b Fixed, Recurrent, Pelvic Sidewall Involvement**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**SCRT vs LCRT**</td><td>**SCRT: 5x5Gy, Immediate Surgery**; **LCRT: 45-50.4Gy + Chemo, 6-8wk Delay**</td></tr><tr><td>**TNT vs Standard Neoadjuvant**</td><td>**TNT = Chemo + RT (Any Order) Before Surgery**; **Standard = RT Alone (SCRT/LCRT)**</td></tr><tr><td>**TAD vs SLNB**</td><td>**TAD is for Rectal (Clip + SLNB)**; **SLNB for Breast/Melanoma**</td></tr><tr><td>**LAR vs ISR**</td><td>**LAR: Colorectal/Coloanal Anastomosis**; **ISR: Intersphincteric, Coloanal Anastomosis + J-Pouch**</td></tr><tr><td>**Lateral Nodes West vs Japan**</td><td>**West: Selective (cN+ on MRI)**; **Japan: Routine D3 LPN Dissection**</td></tr><tr><td>**TEM vs TAMIS**</td><td>**TEM: Rigid Scope**; **TAMIS: Flexible/Laparoscopic Platform**</td></tr><tr><td>**TNT RAPIDO vs PRODIGE 23**</td><td>**RAPIDO: SCRT First**; **PRODIGE 23: Chemo First (FOLFOX)**</td></tr><tr><td>**Watch & Wait Failure**</td><td>**Regrowth → Salvage TME** (Similar Survival to Primary Surgery)</td></tr></table>
+<p><b>Mnemonic: RECTAL-CANCER-TME</b></p>
+<ul><li><b>R</b>ectal: <b>Distinct from Colon</b> (TME, Neoadjuvant RT)</li><li><b>E</b>xclusion: <b>T1 → TEM/TAMIS</b> (Local Excision)</li><li><b>C</b>RT Neoadjuvant: <b>SCRT 5x5Gy vs LCRT 45-50Gy+Cape</b></li><li><b>T</b>NT: <b>RAPIDO (SCRT→Chemo) vs PRODIGE 23 (Chemo→CRT)</b></li><li><b>A</b>utonomic Nerves: <b>Hypogastric, Pelvic Plexus, Splanchnic</b> (Preserve)</li><li><b>L</b>AR vs APR: <b>&gt;5-6cm LAR/ISR; &lt;5cm APR</b></li><li><b>C</b>RM: <b>&gt;1mm = Clear</b> (≤1mm = Involved → ↑Recurrence)</li><li><b>A</b>nadjuvant: <b>Stage III FOLFOX/CAPOX ×6mo</b> (IDEA 3mo CAPOX Low-Risk)</li><li><b>N</b>eoadjuvant Options: <b>SCRT, LCRT, TNT (RAPIDO/PRODIGE)</b></li><li><b>C</b>ircumferential Margin: <b>CRM ≤1mm = Involved</b></li><li><b>A</b>nterior/Posterior/Total Exenteration: <b>T4b/Recurrent</b></li><li><b>N</b>erve Sparing: <b>Hypogastric (Ejaculation), Plexus (Erection), Splanchnic (Bladder)</b></li><li><b>E</b>ndoscopy cCR: <b>White Scar, Telangiectasia, No Mass</b></li><li><b>R</b>egrowth Watch &amp; Wait: <b>~25% → Salvage TME</b></li><li><b>R</b>APIDO: <b>SCRT 5x5Gy → CAPOX ×6 → TME</b> (pCR 28%)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Rectal Cancer)) Anatomy Upper (12-16cm), Middle (7-11cm), Lower (0-6cm) Lymphatics: IMA, Iliac, Inguinal Staging AJCC 8th T1-T4, N0-2, M0/M1 TME Surgery Holy Plane, Autonomic Nerves, D3 LND, CRM &gt;1mm LAR/ISR vs APR Neoadjuvant SCRT 5x5Gy (Immediate Surg) LCRT 45-50.4Gy + Cape/5-FU (6-8wk Delay) TNT: RAPIDO/ PRODIGE 23 Organ Preservation cCR (Endo+MRI+DRE+CEA) → Watch &amp; Wait Surveillance: Proctoscopy/MRI q3mo Surgery Options LAR/ISR (&gt;5-6cm), APR (&lt;5cm) Lateral Nodes: West Selective / Japan Routine Adjuvant Stage III: FOLFOX/CAPOX 6mo IDEA: 3mo CAPOX Low-Risk Local Excision T1: TEM/TAMIS Recurrence Pelvic Exenteration Re-irradiation </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Staging**</td><td>T1-4, N0-2, M0/M1</td></tr><tr><td>**TME**</td><td>Holy Plane, Nerves, D3 LND, CRM >1mm</td></tr><tr><td>**Neoadj Options**</td><td>SCRT 5x5Gy / LCRT 45-50Gy+Cape / TNT (RAPIDO/PRODIGE)</td></tr><tr><td>**cCR**</td><td>Endo: White Scar; MRI: Fibrosis; DRE Normal; CEA Normal</td></tr><tr><td>**Watch & Wait**</td><td>cCR → Surveillance q3mo×2yr</td></tr><tr><td>**LAR vs APR**</td><td>>5-6cm LAR; <5cm APR</td></tr><tr><td>**Lateral Nodes**</td><td>West: cN+ MRI → Dissect; Japan: Routine</td></tr><tr><td>**Adjuvant**</td><td>Stage III FOLFOX/CAPOX 6mo; IDEA 3mo CAPOX Low-Risk</td></tr><tr><td>**Local Excision**</td><td>T1: TEM/TAMIS (Well/Mod, <3cm, No LVI/PNI)</td></tr><tr><td>**Pelvic Exenteration**</td><td>T4b/Recurrent: Ant/Post/Total</td></tr><tr><td>**Surveillance**</td><td>CEA q3-6mo, CT/MRI Annual, Proctoscopy q6-12mo</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>TME Principles</td><td></td><td></td></tr><tr><td>SCRT vs LCRT vs TNT</td><td></td><td></td></tr><tr><td>cCR Definition</td><td></td><td></td></tr><tr><td>Watch & Wait Protocol</td><td></td><td></td></tr><tr><td>LAR vs APR Indications</td><td></td><td></td></tr><tr><td>Lateral Node Management</td><td></td><td></td></tr><tr><td>Adjuvant Chemo</td><td></td><td></td></tr><tr><td>Local Excision Criteria</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Colon Cancer]], [[TME Surgery]], [[Short-Course RT]], [[Total Neoadjuvant Therapy]], [[Watch &amp; Wait]], [[TNT]], [[LAR vs APR]], [[Pelvic Exenteration]], [[Rectal Cancer Surveillance]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Rectal Cancer (TME Surgery), which statement is correct? A. <b>Sharp Dissection in Holy Plane</b>, <b>Autonomic Nerve Preservation</b>, <b>D3 Lymphadenectomy</b>, <b>CRM B. </b>Sharp - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Sharp Dissection in Holy Plane</b>, <b>Autonomic Nerve Preservation</b>, <b>D3 Lymphadenectomy</b>, <b>CRM &gt;1mm</b></li></ul>
+<p><b>2.</b> Regarding Rectal Cancer (Neoadjuvant Options), which statement is correct? A. <b>Short-Course RT 5x5Gy</b> (Immediate Surg) <b>vs</b> <b>Long-Course CRT 45-50.4Gy + Cape/5-FU</b> (6-8wk D B. **Short-Course - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Short-Course RT 5x5Gy</b> (Immediate Surg) <b>vs</b> <b>Long-Course CRT 45-50.4Gy + Cape/5-FU</b> (6-8wk Delay) <b>vs</b> **TNT (...</li></ul>
+<p><b>3.</b> Regarding Rectal Cancer (RAPIOD/PRODIGE 23), which statement is correct? A. <b>TNT Superior pCR</b> (RAPIDO 28%, PRODIGE 24%) B. **TNT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>TNT Superior pCR</b> (RAPIDO 28%, PRODIGE 24%)</li></ul>
+<p><b>4.</b> Regarding Rectal Cancer (Organ Preservation), which statement is correct? A. <b>cCR (Endo + MRI + DRE + CEA) → Watch &amp; Wait</b> (OPRA/Habr-GAMA) B. **cCR - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>cCR (Endo + MRI + DRE + CEA) → Watch &amp; Wait</b> (OPRA/Habr-GAMA)</li></ul>
+<p><b>5.</b> Regarding Rectal Cancer (TME Surgery), which statement is correct? A. <b>Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM &gt;1mm</b> B. **Sharp - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM &gt;1mm</b></li></ul>
+<p><b>6.</b> Regarding Rectal Cancer (LAR vs APR), which statement is correct? A. <b>&gt;5-6cm → LAR/ISR</b> B. **&gt;5-6cm - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>&gt;5-6cm → LAR/ISR</b>; <b>&lt;5cm / Sphincter Invasion → APR</b></li></ul>
+<p><b>7.</b> Regarding Rectal Cancer (Lateral Nodes), which statement is correct? A. <b>West: Selective (cN+ LPN on MRI)</b> B. **West: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>West: Selective (cN+ LPN on MRI)</b>; <b>Japan: Routine</b></li></ul>
+<p><b>8.</b> Regarding Rectal Cancer (Adjuvant Chemo), which statement is correct? A. <b>Stage III: FOLFOX/CAPOX 6mo</b> B. **Stage - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Stage III: FOLFOX/CAPOX 6mo</b>; <b>IDEA: 3mo CAPOX Low-Risk Stage III</b></li></ul>
+<p><b>9.</b> Regarding Rectal Cancer (Local Excision), which statement is correct? A. <b>T1: TEM/TAMIS</b> (Well/Mod Diff, &lt;3cm, No LVI/PNI) B. **T1: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>T1: TEM/TAMIS</b> (Well/Mod Diff, &lt;3cm, No LVI/PNI)</li></ul>
+<p><b>10.</b> Regarding Rectal Cancer (TNT), which statement is correct? A. <b>RAPIDO (SCRT → CAPOX)</b> / <b>PRODIGE 23 (FOLFOX → CRT)</b> B. **RAPIDO - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>RAPIDO (SCRT → CAPOX)</b> / <b>PRODIGE 23 (FOLFOX → CRT)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Sharp Dissection in Holy Plane</b>, <b>Autonomic Nerve Preservation</b>, <b>D3 Lymphadenectomy</b>, **CRM</li><li>B. **Sharp (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Sharp Dissection in Holy Plane</b>, <b>Autonomic Nerve Preservation</b>, <b>D3 Lymphadenectomy</b>, <b>CRM &gt;1mm</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Short-Course RT 5x5Gy</b> (Immediate Surg) <b>vs</b> <b>Long-Course CRT 45-50.4Gy + Cape/5-FU</b> (6-8wk D</li><li>B. **Short-Course (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Short-Course RT 5x5Gy</b> (Immediate Surg) <b>vs</b> <b>Long-Course CRT 45-50.4Gy + Cape/5-FU</b> (6-8wk Delay) <b>vs</b> **TNT (...</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>TNT Superior pCR</b> (RAPIDO 28%, PRODIGE 24%)</li><li>B. **TNT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>TNT Superior pCR</b> (RAPIDO 28%, PRODIGE 24%)</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>cCR (Endo + MRI + DRE + CEA) → Watch &amp; Wait</b> (OPRA/Habr-GAMA)</li><li>B. **cCR (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>cCR (Endo + MRI + DRE + CEA) → Watch &amp; Wait</b> (OPRA/Habr-GAMA)</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM &gt;1mm</b></li><li>B. **Sharp (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM &gt;1mm</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>&gt;5-6cm → LAR/ISR</b></li><li>B. **&gt;5-6cm (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>&gt;5-6cm → LAR/ISR</b>; <b>&lt;5cm / Sphincter Invasion → APR</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>West: Selective (cN+ LPN on MRI)</b></li><li>B. **West: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>West: Selective (cN+ LPN on MRI)</b>; <b>Japan: Routine</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Stage III: FOLFOX/CAPOX 6mo</b></li><li>B. **Stage (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Stage III: FOLFOX/CAPOX 6mo</b>; <b>IDEA: 3mo CAPOX Low-Risk Stage III</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>T1: TEM/TAMIS</b> (Well/Mod Diff, &lt;3cm, No LVI/PNI)</li><li>B. **T1: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>T1: TEM/TAMIS</b> (Well/Mod Diff, &lt;3cm, No LVI/PNI)</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>RAPIDO (SCRT → CAPOX)</b> / <b>PRODIGE 23 (FOLFOX → CRT)</b></li><li>B. **RAPIDO (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>RAPIDO (SCRT → CAPOX)</b> / <b>PRODIGE 23 (FOLFOX → CRT)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> TME Surgery? <b>A1:</b> Sharp Dissection in Holy Plane, Autonomic Nerve Preservation, D3 Lymphadenectomy, CRM &gt;1mm</p>
+<p><b>Q2:</b> Neoadjuvant Options? <b>A2:</b> Short-Course RT 5x5Gy (Immediate Surg) vs Long-Course CRT 45-50.4Gy + Cape/5-FU (6-8wk Delay) vs TNT (RAPIDO/PRODIGE 23)</p>
+<p><b>Q3:</b> RAPIOD/PRODIGE 23? <b>A3:</b> TNT Superior pCR (RAPIDO 28%, PRODIGE 24%)</p>
+<p><b>Q4:</b> Organ Preservation? <b>A4:</b> cCR (Endo + MRI + DRE + CEA) → Watch &amp; Wait (OPRA/Habr-GAMA)</p>
+<p><b>Q5:</b> TME Surgery? <b>A5:</b> Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM &gt;1mm</p>
+<p><b>Q6:</b> LAR vs APR? <b>A6:</b> &gt;5-6cm → LAR/ISR; &lt;5cm / Sphincter Invasion → APR</p>
+<p><b>Q7:</b> Lateral Nodes? <b>A7:</b> West: Selective (cN+ LPN on MRI); Japan: Routine</p>
+<p><b>Q8:</b> Adjuvant Chemo? <b>A8:</b> Stage III: FOLFOX/CAPOX 6mo; IDEA: 3mo CAPOX Low-Risk Stage III</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>TME Surgery</td><td>Sharp Dissection in Holy Plane, Autonomic Nerve Preservation, D3 Lymphadenectomy, CRM >1mm</td></tr><tr><td>2</td><td>A</td><td>Neoadjuvant Options</td><td>Short-Course RT 5x5Gy (Immediate Surg) vs Long-Course CRT 45-50.4Gy + Cape/5-FU (6-8wk Delay) vs TNT (RAPIDO/PRODIGE 23)</td></tr><tr><td>3</td><td>A</td><td>RAPIOD/PRODIGE 23</td><td>TNT Superior pCR (RAPIDO 28%, PRODIGE 24%)</td></tr><tr><td>4</td><td>A</td><td>Organ Preservation</td><td>cCR (Endo + MRI + DRE + CEA) → Watch & Wait (OPRA/Habr-GAMA)</td></tr><tr><td>5</td><td>A</td><td>TME Surgery</td><td>Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm</td></tr><tr><td>6</td><td>A</td><td>LAR vs APR</td><td>>5-6cm → LAR/ISR; <5cm / Sphincter Invasion → APR</td></tr><tr><td>7</td><td>A</td><td>Lateral Nodes</td><td>West: Selective (cN+ LPN on MRI); Japan: Routine</td></tr><tr><td>8</td><td>A</td><td>Adjuvant Chemo</td><td>Stage III: FOLFOX/CAPOX 6mo; IDEA: 3mo CAPOX Low-Risk Stage III</td></tr><tr><td>9</td><td>A</td><td>Local Excision</td><td>T1: TEM/TAMIS (Well/Mod Diff, <3cm, No LVI/PNI)</td></tr><tr><td>10</td><td>A</td><td>TNT</td><td>RAPIDO (SCRT → CAPOX) / PRODIGE 23 (FOLFOX → CRT)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>TME Surgery</td><td>Sharp Dissection in Holy Plane, Autonomic Nerve Preservation, D3 Lymphadenectomy, CRM >1mm</td></tr><tr><td>2</td><td>A</td><td>Neoadjuvant Options</td><td>Short-Course RT 5x5Gy (Immediate Surg) vs Long-Course CRT 45-50.4Gy + Cape/5-FU (6-8wk Delay) vs TNT (RAPIDO/PRODIGE 23)</td></tr><tr><td>3</td><td>A</td><td>RAPIOD/PRODIGE 23</td><td>TNT Superior pCR (RAPIDO 28%, PRODIGE 24%)</td></tr><tr><td>4</td><td>A</td><td>Organ Preservation</td><td>cCR (Endo + MRI + DRE + CEA) → Watch & Wait (OPRA/Habr-GAMA)</td></tr><tr><td>5</td><td>A</td><td>TME Surgery</td><td>Sharp Dissection, Holy Plane, Nerve Sparing, D3 LND, CRM >1mm</td></tr><tr><td>6</td><td>A</td><td>LAR vs APR</td><td>>5-6cm → LAR/ISR; <5cm / Sphincter Invasion → APR</td></tr><tr><td>7</td><td>A</td><td>Lateral Nodes</td><td>West: Selective (cN+ LPN on MRI); Japan: Routine</td></tr><tr><td>8</td><td>A</td><td>Adjuvant Chemo</td><td>Stage III: FOLFOX/CAPOX 6mo; IDEA: 3mo CAPOX Low-Risk Stage III</td></tr><tr><td>9</td><td>A</td><td>Local Excision</td><td>T1: TEM/TAMIS (Well/Mod Diff, <3cm, No LVI/PNI)</td></tr><tr><td>10</td><td>A</td><td>TNT</td><td>RAPIDO (SCRT → CAPOX) / PRODIGE 23 (FOLFOX → CRT)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Colorectal Cancer|Colorectal Cancer]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Rectal Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

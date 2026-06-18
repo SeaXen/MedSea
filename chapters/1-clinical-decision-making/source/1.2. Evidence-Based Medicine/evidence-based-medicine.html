@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Evidence Based Medicine — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 1 CLINICAL DECISION-MAKING / 1.2. EVIDENCE-BASED MEDICINE</span>
+      <div class="h1">Evidence Based Medicine</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify <b>study designs</b> by hierarchy of evidence; identify strengths/limitations</li><li>[ ] Critically appraise <b>RCTs</b> (Therapy), <b>Diagnostic studies</b>, <b>Prognosis studies</b>, <b>Harm/Etiology studies</b>, <b>Systematic reviews/Meta-analyses</b></li><li>[ ] Apply <b>statistics for EBM</b>: NNT/NNH, Sensitivity/Specificity/LRs, Hazard ratios, I², Forest plots</li><li>[ ] Use <b>GRADE</b> to rate quality of evidence and strength of recommendations</li><li>[ ] Understand <b>guideline development</b> (AGREE II, WHO, NICE, ESC)</li><li>[ ] Apply <b>shared decision-making</b>: Decision aids, Risk communication, Values clarification</li><li>[ ] Answer viva: "Appraise this RCT" and "Interpret this forest plot" and "GRADE this evidence"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: EBM Framework</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Clinical Question&lt;br/&gt;PICO] --&gt; B[Search for Evidence&lt;br/&gt;Systematic → Databases] B --&gt; C[Critical Appraisal&lt;br/&gt;Validity, Results, Applicability] C --&gt; D[Apply to Patient&lt;br/&gt;Shared Decision-Making] D --&gt; E[Evaluate Performance&lt;br/&gt;Audit, Feedback] E --&gt; A[New Questions] </code>``</p>
+<div class="callout"><b>EBM = Best Evidence + Clinical Expertise + Patient Values/Preferences</b> (Sackett 1996)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Hierarchy of Evidence (Oxford CEBM 2011)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Study Design</th><th>Clinical Question</th></tr><tr><td>-------</td><td>--------------</td><td>-------------------</td></tr><tr><td>**1a**</td><td>SR/MA of RCTs</td><td>Therapy, Prevention</td></tr><tr><td>**1b**</td><td>Individual RCT (narrow CI)</td><td>Therapy, Prevention</td></tr><tr><td>**1c**</td><td>All-or-none study</td><td>Therapy, Prevention</td></tr><tr><td>**2a**</td><td>SR/MA of Cohort studies</td><td>Prognosis, Harm</td></tr><tr><td>**2b**</td><td>Individual Cohort study</td><td>Prognosis, Harm</td></tr><tr><td>**2c**</td><td>Outcomes research / Registry</td><td>Prognosis, Harm</td></tr><tr><td>**3a**</td><td>SR/MA of Case-control</td><td>Harm, Rare disease</td></tr><tr><td>**3b**</td><td>Individual Case-control</td><td>Harm, Rare disease</td></tr><tr><td>**4**</td><td>Case-series / Case-report</td><td>Rare disease, New entity</td></tr><tr><td>**5**</td><td>Expert opinion / Consensus</td><td>All (lowest)</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Systematic reviews &gt; Single studies. RCTs &gt; Observational for therapy. Cohort &gt; Case-control for prognosis/harm.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Study Designs — Key Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Randomised Controlled Trial (RCT) — Gold Standard for Therapy</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Randomisation**</td><td>Sequence generation (computer, permutation), Allocation concealment (opaque sealed envelopes, central)</td></tr><tr><td>**Blinding**</td><td>Participant, Personnel, Outcome assessor (single/double/triple)</td></tr><tr><td>**Analysis**</td><td>**Intention-to-Treat (ITT)** — all randomised analysed as allocated; Per-protocol = biased</td></tr><tr><td>**Follow-up**</td><td>≥80% complete; Attrition <20%</td></tr><tr><td>**Reporting**</td><td>CONSORT 2010 (25 items)</td></tr></table>
+<div class="sub-h">Observational Studies</div>
+<table class="ctable"><tr><th>Design</th><th>Best For</th><th>Key Bias</th></tr><tr><td>--------</td><td>----------</td><td>----------</td></tr><tr><td>**Prospective Cohort**</td><td>Prognosis, Incidence, Harm</td><td>Loss to follow-up, Confounding</td></tr><tr><td>**Retrospective Cohort**</td><td>Same (using existing data)</td><td>Selection, Information bias</td></tr><tr><td>**Case-Control**</td><td>Rare diseases, Harm (long latency)</td><td>Recall bias, Selection bias (controls)</td></tr><tr><td>**Cross-Sectional**</td><td>Prevalence, Diagnostic accuracy</td><td>Temporal ambiguity</td></tr></table>
+<div class="sub-h">Systematic Review &amp; Meta-Analysis</div>
+<table class="ctable"><tr><th>Step</th><th>Tool/Standard</th></tr><tr><td>------</td><td>---------------</td></tr><tr><td>**Protocol**</td><td>PRISMA-P, PROSPERO registration</td></tr><tr><td>**Search**</td><td>Multiple databases, Grey literature, Hand-search, No language restriction</td></tr><tr><td>**Selection**</td><td>PRISMA flow diagram (Identification → Screening → Eligibility → Included)</td></tr><tr><td>**Risk of Bias**</td><td>**RoB 2** (RCTs), **ROBINS-I** (Non-randomised), **QUADAS-2** (Diagnostic)</td></tr><tr><td>**Synthesis**</td><td>Fixed-effect (homogeneous) vs Random-effects (heterogeneous)</td></tr><tr><td>**Heterogeneity**</td><td>I²: 0–40% low, 30–60% moderate, 50–90% substantial, 75–100% considerable</td></tr><tr><td>**Publication Bias**</td><td>Funnel plot asymmetry, Egger test, Trim-and-fill</td></tr><tr><td>**Reporting**</td><td>PRISMA 2020 (27 items)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Critical Appraisal by Question Type</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">3.1 Therapy (RCT) — Key Appraisal Questions</div>
+<table class="ctable"><tr><th>Domain</th><th>Questions</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Validity**</td><td>1. Randomised? (sequence, concealment) 2. Blinded? (patient, clinician, assessor) 3. ITT analysis? 4. Follow-up >80%? 5. Groups similar at baseline?</td></tr><tr><td>**Results**</td><td>6. Effect size (RR, OR, HR)? 7. Precision (95% CI)? 8. Absolute measures (ARR, NNT)? 9. Subgroups pre-specified?</td></tr><tr><td>**Applicability**</td><td>10. Population = my patient? 11. Intervention feasible? 12. Outcomes relevant? 13. Harms vs Benefits?</td></tr></table>
+<div class="sub-h">Key Metrics for Therapy</div>
+<table class="ctable"><tr><th>Metric</th><th>Formula</th><th>Interpretation</th></tr><tr><td>--------</td><td>---------</td><td>----------------</td></tr><tr><td>**RR (Relative Risk)**</td><td>EER / CER</td><td>Risk in exposed vs control</td></tr><tr><td>**OR (Odds Ratio)**</td><td>(a/b) / (c/d)</td><td>Approx RR if outcome rare (<10%)</td></tr><tr><td>**HR (Hazard Ratio)**</td><td>Cox model</td><td>Time-to-event; Instantaneous risk ratio</td></tr><tr><td>**ARR (Absolute Risk Reduction)**</td><td>CER - EER</td><td>Absolute benefit per patient</td></tr><tr><td>**NNT (Number Needed to Treat)**</td><td>1 / ARR</td><td>Patients to treat for 1 benefit</td></tr><tr><td>**NNH (Number Needed to Harm)**</td><td>1 / ARI</td><td>Patients to treat for 1 harm</td></tr><tr><td>**RRR (Relative Risk Reduction)**</td><td>(CER - EER) / CER</td><td>Proportional reduction</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>NNT = 1/ARR. If CER=20%, EER=10% → ARR=10% → NNT=10. Report ARR + NNT, not just RRR.</i></div>
+<div class="sub-h">Fragility Index</div>
+<ul><li>Minimum number of outcome switches (event→non-event) to make p&gt;0.05</li><li>Low FI (&lt;5) = fragile result despite statistical significance</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3.2 Diagnostic Studies — Key Appraisal</div>
+<table class="ctable"><tr><th>Domain</th><th>Questions</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Validity**</td><td>1. Representative spectrum? 2. Blinded comparison? 3. Independent gold standard? 4. All patients get same reference?</td></tr><tr><td>**Results**</td><td>5. Sensitivity, Specificity, LR+, LR-? 6. PPV, NPV at relevant prevalence? 7. Precision (CI)?</td></tr><tr><td>**Applicability**</td><td>8. Population similar? 9. Test available/affordable? 10. Impact on outcomes?</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Diagnostic studies need <b>pre-specified thresholds</b>. Avoid "diagnostic review bias" (knowledge of index test influences reference).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3.3 Prognosis Studies — Key Appraisal</div>
+<table class="ctable"><tr><th>Domain</th><th>Questions</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Validity**</td><td>1. Inception cohort? (early, uniform stage) 2. Complete follow-up (>80%)? 3. Objective outcome criteria? 4. Adjustment for confounders (multivariable)?</td></tr><tr><td>**Results**</td><td>5. Survival curves (KM)? 6. Hazard ratios (Cox)? 7. Precision (CI)? 8. Competing risks addressed?</td></tr></table>
+<div class="sub-h">Key Metrics for Prognosis</div>
+<table class="ctable"><tr><th>Metric</th><th>Interpretation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Kaplan-Meier**</td><td>Survival probability over time; Censoring handled</td></tr><tr><td>**Log-rank test**</td><td>Compare survival curves</td></tr><tr><td>**Cox PH Model**</td><td>HR: Hazard in exposed vs unexposed at any time; Assumes proportional hazards</td></tr><tr><td>**C-statistic (AUC)**</td><td>Discrimination of risk model (0.5–1.0)</td></tr><tr><td>**Calibration**</td><td>Observed vs Predicted (Hosmer-Lemeshow, calibration plot)</td></tr><tr><td>**Competing Risks**</td><td>Fine-Gray model (subdistribution hazard)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3.4 Harm / Etiology Studies</div>
+<table class="ctable"><tr><th>Design</th><th>Best For</th><th>Key Metric</th></tr><tr><td>--------</td><td>----------</td><td>------------</td></tr><tr><td>**Case-Control**</td><td>Rare outcomes, Long latency</td><td>**OR** (approx RR if rare)</td></tr><tr><td>**Cohort**</td><td>Common outcomes, Short latency</td><td>**RR**, **AR**, **PAR**</td></tr><tr><td>**RCT**</td><td>Drug adverse events (short-term)</td><td>**RR** (but underpowered for rare harm)</td></tr></table>
+<div class="sub-h">Key Metrics for Harm</div>
+<table class="ctable"><tr><th>Metric</th><th>Formula</th><th>Interpretation</th></tr><tr><td>--------</td><td>---------</td><td>----------------</td></tr><tr><td>**Attributable Risk (AR)**</td><td>EER - CER</td><td>Excess risk in exposed</td></tr><tr><td>**Population Attributable Risk (PAR)**</td><td>Pp × (RR-1) / [1 + Pp×(RR-1)]</td><td>Population burden</td></tr><tr><td>**Population Attributable Fraction (PAF)**</td><td>PAR / Overall Risk</td><td>Proportion preventable if exposure removed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3.5 Systematic Review &amp; Meta-Analysis Appraisal</div>
+<table class="ctable"><tr><th>Domain</th><th>Questions</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Validity**</td><td>1. Focused question (PICO)? 2. Comprehensive search? 3. Reproducible selection? 4. Reproducible data extraction? 5. RoB assessment (RoB 2/ROBINS-I)?</td></tr><tr><td>**Results**</td><td>6. Heterogeneity (I², χ²)? 7. Fixed vs Random effects justified? 8. Publication bias assessed? 9. Sensitivity/subgroup analyses?</td></tr><tr><td>**Applicability**</td><td>10. Results applicable to my patient? 11. All outcomes considered? 12. Benefits vs Harms?</td></tr></table>
+<div class="sub-h">Forest Plot Interpretation</div>
+<ul><li><b>Square</b> = Study effect size (size = weight)</li><li><b>Horizontal line</b> = 95% CI</li><li><b>Diamond</b> = Pooled effect (center = effect, width = CI)</li><li><b>Vertical line</b> = No effect (1.0 for RR/OR/HR)</li><li><b>Heterogeneity</b>: I² &gt;50% = substantial → explore causes (subgroup, sensitivity)</li></ul>
+<div class="sub-h">Network Meta-Analysis (NMA)</div>
+<ul><li><b>Direct + Indirect evidence</b> → Mixed estimates</li><li><b>Assumption</b>: Transitivity (similarity across comparisons)</li><li><b>Output</b>: League tables, Rankograms, <b>SUCRA</b> (Surface Under Cumulative Ranking Curve)</li><li><b>Inconsistency</b>: Loop-specific (node-splitting), Global (design-by-treatment)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Statistics for EBM — Quick Reference</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Common Tests &amp; When to Use</div>
+<table class="ctable"><tr><th>Scenario</th><th>Test</th><th>Assumptions</th></tr><tr><td>----------</td><td>------</td><td>-------------</td></tr><tr><td>Compare means (2 groups)</td><td>t-test (parametric) / Mann-Whitney (non-parametric)</td><td>Normality, Equal variance</td></tr><tr><td>Compare means (>2 groups)</td><td>ANOVA / Kruskal-Wallis</td><td>Normality, Homoscedasticity</td></tr><tr><td>Compare proportions</td><td>χ² / Fisher's exact</td><td>Expected >5 (χ²)</td></tr><tr><td>Correlation</td><td>Pearson (parametric) / Spearman (non-parametric)</td><td>Linearity, Normality</td></tr><tr><td>Time-to-event</td><td>Log-rank (univariate) / Cox (multivariate)</td><td>Proportional hazards</td></tr><tr><td>Diagnostic accuracy</td><td>Sensitivity, Specificity, LR, ROC/AUC</td><td>Representative spectrum</td></tr></table>
+<div class="sub-h">Regression Models</div>
+<table class="ctable"><tr><th>Model</th><th>Outcome</th><th>Interpretation</th></tr><tr><td>-------</td><td>---------</td><td>----------------</td></tr><tr><td>**Linear**</td><td>Continuous</td><td>β = change in Y per 1-unit X</td></tr><tr><td>**Logistic**</td><td>Binary</td><td>**OR = e^β** (approx RR if rare)</td></tr><tr><td>**Cox PH**</td><td>Time-to-event</td><td>**HR = e^β** (proportional hazards)</td></tr><tr><td>**Poisson/Negative Binomial**</td><td>Count</td><td>IRR = e^β</td></tr><tr><td>**Fine-Gray**</td><td>Competing risks</td><td>Subdistribution HR</td></tr></table>
+<div class="sub-h">Key Concepts</div>
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**p-value**</td><td>Prob(data ≥ observed</td><td>H₀ true); Not = Prob(H₀ true</td><td>data)</td></tr><tr><td>**95% CI**</td><td>Range of true effect compatible with data; 95% of such intervals contain true value</td></tr><tr><td>**Type I Error (α)**</td><td>False positive (reject H₀ when true); Usually 0.05</td></tr><tr><td>**Type II Error (β)**</td><td>False negative (fail to reject H₀ when false); Power = 1-β</td></tr><tr><td>**Power**</td><td>Prob(detect effect</td><td>effect exists); Usually 80–90%</td></tr><tr><td>**Effect Size**</td><td>Standardised mean difference (Cohen's d): 0.2 small, 0.5 medium, 0.8 large</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ GRADE (Grading of Recommendations Assessment, Development and Evaluation)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Quality of Evidence — 4 Levels</div>
+<table class="ctable"><tr><th>Level</th><th>Symbol</th><th>Meaning</th></tr><tr><td>-------</td><td>--------</td><td>---------</td></tr><tr><td>**High**</td><td>⊕⊕⊕⊕</td><td>Very confident effect ≈ true effect</td></tr><tr><td>**Moderate**</td><td>⊕⊕⊕⊙</td><td>Moderately confident; true effect likely close</td></tr><tr><td>**Low**</td><td>⊕⊕⊙⊙</td><td>Limited confidence; true effect may be substantially different</td></tr><tr><td>**Very Low**</td><td>⊕⊙⊙⊙</td><td>Very little confidence; true effect likely substantially different</td></tr></table>
+<div class="sub-h">Downgrading Factors (5)</div>
+<table class="ctable"><tr><th>Factor</th><th>Downgrade By</th></tr><tr><td>--------</td><td>--------------</td></tr><tr><td>**Risk of Bias**</td><td>Serious (-1), Very serious (-2)</td></tr><tr><td>**Inconsistency**</td><td>Heterogeneity (I²>50%), Unexplained variability</td></tr><tr><td>**Indirectness**</td><td>Population/Intervention/Comparator/Outcome not matching</td></tr><tr><td>**Imprecision**</td><td>Wide CI crossing decision threshold, Optimal information size not met</td></tr><tr><td>**Publication Bias**</td><td>Funnel plot asymmetry, Small study effects</td></tr></table>
+<div class="sub-h">Upgrading Factors (3) — Observational only</div>
+<table class="ctable"><tr><th>Factor</th><th>Upgrade By</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Large Effect**</td><td>RR >2 or <0.5 (+1), RR >5 or <0.2 (+2)</td></tr><tr><td>**Dose-Response**</td><td>Gradient present (+1)</td></tr><tr><td>**All Plausible Confounding**</td><td>Would reduce effect (+1)</td></tr></table>
+<div class="sub-h">Strength of Recommendation</div>
+<table class="ctable"><tr><th>Grade</th><th>Phrasing</th><th>Meaning</th></tr><tr><td>-------</td><td>----------</td><td>---------</td></tr><tr><td>**Strong**</td><td>"We recommend..."</td><td>Net benefit clearly outweighs harm; Most patients should receive</td></tr><tr><td>**Conditional/Weak**</td><td>"We suggest..."</td><td>Trade-offs exist; Different choices for different patients; Shared decision-making essential</td></tr></table>
+<div class="callout"><b>GRADE ≠ Study Design Hierarchy.</b> RCT starts at <b>High</b> but can be downgraded. Observational starts at <b>Low</b> but can be upgraded.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Guideline Development & Appraisal</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">AGREE II Instrument (23 items, 6 Domains)</div>
+<table class="ctable"><tr><th>Domain</th><th>Focus</th></tr><tr><td>--------</td><td>-------</td></tr><tr><td>**1. Scope & Purpose**</td><td>Objectives, Population, Health questions</td></tr><tr><td>**2. Stakeholder Involvement**</td><td>Representation, Views, Target users</td></tr><tr><td>**3. Rigour of Development**</td><td>Search, Evidence selection, Criteria, Methods, Link evidence → recs, External review, Update plan</td></tr><tr><td>**4. Clarity of Presentation**</td><td>Specific recommendations, Options, Key recommendations identifiable</td></tr><tr><td>**5. Applicability**</td><td>Barriers/facilitators, Implementation tools, Resource implications, Monitoring/audit</td></tr><tr><td>**6. Editorial Independence**</td><td>Funding body influence, Competing interests</td></tr></table>
+<div class="sub-h">WHO Guideline Development (Handbook)</div>
+<ol><li><b>Scope</b> → 2. <b>Group composition</b> → 3. <b>PICO questions</b> → 4. <b>Evidence retrieval &amp; appraisal</b> → 5. <b>Evidence-to-decision (EtD) frameworks</b> → 6. <b>Recommendation formulation</b> → 7. <b>Dissemination/Implementation</b> → 8. <b>Evaluation/Update</b></li></ol>
+<div class="sub-h">NICE Process</div>
+<ul><li><b>Topic selection</b> → <b>Scope</b> → <b>Evidence review</b> → <b>Economic modelling</b> → <b>Committee deliberation</b> → <b>Consultation</b> → <b>Publication</b></li><li><b>Technology Appraisal</b> (TA), <b>Clinical Guideline</b> (CG), <b>Public Health Guideline</b> (PH), <b>Diagnostics Guidance</b> (DG)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Shared Decision-Making (SDM)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">SDM Model (Elwyn et al.)</div>
+<p>``<code>mermaid flowchart LR A[Choice Talk&lt;br/&gt;Options exist] --&gt; B[Option Talk&lt;br/&gt;Compare options] B --&gt; C[Decision Talk&lt;br/&gt;Elicit preferences] C --&gt; D[Decision / Defer] </code>``</p>
+<div class="sub-h">Key Components</div>
+<table class="ctable"><tr><th>Component</th><th>Tools</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**Risk Communication**</td><td>Absolute risks (ARR/NNT), Icon arrays, Natural frequencies ("10 in 100"), Avoid RRR alone</td></tr><tr><td>**Decision Aids**</td><td>Option grids, Patient decision aids (IPDAS criteria), Videos, Interactive tools</td></tr><tr><td>**Values Clarification**</td><td>Exercises, Wish lists, Best-worst scaling, Threshold technique</td></tr><tr><td>**Implementation**</td><td>SDM embedded in consultation (3-talk model), Training, System support</td></tr></table>
+<div class="sub-h">3-Talk Model (Elwyn)</div>
+<table class="ctable"><tr><th>Talk</th><th>Content</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Choice Talk**</td><td>"There are options..." Summarise options, Check understanding</td></tr><tr><td>**Option Talk**</td><td>Compare benefits/harms (absolute numbers), Use decision aids</td></tr><tr><td>**Decision Talk**</td><td>"What matters most to you?" Elicit preferences, Check concordance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ Practical Appraisal Checklists</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">RCT Quick Checklist (CONSORT-based)</div>
+<ul><li>[ ] Randomised? Concealed allocation?</li><li>[ ] Blinded (patient, clinician, assessor)?</li><li>[ ] ITT analysis? Attrition &lt;20%?</li><li>[ ] Baseline balance?</li><li>[ ] Effect size (RR/OR/HR) + 95% CI?</li><li>[ ] ARR/NNT reported?</li><li>[ ] Subgroups pre-specified?</li><li>[ ] Harms reported?</li><li>[ ] Applicable to my patient?</li></ul>
+<div class="sub-h">Diagnostic Study Checklist (QUADAS-2 based)</div>
+<ul><li>[ ] Representative spectrum?</li><li>[ ] Index test blinded to reference?</li><li>[ ] Reference standard independent/blinded?</li><li>[ ] Same reference for all?</li><li>[ ] Continuing enrollment?</li><li>[ ] Sensitivity/Spec/LR with CIs?</li><li>[ ] Clinical applicability?</li></ul>
+<div class="sub-h">SR/MA Checklist (PRISMA/AMSTAR-2)</div>
+<ul><li>[ ] Protocol registered (PROSPERO)?</li><li>[ ] PICO clear?</li><li>[ ] Comprehensive search (databases, grey, no lang restriction)?</li><li>[ ] Duplicate selection/extraction?</li><li>[ ] RoB assessment (RoB 2 / ROBINS-I)?</li><li>[ ] Random-effects if heterogeneity?</li><li>[ ] I² reported? Subgroup/sensitivity?</li><li>[ ] Publication bias (funnel, Egger)?</li><li>[ ] GRADE applied?</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Hierarchy**</td><td>SR/MA > RCT > Cohort > Case-control > Cross-sectional > Expert opinion</td></tr><tr><td>**RCT Appraisal**</td><td>Randomisation (concealment), Blinding, ITT, Follow-up >80%, Effect size + CI, ARR/NNT</td></tr><tr><td>**Diagnostic Appraisal**</td><td>Spectrum, Blinding, Gold standard, Sensitivity/Spec/LR/PPV/NPV</td></tr><tr><td>**Prognosis Appraisal**</td><td>Inception cohort, Follow-up >80%, Multivariable Cox, KM curves, C-statistic</td></tr><tr><td>**Meta-Analysis**</td><td>Random-effects if I²>50%, Publication bias (funnel/Egger), NMA (transitivity, SUCRA)</td></tr><tr><td>**Key Stats**</td><td>RR/OR/HR, ARR/NNT/NNH, Sensitivity/Spec/LR, Hazard Ratio, I², Fragility Index</td></tr><tr><td>**GRADE**</td><td>High/Mod/Low/Very Low; Downgrade (Bias, Inconsistency, Indirectness, Imprecision, Pub bias); Upgrade (Large effect, Dose-response, Confounding)</td></tr><tr><td>**Recommendation**</td><td>Strong ("recommend") vs Conditional ("suggest")</td></tr><tr><td>**AGREE II**</td><td>6 domains: Scope, Stakeholders, Rigour, Clarity, Applicability, Independence</td></tr><tr><td>**Shared Decision-Making**</td><td>3-talk model (Choice/Option/Decision), Absolute risks (NNT), Decision aids, Values clarification</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Hierarchy of evidence for therapy?</td><td>1a: SR/MA of RCTs → 1b: Individual RCT → 2a: SR/MA of cohorts → 2b: Individual cohort → 3: Case-control → 4: Case-series → 5: Expert opinion</td></tr><tr><td>2</td><td>How to appraise an RCT?</td><td>Validity: Randomisation (concealment), Blinding, ITT, Follow-up >80%. Results: Effect size (RR/OR/HR), 95% CI, ARR, NNT, Subgroups. Applicability: Population, Intervention, Outcomes.</td></tr><tr><td>3</td><td>What is NNT and how to calculate?</td><td>NNT = 1 / ARR. ARR = CER - EER. Example: CER 20%, EER 10% → ARR 10% → NNT = 10.</td></tr><tr><td>4</td><td>Sensitivity 90%, Specificity 80%, Prevalence 20%. PPV?</td><td>TP = 0.9×20 = 18; FP = 0.2×80 = 16; PPV = 18/(18+16) = 53%.</td></tr><tr><td>5</td><td>What is I² in meta-analysis?</td><td>I² = % of total variation due to heterogeneity not chance. 0–40% low, 30–60% mod, 50–90% substantial, 75–100% considerable.</td></tr><tr><td>6</td><td>GRADE — when to downgrade for imprecision?</td><td>Wide CI crossing decision threshold (e.g., includes both benefit and harm), Optimal information size not met (sample size too small).</td></tr><tr><td>7</td><td>GRADE — when to upgrade observational evidence?</td><td>Large effect (RR>2 or <0.5 → +1; RR>5 or <0.2 → +2); Dose-response gradient; All plausible confounding would reduce effect.</td></tr><tr><td>8</td><td>Strong vs Conditional recommendation?</td><td>Strong: "We recommend" — net benefit clear, most patients should receive. Conditional: "We suggest" — trade-offs, different choices for different patients, SDM needed.</td></tr><tr><td>9</td><td>AGREE II — most important domain for trustworthy guidelines?</td><td>**Domain 3: Rigour of Development** — Systematic search, Evidence selection, Link evidence→recs, External review, Update plan.</td></tr><tr><td>10</td><td>Shared decision-making — 3-talk model?</td><td>Choice Talk: Options exist. Option Talk: Compare (absolute risks, decision aids). Decision Talk: Elicit preferences/values, Agree on plan.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"RCT always = High quality"**</td><td>**NO.** RCT with poor allocation concealment, no blinding, high attrition → **downgraded** to Moderate/Low.</td></tr><tr><td>**"OR = RR"**</td><td>**Only if outcome rare (<10%).** Common outcome → OR overestimates RR. Use RR/HR for cohort/RCT.</td></tr><tr><td>**"RRR = Clinical significance"**</td><td>**NO.** RRR ignores baseline risk. ARR/NNT needed for clinical relevance.</td></tr><tr><td>**"I² >50% = Don't pool"**</td><td>**NO.** Substantial heterogeneity → explore (subgroup, sensitivity), use random-effects, interpret cautiously.</td></tr><tr><td>**"GRADE = Study hierarchy"**</td><td>**NO.** RCT starts High but can be downgraded. Observational starts Low but can be upgraded.</td></tr><tr><td>**"SR/MA always better than single RCT"**</td><td>**Not if SR includes biased studies.** Quality of included studies matters more than number.</td></tr><tr><td>**"NNT = 1/RRR"**</td><td>**NO.** NNT = 1/ARR. RRR is relative; ARR is absolute.</td></tr><tr><td>**"PPV = Sensitivity"**</td><td>**NO.** PPV depends on PREVALENCE. Same test: high prev → high PPV; low prev → low PPV.</td></tr><tr><td>**"Strong recommendation = Do it always"**</td><td>**Strong = Net benefit clear for MOST patients.** Conditional = Trade-offs, SDM essential.</td></tr></table>
+<div class="callout"><b>Mnemonic: EBM APPRAISAL GRADE</b> <b>E</b>vidence hierarchy: <b>SR/MA &gt; RCT &gt; Cohort &gt; Case-control &gt; Cross-sec &gt; Expert</b> <b>B</b>ias check: <b>RCT = Randomised, Blinded, ITT, Concealed, Follow-up</b> <b>M</b>etrics: <b>NNT = 1/ARR; LR+ = Sens/(1-Spec); LR- = (1-Sens)/Spec</b> <b>A</b>ppraisal by type: <b>Therapy=RCT; Diagnosis=Sen/Spec/LR; Prognosis=Cox/KM; Harm=Case-control</b> <b>P</b>ooling: <b>Fixed if I²&lt;40%, Random if I²&gt;50%</b>; NMA needs transitivity <b>R</b>esults: <b>ARR + NNT &gt; RRR</b>; Fragility index for fragile significance <b>A</b>pplicability: <b>Population, Intervention, Outcomes, Setting</b> — match my patient? <b>I</b>nconsistency: <b>I², Subgroup, Sensitivity</b> — explore heterogeneity <b>S</b>ensitivity/Specificity: <b>SnNout / SpPin</b>; LR stable across prevalences <b>E</b>vidence-to-decision: <b>GRADE</b> for quality; <b>EtD</b> for recommendations <b>A</b>GREE II: <b>6 domains</b> (Scope, Stakeholders, Rigour, Clarity, Applicability, Independence) <b>R</b>ecommendation: <b>Strong = Recommend (most); Conditional = Suggest (SDM)</b> <b>D</b>ecision aids: <b>3-talk (Choice/Option/Decision)</b>; Absolute risks; Values clarification <b>K</b>nowledge translation: <b>GRADE → EtD → AGREE II → Implementation → Evaluation</b> <b>I</b>mpact: <b>Fragility Index</b> (switches to change p&lt;0.05) <b>A</b>llows upgrading: <b>Large effect, Dose-response, Confounding</b> (observational only) <b>L</b>iving guidelines: <b>Update as evidence changes</b> (continuous surveillance)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Evidence-Based Medicine)) Hierarchy SR/MA &gt; RCT &gt; Cohort &gt; Case-control Study Designs RCT: Randomised, Blinded, ITT Cohort: Prognosis, Harm Case-control: Rare harm Cross-sectional: Prevalence Critical Appraisal Therapy: RCT validity, Results, Applicability Diagnosis: Spectrum, Blinded, Gold standard, LR Prognosis: Inception cohort, Cox, KM Harm: Case-control (OR), Cohort (RR) SR/MA: RoB, I², Fixed/Random, Pub bias Statistics NNT = 1/ARR RR/OR/HR I² heterogeneity Fragility Index GRADE High/Mod/Low/Very Low Downgrade 5 factors Upgrade 3 factors Strong vs Conditional Guidelines AGREE II (6 domains) WHO Handbooks NICE Process Shared Decision-Making 3-Talk Model Decision Aids Risk Communication </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Hierarchy & Study Designs</td><td>3</td><td></td><td></td></tr><tr><td>RCT Appraisal</td><td>3</td><td></td><td></td></tr><tr><td>Diagnostic/Prognosis/Harm Appraisal</td><td>4</td><td></td><td></td></tr><tr><td>Meta-Analysis & Statistics</td><td>3</td><td></td><td></td></tr><tr><td>GRADE</td><td>3</td><td></td><td></td></tr><tr><td>Guidelines (AGREE II)</td><td>2</td><td></td><td></td></tr><tr><td>Shared Decision-Making</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the steps of critical appraisal of an RCT and how GRADE is used to make recommendations."</td><td>PICO → Search → Validity (Randomised, Blinded, ITT, Follow-up) → Results (Effect, CI, ARR/NNT) → Applicability → GRADE (downgrade/upgrade) → Strong vs Conditional rec</td></tr><tr><td>**Short Note**</td><td>"GRADE approach to quality of evidence."</td><td>4 levels, 5 downgrade factors (Bias, Inconsistency, Indirectness, Imprecision, Pub bias), 3 upgrade (Large effect, Dose-response, Confounding), Strong vs Conditional</td></tr><tr><td>**Viva**</td><td>"Interpret this forest plot: Diamond at 0.85 (0.72–1.01), I²=65%."</td><td>Pooled HR 0.85 (CI crosses 1.0 = not statistically significant). Substantial heterogeneity (I²=65%) → explore causes. Random-effects used. Clinical significance uncertain.</td></tr><tr><td>**Ward Round**</td><td>"Patient asks 'What are my chances?' after MI. NNT for aspirin 40. How to explain?"</td><td>"Without aspirin, 20 in 100 have another event. With aspirin, 17 in 100. So 3 in 100 benefit. That's 1 person helped for every 33 treated (if ARR 3%). Your personal risk factors adjust this."</td></tr><tr><td>**Last-Night**</td><td>"Hierarchy: SR>RCT>Cohort>CC. RCT: random, blind, ITT, FU>80%. NNT=1/ARR. Diag: SnNout/SpPin. MA: I²>50 random. GRADE: 4 levels, 5 down, 3 up. AGREE: 6 domains. SDM: 3-talk. Strong=recommend."</td><td>Tier 1 facts compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Evidence Hierarchy</b>: SR/MA of RCTs &gt; Individual RCT &gt; Cohort &gt; Case-control &gt; Cross-sectional &gt; Expert opinion</li><li><b>RCT Appraisal</b>: Randomisation (concealment), Blinding, ITT, Follow-up &gt;80%, Effect size + 95% CI, ARR/NNT</li><li><b>Key Metrics</b>: NNT = 1/ARR; LR+ = Sens/(1-Spec); LR- = (1-Sens)/Spec; HR from Cox; I² for heterogeneity</li><li><b>GRADE</b>: 4 quality levels (High→Very Low); 5 downgrade factors (Bias, Inconsistency, Indirectness, Imprecision, Pub bias); 3 upgrade (Large effect, Dose-response, Confounding); Strong vs Conditional recs</li><li><b>Guidelines</b>: AGREE II (6 domains: Scope, Stakeholders, Rigour, Clarity, Applicability, Independence); WHO, NICE processes</li><li><b>Shared Decision-Making</b>: 3-talk model (Choice, Option, Decision); Absolute risk communication (NNT, icon arrays); Decision aids; Values clarification</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Highest level of evidence for therapy:</b></li></ol>
+<p>A. Expert opinion  B. Single RCT  C. <b>SR/MA of RCTs</b>  D. Cohort study <i>Answer: C. Systematic review/meta-analysis of RCTs (Level 1a).</i></p>
+<ol><li><b>NNT formula:</b></li></ol>
+<p>A. 1/RRR  B. <b>1/ARR</b>  C. 1/(CER-EER)  D. CER/EER <i>Answer: B. NNT = 1/ARR. ARR = CER - EER.</i></p>
+<ol><li><b>I² = 75% in meta-analysis — interpretation:</b></li></ol>
+<p>A. Low heterogeneity  B. Moderate  C. <b>Substantial/Considerable</b>  D. No heterogeneity <i>Answer: C. 75–100% = considerable heterogeneity.</i></p>
+<ol><li><b>GRADE — observational studies start at:</b></li></ol>
+<p>A. High  B. Moderate  C. <b>Low</b>  D. Very Low <i>Answer: C. Observational = Low (can be upgraded). RCT = High (can be downgraded).</i></p>
+<ol><li><b>What does "Strong recommendation" mean in GRADE?</b></li></ol>
+<p>A. Mandatory  B. <b>Net benefit clear for most patients</b>  C. No trade-offs at all  D. Evidence is Level 1a <i>Answer: B. "We recommend" — net benefit clearly outweighs harm; most patients should receive.</i></p>
+<ol><li><b>Fragility Index definition:</b></li></ol>
+<p>A. Number of patients lost to follow-up  B. <b>Min outcome switches to make p&gt;0.05</b>  C. Number of studies in MA  D. Sample size / Events <i>Answer: B. Minimum outcome changes (event→non-event) to lose statistical significance.</i></p>
+<ol><li><b>AGREE II Domain 3 (Rigour) includes:</b></li></ol>
+<p>A. Funding disclosure  B. <b>Systematic search, Evidence→Rec linkage, External review</b>  C. Patient preferences  D. Implementation tools <i>Answer: B. Domain 3 = Rigour of Development.</i></p>
+<ol><li><b>In NMA, transitivity assumption means:</b></li></ol>
+<p>A. Direct = Indirect evidence  B. <b>Comparisons similar enough for indirect inference</b>  C. All studies independent  D. No publication bias <i>Answer: B. Similarity across comparisons (PICO) allows valid indirect estimates.</i></p>
+<ol><li><b>Shared decision-making — 3-talk model sequence:</b></li></ol>
+<p>A. Option → Choice → Decision  B. <b>Choice → Option → Decision</b>  C. Decision → Option → Choice  D. Choice → Decision → Option <i>Answer: B. Choice Talk (options exist) → Option Talk (compare) → Decision Talk (preferences).</i></p>
+<ol><li><b>Diagnostic study appraisal — most critical for validity:</b></li></ol>
+<p>A. Sample size  B. <b>Blinded comparison with independent gold standard</b>  C. PPV reported  D. Single centre <i>Answer: B. Blinding + Independent gold standard = essential (QUADAS-2).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>RCT: Aspirin vs Placebo for MI prevention. CER 10%, EER 7%. ARR and NNT?</b></li></ol>
+<p>A. ARR 3%, NNT 33  B. ARR 3%, NNT 303  C. <b>ARR 3%, NNT 33</b>  D. ARR 7%, NNT 14 <i>Answer: C. ARR = 10% - 7% = 3%; NNT = 1/0.03 = 33.</i></p>
+<ol><li><b>Meta-analysis: Pooled OR 0.80 (95% CI 0.65–0.98), I² = 0%, 10 studies. Interpretation?</b></li></ol>
+<p>A. Significant benefit, no heterogeneity  B. Not significant, low heterogeneity  C. Significant harm, high heterogeneity  D. Not significant, high heterogeneity <i>Answer: A. CI excludes 1.0 (significant benefit); I²=0% (no heterogeneity).</i></p>
+<ol><li><b>GRADE: Large RCT, proper blinding, ITT, low attrition. Outcome: Mortality. Quality?</b></li></ol>
+<p>A. High  B. Moderate  C. Low  D. Very Low <i>Answer: A. High (RCT with low risk of bias = High).</i></p>
+<ol><li><b>Observational study: Cohort, HR 0.50 (95% CI 0.30–0.85) for drug X on mortality. Dose-response shown. GRADE upgrade?</b></li></ol>
+<p>A. None  B. <b>+1 (Large effect)</b>  C. +2  D. +1 (Dose-response) <i>Answer: D. Observational starts Low. Large effect (RR&lt;0.5) → +1. Dose-response → +1. Total = Moderate.</i></p>
+<ol><li><b>Guideline appraisal — AGREE II domain most predicting trustworthiness?</b></li></ol>
+<p>A. Scope &amp; Purpose  B. Stakeholder Involvement  C. <b>Rigour of Development</b>  D. Editorial Independence <i>Answer: C. Rigour of Development (search, evidence→rec, review, update) most critical for trust.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-C, 2-B, 3-C, 4-C, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-C, 2-A, 3-A, 4-D, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[1.1 Clinical Reasoning &amp; Diagnostic Process]] — Pre-test probability, LR, Bayes, Diagnostic accuracy</li><li>[[1.3 Communication Skills]] — Shared decision-making, Risk communication, Consent</li><li>[[1.4 Ethics &amp; Law]] — Informed consent (Montgomery), Research ethics, Ethics of evidence use</li><li>[[1.5 Quality Improvement &amp; Patient Safety]] — Audit cycle, Clinical governance, Implementation science</li><li>[[1.6 Guidelines &amp; Pathways]] — CDR validation, AGREE II, Implementation</li><li>[../../Cardiology/Clinical Decision-Making] — CV trial appraisal (CVOTs, SGLT2i, GLP-1RA)</li><li>[../../Diabetes/Evidence-Based Medicine] — ADA/EASD algorithms, CVOT-guided therapy</li><li>[../../Nephrology/EBM] — KDIGO guidelines, RCT appraisal in nephrology</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Evidence Based Medicine · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+# Post-herpetic neuralgia
+
+Related: [[../../Pain and Palliative Care MOC]], [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Neuropathic Pain**
+
+## 1. Definition
+
+Post-herpetic neuralgia (PHN) is neuropathic pain persisting ≥3 months after rash onset in herpes zoster (shingles). Risk factors: older age (>50), severe rash, severe acute pain, immunosuppression, ophthalmic zoster. Features: burning, electric, allodynia, hyperalgesia in dermatomal distribution. Prevention: zoster vaccine (Shingrix, >50y). Treatment: first-line: TCAs, gabapentin, pregabalin, topical lidocaine 5% patch, topical capsaicin 8% patch (NGX-4010, single application, highly effective); second-line: tramadol, oxycodone; third-line: neuromodulation, intrathecal steroids.
+
+## 2. Clinical Features and Presentation
+
+Post-herpetic neuralgia (PHN) is neuropathic pain persisting >3 months after herpes zoster rash, in the dermatome distribution (typically thoracic, trigeminal V1 — ophthalmic). Affects 10-20% of zoster patients (50% over 60). Features: burning, shooting, electric, with allodynia (light touch painful), hyperalgesia, dysaesthesia. Risk factors: older age (>50), severe prodromal/acute pain, severe rash, ophthalmic zoster, immunosuppression. Often improves over months-years but can be lifelong.
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+Clinical (pain in dermatome after healed zoster). No specific tests. Consider zoster PCR if atypical. May show sensory loss in affected dermatome.
+
+### Management
+First-line: gabapentin 300mg TDS titrated to 3600mg/day, OR pregabalin 150-600mg/day, OR amitriptyline 25-150mg nocte, OR duloxetine 60-120mg/day. Topical: lidocaine 5% patch (especially for elderly, less systemic side effects), capsaicin 8% patch (single 60min application, high efficacy). Interventional: sympathetic blocks, spinal cord stimulation, intrathecal steroids. Tramadol, strong opioids (third-line, short-term trial).
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| Definition | PHN ≥3 months after zoster rash |
+| Risk | Age >50, severe rash, severe pain |
+| Features | Burning, electric, allodynia, dermatomal |
+| Prevention | Shingrix >50y |
+| First-line | TCAs, gabapentin, pregabalin, lidocaine 5% patch |
+| Capsaicin 8% | NGX-4010 patch, single application |
+| Second-line | Tramadol, oxycodone |
+| Third-line | Neuromodulation, IT steroids |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Trigeminal neuralgia | V2/V3, brief paroxysmal |
+| Diabetic neuropathy | Stocking-glove, diabetes history |
+| Spinal nerve root pain | Dermatomal, radicular |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: Definition of PHN? A: Neuropathic pain persisting >3 months after herpes zoster rash, in the dermatome distribution.
+
+2. 2. Q: Most effective topical for PHN? A: Lidocaine 5% patch (suitable for elderly) or capsaicin 8% patch (single 60min application).
+
+3. 3. Q: Risk factors for PHN? A: Older age (>50), severe acute pain, severe rash, ophthalmic zoster, immunosuppression.
+
+4. 4. Q: First-line systemic? A: Gabapentin, pregabalin, amitriptyline, or duloxetine (NICE).
+
+5. 5. Q: Prevention of PHN? A: Zoster vaccine (Shingrix >50 years) reduces risk; early antiviral (within 72h) may reduce severity; gabapentin during acute phase is being studied.
+
+
+## 7. Confusions and Mnemonics
+
+- See clinical features
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **Post-herpetic neuralgia** |
+|-----------|-----------|
+| **Definition** | Post-herpetic neuralgia (PHN) is neuropathic pain persisting ≥3 months after rash onset in herpes zo |
+| **Key Features** | PHN ≥3 months after zoster rash |
+| **Investigation** | Clinical assessment + disease-specific tests |
+| **Management** | WHO ladder + adjuvant + non-pharmacological |
+| **Red Flags** | Severe pain, opioid side effects, total pain dimensions |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of Post-herpetic neuralgia?
+   A. PHN ≥3 months after zoster rash
+   B. Always self-limiting
+   C. Caused by infection only
+   D. Restricted to severe pain only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line management?
+   A. WHO analgesic ladder step 1
+   B. Immediate strong opioid
+   C. Surgery only
+   D. No treatment
+   E. Antidepressants only
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Pain assessment, total pain, comorbidities
+   B. None
+   C. ECG only
+   D. Eye exam only
+   E. Blood pressure only
+   **Answer: A**
+4. **Q:** What is the most important complication to monitor?
+   A. Disease-specific complications and treatment side effects
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key pharmacological/clinical feature?
+   A. Neuromodulation, IT steroids
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient with Post-herpetic neuralgia; first-line management?
+   A. WHO ladder + adjuvant + non-pharmacological
+   B. Strong opioid
+   C. Surgery
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+2. **Scenario:** Failed first-line; next step?
+   A. Step up WHO ladder
+   B. Stop all treatment
+   C. Surgery
+   D. Observation
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of treatment?
+   A. Side effects, opioid complications
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Holistic assessment?
+   A. Physical + emotional + social + spiritual
+   B. Physical only
+   C. Emotional only
+   D. None
+   E. Blood tests only
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. Neuromodulation, IT steroids
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about Post-herpetic neuralgia?
+  **A:** PHN ≥3 months after zoster rash
+- **Q:** Another key point?
+  **A:** Age >50, severe rash, severe pain
+- **Q:** Most important complication?
+  **A:** Burning, electric, allodynia, dermatomal
+- **Q:** First-line treatment?
+  **A:** Shingrix >50y
+- **Q:** Key pharmacological/clinical feature?
+  **A:** TCAs, gabapentin, pregabalin, lidocaine 5% patch
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — Definition: PHN ≥3 months after zoster rash
+2. **A** — WHO ladder first-line
+3. **A** — Pain assessment essential
+4. **A** — Disease-specific complications
+5. **A** — Third-line: Neuromodulation, IT steroids
+
+### SBAs
+1. **A** — WHO ladder + adjuvant + non-pharmacological
+2. **A** — Step up WHO ladder
+3. **A** — Side effects, opioid complications
+4. **A** — Total pain assessment
+5. **A** — Neuromodulation, IT steroids
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../Neuropathic_Pain_Hub]]
+**Chapter Hierarchy:** [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../Pain and Palliative Care MOC]]
+
+---
+
+> **Exam focus:** Know definition, key clinical features, first-line management (WHO ladder), and the most important complication. Always consider total pain (physical, emotional, social, spiritual).

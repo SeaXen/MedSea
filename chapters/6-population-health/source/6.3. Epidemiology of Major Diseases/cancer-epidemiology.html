@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cancer Epidemiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.3. EPIDEMIOLOGY OF MAJOR DISEASES</span>
+      <div class="h1">Cancer Epidemiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe global cancer burden (GBD): incidence, mortality, DALYs by site</li><li>[ ] Classify risk factors: tobacco, alcohol, obesity, infections, occupational, environmental</li><li>[ ] Apply prevention levels: primary (vaccination, lifestyle), secondary (screening), tertiary (rehab)</li><li>[ ] Interpret cancer registration, staging (TNM), survival metrics (relative, net)</li><li>[ ] Distinguish incidence vs mortality patterns by HDI/development level</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Global (GLOBOCAN 2022)</th><th>UK</th></tr><tr><td>--------</td><td>------------------------</td><td>-----</td></tr><tr><td>**New Cases**</td><td>20 million</td><td>~390,000/year</td></tr><tr><td>**Deaths**</td><td>9.7 million</td><td>~167,000/year</td></tr><tr><td>**5-Year Prevalence**</td><td>53.5 million</td><td>~3.5 million</td></tr><tr><td>**Lifetime Risk**</td><td>~1 in 5</td><td>~1 in 2 (born after 1960)</td></tr><tr><td>**Top Sites (Cases)**</td><td>Breast, Lung, Colorectal, Prostate, Stomach</td><td>Breast, Prostate, Lung, Bowel</td></tr><tr><td>**Top Sites (Deaths)**</td><td>Lung, Colorectal, Liver, Stomach, Breast</td><td>Lung, Bowel, Prostate, Breast</td></tr></table>
+<p><b>Trends:</b></p>
+<ul><li>Age-standardised incidence ↑ (aging, detection, risk factors)</li><li>Age-standardised mortality ↓ in HICs (screening, treatment)</li><li>LMICs: rising burden, later stage at diagnosis</li><li>30-50% preventable (WHO)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Epidemiological patterns by site - see tables below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Major Cancer Sites Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cancer</th><th>Global Incidence Rank</th><th>Global Mortality Rank</th><th>Key Risk Factors</th><th>Screening</th></tr><tr><td>--------</td><td>----------------------</td><td>----------------------</td><td>------------------</td><td>-----------</td></tr><tr><td>**Lung**</td><td>2nd</td><td>1st</td><td>Tobacco (85%), radon, asbestos, air pollution, occupational</td><td>LDCT (high-risk smokers)</td></tr><tr><td>**Breast (F)**</td><td>1st</td><td>5th</td><td>Female, age, hormonal (early menarche, late menopause, HRT, OC), obesity (postmeno), alcohol, radiation, BRCA</td><td>Mammography (50-70)</td></tr><tr><td>**Colorectal**</td><td>3rd</td><td>2nd</td><td>Age, diet (red/processed meat, low fibre), obesity, inactivity, smoking, alcohol, IBD, family, Lynch/FAP</td><td>FIT/Bowel scope (60-74)</td></tr><tr><td>**Prostate**</td><td>4th</td><td>8th</td><td>Age, ethnicity (Black >), family, BRCA2, diet</td><td>PSA (informed choice)</td></tr><tr><td>**Stomach**</td><td>5th</td><td>4th</td><td>H. pylori, salted/smoked foods, smoking, low fruit/veg, family</td><td>None (endoscopy in high-risk)</td></tr><tr><td>**Liver**</td><td>6th</td><td>3rd</td><td>HBV, HCV, aflatoxin, alcohol, NAFLD/NASH, cirrhosis</td><td>HBV vac; surveillance cirrhosis</td></tr><tr><td>**Cervical**</td><td>7th</td><td>9th</td><td>HPV (16/18), smoking, HIV, OC long-term, multiparity</td><td>HPV primary (25-64)</td></tr><tr><td>**Oesophageal**</td><td>8th</td><td>6th</td><td>Tobacco, alcohol (synergy), obesity, Barrett's, achalasia</td><td>None (surveillance Barrett's)</td></tr><tr><td>**Thyroid**</td><td>9th</td><td>-</td><td>Radiation, iodine deficiency/excess, female, genetics</td><td>None</td></tr><tr><td>**Pancreas**</td><td>12th</td><td>7th</td><td>Smoking, obesity, DM, chronic pancreatitis, family</td><td>None</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Survival & Registration)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Cancer Registration:</b></p>
+<ul><li><b>Population-based</b> cancer registries (PBCR) → incidence, survival, prevalence</li><li><b>Hospital-based</b> → clinical patterns, treatment</li><li><b>Data</b>: Site (ICD-O), Morphology, Stage (TNM), Grade, Treatment, Follow-up</li></ul>
+<p><b>Survival Metrics:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Metric&lt;/th&gt;&lt;th&gt;Definition&lt;/th&gt;&lt;th&gt;Use&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;-----&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Observed Survival</b>&lt;/td&gt;&lt;td&gt;% alive at time t after diagnosis&lt;/td&gt;&lt;td&gt;Crude prognosis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Relative Survival</b>&lt;/td&gt;&lt;td&gt;Observed / Expected (general population)&lt;/td&gt;&lt;td&gt;Net cancer survival (removes other-cause death)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Net Survival</b>&lt;/td&gt;&lt;td&gt;Hypothetical: only cancer as cause of death&lt;/td&gt;&lt;td&gt;International comparison (age-standardised)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Conditional Survival</b>&lt;/td&gt;&lt;td&gt;Survival given already survived x years&lt;/td&gt;&lt;td&gt;Improves with time for many cancers&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>TNM Staging (AJCC/UICC 8th Ed):</b></p>
+<ul><li><b>T</b>: Primary tumour size/extent</li><li><b>N</b>: Regional lymph nodes</li><li><b>M</b>: Distant metastasis</li><li><b>Stage Grouping</b>: 0, I, II, III, IV (prognostic)</li></ul>
+<p><b>Mermaid: Cancer Control Continuum</b> ``<code>mermaid flowchart LR A[Prevention\nPrimary: Vaccines, Lifestyle] --&gt; B[Early Detection\nScreening, Early Diagnosis] B --&gt; C[Treatment\nSurgery, RT, Systemic] C --&gt; D[Survivorship\nRehab, Follow-up, Late Effects] D --&gt; E[Palliative/End-of-Life\nSymptom Control, Quality] style A fill:#bfb,stroke:#333 style B fill:#bbf,stroke:#333 style D fill:#f96,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Epidemiological Patterns)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pattern</th><th>Explanation</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Incidence > Mortality**</td><td>Screening detection (breast, prostate, thyroid), indolent cancers, better treatment</td></tr><tr><td>**Mortality ≈ Incidence**</td><td>Poor prognosis, late presentation (pancreas, lung, liver, oesophagus)</td></tr><tr><td>**HIC vs LMIC**</td><td>HIC: breast, prostate, colorectal, lung (screening, aging). LMIC: infection-related (cervix, liver, stomach), advanced stage</td></tr><tr><td>**Sex Differences**</td><td>Male > female for most (except breast, thyroid). Lung: historical smoking patterns.</td></tr><tr><td>**Ethnic Differences**</td><td>Prostate: Black > White > Asian. Breast: White > Black > Asian (but Black more aggressive). Stomach/Liver: Asian >.</td></tr><tr><td>**Age Patterns**</td><td>Most ↑ exponentially with age. Exceptions: testicular (young men), bone (bimodal), thyroid (younger women).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Prevention & Control)</span>
+  </div>
+  <div class="sec-body">
+<p><b>WHO "Best Buys" for Cancer:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Prevention&lt;/th&gt;&lt;th&gt;Intervention&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Primary</b>&lt;/td&gt;&lt;td&gt;HPV vaccination (90% girls by 15), HBV vaccination (birth dose), Tobacco control (MPOWER), Alcohol reduction, Obesity prevention, Occupational/environmental protection&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Secondary</b>&lt;/td&gt;&lt;td&gt;Breast screening (mammo 50-69), Cervical screening (HPV test 30-49), Colorectal screening (FIT 50-74), Oral visual inspection (high-risk)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Tertiary</b>&lt;/td&gt;&lt;td&gt;Palliative care access, Pain relief (morphine), Survivorship care, Rehabilitation&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Global Initiatives:</b></p>
+<ul><li><b>WHO Global Breast Cancer Initiative</b>: 2.5% annual mortality reduction → 2.5M deaths averted by 2040</li><li><b>WHO Cervical Cancer Elimination</b>: 90% HPV vaccination, 70% screening, 90% treatment by 2030</li><li><b>Global Initiative for Childhood Cancer</b>: 60% survival by 2030</li><li><b>IARC/GLOBOCAN</b>: Global cancer observatory</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Global Burden**</td><td>20M cases, 9.7M deaths (2022). 30-50% preventable.</td></tr><tr><td>**Top Incidence**</td><td>Breast, Lung, Colorectal, Prostate, Stomach</td></tr><tr><td>**Top Mortality**</td><td>Lung, Colorectal, Liver, Stomach, Breast</td></tr><tr><td>**Risk Factors**</td><td>Tobacco (22% cancer deaths), Alcohol, Obesity, Infections (HPV, HBV/HCV, H. pylori), Occupational</td></tr><tr><td>**Infections → Cancer**</td><td>HPV (cervix, oropharynx, anogenital), HBV/HCV (liver), H. pylori (stomach), EBV (lymphoma, NPC), HIV (Kaposi, lymphoma)</td></tr><tr><td>**Screening**</td><td>Breast: mammo 50-70. Cervical: HPV 25-64. Bowel: FIT 60-74. Lung: LDCT high-risk smokers.</td></tr><tr><td>**Survival**</td><td>Relative survival for comparison. 5-yr: Testis 95%, Breast 86%, Lung 16%, Pancreas 7%.</td></tr><tr><td>**Staging**</td><td>TNM (T tumour, N nodes, M metastasis). Stage I-IV.</td></tr><tr><td>**Health Inequalities**</td><td>Deprivation: later stage, lower survival, higher incidence (smoking-related).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Top 5 cancers by incidence globally?**</td><td>Breast, Lung, Colorectal, Prostate, Stomach.</td></tr><tr><td>**Top 5 cancers by mortality globally?**</td><td>Lung, Colorectal, Liver, Stomach, Breast.</td></tr><tr><td>**What proportion of cancers are preventable?**</td><td>30-50% (WHO). Main: tobacco, alcohol, obesity, infections, occupational.</td></tr><tr><td>**Infections causing cancer - name 5.**</td><td>HPV (cervix, oropharynx), HBV/HCV (liver), H. pylori (stomach), EBV (Burkitt, NPC), HIV (Kaposi, lymphoma), HTLV-1 (ATLL), KSHV (Kaposi).</td></tr><tr><td>**UK screening programmes for cancer?**</td><td>Breast (mammo 50-70), Cervical (HPV primary 25-64), Bowel (FIT 60-74). Lung: targeted LDCT (pilot/rolling out).</td></tr><tr><td>**Relative vs observed survival?**</td><td>Observed = % alive. Relative = observed/expected (general pop). Removes competing mortality; enables international comparison.</td></tr><tr><td>**TNM staging - what does each letter mean?**</td><td>T = primary tumour size/extent. N = regional lymph nodes. M = distant metastasis.</td></tr><tr><td>**Lung cancer - why is mortality ≈ incidence?**</td><td>Poor prognosis, late presentation, limited early detection (until LDCT), rapid progression.</td></tr><tr><td>**Cervical cancer elimination targets (WHO 2030)?**</td><td>90% girls HPV vaccinated by 15, 70% women screened 35/45, 90% precancer/cancer treated.</td></tr><tr><td>**Health inequalities in cancer?**</td><td>Deprived: higher incidence (smoking-related), later stage at diagnosis, lower survival, less access to treatment.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Incidence vs Mortality patterns**</td><td>Screening ↑ incidence without ↑ mortality (overdiagnosis). Poor survival → mortality ≈ incidence.</td></tr><tr><td>**Age-standardisation**</td><td>Essential for comparison across populations/time. World Standard Population (Segi) or ESP.</td></tr><tr><td>**Relative vs Net Survival**</td><td>Relative = observed/expected. Net = hypothetical only cancer death. Net preferred for international comparison.</td></tr><tr><td>**HPV Vaccine**</td><td>Prevents HPV 16/18 (70% cervical) + 31/33/45/52/58 (9-valent). Also prevents oropharyngeal, anal, vaginal, vulvar.</td></tr></table>
+<p><b>Mnemonic: TOP CANCER INCIDENCE (BLue CaPS)</b></p>
+<ul><li><b>B</b>reast</li><li><b>L</b>ung</li><li><b>C</b>olorectal</li><li><b>P</b>rostate</li><li><b>S</b>tomach</li></ul>
+<p><b>Mnemonic: TOP CANCER MORTALITY (LCLSB)</b></p>
+<ul><li><b>L</b>ung</li><li><b>C</b>olorectal</li><li><b>L</b>iver</li><li><b>S</b>tomach</li><li><b>B</b>reast</li></ul>
+<p><b>Mnemonic: CANCER RISK FACTORS (TOBACCO)</b></p>
+<ul><li><b>T</b>obacco (22% deaths)</li><li><b>O</b>besity</li><li><b>B</b>oose (Alcohol)</li><li><b>A</b>ge</li><li><b>C</b>hronic infections (HPV, HBV, HCV, H. pylori)</li><li><b>C</b>arcinogens (occupational, environmental)</li><li><b>O</b>ther (radiation, hormones, immunosuppression)</li></ul>
+<p><b>Mnemonic: INFECTION CANCERS (HEVY)</b></p>
+<ul><li><b>H</b>BV/HCV → <b>L</b>iver</li><li><b>E</b>BV → Lymphoma, NPC</li><li><b>V</b>PH (HPV) → Cervix, Oropharynx</li><li><b>Y</b>ersinia? No - <b>H</b>. <b>P</b>ylori → Stomach</li></ul>
+<p><b>Mnemonic: UK CANCER SCREENING (BBC)</b></p>
+<ul><li><b>B</b>reast (mammo 50-70)</li><li><b>B</b>owel (FIT 60-74)</li><li><b>C</b>ervical (HPV 25-64)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Cancer Epidemiology)) Burden 20M cases, 9.7M deaths Top Inc: Breast, Lung, Colorectal, Prostate, Stomach Top Mort: Lung, Colorectal, Liver, Stomach, Breast 30-50% Preventable Risk Factors Tobacco (22% deaths) Alcohol, Obesity Infections: HPV, HBV/HCV, H. pylori, EBV, HIV Occupational/Environmental by Site Lung: Tobacco 85%, LDCT screening Breast: Hormonal, Obesity, Mammo 50-70 Colorectal: Diet, FIT 60-74 Prostate: Age, Ethnicity, PSA choice Stomach: H. pylori, Salt Liver: HBV/HCV, HBV vaccine Cervix: HPV, HPV screening Survival Relative vs Observed Net for comparison 5-yr: Testis 95%, Pancreas 7% Control Prevention: Vaccines, Tobacco, Lifestyle Screening: Best buys Palliative access </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Global**</td><td>20M cases, 9.7M deaths; 30-50% preventable</td></tr><tr><td>**Top Incidence**</td><td>Breast, Lung, Colorectal, Prostate, Stomach</td></tr><tr><td>**Top Mortality**</td><td>Lung, Colorectal, Liver, Stomach, Breast</td></tr><tr><td>**Risk Factors**</td><td>Tobacco (22%), Alcohol, Obesity, Infections, Occupational</td></tr><tr><td>**Infections**</td><td>HPV→Cervix, HBV/HCV→Liver, H.pylori→Stomach, EBV→Lymphoma</td></tr><tr><td>**UK Screening**</td><td>Breast (mammo), Cervical (HPV), Bowel (FIT)</td></tr><tr><td>**Survival**</td><td>Relative = observed/expected. Net for int'l comparison</td></tr><tr><td>**Staging**</td><td>TNM: T tumour, N nodes, M mets</td></tr><tr><td>**Inequalities**</td><td>Deprived: later stage, lower survival</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Global Burden Stats</td><td></td><td></td></tr><tr><td>Site-Specific Epi</td><td></td><td></td></tr><tr><td>Risk Factors</td><td></td><td></td></tr><tr><td>Infection-Cancer Links</td><td></td><td></td></tr><tr><td>Screening Programmes</td><td></td><td></td></tr><tr><td>Survival Metrics</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Cardiovascular Disease Epidemiology.md]], [[Measures of Disease Burden (DALY, QALY, HALE, YLL, YLD).md]], [[Screening (Wilson-Jungner Criteria, Programs, Ethics).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cancer Epidemiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cutaneous Adrs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Cutaneous Adrs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify cutaneous ADRs by morphology and severity</li><li>[ ] Differentiate SJS/TEN/DRESS/AGEP/Morbilliform with diagnostic criteria</li><li>[ ] Apply SCORTEN and RegiSCAR scoring</li><li>[ ] Identify high-risk drugs for each reaction</li><li>[ ] Execute emergency management for SCARs</li><li>[ ] Know HLA associations for prevention</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Classification by Severity & Morphology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Reaction</th><th>Severity</th><th>Key Features</th></tr><tr><td>----------</td><td>----------</td><td>----------</td><td>--------------</td></tr><tr><td>**Mild**</td><td>Morbilliform (Exanthematous)</td><td>Low</td><td>Diffuse maculopapular, no mucosa, no systemic</td></tr><tr><td></td><td>Urticaria/Angioedema</td><td>Low-Moderate</td><td>Wheals, pruritus, ± angioedema</td></tr><tr><td></td><td>Fixed Drug Eruption</td><td>Low</td><td>Recurrent same site, hyperpigmentation</td></tr><tr><td></td><td>Photosensitivity</td><td>Low-Moderate</td><td>Sun-exposed areas, phototoxic/photoallergic</td></tr><tr><td>**Severe (SCARs)**</td><td>**SJS (Stevens-Johnson Syndrome)**</td><td>**High**</td><td><10% BSA detachment, ≥2 mucosal sites</td></tr><tr><td></td><td>**SJS/TEN Overlap**</td><td>**High**</td><td>10–30% BSA detachment</td></tr><tr><td></td><td>**TEN (Toxic Epidermal Necrolysis)**</td><td>**Critical**</td><td>>30% BSA detachment, ≥2 mucosal sites</td></tr><tr><td></td><td>**DRESS (Drug Reaction with Eosinophilia and Systemic Symptoms)**</td><td>**High**</td><td>Fever, eosinophilia, organ involvement, delayed onset</td></tr><tr><td></td><td>**AGEP (Acute Generalised Exanthematous Pustulosis)**</td><td>**Moderate**</td><td>Non-follicular pustules, neutrophilia, rapid onset</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🔬 Severe Cutaneous Adverse Reactions (SCARs) Comparison</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**Morbilliform**</th><th>**SJS**</th><th>**TEN**</th><th>**DRESS**</th><th>**AGEP**</th></tr><tr><td>---------</td><td>------------------</td><td>---------</td><td>---------</td><td>-----------</td><td>----------</td></tr><tr><td>**Onset**</td><td>1–3 weeks</td><td>1–4 weeks</td><td>1–4 weeks</td><td>**2–8 weeks**</td><td>**1–5 days**</td></tr><tr><td>**Skin**</td><td>Maculopapular, confluent</td><td>Targetoid, blisters, <10% BSA</td><td>Targetoid, blisters, **>30% BSA**</td><td>Variable (morbilliform, exfoliative)</td><td>**Non-follicular pustules** on oedematous erythema</td></tr><tr><td>**Mucosa**</td><td>Rare</td><td>**≥2 sites** (oral, ocular, genital)</td><td>**≥2 sites**</td><td>Often (≥1)</td><td>Rare</td></tr><tr><td>**Systemic**</td><td>None/minimal</td><td>Fever, malaise</td><td>Fever, sepsis risk</td><td>**Fever, eosinophilia, organ involvement**</td><td>Fever, **neutrophilia**</td></tr><tr><td>**Labs**</td><td>Normal</td><td>Normal/mild ↑ LFTs</td><td>↑ LFTs, coagulopathy</td><td>**Eosinophilia >1.5×10⁹/L**, atypical lymphs, ↑ LFTs, ↑ Cr, proteinuria</td><td>**Neutrophilia**, ↑ CRP</td></tr><tr><td>**Histology**</td><td>Vacuolar interface, lymphocyte infiltration</td><td>**Full-thickness epidermal necrosis**, sparse infiltrate</td><td>**Full-thickness epidermal necrosis**</td><td>Interface dermatitis, eosinophils</td><td>**Subcorneal pustules**, neutrophilic infiltrate</td></tr><tr><td>**Mortality**</td><td><1%</td><td>5–10%</td><td>30–50%</td><td>~10%</td><td><5%</td></tr><tr><td>**Top Drugs**</td><td>Antibiotics (β-lactams), Allopurinol, AEDs</td><td>**Allopurinol, Sulfonamides, AEDs (CZP, PHT, LMG, OXC), NSAIDs, Nevirapine**</td><td>Same as SJS</td><td>**Allopurinol, AEDs, Dapsone, Abacavir, Minocycline, Allopurinol**</td><td>**β-lactams (aminopenicillins), Quinolones, Hydroxychloroquine, Diltiazem**</td></tr><tr><td>**HLA**</td><td>—</td><td>**B*15:02** (CZP), **B*58:01** (Allo), **A*31:01** (CZP)</td><td>Same as SJS</td><td>**B*58:01** (Allo), **A*31:01** (CZP), **B*13:01** (Dapsone)</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📋 Diagnostic Criteria</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">SCORTEN (SJS/TEN Severity Score) — *Calculate at admission*</div>
+<table class="ctable"><tr><th>Parameter</th><th>Points</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>Age >40 years</td><td>1</td></tr><tr><td>Heart rate >120 bpm</td><td>1</td></tr><tr><td>Malignancy (current)</td><td>1</td></tr><tr><td>BSA detached >10%</td><td>1</td></tr><tr><td>BUN >28 mg/dL (10 mmol/L)</td><td>1</td></tr><tr><td>Glucose >14 mmol/L (252 mg/dL)</td><td>1</td></tr><tr><td>Bicarbonate <20 mmol/L</td><td>1</td></tr></table>
+<table class="ctable"><tr><th>SCORTEN</th><th>Predicted Mortality</th></tr><tr><td>---------</td><td>---------------------</td></tr><tr><td>0–1</td><td>3.2%</td></tr><tr><td>2</td><td>12.1%</td></tr><tr><td>3</td><td>35.3%</td></tr><tr><td>4</td><td>58.3%</td></tr><tr><td>≥5</td><td>>90%</td></tr></table>
+<div class="sub-h">RegiSCAR (DRESS) — *Scoring system*</div>
+<table class="ctable"><tr><th>Criterion</th><th>Score</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>Fever ≥38°C</td><td>1</td></tr><tr><td>Lymphadenopathy (≥2 sites, >1cm)</td><td>1</td></tr><tr><td>Eosinophilia >1.5×10⁹/L or atypical lymphs</td><td>2</td></tr><tr><td>Organ involvement (liver, kidney, lung, heart, pancreas, etc.)</td><td>1 per organ</td></tr><tr><td>Rash</td><td>1</td></tr><tr><td>Reaction onset >2 weeks after drug start</td><td>1</td></tr></table>
+<p><b>Score ≥5 = Definite DRESS; 4–5 = Probable; 2–3 = Possible</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">⚡ Emergency Management of SCARs</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Suspect SCAR: SJS/TEN/DRESS/AGEP] --&gt; B[<b>STOP ALL NON-ESSENTIAL DRUGS IMMEDIATELY</b>] B --&gt; C{SCAR Type?} C --&gt;|SJS/TEN| D[<b>ICU / Burns Unit Referral</b>&lt;br/&gt;Fluid/electrolyte management&lt;br/&gt;Wound care (non-adherent dressings)&lt;br/&gt;Ophthalmology review (ocular mucosa)&lt;br/&gt;Infection surveillance&lt;br/&gt;Nutrition (NG if oral mucosa severe)] C --&gt;|DRESS| E[<b>Systemic Steroids: Prednisolone 1mg/kg/day</b>&lt;br/&gt;Slow taper 6–12 weeks&lt;br/&gt;Monitor LFTs, renal, cardiac&lt;br/&gt;IVIG controversial] C --&gt;|AGEP| F[<b>Supportive only</b>&lt;br/&gt;Topical steroids/emollients&lt;br/&gt;Antihistamines for pruritus&lt;br/&gt;Typically resolves &lt;2 weeks post-withdrawal] D &amp; E &amp; F --&gt; G[<b>Identify culprit drug</b> — detailed timeline&lt;br/&gt;HLA testing if indicated (retrospective)&lt;br/&gt;Document allergy: drug + reaction type&lt;br/&gt;Cross-reactivity counselling] </code>``</p>
+<div class="sub-h">SJS/TEN Specifics</div>
+<ul><li><b>NO systemic steroids</b> (controversial, ↑ sepsis risk, no mortality benefit in RCTs)</li><li><b>IVIG</b> — 2–3g/kg over 2–3 days (controversial, some benefit if early)</li><li><b>Cyclosporine</b> — 3–5mg/kg/day (emerging evidence, ↓ mortality)</li><li><b>Etanercept</b> — Single dose 50mg SC (promising, case series)</li><li><b>Plasmapheresis</b> — Limited evidence</li></ul>
+<div class="sub-h">DRESS Specifics</div>
+<ul><li><b>Steroids mandatory</b> — Prednisolone 1mg/kg/day → taper over 6–12 weeks</li><li><b>Monitor for flare</b> on taper (common at 10–20mg)</li><li><b>IVIG</b> — Consider if steroid-refractory or severe organ involvement</li><li><b>Reactivation herpesviruses</b> (HHV-6, EBV, CMV) — monitor PCR, may need antivirals</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Vignette</th><th>Diagnosis</th><th>Key Action</th></tr><tr><td>-------------------</td><td>-----------</td><td>------------</td></tr><tr><td>2wk post-allopurinol: fever, target lesions, oral ulcers, 15% BSA detachment</td><td>**SJS** (or overlap)</td><td>**STOP allopurinol, ICU, supportive, NO steroids**</td></tr><tr><td>3wk post-carbamazepine: fever, diffuse rash, eosinophilia 3×10⁹, ALT 300, facial oedema</td><td>**DRESS**</td><td>**STOP CZP, Pred 1mg/kg, taper 6–12wk**</td></tr><tr><td>2 days post-amoxicillin: fever, widespread non-follicular pustules, neutrophilia</td><td>**AGEP**</td><td>**STOP amoxicillin, supportive, resolves <2wk**</td></tr><tr><td>10 days post-trimethoprim: morbilliform rash, no mucosa, no fever, no eosinophilia</td><td>**Morbilliform**</td><td>**STOP TMP, antihistamines, topical steroids**</td></tr><tr><td>SJS/TEN patient: age 50, HR 110, BSA 15%, BUN 30, glucose 15, HCO₃ 18</td><td>**SCORTEN**</td><td>**Score = 5 (Age, BSA, BUN, Glc, HCO₃) → >90% mortality**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Differentiate SJS, TEN, and Overlap by BSA detachment.</td><td>SJS <10%, Overlap 10–30%, TEN >30%; all have ≥2 mucosal sites</td></tr><tr><td>2. SCORTEN components? What does score 3 mean?</td><td>7 items (Age>40, HR>120, Cancer, BSA>10%, BUN>28, Glc>14, HCO₃<20); Score 3 = 35% mortality</td></tr><tr><td>3. DRESS vs SJS/TEN — key distinguishing features?</td><td>DRESS: **eosinophilia, organ involvement, 2–8wk onset**; SJS/TEN: **necrosis/bullae, mucosal, 1–4wk, no eosinophilia**</td></tr><tr><td>4. AGEP typical drug triggers and time course?</td><td>**β-lactams (esp. aminopenicillins), quinolones, hydroxychloroquine, diltiazem**; onset **1–5 days**; neutrophilia not eosinophilia</td></tr><tr><td>5. Allopurinol SCAR — which HLA? Screening in whom?</td><td>**HLA-B*58:01**; screen Han Chinese, Korean, Thai, African, CKD≥3</td></tr><tr><td>6. Carbamazepine SJS — which HLA? Population?</td><td>**HLA-B*15:02**; Han Chinese, Thai, Malaysian, Indian (freq 2–15%)</td></tr><tr><td>7. Carbamazepine DRESS — which HLA? Population?</td><td>**HLA-A*31:01**; Europeans (2–5%), Japanese (10–15%)</td></tr><tr><td>8. Morbilliform rash management?</td><td>Stop drug if possible; oral antihistamines; topical steroids; typically resolves 1–2wks</td></tr><tr><td>9. Fixed drug eruption — clinical features?</td><td>Recurrent **same anatomical site** (lips, genitals, hands); well-demarcated erythematous plaque → hyperpigmentation; common: NSAIDs, tetracyclines, sulfonamides</td></tr><tr><td>10. Photosensitivity — phototoxic vs photoallergic?</td><td>**Phototoxic**: dose-dependent, sunburn-like, no prior sensitisation (tetracyclines, amiodarone, fluoroquinolones); **Photoallergic**: immune-mediated, eczematous, requires prior exposure (thiazides, ketoprofen)</td></tr><tr><td>11. SJS/TEN management — why NO systemic steroids?</td><td>↑ infection risk, impaired wound healing, no mortality benefit in observational studies; IVIG/cyclosporine/etanercept preferred</td></tr><tr><td>12. Cross-reactivity in aromatic AEDs?</td><td>**High among CZP, PHT, PB, OXC, LMG** — if SCAR to one, **avoid all aromatic AEDs**; use levetiracetam, topiramate, gabapentin, lacosamide, zonisamide</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**SJS/TEN vs DRESS vs AGEP**</td><td>SJS/TEN = **necrosis/bullae**; DRESS = **eosinophilia + organs**; AGEP = **pustules + neutrophilia**</td></tr><tr><td>**DRESS onset**</td><td>**2–8 weeks** (delayed) vs SJS/TEN 1–4 weeks vs AGEP 1–5 days</td></tr><tr><td>**Steroids in SJS/TEN**</td><td>**Contraindicated** (↑ mortality); **Indicated in DRESS** (1mg/kg taper 6–12wk)</td></tr><tr><td>**SCORTEN vs RegiSCAR**</td><td>SCORTEN = SJS/TEN severity; RegiSCAR = DRESS diagnosis</td></tr><tr><td>**HLA for CZP**</td><td>**B*15:02 = SJS/TEN** (Asians); **A*31:01 = DRESS** (Europeans/Japanese)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"SCAR TRIAD"</b> = <b>S</b>JS/TEN (necrosis), <b>D</b>RESS (eosinophilia/organs), <b>A</b>GEP (pustules)</li><li><b>"SCORTEN"</b> = <b>S</b>kin&gt;10%, <b>C</b>ancer, <b>O</b>ld&gt;40, <b>R</b>enal (BUN&gt;28), <b>T</b>achy&gt;120, <b>E</b>lectrolytes (HCO₃&lt;20, Glc&gt;14), <b>N</b>eoplasia</li><li><b>"REGISCAR"</b> = <b>R</b>ash, <b>E</b>osinophilia, <b>G</b>lobular atyp lymphs, <b>I</b>ntermittent fever, <b>S</b>ystemic organ, <b>C</b>ytology, <b>A</b>llopurinol/AEDs, <b>R</b>eaction&gt;2wks</li><li><b>"AGEP = ACUTE PUSTULES"</b> = <b>A</b>cute <b>G</b>eneralised <b>E</b>xanthematous <b>P</b>ustulosis = <b>Pustules + Neutrophilia + &lt;5 days</b></li><li><b>"CZP HLA"</b> = **B<i>15:02<b> = </b>S<b>JS/</b>T<b>EN; </b>A</i>31:01<b> = </b>A<b>utoimmune (</b>D**RESS)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Cutaneous ADRs)) Mild Morbilliform (1-3wk, maculopapular, no mucosa) Urticaria/Angioedema (Type I, wheals) Fixed Drug Eruption (same site, hyperpigmentation) Photosensitivity (Phototoxic vs Photoallergic) Severe (SCARs) SJS (&lt;10% BSA, ≥2 mucosa) SJS/TEN Overlap (10-30% BSA) TEN (&gt;30% BSA, ≥2 mucosa) DRESS (2-8wk, eosinophilia, organs, fever) AGEP (1-5d, pustules, neutrophilia) Diagnosis SJS/TEN: SCORTEN DRESS: RegiSCAR Management STOP drug ALWAYS SJS/TEN: ICU, supportive, NO steroids, IVIG/Cyclo/Etanercept DRESS: Pred 1mg/kg taper 6-12wk AGEP: Supportive only HLA B<i>15:02: CZP SJS/TEN (Asians) B</i>58:01: Allopurinol SCAR A<i>31:01: CZP DRESS (Eur/Jpn) B</i>13:01: Dapsone HSS </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Next Interval</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>---------------</td></tr><tr><td>1 (Learn)</td><td></td><td></td><td>1 day</td></tr><tr><td>2</td><td></td><td></td><td>3 days</td></tr><tr><td>3</td><td></td><td></td><td>1 week</td></tr><tr><td>4</td><td></td><td></td><td>2 weeks</td></tr><tr><td>5</td><td></td><td></td><td>1 month</td></tr><tr><td>6</td><td></td><td></td><td>3 months</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Classification table</td><td>10</td><td></td><td></td></tr><tr><td>SCAR comparison</td><td>15</td><td></td><td></td></tr><tr><td>SCORTEN/RegiSCAR</td><td>10</td><td></td><td></td></tr><tr><td>Management algorithms</td><td>10</td><td></td><td></td></tr><tr><td>HLA associations</td><td>8</td><td></td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td><td></td></tr><tr><td>**Total**</td><td>**65**</td><td></td><td></td></tr></table>
+<p><b>Target</b>: ≥52/65 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Discuss the classification, diagnosis, and management of severe cutaneous adverse reactions (SCARs)."*</div>
+<ol><li><b>Classification</b> (2): SCARs = SJS/TEN, DRESS, AGEP; distinguish from morbilliform</li><li><b>SJS/TEN</b> (3): BSA criteria, SCORTEN, drugs (Allopurinol, Sulfa, AEDs), HLA (B<i>15:02, B</i>58:01), management (ICU, supportive, NO steroids, IVIG/cyclo/etanercept)</li><li><b>DRESS</b> (3): RegiSCAR, 2–8wk onset, eosinophilia/organ involvement, drugs, HLA, steroids 1mg/kg taper 6–12wk</li><li><b>AGEP</b> (1): Pustules, neutrophilia, 1–5d, β-lactams, self-limiting</li><li><b>Cross-reactivity</b> (1): Aromatic AEDs — avoid all if SCAR to one</li></ol>
+<div class="sub-h">Short Question (5 marks): *"SJS vs TEN vs DRESS"*</div>
+<table class="ctable"><tr><th>Feature</th><th>SJS</th><th>TEN</th><th>DRESS</th></tr><tr><td>---------</td><td>-----</td><td>-----</td><td>-------</td></tr><tr><td>BSA detachment</td><td><10%</td><td>>30%</td><td>Variable</td></tr><tr><td>Mucosal</td><td>≥2</td><td>≥2</td><td>Often</td></tr><tr><td>Onset</td><td>1–4wk</td><td>1–4wk</td><td>**2–8wk**</td></tr><tr><td>Key lab</td><td>—</td><td>—</td><td>**Eosinophilia, atypical lymphs**</td></tr><tr><td>Mortality</td><td>5–10%</td><td>30–50%</td><td>~10%</td></tr><tr><td>Steroids</td><td>NO</td><td>NO</td><td>**YES (1mg/kg)**</td></tr></table>
+<div class="sub-h">Viva (2 min): *"Patient on allopurinol 10 days, fever, rash, eosinophilia 2.5×10⁹, ALT 200. Diagnosis? Management?"*</div>
+<ul><li><b>DRESS</b> (RegiSCAR criteria: fever, rash, eosinophilia, organ involvement, &gt;2wk onset)</li><li><b>Stop allopurinol immediately</b></li><li><b>Prednisolone 1mg/kg</b>, slow taper 6–12 weeks</li><li>Monitor LFTs, renal, cardiac, HHV-6 reactivation</li><li>Screen HLA-B*58:01 (retrospective); alternative: febuxostat</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on carbamazepine 2 weeks, widespread targetoid lesions, oral ulcers, 5% BSA detachment. Immediate steps?"*</div>
+<ul><li><b>SJS</b> — <b>STOP carbamazepine immediately</b></li><li>ICU referral, supportive care, ophthalmology</li><li><b>NO systemic steroids</b></li><li>Check HLA-B*15:02 (retrospective)</li><li>Switch to non-aromatic AED (levetiracetam)</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>SJS &lt;10%, TEN &gt;30%, Overlap 10–30% BSA; all ≥2 mucosa</li><li>SCORTEN: 7 items, score 3 = 35% mortality</li><li>DRESS: 2–8wk, eosinophilia, organs → <b>Steroids 1mg/kg taper 6–12wk</b></li><li>AGEP: pustules, neutrophilia, 1–5d, β-lactams → benign</li><li>SJS/TEN: NO steroids; DRESS: YES steroids</li><li>HLA: B<i>15:02 (CZP SJS), B</i>58:01 (Allo), A<i>31:01 (CZP DRESS), B</i>13:01 (Dapsone)</li><li>Aromatic AEDs cross-react: avoid CZP/PHT/PB/OXC/LMG if SCAR to one</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>SCAR TRIAD FOR VIVA:</b> 1. <b>SJS/TEN</b> — Necrosis, SCORTEN, <b>ICU, No Steroids</b>, HLA-B<i>15:02/B</i>58:01 2. <b>DRESS</b> — Eosinophilia + Organs, RegiSCAR, <b>Steroids 1mg/kg</b>, HLA-B<i>58:01/A</i>31:01 3. <b>AGEP</b> — Pustules + Neutrophilia, 1–5d, <b>Benign</b>, β-lactams  <b>CROSS-REACTIVITY</b>: Aromatic AEDs (CZP, PHT, PB, OXC, LMG) — <b>avoid all</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Stevens-Johnson Syndrome is defined by BSA detachment of:</b></li></ol>
+<p>A. &gt;30% B. 10–30% C. <b>&lt;10%</b> ✓ D. &gt;50% E. Any BSA with mucosal involvement</p>
+<ol><li><b>TEN mortality with SCORTEN score of 4 is approximately:</b></li></ol>
+<p>A. 12% B. 35% C. <b>58%</b> ✓ D. 90% E. 3%</p>
+<ol><li><b>DRESS is characterised by all EXCEPT:</b></li></ol>
+<p>A. Fever B. Eosinophilia &gt;1.5×10⁹/L C. <b>Neutrophilia</b> ✓ D. Organ involvement E. Onset 2–8 weeks</p>
+<ol><li><b>AGEP typical histology shows:</b></li></ol>
+<p>A. Full-thickness epidermal necrosis B. <b>Subcorneal pustules with neutrophilic infiltrate</b> ✓ C. Vacuolar interface dermatitis with eosinophils D. Dense lymphocytic infiltrate at dermoepidermal junction D. Granulomatous inflammation</p>
+<ol><li><b>Allopurinol-induced SCAR is most strongly associated with:</b></li></ol>
+<p>A. HLA-B<i>15:02 B. HLA-A</i>31:01 C. **HLA-B*58:01** ✓ D. HLA-B<i>57:01 E. HLA-DRB1</i>07:01</p>
+<ol><li><b>Carbamazepine-induced DRESS in Europeans/Japanese is associated with:</b></li></ol>
+<p>A. HLA-B*15:02 B. **HLA-A*31:01** ✓ C. HLA-B<i>58:01 D. HLA-B</i>57:01 E. HLA-B*13:01</p>
+<ol><li><b>SCORTEN does NOT include:</b></li></ol>
+<p>A. Age &gt;40 B. <b>Serum creatinine &gt;200</b> ✓ C. Heart rate &gt;120 D. BSA detached &gt;10% E. Bicarbonate &lt;20</p>
+<ol><li><b>RegiSCAR criteria for DRESS include all EXCEPT:</b></li></ol>
+<p>A. Fever ≥38°C B. Lymphadenopathy C. <b>Neutrophilia &gt;10×10⁹/L</b> ✓ D. Eosinophilia &gt;1.5×10⁹/L E. Organ involvement</p>
+<ol><li><b>SJS/TEN management — which is CONTRAINDICATED?</b></li></ol>
+<p>A. IVIG B. Cyclosporine C. <b>Systemic corticosteroids</b> ✓ D. Etanercept E. Supportive care in ICU</p>
+<ol><li><b>DRESS first-line management:</b></li></ol>
+<p>A. Supportive only B. <b>Prednisolone 1mg/kg/day with slow taper</b> ✓ C. IVIG only D. Cyclosporine only E. Etanercept</p>
+<ol><li><b>AGEP most common drug trigger:</b></li></ol>
+<p>A. Allopurinol B. Carbamazepine C. <b>Beta-lactams (aminopenicillins)</b> ✓ D. Sulfonamides E. Lamotrigine</p>
+<ol><li><b>Fixed drug eruption — characteristic feature:</b></li></ol>
+<p>A. Generalised distribution B. <b>Recurrence at same anatomical site</b> ✓ C. Always mucosal involvement D. Associated with eosinophilia E. Rapid onset &lt;24h</p>
+<ol><li><b>Phototoxic vs photoallergic reaction — key difference:</b></li></ol>
+<p>A. Phototoxic = immune-mediated B. <b>Photoallergic = immune-mediated, requires prior sensitisation</b> ✓ C. Phototoxic = eczematous D. Photoallergic = sunburn-like E. Both require prior sensitisation</p>
+<ol><li><b>Morbilliform drug eruption typical onset:</b></li></ol>
+<p>A. &lt;24 hours B. 1–3 days C. <b>1–3 weeks</b> ✓ D. 4–8 weeks E. &gt;8 weeks</p>
+<ol><li><b>Aromatic antiepileptic cross-reactivity — which drug is NON-AROMATIC and safe alternative?</b></li></ol>
+<p>A. Oxcarbazepine B. Phenytoin C. <b>Levetiracetam</b> ✓ D. Lamotrigine E. Phenobarbital</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>SJS BSA</td><td><10%</td></tr><tr><td>TEN BSA</td><td>>30%</td></tr><tr><td>Overlap BSA</td><td>10–30%</td></tr><tr><td>SCORTEN 7 items</td><td>Age>40, HR>120, Cancer, BSA>10%, BUN>28, Glc>14, HCO3<20</td></tr><tr><td>SCORTEN score 3 mortality</td><td>35%</td></tr><tr><td>DRESS onset</td><td>2–8 weeks</td></tr><tr><td>DRESS key labs</td><td>Eosinophilia >1.5, atypical lymphs, LFTs, renal</td></tr><tr><td>DRESS management</td><td>Stop drug, Pred 1mg/kg, taper 6–12 weeks</td></tr><tr><td>AGEP features</td><td>Pustules, neutrophilia, 1–5 days, β-lactams</td></tr><tr><td>AGEP histology</td><td>Subcorneal pustules, neutrophilic infiltrate</td></tr><tr><td>Morbilliform onset</td><td>1–3 weeks</td></tr><tr><td>Fixed drug eruption</td><td>Same site recurrence, hyperpigmentation</td></tr><tr><td>Phototoxic</td><td>Dose-dependent, sunburn-like, no prior sensitisation (tetracyclines, amiodarone, FQs)</td></tr><tr><td>Photoallergic</td><td>Immune-mediated, eczematous, prior sensitisation (thiazides, ketoprofen)</td></tr><tr><td>HLA-B*15:02</td><td>CZP/PHT/OXC/LMG SJS/TEN (Asians)</td></tr><tr><td>HLA-B*58:01</td><td>Allopurinol SCAR (Asians, CKD)</td></tr><tr><td>HLA-A*31:01</td><td>CZP DRESS (Europeans/Japanese)</td></tr><tr><td>HLA-B*13:01</td><td>Dapsone HSS</td></tr><tr><td>Aromatic AEDs</td><td>CZP, PHT, PB, OXC, LMG — cross-reactivity HIGH</td></tr><tr><td>Non-aromatic AEDs</td><td>Levetiracetam, Topiramate, Gabapentin, Lacosamide, Zonisamide, Pregabalin</td></tr><tr><td>SJS/TEN steroids</td><td>CONTRAINDICATED</td></tr><tr><td>DRESS steroids</td><td>INDICATED (1mg/kg taper 6–12wk)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — SJS &lt;10% BSA</li><li><b>C</b> — SCORTEN 4 = 58% mortality</li><li><b>C</b> — DRESS has eosinophilia, not neutrophilia (that's AGEP)</li><li><b>B</b> — AGEP = subcorneal pustules + neutrophils</li><li><b>C</b> — Allopurinol SCAR = HLA-B*58:01</li><li><b>B</b> — CZP DRESS = HLA-A*31:01 (Europeans/Japanese)</li><li><b>B</b> — SCORTEN uses BUN, not creatinine</li><li><b>C</b> — RegiSCAR uses eosinophilia, not neutrophilia</li><li><b>C</b> — Systemic steroids contraindicated in SJS/TEN</li><li><b>B</b> — DRESS = Pred 1mg/kg taper</li><li><b>C</b> — AGEP = β-lactams (aminopenicillins)</li><li><b>B</b> — Fixed drug eruption = same site recurrence</li><li><b>B</b> — Photoallergic = immune, prior sensitisation</li><li><b>C</b> — Morbilliform = 1–3 weeks</li><li><b>C</b> — Levetiracetam = non-aromatic</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/Cutaneous ADRs.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cutaneous Adrs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

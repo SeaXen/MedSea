@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adr Classification — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Adr Classification</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify ADRs using <b>Rawlins-Thompson (Type A-F)</b> and <b>DoTS</b> systems</li><li>[ ] Distinguish <b>Type A (Augmented)</b> vs <b>Type B (Bizarre)</b> with examples</li><li>[ ] Identify <b>HLA associations</b> for severe cutaneous ADRs (SJS/TEN, DRESS)</li><li>[ ] Recognise <b>cutaneous ADR spectrum</b> and apply RegiSCAR/EuroSCAR/SCORTEN</li><li>[ ] Apply <b>Hy's Law</b> for DILI risk stratification</li><li>[ ] Calculate <b>4Ts score</b> for Heparin-Induced Thrombocytopenia (HIT)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Rawlins-Thompson Classification (Type A-F)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Name</th><th>Mechanism</th><th>Frequency</th><th>Dose-Dependent</th><th>Predictable</th><th>Reversibility</th><th>Key Examples</th></tr><tr><td>------</td><td>------</td><td>-----------</td><td>-----------</td><td>----------------</td><td>-------------</td><td>---------------</td><td>--------------</td></tr><tr><td>**A**</td><td>**Augmented**</td><td>Exaggerated pharmacological effect</td><td>**~80%**</td><td>**Yes**</td><td>**Yes**</td><td>On dose reduction</td><td>Hypoglycaemia (Insulin/SU), Bleeding (Warfarin), Bradycardia (β-blockers), Postural hypotension (ACEi/α-blockers), Diarrhoea (Metformin), Sedation (Antihistamines/Opioids)</td></tr><tr><td>**B**</td><td>**Bizarre**</td><td>Idiosyncratic/Immunological (not pharmacological)</td><td>**Rare**</td><td>No</td><td>No</td><td>Often irreversible</td><td>Anaphylaxis, **SJS/TEN**, **DRESS**, **AGEP**, **HIT**, Agranulocytosis, DILI, Pulmonary fibrosis (Bleomycin), Stevens-Johnson</td></tr><tr><td>**C**</td><td>**Chronic**</td><td>Cumulative tissue damage with long-term use</td><td>Uncommon</td><td>Yes (Cumulative)</td><td>Yes</td><td>Often irreversible</td><td>Steroid osteoporosis, Phenytoin gum hyperplasia, Amiodarone corneal deposits, Chloroquine retinopathy, NSAID nephropathy</td></tr><tr><td>**D**</td><td>**Delayed**</td><td>Carcinogenesis / Teratogenesis (latent)</td><td>Rare</td><td>No (Latent)</td><td>No</td><td>Irreversible</td><td>DES vaginal adenocarcinoma, Thalidomide phocomelia, Cyclophosphamide bladder cancer, Radiotherapy second malignancies</td></tr><tr><td>**E**</td><td>**End of Use**</td><td>Withdrawal / Rebound reactions</td><td>Uncommon</td><td>No</td><td>Yes</td><td>Reversible on restart/taper</td><td>**Benzodiazepine withdrawal**, **Steroid adrenal crisis**, **SSRI discontinuation**, **Beta-blocker rebound tachycardia**, **Opioid withdrawal**, **Clonidine rebound HTN**</td></tr><tr><td>**F**</td><td>**Failure**</td><td>Therapeutic failure (inefficacy)</td><td>Variable</td><td>No</td><td>No</td><td>N/A</td><td>Antibiotic resistance, Drug interactions reducing efficacy, Non-adherence, Malabsorption</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">DoTS Classification (Dose, Time, Susceptibility)</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>DoTS</b> = <b>D</b>ose-relatedness, <b>T</b>ime-relatedness, <b>S</b>usceptibility factors</div>
+<table class="ctable"><tr><th>Dimension</th><th>Description</th><th>Examples</th></tr><tr><td>-----------</td><td>-------------</td><td>----------</td></tr><tr><td>**Dose**</td><td>Dose-dependent (Type A) vs Independent (Type B)</td><td>Type A: ↑ dose → ↑ ADR; Type B: No dose relationship</td></tr><tr><td>**Time**</td><td>Immediate, Early, Delayed, Late, Withdrawal</td><td>Immediate: Anaphylaxis; Early: Nausea (1-2wk); Delayed: DRESS (2-8wk); Late: Steroid osteoporosis; Withdrawal: BZD, Steroids</td></tr><tr><td>**Susceptibility**</td><td>**Genetics, Age, Disease, Concomitant Drugs**</td><td>**HLA-B*15:02** (Carbamazepine SJS), **HLA-B*58:01** (Allopurinol SJS/DRESS), **CYP2C9*3** (Warfarin sensitivity), Elderly (↑ Type A), CKD (↑ accumulation), Polypharmacy (↑ interactions)</td></tr></table>
+<div class="sub-h">Susceptibility Factors — High Yield</div>
+<table class="ctable"><tr><th>Factor</th><th>Impact</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Genetics (Pharmacogenomics)**</td><td>HLA alleles (SJS/TEN), CYP polymorphisms (Warfarin, Clopidogrel, Codeine), TPMT (Azathioprine/6-MP), G6PD (Dapsone/Oxidative drugs), NAT2 (Isoniazid)</td></tr><tr><td>**Age**</td><td>Elderly: ↓ Renal/hepatic clearance, ↑ Vd (lipophilic), ↑ Sensitivity (CNS, Anticholinergic), Polypharmacy; Neonates: Immature metabolism (Chloramphenicol grey baby)</td></tr><tr><td>**Disease**</td><td>Renal impairment (↑ Renally cleared drugs), Hepatic impairment (↑ Hepatically cleared), Heart failure (↓ Clearance), Hypoalbuminaemia (↑ Free drug)</td></tr><tr><td>**Concomitant Drugs**</td><td>CYP inhibitors/inducers, Protein binding displacement, Additive toxicity (e.g., Triple Whammy, Serotonin syndrome)</td></tr><tr><td>**Pregnancy**</td><td>Altered PK (↑ Vd, ↑ GFR, ↑ CYP3A4), Teratogenicity risk (Type D)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Key HLA Associations (Exam Favourites)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>HLA Allele</th><th>ADR</th><th>Population</th><th>Screening Recommendation</th></tr><tr><td>------</td><td>------------</td><td>-----</td><td>------------</td><td>--------------------------</td></tr><tr><td>**Carbamazepine**</td><td>**HLA-B*15:02**</td><td>SJS/TEN</td><td>**Han Chinese, Thai, SE Asian** (>90% PPV)</td><td>**Mandatory pre-treatment screening** (FDA, MHRA, EMA)</td></tr><tr><td>**Carbamazepine**</td><td>HLA-A*31:01</td><td>DRESS, maculopapular</td><td>European, Japanese</td><td>Consider screening (NPV >99%)</td></tr><tr><td>**Allopurinol**</td><td>**HLA-B*58:01**</td><td>SJS/TEN, DRESS</td><td>**Han Chinese, Korean, Thai, European**</td><td>**Strongly recommended** before starting (especially CKD)</td></tr><tr><td>**Abacavir**</td><td>**HLA-B*57:01**</td><td>Hypersensitivity (Fever, Rash, GI, Resp)</td><td>**Caucasian, African**</td><td>**Mandatory** before abacavir (NHS, FDA)</td></tr><tr><td>**Flucloxacillin**</td><td>HLA-B*57:01</td><td>DILI (Cholestatic)</td><td>European</td><td>Not routine (Low PPV); Awareness</td></tr><tr><td>**Dapsone**</td><td>HLA-B*13:01</td><td>Dapsone Hypersensitivity Syndrome</td><td>Chinese</td><td>Consider in high-prevalence populations</td></tr><tr><td>**Lamotrigine**</td><td>HLA-B*38:02 (weak)</td><td>SJS/TEN</td><td>—</td><td>Not routine; Slow titration key</td></tr><tr><td>**Nevirapine**</td><td>HLA-DRB1*01:01</td><td>SJS/TEN, Hepatitis</td><td>African</td><td>Screen in some guidelines</td></tr></table>
+<p><b>Pearl:</b> **HLA-B<i>58:01 for Allopurinol<b> — Screen before starting in high-risk populations (Asian, CKD); </b>HLA-B</i>15:02 for Carbamazepine** — Mandatory in SE Asian ancestry.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Cutaneous ADR Spectrum (RegiSCAR / EuroSCAR / SCORTEN)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Drug Rash] --&gt; B{Mucosal Involvement?} B --&gt;|No| C[Morbilliform / Exanthematous] B --&gt;|Yes| D{Systemic Features?} C --&gt; C1[Most common 90%&lt;br/&gt;Maculopapular, Symmetrical&lt;br/&gt;Spares face initially&lt;br/&gt;Benign, Resolves on withdrawal&lt;br/&gt;Penicillins, Allopurinol, Sulfa, AEDs] D --&gt;|Fever, Eosinophilia,&lt;br/&gt;Lymphadenopathy, Organ| E[DRESS / DIHS] D --&gt;|Nikolsky +ve,&lt;br/&gt;BSA Detachment| F{BSA Detachment %} F --&gt;|&lt;10%| G[SJS] F --&gt;|10-30%| H[SJS/TEN Overlap] F --&gt;|&gt;30%| I[TEN] D --&gt;|Acute Pustules,&lt;br/&gt;Neutrophilia, Fever| J[AGEP] </code>``</p>
+<div class="sub-h">Cutaneous ADR Comparison</div>
+<table class="ctable"><tr><th>Feature</th><th>**Morbilliform**</th><th>**SJS**</th><th>**SJS/TEN Overlap**</th><th>**TEN**</th><th>**DRESS**</th><th>**AGEP**</th></tr><tr><td>---------</td><td>------------------</td><td>---------</td><td>---------------------</td><td>---------</td><td>-----------</td><td>----------</td></tr><tr><td>**BSA Detachment**</td><td>None</td><td>**<10%**</td><td>**10-30%**</td><td>**>30%**</td><td>Variable (oedematous)</td><td>None (Pustules)</td></tr><tr><td>**Mucosal Involvement**</td><td>Rare</td><td>**Yes (≥2 sites)**</td><td>**Yes**</td><td>**Yes (≥2 sites)**</td><td>Common</td><td>Rare</td></tr><tr><td>**Systemic Features**</td><td>Mild/None</td><td>Fever, Malaise</td><td>Fever, Malaise</td><td>Severe sepsis picture</td><td>**Fever, Eosinophilia, Lymphadenopathy, Organ (Liver>Kidney>Lung)**</td><td>Fever, Neutrophilia</td></tr><tr><td>**Histology**</td><td>Vacuolar interface</td><td>**Full-thickness necrosis**</td><td>Full-thickness</td><td>Full-thickness</td><td>Interface + Eosinophils</td><td>**Subcorneal pustules + Neutrophils**</td></tr><tr><td>**Latency**</td><td>1-2 weeks</td><td>1-3 weeks</td><td>1-3 weeks</td><td>1-3 weeks</td><td>**2-8 weeks (Longer)**</td><td>**1-5 days (Short)**</td></tr><tr><td>**Key Drugs**</td><td>Penicillins, Allopurinol, Sulfa, AEDs</td><td>**Allopurinol, Carbamazepine, Lamotrigine, Phenytoin, Sulfa, Nevirapine, Oxicams**</td><td>Same as SJS/TEN</td><td>Same</td><td>**Allopurinol, AEDs, Sulfa, Minocycline, Abacavir, Allopurinol**</td><td>**β-lactams, Macrolides, Hydroxychloroquine, Diltiazem**</td></tr><tr><td>**Mortality**</td><td><1%</td><td>**~5%**</td><td>**~15-20%**</td><td>**30-50%**</td><td>**~10%**</td><td><5%</td></tr></table>
+<div class="sub-h">SCORTEN (TEN Prognostic Score) — 1 point each</div>
+<ol><li>Age &gt;40</li><li>Malignancy</li><li>Tachycardia &gt;120</li><li>BSA detachment &gt;10%</li><li>Serum Urea &gt;10 mmol/L</li><li>Bicarbonate &lt;20 mmol/L</li><li>Glucose &gt;14 mmol/L</li></ol>
+<table class="ctable"><tr><th>Score</th><th>Mortality Risk</th></tr><tr><td>-------</td><td>----------------</td></tr><tr><td>0-1</td><td>**3.2%**</td></tr><tr><td>2</td><td>**12.1%**</td></tr><tr><td>3</td><td>**35.3%**</td></tr><tr><td>4</td><td>**58.3%**</td></tr><tr><td>≥5</td><td>**>90%**</td></tr></table>
+<div class="sub-h">RegiSCAR Criteria for DRESS (Diagnostic)</div>
+<p><b>Definite:</b> ≥3 of 4 stars + 1 of 4 systemic + Exclusion</p>
+<ul><li><b>Stars:</b> Fever &gt;38°C, Lymphadenopathy, Eosinophilia (&gt;1.5 or &gt;20%), Organ involvement (Liver, Kidney, Lung)</li><li><b>Systemics:</b> Atypical lymphocytes, Viral reactivation (HHV-6), HLA association, &gt;15d latency</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Hepatic ADRs (DILI Patterns) & Hy's Law</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">DILI Patterns</div>
+<table class="ctable"><tr><th>Pattern</th><th>Biochemistry</th><th>Key Drugs</th><th>Latency</th><th>Prognosis</th></tr><tr><td>---------</td><td>--------------</td><td>-----------</td><td>---------</td><td>-----------</td></tr><tr><td>**Hepatocellular**</td><td>**ALT/AST** >5x ULN</td><td>Paracetamol, Isoniazid, Halothane, Valproate, Methotrexate, Niacin, **Herbal (Kava, Germander)**</td><td>Variable</td><td>Acute liver failure risk (Paracetamol, Idiosyncratic)</td></tr><tr><td>**Cholestatic**</td><td>**ALP/GGT** >2x ULN</td><td>**Amoxicillin-Clavulanate, Flucloxacillin, Chlorpromazine, Azathioprine, Anabolic steroids, OCP**</td><td>Longer (weeks-months)</td><td>Prolonged recovery, rarely fatal</td></tr><tr><td>**Mixed**</td><td>Both ↑ ALT & ALP</td><td>Ciprofloxacin, Cotrimoxazole, Phenytoin, Carbamazepine</td><td>Intermediate</td><td>Variable</td></tr></table>
+<div class="sub-h">Hy's Law — **Regulatory Red Flag**</div>
+<div class="callout"><b>ALT/AST &gt;3x ULN + Total Bilirubin &gt;2x ULN + ALP &lt;2x ULN (No cholestasis)</b> <b>→ 10-50% Mortality / Transplant</b> <b>→ Triggers FDA/EMA action: Boxed warning, Restriction, Withdrawal</b></div>
+<p><b>Mechanism:</b> Mitochondrial injury + Bile salt export pump (BSEP) inhibition → Impaired bilirubin excretion + Hepatocellular necrosis</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Haematological ADRs — HIT (High Yield)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Heparin-Induced Thrombocytopenia (HIT)</div>
+<ul><li><b>Mechanism:</b> IgG anti-PF4/Heparin complexes → Activate platelets → Thrombocytopenia + <b>Paradoxical THROMBOSIS</b> (Arterial &gt; Venous)</li><li><b>Timing:</b> Typically <b>Day 5-14</b> (or Day 1-2 if prior exposure &lt;100d)</li><li><b>4Ts Score (Pre-test Probability):</b></li></ul>
+<table class="ctable"><tr><th>Category</th><th>2 Points</th><th>1 Point</th><th>0 Points</th></tr><tr><td>----------</td><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**Thrombocytopenia**</td><td>>50% fall, nadir ≥20</td><td>30-50% fall, nadir 10-19</td><td><30% fall, nadir <10</td></tr><tr><td>**Timing**</td><td>5-10d, or ≤1d (past exposure)</td><td>>10d, or ≤1d (no past)</td><td><5d (no past)</td></tr><tr><td>**Thrombosis**</td><td>New thrombosis</td><td>Progressive/recurrent</td><td>None</td></tr><tr><td>**Other Causes**</td><td>None apparent</td><td>Possible</td><td>Definite</td></tr></table>
+<table class="ctable"><tr><th>Score</th><th>Probability</th><th>Action</th></tr><tr><td>-------</td><td>-------------</td><td>--------</td></tr><tr><td>**≥6 (High)**</td><td>**>90%**</td><td>**Stop Heparin, Start alternative (Argatroban/Bivalirudin/Fondaparinux), Confirm with Anti-PF4 ELISA + SRA**</td></tr><tr><td>**4-5 (Intermediate)**</td><td>10-20%</td><td>Stop Heparin, Start alternative, Test</td></tr><tr><td>**≤3 (Low)**</td><td><1%</td><td>Continue Heparin, Monitor platelets</td></tr></table>
+<p><b>Diagnosis:</b> <b>Anti-PF4 ELISA</b> (High sensitivity) → <b>SRA (Serotonin Release Assay)</b> (Gold standard, High specificity)</p>
+<p><b>Management:</b> <b>STOP ALL HEPARIN (UFH/LMWH)</b> → <b>Non-heparin anticoagulant</b> (Argatroban IV, Bivalirudin IV, Fondaparinux SC, DOACs off-label) → <b>NO Warfarin until platelets &gt;150</b> (Warfarin necrosis risk) → Platelet count daily → Transition to Warfarin/DOAC after recovery.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Type A vs B**</td><td>A: Dose-dependent, Predictable, Common (80%); B: Idiosyncratic, Non-dose-dependent, Rare, Severe</td></tr><tr><td>**DoTS**</td><td>Dose, Time, Susceptibility (Genetics, Age, Disease, Drugs)</td></tr><tr><td>**HLA-B*15:02**</td><td>Carbamazepine → SJS/TEN (SE Asian) — **Screen mandatory**</td></tr><tr><td>**HLA-B*58:01**</td><td>Allopurinol → SJS/TEN/DRESS (Asian, CKD) — **Screen recommended**</td></tr><tr><td>**HLA-B*57:01**</td><td>Abacavir → Hypersensitivity; Flucloxacillin → DILI</td></tr><tr><td>**Cutaneous Spectrum**</td><td>Morbilliform (90%) → SJS (<10%) → Overlap (10-30%) → TEN (>30%) → DRESS (Eosinophilia, Organ) → AGEP (Pustules, Neutrophilia)</td></tr><tr><td>**SCORTEN**</td><td>7 variables → Mortality risk (0-1: 3%; ≥5: >90%)</td></tr><tr><td>**Hy's Law**</td><td>ALT>3x + Bilirubin>2x + ALP<2x → 10-50% mortality</td></tr><tr><td>**HIT 4Ts**</td><td>≥6 High → Stop heparin, Start non-heparin anticoag, Test PF4/SRA</td></tr><tr><td>**Type C**</td><td>Chronic toxicity (Steroid osteoporosis, Phenytoin gums, Amiodarone deposits)</td></tr><tr><td>**Type D**</td><td>Delayed (Carcinogenesis, Teratogenesis)</td></tr><tr><td>**Type E**</td><td>Withdrawal (BZD, Steroid, SSRI, Beta-blocker, Opioid, Clonidine)</td></tr><tr><td>**Type F**</td><td>Failure (Resistance, Interactions, Non-adherence)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Classify this ADR: 65M on warfarin presents with INR 8.5, no bleeding.**</td><td>**Type A (Augmented)** — Dose-dependent, predictable, exaggerated pharmacological effect (anticoagulation)</td></tr><tr><td>**25F on carbamazepine 3 weeks: fever, rash, mucosal ulcers, eosinophilia, hepatitis. Diagnosis? HLA?**</td><td>**DRESS** (Latency 2-8w, eosinophilia, organ involvement); **HLA-B*58:01** (Allopurinol) — *Correction: Carbamazepine DRESS = HLA-A*31:01; SJS/TEN = B*15:02*</td></tr><tr><td>**Carbamazepine SJS — which HLA? In which population screen?**</td><td>**HLA-B*15:02**; **Han Chinese, Thai, SE Asian** — Mandatory pre-treatment screening</td></tr><tr><td>**Allopurinol started in 60M with CKD. 4 weeks later: fever, rash, facial oedema, eosinophilia, ALT 800. Diagnosis? Prevention?**</td><td>**DRESS** (Latency, eosinophilia, organ); **Pre-screen HLA-B*58:01** before starting allopurinol in Asian/CKD</td></tr><tr><td>**TEN — SCORTEN variables? Score 3 = ?**</td><td>Age>40, Malignancy, HR>120, BSA>10%, Urea>10, Bicarb<20, Glucose>14; **Score 3 = 35% mortality**</td></tr><tr><td>**Hy's Law — criteria and significance?**</td><td>**ALT/AST>3x ULN + Bilirubin>2x ULN + ALP<2x ULN** → **10-50% mortality/transplant** → Regulatory action</td></tr><tr><td>**HIT — typical timing? 4Ts high probability management?**</td><td>**Day 5-14** (or sooner if prior exposure); **4Ts ≥6: Stop ALL heparin, Start Argatroban/Bivalirudin/Fondaparinux, Anti-PF4 ELISA + SRA, No warfarin until platelets >150**</td></tr><tr><td>**Type E ADR examples?**</td><td>**Benzodiazepine withdrawal, Steroid adrenal crisis, SSRI discontinuation, Beta-blocker rebound tachycardia, Opioid withdrawal, Clonidine rebound HTN**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**SJS vs TEN vs Overlap**</td><td>**BSA detachment:** SJS <10%, Overlap 10-30%, TEN >30% — **Spectrum, not distinct diseases**</td></tr><tr><td>**DRESS vs SJS/TEN**</td><td>DRESS: **Longer latency (2-8w), Eosinophilia, Lymphadenopathy, Organ involvement (Liver)**; SJS/TEN: **Nikolsky +ve, Epidermal detachment, No eosinophilia**</td></tr><tr><td>**HIT vs HAT**</td><td>**HIT:** Immune, PF4 antibodies, **Thrombosis**; **HAT (Heparin-associated thrombocytopenia):** Non-immune, Transient, Day 1-4, **No thrombosis**</td></tr><tr><td>**Hy's Law vs Cholestatic DILI**</td><td>Hy's Law = **Hepatocellular** (ALT>3x, Bilirubin>2x, ALP<2x); Cholestatic = ALP>2x, Bilirubin ↑ later</td></tr><tr><td>**Type C vs Type A**</td><td>Type C = **Chronic/Cumulative** (Steroid osteoporosis after months-years); Type A = **Acute dose-dependent**</td></tr></table>
+<p><b>Mnemonic: ADR-TYPE</b></p>
+<ul><li><b>A</b>ugmented = <b>Dose-dependent, Predictable, Common</b> (80%)</li><li><b>B</b>izarre = <b>Idiosyncratic, Rare, Severe</b> (SJS, HIT, DRESS)</li><li><b>C</b>hronic = <b>Cumulative</b> (Steroid bones, Phenytoin gums)</li><li><b>D</b>elayed = <b>Carcinogenesis, Teratogenesis</b> (Latent)</li><li><b>E</b>nd of use = <b>Withdrawal</b> (BZD, Steroid, SSRI, β-blocker)</li><li><b>F</b>ailure = <b>Inefficacy</b> (Resistance, Interactions)</li></ul>
+<p><b>Mnemonic: SCORTEN-7</b></p>
+<ul><li><b>S</b> (Site: BSA&gt;10%)</li><li><b>C</b> (Cancer/Malignancy)</li><li><b>O</b> (Old age &gt;40)</li><li><b>R</b> (Rate: HR&gt;120)</li><li><b>T</b> (i<b>T</b>er: Urea&gt;10)</li><li><b>E</b> (Electrolytes: Bicarb&lt;20)</li><li><b>N</b> (Gluco<b>N</b>eogenesis: Glucose&gt;14)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((ADR Classification)) Rawlins-Thompson (Type A-F) A: Augmented (80%, Dose-dep, Predictable) B: Bizarre (Idiosyncratic, Rare, Severe) C: Chronic (Cumulative, Long-term) D: Delayed (Carcinogen, Teratogen) E: End of Use (Withdrawal/Rebound) F: Failure (Therapeutic failure) DoTS Dose-relatedness Time-relatedness Susceptibility (Genetics, Age, Disease, Drugs) HLA Associations B<i>15:02 → Carbamazepine SJS/TEN B</i>58:01 → Allopurinol SJS/DRESS B<i>57:01 → Abacavir / Flucloxacillin A</i>31:01 → Carbamazepine DRESS B*13:01 → Dapsone Cutaneous ADRs Morbilliform (90%) SJS &lt;10% Overlap 10-30% TEN &gt;30% DRESS (Eosinophilia, Organ) AGEP (Pustules, Neutrophilia) DILI Hepatocellular (ALT&gt;ALP) Cholestatic (ALP&gt;ALT) Mixed Hy's Law (ALT&gt;3x+Bili&gt;2x+ALP&lt;2x) Haematological HIT (4Ts, PF4, SRA, Argatroban) Agranulocytosis (Clozapine, Carbimazole) Thrombocytopenia (Quinine, Valproate, HIT) Haemolytic (Penicillins, Dapsone/G6PD) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Type A-F Classification</td><td></td><td></td></tr><tr><td>DoTS Framework</td><td></td><td></td></tr><tr><td>HLA Associations</td><td></td><td></td></tr><tr><td>Cutaneous ADR Spectrum</td><td></td><td></td></tr><tr><td>SCORTEN</td><td></td><td></td></tr><tr><td>Hy's Law</td><td></td><td></td></tr><tr><td>HIT 4Ts & Management</td><td></td><td></td></tr><tr><td>Type C/D/E/F</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ol><li>Define ADR (WHO)</li><li>Classify using Type A-F + DoTS</li><li>Apply to clinical vignette</li><li>Mention relevant HLA if cutaneous/severe</li><li>Management: Stop drug, Supportive, Specific (Steroids, Argatroban, etc.)</li></ol>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li><b>Type A:</b> Dose-dep, Predictable, 80% (Hypoglycaemia, Bleeding)</li><li><b>Type B:</b> Idiosyncratic, Non-dose-dep, Rare (SJS, HIT, DRESS)</li><li>**HLA-B*15:02** = Carbamazepine SJS (SE Asian)</li><li>**HLA-B*58:01** = Allopurinol SJS/DRESS</li><li><b>Hy's Law:</b> ALT&gt;3x + Bilirubin&gt;2x → 10-50% mortality</li><li><b>HIT 4Ts ≥6:</b> Stop heparin, Non-heparin anticoag, PF4/SRA</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Type A = 80% of ADRs, predictable, dose-dependent; Type B = idiosyncratic, rare, severe"</li><li>"HLA-B*15:02 for carbamazepine SJS in SE Asians — screen before prescribing"</li><li>"Hy's Law = hepatocellular injury with jaundice → 10-50% mortality"</li><li>"HIT = Day 5-14, thrombosis paradoxical, 4Ts score, stop heparin, argatroban"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>New rash on drug → STOP drug, Photograph, Classify (Morbilliform vs SJS/TEN vs DRESS vs AGEP)</li><li>Allopurinol in Asian/CKD → **Always check HLA-B*58:01 first**</li><li>Heparin → Check platelets Day 1, 4, 7, 14; 4Ts if thrombocytopenia</li><li>DILI → Hy's Law criteria → Urgent hepatology referral</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li><b>A-F:</b> Augmented, Bizarre, Chronic, Delayed, End-use, Failure</li><li><b>DoTS:</b> Dose, Time, Susceptibility (Genetics, Age, Disease, Drugs)</li><li><b>HLA:</b> B<i>15:02(CBZ), B</i>58:01(Allo), B<i>57:01(Abacavir), A</i>31:01(CBZ DRESS)</li><li><b>Cutaneous:</b> Morbilliform(90%) → SJS(&lt;10%) → O(10-30%) → TEN(&gt;30%) / DRESS(eos, organ) / AGEP(pustules)</li><li><b>SCORTEN:</b> Age&gt;40, Ca, HR&gt;120, BSA&gt;10%, Urea&gt;10, Bicarb&lt;20, Glc&gt;14</li><li><b>Hy's Law:</b> ALT&gt;3x + Bili&gt;2x + ALP&lt;2x = BAD</li><li><b>HIT:</b> 4Ts ≥6 → Stop Heparin, Argatroban, PF4+SRA, No Warfarin</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>ADR classification uses <b>Type A-F</b> (Rawlins-Thompson) and <b>DoTS</b> frameworks. <b>Type A (80%)</b> are dose-dependent, predictable; <b>Type B</b> are idiosyncratic, rare, severe. <b>HLA screening</b> prevents SJS/TEN/DRESS for carbamazepine (B<i>15:02), allopurinol (B</i>58:01), abacavir (B*57:01). <b>Cutaneous ADR spectrum</b> ranges from morbilliform (90%) to SJS/TEN (mortality up to 50% TEN) to DRESS (eosinophilia + organ) to AGEP (pustules). <b>Hy's Law</b> identifies DILI with high mortality. <b>HIT</b> diagnosed by 4Ts, confirmed by PF4/SRA, treated with non-heparin anticoagulants.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which ADR type accounts for ~80% of all ADRs?</b></li></ol>
+<p>A. Type B  B. <b>Type A</b>  C. Type C  D. Type D</p>
+<ol><li>**HLA-B*15:02 screening is mandatory before prescribing:**</li></ol>
+<p>A. Allopurinol  B. <b>Carbamazepine</b>  C. Abacavir  D. Flucloxacillin</p>
+<ol><li><b>SJS vs TEN differentiation is based on:</b></li></ol>
+<p>A. Mucosal sites  B. <b>BSA detachment %</b>  C. Eosinophilia  D. Latency</p>
+<ol><li><b>Hy's Law criteria:</b></li></ol>
+<p>A. ALT&gt;2x + Bili&gt;3x  B. <b>ALT&gt;3x + Bili&gt;2x + ALP&lt;2x</b>  C. ALP&gt;3x + Bili&gt;2x  D. ALT&gt;5x alone</p>
+<ol><li><b>HIT typical timing:</b></li></ol>
+<p>A. Day 1-2  B. Day 3-4  C. <b>Day 5-14</b>  D. Day 21-28</p>
+<ol><li><b>4Ts score ≥6 indicates:</b></li></ol>
+<p>A. Low probability  B. Intermediate  C. <b>High probability</b>  D. Excluded</p>
+<ol><li><b>Management of confirmed HIT:</b></li></ol>
+<p>A. Continue LMWH, add warfarin  B. <b>Stop ALL heparin, Start argatroban/bivalirudin/fondaparinux</b>  C. Switch to UFH  D. Platelet transfusion</p>
+<ol><li><b>DRESS vs SJS/TEN — key differentiator:</b></li></ol>
+<p>A. Mucosal involvement  B. <b>Eosinophilia + Organ involvement (Liver)</b>  C. Nikolsky sign  D. BSA detachment</p>
+<ol><li><b>Type E ADR example:</b></li></ol>
+<p>A. Hypoglycaemia on insulin  B. SJS on carbamazepine  C. <b>SSRI discontinuation syndrome</b>  D. Antibiotic resistance</p>
+<ol><li><b>SCORTEN variable NOT included:</b></li></ol>
+<p>A. Age &gt;40  B. <b>WBC count</b>  C. HR &gt;120  D. BSA &gt;10%</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>45M Han Chinese, new epilepsy. Before starting carbamazepine, which test?</b></li></ol>
+<p>A. HLA-B*27  B. **HLA-B*15:02**  C. HLA-B<i>58:01  D. HLA-B</i>57:01</p>
+<ol><li><b>60F on allopurinol 3 weeks: fever, rash, eosinophilia 2.5, ALT 450, creatinine 180. Diagnosis?</b></li></ol>
+<p>A. SJS  B. <b>DRESS</b>  C. AGEP  D. Morbilliform</p>
+<ol><li><b>Patient on UFH post-op day 7: platelets 80 (was 250), new DVT. 4Ts = ?</b></li></ol>
+<p>A. 3 (Low)  B. 4 (Int)  C. <b>6 (High)</b>  D. 5 (Int)</p>
+<ol><li><b>TEN with SCORTEN 4. Mortality risk?</b></li></ol>
+<p>A. 12%  B. 35%  C. <b>58%</b>  D. &gt;90%</p>
+<ol><li><b>Drug causing Hy's Law pattern (ALT&gt;3x, Bili&gt;2x, ALP&lt;2x) — highest risk?</b></li></ol>
+<p>A. Amoxicillin-clavulanate  B. Flucloxacillin  C. <b>Paracetamol overdose</b>  D. OCP</p>
+<ol><li><b>HIT confirmed. When can warfarin be started?</b></li></ol>
+<p>A. Immediately with heparin overlap  B. <b>Platelets &gt;150</b>  C. Day 5 of argatroban  D. After 48h fondaparinux</p>
+<ol><li><b>AGEP typical latency:</b></li></ol>
+<p>A. 2-8 weeks  B. <b>1-5 days</b>  C. 1-3 weeks  D. &gt;8 weeks</p>
+<ol><li><b>Which is Type C ADR?</b></li></ol>
+<p>A. Bleeding on warfarin  B. SJS on carbamazepine  C. <b>Osteoporosis on long-term prednisolone</b>  D. Thalidomide phocomelia</p>
+<ol><li><b>Clozapine monitoring — FBC frequency initial 18 weeks?</b></li></ol>
+<p>A. Daily  B. <b>Weekly</b>  C. Fortnightly  D. Monthly</p>
+<ol><li><b>Teratogenic ADR = Type ?</b></li></ol>
+<p>A. Type A  B. Type B  C. Type C  D. <b>Type D</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>Type A vs Type B — one liner?</b></li></ul>
+<p>A: <b>A = Dose-dep, Predictable, 80%; B = Idiosyncratic, Non-dose, Rare, Severe</b></p>
+<ul><li>Q: <b>HLA for carbamazepine SJS?</b></li></ul>
+<p>A: **HLA-B*15:02** (SE Asian)</p>
+<ul><li>Q: <b>HLA for allopurinol SJS/DRESS?</b></li></ul>
+<p>A: **HLA-B*58:01** (Asian, CKD)</p>
+<ul><li>Q: <b>Hy's Law?</b></li></ul>
+<p>A: <b>ALT&gt;3x + Bili&gt;2x + ALP&lt;2x → 10-50% mortality</b></p>
+<ul><li>Q: <b>HIT 4Ts high prob → Action?</b></li></ul>
+<p>A: <b>Stop heparin, Non-heparin anticoag (Argatroban), PF4+SRA, No warfarin until plt&gt;150</b></p>
+<ul><li>Q: <b>SCORTEN 7 variables?</b></li></ul>
+<p>A: Age&gt;40, Ca, HR&gt;120, BSA&gt;10%, Urea&gt;10, Bicarb&lt;20, Glc&gt;14</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Type A (Augmented) = 80% of ADRs, dose-dependent, predictable</li><li><b>B</b> — Carbamazepine SJS/TEN in SE Asian = HLA-B*15:02 (Mandatory screening)</li><li><b>B</b> — BSA detachment defines SJS (&lt;10%), Overlap (10-30%), TEN (&gt;30%)</li><li><b>B</b> — Hy's Law: ALT&gt;3x ULN + T.Bili&gt;2x ULN + ALP&lt;2x ULN</li><li><b>C</b> — HIT typically Day 5-14 (or sooner if prior exposure &lt;100d)</li><li><b>C</b> — 4Ts ≥6 = High probability (&gt;90%)</li><li><b>B</b> — Stop ALL heparin; Non-heparin anticoag (Argatroban/Bivalirudin/Fondaparinux); NO warfarin until platelets &gt;150</li><li><b>B</b> — DRESS has eosinophilia and organ involvement (liver); SJS/TEN has Nikolsky, detachment</li><li><b>C</b> — Type E = End of use (Withdrawal): SSRI discontinuation, BZD withdrawal, Steroid crisis</li><li><b>B</b> — WBC count not in SCORTEN (Age, Cancer, HR, BSA, Urea, Bicarb, Glucose)</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — HLA-B*15:02 for carbamazepine SJS/TEN in Han Chinese/SE Asian</li><li><b>B</b> — DRESS: Latency 2-8w, Fever, Eosinophilia, Lymphadenopathy, Organ (Liver) involvement</li><li><b>C</b> — 4Ts: Thrombocytopenia &gt;50% (2), Timing 5-10d (2), Thrombosis new (2), Other causes none (2) = 8 (High)</li><li><b>C</b> — SCORTEN 4 = 58.3% mortality</li><li><b>C</b> — Paracetamol overdose = Hepatocellular Hy's Law pattern; Amox-clav/Fluclox = Cholestatic</li><li><b>B</b> — Warfarin only after platelets &gt;150 (avoid warfarin necrosis)</li><li><b>B</b> — AGEP latency 1-5 days (vs DRESS 2-8w, SJS/TEN 1-3w)</li><li><b>C</b> — Type C = Chronic cumulative (Steroid osteoporosis, Phenytoin gums, Amiodarone deposits)</li><li><b>B</b> — Clozapine FBC: Weekly ×18w, Fortnightly ×1yr, Monthly thereafter</li><li><b>D</b> — Type D = Delayed (Carcinogenesis, Teratogenesis)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[ADRs|ADRs]]</li><li><b>Chapter Map</b>: [[Davidson Chapter 2 - Clinical Therapeutics Hierarchy|Chapter 2 Hierarchy]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Causality Assessment]], [[Pharmacovigilance]], [[Cutaneous ADRs]], [[Hepatic ADRs]], [[HIT]], [[SJS TEN]], [[DRESS]], [[AGEP]], [[DILI Patterns]], [[HLA Associations]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Adr Classification · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

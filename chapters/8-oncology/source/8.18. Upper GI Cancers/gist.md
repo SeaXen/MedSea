@@ -1,0 +1,572 @@
+# Gastrointestinal Stromal Tumour (GIST)
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **GIST = Most common GI sarcoma (1-2% GI cancers)**; **Interstitial Cells of Cajal (ICC)** origin; **KIT (CD117) 85%, PDGFRA 10%, SDH-deficient/Wild-type 5%**; **Risk Stratification: AFIP/Miettinen (Size, Mitoses/5mm², Site)**; **Surgery: R0 resection** (no routine lymphadenectomy); **Adjuvant: Imatinib 400mg daily ×3 years** (SSGXVIII/AIO, PERSIST-5); **Metastatic: Imatinib 400mg → 800mg at progression**; **Sunitinib 2L**; **Regorafenib 3L**; **Ripretinib 4L**; **Avapritinib 1L for PDGFRA D842V**; **Resistance: KIT exon 13/14 (ATP pocket), 17/18 (activation loop)**; **PET-CT (CHOI criteria) for early response**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Identify **cell of origin**: Interstitial Cells of Cajal (ICC)
+- [ ] Classify **molecular drivers**: **KIT (85%)**, **PDGFRA (10%)**, **SDH-deficient (5%)**, **Wild-type (5%)**
+- [ ] Apply **risk stratification**: **AFIP / Miettinen / NIH** (Size + Mitotic count + Site)
+- [ ] Prescribe **adjuvant imatinib 400mg ×3 years** (SSGXVIII/AIO, PERSIST-5: 5yr vs 3yr)
+- [ ] Sequence **metastatic therapy**: **Imatinib 400mg → 800mg → Sunitinib → Regorafenib → Ripretinib**
+- [ ] Recognise **Avapritinib 1L for PDGFRA D842V** (NAVIGATOR)
+- [ ] Interpret **resistance mutations**: KIT exon 13/14 (primary), exon 17/18 (secondary)
+- [ ] Use **PET-CT (CHOI criteria)** for early response assessment (CT size unreliable)
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Definition** | Mesenchymal tumour of **Interstitial Cells of Cajal (ICC)**; **KIT/PDGFRA-driven**; **Most common GI sarcoma** |
+| **Incidence** | **1-2% of GI cancers**; ~900/year UK; **10-20/million** |
+| **Prevalence** | **Median OS metastatic ~5 years** (improved with TKIs); **5-year OS localised >90%** |
+| **Peak Age** | 55-65 years |
+| **Sex Ratio** | M = F |
+| **Risk Factors** | **No strong environmental**; **Familial GIST** (KIT/PDGFRA germline); **Carney Triad** (GIST + Pulmonary Chondroma + Paraganglioma); **Carney-Stratakis** (GIST + Paraganglioma, SDH germline); **NF1** (GISTs in small bowel, WT KIT/PDGFRA) |
+
+---
+
+## 3. Aetiology & Pathophysiology
+
+```mermaid
+flowchart LR
+    A[ICC (C-KIT+ Stem Cells)] --> B[Driver Mutation]
+    B --> B1[KIT Mutation (85%)]
+    B1 --> C1[Exon 11 (Juxtamembrane) — 65-70% — **Imatinib sensitive**]
+    B1 --> C2[Exon 9 (Extracellular) — 10% — **Imatinib higher dose 800mg**]
+    B1 --> C3[Exon 13 (ATP Pocket) — 1-2% — **Secondary resistance**]
+    B1 --> C4[Exon 14 — <1%]
+    B1 --> C5[Exon 17 (Activation Loop) — 1-2% — **Secondary resistance**]
+    B1 --> C6[Exon 18 — <1%]
+    B --> B2[PDGFRA Mutation (10%)]
+    B2 --> C7[Exon 18 (D842V) — 60% of PDGFRA — **Imatinib RESISTANT**]
+    B2 --> C8[Exon 12/14 — Imatinib sensitive]
+    B --> B3[SDH-Deficient (5%)]
+    B3 --> C9[SDHA/B/C/D germline/somatic — **Paediatric/Young, Gastric, Wild-type KIT/PDGFRA**]
+    B --> B4[Wild-Type (5%)]
+    B4 --> C10[BRAF, NTRK, FGFR1, ETV6-NTRK3, RAS pathway]
+    C1 --> D[Constitutive KIT/PDGFRA Activation]
+    C2 --> D
+    C7 --> D
+    C9 --> D
+    D --> E[PI3K/AKT/mTOR, RAS/RAF/MEK/ERK, JAK/STAT]
+    E --> F[Proliferation, Survival]
+```
+
+### Molecular Subtypes & Imatinib Sensitivity
+
+| Subtype | Frequency | Primary Mutation | Imatinib Sensitivity |
+|---------|-----------|------------------|---------------------|
+| **KIT Exon 11** | **65-70%** | Del/Ins/Sub (juxtamembrane) | **Highly sensitive (400mg)** |
+| **KIT Exon 9** | 10% | A502_Y503 dup (extracellular) | **Requires 800mg** (B2222) |
+| **PDGFRA Exon 18 (D842V)** | **6-7%** | Activation loop | **Imatinib RESISTANT** — **Avapritinib 1L** |
+| **PDGFRA Exon 12/14** | 3-4% | Juxtamembrane/kinase | **Sensitive** |
+| **SDH-Deficient** | 5% | SDHA/B/C/D loss | **Imatinib POOR response** (indolent) |
+| **BRAF V600E** | <1% | RAS pathway | **Dabrafenib + Trametinib** |
+| **NTRK Fusion** | <1% | TRK kinase | **Larotrectinib/Entrectinib** |
+
+---
+
+## 4. Clinical Features
+
+| Feature | Description |
+|---------|-------------|
+| **Asymptomatic** | Incidental on imaging/endoscopy (increasing) |
+| **GI Bleeding** | **Most common symptomatic (50%)**; Occult (iron deficiency) or overt (haematemesis/melena) |
+| **Abdominal Pain/Discomfort** | 30-40% |
+| **Mass** | Palpable (20%) |
+| **Obstruction/Intussusception** | Large tumours |
+| **Perforation** | Rare, acute abdomen |
+| **Syndromic** | **Carney Triad** (Young women, gastric GIST + chondroma + paraganglioma); **Carney-Stratakis** (SDH, familial paraganglioma + GIST); **NF1** (Multiple small bowel GISTs) |
+
+---
+
+## 5. Staging & Risk Stratification
+
+### TNM 8th Edition (GIST-Specific)
+| T | Size |
+|---|------|
+| T1 | ≤2cm |
+| T2 | >2-5cm |
+| T3 | >5-10cm |
+| T4 | >10cm |
+
+| N | Rarely nodal (haematogenous spread to liver/peritoneum) |
+|---|--------------------------------------------------------|
+| M | M1: Liver, Peritoneum, Lung (rare) |
+
+### Risk Stratification (AFIP / Miettinen / Modified NIH) — **Most Used: Miettinen (AFIP)**
+
+| Risk Category | Size | Mitoses/5mm² | Site | 5-yr RFS (No Adjuvant) |
+|---------------|------|--------------|------|------------------------|
+| **Very Low** | ≤2cm | ≤5 | Any | >90% |
+| **Low** | 2-5cm | ≤5 | Gastric | ~80% |
+| **Intermediate** | ≤5cm | 6-10 | Gastric | ~65% |
+| | >5-10cm | ≤5 | Gastric | ~65% |
+| **High** | >5cm | >5 | Any | <40% |
+| | >10cm | Any | Any | <20% |
+| | Any | >10 | Any | <15% |
+| | >2cm | >5 | **Small Intestine** | **Higher risk than gastric** |
+| | >5cm | Any | **Small Intestine** | **High risk** |
+
+---
+
+## 6. Diagnosis & Investigations
+
+| Investigation | Role | Key Details |
+|---------------|------|-------------|
+| **Endoscopy (UGI/Colonoscopy)** | Mucosal lesions, Biopsy | **Submucosal mass**, normal mucosa ("bulge") |
+| **EUS** | **Local staging**, FNA | **Layer of origin** (muscularis propria), Size, Adjacent structures |
+| **CT Abdomen/Pelvis** | **Staging**, Liver/peritoneal mets | **Enhancing mass**, Necrosis, Cystic degeneration |
+| **PET-CT** | **Baseline metabolic activity**, **Early response (CHOI)** | **SUVmax correlates with mitotic rate**; **CHOI: ↓SUV >10% or ↓SUVpeak >15% = Response** |
+| **Biopsy (EUS-FNA / Core)** | **Diagnosis + Molecular** | **CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-** |
+| **Molecular Testing (MANDATORY)** | **KIT (Exon 9, 11, 13, 17), PDGFRA (Exon 12, 14, 18), SDH IHC** | **Guides TKI selection**; **PDGFRA D842V → Avapritinib** |
+| **SDH IHC (SDHB)** | **Loss = SDH-deficient** | **If loss → Germline SDH testing** (Carney-Stratakis) |
+
+---
+
+## 7. Differential Diagnosis
+
+| Condition | Distinguishing Features |
+|-----------|-------------------------|
+| **Leiomyoma/Leiomyosarcoma** | **Desmin+, SMA+, CD117-, DOG1-**; **KIT/PDGFRA WT** |
+| **Schwannoma** | **S100+, SOX10+, CD117-** |
+| **Solitary Fibrous Tumour** | **STAT6+, CD34+, BCL2+, CD117-** |
+| **Inflammatory Fibroid Polyp** | **Eosinophilic infiltrate**, PDGFRA mut (exon 12/18 non-D842V) |
+| **GIST vs Desmoid** | **Desmoid**: **β-catenin nuclear+, CTNNB1 mut**, CD117-; Abdominal wall/mesentery |
+| **Metastasis** | Known primary, CK+, CD117- |
+
+---
+
+## 8. Management
+
+### Localised (Resectable)
+
+```mermaid
+flowchart TD
+    A[Localised GIST] --> B{Risk (Miettinen/AFIP)}
+    B -->|**Very Low / Low**| C[**Surgery Alone (R0 Resection)**<br/>**No Adjuvant Imatinib**<br/>Surveillance: CT q6-12mo ×5yr]
+    B -->|**Intermediate**| D[**Surgery + Adjuvant Imatinib 400mg daily ×3 years**<br/>**Consider** (discuss risk/benefit)<br/>**SSGXVIII/AIO**: 3yr > 1yr DFS]
+    B -->|**High**| E[**Surgery + Adjuvant Imatinib 400mg daily ×3 years**<br/>**Standard** (SSGXVIII/AIO, PERSIST-5)<br/>**PERSIST-5**: 5yr > 3yr (RFS 90% vs 84%, OS 92% vs 88%)<br/>**Consider 5 years if high-risk features**]
+    C --> F[Surveillance: CT Abd/Pelvis q6-12mo ×5yr, then annually]
+    D --> F
+    E --> F
+```
+
+**Surgical Principles:**
+- **R0 resection** (en bloc, no tumour rupture)
+- **No routine lymphadenectomy** (GISTs rarely metastasise to nodes)
+- **Laparoscopic preferred** for gastric <5cm, small bowel
+- **Neoadjuvant Imatinib** for borderline resectable/large (>10cm) — **Downsize for organ preservation**
+
+### Metastatic / Unresectable
+
+```mermaid
+flowchart TD
+    A[Metastatic/Unresectable GIST] --> B{Molecular Subtype}
+    B -->|**PDGFRA D842V**| C[**Avapritinib 300mg daily** (NAVIGATOR)<br/>**1L Standard for D842V**<br/>ORR 84%, DOR ~22mo<br/>**Imatinib INEFFECTIVE**]
+    B -->|**KIT Exon 9**| D[**Imatinib 800mg daily** (B2222)<br/>**Standard 1L**<br/>**400mg inadequate**]
+    B -->|**KIT Exon 11 / PDGFRA Exon 12/14 / WT (non-D842V)**| E[**Imatinib 400mg daily** (Standard 1L)<br/>**Response: ~60-70% CR/PR/SD**<br/>**Median PFS ~24mo, OS ~5yr**]
+    B -->|**SDH-Deficient**| F[**Imatinib 400mg** (limited benefit)<br/>**Indolent course**<br/>**Surveillance/Surgery** often preferred]
+    E --> G[**Progression on Imatinib 400mg**]
+    D --> G
+    G --> H[**Dose Escalation to 800mg** (if 400mg)<br/>**If already 800mg or progression on 800mg → 2L**]
+    H --> I[**2L: Sunitinib 50mg daily (4/2 schedule)** (A6181008)<br/>**PFS ~6mo, OS benefit**<br/>**VEGFR/PDGFR/CSF1R/KIT inhibitor**]
+    I --> J[**3L: Regorafenib 160mg daily (21/28)** (GRID)<br/>**PFS ~5mo, OS benefit**<br/>**Multi-kinase (KIT, VEGFR, RET, RAF)**]
+    J --> K[**4L: Ripretinib 150mg daily** (INVICTUS)<br/>**Switch-control KIT inhibitor** (binds inactive conformation)<br/>**Broad resistance coverage (exon 11, 13, 14, 17, 18)**<br/>**PFS ~6mo vs 1mo placebo**]
+    K --> L[**Later Lines: Clinical Trial / Avapritinib (if not D842V) / Sorafenib / Pazopanib / Nilotinib**]
+```
+
+### Resistance Mutations (KIT)
+
+| Mutation | Exon | Domain | Clinical Context | TKI Sensitivity |
+|----------|------|--------|------------------|-----------------|
+| **Primary** | **Exon 11** | Juxtamembrane | **De novo** | **Imatinib Sensitive** |
+| **Primary** | **Exon 9** | Extracellular | **De novo** | **Imatinib 800mg** |
+| **Secondary (on Imatinib)** | **Exon 13/14** | ATP-binding pocket | **Acquired resistance** | **Sunitinib/Regorafenib/Ripretinib** |
+| **Secondary (on Imatinib/Sunitinib)** | **Exon 17/18** | Activation loop | **Acquired resistance** | **Regorafenib/Ripretinib** (Ripretinib best) |
+
+---
+
+## 9. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **GIST** | **Most common GI sarcoma**; **ICC origin**; **KIT 85%, PDGFRA 10%, SDH/WT 5%** |
+| **IHC** | **CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-** |
+| **Risk Stratification** | **Miettinen (AFIP)**: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel) |
+| **Adjuvant Imatinib** | **High risk: 3 years standard** (SSGXVIII/AIO); **5 years superior** (PERSIST-5); **Intermediate: consider**; **Low: none** |
+| **Metastatic 1L** | **KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg**; **KIT Ex9: Imatinib 800mg**; **PDGFRA D842V: Avapritinib** |
+| **Progression Sequence** | **Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L** |
+| **Resistance Mutations** | **Primary: Exon 11, 9**; **Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)** |
+| **Avapritinib** | **PDGFRA D842V 1L** (NAVIGATOR); **Also 4L+ for KIT mutations** (broad) |
+| **Ripretinib** | **Switch-control inhibitor** (stabilises inactive KIT); **INVICTUS: 4L PFS 6.3 vs 1.0 mo** |
+| **PET-CT (CHOI)** | **Early response**: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo; **CT size unreliable** (necrosis/cystic change) |
+| **Neoadjuvant** | **Borderline resectable/large**: Imatinib 6-12mo → Surgery → Adjuvant (complete 3yr total) |
+
+---
+
+## 10. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **55M, gastric submucosal mass, EUS: muscularis propria, 4cm, 8 mitoses/5mm². CD117+, DOG1+. Risk category?** | **High risk** (Size >5cm OR Mitoses >5/5mm² in gastric; Actually 4cm with 8 mitoses = **High risk** per Miettinen: Gastric >2cm with >5 mitoses = High). |
+| **High-risk gastric GIST post-R0 resection — adjuvant?** | **Imatinib 400mg daily ×3 years** (minimum); **Consider 5 years** (PERSIST-5: 5yr RFS 90% vs 84%, OS 92% vs 88%). |
+| **KIT Exon 9 mutation — imatinib dose?** | **800mg daily** (B2222 trial: 800mg superior to 400mg for Exon 9). |
+| **PDGFRA D842V mutation — 1L treatment?** | **Avapritinib 300mg daily** (NAVIGATOR) — **Imatinib INEFFECTIVE**. |
+| **Progression on Imatinib 400mg — next step?** | **Dose escalate to 800mg**; If already 800mg or progression on 800mg → **Sunitinib 50mg daily (4/2 schedule)**. |
+| **Sunitinib → Regorafenib → Ripretinib — sequence evidence?** | **Sunitinib 2L** (A6181008, PFS 6mo); **Regorafenib 3L** (GRID, PFS 5mo); **Ripretinib 4L** (INVICTUS, PFS 6.3 vs 1.0 mo placebo). |
+| **Resistance mutations — primary vs secondary?** | **Primary (de novo)**: Exon 11 (juxtamembrane), Exon 9 (extracellular); **Secondary (acquired on TKI)**: Exon 13/14 (ATP pocket) → Exon 17/18 (activation loop). |
+| **CHOI criteria — PET-CT response?** | **Response**: ↓SUVmax >10% **OR** ↓SUVpeak >15% (at 1-3 months); **CT size (RECIST) unreliable** due to necrosis/cystic change. |
+| **SDH-deficient GIST — features?** | **Young, Female, Gastric, Wild-type KIT/PDGFRA**, **SDHB IHC loss**, **Indolent**, **Germline SDH testing** (Carney-Stratakis). |
+| **Neoadjuvant imatinib — when?** | **Borderline resectable**, **Large (>10cm)**, **Organ preservation** (avoid multivisceral resection) — **6-12 months**, then surgery, then complete 3yr adjuvant. |
+
+---
+
+## 11. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Imatinib 400mg vs 800mg** | **400mg**: Standard for Exon 11, PDGFRA Ex12/14; **800mg**: **KIT Exon 9** (B2222) **AND** dose escalation at progression on 400mg |
+| **PDGFRA D842V vs other PDGFRA** | **D842V (Exon 18)** = **Imatinib RESISTANT** → **Avapritinib 1L**; **Exon 12/14** = **Imatinib SENSITIVE** (400mg) |
+| **Adjuvant duration: 3yr vs 5yr** | **3yr**: Standard (SSGXVIII/AIO); **5yr**: **PERSIST-5** showed superiority for **High-risk** (RFS 90% vs 84%, OS 92% vs 88%) |
+| **Risk stratification: NIH vs AFIP vs Miettinen** | **NIH (Fletcher)**: Size + Mitoses only; **AFIP (Miettinen)**: + **Site (Gastric vs Small Bowel)** — **Most widely used** |
+| **Ripretinib mechanism** | **Switch-control inhibitor**: Binds **inactive KIT conformation** → Prevents activation; **Broad coverage** (Exon 11, 13, 14, 17, 18) |
+| **CHOI vs RECIST** | **RECIST**: Size-based (unreliable in GIST due to necrosis); **CHOI**: **SUV-based** on PET-CT; **Early response at 1-3mo** predicts outcome |
+
+**Mnemonic: GIST-TKI**
+- **G**IST: **KIT 85%, PDGFRA 10%, SDH/WT 5%**
+- **I**HC: **CD117+, DOG1+, CD34+, Desmin-**
+- **S**tratification: **Miettinen** (Size + Mitoses + Site)
+- **T**KI Sequence: **Imatinib (400→800) → Sunitinib → Regorafenib → Ripretinib**
+- **T**KI Specific: **Exon 9 = 800mg**; **PDGFRA D842V = Avapritinib**
+- **K**it Resistance: **Primary Ex11/9** → **Secondary Ex13/14 → Ex17/18**
+- **I**maging: **PET-CT CHOI** (SUV) > CT RECIST
+- **A**djuvant: **High risk 3yr (5yr PERSIST-5)**; **Intermediate consider**; **Low none**
+- **N**eoadjuvant: **Borderline/Large** → Downsize
+
+---
+
+## 12. Mind Map
+
+```mermaid
+mindmap
+  root((GIST))
+    Origin
+      Interstitial Cells of Cajal (ICC)
+    Molecular
+      KIT Exon 11 (65-70%) - Sensitive 400mg
+      KIT Exon 9 (10%) - Needs 800mg
+      PDGFRA D842V (6-7%) - Avapritinib
+      PDGFRA Ex12/14 - Sensitive 400mg
+      SDH-deficient (5%) - Indolent, SDHB loss
+      BRAF/NTRK (rare) - Dab+Tram / Larotrectinib
+    Risk Stratification
+      Miettinen (AFIP): Size + Mitoses/5mm² + Site
+      Very Low/Low/Intermediate/High
+    Localised
+      Surgery R0 (No LN dissection)
+      Adjuvant: High 3-5yr Imatinib
+    Metastatic
+      1L: Imatinib (400/800) / Avapritinib (D842V)
+      2L: Sunitinib
+      3L: Regorafenib
+      4L: Ripretinib
+    Resistance
+      Primary: Ex11, Ex9
+      Secondary: Ex13/14 (ATP) → Ex17/18 (Act loop)
+    Monitoring
+      PET-CT CHOI Criteria (SUV)
+      CT RECIST unreliable
+```
+
+---
+
+## 13. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Driver** | KIT 85% (Ex11 65%, Ex9 10%), PDGFRA 10% (D842V 6%), SDH/WT 5% |
+| **IHC** | CD117+, DOG1+, CD34+, Desmin-, S100- |
+| **Risk** | Miettinen: Size + Mitoses/5mm² + Site (Gastric < SmBowel) |
+| **Adjuvant** | High risk: Imatinib 400mg ×3yr (5yr PERSIST-5 better); Int consider; Low none |
+| **1L Met** | Ex11/PDGFRA Ex12/14: Imatinib 400mg; Ex9: Imatinib 800mg; D842V: Avapritinib |
+| **Sequence** | Imatinib 400→800 → Sunitinib → Regorafenib → Ripretinib |
+| **Resistance** | Primary Ex11/9; Secondary Ex13/14 → Ex17/18 |
+| **Avapritinib** | PDGFRA D842V 1L; Broad KIT 4L+ |
+| **Ripretinib** | Switch-control (inactive KIT); 4L INVICTUS |
+| **PET-CT** | CHOI: ΔSUVmax >10% or ΔSUVpeak >15% |
+
+---
+
+## 14. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 15. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Molecular subtypes | | |
+| Risk stratification (Miettinen) | | |
+| Adjuvant imatinib duration | | |
+| Metastatic sequencing | | |
+| KIT exon-specific dosing | | |
+| PDGFRA D842V / Avapritinib | | |
+| Resistance mutations | | |
+| CHOI criteria / PET-CT | | |
+
+---
+
+## 16. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Small Bowel Adenocarcinoma]], [[Imatinib]], [[Sunitinib]], [[Regorafenib]], [[Ripretinib]], [[Avapritinib]], [[KIT Mutations]], [[PDGFRA D842V]], [[CHOI Criteria]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 17. MCQs (10)
+
+
+**1.** Regarding Gastrointestinal Stromal Tumour (GIST) (GIST), which statement is correct?
+   A. **Most common GI sarcoma**
+   B. **Most - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Most common GI sarcoma**; **ICC origin**; **KIT 85%, PDGFRA 10%, SDH/WT 5%**
+
+
+**2.** Regarding Gastrointestinal Stromal Tumour (GIST) (IHC), which statement is correct?
+   A. **CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-**
+   B. **CD117 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-**
+
+
+**3.** Regarding Gastrointestinal Stromal Tumour (GIST) (Risk Stratification), which statement is correct?
+   A. **Miettinen (AFIP)**: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)
+   B. **Miettinen - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Miettinen (AFIP)**: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)
+
+
+**4.** Regarding Gastrointestinal Stromal Tumour (GIST) (Adjuvant Imatinib), which statement is correct?
+   A. **High risk: 3 years standard** (SSGXVIII/AIO)
+   B. **High - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **High risk: 3 years standard** (SSGXVIII/AIO); **5 years superior** (PERSIST-5); **Intermediate: consider**; **Low: non...
+
+
+**5.** Regarding Gastrointestinal Stromal Tumour (GIST) (Metastatic 1L), which statement is correct?
+   A. **KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg**
+   B. **KIT - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg**; **KIT Ex9: Imatinib 800mg**; **PDGFRA D842V: Avapritinib**
+
+
+**6.** Regarding Gastrointestinal Stromal Tumour (GIST) (Progression Sequence), which statement is correct?
+   A. **Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L**
+   B. **Imatinib - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L**
+
+
+**7.** Regarding Gastrointestinal Stromal Tumour (GIST) (Resistance Mutations), which statement is correct?
+   A. **Primary: Exon 11, 9**
+   B. **Primary: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Primary: Exon 11, 9**; **Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)**
+
+
+**8.** Regarding Gastrointestinal Stromal Tumour (GIST) (Avapritinib), which statement is correct?
+   A. **PDGFRA D842V 1L** (NAVIGATOR)
+   B. **PDGFRA - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **PDGFRA D842V 1L** (NAVIGATOR); **Also 4L+ for KIT mutations** (broad)
+
+
+**9.** Regarding Gastrointestinal Stromal Tumour (GIST) (Ripretinib), which statement is correct?
+   A. **Switch-control inhibitor** (stabilises inactive KIT)
+   B. **Switch-control - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Switch-control inhibitor** (stabilises inactive KIT); **INVICTUS: 4L PFS 6.3 vs 1.0 mo**
+
+
+**10.** Regarding Gastrointestinal Stromal Tumour (GIST) (PET-CT (CHOI)), which statement is correct?
+   A. **Early response**: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo
+   B. **Early - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Early response**: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo; **CT size unreliable** (necrosis/cystic change)
+
+
+## 18. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **Most common GI sarcoma**
+   - B. **Most (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **Most common GI sarcoma**; **ICC origin**; **KIT 85%, PDGFRA 10%, SDH/WT 5%**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-**
+   - B. **CD117 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **Miettinen (AFIP)**: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)
+   - B. **Miettinen (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **Miettinen (AFIP)**: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **High risk: 3 years standard** (SSGXVIII/AIO)
+   - B. **High (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **High risk: 3 years standard** (SSGXVIII/AIO); **5 years superior** (PERSIST-5); **Intermediate: consider**; **Low: non...
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg**
+   - B. **KIT (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg**; **KIT Ex9: Imatinib 800mg**; **PDGFRA D842V: Avapritinib**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L**
+   - B. **Imatinib (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L**
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **Primary: Exon 11, 9**
+   - B. **Primary: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **Primary: Exon 11, 9**; **Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)**
+
+
+**8.** The role of surgery in this case is:
+   - A. **PDGFRA D842V 1L** (NAVIGATOR)
+   - B. **PDGFRA (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **PDGFRA D842V 1L** (NAVIGATOR); **Also 4L+ for KIT mutations** (broad)
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **Switch-control inhibitor** (stabilises inactive KIT)
+   - B. **Switch-control (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **Switch-control inhibitor** (stabilises inactive KIT); **INVICTUS: 4L PFS 6.3 vs 1.0 mo**
+
+
+**10.** Palliative care referral is most appropriate when:
+   - A. **Early response**: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo
+   - B. **Early (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — palliative: **Early response**: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo; **CT size unreliable** (necrosis/cystic change)
+
+
+## 19. Flashcards
+
+**Q1:** GIST?
+**A1:** Most common GI sarcoma; ICC origin; KIT 85%, PDGFRA 10%, SDH/WT 5%
+
+**Q2:** IHC?
+**A2:** CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-
+
+**Q3:** Risk Stratification?
+**A3:** Miettinen (AFIP): Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)
+
+**Q4:** Adjuvant Imatinib?
+**A4:** High risk: 3 years standard (SSGXVIII/AIO); 5 years superior (PERSIST-5); Intermediate: consider; Low: none
+
+**Q5:** Metastatic 1L?
+**A5:** KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg; KIT Ex9: Imatinib 800mg; PDGFRA D842V: Avapritinib
+
+**Q6:** Progression Sequence?
+**A6:** Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L
+
+**Q7:** Resistance Mutations?
+**A7:** Primary: Exon 11, 9; Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)
+
+**Q8:** Avapritinib?
+**A8:** PDGFRA D842V 1L (NAVIGATOR); Also 4L+ for KIT mutations (broad)
+
+## 20. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | GIST | Most common GI sarcoma; ICC origin; KIT 85%, PDGFRA 10%, SDH/WT 5% |
+| 2 | A | IHC | CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100- |
+| 3 | A | Risk Stratification | Miettinen (AFIP): Size + Mitoses/5mm² + Site (Gastric better than Small Bowel) |
+| 4 | A | Adjuvant Imatinib | High risk: 3 years standard (SSGXVIII/AIO); 5 years superior (PERSIST-5); Intermediate: consider; Low: none |
+| 5 | A | Metastatic 1L | KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg; KIT Ex9: Imatinib 800mg; PDGFRA D842V: Avapritinib |
+| 6 | A | Progression Sequence | Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L |
+| 7 | A | Resistance Mutations | Primary: Exon 11, 9; Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop) |
+| 8 | A | Avapritinib | PDGFRA D842V 1L (NAVIGATOR); Also 4L+ for KIT mutations (broad) |
+| 9 | A | Ripretinib | Switch-control inhibitor (stabilises inactive KIT); INVICTUS: 4L PFS 6.3 vs 1.0 mo |
+| 10 | A | PET-CT (CHOI) | Early response: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo; CT size unreliable (necrosis/cystic change) |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | GIST | Most common GI sarcoma; ICC origin; KIT 85%, PDGFRA 10%, SDH/WT 5% |
+| 2 | A | IHC | CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100- |
+| 3 | A | Risk Stratification | Miettinen (AFIP): Size + Mitoses/5mm² + Site (Gastric better than Small Bowel) |
+| 4 | A | Adjuvant Imatinib | High risk: 3 years standard (SSGXVIII/AIO); 5 years superior (PERSIST-5); Intermediate: consider; Low: none |
+| 5 | A | Metastatic 1L | KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg; KIT Ex9: Imatinib 800mg; PDGFRA D842V: Avapritinib |
+| 6 | A | Progression Sequence | Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L |
+| 7 | A | Resistance Mutations | Primary: Exon 11, 9; Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop) |
+| 8 | A | Avapritinib | PDGFRA D842V 1L (NAVIGATOR); Also 4L+ for KIT mutations (broad) |
+| 9 | A | Ripretinib | Switch-control inhibitor (stabilises inactive KIT); INVICTUS: 4L PFS 6.3 vs 1.0 mo |
+| 10 | A | PET-CT (CHOI) | Early response: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo; CT size unreliable (necrosis/cystic change) |
+
+## 21. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Upper GI Cancers|Upper GI Cancers]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

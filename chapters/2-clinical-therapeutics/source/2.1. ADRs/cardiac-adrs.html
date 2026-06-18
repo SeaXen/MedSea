@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cardiac Adrs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Cardiac Adrs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify cardiac ADRs by mechanism (electrophysiological, haemodynamic, structural)</li><li>[ ] Recognise drug-induced QT prolongation &amp; Torsades (review from Drug Interactions)</li><li>[ ] Identify drugs causing heart failure exacerbation / new-onset HF</li><li>[ ] Manage drug-induced bradyarrhythmias &amp; conduction block</li><li>[ ] Recognise drug-induced hypertension / hypotension</li><li>[ ] Apply monitoring strategies for cardiotoxic drugs</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Classification of Cardiac ADRs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Mechanism</th><th>Key Drugs</th><th>Clinical Presentation</th></tr><tr><td>----------</td><td>-----------</td><td>-----------</td><td>----------------------</td></tr><tr><td>**QT Prolongation / Torsades**</td><td>**hERG (IKr) blockade**</td><td>See Drug Interactions: QT Prolonging Combinations</td><td>Syncope, palpitations, polymorphic VT, cardiac arrest</td></tr><tr><td>**Bradyarrhythmia / Conduction Block**</td><td>SA/AV node depression</td><td>**Beta-blockers, Non-DHP CCB (verapamil, diltiazem), Digoxin, Amiodarone, Clonidine, Ivabradine, Donepezil**</td><td>Bradycardia (<50 bpm), hypotension, syncope, heart block</td></tr><tr><td>**Tachyarrhythmia**</td><td>Sympathetic stimulation / triggered activity</td><td>**Dobutamine, Adrenaline, Atropine, Theophylline, Digoxin toxicity, QT drugs, Cocaine, Tricyclics**</td><td>Palpitations, hypotension, VT/VF</td></tr><tr><td>**Heart Failure (Exacerbation/New)**</td><td>Negative inotropy / fluid retention / afterload mismatch</td><td>**NSAIDs, CCB (non-DHP, DHP high dose), Thiazolidinediones (pioglitazone), Dexamethasone, Cilostazol, Itraconazole, Chemotherapy (anthracyclines, trastuzumab)**</td><td>Dyspnoea, orthopnoea, oedema, ↑ BNP, ↓ EF</td></tr><tr><td>**Hypertension**</td><td>Vasoconstriction / volume expansion / RAAS activation</td><td>**NSAIDs, COX-2 inhibitors, Oral contraceptives, Steroids, Ciclosporin/Tacrolimus, EPO, SNRIs (venlafaxine), MAOIs (tyramine), Sympathomimetics**</td><td>Asymptomatic BP rise, headache, encephalopathy (malignant)</td></tr><tr><td>**Hypotension**</td><td>Vasodilation / volume depletion / autonomic blockade</td><td>**Alpha-blockers, ACEi/ARB (first dose), Diuretics, Nitrates, PDCIs, Antipsychotics, Antidepressants, Parkinson drugs**</td><td>Dizziness, syncope, falls (esp. elderly)</td></tr><tr><td>**Cardiomyopathy (Chronic)**</td><td>Mitochondrial toxicity / oxidative stress / apoptosis</td><td>**Anthracyclines (dose-dependent), Trastuzumab (Type II, reversible), TKIs (sunitinib), Clozapine (myocarditis), Carbamazepine**</td><td>↓ EF, heart failure, arrhythmias</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ Drug-Induced Heart Failure — **High-Yield**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Drugs That Worsen / Precipitate HF</div>
+<table class="ctable"><tr><th>Drug Class</th><th>Mechanism</th><th>Key Examples</th><th>High-Risk Patients</th></tr><tr><td>------------</td><td>-----------</td><td>--------------</td><td>-------------------</td></tr><tr><td>**NSAIDs**</td><td>↓ Renal prostaglandins → fluid retention, ↑ SVR, ↓ diuretic effect</td><td>Ibuprofen, Diclofenac, Naproxen, Celecoxib</td><td>**Existing HF, CKD, elderly, on ACEi/ARB+Diuretic (Triple Whammy)**</td></tr><tr><td>**Calcium Channel Blockers**</td><td>Negative inotropy (non-DHP); Reflex tachycardia + fluid retention (DHP)</td><td>**Verapamil, Diltiazem** (avoid in HFrEF); **Amlodipine** (safe in HF but can cause oedema)</td><td>HFrEF (avoid non-DHP)</td></tr><tr><td>**Thiazolidinediones**</td><td>Fluid retention (PPAR-γ → ENaC upregulation)</td><td>**Pioglitazone, Rosiglitazone**</td><td>**Existing HF, NYHA III–IV (CONTRAINDICATED)**</td></tr><tr><td>**Corticosteroids**</td><td>Fluid retention, hypertension</td><td>Dexamethasone, Prednisolone high dose</td><td>HF, CKD</td></tr><tr><td>**Antiarrhythmics (Class I)**</td><td>Negative inotropy, proarrhythmia</td><td>Flecainide, Propafenone, Disopyramide</td><td>Structural heart disease, post-MI (CAST trial)</td></tr><tr><td>**Chemotherapy**</td><td>**Anthracyclines: dose-dependent (Type A)**; **Trastuzumab: Type II (reversible)**</td><td>Doxorubicin (cumulative >450–550 mg/m²), Trastuzumab</td><td>Prior radiation, elderly, pre-existing HF</td></tr><tr><td>**Immunosuppressants**</td><td>Vasoconstriction, hypertension</td><td>Ciclosporin, Tacrolimus</td><td>Transplant</td></tr><tr><td>**Tyrosine Kinase Inhibitors**</td><td>Off-target kinase inhibition</td><td>Sunitinib, Pazopanib, Sorafenib</td><td>Metastatic RCC/GIST</td></tr></table>
+<div class="sub-h">Management</div>
+<ol><li><b>STOP offending drug</b> if possible</li><li><b>Optimise GDMT</b> (ACEi/ARB/ARNI, Beta-blocker, MRA, SGLT2i, Loop diuretic)</li><li><b>Anthracyclines</b>: Dexrazoxane (cardioprotectant) if &gt;300 mg/m²; LVEF monitoring q3mo</li><li><b>Trastuzumab</b>: Hold if LVEF ↓&gt;10% to &lt;50%; restart if recovers</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">💓 Drug-Induced Bradyarrhythmias & Conduction Block</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>Risk Factors</th><th>Management</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td><td>------------</td></tr><tr><td>**Beta-blockers**</td><td>β1 blockade → ↓ SA node automaticity, ↓ AV conduction</td><td>Elderly, CKD, combined with non-DHP CCB, digoxin, amiodarone</td><td>↓ dose/hold; atropine 0.5mg IV if symptomatic; pacing if severe</td></tr><tr><td>**Non-DHP CCB** (Verapamil, Diltiazem)</td><td>↓ SA/AV node conduction</td><td>Elderly, HFrEF, combined with BB/digoxin</td><td>Avoid in HFrEF; hold if bradycardia</td></tr><tr><td>**Digoxin**</td><td>↑ Vagal tone → ↓ SA/AV node; ↑ automaticity (toxicity)</td><td>**Hypokalaemia, Hypomagnesaemia, Renal impairment, Elderly, Amiodarone/Verapamil**</td><td>**Digoxin-specific Fab** if life-threatening; K⁺/Mg²⁺ repletion; hold</td></tr><tr><td>**Amiodarone**</td><td>Multi-channel block (Na, K, Ca, β) → sinus brady, AV block</td><td>Combined with BB/CCB/Digoxin</td><td>Hold; pacing if symptomatic</td></tr><tr><td>**Clonidine**</td><td>Central α2 agonist → ↓ sympathetic outflow</td><td>Elderly, combined with BB</td><td>**Rebound hypertension on abrupt stop**; taper</td></tr><tr><td>**Ivabradine**</td><td>If channel blockade (SA node)</td><td>**HR <60 at baseline (CONTRAINDICATED)**; combined with BB/CCB</td><td>Hold if HR<50; ↑ dose only if HR≥60</td></tr><tr><td>**Donepezil / Cholinesterase inhibitors**</td><td>↑ Acetylcholine → bradycardia, AV block</td><td>Elderly, combined with BB/CCB</td><td>Hold if symptomatic bradycardia; pacemaker if persistent</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💊 Drug-Induced Hypertension</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>Monitoring</th></tr><tr><td>------</td><td>-----------</td><td>------------</td></tr><tr><td>**NSAIDs / COX-2**</td><td>↓ Renal PG → fluid retention, ↑ SVR; blunts ACEi/ARB/diuretic</td><td>BP at 1–2 weeks</td></tr><tr><td>**Oral Contraceptives (Estrogen)**</td><td>↑ Angiotensinogen → ↑ Ang II; ↑ hepatic SHBG</td><td>BP at 3 months</td></tr><tr><td>**Corticosteroids**</td><td>Mineralocorticoid effect → Na⁺/water retention</td><td>BP regularly</td></tr><tr><td>**Ciclosporin / Tacrolimus**</td><td>Renal vasoconstriction, ↑ endothelin</td><td>BP each visit</td></tr><tr><td>**Erythropoietin (EPO)**</td><td>↑ Haematocrit → ↑ viscosity; endothelin</td><td>BP weekly ×4 then monthly</td></tr><tr><td>**SNRIs (Venlafaxine >150mg)**</td><td>Noradrenaline reuptake inhibition</td><td>BP at dose escalation</td></tr><tr><td>**MAOIs + Tyramine**</td><td>Displaced noradrenaline → hypertensive crisis</td><td>Dietary tyramine restriction</td></tr><tr><td>**Sympathomimetics** (Pseudoephedrine, Phenylephrine)</td><td>α1 agonism → vasoconstriction</td><td>Avoid in uncontrolled HTN</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📉 Drug-Induced Hypotension</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>High-Risk Scenario</th></tr><tr><td>------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**ACEi/ARB (First dose)**</td><td>Rapid RAAS blockade → ↓ Ang II → vasodilation</td><td>**Volume depleted** (diuretics, vomiting, diarrhoea), elderly</td></tr><tr><td>**Alpha-blockers** (Doxazosin, Prazosin, Terazosin)</td><td>α1 blockade → venous/arterial dilation</td><td>**First dose** (postural hypotension); elderly</td></tr><tr><td>**Diuretics** (Loop/Thiazide)</td><td>Volume depletion</td><td>Elderly, combined with ACEi/ARB</td></tr><tr><td>**Nitrates** (GTN, ISMN)</td><td>Venous > arterial dilation → ↓ preload</td><td>Combined with PDE5 inhibitors (CONTRAINDICATED)</td></tr><tr><td>**Antipsychotics** (Clozapine, Quetiapine, Chlorpromazine)</td><td>α1 blockade</td><td>Elderly, dose escalation</td></tr><tr><td>**Antidepressants** (TCAs, MAOIs)</td><td>α1 blockade, central effects</td><td>Elderly, postural</td></tr><tr><td>**Parkinson drugs** (Levodopa, Dopamine agonists)</td><td>Vasodilation, autonomic dysfunction</td><td>Elderly, autonomic neuropathy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🧬 Chronic Cardiotoxicity (Chemotherapy)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Type</th><th>Mechanism</th><th>Monitoring</th></tr><tr><td>------</td><td>------</td><td>-----------</td><td>------------</td></tr><tr><td>**Anthracyclines** (Doxorubicin, Epirubicin, Daunorubicin)</td><td>**Type A (Dose-dependent)**</td><td>Topoisomerase IIβ inhibition → mitochondrial ROS, DNA damage, apoptosis</td><td>**Cumulative dose limit**: Doxorubicin 450–550 mg/m²; **LVEF echo/MUGA q3mo**; Dexrazoxane if >300 mg/m²</td></tr><tr><td>**Trastuzumab** (Anti-HER2)</td><td>**Type B (Reversible, not dose-dependent)**</td><td>HER2 blockade → ↓ neuregulin signalling → impaired cardiomyocyte repair</td><td>**LVEF q3mo**; hold if ↓>10% to <50%; no cumulative limit</td></tr><tr><td>**TKIs** (Sunitinib, Pazopanib, Sorafenib)</td><td>Off-target (VEGFR, PDGFR, c-Kit)</td><td>Hypertension, ↓ LVEF</td><td>BP weekly; echo baseline + q3mo</td></tr><tr><td>**5-FU / Capecitabine**</td><td>Coronary vasospasm</td><td>Chest pain, ECG changes</td><td>ECG if chest pain</td></tr><tr><td>**Cyclophosphamide (High-dose)**</td><td>Haemorrhagic myocarditis</td><td>Acute HF, arrhythmias</td><td>Echo if symptoms</td></tr><tr><td>**Immune Checkpoint Inhibitors**</td><td>Myocarditis (rare, fatal)</td><td>↑ Troponin, ↓ LVEF, arrhythmias</td><td>Troponin q cycle if high risk; echo if symptoms</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Scenario</th><th>Cardiac ADR</th><th>Key Drug</th><th>Action</th></tr><tr><td>-------------------</td><td>-------------</td><td>----------</td><td>--------</td></tr><tr><td>HF patient started on ibuprofen → acute decompensation</td><td>**NSAID-induced HF exacerbation**</td><td>NSAIDs</td><td>**STOP NSAID**; optimise diuretic/GDMT</td></tr><tr><td>HFrEF patient prescribed verapamil for rate control</td><td>**Negative inotropy → HF worsening**</td><td>Non-DHP CCB</td><td>**AVOID**; use bisoprolol/digoxin</td></tr><tr><td>Diabetic on pioglitazone → new pedal oedema, SOB</td><td>**TZD fluid retention**</td><td>Pioglitazone</td><td>**CONTRAINDICATED in NYHA III–IV**; stop</td></tr><tr><td>On doxorubicin 400 mg/m² → LVEF 45% (baseline 60%)</td><td>**Anthracycline cardiotoxicity**</td><td>Doxorubicin</td><td>**Dexrazoxane**; hold if LVEF<50% or ↓>10%</td></tr><tr><td>On trastuzumab → LVEF 42% (baseline 58%)</td><td>**Trastuzumab cardiotoxicity (Type II)**</td><td>Trastuzumab</td><td>**Hold**; restart if LVEF recovers</td></tr><tr><td>Elderly on digoxin + verapamil → HR 38, syncope</td><td>**Digoxin + CCB → severe bradycardia**</td><td>Digoxin + Verapamil</td><td>**Hold both**; atropine; pacing if needed</td></tr><tr><td>Patient on ACEi + diuretic + started ibuprofen → AKI + HF</td><td>**Triple Whammy**</td><td>ACEi + Diuretic + NSAID</td><td>**STOP NSAID**; hold ACEi if AKI; IV fluids</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Which drugs are CONTRAINDICATED in HFrEF?</td><td>**Non-DHP CCB (verapamil, diltiazem), Class I antiarrhythmics (flecainide), TZDs (pioglitazone in NYHA III–IV), NSAIDs (avoid)**</td></tr><tr><td>2. Anthracycline vs Trastuzumab cardiotoxicity — differences?</td><td>**Anthracycline: Type A, dose-dependent, irreversible, cumulative limit 450–550 mg/m², dexrazoxane**; **Trastuzumab: Type B, reversible, not dose-dependent, no cumulative limit, hold if LVEF↓>10% to <50%**</td></tr><tr><td>3. Triple Whammy — components and mechanism?</td><td>ACEi/ARB (↓ efferent) + Diuretic (↓ volume) + NSAID (↓ afferent) → **↓↓ GFR → AKI + HF decompensation**</td></tr><tr><td>4. Digoxin toxicity — risk factors, ECG, management?</td><td>**Hypokalaemia, Hypomagnesaemia, Renal impairment, Elderly, Amiodarone/Verapamil/Quinidine**; ECG: **Sagging ST depression, AV block, bidirectional VT**; **Management: Digoxin-specific Fab (life-threatening), K⁺/Mg²⁺ repletion, hold**</td></tr><tr><td>5. Drug-induced hypertension — 3 common causes?</td><td>**NSAIDs, Oral contraceptives (estrogen), Corticosteroids**; also Ciclosporin/Tacrolimus, EPO, SNRIs, MAOIs</td></tr><tr><td>6. First-dose hypotension with ACEi — mechanism, high-risk?</td><td>**Rapid RAAS blockade → vasodilation**; **High-risk: volume depleted (diuretics, vomiting), elderly**</td></tr><tr><td>7. Beta-blocker + Verapamil interaction — risk, management?</td><td>**Severe bradycardia, AV block, asystole**; **AVOID combination**; if needed, intensive monitoring</td></tr><tr><td>8. TZD fluid retention — mechanism, contraindication?</td><td>**PPAR-γ → ENaC upregulation → Na⁺/water retention**; **CONTRAINDICATED in NYHA III–IV HF**</td></tr><tr><td>9. Clonidine withdrawal — presentation, prevention?</td><td>**Rebound hypertension** (can be malignant), anxiety, tremor; **Taper over 1–2 weeks, never stop abruptly**</td></tr><tr><td>10. Ivabradine — contraindication, monitoring?</td><td>**Contraindicated if HR <60 bpm at baseline**; monitor HR; reduce dose if HR<50</td></tr><tr><td>11. Immune checkpoint inhibitor myocarditis — presentation, urgency?</td><td>**Chest pain, dyspnoea, arrhythmia, ↑ troponin, ↓ LVEF**; **MEDICAL EMERGENCY** — high-dose steroids 1–2mg/kg, cardiology, hold ICI</td></tr><tr><td>12. 5-FU cardiotoxicity — mechanism, presentation?</td><td>**Coronary vasospasm** → angina, MI, arrhythmias; **ECG if chest pain**; stop 5-FU</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Anthracycline vs Trastuzumab**</td><td>Anthracycline = **Type A, cumulative, irreversible**; Trastuzumab = **Type B, reversible, not cumulative**</td></tr><tr><td>**CCB in HF**</td><td>**Non-DHP (verapamil, diltiazem) = CONTRAINDICATED in HFrEF**; **DHP (amlodipine) = SAFE** (no negative inotropy)</td></tr><tr><td>**TZD in HF**</td><td>**Pioglitazone/rosiglitazone CONTRAINDICATED in NYHA III–IV**; can use in NYHA I–II with caution</td></tr><tr><td>**Digoxin + Verapamil/Amiodarone/Quinidine**</td><td>All ↑ digoxin levels (P-gp inhibition) + additive bradycardia</td></tr><tr><td>**Clonidine rebound**</td><td>**Never stop abruptly** — taper 1–2 weeks</td></tr><tr><td>**Type A vs B cardiotoxicity**</td><td>Type A = dose-dependent (anthracyclines); Type B = idiosyncratic/reversible (trastuzumab)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"TRIPLE WHAMMY"</b> = <b>ACEi/ARB + Diuretic + NSAID</b> = AKI + HF decompensation</li><li><b>"ANTHRACYCLINE LIMIT"</b> = <b>Doxorubicin 450–550 mg/m²</b> cumulative; dexrazoxane &gt;300</li><li><b>"TRASTUZUMAB = TYPE B"</b> = <b>Reversible</b>, no cumulative limit, hold if LVEF↓</li><li><b>"NO VERA/DILT IN HF"</b> = <b>Non-DHP CCB contraindicated in HFrEF</b></li><li><b>"TZD = FLUID RETENTION"</b> = <b>PPAR-γ → ENaC</b>; <b>NYHA III–IV = CONTRAINDICATED</b></li><li><b>"CLONIDINE REBOUND"</b> = <b>Never stop abruptly</b> — taper 1–2wk</li><li><b>"ICI MYOCARDITIS"</b> = <b>Troponin ↑ + LVEF ↓</b> = <b>STEROIDS 1–2mg/kg URGENT</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Cardiac ADRs)) QT / Torsades hERG blockade Drug Interactions note Bradyarrhythmias BB + Non-DHP CCB + Digoxin + Amiodarone Clonidine rebound Ivabradine (HR&lt;60 contraindicated) Tachyarrhythmias Sympathomimetics, Digoxin tox, QT drugs Heart Failure NSAIDs (Triple Whammy) Non-DHP CCB (avoid in HFrEF) TZDs (NYHA III-IV contraindicated) Steroids Anthracyclines (dose-dep, dexrazoxane) Trastuzumab (Type II, reversible) TKIs, ICI myocarditis Hypertension NSAIDs, OCP, Steroids, CNIs, EPO, SNRIs, MAOIs Hypotension ACEi/ARB first-dose (volume depleted) Alpha-blockers (first-dose) Nitrates + PDE5i (contraindicated) Antipsychotics, Antidepressants </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Classification table</td><td>8</td><td></td></tr><tr><td>HF exacerbation drugs</td><td>10</td><td></td></tr><tr><td>Anthracycline vs Trastuzumab</td><td>8</td><td></td></tr><tr><td>Bradyarrhythmias</td><td>8</td><td></td></tr><tr><td>Hypertension/Hypotension</td><td>8</td><td></td></tr><tr><td>Chemotherapy cardiotox</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td></tr><tr><td>**Total**</td><td>**62**</td><td></td></tr></table>
+<p><b>Target</b>: ≥50/62 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Discuss drug-induced heart failure — drugs, mechanisms, and management."*</div>
+<ol><li><b>Classification</b> (2): Drugs causing HF exacerbation (NSAIDs, CCB, TZDs, steroids, chemo, immunosuppressants)</li><li><b>Key Mechanisms</b> (3): NSAIDs (Triple Whammy), Non-DHP CCB (negative inotropy), TZDs (PPAR-γ fluid retention), Anthracyclines (dose-dependent ROS), Trastuzumab (Type II HER2 blockade)</li><li><b>Clinical Scenarios</b> (3): HFrEF + NSAID (stop, optimise GDMT); HFrEF + Verapamil (avoid); Diabetic + Pioglitazone (contraindicated NYHA III–IV); Anthracycline monitoring (LVEF q3mo, dexrazoxane)</li><li><b>Management Principles</b> (2): Stop offending drug, optimise GDMT, specific antidotes (dexrazoxane, digoxin Fab)</li></ol>
+<div class="sub-h">Short Question (5 marks): *"Anthracycline vs Trastuzumab cardiotoxicity"*</div>
+<table class="ctable"><tr><th>Feature</th><th>Anthracycline (Type A)</th><th>Trastuzumab (Type B)</th></tr><tr><td>---------</td><td>------------------------</td><td>----------------------</td></tr><tr><td>Mechanism</td><td>Topo IIβ inhibition, ROS, apoptosis</td><td>HER2/neuregulin blockade → impaired repair</td></tr><tr><td>Dose-dependence</td><td>**Yes** (cumulative)</td><td>**No**</td></tr><tr><td>Reversibility</td><td>**Irreversible**</td><td>**Reversible**</td></tr><tr><td>Cumulative limit</td><td>**Doxorubicin 450–550 mg/m²**</td><td>None</td></tr><tr><td>Cardioprotectant</td><td>**Dexrazoxane** (if >300)</td><td>None</td></tr><tr><td>Monitoring</td><td>LVEF q3mo</td><td>LVEF q3mo</td></tr><tr><td>Management if LVEF↓</td><td>Stop/limit cumulative dose</td><td>**Hold**, restart if recovers</td></tr></table>
+<div class="sub-h">Viva (2 min): *"HFrEF patient on bisoprolol, ramipril, furosemide. GP adds ibuprofen for OA. 1 week later: SOB, orthopnoea, Cr 180 (baseline 110). Diagnosis? Management?"*</div>
+<ul><li><b>Triple Whammy + NSAID-induced HF exacerbation</b></li><li><b>STOP ibuprofen immediately</b></li><li><b>Hold ramipril</b> (AKI component)</li><li>IV furosemide, fluid balance, daily weights</li><li>Optimise GDMT: ensure bisoprolol at target, add MRA/SGLT2i if indicated</li><li>Paracetamol/codeine for OA pain</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on doxorubicin cycle 4, cumulative dose 350 mg/m². LVEF 48% (baseline 62%). Action?"*</div>
+<ul><li><b>Anthracycline cardiotoxicity</b> (LVEF ↓&gt;10% to &lt;50%)</li><li><b>Start dexrazoxane</b> (cardioprotectant) before next cycle</li><li><b>Hold doxorubicin</b> if LVEF &lt;45% or symptomatic</li><li>Consider alternative chemo if LVEF doesn't recover</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Triple Whammy = ACEi + Diuretic + NSAID = AKI + HF</li><li>Non-DHP CCB = avoid in HFrEF; DHP (amlodipine) = safe</li><li>TZD = fluid retention (PPAR-γ); contraindicated NYHA III–IV</li><li>Anthracycline = Type A, dose-dep, cumulative 450–550, dexrazoxane &gt;300</li><li>Trastuzumab = Type B, reversible, hold if LVEF↓&gt;10% to &lt;50%</li><li>Digoxin toxicity = HypoK/Mg, renal, elderly + amiodarone/verapamil → Digoxin Fab</li><li>Clonidine rebound = never stop abrupt; taper 1–2wk</li><li>ICI myocarditis = troponin↑ + LVEF↓ = steroids 1–2mg/kg URGENT</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>CARDIAC ADR TRIAD:</b> 1. <b>HF EXACERBATION</b>: NSAIDs (Triple Whammy), Non-DHP CCB, TZDs (NYHA III–IV), Steroids 2. <b>BRADYARRHYTHMIA</b>: BB + Verapamil/Diltiazem + Digoxin = <b>avoid combo</b>; Clonidine rebound 3. <b>CHEMO CARDIOTOX</b>: Anthracycline (Type A, cumulative, dexrazoxane) vs Trastuzumab (Type B, reversible, hold)  <b>HYPERTENSION</b>: NSAIDs, OCP, Steroids, CNIs, EPO <b>HYPOTENSION</b>: ACEi first-dose (volume depleted), Alpha-blockers, Nitrates + PDE5i (NO)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Triple Whammy components:</b></li></ol>
+<p>A. ACEi + Beta-blocker + Diuretic B. <b>ACEi/ARB + Diuretic + NSAID</b> ✓ C. ARB + CCB + Diuretic D. ACEi + ARB + CCB E. Beta-blocker + Diuretic + NSAID</p>
+<ol><li><b>Calcium channel blocker CONTRAINDICATED in HFrEF:</b></li></ol>
+<p>A. Amlodipine B. <b>Verapamil</b> ✓ C. Nifedipine D. Felodipine E. Lercanidipine</p>
+<ol><li><b>Thiazolidinedione (pioglitazone) fluid retention mechanism:</b></li></ol>
+<p>A. RAAS activation B. <b>PPAR-γ → ENaC upregulation → Na⁺/water retention</b> ✓ C. Reduced GFR D. Increased ANP D. Sympathetic activation</p>
+<ol><li><b>Anthracycline cumulative dose limit (doxorubicin):</b></li></ol>
+<p>A. 300 mg/m² B. <b>450–550 mg/m²</b> ✓ C. 600 mg/m² D. 700 mg/m² E. No limit</p>
+<ol><li><b>Trastuzumab cardiotoxicity — key feature distinguishing from anthracycline:</b></li></ol>
+<p>A. Dose-dependent B. <b>Reversible, not dose-dependent</b> ✓ C. Cumulative limit applies D. Dexrazoxane is protective E. Always irreversible</p>
+<ol><li><b>Digoxin toxicity risk factors — which is NOT a risk factor?</b></li></ol>
+<p>A. Hypokalaemia B. Hypomagnesaemia C. Renal impairment D. <b>Hyperkalaemia</b> ✓ E. Amiodarone co-administration</p>
+<ol><li><b>Digoxin-specific Fab indicated for:</b></li></ol>
+<p>A. Mild nausea B. <b>Life-threatening arrhythmia / K⁺ &gt;5.5 / Ingestion &gt;10mg</b> ✓ C. Visual disturbances only D. Atrial fibrillation with RVR E. All digoxin patients</p>
+<ol><li><b>Clonidine withdrawal — hallmark presentation:</b></li></ol>
+<p>A. Hypotension B. <b>Rebound hypertension</b> ✓ C. Bradycardia D. Hypoglycaemia E. Seizures</p>
+<ol><li><b>Ivabradine absolute contraindication:</b></li></ol>
+<p>A. HR &gt;100 bpm B. <b>HR &lt;60 bpm at baseline</b> ✓ C. Atrial fibrillation D. Heart failure E. Hypertension</p>
+<ol><li><b>NSAID-induced hypertension mechanism:</b></li></ol>
+<p>A. ↑ Cardiac output B. <b>↓ Renal prostaglandins → fluid retention, ↑ SVR</b> ✓ C. Direct vasoconstriction D. RAAS suppression E. Increased heart rate</p>
+<ol><li><b>First-dose ACEi hypotension — highest risk patient:</b></li></ol>
+<p>A. Young, euvolaemic B. <b>Elderly, on diuretics, volume depleted</b> ✓ C. Hypertensive, no meds D. Heart failure, on beta-blocker E. Diabetic, on metformin</p>
+<ol><li><b>Nitrate + PDE5 inhibitor (sildenafil) — interaction:</b></li></ol>
+<p>A. Additive antianginal B. <b>Contraindicated — severe hypotension</b> ✓ C. No interaction D. Reduced nitrate efficacy E. Increased nitrate tolerance</p>
+<ol><li><b>Immune checkpoint inhibitor myocarditis — troponin monitoring:</b></li></ol>
+<p>A. Not needed B. <b>High-risk: troponin each cycle</b> ✓ C. Only if symptomatic D. Monthly E. Only if LVEF ↓</p>
+<ol><li><b>5-FU cardiotoxicity mechanism:</b></li></ol>
+<p>A. Direct myocardial necrosis B. <b>Coronary vasospasm</b> ✓ C. Pericarditis D. Cardiomyopathy E. Arrhythmia only</p>
+<ol><li><b>Drug-induced HF — which drug class is SAFE in HFrEF?</b></li></ol>
+<p>A. Non-DHP CCB B. <b>DHP CCB (amlodipine)</b> ✓ C. Class I antiarrhythmics D. TZDs E. High-dose steroids</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Triple Whammy</td><td>ACEi/ARB + Diuretic + NSAID → AKI + HF exacerbation</td></tr><tr><td>CCB in HFrEF</td><td>Non-DHP (verapamil, diltiazem) CONTRAINDICATED; DHP (amlodipine) SAFE</td></tr><tr><td>TZD fluid retention</td><td>PPAR-γ → ENaC upregulation; CONTRAINDICATED NYHA III–IV</td></tr><tr><td>Anthracycline limit</td><td>Doxorubicin 450–550 mg/m² cumulative; dexrazoxane >300</td></tr><tr><td>Trastuzumab cardiotox</td><td>Type B, reversible, not dose-dep, hold if LVEF↓>10% to <50%</td></tr><tr><td>Digoxin toxicity risks</td><td>HypoK, HypoMg, Renal impairment, Elderly, Amiodarone/Verapamil/Quinidine</td></tr><tr><td>Digoxin Fab indication</td><td>Life-threatening arrhythmia, K>5.5, Ingestion >10mg</td></tr><tr><td>Clonidine withdrawal</td><td>Rebound hypertension; taper 1–2wk, NEVER abrupt</td></tr><tr><td>Ivabradine contraindication</td><td>HR <60 bpm at baseline</td></tr><tr><td>NSAID hypertension</td><td>↓ Renal PG → fluid retention, ↑ SVR</td></tr><tr><td>ACEi first-dose hypotension</td><td>Volume depleted (diuretics, elderly)</td></tr><tr><td>Nitrate + PDE5i</td><td>CONTRAINDICATED — severe hypotension</td></tr><tr><td>ICI myocarditis</td><td>Troponin↑ + LVEF↓ = Steroids 1–2mg/kg URGENT</td></tr><tr><td>5-FU cardiotox</td><td>Coronary vasospasm</td></tr><tr><td>Type A vs B cardiotox</td><td>Type A = dose-dep (anthracyclines); Type B = reversible (trastuzumab)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Triple Whammy = ACEi/ARB + Diuretic + NSAID</li><li><b>B</b> — Verapamil (non-DHP) contraindicated in HFrEF</li><li><b>B</b> — PPAR-γ → ENaC upregulation</li><li><b>B</b> — Doxorubicin 450–550 mg/m²</li><li><b>B</b> — Trastuzumab = reversible, not dose-dependent</li><li><b>D</b> — Hyperkalaemia is NOT a risk factor (hypokalaemia is)</li><li><b>B</b> — Digoxin Fab for life-threatening arrhythmia/K&gt;5.5/Ingestion&gt;10mg</li><li><b>B</b> — Clonidine withdrawal = rebound hypertension</li><li><b>B</b> — Ivabradine contraindicated if HR&lt;60</li><li><b>B</b> — NSAIDs ↓ renal PG → fluid retention, ↑ SVR</li><li><b>B</b> — Elderly on diuretics = volume depleted</li><li><b>B</b> — Nitrate + PDE5i = contraindicated (severe hypotension)</li><li><b>B</b> — ICI myocarditis monitoring: troponin each cycle if high risk</li><li><b>B</b> — 5-FU = coronary vasospasm</li><li><b>B</b> — Amlodipine (DHP) safe in HFrEF</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/Cardiac ADRs.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cardiac Adrs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

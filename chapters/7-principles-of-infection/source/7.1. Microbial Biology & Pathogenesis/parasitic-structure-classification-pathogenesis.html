@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parasitic Structure Classification Pathogenesis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.1. MICROBIAL BIOLOGY & PATHOGENESIS</span>
+      <div class="h1">Parasitic Structure Classification Pathogenesis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Definitions and Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<p>A <b>parasite</b> is an organism that lives on or within another organism (the <b>host</b>) and derives nutrients at the host's expense, causing some degree of harm. Medical parasitology is concerned primarily with three major eukaryotic groups: <b>protozoa</b>, <b>helminths</b>, and <b>ectoparasites</b> (technically arthropods that act as vectors or direct pathogens).</p>
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Symbiosis**</td><td>Close, long-term biological interaction between two different species.</td></tr><tr><td>**Mutualism**</td><td>Symbiosis in which both organisms benefit (e.g., gut flora producing vitamin K).</td></tr><tr><td>**Commensalism**</td><td>Symbiosis in which one benefits and the other is neither helped nor harmed (e.g., *Entamoeba dispar* in colon).</td></tr><tr><td>**Parasitism**</td><td>Symbiosis in which one benefits at the other's expense — the focus of this topic.</td></tr><tr><td>**Definitive host**</td><td>The host in which the parasite reaches sexual maturity (or in which sexual reproduction occurs).</td></tr><tr><td>**Intermediate host**</td><td>A host in which the parasite undergoes essential developmental stages (often asexual) but does **not** reach sexual maturity.</td></tr><tr><td>**Paratenic (transport) host**</td><td>A host in which the parasite survives without further development, acting as a vehicle to the definitive host (e.g., fish in *Angiostrongylus*).</td></tr><tr><td>**Reservoir**</td><td>The long-term host of a parasite; the source of infection for humans (often a zoonosis).</td></tr><tr><td>**Vector**</td><td>A living organism (usually an arthropod) that transmits a parasite from one host to another — **biological** (essential for parasite development) or **mechanical** (passive transfer).</td></tr><tr><td>**Zoonosis**</td><td>A disease transmissible from animals to humans (e.g., hydatid disease, leishmaniasis, taeniasis from pork).</td></tr><tr><td>**Autoinfection**</td><td>A life cycle in which the parasite reinfects the same host without leaving it (e.g., *Strongyloides*, *Hymenolepis nana*, *Enterobius* retroinfection).</td></tr><tr><td>**Hypnozoite**</td><td>Dormant liver stage of *P. vivax* and *P. ovale* that causes **relapse** months to years later.</td></tr><tr><td>**Bradyzoite**</td><td>Slowly-replicating *Toxoplasma* stage within tissue cysts (chronic infection).</td></tr><tr><td>**Tachyzoite**</td><td>Rapidly-replicating *Toxoplasma* stage (acute infection).</td></tr><tr><td>**Cyst**</td><td>Dormant, resistant, environmentally-hardy form (protozoan or helminth egg/larva).</td></tr><tr><td>**Oocyst**</td><td>Resistant, encysted zygote of *Apicomplexa* (e.g., *Cryptosporidium*, *Cyclospora*, *Toxoplasma*).</td></tr><tr><td>**Sporozoite**</td><td>Motile, infectious form released from an oocyst (apicomplexan).</td></tr><tr><td>**Merozoite**</td><td>Form released from a schizont that invades host cells (e.g., RBCs in malaria).</td></tr><tr><td>**Schizont**</td><td>Multinucleate stage undergoing schizogony (asexual replication).</td></tr><tr><td>**Gametocyte**</td><td>Sexual precursor cell (male microgametocyte / female macrogametocyte) taken up by vector.</td></tr><tr><td>**Amastigote**</td><td>Round, aflagellate *Leishmania/Trypanosoma* stage intracellular in vertebrate host.</td></tr><tr><td>**Promastigote**</td><td>Elongated, flagellated *Leishmania* stage in sandfly gut.</td></tr><tr><td>**Trypomastigote**</td><td>Flagellated, extracellular *Trypanosoma* form in vertebrate blood.</td></tr><tr><td>**Epimastigote**</td><td>Flagellated *Trypanosoma* form in insect vector.</td></tr><tr><td>**Scolex**</td><td>"Head" of a tapeworm, with hooks/suckers for intestinal attachment.</td></tr><tr><td>**Proglottid**</td><td>Segmental body unit of a tapeworm containing reproductive organs.</td></tr><tr><td>**Miracidium**</td><td>Free-swimming, ciliated trematode larva that penetrates a snail.</td></tr><tr><td>**Sporocyst**</td><td>Sac-like trematode stage within the snail that produces rediae.</td></tr><tr><td>**Redia**</td><td>Trematode larval stage within the snail that produces cercariae.</td></tr><tr><td>**Cercaria**</td><td>Free-swimming, fork-tailed trematode larva that exits the snail.</td></tr><tr><td>**Metacercaria**</td><td>Encysted, infective trematode larva on vegetation or in second intermediate host.</td></tr><tr><td>**Oncosphere (hexacanth)**</td><td>Six-hooked cestode embryo released from egg.</td></tr><tr><td>**Cysticercus**</td><td>Fluid-filled larval cestode cyst (*T. solium* → cysticercosis).</td></tr><tr><td>**Cysticercoid**</td><td>Solid-tailed larval cestode (*Hymenolepis nana*).</td></tr><tr><td>**Hydatid cyst**</td><td>Large unilocular (*E. granulosus*) or multilocular (*E. multilocularis*) larval cestode cyst.</td></tr><tr><td>**Microfilaria**</td><td>Pre-larval filarial worm found in blood or skin.</td></tr><tr><td>**Filariform larva**</td><td>Infective, skin-penetrating larval stage of *Strongyloides* and hookworm.</td></tr><tr><td>**Rhabditiform larva**</td><td>Non-infective, free-living larval stage in stool.</td></tr><tr><td>**Eosinophilia**</td><td>Hallmark laboratory finding in tissue-invasive helminth infection.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify parasites: Protozoa (flagellates, amoebae, sporozoans, ciliates) + Helminths (nematodes, trematodes, cestodes)</li><li>Describe life cycles: direct, indirect (vectors, intermediate hosts)</li><li>Identify major pathogenic parasites &amp; associated syndromes</li><li>Explain immune evasion mechanisms</li><li>Understand host defence against parasites</li><li>Apply to antiparasitic drug targets</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Parasite Classification</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Protozoa (Unicellular)</div>
+<table class="ctable"><tr><th>Group</th><th>Locomotor Organelle</th><th>Examples</th><th>Key Diseases</th></tr><tr><td>-------</td><td>---------------------</td><td>----------</td><td>--------------</td></tr><tr><td>**Flagellates**</td><td>Flagella</td><td>*Giardia*, *Trichomonas*, *Leishmania*, *Trypanosoma*, *Dientamoeba*</td><td>Giardiasis, trichomoniasis, leishmaniasis, sleeping sickness/Chagas</td></tr><tr><td>**Amoebae**</td><td>Pseudopodia</td><td>*Entamoeba histolytica*, *Naegleria fowleri*, *Acanthamoeba*, *Balantidium*</td><td>Amoebiasis, PAM, GAE</td></tr><tr><td>**Sporozoans (Apicomplexa)**</td><td>None (motile gametes)</td><td>*Plasmodium*, *Toxoplasma*, *Cryptosporidium*, *Cyclospora*, *Isospora*, *Babesia*</td><td>Malaria, toxoplasmosis, cryptosporidiosis, babesiosis</td></tr><tr><td>**Ciliates**</td><td>Cilia</td><td>*Balantidium coli*</td><td>Balantidiasis</td></tr></table>
+<div class="sub-h">Helminths (Multicellular)</div>
+<table class="ctable"><tr><th>Group</th><th>Body Plan</th><th>Examples</th><th>Key Diseases</th></tr><tr><td>-------</td><td>-----------</td><td>----------</td><td>--------------</td></tr><tr><td>**Nematodes (Roundworms)**</td><td>Cylindrical, unsegmented, complete GI</td><td>*Ascaris*, *Trichuris*, *Hookworms (Ancylostoma, Necator)*, *Strongyloides*, *Enterobius*, *Trichinella*, *Wuchereria*, *Brugia*, *Onchocerca*, *Loa loa*, *Dracunculus*, *Angiostrongylus*</td><td>Ascariasis, trichuriasis, hookworm, strongyloidiasis, pinworm, trichinelliasis, filariasis</td></tr><tr><td>**Trematodes (Flukes)**</td><td>Leaf-like, unsegmented, incomplete GI, suckers</td><td>*Schistosoma*, *Clonorchis*, *Opisthorchis*, *Fasciola*, *Paragonimus*, *Fasciolopsis*</td><td>Schistosomiasis, clonorchiasis, fascioliasis, paragonimiasis</td></tr><tr><td>**Cestodes (Tapeworms)**</td><td>Segmented (proglottids), no GI tract, scolex with hooks/suckers</td><td>*Taenia solium/saginata*, *Hymenolepis nana*, *Diphyllobothrium*, *Echinococcus*, *Dipylidium*, *Spirometra*</td><td>Taeniasis, cysticercosis, hydatid disease, hymenolepiasis</td></tr></table>
+<div class="sub-h">Ectoparasites (Arthropod parasites of skin)</div>
+<table class="ctable"><tr><th>Group</th><th>Examples</th><th>Disease/Role</th></tr><tr><td>-------</td><td>----------</td><td>--------------</td></tr><tr><td>**Insects (6 legs)**</td><td>*Pediculus humanus* (body louse), *Phthirus pubis* (pubic louse), *Sarcoptes scabiei* (mite — actually 8 legs), *Tunga penetrans* (chigoe flea)</td><td>Pediculosis, scabies, tungiasis</td></tr><tr><td>**Mites (8 legs, arachnid)**</td><td>*Sarcoptes scabiei*, *Demodex*, *Trombiculid* (chiggers), *Dermatobia hominis* (human botfly)</td><td>Scabies, demodicosis, myiasis</td></tr><tr><td>**Ticks (8 legs, arachnid)**</td><td>*Ixodes*, *Dermacentor*, *Rhipicephalus*, *Ornithodoros*</td><td>Bites, paralysis, **vectors of *Babesia***, viral/bacterial tick-borne diseases</td></tr><tr><td>**Fleas (6 legs)**</td><td>*Xenopsylla*, *Pulex*, *Ctenocephalides*</td><td>Bites, plague/Yersinia (not parasites), *Dipylidium caninum* (intermediate host)</td></tr><tr><td>**Flies (6 legs)**</td><td>*Dermatobia hominis* (botfly), *Cordylobia anthropophaga* (tumbu fly), *Glossina* (tsetse)</td><td>Myiasis, **vector of *T. brucei***</td></tr></table>
+<div class="callout">Ectoparasites cause direct pathology (pruritus, ulceration, anaemia) and act as vectors for viruses, bacteria, and protozoa. <i>Sarcoptes scabiei</i> is the most common cause of "seven-year itch" worldwide.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Vectors and Their Diseases</span>
+  </div>
+  <div class="sec-body">
+<p>A <b>biological vector</b> is essential for the parasite's development (sexual or asexual replication). A <b>mechanical vector</b> passively carries the parasite on its mouthparts or body.</p>
+<table class="ctable"><tr><th>Vector</th><th>Parasite(s) Transmitted</th><th>Vector Biology</th></tr><tr><td>--------</td><td>------------------------</td><td>----------------</td></tr><tr><td>**Anopheles mosquito** (female, nocturnal)</td><td>*Plasmodium* spp. (malaria)</td><td>Breeds in stagnant fresh water; bites dusk-to-dawn; injects **sporozoites** from salivary glands.</td></tr><tr><td>**Aedes mosquito** (e.g., *Ae. aegypti*, *Ae. albopictus*)</td><td>*Wuchereria bancrofti* (urban filariasis), arboviruses (dengue, Zika, chikungunya, yellow fever — viruses, not parasites)</td><td>Breeds in artificial containers; **day-biting**; aggressive.</td></tr><tr><td>**Culex mosquito** (e.g., *Cx. quinquefasciatus*, *Cx. pipiens*)</td><td>*Wuchereria bancrofti* (rural), *Brugia malayi*</td><td>Breeds in polluted stagnant water; nocturnal.</td></tr><tr><td>**Mansonoides / Anopheles**</td><td>*Brugia malayi*, *B. timori*</td><td>Forest-dwelling mosquitoes.</td></tr><tr><td>**Sandfly** (*Phlebotomus* — Old World; *Lutzomyia* — New World)</td><td>*Leishmania* spp.</td><td>Tiny (~2 mm), nocturnal, crepuscular; breeds in cracks, animal burrows.</td></tr><tr><td>**Tsetse fly** (*Glossina morsitans*, *G. palpalis*)</td><td>*Trypanosoma brucei gambiense/rhodesiense* (African sleeping sickness)</td><td>Riverine (*palpalis*) and savanna (*morsitans*); painful bite.</td></tr><tr><td>**Triatomine (Reduviid) bug** (*Triatoma*, *Rhodnius*, *Panstrongylus*)</td><td>*Trypanosoma cruzi* (Chagas disease)</td><td>Kissing bug; defecates on skin after feeding → metacyclic trypomastigotes in faeces enter via mucosal/conjunctival contact.</td></tr><tr><td>**Tabanid fly** (horse fly, *Tabanus*, *Chrysops*)</td><td>*Loa loa* (loiasis)</td><td>Day-biting forest fly; painful bite; transmits **filariform larvae**.</td></tr><tr><td>**Black fly** (*Simulium*)</td><td>*Onchocerca volvulus* (river blindness)</td><td>Breeds in fast-flowing rivers; daytime biter.</td></tr><tr><td>**Tick (Ixodid hard tick)**</td><td>*Babesia* spp. (babesiosis); also viral/bacterial agents</td><td>Three-host life cycle; **transovarial** transmission.</td></tr><tr><td>**Soft tick** (*Ornithodoros*)</td><td>Relapsing fever (*Borrelia* — not a parasite but illustrative of vector behaviour)</td><td>Fast feeding, multiple hosts.</td></tr><tr><td>**Snail (intermediate host, not strictly a vector)**</td><td>*Schistosoma* spp. (Biomphalaria, Bulinus, Oncomelania), *Fasciola* (Lymnaea), *Clonorchis/Opisthorchis* (Parafossarulus, Bithynia), *Paragonimus* (Semisulcospira), *Angiostrongylus cantonensis* (Achatina)</td><td>**Snail is the obligate intermediate host** in which asexual replication occurs.</td></tr><tr><td>**Cyclops (copepod)**</td><td>*Dracunculus medinensis* (Guinea worm), *Diphyllobothrium* (first intermediate), *Spirometra*</td><td>Fresh-water crustacean ingested with drinking water.</td></tr><tr><td>**Flea (intermediate host)**</td><td>*Dipylidium caninum* (dog/cat tapeworm)</td><td>Larval flea ingests tapeworm egg; human ingests infected flea.</td></tr><tr><td>**Louse (intermediate host)**</td><td>*Pediculus humanus* — body louse — vectors epidemic typhus, relapsing fever; not a parasite vector per se.</td><td>Crush louse on skin → infective forms released.</td></tr></table>
+<div class="callout"><b>Exam pearl:</b> <b>Schistosoma is the only trematode that does NOT encyst on vegetation or in a second intermediate host</b> — it penetrates skin directly from water as a cercaria. This is why swimming/bathing in infested water is the risk behaviour.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Reservoirs and Zoonoses</span>
+  </div>
+  <div class="sec-body">
+<p>Many parasitic diseases are <b>zoonoses</b> — transmitted from animal reservoirs to humans, often via vectors, food, water, or direct contact.</p>
+<table class="ctable"><tr><th>Reservoir</th><th>Parasite(s)</th><th>Mode of Transmission to Human</th></tr><tr><td>-----------</td><td>-------------</td><td>-------------------------------</td></tr><tr><td>**Cats (definitive for *Toxoplasma*)**</td><td>*Toxoplasma gondii*</td><td>Ingestion of oocysts from cat faeces (litter, soil, water) or tissue cysts in undercooked meat.</td></tr><tr><td>**Dogs**</td><td>*Echinococcus granulosus* (definitive), *Leishmania infantum* (reservoir/host), *Dipylidium caninum*</td><td>Egg ingestion (faecal-oral), sandfly bite, flea ingestion.</td></tr><tr><td>**Wild canids (foxes, wolves)**</td><td>*Echinococcus multilocularis*</td><td>Ingestion of eggs from faeces; berry-picking, hunting.</td></tr><tr><td>**Cattle**</td><td>*Taenia saginata*, *Cryptosporidium*, *Toxoplasma* (tissue cysts)</td><td>Undercooked beef, contaminated water, raw milk.</td></tr><tr><td>**Pigs**</td><td>*Taenia solium* (cysticercosis), *Trichinella spiralis*, *Balantidium coli*, *Toxoplasma*</td><td>Undercooked pork, faecal-oral.</td></tr><tr><td>**Sheep**</td><td>*Echinococcus granulosus* (intermediate), *Fasciola hepatica*, *Toxoplasma*</td><td>Pasture (eggs), watercress.</td></tr><tr><td>**Fish (freshwater)**</td><td>*Clonorchis sinensis*, *Opisthorchis viverrini/felineus*, *Diphyllobothrium latum*, *Anisakis*</td><td>Raw/undercooked fish.</td></tr><tr><td>**Crabs/crayfish**</td><td>*Paragonimus westermani*</td><td>Raw crustaceans.</td></tr><tr><td>**Aquatic plants**</td><td>*Fasciola hepatica*, *Fasciolopsis buski*</td><td>Watercress, water chestnuts.</td></tr><tr><td>**Snails**</td><td>*Schistosoma* spp., *Angiostrongylus cantonensis*, *Fasciola*, *Clonorchis*</td><td>Skin penetration (cercariae), ingestion (slugs/snails, vegetables).</td></tr><tr><td>**Rodents**</td><td>*Echinococcus multilocularis* (intermediate), *Leishmania* (reservoir), *Trypanosoma cruzi* (reservoir), *Hymenolepis nana*</td><td>Various.</td></tr><tr><td>**Macaques / long-tailed macaques**</td><td>*Plasmodium knowlesi* (zoonotic malaria)</td><td>*Anopheles* mosquito.</td></tr><tr><td>**Wild ungulates (bushbuck, etc.)**</td><td>*Trypanosoma brucei rhodesiense*</td><td>Tsetse fly.</td></tr><tr><td>**Hyenas, big game**</td><td>*Trypanosoma brucei rhodesiense*</td><td>Tsetse fly.</td></tr><tr><td>**Horses, cattle, guinea pigs**</td><td>*Trypanosoma cruzi* (peridomestic cycle)</td><td>Triatomine bug.</td></tr><tr><td>**Horses**</td><td>*Leishmania braziliensis* (reservoir)</td><td>Sandfly.</td></tr><tr><td>**Birds (waterfowl)**</td><td>*Cryptosporidium* (zoonotic species), *Cyclospora* (reservoirs debated)</td><td>Water.</td></tr><tr><td>**Humans (reservoir for human-only parasites)**</td><td>*Enterobius*, *Trichuris*, *Ascaris*, hookworm, *P. vivax/ovale/malariae/falciparum*, *W. bancrofti*, *Taenia solium* (human-to-human cysticercosis via eggs), *Schistosoma* spp. (human-snail-human).</td><td>—</td></tr></table>
+<div class="callout"><b>Exam pearl:</b> <i>P. falciparum</i> and <i>W. bancrofti</i> are <b>anthroponotic</b> (human reservoir only). <i>P. knowlesi</i> and <i>L. infantum</i> are <b>zoonotic</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Life Cycle Patterns</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Host Roles</div>
+<table class="ctable"><tr><th>Role</th><th>Definition</th><th>Example</th></tr><tr><td>------</td><td>------------</td><td>---------</td></tr><tr><td>**Definitive host**</td><td>Parasite reaches sexual maturity / sexual reproduction</td><td>Human in *Taenia*; mosquito in *Plasmodium*; cat in *Toxoplasma*</td></tr><tr><td>**Intermediate host**</td><td>Essential larval/asexual development</td><td>Pig in *Taenia solium* (cysticercus); human in *Plasmodium* (schizogony); snail in *Schistosoma*</td></tr><tr><td>**Paratenic (transport) host**</td><td>Larva survives but does NOT develop</td><td>Fish in *Angiostrongylus cantonensis*; copepod in *Spirometra*</td></tr><tr><td>**Reservoir**</td><td>Long-term source of infection</td><td>Dog in *E. granulosus*; cat in *T. gondii*</td></tr></table>
+<div class="sub-h">Transmission Modes</div>
+<table class="ctable"><tr><th>Mode</th><th>Description</th><th>Examples</th></tr><tr><td>------</td><td>-------------</td><td>----------</td></tr><tr><td>**Faecal-oral (direct)**</td><td>Ingestion of cysts/oocysts/eggs in contaminated food/water/hands</td><td>*Giardia*, *Entamoeba*, *Cryptosporidium*, *Ascaris*, *Trichuris*, *Enterobius*, *Hymenolepis*</td></tr><tr><td>**Skin penetration**</td><td>Larvae in soil/water penetrate intact skin</td><td>Hookworms, *Strongyloides*, *Schistosoma* (cercariae)</td></tr><tr><td>**Vector-borne (biological)**</td><td>Arthropod transmits after parasite development</td><td>*Plasmodium* (mosquito), *Leishmania* (sandfly), *Trypanosoma brucei* (tsetse), *T. cruzi* (triatomine), *Wuchereria/Brugia* (mosquito), *Onchocerca* (black fly), *Loa loa* (tabanid), *Babesia* (tick)</td></tr><tr><td>**Vector-borne (mechanical)**</td><td>Arthropod passively carries</td><td>Housefly → amoebic cysts (less important clinically)</td></tr><tr><td>**Food-borne (ingestion of meat/fish/plant with larvae)**</td><td>Eating intermediate host tissue</td><td>*Taenia* (beef/pork), *Trichinella* (pork), *Diphyllobothrium* (fish), *Clonorchis/Opisthorchis* (fish), *Fasciola* (watercress), *Paragonimus* (crabs), *Spirometra* (frogs/snakes)</td></tr><tr><td>**Water-borne**</td><td>Drinking water containing infective stage</td><td>*Dracunculus* (copepods), *Giardia* (cysts), *Cryptosporidium* (oocysts — chlorine-resistant), *Naegleria* (trophozoites in warm fresh water → nasal mucosa)</td></tr><tr><td>**Sexual**</td><td>Venereal transmission</td><td>*Trichomonas vaginalis*</td></tr><tr><td>**Congenital (transplacental)**</td><td>*Toxoplasma* (tachyzoites), *Plasmodium* (placental sequestration), *Trypanosoma cruzi*</td><td>—</td></tr><tr><td>**Autoinfection**</td><td>Self-reinfection without leaving host</td><td>*Strongyloides*, *Hymenolepis nana*, *Enterobius* (retroinfection)</td></tr><tr><td>**Transfusion / transplant / needlestick**</td><td>*Babesia*, *Plasmodium*, *Toxoplasma* (organ), *Strongyloides* (hyperinfection donor)</td><td>—</td></tr></table>
+<div class="sub-h">Sexual vs Asexual Reproduction</div>
+<table class="ctable"><tr><th>Reproduction</th><th>Where it Occurs</th><th>Examples</th></tr><tr><td>--------------</td><td>----------------</td><td>----------</td></tr><tr><td>**Sexual (gametogony)**</td><td>Definitive host / vector</td><td>Mosquito gut in *Plasmodium*; cat gut in *Toxoplasma*; tsetse salivary glands in *T. brucei*; triatomine gut in *T. cruzi*; human small intestine in *Taenia*.</td></tr><tr><td>**Asexual (schizogony / merogony)**</td><td>Intermediate host / vertebrate</td><td>Human liver + RBC in *Plasmodium*; human nucleated cells in *Toxoplasma*; snail tissues in *Schistosoma*.</td></tr><tr><td>**Multiple fission (sporogony)**</td><td>Definitive host / vector — formation of sporozoites</td><td>Oocyst → sporozoites in mosquito (*Plasmodium*) or cat (*Toxoplasma*).</td></tr></table>
+<div class="callout"><b>Exam pearl:</b> In <i>Plasmodium</i>, the human is the <b>intermediate host</b> (asexual schizogony in liver and blood); the mosquito is the <b>definitive host</b> (sexual sporogony in the gut). In <i>Toxoplasma</i>, the cat is the <b>definitive host</b> (sexual cycle); humans and other warm-blooded animals are <b>intermediate hosts</b>.</div>
+<div class="sub-h">Life Cycle Pattern Summary</div>
+<table class="ctable"><tr><th>Pattern</th><th>Description</th><th>Examples</th></tr><tr><td>---------</td><td>-------------</td><td>----------</td></tr><tr><td>**Direct (Faecal-Oral)**</td><td>Cysts/oocysts/eggs in faeces → ingested by same host</td><td>*Giardia*, *Entamoeba*, *Cryptosporidium*, *Ascaris*, *Trichuris*, *Enterobius*, *Hymenolepis nana*</td></tr><tr><td>**Skin Penetration**</td><td>Larvae in soil → penetrate skin</td><td>*Hookworms*, *Strongyloides*, *Schistosoma* (cercariae)</td></tr><tr><td>**Vector-Borne**</td><td>Arthropod transmits</td><td>*Plasmodium* (mosquito), *Leishmania* (sandfly), *Trypanosoma* (tsetse/triatomine), *Wuchereria/Brugia/Onchocerca* (mosquito/black fly), *Babesia* (tick)</td></tr><tr><td>**Intermediate Host (Ingestion)**</td><td>Eat undercooked meat/fish/plants with larvae/cysts</td><td>*Taenia* (beef/pork), *Trichinella* (pork), *Diphyllobothrium* (fish), *Clonorchis/Opisthorchis* (fish), *Fasciola* (watercress), *Paragonimus* (crustaceans)</td></tr><tr><td>**Autoinfection**</td><td>Internal reinfection</td><td>*Strongyloides* (filiform larvae → skin/lungs), *Hymenolepis nana* (auto-infection in gut), *Enterobius* (retroinfection)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Major Protozoan Pathogens</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parasite</th><th>Transmission</th><th>Life Cycle Stage in Human</th><th>Key Syndromes</th><th>Diagnosis</th></tr><tr><td>----------</td><td>--------------</td><td>---------------------------</td><td>---------------</td><td>-----------</td></tr><tr><td>**Plasmodium falciparum/vivax/ovale/malariae/knowlesi**</td><td>Anopheles mosquito bite</td><td>Liver (hypnozoites P. vivax/ovale) → RBCs</td><td>**Malaria** (fever, haemolysis, cerebral, severe anaemia, placental)</td><td>Thick/thin blood films, RDT (HRP2/pLDH), PCR</td></tr><tr><td>**Leishmania donovani/infantum (VL)**</td><td>Sandfly bite</td><td>Macrophages (amastigotes)</td><td>**Visceral leishmaniasis (Kala-azar)**: fever, hepatosplenomegaly, pancytopenia</td><td>Splenic/bone marrow aspirate (LD bodies), rK39 RDT, PCR</td></tr><tr><td>**Leishmania tropica/major (CL)**</td><td>Sandfly bite</td><td>Macrophages (skin)</td><td>**Cutaneous leishmaniasis**: ulcerative skin lesions</td><td>Slit skin smear, culture, PCR</td></tr><tr><td>**Leishmania braziliensis (MCL)**</td><td>Sandfly bite</td><td>Macrophages (skin → mucosa)</td><td>**Mucocutaneous leishmaniasis (espundia)**: nasal/oral destruction</td><td>Slit smear, PCR (highly destructive)</td></tr><tr><td>**Trypanosoma brucei gambiense/rhodesiense (African)**</td><td>Tsetse fly bite</td><td>Blood, lymph, CSF (trypomastigotes)</td><td>**Sleeping sickness**: chancre, febrile, CNS → coma</td><td>Blood/CSF microscopy, CATT (T.b.g.), PCR</td></tr><tr><td>**Trypanosoma cruzi (American/Chagas)**</td><td>Triatomine bug faeces</td><td>Blood, muscle, nerves</td><td>**Chagas disease**: acute (Romaña sign), chronic (cardiomyopathy, megacolon/megaesophagus)</td><td>Blood microscopy (acute), serology (chronic), PCR</td></tr><tr><td>**Toxoplasma gondii**</td><td>Ingest oocysts (cat faeces) / tissue cysts (meat)</td><td>Nucleated cells (tachyzoites), cysts (bradyzoites)</td><td>Congenital (chorioretinitis, hydrocephalus), reactivation in HIV (encephalitis, chorioretinitis)</td><td>Serology (IgG/IgM), IgG avidity, PCR (amniotic fluid/CSF)</td></tr><tr><td>**Cryptosporidium parvum/hominis**</td><td>Faecal-oral (water)</td><td>Intestinal epithelium</td><td>**Cryptosporidiosis**: watery diarrhoea (self-limited in immunocompetent, chronic in HIV)</td><td>Modified acid-fast stain, antigen detection, PCR</td></tr><tr><td>**Cyclospora cayetanensis**</td><td>Faecal-oral (food/water)</td><td>Intestinal epithelium</td><td>Cyclosporiasis: prolonged watery diarrhoea</td><td>Modified acid-fast stain (autofluorescence), PCR</td></tr><tr><td>**Isospora belli**</td><td>Faecal-oral</td><td>Intestinal epithelium</td><td>Isosporiasis: diarrhoea (HIV)</td><td>Modified acid-fast stain, PCR</td></tr><tr><td>**Giardia lamblia**</td><td>Faecal-oral (cysts in water)</td><td>Duodenum (trophozoites)</td><td>**Giardiasis**: malabsorptive diarrhoea, steatorrhoea, bloating</td><td>Stool antigen (EIA), PCR, microscopy (trophozoite/cyst)</td></tr><tr><td>**Entamoeba histolytica**</td><td>Faecal-oral (cysts)</td><td>Colon (trophozoites → flask ulcers)</td><td>**Amoebiasis**: dysentery, liver abscess, pleural/pericardial spread</td><td>Stool microscopy (RBC-containing trophozoites), antigen, PCR, serology</td></tr><tr><td>**Trichomonas vaginalis**</td><td>Sexual</td><td>Vaginal/urethral mucosa</td><td>**Trichomoniasis**: vaginitis, urethritis, cervicitis</td><td>Wet mount (motile trophozoites), PCR, culture</td></tr><tr><td>**Balantidium coli**</td><td>Faecal-oral (pigs)</td><td>Colon</td><td>Balantidiasis: dysentery</td><td>Stool microscopy (large ciliate)</td></tr><tr><td>**Naegleria fowleri**</td><td>Nasal mucosa (warm fresh water)</td><td>CNS (trophozoites)</td><td>**Primary amoebic meningoencephalitis (PAM)** — rapidly fatal</td><td>CSF wet mount (motile amoebae), culture, PCR</td></tr><tr><td>**Acanthamoeba**</td><td>Contact lens / skin / lung</td><td>CNS, skin, eye</td><td>**Granulomatous amoebic encephalitis (GAE)**, Acanthamoeba keratitis</td><td>Corneal scrape, biopsy, PCR</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Major Helminth Pathogens</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Nematodes (Roundworms)</div>
+<table class="ctable"><tr><th>Parasite</th><th>Transmission</th><th>Location in Human</th><th>Key Features</th></tr><tr><td>----------</td><td>--------------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**Ascaris lumbricoides**</td><td>Faecal-oral (eggs in soil)</td><td>Small intestine → lung migration (Loeffler)</td><td>Most common helminth; obstruction, malnutrition</td></tr><tr><td>**Trichuris trichiura**</td><td>Faecal-oral (eggs)</td><td>Colon (anterior whip)</td><td>Whipworm; Trichuris dysentery syndrome (anaemia, rectal prolapse)</td></tr><tr><td>**Hookworms (Ancylostoma duodenale, Necator americanus)**</td><td>Skin penetration (filariform larvae)</td><td>Duodenum (attach, feed on blood)</td><td>**Iron deficiency anaemia**; cutaneous larva migrans (A. braziliense)</td></tr><tr><td>**Strongyloides stercoralis**</td><td>Skin penetration / autoinfection</td><td>Duodenum → lung → gut</td><td>**Autoinfection → hyperinfection (steroids, HTLV-1)**; larva currens</td></tr><tr><td>**Enterobius vermicularis**</td><td>Faecal-oral / retroinfection</td><td>Caecum/colon (nocturnal migration)</td><td>**Pinworm**: perianal pruritus; Scotch tape test</td></tr><tr><td>**Trichinella spiralis**</td><td>Ingest larvae in undercooked meat</td><td>Intestine → muscle larvae</td><td>**Trichinellosis**: periorbital oedema, myositis, eosinophilia</td></tr><tr><td>**Filarial worms (Wuchereria, Brugia, Onchocerca, Loa loa, Mansonella)**</td><td>Mosquito/black fly/midge bite</td><td>Lymphatics, skin, eyes</td><td>Lymphatic filariasis (elephantiasis), Onchocerciasis (river blindness), Loiasis (Calabar swellings)</td></tr><tr><td>**Dracunculus medinensis**</td><td>Ingest copepods in water</td><td>Subcutaneous tissues</td><td>**Guinea worm**: blister, ulcer, worm emergence (eradication near)</td></tr><tr><td>**Angiostrongylus cantonensis**</td><td>Ingest snails/slugs/paratenic hosts</td><td>CNS</td><td>**Eosinophilic meningitis**</td></tr></table>
+<div class="sub-h">Trematodes (Flukes)</div>
+<table class="ctable"><tr><th>Parasite</th><th>Transmission</th><th>Location</th><th>Key Features</th></tr><tr><td>----------</td><td>--------------</td><td>----------</td><td>--------------</td></tr><tr><td>**Schistosoma haematobium/mansoni/japonicum**</td><td>Skin penetration (cercariae in water)</td><td>Venous plexus (bladder, mesenteric, hepatic)</td><td>**Schistosomiasis**: haematuria (S. haematobium), hepatosplenic (S. mansoni/japonicum), ectopic (CNS)</td></tr><tr><td>**Clonorchis sinensis / Opisthorchis viverrini**</td><td>Ingest raw fish (metacercariae)</td><td>Bile ducts</td><td>**Clonorchiasis/Opisthorchiasis**: cholangitis, cholangiocarcinoma</td></tr><tr><td>**Fasciola hepatica**</td><td>Ingest watercress (metacercariae)</td><td>Liver → bile ducts</td><td>Fascioliasis: hepatic phase (migratory), biliary phase</td></tr><tr><td>**Paragonimus westermani**</td><td>Ingest crustaceans (metacercariae)</td><td>Lungs (cysts) → ectopic (brain)</td><td>**Paragonimiasis**: haemoptysis, eosinophilia, brain lesions</td></tr><tr><td>**Fasciolopsis buski**</td><td>Ingest aquatic plants (metacercariae)</td><td>Intestine</td><td>Fasciolopsiasis: diarrhoea, malnutrition</td></tr></table>
+<div class="sub-h">Cestodes (Tapeworms)</div>
+<table class="ctable"><tr><th>Parasite</th><th>Transmission</th><th>Location</th><th>Key Features</th></tr><tr><td>----------</td><td>--------------</td><td>----------</td><td>--------------</td></tr><tr><td>**Taenia saginata (beef)**</td><td>Ingest beef cysticerci</td><td>Intestine (adult)</td><td>**Taeniasis**: proglottids in stool; no cysticercosis in humans</td></tr><tr><td>**Taenia solium (pork)**</td><td>Ingest pork cysticerci / faecal-oral (eggs)</td><td>Intestine (adult) / **Tissues (cysticerci)**</td><td>**Cysticercosis** (neurocysticercosis = seizures); autoinfection possible</td></tr><tr><td>**Hymenolepis nana**</td><td>Faecal-oral / autoinfection</td><td>Intestine</td><td>**Dwarf tapeworm**: autoinfection, children</td></tr><tr><td>**Diphyllobothrium latum**</td><td>Ingest fish (plerocercoids)</td><td>Intestine</td><td>**Fish tapeworm**: **B12 deficiency** (competition)</td></tr><tr><td>**Echinococcus granulosus / multilocularis**</td><td>Ingest eggs (dog faeces)</td><td>**Liver/lungs (hydatid cysts)**</td><td>**Hydatid disease**: cystic (E. granulosus) / alveolar (E. multilocularis); anaphylaxis if rupture</td></tr><tr><td>**Dipylidium caninum**</td><td>Ingest fleas (dogs/cats)</td><td>Intestine</td><td>Dog/cat tapeworm; accidental human infection</td></tr><tr><td>**Spirometra**</td><td>Ingest water/copepods/frogs/snakes</td><td>Tissues (spargana)</td><td>Sparganosis: migratory subcutaneous nodules</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Immune Evasion Mechanisms</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mechanism</th><th>Parasites</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Antigenic Variation**</td><td>*Trypanosoma* (VSG), *Plasmodium* (PfEMP1), *Giardia* (VSP), *Borrelia* (VlsE)</td></tr><tr><td>**Intracellular Survival**</td><td>*Leishmania* (macrophage), *Toxoplasma* (nucleated cells), *Plasmodium* (hepatocyte/RBC), *Trypanosoma cruzi* (muscle)</td></tr><tr><td>**Molecular Mimicry / Host Protein Acquisition**</td><td>*Schistosoma* (host antigens), *Trypanosoma* (host complement regulators)</td></tr><tr><td>**Immune Modulation / Suppression**</td><td>Helminths (Th2/Treg induction, IL-10, TGF-β), *Plasmodium* (dendritic cell inhibition), *Leishmania* (macrophage deactivation)</td></tr><tr><td>**Antigenic Masking / Shedding**</td><td>*Schistosoma* (tegument turnover), *Trypanosoma* (VSG switching), *Fasciola* (tegument shedding)</td></tr><tr><td>**Complement Resistance**</td><td>*Trypanosoma* (acquisition of host regulators), *Leishmania* (surface proteases)</td></tr><tr><td>**Intracellular Niche / Granuloma Evasion**</td><td>*Mycobacterium* (not parasite but similar), *Leishmania* (parasitophorous vacuole), *Schistosoma* (granuloma modulation)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Host Defence Against Parasites</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Protozoa</th><th>Helminths</th></tr><tr><td>-----------</td><td>----------</td><td>-----------</td></tr><tr><td>**Innate**</td><td>Macrophage activation (IFN-γ), NK cells, complement, eosinophils (limited)</td><td>**Eosinophils (key)**, mast cells, basophils, IgE, IgG4, ADCC</td></tr><tr><td>**Adaptive: Th1**</td><td>**Critical** (IFN-γ → macrophage activation) for *Leishmania, Toxoplasma, Plasmodium (liver), Trypanosoma*</td><td>Less dominant</td></tr><tr><td>**Adaptive: Th2**</td><td>Limited role</td><td>**Dominant** (IL-4, IL-5, IL-13 → IgE, eosinophilia, mast cells, goblet cells, smooth muscle contraction → expulsion)</td></tr><tr><td>**Adaptive: Th17**</td><td>Mucosal defence (*Giardia, Cryptosporidium*)</td><td>Tissue repair</td></tr><tr><td>**Antibodies**</td><td>Neutralisation, opsonisation, ADCC</td><td>IgE (mast cell degranulation), IgG4 (blocking), IgA (mucosal)</td></tr><tr><td>**Eosinophils**</td><td>Minor role</td><td>**Key effector** (ADCC, major basic protein, eosinophil peroxidase → larval killing)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Diagnostic Approaches</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Method</th><th>Protozoa</th><th>Helminths</th></tr><tr><td>--------</td><td>----------</td><td>-----------</td></tr><tr><td>**Microscopy (Stool)**</td><td>Ova, cysts, trophozoites (concentration techniques)</td><td>**Ova & parasites (O&P)** — concentration, Kato-Katz (quantitative)</td></tr><tr><td>**Blood Films**</td><td>**Malaria (thick/thin)**, *Trypanosoma*, *Babesia*, *Filaria (microfilariae — nocturnal periodicity)*</td><td>Microfilariae (timed)</td></tr><tr><td>**Serology**</td><td>**Toxoplasma, Amoebiasis, Leishmania, Trypanosoma, Strongyloides, Schistosoma, Cysticercosis, Hydatid, Trichinella**</td><td>Antibody detection (cross-reactivity)</td></tr><tr><td>**Antigen Detection**</td><td>**Malaria RDT (HRP2/pLDH), Cryptosporidium, Giardia, Leishmania rK39, Filariasis (circulating filarial antigen)**</td><td>Circulating antigens (Schistosoma CCA, Filarial CFA)</td></tr><tr><td>**PCR**</td><td>All major protozoa (high sensitivity)</td><td>Emerging for helminths</td></tr><tr><td>**Imaging**</td><td>Liver abscess (Amoebiasis), CNS cysts (Neurocysticercosis, Hydatid)</td><td>Cysts (CT/MRI/US) — *Echinococcus, Taenia solium (NCC), Paragonimus*</td></tr><tr><td>**Special**</td><td>**Scotch tape (Enterobius)**, Duodenal aspirate (Strongyloides, Giardia), Skin snip (Onchocerca), Urine filtration (S. haematobium)</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Clinical Correlation — High-Yield Scenarios</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Scenario 1 — "The Febrile Traveller with Banana-Shaped Gametocytes"</div>
+<p>A 35-year-old man returns from a 3-week trip to Lagos, Nigeria with daily fever spikes, rigors, and confusion. Thick film shows rings; thin film shows banana-shaped gametocytes and multiple ring forms per RBC. Diagnosis: ***P. falciparum* cerebral malaria<b>. Treatment: </b>IV artesunate** (severe) followed by ACT (artemether-lumefantrine) plus single-dose primaquine for gametocytes. Hypnozoites are NOT a concern in <i>falciparum</i> — no primaquine for relapse prevention.</p>
+<div class="sub-h">Scenario 2 — "Pancytopenia, Hepatosplenomegaly, Travel to Bihar"</div>
+<p>HIV-positive man from Bihar, India, with 2-month fever, weight loss, massive splenomegaly, pancytopenia. rK39 RDT positive. Splenic aspirate shows amastigotes. Diagnosis: <b>Visceral Leishmaniasis (Kala-azar)</b>. Treatment: <b>Liposomal amphotericin B</b> (single dose, 10 mg/kg) or miltefosine. Watch for post-kala-azar dermal leishmaniasis (PKDL).</p>
+<div class="sub-h">Scenario 3 — "Seizures and a Scolex in the Brain"</div>
+<p>Mexican immigrant with new-onset seizures. MRI brain: multiple ring-enhancing lesions, one showing a 2-mm mural nodule (scolex = "hole-with-dot" sign). Diagnosis: <b>Neurocysticercosis</b> (<i>Taenia solium</i>). Management: <b>corticosteroids first</b> to reduce cerebral oedema, then <b>albendazole + praziquantel</b>. Anti-epileptic drugs. Surgery/VP shunt if hydrocephalus.</p>
+<div class="sub-h">Scenario 4 — "Steroids and Gram-Negative Sepsis"</div>
+<p>Asthmatic on long-term prednisolone, presents with fever, abdominal pain, diarrhoea, hypotension, and bilateral pulmonary infiltrates. Blood cultures grow <i>E. coli</i>. Stool shows filariform larvae. Diagnosis: <b>Strongyloides hyperinfection</b>. Treatment: <b>IV ivermectin</b> (subcutaneous if NPO); reduce immunosuppression; treat bacteraemia.</p>
+<div class="sub-h">Scenario 5 — "B12 Deficiency After a Lake Fishing Trip"</div>
+<p>Patient with fatigue, pallor, mild neuropathy, MCV 110 fL; eats raw freshwater fish (Nordic/Scandinavian cuisine). Stool: operculated eggs, broad proglottids. Diagnosis: <b>Diphyllobothrium latum</b> (fish tapeworm). B12 deficiency from competitive absorption. Treatment: <b>Praziquantel</b> + B12 replacement.</p>
+<div class="sub-h">Scenario 6 — "Sheep Farmer with RUQ Mass and Anaphylaxis Risk"</div>
+<p>Welsh farmer with RUQ heaviness, eosinophilia. CT: 8-cm unilocular liver cyst with daughter cysts. Serology positive. Diagnosis: <b>Cystic hydatid disease (E. granulosus)</b>. Management: <b>Albendazole</b> for 4 weeks + <b>PAIR (Puncture, Aspiration, Injection of scolicidal agent, Re-aspiration) or surgical excision</b>; <b>never aspirate percutaneously without scolicidal precautions</b> → anaphylaxis. <i>Do not open the cyst at surgery without scolicidal-soaked gauze packing.</i></p>
+<div class="sub-h">Scenario 7 — "Terminal Haematuria in a Sub-Saharan Boy"</div>
+<p>13-year-old Malawian boy, 3 months of terminal painless haematuria, mild anaemia. Urine: ova with terminal spine. Diagnosis: <b>Schistosoma haematobium</b>. Long-term risk: <b>squamous cell bladder carcinoma</b>. Treatment: <b>Praziquantel</b>.</p>
+<div class="sub-h">Scenario 8 — "Eosinophilic Meningitis After Snail Salad"</div>
+<p>Caribbean patient with headache, meningismus, CSF eosinophilia, and history of ingesting raw slugs/snails ("bacon of the earth"). Diagnosis: <b>Angiostrongylus cantonensis</b> (rat lungworm). Treatment: supportive ± albendazole/steroids; avoid repeat lumbar puncture.</p>
+<div class="sub-h">Scenario 9 — "Acute Cardiomyopathy and Megaesophagus in a Latin American"</div>
+<p>Brazilian patient with congestive heart failure, right bundle branch block, apical aneurysm; barium swallow shows megaesophagus. Serology positive for <i>T. cruzi</i>. Diagnosis: <b>Chronic Chagas cardiomyopathy / megaoesophagus</b>. Treatment: supportive (no antiparasitic cures chronic disease); amiodarone, pacemaker, transplant evaluation.</p>
+<div class="sub-h">Scenario 10 — "Perianal Itching in a Child at 2 AM"</div>
+<p>5-year-old with nocturnal perianal itching; <b>Scotch tape</b> test shows oval eggs, flattened on one side. Diagnosis: <b>Enterobius vermicularis (pinworm)</b>. Treatment: <b>Mebendazole/albendazole single dose, repeat in 2 weeks</b>, treat household contacts, hygiene measures (nail trimming, washing bedding).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Protozoa = unicellular; Helminths = multicellular</b> → different immune responses - <b>Malaria = Plasmodium falciparum most severe</b> (cerebral, blackwater fever, severe anaemia, placental); vivax/ovale = hypnozoites (relapse); knowlesi = zoonotic (macaques) - <b>Leishmaniasis: VL (donovani/infantum) = Kala-azar; CL = oriental sore; MCL (braziliensis) = espundia</b> - <b>Trypanosomes: T.b. gambiense (West, chronic) vs rhodesiense (East, acute); T. cruzi = Chagas (cardiomyopathy, megaesophagus/colon)</b> - <b>Toxoplasma: congenital (chorioretinitis, hydrocephalus, intracranial calcifications); reactivation in HIV (encephalitis, ring-enhancing lesions)</b> - <b>Strongyloides = autoinfection → hyperinfection in steroids/HTLV-1; larva currens (racing rash); treat with ivermectin</b> - <b>Schistosomiasis: S. haematobium = haematuria + bladder cancer; S. mansoni/japonicum = hepatosplenic + portal hypertension; praziquantel covers all</b> - <b>Taenia solium = cysticercosis (neuro = seizures); T. saginata = no cysticercosis</b> - <b>Echinococcus = hydatid cyst (liver/lung); anaphylaxis on rupture; albendazole + PAIR/surgery</b> - <b>Immune: Th1 = protozoa (intracellular); Th2/eosinophils = helminths</b> - <b>Exam trap: Strongyloides hyperinfection = corticosteroids trigger; diagnostic: stool/duodenal aspirate/serology; treat ivermectin</b> - <b>Ectoparasite pearl: Sarcoptes scabiei causes intense nocturnal pruritus in webs of fingers; treat with permethrin 5% + treat contacts + wash bedding</b> - <b>Naegleria fowleri enters via cribriform plate (nasal); presents with PAM, halitosis, fatal within 1 week</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**All worms = helminths**</td><td>Helminths = nematodes, trematodes, cestodes; Protozoa separate</td></tr><tr><td>**Strongyloides = just another worm**</td><td>**Autoinfection → hyperinfection (fatal) in immunosuppressed; larva currens pathognomonic**</td></tr><tr><td>**T. solium = T. saginata**</td><td>T. solium = pork + cysticercosis (neuro); T. saginata = beef, no cysticercosis</td></tr><tr><td>**All schistosomes = same**</td><td>S. haematobium = urinary (haematuria, bladder Ca); S. mansoni/japonicum = hepatic/intestinal</td></tr><tr><td>**Filaria = all same**</td><td>Wuchereria/Brugia = lymphatic (elephantiasis); Onchocerca = skin/eye (river blindness); Loa loa = Calabar swellings</td></tr><tr><td>**Echinococcus = simple cyst**</td><td>Hydatid cyst = daughter cysts, anaphylaxis risk on rupture; PAIR or surgery + albendazole</td></tr><tr><td>**Malaria relapse = recrudescence**</td><td>Relapse = hypnozoites (P. vivax/ovale); Recrudescence = treatment failure (all species); Reinfection = new mosquito bite</td></tr><tr><td>**Strongyloides = easy to diagnose**</td><td>Low sensitivity of stool O&P; need duodenal aspirate, agar plate culture, serology, PCR</td></tr><tr><td>**Toxoplasma = only cat litter**</td><td>Also undercooked meat, congenital, transplant; serology IgG avidity for recent vs past</td></tr><tr><td>**Echinococcus multilocularis = same as granulosus**</td><td>E. multilocularis = alveolar, infiltrative, fox reservoir, harder to treat, often incurable</td></tr><tr><td>**S. haematobium eggs = lateral spine**</td><td>S. haematobium = **terminal** spine; S. mansoni = **lateral** spine; S. japonicum = **rudimentary/round**</td></tr><tr><td>**All trematodes need a snail**</td><td>YES — every trematode has a snail intermediate host. *Schistosoma* is unique in NOT having a second intermediate host.</td></tr><tr><td>**Cyclospora vs Cryptosporidium**</td><td>Cyclospora: large oocysts (8–10 µm), sporulate in environment, **autofluorescent**, often in imported raspberries/berries. Cryptosporidium: small oocysts (4–6 µm), pre-sporulated, **chlorine-resistant**, waterborne outbreaks.</td></tr><tr><td>**Amoebic vs bacillary dysentery**</td><td>Amoebic = few stools, blood/mucus, **RBC-ingesting trophozoites**, no fever, **flask-shaped** ulcers; bacillary = many small stools, faecal leucocytes, fever, Shigella/Campylobacter.</td></tr><tr><td>**Loa loa vs Onchocerca vs Wuchereria**</td><td>Loa = day blood, Calabar, eye-worm migration; Onchocerca = skin snip, blindness, black fly; Wuchereria = night blood, lymphatics, elephantiasis.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Malaria species:</b> <b>F</b>alciparum, <b>V</b>ivax, <b>O</b>vale, <b>M</b>alariae, <b>K</b>nowlesi = <b>FVOMK</b> ("<b>F</b>ive <b>V</b>ery <b>O</b>minous <b>M</b>alarial <b>K</b>inds")</li><li><b>Leishmania:</b> <b>V</b>L = <b>V</b>isceral <b>L</b>eishmaniasis (donovani/infantum); <b>C</b>L = <b>C</b>utaneous (tropica/major); <b>M</b>CL = <b>M</b>ucocutaneous (braziliensis)</li><li><b>Trypanosomes:</b> <b>G</b>ambiense = <b>G</b>radual (West Africa, chronic); <b>R</b>hodesiense = <b>R</b>apid (East Africa, acute)</li><li><b>Schistosomes:</b> <b>H</b>aematobium = <b>H</b>aematuria; <b>M</b>ansoni/<b>J</b>aponicum = <b>H</b>epatosplenic</li><li><b>Schistosome egg spines:</b> "<b>H</b>aematobium has a <b>h</b>orn (terminal); <b>M</b>ansoni is on the <b>m</b>argin (lateral); <b>J</b>aponicum is just a small <b>j</b>ack (no spine)"</li><li><b>Taenia:</b> <b>S</b>olium = <b>S</b>eizures (neurocysticercosis, pork); <b>S</b>aginata = <b>S</b>teak (beef, no neuro)</li><li><b>Echinococcus:</b> <b>G</b>ranulosus = <b>G</b>ranular/cystic; <b>M</b>ultilocularis = <b>M</b>ultilocular/alveolar (more aggressive)</li><li><b>Strongyloides:</b> <b>S</b>trongyloides = <b>S</b>teroids → <b>H</b>yperinfection; <b>L</b>arva <b>C</b>urrens = <b>R</b>acing <b>R</b>ash</li><li><b>Filariasis:</b> <b>W</b>uchereria/<b>B</b>rugia = <b>L</b>ymphatic; <b>O</b>nchocerca = <b>O</b>cular/Skin (River Blindness); <b>L</b>oa <b>L</b>oa = <b>C</b>alabar; <b>M</b>ansonella = <b>M</b>ild</li><li><b>Hookworm vs Strongyloides:</b> <b>H</b>ookworm = <b>H</b>aemorrhage/anaemia; <b>S</b>trongyloides = <b>S</b>teroids → <b>H</b>yperinfection</li><li><b>Toxoplasma triad:</b> <b>C</b>horioretinitis, <b>H</b>ydrocephalus, <b>I</b>ntracranial <b>C</b>alcifications = <b>CHIC</b> "toxoplasma gives you a <b>CHIC</b> pregnancy outcome"</li><li><b>Ectoparasites that burrow:</b> <b>S</b>arcoptes (<b>s</b>cabies), <b>D</b>emodex, <b>T</b>unga (<b>t</b>ungiasis), <b>D</b>ermatobia (<b>d</b>ermatobiasis/myiasis) = "<b>STD</b>s of the skin"</li><li><b>Schistosoma snail hosts:</b> <b>B</b>ulinus (<b>B</b>ladder) = <i>S. haematobium</i>; <b>B</b>iomphalaria (<b>B</b>owel) = <i>S. mansoni</i>; <b>O</b>ncomelania (<b>O</b>riental) = <i>S. japonicum</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Parasitic Structure &amp; Pathogenesis)) Protozoa Flagellates[Giardia, Trichomonas, Leishmania, Trypanosoma] Amoebae[Entamoeba, Naegleria, Acanthamoeba] Sporozoans[Plasmodium, Toxoplasma, Cryptosporidium, Cyclospora, Isospora, Babesia] Ciliates[Balantidium] Helminths Nematodes[Ascaris, Trichuris, Hookworm, Strongyloides, Enterobius, Trichinella, Filaria] Trematodes[Schistosoma, Clonorchis, Opisthorchis, Fasciola, Paragonimus, Fasciolopsis] Cestodes[Taenia, Hymenolepis, Diphyllobothrium, Echinococcus, Dipylidium, Spirometra] Ectoparasites Insects[Lice, Fleas, Tsetse, Botfly] Arachnids[Scabies, Ticks, Demodex, Chiggers] Life_Cycles Direct[Faecal-oral] Skin_Penetration[Hookworm, Strongyloides, Schisto] Vector[Mosquito, Sandfly, Tsetse, Triatomine, Tick] Ingestion[Meat, Fish, Plants, Water] Autoinfection[Strongyloides, H. nana, Enterobius] Vectors Anopheles[Malaria] Aedes_Day[Wuchereria, arboviruses] Culex_Night[Wuchereria, Brugia] Sandfly[Leishmania] Tsetse[T. brucei] Triatomine[T. cruzi] Tabanid[Loa loa] Blackfly[Onchocerca] Tick[Babesia] Snail[Schisto, Fasciola, Clonorchis] Immune_Evasion Antigenic_Variation[Trypanosome VSG, Plasmodium PfEMP1] Intracellular[Leishmania, Toxoplasma, Plasmodium, T. cruzi] Mimicry[Schistosome host antigens] Th2_Modulation[Helminths] Host_Defence Protozoa_Th1[IFN-g, Macrophage activation] Helminth_Th2[IL-4,5,13, IgE, Eosinophils, Expulsion] Eosinophils[Helminth larvae killing] Diagnosis Stool[Ova, Cysts, Trophozoites - concentration] Blood[Thick/Thin films, Microfilariae, RDTs] Serology[Strongyloides, Toxoplasma, Cysticercosis, Hydatid] Antigen[Malaria RDT, Crypto, Giardia, Filarial CFA] Imaging[NCC, Hydatid cysts, Liver abscess] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flowchart: Parasite Identification by Specimen & Findings</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Clinical Suspicion] --&gt; B{Specimen Type} B --&gt;|Stool| C[Concentration → Ova/Cysts/Trophozoites] C --&gt; D{Motile Trophozoites?} D --&gt;|Yes| E[Giardia, Trichomonas, Balantidium, Entamoeba] D --&gt;|No (Cysts/Ova)| F[Cysts: Giardia, Cryptosporidium, Cyclospora, Isospora, Entamoeba] F --&gt; G{Ova: Nematode, Trematode, Cestode} B --&gt;|Blood| H[Thick/Thin Films + RDT] H --&gt; I{Intraerythrocytic?} I --&gt;|Yes| J[Malaria, Babesia] I --&gt;|No (Extracellular)| K[Trypanosoma, Microfilariae] B --&gt;|Tissue/CSF| L{Brain} L --&gt;|Ring-enhancing| M[Toxoplasma (HIV), NCC, TB] L --&gt;|Hydrocephalus| N[Echinococcus, Sparganum] B --&gt;|Skin Snip| O[Onchocerca microfilariae] B --&gt;|Urine (Terminal)| P[S. haematobium ova] B --&gt;|Scotch Tape| Q[Enterobius ova] B --&gt;|Skin Scrapings| R[Sarcoptes scabiei mites, eggs] B --&gt;|Corneal Scrape| S[Acanthamoeba] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flowchart: Vector → Parasite → Disease</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Anopheles] --&gt; A1[P. falciparum/vivax/ovale/malariae/knowlesi] A1 --&gt; A2[Malaria] B[Aedes] --&gt; B1[W. bancrofti urban] B1 --&gt; B2[Lymphatic filariasis] C[Culex] --&gt; C1[W. bancrofti, B. malayi] C1 --&gt; C2[Lymphatic filariasis] D[Sandfly] --&gt; D1[Leishmania spp.] D1 --&gt; D2[VL/CL/MCL] E[Tsetse] --&gt; E1[T. brucei g/r] E1 --&gt; E2[African sleeping sickness] F[Triatomine] --&gt; F1[T. cruzi] F1 --&gt; F2[Chagas] G[Tabanid Chrysops] --&gt; G1[Loa loa] G1 --&gt; G2[Loiasis Calabar] H[Black fly Simulium] --&gt; H1[Onchocerca] H1 --&gt; H2[River blindness] I[Tick] --&gt; I1[Babesia] I1 --&gt; I2[Babesiosis] J[Snail] --&gt; J1[Schisto, Fasciola, Clonorchis, Paragonimus, Angiostrongylus] J1 --&gt; J2[Schistosomiasis, Fascioliasis, Cholangitis, Paragonimiasis, Eosinophilic meningitis] K[Cyclops copepod] --&gt; K1[Dracunculus, Diphyllobothrium 1st IH, Spirometra 1st IH] K1 --&gt; K2[Guinea worm, Fish tapeworm, Sparganosis] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Protozoa groups (4) + examples</li><li>Helminth classes (3) + key differences</li><li>Ectoparasite categories + 5 clinical examples</li><li>Malaria species (5) + key features</li><li>Leishmania types (VL, CL, MCL)</li><li>Trypanosome species (African vs American)</li><li>Schistosoma species (3) + pathology</li><li>Taenia solium vs saginata</li><li>Echinococcus granulosus vs multilocularis</li><li>Strongyloides autoinfection + hyperinfection trigger</li><li>Schistosome egg spines (terminal/lateral/round)</li><li>Toxoplasma congenital triad</li><li>Vector–parasite pairings (Anopheles, Aedes, Culex, Sandfly, Tsetse, Triatomine, Tabanid, Black fly, Tick, Snail, Cyclops)</li><li>Cyst vs trophozoite vs oocyst</li><li>Definitive vs intermediate vs paratenic host</li><li>Strongyloides diagnosis (stool O&amp;P insensitivity)</li><li>Hydatid cyst management (PAIR + albendazole)</li><li>Neurocysticercosis treatment sequence</li><li>Schistosomiasis snail hosts (Bulinus, Biomphalaria, Oncomelania)</li><li>Immune response: Th1 (protozoa) vs Th2 (helminths)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<p>Track your recall, accuracy, and confidence across all assessment items. Aim for <b>≥ 80% accuracy</b> by Day 30.</p>
+<table class="ctable"><tr><th>Domain</th><th>Items</th><th>Score (/Total)</th><th>%</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>--------</td><td>-------</td><td>----------------</td><td>---</td><td>------------------</td><td>-------</td></tr><tr><td>**MCQ — Malaria (Falciparum, vivax, knowlesi)**</td><td>Q1</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Leishmaniasis (VL)**</td><td>Q2</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Chagas (chronic)**</td><td>Q3</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Strongyloides hyperinfection**</td><td>Q4</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Schistosoma haematobium**</td><td>Q5</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Taenia solium vs saginata**</td><td>Q5b</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Echinococcus cyst features**</td><td>Q6</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Cerebral malaria mechanism**</td><td>Q7</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Toxoplasma congenital triad**</td><td>Q8</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Nocturnal periodicity (filaria)**</td><td>Q9</td><td></td><td></td><td></td><td></td></tr><tr><td>**MCQ — Hookworm anaemia**</td><td>Q10</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — Falciparum management**</td><td>SBA1</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — Kala-azar in HIV**</td><td>SBA2</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — Pinworm treatment**</td><td>SBA3</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — Eosinophilic meningitis (snail)**</td><td>SBA4</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — NCC management**</td><td>SBA5</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — Hydatid cyst management**</td><td>SBA6</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — Strongyloides diagnosis in immunocompromised**</td><td>SBA7</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — Congenital infection with hydrocephalus**</td><td>SBA8</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — Raw-fish biliary disease**</td><td>SBA9</td><td></td><td></td><td></td><td></td></tr><tr><td>**SBA — B12 deficiency + fish tapeworm**</td><td>SBA10</td><td></td><td></td><td></td><td></td></tr><tr><td>**Flashcards (10+ key facts)**</td><td>All</td><td></td><td></td><td></td><td></td></tr><tr><td>**TOTAL**</td><td>—</td><td></td><td></td><td></td><td></td></tr></table>
+<div class="callout"><b>Scoring guide:</b> 80–100% ✅ confident, exam-ready · 60–79% ⚠️ revise weak topics · &lt;60% 🔁 restart + active recall.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Exam Answer Modes (FCPS/MRCP)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">How to approach an MCQ</div>
+<ol><li><b>Read the stem twice</b> — focus on the qualifying words ("<i>most</i> likely", "<i>first</i>", "<i>best initial</i>", "<i>not</i>").</li><li><b>Identify the parasite from the clinical clues</b> (e.g., travel, eosinophilia, organ system, exposure).</li><li><b>Match the parasite to its specific feature</b> (reservoir, vector, transmission, morphology).</li><li><b>Eliminate "all-or-nothing" options</b> (e.g., "all trematodes need a snail" — true).</li><li><b>Beware of the "always/never" trap</b> — most parasitology has exceptions.</li><li><b>Pick the most specific answer</b> rather than a vague generalist.</li></ol>
+<div class="sub-h">How to approach an SBA (Single Best Answer)</div>
+<ol><li><b>Two passes</b>: first read question + answers, then re-read carefully.</li><li><b>Consider each option against the clinical scenario</b> — would a different parasite better fit?</li><li><b>Rank by specificity</b> — if two answers seem correct, choose the one with the <i>highest specificity</i> for the parasite.</li><li><b>Match to epidemiology</b>: traveller from West Africa → <i>P. falciparum</i> / <i>T. b. gambiense</i>; traveller from India → <i>P. vivax</i>, <i>L. donovani</i>; traveller from SE Asia → <i>P. knowlesi</i>, <i>O. viverrini</i>.</li><li><b>Watch for trigger words</b> (steroids → <i>Strongyloides</i>; raw fish → <i>Clonorchis</i>/<i>Diphyllobothrium</i>; raw pork → <i>T. solium</i>/<i>Trichinella</i>; sheep dog → <i>E. granulosus</i>; cat litter / meat → <i>Toxoplasma</i>).</li><li><b>Treatment questions</b>: match drug to parasite (ACT/artesunate for malaria; pentavalent antimonials/paromomycin/AmB for VL; suramin/melarsoprol/fexinidazole for HAT; benznidazole/nifurtimox for Chagas; ivermectin for Strongyloides/Onchocerca; DEC for lymphatic filaria; praziquantel for trematodes/tapeworms; albendazole/mebendazole for nematodes; pyrimethamine + sulfadiazine + folinic acid for Toxoplasma; metronidazole + luminal agent for amoebiasis).</li></ol>
+<div class="sub-h">High-Yield Triggers in Exam Stems</div>
+<table class="ctable"><tr><th>Trigger</th><th>Think</th></tr><tr><td>---------</td><td>-------</td></tr><tr><td>**"West Africa traveller + fever + banana gametocytes"**</td><td>*P. falciparum*</td></tr><tr><td>**"India + pancytopenia + hepatosplenomegaly + rK39+"**</td><td>Visceral leishmaniasis</td></tr><tr><td>**"Steroids + abdominal pain + Gram-negative sepsis"**</td><td>*Strongyloides* hyperinfection</td></tr><tr><td>**"Raw fish + biliary disease + operculated eggs"**</td><td>*Clonorchis*/*Opisthorchis*</td></tr><tr><td>**"Sheep farmer + unilocular liver cyst with daughter cysts"**</td><td>*E. granulosus* (hydatid)</td></tr><tr><td>**"Mexican immigrant + seizures + ring-enhancing lesions with scolex"**</td><td>Neurocysticercosis</td></tr><tr><td>**"Sub-Saharan + terminal haematuria"**</td><td>*S. haematobium*</td></tr><tr><td>**"Brazilian + cardiomyopathy + megaesophagus"**</td><td>Chronic Chagas</td></tr><tr><td>**"Perianal nocturnal itch + D-shaped eggs on Scotch tape"**</td><td>*Enterobius*</td></tr><tr><td>**"B12 deficiency + raw fish + broad proglottids"**</td><td>*Diphyllobothrium*</td></tr><tr><td>**"Web-space pruritus + burrow + household contacts"**</td><td>Sarcoptes scabiei</td></tr><tr><td>**"Day-biting fly + Calabar swelling + eye worm"**</td><td>*Loa loa*</td></tr><tr><td>**"Blackfly + skin depigmentation + blindness"**</td><td>*Onchocerca*</td></tr><tr><td>**"Eosinophilic meningitis + snail ingestion"**</td><td>*Angiostrongylus*</td></tr></table>
+<div class="sub-h">What NOT to confuse</div>
+<ul><li><b>Romaña sign (Chagas)</b> vs <b>chancre (HAT)</b> — both are early skin/eye signs but completely different diseases.</li><li><b>Larva currens (Strongyloides)</b> vs <b>cutaneous larva migrans (hookworm A. braziliense)</b> — currens is perianal, fast-moving (cm/hr); migrans is foot/buttock, serpiginous, slow (cm/day).</li><li><b>Hypnozoite relapse (vivax/ovale)</b> vs <b>recrudescence (treatment failure in falciparum)</b> vs <b>reinfection (new mosquito bite)</b>.</li><li><b>Schistosome species by egg spine</b> (terminal = haematobium; lateral = mansoni; round = japonicum).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Protozoa/Helminth classification, life cycles, major diseases (malaria, leishmania, trypanosomes, toxoplasma, giardia, amoebiasis, strongyloides, schisto, filariasis, taenia, echinococcus), immune evasion, host defence (Th1 vs Th2), diagnosis</td></tr><tr><td>**Should Know 🟡**</td><td>Rare protozoa (Cyclospora, Isospora, Dientamoeba), rare helminths (Angiostrongylus, Spirometra, Dracunculus), detailed life cycles, vector biology, ectoparasites (scabies, lice, ticks), snail intermediate hosts, drug mechanisms</td></tr><tr><td>**Nice to Know 🟢**</td><td>Zoonotic parasites, co-infections, parasite genomics, vaccine development, control programmes, history (Carlos Chagas, Walter Reed, Ronald Ross), rare trematodes, Spirometra, Gnathostoma, Baylisascaris</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Plasmodium falciparum is distinguished by:</b></li></ol>
+<p>A. Hypnozoites in liver B. <b>Infected RBCs with multiple ring forms, banana-shaped gametocytes, sequestration</b> C. Relapse after treatment D. Only vivax causes cerebral malaria E. Transmitted by Anopheles only in Africa</p>
+<ol><li><b>Visceral leishmaniasis (Kala-azar) is caused by:</b></li></ol>
+<p>A. Leishmania tropica B. <b>Leishmania donovani / infantum</b> C. Leishmania major C. Leishmania braziliensis E. Leishmania mexicana</p>
+<ol><li><b>Trypanosoma cruzi (Chagas disease) — chronic manifestation:</b></li></ol>
+<p>A. Sleeping sickness B. <b>Cardiomyopathy, megaesophagus, megacolon</b> C. Chancre only D. Cerebral malaria E. Lymphatic obstruction</p>
+<ol><li><b>Strongyloides stercoralis — unique feature:</b></li></ol>
+<p>A. Skin penetration only B. <b>Autoinfection → hyperinfection in immunosuppressed (steroids, HTLV-1)</b> C. Ingested in undercooked pork D. Causes lymphatic filariasis E. Diagnosed by blood film only</p>
+<ol><li><b>Schistosoma haematobium causes:</b></li></ol>
+<p>A. Hepatosplenic schistosomiasis B. <b>Urinary schistosomiasis (haematuria) → bladder cancer</b> C. Intestinal schistosomiasis only D. Pulmonary schistosomiasis E. Cutaneous schistosomiasis only</p>
+<ol><li><b>Taenia solium vs Taenia saginata — key difference:</b></li></ol>
+<p>A. T. solium from beef B. <b>T. solium causes cysticercosis (neurocysticercosis); T. saginata does not</b> C. T. saginata from pork D. Both cause cysticercosis E. No difference</p>
+<ol><li><b>Echinococcus granulosus — hydatid cyst features:</b></li></ol>
+<p>A. Alveolar, invasive, no daughter cysts B. <b>Unilocular, daughter cysts, anaphylaxis risk on rupture</b> C. Multilocular, no anaphylaxis risk D. No daughter cysts, calcified only E. Always pulmonary</p>
+<ol><li><b>Cerebral malaria — pathogenic mechanism:</b></li></ol>
+<p>A. Direct neuronal invasion B. <b>Sequestration of parasitised RBCs in cerebral microvasculature (PfEMP1-ICAM1)</b> C. Neurotoxin production C. Autoimmune demyelination E. Meningeal invasion only</p>
+<ol><li><b>Toxoplasma gondii congenital infection — classic triad:</b></li></ol>
+<p>A. Fever, rash, arthralgia B. <b>Chorioretinitis, hydrocephalus, intracranial calcifications</b> C. Seizures, blindness, deafness D. Hepatosplenomegaly, jaundice, anaemia E. Cardiomyopathy, arrhythmia, heart block</p>
+<ol><li><b>Filariasis — nocturnal periodicity of microfilariae is characteristic of:</b></li></ol>
+<p>A. Onchocerca volvulus B. Loa loa C. <b>Wuchereria bancrofti, Brugia malayi</b> D. Mansonella perstans E. Dracunculus medinensis</p>
+<ol><li><b>Hookworm anaemia is due to:</b></li></ol>
+<p>A. Haemolysis B. <b>Blood loss from intestinal attachment (anticoagulant secretion)</b> C. Bone marrow suppression D. Nutritional deficiency only E. Haemoglobinuria</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Returning traveller from West Africa, fever 2 weeks. Thick film: rings, banana gametocytes. Best treatment:</b></li></ol>
+<p>A. Chloroquine B. <b>Artemether-lumefantrine (or IV artesunate if severe)</b> C. Primaquine alone D. Mefloquine alone E. Doxycycline alone</p>
+<ol><li><b>HIV patient, CD4 50, fever, hepatosplenomegaly, pancytopenia. Splenic aspirate: amastigotes in macrophages. Diagnosis:</b></li></ol>
+<p>A. Malaria B. <b>Visceral Leishmaniasis (Kala-azar)</b> C. Histoplasmosis D. TB E. CMV</p>
+<ol><li><b>Child with perianal itching. Scotch tape test: oval eggs flattened on one side. Treatment:</b></li></ol>
+<p>A. Albendazole single dose B. <b>Mebendazole/Albendazole + repeat 2 weeks + hygiene</b> C. Ivermectin D. Praziquantel E. Diethylcarbamazine</p>
+<ol><li><b>Farmer, eosinophilic meningitis after eating raw snails. CSF: eosinophilia, larvae. Diagnosis:</b></li></ol>
+<p>A. Neurocysticercosis B. <b>Angiostrongylus cantonensis</b> C. Gnathostoma D. Baylisascaris E. Toxocara</p>
+<ol><li><b>Patient with seizures, CT: multiple ring-enhancing lesions with scolex. Best initial management:</b></li></ol>
+<p>A. Albendazole + steroids → surgery if needed B. <b>Steroids first (reduce oedema) → Albendazole + Praziquantel</b> C. Surgery alone D. Praziquantel alone E. Decortication</p>
+<ol><li><b>Sheep farmer, RUQ mass, CT: unilocular cyst with daughter cysts. Serology positive. Management:</b></li></ol>
+<p>A. Surgery alone B. <b>Albendazole + PAIR (Puncture, Aspiration, Injection, Re-aspiration) or surgery</b> C. Praziquantel alone D. Observation E. Drainage only</p>
+<ol><li><b>Immunocompromised patient on corticosteroids, sudden fever, abdominal pain, Gram-negative sepsis. Strongyloides suspected. Diagnostic test of choice:</b></li></ol>
+<p>A. Stool O&amp;P (single) B. <b>Stool/duodenal aspirate PCR or agar plate culture + serology</b> C. Blood culture D. Eosinophil count only E. Chest X-ray</p>
+<ol><li><b>Pregnant woman, 2nd trimester, flu-like illness. Fetal ultrasound: hydrocephalus, intracranial calcifications, chorioretinitis. Most likely:</b></li></ol>
+<p>A. CMV B. <b>Toxoplasma gondii (congenital)</b> C. Rubella D. Zika E. HSV</p>
+<ol><li><b>Raw fish eater, RUQ pain, eosinophilia. CT: dilated bile ducts, no stones. Stool: operculated eggs. Diagnosis:</b></li></ol>
+<p>A. Fasciola B. <b>Clonorchis sinensis / Opisthorchis viverrini</b> C. Paragonimus D. Schistosoma E. Ascaris</p>
+<ol><li><b>B12 deficiency, megaloblastic anaemia, fish tapeworm segments in stool. Diagnosis:</b></li></ol>
+<p>A. Taenia saginata B. Taenia solium C. Hymenolepis nana D. <b>Diphyllobothrium latum</b> E. Echinococcus</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Malaria Falciparum key features?</li></ul>
+<p>A: Multiple rings, banana gametocytes, sequestration, no hypnozoites</p>
+<ul><li>Q: Vivax/Ovale relapse?</li></ul>
+<p>A: Hypnozoites in liver → primaquine needed</p>
+<ul><li>Q: Visceral Leishmaniasis?</li></ul>
+<p>A: Donovani/infantum, Kala-azar, fever, hepatosplenomegaly, pancytopenia</p>
+<ul><li>Q: Cutaneous Leishmaniasis?</li></ul>
+<p>A: Tropica/major, oriental sore, self-healing ulcer</p>
+<ul><li>Q: T. brucei gambiense vs rhodesiense?</li></ul>
+<p>A: Gambiense = West, chronic; Rhodesiense = East, acute</p>
+<ul><li>Q: T. cruzi?</li></ul>
+<p>A: Chagas, triatomine bug, cardiomyopathy, megaesophagus/colon</p>
+<ul><li>Q: Toxoplasma congenital triad?</li></ul>
+<p>A: Chorioretinitis, hydrocephalus, intracranial calcifications</p>
+<ul><li>Q: Strongyloides autoinfection?</li></ul>
+<p>A: Rhabditiform → filiform in gut → re-enter mucosa → hyperinfection if immunosuppressed</p>
+<ul><li>Q: Hookworm vs Strongyloides?</li></ul>
+<p>A: Hookworm = anaemia; Strongyloides = autoinfection, larva currens, hyperinfection with steroids</p>
+<ul><li>Q: Schistosoma haematobium?</li></ul>
+<p>A: Urinary, haematuria, bladder cancer</p>
+<ul><li>Q: Schistosoma mansoni/japonicum?</li></ul>
+<p>A: Hepatosplenic, portal hypertension</p>
+<ul><li>Q: Taenia solium?</li></ul>
+<p>A: Pork, cysticercosis (neuro = seizures), autoinfection possible</p>
+<ul><li>Q: Taenia saginata?</li></ul>
+<p>A: Beef, no cysticercosis</p>
+<ul><li>Q: Echinococcus granulosus?</li></ul>
+<p>A: Dog definitive, sheep intermediate, unilocular hydatid cyst (liver/lung), anaphylaxis risk</p>
+<ul><li>Q: Echinococcus multilocularis?</li></ul>
+<p>A: Fox definitive, rodent intermediate, alveolar/infiltrative, more aggressive</p>
+<ul><li>Q: Strongyloides hyperinfection trigger?</li></ul>
+<p>A: Corticosteroids, HTLV-1</p>
+<ul><li>Q: Neurocysticercosis treatment?</li></ul>
+<p>A: Steroids first → Albendazole + Praziquantel</p>
+<ul><li>Q: Hydatid cyst management?</li></ul>
+<p>A: Albendazole + PAIR or surgery</p>
+<ul><li>Q: Schistosome egg spines?</li></ul>
+<p>A: Haematobium = terminal; Mansoni = lateral; Japonicum = round/none</p>
+<ul><li>Q: Vector of malaria?</li></ul>
+<p>A: Anopheles mosquito (female, night-biting)</p>
+<ul><li>Q: Vector of Leishmania?</li></ul>
+<p>A: Sandfly (Phlebotomus/Lutzomyia)</p>
+<ul><li>Q: Vector of T. brucei?</li></ul>
+<p>A: Tsetse fly (Glossina)</p>
+<ul><li>Q: Vector of T. cruzi?</li></ul>
+<p>A: Triatomine (kissing) bug — faecal contamination</p>
+<ul><li>Q: Vector of Onchocerca?</li></ul>
+<p>A: Black fly (Simulium) — breeds in fast rivers</p>
+<ul><li>Q: Vector of Loa loa?</li></ul>
+<p>A: Tabanid (Chrysops) — day-biting forest fly</p>
+<ul><li>Q: Vector of Babesia?</li></ul>
+<p>A: Ixodid tick</p>
+<ul><li>Q: Definitive host of Echinococcus granulosus?</li></ul>
+<p>A: Dog (adult worm in intestine)</p>
+<ul><li>Q: Definitive host of Plasmodium?</li></ul>
+<p>A: Female Anopheles mosquito</p>
+<ul><li>Q: Definitive host of Toxoplasma?</li></ul>
+<p>A: Cat (sexual cycle in intestinal epithelium)</p>
+<ul><li>Q: Definitive host of Schistosoma?</li></ul>
+<p>A: Human (sexual reproduction in venules); snail = intermediate</p>
+<ul><li>Q: Definitive host of Taenia solium?</li></ul>
+<p>A: Human (adult worm in intestine); pig = intermediate (cysticercus); humans can also be intermediate (cysticercosis)</p>
+<ul><li>Q: Drug of choice for Strongyloides?</li></ul>
+<p>A: Ivermectin</p>
+<ul><li>Q: Drug of choice for lymphatic filariasis?</li></ul>
+<p>A: DEC (diethylcarbamazine) + doxycycline (for Wolbachia)</p>
+<ul><li>Q: Drug of choice for onchocerciasis?</li></ul>
+<p>A: Ivermectin (avoid DEC — risk of Mazzotti reaction)</p>
+<ul><li>Q: Drug of choice for neurocysticercosis?</li></ul>
+<p>A: Steroids first, then albendazole + praziquantel</p>
+<ul><li>Q: Drug of choice for amoebic liver abscess?</li></ul>
+<p>A: Metronidazole + luminal agent (e.g., paromomycin)</p>
+<ul><li>Q: Drug of choice for primary amoebic meningoencephalitis (Naegleria)?</li></ul>
+<p>A: Amphotericin B (intrathecal + IV) + miltefosine + azithromycin (poor prognosis)</p>
+<ul><li>Q: Drug of choice for visceral leishmaniasis?</li></ul>
+<p>A: Liposomal amphotericin B (single dose 10 mg/kg) or miltefosine</p>
+<ul><li>Q: Drug of choice for American trypanosomiasis (acute)?</li></ul>
+<p>A: Benznidazole (or nifurtimox) — limited efficacy in chronic phase</p>
+<ul><li>Q: Drug of choice for African sleeping sickness (gambiense)?</li></ul>
+<p>A: Fexinidazole (1st stage); NECT (nifurtimox-eflornithine combination) for 2nd stage</p>
+<ul><li>Q: Drug of choice for African sleeping sickness (rhodesiense)?</li></ul>
+<p>A: Suramin (1st stage); melarsoprol (2nd stage — toxic)</p>
+<ul><li>Q: Drug of choice for scabies?</li></ul>
+<p>A: Permethrin 5% cream (whole body) + treat contacts + wash bedding</p>
+<ul><li>Q: Drug of choice for Enterobius?</li></ul>
+<p>A: Mebendazole/albendazole single dose, repeat in 2 weeks</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — P. falciparum: multiple rings, banana gametocytes, sequestration in deep vasculature</li><li><b>B</b> — VL = L. donovani/infantum</li><li><b>B</b> — T. cruzi chronic = cardiomyopathy, megaesophagus, megacolon</li><li><b>B</b> — Autoinfection → hyperinfection (steroids, HTLV-1) — unique to Strongyloides</li><li><b>B</b> — S. haematobium = urinary (haematuria) → squamous cell bladder cancer</li><li><b>B</b> — T. solium = cysticercosis (neuro); T. saginata = no cysticercosis</li><li><b>B</b> — E. granulosus = unilocular, daughter cysts, anaphylaxis on rupture</li><li><b>B</b> — PfEMP1 on infected RBCs binds ICAM-1/other → sequestration in brain microvasculature</li><li><b>B</b> — Congenital toxo triad: chorioretinitis, hydrocephalus, intracranial calcifications</li><li><b>C</b> — Wuchereria/Brugia = nocturnal periodicity; Loa loa = diurnal; Onchocerca = skin snip</li><li><b>B</b> — Hookworm attaches to duodenal mucosa, secretes anticoagulant → chronic blood loss</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Falciparum malaria = ACT (artemether-lumefantrine) or IV artesunate if severe</li><li><b>B</b> — VL in HIV = splenic aspirate amastigotes; treat with liposomal AmB or miltefosine</li><li><b>B</b> — Enterobius = perianal itching, Scotch tape; Mebendazole/Albendazole + repeat 2wks</li><li><b>B</b> — Eosinophilic meningitis + snail ingestion = Angiostrongylus cantonensis</li><li><b>B</b> — NCC = steroids first (reduce oedema) then albendazole + praziquantel</li><li><b>B</b> — Hydatid cyst = albendazole + PAIR or surgery (anaphylaxis risk)</li><li><b>B</b> — Strongyloides diagnosis = PCR/culture/serology (stool O&amp;P insensitive)</li><li><b>B</b> — Congenital toxo triad = hydrocephalus, chorioretinitis, calcifications</li><li><b>B</b> — Clonorchis/Opisthorchis = raw fish, biliary dilatation, operculated eggs</li><li><b>D</b> — Diphyllobothrium = fish tapeworm, B12 deficiency (competition)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Parasitic Structure, Classification &amp; Pathogenesis</b> is a <b>Must Know 🔴</b> topic. <b>Key takeaway:</b> Protozoa (4 groups) + Helminths (3 classes) + Ectoparasites (insects, mites, ticks, fleas). Complex life cycles with vectors/intermediate hosts and reservoir zoonoses. Malaria (P. falciparum severe, relapse vivax/ovale). Leishmania (VL/CL/MCL). Trypanosomes (African vs American). Toxoplasma (congenital, HIV). Strongyloides (autoinfection, hyperinfection steroids). Schistosoma (urinary vs hepatosplenic). Taenia (solium neurocysticercosis vs saginata). Echinococcus (hydatid cyst, anaphylaxis). Immune: Th1 (protozoa), Th2/eosinophils (helminths). Diagnosis: stool O&amp;P, blood films, serology, antigen, PCR, imaging, special tests (Scotch tape, skin snip, urine, duodenal aspirate). <b>Exam focus:</b> Life cycles, species differentiation, cytoadherence/sequestration, autoinfection, cysticercosis vs taeniasis, hydatid management, immune responses, drug choices, vector–parasite pairings, zoonotic reservoirs, ectoparasite management. <b>Clinical relevance:</b> Travel medicine, immunocompromised management (HIV, steroids, HTLV-1, transplant), neurological infections, eosinophilia workup, WHO elimination programmes (malaria, lymphatic filariasis, onchocerciasis, schistosomiasis, Chagas, Guinea worm near-eradication), paediatric infections, food/water safety.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Parasitic Structure Classification Pathogenesis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

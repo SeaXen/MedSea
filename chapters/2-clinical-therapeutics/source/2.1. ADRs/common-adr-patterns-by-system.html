@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Common Adr Patterns By System — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Common Adr Patterns By System</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify common organ-specific ADR patterns</li><li>[ ] Recognize <b>culprit drugs</b> for each system</li><li>[ ] Apply <b>Mnemonics</b> (e.g., ATCHING, SLANT) to remember drug-induced conditions</li><li>[ ] Recognize drug-induced <b>lupus, hepatitis, pancreatitis, nephritis, colitis</b></li><li>[ ] Differentiate drug-induced from primary disease</li><li>[ ] List withdrawal and rebound reactions (Type E)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">The Mnemonic Table</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Mnemonic</th><th>Drug Causes</th></tr><tr><td>--------</td><td>----------</td><td>-------------</td></tr><tr><td>**Skin**</td><td>"**ITCHING**"</td><td>I-... [see below]</td></tr><tr><td>**Liver**</td><td>"**ATT LASH**"</td><td>ATT, anticonvulsants, NSAIDs, statins, amiodarone, supplements</td></tr><tr><td>**Renal**</td><td>"**PINCH-H**"</td><td>Proton pump inhibitors, bisphosphonates, ACEi, NSAIDs, contrast, heparin, NSAIDs (mimic AKI)</td></tr><tr><td>**Lung**</td><td>"**DAMN PAINS**"</td><td>Different ADRs per class</td></tr><tr><td>**Heart**</td><td>"**ABCDE**"</td><td>Antiarrhythmics, β-blockers, Ca-blockers, Digoxin, Etc</td></tr><tr><td>**GI**</td><td>"**NAUSEA**"</td><td>NSAIDs, Antibiotics, Ulcerogenic, Steroids, Erythromycin, Aspirin</td></tr><tr><td>**Haem**</td><td>"**PANIC S**"</td><td>Penicillins, Azathioprine, NSAIDs, Ibuprofen, Carbamazepine, Sulfonamides</td></tr><tr><td>**Neuro**</td><td>"**SLANT**"</td><td>Serotonin, Lithium, Anticholinergics, Neuroleptics, TCA</td></tr><tr><td>**Endocrine**</td><td>"**GHOST**"</td><td>Glucocorticoids, Hormones, OCP, Statins, Thyroid drugs</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — ADR Workup</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[New clinical event] --&gt; B[Is the patient on drugs?] B --&gt;|No| C[Non-drug cause] B --&gt;|Yes| D[Temporal relationship?] D --&gt;|No| C D --&gt;|Yes| E[System-specific workup] E --&gt; F{Organ involved?} F --&gt;|Skin| G[ITCHING - SJS/DRESS check] F --&gt;|Liver| H[LFT pattern, RUCAM] F --&gt;|Kidney| I[U&amp;E, eGFR, urinalysis] F --&gt;|Lung| J[CXR, BAL, drug timeline] F --&gt;|Heart| K[ECG, echo, QTc] F --&gt;|GI| L[Endoscopy, stool culture] F --&gt;|Blood| M[FBC, blood film, BM] F --&gt;|Neuro| N[CT/MRI, CSF if needed] G --&gt; O[Stop suspect drug; alternative class] H --&gt; O I --&gt; O J --&gt; O K --&gt; O L --&gt; O M --&gt; O N --&gt; O O --&gt; P[Yellow card if serious/unexpected] </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables — Drug-Induced Disease by System</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 Drug-Induced Skin Reactions</div>
+<table class="ctable"><tr><th>Reaction</th><th>Mnemonic</th><th>Drugs</th></tr><tr><td>----------</td><td>----------</td><td>-------</td></tr><tr><td>**R**ash (maculopapular)</td><td>"**MR BUMP**"</td><td>Most drugs (esp. penicillins, sulfa, allopurinol)</td></tr><tr><td>**S**JS / TEN</td><td>"**SSNaA**"</td><td>Sulfa, Steroids (withdrawal), Nevirapine, allopurinol, anticonvulsants (lamotrigine, carbamazepine, phenytoin)</td></tr><tr><td>**D**RESS (Drug Reaction with Eosinophilia and Systemic Symptoms)</td><td>"**AEDs and allopurinol**"</td><td>Anticonvulsants, allopurinol, sulfonamides, minocycline, vancomycin</td></tr><tr><td>**A**GEP (Acute Generalised Exanthematous Pustulosis)</td><td>"**PLANS**"</td><td>Penicillins, pristinamycin, quinolones, hydroxychloroquine, diltiazem, terbinafine, sulfonamides</td></tr><tr><td>**F**ixed Drug Eruption</td><td>"**FDE drugs**"</td><td>Paracetamol, sulfa, NSAIDs, tetracyclines</td></tr><tr><td>**P**hotosensitivity</td><td>"**LITE**"</td><td>Thiazides, amiodarone, tetracyclines, quinolones, retinoids</td></tr><tr><td>**S**tevens-Johnson</td><td>HLA-B*15:02</td><td>Carbamazepine (Asians), allopurinol (HLA-B*58:01)</td></tr></table>
+<div class="sub-h">4.2 Drug-Induced Liver Injury (DILI)</div>
+<table class="ctable"><tr><th>Pattern</th><th>Mnemonic</th><th>Drugs</th></tr><tr><td>---------</td><td>----------</td><td>-------</td></tr><tr><td>**H**epatocellular (ALT>3x ULN)</td><td>"**H-PAC MAN**"</td><td>Halothane, Paracetamol, Alcohol, Contraceptives, Methyldopa, Anti-TB (INH, rifamp, PZA), Nitrofurantoin</td></tr><tr><td>**C**holestatic (ALP>2x ULN)</td><td>"**CAVE**"</td><td>Co-amoxiclav, Augmentin, erythromycin, Verapamil, Estrogens, OCPs</td></tr><tr><td>**M**ixed</td><td>"**MIX**"</td><td>Sulfa, ACEi</td></tr><tr><td>**G**ranulomatous</td><td>"**G**ran"</td><td>Allopurinol, carbamazepine, methyldopa, hydralazine</td></tr><tr><td>**S**teatosis (micro/macrovesicular)</td><td>"**FATTY**"</td><td>Valproate, Amiodarone, Tetracyclines, Tamoxifen, NRTIs (zidovudine)</td></tr></table>
+<p><b>Hy's Law:</b> ALT ≥3x ULN + bilirubin ≥2x ULN → 10-50% mortality; STOP drug.</p>
+<div class="sub-h">4.3 Drug-Induced Renal Disease (Mnemonic "**NAKED Pee**")</div>
+<table class="ctable"><tr><th>Pathology</th><th>Mnemonic</th><th>Drugs</th></tr><tr><td>-----------</td><td>----------</td><td>-------</td></tr><tr><td>**A**KI (pre-renal)</td><td>"**AAA**"</td><td>ACEi, ARBs, Aminoglycosides (combined with dehydration)</td></tr><tr><td>**I**nterstitial nephritis (AIN)</td><td>"**PPPNN**"</td><td>Penicillins, PPIs, NSAIDs, sulfa, rifampin, cephalosporins</td></tr><tr><td>**G**lomerulonephritis</td><td>"**GN-ICS**"</td><td>Gold, NSAIDs, Penicillamine, IFN, biologics, hydralazine</td></tr><tr><td>**N**ephrotic syndrome</td><td>"**MINI**"</td><td>Minocycline, Interferon, NSAIDs, bisphosphonates, gold</td></tr><tr><td>**R**enal tubular acidosis</td><td>"**ART**"</td><td>Amphotericin B, acetazolamide, sulfonamides, ifosfamide, lithium</td></tr><tr><td>**N**ephrogenic DI</td><td>"**LID**"</td><td>Lithium, Demeclocycline, amphotericin B, foscarnet</td></tr><tr><td>**N**ephrocalcinosis</td><td>"**Ca++**"</td><td>Calcium supplements, vitamin D excess, sodium bicarbonate</td></tr><tr><td>**Analgesic nephropathy**</td><td>"**PAP**"</td><td>Phenacetin, Aspirin, Paracetamol (chronic)</td></tr><tr><td>**Crystal nephropathy**</td><td>"**MMACS**"</td><td>Methotrexate, sulfonamides, triamterene, aciclovir, indinavir</td></tr></table>
+<div class="sub-h">4.4 Drug-Induced Pulmonary Disease</div>
+<table class="ctable"><tr><th>Pathology</th><th>Drugs</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**Bronchospasm**</td><td>β-blockers, NSAIDs (AERD), cholinesterase inhibitors</td></tr><tr><td>**Interstitial pneumonitis/PF**</td><td>Amiodarone, methotrexate, nitrofurantoin, bleomycin, cyclophosphamide, BCG</td></tr><tr><td>**Pulmonary oedema**</td><td>Transfusion (TRALI), IV fluids, β-agonists (high dose), heroin</td></tr><tr><td>**Eosinophilic pneumonia**</td><td>Nitrofurantoin, sulfonamides, NSAIDs</td></tr><tr><td>**Pulmonary haemorrhage**</td><td>Anticoagulants, antiplatelets, abciximab</td></tr><tr><td>**Pleural disease**</td><td>Bromocriptine, methotrexate, amiodarone, hydralazine (lupus)</td></tr><tr><td>**Respiratory depression**</td><td>Opioids, benzodiazepines (esp. combined)</td></tr><tr><td>**Hypersensitivity pneumonitis**</td><td>Methotrexate, sirolimus, nitrofurantoin</td></tr></table>
+<div class="sub-h">4.5 Drug-Induced Cardiac Disease</div>
+<table class="ctable"><tr><th>Pathology</th><th>Drugs</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**Bradycardia / AV block**</td><td>β-blockers, digoxin, CCB (non-DHP), amiodarone, clonidine, ivabradine, cholinesterase inhibitors</td></tr><tr><td>**Tachycardia / AF**</td><td>Theophylline, β-agonists, levothyroxine excess, adenosine antagonists (caffeine)</td></tr><tr><td>**Torsades de Pointes (QT)**</td><td>"**SAAD**" — Sotalol, Amiodarone, Anti-arrhythmics class III, Dofetilide; macrolides, fluoroquinolones, methadone, ondansetron, haloperidol, TCAs</td></tr><tr><td>**Cardiomyopathy**</td><td>Anthracyclines (Doxorubicin), trastuzumab, cyclophosphamide, clozapine</td></tr><tr><td>**Heart failure exacerbation**</td><td>NSAIDs, CCB (verapamil), rosiglitazone, pioglitazone, anti-TNF, dexamethasone</td></tr><tr><td>**Myocarditis**</td><td>Clozapine, sulfonamides, penicillins, allopurinol</td></tr><tr><td>**Pericarditis**</td><td>Procainamide, hydralazine, isoniazid, penicillins, anti-TNF</td></tr><tr><td>**Valvulopathy**</td><td>Ergot alkaloids, pergolide, cabergoline, fenfluramine, dexfenfluramine, MDMA</td></tr><tr><td>**Pulmonary HTN**</td><td>Dexfenfluramine, aminorex, dasatinib</td></tr><tr><td>**Hypertension**</td><td>NSAIDs, OCP, sympathomimetics, corticosteroids, ciclosporin, tacrolimus</td></tr><tr><td>**Hypotension**</td><td>Antihypertensives, opioids, anaesthetics, levodopa, bromocriptine</td></tr></table>
+<div class="sub-h">4.6 Drug-Induced GI Disease</div>
+<table class="ctable"><tr><th>Pathology</th><th>Drugs</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**Peptic ulcer / bleeding**</td><td>NSAIDs, aspirin, anticoagulants, steroids (with NSAID)</td></tr><tr><td>**Oesophagitis**</td><td>Bisphosphonates, doxycycline, iron, potassium chloride, NSAIDs</td></tr><tr><td>**Hepatotoxicity**</td><td>(See DILI table)</td></tr><tr><td>**Pancreatitis**</td><td>"**HAD PANIC**" — HIV drugs (didanosine, pentamidine), Azathioprine, Didanosine, Pentamidine, Asparaginase, Nitrofurantoin, Immunosuppressants, Corticosteroids, Valproate, GLP-1 agonists, GLP-1 RAs</td></tr><tr><td>**Colitis (PMC)**</td><td>Clostridioides difficile — antibiotics (esp. clindamycin, fluoroquinolones, cephalosporins)</td></tr><tr><td>**Microscopic colitis**</td><td>PPIs, NSAIDs, SSRIs</td></tr><tr><td>**Constipation**</td><td>Opioids, anticholinergics, CCB, iron, antihistamines, ondansetron</td></tr><tr><td>**Diarrhoea**</td><td>Antibiotics, metformin, PPIs, colchicine, magnesium-containing antacids, SSRIs</td></tr><tr><td>**Nausea/vomiting**</td><td>Chemotherapy, opioids, antibiotics (erythromycin), metformin, digoxin</td></tr></table>
+<div class="sub-h">4.7 Drug-Induced Haematological Disease (Mnemonic "**PANICS**")</div>
+<table class="ctable"><tr><th>Cytopenia</th><th>Drugs</th></tr><tr><td>----------</td><td>-------</td></tr><tr><td>**P**ancytopenia</td><td>Chloramphenicol, benzene, methimazole, gold, chemotherapy</td></tr><tr><td>**A**plastic anaemia</td><td>Chloramphenicol, benzene, carbamazepine, NSAIDs, gold, anticonvulsants</td></tr><tr><td>**N**eutropenia / Agranulocytosis</td><td>"**CAN STOP L**" — Clozapine, Antithyroid (PTU/methimazole), NSAIDs (diclofenac), Sulfonamides, Trimethoprim, Olanzapine, Ticlopidine, Lamotrigine</td></tr><tr><td>**I**ron deficiency (chronic blood loss)</td><td>NSAIDs, anticoagulants</td></tr><tr><td>**T**hrombocytopenia</td><td>"**HIT Mnemonic**" — Heparin (HIT), Ibuprofen, linezolid, TTP drugs, quinine, vancomycin, abciximab, eptifibatide, chemotherapy</td></tr><tr><td>**H**aemolytic anaemia (immune)</td><td>"**SHIPP**" — Sulfonamides, Hydralazine, Ibuprofen, Penicillins, Procainamide, α-methyldopa, quinine, rifampicin</td></tr><tr><td>**A**plastic anaemia</td><td>Chloramphenicol, benzene, gold, penicillamine, anticonvulsants, NSAIDs</td></tr><tr><td>**E**osinophilia</td><td>DRESS, allopurinol, anticonvulsants, sulfa, abacavir, methimazole</td></tr></table>
+<div class="sub-h">4.8 Drug-Induced Neurological Disease (Mnemonic "**SLANT**")</div>
+<table class="ctable"><tr><th>Pathology</th><th>Drugs</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**S**erotonin syndrome</td><td>SSRIs + MAOIs, tramadol, linezolid, methylene blue, triptans</td></tr><tr><td>**L**ithium toxicity</td><td>Lithium (narrow TI)</td></tr><tr><td>**A**nticholinergic syndrome</td><td>Antihistamines, TCAs, antipsychotics, antiparkinsonian</td></tr><tr><td>**N**euroleptic malignant syndrome</td><td>Antipsychotics (D2 antagonism)</td></tr><tr><td>**T**ardive dyskinesia</td><td>Antipsychotics (long-term)</td></tr><tr><td>**S**eizures</td><td>Tramadol, meperidine (pethidine), bupropion, INH, fluoroquinolones, withdrawal (benzo, alcohol)</td></tr><tr><td>**P**arkinsonism</td><td>Antipsychotics, metoclopramide, prochlorperazine, reserpine</td></tr><tr><td>**P**eripheral neuropathy</td><td>Vincristine, INH, metronidazole, nitrofurantoin, didanosine, amiodarone</td></tr><tr><td>**H**eadache (analgesic-overuse)</td><td>Triptans, opioids, paracetamol, NSAIDs</td></tr><tr><td>**C**erebellar</td><td>Phenytoin, carbamazepine, lithium, 5-FU, cytosine arabinoside</td></tr><tr><td>**O**totoxicity</td><td>Aminoglycosides, loop diuretics, vancomycin, platinum chemo, macrolides</td></tr><tr><td>**V**estibulotoxicity</td><td>Gentamicin, streptomycin</td></tr></table>
+<div class="sub-h">4.9 Drug-Induced Endocrine Disease (Mnemonic "**GHOSTS**")</div>
+<table class="ctable"><tr><th>Pathology</th><th>Drugs</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**G**lucocorticoid excess (iatrogenic Cushing's)</td><td>Long-term steroids</td></tr><tr><td>**H**ypothyroidism</td><td>Lithium, amiodarone, interferon-α, anti-TNF, sunitinib</td></tr><tr><td>**O**CP effects (VTE, HTN, cholestasis)</td><td>Combined OCP</td></tr><tr><td>**S**exual dysfunction</td><td>Antihypertensives (β-blocker, thiazide), SSRIs, antipsychotics, finasteride</td></tr><tr><td>**T**hyroid storm</td><td>Amiodarone (in pre-existing thyroid disease)</td></tr><tr><td>**Hyperglycaemia**</td><td>Steroids, thiazides, tacrolimus, ciclosporin, antipsychotics (atypical)</td></tr><tr><td>**Hypoglycaemia**</td><td>Insulin, sulfonylureas, quinine, pentamidine, β-blockers (mask symptoms)</td></tr><tr><td>**Gynaecomastia**</td><td>Spironolactone, cimetidine, ketoconazole, finasteride, anti-androgens, digoxin, amiodarone, methyldopa</td></tr><tr><td>**Galactorrhoea**</td><td>Antipsychotics (D2 block), domperidone, metoclopramide, methyldopa, opioids</td></tr><tr><td>**SIADH**</td><td>SSRIs, TCAs, carbamazepine, thiazides, vincristine, cyclophosphamide</td></tr><tr><td>**Diabetes insipidus**</td><td>Lithium, demeclocycline</td></tr><tr><td>**Adrenal suppression**</td><td>Long-term steroids (esp. >3 months, >7.5 mg/day prednisolone)</td></tr><tr><td>**Osteoporosis**</td><td>Long-term steroids, GnRH agonists, aromatase inhibitors, heparin, anticonvulsants (P450 induction → ↓Vit D)</td></tr><tr><td>**Hyperuricaemia/gout**</td><td>Thiazides, furosemide, ciclosporin, pyrazinamide, ethambutol, nicotinic acid</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>Most common organ for ADR</td><td>GI (bleed, ulcer) and skin (rash)</td></tr><tr><td>Most common fatal ADR</td><td>GI haemorrhage (NSAID + anticoagulant)</td></tr><tr><td>Drug most commonly causing SJS</td><td>Allopurinol (HLA-B*58:01)</td></tr><tr><td>Most common DILI</td><td>Paracetamol (overdose)</td></tr><tr><td>Most common AIN cause</td><td>NSAIDs, PPIs, penicillins</td></tr><tr><td>Most common cause of AKI</td><td>ACEi/ARB + diuretic in dehydration</td></tr><tr><td>Most common drug-induced nephrotic</td><td>NSAIDs, bisphosphonates</td></tr><tr><td>Most common drug-induced QT</td><td>Macrolides, fluoroquinolones, methadone, ondansetron, haloperidol, antiarrhythmics</td></tr><tr><td>Most common drug-induced Cushing's</td><td>Long-term steroids</td></tr><tr><td>Most common drug-induced gynaecomastia</td><td>Spironolactone</td></tr><tr><td>Most common drug-induced agranulocytosis</td><td>Clozapine, antithyroids (PTU/methimazole)</td></tr><tr><td>Most common cause of ADRs in elderly</td><td>Polypharmacy + inappropriate prescribing</td></tr><tr><td>Withdrawal reactions</td><td>β-blocker (rebound HTN), opioid, benzo, SSRI, corticosteroid (adrenal suppression)</td></tr><tr><td>Rebound phenomenon</td><td>Rebound HTN, rebound angina (β-blocker), rebound acidity (PPI)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Name 3 common drug causes of SJS/TEN.</b></li></ol>
+<p><i>Allopurinol (HLA-B</i>58:01), carbamazepine (HLA-B<i>15:02 in Asians), lamotrigine, sulfonamides, nevirapine, phenytoin, oxicam NSAIDs.</i></p>
+<ol><li><b>What is Hy's Law?</b></li></ol>
+<p><i>Drug-induced ALT ≥3x ULN + bilirubin ≥2x ULN (without obstruction). 10-50% mortality. STOP drug.</i></p>
+<ol><li><b>List 4 common drug causes of AKI.</b></li></ol>
+<p><i>ACEi/ARB + diuretic in dehydration, NSAIDs, aminoglycosides, contrast media, calcineurin inhibitors.</i></p>
+<ol><li><b>List 3 common drug causes of AIN.</b></li></ol>
+<p><i>NSAIDs, PPIs, penicillins/cephalosporins, sulfonamides, rifampin, allopurinol.</i></p>
+<ol><li><b>What is "quinolone arthropathy"?</b></li></ol>
+<p><i>Tendon rupture (esp. Achilles) with fluoroquinolones, esp. elderly + corticosteroids. FDA black box warning.</i></p>
+<ol><li><b>Name the drug class causing gingival hyperplasia.</b></li></ol>
+<p><i>Phenytoin, calcium channel blockers (especially nifedipine, amlodipine), ciclosporin.</i></p>
+<ol><li><b>Name 3 drugs causing gynaecomastia.</b></li></ol>
+<p><i>Spironolactone, cimetidine, ketoconazole, finasteride, anti-androgens, digoxin, amiodarone.</i></p>
+<ol><li><b>What is the most common drug-induced lupus inducer?</b></li></ol>
+<p><i>Hydralazine, procainamide, isoniazid, minocycline, quinidine, methyldopa, chlorpromazine, anti-TNF. (Mnemonic "<b>SHIPP-MC</b>" or "<b>HIPP</b>": Hydralazine, INH, Procainamide, Penicillamine.)</i></p>
+<ol><li><b>What is the most common cause of drug-induced SIADH?</b></li></ol>
+<p><i>SSRIs, TCAs, carbamazepine, thiazides, vincristine, cyclophosphamide. SSRIs are the most common.</i></p>
+<ol><li><b>What is "red man syndrome"?</b></li></ol>
+<p><i>Vancomycin infusion reaction (histamine release, NOT allergy). Treat by slowing infusion rate, antihistamines. Can occur with first dose; not IgE-mediated.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>Drug-induced lupus vs SLE</td><td>Drug-induced: antihistone Ab, renal/CNS spared, reversible on stop</td></tr><tr><td>SJS vs TEN</td><td>SJS <10% BSA; TEN >30% BSA; SJS/TEN overlap 10-30%</td></tr><tr><td>AIN vs ATN</td><td>AIN = interstitial inflammation (eosinophils, fever, rash); ATN = tubular damage (ischaemia, contrast, aminoglycosides)</td></tr><tr><td>Hepatocellular vs cholestatic</td><td>ALT>ALP = hepatocellular (RUCAM >5 = definite); ALP>ALT = cholestatic</td></tr><tr><td>DILI vs DILI mimics</td><td>DILI = drug; mimics = viral (HAV, HBV, HEV), autoimmune, ischaemic (shock liver), biliary</td></tr><tr><td>Aplastic anaemia vs agranulocytosis</td><td>Aplastic = pancytopenia + hypoplastic BM; Agranulocytosis = isolated neutrophil <0.5</td></tr><tr><td>Serotonin syndrome vs NMS</td><td>Serotonin = hyperreflexia, clonus, agitation (hours); NMS = rigidity, hyperthermia, CK (days-weeks)</td></tr><tr><td>Malignant hyperthermia vs NMS</td><td>MH = anaesthesia-related (suxamethonium, volatiles); NMS = antipsychotics</td></tr><tr><td>QT prolongation vs torsades</td><td>Many drugs prolong QT, but torsades is the malignant arrhythmia</td></tr><tr><td>Torsades vs VT</td><td>Torsades = polymorphic VT with twisting QRS axis around baseline</td></tr><tr><td>Type A vs Type B ADR by organ</td><td>Type A more predictable from pharmacology; Type B more idiosyncratic</td></tr></table>
+<p><b>Mnemonic — Hy's Law: "</b>A<b>LT + </b>B<b>ili</b> = bad (3 + 2) = stop drug, observe**</p>
+<p><b>Mnemonic — DILI patterns: "</b>H<b>epatoCAP, </b>C<b>holestasis via </b>E<b>strogen"</b> (Hepatocellular, Cholestatic, Mixed, Granulomatous)</p>
+<p><b>Mnemonic — Drug-induced Cushing's: "</b>Steroids forever = fat face, fat trunk, fat hump, thin limbs<b>"</b></p>
+<p><b>Mnemonic — AIN: "</b>PPPNN<b>"</b> (Penicillins, PPIs, NSAIDs, sulfa, NSAID)</p>
+<p><b>Mnemonic — QT prolongation: "</b>SAAD<b>"</b> (Sotalol, Amiodarone, Antiarrhythmics, Dofetilide) + <b>"MaFLOHTO"</b> (Macrolides, Fluoroquinolones, Ondansetron, Haloperidol, TCAs, Methadone)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Drug-Induced Disease)) Skin SJS/TEN DRESS AGEP Photosensitivity Liver Hepatocellular Cholestatic Mixed Hy's Law Kidney AKI AIN Nephrotic Crystal Lung Pneumonitis Bronchospasm Eosinophilic Heart QT prolongation Torsades Cardiomyopathy Bradycardia GI Ulcer Pancreatitis Colitis Blood Pancytopenia Agranulocytosis HIT Haemolytic Neuro Serotonin syndrome NMS Parkinsonism Seizures Endocrine Cushing's Hypothyroid SIADH Gynaecomastia </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>--------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>Skin (SJS, DRESS, AGEP)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Liver (DILI patterns, Hy's)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Renal (AKI, AIN, nephrotic)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Cardiac (QT, brady, CM)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>GI (ulcer, pancreatitis)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Blood (agran, HIT)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Neuro (5HT, NMS, PD)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Endocrine (Cushing's, gynaeco)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>Skin ADRs</td><td>/5</td></tr><tr><td>Liver ADRs (DILI, Hy's)</td><td>/5</td></tr><tr><td>Renal ADRs (AKI, AIN)</td><td>/5</td></tr><tr><td>Cardiac (QT, brady, CM)</td><td>/5</td></tr><tr><td>GI (ulcer, pancreatitis)</td><td>/5</td></tr><tr><td>Blood/Neuro/Endo</td><td>/5</td></tr><tr><td>**TOTAL**</td><td>**/30**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The most common fatal ADR in the UK is:</b></li></ol>
+<p>A. Hepatotoxicity B. Anaphylaxis C. GI haemorrhage (NSAID + anticoagulant) ✓ D. SJS E. Agranulocytosis</p>
+<ol><li><b>Hy's Law refers to:</b></li></ol>
+<p>A. ALT ≥3x ULN + bilirubin ≥2x ULN → high mortality ✓ B. Alk Phos &gt; ALT C. INR &gt;1.5 D. Bilirubin &gt;5 E. AST &gt; ALT</p>
+<ol><li><b>Which drug is the most common cause of SJS/TEN?</b></li></ol>
+<p>A. Penicillin B. Allopurinol ✓ C. Aspirin D. Paracetamol E. Omeprazole</p>
+<ol><li><b>Drug-induced lupus is associated with:</b></li></ol>
+<p>A. Anti-dsDNA B. Anti-histone antibodies ✓ C. Anti-Sm D. ANCA E. Anti-CCP</p>
+<ol><li><b>Which is the most common cause of AIN?</b></li></ol>
+<p>A. ACEi B. NSAIDs and PPIs ✓ C. Warfarin D. Heparin E. Statins</p>
+<ol><li><b>"Red man syndrome" is associated with:</b></li></ol>
+<p>A. Penicillin B. Vancomycin ✓ C. Rifampicin D. Erythromycin E. Tetracycline</p>
+<ol><li><b>Gynaecomastia is most commonly caused by:</b></li></ol>
+<p>A. Furosemide B. Spironolactone ✓ C. Ramipril D. Atenolol E. Amlodipine</p>
+<ol><li><b>Drug-induced SIADH is most commonly associated with:</b></li></ol>
+<p>A. Thiazides B. SSRIs ✓ C. Loop diuretics D. β-blockers E. ACEi</p>
+<ol><li><b>Tendon rupture is associated with:</b></li></ol>
+<p>A. Penicillins B. Fluoroquinolones ✓ C. Macrolides D. Tetracyclines E. Sulfa</p>
+<ol><li><b>Quinidine, procainamide, hydralazine, isoniazid cause:</b></li></ol>
+<p>A. Hepatotoxicity B. Drug-induced lupus ✓ C. AIN D. Haemolysis E. SIADH</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 50-year-old on TB treatment (INH, rifampicin, PZA, ethambutol) develops jaundice at week 6 with ALT 250 U/L, bilirubin 50 µmol/L. Action:</b></li></ol>
+<ul><li>A) Continue all drugs</li><li>B) Stop INH + RIF + PZA; switch to alternative regimen ✓</li><li>C) Switch to streptomycin</li><li>D) Add steroids</li><li>E) Stop only PZA</li></ul>
+<ol><li><b>A patient on allopurinol develops SJS at 2 weeks. Best management:</b></li></ol>
+<ul><li>A) Rechallenge after 1 month</li><li>B) Stop allopurinol, switch to febuxostat, supportive care, dermatology, ICU if TEN ✓</li><li>C) Reduce dose</li><li>D) Add antihistamine</li><li>E) Continue with steroid cover</li></ul>
+<ol><li><b>A 70-year-old on lisinopril + indapamide develops AKI after gastroenteritis. Likely mechanism:</b></li></ol>
+<ul><li>A) Interstitial nephritis</li><li>B) Pre-renal AKI from ACEi + diuretic + volume depletion ✓</li><li>C) Crystal nephropathy</li><li>D) ATN</li><li>E) Glomerulonephritis</li></ul>
+<ol><li><b>A patient on clozapine develops ANC 0.4 × 10⁹/L. Action:</b></li></ol>
+<ul><li>A) Continue clozapine</li><li>B) Stop clozapine immediately, FBC daily, consider G-CSF ✓</li><li>C) Reduce dose</li><li>D) Add G-CSF and continue</li><li>E) Switch to olanzapine but continue clozapine</li></ul>
+<ol><li><b>A patient on amiodarone for 3 years presents with dry cough and dyspnoea; CXR shows interstitial infiltrates. The most likely ADR is:</b></li></ol>
+<ul><li>A) Type A, dose-related</li><li>B) Type C, chronic, cumulative, dose-related pulmonary fibrosis ✓</li><li>C) Type B, idiosyncratic</li><li>D) Type D, delayed</li><li>E) Type E, withdrawal</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>C</b> (GI haemorrhage is most common fatal ADR)</li><li><b>A</b> (Hy's Law = ALT 3x + Bili 2x = high mortality)</li><li><b>B</b> (Allopurinol = most common SJS cause; HLA-B*58:01)</li><li><b>B</b> (Anti-histone in drug-induced lupus)</li><li><b>B</b> (NSAIDs and PPIs most common AIN)</li><li><b>B</b> (Vancomycin = red man syndrome; histamine release)</li><li><b>B</b> (Spironolactone = most common drug gynaecomastia)</li><li><b>B</b> (SSRIs most common SIADH)</li><li><b>B</b> (Fluoroquinolones = tendon rupture)</li><li><b>B</b> (Drug-induced lupus: hydralazine, procainamide, INH, etc.)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>B</b> — Stop hepatotoxic ATT drugs; switch to alternative regimen (e.g., fluoroquinolone-based, with ethambutol + aminoglycoside).</li><li><b>B</b> — Stop allopurinol forever; dermatology + burns/ICU; supportive care; switch to febuxostat (if needed) cautiously (cross-reactivity rare but possible).</li><li><b>B</b> — Pre-renal AKI: ACEi + thiazide + dehydration → "triple whammy." Hold ACEi/diuretic, IV fluids.</li><li><b>B</b> — Stop clozapine immediately (agranulocytosis); daily FBC; consider G-CSF; never re-challenge.</li><li><b>B</b> — Amiodarone pulmonary fibrosis is Type C (chronic, cumulative).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>ADRs affect every organ system.</b> Skin: SJS (allopurinol, carbamazepine, lamotrigine, sulfa). Liver: Hy's Law (ALT 3x + Bili 2x = 10-50% mortality; stop drug). Kidney: AIN (NSAIDs, PPIs, penicillins); pre-renal AKI (ACEi + diuretic + dehydration). Blood: agranulocytosis (clozapine, antithyroids); HIT (heparin). Heart: QT prolongation (SAAD, MaFLOHTO). Neuro: 5HT syndrome, NMS. Always consider drug as cause of new symptom, especially in polypharmacy and elderly.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../ADRs|ADRs]]</li><li><b>Sibling Topic-Groups</b>: [[Definition and classification]], [[Causality assessment]], [[Reporting and pharmacovigilance]]</li><li><b>Heading Hub</b>: [[ADRs]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Drug Interactions]], [[Hepatic ADRs]], [[Renal ADRs]], [[Cardiac ADRs]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Common Adr Patterns By System · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

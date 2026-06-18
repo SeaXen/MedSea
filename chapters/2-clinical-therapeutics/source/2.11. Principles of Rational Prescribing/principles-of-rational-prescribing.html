@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Principles Of Rational Prescribing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.11. PRINCIPLES OF RATIONAL PRESCRIBING</span>
+      <div class="h1">Principles Of Rational Prescribing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>WHO 6-Step Rational Prescribing Model</b> to any clinical scenario</li><li>[ ] Define <b>P-drug</b> and <b>P-treatment</b> and construct a personal formulary</li><li>[ ] Calculate and interpret <b>NNT, NNH, and NNT/NNH ratio</b> for clinical decisions</li><li>[ ] Write a <b>legally compliant UK prescription</b> including controlled drugs</li><li>[ ] Distinguish <b>generic vs brand prescribing</b> indications (LTI drugs, MR formulations)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Core Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Rational Prescribing**</td><td>Process ensuring: Right patient, Right drug, Right dose, Right route, Right time, Right duration, Right cost, Right monitoring</td></tr><tr><td>**P-drug (Personal Drug)**</td><td>Drug selected by individual prescriber for a specific indication based on **Efficacy, Safety, Suitability, Cost**</td></tr><tr><td>**P-treatment**</td><td>Complete management plan: **Non-drug therapy + Drug + Patient information + Monitoring plan**</td></tr><tr><td>**Personal Formulary**</td><td>20-40 P-drugs covering ~80% of prescribing needs; Evidence-based; Regularly reviewed</td></tr></table>
+<div class="sub-h">P-drug Selection Criteria (WHO)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Assessment</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Efficacy**</td><td>NNT for primary outcome; Superiority vs alternatives</td></tr><tr><td>**Safety**</td><td>ADR profile; Contraindications; Interaction potential; Monitoring needs</td></tr><tr><td>**Suitability**</td><td>Patient factors (Age, Renal/Hepatic fn, Comorbidities, Pregnancy, Adherence, Preferences)</td></tr><tr><td>**Cost**</td><td>Total treatment cost (Drug + Monitoring + ADR management); Cost-effectiveness (£/QALY)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">WHO 6-Step Rational Prescribing Model</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Step 1: Define Problem] --&gt; B[Step 2: Therapeutic Objective] B --&gt; C[Step 3: Verify P-drug Suitability] C --&gt; D[Step 4: Start Treatment] D --&gt; E[Step 5: Information &amp; Warnings] E --&gt; F[Step 6: Monitor &amp; Stop] </code>``</p>
+<div class="sub-h">Step 1: Define the Patient's Problem</div>
+<ul><li><b>Accurate diagnosis</b> (Clinical + Investigations)</li><li><b>Problem list</b> — Not just diagnosis; Include comorbidities, social factors</li><li><b>Patient context</b> — Age, Renal/Hepatic function, Allergies, Current drugs, Pregnancy, Preferences, Health literacy</li></ul>
+<div class="sub-h">Step 2: Specify the Therapeutic Objective</div>
+<table class="ctable"><tr><th>Objective</th><th>Example</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Cure**</td><td>Antibiotics for pneumonia</td></tr><tr><td>**Control**</td><td>BP <130/80 in hypertension; HbA1c <53 in T2DM</td></tr><tr><td>**Palliate**</td><td>Morphine for cancer pain; Diuretics for HF symptoms</td></tr><tr><td>**Prevent**</td><td>Statin for CVD primary prevention; Vaccination</td></tr></table>
+<ul><li><b>Must be MEASURABLE</b> (Target BP, HbA1c, LDL, Pain score, FEV1)</li><li><b>Shared decision-making</b> — Agree goals with patient</li></ul>
+<div class="sub-h">Step 3: Verify Suitability of P-drug</div>
+<ul><li><b>Check against 4 criteria:</b> Efficacy, Safety, Suitability, Cost</li><li><b>Screen for:</b> Contraindications, Drug interactions, Allergies, Organ dysfunction (Renal/Hepatic), Pregnancy/Lactation, Adherence barriers</li><li><b>Patient-specific:</b> Age (Beers/STOPP), Frailty, Cognitive function, Swallowing difficulty, Cost to patient</li></ul>
+<div class="sub-h">Step 4: Start the Treatment</div>
+<ul><li><b>Prescribe by Generic (INN)</b> — Except LTI drugs, MR formulations, biosimilars</li><li><b>Clear instructions:</b> Dose, Route, Frequency, Duration, Formulation</li><li><b>Start low, go slow</b> — Especially elderly, renal/hepatic impairment, polypharmacy</li><li><b>Consider formulation:</b> Liquid if dysphagia; MR vs IR; Transdermal if GI issues</li></ul>
+<div class="sub-h">Step 5: Give Information, Instructions, and Warnings</div>
+<table class="ctable"><tr><th>Content</th><th>What to Communicate</th></tr><tr><td>---------</td><td>---------------------</td></tr><tr><td>**Information**</td><td>What drug, Why, Expected benefit, Time to effect</td></tr><tr><td>**Instructions**</td><td>How to take (Food, Timing, Technique), Missed dose, Storage</td></tr><tr><td>**Warnings**</td><td>**Key ADRs** (Common + Serious), When to seek help, Driving/Alcohol/OTC cautions, Monitoring requirements</td></tr></table>
+<div class="sub-h">Step 6: Monitor (Stop) Treatment</div>
+<ul><li><b>Efficacy monitoring:</b> Clinical review, Labs (BP, HbA1c, Lipids, U&amp;Es, LFTs), PROs</li><li><b>Safety monitoring:</b> Labs (Renal, Hepatic, FBC, Electrolytes), ADR surveillance, TDM if indicated</li><li><b>Stop criteria:</b> Goal achieved, Intolerance/ADR, Futility (no response), Patient choice, Deprescribing indication</li><li><b>Deprescribing</b> — Systematic review at every encounter (STOPP/START)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">P-drug vs P-treatment Example: Hypertension</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**P-drug**</td><td>**Amlodipine 5mg OD** (EDHF/ACEi contraindicated/black African/Caribbean)</td></tr><tr><td>**Non-drug**</td><td>DASH diet, Salt <6g, Exercise 150min/wk, Weight loss, Alcohol <14u, Smoking cessation</td></tr><tr><td>**Drug**</td><td>Amlodipine 5mg OD → Titrate to 10mg; Add ACEi/ARB if not at target</td></tr><tr><td>**Information**</td><td>"Takes 2-4 weeks for full effect; May cause ankle swelling; Take morning"</td></tr><tr><td>**Monitoring**</td><td>BP q2-4wk until controlled; U&Es at 1-2wk, then 6-monthly; Review at 3/6/12 months</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Evidence-Based Prescribing Metrics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Formula</th><th>Clinical Use</th></tr><tr><td>--------</td><td>---------</td><td>--------------</td></tr><tr><td>**ARR (Absolute Risk Reduction)**</td><td>CER - EER</td><td>Absolute benefit</td></tr><tr><td>**RRR (Relative Risk Reduction)**</td><td>(CER - EER) / CER</td><td>Often misleading alone</td></tr><tr><td>**NNT (Number Needed to Treat)**</td><td>1 / ARR</td><td>Patients to treat for 1 additional benefit</td></tr><tr><td>**ARI (Absolute Risk Increase)**</td><td>EER - CER</td><td>Absolute harm</td></tr><tr><td>**NNH (Number Needed to Harm)**</td><td>1 / ARI</td><td>Patients to treat for 1 additional harm</td></tr><tr><td>**NNT/NNH Ratio**</td><td>NNT ÷ NNH</td><td>Benefit:Harm balance (Lower = Better)</td></tr></table>
+<div class="sub-h">Example: Statin Primary Prevention (5-year)</div>
+<ul><li>MI Risk: Control 5.7% → Statin 3.9% → <b>ARR 1.8% → NNT = 56</b></li><li>Diabetes Risk: Control 3.0% → Statin 3.6% → <b>ARI 0.6% → NNH = 167</b></li><li><b>NNT/NNH = 0.33</b> — Favourable benefit:harm</li></ul>
+<div class="sub-h">NICE Cost-Effectiveness Thresholds</div>
+<ul><li><b>£20,000-30,000/QALY</b> — Standard</li><li><b>&gt;£30,000/QALY</b> — End of life, Innovation, Severe disease</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Prescription Writing Standards (UK Legal Requirements)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Standard Prescription (Human Medicines Regulations 2012)</div>
+<table class="ctable"><tr><th>Required Element</th><th>Details</th></tr><tr><td>------------------</td><td>---------</td></tr><tr><td>**Patient**</td><td>Name, DOB, Address</td></tr><tr><td>**Drug**</td><td>**Generic/INN** (Preferred); Brand only if justified</td></tr><tr><td>**Dose**</td><td>Strength, Route, Frequency</td></tr><tr><td>**Quantity**</td><td>**In words AND figures** (e.g., "Twenty-eight (28) tablets")</td></tr><tr><td>**Prescriber**</td><td>Signature, **GMC Number**, Practice Address, Date</td></tr></table>
+<div class="sub-h">Controlled Drug Prescriptions (Misuse of Drugs Regulations 2001)</div>
+<table class="ctable"><tr><th>Schedule</th><th>Examples</th><th>Additional Requirements</th><th>Validity</th><th>Repeats</th></tr><tr><td>----------</td><td>----------</td><td>------------------------</td><td>----------</td><td>---------</td></tr><tr><td>**Sch 2 (CD POM)**</td><td>Morphine, Diamorphine, Fentanyl, Oxycodone, Methadone, Methylphenidate, Ketamine</td><td>Form, Strength, **Total qty words+figures**, Dose</td><td>**28 days**</td><td>**No**</td></tr><tr><td>**Sch 3 (CD POM no register)**</td><td>Buprenorphine, Temazepam, Midazolam, Tramadol, Pregabalin, Gabapentin</td><td>Same as Sch 2</td><td>28 days</td><td>No</td></tr><tr><td>**Sch 4 (CD Benzodiazepines/Anabolic)**</td><td>Diazepam, Lorazepam, Clonazepam, Testosterone</td><td>Standard prescription</td><td>28 days</td><td>No</td></tr><tr><td>**Sch 5 (CD Exempt)**</td><td>Codeine ≤100mg, Dihydrocodeine ≤50mg, Loperamide</td><td>Standard</td><td>6 months</td><td>Yes</td></tr></table>
+<div class="sub-h">Generic vs Brand — When to Prescribe by Brand</div>
+<table class="ctable"><tr><th>Situation</th><th>Examples</th><th>Reason</th></tr><tr><td>-----------</td><td>----------</td><td>--------</td></tr><tr><td>**Narrow TI (LTI)**</td><td>Phenytoin, Carbamazepine, Phenobarbital, Valproate, Lamotrigine, Lithium, Digoxin, Theophylline, Warfarin, Tacrolimus, Ciclosporin, Sirolimus</td><td>Small PK differences → Toxicity/Loss of control</td></tr><tr><td>**Modified Release**</td><td>Lithium (Priadel vs Camcolit), Mesalazine, Nifedipine, Diltiazem, Verapamil, Morphine MR, Oxycodone MR</td><td>Release profile not interchangeable</td></tr><tr><td>**Biosimilars**</td><td>Infliximab, Adalimumab, Etanercept, Rituximab, Trastuzumab</td><td>Immunogenicity, Efficacy differences</td></tr><tr><td>**Patient stabilised**</td><td>Any drug where switch caused clinical deterioration</td><td>Continuity of care</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**WHO 6 Steps**</td><td>Define → Objective → Verify P-drug → Start → Inform → Monitor/Stop</td></tr><tr><td>**P-drug Criteria**</td><td>**Efficacy, Safety, Suitability, Cost**</td></tr><tr><td>**NNT/NNH**</td><td>NNT = 1/ARR; NNH = 1/ARI; Ratio = Benefit:Harm</td></tr><tr><td>**Prescription Legal**</td><td>Name, DOB, Address, Generic, Dose/Route/Freq, Qty words+figures, Sign, GMC, Date</td></tr><tr><td>**CD Prescription**</td><td>Sch 2/3: Form, Strength, Qty words+figures, Dose, No repeats, 28-day validity</td></tr><tr><td>**Brand Prescribing**</td><td>LTI drugs, MR formulations, Biosimilars, Stabilised patient</td></tr><tr><td>**Start Low, Go Slow**</td><td>Elderly, Renal/Hepatic impairment, Polypharmacy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Walk me through rational prescribing for a new hypertensive patient**</td><td>WHO 6 steps: 1. Diagnose HTN + assess CV risk/comorbidities → 2. Target BP <130/80 (or <140/90 if >80/frail) → 3. P-drug: Amlodipine (if black/elderly) or ACEi/ARB; Check renal fn, K, contraindications → 4. Start low (Amlodipine 5mg) → 5. Info: Morning, ankle swelling, 2-4wk for effect → 6. Monitor: BP q2-4wk, U&Es 1-2wk then 6-monthly; Deprescribe if hypotensive</td></tr><tr><td>**What is a P-drug? How does it differ from P-treatment?**</td><td>P-drug = Single drug for indication chosen by 4 criteria; P-treatment = Complete plan (Non-drug + Drug + Info + Monitoring)</td></tr><tr><td>**Calculate NNT: Control event rate 10%, Treatment event rate 7%**</td><td>ARR = 3% → NNT = 1/0.03 = **33**</td></tr><tr><td>**Legal requirements for a morphine prescription**</td><td>Schedule 2: Patient details, Drug (Morphine), Form (Tabs/Inj), Strength, Dose, **Total qty in words AND figures**, Prescriber sign + GMC + address + date, **No repeats, 28-day validity**</td></tr><tr><td>**When would you prescribe a brand instead of generic?**</td><td>LTI drugs (Phenytoin, Lithium, Warfarin, Tacrolimus), MR formulations, Biosimilars, Patient stabilised on brand</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**P-drug vs Essential Medicines List**</td><td>P-drug is **personal** to prescriber; EML is **national/population** list</td></tr><tr><td>**NNT vs RRR**</td><td>RRR = 33% sounds impressive; ARR = 1% → NNT = 100 (True magnitude)</td></tr><tr><td>**Generic substitution vs Brand prescribing**</td><td>Pharmacist substitutes generic; Prescriber writes brand — Different legal acts</td></tr><tr><td>**CD Schedule 2 vs 3**</td><td>Sch 2 = Register required (Morphine, Fentanyl); Sch 3 = No register (Tramadol, Pregabalin)</td></tr></table>
+<p><b>Mnemonic: PRESCRIBE</b></p>
+<ul><li><b>P</b>roblem defined (Diagnosis + Context)</li><li><b>R</b>ational objective (Measurable target)</li><li><b>E</b>vidence-based P-drug (Efficacy, Safety, Suitability, Cost)</li><li><b>S</b>tart low, go slow</li><li><b>C</b>ommunicate (Info, Instructions, Warnings)</li><li><b>R</b>eview (Monitor efficacy + safety)</li><li><b>I</b>ndividualise (Renal, Hepatic, Age, Pregnancy)</li><li><b>B</b>rand only if LTI/MR/Biosimilar</li><li><b>E</b>nd (Stop/Deprescribe) when goal met or harm</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid mindmap root((Rational Prescribing)) WHO 6-Step Model</p>
+<ol><li>Define Problem</li><li>Therapeutic Objective</li><li>Verify P-drug</li><li>Start Treatment</li><li>Inform &amp; Warn</li><li>Monitor &amp; Stop</li></ol>
+<p>P-Drug Concept 4 Criteria: Efficacy, Safety, Suitability, Cost Personal Formulary (20-40 drugs) P-Treatment Non-drug + Drug + Info + Monitoring Evidence-Based Metrics NNT = 1/ARR NNH = 1/ARI NNT/NNH Ratio Cost/QALY Prescription Writing Legal Requirements (UK) CD Schedules 2-5 Generic vs Brand (LTI, MR, Biosimilars) ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>WHO 6-Step Model</td><td></td><td></td></tr><tr><td>P-drug Criteria</td><td></td><td></td></tr><tr><td>NNT/NNH Calculations</td><td></td><td></td></tr><tr><td>Prescription Legal Requirements</td><td></td><td></td></tr><tr><td>CD Prescription Rules</td><td></td><td></td></tr><tr><td>Generic vs Brand Indications</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ol><li>Define rational prescribing (WHO definition)</li><li>Apply 6-step model to clinical scenario</li><li>Justify P-drug selection using 4 criteria</li><li>Write compliant prescription</li><li>Plan monitoring and deprescribing</li></ol>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li><b>WHO 6 Steps:</b> Define → Objective → Verify → Start → Inform → Monitor</li><li><b>P-drug:</b> Efficacy, Safety, Suitability, Cost</li><li><b>NNT:</b> 1/ARR; <b>NNH:</b> 1/ARI</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Rational prescribing = Right drug, Right patient, Right dose, Right time, Right monitoring, Right cost"</li><li>"P-drug is personal; EML is population"</li><li>"NNT tells you how many to treat for one benefit; NNH tells you how many for one harm"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>New prescription: Always check renal function, allergies, current meds, indication</li><li>Discharge: Medication reconciliation — Stop unnecessary, Deprescribe (STOPP/START), Communicate changes</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>WHO 6 Steps: <b>D-O-V-S-I-M</b> (Define, Objective, Verify, Start, Inform, Monitor)</li><li>P-drug 4 criteria: <b>E-S-S-C</b> (Efficacy, Safety, Suitability, Cost)</li><li>CD Rx: <b>Form, Strength, Qty Words+Figures, Dose, No Repeats, 28 Days</b></li><li>Brand: <b>LTI, MR, Biosimilar, Stabilised</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Rational prescribing is a <b>systematic, evidence-based, patient-centred process</b> (WHO 6 steps). The <b>P-drug concept</b> personalises drug selection using explicit criteria. <b>NNT/NNH</b> quantify benefit-harm balance. <b>Legal prescription writing</b> requires specific elements, especially for controlled drugs. <b>Generic prescribing</b> is default; <b>brand prescribing</b> is reserved for LTI drugs, MR formulations, biosimilars, and stabilised patients.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which step in WHO 6-step model involves checking contraindications and interactions?</b></li></ol>
+<p>A. Step 1  B. Step 2  C. <b>Step 3</b>  D. Step 4</p>
+<ol><li><b>NNT is calculated as:</b></li></ol>
+<p>A. 1/RRR  B. <b>1/ARR</b>  C. 1/ARI  D. RRR/ARR</p>
+<ol><li><b>A Schedule 2 CD prescription requires:</b></li></ol>
+<p>A. Repeat dispensing allowed  B. <b>Quantity in words and figures</b>  C. 6-month validity  D. No prescriber signature</p>
+<ol><li><b>Which drug should be prescribed by brand due to narrow therapeutic index?</b></li></ol>
+<p>A. Amlodipine  B. <b>Phenytoin</b>  C. Paracetamol  D. Omeprazole</p>
+<ol><li><b>P-treatment includes all EXCEPT:</b></li></ol>
+<p>A. Non-drug therapy  B. Drug  C. Patient information  D. <b>Pharmaceutical marketing material</b></p>
+<ol><li><b>NICE cost-effectiveness threshold (standard):</b></li></ol>
+<p>A. £10,000/QALY  B. <b>£20,000-30,000/QALY</b>  C. £50,000/QALY  D. £100,000/QALY</p>
+<ol><li><b>Schedule 3 CD validity:</b></li></ol>
+<p>A. 28 days  B. <b>28 days</b>  C. 6 months  D. 12 months</p>
+<ol><li><b>RRR vs ARR — Which is more clinically meaningful?</b></li></ol>
+<p>A. RRR  B. <b>ARR</b>  C. Both equal  D. Neither</p>
+<ol><li><b>Start low, go slow applies MOST to:</b></li></ol>
+<p>A. Young healthy adult  B. <b>Elderly with renal impairment</b>  C. Acute severe pain  D. Antibiotic for pneumonia</p>
+<ol><li><b>Algorithm for brand prescribing:</b></li></ol>
+<p>A. Always brand  B. <b>Generic default; Brand for LTI/MR/Biosimilar/Stabilised</b>  C. Brand for cheap drugs  D. Brand for new drugs</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 72-year-old man with CKD Stage 3 (eGFR 42) starts amlodipine 5mg for hypertension. Which WHO step addresses renal dose adjustment?</b></li></ol>
+<p>A. Step 1  B. Step 2  C. <b>Step 3</b>  D. Step 4</p>
+<ol><li><b>In a trial, MI rate is 8% control vs 5% treatment. NNT = ?</b></li></ol>
+<p>A. 20  B. <b>33</b>  C. 40  D. 67</p>
+<ol><li><b>A patient on warfarin develops SJS after starting allopurinol. WHO-UMC causality?</b></li></ol>
+<p>A. Certain  B. <b>Probable</b>  C. Possible  D. Unlikely</p>
+<ol><li><b>Which CD schedule requires a controlled drug register?</b></li></ol>
+<p>A. Schedule 2  B. Schedule 3  C. Schedule 4  D. Schedule 5</p>
+<ol><li><b>NNT/NNH ratio of 0.5 indicates:</b></li></ol>
+<p>A. Harm &gt; Benefit  B. <b>Benefit &gt; Harm</b>  C. Equal  D. Cannot determine</p>
+<ol><li><b>A prescription for morphine sulfate 10mg tablets x 56. Legal requirement for quantity?</b></li></ol>
+<p>A. "56 tablets"  B. <b>"Fifty-six (56) tablets"</b>  C. "Seven weeks supply"  D. "As directed"</p>
+<ol><li><b>Valproate is prescribed by brand because:</b></li></ol>
+<p>A. It's cheaper  B. <b>Narrow therapeutic index; Small PK changes → Toxicity/Seizures</b>  C. Patient preference  D. No generic available</p>
+<ol><li><b>SSRI started. Patient counselled on driving. Which WHO step?</b></li></ol>
+<p>A. Step 1  B. Step 2  C. Step 3  D. <b>Step 5</b></p>
+<ol><li><b>Statin primary prevention: ARR 1.5% over 5 years. NNT = ?</b></li></ol>
+<p>A. 50  B. <b>67</b>  C. 75  D. 100</p>
+<ol><li><b>Deprescribing review at every encounter uses which tool?</b></li></ol>
+<p>A. NNT  B. <b>STOPP/START</b>  C. Naranjo  D. RUCAM</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>WHO 6-Step Model mnemonic?</b></li></ul>
+<p>A: <b>DOV SIM</b> (Define, Objective, Verify, Start, Inform, Monitor)</p>
+<ul><li>Q: <b>P-drug 4 criteria?</b></li></ul>
+<p>A: <b>ESSC</b> (Efficacy, Safety, Suitability, Cost)</p>
+<ul><li>Q: <b>What makes a drug LTI (prescribe by brand)?</b></li></ul>
+<p>A: Narrow TI + High protein binding + Low Vd + Metabolic displacement risk (Phenytoin, Lithium, Warfarin, Tacrolimus, Digoxin, Theophylline)</p>
+<ul><li>Q: <b>CD Sch 2 prescription validity?</b></li></ul>
+<p>A: <b>28 days</b>; No repeats; Register required</p>
+<ul><li>Q: <b>NNT formula?</b></li></ul>
+<p>A: <b>1 / Absolute Risk Reduction (ARR)</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C (Step 3)</b> — Verify P-drug suitability includes contraindications, interactions, allergies, organ function</li><li><b>B (1/ARR)</b> — NNT = 1 / Absolute Risk Reduction; RRR is relative</li><li><b>B</b> — Sch 2 CD: Quantity in words AND figures; No repeats; 28-day validity; Register entry</li><li><b>B (Phenytoin)</b> — LTI anticonvulsant; Brand prescribing required</li><li><b>D</b> — P-treatment = Non-drug + Drug + Info + Monitoring; No marketing</li><li><b>B</b> — NICE threshold £20,000-30,000/QALY</li><li><b>B</b> — Sch 3 also 28-day validity (Tramadol, Pregabalin, Gabapentin, Midazolam, Buprenorphine, Temazepam)</li><li><b>B</b> — ARR (and NNT) give absolute magnitude; RRR can be misleading</li><li><b>B</b> — Elderly + Renal impairment = Start low, go slow</li><li><b>B</b> — Generic default; Brand only for LTI, MR, Biosimilar, Stabilised patient</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C (Step 3)</b> — Verify suitability checks renal function, contraindications, interactions before starting</li><li><b>B (33)</b> — ARR = 3% → NNT = 1/0.03 = 33.3</li><li><b>B (Probable)</b> — Plausible time, drug known to cause SJS (HLA-B*58:01), dechallenge positive</li><li><b>A (Schedule 2)</b> — Morphine, Fentanyl, Oxycodone, Methadone, Methylphenidate, Ketamine</li><li><b>B (Benefit &gt; Harm)</b> — NNT/NNH &lt;1 means fewer patients needed to treat for benefit than for harm</li><li><b>B</b> — Quantity MUST be in words AND figures for CD prescriptions</li><li><b>B</b> — LTI: Narrow TI + PK variability → Brand consistency critical</li><li><b>D (Step 5)</b> — Information, instructions, warnings (side effects, driving)</li><li><b>B (67)</b> — NNT = 1/0.015 = 66.7</li><li><b>B (STOPP/START)</b> — Structured deprescribing/prescribing review tool for elderly</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[Principles of Rational Prescribing|Principles of Rational Prescribing]]</li><li><b>Chapter Map</b>: [[Davidson Chapter 2 - Clinical Therapeutics Hierarchy|Chapter 2 Hierarchy]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[Prescription Writing Standards]], [[Evidence-Based Prescribing]], [[P-drug Concept]], [[NNT NNH]], [[Formulary Decisions]], [[Prescription Writing]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Principles Of Rational Prescribing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

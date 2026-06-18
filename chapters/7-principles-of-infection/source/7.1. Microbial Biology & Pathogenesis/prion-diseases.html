@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prion Diseases — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.1. MICROBIAL BIOLOGY & PATHOGENESIS</span>
+      <div class="h1">Prion Diseases</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define prions and describe the protein-only hypothesis with templated misfolding</li><li>Classify human prion diseases: sporadic (sCJD 85%), genetic (10–15%), acquired (1%)</li><li>Describe the <b>PRNP</b> gene (chromosome 20p13) and key mutations (E200K, P102L, D178N)</li><li>Explain the role of <b>codon 129 polymorphism (M129V)</b> in disease phenotype</li><li>Differentiate sCJD from vCJD (age, onset, EEG, MRI, tonsil biopsy)</li><li>Recognise genetic prion diseases: gCJD, GSS, FFI, PrP-CAA</li><li>Apply WHO diagnostic criteria (probable/possible/definite) and biomarkers (14-3-3, RT-QuIC, tau, MRI)</li><li>Discuss BSE → vCJD, kuru (Fore cannibals), and iatrogenic transmission</li><li>Outline infection control, sterilisation, and blood safety measures</li><li>Apply to FCPS/MRCP exam scenarios (MCQ, SBA, viva, ward case)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Prion**</td><td>**P**roteinaceous **i**nfectious particle — composed ONLY of misfolded host protein (PrP^Sc); no DNA/RNA; resists nucleases, UV, ionising radiation; inactivated by protein-denaturing agents</td></tr><tr><td>**PrP^C**</td><td>Normal **C**ellular prion protein: 253 amino acids, encoded by **PRNP** gene on **chromosome 20p13**; predominantly **α-helical** (42% α-helix, 30% β-sheet); GPI-anchored to outer leaflet of plasma membrane; expressed on neurons, glia, lymphocytes; sensitive to proteinase K (PK); soluble in detergents; half-life ~6 h</td></tr><tr><td>**PrP^Sc**</td><td>Pathological **Sc**rapie (originally from sheep scrapie) isoform: identical primary amino acid sequence to PrP^C; conformationally re-arranged to **β-pleated sheet** (43% β-sheet, 30% α-helix); **partially proteinase-K resistant** (resistant core = PrP 27–30, residues ~90–231); aggregates, insoluble, accumulates in lysosomes/endosomes</td></tr><tr><td>**Templated / Autocatalytic Conversion**</td><td>PrP^Sc acts as a template, recruiting normal PrP^C and refolding it into PrP^Sc — exponential autocatalytic chain reaction; **species barrier** = sequence homology between donor PrP^Sc and host PrP^C determines conversion efficiency</td></tr><tr><td>**TSE**</td><td>**T**ransmissible **S**pongiform **E**ncephalopathy — the clinicopathological syndrome (rapidly progressive dementia, myoclonus, ataxia, spongiform vacuolation on neuropathology)</td></tr><tr><td>**PRNP**</td><td>Prion Protein gene — chromosome **20p13**; 2 exons (ORF in exon 2); codons of importance: 129 (M/V polymorphism), 178 (D→N), 200 (E→K), 102 (P→L), 117 (A→V)</td></tr><tr><td>**Codon 129 (M129V)**</td><td>Methionine/Valine polymorphism at codon 129 of PRNP — critical disease modifier; **MV or VV predisposes to sCJD**; **MM associated with vCJD susceptibility**; **MM + D178N = FFI**; **VV + D178N = fCJD**</td></tr><tr><td>**BSE**</td><td>**B**ovine **S**pongiform **E**ncephalopathy — "mad cow disease"; first identified **UK 1986**; epidemic peaked 1992–1993 (~37,000 cases/yr in UK); caused by feeding cattle rendered prion-contaminated offal (MBM)</td></tr><tr><td>**vCJD**</td><td>**V**ariant CJD — acquired from dietary BSE exposure; first cases reported **1996 UK**; predominantly young adults (median age 28); psychiatric onset; **lymphoreticular** involvement (tonsil, appendix, spleen)</td></tr><tr><td>**Heidenhain variant**</td><td>sCJD presenting with cortical visual failure (visual agnosia, cortical blindness, hallucinations)</td></tr><tr><td>**PSWCs**</td><td>**P**eriodic **S**harp **W**ave **C**omplexes — biphasic/triphasic sharp waves on EEG at ~**1–2 Hz**, typical of sCJD; **absent in vCJD**</td></tr><tr><td>**Pulvinar sign**</td><td>Symmetrical hyperintensity of the **posterior thalamus (pulvinar)** > anterior putamen on MRI T2/FLAIR/DWI in vCJD; sensitivity ~90%, specificity ~95%; "hockey-stick" sign when combined with dorsomedial thalamic hyperintensity</td></tr><tr><td>**Cortical ribboning**</td><td>Gyral hyperintensity of cerebral cortex on DWI/FLAIR MRI in sCJD; reflects spongiform change; involves basal ganglia (caudate, putamen)</td></tr><tr><td>**14-3-3 protein**</td><td>Neuronal protein released into CSF with rapid neuronal injury; non-specific (also +ve in stroke, HSV encephalitis, status epilepticus); sensitivity for sCJD ~85–95%</td></tr><tr><td>**RT-QuIC**</td><td>**R**eal-**T**ime **Qu**aking-**I**nduced **C**onversion — amplifies minute PrP^Sc seeds from CSF using recombinant PrP substrate with intermittent shaking; fluorescence detection of thioflavin-T-bound fibrils; sensitivity **>95%**, specificity **~100%**; current CSF **gold standard**</td></tr><tr><td>**FFI**</td><td>**F**atal **F**amilial **I**nsomnia — D178N mutation with **Methionine at codon 129 (in cis)**; selective thalamic (medio-dorsal / intralaminar nuclei) degeneration; intractable insomnia, autonomic storm</td></tr><tr><td>**GSS**</td><td>**G**erstmann-**S**träussler-**S**cheinker syndrome — P102L (most common), A117V, F198S; slowly progressive cerebellar ataxia + dementia; **multicentric amyloid plaques** on pathology</td></tr><tr><td>**Spongiform change**</td><td>Intracellular **vacuolation** of neuropil and neuronal cytoplasm (microvacuoles in grey matter) — pathological hallmark of TSEs on H&E</td></tr><tr><td>**PrP amyloid plaques**</td><td>Extracellular aggregates of PrP^Sc with congophilia / apple-green birefringence on Congo red; kuru plaques, florid (daisy) plaques in vCJD, multicentric plaques in GSS</td></tr><tr><td>**Prion strain**</td><td>Distinct PrP^Sc conformers producing reproducible differences in incubation period, neuropathology, glycosylation pattern, and host range — encoded in **conformation, not sequence**</td></tr><tr><td>**Species barrier**</td><td>Difficulty of cross-species prion transmission; governed by PRNP sequence homology; mechanism = inefficient templated conversion across mismatched PrP sequences</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Prion Biology</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">PrP^C vs PrP^Sc — Structural Comparison</div>
+<table class="ctable"><tr><th>Feature</th><th>Normal PrP (PrP^C)</th><th>Abnormal PrP (PrP^Sc)</th></tr><tr><td>---------</td><td>-------------------</td><td>----------------------</td></tr><tr><td>**Primary structure**</td><td>253 aa, full-length</td><td>Identical primary aa sequence</td></tr><tr><td>**Secondary structure**</td><td>**α-helical (42%)**, random coil</td><td>**β-sheet (43%)**, β-pleated</td></tr><tr><td>**Tertiary structure**</td><td>3 α-helices (H1, H2, H3), 2 short β-strands</td><td>Refolded: more β-strands, less α-helix</td></tr><tr><td>**Location**</td><td>Cell surface (GPI-anchored) → endocytosed → recycling</td><td>Aggregates, plaques, synaptic/lysosomal deposits</td></tr><tr><td>**Solubility**</td><td>Detergent-soluble, monomeric</td><td>Detergent-**insoluble**, oligomeric, amyloid fibrils</td></tr><tr><td>**Protease sensitivity**</td><td>**Sensitive** (fully digested by PK)</td><td>**Resistant** (PK-resistant core = PrP 27-30, residues 90–231)</td></tr><tr><td>**Function**</td><td>Neuroprotection, copper binding, synaptic function, signal transduction, neural stem cell regulation</td><td>**Pathogenic** — neurotoxic gain of function, induces apoptosis, ER stress</td></tr><tr><td>**Gene**</td><td>**PRNP (chromosome 20p13)**, 2 exons, ORF in exon 2</td><td>Same gene; **conformational change only** (no mutation required in sporadic form)</td></tr><tr><td>**Stability**</td><td>Thermodynamically less stable, kinetically trapped</td><td>Thermodynamically more stable, kinetically locked</td></tr></table>
+<div class="callout">[!key] <b>Prion = Proteinaceous Infectious Particle</b> — no DNA/RNA <b>Conversion = templated misfolding</b> — PrP^Sc recruits PrP^C → exponential autocatalytic amplification <b>Species barrier</b> = PRNP sequence homology affects conversion efficiency <b>Strains</b> = different PrP^Sc conformations → distinct incubation, pathology, tropism, glycosylation <b>Kuru</b> coined the field; <b>BSE</b> (1986) and <b>vCJD</b> (1996) confirmed cross-species dietary transmission</div>
+<div class="sub-h">The Protein-Only Hypothesis (Prusiner, 1982; Nobel Prize 1997)</div>
+<ol><li><b>Infection</b> — Exogenous PrP^Sc seeds enter the host (oral, iatrogenic, inherited mutant)</li><li><b>Recruitment</b> — PrP^Sc binds endogenous PrP^C at the plasma membrane / endocytic vesicles</li><li><b>Template-directed refolding</b> — PrP^Sc acts as a template, converting PrP^C into a β-sheet-rich PrP^Sc molecule</li><li><b>Aggregation</b> — Newly formed PrP^Sc oligomerises, forming amyloid fibrils and plaques</li><li><b>Autocatalysis</b> — Aggregates fragment, seeding further conversion → exponential amplification</li><li><b>Neurotoxicity</b> — Accumulation → neuronal vacuolation (spongiosis), astrogliosis, microglial activation, synaptic loss, neuronal death</li><li><b>Clinical disease</b> — Progressive dementia, ataxia, myoclonus, death</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>sCJD</th><th>vCJD</th><th>Genetic</th><th>Iatrogenic</th><th>Kuru</th></tr><tr><td>-----------</td><td>------</td><td>------</td><td>---------</td><td>------------</td><td>------</td></tr><tr><td>**Frequency**</td><td>**~85%** of human prion disease</td><td>**<1%** (UK cluster)</td><td>**10–15%**</td><td><1%</td><td>Eradicated</td></tr><tr><td>**Incidence**</td><td>~1–1.5 per million/yr worldwide</td><td>177 cases UK (peak 2000, declining)</td><td>Variable by mutation</td><td>~500 cases reported historically</td><td>None since 2000s</td></tr><tr><td>**Age at onset**</td><td>**60–70 yrs** (median 65)</td><td>**Median 28 yrs**</td><td>Variable (40–60)</td><td>Variable (depends on route)</td><td>Variable (decades)</td></tr><tr><td>**Sex**</td><td>M=F</td><td>M=F</td><td>M=F (autosomal dominant)</td><td>M=F</td><td>M = F (children, women from handling)</td></tr><tr><td>**Geographic**</td><td>Worldwide, sporadic</td><td>**UK, France, Ireland, Italy, Spain, USA, Canada, Japan, Saudi**</td><td>Clusters: Libya, Israel, Japan, Slovakia, Chile, UK, Italy</td><td>Worldwide (Japan dura mater cluster, UK hGH, France growth hormone)</td><td>**Papua New Guinea (Fore tribe)**</td></tr><tr><td>**Aetiology**</td><td>Spontaneous PrP^C → PrP^Sc conversion (somatic mutation / stochastic refolding)</td><td>BSE-contaminated beef ingestion (1980s–90s UK)</td><td>**PRNP germline mutations**</td><td>Contaminated neurosurgical instruments, dura mater, corneal grafts, hGH, gonadotropins, blood</td><td>**Ritualistic endocannibalism** (Fore, PNG)</td></tr></table>
+<div class="sub-h">BSE → vCJD Timeline (UK)</div>
+<table class="ctable"><tr><th>Year</th><th>Event</th></tr><tr><td>------</td><td>-------</td></tr><tr><td>**1980s**</td><td>Prion-contaminated MBM (meat-and-bone meal) fed to cattle in UK; rendered offal recycling amplifies prion load</td></tr><tr><td>**1986**</td><td>BSE first identified in UK cattle ("mad cow disease")</td></tr><tr><td>**1992–93**</td><td>BSE epidemic peaks: ~37,000 cases/yr in UK; ~4 million cattle slaughtered</td></tr><tr><td>**1989**</td><td>UK Specified Bovine Offal (SBO) ban: brain, spinal cord, eyes, tonsils, intestines excluded from human food</td></tr><tr><td>**1996**</td><td>UK Spongiform Encephalopathy Advisory Committee (SEAC) announces link between BSE and vCJD</td></tr><tr><td>**1996**</td><td>First 10 vCJD cases reported in UK; **mean age 28 yrs**</td></tr><tr><td>**2000**</td><td>vCJD peak: 28 cases/yr in UK</td></tr><tr><td>**2000s**</td><td>vCJD incidence declines; >177 UK deaths total</td></tr><tr><td>**Ongoing**</td><td>Surveillance continues; concern about secondary transmission via blood transfusion (4 documented UK cases)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Human Prion Diseases</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aetiological Classification</div>
+<table class="ctable"><tr><th>Category</th><th>Frequency</th><th>Diseases</th><th>Key Mechanism</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td><td>---------------</td></tr><tr><td>**Sporadic**</td><td>**~85%**</td><td>sCJD, sporadic fatal insomnia (sFI)</td><td>Somatic PRNP mutation OR spontaneous stochastic refolding of PrP^C → PrP^Sc; **associated with codon 129 MV or VV genotype** (MM protective)</td></tr><tr><td>**Genetic (familial)**</td><td>**~10–15%**</td><td>gCJD, GSS, FFI, PrP-CAA</td><td>**Germline autosomal-dominant PRNP mutation** (E200K, P102L, D178N, etc.); 100% penetrance by age 70 for some</td></tr><tr><td>**Acquired (infectious)**</td><td>**~1%**</td><td>Kuru, iatrogenic CJD (iCJD), variant CJD (vCJD)</td><td>**Exogenous PrP^Sc inoculation** (oral, parenteral, CNS, transplant)</td></tr></table>
+<div class="sub-h">Sporadic CJD (sCJD) — 85% of all human prion disease</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Aetiology**</td><td>Spontaneous somatic PrP^C → PrP^Sc refolding (or somatic mutation); no germline PRNP mutation; **strongest risk = MV or VV at codon 129** (vs MM protective)</td></tr><tr><td>**Onset**</td><td>**Median 65 yrs** (range 55–75)</td></tr><tr><td>**Prodrome**</td><td>Fatigue, insomnia, depression, anxiety, weight loss (weeks)</td></tr><tr><td>**Core features**</td><td>**Rapidly progressive dementia** (MMSE falls 4 pts/mo), **myoclonus** (startle-sensitive, generalised), **cerebellar ataxia**, **visual disturbance** (Heidenhain variant = cortical blindness, agnosia)</td></tr><tr><td>**Pyramidal/extrapyramidal**</td><td>Spasticity, hyperreflexia, rigidity, chorea</td></tr><tr><td>**Akinetic mutism**</td><td>Late stage — patient immobile, mute, awake</td></tr><tr><td>**Duration**</td><td>**4–6 months** (death in 90% by 1 yr)</td></tr><tr><td>**Codon 129 effect**</td><td>MM = longest survival; MV = typical; VV = shorter; subtypes MM1/MV1 = classic; VV2 = ataxic; MM2 = slower; MV2K = kuru-type plaques</td></tr><tr><td>**EEG**</td><td>**PSWCs (periodic sharp wave complexes) at 1–2 Hz** in ~67% of sCJD; highly specific when present</td></tr><tr><td>**MRI**</td><td>**Cortical ribboning** (DWI/FLAIR hyperintensity of gyri) + **basal ganglia (caudate/putamen) hyperintensity**; sensitivity 83–96%</td></tr><tr><td>**CSF**</td><td>**RT-QuIC +ve (>95%)**; 14-3-3 +ve (~90%); tau markedly ↑ (>1200 pg/mL)</td></tr><tr><td>**Brain biopsy**</td><td>**Spongiform vacuolation** (microvacuoles in neuropil), neuronal loss, astrogliosis, occasional PrP amyloid plaques; **definitive diagnosis** (rarely performed ante-mortem due to risk)</td></tr><tr><td>**Neuropathology types**</td><td>Type 1, 2A, 2B, 2C, 3 — based on PrP^Sc fragment size and PrP immunohistochemistry</td></tr></table>
+<p>#### Heidenhain Variant of sCJD</p>
+<ul><li>Early visual symptoms (within first 2 mo)</li><li>Cortical blindness, visual agnosia, hallucinations</li><li>Occipital lobe spongiosis prominent</li><li>5–10% of sCJD cases</li><li><b>Exam pearl:</b> rapid visual loss + dementia = think CJD</li></ul>
+<div class="sub-h">Genetic (Familial) Prion Diseases — 10–15%</div>
+<table class="ctable"><tr><th>Disease</th><th>Mutation</th><th>Codon 129 Effect</th><th>Inheritance</th><th>Features</th></tr><tr><td>---------</td><td>----------</td><td>------------------</td><td>-------------</td><td>----------</td></tr><tr><td>**gCJD (familial CJD)**</td><td>**E200K** (most common), V180I, M232R, others</td><td>Various</td><td>**Autosomal dominant**</td><td>CJD phenotype with family history; E200K clusters in Libya, Tunisia, Chile, Israel, Slovakia; onset 50–60s</td></tr><tr><td>**GSS (Gerstmann-Sträussler-Scheinker)**</td><td>**P102L** (most common), A117V, F198S, Q217R</td><td>MM usually</td><td>**Autosomal dominant**</td><td>**Cerebellar ataxia** prominent, slowly progressive (2–6 yrs), dementia, **multicentric amyloid plaques**; onset 40s–60s</td></tr><tr><td>**FFI (Fatal Familial Insomnia)**</td><td>**D178N with Methionine at codon 129 (in cis)**</td><td>**M129 required** (D178N+V129 = fCJD, not FFI)</td><td>**Autosomal dominant**</td><td>**Intractable insomnia**, autonomic storm (tachycardia, hypertension, hyperhidrosis, hyperthermia), motor signs, dementia, **selective thalamic (medio-dorsal) atrophy**; onset 40–60; duration 12–18 mo</td></tr><tr><td>**PrP-CAA**</td><td>Y145Stop, others</td><td>Variable</td><td>**Autosomal dominant**</td><td>**Cerebral amyloid angiopathy** with PrP amyloid in vessel walls; dementia, lobar haemorrhage</td></tr></table>
+<div class="callout">[!key] <b>D178N mutation:</b> - D178N + <b>M129 (cis)</b> = <b>Fatal Familial Insomnia (FFI)</b> — insomnia, thalamus - D178N + <b>V129 (cis)</b> = <b>familial CJD (fCJD)</b> — dementia, myoclonus Codon 129 modulates the disease phenotype — exam favourite!</div>
+<div class="sub-h">Acquired Prion Diseases — Rare (~1%)</div>
+<table class="ctable"><tr><th>Disease</th><th>Transmission</th><th>Incubation</th><th>Key Features</th></tr><tr><td>---------</td><td>--------------</td><td>------------</td><td>--------------</td></tr><tr><td>**Kuru**</td><td>**Ritualistic endocannibalism** (Fore tribe, Papua New Guinea); women & children (handling brains)</td><td>**10–50 yrs**</td><td>**Cerebellar ataxia, tremors ("kuru" = trembling), dysarthria, dementia**; largely eradicated; ceased after cannibalism banned 1950s</td></tr><tr><td>**iCJD (Iatrogenic CJD)**</td><td>Contaminated **dura mater grafts** (Lyodura, Japan cluster), **neurosurgical instruments**, **EEG depth electrodes**, **corneal transplants**, **pituitary-derived hGH & gonadotropins**</td><td>**Years to decades** (peripheral: 5–30 yrs; CNS: 1.5–2 yrs)</td><td>Phenotype depends on route: CNS inoculation = sCJD-like; peripheral = GSS-like ataxia, longer duration</td></tr><tr><td>**vCJD (Variant CJD)**</td><td>**BSE-contaminated beef / bovine offal ingestion** (UK 1980s–90s); possible secondary blood-product transmission (4 documented UK cases)</td><td>**Median 12–14 yrs (range 5–20+)**</td><td>**Young age (median 28)**; **psychiatric onset** (depression, anxiety, withdrawal, paranoia); painful sensory symptoms; **pulvinar sign MRI**; **tonsil/appendix PrP^Sc +ve**; **NO periodic EEG**; duration ~14 mo; **all UK vCJD cases are PRNP 129 MM**</td></tr></table>
+<div class="callout">[!warning] <b>vCJD vs sCJD — High-Yield Differences:</b> - <b>Age:</b> vCJD young (median 28), sCJD elderly (median 65) - <b>Onset:</b> vCJD psychiatric, sCJD cognitive/ataxic - <b>EEG:</b> vCJD no periodic, sCJD PSWCs ~1 Hz - <b>MRI:</b> vCJD pulvinar sign (thalamus), sCJD cortical ribboning + basal ganglia - <b>Tonsil biopsy:</b> vCJD +ve, sCJD –ve - <b>PRNP 129:</b> vCJD <b>all MM</b>, sCJD <b>MV or VV</b> - <b>Duration:</b> vCJD ~14 mo, sCJD 4–6 mo - <b>Plaques:</b> vCJD = <b>florid (daisy) plaques</b>, sCJD = variable</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Animal Prion Diseases</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Disease</th><th>Host</th><th>Geographic Distribution</th><th>Notes</th></tr><tr><td>---------</td><td>------</td><td>------------------------</td><td>-------</td></tr><tr><td>**Scrapie**</td><td>Sheep, goats</td><td>UK, Europe, worldwide (endemic)</td><td>First TSE described (~1730s); prototype prion disease; **not zoonotic**; PrP^Sc in lymphoid tissue</td></tr><tr><td>**BSE ("Mad Cow Disease")**</td><td>Cattle</td><td>**UK 1986 epidemic**; exported cases in Europe, North America (rare)</td><td>Zoonotic → vCJD; atypical BSE (H-type, L-type) sporadic; rendered MBM feed caused epidemic</td></tr><tr><td>**CWD (Chronic Wasting Disease)**</td><td>Deer, elk, moose</td><td>**North America** (USA, Canada); Scandinavia (moose)</td><td>Highly contagious (saliva, urine, faeces, carcasses); environmental prion contamination (soil binding); **no proven human transmission** to date; public health concern</td></tr><tr><td>**TME (Transmissible Mink Encephalopathy)**</td><td>Farmed mink</td><td>North America, Europe</td><td>From prion-contaminated feed; historical</td></tr><tr><td>**FSE (Feline Spongiform Encephalopathy)**</td><td>Domestic cats, zoo felids</td><td>UK (epidemic 1990s), other</td><td>BSE cross-species transmission to cats fed contaminated food</td></tr></table>
+<div class="callout">[!key] <b>Prion cross-species transmission rules:</b> - Homology at PRNP codon 129 (and surrounding) determines barrier - <b>BSE → humans (vCJD)</b> = proven - <b>Scrapie → humans</b> = NOT proven (no scrapie-CJD link despite centuries of exposure) - <b>CWD → humans</b> = not proven; public health surveillance ongoing; CDC recommends avoiding venison from CWD-endemic areas</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">sCJD (Most Common) — Symptom Domains</div>
+<table class="ctable"><tr><th>Domain</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Cognitive**</td><td>Rapidly progressive dementia (MMSE falls 4 pts/mo); disorientation, aphasia, apraxia</td></tr><tr><td>**Motor — Myoclonus**</td><td>**Startle-sensitive myoclonus** (generalised, asynchronous); present in 80–95%</td></tr><tr><td>**Motor — Cerebellar**</td><td>**Truncal & limb ataxia**, gait instability, dysarthria, nystagmus</td></tr><tr><td>**Motor — Pyramidal**</td><td>Spasticity, hyperreflexia, Babinski +ve</td></tr><tr><td>**Motor — Extrapyramidal**</td><td>Rigidity, bradykinesia, chorea, dystonia</td></tr><tr><td>**Visual**</td><td>**Heidenhain variant** (5–10%): cortical blindness, visual agnosia, formed visual hallucinations</td></tr><tr><td>**Behavioural / Psychiatric**</td><td>Apathy, depression, anxiety, emotional lability, paranoia</td></tr><tr><td>**Autonomic**</td><td>Sleep disturbance (fragmented sleep, less severe than FFI), hyperhidrosis, tachycardia, hyperthermia</td></tr><tr><td>**Late stage**</td><td>**Akinetic mutism** (awake, immobile, mute); myoclonus may abate</td></tr><tr><td>**Death**</td><td>Cachexia, infection (aspiration pneumonia), cardio-respiratory failure</td></tr></table>
+<div class="sub-h">Variant CJD (vCJD)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Age**</td><td>**Young (median 28 yrs)**; range 12–74; paediatric cases reported</td></tr><tr><td>**Onset**</td><td>**Psychiatric** (depression, anxiety, social withdrawal, paranoia, insomnia); later sensory (painful paraesthesias) and neurological</td></tr><tr><td>**Duration**</td><td>**~14 months** (median 12–14, range 6–39)</td></tr><tr><td>**Early symptoms**</td><td>Depression, dysphoria, anxiety, withdrawal, irritability, fatigue, headache</td></tr><tr><td>**Sensory**</td><td>Persistent painful sensory symptoms (limb pain, dysaesthesia) — characteristic</td></tr><tr><td>**Neurological**</td><td>Cerebellar ataxia, dementia, myoclonus, chorea, dystonia, hyperreflexia</td></tr><tr><td>**MRI**</td><td>**Pulvinar sign** (posterior thalamus > anterior putamen hyperintensity on T2/FLAIR/DWI); ~90% sensitivity, ~95% specificity; "hockey-stick" sign when combined with dorsomedial thalamic hyperintensity</td></tr><tr><td>**Tonsil Biopsy**</td><td>**PrP^Sc detectable** in lymphoreticular tissue (tonsil, appendix, spleen) — distinguishes from sCJD</td></tr><tr><td>**EEG**</td><td>**No periodic complexes** (vs sCJD); non-specific slowing</td></tr><tr><td>**CSF 14-3-3**</td><td>Often negative (unlike sCJD)</td></tr><tr><td>**RT-QuIC**</td><td>Positive in CSF and tonsil tissue</td></tr><tr><td>**PRNP codon 129**</td><td>**All UK vCJD cases are codon 129 MM** (methionine homozygous)</td></tr><tr><td>**Plaques**</td><td>**Florid (daisy) plaques** — PrP amyloid plaque surrounded by vacuolar halo; pathognomonic</td></tr></table>
+<div class="sub-h">Fatal Familial Insomnia (FFI)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Onset**</td><td>40–60 yrs</td></tr><tr><td>**Core feature**</td><td>**Intractable insomnia** (progressive loss of slow-wave and REM sleep)</td></tr><tr><td>**Autonomic storm**</td><td>Tachycardia, hypertension, hyperhidrosis, hyperthermia, mydriasis</td></tr><tr><td>**Motor**</td><td>Ataxia, myoclonus, spasticity, dysarthria</td></tr><tr><td>**Cognitive**</td><td>Confusion, hallucinations, dementia (later)</td></tr><tr><td>**Endocrine**</td><td>Loss of normal circadian cortisol / melatonin rhythm</td></tr><tr><td>**Imaging**</td><td>Selective **thalamic (medio-dorsal / intralaminar) atrophy** on MRI; hypometabolism on FDG-PET</td></tr><tr><td>**Polysomnography**</td><td>Severe loss of NREM/REM, dramatic loss of sleep spindles</td></tr><tr><td>**Duration**</td><td>12–18 months; always fatal</td></tr><tr><td>**Mutation**</td><td>D178N with **M129 cis**</td></tr><tr><td>**Pathology**</td><td>Selective neuronal loss in **medio-dorsal thalamus**, inferior olive; minimal spongiosis</td></tr></table>
+<div class="sub-h">Gerstmann-Sträussler-Scheinker (GSS)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Onset**</td><td>40–60 yrs (slower than sCJD)</td></tr><tr><td>**Core feature**</td><td>**Progressive cerebellar ataxia** (dominant presenting feature)</td></tr><tr><td>**Cognitive**</td><td>Dementia (later)</td></tr><tr><td>**Duration**</td><td>2–6 yrs (slower course)</td></tr><tr><td>**Plaques**</td><td>**Multicentric PrP amyloid plaques** in cerebellum and cerebrum (pathognomonic)</td></tr><tr><td>**Spongiosis**</td><td>Often minimal (vs CJD)</td></tr><tr><td>**Mutation**</td><td>**P102L** (most common); A117V, F198S, Q217R</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Diagnostic Criteria (WHO / UK CJD Surveillance Unit)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">sCJD — Probable (Revised WHO/European 2017)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**1**</td><td>**Progressive dementia** (any duration)</td></tr><tr><td>**2**</td><td>**≥2 of: myoclonus; visual/cerebellar disturbance; pyramidal/extrapyramidal dysfunction; akinetic mutism**</td></tr><tr><td>**3**</td><td>**EEG: Periodic sharp wave complexes (PSWCs) at ~1 Hz** (typical, but only present in ~67%)</td></tr><tr><td>**4**</td><td>**CSF 14-3-3 positive** in patients with disease <2 yrs, **OR RT-QuIC positive** in CSF</td></tr><tr><td>**5**</td><td>**MRI: Cortical ribboning (DWI/FLAIR) AND/OR basal ganglia (caudate, putamen) hyperintensity**</td></tr><tr><td>**6**</td><td>Routine investigations do not suggest alternative diagnosis</td></tr></table>
+<p><b>Definite sCJD</b> = neuropathological confirmation (spongiform change + neuronal loss + gliosis ± PrP plaques) and/or PrP^Sc detected by immunoblot / immunohistochemistry</p>
+<p><b>Possible sCJD</b> = criteria 1 + 2, duration &lt;2 yrs, no supportive investigations</p>
+<div class="sub-h">vCJD — Probable (UK CJD Surveillance Unit)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**IA**</td><td>Progressive neuropsychiatric disorder</td></tr><tr><td>**IB**</td><td>**Persistent painful sensory symptoms** (aura-like, persistent)</td></tr><tr><td>**II**</td><td>**Dementia** + **≥2 of: myoclonus, chorea/dystonia, cerebellar ataxia, hyperreflexia**</td></tr><tr><td>**III**</td><td>**No EEG PSWCs** (or EEG not done)</td></tr><tr><td>**IV**</td><td>**MRI: Pulvinar sign** (posterior thalamus > anterior putamen hyperintensity on T2/DWI)</td></tr><tr><td>**V**</td><td>**Tonsil biopsy PrP^Sc positive** (or appendix/lymph node)</td></tr><tr><td>**VI**</td><td>No alternative diagnosis</td></tr></table>
+<p><b>Definite vCJD</b> = pathognomonic neuropathology (florid plaques) + spongiform change</p>
+<div class="sub-h">FFI — Probable</div>
+<ul><li><b>Sleep disturbance</b> (intractable insomnia, loss of slow-wave sleep)</li><li><b>Autonomic dysfunction</b> (tachycardia, hypertension, hyperhidrosis, hyperthermia)</li><li><b>Motor / cognitive signs</b></li><li><b>Selective thalamic hypometabolism</b> on FDG-PET</li><li><b>Family history</b> of similar illness (autosomal dominant)</li><li><b>Confirmed:</b> D178N mutation with M129 (cis) on PRNP sequencing</li></ul>
+<div class="sub-h">GSS — Probable</div>
+<ul><li><b>Progressive cerebellar ataxia</b> in an adult</li><li><b>Dementia</b> (later)</li><li><b>Family history</b> (autosomal dominant)</li><li><b>Multicentric PrP amyloid plaques</b> on neuropathology</li><li><b>Confirmed:</b> PRNP sequencing (P102L, etc.)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Diagnostic Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">CSF &amp; Biomarkers</div>
+<table class="ctable"><tr><th>Test</th><th>sCJD</th><th>vCJD</th><th>FFI</th><th>GSS</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>------</td><td>-----</td><td>-----</td><td>-------</td></tr><tr><td>**14-3-3 protein**</td><td>+ve (~85–95%)</td><td>Often **negative**</td><td>Usually –ve</td><td>Often –ve</td><td>Non-specific (stroke, HSV encephalitis, status epilepticus)</td></tr><tr><td>**RT-QuIC**</td><td>**+ve (>95% sens, ~100% spec)**</td><td>+ve (CSF & tonsil)</td><td>Limited data</td><td>Often +ve</td><td>**Current gold standard**; uses recombinant PrP substrate</td></tr><tr><td>**Total tau**</td><td>Markedly ↑ (>1200 pg/mL)</td><td>↑ modestly</td><td>–</td><td>–</td><td>Supports rapid neuronal injury</td></tr><tr><td>**Phosphorylated tau**</td><td>Modestly ↑</td><td>–</td><td>–</td><td>–</td><td>Less specific</td></tr><tr><td>**NSE (neuron-specific enolase)**</td><td>↑</td><td>↑</td><td>–</td><td>–</td><td>Non-specific</td></tr><tr><td>**β-amyloid, α-synuclein**</td><td>Modest ↑</td><td>–</td><td>–</td><td>–</td><td>Research use</td></tr></table>
+<div class="callout">[!key] <b>RT-QuIC = Real-Time Quaking-Induced Conversion</b> - Amplifies minute PrP^Sc seeds from CSF using recombinant PrP + thioflavin-T + intermittent shaking - Fluorescence detected in real-time - Sensitivity <b>&gt;95%</b>, specificity <b>~100%</b> for sCJD - <b>Replaces 14-3-3 as the CSF gold standard</b> - Can also test olfactory mucosa, skin, RT-QuIC + in vCJD tissue</div>
+<div class="sub-h">Neuroimaging</div>
+<table class="ctable"><tr><th>Modality</th><th>sCJD</th><th>vCJD</th><th>FFI</th><th>GSS</th></tr><tr><td>----------</td><td>------</td><td>------</td><td>-----</td><td>-----</td></tr><tr><td>**MRI DWI/FLAIR**</td><td>**Cortical ribboning** (gyral hyperintensity) + **basal ganglia (caudate/putamen) hyperintensity**; thalamus may be involved; sensitivity 83–96%</td><td>**Pulvinar sign** — posterior thalamus > anterior putamen; "hockey stick" with dorsomedial thalamus; sensitivity ~90%, specificity ~95%</td><td>Selective thalamic (medio-dorsal) atrophy; **FDG-PET** shows thalamic hypometabolism</td><td>Cerebellar atrophy; cortico-cerebellar hyperintensity</td></tr><tr><td>**CT**</td><td>Normal early; atrophy late</td><td>Normal early; atrophy late</td><td>Normal</td><td>Cerebellar atrophy</td></tr><tr><td>**FDG-PET**</td><td>Cortical hypometabolism</td><td>Pulvinar hypermetabolism / thalamic abnormalities</td><td>**Thalamic hypometabolism** (anterior + dorsomedial nuclei)</td><td>Variable</td></tr></table>
+<div class="sub-h">EEG</div>
+<table class="ctable"><tr><th>Finding</th><th>sCJD</th><th>vCJD</th><th>FFI</th><th>GSS</th></tr><tr><td>---------</td><td>------</td><td>------</td><td>-----</td><td>-----</td></tr><tr><td>**PSWCs (1–2 Hz)**</td><td>**+ve ~67%** (highly specific)</td><td>**Negative**</td><td>Negative (loss of sleep architecture)</td><td>Negative</td></tr><tr><td>**Slow-wave activity**</td><td>Diffuse slowing</td><td>Diffuse slowing</td><td>Diffuse slowing</td><td>Diffuse slowing</td></tr><tr><td>**Sensitivity**</td><td>~67% (first EEG); 80% on repeat</td><td>0%</td><td>Low</td><td>Low</td></tr></table>
+<div class="callout">[!warning] <b>PSWCs are highly specific for sCJD</b>, but <b>NOT 100% sensitive</b> — repeated EEGs increase yield. PSWCs <b>absent in vCJD, FFI, GSS</b>.</div>
+<div class="sub-h">Brain Biopsy</div>
+<ul><li><b>Definitive diagnosis</b>: <b>spongiform vacuolation</b> (microvacuoles in neuropil of grey matter), neuronal loss, astrogliosis, +/- PrP amyloid plaques</li><li><b>Rarely performed ante-mortem</b> (transmission risk to staff, sampling error)</li><li><b>Reserved for:</b> atypical cases, exclusion of treatable mimics</li><li><b>PrP immunohistochemistry</b>: positive in plaques, synaptic deposits</li><li><b>Western blot for PrP^Sc</b> (PK-resistant core PrP 27-30)</li></ul>
+<div class="sub-h">PRNP Genetic Testing</div>
+<ul><li><b>Indication:</b> suspected genetic prion disease (family history, age &lt;50, atypical features, ataxia, insomnia)</li><li><b>Codon 129 polymorphism (M129V)</b>: critical modifier</li><li><b>Sequencing:</b> E200K, P102L, D178N, A117V, F198S, V180I, others</li><li><b>Inheritance:</b> autosomal dominant, ~100% penetrance by age 70 (E200K, D178N)</li><li><b>Genetic counselling essential</b> (presymptomatic testing in at-risk family members is controversial)</li></ul>
+<div class="sub-h">Differential Diagnosis (Mimics)</div>
+<table class="ctable"><tr><th>Condition</th><th>Key Distinguishing Feature</th></tr><tr><td>-----------</td><td>----------------------------</td></tr><tr><td>**Autoimmune encephalitis (anti-NMDA, anti-LGI1)**</td><td>Antibody positive, MRI medial temporal, responds to immunotherapy</td></tr><tr><td>**Paraneoplastic encephalitis**</td><td>Underlying malignancy, onconeural antibodies</td></tr><tr><td>**HSV encephalitis**</td><td>Acute, fever, temporal lobe MRI, PCR positive</td></tr><tr><td>**HIV-associated dementia**</td><td>CD4 low, HIV +ve, slower course</td></tr><tr><td>**Wernicke encephalopathy**</td><td>Ataxia, ophthalmoplegia, alcoholism/malnutrition, responds to thiamine</td></tr><tr><td>**Alzheimer disease**</td><td>Slower course, amyloid PET +ve, no myoclonus early</td></tr><tr><td>**DLB**</td><td>Visual hallucinations, parkinsonism, REM sleep behaviour</td></tr><tr><td>**PSP / CBS**</td><td>Vertical gaze palsy, alien limb</td></tr><tr><td>**Whipple disease (CNS)**</td><td>Systemic features, PCR on CSF</td></tr><tr><td>**Hashimoto encephalopathy**</td><td>Anti-TPO Ab, steroid-responsive</td></tr><tr><td>**Mitochondrial (MELAS)**</td><td>Lactic acidosis, stroke-like episodes</td></tr><tr><td>**Metachromatic leukodystrophy**</td><td>White matter changes, ARA +ve</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Treatment & Prevention</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Treatment — Supportive Only</div>
+<table class="ctable"><tr><th>Aspect</th><th>Approach</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Disease-modifying therapy**</td><td>**NONE** — universally fatal; no proven cure</td></tr><tr><td>**Supportive care**</td><td>Skin care, nutrition (nasogastric or PEG if needed), hydration, fall prevention</td></tr><tr><td>**Myoclonus**</td><td>**Clonazepam**, valproate, levetiracetam, piracetam</td></tr><tr><td>**Spasticity**</td><td>Baclofen, tizanidine</td></tr><tr><td>**Behavioural / Psychiatric**</td><td>Low-dose antipsychotics (caution — CJD patients sensitive to neuroleptics), SSRIs for depression</td></tr><tr><td>**Seizures**</td><td>Anticonvulsants (phenobarbitone, levetiracetam, clonazepam)</td></tr><tr><td>**End-of-life**</td><td>Palliative care, advance directives, family support, hospice</td></tr><tr><td>**Experimental (no proven benefit)**</td><td>Anti-PrP antibodies, pentosan polysulphate (intraventricular — UK case), quinacrine, doxycycline, amphotericin B, flupirtine, immune modulation</td></tr></table>
+<div class="callout">[!warning] <b>No curative therapy exists.</b> Experimental agents have failed to alter disease course. Care is supportive and palliative.</div>
+<div class="sub-h">Prevention &amp; Infection Control</div>
+<table class="ctable"><tr><th>Measure</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Standard precautions**</td><td>Adequate for routine care; blood/body fluids handled as per universal precautions</td></tr><tr><td>**Tissue infectivity ranking**</td><td>**High:** brain, spinal cord, posterior eye, pituitary; **Lower:** CSF, lymph nodes, spleen, tonsil, appendix, adrenal, placenta; **Low:** skeletal muscle, peripheral nerve, blood (vCJD); **Nil:** skin, urine, faeces (vCJD concern)</td></tr><tr><td>**Sterilisation of instruments**</td><td>**Standard autoclave 121°C × 15 min INSUFFICIENT.** Use **134°C × 18 min** (porous load) **OR 1M NaOH soak (1 hr) + 121°C autoclave**; for heat-sensitive: combined NaOH + autoclave</td></tr><tr><td>**Single-use instruments**</td><td>**Dura mater, corneal transplants** (now synthetic dura, screened donors) — synthetic substitutes preferred</td></tr><tr><td>**Donor screening**</td><td>Exclude donors with family history of CJD, prior hGH, dura mater grafts, neurological disease of unknown aetiology; exclude UK residents 1980–1996 from blood donation (vCJD risk)</td></tr><tr><td>**Blood transfusion**</td><td>**Leucodepletion** (UK, EU); **import plasma from non-UK donors**; deferral of UK 1980–96 residents; **no donor screening RT-QuIC** available (vCJD incubation >2 decades)</td></tr><tr><td>**Growth hormone**</td><td>**Recombinant hGH only** (replaced pituitary-derived in 1985–1987 after iCJD outbreaks)</td></tr><tr><td>**Cattle feed ban**</td><td>**Banning MBM in cattle feed** (1989 UK) reversed BSE epidemic; specified bovine offal (SBO) ban on human food chain</td></tr><tr><td>**Surveillance**</td><td>**National CJD Surveillance Units** (UK NCJDSU, US NPDPSC, EU EuroCJD) — **mandatory reporting** of all suspected CJD</td></tr><tr><td>**Surgical instrument quarantine**</td><td>Quarantine instruments used on suspected/diagnosed CJD patients; incinerate if possible; destroy neurosurgical / ophthalmic instruments after use on high-risk patients</td></tr><tr><td>**Mortuary / autopsy**</td><td>Body bag, body cremation preferred; avoid embalming; staff wear PPE; full PPE for autopsy; instruments destroyed; brain fixed in formic acid (decontaminates) before paraffin embedding</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Neuropathology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Disease</th><th>Spongiform Change</th><th>Plaques</th><th>Distribution</th><th>Immunohistochemistry</th></tr><tr><td>---------</td><td>-------------------</td><td>---------</td><td>--------------</td><td>----------------------</td></tr><tr><td>**sCJD**</td><td>Marked (microvacuoles in neuropil), neuronal loss, gliosis</td><td>Variable (10–20%): kuru-type, florid, cerebellar</td><td>Diffuse: cortex, basal ganglia, thalamus, cerebellum</td><td>PrP^Sc synaptic + plaque pattern</td></tr><tr><td>**vCJD**</td><td>Marked + **florid (daisy) plaques**</td><td>**Florid plaques — pathognomonic** (PrP amyloid core with vacuolar halo of radiating fibrils)</td><td>Cortex, cerebellum, thalamus, **tonsil/lymphoid**</td><td>PrP^Sc in CNS + lymphoreticular tissue</td></tr><tr><td>**FFI**</td><td>Minimal; selective neuronal loss</td><td>Rare</td><td>**Selective medio-dorsal thalamus**, inferior olive</td><td>PrP^Sc in thalamus</td></tr><tr><td>**GSS**</td><td>Variable, often minimal</td><td>**Multicentric PrP amyloid plaques** (cerebellum, cerebral cortex)</td><td>Cerebellum dominant</td><td>PrP^Sc in plaques</td></tr><tr><td>**PrP-CAA**</td><td>Variable</td><td>PrP amyloid in **vessel walls** (amyloid angiopathy)</td><td>Cortical/leptomeningeal vessels</td><td>PrP-CAA</td></tr></table>
+<div class="callout">[!key] <b>Pathognomonic plaques:</b> - <b>Florid (daisy) plaques</b> = vCJD - <b>Multicentric plaques</b> = GSS - <b>Kuru plaques</b> = sCJD variant (MV2K) - <b>Perivacuolar PrP</b> = sCJD</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>65-yr-old, 3-mo rapidly progressive dementia + myoclonus + ataxia</td><td>**sCJD**</td><td>Urgent MRI brain (cortical ribboning), EEG (PSWCs), CSF RT-QuIC, 14-3-3; notify CJD surveillance</td></tr><tr><td>28-yr-old, psychiatric onset + ataxia + pulvinar sign MRI + tonsil PrP^Sc</td><td>**vCJD**</td><td>BSE exposure history, dietary recall (UK 1980s), consider appendix/lymphoid biopsy, screen blood family for donation</td></tr><tr><td>Patient with suspected CJD requires neurosurgery</td><td>**Infection control**</td><td>Quarantine / destroy all instruments; use dedicated / disposable; PPE for staff</td></tr><tr><td>Cataract surgery on patient with prior CJD surgery</td><td>**Sterilisation**</td><td>134°C × 18 min or NaOH; preferably single-use instruments; destroy if possible</td></tr><tr><td>50-yr-old, intractable insomnia + autonomic storm + family history</td><td>**FFI**</td><td>PRNP codon 178/129 sequencing, polysomnography, FDG-PET, genetic counselling</td></tr><tr><td>45-yr-old, cerebellar ataxia + dementia + family history</td><td>**GSS**</td><td>PRNP sequencing (P102L), brain MRI, neuropathology if biopsied</td></tr><tr><td>Blood donor in UK resident 1980–1996</td><td>**vCJD risk**</td><td>Defer from blood donation (no longer eligible)</td></tr><tr><td>Patient with hGH from pituitary source pre-1985</td><td>**iCJD risk**</td><td>Counsel, monitor for iCJD, exclude from blood/tissue donation</td></tr><tr><td>Differential: rapidly progressive dementia</td><td>**Differential**</td><td>Exclude autoimmune, HSV, HIV, paraneoplastic, Wernicke, Wilson, mitochondrial</td></tr><tr><td>Family history of CJD in adult siblings</td><td>**Genetic prion disease**</td><td>Offer PRNP testing + genetic counselling; consider predictive testing protocols</td></tr><tr><td>60-yr-old, rapidly progressive dementia, MRI normal early</td><td>**Early sCJD**</td><td>Repeat MRI in 2–4 weeks; DWI/FLAIR is most sensitive; CSF RT-QuIC</td></tr><tr><td>Post-mortem / autopsy on CJD suspect</td><td>**Pathology & IPC**</td><td>Full PPE, fixation in **formic acid** before paraffin embedding destroys infectivity; instruments destroyed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Prions = protein only (no nucleic acid)</b>; PrP^C → PrP^Sc conversion (α-helix → β-sheet) - <b>PRNP gene on chromosome 20p13</b>; <b>codon 129 (M/V)</b> is critical disease modifier - <b>sCJD = 85%</b>; rapid dementia, myoclonus, ataxia, Heidenhain, PSWCs EEG, RT-QuIC, MRI ribboning - <b>vCJD = &lt;1%, BSE-linked</b>; <b>young (median 28), psychiatric onset, pulvinar sign, tonsil PrP^Sc +ve, NO periodic EEG, codon 129 MM</b> - <b>FFI = D178N + M129 (cis)</b>; intractable insomnia, autonomic storm, thalamic atrophy - <b>GSS = P102L</b>; cerebellar ataxia, dementia, <b>multicentric amyloid plaques</b> - <b>gCJD = E200K</b> (most common); typical CJD phenotype with family history - <b>Kuru = Fore tribe PNG cannibalism</b>; incubation up to 50 yrs - <b>iCJD = dura mater (Lyodura), hGH, corneal, neurosurgical instruments</b> - <b>RT-QuIC = gold standard CSF test</b> (&gt;95% sens, ~100% spec) - <b>14-3-3 = non-specific</b> (stroke, HSV encephalitis, status epilepticus) - <b>Prion sterilisation = 134°C × 18 min OR 1M NaOH + 121°C autoclave</b> (standard autoclave FAILS) - <b>Treatment = supportive only</b>; universally fatal - <b>vCJD = florid (daisy) plaques on pathology</b>; lymphoreticular involvement - <b>Animal TSEs: scrapie (sheep), BSE (cattle), CWD (deer/elk), TME (mink), FSE (cats)</b> - <b>BSE epidemic 1986 UK → vCJD 1996 UK</b>; causal link proven - <b>Blood deferral: UK residents 1980–1996 (≥6 mo), hGH recipients, family history of CJD</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Prions = viruses**</td><td>**No nucleic acid**; protein-only; resistant to nucleases, UV, ionising radiation</td></tr><tr><td>**vCJD = sCJD**</td><td>vCJD: young, psychiatric onset, pulvinar sign, tonsil +ve, NO periodic EEG, codon 129 MM</td></tr><tr><td>**All CJD = periodic EEG**</td><td>**Only sCJD**; vCJD = no periodic complexes</td></tr><tr><td>**14-3-3 = specific for CJD**</td><td>Also +ve in **stroke, HSV encephalitis, status epilepticus, subacute encephalopathies**; use **RT-QuIC** for specificity</td></tr><tr><td>**Standard autoclave kills prions**</td><td>**134°C × 18 min OR 1M NaOH required**; standard 121°C fails</td></tr><tr><td>**FFI = insomnia only**</td><td>Also **autonomic storm** (tachycardia, hypertension, hyperthermia), thalamic atrophy, motor/cognitive decline</td></tr><tr><td>**Prions = only neurological**</td><td>**Lymphoreticular involvement in vCJD** (tonsil, appendix, spleen) — used for biopsy diagnosis</td></tr><tr><td>**All genetic CJD = same**</td><td>gCJD = typical CJD (E200K); FFI = insomnia (D178N/M129); GSS = ataxia (P102L); PrP-CAA = amyloid angiopathy</td></tr><tr><td>**D178N always = FFI**</td><td>**D178N + M129 = FFI; D178N + V129 = fCJD** (codon 129 modifies phenotype)</td></tr><tr><td>**BSE = same as scrapie**</td><td>Scrapie is sheep TSE, **not proven zoonotic**; BSE is cattle TSE, **caused vCJD in humans**</td></tr><tr><td>**CWD → humans**</td><td>**Not proven** despite extensive surveillance; public health concern</td></tr><tr><td>**Kuru = prion = infectious**</td><td>Kuru is **infectious**; sCJD is **sporadic** (not contagious in clinical practice)</td></tr><tr><td>**iCJD = only dura**</td><td>Also **hGH, gonadotropins, corneal, neurosurgical instruments, EEG electrodes, blood (vCJD)**</td></tr><tr><td>**Treatment available**</td><td>**No** — supportive care only; universally fatal</td></tr><tr><td>**Dura mater still used**</td><td>Now mostly **synthetic dura** (duragen, dural substitutes) due to prion risk</td></tr><tr><td>**Pulvinar sign in sCJD**</td><td>Pulvinar sign is **vCJD specific**; sCJD has **cortical ribboning + basal ganglia hyperintensity**</td></tr><tr><td>**Tonsil biopsy for all CJD**</td><td>**Only vCJD** (lymphoreticular involvement); **sCJD tonsil negative**</td></tr><tr><td>**PrP^C = infectious**</td><td>**PrP^C is normal**; **PrP^Sc is the infectious form**</td></tr><tr><td>**All prion diseases have plaques**</td><td>**No** — FFI has minimal spongiosis and few plaques; sCJD variable</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Prion types:</b> <b>S</b>poradic (<b>sCJD</b>, sFI - 85%), <b>G</b>enetic (<b>gCJD</b>, <b>G</b>SS, <b>F</b>FI - 10-15%), <b>A</b>cquired (<b>iCJD</b>, <b>V</b>CJD, <b>K</b>uru - 1%) = <b>"SCJD-GGFF-AVK"</b></li><li><b>CJD variants:</b> <b>S</b>CJD = <b>S</b>poradic; <b>V</b>CJD = <b>V</b>ariant (BSE); <b>I</b>CJD = <b>I</b>atrogenic; <b>gCJD</b> = <b>g</b>enetic</li><li><b>PRNP mutations:</b> <b>E</b>200K = gCJD; <b>D</b>178N + <b>M</b>129 = <b>F</b>FI; <b>P</b>102L = <b>G</b>SS; <b>A</b>117V = GSS variant = "E-D-P-A"</li><li><b>sCJD diagnosis:</b> <b>R</b>apid dementia, <b>M</b>yoclonus, <b>E</b>EG (PSWCs), <b>1</b>4-3-3/RT-QuIC, <b>M</b>RI ribboning = <b>"RME1M"</b></li><li><b>vCJD features:</b> <b>Y</b>oung, <b>P</b>sychiatric, <b>P</b>ulvinar sign, <b>T</b>onsil +ve = <b>"YPPT"</b></li><li><b>Pulvinar sign description:</b> <b>P</b>osterior thalamus <b>H</b>yperintensity &gt; <b>A</b>nterior <b>P</b>utamen = "Pulvinar &gt; Putamen" = "PhAtP"</li><li><b>Sterilisation:</b> <b>134°C × 18 min</b> or <b>NaOH + autoclave</b> = <b>"134/18/NaOH"</b></li><li><b>Codon 129 effect:</b> <b>M</b>129 + D178N = FFI, <b>V</b>129 + D178N = fCJD = "MV"</li><li><b>Animal TSEs:</b> Scrapie, <b>BSE</b> (Bovine), <b>CWD</b> (Cervid), <b>TME</b> (Mink), <b>FSE</b> (Feline) = "Sheep Cows Deer Mink Cats"</li><li><b>PrP biology:</b> <b>C</b> = <b>C</b>ellular (α-helical, normal); <b>Sc</b> = <b>Sc</b>rapie (β-sheet, pathogenic)</li><li><b>BSE → vCJD timeline:</b> 1986 BSE, 1989 SBO ban, 1996 vCJD = "86-BSE, 89-Ban, 96-vCJD"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Prion Diseases)) Prion_Biology PrPC[Normal, alpha-helical, GPI-anchored] PrPSc[Misfolded, beta-sheet, PK-resistant, infectious] Conversion[Autocatalytic template-directed refolding] No_Nucleic_Acid[Protein only] PRNP_Gene[Chromosome 20p13] Codon_129[M129V polymorphism - modifier] Classification Sporadic[sCJD, sFI - 85%] Genetic[gCJD, GSS, FFI, PrP-CAA - 10-15%] Acquired[iCJD, vCJD, Kuru - 1%] sCJD Features[Rapid dementia, myoclonus, ataxia, visual Heidenhain] EEG[PSWCs periodic ~1-2 Hz] CSF[RT-QuIC 95%, 14-3-3 90%, tau &gt;1200] MRI[Cortical ribboning, basal ganglia hyperintensity] Codon_129[MV or VV risk] Pathology[Spongiform vacuolation] Duration[4-6 months] vCJD BSE_link[Bovine Spongiform Encephalopathy] UK_1986[BSE epidemic] UK_1996[First vCJD cases] Age[Young, median 28] Psychiatric[Depression, anxiety, withdrawal] Sensory[Painful persistent] MRI[Pulvinar sign - posterior thalamus] Tonsil[PrPSc positive in lymphoreticular] EEG[NO periodic complexes] Codon_129[All MM] Plaques[Florid daisy plaques] Duration[14 months] Genetic gCJD[E200K most common - Libya, Israel, Chile, Slovakia] FFI[D178N + M129 - Insomnia, autonomic, thalamus] GSS[P102L - Ataxia, multicentric plaques] PrP_CAA[Y145Stop - Amyloid angiopathy] Acquired Kuru[Fore tribe, PNG cannibalism, incubation 50yr] iCJD[Dura grafts, hGH, corneal, neurosurgical, blood] vCJD[BSE-contaminated beef UK 1980s] Diagnosis RT_QuIC[Gold standard CSF, &gt;95% sens, ~100% spec] 14_3_3[Non-specific CSF marker] EEG[PSWCs = sCJD only] MRI[Cortical ribboning sCJD vs Pulvinar vCJD] Tonsil_Biopsy[vCJD only] FDG_PET[FFI - thalamic hypometabolism] PRNP_Sequencing[Genetic testing] Pathology Spongiform[Microvacuoles, neuronal loss, gliosis] Plaques[Florid vCJD, Multicentric GSS, Kuru sCJD-MV2K] Treatment Supportive_Only[No disease-modifying therapy] Myoclonus[Clonazepam, valproate] Palliative[End-of-life, hospice] Infection_Control High_Risk_Tissues[Brain, spinal cord, eyes, pituitary, lymphoid] Sterilisation[134C x 18min or NaOH + autoclave] Single_Use[Synthetic dura, screened donors] Blood_Deferral[UK 1980-96, family history, hGH] Leucodepletion[UK blood products] Surveillance[National CJD Units] Animal_Prions Scrapie[Sheep, not zoonotic] BSE[Cattle UK 1986, zoonotic = vCJD] CWD[Deer elk, N. America, not proven zoonotic] TME[Mink, historical] FSE[Cats, UK 1990s] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flowchart: CJD Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Rapidly Progressive Dementia] --&gt; B{EEG: PSWCs 1-2 Hz?} B --&gt;|Yes| C[MRI: Cortical Ribboning / Basal Ganglia Hyperintensity?] C --&gt;|Yes| D[CSF RT-QuIC / 14-3-3 +ve?] D --&gt;|Yes| E[sCJD Probable] B --&gt;|No| F{Age Young? Psychiatric Onset?} F --&gt;|Yes| G[MRI: Pulvinar Sign?] G --&gt;|Yes| H[Tonsil Biopsy PrPSc +ve?] H --&gt;|Yes| I[vCJD Probable] F --&gt;|No| J{Insomnia, Autonomic Storm?} J --&gt;|Yes| K[PRNP D178N/M129 +ve?] K --&gt;|Yes| L[FFI] J --&gt;|No| M{Cerebellar Ataxia + Plaques?} M --&gt;|Yes| N[PRNP P102L +ve?] N --&gt;|Yes| O[GSS] M --&gt;|No| P{Family History of CJD?} P --&gt;|Yes| Q[PRNP Sequencing - gCJD] P --&gt;|No| R[Exclude Mimics: HSV, autoimmune, HIV, paraneoplastic, Wernicke, Wilson] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flowchart: Prion Sterilisation Protocol</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Instruments used on CJD patient] --&gt; B{Heat tolerant?} B --&gt;|Yes| C[134°C × 18 min porous load autoclave] B --&gt;|No| D[1M NaOH soak 1 hour] C --&gt; E[Re-use OK] D --&gt; F[121°C autoclave] F --&gt; E A --&gt; G[High-risk tissue contact: brain, eye, dura] G --&gt; H[Single-use / Destroy / Quarantine] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] MRI brain sCJD: DWI showing cortical ribboning + caudate/putamen hyperintensity</li><li>[ ] MRI brain vCJD: T2/FLAIR showing pulvinar sign (posterior thalamus &gt; putamen); "hockey-stick" sign</li><li>[ ] EEG sCJD: Periodic sharp wave complexes at 1–2 Hz</li><li>[ ] H&amp;E brain sCJD: spongiform vacuolation (microvacuoles in neuropil)</li><li>[ ] PrP immunohistochemistry: florid (daisy) plaque vCJD vs kuru plaque sCJD</li><li>[ ] FFI: FDG-PET showing selective thalamic hypometabolism</li><li>[ ] Schematic: PRNP gene (chromosome 20p13) with key mutations (E200K, P102L, D178N, codon 129)</li><li>[ ] Schematic: PrP^C → PrP^Sc conversion (α-helix → β-sheet)</li><li>[ ] Diagram: BSE → human → vCJD transmission chain</li><li>[ ] Table for memorisation: 14-3-3 vs RT-QuIC vs tau CSF biomarkers</li><li>[ ] Pulvinar vs cortical ribboning side-by-side MRI comparison</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Osmosis — Prion diseases (overview, CJD, vCJD)</li><li>[ ] Armando Hasudungan — Prion disease</li><li>[ ] Ninja Nerd — Prion diseases</li><li>[ ] Lecturio — Prion diseases (FCPS/MRCP oriented)</li><li>[ ] Khan Academy — Prions</li><li>[ ] Royal College of Pathologists — CJD neuropathology demonstration</li><li>[ ] MRC Prion Unit lectures (UCL)</li><li>[ ] UK CJD Surveillance Unit case reports</li><li>[ ] NEJM/JAMA video on RT-QuIC and sCJD diagnosis</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Prion = misfolded protein (PrP^Sc); NO nucleic acid; resists PK, heat, UV, nucleases</b> - <b>PRNP gene on chromosome 20p13; codon 129 M/V polymorphism is critical modifier</b> - <b>PrP^C (α-helical, normal) → PrP^Sc (β-sheet, PK-resistant, infectious) — autocatalytic template-directed</b> - <b>3 groups: Sporadic (85%) / Genetic (10-15%) / Acquired (1%)</b> - <b>sCJD:</b> rapid dementia + myoclonus + ataxia + Heidenhain (5-10%) + PSWCs (1-2 Hz) EEG + cortical ribboning MRI + RT-QuIC +ve; duration 4-6 mo; codon 129 MV/VV - <b>vCJD:</b> BSE-link, young (median 28), psychiatric onset, painful sensory, pulvinar MRI, tonsil +ve, <b>NO periodic EEG</b>, codon 129 MM, florid plaques, duration 14 mo - <b>gCJD (E200K):</b> typical CJD + family history; Libyan, Israeli, Chilean, Slovak clusters - <b>FFI (D178N + M129 cis):</b> intractable insomnia, autonomic storm, thalamic atrophy, FDG-PET hypometabolism - <b>GSS (P102L):</b> cerebellar ataxia, multicentric amyloid plaques, slower (2-6 yr) - <b>Kuru:</b> Fore tribe PNG cannibalism, incubation up to 50 yr, cerebellar features - <b>iCJD:</b> dura mater (Lyodura Japan), hGH (pituitary pre-1985), corneal, neurosurgical - <b>BSE 1986 UK → vCJD 1996 UK</b> (causal); bovine offal ban 1989 - <b>Animal prions:</b> scrapie (sheep, not zoonotic), BSE (cattle, zoonotic = vCJD), CWD (deer, not proven), TME (mink), FSE (cats) - <b>Diagnosis: RT-QuIC = gold standard (95% sens, ~100% spec); 14-3-3 non-specific</b> - <b>MRI: sCJD = cortical ribboning + basal ganglia; vCJD = pulvinar sign; FFI = thalamic hypometabolism</b> - <b>EEG: PSWCs in sCJD only (~67%)</b> - <b>Pathology: spongiform vacuolation; florid plaques (vCJD); multicentric plaques (GSS)</b> - <b>Treatment: SUPPORTIVE ONLY; universally fatal</b> - <b>Sterilisation: 134°C × 18 min OR 1M NaOH + 121°C autoclave (standard autoclave FAILS)</b> - <b>Blood deferral: UK residents 1980-1996 (≥6 mo), hGH recipients, family history of CJD</b> - <b>Single-use instruments for dura, cornea, neurosurgery in high-risk cases</b> - <b>Recombinant hGH (replaced pituitary-derived after iCJD outbreaks)</b> - <b>Synthetic dura mater (replaced Lyodura)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Prion = protein only, no nucleic acid; PrP^C (α-helical) → PrP^Sc (β-sheet) conversion (autocatalytic template-directed); PRNP chr 20p13</li><li>Classification: sporadic 85% (sCJD, sFI), genetic 10-15% (gCJD, GSS, FFI, PrP-CAA), acquired 1% (iCJD, vCJD, kuru)</li><li>sCJD = rapid dementia, myoclonus, ataxia, Heidenhain visual, PSWCs EEG (1-2 Hz), cortical ribboning MRI, RT-QuIC, duration 4-6 mo</li><li>vCJD = BSE link, young (median 28), psychiatric onset, pulvinar sign, tonsil +ve, NO periodic EEG, codon 129 MM, florid plaques</li><li>FFI = D178N + M129 cis = insomnia, autonomic storm, thalamic atrophy</li><li>GSS = P102L = cerebellar ataxia, multicentric amyloid plaques, slower</li><li>Kuru = Fore tribe PNG, ritualistic cannibalism, incubation up to 50 yr</li><li>iCJD = dura mater (Lyodura), hGH (pre-1985), corneal, neurosurgical instruments, blood (vCJD)</li><li>BSE 1986 UK epidemic, vCJD 1996 UK; bovine offal ban 1989</li><li>RT-QuIC = real-time quaking-induced conversion = gold standard CSF test (&gt;95% sens, ~100% spec)</li><li>14-3-3 = non-specific (also stroke, HSV encephalitis, status epilepticus)</li><li>Sterilisation: 134°C × 18 min or 1M NaOH + 121°C autoclave (standard fails)</li><li>Treatment: supportive only; clonazepam/valproate for myoclonus; palliative care</li><li>Blood deferral: UK residents 1980-1996, hGH recipients, family history</li><li>Animal prions: scrapie (sheep), BSE (cattle), CWD (deer/elk), TME (mink), FSE (cats)</li><li>Codon 129 polymorphism: M129+V = protective against sCJD; M129M = vCJD susceptibility; M129+D178N=FFI; V129+D178N=fCJD</li><li>Pathology: spongiform vacuolation (all); florid plaques (vCJD); multicentric plaques (GSS)</li><li>Prion strains encoded in conformation, not sequence</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Prion biology (PrP^C/PrP^Sc, conversion, PRNP chr 20); sCJD vs vCJD differentiation; diagnostic criteria (WHO: EEG, CSF RT-QuIC, MRI); genetic forms (FFI, GSS, gCJD); vCJD features (BSE, pulvinar, tonsil); 14-3-3 vs RT-QuIC; infection control; sterilisation (134°C × 18 min, NaOH); treatment (supportive only)</td></tr><tr><td>**Should Know 🟡**</td><td>sFI, kuru details, iCJD transmission routes, PRNP mutations detail (E200K, P102L, D178N), codon 129 effect, RT-QuIC methodology, blood donation deferral, BSE timeline (1986, 1989, 1996), animal TSEs, neuropathology, surveillance, Heidenhain variant</td></tr><tr><td>**Nice to Know 🟢**</td><td>Prion strain biology, species barrier mechanism, prion-like mechanisms in neurodegeneration (α-synuclein, Aβ, tau — Parkinson's, Alzheimer's, FTD, ALS), experimental therapies (anti-PrP antibodies, pentosan polysulphate, quinacrine, doxycycline), APP and other prion-like proteins, yeast prions [PSI+], directed evolution of prions, atypical BSE, CWD public health implications</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li><li>[ ] e.g., differentiating D178N codon 129 effect (FFI vs fCJD)</li><li>[ ] e.g., pulvinar sign vs cortical ribboning MRI</li><li>[ ] e.g., PRNP sequencing and genetic counselling protocols</li><li>[ ] e.g., specific infection control measures for vCJD in surgery</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<p><b>Title: "Discuss prion diseases with emphasis on sporadic and variant CJD"</b></p>
+<ol><li><b>Definition</b> — prion = protein-only infectious particle, PrP^C → PrP^Sc (α-helix → β-sheet), autocatalytic templated conversion; PRNP chr 20p13; codon 129 M/V polymorphism as modifier</li><li><b>Aetiology/Classification</b> — sporadic 85% (sCJD), genetic 10-15% (gCJD E200K, GSS P102L, FFI D178N/M129, PrP-CAA), acquired 1% (iCJD, vCJD, kuru)</li><li><b>Epidemiology</b> — sCJD incidence 1/million/yr; vCJD linked to BSE 1986 UK; kuru Fore PNG; median age differs (sCJD 65 vs vCJD 28)</li><li><b>Pathogenesis</b> — PrP^Sc seeds recruit PrP^C; template-directed refolding; aggregation → spongiform vacuolation, neuronal loss, gliosis</li><li><b>Clinical features of sCJD</b> — rapidly progressive dementia, myoclonus (startle), cerebellar ataxia, Heidenhain (visual), pyramidal/extrapyramidal, akinetic mutism</li><li><b>Clinical features of vCJD</b> — young, psychiatric onset (depression, anxiety), painful sensory, cerebellar, myoclonus; codon 129 MM</li><li><b>Diagnosis (WHO criteria)</b> — sCJD: dementia + ≥2 features + EEG PSWCs OR CSF RT-QuIC/14-3-3 OR MRI ribboning. vCJD: psychiatric + dementia + ≥2 features + pulvinar sign + tonsil PrP^Sc</li><li><b>Investigations</b> — MRI (cortical ribboning sCJD vs pulvinar vCJD), EEG (PSWCs sCJD only), CSF (RT-QuIC gold standard, 14-3-3, tau), tonsil biopsy (vCJD), PRNP sequencing (genetic), brain biopsy (spongiform change — definitive but rarely done)</li><li><b>Differential</b> — autoimmune encephalitis, HSV encephalitis, HIV dementia, Wernicke, paraneoplastic, Hashimoto, mitochondrial, Wilson, DLB</li><li><b>Treatment</b> — supportive only; clonazepam/valproate for myoclonus; palliative; no disease-modifying therapy; universally fatal</li><li><b>Infection control</b> — high-infectivity tissues (brain, spinal cord, eyes, pituitary, lymphoid); sterilisation 134°C × 18 min OR 1M NaOH + autoclave; single-use instruments for dura/cornea; blood deferral UK 1980-1996; leucodepletion; surveillance</li></ol>
+<div class="sub-h">Short Note (7 min)</div>
+<p><b>"Sporadic CJD vs Variant CJD"</b></p>
+<table class="ctable"><tr><th>Feature</th><th>sCJD</th><th>vCJD</th></tr><tr><td>---------</td><td>------</td><td>------</td></tr><tr><td>Frequency</td><td>85%</td><td><1%</td></tr><tr><td>Age</td><td>60-70</td><td>Median 28</td></tr><tr><td>Onset</td><td>Cognitive/ataxic</td><td>Psychiatric/sensory</td></tr><tr><td>EEG</td><td>PSWCs 1-2 Hz</td><td>No PSWCs</td></tr><tr><td>MRI</td><td>Cortical ribboning + basal ganglia</td><td>Pulvinar sign</td></tr><tr><td>Tonsil biopsy</td><td>Negative</td><td>Positive</td></tr><tr><td>Codon 129</td><td>MV or VV risk</td><td>All MM</td></tr><tr><td>Plaques</td><td>Variable</td><td>Florid daisy</td></tr><tr><td>Source</td><td>Sporadic</td><td>BSE beef</td></tr><tr><td>Duration</td><td>4-6 mo</td><td>14 mo</td></tr></table>
+<div class="sub-h">Viva Answer (3 min)</div>
+<p><b>"What is a prion and how does it cause disease?"</b> "Prions, or proteinaceous infectious particles, are composed solely of misfolded host protein (PrP^Sc) — no DNA or RNA. The normal cellular form PrP^C, encoded by the PRNP gene on chromosome 20, has predominantly α-helical structure. The pathogenic PrP^Sc has more β-sheet content and is partially proteinase-K resistant. Conversion occurs by template-directed refolding: PrP^Sc recruits PrP^C and converts it to PrP^Sc, an autocatalytic process that amplifies exponentially. This leads to spongiform vacuolation, neuronal loss, and gliosis, manifesting as rapidly progressive dementia, myoclonus, and ataxia. They are highly resistant to standard sterilisation — requiring 134°C for 18 minutes or 1M NaOH. Famous examples are kuru from cannibalism, vCJD from BSE-contaminated beef, and the genetic forms FFI and GSS."</p>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<p><b>"65-year-old, rapidly progressive dementia + myoclonus + ataxia — differential?"</b></p>
+<ul><li><b>Differential:</b> sCJD (most likely given speed), autoimmune encephalitis (anti-NMDA, LGI1), HSV encephalitis (CSF PCR), HIV dementia, paraneoplastic (onconeural Ab), Wernicke (alcohol, thiamine), DLB (visual hallucinations), PSP/CBS</li><li><b>Investigations:</b> MRI brain with DWI/FLAIR (cortical ribboning + basal ganglia hyperintensity in sCJD), EEG (PSWCs in sCJD), CSF RT-QuIC + 14-3-3 + tau, HIV serology, autoimmune encephalitis panel (NMDAR, LGI1, CASPR2, GABA-B, AMPAR), paraneoplastic screen (anti-Hu, Yo, Ma2, CV2/CRMP5)</li><li><b>Management:</b> notify CJD surveillance unit; genetic counselling if familial; clonazepam/valproate for myoclonus; supportive care; palliative care involvement; family support</li><li><b>Infection control:</b> standard precautions; if neurosurgical/lumbar puncture needed, instrument handling per protocol</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li><b>Prion = protein only; PrP^C → PrP^Sc (α→β)</b></li><li><b>PRNP chr 20; codon 129 M/V</b></li><li><b>sCJD: elderly, rapid, EEG PSWCs, MRI ribboning, RT-QuIC</b></li><li><b>vCJD: young, BSE, psychiatric, pulvinar, tonsil +ve, no PSWCs</b></li><li><b>FFI: D178N + M129 = insomnia</b></li><li><b>GSS: P102L = ataxia, plaques</b></li><li><b>Sterilise: 134°C × 18 min / NaOH</b></li><li><b>Treatment: supportive only</b></li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li><b>PrP^C = cellular, α-helical; PrP^Sc = scrapie, β-sheet, PK-resistant, infectious</b></li><li><b>3 groups: Sporadic (85%) / Genetic (10-15%) / Acquired (1%)</b></li><li><b>sCJD hallmarks: dementia + myoclonus + ataxia + PSWCs + cortical ribboning</b></li><li><b>vCJD hallmarks: BSE + young + psychiatric + pulvinar + tonsil PrP^Sc + no PSWCs</b></li><li><b>Codon 129: D178N+M129=FFI, D178N+V129=fCJD, vCJD all MM</b></li><li><b>RT-QuIC &gt; 95% sens, ~100% spec — gold standard</b></li><li><b>134°C × 18 min OR 1M NaOH + autoclave</b></li><li><b>Kuru = Fore PNG cannibalism, incubation 50 yr</b></li><li><b>Animal TSEs: scrapie, BSE, CWD, TME, FSE</b></li><li><b>Treatment = supportive only; universally fatal</b></li><li><b>BSE 1986 → vCJD 1996 UK; blood deferral UK 1980-1996</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Prions are composed of:</b></li></ol>
+<p>A. Protein + RNA B. Protein + DNA C. <b>Protein only (no nucleic acid)</b> D. Lipoprotein complex E. Carbohydrate-protein complex</p>
+<ol><li><b>The normal cellular prion protein (PrP^C) is converted to pathogenic PrP^Sc by:</b></li></ol>
+<p>A. Genetic mutation only B. <b>Conformational change (α-helix → β-pleated sheet) — autocatalytic templated conversion</b> C. Proteolytic cleavage D. Phosphorylation E. Glycosylation change only</p>
+<ol><li><b>The PRNP gene is located on:</b></li></ol>
+<p>A. Chromosome 14 B. Chromosome 17 C. <b>Chromosome 20p13</b> D. Chromosome 21 E. Chromosome X</p>
+<ol><li><b>sCJD typical EEG finding:</b></li></ol>
+<p>A. Slow waves B. <b>Periodic sharp wave complexes (PSWCs) at 1–2 Hz</b> C. Spike-and-wave D. Normal E. Triphasic waves</p>
+<ol><li><b>sCJD MRI characteristic finding:</b></li></ol>
+<p>A. Atrophy only B. <b>Cortical ribboning (DWI/FLAIR) + basal ganglia hyperintensity</b> C. White matter hyperintensities D. Mesial temporal sclerosis E. Normal</p>
+<ol><li><b>Variant CJD (vCJD) is linked to:</b></li></ol>
+<p>A. Scrapie B. <b>Bovine Spongiform Encephalopathy (BSE) — UK 1986</b> C. Chronic Wasting Disease D. Kuru E. ALS</p>
+<ol><li><b>vCJD characteristic MRI finding:</b></li></ol>
+<p>A. Cortical ribboning B. <b>Pulvinar sign (posterior thalamus &gt; anterior putamen)</b> C. Basal ganglia hyperintensity D. Mesial temporal hyperintensity E. Cerebellar atrophy</p>
+<ol><li><b>vCJD diagnostic feature NOT seen in sCJD:</b></li></ol>
+<p>A. Periodic EEG complexes B. <b>Tonsil biopsy PrP^Sc positive (lymphoreticular involvement)</b> C. CSF 14-3-3 positive D. Rapid dementia E. Myoclonus</p>
+<ol><li><b>Fatal Familial Insomnia (FFI) causative mutation:</b></li></ol>
+<p>A. E200K B. P102L C. <b>D178N with Methionine at codon 129 (in cis)</b> D. A117V E. V180I</p>
+<ol><li><b>Prion sterilisation requires:</b></li></ol>
+<p>A. Standard autoclaving 121°C × 15 min B. <b>134°C × 18 min OR 1M NaOH + 121°C autoclave</b> C. 2% glutaraldehyde D. Ethylene oxide E. UV irradiation</p>
+<ol><li><b>Kuru was transmitted by:</b></li></ol>
+<p>A. Iatrogenic hGH B. <b>Ritualistic cannibalism (Fore people, Papua New Guinea)</b> C. BSE-contaminated beef D. Dura mater grafts E. Corneal transplants</p>
+<ol><li><b>Codon 129 polymorphism modifies the phenotype of which PRNP mutation?</b></li></ol>
+<p>A. E200K B. P102L C. <b>D178N (M129 = FFI, V129 = fCJD)</b> D. A117V E. Y145Stop</p>
+<ol><li><b>BSE was first identified in UK cattle in:</b></li></ol>
+<p>A. 1980 B. <b>1986</b> C. 1996 D. 2000 E. 2005</p>
+<ol><li><b>All UK vCJD cases share which PRNP genotype at codon 129?</b></li></ol>
+<p>A. MM B. <b>MM (methionine homozygous)</b> C. MV D. VV E. Indeterminate</p>
+<ol><li><b>RT-QuIC sensitivity and specificity for sCJD:</b></li></ol>
+<p>A. 50% / 80% B. 80% / 85% C. <b>&gt;95% / ~100%</b> D. 100% / 50% E. 30% / 100%</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>65-year-old man, 3-month history of rapidly progressive dementia, myoclonus, ataxia. EEG: periodic sharp wave complexes. MRI: cortical ribboning. CSF RT-QuIC positive. Diagnosis:</b></li></ol>
+<p>A. Alzheimer disease B. Vascular dementia C. <b>sCJD</b> D. vCJD E. Lewy body dementia</p>
+<ol><li><b>28-year-old woman, psychiatric symptoms (depression, anxiety) for 6 months, then ataxia, dementia. MRI: posterior thalamic hyperintensity (pulvinar sign). Tonsil biopsy PrP^Sc positive. Diagnosis:</b></li></ol>
+<p>A. sCJD B. <b>vCJD</b> C. FFI D. GSS E. Autoimmune encephalitis</p>
+<ol><li><b>50-year-old man, intractable insomnia, autonomic dysfunction (tachycardia, hypertension, hyperhidrosis), cognitive decline. Father had similar illness. Genetic testing: D178N mutation with Met129 (cis). Diagnosis:</b></li></ol>
+<p>A. sCJD B. <b>Fatal Familial Insomnia (FFI)</b> C. GSS D. vCJD E. Morvan syndrome</p>
+<ol><li><b>40-year-old woman, progressive cerebellar ataxia, dementia. Father had similar illness. Genetic testing: P102L mutation. Neuropathology shows multicentric amyloid plaques. Diagnosis:</b></li></ol>
+<p>A. FFI B. <b>Gerstmann-Sträussler-Scheinker (GSS)</b> C. sCJD D. vCJD E. Huntington disease</p>
+<ol><li><b>Patient undergoing cataract surgery. Previous patient had suspected CJD. Instrument sterilisation protocol:</b></li></ol>
+<p>A. Standard autoclave 121°C × 15 min B. <b>134°C × 18 min OR 1M NaOH + 121°C autoclave (or single-use)</b> C. 2% glutaraldehyde soak D. Ethylene oxide sterilisation E. Single-use only, no sterilisation</p>
+<ol><li><b>Blood donor deferral for vCJD risk — which group is deferred in UK?</b></li></ol>
+<p>A. All blood donors B. <b>UK residents 1980–1996 (≥6 months)</b> C. Recent travellers to Europe D. Family history of Alzheimer only E. Vegetarians</p>
+<ol><li><b>vCJD surveillance — tonsil biopsy utility:</b></li></ol>
+<p>A. Definitive for all prion diseases B. <b>Detects PrP^Sc in lymphoreticular tissue (vCJD specific)</b> C. Replaces brain biopsy in all cases D. Negative in vCJD E. Same as brain biopsy sensitivity</p>
+<ol><li><b>Iatrogenic CJD — historical transmission routes:</b></li></ol>
+<p>A. Blood transfusion (sCJD) B. <b>Neurosurgical instruments, dura mater grafts, pituitary hGH, gonadotropins, corneal transplants</b> C. Contaminated beef (sCJD) D. Cannibalism (sCJD) E. Respiratory droplets</p>
+<ol><li><b>CSF RT-QuIC for sCJD:</b></li></ol>
+<p>A. Sensitivity 50%, specificity 90% B. <b>Sensitivity &gt;95%, specificity ~100% (gold standard)</b> C. Replaced by 14-3-3 D. Only positive in vCJD E. Not clinically available</p>
+<ol><li><b>vCJD blood transmission risk — UK measures:</b></li></ol>
+<p>A. Universal leucodepletion of blood products B. <b>Leucodepletion + import plasma from non-UK sources + donor deferral (UK 1980-96)</b> C. No measures needed D. Screening donors with RT-QuIC E. Only plasma from US used</p>
+<ol><li><b>70-year-old man, rapidly progressive dementia, myoclonus, ataxia. EEG: PSWCs. MRI: cortical ribboning. What is the PRNP codon 129 genotype most likely associated with sCJD risk?</b></li></ol>
+<p>A. MM only B. <b>MV or VV</b> C. VV only D. Indeterminate E. Has no effect</p>
+<ol><li><b>Neuropathology of vCJD characteristically shows:</b></li></ol>
+<p>A. Multicentric PrP plaques B. <b>Florid (daisy) plaques with spongiform change</b> C. Kuru plaques only D. Perivascular amyloid E. Negri bodies</p>
+<ol><li><b>50-year-old man with family history of CJD (father, paternal aunt). He is asymptomatic. Best approach:</b></li></ol>
+<p>A. Empirical PRNP testing without consent B. <b>PRNP codon 129 + sequencing with genetic counselling; discuss predictive testing protocols</b> C. Avoid testing; not treatable D. Routine MRI brain annually E. Empiric doxycycline</p>
+<ol><li><b>CWD (Chronic Wasting Disease) is a prion disease of:</b></li></ol>
+<p>A. Sheep B. Cattle C. <b>Deer, elk, moose (North America)</b> D. Mink E. Cats</p>
+<ol><li><b>Best treatment for myoclonus in sCJD:</b></li></ol>
+<p>A. Levodopa B. <b>Clonazepam, valproate, levetiracetam</b> C. Haloperidol D. Steroids E. IVIG</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">30</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Prion composition?</li></ul>
+<p>A: Protein only (PrP^Sc); no nucleic acid</p>
+<ul><li>Q: PrP^C → PrP^Sc conversion?</li></ul>
+<p>A: α-helix → β-pleated sheet conformational change (autocatalytic template-directed)</p>
+<ul><li>Q: PRNP gene location?</li></ul>
+<p>A: Chromosome 20p13</p>
+<ul><li>Q: Codon 129 polymorphism?</li></ul>
+<p>A: M/V; critical disease modifier; MV or VV = sCJD risk; MM = vCJD susceptibility; M129+D178N = FFI</p>
+<ul><li>Q: sCJD EEG?</li></ul>
+<p>A: Periodic sharp wave complexes (PSWCs) at 1–2 Hz</p>
+<ul><li>Q: sCJD MRI?</li></ul>
+<p>A: Cortical ribboning + basal ganglia hyperintensity (DWI/FLAIR)</p>
+<ul><li>Q: sCJD CSF?</li></ul>
+<p>A: RT-QuIC (gold standard, &gt;95% sens, ~100% spec), 14-3-3, elevated tau &gt;1200 pg/mL</p>
+<ul><li>Q: vCJD vs sCJD differences?</li></ul>
+<p>A: Young (median 28), psychiatric onset, BSE link, pulvinar sign MRI, tonsil +ve, NO periodic EEG, codon 129 MM, florid plaques</p>
+<ul><li>Q: vCJD MRI?</li></ul>
+<p>A: Pulvinar sign (posterior thalamus &gt; anterior putamen hyperintensity); "hockey-stick" sign</p>
+<ul><li>Q: FFI mutation?</li></ul>
+<p>A: D178N with Methionine at codon 129 (cis)</p>
+<ul><li>Q: GSS mutation?</li></ul>
+<p>A: P102L (most common); cerebellar ataxia + multicentric amyloid plaques</p>
+<ul><li>Q: gCJD mutation?</li></ul>
+<p>A: E200K (most common); clusters in Libya, Israel, Chile, Slovakia</p>
+<ul><li>Q: Prion sterilisation?</li></ul>
+<p>A: 134°C × 18 min OR 1M NaOH + 121°C autoclave</p>
+<ul><li>Q: vCJD tonsil biopsy?</li></ul>
+<p>A: PrP^Sc detectable in lymphoreticular tissue (tonsil, appendix, spleen)</p>
+<ul><li>Q: Kuru transmission?</li></ul>
+<p>A: Ritualistic cannibalism (Fore people, Papua New Guinea); incubation up to 50 years</p>
+<ul><li>Q: BSE first identified?</li></ul>
+<p>A: UK, 1986</p>
+<ul><li>Q: vCJD first cases reported?</li></ul>
+<p>A: UK, 1996</p>
+<ul><li>Q: Blood deferral UK?</li></ul>
+<p>A: Residents 1980–1996 (≥6 months); family history of CJD; hGH recipients</p>
+<ul><li>Q: Heidenhain variant of sCJD?</li></ul>
+<p>A: Early visual symptoms — cortical blindness, visual agnosia, hallucinations</p>
+<ul><li>Q: Treatment of prion diseases?</li></ul>
+<p>A: Supportive only; no disease-modifying therapy; universally fatal</p>
+<ul><li>Q: Florid plaques pathology?</li></ul>
+<p>A: vCJD — PrP amyloid plaque with surrounding vacuolar halo (daisy appearance)</p>
+<ul><li>Q: FFI neuropathology?</li></ul>
+<p>A: Selective medio-dorsal thalamic neuronal loss; minimal spongiosis</p>
+<ul><li>Q: RT-QuIC principle?</li></ul>
+<p>A: Real-time quaking-induced conversion — amplifies PrP^Sc seeds using recombinant PrP substrate + thioflavin-T fluorescence</p>
+<ul><li>Q: Animal prion diseases?</li></ul>
+<p>A: Scrapie (sheep), BSE (cattle, → vCJD), CWD (deer/elk), TME (mink), FSE (cats)</p>
+<ul><li>Q: Iatrogenic CJD routes?</li></ul>
+<p>A: Dura mater grafts, pituitary hGH, gonadotropins, corneal transplants, neurosurgical instruments, EEG electrodes, blood (vCJD)</p>
+<ul><li>Q: PRNP codon 178 + 129 combinations?</li></ul>
+<p>A: D178N + M129 = FFI; D178N + V129 = fCJD</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">31</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — Prions = protein only (PrP^Sc), no DNA/RNA (Prusiner 1982)</li><li><b>B</b> — Conformational change α-helix → β-pleated sheet; autocatalytic templated conversion (no primary sequence change)</li><li><b>C</b> — PRNP on chromosome 20p13</li><li><b>B</b> — Periodic sharp wave complexes (PSWCs) at 1–2 Hz = sCJD hallmark; biphasic/triphasic sharp waves</li><li><b>B</b> — Cortical ribboning + basal ganglia hyperintensity on DWI/FLAIR (DWI most sensitive)</li><li><b>B</b> — vCJD = BSE transmission to humans; UK 1986 BSE → 1996 vCJD</li><li><b>B</b> — Pulvinar sign = posterior thalamus hyperintensity &gt; anterior putamen (vCJD specific, ~90% sens)</li><li><b>B</b> — Tonsil PrP^Sc +ve in vCJD (lymphoreticular involvement); sCJD = CNS only, tonsil negative</li><li><b>C</b> — FFI = D178N + Met129 (cis); E200K = gCJD; P102L = GSS</li><li><b>B</b> — Standard autoclave insufficient; need 134°C × 18 min or 1M NaOH + autoclave</li><li><b>B</b> — Kuru = ritualistic cannibalism among Fore people, PNG; largely eradicated</li><li><b>C</b> — D178N + M129 = FFI; D178N + V129 = fCJD — codon 129 polymorphism modifies phenotype</li><li><b>B</b> — BSE first identified in UK cattle in 1986 ("mad cow disease")</li><li><b>B</b> — All UK vCJD cases are codon 129 MM (methionine homozygous)</li><li><b>C</b> — RT-QuIC: sensitivity &gt;95%, specificity ~100% — current CSF gold standard</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> — Rapid dementia + myoclonus + periodic EEG + cortical ribboning + RT-QuIC = sCJD</li><li><b>B</b> — Young, psychiatric, pulvinar sign, tonsil PrP^Sc = vCJD</li><li><b>B</b> — Intractable insomnia + autonomic dysfunction + D178N/Met129 (cis) = FFI</li><li><b>B</b> — Cerebellar ataxia + P102L + multicentric amyloid plaques = GSS</li><li><b>B</b> — Prion sterilisation = 134°C × 18 min OR 1M NaOH + 121°C autoclave (or single-use)</li><li><b>B</b> — UK residents 1980–1996 deferred (peak BSE exposure)</li><li><b>B</b> — Tonsil biopsy detects PrP^Sc in vCJD (lymphoreticular involvement; sCJD tonsil negative)</li><li><b>B</b> — iCJD = neurosurgical instruments, dura grafts, pituitary hGH, gonadotropins, corneal transplants</li><li><b>B</b> — RT-QuIC = gold standard (&gt;95% sens, ~100% spec)</li><li><b>B</b> — UK: leucodepletion + non-UK plasma import + donor deferral (1980-96)</li><li><b>B</b> — MV or VV at codon 129 predisposes to sCJD; MM protective</li><li><b>B</b> — Florid (daisy) plaques — PrP amyloid core with vacuolar halo; pathognomonic for vCJD</li><li><b>B</b> — Predictive genetic testing requires genetic counselling, multi-session protocol, psychological support</li><li><b>C</b> — CWD = cervids (deer, elk, moose); North America; not proven zoonotic</li><li><b>B</b> — Clonazepam, valproate, levetiracetam for myoclonus in sCJD</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">32</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Prion Diseases</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Prions = misfolded proteins (PrP^Sc), no nucleic acid; PRNP gene chromosome 20p13; codon 129 polymorphism critical. <b>sCJD</b> = 85% (rapid dementia, myoclonus, PSWCs EEG, cortical ribboning MRI, RT-QuIC). <b>vCJD</b> = BSE-linked, young, psychiatric, pulvinar sign, tonsil PrP^Sc, codon 129 MM. <b>FFI</b> = D178N/M129 (insomnia, thalamus). <b>GSS</b> = P102L (ataxia, plaques). <b>Kuru</b> = Fore cannibalism. <b>Sterilisation</b> = 134°C × 18 min or NaOH. <b>Treatment</b> = supportive only. <b>Exam focus:</b> sCJD vs vCJD differentiation, diagnostic criteria (WHO), codon 129 effects, D178N vs FFI/fCJD, RT-QuIC vs 14-3-3, BSE timeline, infection control, blood deferral, animal prion diseases. <b>Clinical relevance:</b> Rapid dementia differential, neurosurgical instrument handling, blood safety, genetic counselling for familial prion disease, public health surveillance, prion-like mechanisms in neurodegeneration.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | Status: full</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Prion Diseases · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vancomycin — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.13. TDM</span>
+      <div class="h1">Vancomycin</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>AUC/MIC-guided dosing</b> (current standard) — target AUC 400–600 mg·h/L</li><li>[ ] Compare traditional trough-only vs AUC-guided strategies</li><li>[ ] Calculate AUC using Bayesian software or trapezoidal rule</li><li>[ ] Adjust dose for renal impairment and renal replacement therapy</li><li>[ ] Identify nephrotoxicity risk factors + management</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 AUC-Guided Dosing — **Current Standard (ASHP/IDSA 2020)**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>**AUC/MIC-Guided (Preferred)**</th><th>**Traditional Trough-Only (Legacy)**</th></tr><tr><td>-----------</td><td>-------------------------------</td><td>--------------------------------------</td></tr><tr><td>**Target**</td><td>**AUC 400–600 mg·h/L** (assuming MIC ≤1 mg/L)</td><td>**Trough 15–20 mg/L** (severe infections) / **10–15 mg/L** (non-severe)</td></tr><tr><td>**Rationale**</td><td>AUC/MIC correlates with efficacy & nephrotoxicity</td><td>Trough >15 correlates with nephrotoxicity; poor AUC prediction</td></tr><tr><td>**Measurement**</td><td>**≥2 levels** (peak + trough OR 2 post-dose) → Bayesian software</td><td>Single trough (pre-dose)</td></tr><tr><td>**AUC:MIC Ratio Target**</td><td>**≥400** (MIC ≤1)</td><td>Not applicable</td></tr><tr><td>**Software**</td><td>**Bayesian (MWPharm, DoseMe, InsightRX, BestDose)**</td><td>Not needed</td></tr></table>
+<div class="callout"><b>Key Equations</b>: - <b>AUC₀₋₂₄ = (Dose / Cl) × (1 / (1 − e^(−kτ)))</b> — at steady state - <b>AUC/MIC ≥ 400</b> required for bactericidal activity (S. aureus MIC ≤1) - <b>Cl ≈ 0.00293 × CrCl + 0.014</b> (population estimate)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🧮 TDM Sampling Strategy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Method</th><th>Levels Required</th><th>Timing</th><th>Best For</th></tr><tr><td>--------</td><td>----------------</td><td>--------</td><td>----------</td></tr><tr><td>**Bayesian (2-level)**</td><td>**Peak (1–2h post-end infusion) + Trough (pre-dose)**</td><td>Steady state (after 3–5 half-lives / ~24–48h)</td><td>**All patients — preferred**</td></tr><tr><td>**Bayesian (1-level + population)**</td><td>Trough only + population prior</td><td>Steady state</td><td>ICU CrRT (limited access)</td></tr><tr><td>**Trapezoidal (2-level)**</td><td>Peak (1–2h post) + Trough (pre-dose)</td><td>Steady state</td><td>If no Bayesian software</td></tr><tr><td>**Traditional (trough only)**</td><td>Trough (pre-dose)</td><td>Steady state</td><td>Legacy / resource-limited</td></tr></table>
+<div class="callout"><b>Steady state</b>: Vancomycin t½ ~6h (normal renal) → <b>3–5 half-lives = 18–30h</b> (check levels day 2–3)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">⚖️ Renal Adjustment</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>CrCl (mL/min)</th><th>Initial Dose (Intermittent)</th><th>Monitoring</th></tr><tr><td>---------------</td><td>----------------------------</td><td>------------</td></tr><tr><td>**>60**</td><td>15–20 mg/kg q8–12h (max 2g/dose)</td><td>Levels at 24–48h</td></tr><tr><td>**40–60**</td><td>15–20 mg/kg q12h</td><td>Levels at 24–48h</td></tr><tr><td>**30–40**</td><td>15–20 mg/kg q12–18h</td><td>Levels at 24–48h</td></tr><tr><td>**20–30**</td><td>15–20 mg/kg q18–24h</td><td>Levels at 24–48h</td></tr><tr><td>**10–20**</td><td>10–15 mg/kg q24–48h</td><td>Levels at 48–72h</td></tr><tr><td>**<10 / Not on RRT**</td><td>**10–15 mg/kg q48–72h**</td><td>Levels at 48–72h</td></tr></table>
+<div class="sub-h">Renal Replacement Therapy (RRT)</div>
+<table class="ctable"><tr><th>Modality</th><th>Dose</th><th>Timing</th><th>Supplementation</th></tr><tr><td>----------</td><td>------</td><td>--------</td><td>----------------</td></tr><tr><td>**Intermittent HD**</td><td>**15–20 mg/kg post-HD**</td><td>After each session</td><td>**500–1000 mg** mid-week if long interval</td></tr><tr><td>**SLED / Extended HD**</td><td>15–20 mg/kg post-session</td><td>After each session</td><td>As above</td></tr><tr><td>**CRRT (CVVH/CVVHDF)**</td><td>**10–15 mg/kg q24–48h**</td><td>Daily or q48h</td><td>Monitor levels; adjust by clearance</td></tr><tr><td>**PD**</td><td>15–20 mg/kg q5–7d</td><td>Intraperitoneal or IV</td><td>Monitor levels</td></tr></table>
+<div class="callout"><b>Use actual body weight</b> unless obese (&gt;120% IBW) → <b>adjusted body weight</b> (IBW + 0.4×(ABW-IBW))</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">☠️ Nephrotoxicity</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Definition**</td><td>↑ SCr ≥0.5 mg/dL (≥44 μmol/L) OR ↑ 50% from baseline on ≥2 consecutive days</td></tr><tr><td>**Risk Factors**</td><td>**Trough >20 mg/L** (old), **AUC >650–700** (current), **Concomitant nephrotoxins** (aminoglycosides, piperacillin-tazobactam (↑ 2–3x risk!), contrast, NSAIDs, ACEi/ARB, amphotericin), **Critical illness, Sepsis, Age>65, Pre-existing CKD, Duration >7d**</td></tr><tr><td>**Vanco + Pip-Taz**</td><td>**↑ AKI risk 2–3x vs vanco alone or other β-lactams** — **"Vanc-Pip" nephrotoxicity**</td></tr><tr><td>**Monitoring**</td><td>**SCr q2–3d** (daily in ICU/critical); Baseline SCr before start</td></tr><tr><td>**Management**</td><td>**AUC-guided dosing keeps risk lowest**; If AKI: hold 24–48h, recheck AUC, ↓ dose, avoid concomitant nephrotoxins</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Target AUC**</td><td>**400–600 mg·h/L** (MIC ≤1 mg/L); AUC/MIC ≥400</td></tr><tr><td>**AUC >650–700**</td><td>↑ Nephrotoxicity risk</td></tr><tr><td>**Trough-only is outdated**</td><td>AUC-guided is standard (ASHP/IDSA 2020)</td></tr><tr><td>**Bayesian software**</td><td>**Required for AUC** — use 2 levels (peak + trough)</td></tr><tr><td>**Pip-Taz + Vanco**</td><td>**↑ Nephrotoxicity 2–3x** — avoid if possible; if needed, close monitoring</td></tr><tr><td>**Renal adjustment**</td><td>CrCl-based; HD = post-session dosing; CRRT = q24–48h</td></tr><tr><td>**Obesity**</td><td>Use **adjusted body weight** (IBW + 0.4×(ABW-IBW))</td></tr><tr><td>**Steady state**</td><td>~24–48h (t½ ~6h normal renal); check levels day 2–3</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Current vancomycin TDM target (ASHP/IDSA 2020)?</td><td>**AUC 400–600 mg·h/L** (AUC/MIC ≥400 assuming MIC ≤1 mg/L)</td></tr><tr><td>2. Why AUC-guided over trough-only?</td><td>Trough poorly predicts AUC; AUC/MIC correlates with **efficacy AND nephrotoxicity**; trough >15 mg/L → nephrotoxicity but misses low AUC</td></tr><tr><td>3. How many levels for Bayesian AUC estimation?</td><td>**≥2 levels** — ideally **peak (1–2h post-infusion) + trough (pre-dose)** at steady state</td></tr><tr><td>4. Vancomycin + Piperacillin-Tazobactam interaction?</td><td>**Synergistic nephrotoxicity** — AKI risk **2–3x higher** vs vanco alone or other β-lactams</td></tr><tr><td>5. Vancomycin dosing in intermittent HD?</td><td>**15–20 mg/kg IV post-HD session**; supplement 500–1000 mg mid-week if long interval</td></tr><tr><td>6. Vancomycin dosing in CRRT?</td><td>**10–15 mg/kg q24–48h**; monitor levels, adjust by clearance</td></tr><tr><td>7. Nephrotoxicity definition?</td><td>**↑ SCr ≥0.5 mg/dL OR ↑ 50% from baseline on ≥2 consecutive days**</td></tr><tr><td>8. High-risk factors for nephrotoxicity?</td><td>**AUC >650–700, Trough >20 (old), Pip-Taz co-administration, Aminoglycosides, Contrast, Sepsis, Age>65, CKD, Duration >7d**</td></tr><tr><td>9. Obesity dosing adjustment?</td><td>**Adjusted body weight = IBW + 0.4×(ABW-IBW)** if >120% IBW</td></tr><tr><td>10. When to check first vancomycin levels?</td><td>**Steady state: ~24–48h (day 2–3)** after initiation (t½ ~6h normal renal)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**AUC 400–600 vs Trough 15–20**</td><td>AUC-guided is current standard; trough 15–20 was old target for severe infections</td></tr><tr><td>**MIC >1 mg/L**</td><td>If MIC >1 (rare for MSSA/MRSA), target **AUC/MIC ≥400** (e.g., MIC=2 → AUC ≥800) — consult ID</td></tr><tr><td>**Bayesian vs Trapezoidal**</td><td>Bayesian uses population priors + levels → more accurate; Trapezoidal = direct AUC calculate from 2 points</td></tr><tr><td>**HD dosing**</td><td>**Post-HD** (not pre); supplements mid-week</td></tr><tr><td>**CRRT dosing**</td><td>**Low dose, frequent** (10–15 mg/kg q24–48h) — clearance is continuous but variable</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"AUC 400-600"</b> = <b>AUC 400–600</b> = efficacy + safety sweet spot</li><li><b>"VANCO-PiP = NEPHROTOXICITY"</b> = <b>Vanc + Pip-Taz</b> = 2–3x AKI risk</li><li><b>"BAYESIAN = PEAK + TROUGH"</b> = 2 levels for software</li><li><b>"STEADY STATE = DAY 2-3"</b> = t½ 6h → 4 half-lives = 24h</li><li><b>"HD = POST SESSION"</b> = dose after haemodialysis</li><li><b>"CRRT = LOW FREQUENT"</b> = 10-15 mg/kg q24-48h</li><li><b>"AUC &gt;650 = NEPHROTOXICITY RISK"</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Vancomycin TDM)) Target AUC 400-600 mg·h/L (MIC ≤1) AUC/MIC ≥400 AUC &gt;650-700 → nephrotoxicity TDM Method Bayesian (Preferred) Peak (1-2h post) + Trough (pre-dose) Steady state (day 2-3) Software: MWPharm, DoseMe, InsightRX Traditional (Legacy) Trough 15-20 (severe), 10-15 (non-severe) Renal Adjustment CrCl &gt;60: q8-12h CrCl 40-60: q12h CrCl 20-30: q18-24h CrCl &lt;10: q48-72h HD: 15-20 mg/kg post-HD CRRT: 10-15 mg/kg q24-48h Obesity: Adjusted BW Nephrotoxicity Definition: SCr ↑0.5 or ↑50% Risk Factors: AUC &gt;650 Vanco + Pip-Taz (2-3x) Aminoglycosides Contrast, Sepsis, Age&gt;65, CKD, &gt;7d Monitor SCr q2-3d </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>AUC target & rationale</td><td>8</td><td></td></tr><tr><td>TDM methods</td><td>6</td><td></td></tr><tr><td>Renal/RRT dosing</td><td>8</td><td></td></tr><tr><td>Nephrotoxicity</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**40**</td><td></td></tr></table>
+<p><b>Target</b>: ≥32/40 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Vancomycin TDM — current target, method, and nephrotoxicity risk factors."*</div>
+<ul><li><b>Target</b>: <b>AUC 400–600 mg·h/L</b> (AUC/MIC ≥400); <b>AUC &gt;650–700 → nephrotoxicity</b></li><li><b>Method</b>: <b>Bayesian</b> — <b>2 levels</b> (peak 1–2h post + trough pre-dose) at <b>steady state (day 2–3)</b></li><li><b>Nephrotoxicity risks</b>: <b>AUC &gt;650</b>, <b>Vanco + Pip-Taz (2–3x AKI)</b>, aminoglycosides, contrast, sepsis, age&gt;65, CKD, duration &gt;7d</li><li><b>Definition AKI</b>: SCr ↑≥0.5 mg/dL or ↑50% on 2 consecutive days</li></ul>
+<div class="sub-h">Viva (1 min): *"Patient on vancomycin + piperacillin-tazobactam for sepsis. Day 3: SCr rising. Why? Action?"*</div>
+<ul><li><b>Vanco + Pip-Taz = synergistic nephrotoxicity (2–3x risk)</b></li><li><b>Stop Pip-Taz</b> if possible; switch to meropenem/ceftriaxone/cefepime</li><li><b>Recheck vancomycin AUC</b> — target 400–600</li><li><b>Hold vancomycin 24–48h</b> if AKI significant; resume at ↓ dose</li><li>Avoid other nephrotoxins (contrast, NSAIDs, ACEi/ARB)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on HD started vancomycin for MRSA bacteraemia. Dosing?"*</div>
+<ul><li><b>15–20 mg/kg IV post-HD</b> (after each session)</li><li><b>500–1000 mg supplement</b> mid-week if long interdialytic interval</li><li>Check level pre-next HD to guide supplemental dose</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Vancomycin TDM = <b>AUC 400–600</b> (MIC≤1); AUC &gt;650 = nephrotoxicity</li><li>Bayesian: <b>Peak (1–2h) + Trough</b> at steady state (day 2–3)</li><li>Vanco + Pip-Taz = <b>2–3x AKI</b> (avoid)</li><li>HD = post-session dosing; CRRT = q24–48h</li><li>Nephrotoxicity = SCr ↑0.5 or ↑50% on 2 days</li><li>Obesity = adjusted BW (IBW + 0.4×(ABW-IBW))</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>VANCOMYCIN TDM:</b> <b>AUC 400-600 mg·h/L</b> (MIC ≤1) — <b>BAYESIAN: Peak 1-2h + Trough at steady state (day 2-3)</b> <b>AUC &gt;650 = NEPHROTOXICITY</b> <b>VANCO + PIP-TAZ = 2-3x AKI</b> — AVOID <b>HD: Post-session 15-20 mg/kg; CRRT: 10-15 mg/kg q24-48h</b> <b>OBESITY: Adjusted BW</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Current vancomycin TDM target (ASHP/IDSA 2020):</b></li></ol>
+<p>A. Trough 10–15 mg/L B. Trough 15–20 mg/L C. <b>AUC 400–600 mg·h/L</b> ✓ D. AUC 600–800 mg·h/L E. Peak 20–40 mg/L</p>
+<ol><li><b>AUC/MIC ratio target for S. aureus (MIC ≤1):</b></li></ol>
+<p>A. ≥200 B. ≥300 C. <b>≥400</b> ✓ D. ≥500 E. ≥600</p>
+<ol><li><b>Bayesian AUC estimation requires how many levels:</b></li></ol>
+<p>A. 1 (trough) B. <b>≥2 (peak + trough)</b> ✓ C. 3 D. 4 E. 5</p>
+<ol><li><b>Vancomycin + Piperacillin-Tazobactam — nephrotoxicity risk:</b></li></ol>
+<p>A. No increase B. <b>2–3x increased AKI risk</b> ✓ C. 5–10x increased D. Only if trough &gt;20 E. Only in CKD</p>
+<ol><li><b>Vancomycin dosing in intermittent HD:</b></li></ol>
+<p>A. Pre-HD 15–20 mg/kg B. <b>Post-HD 15–20 mg/kg</b> ✓ C. During HD 10 mg/kg D. 500 mg post-HD E. 1 g q24h</p>
+<ol><li><b>Vancomycin dosing in CRRT:</b></li></ol>
+<p>A. 15–20 mg/kg q8h B. 20 mg/kg q12h C. <b>10–15 mg/kg q24–48h</b> ✓ D. 1 g q24h E. 500 mg q24h</p>
+<ol><li><b>Vancomycin nephrotoxicity definition:</b></li></ol>
+<p>A. SCr ↑0.3 mg/dL B. <b>SCr ↑0.5 mg/dL OR ↑50% on ≥2 consecutive days</b> ✓ C. SCr doubling D. AKI KDIGO Stage 2 E. Need for RRT</p>
+<ol><li><b>Obesity — vancomycin dosing weight:</b></li></ol>
+<p>A. Actual body weight always B. Ideal body weight always C. <b>Adjusted body weight if &gt;120% IBW (IBW + 0.4×(ABW-IBW))</b> ✓ D. Lean body weight E. Dosing weight = 1.5×IBW</p>
+<ol><li><b>First vancomycin levels at steady state:</b></li></ol>
+<p>A. 6–12h B. <b>24–48h (day 2–3)</b> ✓ C. 72h D. 5 days E. 1 week</p>
+<ol><li><b>AUC &gt;650 mg·h/L — clinical significance:</b></li></ol>
+<p>A. Subtherapeutic B. Optimal C. <b>↑ Nephrotoxicity risk</b> ✓ D. ↑ Efficacy only E. No significance</p>
+<ol><li><b>Trapezoidal AUC calculation uses:</b></li></ol>
+<p>A. Single trough B. <b>Peak + Trough</b> ✓ C. 3 random levels D. Pre-dose only E. Population average</p>
+<ol><li><b>Piperacillin-tazobactam alternative in Vanco nephrotoxicity:</b></li></ol>
+<p>A. Continue both B. <b>Meropenem / Ceftriaxone / Cefepime</b> ✓ C. Add aminoglycoside D. Switch to oral E. Increase vancomycin</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Vanco TDM target</td><td>AUC 400-600 mg·h/L (AUC/MIC ≥400)</td></tr><tr><td>AUC nephrotoxicity threshold</td><td>>650-700 mg·h/L</td></tr><tr><td>Bayesian levels needed</td><td>Peak (1-2h) + Trough (pre-dose)</td></tr><tr><td>Steady state timing</td><td>Day 2-3 (t½ ~6h)</td></tr><tr><td>Vanco + Pip-Taz</td><td>2-3x AKI risk (avoid)</td></tr><tr><td>Nephrotoxicity def</td><td>SCr ↑0.5 or ↑50% on 2 days</td></tr><tr><td>HD dosing</td><td>15-20 mg/kg post-HD + supplement mid-week</td></tr><tr><td>CRRT dosing</td><td>10-15 mg/kg q24-48h</td></tr><tr><td>Obesity</td><td>Adjusted BW = IBW + 0.4(ABW-IBW) if >120% IBW</td></tr><tr><td>Traditional trough target</td><td>15-20 (severe), 10-15 (non-severe) — LEGACY</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — AUC 400–600 mg·h/L</li><li><b>C</b> — AUC/MIC ≥400</li><li><b>B</b> — ≥2 levels (peak + trough)</li><li><b>B</b> — 2–3x increased AKI risk</li><li><b>B</b> — Post-HD 15–20 mg/kg</li><li><b>C</b> — 10–15 mg/kg q24–48h</li><li><b>B</b> — SCr ↑0.5 or ↑50% on 2 consecutive days</li><li><b>C</b> — Adjusted body weight if &gt;120% IBW</li><li><b>B</b> — 24–48h (day 2–3)</li><li><b>C</b> — ↑ Nephrotoxicity risk</li><li><b>B</b> — Peak + Trough</li><li><b>B</b> — Meropenem/Ceftriaxone/Cefepime</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/TDM/Vancomycin.md</code> | Status: <code>full-fcps-mrcp-note</code></i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Vancomycin · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

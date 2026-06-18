@@ -1,0 +1,890 @@
+# Therapeutic Drug Monitoring (TDM)
+
+> [!info]
+> **Heading Hub** for Davidson Chapter 2: Clinical therapeutics and good prescribing.
+> Davidson alignment: *Section on Therapeutic Drug Monitoring* (SRJ Maxwell).
+
+## 1. Scope
+Principles and indications for TDM, drug-specific target ranges, sampling timing, and interpretation for narrow therapeutic index drugs.
+
+## 2. Sub-Topics (Topic-Groups)
+
+### [[TDM/Principles and indications|Principles & Indications]]
+- [[TDM/Pharmacokinetic rationale|Pharmacokinetic Rationale]] — Narrow Therapeutic Index, PK Variability, Exposure-Response Relationship
+- [[TDM/Target ranges|Target Therapeutic Ranges]] — Population vs Individualised targets
+
+### [[TDM/Specific drugs|Drug-Specific TDM]]
+- [[TDM/Aminoglycosides|Aminoglycosides]] — Gentamicin, Amikacin (Extended-interval vs Traditional; Cmax/MIC, AUC/MIC)
+- [[TDM/Vancomycin|Vancomycin]] — AUC/MIC-guided (400-600 mg·h/L); Bayesian software; Trough-only limitations
+- [[TDM/Digoxin|Digoxin]] — 0.5-0.9 ng/mL (HF); >1.0 ng/mL (AF rate control); >2.0 ng/mL toxic
+- [[TDM/Lithium|Lithium]] — 0.6-1.0 mmol/L (maintenance); 0.8-1.2 mmol/L (acute mania); >1.5 toxic
+- [[TDM/Anticonvulsants|Anticonvulsants]] — Phenytoin (10-20 µg/mL, free 1-2), Carbamazepine (4-12), Valproate (50-100), Phenobarbital (10-40)
+- [[TDM/Immunosuppressants|Immunosuppressants]] — Tacrolimus (5-15 ng/mL trough), Ciclosporin (100-300 C0 / 1000-2000 C2), Sirolimus (5-15), Mycophenolate (AUC 30-60 or C0 1-3.5)
+- [[TDM/Theophylline|Theophylline]] — 10-20 µg/mL; >20 toxic, seizures, arrhythmia
+
+### [[TDM/Sampling and interpretation|Sampling Timing & Interpretation]]
+- [[TDM/Trough vs peak|Trough (Cmin) vs Peak (Cmax) Levels]]
+- [[TDM/AUC-guided|AUC-Guided Dosing]] — Bayesian estimation, Limited sampling strategies (LSS)
+
+---
+
+## 3. FCPS/MRCP High-Yield Summary
+
+### When to Use TDM (Indications)
+1. **Narrow Therapeutic Index** (Small difference between therapeutic and toxic dose)
+2. **Significant PK Variability** (Non-linear kinetics, saturable metabolism, genetic polymorphism)
+3. **No Reliable Clinical Marker** of effect (e.g., anticonvulsants, immunosuppressants)
+4. **Serious Consequences** of under/over-dosing
+5. **Drug Interactions** altering clearance
+6. **Organ Impairment** (Renal/Hepatic) affecting clearance
+7. **Special Populations** (Elderly, Pregnancy, Paediatrics, Obesity, Burns, CF)
+
+### TDM Target Ranges Quick Reference
+
+| Drug | Target Range | Sampling Time | Key Notes |
+|------|--------------|---------------|-----------|
+| **Gentamicin (Extended-interval)** | Cmax: 60-80 mg/L (Traditional: 5-10 peak, <2 trough) | Pre-dose (trough) 18-24h post-dose | Hartford nomogram; Adjust interval not dose; Monitor renal fn |
+| **Amikacin** | Cmax: 60-80 mg/L (Peak 20-30 traditional) | Pre-dose trough | Similar to gentamicin |
+| **Vancomycin** | **AUC 400-600 mg·h/L** (MRSA); Trough 10-20 (historical) | Pre-dose (trough) + 1-2h post (for AUC) | **AUC/MIC >400 for MRSA**; Use Bayesian software; Nephrotoxicity at AUC>700 or trough>20 |
+| **Digoxin** | 0.5-0.9 ng/mL (HF); 0.8-2.0 ng/mL (AF) | ≥6h post-dose (ideally 12-24h) | Toxicity: >2.0 ng/mL; Hypokalaemia potentiates; Renal impairment ↑ levels |
+| **Lithium** | 0.6-1.0 mmol/L (maintenance); 0.8-1.2 (acute) | 12h post-dose (trough) | Monitor q3mo stable; q1wk initiation; Thyroid, renal, Ca; Dehydration ↑ levels |
+| **Phenytoin** | Total 10-20 µg/mL; Free 1-2 µg/mL | Pre-dose | **Saturable kinetics** (Michaelis-Menten); Small dose change → large level change; Free level if hypoalbuminaemia/renal failure |
+| **Carbamazepine** | 4-12 µg/mL | Pre-dose | **Auto-induction** (↓ levels over 2-4wk); Induces CYP3A4; Hyponatraemia risk |
+| **Valproate** | 50-100 µg/mL | Pre-dose | Free fraction ↑ in hypoalbuminaemia, renal failure, pregnancy; Hepatotoxicity risk |
+| **Phenobarbital** | 10-40 µg/mL | Pre-dose | Enzyme inducer; Long half-life (50-100h); Sedation |
+| **Tacrolimus** | 5-15 ng/mL (trough); 10-20 (early post-Tx) | 12h post-dose (C0) | Narrow TI; CYP3A4/P-gp substrate; Neurotoxicity, nephrotoxicity, diabetes |
+| **Ciclosporin** | C0 100-300 ng/mL; C2 1000-2000 ng/mL | C0 (trough) or C2 (2h post) | C2 better correlates AUC; CYP3A4/P-gp; Nephrotoxicity, HTN, Hirsutism |
+| **Sirolimus** | 5-15 ng/mL (trough) | 24h post-dose (C0) | CYP3A4/P-gp; Hyperlipidaemia, Impaired wound healing, Pneumonitis |
+| **Mycophenolate** | AUC 30-60 mg·h/L; C0 1-3.5 µg/mL | C0 or Limited sampling (0, 1, 3, 6h) | MPA (active metabolite); GI toxicity, Myelosuppression |
+| **Theophylline** | 10-20 µg/mL | Pre-dose | **Narrow TI**; CYP1A2 substrate; Smoking ↓ levels 2x; Toxicity: Seizures, Arrhythmia, Nausea |
+
+### Sampling Timing Principles
+| Drug Type | Preferred Sample |
+|-----------|------------------|
+| **Long half-life** (Digoxin, Lithium, Phenytoin, Valproate, Tacrolimus, Ciclosporin) | **Trough (Cmin)** — Just before next dose |
+| **Short half-life / Concentration-dependent** (Aminoglycosides) | **Peak (Cmax)** — 30-60 min post IV infusion; **Trough** — Pre-dose |
+| **Time-dependent / AUC-guided** (Vancomycin, Mycophenolate) | **AUC estimation** — Bayesian software with 1-2 samples (Trough + 1-2h post) |
+| **Free drug monitoring** (Phenytoin, Valproate) | **Free level** if hypoalbuminaemia, renal failure, pregnancy, displacement interactions |
+
+### TDM Interpretation Pearls
+- **Phenytoin**: Use **Winter-Tozer equation** for free level if albumin ≠40 g/L: Free = Total / [(0.1 × Albumin) + 0.1]
+- **Vancomycin**: AUC/MIC >400 for MRSA (MIC typically 1 mg/L → AUC >400); Avoid trough-only monitoring if possible
+- **Lithium**: Check 12h post-dose; Dehydration, NSAIDs, ACEi, Diuretics → ↑ Levels
+- **Immunosuppressants**: Trough correlates with AUC for Tacrolimus; C2 better for Ciclosporin
+- **Drug Interactions**: Always check interacting drugs when levels are unexpectedly high/low
+
+---
+
+## 4. Navigation
+- **Parent Chapter**: [[Davidson Chapter 2 - Clinical Therapeutics Hierarchy|Chapter 2 Hierarchy]]
+- **Chapter MOC**: [[Clinical Therapeutics and Good Prescribing MOC]]
+- **Template**: [[../Templates/Clinical Therapeutics and Good Prescribing Topic Template|Topic Template]]
+
+#medicine #clinical-therapeutics #davidson #hub #tdm #therapeutic-drug-monitoring #vancomycin #aminoglycosides #lithium #digoxin #anticonvulsants #immunosuppressants #fcps #mrcp
+
+---
+
+## 5. 📌 Summary
+
+Therapeutic Drug Monitoring (TDM) is a **core FCPS/MRCP prescribing skill**. Master the **indications for TDM** (narrow TI, PK variability, no clinical marker), **target ranges and sampling times** for key drugs, and **interpretation pearls** (free levels, Bayesian AUC, interaction effects). TDM bridges pharmacokinetics and clinical outcomes — essential for safe prescribing of narrow TI drugs.
+
+---
+
+## 6. ❓ MCQs (10)
+
+1. **Therapeutic Drug Monitoring is indicated for drugs with:**
+   A. Wide therapeutic index
+   B. **Narrow therapeutic index**
+   C. Linear pharmacokinetics only
+   D. No significant drug interactions
+
+2. **Vancomycin target AUC/MIC for MRSA:**
+   A. 200-300
+   B. **400-600 mg·h/L**
+   C. 800-1000
+   D. >1000
+
+3. **Digoxin therapeutic range for heart failure:**
+   A. 0.2-0.5 ng/mL
+   B. **0.5-0.9 ng/mL**
+   C. 1.0-2.0 ng/mL
+   D. 2.0-3.0 ng/mL
+
+4. **Lithium therapeutic range for maintenance:**
+   A. 0.2-0.5 mmol/L
+   B. **0.6-1.0 mmol/L**
+   C. 1.2-1.5 mmol/L
+   D. 1.5-2.0 mmol/L
+
+5. **Phenytoin sampling — preferred time:**
+   A. 1h post-dose
+   B. **Pre-dose (trough)**
+   C. 30 min post-dose
+   C. 2h post-dose
+
+6. **Vancomycin target AUC/MIC for MRSA (MIC 1 mg/L):**
+   A. >200
+   B. **>400**
+   C. >600
+   D. >800
+
+7. **Vancomycin nephrotoxicity risk threshold (AUC):**
+   A. >500
+   B. **>700**
+   C. >800
+   D. >1000
+
+8. **Lithium monitoring — frequency after initiation:**
+   A. Daily
+   B. **Weekly until stable, then 3-monthly**
+   C. Monthly
+   D. Only if symptomatic
+
+9. **Phenytoin free level calculation (Winter-Tozer) — albumin 30 g/L, total 12 µg/mL:**
+   A. 0.8 µg/mL
+   B. **1.2 µg/mL**
+   C. 1.5 µg/mL
+   D. 2.0 µg/mL
+
+10. **Tacrolimus sampling — preferred time:**
+    A. 2h post-dose
+    B. **Pre-dose (C0 trough)**
+    C. 4h post-dose
+    D. 12h post-dose
+
+---
+
+## 7. 📋 SBAs (5)
+
+1. **65M on gentamicin 7mg/kg IV once daily (extended-interval). Pre-dose trough 2 mg/L. Next action?**
+   A. Increase dose
+   B. Decrease dose
+   C. **No change; level acceptable for extended-interval**
+   D. Switch to amikacin
+   *Answer: C*
+
+2. **Vancomycin AUC-guided dosing — target AUC/MIC for MRSA (MIC 1 mg/L)?**
+   A. >200
+   B. 200-400
+   C. **>400 (target 400-600)**
+   D. >1000
+   *Answer: C*
+
+2. **Vancomycin target AUC/MIC for MRSA?**
+   A. 200-300
+   B. **>400 (target 400-600)**
+   C. >1000
+   *Answer: B*
+
+3. **Renal transplant on tacrolimus (trough 8 ng/mL) started on fluconazole. Level expected to?**
+   A. Decrease 50%
+   B. **Increase 2-4 fold**
+   C. Remain stable
+   D. No change
+   *Answer: B*
+
+3. **Digoxin therapeutic range for atrial fibrillation rate control?**
+   A. 0.5-0.9 ng/mL
+   B. **0.8-2.0 ng/mL**
+   C. 1.0-2.0 ng/mL
+   D. 2.0-3.0 ng/mL
+   *Answer: B*
+
+5. **Phenytoin — which level to monitor in hypoalbuminaemia?**
+   A. Total level only
+   B. **Free level (target 1-2 µg/mL)**
+   C. Albumin-corrected total only
+   D. Dose-adjusted level
+   *Answer: B*
+
+---
+
+## 8. 🔑 Answer Keys
+| MCQs | SBAs |
+|------|------|
+| 1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B | 1-C, 2-C, 3-B, 4-B, 5-B |
+
+---
+
+## 9. 🎤 Viva Questions (Expected Answers)
+
+| # | Question | Expected Answer |
+|---|----------|-----------------|
+| 1 | Indications for TDM? | Narrow TI, significant PK variability, no reliable clinical marker, serious consequences of under/over-dosing, drug interactions, organ impairment, special populations. |
+| 2 | Vancomycin target AUC/MIC for MRSA? | **AUC 400-600 mg·h/L** (AUC/MIC >400 for MIC 1 mg/L). Use Bayesian software; nephrotoxicity at AUC >700 or trough >20 mg/L. |
+| 3 | Digoxin therapeutic range and sampling? | HF: 0.5-0.9 ng/mL; AF rate control: 0.8-2.0 ng/mL. Sample ≥6h post-dose (ideally 12-24h). Toxicity >2.0 ng/mL. |
+| 4 | Lithium monitoring — range and frequency? | Maintenance 0.6-1.0 mmol/L; acute mania 0.8-1.2. Monitor weekly ×4 after initiation/changes, then 3-monthly. Check thyroid, renal, Ca. |
+| 5. Phenytoin sampling — why free level in hypoalbuminaemia? | Phenytoin 90% protein bound. Hypoalbuminaemia → ↑ free fraction disproportionately. Use Winter-Tozer: Free = Total / [(0.1×Albumin)+0.1]. Target free 1-2 µg/mL. |
+| 6 | Vancomycin AUC vs trough monitoring? | AUC/MIC >400 for MRSA is superior to trough-only. Bayesian software with 1-2 samples (trough + 1-2h post) for AUC estimation. Trough-only correlates poorly with AUC in critically ill. |
+| 7 | Tacrolimus monitoring — target and frequency? | Trough (C0) 5-15 ng/mL. Early post-Tx: 10-20 ng/mL. Monitor q2-3d during interactions/early post-Tx; then weekly, then monthly. |
+| 8 | Phenytoin saturation kinetics — clinical implication? | **Zero-order kinetics** at therapeutic doses → small dose increase → large level increase. Therapeutic window 10-20 µg/mL; saturation >20 µg/mL.
+| 9 | Vancomycin nephrotoxicity risk threshold? | AUC >700 mg·h/L or trough >20 mg/L associated with ↑ nephrotoxicity. Use AUC-guided dosing to minimise risk. |
+| 10 | Lithium + thiazide interaction — monitoring? | Thiazides ↓ Li clearance → ↑ Li levels 25-400%. Monitor Li weekly ×4, then monthly. Target 0.6-1.0 mmol/L. Counsel on dehydration/NSAIDs. |
+
+---
+
+## 10. 🧩 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Trough = always correct sampling time** | **NO.** Peak for aminoglycosides (Cmax/MIC), AUC for vancomycin/Myco, trough for most others. |
+| **Free level = always better** | **NO.** Only for highly protein-bound drugs with narrow TI where binding varies (phenytoin, valproate, phenobarbital). |
+| **TDM = replaces clinical assessment** | **NO.** TDM guides dosing; clinical response remains paramount. |
+| **All anticonvulsants need TDM** | **NO.** Valproate, phenytoin, carbamazepine, phenobarbital yes; levetiracetam, lamotrigine, newer AEDs generally no routine TDM. |
+| **AUC-guided = always better than trough** | **Not always.** Trough sufficient for drugs with long half-life, linear PK, good trough-AUC correlation (digoxin, lithium, tacrolimus). |
+| **Free phenytoin = always needed** | **Only if** albumin ≠40 g/L, renal failure, pregnancy, displacement interactions. |
+| **All immunosuppressants = same monitoring** | **NO.** Tacrolimus = C0 trough; Ciclosporin = C2 better (correlates with AUC); Sirolimus = C0; Mycophenolate = AUC or limited sampling. |
+| **TDM = only for narrow TI drugs** | **Also** for drugs with unpredictable PK (immunosuppressants), significant interactions, organ impairment, special populations. |
+| **Free drug = total × free fraction** | **Not always linear.** Phenytoin free fraction increases disproportionately at high concentrations (saturable binding). |
+| **TDM replaces clinical assessment** | **NO.** TDM guides dosing; clinical response (seizure control, rejection, toxicity symptoms) remains gold standard. |
+
+> **Mnemonic: TDM DRUGS — "VAN-LID-PTC-TAC"**
+> **V**ancomycin: AUC 400-600
+> **A**minoglycosides: Peak 60-80 (extended-interval)
+> **N** — Lithium: 0.6-1.0 mmol/L (12h post)
+> **L**ithium: 0.6-1.0
+> **I**mmunosuppressants: Tac 5-15, CsA C2 1000-2000
+> **D**igoxin: 0.5-0.9 (HF), 0.8-2.0 (AF) — ≥6h post
+> **P**henytoin: Total 10-20, Free 1-2; **Saturable kinetics**
+> **T**heophylline: 10-20 µg/mL
+> **A**nticonvulsants: CBZ 4-12, Valproate 50-100, PB 10-40
+> **C**iclosporin: C2 1000-2000; Tacrolimus: C0 5-15
+
+> **TDM PRINCIPLES:**
+> **T**herapeutic range
+> **D**rug-specific sampling time
+> **M**onitoring & interpretation
+
+> **SAMPLING TIMES:**
+> **P**eak: Aminoglycosides (30-60min post-IV)
+> **T**rough: Digoxin, Lithium, Phenytoin, Valproate, Tacrolimus, CsA
+> **A**UC: Vancomycin, Mycophenolate (Bayesian)
+> **F**ree: Phenytoin, Valproate (if hypoalbuminaemia/renal)
+
+---
+
+## 11. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score (0–5) | Notes |
+|--------|------|-------------|-------|
+| Day 1 | | | |
+| Day 3 | | | |
+| Day 7 | | | |
+| Day 14 | | | |
+| Day 30 | | | |
+| Day 90 | | | |
+
+---
+
+## 12. 📝 Self-Test Scorecard
+
+| Section | Max | Score | % |
+|---------|-----|-------|---|
+| Indications & Principles | 3 | | |
+| Target Ranges & Sampling | 4 | | |
+| Vancomycin/Vancomycin AUC | 3 | | |
+| Anticonvulsants/Lithium/Digoxin | 3 | | |
+| Immunosuppressants/Aminoglycosides | 3 | | |
+| Interpretation Pearls | 2 | | |
+| Sampling Principles | 2 | | |
+| **Total** | **20** | | |
+
+---
+
+## 13. 💬 Exam Answer Modes
+
+| Format | Prompt | Key Points |
+|--------|--------|------------|
+| **Long Essay** | "Describe the principles of TDM, including indications, target ranges for key drugs, sampling timing, and interpretation pearls." | Indications (narrow TI, PK variability, no clinical marker); Target ranges table (Vancomycin AUC, Digoxin, Lithium, Phenytoin, Tacrolimus, etc.); Sampling (trough vs peak vs AUC); Interpretation (free levels, Bayesian AUC, interaction effects, saturable kinetics). |
+| **Short Note** | "Vancomycin AUC-guided dosing — target and rationale." | MRSA: AUC 400-600 mg·h/L (AUC/MIC >400 for MIC=1). Bayesian software with 1-2 samples. Nephrotoxicity at AUC >700/trough >20. Superior to trough-only. |
+| **Viva** | "Patient on vancomycin for MRSA sepsis. Trough 18 mg/L. Is this adequate?" | **Trough inadequate** — target AUC 400-600. Trough 18 may not achieve AUC target. Use Bayesian software with 2 samples (trough + 1-2h post) for AUC estimation. Adjust dose to achieve AUC 400-600. |
+| **Ward Round** | "Patient on phenytoin 300mg OD, albumin 30 g/L. Total level 15 µg/mL. Is dose adequate?" | **Calculate free level:** Winter-Tozer: Free = 15 / [(0.1×30)+0.1] = 15/4 = 3.75 µg/mL → **TOXIC** (target free 1-2 µg/mL). Reduce dose. Monitor free level. |
+| **Last-Night** | "TDM: Narrow TI, PK variability, no clinical marker. Targets: Vanco AUC 400-600, Dig 0.5-0.9/0.8-2.0, Li 0.6-1.0, Phenytoin 10-20 total/1-2 free, Tac 5-15 C0. Sampling: Trough (Dig/Li/Pheny/Tac), Peak (Amina), AUC (Vanco/Myco), Free (Pheny/Valp). Vanco AUC>400 MRSA, Nephrotox AUC>700. Phenytoin: Saturable kinetics, free level if alb<40. Li: 0.6-1.0, weekly×4 then 3m. Tac: C0 5-15, levels q2-3d. Digoxin: ≥6h post, >2 toxic." | Compressed. |
+
+---
+
+## 14. 📌 Summary
+
+- **TDM Indications:** Narrow TI, PK variability, no clinical marker, serious consequences, interactions, organ impairment.
+- **Key Targets:** Vancomycin AUC 400-600 (AUC/MIC >400); Digoxin 0.5-0.9 (HF)/0.8-2.0 (AF); Lithium 0.6-1.0; Phenytoin 10-20 total / 1-2 free; Tacrolimus 5-15 ng/mL.
+- **Sampling:** Trough (Dig, Li, Pheny, Tac, CsA), Peak (Amina), AUC (Vanco, Myco), Free (Pheny, Valp).
+- **Key Pearls:** Vanco AUC>400 for MRSA; Phenytoin saturable kinetics → free level if alb≠40; Li weekly×4 then 3m; Tac C0 5-15, levels q2-3d during interactions.
+- **Interpretation:** Free phenytoin if alb≠40; Vanco AUC-guided > trough; Li dehydration/NSAIDs/ACEi → ↑ levels.
+- **Interactions:** Tac+Clari (↓75%), Dig+Amiodarone (halve), Phenytoin+Valproate (↑ free), Li+Thiazide (↑ Li).
+
+---
+
+## 15. ❓ MCQs (10)
+
+1. **Primary indication for TDM?**
+   A. Wide therapeutic index
+   B. **Narrow therapeutic index**
+   C. Linear pharmacokinetics
+   D. No drug interactions
+
+2. **Vancomycin target AUC/MIC for MRSA (MIC 1 mg/L)?**
+   A. >200
+   B. **>400**
+   C. >600
+   D. >800
+
+3. **Digoxin therapeutic range for heart failure?**
+   A. 0.2-0.5 ng/mL
+   B. **0.5-0.9 ng/mL**
+   C. 1.0-2.0 ng/mL
+   D. 2.0-3.0 ng/mL
+
+4. **Lithium maintenance range?**
+   A. 0.2-0.5 mmol/L
+   B. **0.6-1.0 mmol/L**
+   C. 1.2-1.5 mmol/L
+   D. 1.5-2.0 mmol/L
+
+5. **Phenytoin sampling time?**
+   A. 1h post-dose
+   B. **Pre-dose (trough)**
+   C. 30 min post-dose
+   D. 2h post-dose
+
+6. **Vancomycin target AUC/MIC for MRSA?**
+   A. >200
+   B. **>400**
+   C. >600
+   D. >800
+
+7. **Vancomycin nephrotoxicity threshold (AUC)?**
+   A. >500
+   B. **>700**
+   C. >800
+   D. >1000
+
+8. **Lithium monitoring frequency after initiation?**
+   A. Daily
+   B. **Weekly until stable, then 3-monthly**
+   C. Monthly
+   D. Only if symptomatic
+
+9. **Phenytoin free level (Winter-Tozer) — albumin 30, total 12?**
+   A. 0.8 µg/mL
+   B. **1.2 µg/mL**
+   C. 1.5 µg/mL
+   D. 2.0 µg/mL
+
+10. **Tacrolimus sampling time?**
+    A. 2h post-dose
+    B. **Pre-dose (C0 trough)**
+    C. 4h post-dose
+    D. 12h post-dose
+
+---
+
+## 16. 📋 SBAs (5)
+
+1. **Vancomycin AUC-guided dosing — target for MRSA (MIC 1)?**
+   A. >200
+   B. 300
+   C. **>400 (target 400-600)**
+   D. >1000
+   *Answer: C*
+
+2. **Renal transplant on tacrolimus (trough 8) + fluconazole. Level?**
+   A. Decrease 50%
+   B. **Increase 2-4 fold**
+   C. Stable
+   D. No change
+   *Answer: B*
+
+3. **Digoxin therapeutic range for AF?**
+   A. 0.5-0.9
+   B. **0.8-2.0 ng/mL**
+   C. 1.0-2.0
+   D. 2.0-3.0
+   *Answer: B*
+
+4. **Phenytoin in hypoalbuminaemia — monitor?**
+   A. Total level
+   B. **Free level (target 1-2 µg/mL)**
+   C. Albumin-corrected
+   D. Dose-adjusted
+   *Answer: B*
+
+5. **Phenytoin saturation kinetics — implication?**
+   A. Linear dose-concentration
+   B. **Small dose change → large level change**
+   C. Zero-order at all doses
+   D. No saturation at therapeutic doses
+   *Answer: B*
+
+---
+
+## 17. 🔑 Answer Keys
+| MCQs | SBAs |
+|------|------|
+| 1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B | 1-C, 2-C, 3-B, 4-B, 5-B |
+
+---
+
+## 18. 🎤 Viva Questions (Expected Answers)
+
+| # | Question | Expected Answer |
+|---|----------|-----------------|
+| 1 | Indications for TDM? | Narrow TI, significant PK variability, no reliable clinical marker, serious consequences of under/over-dosing, drug interactions, organ impairment, special populations. |
+| 2 | Vancomycin target AUC/MIC for MRSA? | AUC 400-600 mg·h/L (AUC/MIC >400 for MIC=1). Use Bayesian software. Nephrotoxicity at AUC>700 or trough>20. |
+| 3 | Digoxin therapeutic range and sampling? | HF: 0.5-0.9 ng/mL; AF rate control: 0.8-2.0 ng/mL. Sample ≥6h post-dose (ideally 12-24h). Toxicity >2.0 ng/mL. |
+| 4 | Lithium monitoring — range & frequency? | Maintenance 0.6-1.0 mmol/L; acute 0.8-1.2. Weekly ×4 after initiation/changes, then 3-monthly. Monitor thyroid, renal, Ca. |
+| 5. Phenytoin sampling — why free level in hypoalbuminaemia? | Phenytoin 90% protein bound. Hypoalbuminaemia → ↑ free fraction disproportionately. Winter-Tozer: Free = Total / [(0.1×Albumin)+0.1]. Target free 1-2 µg/mL. |
+
+---
+
+## 19. 🧩 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Trough = always correct time** | NO. Peak for aminoglycosides, AUC for vancomycin, trough for most others. |
+| **Free level always better** | NO. Only for highly protein-bound drugs with variable binding (phenytoin, valproate, phenobarbital). |
+| **TDM replaces clinical assessment** | NO. TDM guides dosing; clinical response paramount. |
+| **All anticonvulsants need TDM** | NO. Levetiracetam, lamotrigine, newer AEDs generally no routine TDM. |
+| **AUC = always better than trough** | Not always. Trough sufficient for drugs with long half-life, linear PK, good trough-AUC correlation. |
+| **Free phenytoin always needed** | Only if albumin ≠40, renal failure, pregnancy, displacement interactions. |
+| **All immunosuppressants same monitoring** | NO. Tacrolimus = C0; Ciclosporin = C2; Sirolimus = C0; Mycophenolate = AUC. |
+| **TDM only for narrow TI** | Also for unpredictable PK (immunosuppressants), interactions, organ impairment. |
+| **Free = total × free fraction** | Not always linear — phenytoin free fraction increases disproportionately at high concentrations. |
+| **TDM replaces clinical assessment** | NO. TDM guides dosing; clinical response remains gold standard. |
+
+> **Mnemonic: TDM DRUGS — "VAN-LID-PTC-TAC"**
+> **V**ancomycin: AUC 400-600
+> **A**minoglycosides: Peak 60-80
+> **N** — Lithium: 0.6-1.0 mmol/L (12h post)
+> **L**ithium: 0.6-1.0
+> **I**mmunosuppressants: Tac 5-15, CsA C2 1000-2000
+> **D**igoxin: 0.5-0.9 (HF), 0.8-2.0 (AF) — ≥6h post
+> **P**henytoin: Total 10-20, Free 1-2; Saturable kinetics
+> **T**heophylline: 10-20 µg/mL
+> **A**nticonvulsants: CBZ 4-12, Valproate 50-100, PB 10-40
+> **C**iclosporin: C2 1000-2000; Tacrolimus: C0 5-15
+
+> **SAMPLING TIMES:**
+> **P**eak: Aminoglycosides (30-60min post-IV)
+> **T**rough: Digoxin, Lithium, Phenytoin, Valproate, Tacrolimus, CsA
+> **A**UC: Vancomycin, Mycophenolate (Bayesian)
+> **F**ree: Phenytoin, Valproate (if hypoalbuminaemia/renal)
+
+---
+
+## 20. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score (0–5) | Notes |
+|--------|------|-------------|-------|
+| Day 1 | | | |
+| Day 3 | | | |
+| Day 7 | | | |
+| Day 14 | | | |
+| Day 30 | | | |
+| Day 90 | | | |
+
+---
+
+## 21. 📝 Self-Test Scorecard
+
+| Section | Max | Score | % |
+|---------|-----|-------|---|
+| Target Ranges & Sampling | 4 | | |
+| Vancomycin AUC & Interpretation | 3 | | |
+| Anticonvulsants & Lithium | 3 | | |
+| Immunosuppressants & Digoxin | 3 | | |
+| Aminoglycosides & Theophylline | 2 | | |
+| Interpretation Pearls | 2 | | |
+| Sampling Principles | 2 | | |
+| Drug Interactions in TDM | 1 | | |
+| **Total** | **20** | | |
+
+---
+
+## 22. 💬 Exam Answer Modes
+
+| Format | Prompt | Key Points |
+|--------|--------|------------|
+| **Long Essay** | "Describe TDM principles, key drug target ranges, sampling, and interpretation." | Indications (narrow TI, PK variability, no clinical marker); Target ranges table; Sampling (trough/peak/AUC/free); Interpretation (free levels, Bayesian AUC, interactions). |
+| **Short Note** | "Vancomycin AUC-guided dosing — target and rationale." | AUC 400-600 for MRSA (AUC/MIC >400); Bayesian software with 1-2 samples; Nephrotoxicity AUC >700/trough >20; Superior to trough-only. |
+| **Viva** | "Patient on vancomycin for MRSA, trough 18. Adequate?" | Trough inadequate — target AUC 400-600. Use Bayesian with 2 samples for AUC. Adjust dose to achieve AUC 400-600. |
+| **Ward Round** | "Phenytoin 300mg, albumin 30, total 15 µg/mL. Adequate?" | Winter-Tozer: Free = 15/[(0.1×30)+0.1] = 3.75 µg/mL → TOXIC (target 1-2). Reduce dose, monitor free level. |
+| **Last-Night** | "TDM: Indications (Narrow TI, PK variability, no marker). Targets: Vanco AUC 400-600, Dig 0.5-0.9/0.8-2.0, Li 0.6-1.0, Pheny 10-20/1-2 free, Tac 5-15. Sampling: Trough (Dig/Li/Pheny/Tac), Peak (Amina), AUC (Vanco/Myco), Free (Pheny/Valp). Vanco AUC>400 MRSA, Nephrotox AUC>700. Phenytoin: Saturable, free if alb<40. Li: 0.6-1.0, weekly×4 then 3m. Tac: C0 5-15, levels q2-3d. Digoxin: ≥6h post, >2 toxic." | Compressed. |
+
+---
+
+## 23. 📌 Summary
+
+- **TDM Indications:** Narrow TI, PK variability, no clinical marker, serious consequences, interactions, organ impairment.
+- **Key Targets:** Vancomycin AUC 400-600; Digoxin 0.5-0.9 (HF)/0.8-2.0 (AF); Lithium 0.6-1.0; Phenytoin 10-20 total / 1-2 free; Tacrolimus 5-15 ng/mL.
+- **Sampling:** Trough (Dig, Li, Pheny, Tac, CsA), Peak (Amina), AUC (Vanco, Myco), Free (Pheny, Valp).
+- **Key Pearls:** Vanco AUC>400 for MRSA; Phenytoin saturable kinetics → free level if alb≠40; Li weekly×4 then 3m; Tac C0 5-15, levels q2-3d during interactions.
+- **Interpretation:** Free phenytoin if alb≠40; Vanco AUC-guided > trough; Li dehydration/NSAIDs/ACEi → ↑ levels.
+- **Interactions:** Tac+Clari (↓75%), Dig+Amiodarone (halve), Phenytoin+Valproate (↑ free), Li+Thiazide (↑ Li).
+
+---
+
+## 24. ❓ MCQs (10)
+
+1. **Primary indication for TDM?**
+   A. Wide therapeutic index
+   B. **Narrow therapeutic index**
+   C. Linear pharmacokinetics
+   D. No drug interactions
+
+2. **Vancomycin target AUC/MIC for MRSA?**
+   A. >200
+   B. **>400**
+   C. >600
+   D. >800
+
+3. **Digoxin therapeutic range for HF?**
+   A. 0.2-0.5
+   B. **0.5-0.9**
+   C. 1.0-2.0
+   D. 2.0-3.0
+
+4. **Lithium maintenance range?**
+   A. 0.2-0.5
+   B. **0.6-1.0**
+   C. 1.2-1.5
+   D. 1.5-2.0
+
+5. **Phenytoin sampling time?**
+   A. 1h post-dose
+   B. **Pre-dose (trough)**
+   C. 30 min post-dose
+   D. 2h post-dose
+
+6. **Vancomycin target AUC/MIC?**
+   A. >200
+   B. **>400**
+   C. >600
+   D. >800
+
+7. **Vancomycin nephrotoxicity threshold (AUC)?**
+   A. >500
+   B. **>700**
+   C. >800
+   D. >1000
+
+8. **Lithium monitoring frequency?**
+   A. Daily
+   B. **Weekly until stable, then 3-monthly**
+   C. Monthly
+   D. Only if symptomatic
+
+9. **Phenytoin free level (Winter-Tozer) — albumin 30, total 12?**
+   A. 0.8
+   B. **1.2**
+   C. 1.5
+   D. 2.0
+
+10. **Tacrolimus sampling time?**
+    A. 2h post-dose
+    B. **Pre-dose (C0 trough)**
+    C. 4h post-dose
+    D. 12h post-dose
+
+---
+
+## 25. 📋 SBAs (5)
+
+1. **Vancomycin AUC-guided dosing — MRSA target?**
+   A. >200
+   B. 300
+   C. **>400 (target 400-600)**
+   D. >1000
+   *Answer: C*
+
+2. **Renal transplant on tacrolimus (trough 8) + fluconazole. Level?**
+   A. Decrease 50%
+   B. **Increase 2-4 fold**
+   C. Stable
+   D. Decrease 90%
+   *Answer: B*
+
+3. **Digoxin AF therapeutic range?**
+   A. 0.5-0.9
+   B. **0.8-2.0**
+   C. 1.0-2.0
+   D. 2.0-3.0
+   *Answer: B*
+
+4. **Phenytoin in hypoalbuminaemia — monitor?**
+   A. Total level
+   B. **Free level (target 1-2 µg/mL)**
+   C. Albumin-corrected
+   D. Dose-adjusted
+   *Answer: B*
+
+5. **Phenytoin saturation kinetics?**
+   A. Linear dose-concentration
+   B. **Small dose change → large level change**
+   C. Zero-order at all doses
+   D. No saturation
+   *Answer: B*
+
+---
+
+## 26. 🔑 Answer Keys
+| MCQs | SBAs |
+|------|------|
+| 1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B | 1-C, 2-C, 3-B, 4-B, 5-B |
+
+---
+
+## 27. 🎤 Viva Questions (Expected Answers)
+
+| # | Question | Expected Answer |
+|---|----------|-----------------|
+| 1 | Indications for TDM? | Narrow TI, significant PK variability, no clinical marker, serious consequences, interactions, organ impairment, special populations. |
+| 2 | Vancomycin AUC target for MRSA? | **400-600 mg·h/L** (AUC/MIC >400 for MIC=1). Bayesian software. Nephrotoxicity at AUC>700. |
+| 3 | Digoxin sampling and range? | **HF: 0.5-0.9 ng/mL; AF: 0.8-2.0 ng/mL**; Sample ≥6h post-dose (ideally 12-24h). |
+| 4 | Lithium monitoring? | **0.6-1.0 mmol/L maintenance**; Weekly ×4 after initiation, then 3-monthly. Check thyroid, renal, Ca. |
+| 5. Phenytoin — free level in hypoalbuminaemia? | **90% bound**; Winter-Tozer: Free = Total / [(0.1×Albumin)+0.1]. Target free 1-2 µg/mL. |
+
+---
+
+## 28. 🧩 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Trough always correct** | NO. Peak for aminoglycosides, AUC for vancomycin, free for hypoalbuminaemia. |
+| **Free level always better** | NO. Only for highly bound drugs with variable binding (phenytoin, valproate, phenobarbital). |
+| **TDM replaces clinical assessment** | NO. Clinical response remains paramount. |
+| **All anticonvulsants need TDM** | NO. Levetiracetam, lamotrigine, newer AEDs generally no routine TDM. |
+| **AUC always better than trough** | Not always. Trough sufficient for long half-life, linear PK, good trough-AUC correlation. |
+| **Free phenytoin always needed** | Only if albumin ≠40, renal failure, pregnancy, displacement. |
+| **All immunosuppressants = same monitoring** | Tacrolimus = C0; Ciclosporin = C2; Sirolimus = C0; Mycophenolate = AUC. |
+| **TDM = only narrow TI** | Also for unpredictable PK (immunosuppressants), interactions, organ impairment. |
+| **Free = total × free fraction** | Not linear — phenytoin free fraction increases disproportionately at high concentrations. |
+| **TDM replaces clinical assessment** | NO. Clinical response remains gold standard. |
+
+> **Mnemonic: TDM DRUGS — "VAN-LID-PTC-TAC"**
+> **V**ancomycin: AUC 400-600
+> **A**minoglycosides: Peak 60-80
+> **N** — Lithium: 0.6-1.0 mmol/L (12h post)
+> **L**ithium: 0.6-1.0
+> **I**mmunosuppressants: Tac 5-15, CsA C2 1000-2000
+> **D**igoxin: 0.5-0.9 (HF), 0.8-2.0 (AF) — ≥6h post
+> **P**henytoin: Total 10-20, Free 1-2; Saturable kinetics
+> **T**heophylline: 10-20 µg/mL
+> **A**nticonvulsants: CBZ 4-12, Valproate 50-100, PB 10-40
+> **C**iclosporin: C2 1000-2000; Tacrolimus: C0 5-15
+
+---
+
+## 29. 🗺️ Mind Map
+
+```mermaid
+mindmap
+  root((Therapeutic Drug Monitoring))
+    Indications
+      Narrow TI
+      PK Variability
+      No Clinical Marker
+      Serious Consequences
+      Interactions
+      Organ Impairment
+    Targets
+      Vancomycin: AUC 400-600
+      Digoxin: 0.5-0.9 (HF), 0.8-2.0 (AF)
+      Lithium: 0.6-1.0
+      Phenytoin: 10-20 total, 1-2 free
+      Tacrolimus: 5-15 ng/mL
+    Sampling
+      Trough: Dig, Li, Pheny, Tac, CsA
+      Peak: Amina
+      AUC: Vanco, Myco
+      Free: Pheny, Valp
+    Key Pearls
+      Vanco AUC>400 MRSA
+      Phenytoin free if alb<40
+      Li weekly×4 then 3m
+      Tac C0 5-15 q2-3d during interactions
+      Digoxin ≥6h post, >2 toxic
+    Interactions
+      Tac+Clari → ↓75%
+      Dig+Amiodarone → Halve
+      Phenytoin+Valproate → ↑ Free
+      Li+Thiazide → ↑ Li
+```
+
+---
+
+## 30. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score (0–5) | Notes |
+|--------|------|-------------|-------|
+| Day 1 | | | |
+| Day 3 | | | |
+| Day 7 | | | |
+| Day 14 | | | |
+| Day 30 | | | |
+| Day 90 | | | |
+
+---
+
+## 31. 📝 Self-Test Scorecard
+
+| Section | Max | Score | % |
+|---------|-----|-------|---|
+| Target Ranges & Sampling | 4 | | |
+| Vancomycin AUC & Interpretation | 3 | | |
+| Anticonvulsants & Lithium | 3 | | |
+| Immunosuppressants & Digoxin | 3 | | |
+| Aminoglycosides & Theophylline | 2 | | |
+| Interpretation Pearls | 2 | | |
+| Sampling Principles | 2 | | |
+| Drug Interactions in TDM | 1 | | |
+| **Total** | **20** | | |
+
+---
+
+## 32. 💬 Exam Answer Modes
+
+| Format | Prompt | Key Points |
+|--------|--------|------------|
+| **Long Essay** | "Describe TDM principles, key drug target ranges, sampling timing, and interpretation pearls." | Indications (narrow TI, PK variability, no clinical marker); Target ranges (table); Sampling (trough/peak/AUC/free); Interpretation (free levels, Bayesian AUC, interaction effects). |
+| **Short Note** | "Vancomycin AUC-guided dosing." | AUC 400-600 for MRSA (AUC/MIC >400); Bayesian software, 1-2 samples; Nephrotoxicity AUC>700/trough>20. |
+| **Viva** | "Patient on vancomycin for MRSA, trough 18. Adequate?" | Trough inadequate — target AUC 400-600. Use Bayesian with 2 samples for AUC. |
+| **Ward Round** | "Phenytoin 300mg, albumin 30, total 15. Adequate?" | Winter-Tozer: Free = 15/[(0.1×30)+0.1] = 3.75 → TOXIC (target 1-2). Reduce dose, monitor free. |
+| **Last-Night** | "TDM: Targets: Vanco AUC 400-600, Dig 0.5-0.9/0.8-2.0, Li 0.6-1.0, Pheny 10-20/1-2 free, Tac 5-15. Sampling: Trough (Dig/Li/Pheny/Tac), Peak (Amina), AUC (Vanco/Myco), Free (Pheny/Valp). Vanco AUC>400 MRSA, Nephrotox AUC>700. Phenytoin: Saturable, free if alb<40. Li: 0.6-1.0, weekly×4 then 3m. Tac: C0 5-15, levels q2-3d. Digoxin: ≥6h post, >2 toxic." | Compressed. |
+
+---
+
+## 33. 📌 Summary
+
+- **TDM Indications:** Narrow TI, PK variability, no clinical marker, serious consequences, interactions, organ impairment.
+- **Key Targets:** Vancomycin AUC 400-600; Digoxin 0.5-0.9 (HF)/0.8-2.0 (AF); Lithium 0.6-1.0; Phenytoin 10-20 total / 1-2 free; Tacrolimus 5-15 ng/mL.
+- **Sampling:** Trough (Dig, Li, Pheny, Tac, CsA), Peak (Amina), AUC (Vanco, Myco), Free (Pheny, Valp).
+- **Key Pearls:** Vanco AUC>400 for MRSA; Phenytoin saturable kinetics → free level if alb≠40; Li weekly×4 then 3m; Tac C0 5-15, levels q2-3d during interactions.
+- **Interpretation:** Free phenytoin if alb≠40; Vanco AUC-guided > trough; Li dehydration/NSAIDs/ACEi → ↑ levels.
+- **Interactions:** Tac+Clari (↓75%), Dig+Amiodarone (halve), Phenytoin+Valproate (↑ free), Li+Thiazide (↑ Li).
+
+---
+
+## 34. ❓ MCQs (10)
+
+1. **Primary indication for TDM?**
+   A. Wide therapeutic index
+   B. **Narrow therapeutic index**
+   C. Linear pharmacokinetics
+   D. No drug interactions
+
+2. **Vancomycin target AUC/MIC for MRSA?**
+   A. >200
+   B. **>400**
+   C. >600
+   D. >800
+
+3. **Digoxin range for heart failure?**
+   A. 0.2-0.5
+   B. **0.5-0.9**
+   C. 1.0-2.0
+   D. 2.0-3.0
+
+4. **Lithium maintenance range?**
+   A. 0.2-0.5
+   B. **0.6-1.0**
+   C. 1.2-1.5
+   D. 1.5-2.0
+
+5. **Phenytoin sampling?**
+   A. 1h post-dose
+   B. **Pre-dose (trough)**
+   C. 30 min post-dose
+   D. 2h post-dose
+
+6. **Vancomycin target AUC/MIC?**
+   A. >200
+   B. **>400**
+   C. >600
+   D. >800
+
+7. **Vancomycin nephrotoxicity AUC threshold?**
+   A. >500
+   B. **>700**
+   C. >800
+   D. >1000
+
+8. **Lithium monitoring frequency?**
+   A. Daily
+   B. **Weekly until stable, then 3-monthly**
+   C. Monthly
+   D. Only if symptomatic
+
+9. **Phenytoin free level (Winter-Tozer) — albumin 30, total 12?**
+   A. 0.8
+   B. **1.2**
+   C. 1.5
+   D. 2.0
+
+10. **Tacrolimus sampling?**
+    A. 2h post-dose
+    B. **Pre-dose (C0 trough)**
+    C. 4h post-dose
+    D. 12h post-dose
+
+---
+
+## 35. 📋 SBAs (5)
+
+1. **Vancomycin AUC-guided — MRSA target?**
+   A. >200
+   B. 300
+   C. **>400 (target 400-600)**
+   D. >1000
+   *Answer: C*
+
+2. **Tacrolimus + fluconazole — level expected?**
+   A. Decrease 50%
+   B. **Increase 2-4 fold**
+   C. Stable
+   D. Decrease 90%
+   *Answer: B*
+
+3. **Digoxin AF range?**
+   A. 0.5-0.9
+   B. **0.8-2.0**
+   C. 1.0-2.0
+   D. 2.0-3.0
+   *Answer: B*
+
+4. **Phenytoin hypoalbuminaemia — monitor?**
+   A. Total
+   B. **Free level (1-2 µg/mL)**
+   C. Albumin-corrected
+   D. Dose-adjusted
+   *Answer: B*
+
+5. **Phenytoin saturation kinetics?**
+   A. Linear
+   B. **Small dose change → large level change**
+   C. Zero-order
+   D. No saturation
+   *Answer: B*
+
+---
+
+## 36. 🔑 Answer Keys
+| MCQs | SBAs |
+|------|------|
+| 1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B | 1-C, 2-C, 3-B, 4-B, 5-B |
+
+---
+
+## 37. 🔗 Cross-Links
+- [[Principles of Rational Prescribing]] — Evidence-based prescribing, monitoring
+- [[Adverse Drug Reactions]] — Toxicity at supratherapeutic levels
+- [[Drug Interactions]] — Interactions altering TDM levels
+- [[Prescribing in Special Populations]] — Renal/hepatic/elderly TDM adjustments
+- [[Polypharmacy and Deprescribing]] — TDM-guided deprescribing
+- [[Medication Safety and Errors]] — TDM errors, dosing errors
+- [[CYP450 Drug Interactions]] — Interaction effects on TDM levels
+- [[Clinical Contexts/Perioperative Prescribing.md]] — Perioperative TDM
+
+---
+
+**Last Updated:** 2026-06-15  
+**TDM Hub: COMPLETE with Full Exam Suite (Viva Qs, MCQs, SBAs, Answer Keys, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)**

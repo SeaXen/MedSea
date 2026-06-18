@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Distribution Interactions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Distribution Interactions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Understand protein binding displacement interactions — mechanism, clinical relevance</li><li>[ ] Identify clinically significant displacement interactions (rare but high-yield)</li><li>[ ] Explain why most protein binding displacement interactions are NOT clinically significant</li><li>[ ] Apply to warfarin, phenytoin, digoxin, valproate scenarios</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Protein Binding Basics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Albumin</th><th>Alpha-1 Acid Glycoprotein (AAG)</th><th>Lipoproteins</th></tr><tr><td>-----------</td><td>---------</td><td>--------------------------------</td><td>--------------</td></tr><tr><td>**Binds**</td><td>**Acidic drugs** (weak acids)</td><td>**Basic drugs** (weak bases)</td><td>Lipophilic drugs</td></tr><tr><td>**Examples**</td><td>Warfarin, Phenytoin, Valproate, NSAIDs, Sulfonamides, Bilirubin, Thyroid hormones</td><td>Lidocaine, Propranolol, Imipramine, Disopyramide, Verapamil, Quinidine, Tacrolimus</td><td>Cyclosporin, Tacrolimus, Sirolimus, Amphotericin B</td></tr><tr><td>**Concentration**</td><td>~40 g/L (high capacity)</td><td>~0.5–1 g/L (low capacity, ↑ in acute phase)</td><td>Variable</td></tr><tr><td>**Acute Phase Response**</td><td>↓ (negative acute phase)</td><td>**↑↑ (positive acute phase)**</td><td>Variable</td></tr></table>
+<div class="callout"><b>Free Drug Hypothesis</b>: Only <b>unbound (free) drug</b> is pharmacologically active, crosses membranes, is metabolised, and excreted.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ Displacement Interaction — Mechanism & Clinical Reality</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Theoretical Concern</div>
+<ol><li><b>Drug A</b> (highly protein bound) displaced by <b>Drug B</b> → ↑ free fraction of Drug A</li><li>↑ Free drug → ↑ pharmacological effect, ↑ metabolism, ↑ excretion</li><li><b>New steady state</b> reached: total drug concentration falls, free concentration returns to baseline</li></ol>
+<div class="sub-h">Why Most Are NOT Clinically Significant</div>
+<table class="ctable"><tr><th>Reason</th><th>Explanation</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**1. Transient free drug increase**</td><td>Free drug ↑ temporarily → ↑ clearance (metabolism/excretion) → free drug returns to baseline</td></tr><tr><td>**2. Volume of distribution increases**</td><td>Displaced drug distributes into tissues → total concentration ↓</td></tr><tr><td>**3. Hepatic extraction ratio**</td><td>For **high extraction drugs** (flow-limited), displacement has minimal effect on clearance</td></tr><tr><td>**4. Clinical monitoring**</td><td>Most high-risk drugs have TDM (phenytoin, valproate) or INR (warfarin)</td></tr></table>
+<div class="callout"><b>Exception</b>: <b>Rapidly acting drugs with narrow TI</b> where transient spike causes toxicity before compensation (e.g., <b>warfarin</b> in first few days, <b>phenytoin</b> in overdose context).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🚨 Clinically Significant Displacement Interactions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Displacer (Drug B)</th><th>Displaced (Drug A)</th><th>Clinical Significance</th><th>Notes</th></tr><tr><td>--------------------</td><td>-------------------</td><td>----------------------</td><td>-------</td></tr><tr><td>**Valproate**</td><td>**Phenytoin**</td><td>**YES** — ↑ free phenytoin → toxicity (nystagmus, ataxia)</td><td>Valproate also inhibits phenytoin metabolism (CYP2C9) — **dual interaction**</td></tr><tr><td>**Valproate**</td><td>**Warfarin**</td><td>Possible — ↑ free warfarin</td><td>Monitor INR; valproate also inhibits warfarin metabolism</td></tr><tr><td>**Sulfonamides**</td><td>**Warfarin**</td><td>Possible — displacement + metabolism inhibition</td><td>Monitor INR</td></tr><tr><td>**Aspirin (high dose)**</td><td>**Warfarin**</td><td>Possible — displacement + antiplatelet effect</td><td>Monitor INR</td></tr><tr><td>**Phenylbutazone**</td><td>**Warfarin, Phenytoin, Tolbutamide**</td><td>Historical — potent displacer + metabolism inhibition</td><td>Rarely used now</td></tr><tr><td>**Bilirubin (neonatal)**</td><td>**Ceftriaxone**</td><td>**YES — kernicterus risk**</td><td>Ceftriaxone displaces bilirubin from albumin → **avoid in hyperbilirubinaemic neonates**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📊 Protein Binding Changes in Disease States</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Albumin</th><th>AAG</th><th>Effect on Free Drug</th></tr><tr><td>-----------</td><td>---------</td><td>-----</td><td>---------------------</td></tr><tr><td>**Nephrotic Syndrome**</td><td>↓↓</td><td>↑</td><td>↑ Free acidic drugs; ↓ free basic drugs (complex)</td></tr><tr><td>**Liver Cirrhosis**</td><td>↓↓</td><td>↑</td><td>↑ Free acidic drugs (warfarin, phenytoin); AAG ↑ may offset basic drugs</td></tr><tr><td>**Burns / Trauma / Sepsis**</td><td>↓</td><td>**↑↑**</td><td>↓ Free basic drugs (lidocaine, propranolol); ↑ free acidic drugs</td></tr><tr><td>**Pregnancy**</td><td>↓</td><td>↑</td><td>↑ Free acidic drugs</td></tr><tr><td>**Elderly**</td><td>↓ (mild)</td><td>↑ (mild)</td><td>↑ Free drug fraction</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Scenarios</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Interaction</th><th>Significance</th><th>Management</th></tr><tr><td>----------</td><td>-------------</td><td>--------------</td><td>------------</td></tr><tr><td>Phenytoin + Valproate started</td><td>Valproate displaces phenytoin + inhibits CYP2C9</td><td>**YES — major**</td><td>**Monitor FREE phenytoin level**; ↓ phenytoin dose 25–50%</td></tr><tr><td>Warfarin + Valproate</td><td>Displacement + metabolism inhibition</td><td>Moderate</td><td>Monitor INR closely; ↓ warfarin dose</td></tr><tr><td>Warfarin + Sulfonamide</td><td>Displacement + CYP2C9 inhibition</td><td>Moderate</td><td>Monitor INR; avoid if possible</td></tr><tr><td>Neonate with jaundice + Ceftriaxone</td><td>Ceftriaxone displaces bilirubin</td><td>**YES — kernicterus**</td><td>**Avoid ceftriaxone**; use cefotaxime</td></tr><tr><td>Patient with cirrhosis on warfarin</td><td>↓ Albumin → ↑ free warfarin</td><td>**YES**</td><td>↓ Warfarin dose; monitor INR</td></tr><tr><td>Patient on lidocaine infusion develops sepsis</td><td>AAG ↑ → ↓ free lidocaine</td><td>Possible</td><td>Monitor for loss of efficacy; adjust dose</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (6)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. When is protein binding displacement clinically significant?</td><td>**Drugs with narrow TI, high protein binding (>90%), low volume of distribution, low hepatic extraction** — AND when displacer also inhibits metabolism (dual interaction)</td></tr><tr><td>2. Phenytoin + Valproate — why significant?</td><td>**Dual interaction**: Valproate displaces phenytoin from albumin **AND** inhibits CYP2C9 metabolism → sustained ↑ free phenytoin</td></tr><tr><td>3. Warfarin + Sulfonamide — mechanism?</td><td>**Displacement from albumin + CYP2C9 inhibition** → ↑ free warfarin + ↓ clearance</td></tr><tr><td>4. Ceftriaxone in jaundiced neonate — why avoid?</td><td>**Displaces bilirubin from albumin** → ↑ free bilirubin → kernicterus</td></tr><tr><td>5. Why most displacement interactions are not clinically significant?</td><td>**Transient free drug increase → ↑ clearance (metabolism/excretion) → free drug returns to baseline**; Vd increases, total concentration falls</td></tr><tr><td>6. In which disease states is free drug fraction increased?</td><td>**Liver cirrhosis, nephrotic syndrome, burns, sepsis, pregnancy, elderly** — low albumin, high AAG</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Displacement = always dangerous?**</td><td>**No** — most are transient and compensated by ↑ clearance</td></tr><tr><td>**Free vs Total drug monitoring**</td><td>**Phenytoin, Valproate** — measure **FREE level** in hypoalbuminaemia, renal failure, displacement interactions</td></tr><tr><td>**Albumin vs AAG binding**</td><td>**Albumin** = acidic drugs (warfarin, phenytoin, valproate); **AAG** = basic drugs (lidocaine, propranolol, verapamil)</td></tr><tr><td>**High vs Low extraction drugs**</td><td>**High extraction (flow-limited)**: displacement minimal effect (propranolol, lidocaine); **Low extraction (capacity-limited)**: displacement ↑ clearance (warfarin, phenytoin, digoxin)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"DISPLACEMENT IS USUALLY TRANSIENT"</b> = <b>D</b>isplacement → <b>F</b>ree drug ↑ → <b>C</b>learance ↑ → <b>F</b>ree drug returns to baseline</li><li><b>"PHENYTOIN + VALPROATE = DUAL HIT"</b> = <b>D</b>isplacement + <b>M</b>etabolism inhibition</li><li><b>"CEFTRIAXONE + BILIRUBIN = KERNICTERUS"</b> = Neonates with jaundice → <b>avoid ceftriaxone</b></li><li><b>"ALBUMIN = ACIDIC DRUGS"</b> = <b>W</b>arfarin, <b>P</b>henytoin, <b>V</b>alproate, <b>N</b>SAIDs</li><li><b>"AAG = BASIC DRUGS"</b> = <b>L</b>idocaine, <b>P</b>ropranolol, <b>V</b>erapamil, <b>Q</b>uinidine</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Distribution Interactions)) Protein Binding Basics Free Drug Hypothesis Albumin: Acidic drugs (Warfarin, Phenytoin, Valproate, NSAIDs) AAG: Basic drugs (Lidocaine, Propranolol, Verapamil) Displacement Mechanism Drug B displaces Drug A ↑ Free Drug A → ↑ effect, ↑ clearance New steady state: total ↓, free = baseline Clinical Significance Usually NOT significant (transient) Significant IF: narrow TI, high binding, low Vd, low extraction DUAL interaction (displacement + metabolism inhibition) = DANGEROUS Significant Examples Valproate + Phenytoin (displace + CYP2C9 inhibit) Valproate + Warfarin (displace + metabolism inhibit) Sulfonamide + Warfarin (displace + CYP2C9 inhibit) Ceftriaxone + Bilirubin (kernicterus) Disease States Cirrhosis, Nephrotic, Burns, Sepsis, Pregnancy, Elderly ↑ Free drug → dose adjust / monitor free levels </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Protein binding basics</td><td>6</td><td></td></tr><tr><td>Displacement mechanism</td><td>6</td><td></td></tr><tr><td>Significant interactions</td><td>8</td><td></td></tr><tr><td>Disease states</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>6</td><td></td></tr><tr><td>**Total**</td><td>**32**</td><td></td></tr></table>
+<p><b>Target</b>: ≥26/32 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Why are most protein binding displacement interactions not clinically significant?"*</div>
+<ul><li>Displacement transiently ↑ free drug → ↑ clearance (metabolism/excretion) → free drug returns to baseline</li><li>Volume of distribution increases → total concentration falls</li><li>High extraction drugs unaffected (flow-limited clearance)</li><li>Most have TDM/INR monitoring</li></ul>
+<div class="sub-h">Viva (1 min): *"Phenytoin + Valproate — why is this interaction significant?"*</div>
+<ul><li><b>Dual mechanism</b>: Valproate <b>displaces phenytoin from albumin</b> (↑ free fraction) <b>AND inhibits CYP2C9</b> (↓ metabolism) → sustained ↑ free phenytoin → toxicity</li><li><b>Monitor FREE phenytoin level</b> (not total); ↓ phenytoin dose 25–50%</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Neonate with jaundice, prescribed ceftriaxone. Safe?"*</div>
+<ul><li><b>NO</b> — ceftriaxone displaces bilirubin from albumin → ↑ free bilirubin → <b>kernicterus risk</b></li><li><b>Use cefotaxime instead</b></li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Displacement usually transient → free drug returns to baseline</li><li>Significant if: narrow TI + high binding + low Vd + low extraction + displacer also inhibits metabolism</li><li>Phenytoin + Valproate = dual hit (displace + CYP2C9 inhibit)</li><li>Warfarin + Sulfonamide = displace + CYP2C9 inhibit</li><li>Ceftriaxone + bilirubin (neonate) = kernicterus → use cefotaxime</li><li>Albumin binds acidic drugs (Warfarin, Phenytoin, Valproate)</li><li>AAG binds basic drugs (Lidocaine, Propranolol, Verapamil)</li><li>Free levels for Phenytoin/Valproate in hypoalbuminaemia/displacement</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>DISTRIBUTION INTERACTION TRIAD:</b> 1. <b>USUALLY HARMLESS</b> — transient free drug spike → ↑ clearance → baseline restored 2. <b>DANGEROUS = DUAL HIT</b> — Displacement + Metabolism inhibition (Valproate+Phenytoin, Sulfonamide+Warfarin) 3. <b>NEONATAL KERNICTERUS</b> — Ceftriaxone displaces bilirubin → <b>AVOID in jaundiced neonates</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Protein binding displacement interactions are usually NOT clinically significant because:</b></li></ol>
+<p>A. Displacement does not increase free drug B. <b>Transient free drug increase → ↑ clearance → free drug returns to baseline</b> ✓ C. Volume of distribution decreases D. Drugs are not highly protein bound E. Metabolism is not affected</p>
+<ol><li><b>Albumin primarily binds which type of drugs?</b></li></ol>
+<p>A. Basic drugs B. <b>Acidic drugs</b> ✓ C. Neutral drugs D. Lipophilic drugs only E. All drugs equally</p>
+<ol><li><b>Alpha-1 Acid Glycoprotein (AAG) primarily binds:</b></li></ol>
+<p>A. Acidic drugs B. <b>Basic drugs</b> ✓ C. Neutral drugs D. Only lidocaine E. Only warfarin</p>
+<ol><li><b>Phenytoin + Valproate interaction is significant due to:</b></li></ol>
+<p>A. Displacement only B. Metabolism inhibition only C. <b>Displacement + CYP2C9 inhibition (dual interaction)</b> ✓ D. Induction of metabolism E. Reduced absorption</p>
+<ol><li><b>Ceftriaxone is avoided in jaundiced neonates because it:</b></li></ol>
+<p>A. Causes haemolysis B. <b>Displaces bilirubin from albumin → ↑ free bilirubin → kernicterus</b> ✓ C. Inhibits bilirubin conjugation D. Causes cholestasis E. Is nephrotoxic</p>
+<ol><li><b>In which condition is free warfarin fraction INCREASED?</b></li></ol>
+<p>A. Nephrotic syndrome B. <b>Liver cirrhosis</b> ✓ C. Acute phase response D. High albumin states E. Pregnancy (third trimester)</p>
+<ol><li><b>For which drug is FREE level monitoring recommended in hypoalbuminaemia?</b></li></ol>
+<p>A. Digoxin B. <b>Phenytoin</b> ✓ C. Warfarin D. Lithium E. Gentamicin</p>
+<ol><li><b>High hepatic extraction drugs — effect of protein binding displacement:</b></li></ol>
+<p>A. Markedly ↑ free drug levels B. <b>Minimal effect (flow-limited clearance)</b> ✓ C. ↓ Clearance D. ↑ Volume of distribution only E. Unpredictable</p>
+<ol><li><b>Valproate + Warfarin interaction mechanism:</b></li></ol>
+<p>A. Induction of warfarin metabolism B. <b>Displacement + metabolism inhibition</b> ✓ C. Reduced absorption D. Increased renal excretion E. No interaction</p>
+<ol><li><b>Sulfonamide + Warfarin interaction:</b></li></ol>
+<p>A. Induction of metabolism B. <b>Displacement from albumin + CYP2C9 inhibition</b> ✓ C. Reduced absorption D. Increased renal excretion E. No interaction</p>
+<ol><li><b>Which drug displaces bilirubin from albumin in neonates?</b></li></ol>
+<p>A. Cefotaxime B. <b>Ceftriaxone</b> ✓ C. Penicillin D. Gentamicin E. Vancomycin</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Displacement usually insignificant because</td><td>Transient free drug ↑ → clearance ↑ → free drug returns to baseline</td></tr><tr><td>Albumin binds</td><td>Acidic drugs: Warfarin, Phenytoin, Valproate, NSAIDs, Sulfonamides</td></tr><tr><td>AAG binds</td><td>Basic drugs: Lidocaine, Propranolol, Verapamil, Quinidine, Disopyramide</td></tr><tr><td>Phenytoin + Valproate</td><td>Dual: Displacement + CYP2C9 inhibition → sustained ↑ free phenytoin</td></tr><tr><td>Warfarin + Sulfonamide</td><td>Displacement + CYP2C9 inhibition</td></tr><tr><td>Ceftriaxone + Bilirubin (neonate)</td><td>Kernicterus risk → avoid, use cefotaxime</td></tr><tr><td>Cirrhosis effect</td><td>↓ Albumin → ↑ free acidic drugs (warfarin, phenytoin)</td></tr><tr><td>AAG in acute phase</td><td>↑ AAG → ↓ free basic drugs (lidocaine, propranolol)</td></tr><tr><td>Free level monitoring</td><td>Phenytoin, Valproate (hypoalbuminaemia, renal failure, displacement)</td></tr><tr><td>High extraction drugs</td><td>Displacement minimal effect (propranolol, lidocaine)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Transient free drug increase → clearance increases → baseline restored</li><li><b>B</b> — Albumin binds acidic drugs</li><li><b>B</b> — AAG binds basic drugs</li><li><b>C</b> — Dual interaction</li><li><b>B</b> — Displaces bilirubin → kernicterus</li><li><b>B</b> — Liver cirrhosis (↓ albumin)</li><li><b>B</b> — Phenytoin (free level monitoring recommended)</li><li><b>B</b> — High extraction = flow-limited = displacement minimal effect</li><li><b>B</b> — Displacement + metabolism inhibition</li><li><b>B</b> — Displacement + CYP2C9 inhibition</li><li><b>B</b> — Ceftriaxone displaces bilirubin</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Interactions/Distribution interactions.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Distribution Interactions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

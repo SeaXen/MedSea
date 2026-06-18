@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clinical Trial Phases — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.4. DRUG DEVELOPMENT</span>
+      <div class="h1">Clinical Trial Phases</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define each clinical trial phase (0–IV) with objectives, design, population</li><li>[ ] Distinguish adaptive vs traditional designs</li><li>[ ] Apply ethical principles: informed consent, DSMB, randomization, blinding</li><li>[ ] Recognise endpoints: primary, secondary, surrogate, composite</li><li>[ ] Identify regulatory milestones: IND, NDA/BLA, orphan, accelerated approval</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📊 Clinical Trial Phases Overview</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Phase</th><th>**Objective**</th><th>**Design**</th><th>**Population**</th><th>**Duration**</th><th>**Success Rate**</th></tr><tr><td>-------</td><td>---------------</td><td>------------</td><td>----------------</td><td>--------------</td><td>------------------</td></tr><tr><td>**0 (Microdosing)**</td><td>**PK/PD in humans** (sub-therapeutic)</td><td>Open-label, single/multiple microdose</td><td>**10–15 healthy volunteers**</td><td>Days–weeks</td><td>Exploratory</td></tr><tr><td>**I**</td><td>**Safety, Tolerability, PK/PD** (First-in-human)</td><td>Open-label, dose-escalation (3+3), SAD/MAD</td><td>**20–100 healthy volunteers** (or patients for oncology)</td><td>Months</td><td>~70%</td></tr><tr><td>**II**</td><td>**Efficacy + Safety** (Proof-of-concept)</td><td>RCT, dose-finding, biomarker-driven</td><td>**100–300 patients** (target disease)</td><td>1–2 years</td><td>~33%</td></tr><tr><td>**III**</td><td>**Confirmatory Efficacy + Safety** (Pivotal)</td><td>Large RCT, multi-centre, active/placebo control</td><td>**300–3000+ patients**</td><td>2–4 years</td><td>~25–30% (to approval)</td></tr><tr><td>**IV (Post-Marketing)**</td><td>**Real-world safety/efficacy** (Pharmacovigilance)</td><td>Observational, registries, pragmatic RCTs</td><td>**General population**</td><td>Ongoing</td><td>Lifelong</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🔬 Phase Details</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Phase 0 — Exploratory IND (Microdosing)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Dose**</td><td>**<1/100th of NOAEL** (No Observed Adverse Effect Level) or **<30 nmol** (microdose)</td></tr><tr><td>**Objective**</td><td>Human PK, target engagement, biomarker validation (NO therapeutic effect)</td></tr><tr><td>**Advantage**</td><td>Early go/no-go; reduces animal testing; accelerates development</td></tr><tr><td>**Limitation**</td><td>No safety/efficacy data; linear PK assumption</td></tr></table>
+<div class="sub-h">Phase I — First-in-Human (FIH)</div>
+<table class="ctable"><tr><th>Subtype</th><th>Design</th><th>Objective</th></tr><tr><td>---------</td><td>--------</td><td>-----------</td></tr><tr><td>**SAD** (Single Ascending Dose)</td><td>Cohorts of 6–8 (placebo + active); ↑ dose until MTD</td><td>Safety, PK, MTD (Maximum Tolerated Dose)</td></tr><tr><td>**MAD** (Multiple Ascending Dose)</td><td>Repeated dosing at steady state</td><td>Safety, PK at steady state, accumulation</td></tr><tr><td>**Food Effect**</td><td>Fed vs fasted</td><td>Bioavailability impact</td></tr><tr><td>**Drug-Drug Interaction**</td><td>With probe substrates/inhibitors</td><td>CYP/P-gp interaction potential</td></tr><tr><td>**QTc (Thorough QT)**</td><td>Supratherapeutic dose + positive control (moxifloxacin)</td><td>Cardiac safety (ICH E14)</td></tr><tr><td>**Hepatic/Renal Impairment**</td><td>Matched cohorts</td><td>Dose adjustment rationale</td></tr><tr><td>**Mass Balance (ADME)**</td><td>Radiolabelled dose</td><td>Metabolism, excretion pathways</td></tr></table>
+<div class="callout"><b>3+3 Design</b>: 3 patients at dose; if 0/3 DLT → escalate; if 1/3 DLT → expand to 6; if ≥2/6 DLT → MTD reached</div>
+<div class="sub-h">Phase II — Proof-of-Concept</div>
+<table class="ctable"><tr><th>Subtype</th><th>Design</th><th>Objective</th></tr><tr><td>---------</td><td>--------</td><td>-----------</td></tr><tr><td>**IIa** (PoC)</td><td>Small RCT, dose-ranging, biomarker endpoint</td><td>**Efficacy signal**, dose-response, safety</td></tr><tr><td>**IIb** (Dose-Finding)</td><td>Larger RCT, multiple doses vs placebo/active</td><td>**Optimal dose**, safety margin, sample size for Phase III</td></tr></table>
+<div class="callout"><b>Endpoints</b>: Often <b>surrogate</b> (HbA1c, viral load, tumour shrinkage, biomarker) — must be validated</div>
+<div class="sub-h">Phase III — Confirmatory</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Design**</td><td>**Large, multi-centre, randomised, controlled** (double-blind preferred)</td></tr><tr><td>**Control**</td><td>**Placebo** (if ethical) or **Active comparator** (standard of care)</td></tr><tr><td>**Population**</td><td>**Broad** (reflects real-world); includes comorbidities, elderly, renal/hepatic impairment</td></tr><tr><td>**Primary Endpoint**</td><td>**Clinically meaningful** (mortality, morbidity, QOL, composite) — **not surrogate**</td></tr><tr><td>**Non-Inferiority / Superiority**</td><td>Pre-specified margin; assay sensitivity critical</td></tr><tr><td>**Interim Analysis**</td><td>DSMB监查; O'Brien-Fleming / Lan-DeMets alpha spending</td></tr><tr><td>**Sample Size**</td><td>Powered for primary endpoint (80–90% power, α=0.05)</td></tr></table>
+<div class="callout"><b>Two pivotal Phase III trials</b> typically required for approval (or one large + supportive Phase II)</div>
+<div class="sub-h">Phase IV — Post-Marketing Surveillance</div>
+<table class="ctable"><tr><th>Type</th><th>Purpose</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Mandatory (PASS/PAES)**</td><td>Regulatory commitment (e.g., long-term safety, pregnancy, paediatrics)</td></tr><tr><td>**Spontaneous Reporting**</td><td>Yellow Card, FAERS, EudraVigilance, VigiBase</td></tr><tr><td>**Observational Studies**</td><td>Cohort, case-control, registries (real-world evidence)</td></tr><tr><td>**Pragmatic RCTs**</td><td>Effectiveness in routine practice</td></tr><tr><td>**Risk Minimisation**</td><td>Educational materials, controlled access, pregnancy prevention programmes</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎯 Endpoints Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Examples</th></tr><tr><td>------</td><td>------------</td><td>----------</td></tr><tr><td>**Primary**</td><td>**Main outcome** — trial powered for this</td><td>Mortality, MI/stroke, HbA1c change, PFS/OS</td></tr><tr><td>**Secondary**</td><td>Supportive, hypothesis-generating</td><td>Safety, QOL, subgroup, biomarker</td></tr><tr><td>**Surrogate**</td><td>Substitutes for clinical outcome (must be validated)</td><td>**HbA1c** for diabetes complications; **Viral load** for AIDS mortality; **Tumour shrinkage** for OS</td></tr><tr><td>**Composite**</td><td>Combines multiple endpoints</td><td>**MACE** (CV death + MI + stroke); **Time to treatment failure**</td></tr><tr><td>**Patient-Reported (PRO)**</td><td>Patient perspective</td><td>QOL (EQ-5D), symptom scores, adherence</td></tr><tr><td>**Safety**</td><td>AEs, SAEs, AESIs, lab abnormalities</td><td>Discontinuation due to AE, lab shifts</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🏛️ Regulatory Milestones</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Milestone</th><th>Authority</th><th>Key Requirement</th></tr><tr><td>-----------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**Pre-IND**</td><td>FDA/MHRA/EMA</td><td>Pre-clinical data, CMC, protocol</td></tr><tr><td>**IND / CTA**</td><td>FDA (IND) / MHRA (CTA)</td><td>Human testing authorisation</td></tr><tr><td>**End-of-Phase-II Meeting**</td><td>FDA/EMA</td><td>Phase III design, endpoints, statistical plan</td></tr><tr><td>**NDA / BLA / MAA**</td><td>FDA (NDA/BLA) / EMA (MAA)</td><td>**Full dossier**: CMC, non-clinical, clinical, labelling</td></tr><tr><td>**Priority Review**</td><td>FDA</td><td>**6 months** (vs 10 standard) — major advance</td></tr><tr><td>**Accelerated Approval**</td><td>FDA</td><td>**Surrogate endpoint** — confirmatory trial required</td></tr><tr><td>**Conditional Approval**</td><td>EMA</td><td>**Incomplete data** — specific obligations</td></tr><tr><td>**Orphan Designation**</td><td>FDA/EMA</td><td>Rare disease (<200k US / <5/10k EU) — incentives</td></tr><tr><td>**Breakthrough Therapy**</td><td>FDA</td><td>Preliminary evidence of substantial improvement</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Phase 0**</td><td>Microdosing (<1/100 NOAEL); PK only; no efficacy</td></tr><tr><td>**Phase I**</td><td>Safety + PK; 20–100 healthy; SAD/MAD; MTD via 3+3</td></tr><tr><td>**Phase II**</td><td>Efficacy + safety; 100–300 patients; dose-finding; surrogate endpoints common</td></tr><tr><td>**Phase III**</td><td>Confirmatory; 300–3000+; RCT; clinically meaningful primary endpoint</td></tr><tr><td>**Phase IV**</td><td>Post-marketing; real-world; PASS/PAES; registries</td></tr><tr><td>**Surrogate vs Clinical endpoint**</td><td>Surrogate = biomarker (HbA1c, viral load); Clinical = patient outcome (mortality, MI)</td></tr><tr><td>**Accelerated Approval**</td><td>Based on surrogate → confirmatory trial required</td></tr><tr><td>**IND → NDA**</td><td>IND = human testing authorisation; NDA = marketing application</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (8)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Phase 0 vs Phase I — key difference?</td><td>**Phase 0**: Microdose (<1/100 NOAEL), PK only, no efficacy; **Phase I**: Therapeutic doses, safety + PK, MTD determination</td></tr><tr><td>2. Phase II vs Phase III — primary difference?</td><td>**Phase II**: Proof-of-concept, dose-finding, surrogate endpoints, 100–300 pts; **Phase III**: Confirmatory, clinically meaningful endpoint, 300–3000+ pts</td></tr><tr><td>3. What is a surrogate endpoint? Give 3 examples.</td><td>**Biomarker substituting for clinical outcome** (must be validated): **HbA1c** (diabetes complications), **Viral load** (AIDS mortality), **Tumour shrinkage** (OS), **LDL-C** (CV events)</td></tr><tr><td>4. Phase I design — what is 3+3 dose escalation?</td><td>**3 patients at dose; 0 DLT → escalate; 1 DLT → expand to 6; ≥2 DLT in 6 → MTD reached**</td></tr><tr><td>5. Accelerated Approval vs Conditional Approval?</td><td>**FDA Accelerated**: Surrogate endpoint, confirmatory trial required; **EMA Conditional**: Incomplete data, specific obligations, annual review</td></tr><tr><td>6. Orphan Drug Designation — criteria?</td><td>**Rare disease**: <200,000 US (FDA) or <5/10,000 EU (EMA); **Incentives**: tax credits, fee waivers, market exclusivity (7y US, 10y EU)</td></tr><tr><td>7. Non-inferiority trial — key concept?</td><td>**New drug not worse than active control by pre-specified margin**; requires **assay sensitivity** (active control would beat placebo)</td></tr><tr><td>8. DSMB — role?</td><td>**Data Safety Monitoring Board**: Independent; reviews interim safety/efficacy; recommends continue/stop/modify</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Phase II vs III endpoints**</td><td>Phase II = often **surrogate**; Phase III = **clinical outcome**</td></tr><tr><td>**Phase 0 = Phase I?**</td><td>**No** — Phase 0 = microdose, no therapeutic intent</td></tr><tr><td>**Accelerated = Full approval?**</td><td>**No** — Accelerated = based on surrogate; **confirmatory trial required** post-approval</td></tr><tr><td>**Conditional = Accelerated?**</td><td>Similar but different regulators: **FDA Accelerated** vs **EMA Conditional**</td></tr><tr><td>**IND vs NDA**</td><td>**IND** = Investigational New Drug (authorisation to test in humans); **NDA** = New Drug Application (marketing authorisation)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"PHASES 0-IV"</b> = <b>0</b>: Microdose PK; <b>I</b>: Safety/PK (20-100); <b>II</b>: Efficacy (100-300); <b>III</b>: Confirm (300-3000); <b>IV</b>: Post-market</li><li><b>"SURROGATE = BIOMARKER"</b> = HbA1c, Viral load, Tumour size, LDL — <b>MUST be validated</b></li><li><b>"3+3 DESIGN"</b> = 3 pts → 0 DLT escalate; 1 DLT → expand 6; ≥2 DLT = MTD</li><li><b>"IND THEN NDA"</b> = IND = test in humans; NDA = market approval</li><li><b>"ACCELERATED = SURROGATE + CONFIRMATORY"</b></li><li><b>"ORPHAN = RARE + INCENTIVES"</b> = &lt;200k US, &lt;5/10k EU; 7y/10y exclusivity</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Clinical Trial Phases)) Phase 0 Microdose (&lt;1/100 NOAEL) PK only, no efficacy 10-15 healthy Phase I Safety + PK (FIH) 20-100 healthy SAD/MAD, 3+3 design MTD, Food effect, DDI, QT, ADME Phase II Efficacy + Safety (PoC) 100-300 patients Dose-finding, surrogate endpoints IIa (PoC), IIb (Dose-finding) Phase III Confirmatory 300-3000+ patients RCT, clinically meaningful endpoint Non-inferiority/Superiority DSMB interim analysis Phase IV Post-marketing Real-world evidence PASS/PAES, Registries, Pragmatic RCTs Endpoints Primary: Clinical outcome Surrogate: Biomarker (validated) Composite: MACE, etc. PRO: QOL Regulatory IND → Phase I-III → NDA/BLA/MAA Accelerated/Conditional Orphan/Breakthrough Priority Review </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Phases 0-IV</td><td>10</td><td></td></tr><tr><td>Endpoints</td><td>6</td><td></td></tr><tr><td>Regulatory milestones</td><td>6</td><td></td></tr><tr><td>Phase I design</td><td>6</td><td></td></tr><tr><td>Viva answers</td><td>8</td><td></td></tr><tr><td>**Total**</td><td>**36**</td><td></td></tr></table>
+<p><b>Target</b>: ≥29/36 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Clinical trial phases 0–IV — objectives and populations."*</div>
+<ul><li><b>Phase 0</b>: Microdose PK; 10–15 healthy</li><li><b>Phase I</b>: Safety/PK/MTD; 20–100 healthy (SAD/MAD, 3+3 design)</li><li><b>Phase II</b>: Efficacy/PoC; 100–300 patients; dose-finding; surrogate endpoints</li><li><b>Phase III</b>: Confirmatory; 300–3000+ patients; RCT; clinical endpoint</li><li><b>Phase IV</b>: Post-marketing surveillance; real-world; PASS/PAES; registries</li></ul>
+<div class="sub-h">Viva (1 min): *"Surrogate endpoint — definition, examples, limitation."*</div>
+<ul><li><b>Definition</b>: Biomarker substituting for clinical outcome; must be validated (predicts clinical benefit)</li><li><b>Examples</b>: HbA1c (diabetes complications), Viral load (AIDS mortality), Tumour shrinkage (OS), LDL-C (CV events)</li><li><b>Limitation</b>: <b>Not always predictive</b> (e.g., drugs lowering HbA1c but increasing CV mortality; anti-arrhythmics suppressing PVCs but increasing mortality — CAST trial)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient asks about 'accelerated approval' drug. Explanation?"*</div>
+<ul><li><b>Approved based on surrogate endpoint</b> (e.g., tumour shrinkage) <b>predicting clinical benefit</b></li><li><b>Confirmatory trial ongoing</b> — if fails, approval may be withdrawn</li><li><b>Earlier access</b> for serious conditions with unmet need</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Phase 0 = microdose PK; Phase I = safety/PK; Phase II = efficacy (surrogate); Phase III = confirm (clinical); Phase IV = post-market</li><li>Surrogate = biomarker (HbA1c, viral load, tumour size) — must be validated</li><li>3+3 design = MTD finding</li><li>Accelerated = surrogate + confirmatory trial required</li><li>Orphan = rare disease + incentives</li><li>IND = test in humans; NDA = market approval</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>CLINICAL TRIALS:</b> <b>0</b>: Microdose PK <b>I</b>: Safety/PK (20-100 healthy, 3+3) <b>II</b>: Efficacy/PoC (100-300, surrogate) <b>III</b>: Confirm (300-3000, clinical endpoint) <b>IV</b>: Post-market (real-world) <b>SURROGATE</b> = Biomarker (HbA1c, Viral load, Tumour size) — validated <b>ACCELERATED</b> = Surrogate + Confirmatory trial <b>IND→NDA</b> = Test humans → Market approval</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Phase 0 clinical trial — primary objective:</b></li></ol>
+<p>A. Efficacy B. <b>Pharmacokinetics (microdose)</b> ✓ C. Safety D. Dose-finding E. Mortality benefit</p>
+<ol><li><b>Phase I — typical population:</b></li></ol>
+<p>A. 300–3000 patients B. 100–300 patients C. <b>20–100 healthy volunteers</b> ✓ D. 3000+ patients E. 10–15 patients</p>
+<ol><li><b>Surrogate endpoint — which is NOT a surrogate?</b></li></ol>
+<p>A. HbA1c B. Viral load C. Tumour shrinkage D. <b>All-cause mortality</b> ✓ E. LDL cholesterol</p>
+<ol><li><b>Phase II — typical endpoint:</b></li></ol>
+<p>A. Mortality B. <b>Surrogate (biomarker)</b> ✓ C. QALY D. Real-world adherence E. Cost-effectiveness</p>
+<ol><li><b>3+3 dose escalation design — MTD reached when:</b></li></ol>
+<p>A. 0/3 DLT B. 1/3 DLT C. <b>≥2/6 DLT</b> ✓ D. 3/3 DLT E. 2/3 DLT</p>
+<ol><li><b>FDA Accelerated Approval — based on:</b></li></ol>
+<p>A. Clinical endpoint B. <b>Surrogate endpoint</b> ✓ C. Real-world evidence C. Cost-effectiveness E. Phase II data only</p>
+<ol><li><b>IND vs NDA — IND is for:</b></li></ol>
+<p>A. Marketing approval B. <b>Authorisation to test in humans</b> ✓ C. Post-marketing surveillance D. Orphan designation E. Generic approval</p>
+<ol><li><b>Orphan Drug Designation (FDA) — prevalence threshold:</b></li></ol>
+<p>A. &lt;50,000 B. &lt;100,000 C. <b>&lt;200,000</b> ✓ D. &lt;500,000 E. &lt;1,000,000</p>
+<ol><li><b>Non-inferiority trial — key requirement:</b></li></ol>
+<p>A. New drug better than placebo B. <b>Assay sensitivity (active control beats placebo)</b> ✓ C. New drug better than active control D. Equivalence margin = 0 E. No placebo needed</p>
+<ol><li><b>DSMB — primary role:</b></li></ol>
+<p>A. Recruit patients B. <b>Independent interim safety/efficacy review</b> ✓ C. Statistical analysis D. Regulatory submission E. Marketing strategy</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Phase 0</td><td>Microdose PK, 10-15 healthy, no efficacy</td></tr><tr><td>Phase I</td><td>Safety/PK/MTD, 20-100 healthy, SAD/MAD, 3+3 design</td></tr><tr><td>Phase II</td><td>Efficacy/PoC, 100-300 patients, surrogate endpoints</td></tr><tr><td>Phase III</td><td>Confirmatory, 300-3000+ patients, clinical endpoint</td></tr><tr><td>Phase IV</td><td>Post-marketing, real-world, PASS/PAES, registries</td></tr><tr><td>Surrogate endpoint</td><td>Biomarker (HbA1c, viral load, tumour size, LDL) — validated</td></tr><tr><td>3+3 design</td><td>3pts → 0 DLT escalate; 1 DLT → expand 6; ≥2/6 DLT = MTD</td></tr><tr><td>IND vs NDA</td><td>IND = test in humans; NDA = market approval</td></tr><tr><td>Accelerated approval</td><td>Surrogate + confirmatory trial required</td></tr><tr><td>Orphan drug</td><td><200k US / <5/10k EU; 7y/10y exclusivity</td></tr><tr><td>DSMB</td><td>Independent interim safety/efficacy review</td></tr><tr><td>Non-inferiority</td><td>Assay sensitivity required</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Pharmacokinetics (microdose)</li><li><b>C</b> — 20–100 healthy volunteers</li><li><b>D</b> — All-cause mortality (clinical endpoint)</li><li><b>B</b> — Surrogate (biomarker)</li><li><b>C</b> — ≥2/6 DLT</li><li><b>B</b> — Surrogate endpoint</li><li><b>B</b> — Authorisation to test in humans</li><li><b>C</b> — &lt;200,000</li><li><b>B</b> — Assay sensitivity</li><li><b>B</b> — Independent interim safety/efficacy review</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Development/Clinical trial phases.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Clinical Trial Phases · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

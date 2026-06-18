@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gist — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.18. UPPER GI CANCERS</span>
+      <div class="h1">Gist</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Identify <b>cell of origin</b>: Interstitial Cells of Cajal (ICC)</li><li>[ ] Classify <b>molecular drivers</b>: <b>KIT (85%)</b>, <b>PDGFRA (10%)</b>, <b>SDH-deficient (5%)</b>, <b>Wild-type (5%)</b></li><li>[ ] Apply <b>risk stratification</b>: <b>AFIP / Miettinen / NIH</b> (Size + Mitotic count + Site)</li><li>[ ] Prescribe <b>adjuvant imatinib 400mg ×3 years</b> (SSGXVIII/AIO, PERSIST-5: 5yr vs 3yr)</li><li>[ ] Sequence <b>metastatic therapy</b>: <b>Imatinib 400mg → 800mg → Sunitinib → Regorafenib → Ripretinib</b></li><li>[ ] Recognise <b>Avapritinib 1L for PDGFRA D842V</b> (NAVIGATOR)</li><li>[ ] Interpret <b>resistance mutations</b>: KIT exon 13/14 (primary), exon 17/18 (secondary)</li><li>[ ] Use <b>PET-CT (CHOI criteria)</b> for early response assessment (CT size unreliable)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Mesenchymal tumour of **Interstitial Cells of Cajal (ICC)**; **KIT/PDGFRA-driven**; **Most common GI sarcoma**</td></tr><tr><td>**Incidence**</td><td>**1-2% of GI cancers**; ~900/year UK; **10-20/million**</td></tr><tr><td>**Prevalence**</td><td>**Median OS metastatic ~5 years** (improved with TKIs); **5-year OS localised >90%**</td></tr><tr><td>**Peak Age**</td><td>55-65 years</td></tr><tr><td>**Sex Ratio**</td><td>M = F</td></tr><tr><td>**Risk Factors**</td><td>**No strong environmental**; **Familial GIST** (KIT/PDGFRA germline); **Carney Triad** (GIST + Pulmonary Chondroma + Paraganglioma); **Carney-Stratakis** (GIST + Paraganglioma, SDH germline); **NF1** (GISTs in small bowel, WT KIT/PDGFRA)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[ICC (C-KIT+ Stem Cells)] --&gt; B[Driver Mutation] B --&gt; B1[KIT Mutation (85%)] B1 --&gt; C1[Exon 11 (Juxtamembrane) — 65-70% — <b>Imatinib sensitive</b>] B1 --&gt; C2[Exon 9 (Extracellular) — 10% — <b>Imatinib higher dose 800mg</b>] B1 --&gt; C3[Exon 13 (ATP Pocket) — 1-2% — <b>Secondary resistance</b>] B1 --&gt; C4[Exon 14 — &lt;1%] B1 --&gt; C5[Exon 17 (Activation Loop) — 1-2% — <b>Secondary resistance</b>] B1 --&gt; C6[Exon 18 — &lt;1%] B --&gt; B2[PDGFRA Mutation (10%)] B2 --&gt; C7[Exon 18 (D842V) — 60% of PDGFRA — <b>Imatinib RESISTANT</b>] B2 --&gt; C8[Exon 12/14 — Imatinib sensitive] B --&gt; B3[SDH-Deficient (5%)] B3 --&gt; C9[SDHA/B/C/D germline/somatic — <b>Paediatric/Young, Gastric, Wild-type KIT/PDGFRA</b>] B --&gt; B4[Wild-Type (5%)] B4 --&gt; C10[BRAF, NTRK, FGFR1, ETV6-NTRK3, RAS pathway] C1 --&gt; D[Constitutive KIT/PDGFRA Activation] C2 --&gt; D C7 --&gt; D C9 --&gt; D D --&gt; E[PI3K/AKT/mTOR, RAS/RAF/MEK/ERK, JAK/STAT] E --&gt; F[Proliferation, Survival] </code>``</p>
+<div class="sub-h">Molecular Subtypes &amp; Imatinib Sensitivity</div>
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Primary Mutation</th><th>Imatinib Sensitivity</th></tr><tr><td>---------</td><td>-----------</td><td>------------------</td><td>---------------------</td></tr><tr><td>**KIT Exon 11**</td><td>**65-70%**</td><td>Del/Ins/Sub (juxtamembrane)</td><td>**Highly sensitive (400mg)**</td></tr><tr><td>**KIT Exon 9**</td><td>10%</td><td>A502_Y503 dup (extracellular)</td><td>**Requires 800mg** (B2222)</td></tr><tr><td>**PDGFRA Exon 18 (D842V)**</td><td>**6-7%**</td><td>Activation loop</td><td>**Imatinib RESISTANT** — **Avapritinib 1L**</td></tr><tr><td>**PDGFRA Exon 12/14**</td><td>3-4%</td><td>Juxtamembrane/kinase</td><td>**Sensitive**</td></tr><tr><td>**SDH-Deficient**</td><td>5%</td><td>SDHA/B/C/D loss</td><td>**Imatinib POOR response** (indolent)</td></tr><tr><td>**BRAF V600E**</td><td><1%</td><td>RAS pathway</td><td>**Dabrafenib + Trametinib**</td></tr><tr><td>**NTRK Fusion**</td><td><1%</td><td>TRK kinase</td><td>**Larotrectinib/Entrectinib**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Asymptomatic**</td><td>Incidental on imaging/endoscopy (increasing)</td></tr><tr><td>**GI Bleeding**</td><td>**Most common symptomatic (50%)**; Occult (iron deficiency) or overt (haematemesis/melena)</td></tr><tr><td>**Abdominal Pain/Discomfort**</td><td>30-40%</td></tr><tr><td>**Mass**</td><td>Palpable (20%)</td></tr><tr><td>**Obstruction/Intussusception**</td><td>Large tumours</td></tr><tr><td>**Perforation**</td><td>Rare, acute abdomen</td></tr><tr><td>**Syndromic**</td><td>**Carney Triad** (Young women, gastric GIST + chondroma + paraganglioma); **Carney-Stratakis** (SDH, familial paraganglioma + GIST); **NF1** (Multiple small bowel GISTs)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Risk Stratification</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">TNM 8th Edition (GIST-Specific)</div>
+<table class="ctable"><tr><th>T</th><th>Size</th></tr><tr><td>---</td><td>------</td></tr><tr><td>T1</td><td>≤2cm</td></tr><tr><td>T2</td><td>>2-5cm</td></tr><tr><td>T3</td><td>>5-10cm</td></tr><tr><td>T4</td><td>>10cm</td></tr></table>
+<table class="ctable"><tr><th>N</th><th>Rarely nodal (haematogenous spread to liver/peritoneum)</th></tr><tr><td>---</td><td>--------------------------------------------------------</td></tr><tr><td>M</td><td>M1: Liver, Peritoneum, Lung (rare)</td></tr></table>
+<div class="sub-h">Risk Stratification (AFIP / Miettinen / Modified NIH) — **Most Used: Miettinen (AFIP)**</div>
+<table class="ctable"><tr><th>Risk Category</th><th>Size</th><th>Mitoses/5mm²</th><th>Site</th><th>5-yr RFS (No Adjuvant)</th></tr><tr><td>---------------</td><td>------</td><td>--------------</td><td>------</td><td>------------------------</td></tr><tr><td>**Very Low**</td><td>≤2cm</td><td>≤5</td><td>Any</td><td>>90%</td></tr><tr><td>**Low**</td><td>2-5cm</td><td>≤5</td><td>Gastric</td><td>~80%</td></tr><tr><td>**Intermediate**</td><td>≤5cm</td><td>6-10</td><td>Gastric</td><td>~65%</td></tr><tr><td></td><td>>5-10cm</td><td>≤5</td><td>Gastric</td><td>~65%</td></tr><tr><td>**High**</td><td>>5cm</td><td>>5</td><td>Any</td><td><40%</td></tr><tr><td></td><td>>10cm</td><td>Any</td><td>Any</td><td><20%</td></tr><tr><td></td><td>Any</td><td>>10</td><td>Any</td><td><15%</td></tr><tr><td></td><td>>2cm</td><td>>5</td><td>**Small Intestine**</td><td>**Higher risk than gastric**</td></tr><tr><td></td><td>>5cm</td><td>Any</td><td>**Small Intestine**</td><td>**High risk**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**Endoscopy (UGI/Colonoscopy)**</td><td>Mucosal lesions, Biopsy</td><td>**Submucosal mass**, normal mucosa ("bulge")</td></tr><tr><td>**EUS**</td><td>**Local staging**, FNA</td><td>**Layer of origin** (muscularis propria), Size, Adjacent structures</td></tr><tr><td>**CT Abdomen/Pelvis**</td><td>**Staging**, Liver/peritoneal mets</td><td>**Enhancing mass**, Necrosis, Cystic degeneration</td></tr><tr><td>**PET-CT**</td><td>**Baseline metabolic activity**, **Early response (CHOI)**</td><td>**SUVmax correlates with mitotic rate**; **CHOI: ↓SUV >10% or ↓SUVpeak >15% = Response**</td></tr><tr><td>**Biopsy (EUS-FNA / Core)**</td><td>**Diagnosis + Molecular**</td><td>**CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-**</td></tr><tr><td>**Molecular Testing (MANDATORY)**</td><td>**KIT (Exon 9, 11, 13, 17), PDGFRA (Exon 12, 14, 18), SDH IHC**</td><td>**Guides TKI selection**; **PDGFRA D842V → Avapritinib**</td></tr><tr><td>**SDH IHC (SDHB)**</td><td>**Loss = SDH-deficient**</td><td>**If loss → Germline SDH testing** (Carney-Stratakis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Leiomyoma/Leiomyosarcoma**</td><td>**Desmin+, SMA+, CD117-, DOG1-**; **KIT/PDGFRA WT**</td></tr><tr><td>**Schwannoma**</td><td>**S100+, SOX10+, CD117-**</td></tr><tr><td>**Solitary Fibrous Tumour**</td><td>**STAT6+, CD34+, BCL2+, CD117-**</td></tr><tr><td>**Inflammatory Fibroid Polyp**</td><td>**Eosinophilic infiltrate**, PDGFRA mut (exon 12/18 non-D842V)</td></tr><tr><td>**GIST vs Desmoid**</td><td>**Desmoid**: **β-catenin nuclear+, CTNNB1 mut**, CD117-; Abdominal wall/mesentery</td></tr><tr><td>**Metastasis**</td><td>Known primary, CK+, CD117-</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Localised (Resectable)</div>
+<p>``<code>mermaid flowchart TD A[Localised GIST] --&gt; B{Risk (Miettinen/AFIP)} B --&gt;|<b>Very Low / Low</b>| C[<b>Surgery Alone (R0 Resection)</b>&lt;br/&gt;<b>No Adjuvant Imatinib</b>&lt;br/&gt;Surveillance: CT q6-12mo ×5yr] B --&gt;|<b>Intermediate</b>| D[<b>Surgery + Adjuvant Imatinib 400mg daily ×3 years</b>&lt;br/&gt;<b>Consider</b> (discuss risk/benefit)&lt;br/&gt;<b>SSGXVIII/AIO</b>: 3yr &gt; 1yr DFS] B --&gt;|<b>High</b>| E[<b>Surgery + Adjuvant Imatinib 400mg daily ×3 years</b>&lt;br/&gt;<b>Standard</b> (SSGXVIII/AIO, PERSIST-5)&lt;br/&gt;<b>PERSIST-5</b>: 5yr &gt; 3yr (RFS 90% vs 84%, OS 92% vs 88%)&lt;br/&gt;<b>Consider 5 years if high-risk features</b>] C --&gt; F[Surveillance: CT Abd/Pelvis q6-12mo ×5yr, then annually] D --&gt; F E --&gt; F </code>``</p>
+<p><b>Surgical Principles:</b></p>
+<ul><li><b>R0 resection</b> (en bloc, no tumour rupture)</li><li><b>No routine lymphadenectomy</b> (GISTs rarely metastasise to nodes)</li><li><b>Laparoscopic preferred</b> for gastric &lt;5cm, small bowel</li><li><b>Neoadjuvant Imatinib</b> for borderline resectable/large (&gt;10cm) — <b>Downsize for organ preservation</b></li></ul>
+<div class="sub-h">Metastatic / Unresectable</div>
+<p>``<code>mermaid flowchart TD A[Metastatic/Unresectable GIST] --&gt; B{Molecular Subtype} B --&gt;|<b>PDGFRA D842V</b>| C[<b>Avapritinib 300mg daily</b> (NAVIGATOR)&lt;br/&gt;<b>1L Standard for D842V</b>&lt;br/&gt;ORR 84%, DOR ~22mo&lt;br/&gt;<b>Imatinib INEFFECTIVE</b>] B --&gt;|<b>KIT Exon 9</b>| D[<b>Imatinib 800mg daily</b> (B2222)&lt;br/&gt;<b>Standard 1L</b>&lt;br/&gt;<b>400mg inadequate</b>] B --&gt;|<b>KIT Exon 11 / PDGFRA Exon 12/14 / WT (non-D842V)</b>| E[<b>Imatinib 400mg daily</b> (Standard 1L)&lt;br/&gt;<b>Response: ~60-70% CR/PR/SD</b>&lt;br/&gt;<b>Median PFS ~24mo, OS ~5yr</b>] B --&gt;|<b>SDH-Deficient</b>| F[<b>Imatinib 400mg</b> (limited benefit)&lt;br/&gt;<b>Indolent course</b>&lt;br/&gt;<b>Surveillance/Surgery</b> often preferred] E --&gt; G[<b>Progression on Imatinib 400mg</b>] D --&gt; G G --&gt; H[<b>Dose Escalation to 800mg</b> (if 400mg)&lt;br/&gt;<b>If already 800mg or progression on 800mg → 2L</b>] H --&gt; I[<b>2L: Sunitinib 50mg daily (4/2 schedule)</b> (A6181008)&lt;br/&gt;<b>PFS ~6mo, OS benefit</b>&lt;br/&gt;<b>VEGFR/PDGFR/CSF1R/KIT inhibitor</b>] I --&gt; J[<b>3L: Regorafenib 160mg daily (21/28)</b> (GRID)&lt;br/&gt;<b>PFS ~5mo, OS benefit</b>&lt;br/&gt;<b>Multi-kinase (KIT, VEGFR, RET, RAF)</b>] J --&gt; K[<b>4L: Ripretinib 150mg daily</b> (INVICTUS)&lt;br/&gt;<b>Switch-control KIT inhibitor</b> (binds inactive conformation)&lt;br/&gt;<b>Broad resistance coverage (exon 11, 13, 14, 17, 18)</b>&lt;br/&gt;<b>PFS ~6mo vs 1mo placebo</b>] K --&gt; L[<b>Later Lines: Clinical Trial / Avapritinib (if not D842V) / Sorafenib / Pazopanib / Nilotinib</b>] </code>``</p>
+<div class="sub-h">Resistance Mutations (KIT)</div>
+<table class="ctable"><tr><th>Mutation</th><th>Exon</th><th>Domain</th><th>Clinical Context</th><th>TKI Sensitivity</th></tr><tr><td>----------</td><td>------</td><td>--------</td><td>------------------</td><td>-----------------</td></tr><tr><td>**Primary**</td><td>**Exon 11**</td><td>Juxtamembrane</td><td>**De novo**</td><td>**Imatinib Sensitive**</td></tr><tr><td>**Primary**</td><td>**Exon 9**</td><td>Extracellular</td><td>**De novo**</td><td>**Imatinib 800mg**</td></tr><tr><td>**Secondary (on Imatinib)**</td><td>**Exon 13/14**</td><td>ATP-binding pocket</td><td>**Acquired resistance**</td><td>**Sunitinib/Regorafenib/Ripretinib**</td></tr><tr><td>**Secondary (on Imatinib/Sunitinib)**</td><td>**Exon 17/18**</td><td>Activation loop</td><td>**Acquired resistance**</td><td>**Regorafenib/Ripretinib** (Ripretinib best)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**GIST**</td><td>**Most common GI sarcoma**; **ICC origin**; **KIT 85%, PDGFRA 10%, SDH/WT 5%**</td></tr><tr><td>**IHC**</td><td>**CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-**</td></tr><tr><td>**Risk Stratification**</td><td>**Miettinen (AFIP)**: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)</td></tr><tr><td>**Adjuvant Imatinib**</td><td>**High risk: 3 years standard** (SSGXVIII/AIO); **5 years superior** (PERSIST-5); **Intermediate: consider**; **Low: none**</td></tr><tr><td>**Metastatic 1L**</td><td>**KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg**; **KIT Ex9: Imatinib 800mg**; **PDGFRA D842V: Avapritinib**</td></tr><tr><td>**Progression Sequence**</td><td>**Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L**</td></tr><tr><td>**Resistance Mutations**</td><td>**Primary: Exon 11, 9**; **Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)**</td></tr><tr><td>**Avapritinib**</td><td>**PDGFRA D842V 1L** (NAVIGATOR); **Also 4L+ for KIT mutations** (broad)</td></tr><tr><td>**Ripretinib**</td><td>**Switch-control inhibitor** (stabilises inactive KIT); **INVICTUS: 4L PFS 6.3 vs 1.0 mo**</td></tr><tr><td>**PET-CT (CHOI)**</td><td>**Early response**: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo; **CT size unreliable** (necrosis/cystic change)</td></tr><tr><td>**Neoadjuvant**</td><td>**Borderline resectable/large**: Imatinib 6-12mo → Surgery → Adjuvant (complete 3yr total)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**55M, gastric submucosal mass, EUS: muscularis propria, 4cm, 8 mitoses/5mm². CD117+, DOG1+. Risk category?**</td><td>**High risk** (Size >5cm OR Mitoses >5/5mm² in gastric; Actually 4cm with 8 mitoses = **High risk** per Miettinen: Gastric >2cm with >5 mitoses = High).</td></tr><tr><td>**High-risk gastric GIST post-R0 resection — adjuvant?**</td><td>**Imatinib 400mg daily ×3 years** (minimum); **Consider 5 years** (PERSIST-5: 5yr RFS 90% vs 84%, OS 92% vs 88%).</td></tr><tr><td>**KIT Exon 9 mutation — imatinib dose?**</td><td>**800mg daily** (B2222 trial: 800mg superior to 400mg for Exon 9).</td></tr><tr><td>**PDGFRA D842V mutation — 1L treatment?**</td><td>**Avapritinib 300mg daily** (NAVIGATOR) — **Imatinib INEFFECTIVE**.</td></tr><tr><td>**Progression on Imatinib 400mg — next step?**</td><td>**Dose escalate to 800mg**; If already 800mg or progression on 800mg → **Sunitinib 50mg daily (4/2 schedule)**.</td></tr><tr><td>**Sunitinib → Regorafenib → Ripretinib — sequence evidence?**</td><td>**Sunitinib 2L** (A6181008, PFS 6mo); **Regorafenib 3L** (GRID, PFS 5mo); **Ripretinib 4L** (INVICTUS, PFS 6.3 vs 1.0 mo placebo).</td></tr><tr><td>**Resistance mutations — primary vs secondary?**</td><td>**Primary (de novo)**: Exon 11 (juxtamembrane), Exon 9 (extracellular); **Secondary (acquired on TKI)**: Exon 13/14 (ATP pocket) → Exon 17/18 (activation loop).</td></tr><tr><td>**CHOI criteria — PET-CT response?**</td><td>**Response**: ↓SUVmax >10% **OR** ↓SUVpeak >15% (at 1-3 months); **CT size (RECIST) unreliable** due to necrosis/cystic change.</td></tr><tr><td>**SDH-deficient GIST — features?**</td><td>**Young, Female, Gastric, Wild-type KIT/PDGFRA**, **SDHB IHC loss**, **Indolent**, **Germline SDH testing** (Carney-Stratakis).</td></tr><tr><td>**Neoadjuvant imatinib — when?**</td><td>**Borderline resectable**, **Large (>10cm)**, **Organ preservation** (avoid multivisceral resection) — **6-12 months**, then surgery, then complete 3yr adjuvant.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Imatinib 400mg vs 800mg**</td><td>**400mg**: Standard for Exon 11, PDGFRA Ex12/14; **800mg**: **KIT Exon 9** (B2222) **AND** dose escalation at progression on 400mg</td></tr><tr><td>**PDGFRA D842V vs other PDGFRA**</td><td>**D842V (Exon 18)** = **Imatinib RESISTANT** → **Avapritinib 1L**; **Exon 12/14** = **Imatinib SENSITIVE** (400mg)</td></tr><tr><td>**Adjuvant duration: 3yr vs 5yr**</td><td>**3yr**: Standard (SSGXVIII/AIO); **5yr**: **PERSIST-5** showed superiority for **High-risk** (RFS 90% vs 84%, OS 92% vs 88%)</td></tr><tr><td>**Risk stratification: NIH vs AFIP vs Miettinen**</td><td>**NIH (Fletcher)**: Size + Mitoses only; **AFIP (Miettinen)**: + **Site (Gastric vs Small Bowel)** — **Most widely used**</td></tr><tr><td>**Ripretinib mechanism**</td><td>**Switch-control inhibitor**: Binds **inactive KIT conformation** → Prevents activation; **Broad coverage** (Exon 11, 13, 14, 17, 18)</td></tr><tr><td>**CHOI vs RECIST**</td><td>**RECIST**: Size-based (unreliable in GIST due to necrosis); **CHOI**: **SUV-based** on PET-CT; **Early response at 1-3mo** predicts outcome</td></tr></table>
+<p><b>Mnemonic: GIST-TKI</b></p>
+<ul><li><b>G</b>IST: <b>KIT 85%, PDGFRA 10%, SDH/WT 5%</b></li><li><b>I</b>HC: <b>CD117+, DOG1+, CD34+, Desmin-</b></li><li><b>S</b>tratification: <b>Miettinen</b> (Size + Mitoses + Site)</li><li><b>T</b>KI Sequence: <b>Imatinib (400→800) → Sunitinib → Regorafenib → Ripretinib</b></li><li><b>T</b>KI Specific: <b>Exon 9 = 800mg</b>; <b>PDGFRA D842V = Avapritinib</b></li><li><b>K</b>it Resistance: <b>Primary Ex11/9</b> → <b>Secondary Ex13/14 → Ex17/18</b></li><li><b>I</b>maging: <b>PET-CT CHOI</b> (SUV) &gt; CT RECIST</li><li><b>A</b>djuvant: <b>High risk 3yr (5yr PERSIST-5)</b>; <b>Intermediate consider</b>; <b>Low none</b></li><li><b>N</b>eoadjuvant: <b>Borderline/Large</b> → Downsize</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((GIST)) Origin Interstitial Cells of Cajal (ICC) Molecular KIT Exon 11 (65-70%) - Sensitive 400mg KIT Exon 9 (10%) - Needs 800mg PDGFRA D842V (6-7%) - Avapritinib PDGFRA Ex12/14 - Sensitive 400mg SDH-deficient (5%) - Indolent, SDHB loss BRAF/NTRK (rare) - Dab+Tram / Larotrectinib Risk Stratification Miettinen (AFIP): Size + Mitoses/5mm² + Site Very Low/Low/Intermediate/High Localised Surgery R0 (No LN dissection) Adjuvant: High 3-5yr Imatinib Metastatic 1L: Imatinib (400/800) / Avapritinib (D842V) 2L: Sunitinib 3L: Regorafenib 4L: Ripretinib Resistance Primary: Ex11, Ex9 Secondary: Ex13/14 (ATP) → Ex17/18 (Act loop) Monitoring PET-CT CHOI Criteria (SUV) CT RECIST unreliable </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Driver**</td><td>KIT 85% (Ex11 65%, Ex9 10%), PDGFRA 10% (D842V 6%), SDH/WT 5%</td></tr><tr><td>**IHC**</td><td>CD117+, DOG1+, CD34+, Desmin-, S100-</td></tr><tr><td>**Risk**</td><td>Miettinen: Size + Mitoses/5mm² + Site (Gastric < SmBowel)</td></tr><tr><td>**Adjuvant**</td><td>High risk: Imatinib 400mg ×3yr (5yr PERSIST-5 better); Int consider; Low none</td></tr><tr><td>**1L Met**</td><td>Ex11/PDGFRA Ex12/14: Imatinib 400mg; Ex9: Imatinib 800mg; D842V: Avapritinib</td></tr><tr><td>**Sequence**</td><td>Imatinib 400→800 → Sunitinib → Regorafenib → Ripretinib</td></tr><tr><td>**Resistance**</td><td>Primary Ex11/9; Secondary Ex13/14 → Ex17/18</td></tr><tr><td>**Avapritinib**</td><td>PDGFRA D842V 1L; Broad KIT 4L+</td></tr><tr><td>**Ripretinib**</td><td>Switch-control (inactive KIT); 4L INVICTUS</td></tr><tr><td>**PET-CT**</td><td>CHOI: ΔSUVmax >10% or ΔSUVpeak >15%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Molecular subtypes</td><td></td><td></td></tr><tr><td>Risk stratification (Miettinen)</td><td></td><td></td></tr><tr><td>Adjuvant imatinib duration</td><td></td><td></td></tr><tr><td>Metastatic sequencing</td><td></td><td></td></tr><tr><td>KIT exon-specific dosing</td><td></td><td></td></tr><tr><td>PDGFRA D842V / Avapritinib</td><td></td><td></td></tr><tr><td>Resistance mutations</td><td></td><td></td></tr><tr><td>CHOI criteria / PET-CT</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Small Bowel Adenocarcinoma]], [[Imatinib]], [[Sunitinib]], [[Regorafenib]], [[Ripretinib]], [[Avapritinib]], [[KIT Mutations]], [[PDGFRA D842V]], [[CHOI Criteria]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (GIST), which statement is correct? A. <b>Most common GI sarcoma</b> B. **Most - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Most common GI sarcoma</b>; <b>ICC origin</b>; <b>KIT 85%, PDGFRA 10%, SDH/WT 5%</b></li></ul>
+<p><b>2.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (IHC), which statement is correct? A. <b>CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-</b> B. **CD117 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-</b></li></ul>
+<p><b>3.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (Risk Stratification), which statement is correct? A. <b>Miettinen (AFIP)</b>: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel) B. **Miettinen - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Miettinen (AFIP)</b>: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)</li></ul>
+<p><b>4.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (Adjuvant Imatinib), which statement is correct? A. <b>High risk: 3 years standard</b> (SSGXVIII/AIO) B. **High - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>High risk: 3 years standard</b> (SSGXVIII/AIO); <b>5 years superior</b> (PERSIST-5); <b>Intermediate: consider</b>; **Low: non...</li></ul>
+<p><b>5.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (Metastatic 1L), which statement is correct? A. <b>KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg</b> B. **KIT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg</b>; <b>KIT Ex9: Imatinib 800mg</b>; <b>PDGFRA D842V: Avapritinib</b></li></ul>
+<p><b>6.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (Progression Sequence), which statement is correct? A. <b>Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L</b> B. **Imatinib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L</b></li></ul>
+<p><b>7.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (Resistance Mutations), which statement is correct? A. <b>Primary: Exon 11, 9</b> B. **Primary: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Primary: Exon 11, 9</b>; <b>Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)</b></li></ul>
+<p><b>8.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (Avapritinib), which statement is correct? A. <b>PDGFRA D842V 1L</b> (NAVIGATOR) B. **PDGFRA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PDGFRA D842V 1L</b> (NAVIGATOR); <b>Also 4L+ for KIT mutations</b> (broad)</li></ul>
+<p><b>9.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (Ripretinib), which statement is correct? A. <b>Switch-control inhibitor</b> (stabilises inactive KIT) B. **Switch-control - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Switch-control inhibitor</b> (stabilises inactive KIT); <b>INVICTUS: 4L PFS 6.3 vs 1.0 mo</b></li></ul>
+<p><b>10.</b> Regarding Gastrointestinal Stromal Tumour (GIST) (PET-CT (CHOI)), which statement is correct? A. <b>Early response</b>: ↓SUV &gt;10% or ↓SUVpeak &gt;15% at 1-3mo B. **Early - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Early response</b>: ↓SUV &gt;10% or ↓SUVpeak &gt;15% at 1-3mo; <b>CT size unreliable</b> (necrosis/cystic change)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Most common GI sarcoma</b></li><li>B. **Most (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Most common GI sarcoma</b>; <b>ICC origin</b>; <b>KIT 85%, PDGFRA 10%, SDH/WT 5%</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-</b></li><li>B. **CD117 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-</b></li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Miettinen (AFIP)</b>: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)</li><li>B. **Miettinen (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Miettinen (AFIP)</b>: Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>High risk: 3 years standard</b> (SSGXVIII/AIO)</li><li>B. **High (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>High risk: 3 years standard</b> (SSGXVIII/AIO); <b>5 years superior</b> (PERSIST-5); <b>Intermediate: consider</b>; **Low: non...</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg</b></li><li>B. **KIT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg</b>; <b>KIT Ex9: Imatinib 800mg</b>; <b>PDGFRA D842V: Avapritinib</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L</b></li><li>B. **Imatinib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Primary: Exon 11, 9</b></li><li>B. **Primary: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Primary: Exon 11, 9</b>; <b>Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>PDGFRA D842V 1L</b> (NAVIGATOR)</li><li>B. **PDGFRA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>PDGFRA D842V 1L</b> (NAVIGATOR); <b>Also 4L+ for KIT mutations</b> (broad)</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Switch-control inhibitor</b> (stabilises inactive KIT)</li><li>B. **Switch-control (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Switch-control inhibitor</b> (stabilises inactive KIT); <b>INVICTUS: 4L PFS 6.3 vs 1.0 mo</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Early response</b>: ↓SUV &gt;10% or ↓SUVpeak &gt;15% at 1-3mo</li><li>B. **Early (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Early response</b>: ↓SUV &gt;10% or ↓SUVpeak &gt;15% at 1-3mo; <b>CT size unreliable</b> (necrosis/cystic change)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> GIST? <b>A1:</b> Most common GI sarcoma; ICC origin; KIT 85%, PDGFRA 10%, SDH/WT 5%</p>
+<p><b>Q2:</b> IHC? <b>A2:</b> CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-</p>
+<p><b>Q3:</b> Risk Stratification? <b>A3:</b> Miettinen (AFIP): Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)</p>
+<p><b>Q4:</b> Adjuvant Imatinib? <b>A4:</b> High risk: 3 years standard (SSGXVIII/AIO); 5 years superior (PERSIST-5); Intermediate: consider; Low: none</p>
+<p><b>Q5:</b> Metastatic 1L? <b>A5:</b> KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg; KIT Ex9: Imatinib 800mg; PDGFRA D842V: Avapritinib</p>
+<p><b>Q6:</b> Progression Sequence? <b>A6:</b> Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L</p>
+<p><b>Q7:</b> Resistance Mutations? <b>A7:</b> Primary: Exon 11, 9; Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)</p>
+<p><b>Q8:</b> Avapritinib? <b>A8:</b> PDGFRA D842V 1L (NAVIGATOR); Also 4L+ for KIT mutations (broad)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>GIST</td><td>Most common GI sarcoma; ICC origin; KIT 85%, PDGFRA 10%, SDH/WT 5%</td></tr><tr><td>2</td><td>A</td><td>IHC</td><td>CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-</td></tr><tr><td>3</td><td>A</td><td>Risk Stratification</td><td>Miettinen (AFIP): Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)</td></tr><tr><td>4</td><td>A</td><td>Adjuvant Imatinib</td><td>High risk: 3 years standard (SSGXVIII/AIO); 5 years superior (PERSIST-5); Intermediate: consider; Low: none</td></tr><tr><td>5</td><td>A</td><td>Metastatic 1L</td><td>KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg; KIT Ex9: Imatinib 800mg; PDGFRA D842V: Avapritinib</td></tr><tr><td>6</td><td>A</td><td>Progression Sequence</td><td>Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L</td></tr><tr><td>7</td><td>A</td><td>Resistance Mutations</td><td>Primary: Exon 11, 9; Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)</td></tr><tr><td>8</td><td>A</td><td>Avapritinib</td><td>PDGFRA D842V 1L (NAVIGATOR); Also 4L+ for KIT mutations (broad)</td></tr><tr><td>9</td><td>A</td><td>Ripretinib</td><td>Switch-control inhibitor (stabilises inactive KIT); INVICTUS: 4L PFS 6.3 vs 1.0 mo</td></tr><tr><td>10</td><td>A</td><td>PET-CT (CHOI)</td><td>Early response: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo; CT size unreliable (necrosis/cystic change)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>GIST</td><td>Most common GI sarcoma; ICC origin; KIT 85%, PDGFRA 10%, SDH/WT 5%</td></tr><tr><td>2</td><td>A</td><td>IHC</td><td>CD117 (KIT)+, DOG1+, CD34+ (70%), SMA+ (30%), Desmin-, S100-</td></tr><tr><td>3</td><td>A</td><td>Risk Stratification</td><td>Miettinen (AFIP): Size + Mitoses/5mm² + Site (Gastric better than Small Bowel)</td></tr><tr><td>4</td><td>A</td><td>Adjuvant Imatinib</td><td>High risk: 3 years standard (SSGXVIII/AIO); 5 years superior (PERSIST-5); Intermediate: consider; Low: none</td></tr><tr><td>5</td><td>A</td><td>Metastatic 1L</td><td>KIT Ex11/PDGFRA Ex12/14: Imatinib 400mg; KIT Ex9: Imatinib 800mg; PDGFRA D842V: Avapritinib</td></tr><tr><td>6</td><td>A</td><td>Progression Sequence</td><td>Imatinib 400→800mg → Sunitinib 2L → Regorafenib 3L → Ripretinib 4L</td></tr><tr><td>7</td><td>A</td><td>Resistance Mutations</td><td>Primary: Exon 11, 9; Secondary (on Imatinib): Exon 13/14 (ATP) → 17/18 (Activation loop)</td></tr><tr><td>8</td><td>A</td><td>Avapritinib</td><td>PDGFRA D842V 1L (NAVIGATOR); Also 4L+ for KIT mutations (broad)</td></tr><tr><td>9</td><td>A</td><td>Ripretinib</td><td>Switch-control inhibitor (stabilises inactive KIT); INVICTUS: 4L PFS 6.3 vs 1.0 mo</td></tr><tr><td>10</td><td>A</td><td>PET-CT (CHOI)</td><td>Early response: ↓SUV >10% or ↓SUVpeak >15% at 1-3mo; CT size unreliable (necrosis/cystic change)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Upper GI Cancers|Upper GI Cancers]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Gist · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

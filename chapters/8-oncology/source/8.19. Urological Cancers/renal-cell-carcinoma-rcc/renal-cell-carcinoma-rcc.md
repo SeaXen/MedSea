@@ -1,0 +1,567 @@
+# Renal Cell Carcinoma (RCC)
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **RCC = 90% of kidney cancers**; **Clear cell (ccRCC) = 75-80%** (VHL/HIF pathway). **IMDC risk model** guides 1L therapy. **1L Metastatic: ICI + TKI** (Pembro/Axi, Nivo/Cabo, Ipi/Nivo) — **TKI monotherapy obsolete**. **Cytoreductive nephrectomy** — **CARMENA/SURTIME**: No routine benefit in IMDC Intermediate/Poor; Selected favourable risk. **Hereditary**: VHL (ccRCC), HLRCC (papillary type 2), BHD (chromophobe/oncocytoma), TSC (angiomyolipoma).
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Classify RCC subtypes: Clear cell, Papillary (Type 1/2), Chromophobe, Translocation, Collecting duct
+- [ ] Apply **IMDC risk model** (6 factors) for metastatic treatment decisions
+- [ ] Sequence 1L metastatic therapy: **ICI + TKI combinations** (preferred) vs Ipi/Nivo (favourable)
+- [ ] Determine cytoreductive nephrectomy candidacy (CARMENA, SURTIME)
+- [ ] Manage TKI toxicities: HTN, HFSR, proteinuria, thromboembolism, hypothyroidism
+- [ ] Identify hereditary syndromes: VHL, HLRCC, BHD, TSC
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Detail |
+|---------|--------|
+| **Definition** | Malignant tumour of renal tubular epithelium; **RCC = 90%**; **Clear cell (ccRCC) = 75-80%** |
+| **Incidence** | UK: ~13,000/year; 7th most common (M), 10th (F); M:F = 1.5:1 |
+| **Prevalence** | 5-year OS ~75% (localised), ~15% (metastatic) |
+| **Peak Age** | 60-70 years |
+| **Sex Ratio** | Male 1.5:1 |
+| **Risk Factors** | **Smoking** (↑2x), **Obesity**, **Hypertension**, **CKD/Dialysis** (acquired cystic disease), **Hereditary**: VHL, HLRCC, BHD, TSC; **Occupational**: Trichloroethylene, Cadmium |
+
+---
+
+## 3. Aetiology & Pathophysiology
+
+```mermaid
+flowchart LR
+    A[Subtype] --> B[Key Driver]
+    B --> C[Pathway]
+    C --> D[Treatment Target]
+    A1[Clear Cell (ccRCC)] --> B1[VHL loss (90%)]
+    B1 --> C1[HIF-α accumulation → VEGF, PDGF, TGF-α ↑]
+    C1 --> D1[VEGF-TKIs, HIF-2α inhibitors (Belzutifan)]
+    A2[Papillary Type 1] --> B2[MET mut/amp]
+    B2 --> C2[HGF/MET pathway]
+    C2 --> D2[Capmatinib, Savolitinib, Crizotinib]
+    A3[Papillary Type 2] --> B3[FH loss (HLRCC), NRF2]
+    B3 --> C3[Metabolic reprogramming]
+    C3 --> D3[Clinical trials]
+    A4[Chromophobe] --> B4[TP53, PTEN, Mitochondrial]
+    B4 --> C4[Distinct metabolism]
+    C4 --> D4[Limited targets]
+    A5[Translocation (Xp11.2)] --> B5[TFE3/TFEB fusions]
+    B5 --> C5[MiT family transcription]
+    C5 --> D5[VEGF-TKI response variable]
+```
+
+### Histological Subtypes
+
+| Subtype | Frequency | Key Features | Genetics | Prognosis |
+|---------|-----------|--------------|----------|-----------|
+| **Clear Cell (ccRCC)** | **75-80%** | Clear cytoplasm (glycogen/lipid), **VHL loss (90%)**, HIF pathway | VHL, PBRM1, SETD2, BAP1 | Intermediate |
+| **Papillary Type 1** | 5-10% | Papillae, basaloid cells, **MET mut/amp** | MET, NF2 | Better |
+| **Papillary Type 2** | 5-10% | Pseudostratified, eosinophilic, **FH loss (HLRCC)** | FH, NRF2, CDKN2A | Worse |
+| **Chromophobe** | 5% | Pale, perinuclear halos, **TP53, PTEN** | TP53, PTEN, TSC | Better (indolent) |
+| **Translocation (Xp11.2)** | <1% (↑ young) | **TFE3/TFEB fusions** | Xp11.2 translocation | Variable |
+| **Collecting Duct** | <1% | Aggressive, medullary | SMARCB1, NF2 | Poor |
+| **Medullary** | Rare | **Sickle cell trait**, INI1 loss | SMARCB1 | Very poor |
+| **Oncocytoma** | Benign | Eosinophilic, central scar, **CCND1** | CCND1, mitochondrial | Benign (but hard to distinguish from chromophobe) |
+
+---
+
+## 4. Clinical Features
+
+| Feature | Description |
+|---------|-------------|
+| **Classic Triad** (rarer now) | **Haematuria**, **Flank pain**, **Palpable mass** (<10% have all three) |
+| **Incidental** | >50% detected incidentally on imaging for other reasons |
+| **Paraneoplastic** | **Polycythaemia** (EPO↑), **Hypercalcaemia** (PTHrP), **Amyloidosis**, **Liver dysfunction** (Stauffer syndrome), **Hypertension** (renin) |
+| **Metastatic Sites** | Lung (most common), Lymph nodes, Bone, Liver, Brain, Adrenal |
+| **Venous Tumour Thrombus** | Renal vein → IVC → Right atrium (Level I-IV) — impairs surgery |
+
+---
+
+## 5. Staging & Classification
+
+| System | Detail |
+|--------|--------|
+| **TNM 8th Edition** | T1a: ≤4cm; T1b: >4-7cm; T2a: >7-10cm; T2b: >10cm confined; T3: Major vein/perirenal fat; T4: Beyond Gerota's fascia |
+| **Stage Grouping** | I (T1N0M0), II (T2N0M0), III (T3N0M0 / T1-3N1M0), IV (T4N0M0 / Any T N1M0 / Any M1) |
+| **Venous Thrombus Level** | Level 0: None; I: Renal vein; II: IVC infrahepatic; III: IVC suprahepatic; IV: IVC + RA |
+| **IMDC Risk Model (Metastatic)** | **6 Factors**: 1) KPS <80%, 2) <1 yr from diagnosis to systemic tx, 3) Hb <LLN, 4) Ca >ULN, 5) NLR >3 (or Neutrophils >ULN), 6) Platelets >ULN<br/>**Favourable**: 0; **Intermediate**: 1-2; **Poor**: ≥3 |
+
+### IMDC vs MSKCC
+
+| Factor | **IMDC (Current)** | MSKCC (Old) |
+|--------|-------------------|-------------|
+| KPS <80% | ✓ | ✓ |
+| Time Dx→Tx <1yr | ✓ | ✓ |
+| Hb <LLN | ✓ | ✓ |
+| Ca >ULN | ✓ | ✓ |
+| LDH >1.5x ULN | — | ✓ |
+| **NLR >3 / Neutrophils >ULN** | ✓ | — |
+| **Platelets >ULN** | ✓ | — |
+
+---
+
+## 6. Diagnosis & Investigations
+
+| Investigation | Role | Key Findings |
+|---------------|------|--------------|
+| **CT Abdomen (Triphasic)** | **Gold standard** — Diagnosis, Staging, Surgical planning | **ccRCC**: **Arterial hyperenhancement** → Washout (enhancement <10% on delayed); Venous thrombus; Nodes; Mets |
+| **MRI** | Equivocal CT; Renal impairment | Better soft tissue; No radiation |
+| **Chest CT** | Pulmonary mets staging | Most common metastatic site |
+| **Bone Scan / PET-CT** | Symptomatic bone; PET for occult mets | PET-CT not routine |
+| **Biopsy** | **Before systemic therapy** for metastatic (confirm histology, subtype); **Not routine for resectable** (seeding risk, non-diagnostic) | Core needle > FNA; IHC: CAIX (ccRCC), CK7 (papillary), CD117 (chromophobe) |
+| **Bloods** | CBC, LFT, U&E, Ca, LDH, Urinalysis | IMDC factors; Polycythaemia |
+| **Hereditary Testing** | Young onset, bilateral, multifocal, family history, specific histology | VHL, FH, FLCN, TSC1/2 |
+
+---
+
+## 7. Differential Diagnosis
+
+| Condition | Distinguishing Features |
+|-----------|-------------------------|
+| **Angiomyolipoma (AML)** | **Fat on CT** (HU < -20); TSC association; Bleeding risk if >4cm |
+| **Oncocytoma** | Central scar, spoke-wheel enhancement; **Indistinguishable from chromophobe on imaging** |
+| **Complex Cyst (Bosniak III/IV)** | Enhancing septa/nodules; Surgical excision |
+| **Lymphoma** | Renal involvement rare; Bilateral, diffuse; LDH↑; Systemic symptoms |
+| **Metastasis to Kidney** | Lung, breast, GI, melanoma; Known primary; Multiple/bilateral |
+| **Renal Abscess** | Fever, leukocytosis, rim-enhancing collection |
+
+---
+
+## 8. Management
+
+```mermaid
+flowchart TD
+    A[Diagnosis + Staging] --> B{Stage}
+    B -->|Stage I (T1a/T1b N0)| C[T1a (≤4cm): **Active Surveillance** or **Ablation (RFA/MWA)**<br/>T1b (>4-7cm): **Partial Nephrectomy** (preferred) or Radical]
+    B -->|Stage II (T2 N0)| D[**Radical Nephrectomy** (Open/Lap/Robot)]  
+    B -->|Stage III (T3/N1)| E[**Radical Nephrectomy** + Lymphadenectomy<br/>IVC Thrombectomy if tumour thrombus<br/>Adjuvant: **Pembrolizumab** (KEYNOTE-564) if high risk]
+    B -->|Stage IV (Metastatic)| F[**Systemic Therapy**]
+    F --> F1[**IMDC Favourable (0 factors)**]
+    F1 --> F1a[**Ipilimumab + Nivolumab** (CheckMate 214) — **Preferred**<br/>OR **Pembrolizumab + Axitinib** (KEYNOTE-426)]
+    F --> F2[**IMDC Intermediate/Poor (1-2 / ≥3 factors)**]
+    F2 --> F2a[**Pembrolizumab + Axitinib** (KEYNOTE-426)<br/>**Nivolumab + Cabozantinib** (CheckMate 9ER)<br/>**Lenvatinib + Pembrolizumab** (CLEAR) — **All Category 1**]
+    F2 --> F2b[**TKI monotherapy NO LONGER 1L**<br/>(Sunitinib, Pazopanib, Axitinib, Cabozantinib, Lenvatinib)]
+    F1a --> G[**2L (post ICI+TKI)**: TKI switch (Cabozantinib, Lenvatinib, Axitinib, Tivozanib)<br/>**3L+**: Clinical Trial / Tivozanib / Belzutifan (VHL) / Everolimus]
+    F2a --> G
+    C --> H[Surveillance: CT Chest/Abd q6-12mo ×5yr]
+    D --> H
+    E --> H
+```
+
+### Adjuvant Therapy
+
+| Trial | Population | Regimen | Outcome |
+|-------|------------|---------|---------|
+| **KEYNOTE-564** | **High-risk** resected ccRCC (T2 G3-4, T3-4, N+) | **Pembrolizumab 200mg q3w ×17 cycles** vs Placebo | **DFS HR 0.68** — **FDA/EMA approved** |
+| **S-TRAC** | High-risk (T3/T4, N+) | Sunitinib 1yr vs Placebo | DFS benefit, **No OS benefit**, High toxicity |
+| **ASSURE / PROTECT** | High-risk | Sunitinib / Pazopanib vs Placebo | **No DFS/OS benefit** |
+
+### Cytoreductive Nephrectomy (CN)
+
+| Trial | Population | Comparison | Outcome |
+|-------|------------|------------|---------|
+| **CARMENA** | **IMDC Intermediate/Poor**, asymptomatic primary | **Sunitinib alone** vs **CN + Sunitinib** | **Non-inferior OS** (no benefit for CN) |
+| **SURTIME** | IMDC Intermediate/Poor | **Deferred CN** (after 3 cycles Sunitinib) vs **Upfront CN** | **Deferred CN superior** (less complications, similar OS) |
+| **Current Practice** | **Selected Favourable risk** (IMDC 0, asymptomatic, resectable) | CN + Systemic | Consider on case-by-case |
+
+### TKI Toxicity Management
+
+| Toxicity | Grading | Management |
+|----------|---------|------------|
+| **Hypertension** | Grade 1-2: ACEi/ARB/CCB; Grade 3-4: Hold TKI, restart at lower dose | Monitor BP weekly ×2wk then q2wk |
+| **HFSR (Hand-Foot Skin Reaction)** | Grade 1-2: Urea cream, dose delay; Grade 3: Hold, dose reduce | Prevention: Avoid heat/friction, moisturise |
+| **Proteinuria** | Grade 1: Monitor; Grade 2: ACEi/ARB; Grade 3-4: Hold | Baseline UPCR; Monitor q4-8wk |
+| **Thromboembolism (VTE/ATE)** | Prophylactic anticoagulation if high risk | Therapeutic if event; Hold TKI |
+| **Hypothyroidism** | TSH q8-12wk; Levothyroxine if TSH >10 or symptomatic | Common with all VEGF-TKIs |
+| **Wound Healing** | Hold TKI 2-3 weeks pre/post surgery |  |
+
+---
+
+## 9. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **ccRCC = VHL/HIF** | **VHL loss (90%)** → HIF-α accumulation → VEGF/PDGF↑ → Angiogenesis → **Target: VEGF-TKI, HIF-2α inhibitor (Belzutifan)** |
+| **IMDC Risk Model** | **6 factors** (KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑); **Favourable(0) / Intermediate(1-2) / Poor(≥3)** |
+| **1L Metastatic** | **ICI + TKI** for ALL risk groups: **Pembro/Axi, Nivo/Cabo, Lenv/Pembro**; **Ipi/Nivo** for Favourable only; **TKI mono obsolete** |
+| **Cytoreductive Nephrectomy** | **CARMENA/SURTIME**: No routine benefit in Int/Poor risk; **Selected Favourable** only |
+| **Adjuvant** | **Pembrolizumab** (KEYNOTE-564) for high-risk resected ccRCC (T2G3-4, T3-4, N+) |
+| **Hereditary** | **VHL** (ccRCC, young, bilateral); **HLRCC/FH** (Papillary Type 2, leiomyomas); **BHD/FLCN** (Chromophobe/Oncocytoma); **TSC** (AML) |
+| **Venous Thrombus** | Level I-IV; Requires cardiopulmonary bypass if Level III/IV |
+| **TKI Toxicities** | HTN, HFSR, Proteinuria, VTE, Hypothyroidism, Wound healing — **Dose hold/reduce algorithm** |
+| **Non-ccRCC** | Papillary: MET inhibitors (Capmatinib); Chromophobe: Limited data; Translocation: Variable VEGF-TKI response |
+
+---
+
+## 10. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **55M, incidentally found 5cm right renal mass, ctRCC, no mets. Management?** | **Partial nephrectomy** (preferred for T1b, nephron-sparing). If not feasible → Radical nephrectomy. No adjuvant (KEYNOTE-564 only for high-risk T2G3-4/T3-4/N+). |
+| **What is the IMDC risk model? 6 factors?** | 1) KPS <80%, 2) Time from diagnosis to systemic tx <1yr, 3) Hb <LLN, 4) Corrected Ca >ULN, 5) NLR >3 (or neutrophils >ULN), 6) Platelets >ULN. Favourable=0, Intermediate=1-2, Poor=≥3. |
+| **Metastatic ccRCC, IMDC Intermediate — 1L treatment?** | **ICI + TKI**: **Pembrolizumab + Axitinib** (KEYNOTE-426) OR **Nivolumab + Cabozantinib** (CheckMate 9ER) OR **Lenvatinib + Pembrolizumab** (CLEAR). All Category 1. |
+| **Favourable risk metastatic ccRCC — ICI options?** | **Ipilimumab + Nivolumab** (CheckMate 214) — **Preferred for favourable** (long-term OS tail); OR ICI+TKI combinations. |
+| **CARMENA trial — question?** | **IMDC Intermediate/Poor** metastatic RCC: **Sunitinib alone vs CN + Sunitinib** → **Non-inferior OS** → **No routine CN**. |
+| **SURTIME trial — question?** | **Deferred CN** (after 3 cycles Sunitinib) vs **Upfront CN** → **Deferred superior** (fewer complications, similar OS). |
+| **Adjuvant pembrolizumab — who?** | **High-risk resected ccRCC**: T2 G3-4, T3-4, or N+ (KEYNOTE-564). ×17 cycles (1 year). |
+| **VHL syndrome — renal manifestations?** | **Multiple bilateral ccRCC**, young onset; Also: Haemangioblastomas (CNS/retina), Pheochromocytoma, Pancreatic cysts/NETs, Epididymal cystadenomas. |
+| **HLRCC — renal cancer type? Gene?** | **Papillary Type 2 RCC**; **FH (Fumarate Hydratase)** mutation; Also: Cutaneous/uterine leiomyomas. |
+| **TKI-induced hypertension — management?** | **ACEi/ARB/CCB**; Monitor weekly ×2wk then q2wk; Hold if Grade 3-4, restart at lower dose. |
+
+---
+
+## 11. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **IMDC vs MSKCC** | IMDC replaced MSKCC; **LDH removed**, **NLR & Platelets added** |
+| **Ipi/Nivo vs ICI+TKI — when which?** | **Ipi/Nivo**: Favourable risk only (long-term OS tail, no daily TKI toxicity); **ICI+TKI**: All risk groups (higher ORR, faster response) |
+| **Cytoreductive nephrectomy — who benefits?** | **Selected Favourable risk (IMDC 0)**, asymptomatic primary, resectable, good PS. **NOT routine for Intermediate/Poor** (CARMENA) |
+| **Adjuvant Sunitinib (S-TRAC)** | DFS benefit but **No OS benefit**, High toxicity — **Not standard**; **Pembrolizumab (KEYNOTE-564) is standard** |
+| **Belzutifan** | **HIF-2α inhibitor**; Approved for **VHL-associated RCC** (not sporadic ccRCC yet); Also trials in pre-treated ccRCC |
+| **Papillary Type 1 vs Type 2** | Type 1: **MET mut/amp**, better prognosis; Type 2: **FH loss (HLRCC)**, worse prognosis |
+
+**Mnemonic: RCC-IMDC**
+- **R**enal: ccRCC (VHL/HIF) = 75-80%
+- **C**lear cell = VHL → HIF → VEGF
+- **C**ytoreductive nephrectomy: **CARMENA/SURTIME** = No routine (Int/Poor)
+- **I**MDC: **6 factors** (KPS, Time, Hb, Ca, NLR, Plt)
+- **M**etastatic 1L: **ICI+TKI** (All risks); **Ipi/Nivo** (Favourable)
+- **D**ose modify TKI: HTN, HFSR, Proteinuria, VTE, Hypothyroidism
+- **C**ytogenetics: VHL, HLRCC/FH, BHD/FLCN, TSC
+
+---
+
+## 12. Mind Map
+
+```mermaid
+mindmap
+  root((Renal Cell Carcinoma))
+    Subtypes
+      Clear Cell (75-80%)
+        VHL loss (90%)
+        HIF pathway
+        PBRM1, SETD2, BAP1
+      Papillary Type 1
+        MET mut/amp
+        Better prognosis
+      Papillary Type 2
+        FH loss (HLRCC)
+        Worse prognosis
+      Chromophobe
+        TP53, PTEN
+        Indolent
+      Translocation (Xp11.2)
+        TFE3/TFEB fusions
+        Young
+      Collecting Duct / Medullary
+        Aggressive
+    Staging
+      TNM 8th
+      Venous Thrombus Level I-IV
+      IMDC Risk Model (6 factors)
+    Treatment
+      Localised
+        T1a: Surveillance / Ablation
+        T1b: Partial Nephrectomy
+        T2: Radical Nephrectomy
+        T3/N1: Radical + Adjuvant Pembro
+      Metastatic
+        Favourable: Ipi/Nivo OR ICI+TKI
+        Int/Poor: ICI+TKI (Pembro/Axi, Nivo/Cabo, Lenv/Pembro)
+        2L: TKI switch (Cabo, Lenv, Axi, Tivo)
+        3L: Belzutifan (VHL) / Everolimus / Trial
+    Hereditary
+      VHL (ccRCC)
+      HLRCC/FH (Papillary T2)
+      BHD/FLCN (Chromophobe/Oncocytoma)
+      TSC (AML)
+    Toxicities
+      HTN, HFSR, Proteinuria, VTE, Hypothyroidism
+```
+
+---
+
+## 13. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Subtypes** | ccRCC 75-80% (VHL/HIF); Papillary T1 (MET), T2 (FH/HLRCC); Chromophobe; Translocation |
+| **IMDC Risk** | 6 factors: KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑ → Fav(0)/Int(1-2)/Poor(≥3) |
+| **Localised** | T1a: ActiveSurv/Ablation; T1b: Partial Neph; T2: Radical; T3/N1: Radical + Adj Pembro |
+| **Metastatic 1L** | **Favourable**: Ipi/Nivo OR ICI+TKI; **Int/Poor**: **ICI+TKI** (Pembro/Axi, Nivo/Cabo, Lenv/Pembro) |
+| **CN** | **CARMENA/SURTIME**: No routine in Int/Poor; Selected Favourable only |
+| **Adjuvant** | **Pembrolizumab** (KEYNOTE-564) high-risk: T2G3-4, T3-4, N+ |
+| **Hereditary** | VHL (ccRCC), HLRCC/FH (Pap T2), BHD (Chromo/Onco), TSC (AML) |
+| **TKI Tox** | HTN (ACEi), HFSR (urea), Proteinuria (ACEi), VTE (AC), Hypothyroid (T4) |
+| **Venous Thrombus** | Level I (RV) → IV (RA); Cardiopulmonary bypass if III/IV |
+
+---
+
+## 14. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 15. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Subtype classification | | |
+| IMDC risk model | | |
+| 1L metastatic algorithms | | |
+| CARMENA / SURTIME | | |
+| Adjuvant pembrolizumab | | |
+| Hereditary syndromes | | |
+| TKI toxicity management | | |
+| Venous thrombus levels | | |
+
+---
+
+## 16. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map**: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related**: [[Urothelial Carcinoma]], [[Prostate Cancer]], [[Testicular Cancer]], [[VHL Syndrome]], [[Belzutifan]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 17. MCQs (10)
+
+
+**1.** Regarding Renal Cell Carcinoma (RCC) (ccRCC = VHL/HIF), which statement is correct?
+   A. **VHL loss (90%)** → HIF-α accumulation → VEGF/PDGF↑ → Angiogenesis → **Target: VEGF-TKI, HIF-2α inh
+   B. **VHL - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **VHL loss (90%)** → HIF-α accumulation → VEGF/PDGF↑ → Angiogenesis → **Target: VEGF-TKI, HIF-2α inhibitor (Belzutifan)*...
+
+
+**2.** Regarding Renal Cell Carcinoma (RCC) (IMDC Risk Model), which statement is correct?
+   A. **6 factors** (KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑)
+   B. **6 - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **6 factors** (KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑); **Favourable(0) / Intermediate(1-2) / Poor(≥3)**
+
+
+**3.** Regarding Renal Cell Carcinoma (RCC) (1L Metastatic), which statement is correct?
+   A. **ICI + TKI** for ALL risk groups: **Pembro/Axi, Nivo/Cabo, Lenv/Pembro**
+   B. **ICI - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **ICI + TKI** for ALL risk groups: **Pembro/Axi, Nivo/Cabo, Lenv/Pembro**; **Ipi/Nivo** for Favourable only; **TKI mono ...
+
+
+**4.** Regarding Renal Cell Carcinoma (RCC) (Cytoreductive Nephrectomy), which statement is correct?
+   A. **CARMENA/SURTIME**: No routine benefit in Int/Poor risk
+   B. **CARMENA/SURTIME**: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **CARMENA/SURTIME**: No routine benefit in Int/Poor risk; **Selected Favourable** only
+
+
+**5.** Regarding Renal Cell Carcinoma (RCC) (Adjuvant), which statement is correct?
+   A. **Pembrolizumab** (KEYNOTE-564) for high-risk resected ccRCC (T2G3-4, T3-4, N+)
+   B. **Pembrolizumab** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Pembrolizumab** (KEYNOTE-564) for high-risk resected ccRCC (T2G3-4, T3-4, N+)
+
+
+**6.** Regarding Renal Cell Carcinoma (RCC) (Hereditary), which statement is correct?
+   A. **VHL** (ccRCC, young, bilateral)
+   B. **VHL** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **VHL** (ccRCC, young, bilateral); **HLRCC/FH** (Papillary Type 2, leiomyomas); **BHD/FLCN** (Chromophobe/Oncocytoma); *...
+
+
+**7.** Regarding Renal Cell Carcinoma (RCC) (Venous Thrombus), which statement is correct?
+   A. Level I-IV
+   B. Level - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Level I-IV; Requires cardiopulmonary bypass if Level III/IV
+
+
+**8.** Regarding Renal Cell Carcinoma (RCC) (TKI Toxicities), which statement is correct?
+   A. HTN, HFSR, Proteinuria, VTE, Hypothyroidism, Wound healing
+   B. HTN, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — HTN, HFSR, Proteinuria, VTE, Hypothyroidism, Wound healing — **Dose hold/reduce algorithm**
+
+
+**9.** Regarding Renal Cell Carcinoma (RCC) (Non-ccRCC), which statement is correct?
+   A. Papillary: MET inhibitors (Capmatinib)
+   B. Papillary: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — Papillary: MET inhibitors (Capmatinib); Chromophobe: Limited data; Translocation: Variable VEGF-TKI response
+
+
+**10.** Regarding Renal Cell Carcinoma (RCC) (Definition), which statement is correct?
+   - A. Definition: Malignant tumour of renal tubular epithelium; RCC = 90%; Clear cell (ccRCC) = 75-80%
+   - B. Empirical approach without specific indication
+   - C. Used only in research protocols
+   - D. Not relevant in current practice
+   - **Answer: A** — Definition: Malignant tumour of renal tubular epithelium; RCC = 90%; Clear cell (ccRCC) = 75-80%
+
+## 18. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **VHL loss (90%)** → HIF-α accumulation → VEGF/PDGF↑ → Angiogenesis → **Target: VEGF-TKI, HIF-2α inh
+   - B. **VHL (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **VHL loss (90%)** → HIF-α accumulation → VEGF/PDGF↑ → Angiogenesis → **Target: VEGF-TKI, HIF-2α inhibitor (Belzutifan)*...
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **6 factors** (KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑)
+   - B. **6 (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **6 factors** (KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑); **Favourable(0) / Intermediate(1-2) / Poor(≥3)**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **ICI + TKI** for ALL risk groups: **Pembro/Axi, Nivo/Cabo, Lenv/Pembro**
+   - B. **ICI (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **ICI + TKI** for ALL risk groups: **Pembro/Axi, Nivo/Cabo, Lenv/Pembro**; **Ipi/Nivo** for Favourable only; **TKI mono ...
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **CARMENA/SURTIME**: No routine benefit in Int/Poor risk
+   - B. **CARMENA/SURTIME**: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **CARMENA/SURTIME**: No routine benefit in Int/Poor risk; **Selected Favourable** only
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **Pembrolizumab** (KEYNOTE-564) for high-risk resected ccRCC (T2G3-4, T3-4, N+)
+   - B. **Pembrolizumab** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **Pembrolizumab** (KEYNOTE-564) for high-risk resected ccRCC (T2G3-4, T3-4, N+)
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **VHL** (ccRCC, young, bilateral)
+   - B. **VHL** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **VHL** (ccRCC, young, bilateral); **HLRCC/FH** (Papillary Type 2, leiomyomas); **BHD/FLCN** (Chromophobe/Oncocytoma); *...
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. Level I-IV
+   - B. Level (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: Level I-IV; Requires cardiopulmonary bypass if Level III/IV
+
+
+**8.** The role of surgery in this case is:
+   - A. HTN, HFSR, Proteinuria, VTE, Hypothyroidism, Wound healing
+   - B. HTN, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: HTN, HFSR, Proteinuria, VTE, Hypothyroidism, Wound healing — **Dose hold/reduce algorithm**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. Papillary: MET inhibitors (Capmatinib)
+   - B. Papillary: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: Papillary: MET inhibitors (Capmatinib); Chromophobe: Limited data; Translocation: Variable VEGF-TKI response
+
+
+**10.** A clinician encounters this presentation. Best approach:
+   - A. Definition: Malignant tumour of renal tubular epithelium; RCC = 90%; Clear cell (ccRCC) = 75-80%
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention required
+   - **Answer: A** — Definition: Malignant tumour of renal tubular epithelium; RCC = 90%; Clear cell (ccRCC) = 75-80%
+
+## 19. Flashcards
+
+**Q1:** ccRCC = VHL/HIF?
+**A1:** VHL loss (90%) → HIF-α accumulation → VEGF/PDGF↑ → Angiogenesis → Target: VEGF-TKI, HIF-2α inhibitor (Belzutifan)
+
+**Q2:** IMDC Risk Model?
+**A2:** 6 factors (KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑); Favourable(0) / Intermediate(1-2) / Poor(≥3)
+
+**Q3:** 1L Metastatic?
+**A3:** ICI + TKI for ALL risk groups: Pembro/Axi, Nivo/Cabo, Lenv/Pembro; Ipi/Nivo for Favourable only; TKI mono obsolete
+
+**Q4:** Cytoreductive Nephrectomy?
+**A4:** CARMENA/SURTIME: No routine benefit in Int/Poor risk; Selected Favourable only
+
+**Q5:** Adjuvant?
+**A5:** Pembrolizumab (KEYNOTE-564) for high-risk resected ccRCC (T2G3-4, T3-4, N+)
+
+**Q6:** Hereditary?
+**A6:** VHL (ccRCC, young, bilateral); HLRCC/FH (Papillary Type 2, leiomyomas); BHD/FLCN (Chromophobe/Oncocytoma); TSC (AML)
+
+**Q7:** Venous Thrombus?
+**A7:** Level I-IV; Requires cardiopulmonary bypass if Level III/IV
+
+**Q8:** TKI Toxicities?
+**A8:** HTN, HFSR, Proteinuria, VTE, Hypothyroidism, Wound healing — Dose hold/reduce algorithm
+
+## 20. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | ccRCC = VHL/HIF | VHL loss (90%) → HIF-α accumulation → VEGF/PDGF↑ → Angiogenesis → Target: VEGF-TKI, HIF-2α inhibitor (Belzutifan) |
+| 2 | A | IMDC Risk Model | 6 factors (KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑); Favourable(0) / Intermediate(1-2) / Poor(≥3) |
+| 3 | A | 1L Metastatic | ICI + TKI for ALL risk groups: Pembro/Axi, Nivo/Cabo, Lenv/Pembro; Ipi/Nivo for Favourable only; TKI mono obsolete |
+| 4 | A | Cytoreductive Nephrectomy | CARMENA/SURTIME: No routine benefit in Int/Poor risk; Selected Favourable only |
+| 5 | A | Adjuvant | Pembrolizumab (KEYNOTE-564) for high-risk resected ccRCC (T2G3-4, T3-4, N+) |
+| 6 | A | Hereditary | VHL (ccRCC, young, bilateral); HLRCC/FH (Papillary Type 2, leiomyomas); BHD/FLCN (Chromophobe/Oncocytoma); TSC (AML) |
+| 7 | A | Venous Thrombus | Level I-IV; Requires cardiopulmonary bypass if Level III/IV |
+| 8 | A | TKI Toxicities | HTN, HFSR, Proteinuria, VTE, Hypothyroidism, Wound healing — Dose hold/reduce algorithm |
+| 9 | A | Non-ccRCC | Papillary: MET inhibitors (Capmatinib); Chromophobe: Limited data; Translocation: Variable VEGF-TKI response |
+| 10 | A | Definition | Definition: Malignant tumour of renal tubular epithelium; RCC = 90%; Clear cell (ccRCC) = 75-80% |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | ccRCC = VHL/HIF | VHL loss (90%) → HIF-α accumulation → VEGF/PDGF↑ → Angiogenesis → Target: VEGF-TKI, HIF-2α inhibitor (Belzutifan) |
+| 2 | A | IMDC Risk Model | 6 factors (KPS<80%, <1yr Dx→Tx, Hb↓, Ca↑, NLR>3, Plt↑); Favourable(0) / Intermediate(1-2) / Poor(≥3) |
+| 3 | A | 1L Metastatic | ICI + TKI for ALL risk groups: Pembro/Axi, Nivo/Cabo, Lenv/Pembro; Ipi/Nivo for Favourable only; TKI mono obsolete |
+| 4 | A | Cytoreductive Nephrectomy | CARMENA/SURTIME: No routine benefit in Int/Poor risk; Selected Favourable only |
+| 5 | A | Adjuvant | Pembrolizumab (KEYNOTE-564) for high-risk resected ccRCC (T2G3-4, T3-4, N+) |
+| 6 | A | Hereditary | VHL (ccRCC, young, bilateral); HLRCC/FH (Papillary Type 2, leiomyomas); BHD/FLCN (Chromophobe/Oncocytoma); TSC (AML) |
+| 7 | A | Venous Thrombus | Level I-IV; Requires cardiopulmonary bypass if Level III/IV |
+| 8 | A | TKI Toxicities | HTN, HFSR, Proteinuria, VTE, Hypothyroidism, Wound healing — Dose hold/reduce algorithm |
+| 9 | A | Non-ccRCC | Papillary: MET inhibitors (Capmatinib); Chromophobe: Limited data; Translocation: Variable VEGF-TKI response |
+
+| 11 | A | Definition | Definition: Malignant tumour of renal tubular epithelium; RCC = 90%; Clear cell (ccRCC) = 75-80% |
+## 21. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Urological Cancers|Urological Cancers]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

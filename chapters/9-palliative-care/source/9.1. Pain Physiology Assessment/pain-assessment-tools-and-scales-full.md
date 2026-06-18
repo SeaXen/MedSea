@@ -1,0 +1,205 @@
+# Pain assessment tools and scales
+
+Related: [[../../Pain and Palliative Care MOC]], [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Pain Physiology & Assessment**
+
+## 1. Definition
+
+Pain assessment tools include unidimensional (severity only) and multidimensional scales. Unidimensional: Visual Analogue Scale (VAS, 0-100mm), Numerical Rating Scale (NRS, 0-10), Verbal Rating Scale (VRS, none/mild/moderate/severe), Faces Pain Scale (children, Wong-Baker). Multidimensional: Brief Pain Inventory (BPI), McGill Pain Questionnaire. Special populations: PAINAD (dementia), FLACC (children), Abbey Pain Scale (non-verbal adults). Severity categories: mild 1-3, moderate 4-6, severe 7-10.
+
+## 2. Clinical Features and Presentation
+
+Validated pain assessment tools: NRS (0-10, most common in adults), VAS (0-100mm, sensitive), VRS (none/mild/moderate/severe), McGill Pain Questionnaire (sensory, affective, evaluative), BPI (severity and interference with function, 0-10), LANSS and DN4 (screening for neuropathic), PAIN-AD (5 items: breathing, vocalisation, facial expression, body language, consolability, 0-10), FLACC (Face, Legs, Activity, Cry, Consolability, 0-10, paediatric), PPP (paediatric). Functional impact: Barthel Index, ADLs. QoL: EORTC QLQ-C30, FACT-G, EQ-5D. Cancer-specific: Edmonton Symptom Assessment Scale (ESAS), Karnofsky, ECOG.
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+Document with each clinical review. For non-communicating patients, use observational tools. For cognitively impaired, use PAIN-AD. For dementia, Abbey Pain Scale. For children, use age-appropriate (FLACC, Wong-Baker faces).
+
+### Management
+Use consistent tool. Reassess regularly. Combine self-report (gold standard) with behavioural/physiological measures when needed. Document intervention-response. Total pain: physical + psychological + social + spiritual.
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| VAS | 0-100mm or 0-10cm line |
+| NRS | 0-10; most common |
+| VRS | None/mild/moderate/severe |
+| Faces | Wong-Baker; children |
+| BPI | Brief Pain Inventory; multidimensional |
+| McGill | Multidimensional; 78 descriptors |
+| PAINAD | Dementia, non-communicating |
+| FLACC | Children |
+| Severity | Mild 1-3, moderate 4-6, severe 7-10 |
+| Re-assess | After every intervention |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| N/A | Tools |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: Best tool for adult? A: NRS (0-10) — simple, validated, sensitive.
+
+2. 2. Q: Best tool for dementia? A: PAIN-AD.
+
+3. 3. Q: Best tool for non-communicating ICU? A: Behavioural Pain Scale (BPS) or Critical-Care Pain Observation Tool (CPOT).
+
+4. 4. Q: Tool for breakthrough pain? A: Brief Pain Inventory (BPI) assesses both background and breakthrough.
+
+5. 5. Q: What is VAS? A: Visual Analogue Scale 0-100mm horizontal line, patient marks pain intensity.
+
+
+## 7. Confusions and Mnemonics
+
+- See clinical features
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **Pain assessment tools and scales** |
+|-----------|-----------|
+| **Definition** | Pain assessment tools include unidimensional (severity only) and multidimensional scales. Unidimensi |
+| **Key Features** | 0-100mm or 0-10cm line |
+| **Investigation** | Clinical assessment + disease-specific tests |
+| **Management** | WHO ladder + adjuvant + non-pharmacological |
+| **Red Flags** | Severe pain, opioid side effects, total pain dimensions |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of Pain assessment tools and scales?
+   A. 0-100mm or 0-10cm line
+   B. Always self-limiting
+   C. Caused by infection only
+   D. Restricted to severe pain only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line management?
+   A. WHO analgesic ladder step 1
+   B. Immediate strong opioid
+   C. Surgery only
+   D. No treatment
+   E. Antidepressants only
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Pain assessment, total pain, comorbidities
+   B. None
+   C. ECG only
+   D. Eye exam only
+   E. Blood pressure only
+   **Answer: A**
+4. **Q:** What is the most important complication to monitor?
+   A. Disease-specific complications and treatment side effects
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key pharmacological/clinical feature?
+   A. After every intervention
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient with Pain assessment tools and scales; first-line management?
+   A. WHO ladder + adjuvant + non-pharmacological
+   B. Strong opioid
+   C. Surgery
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+2. **Scenario:** Failed first-line; next step?
+   A. Step up WHO ladder
+   B. Stop all treatment
+   C. Surgery
+   D. Observation
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of treatment?
+   A. Side effects, opioid complications
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Holistic assessment?
+   A. Physical + emotional + social + spiritual
+   B. Physical only
+   C. Emotional only
+   D. None
+   E. Blood tests only
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. After every intervention
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about Pain assessment tools and scales?
+  **A:** 0-100mm or 0-10cm line
+- **Q:** Another key point?
+  **A:** 0-10; most common
+- **Q:** Most important complication?
+  **A:** None/mild/moderate/severe
+- **Q:** First-line treatment?
+  **A:** Wong-Baker; children
+- **Q:** Key pharmacological/clinical feature?
+  **A:** Brief Pain Inventory; multidimensional
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — VAS: 0-100mm or 0-10cm line
+2. **A** — WHO ladder first-line
+3. **A** — Pain assessment essential
+4. **A** — Disease-specific complications
+5. **A** — Re-assess: After every intervention
+
+### SBAs
+1. **A** — WHO ladder + adjuvant + non-pharmacological
+2. **A** — Step up WHO ladder
+3. **A** — Side effects, opioid complications
+4. **A** — Total pain assessment
+5. **A** — After every intervention
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../Pain_Physiology_&_Assessment_Hub]]
+**Chapter Hierarchy:** [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../Pain and Palliative Care MOC]]
+
+---
+
+> **Exam focus:** Know definition, key clinical features, first-line management (WHO ladder), and the most important complication. Always consider total pain (physical, emotional, social, spiritual).

@@ -1,0 +1,433 @@
+# Lung Cancer Screening
+
+> [!tip] **FCPS/MRCP Priority: HIGH**
+> **UK Lung Cancer Screening (Pilot)**: **Age 55-74, ≥20 Pack-Year Smoking History, Current/Former <15yr quit**; **LDCT Annual**; **NLST 20% Mortality Reduction**, **NELSON 24-26%**; **Nodule Management: Lung-RADS**; **False Positives 20-25%**, **Overdiagnosis 10-20%**; **LDCT vs CXR: NLST 20% Mortality Reduction**
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Define **eligibility criteria** for UK lung cancer screening
+- [ ] Interpret **key trial evidence** (NLST, NELSON)
+- [ ] Apply **Lung-RADS** for nodule management
+- [ ] Understand **harms**: False positives, overdiagnosis
+- [ ] Compare **LDCT vs CXR** for screening
+
+---
+
+## 2. UK Lung Cancer Screening Programme (Pilot)
+
+| Parameter | Detail |
+|-----------|--------|
+| **Age Range** | **55-74 years** |
+| **Eligibility** | **≥20 pack-year smoking history** (Current/Former <15yr quit) |
+| **Test** | **Low-Dose CT (LDCT)** |
+| **Interval** | **Annual** |
+| **Nodule Management** | **Lung-RADS** (Category 1-4) |
+| **Pilot Status** | **UK Pilot Ongoing** (Targeted Lung Health Checks) |
+
+### Eligibility Criteria
+| Criterion | Detail |
+|-----------|--------|
+| **Age** | **55-74 years** |
+| **Smoking History** | **≥20 pack-years** |
+| **Smoking Status** | **Current smoker** OR **Former smoker quit <15 years ago** |
+| **Exclusions** | **Life-limiting comorbidity**, **Unable to tolerate treatment** |
+
+---
+
+## 3. Key Trials
+
+### NLST (National Lung Screening Trial)
+| Aspect | Detail |
+|--------|--------|
+| **Design** | RCT, **53,454** participants, **LDCT vs CXR** |
+| **Eligibility** | 55-74, ≥30 pack-years, Current/Former <15yr quit |
+| **Result** | **20% Lung Cancer Mortality Reduction** (RR 0.80) |
+| **All-Cause Mortality** | 6.7% Reduction |
+| **False Positives** | **23.3%** (LDCT) vs 6.5% (CXR) |
+| **Overdiagnosis** | **~18%** of detected cancers |
+
+### NELSON Trial
+| Aspect | Detail |
+|--------|--------|
+| **Design** | RCT, **15,792** participants, **LDCT vs No Screening** |
+| **Eligibility** | 50-74, **Smoking History** |
+| **Result** | **24-26% Mortality Reduction** (Men), **33-48% (Women)** |
+| **Interval** | **Variable** (Year 1, 2, 4, 6.5) |
+| **Volume-Based** | **Volumetric Nodule Assessment** |
+
+---
+
+## 4. Lung-RADS Nodule Management
+
+| Category | Finding | Management |
+|----------|---------|------------|
+| **1** | **Negative** (No nodules / benign calcifications) | **Continue Annual Screening** |
+| **2** | **Benign** (Solid <6mm, GGN <6mm, Fat-containing) | **Continue Annual Screening** |
+| **3** | **Probably Benign** (Solid 6-8mm, GGN 6-8mm, Part-solid <6mm) | **6-month LDCT** |
+| **4A** | **Suspicious** (Solid 8-15mm, GGN >8mm, Part-solid 6-8mm) | **3-month LDCT** or **PET-CT** |
+| **4B** | **Very Suspicious** (Solid >15mm, GGN >15mm, Part-solid >8mm) | **PET-CT + Tissue Diagnosis** |
+| **4X** | **Additional Findings** (e.g., Lymphadenopathy) | **As per 4A/4B + Clinical Judgement** |
+
+---
+
+## 5. Harms of Lung Cancer Screening
+
+| Harm | Detail |
+|------|--------|
+| **False Positives** | **20-25%** (NLST: 23.3% vs 6.5% CXR) → Anxiety, Invasive Procedures |
+| **Overdiagnosis** | **10-20%** (Indolent Adenocarcinomas) |
+| **Radiation Exposure** | **LDCT ~1.5mSv** (vs CXR ~0.1mSv) |
+| **Complications** | **Biopsy/Surgery Complications** (Pneumothorax, Bleeding) |
+| **Psychological** | **Anxiety**, **Stigma** |
+
+### LDCT vs CXR
+| Feature | **LDCT** | **CXR** |
+|---------|----------|---------|
+| **Mortality Reduction** | **20% (NLST)** | **No Significant Reduction** |
+| **Sensitivity** | **High** (90-95%) | **Low** (50-60%) |
+| **False Positive Rate** | **High (20-25%)** | **Low (6-7%)** |
+| **Radiation Dose** | **~1.5 mSv** | **~0.1 mSv** |
+| **Cost** | **Higher** | **Lower** |
+
+---
+
+## 6. FCPS/MRCP High-Yield Summary
+
+| Topic | Key Points |
+|-------|------------|
+| **Eligibility** | **55-74, ≥20 Pack-Years, Current/Former <15yr Quit** |
+| **Test** | **LDCT Annual** |
+| **Key Trials** | **NLST: 20% Mortality ↓**, **NELSON: 24-26% ↓** |
+| **Lung-RADS** | **Cat 1-2: Annual; Cat 3: 6mo LDCT; Cat 4: PET/Biopsy** |
+| **False Positives** | **20-25%** (NLST), **Anxiety, Invasive Procedures** |
+| **Overdiagnosis** | **10-20%** (Indolent Adenocarcinomas) |
+| **LDCT vs CXR** | **NLST: 20% Mortality ↓, CXR No Benefit** |
+| **False Positives** | **LDCT 23% vs CXR 6.5%** |
+| **Overdiagnosis** | **~18%** (NLST) |
+
+---
+
+## 7. Viva Questions (MRCP PACES / FCPS)
+
+| Question | Expected Answer |
+|----------|-----------------|
+| **UK Lung Screening — Eligibility?** | **55-74, ≥20 Pack-Years, Current/Former <15yr Quit**. |
+| **NLST Trial — Design, Result?** | **RCT, LDCT vs CXR, 53,454 pts, 20% Mortality Reduction, 23% False Positive Rate**. |
+| **NELSON Trial — Key Difference from NLST?** | **LDCT vs No Screening**, **Volumetric Nodule Assessment**, **Interval Screening (1,2,4,6.5yr)**, **24-26% Mortality Reduction**. |
+| **Lung-RADS Category 3 — Management?** | **6-month LDCT Follow-up** (Probably Benign: Solid 6-8mm, GGN 6-8mm). |
+| **Lung-RADS Category 4B — Management?** | **PET-CT + Tissue Diagnosis** (Very Suspicious: Solid >15mm, GGN >15mm). |
+| **False Positives — LDCT vs CXR?** | **LDCT: 23.3%**, **CXR: 6.5%** (NLST). |
+| **Overdiagnosis — Rate, Impact?** | **10-20%**, **Indolent Cancers Unnecessarily Treated**. |
+| **LDCT vs CXR — Mortality Benefit?** | **LDCT: 20% Reduction (NLST)**; **CXR: No Mortality Benefit**. |
+| **Lung-RADS 4X — Meaning?** | **Additional Findings** (e.g., Lymphadenopathy) with 4A/4B features. |
+| **NLST Overdiagnosis Rate?** | **~18%** of Screen-Detected Cancers. |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **NLST vs NELSON** | **NLST: LDCT vs CXR (US), 20% ↓**; **NELSON: LDCT vs No Screen (Europe), Volumetric, 24-26% ↓** |
+| **Lung-RADS 3 vs 4A** | **3: Probably Benign (6mo LDCT)**; **4A: Suspicious (3mo LDCT or PET-CT)** |
+| **LDCT vs CXR Mortality** | **LDCT: 20% Mortality ↓ (NLST)**; **CXR: No Mortality Benefit** |
+| **Overdiagnosis in Lung Cancer** | **~18% (NLST)**; **Indolent Adenocarcinomas, Never Clinically Manifest** |
+| **Lung-RADS 4X** | **Additional Findings** (e.g., Lymphadenopathy) with 4A/4B features |
+| **Volumetric vs Diameter** | **NELSON: Volumetric (3D)**; **Lung-RADS: Diameter-Based (2D)** |
+
+**Mnemonic: LUNG-SCREEN**
+- **L**ung Screening: **55-74, 20pk-yr, LDCT Annual**
+- **U**K Pilot: **Targeted Lung Health Checks**
+- **N**LST: **LDCT vs CXR, 20% Mortality ↓, 23% False +ve**
+- **G**NELSON: **LDCT vs No Screen**, **Volumetric, 24-26% ↓**
+- **S**creening: **LDCT Annual**, **Lung-RADS**
+- **C**at 1-2: **Annual**, **Cat 3: 6mo**, **Cat 4: PET/Biopsy**
+- **R**ecall/False +ve: **20-25%**, **Anxiety, Invasive Proc**
+- **E**arly Detection: **Overdiagnosis 10-20%**
+- **E**vidence: **NLST 20% ↓, NELSON 24-26% ↓**
+- **N**odule Management: **Lung-RADS (Cat 1-4X)**
+- **R**adiation: **LDCT ~1.5mSv vs CXR ~0.1mSv**
+
+---
+
+## 9. One-Page Revision Card
+
+| Domain | Key Points |
+|--------|------------|
+| **Eligibility** | 55-74, ≥20 Pack-Years, Current/Former <15yr |
+| **Test** | LDCT Annual |
+| **Key Trials** | NLST (20% ↓), NELSON (24-26% ↓) |
+| **Lung-RADS** | 1-2: Annual; 3: 6mo; 4A: 3mo/PET; 4B: PET/Biopsy; 4X: Add Findings |
+| **False +ve** | 20-25% (NLST) |
+| **Overdiagnosis** | 10-20% |
+| **LDCT vs CXR** | LDCT 20% ↓ Mortality, CXR No Benefit |
+| **LDCT vs CXR** | False +ve: LDCT 23% vs CXR 6.5% |
+
+---
+
+## 10. Spaced Repetition Trackers
+
+| Review Interval | Date Completed | Confidence (1-5) | Notes |
+|-----------------|----------------|------------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 11. Self-Test Scorecard
+
+| Section | Score /5 | Last Attempt |
+|---------|----------|--------------|
+| Eligibility Criteria | | |
+| NLST vs NELSON | | |
+| Lung-RADS Categories | | |
+| False Positive Rate | | |
+| Overdiagnosis Rate | | |
+| LDCT vs CXR | | |
+| Nodule Management | | |
+| Harms/Benefits | | |
+
+---
+
+## 12. Local Navigation
+- **Parent Heading**: [[../Oncology|Oncology]]
+- **Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC": [[../Oncology MOC|Oncology MOC]]
+- **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related": [[Population Screening Programmes]], [[NLST Trial]], [[NELSON Trial]], [[Lung-RADS]], [[LDCT]], [[Overdiagnosis]], [[False Positives]], [[Lung Cancer]]
+
+---
+
+# FCPS/MRCP Exam Extras
+
+## 13. MCQs (10)
+
+
+**1.** Regarding Lung Cancer Screening (Eligibility), which statement is correct?
+   A. **55-74, ≥20 Pack-Years, Current/Former <15yr Quit**
+   B. **55-74, - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **55-74, ≥20 Pack-Years, Current/Former <15yr Quit**
+
+
+**2.** Regarding Lung Cancer Screening (Test), which statement is correct?
+   A. **LDCT Annual**
+   B. **LDCT - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **LDCT Annual**
+
+
+**3.** Regarding Lung Cancer Screening (Key Trials), which statement is correct?
+   A. **NLST: 20% Mortality ↓**, **NELSON: 24-26% ↓**
+   B. **NLST: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **NLST: 20% Mortality ↓**, **NELSON: 24-26% ↓**
+
+
+**4.** Regarding Lung Cancer Screening (Lung-RADS), which statement is correct?
+   A. **Cat 1-2: Annual
+   B. **Cat - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **Cat 1-2: Annual; Cat 3: 6mo LDCT; Cat 4: PET/Biopsy**
+
+
+**5.** Regarding Lung Cancer Screening (False Positives), which statement is correct?
+   A. **20-25%** (NLST), **Anxiety, Invasive Procedures**
+   B. **20-25%** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **20-25%** (NLST), **Anxiety, Invasive Procedures**
+
+
+**6.** Regarding Lung Cancer Screening (Overdiagnosis), which statement is correct?
+   A. **10-20%** (Indolent Adenocarcinomas)
+   B. **10-20%** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **10-20%** (Indolent Adenocarcinomas)
+
+
+**7.** Regarding Lung Cancer Screening (LDCT vs CXR), which statement is correct?
+   A. **NLST: 20% Mortality ↓, CXR No Benefit**
+   B. **NLST: - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **NLST: 20% Mortality ↓, CXR No Benefit**
+
+
+**8.** Regarding Lung Cancer Screening (False Positives), which statement is correct?
+   A. **LDCT 23% vs CXR 6.5%**
+   B. **LDCT - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **LDCT 23% vs CXR 6.5%**
+
+
+**9.** Regarding Lung Cancer Screening (Overdiagnosis), which statement is correct?
+   A. **~18%** (NLST)
+   B. **~18%** - alternative approach
+   C. Empirical management only
+   D. Watch and wait
+   - **Answer: A** — **~18%** (NLST)
+
+
+**10.** Regarding Lung Cancer Screening (FCPS/MRCP High Yield - UK Lung Cancer Sc), which statement is correct?
+   - A. FCPS/MRCP High Yield - UK Lung Cancer Screening (Pilot): 55-74, 20pk-yr, LDCT Annual
+   - B. Empirical approach without specific indication
+   - C. Used only in research protocols
+   - D. Not relevant in current practice
+   - **Answer: A** — FCPS/MRCP High Yield - UK Lung Cancer Screening (Pilot): 55-74, 20pk-yr, LDCT Annual
+
+## 14. SBA Questions (10)
+
+
+**1.** A 55-year-old presents with classic features. MDT discussion recommends:
+   - A. **55-74, ≥20 Pack-Years, Current/Former <15yr Quit**
+   - B. **55-74, (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — first-line: **55-74, ≥20 Pack-Years, Current/Former <15yr Quit**
+
+
+**2.** On staging workup, the patient is found to be [Stage X]. Best management is:
+   - A. **LDCT Annual**
+   - B. **LDCT (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — stage-specific: **LDCT Annual**
+
+
+**3.** Following first-line treatment, the patient develops [complication]. Best next step:
+   - A. **NLST: 20% Mortality ↓**, **NELSON: 24-26% ↓**
+   - B. **NLST: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — complication: **NLST: 20% Mortality ↓**, **NELSON: 24-26% ↓**
+
+
+**4.** The patient asks about prognosis. Most appropriate response based on:
+   - A. **Cat 1-2: Annual
+   - B. **Cat (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — prognosis: **Cat 1-2: Annual; Cat 3: 6mo LDCT; Cat 4: PET/Biopsy**
+
+
+**5.** A 65-year-old with relevant risk factors should be screened with:
+   - A. **20-25%** (NLST), **Anxiety, Invasive Procedures**
+   - B. **20-25%** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — screening: **20-25%** (NLST), **Anxiety, Invasive Procedures**
+
+
+**6.** The most clinically important biomarker/molecular test is:
+   - A. **10-20%** (Indolent Adenocarcinomas)
+   - B. **10-20%** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — biomarker: **10-20%** (Indolent Adenocarcinomas)
+
+
+**7.** The standard chemotherapy/regimen of choice is:
+   - A. **NLST: 20% Mortality ↓, CXR No Benefit**
+   - B. **NLST: (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — chemo: **NLST: 20% Mortality ↓, CXR No Benefit**
+
+
+**8.** The role of surgery in this case is:
+   - A. **LDCT 23% vs CXR 6.5%**
+   - B. **LDCT (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — surgery: **LDCT 23% vs CXR 6.5%**
+
+
+**9.** The recommended surveillance/follow-up protocol is:
+   - A. **~18%** (NLST)
+   - B. **~18%** (less specific)
+   - C. Empirical broad approach
+   - D. No intervention required
+   - **Answer: A** — follow-up: **~18%** (NLST)
+
+
+**10.** A clinician encounters this presentation. Best approach:
+   - A. FCPS/MRCP High Yield - UK Lung Cancer Screening (Pilot): 55-74, 20pk-yr, LDCT Annual
+   - B. Watch and wait approach
+   - C. Empirical broad treatment
+   - D. No intervention required
+   - **Answer: A** — FCPS/MRCP High Yield - UK Lung Cancer Screening (Pilot): 55-74, 20pk-yr, LDCT Annual
+
+## 15. Flashcards
+
+**Q1:** Eligibility?
+**A1:** 55-74, ≥20 Pack-Years, Current/Former <15yr Quit
+
+**Q2:** Test?
+**A2:** LDCT Annual
+
+**Q3:** Key Trials?
+**A3:** NLST: 20% Mortality ↓, NELSON: 24-26% ↓
+
+**Q4:** Lung-RADS?
+**A4:** Cat 1-2: Annual; Cat 3: 6mo LDCT; Cat 4: PET/Biopsy
+
+**Q5:** False Positives?
+**A5:** 20-25% (NLST), Anxiety, Invasive Procedures
+
+**Q6:** Overdiagnosis?
+**A6:** 10-20% (Indolent Adenocarcinomas)
+
+**Q7:** LDCT vs CXR?
+**A7:** NLST: 20% Mortality ↓, CXR No Benefit
+
+**Q8:** False Positives?
+**A8:** LDCT 23% vs CXR 6.5%
+
+## 16. Answer Key with Explanations
+
+| # | MCQ | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Eligibility | 55-74, ≥20 Pack-Years, Current/Former <15yr Quit |
+| 2 | A | Test | LDCT Annual |
+| 3 | A | Key Trials | NLST: 20% Mortality ↓, NELSON: 24-26% ↓ |
+| 4 | A | Lung-RADS | Cat 1-2: Annual; Cat 3: 6mo LDCT; Cat 4: PET/Biopsy |
+| 5 | A | False Positives | 20-25% (NLST), Anxiety, Invasive Procedures |
+| 6 | A | Overdiagnosis | 10-20% (Indolent Adenocarcinomas) |
+| 7 | A | LDCT vs CXR | NLST: 20% Mortality ↓, CXR No Benefit |
+| 8 | A | False Positives | LDCT 23% vs CXR 6.5% |
+| 9 | A | Overdiagnosis | ~18% (NLST) |
+| 10 | A | FCPS/MRCP High Yield - UK Lung Cancer Screening (P | FCPS/MRCP High Yield - UK Lung Cancer Screening (Pilot): 55-74, 20pk-yr, LDCT Annual |
+
+| # | SBA | Topic | Explanation |
+|---|-----|-------|-------------|
+| 1 | A | Eligibility | 55-74, ≥20 Pack-Years, Current/Former <15yr Quit |
+| 2 | A | Test | LDCT Annual |
+| 3 | A | Key Trials | NLST: 20% Mortality ↓, NELSON: 24-26% ↓ |
+| 4 | A | Lung-RADS | Cat 1-2: Annual; Cat 3: 6mo LDCT; Cat 4: PET/Biopsy |
+| 5 | A | False Positives | 20-25% (NLST), Anxiety, Invasive Procedures |
+| 6 | A | Overdiagnosis | 10-20% (Indolent Adenocarcinomas) |
+| 7 | A | LDCT vs CXR | NLST: 20% Mortality ↓, CXR No Benefit |
+| 8 | A | False Positives | LDCT 23% vs CXR 6.5% |
+| 9 | A | Overdiagnosis | ~18% (NLST) |
+
+| 11 | A | FCPS/MRCP High Yield - UK Lung Cancer Screening (P | FCPS/MRCP High Yield - UK Lung Cancer Screening (Pilot): 55-74, 20pk-yr, LDCT Annual |
+## 17. Local Navigation
+
+
+- **Parent Heading Hub**: [[../../Cancer Screening & Prevention|Cancer Screening & Prevention]]
+- **Chapter Map**: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]
+- **Chapter MOC**: [[../../Oncology MOC|Oncology MOC]]
+- **Drug Reference**: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]
+

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Drug Development And Regulation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.4. DRUG DEVELOPMENT</span>
+      <div class="h1">Drug Development And Regulation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe <b>drug development phases</b> (Preclinical → Phase I–IV)</li><li>[ ] Understand <b>regulatory approval pathways</b> (UK MHRA, EU EMA, US FDA)</li><li>[ ] Apply <b>pharmacovigilance principles</b>: ADR reporting, signal detection, risk management</li><li>[ ] Know <b>post-marketing surveillance</b> tools (PSUR, RMP, PASS, PAES)</li><li>[ ] Distinguish <b>generic vs biosimilar</b> approval requirements</li><li>[ ] Understand <b>HTA/NICE</b> role in UK prescribing</li><li>[ ] Answer viva: "Phase I vs II vs III" and "Yellow Card scheme"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Drug Development Timeline</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid timeline title Drug Development Timeline (~10-15 years) section Preclinical (3-6 years) Discovery : Target identification, hit-to-lead, lead optimisation In vitro : Receptor binding, enzyme assays, cytotoxicity In vivo : Animal PK/PD, toxicity (acute, sub-chronic, reproductive, carcinogenicity) Safety Pharmacology : Core battery (CNS, CVS, respiratory) section Clinical Development (6-7 years) Phase I : 20-100 healthy volunteers; PK, PD, safety, MTD Phase II : 100-500 patients; efficacy, dose-ranging, safety Phase III : 300-3000+ patients; confirm efficacy, safety, labelling Registration : Dossier submission (CTD), regulatory review section Post-Marketing (Ongoing) Phase IV : Real-world evidence, new indications, special pops Pharmacovigilance : ADR reporting, signal detection, risk minimisation </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Preclinical Development</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Required Studies (ICH M3/M6)</div>
+<table class="ctable"><tr><th>Category</th><th>Key Studies</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**Pharmacology**</td><td>Primary pharmacodynamics (target engagement); Secondary PD (off-target); Safety pharmacology (core battery: CNS, CVS — hERG, respiratory)</td></tr><tr><td>**Pharmacokinetics**</td><td>ADME (absorption, distribution, metabolism, excretion); Toxicokinetics (PK at toxic doses); Cross-species comparison</td></tr><tr><td>**Toxicology**</td><td>**Single-dose (acute)**; **Repeated-dose** (28-day, 90-day, 6-month rodent + non-rodent); **Genotoxicity** (Ames, chromosomal aberration, micronucleus); **Carcinogenicity** (2-year rodent, 6-month transgenic); **Reproductive** (fertility, embryofetal, pre/post-natal); **Local tolerance**</td></tr><tr><td>**Formulation**</td><td>Stability, biocompatibility, sterility</td></tr></table>
+<div class="callout"><b>Key:</b> <i>No human data. <b>Allometric scaling</b> from animals → human starting dose (NOAEL → MRSD with safety factors).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Clinical Trial Phases</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Phase I — First-in-Human (FIH)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Participants**</td><td>20–100 **healthy volunteers** (or patients for oncology/toxic drugs)</td></tr><tr><td>**Objectives**</td><td>**Safety, tolerability, PK, PD**; **Maximum Tolerated Dose (MTD)**; Food effect; Drug interactions (initial)</td></tr><tr><td>**Design**</td><td>Single Ascending Dose (SAD) → Multiple Ascending Dose (MAD)</td></tr><tr><td>**Endpoints**</td><td>AEs, vital signs, ECG, labs, PK parameters (Cmax, AUC, t½, CL, Vd)</td></tr><tr><td>**Duration**</td><td>Months</td></tr></table>
+<div class="sub-h">Phase II — Proof of Concept / Dose-Ranging</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Participants**</td><td>100–500 **patients** with target disease</td></tr><tr><td>**Objectives**</td><td>**Efficacy** (preliminary); **Dose-response**; Safety in patients; Refine Phase III design</td></tr><tr><td>**Design**</td><td>**Phase IIa** (dose-ranging, PoC); **Phase IIb** (dose-confirmation, pivotal efficacy)</td></tr><tr><td>**Endpoints**</td><td>Surrogate/clinical efficacy; Safety; PK/PD</td></tr><tr><td>**Duration**</td><td>1–2 years</td></tr><tr><td>**Key Issue**</td><td>**~30% fail** (lack of efficacy / safety)</td></tr></table>
+<div class="sub-h">Phase III — Confirmatory / Pivotal</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Participants**</td><td>**300–3000+** patients (large, diverse)</td></tr><tr><td>**Objectives**</td><td>**Confirm efficacy** vs placebo/active comparator; **Safety** in large population; **Labelling claims**; Special populations (elderly, renal, hepatic)</td></tr><tr><td>**Design**</td><td>**RCT** (parallel, crossover, factorial); **Non-inferiority** or **Superiority**; Multi-centre, international</td></tr><tr><td>**Endpoints**</td><td>**Primary** (clinical outcome); **Secondary** (QoL, biomarkers); Safety</td></tr><tr><td>**Duration**</td><td>2–4 years</td></tr><tr><td>**Key Issue**</td><td>**~50% fail** (efficacy/safety); Cost: $100M–$1B+</td></tr></table>
+<div class="sub-h">Phase IV — Post-Marketing / Real-World</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Participants**</td><td>**Large populations** in routine care</td></tr><tr><td>**Objectives**</td><td>**Long-term safety** (rare AEs); **Effectiveness** (real-world); **New indications/pops**; **Drug utilisation**; **Cost-effectiveness**</td></tr><tr><td>**Design**</td><td>Observational (cohort, case-control, registry); Pragmatic RCT; Database studies</td></tr><tr><td>**Regulatory**</td><td>**Mandated** (PASS — Post-Authorisation Safety Study) or **Voluntary**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Regulatory Approval Pathways</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">UK (MHRA) — Post-Brexit</div>
+<table class="ctable"><tr><th>Pathway</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**National Procedure**</td><td>UK-only application (MHRA)</td></tr><tr><td>**Reliance**</td><td>Recognise EU (EMA), US (FDA), Swiss (Swissmedic), Australian (TGA), Canadian (Health Canada), Singapore (HSA) decisions</td></tr><tr><td>**Conditional Marketing Authorisation (CMA)**</td><td>For unmet need (less comprehensive data) — e.g., COVID vaccines</td></tr><tr><td>**Exceptional Circumstances**</td><td>Rare diseases where comprehensive data impossible</td></tr><tr><td>**Traditional Herbal Registration (THR)**</td><td>Herbal medicines with traditional use</td></tr></table>
+<div class="sub-h">EU (EMA) — Centralised vs National</div>
+<table class="ctable"><tr><th>Procedure</th><th>Scope</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>**Centralised**</td><td>Mandatory for biotech, orphan, ATMP; Optional for new active substances → **Single MA valid EU/EEA**</td></tr><tr><td>**Mutual Recognition (MRP)**</td><td>National MA recognised by other MS</td></tr><tr><td>**Decentralised (DCP)**</td><td>Simultaneous application to multiple MS</td></tr><tr><td>**National**</td><td>Single MS only</td></tr></table>
+<div class="sub-h">US (FDA)</div>
+<table class="ctable"><tr><th>Pathway</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**NDA (New Drug Application)**</td><td>Standard small molecule</td></tr><tr><td>**BLA (Biologics License Application)**</td><td>Biologics (mAbs, vaccines, gene therapy)</td></tr><tr><td>**505(b)(2)**</td><td>Hybrid (relies on published data + new studies)</td></tr><tr><td>**Accelerated Approval**</td><td>Surrogate endpoint for serious conditions (confirmatory trial required)</td></tr><tr><td>**Fast Track / Breakthrough / Priority Review**</td><td>Expedited programs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Common Technical Document (CTD) — Dossier Structure</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Module</th><th>Content</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Module 1**</td><td>Administrative (region-specific: application forms, labelling, PIL)</td></tr><tr><td>**Module 2**</td><td>**Summaries** (2.3 Quality, 2.4 Non-clinical, 2.5 Clinical, 2.7 Risk Management Plan)</td></tr><tr><td>**Module 3**</td><td>**Quality** (drug substance, drug product, manufacturing, stability)</td></tr><tr><td>**Module 4**</td><td>**Non-clinical** (pharmacology, PK, toxicology — study reports)</td></tr><tr><td>**Module 5**</td><td>**Clinical** (biopharmaceutics, PK, efficacy, safety — study reports, ISE, ISS)</td></tr></table>
+<div class="callout"><b>ICH CTD</b> = Harmonised format for EU, US, Japan, Canada, Switzerland, UK, Australia, China, South Korea, Singapore, Brazil, etc.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Pharmacovigilance — Post-Marketing Safety</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Key Definitions</div>
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**ADR (Adverse Drug Reaction)**</td><td>Noxious/unintended response at **normal doses** (causal link suspected)</td></tr><tr><td>**ADE (Adverse Drug Event)**</td><td>Any untoward occurrence during treatment (causal link not required)</td></tr><tr><td>**Serious ADR**</td><td>Death, life-threatening, hospitalisation, disability, congenital anomaly, medically significant</td></tr><tr><td>**Signal**</td><td>Information from one/multiple sources suggesting **new causal association** or **new aspect of known association**</td></tr></table>
+<div class="sub-h">ADR Reporting Systems</div>
+<table class="ctable"><tr><th>System</th><th>Region</th><th>Key Features</th></tr><tr><td>--------</td><td>--------</td><td>--------------</td></tr><tr><td>**Yellow Card Scheme**</td><td>UK (MHRA)</td><td>**Spontaneous reporting** by HCPs, patients, pharma; paper/electronic/app</td></tr><tr><td>**EudraVigilance**</td><td>EU (EMA)</td><td>Centralised database; MAH mandatory electronic reporting</td></tr><tr><td>**FAERS**</td><td>US (FDA)</td><td>Adverse Event Reporting System; MedDRA coding</td></tr><tr><td>**VigiBase**</td><td>WHO (Uppsala)</td><td>Global ICSR database (>25M reports); signal detection</td></tr><tr><td>**VigiAccess**</td><td>WHO</td><td>Public access to VigiBase summaries</td></tr></table>
+<div class="sub-h">Reporting Timelines (ICH E2D)</div>
+<table class="ctable"><tr><th>Event</th><th>MAH → Regulatory</th></tr><tr><td>-------</td><td>------------------</td></tr><tr><td>**Serious unexpected ADR**</td><td>**15 calendar days**</td></tr><tr><td>**Serious expected ADR**</td><td>**15 calendar days** (or per national law)</td></tr><tr><td>**Non-serious**</td><td>**90 days** (or per national law)</td></tr><tr><td>**Periodic Safety Update Report (PSUR)**</td><td>**6-monthly** × 2 years, then **annually** (up to 5 years), then **3-yearly**</td></tr></table>
+<div class="sub-h">Signal Detection &amp; Management</div>
+<p>``<code>mermaid flowchart TD A[Data Sources] --&gt; B[Signal Detection] B --&gt; C{Signal Validated?} C --&gt;|Yes| D[Risk Assessment&lt;br&gt;CIOMS/WHO criteria] D --&gt; E[Risk Minimisation] E --&gt; F1[Label Update&lt;br&gt;(SmPC/PIL)] E --&gt; F2[RMP Update&lt;br&gt;(Additional monitoring)] E --&gt; F3[DHPC / Dear HCP Letter] E --&gt; F4[Restriction / Suspension / Withdrawal] C --&gt;|No| G[Continue Monitoring] </code>``</p>
+<div class="sub-h">Key Pharmacovigilance Tools</div>
+<table class="ctable"><tr><th>Tool</th><th>Purpose</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**PSUR (Periodic Safety Update Report)** / **PBRER**</td><td>Cumulative benefit-risk review at defined intervals</td></tr><tr><td>**RMP (Risk Management Plan)**</td><td>**Pharmacovigilance activities** (routine + additional) + **Risk minimisation measures** (routine: SmPC/PIL; additional: controlled access, pregnancy prevention, registries)</td></tr><tr><td>**PASS (Post-Authorisation Safety Study)**</td><td>**Mandated** observational study for specific safety concern</td></tr><tr><td>**PAES (Post-Authorisation Efficacy Study)**</td><td>**Mandated** study for efficacy (e.g., confirmatory for accelerated approval)</td></tr><tr><td>**DHPC (Direct Healthcare Professional Communication)**</td><td>Urgent safety info to HCPs (SmPC change, restriction)</td></tr><tr><td>**SmPC / PIL**</td><td>**Summary of Product Characteristics** (HCP) / **Package Information Leaflet** (patient)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ Generic vs Biosimilar Approval</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Generic Medicines (Small Molecules)</div>
+<table class="ctable"><tr><th>Requirement</th><th>Standard</th></tr><tr><td>-------------</td><td>----------</td></tr><tr><td>**Active substance**</td><td>Same qualitative/quantitative</td></tr><tr><td>**Pharmaceutical form**</td><td>Same</td></tr><tr><td>**Route of administration**</td><td>Same</td></tr><tr><td>**Bioequivalence**</td><td>**90% CI of AUC/Cmax ratio 80–125%** (log-transformed)</td></tr><tr><td>**Clinical efficacy/safety**</td><td>**Not required** (relied on reference)</td></tr><tr><td>**Exceptions**</td><td>Narrow TI drugs (warfarin, digoxin, lithium, phenytoin, carbamazepine, theophylline, ciclosporin, tacrolimus) — **stricter BE / clinical data**</td></tr></table>
+<div class="sub-h">Biosimilars (Biological Medicines)</div>
+<table class="ctable"><tr><th>Requirement</th><th>Standard</th></tr><tr><td>-------------</td><td>----------</td></tr><tr><td>**Reference product**</td><td>Authorised biological</td></tr><tr><td>**Quality**</td><td>**Comprehensive comparability** (structure, function, purity, impurities)</td></tr><tr><td>**Non-clinical**</td><td>**Reduced** (PK/PD, toxicity in relevant species)</td></tr><tr><td>**Clinical**</td><td>**PK/PD similarity** (healthy volunteers); **Confirmatory efficacy/safety** (1–2 RCTs in sensitive population); **Immunogenicity** comparison</td></tr><tr><td>**Extrapolation**</td><td>**Scientific justification** for other indications of reference</td></tr><tr><td>**Interchangeability**</td><td>**Regulatory ≠ automatic substitution** (varies by country); UK: **prescriber decision**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Special Regulatory Designations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Designation</th><th>Region</th><th>Purpose</th></tr><tr><td>-------------</td><td>--------</td><td>---------</td></tr><tr><td>**Orphan Drug**</td><td>EU/UK/US/Japan</td><td>Incentives for rare diseases (<5/10,000 EU; <200k US); market exclusivity (10y EU, 7y US)</td></tr><tr><td>**PRIME (Priority Medicines)**</td><td>EU (EMA)</td><td>Early support for promising medicines addressing unmet need</td></tr><tr><td>**ILAP (Innovative Licensing and Access Pathway)**</td><td>UK (MHRA)</td><td>Accelerated access for innovative medicines</td></tr><tr><td>**Accelerated Approval**</td><td>US (FDA)</td><td>Surrogate endpoint for serious conditions</td></tr><tr><td>**Breakthrough Therapy**</td><td>US (FDA)</td><td>Preliminary evidence of substantial improvement</td></tr><tr><td>**Fast Track**</td><td>US (FDA)</td><td>Serious condition + unmet need → rolling review</td></tr><tr><td>**Conditional MA / CMA**</td><td>EU/UK</td><td>Less comprehensive data for unmet need (specific obligations)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">️⃣ UK Health Technology Assessment (HTA) — NICE</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">NICE Technology Appraisal (TA) Process</div>
+<p>``<code>mermaid flowchart TD A[Topic Selection] --&gt; B[Scope Development] B --&gt; C[Evidence Submission&lt;br/&gt;(Company + Independent)] C --&gt; D[Assessment Group&lt;br/&gt;(Critique + Economic Model)] D --&gt; E[Appraisal Committee&lt;br/&gt;(Clinical + Economic)] E --&gt; F[Draft Guidance] F --&gt; G[Consultation] G --&gt; H[Final Guidance] H --&gt; I[Mandatory Funding (NHS)] </code>``</p>
+<div class="sub-h">NICE Decision Framework</div>
+<table class="ctable"><tr><th>Outcome</th><th>Meaning</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Recommended**</td><td>NHS must fund within 90 days</td></tr><tr><td>**Optimised**</td><td>Recommended in specific sub-population</td></tr><tr><td>**Only in Research**</td><td>Not for routine use; only in clinical trials</td></tr><tr><td>**Not Recommended**</td><td>NHS not funded (exceptional cases via IFR)</td></tr></table>
+<div class="sub-h">Key NICE Criteria</div>
+<table class="ctable"><tr><th>Criterion</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Cost-effectiveness**</td><td>**ICER ≤ £20,000–£30,000/QALY** (end of life: £50,000)</td></tr><tr><td>**Clinical effectiveness**</td><td>vs current standard of care</td></tr><tr><td>**Budget impact**</td><td>>£20M/yr → additional negotiation (commercial access agreements)</td></tr><tr><td>**Equality**</td><td>No discrimination</td></tr></table>
+<div class="callout"><b>SMC (Scottish Medicines Consortium)</b> = Separate HTA body for Scotland. <b>AWMSG (All Wales Medicines Strategy Group)</b> = Wales.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">️⃣ Prescribing in the UK — Regulatory Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Legal Classification (UK)</div>
+<table class="ctable"><tr><th>Category</th><th>Supply</th><th>Examples</th></tr><tr><td>----------</td><td>--------</td><td>----------</td></tr><tr><td>**POM (Prescription Only Medicine)**</td><td>Rx only (doctor/dentist/nurse/pharmacist independent prescriber)</td><td>Most therapeutic drugs</td></tr><tr><td>**P (Pharmacy Medicine)**</td><td>Pharmacist supervision (no Rx)</td><td>Chloramphenicol eye drops, emergency contraception, some analgesics</td></tr><tr><td>**GSL (General Sales List)**</td><td>Any retail outlet</td><td>Paracetamol 500mg (≤16 tabs), ibuprofen 200mg (≤24 tabs)</td></tr><tr><td>**CD (Controlled Drugs)**</td><td>**Misuse of Drugs Act 1971** schedules + **MDR 2001**</td><td>See below</td></tr></table>
+<div class="sub-h">Controlled Drugs Schedules (UK)</div>
+<table class="ctable"><tr><th>Schedule</th><th>Examples</th><th>Prescription Requirements</th><th>Storage/Destruction</th></tr><tr><td>----------</td><td>----------</td><td>---------------------------</td><td>---------------------</td></tr><tr><td>**Sch 1**</td><td>LSD, MDMA, cannabis (raw)</td><td>**No medical use** (Home Office licence for research)</td><td>Secure cabinet</td></tr><tr><td>**Sch 2**</td><td>**Morphine, Diamorphine, Fentanyl, Oxycodone, Pethidine, Methadone, Ketamine, Amphetamine, Methylphenidate, Cocaine**</td><td>**FP10CD** (or electronic CD Rx); **Handwritten signature**; **Dose in words & figures**; **Total quantity in words & figures**; **Patient name/address**; **Prescriber details**; **28-day validity**</td><td>**CD cabinet**; **CD register** (running balance); **Witnessed destruction**</td></tr><tr><td>**Sch 3**</td><td>**Temazepam, Midazolam, Buprenorphine, Tramadol, Gabapentin, Pregabalin, Phenobarbital, Testosterone, GHB**</td><td>Standard Rx (FP10); **28-day validity**; No CD register req'd</td><td>Secure storage</td></tr><tr><td>**Sch 4**</td><td>**Benzodiazepines (diazepam, lorazepam, clonazepam — except Sch 3), Z-drugs, Anabolic steroids, Clenbuterol**</td><td>Standard Rx; 28-day validity</td><td>Secure storage</td></tr><tr><td>**Sch 5**</td><td>**Codeine ≤100mg/5mL, Dihydrocodeine, Pholcodine, Loperamide, Kaolin & morphine, Diphenoxylate**</td><td>Standard Rx (OTC P/GSL for some)</td><td>Standard</td></tr></table>
+<div class="callout"><b>Key:</b> <i>Schedule 2 = <b>highest control</b> (CD Rx, CD register, witnessed destruction). <b>Nurse/pharmacist independent prescribers</b> can prescribe Sch 2–5 (with limitations).</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🔟 Pharmacovigilance in Clinical Practice</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Yellow Card Reporting (UK)</div>
+<table class="ctable"><tr><th>Who Can Report</th><th>How</th></tr><tr><td>----------------</td><td>-----</td></tr><tr><td>**Doctors, dentists, nurses, pharmacists, midwives**</td><td>Online (yellowcard.mhra.gov.uk), app, paper</td></tr><tr><td>**Patients / carers**</td><td>Same routes</td></tr><tr><td>**Pharma companies**</td><td>Mandatory electronic (EudraVigilance)</td></tr></table>
+<div class="sub-h">What to Report</div>
+<ul><li><b>All serious ADRs</b> (even if known)</li><li><b>All ADRs to new drugs</b> (▼ black triangle)</li><li><b>Medication errors</b> causing harm</li><li><b>Defective medicines</b> (quality defects)</li><li><b>Counterfeit/falsified medicines</b></li></ul>
+<div class="sub-h">Black Triangle (▼) Scheme</div>
+<table class="ctable"><tr><th>Drug</th><th>Duration</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>**New active substance**</td><td>**5 years** (or longer if safety concerns)</td></tr><tr><td>**New indication / route / population**</td><td>Until safety established</td></tr><tr><td>**Biosimilars**</td><td>5 years</td></tr><tr><td>**Meaning**</td><td>**Intensive monitoring** — report **ALL suspected ADRs** (not just serious)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Drug Development**</td><td>Preclinical (3–6y) → Phase I (healthy, PK/safety) → Phase II (patients, efficacy/dose) → Phase III (large RCT, confirmatory) → Phase IV (post-marketing)</td></tr><tr><td>**Regulatory**</td><td>MHRA (UK), EMA (EU), FDA (US); CTD dossier (5 modules); Reliance pathways post-Brexit</td></tr><tr><td>**Pharmacovigilance**</td><td>Yellow Card (UK); EudraVigilance (EU); FAERS (US); 15-day serious ADR reporting; PSUR/PBRER; RMP</td></tr><tr><td>**Signal Detection**</td><td>Disproportionality analysis (ROR, PRR, IC) → validation → risk assessment → minimisation (label, RMP, DHPC, restriction)</td></tr><tr><td>**Generics**</td><td>Bioequivalence (80–125% CI); Narrow TI = stricter; Biosimilars = quality comparability + clinical similarity + immunogenicity</td></tr><tr><td>**Orphan/PRIME/ILAP**</td><td>Incentives for unmet need/rare diseases</td></tr><tr><td>**NICE HTA**</td><td>ICER £20–30k/QALY; mandatory funding if recommended</td></tr><tr><td>**CD Schedules**</td><td>**Sch 2 = highest** (CD Rx, register, destruction); Sch 3–5 = standard Rx</td></tr><tr><td>**Black Triangle (▼)**</td><td>New drugs 5y → report ALL suspected ADRs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Describe the phases of clinical drug development.</td><td>Phase I: 20–100 healthy volunteers, PK/safety/MTD. Phase II: 100–500 patients, efficacy/dose-ranging. Phase III: 300–3000+ patients, confirm efficacy/safety vs comparator. Phase IV: Post-marketing real-world.</td></tr><tr><td>2</td><td>What is the Yellow Card scheme?</td><td>UK spontaneous ADR reporting system (MHRA) for HCPs and patients. All serious ADRs, all ADRs for ▼ drugs, medication errors.</td></tr><tr><td>3</td><td>Reporting timeline for serious unexpected ADR by pharma company?</td><td>**15 calendar days** to regulatory authority (ICH E2D).</td></tr><tr><td>4</td><td>Generic vs biosimilar approval — key difference?</td><td>Generic: **Bioequivalence** (80–125% CI) only. Biosimilar: **Quality comparability + non-clinical + clinical PK/PD + efficacy/safety + immunogenicity**.</td></tr><tr><td>5</td><td>What is a PSUR?</td><td>Periodic Safety Update Report — cumulative benefit-risk review at defined intervals (6-monthly × 2y, then annually, then 3-yearly).</td></tr><tr><td>6</td><td>NICE cost-effectiveness threshold?</td><td>**ICER ≤ £20,000–£30,000/QALY** (end-of-life: up to £50,000).</td></tr><tr><td>7</td><td>Controlled Drug Schedule 2 — prescription requirements?</td><td>**FP10CD** (or eCD Rx); handwritten signature; dose in words & figures; total quantity in words & figures; patient name/address; prescriber details; 28-day validity.</td></tr><tr><td>8</td><td>Black triangle (▼) meaning?</td><td>**Intensive monitoring** — report **ALL suspected ADRs** (not just serious). Duration ~5 years for new active substance.</td></tr><tr><td>9</td><td>Bioequivalence acceptance criteria for generics?</td><td>**90% CI of geometric mean ratio (test/reference) for AUC and Cmax within 80–125%** (log-transformed).</td></tr><tr><td>10</td><td>What is an RMP?</td><td>Risk Management Plan — pharmacovigilance activities (routine + additional) + risk minimisation measures (routine: SmPC/PIL; additional: controlled access, pregnancy prevention, registries).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Phase I = efficacy"**</td><td>**NO.** Phase I = **safety, PK, MTD** in healthy volunteers. Efficacy = Phase II/III.</td></tr><tr><td>**"Generics need clinical trials"**</td><td>**NO.** Generics need **bioequivalence only** (except narrow TI). Biosimilars need clinical data.</td></tr><tr><td>**"Biosimilar = generic biologic"**</td><td>**NO.** Biosimilar = **similar but not identical**; requires clinical confirmation. More complex than generic.</td></tr><tr><td>**"MHRA = EMA post-Brexit"**</td><td>**NO.** MHRA is **UK sovereign regulator**. Relies on EU/US/Swiss/Aus/Can/SG decisions but independent.</td></tr><tr><td>**"All ADRs reported in 15 days"**</td><td>**Only serious unexpected** by pharma (15 days). HCPs report serious ADRs ASAP. Non-serious = 90 days (pharma).</td></tr><tr><td>**"NICE recommended = free for all"**</td><td>**NICE recommended = NHS MUST fund** within 90 days. But may have **optimised** (subgroup only) or **commercial access agreements**.</td></tr><tr><td>**"Schedule 2 = all opioids"**</td><td>**NO.** Tramadol = Sch 3; Codeine low-dose = Sch 5; Only strong opioids (morphine, diamorphine, fentanyl, oxycodone, pethidine, methadone) = Sch 2.</td></tr><tr><td>**"Phase IV = optional"**</td><td>**Often MANDATED** (PASS/PAES as condition of approval). Also voluntary for label extensions.</td></tr></table>
+<div class="callout"><b>Mnemonic: DRUG DEVELOPMENT REG</b> <b>D</b>rug phases: <b>Preclinical → I (healthy/PK) → II (patients/efficacy) → III (RCT/confirm) → IV (post-market)</b> <b>R</b>egulatory: <b>MHRA (UK), EMA (EU), FDA (US)</b>; CTD 5 modules; Reliance pathways <b>U</b>K CD schedules: <b>Sch 2 = opioids (CD Rx, register, destruction); Sch 3 = tramadol/gabapentin; Sch 4 = benzos; Sch 5 = weak opioids</b> <b>G</b>enerics: <b>BE 80-125%</b> (narrow TI stricter); <b>Biosimilars: quality + clinical + immunogenicity</b> <b>D</b>evelopment cost: <b>$1-2B, 10-15y, 90% fail</b> (Phase II 30%, Phase III 50%) <b>E</b>fficacy endpoints: <b>Surrogate (Phase II) → Clinical (Phase III)</b> <b>V</b>igilance: <b>Yellow Card (UK), EudraVigilance (EU), FAERS (US), VigiBase (WHO)</b> <b>E</b>MA/PRIME/ILAP/Orphan: <b>Incentives for unmet need/rare diseases</b> <b>L</b>abeling: <b>SmPC (HCP), PIL (patient)</b>; Black triangle ▼ = report ALL ADRs (5y) <b>O</b>bligations: <b>PSUR 6m→ann→3y; RMP (PV + risk minimisation); PASS/PAES (mandated)</b> <b>P</b>harmacovigilance: <b>Signal detection (ROR/PRR/IC) → Validation → Risk minimisation</b> <b>M</b>edicines classification: <b>POM, P, GSL, CD</b> (Misuse of Drugs Act) <b>E</b>conomic: <b>NICE ICER £20-30k/QALY; SMC (Scotland), AWMSG (Wales)</b> <b>N</b>ew drug: <b>10-15y, $2B+, patent 20y from filing, data exclusivity 8+2+1y (EU)</b> <b>T</b>oxicity: <b>Sch 1 no medical use; Sch 2 highest control (CD register); Sch 3-5 descending</b> <b>R</b>isk management: <b>Routine (SmPC) + Additional (controlled access, pregnancy prevention, registry)</b> <b>E</b>xpedited: <b>Accelerated (surrogate), Breakthrough (prelim evidence), Fast Track (rolling), PRIME (EMA)</b> <b>G</b>uidelines: <b>ICH (E2D/E2E/E2F/M3/M4/M6/M7/M10), GCP, GMP, GLP</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Drug Development&lt;br&gt;&amp; Regulation)) Preclinical PK/PD/Tox Allometric scaling NOAEL → MRSD Clinical Phases I: Healthy, PK, MTD II: Patients, efficacy, dose III: Large RCT, confirm IV: Post-market, real-world Regulatory MHRA / EMA / FDA CTD (5 modules) Reliance pathways Pharmacovigilance Yellow Card / EudraVigilance 15-day serious ADR PSUR / RMP / PASS Signal detection Special Orphan / PRIME / ILAP Accelerated / Breakthrough Conditional MA Generics/Biosimilars Generic: BE 80-125% Biosimilar: quality + clinical Narrow TI exceptions UK Prescribing POM / P / GSL / CD Sch 2 = highest control NICE HTA: ICER £20-30k/QALY Black Triangle ▼ = report ALL ADRs (5y) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Clinical Trial Phases</td><td>3</td><td></td><td></td></tr><tr><td>Regulatory Pathways</td><td>2</td><td></td><td></td></tr><tr><td>Pharmacovigilance (Yellow Card, PSUR, RMP)</td><td>3</td><td></td><td></td></tr><tr><td>Signal Detection & Risk Minimisation</td><td>2</td><td></td><td></td></tr><tr><td>Generic vs Biosimilar</td><td>2</td><td></td><td></td></tr><tr><td>Orphan/Expedited Designations</td><td>2</td><td></td><td></td></tr><tr><td>NICE HTA</td><td>2</td><td></td><td></td></tr><tr><td>UK CD Schedules & Prescribing Law</td><td>2</td><td></td><td></td></tr><tr><td>Black Triangle</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the drug development process from discovery to post-marketing surveillance."</td><td>Preclinical → Phase I–IV; Regulatory (MHRA/EMA/FDA); CTD; Pharmacovigilance (Yellow Card, PSUR, RMP); Signal detection; Generics vs biosimilars; NICE HTA; CD schedules</td></tr><tr><td>**Short Note**</td><td>"Yellow Card scheme and black triangle monitoring."</td><td>Spontaneous reporting (HCP/patient); 15-day pharma reporting; ▼ drugs = report ALL ADRs for 5y; MHRA evaluates signals</td></tr><tr><td>**Viva**</td><td>"What is the difference between generic and biosimilar approval?"</td><td>Generic: BE 80-125% CI only. Biosimilar: comprehensive quality comparability + non-clinical + clinical PK/PD + confirmatory efficacy/safety + immunogenicity. Extrapolation with justification.</td></tr><tr><td>**Ward Round**</td><td>"Patient on new drug (▼) develops rash. Action?"</td><td>**Report via Yellow Card** (ALL suspected ADRs for ▼ drugs). Document fully. Review need for drug. Inform patient.</td></tr><tr><td>**Last-Night**</td><td>"Phases: I healthy PK, II dose/efficacy, III RCT confirm, IV post-market. Yellow Card 15d serious. Generic BE 80-125. Biosimilar quality+clinical. NICE £20-30k/QALY. CD Sch2 CD Rx+register. ▼=report all. RMP=PV+risk min."</td><td>Phases. Reporting. Generic vs biosimilar. NICE. CD. Black triangle. RMP.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Drug development</b>: Preclinical (3–6y) → <b>Phase I</b> (healthy, PK/safety/MTD) → <b>Phase II</b> (patients, efficacy/dose) → <b>Phase III</b> (large RCT, confirmatory) → <b>Phase IV</b> (post-marketing real-world)</li><li><b>Regulatory</b>: MHRA (UK), EMA (EU), FDA (US); <b>CTD</b> 5-module dossier; <b>Reliance pathways</b> post-Brexit</li><li><b>Pharmacovigilance</b>: <b>Yellow Card</b> (UK spontaneous reporting); <b>15-day</b> serious ADR reporting by pharma; <b>PSUR/PBRER</b> (cumulative benefit-risk); <b>RMP</b> (PV activities + risk minimisation); <b>Signal detection</b> → validation → risk minimisation</li><li><b>Generics</b>: <b>Bioequivalence</b> (90% CI 80–125%) only; <b>Narrow TI</b> = stricter; <b>Biosimilars</b>: Quality comparability + <b>clinical similarity + immunogenicity</b></li><li><b>Special designations</b>: <b>Orphan</b> (rare disease incentives); <b>PRIME/ILAP</b> (accelerated access); <b>Conditional MA</b> (unmet need, less data)</li><li><b>NICE HTA</b>: <b>ICER £20,000–£30,000/QALY</b>; mandatory funding if recommended</li><li><b>UK CD Schedules</b>: <b>Sch 2 = highest</b> (morphine, fentanyl, oxycodone — CD Rx, register, witnessed destruction); Sch 3–5 descending</li><li><b>Black Triangle (▼)</b>: <b>New drugs 5 years</b> → report <b>ALL suspected ADRs</b> (intensive monitoring)</li><li><b>Prescribing law</b>: POM/P/GSL/CD; Nurse/pharmacist independent prescribers for Sch 2–5</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Phase I clinical trial primary objective:</b></li></ol>
+<p>A. Confirm efficacy  B. <b>Safety, PK, MTD</b>  C. Dose-ranging  D. Long-term safety <i>Answer: B. Phase I = first-in-human, healthy volunteers, safety/PK/MTD.</i></p>
+<ol><li><b>Bioequivalence acceptance criteria for generic approval:</b></li></ol>
+<p>A. 70–130%  B. <b>80–125% (90% CI of geometric mean ratio)</b>  C. 75–133%  D. 90–110% <i>Answer: B. 90% CI of AUC and Cmax ratio within 80–125% (log-transformed).</i></p>
+<ol><li><b>Yellow Card reporting — who can report?</b></li></ol>
+<p>A. Doctors only  B. Doctors + pharmacists  C. <b>HCPs + patients + pharma</b>  D. Pharma only <i>Answer: C. Doctors, dentists, nurses, pharmacists, midwives, patients, carers, pharma companies.</i></p>
+<ol><li><b>Biosimilar vs generic — key difference:</b></li></ol>
+<p>A. Biosimilars cheaper  B. <b>Biosimilars require clinical data; generics only BE</b>  C. Generics for biologics  D. Same process <i>Answer: B. Generics = BE only (80–125%). Biosimilars = quality comparability + non-clinical + clinical PK/PD + efficacy/safety + immunogenicity.</i></p>
+<ol><li><b>NICE cost-effectiveness threshold (standard):</b></li></ol>
+<p>A. £10,000/QALY  B. <b>£20,000–£30,000/QALY</b>  C. £50,000/QALY  D. £100,000/QALY <i>Answer: B. £20,000–£30,000/QALY (end-of-life up to £50,000).</i></p>
+<ol><li><b>Controlled Drug Schedule 2 — example:</b></li></ol>
+<p>A. Tramadol  B. <b>Morphine</b>  C. Diazepam  D. Codeine linctus <i>Answer: B. Morphine, diamorphine, fentanyl, oxycodone, pethidine, methadone = Sch 2. Tramadol = Sch 3. Diazepam = Sch 4. Codeine low-dose = Sch 5.</i></p>
+<ol><li><b>PSUR submission frequency (first 2 years):</b></li></ol>
+<p>A. Annually  B. <b>6-monthly</b>  C. 3-yearly  D. Monthly <i>Answer: B. 6-monthly × 2 years, then annually up to 5 years, then 3-yearly.</i></p>
+<ol><li><b>Black triangle (▼) duration for new active substance:</b></li></ol>
+<p>A. 2 years  B. <b>5 years</b>  C. 10 years  D. Indefinite <i>Answer: B. ~5 years (or longer if safety concerns). Meaning: report ALL suspected ADRs.</i></p>
+<ol><li><b>Signal detection — common statistical method:</b></li></ol>
+<p>A. Chi-square  B. <b>Disproportionality analysis (ROR, PRR, IC)</b>  C. Linear regression  D. Kaplan-Meier <i>Answer: B. Disproportionality analysis (Reporting Odds Ratio, Proportional Reporting Ratio, Information Component).</i></p>
+<ol><li><b>Phase III trial typical size:</b></li></ol>
+<p>A. 20–100  B. 100–500  C. <b>300–3000+</b>  D. 10,000+ <i>Answer: C. Phase III = 300–3000+ patients, confirmatory RCT.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Pharma company receives report of serious unexpected ADR from clinical trial. Report to MHRA within?</b></li></ol>
+<p>A. 24 hours  B. 7 days  C. <b>15 calendar days</b>  D. 30 days <i>Answer: C. ICH E2D: 15 calendar days for serious unexpected ADRs.</i></p>
+<ol><li><b>NICE recommends a drug "only in research." What does this mean?</b></li></ol>
+<p>A. NHS must fund  B. <b>Not for routine use; only in clinical trials</b>  C. Fund via IFR only  D. Deferred decision <i>Answer: B. Not recommended for routine commissioning; only in clinical trials.</i></p>
+<ol><li><b>Generic warfarin — additional requirement beyond standard BE?</b></li></ol>
+<p>A. None  B. <b>Stricter BE limits / clinical data</b>  C. Different manufacturing  D. No generic allowed <i>Answer: B. Narrow TI drugs (warfarin, digoxin, lithium, phenytoin, carbamazepine, theophylline, ciclosporin, tacrolimus) — stricter BE / clinical data required.</i></p>
+<ol><li><b>Prescriber writes FP10 for morphine sulfate 10mg/5mL oral solution 100mL. Schedule?</b></li></ol>
+<p>A. Sch 3  B. <b>Sch 2</b>  C. Sch 4  D. Sch 5 <i>Answer: B. Morphine = Schedule 2. Requires FP10CD (CD prescription).</i></p>
+<ol><li><b>New biologic drug granted Conditional Marketing Authorisation (CMA). Obligation?</b></li></ol>
+<p>A. No further studies  B. <b>Complete ongoing/confirmatory studies (specific obligations)</b>  C. Price reduction  D. Post-market surveillance only <i>Answer: B. CMA = less comprehensive data for unmet need; <b>specific obligations</b> (usually confirmatory trial completion).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-C, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-C</td><td>1-C, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Medication Safety and Errors/ADR Classification]] — ADR types, causality, Yellow Card reporting</li><li>[[Medication Safety and Errors/Pharmacovigilance]] — Signal detection, PSUR, RMP</li><li>[[Drug Interactions]] — Interaction detection in Phase I/IV; post-marketing signal detection</li><li>[[Special Populations/Pregnancy and Lactation]] — Pregnancy exposure registries (RMP additional measures)</li><li>[[Special Populations/Paediatric Prescribing]] — Paediatric Investigation Plans (PIP) — EU requirement</li><li>[[Clinical Context/Antimicrobial Stewardship]] — Antibiotic development pathways, resistance monitoring</li><li>[[Therapeutic Drug Monitoring]] — PK in drug development (Phase I); TDM for narrow TI drugs</li><li>[[Polypharmacy and Deprescribing/Assessment Tools]] — Post-marketing safety in elderly (STOPP/START)</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Drug Development And Regulation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

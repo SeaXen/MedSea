@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antibacterial Agents Classification Mechanisms — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.2. ANTIMICROBIAL THERAPY</span>
+      <div class="h1">Antibacterial Agents Classification Mechanisms</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify antibacterials by mechanism of action</li><li>[ ] Know spectrum of activity for each class</li><li>[ ] Understand PK/PD principles and dosing</li><li>[ ] Identify major adverse effects and drug interactions</li><li>[ ] Apply to empiric and targeted therapy selection</li><li>[ ] Answer viva: "β-lactam classes", "Vancomycin PK/PD", "Aminoglycoside toxicity", "TMP-SMX mechanism"</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Bactericidal**</td><td>Kills bacteria at therapeutic concentrations (β-lactams, aminoglycosides, fluoroquinolones, glycopeptides, daptomycin, polymyxins)</td></tr><tr><td>**Bacteriostatic**</td><td>Inhibits growth (tetracyclines, macrolides, clindamycin, linezolid, TMP-SMX, chloramphenicol)</td></tr><tr><td>**Time-dependent killing**</td><td>Efficacy depends on %fT>MIC (β-lactams); dose by extended/continuous infusion</td></tr><tr><td>**Concentration-dependent killing**</td><td>Efficacy depends on Cmax/MIC (aminoglycosides, fluoroquinolones, daptomycin); dose by high single dose</td></tr><tr><td>**PAE**</td><td>Post-Antibiotic Effect: persistent suppression after brief exposure above MIC</td></tr><tr><td>**PBP**</td><td>Penicillin-Binding Protein (transpeptidase); β-lactam target</td></tr><tr><td>**β-lactamase**</td><td>Enzyme hydrolysing β-lactam ring; penicillin's main resistance mechanism</td></tr><tr><td>**ESBL**</td><td>Extended-Spectrum β-Lactamase: hydrolyses 3rd-gen cephalosporins; inhibited by clavulanate</td></tr><tr><td>**MRSA**</td><td>mecA → PBP2a (low β-lactam affinity); vancomycin/daptomycin/linezolid</td></tr><tr><td>**CRE**</td><td>Carbapenem-Resistant Enterobacterales: KPC, NDM, OXA-48, VIM, IMP</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Cell Wall Synthesis Inhibitors</div>
+<p>#### A. β-Lactams (Penicillins, Cephalosporins, Carbapenems, Monobactams)</p>
+<p><b>Mechanism:</b> Bind PBP (transpeptidase) → block peptidoglycan cross-linking → autolysin activation → cell lysis. All β-lactams have <b>allergy risk (~1-10%)</b> and are <b>time-dependent killers</b> (%fT&gt;MIC).</p>
+<p>##### Penicillins</p>
+<table class="ctable"><tr><th>Subclass</th><th>Examples</th><th>Spectrum</th><th>Key Uses</th></tr><tr><td>----------</td><td>----------</td><td>----------</td><td>----------</td></tr><tr><td>**Natural**</td><td>Penicillin G (IV), V (PO)</td><td>Streptococci, Treponema, Meningococcus (susceptible)</td><td>Syphilis, pharyngitis, rheumatic fever</td></tr><tr><td>**Antistaphylococcal**</td><td>Flucloxacillin, Dicloxacillin, Nafcillin, Oxacillin</td><td>MSSA (β-lactamase stable); not MRSA</td><td>Cellulitis, osteomyelitis, endocarditis (MSSA)</td></tr><tr><td>**Aminopenicillins**</td><td>Ampicillin, Amoxicillin</td><td>Adds Enterococcus, Listeria, some Enterobacteriaceae (E. coli)</td><td>UTI, endocarditis (Enterococcus), Listeria</td></tr><tr><td>**Aminopenicillin + BLI**</td><td>Amoxicillin-clavulanate, Ampicillin-sulbactam</td><td>Adds β-lactamase producers: H. influenzae, MSSA, anaerobes</td><td>Bites, intra-abdominal, sinusitis, otitis</td></tr><tr><td>**Anti-pseudomonal**</td><td>Piperacillin, Ticarcillin</td><td>Adds Pseudomonas, Enterobacteriaceae</td><td>HAP/VAP, intra-abdominal, neutropenic fever</td></tr><tr><td>**Anti-pseudomonal + BLI**</td><td>Piperacillin-tazobactam</td><td>Above + β-lactamase producers</td><td>Severe sepsis, HAP/VAP, intra-abdominal, neutropenic fever</td></tr></table>
+<p><b>Penicillin allergy cross-reactivity:</b> Cephalosporins ~1-2% (side-chain dependent); Carbapenems ~1%; <b>Aztreonam = NO cross-reactivity</b>.</p>
+<p>##### Cephalosporins (Generations)</p>
+<table class="ctable"><tr><th>Gen</th><th>Examples</th><th>Spectrum</th><th>Key Uses</th></tr><tr><td>-----</td><td>----------</td><td>----------</td><td>----------</td></tr><tr><td>**1st**</td><td>Cefazolin, Cephalexin, Cefadroxil</td><td>Gram+ cocci, some E. coli, Klebsiella</td><td>SSTI, surgical prophylaxis, UTI. Cefazolin = preferred prophylaxis</td></tr><tr><td>**2nd**</td><td>Cefuroxime, Cefaclor, Cefprozil</td><td>+ H. influenzae, M. catarrhalis</td><td>RTI, UTI. Cephamycins (cefoxitin) = anaerobes</td></tr><tr><td>**3rd**</td><td>Ceftriaxone (IV), Cefotaxime (IV), Cefixime (PO), Ceftazidime (IV)</td><td>Enterobacteriaceae; ceftazidime = Pseudomonas</td><td>CAP, meningitis, pyelonephritis, gonorrhoea</td></tr><tr><td>**4th**</td><td>Cefepime</td><td>Broad Gram+/- (incl. Pseudomonas), AmpC stable</td><td>HAP/VAP, febrile neutropenia, severe sepsis</td></tr><tr><td>**5th**</td><td>Ceftaroline, Ceftobiprole</td><td>MRSA + broad Gram+/- (incl. Pseudomonas)</td><td>Complicated SSTI, CAP (ceftaroline)</td></tr></table>
+<p>##### Carbapenems</p>
+<table class="ctable"><tr><th>Drug</th><th>Spectrum</th><th>Notes</th></tr><tr><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Imipenem-cilastatin**</td><td>Broadest; Pseudomonas, ESBL, anaerobes</td><td>Cilastatin = renal DHP-I inhibitor; seizure risk (avoid CNS)</td></tr><tr><td>**Meropenem**</td><td>Same; better CNS penetration</td><td>Preferred in meningitis/ICU</td></tr><tr><td>**Ertapenem**</td><td>Broad but **NO Pseudomonas/Acinetobacter/Stenotrophomonas**</td><td>Once-daily; outpatient, intra-abdominal, UTI</td></tr><tr><td>**Doripenem**</td><td>Similar to meropenem</td><td>Withdrawn in some regions</td></tr></table>
+<p>##### Monobactams</p>
+<ul><li><b>Aztreonam</b>: Gram- ONLY (incl. Pseudomonas); NO Gram+/anaerobes; <b>safe in penicillin allergy</b> (no cross-reactivity); used as alternative for Gram- in β-lactam allergy</li></ul>
+<p>##### β-Lactamase Inhibitors (BLI)</p>
+<table class="ctable"><tr><th>BLI</th><th>Combined With</th><th>Spectrum Added</th><th>Notes</th></tr><tr><td>-----</td><td>---------------</td><td>----------------</td><td>-------</td></tr><tr><td>**Clavulanic acid**</td><td>Amoxicillin, Ticarcillin</td><td>MSSA, H. influenzae, anaerobes</td><td>GI side effects, hepatic cholestasis</td></tr><tr><td>**Tazobactam**</td><td>Piperacillin</td><td>Above + ESBL (variable)</td><td>Broader than clavulanate</td></tr><tr><td>**Sulbactam**</td><td>Ampicillin</td><td>Similar to clavulanate</td><td>High-dose = Acinetobacter</td></tr><tr><td>**Avibactam**</td><td>Ceftazidime</td><td>ESBL, KPC, OXA-48 (NOT NDM/VIM)</td><td>MDR Gram- salvage</td></tr><tr><td>**Vaborbactam**</td><td>Meropenem</td><td>KPC (NOT NDM/OXA-48)</td><td>CRE salvage</td></tr><tr><td>**Relebactam**</td><td>Imipenem</td><td>KPC (NOT NDM/OXA-48)</td><td>+ Pseudomonas</td></tr><tr><td>**Enmetazobactam**</td><td>Cefepime</td><td>ESBL (NOT AmpC/CPE)</td><td>Newer</td></tr></table>
+<p>#### B. Glycopeptides &amp; Lipoglycopeptides</p>
+<table class="ctable"><tr><th>Drug</th><th>Spectrum</th><th>Mechanism</th><th>Notes</th></tr><tr><td>------</td><td>----------</td><td>-----------</td><td>-------</td></tr><tr><td>**Vancomycin**</td><td>Gram+ only (incl. MRSA, C. difficile PO)</td><td>Binds D-Ala-D-Ala → block transpeptidation</td><td>AUC/MIC 400-600; trough 15-20 mg/L; nephrotoxicity</td></tr><tr><td>**Teicoplanin**</td><td>Similar to vancomycin</td><td>Same</td><td>Less nephrotoxic; once-daily; not in US</td></tr><tr><td>**Telavancin**</td><td>MRSA, VISA, hVISA, daptomycin-R</td><td>Dual: D-Ala-D-Ala + membrane</td><td>Nephrotoxicity, QTc; black box: mortality</td></tr><tr><td>**Dalbavancin**</td><td>Same</td><td>Same</td><td>Once-weekly IV (long half-life); SSTI</td></tr><tr><td>**Oritavancin**</td><td>Same</td><td>Same</td><td>Single-dose IV (long half-life); SSTI</td></tr><tr><td>**Daptomycin**</td><td>MRSA, VRE (D-Ala-D-Lac)</td><td>Ca²⁺-dependent membrane insertion → depolarisation</td><td>**Inactivated by pulmonary surfactant (NOT pneumonia)**; CPK monitoring</td></tr></table>
+<p>#### C. Other Cell Wall Agents</p>
+<ul><li><b>Fosfomycin</b>: Inhibits MurA (early peptidoglycan synthesis); broad (E. coli, Enterococcus, Pseudomonas); single-dose cystitis; IV for MDR</li><li><b>Cycloserine</b>: Inhibits D-Ala-D-Ala ligase; 2nd-line TB; CNS toxicity</li><li><b>Bacitracin</b>: Blocks peptidoglycan recycling; topical (Gram+ skin/eye)</li></ul>
+<div class="sub-h">Section 2: Protein Synthesis Inhibitors</div>
+<p>#### A. Aminoglycosides (30S) — Gentamicin, Tobramycin, Amikacin, Plazomicin</p>
+<p><b>Spectrum:</b> Gram- (incl. Pseudomonas); amikacin most resistant to modifying enzymes <b>PK/PD:</b> Cmax/MIC &gt;8-10 (concentration-dependent); <b>once-daily extended-interval (Hartford)</b> <b>Toxicity:</b> <b>Nephrotoxicity (reversible ATN)</b>, <b>ototoxicity (irreversible, vestibular &gt; cochlear)</b>, neuromuscular blockade <b>Avoid with:</b> Loop diuretics, amphotericin B, vancomycin, contrast → nephrotoxicity <b>TDM:</b> Cmax (peak) and trough; once-daily: trough &lt;1 mg/L gentamicin</p>
+<p>#### B. Tetracyclines (30S)</p>
+<table class="ctable"><tr><th>Drug</th><th>Spectrum</th><th>Notes</th></tr><tr><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Doxycycline**</td><td>Broad; CAP, Lyme, malaria, rickettsial, anthrax, plague</td><td>100mg BD; safe in renal; photosensitivity</td></tr><tr><td>**Tigecycline**</td><td>Broad (MRSA, VRE, ESBL); **NOT Pseudomonas/Proteus**</td><td>**Black box: mortality**; pancreatitis; reserve MDR</td></tr><tr><td>**Eravacycline/Omadacycline**</td><td>Similar to tigecycline</td><td>cIAI, CAP</td></tr></table>
+<p><b>Mechanism:</b> Bind 30S → block tRNA entry; <b>avoid in pregnancy, &lt;8 years (teeth/bone)</b>; chelate with Ca²⁺/Fe²⁺</p>
+<p>#### C. Macrolides (50S, 23S rRNA) — Erythromycin, Clarithromycin, Azithromycin, Fidaxomicin</p>
+<p><b>Spectrum:</b> Gram+ (Strep, MSSA), atypicals (M. pneumoniae, C. pneumoniae, Legionella), Bordetella, Chlamydia, MAC, H. pylori <b>Mechanism:</b> Block 50S translocation; <b>MLS cross-resistance</b> (erm methylation) <b>Adverse:</b> GI (erythromycin), QTc, CYP3A4 inhibition (erythro &gt; clarithro); <b>azithromycin safest</b></p>
+<p>#### D. Lincosamides — Clindamycin</p>
+<p>Gram+ (MSSA &gt; MRSA), anaerobes; <b>highest CDI risk</b>; toxin suppression (Strep TSS, C. perfringens); bone/abscess penetration; cross-resistance with macrolides</p>
+<p>#### E. Oxazolidinones (50S) — Linezolid, Tedizolid</p>
+<p><b>Spectrum:</b> Gram+ (MRSA, VRE) <b>Linezolid adverse:</b> <b>Thrombocytopenia (week 2+)</b>, <b>serotonin syndrome</b> with SSRIs/MAOIs, optic/peripheral neuropathy (&gt;28d), lactic acidosis; weak MAOI <b>Bacteriostatic</b> against Staph and Enterococcus</p>
+<p>#### F. Other Protein Synthesis Inhibitors</p>
+<ul><li><b>Chloramphenicol</b>: 50S peptidyl transferase; broad but <b>aplastic anaemia (rare), grey baby syndrome</b>; reserve for severe (meningitis, typhoid, RMSF)</li><li><b>Streptogramins (Quinupristin-Dalfopristin)</b>: VRE faecium (NOT faecalis); myalgia, CYP3A4 inhibitor</li></ul>
+<div class="sub-h">Section 3: DNA Synthesis Inhibitors — Fluoroquinolones</div>
+<table class="ctable"><tr><th>Gen</th><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr><tr><td>-----</td><td>----------</td><td>----------</td><td>-----------</td></tr><tr><td>**1st**</td><td>Nalidixic acid</td><td>Gram- (UTI only)</td><td>No systemic use</td></tr><tr><td>**2nd**</td><td>Ciprofloxacin, Ofloxacin</td><td>Gram- (incl. Pseudomonas); some atypicals</td><td>Cipro = Pseudomonas; anthrax, plague</td></tr><tr><td>**3rd**</td><td>Levofloxacin</td><td>+ Gram+ (pneumococcus), atypicals</td><td>Once-daily; CAP</td></tr><tr><td>**4th**</td><td>Moxifloxacin, Gemifloxacin</td><td>+ anaerobes; pneumococcus; atypicals</td><td>Moxi: NO urinary concentration (avoid UTI); QTc</td></tr></table>
+<p><b>Mechanism:</b> Inhibit DNA gyrase (Gram-) and Topoisomerase IV (Gram+)</p>
+<p><b>Adverse Effects:</b></p>
+<ul><li><b>Tendonitis/rupture</b> (esp. Achilles), especially with steroids, age &gt;60, transplant</li><li><b>QTc prolongation</b> (moxi, levo)</li><li><b>CNS effects</b> (seizures, confusion, psychosis)</li><li><b>Peripheral neuropathy</b> (irreversible)</li><li><b>Aortic aneurysm/dissection</b> (FDA warning)</li><li><b>Dysglycaemia</b> (elderly, diabetics)</li><li><b>Cartilage damage</b> (animal data, avoid pregnancy/children)</li></ul>
+<p><b>Avoid:</b> Pregnancy, &lt;18 years, epilepsy, myasthenia, concurrent QTc-prolonging drugs, divalent cations (separate by 2-4h)</p>
+<p><b>Resistance:</b> GyrA/ParC mutations (chromosomal); efflux (MexAB in Pseudomonas); PMQR (plasmid-mediated qnr, aac(6')-Ib-cr)</p>
+<div class="sub-h">Section 4: Folate Synthesis Inhibitors — TMP-SMX</div>
+<p><b>Mechanism:</b> <b>Sequential blockade</b> — SMX inhibits dihydropteroate synthase (DHPS); TMP inhibits dihydrofolate reductase (DHFR); synergistic</p>
+<p><b>Spectrum:</b> S. aureus (MSSA), S. pneumoniae (susceptible), H. influenzae, Enterobacteriaceae (E. coli, Klebsiella, Proteus, Enterobacter, Salmonella, Shigella, Citrobacter, Morganella), Stenotrophomonas, Burkholderia, Nocardia, Pneumocystis, Toxoplasma, Cyclospora, Isospora, Cycloserine</p>
+<p><b>Adverse:</b> <b>Hyperkalaemia</b> (TMP = K⁺-sparing), renal dysfunction (TMP inhibits tubular creatinine secretion → false ↑ Cr), BM suppression, <b>SJS/TEN</b>, photosensitivity, sulfa allergy; folinic acid if prolonged</p>
+<p><b>Uses:</b> UTI, PCP (tx 15-20 mg/kg/d TMP; prophy 80/400 or 160/800), Nocardia, Stenotrophomonas, MRSA SSTI (alternative), traveller's diarrhoea, Cyclospora, Isospora, toxoplasmosis (with pyrimethamine + folinic acid)</p>
+<p><b>Pregnancy:</b> Avoid 3rd trimester (kernicterus); folate antagonist — give folinic acid</p>
+<div class="sub-h">Section 5: Cell Membrane Disruptors</div>
+<p>#### A. Daptomycin</p>
+<p>Ca²⁺-dependent insertion into membrane → depolarisation → K⁺ efflux → cell death <b>Spectrum:</b> Gram+ (MRSA, VRE, daptomycin-R, hVISA) <b>Adverse:</b> <b>CPK elevation → rhabdomyolysis</b> (CPK weekly); eosinophilic pneumonia <b>Avoid:</b> Pneumonia (inactivated by pulmonary surfactant) <b>Dose:</b> 4-6 mg/kg SSTI; 8-10 mg/kg bacteremia/endocarditis (TBW)</p>
+<p>#### B. Polymyxins — Colistin (Polymyxin E), Polymyxin B</p>
+<p><b>Mechanism:</b> Cationic detergent → disrupt outer membrane (LPS) + cytoplasmic membrane <b>Spectrum:</b> MDR Gram- (Pseudomonas, Acinetobacter, Klebsiella, E. coli); <b>last resort</b> <b>Adverse:</b> <b>Nephrotoxicity (50%+)</b>, neurotoxicity (paraesthesia, weakness); nephrotoxic dose-dependent <b>Dosing:</b> Colistin = prodrug (colistimethate); use IBW; loading dose recommended; <b>daptomycin + colistin can antagonise</b>; consider inhaled for respiratory</p>
+<div class="sub-h">Section 6: Other Agents</div>
+<ul><li><b>Nitrofurantoin</b>: Multiple mechanisms; <b>uncomplicated cystitis only</b> (poor systemic absorption); avoid in pregnancy near term, CrCl &lt;30 (subtherapeutic)</li><li><b>Metronidazole</b>: DNA damage via radicals; <b>anaerobes + protozoa</b> (Giardia, Amoeba, Trichomonas, C. difficile); alcohol (disulfiram-like); peripheral neuropathy (prolonged)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>First-Line Empiric</th></tr><tr><td>----------</td><td>-------------------</td></tr><tr><td>**CAP outpatient**</td><td>Amoxicillin OR Doxycycline OR Macrolide</td></tr><tr><td>**CAP severe (ICU)**</td><td>Ceftriaxone + Azithromycin OR Respiratory FQ</td></tr><tr><td>**HAP/VAP (no MRSA)**</td><td>Pip-tazo OR Cefepime OR Meropenem</td></tr><tr><td>**HAP/VAP (MRSA risk)**</td><td>Above + Vancomycin (AUC) OR Linezolid</td></tr><tr><td>**Meningitis adult**</td><td>Ceftriaxone + Vancomycin (± Ampicillin if Listeria)</td></tr><tr><td>**Meningitis neonate**</td><td>Ampicillin + Cefotaxime ± Gentamicin</td></tr><tr><td>**Cystitis**</td><td>Nitrofurantoin OR TMP-SMX OR Fosfomycin</td></tr><tr><td>**Pyelonephritis**</td><td>Ceftriaxone OR Ciprofloxacin</td></tr><tr><td>**Intra-abdominal**</td><td>Pip-tazo OR Ceftriaxone + Metronidazole OR Carbapenem</td></tr><tr><td>**SSTI (cellulitis)**</td><td>Flucloxacillin OR Cefazolin; MRSA → Vancomycin/Linezolid</td></tr><tr><td>**Sepsis unknown**</td><td>Pip-tazo + Vancomycin ± Gentamicin</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must know:</b> All classes with mechanisms/spectrum/PK-PD/toxicity; β-lactam allergy cross-reactivity (aztreonam safe); Cephalosporin generations; Carbapenem spectrum (ertapenem NO Pseudomonas); Daptomycin NOT for pneumonia; Vancomycin AUC 400-600; Aminoglycoside once-daily + nephro/ototoxicity; Linezolid myelosuppression/serotonin syndrome; Fluoroquinolone tendon rupture/QTc; TMP-SMX mechanism + uses - <b>Common viva:</b> "Why doesn't vancomycin work on Gram-?", "Cephalosporin 5th gen covers MRSA — name one", "Daptomycin not for pneumonia — why?", "Ertapenem vs meropenem difference", "Why do once-daily aminoglycosides have less toxicity?" - <b>Exam trap:</b> Ertapenem = NO Pseudomonas; Aztreonam = Gram- only, safe in penicillin allergy; Cefazolin = 1st gen, preferred for prophylaxis; Tigecycline = NO Pseudomonas, mortality signal; Colistin nephrotoxic</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>β-lactam classes:</b> <b>"Pen Ceph Carb Mono"</b> = Penicillins, Cephalosporins, Carbapenems, Monobactams</li><li><b>Carbapenems (Pseudomonas vs not):</b> <b>"Imi-Mer-Dori"</b> = Pseudomonas; <b>"Ertapenem"</b> = No Pseudomonas</li><li><b>5th gen cephalosporins cover MRSA:</b> <b>"Ceftaroline, Ceftobiprole"</b> = MRSA β-lactams</li><li><b>Daptomycin not for pneumonia:</b> <b>"Surfactant Sinks"</b> = Pulmonary surfactant inactivates daptomycin</li><li><b>Aminoglycoside toxicity:</b> <b>"Aminos Are A</b>udible<b> (ototoxic) and Make </b>A**zotemia (nephrotoxic)"</li><li><b>TMP-SMX uses:</b> <b>"UTI-PCP-Nocard-Stenotropho-Cyclospora-Toxoplasma"</b></li><li><b>Linezolid AE:</b> <b>"TSS-NLSS"</b> = Thrombocytopenia, Serotonin, SJS, Neuropathy, Lactic acidosis</li><li><b>Fluoroquinolone AE:</b> <b>"TQT-CNS-TA"</b> = Tendon, QT, CNS, Aortic dissection</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Antibacterials)) Cell_Wall Beta_Lactams Penicillins Cephalosporins_1to5 Carbapenems Monobactam_Aztreonam BLI_combos Glycopeptides Vancomycin Teicoplanin Lipoglycopeptides Daptomycin Fosfomycin Protein_Synthesis Aminoglycosides_30S Tetracyclines_30S Macrolides_50S Lincosamides_50S Oxazolidinones_50S Chloramphenicol_50S DNA_Synthesis Fluoroquinolones Gyrase_Topo_IV Folate_Synthesis TMP_SMX Cell_Membrane Daptomycin Polymyxins </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>β-lactam classes + spectrum (penicillins, cephalosporins, carbapenems, monobactams)</li><li>5th gen cephalosporins covering MRSA (ceftaroline, ceftobiprole)</li><li>Aztreonam = safe in penicillin allergy (Gram- only)</li><li>Ertapenem = NO Pseudomonas</li><li>Vancomycin PK/PD (AUC 400-600) + toxicity (nephro, red man)</li><li>Aminoglycoside once-daily + toxicity (nephro/oto)</li><li>Daptomycin not for pneumonia (surfactant)</li><li>Tigecycline NO Pseudomonas, mortality signal</li><li>TMP-SMX mechanism (sequential blockade) + key uses</li><li>Linezolid AE (thrombocytopenia, serotonin)</li><li>Fluoroquinolone AE (tendon, QTc, aortic)</li><li>Polymyxin = last resort, nephrotoxic</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>All classes, spectrum, mechanisms, PK/PD, major adverse effects, key resistance mechanisms, empiric choices</td></tr><tr><td>**Should Know 🟡**</td><td>Detailed pharmacokinetics, drug interactions, special populations, newer agents (ceftolozane-tazobactam, cefiderocol, eravacycline, omadacycline)</td></tr><tr><td>**Nice to Know 🟢**</td><td>PK/PD modelling, breakpoint evolution, combination therapy rationale, novel targets (LpxC, FabI, MraY)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add personal weak areas after self-testing</i></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Structure: Classification by mechanism → Cell wall (β-lactams, glycopeptides) → Protein synthesis (50S, 30S) → DNA (FQ) → Folate (TMP-SMX) → Membrane (daptomycin, polymyxins) → Cross-cutting concepts (PK/PD, allergy, monitoring)</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet: Cephalosporin generations + 1 representative each; Carbapenem spectrum; Daptomycin not for pneumonia; Aminoglycoside toxicity; Linezolid AE; Fluoroquinolone AE; TMP-SMX mechanism + uses</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>Lead with mechanism, give 1-2 examples, mention exam trap</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to patient: "CAP → ceftriaxone + azithromycin; HAP/VAP → pip-tazo + vancomycin; UTI → nitrofurantoin; SSTI → flucloxacillin; switch to oral when stable"</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>Carbapenems: Imi-Mer-Dori = Pseudo; Ertapenem = No Pseudo</li><li>Daptomycin = NOT pneumonia (surfactant)</li><li>Vancomycin = AUC 400-600, not 15-20 trough</li><li>Aminoglycoside = once-daily, nephro/oto</li><li>Linezolid = thrombocytopenia + serotonin</li><li>TMP-SMX = DHFR + DHPS, sequential blockade</li><li>Fluoroquinolones = tendon, QTc, aortic</li><li>Polymyxin = last resort, nephrotoxic</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Cephalosporin with best anti-pseudomonal activity in 4th generation:</b></li></ol>
+<p>A. Ceftriaxone B. Cefotaxime C. Cefepime D. Cefuroxime E. Cefazolin</p>
+<ol><li><b>Carbapenem that does NOT cover Pseudomonas:</b></li></ol>
+<p>A. Imipenem B. Meropenem C. Ertapenem D. Doripenem E. None of the above</p>
+<ol><li><b>Vancomycin PK/PD target (current guideline):</b></li></ol>
+<p>A. Trough 5-10 mg/L B. Trough 15-20 mg/L C. AUC/MIC 400-600 D. Cmax/MIC &gt;8 E. Trough 20-30 mg/L</p>
+<ol><li><b>Aminoglycoside once-daily dosing rationale:</b></li></ol>
+<p>A. Better tissue penetration B. Higher Cmax/MIC + less nephrotoxicity C. Less ototoxicity D. Better oral bioavailability E. Less drug interaction</p>
+<ol><li><b>Fluoroquinolone with best anti-pneumococcal activity (4th gen):</b></li></ol>
+<p>A. Ciprofloxacin B. Levofloxacin C. Moxifloxacin D. Ofloxacin E. Norfloxacin</p>
+<ol><li><b>Linezolid major adverse effects include:</b></li></ol>
+<p>A. QTc prolongation, hepatotoxicity B. Thrombocytopenia, serotonin syndrome C. Nephrotoxicity, ototoxicity D. Tendon rupture, dysglycaemia E. Hyperkalaemia, kernicterus</p>
+<ol><li><b>TMP-SMX mechanism:</b></li></ol>
+<p>A. DNA gyrase inhibition B. Dihydrofolate reductase + dihydropteroate synthase C. 30S + 50S ribosomal subunits D. Cell wall synthesis E. Membrane disruption</p>
+<ol><li><b>Daptomycin is inactivated by pulmonary surfactant — therefore it is NOT used for:</b></li></ol>
+<p>A. Endocarditis B. Bacteraemia C. Pneumonia D. SSTI E. Osteomyelitis</p>
+<ol><li><b>Polymyxin (colistin) primary toxicity:</b></li></ol>
+<p>A. Hepatotoxicity B. Nephrotoxicity C. Ototoxicity D. QTc prolongation E. Tendonitis</p>
+<ol><li><b>β-lactam/β-lactamase inhibitor covering KPC and OXA-48 (not NDM):</b></li></ol>
+<p>A. Piperacillin-tazobactam B. Ceftolozane-tazobactam C. Ceftazidime-avibactam D. Meropenem-vaborbactam E. Imipenem-relebactam</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 70-year-old man with healthcare-associated pneumonia has renal failure (CrCl 25). Best empiric anti-pseudomonal option with renal dose adjustment:</b></li></ol>
+<p>A. Ciprofloxacin 750mg BD B. Piperacillin-tazobactam 4.5g q8h (extended infusion) C. Meropenem 2g q8h D. Gentamicin 7mg/kg once daily E. Colistin 4.5 MU q12h</p>
+<ol><li><b>A patient on vancomycin (AUC 750) shows nephrotoxicity. The vancomycin AUC target per IDSA 2020 guidelines is:</b></li></ol>
+<p>A. 200-400 B. 400-600 C. 600-800 D. 800-1000 E. 1000-1200</p>
+<ol><li><b>A 25-year-old woman on SSRIs develops MRSA bacteraemia. Which agent is contraindicated due to serotonin syndrome risk?</b></li></ol>
+<p>A. Vancomycin B. Daptomycin C. Linezolid D. Teicoplanin E. Ceftaroline</p>
+<ol><li><b>A 60-year-old diabetic patient with CAP, normal renal function. Which 4th-generation fluoroquinolone provides best pneumococcal + anaerobe coverage?</b></li></ol>
+<p>A. Ciprofloxacin B. Levofloxacin C. Moxifloxacin D. Ofloxacin E. Norfloxacin</p>
+<ol><li><b>Patient with Gram-negative bacteraemia, β-lactam allergic, requires Pseudomonas coverage. Best alternative:</b></li></ol>
+<p>A. Meropenem B. Cefepime C. Aztreonam D. Vancomycin E. Daptomycin</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>Carbapenem NOT covering Pseudomonas?</b></li></ul>
+<p>A: Ertapenem (also Acinetobacter, Stenotrophomonas)</p>
+<ul><li>Q: <b>5th gen cephalosporin covering MRSA?</b></li></ul>
+<p>A: Ceftaroline, Ceftobiprole</p>
+<ul><li>Q: <b>Aztreonam spectrum?</b></li></ul>
+<p>A: Gram-negative only (incl. Pseudomonas); safe in penicillin allergy</p>
+<ul><li>Q: <b>Vancomycin AUC target?</b></li></ul>
+<p>A: 400-600 mg·h/L</p>
+<ul><li>Q: <b>Aminoglycoside monitoring?</b></li></ul>
+<p>A: Cmax and trough; once-daily: trough &lt;1 mg/L</p>
+<ul><li>Q: <b>Daptomycin not for pneumonia — why?</b></li></ul>
+<p>A: Inactivated by pulmonary surfactant</p>
+<ul><li>Q: <b>Tigecycline NOT covering?</b></li></ul>
+<p>A: Pseudomonas, Proteus, Providencia</p>
+<ul><li>Q: <b>Tetracycline contraindication?</b></li></ul>
+<p>A: Pregnancy, &lt;8 years (teeth, bone)</p>
+<ul><li>Q: <b>Linezolid MAJOR adverse?</b></li></ul>
+<p>A: Thrombocytopenia (week 2+), serotonin syndrome (SSRIs)</p>
+<ul><li>Q: <b>Fluoroquinolone tendon risk?</b></li></ul>
+<p>A: Achilles tendon rupture, esp. with steroids, age &gt;60</p>
+<ul><li>Q: <b>TMP-SMX uses?</b></li></ul>
+<p>A: UTI, PCP, Nocardia, Stenotrophomonas, Cyclospora, Toxoplasma</p>
+<ul><li>Q: <b>Polymyxin B toxicity?</b></li></ul>
+<p>A: Nephrotoxicity (50%+)</p>
+<ul><li>Q: <b>Metronidazole spectrum?</b></li></ul>
+<p>A: Anaerobes + protozoa (Giardia, Amoeba, Trichomonas)</p>
+<ul><li>Q: <b>Cephalosporin 1st gen prophylactic?</b></li></ul>
+<p>A: Cefazolin (most used for surgical prophylaxis)</p>
+<ul><li>Q: <b>Ertapenem vs Meropenem?</b></li></ul>
+<p>A: Ertapenem = NO Pseudomonas/Acineto/Steno; once-daily</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — Cefepime is 4th gen, anti-pseudomonal, broad Gram+/-. Ceftriaxone/cefotaxime = 3rd gen (no pseudomonal). Cefuroxime = 2nd gen. Cefazolin = 1st gen.</li><li><b>C</b> — Ertapenem = NO Pseudomonas (also no Acinetobacter, no Stenotrophomonas). Imi/Mero/Doripenem cover Pseudomonas.</li><li><b>C</b> — IDSA 2020: AUC/MIC 400-600 (Bayesian). Trough 15-20 outdated. Trough 5-10 inadequate. Trough 20-30 nephrotoxic.</li><li><b>B</b> — Once-daily = higher Cmax/MIC + PAE + less renal cortical accumulation = LESS nephrotoxicity.</li><li><b>C</b> — Moxifloxacin = 4th gen = best pneumococcal + anaerobes. No UTI use (poor urinary).</li><li><b>B</b> — Linezolid = thrombocytopenia (week 2+), serotonin syndrome (SSRIs), optic neuropathy, lactic acidosis. NOT QTc, NOT nephro/oto, NOT tendon.</li><li><b>B</b> — TMP-SMX = sequential blockade of folate synthesis. TMP = DHFR, SMX = DHPS.</li><li><b>C</b> — Daptomycin = inactivated by pulmonary surfactant → NOT for pneumonia.</li><li><b>B</b> — Polymyxin = nephrotoxicity (50%+). Neurotoxicity also. Not hepatotoxic.</li><li><b>C</b> — Ceftazidime-avibactam covers KPC + OXA-48 (NOT NDM = metallo). Pip-tazo (A) = no KPC/OXA-48. Meropenem-vaborbactam = KPC only. Imipenem-relebactam = KPC + Pseudomonas.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Pip-tazo 4.5g q8h extended infusion (3-4h) = anti-pseudomonal, time-dependent, with renal adjustment. Mero (C) 2g q8h = full dose, less renal adjustment needed. Gent (D) nephrotoxic. Cipro (A) monotherapy inadequate for severe HAP.</li><li><b>B</b> — IDSA 2020: AUC 400-600. AUC &gt;650 = nephrotoxicity risk.</li><li><b>C</b> — Linezolid = weak MAOI + serotonin syndrome with SSRIs/SNRIs/MAOIs.</li><li><b>C</b> — Moxifloxacin = 4th gen, best pneumococcal + anaerobic. Levofloxacin = 3rd gen (less pneumococcal). Cipro = 2nd gen (no pneumococcal).</li><li><b>C</b> — Aztreonam = Gram- (incl. Pseudomonas), safe in penicillin allergy. Meropenem/Cefepime = β-lactam cross-reactivity possible.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Antibacterial Agents: Classification &amp; Mechanisms</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Antibacterials target 5 bacterial processes (wall, 30S, 50S, DNA, folate, membrane). β-lactams = time-dependent, AUC target for vancomycin, Cmax target for aminoglycosides, daptomycin not for pneumonia, polymyxin as last resort. Knowing spectrum and toxicity is exam-critical. <b>Exam focus:</b> β-lactam allergy (aztreonam safe), cephalosporin generations, carbapenem spectrum (ertapenem no pseudomonas), daptomycin ≠ pneumonia, vancomycin AUC 400-600, linezolid AE, fluoroquinolone AE, TMP-SMX mechanism. <b>Clinical relevance:</b> Empiric regimen selection, dose adjustment, allergy de-labelling, IV-to-oral switch, TDM.</p>
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antibacterial Agents Classification Mechanisms · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

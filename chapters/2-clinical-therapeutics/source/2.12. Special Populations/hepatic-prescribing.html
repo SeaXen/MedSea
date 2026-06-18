@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatic Prescribing — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.12. SPECIAL POPULATIONS</span>
+      <div class="h1">Hepatic Prescribing</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify hepatic impairment: <b>Child-Pugh A/B/C</b> and <b>MELD</b> — interpretation and prescribing relevance</li><li>[ ] Understand <b>PK changes</b> in cirrhosis: ↓ first-pass, ↓ clearance, ↓ protein binding, ↑ Vd, portosystemic shunting</li><li>[ ] Apply <b>dose adjustment principles</b>: avoid, reduce dose, extend interval, monitor TDM</li><li>[ ] Identify <b>hepatotoxic drugs</b> (intrinsic vs idiosyncratic) and <b>drug-induced liver injury (DILI)</b> patterns</li><li>[ ] Know <b>contraindicated/avoid drugs</b> in cirrhosis: NSAIDs, sedatives, metformin (lactic acidosis), certain antibiotics</li><li>[ ] Apply <b>specific dosing</b> for common drugs: antibiotics, anticoagulants, analgesics, antidiabetics, cardiovascular</li><li>[ ] Answer viva: "How does cirrhosis change drug metabolism?" and "Dose adjustment for [drug] in Child-Pugh B/C"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: PK Changes in Liver Disease</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Cirrhosis / Liver Disease] --&gt; B[Architectural Distortion&lt;br&gt;↓ Hepatocyte mass&lt;br&gt;Portosystemic shunting] B --&gt; C1[↓ FIRST-PASS METABOLISM&lt;br&gt;↑ Bioavailability (oral)&lt;br&gt;High extraction drugs: propranolol, morphine, nitrates, verapamil] B --&gt; C2[↓ HEPATIC CLEARANCE&lt;br&gt;↓ CYP450 (1A2, 2C9, 2C19, 3A4)&lt;br&gt;↓ Phase II (UGT, SULT, GST)&lt;br&gt;Low extraction drugs: warfarin, phenytoin, theophylline] B --&gt; C3[↓ PROTEIN SYNTHESIS&lt;br&gt;↓ Albumin → ↑ Free fraction (acidic drugs: warfarin, phenytoin, valproate)&lt;br&gt;↓ α1-AGP → ↑ Free fraction (basic drugs: lidocaine, propranolol)] B --&gt; C4[↑ VOLUME OF DISTRIBUTION&lt;br&gt;Ascites, oedema → ↑ Vd (hydrophilic drugs: aminoglycosides, digoxin)&lt;br&gt;↓ Albumin → ↑ Vd (protein-bound drugs)] B --&gt; C5[RENAL IMPAIRMENT (HRS)&lt;br&gt;↓ GFR → ↓ Renal clearance&lt;br&gt;Combined hepatorenal dosing needed]</p>
+<p>C1 --&gt; D[CLINICAL EFFECT: ↑ Drug levels, ↑ toxicity risk] C2 --&gt; D C3 --&gt; D C4 --&gt; D C5 --&gt; D ```</p>
+<div class="sub-h">Child-Pugh Classification (Prescribing Relevance)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Points 1</th><th>Points 2</th><th>Points 3</th></tr><tr><td>-----------</td><td>----------</td><td>----------</td><td>----------</td></tr><tr><td>**Bilirubin (μmol/L)**</td><td><34</td><td>34–50</td><td>>50</td></tr><tr><td>**Albumin (g/L)**</td><td>>35</td><td>28–35</td><td><28</td></tr><tr><td>**INR**</td><td><1.7</td><td>1.7–2.3</td><td>>2.3</td></tr><tr><td>**Ascites**</td><td>None</td><td>Mild/Med (diuretic responsive)</td><td>Severe (refractory)</td></tr><tr><td>**Encephalopathy**</td><td>None</td><td>Grade 1–2</td><td>Grade 3–4</td></tr></table>
+<table class="ctable"><tr><th>Class</th><th>Score</th><th>1-y Survival</th><th>Prescribing Implication</th></tr><tr><td>-------</td><td>-------</td><td>--------------</td><td>------------------------</td></tr><tr><td>**A**</td><td>5–6</td><td>~100%</td><td>**Mild** — Minor dose adjustments; most drugs OK with monitoring</td></tr><tr><td>**B**</td><td>7–9</td><td>~80%</td><td>**Moderate** — Significant dose reductions; avoid hepatotoxic drugs; TDM essential</td></tr><tr><td>**C**</td><td>10–15</td><td>~45%</td><td>**Severe** — Avoid many drugs; major dose reductions; prefer non-hepatic clearance; TDM mandatory</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>Child-Pugh B = moderate impairment = reduce dose ~50% for hepatically cleared drugs. Child-Pugh C = severe = avoid if possible, use alternatives with renal clearance.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ Drug Dosing Principles in Hepatic Impairment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">General Rules</div>
+<table class="ctable"><tr><th>Principle</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Avoid hepatotoxic drugs**</td><td>Intrinsic (dose-dependent) + Idiosyncratic (unpredictable) — see Section 2</td></tr><tr><td>**Reduce dose for high extraction drugs**</td><td>↓ First-pass → ↑ Bioavailability → **↓ Dose** (e.g., propranolol, morphine, verapamil, nitrates)</td></tr><tr><td>**Reduce dose for low extraction drugs with hepatic clearance**</td><td>↓ CYP/UGT → ↓ Clearance → **↓ Dose or ↑ Interval** (e.g., warfarin, phenytoin, theophylline, diazepam)</td></tr><tr><td>**Prefer renal clearance drugs**</td><td>If alternative exists with renal elimination (e.g., atenolol > propranolol; gabapentin > pregabalin? both renal)</td></tr><tr><td>**Monitor free drug levels**</td><td>↓ Albumin → ↑ Free fraction → **Measure FREE level** (phenytoin, valproate, warfarin)</td></tr><tr><td>**TDM mandatory**</td><td>Narrow therapeutic index drugs: warfarin, phenytoin, digoxin, lithium, immunosuppressants</td></tr><tr><td>**Start low, go slow**</td><td>Lower initial dose; titrate to effect; monitor for toxicity</td></tr></table>
+<div class="sub-h">Dose Adjustment Categories (FDA/EMA)</div>
+<table class="ctable"><tr><th>Category</th><th>Action</th><th>Examples</th></tr><tr><td>----------</td><td>--------</td><td>----------</td></tr><tr><td>**No adjustment needed**</td><td>Renal clearance; minimal hepatic metabolism</td><td>Atenolol, Gabapentin, Pregabalin, Digoxin (mostly renal), Lithium, Aminoglycosides, Vancomycin, Most antibiotics (penicillins, cephalosporins, carbapenems)</td></tr><tr><td>**Reduce dose / Extend interval**</td><td>Hepatic clearance; moderate impairment</td><td>**Child-Pugh B**: ↓ 50% dose or ↑ interval 2x; **Child-Pugh C**: ↓ 75% or avoid</td></tr><tr><td>**Avoid / Contraindicated**</td><td>Hepatotoxic; high extraction + narrow TI; lactic acidosis risk</td><td>**NSAIDs, Metformin (Child-Pugh C), High-dose paracetamol >2g/day, Sedatives (benzos, Z-drugs), Certain antibiotics (isoniazid, rifampicin, flucloxacillin in susceptible)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ Hepatotoxic Drugs: Avoid or Use with Extreme Caution in Liver Disease</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Intrinsic (Dose-Dependent) Hepatotoxins</div>
+<table class="ctable"><tr><th>Drug</th><th>Mechanism</th><th>Risk in Cirrhosis</th></tr><tr><td>------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Paracetamol >4g/day (or >2g/day in malnutrition/alcohol)**</td><td>NAPQI accumulation → hepatocellular necrosis</td><td>**↑ Risk** — ↓ Glutathione stores; **max 2–3g/day** in cirrhosis</td></tr><tr><td>**Methotrexate**</td><td>Hepatocyte apoptosis → fibrosis</td><td>**Contraindicated** in significant liver disease</td></tr><tr><td>**Isoniazid**</td><td>Hydrazine metabolites → hepatocellular injury</td><td>**Monitor LFTs monthly**; avoid if Child-Pugh C</td></tr><tr><td>**Rifampicin**</td><td>CYP induction + direct toxicity</td><td>Cholestatic injury; **monitor LFTs**</td></tr><tr><td>**Pyrazinamide**</td><td>Hepatocellular injury</td><td>**Monitor LFTs**; avoid if Child-Pugh C</td></tr><tr><td>**Valproate**</td><td>Mitochondrial toxicity → microvesicular steatosis</td><td>**Avoid** in liver disease; ↑ ammonia (hyperammonaemic encephalopathy)</td></tr><tr><td>**Amiodarone**</td><td>Phospholipidosis → steatohepatitis</td><td>**Monitor LFTs**; long half-life = prolonged risk</td></tr><tr><td>**Methyldopa**</td><td>Autoimmune hepatitis-like</td><td>Rare but **avoid** if alternative exists</td></tr></table>
+<div class="sub-h">Idiosyncratic (Unpredictable) Hepatotoxins — High Risk in Cirrhosis</div>
+<table class="ctable"><tr><th>Drug</th><th>Pattern</th><th>Notes</th></tr><tr><td>------</td><td>---------</td><td>-------</td></tr><tr><td>**Flucloxacillin**</td><td>**Cholestatic** (delayed 2–4 weeks)</td><td>**HLA-B*57:01** not linked; risk ↑ with age >55, duration >2 weeks</td></tr><tr><td>**Co-amoxiclav**</td><td>**Cholestatic** (1–6 weeks)</td><td>Most common cause of DILI in UK; **avoid** if prior DILI</td></tr><tr><td>**Carbamazepine / Phenytoin / Phenobarbital**</td><td>**Hepatocellular / Mixed / Hypersensitivity (DRESS/SJS)**</td><td>**HLA-B*15:02** for CBZ/PHT; monitor LFTs first 3 months</td></tr><tr><td>**Allopurinol**</td><td>**Mixed / DRESS / SJS**</td><td>**HLA-B*58:01** screen; start low (50mg), titrate slowly</td></tr><tr><td>**Sulfonamides (TMP-SMX, sulfasalazine)**</td><td>**Hypersensitivity / Cholestatic**</td><td>Avoid in cirrhosis if possible</td></tr><tr><td>**Statins (all)**</td><td>**Hepatocellular (asymptomatic ALT rise)**</td><td>**Not contraindicated** in stable chronic liver disease; monitor LFTs; avoid acute liver failure</td></tr><tr><td>**Azoles (fluconazole, itraconazole, voriconazole)**</td><td>**Hepatocellular / Cholestatic**</td><td>Monitor LFTs; avoid in Child-Pugh C</td></tr><tr><td>**Antiretrovirals (NNRTIs > PIs > INSTIs)**</td><td>**Hepatocellular**</td><td>NVP > EFV > DTG; monitor LFTs monthly initially</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>Flucloxacillin/co-amoxiclav = cholestatic DILI (delayed). INH/rifampicin/pyrazinamide = dose-dependent + idiosyncratic. Allopurinol = HLA-B</i>58:01 screen. Valproate = avoid in liver disease (↑ ammonia). Statins = generally SAFE in stable CLD.*</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ Drug-Specific Dosing in Hepatic Impairment (High-Yield)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cardiovascular</div>
+<table class="ctable"><tr><th>Drug</th><th>Child-Pugh A</th><th>Child-Pugh B</th><th>Child-Pugh C</th><th>Notes</th></tr><tr><td>------</td><td>--------------</td><td>--------------</td><td>--------------</td><td>-------</td></tr><tr><td>**Beta-blockers**</td><td></td><td></td><td></td><td></td></tr><tr><td>Propranolol (high extraction)</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>↓ First-pass → ↑ bioavailability; use **atenolol** (renal) instead</td></tr><tr><td>Metoprolol</td><td>Standard</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>CYP2D6 substrate</td></tr><tr><td>Bisoprolol</td><td>Standard</td><td>Standard</td><td>↓ Dose 50%</td><td>Partially renal</td></tr><tr><td>Atenolol</td><td>**Preferred**</td><td>**Preferred**</td><td>**Preferred**</td><td>**Renal clearance** — no hepatic adjustment</td></tr><tr><td>**Calcium Channel Blockers**</td><td></td><td></td><td></td><td></td></tr><tr><td>Amlodipine</td><td>Standard</td><td>Standard?</td><td>↓ Dose 50%</td><td>Long half-life; CYP3A4</td></tr><tr><td>Verapamil / Diltiazem (high extraction)</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>↓ First-pass; ↑ bioavailability</td></tr><tr><td>**ACEi / ARB**</td><td>Standard</td><td>Standard</td><td>Standard (caution: AKI risk)</td><td>Monitor renal/K+; no hepatic dose adjustment</td></tr><tr><td>**Diuretics**</td><td></td><td></td><td></td><td></td></tr><tr><td>Furosemide</td><td>Standard</td><td>Standard</td><td>Standard (caution: ototoxicity)</td><td>No hepatic adjustment; monitor renal</td></tr><tr><td>Spironolactone</td><td>Standard</td><td>Standard</td><td>Standard</td><td>Monitor K+/renal; no hepatic adjustment</td></tr><tr><td>**Statins**</td><td></td><td></td><td></td><td></td></tr><tr><td>Atorvastatin / Simvastatin</td><td>Standard</td><td>Standard?</td><td>↓ Dose 50% / Avoid simva</td><td>CYP3A4; monitor LFTs; **not contraindicated** in stable CLD</td></tr><tr><td>Rosuvastatin / Pravastatin</td><td>**Preferred**</td><td>**Preferred**</td><td>**Preferred**</td><td>Minimal CYP; renal clearance component</td></tr><tr><td>**Anticoagulants**</td><td></td><td></td><td></td><td></td></tr><tr><td>Warfarin</td><td>**Monitor INR closely**</td><td>**Monitor INR closely**</td><td>**Monitor INR closely**</td><td>↓ Albumin → ↑ free warfarin; ↓ CYP2C9 → ↓ clearance; **INR unpredictable**</td></tr><tr><td>DOACs (Apixaban, Rivaroxaban)</td><td>Standard</td><td>↓ Dose (apixaban 2.5mg)</td><td>**Avoid** (apixaban 2.5mg if essential)</td><td>Apixaban preferred; Rivaroxaban avoid Child-Pugh B/C</td></tr><tr><td>**Antiplatelets**</td><td>Standard</td><td>Standard</td><td>Standard</td><td>No hepatic adjustment</td></tr></table>
+<div class="sub-h">Analgesics</div>
+<table class="ctable"><tr><th>Drug</th><th>Child-Pugh A</th><th>Child-Pugh B</th><th>Child-Pugh C</th><th>Notes</th></tr><tr><td>------</td><td>--------------</td><td>--------------</td><td>--------------</td><td>-------</td></tr><tr><td>**Paracetamol**</td><td>Max 3g/day</td><td>Max 2g/day</td><td>**Max 2g/day**</td><td>↓ Glutathione → ↑ NAPQI risk; avoid chronic high dose</td></tr><tr><td>**NSAIDs**</td><td>**Avoid**</td><td>**Avoid**</td><td>**Avoid**</td><td>↑ GI bleed (varices), renal impairment (HRS), fluid retention</td></tr><tr><td>**Opioids**</td><td></td><td></td><td></td><td></td></tr><tr><td>Morphine (high extraction)</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>↓ First-pass → ↑ bioavailability; active metabolite M6G accumulates in renal impairment</td></tr><tr><td>Oxycodone</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>CYP3A4/2D6; active metabolites</td></tr><tr><td>Fentanyl / Buprenorphine</td><td>**Preferred**</td><td>**Preferred**</td><td>**Preferred (transdermal)**</td><td>**Transdermal bypasses first-pass**; less accumulation</td></tr><tr><td>Tramadol</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>CYP2D6/3A4; seizure risk</td></tr><tr><td>Codeine</td><td>**Avoid**</td><td>**Avoid**</td><td>**Avoid**</td><td>Prodrug → morphine (CYP2D6); unpredictable in liver disease</td></tr><tr><td>**Gabapentin / Pregabalin**</td><td>**Preferred**</td><td>**Preferred**</td><td>**Preferred (renal adjust)**</td><td>**Renal clearance** — no hepatic adjustment</td></tr></table>
+<div class="sub-h">Antibiotics / Antifungals</div>
+<table class="ctable"><tr><th>Drug</th><th>Child-Pugh A</th><th>Child-Pugh B</th><th>Child-Pugh C</th><th>Notes</th></tr><tr><td>------</td><td>--------------</td><td>--------------</td><td>--------------</td><td>-------</td></tr><tr><td>**Penicillins / Cephalosporins / Carbapenems**</td><td>Standard</td><td>Standard</td><td>Standard (renal adjust)</td><td>**Renal clearance** — safe in liver disease</td></tr><tr><td>**Fluoroquinolones (Cipro/Levo/Oflox)**</td><td>Standard</td><td>Standard</td><td>Standard (renal adjust)</td><td>Minimal hepatic; monitor QT</td></tr><tr><td>**Metronidazole**</td><td>Standard</td><td>↓ Dose 50%</td><td>↓ Dose 50%</td><td>Hepatic metabolism; neurotoxicity risk</td></tr><tr><td>**Macrolides (Clarithro/Erythro)**</td><td>Standard</td><td>↓ Dose 50%</td><td>**Avoid**</td><td>CYP3A4 inh; QT prolongation; hepatotoxicity risk</td></tr><tr><td>Azithromycin</td><td>Standard</td><td>Standard</td><td>Standard</td><td>Preferred macrolide</td></tr><tr><td>**Rifampicin**</td><td>Standard</td><td>Standard?</td><td>**Avoid**</td><td>Hepatotoxicity; enzyme induction worsens other drugs</td></tr><tr><td>**Isoniazid**</td><td>Standard</td><td>Standard (monitor LFTs)</td><td>**Avoid**</td><td>Hepatotoxicity; pyridoxine co-prescribe</td></tr><tr><td>**Fluconazole**</td><td>Standard</td><td>Standard</td><td>↓ Dose 50%</td><td>Renal + hepatic; monitor LFTs</td></tr><tr><td>**Voriconazole / Posaconazole / Isavuconazole**</td><td>Standard</td><td>↓ Dose / Monitor</td><td>**Avoid**</td><td>Hepatotoxicity; CYP3A4; TDM essential</td></tr><tr><td>**TMP-SMX**</td><td>Standard</td><td>Standard</td><td>Standard (renal adjust)</td><td>HyperK risk in renal impairment</td></tr></table>
+<div class="sub-h">Antidiabetics</div>
+<table class="ctable"><tr><th>Drug</th><th>Child-Pugh A</th><th>Child-Pugh B</th><th>Child-Pugh C</th><th>Notes</th></tr><tr><td>------</td><td>--------------</td><td>--------------</td><td>--------------</td><td>-------</td></tr><tr><td>**Metformin**</td><td>Standard</td><td>**Contraindicated**</td><td>**Contraindicated**</td><td>**Lactic acidosis risk** ↑ in liver disease (↓ lactate clearance)</td></tr><tr><td>**Gliclazide / Glimepiride**</td><td>Standard</td><td>↓ Dose 50%</td><td>**Avoid**</td><td>Hypoglycaemia risk ↑ (↓ gluconeogenesis, ↓ clearance)</td></tr><tr><td>**Glipizide**</td><td>Standard</td><td>↓ Dose 50%</td><td>**Avoid**</td><td>Similar</td></tr><tr><td>**Pioglitazone**</td><td>**Avoid**</td><td>**Avoid**</td><td>**Avoid**</td><td>Fluid retention → worsens ascites; hepatotoxicity</td></tr><tr><td>**DPP-4 inhibitors (Sitagliptin/Linagliptin)**</td><td>Standard (renal adjust)</td><td>Standard (renal adjust)</td><td>Standard (renal adjust)</td><td>**Preferred** — minimal hepatic, renal adjust</td></tr><tr><td>**SGLT2i (Dapa/Empa)**</td><td>Standard (renal adjust)</td><td>Standard (renal adjust)</td><td>Standard (renal adjust)</td><td>**Preferred** — cardio/renal benefit; monitor eGFR</td></tr><tr><td>**GLP-1 RA (Liraglutide/Semaglutide)**</td><td>Standard</td><td>Standard</td><td>Standard</td><td>**Preferred** — weight loss, cardio benefit; no hepatic adjustment</td></tr><tr><td>**Insulin**</td><td>Standard</td><td>Standard</td><td>Standard</td><td>**Preferred** — no hepatic clearance; monitor hypoglycaemia (↓ gluconeogenesis)</td></tr></table>
+<div class="sub-h">Neurological / Psychiatric</div>
+<table class="ctable"><tr><th>Drug</th><th>Child-Pugh A</th><th>Child-Pugh B</th><th>Child-Pugh C</th><th>Notes</th></tr><tr><td>------</td><td>--------------</td><td>--------------</td><td>--------------</td><td>-------</td></tr><tr><td>**Benzodiazepines (Diazepam, Lorazepam, Midazolam)**</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>↑ Bioavailability, ↑ Vd, ↓ clearance; ↑ encephalopathy risk</td></tr><tr><td>**Z-drugs (Zopiclone/Zolpidem)**</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>Similar to benzos</td></tr><tr><td>**Antidepressants**</td><td></td><td></td><td></td><td></td></tr><tr><td>SSRIs (Sertraline, Citalopram, Escitalopram)</td><td>Standard</td><td>↓ Dose 50%</td><td>↓ Dose 50%</td><td>CYP2C19/3A4/2D6; citalopram QT risk</td></tr><tr><td>Mirtazapine</td><td>Standard</td><td>↓ Dose 50%</td><td>↓ Dose 50%</td><td>Sedation ↑ encephalopathy risk</td></tr><tr><td>**Antipsychotics**</td><td></td><td></td><td></td><td></td></tr><tr><td>Quetiapine</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>CYP3A4; sedation; metabolic</td></tr><tr><td>Olanzapine</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>CYP1A2; metabolic</td></tr><tr><td>Haloperidol</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>CYP3A4/2D6; QT; EPS</td></tr><tr><td>**Anticonvulsants**</td><td></td><td></td><td></td><td></td></tr><tr><td>Phenytoin</td><td>**Monitor FREE level**</td><td>**Monitor FREE level**</td><td>**Monitor FREE level**</td><td>↓ Albumin → ↑ free fraction; ↓ CYP2C9/19; **FREE level essential**</td></tr><tr><td>Carbamazepine</td><td>↓ Dose 50%</td><td>↓ Dose 75%</td><td>**Avoid**</td><td>Auto-induction + ↓ clearance; DRESS risk</td></tr><tr><td>Valproate</td><td>**Avoid**</td><td>**Avoid**</td><td>**Avoid**</td><td>↑ Ammonia → encephalopathy; hepatotoxicity</td></tr><tr><td>Levetiracetam</td><td>**Preferred**</td><td>**Preferred**</td><td>**Preferred (renal adjust)**</td><td>**Renal clearance** — safe</td></tr><tr><td>Lacosamide / Brivaracetam</td><td>Standard</td><td>Standard</td><td>Standard (renal adjust)</td><td>Minimal hepatic</td></tr><tr><td>**Lithium**</td><td>Standard</td><td>Standard</td><td>Standard (renal adjust)</td><td>**Renal clearance** — monitor renal function</td></tr></table>
+<div class="sub-h">Immunosuppressants (Transplant Context)</div>
+<table class="ctable"><tr><th>Drug</th><th>Child-Pugh A</th><th>Child-Pugh B</th><th>Child-Pugh C</th><th>Notes</th></tr><tr><td>------</td><td>--------------</td><td>--------------</td><td>--------------</td><td>-------</td></tr><tr><td>**Tacrolimus**</td><td>TDM ↓ dose</td><td>TDM ↓ dose</td><td>TDM ↓ dose</td><td>CYP3A4/P-gp; **TDM essential**; ↑ nephrotoxicity</td></tr><tr><td>**Ciclosporin**</td><td>TDM ↓ dose</td><td>TDM ↓ dose</td><td>TDM ↓ dose</td><td>CYP3A4/P-gp; **TDM essential**</td></tr><tr><td>**Sirolimus / Everolimus**</td><td>TDM ↓ dose</td><td>TDM ↓ dose</td><td>TDM ↓ dose</td><td>CYP3A4/P-gp; **TDM essential**</td></tr><tr><td>**Mycophenolate**</td><td>Standard</td><td>Standard</td><td>Standard</td><td>Glucuronidation (UGT); minor hepatic</td></tr><tr><td>**Prednisolone → Prednisone**</td><td>Use prednisolone</td><td>Use prednisolone</td><td>Use prednisolone</td><td>Prednisone requires hepatic activation → use **prednisolone** directly</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ Drug-Induced Liver Injury (DILI): Patterns & Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">DILI Patterns</div>
+<table class="ctable"><tr><th>Pattern</th><th>Biochemistry</th><th>Examples</th><th>Management</th></tr><tr><td>---------</td><td>--------------</td><td>----------</td><td>------------</td></tr><tr><td>**Hepatocellular**</td><td>**ALT/AST ↑↑↑** (×10–100 ULN), Bilirubin ↑, ALP normal/mild ↑</td><td>Paracetamol, Isoniazid, Valproate, Phenytoin, Carbamazepine, Statins (rare), Antiretrovirals</td><td>**Stop drug immediately**; monitor LFTs; N-acetylcysteine for paracetamol</td></tr><tr><td>**Cholestatic**</td><td>**ALP ↑↑** (×2–5 ULN), ALT/AST mild ↑, Bilirubin ↑, GGT ↑↑</td><td>Flucloxacillin, Co-amoxiclav, Macrolides, Rifampicin, Sulfonamides, Chlorpromazine, Azathioprine</td><td>**Stop drug**; ursodeoxycholic acid for pruritus; monitor bilirubin (Hy's Law)</td></tr><tr><td>**Mixed**</td><td>Both ALT & ALP ↑↑ (ratio 2–5)</td><td>Amoxicillin-clavulanate, Flucloxacillin, TMP-SMX, Phenytoin, Carbamazepine, Allopurinol</td><td>**Stop drug**; monitor for Hy's Law</td></tr><tr><td>**Vascular**</td><td>SOS (sinusoidal obstruction syndrome), Budd-Chiari, Nodular regenerative hyperplasia</td><td>Cyclophosphamide, Azathioprine, Oxaliplatin, Oral contraceptives</td><td>**Stop drug**; specialist management</td></tr></table>
+<div class="sub-h">Hy's Law (Predictor of Fatal DILI)</div>
+<div class="callout"><b>ALT/AST &gt;3× ULN + Total Bilirubin &gt;2× ULN + No ALP elevation (or &lt;2× ULN) = ~10–50% mortality / transplant</b></div>
+<ul><li><b>Action:</b> Stop drug immediately; urgent hepatology referral; monitor for liver failure</li></ul>
+<div class="sub-h">RUCAM (Roussel Uclaf Causality Assessment Method) — See [[ADRs/Causality assessment/RUCAM]]</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ Special Situations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Paracetamol in Cirrhosis</div>
+<ul><li><b>Max dose: 2–3g/day</b> (not 4g)</li><li>Avoid chronic use</li><li><b>Malnutrition/alcohol</b> → ↓ glutathione → ↑ toxicity at lower doses</li><li><b>IV paracetamol</b> — same limit; weight-based dosing (&lt;50kg: 15mg/kg/dose)</li></ul>
+<div class="sub-h">Alcohol + Drugs in Liver Disease</div>
+<ul><li><b>Acute alcohol</b> → inhibits CYP2E1, CYP3A4 → ↑ drug levels (metronidazole, warfarin, phenytoin)</li><li><b>Chronic alcohol</b> → induces CYP2E1, CYP3A4, CYP1A2 → ↓ drug levels (paracetamol toxicity at lower doses, theophylline)</li><li><b>Disulfiram-like reaction</b>: Metronidazole, TMP-SMX, Cephalosporins (cefotetan), Griseofulvin, Chloramphenicol + alcohol → flushing, tachycardia, hypotension</li></ul>
+<div class="sub-h">Hepatocellular Carcinoma (HCC) / Transplant List</div>
+<ul><li><b>Child-Pugh C / MELD &gt;15</b> — transplant assessment</li><li><b>Drugs to avoid pre-transplant</b>: NSAIDs, nephrotoxins, hepatotoxins</li><li><b>Post-transplant</b>: Immunosuppressant interactions (see [[Drug Interactions/High-risk drug combinations/Immunosuppressant interactions]])</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Child-Pugh Classification**</td><td>A (5–6) = mild, B (7–9) = moderate, C (10–15) = severe; guides dosing</td></tr><tr><td>**PK Changes in Cirrhosis**</td><td>↓ First-pass (↑ bioavailability high extraction), ↓ CYP/UGT clearance, ↓ albumin (↑ free drug), ↑ Vd (ascites), portosystemic shunting</td></tr><tr><td>**Dosing Principles**</td><td>Avoid hepatotoxins; reduce dose high extraction drugs; reduce dose/extend interval low extraction hepatic drugs; prefer renal clearance; TDM; free levels for protein-bound</td></tr><tr><td>**Intrinsic Hepatotoxins**</td><td>Paracetamol (>2g/day cirrhosis), Methotrexate, INH, Rifampicin, Pyrazinamide, Valproate (↑ ammonia), Amiodarone</td></tr><tr><td>**Idiosyncratic Hepatotoxins**</td><td>Flucloxacillin (cholestatic), Co-amoxiclav (cholestatic), CBZ/PHT/PB (hypersensitivity/DRESS), Allopurinol (HLA-B*58:01), Sulfonamides, Azoles</td></tr><tr><td>**Statins in CLD**</td><td>**SAFE** in stable disease; monitor LFTs; avoid acute liver failure; rosuvastatin/pravastatin preferred</td></tr><tr><td>**Anticoagulation**</td><td>Warfarin: unpredictable INR (↓ albumin, ↓ CYP2C9); DOACs: apixaban preferred (↓ dose Child-Pugh B), avoid rivaroxaban B/C</td></tr><tr><td>**Analgesics**</td><td>Paracetamol max 2–3g/day; **NSAIDs AVOID**; opioids: fentanyl/buprenorphine transdermal preferred; avoid morphine/codeine</td></tr><tr><td>**Antidiabetics**</td><td>**Metformin CONTRAINDICATED** Child-Pugh B/C (lactic acidosis); SU avoid; DPP-4/SGLT2i/GLP-1/Insulin preferred</td></tr><tr><td>**Sedatives**</td><td>Benzos/Z-drugs AVOID (↑ encephalopathy); if essential: lorazepam/oxazepam (no active metabolites, glucuronidation)</td></tr><tr><td>**Anticonvulsants**</td><td>Phenytoin: **FREE level**; Valproate: AVOID; CBZ: avoid; Levetiracetam/lacosamide/brivaracetam preferred</td></tr><tr><td>**Antibiotics**</td><td>Penicillins/cephalosporins/carbapenems/fluoroquinolones = safe (renal); macrolides/rifampicin/INH = caution; azoles = monitor/TDM</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>How does cirrhosis affect drug pharmacokinetics?</td><td>**1) ↓ First-pass metabolism** → ↑ bioavailability of high extraction drugs (propranolol, morphine). **2) ↓ Hepatic clearance** (CYP450, UGT) → ↓ clearance of low extraction drugs. **3) ↓ Albumin synthesis** → ↑ free fraction of protein-bound drugs (warfarin, phenytoin). **4) ↑ Vd** (ascites, oedema) → ↑ Vd of hydrophilic drugs. **5) Portosystemic shunting** → bypass liver.</td></tr><tr><td>2</td><td>Child-Pugh B cirrhosis: general dosing approach?</td><td>**Reduce dose ~50% or double interval** for hepatically cleared drugs. Avoid hepatotoxins. Prefer renal clearance alternatives. TDM for NTI drugs. Monitor free levels for highly protein-bound.</td></tr><tr><td>3</td><td>Which beta-blocker is preferred in cirrhosis?</td><td>**Atenolol** (renal clearance, no first-pass). Avoid propranolol (high extraction → ↑ bioavailability).</td></tr><tr><td>4</td><td>Paracetamol max dose in cirrhosis?</td><td>**2–3g/day** (not 4g). ↓ Glutathione stores → ↑ NAPQI toxicity risk.</td></tr><tr><td>5</td><td>Why are NSAIDs contraindicated in cirrhosis?</td><td>**1) GI bleed risk** (varices, gastropathy). **2) Renal impairment** → precipitates HRS (↓ prostaglandin-mediated renal perfusion). **3) Fluid retention** → worsens ascites.</td></tr><tr><td>6</td><td>Warfarin in cirrhosis: why is INR unpredictable?</td><td>**↓ Albumin** → ↑ free warfarin; **↓ CYP2C9** → ↓ clearance; **↓ Vitamin K-dependent factor synthesis** (liver synthetic dysfunction) → baseline INR elevated. **Result: INR does not reflect anticoagulation intensity.**</td></tr><tr><td>7</td><td>DOAC choice in Child-Pugh B cirrhosis with AF?</td><td>**Apixaban 2.5mg BD** (licensed for Child-Pugh B). Avoid rivaroxaban, dabigatran, edoxaban in Child-Pugh B/C.</td></tr><tr><td>8</td><td>Metformin in cirrhosis: contraindicated in which Child-Pugh?</td><td>**Child-Pugh B and C** (lactic acidosis risk — ↓ lactate clearance by liver). Child-Pugh A: use with caution, monitor lactate.</td></tr><tr><td>9</td><td>Phenytoin monitoring in cirrhosis — what level?</td><td>**FREE phenytoin level** (therapeutic 1–2 mg/L). Total level misleading due to ↓ albumin. Corrected formula unreliable.</td></tr><tr><td>10</td><td>Valproate in liver disease — why avoid?</td><td>**1) Hepatotoxicity** (microvesicular steatosis, mitochondrial toxicity). **2) ↑ Ammonia** → hyperammonaemic encephalopathy (↓ urea cycle). **3) ↓ Albumin** → ↑ free fraction.</td></tr><tr><td>11</td><td>Flucloxacillin DILI pattern and timing?</td><td>**Cholestatic**, delayed onset **2–4 weeks** (sometimes up to 8 weeks). Risk ↑ age >55, duration >2 weeks.</td></tr><tr><td>12</td><td>Co-amoxiclav DILI — most common cause in UK?</td><td>**Cholestatic**, 1–6 weeks. **Most common cause of DILI in UK**. Avoid if prior DILI.</td></tr><tr><td>13</td><td>Preferred sedative in cirrhosis if essential?</td><td>**Lorazepam or Oxazepam** — no active metabolites, glucuronidation (Phase II preserved longer), short half-life. Avoid diazepam, chlordiazepoxide, Z-drugs.</td></tr><tr><td>14</td><td>Hy's Law criteria?</td><td>**ALT/AST >3× ULN + Total Bilirubin >2× ULN + ALP <2× ULN** = high risk of fatal DILI/transplant (~10–50%).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"All statins contraindicated in liver disease"**</td><td>**FALSE.** Statins are **safe in stable chronic liver disease** (NAFLD, compensated cirrhosis). Monitor LFTs. Avoid in **acute liver failure / decompensated**. Rosuvastatin/pravastatin preferred (less CYP).</td></tr><tr><td>**"Metformin safe in Child-Pugh A"**</td><td>**Caution.** Child-Pugh A: may use with close lactate monitoring. Child-Pugh B/C: **contraindicated**. Lactic acidosis risk from ↓ hepatic lactate clearance.</td></tr><tr><td>**"Total phenytoin level OK in cirrhosis"**</td><td>**FALSE.** ↓ Albumin → ↑ free fraction. **Must measure FREE level.** Total level underestimates free drug.</td></tr><tr><td>**"All benzodiazepines same in liver disease"**</td><td>**Lorazepam/oxazepam/temazepam** = glucuronidation (Phase II) → relatively preserved. **Diazepam/chlordiazepoxide/clonazepam** = CYP3A4/2C19 (Phase I) → markedly impaired.</td></tr><tr><td>**"Child-Pugh and MELD interchangeable for dosing"**</td><td>**Child-Pugh** used for **drug dosing** (A/B/C categories). **MELD** used for **transplant prioritisation** (continuous score). Both reflect severity but Child-Pugh is standard in dosing guidelines.</td></tr><tr><td>**"Rifampicin safe in liver disease if monitor LFTs"**</td><td>Rifampicin = **hepatotoxic + potent enzyme inducer** → worsens other drug levels. Avoid if possible in Child-Pugh C; use with extreme caution in B.</td></tr><tr><td>**"DOACs all contraindicated in cirrhosis"**</td><td>**Apixaban licensed for Child-Pugh B** (2.5mg BD). Rivaroxaban/dabigatran/edoxaban not recommended B/C. Warfarin = unpredictable but used (INR monitoring).</td></tr></table>
+<div class="callout"><b>Mnemonic: LIVER PRESCRIBING</b> <b>L</b>iver disease PK: ↓ First-pass, ↓ Clearance, ↓ Albumin, ↑ Vd, Shunting <b>I</b>ntrinsic hepatotoxins: Paracetamol (&gt;2g), Methotrexate, INH, Rifampicin, PZA, Valproate, Amiodarone <b>V</b>alproate avoid: ↑ Ammonia, hepatotoxicity <b>E</b>xtraction ratio matters: High extraction (propranolol, morphine) → ↑ bioavailability → ↓ dose <b>R</b>enal alternatives preferred: Atenolol, Gabapentin, Levetiracetam, DOACs (apixaban), Insulin, SGLT2i <b>P</b>rotein binding: ↓ Albumin → ↑ free warfarin, phenytoin, valproate → <b>measure FREE level</b> <b>R</b>ifampicin/INH/PZA: Hepatotoxic + enzyme induction — avoid/reduce <b>E</b>nzyme induction in chronic alcohol: CYP2E1, 3A4, 1A2 ↑ → ↓ drug levels <b>S</b>tatins SAFE in stable CLD: Monitor LFTs; rosuvastatin/pravastatin preferred <b>C</b>hild-Pugh: A=mild (minor adj), B=moderate (↓50%), C=severe (avoid) <b>R</b>enal dose adjust needed too (HRS common) <b>I</b>dosyncratic hepatotoxins: Flucloxacillin (cholestatic 2-4w), Co-amoxiclav (cholestatic 1-6w, #1 UK), CBZ/PHT/PB (DRESS/SJS, HLA-B<i>15:02), Allopurinol (HLA-B</i>58:01), Sulfonamides, Azoles <b>B</b>enzos/Z-drugs AVOID: ↑ encephalopathy; if essential → lorazepam/oxazepam (glucuronidation) <b>I</b>NSULIN/DPP-4/SGLT2i/GLP-1 preferred for DM; Metformin CI B/C; SU avoid <b>N</b>SAIDs CONTRAINDICATED: GI bleed (varices), HRS, fluid retention <b>G</b>lucuronidation preserved: Lorazepam, oxazepam, morphine? (M6G renal), paracetamol? (but glutathione ↓)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Hepatic&lt;br&gt;Prescribing)) PK Changes ↓ First-pass (high extraction ↑ bioavailability) ↓ CYP/UGT clearance (low extraction ↓ clearance) ↓ Albumin (↑ free fraction) ↑ Vd (ascites, oedema) Portosystemic shunting Child-Pugh A (5-6): Mild, minor adj B (7-9): Moderate, ↓50% dose C (10-15): Severe, avoid Hepatotoxins (Avoid) Intrinsic: Paracetamol&gt;2g, MTX, INH, Rifampicin, PZA, VPA, Amiodarone Idiosyncratic: Flucloxacillin (cholestatic 2-4w), Co-amoxiclav (cholestatic #1 UK), AEDs (DRESS/SJS), Allopurinol (B*58:01), Sulfonamides, Azoles Drug-Specific Dosing CV: Atenolol&gt;Propranolol; Apixaban&gt;Warfarin&gt;Rivaroxaban; Rosuva/Prava&gt;Simva/Atorva Analgesia: Paracetamol≤2-3g; NSAIDs AVOID; Fentanyl/Buprenorphine TD&gt;Morphine Antibiotics: Penicillins/Cephalosporins/Carbapenems/FQs safe; Macrolides/Rifampicin/INH/Azoles caution DM: Metformin CI B/C; SU avoid; DPP-4/SGLT2i/GLP-1/Insulin preferred Neuro: Benzo/Z-drug AVOID; Lorazepam/Oxazepam if essential; VPA AVOID; PHT FREE level; LEV/LCM/BRV preferred Immunosupp: Tacro/Ciclo/Siro TDM essential; Prednisolone not prednisone DILI Patterns Hepatocellular: ALT↑↑ (Paracetamol, INH, VPA) Cholestatic: ALP↑↑ (Flucloxacillin, Co-amoxiclav, Macrolides) Mixed: Both (TMP-SMX, Phenytoin) Vascular: SOS, BCS (Cyclophos, OCPs) Hy's Law: ALT&gt;3x + Bil&gt;2x + ALP&lt;2x = fatal risk </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Child-Pugh / PK changes</td><td>4</td><td></td><td></td></tr><tr><td>Intrinsic hepatotoxins</td><td>3</td><td></td><td></td></tr><tr><td>Idiosyncratic hepatotoxins / DILI patterns</td><td>3</td><td></td><td></td></tr><tr><td>CV dosing (BB, anticoag, statin)</td><td>3</td><td></td><td></td></tr><tr><td>Analgesics / NSAIDs</td><td>2</td><td></td><td></td></tr><tr><td>Antibiotics / Antidiabetics</td><td>2</td><td></td><td></td></tr><tr><td>Sedatives / Anticonvulsants / FREE level</td><td>2</td><td></td><td></td></tr><tr><td>Hy's Law / DILI management</td><td>1</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Discuss prescribing in a patient with Child-Pugh B cirrhosis."</td><td>PK changes, dosing principles, specific drug adjustments (CV, analgesia, antibiotics, DM, neuro), avoid hepatotoxins, TDM, free levels</td></tr><tr><td>**Short Note**</td><td>"Drug-induced liver injury patterns."</td><td>Hepatocellular, cholestatic, mixed, vascular; Hy's Law; examples; management</td></tr><tr><td>**Viva**</td><td>"Patient with cirrhosis needs anticoagulation for AF. Options?"</td><td>Warfarin: unpredictable INR (↓ albumin, ↓ CYP2C9, ↓ factor synthesis). DOAC: Apixaban 2.5mg BD licensed Child-Pugh B. Avoid rivaroxaban/dabigatran. Monitor renal.</td></tr><tr><td>**Ward Round**</td><td>"Patient with decompensated cirrhosis (Child-Pugh C) prescribed ibuprofen for back pain."</td><td>**STOP NSAID** — contraindicated: GI bleed (varices), precipitates HRS, worsens ascites. Alternative: paracetamol max 2g/day, or transdermal buprenorphine.</td></tr><tr><td>**Last-Night**</td><td>"Hepatic prescribing: 3 PK changes, 3 intrinsic hepatotoxins, 3 idiosyncratic, 3 drug adjustments, 1 DILI law."</td><td>PK: ↓1st pass, ↓clearance, ↓albumin, ↑Vd, shunt. Intrinsic: paracetamol>2g, MTX, INH, VPA. Idiosyncratic: fluclox, co-amoxiclav, allopurinol. Adjustments: atenolol, apixaban, fentanyl. Hy's Law.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>PK in cirrhosis</b>: ↓ first-pass (↑ bioavailability high extraction), ↓ CYP/UGT clearance, ↓ albumin (↑ free drug), ↑ Vd (ascites), shunting</li><li><b>Child-Pugh</b>: A=mild (minor adj), B=moderate (↓50% dose/extend interval), C=severe (avoid hepatically cleared drugs)</li><li><b>Intrinsic hepatotoxins</b>: Paracetamol &gt;2g/day, methotrexate, INH, rifampicin, pyrazinamide, valproate, amiodarone</li><li><b>Idiosyncratic hepatotoxins</b>: Flucloxacillin (cholestatic 2–4w), co-amoxiclav (cholestatic 1–6w, #1 UK), AEDs (DRESS/SJS/HLA), allopurinol (HLA-B*58:01), sulfonamides, azoles</li><li><b>Dosing</b>: Prefer renal clearance (atenolol, levetiracetam, apixaban, insulin, gabapentin, penicillins); avoid NSAIDs, metformin (Child B/C), sedatives, valproate, high-dose paracetamol; <b>free phenytoin level</b>; TDM for NTI</li><li><b>Statins</b>: Safe in stable CLD; monitor LFTs; rosuvastatin/pravastatin preferred</li><li><b>DILI</b>: Hy's Law (ALT&gt;3×ULN + Bil&gt;2×ULN + ALP&lt;2×ULN) = high mortality risk</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>High extraction ratio drug — effect of cirrhosis on oral bioavailability?</b></li></ol>
+<p>A. Decreased  B. <b>Increased</b>  C. Unchanged  D. Unpredictable <i>Answer: B. ↓ First-pass metabolism → ↑ bioavailability (e.g., propranolol, morphine, verapamil, nitrates).</i></p>
+<ol><li><b>Preferred beta-blocker in cirrhosis (Child-Pugh B)?</b></li></ol>
+<p>A. Propranolol  B. <b>Atenolol</b>  C. Metoprolol  D. Carvedilol <i>Answer: B. Atenolol = renal clearance, no first-pass. Propranolol high extraction → ↑ bioavailability.</i></p>
+<ol><li><b>Maximum paracetamol dose in cirrhosis?</b></li></ol>
+<p>A. 4g/day  B. <b>2–3g/day</b>  C. 1g/day  D. Contraindicated <i>Answer: B. ↓ Glutathione → ↑ NAPQI toxicity risk at lower doses.</i></p>
+<ol><li><b>Which DOAC is licensed for use in Child-Pugh B cirrhosis?</b></li></ol>
+<p>A. Rivaroxaban  B. Dabigatran  C. <b>Apixaban 2.5mg BD</b>  D. Edoxaban <i>Answer: C. Apixaban 2.5mg BD is licensed for Child-Pugh B. Others not recommended.</i></p>
+<ol><li><b>Metformin contraindicated in which Child-Pugh class?</b></li></ol>
+<p>A. A only  B. <b>B and C</b>  C. C only  D. All classes <i>Answer: B. Lactic acidosis risk from ↓ hepatic lactate clearance. Child-Pugh A: caution with monitoring.</i></p>
+<ol><li><b>Phenytoin monitoring in cirrhosis — which level?</b></li></ol>
+<p>A. Total  B. <b>Free</b>  C. Both  D. Neither <i>Answer: B. ↓ Albumin → ↑ free fraction. Total level misleading. Free therapeutic range 1–2 mg/L.</i></p>
+<ol><li><b>Valproate avoided in liver disease because:</b></li></ol>
+<p>A. Only hepatotoxicity  B. Only ↑ ammonia  C. <b>Both hepatotoxicity AND ↑ ammonia (hyperammonaemic encephalopathy) + ↑ free fraction</b>  D. Renal toxicity <i>Answer: C. Triple risk: mitochondrial hepatotoxicity, ↑ ammonia (↓ urea cycle), ↑ free fraction (↓ albumin).</i></p>
+<ol><li><b>Hy's Law criteria for fatal DILI risk:</b></li></ol>
+<p>A. ALT&gt;3x + Bil&gt;2x + ALP&gt;2x  B. <b>ALT&gt;3x + Bil&gt;2x + ALP&lt;2x</b>  C. ALT&gt;5x + Bil&gt;3x  D. ALP&gt;3x + Bil&gt;2x <i>Answer: B. Hy's Law: ALT/AST &gt;3× ULN + Total Bilirubin &gt;2× ULN + ALP &lt;2× ULN (no cholestasis).</i></p>
+<ol><li><b>Flucloxacillin DILI pattern and typical onset:</b></li></ol>
+<p>A. Hepatocellular, 1–2 weeks  B. <b>Cholestatic, 2–4 weeks</b>  C. Mixed, 4–8 weeks  D. Vascular, immediate <i>Answer: B. Cholestatic pattern, delayed onset 2–4 weeks (delayed up to 8 weeks).</i></p>
+<ol><li><b>Preferred sedative in cirrhosis if absolutely necessary?</b></li></ol>
+<p>A. Diazepam  B. Zopiclone  C. <b>Lorazepam</b>  D. Clonazepam <i>Answer: C. Lorazepam (or oxazepam) — glucuronidation (Phase II preserved), no active metabolites, short half-life.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>65M with Child-Pugh B cirrhosis (alcohol) needs rate control for AF. Current: propranolol 40mg TDS. Best switch?</b></li></ol>
+<p>A. Increase propranolol  B. <b>Switch to atenolol 25mg OD</b>  C. Add digoxin  D. Switch to verapamil <i>Answer: B. Propranolol high extraction → ↑ bioavailability in cirrhosis. Atenolol renal = preferred.</i></p>
+<ol><li><b>70F with cirrhosis on warfarin for mechanical mitral valve. INR 4.5 (target 2.5–3.5) on stable dose 5mg. No bleeding. Likely cause?</b></li></ol>
+<p>A. Drug interaction  B. <b>Cirrhosis: ↓ albumin (↑ free warfarin) + ↓ CYP2C9 + ↓ factor synthesis</b>  C. Dietary vitamin K  D. Non-adherence <i>Answer: B. Cirrhosis alters warfarin PK/PD unpredictably. ↓ albumin → ↑ free warfarin; ↓ CYP2C9 → ↓ clearance; ↓ factor synthesis → baseline INR elevated.</i></p>
+<ol><li><b>Patient with Child-Pugh C cirrhosis needs analgesia for femoral fracture. Best opioid?</b></li></ol>
+<p>A. Morphine 10mg IV  B. <b>Transdermal buprenorphine 5μg/h</b>  C. Oral oxycodone 10mg  D. Codeine 30mg <i>Answer: B. Transdermal buprenorphine bypasses first-pass, less accumulation. Morphine/oxycodone high extraction → ↑ bioavailability. Codeine prodrug unpredictable.</i></p>
+<ol><li><b>60M with cirrhosis (Child-Pugh B) newly diagnosed T2DM. HbA1c 58. First-line?</b></li></ol>
+<p>A. Metformin 500mg BD  B. Gliclazide 80mg BD  C. <b>Linagliptin 5mg OD (or SGLT2i/GLP-1 RA)</b>  D. Pioglitazone 15mg OD <i>Answer: C. Metformin CI Child-Pugh B. SU hypoglycaemia risk. Pioglitazone fluid retention. DPP-4/SGLT2i/GLP-1 preferred.</i></p>
+<ol><li><b>Patient on phenytoin 300mg OD for epilepsy develops cirrhosis (Child-Pugh B). Total phenytoin 12 mg/L (therapeutic 10–20). Albumin 22 g/L. Action?</b></li></ol>
+<p>A. Increase dose  B. <b>No dose change; measure FREE phenytoin level</b>  C. Decrease dose  D. Switch to levetiracetam <i>Answer: B. Hypoalbuminaemia → ↑ free fraction. Corrected total = 12/(0.2×2.2+0.1) = 22 mg/L (toxic). MUST measure FREE level.</i></p>
+<ol><li><b>Antibiotic for intra-abdominal infection in Child-Pugh C cirrhosis. Best choice?</b></li></ol>
+<p>A. Co-amoxiclav  B. <b>Piperacillin-tazobactam (renal adjust)</b>  C. Clarithromycin  D. Rifampicin <i>Answer: B. Penicillins/cephalosporins/carbapenems = renal clearance, safe in liver disease. Co-amoxiclav/DILI risk. Macrolides/rifampicin hepatotoxic.</i></p>
+<ol><li><b>Statins in compensated cirrhosis (Child-Pugh A) — correct statement?</b></li></ol>
+<p>A. Contraindicated  B. <b>Safe; monitor LFTs; rosuvastatin/pravastatin preferred</b>  C. Only simvastatin allowed  D. Must stop if ALT &gt;ULN <i>Answer: B. Statins safe in stable CLD. Monitor LFTs. Rosuvastatin/pravastatin minimal CYP. Not contraindicated.</i></p>
+<ol><li><b>Hy's Law indicates:</b></li></ol>
+<p>A. Drug-induced cholestasis  B. <b>High risk of fatal DILI / need for transplant</b>  C. Hepatocellular recovery  D. Safe to continue drug <i>Answer: B. ALT&gt;3x + Bil&gt;2x + ALP&lt;2x = 10–50% mortality/transplant risk.</i></p>
+<ol><li><b>Patient with cirrhosis on spironolactone 100mg develops hepatic encephalopathy. Precipitant?</b></li></ol>
+<p>A. Spironolactone  B. <b>Hypokalaemia from diuretic → ↑ renal ammonia production</b>  C. Spironolactone hepatotoxicity  D. Hyperkalaemia <i>Answer: B. Diuretics → hypokalaemia → ↑ renal ammoniagenesis → encephalopathy. Spironolactone itself not direct cause.</i></p>
+<ol><li><b>Rifampicin in Child-Pugh B cirrhosis with TB. Dosing?</b></li></ol>
+<p>A. Standard dose  B. <b>Standard dose but MONITOR LFTs closely; avoid if Child-Pugh C</b>  C. Halve dose  D. Contraindicated <i>Answer: B. Rifampicin hepatotoxic + enzyme inducer. Use standard dose with LFT monitoring in Child-Pugh B. Avoid Child-Pugh C.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-C, 5-B, 6-B, 7-C, 8-B, 9-B, 10-C</td><td>1-B, 2-B, 3-B, 4-C, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Drug Interactions/Pharmacokinetic interactions/Metabolism interactions]] — CYP changes in liver disease</li><li>[[Drug Interactions/Pharmacokinetic interactions/Excretion interactions]] — Renal dosing (HRS)</li><li>[[Drug Interactions/High-risk drug combinations/QT prolonging combinations]] — QT drugs in cirrhosis</li><li>[[Therapeutic Drug Monitoring]] — TDM in hepatic impairment (phenytoin FREE, valproate, immunosuppressants)</li><li>[[ADRs/Type B (Bizarre)]] — DILI hypersensitivity (HLA, DRESS, SJS)</li><li>[[ADRs/Causality assessment/RUCAM]] — DILI causality</li><li>[[Special Populations/Elderly Prescribing]] — Overlap frailty + liver disease</li><li>[[Clinical Context/Perioperative Prescribing]] — Surgery in cirrhosis</li><li>[[Clinical Context/Palliative Care]] — End-stage liver disease prescribing</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatic Prescribing · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lung Adenocarcinoma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.4. CANCER OF THE LUNG</span>
+      <div class="h1">Lung Adenocarcinoma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] List <b>actionable driver mutations</b> in adenocarcinoma with frequencies</li><li>[ ] Define <b>mandatory biomarker panel</b> (EGFR, ALK, ROS1, RET, MET, KRAS, NTRK, HER2, BRAF, PD-L1)</li><li>[ ] Apply <b>TNM 8th Edition</b> staging for NSCLC</li><li>[ ] Select <b>adjuvant therapy</b>: Osimertinib (EGFRm), Atezo/Pembro (PD-L1≥1% post-chemo), Chemo (Stage II-IIIA)</li><li>[ ] Sequence <b>metastatic 1L</b>: Driver+ → Matched TKI; Driver- → PD-L1 stratified IO ± Chemo</li><li>[ ] Manage <b>TKI resistance</b>: Osimertinib post-1/2G EGFR TKI (T790M), Amivantamab/Lazertinib post-osimertinib, Lorlatinib post-ALK TKI</li><li>[ ] Recognise <b>TKI toxicities</b>: EGFRi (rash, diarrhoea, ILD), ALKi (hepatotoxicity, bradycardia, visual), METi (oedema, nausea)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Malignant glandular epithelial tumour of lung; **NSCLC subtype**; **Most common (40-50%)**; Peripheral location common</td></tr><tr><td>**Incidence**</td><td>UK: ~48,000 lung cancer/year; Adenocarcinoma ~40-50% of NSCLC; **Increasing incidence** (esp. women, never-smokers)</td></tr><tr><td>**Prevalence**</td><td>5-year OS: Stage I ~70-90%, Stage IV ~8-10% (improving with targeted/IO)</td></tr><tr><td>**Peak Age**</td><td>60-70 years; **Younger in driver-mutated** (EGFR/ALK: 50s, never-smokers)</td></tr><tr><td>**Sex Ratio**</td><td>F:M ~1:1 (vs squamous M>F); **Never-smokers predominantly female**</td></tr><tr><td>**Risk Factors**</td><td>**Smoking** (↓ risk vs squamous but still major), **Radon**, **Asbestos**, **Air pollution**, **Prior RT**, **Family history**, **Never-smoker + Asian + Female** = EGFR-enriched</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[Carcinogen Exposure] --&gt; B[Mutation Accumulation] B --&gt; C[Driver Mutations] C --&gt; C1[EGFR exon 19 del / L858R (85%)] C --&gt; C2[ALK-EML4 Fusion] C --&gt; C3[ROS1-CD74 Fusion] C --&gt; C4[RET Fusion] C --&gt; C5[METex14 Skipping] C --&gt; C6[KRAS G12C/G12V/G12D] C --&gt; C7[HER2 Exon 20 Ins] C --&gt; C8[BRAF V600E] C --&gt; C9[NTRK Fusion] C1 --&gt; D[Oncogenic Signalling] C2 --&gt; D C3 --&gt; D C4 --&gt; D C5 --&gt; D C6 --&gt; D C7 --&gt; D C8 --&gt; D C9 --&gt; D D --&gt; E1[PI3K/AKT/mTOR] D --&gt; E2[RAS/RAF/MEK/ERK] D --&gt; E3[JAK/STAT] E1 --&gt; F[Proliferation, Survival, Metastasis] E2 --&gt; F E3 --&gt; F F --&gt; G[Immune Evasion: PD-L1↑, TMB↓ (driver+), MHC-I↓] </code>``</p>
+<div class="sub-h">Driver Mutation Frequencies (Western Population)</div>
+<table class="ctable"><tr><th>Gene</th><th>Alteration</th><th>Frequency</th><th>Targeted Therapy</th></tr><tr><td>------</td><td>------------</td><td>-----------</td><td>------------------</td></tr><tr><td>**EGFR**</td><td>Exon 19 del, L858R (85%); Exon 20 ins (10%); T790M (resistance)</td><td>**10-15%**</td><td>**Osimertinib (1L, Adjuvant)**, Afatinib, Gefitinib, Erlotinib, Dacomitinib; **Amivantamab (Ex20ins)**, Mobocertinib</td></tr><tr><td>**ALK**</td><td>EML4-ALK fusion (variants v1, v3, v3a)</td><td>**3-5%**</td><td>**Lorlatinib (1L/2L)**, Alectinib, Brigatinib, Ceritinib, Crizotinib</td></tr><tr><td>**ROS1**</td><td>CD74-ROS1, other fusions</td><td>**1-2%**</td><td>**Entrectinib, Crizotinib, Lorlatinib, Repotrectinib**</td></tr><tr><td>**RET**</td><td>KIF5B-RET, CCDC6-RET fusions</td><td>**1-2%**</td><td>**Selpercatinib, Pralsetinib**</td></tr><tr><td>**MET**</td><td>Exon 14 skipping (METex14)</td><td>**3-4%**</td><td>**Capmatinib, Tepotinib, Savolitinib**</td></tr><tr><td>**KRAS**</td><td>G12C (50% of KRAS), G12V, G12D</td><td>**25-30%** (G12C ~13%)</td><td>**Sotorasib, Adagrasib (G12C only)**</td></tr><tr><td>**NTRK**</td><td>NTRK1/2/3 fusions</td><td>**<1%**</td><td>**Larotrectinib, Entrectinib**</td></tr><tr><td>**HER2**</td><td>Exon 20 insertions</td><td>**2-4%**</td><td>**T-DXd (Trastuzumab Deruxtecan)**, Pyrotinib, Neratinib</td></tr><tr><td>**BRAF**</td><td>V600E (50%), non-V600E</td><td>**1-2%**</td><td>**Dabrafenib + Trametinib (V600E)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Asymptomatic**</td><td>Incidental nodule on imaging (increasing with CT screening)</td></tr><tr><td>**Respiratory**</td><td>Cough, haemoptysis, dyspnoea, wheeze, recurrent pneumonia</td></tr><tr><td>**Constitutional**</td><td>Weight loss, anorexia, fatigue, night sweats</td></tr><tr><td>**Metastatic**</td><td>Bone pain, headache/seizures (brain), jaundice (liver), lymphadenopathy</td></tr><tr><td>**Paraneoplastic**</td><td>**SIADH** (hyponatraemia), **Hypercalcaemia** (PTHrP), **Cushing's** (ACTH), **Lambert-Eaton** (weakness), **Dermatomyositis**, **Hypertrophic pulmonary osteoarthropathy (HPOA)**</td></tr><tr><td>**Superior Sulcus (Pancoast)**</td><td>Shoulder/arm pain, Horner's syndrome (ptosis, miosis, anhidrosis), brachial plexus</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**TNM 8th Edition (IASLC)**</td><td>T1a: ≤1cm; T1b: >1-2cm; T1c: >2-3cm; T2a: >3-4cm; T2b: >4-5cm; T3: >5-7cm or inv. chest wall/phrenic/pericardium; T4: >7cm or inv. heart/great vessels/trachea/oesophagus/vertebra/carina</td></tr><tr><td>**N Stage**</td><td>N1: Ipsilateral peribronchial/hilar; N2: Ipsilateral mediastinal/subcarinal; N3: Contralateral/ipsilateral scalene/supraclavicular</td></tr><tr><td>**M Stage**</td><td>M1a: Contralateral lung, pleural/pericardial nodules, malignant effusion; M1b: Single extrathoracic met; M1c: Multiple extrathoracic mets</td></tr><tr><td>**Stage Grouping**</td><td>IA1 (T1aN0M0), IA2 (T1bN0M0), IA3 (T1cN0M0), IB (T2aN0M0), IIA (T2bN0M0), IIB (T1-2aN1M0 / T3N0M0), IIIA (T1-2N2M0 / T3N1M0 / T4N0-1M0), IIIB (T3N2M0 / T4N2M0 / T1-2N3M0), IIIC (T3-4N3M0), IVA (M1a/M1b), IVB (M1c)</td></tr></table>
+<div class="sub-h">Histological Subtypes (WHO 2021)</div>
+<ul><li><b>Lepidic</b> (AIS → Minimally Invasive → Lepidic predominant) — <b>Best prognosis</b></li><li><b>Acinar predominant</b> — Most common invasive</li><li><b>Papillary predominant</b></li><li><b>Solid predominant</b> — <b>Worse prognosis</b>, often KRAS/TP53</li><li><b>Micropapillary predominant</b> — <b>Worst prognosis</b>, high metastatic potential</li><li><b>Invasive mucinous adenocarcinoma</b> — <b>KRAS mut</b>, multifocal</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Role</th><th>Key Details</th></tr><tr><td>---------------</td><td>------</td><td>-------------</td></tr><tr><td>**CT Chest/Abdomen**</td><td>Staging (T, N, M)</td><td>Contrast-enhanced; Liver/adrenals; **Brain MRI** for Stage III/IV (10-15% occult)</td></tr><tr><td>**PET-CT**</td><td>Staging, Nodal metabolic activity, Occult mets</td><td>**Standard for Stage IB-III**; False +ve in inflammation/TB</td></tr><tr><td>**Bronchoscopy (EBUS/EUS)**</td><td>**Tissue diagnosis + Nodal staging (N2/N3)**</td><td>**EBUS-TBNA**: Stations 4R, 4L, 7, 10, 11; **EUS-FNA**: Stations 8, 9</td></tr><tr><td>**CT-guided Biopsy**</td><td>Peripheral lesions</td><td>Higher pneumothorax risk</td></tr><tr><td>**Thoracoscopic Biopsy**</td><td>If bronchoscopy non-diagnostic</td><td>Surgical</td></tr><tr><td>**Biomarker Testing (MANDATORY)**</td><td>**EGFR, ALK, ROS1, RET, MET, KRAS, NTRK, HER2, BRAF, PD-L1**</td><td>**NGS Panel preferred** (tissue + liquid); **Liquid biopsy (ctDNA)** if tissue insufficient; **Turnaround <2 weeks**</td></tr><tr><td>**PD-L1 IHC (22C3/SP263/SP142)**</td><td>IO eligibility</td><td>**TPS (Tumour Proportion Score)**: ≥50%, 1-49%, <1%</td></tr><tr><td>**Molecular Residual Disease (ctDNA)**</td><td>Post-op adjuvant decision (emerging)</td><td>Not standard yet</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Squamous Cell Carcinoma**</td><td>Central, cavitary, **p40/p63+, TTF-1-, Napsin A-**; Smoking-related</td></tr><tr><td>**Large Cell Carcinoma**</td><td>Undifferentiated, **TTF-1 variable**, **No glandular/squamous diff**; Diagnosis of exclusion</td></tr><tr><td>**Small Cell Lung Cancer**</td><td>Neuroendocrine: **Chromogranin+, Synaptophysin+, CD56+**, TTF-1+, **Ki-67 high**; Central</td></tr><tr><td>**Metastasis to Lung**</td><td>Known primary; Multiple nodules; IHC matches primary</td></tr><tr><td>**Benign Nodule**</td><td>Stability >2yr, calcification (popcorn, central, laminated), smooth margins</td></tr><tr><td>**Infectious Granuloma**</td><td>TB, Fungal; Caseating/non-caseating; Clinical context</td></tr><tr><td>**Lymphoma**</td><td>CD45+, CD20+ (B-cell); Mediastinal nodes common</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Early Stage (I-IIIA) — Adjuvant</div>
+<p>``<code>mermaid flowchart TD A[Resected NSCLC Stage IB-IIIA] --&gt; B{Histology + Biomarkers} B --&gt;|<b>Adenocarcinoma EGFRm</b>&lt;br/&gt;(Ex19del/L858R)| C[<b>Adjuvant Osimertinib 80mg daily ×3yr</b>&lt;br/&gt;<b>ADAURA</b>: DFS HR 0.17 (Stage II-IIIA); OS HR 0.51&lt;br/&gt;<b>NICE/ESMO: Stage IB (tumour≥4cm), II, IIIA</b>] B --&gt;|<b>PD-L1 ≥1% (TPS)</b>&lt;br/&gt;(Post-adjuvant chemo)| D[<b>Adjuvant Atezolizumab</b> (IMpower010)&lt;br/&gt;<b>Stage II-IIIA</b>, PD-L1≥1% (TC/IC), post-chemo&lt;br/&gt;DFS HR 0.66 (PD-L1≥50%), HR 0.81 (PD-L1≥1%)] D --&gt; D1[<b>Adjuvant Pembrolizumab</b> (KEYNOTE-091)&lt;br/&gt;<b>Stage IB-IIIA</b>, PD-L1≥1%, post-chemo&lt;br/&gt;DFS benefit in PD-L1≥50%] B --&gt;|<b>Driver-negative / PD-L1 &lt;1%</b>&lt;br/&gt;or <b>Squamous</b>| E[<b>Adjuvant Cisplatin-based Chemo ×4 cycles</b>&lt;br/&gt;(LACE meta-analysis: OS benefit 5% at 5yr)&lt;br/&gt;Stage II-IIIA recommended; IB (≥4cm) considered&lt;br/&gt;Regimens: Cis+Vinorelbine (preferred), Cis+Gem, Cis+Doc, Carbo+Pac] </code>``</p>
+<div class="sub-h">Metastatic (Stage IV) — 1L Treatment Algorithm</div>
+<p>``<code>mermaid flowchart TD A[Stage IV Adenocarcinoma] --&gt; B{Actionable Driver Mutation?} B --&gt;|<b>EGFR Ex19del/L858R</b>| C[<b>Osimertinib 80mg daily</b> (FLAURA)&lt;br/&gt;mPFS 18.9 vs 10.2 mo; mOS 38.6 vs 31.8 mo&lt;br/&gt;<b>CNS activity</b>; <b>1L Standard</b>] B --&gt;|<b>EGFR Exon 20 ins</b>| C1[<b>Amivantamab</b> (CHRYSALIS) + Lazertinib (MARIPOSA)&lt;br/&gt;<b>OR Mobocertinib</b> (Exon 20 ins)&lt;br/&gt;<b>OR Chemo-IO</b>] B --&gt;|<b>ALK+</b>| C2[<b>Lorlatinib 100mg daily</b> (CROWN) — <b>1L Preferred</b>&lt;br/&gt;mPFS NR vs 9.3 mo (Crizotinib); <b>CNS penetration</b>&lt;br/&gt;Alt: Alectinib (ALEX), Brigatinib (ALTA-1L)] B --&gt;|<b>ROS1+</b>| C3[<b>Entrectinib</b> (TRIDENT-1) / <b>Crizotinib</b> / <b>Repotrectinib</b> (TRIDENT-2)&lt;br/&gt;Entrectinib: CNS activity, ORR ~60-70%] B --&gt;|<b>RET+</b>| C4[<b>Selpercatinib</b> (LIBRETTO) / <b>Pralsetinib</b> (ARROW)&lt;br/&gt;ORR ~60-70%, CNS activity] B --&gt;|<b>METex14</b>| C5[<b>Capmatinib</b> (GEOMETRY) / <b>Tepotinib</b> (VISION)&lt;br/&gt;ORR ~40-50%] B --&gt;|<b>KRAS G12C</b>| C6[<b>Sotorasib</b> (CodeBreaK) / <b>Adagrasib</b> (KRYSTAL) — <b>2L+</b>&lt;br/&gt;<b>1L: Chemo-IO</b> (KRAS G12C not 1L TKI yet)] B --&gt;|<b>NTRK+</b>| C7[<b>Larotrectinib / Entrectinib</b> — <b>Tumour-agnostic</b>] B --&gt;|<b>HER2 Ex20ins</b>| C8[<b>T-DXd</b> (DESTINY-Lung01) — <b>ORR ~55%</b>, DoR ~18mo] B --&gt;|<b>BRAF V600E</b>| C9[<b>Dabrafenib + Trametinib</b> (BRF113928) — <b>ORR ~63%</b>] B --&gt;|<b>No Driver (Driver-negative)</b>| D{PD-L1 TPS} D --&gt;|<b>≥50%</b>| E[<b>Pembrolizumab 200mg q3w</b> (KEYNOTE-024) — <b>IO alone</b>&lt;br/&gt;mOS 26.3 vs 13.4 mo; <b>Preferred if no contraindication</b>&lt;br/&gt;"High expressors" derive most benefit] D --&gt;|<b>1-49%</b>| F[<b>Pembrolizumab + Chemo</b> (KEYNOTE-189)&lt;br/&gt;Pembro + Pem + Cis/Carbo → <b>Maint Pembro + Pem</b>&lt;br/&gt;<b>OS HR 0.56</b>; <b>Preferred over IO alone</b>] D --&gt;|<b>&lt;1% (TPS &lt;1%)</b>| G[<b>Pembrolizumab + Chemo + Bevacizumab</b> (IMpower150)&lt;br/&gt;Atezo + Bev + Carbo + Pac (ABCP) → <b>Maint Atezo + Bev</b>&lt;br/&gt;<b>Non-squamous only</b>; OS HR 0.78&lt;br/&gt;<b>Alt: Pembro + Chemo</b> (KEYNOTE-189 works across PD-L1)] </code>``</p>
+<div class="sub-h">Maintenance &amp; Subsequent Lines</div>
+<table class="ctable"><tr><th>Setting</th><th>Regimen</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Post 1L Chemo-IO (non-progression)**</td><td>**Continue IO maintenance** (Pembro/Atezo) ± **Pemetrexed** (non-squamous)</td></tr><tr><td>**EGFR TKI progression**</td><td>**Osimertinib → T790M+ → Osimertinib (if 1/2G)**; **Osimertinib → Resistance → Amivantamab + Lazertinib (MARIPOSA-2) / Chemo / Clinical Trial**</td></tr><tr><td>**ALK TKI progression**</td><td>**Lorlatinib (1L/2L)** → Post-Lorlatinib: **Chemo / Trial**; Earlier gens: **Lorlatinib**</td></tr><tr><td>**IO progression**</td><td>**Chemo (Docetaxel ± Ramucirumab / Pem ± Bev)**; **Re-challenge IO** (selected); **T-DXd if HER2+**</td></tr><tr><td>**Brain Mets**</td><td>**Osimertinib (EGFRm), Lorlatinib (ALK+), Alectinib (ALK+)** — **High CNS penetration**; **SRS** for oligo; **WBRT** for multiple</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Adenocarcinoma**</td><td>**Most common NSCLC (40-50%)**; Peripheral; **Driver mutations 60-70%** (Asian > Caucasian); Never-smokers enriched</td></tr><tr><td>**Mandatory Biomarkers**</td><td>**EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1** — **NGS panel + PD-L1 IHC** before 1L</td></tr><tr><td>**ADAURA**</td><td>**Adjuvant Osimertinib ×3yr** for **EGFRm (Ex19del/L858R) Stage IB (≥4cm), II, IIIA** — DFS HR 0.17</td></tr><tr><td>**IMpower010 / KEYNOTE-091**</td><td>**Adjuvant IO (Atezo/Pembro)** post-chemo for **PD-L1≥1% Stage II-IIIA**</td></tr><tr><td>**FLAURA**</td><td>**Osimertinib 1L EGFRm** — mPFS 18.9 mo, mOS 38.6 mo, **CNS activity**</td></tr><tr><td>**CROWN**</td><td>**Lorlatinib 1L ALK+** — mPFS NR, **Best CNS penetration**</td></tr><tr><td>**KEYNOTE-024**</td><td>**Pembro alone 1L PD-L1≥50%** (driver-neg) — mOS 26.3 mo</td></tr><tr><td>**KEYNOTE-189**</td><td>**Pembro + Pem + Plat → Maint Pembro + Pem** — **All PD-L1**, OS HR 0.56</td></tr><tr><td>**IMpower150**</td><td>**Atezo + Bev + Carbo + Pac (ABCP)** — **Non-squamous, PD-L1<1%**, OS HR 0.78</td></tr><tr><td>**EGFR Resistance**</td><td>**1/2G TKI → T790M+ → Osimertinib**; **Osimertinib → C797S (cis/trans), METamp, HER2amp, SCLC trans** → Amivantamab/Lazertinib / Chemo</td></tr><tr><td>**KRAS G12C**</td><td>**Sotorasib / Adagrasib 2L+**; **1L = Chemo-IO**</td></tr><tr><td>**Brain Mets**</td><td>**Targeted TKI with CNS penetration** (Osimertinib, Lorlatinib, Alectinib) + **SRS**; Avoid WBRT if possible</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**60M never-smoker, Stage IV adenocarcinoma. Biomarkers: EGFR Ex19del. 1L treatment?**</td><td>**Osimertinib 80mg daily** (FLAURA) — **1L standard for EGFRm**; CNS activity; mPFS 18.9 mo.</td></tr><tr><td>**Same patient but EGFR Exon 20 insertion. 1L treatment?**</td><td>**Amivantamab + Lazertinib** (MARIPOSA) **OR Mobocertinib** **OR Chemo-IO** (Pembro+Chemo). Ex20ins resistant to 1-3G EGFR TKIs.</td></tr><tr><td>**ALK+ adenocarcinoma — 1L TKI of choice?**</td><td>**Lorlatinib** (CROWN) — **Preferred 1L**; mPFS NR vs 9.3 mo (Crizotinib); **CNS penetration**; **Alt: Alectinib, Brigatinib**.</td></tr><tr><td>**PD-L1 60%, driver-negative adenocarcinoma — 1L?**</td><td>**Pembrolizumab 200mg q3w alone** (KEYNOTE-024) — **IO monotherapy for PD-L1≥50%**; mOS 26.3 mo.</td></tr><tr><td>**PD-L1 30%, driver-negative — 1L?**</td><td>**Pembrolizumab + Pemetrexed + Cisplatin/Carboplatin** (KEYNOTE-189) → **Maintenance Pembro + Pem**; **IO+Chemo preferred over IO alone for PD-L1 1-49%**.</td></tr><tr><td>**PD-L1 0% (TPS<1%), non-squamous — 1L?**</td><td>**Atezolizumab + Bevacizumab + Carboplatin + Paclitaxel (ABCP)** (IMpower150) → **Maint Atezo + Bev** **OR** **Pembro + Chemo** (KEYNOTE-189 works regardless of PD-L1).</td></tr><tr><td>**EGFRm on Osimertinib progresses with isolated brain met. Next?**</td><td>**Continue Osimertinib + SRS** to brain met (CNS penetration); If systemic progression → **Amivantamab + Lazertinib** (MARIPOSA-2) **OR Chemo (Pem+Carbo)**.</td></tr><tr><td>**ADAURA trial — which patients benefit?**</td><td>**Resected EGFRm (Ex19del/L858R) Stage IB (tumour≥4cm), II, IIIA** — **Osimertinib 80mg daily ×3yr** post-adjuvant chemo (or without if chemo contraindicated). DFS HR 0.17.</td></tr><tr><td>**KRAS G12C mutation — targeted therapy available?**</td><td>**Sotorasib / Adagrasib** — **Approved 2L+** post-chemo/IO; **Not 1L yet**; 1L = Chemo-IO.</td></tr><tr><td>**ROS1+ adenocarcinoma — 1L options?**</td><td>**Entrectinib** (TRIDENT-1, CNS activity) **OR Crizotinib** **OR Repotrectinib** (TRIDENT-2, next-gen).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**EGFR Ex19del/L858R vs Ex20ins**</td><td>**Ex19del/L858R (85%)** = **Sensitive to all EGFR TKIs (1-3G)**; **Ex20ins (10%)** = **Resistant to 1-3G** → Needs Amivantamab/Mobocertinib / Chemo-IO</td></tr><tr><td>**T790M vs C797S**</td><td>**T790M** = Resistance to 1/2G TKIs → **Osimertinib works**; **C797S** = Resistance to Osimertinib → **Cis (with T790M) = no EGFR TKI works**; **Trans = 1G TKI may work**</td></tr><tr><td>**ALK TKI generations**</td><td>**1G: Crizotinib** (poor CNS); **2G: Alectinib, Brigatinib, Ceritinib** (better CNS); **3G: Lorlatinib** (best CNS, broadest resistance coverage)</td></tr><tr><td>**PD-L1 assays**</td><td>**22C3 (Dako)** = Pembrolizumab companion; **SP263 (Ventana)** = Atezolizumab/Durvalumab companion; **SP142 (Ventana)** = Atezolizumab IC scoring; **Not interchangeable**</td></tr><tr><td>**KEYNOTE-189 vs IMpower150**</td><td>**K-189**: Pembro + Pem + Plat → Maint Pembro + Pem (**All PD-L1**, non-squam); **IMp150**: Atezo + Bev + Carbo + Pac → Maint Atezo + Bev (**Non-squam, Bev adds benefit in PD-L1 low/neg**)</td></tr><tr><td>**Adjuvant Osimertinib vs Adjuvant IO**</td><td>**Osimertinib**: **EGFRm only** (ADAURA); **IO (Atezo/Pembro)**: **PD-L1≥1%, post-chemo** (IMpower010/KEYNOTE-091); **Mutually exclusive** (EGFRm not IO-responsive)</td></tr></table>
+<p><b>Mnemonic: LUNG-ADENO</b></p>
+<ul><li><b>L</b>iquid biopsy (ctDNA) if tissue insufficient</li><li><b>U</b>nderstand drivers: <b>EGFR, ALK, ROS1, RET, MET, KRAS, NTRK, HER2, BRAF</b></li><li><b>N</b>GS panel mandatory before 1L</li><li><b>G</b>rade subtypes: Lepidic &gt; Acinar &gt; Papillary &gt; Solid &gt; Micropapillary</li><li><b>A</b>DAURA: <b>Osimertinib adjuvant</b> EGFRm IB-IIIA</li><li><b>D</b>river+ → <b>Targeted 1L</b> (Osimertinib, Lorlatinib, Selpercatinib, etc.)</li><li><b>E</b>GFR Ex20ins = <b>Resistant to 1-3G TKIs</b></li><li><b>N</b>o driver → <b>PD-L1 stratifies IO</b>: ≥50% IO alone, 1-49% IO+Chemo, &lt;1% Chemo+IO+Bev</li><li><b>O</b>simertinib resistance: T790M→Osi; C797S→Amivantamab/Lazertinib/Chemo</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Lung Adenocarcinoma)) Biomarkers EGFR (Ex19del, L858R, Ex20ins, T790M) ALK (EML4-ALK) ROS1 (CD74-ROS1) RET (KIF5B-RET) METex14 KRAS (G12C) NTRK HER2 Ex20ins BRAF V600E PD-L1 TPS Staging TNM 8th Edition Stage IA-IIIA (Resectable) Stage IV (Metastatic) Adjuvant EGFRm: Osimertinib ×3yr (ADAURA) PD-L1≥1% post-chemo: Atezo/Pembro Driver-neg: Cisplatin Chemo ×4 (Stage II-IIIA) Metastatic 1L Driver+ EGFR: Osimertinib ALK: Lorlatinib ROS1: Entrectinib RET: Selpercatinib METex14: Capmatinib KRAS G12C: Chemo-IO (TKI 2L) HER2: T-DXd BRAF: Dab+Tram Driver- PD-L1≥50%: Pembro alone PD-L1 1-49%: Pembro+Chemo PD-L1&lt;1%: Atezo+Bev+Chemo / Pembro+Chemo Resistance EGFR: T790M→Osi; C797S/METamp→Amiva+Laze/Chemo ALK: Lorlatinib covers most IO: Chemo ± Bev/Ramucirumab </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Biomarkers**</td><td>EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1 — **NGS + IHC mandatory**</td></tr><tr><td>**EGFRm**</td><td>Ex19del/L858R: **Osimertinib 1L** (FLAURA); Ex20ins: **Amivantamab/Mobocertinib**</td></tr><tr><td>**ALK+**</td><td>**Lorlatinib 1L** (CROWN) — best CNS; Alectinib/Brigatinib alt</td></tr><tr><td>**Adjuvant**</td><td>**EGFRm**: Osimertinib ×3yr (ADAURA) IB-IIIA; **PD-L1≥1%**: Atezo/Pembro post-chemo</td></tr><tr><td>**Met 1L Driver+**</td><td>Matched TKI for each driver</td></tr><tr><td>**Met 1L Driver-**</td><td>PD-L1≥50%: **Pembro alone**; 1-49%: **Pembro+Chemo**; <1%: **Atezo+Bev+Chemo** or **Pembro+Chemo**</td></tr><tr><td>**Key Trials**</td><td>FLAURA, CROWN, ADAURA, K-024, K-189, IMp150, TRIDENT, LIBRETTO, GEOMETRY</td></tr><tr><td>**Resistance**</td><td>EGFR: T790M→Osi; C797S→Amiva+Laze; ALK: Lorlatinib covers most</td></tr><tr><td>**Brain Mets**</td><td>Osimertinib, Lorlatinib, Alectinib — **High CNS penetration** + SRS</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Driver mutation frequencies</td><td></td><td></td></tr><tr><td>Biomarker testing panel</td><td></td><td></td></tr><tr><td>ADAURA adjuvant criteria</td><td></td><td></td></tr><tr><td>1L metastatic algorithms</td><td></td><td></td></tr><tr><td>PD-L1 stratification</td><td></td><td></td></tr><tr><td>EGFR/ALK resistance mechanisms</td><td></td><td></td></tr><tr><td>Brain mets management</td><td></td><td></td></tr><tr><td>KRAS G12C / HER2 / BRAF</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Squamous Cell Carcinoma]], [[Large Cell Carcinoma]], [[SCLC]], [[EGFR TKIs]], [[ALK Inhibitors]], [[PD-L1 Testing]], [[ADAURA Trial]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Lung Adenocarcinoma (NSCLC) (Adenocarcinoma), which statement is correct? A. <b>Most common NSCLC (40-50%)</b> B. **Most - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Most common NSCLC (40-50%)</b>; Peripheral; <b>Driver mutations 60-70%</b> (Asian &gt; Caucasian); Never-smokers enriched</li></ul>
+<p><b>2.</b> Regarding Lung Adenocarcinoma (NSCLC) (Mandatory Biomarkers), which statement is correct? A. <b>EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1</b> B. **EGFR, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1</b> — <b>NGS panel + PD-L1 IHC</b> before 1L</li></ul>
+<p><b>3.</b> Regarding Lung Adenocarcinoma (NSCLC) (ADAURA), which statement is correct? A. <b>Adjuvant Osimertinib ×3yr</b> for <b>EGFRm (Ex19del/L858R) Stage IB (≥4cm), II, IIIA</b> B. **Adjuvant - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Adjuvant Osimertinib ×3yr</b> for <b>EGFRm (Ex19del/L858R) Stage IB (≥4cm), II, IIIA</b> — DFS HR 0.17</li></ul>
+<p><b>4.</b> Regarding Lung Adenocarcinoma (NSCLC) (IMpower010 / KEYNOTE-091), which statement is correct? A. <b>Adjuvant IO (Atezo/Pembro)</b> post-chemo for <b>PD-L1≥1% Stage II-IIIA</b> B. **Adjuvant - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Adjuvant IO (Atezo/Pembro)</b> post-chemo for <b>PD-L1≥1% Stage II-IIIA</b></li></ul>
+<p><b>5.</b> Regarding Lung Adenocarcinoma (NSCLC) (FLAURA), which statement is correct? A. <b>Osimertinib 1L EGFRm</b> B. **Osimertinib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Osimertinib 1L EGFRm</b> — mPFS 18.9 mo, mOS 38.6 mo, <b>CNS activity</b></li></ul>
+<p><b>6.</b> Regarding Lung Adenocarcinoma (NSCLC) (CROWN), which statement is correct? A. <b>Lorlatinib 1L ALK+</b> B. **Lorlatinib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Lorlatinib 1L ALK+</b> — mPFS NR, <b>Best CNS penetration</b></li></ul>
+<p><b>7.</b> Regarding Lung Adenocarcinoma (NSCLC) (KEYNOTE-024), which statement is correct? A. <b>Pembro alone 1L PD-L1≥50%</b> (driver-neg) B. **Pembro - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Pembro alone 1L PD-L1≥50%</b> (driver-neg) — mOS 26.3 mo</li></ul>
+<p><b>8.</b> Regarding Lung Adenocarcinoma (NSCLC) (KEYNOTE-189), which statement is correct? A. <b>Pembro + Pem + Plat → Maint Pembro + Pem</b> B. **Pembro - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Pembro + Pem + Plat → Maint Pembro + Pem</b> — <b>All PD-L1</b>, OS HR 0.56</li></ul>
+<p><b>9.</b> Regarding Lung Adenocarcinoma (NSCLC) (IMpower150), which statement is correct? A. <b>Atezo + Bev + Carbo + Pac (ABCP)</b> B. **Atezo - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Atezo + Bev + Carbo + Pac (ABCP)</b> — <b>Non-squamous, PD-L1&lt;1%</b>, OS HR 0.78</li></ul>
+<p><b>10.</b> Regarding Lung Adenocarcinoma (NSCLC) (EGFR Resistance), which statement is correct? A. <b>1/2G TKI → T790M+ → Osimertinib</b> B. **1/2G - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>1/2G TKI → T790M+ → Osimertinib</b>; <b>Osimertinib → C797S (cis/trans), METamp, HER2amp, SCLC trans</b> → Amivantamab/Laze...</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Most common NSCLC (40-50%)</b></li><li>B. **Most (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Most common NSCLC (40-50%)</b>; Peripheral; <b>Driver mutations 60-70%</b> (Asian &gt; Caucasian); Never-smokers enriched</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1</b></li><li>B. **EGFR, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1</b> — <b>NGS panel + PD-L1 IHC</b> before 1L</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Adjuvant Osimertinib ×3yr</b> for <b>EGFRm (Ex19del/L858R) Stage IB (≥4cm), II, IIIA</b></li><li>B. **Adjuvant (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Adjuvant Osimertinib ×3yr</b> for <b>EGFRm (Ex19del/L858R) Stage IB (≥4cm), II, IIIA</b> — DFS HR 0.17</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Adjuvant IO (Atezo/Pembro)</b> post-chemo for <b>PD-L1≥1% Stage II-IIIA</b></li><li>B. **Adjuvant (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Adjuvant IO (Atezo/Pembro)</b> post-chemo for <b>PD-L1≥1% Stage II-IIIA</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Osimertinib 1L EGFRm</b></li><li>B. **Osimertinib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Osimertinib 1L EGFRm</b> — mPFS 18.9 mo, mOS 38.6 mo, <b>CNS activity</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Lorlatinib 1L ALK+</b></li><li>B. **Lorlatinib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Lorlatinib 1L ALK+</b> — mPFS NR, <b>Best CNS penetration</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Pembro alone 1L PD-L1≥50%</b> (driver-neg)</li><li>B. **Pembro (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Pembro alone 1L PD-L1≥50%</b> (driver-neg) — mOS 26.3 mo</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Pembro + Pem + Plat → Maint Pembro + Pem</b></li><li>B. **Pembro (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Pembro + Pem + Plat → Maint Pembro + Pem</b> — <b>All PD-L1</b>, OS HR 0.56</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Atezo + Bev + Carbo + Pac (ABCP)</b></li><li>B. **Atezo (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Atezo + Bev + Carbo + Pac (ABCP)</b> — <b>Non-squamous, PD-L1&lt;1%</b>, OS HR 0.78</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>1/2G TKI → T790M+ → Osimertinib</b></li><li>B. **1/2G (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>1/2G TKI → T790M+ → Osimertinib</b>; <b>Osimertinib → C797S (cis/trans), METamp, HER2amp, SCLC trans</b> → Amivantamab/Laze...</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Adenocarcinoma? <b>A1:</b> Most common NSCLC (40-50%); Peripheral; Driver mutations 60-70% (Asian &gt; Caucasian); Never-smokers enriched</p>
+<p><b>Q2:</b> Mandatory Biomarkers? <b>A2:</b> EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1 — NGS panel + PD-L1 IHC before 1L</p>
+<p><b>Q3:</b> ADAURA? <b>A3:</b> Adjuvant Osimertinib ×3yr for EGFRm (Ex19del/L858R) Stage IB (≥4cm), II, IIIA — DFS HR 0.17</p>
+<p><b>Q4:</b> IMpower010 / KEYNOTE-091? <b>A4:</b> Adjuvant IO (Atezo/Pembro) post-chemo for PD-L1≥1% Stage II-IIIA</p>
+<p><b>Q5:</b> FLAURA? <b>A5:</b> Osimertinib 1L EGFRm — mPFS 18.9 mo, mOS 38.6 mo, CNS activity</p>
+<p><b>Q6:</b> CROWN? <b>A6:</b> Lorlatinib 1L ALK+ — mPFS NR, Best CNS penetration</p>
+<p><b>Q7:</b> KEYNOTE-024? <b>A7:</b> Pembro alone 1L PD-L1≥50% (driver-neg) — mOS 26.3 mo</p>
+<p><b>Q8:</b> KEYNOTE-189? <b>A8:</b> Pembro + Pem + Plat → Maint Pembro + Pem — All PD-L1, OS HR 0.56</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Adenocarcinoma</td><td>Most common NSCLC (40-50%); Peripheral; Driver mutations 60-70% (Asian > Caucasian); Never-smokers enriched</td></tr><tr><td>2</td><td>A</td><td>Mandatory Biomarkers</td><td>EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1 — NGS panel + PD-L1 IHC before 1L</td></tr><tr><td>3</td><td>A</td><td>ADAURA</td><td>Adjuvant Osimertinib ×3yr for EGFRm (Ex19del/L858R) Stage IB (≥4cm), II, IIIA — DFS HR 0.17</td></tr><tr><td>4</td><td>A</td><td>IMpower010 / KEYNOTE-091</td><td>Adjuvant IO (Atezo/Pembro) post-chemo for PD-L1≥1% Stage II-IIIA</td></tr><tr><td>5</td><td>A</td><td>FLAURA</td><td>Osimertinib 1L EGFRm — mPFS 18.9 mo, mOS 38.6 mo, CNS activity</td></tr><tr><td>6</td><td>A</td><td>CROWN</td><td>Lorlatinib 1L ALK+ — mPFS NR, Best CNS penetration</td></tr><tr><td>7</td><td>A</td><td>KEYNOTE-024</td><td>Pembro alone 1L PD-L1≥50% (driver-neg) — mOS 26.3 mo</td></tr><tr><td>8</td><td>A</td><td>KEYNOTE-189</td><td>Pembro + Pem + Plat → Maint Pembro + Pem — All PD-L1, OS HR 0.56</td></tr><tr><td>9</td><td>A</td><td>IMpower150</td><td>Atezo + Bev + Carbo + Pac (ABCP) — Non-squamous, PD-L1<1%, OS HR 0.78</td></tr><tr><td>10</td><td>A</td><td>EGFR Resistance</td><td>1/2G TKI → T790M+ → Osimertinib; Osimertinib → C797S (cis/trans), METamp, HER2amp, SCLC trans → Amivantamab/Lazertinib /</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Adenocarcinoma</td><td>Most common NSCLC (40-50%); Peripheral; Driver mutations 60-70% (Asian > Caucasian); Never-smokers enriched</td></tr><tr><td>2</td><td>A</td><td>Mandatory Biomarkers</td><td>EGFR, ALK, ROS1, RET, METex14, KRAS, NTRK, HER2, BRAF, PD-L1 — NGS panel + PD-L1 IHC before 1L</td></tr><tr><td>3</td><td>A</td><td>ADAURA</td><td>Adjuvant Osimertinib ×3yr for EGFRm (Ex19del/L858R) Stage IB (≥4cm), II, IIIA — DFS HR 0.17</td></tr><tr><td>4</td><td>A</td><td>IMpower010 / KEYNOTE-091</td><td>Adjuvant IO (Atezo/Pembro) post-chemo for PD-L1≥1% Stage II-IIIA</td></tr><tr><td>5</td><td>A</td><td>FLAURA</td><td>Osimertinib 1L EGFRm — mPFS 18.9 mo, mOS 38.6 mo, CNS activity</td></tr><tr><td>6</td><td>A</td><td>CROWN</td><td>Lorlatinib 1L ALK+ — mPFS NR, Best CNS penetration</td></tr><tr><td>7</td><td>A</td><td>KEYNOTE-024</td><td>Pembro alone 1L PD-L1≥50% (driver-neg) — mOS 26.3 mo</td></tr><tr><td>8</td><td>A</td><td>KEYNOTE-189</td><td>Pembro + Pem + Plat → Maint Pembro + Pem — All PD-L1, OS HR 0.56</td></tr><tr><td>9</td><td>A</td><td>IMpower150</td><td>Atezo + Bev + Carbo + Pac (ABCP) — Non-squamous, PD-L1<1%, OS HR 0.78</td></tr><tr><td>10</td><td>A</td><td>EGFR Resistance</td><td>1/2G TKI → T790M+ → Osimertinib; Osimertinib → C797S (cis/trans), METamp, HER2amp, SCLC trans → Amivantamab/Lazertinib /</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer of the Lung|Cancer of the Lung]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Lung Adenocarcinoma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

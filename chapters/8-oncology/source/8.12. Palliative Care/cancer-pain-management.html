@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cancer Pain Management — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.12. PALLIATIVE CARE</span>
+      <div class="h1">Cancer Pain Management</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>WHO Analgesic Ladder</b> (3-Step) for Cancer Pain</li><li>[ ] Calculate <b>Equianalgesic Doses</b> for <b>Opioid Rotation</b></li><li>[ ] Manage <b>Breakthrough Pain</b> with <b>Rapid-Onset Fentanyl</b></li><li>[ ] Select <b>Adjuvant Analgesics</b> by Pain Type (Neuropathic, Bone, Visceral)</li><li>[ ] Prescribe <b>Opioids Safely</b> (Titration, Monitoring, Constipation Prophylaxis)</li><li>[ ] Perform <b>Celiac Plexus Block</b> Indications (Pancreatic Cancer)</li><li>[ ] Use <b>Radiopharmaceuticals</b> for Diffuse Bone Pain (Ra-223, Sr-89)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">WHO Analgesic Ladder (3-Step)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Pain Severity</th><th>Analgesic</th><th>Examples</th><th>Adjuvants</th></tr><tr><td>------</td><td>---------------</td><td>-----------</td><td>----------</td><td>-----------</td></tr><tr><td>**Step 1**</td><td>**Mild (1-3/10)**</td><td>**Non-Opioid ± Adjuvant**</td><td>**Paracetamol 1g QDS**, **NSAIDs (Ibuprofen 400mg TDS, Naproxen 250mg BD, Diclofenac 50mg TDS)**</td><td>**Gabapentin/Pregabalin** (Neuropathic), **Dexamethasone** (Inflammatory/Spinal Cord), **Bisphosphonates** (Bone)</td></tr><tr><td>**Step 2**</td><td>**Moderate (4-6/10)**</td><td>**Weak Opioid + Non-Opioid ± Adjuvant**</td><td>**Codeine 30-60mg QDS**, **Tramadol 50-100mg QDS**, **Dihydrocodeine 30mg QDS**</td><td>**Same as Step 1**</td></tr><tr><td>**Step 3**</td><td>**Severe (7-10/10)**</td><td>**Strong Opioid + Non-Opioid ± Adjuvant**</td><td>**Morphine (IR 5-10mg 4h / SR 10-30mg BD)**, **Oxycodone (IR 5-10mg 4h / SR 10-20mg BD)**, **Fentanyl Patch (25-100mcg/h q72h)**, **Hydromorphone, Buprenorphine**</td><td>**Same as Step 1**</td></tr></table>
+<div class="callout"><b>Key Principles:</b> <b>By Mouth, By Clock, By Ladder, For Individual, Attention to Detail</b>; <b>Regular + Breakthrough Dosing</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Opioid Equianalgesic Table (Oral/Parenteral)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Opioid</th><th>Oral Dose (mg)</th><th>Parenteral Dose (mg)</th><th>Relative Potency</th></tr><tr><td>--------</td><td>----------------</td><td>----------------------</td><td>------------------</td></tr><tr><td>**Morphine**</td><td>**30** (Reference)</td><td>**10**</td><td>1</td></tr><tr><td>**Oxycodone**</td><td>**20**</td><td>**10**</td><td>**1.5x Morphine**</td></tr><tr><td>**Hydromorphone**</td><td>**7.5**</td><td>**1.5**</td><td>**4x Morphine**</td></tr><tr><td>**Fentanyl**</td><td>—</td><td>**0.1 (100mcg)**</td><td>**100x Morphine**</td></tr><tr><td>**Codeine**</td><td>**200**</td><td>**100**</td><td>**0.15x Morphine**</td></tr><tr><td>**Tramadol**</td><td>**300**</td><td>**100**</td><td>**0.1x Morphine**</td></tr><tr><td>**Methadone**</td><td>**Variable (4-20mg = 30mg Morphine)**</td><td>—</td><td>**Complex (Long Half-Life, NMDA Antagonist)**</td></tr><tr><td>**Buprenorphine**</td><td>**0.4mg SL**</td><td>**0.3mg IV**</td><td>**~40x Morphine (Partial Agonist)**</td></tr></table>
+<div class="sub-h">Opioid Rotation Protocol</div>
+<p>``<code>mermaid flowchart TD A[Inadequate Analgesia / Intolerable Side Effects] --&gt; B[<b>Calculate Current 24h Oral Morphine Equivalent (OME)</b>] B --&gt; C[<b>Select New Opioid</b>] C --&gt; D[<b>Reduce Calculated Dose by 30-50%</b> (Incomplete Cross-Tolerance)] D --&gt; E[<b>Start New Opioid at Reduced Dose</b>] E --&gt; F[<b>Titrate to Effect</b> (IR for Breakthrough)] F --&gt; G[<b>Monitor: Pain Scores, Sedation, Respiratory Rate, Constipation, Nausea</b>] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Breakthrough Pain (BTP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Management</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Definition**</td><td>**Transient Flare (Peak 3-5min, Duration 30-60min)** on Background Controlled Pain</td></tr><tr><td>**Incidence**</td><td>**40-80% on Opioids**</td></tr><tr><td>**First-Line**</td><td>**Rapid-Onset Fentanyl (ROF)**</td></tr><tr><td>**ROF Options**</td><td>**Oral Transmucosal (OTFC 200-800mcg)**, **Sublingual (SL 100-400mcg)**, **Buccal (BTP 100-800mcg)**, **Nasal Spray (50-400mcg)**, **Sublingual Spray (100-400mcg)**</td></tr><tr><td>**Dosing**</td><td>**Start Lowest Dose, Titrate Independently of Background Opioid**</td></tr><tr><td>**Rescue Dose**</td><td>**10-20% of 24h OME** (Traditional IR Oral Morphine/Oxycodone)</td></tr><tr><td>**Max Frequency**</td><td>**Q1-2h PRN** (Max 4-6 doses/day)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Adjuvant Analgesics by Pain Type</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pain Type</th><th>First-Line Adjuvant</th><th>Second-Line / Alternatives</th></tr><tr><td>-----------</td><td>---------------------</td><td>----------------------------</td></tr><tr><td>**Neuropathic**</td><td>**Gabapentin (300-3600mg/d TDS)** OR **Pregabalin (75-600mg/d BD)**</td><td>**Duloxetine 60mg OD**, **Amitriptyline 10-75mg ON**, **Topical Lidocaine 5% / Capsaicin 0.075%**</td></tr><tr><td>**Bone Metastases**</td><td>**Bisphosphonate (Zoledronic Acid 4mg IV q4wk)** OR **Denosumab 120mg SC q4wk**</td><td>**Radiopharmaceuticals (Ra-223, Sr-89)**, **Local RT (8Gy×1 / 20Gy/5fx)**, **Dexamethasone 8-16mg (Spinal Cord Compression)**</td></tr><tr><td>**Visceral (Colic/Obstruction)**</td><td>**Antispasmodic (Hyoscine Butylbromide 20mg q4-6h)**</td><td>**Corticosteroids (Dexamethasone 8-16mg)**, **Octreotide (High Output Fistula/Obstruction)**</td></tr><tr><td>**Spinal Cord Compression**</td><td>**Dexamethasone 16mg Stat → 4mg q6h**</td><td>**Urgent RT (20Gy/5fx / 8Gy×1)**</td></tr><tr><td>**Nerve Plexus Infiltration**</td><td>**Gabapentin/Pregabalin**</td><td>**Celiac Plexus Block (Pancreatic)**, **Stellate Ganglion Block (H&N)**</td></tr><tr><td>**Inflammatory / Liver Capsule Stretch**</td><td>**Corticosteroids (Dexamethasone 4-8mg BD)**</td><td>**NSAIDs (if no contraindication)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Opioid Side Effect Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Side Effect</th><th>Prophylaxis / Management</th></tr><tr><td>-------------</td><td>--------------------------</td></tr><tr><td>**Constipation**</td><td>**MANDATORY: Laxative (Senna 15mg ON + Docusate 100mg BD) OR (Movicol 1-2 sachets BD)**</td></tr><tr><td>**Nausea/Vomiting**</td><td>**Antiemetic (Metoclopramide 10mg TDS / Ondansetron 4mg BD) ×5-7d on Initiation**</td></tr><tr><td>**Sedation**</td><td>**Usually Transient (3-5d)**; **If Persistent → Dose Reduce / Rotate**</td></tr><tr><td>**Respiratory Depression**</td><td>**Rare if Titrated**; **Naloxone 0.4mg IV (Dilute 1:10)** for Reversal</td></tr><tr><td>**Dry Mouth**</td><td>**Sips Water, Saliva Substitutes, Pilocarpine**</td></tr><tr><td>**Pruritus**</td><td>**Antihistamine (Chlorphenamine 4mg), Opioid Rotate**</td></tr><tr><td>**Urinary Retention**</td><td>**Monitor, Catheter if Needed, Dose Reduce**</td></tr><tr><td>**Myoclonus**</td><td>**Dose Reduce, Rotate, Clonazepam 0.5-1mg ON**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Specialised Interventions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Celiac Plexus Block (CPB)</div>
+<table class="ctable"><tr><th>Indication</th><th>**Pancreatic Cancer (Upper Abdominal Visceral Pain)**</th></tr><tr><td>------------</td><td>-------------------------------------------------------</td></tr><tr><td>**Technique**</td><td>**Percutaneous (CT-Guided) / Endoscopic (EUS-Guided)**</td></tr><tr><td>**Agents**</td><td>**Neurolytic (Absolute Alcohol 50% 20-30mL) / Phenol 6-10%**</td></tr><tr><td>**Efficacy**</td><td>**70-90% Pain Relief**, **Reduces Opioid Requirement 30-50%**</td></tr><tr><td>**Complications**</td><td>**Diarrhoea, Hypotension, Paraplegia (Rare <1%), Retroperitoneal Bleeding**</td></tr></table>
+<div class="sub-h">Radiopharmaceuticals for Bone Pain</div>
+<table class="ctable"><tr><th>Agent</th><th>Indication</th><th>Dose</th></tr><tr><td>-------</td><td>------------</td><td>------</td></tr><tr><td>**Radium-223 (Ra-223)**</td><td>**CRPC, Bone Mets, Symptomatic**</td><td>**55 kBq/kg IV q4wk ×6**</td></tr><tr><td>**Strontium-89 (Sr-89)**</td><td>**Diffuse Bone Mets (Breast, Prostate, Lung)**</td><td>**150 MBq (4 mCi) IV**</td></tr><tr><td>**Samarium-153 (Sm-153)**</td><td>**Painful Bone Mets**</td><td>**37 MBq/kg (1 mCi/kg) IV**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Neuropathic Pain Algorithm</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Neuropathic Pain Confirmed] --&gt; B[<b>First-Line: Gabapentin OR Pregabalin</b>] B --&gt; B1[<b>Gabapentin: 300mg TDS → Titrate to 1800-3600mg/d</b>] B --&gt; B2[<b>Pregabalin: 75mg BD → Titrate to 300-600mg/d</b>] B1 --&gt; C{Response} B2 --&gt; C C --&gt;|<b>Partial / Intolerant</b>| D[<b>Switch to Other (Gabapentin ↔ Pregabalin)</b>] C --&gt;|<b>Inadequate</b>| E[<b>Add Duloxetine 60mg OD</b> OR <b>Amitriptyline 10-75mg ON</b>] E --&gt; F{Response} F --&gt;|<b>Inadequate</b>| G[<b>Topical Lidocaine 5% / Capsaicin 8% Patch</b>] G --&gt; H[<b>Specialist Referral: Celiac Plexus Block, Spinal Cord Stimulation, Intrathecal Therapy</b>] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**WHO Ladder**</td><td>**Step 1: Paracetamol/NSAID**, **Step 2: Codeine/Tramadol**, **Step 3: Morphine/Oxycodone/Fentanyl**</td></tr><tr><td>**Opioid Rotation**</td><td>**Reduce 30-50%** for Incomplete Cross-Tolerance</td></tr><tr><td>**Breakthrough Pain**</td><td>**Rapid-Onset Fentanyl (OTFC/SL/Nasal)**; **Dose 10-20% OME**</td></tr><tr><td>**Constipation**</td><td>**MANDATORY Laxative (Senna + Docusate / Movicol)**</td></tr><tr><td>**Neuropathic Pain**</td><td>**Gabapentin/Pregabalin → Duloxetine/Amitriptyline → Topical**</td></tr><tr><td>**Bone Pain**</td><td>**Zoledronic Acid / Denosumab + RT + Ra-223 (CRPC)**</td></tr><tr><td>**Visceral Pain**</td><td>**Hyoscine Butylbromide + Dexamethasone + Octreotide**</td></tr><tr><td>**Celiac Plexus Block**</td><td>**Pancreatic Cancer, Alcohol/Phenol, EUS/CT-Guided**</td></tr><tr><td>**Radiopharmaceuticals**</td><td>**Ra-223 (CRPC), Sr-89 (Diffuse Mets)**</td></tr><tr><td>**Methadone**</td><td>**Complex (Variable Ratio, Long Half-Life, QT Risk)** — **Specialist Only**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Patient on Morphine SR 60mg BD, Breakthrough Pain 4x/day. Morphine IR Dose?**</td><td>**10-20% of 24h OME = 12-24mg** → **Morphine IR 10-15mg q1-2h PRN**; **OR Rapid-Onset Fentanyl (OTFC 200-400mcg)**.</td></tr><tr><td>**Rotating from Morphine 120mg/day to Oxycodone. Dose?**</td><td>**OME 120mg → Oxycodone = 120/1.5 = 80mg/day** → **Reduce 30-50% = 40-56mg/day** → **Oxycodone SR 20-30mg BD**.</td></tr><tr><td>**Neuropathic Pain on Gabapentin 1800mg/d, Still Painful. Next?**</td><td>**Switch to Pregabalin 300mg/d** OR **Add Duloxetine 60mg** OR **Amitriptyline 25mg ON**.</td></tr><tr><td>**Bone Mets Pain — Bisphosphonate vs Denosumab?**</td><td>**Zoledronic Acid 4mg IV q4wk (Renal Adjust)**; **Denosumab 120mg SC q4wk (No Renal Adjust, Preferred if CKD)**.</td></tr><tr><td>**Pancreatic Cancer Pain — Celiac Plexus Block Indication?**</td><td>**Upper Abdominal Visceral Pain, Opioid Intolerant/Inadequate**; **EUS/CT-Guided, Alcohol/Phenol, 70-90% Relief**.</td></tr><tr><td>**Fentanyl Patch 75mcg/h → Oral Morphine Equivalent?**</td><td>**Fentanyl 25mcg/h ≈ 60-90mg OME** → **75mcg/h ≈ 180-270mg OME** (Conservative: 100mcg/h = 240mg).</td></tr><tr><td>**Methadone Rotation — Caution?**</td><td>**Variable Ratio (4-20mg = 30mg Morphine)**, **Long Half-Life (15-60h)**, **QT Prolongation**, **Specialist Only**.</td></tr><tr><td>**Opioid-Induced Constipation — First-Line?**</td><td>**Senna 15mg ON + Docusate 100mg BD** OR **Movicol 1-2 sachets BD**; **MANDATORY Prophylaxis**.</td></tr><tr><td>**Breakthrough Pain — Rapid-Onset Fentanyl Types?**</td><td>**OTFC (Oral Transmucosal), SL (Sublingual), Buccal, Nasal Spray, Sublingual Spray** — **Onset 5-15min**.</td></tr><tr><td>**Opioid Rotation — Why Reduce 30-50%?**</td><td>**Incomplete Cross-Tolerance** — **Prevents Overdose/Sedation/Respiratory Depression**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Step 2 vs Step 3 Opioids**</td><td>**Step 2: Ceiling Dose (Codeine 240mg, Tramadol 400mg)**; **Step 3: No Ceiling (Titrate to Effect)**</td></tr><tr><td>**Fentanyl Patch Conversion**</td><td>**25mcg/h ≈ 60-90mg OME**; **Conservative: 100mcg/h = 240mg OME**; **Never Use for Opioid-Naive**</td></tr><tr><td>**Methadone Ratio**</td><td>**Not Fixed**: **<100mg OME: 3:1**; **100-300mg: 5:1**; **300-600mg: 10:1**; **>600mg: 12:1** — **Specialist**</td></tr><tr><td>**Gabapentin vs Pregabalin**</td><td>**Pregabalin: Better Bioavailability (90% vs 60%), Linear PK, BD Dosing**; **Gabapentin: Saturable Absorption, TDS, Cheaper**</td></tr><tr><td>**Celiac Plexus Block vs Neurolysis**</td><td>**Block = Temporary (Local Anaesthetic)**; **Neurolysis = Permanent (Alcohol/Phenol)** — **For Cancer Pain = Neurolysis**</td></tr><tr><td>**Ra-223 vs Sr-89**</td><td>**Ra-223: Alpha Emitter, CRPC, OS Benefit**; **Sr-89: Beta Emitter, Palliation Only, Myelosuppression**</td></tr><tr><td>**Opioid Rotation Reduction**</td><td>**30-50% Reduction for Incomplete Cross-Tolerance**; **If Rotating to Methadone: Greater Reduction (75-90%)**</td></tr></table>
+<p><b>Mnemonic: CANCER-PAIN</b></p>
+<ul><li><b>C</b>onstipation: <b>Senna + Docusate / Movicol</b> (Mandatory)</li><li><b>A</b>nalgesic Ladder: <b>Step 1 (NSAID), Step 2 (Codeine/Tramadol), Step 3 (Morphine/Oxycodone/Fentanyl)</b></li><li><b>N</b>europathic: <b>Gabapentin/Pregabalin → Duloxetine/Amitriptyline</b></li><li><b>C</b>ancer Bone Pain: <b>Zoledronic Acid / Denosumab + RT + Ra-223</b></li><li><b>E</b>quianalgesic: <b>Morphine 30mg PO = Oxycodone 20mg = Hydromorphone 7.5mg</b></li><li><b>R</b>otation: <b>Reduce 30-50% (Incomplete Cross-Tolerance)</b></li><li><b>P</b>atch Fentanyl: <b>25mcg/h ≈ 60-90mg OME</b>, <b>q72h, Opioid-Tolerant Only</b></li><li><b>A</b>djuvant: <b>Gabapentin, Dexamethasone, Bisphosphonates, Antispasmodics</b></li><li><b>I</b>nterventional: <b>Celiac Plexus Block (Pancreatic), Stellate Ganglion (H&amp;N)</b></li><li><b>N</b>ausea: <b>Metoclopramide/Ondansetron on Initiation</b></li><li><b>B</b>reakthrough: <b>Rapid-Onset Fentanyl (OTFC/SL/Nasal)</b> — <b>10-20% OME</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Cancer Pain Management)) WHO Ladder Step 1: Paracetamol/NSAID Step 2: Codeine/Tramadol Step 3: Morphine/Oxycodone/Fentanyl Opioid Prescribing Regular + Breakthrough Titrate to Effect Mandatory Laxative Antiemetic on Initiation Opioid Rotation Calculate OME Reduce 30-50% Methadone: Specialist Breakthrough Pain Rapid-Onset Fentanyl (OTFC/SL/Nasal) 10-20% OME Adjuvants Neuropathic: Gabapentin/Pregabalin Bone: Zoledronic/Denosumab + RT + Ra-223 Visceral: Hyoscine + Dexamethasone + Octreotide Spinal Cord: Dexamethasone 16mg + RT Interventional Celiac Plexus Block (Pancreatic) Stellate Ganglion (H&amp;N) Radiopharmaceuticals (Ra-223, Sr-89) Side Effects Constipation: Senna+Docusate Nausea: Metoclopramide Sedation: Transient/Rotate Myoclonus: Rotate/Clonazepam </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**WHO Ladder**</td><td>Step 1: Paracetamol/NSAID; Step 2: Codeine/Tramadol; Step 3: Morphine/Oxycodone/Fentanyl</td></tr><tr><td>**Opioid Conversion**</td><td>Morphine 30mg PO = Oxycodone 20mg = Hydromorphone 7.5mg = Fentanyl 100mcg IV</td></tr><tr><td>**Rotation**</td><td>Calculate OME → Reduce 30-50% (Cross-Tolerance)</td></tr><tr><td>**Breakthrough**</td><td>Rapid-Onset Fentanyl (OTFC/SL/Nasal) 10-20% OME</td></tr><tr><td>**Constipation**</td><td>Senna + Docusate / Movicol (Mandatory Prophylaxis)</td></tr><tr><td>**Neuropathic**</td><td>Gabapentin/Pregabalin → Duloxetine/Amitriptyline</td></tr><tr><td>**Bone Pain**</td><td>Zoledronic/Denosumab + RT + Ra-223</td></tr><tr><td>**Celiac Plexus Block**</td><td>Pancreatic Cancer, Alcohol/Phenol, 70-90% Relief</td></tr><tr><td>**Fentanyl Patch**</td><td>25mcg/h ≈ 60-90mg OME, q72h, Tolerant Only</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>WHO Ladder Steps</td><td></td><td></td></tr><tr><td>Opioid Conversion Calculations</td><td></td><td></td></tr><tr><td>Rotation Principles</td><td></td><td></td></tr><tr><td>Breakthrough Pain Management</td><td></td><td></td></tr><tr><td>Adjuvant Selection by Pain Type</td><td></td><td></td></tr><tr><td>Celiac Plexus Block Indications</td><td></td><td></td></tr><tr><td>Side Effect Management</td><td></td><td></td></tr><tr><td>Fentanyl Patch Conversion</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[WHO Analgesic Ladder]], [[Opioid Rotation]], [[Breakthrough Pain]], [[Adjuvant Analgesics]], [[Neuropathic Pain]], [[Bone Metastases Pain]], [[Celiac Plexus Block]], [[Radiopharmaceuticals]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Cancer Pain Management (WHO Ladder), which statement is correct? A. <b>Step 1: Paracetamol/NSAID</b>, <b>Step 2: Codeine/Tramadol</b>, <b>Step 3: Morphine/Oxycodone/Fentanyl</b> B. **Step - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Step 1: Paracetamol/NSAID</b>, <b>Step 2: Codeine/Tramadol</b>, <b>Step 3: Morphine/Oxycodone/Fentanyl</b></li></ul>
+<p><b>2.</b> Regarding Cancer Pain Management (Opioid Rotation), which statement is correct? A. <b>Reduce 30-50%</b> for Incomplete Cross-Tolerance B. **Reduce - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Reduce 30-50%</b> for Incomplete Cross-Tolerance</li></ul>
+<p><b>3.</b> Regarding Cancer Pain Management (Breakthrough Pain), which statement is correct? A. <b>Rapid-Onset Fentanyl (OTFC/SL/Nasal)</b> B. **Rapid-Onset - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Rapid-Onset Fentanyl (OTFC/SL/Nasal)</b>; <b>Dose 10-20% OME</b></li></ul>
+<p><b>4.</b> Regarding Cancer Pain Management (Constipation), which statement is correct? A. <b>MANDATORY Laxative (Senna + Docusate / Movicol)</b> B. **MANDATORY - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>MANDATORY Laxative (Senna + Docusate / Movicol)</b></li></ul>
+<p><b>5.</b> Regarding Cancer Pain Management (Neuropathic Pain), which statement is correct? A. <b>Gabapentin/Pregabalin → Duloxetine/Amitriptyline → Topical</b> B. **Gabapentin/Pregabalin - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Gabapentin/Pregabalin → Duloxetine/Amitriptyline → Topical</b></li></ul>
+<p><b>6.</b> Regarding Cancer Pain Management (Bone Pain), which statement is correct? A. <b>Zoledronic Acid / Denosumab + RT + Ra-223 (CRPC)</b> B. **Zoledronic - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Zoledronic Acid / Denosumab + RT + Ra-223 (CRPC)</b></li></ul>
+<p><b>7.</b> Regarding Cancer Pain Management (Visceral Pain), which statement is correct? A. <b>Hyoscine Butylbromide + Dexamethasone + Octreotide</b> B. **Hyoscine - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Hyoscine Butylbromide + Dexamethasone + Octreotide</b></li></ul>
+<p><b>8.</b> Regarding Cancer Pain Management (Celiac Plexus Block), which statement is correct? A. <b>Pancreatic Cancer, Alcohol/Phenol, EUS/CT-Guided</b> B. **Pancreatic - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Pancreatic Cancer, Alcohol/Phenol, EUS/CT-Guided</b></li></ul>
+<p><b>9.</b> Regarding Cancer Pain Management (Radiopharmaceuticals), which statement is correct? A. <b>Ra-223 (CRPC), Sr-89 (Diffuse Mets)</b> B. **Ra-223 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Ra-223 (CRPC), Sr-89 (Diffuse Mets)</b></li></ul>
+<p><b>10.</b> Regarding Cancer Pain Management (Methadone), which statement is correct? A. <b>Complex (Variable Ratio, Long Half-Life, QT Risk)</b> B. **Complex - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Complex (Variable Ratio, Long Half-Life, QT Risk)</b> — <b>Specialist Only</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Step 1: Paracetamol/NSAID</b>, <b>Step 2: Codeine/Tramadol</b>, <b>Step 3: Morphine/Oxycodone/Fentanyl</b></li><li>B. **Step (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Step 1: Paracetamol/NSAID</b>, <b>Step 2: Codeine/Tramadol</b>, <b>Step 3: Morphine/Oxycodone/Fentanyl</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Reduce 30-50%</b> for Incomplete Cross-Tolerance</li><li>B. **Reduce (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Reduce 30-50%</b> for Incomplete Cross-Tolerance</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Rapid-Onset Fentanyl (OTFC/SL/Nasal)</b></li><li>B. **Rapid-Onset (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Rapid-Onset Fentanyl (OTFC/SL/Nasal)</b>; <b>Dose 10-20% OME</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>MANDATORY Laxative (Senna + Docusate / Movicol)</b></li><li>B. **MANDATORY (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>MANDATORY Laxative (Senna + Docusate / Movicol)</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Gabapentin/Pregabalin → Duloxetine/Amitriptyline → Topical</b></li><li>B. **Gabapentin/Pregabalin (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Gabapentin/Pregabalin → Duloxetine/Amitriptyline → Topical</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>Zoledronic Acid / Denosumab + RT + Ra-223 (CRPC)</b></li><li>B. **Zoledronic (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>Zoledronic Acid / Denosumab + RT + Ra-223 (CRPC)</b></li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>Hyoscine Butylbromide + Dexamethasone + Octreotide</b></li><li>B. **Hyoscine (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>Hyoscine Butylbromide + Dexamethasone + Octreotide</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Pancreatic Cancer, Alcohol/Phenol, EUS/CT-Guided</b></li><li>B. **Pancreatic (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Pancreatic Cancer, Alcohol/Phenol, EUS/CT-Guided</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Ra-223 (CRPC), Sr-89 (Diffuse Mets)</b></li><li>B. **Ra-223 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Ra-223 (CRPC), Sr-89 (Diffuse Mets)</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Complex (Variable Ratio, Long Half-Life, QT Risk)</b></li><li>B. **Complex (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Complex (Variable Ratio, Long Half-Life, QT Risk)</b> — <b>Specialist Only</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> WHO Ladder? <b>A1:</b> Step 1: Paracetamol/NSAID, Step 2: Codeine/Tramadol, Step 3: Morphine/Oxycodone/Fentanyl</p>
+<p><b>Q2:</b> Opioid Rotation? <b>A2:</b> Reduce 30-50% for Incomplete Cross-Tolerance</p>
+<p><b>Q3:</b> Breakthrough Pain? <b>A3:</b> Rapid-Onset Fentanyl (OTFC/SL/Nasal); Dose 10-20% OME</p>
+<p><b>Q4:</b> Constipation? <b>A4:</b> MANDATORY Laxative (Senna + Docusate / Movicol)</p>
+<p><b>Q5:</b> Neuropathic Pain? <b>A5:</b> Gabapentin/Pregabalin → Duloxetine/Amitriptyline → Topical</p>
+<p><b>Q6:</b> Bone Pain? <b>A6:</b> Zoledronic Acid / Denosumab + RT + Ra-223 (CRPC)</p>
+<p><b>Q7:</b> Visceral Pain? <b>A7:</b> Hyoscine Butylbromide + Dexamethasone + Octreotide</p>
+<p><b>Q8:</b> Celiac Plexus Block? <b>A8:</b> Pancreatic Cancer, Alcohol/Phenol, EUS/CT-Guided</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>WHO Ladder</td><td>Step 1: Paracetamol/NSAID, Step 2: Codeine/Tramadol, Step 3: Morphine/Oxycodone/Fentanyl</td></tr><tr><td>2</td><td>A</td><td>Opioid Rotation</td><td>Reduce 30-50% for Incomplete Cross-Tolerance</td></tr><tr><td>3</td><td>A</td><td>Breakthrough Pain</td><td>Rapid-Onset Fentanyl (OTFC/SL/Nasal); Dose 10-20% OME</td></tr><tr><td>4</td><td>A</td><td>Constipation</td><td>MANDATORY Laxative (Senna + Docusate / Movicol)</td></tr><tr><td>5</td><td>A</td><td>Neuropathic Pain</td><td>Gabapentin/Pregabalin → Duloxetine/Amitriptyline → Topical</td></tr><tr><td>6</td><td>A</td><td>Bone Pain</td><td>Zoledronic Acid / Denosumab + RT + Ra-223 (CRPC)</td></tr><tr><td>7</td><td>A</td><td>Visceral Pain</td><td>Hyoscine Butylbromide + Dexamethasone + Octreotide</td></tr><tr><td>8</td><td>A</td><td>Celiac Plexus Block</td><td>Pancreatic Cancer, Alcohol/Phenol, EUS/CT-Guided</td></tr><tr><td>9</td><td>A</td><td>Radiopharmaceuticals</td><td>Ra-223 (CRPC), Sr-89 (Diffuse Mets)</td></tr><tr><td>10</td><td>A</td><td>Methadone</td><td>Complex (Variable Ratio, Long Half-Life, QT Risk) — Specialist Only</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>WHO Ladder</td><td>Step 1: Paracetamol/NSAID, Step 2: Codeine/Tramadol, Step 3: Morphine/Oxycodone/Fentanyl</td></tr><tr><td>2</td><td>A</td><td>Opioid Rotation</td><td>Reduce 30-50% for Incomplete Cross-Tolerance</td></tr><tr><td>3</td><td>A</td><td>Breakthrough Pain</td><td>Rapid-Onset Fentanyl (OTFC/SL/Nasal); Dose 10-20% OME</td></tr><tr><td>4</td><td>A</td><td>Constipation</td><td>MANDATORY Laxative (Senna + Docusate / Movicol)</td></tr><tr><td>5</td><td>A</td><td>Neuropathic Pain</td><td>Gabapentin/Pregabalin → Duloxetine/Amitriptyline → Topical</td></tr><tr><td>6</td><td>A</td><td>Bone Pain</td><td>Zoledronic Acid / Denosumab + RT + Ra-223 (CRPC)</td></tr><tr><td>7</td><td>A</td><td>Visceral Pain</td><td>Hyoscine Butylbromide + Dexamethasone + Octreotide</td></tr><tr><td>8</td><td>A</td><td>Celiac Plexus Block</td><td>Pancreatic Cancer, Alcohol/Phenol, EUS/CT-Guided</td></tr><tr><td>9</td><td>A</td><td>Radiopharmaceuticals</td><td>Ra-223 (CRPC), Sr-89 (Diffuse Mets)</td></tr><tr><td>10</td><td>A</td><td>Methadone</td><td>Complex (Variable Ratio, Long Half-Life, QT Risk) — Specialist Only</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Palliative Care|Palliative Care]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cancer Pain Management · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

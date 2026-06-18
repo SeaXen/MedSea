@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Environmental Occupational Health — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.4. GLOBAL HEALTH & HEALTH SYSTEMS</span>
+      <div class="h1">Environmental Occupational Health</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe global environmental burden: air pollution, WASH, climate change, chemicals</li><li>[ ] Apply occupational health hierarchy of controls (elimination → PPE)</li><li>[ ] Distinguish occupational diseases: pneumoconioses, cancers, MSDs, stress</li><li>[ ] Interpret exposure assessment: BEIs, WELs, OELs, biological monitoring</li><li>[ ] Apply Health Impact Assessment (HIA) and environmental risk assessment</li><li>[ ] Identify climate-health risks: heat, vector-borne, food/water security, displacement</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Environmental Risk</th><th>Global Deaths (2019)</th><th>DALYs</th><th>Key Conditions</th></tr><tr><td>--------------------</td><td>----------------------</td><td>-------</td><td>----------------</td></tr><tr><td>**Air Pollution (PM2.5)**</td><td>~7 million (incl. HAP)</td><td>~120M DALYs</td><td>IHD, Stroke, LRI, COPD, Lung CA, Neonatal</td></tr><tr><td>**Household Air Pollution**</td><td>~2.3 million</td><td>~70M DALYs</td><td>LRI, COPD, Cataract, IHD</td></tr><tr><td>**Ambient Air Pollution**</td><td>~4.5 million</td><td>~50M DALYs</td><td>IHD, Stroke, COPD, Lung CA</td></tr><tr><td>**Unsafe WASH**</td><td>~1.4 million</td><td>~60M DALYs</td><td>Diarrhoea, Typhoid, Hepatitis A, NTDs</td></tr><tr><td>**Lead Exposure**</td><td>~1 million</td><td>~21M DALYs</td><td>CVD, CKD, IDA, developmental</td></tr><tr><td>**Climate Change (WHO est.)**</td><td>~150,000/yr (current)</td><td>Rising</td><td>Heat, food security, displacement</td></tr><tr><td>**Occupational Risks**</td><td>~750,000</td><td>~40M DALYs</td><td>Injuries, cancers, MSDs, COPD, hearing</td></tr></table>
+<p><b>UK Environmental Burden:</b></p>
+<ul><li>Air pollution: ~28,000-40,000 deaths/year (top 10 risk factor)</li><li>99% of UK population in areas exceeding WHO PM2.5 guidelines</li><li>Occupational: 1.8 million ill (2019-20); 65,000 deaths from work-related disease</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Environmental and occupational patterns - see disease categories below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Occupational Disease Categories</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Examples</th><th>Latency</th><th>Surveillance</th></tr><tr><td>----------</td><td>----------</td><td>---------</td><td>-------------</td></tr><tr><td>**Respiratory**</td><td>Asbestosis, Silicosis, Coal worker's pneumoconiosis, Byssinosis, Occupational asthma, COPD</td><td>Years-decades</td><td>Lung function, CXR (ILO classification), CT</td></tr><tr><td>**Cancer**</td><td>Mesothelioma (asbestos), Lung (asbestos, silica, diesel), Bladder (aromatic amines), Leukaemia (benzene), Skin (PAH, UV)</td><td>10-40 years</td><td>Registry, sentinel events, screening</td></tr><tr><td>**Skin**</td><td>Contact dermatitis, occupational vitiligo, chloracne, skin cancer (UV)</td><td>Variable</td><td>Patch testing, clinical exam</td></tr><tr><td>**MSD**</td><td>Back pain, RSI, vibration (HAVS)</td><td>Variable</td><td>Clinical, functional</td></tr><tr><td>**Hearing**</td><td>Noise-induced hearing loss (NIHL)</td><td>Years</td><td>Audiometry (audiogram)</td></tr><tr><td>**Infections**</td><td>HCW: TB, HepB/C, HIV; Lab: Brucella, Q fever</td><td>Variable</td><td>OH records, serology</td></tr><tr><td>**Stress/Mental**</td><td>Burnout, PTSD, anxiety, depression</td><td>Variable</td><td>Screening, OH referral</td></tr><tr><td>**Reproductive**</td><td>Infertility, miscarriage, congenital (lead, solvents)</td><td>Variable</td><td>Exposure history</td></tr><tr><td>**Toxicology**</td><td>Heavy metals (lead, mercury, cadmium), solvents, pesticides</td><td>Variable</td><td>Biological monitoring (blood, urine)</td></tr></table>
+<p><b>Hierarchy of Controls (NIOSH):</b></p>
+<ol><li><b>Elimination</b> (most effective): Remove hazard entirely</li><li><b>Substitution</b>: Replace with less hazardous</li><li><b>Engineering Controls</b>: Enclosure, ventilation, machine guarding</li><li><b>Administrative Controls</b>: Rotation, training, signage, work practices</li><li><b>PPE</b> (least reliable): Respirators, gloves, hearing protection</li></ol>
+<p><b>Mermaid: Hierarchy of Controls</b> ``<code>mermaid flowchart TD A[Hazard] --&gt; B[1. Elimination\nMost Effective] B --&gt; C[2. Substitution] C --&gt; D[3. Engineering Controls] D --&gt; E[4. Administrative Controls] E --&gt; F[5. PPE\nLeast Reliable] style A fill:#f96,stroke:#333 style B fill:#bfb,stroke:#333 style F fill:#fbb,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Exposure Assessment)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Exposure Limits:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Examples&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-------------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>WEL (UK)</b>&lt;/td&gt;&lt;td&gt;Workplace Exposure Limit (8h TWA, 15min STEL)&lt;/td&gt;&lt;td&gt;Asbestos 0.1 f/ml; Lead 0.15 mg/m³&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>OEL/TLV</b>&lt;/td&gt;&lt;td&gt;Occupational Exposure Limit / Threshold Limit Value (ACGIH)&lt;/td&gt;&lt;td&gt;Similar framework&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PEL</b>&lt;/td&gt;&lt;td&gt;Permissible Exposure Limit (US OSHA)&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>BEI</b>&lt;/td&gt;&lt;td&gt;Biological Exposure Index (urinary/blood marker)&lt;/td&gt;&lt;td&gt;Lead blood &lt;50 μg/dL; Hg urine &lt;35 μg/g&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>BMGV</b>&lt;/td&gt;&lt;td&gt;Biological Monitoring Guidance Value (UK)&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>DFG/MAK</b>&lt;/td&gt;&lt;td&gt;German/European reference&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Air Quality Standards</b>&lt;/td&gt;&lt;td&gt;Ambient: PM2.5 ≤5 μg/m³ (WHO 2021); NO2 ≤10 μg/m³&lt;/td&gt;&lt;td&gt;DEFRA, EPA, EEA&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Environmental Monitoring:</b></p>
+<ul><li><b>Air Sampling</b>: Personal (breathing zone), static, area</li><li><b>Noise</b>: Dosimetry, sound level meter</li><li><b>Biological Monitoring</b>: Blood, urine (e.g., urinary cotinine for tobacco)</li><li><b>Hygiene Survey</b>: Walk-through inspection, exposure mapping</li></ul>
+<p><b>Health Impact Assessment (HIA):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;<b>Screening</b> (does this need HIA?)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;<b>Scoping</b> (what to assess)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;<b>Risk Assessment</b> (baseline, exposure, effects)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;<b>Appraisal</b> (qualitative/quantitative)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;<b>Reporting</b> (recommendations)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;<b>Monitoring/Evaluation</b>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Environmental/Occupational Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Occupational Asthma vs WAA**</td><td>Occupational: caused by work (sensitiser/irritant). WAA: pre-existing asthma worsened by work.</td></tr><tr><td>**Asbestosis vs Mesothelioma**</td><td>Asbestosis: lung fibrosis (parenchymal). Mesothelioma: pleural/peritoneal cancer. Different latency, dose-response.</td></tr><tr><td>**COPD vs Pneumoconiosis**</td><td>COPD: airway + alveolar (smoking main). Pneumoconiosis: parenchymal fibrosis (occupational dust).</td></tr><tr><td>**Climate Change vs Pollution**</td><td>Climate: greenhouse gases, long-term warming. Pollution: harmful substances, immediate health. Drivers overlap (fossil fuel).</td></tr><tr><td>**HAP vs AAP**</td><td>HAP: indoor biomass/kerosene (LMIC, women, children). AAP: traffic, industry, power (HIC/LMIC).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Climate Health & Prevention)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Climate Change Health Risks (WHO 2024):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Risk&lt;/th&gt;&lt;th&gt;Examples&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Direct</b>&lt;/td&gt;&lt;td&gt;Heatwaves (mortality, CVD, renal, mental), floods (drowning, displacement), storms, wildfires&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Indirect (vector-borne)</b>&lt;/td&gt;&lt;td&gt;Malaria expansion, dengue, Lyme, West Nile&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Food Security</b>&lt;/td&gt;&lt;td&gt;Undernutrition, mycotoxins, antimicrobial resistance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Water</b>&lt;/td&gt;&lt;td&gt;Drought, contamination, cholera, conflict&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mental</b>&lt;/td&gt;&lt;td&gt;Eco-anxiety, PTSD, displacement, loss of place&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Displacement</b>&lt;/td&gt;&lt;td&gt;Climate migration, conflict, health system disruption&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Net Zero / Sustainability:</b></p>
+<ul><li><b>NHS Net Zero</b>: 2040 emissions (10 years ahead of gov); &gt;80% from supply chain</li><li><b>Decarbonisation</b>: Health system contributes ~5% UK emissions; low-carbon care</li><li><b>Co-benefits</b>: Active travel ↓ emissions + ↓ CVD/diabetes; plant-rich diet ↓ emissions + ↓ CVD/cancer</li></ul>
+<p><b>Public Health Response:</b></p>
+<ul><li><b>Heat Health Alerts (HHA)</b>: Met Office + UKHSA; level 0-4</li><li><b>Surveillance</b>: Climate-sensitive diseases (heat, vector-borne, food/water)</li><li><b>Adaptation</b>: Resilience, infrastructure, early warning</li><li><b>Mitigation</b>: Decarbonisation, transition to renewable energy</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Air Pollution**</td><td>7M deaths/yr; PM2.5 → IHD, Stroke, LRI, COPD, Lung CA</td></tr><tr><td>**HAP (Household Air Pollution)**</td><td>2.3M deaths/yr; biomass; LMIC women/children</td></tr><tr><td>**Unsafe WASH**</td><td>1.4M deaths/yr; diarrhoea, typhoid, hepatitis A</td></tr><tr><td>**Lead**</td><td>1M deaths/yr; CVD, CKD, developmental</td></tr><tr><td>**Occupational**</td><td>750K deaths/yr; 1.8M UK illnesses; 65K UK deaths</td></tr><tr><td>**Hierarchy**</td><td>Elimination > Substitution > Engineering > Administrative > PPE</td></tr><tr><td>**Asbestosis**</td><td>Asbestos; parenchymal fibrosis; 10-20y latency</td></tr><tr><td>**Mesothelioma**</td><td>Asbestos; pleural cancer; 30-40y latency; no smoking link</td></tr><tr><td>**NIOSH Listed Cancers**</td><td>Asbestos, silica, diesel, benzene, aromatic amines, PAH</td></tr><tr><td>**Climate Health**</td><td>Heatwaves, vector-borne, food/water, mental, displacement</td></tr><tr><td>**NHS Net Zero**</td><td>2040 (with supply chain)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Global environmental burden - key statistics?**</td><td>Air pollution ~7M deaths/yr; HAP 2.3M; AAP 4.5M; Unsafe WASH 1.4M; Lead 1M; Occupational 750K.</td></tr><tr><td>**PM2.5 health effects and WHO guideline?**</td><td>PM2.5 → IHD, Stroke, LRI, COPD, Lung CA, Neonatal. WHO 2021 annual mean: 5 μg/m³. UK ~10-12 μg/m³ (exceeding).</td></tr><tr><td>**Hierarchy of controls (NIOSH)?**</td><td>1) Elimination, 2) Substitution, 3) Engineering, 4) Administrative, 5) PPE. PPE least reliable.</td></tr><tr><td>**Asbestosis vs mesothelioma - difference?**</td><td>Asbestosis: lung fibrosis, dose-related, 10-20y latency, smoking worsens. Mesothelioma: pleural cancer, 30-40y latency, NOT smoking-related, dose-response.</td></tr><tr><td>**Occupational asthma - what is it? Common causes?**</td><td>Asthma caused by workplace exposure (sensitiser/irritant). High molecular weight: flour, animal, latex (IgE). Low molecular weight: isocyanates, wood dust, metal (irritant).</td></tr><tr><td>**Climate change health risks (WHO)?**</td><td>Direct: heatwaves, floods, storms. Indirect: vector-borne (malaria, dengue), food security, water, mental, displacement.</td></tr><tr><td>**HIA steps?**</td><td>1) Screening, 2) Scoping, 3) Risk Assessment (baseline, exposure, effects), 4) Appraisal, 5) Reporting, 6) Monitoring.</td></tr><tr><td>**Lead exposure health effects?**</td><td>Adults: CVD, CKD, anaemia, neuro. Children: neurodevelopment, IQ loss, behaviour. BLL <5 μg/dL (CDC, no safe threshold).</td></tr><tr><td>**WEL vs BEI - difference?**</td><td>WEL = Workplace Exposure Limit (air, 8h TWA). BEI = Biological Exposure Index (blood/urine, integrated). WEL = exposure; BEI = internal dose.</td></tr><tr><td>**NHS Net Zero target?**</td><td>2040 for NHS emissions (including supply chain); 80% from supply chain. Wider NHS sustainability plan.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Asbestosis ≠ Smoking**</td><td>Asbestosis: parenchymal, smoking worsens. Mesothelioma: pleural, smoking NOT link.</td></tr><tr><td>**HAP vs AAP**</td><td>HAP: indoor (biomass), LMIC. AAP: ambient (traffic/industry), HIC/LMIC.</td></tr><tr><td>**WEL ≠ Safe**</td><td>WEL = legal limit, not "safe". Some effects below WEL. ALARP principle.</td></tr><tr><td>**Lead "Safe" Threshold**</td><td>NO safe threshold. BLL <5 μg/dL recommended (no observed adverse effect).</td></tr><tr><td>**Climate Mitigation vs Adaptation**</td><td>Mitigation: ↓ emissions (prevent). Adaptation: cope with effects (response).</td></tr></table>
+<p><b>Mnemonic: ENVIRONMENTAL DEATHS (AW-LO)</b></p>
+<ul><li><b>A</b>ir pollution 7M</li><li><b>W</b>ASH 1.4M</li><li><b>L</b>ead 1M</li><li><b>O</b>ccupational 750K</li></ul>
+<p><b>Mnemonic: HIERARCHY OF CONTROLS (ESAAP)</b></p>
+<ul><li><b>E</b>limination</li><li><b>S</b>ubstitution</li><li><b>A</b>dministrative</li><li><b>A</b>ssists</li><li><b>P</b>PE</li></ul>
+<p><b>Mnemonic: ASBESTOS DISEASES (AAS)</b></p>
+<ul><li><b>A</b>sbestosis (fibrosis)</li><li><b>A</b>denocarcinoma (lung)</li><li><b>S</b>quamous (lung)</li><li><b>M</b>esothelioma (pleural)</li></ul>
+<p><b>Mnemonic: CLIMATE HEALTH (DFHVM)</b></p>
+<ul><li><b>D</b>irect (heat, flood, storm)</li><li><b>F</b>ood security</li><li><b>H</b>ydrology (water)</li><li><b>V</b>ector-borne</li><li><b>M</b>ental, Migration</li></ul>
+<p><b>Mnemonic: HIA STEPS (SS-RAM)</b></p>
+<ul><li><b>S</b>creening</li><li><b>S</b>coping</li><li><b>R</b>isk Assessment</li><li><b>A</b>ppraisal</li><li><b>M</b>onitoring</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Environmental &amp; Occupational)) Environmental Air Pollution 7M deaths WASH 1.4M Lead 1M PM2.5, NO2, O3 Occupational 750K deaths/yr 1.8M UK illnesses Hierarchy: Eliminate &gt; Substitute &gt; Engineering &gt; Admin &gt; PPE Diseases Respiratory: Asbestosis, Silicosis, CWP, Asthma Cancer: Mesothelioma, Lung, Bladder MSD, Hearing, Stress Exposure Assessment WEL, OEL, PEL BEI, BMGV (biological) Personal air sampling Climate Health Heatwaves Vector-borne Food/water Displacement Mental NHS Net Zero 2040 Co-benefits of mitigation </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Air Pollution**</td><td>7M deaths/yr; PM2.5 → CVD, LRI, COPD, Lung CA</td></tr><tr><td>**WASH**</td><td>1.4M deaths/yr; diarrhoea, typhoid</td></tr><tr><td>**Lead**</td><td>1M deaths/yr; no safe threshold</td></tr><tr><td>**Occupational**</td><td>750K deaths/yr</td></tr><tr><td>**Hierarchy**</td><td>Elimination > Substitution > Engineering > Admin > PPE</td></tr><tr><td>**Asbestosis**</td><td>Parenchymal fibrosis; 10-20y</td></tr><tr><td>**Mesothelioma**</td><td>Pleural; 30-40y; not smoking</td></tr><tr><td>**WEL vs BEI**</td><td>WEL = air; BEI = blood/urine</td></tr><tr><td>**Climate**</td><td>Heat, vector, food, water, mental, displacement</td></tr><tr><td>**NHS Net Zero**</td><td>2040</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Environmental Burden</td><td></td><td></td></tr><tr><td>Hierarchy of Controls</td><td></td><td></td></tr><tr><td>Occupational Diseases</td><td></td><td></td></tr><tr><td>Exposure Assessment</td><td></td><td></td></tr><tr><td>Climate Health</td><td></td><td></td></tr><tr><td>HIA Steps</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Global Burden of Disease (GBD Study, Risk Factors).md]], [[Cancer Epidemiology.md]], [[Injury &amp; Violence Epidemiology.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Environmental Occupational Health · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hodgkin Lymphoma — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.7. HAEMATOLOGICAL MALIGNANCIES</span>
+      <div class="h1">Hodgkin Lymphoma</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>Ann Arbor Staging</b> + <b>IPS (International Prognostic Score)</b> for advanced HL</li><li>[ ] Differentiate <b>Classical HL (cHL) subtypes</b> vs <b>Nodular Lymphocyte-Predominant HL (NLPHL)</b></li><li>[ ] Apply <b>ABVD</b> standard regimen and <b>PET-adapted therapy</b> (RATHL/HD18)</li><li>[ ] Select <b>escalated BEACOPP</b> for high-risk (IPS ≥4)</li><li>[ ] Apply <b>PET-adapted RT consolidation</b> (RATHL, GHSG HD18)</li><li>[ ] Manage <b>relapsed/refractory</b> HL (Salvage → Auto-HSCT → Brentuximab/PD-1)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**B-cell lymphoma** with **Reed-Sternberg (RS) cells** (CD30+, CD15+, PAX5+, CD20±, CD45-)</td></tr><tr><td>**Incidence**</td><td>**~2-3/100,000/year**</td></tr><tr><td>**Bimodal Age**</td><td>**Peak 1: 15-35y**; **Peak 2: >55y**</td></tr><tr><td>**Sex Ratio**</td><td>**M > F** (slight)</td></tr><tr><td>**Aetiology**</td><td>**EBV** (40% cHL), **HIV**, **Family history**, **Higher SES**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Histological Classification (WHO)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Subtype</th><th>Frequency</th><th>Key Features</th></tr><tr><td>-------</td><td>---------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Classical HL (cHL)**</td><td>**Nodular Sclerosis (NS)**</td><td>**70%**</td><td>**Lacunar RS cells**, collagen bands</td></tr><tr><td></td><td>**Mixed Cellularity (MC)**</td><td>**20-25%**</td><td>**Classic RS cells**, mixed infiltrate, EBV+ (70%)</td></tr><tr><td></td><td>**Lymphocyte-Rich (LR)**</td><td>**5%**</td><td>Many lymphocytes, few RS cells, **Best prognosis**</td></tr><tr><td></td><td>**Lymphocyte-Depleted (LD)**</td><td>**<1%**</td><td>**Numerous RS cells**, few lymphocytes, **Worst prognosis**, HIV+</td></tr><tr><td>**NLPHL**</td><td>**Nodular Lymphocyte-Predominant**</td><td>**5-10%**</td><td>**LP ("Popcorn") cells (CD20+, CD45+, CD30-, CD15-)**, **Excellent prognosis**, **Late relapses**, **Rare transformation to DLBCL**</td></tr></table>
+<div class="callout">[!critical] <b>cHL vs NLPHL: CD20/CD30/CD15</b> - <b>cHL</b>: <b>CD30+, CD15+, CD20±, CD45-</b> - <b>NLPHL</b>: <b>CD20+, CD45+, CD30-, CD15-, OCT2+, BOB.1+</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Staging — **Ann Arbor / Cotswolds**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Definition</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**I**</td><td>Single lymph node region (I) or single extralymphatic site (IE)</td></tr><tr><td>**II**</td><td>≥2 lymph node regions on **same side** of diaphragm (II) or IE + local nodes (IIE)</td></tr><tr><td>**III**</td><td>**Lymph nodes on both sides** of diaphragm (III), + spleen (IIIS), + local extralymphatic (IIIE)</td></tr><tr><td>**IV**</td><td>**Diffuse extralymphatic involvement** (Liver, Bone marrow, Lung, etc.)</td></tr></table>
+<div class="sub-h">Modifiers</div>
+<table class="ctable"><tr><th>Modifier</th><th>Meaning</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**A**</td><td>No B-symptoms</td></tr><tr><td>**B**</td><td>**B-symptoms**: Fever >38°C, Drenching night sweats, Weight loss >10% 6mo</td></tr><tr><td>**E**</td><td>Contiguous extralymphatic extension</td></tr><tr><td>**S**</td><td>Splenic involvement</td></tr><tr><td>**X**</td><td>**Bulky disease** — **Largest node >10cm** (or >1/3 thoracic diameter on CXR)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Prognostic Scores — **IPS (Advanced HL) / GHSG (Early)**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">International Prognostic Score (IPS) — **Advanced HL (Stage III-IV)**</div>
+<table class="ctable"><tr><th>Factor</th><th>Points</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Albumin <4 g/dL**</td><td>1</td></tr><tr><td>**Hb <10.5 g/dL**</td><td>1</td></tr><tr><td>**Male Sex**</td><td>1</td></tr><tr><td>**Stage IV**</td><td>1</td></tr><tr><td>**Age ≥45y**</td><td>1</td></tr><tr><td>**WBC >15×10⁹/L**</td><td>1</td></tr><tr><td>**Lymphocytes <600/µL or <8%**</td><td>1</td></tr></table>
+<table class="ctable"><tr><th>IPS Score</th><th>Risk Group</th><th>5-yr FFS</th><th>5-yr OS</th></tr><tr><td>-----------</td><td>------------</td><td>----------</td><td>---------</td></tr><tr><td>**0-1**</td><td>Good</td><td>**~90%**</td><td>**~95%**</td></tr><tr><td>**2-3**</td><td>Intermediate</td><td>**~80%**</td><td>**~85%**</td></tr><tr><td>**4-7**</td><td>Poor</td><td>**~50-60%**</td><td>**~70%**</td></tr></table>
+<div class="sub-h">GHSG Risk (Early Stage I-II) — **HD18 / HD19**</div>
+<table class="ctable"><tr><th>Risk Group</th><th>Criteria</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Favourable**</td><td>**Stage IA/IIA, No bulky, ESR<50 (IA) or <30 (IIA), ≤2 nodal areas**</td></tr><tr><td>**Unfavourable**</td><td>**B-symptoms, Bulky, ESR≥50/30, >2 nodal areas, Extranodal**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Treatment — **ABVD / BEACOPP / PET-Adapted**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Early Stage (I-II) — **GHSG HD18/HD19**</div>
+<table class="ctable"><tr><th>Risk Group</th><th>Standard</th><th>PET-Adapted (RATHL/HD18)</th></tr><tr><td>------------</td><td>----------</td><td>--------------------------</td></tr><tr><td>**Favourable**</td><td>**ABVD ×2 → IFRT 20Gy**</td><td>**ABVD ×2 → PET** → **PET- → No RT** (RATHL); **PET+ → RT**</td></tr><tr><td>**Unfavourable**</td><td>**ABVD ×4 → IFRT 30Gy**</td><td>**ABVD ×2 → PET** → **PET- → ABVD ×2** (No RT); **PET+ → BEACOPPesc ×2 → RT**</td></tr></table>
+<div class="sub-h">Advanced Stage (III-IV) — **ABVD vs BEACOPPesc**</div>
+<table class="ctable"><tr><th>Regimen</th><th>Regimen Details</th><th>Indication</th></tr><tr><td>---------</td><td>----------------</td><td>------------</td></tr><tr><td>**ABVD**</td><td>**Adriamycin 25mg/m2, Bleomycin 10mg/m2, Vinblastine 6mg/m2, Dacarbazine 375mg/m2** D1,15 q28d ×6 cycles</td><td>**Standard 1L for most**; IPS 0-3</td></tr><tr><td>**BEACOPPesc**</td><td>**Bleomycin, Etoposide, Adriamycin, Cyclophosphamide, Vincristine, Procarbazine, Prednisolone** — **Dose-escalated, G-CSF support**</td><td>**IPS ≥4** (High-risk); **HD15: BEACOPPesc superior to ABVD for FFS**</td></tr><tr><td>**BrECADD**</td><td>**Brentuximab Vedotin + AVD + Cyclophosphamide + Dexamethasone**</td><td>**HD21: Superior to BEACOPPesc** (ongoing)</td></tr></table>
+<div class="callout">[!critical] <b>RATHL Trial (PET-Adapted ABVD)</b> - <b>PET-ve after ABVD×2</b>: <b>Omit Bleomycin, Omit RT</b> (if favourable) → <b>Non-inferior PFS, Less toxicity</b> - <b>PET+ve</b>: <b>BEACOPPesc ×2 → RT</b> (or continue ABVD + RT)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Brentuximab Vedotin (BV) — **Anti-CD30 ADC**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Setting</th><th>Regimen</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Relapsed/Refractory cHL**</td><td>**BV 1.8mg/kg IV q3wk** — **ORR 75%, CR 34%**</td></tr><tr><td>**Frontline + AVD**</td><td>**BV + AVD (ECHELON-1)** — **Superior PFS/OS vs ABVD (Stage III-IV)**</td></tr><tr><td>**Consolidation post-ASCT**</td><td>**BV 1.8mg/kg q3wk ×16 cycles** (AETHERA) — **Improves PFS**</td></tr><tr><td>**Frontline NLPHL**</td><td>**BV + Bendamustine/Ritux** (ECOG-1608)</td></tr></table>
+<div class="callout">[!critical] <b>BV Toxicity</b>: <b>Peripheral Neuropathy</b> (dose-limiting) — <b>Hold if Grade ≥2</b>; <b>Neutropenia; Infusion reactions</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Relapsed/Refractory HL — **Salvage → Auto-HSCT → Novel**</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Relapsed/Refractory HL] --&gt; B{Timing / Prior Therapy} B --&gt;|Early Relapse (&lt;12mo) / Refractory| C[<b>Salvage Chemo</b>\n<b>ICE / ICE-DHAP / GDP / ESHAP</b>\n+ <b>Brentuximab Vedotin (BV)</b>\n→ <b>Auto-HSCT if Chemosensitive</b>] B --&gt;|Late Relapse (&gt;12mo)| D[<b>ABVD Re-treatment</b>\nOR <b>Salvage Chemo</b>\n→ <b>Auto-HSCT if Chemosensitive</b>] C --&gt; E[<b>Auto-HSCT</b>\n<b>BEAM / CBV / BuMel</b>\n<b>Chemosensitivity = Prerequisite</b>] E --&gt; F{Post-ASCT Relapse} F --&gt;|Yes| G[<b>Brentuximab Vedotin</b>\n<b>PD-1 Inhibitors (Nivolumab/Pembrolizumab)</b>\n<b>CAR-T (CD30 CAR-T)</b>\n<b>Allo-HSCT</b>] </code>``</p>
+<table class="ctable"><tr><th>Salvage Regimen</th><th>Response Rate</th><th>Use</th></tr><tr><td>-----------------</td><td>---------------</td><td>-----</td></tr><tr><td>**ICE / ICE-DHAP**</td><td>~60-70%</td><td>Standard salvage</td></tr><tr><td>**GDP / ESHAP**</td><td>~60%</td><td>Alternative</td></tr><tr><td>**BV + Bendamustine**</td><td>~80%</td><td>Relapsed/Refractory</td></tr><tr><td>**PD-1 Inhibitors (Nivo/Pembro)**</td><td>~70% ORR</td><td>R/R cHL (post-ASCT, post-BV)</td></tr></table>
+<div class="callout">[!critical] <b>Auto-HSCT = Curative for Chemosensitive Relapse</b> — <b>BEAM / CBV / BuMel conditioning</b> — <b>Not for chemo-refractory</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">NLPHL — **Distinct Entity**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Immunophenotype**</td><td>**CD20+, CD45+, CD30-, CD15-, OCT2+, BOB.1+, CD20+, CD79a+**</td></tr><tr><td>**Genetics**</td><td>**BCL6 mut, SGK1 mut, DUSP2 mut**</td></tr><tr><td>**Clinical**</td><td>**Young males, localised cervical/axillary nodes**, **Indolent**, **Late relapses (>10y)**</td></tr><tr><td>**Transformation**</td><td>**~10-15%** → **DLBCL** (T-cell rich B-cell lymphoma)</td></tr><tr><td>**Treatment**</td><td>**Early: IFRT 30Gy**; **Advanced: R-CHOP / R-Bendamustine** ± **Rituximab maintenance**; **BV + R-Benda** (ECOG-1608)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**RS Cells**</td><td>**CD30+, CD15+, PAX5+, CD20±, CD45-**; **Lacunar (NS), Classic (MC), Popcorn (NLPHL)**</td></tr><tr><td>**Staging**</td><td>**Ann Arbor + Cotswolds** (A/B, E, S, X)</td></tr><tr><td>**IPS**</td><td>**7 factors** (Alb<4, Hb<10.5, Male, Stage IV, Age≥45, WBC>15k, Lympho<600) — **0-1 Good, 2-3 Int, 4-7 Poor**</td></tr><tr><td>**Early Favourable**</td><td>**ABVD ×2 + IFRT 20Gy**; **PET- → No RT (RATHL)**</td></tr><tr><td>**Early Unfavourable**</td><td>**ABVD ×4 + IFRT 30Gy**; **PET+ → BEACOPPesc ×2 + RT**</td></tr><tr><td>**Advanced**</td><td>**IPS 0-3: ABVD ×6**; **IPS ≥4: BEACOPPesc** (or **BrECADD**)</td></tr><tr><td>**BV**</td><td>**CD30 ADC** — Relapsed/Refractory, **Frontline + AVD (ECHELON-1), Post-ASCT (AETHERA)**</td></tr><tr><td>**Relapse**</td><td>**Salvage Chemo → Auto-HSCT** (Chemosensitive); **BV / PD-1 / CAR-T** (Refractory)</td></tr><tr><td>**NLPHL**</td><td>**CD20+ CD30- Popcorn cells**; **Rituximab ± RT / R-CHOP**; **Transformation to DLBCL**</td></tr><tr><td>**PET-CT**</td><td>**Deauville 1-3 = Negative; 4-5 = Positive**; **Interim PET after 2 ABVD = Adapt therapy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>"What are the Reed-Sternberg cell immunophenotypic markers?"</td><td>**CD30+, CD15+, PAX5+, CD20±, CD45-, CD30 strong**</td></tr><tr><td>"What is the difference between cHL and NLPHL?"</td><td>**cHL**: CD30+, CD15+, CD20±; **NLPHL**: CD20+, CD45+, CD30-, CD15-, Popcorn cells (LP cells)</td></tr><tr><td>"What is the Ann Arbor staging for HL?"</td><td>**I: Single node; II: Same side diaphragm; III: Both sides; IV: Extralymphatic** + **A/B, E, S, X**</td></tr><tr><td>"What is the International Prognostic Score (IPS) for advanced HL?"</td><td>**7 factors**: Alb<4, Hb<10.5, Male, Stage IV, Age≥45, WBC>15k, Lymph<600 — **Score 0-7, 0-1 Good, 2-3 Int, 4-7 Poor**</td></tr><tr><td>"What is the standard first-line treatment for early favourable HL?"</td><td>**ABVD ×2 cycles → IFRT 20Gy**; **PET-ve after 2 cycles → Omit RT (RATHL)**</td></tr><tr><td>"What is the RATHL trial?"</td><td>**PET-adapted ABVD**: PET-ve after 2 ABVD → Omit Bleomycin & RT; **Non-inferior PFS, less toxicity**</td></tr><tr><td>"When do you use BEACOPPesc vs ABVD?"</td><td>**BEACOPPesc**: **Advanced HL with IPS ≥4 (High-risk)**; **HD15: BEACOPPesc superior FFS**</td></tr><tr><td>"What is the role of Brentuximab Vedotin in HL?"</td><td>**Anti-CD30 ADC**; **R/R cHL (ORR 75%)**, **Frontline + AVD (ECHELON-1)**, **Post-ASCT consolidation (AETHERA)**</td></tr><tr><td>"How do you manage relapsed HL?"</td><td>**Salvage Chemo (ICE/GDP) → Auto-HSCT if Chemosensitive** → **BV / PD-1 / CAR-T if Refractory**</td></tr><tr><td>"What is the immunophenotype of NLPHL?"</td><td>**CD20+, CD45+, CD30-, CD15-, OCT2+, BOB.1+, Popcorn (LP) cells**; **Rituximab responsive**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**cHL vs NLPHL**</td><td>**cHL**: RS cells, CD30/CD15+/CD20±; **NLPHL**: Popcorn cells, **CD20+/CD30-**, excellent prognosis</td></tr><tr><td>**ABVD vs BEACOPPesc**</td><td>**ABVD**: Less toxic, standard for most; **BEACOPPesc**: **High-risk (IPS≥4)**, more toxic (G-CSF needed), better FFS in high-risk</td></tr><tr><td>**Early vs Advanced Stage RT**</td><td>**Early**: IFRT after ABVD; **Advanced**: No routine RT (except bulky/residual)</td></tr><tr><td>**PET-Adapted**</td><td>**PET-ve after 2 ABVD → De-escalate (No Bleo, No RT)**; **PET+ve → Escalate (BEACOPP/Bleomycin/RT)**</td></tr><tr><td>**BV vs Nivolumab**</td><td>**BV**: Anti-CD30 ADC, **1L + AVD, R/R, Post-ASCT**; **PD-1**: **Post-ASCT, Post-BV, Relapsed**</td></tr><tr><td>**Auto-HSCT Timing**</td><td>**Only if Chemosensitive** (CR/PR to salvage); **Not for Chemo-refractory**</td></tr></table>
+<p><b>Mnemonic: Ann Arbor = "I-II-III-IV + A-B-E-S-X"</b></p>
+<ul><li><b>I</b>: Single node</li><li><b>II</b>: Same side diaphragm</li><li><b>III</b>: Both sides</li><li><b>IV</b>: Extralymphatic</li><li><b>A</b>: No B-symptoms; <b>B</b>: B-symptoms; <b>E</b>: Extranodal; <b>S</b>: Spleen; <b>X</b>: Bulky</li></ul>
+<p><b>Mnemonic: IPS = "A-H-M-S-A-W-L"</b></p>
+<ul><li><b>A</b>lbumin &lt;4</li><li><b>H</b>b &lt;10.5</li><li><b>M</b>ale</li><li><b>S</b>tage IV</li><li><b>A</b>ge ≥45</li><li><b>W</b>BC &gt;15k</li><li><b>L</b>ymphocytes &lt;600</li></ul>
+<p><b>Mnemonic: ABVD = "A-B-V-D"</b></p>
+<ul><li><b>A</b>driamycin</li><li><b>B</b>leomycin</li><li><b>V</b>inblastine</li><li><b>D</b>acarbazine</li></ul>
+<p><b>Mnemonic: BEACOPPesc = "B-E-A-C-O-P-P"</b></p>
+<ul><li><b>B</b>leomycin, <b>E</b>toposide, <b>A</b>driamycin, <b>C</b>yclophosphamide, <b>O</b>ncovin, <b>P</b>rocarbazine, <b>P</b>rednisolone</li></ul>
+<p><b>Mnemonic: RATHL = "PET NEG → NO BLEO NO RT"</b></p>
+<ul><li><b>PET</b> negative after 2 ABVD</li><li><b>NO</b> Bleomycin</li><li><b>NO</b> RT</li></ul>
+<p><b>Mnemonic: cHL vs NLPHL = "CD30 CD15 vs CD20 CD45"</b></p>
+<ul><li><b>cHL</b>: <b>CD30+, CD15+</b>, <b>CD20±</b>, <b>CD45-</b></li><li><b>NLPHL</b>: <b>CD20+, CD45+</b>, <b>CD30-, CD15-</b>, <b>Popcorn cells</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Hodgkin Lymphoma)) Subtypes Classical_HL Nodular_Sclerosis Mixed_Cellularity Lymphocyte_Rich Lymphocyte_Depleted NLPHL Popcorn_Cells CD20_CD45 Transformation_DLBCL Staging Ann_Arbor Cotswolds_Modifiers Prognosis IPS_Advanced GHSG_Early Treatment Early_Favourable ABVDx2_RT PET_Adapted Early_Unfavourable ABVDx4_RT Advanced ABVD_IPS_0-3 BEACOPPesc_IPS_4+ BrECADD Relapsed Salvage_ICE_GDP Auto_HSCT Brentuximab PD1_Inhibitor Brentuximab CD30_ADC ECHELON_1 AETHERA NLPHL Rituximab_RT R_CHOP Transformation_DLBCL </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**RS Cells**</td><td>**CD30+, CD15+, PAX5+, CD20±, CD45-**</td></tr><tr><td>**NLPHL**</td><td>**CD20+, CD45+, CD30-, CD15-, Popcorn cells**</td></tr><tr><td>**Staging**</td><td>Ann Arbor (I-IV) + **A/B, E, S, X (Bulky)**</td></tr><tr><td>**IPS (Advanced)**</td><td>**7 factors**: Alb<4, Hb<10.5, Male, Stage IV, Age≥45, WBC>15k, Lymph<600</td></tr><tr><td>**Early Favourable**</td><td>**ABVD×2 → IFRT 20Gy**; **PET- → No RT (RATHL)**</td></tr><tr><td>**Early Unfavourable**</td><td>**ABVD×4 → IFRT 30Gy**; PET+ → BEACOPPesc×2 + RT</td></tr><tr><td>**Advanced**</td><td>**IPS 0-3: ABVD×6**; **IPS ≥4: BEACOPPesc**; **BrECADD**</td></tr><tr><td>**BV**</td><td>**Anti-CD30 ADC**; **R/R, Frontline+AVD, Post-ASCT**</td></tr><tr><td>**Relapsed**</td><td>**Salvage → Auto-HSCT (Chemosensitive) → BV/PD-1/CAR-T**</td></tr><tr><td>**NLPHL**</td><td>**CD20+, Popcorn cells, Excellent prognosis, Late transformation to DLBCL**</td></tr><tr><td>**PET-CT**</td><td>**Deauville 1-3 = Negative; 4-5 = Positive**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>WHO Classification (cHL vs NLPHL)</td><td></td><td></td></tr><tr><td>Ann Arbor Staging</td><td></td><td></td></tr><tr><td>IPS / GHSG Risk Stratification</td><td></td><td></td></tr><tr><td>Treatment Algorithm (Early/Advanced)</td><td></td><td></td></tr><tr><td>PET-Adapted Therapy (RATHL)</td><td></td><td></td></tr><tr><td>Brentuximab Vedotin Indications</td><td></td><td></td></tr><tr><td>Relapse Management / Auto-HSCT</td><td></td><td></td></tr><tr><td>NLPHL Management</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Parent Topic Group</b>: [[Lymphomas]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Diffuse Large B-Cell Lymphoma (DLBCL)]] · [[Follicular Lymphoma]] · [[PET-CT in Lymphoma]] · [[Oncologic Emergencies Overview]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Hodgkin Lymphoma (HL) (RS Cells), which statement is correct? A. <b>CD30+, CD15+, PAX5+, CD20±, CD45-</b> B. **CD30+, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CD30+, CD15+, PAX5+, CD20±, CD45-</b>; <b>Lacunar (NS), Classic (MC), Popcorn (NLPHL)</b></li></ul>
+<p><b>2.</b> Regarding Hodgkin Lymphoma (HL) (Staging), which statement is correct? A. <b>Ann Arbor + Cotswolds</b> (A/B, E, S, X) B. **Ann - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Ann Arbor + Cotswolds</b> (A/B, E, S, X)</li></ul>
+<p><b>3.</b> Regarding Hodgkin Lymphoma (HL) (IPS), which statement is correct? A. <b>7 factors</b> (Alb&lt;4, Hb&lt;10.5, Male, Stage IV, Age≥45, WBC&gt;15k, Lympho&lt;600) B. **7 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>7 factors</b> (Alb&lt;4, Hb&lt;10.5, Male, Stage IV, Age≥45, WBC&gt;15k, Lympho&lt;600) — <b>0-1 Good, 2-3 Int, 4-7 Poor</b></li></ul>
+<p><b>4.</b> Regarding Hodgkin Lymphoma (HL) (Early Favourable), which statement is correct? A. <b>ABVD ×2 + IFRT 20Gy</b> B. **ABVD - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ABVD ×2 + IFRT 20Gy</b>; <b>PET- → No RT (RATHL)</b></li></ul>
+<p><b>5.</b> Regarding Hodgkin Lymphoma (HL) (Early Unfavourable), which statement is correct? A. <b>ABVD ×4 + IFRT 30Gy</b> B. **ABVD - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ABVD ×4 + IFRT 30Gy</b>; <b>PET+ → BEACOPPesc ×2 + RT</b></li></ul>
+<p><b>6.</b> Regarding Hodgkin Lymphoma (HL) (Advanced), which statement is correct? A. <b>IPS 0-3: ABVD ×6</b> B. **IPS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>IPS 0-3: ABVD ×6</b>; <b>IPS ≥4: BEACOPPesc</b> (or <b>BrECADD</b>)</li></ul>
+<p><b>7.</b> Regarding Hodgkin Lymphoma (HL) (BV), which statement is correct? A. <b>CD30 ADC</b> B. **CD30 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CD30 ADC</b> — Relapsed/Refractory, <b>Frontline + AVD (ECHELON-1), Post-ASCT (AETHERA)</b></li></ul>
+<p><b>8.</b> Regarding Hodgkin Lymphoma (HL) (Relapse), which statement is correct? A. <b>Salvage Chemo → Auto-HSCT</b> (Chemosensitive) B. **Salvage - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Salvage Chemo → Auto-HSCT</b> (Chemosensitive); <b>BV / PD-1 / CAR-T</b> (Refractory)</li></ul>
+<p><b>9.</b> Regarding Hodgkin Lymphoma (HL) (NLPHL), which statement is correct? A. <b>CD20+ CD30- Popcorn cells</b> B. **CD20+ - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CD20+ CD30- Popcorn cells</b>; <b>Rituximab ± RT / R-CHOP</b>; <b>Transformation to DLBCL</b></li></ul>
+<p><b>10.</b> Regarding Hodgkin Lymphoma (HL) (PET-CT), which statement is correct? A. <b>Deauville 1-3 = Negative B. </b>Deauville - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Deauville 1-3 = Negative; 4-5 = Positive</b>; <b>Interim PET after 2 ABVD = Adapt therapy</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>CD30+, CD15+, PAX5+, CD20±, CD45-</b></li><li>B. **CD30+, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>CD30+, CD15+, PAX5+, CD20±, CD45-</b>; <b>Lacunar (NS), Classic (MC), Popcorn (NLPHL)</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Ann Arbor + Cotswolds</b> (A/B, E, S, X)</li><li>B. **Ann (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Ann Arbor + Cotswolds</b> (A/B, E, S, X)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>7 factors</b> (Alb&lt;4, Hb&lt;10.5, Male, Stage IV, Age≥45, WBC&gt;15k, Lympho&lt;600)</li><li>B. **7 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>7 factors</b> (Alb&lt;4, Hb&lt;10.5, Male, Stage IV, Age≥45, WBC&gt;15k, Lympho&lt;600) — <b>0-1 Good, 2-3 Int, 4-7 Poor</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>ABVD ×2 + IFRT 20Gy</b></li><li>B. **ABVD (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>ABVD ×2 + IFRT 20Gy</b>; <b>PET- → No RT (RATHL)</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>ABVD ×4 + IFRT 30Gy</b></li><li>B. **ABVD (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>ABVD ×4 + IFRT 30Gy</b>; <b>PET+ → BEACOPPesc ×2 + RT</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>IPS 0-3: ABVD ×6</b></li><li>B. **IPS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>IPS 0-3: ABVD ×6</b>; <b>IPS ≥4: BEACOPPesc</b> (or <b>BrECADD</b>)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>CD30 ADC</b></li><li>B. **CD30 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>CD30 ADC</b> — Relapsed/Refractory, <b>Frontline + AVD (ECHELON-1), Post-ASCT (AETHERA)</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Salvage Chemo → Auto-HSCT</b> (Chemosensitive)</li><li>B. **Salvage (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Salvage Chemo → Auto-HSCT</b> (Chemosensitive); <b>BV / PD-1 / CAR-T</b> (Refractory)</li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>CD20+ CD30- Popcorn cells</b></li><li>B. **CD20+ (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>CD20+ CD30- Popcorn cells</b>; <b>Rituximab ± RT / R-CHOP</b>; <b>Transformation to DLBCL</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. **Deauville 1-3 = Negative</li><li>B. **Deauville (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Deauville 1-3 = Negative; 4-5 = Positive</b>; <b>Interim PET after 2 ABVD = Adapt therapy</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> RS Cells? <b>A1:</b> CD30+, CD15+, PAX5+, CD20±, CD45-; Lacunar (NS), Classic (MC), Popcorn (NLPHL)</p>
+<p><b>Q2:</b> Staging? <b>A2:</b> Ann Arbor + Cotswolds (A/B, E, S, X)</p>
+<p><b>Q3:</b> IPS? <b>A3:</b> 7 factors (Alb&lt;4, Hb&lt;10.5, Male, Stage IV, Age≥45, WBC&gt;15k, Lympho&lt;600) — 0-1 Good, 2-3 Int, 4-7 Poor</p>
+<p><b>Q4:</b> Early Favourable? <b>A4:</b> ABVD ×2 + IFRT 20Gy; PET- → No RT (RATHL)</p>
+<p><b>Q5:</b> Early Unfavourable? <b>A5:</b> ABVD ×4 + IFRT 30Gy; PET+ → BEACOPPesc ×2 + RT</p>
+<p><b>Q6:</b> Advanced? <b>A6:</b> IPS 0-3: ABVD ×6; IPS ≥4: BEACOPPesc (or BrECADD)</p>
+<p><b>Q7:</b> BV? <b>A7:</b> CD30 ADC — Relapsed/Refractory, Frontline + AVD (ECHELON-1), Post-ASCT (AETHERA)</p>
+<p><b>Q8:</b> Relapse? <b>A8:</b> Salvage Chemo → Auto-HSCT (Chemosensitive); BV / PD-1 / CAR-T (Refractory)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>RS Cells</td><td>CD30+, CD15+, PAX5+, CD20±, CD45-; Lacunar (NS), Classic (MC), Popcorn (NLPHL)</td></tr><tr><td>2</td><td>A</td><td>Staging</td><td>Ann Arbor + Cotswolds (A/B, E, S, X)</td></tr><tr><td>3</td><td>A</td><td>IPS</td><td>7 factors (Alb<4, Hb<10.5, Male, Stage IV, Age≥45, WBC>15k, Lympho<600) — 0-1 Good, 2-3 Int, 4-7 Poor</td></tr><tr><td>4</td><td>A</td><td>Early Favourable</td><td>ABVD ×2 + IFRT 20Gy; PET- → No RT (RATHL)</td></tr><tr><td>5</td><td>A</td><td>Early Unfavourable</td><td>ABVD ×4 + IFRT 30Gy; PET+ → BEACOPPesc ×2 + RT</td></tr><tr><td>6</td><td>A</td><td>Advanced</td><td>IPS 0-3: ABVD ×6; IPS ≥4: BEACOPPesc (or BrECADD)</td></tr><tr><td>7</td><td>A</td><td>BV</td><td>CD30 ADC — Relapsed/Refractory, Frontline + AVD (ECHELON-1), Post-ASCT (AETHERA)</td></tr><tr><td>8</td><td>A</td><td>Relapse</td><td>Salvage Chemo → Auto-HSCT (Chemosensitive); BV / PD-1 / CAR-T (Refractory)</td></tr><tr><td>9</td><td>A</td><td>NLPHL</td><td>CD20+ CD30- Popcorn cells; Rituximab ± RT / R-CHOP; Transformation to DLBCL</td></tr><tr><td>10</td><td>A</td><td>PET-CT</td><td>Deauville 1-3 = Negative; 4-5 = Positive; Interim PET after 2 ABVD = Adapt therapy</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>RS Cells</td><td>CD30+, CD15+, PAX5+, CD20±, CD45-; Lacunar (NS), Classic (MC), Popcorn (NLPHL)</td></tr><tr><td>2</td><td>A</td><td>Staging</td><td>Ann Arbor + Cotswolds (A/B, E, S, X)</td></tr><tr><td>3</td><td>A</td><td>IPS</td><td>7 factors (Alb<4, Hb<10.5, Male, Stage IV, Age≥45, WBC>15k, Lympho<600) — 0-1 Good, 2-3 Int, 4-7 Poor</td></tr><tr><td>4</td><td>A</td><td>Early Favourable</td><td>ABVD ×2 + IFRT 20Gy; PET- → No RT (RATHL)</td></tr><tr><td>5</td><td>A</td><td>Early Unfavourable</td><td>ABVD ×4 + IFRT 30Gy; PET+ → BEACOPPesc ×2 + RT</td></tr><tr><td>6</td><td>A</td><td>Advanced</td><td>IPS 0-3: ABVD ×6; IPS ≥4: BEACOPPesc (or BrECADD)</td></tr><tr><td>7</td><td>A</td><td>BV</td><td>CD30 ADC — Relapsed/Refractory, Frontline + AVD (ECHELON-1), Post-ASCT (AETHERA)</td></tr><tr><td>8</td><td>A</td><td>Relapse</td><td>Salvage Chemo → Auto-HSCT (Chemosensitive); BV / PD-1 / CAR-T (Refractory)</td></tr><tr><td>9</td><td>A</td><td>NLPHL</td><td>CD20+ CD30- Popcorn cells; Rituximab ± RT / R-CHOP; Transformation to DLBCL</td></tr><tr><td>10</td><td>A</td><td>PET-CT</td><td>Deauville 1-3 = Negative; 4-5 = Positive; Interim PET after 2 ABVD = Adapt therapy</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hodgkin Lymphoma · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

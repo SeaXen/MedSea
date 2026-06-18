@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Metastatic Breast Cancer — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.3. CANCER OF THE BREAST</span>
+      <div class="h1">Metastatic Breast Cancer</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Select <b>1L therapy for HR+/HER2-</b> using CDK4/6i + AI, and sequence subsequent lines</li><li>[ ] Manage <b>HER2+ MBC</b> with Trastuzumab/Pertuzumab → T-DM1 → T-DXd → Tucatinib</li><li>[ ] Treat <b>TNBC</b> with immunotherapy (PD-L1+) and Sacituzumab Govitecan/T-DXd</li><li>[ ] Manage <b>visceral crisis</b> with aggressive chemotherapy</li><li>[ ] Treat <b>bone metastases</b> with Denosumab/Zoledronic acid</li><li>[ ] Manage <b>brain metastases</b> with SRS, T-DXd, Tucatinib</li><li>[ ] Apply <b>supportive care</b>: Bone health, VTE prophylaxis, palliative care integration</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">HR+/HER2- Metastatic Breast Cancer</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line</div>
+<table class="ctable"><tr><th>Regimen</th><th>Key Trial</th><th>Population</th></tr><tr><td>---------</td><td>-----------</td><td>------------</td></tr><tr><td>**CDK4/6i + AI** (Palbociclib/Ribociclib/Abemaciclib + Letrozole/Anastrozole)</td><td>**PALOMA-2, MONALEESA-2, MONARCH-3**</td><td>**1L Standard**, Postmeno, No visceral crisis</td></tr><tr><td>**Ribociclib + AI**</td><td>**MONALEESA-3**</td><td>**1L**, Including premeno + OFS</td></tr><tr><td>**Abemaciclib + AI**</td><td>**MONARCH-3**</td><td>**1L**, Good CNS penetration</td></tr></table>
+<div class="callout"><b>Premenopausal</b>: Add <b>OFS (Goserelin/Leuprorelin)</b> to all CDK4/6i + AI regimens.</div>
+<div class="sub-h">Subsequent Lines (HR+/HER2-)</div>
+<table class="ctable"><tr><th>Line</th><th>Regimen</th><th>Key Biomarker/Trial</th></tr><tr><td>------</td><td>---------</td><td>---------------------</td></tr><tr><td>**2L (Post CDK4/6i + AI)**</td><td>**Fulvestrant 500mg + CDK4/6i**</td><td>**PALOMA-3, MONALEESA-3, MONARCH-2**</td></tr><tr><td>**ESR1 Mutation** (Post AI)</td><td>**Fulvestrant + CDK4/6i** OR **Elacestrant** (EMERALD)</td><td>**ESR1 mut → ORR 40-50%**</td></tr><tr><td>**PIK3CA Mutation**</td><td>**Alpelisib 300mg + Fulvestrant** (SOLAR-1)</td><td>**PIK3CA mut → PFS HR 0.65**</td></tr><tr><td>**Post CDK4/6i + Fulvestrant**</td><td>**Everolimus + Exemestane** (BOLERO-2)</td><td>**mTOR inhibition**</td></tr><tr><td>**Later**</td><td>**Chemotherapy** (Capecitabine, Eribulin, Gemcitabine, Vinorelbine)</td><td>**Sequential single agents**</td></tr></table>
+<div class="sub-h">CDK4/6 Inhibitor Comparison</div>
+<table class="ctable"><tr><th>Agent</th><th>Dose</th><th>Key SE</th><th>Unique Feature</th></tr><tr><td>-------</td><td>------</td><td>--------</td><td>----------------</td></tr><tr><td>**Palbociclib**</td><td>125mg d1-21/28</td><td>Neutropenia (70%), Fatigue</td><td>First approved</td></tr><tr><td>**Ribociclib**</td><td>600mg d1-21/28</td><td>Neutropenia, QTc prolongation, Hepatotoxicity</td><td>**Overall OS benefit (MONALEESA-3,7)**</td></tr><tr><td>**Abemaciclib**</td><td>150mg BD (continuous)</td><td>Diarrhoea (80%), Neutropenia (low)</td><td>**Continuous dosing**, **CNS penetration**, **MonarchE adjuvant**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">HER2+ Metastatic Breast Cancer</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line</div>
+<table class="ctable"><tr><th>Regimen</th><th>Trial</th><th>Key Result</th></tr><tr><td>---------</td><td>-------</td><td>------------</td></tr><tr><td>**Trastuzumab + Pertuzumab + Docetaxel/Paclitaxel**</td><td>**CLEOPATRA**</td><td>**OS 57.4mo vs 40.8mo (HR 0.68)** — **1L Standard**</td></tr></table>
+<div class="sub-h">Second-Line</div>
+<table class="ctable"><tr><th>Regimen</th><th>Trial</th><th>Key Result</th></tr><tr><td>---------</td><td>-------</td><td>------------</td></tr><tr><td>**T-DM1 (Trastuzumab Emtansine)**</td><td>**EMILIA**</td><td>**OS 30.9 vs 25.1mo (HR 0.68)** — **Standard 2L**</td></tr></table>
+<div class="sub-h">Third-Line and Beyond</div>
+<table class="ctable"><tr><th>Line</th><th>Regimen</th><th>Trial</th><th>Key Feature</th></tr><tr><td>------</td><td>---------</td><td>-------</td><td>-------------</td></tr><tr><td>**3L**</td><td>**T-DXd (Trastuzumab Deruxtecan)**</td><td>**DESTINY-Breast03**</td><td>**PFS 28.8 vs 6.8mo (HR 0.33)** — **Preferred 2L/3L**</td></tr><tr><td>**3L+**</td><td>**Tucatinib + Trastuzumab + Capecitabine**</td><td>**HER2CLIMB**</td><td>**Brain mets active (PFS HR 0.58 CNS)**</td></tr><tr><td>**4L+**</td><td>**Margetuximab + Chemo**</td><td>**SOPHIA**</td><td>**Fc-engineered, OS benefit**</td></tr><tr><td>**Later**</td><td>**Neratinib + Capecitabine**</td><td>**NALA**</td><td>**CNS activity**</td></tr></table>
+<div class="sub-h">Brain Metastases (HER2+)</div>
+<table class="ctable"><tr><th>Agent</th><th>CNS Activity</th><th>Trial</th></tr><tr><td>-------</td><td>--------------</td><td>-------</td></tr><tr><td>**T-DXd**</td><td>**High** (ORR 50-60% CNS)</td><td>**DESTINY-Breast03,04**</td></tr><tr><td>**Tucatinib + Trastuzumab + Capecitabine**</td><td>**High** (PFS HR 0.58 CNS)</td><td>**HER2CLIMB**</td></tr><tr><td>**Tucatinib monotherapy**</td><td>Moderate</td><td>—</td></tr><tr><td>**T-DM1**</td><td>Low</td><td>—</td></tr><tr><td>**Lapatinib + Capecitabine**</td><td>Moderate</td><td>**LANDSCAPE**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Triple Negative Breast Cancer (TNBC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line</div>
+<table class="ctable"><tr><th>Subgroup</th><th>Regimen</th><th>Key Trial</th></tr><tr><td>----------</td><td>---------</td><td>-----------</td></tr><tr><td>**PD-L1 CPS ≥10**</td><td>**Pembrolizumab + Chemo** (Carbo/Gem or Paclitaxel)</td><td>**KEYNOTE-355** (PFS HR 0.65)</td></tr><tr><td>**PD-L1 CPS 1-9**</td><td>**Pembrolizumab + Chemo**</td><td>**KEYNOTE-355** (PFS benefit)</td></tr><tr><td>**PD-L1 Negative**</td><td>**Chemotherapy** (Carbo/Gem, Taxane, Eribulin)</td><td>**Standard**</td></tr><tr><td>**BRCA1/2 Mutation**</td><td>**Platinum-based Chemo** (Carboplatin/Gem)</td><td>**TNT Trial**</td></tr></table>
+<div class="sub-h">Subsequent Lines</div>
+<table class="ctable"><tr><th>Line</th><th>Regimen</th><th>Key Trial</th></tr><tr><td>------</td><td>---------</td><td>-----------</td></tr><tr><td>**2L**</td><td>**Sacituzumab Govitecan** (TROP-2 ADC)</td><td>**ASCENT: OS 12.1 vs 6.7mo (HR 0.51)**</td></tr><tr><td>**2L+**</td><td>**T-DXd** (If HER2-low, IHC 1+/2+)</td><td>**DESTINY-Breast04**</td></tr><tr><td>**BRCA1/2 Mutation**</td><td>**Olaparib / Talazoparib**</td><td>**OlympiAD, EMBRACA**</td></tr><tr><td>**Later**</td><td>**Eribulin, Capecitabine, Gemcitabine, Vinorelbine**</td><td>Sequential single agents</td></tr></table>
+<div class="sub-h">PARP Inhibitors (BRCA+)</div>
+<table class="ctable"><tr><th>Agent</th><th>Dose</th><th>Key Trial</th></tr><tr><td>-------</td><td>------</td><td>-----------</td></tr><tr><td>**Olaparib**</td><td>300mg BD</td><td>**OlympiAD** (PFS HR 0.58)</td></tr><tr><td>**Talazoparib**</td><td>1mg OD</td><td>**EMBRACA** (PFS HR 0.55)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Endocrine Therapy Resistance Mechanisms (HR+)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mechanism</th><th>Biomarker</th><th>Targeted Therapy</th></tr><tr><td>-----------</td><td>-----------</td><td>------------------</td></tr><tr><td>**ESR1 Mutation**</td><td>**Y537S, D538G** (ctDNA)</td><td>**Elacestrant (SERD)**, **Fulvestrant + CDK4/6i**</td></tr><tr><td>**PIK3CA Mutation**</td><td>**PIK3CA** (ctDNA/Tissue)</td><td>**Alpelisib + Fulvestrant** (SOLAR-1)</td></tr><tr><td>**CCND1 Amplification**</td><td>**FISH/NGS**</td><td>**CDK4/6i** (Intrinsic resistance)</td></tr><tr><td>**FGFR1 Amplification**</td><td>**FISH**</td><td>**FGFR Inhibitors** (Trials)</td></tr><tr><td>**RB1 Loss**</td><td>**IHC/NGS**</td><td>**CDK4/6i Resistance**</td></tr><tr><td>**HER2 Amplification**</td><td>**IHC/FISH**</td><td>**Add HER2-Targeted**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Visceral Crisis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Definition</th><th>Management</th></tr><tr><td>------------</td><td>------------</td></tr><tr><td>**Rapidly progressive visceral mets** (Liver, Lung, CNS) causing organ dysfunction</td><td>**Aggressive Combination Chemotherapy** (Not endocrine/targeted alone)</td></tr><tr><td>**Preferred Regimens**</td><td>**FEC/FAC**, **Docetaxel + Capecitabine**, **Gemcitabine + Carboplatin**, **Eribulin**</td></tr><tr><td>**Duration**</td><td>**3-6 cycles** → Switch to maintenance endocrine/targeted if response</td></tr><tr><td>**Goal**</td><td>**Rapid Disease Control** → Transition to less toxic maintenance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Bone Metastases</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Agent</th><th>Dose</th><th>Key Trial</th></tr><tr><td>-------</td><td>------</td><td>-----------</td></tr><tr><td>**Denosumab**</td><td>**120mg SC q4wk** (Loading: d1,8,15,29 then q4wk)</td><td>**Superior to Zoledronic Acid** (Delay SRE HR 0.82)</td></tr><tr><td>**Zoledronic Acid**</td><td>**4mg IV q4wk** (Renal adjust)</td><td>**Standard**</td></tr><tr><td>**Duration**</td><td>**Continue until progression/toxicity**</td><td>**SRE reduction ~30-40%**</td></tr></table>
+<div class="callout"><b>Prevention</b>: <b>Calcium 1200mg + Vitamin D 800-1000IU daily</b>; <b>Dental exam pre-treatment</b> (ONJ risk).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Brain Metastases</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Management by Subtype</div>
+<table class="ctable"><tr><th>Subtype</th><th>Preferred CNS Therapy</th></tr><tr><td>-------</td><td>----------------------</td></tr><tr><td>**HER2+**</td><td>**T-DXd, Tucatinib + Trastuzumab + Capecitabine, SRS**</td></tr><tr><td>**TNBC**</td><td>**SRS ± Pembrolizumab, Sacituzumab Govitecan, T-DXd (HER2-low)**</td></tr><tr><td>**HR+/HER2-**</td><td>**SRS, Consider CDK4/6i (Abemaciclib CNS penetration), Chemo**</td></tr></table>
+<div class="sub-h">Local Therapy</div>
+<table class="ctable"><tr><th>Scenario</th><th>Treatment</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**1-3 Mets**</td><td>**SRS (Stereotactic Radiosurgery)** — **Standard**</td></tr><tr><td>**>3 Mets**</td><td>**WBRT (30Gy/10fx) OR Hippocampal-Avoidance WBRT + Memantine**</td></tr><tr><td>**Symptomatic Single Large**</td><td>**Surgery + SRS**</td></tr><tr><td>**Leptomeningeal**</td><td>**Intrathecal Chemo (MTX/AraC), Systemic (T-DXd, Tucatinib)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Supportive Care</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Issue</th><th>Management</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Bone Health**</td><td>**Denosumab/Zoledronic Acid + Calcium/Vit D**</td></tr><tr><td>**VTE Prophylaxis**</td><td>**LMWH** if high risk (Immobility, Metastatic, Prior VTE) — **Not routine**</td></tr><tr><td>**Cardiotoxicity (CDK4/6i, HER2)**</td><td>**Baseline Echo, q3mo LVEF**; **Abemaciclib: Monitor Diarrhoea, Creatinine**</td></tr><tr><td>**Nausea (CDK4/6i)**</td><td>**Take with food, Antiemetic PRN**</td></tr><tr><td>**Diarrhoea (Abemaciclib)**</td><td>**Loperamide, Dose reduce, Hydration**</td></tr><tr><td>**QT Prolongation (Ribociclib)**</td><td>**ECG Baseline/q2wk×2, then q4wk; Correct K/Mg**</td></tr><tr><td>**Hepatotoxicity (Ribociclib/Abemaciclib)**</td><td>**LFT Baseline q2wk×2mo, then q4wk**; **Hold if ALT/AST >5xULN**</td></tr><tr><td>**Neutropenia (Palbociclib/Ribociclib)**</td><td>**CBC q2wk×2mo, then q4wk**; **Dose reduce if <1.0**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HR+/HER2- 1L**</td><td>**CDK4/6i (Palbo/Ribo/Abe) + AI** (Premeno + OFS); **Palbo/Ribo/Abe all Category 1**</td></tr><tr><td>**HR+ 2L**</td><td>**Fulvestrant + CDK4/6i** (PALOMA-3, MONALEESA-3, MONARCH-2)</td></tr><tr><td>**ESR1 mut**</td><td>**Elacestrant (SERD)** OR **Fulvestrant + CDK4/6i**</td></tr><tr><td>**PIK3CA mut**</td><td>**Alpelisib + Fulvestrant** (SOLAR-1)</td></tr><tr><td>**HER2+ 1L**</td><td>**Trastuzumab + Pertuzumab + Taxane** (CLEOPATRA)</td></tr><tr><td>**HER2+ 2L**</td><td>**T-DM1** (EMILIA)</td></tr><tr><td>**HER2+ 3L**</td><td>**T-DXd (DESTINY-Breast03)** → **Tucatinib + Capecitabine + Tras (HER2CLIMB)**</td></tr><tr><td>**TNBC 1L**</td><td>**PD-L1 CPS≥10: Pembrolizumab + Chemo (KEYNOTE-355)**; **BRCA+: Platinum**</td></tr><tr><td>**TNBC 2L**</td><td>**Sacituzumab Govitecan (ASCENT)**, **T-DXd (HER2-low)**, **PARPi (BRCA+)**</td></tr><tr><td>**Brain Mets**</td><td>**HER2+: T-DXd/Tucatinib + SRS**; **TNBC: SRS ± Systemic**</td></tr><tr><td>**Bone Mets**</td><td>**Denosumab 120mg q4wk > Zoledronic** (SRE delay)</td></tr><tr><td>**ESR1 mut**</td><td>**Elacestrant (EMERALD)** OR **Fulvestrant + CDK4/6i**</td></tr><tr><td>**PIK3CA mut**</td><td>**Alpelisib + Fulvestrant** (SOLAR-1)</td></tr><tr><td>**CDK4/6i SE**</td><td>**Palbo: Neutropenia; Ribo: QTc, Hepato; Abe: Diarrhoea, CNS+**</td></tr><tr><td>**Visceral Crisis**</td><td>**Chemo (FEC, Taxane, Gem/Carbo, Eribulin)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**HR+ MBC 1L — Standard?**</td><td>**CDK4/6i (Palbo/Ribo/Abe) + AI** ± **OFS if Premeno** (PALOMA-2, MONALEESA-2, MONARCH-3).</td></tr><tr><td>**CDK4/6i — Palbo vs Ribo vs Abe?**</td><td>**Palbo: Neutropenia; Ribo: QTc prolongation, Hepatotoxicity, OS benefit; Abe: Diarrhoea, CNS penetration, Continuous dosing**.</td></tr><tr><td>**ESR1 Mutation — Clinical Significance, Tx?**</td><td>**AI Resistance**; **Elacestrant (SERD) or Fulvestrant + CDK4/6i**; **EMERALD: Elacestrant benefit in ESR1mut**.</td></tr><tr><td>**PIK3CA Mutation — Targeted Therapy?**</td><td>**Alpelisib 300mg + Fulvestrant** (SOLAR-1: PFS HR 0.65).</td></tr><tr><td>**HER2+ MBC 1L?**</td><td>**Trastuzumab + Pertuzumab + Docetaxel/Paclitaxel** (CLEOPATRA: OS 57.4mo).</td></tr><tr><td>**HER2+ 2L?**</td><td>**T-DM1** (EMILIA: OS 30.9mo).</td></tr><tr><td>**HER2+ 3L?**</td><td>**T-DXd (DESTINY-Breast03: PFS 28.8 vs 6.8mo)** → **Tucatinib + Capecitabine + Tras (HER2CLIMB)**.</td></tr><tr><td>**TNBC PD-L1 CPS≥10 — 1L?**</td><td>**Pembrolizumab + Chemo (Carbo/Gem or Paclitaxel)** (KEYNOTE-355).</td></tr><tr><td>**TNBC 2L?**</td><td>**Sacituzumab Govitecan (ASCENT: OS 12.1 vs 6.7mo)**; **BRCA+: Olaparib/Talazoparib**; **HER2-low: T-DXd**.</td></tr><tr><td>**Brain Mets HER2+ — Preferred?**</td><td>**T-DXd / Tucatinib + Tras + Capecitabine** (High CNS activity) + **SRS**.</td></tr><tr><td>**Bone Mets — Denosumab vs Zoledronic?**</td><td>**Denosumab 120mg q4wk Superior** (SRE HR 0.82); **No renal adjust**; **Ca/Vit D supplementation**.</td></tr><tr><td>**Visceral Crisis — Management?**</td><td>**Combination Chemo (FEC, Taxane, Gem/Carbo)** — **Goal: Rapid control → Switch to maintenance**.</td></tr><tr><td>**CDK4/6i SE Management — Palbo Neutropenia?**</td><td>**CBC q2wk×2mo→q4wk; ANC<1.0: Hold→Reduce; G-CSF secondary prophylaxis**.</td></tr><tr><td>**CDK4/6i — Ribociclib QTc?**</td><td>**ECG Baseline, Day 14, Day 28, then q4wk**; **Correct K/Mg; Hold if QTc >500ms**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**CDK4/6i 1L vs 2L**</td><td>**1L: + AI**; **2L: + Fulvestrant** (If progressed on AI)</td></tr><tr><td>**ESR1 mut vs PIK3CA mut**</td><td>**ESR1: AI resistance → SERD/Elacestrant**; **PIK3CA: PI3K pathway → Alpelisib**</td></tr><tr><td>**T-DM1 vs T-DXd**</td><td>**T-DM1: Trastuzumab + DM1 (Maytansine)**, 2L standard; **T-DXd: Trastuzumab + Deruxtecan (Topo I inhibitor)**, 3L+, Higher potency, CNS activity</td></tr><tr><td>**Tucatinib vs T-DXd**</td><td>**Tucatinib: TKI (HER2 selective), HER2CLIMB CNS benefit**; **T-DXd: ADC, DESTINY-Breast03, Broad CNS activity**</td></tr><tr><td>**Sacituzumab Govitecan vs T-DXd**</td><td>**Sacituzumab: TROP-2 ADC (TNBC)**; **T-DXd: HER2 ADC (HER2+, HER2-low, TNBC HER2-low)**</td></tr><tr><td>**CDK4/6i - Palbo vs Abe Neutropenia**</td><td>**Palbo: 60-70% Gr3-4 Neutropenia**; **Abe: <20% Neutropenia, Mainly Diarrhoea**</td></tr><tr><td>**Alpelisib Hyperglycaemia**</td><td>**Monitor Glucose q1wk×2mo then q4wk; Metformin prophylaxis often used**</td></tr></table>
+<p><b>Mnemonic: MBC-TREATMENT</b></p>
+<ul><li><b>M</b>BC Subtypes: <b>HR+/HER2-</b>, <b>HER2+</b>, <b>TNBC</b> → Different Algorithms</li><li><b>B</b>reast HR+ 1L: <b>CDK4/6i + AI</b> (Palbo/Ribo/Abe + Letrozole/Anastrozole)</li><li><b>C</b>DK4/6i SE: <b>Palbo: Neutropenia; Ribo: QTc/Hepato; Abe: Diarrhoea, CNS+</b></li><li><b>E</b>SR1 mut: <b>Elacestrant / Fulvestrant+CDK4/6i</b> (EMERALD)</li><li><b>A</b>pelisib: <b>PIK3CA mut → Alpelisib + Fulvestrant</b> (SOLAR-1)</li><li><b>T</b>NBC 1L: <b>PD-L1 CPS≥10 → Pembro + Chemo</b> (KEYNOTE-355)</li><li><b>R</b>ecurrent HR+: <b>Fulvestrant + CDK4/6i</b> (PALOMA-3, MONALEESA-3)</li><li><b>T</b>-DXd: <b>HER2+ 3L, HER2-low, TNBC</b> (DESTINY-Breast03/04)</li><li><b>E</b>verolimus: <b>Post-CDK4/6i + Fulvestrant</b> (BOLERO-2)</li><li><b>A</b>lectinib: <b>NOT for Breast</b> (ALCL/ALK+ NSCLC) — <b>Trastuzumab Deruxtecan = T-DXd</b></li><li><b>T</b>ucatinib: <b>HER2CLIMB</b> (CNS mets, +Tras+Cape)</li><li><b>M</b>etastatic Bone: <b>Denosumab &gt; Zoledronic</b> (SRE delay)</li><li><b>E</b>verolimus/proliferation: <b>mTOR inhibitor</b></li><li><b>N</b>euro/Brain Mets: <b>HER2+: T-DXd/Tucatinib+SRS; TNBC: SRS+Systemic</b></li><li><b>T</b>reatment Sequencing: <b>1L → 2L → 3L+</b> (Subtype specific)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Metastatic Breast Cancer)) HR+/HER2- 1L: CDK4/6i + AI (± OFS) 2L: Fulvestrant + CDK4/6i ESR1 mut: Elacestrant / Fulv+CDK4/6i PIK3CA mut: Alpelisib + Fulvestrant CDK4/6i: Palbo (Neutropenia), Ribo (QTc), Abe (Diarrhoea/CNS) Visceral Crisis: Chemo (FEC/Taxane/GemCarbo) HER2+ 1L: Tras + Per + Taxane (CLEOPATRA) 2L: T-DM1 (EMILIA) 3L+: T-DXd (DESTINY-Breast03) → Tucatinib+Tras+Cape (HER2CLIMB) Brain Mets: T-DXd, Tucatinib, SRS TNBC 1L: PD-L1 CPS≥10 → Pembro + Chemo (K-355) 2L: Sacu Govitecan (ASCENT) / T-DXd (HER2-low) BRCA+: Olaparib/Talazoparib (PARPi) Brain Mets: SRS ± Systemic Bone Mets Denosumab 120mg q4wk &gt; Zoledronic Ca/Vit D, ONJ risk Brain Mets HER2+: T-DXd, Tucatinib, SRS TNBC: SRS + Systemic HR+: SRS, CDK4/6i (Abe CNS+) Resistance ESR1 mut → Elacestrant PIK3CA mut → Alpelisib RB1 loss → CDK4/6i resistance </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Subtype</th><th>1L</th><th>2L</th><th>3L+</th></tr><tr><td>---------</td><td>-----</td><td>-----</td><td>-----</td></tr><tr><td>**HR+/HER2-**</td><td>CDK4/6i + AI</td><td>Fulv + CDK4/6i</td><td>ESR1: Elacestrant; PIK3CA: Alpelisib; Chemo</td></tr><tr><td>**HER2+**</td><td>Tras + Per + Taxane</td><td>T-DM1</td><td>T-DXd → Tucatinib + Tras + Cape</td></tr><tr><td>**TNBC**</td><td>PD-L1≥10: Pembro + Chemo</td><td>Sacu Govitecan / T-DXd</td><td>PARPi (BRCA), Chemo</td></tr><tr><td>**Bone**</td><td>Denosumab > Zoledronic; Ca/Vit D</td><td></td><td></td></tr><tr><td>**Brain Mets**</td><td>HER2+: T-DXd/Tucatinib + SRS; TNBC: SRS; HR+: SRS + Abe</td><td></td><td></td></tr><tr><td>**CDK4/6i SE**</td><td>Palbo: Neutropenia; Ribo: QTc/Hepato; Abe: Diarrhoea/CNS+</td><td></td><td></td></tr><tr><td>**ESR1/PIK3CA**</td><td>Elacestrant / Alpelisib + Fulvestrant</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>HR+ 1L/2L/3L Sequencing</td><td></td><td></td></tr><tr><td>CDK4/6i Selection/SE</td><td></td><td></td></tr><tr><td>ESR1/PIK3CA Targeted Tx</td><td></td><td></td></tr><tr><td>HER2+ Sequencing</td><td></td><td></td></tr><tr><td>TNBC PD-L1/BRCA Algorithms</td><td></td><td></td></tr><tr><td>Brain Mets by Subtype</td><td></td><td></td></tr><tr><td>Bone/Visceral Crisis Mgmt</td><td></td><td></td></tr><tr><td>CDK4/6i SE Management</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li>**Chapter Map": [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li>**Chapter MOC": [[../Oncology MOC|Oncology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Early Breast Cancer]], [[Locally Advanced Breast Cancer]], [[CDK4/6 Inhibitors]], [[HER2 Targeted]], [[TNBC]], [[Bone Metastases]], [[Brain Metastases]], [[CDK4/6 Inhibitors]], [[Alpelisib]], [[T-DXd]], [[Tucatinib]], [[Sacituzumab Govitecan]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Metastatic Breast Cancer (HR+/HER2- 1L), which statement is correct? A. <b>CDK4/6i (Palbo/Ribo/Abe) + AI</b> (Premeno + OFS) B. **CDK4/6i - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CDK4/6i (Palbo/Ribo/Abe) + AI</b> (Premeno + OFS); <b>Palbo/Ribo/Abe all Category 1</b></li></ul>
+<p><b>2.</b> Regarding Metastatic Breast Cancer (HR+ 2L), which statement is correct? A. <b>Fulvestrant + CDK4/6i</b> (PALOMA-3, MONALEESA-3, MONARCH-2) B. **Fulvestrant - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Fulvestrant + CDK4/6i</b> (PALOMA-3, MONALEESA-3, MONARCH-2)</li></ul>
+<p><b>3.</b> Regarding Metastatic Breast Cancer (ESR1 mut), which statement is correct? A. <b>Elacestrant (SERD)</b> OR <b>Fulvestrant + CDK4/6i</b> B. **Elacestrant - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Elacestrant (SERD)</b> OR <b>Fulvestrant + CDK4/6i</b></li></ul>
+<p><b>4.</b> Regarding Metastatic Breast Cancer (PIK3CA mut), which statement is correct? A. <b>Alpelisib + Fulvestrant</b> (SOLAR-1) B. **Alpelisib - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Alpelisib + Fulvestrant</b> (SOLAR-1)</li></ul>
+<p><b>5.</b> Regarding Metastatic Breast Cancer (HER2+ 1L), which statement is correct? A. <b>Trastuzumab + Pertuzumab + Taxane</b> (CLEOPATRA) B. **Trastuzumab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Trastuzumab + Pertuzumab + Taxane</b> (CLEOPATRA)</li></ul>
+<p><b>6.</b> Regarding Metastatic Breast Cancer (HER2+ 2L), which statement is correct? A. <b>T-DM1</b> (EMILIA) B. <b>T-DM1</b> - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>T-DM1</b> (EMILIA)</li></ul>
+<p><b>7.</b> Regarding Metastatic Breast Cancer (HER2+ 3L), which statement is correct? A. <b>T-DXd (DESTINY-Breast03)</b> → <b>Tucatinib + Capecitabine + Tras (HER2CLIMB)</b> B. **T-DXd - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>T-DXd (DESTINY-Breast03)</b> → <b>Tucatinib + Capecitabine + Tras (HER2CLIMB)</b></li></ul>
+<p><b>8.</b> Regarding Metastatic Breast Cancer (TNBC 1L), which statement is correct? A. <b>PD-L1 CPS≥10: Pembrolizumab + Chemo (KEYNOTE-355)</b> B. **PD-L1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>PD-L1 CPS≥10: Pembrolizumab + Chemo (KEYNOTE-355)</b>; <b>BRCA+: Platinum</b></li></ul>
+<p><b>9.</b> Regarding Metastatic Breast Cancer (TNBC 2L), which statement is correct? A. <b>Sacituzumab Govitecan (ASCENT)</b>, <b>T-DXd (HER2-low)</b>, <b>PARPi (BRCA+)</b> B. **Sacituzumab - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Sacituzumab Govitecan (ASCENT)</b>, <b>T-DXd (HER2-low)</b>, <b>PARPi (BRCA+)</b></li></ul>
+<p><b>10.</b> Regarding Metastatic Breast Cancer (Brain Mets), which statement is correct? A. <b>HER2+: T-DXd/Tucatinib + SRS</b> B. **HER2+: - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>HER2+: T-DXd/Tucatinib + SRS</b>; <b>TNBC: SRS ± Systemic</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>CDK4/6i (Palbo/Ribo/Abe) + AI</b> (Premeno + OFS)</li><li>B. **CDK4/6i (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>CDK4/6i (Palbo/Ribo/Abe) + AI</b> (Premeno + OFS); <b>Palbo/Ribo/Abe all Category 1</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>Fulvestrant + CDK4/6i</b> (PALOMA-3, MONALEESA-3, MONARCH-2)</li><li>B. **Fulvestrant (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>Fulvestrant + CDK4/6i</b> (PALOMA-3, MONALEESA-3, MONARCH-2)</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>Elacestrant (SERD)</b> OR <b>Fulvestrant + CDK4/6i</b></li><li>B. **Elacestrant (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>Elacestrant (SERD)</b> OR <b>Fulvestrant + CDK4/6i</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Alpelisib + Fulvestrant</b> (SOLAR-1)</li><li>B. **Alpelisib (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Alpelisib + Fulvestrant</b> (SOLAR-1)</li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Trastuzumab + Pertuzumab + Taxane</b> (CLEOPATRA)</li><li>B. **Trastuzumab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Trastuzumab + Pertuzumab + Taxane</b> (CLEOPATRA)</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>T-DM1</b> (EMILIA)</li><li>B. <b>T-DM1</b> (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>T-DM1</b> (EMILIA)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>T-DXd (DESTINY-Breast03)</b> → <b>Tucatinib + Capecitabine + Tras (HER2CLIMB)</b></li><li>B. **T-DXd (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>T-DXd (DESTINY-Breast03)</b> → <b>Tucatinib + Capecitabine + Tras (HER2CLIMB)</b></li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>PD-L1 CPS≥10: Pembrolizumab + Chemo (KEYNOTE-355)</b></li><li>B. **PD-L1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>PD-L1 CPS≥10: Pembrolizumab + Chemo (KEYNOTE-355)</b>; <b>BRCA+: Platinum</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Sacituzumab Govitecan (ASCENT)</b>, <b>T-DXd (HER2-low)</b>, <b>PARPi (BRCA+)</b></li><li>B. **Sacituzumab (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Sacituzumab Govitecan (ASCENT)</b>, <b>T-DXd (HER2-low)</b>, <b>PARPi (BRCA+)</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>HER2+: T-DXd/Tucatinib + SRS</b></li><li>B. **HER2+: (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>HER2+: T-DXd/Tucatinib + SRS</b>; <b>TNBC: SRS ± Systemic</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> HR+/HER2- 1L? <b>A1:</b> CDK4/6i (Palbo/Ribo/Abe) + AI (Premeno + OFS); Palbo/Ribo/Abe all Category 1</p>
+<p><b>Q2:</b> HR+ 2L? <b>A2:</b> Fulvestrant + CDK4/6i (PALOMA-3, MONALEESA-3, MONARCH-2)</p>
+<p><b>Q3:</b> ESR1 mut? <b>A3:</b> Elacestrant (SERD) OR Fulvestrant + CDK4/6i</p>
+<p><b>Q4:</b> PIK3CA mut? <b>A4:</b> Alpelisib + Fulvestrant (SOLAR-1)</p>
+<p><b>Q5:</b> HER2+ 1L? <b>A5:</b> Trastuzumab + Pertuzumab + Taxane (CLEOPATRA)</p>
+<p><b>Q6:</b> HER2+ 2L? <b>A6:</b> T-DM1 (EMILIA)</p>
+<p><b>Q7:</b> HER2+ 3L? <b>A7:</b> T-DXd (DESTINY-Breast03) → Tucatinib + Capecitabine + Tras (HER2CLIMB)</p>
+<p><b>Q8:</b> TNBC 1L? <b>A8:</b> PD-L1 CPS≥10: Pembrolizumab + Chemo (KEYNOTE-355); BRCA+: Platinum</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>HR+/HER2- 1L</td><td>CDK4/6i (Palbo/Ribo/Abe) + AI (Premeno + OFS); Palbo/Ribo/Abe all Category 1</td></tr><tr><td>2</td><td>A</td><td>HR+ 2L</td><td>Fulvestrant + CDK4/6i (PALOMA-3, MONALEESA-3, MONARCH-2)</td></tr><tr><td>3</td><td>A</td><td>ESR1 mut</td><td>Elacestrant (SERD) OR Fulvestrant + CDK4/6i</td></tr><tr><td>4</td><td>A</td><td>PIK3CA mut</td><td>Alpelisib + Fulvestrant (SOLAR-1)</td></tr><tr><td>5</td><td>A</td><td>HER2+ 1L</td><td>Trastuzumab + Pertuzumab + Taxane (CLEOPATRA)</td></tr><tr><td>6</td><td>A</td><td>HER2+ 2L</td><td>T-DM1 (EMILIA)</td></tr><tr><td>7</td><td>A</td><td>HER2+ 3L</td><td>T-DXd (DESTINY-Breast03) → Tucatinib + Capecitabine + Tras (HER2CLIMB)</td></tr><tr><td>8</td><td>A</td><td>TNBC 1L</td><td>PD-L1 CPS≥10: Pembrolizumab + Chemo (KEYNOTE-355); BRCA+: Platinum</td></tr><tr><td>9</td><td>A</td><td>TNBC 2L</td><td>Sacituzumab Govitecan (ASCENT), T-DXd (HER2-low), PARPi (BRCA+)</td></tr><tr><td>10</td><td>A</td><td>Brain Mets</td><td>HER2+: T-DXd/Tucatinib + SRS; TNBC: SRS ± Systemic</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>HR+/HER2- 1L</td><td>CDK4/6i (Palbo/Ribo/Abe) + AI (Premeno + OFS); Palbo/Ribo/Abe all Category 1</td></tr><tr><td>2</td><td>A</td><td>HR+ 2L</td><td>Fulvestrant + CDK4/6i (PALOMA-3, MONALEESA-3, MONARCH-2)</td></tr><tr><td>3</td><td>A</td><td>ESR1 mut</td><td>Elacestrant (SERD) OR Fulvestrant + CDK4/6i</td></tr><tr><td>4</td><td>A</td><td>PIK3CA mut</td><td>Alpelisib + Fulvestrant (SOLAR-1)</td></tr><tr><td>5</td><td>A</td><td>HER2+ 1L</td><td>Trastuzumab + Pertuzumab + Taxane (CLEOPATRA)</td></tr><tr><td>6</td><td>A</td><td>HER2+ 2L</td><td>T-DM1 (EMILIA)</td></tr><tr><td>7</td><td>A</td><td>HER2+ 3L</td><td>T-DXd (DESTINY-Breast03) → Tucatinib + Capecitabine + Tras (HER2CLIMB)</td></tr><tr><td>8</td><td>A</td><td>TNBC 1L</td><td>PD-L1 CPS≥10: Pembrolizumab + Chemo (KEYNOTE-355); BRCA+: Platinum</td></tr><tr><td>9</td><td>A</td><td>TNBC 2L</td><td>Sacituzumab Govitecan (ASCENT), T-DXd (HER2-low), PARPi (BRCA+)</td></tr><tr><td>10</td><td>A</td><td>Brain Mets</td><td>HER2+: T-DXd/Tucatinib + SRS; TNBC: SRS ± Systemic</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Cancer of the Breast|Cancer of the Breast]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Metastatic Breast Cancer · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

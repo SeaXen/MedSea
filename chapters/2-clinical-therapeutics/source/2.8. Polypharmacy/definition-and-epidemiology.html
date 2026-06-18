@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Definition And Epidemiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.8. POLYPHARMACY</span>
+      <div class="h1">Definition And Epidemiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define polypharmacy — minor/major/excessive</li><li>[ ] Differentiate appropriate vs inappropriate polypharmacy</li><li>[ ] Recognise epidemiology in elderly, multimorbidity, nursing homes</li><li>[ ] Identify risk factors for problematic polypharmacy</li><li>[ ] Apply prescribing appropriateness frameworks</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th><th>Clinical Significance</th></tr><tr><td>------</td><td>------------</td><td>------------------------</td></tr><tr><td>**Polypharmacy**</td><td>Use of **≥5 medications** (most common definition)</td><td>Risk threshold; ↑ ADEs, falls, hospitalisation</td></tr><tr><td>**Minor Polypharmacy**</td><td>2–4 medications</td><td>Often appropriate</td></tr><tr><td>**Major Polypharmacy**</td><td>**≥5 medications**</td><td>Reassess need, deprescribing opportunity</td></tr><tr><td>**Excessive/Hyper-polypharmacy**</td><td>**≥10 medications**</td><td>High ADE risk; deprescribing mandatory</td></tr><tr><td>**Appropriate Polypharmacy**</td><td>Multiple drugs with proven benefit, individualised, optimised</td><td>**Acceptable** when evidence-based</td></tr><tr><td>**Inappropriate Polypharmacy**</td><td>At least one unnecessary, harmful, or duplicative medication</td><td>**Reassess, deprescribe**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📊 Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Setting</th><th>Polypharmacy Prevalence</th></tr><tr><td>---------</td><td>-------------------------</td></tr><tr><td>**Community-dwelling elderly (>65y)**</td><td>**30–50%**</td></tr><tr><td>**Nursing/Residential care**</td><td>**50–70%**</td></tr><tr><td>**Hospitalised elderly**</td><td>**60–90%**</td></tr><tr><td>**Multimorbidity (≥3 conditions)**</td><td>**>75%**</td></tr><tr><td>**Heart failure patients**</td><td>**>90%** (GDMT)</td></tr><tr><td>**HIV patients**</td><td>**>80%** (ART + comorbidities)</td></tr><tr><td>**Cancer patients**</td><td>**>70%** (chemo + supportive + comorbidities)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">⚠️ Risk Factors for Problematic Polypharmacy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Patient Factors</th><th>System Factors</th><th>Prescriber Factors</th></tr><tr><td>----------------</td><td>----------------</td><td>---------------------</td></tr><tr><td>**Age >65 years**</td><td>**Fragmented care** (multiple specialists)</td><td>**Prescribing cascade**</td></tr><tr><td>**Multimorbidity (≥3 conditions)**</td><td>**Poor EHR interoperability**</td><td>**Inadequate medication review**</td></tr><tr><td>**Cognitive impairment/dementia**</td><td>**Lack of deprescribing culture**</td><td>**Therapeutic inertia**</td></tr><tr><td>**Multiple prescribers (≥3)**</td><td>**Hospital discharge without reconciliation**</td><td>**Disease-specific guidelines (HF, DM, CKD)**</td></tr><tr><td>**Polypharmacy at admission**</td><td>**No pharmacist involvement**</td><td>**Patient/family pressure**</td></tr><tr><td>**Falls risk**</td><td>**Repeat prescriptions without review**</td><td>**Time constraints**</td></tr><tr><td>**Frailty**</td><td>**Inadequate primary care follow-up**</td><td>**Fear of consequences (inertia)**</td></tr><tr><td>**Low health literacy**</td><td>**Free drug samples**</td><td>**Influence of pharmaceutical reps**</td></tr><tr><td>**Limited life expectancy**</td><td>**Guidelines push add-on therapy**</td><td>**Defensive medicine**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📈 Consequence Categories</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Consequences</th></tr><tr><td>--------</td><td>--------------</td></tr><tr><td>**Adverse Drug Events (ADEs)**</td><td>↑ Hospital admissions (5–10% of admissions), ↑ ED visits, ↑ mortality</td></tr><tr><td>**Falls & Fractures**</td><td>↑ Risk (BZD, antipsychotics, antihypertensives, hypoglycaemics)</td></tr><tr><td>**Cognitive Impairment**</td><td>Anticholinergic burden, delirium, dementia progression</td></tr><tr><td>**Functional Decline**</td><td>↓ ADLs, ↑ frailty, ↓ QoL</td></tr><tr><td>**Malnutrition**</td><td>Anorexia from multiple drugs, dry mouth, dysphagia</td></tr><tr><td>**Hospital Readmission**</td><td>↑ 30-day readmission rates</td></tr><tr><td>**Mortality**</td><td>↑ All-cause mortality (linear with drug count >5)</td></tr><tr><td>**Cost**</td><td>↑ Patient cost, ↑ Healthcare system cost, ↑ Insurance</td></tr><tr><td>**Non-Adherence**</td><td>**Polypharmacy #1 cause** of non-adherence (pill burden, complexity)</td></tr><tr><td>**Drug Interactions**</td><td>↑ Linear with drug count</td></tr><tr><td>**Prescribing Cascades**</td><td>Drug A side effect → Drug B prescribed → Drug B side effect → Drug C prescribed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Polypharmacy threshold**</td><td>**≥5 drugs** (most common); **≥10 = excessive**</td></tr><tr><td>**Appropriate vs Inappropriate**</td><td>Appropriate = evidence-based, individualised; Inappropriate = at least one harmful/unnecessary</td></tr><tr><td>**Multimorbidity prevalence**</td><td>>50% of patients >65 years have ≥3 conditions</td></tr><tr><td>**Prescribing cascade**</td><td>ADE misinterpreted as new disease → another drug added</td></tr><tr><td>**Medication review**</td><td>Recommended **annually in elderly**, **every 3–6 months in frail/high-risk**</td></tr><tr><td>**STOPP/START**</td><td>**Screening Tool of Older Persons' Prescriptions** (inappropriate) / **Screening Tool to Alert to Right Treatment** (omission)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (6)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Define polypharmacy. Differentiate appropriate vs inappropriate.</td><td>**≥5 medications**; **Appropriate** = evidence-based, individualised, optimised (e.g., HF GDMT); **Inappropriate** = at least one unnecessary, harmful, or duplicative drug</td></tr><tr><td>2. Common causes of problematic polypharmacy?</td><td>**Multimorbidity, multiple prescribers, fragmented care, prescribing cascades, lack of deprescribing culture, therapeutic inertia**</td></tr><tr><td>3. What is a prescribing cascade? Give 2 examples.</td><td>**ADE misinterpreted as new disease → another drug added**. Examples: (1) NSAID → hypertension → antihypertensive; (2) Anticholinergic → constipation → laxative; (3) Ca-channel blocker → oedema → diuretic; (4) Metoclopramide → EPS → levodopa (worsens Parkinson's)</td></tr><tr><td>4. Consequences of polypharmacy — list 6?</td><td>ADEs, falls/fractures, cognitive impairment, hospitalisation, non-adherence, prescribing cascades, mortality, cost</td></tr><tr><td>5. When should medication review be done in elderly?</td><td>**Annually in stable elderly**; **every 3–6 months in frail/high-risk**; at any care transition</td></tr><tr><td>6. Most important single intervention to reduce polypharmacy harm?</td><td>**Structured medication review** (using STOPP/START, Beers, or anticholinergic burden) with shared decision-making</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Polypharmacy = always bad?**</td><td>**No** — appropriate polypharmacy (HF, DM, HIV) is evidence-based and beneficial</td></tr><tr><td>**Polypharmacy = drug-drug interaction risk**</td><td>↑ Linear with drug count; **rule of thumb: each additional drug = ↑ 5–10% ADE risk**</td></tr><tr><td>**Polypharmacy ≠ overprescribing**</td><td>Polypharmacy = **count of drugs**; overprescribing = **inappropriate drug count**</td></tr><tr><td>**Prescribing cascade ≠ side effect**</td><td>Cascade = **misinterpreted ADE → new drug** (the trap)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"POLYPHARMACY = 5+ DRUGS"</b> = threshold for review</li><li><b>"APPROPRIATE POLYPHARMACY"</b> = HF GDMT, DM, HIV, Asthma — evidence-based</li><li><b>"INAPPROPRIATE POLYPHARMACY"</b> = At least one harmful/unnecessary/duplicative</li><li><b>"ADE CASCADE"</b> = <b>A</b>DE → <b>D</b>isease misdiagnosis → <b>E</b>scalating drug list</li><li><b>"STOPP/START"</b> = <b>S</b>creening <b>T</b>ool <b>O</b>lder <b>P</b>ersons' <b>P</b>rescriptions / <b>S</b>creening <b>T</b>ool <b>A</b>lert <b>R</b>ight <b>T</b>reatment</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Polypharmacy)) Definitions Polypharmacy ≥5 drugs Excessive ≥10 Appropriate (evidence-based) Inappropriate (harmful/unnecessary) Epidemiology Community elderly: 30-50% Nursing home: 50-70% Hospitalised: 60-90% Multimorbidity: &gt;75% Risk Factors Patient: Age&gt;65, Multimorbidity, Cognitive, Frailty System: Fragmented care, No EHR, No deprescribing Prescriber: Cascade, Inertia, Defensive medicine Consequences ADEs, Falls, Cognitive decline Hospitalisation, Mortality Non-adherence, Cost Prescribing cascades Management Annual medication review STOPP/START, Beers, ACB Deprescribing Shared decision-making </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Definitions</td><td>6</td><td></td></tr><tr><td>Epidemiology</td><td>6</td><td></td></tr><tr><td>Risk factors</td><td>8</td><td></td></tr><tr><td>Consequences</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>6</td><td></td></tr><tr><td>**Total**</td><td>**34**</td><td></td></tr></table>
+<p><b>Target</b>: ≥27/34 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Define polypharmacy. Differentiate appropriate vs inappropriate polypharmacy."*</div>
+<ul><li><b>Polypharmacy = ≥5 medications</b> (minor 2–4, major ≥5, excessive ≥10)</li><li><b>Appropriate</b> = evidence-based, individualised, optimised (e.g., HF GDMT = ACEi+BB+MRA+SGLT2i+loop diuretic)</li><li><b>Inappropriate</b> = ≥1 unnecessary, harmful, duplicative drug</li><li><b>Consequences</b>: ↑ ADEs, falls, cognitive decline, mortality, cost, non-adherence</li></ul>
+<div class="sub-h">Viva (1 min): *"What is a prescribing cascade? Give 3 examples."*</div>
+<ul><li><b>ADE misinterpreted as new disease → another drug added</b></li><li>Examples: (1) <b>NSAID → HTN → antihypertensive</b>; (2) <b>Anticholinergic → constipation → laxative</b>; (3) <b>CCB → oedema → diuretic</b>; (4) <b>Metoclopramide → EPS → levodopa</b> (worsens Parkinson's)</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Polypharmacy = <b>≥5 drugs</b> (excessive ≥10)</li><li>Appropriate = evidence-based (HF, DM, HIV, Asthma)</li><li>Inappropriate = ≥1 harmful/unnecessary</li><li>Multimorbidity &gt;75% polypharmacy</li><li>Prescribing cascade = ADE → new drug</li><li>Medication review: <b>annual in elderly, 3–6mo in frail</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>POLYPHARMACY = ≥5 DRUGS</b> <b>APPROPRIATE</b> = Evidence-based (HF, DM, HIV) <b>INAPPROPRIATE</b> = ≥1 harmful/unnecessary drug <b>CONSEQUENCES</b> = ADEs, Falls, Cognitive ↓, Mortality, Cost, Non-adherence <b>MANAGEMENT</b> = Annual review + STOPP/START + Deprescribing</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ MCQs (8)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Most common threshold for polypharmacy:</b></li></ol>
+<p>A. ≥3 drugs B. <b>≥5 drugs</b> ✓ C. ≥8 drugs D. ≥10 drugs E. ≥15 drugs</p>
+<ol><li><b>Excessive polypharmacy threshold:</b></li></ol>
+<p>A. ≥5 B. ≥7 C. <b>≥10</b> ✓ D. ≥15 E. ≥20</p>
+<ol><li><b>Appropriate polypharmacy example:</b></li></ol>
+<p>A. Same drug class duplication B. <b>HFrEF on ACEi + BB + MRA + SGLT2i + Loop diuretic (GDMT)</b> ✓ C. PPI for stress ulcer in ward D. Opioid + BZD + muscle relaxant E. Anticholinergic + sedative</p>
+<ol><li><b>Prescribing cascade example:</b></li></ol>
+<p>A. ACEi + ARB for HTN B. <b>NSAID → hypertension → antihypertensive added</b> ✓ C. ASA + Clopidogrel for ACS D. ACEi + BB for HF E. Statin + Ezetimibe for hyperlipidaemia</p>
+<ol><li><b>Recommended medication review frequency in elderly:</b></li></ol>
+<p>A. Every visit B. <b>Annually in stable; 3–6 months in frail/high-risk</b> ✓ C. Every 5 years D. Only on admission E. Never unless symptomatic</p>
+<ol><li><b>Polypharmacy prevalence in hospitalised elderly:</b></li></ol>
+<p>A. 10–20% B. 30–40% C. 50–60% D. <b>60–90%</b> ✓ E. &gt;95%</p>
+<ol><li><b>Polypharmacy is a risk factor for:</b></li></ol>
+<p>A. Single ADEs only B. <b>↑ ADEs, falls, cognitive decline, hospitalisation, mortality</b> ✓ C. Increased drug efficacy D. Decreased drug cost E. Improved adherence</p>
+<ol><li><b>Polypharmacy #1 cause of:</b></li></ol>
+<p>A. Improved QoL B. <b>Non-adherence</b> ✓ C. Reduced pill burden D. Lower cost E. Better outcomes</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Polypharmacy threshold</td><td>≥5 drugs</td></tr><tr><td>Excessive polypharmacy</td><td>≥10 drugs</td></tr><tr><td>Appropriate polypharmacy</td><td>Evidence-based, individualised (HF, DM, HIV)</td></tr><tr><td>Inappropriate polypharmacy</td><td>≥1 harmful/unnecessary/duplicative drug</td></tr><tr><td>Prescribing cascade</td><td>ADE misinterpreted as new disease → another drug</td></tr><tr><td>Prescribing cascade examples</td><td>NSAID→HTN→antihypertensive; Anticholinergic→constipation→laxative; CCB→oedema→diuretic</td></tr><tr><td>Medication review frequency</td><td>Annually in stable elderly; 3–6mo in frail</td></tr><tr><td>STOPP/START</td><td>Screening Tool Older Persons' Prescriptions / Right Treatment</td></tr><tr><td>Polypharmacy prevalence (hospitalised elderly)</td><td>60–90%</td></tr><tr><td>Polypharmacy #1 cause of</td><td>Non-adherence</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — ≥5 drugs</li><li><b>C</b> — ≥10</li><li><b>B</b> — GDMT for HFrEF</li><li><b>B</b> — NSAID→HTN cascade</li><li><b>B</b> — Annual stable, 3–6mo frail</li><li><b>D</b> — 60–90%</li><li><b>B</b> — Multiple adverse outcomes</li><li><b>B</b> — Non-adherence</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Polypharmacy/Definition and epidemiology.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Definition And Epidemiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

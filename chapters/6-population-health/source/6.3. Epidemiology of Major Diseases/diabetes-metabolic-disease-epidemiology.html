@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diabetes Metabolic Disease Epidemiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.3. EPIDEMIOLOGY OF MAJOR DISEASES</span>
+      <div class="h1">Diabetes Metabolic Disease Epidemiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe global diabetes burden (IDF Atlas): prevalence, incidence, mortality, projections</li><li>[ ] Distinguish T1DM vs T2DM epidemiology: age, ethnicity, geography, trends</li><li>[ ] Apply prevention: primary (lifestyle), secondary (screening, pre-DM intervention), tertiary (complication prevention)</li><li>[ ] Calculate diabetes risk scores: FINDRISC, CANRISK, ADA</li><li>[ ] Explain health economics: direct/indirect costs, cost-effectiveness of prevention</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metric</th><th>Global (IDF 2021/2024)</th><th>UK</th></tr><tr><td>--------</td><td>------------------------</td><td>-----</td></tr><tr><td>**Adults 20-79y with Diabetes**</td><td>537 million (10.5%)</td><td>~4.9 million (diagnosed)</td></tr><tr><td>**Undiagnosed**</td><td>240 million (44%)</td><td>~850,000</td></tr><tr><td>**Pre-Diabetes (IGT/IFG)**</td><td>541 million (10.6%)</td><td>~13.6 million</td></tr><tr><td>**Deaths (20-79y)**</td><td>6.7 million (12% all deaths)</td><td>~40,000/year</td></tr><tr><td>**Health Expenditure**</td><td>$966 billion (9% global)</td><td>£10-15 billion/year NHS</td></tr><tr><td>**Projections 2045**</td><td>783 million (+46%)</td><td>Rising</td></tr></table>
+<p><b>Type Distribution:</b></p>
+<ul><li><b>T2DM</b>: 90-95% (insulin resistance + relative deficiency)</li><li><b>T1DM</b>: 5-10% (absolute insulin deficiency, autoimmune)</li><li><b>GDM</b>: ~14% pregnancies (IDF), ↑ with age, obesity, ethnicity</li><li><b>Other</b>: MODY, LADA, secondary, neonatal (&lt;1%)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Epidemiological patterns - see risk factors and demographics below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Risk Factors & Demographics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Factor</th><th>T1DM</th><th>T2DM</th></tr><tr><td>--------</td><td>------</td><td>------</td></tr><tr><td>**Age Peak**</td><td>Childhood/adolescence (bimodal <15, >30)</td><td>>40y (now ↑ in youth)</td></tr><tr><td>**Sex**</td><td>Slight male excess</td><td>Similar (varies by population)</td></tr><tr><td>**Ethnicity**</td><td>White > (highest Finland/Sardinia)</td><td>South Asian, Black, Hispanic, Indigenous > White</td></tr><tr><td>**Geography**</td><td>High latitudes (Finland 60/100K)</td><td>Pacific Islands, MENA, South Asia, Caribbean</td></tr><tr><td>**Genetics**</td><td>HLA-DR3/DR4 (40-50%); monogenic rare</td><td>Polygenic (TCF7L2, PPARG, KCNJ11); heritability 40-70%</td></tr><tr><td>**Modifiable (T2DM)**</td><td>-</td><td>Obesity (central), inactivity, diet (UPF, SSB), sleep, stress, microbiome</td></tr><tr><td>**Metabolic**</td><td>-</td><td>Pre-diabetes (IFG/IGT), MetS, NAFLD, PCOS, GDM hx, HTN, dyslipidaemia</td></tr></table>
+<p><b>Key Epidemiological Concepts:</b></p>
+<ul><li><b>Thrifty Gene/Genotype Hypothesis</b>: Evolutionary adaptation to feast/famine → maladaptive in obesogenic environment</li><li><b>Developmental Origins (Barker)</b>: Low birth weight → ↑ T2DM, CVD (epigenetic programming)</li><li><b>Metabolic Syndrome</b>: Central obesity + 2 of (HTN, high TG, low HDL, high glucose) → 5x T2DM risk</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Screening & Risk Scores)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Screening Criteria (ADA/WHO/NICE):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Group&lt;/th&gt;&lt;th&gt;Test&lt;/th&gt;&lt;th&gt;Interval&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Adults ≥40y</b>&lt;/td&gt;&lt;td&gt;HbA1c / FPG / OGTT&lt;/td&gt;&lt;td&gt;3 years&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>High-risk (BMI≥25 + 1 risk)</b>&lt;/td&gt;&lt;td&gt;HbA1c / FPG / OGTT&lt;/td&gt;&lt;td&gt;Annual&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>GDM</b>&lt;/td&gt;&lt;td&gt;75g OGTT 24-28wks&lt;/td&gt;&lt;td&gt;Per pregnancy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Children BMI≥85th %ile + risk</b>&lt;/td&gt;&lt;td&gt;HbA1c / FPG / OGTT&lt;/td&gt;&lt;td&gt;3 years from 10y/puberty&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Diagnostic Thresholds:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Test&lt;/th&gt;&lt;th&gt;Normoglycaemia&lt;/th&gt;&lt;th&gt;Pre-Diabetes&lt;/th&gt;&lt;th&gt;Diabetes&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;----------------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>FPG</b>&lt;/td&gt;&lt;td&gt;&lt;5.6 (100)&lt;/td&gt;&lt;td&gt;5.6-6.9 (100-125)&lt;/td&gt;&lt;td&gt;≥7.0 (126)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>HbA1c</b>&lt;/td&gt;&lt;td&gt;&lt;42 (6.0%)&lt;/td&gt;&lt;td&gt;42-47 (6.0-6.4%)&lt;/td&gt;&lt;td&gt;≥48 (6.5%)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2h OGTT</b>&lt;/td&gt;&lt;td&gt;&lt;7.8 (140)&lt;/td&gt;&lt;td&gt;7.8-11.0 (140-199)&lt;/td&gt;&lt;td&gt;≥11.1 (200)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Random PG</b>&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;≥11.1 (200) + symptoms&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Risk Scores for T2DM:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Score&lt;/th&gt;&lt;th&gt;Variables&lt;/th&gt;&lt;th&gt;Use&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-----&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>FINDRISC</b>&lt;/td&gt;&lt;td&gt;Age, BMI, WC, activity, veg/fruit, BP, hyperglycaemia, family&lt;/td&gt;&lt;td&gt;Europe, 8-item, score ≥15 high risk&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CANRISK</b>&lt;/td&gt;&lt;td&gt;Age, sex, ethnicity, BMI, WC, activity, diet, BP, hyperglycaemia, family, education&lt;/td&gt;&lt;td&gt;Canada, validated multi-ethnic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>ADA Risk Test</b>&lt;/td&gt;&lt;td&gt;Age, sex, family, HTN, activity, weight, GDM&lt;/td&gt;&lt;td&gt;US, simple 7-question&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>QDiabetes</b>&lt;/td&gt;&lt;td&gt;Age, sex, ethnicity, BMI, smoking, steroids, CVD, HTN, DM, family, mental illness, deprivation&lt;/td&gt;&lt;td&gt;UK, GP records, 10-year risk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Mermaid: Diabetes Prevention Pathway</b> ``<code>mermaid flowchart TD A[Population] --&gt; B{Risk Factors} B --&gt;|Obesity, Inactivity,\nFam Hx, Ethnicity| C[High Risk] C --&gt; D[Screen: HbA1c/FPG/OGTT] D --&gt;|Pre-DM\nIFG/IGT| E[Intensive Lifestyle\nDPP: 7% wt loss, 150min/wk] D --&gt;|Diabetes| F[Manage: Metformin +\nLifestyle + CV Risk] E --&gt;|Prevent/Delay| G[Reduce Incidence 58%\nMetformin 31%] F --&gt; H[Complication Prevention\nABCD: A1C, BP, Chol, DKD] style E fill:#bfb,stroke:#333 style G fill:#bbf,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Epidemiological Patterns)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pattern</th><th>Explanation</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**T1DM Incidence ↑**</td><td>~3-5%/year globally; environmental triggers (viral, vitamin D, microbiome, hygiene)</td></tr><tr><td>**T2DM in Youth ↑**</td><td>Driven by childhood obesity, inactivity, intrauterine exposure (GDM); aggressive phenotype</td></tr><tr><td>**Ethnic Disparities**</td><td>South Asian: younger onset, lower BMI, higher insulin resistance, ↑ CVD risk</td></tr><tr><td>**Undiagnosed Fraction**</td><td>~44% globally; higher in LMICs, low-resource settings; screening yield depends on prevalence</td></tr><tr><td>**GDM → T2DM**</td><td>50% develop T2DM within 10 years; postpartum OGTT essential</td></tr><tr><td>**Diabetes Mortality**</td><td>CVD 50-60%, renal 10-20%, infection, cancer; ↓ with modern management</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Prevention Evidence & Economics)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Landmark Prevention Trials:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Trial&lt;/th&gt;&lt;th&gt;Population&lt;/th&gt;&lt;th&gt;Intervention&lt;/th&gt;&lt;th&gt;Result&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Da Qing (China)</b>&lt;/td&gt;&lt;td&gt;IGT&lt;/td&gt;&lt;td&gt;Diet ± Exercise ± Both&lt;/td&gt;&lt;td&gt;6-yr: 31-46% ↓ DM; 20-yr: 43% ↓ DM, 41% ↓ CVD&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>DPP (US)</b>&lt;/td&gt;&lt;td&gt;Pre-DM (IGT + FPG)&lt;/td&gt;&lt;td&gt;Intensive Lifestyle (7% wt, 150min) vs Metformin vs Placebo&lt;/td&gt;&lt;td&gt;3-yr: Lifestyle 58% ↓, Metformin 31% ↓ vs placebo&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>DPPOS (Follow-up)</b>&lt;/td&gt;&lt;td&gt;DPP cohort&lt;/td&gt;&lt;td&gt;Long-term&lt;/td&gt;&lt;td&gt;15-yr: Lifestyle 27% ↓, Metformin 18% ↓; microvascular ↓&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Finnish DPS</b>&lt;/td&gt;&lt;td&gt;Pre-DM&lt;/td&gt;&lt;td&gt;Lifestyle counselling&lt;/td&gt;&lt;td&gt;58% ↓; sustained benefit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>ADDITION-Europe</b>&lt;/td&gt;&lt;td&gt;Screen-detected T2DM&lt;/td&gt;&lt;td&gt;Intensive multifactorial vs Routine&lt;/td&gt;&lt;td&gt;CVD events similar; risk factors improved&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Health Economics:</b></p>
+<ul><li><b>Direct Costs</b>: Meds, monitoring, admissions, complications (amputation, dialysis, CVD)</li><li><b>Indirect Costs</b>: Productivity loss, absenteeism, early retirement, caregiver burden</li><li><b>Cost-Effectiveness</b>: Lifestyle intervention ~$1,000-5,000/QALY; Metformin cost-saving in high-risk</li><li><b>NHS DPP</b>: Digital/remote interventions scaling; NICE: cost-effective at £20K/QALY</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Global Burden**</td><td>537M adults (10.5%); 6.7M deaths; $966B cost; 783M by 2045</td></tr><tr><td>**T2DM = 90-95%**</td><td>Obesity-driven epidemic; South Asian/Black/Indigenous highest risk</td></tr><tr><td>**T1DM Incidence**</td><td>Rising 3-5%/yr; Finland highest (60/100K); environmental triggers</td></tr><tr><td>**Pre-Diabetes**</td><td>541M (IGT/IFG); high conversion to T2DM (5-10%/yr)</td></tr><tr><td>**Screening**</td><td>Adults ≥40y or high-risk; HbA1c/FPG/OGTT; FINDRISC/CANRISK/QDiabetes</td></tr><tr><td>**Diagnostic Thresholds**</td><td>FPG≥7.0, HbA1c≥48, 2hOGTT≥11.1, Random≥11.1+symptoms</td></tr><tr><td>**Prevention Evidence**</td><td>Da Qing, DPP: Lifestyle 58% ↓, Metformin 31% ↓; sustained long-term</td></tr><tr><td>**GDM**</td><td>14% pregnancies; 50% → T2DM within 10y; postpartum OGTT</td></tr><tr><td>**Complications**</td><td>Micro: retinopathy, nephropathy, neuropathy. Macro: CVD (50-60% mortality)</td></tr><tr><td>**Economics**</td><td>9% global health spend; prevention highly cost-effective (<£5K/QALY)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Global diabetes prevalence and projection?**</td><td>537M adults (10.5%) in 2021; projected 783M by 2045 (+46%). 6.7M deaths/year.</td></tr><tr><td>**T1DM vs T2DM epidemiology differences?**</td><td>T1DM: childhood peak, White ethnicity, high latitude, HLA-associated, 5-10%. T2DM: adult (now youth), obesity-driven, South Asian/Black/Indigenous high risk, 90-95%.</td></tr><tr><td>**Diagnostic thresholds for diabetes?**</td><td>FPG ≥7.0 mmol/L, HbA1c ≥48 mmol/mol (6.5%), 2h OGTT ≥11.1 mmol/L, Random ≥11.1 + symptoms.</td></tr><tr><td>**Pre-diabetes definitions?**</td><td>IFG: FPG 5.6-6.9. IGT: 2h OGTT 7.8-11.0. HbA1c 42-47 (6.0-6.4%).</td></tr><tr><td>**Key diabetes prevention trials?**</td><td>Da Qing (China): diet/exercise 31-46% ↓ at 6y, sustained. DPP (US): intensive lifestyle 58% ↓, metformin 31% ↓ at 3y.</td></tr><tr><td>**FINDRISC / QDiabetes - what are they?**</td><td>FINDRISC: 8-item European risk score (age, BMI, WC, activity, diet, BP, hyperglycaemia, family). QDiabetes: UK GP-record based 10-year risk.</td></tr><tr><td>**GDM epidemiology and long-term risk?**</td><td>~14% pregnancies; risk factors: age, obesity, ethnicity, family, previous GDM/macrosomia. 50% develop T2DM within 10 years.</td></tr><tr><td>**Diabetes complications - epidemiology?**</td><td>CVD 50-60% deaths; retinopathy 30-40% (leading blindness); nephropathy 20-40% (leading ESRD); neuropathy 50%; foot ulcer 15-25% lifetime.</td></tr><tr><td>**Health economics of diabetes?**</td><td>9% global health expenditure ($966B). UK NHS £10-15B/year. Prevention highly cost-effective (<£5K/QALY).</td></tr><tr><td>**Ethnic disparities in T2DM?**</td><td>South Asian: onset 5-10y younger, lower BMI threshold (23 vs 25), higher insulin resistance, 2-4x CVD risk vs White.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**IFG vs IGT**</td><td>IFG = impaired FPG (hepatic IR). IGT = impaired 2h OGTT (muscle IR). Different pathophysiology; IGT higher CVD risk.</td></tr><tr><td>**Screening vs Diagnostic Thresholds**</td><td>Same thresholds; screening uses them in asymptomatic. Diagnostic requires confirmation (repeat test) unless symptomatic.</td></tr><tr><td>**HbA1c Limitations**</td><td>Affected by haemoglobinopathies, anaemia, renal failure, pregnancy, ethnicity (slightly higher in Black). Not for T1DM diagnosis (acute).</td></tr><tr><td>**DPP Lifestyle = 7% weight + 150min**</td><td>Key numbers: 7% body weight loss, 150 min/week moderate activity, low-fat calorie-restricted diet.</td></tr></table>
+<p><b>Mnemonic: DIABETES DIAGNOSTIC (FHOR)</b></p>
+<ul><li><b>F</b>PG ≥7.0</li><li><b>H</b>bA1c ≥48</li><li><b>O</b>GTT 2h ≥11.1</li><li><b>R</b>andom ≥11.1 + symptoms</li></ul>
+<p><b>Mnemonic: PRE-DIABETES (IFG-IGT)</b></p>
+<ul><li><b>I</b>FG: <b>F</b>PG 5.6-6.9 (hepatic IR)</li><li><b>I</b>GT: <b>2h OGTT</b> 7.8-11.0 (muscle IR)</li><li><b>H</b>bA1c 42-47</li></ul>
+<p><b>Mnemonic: DPP LIFESTYLE (7-150)</b></p>
+<ul><li><b>7</b>% weight loss</li><li><b>150</b> min/week activity</li></ul>
+<p><b>Mnemonic: ETHNIC RISK (SABI)</b></p>
+<ul><li><b>S</b>outh <b>A</b>sian</li><li><b>B</b>lack</li><li><b>I</b>ndigenous</li><li>(Highest risk, younger onset, lower BMI)</li></ul>
+<p><b>Mnemonic: COMPLICATIONS (CVD-REN)</b></p>
+<ul><li><b>CVD</b> 50-60% mortality</li><li><b>R</b>etinopathy (blindness)</li><li><b>E</b>SRD (nephropathy)</li><li><b>N</b>europathy/Foot (amputation)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Diabetes Epidemiology)) Burden 537M (10.5%), 6.7M deaths 783M by 2045 $966B (9% health spend) Types T2DM 90-95% T1DM 5-10% (rising) GDM 14% preg Other &lt;1% Risk Factors T1DM: HLA, latitude, viruses T2DM: Obesity, inactivity, diet Ethnicity: SA, Black, Indigenous GDM hx, Pre-DM, MetS Screening ≥40y or high-risk HbA1c/FPG/OGTT FINDRISC/QDiabetes Prevention DPP: Lifestyle 58%↓, Metformin 31%↓ Da Qing: sustained Primary: lifestyle Secondary: pre-DM intervention Complications CVD 50-60% deaths Micro: eye, kidney, nerve </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Global**</td><td>537M adults, 6.7M deaths, 783M by 2045</td></tr><tr><td>**T2DM 90-95%**</td><td>Obesity-driven; SA/Black/Indigenous highest</td></tr><tr><td>**Diagnostic**</td><td>FPG≥7.0, HbA1c≥48, 2hOGTT≥11.1, Rand≥11.1+sx</td></tr><tr><td>**Pre-DM**</td><td>IFG 5.6-6.9, IGT 7.8-11.0, HbA1c 42-47</td></tr><tr><td>**Screening**</td><td>≥40y or high-risk; FINDRISC/QDiabetes</td></tr><tr><td>**Prevention**</td><td>DPP: 7% wt, 150min → 58% ↓; Metformin 31% ↓</td></tr><tr><td>**GDM**</td><td>14% preg; 50% → T2DM in 10y</td></tr><tr><td>**Complications**</td><td>CVD 50-60% deaths; retinopathy, nephropathy, neuropathy</td></tr><tr><td>**Economics**</td><td>9% health spend; prevention <£5K/QALY</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Global Burden Stats</td><td></td><td></td></tr><tr><td>T1DM vs T2DM Epi</td><td></td><td></td></tr><tr><td>Diagnostic Thresholds</td><td></td><td></td></tr><tr><td>Prevention Trials</td><td></td><td></td></tr><tr><td>Risk Scores</td><td></td><td></td></tr><tr><td>Complications Epi</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Cardiovascular Disease Epidemiology.md]], [[Cancer Epidemiology.md]], [[Measures of Disease Burden (DALY, QALY, HALE, YLL, YLD).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Diabetes Metabolic Disease Epidemiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

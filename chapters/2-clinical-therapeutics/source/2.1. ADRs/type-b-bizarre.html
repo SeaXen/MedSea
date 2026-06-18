@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type B Bizarre — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.1. ADRS</span>
+      <div class="h1">Type B Bizarre</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define Type B ADR: idiosyncratic, non-dose-dependent, unpredictable</li><li>[ ] Classify Type B by mechanism: immunological (hypersensitivity I–IV), non-immunological idiosyncrasy</li><li>[ ] Recognise high-mortality syndromes: SJS/TEN, DRESS, AGEP, AHS, Torsades, Anaphylaxis</li><li>[ ] Apply causality assessment (Naranjo, WHO-UMC, RUCAM) to Type B reactions</li><li>[ ] Know absolute contraindication to rechallenge</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Definition & Core Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Type B (Bizarre)</th></tr><tr><td>---------</td><td>------------------</td></tr><tr><td>**Synonym**</td><td>Idiosyncratic</td></tr><tr><td>**Dose-dependence**</td><td>**No** (may need threshold but not linear)</td></tr><tr><td>**Predictability**</td><td>**Unpredictable** from pharmacology</td></tr><tr><td>**Incidence**</td><td>**Rare** (1:1,000 – 1:100,000)</td></tr><tr><td>**Mortality**</td><td>**High** (can be fatal)</td></tr><tr><td>**Mechanism**</td><td>Immunological (hypersensitivity) or non-immunological idiosyncrasy</td></tr><tr><td>**Rechallenge**</td><td>**Absolutely contraindicated**</td></tr><tr><td>**Genetic predisposition**</td><td>Often (HLA alleles, enzyme polymorphisms)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🧬 Classification by Mechanism</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">A. Immunological (Hypersensitivity Reactions — Gell &amp; Coombs)</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Mediators</th><th>Onset</th><th>Classic Drug Examples</th><th>Clinical Syndrome</th></tr><tr><td>------</td><td>-----------</td><td>-----------</td><td>-------</td><td>----------------------</td><td>-------------------</td></tr><tr><td>**Type I** (Immediate)</td><td>IgE-mediated mast cell/basophil degranulation</td><td>Histamine, tryptase, leukotrienes, PGD₂</td><td>**Minutes–hours**</td><td>Penicillins, cephalosporins, NSAIDs, muscle relaxants, insulin, latex</td><td>**Anaphylaxis, urticaria, angioedema, bronchospasm, anaphylactoid**</td></tr><tr><td>**Type II** (Cytotoxic)</td><td>IgG/IgM + complement → cell lysis</td><td>Complement, ADCC</td><td>**Days–weeks**</td><td>Penicillins, cephalosporins (haemolytic anaemia); Methyldopa (AIHA); Quinidine (thrombocytopenia); Heparin (HIT)</td><td>**Immune haemolytic anaemia, thrombocytopenia, neutropenia**</td></tr><tr><td>**Type III** (Immune Complex)</td><td>IgG/IgM-antigen complexes → vasculitis</td><td>Complement, neutrophils</td><td>**1–3 weeks**</td><td>Penicillins, sulfonamides, allopurinol, biologics (infliximab), vaccines</td><td>**Serum sickness, vasculitis, glomerulonephritis, drug fever**</td></tr><tr><td>**Type IV** (Delayed T-cell)</td><td>T-cell mediated (CD4+/CD8+)</td><td>Cytokines (IFN-γ, TNF-α, IL-5)</td><td>**Days–weeks**</td><td>**Allopurinol, sulfonamides, antiepileptics, abacavir, dapsone, NSAIDs**</td><td>**Morbilliform, SJS/TEN, DRESS, AGEP, AHS, maculopapular exanthema (MPE)**</td></tr></table>
+<div class="callout"><b>Subtypes of Type IV (PHIL):</b> - <b>IVa</b> (CD4+ Th1): Maculopapular, DRESS - <b>IVb</b> (CD4+ Th2): Eosinophilic (DRESS, AHS) - <b>IVc</b> (CD8+ cytotoxic): <b>SJS/TEN, AGEP, MPE</b> — <b>granulysin, perforin, Fas-FasL</b> - <b>IVd</b> (T-cell → neutrophil): <b>AGEP</b> — IL-8, CXCL8</div>
+<div class="sub-h">B. Non-Immunological Idiosyncrasy</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Example</th><th>Syndrome</th></tr><tr><td>-----------</td><td>---------</td><td>----------</td></tr><tr><td>**Enzyme deficiency (pharmacogenetic)**</td><td>G6PD deficiency + oxidative drugs (primaquine, dapsone, sulfonamides)</td><td>**Haemolytic anaemia**</td></tr><tr><td></td><td>CYP2D6 poor metaboliser + codeine</td><td>**No analgesia**</td></tr><tr><td></td><td>CYP2D6 ultra-rapid + codeine</td><td>**Toxic morphine levels → apnoea**</td></tr><tr><td></td><td>NAT2 slow acetylator + isoniazid</td><td>**Peripheral neuropathy, hepatotoxicity**</td></tr><tr><td></td><td>TPMT deficiency + azathioprine/6-MP</td><td>**Myelosuppression**</td></tr><tr><td>**Mitochondrial toxicity**</td><td>Valproate, linezolid, NRTIs (zidovudine)</td><td>**Hepatic steatosis, lactic acidosis, neuropathy**</td></tr><tr><td>**Channelopathy**</td><td>QT-prolonging drugs in congenital LQTS</td><td>**Torsades de Pointes**</td></tr><tr><td>**Idiosyncratic hepatotoxicity**</td><td>Isoniazid, valproate, diclofenac, amoxicillin-clavulanate</td><td>**DILI (Hy's Law)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">⚠️ High-Mortality Type B Syndromes (Must Know for Exams)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Stevens-Johnson Syndrome / Toxic Epidermal Necrolysis (SJS/TEN)</div>
+<table class="ctable"><tr><th>Feature</th><th>SJS</th><th>TEN</th><th>Overlap (SJS/TEN)</th></tr><tr><td>---------</td><td>-----</td><td>-----</td><td>-------------------</td></tr><tr><td>**BSA detachment**</td><td>**<10%**</td><td>**>30%**</td><td>**10–30%**</td></tr><tr><td>**Mucosal sites**</td><td>≥2</td><td>≥2</td><td>≥2</td></tr><tr><td>**Typical drugs**</td><td>Allopurinol, sulfonamides, AEDs (CZP, PHT, LMG, OXC), NSAIDs, nevirapine</td><td>Same</td><td>Same</td></tr><tr><td>**HLA associations**</td><td>**B*15:02** (CZP/PHT/OXC), **B*58:01** (Allopurinol), **A*31:01** (CZP DRESS)</td><td></td><td></td></tr><tr><td>**Mortality**</td><td>~5–10%</td><td>~30–50%</td><td>~15–25%</td></tr><tr><td>**SCORTEN**</td><td>7 factors: age>40, HR>120, cancer, BSA>10%, BUN>28, Glc>14, HCO₃<20</td><td></td><td></td></tr></table>
+<p><b>SCORTEN Mortality Prediction:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Score&lt;/th&gt;&lt;th&gt;Mortality&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0–1&lt;/td&gt;&lt;td&gt;3%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;12%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;35%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;58%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;90%+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Management:</b> Stop culprit <b>immediately</b> → ICU/burn unit → supportive (fluids, electrolytes, wound care, infection prevention) → <b>IVIG (controversial)</b>, <b>cyclosporine</b>, <b>etanercept</b> (emerging) → <b>NO systemic steroids</b> (controversial, ↑ sepsis risk)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2. DRESS (Drug Reaction with Eosinophilia and Systemic Symptoms)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Triad**</td><td>Fever + Rash + Organ involvement</td></tr><tr><td>**Typical onset**</td><td>**2–8 weeks** after drug start (delayed)</td></tr><tr><td>**Key drugs**</td><td>Allopurinol, AEDs (CZP, PHT, PB, LMG, VPA), sulfonamides, dapsone, abacavir, minocycline, allopurinol</td></tr><tr><td>**HLA**</td><td>**B*58:01** (Allopurinol), **B*15:02** (CZP), **A*31:01** (CZP), **B*13:01** (Dapsone)</td></tr><tr><td>**RegiSCAR criteria**</td><td>Fever ≥38°C, lymphadenopathy, eosinophilia >1.5×10⁹/L or atypical lymphs, organ involvement (liver, kidney, lung, heart), rash, reaction >2wks</td></tr><tr><td>**Mortality**</td><td>~10% (liver failure, myocarditis)</td></tr><tr><td>**Management**</td><td>Stop drug → systemic steroids (pred 1mg/kg) → slow taper 6–12wks → monitor LFTs, renal, cardiac</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3. AGEP (Acute Generalised Exanthematous Pustulosis)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Presentation**</td><td>**Acute febrile** + **non-follicular pustules** on oedematous erythema</td></tr><tr><td>**Onset**</td><td>**1–5 days** (rapid)</td></tr><tr><td>**Key drugs**</td><td>**Beta-lactams (esp. aminopenicillins)**, quinolones, hydroxychloroquine, diltiazem, sulfonamides</td></tr><tr><td>**Histology**</td><td>Subcorneal pustules, neutrophilic infiltration</td></tr><tr><td>**Biomarker**</td><td>**Neutrophilia** (not eosinophilia)</td></tr><tr><td>**Course**</td><td>Self-limiting **<2 weeks** after withdrawal</td></tr><tr><td>**Mortality**</td><td>Low (<5%)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4. AHS (Anticonvulsant Hypersensitivity Syndrome) / DRESS by AEDs</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Drugs**</td><td>Phenytoin, carbamazepine, phenobarbital, lamotrigine, valproate</td></tr><tr><td>**Triad**</td><td>Fever, rash, systemic involvement (hepatitis, nephritis, pneumonitis)</td></tr><tr><td>**Onset**</td><td>1–8 weeks</td></tr><tr><td>**HLA**</td><td>**HLA-B*15:02** (CZP), **HLA-A*31:01** (CZP DRESS), **HLA-B*38:01** (dapsone/CZP)</td></tr><tr><td>**Cross-reactivity**</td><td>**High among aromatic AEDs** (CZP, PHT, PB, OXC) — avoid all if reaction to one</td></tr><tr><td>**Management**</td><td>Stop all aromatic AEDs → switch to non-aromatic (levetiracetam, topiramate, gabapentin, lacosamide, zonisamide)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5. Torsades de Pointes (Drug-Induced)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Mechanism**</td><td>**hERG (IKr) blockade** → prolonged repolarisation → afterdepolarisations → R-on-T</td></tr><tr><td>**Risk factors**</td><td>Female, elderly, hypokalaemia, hypomagnesaemia, bradycardia, congenital LQTS, polypharmacy (multiple QT drugs)</td></tr><tr><td>**High-risk drugs**</td><td>**Antiarrhythmics (Class Ia, III)**, **antipsychotics (haloperidol, thioridazine, ziprasidone)**, **antidepressants (citalopram, escitalopram, TCAs)**, **antibiotics (macrolides, fluoroquinolones)**, **antiemetics (ondansetron, domperidone)**, **antifungals (azole)**, **methadone**</td></tr><tr><td>**Monitoring**</td><td>Baseline ECG, repeat if risk factors; **QTc >500ms or Δ>60ms = high risk**</td></tr><tr><td>**Acute management**</td><td>**IV Magnesium sulfate 2g bolus** (even if normal Mg²⁺) → correct K⁺/Mg²⁺ → pacing/isoprenaline if paused → stop offending drug</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6. Anaphylaxis (Type I)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Criteria**</td><td>Acute onset + skin/mucosal + respiratory compromise **OR** hypotension **OR** GI symptoms</td></tr><tr><td>**Common drugs**</td><td>Penicillins, cephalosporins, NSAIDs, neuromuscular blockers, radiocontrast, insulin, biologics</td></tr><tr><td>**Management**</td><td>**IM Adrenaline 1:1000 (0.5mg = 0.5mL) anterolateral thigh** → supine + legs raised → O₂ → IV fluids → chlorphenamine + hydrocortisone (adjuncts) → observe 6–12h</td></tr><tr><td>**Tryptase**</td><td>Peak 1–2h, half-life 2h — sample at 1–2h and 24h (baseline)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7. DILI (Drug-Induced Liver Injury) — Idiosyncratic (Type B)</div>
+<table class="ctable"><tr><th>Pattern</th><th>Drugs</th><th>Features</th></tr><tr><td>---------</td><td>-------</td><td>----------</td></tr><tr><td>**Hepatocellular** (ALT>ALP)</td><td>Isoniazid, valproate, paracetamol (overdose = Type A), nevirapine, flucloxacillin</td><td>**Hy's Law**: ALT>3×ULN + Bilirubin>2×ULN → **10–50% mortality**</td></tr><tr><td>**Cholestatic** (ALP>ALT)</td><td>**Flucloxacillin**, amoxicillin-clavulanate, azathioprine, chlorpromazine, anabolic steroids</td><td>Pruritus, jaundice, prolonged</td></tr><tr><td>**Mixed**</td><td>Diclofenac, sulfonamides, allopurinol</td><td>Intermediate</td></tr><tr><td>**HLA**</td><td>**DRB1*07:01/DQA1*02:01** (Flucloxacillin), **B*57:01** (Flucloxacillin in some)</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Key Drug(s)</th><th>Onset</th><th>Key Feature</th><th>Mortality</th><th>Management</th></tr><tr><td>----------</td><td>-------------</td><td>-------</td><td>-------------</td><td>-----------</td><td>------------</td></tr><tr><td>**Anaphylaxis**</td><td>Penicillins, NSAIDs, NM blockers</td><td>Minutes–hrs</td><td>Hypotension, angioedema, wheeze</td><td>High if delayed</td><td>**IM Adrenaline 0.5mg**</td></tr><tr><td>**SJS/TEN**</td><td>Allopurinol, Sulfa, AEDs, NSAIDs</td><td>1–4 weeks</td><td>BSA detachment, mucosal erosions</td><td>5–50%</td><td>**Stop drug, ICU, supportive**</td></tr><tr><td>**DRESS**</td><td>Allopurinol, AEDs, Dapsone, Abacavir</td><td>2–8 weeks</td><td>Fever, eosinophilia, organ involvement</td><td>~10%</td><td>Stop drug, **steroids 1mg/kg, slow taper**</td></tr><tr><td>**AGEP**</td><td>Beta-lactams, quinolones</td><td>1–5 days</td><td>Non-follicular pustules, neutrophilia</td><td>Low</td><td>Stop drug, supportive</td></tr><tr><td>**Torsades**</td><td>QT-prolonging drugs + risk factors</td><td>Variable</td><td>Polymorphic VT, R-on-T</td><td>High</td><td>**IV MgSO₄ 2g**, correct K/Mg, pacing</td></tr><tr><td>**DILI (Hy's Law)**</td><td>INH, Valproate, Flucloxacillin, Augmentin</td><td>Variable</td><td>ALT>3×ULN + Bil>2×ULN</td><td>10–50%</td><td>Stop drug, monitor, transplant eval</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">❓ Viva Questions (12)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Expected Answer</th></tr><tr><td>---</td><td>-----------------</td></tr><tr><td>1. Define Type B ADR. How does it differ from Type A?</td><td>Idiosyncratic, non-dose-dependent, unpredictable, rare, high mortality. Type A: dose-dependent, predictable, common, lower mortality.</td></tr><tr><td>2. Classify Type B by mechanism.</td><td>Immunological (Gell-Coombs I–IV) + Non-immunological (pharmacogenetic, mitochondrial, channelopathy)</td></tr><tr><td>3. SJS vs TEN vs Overlap — BSA criteria?</td><td>SJS <10%, Overlap 10–30%, TEN >30% BSA detachment; all ≥2 mucosal sites</td></tr><tr><td>4. SCORTEN components? Mortality for score 3?</td><td>Age>40, HR>120, malignancy, BSA>10%, BUN>28, Glc>14, HCO₃<20. Score 3 = 35% mortality</td></tr><tr><td>5. DRESS: typical onset, key labs, management?</td><td>2–8 weeks; **eosinophilia >1.5**, atypical lymphs, LFTs, renal; **stop drug, pred 1mg/kg, taper 6–12wks**</td></tr><tr><td>6. AGEP vs SJS/TEN: distinguishing features?</td><td>AGEP: **pustules (not bullae), neutrophilia (not eosinophilia), onset 1–5d, self-limiting <2wks**; SJS/TEN: bullae, necrosis, eosinophilia, high mortality</td></tr><tr><td>7. Aromatic AED cross-reactivity? Non-aromatic alternatives?</td><td>**High cross-reactivity** (CZP, PHT, PB, OXC, LMG). **Non-aromatic**: Levetiracetam, Topiramate, Gabapentin, Lacosamide, Zonisamide, Pregabalin</td></tr><tr><td>8. Torsades: mechanism, highest-risk drug classes, acute treatment?</td><td>**hERG (IKr) blockade**; Class Ia/III antiarrhythmics, antipsychotics, macrolides, fluoroquinolones, ondansetron, methadone; **IV MgSO₄ 2g bolus**</td></tr><tr><td>9. Hy's Law for DILI? Significance?</td><td>**ALT>3×ULN + Bilirubin>2×ULN (no obstruction)** → predicts **10–50% mortality / transplant**; stop drug immediately</td></tr><tr><td>10. Flucloxacillin cholestatic DILI: HLA association?</td><td>**HLA-DRB1*07:01 / DQA1*02:01** (Class II); onset 2–4 weeks; prolonged jaundice</td></tr><tr><td>11. Abacavir hypersensitivity: HLA? PPV/NPV? Management if occurs?</td><td>**HLA-B*57:01**; NPV 98–100%, PPV ~50%; **Stop permanently, never rechallenge, document allergy**</td></tr><tr><td>12. Allopurinol SJS/TEN: HLA? Screening in whom? Alternative?</td><td>**HLA-B*58:01**; Screen Han Chinese, Korean, Thai, African, CKD≥3; Alternative: **Febuxostat** (CARE: CV risk)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Type B vs Type C/D/E/F**</td><td>Type B = **idiosyncratic** (unpredictable); Type C = **chronic** (time-dependent); D = **delayed** (carcinogenesis); E = **end of use** (withdrawal); F = **failure** (inefficacy)</td></tr><tr><td>**SJS/TEN vs DRESS vs AGEP**</td><td>SJS/TEN: **necrosis/bullae**, mucosal, high mortality; DRESS: **eosinophilia**, organ involvement, delayed onset; AGEP: **pustules**, neutrophilia, rapid onset, benign</td></tr><tr><td>**AHS vs DRESS**</td><td>AHS = **DRESS caused specifically by aromatic AEDs** — same spectrum; cross-reactivity among aromatic AEDs</td></tr><tr><td>**Torsades = Type A or B?**</td><td>**Type B** — idiosyncratic (not all get it at same dose); requires susceptibility (congenital LQTS, electrolytes, polypharmacy)</td></tr><tr><td>**Anaphylaxis vs Anaphylactoid**</td><td>Anaphylaxis = **IgE-mediated (Type I)**; Anaphylactoid = **non-IgE**, direct mast cell activation (e.g., radiocontrast, opioids, vancomycin "red man") — **treatment identical**</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"B = Bizarre = Bad (high mortality) = idiosyncratic"</b></li><li><b>"SCORTEN"</b> = <b>S</b>kin &gt;10%, <b>C</b>ancer, <b>O</b>ld &gt;40, <b>R</b>enal (BUN&gt;28), <b>T</b>achy &gt;120, <b>E</b>lectrolytes (HCO₃&lt;20, Glc&gt;14), <b>N</b>eoplasia</li><li><b>"REGISCAR for DRESS"</b> = <b>R</b>ash, <b>E</b>osinophilia, <b>G</b>lobular (atypical lymphs), <b>I</b>ntermittent fever, <b>S</b>ystemic organ, <b>C</b>ytology, <b>A</b>llopurinol/AEDs, <b>R</b>eaction &gt;2wks</li><li><b>"Hy's Law"</b> = <b>H</b>epatocellular (ALT&gt;3×) + <b>Y</b>ellow (Bil&gt;2×) = <b>High mortality</b></li><li><b>"IV Mg for Torsades"</b> = <b>M</b>agnesium <b>Mg</b> for <b>M</b>echanism (hERG block)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Type B ADR)) Immunological (Gell-Coombs) Type I (IgE) --&gt; Anaphylaxis, Urticaria Type II (Cytotoxic) --&gt; AIHA, ITP, Neutropenia, HIT Type III (Immune Complex) --&gt; Serum Sickness, Vasculitis Type IV (T-cell) IVa (Th1) --&gt; Maculopapular, DRESS IVb (Th2) --&gt; Eosinophilic DRESS, AHS IVc (CD8 Cytotoxic) --&gt; SJS/TEN, AGEP, MPE IVd (Neutrophil) --&gt; AGEP Non-Immunological Pharmacogenetic G6PD deficiency --&gt; Oxidative drugs haemolysis CYP2D6 UM --&gt; Codeine toxicity TPMT deficiency --&gt; Azathioprine myelosuppression NAT2 slow --&gt; INH neuropathy/hepatotox Mitochondrial toxicity Valproate, NRTIs, Linezolid Channelopathy Congenital LQTS + QT drugs --&gt; Torsades Idiosyncratic DILI INH, Valproate, Flucloxacillin, Augmentin High-Mortality Syndromes Anaphylaxis SJS/TEN (SCORTEN) DRESS (RegiSCAR) AGEP Torsades (hERG) DILI (Hy's Law) HLA Associations B<i>15:02 --&gt; CZP/PHT/OXC SJS/TEN B</i>58:01 --&gt; Allopurinol SCAR B<i>57:01 --&gt; Abacavir HSS A</i>31:01 --&gt; CZP DRESS DRB1<i>07:01 --&gt; Flucloxacillin DILI B</i>13:01 --&gt; Dapsone HSS </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>Definition & comparison</td><td>6</td><td></td></tr><tr><td>Gell-Coombs classification</td><td>10</td><td></td></tr><tr><td>SJS/TEN/SCORTEN</td><td>10</td><td></td></tr><tr><td>DRESS/RegiSCAR</td><td>8</td><td></td></tr><tr><td>AGEP</td><td>4</td><td></td></tr><tr><td>Torsades/hERG</td><td>6</td><td></td></tr><tr><td>DILI/Hy's Law</td><td>6</td><td></td></tr><tr><td>HLA associations</td><td>8</td><td></td></tr><tr><td>Viva answers</td><td>12</td><td></td></tr><tr><td>**Total**</td><td>**70**</td><td></td></tr></table>
+<p><b>Target</b>: ≥56/70 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Question (10 marks): *"Discuss the classification, clinical features, and management of severe cutaneous adverse reactions (SCARs)."*</div>
+<ol><li><b>Classification</b> (2): Type B (idiosyncratic), Type IV T-cell mediated; SCARs = SJS/TEN, DRESS, AGEP, AHS</li><li><b>SJS/TEN</b> (3): Definition (BSA), SCORTEN, drugs (allopurinol, sulfa, AEDs), HLA (B<i>15:02, B</i>58:01), management (stop drug, ICU, supportive, IVIG/cyclosporine/etanercept, NO steroids)</li><li><b>DRESS</b> (2): RegiSCAR criteria, 2–8wk onset, eosinophilia/organ involvement, drugs, HLA, steroids 1mg/kg taper 6–12wks</li><li><b>AGEP</b> (2): Pustules, neutrophilia, 1–5d onset, beta-lactams, self-limiting</li><li><b>Cross-reactivity</b> (1): Aromatic AEDs — avoid all if one causes SCAR</li></ol>
+<div class="sub-h">Short Question (5 marks): *"SJS vs TEN vs DRESS — distinguish."*</div>
+<table class="ctable"><tr><th>Feature</th><th>SJS</th><th>TEN</th><th>DRESS</th></tr><tr><td>---------</td><td>-----</td><td>-----</td><td>-------</td></tr><tr><td>BSA detachment</td><td><10%</td><td>>30%</td><td>Variable (usually <10%)</td></tr><tr><td>Mucosal</td><td>≥2 sites</td><td>≥2 sites</td><td>Often</td></tr><tr><td>Onset</td><td>1–4 wks</td><td>1–4 wks</td><td>2–8 wks</td></tr><tr><td>Key labs</td><td>—</td><td>—</td><td>**Eosinophilia, atypical lymphs**</td></tr><tr><td>Mortality</td><td>5–10%</td><td>30–50%</td><td>~10%</td></tr><tr><td>HLA</td><td>B*15:02</td><td>B*15:02</td><td>B*58:01, A*31:01</td></tr></table>
+<div class="sub-h">Viva (2 min): *"Patient on allopurinol 2 weeks, fever, rash, eosinophilia 3×10⁹, ALT 200. Diagnosis? Management?"*</div>
+<ul><li><b>DRESS</b> (RegiSCAR criteria met)</li><li><b>Stop allopurinol immediately</b></li><li><b>Prednisolone 1mg/kg</b>, slow taper 6–12 weeks</li><li>Monitor LFTs, renal, cardiac</li><li>Screen HLA-B*58:01 (retrospective)</li><li>Alternative: Febuxostat (caution CV risk)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on clarithromycin + citalopram develops syncope. ECG shows polymorphic VT, twisting points. Immediate management?"*</div>
+<ul><li><b>Torsades de Pointes</b> — <b>IV Magnesium sulfate 2g bolus</b> (even if Mg²⁺ normal)</li><li>Stop clarithromycin + citalopram (both QT prolonging)</li><li>Correct K⁺ &gt;4.5, Mg²⁺ &gt;1.0</li><li>Temporary pacing / isoprenaline if recurrent</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Type B = Bizarre = Idiosyncratic = Unpredictable = High mortality</li><li>SJS &lt;10%, TEN &gt;30%, Overlap 10–30% BSA</li><li>SCORTEN: 7 factors, score 3 = 35% mortality</li><li>DRESS: 2–8 wks, eosinophilia, organ involvement, steroids taper 6–12wks</li><li>AGEP: pustules, neutrophilia, 1–5d, beta-lactams, benign</li><li>Torsades: hERG block → IV Mg 2g</li><li>Hy's Law: ALT&gt;3× + Bil&gt;2× = 10–50% mortality</li><li>HLA: B<i>15:02 (CZP), B</i>58:01 (Allo), B<i>57:01 (ABC), A</i>31:01 (CZP DRESS), DRB1*07:01 (Fluclox)</li><li>Aromatic AEDs cross-react: CZP, PHT, PB, OXC, LMG → switch to LEV, TPM, GBP, LCM</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>SCAR TRIAD FOR EXAMS:</b> 1. <b>SJS/TEN</b> — Necrosis/bullae, SCORTEN, HLA-B<i>15:02/B</i>58:01, <b>ICU, stop drug, no steroids</b> 2. <b>DRESS</b> — Eosinophilia + organ, 2–8wks, HLA-B<i>58:01/A</i>31:01, <b>Steroids 1mg/kg taper 6–12wks</b> 3. <b>AGEP</b> — Pustules + neutrophilia, 1–5d, beta-lactams, <b>benign, self-limiting</b>  <b>Torsades</b> = hERG block → <b>IV MgSO₄ 2g</b> <b>Anaphylaxis</b> = <b>IM Adrenaline 0.5mg</b> <b>Hy's Law</b> = ALT&gt;3× + Bil&gt;2× = transplant/mortality risk</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">❓ MCQs (15)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which statement BEST describes a Type B (Bizarre) ADR?</b></li></ol>
+<p>A. Dose-dependent and predictable B. <b>Idiosyncratic, non-dose-dependent, unpredictable, high mortality</b> ✓ C. Occurs only after chronic use D. Mediated by IgG antibodies only E. Preventable by therapeutic drug monitoring</p>
+<ol><li><b>Gell-Coombs Type IV hypersensitivity is mediated by:</b></li></ol>
+<p>A. IgE B. IgG/IgM + complement C. Immune complexes D. <b>T-lymphocytes (CD4+ and CD8+)</b> ✓ E. Neutrophils</p>
+<ol><li><b>SJS/TEN overlap syndrome is defined by BSA detachment of:</b></li></ol>
+<p>A. &lt;10% B. <b>10–30%</b> ✓ C. &gt;30% D. 30–50% E. &gt;50%</p>
+<ol><li><b>A patient on allopurinol for 3 weeks develops fever, diffuse maculopapular rash, facial oedema, eosinophilia 2.5×10⁹/L, and ALT 300 U/L. Most likely diagnosis?</b></li></ol>
+<p>A. SJS B. TEN C. <b>DRESS</b> ✓ D. AGEP E. Serum sickness</p>
+<ol><li><b>SCORTEN includes all EXCEPT:</b></li></ol>
+<p>A. Age &gt;40 B. Heart rate &gt;120 C. <b>Serum creatinine &gt;200</b> ✓ D. BUN &gt;28 mg/dL E. Bicarbonate &lt;20 mmol/L F. Glucose &gt;14 mmol/L G. BSA detached &gt;10%</p>
+<ol><li><b>AGEP is characterised by:</b></li></ol>
+<p>A. Full-thickness epidermal necrosis B. <b>Non-follicular pustules on oedematous erythema + neutrophilia</b> ✓ C. Eosinophilia &gt;1.5×10⁹/L D. Onset 4–8 weeks after drug initiation E. Mucosal involvement in &gt;90%</p>
+<ol><li><b>Which drug class has the HIGHEST cross-reactivity in aromatic antiepileptic hypersensitivity?</b></li></ol>
+<p>A. Non-aromatic AEDs (levetiracetam, topiramate) B. <b>Aromatic AEDs (carbamazepine, phenytoin, phenobarbital, oxcarbazepine, lamotrigine)</b> ✓ C. Valproate only D. Benzodiazepines E. Gabapentinoids</p>
+<ol><li><b>Torsades de Pointes is caused by blockade of which potassium channel?</b></li></ol>
+<p>A. IKs B. IK1 C. <b>hERG (IKr)</b> ✓ D. Ito E. IKATP</p>
+<ol><li><b>Acute management of Torsades de Pointes (regardless of magnesium level):</b></li></ol>
+<p>A. IV Amiodarone 300mg B. <b>IV Magnesium sulfate 2g bolus</b> ✓ C. IV Lidocaine 1mg/kg D. Synchronised cardioversion 100J E. IV Potassium chloride 20mmol</p>
+<ol><li><b>Hy's Law for DILI predicts:</b></li></ol>
+<p>A. Mild self-limiting hepatitis B. <b>10–50% mortality or need for transplant</b> ✓ C. Cholestatic pattern only D. Resolution within 2 weeks E. No long-term sequelae</p>
+<ol><li><b>Flucloxacillin-induced cholestatic DILI is associated with:</b></li></ol>
+<p>A. HLA-B<i>15:02 B. HLA-B</i>58:01 C. HLA-B*57:01 D. **HLA-DRB1<i>07:01 / DQA1</i>02:01** ✓ E. HLA-A*31:01</p>
+<ol><li><b>Abacavir hypersensitivity syndrome: HLA allele and management if reaction occurs?</b></li></ol>
+<p>A. HLA-B*15:02; reduce dose B. **HLA-B*57:01; stop permanently, never rechallenge** ✓ C. HLA-B<i>58:01; switch to alternative NRTI D. HLA-A</i>31:01; continue with steroids E. HLA-DRB1*07:01; monitor only</p>
+<ol><li><b>Valproate-induced hepatotoxicity is primarily due to:</b></li></ol>
+<p>A. IgE-mediated hypersensitivity B. <b>Mitochondrial toxicity (beta-oxidation inhibition)</b> ✓ C. CYP2C9 inhibition D. Immune complex deposition E. Direct dose-dependent toxicity (Type A)</p>
+<ol><li><b>A patient on carbamazepine develops SJS. Which HLA allele is most strongly associated?</b></li></ol>
+<p>A. HLA-A*31:01 B. **HLA-B*15:02** ✓ C. HLA-B<i>58:01 D. HLA-B</i>57:01 E. HLA-DRB1*07:01</p>
+<ol><li><b>DRESS vs AGEP — key distinguishing lab finding:</b></li></ol>
+<p>A. <b>Eosinophilia (DRESS) vs Neutrophilia (AGEP)</b> ✓ B. Lymphopenia (DRESS) vs Leukocytosis (AGEP) C. Thrombocytopenia (DRESS) vs Thrombocytosis (AGEP) D. Both have eosinophilia E. Both have neutrophilia</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Type B ADR definition</td><td>Idiosyncratic, non-dose-dependent, unpredictable, rare, high mortality</td></tr><tr><td>Gell-Coombs Type I</td><td>IgE-mediated, minutes-hours: Anaphylaxis, urticaria</td></tr><tr><td>Gell-Coombs Type II</td><td>IgG/IgM cytotoxic: AIHA, ITP, HIT</td></tr><tr><td>Gell-Coombs Type III</td><td>Immune complexes: Serum sickness, vasculitis</td></tr><tr><td>Gell-Coombs Type IV</td><td>T-cell mediated: SJS/TEN, DRESS, AGEP, MPE, AHS</td></tr><tr><td>Type IVc (CD8 cytotoxic)</td><td>SJS/TEN, AGEP, MPE — granulysin, perforin, Fas-FasL</td></tr><tr><td>Type IVd (neutrophil)</td><td>AGEP — IL-8, CXCL8</td></tr><tr><td>SJS BSA</td><td><10%</td></tr><tr><td>TEN BSA</td><td>>30%</td></tr><tr><td>Overlap BSA</td><td>10–30%</td></tr><tr><td>SCORTEN 7 factors</td><td>Age>40, HR>120, Cancer, BSA>10%, BUN>28, Glc>14, HCO3<20</td></tr><tr><td>SCORTEN score 3 mortality</td><td>35%</td></tr><tr><td>DRESS onset</td><td>2–8 weeks</td></tr><tr><td>DRESS key labs</td><td>Eosinophilia >1.5, atypical lymphs, LFTs, renal</td></tr><tr><td>DRESS management</td><td>Stop drug, Pred 1mg/kg, taper 6–12 weeks</td></tr><tr><td>AGEP features</td><td>Pustules, neutrophilia, 1–5 days, beta-lactams, benign</td></tr><tr><td>AHS = DRESS by</td><td>Aromatic AEDs (CZP, PHT, PB, OXC, LMG) — cross-reactivity HIGH</td></tr><tr><td>Non-aromatic AEDs</td><td>Levetiracetam, Topiramate, Gabapentin, Lacosamide, Zonisamide, Pregabalin</td></tr><tr><td>Torsades mechanism</td><td>hERG (IKr) blockade</td></tr><tr><td>Torsades acute Rx</td><td>IV MgSO4 2g bolus</td></tr><tr><td>Hy's Law</td><td>ALT>3xULN + Bil>2xULN = 10–50% mortality</td></tr><tr><td>HLA-B*15:02</td><td>Carbamazepine/phenytoin/oxcarbazepine SJS/TEN (Asians)</td></tr><tr><td>HLA-B*58:01</td><td>Allopurinol SCAR (Asians, CKD)</td></tr><tr><td>HLA-B*57:01</td><td>Abacavir HSS (universal screen)</td></tr><tr><td>HLA-A*31:01</td><td>Carbamazepine DRESS (Europeans/Japanese)</td></tr><tr><td>HLA-DRB1*07:01</td><td>Flucloxacillin DILI (Class II)</td></tr><tr><td>HLA-B*13:01</td><td>Dapsone HSS</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Type B = idiosyncratic, unpredictable, high mortality</li><li><b>D</b> — Type IV = T-cell mediated</li><li><b>B</b> — SJS/TEN overlap = 10–30% BSA</li><li><b>C</b> — Allopurinol 3wks + fever + rash + eosinophilia + hepatitis = DRESS</li><li><b>C</b> — SCORTEN uses BUN not creatinine</li><li><b>B</b> — AGEP = pustules + neutrophilia</li><li><b>B</b> — Aromatic AEDs high cross-reactivity</li><li><b>C</b> — hERG (IKr) blockade</li><li><b>B</b> — IV MgSO₄ 2g bolus (first-line)</li><li><b>B</b> — Hy's Law = high mortality/transplant</li><li><b>D</b> — Flucloxacillin = Class II HLA-DRB1<i>07:01/DQA1</i>02:01</li><li><b>B</b> — Abacavir = B*57:01; stop permanently, never rechallenge</li><li><b>B</b> — Valproate = mitochondrial toxicity (beta-oxidation inhibition)</li><li><b>B</b> — CZP SJS/TEN = B*15:02</li><li><b>A</b> — DRESS = eosinophilia; AGEP = neutrophilia</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/ADRs/Type B (Bizarre).md</code> | Status: <code>draft</code> → upgrade to <code>full-fcps-mrcp-note</code> after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Type B Bizarre · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

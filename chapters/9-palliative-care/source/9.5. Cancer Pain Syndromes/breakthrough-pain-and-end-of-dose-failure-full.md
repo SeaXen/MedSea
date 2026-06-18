@@ -1,0 +1,204 @@
+# Breakthrough pain and end-of-dose failure
+
+Related: [[../../Pain and Palliative Care MOC]], [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Cancer Pain Syndromes**
+
+## 1. Definition
+
+Breakthrough pain (BTP) is a transient exacerbation of pain on a background of adequately controlled baseline pain. Subtypes: spontaneous (idiopathic, no trigger), incident (triggered by activity), end-of-dose failure (regular analgesic wears off before next dose). Common in cancer pain. Treatment: identify and treat (end-of-dose failure = increase background opioid or shorten interval; incident = rescue before activity; spontaneous = rescue as needed). Rescue dose: 10% of total daily opioid dose, q1h PRN. Rapid-onset fentanyl formulations for incident and spontaneous BTP.
+
+## 2. Clinical Features and Presentation
+
+Breakthrough cancer pain (BTcP) is a transient exacerbation of pain that occurs on a background of otherwise stable, controlled pain. Features: rapid onset (minutes), severe intensity, short duration (median 30 min), self-limiting, often unpredictable, often related to activity (incident) or spontaneous. End-of-dose failure: pain at end of dosing interval of regular opioid, indicating inadequate dose or interval. Both reduce QoL, function, mood.
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+Characterise pain: background, breakthrough (number, severity, onset, duration, triggers, predictability, relief by rescue dose). Distinguish breakthrough from end-of-dose failure, uncontrolled background pain, or new pain cause. Use breakthrough pain assessment tools.
+
+### Management
+Breakthrough: rescue dose = 1/6 (10-15%) of total daily opioid, fast-acting. Use IR opioid (oral morphine 30 min onset, or transmucosal fentanyl for rapid onset 5-15 min — for opioid-tolerant patients with ≥60mg morphine/day). Treat incident pain: pre-empt with rescue dose before activity. End-of-dose failure: increase regular dose or shorten interval. Optimise background pain control. Avoid frequent breakthrough (>3-4/day) — indicates poor background control.
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| Definition | Transient exacerbation on controlled baseline |
+| Subtypes | Spontaneous, incident, end-of-dose failure |
+| End-of-dose | Wear-off before next dose |
+| Treatment | End-of-dose: ↑ background or ↓ interval |
+| Rescue | 10% of total daily dose, q1h PRN |
+| Rapid-onset | Sublingual/buccal/intranasal fentanyl |
+| Common in | Cancer pain |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Uncontrolled background pain | Constant, not transient |
+| New pain cause | New site/character |
+| End-of-dose failure | Predictable, before next regular dose |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: Breakthrough pain rescue dose? A: 1/6 (10-15%) of total daily opioid.
+
+2. 2. Q: Transmucosal fentanyl indication? A: Opioid-tolerant (≥60mg oral morphine/day) breakthrough cancer pain; rapid onset 5-15 min.
+
+3. 3. Q: Distinction breakthrough vs end-of-dose failure? A: Breakthrough = transient, often unpredictable; end-of-dose = predictable at end of dosing interval (need shorter interval or higher dose).
+
+4. 4. Q: If >3-4 breakthrough doses/day? A: Indicates poor background pain control; increase regular dose.
+
+5. 5. Q: Incident pain management? A: Pre-empt with rescue dose 15-30 min before activity.
+
+
+## 7. Confusions and Mnemonics
+
+- See clinical features
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **Breakthrough pain and end-of-dose failure** |
+|-----------|-----------|
+| **Definition** | Breakthrough pain (BTP) is a transient exacerbation of pain on a background of adequately controlled |
+| **Key Features** | Transient exacerbation on controlled baseline |
+| **Investigation** | Clinical assessment + disease-specific tests |
+| **Management** | WHO ladder + adjuvant + non-pharmacological |
+| **Red Flags** | Severe pain, opioid side effects, total pain dimensions |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of Breakthrough pain and end-of-dose failure?
+   A. Transient exacerbation on controlled baseline
+   B. Always self-limiting
+   C. Caused by infection only
+   D. Restricted to severe pain only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line management?
+   A. WHO analgesic ladder step 1
+   B. Immediate strong opioid
+   C. Surgery only
+   D. No treatment
+   E. Antidepressants only
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Pain assessment, total pain, comorbidities
+   B. None
+   C. ECG only
+   D. Eye exam only
+   E. Blood pressure only
+   **Answer: A**
+4. **Q:** What is the most important complication to monitor?
+   A. Disease-specific complications and treatment side effects
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key pharmacological/clinical feature?
+   A. Cancer pain
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient with Breakthrough pain and end-of-dose failure; first-line management?
+   A. WHO ladder + adjuvant + non-pharmacological
+   B. Strong opioid
+   C. Surgery
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+2. **Scenario:** Failed first-line; next step?
+   A. Step up WHO ladder
+   B. Stop all treatment
+   C. Surgery
+   D. Observation
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of treatment?
+   A. Side effects, opioid complications
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Holistic assessment?
+   A. Physical + emotional + social + spiritual
+   B. Physical only
+   C. Emotional only
+   D. None
+   E. Blood tests only
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. Cancer pain
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about Breakthrough pain and end-of-dose failure?
+  **A:** Transient exacerbation on controlled baseline
+- **Q:** Another key point?
+  **A:** Spontaneous, incident, end-of-dose failure
+- **Q:** Most important complication?
+  **A:** Wear-off before next dose
+- **Q:** First-line treatment?
+  **A:** End-of-dose: ↑ background or ↓ interval
+- **Q:** Key pharmacological/clinical feature?
+  **A:** 10% of total daily dose, q1h PRN
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — Definition: Transient exacerbation on controlled baseline
+2. **A** — WHO ladder first-line
+3. **A** — Pain assessment essential
+4. **A** — Disease-specific complications
+5. **A** — Common in: Cancer pain
+
+### SBAs
+1. **A** — WHO ladder + adjuvant + non-pharmacological
+2. **A** — Step up WHO ladder
+3. **A** — Side effects, opioid complications
+4. **A** — Total pain assessment
+5. **A** — Cancer pain
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../Cancer_Pain_Syndromes_Hub]]
+**Chapter Hierarchy:** [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../Pain and Palliative Care MOC]]
+
+---
+
+> **Exam focus:** Know definition, key clinical features, first-line management (WHO ladder), and the most important complication. Always consider total pain (physical, emotional, social, spiritual).

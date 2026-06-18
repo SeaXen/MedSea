@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pinch High Risk Drugs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.7. MEDICATION SAFETY AND ERRORS</span>
+      <div class="h1">Pinch High Risk Drugs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define <b>PINCH</b> mnemonic for high-alert medications</li><li>[ ] Identify <b>specific risks</b> for each PINCH class</li><li>[ ] Apply <b>error prevention strategies</b> for each class (forcing functions, double-checks, monitoring)</li><li>[ ] Know <b>ISMP high-alert list</b> beyond PINCH</li><li>[ ] Distinguish <b>high-alert</b> (error → severe harm) vs <b>high-risk</b> (inherent toxicity)</li><li>[ ] Answer viva: "What are PINCH drugs? How to prevent insulin errors?"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: PINCH Mnemonic</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Letter</th><th>Class</th><th>Why High-Alert</th></tr><tr><td>--------</td><td>-------</td><td>----------------</td></tr><tr><td>**P**</td><td>**Potassium & other electrolytes** (concentrated KCl, K₂HPO₄, MgSO₄, NaCl 20%)</td><td>IV bolus → cardiac arrest; hyperkalaemia; confusion with flushes</td></tr><tr><td>**I**</td><td>**Insulin** (all types)</td><td>10x overdose (U vs 0); wrong type (rapid vs long); hypoglycaemia → coma/death</td></tr><tr><td>**N**</td><td>**Narcotics/Opioids** (injectable: morphine, fentanyl, oxycodone, diamorphine)</td><td>Respiratory depression; sedation; wrong dose/route; PCA errors</td></tr><tr><td>**C**</td><td>**Chemotherapy** (cytotoxics: methotrexate, vincristine, cisplatin, etc.)</td><td>Narrow TI; daily vs weekly (MTX); intrathecal vs IV (vincristine); extravasation</td></tr><tr><td>**H**</td><td>**Heparins & Anticoagulants** (UFH, LMWH, warfarin, DOACs, fondaparinux)</td><td>Bleeding; thrombosis; HIT; monitoring complexity; reversal challenges</td></tr></table>
+<div class="callout"><b>Key Distinction:</b> <i>High-alert</i> = medications that bear <b>heightened risk of significant harm when used in error</b> (ISMP). <i>High-risk</i> = medications with inherent toxicity even when used correctly. PINCH drugs are BOTH.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">️⃣ P — Potassium & Concentrated Electrolytes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Specific Risks</div>
+<table class="ctable"><tr><th>Risk</th><th>Mechanism</th><th>Consequence</th></tr><tr><td>------</td><td>-----------</td><td>-------------</td></tr><tr><td>**IV bolus administration**</td><td>KCl pushed IV instead of infused</td><td>Cardiac arrest (asystole, VF)</td></tr><tr><td>**Wrong concentration**</td><td>20% KCl vs 0.9% saline; 10% vs 1%</td><td>10–20x overdose</td></tr><tr><td>**Confusion with flushes**</td><td>Similar vials, same storage</td><td>Inadvertent bolus</td></tr><tr><td>**Rapid infusion**</td><td>Pump error, no guardrails</td><td>Hyperkalaemia, arrhythmia</td></tr><tr><td>**Incorrect dilution**</td><td>Manual preparation error</td><td>Variable dose</td></tr></table>
+<div class="sub-h">Prevention Strategies (Forcing Functions Priority)</div>
+<table class="ctable"><tr><th>Strategy</th><th>Implementation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Remove from ward stock**</td><td>**Concentrated KCl, K₂HPO₄, MgSO₄, NaCl 20% — NOT on wards** (NHS Never Event)</td></tr><tr><td>**Pre-mixed bags only**</td><td>Standard concentrations: KCl 20mmol/100mL, 40mmol/100mL</td></tr><tr><td>**Pharmacy preparation**</td><td>All IV electrolytes prepared by pharmacy</td></tr><tr><td>**Smart pump drug library**</td><td>Hard limits: max rate 10mmol/h (peripheral), 20mmol/h (central)</td></tr><tr><td>**Separate storage**</td><td>If must stock: locked, separate from flushes, Tall Man labelling</td></tr><tr><td>**Double-check**</td><td>Independent double-check for any ward preparation</td></tr><tr><td>**CPOE protocols**</td><td>Order sets with standard concentrations, rate limits</td></tr></table>
+<div class="sub-h">Key Monitoring</div>
+<ul><li>Continuous cardiac monitoring for central KCl &gt;20mmol/h</li><li>Serial K⁺ levels (1–2h after infusion)</li><li>ECG changes: peaked T, widened QRS, sine wave</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">️⃣ I — Insulin</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Specific Risks</div>
+<table class="ctable"><tr><th>Risk</th><th>Mechanism</th><th>Consequence</th></tr><tr><td>------</td><td>-----------</td><td>-------------</td></tr><tr><td>**"U" for units**</td><td>10U written as 100 (U looks like 0)</td><td>10x overdose → hypoglycaemia</td></tr><tr><td>**Wrong insulin type**</td><td>Rapid (aspart/lispro/glulisine) vs Long (glargine/detemir/degludec) vs Mixed</td><td>Hypoglycaemia (rapid given as basal) or hyperglycaemia/DKA (basal given as bolus)</td></tr><tr><td>**Wrong patient**</td><td>Multiple insulin pens on trolley</td><td>Hypoglycaemia in non-diabetic</td></tr><tr><td>**Abbreviation errors**</td><td>QD vs QID; SS vs SL; U vs 0</td><td>Dosing frequency/route errors</td></tr><tr><td>**Pen device errors**</td><td>Dial wrong dose; air shot omitted; needle not changed</td><td>Over/under-dose, infection</td></tr><tr><td>**Concentrated insulin**</td><td>U200, U300, U500 vs U100</td><td>2–5x overdose if not adjusted</td></tr></table>
+<div class="sub-h">Prevention Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Implementation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Write "units" never "U"**</td><td>Mandatory in CPOE, prescriptions, charts</td></tr><tr><td>**Separate storage by type**</td><td>Rapid-acting (clear) vs Long-acting (clear) — colour-coded labels</td></tr><tr><td>**Patient-specific pens**</td><td>Label with patient name; never share pens</td></tr><tr><td>**Double-check**</td><td>Independent double-check for all IV insulin; SC insulin at transitions</td></tr><tr><td>**CPOE defaults**</td><td>Standard order sets: basal-bolus, sliding scale, DKA protocol</td></tr><tr><td>**Smart pump library**</td><td>IV insulin: max rate, concentration limits</td></tr><tr><td>**Patient self-administration**</td><td>Where competent — reduces administration errors</td></tr><tr><td>**Hypoglycaemia protocol**</td><td>Mandatory on all insulin prescriptions</td></tr></table>
+<div class="sub-h">Key Monitoring</div>
+<ul><li><b>Blood glucose</b> pre-meals + bedtime (basal-bolus)</li><li><b>Hourly</b> for IV insulin (DKA/HHS)</li><li><b>Ketones</b> if BG &gt;15mmol/L or unwell</li><li><b>Renal function</b> — dose adjustment for glargine/detemir in CKD</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">️⃣ N — Narcotics/Opioids (Injectable)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Specific Risks</div>
+<table class="ctable"><tr><th>Risk</th><th>Mechanism</th><th>Consequence</th></tr><tr><td>------</td><td>-----------</td><td>-------------</td></tr><tr><td>**Respiratory depression**</td><td>High dose, opioid-naïve, renal impairment, elderly</td><td>Apnoea, hypoxia, death</td></tr><tr><td>**Wrong drug/strength**</td><td>Morphine 10mg/mL vs 30mg/mL; Fentanyl 50mcg/mL vs 100mcg/mL</td><td>3–10x overdose</td></tr><tr><td>**PCA errors**</td><td>Wrong drug/concentration; demand dose/lockout; bystander activation</td><td>Overdose or inadequate analgesia</td></tr><tr><td>**Route errors**</td><td>IV instead of SC/IM; epidural instead of IV</td><td>Rapid onset → respiratory arrest</td></tr><tr><td>**Fentanyl patches**</td><td>Heat exposure; cutting patch; opioid-naïve</td><td>Fatal overdose</td></tr><tr><td>**Codeine in CYP2D6 ultra-rapid metabolisers**</td><td>→ Morphine</td><td>Respiratory depression in children</td></tr></table>
+<div class="sub-h">Prevention Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Implementation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Standard concentrations**</td><td>Morphine 1mg/mL, 10mg/mL, 30mg/mL — colour-coded</td></tr><tr><td>**Fentanyl: 50mcg/mL standard**</td><td>No 100mcg/mL on general wards</td></tr><tr><td>**PCA protocols**</td><td>Pre-set protocols; pharmacist verification; patient education</td></tr><tr><td>**Naloxone availability**</td><td>Prescribed PRN with every opioid prescription</td></tr><tr><td>**Sedation scoring**</td><td>Regular sedation/respiratory rate monitoring (e.g., PAS score)</td></tr><tr><td>**Renal adjustment**</td><td>Morphine → avoid in CKD (M6G accumulation); use oxycodone/fentanyl</td></tr><tr><td>**Opioid-naïve dosing**</td><td>Start low: morphine 1–2mg IV, 5–10mg PO; titrate</td></tr><tr><td>**Avoid meperidine (pethidine)**</td><td>Neurotoxic metabolite (normeperidine) — seizures</td></tr></table>
+<div class="sub-h">Key Monitoring</div>
+<ul><li><b>Respiratory rate</b> (not just SpO₂) — RR &lt;8 = red flag</li><li><b>Sedation score</b> (PAS: 0=alert, 1=drowsy, 2=frequently drowsy, 3=unresponsive)</li><li><b>Pain score</b> — reassess 30min post-IV, 1h post-PO</li><li><b>Bowel function</b> — prophylaxis for constipation</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">️⃣ C — Chemotherapy (Cytotoxics)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Specific Risks</div>
+<table class="ctable"><tr><th>Risk</th><th>Drug</th><th>Consequence</th></tr><tr><td>------</td><td>------</td><td>-------------</td></tr><tr><td>**Daily vs weekly methotrexate**</td><td>Methotrexate (non-oncology: RA, psoriasis)</td><td>Pancytopenia, mucositis, renal/hepatic failure, death</td></tr><tr><td>**Intrathecal vs IV vincristine**</td><td>Vincristine (and vinblastine)</td><td>**Fatal**: ascending paralysis, encephalopathy</td></tr><tr><td>**Extravasation**</td><td>Vesicants: doxorubicin, vincristine, vinblastine, cisplatin</td><td>Tissue necrosis, amputation</td></tr><tr><td>**Wrong protocol/day**</td><td>Cyclophosphamide, cisplatin, 5-FU regimens</td><td>Overdose toxicity or underdose treatment failure</td></tr><tr><td>**BSA calculation error**</td><td>All cytotoxics (mg/m²)</td><td>Dose error 10–20%</td></tr><tr><td>**Renal/hepatic adjustment missed**</td><td>Carboplatin (Calvert), methotrexate, cisplatin</td><td>Accumulation toxicity</td></tr></table>
+<div class="sub-h">Prevention Strategies (Highest Level)</div>
+<table class="ctable"><tr><th>Strategy</th><th>Implementation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Methotrexate weekly protocol**</td><td>**"WEEKLY DOSE" bold on prescription**; patient card; pharmacy dispensing weekly blister</td></tr><tr><td>**Intrathecal separation**</td><td>**Only trained staff**; separate yellow syringes; "FOR INTRATHECAL USE ONLY"; pharmacy prepares separately</td></tr><tr><td>**Extravasation protocol**</td><td>Antidotes at bedside (dexrazoxane, DMSO, hyaluronidase); immediate stop, aspirate, elevate</td></tr><tr><td>**BSA verification**</td><td>Independent double-check BSA; CPOE calculator; protocol sheets</td></tr><tr><td>**Protocol-specific ordering**</td><td>CPOE regimen selection (e.g., CHOP, FOLFOX, R-CHOP) — auto-calculates doses</td></tr><tr><td>**Pharmacist verification**</td><td>Every chemotherapy order verified by oncology pharmacist</td></tr><tr><td>**Patient education**</td><td>Oral chemo: specific counselling, diary, 24h helpline</td></tr></table>
+<div class="sub-h">Key Monitoring</div>
+<ul><li><b>FBC, U&amp;E, LFT</b> before each cycle</li><li><b>Renal function</b> for carboplatin (Calvert), methotrexate, cisplatin</li><li><b>Neuropathy</b> (vincristine, cisplatin, paclitaxel)</li><li><b>Cardiac</b> (anthracyclines — LVEF baseline, cumulative dose)</li><li><b>Pulmonary</b> (bleomycin — DLCO baseline)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">️⃣ H — Heparins & Anticoagulants</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Specific Risks by Class</div>
+<table class="ctable"><tr><th>Class</th><th>Key Risks</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**UFH (IV)**</td><td>Bolus errors; infusion rate errors; HIT (Type II); protamine reversal dosing; monitoring aPTT/anti-Xa</td></tr><tr><td>**LMWH (SC)**</td><td>Weight-based dosing; renal adjustment (CrCl<30); HIT (lower risk); monitoring anti-Xa (if needed); spine/epidural timing</td></tr><tr><td>**Warfarin**</td><td>Narrow TI; INR monitoring; drug/food interactions; bridging; loading doses; genetic variability (CYP2C9, VKORC1)</td></tr><tr><td>**DOACs**</td><td>Renal adjustment (CrCl thresholds); no routine monitoring (but when needed: anti-Xa calibrated); reversal agents (idarucizumab, andexanet); adherence critical (short half-life)</td></tr><tr><td>**Fondaparinux**</td><td>Renal contraindication (CrCl<20); no reversal; HIT risk (low); weight extremes</td></tr></table>
+<div class="sub-h">High-Risk Scenarios</div>
+<table class="ctable"><tr><th>Scenario</th><th>Risk</th><th>Prevention</th></tr><tr><td>----------</td><td>------</td><td>------------</td></tr><tr><td>**VTE prophylaxis missed**</td><td>PE/DVT</td><td>CPOE default on admission; nurse prompt</td></tr><tr><td>**Therapeutic anticoagulation held**</td><td>Thrombosis (AF, VTE, valve)</td><td>Clear hold/restart criteria; pharmacy review</td></tr><tr><td>**Warfarin loading dose**</td><td>Over-anticoagulation</td><td>Protocol: 5mg/3mg/1mg based on age/comorbidities; INR day 3</td></tr><tr><td>**DOAC in renal impairment**</td><td>Accumulation → bleed</td><td>CrCl check at prescription; dose adjustment table in CPOE</td></tr><tr><td>**HIT missed**</td><td>Thrombosis, limb loss, death</td><td>4Ts score; daily platelet count days 5–14; stop heparin if suspected</td></tr><tr><td>**Neuraxial block on anticoagulant**</td><td>Epidural haematoma</td><td>Timing guidelines: LMWH 12h/24h; UFH 4–6h; warfarin INR<1.5; DOAC 24–48h</td></tr></table>
+<div class="sub-h">Prevention Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Implementation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**VTE risk assessment**</td><td>Mandatory on admission (NHS: risk assessment tool)</td></tr><tr><td>**CPOE protocols**</td><td>Weight-based LMWH; renal-adjusted DOAC; warfarin loading protocol</td></tr><tr><td>**Pharmacist anticoagulation service**</td><td>Warfarin dosing, DOAC review, HIT monitoring, bridging</td></tr><tr><td>**INR/anti-Xa monitoring**</td><td>Point-of-care INR; lab anti-Xa for LMWH/DOAC if indicated</td></tr><tr><td>**Patient-held records**</td><td>Warfarin yellow book; DOAC alert card</td></tr><tr><td>**Reversal protocols**</td><td>Protamine (UFH), vitamin K/PCC (warfarin), idarucizumab (dabigatran), andexanet (apixaban/rivaroxaban)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">️⃣ ISMP Additional High-Alert Classes (Beyond PINCH)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Class</th><th>Examples</th><th>Key Risk</th></tr><tr><td>-------</td><td>----------</td><td>----------</td></tr><tr><td>**Neuromuscular blockers**</td><td>Rocuronium, vecuronium, atracurium, suxamethonium</td><td>Respiratory arrest if not ventilated</td></tr><tr><td>**Adrenergic agonists/antagonists**</td><td>Noradrenaline, adrenaline, dobutamine, labetalol, GTN</td><td>Haemodynamic instability</td></tr><tr><td>**Anaesthetic agents**</td><td>Propofol, thiopental, sevoflurane</td><td>Unconsciousness, apnoea</td></tr><tr><td>**Parenteral nutrition**</td><td>Hypertonic glucose, lipid emulsions</td><td>Line sepsis, metabolic complications</td></tr><tr><td>**Sodium chloride >0.9%**</td><td>20%, 30% NaCl</td><td>Hypernatraemia, osmotic demyelination</td></tr><tr><td>**Magnesium sulfate**</td><td>Obstetric (pre-eclampsia)</td><td>Respiratory depression, cardiac arrest</td></tr><tr><td>**Oxytocin**</td><td>Postpartum haemorrhage</td><td>Uterine rupture, water intoxication</td></tr><tr><td>**Epidural/intrathecal meds**</td><td>Bupivacaine, fentanyl, diamorphine</td><td>Wrong route → catastrophe</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">️⃣ Unified Prevention Framework for ALL High-Alert Drugs</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[High-Alert Drug] --&gt; B{Can we eliminate&lt;br&gt;ward storage?} B --&gt;|Yes| C[Forcing Function:&lt;br&gt;Remove from ward] B --&gt;|No| D{Can we standardise&lt;br&gt;concentration/prep?} D --&gt;|Yes| E[Standardisation:&lt;br&gt;Pre-mixed, pharmacy-prep] D --&gt;|No| F{Can we automate&lt;br&gt;with hard stops?} F --&gt;|Yes| G[Automation:&lt;br&gt;CPOE, Smart pumps, BCMA] F --&gt;|No| H[Redundancy:&lt;br&gt;Independent double-check] H --&gt; I[Monitoring:&lt;br&gt;Specific parameters, frequency] I --&gt; J[Patient Education:&lt;br&gt;Self-monitoring, alerts] </code>``</p>
+<div class="sub-h">Independent Double-Check — When Mandatory</div>
+<table class="ctable"><tr><th>Drug Class</th><th>Verification Points</th></tr><tr><td>------------</td><td>---------------------</td></tr><tr><td>**Insulin (IV/SC)**</td><td>Drug, dose, type, patient, BG, calculation</td></tr><tr><td>**Heparins/anticoagulants**</td><td>Drug, dose, weight, renal function, indication, monitoring plan</td></tr><tr><td>**Chemotherapy**</td><td>Protocol, dose, BSA, day, patient, consent, pre-meds</td></tr><tr><td>**Opioids (IV/PCA)**</td><td>Drug, concentration, dose, patient, lockout, limits</td></tr><tr><td>**KCl/electrolytes**</td><td>Drug, concentration, volume, rate, line, monitoring</td></tr><tr><td>**NM blockers**</td><td>Drug, dose, patient, ventilation confirmed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>PINCH</th><th>Drug</th><th>Top 3 Risks</th><th>Top 3 Preventions</th></tr><tr><td>-------</td><td>------</td><td>-------------</td><td>-------------------</td></tr><tr><td>**P**</td><td>Potassium/concentrated electrolytes</td><td>IV bolus → cardiac arrest; wrong conc; confusion with flush</td><td>**Remove from wards**; pre-mixed bags only; smart pump limits</td></tr><tr><td>**I**</td><td>Insulin</td><td>"U" → 10x; wrong type (rapid vs long); wrong patient</td><td>Write **"units"**; separate storage by type; patient-specific pens</td></tr><tr><td>**N**</td><td>Narcotics/opioids (injectable)</td><td>Respiratory depression; wrong strength; PCA errors</td><td>Standard concentrations; naloxone PRN; sedation scoring</td></tr><tr><td>**C**</td><td>Chemotherapy</td><td>Daily MTX (vs weekly); IT vincristine; extravasation</td><td>**Weekly MTX protocol**; IT separate/yellow syringes; extravasation kit</td></tr><tr><td>**H**</td><td>Heparins/anticoagulants</td><td>VTE missed; HIT; DOAC renal dose; bleed</td><td>VTE risk assess on admission; pharmacist anticoag service; CrCl check</td></tr></table>
+<div class="callout"><b>Viva Key:</b> <i>PINCH drugs share: narrow therapeutic index, high error consequence, need for forcing functions/standardisation, mandatory monitoring, independent double-checks.</i></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What does PINCH stand for?</td><td>**P**otassium/electrolytes, **I**nsulin, **N**arcotics/opioids, **C**hemotherapy, **H**eparins/anticoagulants</td></tr><tr><td>2</td><td>Why is concentrated KCl a Never Event on wards?</td><td>**IV bolus → cardiac arrest**. Forcing function: remove from wards, only pre-mixed bags, pharmacy preparation.</td></tr><tr><td>3</td><td>How to prevent insulin "U" errors?</td><td>**Write "units" never "U"**; CPOE enforce; separate rapid/long-acting storage; patient-specific pens; double-check.</td></tr><tr><td>4</td><td>Methotrexate for rheumatoid arthritis — key safety rule?</td><td>**WEEKLY DOSE ONLY**. Protocol: bold "WEEKLY" on Rx, patient card, pharmacy weekly dispensing, folic acid 5mg weekly.</td></tr><tr><td>5</td><td>Vincristine intrathecal error — why fatal?</td><td>**Ascending paralysis, encephalopathy, death**. Prevention: separate yellow syringes, "FOR INTRATHECAL USE ONLY", trained staff only, pharmacy prepares separately.</td></tr><tr><td>6</td><td>LMWH in renal impairment (CrCl<30)?</td><td>**Dose adjust or switch to UFH**. Enoxaparin 1mg/kg → 1mg/kg daily (not BD); monitor anti-Xa. Avoid fondaparinux if CrCl<20.</td></tr><tr><td>7</td><td>Warfarin loading dose protocol?</td><td>**Age/comorbidity based**: <60y no comorbidity 5mg OD; >60y or comorbidity 3mg OD; fragile 1mg OD. INR day 3, then adjust.</td></tr><tr><td>8</td><td>DOAC reversal agents?</td><td>**Dabigatran → idarucizumab**; **Apixaban/rivaroxaban → andexanet alfa**; **All → PCC (4-factor)** if specific unavailable.</td></tr><tr><td>9</td><td>HIT — diagnosis and immediate action?</td><td>**4Ts score** (Thrombocytopenia, Timing, Thrombosis, oTher causes). **STOP all heparin** (UFH/LMWH) immediately; start non-heparin anticoag (argatroban, fondaparinux, DOAC); confirm PF4 ELISA/SRA.</td></tr><tr><td>10</td><td>Independent double-check — when mandatory for PINCH?</td><td>IV insulin, therapeutic anticoagulation, chemotherapy, IV opioids/PCA, IV KCl/electrolytes, NM blockers. Verify: drug, dose, patient, calculation, monitoring.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"High-alert = high-risk"**</td><td>**Different.** High-alert = error causes severe harm (PINCH). High-risk = inherent toxicity (e.g., warfarin bleed at therapeutic dose). Many drugs are both.</td></tr><tr><td>**"Double-check is enough for PINCH"**</td><td>**No.** Double-check = human-dependent, confirmation bias. **Forcing functions, standardisation, automation** are more effective. Double-check is backup.</td></tr><tr><td>**"All chemotherapy is PINCH"**</td><td>**Yes, but** non-oncology methotrexate (weekly) is special high-risk for daily dosing error. Intrathecal vincristine is unique wrong-route risk.</td></tr><tr><td>**"DOACs don't need monitoring"**</td><td>**Routine monitoring not needed**, but **renal function (CrCl) mandatory at prescription and review**. Anti-Xa calibrated assay if bleed/emergency surgery.</td></tr><tr><td>**"HIT only with UFH"**</td><td>**HIT occurs with LMWH too** (lower incidence ~0.1–1% vs 1–5% UFH). Fondaparinux very low risk. Stop ALL heparins if HIT suspected.</td></tr><tr><td>**"Naloxone reverses all opioid effects"**</td><td>**Naloxone reverses respiratory depression/sedation**. Does NOT reverse constipation, ileus, urinary retention. Duration < opioid → re-sedation risk.</td></tr></table>
+<div class="callout"><b>Mnemonic: PINCH SAFETY</b> <b>P</b>otassium: <b>Remove from wards</b>; pre-mixed bags; smart pump limits; cardiac monitoring <b>I</b>nsulin: <b>Write "units"</b>; separate rapid/long storage; patient pens; double-check; hypoglycaemia protocol <b>N</b>arcotics: <b>Standard concentrations</b>; naloxone PRN; sedation scoring (PAS); renal adjust (avoid morphine CKD) <b>C</b>hemo: <b>Weekly MTX protocol</b>; <b>IT vincristine separate/yellow</b>; extravasation kit; BSA double-check; pharmacist verify <b>H</b>eparins: <b>VTE risk assess admission</b>; weight-based LMWH; CrCl for DOAC; <b>4Ts for HIT</b>; reversal protocols <b>S</b>tandardise: Concentrations, protocols, order sets, labelling (Tall Man) <b>A</b>utomate: CPOE hard stops, smart pumps, BCMA, ADC <b>F</b>orcing functions: No KCl on wards, NM blockers theatre only, IT chemo separate, oral/IV incompatible <b>E</b>ducation: Patient self-management, alert cards, 24h helpline for oral chemo <b>T</b>raining: Competency for high-alert drugs; simulation for emergencies (HIT, extravasation, hypoglycaemia) <b>Y</b>ou monitor: Specific parameters (K⁺, BG, RR/sedation, FBC/INR/anti-Xa, platelets) at defined frequencies</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((PINCH High-Alert)) P - Potassium/Electrolytes IV bolus → cardiac arrest Remove from wards (forcing function) Pre-mixed bags only Smart pump limits I - Insulin "U" → 10x error Write "units" Separate rapid/long storage Patient-specific pens Double-check N - Narcotics/Opioids Respiratory depression Standard concentrations Naloxone PRN Sedation scoring (PAS) Renal adjust C - Chemotherapy Daily vs weekly MTX IT vincristine fatal Extravasation BSA calculation Pharmacist verify H - Heparins/Anticoagulants VTE missed HIT (4Ts) DOAC renal dose Warfarin loading Reversal agents Cross-Cutting Forcing functions Standardisation Automation (CPOE, BCMA, pumps) Double-check (backup) Monitoring </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>PINCH mnemonic & rationale</td><td>3</td><td></td><td></td></tr><tr><td>Potassium/electrolytes</td><td>2</td><td></td><td></td></tr><tr><td>Insulin</td><td>2</td><td></td><td></td></tr><tr><td>Narcotics/opioids</td><td>2</td><td></td><td></td></tr><tr><td>Chemotherapy</td><td>3</td><td></td><td></td></tr><tr><td>Heparins/anticoagulants</td><td>3</td><td></td><td></td></tr><tr><td>ISMP additional classes</td><td>2</td><td></td><td></td></tr><tr><td>Prevention hierarchy</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the PINCH high-alert medications and system-level strategies to prevent errors."</td><td>PINCH definition, each class risks, forcing functions, standardisation, automation, double-checks, monitoring, Just Culture</td></tr><tr><td>**Short Note**</td><td>"Methotrexate weekly dosing error prevention."</td><td>Weekly protocol, bold labelling, patient card, pharmacy dispensing, folic acid, Never Event</td></tr><tr><td>**Viva**</td><td>"Patient on warfarin, INR 8, no bleed. Management and prevention?"</td><td>Hold warfarin, vit K 1–2mg PO, restart at lower dose when INR therapeutic. Prevention: pharmacist anticoag service, loading protocol, INR monitoring, patient education.</td></tr><tr><td>**Ward Round**</td><td>"Nurse draws up morphine 30mg/mL instead of 10mg/mL for IV. Caught before admin."</td><td>**Near miss (Category B)**. System fix: standardise to 1mg/mL and 10mg/mL only; remove 30mg/mL from ward; colour-coded labels; barcode scanning.</td></tr><tr><td>**Last-Night**</td><td>"PINCH: 5 classes. K: remove wards. Insulin: write units. Narc: naloxone+scaling. Chemo: weekly MTX, IT separate. Heparin: VTE assess, 4Ts, DOAC renal."</td><td>PINCH. K: forcing function. I: "units". N: naloxone/PAS. C: weekly MTX, yellow IT. H: VTE assess, 4Ts, CrCl DOAC.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>PINCH</b> = Potassium/electrolytes, Insulin, Narcotics/opioids, Chemotherapy, Heparins/anticoagulants</li><li><b>High-alert</b> = error → severe harm; <b>High-risk</b> = inherent toxicity; PINCH drugs are both</li><li><b>Hierarchy of prevention</b>: Forcing functions &gt; Automation &gt; Standardisation &gt; Double-checks &gt; Rules &gt; Education &gt; Vigilance</li><li><b>P</b>: Remove concentrated electrolytes from wards; pre-mixed bags; smart pumps</li><li><b>I</b>: Write "units"; separate rapid/long storage; patient-specific pens; hypoglycaemia protocol</li><li><b>N</b>: Standard concentrations; naloxone PRN; sedation scoring; renal adjustment</li><li><b>C</b>: Weekly MTX protocol; IT vincristine separate/yellow syringes; extravasation kit; pharmacist verification</li><li><b>H</b>: VTE risk assessment on admission; weight-based LMWH; CrCl for DOACs; 4Ts for HIT; reversal protocols</li><li><b>Independent double-check</b> mandatory for all PINCH: verify drug, dose, patient, calculation, monitoring plan</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>PINCH mnemonic — "C" stands for:</b></li></ol>
+<p>A. Corticosteroids  B. <b>Chemotherapy</b>  C. Calcium  D. Cardiovascular drugs <i>Answer: B. Chemotherapy (cytotoxics).</i></p>
+<ol><li><b>Most effective prevention for concentrated KCl errors:</b></li></ol>
+<p>A. Double-check  B. Education  C. <b>Remove from ward stock</b>  D. Poster reminders <i>Answer: C. Forcing function — make error impossible by not stocking on wards.</i></p>
+<ol><li><b>Insulin prescription — "10U" misread as:</b></li></ol>
+<p>A. 1 unit  B. <b>100 units</b>  C. 10 units  D. 1000 units <i>Answer: B. "U" looks like "0" → 10U → 100. Always write "units".</i></p>
+<ol><li><b>Methotrexate for rheumatoid arthritis — fatal error:</b></li></ol>
+<p>A. Wrong day  B. <b>Daily instead of weekly</b>  C. Wrong route  D. Drug interaction <i>Answer: B. Daily dosing → pancytopenia, mucositis, death. Weekly protocol mandatory.</i></p>
+<ol><li><b>Vincristine given intrathecally — outcome:</b></li></ol>
+<p>A. Myelosuppression  B. <b>Ascending paralysis, encephalopathy, death</b>  C. Neuropathy  D. SIADH <i>Answer: B. Vincristine is microtubule inhibitor → destroys CNS myelin → fatal ascending paralysis.</i></p>
+<ol><li><b>LMWH dose adjustment in renal impairment (CrCl&lt;30):</b></li></ol>
+<p>A. No change  B. <b>Reduce dose / switch to UFH</b>  C. Increase dose  D. Monitor anti-Xa only <i>Answer: B. Enoxaparin 1mg/kg BD → 1mg/kg OD if CrCl&lt;30; or switch to UFH infusion.</i></p>
+<ol><li><b>HIT — immediate action on suspicion:</b></li></ol>
+<p>A. Reduce heparin dose  B. <b>Stop ALL heparins (UFH + LMWH); start non-heparin anticoagulant</b>  C. Check platelets only  D. Continue, monitor <i>Answer: B. Stop all heparin immediately; start argatroban/fondaparinux/DOAC; confirm with 4Ts, PF4 ELISA.</i></p>
+<ol><li><b>DOAC reversal — dabigatran specific agent:</b></li></ol>
+<p>A. Andexanet alfa  B. <b>Idarucizumab</b>  C. PCC  D. Vitamin K <i>Answer: B. Idarucizumab = anti-dabigatran antibody. Andexanet = anti-Xa (apixaban/rivaroxaban).</i></p>
+<ol><li><b>Independent double-check — limitation:</b></li></ol>
+<p>A. Too fast  B. <b>Confirmation bias; not truly independent; workflow disruption</b>  C. Requires doctor  D. Not needed <i>Answer: B. Human-dependent; prone to confirmation bias; disrupts workflow. Not substitute for system redesign.</i></p>
+<ol><li><b>Which is NOT a PINCH drug?</b></li></ol>
+<p>A. Insulin  B. Heparin  C. <b>Digoxin</b>  D. Vincristine <i>Answer: C. Digoxin = high-risk (narrow TI) but not in PINCH mnemonic. TDM drug.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Foundation doctor writes "insulin 10U" on drug chart. Nurse reads 100 units, administers. Patient hypoglycaemic coma. Primary prevention?</b></li></ol>
+<p>A. Double-check policy  B. <b>CPOE enforces "units" not "U"</b>  C. Nurse education  D. Patient education <i>Answer: B. Forcing function at source (CPOE) prevents abbreviation error entirely.</i></p>
+<ol><li><b>72F on enoxaparin 1mg/kg BD for VTE treatment. CrCl 25 mL/min. Correct adjustment?</b></li></ol>
+<p>A. Continue same dose  B. <b>Enoxaparin 1mg/kg OD</b>  C. Switch to warfarin  D. Reduce to 0.5mg/kg BD <i>Answer: B. CrCl&lt;30: enoxaparin 1mg/kg once daily (or UFH infusion).</i></p>
+<ol><li><b>Patient on weekly methotrexate 15mg for RA. GP prescribes daily by mistake. Pharmacist dispenses 28 tablets. Prevention failed at:</b></li></ol>
+<p>A. Prescribing  B. Dispensing  C. <b>Both prescribing AND dispensing</b>  D. Administration <i>Answer: C. System failure: prescriber error + pharmacist failed weekly protocol check (Never Event).</i></p>
+<ol><li><b>Epidural haematoma risk — which anticoagulant timing is CORRECT?</b></li></ol>
+<p>A. LMWH prophylactic: 4h before  B. <b>LMWH therapeutic: 24h before</b>  C. Warfarin: INR&lt;2.0  D. DOAC: 12h before <i>Answer: B. LMWH therapeutic (BD) = 24h; prophylactic (OD) = 12h. Warfarin INR&lt;1.5. DOAC 24–48h.</i></p>
+<ol><li><b>Neuromuscular blocker on general ward — system response?</b></li></ol>
+<p>A. Double-check before admin  B. <b>Remove from ward stock (forcing function) — only in theatre/ICU</b>  C. Education  D. Label "PARALYSIS RISK" <i>Answer: B. Never Event prevention: NM blockers not on wards. Only where ventilation immediately available.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-C, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-C</td><td>1-B, 2-B, 3-C, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Medication Safety and Errors/Error Types and Classification]] — Error taxonomy, NCC MERP for PINCH errors</li><li>[[Medication Safety and Errors/Root Causes and Systems Approach]] — Swiss cheese, forcing functions hierarchy</li><li>[[Therapeutic Drug Monitoring]] — TDM for PINCH (digoxin, lithium, anticonvulsants, immunosuppressants)</li><li>[[Special Populations/Renal Prescribing]] — Renal dosing for PINCH (LMWH, DOACs, morphine, chemotherapy)</li><li>[[Special Populations/Elderly Prescribing]] — STOPP/START for PINCH in elderly</li><li>[[Clinical Context/Perioperative Prescribing]] — VTE prophylaxis, anticoagulation bridging, NM blockers</li><li>[[Polypharmacy and Deprescribing/Assessment Tools]] — STOPP criteria for PINCH in polypharmacy</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Pinch High Risk Drugs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

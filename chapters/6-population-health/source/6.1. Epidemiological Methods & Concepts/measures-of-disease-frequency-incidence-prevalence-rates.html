@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Measures Of Disease Frequency Incidence Prevalence Rates — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.1. EPIDEMIOLOGICAL METHODS & CONCEPTS</span>
+      <div class="h1">Measures Of Disease Frequency Incidence Prevalence Rates</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define and calculate incidence rate, cumulative incidence, and prevalence</li><li>[ ] Distinguish between point prevalence and period prevalence</li><li>[ ] Explain the relationship between incidence and prevalence (P = I × D)</li><li>[ ] Calculate and interpret person-time at risk</li><li>[ ] Apply concepts to exam scenarios (screening, outbreak investigation, chronic disease monitoring)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence Rate (IR)**</td><td>Number of **new** cases per unit person-time at risk (e.g., per 1,000 person-years)</td></tr><tr><td>**Cumulative Incidence (CI)**</td><td>Proportion of at-risk population developing disease over a specified period (risk); range 0–1</td></tr><tr><td>**Point Prevalence**</td><td>Proportion with disease at a **single point** in time (snapshot)</td></tr><tr><td>**Period Prevalence**</td><td>Proportion with disease at **any time** during a specified period</td></tr><tr><td>**Person-Time**</td><td>Sum of time each person is at risk and under observation; handles varying follow-up, competing risks</td></tr><tr><td>**Relationship**</td><td>Prevalence ≈ Incidence × Duration (for stable, low-mortality diseases)</td></tr></table>
+<p><b>Key Formula:</b> ``<code> Incidence Rate = New cases / Σ Person-time at risk Cumulative Incidence = New cases / Population at risk at start Point Prevalence = Existing cases at time t / Population at time t Period Prevalence = Cases existing anytime in period / Average population in period Prevalence ≈ Incidence × Mean Duration (steady state, rare disease, low mortality) </code>``</p>
+<p><b>Exam-relations:</b> UK prevalence T2DM ~7%; IR ~5/1,000 person-years. Breast cancer CI (UK women to age 85) ~1/7.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Not applicable - methodological concept. See "Clinical Features" in disease-specific epidemiology topics.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Types of Measures</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Measure Type</th><th>Numerator</th><th>Denominator</th><th>Time Dimension</th><th>Use Case</th></tr><tr><td>--------------</td><td>-----------</td><td>-------------</td><td>----------------</td><td>----------</td></tr><tr><td>**Incidence Rate**</td><td>New cases</td><td>Person-time at risk</td><td>Rate (per PY)</td><td>Dynamic populations, varying follow-up, acute diseases</td></tr><tr><td>**Cumulative Incidence**</td><td>New cases</td><td>Population at risk at start</td><td>Proportion (0–1)</td><td>Fixed cohorts, short follow-up, competing risks minimal</td></tr><tr><td>**Point Prevalence**</td><td>Existing cases at t</td><td>Population at t</td><td>Proportion (0–1)</td><td>Cross-sectional surveys, resource planning, burden snapshot</td></tr><tr><td>**Period Prevalence**</td><td>Cases during period</td><td>Average population</td><td>Proportion (0–1)</td><td>Chronic diseases, seasonal conditions, health service planning</td></tr><tr><td>**Attack Rate**</td><td>Cases in outbreak</td><td>Exposed population</td><td>Proportion (0–1)</td><td>Outbreak investigation (foodborne, norovirus)</td></tr><tr><td>**Case Fatality Rate**</td><td>Deaths from disease</td><td>Diagnosed cases</td><td>Proportion (0–1)</td><td>Disease severity, prognosis</td></tr><tr><td>**Mortality Rate**</td><td>Deaths (cause-specific)</td><td>Total population</td><td>Rate (per PY)</td><td>Population health monitoring, ICD-coded death data</td></tr></table>
+<p><b>Incidence vs Prevalence - Key Distinctions:</b></p>
+<table class="ctable"><tr><th>Parameter</th><th>Incidence</th><th>Prevalence</th></tr><tr><td>-----------</td><td>-----------</td><td>------------</td></tr><tr><td>**Measures**</td><td>Risk / Rate of onset</td><td>Burden at a time</td></tr><tr><td>**Numerator**</td><td>New cases only</td><td>All existing cases</td></tr><tr><td>**Time element**</td><td>Requires follow-up</td><td>Cross-sectional OK</td></tr><tr><td>**Affects by**</td><td>Exposure, prevention</td><td>Incidence + Duration + Cure + Death</td></tr><tr><td>**Screening use**</td><td>Not directly</td><td>Directly (yield = prevalence)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<p><i>Methodological note - see Calculation Examples below.</i></p>
+<p><b>Calculating Person-Time (Exam Scenario):</b> ``` Example: 10 people followed for 5 years:</p>
+<ul><li>3 develop disease at years 1, 2, 3</li><li>1 lost to follow-up at year 2</li><li>1 dies (non-disease) at year 4</li><li>5 complete 5 years disease-free</li></ul>
+<p>Person-time = (1+2+3) + 2 + 4 + (5×5) = 6 + 2 + 4 + 25 = 37 PY If 3 new cases: IR = 3/37 = 0.081 per PY = 81 per 1,000 PY ```</p>
+<p><b>Mermaid: Incidence-Prevalence Relationship</b> ``<code>mermaid flowchart LR A[Incidence I] --&gt; B[Prevalence P] C[Duration D] --&gt; B D[Cure/Remission] -.-&gt;|Decreases| B E[Death from Disease] -.-&gt;|Decreases| B F[Migration] -.-&gt;|Variable| B style B fill:#f9f,stroke:#333 style A fill:#bbf,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Methodological Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Incidence ≠ Prevalence**</td><td>Incidence = new cases (speedometer); Prevalence = existing cases (odometer)</td></tr><tr><td>**Cumulative Incidence ≠ Incidence Rate**</td><td>CI = proportion (0–1); IR = rate per person-time; CI ≈ IR × time if IR constant, low</td></tr><tr><td>**Rate vs Ratio vs Proportion**</td><td>Rate: time in denominator (PY); Ratio: numerator/denominator different units; Proportion: numerator subset of denominator (0–1)</td></tr><tr><td>**Period vs Point Prevalence**</td><td>Period includes all cases during interval; Point is snapshot; Period > Point always</td></tr><tr><td>**Attack Rate = CI in outbreak**</td><td>Attack rate is cumulative incidence in a defined exposed group over outbreak period</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Conceptual Application)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Application</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**Screening program planning**</td><td>Yield = Prevalence × Sensitivity; PPV depends critically on prevalence</td></tr><tr><td>**Outbreak investigation**</td><td>Calculate attack rates by exposure; compare exposed vs unexposed (RR)</td></tr><tr><td>**Chronic disease monitoring**</td><td>Prevalence tracks burden; incidence tracks prevention success</td></tr><tr><td>**Clinical trial design**</td><td>Sample size based on expected incidence in control group</td></tr><tr><td>**Health economics**</td><td>Prevalence used for DALY prevalence-based methods; incidence for incidence-based DALYs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**P = I × D**</td><td>ONLY valid if: steady state, disease rare (<10%), no migration, constant I & D, low case-fatality</td></tr><tr><td>**Person-time**</td><td>Always use for incidence RATE; handles staggered entry, loss to follow-up, competing death</td></tr><tr><td>**Prevalence ↑ when**</td><td>Incidence ↑ OR Duration ↑ (better survival, chronic disease) OR Migration of cases in</td></tr><tr><td>**Prevalence ↓ when**</td><td>Incidence ↓ (prevention) OR Duration ↓ (cure, death) OR Migration out</td></tr><tr><td>**Cross-sectional study**</td><td>Measures PREVALENCE only; cannot calculate incidence directly</td></tr><tr><td>**Cohort study**</td><td>Measures INCIDENCE (rate or cumulative); can calculate prevalence at baseline/follow-up</td></tr><tr><td>**Rare disease**</td><td>OR ≈ RR ≈ Hazard Ratio; Prevalence ≈ Incidence × Duration</td></tr><tr><td>**Common disease**</td><td>OR overestimates RR; use log-binomial or Poisson regression for RR</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Define incidence rate and cumulative incidence. When would you use each?**</td><td>Incidence rate = new cases per person-time (handles varying follow-up). Cumulative incidence = proportion developing disease over fixed period (simple cohorts, short follow-up). Use IR for dynamic populations, CI for fixed cohorts.</td></tr><tr><td>**What is the relationship between prevalence and incidence? When does it hold?**</td><td>P ≈ I × D. Holds only in steady state: constant incidence, constant duration, rare disease (<10%), no migration, low case-fatality.</td></tr><tr><td>**A screening test has 90% sensitivity, 95% specificity. Disease prevalence is 1%. What is PPV?**</td><td>PPV = (0.9 × 0.01) / (0.9×0.01 + 0.05×0.99) = 0.009 / 0.0585 ≈ 15.4%. LOW PPV because low prevalence.</td></tr><tr><td>**In an outbreak of 200 people exposed to chicken salad, 60 develop gastroenteritis. What is the attack rate?**</td><td>Attack rate = 60/200 = 30%. This is cumulative incidence in the exposed group over the outbreak period.</td></tr><tr><td>**Why does incidence rate use person-time denominator?**</td><td>Accounts for: staggered entry, variable follow-up, loss to follow-up, competing risks (death), changing population size. Simple N/D fails if follow-up differs.</td></tr><tr><td>**If a new treatment improves survival of a chronic disease without curing it, what happens to prevalence?**</td><td>Prevalence INCREASES. Duration increases (patients live longer with disease), incidence unchanged → P = I × D rises.</td></tr><tr><td>**Distinguish point prevalence from period prevalence. Which is larger?**</td><td>Point = cases at single time t / population at t. Period = cases at any time during interval / average population. Period prevalence ≥ Point prevalence always.</td></tr><tr><td>**What is case fatality rate vs mortality rate?**</td><td>CFR = deaths from disease / diagnosed cases (severity). Mortality rate = cause-specific deaths / total population (population burden).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Rate vs Ratio vs Proportion**</td><td>**Rate**: time in denominator (per PY). **Ratio**: different units (M:F ratio). **Proportion**: numerator ⊂ denominator (0–1).</td></tr><tr><td>**Prevalence-OR-RR**</td><td>In cross-sectional: Prevalence OR ≠ Incidence RR. In rare disease: OR ≈ RR. Common disease: OR > RR.</td></tr><tr><td>**Person-years trick**</td><td>If 100 people × 2 years = 200 PY. If 10 drop at 1 year: (10×1) + (90×2) = 190 PY.</td></tr></table>
+<p><b>Mnemonic: P = I × D (PREVALID)</b></p>
+<ul><li><b>P</b>revalence</li><li><b>R</b>equires</li><li><b>E</b>quilibrium (steady state)</li><li><b>V</b>ery rare disease (&lt;10%)</li><li><b>A</b>ll constant (I, D)</li><li><b>L</b>ow mortality</li><li><b>I</b>mmigration negligible</li><li><b>D</b>uration only variable</li></ul>
+<p><b>Mnemonic: INCIDENCE PERSON-TIME</b></p>
+<ul><li><b>I</b>ncludes all at-risk time</li><li><b>N</b>ew cases only</li><li><b>C</b>ounts dropouts proportionally</li><li><b>I</b>mmigration/emigration handled</li><li><b>D</b>eath from other causes censored</li><li><b>E</b>ntry staggered allowed</li><li><b>N</b>on-constant follow-up OK</li><li><b>C</b>ompeteing risks addressed</li><li><b>E</b>xact time at risk used</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Incidence &amp; Prevalence)) Incidence Rate Person-time denominator New cases numerator Per 1000 PY etc Cumulative Proportion 0-1 Fixed cohort Attack rate in outbreaks Prevalence Point Snapshot at time t Cross-sectional surveys Period Any time in interval Always ≥ point Relationship P = I × D Steady state only Rare disease Low mortality Applications Screening yield Resource planning Trial sample size Outbreak attack rates </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Definition**</td><td>Incidence = new cases; Prevalence = existing cases</td></tr><tr><td>**Key Formula**</td><td>P = I × D (steady state, rare, low mortality)</td></tr><tr><td>**Incidence Rate**</td><td>New cases / Person-time (handles variable follow-up)</td></tr><tr><td>**Cumulative Incidence**</td><td>New cases / Population at start (proportion 0–1)</td></tr><tr><td>**Point Prevalence**</td><td>Cases at time t / Population at t</td></tr><tr><td>**Period Prevalence**</td><td>Cases any time in period / Average population</td></tr><tr><td>**Person-Time**</td><td>Gold standard denominator for rates</td></tr><tr><td>**Attack Rate**</td><td>CI in exposed outbreak group</td></tr><tr><td>**Screening Yield**</td><td>Prevalence × Sensitivity</td></tr><tr><td>**PPV Trap**</td><td>Low prevalence → low PPV even with good test</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Definitions & Formulae</td><td></td><td></td></tr><tr><td>Person-Time Calculation</td><td></td><td></td></tr><tr><td>P = I × D Conditions</td><td></td><td></td></tr><tr><td>Incidence vs Prevalence</td><td></td><td></td></tr><tr><td>Screening/Outbreak Application</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Measures of Association (RR, OR, HR, AR, PAR).md]], [[Measures of Disease Burden (DALY, QALY, HALE, YLL, YLD).md]], [[Study Designs (Descriptive, Analytical, Experimental).md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Measures Of Disease Frequency Incidence Prevalence Rates · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

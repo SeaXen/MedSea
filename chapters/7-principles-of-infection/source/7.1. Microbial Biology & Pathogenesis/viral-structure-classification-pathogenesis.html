@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Viral Structure Classification Pathogenesis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.1. MICROBIAL BIOLOGY & PATHOGENESIS</span>
+      <div class="h1">Viral Structure Classification Pathogenesis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe viral structure: capsid symmetry, envelope, genome types, Baltimore classification</li><li>[ ] Explain viral replication cycle: attachment, entry, uncoating, replication, assembly, release</li><li>[ ] Classify major virus families by Baltimore group and clinical syndromes</li><li>[ ] Contrast DNA vs RNA virus replication strategies and mutation rates</li><li>[ ] Describe viral pathogenesis: transmission, tropism, cell injury, immune evasion, persistence</li><li>[ ] Interpret viral diagnostics: PCR, antigen, serology, culture, sequencing</li><li>[ ] Answer viva: "Baltimore classification with examples", "DNA vs RNA virus differences", "Viral latency mechanisms", "Antigenic drift vs shift"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Virion**</td><td>Complete infectious viral particle (genome + capsid ± envelope)</td></tr><tr><td>**Capsid**</td><td>Protein shell protecting genome; made of capsomeres (icosahedral or helical symmetry)</td></tr><tr><td>**Nucleocapsid**</td><td>Genome + capsid</td></tr><tr><td>**Envelope**</td><td>Host-derived lipid bilayer with viral glycoproteins (spikes); acquired by budding</td></tr><tr><td>**Baltimore Classification**</td><td>7 groups based on genome type (DNA/RNA, ss/ds, +/- sense) & replication strategy</td></tr><tr><td>**Positive-sense RNA (+ssRNA)**</td><td>Genome functions directly as mRNA; can be translated immediately</td></tr><tr><td>**Negative-sense RNA (-ssRNA)**</td><td>Genome complementary to mRNA; requires viral RNA-dependent RNA polymerase (RdRp) in virion</td></tr><tr><td>**Double-stranded RNA (dsRNA)**</td><td>Genome segmented; replication in cytoplasmic inclusions (viroplasms)</td></tr><tr><td>**Reverse transcription**</td><td>RNA → DNA via reverse transcriptase (RT); Retroviruses (+ssRNA-RT), Hepadnaviruses (dsDNA-RT)</td></tr><tr><td>**Integration**</td><td>Viral DNA inserted into host genome (retroviruses, some DNA viruses); latent reservoir</td></tr><tr><td>**Latency**</td><td>Viral genome persists without productive replication; reactivation under stress/immunosuppression</td></tr><tr><td>**Antigenic drift**</td><td>Point mutations in surface proteins (HA/NA in flu) → gradual immune escape; seasonal epidemics</td></tr><tr><td>**Antigenic shift**</td><td>Reassortment of segmented genome (flu) → novel subtype → pandemic potential</td></tr><tr><td>**Tropism**</td><td>Specificity for certain cells/tissues determined by receptor expression + intracellular factors</td></tr><tr><td>**Cytopathic effect (CPE)**</td><td>Morphological changes in infected cells (rounding, syncytia, inclusion bodies, lysis)</td></tr><tr><td>**Inclusion bodies**</td><td>Intracellular aggregates of viral proteins/nucleic acids (e.g., Negri bodies in rabies, Cowdry A in HSV)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Viral Structure</div>
+<p>#### Capsid Symmetry</p>
+<table class="ctable"><tr><th>Symmetry</th><th>Description</th><th>Examples</th><th>Notes</th></tr><tr><td>----------</td><td>-------------</td><td>----------</td><td>-------</td></tr><tr><td>**Icosahedral**</td><td>20 triangular faces, 12 vertices; most efficient</td><td>Adenovirus, herpesvirus, picornavirus, parvovirus, papillomavirus</td><td>Naked or enveloped; triangulation number (T) determines size</td></tr><tr><td>**Helical**</td><td>Protein subunits coil around nucleic acid</td><td>Orthomyxovirus, paramyxovirus, rhabdovirus, filovirus, coronavirus</td><td>Usually enveloped; flexible/rigid rods</td></tr><tr><td>**Complex**</td><td>Neither purely icosahedral nor helical</td><td>Poxvirus (brick-shaped), bacteriophage T4</td><td>Large viruses with additional structures</td></tr></table>
+<p>#### Envelope vs Naked Viruses</p>
+<table class="ctable"><tr><th>Property</th><th>Naked (Non-enveloped)</th><th>Enveloped</th></tr><tr><td>----------</td><td>----------------------</td><td>-----------</td></tr><tr><td>**Lipid bilayer**</td><td>Absent</td><td>Present (host-derived)</td></tr><tr><td>**Sensitivity**</td><td>Resistant to drying, acid, bile, detergents, ether</td><td>Sensitive to drying, heat, detergents, ether, acid</td></tr><tr><td>**Transmission**</td><td>Faecal-oral, fomites, respiratory (some)</td><td>Respiratory, sexual, blood, vertical</td></tr><tr><td>**Release**</td><td>Cell lysis</td><td>Budding (usually non-lytic)</td></tr><tr><td>**Vaccine approach**</td><td>Inactivated/subunit often effective</td><td>Live attenuated or subunit (envelope glycoproteins)</td></tr><tr><td>**Examples**</td><td>Adenovirus, picornavirus, parvovirus, papillomavirus, rotavirus, norovirus, Hepatitis A/E</td><td>Herpesvirus, orthomyxovirus, paramyxovirus, retrovirus, flavivirus, coronavirus, hepatitis B/C/D</td></tr></table>
+<p>#### Viral Genome Types (Baltimore Classification)</p>
+<p>``<code>mermaid mindmap root((Baltimore Classification)) Group I: dsDNA Linear: Adenovirus, Herpesvirus, Poxvirus Circular: Papillomavirus, Polyomavirus Group II: ssDNA Linear: Parvovirus Circular: Circovirus Group III: dsRNA Segmented: Reovirus (Rotavirus) Group IV: +ssRNA Non-segmented: Picornavirus, Flavivirus, Coronavirus, Calicivirus, Togavirus Segmented: None major human Group V: -ssRNA Non-segmented: Rhabdovirus, Paramyxovirus, Filovirus, Bornavirus Segmented: Orthomyxovirus, Bunyavirus, Arenavirus Group VI: +ssRNA-RT (Retroviruses) Linear: HIV, HTLV Group VII: dsDNA-RT (Hepadnaviruses) Circular: Hepatitis B </code>``</p>
+<p>#### Key Structural Proteins by Family</p>
+<table class="ctable"><tr><th>Family</th><th>Genome</th><th>Capsid</th><th>Envelope</th><th>Key Surface Proteins</th><th>Major Pathogens</th></tr><tr><td>--------</td><td>--------</td><td>--------</td><td>----------</td><td>---------------------</td><td>-----------------</td></tr><tr><td>**Herpesviridae**</td><td>dsDNA</td><td>Icosahedral</td><td>Yes</td><td>gB, gC, gD, gH/gL</td><td>HSV-1/2, VZV, CMV, EBV, HHV-6/7, KSHV</td></tr><tr><td>**Adenoviridae**</td><td>dsDNA</td><td>Icosahedral</td><td>No</td><td>Fiber (knob), penton base</td><td>AdV 1-50+ (respiratory, conjunctivitis, gastro)</td></tr><tr><td>**Poxviridae**</td><td>dsDNA</td><td>Complex</td><td>Yes (complex)</td><td>Multiple (entry, immune evasion)</td><td>Variola (smallpox), Mpox, Vaccinia, Molluscum</td></tr><tr><td>**Papillomaviridae**</td><td>dsDNA</td><td>Icosahedral</td><td>No</td><td>L1 (major), L2 (minor)</td><td>HPV 16/18 (cervical), 6/11 (warts), 5/8 (EP)</td></tr><tr><td>**Parvoviridae**</td><td>ssDNA</td><td>Icosahedral</td><td>No</td><td>VP1/VP2/VP3</td><td>B19 (fifth disease, aplastic crisis), Parvovirus 4</td></tr><tr><td>**Picornaviridae**</td><td>+ssRNA</td><td>Icosahedral</td><td>No</td><td>VP1-4 (canyon = receptor site)</td><td>Enterovirus (polio, EV71, coxsackie), Rhinovirus, HAV</td></tr><tr><td>**Flaviviridae**</td><td>+ssRNA</td><td>Icosahedral</td><td>Yes</td><td>E (envelope), prM, NS1</td><td>Dengue, Zika, YF, JE, WNV, HCV, Hepatitis C</td></tr><tr><td>**Coronaviridae**</td><td>+ssRNA</td><td>Helical</td><td>Yes</td><td>S (spike), M, E, N</td><td>SARS-CoV-2, MERS, SARS, HCoV-229E/OC43</td></tr><tr><td>**Orthomyxoviridae**</td><td>-ssRNA (8 seg)</td><td>Helical</td><td>Yes</td><td>HA (haemagglutinin), NA (neuraminidase)</td><td>Influenza A/B/C</td></tr><tr><td>**Paramyxoviridae**</td><td>-ssRNA</td><td>Helical</td><td>Yes</td><td>F (fusion), HN/H/G (attachment)</td><td>Measles, mumps, RSV, parainfluenza, Nipah</td></tr><tr><td>**Rhabdoviridae**</td><td>-ssRNA</td><td>Helical</td><td>Yes</td><td>G (glycoprotein)</td><td>Rabies, VSV</td></tr><tr><td>**Filoviridae**</td><td>-ssRNA</td><td>Helical</td><td>Yes</td><td>GP (glycoprotein)</td><td>Ebola, Marburg</td></tr><tr><td>**Retroviridae**</td><td>+ssRNA-RT</td><td>Icosahedral</td><td>Yes</td><td>gp120 (SU), gp41 (TM)</td><td>HIV-1/2, HTLV-1/2</td></tr><tr><td>**Hepadnaviridae**</td><td>dsDNA-RT</td><td>Icosahedral</td><td>Yes</td><td>HBsAg (surface), HBcAg (core)</td><td>Hepatitis B</td></tr><tr><td>**Reoviridae**</td><td>dsRNA (10-12 seg)</td><td>Double-layered icosahedral</td><td>No</td><td>VP4, VP7</td><td>Rotavirus, Reovirus, Colorado tick fever</td></tr><tr><td>**Caliciviridae**</td><td>+ssRNA</td><td>Icosahedral</td><td>No</td><td>VP1</td><td>Norovirus, Sapovirus</td></tr><tr><td>**Togaviridae**</td><td>+ssRNA</td><td>Icosahedral</td><td>Yes</td><td>E1, E2</td><td>Rubella, Chikungunya, EEE/WEE/VEE</td></tr><tr><td>**Bunyavirales**</td><td>-ssRNA (3 seg)</td><td>Helical</td><td>Yes</td><td>Gn, Gc</td><td>Hantavirus, Rift Valley, Crimean-Congo HF</td></tr><tr><td>**Arenaviridae**</td><td>-ssRNA (2 seg)</td><td>Helical</td><td>Yes</td><td>GP1, GP2</td><td>Lassa, Junin, Machupo, LCMV</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: Viral Replication Cycle — Universal Steps</div>
+<p>```mermaid flowchart LR A[Attachment] --&gt; B[Entry/Penetration] B --&gt; C[Uncoating] C --&gt; D[Replication &amp; Transcription] D --&gt; E[Translation] E --&gt; F[Assembly] F --&gt; G[Release]</p>
+<p>A1[Receptor binding&lt;br/&gt;determines tropism] -.-&gt; A B1[Fusion (enveloped)&lt;br/&gt;Endocytosis (both)] -.-&gt; B C1[Release of genome&lt;br/&gt;into cytoplasm/nucleus] -.-&gt; C D1[DNA: nucleus (mostly)&lt;br/&gt;RNA: cytoplasm (mostly)] -.-&gt; D E1[Host ribosomes&lt;br/&gt;Viral polymerases] -.-&gt; E F1[Nucleocapsid formation&lt;br/&gt;Budding (enveloped)] -.-&gt; F G1[Lysis (naked)&lt;br/&gt;Budding (enveloped)] -.-&gt; G ```</p>
+<p>#### Step-by-Step Breakdown</p>
+<table class="ctable"><tr><th>Step</th><th>Mechanism</th><th>DNA Viruses (Typical)</th><th>RNA Viruses (Typical)</th><th>Key Examples</th></tr><tr><td>------</td><td>-----------</td><td>----------------------</td><td>----------------------</td><td>--------------</td></tr><tr><td>**1. Attachment**</td><td>Viral surface protein binds host receptor</td><td>Glycoproteins (gD-HV, fiber-AdV)</td><td>Glycoproteins (HA-Flu, gp120-HIV, S-CoV2)</td><td>HIV→CD4+CCR5/CXCR4; SARS-CoV-2→ACE2; Flu→α2,6-sialic acid</td></tr><tr><td>**2. Entry**</td><td>Fusion at plasma membrane OR endocytosis → fusion in endosome</td><td>Fusion (Herpes) or endocytosis (AdV)</td><td>pH-dependent fusion (Flu, Corona) or direct fusion (HIV, Measles)</td><td>Flu: clathrin-mediated endocytosis → low pH → HA conformational change</td></tr><tr><td>**3. Uncoating**</td><td>Capsid disassembly releasing genome</td><td>Nuclear pore delivery (Herpes, AdV)</td><td>Cytoplasmic release (most RNA viruses)</td><td>HIV: reverse transcription in cytoplasm → pre-integration complex → nucleus</td></tr><tr><td>**4. Replication**</td><td>Genome copying + Transcription</td><td>**Nucleus** (host Pol II, viral Pol)</td><td>**Cytoplasm** (viral RdRp) — EXCEPT: Orthomyxo (nucleus), Retro (nucleus for integration)</td><td>Flu: RdRp in nucleus; HIV: RT in cytoplasm → DNA → nucleus</td></tr><tr><td>**5. Translation**</td><td>Host ribosomes translate viral mRNA</td><td>Spliced/unspliced mRNAs</td><td>+ssRNA = direct mRNA; -ssRNA/dsRNA = transcribed first</td><td>Poliovirus: IRES-driven cap-independent translation</td></tr><tr><td>**6. Assembly**</td><td>Capsid + genome → nucleocapsid</td><td>Nucleus (Herpes, AdV) or cytoplasm (Pox)</td><td>Cytoplasm (most) or ER/Golgi (Corona, Flavi)</td><td>HIV: Gag polyprotein assembles at membrane</td></tr><tr><td>**7. Release**</td><td>Lysis (naked) or budding (enveloped)</td><td>Lysis (AdV, Picorna) or budding (Herpes, Pox)</td><td>Budding (enveloped) or lysis (naked)</td><td>HIV: budding → ESCRT pathway; Flu: NA cleaves sialic acid for release</td></tr></table>
+<p>#### Replication Site Summary</p>
+<table class="ctable"><tr><th>Nucleus</th><th>Cytoplasm</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>Herpesviridae</td><td>Picornaviridae</td></tr><tr><td>Adenoviridae</td><td>Flaviviridae (mostly)</td></tr><tr><td>Papillomaviridae</td><td>Coronaviridae</td></tr><tr><td>Polyomaviridae</td><td>Togaviridae</td></tr><tr><td>Parvoviridae*</td><td>Rhabdoviridae</td></tr><tr><td>Poxviridae**</td><td>Paramyxoviridae</td></tr><tr><td>Orthomyxoviridae</td><td>Filoviridae</td></tr><tr><td>Retroviridae (integration)</td><td>Bunyavirales</td></tr><tr><td>Hepadnaviridae</td><td>Arenaviridae</td></tr><tr><td>*Parvo requires S-phase host</td><td>Reoviridae<br>Caliciviridae<br>Retroviridae (RT step)</td></tr></table>
+<div class="callout"><b>Poxviridae</b> = ONLY dsDNA virus replicating entirely in cytoplasm (carries own transcriptional machinery).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: Viral Pathogenesis — From Entry to Disease</div>
+<p>#### Transmission Routes</p>
+<table class="ctable"><tr><th>Route</th><th>Viruses</th><th>Prevention</th></tr><tr><td>-------</td><td>---------</td><td>------------</td></tr><tr><td>**Respiratory**</td><td>Flu, RSV, SARS-CoV-2, Measles, Mumps, AdV, Rhinovirus, Parainfluenza</td><td>Masks, ventilation, vaccines</td></tr><tr><td>**Faecal-oral**</td><td>HAV, HEV, Polio, Rotavirus, Norovirus, AdV40/41, Coxsackie</td><td>Sanitation, hand hygiene, vaccines (Rotavirus, Polio, HAV)</td></tr><tr><td>**Blood/Body fluids**</td><td>HIV, HBV, HCV, HTLV, CMV, EBV, Parvovirus B19</td><td>Screening, safe injection, PEP/PrEP</td></tr><tr><td>**Sexual**</td><td>HIV, HSV-2, HPV, HBV, HCV, HTLV, Mpox</td><td>Condoms, vaccines (HPV, HBV), PrEP</td></tr><tr><td>**Vector-borne**</td><td>Dengue, Zika, YF, JE, Chikungunya, WNV, Rift Valley, CCHF</td><td>Vector control, vaccines (YF, JE, Dengue*)</td></tr><tr><td>**Zoonotic/Animal**</td><td>Rabies, Ebola, Marburg, Nipah, Hantavirus, Lassa, Mpox</td><td>Avoid contact, PPE, vaccines (Rabies PEP)</td></tr><tr><td>**Vertical**</td><td>CMV, HSV, HIV, HBV, HCV, Rubella, Zika, Parvovirus B19</td><td>Screening, ART, C-section, antivirals, immunoglobulins</td></tr></table>
+<p>#### Tropism Determinants</p>
+<table class="ctable"><tr><th>Factor</th><th>Example</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Receptor distribution**</td><td>HIV→CD4+ T cells, macrophages; HBV→hepatocytes (NTCP); SARS-CoV-2→ACE2+ cells (lung, heart, kidney, gut)</td></tr><tr><td>**Intracellular factors**</td><td>Transcription factors, splicing machinery, restriction factors (TRIM5α, APOBEC3G, SAMHD1, tetherin)</td></tr><tr><td>**Immune environment**</td><td>IFN response, HLA presentation, NK recognition</td></tr></table>
+<p>#### Mechanisms of Cell Injury</p>
+<table class="ctable"><tr><th>Mechanism</th><th>Viruses</th><th>Pathology</th></tr><tr><td>-----------</td><td>---------</td><td>-----------</td></tr><tr><td>**Direct lysis**</td><td>Naked viruses (AdV, Picorna), some enveloped (Herpes lytic)</td><td>Tissue necrosis, inflammation</td></tr><tr><td>**Syncytia formation**</td><td>RSV, Measles, HIV, HSV, SARS-CoV-2 (F protein mediated)</td><td>Multinucleated giant cells; respiratory distress</td></tr><tr><td>**Apoptosis**</td><td>HIV (bystander), Flu, Adenovirus</td><td>Immune depletion, tissue damage</td></tr><tr><td>**Immune-mediated**</td><td>HBV (CTL killing hepatocytes), Dengue (ADE), Measles (immune suppression)</td><td>Immunopathology > direct viral damage</td></tr><tr><td>**Transformation/Oncogenesis**</td><td>HPV (E6/E7), EBV (LMP1/EBNA2), HBV/HCV (chronic inflammation), HTLV-1 (Tax), KSHV (vFLIP/vCyclin), Merkel cell polyomavirus</td><td>Cervical, nasopharyngeal, hepatocellular, ATL, Kaposi sarcoma, Merkel cell ca</td></tr></table>
+<p>#### Viral Immune Evasion Strategies</p>
+<table class="ctable"><tr><th>Strategy</th><th>Mechanism</th><th>Viruses</th></tr><tr><td>----------</td><td>-----------</td><td>---------</td></tr><tr><td>**Antigenic variation**</td><td>Drift (point mutations), Shift (reassortment), Recombination</td><td>Flu (drift/shift), HIV (hypermutation), HCV (quasispecies), SARS-CoV-2 (variants)</td></tr><tr><td>**Latency**</td><td>Genome persistence without replication; limited antigen expression</td><td>Herpesviruses (HSV, VZV, CMV, EBV), HIV (integrated provirus), HPV</td></tr><tr><td>**Interference with MHC presentation**</td><td>Downregulate MHC I (US2/US11 HCMV, Nef HIV), inhibit TAP (ICP47 HSV)</td><td>Herpesviruses, HIV, Adenovirus</td></tr><tr><td>**Inhibition of IFN response**</td><td>Block IFN production (NS1 Flu, VP35 Ebola), block signalling (V proteins Paramyxo)</td><td>Most viruses</td></tr><tr><td>**Complement evasion**</td><td>Incorporate host regulators (CD55, CD59), encode homologues</td><td>Herpesviruses, Poxviruses</td></tr><tr><td>**Apoptosis inhibition**</td><td>Bcl-2 homologues (vBcl-2 EBV, KSHV), caspase inhibitors (CrmA Pox)</td><td>Herpesviruses, Poxviruses, Adenoviruses</td></tr><tr><td>**Antibody evasion**</td><td>Fc receptors (gE/gI HSV, gp340 EBV), shedding decoy antigens (gp120 HIV, HBsAg)</td><td>HIV, HBV, Herpesviruses</td></tr><tr><td>**NK evasion**</td><td>MHC I downregulation compensated by HLA-E/G expression (UL40 HCMV)</td><td>CMV</td></tr></table>
+<p>#### Persistence &amp; Latency Models</p>
+<table class="ctable"><tr><th>Model</th><th>Viruses</th><th>Reservoir</th><th>Reactivation Triggers</th></tr><tr><td>-------</td><td>---------</td><td>-----------</td><td>----------------------</td></tr><tr><td>**True latency (episomal)**</td><td>HSV-1/2, VZV, EBV, KSHV, HHV-6/7</td><td>Neurons (HSV, VZV), B cells (EBV, KSHV)</td><td>Stress, UV, immunosuppression, fever, trauma</td></tr><tr><td>**Integration latency**</td><td>HIV, HTLV-1</td><td>CD4+ T cells (HIV), CD4+ T cells (HTLV-1)</td><td>Immune activation, cytokine signals</td></tr><tr><td>**Chronic productive**</td><td>HBV, HCV, CMV</td><td>Hepatocytes (HBV/HCV), multiple (CMV)</td><td>Continuous replication; immune control failure</td></tr><tr><td>**Episomal persistence (non-latent)**</td><td>HPV (basal keratinocytes), Adenovirus (tonsils, gut)</td><td>Basal epithelial cells</td><td>Differentiation → productive replication</td></tr></table>
+<div class="callout"><b>HSV Latency:</b> Genome circularises in neuron nucleus → LATs (latency-associated transcripts) only → no viral proteins → immune invisible. Reactivation → anterograde transport → mucosal shedding/lesions. <b>HIV Latency:</b> Integrated provirus in resting memory CD4+ T cells → no transcription → "silent" reservoir. Reactivation → viral production → cell death/new infection.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Key Virus Families — Clinical Syndromes High-Yield</div>
+<p>#### A. Herpesviridae (dsDNA, Enveloped, Icosahedral, Latency)</p>
+<table class="ctable"><tr><th>Virus</th><th>Latency Site</th><th>Primary Disease</th><th>Reactivation Disease</th><th>Special Features</th></tr><tr><td>-------</td><td>-------------</td><td>-----------------</td><td>---------------------</td><td>------------------</td></tr><tr><td>**HSV-1**</td><td>Trigeminal ganglia</td><td>Gingivostomatitis, herpes labialis</td><td>Cold sores, keratitis, encephalitis (temporal lobe)</td><td>HSV PCR CSF = dx encephalitis</td></tr><tr><td>**HSV-2**</td><td>Sacral ganglia</td><td>Genital ulcers</td><td>Recurrent genital herpes, neonatal herpes (vertical)</td><td>C-section if active lesions</td></tr><tr><td>**VZV**</td><td>Dorsal root ganglia</td><td>Chickenpox (varicella)</td><td>Shingles (dermatomal), post-herpetic neuralgia</td><td>Vaccine: live attenuated (OKA)</td></tr><tr><td>**CMV**</td><td>Myeloid progenitors</td><td>Mononucleosis-like (immunocompetent)</td><td>Retinitis (AIDS), pneumonitis, colitis, congenital (SNHL, microcephaly)</td><td>Ganciclovir/valganciclovir; letermovir prophylaxis</td></tr><tr><td>**EBV**</td><td>B cells (memory)</td><td>Infectious mononucleosis</td><td>Lymphoproliferative (PTLD), Burkitt, NPC, HL, gastric ca</td><td>Heterophile Ab (Monospot) +; EBV DNA PCR for PTLD</td></tr><tr><td>**HHV-6/7**</td><td>T cells, salivary glands</td><td>Roseola (exanthem subitum)</td><td>Encephalitis, drug rash (DRESS)</td><td>High seroprevalence</td></tr><tr><td>**KSHV (HHV-8)**</td><td>B cells, endothelial</td><td>Asymptomatic</td><td>Kaposi sarcoma, PEL, MCD</td><td>LANA protein; Mediterranean/AIDS endemic</td></tr></table>
+<p>#### B. Respiratory Viruses</p>
+<table class="ctable"><tr><th>Virus</th><th>Family</th><th>Genome</th><th>Key Features</th><th>Syndrome</th></tr><tr><td>-------</td><td>--------</td><td>--------</td><td>--------------</td><td>----------</td></tr><tr><td>**Influenza A/B**</td><td>Orthomyxoviridae</td><td>-ssRNA (8 seg)</td><td>HA/NA antigenic drift & shift; neuraminidase inhibitors</td><td>Seasonal flu, pandemic (A only), pneumonia, Reye's (aspirin)</td></tr><tr><td>**RSV**</td><td>Paramyxoviridae</td><td>-ssRNA</td><td>F protein fusion; bronchiolitis in infants; palivizumab prophylaxis</td><td>Bronchiolitis, pneumonia, COPD exacerbation</td></tr><tr><td>**Parainfluenza**</td><td>Paramyxoviridae</td><td>-ssRNA</td><td>Types 1-4; croup (seal bark cough)</td><td>Croup, bronchiolitis, pneumonia</td></tr><tr><td>**Measles**</td><td>Paramyxoviridae</td><td>-ssRNA</td><td>Highly contagious (R₀ 12-18); immunosuppression; SSPE</td><td>Rash, Koplik spots, pneumonia, encephalitis, SSPE (years later)</td></tr><tr><td>**Mumps**</td><td>Paramyxoviridae</td><td>-ssRNA</td><td>Parotitis, orchitis, meningitis, pancreatitis</td><td>MMR vaccine</td></tr><tr><td>**SARS-CoV-2**</td><td>Coronaviridae</td><td>+ssRNA</td><td>Spike RBD→ACE2; furin cleavage; variants (Alpha→Omicron)</td><td>COVID-19: ARDS, multisystem, long COVID</td></tr><tr><td>**MERS-CoV**</td><td>Coronaviridae</td><td>+ssRNA</td><td>DPP4 receptor; camel reservoir; high CFR (~35%)</td><td>Severe pneumonia, renal failure</td></tr><tr><td>**Adenovirus**</td><td>Adenoviridae</td><td>dsDNA (naked)</td><td>Types 1-7 respiratory; 40/41 gut; keratoconjunctivitis (8,19,37)</td><td>Pharyngitis, pneumonia, conjunctivitis, gastroenteritis</td></tr></table>
+<p>#### C. Enteric Viruses</p>
+<table class="ctable"><tr><th>Virus</th><th>Family</th><th>Genome</th><th>Transmission</th><th>Syndrome</th></tr><tr><td>-------</td><td>--------</td><td>--------</td><td>--------------</td><td>----------</td></tr><tr><td>**Rotavirus**</td><td>Reoviridae</td><td>dsRNA (11 seg)</td><td>Faecal-oral</td><td>Severe dehydrating diarrhoea <5y; vaccine (Rotarix/RotaTeq)</td></tr><tr><td>**Norovirus**</td><td>Caliciviridae</td><td>+ssRNA</td><td>Faecal-oral, fomites, aerosolised vomit</td><td>"Winter vomiting disease"; outbreaks (cruise ships, care homes)</td></tr><tr><td>**HAV**</td><td>Picornaviridae</td><td>+ssRNA</td><td>Faecal-oral, food/water</td><td>Acute hepatitis; no chronicity; vaccine</td></tr><tr><td>**HEV**</td><td>Hepeviridae</td><td>+ssRNA</td><td>Faecal-oral (zoonotic: pigs)</td><td>Acute hepatitis; severe in pregnancy (genotype 1); chronic in immunosuppressed</td></tr><tr><td>**Poliovirus**</td><td>Picornaviridae</td><td>+ssRNA</td><td>Faecal-oral</td><td>Asymptomatic (95%), abortive, non-paralytic, paralytic (AFP); eradication near</td></tr><tr><td>**Coxsackie/Enterovirus**</td><td>Picornaviridae</td><td>+ssRNA</td><td>Faecal-oral, respiratory</td><td>Hand-foot-mouth (A16, EV71), herpangina, aseptic meningitis, myocarditis</td></tr></table>
+<p>#### D. Hepatitis Viruses</p>
+<table class="ctable"><tr><th>Virus</th><th>Family</th><th>Genome</th><th>Transmission</th><th>Chronicity</th><th>Key Markers</th><th>Treatment</th></tr><tr><td>-------</td><td>--------</td><td>--------</td><td>--------------</td><td>------------</td><td>-------------</td><td>-----------</td></tr><tr><td>**HAV**</td><td>Picornaviridae</td><td>+ssRNA</td><td>Faecal-oral</td><td>No</td><td>Anti-HAV IgM (acute), IgG (immune)</td><td>Supportive</td></tr><tr><td>**HBV**</td><td>Hepadnaviridae</td><td>dsDNA-RT</td><td>Blood, sexual, vertical</td><td>Yes (90% neonatal, 5% adult)</td><td>HBsAg, HBeAg, anti-HBc IgM, HBV DNA</td><td>Tenofovir/entecavir; peg-IFN</td></tr><tr><td>**HCV**</td><td>Flaviviridae</td><td>+ssRNA</td><td>Blood, (sexual, vertical rare)</td><td>Yes (75-85%)</td><td>Anti-HCV, HCV RNA, genotype</td><td>DAAs (sofosbuvir/velpatasvir) >95% SVR</td></tr><tr><td>**HDV**</td><td>Deltavirus</td><td>-ssRNA (circular)</td><td>Blood, sexual</td><td>Only with HBV</td><td>Anti-HDV, HDV RNA</td><td>Bulevirtide; peg-IFN</td></tr><tr><td>**HEV**</td><td>Hepeviridae</td><td>+ssRNA</td><td>Faecal-oral (zoonotic)</td><td>Rare (immunosuppressed)</td><td>Anti-HEV IgM, HEV RNA</td><td>Ribavirin (chronic)</td></tr></table>
+<p>#### E. Vector-Borne &amp; Zoonotic High-Yield</p>
+<table class="ctable"><tr><th>Virus</th><th>Family</th><th>Vector/Reservoir</th><th>Syndrome</th><th>Endemic Areas</th></tr><tr><td>-------</td><td>--------</td><td>------------------</td><td>----------</td><td>---------------</td></tr><tr><td>**Dengue**</td><td>Flaviviridae</td><td>Aedes aegypti</td><td>Fever, rash, thrombocytopenia, plasma leakage (DHF/DSS)</td><td>Tropical/Subtropical</td></tr><tr><td>**Zika**</td><td>Flaviviridae</td><td>Aedes</td><td>Microcephaly (congenital), GBS</td><td>Americas, SE Asia, Africa</td></tr><tr><td>**Yellow Fever**</td><td>Flaviviridae</td><td>Aedes/Haemagogus</td><td>Fever, jaundice, haemorrhage, renal failure</td><td>Africa, S America (vaccine: live 17D)</td></tr><tr><td>**Japanese Encephalitis**</td><td>Flaviviridae</td><td>Culex (pigs/wading birds)</td><td>Encephalitis, high mortality/sequelae</td><td>Asia (vaccine: inactivated)</td></tr><tr><td>**West Nile**</td><td>Flaviviridae</td><td>Culex (birds)</td><td>Fever, neuroinvasive (meningitis/encephalitis)</td><td>Americas, Europe, Africa</td></tr><tr><td>**Chikungunya**</td><td>Togaviridae</td><td>Aedes</td><td>Fever, severe polyarthralgia (chronic)</td><td>Africa, Asia, Americas</td></tr><tr><td>**Ebola/Marburg**</td><td>Filoviridae</td><td>Bats (contact)</td><td>Haemorrhagic fever, high CFR</td><td>Africa (outbreaks)</td></tr><tr><td>**Lassa**</td><td>Arenaviridae</td><td>Mastomys rats</td><td>Fever, haemorrhage, deafness</td><td>West Africa</td></tr><tr><td>**Hantavirus**</td><td>Bunyavirales</td><td>Rodents (aerosol)</td><td>HFRS (Old World) / HCPS (New World)</td><td>Global</td></tr><tr><td>**Rabies**</td><td>Rhabdoviridae</td><td>Dogs, bats, wildlife</td><td>Encephalitis (fury/paralytic), 100% fatal if untreated</td><td>Global (PEP: vaccine + RIG)</td></tr><tr><td>**Nipah**</td><td>Paramyxoviridae</td><td>Bats (pigs intermediate)</td><td>Encephalitis, respiratory</td><td>Bangladesh, India, Malaysia</td></tr><tr><td>**Mpox**</td><td>Poxviridae</td><td>Rodents (contact)</td><td>Fever, rash (centrifugal), lymphadenopathy</td><td>Africa (clade I), global 2022 (clade II)</td></tr></table>
+<p>#### F. Retroviruses &amp; Oncogenic Viruses</p>
+<table class="ctable"><tr><th>Virus</th><th>Family</th><th>Mechanism</th><th>Cancers</th></tr><tr><td>-------</td><td>--------</td><td>-----------</td><td>---------</td></tr><tr><td>**HIV-1/2**</td><td>Retroviridae</td><td>CD4 depletion → immunodeficiency</td><td>KS (KSHV), NHL (EBV), Cervical (HPV), Anal (HPV)</td></tr><tr><td>**HTLV-1**</td><td>Retroviridae</td><td>Tax → NF-κB → T-cell proliferation</td><td>Adult T-cell leukaemia/lymphoma (ATLL), HAM/TSP</td></tr><tr><td>**HPV 16/18**</td><td>Papillomaviridae</td><td>E6→p53 degradation, E7→pRb degradation</td><td>Cervical, oropharyngeal, anal, penile, vaginal, vulvar</td></tr><tr><td>**EBV**</td><td>Herpesviridae</td><td>LMP1/EBNA2 → B-cell immortalisation</td><td>Burkitt lymphoma, NPC, HL, PTLD, gastric ca</td></tr><tr><td>**HBV/HCV**</td><td>Hepadna/Flavi</td><td>Chronic inflammation → cirrhosis → HCC</td><td>Hepatocellular carcinoma</td></tr><tr><td>**KSHV (HHV-8)**</td><td>Herpesviridae</td><td>vFLIP/vCyclin/LANA → NF-κB, cell cycle</td><td>Kaposi sarcoma, PEL, MCD</td></tr><tr><td>**Merkel cell polyomavirus**</td><td>Polyomaviridae</td><td>T antigen → p53/pRb disruption</td><td>Merkel cell carcinoma</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Viral Diagnostics</div>
+<p>#### Laboratory Methods</p>
+<table class="ctable"><tr><th>Method</th><th>Principle</th><th>Target</th><th>Turnaround</th><th>Sensitivity/Specificity</th><th>Clinical Use</th></tr><tr><td>--------</td><td>-----------</td><td>--------</td><td>------------</td><td>------------------------</td><td>--------------</td></tr><tr><td>**PCR/RT-PCR**</td><td>Amplify viral nucleic acid</td><td>RNA/DNA genome</td><td>Hours</td><td>Highest (gold standard)</td><td>**Acute diagnosis**: COVID, Flu, RSV, HIV, HBV, HCV, HSV, CMV, EBV, Enterovirus</td></tr><tr><td>**Multiplex PCR Panels**</td><td>Syndromic (respiratory, GI, meningitis)</td><td>Multiple targets</td><td>1-2 hrs</td><td>High</td><td>**Syndromic testing**: FilmArray, BioFire, QIAstat</td></tr><tr><td>**Antigen Detection**</td><td>Lateral flow / immunoassay</td><td>Viral proteins</td><td>15-30 min</td><td>Lower than PCR</td><td>**Rapid POC**: Flu, RSV, SARS-CoV-2, Rotavirus, Adenovirus, HAV</td></tr><tr><td>**Serology (IgM/IgG)**</td><td>Detect antibodies</td><td>Past/recent infection</td><td>Days-weeks</td><td>Variable (window period)</td><td>**Immune status**: Hepatitis, HIV, Rubella, Measles, VZV, CMV, EBV, SARS-CoV-2</td></tr><tr><td>**Viral Culture**</td><td>Growth in cell lines</td><td>Infectious virus</td><td>Days-weeks</td><td>Gold standard for viability</td><td>**Research, antiviral susceptibility**, some herpesviruses</td></tr><tr><td>**Sequencing/WGS**</td><td>Determine genome sequence</td><td>Full genome</td><td>Days</td><td>Highest resolution</td><td>**Outbreak tracking, variants, resistance (HIV, HCV, CMV, Flu, SARS-CoV-2)**</td></tr><tr><td>**Electron Microscopy**</td><td>Visualise virions</td><td>Morphology</td><td>Hours</td><td>Low (requires high titer)</td><td>**Novel/unknown viruses**, poxviruses, diarrhoea</td></tr></table>
+<p>#### Diagnostic Algorithm by Syndrome</p>
+<table class="ctable"><tr><th>Syndrome</th><th>First-line Test</th><th>Confirmatory/Additional</th></tr><tr><td>----------</td><td>----------------</td><td>-------------------------</td></tr><tr><td>**CAP/Respiratory**</td><td>Multiplex PCR panel (Flu, RSV, SARS-CoV-2, AdV, hMPV, PIV, RV/EV, M. pneumoniae, C. pneumoniae, L. pneumophila)</td><td>Culture if needed; serology retrospective</td></tr><tr><td>**Meningitis/Encephalitis**</td><td>CSF PCR panel (HSV-1/2, VZV, Enterovirus, Parechovirus, HHV-6, EBV, CMV, JEV, WNV, TBE, Bacteria)</td><td>CSF IgG index, oligoclonal bands; MRI; EEG</td></tr><tr><td>**Acute Hepatitis**</td><td>HAV IgM, HBsAg, anti-HBc IgM, HCV Ab/RNA, HEV IgM/RNA, EBV/CMV serology</td><td>Autoimmune screen; liver US; HBV DNA/HCV RNA quantitative</td></tr><tr><td>**Haemorrhagic Fever**</td><td>PCR (Ebola, Marburg, Lassa, CCHF, RVF, Dengue, YF, Zika) + Malaria RDT</td><td>Serology; sequencing</td></tr><tr><td>**STI**</td><td>HIV Ag/Ab, HBsAg, HCV Ab, HSV PCR (lesion), VZV PCR (lesion), HPV DNA (cervical)</td><td>Syphilis serology; gonorrhoea/chlamydia NAAT</td></tr><tr><td>**Congenital Infection**</td><td>PCR (CMV urine/saliva <3wks, Toxo, Rubella, HSV, Parvovirus B19, Zika, HIV)</td><td>IgM (limited); serial serology; imaging</td></tr></table>
+<div class="callout"><b>Viva Pearl:</b> "PCR = acute infection; Serology = past exposure/immune status; IgM = recent (but false +/−); Culture = viable virus; Sequencing = epidemiology/resistance."</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Scenario</th><th>Likely Virus(es)</th><th>Diagnostic Approach</th><th>Key Management</th></tr><tr><td>-------------------</td><td>------------------</td><td>---------------------</td><td>----------------</td></tr><tr><td>**Infant bronchiolitis (winter)**</td><td>RSV > hMPV > Flu > PIV</td><td>Nasal swab multiplex PCR / rapid antigen</td><td>Supportive; palivizumab prophylaxis (high-risk)</td></tr><tr><td>**Adult CAP + flu-like (winter)**</td><td>Influenza A/B, SARS-CoV-2, RSV</td><td>Multiplex PCR; CXR if pneumonia</td><td>Oseltamivir (Flu, ≤48h); Nirmatrelvir/ritonavir (COVID, high-risk); supportive</td></tr><tr><td>**Traveller with fever + rash**</td><td>Dengue, Zika, Chikungunya, Measles, Rubella, Mpox</td><td>Dengue NS1/IgM, Zika PCR, Chik IgM, Mpox PCR, Measles IgM/PCR</td><td>Supportive; avoid NSAIDs (Dengue); isolate (Mpox, Measles)</td></tr><tr><td>**Aseptic meningitis (summer)**</td><td>Enterovirus > HSV-2 > VZV > Arboviruses</td><td>CSF multiplex PCR (Enterovirus, HSV, VZV, Parecho)</td><td>Supportive; aciclovir if HSV/VZV</td></tr><tr><td>**Immunocompromised + retinitis**</td><td>CMV (CD4<50)</td><td>Fundoscopy + CMV PCR blood/aqueous</td><td>Ganciclovir/valganciclovir ± intravitreal</td></tr><tr><td>**Post-transplant + pneumonitis**</td><td>CMV, RSV, Flu, SARS-CoV-2, HHV-6, AdV</td><td>BAL PCR multiplex; CMV pp65 antigenemia/DNA</td><td>Pre-emptive therapy (CMV DNAemia); reduce immunosuppression</td></tr><tr><td>**Acute flaccid paralysis**</td><td>Polio (endemic), EV71, EV-D68, WNV, GBS</td><td>Stool PCR (poliovirus ×2), CSF PCR, NCS</td><td>Polio: notification, OPV/IPV; EV71: supportive; WNV: supportive</td></tr><tr><td>**Pregnant + rash/fever**</td><td>Rubella, CMV, Parvovirus B19, Zika, VZV, Measles, HSV</td><td>Serology IgM/IgG + PCR (amniotic fluid if needed)</td><td>Avoid live vaccines; VZV: aciclovir if >20wks; CMV: valganciclovir (experimental)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know:</b> Baltimore classification (7 groups + examples), replication cycle steps + site (nucleus vs cytoplasm), DNA vs RNA virus mutation rates (RNA &gt; DNA; RT &gt; RNA), latency mechanisms (Herpes episomal, HIV integrated), antigenic drift vs shift (Flu), tropism = receptor + intracellular factors, immune evasion strategies, key clinical syndromes per family, diagnostic algorithm (PCR acute, serology immune status) - <b>Common viva:</b> "Baltimore classification with 1 example each", "Why RNA viruses mutate faster?", "Mechanism of HIV latency", "Antigenic drift vs shift", "Viral diagnostic pathway for meningitis", "Oncogenic viruses &amp; mechanisms", "Hepatitis viruses comparison table" - <b>Exam trap:</b> Poxvirus = ONLY dsDNA in cytoplasm; Orthomyxo = ONLY -ssRNA in nucleus; Retrovirus = +ssRNA but replicates via DNA intermediate; Hepadnavirus = dsDNA but replicates via RNA intermediate; Prions = protein only (no nucleic acid); HBV = partially dsDNA with gap; HDV = defective, needs HBsAg</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**All DNA viruses replicate in nucleus**</td><td>Poxviridae replicates entirely in cytoplasm (own Pol, transcription factors)</td></tr><tr><td>**All RNA viruses replicate in cytoplasm**</td><td>Orthomyxoviridae (Flu) replicates in nucleus (RdRp needs host splicing); Retroviridae integrate in nucleus</td></tr><tr><td>**Antigenic drift = shift**</td><td>Drift = point mutations (gradual, seasonal); Shift = reassortment of segmented genome (pandemic)</td></tr><tr><td>**PCR positive = active infection**</td><td>PCR detects nucleic acid (can be dead virus); culture/antigen = viable; Ct value correlates with viral load</td></tr><tr><td>**IgM = acute infection**</td><td>IgM can persist months, false + (RF, cross-reactivity), false - (early); pair with IgG seroconversion or PCR</td></tr><tr><td>**Enveloped = fragile, no faecal-oral**</td><td>Some enveloped viruses survive gut (Coronaviruses in stool, HBV in blood); but generally true</td></tr><tr><td>**All herpesviruses cause latent infection**</td><td>All 8 human herpesviruses establish latency (yes — this is true!)</td></tr><tr><td>**HBV is dsDNA like others**</td><td>HBV = relaxed circular partially dsDNA with gap; replicates via RNA pregenome → RT → DNA</td></tr><tr><td>**HIV is a typical RNA virus**</td><td>HIV = +ssRNA-RT (Group VI); reverse transcribes to dsDNA → integrates → latency</td></tr><tr><td>**Rotavirus = RNA virus, so high mutation**</td><td>Rotavirus = dsRNA (Group III) segmented; reassortment occurs but mutation rate lower than +ssRNA</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Baltimore Groups:</b> <b>"DNA DNA RNA RNA RNA RT RT"</b> → I: dsDNA, II: ssDNA, III: dsRNA, IV: +ssRNA, V: -ssRNA, VI: +ssRNA-RT, VII: dsDNA-RT</li><li><b>Group I (dsDNA) Families:</b> <b>"HAPPY"</b> → Herpes, Adeno, Papilloma, Polyoma, Pox (Y for Pox... stretch but works)</li><li><b>Group IV (+ssRNA) Major:</b> <b>"PICCOLO CAFE"</b> → Picorna, Corona, Calici, Toga, Flavi</li><li><b>Group V (-ssRNA) Non-seg:</b> <b>"RPF"</b> → Rhabdo, Paramyxo, Filo</li><li><b>Group V (-ssRNA) Segmented:</b> <b>"OBA"</b> → Orthomyxo, Bunya, Arena</li><li><b>DNA→Nucleus (mostly):</b> <b>"HAPPP"</b> → Herpes, Adeno, Papilloma, Polyoma, Pox (exception: Pox in cytoplasm)</li><li><b>RNA→Cytoplasm (mostly):</b> <b>Exceptions:</b> <b>Flu (Orthomyxo) = Nucleus</b>, <b>Retro = Nucleus (integration)</b></li><li><b>Latency Sites:</b> <b>"HSV Trigeminal, VZV Dorsal Root, CMV Myeloid, EBV B-cells, KSHV B-cells, HIV CD4 T-cells, HTLV CD4 T-cells"</b></li><li><b>Oncogenic Viruses:</b> <b>"HEB KHM"</b> → HPV (E6/E7), EBV (LMP1), HBV/HCV (chronic inflam), KSHV (vFLIP), HTLV-1 (Tax), Merkel cell Polyoma</li><li><b>Vector-Borne:</b> <b>"Dengue Zika YF Chik JE WN"</b> → All Flavivirus except Chik (Togavirus); vectors: Aedes (DZYC), Culex (JE WN)</li><li><b>Hepatitis Viruses:</b> <b>"A B C D E"</b> → A: Picorna (faecal), B: Hepadna (blood, RT), C: Flavi (blood, RNA), D: Defective (needs B), E: Hepe (faecal, zoonotic)</li><li><b>Respiratory Viruses:</b> <b>"FRIMPS"</b> → Flu, RSV, Rhinovirus, Influenza (parainfluenza), MERS/Mumps/Measles, Parainfluenza, SARS-CoV-2</li><li><b>Enteric Viruses:</b> <b>"RNHP"</b> → Rota, Noro, HAV, Polio (also Adeno 40/41, Astrovirus, Sapovirus)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Viral Structure, Classification &amp; Pathogenesis)) Structure Capsid Symmetry Icosahedral (Adeno, Herpes, Picorna, Papilloma) Helical (Flu, RSV, Rabies, Corona, Filo) Complex (Pox) Envelope Naked (resistant: faecal-oral, fomites) Enveloped (sensitive: respiratory, sexual, blood) Genome DNA (ds/ss) vs RNA (ds/ss, +/- sense) Segmented vs non-segmented Baltimore 7 Groups Replication Attachment → Entry → Uncoating → Replication → Translation → Assembly → Release Site: Nucleus (DNA, Flu, Retro) vs Cytoplasm (most RNA) Polymerases: Host Pol II (DNA) vs Viral RdRp (RNA) vs RT (Retro/Hepadna) Pathogenesis Transmission Routes Respiratory, Faecal-oral, Blood/Sexual, Vector, Zoonotic, Vertical Tropism Receptor + Intracellular factors Cell Injury Lysis, Syncytia, Apoptosis, Immune-mediated, Transformation Immune Evasion Antigenic variation, Latency, MHC downregulation, IFN inhibition, Complement evasion, Apoptosis inhibition Persistence True latency (Herpes episomal), Integration (Retro), Chronic productive (HBV/HCV), Episomal (HPV) Key Families Herpesviridae (8 human, all latent) Respiratory (Flu, RSV, Corona, Paramyxo, AdV) Enteric (Rota, Noro, HAV, Polio) Hepatitis (A-E) Vector/Zoonotic (Arbo, Ebola, Rabies, Lassa, Nipah, Mpox) Retroviruses (HIV, HTLV) Oncogenic (HPV, EBV, HBV/C, KSHV, HTLV, MCPyV) Diagnostics PCR (acute), Serology (immune status), Antigen (rapid), Culture (viable), Sequencing (epi/resistance) Syndrome-based panels (Resp, GI, CNS, Hepatitis) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart: Viral Diagnostic Pathway by Syndrome</span>
+  </div>
+  <div class="sec-body">
+<p>```mermaid flowchart TD A[Clinical Syndrome] --&gt; B{Sample Type} B --&gt;|Respiratory| C[Nasopharyngeal Swab] C --&gt; D[Multiplex PCR Panel&lt;br/&gt;Flu/RSV/SARS-CoV-2/AdV/hMPV/PIV/RV/EV/Mp/Cp/Lp] D --&gt; E{Result} E --&gt;|Flu| F[Oseltamivir if ≤48h/high-risk] E --&gt;|COVID| G[Nirmatrelvir/ritonavir if high-risk] E --&gt;|RSV| H[Supportive; Palivizumab prophylaxis] E --&gt;|Other| I[Supportive]</p>
+<p>B --&gt;|CSF (Meningitis/Encephalitis)| J[Lumbar Puncture] J --&gt; K[CSF Multiplex PCR&lt;br/&gt;HSV/VZV/Enterovirus/Parecho/HHV-6/EBV/CMV/JEV/WNV/TBE + Bacteria] K --&gt; L{Result} L --&gt;|HSV/VZV| M[IV Aciclovir 10-21 days] L --&gt;|Enterovirus| N[Supportive] L --&gt;|CMV| O[Ganciclovir if immunocompromised] L --&gt;|Arbovirus| P[Supportive; Notify]</p>
+<p>B --&gt;|Blood (Hepatitis)| Q[Serology + PCR] Q --&gt; R[HAV IgM, HBsAg/anti-HBc IgM/HBV DNA, HCV Ab/RNA, HEV IgM/RNA, HDV if HBsAg+] R --&gt; S{Treatment} S --&gt;|HBV| T[Tenofovir/Entecavir ± PEG-IFN] S --&gt;|HCV| U[DAA 8-12 weeks &gt;95% SVR] S --&gt;|HDV| V[Bulevirtide ± PEG-IFN] S --&gt;|HEV| W[Ribavirin if chronic]</p>
+<p>B --&gt;|Lesion/Genital| X[Swab PCR] X --&gt; Y[HSV/VZV PCR, Mpox PCR, T. pallidum PCR, HPV DNA] Y --&gt; Z{Treatment} Z --&gt;|HSV| AA[Oral/IV Aciclovir] Z --&gt;|VZV| AB[Valaciclovir 7d] Z --&gt;|Mpox| AC[Supportive; Tecovirimat if severe]</p>
+<p>B --&gt;|Stool (Gastroenteritis)| AD[Multiplex GI PCR / Antigen] AD --&gt; AE[Rotavirus, Norovirus, Adenovirus 40/41, Astrovirus, Sapovirus, Bacteria/Parasites] AE --&gt; AF[Supportive: ORS/IV fluids; Rotavirus vaccine prevention] ```</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Baltimore classification table with replication strategies</li><li>[ ] Virion ultrastructure diagrams (naked icosahedral, enveloped helical, complex pox)</li><li>[ ] Replication cycleComparison of Flu (nuclear RNA) vs Polio (cytoplasmic RNA) vs HSV (nuclear DNA) vs HIV (RT → nuclear DNA)</li><li>[ ] Antigenic drift vs shift cartoon</li><li>[ ] Herpesvirus latency/reactivation pathways</li><li>[ ] Hepatitis serology interpretation flowcharts</li><li>[ ] Arbovirus transmission cycles (human-mosquito-human vs sylvatic)</li><li>[ ] HIV life cycle with drug targets</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] SketchyMicro: Herpesviruses, Respiratory viruses, Hepatitis viruses, HIV, Oncogenic viruses</li><li>[ ] Armando Hasudungan: Baltimore classification, Viral replication, Antigenic drift/shift, HIV life cycle</li><li>[ ] MedCram: COVID-19 pathophysiology, Hepatitis B/C, Influenza</li><li>[ ] Khan Academy: Viral structure, Retrovirus replication, Vaccines</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>Definitions:</b> Virion, capsid, nucleocapsid, envelope, Baltimore 7 groups, +ssRNA/-ssRNA/dsRNA/dsDNA/RT, drift vs shift, tropism, latency, CPE - <b>Classification:</b> Baltimore I-VII with 1 example each; DNA vs RNA replication site &amp; polymerase; Segmented: Flu (8), Rotavirus (11), Bunya (3), Arena (2) - <b>Replication:</b> Attach → Enter → Uncoat → Replicate (DNA=nucleus host Pol II, RNA=cytoplasm RdRp, Retro=RT→DNA→nucleus) → Translate → Assemble → Release (lysis vs budding) - <b>Pathogenesis:</b> Transmission routes → Tropism (receptor + intracellular) → Injury (lysis, syncytia, apoptosis, immune-mediated, transformation) → Evasion (variation, latency, MHC down, IFN block) → Persistence (Herpes episomal, HIV integrated, HBV/HCV chronic) - <b>Clinical:</b> Herpes 8 (latency sites), Respiratory (Flu/RSV/COVID), Enteric (Rota/Noro/HAV/Polio), Hepatitis A-E (transmission, chronicity, markers, Rx), Vector/Zoonotic (Arbo/Filo/Arena/Bunya/Rhabdo/Pox), Retroviruses (HIV/HTLV), Oncogenic (HPV/EBV/HBV-HCV/KSHV/HTLV/MCPyV) - <b>Diagnostics:</b> PCR = acute (gold standard); Serology = immune status/past; IgM = recent (caveats); Antigen = rapid POC; Culture = viable; Sequencing = variants/resistance - <b>Key Numbers:</b> Flu R₀ 1-2, Measles R₀ 12-18, HIV CD4&lt;200 = AIDS, HBV vertical transmission 90% if HBeAg+, HCW needlestick HIV risk 0.3%, HCV risk 1.8%</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Draw Baltimore classification with 1 example per group</li><li>Compare DNA vs RNA virus replication: site, polymerase, mutation rate</li><li>Explain antigenic drift vs shift in influenza</li><li>List herpesviruses with latency site &amp; reactivation syndrome</li><li>Hepatitis A-E: transmission, chronicity, key serology markers, treatment</li><li>Viral oncogenesis mechanisms: HPV (E6/E7), EBV (LMP1), HBV/HCV (inflammation), KSHV (vFLIP), HTLV-1 (Tax)</li><li>Diagnostic algorithm: meningitis (CSF PCR panel), hepatitis (serology+PCR), respiratory (multiplex PCR)</li><li>Immune evasion: 3 mechanisms with virus examples</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Baltimore classification (7 groups); Replication cycle steps & site; DNA vs RNA differences; Herpes latency/reactivation; Flu drift/shift; Tropism concept; Key syndromes per family; Diagnostic algorithm (PCR acute, serology immune); Oncogenic viruses & mechanisms</td></tr><tr><td>**Should Know 🟡**</td><td>Detailed replication strategies per family; Specific immune evasion proteins (NS1, ICP47, Nef, etc.); Arbovirus transmission cycles; HIV life cycle with drug targets; Congenital infections (TORCH); Prion diseases (separate topic)</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel viruses (SARS-CoV-2 variants, MPXV clades); Oncolytic virotherapy; Viral metagenomics; CRISPR-based antivirals; Broad-spectrum antivirals (remdesivir, favipiravir mechanisms)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li><li>[ ] Remembering all Baltimore group examples</li><li>[ ] Differentiating Paramyxo vs Orthomyxo replication sites</li><li>[ ] HBV serology interpretation windows</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Structure: Baltimore classification → Replication cycle → Pathogenesis (transmission, tropism, injury, evasion, persistence) → Key families with clinical syndromes → Diagnostics → Antivirals/Vaccines</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet: Baltimore table, Replication comparison (DNA/RNA/RT), Latency models, Flu drift/shift, Hepatitis comparison, Oncogenic viruses, Diagnostic principles</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"In your own words..." — Lead with Baltimore, give replication site rule with exceptions, mention 2-3 evasion mechanisms, name oncogenic viruses</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>"Immunocompromised patient with encephalitis: CSF PCR panel first → if HSV/VZV → IV aciclovir immediately; if CMV → ganciclovir; if Enterovirus → supportive; consider arboviruses based on travel"</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>Baltimore: I dsDNA (Herpes), II ssDNA (Parvo), III dsRNA (Rota), IV +ssRNA (Picorna/Flavi/Corona), V -ssRNA (Flu seg, Rhabdo/Paramyxo/Filo non-seg), VI +ssRNA-RT (HIV), VII dsDNA-RT (HBV)</li><li>Exceptions: Pox (DNA→cyto), Flu (RNA→nucleus), Retro (RNA→DNA→nucleus)</li><li>Latency: HSV trigeminal, VZV dorsal root, EBV B-cell, HIV CD4 T-cell</li><li>Drift=mutation, Shift=reassortment</li><li>Oncogenic: HPV, EBV, HBV/C, KSHV, HTLV-1, MCPyV</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Which virus family replicates in the nucleus despite having an RNA genome?</b></li></ol>
+<p>A. Picornaviridae B. Orthomyxoviridae C. Flaviviridae D. Coronaviridae E. Rhabdoviridae</p>
+<ol><li><b>A 30-year-old man presents with recurrent painful vesicular lesions on his lip. PCR from the lesion confirms HSV-1. Where does the viral genome persist during latency?</b></li></ol>
+<p>A. Nucleus of trigeminal ganglion neurons as an episome B. Integrated into host chromosome of CD4+ T cells C. Cytoplasm of sensory neurons as linear DNA D. Nucleus of B lymphocytes as an episome E. Integrated into hepatocyte genome</p>
+<ol><li><b>Antigenic shift in influenza A virus occurs by which mechanism?</b></li></ol>
+<p>A. Point mutations in the haemagglutinin (HA) gene B. Reassortment of segmented genome between human and avian strains C. Recombination between HA and neuraminidase (NA) genes D. Insertion of host cell sequences into the viral genome E. Deletion mutations in the M2 protein</p>
+<ol><li><b>Which hepatitis virus requires co-infection with HBV for its replication?</b></li></ol>
+<p>A. Hepatitis A B. Hepatitis C C. Hepatitis D D. Hepatitis E E. Hepatitis G</p>
+<ol><li><b>A 6-month-old infant presents with severe watery diarrhoea in winter. Stool antigen test is positive for a wheel-shaped virus with dsRNA segmented genome. The most likely pathogen is:</b></li></ol>
+<p>A. Norovirus B. Rotavirus C. Adenovirus 40/41 D. Astrovirus E. Sapovirus</p>
+<ol><li><b>Which of the following viruses is associated with Adult T-cell Leukaemia/Lymphoma (ATLL)?</b></li></ol>
+<p>A. EBV B. HTLV-1 C. HIV-1 D. KSHV E. HPV 16</p>
+<ol><li><b>A traveller returns from Brazil with fever, arthralgia, and rash. PCR is positive for a flavivirus transmitted by Aedes mosquitoes. The virus is associated with congenital microcephaly. The most likely diagnosis is:</b></li></ol>
+<p>A. Dengue B. Zika C. Chikungunya D. Yellow Fever E. West Nile</p>
+<ol><li><b>Which antiviral drug targets the viral RNA-dependent RNA polymerase (RdRp)?</b></li></ol>
+<p>A. Aciclovir B. Oseltamivir C. Remdesivir D. Tenofovir E. Raltegravir</p>
+<ol><li><b>A patient with AIDS (CD4 30) presents with progressive visual loss. Fundoscopy shows retinal haemorrhages and exudates ("pizza pie" appearance). The most likely causative virus is:</b></li></ol>
+<p>A. HSV-1 B. VZV C. CMV D. EBV E. HHV-6</p>
+<ol><li><b>Which statement about Hepatitis B virus (HBV) is CORRECT?</b></li></ol>
+<p>A. It is a single-stranded RNA virus B. It replicates via a DNA intermediate using reverse transcriptase C. It has a fully double-stranded DNA genome D. It integrates into host genome as part of its normal replication cycle E. Chronic infection occurs in &gt;90% of infected adults</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 45-year-old man presents with 2 weeks of fever, fatigue, and right upper quadrant pain. He returned from a business trip to Southeast Asia 6 weeks ago. Labs: ALT 850, AST 620, bilirubin 4.2 mg/dL. Serology: HBsAg positive, anti-HBc IgM positive, HBeAg positive, HBV DNA 10⁸ IU/mL. The most appropriate next step in management is:</b></li></ol>
+<p>A. Start tenofovir disoproxil fumarate 300mg daily B. Start pegylated interferon-alpha for 48 weeks C. Supportive care only; acute HBV resolves spontaneously in &gt;95% adults D. Start entecavir 0.5mg daily and refer for liver transplant assessment E. Administer hepatitis B immunoglobulin (HBIG) + vaccine</p>
+<ol><li><b>A 28-year-old pregnant woman (24 weeks) is exposed to a child with confirmed parvovirus B19 infection (slapped cheek rash). She has no history of prior infection. Serology shows IgG negative, IgM negative. The most appropriate management is:</b></li></ol>
+<p>A. Reassure; parvovirus B19 does not affect pregnancy B. Administer IV immunoglobulin (IVIG) 400mg/kg C. Serial ultrasound monitoring for fetal hydrops (peak risk 4-8 weeks post-exposure) D. Amniocentesis for parvovirus PCR immediately E. Intrauterine transfusion prophylactically</p>
+<ol><li><b>A 5-year-old child presents with 5 days of high fever, cough, coryza, conjunctivitis, and a maculopapular rash starting on face spreading downwards. White spots on buccal mucosa noted. The child is unvaccinated. The most likely complication causing death in measles is:</b></li></ol>
+<p>A. Subacute sclerosing panencephalitis (SSPE) B. Giant cell pneumonia C. Acute encephalitis D. Severe diarrhoea and dehydration E. Secondary bacterial pneumonia</p>
+<ol><li><b>A 35-year-old HIV-positive man (CD4 180, not on ART) presents with 2 weeks of headache, fever, and confusion. MRI shows temporal lobe enhancement. CSF: lymphocytic pleocytosis, elevated protein, normal glucose. CSF PCR is positive for HSV-1. The recommended treatment is:</b></li></ol>
+<p>A. Oral valaciclovir 1g TDS for 14 days B. IV aciclovir 10mg/kg TDS for 14-21 days C. IV ganciclovir 5mg/kg BD for 14 days D. IV foscarnet 90mg/kg TDS for 21 days E. IV aciclovir 10mg/kg TDS for 7 days</p>
+<ol><li><b>A neonate born at 32 weeks develops respiratory distress, thrombocytopenia, and hepatosplenomegaly at 3 weeks of age. Mother had a flu-like illness at 20 weeks gestation. PCR on urine is positive for a herpesvirus. The most likely diagnosis is:</b></li></ol>
+<p>A. HSV-2 neonatal herpes B. Congenital CMV infection C. Congenital rubella D. Congenital toxoplasmosis E. Congenital syphilis</p>
+<ol><li><b>A 50-year-old man undergoes allogeneic stem cell transplant for AML. On day +40, he develops fever and non-productive cough. BAL PCR is positive for CMV DNA (5000 IU/mL). He is not on antiviral prophylaxis. The first-line treatment is:</b></li></ol>
+<p>A. IV ganciclovir 5mg/kg BD B. Oral valganciclovir 900mg BD C. IV foscarnet 90mg/kg BD D. IV cidofovir 5mg/kg weekly E. Letermovir 480mg daily</p>
+<ol><li><b>A 22-year-old woman presents with painful genital ulcers. PCR from ulcer swab is positive for HSV-2. She has 3-4 recurrences per year. The recommended suppressive therapy is:</b></li></ol>
+<p>A. Aciclovir 400mg BD continuously B. Valaciclovir 500mg daily continuously C. Famciclovir 250mg BD continuously D. Any of the above (all equally effective) E. Intermittent therapy at onset of prodrome only</p>
+<ol><li><b>A 60-year-old man with CLL on ibrutinib presents with 1 week of confusion and new-onset seizures. MRI shows bilateral temporal lobe T2 hyperintensities. CSF PCR is positive for HHV-6. The most appropriate treatment is:</b></li></ol>
+<p>A. IV aciclovir 10mg/kg TDS B. IV ganciclovir 5mg/kg BD C. IV foscarnet 90mg/kg TDS D. Oral valganciclovir 900mg BD E. Supportive only; HHV-6 encephalitis is self-limiting</p>
+<ol><li><b>During an outbreak investigation of acute gastroenteritis in a nursing home, stool samples from 15 residents are tested. Multiplex GI PCR identifies norovirus GII.4 in 12 samples. The most effective infection control measure to terminate the outbreak is:</b></li></ol>
+<p>A. Alcohol-based hand rub (ABHR) for all staff B. <b>Soap and water hand washing</b> + bleach-based environmental disinfection C. Cohorting affected residents only D. Prophylactic nitazoxanide for all residents E. Closure of the facility for 2 weeks</p>
+<ol><li><b>A 40-year-old woman presents with a painless ulcer on the vulva. Dark-ground microscopy shows motile spirochetes. RPR is positive at 1:64, TPHA positive. She reports penicillin allergy (anaphylaxis). The recommended treatment for primary syphilis is:</b></li></ol>
+<p>A. Doxycycline 100mg BD for 14 days B. Ceftriaxone 1g IM single dose (after desensitisation) C. Azithromycin 2g single dose D. Tetracycline 500mg QDS for 14 days E. Benzathine penicillin G 2.4MU IM weekly ×3 (after desensitisation)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: <b>Baltimore Group I = ?</b></li></ul>
+<p>A: dsDNA (Herpes, Adeno, Pox, Papilloma, Polyoma)</p>
+<ul><li>Q: <b>Baltimore Group IV = ?</b></li></ul>
+<p>A: +ssRNA (Picorna, Flavi, Corona, Calici, Toga)</p>
+<ul><li>Q: <b>Baltimore Group V = ?</b></li></ul>
+<p>A: -ssRNA Non-seg (Rhabdo, Paramyxo, Filo) + Seg (Orthomyxo, Bunya, Arena)</p>
+<ul><li>Q: <b>Baltimore Group VI = ?</b></li></ul>
+<p>A: +ssRNA-RT (Retroviruses: HIV, HTLV)</p>
+<ul><li>Q: <b>Baltimore Group VII = ?</b></li></ul>
+<p>A: dsDNA-RT (Hepadnaviruses: HBV)</p>
+<ul><li>Q: <b>DNA virus replicating in cytoplasm?</b></li></ul>
+<p>A: Poxviridae</p>
+<ul><li>Q: <b>RNA virus replicating in nucleus?</b></li></ul>
+<p>A: Orthomyxoviridae (Influenza); Retroviridae (integration)</p>
+<ul><li>Q: <b>Antigenic drift vs shift?</b></li></ul>
+<p>A: Drift = point mutations (HA/NA) = seasonal; Shift = reassortment (segmented) = pandemic</p>
+<ul><li>Q: <b>Herpes latency sites?</b></li></ul>
+<p>A: HSV trigeminal, VZV dorsal root, EBV/KSHV B-cells, CMV myeloid, HHV-6/7 T-cells/salivary</p>
+<ul><li>Q: <b>HIV latency?</b></li></ul>
+<p>A: Integrated provirus in resting memory CD4+ T cells (transcriptionally silent)</p>
+<ul><li>Q: <b>Hepatitis chronicity?</b></li></ul>
+<p>A: HAV/HEV = never; HBV = 90% neonatal, 5% adult; HCV = 75-85%; HDV = only with HBV</p>
+<ul><li>Q: <b>Oncogenic viruses?</b></li></ul>
+<p>A: HPV (E6/E7→p53/pRb), EBV (LMP1/EBNA2), HBV/HCV (cirrhosis→HCC), KSHV (vFLIP/vCyclin), HTLV-1 (Tax), MCPyV (T Ag)</p>
+<ul><li>Q: <b>Diagnostic: PCR vs Serology?</b></li></ul>
+<p>A: PCR = acute infection; Serology = immune status/past; IgM = recent (caveats)</p>
+<ul><li>Q: <b>Norovirus disinfection?</b></li></ul>
+<p>A: Soap &amp; water + bleach (alcohol ineffective)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — Orthomyxoviridae (Influenza) is -ssRNA segmented but replicates in <b>nucleus</b> (RdRp requires host pre-mRNA for cap-snatching). All others: Picorna/Flavi/Corona/Rhabdo = cytoplasmic RNA replication.</li></ol>
+<ol><li><b>Correct: A</b> — HSV-1 establishes latency in <b>trigeminal ganglion neurons</b> as a <b>circular episome</b> in the nucleus. Only LATs transcribed. HIV (B) integrates in CD4 T cells. VZV (D) latent in dorsal root ganglia. HBV (E) can integrate but not normal cycle.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Antigenic shift</b> = reassortment of 8 genomic segments between different strains (e.g., human + avian) in a co-infected cell (often pigs) → novel HA/NA subtype → pandemic. <b>Drift</b> (A) = point mutations → seasonal epidemics.</li></ol>
+<ol><li><b>Correct: C</b> — <b>HDV</b> is a defective virus requiring HBsAg from HBV for envelopment and transmission. No independent replication.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Rotavirus</b> = Reoviridae, dsRNA 11 segments, wheel-shaped EM appearance, winter seasonality, severe dehydrating diarrhoea in infants. Norovirus = Caliciviridae, +ssRNA, "winter vomiting".</li></ol>
+<ol><li><b>Correct: B</b> — <b>HTLV-1</b> (Human T-lymphotropic virus 1) → Adult T-cell Leukaemia/Lymphoma (ATLL) via Tax protein → NF-κB activation. Also causes HAM/TSP. EBV = Burkitt/NPC/PTLD. KSHV = Kaposi sarcoma. HPV16 = cervical/oropharyngeal.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Zika</b> = Flavivirus, Aedes vector, congenital microcephaly, GBS. Dengue = haemorrhagic fever/thrombocytopenia. Chikungunya = Togavirus, severe arthralgia. YF = haemorrhagic/jaundice. WNV = neuroinvasive.</li></ol>
+<ol><li><b>Correct: C</b> — <b>Remdesivir</b> = nucleotide analogue → inhibits <b>RdRp</b> (broad-spectrum: Filo, Corona, Paramyxo, Pneumo). Aciclovir = viral DNA polymerase (Herpes). Oseltamivir = NA (Flu). Tenofovir = RT (HIV, HBV). Raltegravir = integrase (HIV).</li></ol>
+<ol><li><b>Correct: C</b> — <b>CMV retinitis</b> = classic AIDS-defining illness at CD4&lt;50; "pizza pie" retinopathy. Tx: Ganciclovir/valganciclovir ± intravitreal. HSV/VZV = acute retinal necrosis (different appearance).</li></ol>
+<ol><li><b>Correct: B</b> — HBV = <b>Hepadnaviridae</b>, <b>dsDNA-RT</b> (Group VII). Genome = <b>relaxed circular partially dsDNA with a gap</b>. Replicates via <b>RNA pregenome → RT → DNA</b>. Chronicity: 90% neonates (HBeAg+ mother), 5% adults. Integrates randomly (not normal cycle).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: C</b> — <b>Acute HBV in immunocompetent adult</b>: &gt;95% spontaneous clearance. Antivirals (A, B) NOT indicated for acute infection (reserve for chronic/fulminant). HBIG+vaccine (E) = post-exposure prophylaxis. Monitor for resolution (HBsAg loss, anti-HBs seroconversion).</li></ol>
+<ol><li><b>Correct: C</b> — <b>Parvovirus B19 in pregnancy</b>: Risk of fetal hydrops (severe anaemia → high-output failure) 4-8 weeks post-maternal infection. <b>Serial ultrasound for hydrops</b> (MCA Doppler for anaemia) is standard. IVIG (B) not routine. Amniocentesis (D) if hydrops detected. No vaccine.</li></ol>
+<ol><li><b>Correct: E</b> — <b>Measles mortality</b>: <b>Secondary bacterial pneumonia</b> (most common), then giant cell pneumonia (B, immunocompromised), encephalitis (C, 1/1000), SSPE (A, rare, years later). Diarrhoea (D) contributes but pneumonia is leading cause.</li></ol>
+<ol><li><b>Correct: B</b> — <b>HSV encephalitis</b>: IV <b>aciclovir 10mg/kg TDS for 14-21 days</b> (21 days if immunocompromised). Oral valaciclovir (A) for mucocutaneous only. Ganciclovir (C) = CMV. Foscarnet (D) = resistant HSV/CMV. 7 days (E) too short.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Congenital CMV</b>: Most common congenital infection (0.5-1%). Triad: hepatosplenomegaly, thrombocytopenia, microcephaly/SNHL. Urine PCR/saliva &lt;3 weeks = gold standard. Rubella (C) = cataracts, PDA, deafness. Toxo (D) = chorioretinitis, hydrocephalus. Syphilis (E) = snuffles, bone lesions.</li></ol>
+<ol><li><b>Correct: A</b> — <b>CMV disease post-transplant</b>: Pre-emptive therapy based on <b>CMV DNAemia</b>. 1st-line: <b>IV ganciclovir 5mg/kg BD</b> (or valganciclovir 900mg BD if mild/oral tolerated). Foscarnet (C) = 2nd line (resistance/renal). Cidofovir (D) = 3rd line (nephrotoxic). Letermovir (E) = <b>prophylaxis</b> only (not treatment).</li></ol>
+<ol><li><b>Correct: D</b> — <b>HSV-2 suppressive therapy</b>: <b>All 3 nucleoside analogues effective</b> (aciclovir 400mg BD, valaciclovir 500mg daily, famciclovir 250mg BD). Valaciclovir preferred (better bioavailability, once daily). Reduces recurrences 70-80% and asymptomatic shedding.</li></ol>
+<ol><li><b>Correct: B</b> — <b>HHV-6 encephalitis in transplant</b>: HHV-6B reactivation → limbic encephalitis. <b>Ganciclovir/valganciclovir or foscarnet</b> have activity (aciclovir poor). Guidelines: ganciclovir 5mg/kg BD IV or valganciclovir 900mg BD PO. Foscarnet alternative if renal/marrow toxicity.</li></ol>
+<ol><li><b>Correct: B</b> — <b>Norovirus</b>: <b>Non-enveloped</b>, resistant to alcohol (ABHR ineffective). <b>Soap &amp; water mechanical removal + bleach (hypochlorite) environmental disinfection</b> are essential. Cohorting (C) helps but hand hygiene core. Nitazoxanide (D) not standard prophylaxis.</li></ol>
+<ol><li><b>Correct: E</b> — <b>Syphilis in penicillin allergy (anaphylaxis)</b>: <b>Desensitisation + benzathine penicillin G 2.4MU IM weekly ×3</b> (standard). Doxycycline (A) = 2nd line (14 days) if desensitisation impossible. Ceftriaxone (B) = cross-reactivity risk (desensitise to penicillin covers ceftriaxone). Azithromycin (C) = resistance reported. Tetracycline (D) = older alternative.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Viral Structure, Classification &amp; Pathogenesis</b> is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Baltimore classification organises viruses by genome/replication strategy → predicts replication site, mutation rate, drug targets. Latency (Herpes episomal, HIV integrated) drives reactivation disease. Antigenic variation (drift/shift) mandates vaccine updates. Tropism = receptor + intracellular factors. Diagnostics: PCR acute, serology immune status. <b>Exam focus:</b> Baltimore 7 groups with exceptions (Pox, Flu, Retro, Hepadna), replication cycle comparison, herpesvirus latency/reactivation, flu drift vs shift, hepatitis A-E comparison, oncogenic mechanisms, diagnostic algorithms. <b>Clinical relevance:</b> Empiric antiviral choices (aciclovir HSV/VZV, ganciclovir CMV, oseltamivir flu, DAAs HCV, ART HIV); vaccine strategies (live attenuated vs subunit vs mRNA); outbreak control (norovirus bleach, measles isolation, ebola PPE).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Viral Structure Classification Pathogenesis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Definition And Aims — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.11. PRINCIPLES OF RATIONAL PRESCRIBING</span>
+      <div class="h1">Definition And Aims</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define rational (good) prescribing and its 7 "rights"</li><li>[ ] Define <b>P-drug</b> and explain the 4 ESC criteria</li><li>[ ] Differentiate <b>P-drug</b> from <b>P-treatment</b></li><li>[ ] Construct a personal formulary of 20-40 P-drugs</li><li>[ ] Apply WHO 6-step model in a clinical vignette</li><li>[ ] Discuss barriers to rational prescribing in low/middle-income countries</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Core Principles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Rational Prescribing**</td><td>Right patient, right drug, right dose, right route, right time, right duration, right cost, right monitoring (7 Rs)</td></tr><tr><td>**Irrational Prescribing**</td><td>Inappropriate drug, dose, duration; polypharmacy; underuse of effective therapy; overuse of ineffective/unsafe therapy</td></tr><tr><td>**P-drug**</td><td>Drug chosen by an individual prescriber for a particular indication based on **Efficacy, Safety, Suitability, Cost**</td></tr><tr><td>**P-treatment**</td><td>Complete treatment plan: Non-pharmacological + Pharmacological + Information + Monitoring/Follow-up</td></tr><tr><td>**Personal Formulary**</td><td>20-40 P-drugs covering ~80% of common conditions encountered in practice</td></tr></table>
+<p><b>WHO estimate:</b> &gt;50% of medicines are prescribed/dispensed inappropriately; half of patients fail to take them correctly.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mermaid Algorithm — WHO 6-Step Prescribing Model</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Step 1: Define the patient's problem] --&gt; B[Step 2: Specify therapeutic objective] B --&gt; C[Step 3: Choose standard P-treatment] C --&gt; D[Verify suitability of P-drug&lt;br/&gt;Contraindications, Interactions, Cost] D --&gt;|Suitable| E[Step 4: Write prescription] D --&gt;|Not suitable| F[Step 3b: Choose alternative] F --&gt; C E --&gt; G[Step 5: Give information&lt;br/&gt;drug, indication, side effects, duration] G --&gt; H[Step 6: Monitor&lt;br/&gt;efficacy, safety, adherence] H --&gt; I{Therapy effective&lt;br/&gt;and safe?} I --&gt;|Yes| J[Continue / Stop] I --&gt;|No| A </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Comparison Tables</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">4.1 P-Drug vs P-Treatment</div>
+<table class="ctable"><tr><th>Feature</th><th>P-Drug</th><th>P-Treatment</th></tr><tr><td>---------</td><td>--------</td><td>-------------</td></tr><tr><td>**What**</td><td>A single drug</td><td>A complete plan</td></tr><tr><td>**Components**</td><td>Drug + dose + duration</td><td>Non-drug measures + drug + counselling + monitoring</td></tr><tr><td>**Selection**</td><td>Efficacy, Safety, Suitability, Cost</td><td>Based on P-drug + patient context</td></tr><tr><td>**Example**</td><td>Amlodipine 5 mg OD for HTN</td><td>Lifestyle advice + Amlodipine 5 mg OD + home BP log + 4-week review</td></tr><tr><td>**Update**</td><td>When new evidence emerges</td><td>Each patient encounter</td></tr></table>
+<div class="sub-h">4.2 4 ESC Criteria for P-Drug Selection</div>
+<table class="ctable"><tr><th>Criterion</th><th>Question to ask</th><th>Example (HTN P-drug)</th></tr><tr><td>-----------</td><td>-----------------</td><td>----------------------</td></tr><tr><td>**Efficacy**</td><td>Does it work? Evidence?</td><td>Amlodipine ≥ ACEi in ALLHAT, ASCOT</td></tr><tr><td>**Safety**</td><td>Side-effect profile in this patient?</td><td>Amlodipine safe in asthma, CKD</td></tr><tr><td>**Suitability**</td><td>Can this patient take it? (dose form, contraindications)</td><td>OD dosing → good adherence</td></tr><tr><td>**Cost**</td><td>Affordable to patient / system?</td><td>Generic amlodipine £0.10/month</td></tr></table>
+<div class="sub-h">4.3 Seven "Rights" of Prescribing (Mnemonic: **"DR.T.RAMP"**)</div>
+<table class="ctable"><tr><th>Right</th><th>Example error</th></tr><tr><td>-------</td><td>---------------</td></tr><tr><td>Right **D**rug</td><td>Prescribing methotrexate daily instead of weekly → death</td></tr><tr><td>Right **R**oute</td><td>Oral methotrexate for ectopic pregnancy (must be IM)</td></tr><tr><td>Right **T**ime</td><td>Tetracycline with dairy → chelation, ↓absorption</td></tr><tr><td>Right **A**mount</td><td>Digoxin 250 µg TDS → toxicity</td></tr><tr><td>Right **M**ethod</td><td>IV gentamicin bolus → neuromuscular block</td></tr><tr><td>Right **P**atient</td><td>Sound-alike "clozapine" vs "clonidine"</td></tr><tr><td>Right **D**ocumentation</td><td>Unclear dose → 10× overdose</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pearl</th><th>Detail</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>WHO model step that is **most often skipped**</td><td>Step 1 (define the problem) — leads to symptomatic Rx without diagnosis</td></tr><tr><td>Most common irrational prescribing globally</td><td>Antibiotic overuse for viral URTI; polypharmacy in elderly</td></tr><tr><td>P-drug concept origin</td><td>WHO Guide to Good Prescribing (1994, updated 2011)</td></tr><tr><td>Number of P-drugs in personal formulary</td><td>20-40 (covers ~80% of common conditions)</td></tr><tr><td>When to revise P-drugs</td><td>When landmark trial changes evidence, new AE emerges, guideline update</td></tr><tr><td>Legal class for personal use</td><td>All personal formulary drugs should be on local formulary (NICE, BNF)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define rational prescribing.</b></li></ol>
+<p><i>Prescribing the right drug, in the right dose, for the right duration, to the right patient, with the right information, at the right cost, with appropriate monitoring — based on explicit criteria.</i></p>
+<ol><li><b>What is a P-drug?</b></li></ol>
+<p><i>A drug selected by an individual prescriber for a specific indication using 4 explicit criteria: Efficacy, Safety, Suitability, Cost.</i></p>
+<ol><li><b>Differentiate P-drug from P-treatment.</b></li></ol>
+<p><i>P-drug = single drug + dose + duration. P-treatment = complete plan (non-drug + drug + counselling + monitoring).</i></p>
+<ol><li><b>List the WHO 6-step prescribing model.</b></li></ol>
+<p><i>1) Define the problem; 2) Specify therapeutic objective; 3) Choose standard treatment (P-drug); 4) Write Rx; 5) Give information; 6) Monitor.</i></p>
+<ol><li><b>How many P-drugs should be in a personal formulary?</b></li></ol>
+<p><i>20-40 P-drugs covering ~80% of common conditions.</i></p>
+<ol><li><b>Give an example of irrational prescribing.</b></li></ol>
+<p><i>Antibiotic for viral URTI; long-acting benzodiazepine in elderly; high-dose opioid for mild pain; IM chloroquine for mild malaria; corticosteroid for simple back pain.</i></p>
+<ol><li><b>What is the difference between "right drug" and "right patient"?</b></li></ol>
+<p><i>Right drug = correct choice for indication. Right patient = drug suitable for this individual (no CI, no allergy, no critical interaction).</i></p>
+<ol><li><b>Name 3 common causes of irrational prescribing.</b></li></ol>
+<p><i>Patient demand; industry promotion; lack of up-to-date knowledge; fear of litigation; lack of CPD; absence of local formulary.</i></p>
+<ol><li><b>What is the role of clinical guidelines in rational prescribing?</b></li></ol>
+<p><i>Standardize evidence-based P-treatments; reduce variation; support audit and education. But guidelines must be applied with patient-centred judgement.</i></p>
+<ol><li><b>A junior doctor asks "Why do I need a personal formulary if the BNF exists?"</b></li></ol>
+<p><i>The BNF is a national formulary listing all drugs. A personal formulary is your selected P-drugs (20-40) covering common conditions — it speeds decision-making, improves confidence, reduces prescribing errors, and forms a personal learning record.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Resolution</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>P-drug vs Personal formulary</td><td>P-drug = single drug for one indication; Personal formulary = collection of 20-40 P-drugs</td></tr><tr><td>Generic vs Trade name</td><td>Generic = INN (amlodipine); Trade = brand (Istin®). Same active drug; different cost/appearance.</td></tr><tr><td>Formulary vs Guideline</td><td>Formulary = list of approved drugs; Guideline = evidence-based recommendations including non-drug measures</td></tr><tr><td>"Rational" vs "Restrictive"</td><td>Rational ≠ restrictive — it is appropriate, evidence-based, cost-effective. Restrictive = denying access.</td></tr><tr><td>WHO 6-step vs 5-step (UK variant)</td><td>UK often uses 5-step (combines Rx writing + information giving). WHO uses 6 explicit steps.</td></tr></table>
+<p><b>Mnemonic — 4 ESC criteria: "</b>E<b>lephants </b>S<b>it </b>S<b>lowly on </b>C<b>ats"</b> <i>(Efficacy, Safety, Suitability, Cost)</i></p>
+<p><b>Mnemonic — 7 Rights: "</b>Dr RAMP<b>"</b> <i>(Drug, Route, Amount, Method, Patient, Documentation — and Time)</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mermaid Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Rational Prescribing)) Definitions 7 Rights 4 ESC criteria Irrational Rx P-drug Efficacy Safety Suitability Cost P-treatment Non-drug Drug Information Monitoring WHO 6-Step Define problem Set objective Choose P-drug Write Rx Inform Monitor Personal Formulary 20-40 drugs 80% conditions Updated yearly Barriers Industry Patient demand Knowledge gap No formulary </code>``</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Day 1</th><th>Day 3</th><th>Day 7</th><th>Day 14</th><th>Day 30</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>-------</td><td>--------</td></tr><tr><td>7 Rights</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>4 ESC criteria</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>WHO 6 steps</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>P-drug vs P-treatment</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Personal formulary size</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score (0-5)</th><th>Weak areas to revisit</th></tr><tr><td>--------</td><td>-------------</td><td>------------------------</td></tr><tr><td>Definitions</td><td>/5</td><td></td></tr><tr><td>WHO 6-step</td><td>/5</td><td></td></tr><tr><td>P-drug criteria</td><td>/5</td><td></td></tr><tr><td>Irrational prescribing examples</td><td>/5</td><td></td></tr><tr><td>Personal formulary</td><td>/5</td><td></td></tr><tr><td>**TOTAL**</td><td>**/25**</td><td></td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The "P-drug" concept was developed by:</b></li></ol>
+<p>A. FDA B. WHO ✓ C. MHRA D. NICE E. EMA</p>
+<ol><li><b>How many drugs typically constitute a prescriber's personal formulary?</b></li></ol>
+<p>A. 5-10 B. 20-40 ✓ C. 50-100 D. 100-200 E. &gt;200</p>
+<ol><li><b>The 4 criteria for selecting a P-drug are:</b></li></ol>
+<p>A. Efficacy, Safety, Suitability, Cost ✓ B. Efficacy, Speed, Simplicity, Cost C. Efficacy, Safety, Spectrum, Cost D. Efficacy, Safety, Success, Cost E. Evidence, Safety, Suitability, Cost</p>
+<ol><li><b>The first step in the WHO 6-step prescribing model is:</b></li></ol>
+<p>A. Choose the standard treatment B. Define the patient's problem ✓ C. Specify therapeutic objective D. Write the prescription E. Monitor therapy</p>
+<ol><li><b>Which of the following is NOT a "right" of rational prescribing?</b></li></ol>
+<p>A. Right drug B. Right route C. Right manufacturer ✓ D. Right dose E. Right patient</p>
+<ol><li><b>A P-treatment includes all EXCEPT:</b></li></ol>
+<p>A. Non-pharmacological measures B. Drug of choice C. Patient counselling D. Manufacturer's marketing material ✓ E. Monitoring plan</p>
+<ol><li><b>Which is an example of irrational prescribing?</b></li></ol>
+<p>A. Prescribing an antibiotic for viral URTI ✓ B. Prescribing generic amlodipine for HTN C. Prescribing paracetamol for fever with monitoring D. Using a 6-step prescribing model E. Reviewing personal formulary annually</p>
+<ol><li><b>The most common reason for irrational prescribing in low-income countries is:</b></li></ol>
+<p>A. Lack of internet B. Polypharmacy with antibiotics + injections + branded drugs ✓ C. Excess of guidelines D. Overuse of generics E. Strict formularies</p>
+<ol><li><b>A personal formulary should be reviewed:</b></li></ol>
+<p>A. Never B. Only at retirement C. When major new evidence / guidelines change ✓ D. Every 10 years E. Only on request</p>
+<ol><li><b>"Irrational prescribing" includes all EXCEPT:</b></li></ol>
+<p>A. Ineffective dose B. Inappropriate polypharmacy C. Inappropriate generic substitution ✓ D. Unnecessary antibiotic use E. Underuse of an effective drug</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>A 55-year-old man with newly diagnosed essential hypertension (BP 162/98 mmHg) has no comorbidities. The doctor selects amlodipine 5 mg OD as the P-drug. Which criterion is most strongly supported by ALLHAT and ASCOT trials for this choice?</b></li></ol>
+<ul><li>A) Safety in asthma</li><li>B) Cost-effectiveness of generic amlodipine</li><li>C) Superior efficacy vs ACEi and thiazide in preventing stroke ✓</li><li>D) Suitability in CKD</li><li>E) OD dosing for adherence</li></ul>
+<ol><li><b>A junior doctor is told to "develop a personal formulary." The best definition is:</b></li></ol>
+<ul><li>A) All drugs in the BNF</li><li>B) All drugs in the hospital pharmacy</li><li>C) 20-40 P-drugs covering ~80% of common conditions in your practice ✓</li><li>D) All generic drugs</li><li>E) All drugs in the WHO essential medicines list</li></ul>
+<ol><li><b>Which patient factor determines "suitability" of a P-drug?</b></li></ol>
+<ul><li>A) Cost to NHS</li><li>B) Doctor's familiarity</li><li>C) Patient's ability to take the formulation and absence of contraindications ✓</li><li>D) Trial evidence</li><li>E) Guideline endorsement</li></ul>
+<ol><li><b>Step 5 of the WHO model is "Give information, instructions and warnings." This step is critical because:</b></li></ol>
+<ul><li>A) It is a legal requirement</li><li>B) It improves adherence and recognition of side effects ✓</li><li>C) It reduces drug cost</li><li>D) It substitutes for monitoring</li><li>E) It replaces counselling</li></ul>
+<ol><li><b>A patient with heart failure (LVEF 30%) is prescribed the P-drug for HTN. The best P-drug choice is:</b></li></ol>
+<ul><li>A) Amlodipine (no mortality benefit in HF)</li><li>B) Ramipril (mortality benefit in HFrEF) ✓</li><li>C) Atenolol (no mortality benefit in HF)</li><li>D) Doxazosin (NEJM 2000 — worse outcomes)</li><li>E) Hydralazine (third-line)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQ Answers</div>
+<ol><li><b>B</b> (WHO Guide to Good Prescribing)</li><li><b>B</b> (20-40 drugs; WHO recommendation)</li><li><b>A</b> (Efficacy, Safety, Suitability, Cost)</li><li><b>B</b> (Step 1 = define the problem)</li><li><b>C</b> (Right manufacturer is not a "right"; the 7 Rs are: Drug, Route, Time, Amount, Method, Patient, Documentation)</li><li><b>D</b> (Manufacturer's marketing is not part of P-treatment)</li><li><b>A</b> (Antibiotic for viral URTI is irrational)</li><li><b>B</b> (Polypharmacy + injections + branded drugs in LMIC)</li><li><b>C</b> (Revise when major new evidence emerges)</li><li><b>C</b> (Inappropriate generic substitution is not irrational — it's encouraged; only inappropriate in rare cases like narrow TI)</li></ol>
+<div class="sub-h">SBA Answers</div>
+<ol><li><b>C</b> — ALLHAT (2002): amlodipine non-inferior to chlortalidone for primary outcome. ASCOT (2005): amlodipine ± perindopril superior to atenolol ± thiazide for stroke prevention.</li><li><b>C</b> — Personal formulary = 20-40 P-drugs (~80% common conditions).</li><li><b>C</b> — Suitability = appropriate for THIS patient (no CI, can swallow, OD dosing acceptable).</li><li><b>B</b> — Patient information improves adherence by 30-50% and AE recognition.</li><li><b>B</b> — ACEi (ramipril) is P-drug in HFrEF (CONSENSUS, SOLVD, SAVE — mortality benefit).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Summary Box</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Rational prescribing = Right drug + Right patient + Right time + Right route + Right amount + Right duration + Right monitoring.</b> The P-drug concept distils 4 ESC criteria; the WHO 6-step model operationalises it. Personal formulary = 20-40 P-drugs, revised when evidence changes. Avoid irrational Rx (polypharmacy, antibiotics for viral illness, expensive branded generics).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Topic-Group</b>: [[../Principles of Rational Prescribing|Principles of Rational Prescribing]]</li><li><b>Sibling Topic-Groups</b>: [[Steps of rational prescribing]], [[Evidence-based prescribing]], [[Prescription writing]]</li><li><b>Heading Hub</b>: [[Principles of Rational Prescribing]]</li><li><b>Chapter MOC</b>: [[Clinical Therapeutics and Good Prescribing MOC]]</li><li><b>Related</b>: [[ADRs]], [[Drug Interactions]], [[Polypharmacy and Deprescribing]]</li></ul>
+<p><b>Last Updated:</b> 2026-06-15 <b>Status: FULLY COMPLETE with Exam Suite (Viva 10, MCQ 10, SBA 5, Answer Key, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Definition And Aims · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

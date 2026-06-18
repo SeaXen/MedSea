@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Social Determinants Of Health Health Equity — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 6 POPULATION HEALTH AND EPIDEMIOLOGY / 6.4. GLOBAL HEALTH & HEALTH SYSTEMS</span>
+      <div class="h1">Social Determinants Of Health Health Equity</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Define social determinants of health (SDOH): structural and intermediary</li><li>[ ] Describe Marmot Review (2010, 2020): Fair Society Healthy Lives; six policy objectives</li><li>[ ] Apply concepts: social gradient, health inequalities vs inequities, intersectionality</li><li>[ ] Identify key UK/NHS policy: Core20PLUS5, health equity assessment</li><li>[ ] Calculate concentration index, slope index of inequality for health inequality measurement</li><li>[ ] Discuss structural racism, poverty, early years, employment, housing, environment</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Social Determinants of Health (SDOH)**</td><td>Conditions in which people are born, grow, work, live, age (WHO CSDH 2008)</td></tr><tr><td>**Health Inequalities**</td><td>Differences in health (avoidable and unavoidable)</td></tr><tr><td>**Health Inequities**</td><td>Differences in health that are unfair, unjust, avoidable (Marmot, Whitehead)</td></tr><tr><td>**Social Gradient**</td><td>Health improves with each step up socioeconomic position (linear, not just poor vs rich)</td></tr><tr><td>**Structural Determinants**</td><td>Governance, economic, social policies; governance, education, social protection</td></tr><tr><td>**Intermediary Determinants**</td><td>Material circumstances, behaviours, biological, psychosocial</td></tr></table>
+<p><b>UK Health Inequalities (2024):</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Metric&lt;/th&gt;&lt;th&gt;Most Deprived vs Least Deprived (Quintile 1 vs 5)&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;-----------------------------------------------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Healthy Life Expectancy</b>&lt;/td&gt;&lt;td&gt;52y vs 70y (gap 18y, M); 51y vs 68y (F)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Life Expectancy</b>&lt;/td&gt;&lt;td&gt;73.9y vs 83.4y (gap ~10y, M)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Infant Mortality</b>&lt;/td&gt;&lt;td&gt;2x rate in most deprived&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Obesity (Reception)</b>&lt;/td&gt;&lt;td&gt;2x rate in most deprived&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Smoking Prevalence</b>&lt;/td&gt;&lt;td&gt;3-4x rate in most deprived&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Mental Health (Common)</b>&lt;/td&gt;&lt;td&gt;2x rate in most deprived&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CVD Mortality</b>&lt;/td&gt;&lt;td&gt;2-3x rate in most deprived&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Diabetes Prevalence</b>&lt;/td&gt;&lt;td&gt;2x rate in most deprived&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features / Presentation</span>
+  </div>
+  <div class="sec-body">
+<p><i>Conceptual framework - see Marmot policy objectives and measurement below.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Classification / Marmot Six Policy Objectives (2010/2020)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Objective</th><th>Key Actions</th></tr><tr><td>---</td><td>-----------</td><td>-------------</td></tr><tr><td>**1**</td><td>**Give Every Child the Best Start in Life**</td><td>Pre-conception care, early years, parenting support, paid parental leave, Sure Start, early intervention</td></tr><tr><td>**2**</td><td>**Enable All Children, Young People, Adults to Maximise Capabilities & Control**</td><td>High-quality education, lifelong learning, work-based training, comprehensive PSHE</td></tr><tr><td>**3**</td><td>**Create Fair Employment & Good Work for All**</td><td>Living wage, zero-hours regulation, occupational health, flexible work, mental health support</td></tr><tr><td>**4**</td><td>**Ensure Healthy Standard of Living for All**</td><td>Adequate social security, in-work benefits, minimum income, fuel poverty reduction, healthy food access</td></tr><tr><td>**5**</td><td>**Create & Develop Healthy & Sustainable Places & Communities**</td><td>Active travel, green space, housing quality, air quality, community resilience, planning</td></tr><tr><td>**6**</td><td>**Strengthen Role & Impact of Ill-Health Prevention**</td><td>Universal proportionalism, screening uptake, immunisation equity, prevention in primary care</td></tr></table>
+<p><b>Mermaid: Marmot's Conceptual Framework</b> ``<code>mermaid flowchart TD A[Social Stratification\n(Govt, Macro) ] --&gt; B[Structural Determinants\nGovernance, Education, Social Protection] B --&gt; C[Social Position\nIncome, Education, Occupation] C --&gt; D[Intermediary Determinants\nMaterial, Behavioural, Psychosocial, Biological] D --&gt; E[Equity in Health &amp; Wellbeing] style A fill:#bbf,stroke:#333 style E fill:#bfb,stroke:#333 </code>``</p>
+<p><b>WHO CSDH Conceptual Framework (Solar &amp; Irwin):</b></p>
+<ul><li><b>Social Stratification</b> (structural): Socioeconomic-political context</li><li><b>Socioeconomic Position</b> (structural): Class, education, occupation, income, gender, ethnicity</li><li><b>Intermediary</b>: Material, behavioural, psychosocial, biological</li><li><b>Cross-cutting</b>: Social capital, social cohesion</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis & Investigations (Measurement)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Health Inequality Measurement:</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Measure&lt;/th&gt;&lt;th&gt;Formula&lt;/th&gt;&lt;th&gt;Interpretation&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;td&gt;----------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Range (Gap)</b>&lt;/td&gt;&lt;td&gt;LE in Q5 - LE in Q1&lt;/td&gt;&lt;td&gt;Simple; loses intermediate gradient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Absolute Concentration Index (ACI)</b>&lt;/td&gt;&lt;td&gt;2 × Cov(LE, FR)&lt;/td&gt;&lt;td&gt;Signed; positive = pro-rich; size = magnitude&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Relative Concentration Index (RCI)</b>&lt;/td&gt;&lt;td&gt;ACI / Mean LE&lt;/td&gt;&lt;td&gt;-1 to +1; standardisation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Slope Index of Inequality (SII)</b>&lt;/td&gt;&lt;td&gt;β from weighted regression of LE on cumulative rank&lt;/td&gt;&lt;td&gt;Absolute inequality; range across social spectrum&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Relative Index of Inequality (RII)</b>&lt;/td&gt;&lt;td&gt;SII / mean LE&lt;/td&gt;&lt;td&gt;Relative inequality&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Theil Index, Atkinson Index</b>&lt;/td&gt;&lt;td&gt;Information-theoretic; decomposable&lt;/td&gt;&lt;td&gt;Gini-like; between/within group&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>NHS Core20PLUS5 (2021-2024):</b></p>
+<ul><li><b>Core20</b>: Most deprived 20% of population (IMD)</li><li><b>PLUS</b>: Population groups (ethnicity, inclusion health, protected characteristics, vulnerable)</li><li><b>5 Clinical Areas</b>: Maternity, Severe Mental Illness, Cancer, CVD (Lipid/AF/HF/HTN), Diabetes</li></ul>
+<p><b>Mermaid: Core20PLUS5</b> ``<code>mermaid flowchart TD A[NHS Inequalities Strategy] --&gt; B[Core20\nMost Deprived 20%] A --&gt; C[PLUS\nInclusion Health, Ethnicity, Vulnerable] A --&gt; D[5 Clinical Areas] D --&gt; D1[Maternity] D --&gt; D2[Severe Mental Illness] D --&gt; D3[Cancer] D --&gt; D4[Cardiovascular Disease] D --&gt; D5[Diabetes &amp; CKD] style B fill:#f96,stroke:#333 style C fill:#f96,stroke:#333 style D fill:#bbf,stroke:#333 </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis (Key Confusions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Inequalities vs Inequities**</td><td>Inequality = difference (any). Inequity = unfair difference (avoidable, justice-related).</td></tr><tr><td>**Proportional Universalism vs Targeted**</td><td>Targeted: only at-risk group (efficient but stigmatising). Universal: all (equitable). Proportional: universal + intensity scaled to need.</td></tr><tr><td>**Race vs Ethnicity vs Racism**</td><td>Race: social construct (no biological basis). Ethnicity: shared culture/ancestry. Structural/institutional racism: discriminatory systems.</td></tr><tr><td>**Poverty vs Deprivation**</td><td>Poverty: lack of resources (income <60% median). Deprivation: lack of services/opportunities (IMD). Health impact: multidimensional.</td></tr><tr><td>**Social Gradient vs Bimodal**</td><td>Gradient = linear across all SES, not just "poor" vs "rich". Even middle-class have better health than working-class.</td></tr><tr><td>**Equality vs Equity**</td><td>Equality = same resources. Equity = resources proportionate to need.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management (Proportionate Universalism & Actions)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Proportionate Universalism (Marmot):</b></p>
+<ul><li><b>Universal action</b> (not targeted alone)</li><li><b>Scale and intensity</b> proportionate to level of disadvantage</li><li>Examples: Smoking cessation (universal access + intensive support for deprived); Sure Start (universal + extra for deprived)</li></ul>
+<p><b>NHS Actions:</b></p>
+<ul><li><b>Health Equity Assessment Tool (HEAT)</b>: Embed equity in policies/programmes</li><li><b>Equality Impact Assessment (EIA)</b>: Legal requirement (Equality Act 2010)</li><li><b>Core20PLUS5</b>: Population targeting + clinical priorities</li><li><b>Personalised Care</b>: Social prescribing, health coaching</li><li><b>Wider Determinants</b>: Anchor institutions, employment, estates</li></ul>
+<p><b>Individual Clinician Actions:</b></p>
+<ul><li><b>Ask</b> about social circumstances (housing, employment, food security)</li><li><b>Refer</b> to social prescribing, welfare advice, housing support</li><li><b>Advocate</b> for patients (letters for benefits, housing)</li><li><b>Equity audit</b> of own practice</li><li><b>Cultural competence</b> and trauma-informed care</li></ul>
+<p><b>Intersectionality (Crenshaw):</b></p>
+<ul><li>Multiple social categories (race, gender, class, sexuality, disability) interact</li><li>Compound disadvantage (not just additive)</li><li>E.g., Black disabled women face unique barriers</li><li>Lens for design, not just measurement</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary (BULLET TABLE)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Health Inequalities UK**</td><td>HLE gap 18y (M) most vs least deprived; LE gap ~10y; 2-3x mortality CVD</td></tr><tr><td>**Inequalities vs Inequities**</td><td>Inequality = difference. Inequity = unfair, avoidable, unjust.</td></tr><tr><td>**Social Gradient**</td><td>Health improves linearly with SES, not just poor vs rich</td></tr><tr><td>**Marmot 6 Objectives**</td><td>1) Best start, 2) Maximise capabilities, 3) Fair employment, 4) Healthy standard living, 5) Healthy places, 6) Strengthen prevention</td></tr><tr><td>**Proportional Universalism**</td><td>Universal + scaled to need (Marmot)</td></tr><tr><td>**Core20PLUS5**</td><td>Core20 (most deprived) + PLUS (vulnerable groups) + 5 clinical areas</td></tr><tr><td>**WHO CSDH**</td><td>Structural (stratification, SEP) → Intermediary (material, behavioural) → Health</td></tr><tr><td>**Measurement**</td><td>Range, Concentration Index, SII, RII, Theil</td></tr><tr><td>**Intersectionality**</td><td>Multiple categories interact; compound disadvantage</td></tr><tr><td>**NHS Tools**</td><td>HEAT (Health Equity Assessment Tool), EIA (Equality Impact Assessment)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Difference between health inequality and health inequity?**</td><td>Inequality = difference in health (any). Inequity = unfair, unjust, avoidable difference (justice-related).</td></tr><tr><td>**Marmot's 6 policy objectives?**</td><td>1) Best start in life (early years), 2) Maximise capabilities/control (education), 3) Fair employment/good work, 4) Healthy standard of living, 5) Healthy sustainable places, 6) Strengthen ill-health prevention.</td></tr><tr><td>**What is proportionate universalism?**</td><td>Universal action with scale and intensity proportionate to level of disadvantage (Marmot 2010). Avoids stigma of targeted-only; reaches gradient.</td></tr><tr><td>**NHS Core20PLUS5 - what is it?**</td><td>NHS Inequalities Strategy. Core20: most deprived 20% (IMD). PLUS: inclusion health, ethnicity, protected characteristics. 5: Maternity, Severe Mental Illness, Cancer, CVD, Diabetes.</td></tr><tr><td>**UK HLE gap most vs least deprived?**</td><td>~18 years gap in HLE between most and least deprived quintiles (men). Even larger gap in healthy life.</td></tr><tr><td>**Social gradient - what is it?**</td><td>Linear improvement in health with each step up socioeconomic position. Not just "poor vs rich" dichotomy - even middle-class have better health.</td></tr><tr><td>**What is intersectionality (Crenshaw)?**</td><td>Multiple social categories (race, gender, class, sexuality, disability) interact to produce unique compound disadvantage. Not just additive.</td></tr><tr><td>**Tools for measuring health inequality?**</td><td>Range, Slope Index of Inequality (SII), Relative Index of Inequality (RII), Concentration Index, Theil Index, Atkinson Index.</td></tr><tr><td>**Individual clinician actions on inequalities?**</td><td>Ask about social circumstances, refer to welfare/housing/social prescribing, advocate (letters), audit own practice, cultural competence.</td></tr><tr><td>**WHO CSDH conceptual framework?**</td><td>Structural determinants (socioeconomic-political context, socioeconomic position) → Intermediary determinants (material, behavioural, psychosocial, biological) → Health equity.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Inequality = Equity**</td><td>NO. Equity = fairness, justice, morality. Inequality = mathematical difference. Inequity subset.</td></tr><tr><td>**Proportional Universalism**</td><td>Universal action (everyone) + Scaled to need (more for deprived). Not "targeted only".</td></tr><tr><td>**IMD vs Poverty**</td><td>IMD = Index of Multiple Deprivation (7 domains). Not just income; includes health, education, crime, housing, environment, access.</td></tr><tr><td>**Race = Biological**</td><td>FALSE. Race = social construct. No biological/genetic basis. Ethnicity = cultural/ancestral.</td></tr></table>
+<p><b>Mnemonic: MARMOT 6 OBJECTIVES (BEMSH-P)</b></p>
+<ul><li><b>B</b>est start in life</li><li><b>E</b>ducation/Enable capabilities</li><li><b>M</b>aximise control</li><li><b>S</b>tandard of living (fair)</li><li><b>H</b>ealthy places</li><li><b>P</b>revention strengthening</li></ul>
+<p><b>Mnemonic: SDOH FRAMEWORK (CBSI)</b></p>
+<ul><li><b>C</b>ontext (Governance, Policy)</li><li><b>B</b>oth structural and intermediary</li><li><b>S</b>ocioeconomic position (SEP)</li><li><b>I</b>ntermediary determinants</li></ul>
+<p><b>Mnemonic: CORE20PLUS5</b></p>
+<ul><li><b>C</b>ore20 = Most deprived 20%</li><li><b>P</b>LUS = Inclusion health, ethnicity, vulnerable</li><li><b>5</b> = Maternity, SMI, Cancer, CVD, Diabetes</li></ul>
+<p><b>Mnemonic: INEQUALITY MEASURES (CSR)</b></p>
+<ul><li><b>C</b>oncentration Index (CI)</li><li><b>S</b>II (Slope Index of Inequality)</li><li><b>R</b>II (Relative Index of Inequality)</li></ul>
+<p><b>Mnemonic: EQUALITY vs EQUITY</b></p>
+<ul><li><b>E</b>quality = <b>E</b>qual treatment</li><li><b>E</b>quity = <b>E</b>quity requires <b>E</b>quity (justice, need-based)</li></ul>
+<p><b>Mnemonic: CLINICIAN ACTIONS (AIREA)</b></p>
+<ul><li><b>A</b>sk (social circumstances)</li><li><b>I</b>nquire (housing, food, employment)</li><li><b>R</b>efer (social prescribing)</li><li><b>E</b>quity audit</li><li><b>A</b>dvocate</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Social Determinants &amp; Equity)) SDOH Framework Structural: Governance, SEP Intermediary: Material, Behavioural, Psychosocial Marmot 2010/2020 6 Objectives Proportional Universalism UK Inequalities HLE gap 18y LE gap 10y Social Gradient (linear) Core20PLUS5 Core20: Most deprived 20% PLUS: Inclusion, Ethnicity 5: Maternity, SMI, Cancer, CVD, DM Measurement Range, SII, RII, CI Concentration Index Concepts Inequality vs Inequity Intersectionality Equality vs Equity Tools HEAT, EIA, Health Equity Audit </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Inequality vs Inequity**</td><td>Inequality = difference. Inequity = unfair, avoidable, unjust.</td></tr><tr><td>**Social Gradient**</td><td>Linear across SES, not just poor/rich</td></tr><tr><td>**Marmot 6**</td><td>Best start, Education, Fair work, Standard living, Places, Prevention</td></tr><tr><td>**Proportional Universalism**</td><td>Universal + scaled to need</td></tr><tr><td>**Core20PLUS5**</td><td>Core20, PLUS, 5 (Maternity, SMI, Cancer, CVD, DM)</td></tr><tr><td>**UK Gap**</td><td>HLE 18y, LE 10y, CVD 2-3x mortality</td></tr><tr><td>**WHO CSDH**</td><td>Structural → Intermediary → Health</td></tr><tr><td>**Measurement**</td><td>SII, RII, Concentration Index</td></tr><tr><td>**Intersectionality**</td><td>Compound, not additive</td></tr><tr><td>**Clinician Actions**</td><td>Ask, Refer, Advocate, Audit</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>SDOH Definition</td><td></td><td></td></tr><tr><td>Marmot 6 Objectives</td><td></td><td></td></tr><tr><td>Proportional Universalism</td><td></td><td></td></tr><tr><td>Core20PLUS5</td><td></td><td></td></tr><tr><td>UK Inequality Gaps</td><td></td><td></td></tr><tr><td>Measurement Tools</td><td></td><td></td></tr><tr><td>Intersectionality</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr><tr><td>Mnemonics</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Population Health and Epidemiology|Population Health and Epidemiology]]</li><li><b>Chapter Map</b>: [[../Population Health and Epidemiology Hierarchy|Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Population Health and Epidemiology MOC|MOC]]</li><li><b>Related</b>: [[Health Systems, UHC &amp; Health Economics.md]], [[Health Promotion &amp; Disease Prevention (Primary, Secondary, Tertiary).md]], [[Health Needs Assessment.md]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p>#medicine #population-health #epidemiology #davidson #fcps #mrcp</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Social Determinants Of Health Health Equity · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

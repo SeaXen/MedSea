@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diffuse Large B Cell Lymphoma Dlbcl — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.7. HAEMATOLOGICAL MALIGNANCIES</span>
+      <div class="h1">Diffuse Large B Cell Lymphoma Dlbcl</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>WHO 2022 classification</b> of DLBCL subtypes (GCB vs ABC, Double/Triple Hit, PMBCL)</li><li>[ ] Apply <b>IPI / NCCN-IPI</b> for risk stratification</li><li>[ ] Select <b>R-CHOP ×6 cycles</b> as standard frontline; <b>Dose-adjusted EPOCH-R</b> for PMBCL</li><li>[ ] Apply <b>CNS prophylaxis</b> criteria (CNS-IPI)</li><li>[ ] Manage <b>relapsed/refractory</b> DLBCL (Salvage → Auto-HSCT → CAR-T / Bispecifics / Tafa-Len)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Aggressive B-cell lymphoma** with **diffuse large cells** — **≥20µm**, **high mitotic rate**, **CD20+**</td></tr><tr><td>**Incidence**</td><td>**~7/100,000/year** — **Most common aggressive NHL (30-40%)**</td></tr><tr><td>**Peak Age**</td><td>**60-70 years**</td></tr><tr><td>**Sex Ratio**</td><td>**M > F** (1.5:1)</td></tr><tr><td>**Aetiology**</td><td>**Immunosuppression (HIV, post-transplant), EBV, Chronic inflammation, Autoimmune, Genetic (MYC/BCL2/BCL6 rearrangements)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">WHO 2022 Classification — **Molecular Subtypes**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Key Genetics</th><th>Prognosis</th><th>Treatment Nuance</th></tr><tr><td>---------</td><td>-----------</td><td>--------------</td><td>-----------</td><td>------------------</td></tr><tr><td>**GCB-DLBCL**</td><td>**40-50%**</td><td>**BCL2 translocation (t(14;18)), EZH2 mut, CREBBP mut**</td><td>Better</td><td>Standard R-CHOP</td></tr><tr><td>**ABC-DLBCL**</td><td>**35-40%**</td><td>**MYD88 L265P, CD79B mut, NF-κB activation**</td><td>Worse</td><td>Consider clinical trial / Lenalidomide + R-CHOP</td></tr><tr><td>**PMBCL**</td><td>**2-4%**</td><td>**Mediastinal mass, CD30+, PD-L1/2 ampl, JAK2 mut**</td><td>Intermediate</td><td>**DA-EPOCH-R** (preferred)</td></tr><tr><td>**Double Hit (DH)**</td><td>**5-10%**</td><td>**MYC + BCL2 or BCL6 rearrangement**</td><td>**Adverse**</td><td>**DA-EPOCH-R** or **R-CHOP + CNS prophylaxis**</td></tr><tr><td>**Triple Hit (TH)**</td><td>**<1%**</td><td>**MYC + BCL2 + BCL6**</td><td>**Very Adverse**</td><td>**Clinical Trial / DA-EPOCH-R**</td></tr><tr><td>**EBV+ DLBCL**</td><td>**Elderly**</td><td>**EBV+, Age >50**, Immunosenescence</td><td>Poor</td><td>R-CHOP ± EBV-targeted</td></tr><tr><td>**HHV8+ DLBCL**</td><td>Immunocompromised</td><td>**HHV8+**, Plasmablastic features</td><td>Poor</td><td>Antiviral + Chemo</td></tr></table>
+<div class="callout">[!critical] <b>Cell-of-Origin (COO) = Hans Algorithm (IHC)</b> - <b>GCB</b>: <b>CD10+, BCL6+, MUM1-</b>; <b>ABC</b>: <b>CD10-, BCL6-, MUM1+</b> (or CD10-, BCL6+, MUM1+)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Staging & Risk Stratification</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Ann Arbor Staging (Same as HL)</div>
+<table class="ctable"><tr><th>Stage</th><th>Definition</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**I**</td><td>Single node/extralymphatic</td></tr><tr><td>**II**</td><td>≥2 nodes same side diaphragm</td></tr><tr><td>**III**</td><td>Both sides diaphragm</td></tr><tr><td>**IV**</td><td>Extralymphatic (BM, Liver, Lung, CNS)</td></tr></table>
+<p><b>Modifiers</b>: A/B, E, S, X (Bulky &gt;10cm)</p>
+<div class="sub-h">IPI (International Prognostic Index) — **High-Yield**</div>
+<table class="ctable"><tr><th>Factor</th><th>Points</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Age >60y**</td><td>1</td></tr><tr><td>**Stage III/IV**</td><td>1</td></tr><tr><td>**LDH >ULN**</td><td>1</td></tr><tr><td>**ECOG PS ≥2**</td><td>1</td></tr><tr><td>**>1 Extralymphatic Site**</td><td>1</td></tr></table>
+<table class="ctable"><tr><th>IPI Score</th><th>Risk Group</th><th>5-yr OS</th></tr><tr><td>-----------</td><td>------------</td><td>---------</td></tr><tr><td>**0-1**</td><td>Low</td><td>**~75%**</td></tr><tr><td>**2**</td><td>Low-Intermediate</td><td>**~60%**</td></tr><tr><td>**3**</td><td>High-Intermediate</td><td>**~45%**</td></tr><tr><td>**4-5**</td><td>High</td><td>**~30%**</td></tr></table>
+<div class="sub-h">NCCN-IPI (Enhanced)</div>
+<table class="ctable"><tr><th>Additional Factors</th><th>Points</th></tr><tr><td>--------------------</td><td>--------</td></tr><tr><td>**Age >70y**</td><td>2</td></tr><tr><td>**Age 61-70y**</td><td>1</td></tr><tr><td>**ECOG 2-4**</td><td>1-2</td></tr><tr><td>**LDH >Normal**</td><td>1-2</td></tr></table>
+<table class="ctable"><tr><th>NCCN-IPI Score</th><th>Risk Group</th><th>5-yr OS</th></tr><tr><td>----------------</td><td>------------</td><td>---------</td></tr><tr><td>**0-1**</td><td>Low</td><td>**~90%**</td></tr><tr><td>**2-3**</td><td>Low-Intermediate</td><td>**~80%**</td></tr><tr><td>**4-5**</td><td>High-Intermediate</td><td>**~60%**</td></tr><tr><td>**≥6**</td><td>High</td><td>**~40%**</td></tr></table>
+<div class="callout">[!critical] <b>Double/Triple Hit</b> = <b>MYC + BCL2/BCL6 rearrangements</b> — <b>Adverse</b>, Requires <b>DA-EPOCH-R</b> or Intensive regimens</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Standard Frontline Therapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">R-CHOP ×6 Cycles — **Gold Standard**</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Day</th></tr><tr><td>------</td><td>------</td><td>-----</td></tr><tr><td>**Rituximab**</td><td>375mg/m²</td><td>D1</td></tr><tr><td>**Cyclophosphamide**</td><td>750mg/m²</td><td>D1</td></tr><tr><td>**Doxorubicin**</td><td>50mg/m²</td><td>D1</td></tr><tr><td>**Vincristine**</td><td>1.4mg/m² (max 2mg)</td><td>D1</td></tr><tr><td>**Prednisolone**</td><td>100mg</td><td>D1-5</td></tr></table>
+<div class="callout">[!critical] <b>R-CHOP ×6 = Standard of Care</b> — <b>CNS Prophylaxis if CNS-IPI High</b></div>
+<div class="sub-h">CNS Prophylaxis — **CNS-IPI (High-Yield)**</div>
+<table class="ctable"><tr><th>Risk Factor</th><th>Points</th></tr><tr><td>-------------</td><td>--------</td></tr><tr><td>**Age ≥60**</td><td>1</td></tr><tr><td>**Stage III/IV**</td><td>1</td></tr><tr><td>**≥2 Extralymphatic Sites**</td><td>1</td></tr><tr><td>**LDH >ULN**</td><td>1</td></tr><tr><td>**Kidney/Adrenal Involvement**</td><td>1</td></tr></table>
+<table class="ctable"><tr><th>CNS-IPI Score</th><th>Risk</th><th>CNS Prophylaxis</th></tr><tr><td>---------------</td><td>------</td><td>-----------------</td></tr><tr><td>**0-1**</td><td>Low</td><td>**None**</td></tr><tr><td>**2-3**</td><td>Intermediate</td><td>**Consider IT MTX ×4-6**</td></tr><tr><td>**≥4**</td><td>High</td><td>**IT MTX ×4-6 ± HD-MTX**</td></tr></table>
+<div class="callout">[!critical] <b>High-Risk CNS Sites</b>: Kidney, Adrenal, Testis, Breast, Uterus — <b>No IT MTX penetration</b> → <b>HD-MTX (3.5g/m²) ± RT</b></div>
+<div class="sub-h">High-Intensity Regimens for High-Risk</div>
+<table class="ctable"><tr><th>Regimen</th><th>Indication</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**DA-EPOCH-R**</td><td>**Double Hit / Triple Hit / PMBCL / High IPI / CNS Involvement**</td></tr><tr><td>**R-CHOP + CNS Prorophylaxis**</td><td>High CNS-IPI</td></tr><tr><td>**R-CHOP + Lenalidomide** (Robust)</td><td>ABC-DLBCL (PHOENIX) — **No OS benefit in unselected**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Relapsed/Refractory DLBCL — **Salvage → Auto-HSCT → Novel**</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Relapsed/Refractory DLBCL] --&gt; B{Time to Relapse} B --&gt;|Early (&lt;12mo) / Refractory| C[<b>Salvage Chemo</b>\n<b>R-ICE / R-GDP / R-DHAP / R-DICE</b>\n→ <b>Auto-HSCT if Chemosensitive</b>] B --&gt;|Late Relapse (&gt;12mo)| D[<b>R-CHOP Re-challenge</b>\nOR <b>Salvage Chemo</b>\n→ <b>Auto-HSCT if Chemosensitive</b>] C --&gt; E[<b>Auto-HSCT</b>\n<b>BEAM / CBV / BuMel</b>\nChemosensitivity = Prerequisite] D --&gt; E E --&gt; F{Post-ASCT Relapse / Refractory} F --&gt;|Yes| G[<b>Blinatumomab (CD19 BiTE)</b>\n<b>Polatuzumab Vedotin + BR</b>\n<b>Tafasitamab + Lenalidomide</b>\n<b>CAR-T (CD19: Tisagenlecleucel, Axicabtagene)</b>\n<b>Selinexor + Dex</b>] </code>``</p>
+<table class="ctable"><tr><th>Salvage Regimen</th><th>Response Rate</th><th>Key Feature</th></tr><tr><td>-----------------</td><td>---------------</td><td>-------------</td></tr><tr><td>**R-ICE**</td><td>~60-70%</td><td>**Ifosfamide + Carboplatin + Etoposide + Ritux**</td></tr><tr><td>**R-GDP**</td><td>~60%</td><td>**Gemcitabine + Dex + Cisplatin + Ritux**</td></tr><tr><td>**R-DHAP**</td><td>~60%</td><td>**Dex + Cytarabine + Cisplatin + Ritux**</td></tr><tr><td>**Polatuzumab Vedotin + BR**</td><td>~40-50%</td><td>Anti-CD79b ADC</td></tr><tr><td>**Tafasitamab + Lenalidomide**</td><td>~50%</td><td>CD19 ADC + Lenalidomide (L-MIND)</td></tr><tr><td>**CAR-T (CD19)**</td><td>**40-50% CR**</td><td>**Axicabtagene, Tisagenlecleucel, Lisocabtagene**</td></tr><tr><td>**Selinexor + Dex**</td><td>~30%</td><td>XPO1 Inhibitor (STORM)</td></tr></table>
+<div class="callout">[!critical] <b>Auto-HSCT = Only Curative for Chemosensitive Relapse</b> — <b>BEAM / CBV / BuMel conditioning</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Special Subtypes — **High-Yield**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Primary Mediastinal B-Cell Lymphoma (PMBCL)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Age**</td><td>**Young adults (20-40y)**, **F > M**</td></tr><tr><td>**Site**</td><td>**Anterior mediastinal mass** — SVC obstruction, PND</td></tr><tr><td>**Immunophenotype**</td><td>**CD30+, CD23+, MAL+, BCL6+, PAX5+, CD20+**</td></tr><tr><td>**Genetics**</td><td>**9p24.1 amplif (PD-L1/PD-L2), JAK2 mut, SOCS1 mut**</td></tr><tr><td>**Treatment**</td><td>**DA-EPOCH-R (Dose-Adjusted EPOCH-R)** — **Preferred over R-CHOP** (superior PFS)</td></tr><tr><td>**Consolidation RT**</td><td>**Controversial** — **Omit if PET-ve post-DA-EPOCH-R**</td></tr></table>
+<div class="sub-h">Transformed FL → DLBCL</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>**15-30% FL** transform over 10-15y</td></tr><tr><td>**Clinical**</td><td>**Rapidly growing nodes, B-symptoms, LDH↑↑**</td></tr><tr><td>**Treatment**</td><td>**R-CHOP or R-CHOP-like** → **Auto-HSCT if chemosensitive**</td></tr></table>
+<div class="sub-h">Primary CNS Lymphoma (PCNSL)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Immunophenotype**</td><td>**DLBCL, ABC-type**, CD20+, BCL6+, MUM1+</td></tr><tr><td>**Treatment**</td><td>**HD-MTX 3.5g/m² ×4-6** + **Rituximab** + **Consolidation (HD-Ara-C / WBRT)**</td></tr><tr><td>**Eyes**</td><td>**Ocular involvement** — Intravitreal MTX + RT</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Definition**</td><td>**Aggressive B-NHL**, CD20+, diffuse large cells</td></tr><tr><td>**COO**</td><td>**GCB (CD10+, BCL6+)** vs **ABC (MUM1+, CD10-)** — GCB better prognosis</td></tr><tr><td>**Double/Triple Hit**</td><td>**MYC + BCL2/BCL6** rearrangement — **Adverse**, **DA-EPOCH-R preferred**</td></tr><tr><td>**PMBCL**</td><td>**Mediastinal mass, CD30+, CD23+**, **DA-EPOCH-R preferred**</td></tr><tr><td>**IPI / NCCN-IPI**</td><td>**Age, Stage, LDH, ECOG, Extranodal** → Risk stratification</td></tr><tr><td>**CNS Prophylaxis**</td><td>**CNS-IPI ≥4 → IT MTX + HD-MTX** (Kidney/Adrenal sanctuary)</td></tr><tr><td>**Frontline**</td><td>**R-CHOP ×6** (Standard); **DA-EPOCH-R** for High-risk/DH/TH/PMBCL</td></tr><tr><td>**Relapsed**</td><td>**Salvage (R-ICE/GDP/DHAP) → Auto-HSCT if Chemosensitive**</td></tr><tr><td>**Refractory**</td><td>**CAR-T (CD19), Pola-BR, Tafasitamab-Len, Selinexor, Bispecifics**</td></tr><tr><td>**CNS Relapse**</td><td>**IT MTX + HD-MTX + RT** (Sanctuary sites: Kidney, Adrenal, Testis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>"What is the standard first-line treatment for DLBCL?"</td><td>**R-CHOP ×6 cycles** (Rituximab + Cyclophosphamide + Doxorubicin + Vincristine + Prednisolone)</td></tr><tr><td>"How do you calculate the IPI score for DLBCL?"</td><td>**5 factors**: Age>60, Stage III/IV, LDH>ULN, ECOG≥2, >1 Extralymphatic site — **Score 0-5**</td></tr><tr><td>"What is the CNS-IPI and when do you give prophylaxis?"</td><td>**5 factors**: Age≥60, Stage III/IV, ≥2 Extralymphatic, LDH>ULN, Kidney/Adrenal involvement. **Score ≥4 = High risk → IT MTX + HD-MTX**</td></tr><tr><td>"What is a Double-Hit lymphoma?"</td><td>**MYC + BCL2 or BCL6 rearrangement** on FISH — **Adverse prognosis**</td></tr><tr><td>"What is the treatment for Double-Hit lymphoma?"</td><td>**DA-EPOCH-R (Dose-Adjusted EPOCH-R)** preferred over R-CHOP</td></tr><tr><td>"What is the standard salvage regimen for relapsed DLBCL?"</td><td>**R-ICE / R-GDP / R-DHAP** → **Auto-HSCT if chemosensitive**</td></tr><tr><td>"What is the role of CAR-T in DLBCL?"</td><td>**CD19 CAR-T (Axicabtagene, Tisagenlecleucel, Lisocabtagene)** — **R/R after ≥2 lines (ZUMA-1, JULIET, TRANSCEND)**</td></tr><tr><td>"What is the management of primary CNS lymphoma?"</td><td>**HD-MTX 3.5g/m² ×4-6 + Rituximab** → Consolidation (HD-Ara-C / WBRT)</td></tr><tr><td>"What is the difference between GCB and ABC DLBCL?"</td><td>**GCB**: CD10+, BCL6+, MUM1- (Better prognosis); **ABC**: CD10-, BCL6-, MUM1+ (Worse) — Hans Algorithm</td></tr><tr><td>"What is the treatment for relapsed DLBCL after Auto-HSCT?"</td><td>**CAR-T (19-28), Polatuzumab+BR, Tafasitamab+Len, Selinexor, Bispecifics, Clinical Trial**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**DLBCL vs FL**</td><td>**DLBCL**: Aggressive, diffuse large cells, R-CHOP; **FL**: Indolent, follicular pattern, Watch & Wait / R-Benda</td></tr><tr><td>**GCB vs ABC**</td><td>**GCB**: CD10+, BCL6+, MUM1-; **ABC**: CD10-, MUM1+ — **Hans Algorithm (IHC)**</td></tr><tr><td>**DH/TH vs Single Hit**</td><td>**DH = MYC + BCL2/BCL6**; **TH = MYC + BCL2 + BCL6** — **Adverse, DA-EPOCH-R**</td></tr><tr><td>**PMBCL vs DLBCL**</td><td>**PMBCL**: Mediastinal, Young F, CD30+/CD23+, 9p24.1 amplif (PD-L1/2), **DA-EPOCH-R preferred**</td></tr><tr><td>**CNS Prophylaxis**</td><td>**CNS-IPI ≥4 = High risk** → IT MTX + HD-MTX; **Kidney/Adrenal = Sanctuary sites** (no IT penetration)</td></tr><tr><td>**R-CHOP vs DA-EPOCH-R**</td><td>**R-CHOP = Standard**; **DA-EPOCH-R** = DH/TH/PMBCL/High IPI/CNS</td></tr><tr><td>**Auto-HSCT vs Allo-HSCT**</td><td>**Auto-HSCT for DLBCL relapse (Chemosensitive)**; **Allo-HSCT for Allo-eligible, Refractory, Post-Auto Relapse**</td></tr></table>
+<p><b>Mnemonic: DLBCL Subtypes = "GCB-ABC-PM-DH-TH"</b></p>
+<ul><li><b>GCB</b> (CD10+, BCL6+, Good)</li><li><b>ABC</b> (MUM1+, Poor)</li><li><b>PMBCL</b> (Mediastinal, DA-EPOCH-R)</li><li><b>DH</b> (MYC+BCL2/6)</li><li><b>TH</b> (MYC+BCL2+BCL6)</li></ul>
+<p><b>Mnemonic: IPI = "A-L-E-E"</b></p>
+<ul><li><b>A</b>ge &gt;60</li><li><b>L</b>DH &gt;ULN</li><li><b>P</b>erformance Status (ECOG≥2)</li><li><b>E</b>xtranodal sites &gt;1</li><li><b>S</b>tage III/IV</li></ul>
+<p><b>Mnemonic: CNS-IPI = "60-3-2-L-K"</b></p>
+<ul><li><b>60</b> (Age ≥60)</li><li><b>3</b> (Stage III/IV)</li><li><b>2</b> (Extralymphatic ≥2)</li><li><b>L</b>DH &gt;ULN</li><li><b>K</b>idney/Adrenal</li></ul>
+<p><b>Mnemonic: DH/TH = "MYC + BCL2/6 = DH; MYC + BCL2 + BCL6 = TH"</b></p>
+<ul><li><b>D</b>ouble <b>H</b>it = <b>MYC + BCL2/BCL6</b></li><li><b>T</b>riple <b>H</b>it = <b>MYC + BCL2 + BCL6</b></li></ul>
+<p><b>Mnemonic: Salvage = "R-ICE / R-GDP / R-DHAP"</b></p>
+<ul><li><b>R</b>-<b>I</b>fosfamide <b>C</b>arboplatin <b>E</b>toposide</li><li><b>R</b>-<b>G</b>emcitabine <b>D</b>examethasone <b>P</b>latin (Cisplatin)</li><li><b>R</b>-<b>D</b> <b>H</b>igh-dose <b>A</b>ra-C <b>P</b>latin (Cisplatin)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((DLBCL)) Subtypes GCB CD10+_BCL6+ ABC MUM1+ PMBCL Mediastinal DA_EPOCH_R Double_Hit MYC_BCL2_BCL6 Triple_Hit MYC_BCL2_BCL6 EBV_Positive HHV8_Positive Staging Ann_Arbor IPI_NCCN_IPI Molecular COO_Hans MYC_BCL2_BCL6 FISH Treatment RCHOP_x6 DA_EPOCH_R CNS_Prophylaxis Relapse Salvage_R_ICE_GDP_DHAP Auto_HSCT_BEAM CAR_T Pola_BR Tafasitamab_Len Selinexor Special PMBCL Transformed_FL PCNSL HIV_Related </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Definition**</td><td>Aggressive B-NHL, CD20+, Diffuse large cells</td></tr><tr><td>**COO**</td><td>**GCB (CD10+, BCL6+)** vs **ABC (MUM1+)** — Hans Algorithm</td></tr><tr><td>**Double Hit**</td><td>**MYC + BCL2/BCL6** — **DA-EPOCH-R** preferred</td></tr><tr><td>**PMBCL**</td><td>Mediastinal, CD30+/CD23+, **DA-EPOCH-R**</td></tr><tr><td>**IPI**</td><td>Age>60, Stage III/IV, LDH, ECOG≥2, Extranodal>1 → **0-5**</td></tr><tr><td>**CNS-IPI**</td><td>Age≥60, Stage III/IV, Extranodal≥2, LDH, Kidney/Adrenal → **≥4 = High Risk**</td></tr><tr><td>**1L**</td><td>**R-CHOP ×6** (Standard); **DA-EPOCH-R** if DH/TH/PMBCL/High IPI</td></tr><tr><td>**CNS Prophylaxis**</td><td>**CNS-IPI ≥4** → IT MTX + **HD-MTX** (Kidney/Adrenal sanctuary)</td></tr><tr><td>**Relapse**</td><td>Salvage (R-ICE/GDP) → **Auto-HSCT** if chemosensitive</td></tr><tr><td>**Refractory**</td><td>**CAR-T (CD19)**, **Pola-BR, Tafasitamab+Len, Selinexor, Bispecifics**</td></tr><tr><td>**PMBCL**</td><td>Mediastinal, Young F, **DA-EPOCH-R** preferred, ± RT consolidation</td></tr><tr><td>**Double/ Triple Hit**</td><td>**MYC + BCL2/BCL6 / BCL2+BCL6** → **DA-EPOCH-R**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>DLBCL Subtypes & COO</td><td></td><td></td></tr><tr><td>IPI / CNS-IPI Application</td><td></td><td></td></tr><tr><td>Double/Triple Hit Recognition</td><td></td><td></td></tr><tr><td>Frontline Treatment Selection</td><td></td><td></td></tr><tr><td>Salvage & Auto-HSCT Criteria</td><td></td><td></td></tr><tr><td>Refractory Management (CAR-T, etc.)</td><td></td><td></td></tr><tr><td>CNS Prophylaxis Algorithm</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Parent Topic Group</b>: [[Lymphomas]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Follicular Lymphoma]] · [[Hodgkin Lymphoma]] · [[Primary Mediastinal B-Cell Lymphoma]] · [[Oncologic Emergencies Overview]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (Definition), which statement is correct? A. <b>Aggressive B-NHL</b>, CD20+, diffuse large cells B. **Aggressive - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Aggressive B-NHL</b>, CD20+, diffuse large cells</li></ul>
+<p><b>2.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (COO), which statement is correct? A. <b>GCB (CD10+, BCL6+)</b> vs <b>ABC (MUM1+, CD10-)</b> B. **GCB - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>GCB (CD10+, BCL6+)</b> vs <b>ABC (MUM1+, CD10-)</b> — GCB better prognosis</li></ul>
+<p><b>3.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (Double/Triple Hit), which statement is correct? A. <b>MYC + BCL2/BCL6</b> rearrangement B. **MYC - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>MYC + BCL2/BCL6</b> rearrangement — <b>Adverse</b>, <b>DA-EPOCH-R preferred</b></li></ul>
+<p><b>4.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (PMBCL), which statement is correct? A. <b>Mediastinal mass, CD30+, CD23+</b>, <b>DA-EPOCH-R preferred</b> B. **Mediastinal - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Mediastinal mass, CD30+, CD23+</b>, <b>DA-EPOCH-R preferred</b></li></ul>
+<p><b>5.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (IPI / NCCN-IPI), which statement is correct? A. <b>Age, Stage, LDH, ECOG, Extranodal</b> → Risk stratification B. **Age, - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Age, Stage, LDH, ECOG, Extranodal</b> → Risk stratification</li></ul>
+<p><b>6.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (CNS Prophylaxis), which statement is correct? A. <b>CNS-IPI ≥4 → IT MTX + HD-MTX</b> (Kidney/Adrenal sanctuary) B. **CNS-IPI - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CNS-IPI ≥4 → IT MTX + HD-MTX</b> (Kidney/Adrenal sanctuary)</li></ul>
+<p><b>7.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (Frontline), which statement is correct? A. <b>R-CHOP ×6</b> (Standard) B. **R-CHOP - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>R-CHOP ×6</b> (Standard); <b>DA-EPOCH-R</b> for High-risk/DH/TH/PMBCL</li></ul>
+<p><b>8.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (Relapsed), which statement is correct? A. <b>Salvage (R-ICE/GDP/DHAP) → Auto-HSCT if Chemosensitive</b> B. **Salvage - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Salvage (R-ICE/GDP/DHAP) → Auto-HSCT if Chemosensitive</b></li></ul>
+<p><b>9.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (Refractory), which statement is correct? A. <b>CAR-T (CD19), Pola-BR, Tafasitamab-Len, Selinexor, Bispecifics</b> B. **CAR-T - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>CAR-T (CD19), Pola-BR, Tafasitamab-Len, Selinexor, Bispecifics</b></li></ul>
+<p><b>10.</b> Regarding Diffuse Large B-Cell Lymphoma (DLBCL) (CNS Relapse), which statement is correct? A. <b>IT MTX + HD-MTX + RT</b> (Sanctuary sites: Kidney, Adrenal, Testis) B. **IT - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>IT MTX + HD-MTX + RT</b> (Sanctuary sites: Kidney, Adrenal, Testis)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Aggressive B-NHL</b>, CD20+, diffuse large cells</li><li>B. **Aggressive (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Aggressive B-NHL</b>, CD20+, diffuse large cells</li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>GCB (CD10+, BCL6+)</b> vs <b>ABC (MUM1+, CD10-)</b></li><li>B. **GCB (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>GCB (CD10+, BCL6+)</b> vs <b>ABC (MUM1+, CD10-)</b> — GCB better prognosis</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>MYC + BCL2/BCL6</b> rearrangement</li><li>B. **MYC (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>MYC + BCL2/BCL6</b> rearrangement — <b>Adverse</b>, <b>DA-EPOCH-R preferred</b></li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Mediastinal mass, CD30+, CD23+</b>, <b>DA-EPOCH-R preferred</b></li><li>B. **Mediastinal (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Mediastinal mass, CD30+, CD23+</b>, <b>DA-EPOCH-R preferred</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Age, Stage, LDH, ECOG, Extranodal</b> → Risk stratification</li><li>B. **Age, (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Age, Stage, LDH, ECOG, Extranodal</b> → Risk stratification</li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>CNS-IPI ≥4 → IT MTX + HD-MTX</b> (Kidney/Adrenal sanctuary)</li><li>B. **CNS-IPI (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>CNS-IPI ≥4 → IT MTX + HD-MTX</b> (Kidney/Adrenal sanctuary)</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>R-CHOP ×6</b> (Standard)</li><li>B. **R-CHOP (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>R-CHOP ×6</b> (Standard); <b>DA-EPOCH-R</b> for High-risk/DH/TH/PMBCL</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>Salvage (R-ICE/GDP/DHAP) → Auto-HSCT if Chemosensitive</b></li><li>B. **Salvage (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>Salvage (R-ICE/GDP/DHAP) → Auto-HSCT if Chemosensitive</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>CAR-T (CD19), Pola-BR, Tafasitamab-Len, Selinexor, Bispecifics</b></li><li>B. **CAR-T (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>CAR-T (CD19), Pola-BR, Tafasitamab-Len, Selinexor, Bispecifics</b></li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>IT MTX + HD-MTX + RT</b> (Sanctuary sites: Kidney, Adrenal, Testis)</li><li>B. **IT (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>IT MTX + HD-MTX + RT</b> (Sanctuary sites: Kidney, Adrenal, Testis)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> Definition? <b>A1:</b> Aggressive B-NHL, CD20+, diffuse large cells</p>
+<p><b>Q2:</b> COO? <b>A2:</b> GCB (CD10+, BCL6+) vs ABC (MUM1+, CD10-) — GCB better prognosis</p>
+<p><b>Q3:</b> Double/Triple Hit? <b>A3:</b> MYC + BCL2/BCL6 rearrangement — Adverse, DA-EPOCH-R preferred</p>
+<p><b>Q4:</b> PMBCL? <b>A4:</b> Mediastinal mass, CD30+, CD23+, DA-EPOCH-R preferred</p>
+<p><b>Q5:</b> IPI / NCCN-IPI? <b>A5:</b> Age, Stage, LDH, ECOG, Extranodal → Risk stratification</p>
+<p><b>Q6:</b> CNS Prophylaxis? <b>A6:</b> CNS-IPI ≥4 → IT MTX + HD-MTX (Kidney/Adrenal sanctuary)</p>
+<p><b>Q7:</b> Frontline? <b>A7:</b> R-CHOP ×6 (Standard); DA-EPOCH-R for High-risk/DH/TH/PMBCL</p>
+<p><b>Q8:</b> Relapsed? <b>A8:</b> Salvage (R-ICE/GDP/DHAP) → Auto-HSCT if Chemosensitive</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Definition</td><td>Aggressive B-NHL, CD20+, diffuse large cells</td></tr><tr><td>2</td><td>A</td><td>COO</td><td>GCB (CD10+, BCL6+) vs ABC (MUM1+, CD10-) — GCB better prognosis</td></tr><tr><td>3</td><td>A</td><td>Double/Triple Hit</td><td>MYC + BCL2/BCL6 rearrangement — Adverse, DA-EPOCH-R preferred</td></tr><tr><td>4</td><td>A</td><td>PMBCL</td><td>Mediastinal mass, CD30+, CD23+, DA-EPOCH-R preferred</td></tr><tr><td>5</td><td>A</td><td>IPI / NCCN-IPI</td><td>Age, Stage, LDH, ECOG, Extranodal → Risk stratification</td></tr><tr><td>6</td><td>A</td><td>CNS Prophylaxis</td><td>CNS-IPI ≥4 → IT MTX + HD-MTX (Kidney/Adrenal sanctuary)</td></tr><tr><td>7</td><td>A</td><td>Frontline</td><td>R-CHOP ×6 (Standard); DA-EPOCH-R for High-risk/DH/TH/PMBCL</td></tr><tr><td>8</td><td>A</td><td>Relapsed</td><td>Salvage (R-ICE/GDP/DHAP) → Auto-HSCT if Chemosensitive</td></tr><tr><td>9</td><td>A</td><td>Refractory</td><td>CAR-T (CD19), Pola-BR, Tafasitamab-Len, Selinexor, Bispecifics</td></tr><tr><td>10</td><td>A</td><td>CNS Relapse</td><td>IT MTX + HD-MTX + RT (Sanctuary sites: Kidney, Adrenal, Testis)</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>Definition</td><td>Aggressive B-NHL, CD20+, diffuse large cells</td></tr><tr><td>2</td><td>A</td><td>COO</td><td>GCB (CD10+, BCL6+) vs ABC (MUM1+, CD10-) — GCB better prognosis</td></tr><tr><td>3</td><td>A</td><td>Double/Triple Hit</td><td>MYC + BCL2/BCL6 rearrangement — Adverse, DA-EPOCH-R preferred</td></tr><tr><td>4</td><td>A</td><td>PMBCL</td><td>Mediastinal mass, CD30+, CD23+, DA-EPOCH-R preferred</td></tr><tr><td>5</td><td>A</td><td>IPI / NCCN-IPI</td><td>Age, Stage, LDH, ECOG, Extranodal → Risk stratification</td></tr><tr><td>6</td><td>A</td><td>CNS Prophylaxis</td><td>CNS-IPI ≥4 → IT MTX + HD-MTX (Kidney/Adrenal sanctuary)</td></tr><tr><td>7</td><td>A</td><td>Frontline</td><td>R-CHOP ×6 (Standard); DA-EPOCH-R for High-risk/DH/TH/PMBCL</td></tr><tr><td>8</td><td>A</td><td>Relapsed</td><td>Salvage (R-ICE/GDP/DHAP) → Auto-HSCT if Chemosensitive</td></tr><tr><td>9</td><td>A</td><td>Refractory</td><td>CAR-T (CD19), Pola-BR, Tafasitamab-Len, Selinexor, Bispecifics</td></tr><tr><td>10</td><td>A</td><td>CNS Relapse</td><td>IT MTX + HD-MTX + RT (Sanctuary sites: Kidney, Adrenal, Testis)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Diffuse Large B Cell Lymphoma Dlbcl · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

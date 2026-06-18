@@ -1,0 +1,523 @@
+# Prescribing in Clinical Contexts
+
+> [!info]
+> **Heading Hub** for Davidson Chapter 2: Clinical therapeutics and good prescribing.
+> Davidson alignment: *Section on Prescribing in Clinical Contexts* (SRJ Maxwell).
+
+## 1. Scope
+Context-specific prescribing: Pain management, Antimicrobial stewardship, Palliative care, Perioperative medication management.
+
+## 2. Sub-Topics (Topic-Groups)
+
+### [[Clinical Contexts/Pain management|Pain Management Prescribing]]
+- [[Clinical Contexts/WHO analgesic ladder|WHO Analgesic Ladder]] (Step 1-3 + Adjuvants)
+- [[Clinical Contexts/Neuropathic pain|Neuropathic Pain Agents]] — Gabapentinoids, TCAs, SNRIs, Topical
+- [[Clinical Contexts/Opioid prescribing|Opioid Prescribing Safety]] — Equianalgesic conversion, Rotation, STOPP, CDC/NICE guidelines
+
+### [[Clinical Contexts/Antimicrobial stewardship|Antimicrobial Stewardship Prescribing]]
+- [[Clinical Contexts/Empiric vs directed|Empiric vs Directed Therapy]] — Local epidemiology, Severity
+- [[Clinical Contexts/Duration stewardship|Duration of Therapy Stewardship]] — Short-course evidence, Stop rules
+- [[Clinical Contexts/Prophylaxis|Surgical & Medical Prophylaxis]] — Timing, Duration, Agent selection
+
+### [[Clinical Contexts/Palliative care|Palliative Care Prescribing]]
+- [[Clinical Contexts/Symptom control|Symptom Control]] — Nausea, Dyspnoea, Secretions, Pain, Agitation
+- [[Clinical Contexts/Syringe drivers|Syringe Driver Compatibility]] — Drug combinations, Diluent, Stability
+
+### [[Clinical Contexts/Perioperative|Perioperative Medication Management]]
+- [[Clinical Contexts/Preoperative holding|Preoperative Drug Holding]] — ACEi/ARB, Metformin, Anticoagulants, Steroids, SGLT2i
+- [[Clinical Contexts/Postoperative resumption|Postoperative Resumption]] — Timing, Restart criteria
+
+---
+
+## 3. FCPS/MRCP High-Yield Summary
+
+### WHO Analgesic Ladder (1986, Updated)
+| Step | Pain Level | Drugs | Examples |
+|------|------------|-------|----------|
+| **Step 1** | Mild (1-3/10) | **Non-opioid ± Adjuvant** | Paracetamol 1g QDS, NSAIDs (Ibuprofen 400mg TDS, Naproxen 250-500mg BD) |
+| **Step 2** | Moderate (4-6/10) | **Weak opioid ± Non-opioid ± Adjuvant** | Codeine 30-60mg QDS, Tramadol 50-100mg QDS, Dihydrocodeine 30mg QDS |
+| **Step 3** | Severe (7-10/10) | **Strong opioid ± Non-opioid ± Adjuvant** | **Morphine** (PO 10-20mg 4hly, SC 5-10mg 4hly), Oxycodone, Fentanyl, Alfentanil, Hydromorphone |
+
+**Adjuvants (Any Step):**
+- **Neuropathic:** Gabapentin, Pregabalin, Amitriptyline/Nortriptyline, Duloxetine, Carbamazepine
+- **Bone pain:** Bisphosphonates (Zoledronic acid), Denosumab, Radiotherapy
+- **Muscle spasm:** Baclofen, Tizanidine, Diazepam
+- **Corticosteroids:** Dexamethasone (nerve compression, raised ICP, bone pain)
+
+### Opioid Equianalgesic Conversion (Approximate — Individualise!)
+
+| Drug | PO Dose (mg) | SC/IV Dose (mg) | Relative Potency |
+|------|--------------|-----------------|------------------|
+| **Morphine** | 30 | 10 | 1 (Reference) |
+| **Oxycodone** | 20 | 10 | 1.5-2x Morphine PO |
+| **Hydromorphone** | 7.5 | 1.5 | 4-5x Morphine PO |
+| **Fentanyl** | — | 0.1 (100µg) | 100x Morphine IV |
+| **Alfentanil** | — | 0.5-1mg | 10-20x Morphine IV |
+| **Tramadol** | 300 | 100 | 0.1x Morphine PO |
+| **Codeine** | 200 | — | 0.15x Morphine PO |
+| **Buprenorphine (Patch)** | 20µg/h ≈ 60mg Morphine/24h | — | Transdermal |
+
+**Pearls:** Reduce calculated dose by **25-50% on rotation** (incomplete cross-tolerance); Renal impairment → Avoid morphine (M6G accumulation) → Use **Oxycodone, Fentanyl, Alfentanil, Buprenorphine**; **Methadone** complex conversion — Specialist only.
+
+### Neuropathic Pain — NICE CG173 / SIGN 136 Algorithm
+| Line | Drug | Dose Range | Key Points |
+|------|------|------------|------------|
+| **1st** | **Gabapentin** OR **Pregabalin** OR **Amitriptyline** OR **Duloxetine** | Gabapentin 300-3600mg/day; Pregabalin 150-600mg/day; Amitriptyline 10-75mg nocte; Duloxetine 60-120mg/day | Titrate slowly; Renal adjust gabapentin/pregabalin; Amitriptyline caution elderly/cardiac |
+| **2nd** | Switch to alternative 1st line OR Combine | — | Combination evidence limited |
+| **3rd** | **Tramadol** (short-term) OR **Specialist referral** | Tramadol max 400mg/day | Avoid long-term; Consider spinal/interventional |
+| **Topical** | **Lidocaine 5% plaster** (PHN) OR **Capsaicin 0.075%/8%** | PLasters 12h on/12h off | Localised neuropathic pain |
+
+### Antimicrobial Stewardship — Core Principles
+
+| Principle | Action |
+|-----------|--------|
+| **Start Smart** | Empiric therapy per local guidelines; Cultures BEFORE antibiotics; Document indication, duration, review date |
+| **Focus** | Review at 48-72h: De-escalate (narrow), Switch IV→PO, Stop if culture negative / non-infectious |
+| **Shortest Effective Duration** | CAP: 5d; UTI: 3d (women), 7d (men/complicated); SSTI: 5d; Intra-abdominal: 4d post-source control; Bacteremia (uncomplicated): 7d |
+| **IV to PO Switch** | Clinical improvement, Oral absorption intact, Suitable PO agent available — **Usually 48-72h** |
+
+### Surgical Antibiotic Prophylaxis
+| Surgery Type | Agent | Timing | Duration |
+|--------------|-------|--------|----------|
+| **Clean (Cardiac, Ortho, Vascular, Neuro)** | Cefuroxime 1.5g IV (or Cefazolin) | **0-60 min before incision** (Fluoroquinolones 60-120 min) | **Single dose** (Redose if >4h or blood loss >1.5L) |
+| **Clean-contaminated (GI, GU, OBGYN, H&N)** | Cefuroxime + Metronidazole (or Co-amoxiclav) | 0-60 min before incision | Single dose (Extend 24h if drain/contamination) |
+| **Contaminated/Dirty** | Therapeutic antibiotics (not prophylaxis) | ASAP | Full therapeutic course |
+
+### Palliative Symptom Control — Quick Prescribing
+
+| Symptom | 1st Line | 2nd Line / Alternatives | Syringe Driver (24h) |
+|---------|----------|-------------------------|----------------------|
+| **Pain** | Morphine PO/SC | Oxycodone, Fentanyl, Alfentanil | Morphine 10-30mg/24h (titrate) |
+| **Nausea/Vomiting** | **Haloperidol** 1.5-5mg SC/PO (Dopaminergic) | Levomepromazine 6.25-25mg SC (Broad), Cyclizine 50mg SC (Vestibular), Ondansetron 4-8mg (5-HT3) | Haloperidol 5-10mg/24h, Levomepromazine 12.5-25mg/24h |
+| **Dyspnoea** | **Morphine** 2.5-5mg PO/SC (Low dose) | Oxycodone, Fentanyl; Benzodiazepine (Anxiety component) | Morphine 5-10mg/24h + Midazolam 5-10mg/24h |
+| **Respiratory Secretions** | **Glycopyrronium** 0.2-0.4mg SC (Preferred, less CNS) | Hyoscine butylbromide 20mg SC, Hyoscine hydrobromide 0.4mg SC (Central) | Glycopyrronium 0.6-1.2mg/24h |
+| **Agitation/Delirium** | **Haloperidol** 0.5-5mg SC/PO (1st line) | Levomepromazine 6.25-25mg SC, Midazolam 2.5-10mg SC (Terminal agitation) | Haloperidol 5-10mg/24h, Midazolam 10-30mg/24h |
+
+### Syringe Driver Compatibility (Common Safe Combinations — Water for Injection diluent)
+| Compatible Combination | Notes |
+|------------------------|-------|
+| **Morphine + Haloperidol** | Most common; Stable 24h |
+| **Morphine + Haloperidol + Midazolam** | Stable; Midazolam may precipitate at high conc >5mg/mL |
+| **Morphine + Hyoscine butylbromide** | Stable |
+| **Oxycodone + Haloperidol + Midazolam** | Stable |
+| **Alfentanil + Midazolam + Haloperidol** | Stable |
+| **AVOID** | **Cyclizine** (precipitates with opioids, hyoscines); **Dexamethasone** (precipitates); **Furosemide** (incompatible); **Metoclopramide** (incompatible with many) |
+
+### Perioperative Drug Holding/Resumption
+
+| Drug Class | Preoperative Holding | Postoperative Resumption |
+|------------|----------------------|--------------------------|
+| **ACEi / ARB** | **Omit morning of surgery** (↑ intraoperative hypotension) | Restart when euvolaemic, stable renal function, not on nephrotoxins (usually POD 1-2) |
+| **Metformin** | **Omit day of surgery** (↑ lactic acidosis risk if AKI) | Restart when eating/drinking, renal function normal (eGFR ≥60) — usually POD 1-2 |
+| **SGLT2 Inhibitors** (Empagliflozin, Dapagliflozin) | **Stop 3 days before** (↑ euglycaemic DKA risk) | Restart when eating/drinking normally, ketones negative — usually POD 2-3 |
+| **Warfarin** | **Stop 5 days pre-op**; Bridge with LMWH if high thrombotic risk (Mechanical mitral, AF CHA₂DS₂-VASc≥7, VTE<3mo) | Restart warfarin POD 1 (if haemostasis secure); Bridge with LMWH until INR therapeutic |
+| **DOACs** | **CrCl >50: Omit 24h**; **CrCl 30-50: Omit 48h**; **CrCl 15-30: Omit 72h** (No bridging routinely) | Restart 24h post-op (low bleed risk); 48-72h (high bleed risk); No bridging |
+| **Aspirin / Clopidogrel** | **Aspirin: Continue** (most surgery); **Clopidogrel: Stop 5-7d** if high bleed risk (Neuro, Ocular, Cardiac) | Aspirin: Continue; Clopidogrel: Restart 24h post-op if haemostasis secure |
+| **Corticosteroids** (≥10mg Pred/day >3wk) | **Stress-dose hydrocortisone** 50-100mg IV q8h peri-op (If HPA suppression suspected) | Resume usual dose; Taper stress-dose over 24-48h |
+| **Immunosuppressants** (Tacrolimus, Ciclosporin, MMF) | **Continue** (Transplant patients — avoid rejection) | Continue; Monitor levels |
+| **DOACs (Mechanical Valve)** | **CONTRAINDICATED** — Must use Warfarin | — |
+
+---
+
+## 4. Navigation
+- **Parent Chapter**: [[Davidson Chapter 2 - Clinical Therapeutics Hierarchy|Chapter 2 Hierarchy]]
+- **Chapter MOC**: [[Clinical Therapeutics and Good Prescribing MOC]]
+- **Template**: [[../Templates/Clinical Therapeutics and Good Prescribing Topic Template|Topic Template]]
+
+## 5. Tags
+#medicine #clinical-therapeutics #davidson #hub #pain-management #opioids #neuropathic-pain #antimicrobial-stewardship #palliative-care #perioperative #syringe-driver #fcps #mrcp
+
+---
+
+## 6. 📌 Summary
+
+Prescribing in clinical contexts is a **core FCPS/MRCP skill**. Master the **WHO analgesic ladder**, **opioid equianalgesic conversion**, **neuropathic pain algorithm (NICE CG173)**, **antimicrobial stewardship** (Start Smart → Focus → IV→PO → Shortest duration), **palliative symptom control** (morphine/haloperidol/glycopyrronium), **syringe driver compatibility**, and **perioperative drug holding/resumption algorithms**.
+
+---
+
+## 7. ❓ MCQs (10)
+
+1. **WHO analgesic ladder Step 3 — drug of choice for severe cancer pain?**
+   A. Codeine
+   B. Tramadol
+   C. **Morphine (oral/SC)**
+   D. Paracetamol + NSAID
+
+2. **Opioid equianalgesic conversion — oral morphine 30mg = oral oxycodone?**
+   A. 10mg
+   B. **20mg**
+   C. 30mg
+   D. 40mg
+
+3. **Neuropathic pain — NICE first-line agents?**
+   A. NSAIDs
+   B. **Gabapentin, Pregabalin, Amitriptyline, Duloxetine**
+   C. Weak opioids
+   D. Paracetamol + Codeine
+
+4. **Antimicrobial stewardship — "Start Smart" principle?**
+   A. Start antibiotics immediately without cultures
+   B. **Empiric therapy per local guidelines; CULTURES BEFORE ABX; Document indication, duration, review date**
+   C. Broad-spectrum always
+   D. Wait for culture results before starting
+
+5. **IV to PO switch — criteria for switching?**
+   A. Only when patient demands
+   C. After 14 days
+   C. **Clinical improvement, Oral absorption intact, Suitable PO agent available — Usually 48-72h**
+   D. Only if culture negative
+
+6. **Surgical antibiotic prophylaxis — clean surgery agent and timing?**
+   A. Vancomycin 1h before
+   B. **Cefuroxime 1.5g IV 0-60 min before incision; Single dose**
+   C. Meropenem 1h before
+   D. Gentamicin 30 min before
+
+6. **Palliative care — first-line antiemetic for chemical cause (e.g., opioids)?**
+   A. Ondansetron
+   B. **Haloperidol 1.5-5mg SC/PO (Dopaminergic)**
+   C. Cyclizine
+   D. Dexamethasone
+
+7. **Syringe driver — incompatible with cyclizine?**
+   A. Morphine + Haloperidol
+   B. Morphine + Midazolam
+   C. **Cyclizine (precipitates with opioids, hyoscines)**
+   D. Morphine + Haloperidol + Midazolam
+
+8. **Perioperative — ACEi/ARB holding before surgery?**
+   A. Continue unchanged
+   B. Stop 7 days before
+   C. **Omit morning of surgery (↑ intraoperative hypotension); Restart when euvolaemic**
+   D. Stop 24h before
+
+9. **DOAC perioperative — rivaroxaban 20mg OD (CrCl 50) holding before surgery?**
+   A. Omit 24h
+   B. **Omit 24h (CrCl >50); 48h (CrCl 30-50); 72h (CrCl 15-30)**
+   C. Continue unchanged
+   D. Stop 7 days before
+
+10. **SGLT2 inhibitor perioperative — when to stop?**
+    A. Day of surgery
+    B. **Stop 3 days before surgery (↑ euglycaemic DKA risk)**
+    C. 1 week before
+    D. Do not stop
+
+---
+
+## 8. 📋 SBAs (5)
+
+1. **65M on morphine sulphate 60mg BD for cancer pain. Needs conversion to transdermal fentanyl. Equivalent dose?**
+   A. 12µg/h
+   B. **25µg/h (60mg oral morphine/24h ≈ 25µg/h fentanyl patch)**
+   C. 50µg/h
+   D. 75µg/h
+   *Answer: B*
+
+2. **Patient on morphine 60mg/24h SC via syringe driver needs conversion to oxycodone SC. Dose?**
+   A. 30mg/24h
+   B. **40mg/24h (Oxycodone 1.5-2x morphine PO; SC ≈ 1.5x)**
+   C. 60mg/24h
+   D. 90mg/24h
+   *Answer: B*
+
+3. **Patient on morphine SC for cancer pain develops neuropathic pain. First-line adjuvant?**
+   A. Ibuprofen
+   B. **Gabapentin OR Pregabalin OR Amitriptyline OR Duloxetine (NICE CG173)**
+   C. Codeine
+   D. Paracetamol
+   *Answer: B*
+
+4. **Surgical prophylaxis — clean-contaminated GI surgery?**
+   A. Vancomycin single dose
+   B. **Cefuroxime 1.5g + Metronidazole (or Co-amoxiclav) 0-60 min before incision; Single dose**
+   C. Meropenem
+   D. Gentamicin + Metronidazole
+   *Answer: B*
+
+5. **Syringe driver compatibility — safe combination?**
+   A. Morphine + Cyclizine
+   B. Morphine + Dexamethasone
+   C. **Morphine + Haloperidol + Midazolam (stable)**
+   D. Morphine + Furosemide
+   *Answer: C*
+
+---
+
+## 9. 🔑 Answer Keys
+| MCQs | SBAs |
+|------|------|
+| 1-C, 2-B, 3-B, 4-B, 5-C, 6-B, 7-C, 8-C, 9-B, 10-B | 1-B, 2-B, 3-B, 4-B, 5-C |
+
+---
+
+## 10. 🎤 Viva Questions (Expected Answers)
+
+| # | Question | Expected Answer |
+|---|----------|-----------------|
+| 1 | WHO analgesic ladder — steps and drugs? | **Step 1 (Mild):** Paracetamol ± NSAID. **Step 2 (Moderate):** Weak opioid (Codeine/Tramadol) ± Step 1. **Step 3 (Severe):** Strong opioid (Morphine/Oxycodone/Fentanyl) ± Step 1. Adjuvants at any step: Gabapentinoids, TCAs, SNRIs for neuropathic; Bisphosphonates/Denosumab for bone; Benzos for spasm; Dexamethasone for nerve compression/ICP. |
+| 2 | Opioid rotation — morphine to oxycodone conversion? | **Oral morphine 30mg ≈ Oral oxycodone 20mg (1.5x potency). Reduce by 25-50% on rotation due to incomplete cross-tolerance.** |
+| 3 | Neuropathic pain management algorithm? | **1st line:** Gabapentin/Pregabalin/Amitriptyline/Duloxetine (titrate slowly, renal adjust Gaba/Prega). **2nd line:** Switch or combine. **3rd line:** Tramadol short-term or specialist referral. **Topical:** Lidocaine 5% plaster (PHN), Capsaicin. |
+| 4 | Antimicrobial stewardship — "Start Smart, Focus, Finish Smart"? | **Start Smart:** Empiric per local guidelines, cultures BEFORE abx, document indication/duration/review. **Focus:** Review at 48-72h → De-escalate, IV→PO, Stop if negative. **Shortest Duration:** CAP 5d, UTI 3d (F)/7d (M), SSTI 5d, IA 4d post-source control, Bacteremia 7d. |
+| 5. IV to PO switch — criteria? | **Clinical improvement, oral absorption intact, suitable PO agent available. Usually at 48-72h.** |
+| 6 | Syringe driver compatibility — morphine combinations? | **SAFE:** Morphine+Haloperidol; Morphine+Haloperidol+Midazolam; Morphine+Hyoscine butylbromide; Oxycodone+Haloperidol+Midazolam; Alfentanil+Midazolam+Haloperidol. **AVOID:** Cyclizine (precipitates), Dexamethasone (precipitates), Furosemide (incompatible), Metoclopramide (incompatible). |
+| 7 | Perioperative ACEi/ARB — hold or continue? | **Omit morning of surgery** (↑ intraoperative hypotension). Restart when euvolaemic, stable renal function, not on nephrotoxins (usually POD 1-2). |
+| 8 | DOAC perioperative — rivaroxaban holding? | **CrCl >50: omit 24h; CrCl 30-50: omit 48h; CrCl 15-30: omit 72h.** No routine bridging. Restart 24h (low bleed) or 48-72h (high bleed). |
+| 9 | SGLT2 inhibitor peri-op — when to stop? | **Stop 3 days before surgery** (↑ euglycaemic DKA risk). Restart when eating/drinking normally, ketones negative — usually POD 2-3. |
+| 10 | Warfarin bridging — when to bridge? | **High thrombotic risk:** Mechanical mitral valve, AF CHA₂DS₂-VASc ≥7, VTE <3mo. Bridge with LMWH during warfarin interruption. |
+
+---
+
+## 11. 🧩 Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Opioid rotation = direct conversion** | **NO.** Reduce calculated equianalgesic dose by **25-50%** due to incomplete cross-tolerance. |
+| **All strong opioids = renal safe** | **NO.** Morphine → active M6G metabolite accumulates in renal failure → use Oxycodone, Fentanyl, Alfentanil, Buprenorphine. |
+| **IV to PO switch = always at 48h** | **Criteria-based, not time-based:** Clinical improvement + oral absorption + suitable PO agent. |
+| **All antibiotics need IV→PO switch** | **NO.** Some require full IV course (e.g., endocarditis, meningitis, osteomyelitis, severe sepsis). |
+| **Syringe driver = any drugs together** | **NO.** Cyclizine, Dexamethasone, Furosemide, Metoclopramide INCOMPATIBLE with many combinations. |
+| **ACEi/ARB = stop 48h before all surgery** | **Only omit morning of surgery** for most; stop 24-48h for high bleed risk surgery. |
+| **DOACs = bridge like warfarin** | **NO BRIDGING routinely.** Hold per renal function (CrCl-based). Restart based on bleed risk. |
+| **SGLT2i = stop day of surgery** | **Stop 3 DAYS before** (euglycaemic DKA risk persists). |
+| **All neuropathic pain = gabapentin first** | **NO.** NICE: Gabapentin, Pregabalin, Amitriptyline, Duloxetine ALL 1st line options. |
+| **Antibiotics always 7 days** | **NO.** CAP 5d, UTI 3d (F)/7d (M), SSTI 5d, IA 4d post-source control, Bacteremia 7d. |
+
+> **Mnemonic: CLINICAL CONTEXTS — PAIN ANTI PALL PERI**
+> **P**ain: **WHO Ladder** (1=Paracetamol/NSAID, 2=Weak Opioid, 3=Strong Opioid+Adjuvants)
+> **A**djuvants: **G**abapentin/**P**regabalin/**A**mitriptyline/**D**uloxetine (Neuropathic); **B**isphosphonates/**D**enosumab (Bone); **B**enzos (Spasm); **D**ex (Nerve/ICP)
+> **I**nnervation → **O**pioid Conversion: **M**orphine 30mg PO = **O**xycodone 20mg = **F**entanyl 100µg IV = **H**ydromorphone 7.5mg PO
+> **N**europathic: **1**st **G**aba/**P**rega/**A**mi/**D**ulo → **2**nd Switch/Combine → **3**rd **T**ramadol/Specialist
+> **T**opical: **L**ido 5% plaster (PHN) / **C**apsaicin
+> **A**ntimicrobial Stewardship: **S**tart Smart (Empiric local, Culture 1st, Document), **F**ocus (48-72h De-escalate/IV→PO/Stop), **S**hortest (CAP 5d, UTI 3/7d, SSTI 5d, IA 4d post-control, Bact 7d)
+> **P**rophylaxis: Clean (Cefuroxime 0-60min), Clean-Contam (Cefuroxime+Metro), Dirty (Therapeutic)
+> **P**alliative: **M**orphine (Pain), **H**aloperidol (Nausea/Delirium), **G**lycopyrronium (Secretions), **M**orphine (Dyspnoea), **M**idazolam (Agitation)
+> **S**yringe Driver: **SAFE** Morphine+Haloperidol(+Mida); **AVOID** Cyclizine, Dex, Furosemide, Metoclopramide
+> **P**erioperative: **A**CEi/ARB (Omit AM surgery), **M**etformin (Omit Day), **S**GLT2i (Stop 3d pre), **W**arfarin (Stop 5d, Bridge high risk), **D**OAC (Hold: CrCl>50=24h, 30-50=48h, 15-30=72h), **S**teroids (Stress dose if >10mg>3wk)
+
+---
+
+## 12. 🗺️ Mind Map
+
+```mermaid
+mindmap
+  root((Prescribing in Clinical Contexts))
+    Pain Management
+      WHO Ladder: 1=Paracetamol/NSAID, 2=Weak Opioid, 3=Strong Opioid
+      Adjuvants: Neuropathic (Gaba/Prega/Ami/Dulo), Bone (Bisphos/Deno), Spasm (Baclofen), Steroids
+      Opioid Conversion: Morphine 30=Oxycodone 20=Fentanyl 100mcg IV
+      Rotation: Reduce 25-50% (Incomplete cross-tolerance)
+      Renal: Avoid Morphine → Oxycodone/Fentanyl/Alfentanil/Buprenorphine
+    Neuropathic Pain
+      1st: Gaba/Prega/Ami/Dulo
+      2nd: Switch/Combine
+      3rd: Tramadol/Specialist
+      Topical: Lido 5%, Capsaicin
+    Antimicrobial Stewardship
+      Start Smart: Culture 1st, Document, Local Guidelines
+      Focus: 48-72h → De-escalate, IV→PO, Stop
+      Duration: CAP 5d, UTI 3/7d, SSTI 5d, IA 4d, Bact 7d
+      IV→PO: 48-72h, Clinical improvement, PO absorption
+    Palliative Care
+      Pain: Morphine
+      Nausea: Haloperidol (1st), Levomepromazine, Cyclizine, Ondansetron
+      Dyspnoea: Morphine (low dose)
+      Secretions: Glycopyrronium
+      Agitation: Haloperidol, Midazolam
+      Syringe Driver: Morphine+Halo(+Mida) SAFE; AVOID Cyclizine, Dex, Furosemide, Metoclopramide
+    Perioperative
+      ACEi/ARB: Omit AM surgery
+      Metformin: Omit Day of Surgery
+      SGLT2i: Stop 3d Pre-op
+      Warfarin: Stop 5d, Bridge High Risk
+      DOAC: Hold CrCl>50=24h, 30-50=48h, 15-30=72h
+      Steroids: Stress Dose if >10mg>3wk
+      DOAC Mechanical Valve: CONTRAINDICATED
+```
+
+---
+
+## 13. 📅 Spaced Repetition Tracker
+
+| Review | Date | Score (0–5) | Notes |
+|--------|------|-------------|-------|
+| Day 1 | | | |
+| Day 3 | | | |
+| Day 7 | | | |
+| Day 14 | | | |
+| Day 30 | | | |
+| Day 90 | | | |
+
+---
+
+## 14. 📝 Self-Test Scorecard
+
+| Section | Max | Score | % |
+|---------|-----|-------|---|
+| Pain Management (WHO Ladder, Opioids, Adjuvants) | 4 | | |
+| Neuropathic Pain Algorithm | 3 | | |
+| Antimicrobial Stewardship | 3 | | |
+| Palliative Care & Syringe Driver | 3 | | |
+| Perioperative Management | 3 | | |
+| Opioid Conversion & Rotation | 2 | | |
+| Syringe Driver Compatibility | 2 | | |
+| **Total** | **20** | | |
+
+---
+
+## 15. 💬 Exam Answer Modes
+
+| Format | Prompt | Key Points |
+|--------|--------|------------|
+| **Long Essay** | "Describe the WHO analgesic ladder, opioid conversion, and management of neuropathic pain." | WHO 3 Steps (1=Para/NSAID, 2=Weak Opioid, 3=Strong Opioid+Adjuvants); Conversion: Morphine 30=Oxy 20=Fent 100mcg IV; Rotation -25-50%; Neuropathic: 1st Gaba/Prega/Ami/Dulo, 2nd Switch/Combine, 3rd Tramdol/Specialist; Adjuvants. |
+| **Short Note** | "Antimicrobial stewardship — Start Smart, Focus, Finish Smart." | Start Smart: Empiric local, Culture 1st, Document. Focus: 48-72h Review → De-escalate, IV→PO, Stop. Finish Smart: Shortest duration (CAP 5d, UTI 3/7d, SSTI 5d, IA 4d, Bact 7d), IV→PO at 48-72h. |
+| **Viva** | "Patient on morphine 60mg/24h SC for cancer pain needs conversion to transdermal fentanyl. Dose?" | **60mg oral morphine/24h ≈ 25µg/h fentanyl patch.** Reduce by 25-50% on rotation. Monitor for respiratory depression. |
+| **Ward Round** | "Patient on morphine PCA develops neuropathic pain. Add adjuvant?" | **Add gabapentin 300mg nocte, titrate to 300-3600mg/day (renal adjust). OR Pregabalin 75mg BD, titrate to 150-600mg/day. OR Amitriptyline 10mg nocte → 75mg. Monitor sedation, renal function.** |
+| **Last-Night** | "Pain: WHO 1=Para/NSAID, 2=Weak Opioid, 3=Strong Opioid+Adj. Opioid Conv: M30=O20=F100mcg IV=H7.5=Oxynorm10=Tramadol300. Rotation -25-50%. Renal: Avoid Morph→Oxy/Fent/Alfen/Bupren. Neuropathic: 1st Gaba/Preg/Ami/Dulo, 2nd Switch/Combine, 3rd Tram/Specialist. AntiB: Start Smart (Culture 1st), Focus (48h De-escalate/IV→PO/Stop), Duration (CAP5d, UTI3/7d, SSTI5d, IA4d, Bact7d). Pall: Morph Pain, Halo Nausea, Glyco Secretions, Morph Dyspnoea, Halo/Mida Agitation. Syringe: Morphine+Halo+Mida SAFE; AVOID Cyclizine/Dex/Furo/Metoclop. PeriOp: ACEi/ARB Omit AM, Metformin Omit Day, SGLT2i Stop 3d, Warf Stop 5d Bridge High, DOAC Hold CrCl>50=24h/30-50=48h/15-30=72h, Steroid Stress Dose if >10mg>3wk." | Compressed. |
+
+---
+
+## 16. 📌 Summary
+
+- **WHO Analgesic Ladder:** Step 1 (Paracetamol±NSAID) → Step 2 (Weak Opioid±Step 1) → Step 3 (Strong Opioid±Step 1). **Adjuvants at any step**.
+- **Opioid Conversion:** Morphine 30mg PO = Oxycodone 20mg PO = Fentanyl 100µg IV = Hydromorphone 7.5mg PO. **Rotation: Reduce 25-50%** (incomplete cross-tolerance).
+- **Renal Impairment:** Avoid morphine (M6G accumulation) → Use **Oxycodone, Fentanyl, Alfentanil, Buprenorphine**.
+- **Neuropathic Pain (NICE):** 1st line **Gabapentin/Pregabalin/Amitriptyline/Duloxetine**; 2nd line Switch/Combine; 3rd line Tramadol/Specialist; Topical **Lidocaine 5% plaster** (PHN).
+- **Antimicrobial Stewardship:** **Start Smart** (Culture 1st, empiric local, document), **Focus** (48-72h: De-escalate, IV→PO, Stop), **Shortest Duration** (CAP 5d, UTI 3d/7d, SSTI 5d, IA 4d post-control, Bact 7d).
+- **Palliative Care:** **Pain** → Morphine; **Nausea** → Haloperidol (1st), Levomepromazine, Cyclizine, Ondansetron; **Dyspnoea** → Morphine low dose; **Secretions** → Glycopyrronium; **Agitation** → Haloperidol, Midazolam.
+- **Syringe Driver:** **SAFE:** Morphine+Haloperidol(+Midazolam); **AVOID:** Cyclizine, Dexamethasone, Furosemide, Metoclopramide.
+- **Perioperative:** **ACEi/ARB** Omit morning of surgery; **Metformin** Omit day of surgery; **SGLT2i** Stop 3 days pre-op; **Warfarin** Stop 5 days, Bridge if high risk; **DOAC** Hold: CrCl>50: 24h, 30-50: 48h, 15-30: 72h; **Steroids** Stress-dose hydrocortisone if >10mg pred >3wk.
+
+---
+
+## 17. ❓ MCQs (10)
+
+1. **WHO analgesic ladder Step 3 — drug of choice for severe cancer pain?**
+   A. Codeine
+   B. Tramadol
+   C. **Morphine (oral/SC)**
+   D. Paracetamol + NSAID
+
+2. **Opioid equianalgesic conversion — oral morphine 30mg = oral oxycodone?**
+   A. 10mg
+   B. **20mg**
+   C. 30mg
+   D. 40mg
+
+3. **Neuropathic pain — NICE first-line agents?**
+   A. NSAIDs
+   B. **Gabapentin, Pregabalin, Amitriptyline, Duloxetine**
+   C. Weak opioids
+   D. Paracetamol + Codeine
+
+4. **Antimicrobial stewardship — "Start Smart" principle?**
+   A. Start antibiotics immediately without cultures
+   B. **Empiric therapy per local guidelines; CULTURES BEFORE ABX; Document indication, duration, review date**
+   C. Broad-spectrum always
+   D. Wait for culture results before starting
+
+5. **IV to PO switch — criteria for switching?**
+   A. Only when patient demands
+   B. After 14 days
+   C. **Clinical improvement, Oral absorption intact, Suitable PO agent available — Usually 48-72h**
+   D. Only if culture negative
+
+6. **Surgical antibiotic prophylaxis — clean surgery agent and timing?**
+   A. Vancomycin 1h before
+   B. **Cefuroxime 1.5g IV 0-60 min before incision; Single dose**
+   C. Meropenem 1h before
+   D. Gentamicin 30 min before
+
+6. **Palliative care — first-line antiemetic for chemical cause (e.g., opioids)?**
+   A. Ondansetron
+   B. **Haloperidol 1.5-5mg SC/PO (Dopaminergic)**
+   C. Cyclizine
+   D. Dexamethasone
+
+7. **Syringe driver — incompatible with cyclizine?**
+   A. Morphine + Haloperidol
+   B. Morphine + Midazolam
+   C. **Cyclizine (precipitates with opioids, hyoscines)**
+   D. Morphine + Haloperidol + Midazolam
+
+8. **Perioperative — ACEi/ARB holding before surgery?**
+   A. Continue unchanged
+   B. Stop 7 days before
+   C. **Omit morning of surgery (↑ intraoperative hypotension); Restart when euvolaemic**
+   D. Stop 24h before
+
+9. **DOAC perioperative — rivaroxaban 20mg OD (CrCl 50) holding before surgery?**
+   A. Omit 24h
+   B. **Omit 24h (CrCl >50); 48h (CrCl 30-50); 72h (CrCl 15-30)**
+   C. Continue unchanged
+   D. Stop 7 days before
+
+10. **SGLT2 inhibitor perioperative — when to stop?**
+    A. Day of surgery
+    B. **Stop 3 days before surgery (↑ euglycaemic DKA risk)**
+    C. 1 week before
+    D. Do not stop
+
+---
+
+## 18. 📋 SBAs (5)
+
+1. **65M on morphine sulphate 60mg BD for cancer pain. Needs conversion to transdermal fentanyl. Equivalent dose?**
+   A. 12µg/h
+   B. **25µg/h (60mg oral morphine/24h ≈ 25µg/h fentanyl patch)**
+   C. 50µg/h
+   D. 75µg/h
+   *Answer: B*
+
+2. **Patient on morphine 60mg/24h SC via syringe driver needs conversion to oxycodone SC. Dose?**
+   A. 30mg/24h
+   B. **40mg/24h (Oxycodone 1.5-2x morphine PO; SC ≈ 1.5x)**
+   C. 60mg/24h
+   D. 90mg/24h
+   *Answer: B*
+
+3. **Patient on morphine SC for cancer pain develops neuropathic pain. First-line adjuvant?**
+   A. Ibuprofen
+   B. **Gabapentin OR Pregabalin OR Amitriptyline OR Duloxetine (NICE CG173)**
+   C. Codeine
+   D. Paracetamol
+   *Answer: B*
+
+4. **Surgical prophylaxis — clean-contaminated GI surgery?**
+   A. Vancomycin single dose
+   B. **Cefuroxime 1.5g + Metronidazole (or Co-amoxiclav) 0-60 min before incision; Single dose**
+   C. Meropenem
+   D. Gentamicin + Metronidazole
+   *Answer: B*
+
+5. **Syringe driver compatibility — safe combination?**
+   A. Morphine + Cyclizine
+   B. Morphine + Dexamethasone
+   C. **Morphine + Haloperidol + Midazolam (stable)**
+   D. Morphine + Furosemide
+   *Answer: C*
+
+---
+
+## 19. 🔑 Answer Keys
+| MCQs | SBAs |
+|------|------|
+| 1-C, 2-B, 3-B, 4-B, 5-C, 6-B, 7-C, 8-C, 9-B, 10-B | 1-B, 2-B, 3-B, 4-B, 5-C |
+
+---
+
+## 20. 🔗 Cross-Links
+- [[Principles of Rational Prescribing]] — WHO 6-step, monitoring
+- [[ADRs]] — Opioid ADRs, NSAID GI risk
+- [[Drug Interactions]] — Opioid + BZD, Macrolide + Statin
+- [[Polypharmacy and Deprescribing]] — Opioid deprescribing, PPI with opioids
+- [[Prescribing in Special Populations]] — Renal/hepatic/elderly prescribing in contexts
+- [[Therapeutic Drug Monitoring]] — TDM in contexts
+- [[CYP450 Drug Interactions]] — Interaction effects on context drugs
+- [[Medication Safety and Errors]] — Opioid safety, PCA errors
+- [[Population & Newborn Screening]] — Neonatal pain, pregnancy prescribing
+
+---
+
+**Last Updated:** 2026-06-15  
+**Prescribing in Clinical Contexts Hub: COMPLETE with Full Exam Suite (Viva Qs, MCQs, SBAs, Answer Keys, Confusions, Mind Map, Spaced Repetition, Self-Test, Exam Modes)**

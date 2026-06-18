@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antimicrobial Stewardship — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 7 PRINCIPLES OF INFECTION / 7.2. ANTIMICROBIAL THERAPY</span>
+      <div class="h1">Antimicrobial Stewardship</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define antimicrobial stewardship (AMS) and articulate its core objectives and the 5 Ds framework.</li><li>Describe the major AMS strategies (prospective audit/feedback, prior authorisation, guidelines, IV-to-oral switch, de-escalation, TDM, dose optimisation, duration guidance, rapid diagnostics, allergy de-labelling, education).</li><li>Apply the <b>48–72 hour antimicrobial review</b> and the <b>"reason to continue"</b> principle.</li><li>Apply the <b>FAITH criteria</b> for IV-to-oral switch and IVOS protocols.</li><li>Prescribe evidence-based durations of therapy (cystitis 3, CAP 5, HAP 7, GNB 7, MSSA 14, IA 4 weeks).</li><li>Interpret AMS metrics: DDD, DOT, LOT, antibiotic spectrum index, days of therapy.</li><li>Apply therapeutic drug monitoring (TDM): vancomycin AUC 400–600, aminoglycoside once-daily nomograms, azole levels.</li><li>Identify redundant antibiotic combinations and opportunities for de-escalation.</li><li>Describe the structure of an AMS team, formulary management, and behavioural-change interventions.</li><li>Use local guidelines and antibiograms to inform prescribing.</li><li>Discuss antifungal stewardship, OPAT, and stewardship in LMIC (WHO AWaRe).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions / Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Antimicrobial Stewardship (AMS)**</td><td>Coordinated interventions to optimise antimicrobial use, improve outcomes, and reduce resistance, *C. difficile*, toxicity and cost.</td></tr><tr><td>**5 Ds of AMS**</td><td>**D**rug, **D**ose, **D**uration, **D**e-escalation, **D**elivery (route) — the framework for optimising every prescription.</td></tr><tr><td>**Prospective Audit & Feedback (PAF)**</td><td>Real-time review of prescriptions by AMS team with non-binding recommendations to prescriber.</td></tr><tr><td>**Prior Authorisation (PA) / Formulary Restriction**</td><td>Selected agents (e.g. carbapenems, linezolid, daptomycin) require ID/microbiology approval before dispensing.</td></tr><tr><td>**De-escalation**</td><td>Narrowing spectrum (or stopping redundant agents) once culture and clinical data available.</td></tr><tr><td>**Escalation**</td><td>Broadening spectrum in a deteriorating patient or when resistant pathogen identified.</td></tr><tr><td>**IV-to-Oral Switch (IVOS)**</td><td>Switching from IV to oral antibiotic once criteria met (FAITH).</td></tr><tr><td>**DDD**</td><td>Defined Daily Dose — WHO-assigned standard adult dose for a drug; used to benchmark consumption.</td></tr><tr><td>**DOT**</td><td>Days of Therapy — total calendar days a patient receives an antibiotic, regardless of dose/number.</td></tr><tr><td>**LOT**</td><td>Length of Therapy — total days the patient received any systemic antibiotic.</td></tr><tr><td>**DDD/1000 patient-days**</td><td>WHO consumption metric: DDDs per 1000 inpatient-days; allows inter-hospital benchmarking.</td></tr><tr><td>**DOT/1000 patient-days**</td><td>Days of antibiotic therapy per 1000 inpatient-days; more sensitive for combination or partial doses.</td></tr><tr><td>**TDM**</td><td>Therapeutic Drug Monitoring — measuring drug concentrations to individualise dosing.</td></tr><tr><td>**Antibiogram**</td><td>Cumulative susceptibility report of isolates from a hospital/unit over a defined period; informs empirical guidelines.</td></tr><tr><td>**AWaRe classification**</td><td>WHO Access/Watch/Reserve framework — categorises antibiotics to support use of narrow-spectrum agents.</td></tr><tr><td>**OPAT**</td><td>Outpatient Parenteral Antimicrobial Therapy — IV antibiotics administered outside hospital.</td></tr><tr><td>**AMS 48–72 h review**</td><td>Reassessment of every prescription at days 2–3 with culture, clinical status, and "reason to continue".</td></tr><tr><td>**Stop / review date**</td><td>Date automatically written on the chart requiring prescriber to justify continuation.</td></tr><tr><td>**Indication documentation**</td><td>Mandatory documentation of clinical indication (syndrome + suspected pathogen) on every antibiotic order.</td></tr><tr><td>**Redundant combination**</td><td>Two agents covering the same spectrum/pathogen with no synergy benefit (e.g. piperacillin-tazobactam + meropenem).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Definition, Scope, and Burden of the Problem</div>
+<p>#### Why AMS is Essential</p>
+<ul><li><b>Antimicrobial resistance (AMR)</b> is one of the top 10 global public-health threats (WHO). Estimated 1.27 million deaths directly attributable to bacterial AMR in 2019; projected 10 million/year by 2050 (O'Neill).</li><li><b>30–50% of antibiotics in hospitals are inappropriate</b> (unnecessary, suboptimal, or redundant) — IDSA/SHEA.</li><li>Inappropriate use ↑ resistance, <i>C. difficile</i> infection (CDI), adverse drug events, length of stay, mortality, and cost.</li><li>20–30% of antibiotic courses in UK NHS hospitals are inappropriate (PHE START SMART then FOCUS).</li><li>AMS preserves last-line agents (carbapenems, linezolid, daptomycin, colistin).</li></ul>
+<p>#### Historical Context</p>
+<ul><li><b>1997</b>: IDSA + SHEA publish "Guidelines for the Prevention of Antimicrobial Resistance in Hospitals".</li><li><b>2007</b>: IDSA/SHEA guidelines on antimicrobial stewardship formally published (Dellit et al., <i>Clin Infect Dis</i>).</li><li><b>2011–2014</b>: UK "Start Smart – Then Focus"; CDC Core Elements of Hospital Antibiotic Stewardship (2014).</li><li><b>2015</b>: WHO Global Action Plan on AMR; AWaRe classification (2019 update).</li><li><b>2019</b>: WHO AWaRe classification; <i>C. difficile</i> stewardship; paediatric AMS (Klatte 2025).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 2: The 5 Ds Framework (Cornerstone of Every AMS Programme)</div>
+<p>The <b>5 Ds</b> describe what we want to optimise for every prescription:</p>
+<table class="ctable"><tr><th>D</th><th>Element</th><th>Key Question / Action</th></tr><tr><td>---</td><td>---------</td><td>----------------------</td></tr><tr><td>**1. Drug**</td><td>Right agent for the syndrome, the patient, and the local ecology</td><td>Use culture, antibiogram, allergies, pharmacology, formulary, AWaRe</td></tr><tr><td>**2. Dose**</td><td>Right dose for the patient (weight, renal/hepatic function, PK/PD)</td><td>Loading dose in critical illness, adjust CrCl, use extended/prolonged infusion for β-lactams</td></tr><tr><td>**3. Duration**</td><td>Shortest effective course</td><td>E.g. uncomplicated cystitis 3 d, CAP 5 d, HAP 7 d, GNB bacteraemia 7 d, MSSA bacteraemia 14 d, intra-abdominal 4 d</td></tr><tr><td>**4. De-escalation**</td><td>Narrow or stop based on culture + clinical response</td><td>48–72 h review; stop redundant/duplicate coverage</td></tr><tr><td>**5. Delivery (route)**</td><td>Right route</td><td>IV → oral switch when criteria met; OPAT when appropriate</td></tr></table>
+<p>#### Practical Application</p>
+<ul><li><b>On prescription</b>: Indication, drug, dose, route, frequency, planned duration / stop / review date.</li><li><b>At 48–72 hours</b>: Reassess using <b>MSU CSM</b>:</li><li><b>M</b>icrobiology (cultures, susceptibilities, biomarkers)</li><li><b>S</b>ymptoms/signs (fever curve, white cell count, organ function)</li><li><b>U</b>nnecessary coverage (stop redundant agents)</li><li><b>C</b>linical trajectory</li><li><b>S</b>trict minimum duration (shortest effective course)</li><li><b>M</b>outh/route (switch to oral if FAITH met)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 3: The 48–72 Hour Antimicrobial Review (Antimicrobial Time-Out)</div>
+<div class="callout">"If you cannot justify continuing an antibiotic at 48–72 h, you should be stopping it."</div>
+<p>#### Goals</p>
+<ul><li>Integrate new microbiology, imaging, biomarkers (CRP, PCT).</li><li>Reassess clinical response.</li><li>De-escalate (narrow spectrum) or escalate (rarely, with new diagnosis).</li><li><b>Document a stop or review date</b> on every prescription.</li></ul>
+<p>#### When</p>
+<ul><li>All inpatients receiving antibiotics should have a documented AMS review by day 3 (CDC Core Element #3).</li></ul>
+<p>#### "Reason to Continue" — A Required Justification A simple rule: at 48–72 h, prescribers must document one of:</p>
+<ul><li>Continuation: infection confirmed, pathogen identified, course required.</li><li>IV→oral switch: criteria met.</li><li>De-escalation: narrower agent possible.</li><li>Stop: no infection, viral, non-infectious mimic, source control achieved.</li><li>OPAT: continuing IV at home.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 4: Core AMS Strategies</div>
+<p>#### 1. Prospective Audit and Feedback (PAF) — "Stewardship Workhorse"</p>
+<ul><li>A multidisciplinary team (pharmacist ± ID physician) reviews antimicrobial prescriptions in real-time (typically 24–72 h after initiation).</li><li>Provides <b>non-binding</b> recommendations to the prescriber.</li><li><b>Advantages</b>: Educational, allows learning, tailored to patient, doesn't delay initiation.</li><li><b>Evidence</b>: ↓ 22–36% inappropriate antibiotic use (IDSA/SHEA 2016; meta-analysis Davey 2017 <i>Cochrane</i>).</li><li><b>Disadvantages</b>: Labour-intensive, requires skilled staff.</li></ul>
+<p>#### 2. Prior Authorisation (PA) / Formulary Restriction</p>
+<ul><li>Certain high-cost / high-resistance-potential agents (e.g. carbapenems, linezolid, daptomycin, tigecycline, ceftaroline, ceftazidime-avibactam, isavuconazole) require approval from ID physician or AMS team before dispensing.</li><li><b>Advantages</b>: Immediate impact on consumption; reduces initiation of restricted agents.</li><li><b>Disadvantages</b>: May delay therapy; does not address <i>appropriate</i> use of unrestricted agents; prescribers may "game" with alternatives.</li></ul>
+<p>#### 3. Combined Approach (PA + PAF) — Most Effective</p>
+<ul><li>PA at initiation; PAF ongoing for non-restricted agents.</li><li>Synergistic; recommended by IDSA/SHEA and CDC.</li></ul>
+<p>#### 4. Syndrome-Specific Guidelines and Antibiograms</p>
+<ul><li>Local evidence-based guidelines (empirical &amp; directed therapy) for common syndromes: CAP, UTI, SSTI, intra-abdominal, bacteraemia, neutropenic fever, CDI, meningitis.</li><li>Driven by local <b>antibiogram</b> (cumulative susceptibility, usually 6–12 month rolling data) and patient factors.</li><li><b>Active dissemination</b> (pocket cards, EMR best-practice advisories) outperforms passive posting.</li><li><b>Key idea</b>: empirical therapy should be guided by local resistance patterns and only broadened for unstable patients.</li></ul>
+<p>#### 5. Formulary Management</p>
+<ul><li><b>Formulary</b>: hospital's approved drug list, developed by Pharmacy &amp; Therapeutics (P&amp;T) committee.</li><li><b>Restricted agents</b> require authorisation.</li><li><b>Automatic stop orders</b>: e.g. surgical prophylaxis default 24 h (C difficile 2017 meta-analysis ↓ SSI without ↑ resistance).</li><li><b>Tied to local guidelines and antibiogram</b>.</li></ul>
+<p>#### 6. Dose Optimisation (PK/PD)</p>
+<ul><li><b>β-lactams</b> (piperacillin-tazobactam, meropenem, cefepime): <b>extended infusion (3–4 h) or continuous infusion</b> improves time-above-MIC (%T&gt;MIC) and clinical outcomes in critically ill (meta-analysis <i>Clin Infect Dis</i> 2014; BLING-III 2024 confirms ↓ mortality with continuous β-lactam).</li><li><b>Loading dose</b> for critical illness (e.g. amikacin 25–30 mg/kg; gentamicin 7 mg/kg; vancomycin 30 mg/kg).</li><li><b>Renal/hepatic dose adjustment</b> in CKD/AKI; <b>dialysis</b> dose adjustments; <b>obesity</b> dosing by adjusted body weight.</li><li><b>Weight-based dosing</b> for children.</li></ul>
+<p>#### 7. Duration of Therapy — Shortest Effective Course</p>
+<ul><li>Multiple RCTs and meta-analyses show shorter is non-inferior in most common infections.</li><li><b>Stop dates</b> documented at the point of prescription.</li></ul>
+<table class="ctable"><tr><th>Infection</th><th>Recommended Duration</th><th>Source / Evidence</th></tr><tr><td>-----------</td><td>---------------------</td><td>-------------------</td></tr><tr><td>Uncomplicated cystitis (women)</td><td>**3 days** (nitrofurantoin) or 5 days</td><td>Hooton 2012; IDSA 2010</td></tr><tr><td>Uncomplicated pyelonephritis</td><td>7 days (fluoroquinolone) or 10–14 days β-lactam</td><td>IDSA 2010</td></tr><tr><td>COPD acute exacerbation</td><td>5 days if bacterial</td><td>Sethi 2020</td></tr><tr><td>Community-acquired pneumonia (CAP)</td><td>**5 days** if clinically stable</td><td>Metlay 2019; URDOO 2021</td></tr><tr><td>Hospital-acquired / ventilator pneumonia (HAP/VAP)</td><td>**7 days** (with good source control)</td><td>IDSA/ATS 2016</td></tr><tr><td>Intra-abdominal infection (post-source control)</td><td>**4 days**</td><td>STOP-IT 2015</td></tr><tr><td>Gram-negative bacteraemia (uncomplicated)</td><td>**7 days** (with source control)</td><td>Yahav 2019 *Cochrane*</td></tr><tr><td>*S. aureus* bacteraemia (MSSA)</td><td>**14 days IV** minimum (uncomplicated); 4–6 wk if complicated/endocarditis</td><td>IDSA 2011</td></tr><tr><td>Cellulitis / SSTI</td><td>5–7 days (longer if slow response)</td><td>CREST 2005</td></tr><tr><td>Acute osteomyelitis (haematogenous, no surgery)</td><td>4–6 weeks</td><td>Berbari 2015</td></tr><tr><td>Septic arthritis</td><td>2–4 weeks IV then oral</td><td>Mathews 2010</td></tr><tr><td>Infective endocarditis (viridans)</td><td>4 weeks</td><td>AHA 2015</td></tr><tr><td>*C. difficile* infection</td><td>10 days fidaxomicin / 10–14 d vancomycin</td><td>IDSA/SHEA 2021 update</td></tr><tr><td>Invasive aspergillosis</td><td>**4–6 weeks** minimum, guided by GM/CT</td><td>IDSA 2016</td></tr></table>
+<ul><li><b>Exceptions</b>: immunocompromise, deep-seated infection, S. aureus endocarditis, undrained abscess, mycobacterial infection, prosthetic joint infection.</li></ul>
+<p>#### 8. IV-to-Oral Switch (IVOS) — "FAITH" Criteria</p>
+<div class="callout">"Why are we still giving IV? FAITH — check 5 boxes."</div>
+<table class="ctable"><tr><th>F</th><th>**F**unctioning GI tract? (tolerating oral, no ileus, no vomiting)</th></tr><tr><td>---</td><td>------</td></tr><tr><td>A</td><td>**A**febrile ≥ 24–48 h, haemodynamically stable</td></tr><tr><td>I</td><td>**I**ndication for IV resolved? (no deep-seated, no S. aureus, no endocarditis, no neutropenia)</td></tr><tr><td>T</td><td>**T**ablet/liquid available with adequate bioavailability (fluoroquinolones, linezolid, doxycycline, co-amoxiclav, clindamycin, metronidazole)</td></tr><tr><td>H</td><td>**H**igh oral bioavailability? (FQ, linezolid, doxycycline, fluconazole, aciclovir — > 90%; cephalexin ~ 90%)</td></tr></table>
+<ul><li><b>Common IV→oral pairs</b>: amoxicillin IV → amoxicillin PO; co-amoxiclav IV → co-amoxiclav PO; ceftriaxone IV → oral switch (FQ, doxycycline, co-amoxiclav); levofloxacin IV → levofloxacin PO; metronidazole IV → metronidazole PO; linezolid IV → linezolid PO; fluconazole IV → fluconazole PO.</li><li><b>Examples that should NOT switch</b>: <i>S. aureus</i> bacteraemia, endocarditis, meningitis, brain abscess, neutropenic sepsis, undrained abscess, severe bone/joint infection, <i>Legionella</i> (until end of course — but can use levofloxacin PO from day 3).</li><li><b>Programmes</b>: hospital IVOS protocol + automatic IVOS nurse/pharmacist-led switching with prescriber ratification; KPI: % IV courses switched within 48 h of meeting criteria.</li></ul>
+<p>#### 9. De-escalation / Streamlining</p>
+<ul><li>48–72 h review: switch from empirical broad-spectrum (e.g. piperacillin-tazobactam) to narrowest agent (e.g. amoxicillin) based on culture &amp; susceptibilities.</li><li><b>Stop redundant combinations</b>: e.g. stopping metronidazole when piperacillin-tazobactam covers anaerobes; stopping empirical vancomycin when no MRSA; stopping two anti-pseudomonal β-lactams.</li><li><b>Antimicrobial "time-out"</b> formally embedded in ward round, ICU checklist, or EMR alert.</li><li><b>Outcomes</b>: ↓ resistance, ↓ CDI, ↓ cost, often similar clinical outcomes.</li></ul>
+<p>#### 10. Therapeutic Drug Monitoring (TDM)</p>
+<table class="ctable"><tr><th>Drug</th><th>TDM Goal</th><th>Notes</th></tr><tr><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Vancomycin**</td><td>**AUC 400–600 mg·h/L** (preferred over trough since 2020 IDSA/SIS/ASHP). Trough 15–20 µg/mL acceptable proxy.</td><td>Loading 30 mg/kg, then AUC-guided dose (Bayesian software). Continuous infusion targets 20–25 mg/L.</td></tr><tr><td>**Gentamicin / Tobramycin**</td><td>Once-daily nomogram: peak 6–10 mg/L (gent) or 20–30 mg/L (amikacin); trough < 1 mg/L gent. Twice-daily: peaks/target peak ratio.</td><td>Avoid in pregnancy, endocarditis (different regimen).</td></tr><tr><td>**Amikacin**</td><td>Once-daily 25–30 mg/kg. Peak 20–30 mg/L; trough < 5 mg/L</td><td>Ototoxic & nephrotoxic.</td></tr><tr><td>**Teicoplanin**</td><td>Trough 15–30 mg/L (deep-seated 20–40)</td><td>Loading essential.</td></tr><tr><td>**Linezolid**</td><td>Trough 2–7 mg/L</td><td>↑ thrombocytopenia, lactic acidosis, serotonin syndrome.</td></tr><tr><td>**Posaconazole (oral susp / IR tab / IV)**</td><td>Prophylaxis trough > 0.7 mg/L; treatment > 1.0–2.0 mg/L</td><td>Levels delayed after oral suspension.</td></tr><tr><td>**Voriconazole**</td><td>Trough 1–5.5 mg/L (target 2–4 mg/L)</td><td>Genotype CYP2C19; hepatotoxic; visual; photosensitivity.</td></tr><tr><td>**Itraconazole**</td><td>Trough > 0.5–1 mg/L</td><td>Variable absorption.</td></tr><tr><td>**Isavuconazole**</td><td>Levels optional; trough 1–3 mg/L suggested in selected patients</td><td></td></tr><tr><td>**β-lactams (extended infusion)**</td><td>Trough/MIC ratio 4–5 (e.g. 4×MIC for 100%T>MIC)</td><td>TDM is optional/emerging; BLING-III 2024.</td></tr><tr><td>**Chloramphenicol**</td><td>Peak 10–20 mg/L; trough 5–10 mg/L</td><td></td></tr><tr><td>**Aminoglycosides in pregnancy**</td><td>Multiple daily dosing for synergy</td><td></td></tr></table>
+<p>#### 11. Rapid Diagnostics (Diagnostic Stewardship)</p>
+<ul><li><b>Rapid molecular panels</b>: e.g. FilmArray BCID (meningitis/encephalitis, bloodstream), BioFire Pneumonia panel, T2 Candida, T2Bacteria.</li><li><b>MALDI-TOF MS</b>: species ID in minutes from positive culture.</li><li><b>Rapid AST</b>: e.g. Accelerate Pheno, VITEK 2.</li><li><b>Biomarkers</b>: procalcitonin (PCT) — guides duration/de-escalation in LRTI/sepsis (PRORATA, SAPS trials). PCT algorithm ↓ antibiotic exposure without ↑ mortality.</li><li><b>Impact</b>: enables <b>earlier targeted therapy</b> and <b>earlier de-escalation</b>; need paired AMS team to act on results.</li></ul>
+<p>#### 12. Penicillin Allergy De-labelling</p>
+<ul><li><b>~ 90% of "penicillin allergy" labels are wrong</b> (IgE-mediated).</li><li>De-labelling via history, intradermal testing, or direct oral rechallenge allows use of narrower β-lactams (e.g. ceftriaxone, amoxicillin) → ↓ broad-spectrum alternatives (aztreonam, fluoroquinolones, carbapenems).</li><li>Recent RCTs (e.g. Staicu 2021, Mustafa 2023) confirm safety of direct amoxicillin challenge in low-risk patients.</li></ul>
+<p>#### 13. Education and Behavioural Science</p>
+<ul><li><b>Active education</b> (academic detailing, ward rounds, case-based) &gt; passive (posters, lectures).</li><li><b>Behavioural nudges</b>: default durations in EMR, order sets, "force-function" reviews, peer comparison feedback.</li><li><b>Audit &amp; feedback loops</b>: prescriber-level dashboards (e.g. % IV&gt;oral eligible, % guideline-adherent).</li><li><b>Nudge theory</b> &amp; <b>COM-B model</b> (Capability, Opportunity, Motivation → Behaviour).</li></ul>
+<p>#### 14. Outpatient Parenteral Antimicrobial Therapy (OPAT)</p>
+<ul><li>IV antibiotics in the community (home or clinic).</li><li>Reduces length of stay, costs, patient preference.</li><li>Requires: stable infection, suitable IV access (PICC/Hickman), monitoring plan, AMS oversight, line care, OPAT team.</li><li>Common indications: bone/joint, endocarditis (completion phase), deep-seated abscess (after drainage), OPAT for resistant pathogens (e.g. daptomycin for MRSA).</li></ul>
+<p>#### 15. Antifungal Stewardship</p>
+<ul><li>Mirrors AMS; key for invasive <i>Candida</i>, aspergillosis, <i>Pneumocystis</i>, endemic mycoses.</li><li>Strongly guided by diagnostics (β-D-glucan, GM, PCR, T2Candida).</li><li>TDM for azoles, amphotericin B renal monitoring, ID consultation recommended.</li><li>A 2024 <i>Lancet Infect Dis</i> review shows antifungal stewardship ↓ cost, ↓ toxic antifungal use, ↓ resistance.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 5: Stewardship Metrics and Monitoring</div>
+<p>#### CDC Core Elements of Hospital Antibiotic Stewardship (2014, updated 2019)</p>
+<ol><li>Hospital leadership commitment</li><li>Accountability — single leader (ID physician)</li><li>Pharmacy / Pharmacist leadership</li><li>Action — prospective audit, prior authorisation, etc.</li><li>Tracking — process and outcome metrics</li><li>Reporting — to staff and prescribers</li><li>Education — to clinicians, patients, families</li></ol>
+<p>#### Types of Metrics</p>
+<table class="ctable"><tr><th>Type</th><th>Examples</th><th>Pros</th><th>Cons</th></tr><tr><td>------</td><td>----------</td><td>------</td><td>------</td></tr><tr><td>**Consumption**</td><td>DDD/1000 pt-days, DOT/1000 pt-days, LOT</td><td>Quantifies exposure, benchmarkable</td><td>Not linked to quality</td></tr><tr><td>**Process / Quality**</td><td>% guideline-adherent, % IVOS, % appropriate samples before antibiotics, % de-escalation, % stop-date documented</td><td>Reflects quality of prescribing</td><td>Labour-intensive</td></tr><tr><td>**Outcome**</td><td>CDI rate, resistance rate (MRSA, ESBL, CRE), 30-day mortality, LOS, readmission rates, cost</td><td>Clinically meaningful</td><td>Multiple confounders, delayed feedback</td></tr><tr><td>**Structural**</td><td>AMS team in place, formulary, EMR integration</td><td>Foundational</td><td>Doesn't measure impact</td></tr></table>
+<p>#### DDD vs DOT — Know the Difference</p>
+<table class="ctable"><tr><th>DDD (Defined Daily Dose)</th><th>DOT (Days of Therapy)</th></tr><tr><td>--------------------------</td><td>------------------------</td></tr><tr><td>WHO-assigned standard adult dose of a drug</td><td>One day = a calendar day a patient receives an agent</td></tr><tr><td>Permits inter-hospital comparison</td><td>More accurate for combinations, paediatric</td></tr><tr><td>Example: meropenem 2 g IV TDS = 3 DDD/day</td><td>Same = 1 DOT/day</td></tr><tr><td>Limitation: ignores dosing, paediatric, combination, renal</td><td>Limitation: doesn't account for dose intensity</td></tr><tr><td>AWaRe Access ≥ 60% of total consumption (WHO target)</td><td></td></tr></table>
+<ul><li><b>LOT (Length of Therapy)</b> = sum of days a patient receives any systemic antibiotic (counts each patient once per day irrespective of number of agents).</li><li>A useful combined metric: <b>DOT/1000 patient-days = Σ (DOT for each antibiotic for each patient) / total patient-days × 1000</b>.</li></ul>
+<p>#### Examples of Successful Stewardship Outcomes</p>
+<ul><li>↓ carbapenem DDD/1000 pt-days by 30–50% (e.g. CDC 2014 report on 4 hospital cohorts).</li><li>↓ CDI rates by 50%+ (Muto 2007, <i>Infect Control Hosp Epidemiol</i>).</li><li>↓ vancomycin use ↓ VRE prevalence.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 6: Formulary and Antibiogram</div>
+<p>#### Formulary</p>
+<ul><li>Hospital's approved drug list, set by P&amp;T committee.</li><li>Restricts high-cost, high-resistance agents; ensures safe, cost-effective prescribing.</li><li><b>Antimicrobial sub-committee</b> of P&amp;T typically runs AMS, with ID physician, microbiologist, pharmacist, infection control, IT, hospital epidemiologist.</li></ul>
+<p>#### Antibiogram</p>
+<ul><li>Cumulative susceptibility profile of isolates from a defined population (hospital, ICU, ED, outpatient) over a defined period (usually 1 year, updated annually).</li><li>Used to:</li><li>Guide empirical therapy.</li><li>Detect emerging resistance trends.</li><li>Drive formulary decisions.</li><li>Generate syndrome-specific guidelines.</li><li><b>Limitations</b>: doesn't tell you individual patient susceptibility; doesn't reflect inoculum effect, body site, or infection type; no patient-level data.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 7: The AMS Team (AMST)</div>
+<p>A multidisciplinary team with:</p>
+<ul><li><b>ID physician</b> (clinical lead, accountability)</li><li><b>AMS pharmacist</b> (pharmacy lead — usually full-time, or fractional time per hospital)</li><li><b>Microbiologist</b> (antibiogram, diagnostics, susceptibility)</li><li><b>Infection control nurse / epidemiologist</b> (link to HAI/AMR data)</li><li><b>Information technology</b> (EMR integration, dashboards)</li><li><b>Senior executive sponsor</b> (resources, authority)</li><li><b>Data analyst</b> (metrics, reporting)</li><li><b>Clinical champions</b> by ward (e.g. ICU, paediatrics, surgery, oncology)</li><li><b>Patient &amp; public representation</b> (WHO Core Element 2019)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 8: Behavioural Change and Implementation Science</div>
+<p>#### Why It Matters</p>
+<ul><li>"People don't change with facts alone." Adoption of guidelines requires <b>nudge, peer pressure, and habit redesign</b>.</li></ul>
+<p>#### Frameworks</p>
+<ul><li><b>COM-B</b>: Capability (skills/knowledge), Opportunity (context), Motivation (incentives) → Behaviour.</li><li><b>Theoretical Domains Framework (TDF)</b>: 14 domains of behaviour.</li><li><b>CFIR (Consolidated Framework for Implementation Research)</b>: 5 domains (intervention, outer/inner setting, individuals, process).</li><li><b>RE-AIM</b>: Reach, Effectiveness, Adoption, Implementation, Maintenance.</li></ul>
+<p>#### Practical Interventions</p>
+<ul><li><b>Default durations</b> in EMR order sets.</li><li><b>Automatic stop orders</b> (e.g. 48 h for surgical prophylaxis).</li><li><b>EMR best practice advisories</b> at 72 h.</li><li><b>Audit &amp; feedback</b> with peer comparison.</li><li><b>Academic detailing</b> (1-to-1 education by pharmacist).</li><li><b>Accountability</b> through senior leadership.</li><li><b>Public dashboards</b> (wards, units).</li></ul>
+<p>#### Social Marketing</p>
+<ul><li><b>"Antibiotic Guardian"</b> (UK): public pledge.</li><li><b>World Antimicrobial Awareness Week</b> (Nov 18–24) — WHO campaign.</li><li><b>"Start Smart – Then Focus"</b>: UK AMS message.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 9: AMS in Different Settings</div>
+<p>#### Acute Care Hospitals</p>
+<ul><li>Comprehensive programmes with PAF + restriction + guidelines + IVOS + dose optimisation.</li><li>CDC Core Elements 1–7 fully implemented.</li></ul>
+<p>#### Intensive Care Unit (ICU)</p>
+<ul><li><b>Multiple daily AMS rounds</b>; PK/PD optimisation critical.</li><li>Daily checklist: "Is this antibiotic still needed? Can we de-escalate? Can we switch to oral? Can we stop?"</li><li><b>β-lactam TDM/extended infusion</b> in critical illness.</li><li><b>Biomarker-guided</b> (PCT) de-escalation.</li></ul>
+<p>#### Long-Term Care / Nursing Homes</p>
+<ul><li><b>80% of residents receive at least one antibiotic/year</b> — often inappropriate.</li><li>Targets: UTI overtreatment, asymptomatic bacteriuria (ASB), pneumonia.</li><li>Strategies: SBAR tool, education, nursing-led protocol for ASB.</li></ul>
+<p>#### Primary / Community Care</p>
+<ul><li><b>80–90% of all antibiotic use</b> is in community.</li><li>Common targets: URTI (mostly viral), acute bronchitis, otitis media, sinusitis, ASB.</li><li><b>Delayed/back-up prescriptions</b> reduce antibiotic use by 40–60% (Little 2017).</li><li><b>Patient education</b>: "Most colds, sore throats, and bronchitis don't need antibiotics".</li></ul>
+<p>#### LMIC (Low- and Middle-Income Countries)</p>
+<ul><li><b>WHO AWaRe</b> classification: Access, Watch, Reserve.</li><li>Target: ≥ 60% of total antibiotic consumption from "Access" group by 2023.</li><li>Essential Medicines List (EML); IV-to-oral switch programmes.</li><li>Capacity building; GLASS (Global Antimicrobial Resistance and Use Surveillance System).</li><li>Challenges: over-the-counter sales, lack of diagnostic access, supply-chain issues, counterfeit drugs.</li></ul>
+<p>#### Surgical Prophylaxis</p>
+<ul><li><b>Indication-based</b>: clean (no), clean-contaminated/contaminated (single dose), dirty (therapeutic).</li><li><b>Single dose</b> for most procedures; repeat dosing only if major blood loss / prolonged procedure.</li><li><b>Cefazolin 2 g IV</b> 30–60 min pre-incision most common; alternative if MRSA risk (add vancomycin).</li><li><b>Stop within 24 h</b> of procedure (CDC/NICE 2008; 2017 meta-analysis confirms no benefit of prolonged).</li></ul>
+<p>#### Paediatric AMS</p>
+<ul><li>DDD less useful; <b>DOT/1000 pt-days</b> preferred.</li><li>Amoxicillin first-line for community pneumonia, otitis media, strep throat.</li><li>Family education, viral illness communication.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Section 10: Special Topics</div>
+<p>#### 10.1 Procalcitonin (PCT)-Guided AMS</p>
+<ul><li><b>PCT &lt; 0.1 µg/L</b>: bacterial infection unlikely → withhold/withdraw antibiotic.</li><li><b>PCT 0.1–0.25</b>: possible bacterial infection → reassess.</li><li><b>PCT &gt; 0.25–0.5</b>: likely bacterial infection → treat.</li><li><b>PRORATA</b> (2010), <b>SAPS</b> (2014), <b>ProHOSP</b> (2014): PCT-guided AMS ↓ antibiotic exposure by 30–50% with similar mortality.</li><li><b>Limitations</b>: baseline ↑ PCT in trauma, surgery, cardiogenic shock, severe burns, renal failure, medullary thyroid carcinoma.</li></ul>
+<p>#### 10.2 Asymptomatic Bacteriuria (ASB) — A Common AMS Target</p>
+<ul><li>Do <b>NOT</b> treat except: pregnancy, pre-urological procedure, neutropenia, very rarely transplant.</li><li><b>Surprise question</b>: "If urine culture was negative, would you treat?" — if no, don't treat ASB.</li><li>This is one of the <b>Choosing Wisely</b> UK/US recommendations.</li></ul>
+<p>#### 10.3 Prophylaxis Stewardship</p>
+<ul><li><b>Surgical prophylaxis</b>: 24 h max, single dose.</li><li><b>Recurrent UTI</b>: non-antibiotic strategies first (cranberry, methenamine hippurate).</li><li><b>Neutropenic prophylaxis</b>: fluoroquinolones in high-risk only.</li><li><b>Endocarditis prophylaxis</b>: restricted to highest-risk (prosthetic valve, prior endocarditis, certain congenital heart disease, valve repair with material) undergoing specific dental/upper respiratory procedures (NICE 2008; ESC 2023).</li><li><b>Traveller's diarrhoea prophylaxis</b>: usually self-treatment (azithromycin) over routine prophylaxis.</li></ul>
+<p>#### 10.4 Carbapenem-Sparing Strategies</p>
+<ul><li><b>Piperacillin-tazobactam</b> non-inferior to meropenem for ceftriaxone-resistant <i>E. coli</i> bacteraemia (MERINO trial 2018) — but if ESBL + piperacillin-tazobactam resistance, meropenem preferred.</li><li><b>Ceftolozane-tazobactam</b>, <b>ceftazidime-avibactam</b>, <b>meropenem-vaborbactam</b>, <b>imipenem-relebactam</b>, <b>cefiderocol</b> for MDR Gram-negative; restrict to AMS-approved indications.</li><li><b>AMP-VAN-TGC linezolid</b> stewardship for ICU/MDR.</li></ul>
+<p>#### 10.5 Role of the Pharmacist</p>
+<ul><li><b>AMS pharmacist</b> is often the operational backbone.</li><li>Daily chart review, PAF, IVOS, dose adjustments, TDM, patient counselling, education.</li><li>Often the "gatekeeper" of restricted agents.</li><li>Critical for embedding AMS into routine workflow.</li></ul>
+<p>#### 10.6 Role of the Microbiologist</p>
+<ul><li>Antibiogram publication; diagnostic algorithm input.</li><li>Selective reporting of susceptibilities (e.g. do NOT report cephalosporin for ESBL producer; do NOT report carbapenem if intermediate).</li><li>Cascade reporting.</li><li>Bedside/pathology liaison.</li></ul>
+<p>#### 10.7 Communication and Patient Engagement</p>
+<ul><li>Explain to patients why they don't need an antibiotic ("viral", "symptom relief").</li><li><b>Safety-netting</b> instructions (worsening, return).</li><li><b>Shared decision-making</b>.</li></ul>
+<p>#### 10.8 Digital Health and AI in AMS</p>
+<ul><li>EMR-based <b>CDSS</b> (Clinical Decision Support Systems) for AMS.</li><li><b>Predictive analytics</b> for resistance, sepsis.</li><li>AI-driven <b>antibiogram generation</b> and <b>outbreak detection</b>.</li><li>Real-time <b>alerts</b> for double anaerobic coverage, prolonged courses, restricted agents.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Correlation / Application</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Principle Applied</th><th>Key Decision</th></tr><tr><td>----------</td><td>------------------</td><td>--------------</td></tr><tr><td>Day 3 post-op patient, IV co-amoxiclav, afebrile, eating</td><td>**IVOS** (FAITH)</td><td>Switch to oral co-amoxiclav to complete 5 days</td></tr><tr><td>Day 3 ICU patient, IV vancomycin + pip-tazo, blood culture *E. coli* (susceptible to ceftriaxone)</td><td>**De-escalation**</td><td>Stop vancomycin + pip-tazo; switch to ceftriaxone 2 g daily</td></tr><tr><td>Day 5 pneumonia, MSRA on sputum, switched to oral co-amoxiclav, tolerating</td><td>**IVOS + duration**</td><td>Total 5 days; stop date; review</td></tr><tr><td>Pyelonephritis in young woman, IV ceftriaxone, afebrile 36 h, tolerating PO, susceptible to ciprofloxacin</td><td>**IVOS** (FQ)</td><td>Switch to oral ciprofloxacin; total 7 days</td></tr><tr><td>*S. aureus* bacteraemia, day 3, TTE clear, no endocarditis, no prosthetic</td><td>**Duration (MSSA 14 d IV minimum)**</td><td>Keep IV; **no switch** until end of 14-day course (consider OPAT)</td></tr><tr><td>Patient with "penicillin allergy" prescribed aztreonam + vancomycin for pneumonia</td><td>**Allergy de-labelling**</td><td>Take history → low-risk → direct amoxicillin challenge → switch to ceftriaxone</td></tr><tr><td>Day 3, urine culture *E. coli* 10⁵, no UTI symptoms, not pregnant</td><td>**ASB — DO NOT TREAT**</td><td>Stop antibiotics; document</td></tr><tr><td>Day 3, **MSSA** bacteraemia, planned TTE clear, source unknown</td><td>**De-escalate + duration**</td><td>Switch empirical vancomycin to flucloxacillin (or cefazolin); minimum 14 d IV; arrange echo; repeat blood cultures</td></tr><tr><td>Day 5, on piperacillin-tazobactam + metronidazole, source-controlled diverticular abscess</td><td>**De-escalate + duration**</td><td>Switch to amoxicillin + metronidazole; total 4 days post-source control</td></tr><tr><td>Day 4, ICU patient on meropenem + vancomycin, blood culture *Candida albicans*</td><td>**Antifungal stewardship**</td><td>De-escalate to fluconazole if susceptible; ID consult; 14 d minimum; remove CVC</td></tr><tr><td>Post-op cholecystectomy, on ceftriaxone + metronidazole 5 days, afebrile, eating</td><td>**Surgical prophylaxis duration**</td><td>Should have been stopped at 24 h — stop now</td></tr><tr><td>Recurrent UTI, considering prophylactic nitrofurantoin</td><td>**Prophylaxis stewardship**</td><td>Counsel on non-antibiotic strategies (methenamine hippurate, cranberry) first</td></tr><tr><td>Day 4, neutropenic fever, on piperacillin-tazobactam, blood culture negative, clinical improvement, afebrile 48 h</td><td>**Duration in neutropenia**</td><td>Continue at least 7 days and until afebrile + ANC recovery; reassess at 48–72 h with culture</td></tr><tr><td>Patient with cellulitis, Day 7, marked improvement but still pink, on flucloxacillin</td><td>**De-escalate + duration**</td><td>Total 5–7 days; if afebrile and improving, can stop</td></tr><tr><td>Day 4, critically ill patient, on vancomycin empirically for MRSA, MRSA screen negative, no growth on cultures</td><td>**De-escalation**</td><td>Stop vancomycin (consider ID input)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Must-know</b>: 5 Ds (Drug, Dose, De-escalation, Duration, Delivery), FAITH criteria for IVOS, durations (UTI 3, CAP 5, HAP 7, GNB 7, MSSA 14, IA 4 d), TDM targets (vancomycin AUC 400–600, gentamicin once-daily, voriconazole trough 2–4), AWaRe classification, ASB no treatment (except pregnancy/pre-urology), DDD vs DOT, 48–72 h antimicrobial review, surgical prophylaxis 24 h, penicillin allergy de-labelling. - <b>Common viva</b>: "Outline your AMS programme for a 600-bed hospital", "Why is vancomycin TDM changing from trough to AUC?", "When can you do IV-to-oral switch?", "Why is this patient still on metronidazole?" (redundant anaerobic coverage with pip-tazo). - <b>Exam trap</b>: MSSA bacteraemia must be treated with <b>flucloxacillin</b> (not vancomycin unless intolerant/allergic) — even though vancomycin "covers" MSSA, β-lactams are superior (Tong 2020).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>Switching *S. aureus* bacteraemia to oral before 14 days</td><td>**No** — minimum 14 days **IV** β-lactam. Can use oral step-down only with **flucloxacillin** if endocarditis excluded, source controlled, no prosthetic material, and only for completion of course (controversial; supported by SABATO 2020 trial in select cases).</td></tr><tr><td>"Vancomycin trough 15–20 mg/L is the goal"</td><td>**Outdated**. IDSA 2020 recommends **AUC 400–600 mg·h/L**. Trough 15–20 acceptable surrogate if AUC unavailable.</td></tr><tr><td>Treating asymptomatic bacteriuria</td><td>**Don't** (except pregnancy, pre-urological, neutropenia, post-renal transplant early period).</td></tr><tr><td>"Tigecycline is great for ventilator pneumonia"</td><td>**No** — poor lung penetration, **black-box warning** for ↑ mortality in ventilator pneumonia.</td></tr><tr><td>Pip-tazo + metronidazole for intra-abdominal</td><td>**Redundant** — pip-tazo covers anaerobes; drop metronidazole unless anaerobic-only or severe.</td></tr><tr><td>"Surgical prophylaxis for 7 days"</td><td>**Wrong** — single dose (or 24 h max) for most procedures.</td></tr><tr><td>Prophylactic antibiotics for recurrent UTI = "rotate through classes"</td><td>**Wrong** — use one agent (nitrofurantoin or trimethoprim); counsel non-antibiotic strategies first (methenamine hippurate — *JAMA* 2022).</td></tr><tr><td>"Treat any positive blood culture"</td><td>Coagulase-negative staphylococci in single bottle, no clinical sepsis, no prosthetic → likely contaminant — re-evaluate.</td></tr><tr><td>"Higher dose, longer infusion" — for vancomycin</td><td>Vancomycin is best monitored by AUC; "high trough" alone is insufficient.</td></tr><tr><td>ESBL + meropenem always</td><td>For low-risk bacteraemia, **pip-tazo** may be non-inferior (MERINO subgroup) but main trial showed pip-tazo inferior. **Use meropenem** for ESBL bacteraemia with sepsis.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>5 Ds of AMS</b>: <b>D</b>rug, <b>D</b>ose, <b>D</b>uration, <b>D</b>e-escalation, <b>D</b>elivery (route).</li><li><b>FAITH</b> (IV→oral): <b>F</b>unctioning GI, <b>A</b>febrile 24–48 h, <b>I</b>ndication for IV resolved, <b>T</b>ablet available, <b>H</b>igh oral bioavailability.</li><li><b>AMS 48–72 h review — MSU CSM</b>: <b>M</b>icrobiology, <b>S</b>ymptoms, <b>U</b>nnecessary, <b>C</b>linical, <b>S</b>hortest, <b>M</b>outh.</li><li><b>CDC Core Elements</b>: <b>LEADER-ARMS</b> (Leadership, Accountability, Drug expertise, Action, Tracking, Reporting, Education).</li><li><b>DOT vs DDD</b>: <b>DOT</b> = Days of Therapy (number of agents per day, not dose), <b>DDD</b> = Defined Daily Dose (standard adult dose, WHO).</li><li><b>AWaRe</b>: <b>A</b>ccess, <b>W</b>atch, <b>R</b>eserve.</li><li><b>Tetracyclines (doxycycline)</b>: "<b>DOXY</b>cline has good oral bioavailability &gt; 90%" (relevant for IVOS).</li><li><b>"No MSSA" — vancomycin is suboptimal for MSSA</b>: β-lactams (flucloxacillin, cefazolin) &gt; vancomycin for MSSA. "β-lactams beat vancomycin for β-lactams-susceptible staph."</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Antimicrobial Stewardship)) Definitions AMS 5 Ds AWaRe DDD vs DOT Why AMS AMR CDI Toxicity Cost Core Strategies Prospective Audit Feedback Prior Authorisation Guidelines and Antibiogram Formulary Dose Optimisation Extended Infusion Loading Dose Renal Adjustment Duration Cystitis 3 CAP 5 HAP 7 GNB 7 MSSA 14 IA 4 De-escalation 48-72h Review Stop Redundant Reason to Continue IV-to-Oral FAITH TDM Vancomycin AUC 400-600 Aminoglycosides Azoles Rapid Diagnostics MALDI-TOF PCR Panels PCT Allergy De-labelling Education and Behavioural Science Metrics DDD per 1000 patient-days DOT per 1000 patient-days LOT Appropriateness CDI rate Resistance Mortality Cost Team ID physician Pharmacist Microbiologist Infection control IT Senior sponsor Data analyst Settings Acute care ICU LTCF Community and Primary care LMIC AWaRe GLASS Paediatrics OPAT Antifungal Surgical prophylaxis 24h </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Flowchart: 48–72 Hour AMS Time-Out</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Patient on antibiotics ≥48-72h] --&gt; B{Indication confirmed?} B -- No --&gt; C[Stop - non-infectious mimic] B -- Yes --&gt; D[Review Microbiology] D --&gt; E[Review Clinical Status] E --&gt; F{Symptoms improving?} F -- No --&gt; G[Reassess: source, drug, dose, route] F -- Yes --&gt; H[Pathogen identified and susceptibilities?] H -- Yes, susceptible narrow agent available --&gt; I[De-escalate to narrowest] H -- No pathogen identified --&gt; J[Continue current empirical or STOP if no clinical infection] I --&gt; K{FAITH criteria met?} K -- Yes --&gt; L[Switch IV to oral] K -- No --&gt; M[Continue IV - reassess daily] L --&gt; N[Document Stop/Review date] M --&gt; N J --&gt; N C --&gt; N G --&gt; N N --&gt; O[AMS Dashboard Update] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Antibiogram example with MRSA, ESBL, CRE trends</li><li>[ ] AMS dashboard mock-up (DOT, DDD, % IVOS, % guideline-adherent)</li><li>[ ] 5 Ds / FAITH infographic</li><li>[ ] 48–72 h review card (ward-pocket)</li><li>[ ] β-lactam time-above-MIC curves (intermittent vs extended vs continuous)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] CDC Antibiotic Stewardship Core Elements (2019 update)</li><li>[ ] NICE NG15 / NG63 antimicrobial stewardship guidelines (UK)</li><li>[ ] IDSA/SHEA AMS guidelines 2016 / 2020 update</li><li>[ ] WHO AWaRe 2019 launch video</li><li>[ ] ProHOSP / Procalcitonin-guided AMS trial lecture (Schuetz)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>KEY POINTS ONLY — FOR LAST-MINUTE REVIEW</b>  - <b>AMS definition</b>: Coordinated interventions to optimise antimicrobial use — the 5 Ds. - <b>5 Ds</b>: <b>D</b>rug, <b>D</b>ose, <b>D</b>uration, <b>D</b>e-escalation, <b>D</b>elivery. - <b>48–72 h review</b> ("time-out"): microbiology + clinical + de-escalate + IVOS + shortest duration. - <b>FAITH</b> (IV→oral): GI functioning, Afebrile 24–48 h, Indication for IV gone, Tablet available, High bioavailability. - <b>Durations</b> (shortest effective): uncomplicated cystitis <b>3 d</b>, CAP <b>5 d</b>, HAP/VAP <b>7 d</b>, intra-abdominal <b>4 d</b> post-source control, GNB bacteraemia <b>7 d</b>, <i>S. aureus</i> bacteraemia <b>14 d IV minimum</b>, aspergillosis <b>4–6 wk</b>. - <b>TDM</b>: Vancomycin <b>AUC 400–600 mg·h/L</b>; gentamicin once-daily nomogram; voriconazole trough <b>2–4 mg/L</b>; posaconazole trough <b>&gt; 0.7 (prophylaxis) / &gt; 1.0–2.0 (treatment) mg/L</b>. - <b>AMS strategies</b>: PAF + PA, guidelines, formulary, dose optimisation (extended/continuous β-lactam infusion), rapid diagnostics, allergy de-labelling, education, behavioural nudges. - <b>AWaRe</b>: <b>A</b>ccess ≥ 60% of consumption, <b>W</b>atch (monitor), <b>R</b>eserve (last-line). - <b>DDD/1000 pt-days</b> vs <b>DOT/1000 pt-days</b>: WHO standard dose vs every calendar day a patient gets an agent. - <b>Asymptomatic bacteriuria</b>: don't treat (except pregnancy, pre-urology, neutropenia, post-transplant early). - <b>Surgical prophylaxis</b>: single dose; <b>stop ≤ 24 h</b>. - <b>β-lactam &gt; vancomycin</b> for MSSA; switch to flucloxacillin/cefazolin.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define AMS and list the 5 Ds.</li><li>What is the 48–72 h AMS time-out and what should it cover?</li><li>List the FAITH criteria for IV-to-oral switch.</li><li>What is the recommended duration of therapy for CAP, HAP, IA, cystitis, MSSA bacteraemia, GNB bacteraemia?</li><li>What is the current TDM target for vancomycin? Why was it changed?</li><li>Define DDD, DOT, and LOT. Which is preferred for paediatric benchmarking?</li><li>State the WHO AWaRe groups and their target.</li><li>List indications where ASB should be treated.</li><li>What is the role of the AMS pharmacist?</li><li>What is the surgical prophylaxis duration recommendation?</li><li>Why is flucloxacillin preferred over vancomycin for MSSA?</li><li>Name 3 behavioural-change interventions in AMS.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall Quality (1-5)</th><th>Time Spent</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>---------------------</td><td>------------</td><td>-------</td></tr><tr><td>1 (24h)</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>AMS definition, 5 Ds, core strategies (PAF, PA, guidelines, IVOS, de-escalation, TDM, dose optimisation, duration, allergy de-labelling, education), metrics (DDD, DOT, LOT, appropriateness, CDI, resistance), 48–72 h review, FAITH, durations (3/5/7/7/14/4 d), vancomycin AUC 400–600, AWaRe, ASB no treatment (exceptions), surgical prophylaxis 24 h, MSSA β-lactam superiority, AMS team composition</td></tr><tr><td>**Should Know 🟡**</td><td>Behavioural science (COM-B, CFIR, RE-AIM), PCT-guided AMS, OPAT, antifungal stewardship, paediatric AMS, primary care AMS, long-term care, AWaRe Access target, evidence (Cochrane Davey 2017), MERINO trial, STOP-IT trial, BLING-III trial, IDSA/SHEA 2016, IDSA 2020 vancomycin TDM, ESCAPE study, Allergy de-labelling RCTs, ID physician/pharmacist/microbiologist roles, GLASS</td></tr><tr><td>**Nice to Know 🟢**</td><td>AI/ML in stewardship, blockchain antibiotic supply chain, novel β-lactams (cefiderocol, sulbactam-durlobactam, etc.), microbiome preservation, vaccination as AMS, AWaRe implementation in LMIC, antimicrobial peptides, bacteriophage therapy integration, GLASS data interpretation, social media as AMS tool, antimicrobial footprint concept</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">My Weak Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] <i>Add your personal weak areas here after self-testing</i></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score /10</th><th>Target /10</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>Understanding</td><td></td><td>8+</td></tr><tr><td>Recall</td><td></td><td>8+</td></tr><tr><td>MCQ Performance</td><td></td><td>8+</td></tr><tr><td>SBA Performance</td><td></td><td>8+</td></tr><tr><td>Viva Confidence</td><td></td><td>8+</td></tr><tr><td>**TOTAL**</td><td></td><td>**40+/50**</td></tr></table>
+<div class="callout">[!tip] <b>&lt;35 = Weak — re-study | 35–44 = Acceptable | 45+ = Strong exam-ready</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer / Essay (20 min)</div>
+<ul><li>Structure: <b>Definition → 5 Ds → Core strategies (PAF, PA, guidelines, IVOS, de-escalation, TDM, dose optimisation, rapid diagnostics, education) → AMS team → Metrics (DDD, DOT, appropriateness, CDI, resistance) → Settings (acute, ICU, LTCF, community, LMIC, paediatrics) → Behavioural science → Key durations and TDM targets → Conclusion</b>.</li></ul>
+<div class="sub-h">Short Note (7 min)</div>
+<ul><li>Bullet: AMS definition, 5 Ds, FAITH, durations, vancomycin AUC, AWaRe, DDD vs DOT, ASB exception list.</li></ul>
+<div class="sub-h">Viva Answer (3 min)</div>
+<ul><li>"In your own words…" — Lead with AMS definition, mention 5 Ds, give example of PAF + IVOS, mention vancomycin AUC, give example of de-escalation.</li></ul>
+<div class="sub-h">Ward Case Discussion (5 min)</div>
+<ul><li>Apply to a real case: prescribe correctly (indication, drug, dose, route, duration, stop date), then describe what you'd do at 48–72 h (micro + clinical + de-escalate + IVOS + duration).</li></ul>
+<div class="sub-h">Rapid Revision Sheet (2 min)</div>
+<ul><li>One-page summary above.</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet (1 min)</div>
+<ul><li>5 Ds, FAITH, durations, vancomycin AUC, AWaRe, ASB exceptions, surgical prophylaxis 24 h.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1. A 65-year-old man is admitted with community-acquired pneumonia. After 3 days of IV co-amoxiclav and clarithromycin he is afebrile, oxygen saturations are 95% on air, and he is eating. The MOST appropriate next step is:</b> A. Continue IV antibiotics for a further 7 days B. Switch to oral co-amoxiclav and discharge with a total of 5 days C. Stop antibiotics immediately D. Add oral oseltamivir E. Add a second anti-pseudomonal</p>
+<p><b>2. According to the WHO AWaRe classification, the "Access" group of antibiotics should account for at least what proportion of total antibiotic consumption?</b> A. 20% B. 40% C. 60% D. 80% E. 100%</p>
+<p><b>3. The IDSA 2020 vancomycin TDM target for serious MRSA infections is:</b> A. Trough 5–10 mg/L B. Trough 10–15 mg/L C. AUC 200–400 mg·h/L D. <b>AUC 400–600 mg·h/L</b> E. Peak 30–40 mg/L</p>
+<p><b>4. Which of the following is an indication to TREAT asymptomatic bacteriuria?</b> A. Elderly diabetic patient with catheter B. Post-menopausal woman with positive urine culture C. <b>Pregnant woman</b> D. Patient awaiting routine cataract surgery E. Patient with delirium and pyuria</p>
+<p><b>5. The 5 Ds of antimicrobial stewardship include all EXCEPT:</b> A. Drug B. Dose C. Duration D. De-escalation E. <b>Diagnosis</b></p>
+<p>**6. In a 70-year-old man with <i>E. coli</i> bacteraemia from a urinary source, the shortest evidence-based duration of effective antibiotic therapy (with source control) is:<b> A. 3 days B. 5 days C. </b>7 days** D. 14 days E. 21 days</p>
+<p><b>7. A patient is 4 days post-op from a colectomy. The surgical team continued ceftriaxone + metronidazole. The patient is afebrile, eating, and the wound is clean. The MOST appropriate action is:</b> A. Continue for 7 days B. Continue for 14 days C. Stop antibiotics immediately (surgical prophylaxis should have been stopped at 24 h) D. Switch to oral E. Add antifungal</p>
+<p><b>8. Which antibiotic combination is REDUNDANT in intra-abdominal sepsis?</b> A. Amoxicillin + gentamicin B. Co-amoxiclav + gentamicin C. <b>Piperacillin-tazobactam + metronidazole</b> D. Meropenem + amikacin E. Cefepime + metronidazole</p>
+<p><b>9. Procalcitonin-guided antibiotic stewardship has been shown to:</b> A. Increase total antibiotic exposure B. <b>Reduce antibiotic exposure without increasing mortality</b> C. Require continuous infusion of antibiotics D. Replace clinical judgement E. Only be useful in children</p>
+<p><b>10. The 48–72 hour AMS review should include ALL of the following EXCEPT:</b> A. Review microbiology B. Reassess clinical response C. Consider de-escalation D. Document a stop or review date E. <b>Automatically extend the course to 14 days</b></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<p><b>SBA 1. A 58-year-old man with diabetic foot osteomyelitis is being treated with IV flucloxacillin. After 2 weeks he improves clinically, his repeat MRI shows resolving infection, and he is tolerating oral flucloxacillin. He has no prosthetic material. His CRP has normalised. The MOST appropriate next step is:</b> A. Continue IV flucloxacillin for another 6 weeks B. Stop all antibiotics now C. <b>Switch to oral flucloxacillin and complete a total of 4–6 weeks</b> D. Add rifampicin for 12 months E. Send for amputation</p>
+<p>**SBA 2. A 24-year-old woman presents with dysuria, frequency, and suprapubic pain. Urine culture grows <i>E. coli</i> &gt; 10⁵ CFU/mL sensitive to nitrofurantoin, trimethoprim, and ciprofloxacin. She is not pregnant. The MOST appropriate antibiotic and duration is:<b> A. Ciprofloxacin 500 mg BD for 7 days B. Co-amoxiclav 625 mg TDS for 7 days C. </b>Nitrofurantoin 100 mg MR BD for 3 days** D. Trimethoprim 200 mg BD for 14 days E. Fosfomycin 3 g single dose (only if first-line not available)</p>
+<p>**SBA 3. A 67-year-old man in ICU on meropenem and vancomycin for hospital-acquired pneumonia has bronchoalveolar lavage cultures growing <i>E. coli</i> susceptible to ceftriaxone, and MRSA screen is negative. On day 4 he is afebrile, WBC normalising, on minimal vasopressors. The MOST appropriate action is:<b> A. Continue meropenem + vancomycin for 14 days B. Stop vancomycin only C. </b>De-escalate to ceftriaxone (stop both meropenem and vancomycin)** D. Add an antifungal E. Switch meropenem to ertapenem</p>
+<p>**SBA 4. A 32-year-old woman with no drug allergies has a positive <i>Staphylococcus aureus</i> blood culture (MSSA) on day 1. She is septic. TTE shows no vegetations. The MOST appropriate definitive antibiotic is:<b> A. Vancomycin 1 g BD B. Daptomycin C. </b>Flucloxacillin 2 g IV 4–6 hourly** D. Linezolid E. Teicoplanin</p>
+<p>**SBA 5. A 75-year-old man in hospital for a fall has a positive urine culture growing <i>E. coli</i> 10⁴ CFU/mL. He has no urinary symptoms. He is not pregnant. His catheter was removed yesterday. The MOST appropriate management is:<b> A. Start nitrofurantoin 50 mg QDS B. Start co-amoxiclav C. Start trimethoprim D. </b>No antibiotics — asymptomatic bacteriuria, do not treat** E. Repeat culture in 1 week</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Q: AMS definition?</b></li></ul>
+<p>A: Coordinated interventions to optimise antimicrobial use (right drug, dose, route, duration, patient) to improve outcomes and reduce resistance, <i>C. difficile</i>, toxicity, cost.</p>
+<ul><li><b>Q: 5 Ds of AMS?</b></li></ul>
+<p>A: <b>D</b>rug, <b>D</b>ose, <b>D</b>uration, <b>D</b>e-escalation, <b>D</b>elivery (route).</p>
+<ul><li><b>Q: Goals of AMS?</b></li></ul>
+<p>A: Optimise clinical outcomes, minimise resistance, reduce <i>C. difficile</i>, reduce toxicity, reduce cost.</p>
+<ul><li><b>Q: 4 main AMS strategies?</b></li></ul>
+<p>A: (1) Prospective audit &amp; feedback; (2) Prior authorisation / formulary restriction; (3) Syndrome-specific guidelines + antibiogram; (4) IV-to-oral switch (IVOS) + dose optimisation (TDM, extended/continuous infusion) + duration guidance + rapid diagnostics + allergy de-labelling + education.</p>
+<ul><li><b>Q: 48–72 h AMS time-out?</b></li></ul>
+<p>A: Reassess every prescription: microbiology + clinical status + de-escalate + IVOS + shortest duration + document a stop/review date.</p>
+<ul><li><b>Q: FAITH criteria (IV→oral)?</b></li></ul>
+<p>A: GI <b>F</b>unctioning, <b>A</b>febrile 24–48 h, <b>I</b>ndication for IV gone, <b>T</b>ablet available, <b>H</b>igh oral bioavailability (&gt; 90%).</p>
+<ul><li><b>Q: Duration — uncomplicated cystitis?</b></li></ul>
+<p>A: 3 days (nitrofurantoin) or 5 days (TMP).</p>
+<ul><li><b>Q: Duration — CAP?</b></li></ul>
+<p>A: 5 days if clinically stable.</p>
+<ul><li><b>Q: Duration — HAP / VAP?</b></li></ul>
+<p>A: 7 days (with source control).</p>
+<ul><li><b>Q: Duration — intra-abdominal (post source control)?</b></li></ul>
+<p>A: 4 days.</p>
+<ul><li><b>Q: Duration — GNB bacteraemia (uncomplicated)?</b></li></ul>
+<p>A: 7 days.</p>
+<ul><li><b>Q: Duration — MSSA bacteraemia?</b></li></ul>
+<p>A: 14 days IV minimum (4–6 weeks if complicated/endocarditis).</p>
+<ul><li><b>Q: Duration — surgical prophylaxis?</b></li></ul>
+<p>A: Single dose; stop ≤ 24 h.</p>
+<ul><li><b>Q: Vancomycin TDM target?</b></li></ul>
+<p>A: AUC 400–600 mg·h/L (preferred); trough 15–20 mg/L acceptable proxy.</p>
+<ul><li><b>Q: Voriconazole TDM target?</b></li></ul>
+<p>A: Trough 2–4 mg/L (acceptable 1–5.5 mg/L).</p>
+<ul><li><b>Q: Posaconazole TDM target?</b></li></ul>
+<p>A: Prophylaxis trough &gt; 0.7 mg/L; treatment &gt; 1.0–2.0 mg/L.</p>
+<ul><li><b>Q: Gentamicin once-daily regimen?</b></li></ul>
+<p>A: 7 mg/kg; nomogram-based dosing; trough &lt; 1 mg/L.</p>
+<ul><li><b>Q: ASB — when to treat?</b></li></ul>
+<p>A: Pregnancy, pre-urological procedure, neutropenia, post-renal transplant (early period).</p>
+<ul><li><b>Q: DDD vs DOT?</b></li></ul>
+<p>A: DDD = WHO standard adult dose; DOT = days a patient receives an agent (irrespective of number/dose).</p>
+<ul><li><b>Q: AWaRe Access target?</b></li></ul>
+<p>A: ≥ 60% of total antibiotic consumption by 2023.</p>
+<ul><li><b>Q: AWaRe Watch?</b></li></ul>
+<p>A: Higher resistance potential; recommended for specific indications only; monitored.</p>
+<ul><li><b>Q: AWaRe Reserve?</b></li></ul>
+<p>A: Last-resort, multi-drug resistant only; tightly controlled.</p>
+<ul><li><b>Q: Penicillin allergy — what's the rate of TRUE allergy?</b></li></ul>
+<p>A: ~ 10% — i.e. 90% of "penicillin allergy" labels are wrong; de-label via history ± intradermal test ± direct oral rechallenge.</p>
+<ul><li><b>Q: β-lactam vs vancomycin for MSSA?</b></li></ul>
+<p>A: β-lactams (flucloxacillin, cefazolin, ceftriaxone) superior — switch from empirical vancomycin to flucloxacillin ASAP.</p>
+<ul><li><b>Q: Tigecycline in VAP?</b></li></ul>
+<p>A: Avoid — poor lung penetration, ↑ mortality.</p>
+<ul><li><b>Q: β-lactam PK/PD optimisation in critical illness?</b></li></ul>
+<p>A: Extended infusion (3–4 h) or continuous infusion ↑ %T&gt;MIC; loading dose important; BLING-III 2024 confirmed ↓ mortality with continuous β-lactam infusion.</p>
+<ul><li><b>Q: Rapid diagnostic impact?</b></li></ul>
+<p>A: Earlier targeted therapy and earlier de-escalation; needs paired AMS team.</p>
+<ul><li><b>Q: Procalcitonin role?</b></li></ul>
+<p>A: PCT &lt; 0.1 µg/L argues against bacterial infection; PCT-guided AMS reduces antibiotic exposure 30–50% without ↑ mortality (PRORATA, SAPS, ProHOSP).</p>
+<ul><li><b>Q: AMS Core Elements (CDC)?</b></li></ul>
+<p>A: Leadership commitment, accountability, pharmacy expertise, action, tracking, reporting, education.</p>
+<ul><li><b>Q: AMS team members?</b></li></ul>
+<p>A: ID physician (lead), pharmacist, microbiologist, infection control, IT, data analyst, executive sponsor, clinical champions.</p>
+<ul><li><b>Q: Examples of redundant combinations?</b></li></ul>
+<p>A: Pip-tazo + metronidazole (anaerobic overlap); two anti-pseudomonal β-lactams; empirical vancomycin continued when no MRSA; aztreonam + β-lactam when no severe allergy.</p>
+<ul><li><b>Q: Choice of empirical Gram-negative cover?</b></li></ul>
+<p>A: Local antibiogram — narrower agent if low risk; pip-tazo or meropenem in unstable/MDR risk; de-escalate at 48–72 h.</p>
+<ul><li><b>Q: Behavioural-change frameworks?</b></li></ul>
+<p>A: COM-B (Capability, Opportunity, Motivation → Behaviour); CFIR; RE-AIM.</p>
+<ul><li><b>Q: AMS in LMIC?</b></li></ul>
+<p>A: WHO AWaRe; Access target ≥ 60%; over-the-counter regulation; essential medicines; GLASS surveillance.</p>
+<ul><li><b>Q: OPAT?</b></li></ul>
+<p>A: Outpatient Parenteral Antimicrobial Therapy; reduces LOS; needs OPAT team, monitoring, line care.</p>
+<ul><li><b>Q: Examples of high oral bioavailability (&gt; 90%)?</b></li></ul>
+<p>A: Fluoroquinolones, linezolid, doxycycline, fluconazole, aciclovir, rifampicin, clindamycin.</p>
+<ul><li><b>Q: Why prefer amoxicillin over co-amoxiclav in RTI?</b></li></ul>
+<p>A: Narrower spectrum; ↓ CDI, ↓ resistance selection; <i>S. pneumoniae</i> susceptibility high in many regions.</p>
+<ul><li><b>Q: "Reason to continue" principle?</b></li></ul>
+<p>A: At 48–72 h, prescriber must justify continuation of an antibiotic or stop it.</p>
+<ul><li><b>Q: Surgical prophylaxis for cardiac/orthopaedic with implant?</b></li></ul>
+<p>A: Single dose of cefazolin (or teicoplanin if MRSA) within 60 min pre-incision; do <b>not</b> extend beyond 24 h (CDC).</p>
+<ul><li><b>Q: Allergic reaction to penicillin — what can you use?</b></li></ul>
+<p>A: Cephalosporin (1st/2nd gen) if low risk; or aztreonam (for severe allergy but no cross-reactivity); consider de-labelling.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — Switch to oral co-amoxiclav and complete a total of 5 days. He meets all FAITH criteria (afebrile, eating, oral available, indication for IV resolved, high oral bioavailability). CAP duration 5 days. Continuing IV (A) is unnecessary; stopping at 3 days (C) is too short if no IVOS; oseltamivir (D) is for influenza; anti-pseudomonal (E) is not indicated.</li></ol>
+<ol><li><b>Correct: C</b> — WHO AWaRe: ≥ 60% of total antibiotic consumption should be from the Access group.</li></ol>
+<ol><li><b>Correct: D</b> — IDSA 2020 vancomycin TDM target is <b>AUC 400–600 mg·h/L</b> (trough 15–20 mg/L is an acceptable surrogate).</li></ol>
+<ol><li><b>Correct: C</b> — Pregnancy is one of the few indications to treat ASB (others: pre-urological, neutropenia, post-renal transplant).</li></ol>
+<ol><li><b>Correct: E</b> — 5 Ds are Drug, Dose, Duration, De-escalation, Delivery — not Diagnosis (although diagnosis is the prerequisite).</li></ol>
+<ol><li><b>Correct: C</b> — Uncomplicated GNB bacteraemia (urinary, with source control) — 7 days (Yahav 2019 <i>Cochrane</i>).</li></ol>
+<ol><li><b>Correct: C</b> — Surgical prophylaxis should be stopped at 24 h. Continuing for 7–14 days is not evidence-based and ↑ resistance and CDI risk. (STOP-IT trial confirmed 4 days is sufficient for established IA infection; prophylaxis is even shorter.)</li></ol>
+<ol><li><b>Correct: C</b> — Pip-tazo has anaerobic activity; adding metronidazole is redundant. Cefepime + metronidazole, amox + gent, co-amox + gent, meropenem + amikacin are standard combinations (though meropenem + amikacin is often reserved for empirical sepsis while awaiting culture).</li></ol>
+<ol><li><b>Correct: B</b> — Procalcitonin-guided AMS reduces antibiotic exposure by 30–50% without increasing mortality.</li></ol>
+<ol><li><b>Correct: E</b> — A 48–72 h AMS review includes microbiology, clinical reassessment, de-escalation, and stop/review date documentation. It does <b>not</b> routinely extend to 14 days.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: C</b> — Osteomyelitis needs 4–6 weeks total; after 2 weeks IV, he can be switched to oral flucloxacillin (high bioavailability, source controlled). OPAT would be alternative if continuing IV. Adding rifampicin is for prosthetic material/SSTI in select cases. 6 weeks IV (A) is excessive.</li></ol>
+<ol><li><b>Correct: C</b> — Uncomplicated cystitis: nitrofurantoin 100 mg MR BD for 3 days (or TMP for 3 days; or fosfomycin single dose as alternative).</li></ol>
+<ol><li><b>Correct: C</b> — De-escalate to ceftriaxone; stop both meropenem and vancomycin (no MRSA, no ESBL). Continue for 7 days total.</li></ol>
+<ol><li><b>Correct: C</b> — Flucloxacillin 2 g IV 4–6 hourly is the gold standard for MSSA bacteraemia. Vancomycin and other agents are inferior in MSSA. (Tong 2020 <i>Clin Infect Dis</i>.)</li></ol>
+<ol><li><b>Correct: D</b> — Asymptomatic bacteriuria — do not treat. He is not pregnant, not pre-urology, not neutropenic, not post-transplant. Routine culture is not indicated.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Antimicrobial Stewardship is a 🔴 Must Know topic for FCPS/MRCP.</b></p>
+<p><b>Key takeaway:</b> Optimise every antibiotic prescription along the <b>5 Ds (Drug, Dose, Duration, De-escalation, Delivery)</b> using prospective audit &amp; feedback, prior authorisation, local guidelines, IV-to-oral switch, dose optimisation, TDM, and patient-centred outcomes — measured by DDD/DOT, appropriateness, <i>C. difficile</i>, and resistance.</p>
+<p><b>Exam focus:</b> 5 Ds framework, FAITH IV→oral criteria, evidence-based durations, vancomycin AUC 400–600, AWaRe, ASB exceptions, surgical prophylaxis 24 h, MSSA β-lactam superiority, AMS team, CDC Core Elements.</p>
+<p><b>Clinical relevance:</b> AMS is essential to combat the global AMR crisis. Every prescriber should perform a 48–72 h antimicrobial time-out on every patient, document an indication and a stop date, and use local guidelines + antibiogram to drive empirical and directed therapy.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Document version: 1.0 (full) | Davidson 24e Ch 6 aligned | FCPS/MRCP oriented | AMS coverage: definitions, 5 Ds, FAITH, durations, TDM, metrics, AMS team, behaviour change, settings (acute/ICU/LTCF/community/LMIC/paeds), antifungal, OPAT, allergy de-labelling, rapid diagnostics, AI</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antimicrobial Stewardship · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

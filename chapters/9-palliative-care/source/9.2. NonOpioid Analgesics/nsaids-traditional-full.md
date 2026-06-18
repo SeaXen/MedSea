@@ -1,0 +1,207 @@
+# NSAIDs (traditional)
+
+Related: [[../../Pain and Palliative Care MOC]], [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+
+> Davidson 24e Ch 8 (Colvin, Fallon) — **Non-Opioid Analgesics**
+
+## 1. Definition
+
+Non-steroidal anti-inflammatory drugs (NSAIDs) inhibit cyclo-oxygenase (COX-1, COX-2), reducing prostaglandin synthesis. Used for mild-moderate pain, especially with inflammation (bone metastases, soft tissue, post-op, RA, OA, dysmenorrhoea). Examples: ibuprofen, naproxen, diclofenac, indomethacin, ketorolac, aspirin. Side effects: GI (ulcer, bleed), renal (AKI, interstitial nephritis, papillary necrosis), CV (MI, stroke — diclofenac highest; withdrawn in UK), bronchospasm (aspirin-exacerbated respiratory disease), platelet dysfunction. Avoid in third trimester (premature closure of ductus arteriosus).
+
+## 2. Clinical Features and Presentation
+
+Traditional NSAIDs (ibuprofen, diclofenac, naproxen) inhibit COX-1 and COX-2, reducing prostaglandin synthesis. Anti-inflammatory, analgesic, antipyretic. Clinical features: effective for inflammatory pain (bone metastases, arthritis, soft tissue), but significant side effects: GI bleeding/ulceration (COX-1), renal impairment (prostaglandin-mediated renal perfusion), hypertension, fluid retention, heart failure exacerbation, platelet dysfunction (bleeding), bronchospasm (NSAID-exacerbated respiratory disease NERD in asthma/nasal polyps/aspirin sensitivity), pregnancy (avoid in 3rd trimester — ductus arteriosus, oligohydramnios, miscarriage).
+
+
+## 3. Investigation and Management Summary
+
+### Investigations
+Baseline renal (creatinine, eGFR), LFT, FBC (if chronic use, bleeding risk), BP, weight (fluid retention). HbA1c if diabetic. Consider H. pylori testing if long-term. Avoid in: peptic ulcer disease (with PPI cover), CKD stage 4-5, severe heart failure, 3rd trimester pregnancy, aspirin-exacerbated respiratory disease, peri-operative (bleeding risk), concurrent anticoagulation (high bleed risk).
+
+### Management
+Use lowest effective dose for shortest time. Add PPI (omeprazole, lansoprazole) for GI protection in at-risk patients (age >65, prior PUD, concurrent steroids, anticoagulants). Ibuprofen 400mg TDS (least GI/CV), naproxen 500mg BD (similar CV), diclofenac 50mg TDS (highest CV). Topical diclofenac preferred for localised pain. Switch to COX-2 if GI risk dominant. Regular monitoring.
+
+
+## 4. FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| Mechanism | COX-1/COX-2 inhibition; reduce prostaglandins |
+| Examples | Ibuprofen, naproxen, diclofenac, indomethacin |
+| Use | Mild-moderate pain, inflammation, bone pain |
+| GI | Ulcer, bleed (PPI cover) |
+| Renal | AKI, papillary necrosis, interstitial nephritis |
+| CV | MI, stroke (diclofenac highest, withdrawn) |
+| Respiratory | AERD (aspirin-exacerbated respiratory disease) |
+| Platelet | Reversible inhibition (aspirin irreversible) |
+| Pregnancy | Avoid 3rd trimester (ductus arteriosus) |
+| Drugs | Warfarin (bleed); ACEi/ARB (renal); lithium (toxicity) |
+
+## 5. Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Paracetamol | No anti-inflammatory; safer GI |
+| COX-2 inhibitors | Less GI risk, more CV risk |
+| Aspirin (low dose) | Antiplatelet; not for analgesia |
+
+
+
+## 6. Viva Questions
+
+1. 1. Q: Triple-whammy for renal risk? A: ACEi/ARB + diuretic + NSAID (or dehydration). Avoid combination.
+
+2. 2. Q: NSAID with lowest CV risk? A: Naproxen (ibuprofen also low if dose ≤1200mg/day).
+
+3. 3. Q: NSAID with lowest GI risk? A: Ibuprofen; COX-2 inhibitors lowest but increase CV risk.
+
+4. 4. Q: Why avoid NSAIDs in 3rd trimester? A: Premature closure of ductus arteriosus, oligohydramnios, miscarriage, prolonged labour.
+
+5. 5. Q: Triple therapy for H. pylori in NSAID user? A: PPI + amoxicillin + clarithromycin (or metronidazole if penicillin-allergic).
+
+
+## 7. Confusions and Mnemonics
+
+- See clinical features
+
+
+## 8. One-Page Revision Card
+
+| **Topic** | **NSAIDs (traditional)** |
+|-----------|-----------|
+| **Definition** | Non-steroidal anti-inflammatory drugs (NSAIDs) inhibit cyclo-oxygenase (COX-1, COX-2), reducing pros |
+| **Key Features** | COX-1/COX-2 inhibition; reduce prostaglandins |
+| **Investigation** | Clinical assessment + disease-specific tests |
+| **Management** | WHO ladder + adjuvant + non-pharmacological |
+| **Red Flags** | Severe pain, opioid side effects, total pain dimensions |
+| **Viva Pearl** | See viva section |
+
+## 9. Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## 10. Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## 11. MCQs (5)
+1. **Q:** Which of the following is a key feature of NSAIDs (traditional)?
+   A. COX-1/COX-2 inhibition; reduce prostaglandins
+   B. Always self-limiting
+   C. Caused by infection only
+   D. Restricted to severe pain only
+   E. No investigation needed
+   **Answer: A**
+2. **Q:** What is the first-line management?
+   A. WHO analgesic ladder step 1
+   B. Immediate strong opioid
+   C. Surgery only
+   D. No treatment
+   E. Antidepressants only
+   **Answer: A**
+3. **Q:** Which pre-treatment assessment is essential?
+   A. Pain assessment, total pain, comorbidities
+   B. None
+   C. ECG only
+   D. Eye exam only
+   E. Blood pressure only
+   **Answer: A**
+4. **Q:** What is the most important complication to monitor?
+   A. Disease-specific complications and treatment side effects
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** Key pharmacological/clinical feature?
+   A. Warfarin (bleed); ACEi/ARB (renal); lithium (toxicity)
+   B. Always normal
+   C. Non-specific
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 12. SBA Questions (5)
+1. **Scenario:** Patient with NSAIDs (traditional); first-line management?
+   A. WHO ladder + adjuvant + non-pharmacological
+   B. Strong opioid
+   C. Surgery
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**
+2. **Scenario:** Failed first-line; next step?
+   A. Step up WHO ladder
+   B. Stop all treatment
+   C. Surgery
+   D. Observation
+   E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of treatment?
+   A. Side effects, opioid complications
+   B. Malignancy
+   C. Renal failure
+   D. Cardiac arrest
+   E. None
+   **Answer: A**
+4. **Scenario:** Holistic assessment?
+   A. Physical + emotional + social + spiritual
+   B. Physical only
+   C. Emotional only
+   D. None
+   E. Blood tests only
+   **Answer: A**
+5. **Scenario:** Most characteristic feature?
+   A. Warfarin (bleed); ACEi/ARB (renal); lithium (toxicity)
+   B. Non-specific
+   C. Always normal
+   D. Only late
+   E. No test
+   **Answer: A**
+
+## 13. Flashcards
+
+- **Q:** Key fact about NSAIDs (traditional)?
+  **A:** COX-1/COX-2 inhibition; reduce prostaglandins
+- **Q:** Another key point?
+  **A:** Ibuprofen, naproxen, diclofenac, indomethacin
+- **Q:** Most important complication?
+  **A:** Mild-moderate pain, inflammation, bone pain
+- **Q:** First-line treatment?
+  **A:** Ulcer, bleed (PPI cover)
+- **Q:** Key pharmacological/clinical feature?
+  **A:** AKI, papillary necrosis, interstitial nephritis
+
+## 14. Answer Key with Explanations
+
+### MCQs
+1. **A** — Mechanism: COX-1/COX-2 inhibition; reduce prostaglandins
+2. **A** — WHO ladder first-line
+3. **A** — Pain assessment essential
+4. **A** — Disease-specific complications
+5. **A** — Drugs: Warfarin (bleed); ACEi/ARB (renal); lithium (toxicity)
+
+### SBAs
+1. **A** — WHO ladder + adjuvant + non-pharmacological
+2. **A** — Step up WHO ladder
+3. **A** — Side effects, opioid complications
+4. **A** — Total pain assessment
+5. **A** — Warfarin (bleed); ACEi/ARB (renal); lithium (toxicity)
+
+## 15. Local Navigation
+
+**Parent Heading Hub:** [[../Non-Opioid_Analgesics_Hub]]
+**Chapter Hierarchy:** [[../../Davidson Chapter 8 - Pain and Palliative Care Hierarchy]]
+**Chapter MOC:** [[../../Pain and Palliative Care MOC]]
+
+---
+
+> **Exam focus:** Know definition, key clinical features, first-line management (WHO ladder), and the most important complication. Always consider total pain (physical, emotional, social, spiritual).

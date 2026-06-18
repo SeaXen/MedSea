@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Myelodysplastic Syndromes Mds Cmml — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 8 ONCOLOGY / 8.7. HAEMATOLOGICAL MALIGNANCIES</span>
+      <div class="h1">Myelodysplastic Syndromes Mds Cmml</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>WHO 2022 / ICC 2022</b> MDS classification</li><li>[ ] Calculate <b>IPSS-R</b> and <b>IPSS-M</b> (molecular) risk scores</li><li>[ ] Manage <b>Lower-risk MDS</b>: ESA → Luspatercept (RS+, ESA-refractory) → Lenalidomide (del(5q)) → Imetelstat (RS+, TD)</li><li>[ ] Manage <b>Higher-risk MDS</b>: <b>HMA (Aza/Decitabine)</b> ± <b>Venetoclax</b> (TP53, unfit for HSCT) → <b>Allo-HSCT</b> (curative)</li><li>[ ] Diagnose <b>CMML</b>: Monocytosis ≥1×10⁹/L, No BCR-ABL1, No PCM1-JAK2, No PDGFRA/B/FGFR1 rearrangement</li><li>[ ] Stratify <b>CMML</b> with <b>CPSS / CPSS-Mol</b> (ASXL1, SRSF2, RUNX1)</li><li>[ ] Select patients for <b>Allo-HSCT</b> (Age, Comorbidity, Donor, Disease risk, Molecular)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**MDS Definition**</td><td>Clonal haematopoietic stem cell disorder; **Ineffective haematopoiesis** → **Cytopenias** + **Morphological dysplasia** (≥10% in ≥1 lineage) + **AML transformation risk**</td></tr><tr><td>**MDS Incidence**</td><td>UK: ~2,500/year; Median age 70-75; M:F = 1.5:1</td></tr><tr><td>**CMML Definition**</td><td>**MDS/MPN Overlap**; **Persistent Monocytosis ≥1×10⁹/L** + Dysplasia + No BCR-ABL1/PCM1-JAK2/PDGFRA/B/FGFR1 rearrangement</td></tr><tr><td>**CMML Incidence**</td><td>Rare: 0.5-1/100,000; Median age 70; M:F = 2:1</td></tr><tr><td>**Risk Factors**</td><td>**Age**, **Prior chemo/RT (t-MDS)**, **Benzene**, **Smoking**, **Genetic predisposition** (GATA2, RUNX1, CEBPA, DDX41, ETV6, ANKRD26, SAMD9/9L)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart LR A[HSC Mutation] --&gt; B[Clonal Expansion] B --&gt; C[Ineffective Haematopoiesis] C --&gt; D[Dysplasia + Cytopenias] D --&gt; E[Microenvironment Changes] E --&gt; F[Inflammatory Cytokines (TGF-β, TNF-α, IFN-γ)] F --&gt; G[Apoptosis of Progenitors] G --&gt; H[AML Transformation] A --&gt; I[Key Driver Mutations] I --&gt; I1[SF3B1 (Splicing) — MDS-RS] I --&gt; I2[TP53 (Genome Guardian) — High Risk] I --&gt; I3[ASXL1, TET2, DNMT3A — Epigenetic] I --&gt; I4[SRSF2, U2AF1, ZRSR2 — Splicing] I --&gt; I5[RUNX1, GATA2 — Transcription] I --&gt; I6[RAS Pathway (NRAS, KRAS, PTPN11) — CMML] </code>``</p>
+<div class="sub-h">Key Mutations &amp; Prognostic Impact</div>
+<table class="ctable"><tr><th>Gene</th><th>Pathway</th><th>MDS Subtype</th><th>Prognosis</th></tr><tr><td>------</td><td>---------</td><td>-------------</td><td>-----------</td></tr><tr><td>**SF3B1**</td><td>Splicing</td><td>**MDS-RS** (Ring sideroblasts)</td><td>**Favourable** (if isolated)</td></tr><tr><td>**TP53**</td><td>DNA Repair</td><td>**t-MDS, Complex karyotype, MDS-AML**</td><td>**Very Poor** (resistant to HMA)</td></tr><tr><td>**ASXL1**</td><td>Epigenetic</td><td>MDS, CMML</td><td>Poor</td></tr><tr><td>**TET2**</td><td>Epigenetic</td><td>MDS, CMML</td><td>Intermediate</td></tr><tr><td>**DNMT3A**</td><td>Epigenetic</td><td>MDS, CMML, CHIP</td><td>Intermediate</td></tr><tr><td>**SRSF2**</td><td>Splicing</td><td>MDS, **CMML**</td><td>Poor (in CMML)</td></tr><tr><td>**U2AF1 / ZRSR2**</td><td>Splicing</td><td>MDS</td><td>Poor (ZRSR2)</td></tr><tr><td>**RUNX1**</td><td>Transcription</td><td>MDS, CMML</td><td>Poor</td></tr><tr><td>**RAS (NRAS/KRAS/PTPN11)**</td><td>Signal Transduction</td><td>**CMML**, MDS</td><td>Intermediate</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>MDS</th><th>CMML</th></tr><tr><td>---------</td><td>-----</td><td>------</td></tr><tr><td>**Presentation**</td><td>Asymptomatic (routine bloods), Fatigue (anaemia), Infections (neutropenia), Bleeding (thrombocytopenia)</td><td>Splenomegaly (50%), Fatigue, Weight loss, Infections, Skin lesions, Monocytosis</td></tr><tr><td>**Cytopenias**</td><td>**Anaemia** (most common), Neutropenia, Thrombocytopenia (single or multi-lineage)</td><td>Anaemia, Thrombocytopenia, **Monocytosis ≥1×10⁹/L**</td></tr><tr><td>**Splenomegaly**</td><td>Uncommon (unless CMML/MPN overlap)</td><td>**Common (50%)**</td></tr><tr><td>**Skin**</td><td>Rare</td><td>**Leukaemia cutis**, Vasculitis, Pyoderma gangrenosum</td></tr><tr><td>**Autoimmune**</td><td>**Associated**: AIHA, ITP, Pure red cell aplasia, Vasculitis</td><td>Similar</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Classification (WHO 2022 / ICC 2022)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MDS WHO 2022</div>
+<table class="ctable"><tr><th>Category</th><th>Defining Features</th></tr><tr><td>----------</td><td>-------------------</td></tr><tr><td>**MDS with defining genetic abnormalities**</td><td>**MDS with del(5q)**; **MDS with SF3B1 mutation** (RS not required); **MDS with TP53 mutation** (VAF≥10%)</td></tr><tr><td>**MDS, morphologically defined**</td><td>**MDS with low blasts (MDS-LB)**: <5% BM blasts, <2% PB blasts<br/>**MDS, hypoplastic (MDS-h)**: Hypocellular BM (<25% cellularity)<br/>**MDS with increased blasts (MDS-IB)**: **MDS-IB1** (5-9% BM or 2-4% PB); **MDS-IB2** (10-19% BM or 5-19% PB)</td></tr><tr><td>**MDS with ring sideroblasts (MDS-RS)**</td><td>**SF3B1 mut** + **RS ≥15%** (or ≥5% if SF3B1 mut); **MDS-RS-SLD** (single lineage dysplasia) / **MDS-RS-MLD** (multilineage)</td></tr></table>
+<div class="sub-h">ICC 2022 (Similar but nuanced)</div>
+<ul><li><b>MDS with defining genetic abnormalities</b>: del(5q), SF3B1, TP53</li><li><b>MDS, morphologically defined</b>: SLD, MLD, IB1, IB2, h</li></ul>
+<div class="sub-h">CMML (WHO 2022)</div>
+<ul><li><b>CMML-0</b>: &lt;2% PB blasts, &lt;5% BM blasts</li><li><b>CMML-1</b>: 2-4% PB blasts, 5-9% BM blasts</li><li><b>CMML-2</b>: 5-19% PB blasts, 10-19% BM blasts</li><li><b>CMML-BP</b>: ≥20% blasts (= AML)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Nutritional Deficiencies**</td><td>B12/Folate/Copper deficiency → Macro-ovalocytes, Hypersegmented neutrophils; **No clonal cytogenetics**</td></tr><tr><td>**AA (Aplastic Anaemia)**</td><td>Pancytopenia, **Hypocellular BM** (<25%), **No dysplasia**; PNH clone possible</td></tr><tr><td>**MDS-h vs AA**</td><td>MDS-h: Dysplasia + Clonal cytogenetics; AA: No dysplasia, no clonal markers</td></tr><tr><td>**MPN (ET, PV, PMF)**</td><td>Thrombocytosis / Erythrocytosis / Splenomegaly; **JAK2/CALR/MPL mut**; **No significant dysplasia**</td></tr><tr><td>**CMML vs MDS**</td><td>**Monocytosis ≥1×10⁹/L** (persistent); **CMML**</td></tr><tr><td>**CMML vs CML**</td><td>**No BCR-ABL1**; No basophilia; Monocytosis</td></tr><tr><td>**CHIP/CCUS**</td><td>**Clonal mutation (VAF≥2%) + Cytopenias (CCUS)** but **<10% dysplasia** → Not MDS</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Risk Stratification</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">IPSS-R (Revised International Prognostic Scoring System)</div>
+<table class="ctable"><tr><th>Variable</th><th>Categories & Points</th></tr><tr><td>----------</td><td>---------------------</td></tr><tr><td>**Cytogenetics**</td><td>Very Good (0): -Y, del(11q)<br>Good (1): Normal, del(5q), del(12p), del(20q), double incl. del(5q)<br>Intermediate (2): del(7q), +8, +19, i(17q), other<br>Poor (3): -7, inv(3)/t(3q)/del(3q), double incl. -7/del(7q), complex (3 abn)<br>Very Poor (4): Complex (>3 abn)</td></tr><tr><td>**BM Blasts**</td><td>≤2% (0); >2-<5% (1); 5-10% (2); >10% (3)</td></tr><tr><td>**Hb**</td><td>≥100 (0); 80-<100 (1); <80 (1.5)</td></tr><tr><td>**Platelets**</td><td>≥100 (0); 50-<100 (0.5); <50 (1)</td></tr><tr><td>**ANC**</td><td>≥0.8 (0); <0.8 (0.5)</td></tr></table>
+<table class="ctable"><tr><th>Risk Group</th><th>Score</th><th>Median OS</th><th>AML Risk</th></tr><tr><td>------------</td><td>-------</td><td>-----------</td><td>----------</td></tr><tr><td>**Very Low**</td><td>≤1.5</td><td>8.8 yr</td><td>3%</td></tr><tr><td>**Low**</td><td>>1.5-3</td><td>5.3 yr</td><td>14%</td></tr><tr><td>**Intermediate**</td><td>>3-4.5</td><td>3.0 yr</td><td>33%</td></tr><tr><td>**High**</td><td>>4.5-6</td><td>1.6 yr</td><td>54%</td></tr><tr><td>**Very High**</td><td>>6</td><td>0.8 yr</td><td>84%</td></tr></table>
+<div class="sub-h">IPSS-M (Molecular IPSS) — **Adds Mutations**</div>
+<ul><li>Incorporates <b>TP53 (VAF), SF3B1, ASXL1, RUNX1, EZH2, etc.</b> + <b>VAF weighting</b></li><li><b>Superior discrimination</b>, especially for TP53, SF3B1</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Lower-Risk MDS (IPSS-R Very Low/Low/Intermediate)</div>
+<p>``<code>mermaid flowchart TD A[Lower-Risk MDS] --&gt; B{Transfusion Dependent?} B --&gt;|<b>Anaemia, Non-transfusion dep</b>| C[<b>ESA (Epoetin alfa/beta, Darbepoetin)</b>&lt;br/&gt;<b>Predictors of Response</b>: Serum EPO &lt;200-500 mU/mL, No/low transfusion burden, Non-del(5q)&lt;br/&gt;<b>Dose</b>: Epoetin 40-60k IU SC q1-2wk; Darbepoetin 500mcg q3-4wk&lt;br/&gt;<b>Response</b>: Hb ↑≥1.5g/dL or ↓transfusion by ≥4 units/8wk] B --&gt;|<b>Transfusion Dependent Anaemia</b>| D{SF3B1 mut / Ring Sideroblasts?} D --&gt;|<b>Yes (MDS-RS)</b>| E[<b>Luspatercept</b> (MEDALIST)&lt;br/&gt;Activin Receptor Ligand Trap → ↓SMAD2/3 → ↑Erythropoiesis&lt;br/&gt;<b>1.0-1.75mg/kg SC q3wk</b>&lt;br/&gt;<b>TI response (≥8wk transfusion independence) ~38-45%</b>&lt;br/&gt;<b>Preferred over ESA if RS+ &amp; ESA-refractory</b>] D --&gt;|<b>No (or ESA failure)</b>| F[<b>Imetelstat</b> (IMerge) — <b>Telomerase Inhibitor</b>&lt;br/&gt;<b>MDS-RS, Transfusion-dependent, ESA-refractory</b>&lt;br/&gt;9.4mg/kg IV q4wk&lt;br/&gt;<b>TI response ~40%</b>] B --&gt;|<b>Isolated del(5q)</b>| G[<b>Lenalidomide</b>&lt;br/&gt;<b>10mg/day (21/28 days)</b>&lt;br/&gt;<b>Transfusion Independence ~67%</b>&lt;br/&gt;<b>Contraindicated if TP53 mut</b>] B --&gt;|<b>Thrombocytopenia</b>| H[<b>Romiplostim / Eltrombopag</b> (TPO-RA)&lt;br/&gt;If severe/refractory; Monitor BM blasts] </code>``</p>
+<div class="sub-h">Higher-Risk MDS (IPSS-R High/Very High / IPSS-M High/Very High)</div>
+<p>``<code>mermaid flowchart TD A[Higher-Risk MDS] --&gt; B{Transplant Candidate?&lt;br/&gt;(Age &lt;70-75, HCT-CI ≤3, Donor)} B --&gt;|<b>Yes</b>| C[<b>HMA Bridging → Allo-HSCT</b>&lt;br/&gt;<b>Azacitidine 75mg/m² SC/IV d1-7 q4wk</b> (or Decitabine 20mg/m² IV d1-5)&lt;br/&gt;<b>4-6 cycles</b> before HSCT&lt;br/&gt;<b>TP53 mut: Aza + Venetoclax</b> (Phase 2/3) preferred bridge] B --&gt;|<b>No / Unfit</b>| D[<b>HMA Monotherapy</b>&lt;br/&gt;<b>Azacitidine</b> (AZA-001: OS benefit vs BSC)&lt;br/&gt;<b>Decitabine</b> (alternative, IV only)&lt;br/&gt;<b>Response</b>: CR/PR/mCR/HI (IWG criteria)&lt;br/&gt;<b>Median cycles to response: 4-6</b>] D --&gt; D1[<b>TP53 mut MDS</b>&lt;br/&gt;<b>Azacitidine + Venetoclax</b>&lt;br/&gt;<b>CR rate ~50-60%</b> (vs ~20% Aza alone)&lt;br/&gt;<b>Pending regulatory approval</b>] D --&gt; D2[<b>Maintenance</b>: Continue HMA until progression/toxicity&lt;br/&gt;<b>Dose reduction</b>: 50mg/d1-5 if cytopenias] </code>``</p>
+<div class="sub-h">CMML Management</div>
+<p>``<code>mermaid flowchart TD A[CMML Diagnosis] --&gt; B{Risk (CPSS / CPSS-Mol)} B --&gt;|<b>Low Risk</b>&lt;br/&gt;CPSS Low/Int-1| C[<b>Watch &amp; Wait</b> / Supportive Care&lt;br/&gt;Transfusions, Growth factors, Hydroxyurea if WBC&gt;20-50×10⁹/L] B --&gt;|<b>High Risk</b>&lt;br/&gt;CPSS Int-2/High| D[<b>Higher-Risk MDS Approach</b>] D --&gt; D1[<b>Azacitidine</b> (preferred over Decitabine)&lt;br/&gt;<b>Efficacy similar to MDS</b>] D1 --&gt; D2[<b>Transplant Candidate?</b>] D2 --&gt;|Yes| E[<b>Allo-HSCT</b> (Curative)&lt;br/&gt;<b>Reduced Intensity Conditioning (RIC)</b>&lt;br/&gt;FLU/MEL or FLU/BU2] D2 --&gt;|No| F[<b>Continue HMA</b>&lt;br/&gt;Clinical Trials (JAK2, BET, etc.)] </code>``</p>
+<div class="sub-h">Allo-HSCT in MDS/CMML</div>
+<table class="ctable"><tr><th>Indication</th><th>Details</th></tr><tr><td>------------</td><td>---------</td></tr><tr><td>**Higher-Risk MDS** (IPSS-R Int/High/Very High)</td><td>**Curative**; Best if **CR/PR** pre-HSCT</td></tr><tr><td>**Lower-Risk with adverse features**</td><td>TP53 mut, Complex karyotype, Transfusion dependence refractory to therapy</td></tr><tr><td>**CMML**</td><td>CPSS Int-2/High; **CPSS-Mol High** (ASXL1/SRSF2 mut)</td></tr><tr><td>**Donor**</td><td>Matched Sibling > MUD > Haploidentical > Cord</td></tr><tr><td>**Conditioning**</td><td>**RIC (FLU/MEL, FLU/BU2)** preferred for age >55-60 / HCT-CI >3; **MAC** for young, fit, high-risk</td></tr><tr><td>**TP53 mut**</td><td>**Allo-HSCT only potentially curative**; High relapse risk post-HSCT; Consider **Post-HSCT maintenance (Aza/Venetoclax)**</td></tr></table>
+<div class="sub-h">Supportive Care</div>
+<table class="ctable"><tr><th>Issue</th><th>Management</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Transfusion**</td><td>Leukodepleted, Irradiated (if potential HSCT); **Iron Chelation** (Deferasirox) if ferritin >1000-2500, TD >1yr</td></tr><tr><td>**Infections**</td><td>**Febrile Neutropenia**: Piperacillin-tazobactam / Meropenem; **Prophylaxis**: PJP (Co-trimoxazole), HSV (Acyclovir), Fungal (Posaconazole if prolonged neutropenia)</td></tr><tr><td>**Growth Factors**</td><td>**G-CSF** (Filgrastim/Pegfilgrastim) if recurrent infections / FN; **EPO** for anaemia</td></tr><tr><td>**Vaccinations**</td><td>**Inactivated** safe; **Live** avoided; **COVID/Influenza/Pneumococcal** recommended</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**MDS Definition**</td><td>**Dysplasia ≥10% in ≥1 lineage** + **Cytopenia(s)** + **Clonal** (cytogenetics/mutation) + **Exclude other causes**</td></tr><tr><td>**WHO 2022 Key Categories**</td><td>**MDS with defining genetic abn**: del(5q), **SF3B1**, **TP53**; **MDS-LB** (<5% blasts); **MDS-IB1/IB2** (5-19% blasts); **MDS-h**</td></tr><tr><td>**MDS-RS**</td><td>**SF3B1 mut + RS ≥15%** (or ≥5% if SF3B1 mut); **Favourable** if isolated</td></tr><tr><td>**del(5q) MDS**</td><td>**Isolated del(5q)** → **Lenalidomide 10mg** (TI ~67%); **Contraindicated if TP53 mut**</td></tr><tr><td>**TP53 MDS**</td><td>**Very Poor**; Complex karyotype; **Aza + Venetoclax** preferred; **Allo-HSCT only cure**</td></tr><tr><td>**IPSS-R vs IPSS-M**</td><td>**IPSS-M adds mutations (TP53, SF3B1, ASXL1, RUNX1, VAF)** → Better risk discrimination</td></tr><tr><td>**Lower-Risk Rx**</td><td>**ESA (sEPO<200-500)** → **Luspatercept** (RS+, ESA-refractory) → **Lenalidomide** (del(5q)) → **Imetelstat** (RS+, TD)</td></tr><tr><td>**Higher-Risk Rx**</td><td>**HMA (Aza/Decitabine)** → **Allo-HSCT** (curative); **TP53: Aza + Ven**</td></tr><tr><td>**CMML**</td><td>**Monocytosis ≥1×10⁹/L** persistent; **No BCR-ABL1/PDGFR/JAK2**; **ASXL1, TET2, SRSF2, RUNX1**; **CPSS-Mol** for risk</td></tr><tr><td>**Luspatercept**</td><td>**Activin receptor trap** → ↓SMAD2/3 → ↑Erythropoiesis; **MEDALIST**: MDS-RS, TD, ESA-refractory</td></tr><tr><td>**Imetelstat**</td><td>**Telomerase inhibitor**; **IMERGE**: MDS-RS, TD, ESA-refractory</td></tr><tr><td>**Allo-HSCT**</td><td>**Curative for Higher-Risk**; RIC preferred; **TP53 = high relapse post-HSCT**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**70M, Hb 85, Plt 80, Neut 0.9. BM: 6% blasts, multilineage dysplasia. Karyotype: del(5q) isolated. Diagnosis?**</td><td>**MDS with isolated del(5q)** (WHO 2022: MDS with defining genetic abnormality). **IPSS-R: Good cytogenetics=1pt, Blasts 1pt, Hb 1pt, Plt 0.5, ANC 0.5 = 4 → Intermediate**.</td></tr><tr><td>**Same patient — treatment?**</td><td>**Lenalidomide 10mg/day (21/28 days)** — **TI rate ~67%**. Monitor for VTE, TLS, neutropenia. Contraindicated if TP53 mut.</td></tr><tr><td>**75M, transfusion-dependent anaemia, SF3B1 mut, RS 25%, failed ESA. Next?**</td><td>**Luspatercept 1.0-1.75mg/kg SC q3wk** (MEDALIST). **TI response ~38-45%**.</td></tr><tr><td>**65M, MDS, IPSS-R High, TP53 mut, VAF 40%, fit. Management?**</td><td>**Azacitidine + Venetoclax** (preferred for TP53) → **Allo-HSCT** if response (CR/PR). **TP53 MDS = Very Poor prognosis, Aza alone CR ~20%**.</td></tr><tr><td>**IPSS-R cytogenetic categories — which is Very Poor?**</td><td>**Complex >3 abnormalities**. **Complex 3 abn = Poor (3pts)**; **>3 abn = Very Poor (4pts)**.</td></tr><tr><td>**CMML diagnostic criteria?**</td><td>**Persistent Monocytosis ≥1×10⁹/L** + **Dysplasia** + **No BCR-ABL1** + **No PCM1-JAK2** + **No PDGFRA/B/FGFR1 rearrangement** + **Blasts <20%**.</td></tr><tr><td>**CMML risk stratification — CPSS-Mol?**</td><td>**Clinical**: Hb<100, WBC>10, Plt<100, PB blasts≥2% + **Molecular**: **ASXL1, SRSF2, RUNX1 mutations** (each adverse).</td></tr><tr><td>**Luspatercept vs Imetelstat — both for MDS-RS?**</td><td>**Luspatercept**: Activin receptor trap; **Imetelstat**: Telomerase inhibitor; Both for **MDS-RS, TD, ESA-refractory**; Imetelstat newer (IMerge).</td></tr><tr><td>**Higher-risk MDS — when refer for Allo-HSCT?**</td><td>**IPSS-R ≥Intermediate (or IPSS-M High/VHigh)**, Age <70-75, HCT-CI ≤3, Donor available, **Preferable in CR/PR after HMA**.</td></tr><tr><td>**t-MDS — typical cytogenetics?**</td><td>**Complex karyotype**, **TP53 mut**, **-5/del(5q), -7/del(7q), -17/del(17p)** — **Very Poor prognosis**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**MDS vs CCUS**</td><td>**CCUS**: Clonal mutation (VAF≥2%) + Cytopenias + **<10% dysplasia** → Not MDS; **Progression risk to MDS/AML**</td></tr><tr><td>**MDS-RS vs MDS-SF3B1**</td><td>**WHO 2022**: **MDS with SF3B1 mutation** (RS not required if SF3B1 mut); **ICC**: Requires RS ≥15% (or ≥5% if SF3B1 mut)</td></tr><tr><td>**del(5q) MDS vs 5q- Syndrome**</td><td>**5q- Syndrome** = Old term for **MDS with isolated del(5q)**, macrocytic anaemia, normal/increased platelets, female predominance; Now **MDS with isolated del(5q)**</td></tr><tr><td>**IPSS-R vs IPSS-M**</td><td>**IPSS-R**: Clinical + Cytogenetics + Blasts + Cytopenias; **IPSS-M**: Adds **Molecular (TP53, SF3B1, ASXL1, RUNX1, VAF)** — **New standard**</td></tr><tr><td>**Aza vs Decitabine**</td><td>**Aza**: SC/IV, d1-7 q4wk; **Decitabine**: IV only, d1-5 q4wk; **Aza has OS benefit (AZA-001)**; Decitabine alternative</td></tr><tr><td>**CMML vs aCML**</td><td>**aCML**: **No monocytosis**, WBC>13, Neutrophilia, Dysgranulopoiesis, **CSF3R mut**; **CMML**: **Monocytosis ≥1×10⁹/L**</td></tr></table>
+<p><b>Mnemonic: MDS-CMML</b></p>
+<ul><li><b>M</b>orphology: <b>Dysplasia ≥10%</b> in ≥1 lineage</li><li><b>D</b>efining Genetics: <b>del(5q), SF3B1, TP53</b> (WHO 2022)</li><li><b>S</b>core: <b>IPSS-R</b> (Cytogen, Blasts, Hb, Plt, ANC) → <b>IPSS-M</b> (+ Mutations)</li><li><b>C</b>MML: <b>Monocytosis ≥1×10⁹/L</b> + No BCR-ABL1/PDGFR/JAK2</li><li><b>M</b>olecular CMML: <b>ASXL1, TET2, SRSF2, RUNX1</b> → CPSS-Mol</li><li><b>M</b>anagement Low: ESA → <b>Luspatercept (RS+)</b> / <b>Lenalidomide (5q-)</b> / Imetelstat</li><li><b>L</b>ow-risk: ESA if sEPO&lt;200-500</li><li><b>H</b>igh-risk: <b>Aza ± Ven</b> → <b>Allo-HSCT</b> (Curative)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((MDS &amp; CMML)) MDS WHO 2022 Defining Genetic Abnormalities del(5q) → Lenalidomide SF3B1 mut → MDS-RS → Luspatercept/Imetelstat TP53 mut → Poor → Aza+Ven / Allo-HSCT Morphologically Defined MDS-LB (&lt;5% blasts) MDS-h (Hypocellular) MDS-IB1 (5-9% BM) MDS-IB2 (10-19% BM) Risk Stratification IPSS-R (Cytogen, Blasts, Hb, Plt, ANC) IPSS-M (+ TP53, SF3B1, ASXL1, RUNX1, VAF) Lower-Risk Rx ESA (sEPO&lt;200-500) Luspatercept (RS+, ESA-refractory) Lenalidomide (del(5q)) Imetelstat (RS+, TD, ESA-ref) Higher-Risk Rx HMA: Aza (SC/IV d1-7) / Decitabine (IV d1-5) TP53: Aza + Venetoclax Allo-HSCT (Curative) CMML Monocytosis ≥1×10⁹/L Mut: ASXL1, TET2, SRSF2, RUNX1 CPSS / CPSS-Mol Rx: Aza → Allo-HSCT (High risk) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**MDS Definition**</td><td>Dysplasia ≥10% + Cytopenia(s) + Clonal + Exclude other causes</td></tr><tr><td>**WHO 2022 Key**</td><td>MDS-del(5q), MDS-SF3B1, MDS-TP53, MDS-LB, MDS-h, MDS-IB1/IB2</td></tr><tr><td>**MDS-RS**</td><td>SF3B1 mut + RS ≥15% (or ≥5% if SF3B1) — Favourable</td></tr><tr><td>**del(5q)**</td><td>Isolated → **Lenalidomide 10mg** (21/28d); Contra: TP53 mut</td></tr><tr><td>**TP53 MDS**</td><td>Complex karyotype, Very Poor; **Aza + Venetoclax** → Allo-HSCT</td></tr><tr><td>**IPSS-R**</td><td>Cytogen (0-4), Blasts (0-3), Hb (0-1.5), Plt (0-1), ANC (0-0.5) → 5 Risk Groups</td></tr><tr><td>**IPSS-M**</td><td>Adds TP53, SF3B1, ASXL1, RUNX1, VAF — Better discrimination</td></tr><tr><td>**Lower-Risk**</td><td>ESA → Luspatercept (RS+) → Lenalidomide (5q) → Imetelstat (RS+)</td></tr><tr><td>**Higher-Risk**</td><td>**Aza ± Ven** → **Allo-HSCT** (RIC)</td></tr><tr><td>**CMML**</td><td>Monocytosis ≥1×10⁹/L persistent; ASXL1/TET2/SRSF2/RUNX1; CPSS-Mol</td></tr><tr><td>**Luspatercept**</td><td>Activin receptor trap, MEDALIST, MDS-RS TD ESA-ref</td></tr><tr><td>**Allo-HSCT**</td><td>Curative Higher-Risk; RIC preferred; TP53 = high relapse</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>WHO 2022 MDS classification</td><td></td><td></td></tr><tr><td>IPSS-R calculation</td><td></td><td></td></tr><tr><td>IPSS-M vs IPSS-R</td><td></td><td></td></tr><tr><td>Lower-risk management algorithm</td><td></td><td></td></tr><tr><td>del(5q) / SF3B1 specific Rx</td><td></td><td></td></tr><tr><td>TP53 MDS management</td><td></td><td></td></tr><tr><td>CMML diagnosis & risk</td><td></td><td></td></tr><tr><td>Allo-HSCT indications</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Oncology|Oncology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[AML]], [[Lenalidomide]], [[Luspatercept]], [[Azacitidine]], [[Allo-HSCT]], [[TP53 MDS]], [[SF3B1]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p># FCPS/MRCP Exam Extras</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (MDS Definition), which statement is correct? A. <b>Dysplasia ≥10% in ≥1 lineage</b> + <b>Cytopenia(s)</b> + <b>Clonal</b> (cytogenetics/mutation) + <b>Exclude B. </b>Dysplasia - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Dysplasia ≥10% in ≥1 lineage</b> + <b>Cytopenia(s)</b> + <b>Clonal</b> (cytogenetics/mutation) + <b>Exclude other causes</b></li></ul>
+<p><b>2.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (WHO 2022 Key Categories), which statement is correct? A. <b>MDS with defining genetic abn</b>: del(5q), <b>SF3B1</b>, <b>TP53</b> B. **MDS - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>MDS with defining genetic abn</b>: del(5q), <b>SF3B1</b>, <b>TP53</b>; <b>MDS-LB</b> (&lt;5% blasts); <b>MDS-IB1/IB2</b> (5-19% blasts)...</li></ul>
+<p><b>3.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (MDS-RS), which statement is correct? A. <b>SF3B1 mut + RS ≥15%</b> (or ≥5% if SF3B1 mut) B. **SF3B1 - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>SF3B1 mut + RS ≥15%</b> (or ≥5% if SF3B1 mut); <b>Favourable</b> if isolated</li></ul>
+<p><b>4.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (del(5q) MDS), which statement is correct? A. <b>Isolated del(5q)</b> → <b>Lenalidomide 10mg</b> (TI ~67%) B. **Isolated - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Isolated del(5q)</b> → <b>Lenalidomide 10mg</b> (TI ~67%); <b>Contraindicated if TP53 mut</b></li></ul>
+<p><b>5.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (TP53 MDS), which statement is correct? A. <b>Very Poor</b> B. **Very - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Very Poor</b>; Complex karyotype; <b>Aza + Venetoclax</b> preferred; <b>Allo-HSCT only cure</b></li></ul>
+<p><b>6.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (IPSS-R vs IPSS-M), which statement is correct? A. <b>IPSS-M adds mutations (TP53, SF3B1, ASXL1, RUNX1, VAF)</b> → Better risk discrimination B. **IPSS-M - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>IPSS-M adds mutations (TP53, SF3B1, ASXL1, RUNX1, VAF)</b> → Better risk discrimination</li></ul>
+<p><b>7.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (Lower-Risk Rx), which statement is correct? A. <b>ESA (sEPO&lt;200-500)</b> → <b>Luspatercept</b> (RS+, ESA-refractory) → <b>Lenalidomide</b> (del(5q)) → <b>Ime B. </b>ESA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>ESA (sEPO&lt;200-500)</b> → <b>Luspatercept</b> (RS+, ESA-refractory) → <b>Lenalidomide</b> (del(5q)) → <b>Imetelstat</b> (RS+, TD)</li></ul>
+<p><b>8.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (Higher-Risk Rx), which statement is correct? A. <b>HMA (Aza/Decitabine)</b> → <b>Allo-HSCT</b> (curative) B. **HMA - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>HMA (Aza/Decitabine)</b> → <b>Allo-HSCT</b> (curative); <b>TP53: Aza + Ven</b></li></ul>
+<p><b>9.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (CMML), which statement is correct? A. <b>Monocytosis ≥1×10⁹/L</b> persistent B. **Monocytosis - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Monocytosis ≥1×10⁹/L</b> persistent; <b>No BCR-ABL1/PDGFR/JAK2</b>; <b>ASXL1, TET2, SRSF2, RUNX1</b>; <b>CPSS-Mol</b> for risk</li></ul>
+<p><b>10.</b> Regarding Myelodysplastic Syndromes (MDS) &amp; CMML (Luspatercept), which statement is correct? A. <b>Activin receptor trap</b> → ↓SMAD2/3 → ↑Erythropoiesis B. **Activin - alternative approach C. Empirical management only D. Watch and wait</p>
+<ul><li><b>Answer: A</b> — <b>Activin receptor trap</b> → ↓SMAD2/3 → ↑Erythropoiesis; <b>MEDALIST</b>: MDS-RS, TD, ESA-refractory</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>1.</b> A 55-year-old presents with classic features. MDT discussion recommends:</p>
+<ul><li>A. <b>Dysplasia ≥10% in ≥1 lineage</b> + <b>Cytopenia(s)</b> + <b>Clonal</b> (cytogenetics/mutation) + **Exclude</li><li>B. **Dysplasia (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — first-line: <b>Dysplasia ≥10% in ≥1 lineage</b> + <b>Cytopenia(s)</b> + <b>Clonal</b> (cytogenetics/mutation) + <b>Exclude other causes</b></li></ul>
+<p><b>2.</b> On staging workup, the patient is found to be [Stage X]. Best management is:</p>
+<ul><li>A. <b>MDS with defining genetic abn</b>: del(5q), <b>SF3B1</b>, <b>TP53</b></li><li>B. **MDS (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — stage-specific: <b>MDS with defining genetic abn</b>: del(5q), <b>SF3B1</b>, <b>TP53</b>; <b>MDS-LB</b> (&lt;5% blasts); <b>MDS-IB1/IB2</b> (5-19% blasts)...</li></ul>
+<p><b>3.</b> Following first-line treatment, the patient develops [complication]. Best next step:</p>
+<ul><li>A. <b>SF3B1 mut + RS ≥15%</b> (or ≥5% if SF3B1 mut)</li><li>B. **SF3B1 (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — complication: <b>SF3B1 mut + RS ≥15%</b> (or ≥5% if SF3B1 mut); <b>Favourable</b> if isolated</li></ul>
+<p><b>4.</b> The patient asks about prognosis. Most appropriate response based on:</p>
+<ul><li>A. <b>Isolated del(5q)</b> → <b>Lenalidomide 10mg</b> (TI ~67%)</li><li>B. **Isolated (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — prognosis: <b>Isolated del(5q)</b> → <b>Lenalidomide 10mg</b> (TI ~67%); <b>Contraindicated if TP53 mut</b></li></ul>
+<p><b>5.</b> A 65-year-old with relevant risk factors should be screened with:</p>
+<ul><li>A. <b>Very Poor</b></li><li>B. **Very (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — screening: <b>Very Poor</b>; Complex karyotype; <b>Aza + Venetoclax</b> preferred; <b>Allo-HSCT only cure</b></li></ul>
+<p><b>6.</b> The most clinically important biomarker/molecular test is:</p>
+<ul><li>A. <b>IPSS-M adds mutations (TP53, SF3B1, ASXL1, RUNX1, VAF)</b> → Better risk discrimination</li><li>B. **IPSS-M (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — biomarker: <b>IPSS-M adds mutations (TP53, SF3B1, ASXL1, RUNX1, VAF)</b> → Better risk discrimination</li></ul>
+<p><b>7.</b> The standard chemotherapy/regimen of choice is:</p>
+<ul><li>A. <b>ESA (sEPO&lt;200-500)</b> → <b>Luspatercept</b> (RS+, ESA-refractory) → <b>Lenalidomide</b> (del(5q)) → **Ime</li><li>B. **ESA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — chemo: <b>ESA (sEPO&lt;200-500)</b> → <b>Luspatercept</b> (RS+, ESA-refractory) → <b>Lenalidomide</b> (del(5q)) → <b>Imetelstat</b> (RS+, TD)</li></ul>
+<p><b>8.</b> The role of surgery in this case is:</p>
+<ul><li>A. <b>HMA (Aza/Decitabine)</b> → <b>Allo-HSCT</b> (curative)</li><li>B. **HMA (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — surgery: <b>HMA (Aza/Decitabine)</b> → <b>Allo-HSCT</b> (curative); <b>TP53: Aza + Ven</b></li></ul>
+<p><b>9.</b> The recommended surveillance/follow-up protocol is:</p>
+<ul><li>A. <b>Monocytosis ≥1×10⁹/L</b> persistent</li><li>B. **Monocytosis (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — follow-up: <b>Monocytosis ≥1×10⁹/L</b> persistent; <b>No BCR-ABL1/PDGFR/JAK2</b>; <b>ASXL1, TET2, SRSF2, RUNX1</b>; <b>CPSS-Mol</b> for risk</li></ul>
+<p><b>10.</b> Palliative care referral is most appropriate when:</p>
+<ul><li>A. <b>Activin receptor trap</b> → ↓SMAD2/3 → ↑Erythropoiesis</li><li>B. **Activin (less specific)</li><li>C. Empirical broad approach</li><li>D. No intervention required</li><li><b>Answer: A</b> — palliative: <b>Activin receptor trap</b> → ↓SMAD2/3 → ↑Erythropoiesis; <b>MEDALIST</b>: MDS-RS, TD, ESA-refractory</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1:</b> MDS Definition? <b>A1:</b> Dysplasia ≥10% in ≥1 lineage + Cytopenia(s) + Clonal (cytogenetics/mutation) + Exclude other causes</p>
+<p><b>Q2:</b> WHO 2022 Key Categories? <b>A2:</b> MDS with defining genetic abn: del(5q), SF3B1, TP53; MDS-LB (&lt;5% blasts); MDS-IB1/IB2 (5-19% blasts); MDS-h</p>
+<p><b>Q3:</b> MDS-RS? <b>A3:</b> SF3B1 mut + RS ≥15% (or ≥5% if SF3B1 mut); Favourable if isolated</p>
+<p><b>Q4:</b> del(5q) MDS? <b>A4:</b> Isolated del(5q) → Lenalidomide 10mg (TI ~67%); Contraindicated if TP53 mut</p>
+<p><b>Q5:</b> TP53 MDS? <b>A5:</b> Very Poor; Complex karyotype; Aza + Venetoclax preferred; Allo-HSCT only cure</p>
+<p><b>Q6:</b> IPSS-R vs IPSS-M? <b>A6:</b> IPSS-M adds mutations (TP53, SF3B1, ASXL1, RUNX1, VAF) → Better risk discrimination</p>
+<p><b>Q7:</b> Lower-Risk Rx? <b>A7:</b> ESA (sEPO&lt;200-500) → Luspatercept (RS+, ESA-refractory) → Lenalidomide (del(5q)) → Imetelstat (RS+, TD)</p>
+<p><b>Q8:</b> Higher-Risk Rx? <b>A8:</b> HMA (Aza/Decitabine) → Allo-HSCT (curative); TP53: Aza + Ven</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>MCQ</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>MDS Definition</td><td>Dysplasia ≥10% in ≥1 lineage + Cytopenia(s) + Clonal (cytogenetics/mutation) + Exclude other causes</td></tr><tr><td>2</td><td>A</td><td>WHO 2022 Key Categories</td><td>MDS with defining genetic abn: del(5q), SF3B1, TP53; MDS-LB (<5% blasts); MDS-IB1/IB2 (5-19% blasts); MDS-h</td></tr><tr><td>3</td><td>A</td><td>MDS-RS</td><td>SF3B1 mut + RS ≥15% (or ≥5% if SF3B1 mut); Favourable if isolated</td></tr><tr><td>4</td><td>A</td><td>del(5q) MDS</td><td>Isolated del(5q) → Lenalidomide 10mg (TI ~67%); Contraindicated if TP53 mut</td></tr><tr><td>5</td><td>A</td><td>TP53 MDS</td><td>Very Poor; Complex karyotype; Aza + Venetoclax preferred; Allo-HSCT only cure</td></tr><tr><td>6</td><td>A</td><td>IPSS-R vs IPSS-M</td><td>IPSS-M adds mutations (TP53, SF3B1, ASXL1, RUNX1, VAF) → Better risk discrimination</td></tr><tr><td>7</td><td>A</td><td>Lower-Risk Rx</td><td>ESA (sEPO<200-500) → Luspatercept (RS+, ESA-refractory) → Lenalidomide (del(5q)) → Imetelstat (RS+, TD)</td></tr><tr><td>8</td><td>A</td><td>Higher-Risk Rx</td><td>HMA (Aza/Decitabine) → Allo-HSCT (curative); TP53: Aza + Ven</td></tr><tr><td>9</td><td>A</td><td>CMML</td><td>Monocytosis ≥1×10⁹/L persistent; No BCR-ABL1/PDGFR/JAK2; ASXL1, TET2, SRSF2, RUNX1; CPSS-Mol for risk</td></tr><tr><td>10</td><td>A</td><td>Luspatercept</td><td>Activin receptor trap → ↓SMAD2/3 → ↑Erythropoiesis; MEDALIST: MDS-RS, TD, ESA-refractory</td></tr></table>
+<table class="ctable"><tr><th>#</th><th>SBA</th><th>Topic</th><th>Explanation</th></tr><tr><td>---</td><td>-----</td><td>-------</td><td>-------------</td></tr><tr><td>1</td><td>A</td><td>MDS Definition</td><td>Dysplasia ≥10% in ≥1 lineage + Cytopenia(s) + Clonal (cytogenetics/mutation) + Exclude other causes</td></tr><tr><td>2</td><td>A</td><td>WHO 2022 Key Categories</td><td>MDS with defining genetic abn: del(5q), SF3B1, TP53; MDS-LB (<5% blasts); MDS-IB1/IB2 (5-19% blasts); MDS-h</td></tr><tr><td>3</td><td>A</td><td>MDS-RS</td><td>SF3B1 mut + RS ≥15% (or ≥5% if SF3B1 mut); Favourable if isolated</td></tr><tr><td>4</td><td>A</td><td>del(5q) MDS</td><td>Isolated del(5q) → Lenalidomide 10mg (TI ~67%); Contraindicated if TP53 mut</td></tr><tr><td>5</td><td>A</td><td>TP53 MDS</td><td>Very Poor; Complex karyotype; Aza + Venetoclax preferred; Allo-HSCT only cure</td></tr><tr><td>6</td><td>A</td><td>IPSS-R vs IPSS-M</td><td>IPSS-M adds mutations (TP53, SF3B1, ASXL1, RUNX1, VAF) → Better risk discrimination</td></tr><tr><td>7</td><td>A</td><td>Lower-Risk Rx</td><td>ESA (sEPO<200-500) → Luspatercept (RS+, ESA-refractory) → Lenalidomide (del(5q)) → Imetelstat (RS+, TD)</td></tr><tr><td>8</td><td>A</td><td>Higher-Risk Rx</td><td>HMA (Aza/Decitabine) → Allo-HSCT (curative); TP53: Aza + Ven</td></tr><tr><td>9</td><td>A</td><td>CMML</td><td>Monocytosis ≥1×10⁹/L persistent; No BCR-ABL1/PDGFR/JAK2; ASXL1, TET2, SRSF2, RUNX1; CPSS-Mol for risk</td></tr><tr><td>10</td><td>A</td><td>Luspatercept</td><td>Activin receptor trap → ↓SMAD2/3 → ↑Erythropoiesis; MEDALIST: MDS-RS, TD, ESA-refractory</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading Hub</b>: [[../../Haematological Malignancies|Haematological Malignancies]]</li><li><b>Chapter Map</b>: [[../../Davidson Chapter 7 - Oncology Hierarchy|Oncology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../../Oncology MOC|Oncology MOC]]</li><li><b>Drug Reference</b>: [[../../../Clinical Therapeutics and Good Prescribing|Drugs]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Myelodysplastic Syndromes Mds Cmml · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

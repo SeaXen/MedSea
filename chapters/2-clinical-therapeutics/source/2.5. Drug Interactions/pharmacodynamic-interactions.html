@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pharmacodynamic Interactions — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CHAPTER 2 CLINICAL THERAPEUTICS AND GOOD PRESCRIBING / 2.5. DRUG INTERACTIONS</span>
+      <div class="h1">Pharmacodynamic Interactions</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Distinguish additive, synergistic, and antagonistic pharmacodynamic interactions</li><li>[ ] Identify receptor-level interactions (agonist/antagonist, spare receptors)</li><li>[ ] Recognise physiological system interactions (Triple Whammy, Serotonin Syndrome, NMS)</li><li>[ ] Apply management strategies: avoid, monitor, dose adjust</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Classification of PD Interactions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Example</th><th>Clinical Significance</th></tr><tr><td>------</td><td>------------</td><td>---------</td><td>----------------------</td></tr><tr><td>**Additive**</td><td>Effect A + Effect B = Sum</td><td>ACEi + ARB → ↑ hyperK, AKI; Two sedatives → ↑ sedation</td><td>↑ Toxicity risk; may be intentional (analgesia)</td></tr><tr><td>**Synergistic**</td><td>Effect A + Effect B > Sum</td><td>Alcohol + Benzodiazepines → ↑↑ CNS depression; Warfarin + Antiplatelet → ↑↑ bleed</td><td>**High risk**; often unexpected magnitude</td></tr><tr><td>**Antagonistic**</td><td>Effect A opposes Effect B</td><td>Beta-blocker + Salbutamol → ↓ bronchodilation; NSAID + ACEi → ↓ antihypertensive</td><td>**Therapeutic failure**; may be intentional (reversal)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ Receptor-Level Interactions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interaction</th><th>Mechanism</th><th>Example</th></tr><tr><td>-------------</td><td>-----------</td><td>---------</td></tr><tr><td>**Agonist + Agonist** (same receptor)</td><td>Additive/synergistic</td><td>Full agonist + full agonist = additive; Full + partial = partial may antagonise</td></tr><tr><td>**Agonist + Antagonist** (competitive)</td><td>Antagonist shifts dose-response right</td><td>Naloxone + Morphine; Flumazenil + Midazolam; Atropine + Organophosphates</td></tr><tr><td>**Agonist + Antagonist** (non-competitive)</td><td>↓ Max response (Emax)</td><td>Phenoxybenzamine + Adrenaline; Ketamine (NMDA)</td></tr><tr><td>**Inverse Agonist**</td><td>Stabilises inactive receptor conformation</td><td>Beta-blockers (some), Antihistamines (H1)</td></tr><tr><td>**Spare Receptors**</td><td>Max response achieved without full occupancy</td><td>High spare receptors → antagonist needs high dose to block effect</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🔄 Physiological System Interactions (High-Yield Syndromes)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Triple Whammy (Renal)</div>
+<table class="ctable"><tr><th>Components</th><th>Mechanism</th><th>Risk</th></tr><tr><td>------------</td><td>-----------</td><td>------</td></tr><tr><td>**ACEi/ARB**</td><td>↓ Ang II → ↓ efferent arteriolar tone → ↓ GFR</td><td>**AKI** (↑ Creatinine >30%)</td></tr><tr><td>**Diuretic** (Loop/Thiazide)</td><td>↓ Intravascular volume → ↓ renal perfusion</td><td></td></tr><tr><td>**NSAID**</td><td>↓ PG → ↓ afferent arteriolar tone → ↓ GFR</td><td></td></tr></table>
+<p>``<code>mermaid flowchart LR A[ACEi/ARB] --&gt; D[↓ Efferent tone] B[Diuretic] --&gt; E[↓ Volume/perfusion] C[NSAID] --&gt; F[↓ Afferent tone] D &amp; E &amp; F --&gt; G[↓↓ GFR → AKI] </code>``</p>
+<p><b>Management</b>: Avoid NSAID; if essential, monitor creatinine day 3–7; hold ACEi/ARB if AKI</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2. Serotonin Syndrome</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Drugs</th><th>Hunter Criteria (Diagnosis)</th></tr><tr><td>-----------</td><td>-------</td><td>----------------------------</td></tr><tr><td>**Excess 5-HT** at 5-HT2A receptors</td><td>**SSRIs, SNRIs, MAOIs, TCAs, Tramadol, Fentanyl, Linezolid, Ondansetron, Triptans, Lithium, St John's Wort, Dextromethorphan**</td><td>**Spontaneous clonus** OR **Inducible clonus + agitation/sweating** OR **Ocular clonus + agitation/sweating** OR **Tremor + hyperreflexia** OR **Hypertonia + Temp >38°C + ocular/inducible clonus**</td></tr></table>
+<p><b>Management</b>: Stop all serotonergic drugs → Supportive (cooling, benzodiazepines) → <b>Cyproheptadine 12mg stat then 2mg 2-hourly</b> (5-HT2A antagonist) → ICU if severe</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3. Neuroleptic Malignant Syndrome (NMS)</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Drugs</th><th>Diagnostic Criteria (Levenson)</th></tr><tr><td>-----------</td><td>-------</td><td>-------------------------------</td></tr><tr><td>**D2 blockade** → ↓ dopamine → hyperthermia, rigidity</td><td>**Antipsychotics** (typical > atypical), **Metoclopramide, Prochlorperazine, Tetrabenazine**</td><td>**Hyperthermia >38°C** + **Rigidity** + **Altered consciousness** + **Autonomic instability** (tachy, labile BP, diaphoresis) + **CK ↑↑** + **Leukocytosis**</td></tr></table>
+<p><b>Management</b>: Stop offending drug → Supportive (cooling, hydration, dantrolene, bromocriptine/amantadine) → ICU</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4. QT Prolongation / Torsades</div>
+<table class="ctable"><tr><th>Mechanism</th><th>High-Risk Combinations</th></tr><tr><td>-----------</td><td>------------------------</td></tr><tr><td>**Additive hERG blockade**</td><td>**Class Ia/III antiarrhythmics + Antipsychotics + Macrolides + Fluoroquinolones + Antidepressants (Citalopram, TCAs) + Antiemetics (Ondansetron, Domperidone) + Methadone + Azoles**</td></tr></table>
+<p><b>Risk Factors</b>: Female, elderly, hypokalaemia, hypomagnesaemia, bradycardia, congenital LQTS, heart failure, liver disease</p>
+<p><b>Monitoring</b>: Baseline ECG if ≥2 QT drugs or risk factors; QTc &gt;500ms or Δ&gt;60ms = high risk</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5. Anticholinergic Burden (Additive)</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Drugs (ACB 1–3)</th><th>Consequences</th></tr><tr><td>-----------</td><td>----------------</td><td>--------------</td></tr><tr><td>**Additive muscarinic blockade**</td><td>TCAs, 1st-gen antihistamines, Antispasmodics (oxybutynin), Antipsychotics (clozapine, olanzapine), Antiparkinson (benztropine), Opioids, Muscle relaxants</td><td>**Delirium, Falls, Constipation, Urinary retention, Cognitive decline, Tachycardia, Dry mouth**</td></tr></table>
+<p><b>Management</b>: ACB score ≥3 → review, deprescribe, switch to low-ACB alternatives</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6. Hypokalaemia-Induced Interactions</div>
+<table class="ctable"><tr><th>Scenario</th><th>Drugs</th><th>Risk</th></tr><tr><td>----------</td><td>-------</td><td>------</td></tr><tr><td>**Diuretic + Digoxin**</td><td>Loop/Thiazide + Digoxin</td><td>**Digoxin toxicity** (↓ K⁺ → ↑ digoxin binding to Na/K ATPase)</td></tr><tr><td>**Diuretic + QT drugs**</td><td>Loop/Thiazide + Amiodarone/Sotalol/Antipsychotics</td><td>**Torsades**</td></tr><tr><td>**Corticosteroid + Diuretic**</td><td>Prednisolone + Furosemide</td><td>**Severe hypokalaemia**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7. Hyperkalaemia-Induced Interactions</div>
+<table class="ctable"><tr><th>Scenario</th><th>Drugs</th><th>Risk</th></tr><tr><td>----------</td><td>-------</td><td>------</td></tr><tr><td>**ACEi/ARB + K⁺-sparing + Supplement**</td><td>Ramipril + Spironolactone + KCl</td><td>**Life-threatening hyperkalaemia**</td></tr><tr><td>**ACEi/ARB + Trimethoprim**</td><td>Ramipril + TMP-SMX</td><td>**Hyperkalaemia** (TMP = K⁺-sparing effect)</td></tr><tr><td>**Heparin + ACEi/ARB**</td><td>LMWH + Ramipril</td><td>**Hyperkalaemia** (heparin ↓ aldosterone)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">8. Bleeding Risk (Additive/Synergistic)</div>
+<table class="ctable"><tr><th>Combination</th><th>Mechanism</th><th>Monitoring</th></tr><tr><td>-------------</td><td>-----------</td><td>------------</td></tr><tr><td>**Anticoagulant + Antiplatelet**</td><td>Warfarin/DOAC + Aspirin/Clopidogrel</td><td>INR, Hb, clinical bleed</td></tr><tr><td>**Anticoagulant + NSAID**</td><td>Warfarin/DOAC + Ibuprofen</td><td>INR, Hb, GI protection (PPI)</td></tr><tr><td>**Dual antiplatelet + Anticoagulant**</td><td>Triple therapy (AF + ACS/Stent)</td><td>Hb, INR, HAS-BLED</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">9. Hypoglycaemia (Additive)</div>
+<table class="ctable"><tr><th>Combination</th><th>Mechanism</th></tr><tr><td>-------------</td><td>-----------</td></tr><tr><td>**Insulin/Sulfonylurea + Beta-blocker**</td><td>BB masks adrenergic symptoms (tachy, tremor) → **unrecognised hypo**</td></tr><tr><td>**Insulin/Sulfonylurea + Alcohol**</td><td>Alcohol ↓ gluconeogenesis + masks symptoms</td></tr><tr><td>**SGLT2i + Insulin/Sulfonylurea**</td><td>Additive glucose lowering</td></tr><tr><td>**ACEi/ARB + Insulin**</td><td>↑ Insulin sensitivity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🎯 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Key Drugs</th><th>Diagnostic Criteria</th><th>Antidote/Specific Rx</th></tr><tr><td>----------</td><td>-----------</td><td>---------------------</td><td>----------------------</td></tr><tr><td>**Triple Whammy**</td><td>ACEi/ARB + Diuretic + NSAID</td><td>AKI (Cr ↑>30%)</td><td>Avoid NSAID; hold ACEi/ARB if AKI</td></tr><tr><td>**Serotonin Syndrome**</td><td>SSRI + MAOI + Tramadol + Linezolid + Triptan</td><td>Hunter Criteria (clonus, hyperreflexia, hypertonia, fever)</td><td>**Cyproheptadine**, Benzodiazepines, Cooling</td></tr><tr><td>**NMS**</td><td>Antipsychotic + Metoclopramide</td><td>Levenson: Fever + Rigidity + Altered consciousness + Autonomic instability + CK↑</td><td>**Dantrolene**, Bromocriptine, Supportive</td></tr><tr><td>**Torsades**</td><td>Multiple QT drugs + HypoK/Mg</td><td>QTc >500ms, polymorphic VT</td><td>**IV MgSO₄ 2g**, Correct K/Mg, Pacing</td></tr><tr><td>**Anticholinergic Toxicity**</td><td>ACB ≥3 drugs</td><td>Delirium, Dry, Hot, Red, Blind, Mad, Full</td><td>Physostigmine (severe), Supportive</td></tr><tr><td>**Bleeding**</td><td>Anticoag + Antiplatelet/NSAID</td><td>Hb drop, INR rise</td><td>Hold, Reverse (Vit K, PCC, Idarucizumab, Andexanet)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">❓ Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Q</th><th>Answer</th></tr><tr><td>---</td><td>--------</td></tr><tr><td>1. Additive vs Synergistic vs Antagonistic PD interaction?</td><td>Additive = A+B; Synergistic = A+B > sum; Antagonistic = A opposes B</td></tr><tr><td>2. Triple Whammy components and mechanism?</td><td>ACEi/ARB (↓ efferent) + Diuretic (↓ volume) + NSAID (↓ afferent) → ↓↓ GFR → AKI</td></tr><tr><td>3. Serotonin Syndrome: mechanism, 3 drug examples, antidote?</td><td>Excess 5-HT at 5-HT2A; SSRI + MAOI + Tramadol; **Cyproheptadine**</td></tr><tr><td>4. NMS vs Serotonin Syndrome — distinguishing features?</td><td>NMS: **Bradykinesia, Lead-pipe rigidity, CK↑↑, Onset days-weeks**; Serotonin: **Hyperreflexia, Clonus, Onset hours, CK normal/mild↑**</td></tr><tr><td>5. QT prolongation: mechanism, 3 high-risk drug classes?</td><td>hERG (IKr) blockade; Antiarrhythmics, Antipsychotics, Macrolides/Fluoroquinolones, Antidepressants, Antiemetics</td></tr><tr><td>6. Digoxin + furosemide interaction?</td><td>Furosemide → hypokalaemia → ↑ digoxin binding to Na/K ATPase → **digoxin toxicity**</td></tr><tr><td>7. ACEi + Spironolactone + KCl — risk?</td><td>**Hyperkalaemia** — monitor K⁺ weekly x4 then monthly</td></tr><tr><td>8. Beta-blocker + insulin — danger?</td><td>**Masks hypoglycaemia symptoms** (tachycardia, tremor) → unrecognised hypo</td></tr><tr><td>9. Anticholinergic burden: target score, 3 high-ACB drugs?</td><td>Target **<3**; Amitriptyline (3), Oxybutynin (3), Chlorpromazine (3)</td></tr><tr><td>10. Competitive vs non-competitive antagonism?</td><td>Competitive: surmountable, shifts curve right (Naloxone); Non-competitive: ↓ Emax (Phenoxybenzamine)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🤯 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**PD vs PK interaction**</td><td>PD = effect at site of action (receptor/system); PK = ADME (absorption, distribution, metabolism, excretion)</td></tr><tr><td>**Serotonin Syndrome vs NMS**</td><td>Serotonin = **hyperreflexia, clonus, rapid onset**; NMS = **rigidity, bradykinesia, CK↑↑, slow onset**</td></tr><tr><td>**Additive vs Synergistic bleeding**</td><td>Warfarin + Aspirin = additive (different mechanisms); Warfarin + NSAID = synergistic (antiplatelet + anticoag + gastric injury)</td></tr><tr><td>**Triple Whammy = only NSAID?**</td><td>Any renal afferent constrictor (calcineurin inhibitors, contrast) can substitute NSAID</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>"TRIPLE WHAMMY"</b> = ACEi + Diuretic + NSAID = <b>AKI</b></li><li><b>"SEROTONIN"</b> = <b>S</b>SRI + <b>MAOI</b> + <b>Tramadol</b> + <b>Linezolid</b> + <b>Triptan</b> → <b>Clonus, Hyperreflexia, Hypertonia, Fever</b> → <b>Cyproheptadine</b></li><li><b>"NMS"</b> = <b>N</b>euroleptic <b>M</b>alignant <b>S</b>yndrome = <b>Fever + Rigidity + CK↑↑ + Altered consciousness</b> → <b>Dantrolene/Bromocriptine</b></li><li><b>"QT DRUGS"</b> = <b>Q</b>uinidine, <b>T</b>ricyclics, <b>D</b>ronedarone, <b>R</b>isperidone, <b>U</b>ndesirable <b>G</b>roups (antiarrhythmics, antipsychotics, macrolides, fluoroquinolones, antiemetics, methadone) → <b>MgSO₄</b></li><li><b>"ANTICHOLINERGIC"</b> = <b>A</b>mitriptyline, <b>N</b>ortriptyline, <b>T</b>olterodine, <b>I</b>pratropium, <b>C</b>lozapine, <b>H</b>yoscine, <b>O</b>lanzapine, <b>L</b>oxapine, <b>I</b>mipramine, <b>N</b>eostigmine reversal, <b>E</b>szopiclone, <b>R</b>isperidone (some), <b>G</b>lycopyrrolate, <b>I</b>nvese, <b>C</b>yclobenzaprine</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🧠 Mind Map (Mermaid)</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Pharmacodynamic Interactions)) Types Additive (A+B) Synergistic (A+B &gt; sum) Antagonistic (A opposes B) Receptor Level Agonist+Agonist Agonist+Antagonist (competitive/non-competitive) Inverse agonist Spare receptors Physiological Syndromes Triple Whammy (AKI) Serotonin Syndrome (Cyproheptadine) NMS (Dantrolene/Bromo) Torsades (MgSO4) Anticholinergic (ACB≥3) Hypokalaemia interactions Hyperkalaemia interactions Bleeding (anticoag + antiplatelet/NSAID) Hypoglycaemia (BB masks symptoms) </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score</th><th>Next</th></tr><tr><td>--------</td><td>------</td><td>-------</td><td>------</td></tr><tr><td>1</td><td></td><td></td><td>1d</td></tr><tr><td>2</td><td></td><td></td><td>3d</td></tr><tr><td>3</td><td></td><td></td><td>1w</td></tr><tr><td>4</td><td></td><td></td><td>2w</td></tr><tr><td>5</td><td></td><td></td><td>1m</td></tr><tr><td>6</td><td></td><td></td><td>3m</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th></tr><tr><td>---------</td><td>-----</td><td>-------</td></tr><tr><td>PD interaction types</td><td>6</td><td></td></tr><tr><td>Receptor mechanisms</td><td>6</td><td></td></tr><tr><td>9 Physiological syndromes</td><td>18</td><td></td></tr><tr><td>Viva answers</td><td>10</td><td></td></tr><tr><td>**Total**</td><td>**40**</td><td></td></tr></table>
+<p><b>Target</b>: ≥32/40 (80%)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📝 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Short Question (5 marks): *"Triple Whammy AKI"*</div>
+<ul><li>ACEi/ARB + Diuretic + NSAID → ↓ efferent + ↓ volume + ↓ afferent → ↓↓ GFR</li><li>Avoid NSAID; monitor creatinine; hold ACEi/ARB if AKI</li></ul>
+<div class="sub-h">Viva (2 min): *"SSRI + Tramadol + Linezolid → confusion, clonus, fever. Diagnosis? Management?"*</div>
+<ul><li><b>Serotonin Syndrome</b> (Hunter criteria met)</li><li>Stop all serotonergic drugs</li><li>Supportive: cooling, IV fluids, benzodiazepines</li><li><b>Cyproheptadine 12mg stat then 2mg 2-hourly</b></li><li>ICU if severe (hyperthermia &gt;41°C, DIC, rhabdo)</li></ul>
+<div class="sub-h">Ward Round (30 sec): *"Patient on ramipril, furosemide, started ibuprofen for knee pain. Day 5: Cr 180 (baseline 100). Action?"*</div>
+<ul><li><b>Triple Whammy AKI</b> — Stop ibuprofen, hold ramipril, IV fluids, monitor Cr daily</li></ul>
+<div class="sub-h">Last-Night Revision (1-liners):</div>
+<ul><li>Additive = A+B; Synergistic &gt; sum; Antagonistic opposes</li><li>Triple Whammy = ACEi + Diuretic + NSAID = AKI</li><li>Serotonin = Clonus + Hyperreflexia + Fever → Cyproheptadine</li><li>NMS = Rigidity + Fever + CK↑↑ → Dantrolene/Bromo</li><li>Torsades = Multiple QT drugs + HypoK/Mg → MgSO₄ 2g</li><li>Digoxin + Diuretic = HypoK → Dig toxicity</li><li>ACEi + Spiro + KCl = HyperK</li><li>BB + Insulin = Masks hypo</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📚 Summary Card</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>PD INTERACTION EMERGENCIES:</b> 1. <b>Serotonin Syndrome</b> → <b>Cyproheptadine</b> 2. <b>NMS</b> → <b>Dantrolene / Bromocriptine</b> 3. <b>Torsades</b> → <b>IV MgSO₄ 2g</b> 4. <b>Triple Whammy</b> → <b>Stop NSAID, Hold ACEi/ARB</b> 5. <b>Anticholinergic</b> → <b>Physostigmine (severe)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">❓ MCQs (12)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Additive pharmacodynamic interaction example:</b></li></ol>
+<p>A. Warfarin + Clarithromycin (PK) B. <b>ACE inhibitor + ARB → hyperkalaemia</b> ✓ C. Rifampicin + OCP (PK induction) D. Grapefruit juice + Simvastatin (PK) E. Phenytoin + Fluconazole (PK)</p>
+<ol><li><b>Triple Whammy components:</b></li></ol>
+<p>A. ACEi + Beta-blocker + Diuretic B. <b>ACEi/ARB + Diuretic + NSAID</b> ✓ C. ARB + CCB + Diuretic D. ACEi + ARB + CCB E. Beta-blocker + Diuretic + NSAID</p>
+<ol><li><b>Serotonin Syndrome diagnostic criteria (Hunter):</b></li></ol>
+<p>A. Rigidity + Fever + CK↑ B. <b>Clonus (spontaneous/inducible/ocular) + Agitation/Sweating OR Tremor+Hyperreflexia OR Hypertonia+Fever+Clonus</b> ✓ C. Altered consciousness + Hypotension + Bradycardia D. Seizures + Coma + Respiratory failure E. Diarrhoea + Mydriasis + Hyperthermia</p>
+<ol><li><b>Antidote for Serotonin Syndrome:</b></li></ol>
+<p>A. Naloxone B. Flumazenil C. <b>Cyproheptadine</b> ✓ D. Physostigmine E. Dantrolene</p>
+<ol><li><b>NMS vs Serotonin Syndrome — key differentiator:</b></li></ol>
+<p>A. Fever present in both B. <b>NMS: Lead-pipe rigidity, Bradykinesia, CK↑↑; Serotonin: Hyperreflexia, Clonus, Rapid onset</b> ✓ C. NMS caused by SSRIs D. Serotonin syndrome caused by antipsychotics E. Both treated with dantrolene</p>
+<ol><li><b>Antidote for NMS:</b></li></ol>
+<p>A. Cyproheptadine B. <b>Dantrolene / Bromocriptine</b> ✓ C. Naloxone D. Flumazenil E. Physostigmine</p>
+<ol><li><b>QTc &gt;500ms or Δ&gt;60ms on multiple QT drugs — immediate action?</b></li></ol>
+<p>A. Continue all, monitor B. <b>Stop offending drugs, IV MgSO₄ 2g, correct K⁺/Mg²⁺</b> ✓ C. Start beta-blocker D. Amiodarone 300mg IV E. Cardioversion</p>
+<ol><li><b>Furosemide + Digoxin interaction mechanism:</b></li></ol>
+<p>A. PK: Furosemide inhibits digoxin clearance B. <b>PD: Furosemide → hypokalaemia → ↑ digoxin binding to Na/K ATPase</b> ✓ C. PK: Protein binding displacement D. PK: P-gp inhibition E. No interaction</p>
+<ol><li><b>ACEi + Spironolactone + KCl — monitoring?</b></li></ol>
+<p>A. INR weekly B. <b>K⁺ weekly x4 then monthly</b> ✓ C. Creatinine monthly D. Digoxin level E. No monitoring needed</p>
+<ol><li><b>Beta-blocker masks which hypoglycaemia symptoms?</b></li></ol>
+<p>A. Neuroglycopenic (confusion, seizure) B. <b>Adrenergic (tachycardia, tremor, sweating, palpitations)</b> ✓ C. Both equally D. Neither E. GI symptoms only</p>
+<ol><li><b>Competitive antagonism — dose-response curve:</b></li></ol>
+<p>A. <b>Shifted right, same Emax</b> ✓ B. Shifted left, same Emax C. ↓ Emax, same EC50 D. ↑ Emax, same EC50 E. No change</p>
+<ol><li><b>Target Anticholinergic Burden (ACB) score:</b></li></ol>
+<p>A. 0 B. &lt;1 C. <b>&lt;3</b> ✓ D. &lt;5 E. &lt;10</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🃏 Flashcards (Anki-ready)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Front</th><th>Back</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>Additive PD interaction</td><td>Effect A + Effect B = Sum (e.g., ACEi+ARB → hyperK)</td></tr><tr><td>Synergistic PD interaction</td><td>Effect A + Effect B > Sum (e.g., EtOH + BZD → CNS depression)</td></tr><tr><td>Antagonistic PD interaction</td><td>Effect A opposes Effect B (e.g., BB + Salbutamol)</td></tr><tr><td>Triple Whammy</td><td>ACEi/ARB + Diuretic + NSAID → AKI (↓efferent + ↓volume + ↓afferent)</td></tr><tr><td>Serotonin Syndrome</td><td>Excess 5-HT2A → Clonus, Hyperreflexia, Hypertonia, Fever → Cyproheptadine</td></tr><tr><td>NMS</td><td>D2 blockade → Fever, Rigidity, CK↑↑, Altered consciousness → Dantrolene/Bromo</td></tr><tr><td>Serotonin vs NMS</td><td>Serotonin: hyperreflexia/clonus, rapid onset; NMS: rigidity/bradykinesia, CK↑↑, slow</td></tr><tr><td>Torsades</td><td>hERG block + risk factors → IV MgSO₄ 2g, correct K/Mg</td></tr><tr><td>Digoxin + Diuretic</td><td>HypoK → ↑ digoxin binding → toxicity</td></tr><tr><td>ACEi + Spiro + KCl</td><td>HyperK risk — K⁺ weekly x4 then monthly</td></tr><tr><td>BB + Insulin</td><td>Masks adrenergic hypo symptoms (tachy, tremor)</td></tr><tr><td>Competitive antagonist</td><td>Shifts dose-response right, same Emax (Naloxone)</td></tr><tr><td>Non-competitive antagonist</td><td>↓ Emax (Phenoxybenzamine)</td></tr><tr><td>ACB target</td><td><3</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">✅ Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — ACEi+ARB = additive hyperkalaemia</li><li><b>B</b> — Triple Whammy = ACEi/ARB + Diuretic + NSAID</li><li><b>B</b> — Hunter criteria</li><li><b>C</b> — Cyproheptadine (5-HT2A antagonist)</li><li><b>B</b> — NMS: rigidity/bradykinesia/CK↑↑; Serotonin: hyperreflexia/clonus</li><li><b>B</b> — Dantrolene/Bromocriptine</li><li><b>B</b> — Stop drugs, MgSO₄, correct electrolytes</li><li><b>B</b> — PD: hypokalaemia → ↑ digoxin binding</li><li><b>B</b> — K⁺ weekly x4 then monthly</li><li><b>B</b> — Masks adrenergic symptoms</li><li><b>A</b> — Competitive: right shift, same Emax</li><li><b>C</b> — ACB &lt;3</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>File: <code>/mnt/tb/Medicine/Clinical Therapeutics and Good Prescribing/Drug Interactions/Pharmacodynamic interactions.md</code> | Status: <code>draft</code> → upgrade after review</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Pharmacodynamic Interactions · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>
